@@ -139,6 +139,7 @@
     SUBDIR += gaim-encryption
     SUBDIR += gaim-otr
     SUBDIR += gcipher
+    SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-manager
     SUBDIR += gnome-password-generator
