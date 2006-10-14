@@ -22,6 +22,7 @@
     SUBDIR += charmap
     SUBDIR += checkrdf
     SUBDIR += chmsee
+    SUBDIR += conduit
     SUBDIR += contacts
     SUBDIR += cycle
     SUBDIR += dailystrips
