@@ -229,10 +229,13 @@
     SUBDIR += glload
     SUBDIR += gnome-control-center
     SUBDIR += gnome-control-center1
+    SUBDIR += gnome-mount
     SUBDIR += gnome-pkgview
+    SUBDIR += gnome-power-manager
     SUBDIR += gnome-schedule
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome-system-tools
+    SUBDIR += gnome-volume-manager
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
     SUBDIR += gpart
@@ -246,10 +249,13 @@
     SUBDIR += grub
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio80
+    SUBDIR += gstreamer-plugins-hal
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
     SUBDIR += gtoaster
     SUBDIR += gupsc
+    SUBDIR += hal
+    SUBDIR += hal-device-manager
     SUBDIR += hammerhead
     SUBDIR += hdup
     SUBDIR += healthd
@@ -472,6 +478,7 @@
     SUBDIR += plconfig
     SUBDIR += plod
     SUBDIR += pmap
+    SUBDIR += policykit
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
     SUBDIR += portbrowser

@@ -220,6 +220,7 @@
     SUBDIR += darts
     SUBDIR += datadesigner
     SUBDIR += dbus
+    SUBDIR += dbus-glib
     SUBDIR += dbus-sharp
     SUBDIR += ddd
     SUBDIR += desktop-file-utils
@@ -357,6 +358,7 @@
     SUBDIR += gnome-common
     SUBDIR += gnome-crash
     SUBDIR += gnome-vfs
+    SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfs1
     SUBDIR += gnome-vfsmm

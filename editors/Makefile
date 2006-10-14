@@ -59,6 +59,7 @@
     SUBDIR += gate
     SUBDIR += gedit
     SUBDIR += gedit-autocomplete-plugin
+    SUBDIR += gedit-plugins
     SUBDIR += ghex
     SUBDIR += glimmer
     SUBDIR += gmanedit

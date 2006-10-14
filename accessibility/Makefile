@@ -16,6 +16,7 @@
     SUBDIR += gok
     SUBDIR += kdeaccessibility
     SUBDIR += linux-atk
+    SUBDIR += orca
     SUBDIR += ruby-atk
 
 .include <bsd.port.subdir.mk>
