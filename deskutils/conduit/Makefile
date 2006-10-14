@@ -14,7 +14,7 @@ MASTER_SITES=	http://files.conduit-project.org/releases/
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/deskutils/conduit \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
 		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml
