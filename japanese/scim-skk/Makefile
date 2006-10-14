@@ -3,10 +3,11 @@
 # Whom:			Jun Mukai <mukai@jmuk.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/japanese/scim-skk/Makefile,v 1.1 2006/09/30 05:17:05 ahze Exp $
 
 PORTNAME=	scim-skk
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	scim-imengine/18121
@@ -17,7 +18,7 @@ COMMENT=	SCIM IMEngine module like SKK
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_X_PREFIX=	yes
+USE_X_LIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

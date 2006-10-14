@@ -580,7 +580,6 @@ share/gnome/help/gramps/sk/cmdline.xml
 share/gnome/help/gramps/sk/cmdplug.xml
 share/gnome/help/gramps/sk/custom.xml
 share/gnome/help/gramps/sk/faq.xml
-share/gnome/help/gramps/sk/figures
 share/gnome/help/gramps/sk/figures/bookreport.png
 share/gnome/help/gramps/sk/figures/cfe-ar.png
 share/gnome/help/gramps/sk/figures/cfe-df.png
@@ -677,22 +676,38 @@ share/mime/application/x-gramps-package.xml
 share/mime/application/x-gramps-xml.xml
 share/mime/application/x-gramps.xml
 share/mime/packages/gramps.xml
-@dirrm share/gnome/gramps/data/templates
-@dirrm share/gnome/gramps/data
-@dirrm share/gnome/gramps/dates
-@dirrm share/gnome/gramps/docgen
-@dirrm share/gnome/gramps/example
-@dirrm share/gnome/gramps/plugins
-@dirrm share/gnome/gramps
-@dirrm share/gnome/help/gramps/C/figures
-@dirrm share/gnome/help/gramps/C
-@dirrm share/gnome/help/gramps/fr/figures
-@dirrm share/gnome/help/gramps/fr
+@dirrmtry share/icons/gnome/48x48/mimetypes
+@dirrmtry share/icons/gnome/48x48
+@dirrm share/gnome/omf/gramps
 @dirrm share/gnome/help/gramps/sk/figures
 @dirrm share/gnome/help/gramps/sk
+@dirrm share/gnome/help/gramps/fr/figures
+@dirrm share/gnome/help/gramps/fr
+@dirrm share/gnome/help/gramps/C/figures
+@dirrm share/gnome/help/gramps/C
 @dirrm share/gnome/help/gramps
-@dirrm share/gnome/omf/gramps
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm share/gnome/gramps/plugins
+@dirrm share/gnome/gramps/example
+@dirrm share/gnome/gramps/docgen
+@dirrm share/gnome/gramps/dates
+@dirrm share/gnome/gramps/data/templates
+@dirrm share/gnome/gramps/data
+@dirrm share/gnome/gramps
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

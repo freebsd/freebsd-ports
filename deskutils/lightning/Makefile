@@ -3,16 +3,15 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/sunbird/Makefile,v 1.13 2005/11/23 04:54:57 ahze Exp $
+#   $MCom: ports/deskutils/sunbird/Makefile,v 1.19 2006/10/13 04:40:20 ahze Exp $
 #
 
 PORTNAME=	sunbird
-PORTVERSION=	0.3a1
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	sunbird/new-directory/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITE_SUBDIR=	calendar/sunbird/releases/${DISTVERSION}/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Redesign of the Mozilla Calendar with XUL interface
@@ -24,19 +23,20 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
 SUNBIRD=	${PORTNAME}
 SUNBIRD_ICON_SRC=	${PREFIX}/lib/sunbird/icons/default.xpm
 SUNBIRD_ICON=		${PORTNAME}.xpm
-
-MOZ_PROTOCOLS=	about,http,ftp,file,jar,res
+LIBS=		-Wl,-Bsymbolic -lc
+PKGCONFIG_FILES?=	${MOZILLA}-js \
+			${MOZILLA}-xpcom ${MOZILLA}-plugin
 MOZ_OPTIONS=	--enable-application=calendar \
-		--enable-plaintext-editor-only \
-		--disable-plugins --disable-cookies
+		--enable-system-cairo \
+		--with-system-nss \
+		--enable-canvas
 MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/Makefile.common"
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 
 .if ${OSVERSION} < 500000
 BROKEN=	does not build
@@ -50,21 +50,16 @@ IGNORE=	 does not build
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
 
-post-extract::
+post-patch:
 	@${SED} -e 's|@SUNBIRD_ICON@|${SUNBIRD_ICON}|' \
 		${FILESDIR}/sunbird.desktop.in >${WRKDIR}/sunbird.desktop
-
-post-patch:
-.for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
-		embedding/minimo
-	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
-		/dom.disable_window_open_feature.toolbar/s/false/true/' \
-		${WRKSRC}/${ii}/all.js
-.endfor
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/security/manager/ssl/src/Makefile.in
 
 pre-install:
 	${ECHO_CMD} 'share/applications/sunbird.desktop' >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${SUNBIRD_ICON}' >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}' >> ${PLIST}
 
 do-install:

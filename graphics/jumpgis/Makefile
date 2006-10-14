@@ -7,7 +7,7 @@
 
 PORTNAME=	jumpgis
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jump-project.org/downloads/jump/:main \
 		http://people.tecnik93.com/~sam/ports/:extra
@@ -63,8 +63,8 @@ do-install:
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 	@${ECHO_MSG} "---> Installing GNOME application links"
-	${INSTALL_DATA} ${DISTDIR}/jump.desktop ${X11BASE}/share/gnome/applications/
-	${INSTALL_DATA} ${DISTDIR}/jump.png ${X11BASE}/share/gnome/pixmaps/
+	${INSTALL_DATA} ${DISTDIR}/jump.desktop ${LOCALBASE}/share/gnome/applications/
+	${INSTALL_DATA} ${DISTDIR}/jump.png ${LOCALBASE}/share/gnome/pixmaps/
 .endif
 
 .include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	pager
 PORTVERSION=	0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
@@ -16,14 +16,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ebert@informatik.unibw-muenchen.de
 COMMENT=	A pager for sawfish without GNOME
 
-BUILD_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
-RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
+BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
+RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
-SAWFISH_VERSION=	`${X11BASE}/bin/sawfish --version 2>&1 | \
+SAWFISH_VERSION=	`${LOCALBASE}/bin/sawfish --version 2>&1 | \
 			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
 
 PLIST_SUB+=	SAWFISH_VERSION="${SAWFISH_VERSION}"

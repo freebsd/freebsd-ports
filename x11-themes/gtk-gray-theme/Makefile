@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-gray-theme
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome-look.org/content/files/
 DISTNAME=	34132-Gray
@@ -14,9 +15,8 @@ DISTNAME=	34132-Gray
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Gray theme for GTK+ 2.0
 
-RUN_DEPENDS=	${X11BASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
+RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 

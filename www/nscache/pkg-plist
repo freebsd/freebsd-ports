@@ -9,3 +9,5 @@ share/locale/sk/LC_MESSAGES/nscache.mo
 share/locale/tr/LC_MESSAGES/nscache.mo
 share/gnome/apps/Internet/nscache.desktop
 share/gnome/pixmaps/nscache.xpm
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk

@@ -4,8 +4,8 @@
 -CFLAGS = -Wall -O -I. -I/usr/X11R6/include -I/usr/lib/glib/include -I/usr/X11R6/include/X11 -DUSE_IMLIB -DUSE_GNOME -I/usr/include -DNEED_GNOMESUPPORT_H -I/usr/lib/gnome-libs/include -I/usr/X11R6/include -I/usr/lib/glib/include 
 -LIBS = -L. -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl -lXext -lX11 -lm -lgdk_imlib -L/usr/lib -lImlib -ljpeg -ltiff -lungif -lpng -lz -lm -lXext -L/usr/X11R6/lib -lSM -lICE -lXext -lX11 -I/usr/include/glib -rdynamic -L/usr/lib -L/usr/X11R6/lib -lgnomeui -lart_lgpl -lgdk_imlib -lSM -lICE -lgtk -lgdk -lgmodule -lXext -lX11 -lgnome -lgnomesupport -lesd -laudiofile -lm -ldb1 -lglib -ldl 
 -CC = gcc
-+GNOME_CFLAGS != $(X11BASE)/bin/gnome-config --cflags gnomeui
-+GNOME_LIBS != $(X11BASE)/bin/gnome-config --libs gnomeui
++GNOME_CFLAGS != $(LOCALBASE)/bin/gnome-config --cflags gnomeui
++GNOME_LIBS != $(LOCALBASE)/bin/gnome-config --libs gnomeui
 +CFLAGS += -I. -DUSE_IMLIB -DUSE_GNOME $(GNOME_CFLAGS)
 +LIBS = $(GNOME_LIBS)
 +CC ?= gcc

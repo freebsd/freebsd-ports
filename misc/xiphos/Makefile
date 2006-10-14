@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomesword
 PORTVERSION=	2.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +15,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	dboudrot@yahoo.com
 COMMENT=	A bible interface utilizing the sword framework
 
-BUILD_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
+BUILD_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
 LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
-RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
+RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
 
 BROKEN=		Configure fails
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2006-12-01
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gal2 gtkhtml3 intlhack
 USE_GMAKE=	yes

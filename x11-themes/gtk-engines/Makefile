@@ -3,11 +3,11 @@
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/gtk-engines/Makefile,v 1.1 2006/07/18 16:32:36 ahze Exp $
 
 PORTNAME=	gtk-engines
 PORTVERSION=	0.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtk-engines/0.12
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sources/gtk-engines/0.12
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Theme engine for gtk+ toolkits
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 

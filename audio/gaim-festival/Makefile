@@ -3,11 +3,11 @@
 # Whom:			Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/audio/gaim-festival/Makefile,v 1.1 2006/10/04 22:31:17 ahze Exp $
 
 PORTNAME=	festival
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	festival-gaim
@@ -23,7 +23,6 @@ RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15:env
 MAKE_ENV=	LOCALBASE=${LOCALBASE}
 

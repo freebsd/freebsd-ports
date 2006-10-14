@@ -6,7 +6,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.82
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		jack.0:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
 USE_GMAKE=	yes
@@ -72,8 +72,6 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${GREP} -lR "%%LOCALBASE%%" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g'
-	@${GREP} -lR "%%X11BASE%%" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|%%X11BASE%%|${LOCALBASE}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/terminatorX ${PREFIX}/bin

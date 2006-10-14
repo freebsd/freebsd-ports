@@ -3,12 +3,12 @@
 # Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/audio/goobox/Makefile,v 1.15 2006/04/13 07:52:30 bland Exp $
+#    $MCom: ports/audio/goobox/Makefile,v 1.17 2006/07/25 06:20:43 mezz Exp $
 #
 
 PORTNAME=	goobox
 PORTVERSION=	0.9.93
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,7 +19,7 @@ COMMENT=	CD player and ripper for GNOME Desktop environment
 
 RUN_DEPENDS=	cddb-slave2-properties:${PORTSDIR}/audio/gnome-media
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

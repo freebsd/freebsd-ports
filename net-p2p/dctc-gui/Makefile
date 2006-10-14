@@ -7,7 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.66
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p gnome
 MASTER_SITES=	http://unixpages.org/distfiles/
 PKGNAMESUFFIX=	-gui
@@ -20,12 +20,12 @@ BUILD_DEPENDS=	dctc:${PORTSDIR}/net-p2p/dctc
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
+CONFIGURE_ARGS=	--with-gnome=${LOCALBASE} \
 		--with-gtk-prefix=${LOCALBASE} \
 		--enable-manual-db-detect \
 		--with-libiconv-prefix=${LOCALBASE}

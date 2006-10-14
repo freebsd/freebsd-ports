@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	qt-bluecurve-theme
+PORTREVISION=	1
 
 COMMENT=	The Bluecurve QT theme
 
@@ -16,6 +17,7 @@ BUILD_WRKSRC=	${WRKSRC}/art/qt/Bluecurve
 
 QT_CFLAGS=	-I${X11BASE}/include -DQT_THREAD_SUPPORT ${PTHREAD_CFLAGS}
 QT_LIBS=	-L${X11BASE}/lib -lqt-mt ${PTHREAD_LIBS}
+USE_X_PREFIX=	yes
 
 SUB_FILES=	pkg-message
 

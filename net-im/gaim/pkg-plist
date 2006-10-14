@@ -164,6 +164,11 @@ lib/libgaim-remote.a
 lib/libgaim-remote.la
 lib/libgaim-remote.so
 lib/libgaim-remote.so.0
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/autosplit.ix
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/Gaim.so
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/Gaim.bs
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/.packlist
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Gaim.pm
 libdata/pkgconfig/gaim.pc
 share/gnome/applications/gaim.desktop
 share/gnome/pixmaps/gaim.png
@@ -476,8 +481,6 @@ share/locale/vi/LC_MESSAGES/gaim.mo
 share/locale/xh/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
-@unexec /bin/rmdir %D/share/locale/my_MM/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/my_MM 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/sounds/gaim
 @dirrm share/gnome/pixmaps/gaim/status/default
 @dirrm share/gnome/pixmaps/gaim/status
@@ -488,13 +491,40 @@ share/locale/zh_TW/LC_MESSAGES/gaim.mo
 @dirrm share/gnome/pixmaps/gaim/dialogs
 @dirrm share/gnome/pixmaps/gaim/buttons
 @dirrm share/gnome/pixmaps/gaim
+%%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim
 @dirrm lib/gaim
 @dirrm include/gaim
-%%PERL:%%@cwd %%LOCALBASE%%
-%%PERL:%%lib/perl5/%%PERL_VER%%/man/man3/Gaim.3
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/autosplit.ix
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/Gaim.so
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/Gaim.bs
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/.packlist
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Gaim.pm
-%%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/my_MM/LC_MESSAGES
+@dirrmtry share/locale/my_MM
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

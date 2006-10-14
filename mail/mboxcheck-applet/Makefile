@@ -6,7 +6,7 @@
 
 PORTNAME=	mboxcheck-applet
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://perso.orange.fr/seb128/fichiers/
 
@@ -15,20 +15,20 @@ COMMENT=	Mailbox checking applet for GNOME 2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 do-patch:
 	@${REINPLACE_CMD} 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/*.py
-	@${REINPLACE_CMD} 's|/usr/share/pixmaps/|${X11BASE}/share/gnome/pixmaps/|' ${WRKSRC}/mboxcheck.py
-	@${REINPLACE_CMD} 's|/usr/lib/gnome-panel/mboxcheck|${X11BASE}/libexec/mboxcheck.py|' ${WRKSRC}/GNOME_MboxCheck.server
+	@${REINPLACE_CMD} 's|/usr/share/pixmaps/|${LOCALBASE}/share/gnome/pixmaps/|' ${WRKSRC}/mboxcheck.py
+	@${REINPLACE_CMD} 's|/usr/lib/gnome-panel/mboxcheck|${LOCALBASE}/libexec/mboxcheck.py|' ${WRKSRC}/GNOME_MboxCheck.server
 	@${REINPLACE_CMD} 's|mbox.png|mboxcheck.png|' ${WRKSRC}/GNOME_MboxCheck.server
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mboxcheck.py ${X11BASE}/libexec
-	${INSTALL_SCRIPT} ${WRKSRC}/configmbox.py ${X11BASE}/libexec
-	${INSTALL_DATA} ${WRKSRC}/mboxcheck.png ${X11BASE}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/GNOME_MboxCheck.server ${X11BASE}/libdata/bonobo/servers
+	${INSTALL_SCRIPT} ${WRKSRC}/mboxcheck.py ${LOCALBASE}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/configmbox.py ${LOCALBASE}/libexec
+	${INSTALL_DATA} ${WRKSRC}/mboxcheck.png ${LOCALBASE}/share/gnome/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/GNOME_MboxCheck.server ${LOCALBASE}/libdata/bonobo/servers
 
 .include <bsd.port.mk>

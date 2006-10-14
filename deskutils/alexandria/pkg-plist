@@ -1,33 +1,54 @@
 bin/alexandria
 %%RUBY_SITELIBDIR%%/alexandria.rb
 %%RUBY_SITELIBDIR%%/alexandria/book.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/amadeus.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/amazon.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/bn.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/ibs_it.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/mcu.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/proxis.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/z3950.rb
+%%RUBY_SITELIBDIR%%/alexandria/config.rb
+%%RUBY_SITELIBDIR%%/alexandria/default_preferences.rb
 %%RUBY_SITELIBDIR%%/alexandria/execution_queue.rb
 %%RUBY_SITELIBDIR%%/alexandria/export_library.rb
 %%RUBY_SITELIBDIR%%/alexandria/import_library.rb
 %%RUBY_SITELIBDIR%%/alexandria/library.rb
-%%RUBY_SITELIBDIR%%/alexandria/preferences.rb
-%%RUBY_SITELIBDIR%%/alexandria/ui.rb
-%%RUBY_SITELIBDIR%%/alexandria/web_themes.rb
 %%RUBY_SITELIBDIR%%/alexandria/macui.rb
-%%RUBY_SITELIBDIR%%/alexandria/utils.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/AboutController.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/AddBookController.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/BookIconCell.m
+%%RUBY_SITELIBDIR%%/alexandria/macui/BookInfoController.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/BooksDataSource.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/ExportController.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/Icons.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/ImportController.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/Info.plist
+%%RUBY_SITELIBDIR%%/alexandria/macui/LibrariesDataSource.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/MainController.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/MainWindow.nib/classes.nib
+%%RUBY_SITELIBDIR%%/alexandria/macui/MainWindow.nib/info.nib
+%%RUBY_SITELIBDIR%%/alexandria/macui/MainWindow.nib/keyedobjects.nib
+%%RUBY_SITELIBDIR%%/alexandria/macui/Matrix.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/PreferencesController.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/RatingCell.m
+%%RUBY_SITELIBDIR%%/alexandria/macui/RatingField.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/TableView.rb
+%%RUBY_SITELIBDIR%%/alexandria/macui/TitledImageCell.m
+%%RUBY_SITELIBDIR%%/alexandria/macui/Utils.m
+%%RUBY_SITELIBDIR%%/alexandria/macui/main.m
+%%RUBY_SITELIBDIR%%/alexandria/macui/main.rb
+%%RUBY_SITELIBDIR%%/alexandria/preferences.rb
 %%RUBY_SITELIBDIR%%/alexandria/scanners.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers.rb
-%%RUBY_SITELIBDIR%%/alexandria/default_preferences.rb
-%%RUBY_SITELIBDIR%%/alexandria/config.rb
-%%RUBY_SITELIBDIR%%/alexandria/version.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers/mcu.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers/amazon.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers/bn.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers/proxis.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers/amadeus.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers/ibs_it.rb
-%%RUBY_SITELIBDIR%%/alexandria/book_providers/z3950.rb
 %%RUBY_SITELIBDIR%%/alexandria/scanners/cuecat.rb
-%%RUBY_SITELIBDIR%%/alexandria/ui/export_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/about_dialog.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/alert_dialog.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/book_properties_dialog.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/book_properties_dialog_base.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/completion_models.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/export_dialog.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/glade_base.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/icons.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/import_dialog.rb
@@ -35,61 +56,43 @@ bin/alexandria
 %%RUBY_SITELIBDIR%%/alexandria/ui/new_book_dialog.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/new_book_dialog_manual.rb
 %%RUBY_SITELIBDIR%%/alexandria/ui/preferences_dialog.rb
-%%RUBY_SITELIBDIR%%/alexandria/ui/completion_models.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/AddBookController.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/BookInfoController.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/BooksDataSource.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/Info.plist
-%%RUBY_SITELIBDIR%%/alexandria/macui/LibrariesDataSource.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/MainController.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/RatingCell.m
-%%RUBY_SITELIBDIR%%/alexandria/macui/TableView.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/TitledImageCell.m
-%%RUBY_SITELIBDIR%%/alexandria/macui/main.m
-%%RUBY_SITELIBDIR%%/alexandria/macui/main.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/AboutController.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/BookIconCell.m
-%%RUBY_SITELIBDIR%%/alexandria/macui/ExportController.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/Icons.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/ImportController.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/Matrix.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/PreferencesController.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/RatingField.rb
-%%RUBY_SITELIBDIR%%/alexandria/macui/Utils.m
-%%RUBY_SITELIBDIR%%/alexandria/macui/MainWindow.nib/classes.nib
-%%RUBY_SITELIBDIR%%/alexandria/macui/MainWindow.nib/info.nib
-%%RUBY_SITELIBDIR%%/alexandria/macui/MainWindow.nib/keyedobjects.nib
+%%RUBY_SITELIBDIR%%/alexandria/utils.rb
+%%RUBY_SITELIBDIR%%/alexandria/version.rb
+%%RUBY_SITELIBDIR%%/alexandria/web_themes.rb
 %%DATADIR%%/glade/book_properties_dialog.glade
+%%DATADIR%%/glade/main_app.glade
 %%DATADIR%%/glade/new_book_dialog.glade
 %%DATADIR%%/glade/preferences_dialog.glade
-%%DATADIR%%/glade/main_app.glade
 %%DATADIR%%/icons/alexandria.png
 %%DATADIR%%/icons/alexandria_small.png
 %%DATADIR%%/icons/book.png
+%%DATADIR%%/icons/book_icon.png
+%%DATADIR%%/icons/book_small.png
 %%DATADIR%%/icons/cuecat.png
 %%DATADIR%%/icons/cuecat_inactive.png
+%%DATADIR%%/icons/favorite_tag.png
+%%DATADIR%%/icons/less.png
 %%DATADIR%%/icons/library.png
 %%DATADIR%%/icons/library_small.png
-%%DATADIR%%/icons/star_set.png
-%%DATADIR%%/icons/star_unset.png
-%%DATADIR%%/icons/favorite_tag.png
-%%DATADIR%%/icons/book_small.png
-%%DATADIR%%/icons/book_icon.png
-%%DATADIR%%/icons/less.png
+%%DATADIR%%/icons/lookup.png
 %%DATADIR%%/icons/more.png
 %%DATADIR%%/icons/no_cover.png
+%%DATADIR%%/icons/star_set.png
+%%DATADIR%%/icons/star_unset.png
 %%DATADIR%%/icons/view_as_icons.png
 %%DATADIR%%/icons/view_as_list.png
-%%DATADIR%%/icons/lookup.png
 %%DATADIR%%/ui/menus.xml
 %%DATADIR%%/ui/popups.xml
 %%DATADIR%%/web-themes/clean/clean.css
 %%DATADIR%%/web-themes/clean/preview.jpg
-share/omf/alexandria/alexandria-C.omf
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
 share/gnome/help/alexandria/C/alexandria.xml
 share/gnome/help/alexandria/C/figures/alexandria_add_by_isbn_1.png
 share/gnome/help/alexandria/C/figures/alexandria_add_by_search_1.png
 share/gnome/help/alexandria/C/figures/alexandria_add_manually.png
+share/gnome/help/alexandria/C/figures/alexandria_add_z3950.png
 share/gnome/help/alexandria/C/figures/alexandria_edit_info.png
 share/gnome/help/alexandria/C/figures/alexandria_export_web_page.png
 share/gnome/help/alexandria/C/figures/alexandria_importing.png
@@ -98,25 +101,24 @@ share/gnome/help/alexandria/C/figures/alexandria_list_view.png
 share/gnome/help/alexandria/C/figures/alexandria_list_view_search.png
 share/gnome/help/alexandria/C/figures/alexandria_loaning.png
 share/gnome/help/alexandria/C/figures/alexandria_main_window.png
-share/gnome/help/alexandria/C/figures/alexandria_add_z3950.png
-share/locale/sv/LC_MESSAGES/alexandria.mo
-share/locale/fr/LC_MESSAGES/alexandria.mo
-share/locale/de/LC_MESSAGES/alexandria.mo
+share/gnome/help/alexandria/ChangeLog
+share/gnome/omf/alexandria/alexandria-C.omf
+share/locale/cs/LC_MESSAGES/alexandria.mo
 share/locale/cy/LC_MESSAGES/alexandria.mo
+share/locale/de/LC_MESSAGES/alexandria.mo
 share/locale/es/LC_MESSAGES/alexandria.mo
-share/locale/pl/LC_MESSAGES/alexandria.mo
-share/locale/pt_BR/LC_MESSAGES/alexandria.mo
+share/locale/fr/LC_MESSAGES/alexandria.mo
 share/locale/it/LC_MESSAGES/alexandria.mo
 share/locale/ja/LC_MESSAGES/alexandria.mo
+share/locale/pl/LC_MESSAGES/alexandria.mo
 share/locale/pt/LC_MESSAGES/alexandria.mo
-share/locale/cs/LC_MESSAGES/alexandria.mo
-@dirrm share/omf/alexandria
-@dirrm share/omf
+share/locale/pt_BR/LC_MESSAGES/alexandria.mo
+share/locale/sv/LC_MESSAGES/alexandria.mo
+@dirrm share/gnome/omf/alexandria
 @dirrm share/gnome/help/alexandria/C/figures
 @dirrm share/gnome/help/alexandria/C
 @dirrm share/gnome/help/alexandria
-@dirrm share/gnome/help
-@dirrm share/gnome
+@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%
 @dirrm %%DATADIR%%/web-themes/clean
 @dirrm %%DATADIR%%/web-themes
 @dirrm %%DATADIR%%/ui
@@ -129,6 +131,9 @@ share/locale/cs/LC_MESSAGES/alexandria.mo
 @dirrm %%RUBY_SITELIBDIR%%/alexandria/macui
 @dirrm %%RUBY_SITELIBDIR%%/alexandria/book_providers
 @dirrm %%RUBY_SITELIBDIR%%/alexandria
-@dirrm %%RUBY_SITELIBDIR%%
-@dirrm lib/ruby/site_ruby
-@dirrm lib/ruby
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

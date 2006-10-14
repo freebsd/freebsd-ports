@@ -7,6 +7,7 @@
 
 PORTNAME=	etherape
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +16,14 @@ MAINTAINER=	sbahra@kerneled.org
 COMMENT=	A graphical network traffic visualization tool for gnome
 
 USE_GETTEXT=	yes
-USE_GNOME=	libglade2 libgnomeui gnomehack
+USE_GNOME=	libglade2 libgnomeui gnomehack gnomeprefix
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		etherape.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(datadir)/omf|$$(prefix)/share/gnome/omf|g' ${WRKSRC}/doc/C/Makefile.in
 
 .include <bsd.port.mk>

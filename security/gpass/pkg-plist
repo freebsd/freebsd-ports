@@ -1,16 +1,17 @@
 bin/gpass
 bin/gpass-convert
-share/applications/gpass.desktop
-%%DATADIR%%/welcome.glade
-%%DATADIR%%/intergradation.glade
-%%DATADIR%%/authentication.glade
-%%DATADIR%%/window.glade
+share/gnome/applications/gpass.desktop
+share/gnome/pixmaps/gpass-icon.png
 %%DATADIR%%/attribute-editor.glade
-%%DATADIR%%/confirm-quit.glade
+%%DATADIR%%/authentication.glade
 %%DATADIR%%/change-master-password.glade
+%%DATADIR%%/confirm-quit.glade
+%%DATADIR%%/intergradation.glade
+%%DATADIR%%/lock.glade
 %%DATADIR%%/password-generator.glade
 %%DATADIR%%/preferences.glade
-%%DATADIR%%/lock.glade
-share/pixmaps/gpass-icon.png
-@dirrmtry share/applications
+%%DATADIR%%/welcome.glade
+%%DATADIR%%/window.glade
 @dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

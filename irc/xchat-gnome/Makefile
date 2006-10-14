@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	0.13
+PORTREVISION=	2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://releases.navi.cx/xchat-gnome/
 PKGNAMESUFFIX=	-gnome
@@ -18,11 +19,11 @@ COMMENT=	An IRC client for GNOME 2 (development version)
 LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
 		notify:${PORTSDIR}/devel/libnotify
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libgnomeui gnomedocutils desktopfileutils
+USE_GNOME=	gnomehack gnomeprefix libgnomeui gnomedocutils desktopfileutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -32,7 +33,7 @@ INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
 .if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
 USE_GNOME+=	gconf2
 GCONF_SCHEMAS+=	xchat_gnome_url_handler.schemas

@@ -6,6 +6,7 @@
 
 PORTNAME=		gnomebaker
 PORTVERSION=		0.5.1
+PORTREVISION=		1
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -17,7 +18,7 @@ COMMENT=		A CD/DVD recording GUI for Gnome
 OPTIONS=		DVD "Enable DVD support" off \
 			CJK "Use cdrtools-cjk instead of cdrtools" off
 
-USE_X_PREFIX=		yes
+USE_XLIB=		yes
 USE_BZIP2=		yes
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
 GNU_CONFIGURE=		yes

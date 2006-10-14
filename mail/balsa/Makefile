@@ -3,7 +3,7 @@
 # Whom:					Glenn Johnson <gljohns@bellsouth.net>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/mail/balsa/Makefile,v 1.1 2006/03/05 06:57:58 marcus Exp $
+#   $MCom: ports/mail/balsa/Makefile,v 1.7 2006/07/27 17:09:22 mezz Exp $
 #
 
 PORTNAME=	balsa
@@ -23,7 +23,7 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
@@ -52,7 +52,7 @@ OPTIONS=	LDAP "Enable LDAP support" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GPG)
-LIB_DEPENDS+=		gpgme.17:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.15:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
 .endif
 
@@ -66,7 +66,7 @@ LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--with-gtkspell
 .endif
 
-.if ${PREFIX}==${X11BASE}
+.if ${PREFIX}==${LOCALBASE}
 PLIST_SUB+=	GTKICON="@comment "
 .else
 PLIST_SUB+=	GTKICON=""
@@ -81,7 +81,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
-	@${X11BASE}/bin/gtk-update-icon-cache -f -q --ignore-theme-index \
+	@${LOCALBASE}/bin/gtk-update-icon-cache -f -q --ignore-theme-index \
 		${PREFIX}/share/gnome/balsa/hicolor
 
 .include <bsd.port.post.mk>

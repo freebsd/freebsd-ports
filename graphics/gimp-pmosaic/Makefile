@@ -7,7 +7,7 @@
 
 PORTNAME=	pmosaic
 PORTVERSION=	1.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kirchgessner.net/pub/gimp-1.2/
 PKGNAMEPREFIX=	gimp-
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	gimp-config:${PORTSDIR}/graphics/gimp1
 RUN_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_X_PREFIX=	yes
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -o pmosaic `gimp-config --cflags` \

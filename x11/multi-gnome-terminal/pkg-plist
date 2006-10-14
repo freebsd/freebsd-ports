@@ -185,4 +185,3 @@ share/gnome/pixmaps/multignometerm.png
 @dirrm share/gnome/help/multi-gnome-terminal/C/figures
 @dirrm share/gnome/help/multi-gnome-terminal/C
 @dirrm share/gnome/help/multi-gnome-terminal
-@unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true

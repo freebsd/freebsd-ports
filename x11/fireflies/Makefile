@@ -7,20 +7,22 @@
 
 PORTNAME=	fireflies
 PORTVERSION=	2.07
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://somewhere.fscked.org/fireflies/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Fireflies is a extention of xscreensaver
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/GL" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--with-bindir=${X11BASE}/bin/xscreensaver-hacks --with-confdir=${X11BASE}/share/xscreensaver/config
+CONFIGURE_ARGS=	--with-bindir=${LOCALBASE}/bin/xscreensaver-hacks \
+		--with-confdir=${LOCALBASE}/share/xscreensaver/config
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>

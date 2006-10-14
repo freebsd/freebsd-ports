@@ -7,7 +7,7 @@
 
 PORTNAME=	libxfce4mcs
 PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -20,8 +20,8 @@ COMMENT=	XFce 4 settings management library used by most XFce 4 modules
 
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util
 
+USE_XLIB=	yes
 USE_GNOME=	glib20 gnomehack
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

@@ -48,6 +48,8 @@ pre-configure:
 		-e 's|CFLAGS="-O2"|#CFLAGS="-O2"|;s|Werror ansi pedantic-errors||'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's|-pedantic-errors||' \
+	    	${WRKSRC}/src/extraGtkFunctions/Makefile.in
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e 's|etc 	po 	Documentation|etc 	Documentation|'	\
 		${WRKSRC}/Makefile.in

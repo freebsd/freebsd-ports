@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bluecurve-themes
-PORTREVISION?=	0
+PORTREVISION?=	3
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jylefort@FreeBSD.org
@@ -21,7 +21,7 @@ EXTRACT_ONLY=	# empty
 
 # note: gtk-/icon-/metacity- are brought in by gnome-
 RUN_DEPENDS=	${X11BASE}/lib/X11/icons/Bluecurve/cursors/X_cursor:${PORTSDIR}/x11-themes/cursor-bluecurve-theme \
-		${X11BASE}/share/themes/Bluecurve/index.theme:${PORTSDIR}/x11-themes/gnome-bluecurve-theme \
+		${LOCALBASE}/share/themes/Bluecurve/index.theme:${PORTSDIR}/x11-themes/gnome-bluecurve-theme \
 		${LINUXBASE}/usr/share/themes/Bluecurve/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/linux-gtk-bluecurve-theme \
 		${X11BASE}/lib/plugins/styles/bluecurve.so:${PORTSDIR}/x11-themes/qt-bluecurve-theme \
 		${X11BASE}/share/xmms/Skins/Bluecurve-xmms.zip:${PORTSDIR}/x11-themes/xmms-bluecurve-theme
@@ -42,7 +42,6 @@ DISTFILES=	redhat-artwork-${PORTVERSION}-${RPMREVISION}.src.rpm:fedora,local
 EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC=		${WRKDIR}/redhat-artwork-${PORTVERSION}
-PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 
 # the slave ports use their own pkg files and dirs
 DESCR?=		${.CURDIR}/pkg-descr

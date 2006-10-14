@@ -30,5 +30,23 @@ share/locale/zh_CN/LC_MESSAGES/gtkspell.mo
 share/locale/zh_TW/LC_MESSAGES/gtkspell.mo
 @dirrm include/gtkspell-2.0/gtkspell
 @dirrm include/gtkspell-2.0
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
 @dirrmtry share/locale/rm/LC_MESSAGES
 @dirrmtry share/locale/rm
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

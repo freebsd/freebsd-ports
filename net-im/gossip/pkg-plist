@@ -108,8 +108,6 @@ share/locale/vi/LC_MESSAGES/gossip.mo
 share/locale/zh_CN/LC_MESSAGES/gossip.mo
 share/locale/zh_HK/LC_MESSAGES/gossip.mo
 share/locale/zh_TW/LC_MESSAGES/gossip.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/omf/gossip
 @dirrm share/gnome/help/gossip/sv/figures
 @dirrm share/gnome/help/gossip/sv
@@ -119,3 +117,25 @@ share/locale/zh_TW/LC_MESSAGES/gossip.mo
 @dirrm share/gnome/sounds/gossip
 @dirrm share/gnome/gossip/protocols
 @dirrm share/gnome/gossip
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

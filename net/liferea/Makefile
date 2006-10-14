@@ -7,6 +7,7 @@
 
 PORTNAME=	liferea
 PORTVERSION=	1.0.23
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	liferea
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GECKO=	mozilla firefox
 USE_GNOME=	gnomeprefix gnomehack libgtkhtml
 USE_GMAKE=	yes
@@ -62,7 +63,7 @@ PLIST_SUB+=	XUL="@comment "
 .ifdef WITHOUT_DBUS
 CONFIGURE_ARGS+=--disable-dbus
 .else
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .endif
 
 post-patch:

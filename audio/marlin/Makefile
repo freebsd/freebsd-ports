@@ -6,7 +6,7 @@
 
 PORTNAME=	marlin
 PORTVERSION=	0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,9 @@ COMMENT=	Sample editor for GNOME 2 using Gstreamer backend
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USE_X_PREFIX=	yes
+BROKEN= does not build with new nautilus-cd-burner
+
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack libgnomeui nautiluscdburner
 USE_GSTREAMER80=	flac gconf mad vorbis

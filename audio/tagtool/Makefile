@@ -3,11 +3,11 @@
 # Whom:                             Anthony Ginepro <anthony.ginepro@laposte.net>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/audio/tagtool/Makefile,v 1.1 2006/09/30 01:15:37 ahze Exp $
 
 PORTNAME=	tagtool
 PORTVERSION=	0.12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +18,8 @@ COMMENT=	A GNOME MP3/Ogg file tagger
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-USE_X_PREFIX=	yes
-
+USE_XLIB=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack libglade2 gnomehier

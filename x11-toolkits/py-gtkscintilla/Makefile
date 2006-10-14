@@ -3,11 +3,11 @@
 # Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-toolkits/py-gtkscintilla/Makefile,v 1.1 2006/10/07 15:53:59 ahze Exp $
 
 PORTNAME=	py-gtkscintilla
 PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moleskine

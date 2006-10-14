@@ -3,11 +3,11 @@
 # Whom:				Mark Pulford <mark@kyne.com.au>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/graphics/imagesort/Makefile,v 1.1 2006/10/04 13:18:57 ahze Exp $
 
 PORTNAME=	imagesort
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible X utility for managing many image files
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
+CFLAGS:=	${CFLAGS} -I${LOCALBASE}/include
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imagesort ${PREFIX}/bin

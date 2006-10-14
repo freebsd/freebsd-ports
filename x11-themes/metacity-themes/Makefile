@@ -18,7 +18,7 @@ EXTRACT_ONLY=	# Empty
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Meta-port for Gnome Metacity themes
 
-RUN_DEPENDS=	${X11BASE}/share/gnome/themes/microgui/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-microgui
+RUN_DEPENDS=	${LOCALBASE}/share/gnome/themes/microgui/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-microgui
 
 NO_BUILD=	yes
 

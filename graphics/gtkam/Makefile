@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkam
 PORTVERSION=	0.1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -18,7 +18,7 @@ COMMENT=	Download and view files from various digital cameras
 LIB_DEPENDS=	exif-gtk.5:${PORTSDIR}/graphics/libexif-gtk \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 GNU_CONFIGURE=	yes
@@ -29,7 +29,7 @@ MAN1=		gtkam.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/lib/libgimp-2.0.so) && !defined(WITHOUT_GIMP)
+.if exists(${LOCALBASE}/lib/libgimp-2.0.so) && !defined(WITHOUT_GIMP)
 WITH_GIMP=	yes
 .endif
 

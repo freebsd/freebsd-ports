@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.15.10
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,23 +15,22 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VRML97 runtime and browser ("lookat")
 
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla	\
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla	\
 		${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
 		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla
 
 USE_GL=		yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gtk20
 USE_SDL=	sdl
 USE_GCC=	3.4
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -largp -Wl,--rpath -Wl,${X11BASE}/lib/mozilla -L${X11BASE}/lib -lXext" \
-		XPIDLFLAGS="-I${X11BASE}/share/idl/mozilla"
+		LDFLAGS="-L${LOCALBASE}/lib -largp -Wl,--rpath -Wl,${LOCALBASE}/lib/mozilla -L${X11BASE}/lib -lXext" \
+		XPIDLFLAGS="-I${LOCALBASE}/share/idl/mozilla"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

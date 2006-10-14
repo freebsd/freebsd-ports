@@ -7,7 +7,7 @@
 
 PORTNAME=		lindele
 PORTVERSION=		0.1.1
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		audio
 MASTER_SITES=		http://download.gna.org/${PORTNAME}/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=		musicbox-tag-editor:${PORTSDIR}/audio/musicbox-tag-editor
 LIB_DEPENDS=		vorbis:${PORTSDIR}/audio/libvorbis \
 			tag:${PORTSDIR}/audio/taglib
 
-USE_X_PREFIX=		yes
+USE_XLIB=		yes
 USE_GNOME=		gnomehack gnomeprefix libgnomeui
 USE_GSTREAMER80=		gconf
 GNU_CONFIGURE=		yes

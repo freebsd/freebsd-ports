@@ -7,7 +7,7 @@
 
 PORTNAME=	silky
 PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -31,7 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 USE_GNOME=	gtk20 libglade2 gnomelibs
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_X_PREFIX=	yes
 
 post-patch:
 	@${PERL} -pi -e 's/ include / /' ${WRKSRC}/Makefile.in

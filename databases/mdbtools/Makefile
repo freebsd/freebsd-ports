@@ -7,7 +7,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,25 +19,24 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk	# To build man-pages
 
 USE_BISON=	yes
 USE_GNOME=	glib20
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1
 
-.if defined(WITH_GNOME) || exists(${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc)
-USE_X_PREFIX=	yes
-USE_GNOME+=	gnomeprefix gnomehack libgnomeui
-PLIST_SUB+=	GNOME:=""
-PKGNAMESUFFIX=	-gnome
-.else
-PLIST_SUB+=	GNOME:="@comment "
-.endif
-
 .include <bsd.port.pre.mk>
 
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_XLIB=	yes
+USE_GNOME+=	gnomeprefix gnomehack libgnomeui
+PKGNAMESUFFIX=	-gnome
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' \
+		${WRKSRC}/doc/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:

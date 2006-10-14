@@ -7,7 +7,7 @@
 
 PORTNAME=		regexxer
 PORTVERSION=		0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/:pcre \
@@ -25,13 +25,15 @@ LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 			glademm-2.4:${PORTSDIR}/devel/libglademm24
 
 USE_BZIP2=		yes
-USE_X_PREFIX=		yes
+USE_XLIB=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack gnomeprefix gnometarget intltool intlhack
 CONFIGURE_ARGS=		PCRE_CONFIG="${PCRE_WRKDIR}/.install/bin/pcre-config"
 CONFIGURE_ENV=		CPPFLAGS="-I${PCRE_WRKDIR}/.install/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${PCRE_WRKDIR}/.install/lib -L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=		regexxer.schemas
 
 PCRE_NAME=		pcre
 PCRE_VERSION=		4.5

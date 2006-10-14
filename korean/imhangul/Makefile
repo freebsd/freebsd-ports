@@ -7,7 +7,7 @@
 
 PORTNAME=	imhangul
 PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean x11-toolkits
 MASTER_SITES=	http://kldp.net/frs/download.php/2808/
 
@@ -15,7 +15,7 @@ MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	GTK+-2.0 hangul input module
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

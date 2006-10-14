@@ -3,11 +3,12 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/galeon/Makefile,v 1.7 2005/11/28 17:45:54 ahze Exp $
+#    $MCom: ports/www/galeon/Makefile,v 1.9 2006/07/27 18:09:47 mezz Exp $
 #
 
 PORTNAME=	galeon
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -19,7 +20,7 @@ COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
 USE_GECKO=	firefox mozilla seamonkey xulrunner
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2$//}-${PORTVERSION:S/a$//}
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils \
 		gnomedesktop
@@ -54,7 +55,7 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|@prefix@/@DATADIRNAME@|@datadir@|g' \
 		${WRKSRC}/ui/galeon-bookmarks-editor-ui.xml.in
-	@${REINPLACE_CMD} -e 's|/usr/lib/mozilla/plugins|${X11BASE}/lib/browser_plugins:${X11BASE}/lib/browser_linux_plugins|' \
+	@${REINPLACE_CMD} -e 's|/usr/lib/mozilla/plugins|${LOCALBASE}/lib/browser_plugins:${X11BASE}/lib/browser_plugins:${LOCALBASE}/lib/browser_linux_plugins:${X11BASE}/lib/browser_linux_plugins|' \
 		${WRKSRC}/mozilla/mozilla-embed-shell.cpp
 
 .include <bsd.port.post.mk>

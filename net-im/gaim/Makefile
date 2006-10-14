@@ -7,7 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	1.5.0
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,9 @@ COMMENT=	Multi-protocol instant messaging client
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
-CONFLICTS?=	ja-gaim-[0-9]*
+CONFLICTS?=	ja-gaim-[0-9]* gaim-devel-2*
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
@@ -81,6 +81,8 @@ CONFIGURE_ARGS+=	--disable-nss
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3+=			Gaim.3
 .else
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=		PERL:="@comment "

@@ -7,7 +7,7 @@
 
 PORTNAME=	bangexec
 PORTVERSION=	1.3.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://thefnords.googlepages.com/
 PKGNAMEPREFIX=	gaim-
@@ -20,7 +20,6 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 DEPRECATED=	The author has taken down his site and has ceased developing this program
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

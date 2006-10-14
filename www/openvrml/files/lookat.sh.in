@@ -1,4 +1,4 @@
 #! /bin/sh
 # $FreeBSD$
 
-LD_LIBRARY_PATH=%%X11BASE%%/lib/mozilla %%PREFIX%%/bin/lookat $1
+LD_LIBRARY_PATH=%%LOCALBASE%%/lib/mozilla %%PREFIX%%/bin/lookat $1

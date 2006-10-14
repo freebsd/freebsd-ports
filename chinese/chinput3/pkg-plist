@@ -29,3 +29,5 @@ share/locale/zh_CN/LC_MESSAGES/zwincontrol.mo
 @dirrm lib/Chinput/im/bin
 @dirrm lib/Chinput/im
 @dirrm lib/Chinput
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN

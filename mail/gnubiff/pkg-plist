@@ -30,10 +30,13 @@ bin/gnubiff
 %%SHAREDIR%%/pixmaps/gnubiff.png
 %%WITH_GNOME%%%%BONOBODIR%%/servers/GNOME_gnubiffApplet.server
 %%WITH_GNOME%%%%SHAREDIR%%/gnome-2.0/ui/GNOME_gnubiffApplet.xml
-@dirrmtry share/locale/fr_CA/LC_MESSAGES
-@dirrmtry share/locale/fr_CA
 @dirrmtry %%BONOBODIR%%/servers
 @dirrmtry %%BONOBODIR%%
 @dirrmtry %%SHAREDIR%%/gnome-2.0/ui
 @dirrmtry %%SHAREDIR%%/gnome-2.0
+@dirrmtry share/pixmaps
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
+@dirrmtry share/locale/fr_CA/LC_MESSAGES
+@dirrmtry share/locale/fr_CA
 @dirrm %%SHAREDIR%%/gnubiff

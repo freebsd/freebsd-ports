@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	20040803
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-remote
@@ -16,15 +17,14 @@ MAINTAINER=	klammer@webonaut.com
 COMMENT=	Wrapper scripts for firefox web browser
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 
 UTF8_HACK=	no
 FIREFOX_REMOTE=	${PORTNAME}${PKGNAMESUFFIX}
 THUNDERBIRD_REMOTE=	thunderbird${PKGNAMESUFFIX}
 
 OPTIONS=UTF8_LOCALE "Use UTF8 locale (read Makefile for details)" off \
-	MENU_FIREFOX "Add GNOME menu entry for firefox" off \
-	MENU_THUNDERBIRD "Add GNOME menu entry for thunderbird" off
+	MENU_FIREFOX "Add menu entry for firefox" off \
+	MENU_THUNDERBIRD "Add menu entry for thunderbird" off
 
 .include <bsd.port.pre.mk>
 
@@ -62,15 +62,15 @@ do-install:
 		${PREFIX}/bin/${THUNDERBIRD_REMOTE}
 .if defined (WITH_MENU_FIREFOX)
 	${INSTALL_DATA} ${WRKSRC}/mozilla_firefox.desktop \
-		${X11BASE}/share/gnome/applications/
+		${X11BASE}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/mozilla_firefox.png \
-		${X11BASE}/share/gnome/pixmaps/
+		${X11BASE}/share/pixmaps/
 .endif
 .if defined (WITH_MENU_THUNDERBIRD)
 	${INSTALL_DATA} ${WRKSRC}/mozilla_thunderbird.desktop \
-		${X11BASE}/share/gnome/applications/
+		${X11BASE}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/mozilla_thunderbird.png \
-		${X11BASE}/share/gnome/pixmaps/
+		${X11BASE}/share/pixmaps/
 .endif
 	${CAT} ${PKGMESSAGE}
 

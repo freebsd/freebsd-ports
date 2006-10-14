@@ -4,11 +4,11 @@
 # Whom:				ijliao
 #
 # $FreeBSD$
-#
+#    $MCom: ports/net-im/ickle/Makefile,v 1.1 2006/10/04 15:40:14 ahze Exp $
 
 PORTNAME=	ickle
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
-		--with-gtkmm-prefix=${X11BASE}
+		--with-gtkmm-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="`${LOCALBASE}/bin/sigc-config --cflags`"
 
 post-patch:

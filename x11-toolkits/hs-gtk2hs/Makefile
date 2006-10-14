@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2hs
 PORTVERSION=	0.9.10
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +18,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A GTK2 Binding for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		${X11BASE}/lib/mozilla/libxpcom.so:${PORTSDIR}/www/mozilla
+		${LOCALBASE}/lib/mozilla/libxpcom.so:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	gtk20 libglade2 gtksourceview gconf2

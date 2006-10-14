@@ -1,17 +1,22 @@
 bin/fyre
+share/applications/fyre.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%WITH_FDO%%share/applications/fyre.desktop
-share/fyre/animation-render.glade
-share/fyre/explorer.glade
-share/fyre/metadata-emblem.png
-share/fyre/about-box.fa
-share/fyre/fyre-48x48.png
-share/fyre/fyre-32x32.png
-share/fyre/fyre-16x16.png
-%%WITH_FDO%%share/pixmaps/fyre-48x48.png
+%%DATADIR%%/about-box.fa
+%%DATADIR%%/animation-render.glade
+%%DATADIR%%/explorer.glade
+%%DATADIR%%/fyre-16x16.png
+%%DATADIR%%/fyre-32x32.png
+%%DATADIR%%/fyre-48x48.png
+%%DATADIR%%/metadata-emblem.png
 share/icons/hicolor/48x48/mimetypes/application-x-fyre-animation.png
-share/mime/packages/fyre.xml
 share/mime/application/x-fyre-animation.xml
-@dirrm share/fyre
+share/mime/packages/fyre.xml
+share/pixmaps/fyre-48x48.png
+@dirrmtry share/pixmaps
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%WITH_FDO%%@dirrmtry share/applications
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

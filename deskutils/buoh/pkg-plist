@@ -11,6 +11,7 @@ share/applications/buoh.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/pixmaps/buoh64x64.png
+@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps

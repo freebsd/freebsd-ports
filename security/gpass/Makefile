@@ -7,7 +7,7 @@
 
 PORTNAME=	gpass
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	http://projects.netlab.jp/gpass/release/
 
@@ -17,14 +17,14 @@ COMMENT=	A password manager for GNOME2
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
 		mhash:${PORTSDIR}/security/mhash
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 USE_GMAKE=	yes
 
-MAN1=	gpass.1 gpass.ja.1 gpass-convert.1 gpass-convert.ja.1
+MAN1=		gpass.1 gpass.ja.1 gpass-convert.1 gpass-convert.ja.1
 
-USE_GNOME=	gtk20 libgnomeui intltool libglade2
+USE_GNOME=	gnomehack gnomeprefix gtk20 libgnomeui intltool libglade2
 GCONF_SCHEMAS=	gpass.schemas
 
 .include <bsd.port.pre.mk>
@@ -32,5 +32,12 @@ GCONF_SCHEMAS=	gpass.schemas
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|{packageprefix}/share|{datadir}|g' \
+		${WRKSRC}/configure
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

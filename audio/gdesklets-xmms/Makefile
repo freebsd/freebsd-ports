@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gdesklets.zencomputer.ca/
 PKGNAMEPREFIX=	gdesklets-
@@ -22,7 +22,7 @@ DEPRECATED=	Disappeared from the internet
 EXPIRATION_DATE=2006-12-07
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 NAME=		XMMS
 WRKSRC=		${WRKDIR}/${NAME}

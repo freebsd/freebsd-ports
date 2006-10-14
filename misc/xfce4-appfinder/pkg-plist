@@ -14,6 +14,7 @@ share/xfce4/doc/he/images/appfinder-item-popup.png
 share/xfce4/doc/he/images/default_appfinder.png
 share/xfce4/doc/he/xfce4-appfinder.html
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr/images
@@ -22,4 +23,3 @@ share/xfce4/doc/he/xfce4-appfinder.html
 @dirrmtry share/xfce4/doc/he
 @dirrmtry share/xfce4/doc
 @dirrmtry share/xfce4
-

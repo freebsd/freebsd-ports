@@ -7,6 +7,7 @@
 
 PORTNAME=	enigmail
 PORTVERSION=	0.94.1
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/downloads/src/
 PKGNAMEPREFIX?=	thunderbird-
@@ -33,13 +34,12 @@ GECKO_PORTDIR=	www/${GECKO}
 GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/mozilla
 WRKSRC=		${WRKDIR}/mozilla
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 USE_GNOME=	gtk20 libidl desktopfileutils
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include
 
 XPI_FILE=	${DISTNAME}-${GECKO}-freebsd-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}

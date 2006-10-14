@@ -24,3 +24,9 @@ share/locale/tr/LC_MESSAGES/timer-applet.mo
 @dirrm share/gnome/help/timer-applet
 @dirrm share/gnome/omf/timer-applet
 @dirrm share/gnome/pixmaps/timer-applet
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi

@@ -7,7 +7,7 @@
 
 PORTNAME=	meld
 PORTVERSION=	0.9.4.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -18,7 +18,6 @@ COMMENT=	GNOME 2 visual diff and merge tool
 USE_BZIP2=	yes
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_GMAKE=	yes
 

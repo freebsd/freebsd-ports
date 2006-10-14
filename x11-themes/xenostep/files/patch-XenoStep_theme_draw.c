@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- XenoStep_theme_draw.c	2002/08/30 16:16:48	1.1
 +++ XenoStep_theme_draw.c	2002/08/30 16:17:08
 @@ -604,7 +604,7 @@

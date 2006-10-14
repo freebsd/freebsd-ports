@@ -3,10 +3,12 @@
 # Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/irc/xchat-mircryption/Makefile,v 1.2 2006/10/10 20:22:11 mezz Exp $
 #
 
 PORTNAME=	mircryption
 DISTVERSION=	1.1.27
+PORTREVISION=	1
 CATEGORIES=	irc security
 MASTER_SITES=	http://mircryption.sourceforge.net/Downloads/
 PKGNAMEPREFIX=	xchat-
@@ -17,7 +19,6 @@ COMMENT=	A free encryption add-on for the popular XChat irc client
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 ALL_TARGET=	freebsd
 CFLAGS+=	-fPIC

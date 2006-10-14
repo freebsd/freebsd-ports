@@ -7,7 +7,7 @@
 
 PORTNAME=	diradmin
 PORTVERSION=	1.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://diradmin.open-it.org/releases/ \
 		http://diradmin.open-it.org/releases/old/
@@ -19,7 +19,6 @@ COMMENT=	A smart LDAP directory management tool
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
 USE_OPENLDAP=	yes
 USE_OPENSSL=	yes

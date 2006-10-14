@@ -4,11 +4,12 @@
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/editors/poedit/Makefile,v 1.2 2006/10/05 07:03:09 mezz Exp $
 #
 
 PORTNAME=	poedit
 PORTVERSION=	1.3.5
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		wx_gtk2u_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
 
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig

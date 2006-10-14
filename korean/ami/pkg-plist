@@ -70,3 +70,5 @@ share/locale/ko/LC_MESSAGES/ami.mo
 @dirrm %%DATADIR%%/ami/pix/woody
 @dirrm %%DATADIR%%/ami/pix
 @dirrm %%DATADIR%%/ami
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko

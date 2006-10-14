@@ -3,19 +3,18 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/gnome-look/Makefile,v 1.1 2006/07/19 19:56:14 ahze Exp $
 
 PORTNAME=	gnome-look
 PORTVERSION=	0.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK theme engine designed to look nice with the GNOME desktop environment
+COMMENT=	A GTK theme engine designed to look nice with the GNOME desktop
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes

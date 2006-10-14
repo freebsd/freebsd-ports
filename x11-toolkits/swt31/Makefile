@@ -7,6 +7,7 @@
 
 PORTNAME=	swt
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200509290840
@@ -51,15 +52,12 @@ DISTNAME=	swt-${PORTVERSION}-gtk-linux-x86
 .endif
 
 .if !defined(WITHOUT_MOZILLA)
+USE_GECKO=	firefox mozilla seamonkey xulrunner
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 PLIST_FILES+=	lib/libswt-mozilla-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_mozilla
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA} != "mozilla"
-BROWSER=	${WITH_MOZILLA}
-BUILD_DEPENDS+=	${BROWSER}:${PORTSDIR}/www/${BROWSER}
-.else
-BUILD_DEPENDS+=	mozilla:${PORTSDIR}/www/mozilla
-BROWSER=	mozilla
-.endif
+BROWSER=	${GECKO}
+MAKE_ENV+=	GECKO_CONFIG="${GECKO_CONFIG}"
 .else
 BROWSER=
 MAKE_MOZILLA=
@@ -78,7 +76,8 @@ MAKE_ENV+=	BROWSER="${BROWSER}" \
 		MAKE_GNOME=${MAKE_GNOME} \
 		MAKE_MOZILLA=${MAKE_MOZILLA} \
 		MAKE_CAIRO=${MAKE_CAIRO} \
-		MACHINE_ARCH=${MACHINE_ARCH}
+		MACHINE_ARCH=${MACHINE_ARCH} \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")

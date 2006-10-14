@@ -30,5 +30,3 @@ share/locale/it/LC_MESSAGES/pureadmin.mo
 share/locale/sv/LC_MESSAGES/pureadmin.mo
 @dirrm share/gnome/pureadmin/docs
 @dirrm share/gnome/pureadmin
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24

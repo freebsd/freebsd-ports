@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	12.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -21,8 +21,7 @@ LIB_DEPENDS=	iiimp.1:${PORTSDIR}/textproc/iiimf-protocol-lib \
 
 ONLY_FOR_ARCHS=	i386
 
-USE_X_PREFIX=	yes
-
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
@@ -59,7 +58,7 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
 
 post-install:
-	${X11BASE}/bin/gtk-query-immodules-2.0 > \
-		${X11BASE}/etc/gtk-2.0/gtk.immodules
+	${LOCALBASE}/bin/gtk-query-immodules-2.0 > \
+		${LOCALBASE}/etc/gtk-2.0/gtk.immodules
 
 .include <bsd.port.post.mk>

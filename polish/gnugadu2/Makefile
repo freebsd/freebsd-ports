@@ -3,9 +3,11 @@
 # Whom: 		smyru@heron.pl
 #
 # $FreeBSD$
+#
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.2.9
+PORTREVISION=	2
 CATEGORIES=	polish net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
@@ -68,7 +70,7 @@ WITH_ESOUND=	yes
 WITH_DBUS=	yes
 .endif
 
-.if exists(${X11BASE}/lib/libgtkspell.so) && !defined(WITHOUT_GTKSPELL)
+.if exists(${LOCALBASE}/lib/libgtkspell.so) && !defined(WITHOUT_GTKSPELL)
 WITH_GTKSPELL=	yes
 .endif
 
@@ -114,7 +116,7 @@ CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
 .if defined(WITH_DBUS)
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus \
 			--with-dbus-dir=${PREFIX}/share/dbus-1/services
 PLIST_SUB+=	DBUS:=""
@@ -171,8 +173,8 @@ post-patch:
 
 post-install:
 .if (${HAVE_GNOME:Mgnomehier}!="")
-	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${PREFIX}/share/gnome/apps/Internet
-	${LN} -sf ${PREFIX}/share/pixmaps/gg2.png ${PREFIX}/share/gnome/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/gnome/apps/Internet
+	${LN} -sf ${PREFIX}/share/pixmaps/gg2.png ${LOCALBASE}/share/gnome/pixmaps
 .endif
 .if exists(${LOCALBASE}/lib/libkdecore.so)
 	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/applnk/Internet

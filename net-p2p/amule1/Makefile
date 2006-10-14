@@ -3,11 +3,11 @@
 # Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.com>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/net-p2p/amule1/Makefile,v 1.1 2006/10/04 23:22:32 ahze Exp $
 
 PORTNAME=	aMule
 PORTVERSION=	1.2.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://download.berlios.de/amule/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +25,6 @@ LATEST_LINK=	aMule1
 CONFLICTS=	aMule-2.* aMule-devel-[0-9]*
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes

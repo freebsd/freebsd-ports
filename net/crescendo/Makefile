@@ -3,10 +3,12 @@
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
+#    $MCom: ports/net/crescendo/Makefile,v 1.2 2006/10/07 16:29:01 mezz Exp $
+#
 
 PORTNAME=	crescendo
 PORTVERSION=	1.1.7
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	net gnome
 # Master Site broken
 #MASTER_SITES=	http://crescendo.lyrical.net/files/
@@ -18,7 +20,6 @@ COMMENT=	A gnome frontend for tinyfuge
 
 RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-compile-warnings=yes
@@ -28,7 +29,7 @@ CFLAGS+=	-g
 PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
 MODIFY=		Makefile.in data/Makefile.in
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomelibs
 
 post-patch:

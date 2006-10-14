@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-splashscreen-manager
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.miketech.net/gnome-art/download/
 DISTNAME=	gnome-art-${PORTVERSION}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/gnome-art/${PORTNAME}
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-GSPLASH=	${X11BASE}/share/gnome/pixmaps/splash
+GSPLASH=	${LOCALBASE}/share/gnome/pixmaps/splash
 SPLASH_ICON=	${DATADIR}/glade/gnome-graphics.png
 
 post-patch:

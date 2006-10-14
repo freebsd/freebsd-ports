@@ -3,11 +3,12 @@
 # Whom:				Koop Mast <einekoai@chello.nl>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/www/bluefish/Makefile,v 1.2 2005/08/21 20:03:36 kwm Exp $
+#   $MCom: ports/www/bluefish/Makefile,v 1.1 2006/09/30 03:21:27 ahze Exp $
 #
 
 PORTNAME=	bluefish
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.wur.nl/~olivier/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
@@ -30,9 +31,9 @@ RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
 
 DOWNLOAD=	downloads
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehier gtk20 gnomevfs2
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

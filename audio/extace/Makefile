@@ -7,7 +7,7 @@
 
 PORTNAME=	extace
 PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	An Audio Visualization plugin for the X Window System
 
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	esound imlib gnomehack gnometarget gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -3,11 +3,12 @@
 # Whom:                 Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgdamm/Makefile,v 1.3 2005/10/14 20:39:55 adamw Exp $
+#   $MCom: ports/databases/libgdamm/Makefile,v 1.5 2006/07/25 18:12:02 mezz Exp $
 #
 
 PORTNAME=	libgdamm
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.3
@@ -20,7 +21,7 @@ LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgda2

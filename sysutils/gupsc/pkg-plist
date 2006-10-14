@@ -3,3 +3,5 @@ share/locale/no/LC_MESSAGES/gupsc.mo
 share/gnome/pixmaps/gupsc/ups.png
 share/gnome/apps/System/gupsc.desktop
 @dirrm share/gnome/pixmaps/gupsc
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no

@@ -7,7 +7,7 @@
 
 PORTNAME=	py-gnome
 PORTVERSION=	1.4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.4
@@ -26,7 +26,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gtkhtml gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
-		--with-gnome-config=${X11BASE}/bin/gnome-config		\
+		--with-gnome-config=${LOCALBASE}/bin/gnome-config		\
 		--with-gtkhtml
 
 EG_SRC_DIR=	${WRKSRC}/pygnome/examples

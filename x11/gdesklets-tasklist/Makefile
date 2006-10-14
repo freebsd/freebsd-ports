@@ -7,7 +7,7 @@
 
 PORTNAME=	tasklist
 PORTVERSION=	0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://gdesklets.zencomputer.ca/
 PKGNAMEPREFIX=	gdesklets-
@@ -18,7 +18,7 @@ COMMENT=	Displays the GNOME tasklist and floats above the other windows
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 NAME=		tasklist
 DATADIR=	${PREFIX}/share/gnome

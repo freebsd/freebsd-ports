@@ -7,7 +7,7 @@
 
 PORTNAME=	eroaster
 PORTVERSION=	2.2.0.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eroaster
@@ -30,7 +30,6 @@ BUILD_DEPENDS+=	bchunk:${PORTSDIR}/sysutils/bchunk \
 		${PYTHON_SITELIBDIR}/cdrom.so:${PORTSDIR}/audio/py-cddb
 .endif
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 

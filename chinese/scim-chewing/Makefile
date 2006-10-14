@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-chewing
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 
@@ -18,7 +19,6 @@ LIB_DEPENDS=	chewing.3:${PORTSDIR}/chinese/libchewing
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

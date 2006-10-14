@@ -3,11 +3,12 @@
 # Whom:                 Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/abiword/Makefile,v 1.2 2005/10/29 22:31:16 marcus Exp $
+#   $MCom: ports/editors/abiword/Makefile,v 1.6 2006/09/30 04:39:56 ahze Exp $
 #
 
 PORTNAME=	abiword
 PORTVERSION=	2.4.5
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -28,7 +29,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GNOME=	libglade2 libxml2 libgnomeprintui desktopfileutils
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xft \
 		--with-sys-wv \
@@ -72,8 +73,8 @@ PKGNAMESUFFIX:=		-gnome
 GNOME_ENABLED=		yes
 .endif
 
-.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
-LIB_DEPENDS+=		gucharmap.4:${PORTSDIR}/deskutils/gucharmap
+.if defined(WITH_GUCHARMAP) || exists(${LOCALBASE}/libdata/pkgconfig/gucharmap.pc)
+LIB_DEPENDS+=		gucharmap.5:${PORTSDIR}/deskutils/gucharmap
 .else
 CONFIGURE_ARGS+=	--enable-cmap=no
 .endif
@@ -99,19 +100,19 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/AbiWord-${ABIVERSION}/plugins
-	@${MKDIR} ${X11BASE}/share/applications
+	@${MKDIR} ${LOCALBASE}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/abiword.desktop \
-		${X11BASE}/share/applications/abiword.desktop
-	@${MKDIR} ${X11BASE}/share/pixmaps
+		${LOCALBASE}/share/applications/abiword.desktop
+	@${MKDIR} ${LOCALBASE}/share/pixmaps
 	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/icons/abiword_48.png \
-		${X11BASE}/share/pixmaps/abiword_48.png
+		${LOCALBASE}/share/pixmaps/abiword_48.png
 .if defined(GNOME_ENABLED)
-	@${MKDIR} ${X11BASE}/libdata/bonobo/servers
+	@${MKDIR} ${LOCALBASE}/libdata/bonobo/servers
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
-		${X11BASE}/libdata/bonobo/servers/
-	@${MKDIR} ${X11BASE}/share/gnome/gnome-2.0/ui
+		${LOCALBASE}/libdata/bonobo/servers/
+	@${MKDIR} ${LOCALBASE}/share/gnome/gnome-2.0/ui
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
-		${X11BASE}/share/gnome/gnome-2.0/ui/
+		${LOCALBASE}/share/gnome/gnome-2.0/ui/
 .endif
 	@-update-desktop-database
 

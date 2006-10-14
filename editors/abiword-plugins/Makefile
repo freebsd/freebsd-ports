@@ -3,11 +3,12 @@
 # Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/abiword-plugins/Makefile,v 1.16 2005/10/29 22:31:16 marcus Exp $
+#   $MCom: ports/editors/abiword-plugins/Makefile,v 1.18 2006/07/18 12:45:43 ahze Exp $
 #
 
 PORTNAME=	abiword
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -24,7 +25,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

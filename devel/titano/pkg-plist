@@ -54,4 +54,5 @@ share/pixmaps/titano/gnome.png
 share/pixmaps/titano/gtk.png
 share/pixmaps/titano/logo.png
 @dirrm share/pixmaps/titano
+@dirrmtry share/pixmaps
 share/gnome/apps/Development/titano.desktop

@@ -3,11 +3,11 @@
 # Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/sysutils/xfce4-genmon-plugin/Makefile,v 1.1 2006/10/02 20:33:19 ahze Exp $
 
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
@@ -22,7 +22,6 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20 libxml2
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

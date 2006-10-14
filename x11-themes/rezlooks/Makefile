@@ -7,6 +7,7 @@
 
 PORTNAME=	rezlooks
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/content/files/
 DISTNAME=	39179-rezlooks-${PORTVERSION}
@@ -18,7 +19,6 @@ WRKSRC=		${WRKDIR}/rezlooks-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 
 OPTIONS+=	ANIMATION "Animation support" On
 

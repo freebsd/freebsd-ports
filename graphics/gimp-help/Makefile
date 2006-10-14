@@ -3,11 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/graphics/gimp-help/Makefile,v 1.1 2006/07/18 13:04:28 ahze Exp $
 
 PORTNAME=	gimp-help
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
@@ -25,7 +25,6 @@ COMMENT=	GIMP user's manual
 BUILD_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp
 RUN_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

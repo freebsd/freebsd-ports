@@ -1,22 +1,21 @@
 bin/giftui
-share/applications/giftui.desktop
-@dirrm share/applications
-%%DATADIR%%/icons/fasttrack-down.png
-%%DATADIR%%/icons/fasttrack-network.png
-%%DATADIR%%/icons/fasttrack-search.png
-%%DATADIR%%/icons/fasttrack-up.png
-%%DATADIR%%/icons/gnutella-down.png
-%%DATADIR%%/icons/gnutella-network.png
-%%DATADIR%%/icons/gnutella-search.png
-%%DATADIR%%/icons/gnutella-up.png
-%%DATADIR%%/icons/openft-down.png
-%%DATADIR%%/icons/openft-network.png
-%%DATADIR%%/icons/openft-search.png
-%%DATADIR%%/icons/openft-up.png
-%%DATADIR%%/icons/opennap-down.png
-%%DATADIR%%/icons/opennap-network.png
-%%DATADIR%%/icons/opennap-search.png
-%%DATADIR%%/icons/opennap-up.png
-share/pixmaps/giftui.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
+share/gnome/applications/giftui.desktop
+share/gnome/giftui/icons/fasttrack-down.png
+share/gnome/giftui/icons/fasttrack-network.png
+share/gnome/giftui/icons/fasttrack-search.png
+share/gnome/giftui/icons/fasttrack-up.png
+share/gnome/giftui/icons/gnutella-down.png
+share/gnome/giftui/icons/gnutella-network.png
+share/gnome/giftui/icons/gnutella-search.png
+share/gnome/giftui/icons/gnutella-up.png
+share/gnome/giftui/icons/openft-down.png
+share/gnome/giftui/icons/openft-network.png
+share/gnome/giftui/icons/openft-search.png
+share/gnome/giftui/icons/openft-up.png
+share/gnome/giftui/icons/opennap-down.png
+share/gnome/giftui/icons/opennap-network.png
+share/gnome/giftui/icons/opennap-search.png
+share/gnome/giftui/icons/opennap-up.png
+share/gnome/pixmaps/giftui.png
+@dirrm share/gnome/giftui/icons
+@dirrm share/gnome/giftui

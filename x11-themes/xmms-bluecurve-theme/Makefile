@@ -17,6 +17,8 @@ MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
 NO_BUILD=	yes
 
+PREFIX=		${X11BASE}
+
 SKIN=		Bluecurve-xmms.zip
 PLIST_FILES=	share/xmms/Skins/${SKIN}
 

@@ -3,11 +3,11 @@
 # Whom:		 	Frederic Dubuy <fdubuy@free.fr>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11/multi-gnome-terminal/Makefile,v 1.1 2006/10/04 20:27:01 ahze Exp $
 
 PORTNAME=	multi-gnome-terminal
 PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	multignometerm
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	multignometerm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome tabbed terminal emulator
 
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade
 USE_GMAKE=	yes

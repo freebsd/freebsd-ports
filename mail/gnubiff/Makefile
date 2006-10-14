@@ -7,6 +7,7 @@
 
 PORTNAME=	gnubiff
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,6 @@ COMMENT=	A mail notification program for Gnome
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_X_PREFIX=	yes
 USE_GNOME=	intlhack libglade2 esound
 USE_GMAKE=	yes
 USE_FAM=	yes

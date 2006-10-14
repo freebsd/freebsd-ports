@@ -75,7 +75,11 @@ share/locale/pt_BR/LC_MESSAGES/amule.mo
 share/locale/ru/LC_MESSAGES/amule.mo
 @dirrm share/gnome/doc/aMule-1.2.8
 @dirrmtry share/gnome/doc
-@dirrmtry share/locale/ee/LC_MESSAGES
-@dirrmtry share/locale/ee
 @dirrm share/gnome/amuleweb/webserver
 @dirrm share/gnome/amuleweb
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl

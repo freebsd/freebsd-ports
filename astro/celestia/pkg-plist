@@ -309,6 +309,7 @@ share/locale/pt_br/LC_MESSAGES/celestia.mo
 share/locale/ru/LC_MESSAGES/celestia.mo
 share/pixmaps/celestia.png
 @exec mkdir -p %D/share/celestia/textures/hires
+@dirrmtry share/pixmaps
 @dirrm share/celestia/textures/medres
 @dirrm share/celestia/textures/lores
 @dirrm share/celestia/textures/hires
@@ -322,3 +323,9 @@ share/pixmaps/celestia.png
 @dirrm share/celestia
 @dirrmtry share/locale/pt_br/LC_MESSAGES
 @dirrmtry share/locale/pt_br
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el

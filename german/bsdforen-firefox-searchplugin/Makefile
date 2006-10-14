@@ -7,6 +7,7 @@
 
 PORTNAME=	bsdforen-firefox-searchplugin
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	german www
 MASTER_SITES=	http://www.crashmail.de/files/
 DISTFILES=	bsdforen.src bsdforen.png bsdforen-wiki.src bsdforen-wiki.png
@@ -15,7 +16,6 @@ EXTRACT_ONLY=	yes
 MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	Firefox searchplugins for the www.bsdforen.de board and wiki
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_GECKO=	firefox
 

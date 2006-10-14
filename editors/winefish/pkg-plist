@@ -5,12 +5,12 @@ share/gnome/applications/winefish.desktop
 share/gnome/applications/winefish-project.desktop
 share/gnome/mime-info/winefish.mime
 share/gnome/mime-info/winefish.keys
+share/gnome/pixmaps/gnome-application-winefish-project.png
+share/gnome/pixmaps/winefish-icon.png
 %%IFNLS%%share/locale/fr/LC_MESSAGES/winefish.mo
 %%IFNLS%%share/locale/it/LC_MESSAGES/winefish.mo
 %%IFNLS%%share/locale/vi/LC_MESSAGES/winefish.mo
 share/mime/packages/winefish.xml
-share/pixmaps/gnome-application-winefish-project.png
-share/pixmaps/winefish-icon.png
 %%PORTDOCS%%%%DOCSDIR%%/winefish.html
 %%DATADIR%%/autotext.default
 %%DATADIR%%/custom_menu.default

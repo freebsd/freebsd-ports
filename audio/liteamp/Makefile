@@ -6,7 +6,7 @@
 
 PORTNAME=	liteamp
 PORTVERSION=	0.2.3.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://kldp.net/frs/download.php/547/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/mad \
 		vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomeui gnomeprefix
 .ifndef WITHOUT_NLS

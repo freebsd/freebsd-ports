@@ -7,7 +7,7 @@
 
 PORTNAME=	xmule
 PORTVERSION=	1.12.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITES=	http://download.berlios.de/%SUBDIR%/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cryptopp-prefix=${LOCALBASE} \
-		--with-gtk-prefix=${X11BASE} \
+		--with-gtk-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--enable-debug \

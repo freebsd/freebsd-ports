@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/gtk-flat-theme/Makefile,v 1.1 2006/07/19 19:56:17 ahze Exp $
 
 PORTNAME=	gtk-flat-theme
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	flat
@@ -18,7 +18,6 @@ COMMENT=	A GTK+ theme engine which gives GTK+ a flattened appearance
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -91,5 +91,6 @@ share/locale/es/LC_MESSAGES/es.mo
 @dirrm lib/eroaster/glade
 @dirrm lib/eroaster/xml
 @dirrm lib/eroaster
+@dirrmtry share/pixmaps
 @dirrm share/eroaster/pixmaps
 @dirrm share/eroaster

@@ -7,7 +7,7 @@
 
 PORTNAME=	mlview
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -29,12 +29,12 @@ GCONF_SCHEMAS=	mlview.schemas
 .include <bsd.port.pre.mk>
 
 # Autodetect dbus
-.if exists (${LOCALBASE}/lib/libdbus-1.so.2)
+.if exists (${LOCALBASE}/lib/libdbus-1.so.3)
 WITH_DBUS=	yes
 .endif
 
 .if defined (WITH_DBUS)
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+="--enable-dbus=yes"
 .endif
 

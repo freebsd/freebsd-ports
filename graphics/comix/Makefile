@@ -3,10 +3,12 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/comix/Makefile,v 1.4 2006/10/03 19:05:14 mezz Exp $
 #
 
 PORTNAME=	comix
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,11 +20,11 @@ RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 NO_BUILD=	yes
+USE_XLIB=	yes
 USE_GNOME=	desktopfileutils pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 INSTALLS_ICONS=	yes
 
 DOCS=		COPYING ChangeLog README
@@ -31,7 +33,7 @@ MAN1=		comix.1
 .include <bsd.port.pre.mk>
 
 .if (${HAVE_GNOME:Mnautilus2}!="" || defined(WITH_THUMBNAILS)) && !defined(WITHOUT_THUMBNAILS)
-USE_GNOME+=	gconf2
+USE_GNOME+=	gnomehier gconf2
 MAN1+=		comicthumb.1
 GCONF_SCHEMAS=	comicbook.schemas
 PLIST_SUB+=	THUMBNAILS:=""

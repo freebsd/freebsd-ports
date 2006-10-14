@@ -1,37 +1,55 @@
 bin/rhythmbox
 bin/rhythmbox-client
-%%PYTHON%%lib/rhythmbox/plugins/Loader.py
-%%PYTHON%%lib/rhythmbox/plugins/Loader.pyc
-%%PYTHON%%lib/rhythmbox/plugins/Loader.pyo
-%%PYTHON%%lib/rhythmbox/plugins/artdisplay.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
-%%PYTHON%%lib/rhythmbox/plugins/artdisplay/Loader.py
-%%PYTHON%%lib/rhythmbox/plugins/artdisplay/Loader.pyc
-%%PYTHON%%lib/rhythmbox/plugins/artdisplay/Loader.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/artdisplay.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.pyo
-lib/rhythmbox/plugins/audioscrobbler.rb-plugin
-lib/rhythmbox/plugins/generic-player.rb-plugin
-lib/rhythmbox/plugins/libaudioscrobbler.a
-lib/rhythmbox/plugins/libaudioscrobbler.la
-lib/rhythmbox/plugins/libaudioscrobbler.so
-lib/rhythmbox/plugins/libgeneric-player.a
-lib/rhythmbox/plugins/libgeneric-player.la
-lib/rhythmbox/plugins/libgeneric-player.so
-%%PYTHON%%lib/rhythmbox/plugins/lyrics.py
-%%PYTHON%%lib/rhythmbox/plugins/lyrics.pyc
-%%PYTHON%%lib/rhythmbox/plugins/lyrics.pyo
-%%PYTHON%%lib/rhythmbox/plugins/lyrics.rb-plugin
-%%PYTHON%%lib/rhythmbox/plugins/pythonconsole.py
-%%PYTHON%%lib/rhythmbox/plugins/pythonconsole.pyc
-%%PYTHON%%lib/rhythmbox/plugins/pythonconsole.pyo
-%%PYTHON%%lib/rhythmbox/plugins/pythonconsole.rb-plugin
+lib/rhythmbox/plugins/audiocd.rb-plugin
+lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.rb-plugin
+lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.a
+lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.la
+lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
+lib/rhythmbox/plugins/cd-recorder/cd-recorder.rb-plugin
+lib/rhythmbox/plugins/cd-recorder/libcd-recorder.a
+lib/rhythmbox/plugins/cd-recorder/libcd-recorder.la
+lib/rhythmbox/plugins/cd-recorder/libcd-recorder.so
+lib/rhythmbox/plugins/generic-player/generic-player.rb-plugin
+lib/rhythmbox/plugins/generic-player/libgeneric-player.a
+lib/rhythmbox/plugins/generic-player/libgeneric-player.la
+lib/rhythmbox/plugins/generic-player/libgeneric-player.so
+%%IPOD%%lib/rhythmbox/plugins/ipod/ipod.rb-plugin
+%%IPOD%%lib/rhythmbox/plugins/ipod/libipod.a
+%%IPOD%%lib/rhythmbox/plugins/ipod/libipod.la
+%%IPOD%%lib/rhythmbox/plugins/ipod/libipod.so
+lib/rhythmbox/plugins/libaudiocd.a
+lib/rhythmbox/plugins/libaudiocd.la
+lib/rhythmbox/plugins/libaudiocd.so
+%%PYTHON%%lib/rhythmbox/plugins/lyrics/lyrics.py
+%%PYTHON%%lib/rhythmbox/plugins/lyrics/lyrics.pyc
+%%PYTHON%%lib/rhythmbox/plugins/lyrics/lyrics.pyo
+%%PYTHON%%lib/rhythmbox/plugins/lyrics/lyrics.rb-plugin
+%%PYTHON%%lib/rhythmbox/plugins/python-console/pythonconsole.py
+%%PYTHON%%lib/rhythmbox/plugins/python-console/pythonconsole.pyc
+%%PYTHON%%lib/rhythmbox/plugins/python-console/pythonconsole.pyo
+%%PYTHON%%lib/rhythmbox/plugins/python-console/pythonconsole.rb-plugin
+%%PYTHON%%lib/rhythmbox/plugins/rb/Coroutine.py
+%%PYTHON%%lib/rhythmbox/plugins/rb/Coroutine.pyc
+%%PYTHON%%lib/rhythmbox/plugins/rb/Coroutine.pyo
+%%PYTHON%%lib/rhythmbox/plugins/rb/Loader.py
+%%PYTHON%%lib/rhythmbox/plugins/rb/Loader.pyc
+%%PYTHON%%lib/rhythmbox/plugins/rb/Loader.pyo
+%%PYTHON%%lib/rhythmbox/plugins/rb/__init__.py
+%%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyc
+%%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyo
 libexec/rhythmbox-metadata
 share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/ch01.html
@@ -110,7 +128,6 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-share/gnome/application-registry/rhythmbox.applications
 share/gnome/applications/rhythmbox.desktop
 share/gnome/help/rhythmbox/C/fdl-appendix.xml
 share/gnome/help/rhythmbox/C/figures/rb-iradio-main.png
@@ -198,7 +215,6 @@ share/gnome/help/rhythmbox/zh_CN/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/zh_CN/figures/rb-window-small.png
 share/gnome/help/rhythmbox/zh_CN/figures/rb-window.png
 share/gnome/help/rhythmbox/zh_CN/rhythmbox.xml
-share/gnome/mime-info/rhythmbox.keys
 share/gnome/omf/rhythmbox/rhythmbox-C.omf
 share/gnome/omf/rhythmbox/rhythmbox-es.omf
 share/gnome/omf/rhythmbox/rhythmbox-fr.omf
@@ -292,8 +308,6 @@ share/locale/vi/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_CN/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_HK/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/rhythmbox/glade
 @dirrm share/gnome/rhythmbox/art
 @dirrm share/gnome/rhythmbox
@@ -312,6 +326,49 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm share/gnome/help/rhythmbox/C
 @dirrm share/gnome/help/rhythmbox
 @dirrm %%DOCSDIR%%
-@dirrm lib/rhythmbox/plugins/artdisplay
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/rb
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/python-console
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/lyrics
+%%IPOD%%@dirrm lib/rhythmbox/plugins/ipod
+@dirrm lib/rhythmbox/plugins/generic-player
+@dirrm lib/rhythmbox/plugins/cd-recorder
+@dirrm lib/rhythmbox/plugins/audioscrobbler
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/artdisplay
 @dirrm lib/rhythmbox/plugins
 @dirrm lib/rhythmbox
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

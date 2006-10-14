@@ -7,7 +7,7 @@
 
 PORTNAME=	buoh
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	deskutils www gnome
 MASTER_SITES=	http://buoh.steve-o.org/downloads/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -46,7 +46,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/applications|g' \
+	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${LOCALBASE}/share/applications|g' \
 		${WRKSRC}/data/Makefile.in
 
 post-install:
@@ -56,7 +56,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${LOCALBASE}/share/pixmaps
 	@${LN} -sf ${DATADIR}/pixmaps/buoh64x64.png \
-		${X11BASE}/share/pixmaps/buoh64x64.png
+		${LOCALBASE}/share/pixmaps/buoh64x64.png
 
 .include <bsd.port.post.mk>

@@ -16,7 +16,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
 MOZLDIR=	lib/${GECKO}
-MOZDIR=		${X11BASE}/${MOZLDIR}
+MOZDIR=		${LOCALBASE}/${MOZLDIR}
 PLIST_SUB=	MOZDIR=${MOZLDIR}
 
 pre-configure:
@@ -25,9 +25,9 @@ pre-configure:
 		> ${PKGINSTALL}
 
 pre-install:
-.if ${PREFIX} != ${X11BASE}
+.if ${PREFIX} != ${LOCALBASE}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "${PREFIX} invalid - must be installed under ${X11BASE}."
+	@${ECHO_MSG} "${PREFIX} invalid - must be installed under ${LOCALBASE}."
 	@${ECHO_MSG} ""
 	@${FALSE}
 .else

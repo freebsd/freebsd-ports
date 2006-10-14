@@ -57,9 +57,20 @@ share/pixmaps/comix/silk-transform.png
 share/pixmaps/comix/silk-view.png
 share/pixmaps/comix/silk-zoom.png
 @dirrm share/pixmaps/comix
+@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 %%THUMBNAILS:%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 %%THUMBNAILS:%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

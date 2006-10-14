@@ -11,4 +11,9 @@ share/locale/zh_TW/LC_MESSAGES/gsynaptics.mo
 share/pixmaps/touchpad.png
 @dirrmtry share/gnome/autostart
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
 @dirrm share/gsynaptics
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN

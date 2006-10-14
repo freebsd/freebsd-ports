@@ -1,11 +1,11 @@
---- libxklavier/xklavier.c.orig	Tue Dec 13 00:52:26 2005
-+++ libxklavier/xklavier.c	Tue Dec 13 00:52:45 2005
-@@ -606,7 +606,7 @@
-                             int level, const char format[], va_list args )
+--- libxklavier/xklavier.c.orig	Sat Apr 15 21:14:40 2006
++++ libxklavier/xklavier.c	Tue Jun 13 00:07:32 2006
+@@ -394,7 +394,7 @@ xkl_default_log_appender(const gchar fil
+ 			 gint level, const gchar format[], va_list args)
  {
-   time_t now = time( NULL );
--  fprintf( stdout, "[%08ld,%03d,%s:%s/] \t", now, level, file, function );
-+  fprintf( stdout, "[%08ld,%03d,%s:%s/] \t", (long) now, level, file, function );
-   vfprintf( stdout, format, args );
+ 	time_t now = time(NULL);
+-	fprintf(stdout, "[%08ld,%03d,%s:%s/] \t", now, level, file,
++	fprintf(stdout, "[%08ld,%03d,%s:%s/] \t", (long)now, level, file,
+ 		function);
+ 	vfprintf(stdout, format, args);
  }
- 

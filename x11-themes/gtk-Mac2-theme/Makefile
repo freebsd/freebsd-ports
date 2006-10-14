@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/gtk-Mac2-theme/Makefile,v 1.1 2006/07/19 19:56:14 ahze Exp $
 
 PORTNAME=	gtk-Mac2-theme
 PORTVERSION=	200003050858
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	mac2
@@ -18,7 +18,6 @@ COMMENT=	GTK+ engine theme based on the look of MacOS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -7,8 +7,8 @@
 
 PORTNAME=	gxmame
 DISTVERSION=	0.35beta2
+PORTREVISION=	4
 PORTEPOCH=	1
-PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,13 +20,13 @@ COMMENT=	GXmame is a GTK frontend for xmame
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gtk20 intlhack gnomehack gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-xmame-dir=${X11BASE}/share/xmame
+CONFIGURE_ARGS=	--with-xmame-dir=${LOCALBASE}/share/xmame
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

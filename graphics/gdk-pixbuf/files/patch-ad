@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- gdk-pixbuf-config.in.orig	Tue Oct 23 20:44:44 2001
 +++ gdk-pixbuf-config.in	Fri Oct 26 11:06:32 2001
 @@ -40,11 +40,11 @@

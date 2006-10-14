@@ -179,7 +179,7 @@ lib/linux-mozilla/plugins/nphelix.xpt
 @dirrm lib/RealPlayer
 @dirrmtry lib/linux-mozilla/plugins
 @dirrmtry lib/linux-mozilla
-%%X11%%@cwd %%X11BASE%%
+%%X11%%@cwd %%LOCALBASE%%
 %%GNOME%%share/gnome/application-registry/realplay.applications
 %%GNOME%%share/gnome/applications/realplay.desktop
 %%GNOME%%share/gnome/mime-info/realplay.keys

@@ -7,7 +7,7 @@
 
 PORTNAME=	glibwww
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/glibwww/0.2
@@ -17,11 +17,10 @@ COMMENT=	A library for people wanting to use libwww with gtk/gnome
 
 LIB_DEPENDS=	wwwzip.1:${PORTSDIR}/www/libwww
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

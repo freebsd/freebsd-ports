@@ -3,10 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/irc/xchat/Makefile,v 1.5 2006/10/10 20:51:46 mezz Exp $
 
 PORTNAME=	xchat
 PORTVERSION=	2.6.6
+PORTREVISION=	3
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://xchat.org/files/source/2.6/
@@ -16,7 +17,6 @@ DISTNAME=	xchat-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
@@ -59,10 +59,10 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 USE_GNOME+=	gconf2
-GCONF_SCHEMAS=	apps_xchat_url_handler.schemas
+GCONF_SCHEMAS+=	apps_xchat_url_handler.schemas
 PLIST_SUB+=	DBUS=""
 .else
 CONFIGURE_ARGS+=--disable-dbus

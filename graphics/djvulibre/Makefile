@@ -7,7 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -78,9 +78,9 @@ post-install:
 .endfor
 .endfor
 .if !defined(WITHOUT_X11)
-	@${MKDIR} ${X11BASE}/lib/browser_plugins
+	@${MKDIR} ${LOCALBASE}/lib/browser_plugins
 	${LN} -sf ${PREFIX}/lib/djvulibre/plugins/nsdejavu.so \
-		${X11BASE}/lib/browser_plugins/nsdejavu.so
+		${LOCALBASE}/lib/browser_plugins/nsdejavu.so
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

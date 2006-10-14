@@ -22,6 +22,17 @@ share/locale/vi/LC_MESSAGES/xpad.mo
 share/locale/zh_CN/LC_MESSAGES/xpad.mo
 share/locale/zh_TW/LC_MESSAGES/xpad.mo
 share/pixmaps/xpad.png
+@dirrmtry share/pixmaps
 @dirrmtry share/applications
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro

@@ -1,6 +1,6 @@
---- build.sh.orig	Wed May  4 19:44:42 2005
-+++ build.sh	Wed Jan  4 08:43:08 2006
-@@ -100,6 +100,34 @@
+--- build.sh.orig	Wed May  4 19:45:04 2005
++++ build.sh	Sat Sep 30 20:54:52 2006
+@@ -100,6 +100,32 @@
  				;;	
  		esac
  		;;
@@ -9,10 +9,8 @@
 +		CXX=%%CXX%%
 +		LD=%%CC%%
 +		XTEST_LIB_PATH=$X11BASE/lib
-+		GECKO_I=${X11BASE}/include/${BROWSER}
-+		GECKO_INCLUDES="-I${GECKO_I} -I${LOCALBASE}/include/nspr -I${GECKO_I}/xpcom -I${GECKO_I}/string -I${GECKO_I}/embed_base -I${GECKO_I}/embedstring"
-+		GECKO_L=${X11BASE}/lib/${BROWSER}
-+		GECKO_LIBS="-L${GECKO_L} -L${LOCALBASE}/lib -lxpcom -lnspr4 -lplds4 -lplc4 -lgtkembedmoz"
++		GECKO_INCLUDES="`${GECKO_CONFIG} --cflags gtkmozembed` -I${LOCALBASE}/include/nspr"
++		GECKO_LIBS="`${GECKO_CONFIG} --libs gtkmozembed` -L${LOCALBASE}/lib"
 +		case $MODEL in
 +			"amd64")
 +				AWT_LIB_PATH=$JAVA_HOME/jre/lib/amd64
@@ -35,7 +33,7 @@
  	"SunOS")
  		CC=gcc
  		LD=gcc
-@@ -126,6 +154,6 @@
+@@ -126,6 +152,6 @@
  	;;
  esac
  

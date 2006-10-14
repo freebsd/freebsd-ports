@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gnome-bluecurve-theme
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	The Bluecurve GNOME meta-theme
 
-RUN_DEPENDS=	${X11BASE}/share/themes/Bluecurve/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gtk-bluecurve-theme \
-		${X11BASE}/share/icons/Bluecurve/index.theme:${PORTSDIR}/x11-themes/icon-bluecurve-theme \
-		${X11BASE}/share/gnome/themes/Bluecurve/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-bluecurve-theme
+RUN_DEPENDS=	${LOCALBASE}/share/themes/Bluecurve/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gtk-bluecurve-theme \
+		${LOCALBASE}/share/icons/Bluecurve/index.theme:${PORTSDIR}/x11-themes/icon-bluecurve-theme \
+		${LOCALBASE}/share/gnome/themes/Bluecurve/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-bluecurve-theme
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 

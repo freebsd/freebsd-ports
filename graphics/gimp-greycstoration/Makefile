@@ -7,6 +7,7 @@
 
 PORTNAME=	greycstoration
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.haypocalc.com/perso/prog/greycstoration/ \
 				http://bio3k.softboard.ru/uploads/arch/
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 # Redifine this if you need

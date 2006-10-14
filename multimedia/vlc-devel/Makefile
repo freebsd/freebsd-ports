@@ -3,14 +3,14 @@
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc-devel/Makefile,v 1.9 2006/05/15 02:56:23 ahze Exp $
-#
+#    $MCom: ports/multimedia/vlc-devel/Makefile,v 1.21 2006/10/01 18:16:43 ahze Exp $
+#      $Id: Makefile 6 2006-09-27 14:05:34Z buhnux $
 # *** PLEASE READ Makefile.inc for more information on knobs ***
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.6.20060621
-PORTREVISION=	5
+DISTVERSION=	0.9.0.20060926
+PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
@@ -18,21 +18,21 @@ MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.6.//}
+DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.9.0.//}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
+LIB_DEPENDS=	notify.2:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 CONFLICTS=	vlc-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.6-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.0-svn
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
 #USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -42,13 +42,13 @@ WANT_SDL=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 
-FAKEDIR=	${WRKDIR}/fake
+FAKEDIR=	${WRKDIR}/fake/${PREFIX}
 PLIST=		${WRKDIR}/plist
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
 			--with-ffmpeg=${LOCALBASE} \
@@ -169,6 +169,13 @@ CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
 CONFIGURE_ARGS+=--disable-wxwidgets
 .endif
 
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+CONFIGURE_ARGS+=--enable-hal
+.else
+CONFIGURE_ARGS+=--disable-hal
+.endif
+
 .if (defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so)) && !defined(WITHOUT_ARTS)
 LIB_DEPENDS+=	 artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--enable-arts
@@ -187,8 +194,7 @@ CONFIGUE_ARGS+=		--disable-bonjour
 LIB_DEPENDS+=	vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		cdio.7:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
-		--disable-libcdio \
-		--disable-libcddb \
+		--enable-libcddb \
 		--disable-cddax
 .else
 CONFIGURE_ARGS+=--disable-vcd \
@@ -373,7 +379,7 @@ CONFIGURE_ARGS+=--enable-libmpeg2
 CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
 
-.if defined(WITH_REALAUDIO)
+.if !defined(WITHOUT_REALAUDIO)
 CONFIGURE_ARGS+=	--enable-real \
 			--enable-realrtsp
 .endif
@@ -392,10 +398,10 @@ CONFIGURE_ARGS+=--disable-theora
 
 .if (defined(WITH_LIVEMEDIA) || exists(${LOCALBASE}/live/liveMedia/libliveMedia.a)) && !defined(WITHOUT_LIVEMEDIA)
 BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-CONFIGURE_ARGS+=--enable-livedotcom \
-		--with-livedotcom-tree=${LOCALBASE}/live
+CONFIGURE_ARGS+=--enable-live555 \
+		--with-live555-tree=${LOCALBASE}/live
 .else
-CONFIGURE_ARGS+=--disable-livedotcom
+CONFIGURE_ARGS+=--disable-live555
 .endif
 
 .if !defined(WITHOUT_MAD)
@@ -405,6 +411,20 @@ CONFIGURE_ARGS+=--enable-mad \
 		--with-mad=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-mad
+.endif
+
+.if !defined(WITHOUT_MODDEMUX)
+LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+CONFIGURE_ARGS+=--enable-mod
+.else
+CONFIGURE_ARGS+=--disable-mod
+.endif
+
+.if !defined(WITHOUT_MPCDEMUX)
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+CONFIGURE_ARGS+=--enable-mpc
+.else
+CONFIGURE_ARGS+=--disable-mpc
 .endif
 
 .if !defined(WITHOUT_OGG)
@@ -444,7 +464,7 @@ CONFIGURE_ARGS+=--disable-sdl
 RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
-.if !defined(WITHOUT_HTTPD) && (defined(WITH_SSL) || exists(${LOCALBASE}/lib/libgnutls.a))
+.if !defined(WITHOUT_HTTPD)
 LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 .else

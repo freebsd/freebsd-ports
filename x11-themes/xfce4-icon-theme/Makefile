@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-icon-theme
 PORTVERSION=	4.2.3
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -18,7 +18,6 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Icon themes for XFce 4
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 

@@ -12,5 +12,6 @@ share/gtk-imonc/pixmaps/reboot.png
 share/gtk-imonc/pixmaps/shutdown.png
 share/locale/de/LC_MESSAGES/gtk-imonc.mo
 share/pixmaps/gtk-imonc.png
+@dirrmtry share/pixmaps
 @dirrm share/gtk-imonc/pixmaps
 @dirrm share/gtk-imonc

@@ -7,7 +7,7 @@
 
 PORTNAME=	cantus
 PORTVERSION=	1.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://web222.mis02.de/releases/cantus/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -17,7 +17,7 @@ COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomelibs gnomehack
+USE_GNOME=	gnomelibs gnomehack gnomehier
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-1$//}
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

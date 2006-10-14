@@ -8,7 +8,7 @@
 
 PORTNAME=	swfdec
 PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
@@ -18,7 +18,7 @@ COMMENT=	Flash Rendering Library
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
 USE_GSTREAMER80=	gconf
@@ -31,7 +31,7 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-.if exists(${X11BASE}/bin/gimp-2.2)
+.if exists(${LOCALBASE}/bin/gimp-2.2)
 WITH_GIMP=yes
 .endif
 

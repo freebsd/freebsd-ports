@@ -7,6 +7,7 @@
 
 PORTNAME=	easytag
 PORTVERSION=	1.99.12
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,7 @@ MAN1=		easytag.1
 CONFLICTS=	easytag-[0-9]*
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
 GNU_CONFIGURE=	yes

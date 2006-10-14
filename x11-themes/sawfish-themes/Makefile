@@ -7,6 +7,7 @@
 
 PORTNAME=	sawfish-themes
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,8 +16,6 @@ MAINTAINER=	karma@ez.pereslavl.ru
 COMMENT=	Themes for Sawfish window manager
 
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
-
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
@@ -30,7 +29,7 @@ DATA_DIRS=	2YearsToNever Anonymous Aquiline BWM Big Blackwindow Bubbles_Exact \
 		bluefoo gorilla gorillaz mxflat typo
 
 do-install:
-	@${MKDIR} ${X11BASE}/share/sawfish/1.3/themes
+	@${MKDIR} ${PREFIX}/share/sawfish/1.3/themes
 .for d in ${DATA_DIRS}
 	@${MKDIR} ${PREFIX}/share/sawfish/1.3/themes/${d}
 	@cd ${WRKSRC}/${d} && ${FIND} . | \

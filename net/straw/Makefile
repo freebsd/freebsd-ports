@@ -7,7 +7,7 @@
 
 PORTNAME=	straw
 PORTVERSION=	0.25.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
+BROKEN=	Does not work with the newer GTK/GNOME python bindings
+
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	libglade2 pygnome2 pygnomeextras
+USE_XLIB=	yes
+USE_GNOME=	gnomehier libglade2 pygnome2 pygnomeextras
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \

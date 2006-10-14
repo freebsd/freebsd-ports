@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/x11-fonts/dejavu/Makefile,v 1.2 2005/08/14 23:38:07 ahze Exp $
+#    $MCom: ports/x11-fonts/dejavu/Makefile,v 1.1 2006/10/13 23:29:09 ahze Exp $
 #
 
 PORTNAME=	dejavu
-DISTVERSION=	2.9
+DISTVERSION=	2.10
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}

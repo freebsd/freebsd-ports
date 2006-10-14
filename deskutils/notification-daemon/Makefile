@@ -7,20 +7,20 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
 
 MAINTAINER=	andreas@syndrom23.de
 COMMENT=	Send small notifications to your desktop
 
-LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus \
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexy:${PORTSDIR}/x11-toolkits/libsexy \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GNOME=	gnomehack gnometarget intlhack gconf2 libwnck
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gconf2 libwnck
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	notification-daemon.schemas
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services

@@ -12,7 +12,7 @@ fi
 # Remove the plugin
 
 # Plugin location variables
-BROWSERPLUGINDIR="%%X11BASE%%/lib/browser_plugins"
+BROWSERPLUGINDIR="%%LOCALBASE%%/lib/browser_plugins"
 JAVAPLUGINDIR="%%JRE_HOME%%/plugin/%%ARCH%%/ns7"
 PLUGIN=libjavaplugin_oji.so
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gmfsk
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://gmfsk.connect.fi/
 
@@ -23,7 +23,10 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomehack gnomeprefix
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
+INSTALLS_OMF=	yes
+
+GCONF_SCHEMAS=	gmfsk.schemas
 
 OPTIONS=	HAMLIB "Enable HAMLIB Support" On
 

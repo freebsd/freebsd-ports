@@ -48,10 +48,6 @@ do-install:
 .endif
 
 post-install:
-.if defined(WITHOUT_X11)
 	${LOCALBASE}/bin/uim-module-manager --register anthy
-.else
-	${X11BASE}/bin/uim-module-manager --register anthy
-.endif
 
 .include "${MASTERDIR}/Makefile"

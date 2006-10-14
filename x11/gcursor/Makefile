@@ -7,7 +7,7 @@
 
 PORTNAME=	gcursor
 PORTVERSION=	0.061
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 
@@ -17,7 +17,7 @@ COMMENT=	A mouse cursor theme selector for GNOME
 RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/file-roller
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -27,8 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 DOCS=		AUTHORS COPYING ChangeLog INSTALL TODO
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/src/gcursor.c
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/gcursor.c
 	@${REINPLACE_CMD} -e 's|share/applications|share/gnome/applications|g' \
 		${WRKSRC}/data/Makefile.in
 

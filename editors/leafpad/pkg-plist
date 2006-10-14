@@ -1,7 +1,5 @@
 bin/leafpad
-share/gnome/applications/leafpad.desktop
-share/gnome/pixmaps/leafpad.png
-share/gnome/pixmaps/leafpad.xpm
+share/applications/leafpad.desktop
 share/locale/bg/LC_MESSAGES/leafpad.mo
 share/locale/ca/LC_MESSAGES/leafpad.mo
 share/locale/cs/LC_MESSAGES/leafpad.mo
@@ -24,5 +22,25 @@ share/locale/tr/LC_MESSAGES/leafpad.mo
 share/locale/vi/LC_MESSAGES/leafpad.mo
 share/locale/zh_CN/LC_MESSAGES/leafpad.mo
 share/locale/zh_TW/LC_MESSAGES/leafpad.mo
+share/pixmaps/leafpad.png
+share/pixmaps/leafpad.xpm
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

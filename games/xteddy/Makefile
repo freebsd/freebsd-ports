@@ -3,11 +3,11 @@
 # Whom:                Eckart "Isegrim" Hofmann
 #
 # $FreeBSD$
-#
+#    $MCom: ports/games/xteddy/Makefile,v 1.1 2006/10/04 13:16:56 ahze Exp $
 
 PORTNAME=	xteddy
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://staffwww.itn.liu.se/~stegu/xteddy/
 
@@ -16,10 +16,9 @@ COMMENT=	A cuddlesome teddy for the X desktop
 
 NO_CDROM=	Can only be distributed for free
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 USE_GNOME=	imlib
 
 MAN6=		xteddy.6

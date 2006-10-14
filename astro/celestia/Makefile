@@ -7,6 +7,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	celestia
@@ -23,7 +24,6 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
 
 CONFIGURE_ARGS=	--program-prefix=""
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -90,6 +90,7 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|COPYING||g' ${WRKSRC}/Makefile.in
 
 post-install:
+	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/celestia/gtk/data/celestia.png \
 		${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)

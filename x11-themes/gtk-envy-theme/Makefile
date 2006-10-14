@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-envy-theme
 PORTVERSION=	1.0.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome-look.org/content/files/
 DISTNAME=	35093-Envy
@@ -14,10 +15,9 @@ DISTNAME=	35093-Envy
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Envy theme for GTK+ 2.0
 
-#RUN_DEPENDS=	${X11BASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
+#RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
 
 SNAPSHOT=	20060211
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/Envy

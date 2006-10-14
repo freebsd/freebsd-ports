@@ -6,7 +6,7 @@
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
@@ -43,7 +43,7 @@ PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
-.if (exists(${LOCALBASE}/bin/lablgl) && exists(${X11BASE}/libdata/pkgconfig/gtkgl-2.0.pc)) || defined(WITH_GTKTL)
+.if (exists(${LOCALBASE}/bin/lablgl) && exists(${LOCALBASE}/libdata/pkgconfig/gtkgl-2.0.pc)) || defined(WITH_GTKTL)
 CONFIGURE_ARGS+=	--with-gl
 BUILD_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 RUN_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=	--without-gl
 PLIST_SUB+=	GL="@comment "
 .endif
 
-.if (exists(${X11BASE}/libdata/pkgconfig/libglade-2.0.pc)) || defined(WITH_GLADE)
+.if (exists(${LOCALBASE}/libdata/pkgconfig/libglade-2.0.pc)) || defined(WITH_GLADE)
 CONFIGURE_ARGS+=	--with-glade
 USE_GNOME+=	libglade2
 WITH_GLADE=	yes
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--without-glade
 PLIST_SUB+=	GLADE="@comment "
 .endif
 
-.if (exists(${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc)) || defined(WITH_GNOMEUI)
+.if (exists(${LOCALBASE}/libdata/pkgconfig/libgnomeui-2.0.pc)) || defined(WITH_GNOMEUI)
 CONFIGURE_ARGS+=	--with-gnomeui
 USE_GNOME+=	libgnomeui
 WITH_GNOMEUI=	yes
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--without-gnomeui
 PLIST_SUB+=	GNOMEUI="@comment "
 .endif
 
-.if (exists(${X11BASE}/libdata/pkgconfig/libgnomecanvas-2.0.pc)) || defined(WITH_GNOMECANVAS)
+.if (exists(${LOCALBASE}/libdata/pkgconfig/libgnomecanvas-2.0.pc)) || defined(WITH_GNOMECANVAS)
 CONFIGURE_ARGS+=	--with-gnomecanvas
 USE_GNOME+=	libgnomecanvas
 PLIST_SUB+=	GNOMECANVAS=""
@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--without-gnomecanvas
 PLIST_SUB+=	GNOMECANVAS="@comment "
 .endif
 
-.if (exists(${X11BASE}/libdata/pkgconfig/librsvg-2.0.pc)) || defined(WITH_RSVG)
+.if (exists(${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc)) || defined(WITH_RSVG)
 CONFIGURE_ARGS+=	--with-rsvg
 USE_GNOME+=	librsvg2
 WITH_RSVG=	yes
@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--without-rsvg
 PLIST_SUB+=	RSVG="@comment "
 .endif
 
-.if (exists(${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)) || defined(WITH_GNOMEPANEL)
+.if (exists(${LOCALBASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)) || defined(WITH_GNOMEPANEL)
 CONFIGURE_ARGS+=	--with-panel
 USE_GNOME+=	gnomepanel
 WITH_PANEL=	yes
@@ -105,7 +105,7 @@ CONFIGURE_ARGS+=	--without-panel
 PLIST_SUB+=	PANEL="@comment "
 .endif
 
-.if (exists(${X11BASE}/libdata/pkgconfig/gtkspell-2.0.pc)) || defined(WITH_GTKSPELL)
+.if (exists(${LOCALBASE}/libdata/pkgconfig/gtkspell-2.0.pc)) || defined(WITH_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
 CONFIGURE_ARGS+=	--with-gtkspell

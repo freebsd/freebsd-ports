@@ -7,7 +7,7 @@
 
 PORTNAME=	clock
 PORTVERSION=	0.32
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 NAME=		Clock
 DATADIR=	${PREFIX}/share/gnome

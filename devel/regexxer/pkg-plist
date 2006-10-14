@@ -1,7 +1,4 @@
 bin/regexxer
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/regexxer.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/regexxer.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/regexxer.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/regexxer.desktop
 share/gnome/pixmaps/regexxer.png
 share/gnome/regexxer/aboutdialog.glade
@@ -19,3 +16,7 @@ share/locale/pt/LC_MESSAGES/regexxer.mo
 share/locale/pt_BR/LC_MESSAGES/regexxer.mo
 share/locale/sv/LC_MESSAGES/regexxer.mo
 @dirrm share/gnome/regexxer
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

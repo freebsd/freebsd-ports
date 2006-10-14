@@ -1,14 +1,53 @@
 bin/nautilus-actions-config
+bin/nautilus-actions-convert
+bin/nautilus-actions-new-config
 lib/nautilus/extensions-1.0/libnautilus-actions.la
 lib/nautilus/extensions-1.0/libnautilus-actions.so
 share/applications/nact.desktop
+share/icons/hicolor/16x16/apps/nautilus-actions.png
+share/icons/hicolor/22x22/apps/nautilus-actions.png
+share/icons/hicolor/48x48/apps/nautilus-actions.png
+share/icons/hicolor/scalable/apps/nautilus-actions.svg
+share/locale/bg/LC_MESSAGES/nautilus-actions.mo
+share/locale/bn/LC_MESSAGES/nautilus-actions.mo
+share/locale/ca/LC_MESSAGES/nautilus-actions.mo
+share/locale/cs/LC_MESSAGES/nautilus-actions.mo
+share/locale/da/LC_MESSAGES/nautilus-actions.mo
 share/locale/de/LC_MESSAGES/nautilus-actions.mo
+share/locale/en_CA/LC_MESSAGES/nautilus-actions.mo
 share/locale/es/LC_MESSAGES/nautilus-actions.mo
+share/locale/fi/LC_MESSAGES/nautilus-actions.mo
 share/locale/fr/LC_MESSAGES/nautilus-actions.mo
-%%DATADIR%%/config_newaction.xml
-%%DATADIR%%/nact/nautilus-actions-config.glade
-%%DATADIR%%/nact/nautilus-actions-icon.png
-share/pixmaps/nautilus-actions-icon.png
-@dirrmtry %%DATADIR%%/nact
-@dirrmtry %%DATADIR%%
-@dirrmtry share/applications
+share/locale/gl/LC_MESSAGES/nautilus-actions.mo
+share/locale/gu/LC_MESSAGES/nautilus-actions.mo
+share/locale/he/LC_MESSAGES/nautilus-actions.mo
+share/locale/ja/LC_MESSAGES/nautilus-actions.mo
+share/locale/lt/LC_MESSAGES/nautilus-actions.mo
+share/locale/lv/LC_MESSAGES/nautilus-actions.mo
+share/locale/nb/LC_MESSAGES/nautilus-actions.mo
+share/locale/nl/LC_MESSAGES/nautilus-actions.mo
+share/locale/pa/LC_MESSAGES/nautilus-actions.mo
+share/locale/pt_BR/LC_MESSAGES/nautilus-actions.mo
+share/locale/sv/LC_MESSAGES/nautilus-actions.mo
+share/locale/th/LC_MESSAGES/nautilus-actions.mo
+share/locale/vi/LC_MESSAGES/nautilus-actions.mo
+share/locale/zh_CN/LC_MESSAGES/nautilus-actions.mo
+share/locale/zh_HK/LC_MESSAGES/nautilus-actions.mo
+share/locale/zh_TW/LC_MESSAGES/nautilus-actions.mo
+share/nautilus-actions/nact/nautilus-actions-config.glade
+@dirrm share/nautilus-actions/nact
+@dirrm share/nautilus-actions
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

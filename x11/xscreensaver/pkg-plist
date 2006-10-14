@@ -211,7 +211,6 @@ bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-text
-lib/X11/app-defaults/XScreenSaver
 share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/README
 %%DATADIR%%/config/anemone.xml
@@ -435,6 +434,9 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/glade/screensaver-snap.png
 %%DATADIR%%/glade/xscreensaver-demo.glade2
 @dirrmtry bin/xscreensaver-hacks
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
+@cwd %%X11BASE%%
+lib/X11/app-defaults/XScreenSaver

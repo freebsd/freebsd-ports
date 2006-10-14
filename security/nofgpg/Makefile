@@ -8,6 +8,7 @@
 
 PORTNAME=	nofgpg
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://www.cgabriel.org/download/nofgpg/
 
@@ -24,7 +25,8 @@ MAN1=		nofgpg.1
 PLIST_FILES=	bin/nofgpg
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/share,${X11BASE}/share/gnome,g" ${WRKSRC}/nofgpg
+	@${REINPLACE_CMD} -e "s,/usr/share,${LOCALBASE}/share/gnome,g" \
+		${WRKSRC}/nofgpg
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

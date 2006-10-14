@@ -7,6 +7,7 @@
 
 PORTNAME=	mail-notification
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	mailnotify
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A mail notification for freedesktop.org-compliant system trays
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack eel2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -67,9 +68,9 @@ PLIST_SUB+=	GMAIL=""
 CONFIGURE_ARGS+=--disable-evolution
 PLIST_SUB+=	EVOLUTION="@comment "
 .else
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/evolution-plugin-2.6.pc:${PORTSDIR}/mail/evolution
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/evolution-plugin-2.6.pc:${PORTSDIR}/mail/evolution
-PLIST_SUB+=	EVOLUTION="" LITERAL_PREFIX="${PREFIX}"
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-2.6.pc:${PORTSDIR}/mail/evolution
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-2.6.pc:${PORTSDIR}/mail/evolution
+PLIST_SUB+=	EVOLUTION=""
 .endif
 .if defined(WITHOUT_SYLPHEED)
 CONFIGURE_ARGS+=--disable-sylpheed

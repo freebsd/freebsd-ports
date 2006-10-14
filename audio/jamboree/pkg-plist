@@ -38,3 +38,15 @@ share/locale/sr/LC_MESSAGES/jamboree.mo
 share/locale/sr@Latn/LC_MESSAGES/jamboree.mo
 share/locale/sv/LC_MESSAGES/jamboree.mo
 @dirrm share/gnome/jamboree
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

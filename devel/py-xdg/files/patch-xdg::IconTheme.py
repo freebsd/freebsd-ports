@@ -7,7 +7,7 @@
 -icondirs.append("/usr/share/pixmaps")
 +icondirs.append("%%X11BASE%%/share/pixmaps")
 +icondirs.append("%%LOCALBASE%%/share/pixmaps")
-+icondirs.append("%%X11BASE%%/share/gnome/pixmaps")
++icondirs.append("%%LOCALBASE%%/share/gnome/pixmaps")
 +icondirs.append("%%X11BASE%%/share/icons")
 +icondirs.append("%%LOCALBASE%%/share/icons")
  icondirs.append(os.path.expanduser("~/.icons"))

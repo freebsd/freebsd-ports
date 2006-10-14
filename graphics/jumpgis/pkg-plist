@@ -7,10 +7,9 @@ jumpgis/lib/jump-1.1.2.jar
 jumpgis/lib/junit.jar
 jumpgis/lib/xercesImpl.jar
 jumpgis/lib/xml-apis.jar
+%%GNOMELINKS%%share/gnome/applications/jump.desktop
+%%GNOMELINKS%%share/gnome/pixmaps/jump.png
 @exec mkdir -p %D/jumpgis/lib/ext
 @dirrm jumpgis/lib/ext
 @dirrm jumpgis/lib
 @dirrm jumpgis
-@cwd %%X11BASE%%
-%%GNOMELINKS%%share/gnome/applications/jump.desktop
-%%GNOMELINKS%%share/gnome/pixmaps/jump.png

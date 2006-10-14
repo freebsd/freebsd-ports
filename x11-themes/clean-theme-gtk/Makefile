@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/clean-theme-gtk/Makefile,v 1.1 2006/07/19 19:56:11 ahze Exp $
 
 PORTNAME=	clean-theme-gtk
 PORTVERSION=	1.2.x
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	clean___
@@ -18,7 +18,6 @@ COMMENT=	The Clean GTK theme engine
 
 WRKSRC=		${WRKDIR}/gtk-clean-theme
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

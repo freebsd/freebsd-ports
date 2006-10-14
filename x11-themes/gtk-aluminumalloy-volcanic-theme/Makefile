@@ -7,6 +7,7 @@
 
 PORTNAME=	aluminumalloy
 PORTVERSION?=	2004.01.04
+PORTREVISION?=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX?=	${TYPE}-
@@ -23,7 +24,6 @@ THEME_NAME=	AluminumAlloy-${FLAVOR:U:C/^(.).*$/\1/g}${FLAVOR:C/^(.)//}
 WRKSRC=		${WRKDIR}/${THEME_NAME}
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 .if ${TYPE} == "gtk"

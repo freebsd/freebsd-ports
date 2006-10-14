@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/whistlerk/Makefile,v 1.1 2006/07/20 11:38:27 ahze Exp $
 
 PORTNAME=	WhistlerK
 PORTVERSION=	200010142358
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	whistlerk
@@ -18,7 +18,6 @@ COMMENT=	A GTK theme engine inspired by the Windows Whistler
 
 WRKSRC=		${WRKDIR}/gtk-theme-WhistlerK
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

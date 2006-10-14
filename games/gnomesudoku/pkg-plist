@@ -90,10 +90,17 @@ share/locale/sv/LC_MESSAGES/gnome-sudoku.mo
 share/locale/tr/LC_MESSAGES/gnome-sudoku.mo
 share/locale/uk/LC_MESSAGES/gnome-sudoku.mo
 share/pixmaps/sudoku.png
+@dirrmtry share/pixmaps
 @dirrm share/gnome-sudoku
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku

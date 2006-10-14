@@ -63,3 +63,15 @@ share/locale/sr/LC_MESSAGES/mlview.mo
 share/locale/sr@Latn/LC_MESSAGES/mlview.mo
 share/locale/sv/LC_MESSAGES/mlview.mo
 @dirrm share/gnome/mlview
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

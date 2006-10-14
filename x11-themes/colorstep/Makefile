@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/colorstep/Makefile,v 1.1 2006/07/19 19:56:12 ahze Exp $
 
 PORTNAME=	colorstep
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	colorstep
@@ -18,7 +18,6 @@ COMMENT=	A theme engine based on GtkStep and Step-pastel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15
 

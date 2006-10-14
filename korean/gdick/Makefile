@@ -7,7 +7,7 @@
 
 PORTNAME=	gdick
 PORTVERSION=	0.9.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	korean python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gdick
@@ -29,7 +29,7 @@ post-patch:
 		's,/usr/share/gdick/gdick.glade,${PREFIX}/share/gdick/gdick.glade,g' \
 		${WRKSRC}/lib/gdick/gdick.py
 	${REINPLACE_CMD} \
-		-e 's,lib/bonobo,${X11BASE}/libdata/bonobo,g' \
+		-e 's,lib/bonobo,${LOCALBASE}/libdata/bonobo,g' \
 		${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e 's,/usr/bin/gdick,${PREFIX}/bin/gdick,g' \
 		${WRKSRC}/GNOME_GDick.server

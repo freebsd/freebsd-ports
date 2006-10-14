@@ -3,11 +3,11 @@
 # Whom:					Scott A. Moberly <smoberly@xavier.dyndns.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11/powershell/Makefile,v 1.1 2006/10/04 19:44:10 ahze Exp $
 
 PORTNAME=	powershell
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for the X11
 
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomelibs
-USE_AUTOTOOLS=	autoconf:213
+USE_GNOME=	gnomelibs gnomehier
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include  `${IMLIB_CONFIG} --cflags`" \
 		LDFLAGS="-L${LOCALBASE}/lib  `${IMLIB_CONFIG} --libs`"
 ALL_TARGET=	${PORTNAME}

@@ -7,7 +7,7 @@
 
 PORTNAME=	ami
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean x11
 MASTER_SITES=	http://download.kldp.net/ami/ \
 		http://www.kr.freebsd.org/~hwang/ami/:hjdic \
@@ -20,14 +20,13 @@ COMMENT=	Well-known Korean X11 Input Method
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR} \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-gdk-pixbuf-prefix=${X11BASE} \
+		--with-gdk-pixbuf-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 DATADIR=	share
 

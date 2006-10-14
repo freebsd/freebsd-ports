@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.7.785-20060201
+PORTREVISION=	1
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	https://helixcommunity.org/download.php/1917/:player \
 		ftp://rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/:codecs
@@ -38,14 +39,14 @@ PLIST_SUB+=	NLS=""
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/share/icons)
+.if exists(${LOCALBASE}/share/icons)
 WITH_ICONS=	yes
 PLIST_SUB+=	ICONS=""
 .else
 PLIST_SUB+=	ICONS="@comment "
 .endif
 
-.if exists(${X11BASE}/share/gnome)
+.if exists(${LOCALBASE}/share/gnome)
 WITH_GNOME=	yes
 PLIST_SUB+=	GNOME=""
 .else
@@ -101,32 +102,33 @@ do-install:
 
 .if defined(WITH_ICONS)
 . for size in 16x16 32x32 48x48 192x192
-	@${MKDIR} ${X11BASE}/share/icons/hicolor/${size}/apps
+	@${MKDIR} ${LOCALBASE}/share/icons/hicolor/${size}/apps
 	${INSTALL_DATA} ${WRKSRC}/share/icons/realplay_${size}.png \
-		${X11BASE}/share/icons/hicolor/${size}/apps
+		${LOCALBASE}/share/icons/hicolor/${size}/apps
 . endfor
 . for size in 48x48 192x192
-	@${MKDIR} ${X11BASE}/share/icons/hicolor/${size}/mimetypes
+	@${MKDIR} ${LOCALBASE}/share/icons/hicolor/${size}/mimetypes
 	${INSTALL_DATA} ${WRKSRC}/share/icons/mime-*_${size}.png \
-		${X11BASE}/share/icons/hicolor/${size}/mimetypes
+		${LOCALBASE}/share/icons/hicolor/${size}/mimetypes
 . endfor
 .endif
 
 .if defined(WITH_GNOME)
-	@${MKDIR} ${X11BASE}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/share/realplay.png ${X11BASE}/share/gnome/pixmaps
+	@${MKDIR} ${LOCALBASE}/share/gnome/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/share/realplay.png \
+		${LOCALBASE}/share/gnome/pixmaps
 
-	@${MKDIR} ${X11BASE}/share/gnome/applications
+	@${MKDIR} ${LOCALBASE}/share/gnome/applications
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.desktop \
-		${X11BASE}/share/gnome/applications
+		${LOCALBASE}/share/gnome/applications
 
-	@${MKDIR} ${X11BASE}/share/gnome/application-registry
+	@${MKDIR} ${LOCALBASE}/share/gnome/application-registry
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.applications \
-		${X11BASE}/share/gnome/application-registry
+		${LOCALBASE}/share/gnome/application-registry
 
-	@${MKDIR} ${X11BASE}/share/gnome/mime-info
+	@${MKDIR} ${LOCALBASE}/share/gnome/mime-info
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.keys ${WRKSRC}/share/realplay.mime \
-		${X11BASE}/share/gnome/mime-info
+		${LOCALBASE}/share/gnome/mime-info
 .endif
 
 .include <bsd.port.post.mk>

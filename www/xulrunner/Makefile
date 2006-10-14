@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/xulrunner/Makefile,v 1.6 2006/02/26 16:58:29 ahze Exp $
+#    $MCom: ports/www/xulrunner/Makefile,v 1.13 2006/10/12 12:22:03 ahze Exp $
 
 PORTNAME=	xulrunner
 PORTVERSION=	1.8.0.4
-PORTREVISION?=	1
+PORTREVISION?=	4
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	xulrunner/releases/${PORTVERSION}/source/
@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 ALL_TARGET=	default
 HAS_CONFIGURE=	yes
@@ -25,12 +24,14 @@ USE_GMAKE=	yes
 USE_GCC=	3.4+
 
 PORT_MOZCONFIG=	${WRKSRC}/xulrunner/config/mozconfig
-MOZ_OPTIONS?=	--disable-javaxpcom
+MOZ_OPTIONS?=	--disable-javaxpcom --enable-canvas \
+		--enable-system-cairo
 MOZ_EXTENSIONS=	default,cookie,permissions
 OPTIONS=	# Empty, used for generic gecko OPTIONS
+USE_GECKO_OPTIONS=	java debug logging optimized_cflags
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/Makefile.common"
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 
 .if ${OSVERSION} < 500000
 BROKEN=	does not build

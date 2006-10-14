@@ -30,10 +30,47 @@ lib/xchat-gnome/plugins/soundnotification.so
 lib/xchat-gnome/plugins/urlscraper.a
 lib/xchat-gnome/plugins/urlscraper.la
 lib/xchat-gnome/plugins/urlscraper.so
-share/applications/xchat-gnome.desktop
+share/gnome/applications/xchat-gnome.desktop
 share/gnome/help/xchat-gnome/C/figures/xchat-gnome_main_window.png
 share/gnome/help/xchat-gnome/C/legal.xml
 share/gnome/help/xchat-gnome/C/xchat-gnome.xml
+share/gnome/omf/xchat-gnome/xchat-gnome-C.omf
+share/gnome/xchat-gnome/channel-list.glade
+share/gnome/xchat-gnome/color.png
+share/gnome/xchat-gnome/connect-dialog.glade
+share/gnome/xchat-gnome/dcc-window.glade
+share/gnome/xchat-gnome/dcc.png
+share/gnome/xchat-gnome/effects.png
+share/gnome/xchat-gnome/global-message.png
+share/gnome/xchat-gnome/hop.png
+share/gnome/xchat-gnome/irc-network-editor.glade
+share/gnome/xchat-gnome/irc.png
+share/gnome/xchat-gnome/logout.png
+share/gnome/xchat-gnome/message.wav
+share/gnome/xchat-gnome/newdata.png
+share/gnome/xchat-gnome/nicksaid.png
+share/gnome/xchat-gnome/notauthorized.png
+share/gnome/xchat-gnome/op.png
+share/gnome/xchat-gnome/plugin-manager.png
+share/gnome/xchat-gnome/preferences-dialog.glade
+share/gnome/xchat-gnome/preferences-keybindings.png
+share/gnome/xchat-gnome/purple.png
+share/gnome/xchat-gnome/red.png
+share/gnome/xchat-gnome/servers.png
+share/gnome/xchat-gnome/setup-dialog.glade
+share/gnome/xchat-gnome/soap.png
+share/gnome/xchat-gnome/spellcheck.png
+share/gnome/xchat-gnome/stock_down.png
+share/gnome/xchat-gnome/stock_link.png
+share/gnome/xchat-gnome/stock_up.png
+share/gnome/xchat-gnome/toilet-paper.png
+share/gnome/xchat-gnome/topic-change.glade
+share/gnome/xchat-gnome/users.png
+share/gnome/xchat-gnome/voice.png
+share/gnome/xchat-gnome/wrap.png
+share/gnome/xchat-gnome/xchat-gnome-ui.xml
+share/gnome/xchat-gnome/xchat-gnome.glade
+share/gnome/xchat-gnome/xchat-gnome.png
 share/icons/hicolor/48x48/apps/xchat-gnome.png
 share/locale/am/LC_MESSAGES/xchat-gnome.mo
 share/locale/az/LC_MESSAGES/xchat-gnome.mo
@@ -84,59 +121,46 @@ share/locale/wa/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_HK/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
-share/omf/xchat-gnome/xchat-gnome-C.omf
-share/xchat-gnome/channel-list.glade
-share/xchat-gnome/color.png
-share/xchat-gnome/connect-dialog.glade
-share/xchat-gnome/dcc-window.glade
-share/xchat-gnome/dcc.png
-share/xchat-gnome/effects.png
-share/xchat-gnome/global-message.png
-share/xchat-gnome/hop.png
-share/xchat-gnome/irc-network-editor.glade
-share/xchat-gnome/irc.png
-share/xchat-gnome/logout.png
-share/xchat-gnome/message.wav
-share/xchat-gnome/newdata.png
-share/xchat-gnome/nicksaid.png
-share/xchat-gnome/notauthorized.png
-share/xchat-gnome/op.png
-share/xchat-gnome/plugin-manager.png
-share/xchat-gnome/preferences-dialog.glade
-share/xchat-gnome/preferences-keybindings.png
-share/xchat-gnome/purple.png
-share/xchat-gnome/red.png
-share/xchat-gnome/servers.png
-share/xchat-gnome/setup-dialog.glade
-share/xchat-gnome/soap.png
-share/xchat-gnome/spellcheck.png
-share/xchat-gnome/stock_down.png
-share/xchat-gnome/stock_link.png
-share/xchat-gnome/stock_up.png
-share/xchat-gnome/toilet-paper.png
-share/xchat-gnome/topic-change.glade
-share/xchat-gnome/users.png
-share/xchat-gnome/voice.png
-share/xchat-gnome/wrap.png
-share/xchat-gnome/xchat-gnome-ui.xml
-share/xchat-gnome/xchat-gnome.glade
-share/xchat-gnome/xchat-gnome.png
-@dirrm share/xchat-gnome
-@dirrm share/omf/xchat-gnome
+@dirrm share/gnome/xchat-gnome
+@dirrm share/gnome/omf/xchat-gnome
 @dirrm share/gnome/help/xchat-gnome/C/figures
 @dirrm share/gnome/help/xchat-gnome/C
 @dirrm share/gnome/help/xchat-gnome
-@dirrmtry share/applications
-@dirrmtry lib/xchat-gnome/plugins
-@dirrmtry lib/xchat-gnome
-@dirrmtry share/omf
+@dirrm lib/xchat-gnome/plugins
+@dirrm lib/xchat-gnome
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
 @dirrmtry share/locale/jbo/LC_MESSAGES
 @dirrmtry share/locale/jbo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

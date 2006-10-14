@@ -3,10 +3,11 @@
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
-#
+#    $MCom: ports/graphics/gimp/Makefile,v 1.2 2006/08/25 18:14:57 pav Exp $
 
 PORTNAME=	gimp
 PORTVERSION=	2.2.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -34,7 +35,6 @@ CONFLICTS=	gimp-1.* gimpshop-[0-9]*
 SHLIBVER?=	200
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=	--enable-mp
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
 USE_GNOME+=		gnomepanel desktopfileutils
-CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
+CONFIGURE_ARGS+=	--with-desktop-dir=${LOCALBASE}/share/gnome
 CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 PKGNAMESUFFIX:=		-gnome
 PLIST_SUB+=		GNOMEPANEL:=""

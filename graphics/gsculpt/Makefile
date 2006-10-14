@@ -8,7 +8,7 @@
 
 PORTNAME=	gsculpt
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,8 +28,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,-O3 -Wall -Werror,${CXXFLAGS},g ; \
 		s,gtk-config,${GTK_CONFIG},g ; \
 		s,/usr/include/glib.h,${LOCALBASE}/include/glib12/glib.h,g ; \
-		s,/usr/include/gtk/,${X11BASE}/include/gtk12/gtk/,g ; \
-		s,/usr/include/gdk/,${X11BASE}/include/gtk12/gdk/,g" ${WRKSRC}/Makefile
+		s,/usr/include/gtk/,${LOCALBASE}/include/gtk12/gtk/,g ; \
+		s,/usr/include/gdk/,${LOCALBASE}/include/gtk12/gdk/,g" \
+			${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gsculpt ${PREFIX}/bin

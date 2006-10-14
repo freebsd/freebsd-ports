@@ -1,6 +1,6 @@
 bin/mkpreview
 bin/wmakerconf
-share/gnome/applications/wmakerconf.desktop
+share/applications/wmakerconf.desktop
 share/locale/ca/LC_MESSAGES/wmakerconf.mo
 share/locale/da/LC_MESSAGES/wmakerconf-data.mo
 share/locale/da/LC_MESSAGES/wmakerconf.mo
@@ -60,3 +60,4 @@ share/locale/tr/LC_MESSAGES/wmakerconf.mo
 %%DATADIR%%/wmakerconf.xpm
 %%DATADIR%%/workspace.xpm
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

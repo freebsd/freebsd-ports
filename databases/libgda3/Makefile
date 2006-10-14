@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgda2/Makefile,v 1.32 2005/10/29 04:20:53 mezz Exp $
+#   $MCom: ports/databases/libgda3/Makefile,v 1.2 2006/09/10 00:51:06 mezz Exp $
 #
 
 PORTNAME=	libgda3
 PORTVERSION=	1.9.102
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:R}
@@ -25,10 +25,10 @@ USE_BZIP2=	yes
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-bdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

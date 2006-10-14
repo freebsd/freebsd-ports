@@ -21,7 +21,10 @@ COMMENT=	XFree86-4 print server
 
 CONFLICTS=	xorg-printserver-*
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_bitmap_pcfread.c
+EXTRA_PATCHES=	${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_bitmap_pcfread.c \
+                ${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_FreeType_ftfuncs.c \
+                ${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_FreeType_ftfuncs.h \
+                ${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_FreeType_ftsystem.c
 PLIST_FILES=		bin/Xprt
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans

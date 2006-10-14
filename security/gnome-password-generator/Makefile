@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-password-generator
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnome-password
@@ -17,7 +17,6 @@ COMMENT=	GNOME 2 password generator
 
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 post-patch:

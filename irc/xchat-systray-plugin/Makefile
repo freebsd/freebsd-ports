@@ -7,7 +7,7 @@
 
 PORTNAME=	xchat-systray-plugin
 PORTVERSION=	2.4.5
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xchat2-plugins
@@ -19,7 +19,6 @@ COMMENT=	Systray icon plugin for X-Chat
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 WRKSRC=		${WRKDIR}/xchat-systray-integration-${PORTVERSION}
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 

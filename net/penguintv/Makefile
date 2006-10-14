@@ -6,6 +6,7 @@
 
 PORTNAME=	PenguinTV
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -24,8 +25,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF
 
-USE_GNOME=	pygnomeextras pygnome2
+USE_GNOME=	gnomehier pygnomeextras pygnome2
 USE_PYTHON=	yes
+
+GCONF_SCHEMAS=	penguintv.schema
 
 CONFLICTS=	PenguinTV-devel-[0-9]*
 
@@ -50,5 +53,10 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
+
+post-install:
+	@${MKDIR} ${LOCALBASE}/etc/gconf/schemas
+	@${INSTALL_DATA} ${WRKSRC}/share/penguintv.schema \
+		${LOCALBASE}/etc/gconf/schemas/
 
 .include <bsd.port.post.mk>

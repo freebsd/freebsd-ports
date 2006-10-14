@@ -1269,9 +1269,7 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
-%%DESKTOP%%@cwd %%X11BASE%%
 %%DESKTOP%%share/gnome/applications/xemacs.desktop
-%%DESKTOP%%@cwd %%LOCALBASE%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp

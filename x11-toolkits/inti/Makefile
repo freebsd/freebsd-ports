@@ -8,7 +8,7 @@
 
 PORTNAME=	inti
 PORTVERSION=	1.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	inti
@@ -28,6 +28,10 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|_gtk_window_get_group|gtk_window_get_group|' \
+	    	${WRKSRC}/inti/gtk/window.cc
 
 post-configure:
 	@${TOUCH} ${WRKSRC}/inti-config.h.in
