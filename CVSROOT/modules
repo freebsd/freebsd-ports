@@ -7863,6 +7863,7 @@ onenetd		ports/net/onenetd
 oniguruma	ports/devel/oniguruma
 onion-fec	ports/net/onion-fec
 onis		ports/irc/onis
+ontv		ports/deskutils/ontv
 onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
 oof		ports/science/oof
