@@ -17,10 +17,6 @@ EXTRACT_ONLY=	#
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A viewer for multiple sequence alignments
 
-BROKEN=		checksum mismatch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_LINUX=	yes
 
 NO_BUILD=	yes
