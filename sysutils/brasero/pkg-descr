@@ -1,0 +1,23 @@
+CD/DVD mastering tool for the gnome desktop. It has been designed to be
+simple and easy to use.
+ 
+Features:
+Data CD/DVD:
+- supports edition of discs contents
+- can burn data CD/DVD on the fly
+- supports multisession
+- supports joliet extension
+- can write the image to the hard drive
+Audio CD:
+- write CD-TEXT information (automatically found thanks to gstreamer)
+- supports the edition of CD-TEXT information
+- can burn audio CD on the fly
+- can use all audio files handled by Gstreamer local installation
+- can search for audio files inside dropped folders
+CD/DVD copy:
+- can copy a CD/DVD to the hard drive
+- can copy DVD and CD on the fly
+- supports single-session data DVD
+- supports any kind of CD
+
+WWW: http://perso.wanadoo.fr/bonfire/

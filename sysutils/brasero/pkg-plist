@@ -1,0 +1,53 @@
+bin/brasero
+share/applications/brasero.desktop
+%%DATADIR%%/disc-00.png
+%%DATADIR%%/disc-05.png
+%%DATADIR%%/disc-10.png
+%%DATADIR%%/disc-100.png
+%%DATADIR%%/disc-15.png
+%%DATADIR%%/disc-20.png
+%%DATADIR%%/disc-25.png
+%%DATADIR%%/disc-30.png
+%%DATADIR%%/disc-35.png
+%%DATADIR%%/disc-40.png
+%%DATADIR%%/disc-45.png
+%%DATADIR%%/disc-50.png
+%%DATADIR%%/disc-55.png
+%%DATADIR%%/disc-60.png
+%%DATADIR%%/disc-65.png
+%%DATADIR%%/disc-70.png
+%%DATADIR%%/disc-75.png
+%%DATADIR%%/disc-80.png
+%%DATADIR%%/disc-85.png
+%%DATADIR%%/disc-90.png
+%%DATADIR%%/disc-95.png
+%%DATADIR%%/icon-final-128x128.png
+%%DATADIR%%/icon-final-256x256.png
+%%DATADIR%%/icon-final-48x48.png
+%%DATADIR%%/logo.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-brasero.png
+share/locale/ca/LC_MESSAGES/brasero.mo
+share/locale/de/LC_MESSAGES/brasero.mo
+share/locale/es/LC_MESSAGES/brasero.mo
+share/locale/fr/LC_MESSAGES/brasero.mo
+share/locale/it/LC_MESSAGES/brasero.mo
+share/locale/ja/LC_MESSAGES/brasero.mo
+share/locale/pl/LC_MESSAGES/brasero.mo
+share/locale/pt_BR/LC_MESSAGES/brasero.mo
+share/mime/packages/brasero.xml
+share/pixmaps/brasero.png
+@dirrmtry share/pixmaps
+@dirrm share/icons/gnome/48x48/mimetypes
+@dirrm share/icons/gnome/48x48
+@dirrm share/icons/gnome
+@dirrm share/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

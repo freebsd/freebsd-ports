@@ -53,6 +53,7 @@
     SUBDIR += blimitd
     SUBDIR += boxbackup
     SUBDIR += bpm
+    SUBDIR += brasero
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdadminscripts
     SUBDIR += bsdsar
