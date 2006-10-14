@@ -18,6 +18,7 @@ COMMENT=	Explore, Search and Discover
 BUILD_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+FORBIDDEN=	Buffer-overflow vulnerability: http://vuxml.FreeBSD.org/5c9a2769-5ade-11db-a5ae-00508d6a62df.html
 BROKEN=		Incomplete pkg-plist
 
 RESTRICTED=	Not sure about redistribution rights
