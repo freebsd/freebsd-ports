@@ -1,0 +1,64 @@
+bin/conduit
+%%PYTHON_SITELIBDIR%%/conduit/Canvas.py
+%%PYTHON_SITELIBDIR%%/conduit/Conduit.py
+%%PYTHON_SITELIBDIR%%/conduit/DataProvider.py
+%%PYTHON_SITELIBDIR%%/conduit/Exceptions.py
+%%PYTHON_SITELIBDIR%%/conduit/MainWindow.py
+%%PYTHON_SITELIBDIR%%/conduit/Module.py
+%%PYTHON_SITELIBDIR%%/conduit/Settings.py
+%%PYTHON_SITELIBDIR%%/conduit/Synchronization.py
+%%PYTHON_SITELIBDIR%%/conduit/TypeConverter.py
+%%PYTHON_SITELIBDIR%%/conduit/Utils.py
+%%PYTHON_SITELIBDIR%%/conduit/__init__.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/DataType.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/Email.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/Feed.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/File.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/Note.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/Text.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/__init__.py
+%%PYTHON_SITELIBDIR%%/conduit/start_conduit.py
+%%DATADIR%%/contrib/EXIF-15-FEB-04/EXIF.py
+%%DATADIR%%/contrib/FlickrAPI-8/flickrapi.py
+%%DATADIR%%/contrib/FlickrAPI-8/setup.py
+%%DATADIR%%/contrib/backpack-1.1/backpack.py
+%%DATADIR%%/contrib/backpack-1.1/bptest.py
+%%DATADIR%%/contrib/backpack-1.1/wapsupport.py
+%%DATADIR%%/contrib/httplib2/__init__.py
+%%DATADIR%%/contrib/libgmail-0.1.5/lgconstants.py
+%%DATADIR%%/contrib/libgmail-0.1.5/libgmail.py
+%%DATADIR%%/contrib/libgmail-0.1.5/setup.py
+%%DATADIR%%/contrib/python-opml-0.5/OPML.py
+%%DATADIR%%/data/backpack.png
+%%DATADIR%%/data/conduit-icon.png
+%%DATADIR%%/data/conduit-splash.png
+%%DATADIR%%/data/conduit.glade
+%%DATADIR%%/data/f-spot.png
+%%DATADIR%%/data/feed-icon.png
+%%DATADIR%%/data/liferea.png
+%%DATADIR%%/data/tomboy.png
+%%DATADIR%%/dataproviders/BackpackModule.py
+%%DATADIR%%/dataproviders/FeedModule.py
+%%DATADIR%%/dataproviders/FileModule.py
+%%DATADIR%%/dataproviders/FlickrModule.py
+%%DATADIR%%/dataproviders/FspotModule.py
+%%DATADIR%%/dataproviders/GmailModule.py
+%%DATADIR%%/dataproviders/LifereaModule.py
+%%DATADIR%%/dataproviders/NotesModule.py
+%%DATADIR%%/dataproviders/TestModule.py
+%%DATADIR%%/dataproviders/TextConverterModule.py
+%%DATADIR%%/dataproviders/__init__.py
+share/pixmaps/conduit-icon.png
+@dirrm %%DATADIR%%/dataproviders
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/contrib/python-opml-0.5
+@dirrm %%DATADIR%%/contrib/libgmail-0.1.5
+@dirrm %%DATADIR%%/contrib/httplib2
+@dirrm %%DATADIR%%/contrib/backpack-1.1
+@dirrm %%DATADIR%%/contrib/FlickrAPI-8
+@dirrm %%DATADIR%%/contrib/EXIF-15-FEB-04
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/conduit/datatypes
+@dirrm %%PYTHON_SITELIBDIR%%/conduit
