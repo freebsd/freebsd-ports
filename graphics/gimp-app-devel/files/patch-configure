@@ -1,0 +1,23 @@
+--- configure.orig	Sun Mar  6 15:30:12 2005
++++ configure	Sun Mar  6 15:33:57 2005
+@@ -25925,6 +25925,7 @@
+     if test "x$enable_gtktest" = "xyes" ; then
+       ac_save_CFLAGS="$CFLAGS"
+       ac_save_LIBS="$LIBS"
++      GTK_LIBS="$GIMP_THREAD_LIBS $GTK_LIBS"
+       CFLAGS="$CFLAGS $GTK_CFLAGS"
+       LIBS="$GTK_LIBS $LIBS"
+       rm -f conf.gtktest
+@@ -33865,9 +33866,9 @@
+ fi
+ fi;
+ 
+-gimpdatadir="$datadir/$PACKAGE/2.0"
+-gimpplugindir="$libdir/$PACKAGE/2.0"
+-gimpsysconfdir="$sysconfdir/$PACKAGE/2.0"
++gimpdatadir="$datadir/$PACKAGE"
++gimpplugindir="$libexecdir/$PACKAGE/2.2"
++gimpsysconfdir="$sysconfdir/$PACKAGE/2.2"
+ 
+ localedir='${prefix}/${DATADIRNAME}/locale'
+ 
