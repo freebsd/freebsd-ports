@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xxe
-PORTVERSION=	3.2.0
+PORTVERSION=	${XXE_VERSION}
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.xmlmind.net/xmleditor/_download/
 PKGNAMESUFFIX=	-std
@@ -15,10 +15,6 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/./_/g}
 MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	A validating XML editor featuring a word processor-like view
 
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_JAVA=	YES
 JAVA_VERSION=	1.5
 NO_BUILD=	YES
@@ -26,9 +22,9 @@ NO_BUILD=	YES
 RESTRICTED=	"Licensee may not distribute the Software"
 
 BINS=		convertdoc csscheck deploywebstart dtdtoxsd dtdvalid \
-		xsdvalid xxe
+		rngvalid schvalid xsdvalid xxe
 
-PLIST_SUB=	XXE=${DISTNAME}
+PLIST_SUB=	XXE=${XXE_DIR}
 
 post-extract:
 		@${SED} -e 's,%%JAVA_HOME%%,${JAVA_HOME},' \
@@ -42,5 +38,7 @@ do-install:
 .for f in ${BINS}
 		@${INSTALL_SCRIPT} ${WRKDIR}/xxe ${PREFIX}/bin/${f}
 .endfor
+
+.include "Makefile.inc"
 
 .include <bsd.port.mk>
