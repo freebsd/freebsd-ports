@@ -1,36 +1,36 @@
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/css/xml2rfc.css
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/dtd/rfc2629-other.ent
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/dtd/rfc2629-xhtml.ent
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/dtd/rfc2629.dtd
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/empty-draft.xml
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/decrsectlevel.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/emphasis_menu.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/figure.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/incrsectlevel.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/itemizedlist.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/list_menu.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/navigate2.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/navigateNext2.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/navigatePrevious2.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/orderedlist.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/para.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/plain.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/section.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons/table.gif
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/new-draft.xml
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/version.txt
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xml2rfc.jar
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xml2rfc.xxe
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xml2rfc_catalog.xml
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xml2rfc_help.jar
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xsl/check-ietf-references.xslt
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xsl/expand-pi-rfc-include.xslt
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xsl/rfc2629.xslt
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xsl/rfc2629toFO.xslt
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xsl/xsl11toFop.xslt
-lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xsl/xsl11toXep.xslt
-@dirrm lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/css
-@dirrm lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/dtd
-@dirrm lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/icons
-@dirrm lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc/xsl
-@dirrm lib/xxe-std-%%XXE_VERSION%%/addon/xml2rfc
+lib/%%XXE_DIR%%/addon/xml2rfc/css/xml2rfc.css
+lib/%%XXE_DIR%%/addon/xml2rfc/dtd/rfc2629-other.ent
+lib/%%XXE_DIR%%/addon/xml2rfc/dtd/rfc2629-xhtml.ent
+lib/%%XXE_DIR%%/addon/xml2rfc/dtd/rfc2629.dtd
+lib/%%XXE_DIR%%/addon/xml2rfc/empty-draft.xml
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/decrsectlevel.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/emphasis_menu.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/figure.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/incrsectlevel.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/itemizedlist.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/list_menu.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/navigate2.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/navigateNext2.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/navigatePrevious2.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/orderedlist.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/para.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/plain.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/section.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/icons/table.gif
+lib/%%XXE_DIR%%/addon/xml2rfc/new-draft.xml
+lib/%%XXE_DIR%%/addon/xml2rfc/version.txt
+lib/%%XXE_DIR%%/addon/xml2rfc/xml2rfc.jar
+lib/%%XXE_DIR%%/addon/xml2rfc/xml2rfc.xxe
+lib/%%XXE_DIR%%/addon/xml2rfc/xml2rfc_catalog.xml
+lib/%%XXE_DIR%%/addon/xml2rfc/xml2rfc_help.jar
+lib/%%XXE_DIR%%/addon/xml2rfc/xsl/check-ietf-references.xslt
+lib/%%XXE_DIR%%/addon/xml2rfc/xsl/expand-pi-rfc-include.xslt
+lib/%%XXE_DIR%%/addon/xml2rfc/xsl/rfc2629.xslt
+lib/%%XXE_DIR%%/addon/xml2rfc/xsl/rfc2629toFO.xslt
+lib/%%XXE_DIR%%/addon/xml2rfc/xsl/xsl11toFop.xslt
+lib/%%XXE_DIR%%/addon/xml2rfc/xsl/xsl11toXep.xslt
+@dirrm lib/%%XXE_DIR%%/addon/xml2rfc/css
+@dirrm lib/%%XXE_DIR%%/addon/xml2rfc/dtd
+@dirrm lib/%%XXE_DIR%%/addon/xml2rfc/icons
+@dirrm lib/%%XXE_DIR%%/addon/xml2rfc/xsl
+@dirrm lib/%%XXE_DIR%%/addon/xml2rfc
