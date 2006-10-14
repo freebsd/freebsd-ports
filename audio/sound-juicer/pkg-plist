@@ -5,24 +5,42 @@ share/gnome/help/sound-juicer/C/figures/prefs.png
 share/gnome/help/sound-juicer/C/figures/startup.png
 share/gnome/help/sound-juicer/C/legal.xml
 share/gnome/help/sound-juicer/C/sound-juicer.xml
+share/gnome/help/sound-juicer/el/fdl-appendix.xml
+share/gnome/help/sound-juicer/el/figures/prefs.png
+share/gnome/help/sound-juicer/el/figures/startup.png
+share/gnome/help/sound-juicer/el/legal.xml
+share/gnome/help/sound-juicer/el/sound-juicer.xml
 share/gnome/help/sound-juicer/es/fdl-appendix.xml
 share/gnome/help/sound-juicer/es/figures/prefs.png
 share/gnome/help/sound-juicer/es/figures/startup.png
 share/gnome/help/sound-juicer/es/legal.xml
 share/gnome/help/sound-juicer/es/sound-juicer.xml
+share/gnome/help/sound-juicer/fr/fdl-appendix.xml
+share/gnome/help/sound-juicer/fr/figures/prefs.png
+share/gnome/help/sound-juicer/fr/figures/startup.png
+share/gnome/help/sound-juicer/fr/legal.xml
+share/gnome/help/sound-juicer/fr/sound-juicer.xml
 share/gnome/help/sound-juicer/nl/fdl-appendix.xml
 share/gnome/help/sound-juicer/nl/figures/prefs.png
 share/gnome/help/sound-juicer/nl/figures/startup.png
 share/gnome/help/sound-juicer/nl/legal.xml
 share/gnome/help/sound-juicer/nl/sound-juicer.xml
+share/gnome/help/sound-juicer/sv/fdl-appendix.xml
+share/gnome/help/sound-juicer/sv/figures/prefs.png
+share/gnome/help/sound-juicer/sv/figures/startup.png
+share/gnome/help/sound-juicer/sv/legal.xml
+share/gnome/help/sound-juicer/sv/sound-juicer.xml
 share/gnome/help/sound-juicer/uk/fdl-appendix.xml
 share/gnome/help/sound-juicer/uk/figures/prefs.png
 share/gnome/help/sound-juicer/uk/figures/startup.png
 share/gnome/help/sound-juicer/uk/legal.xml
 share/gnome/help/sound-juicer/uk/sound-juicer.xml
 share/gnome/omf/sound-juicer/sound-juicer-C.omf
+share/gnome/omf/sound-juicer/sound-juicer-el.omf
 share/gnome/omf/sound-juicer/sound-juicer-es.omf
+share/gnome/omf/sound-juicer/sound-juicer-fr.omf
 share/gnome/omf/sound-juicer/sound-juicer-nl.omf
+share/gnome/omf/sound-juicer/sound-juicer-sv.omf
 share/gnome/omf/sound-juicer/sound-juicer-uk.omf
 share/gnome/sound-juicer/sj-play.png
 share/gnome/sound-juicer/sj-record.png
@@ -36,12 +54,14 @@ share/locale/az/LC_MESSAGES/sound-juicer.mo
 share/locale/be/LC_MESSAGES/sound-juicer.mo
 share/locale/bg/LC_MESSAGES/sound-juicer.mo
 share/locale/bn/LC_MESSAGES/sound-juicer.mo
+share/locale/bn_IN/LC_MESSAGES/sound-juicer.mo
 share/locale/br/LC_MESSAGES/sound-juicer.mo
 share/locale/ca/LC_MESSAGES/sound-juicer.mo
 share/locale/cs/LC_MESSAGES/sound-juicer.mo
 share/locale/cy/LC_MESSAGES/sound-juicer.mo
 share/locale/da/LC_MESSAGES/sound-juicer.mo
 share/locale/de/LC_MESSAGES/sound-juicer.mo
+share/locale/dz/LC_MESSAGES/sound-juicer.mo
 share/locale/el/LC_MESSAGES/sound-juicer.mo
 share/locale/en_CA/LC_MESSAGES/sound-juicer.mo
 share/locale/en_GB/LC_MESSAGES/sound-juicer.mo
@@ -53,6 +73,7 @@ share/locale/fi/LC_MESSAGES/sound-juicer.mo
 share/locale/fr/LC_MESSAGES/sound-juicer.mo
 share/locale/gl/LC_MESSAGES/sound-juicer.mo
 share/locale/gu/LC_MESSAGES/sound-juicer.mo
+share/locale/he/LC_MESSAGES/sound-juicer.mo
 share/locale/hi/LC_MESSAGES/sound-juicer.mo
 share/locale/hr/LC_MESSAGES/sound-juicer.mo
 share/locale/hu/LC_MESSAGES/sound-juicer.mo
@@ -62,13 +83,16 @@ share/locale/ja/LC_MESSAGES/sound-juicer.mo
 share/locale/ka/LC_MESSAGES/sound-juicer.mo
 share/locale/ko/LC_MESSAGES/sound-juicer.mo
 share/locale/lt/LC_MESSAGES/sound-juicer.mo
+share/locale/lv/LC_MESSAGES/sound-juicer.mo
 share/locale/mk/LC_MESSAGES/sound-juicer.mo
 share/locale/ml/LC_MESSAGES/sound-juicer.mo
+share/locale/mn/LC_MESSAGES/sound-juicer.mo
 share/locale/ms/LC_MESSAGES/sound-juicer.mo
 share/locale/nb/LC_MESSAGES/sound-juicer.mo
 share/locale/ne/LC_MESSAGES/sound-juicer.mo
 share/locale/nl/LC_MESSAGES/sound-juicer.mo
-share/locale/no/LC_MESSAGES/sound-juicer.mo
+share/locale/nn/LC_MESSAGES/sound-juicer.mo
+share/locale/or/LC_MESSAGES/sound-juicer.mo
 share/locale/pa/LC_MESSAGES/sound-juicer.mo
 share/locale/pl/LC_MESSAGES/sound-juicer.mo
 share/locale/pt/LC_MESSAGES/sound-juicer.mo
@@ -77,6 +101,7 @@ share/locale/ro/LC_MESSAGES/sound-juicer.mo
 share/locale/ru/LC_MESSAGES/sound-juicer.mo
 share/locale/rw/LC_MESSAGES/sound-juicer.mo
 share/locale/sk/LC_MESSAGES/sound-juicer.mo
+share/locale/sl/LC_MESSAGES/sound-juicer.mo
 share/locale/sq/LC_MESSAGES/sound-juicer.mo
 share/locale/sr/LC_MESSAGES/sound-juicer.mo
 share/locale/sr@Latn/LC_MESSAGES/sound-juicer.mo
@@ -91,18 +116,70 @@ share/locale/xh/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_CN/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_HK/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
 @dirrmtry share/icons/hicolor/24x24/apps
 @dirrmtry share/icons/hicolor/24x24
 @dirrm share/gnome/sound-juicer
 @dirrm share/gnome/omf/sound-juicer
 @dirrm share/gnome/help/sound-juicer/uk/figures
 @dirrm share/gnome/help/sound-juicer/uk
+@dirrm share/gnome/help/sound-juicer/sv/figures
+@dirrm share/gnome/help/sound-juicer/sv
 @dirrm share/gnome/help/sound-juicer/nl/figures
 @dirrm share/gnome/help/sound-juicer/nl
+@dirrm share/gnome/help/sound-juicer/fr/figures
+@dirrm share/gnome/help/sound-juicer/fr
 @dirrm share/gnome/help/sound-juicer/es/figures
 @dirrm share/gnome/help/sound-juicer/es
+@dirrm share/gnome/help/sound-juicer/el/figures
+@dirrm share/gnome/help/sound-juicer/el
 @dirrm share/gnome/help/sound-juicer/C/figures
 @dirrm share/gnome/help/sound-juicer/C
 @dirrm share/gnome/help/sound-juicer
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

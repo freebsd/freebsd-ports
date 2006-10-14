@@ -1,0 +1,32 @@
+--- tools/Makefile.in.orig	Sun Oct  8 02:49:22 2006
++++ tools/Makefile.in	Sun Oct  8 02:51:10 2006
+@@ -150,6 +150,7 @@ DBUS_XML_DOCS_ENABLED_FALSE = @DBUS_XML_
+ DBUS_XML_DOCS_ENABLED_TRUE = @DBUS_XML_DOCS_ENABLED_TRUE@
+ DBUS_X_CFLAGS = @DBUS_X_CFLAGS@
+ DBUS_X_LIBS = @DBUS_X_LIBS@
++PTHREAD_LIBS = @PTHREAD_LIBS@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
+ DOXYGEN = @DOXYGEN@
+@@ -264,7 +265,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"$(prefix)/@DATADIRNAME@/locale\" -DDBUS_COMPILATION -DDBUS_DAEMONDIR=\"@DBUS_DAEMONDIR@\"
++INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"$(prefix)/share/locale\" -DDBUS_COMPILATION -DDBUS_DAEMONDIR=\"@DBUS_DAEMONDIR@\"
+ dbus_send_SOURCES = \
+ 	dbus-print-message.c			\
+ 	dbus-print-message.h			\
+@@ -281,9 +282,9 @@ dbus_launch_SOURCES = \
+ dbus_cleanup_sockets_SOURCES = \
+ 	dbus-cleanup-sockets.c
+ 
+-dbus_send_LDADD = $(top_builddir)/dbus/libdbus-1.la
+-dbus_monitor_LDADD = $(top_builddir)/dbus/libdbus-1.la
+-dbus_launch_LDADD = $(DBUS_X_LIBS)
++dbus_send_LDADD = $(top_builddir)/dbus/libdbus-1.la $(PTHREAD_LIBS)
++dbus_monitor_LDADD = $(top_builddir)/dbus/libdbus-1.la $(PTHREAD_LIBS)
++dbus_launch_LDADD = $(DBUS_X_LIBS) $(PTHREAD_LIBS)
+ man_MANS = dbus-send.1 dbus-monitor.1 dbus-launch.1 dbus-cleanup-sockets.1
+ EXTRA_DIST = $(man_MANS) run-with-tmp-session-bus.sh
+ CLEANFILES = \

@@ -3,43 +3,44 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.112 2006/04/13 07:52:38 bland Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.128 2006/10/12 20:03:10 ahze Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.14.3
+PORTVERSION=	2.16.1
+PORTREVISION=	1
 CATEGORIES=	www gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An extremely lightweight and simple web browser for GNOME 2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_PYTHON=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GECKO=	firefox mozilla seamonkey firefox-devel<->firefox
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils \
-		libgnomeprintui
+USE_GECKO=	firefox mozilla seamonkey firefox-devel<->firefox xulrunner
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--with-mozilla=${GECKO}
+CONFIGURE_ARGS=	--with-mozilla=${GECKO} --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas \
 		epiphany-fonts.schemas epiphany-pango.schemas
 
-PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}" \
+PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}" \
 		EPHY_PREFIX="${PREFIX}"
 
 MAN1=		epiphany.1
@@ -51,6 +52,7 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+#.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
 NO_WERROR=	yes
 # allow build with more warnings enabled

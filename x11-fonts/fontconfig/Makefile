@@ -3,18 +3,22 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.3 2005/08/26 04:03:55 marcus Exp $
+#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.6 2006/09/10 00:51:16 mezz Exp $
 #
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.3.2
-PORTREVISION?=	5
+PORTREVISION?=	6
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
+
+PATCH_SITES+=	http://www.freetype.org/freetype2/patches/
+PATCHFILES+=	fontconfig-2.3.2-noftinternals.patch
+PATCH_DIST_STRIP+=	-p1
 
 .if !defined(REFERENCE_PORT)
 
@@ -23,7 +27,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 USE_GMAKE=	yes
 PREFIX?=	${X11BASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \

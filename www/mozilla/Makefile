@@ -3,12 +3,11 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla/Makefile,v 1.36 2006/03/09 00:45:43 ahze Exp $
-#
+#    $MCom: ports/www/mozilla/Makefile,v 1.38 2006/07/18 15:03:40 ahze Exp $
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.13
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -24,7 +23,6 @@ COMMENT=	The open source, standards compliant web browser
 MAKE_ENV+=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin

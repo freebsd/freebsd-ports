@@ -3,10 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-gnonlin/Makefile,v 1.2 2006/04/25 20:54:56 ahze Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins-gnonlin/Makefile,v 1.7 2006/07/21 16:39:31 ahze Exp $
 
 PORTNAME=	gstreamer-plugins-gnonlin
 PORTVERSION=	0.10.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
@@ -14,7 +15,6 @@ DISTNAME=	gnonlin-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer lib for writing non-linear audio and video
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes

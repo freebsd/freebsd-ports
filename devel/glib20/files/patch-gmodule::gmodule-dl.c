@@ -1,6 +1,6 @@
 
 $FreeBSD$
-  $MCom: ports/devel/glib20/files/patch-gmodule::gmodule-dl.c,v 1.16 2005/12/15 00:18:44 marcus Exp $
+  $MCom: ports/devel/glib20/files/patch-gmodule::gmodule-dl.c,v 1.19 2006/10/10 20:22:06 mezz Exp $
 
 --- gmodule/gmodule-dl.c.orig	Sat Feb 17 08:28:07 2001
 +++ gmodule/gmodule-dl.c	Fri Jan 18 09:48:45 2002

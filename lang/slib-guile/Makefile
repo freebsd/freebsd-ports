@@ -3,10 +3,11 @@
 # Whom:                        Kimura Fuyuki <fuyuki@nigredo.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/lang/slib-guile/Makefile,v 1.3 2006/10/13 02:32:48 marcus Exp $
 
 PORTNAME=	slib
 PORTVERSION=	3a3 # Keep this in sync with lang/slib
+PORTREVISION=	3
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-guile
@@ -22,8 +23,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_BUILD=	yes
 
 do-install:
-	${LN} -shf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/slib
-	${LOCALBASE}/bin/guile -c \
-		"(use-modules (ice-9 slib)) (require 'new-catalog)"
+	${LN} -shf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/1.6/slib
+	cd ${PREFIX}/share/guile/1.6/slib && \
+		${LOCALBASE}/bin/guile -q -l guile.init -c \
+		"(require 'new-catalog)"
 
 .include <bsd.port.mk>

@@ -3,11 +3,11 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler/Makefile,v 1.23 2006/04/12 17:10:20 ahze Exp $
+#   $MCom: ports/graphics/poppler/Makefile,v 1.30 2006/09/30 04:55:20 ahze Exp $
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -15,11 +15,12 @@ MASTER_SITES=	http://poppler.freedesktop.org/
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A PDF rendering library
 
+RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
+
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
 		--with-html-dir=${DOCSDIR}

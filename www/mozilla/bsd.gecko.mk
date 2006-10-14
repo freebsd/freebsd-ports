@@ -2,7 +2,7 @@
 # ex:ts=4
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla/bsd.gecko.mk,v 1.17 2006/03/10 12:42:50 ahze Exp $
+#    $MCom: ports/www/mozilla/bsd.gecko.mk,v 1.26 2006/10/13 04:20:21 ahze Exp $
 #
 # 4 column tabs prevent hair loss and tooth decay!
 
@@ -69,19 +69,17 @@ Gecko_Pre_Include=			bsd.gecko.mk
 
 .if ${OSVERSION} >= 500000
 .if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
-_GECKO_ALL=	firefox nvu seamonkey sunbird thunderbird xulrunner firefox-devel flock
+_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner firefox-devel flock
 .endif
 .endif
 _GECKO_ALL+=	mozilla
-
-sunbird_PORTSDIR=	deskutils
 
 thunderbird_PORTSDIR=	mail
 
 .for gecko in ${_GECKO_ALL}
 ${gecko}_PORTSDIR?=	www
 ${gecko}_DEPENDS?=	${PORTSDIR}/${${gecko}_PORTSDIR}/${gecko}
-${gecko}_PLIST?=	${X11BASE}/lib/${gecko}/libgtkembedmoz.so
+${gecko}_PLIST?=	${LOCALBASE}/lib/${gecko}/libgtkembedmoz.so
 .endfor
 
 # Figure out which mozilla to use
@@ -125,18 +123,18 @@ GECKO_FALLTRHOUGH=	${TRUE}
 .endif
 
 # Generic defines
-BROWSER_LINUX_PLUGINS_DIR?=	${X11BASE}/lib/browser_linux_plugins
-BROWSER_PLUGINS_DIR?=		${X11BASE}/lib/browser_plugins
+BROWSER_LINUX_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_linux_plugins
+BROWSER_PLUGINS_DIR?=		${LOCALBASE}/lib/browser_plugins
 
-GECKO_CONFIG?=			${X11BASE}/bin/${GECKO}-config
-XPIDL?=				${X11BASE}/lib/${GECKO}/xpidl
+GECKO_CONFIG?=			${LOCALBASE}/bin/${GECKO}-config
+XPIDL?=				${LOCALBASE}/lib/${GECKO}/xpidl
 XPIDL_INCL?=			`${GECKO_CONFIG} --idlflags`
 
 .if defined(GECKO) && ${_GECKO_ALL:M${GECKO}}!=""
 BUILD_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 RUN_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 .else
-BROKEN=Unable to find a supported gecko, please check USE_GECKO
+IGNORE=	Unable to find a supported gecko, please check USE_GECKO
 .endif
 
 pre-everything:: _gecko-pre-everything
@@ -164,7 +162,7 @@ post-patch: gecko-post-patch
 
 gecko-post-patch:
 .if defined(${GECKO}_HACK)
-	${FIND} ${WRKSRC} -name "Makefile.in" -o -name "configure" | \
+	${FIND} ${WRKSRC} -name "Makefile.in" -type f -o -name "configure" -type f | \
 		${XARGS} ${REINPLACE_CMD} -e ${${GECKO}_HACK}
 .endif
 

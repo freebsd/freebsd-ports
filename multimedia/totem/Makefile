@@ -6,29 +6,30 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	1.4.5
+PORTVERSION=	2.16.2
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	hendrik@scholz.net
 COMMENT?=	A Xine-based video player for the Gnome 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
+LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
+		hal.1:${PORTSDIR}/sysutils/hal
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils \
-		nautiluscdburner
+		nautiluscdburner ltverhack
 GNOME_DESKTOP_VERSION=2
 WANT_GSTREAMER=	yes
+INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -46,19 +47,27 @@ CONFLICTS?=	totem-gstreamer-[0-9]*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 PLIST_SUB+=	MOZILLA=""
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+=--with-mozilla=${GECKO}
+CONFIGURE_ARGS+=--with-mozilla=${GECKO} \
+		--enable-gmp-plugin \
+		--enable-complex-plugin \
+		--enable-narrowspace-plugin
 .else
 PLIST_SUB+=	MOZILLA="@comment "
-CONFIGURE_ARGS+=--disable-mozilla
+CONFIGURE_ARGS+=--without-mozilla \
+		--disable-browser-plugins \
+		--disable-mozilla \
+		--disable-basic-plugin \
+		--disable-gmp-plugin \
+		--disable-complex-plugin \
+		--disable-narrowspace-plugin
 .endif
 
 .if defined(WITH_GSTREAMER)
-CONFIGURE_ARGS+=--enable-gstreamer=0.10
-USE_GSTREAMER+=	gnomevfs core gconf
+CONFIGURE_ARGS+=--enable-gstreamer=yes
+USE_GSTREAMER+=	gnomevfs core gconf hal good
 WITHOUT_DVDNAV=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
@@ -68,16 +77,6 @@ PLIST_SUB+=	GSTREAMER="@comment "
 
 .if defined(WITH_DVDNAV) && !defined(WITHOUT_DVDNAV)
 LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
-.endif
-
-.if defined(WITH_CDROM_DEVICE)
-DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
-.else
-.if ${OSVERSION} < 500000
-DEFAULT_CDROM_DEVICE=/dev/acd0c
-.else
-DEFAULT_CDROM_DEVICE=/dev/acd0
-.endif
 .endif
 
 .if defined(WITH_DVD_DEVICE)
@@ -91,29 +90,18 @@ DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 
 pre-everything::
-	@${ECHO_MSG} "===> The default CDROM device is ${DEFAULT_CDROM_DEVICE}"
-	@${ECHO_MSG} "===> Define WITH_CDROM_DEVICE if you want to change the default"
-	@${ECHO_MSG} "===> For example, 'make WITH_CDROM_DEVICE=\"/dev/somedevice\"'"
-	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> The default DVD device is ${DEFAULT_DVD_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 
 post-patch:
 	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-.if defined(WITH_MOZILLA_PLUGIN)
-	@${ECHO} "" >> ${PKGMESSAGE}
-	@${CAT} ${FILESDIR}/pkg-message-mozilla.in >> ${PKGMESSAGE}
-.endif
-	@${REINPLACE_CMD} -e 's|/plugins||; \
-		s|@MOZILLA_PLUGINDIR@|${PREFIX}/lib/browser_plugins|' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		${WRKSRC}/src/totem-preferences.c \
-		${WRKSRC}/src/backend/bacon-video-widget-gst.c
+	@${REINPLACE_CMD} -e ' s|@MOZILLA_PLUGINDIR@|${PREFIX}/lib/browser_plugins|; \
+		s|mozilla/plugins|browser_plugins|' \
+		${WRKSRC}/browser-plugin/Makefile.in \
+		${WRKSRC}/browser-plugin/idl/Makefile.in
 .if defined(WITH_GSTREAMER)
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
-		${WRKSRC}/src/backend/bacon-video-widget-gst.c \
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 .endif
 

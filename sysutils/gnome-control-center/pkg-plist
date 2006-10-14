@@ -21,6 +21,7 @@ bin/gnome-window-properties
 bin/themus-theme-applier
 etc/gnome-vfs-2.0/modules/font-method.conf
 etc/gnome-vfs-2.0/modules/theme-method.conf
+include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
 lib/gnome-vfs-2.0/modules/libfont-method.a
@@ -42,9 +43,10 @@ lib/nautilus/extensions-1.0/libnautilus-themus.so
 lib/window-manager-settings/libmetacity.a
 lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
-libdata/bonobo/servers/GNOME_SettingsDaemon.server
+libdata/pkgconfig/gnome-settings-daemon.pc
 libdata/pkgconfig/gnome-window-settings-2.0.pc
 libexec/gnome-settings-daemon
+share/dbus-1/services/org.gnome.SettingsDaemon.service
 share/gnome/applications/accessibility-keyboard.desktop
 share/gnome/applications/at-properties.desktop
 share/gnome/applications/background.desktop
@@ -80,14 +82,12 @@ share/gnome/control-center-2.0/interfaces/gnome-ui-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-window-properties.glade
 share/gnome/control-center-2.0/interfaces/modmap-dialog.glade
 share/gnome/control-center-2.0/interfaces/sound-properties.glade
-share/gnome/control-center-2.0/interfaces/theme-install.glade
 share/gnome/control-center-2.0/interfaces/theme-properties.glade
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-bouncekey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-mousekey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-slowkey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-stickykey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-togglekey.png
-share/gnome/control-center-2.0/pixmaps/acme-brightness.png
 share/gnome/control-center-2.0/pixmaps/acme-eject.png
 share/gnome/control-center-2.0/pixmaps/at-startup.png
 share/gnome/control-center-2.0/pixmaps/at-support.png
@@ -98,8 +98,8 @@ share/gnome/control-center-2.0/pixmaps/bar.png
 share/gnome/control-center-2.0/pixmaps/double-click-maybe.png
 share/gnome/control-center-2.0/pixmaps/double-click-off.png
 share/gnome/control-center-2.0/pixmaps/double-click-on.png
-%%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-bulb-off.png
-%%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-bulb-on.png
+%%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-lock-open.png
+%%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-lock.png
 share/gnome/control-center-2.0/pixmaps/gnome-speakernotes-muted.png
 share/gnome/control-center-2.0/pixmaps/gnome-speakernotes.png
 share/gnome/control-center-2.0/pixmaps/keyboard-bell.png
@@ -148,10 +148,18 @@ share/gnome/help/control-center/C/config-sound.xml
 share/gnome/help/control-center/C/config-themes.xml
 share/gnome/help/control-center/C/control-center.xml
 share/gnome/help/control-center/es/control-center.xml
+share/gnome/help/control-center/fr/control-center.xml
+share/gnome/help/control-center/ru/control-center.xml
+share/gnome/help/control-center/sv/control-center.xml
+share/gnome/help/control-center/zh_CN/control-center.xml
 share/gnome/idl/ConfigArchiver.idl
 share/gnome/idl/GNOME_SettingsDaemon.idl
 share/gnome/omf/control-center/control-center-C.omf
 share/gnome/omf/control-center/control-center-es.omf
+share/gnome/omf/control-center/control-center-fr.omf
+share/gnome/omf/control-center/control-center-ru.omf
+share/gnome/omf/control-center/control-center-sv.omf
+share/gnome/omf/control-center/control-center-zh_CN.omf
 share/gnome/pixmaps/display-capplet.png
 share/icons/hicolor/48x48/apps/gnome-control-center.png
 share/locale/af/LC_MESSAGES/control-center-2.0.mo
@@ -161,6 +169,7 @@ share/locale/az/LC_MESSAGES/control-center-2.0.mo
 share/locale/be/LC_MESSAGES/control-center-2.0.mo
 share/locale/bg/LC_MESSAGES/control-center-2.0.mo
 share/locale/bn/LC_MESSAGES/control-center-2.0.mo
+share/locale/bn_IN/LC_MESSAGES/control-center-2.0.mo
 share/locale/br/LC_MESSAGES/control-center-2.0.mo
 share/locale/bs/LC_MESSAGES/control-center-2.0.mo
 share/locale/ca/LC_MESSAGES/control-center-2.0.mo
@@ -194,16 +203,18 @@ share/locale/ko/LC_MESSAGES/control-center-2.0.mo
 share/locale/ku/LC_MESSAGES/control-center-2.0.mo
 share/locale/lt/LC_MESSAGES/control-center-2.0.mo
 share/locale/lv/LC_MESSAGES/control-center-2.0.mo
+share/locale/mg/LC_MESSAGES/control-center-2.0.mo
 share/locale/mk/LC_MESSAGES/control-center-2.0.mo
 share/locale/ml/LC_MESSAGES/control-center-2.0.mo
 share/locale/mn/LC_MESSAGES/control-center-2.0.mo
+share/locale/mr/LC_MESSAGES/control-center-2.0.mo
 share/locale/ms/LC_MESSAGES/control-center-2.0.mo
 share/locale/nb/LC_MESSAGES/control-center-2.0.mo
 share/locale/ne/LC_MESSAGES/control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/control-center-2.0.mo
-share/locale/no/LC_MESSAGES/control-center-2.0.mo
 share/locale/nso/LC_MESSAGES/control-center-2.0.mo
+share/locale/or/LC_MESSAGES/control-center-2.0.mo
 share/locale/pa/LC_MESSAGES/control-center-2.0.mo
 share/locale/pl/LC_MESSAGES/control-center-2.0.mo
 share/locale/pt/LC_MESSAGES/control-center-2.0.mo
@@ -229,21 +240,11 @@ share/locale/zh_CN/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/control-center-2.0.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
 @dirrm share/gnome/omf/control-center
+@dirrm share/gnome/help/control-center/zh_CN
+@dirrm share/gnome/help/control-center/ru/
+@dirrm share/gnome/help/control-center/sv
+@dirrm share/gnome/help/control-center/fr
 @dirrm share/gnome/help/control-center/es
 @dirrm share/gnome/help/control-center/C
 @dirrm share/gnome/help/control-center
@@ -257,5 +258,65 @@ share/locale/zu/LC_MESSAGES/control-center-2.0.mo
 @dirrmtry share/gnome/control-center-2.0/icons
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
+@dirrm include/gnome-settings-daemon-2.0/gnome-settings-daemon
+@dirrm include/gnome-settings-daemon-2.0
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

@@ -11,6 +11,7 @@ bin/avahi-set-host-name
 etc/avahi/avahi-daemon.conf
 etc/avahi/avahi-dnsconfd.action
 etc/avahi/hosts
+etc/avahi/services/sftp-ssh.service
 etc/avahi/services/ssh.service
 etc/dbus-1/system.d/avahi-dbus.conf
 etc/rc.d/avahi-daemon.sh

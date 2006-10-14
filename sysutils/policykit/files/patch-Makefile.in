@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon May  1 01:11:30 2006
++++ Makefile.in	Mon May  1 01:11:43 2006
+@@ -231,7 +231,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = libpolkit polkitd doc tools privileges
++SUBDIRS = libpolkit polkitd tools privileges
+ pamdir = $(sysconfdir)/pam.d
+ pam_DATA = policy-kit
+ pkgconfigdir = $(prefix)/libdata/pkgconfig

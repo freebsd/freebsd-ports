@@ -3,12 +3,12 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer80/Makefile,v 1.40 2006/04/23 22:58:42 mezz Exp $
+#    $MCom: ports/multimedia/gstreamer80/Makefile,v 1.43 2006/09/10 00:53:00 mezz Exp $
 #
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gstreamer/
@@ -21,7 +21,7 @@ COMMENT=	Development framework for creating media applications
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -42,7 +42,7 @@ PLIST_SUB=	\
 		VERSION="${GST_VERSION}" \
 		SHLIB_VERSION="${SHLIB_VERSION}" \
 		PORTVERSION="${PORTVERSION}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	gst-complete-${GST_VERSION}.1 gst-compprep-${GST_VERSION}.1 \
 	gst-feedback-${GST_VERSION}.1 gst-inspect-${GST_VERSION}.1 \

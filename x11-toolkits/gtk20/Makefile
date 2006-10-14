@@ -3,15 +3,15 @@
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-toolkits/gtk20/Makefile,v 1.8 2006/03/13 22:32:30 mezz Exp $
+#   $MCom: ports/x11-toolkits/gtk20/Makefile,v 1.101 2006/10/08 21:05:26 marcus Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.8.20
-PORTREVISION?=	0
+PORTVERSION=	2.10.6
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.8,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.10/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -33,20 +33,21 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
-		${X11BASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
+USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack atk pango ltverhack
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-GTK_VERSION=	2.4.0
+GTK_VERSION=	2.10.0
 PLIST_SUB=	GTK_VERSION="${GTK_VERSION}"
 
 gdk_pixbuf_MAN=	gdk-pixbuf-query-loaders.1
@@ -77,13 +78,20 @@ STRIP=
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+PLIST_SUB+=	CUPS:=""
+.else
+PLIST_SUB+=	CUPS:="@comment "
+.endif
+
 # There is a SSE2 bug in either GCC or in our libc, when use p4, p-m or else
 # is being use in CPUTYPE that enable SSE2 will causing Java with GTK2 and
 # Mono/gtk-sharp crash. Disable SSE2 to solve the crash and see ports/72014
 # for detail.
 .if ${OSVERSION} >= 500000 && ( ${ARCH} == "i386" || ${ARCH} == "amd64" ) \
 	&& ${CC} != "icc"
-CFLAGS+=	-mno-sse2
+#CFLAGS+=	-mno-sse2
 .endif
 
 pre-everything::
@@ -108,12 +116,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@CFLAGS@|& ${PTHREAD_CFLAGS}|; \
 		s|@LDFLAGS@|& ${PTHREAD_LIBS}|' \
 		${WRKSRC}/demos/gtk-demo/Makefile.in
+	@${REINPLACE_CMD} -e 's|@LN_S@|${LN} -sf|' ${WRKSRC}/gtk/Makefile.in
 
 pre-build:
 	@${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
-	-@${FIND} ${X11BASE}/share/icons -type d -depth 1 -exec \
+	-@${FIND} ${LOCALBASE}/share/icons -type d -depth 1 -exec \
 		${PREFIX}/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/modules
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK_VERSION}/engines

@@ -4,16 +4,18 @@ bin/gnome-screensaver-preferences
 etc/xdg/menus/gnome-screensavers.menu
 libdata/pkgconfig/gnome-screensaver.pc
 libexec/gnome-screensaver-dialog
+libexec/gnome-screensaver-gl-helper
 libexec/gnome-screensaver/floaters
 libexec/gnome-screensaver/popsquares
 libexec/gnome-screensaver/slideshow
 share/gnome/applications/gnome-screensaver-preferences.desktop
+share/gnome/applications/screensavers/cosmos-slideshow.desktop
+share/gnome/applications/screensavers/footlogo-floaters.desktop
+share/gnome/applications/screensavers/personal-slideshow.desktop
+share/gnome/applications/screensavers/popsquares.desktop
 share/gnome/desktop-directories/gnome-screensaver.directory
 share/gnome/gnome-screensaver/gnome-screensaver-preferences.glade
-share/gnome/gnome-screensaver/themes/cosmos-slideshow.desktop
-share/gnome/gnome-screensaver/themes/footlogo-floaters.desktop
-share/gnome/gnome-screensaver/themes/personal-slideshow.desktop
-share/gnome/gnome-screensaver/themes/popsquares.desktop
+share/gnome/gnome-screensaver/lock-dialog-default.glade
 share/gnome/pixmaps/backgrounds/cosmos/cloud.jpg
 share/gnome/pixmaps/backgrounds/cosmos/comet.jpg
 share/gnome/pixmaps/backgrounds/cosmos/earth-horizon.jpg
@@ -26,6 +28,7 @@ share/gnome/pixmaps/backgrounds/cosmos/whirlpool.jpg
 share/gnome/pixmaps/gnome-logo-white.svg
 share/locale/bg/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bn/LC_MESSAGES/gnome-screensaver.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ca/LC_MESSAGES/gnome-screensaver.mo
 share/locale/cs/LC_MESSAGES/gnome-screensaver.mo
 share/locale/cy/LC_MESSAGES/gnome-screensaver.mo
@@ -37,6 +40,8 @@ share/locale/en_CA/LC_MESSAGES/gnome-screensaver.mo
 share/locale/en_GB/LC_MESSAGES/gnome-screensaver.mo
 share/locale/es/LC_MESSAGES/gnome-screensaver.mo
 share/locale/et/LC_MESSAGES/gnome-screensaver.mo
+share/locale/eu/LC_MESSAGES/gnome-screensaver.mo
+share/locale/fa/LC_MESSAGES/gnome-screensaver.mo
 share/locale/fi/LC_MESSAGES/gnome-screensaver.mo
 share/locale/fr/LC_MESSAGES/gnome-screensaver.mo
 share/locale/gl/LC_MESSAGES/gnome-screensaver.mo
@@ -52,28 +57,74 @@ share/locale/ko/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ku/LC_MESSAGES/gnome-screensaver.mo
 share/locale/lt/LC_MESSAGES/gnome-screensaver.mo
 share/locale/lv/LC_MESSAGES/gnome-screensaver.mo
+share/locale/mg/LC_MESSAGES/gnome-screensaver.mo
 share/locale/mk/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ml/LC_MESSAGES/gnome-screensaver.mo
+share/locale/mn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nb/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ne/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nl/LC_MESSAGES/gnome-screensaver.mo
-share/locale/no/LC_MESSAGES/gnome-screensaver.mo
+share/locale/or/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pa/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pt/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ru/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sk/LC_MESSAGES/gnome-screensaver.mo
+share/locale/sl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sq/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sr/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sv/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ta/LC_MESSAGES/gnome-screensaver.mo
 share/locale/th/LC_MESSAGES/gnome-screensaver.mo
+share/locale/tr/LC_MESSAGES/gnome-screensaver.mo
 share/locale/uk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/vi/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-screensaver.mo
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm share/gnome/pixmaps/backgrounds/cosmos
 @dirrm share/gnome/pixmaps/backgrounds
+@dirrm share/gnome/gnome-screensaver
 @dirrm libexec/gnome-screensaver
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN

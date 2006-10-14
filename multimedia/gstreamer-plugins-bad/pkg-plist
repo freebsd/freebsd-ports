@@ -22,3 +22,23 @@ lib/gstreamer-%%VERSION%%/libgsttta.so
 lib/gstreamer-%%VERSION%%/libgstxingheader.a
 lib/gstreamer-%%VERSION%%/libgstxingheader.la
 lib/gstreamer-%%VERSION%%/libgstxingheader.so
+share/locale/af/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/az/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/cs/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/hu/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/it/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/nb/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/nl/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/or/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/sq/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/sr/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/uk/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

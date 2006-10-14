@@ -3,6 +3,7 @@ include/cairo/cairo-ft.h
 %%GLITZ%%include/cairo/cairo-glitz.h
 include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
+include/cairo/cairo-svg.h
 %%X11%%include/cairo/cairo-xlib-xrender.h
 %%X11%%include/cairo/cairo-xlib.h
 include/cairo/cairo.h
@@ -11,4 +12,12 @@ lib/libcairo.la
 lib/libcairo.so
 lib/libcairo.so.2
 libdata/pkgconfig/cairo.pc
+libdata/pkgconfig/cairo-ft.pc
+%%GLITZ%%libdata/pkgconfig/cairo-glitz.pc
+libdata/pkgconfig/cairo-pdf.pc
+libdata/pkgconfig/cairo-png.pc
+libdata/pkgconfig/cairo-ps.pc
+libdata/pkgconfig/cairo-svg.pc
+%%X11%%libdata/pkgconfig/cairo-xlib.pc
+%%X11%%libdata/pkgconfig/cairo-xlib-xrender.pc
 @dirrm include/cairo

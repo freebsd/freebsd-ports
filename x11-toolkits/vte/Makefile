@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/vte/Makefile,v 1.49 2006/04/27 01:40:22 ahze Exp $
+#   $MCom: ports/x11-toolkits/vte/Makefile,v 1.61 2006/10/03 12:33:40 ahze Exp $
 #
 
 PORTNAME=	vte
-PORTVERSION=	0.12.2
+PORTVERSION=	0.14.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -23,8 +23,8 @@ USE_BZIP2=	yes
 
 USE_GMAKE=	yes
 USE_BISON=	yes
-USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_XLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack referencehack

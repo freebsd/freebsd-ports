@@ -1,15 +1,14 @@
---- builds/unix/detect.mk.orig	Sun Jan  9 21:12:51 2005
-+++ builds/unix/detect.mk	Sun Jan  9 21:13:42 2005
-@@ -78,10 +78,10 @@
-   ifneq ($(have_mk),)
-     # we are building FT2 not in the src tree
-     $(BUILD_DIR)/unix-def.mk: $(TOP_DIR)/builds/unix/unix-def.in
--	    $(TOP_DIR)/builds/unix/configure $(CFG)
-+#	    $(TOP_DIR)/builds/unix/configure $(CFG)
-   else
-     $(BUILD_DIR)/unix-def.mk: $(TOP_DIR)/builds/unix/unix-def.in
--	    cd builds/unix; ./configure $(CFG)
-+#	    cd builds/unix; ./configure $(CFG)
+--- builds/unix/detect.mk.orig	Tue Aug 22 17:53:59 2006
++++ builds/unix/detect.mk	Tue Aug 22 17:54:09 2006
+@@ -78,9 +78,9 @@ ifeq ($(PLATFORM),unix)
+   ifdef must_configure
+     ifneq ($(have_Makefile),)
+       # we are building FT2 not in the src tree
+-	      $(TOP_DIR)/builds/unix/configure $(CFG)
++#	      $(TOP_DIR)/builds/unix/configure $(CFG)
+     else
+-	      cd builds/unix; ./configure $(CFG)
++#	      cd builds/unix; ./configure $(CFG)
+     endif
    endif
  
- endif   # test PLATFORM unix

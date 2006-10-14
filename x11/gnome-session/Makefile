@@ -3,16 +3,17 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnomesession/Makefile,v 1.83 2006/04/24 03:18:23 marcus Exp $
+#   $MCom: ports/x11/gnome-session/Makefile,v 1.96 2006/10/07 19:45:39 marcus Exp $
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.14.3
+PORTVERSION=	2.16.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
 		http://people.FreeBSD.org/~adamw/images/gnome_splashes/2.12/:local
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
+MASTER_SITE_SUBDIR=	sources/gnome-session/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 		    	adamw/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SPLASHES}:local
@@ -22,9 +23,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the GNOME 2 desktop
 
+BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
+
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes

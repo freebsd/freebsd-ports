@@ -3,10 +3,10 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gnome2-hacker-tools/Makefile,v 1.40 2005/08/11 02:55:29 marcus Exp $
+#   $MCom: ports/devel/gnome2-hacker-tools/Makefile,v 1.42 2006/10/14 06:29:06 ahze Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-hacker-tools
 
@@ -14,7 +14,7 @@ COMMENT=	GNOME 2 development tools
 
 RUN_DEPENDS=	mlview:${PORTSDIR}/editors/mlview \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		glade-2:${PORTSDIR}/devel/glade2 \
+		glade-3:${PORTSDIR}/devel/glade3 \
 		ghex2:${PORTSDIR}/editors/ghex \
 		gob2:${PORTSDIR}/devel/gob2 \
 		conglomerate:${PORTSDIR}/editors/conglomerate \

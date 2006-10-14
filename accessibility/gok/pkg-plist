@@ -3,7 +3,9 @@ bin/gok
 libdata/bonobo/servers/GNOME_Gok.server
 libdata/pkgconfig/gok-1.0.pc
 %%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/gok-GokButton.html
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/ch03.html
+%%DOCSDIR%%/ch04.html
 %%DOCSDIR%%/gok-arraylist.html
 %%DOCSDIR%%/gok-callbacks.html
 %%DOCSDIR%%/gok-command-common.html
@@ -129,6 +131,16 @@ share/gnome/gok/bn/numberpad.kbd
 share/gnome/gok/bn/quit.kbd
 share/gnome/gok/bn/text-operations.kbd
 share/gnome/gok/bn/valuator.kbd
+share/gnome/gok/bn_IN/gok-controls.kbd
+share/gnome/gok/bn_IN/hide.kbd
+share/gnome/gok/bn_IN/launcher.kbd
+share/gnome/gok/bn_IN/main.kbd
+share/gnome/gok/bn_IN/mouse.kbd
+share/gnome/gok/bn_IN/move-resize.kbd
+share/gnome/gok/bn_IN/numberpad.kbd
+share/gnome/gok/bn_IN/quit.kbd
+share/gnome/gok/bn_IN/text-operations.kbd
+share/gnome/gok/bn_IN/valuator.kbd
 share/gnome/gok/ca/gok-controls.kbd
 share/gnome/gok/ca/hide.kbd
 share/gnome/gok/ca/launcher.kbd
@@ -426,6 +438,16 @@ share/gnome/gok/lt/numberpad.kbd
 share/gnome/gok/lt/quit.kbd
 share/gnome/gok/lt/text-operations.kbd
 share/gnome/gok/lt/valuator.kbd
+share/gnome/gok/lv/gok-controls.kbd
+share/gnome/gok/lv/hide.kbd
+share/gnome/gok/lv/launcher.kbd
+share/gnome/gok/lv/main.kbd
+share/gnome/gok/lv/mouse.kbd
+share/gnome/gok/lv/move-resize.kbd
+share/gnome/gok/lv/numberpad.kbd
+share/gnome/gok/lv/quit.kbd
+share/gnome/gok/lv/text-operations.kbd
+share/gnome/gok/lv/valuator.kbd
 share/gnome/gok/main.kbd
 share/gnome/gok/manage.kbd
 share/gnome/gok/mk/gok-controls.kbd
@@ -460,6 +482,16 @@ share/gnome/gok/mn/text-operations.kbd
 share/gnome/gok/mn/valuator.kbd
 share/gnome/gok/mouse.kbd
 share/gnome/gok/move-resize.kbd
+share/gnome/gok/mr/gok-controls.kbd
+share/gnome/gok/mr/hide.kbd
+share/gnome/gok/mr/launcher.kbd
+share/gnome/gok/mr/main.kbd
+share/gnome/gok/mr/mouse.kbd
+share/gnome/gok/mr/move-resize.kbd
+share/gnome/gok/mr/numberpad.kbd
+share/gnome/gok/mr/quit.kbd
+share/gnome/gok/mr/text-operations.kbd
+share/gnome/gok/mr/valuator.kbd
 share/gnome/gok/ms/gok-controls.kbd
 share/gnome/gok/ms/hide.kbd
 share/gnome/gok/ms/launcher.kbd
@@ -501,6 +533,16 @@ share/gnome/gok/nl/quit.kbd
 share/gnome/gok/nl/text-operations.kbd
 share/gnome/gok/nl/valuator.kbd
 share/gnome/gok/numberpad.kbd
+share/gnome/gok/or/gok-controls.kbd
+share/gnome/gok/or/hide.kbd
+share/gnome/gok/or/launcher.kbd
+share/gnome/gok/or/main.kbd
+share/gnome/gok/or/mouse.kbd
+share/gnome/gok/or/move-resize.kbd
+share/gnome/gok/or/numberpad.kbd
+share/gnome/gok/or/quit.kbd
+share/gnome/gok/or/text-operations.kbd
+share/gnome/gok/or/valuator.kbd
 share/gnome/gok/pa/gok-controls.kbd
 share/gnome/gok/pa/hide.kbd
 share/gnome/gok/pa/launcher.kbd
@@ -704,6 +746,7 @@ share/locale/az/LC_MESSAGES/gok.mo
 share/locale/be/LC_MESSAGES/gok.mo
 share/locale/bg/LC_MESSAGES/gok.mo
 share/locale/bn/LC_MESSAGES/gok.mo
+share/locale/bn_IN/LC_MESSAGES/gok.mo
 share/locale/ca/LC_MESSAGES/gok.mo
 share/locale/cs/LC_MESSAGES/gok.mo
 share/locale/cy/LC_MESSAGES/gok.mo
@@ -732,13 +775,16 @@ share/locale/ka/LC_MESSAGES/gok.mo
 share/locale/ko/LC_MESSAGES/gok.mo
 share/locale/ku/LC_MESSAGES/gok.mo
 share/locale/lt/LC_MESSAGES/gok.mo
+share/locale/lv/LC_MESSAGES/gok.mo
 share/locale/mk/LC_MESSAGES/gok.mo
 share/locale/ml/LC_MESSAGES/gok.mo
 share/locale/mn/LC_MESSAGES/gok.mo
+share/locale/mr/LC_MESSAGES/gok.mo
 share/locale/ms/LC_MESSAGES/gok.mo
 share/locale/nb/LC_MESSAGES/gok.mo
 share/locale/ne/LC_MESSAGES/gok.mo
 share/locale/nl/LC_MESSAGES/gok.mo
+share/locale/or/LC_MESSAGES/gok.mo
 share/locale/pa/LC_MESSAGES/gok.mo
 share/locale/pl/LC_MESSAGES/gok.mo
 share/locale/pt/LC_MESSAGES/gok.mo
@@ -757,14 +803,6 @@ share/locale/vi/LC_MESSAGES/gok.mo
 share/locale/zh_CN/LC_MESSAGES/gok.mo
 share/locale/zh_HK/LC_MESSAGES/gok.mo
 share/locale/zh_TW/LC_MESSAGES/gok.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm share/gnome/omf/gok
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
@@ -786,13 +824,16 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/pt
 @dirrm share/gnome/gok/pl
 @dirrm share/gnome/gok/pa
+@dirrm share/gnome/gok/or
 @dirrm share/gnome/gok/nl
 @dirrm share/gnome/gok/ne
 @dirrm share/gnome/gok/nb
 @dirrm share/gnome/gok/ms
+@dirrm share/gnome/gok/mr
 @dirrm share/gnome/gok/mn
 @dirrm share/gnome/gok/ml
 @dirrm share/gnome/gok/mk
+@dirrm share/gnome/gok/lv
 @dirrm share/gnome/gok/lt
 @dirrm share/gnome/gok/ku
 @dirrm share/gnome/gok/ko
@@ -822,6 +863,7 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/cy
 @dirrm share/gnome/gok/cs
 @dirrm share/gnome/gok/ca
+@dirrm share/gnome/gok/bn_IN
 @dirrm share/gnome/gok/bn
 @dirrm share/gnome/gok/bg
 @dirrm share/gnome/gok/be
@@ -830,3 +872,47 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/am
 @dirrm share/gnome/gok
 @dirrm %%DOCSDIR%%
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

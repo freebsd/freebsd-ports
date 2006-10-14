@@ -3,11 +3,11 @@
 # Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.38 2006/04/13 07:52:43 bland Exp $
+#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.49 2006/10/03 20:52:30 ahze Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.8.6
+PORTVERSION=	2.10.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,10 +19,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gobject.so:${PORTSDIR}/devel/py-gobject
+		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gobject.so:${PORTSDIR}/devel/py-gobject
+		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -32,6 +32,7 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-lintl"
+CONFIGURE_ARGS=	--disable-docs
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCSDIR=	${PREFIX}/share/doc/py-gtk

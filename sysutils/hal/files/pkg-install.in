@@ -1,0 +1,47 @@
+#!/bin/sh
+
+[ "$2" != POST-INSTALL ] && exit 0
+
+if [ -z "${PACKAGE_BUILDING}" ]; then
+	USER=haldaemon
+	GROUP=${USER}
+	UID=560
+	GID=${UID}
+	PW=/usr/sbin/pw
+
+	if ${PW} group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if ${PW} groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ${PW} user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if ${PW} useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d "/nonexistent" -s /sbin/nologin -c "HAL Daemon User"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/hald
+fi
+
+for pair in %%RC_FILES%%; do
+	file=`echo $pair | cut -f 1 -d :`
+	destdir=`echo $pair | cut -f 2 -d :`
+
+	if [ ! -f $destdir/$file ]; then
+	    	mkdir -p $destdir
+		cp -p %%DATADIR%%/dist/$file $destdir/$file
+	fi
+done

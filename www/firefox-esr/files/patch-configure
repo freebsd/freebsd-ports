@@ -1,12 +1,5 @@
---- configure	Tue Oct  4 02:01:48 2005
+--- configure.orig	Tue Oct  4 02:01:48 2005
 +++ configure	Wed Nov 23 11:07:17 2005
-@@ -1022,5 +1022,5 @@
- MOZJPEG=62
- MOZPNG=10207
--MOZZLIB=1.2.3
-+MOZZLIB=1.2.2
- NSPR_VERSION=4
- 
 @@ -10016,7 +10016,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else

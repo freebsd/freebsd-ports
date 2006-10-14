@@ -125,7 +125,7 @@ share/gnome/blackjack/Vegas_Strip.rules
 @unexec [ -s %D/share/gnome/games/same-gnome.Medium.scores ] || rm -f %D/share/gnome/games/same-gnome.Medium.scores
 @unexec [ -s %D/share/gnome/games/same-gnome.Small.scores ] || rm -f %D/share/gnome/games/same-gnome.Small.scores
 @unexec [ -L %D/share/gnome/games/same-gnome.scores ] || rm -f %D/share/gnome/games/same-gnome.scores
-share/gnome/gnect/white_ob.cn4
+share/gnome/gnect/white_ob.cn4.gz
 share/gnome/gnibbles/level001.gnl
 share/gnome/gnibbles/level002.gnl
 share/gnome/gnibbles/level003.gnl
@@ -338,8 +338,6 @@ share/gnome/help/blackjack/C/figures/blackjack_start_window.png
 share/gnome/help/blackjack/C/figures/blackjack_win_window.png
 share/gnome/help/blackjack/C/legal.xml
 share/gnome/help/gataxx/C/figures/gataxx-legalmoves.png
-share/gnome/help/gataxx/C/figures/gataxx-prefs.png
-share/gnome/help/gataxx/C/figures/gataxx-startgame.png
 share/gnome/help/gataxx/C/gataxx.xml
 share/gnome/help/gataxx/C/legal.xml
 share/gnome/help/glines/C/figures/glines-gameover.png
@@ -443,11 +441,8 @@ share/gnome/pixmaps/blackjack/chip-5.svg
 share/gnome/pixmaps/cards/baize.png
 share/gnome/pixmaps/cards/slot.svg
 share/gnome/pixmaps/cards/slots/white-outline.svg
-share/gnome/pixmaps/gataxx.png
-share/gnome/pixmaps/glines.png
 share/gnome/pixmaps/glines/balls.svg
 share/gnome/pixmaps/glines/shapes.svg
-share/gnome/pixmaps/gnect-icon.png
 share/gnome/pixmaps/gnect/bg_grotty.jpg
 share/gnome/pixmaps/gnect/bg_nightfall.jpg
 share/gnome/pixmaps/gnect/bg_toplight.png
@@ -488,25 +483,16 @@ share/gnome/pixmaps/gnibbles/wall-tee-left.svg
 share/gnome/pixmaps/gnibbles/wall-tee-right.svg
 share/gnome/pixmaps/gnibbles/wall-tee-up.svg
 share/gnome/pixmaps/gnobots2/aieee.png
+share/gnome/pixmaps/gnobots2/boo.svg
 share/gnome/pixmaps/gnobots2/gnomes.png
-share/gnome/pixmaps/gnobots2/robots.png
+share/gnome/pixmaps/gnobots2/robots.svg
 share/gnome/pixmaps/gnobots2/splat.png
+share/gnome/pixmaps/gnobots2/ufo.svg
 share/gnome/pixmaps/gnobots2/yahoo.png
-share/gnome/pixmaps/gnome-aisleriot.png
-share/gnome/pixmaps/gnome-blackjack.png
-share/gnome/pixmaps/gnome-cardgame.png
-share/gnome/pixmaps/gnome-games-common/cards/bonded.png
+share/gnome/pixmaps/gnome-games-common/cards/bonded.svg
 share/gnome/pixmaps/gnome-games-common/cards/paris.svg
 share/gnome/pixmaps/gnome-games-common/icons/rteleport.png
 share/gnome/pixmaps/gnome-games-common/icons/teleport.png
-share/gnome/pixmaps/gnome-gnobots2.svg
-share/gnome/pixmaps/gnome-gnomine.png
-share/gnome/pixmaps/gnome-gnotravex.png
-share/gnome/pixmaps/gnome-gsame.png
-share/gnome/pixmaps/gnome-gtali.png
-share/gnome/pixmaps/gnome-gtetris.png
-share/gnome/pixmaps/gnome-mahjongg.png
-share/gnome/pixmaps/gnome-nibbles.png
 share/gnome/pixmaps/gnometris/7blocks-gw.png
 share/gnome/pixmaps/gnometris/7blocks-tig.png
 share/gnome/pixmaps/gnomine/bang.svg
@@ -518,7 +504,7 @@ share/gnome/pixmaps/gnomine/face-worried.png
 share/gnome/pixmaps/gnomine/flag-question.svg
 share/gnome/pixmaps/gnomine/flag.svg
 share/gnome/pixmaps/gnomine/mine.svg
-share/gnome/pixmaps/gnotski-icon.png
+share/gnome/pixmaps/gnomine/warning.svg
 share/gnome/pixmaps/gnotski.svg
 share/gnome/pixmaps/gtali/gnome-dice-1.svg
 share/gnome/pixmaps/gtali/gnome-dice-2.svg
@@ -527,7 +513,6 @@ share/gnome/pixmaps/gtali/gnome-dice-4.svg
 share/gnome/pixmaps/gtali/gnome-dice-5.svg
 share/gnome/pixmaps/gtali/gnome-dice-6.svg
 share/gnome/pixmaps/gtali/gnome-dice-none.svg
-share/gnome/pixmaps/iagno.png
 share/gnome/pixmaps/iagno/classic.png
 share/gnome/pixmaps/iagno/woodtrim.png
 share/gnome/pixmaps/mahjongg/postmodern.svg
@@ -640,12 +625,50 @@ share/gnome/sounds/gnometris/slide.wav
 share/gnome/sounds/gnometris/turn.wav
 share/gnome/sounds/iagno/flip-piece.wav
 share/gnome/sounds/iagno/gameover.wav
+share/icons/hicolor/16x16/apps/gnome-ataxx.png
+share/icons/hicolor/16x16/apps/gnome-gnomine.png
+share/icons/hicolor/16x16/apps/gnome-iagno.png
+share/icons/hicolor/16x16/apps/gnome-nibbles.png
+share/icons/hicolor/16x16/apps/gnome-tali.png
+share/icons/hicolor/22x22/apps/gnome-ataxx.png
+share/icons/hicolor/22x22/apps/gnome-gnomine.png
+share/icons/hicolor/22x22/apps/gnome-iagno.png
+share/icons/hicolor/22x22/apps/gnome-nibbles.png
+share/icons/hicolor/22x22/apps/gnome-tali.png
+share/icons/hicolor/32x32/apps/gnome-ataxx.png
+share/icons/hicolor/32x32/apps/gnome-gnomine.png
+share/icons/hicolor/32x32/apps/gnome-iagno.png
+share/icons/hicolor/32x32/apps/gnome-nibbles.png
+share/icons/hicolor/32x32/apps/gnome-tali.png
+share/icons/hicolor/48x48/apps/gnome-aisleriot.png
+share/icons/hicolor/48x48/apps/gnome-ataxx.png
+share/icons/hicolor/48x48/apps/gnome-blackjack.png
+share/icons/hicolor/48x48/apps/gnome-five-or-more.png
+share/icons/hicolor/48x48/apps/gnome-four-in-a-row.png
+share/icons/hicolor/48x48/apps/gnome-freecell.png
+share/icons/hicolor/48x48/apps/gnome-gnometris.png
+share/icons/hicolor/48x48/apps/gnome-gnomine.png
+share/icons/hicolor/48x48/apps/gnome-iagno.png
+share/icons/hicolor/48x48/apps/gnome-klotski.png
+share/icons/hicolor/48x48/apps/gnome-mahjongg.png
+share/icons/hicolor/48x48/apps/gnome-nibbles.png
+share/icons/hicolor/48x48/apps/gnome-robots.png
+share/icons/hicolor/48x48/apps/gnome-same-gnome.png
+share/icons/hicolor/48x48/apps/gnome-tali.png
+share/icons/hicolor/48x48/apps/gnome-tetravex.png
+share/icons/hicolor/scalable/apps/gnome-ataxx.svg
+share/icons/hicolor/scalable/apps/gnome-gnomine.svg
+share/icons/hicolor/scalable/apps/gnome-iagno.svg
+share/icons/hicolor/scalable/apps/gnome-nibbles.svg
+share/icons/hicolor/scalable/apps/gnome-robots.svg
+share/icons/hicolor/scalable/apps/gnome-tali.svg
 share/locale/am/LC_MESSAGES/gnome-games.mo
 share/locale/ar/LC_MESSAGES/gnome-games.mo
 share/locale/az/LC_MESSAGES/gnome-games.mo
 share/locale/be/LC_MESSAGES/gnome-games.mo
 share/locale/bg/LC_MESSAGES/gnome-games.mo
 share/locale/bn/LC_MESSAGES/gnome-games.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-games.mo
 share/locale/ca/LC_MESSAGES/gnome-games.mo
 share/locale/cs/LC_MESSAGES/gnome-games.mo
 share/locale/cy/LC_MESSAGES/gnome-games.mo
@@ -680,12 +703,13 @@ share/locale/lv/LC_MESSAGES/gnome-games.mo
 share/locale/mk/LC_MESSAGES/gnome-games.mo
 share/locale/ml/LC_MESSAGES/gnome-games.mo
 share/locale/mn/LC_MESSAGES/gnome-games.mo
+share/locale/mr/LC_MESSAGES/gnome-games.mo
 share/locale/ms/LC_MESSAGES/gnome-games.mo
 share/locale/nb/LC_MESSAGES/gnome-games.mo
 share/locale/ne/LC_MESSAGES/gnome-games.mo
 share/locale/nl/LC_MESSAGES/gnome-games.mo
 share/locale/nn/LC_MESSAGES/gnome-games.mo
-share/locale/no/LC_MESSAGES/gnome-games.mo
+share/locale/or/LC_MESSAGES/gnome-games.mo
 share/locale/pa/LC_MESSAGES/gnome-games.mo
 share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
@@ -709,14 +733,6 @@ share/locale/xh/LC_MESSAGES/gnome-games.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-games.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-games.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm share/gnome/sounds/iagno
 @dirrm share/gnome/sounds/gnometris
 @dirrm share/gnome/sounds/gnobots2
@@ -804,3 +820,53 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/blackjack
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

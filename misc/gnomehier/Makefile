@@ -3,13 +3,12 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/misc/gnomehier/Makefile,v 1.11 2006/03/14 03:05:32 marcus Exp $
+#    $MCom: ports/misc/gnomehier/Makefile,v 1.14 2006/10/10 20:22:15 mezz Exp $
 #
 # !!DON'T BUMP PORTREVISION ON MTREE CHANGES ANYMORE!!
 
 PORTNAME=	gnomehier
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -21,10 +20,10 @@ NO_BUILD=	yes
 PLIST?=		${WRKDIR}/pkg-plist
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-GNOME_MTREE=	BSD.gnome-x11.dist
+GNOME_MTREE=	BSD.gnome.dist
 GNOME_MTREE_ARGS=${MTREE_ARGS:S|${MTREE_FILE}|${PREFIX}/etc/mtree/${GNOME_MTREE}|}
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 do-fetch:
 	@${DO_NADA}

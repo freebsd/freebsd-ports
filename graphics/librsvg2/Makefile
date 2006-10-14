@@ -3,11 +3,12 @@
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/librsvg2/Makefile,v 1.98 2006/04/13 07:52:35 bland Exp $
+#    $MCom: ports/graphics/librsvg2/Makefile,v 1.109 2006/10/02 04:52:51 bland Exp $
 #
 
 PORTNAME=	librsvg2
-PORTVERSION=	2.14.4
+PORTVERSION=	2.16.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,14 +20,13 @@ COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		popt.0:${PORTSDIR}/devel/popt \
 		croco-${CROCO_VERSION}.3:${PORTSDIR}/textproc/libcroco
-RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmetal.so:${PORTSDIR}/x11-themes/gtk-engines2
+RUN_DEPENDS=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_XLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnomeprefix libgsf gtk20 ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -36,7 +36,8 @@ CONFIGURE_ARGS=	--with-svgz \
 		--without-gimp \
 		--with-croco \
 		--disable-gnome-vfs \
-		--enable-gtk-theme
+		--enable-gtk-theme \
+		--disable-gnome-print
 
 CROCO_VERSION=	0.6
 

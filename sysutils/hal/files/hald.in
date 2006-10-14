@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: hald
+# REQUIRE: DAEMON dbus polkitd
+#
+# Add the following line to /etc/rc.conf to enable the HAL daemon:
+#
+# hald_enable="YES"
+#
+
+hald_enable=${hald_enable-"NO"}
+hald_flags=${hald_flags-""}
+
+. %%RC_SUBR%%
+
+name=hald
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/hald"
+pidfile="/var/run/${name}/${name}.pid"
+
+stop_postcmd="hald_postcmd"
+start_precmd="hald_precmd"
+
+local_force_depend()
+{
+    _depend="$1"
+    if [ -f %%LOCALBASE%%/etc/rc.d/${_depend}.sh ]; then
+	_depend="${_depend}.sh"
+    fi
+
+    if ! %%LOCALBASE%%/etc/rc.d/${_depend} forcestatus 1>/dev/null 2>&1 &&
+       ! %%LOCALBASE%%/etc/rc.d/${_depend} forcestart; then
+       return 1
+   fi
+   return 0
+}
+
+hald_precmd()
+{
+    if ! checkyesno dbus_enable
+    then
+	local_force_depend dbus || return 1
+    fi
+
+    if ! checkyesno polkitd_enable
+    then
+	local_force_depend polkitd || return 1
+    fi
+
+    mkdir -p $(dirname $pidfile)
+}
+
+hald_postcmd()
+{
+    rm -f $pidfile
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,11 @@
+bin/dbus-binding-tool
+include/dbus-%%VERSION%%/dbus/dbus-glib-bindings.h
+include/dbus-%%VERSION%%/dbus/dbus-glib-error-enum.h
+include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
+include/dbus-%%VERSION%%/dbus/dbus-glib.h
+include/dbus-%%VERSION%%/dbus/dbus-gtype-specialized.h
+lib/libdbus-glib-1.a
+lib/libdbus-glib-1.la
+lib/libdbus-glib-1.so
+lib/libdbus-glib-1.so.2
+libdata/pkgconfig/dbus-glib-1.pc

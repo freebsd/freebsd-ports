@@ -3,15 +3,15 @@
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glib20/Makefile,v 1.75 2006/04/13 07:57:40 bland Exp $
+#   $MCom: ports/devel/glib20/Makefile,v 1.91 2006/10/05 06:55:34 mezz Exp $
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.10.3
+PORTVERSION=	2.12.4
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/2.10,} \
-		ftp://ftp.gtk.org/pub/gtk/v${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
+		ftp://ftp.gtk.org/pub/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -30,7 +30,7 @@ USE_BZIP2=	yes
 
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -42,18 +42,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-OPTIONS=	COLLATION_FIX "fix string collation" off
-
 .include <bsd.port.pre.mk>
 
 .if ( ( ${OSVERSION} < 504101 ) || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600012 ) )
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gthread_gthread-posix.c
-.endif
-
-.if defined(WITH_COLLATION_FIX)
-LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
-		${FILESDIR}/extra-patch-glib_gunicollate.c
 .endif
 
 post-patch:

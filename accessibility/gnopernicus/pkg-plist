@@ -4,6 +4,7 @@ bin/srcore
 etc/gnopernicus-1.0/translation_tables/de.a2b
 etc/gnopernicus-1.0/translation_tables/en_US.a2b
 etc/gnopernicus-1.0/translation_tables/es.a2b
+etc/gnopernicus-1.0/translation_tables/fr.a2b
 etc/gnopernicus-1.0/translation_tables/sv.a2b
 include/gnopernicus-1.0/libbrl/brlxmlapi.h
 include/gnopernicus-1.0/libke/libke.h
@@ -17,6 +18,9 @@ include/gnopernicus-1.0/libsrutil/SREvent.h
 include/gnopernicus-1.0/libsrutil/SRMessages.h
 include/gnopernicus-1.0/libsrutil/srintl.h
 include/gnopernicus-1.0/libsrutil/sru-debug.h
+include/gnopernicus-1.0/libsrutil/sru-glib.h
+include/gnopernicus-1.0/libsrutil/sru-module.h
+include/gnopernicus-1.0/libsrutil/sru-test.h
 include/gnopernicus-1.0/libsrutil/util.h
 lib/gnopernicus-1.0/libbrl.la
 lib/gnopernicus-1.0/libbrl.so
@@ -63,7 +67,6 @@ share/gnome/gnopernicus/glade/gnopi_files/Presentation/presentation.glade2
 share/gnome/gnopernicus/glade/gnopi_files/Screen_Review/screen_review.glade2
 share/gnome/gnopernicus/glade/gnopi_files/Speech_Settings/speech_settings.glade2
 share/gnome/gnopernicus/glade/gnopi_files/User_Properties/user_properties.glade2
-share/gnome/gnopernicus/glade/gnopi_files/about.glade2
 share/gnome/gnopernicus/glade/gnopi_files/braille.xpm
 share/gnome/gnopernicus/glade/gnopi_files/gnopi.glade2
 share/gnome/gnopernicus/glade/gnopi_files/keyboard.xpm
@@ -86,12 +89,13 @@ share/gnome/omf/gnopernicus/brlmonitor-C.omf
 share/gnome/omf/gnopernicus/brlmonitor-es.omf
 share/gnome/omf/gnopernicus/gnopernicus-C.omf
 share/gnome/omf/gnopernicus/gnopernicus-es.omf
-share/gnome/pixmaps/gnopernicus.png
+share/icons/hicolor/48x48/apps/gnopernicus.png
 share/locale/ar/LC_MESSAGES/gnopernicus.mo
 share/locale/az/LC_MESSAGES/gnopernicus.mo
 share/locale/be/LC_MESSAGES/gnopernicus.mo
 share/locale/bg/LC_MESSAGES/gnopernicus.mo
 share/locale/bn/LC_MESSAGES/gnopernicus.mo
+share/locale/bn_IN/LC_MESSAGES/gnopernicus.mo
 share/locale/ca/LC_MESSAGES/gnopernicus.mo
 share/locale/cs/LC_MESSAGES/gnopernicus.mo
 share/locale/cy/LC_MESSAGES/gnopernicus.mo
@@ -119,12 +123,14 @@ share/locale/ja/LC_MESSAGES/gnopernicus.mo
 share/locale/ka/LC_MESSAGES/gnopernicus.mo
 share/locale/ko/LC_MESSAGES/gnopernicus.mo
 share/locale/lt/LC_MESSAGES/gnopernicus.mo
+share/locale/lv/LC_MESSAGES/gnopernicus.mo
 share/locale/mn/LC_MESSAGES/gnopernicus.mo
+share/locale/mr/LC_MESSAGES/gnopernicus.mo
 share/locale/ms/LC_MESSAGES/gnopernicus.mo
 share/locale/nb/LC_MESSAGES/gnopernicus.mo
 share/locale/ne/LC_MESSAGES/gnopernicus.mo
 share/locale/nl/LC_MESSAGES/gnopernicus.mo
-share/locale/no/LC_MESSAGES/gnopernicus.mo
+share/locale/or/LC_MESSAGES/gnopernicus.mo
 share/locale/pa/LC_MESSAGES/gnopernicus.mo
 share/locale/pl/LC_MESSAGES/gnopernicus.mo
 share/locale/pt/LC_MESSAGES/gnopernicus.mo
@@ -144,9 +150,8 @@ share/locale/tr/LC_MESSAGES/gnopernicus.mo
 share/locale/uk/LC_MESSAGES/gnopernicus.mo
 share/locale/vi/LC_MESSAGES/gnopernicus.mo
 share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
+share/locale/zh_HK/LC_MESSAGES/gnopernicus.mo
 share/locale/zh_TW/LC_MESSAGES/gnopernicus.mo
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm share/gnome/omf/gnopernicus
 @dirrm share/gnome/help/gnopernicus/pt_BR/figures
 @dirrm share/gnome/help/gnopernicus/pt_BR
@@ -183,3 +188,47 @@ share/locale/zh_TW/LC_MESSAGES/gnopernicus.mo
 @dirrm include/gnopernicus-1.0
 @dirrm etc/gnopernicus-1.0/translation_tables
 @dirrm etc/gnopernicus-1.0
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

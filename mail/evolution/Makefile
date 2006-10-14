@@ -3,11 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.98 2006/04/13 07:52:35 bland Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.119 2006/10/07 17:10:06 marcus Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.6.3
+PORTVERSION=	2.8.1
 PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -18,18 +18,18 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
 LIB_DEPENDS=	nss3.1:${PORTSDIR}/security/nss
-RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
+RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver \
 		gtkhtml3 desktopfileutils
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
@@ -43,13 +43,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	apps_evolution_addressbook-${EVO_VERSION}.schemas \
 		apps_evolution_calendar-${EVO_VERSION}.schemas \
-		apps-evolution-mail-prompts-checkdefault-2.6.schemas \
+		apps-evolution-mail-prompts-checkdefault-${EVO_VERSION}.schemas \
 		apps_evolution_shell-${EVO_VERSION}.schemas \
 		evolution-mail-${EVO_VERSION}.schemas
 
-EVO_VERSION=	2.6
+EVO_VERSION=	2.8
 PLIST_SUB=	VERSION=${EVO_VERSION} \
-		PORTVERSION=2.6
+		PORTVERSION=2.8
 
 OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		LDAP "Enable LDAP support" on \
@@ -69,13 +69,8 @@ WITH_DBUS=	yes
 WITH_DBUS=	yes
 .endif
 
-.if exists(${X11BASE}/lib/libgstreamer-0.8.so)
+.if exists(${LOCALBASE}/lib/libgstreamer-0.8.so)
 WITH_GSTREAMER=	yes
-.endif
-
-.if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \
-	defined(WITH_NOTIFY)
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .endif
 
 .if defined(WITH_PILOT)
@@ -106,7 +101,7 @@ PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if defined(WITH_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 PLIST_SUB+=	DBUS=""
 .else
 PLIST_SUB+=	DBUS="@comment "

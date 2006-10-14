@@ -3,11 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11/xscreensaver-gnome/Makefile,v 1.2 2006/10/07 19:20:33 ahze Exp $
 
 PORTNAME?=	xscreensaver-gnome
 PORTVERSION=	4.24
-PORTREVISION?=	2
+PORTREVISION?=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle
 
 CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_XPM=	yes
 USE_GL=		yes
 USE_GMAKE=	yes

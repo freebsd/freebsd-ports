@@ -17,11 +17,13 @@ lib/libgtksourceview-1.0.so.0
 libdata/pkgconfig/gtksourceview-1.0.pc
 share/gnome/gtksourceview-1.0/language-specs/R.lang
 share/gnome/gtksourceview-1.0/language-specs/ada.lang
+share/gnome/gtksourceview-1.0/language-specs/boo.lang
 share/gnome/gtksourceview-1.0/language-specs/c.lang
 share/gnome/gtksourceview-1.0/language-specs/changelog.lang
 share/gnome/gtksourceview-1.0/language-specs/cpp.lang
 share/gnome/gtksourceview-1.0/language-specs/csharp.lang
 share/gnome/gtksourceview-1.0/language-specs/css.lang
+share/gnome/gtksourceview-1.0/language-specs/d.lang
 share/gnome/gtksourceview-1.0/language-specs/desktop.lang
 share/gnome/gtksourceview-1.0/language-specs/diff.lang
 share/gnome/gtksourceview-1.0/language-specs/fortran.lang
@@ -89,13 +91,16 @@ share/locale/ja/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/lt/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/lv/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/mg/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/mk/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ml/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/mn/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/mr/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ms/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/nb/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ne/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/nl/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/or/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/pa/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/pl/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/pt/LC_MESSAGES/gtksourceview-1.0.mo
@@ -104,6 +109,7 @@ share/locale/ro/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ru/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/rw/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/sk/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/sl/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/sq/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/sr/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/sr@Latn/LC_MESSAGES/gtksourceview-1.0.mo
@@ -117,17 +123,55 @@ share/locale/xh/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_HK/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/gtksourceview-1.0.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
 @dirrm share/gnome/gtksourceview-1.0/language-specs
 @dirrm share/gnome/gtksourceview-1.0
 @dirrm include/gtksourceview-1.0/gtksourceview
 @dirrm include/gtksourceview-1.0
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

@@ -7,7 +7,6 @@ share/gnome/dasher/alphabet.Austen.xml
 share/gnome/dasher/alphabet.Azerbaijani.xml
 share/gnome/dasher/alphabet.Belarusian.xml
 share/gnome/dasher/alphabet.Bulgarian.xml
-share/gnome/dasher/alphabet.C.xml
 share/gnome/dasher/alphabet.Esperanto.xml
 share/gnome/dasher/alphabet.Estonian.xml
 share/gnome/dasher/alphabet.Filipino.xml
@@ -42,6 +41,7 @@ share/gnome/dasher/alphabet.Tajik.xml
 share/gnome/dasher/alphabet.Tamil.xml
 share/gnome/dasher/alphabet.Telugu.xml
 share/gnome/dasher/alphabet.Thai.xml
+share/gnome/dasher/alphabet.Thai2.xml
 share/gnome/dasher/alphabet.Tsonga.xml
 share/gnome/dasher/alphabet.Tswana.xml
 share/gnome/dasher/alphabet.Turkish.xml
@@ -70,12 +70,10 @@ share/gnome/dasher/alphabet.corsican.xml
 share/gnome/dasher/alphabet.croatian.xml
 share/gnome/dasher/alphabet.czech.xml
 share/gnome/dasher/alphabet.danish.xml
-share/gnome/dasher/alphabet.danish2.xml
 share/gnome/dasher/alphabet.dtd
 share/gnome/dasher/alphabet.dutch.xml
 share/gnome/dasher/alphabet.english.xml
 share/gnome/dasher/alphabet.englishC.xml
-share/gnome/dasher/alphabet.englishLC.xml
 share/gnome/dasher/alphabet.ethiopic.xml
 share/gnome/dasher/alphabet.ewe.xml
 share/gnome/dasher/alphabet.faroese.xml
@@ -143,13 +141,13 @@ share/gnome/dasher/colour.euroasian.xml
 share/gnome/dasher/colour.euroasian2.xml
 share/gnome/dasher/colour.jamie.xml
 share/gnome/dasher/colour.rainbow.xml
+share/gnome/dasher/colour.thai.xml
 share/gnome/dasher/colour.vowels.xml
 share/gnome/dasher/colour.vowels2.xml
 share/gnome/dasher/colour.xml
 share/gnome/dasher/controllabels.dtd
 share/gnome/dasher/controllabels.xml
 share/gnome/dasher/dasher.glade
-share/gnome/dasher/dashermaemo.glade
 share/gnome/dasher/training_albanian_SQ.txt
 share/gnome/dasher/training_basque_EU.txt
 share/gnome/dasher/training_bengali_BD.txt
@@ -179,25 +177,22 @@ share/gnome/dasher/training_swedish_SE.txt
 share/gnome/dasher/training_turkish_TR.txt
 share/gnome/dasher/training_welsh_GB.txt
 share/gnome/help/dasher/C/dasher.xml
+share/gnome/help/dasher/C/figures/a-z.gif
+share/gnome/help/dasher/C/figures/aa-az.gif
+share/gnome/help/dasher/C/figures/ala-alz.gif
+share/gnome/help/dasher/C/figures/exampleHad2.png
+share/gnome/help/dasher/C/figures/exampleHad2a.png
+share/gnome/help/dasher/C/figures/exampleHad3a.png
+share/gnome/help/dasher/C/figures/exampleHad4.png
 share/gnome/help/dasher/C/figures/figure2.png
 share/gnome/help/dasher/C/figures/main.png
+share/gnome/help/dasher/C/figures/object.gif
 share/gnome/help/dasher/C/figures/prefs1.png
 share/gnome/help/dasher/C/figures/prefs2.png
 share/gnome/help/dasher/C/figures/prefs3.png
 share/gnome/help/dasher/C/figures/prefs4.png
 share/gnome/help/dasher/C/figures/prefs5.png
-share/gnome/help/dasher/C/version.xml
-share/gnome/help/dasher/eu/dasher.xml
-share/gnome/help/dasher/eu/figures/figure2.png
-share/gnome/help/dasher/eu/figures/main.png
-share/gnome/help/dasher/eu/figures/prefs1.png
-share/gnome/help/dasher/eu/figures/prefs2.png
-share/gnome/help/dasher/eu/figures/prefs3.png
-share/gnome/help/dasher/eu/figures/prefs4.png
-share/gnome/help/dasher/eu/figures/prefs5.png
-share/gnome/help/dasher/eu/version.xml
 share/gnome/omf/dasher/dasher-C.omf
-share/gnome/omf/dasher/dasher-eu.omf
 share/icons/hicolor/48x48/apps/dasher.png
 share/icons/hicolor/scalable/apps/dasher.svg
 share/locale/ar/LC_MESSAGES/dasher.mo
@@ -205,7 +200,7 @@ share/locale/az/LC_MESSAGES/dasher.mo
 share/locale/be/LC_MESSAGES/dasher.mo
 share/locale/bg/LC_MESSAGES/dasher.mo
 share/locale/bn/LC_MESSAGES/dasher.mo
-share/locale/br/LC_MESSAGES/dasher.mo
+share/locale/bn_IN/LC_MESSAGES/dasher.mo
 share/locale/bs/LC_MESSAGES/dasher.mo
 share/locale/ca/LC_MESSAGES/dasher.mo
 share/locale/cs/LC_MESSAGES/dasher.mo
@@ -234,17 +229,21 @@ share/locale/it/LC_MESSAGES/dasher.mo
 share/locale/ja/LC_MESSAGES/dasher.mo
 share/locale/ka/LC_MESSAGES/dasher.mo
 share/locale/ko/LC_MESSAGES/dasher.mo
+share/locale/ku/LC_MESSAGES/dasher.mo
 share/locale/ky/LC_MESSAGES/dasher.mo
 share/locale/lt/LC_MESSAGES/dasher.mo
 share/locale/lv/LC_MESSAGES/dasher.mo
+share/locale/mg/LC_MESSAGES/dasher.mo
 share/locale/mk/LC_MESSAGES/dasher.mo
+share/locale/ml/LC_MESSAGES/dasher.mo
 share/locale/mn/LC_MESSAGES/dasher.mo
+share/locale/mr/LC_MESSAGES/dasher.mo
 share/locale/ms/LC_MESSAGES/dasher.mo
 share/locale/nb/LC_MESSAGES/dasher.mo
 share/locale/ne/LC_MESSAGES/dasher.mo
 share/locale/nl/LC_MESSAGES/dasher.mo
-share/locale/no/LC_MESSAGES/dasher.mo
 share/locale/nn/LC_MESSAGES/dasher.mo
+share/locale/or/LC_MESSAGES/dasher.mo
 share/locale/pa/LC_MESSAGES/dasher.mo
 share/locale/pl/LC_MESSAGES/dasher.mo
 share/locale/pt/LC_MESSAGES/dasher.mo
@@ -253,6 +252,7 @@ share/locale/ro/LC_MESSAGES/dasher.mo
 share/locale/ru/LC_MESSAGES/dasher.mo
 share/locale/rw/LC_MESSAGES/dasher.mo
 share/locale/sk/LC_MESSAGES/dasher.mo
+share/locale/sl/LC_MESSAGES/dasher.mo
 share/locale/sq/LC_MESSAGES/dasher.mo
 share/locale/sr/LC_MESSAGES/dasher.mo
 share/locale/sr@Latn/LC_MESSAGES/dasher.mo
@@ -267,22 +267,64 @@ share/locale/vi/LC_MESSAGES/dasher.mo
 share/locale/zh_CN/LC_MESSAGES/dasher.mo
 share/locale/zh_HK/LC_MESSAGES/dasher.mo
 share/locale/zh_TW/LC_MESSAGES/dasher.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
 @dirrm share/gnome/omf/dasher
-@dirrm share/gnome/help/dasher/eu/figures
-@dirrm share/gnome/help/dasher/eu
 @dirrm share/gnome/help/dasher/C/figures
 @dirrm share/gnome/help/dasher/C
 @dirrm share/gnome/help/dasher
 @dirrm share/gnome/dasher
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

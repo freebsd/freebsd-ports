@@ -56,6 +56,9 @@ lib/gstreamer-%%VERSION%%/libgstdecodebin.so
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.a
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.la
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.so
+lib/gstreamer-%%VERSION%%/libgstgdp.a
+lib/gstreamer-%%VERSION%%/libgstgdp.la
+lib/gstreamer-%%VERSION%%/libgstgdp.so
 lib/gstreamer-%%VERSION%%/libgstplaybin.a
 lib/gstreamer-%%VERSION%%/libgstplaybin.la
 lib/gstreamer-%%VERSION%%/libgstplaybin.so
@@ -68,6 +71,9 @@ lib/gstreamer-%%VERSION%%/libgsttcp.so
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.a
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.la
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.so
+lib/gstreamer-%%VERSION%%/libgstvideo4linux.a
+lib/gstreamer-%%VERSION%%/libgstvideo4linux.la
+lib/gstreamer-%%VERSION%%/libgstvideo4linux.so
 lib/gstreamer-%%VERSION%%/libgstvideorate.a
 lib/gstreamer-%%VERSION%%/libgstvideorate.la
 lib/gstreamer-%%VERSION%%/libgstvideorate.so
@@ -142,3 +148,9 @@ share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
 @dirrm include/gstreamer-%%VERSION%%/gst/cdda
 @dirrm include/gstreamer-%%VERSION%%/gst/audio
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

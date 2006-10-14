@@ -1,25 +1,19 @@
 bin/freetype-config
-include/freetype2/freetype/cache/ftccache.h
-include/freetype2/freetype/cache/ftccmap.h
-include/freetype2/freetype/cache/ftcglyph.h
-include/freetype2/freetype/cache/ftcimage.h
-include/freetype2/freetype/cache/ftcmanag.h
-include/freetype2/freetype/cache/ftcmru.h
-include/freetype2/freetype/cache/ftcsbits.h
 include/freetype2/freetype/config/ftconfig.h
 include/freetype2/freetype/config/ftheader.h
 include/freetype2/freetype/config/ftmodule.h
 include/freetype2/freetype/config/ftoption.h
 include/freetype2/freetype/config/ftstdlib.h
 include/freetype2/freetype/freetype.h
-include/freetype2/freetype/ftbitmap.h
 include/freetype2/freetype/ftbbox.h
 include/freetype2/freetype/ftbdf.h
+include/freetype2/freetype/ftbitmap.h
 include/freetype2/freetype/ftcache.h
 include/freetype2/freetype/ftchapters.h
 include/freetype2/freetype/fterrdef.h
 include/freetype2/freetype/fterrors.h
 include/freetype2/freetype/ftglyph.h
+include/freetype2/freetype/ftgxval.h
 include/freetype2/freetype/ftgzip.h
 include/freetype2/freetype/ftimage.h
 include/freetype2/freetype/ftincrem.h
@@ -37,44 +31,11 @@ include/freetype2/freetype/ftsizes.h
 include/freetype2/freetype/ftsnames.h
 include/freetype2/freetype/ftstroke.h
 include/freetype2/freetype/ftsynth.h
-include/freetype2/freetype/ftsysio.h
-include/freetype2/freetype/ftsysmem.h
 include/freetype2/freetype/ftsystem.h
 include/freetype2/freetype/fttrigon.h
 include/freetype2/freetype/fttypes.h
 include/freetype2/freetype/ftwinfnt.h
 include/freetype2/freetype/ftxf86.h
-include/freetype2/freetype/internal/autohint.h
-include/freetype2/freetype/internal/ftcalc.h
-include/freetype2/freetype/internal/ftdebug.h
-include/freetype2/freetype/internal/ftdriver.h
-include/freetype2/freetype/internal/ftgloadr.h
-include/freetype2/freetype/internal/ftmemory.h
-include/freetype2/freetype/internal/ftobjs.h
-include/freetype2/freetype/internal/ftrfork.h
-include/freetype2/freetype/internal/ftserv.h
-include/freetype2/freetype/internal/ftstream.h
-include/freetype2/freetype/internal/fttrace.h
-include/freetype2/freetype/internal/ftvalid.h
-include/freetype2/freetype/internal/internal.h
-include/freetype2/freetype/internal/pcftypes.h
-include/freetype2/freetype/internal/psaux.h
-include/freetype2/freetype/internal/pshints.h
-include/freetype2/freetype/internal/sfnt.h
-include/freetype2/freetype/internal/svbdf.h
-include/freetype2/freetype/internal/svgldict.h
-include/freetype2/freetype/internal/svmm.h
-include/freetype2/freetype/internal/svotval.h
-include/freetype2/freetype/internal/svpfr.h
-include/freetype2/freetype/internal/svpostnm.h
-include/freetype2/freetype/internal/svpscmap.h
-include/freetype2/freetype/internal/svpsinfo.h
-include/freetype2/freetype/internal/svsfnt.h
-include/freetype2/freetype/internal/svttcmap.h
-include/freetype2/freetype/internal/svwinfnt.h
-include/freetype2/freetype/internal/svxf86nm.h
-include/freetype2/freetype/internal/t1types.h
-include/freetype2/freetype/internal/tttypes.h
 include/freetype2/freetype/t1tables.h
 include/freetype2/freetype/ttnameid.h
 include/freetype2/freetype/tttables.h
@@ -87,8 +48,6 @@ lib/libfreetype.so
 lib/libfreetype.so.9
 libdata/pkgconfig/freetype2.pc
 share/aclocal/freetype2.m4
-@dirrm include/freetype2/freetype/internal
 @dirrm include/freetype2/freetype/config
-@dirrm include/freetype2/freetype/cache
 @dirrm include/freetype2/freetype
 @dirrm include/freetype2

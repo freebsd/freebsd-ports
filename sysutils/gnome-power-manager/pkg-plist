@@ -1,0 +1,319 @@
+bin/gnome-power-inhibit-test
+bin/gnome-power-manager
+bin/gnome-power-preferences
+etc/dbus-1/system.d/gnome-power-manager.conf
+share/dbus-1/services/gnome-power-manager.service
+share/gnome/applications/gnome-power-preferences.desktop
+share/gnome/autostart/gnome-power-manager.desktop
+share/gnome/gnome-power-manager/gpm-feedback-widget.glade
+share/gnome/gnome-power-manager/gpm-info.glade
+share/gnome/gnome-power-manager/gpm-inhibit-test.glade
+share/gnome/gnome-power-manager/gpm-prefs.glade
+share/gnome/help/gnome-power-manager/C/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-info-devices.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-info-event-log.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-info-percentage.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-info-rate.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-info-time.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-prefs-options.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/C/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/C/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/C/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/C/legal.xml
+share/gnome/help/gnome-power-manager/ru/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-info-devices.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-info-event-log.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-info-percentage.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-info-rate.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-info-time.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-prefs-options.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/ru/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/ru/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/ru/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/sv/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-info-devices.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-info-event-log.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-info-percentage.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-info-rate.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-info-time.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-prefs-options.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/sv/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/sv/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/sv/gnome-power-manager.xml
+share/gnome/omf/gnome-power-manager/gnome-power-manager-C.omf
+share/gnome/omf/gnome-power-manager/gnome-power-manager-ru.omf
+share/gnome/omf/gnome-power-manager/gnome-power-manager-sv.omf
+share/icons/hicolor/16x16/apps/gpm-ac-adapter.png
+share/icons/hicolor/16x16/apps/gpm-brightness.png
+share/icons/hicolor/16x16/apps/gpm-hibernate.png
+share/icons/hicolor/16x16/apps/gpm-keyboard-000.png
+share/icons/hicolor/16x16/apps/gpm-keyboard-030.png
+share/icons/hicolor/16x16/apps/gpm-keyboard-060.png
+share/icons/hicolor/16x16/apps/gpm-keyboard-100.png
+share/icons/hicolor/16x16/apps/gpm-mouse-000.png
+share/icons/hicolor/16x16/apps/gpm-mouse-030.png
+share/icons/hicolor/16x16/apps/gpm-mouse-060.png
+share/icons/hicolor/16x16/apps/gpm-mouse-100.png
+share/icons/hicolor/16x16/apps/gpm-primary-000-charging.png
+share/icons/hicolor/16x16/apps/gpm-primary-000.png
+share/icons/hicolor/16x16/apps/gpm-primary-020-charging.png
+share/icons/hicolor/16x16/apps/gpm-primary-020.png
+share/icons/hicolor/16x16/apps/gpm-primary-040-charging.png
+share/icons/hicolor/16x16/apps/gpm-primary-040.png
+share/icons/hicolor/16x16/apps/gpm-primary-060-charging.png
+share/icons/hicolor/16x16/apps/gpm-primary-060.png
+share/icons/hicolor/16x16/apps/gpm-primary-080-charging.png
+share/icons/hicolor/16x16/apps/gpm-primary-080.png
+share/icons/hicolor/16x16/apps/gpm-primary-100-charging.png
+share/icons/hicolor/16x16/apps/gpm-primary-100.png
+share/icons/hicolor/16x16/apps/gpm-primary-charged.png
+share/icons/hicolor/16x16/apps/gpm-primary-missing.png
+share/icons/hicolor/16x16/apps/gpm-suspend.png
+share/icons/hicolor/16x16/apps/gpm-ups-000-charging.png
+share/icons/hicolor/16x16/apps/gpm-ups-000.png
+share/icons/hicolor/16x16/apps/gpm-ups-020-charging.png
+share/icons/hicolor/16x16/apps/gpm-ups-020.png
+share/icons/hicolor/16x16/apps/gpm-ups-040-charging.png
+share/icons/hicolor/16x16/apps/gpm-ups-040.png
+share/icons/hicolor/16x16/apps/gpm-ups-060-charging.png
+share/icons/hicolor/16x16/apps/gpm-ups-060.png
+share/icons/hicolor/16x16/apps/gpm-ups-080-charging.png
+share/icons/hicolor/16x16/apps/gpm-ups-080.png
+share/icons/hicolor/16x16/apps/gpm-ups-100-charging.png
+share/icons/hicolor/16x16/apps/gpm-ups-100.png
+share/icons/hicolor/16x16/apps/gpm-ups-charged.png
+share/icons/hicolor/16x16/apps/gpm-ups-missing.png
+share/icons/hicolor/22x22/apps/gpm-ac-adapter.png
+share/icons/hicolor/22x22/apps/gpm-brightness.png
+share/icons/hicolor/22x22/apps/gpm-hibernate.png
+share/icons/hicolor/22x22/apps/gpm-keyboard-000.png
+share/icons/hicolor/22x22/apps/gpm-keyboard-030.png
+share/icons/hicolor/22x22/apps/gpm-keyboard-060.png
+share/icons/hicolor/22x22/apps/gpm-keyboard-100.png
+share/icons/hicolor/22x22/apps/gpm-mouse-000.png
+share/icons/hicolor/22x22/apps/gpm-mouse-030.png
+share/icons/hicolor/22x22/apps/gpm-mouse-060.png
+share/icons/hicolor/22x22/apps/gpm-mouse-100.png
+share/icons/hicolor/22x22/apps/gpm-primary-000-charging.png
+share/icons/hicolor/22x22/apps/gpm-primary-000.png
+share/icons/hicolor/22x22/apps/gpm-primary-020-charging.png
+share/icons/hicolor/22x22/apps/gpm-primary-020.png
+share/icons/hicolor/22x22/apps/gpm-primary-040-charging.png
+share/icons/hicolor/22x22/apps/gpm-primary-040.png
+share/icons/hicolor/22x22/apps/gpm-primary-060-charging.png
+share/icons/hicolor/22x22/apps/gpm-primary-060.png
+share/icons/hicolor/22x22/apps/gpm-primary-080-charging.png
+share/icons/hicolor/22x22/apps/gpm-primary-080.png
+share/icons/hicolor/22x22/apps/gpm-primary-100-charging.png
+share/icons/hicolor/22x22/apps/gpm-primary-100.png
+share/icons/hicolor/22x22/apps/gpm-primary-charged.png
+share/icons/hicolor/22x22/apps/gpm-primary-missing.png
+share/icons/hicolor/22x22/apps/gpm-suspend.png
+share/icons/hicolor/22x22/apps/gpm-ups-000-charging.png
+share/icons/hicolor/22x22/apps/gpm-ups-000.png
+share/icons/hicolor/22x22/apps/gpm-ups-020-charging.png
+share/icons/hicolor/22x22/apps/gpm-ups-020.png
+share/icons/hicolor/22x22/apps/gpm-ups-040-charging.png
+share/icons/hicolor/22x22/apps/gpm-ups-040.png
+share/icons/hicolor/22x22/apps/gpm-ups-060-charging.png
+share/icons/hicolor/22x22/apps/gpm-ups-060.png
+share/icons/hicolor/22x22/apps/gpm-ups-080-charging.png
+share/icons/hicolor/22x22/apps/gpm-ups-080.png
+share/icons/hicolor/22x22/apps/gpm-ups-100-charging.png
+share/icons/hicolor/22x22/apps/gpm-ups-100.png
+share/icons/hicolor/22x22/apps/gpm-ups-charged.png
+share/icons/hicolor/22x22/apps/gpm-ups-missing.png
+share/icons/hicolor/24x24/apps/gpm-ac-adapter.png
+share/icons/hicolor/24x24/apps/gpm-brightness.png
+share/icons/hicolor/24x24/apps/gpm-hibernate.png
+share/icons/hicolor/24x24/apps/gpm-keyboard-000.png
+share/icons/hicolor/24x24/apps/gpm-keyboard-030.png
+share/icons/hicolor/24x24/apps/gpm-keyboard-060.png
+share/icons/hicolor/24x24/apps/gpm-keyboard-100.png
+share/icons/hicolor/24x24/apps/gpm-mouse-000.png
+share/icons/hicolor/24x24/apps/gpm-mouse-030.png
+share/icons/hicolor/24x24/apps/gpm-mouse-060.png
+share/icons/hicolor/24x24/apps/gpm-mouse-100.png
+share/icons/hicolor/24x24/apps/gpm-primary-000-charging.png
+share/icons/hicolor/24x24/apps/gpm-primary-000.png
+share/icons/hicolor/24x24/apps/gpm-primary-020-charging.png
+share/icons/hicolor/24x24/apps/gpm-primary-020.png
+share/icons/hicolor/24x24/apps/gpm-primary-040-charging.png
+share/icons/hicolor/24x24/apps/gpm-primary-040.png
+share/icons/hicolor/24x24/apps/gpm-primary-060-charging.png
+share/icons/hicolor/24x24/apps/gpm-primary-060.png
+share/icons/hicolor/24x24/apps/gpm-primary-080-charging.png
+share/icons/hicolor/24x24/apps/gpm-primary-080.png
+share/icons/hicolor/24x24/apps/gpm-primary-100-charging.png
+share/icons/hicolor/24x24/apps/gpm-primary-100.png
+share/icons/hicolor/24x24/apps/gpm-primary-charged.png
+share/icons/hicolor/24x24/apps/gpm-primary-missing.png
+share/icons/hicolor/24x24/apps/gpm-suspend.png
+share/icons/hicolor/24x24/apps/gpm-ups-000-charging.png
+share/icons/hicolor/24x24/apps/gpm-ups-000.png
+share/icons/hicolor/24x24/apps/gpm-ups-020-charging.png
+share/icons/hicolor/24x24/apps/gpm-ups-020.png
+share/icons/hicolor/24x24/apps/gpm-ups-040-charging.png
+share/icons/hicolor/24x24/apps/gpm-ups-040.png
+share/icons/hicolor/24x24/apps/gpm-ups-060-charging.png
+share/icons/hicolor/24x24/apps/gpm-ups-060.png
+share/icons/hicolor/24x24/apps/gpm-ups-080-charging.png
+share/icons/hicolor/24x24/apps/gpm-ups-080.png
+share/icons/hicolor/24x24/apps/gpm-ups-100-charging.png
+share/icons/hicolor/24x24/apps/gpm-ups-100.png
+share/icons/hicolor/24x24/apps/gpm-ups-charged.png
+share/icons/hicolor/24x24/apps/gpm-ups-missing.png
+share/icons/hicolor/scalable/apps/gpm-ac-adapter.svg
+share/icons/hicolor/scalable/apps/gpm-brightness.svg
+share/icons/hicolor/scalable/apps/gpm-hibernate.svg
+share/icons/hicolor/scalable/apps/gpm-keyboard-000.svg
+share/icons/hicolor/scalable/apps/gpm-keyboard-030.svg
+share/icons/hicolor/scalable/apps/gpm-keyboard-060.svg
+share/icons/hicolor/scalable/apps/gpm-keyboard-100.svg
+share/icons/hicolor/scalable/apps/gpm-mouse-000.svg
+share/icons/hicolor/scalable/apps/gpm-mouse-030.svg
+share/icons/hicolor/scalable/apps/gpm-mouse-060.svg
+share/icons/hicolor/scalable/apps/gpm-mouse-100.svg
+share/icons/hicolor/scalable/apps/gpm-primary-000-charging.svg
+share/icons/hicolor/scalable/apps/gpm-primary-000.svg
+share/icons/hicolor/scalable/apps/gpm-primary-020-charging.svg
+share/icons/hicolor/scalable/apps/gpm-primary-020.svg
+share/icons/hicolor/scalable/apps/gpm-primary-040-charging.svg
+share/icons/hicolor/scalable/apps/gpm-primary-040.svg
+share/icons/hicolor/scalable/apps/gpm-primary-060-charging.svg
+share/icons/hicolor/scalable/apps/gpm-primary-060.svg
+share/icons/hicolor/scalable/apps/gpm-primary-080-charging.svg
+share/icons/hicolor/scalable/apps/gpm-primary-080.svg
+share/icons/hicolor/scalable/apps/gpm-primary-100-charging.svg
+share/icons/hicolor/scalable/apps/gpm-primary-100.svg
+share/icons/hicolor/scalable/apps/gpm-primary-charged.svg
+share/icons/hicolor/scalable/apps/gpm-primary-missing.svg
+share/icons/hicolor/scalable/apps/gpm-suspend.svg
+share/icons/hicolor/scalable/apps/gpm-ups-000-charging.svg
+share/icons/hicolor/scalable/apps/gpm-ups-000.svg
+share/icons/hicolor/scalable/apps/gpm-ups-020-charging.svg
+share/icons/hicolor/scalable/apps/gpm-ups-020.svg
+share/icons/hicolor/scalable/apps/gpm-ups-040-charging.svg
+share/icons/hicolor/scalable/apps/gpm-ups-040.svg
+share/icons/hicolor/scalable/apps/gpm-ups-060-charging.svg
+share/icons/hicolor/scalable/apps/gpm-ups-060.svg
+share/icons/hicolor/scalable/apps/gpm-ups-080-charging.svg
+share/icons/hicolor/scalable/apps/gpm-ups-080.svg
+share/icons/hicolor/scalable/apps/gpm-ups-100-charging.svg
+share/icons/hicolor/scalable/apps/gpm-ups-100.svg
+share/icons/hicolor/scalable/apps/gpm-ups-charged.svg
+share/icons/hicolor/scalable/apps/gpm-ups-missing.svg
+share/locale/bg/LC_MESSAGES/gnome-power-manager.mo
+share/locale/bn/LC_MESSAGES/gnome-power-manager.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ca/LC_MESSAGES/gnome-power-manager.mo
+share/locale/cs/LC_MESSAGES/gnome-power-manager.mo
+share/locale/cy/LC_MESSAGES/gnome-power-manager.mo
+share/locale/de/LC_MESSAGES/gnome-power-manager.mo
+share/locale/dz/LC_MESSAGES/gnome-power-manager.mo
+share/locale/el/LC_MESSAGES/gnome-power-manager.mo
+share/locale/en_CA/LC_MESSAGES/gnome-power-manager.mo
+share/locale/en_GB/LC_MESSAGES/gnome-power-manager.mo
+share/locale/es/LC_MESSAGES/gnome-power-manager.mo
+share/locale/et/LC_MESSAGES/gnome-power-manager.mo
+share/locale/eu/LC_MESSAGES/gnome-power-manager.mo
+share/locale/fa/LC_MESSAGES/gnome-power-manager.mo
+share/locale/fi/LC_MESSAGES/gnome-power-manager.mo
+share/locale/fr/LC_MESSAGES/gnome-power-manager.mo
+share/locale/gl/LC_MESSAGES/gnome-power-manager.mo
+share/locale/gu/LC_MESSAGES/gnome-power-manager.mo
+share/locale/hi/LC_MESSAGES/gnome-power-manager.mo
+share/locale/hu/LC_MESSAGES/gnome-power-manager.mo
+share/locale/it/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ja/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ka/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ko/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ku/LC_MESSAGES/gnome-power-manager.mo
+share/locale/lt/LC_MESSAGES/gnome-power-manager.mo
+share/locale/lv/LC_MESSAGES/gnome-power-manager.mo
+share/locale/mg/LC_MESSAGES/gnome-power-manager.mo
+share/locale/mk/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ml/LC_MESSAGES/gnome-power-manager.mo
+share/locale/nb/LC_MESSAGES/gnome-power-manager.mo
+share/locale/nl/LC_MESSAGES/gnome-power-manager.mo
+share/locale/or/LC_MESSAGES/gnome-power-manager.mo
+share/locale/pa/LC_MESSAGES/gnome-power-manager.mo
+share/locale/pl/LC_MESSAGES/gnome-power-manager.mo
+share/locale/pt/LC_MESSAGES/gnome-power-manager.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ru/LC_MESSAGES/gnome-power-manager.mo
+share/locale/sk/LC_MESSAGES/gnome-power-manager.mo
+share/locale/sl/LC_MESSAGES/gnome-power-manager.mo
+share/locale/sr/LC_MESSAGES/gnome-power-manager.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-power-manager.mo
+share/locale/sv/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ta/LC_MESSAGES/gnome-power-manager.mo
+share/locale/th/LC_MESSAGES/gnome-power-manager.mo
+share/locale/uk/LC_MESSAGES/gnome-power-manager.mo
+share/locale/vi/LC_MESSAGES/gnome-power-manager.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-power-manager.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-power-manager.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-power-manager.mo
+@dirrm share/gnome/omf/gnome-power-manager
+@dirrm share/gnome/help/gnome-power-manager/sv/figures
+@dirrm share/gnome/help/gnome-power-manager/sv
+@dirrm share/gnome/help/gnome-power-manager/ru/figures
+@dirrm share/gnome/help/gnome-power-manager/ru
+@dirrm share/gnome/help/gnome-power-manager/C/figures
+@dirrm share/gnome/help/gnome-power-manager/C
+@dirrm share/gnome/help/gnome-power-manager
+@dirrm share/gnome/gnome-power-manager
+@dirrmtry share/gnome/autostart
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN

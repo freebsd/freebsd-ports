@@ -4,7 +4,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla/Makefile.common,v 1.20 2006/03/09 00:45:43 ahze Exp $
+#    $MCom: ports/www/mozilla/Makefile.common,v 1.31 2006/10/14 03:49:21 ahze Exp $
 
 # This file contains some reusable components for mozilla ports. It's of
 # use primarily to apps from the mozilla project itself (such as Firefox,
@@ -59,10 +59,6 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		nss3:${PORTSDIR}/security/nss \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-OPTIONS+=	DEBUG "Build a debugging image" off \
-		LOGGING "Enable additional log messages" off \
-		OPTIMIZED_CFLAGS "Enable some additional optimizations" off
-
 MAINTAINER?=	gnome@FreeBSD.org
 
 MOZILLA?=	${PORTNAME}
@@ -72,7 +68,7 @@ MOZ_RPATH?=	${MOZILLA}
 USE_GNOME+=	gtk20 libidl desktopfileutils
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 MOZILLA_SUFX?=	none
 WRKSRC?=	${WRKDIR}/mozilla
@@ -108,7 +104,6 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 			--exclude mozilla/modules/libimg/png	\
 			--exclude mozilla/jpeg			\
 			--exclude mozilla/dbm			\
-			--exclude mozilla/js/src/fdlibm		\
 			--exclude mozilla/security/nss		\
 			--exclude mozilla/gc/boehm		\
 			--exclude mozilla/gfx/cairo
@@ -124,6 +119,23 @@ CPPFLAGS+=		-I${X11BASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
 LDFLAGS+=		-L${X11BASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 LIBS+=			${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv
+
+_USE_GECKO_OPTIONS_ALL=	java debug logging optimized_cflags
+
+.if !defined(USE_GECKO_OPTIONS)
+USE_GECKO_OPTIONS=	debug logging optimized_cflags
+.endif
+
+debug_OPTION=	"Build a debugging image" off
+java_OPTION=	"Enable JAVA xpcom" off
+logging_OPTION=	"Enable additional log messages" off
+optimized_cflags_OPTION=	"Enable some additional optimizations" off
+
+.for option in ${USE_GECKO_OPTIONS:L}
+.if ${_USE_GECKO_OPTIONS_ALL:M${option}}!=""
+OPTIONS+=	${option:U} ${${option}_OPTION}
+.endif
+.endfor
 
 # Standard options from README
 MOZ_OPTIONS+=	--enable-crypto 	\
@@ -172,20 +184,13 @@ MOZ_OPTIONS+=	--with-system-jpeg=${LOCALBASE} \
 		--enable-xinerama
 MOZ_MK_OPTIONS+=	XP_UNIX=1		\
 			PERL=${PERL}
-#MOZ_EXPORT+=	CPPFLAGS=${CPPFLAGS}		\
-#		CFLAGS=$$CFLAGS			\
-#		LIBS=$$LIBS			\
-#		LDFLAGS=$$LDFLAGS		\
-#		CONFIG_SH=$$SH			\
-#		XP_UNIX=1			\
-#		PERL=$$PERL5
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS:=	-O2 -fno-strict-aliasing ${CFLAGS:N-O*}
+CFLAGS:=	${CFLAGS} -O2 -fno-strict-aliasing ${EXTRA_CFLAGS}
 WITH_OPTIMIZE?=	-O2
 .else
-CFLAGS:=	${CFLAGS:N-O*:N-m*} -O
-WITH_OPTIMIZE?=	-O
+CFLAGS:=	${CFLAGS} ${EXTRA_CFLAGS}
+WITH_OPTIMIZE?=
 .endif
 
 .if defined(WITH_SMB)
@@ -201,6 +206,14 @@ WITH_LOGGING=	yes
 MOZ_OPTIONS+=	--disable-debug				\
 		--enable-optimize=${WITH_OPTIMIZE}	\
 		--enable-strip
+.endif
+
+.if defined(WITH_JAVA)
+USE_JAVA=	yes
+JAVA_VERSION+=	1.4+
+JAVA_OS+=	native
+CONFIGURE_ENV+=	JAVA_HOME="${JAVA_HOME}"
+MOZ_OPTIONS+=	--enable-javaxpcom
 .endif
 
 .if defined(WITH_LOGGING)
@@ -289,7 +302,7 @@ gecko-post-patch:
 	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
-		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
+		${WRKSRC}/*/*/*/nsDeviceContextSpecG.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g ; \
 		s|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
 		${WRKSRC}/xpcom/*/SpecialSystemDirectory.cpp
@@ -304,18 +317,25 @@ gecko-moz-pis-patch:
 	@${MOZCONFIG_SED} < ${FILESDIR}/${moz} > ${WRKDIR}/${moz}
 .endfor
 
+post-configure: gecko-post-configure
+
+gecko-post-configure:
+	@${ECHO_CMD} "#define JNIIMPORT" >> ${WRKSRC}/mozilla-config.h
+
 post-build: gecko-post-build
 
 gecko-post-build:
 	@${REINPLACE_CMD} -e "s|\(Libs:.*\)\($$\)|\1 -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}\2|" \
 		${WRKSRC}/build/unix/*.pc
 
-pre-install: gecko-pre-install gecko-moz-pis-pre-install gecko-create-plist
+pre-install: gecko-moz-pis-pre-install gecko-pre-install port-pre-install gecko-create-plist
+
+.if !target(port-pre-install)
+port-pre-install:
+		@${DO_NADA}
+.endif
 
 gecko-pre-install:
-	@${DO_NADA}	# Empty for now
-
-gecko-create-plist:
 .if !defined(NOGECKO_PLIST)
 	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@${TOUCH} -f ${PLIST}
@@ -337,6 +357,10 @@ gecko-create-plist:
 		${FAKEDIR}/bin/${MOZILLA}	\
 		${FAKEDIR}/bin/${MOZILLA}-config
 	${RM} -f ${FAKEDIR}/bin/*.bak
+.endif
+
+gecko-create-plist:
+.if !defined(NOGECKO_PLIST)
 # Create the plist
 .for f in ${GECKO_PLIST_PRE_FILES}
 	${ECHO_CMD} ${f} >> ${PLIST}

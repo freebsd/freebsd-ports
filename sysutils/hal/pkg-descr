@@ -1,0 +1,6 @@
+HAL is a hardware abstraction layer whose goal is to merge information from
+various sources such that desktop applications can locate and use hardware
+devices. The point is that the exact set of information to merge varies by
+device and bus type.
+
+WWW: http://www.freedesktop.org/Software/hal

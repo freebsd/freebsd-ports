@@ -11,7 +11,7 @@
 +    SA_JUNK_PLUGIN=sa-junk-plugin
 +    DL_LIB=''
 +    SOFTOKN3_LIB='-lsoftokn3'
-+    HAL_REQUIREMENT=''
++    HAL_REQUIREMENT='hal'
 +    ;;
  *)  os_win32=no
      NO_UNDEFINED=''

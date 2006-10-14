@@ -3,7 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/poppler-qt/Makefile,v 1.6 2006/04/12 17:10:20 ahze Exp $
+#    $MCom: ports/graphics/poppler-qt/Makefile,v 1.9 2006/10/10 20:22:10 mezz Exp $
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-qt

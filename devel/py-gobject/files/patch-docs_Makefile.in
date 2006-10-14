@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Thu Aug 24 23:34:38 2006
++++ docs/Makefile.in	Thu Aug 24 23:35:02 2006
+@@ -218,7 +218,7 @@ XSL_FILES = \
+ 
+ CSSdir = $(HTMLdir)
+ CSS_DATA = $(CSS_FILES)
+-HTMLdir = $(datadir)/gtk-doc/html/pygobject
++HTMLdir = $(prefix)/share/doc/pygobject
+ HTML_DATA = $(HTML_FILES)
+ XSLdir = $(datadir)/pygobject/xsl
+ XSL_DATA = $(XSL_FILES)

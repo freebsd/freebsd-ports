@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.72 2006/04/24 04:49:23 marcus Exp $
+#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.78 2006/10/03 20:07:26 mezz Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.14.1.1
+PORTVERSION=	2.16.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GECKO=	firefox mozilla seamonkey firefox-devel<->firefox
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
 INSTALLS_OMF=	yes
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-mozilla=${GECKO}
 
 EPHY_EXTENSIONS=all
 
-PLIST_SUB=	VERSION="2.14" EPHY_VERSION="2.14"
+PLIST_SUB=	VERSION="2.16" EPHY_VERSION="2.16"
 
 OPTIONS=	OPENSP "Enable OpenSP SGML support" off \
 		ADBLOCK "Enable the adblock extension" on

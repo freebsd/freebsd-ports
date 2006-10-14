@@ -3,11 +3,12 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/gnomegames2-extra-data/Makefile,v 1.8 2006/04/22 18:07:24 marcus Exp $
+#   $MCom: ports/games/gnome-games-extra-data/Makefile,v 1.10 2006/07/22 20:55:44 mezz Exp $
 #
 
 PORTNAME=	gnome-games-extra-data
 PORTVERSION=	2.14.0
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -16,11 +17,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Themes and artwork for the gnome-games package
 
-RUN_DEPENDS=	${X11BASE}/bin/sol:${PORTSDIR}/games/gnome-games
+RUN_DEPENDS=	${LOCALBASE}/bin/sol:${PORTSDIR}/games/gnome-games
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \

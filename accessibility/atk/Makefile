@@ -3,12 +3,12 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/atk/Makefile,v 1.68 2006/04/13 07:52:28 bland Exp $
+#   $MCom: ports/accessibility/atk/Makefile,v 1.73 2006/10/02 00:43:11 ahze Exp $
 #
 
 PORTNAME=	atk
-PORTVERSION=	1.11.4
-PORTREVISION?=	1
+PORTVERSION=	1.12.3
+PORTREVISION?=	0
 CATEGORIES=	accessibility devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,14 +22,15 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 USE_GETTEXT=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack glib20 ltverhack referencehack
 CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		AUTOCONF=${TRUE} AUTOMAKE=${TRUE}
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/tests//" \

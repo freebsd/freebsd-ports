@@ -3,11 +3,11 @@
 # Whom:					Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/vino/Makefile,v 1.28 2006/04/13 07:52:37 bland Exp $
+#   $MCom: ports/net/vino/Makefile,v 1.31 2006/10/05 18:17:10 mezz Exp $
 #
 
 PORTNAME=	vino
-PORTVERSION=	2.13.5
+PORTVERSION=	2.16.0
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2

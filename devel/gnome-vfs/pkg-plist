@@ -11,6 +11,8 @@ etc/gnome-vfs-2.0/modules/default-modules.conf
 %%SAMBA%%etc/gnome-vfs-2.0/modules/smb-module.conf
 etc/gnome-vfs-2.0/modules/ssl-modules.conf
 include/gnome-vfs-2.0/include/gnome-vfs-file-size.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-ace.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-acl.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-address.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-async-ops.h
@@ -26,6 +28,7 @@ include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-find-directory.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-handle.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-init.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-job-limit.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-deprecated.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-handlers.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-info-cache.h
@@ -40,6 +43,7 @@ include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-standard-callbacks.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-types.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-uri.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-utils.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-version.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-volume-monitor.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-volume.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-xfer.h
@@ -48,7 +52,6 @@ include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-cancellable-ops.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-inet-connection.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-method.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-mime-info.h
-include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-mime.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-module-callback-module-api.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-module-shared.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-module.h
@@ -58,9 +61,6 @@ include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-socket-buffer.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-socket.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-ssl.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-transform.h
-lib/bonobo/monikers/libmoniker_gnome_vfs_std.a
-lib/bonobo/monikers/libmoniker_gnome_vfs_std.la
-lib/bonobo/monikers/libmoniker_gnome_vfs_std.so
 lib/gnome-vfs-2.0/modules/libbzip2.a
 lib/gnome-vfs-2.0/modules/libbzip2.la
 lib/gnome-vfs-2.0/modules/libbzip2.so
@@ -104,11 +104,10 @@ lib/libgnomevfs-2.a
 lib/libgnomevfs-2.la
 lib/libgnomevfs-2.so
 lib/libgnomevfs-2.so.0
-libdata/bonobo/servers/GNOME_VFS_Daemon.server
-libdata/bonobo/servers/GNOME_VFS_Moniker_std.server
 libdata/pkgconfig/gnome-vfs-2.0.pc
 libdata/pkgconfig/gnome-vfs-module-2.0.pc
 libexec/gnome-vfs-daemon
+share/dbus-1/services/gnome-vfs-daemon.service
 share/locale/af/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -116,6 +115,7 @@ share/locale/az/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -192,9 +192,57 @@ share/locale/zu/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm include/gnome-vfs-2.0
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr@ije/LC_MESSAGES
+@dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

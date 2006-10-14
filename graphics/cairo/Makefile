@@ -3,16 +3,14 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/cairo/Makefile,v 1.30 2005/10/04 04:35:57 ahze Exp $
+#   $MCom: ports/graphics/cairo/Makefile,v 1.45 2006/08/19 16:29:11 marcus Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.0.4
-PORTREVISION?=	1
+PORTVERSION=	1.2.4
+PORTREVISION?=	0
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/releases/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITES=	http://cairographics.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -28,7 +26,7 @@ CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--enable-ps
 USE_GNOME=	gnometarget gnomehack ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS}"
@@ -62,6 +60,9 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/test/Makefile.in
+	@${REINPLACE_CMD} -e 's|src test doc|src doc|; \
+		s|@CAIRO_HAS_PNG_FUNCTIONS_TRUE@am__append_1 = test||' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
 

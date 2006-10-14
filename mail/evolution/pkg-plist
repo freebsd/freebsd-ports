@@ -1,25 +1,5 @@
 bin/evolution
 bin/evolution-%%VERSION%%
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-popup.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-registry.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-text.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-toggle.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-tree.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-vbox.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-table-click-to-add-factory.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-table-click-to-add.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-table-column-header.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-table-factory.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-table-item-factory.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-table-item.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-table.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-tree-factory.h
-include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-tree.h
-include/evolution-%%VERSION%%/a11y/e-text/gal-a11y-e-text-factory.h
-include/evolution-%%VERSION%%/a11y/e-text/gal-a11y-e-text.h
-include/evolution-%%VERSION%%/a11y/gal-a11y-factory.h
-include/evolution-%%VERSION%%/a11y/gal-a11y-util.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-config.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-menu.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-popup.h
@@ -130,6 +110,7 @@ include/evolution-%%VERSION%%/misc/e-dropdown-button.h
 include/evolution-%%VERSION%%/misc/e-expander.h
 include/evolution-%%VERSION%%/misc/e-gui-utils.h
 include/evolution-%%VERSION%%/misc/e-hsv-utils.h
+include/evolution-%%VERSION%%/misc/e-icon-entry.h
 include/evolution-%%VERSION%%/misc/e-image-chooser.h
 include/evolution-%%VERSION%%/misc/e-info-label.h
 include/evolution-%%VERSION%%/misc/e-map.h
@@ -164,6 +145,7 @@ include/evolution-%%VERSION%%/table/e-cell-checkbox.h
 include/evolution-%%VERSION%%/table/e-cell-combo.h
 include/evolution-%%VERSION%%/table/e-cell-date.h
 include/evolution-%%VERSION%%/table/e-cell-float.h
+include/evolution-%%VERSION%%/table/e-cell-hbox.h
 include/evolution-%%VERSION%%/table/e-cell-number.h
 include/evolution-%%VERSION%%/table/e-cell-pixbuf.h
 include/evolution-%%VERSION%%/table/e-cell-popup.h
@@ -424,7 +406,7 @@ libexec/evolution/%%VERSION%%/evolution-addressbook-clean
 libexec/evolution/%%VERSION%%/evolution-addressbook-export
 libexec/evolution/%%VERSION%%/evolution-alarm-notify
 libexec/evolution/%%VERSION%%/killev
-share/gnome/applications/evolution.desktop
+share/gnome/applications/evolution-%%VERSION%%.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/evolution/%%VERSION%%/addresstypes.xml
 share/gnome/evolution/%%VERSION%%/default/C/mail/local/Inbox
@@ -449,6 +431,7 @@ share/gnome/evolution/%%VERSION%%/errors/mail.error
 share/gnome/evolution/%%VERSION%%/errors/org-gnome-default-mailer.error
 share/gnome/evolution/%%VERSION%%/errors/org-gnome-exchange-operations.error
 share/gnome/evolution/%%VERSION%%/errors/org-gnome-itip-formatter.error
+share/gnome/evolution/%%VERSION%%/errors/org-gnome-mail-retract-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/org-gnome-mailing-list-actions.error
 share/gnome/evolution/%%VERSION%%/errors/org-gnome-proxy-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/org-gnome-proxy-login-errors.xml
@@ -485,6 +468,7 @@ share/gnome/evolution/%%VERSION%%/glade/event-page.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-change-password.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-delegates.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-folder-tree.glade
+share/gnome/evolution/%%VERSION%%/glade/exchange-oof.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-passwd-expiry.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-permissions-dialog.glade
 share/gnome/evolution/%%VERSION%%/glade/filter.glade
@@ -513,12 +497,15 @@ share/gnome/evolution/%%VERSION%%/glade/smime-ui.glade
 share/gnome/evolution/%%VERSION%%/glade/task-details-page.glade
 share/gnome/evolution/%%VERSION%%/glade/task-page.glade
 share/gnome/evolution/%%VERSION%%/help/quickref/C/quickref.pdf
+share/gnome/evolution/%%VERSION%%/help/quickref/de/quickref.pdf
 share/gnome/evolution/%%VERSION%%/images/about-box.png
 share/gnome/evolution/%%VERSION%%/images/bcg.png
 share/gnome/evolution/%%VERSION%%/images/evolution-contacts-mini.png
+share/gnome/evolution/%%VERSION%%/images/minus.png
 share/gnome/evolution/%%VERSION%%/images/monkey-16.png
 share/gnome/evolution/%%VERSION%%/images/offline.png
 share/gnome/evolution/%%VERSION%%/images/online.png
+share/gnome/evolution/%%VERSION%%/images/plus.png
 share/gnome/evolution/%%VERSION%%/images/query-free-busy.png
 share/gnome/evolution/%%VERSION%%/images/world_map-960.png
 share/gnome/evolution/%%VERSION%%/searchtypes.xml
@@ -552,6 +539,8 @@ share/gnome/evolution/%%VERSION%%/views/mail/By_Sender.galview
 share/gnome/evolution/%%VERSION%%/views/mail/By_Status.galview
 share/gnome/evolution/%%VERSION%%/views/mail/By_Subject.galview
 share/gnome/evolution/%%VERSION%%/views/mail/Messages.galview
+share/gnome/evolution/%%VERSION%%/views/mail/Wide_View_Normal.galview
+share/gnome/evolution/%%VERSION%%/views/mail/Wide_View_Sent.galview
 share/gnome/evolution/%%VERSION%%/views/mail/galview.xml
 share/gnome/evolution/%%VERSION%%/views/memos/Memos.galview
 share/gnome/evolution/%%VERSION%%/views/memos/galview.xml
@@ -570,7 +559,6 @@ share/gnome/evolution/%%VERSION%%/weather/category_weather_tstorm_16.png
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar-%%VERSION%%.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo-%%VERSION%%.conduit
 share/gnome/help/evolution-%%VERSION%%/C/evolution-%%VERSION%%.xml
-share/gnome/help/evolution-%%VERSION%%/C/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/calendar.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/config-cal.png
@@ -626,8 +614,8 @@ share/gnome/idl/evolution-%%VERSION%%/Evolution-Mail.idl
 share/gnome/idl/evolution-%%VERSION%%/Evolution-Shell.idl
 share/gnome/idl/evolution-%%VERSION%%/Evolution.idl
 share/gnome/idl/evolution-%%VERSION%%/evolution-calendar.idl
-share/gnome/mime-info/evolution.keys
-share/gnome/mime-info/evolution.mime
+share/gnome/mime-info/evolution-%%VERSION%%.keys
+share/gnome/mime-info/evolution-%%VERSION%%.mime
 share/gnome/omf/evolution/evolution-%%VERSION%%-C.omf
 share/gnome/pixmaps/evolution-%%VERSION%%.png
 share/locale/am/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -636,7 +624,7 @@ share/locale/az/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bn/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/br/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/bn_IN/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bs/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -671,13 +659,15 @@ share/locale/ku/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/mk/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/ml/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/mn/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/mr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ms/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ne/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nn/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/no/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/or/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pa/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pt/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -702,20 +692,6 @@ share/locale/xh/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
 @dirrm share/gnome/omf/evolution
 @dirrm share/gnome/idl/evolution-%%VERSION%%
 @dirrm share/gnome/help/evolution-%%VERSION%%/C/figures
@@ -730,6 +706,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm share/gnome/evolution/%%VERSION%%/views
 @dirrm share/gnome/evolution/%%VERSION%%/ui
 @dirrm share/gnome/evolution/%%VERSION%%/images
+@dirrm share/gnome/evolution/%%VERSION%%/help/quickref/de
 @dirrm share/gnome/evolution/%%VERSION%%/help/quickref/C
 @dirrm share/gnome/evolution/%%VERSION%%/help/quickref
 @dirrm share/gnome/evolution/%%VERSION%%/help
@@ -790,8 +767,59 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm include/evolution-%%VERSION%%/addressbook/gui/widgets
 @dirrm include/evolution-%%VERSION%%/addressbook/gui
 @dirrm include/evolution-%%VERSION%%/addressbook
-@dirrm include/evolution-%%VERSION%%/a11y/e-text
-@dirrm include/evolution-%%VERSION%%/a11y/e-table
-@dirrm include/evolution-%%VERSION%%/a11y
 @dirrm include/evolution-%%VERSION%%
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

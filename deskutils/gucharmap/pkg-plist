@@ -15,7 +15,7 @@ include/gucharmap/gucharmap-window.h
 include/gucharmap/gucharmap.h
 lib/libgucharmap.la
 lib/libgucharmap.so
-lib/libgucharmap.so.4
+lib/libgucharmap.so.5
 libdata/pkgconfig/gucharmap.pc
 share/gnome/applications/gucharmap.desktop
 share/gnome/help/gucharmap/C/figures/gucharmap_start_window.png
@@ -34,9 +34,9 @@ share/gnome/help/gucharmap/es/gucharmap.xml
 share/gnome/help/gucharmap/fi/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/fi/figures/gucharmap_window.png
 share/gnome/help/gucharmap/fi/gucharmap.xml
+share/gnome/help/gucharmap/fr/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/fr/figures/gucharmap_window.png
 share/gnome/help/gucharmap/fr/gucharmap.xml
-share/gnome/help/gucharmap/fr/legal.xml
 share/gnome/help/gucharmap/it/figures/gucharmap_window.png
 share/gnome/help/gucharmap/it/gucharmap.xml
 share/gnome/help/gucharmap/it/legal.xml
@@ -46,9 +46,12 @@ share/gnome/help/gucharmap/ja/legal.xml
 share/gnome/help/gucharmap/ko/figures/gucharmap_window.png
 share/gnome/help/gucharmap/ko/gucharmap.xml
 share/gnome/help/gucharmap/ko/legal.xml
+share/gnome/help/gucharmap/ru/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/ru/figures/gucharmap_window.png
+share/gnome/help/gucharmap/ru/gucharmap.xml
+share/gnome/help/gucharmap/sv/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/sv/figures/gucharmap_window.png
 share/gnome/help/gucharmap/sv/gucharmap.xml
-share/gnome/help/gucharmap/sv/legal.xml
 share/gnome/help/gucharmap/zh_CN/figures/gucharmap_window.png
 share/gnome/help/gucharmap/zh_CN/gucharmap.xml
 share/gnome/help/gucharmap/zh_CN/legal.xml
@@ -64,6 +67,7 @@ share/gnome/omf/gucharmap/gucharmap-fr.omf
 share/gnome/omf/gucharmap/gucharmap-it.omf
 share/gnome/omf/gucharmap/gucharmap-ja.omf
 share/gnome/omf/gucharmap/gucharmap-ko.omf
+share/gnome/omf/gucharmap/gucharmap-ru.omf
 share/gnome/omf/gucharmap/gucharmap-sv.omf
 share/gnome/omf/gucharmap/gucharmap-zh_CN.omf
 share/gnome/omf/gucharmap/gucharmap-zh_TW.omf
@@ -74,12 +78,14 @@ share/locale/az/LC_MESSAGES/gucharmap.mo
 share/locale/be/LC_MESSAGES/gucharmap.mo
 share/locale/bg/LC_MESSAGES/gucharmap.mo
 share/locale/bn/LC_MESSAGES/gucharmap.mo
+share/locale/bn_IN/LC_MESSAGES/gucharmap.mo
 share/locale/bs/LC_MESSAGES/gucharmap.mo
 share/locale/ca/LC_MESSAGES/gucharmap.mo
 share/locale/cs/LC_MESSAGES/gucharmap.mo
 share/locale/cy/LC_MESSAGES/gucharmap.mo
 share/locale/da/LC_MESSAGES/gucharmap.mo
 share/locale/de/LC_MESSAGES/gucharmap.mo
+share/locale/dz/LC_MESSAGES/gucharmap.mo
 share/locale/el/LC_MESSAGES/gucharmap.mo
 share/locale/en_CA/LC_MESSAGES/gucharmap.mo
 share/locale/en_GB/LC_MESSAGES/gucharmap.mo
@@ -100,18 +106,21 @@ share/locale/id/LC_MESSAGES/gucharmap.mo
 share/locale/is/LC_MESSAGES/gucharmap.mo
 share/locale/it/LC_MESSAGES/gucharmap.mo
 share/locale/ja/LC_MESSAGES/gucharmap.mo
+share/locale/ka/LC_MESSAGES/gucharmap.mo
 share/locale/ko/LC_MESSAGES/gucharmap.mo
 share/locale/lt/LC_MESSAGES/gucharmap.mo
+share/locale/lv/LC_MESSAGES/gucharmap.mo
 share/locale/mi/LC_MESSAGES/gucharmap.mo
 share/locale/mk/LC_MESSAGES/gucharmap.mo
 share/locale/ml/LC_MESSAGES/gucharmap.mo
 share/locale/mn/LC_MESSAGES/gucharmap.mo
+share/locale/mr/LC_MESSAGES/gucharmap.mo
 share/locale/ms/LC_MESSAGES/gucharmap.mo
 share/locale/nb/LC_MESSAGES/gucharmap.mo
 share/locale/ne/LC_MESSAGES/gucharmap.mo
 share/locale/nl/LC_MESSAGES/gucharmap.mo
 share/locale/nn/LC_MESSAGES/gucharmap.mo
-share/locale/no/LC_MESSAGES/gucharmap.mo
+share/locale/or/LC_MESSAGES/gucharmap.mo
 share/locale/pa/LC_MESSAGES/gucharmap.mo
 share/locale/pl/LC_MESSAGES/gucharmap.mo
 share/locale/pt/LC_MESSAGES/gucharmap.mo
@@ -120,6 +129,7 @@ share/locale/ro/LC_MESSAGES/gucharmap.mo
 share/locale/ru/LC_MESSAGES/gucharmap.mo
 share/locale/rw/LC_MESSAGES/gucharmap.mo
 share/locale/sk/LC_MESSAGES/gucharmap.mo
+share/locale/sl/LC_MESSAGES/gucharmap.mo
 share/locale/sq/LC_MESSAGES/gucharmap.mo
 share/locale/sr/LC_MESSAGES/gucharmap.mo
 share/locale/sr@Latn/LC_MESSAGES/gucharmap.mo
@@ -134,8 +144,6 @@ share/locale/xh/LC_MESSAGES/gucharmap.mo
 share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
 share/locale/zh_HK/LC_MESSAGES/gucharmap.mo
 share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/omf/gucharmap
 @dirrm share/gnome/help/gucharmap/zh_TW/figures
 @dirrm share/gnome/help/gucharmap/zh_TW
@@ -143,6 +151,8 @@ share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 @dirrm share/gnome/help/gucharmap/zh_CN
 @dirrm share/gnome/help/gucharmap/sv/figures
 @dirrm share/gnome/help/gucharmap/sv
+@dirrm share/gnome/help/gucharmap/ru/figures
+@dirrm share/gnome/help/gucharmap/ru
 @dirrm share/gnome/help/gucharmap/ko/figures
 @dirrm share/gnome/help/gucharmap/ko
 @dirrm share/gnome/help/gucharmap/ja/figures
@@ -163,3 +173,53 @@ share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 @dirrm share/gnome/help/gucharmap/C
 @dirrm share/gnome/help/gucharmap
 @dirrm include/gucharmap
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

@@ -3,11 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/net/avahi/Makefile,v 1.15 2006/04/28 01:52:15 marcus Exp $
+#    $MCom: ports/net/avahi/Makefile,v 1.19 2006/10/12 16:44:41 marcus Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.13
-PORTREVISION?=	3
+PORTVERSION=	0.6.14
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -16,13 +16,14 @@ COMMENT?=	Service discovery on a local network
 
 LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 		daemon.2:${PORTSDIR}/devel/libdaemon \
-		dbus-1.2:${PORTSDIR}/devel/dbus \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_GNOME?=	gnomehack ltverhack glib20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
+USE_GETOPT_LONG=yes
 CONFIGURE_ARGS?=--with-distro=freebsd \
 		--with-dbus-system-address=unix:path=/var/run/dbus/dbus.pipe \
 		--disable-qt3 \
@@ -34,6 +35,7 @@ CONFIGURE_ARGS?=--with-distro=freebsd \
 		--disable-doxygen-dot \
 		--localstatedir=/var \
 		--enable-compat-howl \
+		--disable-autoipd \
 		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -56,10 +58,6 @@ OPTIONS=	GTK2 "Build a GTK+ 2 browser utility" off \
 .include <bsd.port.pre.mk>
 
 .if !defined(AVAHI_SLAVE)
-.if ${OSVERSION} < 500000
-IGNORE=	does not work on FreeBSD 4.X
-.endif
-
 .if defined(WITH_LIBDNS)
 CONFIGURE_ARGS+=--enable-compat-libdns_sd
 PLIST_SUB+=	LIBDNS=""

@@ -3,11 +3,11 @@
 # Whom:			Koop Mast <kwm@rainbow-runner.nl>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/multimedia/gstreamer-ffmpeg80/Makefile,v 1.9 2006/07/23 18:28:35 marcus Exp $
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg80
@@ -16,7 +16,6 @@ DISTNAME=	gst-ffmpeg-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
@@ -45,7 +44,7 @@ post-patch:
 
 post-install:
 # register plugins
-	-@${X11BASE}/bin/gst-register-${GST80_VERSION} \
+	-@${LOCALBASE}/bin/gst-register-${GST80_VERSION} \
 		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST80_VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.post.mk>

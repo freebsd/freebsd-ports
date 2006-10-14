@@ -1,11 +1,11 @@
---- configure.orig	Tue Mar 14 08:23:11 2006
-+++ configure	Tue Mar 14 08:24:01 2006
-@@ -21329,7 +21329,7 @@ if $build_pyvfsmodule; then
- echo "$as_me:$LINENO: checking for libraries required to embed python" >&5
- echo $ECHO_N "checking for libraries required to embed python... $ECHO_C" >&6
- py_exec_prefix=`$PYTHON -c "import sys; print sys.exec_prefix"`
--PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION}"
-+PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION} ${PTHREAD_LIBS}"
+--- configure.orig	Tue Aug 22 00:47:05 2006
++++ configure	Tue Aug 22 00:47:29 2006
+@@ -19036,7 +19036,7 @@ PYTHON_LIB_DEPS=`$PYTHON -c "from distut
  
  save_LIBS="$LIBS"
- LIBS="$LIBS $PYTHON_LIBS"
+ 
+-PYTHON_EMBED_LIBS="-L${py_prefix}/lib/ ${PYTHON_LIB_DEPS} -lpython${PYTHON_VERSION}"
++PYTHON_EMBED_LIBS="-L${py_prefix}/lib/ ${PYTHON_LIB_DEPS} -lpython${PYTHON_VERSION} ${PTHREAD_LIBS}"
+ 
+ LIBS="$LIBS $PYTHON_EMBED_LIBS"
+ cat >conftest.$ac_ext <<_ACEOF

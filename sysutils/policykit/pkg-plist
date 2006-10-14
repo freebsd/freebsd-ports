@@ -1,0 +1,19 @@
+bin/polkit-grant-privilege
+bin/polkit-is-privileged
+bin/polkit-list-privileges
+bin/polkit-revoke-privilege
+etc/PolicyKit/privilege.d/desktop-console.privilege
+etc/dbus-1/system.d/PolicyKit.conf
+etc/pam.d/policy-kit
+include/libpolkit/libpolkit.h
+lib/libpolkit.a
+lib/libpolkit.la
+lib/libpolkit.so
+lib/libpolkit.so.0
+libdata/pkgconfig/polkit.pc
+sbin/polkitd
+@dirrm include/libpolkit
+@dirrm etc/PolicyKit/privilege.d
+@dirrm etc/PolicyKit
+@unexec rm -f /var/run/polkitd/polkitd.pid 2>/dev/null || true
+@unexec rmdir /var/run/polkitd 2>/dev/null || true

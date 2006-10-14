@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gconf-editor/Makefile,v 1.50 2006/04/24 07:23:03 marcus Exp $
+#   $MCom: ports/sysutils/gconf-editor/Makefile,v 1.56 2006/09/05 00:53:22 ahze Exp $
 #
 
 PORTNAME=	gconf-editor
-PORTVERSION=	2.14.0
-PORTREVISION=	1
+PORTVERSION=	2.16.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -20,11 +19,11 @@ COMMENT=	A gconf database editor for the GNOME 2 environment
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gnomedocutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

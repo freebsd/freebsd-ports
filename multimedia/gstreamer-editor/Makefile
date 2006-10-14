@@ -3,11 +3,11 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/multimedia/gstreamer-editor/Makefile,v 1.7 2006/09/10 00:52:59 mezz Exp $
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-editor/
 PKGNAMESUFFIX=	-editor
@@ -16,12 +16,10 @@ DISTNAME=	gst-editor-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Provide View and Controller counterparts to GStreamer's Model
 
-LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer80 \
-		popt.0:${PORTSDIR}/devel/popt
-RUN_DEPENDS=	gst-visualise-0.8:${PORTSDIR}/multimedia/gstreamer-plugins80
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_GSTREAMER80=	core
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
@@ -33,7 +31,7 @@ USE_GNOME=	gnomehack \
 		libgnomeui
 PLIST_SUB=	\
 	VERSION="${PORTVERSION}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 
 MAN1=		gst-editor.1 gst-inspect-gui.1 gst-launch-gui.1

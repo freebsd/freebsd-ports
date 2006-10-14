@@ -1,6 +1,6 @@
---- gtk/Makefile.in.orig	Wed Mar  2 15:57:44 2005
-+++ gtk/Makefile.in	Wed Mar  2 15:58:22 2005
-@@ -887,12 +887,12 @@
+--- gtk/Makefile.in.orig	Sat May  6 04:47:11 2006
++++ gtk/Makefile.in	Sat May  6 04:48:06 2006
+@@ -1009,11 +1009,11 @@ LDADDS = \
  bin_PROGRAMS = gtk-query-immodules-2.0 gtk-update-icon-cache
  
  gtk_query_immodules_2_0_DEPENDENCIES = $(DEPS)
@@ -9,9 +9,8 @@
  
  gtk_query_immodules_2_0_SOURCES = queryimmodules.c
  
- gtk_update_icon_cache_DEPENDENCIES = $(DEPS)
--gtk_update_icon_cache_LDADD = $(LDADDS)
-+gtk_update_icon_cache_LDADD = $(LDADDS) $(GLIB_LIBS)
+-gtk_update_icon_cache_LDADD = $(top_builddir)/gdk-pixbuf/libgdk_pixbuf-$(GTK_API_VERSION).la
++gtk_update_icon_cache_LDADD = $(top_builddir)/gdk-pixbuf/libgdk_pixbuf-$(GTK_API_VERSION).la $(GLIB_LIBS)
  
  gtk_update_icon_cache_SOURCES = updateiconcache.c
- subdir = gtk
+ 

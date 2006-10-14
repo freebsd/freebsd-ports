@@ -1,6 +1,6 @@
---- configure.orig	Thu Jan 13 02:39:28 2005
-+++ configure	Thu Jan 13 02:39:28 2005
-@@ -22221,6 +22221,7 @@
+--- configure.orig	Thu Jul 13 12:02:50 2006
++++ configure	Thu Jul 13 12:04:24 2006
+@@ -22229,6 +22229,7 @@ echo $ECHO_N "checking for $ac_func... $
  if eval "test \"\${$as_ac_var+set}\" = set"; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -8,7 +8,16 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -27490,7 +27491,7 @@
+@@ -28440,7 +28441,7 @@ BONOBO_ACTIVATION_IDL_DIR="`$PKG_CONFIG 
+ 
+ 
+ # dbus directory
+-DBUS_SERVICES_DIR='$(datadir)'"/dbus-1/services"
++DBUS_SERVICES_DIR='$(prefix)'"/share/dbus-1/services"
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -29126,7 +29127,7 @@ fi
  
  
  cat >>confdefs.h <<_ACEOF

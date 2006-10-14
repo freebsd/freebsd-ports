@@ -54,6 +54,9 @@ lib/libpangoft2-1.0.so.0
 lib/pango/%%VERSION%%/modules/pango-arabic-fc.a
 lib/pango/%%VERSION%%/modules/pango-arabic-fc.la
 lib/pango/%%VERSION%%/modules/pango-arabic-fc.so
+lib/pango/%%VERSION%%/modules/pango-arabic-lang.a
+lib/pango/%%VERSION%%/modules/pango-arabic-lang.la
+lib/pango/%%VERSION%%/modules/pango-arabic-lang.so
 lib/pango/%%VERSION%%/modules/pango-basic-fc.a
 lib/pango/%%VERSION%%/modules/pango-basic-fc.la
 lib/pango/%%VERSION%%/modules/pango-basic-fc.so
@@ -69,6 +72,9 @@ lib/pango/%%VERSION%%/modules/pango-hebrew-fc.so
 lib/pango/%%VERSION%%/modules/pango-indic-fc.a
 lib/pango/%%VERSION%%/modules/pango-indic-fc.la
 lib/pango/%%VERSION%%/modules/pango-indic-fc.so
+lib/pango/%%VERSION%%/modules/pango-indic-lang.a
+lib/pango/%%VERSION%%/modules/pango-indic-lang.la
+lib/pango/%%VERSION%%/modules/pango-indic-lang.so
 lib/pango/%%VERSION%%/modules/pango-khmer-fc.a
 lib/pango/%%VERSION%%/modules/pango-khmer-fc.la
 lib/pango/%%VERSION%%/modules/pango-khmer-fc.so

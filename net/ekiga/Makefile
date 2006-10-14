@@ -7,7 +7,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -18,7 +18,7 @@ COMMENT=	VoIP phone for GNOME
 LIB_DEPENDS=	opal_r.2:${PORTSDIR}/net/opal
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 INSTALLS_OMF=	yes
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--disable-avahi
 .endif
 
 .ifndef (WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	DBUS:=""
 .else
@@ -53,6 +53,8 @@ PLIST_SUB+=	DBUS:="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|@prefix@/@DATADIRNAME@|${PREFIX}/share/gnome|' \
+		${WRKSRC}/*schemas*
 	@${REINPLACE_CMD} -e 's|{datadir}/dbus-1|(prefix)/share/dbus-1|g' \
 		${WRKSRC}/Makefile.in
 

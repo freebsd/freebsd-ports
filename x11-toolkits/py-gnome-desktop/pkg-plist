@@ -3,6 +3,13 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeapplet.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeapplet.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomedesktop/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomedesktop/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomedesktop/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomedesktop/_gnomedesktop.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomedesktop/_gnomedesktop.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomekeyring.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomekeyring.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyo
@@ -20,6 +27,8 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/metacity.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/nautilusburn.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/nautilusburn.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/rsvg.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/rsvg.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.pyo
@@ -63,46 +72,51 @@ libdata/pkgconfig/gnome-python-desktop-2.0.pc
 %%DOCSDIR%%/pygtksourceview/index.html
 %%DOCSDIR%%/pygtksourceview/index.sgml
 %%DOCSDIR%%/pygtksourceview/pygtksourceview.devhelp
-%%EXAMPLESDIR%%/applet/GNOME_PythonAppletSample.server
-%%EXAMPLESDIR%%/applet/README
-%%EXAMPLESDIR%%/applet/applet.py
-%%EXAMPLESDIR%%/gnomeprint/README
-%%EXAMPLESDIR%%/gnomeprint/example_01.py
-%%EXAMPLESDIR%%/gnomeprint/example_02.py
-%%EXAMPLESDIR%%/gnomeprint/example_03.py
-%%EXAMPLESDIR%%/gnomeprint/example_04.py
-%%EXAMPLESDIR%%/gnomeprint/example_05.py
-%%EXAMPLESDIR%%/gnomeprint/example_06.py
-%%EXAMPLESDIR%%/gnomeprint/example_08.py
-%%EXAMPLESDIR%%/gnomeprint/example_09.py
-%%EXAMPLESDIR%%/gnomeprint/example_10.glade
-%%EXAMPLESDIR%%/gnomeprint/example_10.py
-%%EXAMPLESDIR%%/gnomeprint/example_11.py
-%%EXAMPLESDIR%%/gnomeprint/sample-image.png
-%%EXAMPLESDIR%%/gnomeprint/test-print.py
-%%EXAMPLESDIR%%/gtksourceview/test-widget.py
-%%EXAMPLESDIR%%/mediaprofiles/profiles.py
-%%EXAMPLESDIR%%/nautilusburn/blank_disc.py
-%%EXAMPLESDIR%%/nautilusburn/drive_selection.py
-%%EXAMPLESDIR%%/nautilusburn/write_iso.py
+share/examples/py-gnome/applet/GNOME_PythonAppletSample.server
+share/examples/py-gnome/applet/README
+share/examples/py-gnome/applet/applet.py
+share/examples/py-gnome/gnomeprint/README
+share/examples/py-gnome/gnomeprint/example_01.py
+share/examples/py-gnome/gnomeprint/example_02.py
+share/examples/py-gnome/gnomeprint/example_03.py
+share/examples/py-gnome/gnomeprint/example_04.py
+share/examples/py-gnome/gnomeprint/example_05.py
+share/examples/py-gnome/gnomeprint/example_06.py
+share/examples/py-gnome/gnomeprint/example_08.py
+share/examples/py-gnome/gnomeprint/example_09.py
+share/examples/py-gnome/gnomeprint/example_10.glade
+share/examples/py-gnome/gnomeprint/example_10.py
+share/examples/py-gnome/gnomeprint/example_11.py
+share/examples/py-gnome/gnomeprint/sample-image.png
+share/examples/py-gnome/gnomeprint/test-print.py
+share/examples/py-gnome/gtksourceview/test-widget.py
+share/examples/py-gnome/keyring.py
+share/examples/py-gnome/mediaprofiles/profiles.py
+share/examples/py-gnome/nautilusburn/blank_disc.py
+share/examples/py-gnome/nautilusburn/drive_selection.py
+share/examples/py-gnome/nautilusburn/write_iso.py
+share/examples/py-gnome/rsvg/rsvg-cairo.py
+share/pygtk/2.0/defs/_gnomedesktop.defs
 share/pygtk/2.0/defs/applet.defs
 share/pygtk/2.0/defs/art.defs
+share/pygtk/2.0/defs/gnomekeyring.defs
 share/pygtk/2.0/defs/gtksourceview.defs
 share/pygtk/2.0/defs/mediaprofiles.defs
 share/pygtk/2.0/defs/metacity.defs
 share/pygtk/2.0/defs/nautilus_burn.defs
-share/pygtk/2.0/defs/nb_drive_selection.defs
 share/pygtk/2.0/defs/print.defs
 share/pygtk/2.0/defs/printui.defs
 share/pygtk/2.0/defs/wnck.defs
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/nautilusburn
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mediaprofiles
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gtksourceview
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gnomeprint
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/applet
+%%PORTDOCS%%@dirrm share/examples/py-gnome/rsvg
+%%PORTDOCS%%@dirrm share/examples/py-gnome/nautilusburn
+%%PORTDOCS%%@dirrm share/examples/py-gnome/mediaprofiles
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gtksourceview
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gnomeprint
+%%PORTDOCS%%@dirrm share/examples/py-gnome/applet
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygtksourceview
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygnomeprintui
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygnomeprint
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/totem
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomedesktop

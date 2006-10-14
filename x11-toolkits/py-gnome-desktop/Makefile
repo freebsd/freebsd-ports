@@ -3,14 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.39 2006/03/12 23:43:07 marcus Exp $
+#    $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.50 2006/09/05 01:09:07 ahze Exp $
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.14.0
+PORTVERSION=	2.16.0
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-python-desktop/${PORTVERSION:C/..$//}
+MASTER_SITE_SUBDIR=	sources/gnome-python-desktop/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-desktop
 DISTNAME=	gnome-python-desktop-${PORTVERSION}
@@ -20,20 +20,21 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings used by modules in the GNOME Desktop
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		totem-plparser.2:${PORTSDIR}/multimedia/totem-gstreamer \
-		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media
+		totem-plparser.1:${PORTSDIR}/multimedia/totem-gstreamer \
+		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
+		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack libgnomeprintui gnomepanel \
+USE_GNOME=	gnomehack libgnomeprintui gnomepanel gnomedesktop \
 		gtksourceview libwnck nautiluscdburner pygnome2 metacity
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 EG_SRC_DIR=	${WRKSRC}/examples
-EXAMPLESDIR=	${PREFIX}/share/examples/py-gnome
+EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-gnome-desktop
 .else
@@ -48,9 +49,9 @@ post-patch:
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
+	${MKDIR} ${EG_DST_DIR}
+	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
 .endif
 
 .include <bsd.port.post.mk>

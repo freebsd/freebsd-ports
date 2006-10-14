@@ -1,5 +1,5 @@
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins80/Makefile.common,v 1.33 2006/07/17 05:15:45 ahze Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins80/Makefile.common,v 1.35 2006/10/07 19:23:51 ahze Exp $
 GST_ALL_PLUGINS= \
 		a52dec \
 		aalib \
@@ -259,9 +259,6 @@ PLIST_FILES=	${GST_LIB_DIR}/libgstcddasrc.so \
 # libvisual
 .if ${GST_PLUGIN}=="libvisual"
 LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
-.if ${OSVERSION} < 500000
-IGNORE=        Does not build
-.endif
 .endif
 
 # musepack

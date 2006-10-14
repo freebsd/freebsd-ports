@@ -398,3 +398,11 @@ share/locale/zh_TW/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrmtry include/gstreamer-%%VERSION%%
 @exec %D/bin/gst-register-${VERSION} --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 @unexec %D/bin/gst-register-${VERSION} --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

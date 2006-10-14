@@ -1,6 +1,6 @@
---- configure.orig	Sat May  6 14:08:13 2006
-+++ configure	Sat May  6 14:13:34 2006
-@@ -23361,8 +23361,7 @@ _ACEOF
+--- configure.orig	Wed Jul 26 16:38:04 2006
++++ configure	Wed Jul 26 16:38:04 2006
+@@ -24860,8 +24860,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -10,7 +10,7 @@
    GNOMELOCALEDIR="$ac_define_dir"
  
  
-@@ -25392,8 +25391,8 @@ fi
+@@ -27066,8 +27065,8 @@
  
  	   ;;
         # list of supported OS cores that do not use libapm
@@ -21,16 +21,7 @@
  	       ACPIINC="-I${OS_SYS}"
  	   else
  	       ACPIINC="-I/usr/src/sys"
-@@ -26469,7 +26468,7 @@ else
- fi
- 
- 
--if test "x$SU_TOOL" == "x" -o "x$HAVE_LIBUTIL" != "xtrue" -o "x$P_MODEMLIGHTS" != "xmodemlights"; then
-+if test "x$SU_TOOL" = "x" -o "x$HAVE_LIBUTIL" != "xtrue" -o "x$P_MODEMLIGHTS" != "xmodemlights"; then
-   { echo "$as_me:$LINENO: WARNING: *** modemlights applet will not be built ***" >&5
- echo "$as_me: WARNING: *** modemlights applet will not be built ***" >&2;}
- else
-@@ -26633,6 +26632,9 @@ if test x$disable_cpufreq = xno; then
+@@ -28145,6 +28144,9 @@
        *linux*)
           build_cpufreq_applet=yes
  	 ;;
@@ -40,7 +31,7 @@
        *)
           { echo "$as_me:$LINENO: WARNING: ${host} is not supported by cpufreq applet, not building" >&5
  echo "$as_me: WARNING: ${host} is not supported by cpufreq applet, not building" >&2;}
-@@ -27109,7 +27111,7 @@ fi
+@@ -28752,7 +28754,7 @@
  ACLOCAL_AMFLAGS="\${ACLOCAL_FLAGS}"
  
  
@@ -49,7 +40,7 @@
  
  pixmapsdir="${datadir}/pixmaps"
  
-@@ -27123,8 +27125,7 @@ gladedir="${pkgdatadir}/glade"
+@@ -28764,8 +28766,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -59,7 +50,7 @@
    GNOME_ICONDIR="$ac_define_dir"
  
  
-@@ -27136,8 +27137,7 @@ _ACEOF
+@@ -28777,8 +28778,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -69,7 +60,7 @@
    GNOME_PIXMAPSDIR="$ac_define_dir"
  
  
-@@ -27149,8 +27149,7 @@ _ACEOF
+@@ -28790,8 +28790,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -79,7 +70,7 @@
    GNOME_GLADEDIR="$ac_define_dir"
  
  
-@@ -27162,8 +27161,7 @@ _ACEOF
+@@ -28803,8 +28802,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -89,7 +80,7 @@
    DATADIR="$ac_define_dir"
  
  
-@@ -27175,8 +27173,7 @@ _ACEOF
+@@ -28816,8 +28814,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -99,7 +90,7 @@
    SYSCONFDIR="$ac_define_dir"
  
  
-@@ -27188,8 +27185,7 @@ _ACEOF
+@@ -28829,8 +28826,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -109,7 +100,7 @@
    LIBDIR="$ac_define_dir"
  
  
-@@ -27201,8 +27197,7 @@ _ACEOF
+@@ -28842,8 +28838,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'

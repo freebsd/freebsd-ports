@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.83 2006/04/13 07:52:30 bland Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.99 2006/10/03 00:13:42 ahze Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	1.6.3
+PORTVERSION=	1.8.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -24,12 +24,13 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget libgnomeui \
 		ltverhack
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_BDB=	41
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--enable-nss=yes \
 		--with-openldap=yes \
@@ -37,11 +38,14 @@ CONFIGURE_ARGS=	--enable-static \
 		--with-nss-libs=${LOCALBASE}/lib \
 		--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
-		--with-krb5=/usr
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		--with-krb5=/usr \
+		--with-libdb=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="1.6" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="1.8" EVO_VERSION="1.2"
+
+OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 
 .include <bsd.port.pre.mk>
 
@@ -60,5 +64,16 @@ CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 .endif
 .endif
+
+.if defined(WITH_IMAP4) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-imap4=yes
+PLIST_SUB+=		IMAP4=""
+.else
+PLIST_SUB+=		IMAP4="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

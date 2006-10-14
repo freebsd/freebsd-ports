@@ -1,38 +1,123 @@
 bin/alacarte
+%%PYTHON_SITELIBDIR%%/Alacarte/DialogHandler.py
+%%PYTHON_SITELIBDIR%%/Alacarte/DialogHandler.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/DialogHandler.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.py
+%%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/MenuEditor.py
+%%PYTHON_SITELIBDIR%%/Alacarte/MenuEditor.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/MenuEditor.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/__init__.py
+%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/config.py
+%%PYTHON_SITELIBDIR%%/Alacarte/config.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/config.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/util.py
+%%PYTHON_SITELIBDIR%%/Alacarte/util.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/util.pyo
+share/gnome/alacarte/alacarte.glade
+share/gnome/alacarte/logo.svg
+share/gnome/applications/alacarte.desktop
+share/icons/hicolor/22x22/apps/alacarte.png
+share/icons/hicolor/icon-theme.cache
+share/icons/hicolor/scalable/apps/alacarte.svg
+share/locale/as/LC_MESSAGES/alacarte.mo
+share/locale/bg/LC_MESSAGES/alacarte.mo
+share/locale/bn/LC_MESSAGES/alacarte.mo
+share/locale/bn_IN/LC_MESSAGES/alacarte.mo
+share/locale/ca/LC_MESSAGES/alacarte.mo
+share/locale/cs/LC_MESSAGES/alacarte.mo
+share/locale/da/LC_MESSAGES/alacarte.mo
 share/locale/de/LC_MESSAGES/alacarte.mo
+share/locale/dz/LC_MESSAGES/alacarte.mo
+share/locale/el/LC_MESSAGES/alacarte.mo
+share/locale/en_GB/LC_MESSAGES/alacarte.mo
 share/locale/es/LC_MESSAGES/alacarte.mo
+share/locale/et/LC_MESSAGES/alacarte.mo
+share/locale/eu/LC_MESSAGES/alacarte.mo
+share/locale/fa/LC_MESSAGES/alacarte.mo
+share/locale/fi/LC_MESSAGES/alacarte.mo
 share/locale/fr/LC_MESSAGES/alacarte.mo
+share/locale/gl/LC_MESSAGES/alacarte.mo
+share/locale/gu/LC_MESSAGES/alacarte.mo
+share/locale/hi/LC_MESSAGES/alacarte.mo
+share/locale/hu/LC_MESSAGES/alacarte.mo
+share/locale/it/LC_MESSAGES/alacarte.mo
+share/locale/ja/LC_MESSAGES/alacarte.mo
+share/locale/ka/LC_MESSAGES/alacarte.mo
+share/locale/ko/LC_MESSAGES/alacarte.mo
+share/locale/ku/LC_MESSAGES/alacarte.mo
+share/locale/lt/LC_MESSAGES/alacarte.mo
+share/locale/lv/LC_MESSAGES/alacarte.mo
+share/locale/mk/LC_MESSAGES/alacarte.mo
+share/locale/ml/LC_MESSAGES/alacarte.mo
+share/locale/mn/LC_MESSAGES/alacarte.mo
+share/locale/mr/LC_MESSAGES/alacarte.mo
 share/locale/nb/LC_MESSAGES/alacarte.mo
 share/locale/nl/LC_MESSAGES/alacarte.mo
-share/locale/no/LC_MESSAGES/alacarte.mo
-share/applications/alacarte.desktop
-@dirrmtry share/applications
-@cwd %%LOCALBASE%%
-%%PYTHON_SITELIBDIR%%/Alacarte/MenuHandler.py
-%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGMenuHandler.py
-%%PYTHON_SITELIBDIR%%/Alacarte/__init__.py
-%%PYTHON_SITELIBDIR%%/Alacarte/GnomeFront.py
-%%PYTHON_SITELIBDIR%%/Alacarte/IconHandler.py
-%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGIconHandler.py
-%%PYTHON_SITELIBDIR%%/Alacarte/config.py
-%%PYTHON_SITELIBDIR%%/Alacarte/GnomeDialogHandler.py
-%%PYTHON_SITELIBDIR%%/Alacarte/alacarte.glade
-%%PYTHON_SITELIBDIR%%/Alacarte/images/alacarte.svg
-%%PYTHON_SITELIBDIR%%/Alacarte/MenuHandler.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGMenuHandler.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/GnomeFront.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/IconHandler.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGIconHandler.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/config.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/GnomeDialogHandler.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/MenuHandler.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGMenuHandler.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/GnomeFront.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/IconHandler.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGIconHandler.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/config.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/GnomeDialogHandler.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Alacarte/images
+share/locale/or/LC_MESSAGES/alacarte.mo
+share/locale/pa/LC_MESSAGES/alacarte.mo
+share/locale/pl/LC_MESSAGES/alacarte.mo
+share/locale/pt/LC_MESSAGES/alacarte.mo
+share/locale/pt_BR/LC_MESSAGES/alacarte.mo
+share/locale/ru/LC_MESSAGES/alacarte.mo
+share/locale/si/LC_MESSAGES/alacarte.mo
+share/locale/sl/LC_MESSAGES/alacarte.mo
+share/locale/sr/LC_MESSAGES/alacarte.mo
+share/locale/sr@Latn/LC_MESSAGES/alacarte.mo
+share/locale/sv/LC_MESSAGES/alacarte.mo
+share/locale/ta/LC_MESSAGES/alacarte.mo
+share/locale/te/LC_MESSAGES/alacarte.mo
+share/locale/th/LC_MESSAGES/alacarte.mo
+share/locale/tr/LC_MESSAGES/alacarte.mo
+share/locale/uk/LC_MESSAGES/alacarte.mo
+share/locale/vi/LC_MESSAGES/alacarte.mo
+share/locale/zh_CN/LC_MESSAGES/alacarte.mo
+share/locale/zh_HK/LC_MESSAGES/alacarte.mo
+share/locale/zh_TW/LC_MESSAGES/alacarte.mo
+@dirrm share/gnome/alacarte
 @dirrm %%PYTHON_SITELIBDIR%%/Alacarte
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

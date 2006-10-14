@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Tue May  2 01:04:31 2006
++++ doc/Makefile.in	Tue May  2 01:04:42 2006
+@@ -269,7 +269,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = TODO
+-SUBDIRS = api spec conf
++SUBDIRS = spec conf
+ all: all-recursive
+ 
+ .SUFFIXES:

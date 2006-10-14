@@ -87,9 +87,6 @@ share/gnome/help/gdm/ja/legal.xml
 share/gnome/help/gdm/ko/figures/gdm_window.png
 share/gnome/help/gdm/ko/gdm.xml
 share/gnome/help/gdm/ko/legal.xml
-share/gnome/help/gdm/sv/figures/gdm_window.png
-share/gnome/help/gdm/sv/gdm.xml
-share/gnome/help/gdm/sv/legal.xml
 share/gnome/help/gdm/uk/gdm.xml
 share/gnome/help/gdm/uk/legal.xml
 share/gnome/help/gdm/zh_CN/figures/gdm_window.png
@@ -108,7 +105,6 @@ share/gnome/omf/gdm/gdm-fr.omf
 share/gnome/omf/gdm/gdm-it.omf
 share/gnome/omf/gdm/gdm-ja.omf
 share/gnome/omf/gdm/gdm-ko.omf
-share/gnome/omf/gdm/gdm-sv.omf
 share/gnome/omf/gdm/gdm-uk.omf
 share/gnome/omf/gdm/gdm-zh_CN.omf
 share/gnome/omf/gdm/gdm-zh_HK.omf
@@ -155,6 +151,7 @@ share/locale/az/LC_MESSAGES/gdm.mo
 share/locale/be/LC_MESSAGES/gdm.mo
 share/locale/bg/LC_MESSAGES/gdm.mo
 share/locale/bn/LC_MESSAGES/gdm.mo
+share/locale/bn_IN/LC_MESSAGES/gdm.mo
 share/locale/bs/LC_MESSAGES/gdm.mo
 share/locale/ca/LC_MESSAGES/gdm.mo
 share/locale/cs/LC_MESSAGES/gdm.mo
@@ -178,6 +175,7 @@ share/locale/he/LC_MESSAGES/gdm.mo
 share/locale/hi/LC_MESSAGES/gdm.mo
 share/locale/hr/LC_MESSAGES/gdm.mo
 share/locale/hu/LC_MESSAGES/gdm.mo
+share/locale/hy/LC_MESSAGES/gdm.mo
 share/locale/id/LC_MESSAGES/gdm.mo
 share/locale/is/LC_MESSAGES/gdm.mo
 share/locale/it/LC_MESSAGES/gdm.mo
@@ -187,6 +185,7 @@ share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/ku/LC_MESSAGES/gdm.mo
 share/locale/lt/LC_MESSAGES/gdm.mo
 share/locale/lv/LC_MESSAGES/gdm.mo
+share/locale/mg/LC_MESSAGES/gdm.mo
 share/locale/mi/LC_MESSAGES/gdm.mo
 share/locale/mk/LC_MESSAGES/gdm.mo
 share/locale/ml/LC_MESSAGES/gdm.mo
@@ -198,6 +197,7 @@ share/locale/ne/LC_MESSAGES/gdm.mo
 share/locale/nl/LC_MESSAGES/gdm.mo
 share/locale/nn/LC_MESSAGES/gdm.mo
 share/locale/nso/LC_MESSAGES/gdm.mo
+share/locale/or/LC_MESSAGES/gdm.mo
 share/locale/pa/LC_MESSAGES/gdm.mo
 share/locale/pl/LC_MESSAGES/gdm.mo
 share/locale/pt/LC_MESSAGES/gdm.mo
@@ -205,6 +205,7 @@ share/locale/pt_BR/LC_MESSAGES/gdm.mo
 share/locale/ro/LC_MESSAGES/gdm.mo
 share/locale/ru/LC_MESSAGES/gdm.mo
 share/locale/rw/LC_MESSAGES/gdm.mo
+share/locale/si/LC_MESSAGES/gdm.mo
 share/locale/sk/LC_MESSAGES/gdm.mo
 share/locale/sl/LC_MESSAGES/gdm.mo
 share/locale/sq/LC_MESSAGES/gdm.mo
@@ -222,22 +223,6 @@ share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm share/gnome/xsessions
 @dirrm share/gnome/pixmaps/faces
 @dirrm share/gnome/omf/gdm
@@ -248,8 +233,6 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrm share/gnome/help/gdm/zh_CN/figures
 @dirrm share/gnome/help/gdm/zh_CN
 @dirrm share/gnome/help/gdm/uk
-@dirrm share/gnome/help/gdm/sv/figures
-@dirrm share/gnome/help/gdm/sv
 @dirrm share/gnome/help/gdm/ko/figures
 @dirrm share/gnome/help/gdm/ko
 @dirrm share/gnome/help/gdm/ja/figures
@@ -285,3 +268,65 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrmtry share/gnome/log
 @unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true
 @unexec /bin/rm -rf /var/log/gdm 2>/dev/null || /usr/bin/true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

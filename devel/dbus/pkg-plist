@@ -1,4 +1,3 @@
-bin/dbus-binding-tool
 bin/dbus-cleanup-sockets
 bin/dbus-daemon
 bin/dbus-launch
@@ -6,45 +5,27 @@ bin/dbus-monitor
 bin/dbus-send
 etc/dbus-1/session.conf
 etc/dbus-1/system.conf
-%%QT%%include/dbus-%%VERSION%%/dbus/connection.h
 include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
 include/dbus-%%VERSION%%/dbus/dbus-connection.h
 include/dbus-%%VERSION%%/dbus/dbus-errors.h
-include/dbus-%%VERSION%%/dbus/dbus-glib-bindings.h
-include/dbus-%%VERSION%%/dbus/dbus-glib-error-enum.h
-include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
-include/dbus-%%VERSION%%/dbus/dbus-glib.h
-include/dbus-%%VERSION%%/dbus/dbus-gtype-specialized.h
 include/dbus-%%VERSION%%/dbus/dbus-macros.h
 include/dbus-%%VERSION%%/dbus/dbus-memory.h
 include/dbus-%%VERSION%%/dbus/dbus-message.h
 include/dbus-%%VERSION%%/dbus/dbus-pending-call.h
 include/dbus-%%VERSION%%/dbus/dbus-protocol.h
-%%QT%%include/dbus-%%VERSION%%/dbus/dbus-qt.h
 include/dbus-%%VERSION%%/dbus/dbus-server.h
 include/dbus-%%VERSION%%/dbus/dbus-shared.h
 include/dbus-%%VERSION%%/dbus/dbus-signature.h
 include/dbus-%%VERSION%%/dbus/dbus-threads.h
 include/dbus-%%VERSION%%/dbus/dbus-types.h
 include/dbus-%%VERSION%%/dbus/dbus.h
-%%QT%%include/dbus-%%VERSION%%/dbus/message.h
-%%QT%%include/dbus-%%VERSION%%/dbus/server.h
 include/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.la
 lib/libdbus-1.so
-lib/libdbus-1.so.2
-lib/libdbus-glib-1.a
-lib/libdbus-glib-1.la
-lib/libdbus-glib-1.so
-lib/libdbus-glib-1.so.2
-%%QT%%lib/libdbus-qt-1.a
-%%QT%%lib/libdbus-qt-1.la
-%%QT%%lib/libdbus-qt-1.so
-%%QT%%lib/libdbus-qt-1.so.1
+lib/libdbus-1.so.3
 libdata/pkgconfig/dbus-1.pc
-libdata/pkgconfig/dbus-glib-1.pc
 @exec mkdir -p %D/etc/dbus-1/system.d
 @exec mkdir -p %%X11BASE%%/etc/dbus-1/system.d
 @exec mkdir -p %D/share/dbus-1/services

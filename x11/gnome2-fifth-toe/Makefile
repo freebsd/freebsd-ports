@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.77 2006/02/03 05:53:28 marcus Exp $
+#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.79 2006/07/19 06:00:46 ahze Exp $
 #
 
 PORTREVISION=	0
@@ -18,23 +18,23 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \
 		gnomeicu:${PORTSDIR}/net-im/gnomeicu \
 		gthumb:${PORTSDIR}/graphics/gthumb \
-		${X11BASE}/lib/gaim/docklet.so:${PORTSDIR}/net-im/gaim \
+		${LOCALBASE}/lib/gaim/docklet.so:${PORTSDIR}/net-im/gaim \
 		tsclient:${PORTSDIR}/net/tsclient \
 		galeon:${PORTSDIR}/www/galeon \
 		seahorse:${PORTSDIR}/security/seahorse \
-		${X11BASE}/share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/gnome-themes-extras \
+		${LOCALBASE}/share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish \
 		gossip:${PORTSDIR}/net-im/gossip \
-		straw:${PORTSDIR}/net/straw \
 		liferea:${PORTSDIR}/net/liferea \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
 		jamboree:${PORTSDIR}/audio/jamboree \
-		${X11BASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
+		${LOCALBASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		goobox:${PORTSDIR}/audio/goobox \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		atomix:${PORTSDIR}/games/atomix
+#		straw:${PORTSDIR}/net/straw
 
 MASTERDIR=	${.CURDIR}/../gnome2
 GNOME_SLAVE=	yes

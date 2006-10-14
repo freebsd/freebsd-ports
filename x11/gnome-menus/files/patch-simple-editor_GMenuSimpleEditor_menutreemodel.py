@@ -5,7 +5,7 @@
          conf_dirs = os.environ["XDG_CONFIG_DIRS"]
      if not conf_dirs:
 -        conf_dirs = "/etc/xdg"
-+	conf_dirs = "%%X11BASE%%/etc/xdg"
++	conf_dirs = "%%LOCALBASE%%/etc/xdg"
  
      for conf_dir in conf_dirs.split (":"):
          menu_file_path = os.path.join (conf_dir, "menus", menu_file)
@@ -14,7 +14,7 @@
          data_dirs = os.environ["XDG_DATA_DIRS"]
      if not data_dirs:
 -        data_dirs = "/usr/local/share/:/usr/share/"
-+	data_dirs = "%%X11BASE%%/share/gnome/:/usr/local/share/gnome/:%%X11BASE%%/share/:/usr/local/share/:/usr/share/"
++	data_dirs = "%%X11BASE%%/share/gnome/:%%LOCALBASE%%/share/gnome/:%%X11BASE%%/share/:%%LOCALBASE%%/share/:/usr/share/"
  
      for data_dir in data_dirs.split (":"):
          retval = load_icon_from_path (os.path.join (data_dir, "pixmaps", icon_value))

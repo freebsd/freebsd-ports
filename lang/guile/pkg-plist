@@ -169,6 +169,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/ice-9/safe.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/session.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/slib.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/slib-old.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/stack-catch.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/streams.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/string-fun.scm
