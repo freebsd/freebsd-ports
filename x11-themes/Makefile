@@ -114,6 +114,7 @@
     SUBDIR += icegradient
     SUBDIR += icon-bluecurve-theme
     SUBDIR += icon-naming-utils
+    SUBDIR += icons-buuf
     SUBDIR += icons-human-azul
     SUBDIR += icons-tango
     SUBDIR += indubstrial
