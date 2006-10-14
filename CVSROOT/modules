@@ -11994,6 +11994,7 @@ py-ldap2	ports/net/py-ldap2
 py-levenshtein	ports/devel/py-levenshtein
 py-libdnet	ports/net/py-libdnet
 py-libgmail	ports/mail/py-libgmail
+py-libgsf	ports/devel/py-libgsf
 py-libmpdclient	ports/audio/py-libmpdclient
 py-libnet	ports/net/py-libnet
 py-libtunepimp	ports/audio/py-libtunepimp
