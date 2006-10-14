@@ -1,0 +1,6 @@
+Akamaru is a simple, but fun, physics engine prototype. It's named after the
+super awesome ninja dog, Akamaru, from the Naruto anime and based on the
+article Advanced Character Physics by Thomas Jakobsen on Verlet integration.
+It contains a very cool dock, called kiba.
+
+WWW:	http://people.freedesktop.org/~krh/akamaru.git/

@@ -1,0 +1,19 @@
+--- Makefile.orig	Sun Jul 16 01:37:05 2006
++++ Makefile	Wed Oct 11 01:04:51 2006
+@@ -4,7 +4,7 @@
+ LDFLAGS = -g
+ GCONFTOOL = gconftool-2
+ 
+-prefix = $(HOME)
++prefix = $(PREFIX)
+ targets = akamaru dock
+ schemas = kiba.schemas
+ akamaru_objs = main.o akamaru.o
+@@ -25,6 +25,7 @@
+ 
+ install : install-schemas
+ 	install dock $(prefix)/bin/kiba-dock
++	install akamaru $(prefix)/bin/akamaru
+ 	sh populate-dock.sh
+ 
+ uninstall-schemas : gconf-clean

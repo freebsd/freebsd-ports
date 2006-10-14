@@ -5,6 +5,7 @@
 
     SUBDIR += abacus
     SUBDIR += adesklets
+    SUBDIR += akamaru
     SUBDIR += alacarte
     SUBDIR += alexandria
     SUBDIR += aspostit
