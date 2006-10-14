@@ -343,6 +343,7 @@
     SUBDIR += gindent
     SUBDIR += git
     SUBDIR += glade2
+    SUBDIR += glade3
     SUBDIR += glademm
     SUBDIR += glib-java
     SUBDIR += glib12
