@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-lila-theme-extras
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	lila-gtk-extras-${PORTVERSION}
@@ -17,7 +17,6 @@ COMMENT=	GTK+ 2.0 Lila additional themes
 
 WRKSRC=		${WRKDIR}/lila-gtk-extras
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 USE_BZIP2=	yes

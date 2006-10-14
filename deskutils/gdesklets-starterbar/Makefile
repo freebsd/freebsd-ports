@@ -7,7 +7,7 @@
 
 PORTNAME=	starterbar
 PORTVERSION=	0.31.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -21,7 +21,7 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 NAME=		StarterBar
 DATADIR=	${PREFIX}/share/gnome

@@ -1,6 +1,6 @@
-lib/gtk-2.0/2.4.0/immodules/im-iiim.a
-lib/gtk-2.0/2.4.0/immodules/im-iiim.la
-lib/gtk-2.0/2.4.0/immodules/im-iiim.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-iiim.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-iiim.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-iiim.so
 @exec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 share/locale/ja/LC_MESSAGES/iiimgcf.mo
@@ -8,5 +8,11 @@ share/locale/ko/LC_MESSAGES/iiimgcf.mo
 share/locale/zh_CN/LC_MESSAGES/iiimgcf.mo
 share/locale/zh_TW/LC_MESSAGES/iiimgcf.mo
 share/locale/zh_HK/LC_MESSAGES/iiimgcf.mo
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko

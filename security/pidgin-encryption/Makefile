@@ -7,7 +7,7 @@
 
 PORTNAME=	encryption
 PORTVERSION=	2.38
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -17,11 +17,11 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Provides transparent RSA encryption as a Gaim plugin
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+BUILD_DEPENDS=	${LOCALBASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

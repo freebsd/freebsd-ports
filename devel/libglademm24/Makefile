@@ -3,11 +3,12 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/libglademm24/Makefile,v 1.1 2006/02/25 20:51:44 marcus Exp $
+#   $MCom: ports/devel/libglademm24/Makefile,v 1.8 2006/08/19 19:06:16 mezz Exp $
 #
 
 PORTNAME=	libglademm
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LATEST_LINK=	libglademm24
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomehack libglade2

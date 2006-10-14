@@ -7,7 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.35.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.org/downloads/ \
 		http://www.pycage.de/download/${PORTNAME}/ \
@@ -19,6 +19,7 @@ COMMENT=	A framework for Gnome 2.x for desktop applets
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 PKGNAMESUFFIX=	-gui
@@ -22,7 +22,7 @@ LIB_DEPENDS=	glade-2.0:${PORTSDIR}/devel/libglade2 \
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 		--with-dvdcontrol=${LOCALBASE} \
 		--without-included-gettext \
 		--enable-gtk2 \
-		--with-gtk-prefix=${X11BASE} \
+		--with-gtk-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-xml-prefix=${LOCALBASE}

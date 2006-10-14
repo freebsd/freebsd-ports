@@ -7,7 +7,7 @@
 
 PORTNAME=	fyre
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://samy.kerneled.org/ports/ \
 		http://www.felinemenace.org/~nemo/
@@ -15,14 +15,15 @@ MASTER_SITES=	http://samy.kerneled.org/ports/ \
 MAINTAINER=	sbahra@kerneled.org
 COMMENT=	Chaos map rendering system with GTK+-2 interface
 
+BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 LIB_DEPENDS=	Half:${PORTSDIR}/graphics/OpenEXR \
 		gnet-2.0:${PORTSDIR}/net/gnet2
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	libglade2
+USE_XLIB=	yes
+USE_GNOME=	libglade2 desktopfileutils
 USE_GETOPT_LONG=yes
-
+INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -42,10 +43,8 @@ pre-everything::
 .endif
 .endif
 
-# check for update-desktop-database should go here
-PLIST_SUB+=	WITH_FDO="@comment "
-
 post-install:
+	@-update-desktop-database
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gimpshop
 PORTVERSION=	2.2.11
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 		http://freebsd.powered.net/distfiles/
@@ -27,7 +28,7 @@ CONFLICTS=	gimp-1.* gimp-2.* gimp-gnome-2.*
 SHLIBVER?=	200
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -87,7 +88,7 @@ CONFIGURE_ARGS+=	--enable-mp
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
 USE_GNOME+=		gnomepanel desktopfileutils
-CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
+CONFIGURE_ARGS+=	--with-desktop-dir=${LOCALBASE}/share/gnome
 CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes

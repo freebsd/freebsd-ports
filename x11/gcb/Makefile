@@ -7,6 +7,7 @@
 
 PORTNAME=	gcb
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://freebsd.flatrate.ru/distfiles/ \
 		http://ccbsd9.csie.nctu.edu.tw/~cp76/gcb/
@@ -16,7 +17,6 @@ COMMENT=	A GTK+ tool for managing x11 cut-buffers
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 .include <bsd.port.pre.mk>

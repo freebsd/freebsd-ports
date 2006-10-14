@@ -33,3 +33,11 @@ share/locale/zh_CN/LC_MESSAGES/silky.mo
 share/gnome/apps/Applications/silky.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi

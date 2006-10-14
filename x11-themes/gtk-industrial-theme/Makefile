@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-industrial-theme
 PORTVERSION=	0.2.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 		${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
@@ -21,7 +21,6 @@ EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC=		${WRKDIR}/ximian-artwork-${PORTVERSION}
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 USE_AUTOTOOLS=	libtool:15
 

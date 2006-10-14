@@ -3,11 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/gconf/Makefile,v 1.2 2006/09/10 00:51:07 mezz Exp $
 #
 
 PORTNAME=	gconf
 PORTVERSION=	1.0.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/GConf/1.0
@@ -21,10 +22,10 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget glib12 gtk12 oaf libxml orbit
 USE_GETTEXT=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

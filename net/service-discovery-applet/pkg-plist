@@ -45,3 +45,5 @@ share/locale/fr/LC_MESSAGES/service-discovery-applet.mo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/sdapplet
 @dirrmtry lib/%%PYTHON_VERSION%%/site-packages
 @dirrmtry lib/%%PYTHON_VERSION%%
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

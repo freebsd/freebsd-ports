@@ -7,7 +7,7 @@
 
 PORTNAME=	libglademm
 PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmm
@@ -19,7 +19,7 @@ COMMENT=	C++ wrapper for libglade2 library
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libglade2
 USE_AUTOTOOLS=	libtool:15

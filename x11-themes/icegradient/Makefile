@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/icegradient/Makefile,v 1.1 2006/07/20 11:38:25 ahze Exp $
 
 PORTNAME=	icegradient
 PORTVERSION=	200012290259
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +19,6 @@ COMMENT=	A GTK+ gradient theme engine based on ThinIce
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-0.0.5
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

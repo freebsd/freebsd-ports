@@ -3,11 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/gnome-web-photo/Makefile,v 1.1 2005/12/01 06:25:42 ahze Exp $
+#    $MCom: ports/www/gnome-web-photo/Makefile,v 1.3 2006/08/20 01:51:48 mezz Exp $
 #
 
 PORTNAME=	gnome-web-photo
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
@@ -20,8 +21,8 @@ USE_GECKO=	firefox seamonkey xulrunner firefox-devel<->firefox
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko=${GECKO}
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomevfs2 gnomehack
+USE_XLIB=	yes
+USE_GNOME=	gnomevfs2 gnomehack gnomeprefix
 GCONF_SCHEMAS=	thumbnailer.schemas
 
 .include <bsd.port.pre.mk>

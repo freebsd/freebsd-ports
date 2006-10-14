@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-openvanilla
 PORTVERSION=	0.7.2.b20060214
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csie.org/~llwang/	\
 		http://www.infor.org/~llwang/
@@ -19,7 +20,6 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim	\
 		${X11BASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libltdl:15
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USE_GMAKE=	yes

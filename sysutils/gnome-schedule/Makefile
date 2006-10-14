@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/sysutils/gnome-schedule/Makefile,v 1.1 2005/08/13 14:02:49 ahze Exp $
+#    $MCom: ports/sysutils/gnome-schedule/Makefile,v 1.3 2006/07/27 17:55:58 mezz Exp $
 #
 
 PORTNAME=	gnome-schedule
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix pygnome2
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/gnome
 
@@ -39,11 +39,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gnome-schedule-$$(VERSION)|gnome-schedule|' \
 		${WRKSRC}/doc/Makefile.in
 .endif
-	@${REINPLACE_CMD} -e 's|/usr/share/icons|${X11BASE}/share/icons|; \
+	@${REINPLACE_CMD} -e 's|/usr/share/icons|${LOCALBASE}/share/icons|; \
 		s|@prefix@/share|${DATADIR}|; \
 		s|/usr/local/share/|${DATADIR}|; \
 		s|/usr/share/|${DATADIR}|; \
-		s|/usr/bin/gnome-help|${X11BASE}/bin/gnome-help|; \
+		s|/usr/bin/gnome-help|${LOCALBASE}/bin/gnome-help|; \
 		s|$$(prefix)/share/|$$(datadir)/|' \
 			${WRKSRC}/src/*.* ${WRKSRC}/Makefile.in \
 			${WRKSRC}/pixmaps/Makefile.in

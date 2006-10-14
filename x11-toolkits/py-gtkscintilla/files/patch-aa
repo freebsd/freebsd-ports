@@ -19,7 +19,7 @@
 +GTK_LDFLAGS != $(GTK_CONFIG) --libs
 +GTK_CFLAGS != $(GTK_CONFIG) --cflags
 +LDFLAGS = -pthread -shared $(GTK_LDFLAGS) -lgtkscintilla
-+CFLAGS += -D_THREAD_SAFE -fPIC $(GTK_CFLAGS) -I$(PYTHON_INCLUDE) -I${X11BASE}/include/scintilla
++CFLAGS += -D_THREAD_SAFE -fPIC $(GTK_CFLAGS) -I$(PYTHON_INCLUDE) -I${LOCALBASE}/include/scintilla
  
  all: _gtkscintillamodule.so
  

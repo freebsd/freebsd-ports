@@ -7,6 +7,7 @@
 
 PORTNAME=	${GECKO}-flp
 PORTVERSION=	${MOZVERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	french www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
@@ -17,7 +18,6 @@ DISTNAME=	${GECKO}-${PORTVERSION}.fr-FR.langpack
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	${GECKO} French Language Pack (FLP)
 
-USE_X_PREFIX=	yes	# Cannot be included after <bsd.port.pre.mk>.
 WRKSRC=		${WRKDIR}/bin
 
 REPS=		defaults/profile/FR/chrome defaults/messenger/FR defaults/isp/FR

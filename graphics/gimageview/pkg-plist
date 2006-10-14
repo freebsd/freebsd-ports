@@ -121,6 +121,7 @@ share/gnome/apps/Graphics/gimageview.desktop
 share/locale/fr/LC_MESSAGES/gimageview.mo
 share/locale/ja/LC_MESSAGES/gimageview.mo
 share/pixmaps/gimv.png
+@dirrmtry share/pixmaps
 @dirrm lib/gimageview/archiver
 @dirrm lib/gimageview/image_loader
 @dirrm lib/gimageview/image_saver

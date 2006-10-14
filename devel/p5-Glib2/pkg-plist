@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/BookmarkFile.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Boxed.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/CodeGen.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Error.pod

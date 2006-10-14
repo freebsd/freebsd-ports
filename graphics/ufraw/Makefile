@@ -7,6 +7,7 @@
 
 PORTNAME=		ufraw
 PORTVERSION=		0.9.1
+PORTREVISION=		2
 CATEGORIES=		graphics gnome
 MASTER_SITES=		SF
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 GNU_CONFIGURE=		yes
-USE_X_PREFIX=		yes
+USE_XLIB=		yes
 USE_GMAKE=		yes
 USE_GNOME=		glib20 gnomehack intltool intlhack gtk20 libartlgpl2
 WANT_GNOME=		yes

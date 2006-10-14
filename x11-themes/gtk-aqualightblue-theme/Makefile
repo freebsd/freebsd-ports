@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-aqualightblue-theme
 PORTVERSION=	0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	aqualightblue-gtk2
@@ -18,7 +18,6 @@ COMMENT=	A port of the GTK+ AquaLightBlue theme to GTK+ 2.0
 
 WRKSRC=		${WRKDIR}/AquaLightBlue
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 

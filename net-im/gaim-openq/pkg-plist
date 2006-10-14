@@ -531,3 +531,5 @@ share/locale/zh_CN/LC_MESSAGES/openq.mo
 @dirrm share/gnome/pixmaps/gaim/smileys/2003iii
 @dirrmtry share/gnome/doc
 @dirrmtry share/gnome/gaim
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN

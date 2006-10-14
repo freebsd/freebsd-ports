@@ -7,7 +7,6 @@ NO_BUILD=	yes
 
 REASON=	Themes may contain artwork not done by the author. \
 	Keep FreeBSD safe if the theme author violated copyrights.
-USE_X_PREFIX=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/share/gnome/themes/${PORTNAME}

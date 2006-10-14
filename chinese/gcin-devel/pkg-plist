@@ -62,13 +62,9 @@ share/icons/gcin/pin-float16.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/icons/gcin
 @dirrmtry share/icons
-@dirrmtry share/gnome/control-center-2.0/capplets
-@dirrmtry share/gnome/control-center-2.0
-@dirrmtry share/gnome
 @dirrmtry share/applications
 @dirrmtry %%DATADIR%%/table
 @dirrmtry %%DATADIR%%/script
 @dirrmtry %%DATADIR%%
-@dirrmtry lib/gtk-2.0/immodules
 @exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules

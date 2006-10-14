@@ -28,18 +28,8 @@ share/locale/fr/LC_MESSAGES/ogle_gui.mo
 share/locale/nl/LC_MESSAGES/ogle_gui.mo
 share/locale/pt/LC_MESSAGES/ogle_gui.mo
 share/locale/sv/LC_MESSAGES/ogle_gui.mo
-@dirrmtry share/locale/sv/LC_MESSAGES
-@dirrmtry share/locale/sv
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/da/LC_MESSAGES
-@dirrmtry share/locale/da
 @dirrmtry share/locale
 @dirrm share/gnome/ogle_gui
 @dirrm lib/ogle
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt

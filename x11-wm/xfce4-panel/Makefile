@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-panel
 PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -26,7 +26,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 gnomehack
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

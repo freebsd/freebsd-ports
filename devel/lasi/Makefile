@@ -3,10 +3,11 @@
 # Whom:			giffunip
 #
 # $FreeBSD$
-#
+#    $MCom: ports/devel/lasi/Makefile,v 1.1 2006/10/04 20:25:40 ahze Exp $
 
 PORTNAME=	lasi
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.unifont.org/lasi/download/
 

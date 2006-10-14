@@ -7,7 +7,7 @@
 
 PORTNAME=	beast
 PORTVERSION=	0.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.6/ \
 		http://beast.gtk.org/beast-ftp/v0.6/
@@ -19,7 +19,7 @@ LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		mad:${PORTSDIR}/audio/libmad \
 		guile:${PORTSDIR}/lang/guile
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomecanvas
 GNU_CONFIGURE=  yes

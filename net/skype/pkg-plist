@@ -35,5 +35,6 @@ bin/skype_bin
 @dirrm %%DATADIR%%/sound
 %%DATADIR%%/LICENSE
 @dirrm %%DATADIR%%
-%%GNOME%%share/gnome/applications/skype.desktop
-%%GNOME%%share/gnome/pixmaps/skype.png
+share/applications/skype.desktop
+share/pixmaps/skype.png
+@dirrmtry share/applications

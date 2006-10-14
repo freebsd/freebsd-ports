@@ -4015,18 +4015,18 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/data/campaigns
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
 @dirrmtry man/sv/man6
 @dirrmtry man/sv
 @dirrmtry man/hu/man6
 @dirrmtry man/hu
 @dirrmtry man/de/man6
 @dirrmtry man/de
+%%GNOME:%%@cwd %%LOCALBASE%%
 %%GNOME:%%share/gnome/applications/wesnoth.desktop
 %%GNOME:%%share/gnome/pixmaps/wesnoth-icon.png
-
 %%KDE:%%@cwd %%LOCALBASE%%
 %%KDE:%%share/applnk/Games/TacticStrategy/wesnoth.desktop
 %%KDE:%%share/icons/wesnoth-icon.png
 %%SERVER:%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la

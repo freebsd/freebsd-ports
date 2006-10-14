@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/xenostep/Makefile,v 1.1 2006/07/20 11:38:28 ahze Exp $
 
 PORTNAME=	xenostep
 PORTVERSION=	200011270836
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	xenostep
@@ -18,7 +18,6 @@ COMMENT=	A GTK+ theme engine based on the Xenophilia and Interface engines
 
 WRKSRC=		${WRKDIR}/XenoStep
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 ALL_TARGET=	# empty
 MAKE_ENV=	MKDIR="${MKDIR}"

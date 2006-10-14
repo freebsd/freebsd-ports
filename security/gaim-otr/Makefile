@@ -8,6 +8,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
 		http://www.xelerance.com/mirror/otr/
@@ -17,13 +18,14 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	Allows deniable private conversations using GAIM
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+BUILD_DEPENDS=	${LOCALBASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib --with-libotr-inc-prefix=${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
+		--with-libotr-inc-prefix=${LOCALBASE}/include
 
 .include <bsd.port.mk>

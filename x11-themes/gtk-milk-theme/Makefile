@@ -3,10 +3,12 @@
 # Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/x11-themes/gtk-milk-theme/Makefile,v 1.2 2006/09/22 19:53:01 mezz Exp $
 #
 
 PORTNAME=	milk
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX?=	${TYPE}-
@@ -21,7 +23,6 @@ TYPE?=		gtk
 THEME_NAME=	Milk
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 .if ${TYPE} == "gtk"

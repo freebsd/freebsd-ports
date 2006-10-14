@@ -7,6 +7,7 @@
 
 PORTNAME=	winefish
 DISTVERSION=	1.3.3
+PORTREVISION=	2
 CATEGORIES=	editors print
 MASTER_SITES=	http://download.berlios.de/winefish/ \
 		http://nivi.interfree.it/distfiles/winefish/
@@ -29,8 +30,8 @@ MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui desktopfileutils
-USE_X_PREFIX=	yes
+USE_GNOME=	libgnomeui desktopfileutils gnomehier
+USE_XLIB=	yes
 
 OPTIONS=	CONTEXT	"Enable ConTexT support (Experimental)"	off \
 		VNTEX	"Vietnamese TeX user"	off \

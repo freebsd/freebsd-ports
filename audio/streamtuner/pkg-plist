@@ -108,3 +108,5 @@ share/locale/pt/LC_MESSAGES/streamtuner.mo
 %%PYTHON%%@dirrm share/gnome/streamtuner/python/scripts
 %%PYTHON%%@dirrm share/gnome/streamtuner/python
 @dirrm share/gnome/streamtuner
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt

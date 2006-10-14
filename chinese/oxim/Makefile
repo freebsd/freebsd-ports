@@ -7,7 +7,7 @@
 
 PORTNAME=	oxim
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
@@ -28,7 +28,7 @@ OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 
 USE_GCC=	3.2+
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=
 
 GNU_CONFIGURE=	yes

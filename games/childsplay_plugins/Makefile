@@ -7,7 +7,7 @@
 
 PORTNAME=	childsplay_plugins
 PORTVERSION=	0.80.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	childsplay
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	childsplay:${PORTSDIR}/games/childsplay
 RUN_DEPENDS=	childsplay:${PORTSDIR}/games/childsplay
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g " ${WRKSRC}/install.sh

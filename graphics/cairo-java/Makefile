@@ -3,14 +3,13 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/cairo-java/Makefile,v 1.2 2005/10/29 22:06:06 marcus Exp $
+#   $MCom: ports/graphics/cairo-java/Makefile,v 1.4 2006/09/14 12:47:28 ahze Exp $
 #
 
 PORTNAME=	cairo-java
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	graphics java
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,7 +20,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+

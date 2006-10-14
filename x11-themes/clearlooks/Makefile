@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#      $MCom: ports/x11-themes/clearlooks/Makefile,v 1.4 2005/10/14 20:39:59 adamw Exp $
+#      $MCom: ports/x11-themes/clearlooks/Makefile,v 1.6 2006/07/19 19:56:11 ahze Exp $
 #
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
-USE_X_PREFIX=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
@@ -39,8 +38,8 @@ PLIST_SUB+=	ENGINE=""
 .else
 CONFLICTS+=	clearlooks-[0-9]*
 
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+BUILD_DEPENDS+=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
+RUN_DEPENDS+=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 
 BUILD_WRKSRC=	${WRKSRC}/themes
 INSTALL_WRKSRC=	${WRKSRC}/themes
@@ -49,7 +48,7 @@ PLIST_SUB+=	ENGINE="@comment "
 .endif
 
 .if !defined(WITHOUT_METACITY) && ${PORTNAME}=="clearlooks"
-RUN_DEPENDS+=	${X11BASE}/share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
+RUN_DEPENDS+=	${LOCALBASE}/share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
 .endif
 
 .if defined(WITH_ANIMATION)

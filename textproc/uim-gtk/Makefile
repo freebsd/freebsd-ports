@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gtk
 
 COMMENT=	GTK+ modules of uim input method

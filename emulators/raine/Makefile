@@ -7,7 +7,7 @@
 
 PORTNAME=	raine
 PORTVERSION=	0.43.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators games
 MASTER_SITES=	http://www.rainemu.com/html/archive/
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GCC=	3.2+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehier
 MAKEFILE=	makefile

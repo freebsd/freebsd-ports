@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/engradient/Makefile,v 1.1 2006/10/04 11:46:56 ahze Exp $
 
 PORTNAME=	engradient
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	engradient
@@ -18,7 +18,6 @@ COMMENT=	A GTK+ engine-gradient theme based off of the IceGradient theme
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

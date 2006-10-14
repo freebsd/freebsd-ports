@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-input-pad
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -18,7 +18,6 @@ COMMENT=	SCIM add-on to input various symbols with on-screen pad
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -3,13 +3,14 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/mail/thunderbird-devel/Makefile,v 1.16 2005/11/27 18:53:59 marcus Exp $
+#    $MCom: ports/mail/thunderbird/Makefile,v 1.18 2006/10/12 09:06:46 ahze Exp $
 #
 
 PORTNAME=	thunderbird
 DISTVERSION=	1.5.0.7
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
@@ -22,7 +23,6 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GCC=	3.4+
 CFLAGS+=	-I${X11BASE}/include
 
@@ -30,7 +30,7 @@ MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices
 MOZ_PROTOCOLS=	http,file,jar,viewsource,res,data
 MOZ_GRAPHICS=	default,-xbm
 MOZ_OPTIONS=	--enable-single-profile --disable-profilesharing	\
-		--enable-application=mail -enable-official-branding
+		--enable-application=mail --enable-official-branding
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1
 MOZ_EXPORT=	MOZ_THUNDERBIRD=1
 
@@ -42,7 +42,7 @@ MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 OPTIONS=
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/Makefile.common"
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 
 .if ( ${ARCH} == "alpha" && ${OSVERSION} < 500035 )
 IGNORE=	core dumps at runtime

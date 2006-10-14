@@ -22,9 +22,9 @@ include/swfdec-%%VERSION%%/swfdec_text.h
 include/swfdec-%%VERSION%%/swfdec_transform.h
 include/swfdec-%%VERSION%%/swfdec_types.h
 include/swfdec-%%VERSION%%/tags.h
-lib/gtk-2.0/2.4.0/loaders/swf_loader.a
-lib/gtk-2.0/2.4.0/loaders/swf_loader.la
-lib/gtk-2.0/2.4.0/loaders/swf_loader.so
+lib/gtk-2.0/%%GTK2_VERSION%%/loaders/swf_loader.a
+lib/gtk-2.0/%%GTK2_VERSION%%/loaders/swf_loader.la
+lib/gtk-2.0/%%GTK2_VERSION%%/loaders/swf_loader.so
 lib/libswfdec-%%VERSION%%.a
 lib/libswfdec-%%VERSION%%.la
 lib/libswfdec-%%VERSION%%.so

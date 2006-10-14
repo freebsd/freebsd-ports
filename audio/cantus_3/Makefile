@@ -7,7 +7,7 @@
 
 PORTNAME=	cantus_3
 PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.gascom.ru/pub/asa/ \
 		http://web222.mis02.de/releases/cantus_3/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20 \
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 .include <bsd.port.pre.mk>
 

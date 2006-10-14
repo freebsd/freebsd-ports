@@ -7,7 +7,7 @@
 
 PORTNAME=	ana
 PORTVERSION=	0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://ana.netart.eu.org/
 PKGNAMEPREFIX=	${TYPE}-
@@ -18,13 +18,12 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Clean and white GTK engine
 
 LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
-RUN_DEPENDS=	${X11BASE}/share/themes/Gorilla/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras
+RUN_DEPENDS=	${LOCALBASE}/share/themes/Gorilla/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras
 
 TYPE?=		gtk
 THEME_NAME=	Ana
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 .if ${TYPE} == "gtk"

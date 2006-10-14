@@ -309,3 +309,17 @@ share/locale/zh_CN/LC_MESSAGES/Guppi.mo
 @dirrm lib/guppi
 @dirrm include/gnome-1.0/libguppitank
 @dirrm include/gnome-1.0/libguppi
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el

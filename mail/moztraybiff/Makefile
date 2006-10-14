@@ -7,7 +7,7 @@
 
 PORTNAME=	moztraybiff
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,9 +16,9 @@ DISTNAME=	mozTrayBiff-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New mail tray icon for Thunderbird
 
-BUILD_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird \
+BUILD_DEPENDS=	${LOCALBASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird \
 		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
+RUN_DEPENDS=	${LOCALBASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
 
 .if !exists(../thunderbird/Makefile)
 BROKEN=		${PORTNAME} needs the Thunderbird port in order to build
@@ -26,7 +26,7 @@ BROKEN=		${PORTNAME} needs the Thunderbird port in order to build
 TBVER!=		cd ../thunderbird && ${MAKE} -V PORTVERSION
 .endif
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnome
 MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER} MOZ_TRUNK=0

@@ -7,7 +7,7 @@
 
 PORTNAME=	openq
 PORTVERSION=	0.3.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +20,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	A QQ-liked protocol plugin for Gaim
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+BUILD_DEPENDS=	${LOCALBASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes

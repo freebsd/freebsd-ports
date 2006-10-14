@@ -7,6 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.32.0
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/0.30/
 
@@ -14,13 +15,13 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Media player geared towards usability, technical efficiency and looks
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		cairomm-1.0.0:${PORTSDIR}/graphics/cairomm \
+		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		neon.25:${PORTSDIR}/www/neon \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
-		dbus-1.2:${PORTSDIR}/devel/dbus
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 CONFLICTS=	bmpx-devel-[0-9]*
 
@@ -33,7 +34,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	good mad ogg vorbis
-USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \

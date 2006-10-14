@@ -3,11 +3,11 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-wm/sawfish/Makefile,v 1.1 2006/07/18 17:01:14 ahze Exp $
 
 PORTNAME=	sawfish
 PORTVERSION=	1.3
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,13 +18,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
 LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
-BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
-RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
+BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
+RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack esound
 WANT_GNOME=	yes

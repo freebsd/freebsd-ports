@@ -321,8 +321,6 @@ share/gg2/themes/vblue2.theme
 share/gg2/themes/vgreen2.theme
 share/gg2/themes/vred2.theme
 share/gg2/themes/white2.theme
-%%GNOME:%%share/gnome/apps/Internet/gg2.desktop
-%%GNOME:%%share/gnome/pixmaps/gg2.png
 share/locale/nl/LC_MESSAGES/gg2.mo
 share/locale/pl/LC_MESSAGES/gg2.mo
 share/pixmaps/gg2.png
@@ -338,5 +336,8 @@ share/pixmaps/gg2.png
 @dirrm share/gg2/pixmaps
 @dirrm share/gg2
 @dirrm lib/gg2
+%%GNOME:%%@cwd %%LOCALBASE%%
+%%GNOME:%%share/gnome/apps/Internet/gg2.desktop
+%%GNOME:%%share/gnome/pixmaps/gg2.png
 %%KDE:%%@cwd %%LOCALBASE%%
 %%KDE:%%share/applnk/Internet/gg2.desktop

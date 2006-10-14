@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-industrial-theme
 PORTVERSION=	0.2.29
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 		${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
@@ -18,11 +18,10 @@ MAINTAINER=	stoerte@dreamwarrior.net
 COMMENT=	Slick GNOME2 theme from Ximian
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
+RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack libgnomeui
 
 WRKSRC=		${WRKDIR}/ximian-artwork-${PORTVERSION}

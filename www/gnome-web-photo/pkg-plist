@@ -1,6 +1,6 @@
 bin/gnome-web-photo
 bin/gnome-web-print
 bin/gnome-web-thumbnail
-%%DATADIR%%/prefs.js
-%%DATADIR%%/style.css
-@dirrm %%DATADIR%%
+share/gnome/gnome-web-photo/prefs.js
+share/gnome/gnome-web-photo/style.css
+@dirrm share/gnome/gnome-web-photo

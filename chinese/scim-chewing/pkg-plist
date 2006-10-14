@@ -9,3 +9,5 @@ share/scim/icons/scim-chewing-swap-colors.png
 share/scim/icons/scim-chewing.png
 @dirrmtry lib/scim-1.0/IMEngine
 @dirrmtry lib/scim-1.0/SetupUI
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW

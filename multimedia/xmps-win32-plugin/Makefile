@@ -3,11 +3,11 @@
 # Whom:			Mario S F Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/multimedia/xmps-win32-plugin/Makefile,v 1.1 2006/10/11 23:24:13 ahze Exp $
 
 PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 
@@ -21,7 +21,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_LDCONFIG=	yes
 
 #CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs

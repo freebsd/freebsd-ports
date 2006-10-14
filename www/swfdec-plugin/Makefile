@@ -7,7 +7,7 @@
 
 PORTNAME=	swfdec-plugin
 PORTVERSION=	0.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 DISTNAME=	swfdec-${PORTVERSION}
@@ -17,18 +17,17 @@ COMMENT=	Flash rendering plugin
 
 LIB_DEPENDS=	swfdec-0.3.0:${PORTSDIR}/graphics/swfdec
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 .else
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 .endif
 
 BROKEN=		Does not compile
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2006-12-01
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
 USE_GSTREAMER80=	gconf
@@ -38,9 +37,9 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/bin/firefox-config"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/firefox-config"
 .else
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla/mozilla-config"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/lib/mozilla/mozilla-config"
 .endif
 
 INSTALLS_SHLIB=	yes

@@ -1,6 +1,19 @@
 bin/gnome-im-properties
 bin/gnome-im-settings-daemon
+libdata/bonobo/servers/GNOME_IMSwitcherApplet.server
 libexec/gnome-im-switcher-applet
+share/gnome/control-center-2.0/capplets/gnome-im-properties.desktop
+share/gnome/control-center-2.0/interfaces/gnome-im-properties.glade2
+share/gnome/gnome-2.0/ui/GNOME_InputMethodSwitcherApplet.xml
+share/gnome/help/imswitcher/C/imswitcher.xml
+share/gnome/help/imswitcher/C/legal.xml
+share/gnome/iiimf-im-switcher/glade/gnome-im-switcher.glade2
+share/gnome/omf/iiimf-im-switcher/imswitcher-C.omf
+share/gnome/pixmaps/gimlet-disable.png
+share/gnome/pixmaps/gimlet-off.png
+share/gnome/pixmaps/gimlet-on.png
+share/gnome/pixmaps/gnome-settings-im.png
+share/icons/hicolor/48x48/apps/gnome-settings-im.png
 share/locale/bn/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/cs/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/de/LC_MESSAGES/iiimf-im-switcher.mo
@@ -19,44 +32,23 @@ share/locale/ru/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/sv/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/ta/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/zh_CN/LC_MESSAGES/iiimf-im-switcher.mo
-share/locale/zh_TW/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/zh_HK/LC_MESSAGES/iiimf-im-switcher.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-share/icons/hicolor/48x48/apps/gnome-settings-im.png
-share/gnome/pixmaps/gnome-settings-im.png
-share/gnome/pixmaps/gimlet-off.png
-share/gnome/pixmaps/gimlet-on.png
-share/gnome/pixmaps/gimlet-disable.png
-share/gnome/control-center-2.0/capplets/gnome-im-properties.desktop
-share/gnome/control-center-2.0/interfaces/gnome-im-properties.glade2
-@dirrmtry share/gnome/control-center-2.0/interfaces
-share/gnome/help/imswitcher/C/legal.xml
-share/gnome/help/imswitcher/C/imswitcher.xml
-@dirrm share/gnome/help/imswitcher/C
-@dirrm share/gnome/help/imswitcher
-share/gnome/iiimf-im-switcher/glade/gnome-im-switcher.glade2
+share/locale/zh_TW/LC_MESSAGES/iiimf-im-switcher.mo
+@dirrm share/gnome/omf/iiimf-im-switcher
 @dirrm share/gnome/iiimf-im-switcher/glade
 @dirrm share/gnome/iiimf-im-switcher
-share/gnome/gnome-2.0/ui/GNOME_InputMethodSwitcherApplet.xml
-@comment
-@comment 'do scrollkeeper'
-@comment
-share/gnome/omf/iiimf-im-switcher/imswitcher-C.omf
-@exec %D/bin/scrollkeeper-install -q %D/share/gnome/omf/gnome-im-switcher/imswitcher-C.omf
-@unexec %D/bin/scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-im-switcher/imswitcher-C.omf
-@dirrm share/gnome/omf/iiimf-im-switcher
-@comment
-@comment 'do gconftool-2'
-@comment
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults %D/bin/gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-im-switcher.schemas > /dev/null || true
-etc/gconf/schemas/gnome-im-switcher.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults %D/bin/gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-im-switcher.schemas > /dev/null || true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults %D/bin/gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-im-properties.schemas > /dev/null || true
-etc/gconf/schemas/gnome-im-properties.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults %D/bin/gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-im-properties.schemas > /dev/null || true
-@comment
-@comment 'rm files in LOCALBASE.'
-@comment
-@cwd %%LOCALBASE%%
-libdata/bonobo/servers/GNOME_IMSwitcherApplet.server
+@dirrm share/gnome/help/imswitcher/C
+@dirrm share/gnome/help/imswitcher
+@dirrmtry share/gnome/control-center-2.0/interfaces
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

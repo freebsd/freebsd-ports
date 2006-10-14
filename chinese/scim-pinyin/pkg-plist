@@ -35,3 +35,9 @@ share/scim/icons/smart-pinyin.png
 @dirrmtry lib/scim-1.0/IMEngine
 @dirrmtry lib/scim-1.0/SetupUI
 @dirrm share/scim/pinyin
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko

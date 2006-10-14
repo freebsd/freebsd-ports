@@ -7,6 +7,7 @@
 
 PORTNAME=	geramik
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/content/files/ \
 		http://distfiles.towardex.com/
@@ -15,12 +16,11 @@ DISTNAME=	3952-Geramik-${PORTVERSION}
 MAINTAINER=	haesu@TowardEX.com
 COMMENT=	A Keramik KDE styled theme for GTK
 
-RUN_DEPENDS=	${X11BASE}/lib/gtk/themes/engines/libqtpixmap.so:${PORTSDIR}/x11-toolkits/qtpixmap
+RUN_DEPENDS=	${LOCALBASE}/lib/gtk/themes/engines/libqtpixmap.so:${PORTSDIR}/x11-toolkits/qtpixmap
 
 WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

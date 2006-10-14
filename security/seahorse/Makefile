@@ -3,7 +3,7 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse/Makefile,v 1.16 2006/03/05 21:52:25 marcus Exp $
+#   $MCom: ports/security/seahorse/Makefile,v 1.18 2006/10/01 01:56:57 ahze Exp $
 #
 
 PORTNAME=	seahorse
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
 
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
@@ -28,7 +29,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
-INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-gpg-check
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -37,11 +37,13 @@ GCONF_SCHEMAS=	seahorse.schemas
 
 OPTIONS=	NAUTILUS "Enable the Nautilus component" on \
 		LDAP "Enable LDAP support" on \
-		GEDIT "Enable GEdit plug-in support" on \
 		HKP "Enable HKP keyserver interface" on
+#		GEDIT "Enable GEdit plug-in support" on
 
 .include <bsd.port.pre.mk>
 
+# Gedit not working right now..
+WITHOUT_GEDIT=	yes
 .if !defined(WITHOUT_GEDIT)
 BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
 RUN_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit

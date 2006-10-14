@@ -63,7 +63,17 @@ share/locale/ru/LC_MESSAGES/grip-2.2.mo
 share/locale/zh_CN/LC_MESSAGES/grip-2.2.mo
 share/locale/zh_HK/LC_MESSAGES/grip-2.2.mo
 share/locale/zh_TW/LC_MESSAGES/grip-2.2.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/help/grip/C
 @dirrm share/gnome/help/grip
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

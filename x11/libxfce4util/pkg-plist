@@ -51,4 +51,3 @@ share/xfce4/m4/i18n.m4
 @dirrmtry share/gtk-doc
 @dirrm share/xfce4/m4
 @dirrmtry share/xfce4
-@dirrmtry sbin

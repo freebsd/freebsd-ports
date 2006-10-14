@@ -5,4 +5,5 @@ share/pixmaps/synce/synce-color-small.png
 share/pixmaps/synce/synce-gray-small.png
 share/synce/synce_trayicon_properties.glade
 @dirrm share/pixmaps/synce
+@dirrmtry share/pixmaps
 @dirrmtry share/synce

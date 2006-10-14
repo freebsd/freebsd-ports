@@ -7,7 +7,7 @@
 
 PORTNAME=	preps
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 PKGNAMESUFFIX=	-gui
@@ -19,9 +19,9 @@ COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gconf2 libgnomeui
+USE_GNOME=	gnomehack gnomeprefix gtk20 gconf2 libgnomeui
 USE_PGSQL=	yes
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	preps.schema
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--with-pgsqldir=${LOCALBASE} \
 			--localstatedir=/var
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#^\(omf_dest_dir\).*#\1=${PREFIX}/share/gnome/omf/@PACKAGE@#' \
-		${WRKSRC}/omf.make ${WRKSRC}/help/C/Makefile.in
+	@${REINPLACE_CMD} -e 's|@PACKAGE@/gnome/help|help|g' \
+		${WRKSRC}/help/C/Makefile.in
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	tapidbus
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tapioca-voip
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	tapioca-voip
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Abstraction layer for interprocess communication
 
-LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

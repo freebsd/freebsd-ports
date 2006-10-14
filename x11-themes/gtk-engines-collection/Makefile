@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-engines-collection
 PORTVERSION=	1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${PORTSDIR}/x11-themes/buffy \
 		${THEMESBASE}/libxeno.so:${PORTSDIR}/x11-themes/xenophilia \
 		${THEMESBASE}/libwhistler.so:${PORTSDIR}/x11-themes/whistlerk
 
-THEMESBASE=	${X11BASE}/lib/gtk/themes/engines
+THEMESBASE=	${LOCALBASE}/lib/gtk/themes/engines
 
 NO_BUILD=	yes
 

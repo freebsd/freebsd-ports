@@ -7,6 +7,7 @@
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11-themes linux
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	linux-
@@ -15,7 +16,7 @@ DISTFILES=	# empty
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A high-color icon theme shell from the FreeDesktop project
 
-RUN_DEPENDS=	${X11BASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 NO_BUILD=	yes
 USE_LINUX=	yes
@@ -25,6 +26,6 @@ PLIST_DIRS=	usr/share/icons
 
 do-install:
 	${INSTALL} -d ${PREFIX}/usr/share/icons
-	${LN} -fs ${X11BASE}/share/icons/hicolor ${PREFIX}/usr/share/icons
+	${LN} -fs ${LOCALBASE}/share/icons/hicolor ${PREFIX}/usr/share/icons
 
 .include <bsd.port.mk>

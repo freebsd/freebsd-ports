@@ -2,7 +2,7 @@
 +++ Makefile	Sat May  7 23:04:02 2005
 @@ -0,0 +1,9 @@
 +PYTHON = /usr/bin/env python
-+CPDIR=${X11BASE}/childsplay
++CPDIR=${LOCALBASE}/childsplay
 +
 +all:
 +	echo "Compiling modules to bytecode..."

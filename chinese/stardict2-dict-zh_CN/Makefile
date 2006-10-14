@@ -6,7 +6,7 @@
 
 PORTNAME=	stardict2-dict-zh_CN
 PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stardict
@@ -24,7 +24,6 @@ COMMENT=	English-Chinese(S)/Chinese(S)-English dictionaries for StarDict
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 
 do-install:

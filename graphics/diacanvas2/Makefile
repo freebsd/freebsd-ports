@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	diacanvas2
-PORTVERSION=	0.14.2
-PORTREVISION=	1
+PORTVERSION=	0.14.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	diacanvas
@@ -31,12 +30,5 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|unit_tests doc|unit_tests|g' ${WRKSRC}/Makefile.in
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ref/html/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ref/html/*.png ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

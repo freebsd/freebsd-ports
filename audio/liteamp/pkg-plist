@@ -29,3 +29,5 @@ share/gnome/pixmaps/liteamp/vol_mute.png
 share/gnome/pixmaps/liteamp/vol_up.png
 share/gnome/applications/liteamp.desktop
 @dirrm share/gnome/pixmaps/liteamp
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko

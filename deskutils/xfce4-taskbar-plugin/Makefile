@@ -3,11 +3,11 @@
 # Whom:			Matt Lancereau <matt@rimasec.net>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/deskutils/xfce4-taskbar-plugin/Makefile,v 1.1 2006/10/02 20:05:39 ahze Exp $
 
 PORTNAME=	xfce4-taskbar-plugin
 PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DISTNAME=	xfce4-taskbar-plugin-${PORTVERSION}
@@ -23,7 +23,6 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20 libxml2
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 

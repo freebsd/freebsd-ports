@@ -7,7 +7,7 @@
 
 PORTNAME=	scim
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -17,7 +17,7 @@ COMMENT=	Smart Common Input Method platform
 
 USE_GNOME=	gnomehack gnomehier gtk20 intlhack
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -48,7 +48,7 @@ post-patch:
 			${WRKSRC}/extras/setup/Makefile.in
 
 post-install:
-	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
+	@gtk-query-immodules-2.0 > ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type pkg_info -D ${PKGNAME}
 

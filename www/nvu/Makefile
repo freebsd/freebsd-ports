@@ -3,12 +3,11 @@
 # Whom:			Thierry Thomas <thierry@pompo.net>
 #
 # $FreeBSD$
-#    $MCom: ports/www/nvu/Makefile,v 1.3 2005/11/23 00:40:57 ahze Exp $
-#
+#    $MCom: ports/www/nvu/Makefile,v 1.5 2006/07/18 15:07:36 ahze Exp $
 
 PORTNAME=	nvu
 DISTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
@@ -16,7 +15,6 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
@@ -27,7 +25,7 @@ PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
 CFLAGS+=	-I${X11BASE}/include
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../mozilla/Makefile.common"
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 
 .if ${ARCH} == "ia64"
 BROKEN=		does not build

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-xmms-controller-plugin
 PORTVERSION=	1.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://eoin.angrystickman.com/files/
 DIST_SUBDIR=	xfce4
@@ -22,7 +22,6 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	gxmlviewer
 PORTVERSION=	1.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	bonobo gnomehack gnomelibs gnomeprefix libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -28,8 +28,8 @@ post-patch:
 		s|/netscape/|/gxmlviewer/|g' ${WRKSRC}/src/nsplugin/Makefile.in
 
 post-install:
-	@${MKDIR} ${X11BASE}/lib/browser_plugins
+	@${MKDIR} ${LOCALBASE}/lib/browser_plugins
 	@${LN} -sf ${PREFIX}/lib/gxmlviewer/plugins/npgxmlviewer.so \
-		${X11BASE}/lib/browser_plugins/npgxmlviewer.so
+		${LOCALBASE}/lib/browser_plugins/npgxmlviewer.so
 
 .include <bsd.port.mk>

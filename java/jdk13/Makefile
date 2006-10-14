@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
 #		  http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -61,7 +61,7 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
 		_JAVA_BOOTSTRAP_VERSION="1.3.1"
 .if defined(WITH_PLUGIN)
 MAKE_ENV +=	LIBG_HDRS="${LOCALBASE}/include/glib12" \
-		GTK_HDRS="${X11BASE}/include/gtk12" \
+		GTK_HDRS="${LOCALBASE}/include/gtk12" \
 		LIBIDL_HDRS= \
 		INTL_DIR="${LOCALBASE}"
 .endif
@@ -308,7 +308,7 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} to your Mozilla plugins directory, which is usually found at
 	@${ECHO_MSG}
-	@${ECHO_MSG} ${X11BASE}/lib/mozilla/plugins
+	@${ECHO_MSG} ${LOCALBASE}/lib/mozilla/plugins
 	@${ECHO_MSG}
 .endif
 

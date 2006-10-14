@@ -7,7 +7,7 @@
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -23,7 +23,6 @@ LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util
 
 USE_GNOME=	gtk20 gnomehack
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-xinerama

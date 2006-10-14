@@ -44,3 +44,9 @@ share/locale/ru/LC_MESSAGES/sweep.mo
 @dirrm include/sweep
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el

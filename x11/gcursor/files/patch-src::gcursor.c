@@ -1,6 +1,6 @@
---- src/gcursor.c.orig	Mon Sep 20 14:34:20 2004
-+++ src/gcursor.c	Mon Sep 20 14:34:25 2004
-@@ -32,29 +32,21 @@
+--- src/gcursor.c.orig	Thu Aug 26 05:35:55 2004
++++ src/gcursor.c	Thu Jul 27 13:25:46 2006
+@@ -32,29 +32,22 @@
  
  #warning move this into gconf
  char *paths[] = {
@@ -9,6 +9,7 @@
 -	"/usr/Xorg/lib/X11/icons/",
 -	"/usr/local/share/icons/",
 -	"/usr/share/icons/",
++	"%%LOCALBASE%%/lib/X11/icons/",
 +	"%%X11BASE%%/lib/X11/icons/",
  	"%s/.icons/",
  	NULL
@@ -38,7 +39,7 @@
  }
  
  
-@@ -85,7 +77,7 @@
+@@ -85,7 +78,7 @@
  			filename = g_shell_quote(gtk_file_selection_get_filename(GTK_FILE_SELECTION(fs)));
  #endif
  
@@ -47,7 +48,7 @@
  				filename);
  		g_free(filename);
  
-@@ -281,7 +273,7 @@
+@@ -281,7 +274,7 @@
  	
  	for (iterator = paths; *iterator; iterator++)
  	{

@@ -28,8 +28,12 @@ share/locale/pl/LC_MESSAGES/mplayerplug-in.mo
 share/locale/pt_BR/LC_MESSAGES/mplayerplug-in.mo
 share/locale/ru/LC_MESSAGES/mplayerplug-in.mo
 share/locale/se/LC_MESSAGES/mplayerplug-in.mo
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
+@dirrmtry lib/browser_plugins
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
-@dirrmtry lib/browser_plugins
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US

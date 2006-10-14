@@ -6,7 +6,7 @@
 
 PORTNAME=	gspeakers
 PORTVERSION=	0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ COMMENT=	Gnome-based loudspeaker design program
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomeprefix gnometarget libxml2
 USE_GMAKE=	yes

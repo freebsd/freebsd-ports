@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-honoka-plugin-romkan
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://nop.net-p.org/files/honoka/
 DISTNAME=	honoka-plugin-romkan-${PORTVERSION}
@@ -15,12 +16,12 @@ MAINTAINER=	chiba.masashi@gmail.com
 COMMENT=	Honoka plugin for romaji input
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
-		${X11BASE}/lib/scim-1.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka
+		${LOCALBASE}/lib/scim-1.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GETTEXT=	yes
 USE_GNOME=	lthack gnomehack
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

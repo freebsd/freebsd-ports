@@ -7,7 +7,7 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.8.11
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--enable-socks
 .endif
 
 .if defined(WITH_TRANSPARENCY)
-BUILD_DEPENDS+=		${X11BASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
+BUILD_DEPENDS+=		${LOCALBASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
 CONFIGURE_ARGS+=	--enable-gdk-pixbuf
 .endif
 

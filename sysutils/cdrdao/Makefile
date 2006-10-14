@@ -103,7 +103,7 @@ post-patch:
 		's|(SET_CDRDAO_PATH.+path=)(cdrdao)|\1${LOCALBASE}\/bin\/\2|g' \
 		${WRKSRC}/xdao/Settings.cc
 	@${REINPLACE_CMD} -E -e \
-		's|(icon-filename=).+(gcdmaster-doc.png)|\1${X11BASE}\/share\/gnome\/pixmaps\/document-icons\/\2|g' \
+		's|(icon-filename=).+(gcdmaster-doc.png)|\1${LOCALBASE}\/share\/gnome\/pixmaps\/document-icons\/\2|g' \
 		${WRKSRC}/xdao/gcdmaster.keys
 .else
 .for i in cdrdao.man main.cc
@@ -119,19 +119,19 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
 		${PREFIX}/man/man1/gcdmaster.1
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
-		${X11BASE}/share/gnome/pixmaps/document-icons
+		${LOCALBASE}/share/gnome/pixmaps/document-icons
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
-		${X11BASE}/share/gnome/application-registry
+		${LOCALBASE}/share/gnome/application-registry
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
-		${X11BASE}/share/gnome/applications
+		${LOCALBASE}/share/gnome/applications
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
-		${X11BASE}/share/gnome/mime-info
+		${LOCALBASE}/share/gnome/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
-		${X11BASE}/share/gnome/mime-info
+		${LOCALBASE}/share/gnome/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
-		${X11BASE}/share/gnome/pixmaps
+		${LOCALBASE}/share/gnome/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
-		${X11BASE}/share/mime/packages
+		${LOCALBASE}/share/mime/packages
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade ${DATADIR}
 .else

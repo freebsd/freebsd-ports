@@ -3,11 +3,11 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glib-java/Makefile,v 1.2 2005/10/29 22:06:05 marcus Exp $
+#   $MCom: ports/devel/glib-java/Makefile,v 1.4 2006/09/14 12:37:40 ahze Exp $
 #
 
 PORTNAME=	glib-java
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
@@ -18,7 +18,7 @@ COMMENT=	Java wrapper GLib 2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+

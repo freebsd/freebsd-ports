@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.31
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -17,7 +18,6 @@ COMMENT=	A Mozilla plugin for the MPlayer media player
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GECKO=	firefox mozilla seamonkey

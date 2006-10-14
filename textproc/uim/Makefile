@@ -7,6 +7,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.2.1
+PORTREVISION?=	1
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -26,7 +27,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 
 .if !defined(WITHOUT_X11)
-USE_X_PREFIX=	yes
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--with-x --with-xft
 .endif

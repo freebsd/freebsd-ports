@@ -7,7 +7,7 @@
 
 PORTNAME=	gdeskcal-skins
 PORTVERSION=	0.56
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/skins/gdeskcal/
 DISTNAME=
@@ -30,10 +30,10 @@ DISTFILES=	gnometheme.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skins for gdeskcal
 
-RUN_DEPENDS=	${X11BASE}/bin/gdeskcal:${PORTSDIR}/deskutils/gdeskcal
+RUN_DEPENDS=	gdeskcal:${PORTSDIR}/deskutils/gdeskcal
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix
 NO_BUILD=	yes
 

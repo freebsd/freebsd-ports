@@ -64,20 +64,19 @@ lib/libogmjob.so.0
 libdata/pkgconfig/ogmdvd.pc
 libdata/pkgconfig/ogmrip.pc
 libdata/pkgconfig/ogmjob.pc
-share/applications/ogmrip.desktop
-%%DATADIR%%/ogmrip-crop.glade
-%%DATADIR%%/ogmrip-main.glade
-%%DATADIR%%/ogmrip-options.glade
-%%DATADIR%%/ogmrip-pref.glade
-%%DATADIR%%/ogmrip-progress.glade
-%%DATADIR%%/ogmrip-spell.glade
-%%DATADIR%%/ogmrip-ui.xml
-%%DATADIR%%/ogmrip.xml
-%%DATADIR%%/ogmrip.xsd
-%%DATADIR%%/xml.xsd
-share/pixmaps/ogmrip.png
+share/gnome/applications/ogmrip.desktop
+share/gnome/ogmrip/ogmrip-crop.glade
+share/gnome/ogmrip/ogmrip-main.glade
+share/gnome/ogmrip/ogmrip-options.glade
+share/gnome/ogmrip/ogmrip-pref.glade
+share/gnome/ogmrip/ogmrip-progress.glade
+share/gnome/ogmrip/ogmrip-spell.glade
+share/gnome/ogmrip/ogmrip-ui.xml
+share/gnome/ogmrip/ogmrip.xml
+share/gnome/ogmrip/ogmrip.xsd
+share/gnome/ogmrip/xml.xsd
+share/gnome/pixmaps/ogmrip.png
+@dirrm share/gnome/ogmrip
 @dirrm include/ogmrip
 @dirrm include/ogmjob
 @dirrm include/ogmdvd
-@dirrm %%DATADIR%%
-@dirrmtry share/applications

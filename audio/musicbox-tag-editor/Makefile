@@ -7,7 +7,7 @@
 
 PORTNAME=		musicbox-tag-editor
 PORTVERSION=		0.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	musicbox
@@ -18,7 +18,7 @@ COMMENT=		A simple GTK+ audio tag editor
 
 LIB_DEPENDS=		tag:${PORTSDIR}/audio/taglib
 
-USE_X_PREFIX=		yes
+USE_XLIB=		yes
 USE_GNOME=		gnomehack gnomeprefix libglade2
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -21,3 +21,5 @@ share/locale/pl/LC_MESSAGES/cantus_3.mo
 @dirrm share/gnome/help/cantus_3/
 @dirrm share/doc/cantus_3
 @dirrm lib/cantus_3/
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl

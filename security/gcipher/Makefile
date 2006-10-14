@@ -7,7 +7,7 @@
 
 PORTNAME=	gcipher
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A simple encryption tool
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	libgnomeui
 
 GCIPHER_PREFIX=	${PREFIX}/share/gnome/gcipher

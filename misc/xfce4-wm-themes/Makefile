@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-wm-themes
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	misc xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -18,7 +19,6 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 window decoration themes for xfwm4
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 

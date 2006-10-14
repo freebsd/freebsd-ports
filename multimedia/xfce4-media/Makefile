@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	1.1.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -19,11 +19,11 @@ COMMENT=	Lightweight HTML rendering/printing/editing engine
 LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier glibwww libghttp libcapplet gal
 USE_GETTEXT=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gconf=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

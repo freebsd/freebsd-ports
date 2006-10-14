@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
@@ -104,7 +104,7 @@ USE_GECKO=	mozilla # firefox and seamonkey do not work
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 MAKE_ENV+=	BROWSER=${GECKO}
 USE_GNOME=	desktopfileutils
-MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${X11BASE}/include"
+MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${LOCALBASE}/include"
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64

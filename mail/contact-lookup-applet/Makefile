@@ -3,10 +3,11 @@
 # Whom:					kwm@rainbow-runner.nl
 #
 # $FreeBSD$
-#
+#    $MCom: ports/mail/contact-lookup-applet/Makefile,v 1.13 2006/09/30 23:58:38 ahze Exp $
 
 PORTNAME=	contact
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.burtonini.com/computing/
 PKGNAMESUFFIX=	-lookup-applet

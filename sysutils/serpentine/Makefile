@@ -3,10 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/sysutils/serpentine/Makefile,v 1.2 2006/04/25 15:17:05 ahze Exp $
+#    $MCom: ports/sysutils/serpentine/Makefile,v 1.4 2006/08/31 05:21:45 marcus Exp $
 
 PORTNAME=	serpentine
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +18,10 @@ COMMENT=	Gnome Audio Cd Buner
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 RUN_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 
-USE_X_PREFIX=	yes
+USE_ZLIB=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pygnomeextras intlhack
+USE_GNOME=	pygnomedesktop intlhack
 USE_GMAKE=	yes
 USE_GSTREAMER=	core gnomevfs python
 USE_PYTHON=	2.4+

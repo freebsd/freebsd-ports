@@ -5,7 +5,7 @@
  */
  
 -#define TX_GTKRC "/usr/share/themes/terminatorX/gtk/gtkrc"
-+#define TX_GTKRC "%%X11BASE%%/share/themes/terminatorX/gtk/gtkrc"
++#define TX_GTKRC "%%LOCALBASE%%/share/themes/terminatorX/gtk/gtkrc"
  
  #define BENCH_CYCLES 100000
  

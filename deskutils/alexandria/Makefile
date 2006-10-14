@@ -7,7 +7,7 @@
 
 PORTNAME=	alexandria
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	deskutils ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,11 +24,15 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/amazon.rb:${PORTSDIR}/www/ruby-amazon \
 		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2
 
+USE_GNOME=	gnomehier
 INSTALLS_OMF=	yes
 USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
+
+DOCS=		NEWS README TODO
+GCONF_SCHEMAS=	alexandria.schemas
 
 RUBY_REQUIRE=	Ruby > 180
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
@@ -39,7 +43,18 @@ CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 IGNORE=		only works with Ruby 1.8.0 or later
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/data/omf ${WRKSRC}/data/gnome/
+
 post-install:
-	${RM} ${PREFIX}/share/gnome/help/alexandria/ChangeLog
+	@${MKDIR} ${LOCALBASE}/etc/gconf/schemas
+	@${INSTALL_DATA} ${WRKSRC}/schemas/alexandria.schemas \
+		${LOCALBASE}/etc/gconf/schemas/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${RUBY_MODDOCDIR}
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.endif
 
 .include <bsd.port.post.mk>

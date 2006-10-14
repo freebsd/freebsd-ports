@@ -7,6 +7,7 @@
 
 PORTNAME=	openvanilla-modules
 PORTVERSION=	0.7.2.b20060214
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csie.org/~llwang/	\
 		http://www.infor.org/~llwang/
@@ -16,9 +17,8 @@ MAINTAINER=	llwang@infor.org
 COMMENT=	Input method modules for OpenVanilla
 
 BUILD_DEPENDS=	${X11BASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
-RUN_DEPENDS=	${X11BASE}/lib/scim-1.0/IMEngine/OVLoader-SCIM.so:${PORTSDIR}/textproc/scim-openvanilla
+RUN_DEPENDS=	${LOCALBASE}/lib/scim-1.0/IMEngine/OVLoader-SCIM.so:${PORTSDIR}/textproc/scim-openvanilla
 
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15:env
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes

@@ -42,19 +42,6 @@ USE_ICONV=	yes
 USE_MOTIF=	yes
 .else
 ECLIPSE_WS=	gtk
-.if !defined(WITHOUT_MOZILLA)
-MAKE_MOZILLA=	make_mozilla
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA} != "mozilla"
-BROWSER=	${WITH_MOZILLA}
-BUILD_DEPENDS+=	${BROWSER}:${PORTSDIR}/www/${BROWSER}
-.else
-BUILD_DEPENDS+=	mozilla:${PORTSDIR}/www/mozilla
-BROWSER=	mozilla
-.endif
-.else
-BROWSER=
-MAKE_MOZILLA=
-.endif
 .if defined(WITHOUT_CAIRO)
 MAKE_CAIRO=
 .else
@@ -81,6 +68,17 @@ ECLIPSE_ARCH=	x86
 ECLIPSE_SWT=	gtk
 .endif
 
+.if !defined(WITHOUT_MOZILLA)
+MAKE_MOZILLA=	make_mozilla
+USE_GECKO=	firefox mozilla seamonkey xulrunner
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+BROWSER=	${GECKO}
+USE_LDCONFIG=	yes
+.else
+BROWSER=
+MAKE_MOZILLA=
+.endif
+
 MAKE_ENV+=	BROWSER=${BROWSER} \
 		ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		ECLIPSE_OS=${ECLIPSE_OS} \
@@ -90,7 +88,8 @@ MAKE_ENV+=	BROWSER=${BROWSER} \
 		MAKE_MOZILLA=${MAKE_MOZILLA} \
 		MAKE_CAIRO=${MAKE_CAIRO} \
 		MACHINE_ARCH=${MACHINE_ARCH} \
-		MOTIF_HOME=${X11_HOME}
+		MOTIF_HOME=${X11_HOME} \
+		GECKO_CONFIG=${GECKO_CONFIG}
 
 PLIST_FILES=	bin/eclipse share/applications/eclipse.desktop
 

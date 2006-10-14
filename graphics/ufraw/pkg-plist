@@ -3,4 +3,5 @@ bin/ufraw-batch
 libexec/gimp/2.2/plug-ins/ufraw-gimp
 share/applications/ufraw.desktop
 share/pixmaps/ufraw.png
+@dirrmtry share/pixmaps
 @dirrmtry share/applications

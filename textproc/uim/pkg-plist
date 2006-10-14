@@ -197,3 +197,5 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko

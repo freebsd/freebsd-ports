@@ -7,7 +7,7 @@
 
 PORTNAME=	velocity
 PORTVERSION=	0.1.0b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.jarrodkoehler.com/velocity/
 DISTNAME=	velocity-0.1.0beta
@@ -17,7 +17,6 @@ COMMENT=	GNOME file and desktop manager
 
 WRKSRC=		${WRKDIR}/velocity-0.1.0
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui gnomedesktop librsvg2
 

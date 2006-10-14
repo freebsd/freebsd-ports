@@ -11,3 +11,5 @@ share/locale/pl/LC_MESSAGES/gperiodic.mo
 share/locale/sv/LC_MESSAGES/gperiodic.mo
 share/locale/tr/LC_MESSAGES/gperiodic.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl

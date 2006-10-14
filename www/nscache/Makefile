@@ -3,11 +3,11 @@
 # Whom:			Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/www/nscache/Makefile,v 1.1 2006/10/04 11:49:18 ahze Exp $
 
 PORTNAME=	nscache
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netscape cache browser
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gtk12
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes

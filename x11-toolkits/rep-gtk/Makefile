@@ -3,11 +3,11 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-toolkits/rep-gtk/Makefile,v 1.1 2006/07/18 16:49:16 ahze Exp $
 
 PORTNAME=	rep-gtk
 PORTVERSION=	0.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/rep-gtk/0.15
@@ -20,7 +20,6 @@ LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	pixelize
 PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://lashwhip.com/pub/ \
@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use many scaled down images to try to duplicate another image
 
 USE_GNOME=	gtk12 imlib
-IMLIB_CONFIG=	${X11BASE}/bin/imlib-config
+IMLIB_CONFIG=	${LOCALBASE}/bin/imlib-config
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|" -e "s|CFLAGS = -g|CFLAGS+= |" \

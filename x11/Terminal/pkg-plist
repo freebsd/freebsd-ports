@@ -47,6 +47,7 @@ share/applications/Terminal.desktop
 share/icons/hicolor/48x48/apps/Terminal.png
 share/icons/hicolor/scalable/apps/Terminal.svg
 share/pixmaps/terminal.xpm
+@dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor

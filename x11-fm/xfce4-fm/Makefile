@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-fm
 PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -27,7 +27,6 @@ LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 gnomehack
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

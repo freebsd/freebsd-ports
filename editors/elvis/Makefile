@@ -7,6 +7,7 @@
 
 PORTNAME=	elvis
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
 		ftp://ftp.false.com/pub/elvis/ \
@@ -55,6 +56,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g ; \
 		 s|-lipc|-lcurses|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|FT_FILE|ELVIS_FT_FILE|g' \
+	    	${WRKSRC}/guix11/xdialog.c \
+		${WRKSRC}/guix11/xdialog.h
 
 do-install:
 .for file in elvfmt elvis elvtags ref

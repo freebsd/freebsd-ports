@@ -3,27 +3,25 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/news/pan/Makefile,v 1.4 2006/10/11 11:55:59 ahze Exp $
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.14.2.91
-PORTREVISION=	4
+PORTVERSION=	0.116
 CATEGORIES=	news gnome
-MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ \
-		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/
-DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
+MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Threaded GNOME 2 newsreader based on Agent for Windows
+COMMENT=	Threaded GTK+2 newsreader based on Agent for Windows
 
-LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
-		pcre.0:${PORTSDIR}/devel/pcre-utf8
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8 \
+		gmime-2.0.4:${PORTSDIR}/mail/gmime2
 
+USE_XLIB=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget libxml2 gtk20
+USE_GNOME=	gnomehack gnometarget gtk20 intlhack
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -34,13 +32,10 @@ OPTIONS=	GTKSPELL "Enable spell checking support" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_GTKSPELL)
-CONFIGURE_ARGS+=	--disable-gtkspell
+CONFIGURE_ARGS+=	--without-gtkspell
 .else
 LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+CONFIGURE_ARGS+=	--with-gtkspell
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|apps/Internet|applications|g' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

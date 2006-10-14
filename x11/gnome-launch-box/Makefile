@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-launch-box
 PORTVERSION=	20060112
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
@@ -15,7 +16,6 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	An application launcher for the GNOME desktop
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui evolutiondataserver gnomemenus gnomedesktop
 

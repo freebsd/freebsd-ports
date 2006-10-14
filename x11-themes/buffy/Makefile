@@ -3,11 +3,12 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/x11-themes/buffy/Makefile,v 1.2 2006/09/24 04:12:51 mezz Exp $
 #
 
 PORTNAME=	buffy
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	buffy02
@@ -18,7 +19,6 @@ COMMENT=	A GTK theme engine looking like SGI enhanced Motif (aka Roxy)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

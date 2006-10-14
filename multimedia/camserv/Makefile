@@ -7,7 +7,7 @@
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,11 +24,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 ONLY_FOR_ARCHS=	i386 alpha
 
 USE_XLIB=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:259 libtool:15 libltdl:15
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-		-I${X11BASE}/include/gtk12 -I${X11BASE}/include/gdk-pixbuf-1.0 \
+		-I${LOCALBASE}/include/gtk12 \
+		-I${LOCALBASE}/include/gdk-pixbuf-1.0 \
 		-I${LOCALBASE}/include/glib12" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

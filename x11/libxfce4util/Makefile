@@ -7,7 +7,7 @@
 
 PORTNAME=	libxfce4util
 PORTVERSION=	4.2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -19,7 +19,6 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 library with non-graphical helper functions
 
 USE_GNOME=	glib20 gnomehack
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

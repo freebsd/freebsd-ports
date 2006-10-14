@@ -32,3 +32,9 @@ share/locale/ua/LC_MESSAGES/tagtool.mo
 @dirrm %%DATADIR%%
 @unexec /bin/rmdir %D/share/locale/ua/LC_MESSAGES 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/locale/ua 2>/dev/null || /usr/bin/true
+@dirrmtry share/locale/ua/LC_MESSAGES
+@dirrmtry share/locale/ua
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

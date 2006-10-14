@@ -3,11 +3,12 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports-stable/www/seamonkey/Makefile,v 1.1 2006/03/09 21:26:46 ahze Exp $
+#    $MCom: ports/www/seamonkey/Makefile,v 1.40 2006/09/15 16:11:00 ahze Exp $
 #
 
 PORTNAME=	seamonkey
 DISTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}
@@ -21,7 +22,6 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
-USE_X_PREFIX=	yes
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cairo"
@@ -57,9 +57,8 @@ LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
 IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
-.if ${ARCH}=="sparc64" # && ${OSVERSION} < 601101
-#IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
-BROKEN=		regchrome core dumps in sparc64
+.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
+IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
 .endif
 
 .if ${OSVERSION} < 500000
@@ -132,5 +131,5 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/seamonkey.desktop ${PREFIX}/share/applications
 
-.include "${.CURDIR}/../mozilla/Makefile.common"
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>

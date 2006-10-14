@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	3.8.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,6 @@ COMMENT=	CDE like desktop with GTK
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gdkpixbuf
@@ -53,9 +52,9 @@ CONFIGURE_ARGS+=	--disable-xinerama
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/other/xinitrc.in
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${LOCALBASE}|g' ${WRKSRC}/other/xinitrc.in
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
 	@${REINPLACE_CMD} -e 's|/opt/kde3|${LOCALBASE}|g ; \
-		 s|/opt/gnome|${X11BASE}|g' ${WRKSRC}/xfmenu/xfmenu.c
+		 s|/opt/gnome|${LOCALBASE}|g' ${WRKSRC}/xfmenu/xfmenu.c
 
 .include <bsd.port.post.mk>

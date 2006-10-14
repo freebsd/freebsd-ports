@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-qnxtheme
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	qnxtheme
@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/QNX
 
@@ -37,20 +36,20 @@ post-extract:
 	@${ECHO_CMD} "all:" > ${WRKSRC}/Makefile
 
 do-install:
-	@${REINPLACE_CMD} -e 's@/usr@${X11BASE}@g' ${WRKSRC}/gtk/gtkrc
+	@${REINPLACE_CMD} -e 's@/usr@${LOCALBASE}@g' ${WRKSRC}/gtk/gtkrc
 	@${REINPLACE_CMD} -e 's@QNX@qnxtheme@g' ${WRKSRC}/gtk/gtkrc
 	@${RM} -f ${WRKSRC}/gtk/gtkrc.bak
-	@${MKDIR} ${X11BASE}/share/themes/qnxtheme/gtk
+	@${MKDIR} ${LOCALBASE}/share/themes/qnxtheme/gtk
 	@for i in ${WRKSRC}/gtk/*; do \
-		${INSTALL_DATA} $$i ${X11BASE}/share/themes/qnxtheme/gtk; \
+		${INSTALL_DATA} $$i ${LOCALBASE}/share/themes/qnxtheme/gtk; \
 	done
 .if defined(WITH_GTK2)
-	@${REINPLACE_CMD} -e 's@/usr@${X11BASE}@g' ${WRKSRC}/gtk-2.0/gtkrc
+	@${REINPLACE_CMD} -e 's@/usr@${LOCALBASE}@g' ${WRKSRC}/gtk-2.0/gtkrc
 	@${REINPLACE_CMD} -e 's@QNX@qnxtheme@g' ${WRKSRC}/gtk-2.0/gtkrc
 	@${RM} -f ${WRKSRC}/gtk-2.0/gtkrc.bak
-	@${MKDIR} ${X11BASE}/share/themes/qnxtheme/gtk-2.0
+	@${MKDIR} ${LOCALBASE}/share/themes/qnxtheme/gtk-2.0
 	@for i in ${WRKSRC}/gtk-2.0/*; do \
-		 ${INSTALL_DATA} $$i ${X11BASE}/share/themes/qnxtheme/gtk-2.0; \
+		 ${INSTALL_DATA} $$i ${LOCALBASE}/share/themes/qnxtheme/gtk-2.0; \
 	done
 .endif
 

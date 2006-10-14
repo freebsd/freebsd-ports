@@ -292,6 +292,7 @@ share/pixmaps/abiword_48.png
 @dirrm share/AbiSuite-%%ABIVERSION%%/AbiWord/glade
 @dirrm share/AbiSuite-%%ABIVERSION%%/AbiWord
 @dirrm share/AbiSuite-%%ABIVERSION%%
+@dirrmtry share/pixmaps
 @exec /bin/mkdir -p %D/lib/AbiWord-%%ABIVERSION%%/plugins
 @dirrmtry lib/AbiWord-%%ABIVERSION%%/plugins
 @dirrmtry lib/AbiWord-%%ABIVERSION%%

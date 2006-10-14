@@ -7,6 +7,7 @@
 
 PORTNAME=	digital-cream
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX=	${TYPE}-
@@ -21,7 +22,6 @@ TYPE?=		gtk
 THEME_NAME=	${DISTNAME}
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 .if ${TYPE} == "gtk"

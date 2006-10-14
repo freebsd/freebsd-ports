@@ -63,3 +63,11 @@ share/locale/uk/LC_MESSAGES/gtkam.mo
 %%GNOME:%%@dirrm share/gnome/help/gtkam/C
 %%GNOME:%%@dirrm share/gnome/help/gtkam
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

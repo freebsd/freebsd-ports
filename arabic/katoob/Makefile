@@ -7,7 +7,7 @@
 
 PORTNAME=	katoob
 PORTVERSION=	0.3.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	arabic
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
@@ -18,15 +18,16 @@ COMMENT=	Light-weight, bidirectional editor for arabic texts
 MAN1=		katoob.1
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
+WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_HIGHLIGHTING) || exists(${X11BASE}/libdata/pkgconfig/gtksourceview-1.0.pc)
+.if ${HAVE_GNOME:Mgtksourceview}!="" || defined(WITH_HIGHLIGHTING)
 CONFIGURE_ARGS+=	"--enable-highlight"
 USE_GNOME+=		gtksourceview
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	ogmrip
 DISTVERSION=	0.10.0-rc4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,9 +32,9 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gtk20 glib20 gconf2 libglade2 intlhack
+USE_GNOME=	gnomehack gnomeprefix gtk20 glib20 gconf2 libglade2 intlhack
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 GCONF_SCHEMAS=	ogmrip.schemas
 
@@ -64,10 +65,6 @@ pre-extract:
 	@${ECHO_MSG} " *** Define WITH_DEBUG to enable debug symbols ***"
 	@${ECHO_MSG} ""
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-	  ${WRKSRC}/data/Makefile.in
 
 pre-configure:
 	@if ${LOCALBASE}/mencoder -ovc help 2> /dev/null | ${GREP} -q "^ *xvid *- .*" ; then \

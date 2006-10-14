@@ -10,7 +10,7 @@ $FreeBSD$
 - "/usr/bin/gnome-help-browser", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
 - "/usr/local/bin/gnome-help-browser", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
 - "/bin/gnome-help-browser", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
-+ "%%X11BASE%%/bin/gnome-help-browser", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
++ "%%LOCALBASE%%/bin/gnome-help-browser", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
  \
 - "/usr/bin/netscape", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
 - "/usr/local/bin/netscape", "", (char *)HELP_PROG_INPUT_TYPE_URL, \

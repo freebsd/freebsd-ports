@@ -1,6 +1,14 @@
---- Makefile.orig	Wed Jul 10 05:32:05 2002
-+++ Makefile	Sun Jan 22 15:06:39 2006
-@@ -13,6 +13,6 @@
+--- Makefile.orig	Wed Jul 10 08:32:05 2002
++++ Makefile	Wed Oct  4 15:35:57 2006
+@@ -7,14 +7,14 @@
+ SRCS=	capplet-widget-libs.c capplet-widget.c capplet-widget-libs.h \
+ 	capplet-widget.h control-center-common.c control-center-skels.c \
+ 	control-center-stubs.c control-center.h
+-CFLAGS+=-I. -I${X11BASE}/include -I${X11BASE}/include/gtk12 \
+-	-I${X11BASE}/include/gnome-1.0 -I${LOCALBASE}/include \
++CFLAGS+=-I. -I${X11BASE}/include -I${LOCALBASE}/include/gtk12 \
++	-I${LOCALBASE}/include/gnome-1.0 -I${LOCALBASE}/include \
+ 	-I${LOCALBASE}/include/glib12 -I${LOCALBASE}/include/orbit-1.0
  LDADD+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lORBitCosNaming -lORBit -lIIOP \
 -	-lORBitutil -lglib12 -lwrap -lm -lgnorba -lXpm -ljpeg -lgnomeui \
 -	-lart_lgpl -lgdk_imlib -ltiff -lungif -lpng -lz -lSM -lICE -lgtk12 \
@@ -11,3 +19,5 @@
 +	-lgdk-12 -lgmodule-12 -lXext -lX11 -lgnome -lgnomesupport -lintl \
 +	-lesd ${LDFLAGS} -laudiofile 
  
+ CLEANFILES+=control-center-common.c control-center-skels.c \
+ 	    control-center-stubs.c control-center.h cappletConf.sh \

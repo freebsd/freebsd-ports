@@ -3,11 +3,12 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/firefox/Makefile,v 1.29 2006/02/01 02:11:23 ahze Exp $
+#   $MCom: ports/www/flock/Makefile,v 1.2 2006/10/05 21:37:18 mezz Exp $
 #
 
 PORTNAME=	flock
 DISTVERSION=	0.7
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 # http://ftp.osuosl.org/pub/${PORTNAME}/source/${PORTVERSION}/:flock
@@ -23,7 +24,6 @@ LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 
 MOZILLA_NAME=	Flock
 CLUCENE_WRKSRC=	${WRKDIR}/clucene
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
@@ -51,10 +51,6 @@ MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 OPTIONS=	SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64
-.endif
 
 .if ${ARCH}=="alpha" || ${ARCH}=="ia64"
 IGNORE=	core dumps on ${ARCH}
@@ -89,6 +85,7 @@ pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${FLOCK_ICON}' >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 
 do-install:
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
@@ -108,5 +105,5 @@ post-install:
 	${LN} -sf ${FLOCK_ICON_SRC} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default.xpm
 	${LN} -sf ${FLOCK_ICON_SRC} ${PREFIX}/share/pixmaps/${FLOCK_ICON}
 
-.include "${.CURDIR}/../mozilla/Makefile.common"
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>

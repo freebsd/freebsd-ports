@@ -3,10 +3,11 @@
 # Whom:				Anders Andersson <anders@hack.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/cad/oregano/Makefile,v 1.7 2006/10/10 05:25:08 ahze Exp $
 
 PORTNAME=	oregano
 PORTVERSION=	0.60.0
+PORTREVISION=	1
 CATEGORIES=	cad gnome
 MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/84/
 
@@ -16,7 +17,7 @@ COMMENT=	Schematic capture and simulation of electrical circuits
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
 		libgnomeprintui libgnomeui

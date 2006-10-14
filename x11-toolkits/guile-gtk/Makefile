@@ -3,11 +3,11 @@
 # Whom:                Matt Braithwaite <mab@red-bean.com>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-toolkits/guile-gtk/Makefile,v 1.2 2006/09/10 00:51:17 mezz Exp $
 
 PORTNAME=	guile-gtk
 PORTVERSION=	0.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,11 +17,11 @@ COMMENT=	Guile binding library for GTK+
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gdkpixbuf libglade
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gtkgl=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

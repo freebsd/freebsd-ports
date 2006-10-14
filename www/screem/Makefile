@@ -7,7 +7,7 @@
 
 PORTNAME=	screem
 PORTVERSION=	0.16.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,7 @@ GCONF_SCHEMAS=	screem.schemas
 .if defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--disable-dbus
 .else
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
 .endif
 

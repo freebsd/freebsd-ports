@@ -3,11 +3,11 @@
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/gtkstep-pastel/Makefile,v 1.1 2006/07/20 11:38:25 ahze Exp $
 
 PORTNAME=	gtkstep-pastel
 PORTVERSION=	0.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	gtksteppastel
@@ -18,7 +18,6 @@ COMMENT=	Theme engine based on GtkStep to make GTK+ look nicier
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

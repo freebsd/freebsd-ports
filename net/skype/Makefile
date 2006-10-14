@@ -7,7 +7,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.2.0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -29,18 +29,11 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_d
 USE_BZIP2=	yes
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
-WANT_GNOME=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 RESTRICTED=	Redistribution not allowed yet.
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomehier} != ""
-PLIST_SUB+=	GNOME=""
-.else
-PLIST_SUB+=	GNOME="@comment "
-.endif
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -48,14 +41,13 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/skype
 
 do-install:
+	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
 #	${INSTALL} ${WRKSRC}/skype-callto-handler ${PREFIX}/bin/
 	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"\$$@\" 2>&1 | grep -v 'SOUND_MIXER_WRITE_IGAIN failed'" >${PREFIX}/bin/skype
 	${CHMOD} a+rx ${PREFIX}/bin/skype
-.if ${HAVE_GNOME:Mgnomehier} != ""
-	${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/gnome/applications/
-	${INSTALL_DATA} ${WRKSRC}/icons/skype_48_32.png ${PREFIX}/share/gnome/pixmaps/skype.png
-.endif
+	${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/icons/skype_48_32.png ${PREFIX}/share/pixmaps/skype.png
 	${MKDIR} ${DATADIR}/icons ${DATADIR}/lang ${DATADIR}/sound
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
 	${INSTALL_DATA} ${WRKSRC}/lang/*.qm ${DATADIR}/lang/

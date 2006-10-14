@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -44,7 +45,7 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 ALL_TARGET=	all dist
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH} \
-		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+		LOCALBASE=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
@@ -137,7 +138,7 @@ post-install::
 .endfor
 .if !defined(WITHOUT_X11) && ${HAVE_GNOME:Mgnomehier}!=""
 	${INSTALL_DATA} ${WRKDIR}/xemacs.desktop \
-		${X11BASE}/share/gnome/applications
+		${LOCALBASE}/share/gnome/applications
 .endif
 # For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
 # Do what PLIST does for pkg_add.

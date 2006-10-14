@@ -3,11 +3,12 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/net-p2p/edonkey-gui-gtk/Makefile,v 1.2 2006/10/05 05:04:46 mezz Exp $
 #
 
 PORTNAME=	edonkey
 PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ed2k-gtk-gui
@@ -20,9 +21,10 @@ COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2
 RUN_DEPENDS=	donkey:${PORTSDIR}/net-p2p/linux-edonkey-core
 
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gnometarget gtk20
+USE_XLIB=	yes
+USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
@@ -35,8 +37,6 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(datadir)/app|$$(prefix)/share/gnome/app|g' \
-		 ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^SUBDIRS =.*$$|SUBDIRS =|g' \
 		 ${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e 's|-Wall -g||g ; \

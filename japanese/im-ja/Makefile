@@ -7,6 +7,7 @@
 
 PORTNAME=	im-ja
 PORTVERSION=	1.5
+PORTREVISION=	2
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
@@ -18,7 +19,7 @@ OPTIONS+=	CANNA		"Use Canna" on
 OPTIONS+=	WNN		"Use FreeWnn" on
 OPTIONS+=	GNOMEPANEL	"Build GNOME Panel Applet" off
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gconf2 gnomehack gnomeprefix gnometarget intlhack libglade2
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
@@ -70,7 +71,7 @@ post-patch:
 		${WRKSRC}/data/Makefile.in
 
 post-install:
-	${X11BASE}/bin/gtk-query-immodules-2.0 > \
-	    ${X11BASE}/etc/gtk-2.0/gtk.immodules
+	${LOCALBASE}/bin/gtk-query-immodules-2.0 > \
+	    ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
 
 .include <bsd.port.post.mk>

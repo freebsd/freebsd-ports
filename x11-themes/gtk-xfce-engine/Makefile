@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	2.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-4.2.3.2/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-4.2.3.2/src/ \
@@ -18,6 +18,5 @@ COMMENT=	An XFCE engine for GTK 2.0
 
 USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

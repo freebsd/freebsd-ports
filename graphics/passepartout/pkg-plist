@@ -28,4 +28,3 @@ share/xml/passepartout/xml2ps.dtd
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
 @dirrm share/xml/passepartout
-@dirrmtry share/xml

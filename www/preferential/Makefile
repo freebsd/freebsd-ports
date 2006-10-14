@@ -7,7 +7,7 @@
 
 PORTNAME=	preferential
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}/versions
@@ -15,8 +15,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI interface to view & edit all ${GECKO} prefs
-
-USE_X_PREFIX=	yes	# Cannot be included after <bsd.port.pre.mk>.
 
 PLIST_FILES=	%%MOZDIR%%/chrome/preferential.jar
 

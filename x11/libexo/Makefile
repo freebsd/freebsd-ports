@@ -3,11 +3,11 @@
 # Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11/libexo/Makefile,v 1.1 2006/10/02 21:05:55 ahze Exp $
 
 PORTNAME=	libexo
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DISTNAME=	exo-${PORTVERSION}
@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 
 .if defined(WITH_GTKDOC)

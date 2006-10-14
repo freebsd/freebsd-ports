@@ -19,3 +19,5 @@ share/xfce4/xmms-plugin/xmms-plugin-stop.png
 @dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4
 @dirrm share/xfce4/xmms-plugin
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko

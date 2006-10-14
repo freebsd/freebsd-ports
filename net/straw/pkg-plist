@@ -149,3 +149,13 @@ share/locale/sr/LC_MESSAGES/straw.mo
 share/locale/sr@Latn/LC_MESSAGES/straw.mo
 share/locale/sv/LC_MESSAGES/straw.mo
 @dirrm share/gnome/straw
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

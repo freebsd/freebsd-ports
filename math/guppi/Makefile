@@ -7,7 +7,7 @@
 
 PORTNAME=	guppi
 PORTVERSION=	0.40.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/Guppi/0.40
@@ -20,14 +20,14 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal gnometarget
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gnumeric --enable-explicit-python-linking
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/libglade-1.0" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libglade-1.0" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		GNUMERIC_IDLDIR="${WRKDIR}/gnumeric"
 PLIST_SUB=	VERSION="${PORTVERSION}"

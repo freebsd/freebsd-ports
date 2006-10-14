@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-bluecurve-theme
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	The Bluecurve GTK+ 1.x and 2.x themes
 
@@ -17,8 +17,8 @@ PATCH_STRIP=	-p1
 
 # GTK+ 1.x theme engine
 USE_GNOME+=	gdkpixbuf
-GTK1_CFLAGS=	`${X11BASE}/bin/gdk-pixbuf-config --cflags`
-GTK1_LIBS=	`${X11BASE}/bin/gdk-pixbuf-config --libs`
+GTK1_CFLAGS=	`${LOCALBASE}/bin/gdk-pixbuf-config --cflags`
+GTK1_LIBS=	`${LOCALBASE}/bin/gdk-pixbuf-config --libs`
 GTK1_WRKSRC=	${WRKSRC}/art/gtk/Bluecurve1
 GTK1_RCDIR=	gtk
 GTK1_SOURCES=	bluecurve1_theme_main.c bluecurve1_theme_draw.c
@@ -39,7 +39,7 @@ EXTRA_STYLES=	BerriesAndCream Gnome Grape Lime Slate Strawberry Tangerine
 post-patch:
 .for v in 1 2
 .  for s in ${EXTRA_STYLES}
-	@${REINPLACE_CMD} -e 's|/usr|${X11BASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' \
 		${WRKSRC}/art/gtk/Bluecurve-${s}/${GTK${v}_RCDIR}/gtkrc
 .  endfor
 .endfor

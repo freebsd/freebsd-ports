@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution-sharp
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
@@ -28,8 +29,9 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD}  's|evolution-shell-2.2|evolution-shell-2.6|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD}  's|eshellver="2.6"|eshellver="2.8"|g ; \
+		s|evolution-shell-2.6|evolution-shell-2.8|g' \
+			${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|.@EBOOK_SOVERSION@||g ; \
 		s|.@ECAL_SOVERSION@||g ; \
 		s|.@EDS_SOVERSION@||g' \

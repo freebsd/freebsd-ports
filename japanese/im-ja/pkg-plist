@@ -1,7 +1,7 @@
 bin/im-ja-conf
 bin/im-ja-xim-server
-lib/gtk-2.0/2.4.0/immodules/im-ja.la
-lib/gtk-2.0/2.4.0/immodules/im-ja.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ja.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ja.so
 %%GNOMEPANEL%%libdata/bonobo/servers/GNOME_ImJaApplet.server
 %%GNOMEPANEL%%libexec/im-ja/im-ja-applet
 libexec/im-ja/im-ja-helper
@@ -46,3 +46,5 @@ share/locale/ja/LC_MESSAGES/im-ja.mo
 @dirrm libexec/im-ja
 @exec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
 @unexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

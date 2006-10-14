@@ -13,7 +13,7 @@ PATH=/bin:/usr/bin
 [ "x$2" = "xPRE-INSTALL" ] && exit 0
 [ "x$2" = "xDEINSTALL" ] && exit 0
 
-PREFIX=${PKG_PREFIX:-/usr/X11R6}
+PREFIX=${PKG_PREFIX:-/usr/local}
 
 PKG_NAME=${1%%-[0-9._]*}
 

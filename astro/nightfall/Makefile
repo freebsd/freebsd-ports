@@ -7,6 +7,7 @@
 
 PORTNAME=	nightfall
 PORTVERSION=	1.52
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
@@ -15,7 +16,7 @@ COMMENT=	An interactive binary star application
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 USE_PERL5=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	yersinia
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.yersinia.net/download/
 
@@ -16,7 +17,7 @@ COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 .if !defined(WITHOUT_GTK)
-.if exists(${X11BASE}/include/gtk-2.0/gtk/gtk.h)
+.if exists(${LOCALBASE}/include/gtk-2.0/gtk/gtk.h)
 WITH_GTK=	true
 .endif
 .endif
@@ -41,7 +42,7 @@ MAN8=		yersinia.8
 PLIST_FILES=	sbin/yersinia
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${TARGETDIR}/sbin/
-		${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${TARGETDIR}/man/man8/
+		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/
+		${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${PREFIX}/man/man8/
 
 .include <bsd.port.post.mk>

@@ -3,11 +3,11 @@
 # Whom:				 	Cyrille Lefevre <clefevre@citeweb.net>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-themes/notif2/Makefile,v 1.1 2006/07/20 11:38:26 ahze Exp $
 
 PORTNAME=	notif2
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	notif210
@@ -18,7 +18,6 @@ COMMENT=	The Notif2 GTK theme engine following the new Motif look and feel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes

@@ -3,11 +3,12 @@
 # Whom:					Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
+#    $MCom: ports/x11-wm/wmakerconf/Makefile,v 1.2 2006/10/05 07:31:44 mezz Exp $
 #
 
 PORTNAME=	wmakerconf
 PORTVERSION=	2.11
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.starplot.org/wmakerconf/
 
@@ -18,8 +19,9 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gnometarget gtk20
+USE_GNOME=	gnometarget gtk20
 USE_PERL5=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wmakerdir="${X11BASE}/share/WindowMaker"
@@ -41,8 +43,8 @@ pre-configure:
 .endfor
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/applications
+	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/wmakerconf.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 
 .include <bsd.port.mk>

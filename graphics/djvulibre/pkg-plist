@@ -48,9 +48,9 @@ share/djvu/osi/zh/messages.xml
 share/djvu/pubtext/DjVuMessages.dtd
 share/djvu/pubtext/DjVuOCR.dtd
 share/djvu/pubtext/DjVuXML-s.dtd
-%%X11%%@exec mkdir -p %%X11BASE%%/lib/browser_plugins
-%%X11%%@exec ln -sf %D/lib/djvulibre/plugins/nsdejavu.so %%X11BASE%%/lib/browser_plugins/nsdejavu.so
-%%X11%%@unexec rm -f %%X11BASE%%/lib/browser_plugins/nsdejavu.so
+%%X11%%@exec mkdir -p %%LOCALBASE%%/lib/browser_plugins
+%%X11%%@exec ln -sf %D/lib/djvulibre/plugins/nsdejavu.so %%LOCALBASE%%/lib/browser_plugins/nsdejavu.so
+%%X11%%@unexec rm -f %%LOCALBASE%%/lib/browser_plugins/nsdejavu.so
 @dirrm share/djvu/pubtext
 @dirrm share/djvu/osi/zh
 @dirrm share/djvu/osi/ja
@@ -66,4 +66,4 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrmtry man/fr
 @dirrmtry man/de/man1
 @dirrmtry man/de
-@unexec rmdir %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
+@unexec rmdir %%LOCALBASE%%/lib/browser_plugins 2>/dev/null || true

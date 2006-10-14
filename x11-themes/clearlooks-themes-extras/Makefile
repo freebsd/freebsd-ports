@@ -7,7 +7,7 @@
 
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x
@@ -17,16 +17,15 @@ COMMENT=	Extras colour schemes for Clearlooks engine theme
 
 NO_BUILD=	yes
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 
 THEME_DIR=	${PREFIX}/share/themes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc) || defined(WITH_GTKENGINE)
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+.if exists(${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc) || defined(WITH_GTKENGINE)
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 .else
-RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
+RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
 .endif
 
 do-extract:

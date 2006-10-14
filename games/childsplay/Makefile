@@ -7,7 +7,7 @@
 
 PORTNAME=	childsplay
 PORTVERSION=	0.80.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	childsplay
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/
 LIB_DEPENDS=	assetml.0:${PORTSDIR}/devel/libassetml
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 # avoid asking for translation to your local language on install

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-im-switcher
 PORTVERSION=	12.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -18,15 +18,18 @@ COMMENT=	IIIMF gnome input method switcher
 
 ONLY_FOR_ARCHS=	i386
 
-USE_X_PREFIX=	yes
-
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool gconf2 libglade2 libgnomeui \
 		gnomepanel gnomeprefix gnomehack
+INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
 WANT_AUTOHEADER_VER=	259
+
+GCONF_SCHEMAS=	gnome-im-properties.schemas gnome-im-switcher.schemas
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/gnome-im-switcher

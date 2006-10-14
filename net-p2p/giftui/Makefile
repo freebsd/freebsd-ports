@@ -7,7 +7,7 @@
 
 PORTNAME=	giFTui
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	giftui
@@ -19,8 +19,8 @@ COMMENT=	GTK2 client for giFT daemon
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	gconf2 gtk20
+USE_XLIB=	yes
+USE_GNOME=	gnomehack gnomeprefix gconf2 gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -31,10 +31,13 @@ PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^giftuidatadir=.*|giftuidatadir=${DATADIR}|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^giftuidatadir=.*|giftuidatadir=$${datadir}/giftui|g ; \
+		s|^giftuiicondir=.*|giftuiicondir=$${datadir}/pixmaps|g' \
+			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^giftuidocdir =.*|giftuidocdir =${DOCSDIR}|g' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/share/pixmaps/||g' \
+		${WRKSRC}/data/giftui.desktop
 
 post-install:
 .if !defined(NOPORTDOCS)

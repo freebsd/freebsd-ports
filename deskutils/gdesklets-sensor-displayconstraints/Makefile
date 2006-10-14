@@ -7,7 +7,7 @@
 
 PORTNAME=	displayconstraints
 PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-sensor-
@@ -24,7 +24,7 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_PYTHON=	yes
 NAME=		DisplayConstraints
 

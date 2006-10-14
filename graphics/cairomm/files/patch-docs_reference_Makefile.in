@@ -1,0 +1,11 @@
+--- docs/reference/Makefile.in.orig	Thu Jul  6 00:29:26 2006
++++ docs/reference/Makefile.in	Thu Jul  6 00:29:40 2006
+@@ -342,7 +342,7 @@
+ 
+ $(index_html): $(DOXYGEN_CONFIGFILE) $(wildcard $(top_srcdir)/cairomm/*.h) $(HTML_TEMPLATE_FILES)
+ 	-rm -rf html
+-	doxygen $(DOXYGEN_CONFIGFILE) \
++	$(DOXYGEN) $(DOXYGEN_CONFIGFILE) \
+ 	2> doxygen-warnings.txt | tee doxygen-output.txt && cat doxygen-warnings.txt
+ 
+ html: $(index_html)

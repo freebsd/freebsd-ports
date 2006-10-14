@@ -18,7 +18,7 @@ COMMENT=	Visualise multiple 2D-functions of one variable
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	automake:14 autoconf:213
+USE_AUTOTOOLS=	automake:15 autoconf:253
 AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -27,6 +27,6 @@ MAN1=		geg.1
 PLIST_FILES=	bin/geg
 
 pre-configure:
-	@cd ${WRKSRC}; ${ACLOCAL} -I ${X11BASE}/share/aclocal
+	@cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ${X11BASE}/share/aclocal
 
 .include <bsd.port.mk>

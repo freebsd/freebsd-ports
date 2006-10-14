@@ -7,7 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -110,8 +110,8 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/gnome/applications|g ; \
-		s|[$$][(]datadir[)]/icons|${X11BASE}/share/gnome/pixmaps|g' \
+	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${LOCALBASE}/share/gnome/applications|g ; \
+		s|[$$][(]datadir[)]/icons|${LOCALBASE}/share/gnome/pixmaps|g' \
 			${WRKSRC}/icons/Makefile.in
 
 .include <bsd.port.post.mk>

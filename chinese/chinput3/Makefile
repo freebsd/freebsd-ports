@@ -3,11 +3,11 @@
 # Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/chinese/chinput3/Makefile,v 1.1 2006/10/04 13:15:20 ahze Exp $
 
 PORTNAME=	chinput
 PORTVERSION=	3.0.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
 
@@ -36,7 +36,10 @@ post-patch:
 
 pre-build:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|-lc_r|${PTHREAD_CFLAGS} ${PTHREAD_LIBS}|'
+		-e 's|-lc_r|${PTHREAD_CFLAGS} ${PTHREAD_LIBS}|; \
+		    s|-I/usr/include|-I${LOCALBASE}/include|; \
+		    s|-L/usr/lib|-L${LOCALBASE}/lib|; \
+		    s|-L/usr/X11R6|-L${LOCALBASE}/lib -L/usr/X11R6|'
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

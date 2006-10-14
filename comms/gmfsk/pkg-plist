@@ -1,7 +1,4 @@
 bin/gmfsk
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gmfsk.schemas >/dev/null || /usr/bin/true
-etc/gconf/schemas/gmfsk.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gmfsk.schemas >/dev/null || /usr/bin/true
 share/gnome/help/gmfsk/C/fdl-appendix.xml
 share/gnome/help/gmfsk/C/figures/gmfsk_start_window.png
 share/gnome/help/gmfsk/C/figures/note.png
@@ -21,5 +18,3 @@ share/gnome/pixmaps/gmfsk/tx.xpm
 @dirrm share/gnome/help/gmfsk/C/figures
 @dirrm share/gnome/help/gmfsk/C
 @dirrm share/gnome/help/gmfsk
-@exec scrollkeeper-install -q %D/share/gnome/omf/gmfsk/gmfsk-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gmfsk/gmfsk-C.omf 2>/dev/null || /usr/bin/true

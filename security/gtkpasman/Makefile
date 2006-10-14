@@ -21,13 +21,14 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:14 aclocal:14 autoconf:213
+USE_AUTOTOOLS=	automake:15 aclocal:15 autoconf:259
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		README src/gpasman4.sample
 PLIST_FILES=	bin/gtkpasman
+ACLOCAL_ARGS?=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README gpasman4.sample

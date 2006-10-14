@@ -3,21 +3,21 @@
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
-#
+#    $MCom: ports/biology/gperiodic/Makefile,v 1.1 2006/09/29 23:42:13 ahze Exp $
 
 PORTNAME=	gperiodic
 PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://koti.welho.com/jfrantz/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a periodic table of the elements
 
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gtk20
+USE_XLIB=	yes
+USE_GNOME=	gnomeprefix gtk20
 ALL_TARGET=	${PORTNAME}
-
+USE_GETTEXT=	yes
 LANGS=		da fr pl sv tr
 
 post-patch:

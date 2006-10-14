@@ -3,11 +3,11 @@
 # Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/deskutils/gdeskcal/Makefile,v 1.2 2006/09/30 03:23:19 ahze Exp $
 
 PORTNAME=	gdeskcal
 PORTVERSION=	0.57.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	gDeskCal-${PORTVERSION:S/./_/g}
@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/gDeskCal-${PORTVERSION}
 
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier
 NO_BUILD=	yes
 

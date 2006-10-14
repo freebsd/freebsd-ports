@@ -7,7 +7,7 @@
 
 PORTNAME=	cornerxmms
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -23,7 +23,7 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/xmms/__init__.py:${PORTSDIR}/audio/py-xmms
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 NAME=		CornerXMMS
 DATADIR=	${PREFIX}/share/gnome

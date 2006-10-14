@@ -1,0 +1,50 @@
+Index: openvrml-0.15.10/src/libopenvrml/openvrml/vrml97node.cpp
+===================================================================
+--- src/libopenvrml/openvrml/vrml97node.cpp.orig	2006-06-11 14:23:00.000000000 +0200
++++ src/libopenvrml/openvrml/vrml97node.cpp	2006-06-11 15:12:02.000000000 +0200
+@@ -16604,7 +16604,7 @@
+ 
+     const float stepSize_ = 0.2;
+ 
+-    int moveTo_(FT_Vector * const to, void * const user) throw ()
++    int moveTo_(const FT_Vector * to, void * user)
+     {
+         using std::vector;
+         assert(user);
+@@ -16620,7 +16620,7 @@
+         return 0;
+     }
+ 
+-    int lineTo_(FT_Vector * const to, void * const user) throw ()
++    int lineTo_(const FT_Vector * to, void * user)
+     {
+         assert(user);
+         GlyphContours_ & c = *static_cast<GlyphContours_ *>(user);
+@@ -16682,10 +16682,9 @@
+         }
+     }
+ 
+-    int conicTo_(FT_Vector * const control,
+-                 FT_Vector * const to,
++    int conicTo_(const FT_Vector * control,
++                 const FT_Vector * to,
+                  void * const user)
+-        throw ()
+     {
+         using std::vector;
+ 
+@@ -16716,11 +16715,10 @@
+         return 0;
+     }
+ 
+-    int cubicTo_(FT_Vector * const control1,
+-                 FT_Vector * const control2,
+-                 FT_Vector * const to,
++    int cubicTo_(const FT_Vector * control1,
++                 const FT_Vector * control2,
++                 const FT_Vector * to,
+                  void * const user)
+-        throw ()
+     {
+         using std::vector;
+ 

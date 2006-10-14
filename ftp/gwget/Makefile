@@ -7,6 +7,7 @@
 
 PORTNAME=	gwget
 PORTVERSION=	0.98.1
+PORTREVISION=	1
 CATEGORIES=	ftp www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -25,7 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libbonobo gconf2
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBBONOBO_IDL="-I${LOCALBASE}/idl/bonobo-2.0" \
@@ -36,7 +37,7 @@ EPHY_VER?=	2.14
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/bin/epiphany) && !defined(WITHOUT_EPIPHANY)
+.if exists(${LOCALBASE}/bin/epiphany) && !defined(WITHOUT_EPIPHANY)
 WITH_EPIPHANY=	yes
 .endif
 

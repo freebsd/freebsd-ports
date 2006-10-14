@@ -22,3 +22,5 @@ share/applications/jpilot.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 @dirrmtry share/applications
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

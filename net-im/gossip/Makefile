@@ -7,6 +7,7 @@
 
 PORTNAME=	gossip
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,12 +18,12 @@ COMMENT=	GTK2 Jabber Instant Messaging client
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth \
-		dbus-1.2:${PORTSDIR}/devel/dbus \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		aspell.16:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

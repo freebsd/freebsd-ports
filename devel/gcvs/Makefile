@@ -3,11 +3,11 @@
 # Whom:					dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
-#
+#    $MCom: ports/devel/gcvs/Makefile,v 1.1 2006/10/07 17:10:25 ahze Exp $
 
 PORTNAME=	gcvs
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	devel tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,8 +19,9 @@ COMMENT=	High-end interface client for CVS
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+BROKEN=	Does not build
+
 USE_GETOPT_LONG=yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -32,6 +33,6 @@ MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
 INFO=		cvs cvsclient
-USE_AUTOTOOLS=	automake:14:env autoconf:213:env
+USE_AUTOTOOLS=	automake:15:env autoconf:259:env
 
 .include <bsd.port.mk>

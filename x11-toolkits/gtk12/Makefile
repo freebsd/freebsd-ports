@@ -3,11 +3,11 @@
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/x11-toolkits/gtk12/Makefile,v 1.3 2006/10/09 19:31:53 ahze Exp $
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
-PORTREVISION=	15
+PORTREVISION=	17
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtk+/1.2
@@ -16,10 +16,10 @@ DISTNAME=	gtk+-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_PERL5=	yes
 USE_GNOME=	glib12
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale \
 		--with-xinput=xfree

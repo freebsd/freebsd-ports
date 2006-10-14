@@ -7,7 +7,7 @@
 
 PORTNAME=	adblock
 DISTVERSION=	0.5-dev
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -15,8 +15,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A content filtering plug-in for ${GECKO}
-
-USE_X_PREFIX=	yes
 
 PLIST_FILES=	%%MOZDIR%%/chrome/adblock.jar
 

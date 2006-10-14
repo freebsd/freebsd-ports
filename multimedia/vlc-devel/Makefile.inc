@@ -5,8 +5,8 @@
 # and will be autodetected to enable
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc-devel/Makefile.inc,v 1.2 2006/05/15 02:46:26 ahze Exp $
-#
+#    $MCom: ports/multimedia/vlc-devel/Makefile.inc,v 1.8 2006/10/01 18:16:43 ahze Exp $
+#      $Id: Makefile.inc 6 2006-09-27 14:05:34Z buhnux $
 # If you define for example WITH_FAAD and WITHOUT_FAAD
 # the WITHOUT_ will always over ride the WITH_.
 #
@@ -61,9 +61,15 @@
 #   ** NOT DEFINED if PACKAGE_BUILDING is defined **
 #
 # WITHOUT_A52=yes
-#  liba52 audio Support
+#  liba52 audio support
 #
-# WITH_REALAUDIO
+# WITHOUT_MODDEMUX
+#  ModPlug mod-like music support
+#
+# WITHOUT_MPCDEMUX
+#  Musepack audio compression support
+#
+# WITHOUT_REALAUDIO
 #  Real audio(R) support
 #
 # WITH_SHOUT
@@ -187,6 +193,9 @@
 # WITHOUT_GNOMEVFS
 #  GnomeVFS support
 #
+# WITHOUT_HAL=yes
+#  Disable HAL support
+#
 # WITH_OPENGL=yes
 #  Enable OpenGL visual plugin (not playback, play back is default with X11)
 #
@@ -277,7 +286,7 @@ pre-build:
 	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
 		${WRKSRC}/vlc-config
 
-pre-install:
+pre-install: build
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
@@ -294,6 +303,7 @@ pre-install:
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
+	${RM} -f ${FAKEDIR}/share/locale/locale.alias
 	cd ${FAKEDIR}/bin && ${FIND} -s * | \
 		${SED} -e 's|^|bin/|' >> ${PLIST}
 	cd ${FAKEDIR}/include && ${FIND} -s * -type f -o -type l | \
@@ -310,6 +320,7 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm share/${dir}/|' >> ${PLIST}
 .endfor
+		${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/doc/|' >> ${PLIST} \

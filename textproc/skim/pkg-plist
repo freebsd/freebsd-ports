@@ -137,7 +137,7 @@ share/servicetypes/skimkcmplugin.desktop
 share/servicetypes/skimplugin.desktop
 share/servicetypes/skimsetupcategory.desktop
 share/servicetypes/skimui.desktop
-@cwd %%X11BASE%%
+@cwd %%LOCALBASE%%
 lib/scim-1.0/1.4.0/Config/kconfig.la
 lib/scim-1.0/1.4.0/Config/kconfig.so
 @cwd %%LOCALBASE%%
@@ -148,3 +148,9 @@ lib/scim-1.0/1.4.0/Config/kconfig.so
 @dirrm share/doc/HTML/de/skim
 @dirrm share/apps/skim/pics
 @dirrm share/apps/skim
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko

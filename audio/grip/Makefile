@@ -7,7 +7,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	3.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		curl.3:${PORTSDIR}/ftp/curl
 PATCH_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

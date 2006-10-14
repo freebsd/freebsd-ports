@@ -7,6 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.2.28
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -112,9 +113,9 @@ post-patch:
 .endfor
 .for file in src/gnome2.cc
 	@${REINPLACE_CMD} -e \
-		's|/usr/share/control|${X11BASE}/share/gnome/control|g ; \
-		 s|/usr/share/app|${X11BASE}/share/gnome/app|g ; \
-		 s|/usr/share/gnome|${X11BASE}/share/gnome|g' ${WRKSRC}/${file}
+		's|/usr/share/control|${LOCALBASE}/share/gnome/control|g ; \
+		 s|/usr/share/app|${LOCALBASE}/share/gnome/app|g ; \
+		 s|/usr/share/gnome|${LOCALBASE}/share/gnome|g' ${WRKSRC}/${file}
 .endfor
 
 post-install:

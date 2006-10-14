@@ -3,11 +3,11 @@
 # Whom:					Manuel Rabade Garica <mig@mig-29.net>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/sysutils/xfce4-wavelan-plugin/Makefile,v 1.1 2006/10/02 20:43:59 ahze Exp $
 
 PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
@@ -22,7 +22,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

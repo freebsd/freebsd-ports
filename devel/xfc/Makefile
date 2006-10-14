@@ -7,7 +7,7 @@
 
 PORTNAME=	xfc
 PORTVERSION=	4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel xfce
 MASTER_SITES=	http://xfc.xfce.org/download/${PORTVERSION}/src/
 
@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GCC=	3.4+
 USE_GNOME=	glib20 gtk20 atk pango pkgconfig libglade2 gnomehack
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

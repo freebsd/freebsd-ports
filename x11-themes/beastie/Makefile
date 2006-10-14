@@ -3,22 +3,25 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-themes/beastie/Makefile,v 1.6 2005/10/26 04:36:11 ahze Exp $
+#    $MCom: ports/x11-themes/beastie/Makefile,v 1.10 2006/07/18 11:56:12 ahze Exp $
 #
 
 PORTNAME=	beastie
-PORTVERSION=	05.10.26
+PORTVERSION=	06.05.03
 PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~ahze/distfiles/
 MASTER_SITE_SUBDIR=	ahze
 DISTNAME=	Beastie-${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gnome theme with FreeBSD Colors
 
+RUN_DEPENDS+=	gtk-engines2>=2.7.4_1:${PORTSDIR}/x11-themes/gtk-engines2 \
+		gnome-themes>=2.11.91:${PORTSDIR}/x11-themes/gnome-themes
+
 WRKSRC=		${WRKDIR}/Beastie
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 THEME_FILES=	README index.theme gtk-2.0/gtkrc
@@ -27,26 +30,6 @@ PLIST_FILES=	${THEME_FILES:S|^|${THEME_DIR}|}
 PLIST_DIRS=	${THEME_DIR}/gtk-2.0 ${THEME_DIR}
 
 .include <bsd.port.pre.mk>
-
-.if exists(${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc)
-WITH_GTKENGINES=	yes
-.endif
-
-.if !defined(WITHOUT_GTKENGINES) || defined(WITH_GTKENGINES)
-RUN_DEPENDS+=	gtk-engines2>=2.6.4:${PORTSDIR}/x11-themes/gtk-engines2 \
-		gnome-themes>=2.11.91:${PORTSDIR}/x11-themes/gnome-themes
-.else
-RUN_DEPENDS+=	clearlooks>=0.6.0:${PORTSDIR}/x11-themes/clearlooks \
-		clearlooks-metacity>=0.6:${PORTSDIR}/x11-themes/clearlooks-metacity
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_GTKENGINES) && !defined(WITH_GTKENGINES)
-	@${ECHO_MSG} "You can disable gtk-engines support (clearlooks)"
-	@${ECHO_MSG} "and use x11-themes/clearlooks for the clearlooks"
-	@${ECHO_MSG} "engine by defining"
-	@${ECHO_MSG} "WITHOUT_GTKENGINES=yes"
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/${THEME_DIR}/gtk-2.0

@@ -63,6 +63,10 @@ share/locale/uk/LC_MESSAGES/gnomesword.mo
 @dirrm share/gnome/help/gnomesword/C/figures
 @dirrm share/gnome/help/gnomesword/C
 @dirrm share/gnome/help/gnomesword
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

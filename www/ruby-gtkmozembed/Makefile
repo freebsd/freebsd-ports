@@ -3,11 +3,12 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/ruby-gtkmozembed/Makefile,v 1.2 2005/10/17 07:05:42 mezz Exp $
+#   $MCom: ports/www/ruby-gtkmozembed/Makefile,v 1.4 2006/08/01 04:53:58 mezz Exp $
 #
 
 PORTNAME=	gtkmozembed
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -36,7 +37,7 @@ DOCS=		COPYING.LIB ChangeLog README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|xulrunner-|${GECKO}-|g ; \
-		s|%%GECKO_PATH%%|${X11BASE}/lib/${GECKO}|g' \
+		s|%%GECKO_PATH%%|${LOCALBASE}/lib/${GECKO}|g' \
 			${WRKSRC}/extconf.rb
 
 post-install:

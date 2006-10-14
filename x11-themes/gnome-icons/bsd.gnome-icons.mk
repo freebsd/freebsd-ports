@@ -15,8 +15,6 @@ NO_BUILD=	yes
 REASON=		Themes may contain artwork not done by the author. \
 		Keep FreeBSD safe if theme author violated copyrights.
 
-USE_X_PREFIX=	yes
-
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
