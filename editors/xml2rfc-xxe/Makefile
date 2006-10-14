@@ -9,24 +9,22 @@ PORTNAME=	xml2rfc-xxe
 PORTVERSION=	0.7.1
 CATEGORIES=	editors
 MASTER_SITES=	http://rtg.ietf.org/~fenner/ietf/
+PKGNAMESUFFIX=	-${XXE_VERSION}
 
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	An xml2rfc configuration for XMLMind XML Editor
 
 RUN_DEPENDS=	xxe:${PORTSDIR}/editors/xxe
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_ZIP=	YES
 NO_BUILD=	YES
 
-XXE_VERSION=	30p1
-PLIST_SUB=	XXE_VERSION=${XXE_VERSION}
+PLIST_SUB=	XXE_DIR=${XXE_DIR}
 
 do-install:
 	@cd ${WRKDIR} && tar cf - xml2rfc | \
-		tar -C ${PREFIX}/lib/xxe-std-${XXE_VERSION}/addon -xf -
+		tar -C ${PREFIX}/lib/${XXE_DIR}/addon -xf -
+
+.include "${.CURDIR}/../xxe/Makefile.inc"
 
 .include <bsd.port.mk>
