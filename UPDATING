@@ -13,7 +13,7 @@ upgrades.
   GNOME has been updated to 2.16 and all GNOME components have been
   moved from X11BASE to LOCALBASE, to upgrade your GNOME desktop and
   applications you will need either sysutils/portupgrade or
-  sysutils/portmanager.
+  sysutils/portmaster.
 
  Portupgrade users:
   pkgdb -Ff
