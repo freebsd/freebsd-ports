@@ -10,6 +10,14 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20061014:
+AUTHOR: gnome@FreeBSD.org
+The following changes have been introduced to the GNOME porting process
+during the GNOME 2.16 update:
+
+* GNOME is now installed into LOCALBASE.  Any port which makes use of the
+  gnomeprefix component will have its PREFIX forced to LOCALBASE
+
 20060930:
 AUTHOR: portmgr@FreeBSD.org
 The following functional changes were made to bsd.port.mk:
