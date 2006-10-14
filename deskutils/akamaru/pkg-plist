@@ -1,0 +1,4 @@
+bin/kiba-dock
+bin/akamaru
+share/akamaru/populate-dock.sh
+@dirrm share/akamaru
