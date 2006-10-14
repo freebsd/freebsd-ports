@@ -3344,6 +3344,7 @@ gl-aspell	ports/textproc/gl-aspell
 gl2ps		ports/print/gl2ps
 glabels		ports/deskutils/glabels
 glade2		ports/devel/glade2
+glade3		ports/devel/glade3
 glademm		ports/devel/glademm
 gladtex		ports/textproc/gladtex
 glame		ports/audio/glame
