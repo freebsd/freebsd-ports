@@ -178,6 +178,7 @@
     SUBDIR += giftrans
     SUBDIR += gimageview
     SUBDIR += gimp
+    SUBDIR += gimp-devel
     SUBDIR += gimp-greycstoration
     SUBDIR += gimp-help
     SUBDIR += gimp-manual-html
