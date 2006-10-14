@@ -208,6 +208,7 @@
     SUBDIR += gnustep-slideshow
     SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr
+    SUBDIR += goocanvas
     SUBDIR += goom
     SUBDIR += gozer
     SUBDIR += gpaint
