@@ -1365,6 +1365,7 @@ compupic	ports/graphics/compupic
 comserv		ports/comms/comserv
 concentration	ports/games/concentration
 concorde	ports/math/concorde
+conduit		ports/deskutils/conduit
 cone		ports/mail/cone
 configgen	ports/devel/configgen
 confregdecode	ports/net-mgmt/confregdecode
