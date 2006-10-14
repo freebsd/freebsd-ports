@@ -178,6 +178,7 @@
     SUBDIR += gnome-web-photo
     SUBDIR += google-sitemapgen
     SUBDIR += goose
+    SUBDIR += gstreamer-plugins-neon
     SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
     SUBDIR += guile-www

@@ -54,7 +54,9 @@
     SUBDIR += gstreamer-plugins
     SUBDIR += gstreamer-plugins-all
     SUBDIR += gstreamer-plugins-all80
+    SUBDIR += gstreamer-plugins-annodex
     SUBDIR += gstreamer-plugins-bad
+    SUBDIR += gstreamer-plugins-bz2
     SUBDIR += gstreamer-plugins-core
     SUBDIR += gstreamer-plugins-core80
     SUBDIR += gstreamer-plugins-dirac80

@@ -374,6 +374,7 @@
     SUBDIR += patanjali
     SUBDIR += patchutils
     SUBDIR += pbs
+    SUBDIR += pciids
     SUBDIR += pdfmap
     SUBDIR += pdmenu
     SUBDIR += pear-Services_Weather

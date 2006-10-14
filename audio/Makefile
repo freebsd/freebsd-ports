@@ -240,6 +240,7 @@
     SUBDIR += gstreamer-plugins-ogg
     SUBDIR += gstreamer-plugins-ogg80
     SUBDIR += gstreamer-plugins-polyp80
+    SUBDIR += gstreamer-plugins-pulse
     SUBDIR += gstreamer-plugins-shout2
     SUBDIR += gstreamer-plugins-shout280
     SUBDIR += gstreamer-plugins-shout80
@@ -464,6 +465,7 @@
     SUBDIR += portaudio
     SUBDIR += praat
     SUBDIR += prokyon3
+    SUBDIR += pulseaudio
     SUBDIR += py-ao
     SUBDIR += py-cddb
     SUBDIR += py-eyed3
