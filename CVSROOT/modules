@@ -1662,6 +1662,7 @@ dbow		ports/databases/dbow
 dbs		ports/benchmarks/dbs
 dbtool		ports/databases/dbtool
 dbus		ports/devel/dbus
+dbus-glib	ports/devel/dbus-glib
 dbus-sharp	ports/devel/dbus-sharp
 dbview		ports/databases/dbview
 dc20ctrl	ports/graphics/dc20ctrl
@@ -3169,6 +3170,7 @@ geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
 gedit		ports/editors/gedit
 gedit-autocomplete-plugin	ports/editors/gedit-autocomplete-plugin
+gedit-plugins	ports/editors/gedit-plugins
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
 geg		ports/math/geg
@@ -3504,6 +3506,7 @@ gnome-media	ports/audio/gnome-media
 gnome-menu-editor	ports/deskutils/gnome-menu-editor
 gnome-menus	ports/x11/gnome-menus
 gnome-mime-data	ports/misc/gnome-mime-data
+gnome-mount	ports/sysutils/gnome-mount
 gnome-mud	ports/net/gnome-mud
 gnome-music-quiz	ports/games/gnome-music-quiz
 gnome-netstatus	ports/net/gnome-netstatus
@@ -3516,6 +3519,7 @@ gnome-pilot	ports/palm/gnome-pilot
 gnome-pilot-conduits	ports/palm/gnome-pilot-conduits
 gnome-pim	ports/deskutils/gnome-pim
 gnome-pkgview	ports/sysutils/gnome-pkgview
+gnome-power-manager	ports/sysutils/gnome-power-manager
 gnome-print	ports/print/gnome-print
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
@@ -3536,10 +3540,12 @@ gnome-user-share	ports/www/gnome-user-share
 gnome-utils	ports/deskutils/gnome-utils
 gnome-verbiste	ports/french/gnome-verbiste
 gnome-vfs	ports/devel/gnome-vfs
+gnome-vfs-monikers	ports/devel/gnome-vfs-monikers
 gnome-vfs-reference	ports/devel/gnome-vfs-reference
 gnome-vfs1	ports/devel/gnome-vfs1
 gnome-vfsmm	ports/devel/gnome-vfsmm
 gnome-vnc	ports/net/gnome-vnc
+gnome-volume-manager	ports/sysutils/gnome-volume-manager
 gnome-web-photo	ports/www/gnome-web-photo
 gnome2		ports/x11/gnome2
 gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
@@ -3799,9 +3805,11 @@ gstreamer-plugins-aalib		ports/graphics/gstreamer-plugins-aalib
 gstreamer-plugins-aalib80	ports/graphics/gstreamer-plugins-aalib80
 gstreamer-plugins-all		ports/multimedia/gstreamer-plugins-all
 gstreamer-plugins-all80		ports/multimedia/gstreamer-plugins-all80
+gstreamer-plugins-annodex	ports/multimedia/gstreamer-plugins-annodex
 gstreamer-plugins-artsd80	ports/audio/gstreamer-plugins-artsd80
 gstreamer-plugins-audiofile80	ports/audio/gstreamer-plugins-audiofile80
 gstreamer-plugins-bad	ports/multimedia/gstreamer-plugins-bad
+gstreamer-plugins-bz2		ports/multimedia/gstreamer-plugins-bz2
 gstreamer-plugins-cairo		ports/graphics/gstreamer-plugins-cairo
 gstreamer-plugins-cairo80	ports/graphics/gstreamer-plugins-cairo80
 gstreamer-plugins-cdaudio80	ports/audio/gstreamer-plugins-cdaudio80
@@ -3834,6 +3842,7 @@ gstreamer-plugins-gnonlin 	ports/multimedia/gstreamer-plugins-gnonlin
 gstreamer-plugins-good	ports/multimedia/gstreamer-plugins-good
 gstreamer-plugins-gsm		ports/audio/gstreamer-plugins-gsm
 gstreamer-plugins-gsm80		ports/audio/gstreamer-plugins-gsm80
+gstreamer-plugins-hal		ports/sysutils/gstreamer-plugins-hal
 gstreamer-plugins-hermes80	ports/graphics/gstreamer-plugins-hermes80
 gstreamer-plugins-ivorbis	ports/audio/gstreamer-plugins-ivorbis
 gstreamer-plugins-ivorbis80	ports/audio/gstreamer-plugins-ivorbis80
@@ -3867,11 +3876,13 @@ gstreamer-plugins-musepack80	ports/audio/gstreamer-plugins-musepack80
 gstreamer-plugins-musicbrainz	ports/audio/gstreamer-plugins-musicbrainz
 gstreamer-plugins-musicbrainz80	ports/audio/gstreamer-plugins-musicbrainz80
 gstreamer-plugins-nas80		ports/audio/gstreamer-plugins-nas80
+gstreamer-plugins-neon		ports/www/gstreamer-plugins-neon
 gstreamer-plugins-ogg		ports/audio/gstreamer-plugins-ogg
 gstreamer-plugins-ogg80		ports/audio/gstreamer-plugins-ogg80
 gstreamer-plugins-pango		ports/x11-toolkits/gstreamer-plugins-pango
 gstreamer-plugins-pango80	ports/x11-toolkits/gstreamer-plugins-pango80
 gstreamer-plugins-polyp80	ports/audio/gstreamer-plugins-polyp80
+gstreamer-plugins-pulse		ports/audio/gstreamer-plugins-pulse
 gstreamer-plugins-sdl		ports/devel/gstreamer-plugins-sdl
 gstreamer-plugins-sdl80		ports/devel/gstreamer-plugins-sdl80
 gstreamer-plugins-shout2	ports/audio/gstreamer-plugins-shout2
@@ -4083,6 +4094,8 @@ hackbot		ports/security/hackbot
 hackedbox	ports/x11-wm/hackedbox
 hafiye		ports/security/hafiye
 hagelslag	ports/net-p2p/hagelslag
+hal		ports/sysutils/hal
+hal-device-manager	ports/sysutils/hal-device-manager
 halflifeserver	ports/games/halflifeserver
 hamfax		ports/comms/hamfax
 hamlib		ports/comms/hamlib
@@ -7984,6 +7997,7 @@ orange		ports/archivers/orange
 orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca
+accessibility_orca	ports/accessibility/orca
 oregano		ports/cad/oregano
 orion		ports/x11-wm/orion
 oroborus	ports/x11-wm/oroborus
@@ -10709,6 +10723,7 @@ pcf2bdf		ports/x11-fonts/pcf2bdf
 pcfclock	ports/sysutils/pcfclock
 pcgen		ports/games/pcgen
 pchar		ports/net/pchar
+pciids		ports/misc/pciids
 pciutils	ports/sysutils/pciutils
 pcl-cvs-emacs20	ports/devel/pcl-cvs-emacs20
 pclock		ports/x11-clocks/pclock
@@ -11407,6 +11422,7 @@ podcastamatic	ports/www/podcastamatic
 podcatcher	ports/multimedia/podcatcher
 poedit		ports/editors/poedit
 poink		ports/net/poink
+policykit	ports/sysutils/policykit
 polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
 polygraph	ports/benchmarks/polygraph
@@ -11780,6 +11796,7 @@ publicfile	ports/www/publicfile
 puf		ports/ftp/puf
 puff		ports/editors/puff
 pugs		ports/lang/pugs
+pulseaudio	ports/audio/pulseaudio
 punbb		ports/www/punbb
 pup		ports/print/pup
 pure-emacs20	ports/irc/pure-emacs20
