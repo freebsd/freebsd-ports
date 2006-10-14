@@ -18,6 +18,8 @@ COMMENT=	Scriptable screen reader
 
 LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
 
+LATEST_LINK=	gnome-orca
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
