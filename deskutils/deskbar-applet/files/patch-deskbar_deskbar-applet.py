@@ -1,6 +1,6 @@
---- deskbar/deskbar-applet.py.orig	Mon Mar 13 23:23:20 2006
-+++ deskbar/deskbar-applet.py	Mon Mar 13 23:23:52 2006
-@@ -42,10 +42,10 @@
+--- deskbar/deskbar-applet.py.orig	Mon May 29 19:20:47 2006
++++ deskbar/deskbar-applet.py	Mon May 29 19:20:54 2006
+@@ -42,10 +42,10 @@ if hasattr(gettext, 'bind_textdomain_cod
  	gettext.bind_textdomain_codeset('deskbar-applet','UTF-8')
  gettext.textdomain('deskbar-applet')
  

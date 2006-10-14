@@ -3,11 +3,11 @@
 # Whom:			Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/multimedia/gstreamer-pitfdll/Makefile,v 1.7 2006/07/23 18:28:35 marcus Exp $
 
 PORTNAME=	gstreamer-pitfdll
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pitfdll
@@ -18,7 +18,6 @@ COMMENT=	GStreamer DLL loader plugin
 
 RUN_DEPENDS=	${LOCALBASE}/lib/win32/wmv8ds32.ax:${PORTSDIR}/multimedia/win32-codecs
 
-USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -36,7 +35,7 @@ post-patch:
 
 post-install:
 # register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
+	-@${LOCALBASE}/bin/gst-register-${GST_VERSION} \
 		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.mk>

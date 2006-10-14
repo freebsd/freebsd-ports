@@ -3,11 +3,11 @@
 # Whom:					Rene Hexel <rh@netbsd.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/textproc/scrollkeeper/Makefile,v 1.2 2006/09/10 00:51:13 mezz Exp $
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -24,12 +24,6 @@ RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 
-# Don't use USE_X_PREFIX - the port doesn't really require X11 to run.
-# The reason why it should be in X11BASE is that GNOME is the primary
-# (only?) consumer of this port, and BadThings[tm] happen if it's not
-# put in the right place.
-PREFIX?=	${X11BASE}
-
 DOCBOOK_VERSION=	4.1.2
 
 USE_BZIP2=	yes
@@ -38,7 +32,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget libxslt intlhack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
 		--with-omfdirs=${PREFIX}/share/gnome/omf \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
@@ -54,12 +48,6 @@ MAN8=	scrollkeeper-preinstall.8 scrollkeeper-rebuilddb.8 \
 	scrollkeeper-update.8
 
 .include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.else
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e   \

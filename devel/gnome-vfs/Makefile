@@ -3,11 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/gnome-vfs/Makefile,v 1.160 2006/10/07 15:04:44 marcus Exp $
 #
 
 PORTNAME=	gnome-vfs
-PORTVERSION=	2.14.2
-PORTREVISION?=	3
+PORTVERSION=	2.16.1
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,6 +18,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
 
+LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
+
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
@@ -25,15 +28,18 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
 		libbonobo ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-openssl \
 		--disable-gnutls \
-		--disable-howl
+		--disable-howl \
+		--enable-hal \
+		--with-hal-mount=/sbin/mount \
+		--with-hal-umount=/sbin/umount
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -76,11 +82,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
+	    	s|/usr/X11R6|${X11BASE}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/libgnomevfs/xdgmime.c
-	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/libgnomevfs/xdgmime.c \
+		${WRKSRC}/libgnomevfs/gnome-vfs-hal-mounts.c
+	@${REINPLACE_CMD} -e 's|-lacl||g' \
+		${WRKSRC}/configure
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 pre-configure:

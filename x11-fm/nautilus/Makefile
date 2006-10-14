@@ -3,11 +3,11 @@
 # Whom:                 		ade, archie
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fm/nautilus2/Makefile,v 1.105 2006/04/13 07:52:42 bland Exp $
+#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.117 2006/10/02 22:48:27 ahze Exp $
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	2.14.3
+PORTVERSION=	2.16.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,12 +21,12 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop eel2 \
-		librsvg2 desktopfileutils
+		librsvg2 desktopfileutils ltverhack
 GNOME_DESKTOP_VERSION=2
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib -liconv" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"

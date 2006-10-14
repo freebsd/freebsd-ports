@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ "$2" != DEINSTALL ] && exit 0
+
+for pair in %%RC_FILES%%; do
+	file=`echo $pair | cut -f 1 -d :`
+	destdir=`echo $pair | cut -f 2 -d :`
+
+	if cmp -s %%DATADIR%%/dist/$file $destdir/$file; then
+		rm -f $destdir/$file
+	fi
+done

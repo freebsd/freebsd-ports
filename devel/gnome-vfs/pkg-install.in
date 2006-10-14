@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gnomevfs2/pkg-install.in,v 1.7 2005/11/15 06:12:28 marcus Exp $
+#   $MCom: ports/devel/gnome-vfs/pkg-install.in,v 1.10 2006/07/22 20:45:37 mezz Exp $
 #
 # Restore gconf keys of libgnome.
 
@@ -9,11 +9,11 @@ if [ "$2" != "POST-INSTALL" ]; then
 	exit 0
 fi
 
-SCHEMAS=%%X11BASE%%/etc/gconf/schemas/desktop_gnome_applications_terminal.schemas
+SCHEMAS=%%LOCALBASE%%/etc/gconf/schemas/desktop_gnome_applications_terminal.schemas
 
 if [ -f ${SCHEMAS} ]; then
-	env GCONF_CONFIG_SOURCE=xml::%%X11BASE%%/etc/gconf/gconf.xml.defaults \
-	%%X11BASE%%/bin/gconftool-2 --makefile-install-rule ${SCHEMAS} \
+	env GCONF_CONFIG_SOURCE=xml::%%LOCALBASE%%/etc/gconf/gconf.xml.defaults \
+	%%LOCALBASE%%/bin/gconftool-2 --makefile-install-rule ${SCHEMAS} \
 		> /dev/null || /usr/bin/true
 fi
 

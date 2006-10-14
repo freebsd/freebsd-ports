@@ -1,17 +1,6 @@
---- configure.orig	Tue Aug 23 20:29:13 2005
-+++ configure	Tue Aug 23 20:30:09 2005
-@@ -26765,10 +26765,6 @@
- rm -f conftest*
- 
- 
--cat >>confdefs.h <<\_ACEOF
--#define _XOPEN_SOURCE_EXTENDED 1
--_ACEOF
--
- 
- cat >>confdefs.h <<\_ACEOF
- #define _XOPEN_SOURCE 1
-@@ -27067,7 +27063,7 @@
+--- configure.orig	Tue Oct  3 08:23:12 2006
++++ configure	Tue Oct  3 08:23:12 2006
+@@ -26464,7 +26464,7 @@
  
  
  
@@ -20,12 +9,3 @@
  do
  as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_func" >&5
-@@ -29400,7 +29396,7 @@
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define LOCALEDIR "$mydatadir/locale"
-+#define LOCALEDIR "$prefix/share/locale"
- _ACEOF
- 
- 

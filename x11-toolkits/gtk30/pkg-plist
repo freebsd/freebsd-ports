@@ -63,6 +63,7 @@ include/gtk-2.0/gtk/gtkadjustment.h
 include/gtk-2.0/gtk/gtkalignment.h
 include/gtk-2.0/gtk/gtkarrow.h
 include/gtk-2.0/gtk/gtkaspectframe.h
+include/gtk-2.0/gtk/gtkassistant.h
 include/gtk-2.0/gtk/gtkbbox.h
 include/gtk-2.0/gtk/gtkbin.h
 include/gtk-2.0/gtk/gtkbindings.h
@@ -72,9 +73,11 @@ include/gtk-2.0/gtk/gtkcalendar.h
 include/gtk-2.0/gtk/gtkcelleditable.h
 include/gtk-2.0/gtk/gtkcelllayout.h
 include/gtk-2.0/gtk/gtkcellrenderer.h
+include/gtk-2.0/gtk/gtkcellrendereraccel.h
 include/gtk-2.0/gtk/gtkcellrenderercombo.h
 include/gtk-2.0/gtk/gtkcellrendererpixbuf.h
 include/gtk-2.0/gtk/gtkcellrendererprogress.h
+include/gtk-2.0/gtk/gtkcellrendererspin.h
 include/gtk-2.0/gtk/gtkcellrenderertext.h
 include/gtk-2.0/gtk/gtkcellrenderertoggle.h
 include/gtk-2.0/gtk/gtkcellview.h
@@ -137,6 +140,7 @@ include/gtk-2.0/gtk/gtkitem.h
 include/gtk-2.0/gtk/gtkitemfactory.h
 include/gtk-2.0/gtk/gtklabel.h
 include/gtk-2.0/gtk/gtklayout.h
+include/gtk-2.0/gtk/gtklinkbutton.h
 include/gtk-2.0/gtk/gtklist.h
 include/gtk-2.0/gtk/gtklistitem.h
 include/gtk-2.0/gtk/gtkliststore.h
@@ -154,10 +158,16 @@ include/gtk-2.0/gtk/gtknotebook.h
 include/gtk-2.0/gtk/gtkobject.h
 include/gtk-2.0/gtk/gtkoldeditable.h
 include/gtk-2.0/gtk/gtkoptionmenu.h
+include/gtk-2.0/gtk/gtkpagesetup.h
 include/gtk-2.0/gtk/gtkpaned.h
+include/gtk-2.0/gtk/gtkpapersize.h
 include/gtk-2.0/gtk/gtkpixmap.h
 include/gtk-2.0/gtk/gtkplug.h
 include/gtk-2.0/gtk/gtkpreview.h
+include/gtk-2.0/gtk/gtkprintcontext.h
+include/gtk-2.0/gtk/gtkprintoperation.h
+include/gtk-2.0/gtk/gtkprintoperationpreview.h
+include/gtk-2.0/gtk/gtkprintsettings.h
 include/gtk-2.0/gtk/gtkprivate.h
 include/gtk-2.0/gtk/gtkprogress.h
 include/gtk-2.0/gtk/gtkprogressbar.h
@@ -167,6 +177,12 @@ include/gtk-2.0/gtk/gtkradiomenuitem.h
 include/gtk-2.0/gtk/gtkradiotoolbutton.h
 include/gtk-2.0/gtk/gtkrange.h
 include/gtk-2.0/gtk/gtkrc.h
+include/gtk-2.0/gtk/gtkrecentchooser.h
+include/gtk-2.0/gtk/gtkrecentchooserdialog.h
+include/gtk-2.0/gtk/gtkrecentchoosermenu.h
+include/gtk-2.0/gtk/gtkrecentchooserwidget.h
+include/gtk-2.0/gtk/gtkrecentfilter.h
+include/gtk-2.0/gtk/gtkrecentmanager.h
 include/gtk-2.0/gtk/gtkruler.h
 include/gtk-2.0/gtk/gtkscale.h
 include/gtk-2.0/gtk/gtkscrollbar.h
@@ -181,12 +197,14 @@ include/gtk-2.0/gtk/gtksizegroup.h
 include/gtk-2.0/gtk/gtksocket.h
 include/gtk-2.0/gtk/gtkspinbutton.h
 include/gtk-2.0/gtk/gtkstatusbar.h
+include/gtk-2.0/gtk/gtkstatusicon.h
 include/gtk-2.0/gtk/gtkstock.h
 include/gtk-2.0/gtk/gtkstyle.h
 include/gtk-2.0/gtk/gtktable.h
 include/gtk-2.0/gtk/gtktearoffmenuitem.h
 include/gtk-2.0/gtk/gtktext.h
 include/gtk-2.0/gtk/gtktextbuffer.h
+include/gtk-2.0/gtk/gtktextbufferrichtext.h
 include/gtk-2.0/gtk/gtktextchild.h
 include/gtk-2.0/gtk/gtktextdisplay.h
 include/gtk-2.0/gtk/gtktextiter.h
@@ -228,6 +246,10 @@ include/gtk-2.0/gtk/gtkvscrollbar.h
 include/gtk-2.0/gtk/gtkvseparator.h
 include/gtk-2.0/gtk/gtkwidget.h
 include/gtk-2.0/gtk/gtkwindow.h
+include/gtk-unix-print-2.0/gtk/gtkpagesetupunixdialog.h
+include/gtk-unix-print-2.0/gtk/gtkprinter.h
+include/gtk-unix-print-2.0/gtk/gtkprintjob.h
+include/gtk-unix-print-2.0/gtk/gtkprintunixdialog.h
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.a
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.la
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.so
@@ -303,6 +325,15 @@ lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xbm.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.a
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.la
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.so
+%%CUPS:%%lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-cups.a
+%%CUPS:%%lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-cups.la
+%%CUPS:%%lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-cups.so
+lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-file.a
+lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-file.la
+lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-file.so
+lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-lpr.a
+lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-lpr.la
+lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-lpr.so
 lib/libgdk-x11-2.0.a
 lib/libgdk-x11-2.0.la
 lib/libgdk-x11-2.0.so
@@ -324,11 +355,13 @@ libdata/pkgconfig/gdk-pixbuf-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
 libdata/pkgconfig/gdk-x11-2.0.pc
 libdata/pkgconfig/gtk+-2.0.pc
+libdata/pkgconfig/gtk+-unix-print-2.0.pc
 libdata/pkgconfig/gtk+-x11-2.0.pc
 share/aclocal/gtk-2.0.m4
 share/gtk-2.0/demo/alphatest.png
 share/gtk-2.0/demo/apple-red.png
 share/gtk-2.0/demo/appwindow.c
+share/gtk-2.0/demo/assistant.c
 share/gtk-2.0/demo/background.jpg
 share/gtk-2.0/demo/button_box.c
 share/gtk-2.0/demo/changedisplay.c
@@ -360,9 +393,11 @@ share/gtk-2.0/demo/menus.c
 share/gtk-2.0/demo/panes.c
 share/gtk-2.0/demo/pickers.c
 share/gtk-2.0/demo/pixbufs.c
+share/gtk-2.0/demo/printing.c
 share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/sizegroup.c
 share/gtk-2.0/demo/stock_browser.c
+share/gtk-2.0/demo/textscroll.c
 share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
@@ -370,6 +405,8 @@ share/locale/af/LC_MESSAGES/gtk20-properties.mo
 share/locale/af/LC_MESSAGES/gtk20.mo
 share/locale/am/LC_MESSAGES/gtk20-properties.mo
 share/locale/am/LC_MESSAGES/gtk20.mo
+share/locale/ang/LC_MESSAGES/gtk20-properties.mo
+share/locale/ang/LC_MESSAGES/gtk20.mo
 share/locale/ar/LC_MESSAGES/gtk20-properties.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20-properties.mo
@@ -382,6 +419,8 @@ share/locale/bg/LC_MESSAGES/gtk20-properties.mo
 share/locale/bg/LC_MESSAGES/gtk20.mo
 share/locale/bn/LC_MESSAGES/gtk20-properties.mo
 share/locale/bn/LC_MESSAGES/gtk20.mo
+share/locale/bn_IN/LC_MESSAGES/gtk20-properties.mo
+share/locale/bn_IN/LC_MESSAGES/gtk20.mo
 share/locale/br/LC_MESSAGES/gtk20-properties.mo
 share/locale/br/LC_MESSAGES/gtk20.mo
 share/locale/bs/LC_MESSAGES/gtk20-properties.mo
@@ -474,12 +513,10 @@ share/locale/nl/LC_MESSAGES/gtk20-properties.mo
 share/locale/nl/LC_MESSAGES/gtk20.mo
 share/locale/nn/LC_MESSAGES/gtk20-properties.mo
 share/locale/nn/LC_MESSAGES/gtk20.mo
-share/locale/no/LC_MESSAGES/gtk20-properties.mo
-share/locale/no/LC_MESSAGES/gtk20.mo
 share/locale/nso/LC_MESSAGES/gtk20-properties.mo
 share/locale/nso/LC_MESSAGES/gtk20.mo
-share/locale/or/LC_MESSAGES/gtk20.mo
 share/locale/or/LC_MESSAGES/gtk20-properties.mo
+share/locale/or/LC_MESSAGES/gtk20.mo
 share/locale/pa/LC_MESSAGES/gtk20-properties.mo
 share/locale/pa/LC_MESSAGES/gtk20.mo
 share/locale/pl/LC_MESSAGES/gtk20-properties.mo
@@ -518,8 +555,12 @@ share/locale/tk/LC_MESSAGES/gtk20-properties.mo
 share/locale/tk/LC_MESSAGES/gtk20.mo
 share/locale/tr/LC_MESSAGES/gtk20-properties.mo
 share/locale/tr/LC_MESSAGES/gtk20.mo
+share/locale/tt/LC_MESSAGES/gtk20-properties.mo
+share/locale/tt/LC_MESSAGES/gtk20.mo
 share/locale/uk/LC_MESSAGES/gtk20-properties.mo
 share/locale/uk/LC_MESSAGES/gtk20.mo
+share/locale/ur/LC_MESSAGES/gtk20-properties.mo
+share/locale/ur/LC_MESSAGES/gtk20.mo
 share/locale/uz/LC_MESSAGES/gtk20-properties.mo
 share/locale/uz/LC_MESSAGES/gtk20.mo
 share/locale/uz@Latn/LC_MESSAGES/gtk20-properties.mo
@@ -541,8 +582,8 @@ share/locale/zh_TW/LC_MESSAGES/gtk20.mo
 share/themes/Default/gtk-2.0-key/gtkrc
 share/themes/Emacs/gtk-2.0-key/gtkrc
 share/themes/Raleigh/gtk-2.0/gtkrc
-@exec /usr/bin/find %%X11BASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
-@unexec /usr/bin/find %%X11BASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
+@exec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
+@unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
 @dirrm share/themes/Raleigh/gtk-2.0
 @dirrm share/themes/Raleigh
 @dirrm share/themes/Emacs/gtk-2.0-key
@@ -550,6 +591,8 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrm share/themes/Default/gtk-2.0-key
 @dirrm share/gtk-2.0/demo
 @dirrm share/gtk-2.0
+@dirrm include/gtk-unix-print-2.0/gtk
+@dirrm include/gtk-unix-print-2.0
 @dirrm include/gtk-2.0/gtk
 @dirrm include/gtk-2.0/gdk-pixbuf-xlib
 @dirrm include/gtk-2.0/gdk-pixbuf
@@ -560,41 +603,90 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK_VERSION%%/engines
 @dirrmtry share/themes/Default
 @dirrmtry share/themes
+@dirrmtry lib/gtk-2.0/modules
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/printbackends
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/loaders
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/immodules
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/engines
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%
+@dirrmtry lib/gtk-2.0
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/yi/LC_MESSAGES
 @dirrmtry share/locale/yi
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@Latn/LC_MESSAGES
 @dirrmtry share/locale/uz@Latn
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
 @dirrmtry share/locale/ia/LC_MESSAGES
 @dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrmtry share/locale/az_IR/LC_MESSAGES
 @dirrmtry share/locale/az_IR
-@dirrmtry lib/gtk-2.0/modules
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/loaders
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/immodules
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/engines
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%
-@dirrmtry lib/gtk-2.0
+@dirrmtry share/locale/ang/LC_MESSAGES
+@dirrmtry share/locale/ang

@@ -19,7 +19,25 @@ lib/librsvg-2.la
 lib/librsvg-2.so
 lib/librsvg-2.so.2
 libdata/pkgconfig/librsvg-2.0.pc
+share/doc/rsvg/home.png
+share/doc/rsvg/index.html
+share/doc/rsvg/index.sgml
+share/doc/rsvg/ix01.html
+share/doc/rsvg/left.png
+share/doc/rsvg/pt02.html
+share/doc/rsvg/pt03.html
+share/doc/rsvg/pt04.html
+share/doc/rsvg/right.png
+share/doc/rsvg/rsvg-Cairo.html
+share/doc/rsvg/rsvg-Core-API.html
+share/doc/rsvg/rsvg-GdkPixbuf.html
+share/doc/rsvg/rsvg.devhelp
+share/doc/rsvg/rsvg.devhelp2
+share/doc/rsvg/rsvg.html
+share/doc/rsvg/style.css
+share/doc/rsvg/up.png
 share/gnome/pixmaps/svg-viewer.svg
+@dirrm share/doc/rsvg
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true

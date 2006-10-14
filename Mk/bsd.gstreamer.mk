@@ -7,7 +7,7 @@
 # Date:		4 Oct 2004
 #
 # $FreeBSD$
-#    $MCom: ports/Mk/bsd.gstreamer.mk,v 1.24 2006/04/25 14:45:31 ahze Exp $
+#    $MCom: ports/Mk/bsd.gstreamer.mk,v 1.38 2006/10/10 20:22:01 mezz Exp $
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gstreamer_Pre_Include)
 
@@ -49,8 +49,8 @@ Gstreamer_Pre_Include=		bsd.gstreamer.mk
 
 GSTREAMER_PORT=		${PORTSDIR}/multimedia/gstreamer-plugins
 GSTREAMER80_PORT=	${GSTREAMER_PORT}80
-_GST_LIB_BASE=		${X11BASE}/lib/gstreamer-${GST_VERSION}
-_GST80_LIB_BASE=	${X11BASE}/lib/gstreamer-${GST80_VERSION}
+_GST_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST_VERSION}
+_GST80_LIB_BASE=	${LOCALBASE}/lib/gstreamer-${GST80_VERSION}
 GST_VERSION=		0.10
 GST_MINOR_VERSION=	.0
 GST80_VERSION=		0.8
@@ -60,11 +60,11 @@ GST80_SHLIB_VERSION=	1
 #
 # These are the current supported gstreamer-plugins modules
 #
-_USE_GSTREAMER_ALL=	a52dec aalib bad cairo cdparanoia dts \
+_USE_GSTREAMER_ALL=	a52dec aalib annodex bad bz2 cairo cdparanoia dts \
 			dv dvd esound faac faad ffmpeg flac gconf gnomevfs \
-			gnonlin good gsm ivorbis jpeg ladspa lame libcaca \
+			gnonlin good gsm hal ivorbis jpeg ladspa lame libcaca \
 			libmms libpng libvisual mad mpeg2dec \
-			musepack ogg pango python sdl shout2 sidplay \
+			musepack neon ogg pango pulse python sdl shout2 sidplay \
 			speex theora ugly vorbis wavpack xvid
 _USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia \
 			dirac dts dv dvd esound faac faad ffmpeg flac \
@@ -72,8 +72,8 @@ _USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia
 			jpeg-mmx ladspa lame libcaca libfame libmms libmng \
 			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
 			musepack musicbrainz nas sdl shout shout2 sidplay \
-			smoothwave sndfile speex theora ogg pango polyp python \
-			swfdec vorbis wavpack x264 xvid
+			smoothwave sndfile speex theora ogg pango polyp \
+			python swfdec vorbis wavpack x264 xvid
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes
 OTHER_GSTREAMER80_PLUGINS+=	${OTHER_GSTREAMER_PLUGINS}
@@ -115,6 +115,8 @@ gsm_DEPENDS=	audio/gstreamer-plugins-gsm
 
 ivorbis_DEPENDS=	audio/gstreamer-plugins-ivorbis
 
+hal_DEPENDS=	sysutils/gstreamer-plugins-hal
+
 jack_DEPENDS=	audio/gstreamer-plugins-jack
 
 ladspa_DEPENDS=	audio/gstreamer-plugins-ladspa
@@ -131,9 +133,14 @@ musicbrainz_DEPENDS=	audio/gstreamer-plugins-musicbrainz
 
 nas_DEPENDS=	audio/gstreamer-plugins-nas
 
+neon_DEPENDS=	www/gstreamer-plugins-neon
+
 ogg_DEPENDS=	audio/gstreamer-plugins-ogg
 
 polyp_DEPENDS=	audio/gstreamer-plugins-polyp
+
+pulse_DEPENDS=	audio/gstreamer-plugins-pulse
+pulse_GST_VERSION=	0.9.3
 
 shout_DEPENDS=	audio/gstreamer-plugins-shout
 
@@ -159,6 +166,8 @@ sdl_DEPENDS=	devel/gstreamer-plugins-sdl
 # Graphics Plugins Section
 aalib_DEPENDS=	graphics/gstreamer-plugins-aalib
 
+annodex_DEPENDS=	multimedia/gstreamer-plugins-annodex
+
 cairo_DEPENDS=	graphics/gstreamer-plugins-cairo
 
 gdkpixbuf_DEPENDS=	graphics/gstreamer-plugins-gdkpixbuf
@@ -181,6 +190,8 @@ swfdec_DEPENDS=	graphics/gstreamer-plugins-swfdec
 
 # Multimedia Plugins Section
 bad_DEPENDS=	multimedia/gstreamer-plugins-bad
+
+bz2_DEPENDS=	multimedia/gstreamer-plugins-bz2
 
 dirac_DEPENDS=	multimedia/gstreamer-plugins-dirac
 
@@ -210,14 +221,14 @@ mpeg2enc_DEPENDS=	multimedia/gstreamer-plugins-mpeg2enc
 
 mplex_DEPENDS=	multimedia/gstreamer-plugins-mplex
 
-python_DEPENDS=		multimedia/py-gstreamer
-python_NAME=		gstreamer
-python_GST80_SUFX=	80
-python_GST80_PREFIX=	${PYTHON_PKGNAMEPREFIX}
-python_GST_PREFIX=	${PYTHON_PKGNAMEPREFIX}
-python_GST_SUFX=	# empty
-python_GST80_VERSION=	0.8.2
-python_GST_VERSION=	0.10.4
+python_DEPENDS=	multimedia/py-gstreamer
+python_NAME=	gstreamer
+python_GST80_SUFX=      80
+python_GST80_PREFIX=    ${PYTHON_PKGNAMEPREFIX}
+python_GST_PREFIX=      ${PYTHON_PKGNAMEPREFIX}
+python_GST_SUFX=        # empty
+python_GST80_VERSION=   0.8.2
+python_GST_VERSION=     0.10.4
 
 theora_DEPENDS=	multimedia/gstreamer-plugins-theora
 
@@ -242,15 +253,6 @@ ${ext}_GST80_SUFX?=	80
 ${ext}_GST80_PREFIX?=	gstreamer-plugins-
 ${ext}_GST80_VERSION?=	${GST80_VERSION}${GST80_MINOR_VERSION}
 ${ext}_NAME?=		${ext}
-.endfor
-.for ext in ${USE_GSTREAMER}
-${ext}_GST_PREFIX?=	gstreamer-plugins-
-${ext}_GST_VERSION?=	${GST_VERSION}${GST_MINOR_VERSION}
-${ext}_NAME?=		${ext}
-.endfor
-
-.if defined(USE_GSTREAMER80)
-.for ext in ${USE_GSTREAMER80}
 . if ${_USE_GSTREAMER80_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX})
 BUILD_DEPENDS+=	${${ext}_GST80_PREFIX}${${ext}_NAME}${${ext}_GST80_SUFX}>=${${ext}_GST80_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX}
 RUN_DEPENDS+=	${${ext}_GST80_PREFIX}${${ext}_NAME}${${ext}_GST80_SUFX}>=${${ext}_GST80_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX}
@@ -258,9 +260,10 @@ RUN_DEPENDS+=	${${ext}_GST80_PREFIX}${${ext}_NAME}${${ext}_GST80_SUFX}>=${${ext}
 IGNORE=	cannot install: unknown gstreamer-plugin -- ${ext}
 . endif
 .endfor
-.endif
-.if defined(USE_GSTREAMER)
 .for ext in ${USE_GSTREAMER}
+${ext}_GST_PREFIX?=	gstreamer-plugins-
+${ext}_GST_VERSION?=	${GST_VERSION}${GST_MINOR_VERSION}
+${ext}_NAME?=		${ext}
 . if ${_USE_GSTREAMER_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_DEPENDS})
 BUILD_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
 RUN_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
@@ -268,7 +271,6 @@ RUN_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${PORTSD
 IGNORE=	cannot install: unknown gstreamer-plugin -- ${ext}
 . endif
 .endfor
-.endif
 
 # The End
 .endif

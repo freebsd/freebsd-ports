@@ -4,14 +4,30 @@ include/totem/1/plparser/totem-disc.h
 include/totem/1/plparser/totem-pl-parser-builtins.h
 include/totem/1/plparser/totem-pl-parser-features.h
 include/totem/1/plparser/totem-pl-parser.h
-%%MOZILLA%%lib/browser_plugins/libtotem_mozilla.a
-%%MOZILLA%%lib/browser_plugins/libtotem_mozilla.la
-%%MOZILLA%%lib/browser_plugins/libtotem_mozilla.so
-%%MOZILLA%%lib/browser_plugins/libtotem_mozilla.xpt
+%%MOZILLA%%lib/browser_plugins/libtotem-basic-plugin.a
+%%MOZILLA%%lib/browser_plugins/libtotem-basic-plugin.la
+%%MOZILLA%%lib/browser_plugins/libtotem-basic-plugin.so
+%%MOZILLA%%lib/browser_plugins/libtotem-basic-plugin.xpt
+%%MOZILLA%%lib/browser_plugins/libtotem-complex-plugin.a
+%%MOZILLA%%lib/browser_plugins/libtotem-complex-plugin.la
+%%MOZILLA%%lib/browser_plugins/libtotem-complex-plugin.so
+%%MOZILLA%%lib/browser_plugins/libtotem-complex-plugin.xpt
+%%MOZILLA%%lib/browser_plugins/libtotem-gmp-plugin.a
+%%MOZILLA%%lib/browser_plugins/libtotem-gmp-plugin.la
+%%MOZILLA%%lib/browser_plugins/libtotem-gmp-plugin.so
+%%MOZILLA%%lib/browser_plugins/libtotem-gmp-plugin.xpt
+%%MOZILLA%%lib/browser_plugins/libtotem-mully-plugin.a
+%%MOZILLA%%lib/browser_plugins/libtotem-mully-plugin.la
+%%MOZILLA%%lib/browser_plugins/libtotem-mully-plugin.so
+%%MOZILLA%%lib/browser_plugins/libtotem-mully-plugin.xpt
+%%MOZILLA%%lib/browser_plugins/libtotem-narrowspace-plugin.a
+%%MOZILLA%%lib/browser_plugins/libtotem-narrowspace-plugin.la
+%%MOZILLA%%lib/browser_plugins/libtotem-narrowspace-plugin.so
+%%MOZILLA%%lib/browser_plugins/libtotem-narrowspace-plugin.xpt
 lib/libtotem-plparser.a
 lib/libtotem-plparser.la
 lib/libtotem-plparser.so
-lib/libtotem-plparser.so.2
+lib/libtotem-plparser.so.1
 lib/nautilus/extensions-1.0/libtotem-properties-page.a
 lib/nautilus/extensions-1.0/libtotem-properties-page.la
 lib/nautilus/extensions-1.0/libtotem-properties-page.so
@@ -82,12 +98,16 @@ share/gnome/omf/totem/totem-es.omf
 share/gnome/omf/totem/totem-fr.omf
 share/gnome/omf/totem/totem-ru.omf
 share/gnome/omf/totem/totem-uk.omf
-share/gnome/pixmaps/media-player-48.png
 share/gnome/pixmaps/vanity.png
+%%MOZILLA%%share/gnome/totem/doc/totemIBasicPlayer.html
+%%MOZILLA%%share/gnome/totem/doc/totemIComplexPlayer.html
+%%MOZILLA%%share/gnome/totem/doc/totemIGMPControls.html
+%%MOZILLA%%share/gnome/totem/doc/totemIGMPPlayer.html
+%%MOZILLA%%share/gnome/totem/doc/totemIMullYPlayer.html
+%%MOZILLA%%share/gnome/totem/doc/totemINarrowSpacePlayer.html
 share/gnome/totem/filmholes-big-left.png
 share/gnome/totem/filmholes-big-right.png
 share/gnome/totem/filmholes.png
-share/gnome/totem/media-player-48.png
 share/gnome/totem/mozilla-viewer.glade
 share/gnome/totem/playlist-playing.png
 share/gnome/totem/playlist.glade
@@ -107,18 +127,25 @@ share/gnome/totem/totem_logo.png
 share/gnome/totem/uri.glade
 share/gnome/totem/vanity.glade
 share/gnome/totem/vanity.png
+share/icons/hicolor/16x16/apps/totem.png
+share/icons/hicolor/22x22/apps/totem.png
+share/icons/hicolor/24x24/apps/totem.png
+share/icons/hicolor/32x32/apps/totem.png
+share/icons/hicolor/scalable/apps/totem.svg
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/ar/LC_MESSAGES/totem.mo
 share/locale/az/LC_MESSAGES/totem.mo
 share/locale/be/LC_MESSAGES/totem.mo
 share/locale/bg/LC_MESSAGES/totem.mo
 share/locale/bn/LC_MESSAGES/totem.mo
+share/locale/bn_IN/LC_MESSAGES/totem.mo
 share/locale/br/LC_MESSAGES/totem.mo
 share/locale/ca/LC_MESSAGES/totem.mo
 share/locale/cs/LC_MESSAGES/totem.mo
 share/locale/cy/LC_MESSAGES/totem.mo
 share/locale/da/LC_MESSAGES/totem.mo
 share/locale/de/LC_MESSAGES/totem.mo
+share/locale/dz/LC_MESSAGES/totem.mo
 share/locale/el/LC_MESSAGES/totem.mo
 share/locale/en_CA/LC_MESSAGES/totem.mo
 share/locale/en_GB/LC_MESSAGES/totem.mo
@@ -139,19 +166,21 @@ share/locale/id/LC_MESSAGES/totem.mo
 share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
-share/locale/ka/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/ku/LC_MESSAGES/totem.mo
 share/locale/lt/LC_MESSAGES/totem.mo
 share/locale/lv/LC_MESSAGES/totem.mo
+share/locale/ka/LC_MESSAGES/totem.mo
 share/locale/mg/LC_MESSAGES/totem.mo
 share/locale/mk/LC_MESSAGES/totem.mo
 share/locale/ml/LC_MESSAGES/totem.mo
+share/locale/mr/LC_MESSAGES/totem.mo
 share/locale/ms/LC_MESSAGES/totem.mo
 share/locale/nb/LC_MESSAGES/totem.mo
 share/locale/ne/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
 share/locale/nn/LC_MESSAGES/totem.mo
+share/locale/or/LC_MESSAGES/totem.mo
 share/locale/pa/LC_MESSAGES/totem.mo
 share/locale/pl/LC_MESSAGES/totem.mo
 share/locale/pt/LC_MESSAGES/totem.mo
@@ -160,10 +189,12 @@ share/locale/ro/LC_MESSAGES/totem.mo
 share/locale/ru/LC_MESSAGES/totem.mo
 share/locale/rw/LC_MESSAGES/totem.mo
 share/locale/sk/LC_MESSAGES/totem.mo
+share/locale/sl/LC_MESSAGES/totem.mo
 share/locale/sq/LC_MESSAGES/totem.mo
 share/locale/sr/LC_MESSAGES/totem.mo
 share/locale/sr@Latn/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
+share/locale/ta/LC_MESSAGES/totem.mo
 share/locale/te/LC_MESSAGES/totem.mo
 share/locale/th/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
@@ -175,10 +206,7 @@ share/locale/xh/LC_MESSAGES/totem.mo
 share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_HK/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
+@dirrm share/gnome/totem/doc
 @dirrm share/gnome/totem
 @dirrm share/gnome/omf/totem
 @dirrm share/gnome/help/totem/uk/figures
@@ -196,8 +224,65 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/help/totem/C/figures
 @dirrm share/gnome/help/totem/C
 @dirrm share/gnome/help/totem
+@dirrmtry lib/browser_plugins
 @dirrm include/totem/1/plparser
 @dirrm include/totem/1
 @dirrm include/totem
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue May 16 11:50:31 2006
-+++ Makefile.in	Tue May 16 11:55:38 2006
-@@ -1043,21 +1043,29 @@
+--- Makefile.in.orig	Wed Oct 11 01:31:58 2006
++++ Makefile.in	Wed Oct 11 01:34:55 2006
+@@ -1057,21 +1056,29 @@ uninstall-info: uninstall-info-recursive
  avahi-core.pc: avahi-core.pc.in
  	sed -e 's,@prefix\@,$(prefix),g' \
  	    -e 's,@libdir\@,$(libdir),g' \
@@ -30,7 +30,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
  
  @HAVE_DBUS_TRUE@@HAVE_MONO_TRUE@avahi-sharp.pc: avahi-sharp.pc.in
-@@ -1068,6 +1076,8 @@
+@@ -1082,6 +1089,8 @@ avahi-core.pc: avahi-core.pc.in
  @HAVE_GLIB_TRUE@avahi-glib.pc: avahi-glib.pc.in
  @HAVE_GLIB_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
  @HAVE_GLIB_TRUE@	    -e 's,@libdir\@,$(libdir),g' \

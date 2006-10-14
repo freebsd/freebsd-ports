@@ -1,15 +1,15 @@
---- moz-plugin/Makefile.in.orig	Sat Apr  1 15:25:20 2006
-+++ moz-plugin/Makefile.in	Sat Apr  1 15:27:58 2006
-@@ -246,7 +246,7 @@ sbindir = @sbindir@
+--- moz-plugin/Makefile.in.orig	Thu Jul 27 11:13:53 2006
++++ moz-plugin/Makefile.in	Thu Jul 27 11:14:38 2006
+@@ -241,7 +241,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
--plugindir = $(libdir)/mozilla/plugins/
-+plugindir = $(libdir)/browser_plugins/
+-plugindir = $(libdir)/mozilla/plugins
++plugindir = $(libdir)/browser_plugins
  @WITH_MOZILLA_FALSE@plugin_LTLIBRARIES = 
  @WITH_MOZILLA_TRUE@plugin_LTLIBRARIES = libmozsvgdec.la
  INCLUDES = $(MOZILLA_CFLAGS) -DBINDIR=\"$(bindir)/\" $(GLIB_CFLAGS) $(GDK_X11_CFLAGS)
-@@ -289,7 +289,7 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(
+@@ -284,7 +284,7 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(
  	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	@$(NORMAL_INSTALL)

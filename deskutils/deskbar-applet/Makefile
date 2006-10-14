@@ -3,12 +3,13 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.24 2006/04/17 07:51:13 marcus Exp $
+#    $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.42 2006/09/07 19:05:16 marcus Exp $
 #
 
 PORTNAME=	deskbar-applet
-PORTVERSION=	2.14.2
-CATEGORIES=	deskutils
+PORTVERSION=	2.16.0
+PORTREVISION=	1
+CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
@@ -18,11 +19,12 @@ COMMENT=	Gnome panel applet similar to Google's (Windows only) Deskbar
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnomedesktop intlhack
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-beagle
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -55,9 +57,9 @@ CONFIGURE_ENV+=	DISPLAY="localhost:1001"
 
 post-patch:
 	@${FIND} ${WRKSRC}/deskbar -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/share/applications|${X11BASE}/share/gnome/applications|g'
+		's|/usr/share/applications|${LOCALBASE}/share/gnome/applications|g'
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
-		s|%%X11BASE%%|${X11BASE}|g' \
+		s|%%X11BASE%%|${X11BASE}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/deskbar/handlers/mozilla.py \
 		${WRKSRC}/deskbar/Utils.py
 

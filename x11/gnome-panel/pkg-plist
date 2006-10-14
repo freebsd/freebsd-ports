@@ -86,10 +86,6 @@ share/gnome/help/fish-applet-2/ko/figures/fish_applet.png
 share/gnome/help/fish-applet-2/ko/figures/fish_settings.png
 share/gnome/help/fish-applet-2/ko/fish-applet-2.xml
 share/gnome/help/fish-applet-2/ko/legal.xml
-share/gnome/help/fish-applet-2/sv/figures/fish_applet.png
-share/gnome/help/fish-applet-2/sv/figures/fish_settings.png
-share/gnome/help/fish-applet-2/sv/fish-applet-2.xml
-share/gnome/help/fish-applet-2/sv/legal.xml
 share/gnome/help/fish-applet-2/zh_CN/figures/fish_applet.png
 share/gnome/help/fish-applet-2/zh_CN/figures/fish_settings.png
 share/gnome/help/fish-applet-2/zh_CN/fish-applet-2.xml
@@ -147,7 +143,6 @@ share/gnome/help/window-list/ko/figures/window_list_group_applet.png
 share/gnome/help/window-list/ko/legal.xml
 share/gnome/help/window-list/ko/window-list.xml
 share/gnome/help/window-list/sv/figures/window_list_applet.png
-share/gnome/help/window-list/sv/figures/window_list_group.png
 share/gnome/help/window-list/sv/figures/window_list_group_applet.png
 share/gnome/help/window-list/sv/legal.xml
 share/gnome/help/window-list/sv/window-list.xml
@@ -156,7 +151,6 @@ share/gnome/help/window-list/uk/figures/window_list_group_applet.png
 share/gnome/help/window-list/uk/legal.xml
 share/gnome/help/window-list/uk/window-list.xml
 share/gnome/help/window-list/zh_CN/figures/window_list_applet.png
-share/gnome/help/window-list/zh_CN/figures/window_list_group.png
 share/gnome/help/window-list/zh_CN/figures/window_list_group_applet.png
 share/gnome/help/window-list/zh_CN/legal.xml
 share/gnome/help/window-list/zh_CN/window-list.xml
@@ -192,7 +186,6 @@ share/gnome/help/workspace-switcher/nl/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/nl/legal.xml
 share/gnome/help/workspace-switcher/nl/workspace-switcher.xml
 share/gnome/help/workspace-switcher/sv/figures/workspace_switcher_applet.png
-share/gnome/help/workspace-switcher/sv/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/sv/legal.xml
 share/gnome/help/workspace-switcher/sv/workspace-switcher.xml
 share/gnome/help/workspace-switcher/uk/figures/workspace_switcher_applet.png
@@ -230,19 +223,15 @@ share/gnome/omf/fish/fish-uk.omf
 share/gnome/omf/gnome-panel/fish-applet-2-de.omf
 share/gnome/omf/gnome-panel/fish-applet-2-ja.omf
 share/gnome/omf/gnome-panel/fish-applet-2-ko.omf
-share/gnome/omf/gnome-panel/fish-applet-2-sv.omf
 share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf
 share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf
 share/gnome/omf/gnome-panel/window-list-de.omf
 share/gnome/omf/gnome-panel/window-list-ja.omf
 share/gnome/omf/gnome-panel/window-list-ko.omf
-share/gnome/omf/gnome-panel/window-list-sv.omf
-share/gnome/omf/gnome-panel/window-list-zh_CN.omf
 share/gnome/omf/gnome-panel/window-list-zh_TW.omf
 share/gnome/omf/gnome-panel/workspace-switcher-de.omf
 share/gnome/omf/gnome-panel/workspace-switcher-ja.omf
 share/gnome/omf/gnome-panel/workspace-switcher-ko.omf
-share/gnome/omf/gnome-panel/workspace-switcher-sv.omf
 share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf
 share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf
 share/gnome/omf/window-list/window-list-C.omf
@@ -271,11 +260,57 @@ share/gnome/panel/pixmaps/gnome-gegl2-2.png
 share/gnome/panel/pixmaps/gnome-gegl2.png
 share/gnome/panel/pixmaps/monkey.png
 share/gnome/panel/pixmaps/oldwanda.png
-share/icons/hicolor/48x48/apps/gnome-fish.png
-share/icons/hicolor/48x48/apps/gnome-gegl.png
-share/icons/hicolor/48x48/apps/gnome-main-menu.png
-share/icons/hicolor/48x48/apps/panel-force-quit.png
-share/icons/hicolor/48x48/apps/panel-separator.png
+share/gnome/panel/pixmaps/wanda.png
+share/icons/hicolor/16x16/apps/gnome-panel-clock.png
+share/icons/hicolor/16x16/apps/gnome-panel-drawer.png
+share/icons/hicolor/16x16/apps/gnome-panel-fish.png
+share/icons/hicolor/16x16/apps/gnome-panel-force-quit.png
+share/icons/hicolor/16x16/apps/gnome-panel-notification-area.png
+share/icons/hicolor/16x16/apps/gnome-panel-separator.png
+share/icons/hicolor/16x16/apps/gnome-panel-window-list.png
+share/icons/hicolor/16x16/apps/gnome-panel-window-menu.png
+share/icons/hicolor/16x16/apps/gnome-panel-workspace-switcher.png
+share/icons/hicolor/16x16/apps/gnome-panel.png
+share/icons/hicolor/22x22/apps/gnome-panel-clock.png
+share/icons/hicolor/22x22/apps/gnome-panel-drawer.png
+share/icons/hicolor/22x22/apps/gnome-panel-fish.png
+share/icons/hicolor/22x22/apps/gnome-panel-force-quit.png
+share/icons/hicolor/22x22/apps/gnome-panel-notification-area.png
+share/icons/hicolor/22x22/apps/gnome-panel-separator.png
+share/icons/hicolor/22x22/apps/gnome-panel-window-list.png
+share/icons/hicolor/22x22/apps/gnome-panel-window-menu.png
+share/icons/hicolor/22x22/apps/gnome-panel-workspace-switcher.png
+share/icons/hicolor/22x22/apps/gnome-panel.png
+share/icons/hicolor/24x24/apps/gnome-panel-clock.png
+share/icons/hicolor/24x24/apps/gnome-panel-drawer.png
+share/icons/hicolor/24x24/apps/gnome-panel-fish.png
+share/icons/hicolor/24x24/apps/gnome-panel-force-quit.png
+share/icons/hicolor/24x24/apps/gnome-panel-notification-area.png
+share/icons/hicolor/24x24/apps/gnome-panel-separator.png
+share/icons/hicolor/24x24/apps/gnome-panel-window-list.png
+share/icons/hicolor/24x24/apps/gnome-panel-window-menu.png
+share/icons/hicolor/24x24/apps/gnome-panel-workspace-switcher.png
+share/icons/hicolor/24x24/apps/gnome-panel.png
+share/icons/hicolor/32x32/apps/gnome-panel-clock.png
+share/icons/hicolor/32x32/apps/gnome-panel-drawer.png
+share/icons/hicolor/32x32/apps/gnome-panel-fish.png
+share/icons/hicolor/32x32/apps/gnome-panel-force-quit.png
+share/icons/hicolor/32x32/apps/gnome-panel-notification-area.png
+share/icons/hicolor/32x32/apps/gnome-panel-separator.png
+share/icons/hicolor/32x32/apps/gnome-panel-window-list.png
+share/icons/hicolor/32x32/apps/gnome-panel-window-menu.png
+share/icons/hicolor/32x32/apps/gnome-panel-workspace-switcher.png
+share/icons/hicolor/32x32/apps/gnome-panel.png
+share/icons/hicolor/scalable/apps/gnome-panel-clock.svg
+share/icons/hicolor/scalable/apps/gnome-panel-drawer.svg
+share/icons/hicolor/scalable/apps/gnome-panel-fish.svg
+share/icons/hicolor/scalable/apps/gnome-panel-force-quit.svg
+share/icons/hicolor/scalable/apps/gnome-panel-notification-area.svg
+share/icons/hicolor/scalable/apps/gnome-panel-separator.svg
+share/icons/hicolor/scalable/apps/gnome-panel-window-list.svg
+share/icons/hicolor/scalable/apps/gnome-panel-window-menu.svg
+share/icons/hicolor/scalable/apps/gnome-panel-workspace-switcher.svg
+share/icons/hicolor/scalable/apps/gnome-panel.svg
 share/locale/af/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
@@ -360,34 +395,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ka/LC_MESSAGES
-@dirrmtry share/locale/ka
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
 @dirrm share/gnome/panel/pixmaps
 @dirrm share/gnome/panel/glade
 @dirrm share/gnome/omf/workspace-switcher
@@ -460,8 +467,6 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/fish-applet-2/zh_TW
 @dirrm share/gnome/help/fish-applet-2/zh_CN/figures
 @dirrm share/gnome/help/fish-applet-2/zh_CN
-@dirrm share/gnome/help/fish-applet-2/sv/figures
-@dirrm share/gnome/help/fish-applet-2/sv
 @dirrm share/gnome/help/fish-applet-2/ko/figures
 @dirrm share/gnome/help/fish-applet-2/ko
 @dirrm share/gnome/help/fish-applet-2/ja/figures
@@ -500,3 +505,73 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/clock/C
 @dirrm share/gnome/help/clock
 @dirrm include/panel-2.0
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@ije/LC_MESSAGES
+@dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

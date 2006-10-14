@@ -18,29 +18,42 @@ share/gnome/help/evince/el/evince.xml
 share/gnome/help/evince/el/figures/evince_start_window.png
 share/gnome/help/evince/es/evince.xml
 share/gnome/help/evince/es/figures/evince_start_window.png
+share/gnome/help/evince/fi/evince.xml
+share/gnome/help/evince/fi/figures/evince_start_window.png
+share/gnome/help/evince/fr/evince.xml
+share/gnome/help/evince/fr/figures/evince_start_window.png
+share/gnome/help/evince/it/evince.xml
+share/gnome/help/evince/it/figures/evince_start_window.png
 share/gnome/help/evince/nl/evince.xml
 share/gnome/help/evince/nl/figures/evince_start_window.png
 share/gnome/help/evince/ru/evince.xml
 share/gnome/help/evince/ru/figures/evince_start_window.png
 share/gnome/help/evince/sr/evince.xml
 share/gnome/help/evince/sr/figures/evince_start_window.png
+share/gnome/help/evince/sv/evince.xml
+share/gnome/help/evince/sv/figures/evince_start_window.png
 share/gnome/help/evince/uk/evince.xml
 share/gnome/help/evince/uk/figures/evince_start_window.png
 share/gnome/omf/evince/evince-C.omf
 share/gnome/omf/evince/evince-bg.omf
 share/gnome/omf/evince/evince-el.omf
 share/gnome/omf/evince/evince-es.omf
+share/gnome/omf/evince/evince-fi.omf
+share/gnome/omf/evince/evince-fr.omf
+share/gnome/omf/evince/evince-it.omf
 share/gnome/omf/evince/evince-nl.omf
 share/gnome/omf/evince/evince-ru.omf
 share/gnome/omf/evince/evince-sr.omf
+share/gnome/omf/evince/evince-sv.omf
 share/gnome/omf/evince/evince-uk.omf
-share/icons/hicolor/16x16/apps/evince-16.png
-share/icons/hicolor/22x22/apps/evince-22.png
+share/icons/hicolor/16x16/apps/evince.png
+share/icons/hicolor/22x22/apps/evince.png
 share/icons/hicolor/48x48/apps/evince.png
 share/icons/hicolor/scalable/apps/evince.svg
 share/locale/be/LC_MESSAGES/evince.mo
 share/locale/bg/LC_MESSAGES/evince.mo
 share/locale/bn/LC_MESSAGES/evince.mo
+share/locale/bn_IN/LC_MESSAGES/evince.mo
 share/locale/br/LC_MESSAGES/evince.mo
 share/locale/ca/LC_MESSAGES/evince.mo
 share/locale/cs/LC_MESSAGES/evince.mo
@@ -71,10 +84,13 @@ share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
 share/locale/mk/LC_MESSAGES/evince.mo
+share/locale/ml/LC_MESSAGES/evince.mo
+share/locale/mr/LC_MESSAGES/evince.mo
 share/locale/nb/LC_MESSAGES/evince.mo
 share/locale/ne/LC_MESSAGES/evince.mo
 share/locale/nl/LC_MESSAGES/evince.mo
 share/locale/nn/LC_MESSAGES/evince.mo
+share/locale/or/LC_MESSAGES/evince.mo
 share/locale/pa/LC_MESSAGES/evince.mo
 share/locale/pl/LC_MESSAGES/evince.mo
 share/locale/pt/LC_MESSAGES/evince.mo
@@ -83,10 +99,12 @@ share/locale/ro/LC_MESSAGES/evince.mo
 share/locale/ru/LC_MESSAGES/evince.mo
 share/locale/rw/LC_MESSAGES/evince.mo
 share/locale/sk/LC_MESSAGES/evince.mo
+share/locale/sl/LC_MESSAGES/evince.mo
 share/locale/sq/LC_MESSAGES/evince.mo
 share/locale/sr/LC_MESSAGES/evince.mo
 share/locale/sr@Latn/LC_MESSAGES/evince.mo
 share/locale/sv/LC_MESSAGES/evince.mo
+share/locale/ta/LC_MESSAGES/evince.mo
 share/locale/th/LC_MESSAGES/evince.mo
 share/locale/tr/LC_MESSAGES/evince.mo
 share/locale/uk/LC_MESSAGES/evince.mo
@@ -95,25 +113,23 @@ share/locale/wa/LC_MESSAGES/evince.mo
 share/locale/zh_CN/LC_MESSAGES/evince.mo
 share/locale/zh_HK/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/omf/evince
 @dirrm share/gnome/help/evince/uk/figures
 @dirrm share/gnome/help/evince/uk
+@dirrm share/gnome/help/evince/sv/figures
+@dirrm share/gnome/help/evince/sv
 @dirrm share/gnome/help/evince/sr/figures
 @dirrm share/gnome/help/evince/sr
 @dirrm share/gnome/help/evince/ru/figures
 @dirrm share/gnome/help/evince/ru
 @dirrm share/gnome/help/evince/nl/figures
 @dirrm share/gnome/help/evince/nl
+@dirrm share/gnome/help/evince/it/figures
+@dirrm share/gnome/help/evince/it
+@dirrm share/gnome/help/evince/fr/figures
+@dirrm share/gnome/help/evince/fr
+@dirrm share/gnome/help/evince/fi/figures
+@dirrm share/gnome/help/evince/fi
 @dirrm share/gnome/help/evince/es/figures
 @dirrm share/gnome/help/evince/es
 @dirrm share/gnome/help/evince/el/figures
@@ -126,3 +142,51 @@ share/locale/zh_TW/LC_MESSAGES/evince.mo
 @dirrm share/gnome/evince
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

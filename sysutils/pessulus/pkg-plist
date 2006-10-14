@@ -50,6 +50,7 @@ share/gnome/applications/pessulus.desktop
 share/gnome/pessulus/glade/pessulus.glade
 share/locale/bg/LC_MESSAGES/pessulus.mo
 share/locale/bn/LC_MESSAGES/pessulus.mo
+share/locale/bn_IN/LC_MESSAGES/pessulus.mo
 share/locale/ca/LC_MESSAGES/pessulus.mo
 share/locale/cs/LC_MESSAGES/pessulus.mo
 share/locale/cy/LC_MESSAGES/pessulus.mo
@@ -58,6 +59,7 @@ share/locale/de/LC_MESSAGES/pessulus.mo
 share/locale/dz/LC_MESSAGES/pessulus.mo
 share/locale/el/LC_MESSAGES/pessulus.mo
 share/locale/en_CA/LC_MESSAGES/pessulus.mo
+share/locale/en_GB/LC_MESSAGES/pessulus.mo
 share/locale/es/LC_MESSAGES/pessulus.mo
 share/locale/et/LC_MESSAGES/pessulus.mo
 share/locale/eu/LC_MESSAGES/pessulus.mo
@@ -65,6 +67,7 @@ share/locale/fi/LC_MESSAGES/pessulus.mo
 share/locale/fr/LC_MESSAGES/pessulus.mo
 share/locale/gl/LC_MESSAGES/pessulus.mo
 share/locale/gu/LC_MESSAGES/pessulus.mo
+share/locale/he/LC_MESSAGES/pessulus.mo
 share/locale/hi/LC_MESSAGES/pessulus.mo
 share/locale/hu/LC_MESSAGES/pessulus.mo
 share/locale/id/LC_MESSAGES/pessulus.mo
@@ -75,31 +78,73 @@ share/locale/ko/LC_MESSAGES/pessulus.mo
 share/locale/lt/LC_MESSAGES/pessulus.mo
 share/locale/lv/LC_MESSAGES/pessulus.mo
 share/locale/mk/LC_MESSAGES/pessulus.mo
+share/locale/ml/LC_MESSAGES/pessulus.mo
+share/locale/mn/LC_MESSAGES/pessulus.mo
+share/locale/mr/LC_MESSAGES/pessulus.mo
 share/locale/nb/LC_MESSAGES/pessulus.mo
 share/locale/ne/LC_MESSAGES/pessulus.mo
 share/locale/nl/LC_MESSAGES/pessulus.mo
+share/locale/or/LC_MESSAGES/pessulus.mo
 share/locale/pa/LC_MESSAGES/pessulus.mo
 share/locale/pl/LC_MESSAGES/pessulus.mo
 share/locale/pt/LC_MESSAGES/pessulus.mo
 share/locale/pt_BR/LC_MESSAGES/pessulus.mo
+share/locale/ru/LC_MESSAGES/pessulus.mo
 share/locale/sk/LC_MESSAGES/pessulus.mo
+share/locale/sl/LC_MESSAGES/pessulus.mo
 share/locale/sq/LC_MESSAGES/pessulus.mo
 share/locale/sr/LC_MESSAGES/pessulus.mo
 share/locale/sr@Latn/LC_MESSAGES/pessulus.mo
 share/locale/sv/LC_MESSAGES/pessulus.mo
+share/locale/ta/LC_MESSAGES/pessulus.mo
 share/locale/th/LC_MESSAGES/pessulus.mo
+share/locale/tr/LC_MESSAGES/pessulus.mo
 share/locale/uk/LC_MESSAGES/pessulus.mo
 share/locale/vi/LC_MESSAGES/pessulus.mo
 share/locale/zh_CN/LC_MESSAGES/pessulus.mo
 share/locale/zh_HK/LC_MESSAGES/pessulus.mo
 share/locale/zh_TW/LC_MESSAGES/pessulus.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm share/gnome/pessulus/glade
 @dirrm share/gnome/pessulus
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Pessulus
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN

@@ -3,16 +3,16 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-lite/Makefile,v 1.45 2005/11/17 23:20:32 marcus Exp $
+#   $MCom: ports/x11/gnome2-lite/Makefile,v 1.50 2006/10/14 06:34:16 marcus Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-lite
 
 COMMENT=	The "meta-port" of the GNOME desktop slimmed down for FreeBSD releases
 
-RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets \
+RUN_DEPENDS=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets \
 		gnome-cd:${PORTSDIR}/audio/gnome-media \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnome-utils \
 		eog:${PORTSDIR}/graphics/eog \
@@ -22,16 +22,17 @@ RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets 
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnome-system-monitor \
 		nautilus:${PORTSDIR}/x11-fm/nautilus \
 		yelp:${PORTSDIR}/x11/yelp \
-		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
-		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnome-audio \
+		${LOCALBASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
+		${LOCALBASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnome-audio \
 		file-roller:${PORTSDIR}/archivers/file-roller \
-		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
+		${LOCALBASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
 		evince:${PORTSDIR}/graphics/evince \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		gucharmap:${PORTSDIR}/deskutils/gucharmap \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		gconf-editor:${PORTSDIR}/sysutils/gconf-editor \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
+    		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 		totem:${PORTSDIR}/multimedia/totem-gstreamer
 
 MASTERDIR=	${.CURDIR}/../gnome2

@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#	$MCom: ports/graphics/py-cairo/Makefile,v 1.15 2005/10/12 16:31:53 ahze Exp $
+#	$MCom: ports/graphics/py-cairo/Makefile,v 1.20 2006/09/06 22:05:06 marcus Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,19 +25,10 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pygtk
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_SVG) && !exists(${LOCALBASE}/lib/libsvg-cairo.a)
-PLIST_SUB+=	SVG="@comment "
-.else
-PLIST_SUB+=	SVG=""
-LIB_DEPENDS+=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
-.endif
-
-pre-everything::
-	@${ECHO_MSG} "Disable SVG support by defining WITHOUT_SVG"
-	@${ECHO_MSG}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \

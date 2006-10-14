@@ -1,0 +1,11 @@
+--- libffi/configure.orig	Tue Sep 12 17:01:51 2006
++++ libffi/configure	Tue Sep 12 17:02:19 2006
+@@ -3285,7 +3285,7 @@
+       ;;
+     esac
+ else
+-  enable_shared=yes
++  enable_shared=no # don't build shared lib (or conflict with gcc3*)
+ fi;
+ 
+ # Check whether --enable-static or --disable-static was given.

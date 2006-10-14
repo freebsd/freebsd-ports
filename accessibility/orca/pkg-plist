@@ -1,0 +1,241 @@
+bin/orca
+%%PYTHON_SITELIBDIR%%/orca/J2SE-access-bridge.py
+%%PYTHON_SITELIBDIR%%/orca/J2SE-access-bridge.pyc
+%%PYTHON_SITELIBDIR%%/orca/J2SE-access-bridge.pyo
+%%PYTHON_SITELIBDIR%%/orca/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/acss.py
+%%PYTHON_SITELIBDIR%%/orca/acss.pyc
+%%PYTHON_SITELIBDIR%%/orca/acss.pyo
+%%PYTHON_SITELIBDIR%%/orca/atspi.py
+%%PYTHON_SITELIBDIR%%/orca/atspi.pyc
+%%PYTHON_SITELIBDIR%%/orca/atspi.pyo
+%%PYTHON_SITELIBDIR%%/orca/braille.py
+%%PYTHON_SITELIBDIR%%/orca/braille.pyc
+%%PYTHON_SITELIBDIR%%/orca/braille.pyo
+%%PYTHON_SITELIBDIR%%/orca/braillegenerator.py
+%%PYTHON_SITELIBDIR%%/orca/braillegenerator.pyc
+%%PYTHON_SITELIBDIR%%/orca/braillegenerator.pyo
+%%PYTHON_SITELIBDIR%%/orca/brlmodule.la
+%%PYTHON_SITELIBDIR%%/orca/brlmodule.so
+%%PYTHON_SITELIBDIR%%/orca/brlmon.py
+%%PYTHON_SITELIBDIR%%/orca/brlmon.pyc
+%%PYTHON_SITELIBDIR%%/orca/brlmon.pyo
+%%PYTHON_SITELIBDIR%%/orca/chnames.py
+%%PYTHON_SITELIBDIR%%/orca/chnames.pyc
+%%PYTHON_SITELIBDIR%%/orca/chnames.pyo
+%%PYTHON_SITELIBDIR%%/orca/debug.py
+%%PYTHON_SITELIBDIR%%/orca/debug.pyc
+%%PYTHON_SITELIBDIR%%/orca/debug.pyo
+%%PYTHON_SITELIBDIR%%/orca/dectalk.py
+%%PYTHON_SITELIBDIR%%/orca/dectalk.pyc
+%%PYTHON_SITELIBDIR%%/orca/dectalk.pyo
+%%PYTHON_SITELIBDIR%%/orca/default.py
+%%PYTHON_SITELIBDIR%%/orca/default.pyc
+%%PYTHON_SITELIBDIR%%/orca/default.pyo
+%%PYTHON_SITELIBDIR%%/orca/espeechfactory.py
+%%PYTHON_SITELIBDIR%%/orca/espeechfactory.pyc
+%%PYTHON_SITELIBDIR%%/orca/espeechfactory.pyo
+%%PYTHON_SITELIBDIR%%/orca/eventsynthesizer.py
+%%PYTHON_SITELIBDIR%%/orca/eventsynthesizer.pyc
+%%PYTHON_SITELIBDIR%%/orca/eventsynthesizer.pyo
+%%PYTHON_SITELIBDIR%%/orca/flat_review.py
+%%PYTHON_SITELIBDIR%%/orca/flat_review.pyc
+%%PYTHON_SITELIBDIR%%/orca/flat_review.pyo
+%%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.py
+%%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.pyc
+%%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.pyo
+%%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.py
+%%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyc
+%%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyo
+%%PYTHON_SITELIBDIR%%/orca/hierarchical_presenter.py
+%%PYTHON_SITELIBDIR%%/orca/hierarchical_presenter.pyc
+%%PYTHON_SITELIBDIR%%/orca/hierarchical_presenter.pyo
+%%PYTHON_SITELIBDIR%%/orca/httpserver.py
+%%PYTHON_SITELIBDIR%%/orca/httpserver.pyc
+%%PYTHON_SITELIBDIR%%/orca/httpserver.pyo
+%%PYTHON_SITELIBDIR%%/orca/input_event.py
+%%PYTHON_SITELIBDIR%%/orca/input_event.pyc
+%%PYTHON_SITELIBDIR%%/orca/input_event.pyo
+%%PYTHON_SITELIBDIR%%/orca/keybindings.py
+%%PYTHON_SITELIBDIR%%/orca/keybindings.pyc
+%%PYTHON_SITELIBDIR%%/orca/keybindings.pyo
+%%PYTHON_SITELIBDIR%%/orca/keynames.py
+%%PYTHON_SITELIBDIR%%/orca/keynames.pyc
+%%PYTHON_SITELIBDIR%%/orca/keynames.pyo
+%%PYTHON_SITELIBDIR%%/orca/mag.py
+%%PYTHON_SITELIBDIR%%/orca/mag.pyc
+%%PYTHON_SITELIBDIR%%/orca/mag.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca.py
+%%PYTHON_SITELIBDIR%%/orca/orca.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_console_prefs.py
+%%PYTHON_SITELIBDIR%%/orca/orca_console_prefs.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_console_prefs.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_prefs.py
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_prefs.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_prefs.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_i18n.py
+%%PYTHON_SITELIBDIR%%/orca/orca_i18n.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_i18n.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_prefs.py
+%%PYTHON_SITELIBDIR%%/orca/orca_prefs.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_prefs.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_state.py
+%%PYTHON_SITELIBDIR%%/orca/orca_state.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_state.pyo
+%%PYTHON_SITELIBDIR%%/orca/outloud.py
+%%PYTHON_SITELIBDIR%%/orca/outloud.pyc
+%%PYTHON_SITELIBDIR%%/orca/outloud.pyo
+%%PYTHON_SITELIBDIR%%/orca/platform.py
+%%PYTHON_SITELIBDIR%%/orca/platform.pyc
+%%PYTHON_SITELIBDIR%%/orca/platform.pyo
+%%PYTHON_SITELIBDIR%%/orca/presentation_manager.py
+%%PYTHON_SITELIBDIR%%/orca/presentation_manager.pyc
+%%PYTHON_SITELIBDIR%%/orca/presentation_manager.pyo
+%%PYTHON_SITELIBDIR%%/orca/punctuation_settings.py
+%%PYTHON_SITELIBDIR%%/orca/punctuation_settings.pyc
+%%PYTHON_SITELIBDIR%%/orca/punctuation_settings.pyo
+%%PYTHON_SITELIBDIR%%/orca/rolenames.py
+%%PYTHON_SITELIBDIR%%/orca/rolenames.pyc
+%%PYTHON_SITELIBDIR%%/orca/rolenames.pyo
+%%PYTHON_SITELIBDIR%%/orca/script.py
+%%PYTHON_SITELIBDIR%%/orca/script.pyc
+%%PYTHON_SITELIBDIR%%/orca/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/Evolution.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/Evolution.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/Evolution.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/Mozilla.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/Mozilla.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/Mozilla.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/StarOffice.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/StarOffice.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/StarOffice.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/gaim.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/gaim.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/gaim.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/gcalctool.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/gcalctool.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/gcalctool.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/gdmlogin.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/gdmlogin.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/gdmlogin.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/gedit.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/gedit.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/gedit.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-terminal.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-terminal.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-terminal.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-window-properties.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-window-properties.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-window-properties.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/metacity.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/metacity.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/metacity.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/planner.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/planner.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/planner.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyo
+%%PYTHON_SITELIBDIR%%/orca/settings.py
+%%PYTHON_SITELIBDIR%%/orca/settings.pyc
+%%PYTHON_SITELIBDIR%%/orca/settings.pyo
+%%PYTHON_SITELIBDIR%%/orca/speech.py
+%%PYTHON_SITELIBDIR%%/orca/speech.pyc
+%%PYTHON_SITELIBDIR%%/orca/speech.pyo
+%%PYTHON_SITELIBDIR%%/orca/speechgenerator.py
+%%PYTHON_SITELIBDIR%%/orca/speechgenerator.pyc
+%%PYTHON_SITELIBDIR%%/orca/speechgenerator.pyo
+%%PYTHON_SITELIBDIR%%/orca/speechserver.py
+%%PYTHON_SITELIBDIR%%/orca/speechserver.pyc
+%%PYTHON_SITELIBDIR%%/orca/speechserver.pyo
+%%PYTHON_SITELIBDIR%%/orca/util.py
+%%PYTHON_SITELIBDIR%%/orca/util.pyc
+%%PYTHON_SITELIBDIR%%/orca/util.pyo
+share/gnome/applications/orca.desktop
+share/gnome/orca/glade/orca-setup.glade
+share/icons/hicolor/48x48/apps/orca.png
+share/locale/bg/LC_MESSAGES/orca.mo
+share/locale/bn/LC_MESSAGES/orca.mo
+share/locale/bn_IN/LC_MESSAGES/orca.mo
+share/locale/ca/LC_MESSAGES/orca.mo
+share/locale/cs/LC_MESSAGES/orca.mo
+share/locale/cy/LC_MESSAGES/orca.mo
+share/locale/de/LC_MESSAGES/orca.mo
+share/locale/dz/LC_MESSAGES/orca.mo
+share/locale/el/LC_MESSAGES/orca.mo
+share/locale/en_CA/LC_MESSAGES/orca.mo
+share/locale/en_GB/LC_MESSAGES/orca.mo
+share/locale/es/LC_MESSAGES/orca.mo
+share/locale/eu/LC_MESSAGES/orca.mo
+share/locale/fi/LC_MESSAGES/orca.mo
+share/locale/fr/LC_MESSAGES/orca.mo
+share/locale/gu/LC_MESSAGES/orca.mo
+share/locale/hi/LC_MESSAGES/orca.mo
+share/locale/it/LC_MESSAGES/orca.mo
+share/locale/ja/LC_MESSAGES/orca.mo
+share/locale/ko/LC_MESSAGES/orca.mo
+share/locale/lt/LC_MESSAGES/orca.mo
+share/locale/lv/LC_MESSAGES/orca.mo
+share/locale/mk/LC_MESSAGES/orca.mo
+share/locale/ml/LC_MESSAGES/orca.mo
+share/locale/mr/LC_MESSAGES/orca.mo
+share/locale/nb/LC_MESSAGES/orca.mo
+share/locale/ne/LC_MESSAGES/orca.mo
+share/locale/nl/LC_MESSAGES/orca.mo
+share/locale/or/LC_MESSAGES/orca.mo
+share/locale/pa/LC_MESSAGES/orca.mo
+share/locale/pt/LC_MESSAGES/orca.mo
+share/locale/pt_BR/LC_MESSAGES/orca.mo
+share/locale/ru/LC_MESSAGES/orca.mo
+share/locale/rw/LC_MESSAGES/orca.mo
+share/locale/sr/LC_MESSAGES/orca.mo
+share/locale/sr@Latn/LC_MESSAGES/orca.mo
+share/locale/sv/LC_MESSAGES/orca.mo
+share/locale/ta/LC_MESSAGES/orca.mo
+share/locale/uk/LC_MESSAGES/orca.mo
+share/locale/vi/LC_MESSAGES/orca.mo
+share/locale/zh_CN/LC_MESSAGES/orca.mo
+share/locale/zh_HK/LC_MESSAGES/orca.mo
+share/locale/zh_TW/LC_MESSAGES/orca.mo
+@dirrm share/gnome/orca/glade
+@dirrm share/gnome/orca
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/orca
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN

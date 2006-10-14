@@ -92,6 +92,7 @@ include/evolution-data-server-%%VERSION%%/camel/camel-stream-fs.h
 include/evolution-data-server-%%VERSION%%/camel/camel-stream-mem.h
 include/evolution-data-server-%%VERSION%%/camel/camel-stream-null.h
 include/evolution-data-server-%%VERSION%%/camel/camel-stream-process.h
+include/evolution-data-server-%%VERSION%%/camel/camel-stream-vfs.h
 include/evolution-data-server-%%VERSION%%/camel/camel-stream.h
 include/evolution-data-server-%%VERSION%%/camel/camel-string-utils.h
 include/evolution-data-server-%%VERSION%%/camel/camel-tcp-stream-raw.h
@@ -134,6 +135,7 @@ include/evolution-data-server-%%VERSION%%/exchange/e2k-validate.h
 include/evolution-data-server-%%VERSION%%/exchange/e2k-xml-utils.h
 include/evolution-data-server-%%VERSION%%/exchange/exchange-account.h
 include/evolution-data-server-%%VERSION%%/exchange/exchange-constants.h
+include/evolution-data-server-%%VERSION%%/exchange/exchange-esource.h
 include/evolution-data-server-%%VERSION%%/exchange/exchange-folder-size.h
 include/evolution-data-server-%%VERSION%%/exchange/exchange-hierarchy-foreign.h
 include/evolution-data-server-%%VERSION%%/exchange/exchange-hierarchy-somedav.h
@@ -174,6 +176,7 @@ include/evolution-data-server-%%VERSION%%/libecal/e-cal-view-listener.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-view.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal.h
 include/evolution-data-server-%%VERSION%%/libedata-book/Evolution-DataServer-Addressbook.h
+include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-db-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-factory.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-sexp.h
@@ -291,10 +294,10 @@ lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.a
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.la
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.so
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.urls
-lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.a
-lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.la
-lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.so
-lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.urls
+%%IMAP4%%lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.a
+%%IMAP4%%lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.la
+%%IMAP4%%lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.so
+%%IMAP4%%lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.urls
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamellocal.a
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamellocal.la
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamellocal.so
@@ -356,11 +359,11 @@ lib/libcamel-provider-%%EVO_VERSION%%.so.8
 lib/libebook-%%EVO_VERSION%%.a
 lib/libebook-%%EVO_VERSION%%.la
 lib/libebook-%%EVO_VERSION%%.so
-lib/libebook-%%EVO_VERSION%%.so.5
+lib/libebook-%%EVO_VERSION%%.so.9
 lib/libecal-%%EVO_VERSION%%.a
 lib/libecal-%%EVO_VERSION%%.la
 lib/libecal-%%EVO_VERSION%%.so
-lib/libecal-%%EVO_VERSION%%.so.6
+lib/libecal-%%EVO_VERSION%%.so.7
 lib/libedata-book-%%EVO_VERSION%%.a
 lib/libedata-book-%%EVO_VERSION%%.la
 lib/libedata-book-%%EVO_VERSION%%.so
@@ -368,7 +371,7 @@ lib/libedata-book-%%EVO_VERSION%%.so.2
 lib/libedata-cal-%%EVO_VERSION%%.a
 lib/libedata-cal-%%EVO_VERSION%%.la
 lib/libedata-cal-%%EVO_VERSION%%.so
-lib/libedata-cal-%%EVO_VERSION%%.so.5
+lib/libedata-cal-%%EVO_VERSION%%.so.6
 lib/libedataserver-%%EVO_VERSION%%.a
 lib/libedataserver-%%EVO_VERSION%%.la
 lib/libedataserver-%%EVO_VERSION%%.so
@@ -376,15 +379,15 @@ lib/libedataserver-%%EVO_VERSION%%.so.7
 lib/libedataserverui-%%EVO_VERSION%%.a
 lib/libedataserverui-%%EVO_VERSION%%.la
 lib/libedataserverui-%%EVO_VERSION%%.so
-lib/libedataserverui-%%EVO_VERSION%%.so.6
+lib/libedataserverui-%%EVO_VERSION%%.so.8
 lib/libegroupwise-%%EVO_VERSION%%.a
 lib/libegroupwise-%%EVO_VERSION%%.la
 lib/libegroupwise-%%EVO_VERSION%%.so
-lib/libegroupwise-%%EVO_VERSION%%.so.10
+lib/libegroupwise-%%EVO_VERSION%%.so.12
 lib/libexchange-storage-%%EVO_VERSION%%.a
 lib/libexchange-storage-%%EVO_VERSION%%.la
 lib/libexchange-storage-%%EVO_VERSION%%.so
-lib/libexchange-storage-%%EVO_VERSION%%.so.1
+lib/libexchange-storage-%%EVO_VERSION%%.so.2
 libdata/bonobo/servers/GNOME_Evolution_DataServer_%%EVO_VERSION%%.server
 libdata/pkgconfig/camel-%%EVO_VERSION%%.pc
 libdata/pkgconfig/camel-provider-%%EVO_VERSION%%.pc
@@ -413,7 +416,7 @@ share/doc/libebook/index.sgml
 share/doc/libebook/left.png
 share/doc/libebook/libebook-EAddressWestern.html
 share/doc/libebook/libebook-ENameWestern.html
-share/doc/libebook/libebook-e-book-async.html
+share/doc/libebook/EDestination.html
 share/doc/libebook/libebook-e-book-query.html
 share/doc/libebook/libebook-e-book-types.html
 share/doc/libebook/libebook.devhelp
@@ -904,6 +907,7 @@ share/locale/az/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/bn/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/bn_IN/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/bs/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -940,12 +944,13 @@ share/locale/lv/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/mk/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ml/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/mn/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/mr/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ms/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ne/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/nn/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
-share/locale/no/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/or/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/pa/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/pt/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -959,6 +964,7 @@ share/locale/sq/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/ta/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/th/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -968,14 +974,6 @@ share/locale/xh/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm share/gnome/pixmaps/evolution-data-server-%%VERSION%%
 @dirrm share/gnome/idl/evolution-data-server-%%EVO_VERSION%%
 @dirrm share/gnome/evolution-data-server-%%VERSION%%/zoneinfo/Pacific
@@ -1013,3 +1011,55 @@ share/locale/zh_TW/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 @dirrm include/evolution-data-server-%%VERSION%%/exchange
 @dirrm include/evolution-data-server-%%VERSION%%/camel
 @dirrm include/evolution-data-server-%%VERSION%%
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

@@ -3,11 +3,10 @@
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
-#
+#    $MCom: ports/lang/guile/Makefile,v 1.1 2006/09/12 14:57:06 ahze Exp $
 
 PORTNAME=	guile
-PORTVERSION=	1.6.7
-PORTREVISION=	1
+PORTVERSION=	1.6.8
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
@@ -18,7 +17,7 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 USE_AUTOTOOLS=	libltdl:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -32,11 +31,6 @@ REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
 INFO=		goops guile-tut guile r5rs
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		Does not install on ${ARCH}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-ia64
-.endif
 
 .if ${ARCH} != "ia64" && ${ARCH} != "amd64" && ${ARCH} != "powerpc"
 CONFIGURE_ARGS+=--with-threads

@@ -5,45 +5,27 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTNAME=	dbus
+PORTVERSION=	0.71
 CATEGORIES=	devel gnome python
+MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Python interface to the D-BUS messaging system
+COMMENT=	Python bindings for the D-BUS messaging system
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex \
-		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+    		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
-MASTERDIR=	${.CURDIR}/../dbus
-BUILD_WRKSRC=	${WRKSRC}/python
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
-DESCR=		${.CURDIR}/pkg-descr
-PLIST=		${.CURDIR}/pkg-plist
-
-NOT_FOR_ARCHS=	ia64
-
-DBUS_SLAVE=	yes
-
-USE_GNOME=	gnomehack gnometarget
 USE_PYTHON=	yes
-CONFIGURE_ARGS=	--enable-python \
-		--disable-gcj \
-		--disable-mono \
-		--disable-mono-docs \
-		--disable-gtk \
-		--disable-qt3 \
-		--localstatedir=/var \
-		--with-system-pid-file=/var/run/dbus/dbus.pid \
-		--with-system-socket=/var/run/dbus/dbus.pipe \
-		--with-session-socket-dir=/var/tmp \
-		--disable-doxygen-docs \
-		--disable-xml-docs
+USE_GMAKE=	yes
+USE_PYDISTUTILS=yes
 
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHONPREFIX_SITELIBDIR}/dbus
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHONPREFIX_SITELIBDIR}/dbus
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>

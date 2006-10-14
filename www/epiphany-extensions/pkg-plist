@@ -107,7 +107,6 @@ share/locale/lt/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/nb/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/ne/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/nl/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
-share/locale/no/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/pa/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/pl/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/pt/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
@@ -120,13 +119,13 @@ share/locale/sr/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sv/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/th/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/tr/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/uk/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/vi/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/wa/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrm share/gnome/omf/epiphany-extensions
 @dirrm share/gnome/help/epiphany-extensions/C/figures
 @dirrm share/gnome/help/epiphany-extensions/C
@@ -138,3 +137,35 @@ share/locale/zh_TW/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 @dirrmtry lib/epiphany/%%VERSION%%/plugins
 @dirrmtry lib/epiphany/%%VERSION%%
 @dirrmtry lib/epiphany
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

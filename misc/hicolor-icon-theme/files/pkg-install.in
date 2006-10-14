@@ -1,0 +1,24 @@
+#!/bin/sh
+# $FreeBSD$
+#    $MCom: ports/misc/hicolor-icon-theme/files/pkg-install.in,v 1.1 2006/08/11 01:19:11 ahze Exp $
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+POST-INSTALL)
+	ICON_SIZES="%%ICON_SIZES%%"
+	ICON_CONTEXTS="%%ICON_CONTEXTS%%"
+	STOCK_SUBS="%%STOCK_SUBS%%"
+
+	for dir in ${ICON_SIZES}; do
+	    for ctxt in ${ICON_CONTEXTS}; do
+		mkdir -p ${PKG_PREFIX}/share/icons/hicolor/${dir}/${ctxt}
+		if [ "${ctxt}" = "stock" ]; then
+		    for sub in ${STOCK_SUBS}; do
+			mkdir -p ${PKG_PREFIX}/share/icons/hicolor/${dir}/${ctxt}/${sub}
+		    done
+		fi
+	    done
+	done
+	;;
+esac

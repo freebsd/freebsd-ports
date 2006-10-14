@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/gnomegames2/Makefile,v 1.111 2006/04/13 07:52:34 bland Exp $
+#   $MCom: ports/games/gnome-games/Makefile,v 1.120 2006/10/03 01:23:20 ahze Exp $
 #
 
 PORTNAME=	gnome-games
-PORTVERSION=	2.14.3
+PORTVERSION=	2.16.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,7 +22,8 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
-USE_X_PREFIX=	yes
+INSTALLS_ICONS=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui \
 		librsvg2 desktopfileutils
@@ -46,15 +47,8 @@ LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|malloc\.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|bin/python|bin/env python|g' \
 		${WRKSRC}/libgames-support/games-server.py
-	@${REINPLACE_CMD} -e 's|howl|avahi-compat-howl|' \
-		${WRKSRC}/configure
-#	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-#		's|664|666|g ; \
-#		 s|2555|0555|g'
 
 post-install:
 	@-update-desktop-database

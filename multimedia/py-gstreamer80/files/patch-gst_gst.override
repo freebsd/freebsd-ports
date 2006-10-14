@@ -1,0 +1,17 @@
+--- gst/gst.override.orig	Fri Oct 13 12:03:56 2006
++++ gst/gst.override	Fri Oct 13 12:03:42 2006
+@@ -570,14 +570,6 @@ _wrap_gst_type_find_factory_get_caps(PyG
+ 	return pyg_boxed_new(GST_TYPE_CAPS, ret, TRUE, TRUE);
+ }
+ %%
+-override gst_type_find_factory_get_caps noargs
+-static PyObject *
+-_wrap_gst_type_find_factory_get_caps(PyGObject *self)
+-{
+-	GstCaps *ret = (GstCaps*)gst_type_find_factory_get_caps(GST_TYPE_FIND_FACTORY(self->obj));
+-	return pyg_boxed_new(GST_TYPE_CAPS, ret, TRUE, TRUE);
+-}
+-%%
+ override-attr GError.domain
+ static PyObject *
+ _wrap_gst_g_error__get_domain(PyGObject *self, void *closure)

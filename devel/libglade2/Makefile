@@ -3,11 +3,11 @@
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/libglade2/Makefile,v 1.20 2006/07/12 17:23:04 ahze Exp $
+#    $MCom: ports/devel/libglade2/Makefile,v 1.23 2006/09/10 00:51:09 mezz Exp $
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.0
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/..$//}
@@ -24,10 +24,9 @@ USE_BZIP2=	yes
 RUN_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack libxml2 gtk20 referencehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports

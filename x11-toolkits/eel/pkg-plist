@@ -7,7 +7,6 @@ include/eel-2/eel/eel-background.h
 include/eel-2/eel/eel-canvas-rect-ellipse.h
 include/eel-2/eel/eel-canvas-util.h
 include/eel-2/eel/eel-canvas.h
-include/eel-2/eel/eel-cell-renderer-pixbuf-list.h
 include/eel-2/eel/eel-dateedit-extensions.h
 include/eel-2/eel/eel-debug-drawing.h
 include/eel-2/eel/eel-debug.h
@@ -56,6 +55,7 @@ share/locale/az/LC_MESSAGES/eel-2.0.mo
 share/locale/be/LC_MESSAGES/eel-2.0.mo
 share/locale/bg/LC_MESSAGES/eel-2.0.mo
 share/locale/bn/LC_MESSAGES/eel-2.0.mo
+share/locale/bn_IN/LC_MESSAGES/eel-2.0.mo
 share/locale/br/LC_MESSAGES/eel-2.0.mo
 share/locale/bs/LC_MESSAGES/eel-2.0.mo
 share/locale/ca/LC_MESSAGES/eel-2.0.mo
@@ -126,25 +126,63 @@ share/locale/xh/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
+@dirrm include/eel-2/eel
+@dirrm include/eel-2
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
-@dirrm include/eel-2/eel
-@dirrm include/eel-2

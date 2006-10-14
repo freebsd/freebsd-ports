@@ -6,52 +6,7 @@ share/gnome/help/eog/C/eog.xml
 share/gnome/help/eog/C/figures/eog_save_as_window.png
 share/gnome/help/eog/C/figures/eog_start_window.png
 share/gnome/help/eog/C/legal.xml
-share/gnome/help/eog/de/eog.xml
-share/gnome/help/eog/de/figures/eog_start_window.png
-share/gnome/help/eog/de/legal.xml
-share/gnome/help/eog/es/eog.xml
-share/gnome/help/eog/es/figures/eog_start_window.png
-share/gnome/help/eog/es/legal.xml
-share/gnome/help/eog/eu/eog.xml
-share/gnome/help/eog/eu/figures/eog_start_window.png
-share/gnome/help/eog/eu/legal.xml
-share/gnome/help/eog/fr/eog.xml
-share/gnome/help/eog/fr/figures/eog_start_window.png
-share/gnome/help/eog/fr/legal.xml
-share/gnome/help/eog/it/eog.xml
-share/gnome/help/eog/it/figures/eog_start_window.png
-share/gnome/help/eog/it/legal.xml
-share/gnome/help/eog/ja/eog.xml
-share/gnome/help/eog/ja/figures/eog_start_window.png
-share/gnome/help/eog/ja/legal.xml
-share/gnome/help/eog/ko/eog.xml
-share/gnome/help/eog/ko/figures/eog_start_window.png
-share/gnome/help/eog/ko/legal.xml
-share/gnome/help/eog/sv/eog.xml
-share/gnome/help/eog/sv/figures/eog_start_window.png
-share/gnome/help/eog/sv/legal.xml
-share/gnome/help/eog/uk/eog.xml
-share/gnome/help/eog/uk/figures/eog_save_as_window.png
-share/gnome/help/eog/uk/figures/eog_start_window.png
-share/gnome/help/eog/uk/legal.xml
-share/gnome/help/eog/zh_CN/eog.xml
-share/gnome/help/eog/zh_CN/figures/eog_start_window.png
-share/gnome/help/eog/zh_CN/legal.xml
-share/gnome/help/eog/zh_TW/eog.xml
-share/gnome/help/eog/zh_TW/figures/eog_start_window.png
-share/gnome/help/eog/zh_TW/legal.xml
 share/gnome/omf/eog/eog-C.omf
-share/gnome/omf/eog/eog-de.omf
-share/gnome/omf/eog/eog-es.omf
-share/gnome/omf/eog/eog-eu.omf
-share/gnome/omf/eog/eog-fr.omf
-share/gnome/omf/eog/eog-it.omf
-share/gnome/omf/eog/eog-ja.omf
-share/gnome/omf/eog/eog-ko.omf
-share/gnome/omf/eog/eog-sv.omf
-share/gnome/omf/eog/eog-uk.omf
-share/gnome/omf/eog/eog-zh_CN.omf
-share/gnome/omf/eog/eog-zh_TW.omf
 share/gnome/pixmaps/eog/down-right.png
 share/gnome/pixmaps/eog/loading.png
 share/gnome/pixmaps/eog/orient-horizontal.png
@@ -70,7 +25,7 @@ share/locale/az/LC_MESSAGES/eog.mo
 share/locale/be/LC_MESSAGES/eog.mo
 share/locale/bg/LC_MESSAGES/eog.mo
 share/locale/bn/LC_MESSAGES/eog.mo
-share/locale/br/LC_MESSAGES/eog.mo
+share/locale/bn_IN/LC_MESSAGES/eog.mo
 share/locale/bs/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
@@ -104,6 +59,7 @@ share/locale/ko/LC_MESSAGES/eog.mo
 share/locale/ku/LC_MESSAGES/eog.mo
 share/locale/lt/LC_MESSAGES/eog.mo
 share/locale/lv/LC_MESSAGES/eog.mo
+share/locale/mg/LC_MESSAGES/eog.mo
 share/locale/mk/LC_MESSAGES/eog.mo
 share/locale/ml/LC_MESSAGES/eog.mo
 share/locale/mn/LC_MESSAGES/eog.mo
@@ -112,7 +68,6 @@ share/locale/nb/LC_MESSAGES/eog.mo
 share/locale/ne/LC_MESSAGES/eog.mo
 share/locale/nl/LC_MESSAGES/eog.mo
 share/locale/nn/LC_MESSAGES/eog.mo
-share/locale/no/LC_MESSAGES/eog.mo
 share/locale/nso/LC_MESSAGES/eog.mo
 share/locale/or/LC_MESSAGES/eog.mo
 share/locale/pa/LC_MESSAGES/eog.mo
@@ -141,52 +96,70 @@ share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_HK/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
 @dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
-@dirrm share/gnome/help/eog/zh_TW/figures
-@dirrm share/gnome/help/eog/zh_TW
-@dirrm share/gnome/help/eog/zh_CN/figures
-@dirrm share/gnome/help/eog/zh_CN
-@dirrm share/gnome/help/eog/uk/figures
-@dirrm share/gnome/help/eog/uk
-@dirrm share/gnome/help/eog/sv/figures
-@dirrm share/gnome/help/eog/sv
-@dirrm share/gnome/help/eog/ko/figures
-@dirrm share/gnome/help/eog/ko
-@dirrm share/gnome/help/eog/ja/figures
-@dirrm share/gnome/help/eog/ja
-@dirrm share/gnome/help/eog/it/figures
-@dirrm share/gnome/help/eog/it
-@dirrm share/gnome/help/eog/fr/figures
-@dirrm share/gnome/help/eog/fr
-@dirrm share/gnome/help/eog/eu/figures
-@dirrm share/gnome/help/eog/eu
-@dirrm share/gnome/help/eog/es/figures
-@dirrm share/gnome/help/eog/es
-@dirrm share/gnome/help/eog/de/figures
-@dirrm share/gnome/help/eog/de
 @dirrm share/gnome/help/eog/C/figures
 @dirrm share/gnome/help/eog/C
 @dirrm share/gnome/help/eog
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

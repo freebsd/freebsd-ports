@@ -2,6 +2,6 @@ lib/gstreamer-%%VERSION%%/libgstmonkeysaudio.a
 lib/gstreamer-%%VERSION%%/libgstmonkeysaudio.la
 lib/gstreamer-%%VERSION%%/libgstmonkeysaudio.so
 %%PORTDOCS%%%%DOCSDIR%%/GStreamer-monkeysaudio-permit
-@exec %%X11BASE%%/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
+@exec %%LOCALBASE%%/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@unexec %%X11BASE%%/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
+@unexec %%LOCALBASE%%/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true

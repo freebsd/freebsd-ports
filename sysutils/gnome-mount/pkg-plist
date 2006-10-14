@@ -1,0 +1,12 @@
+bin/gnome-eject
+bin/gnome-mount
+bin/gnome-umount
+lib/nautilus/extensions-1.0/libgnome-mount.a
+lib/nautilus/extensions-1.0/libgnome-mount.la
+lib/nautilus/extensions-1.0/libgnome-mount.so
+libdata/pkgconfig/gnome-mount.pc
+share/gnome/gnome-mount/gnome-mount-properties.glade
+share/locale/it/LC_MESSAGES/gnome-mount.mo
+share/locale/ja/LC_MESSAGES/gnome-mount.mo
+share/locale/nb/LC_MESSAGES/gnome-mount.mo
+@dirrm share/gnome/gnome-mount

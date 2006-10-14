@@ -1,165 +1,908 @@
 share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Glider/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Mist/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Sandwish/metacity-1/active-border-top-left-border.png
-share/gnome/themes/Sandwish/metacity-1/active-border-top-right-border.png
-share/gnome/themes/Sandwish/metacity-1/active-bottom-left-border.png
-share/gnome/themes/Sandwish/metacity-1/active-bottom-left-corner.png
-share/gnome/themes/Sandwish/metacity-1/active-bottom-mid-left-border.png
-share/gnome/themes/Sandwish/metacity-1/active-bottom-mid-right-border.png
-share/gnome/themes/Sandwish/metacity-1/active-bottom-right-border.png
-share/gnome/themes/Sandwish/metacity-1/active-bottom-right-corner.png
-share/gnome/themes/Sandwish/metacity-1/active-button-prelight.png
-share/gnome/themes/Sandwish/metacity-1/active-button-pressed.png
-share/gnome/themes/Sandwish/metacity-1/active-button.png
-share/gnome/themes/Sandwish/metacity-1/active-close-button.png
-share/gnome/themes/Sandwish/metacity-1/active-left-border.png
-share/gnome/themes/Sandwish/metacity-1/active-left-top-border-shaded.png
-share/gnome/themes/Sandwish/metacity-1/active-left-top-border.png
-share/gnome/themes/Sandwish/metacity-1/active-maximize-button.png
-share/gnome/themes/Sandwish/metacity-1/active-menu-button-prelight.png
-share/gnome/themes/Sandwish/metacity-1/active-menu-button-pressed.png
-share/gnome/themes/Sandwish/metacity-1/active-menu-button.png
-share/gnome/themes/Sandwish/metacity-1/active-minimize-button.png
-share/gnome/themes/Sandwish/metacity-1/active-right-border.png
-share/gnome/themes/Sandwish/metacity-1/active-right-top-border-shaded.png
-share/gnome/themes/Sandwish/metacity-1/active-right-top-border.png
-share/gnome/themes/Sandwish/metacity-1/active-top-center-left.png
-share/gnome/themes/Sandwish/metacity-1/active-top-center-mid-left.png
-share/gnome/themes/Sandwish/metacity-1/active-top-center-mid-right.png
-share/gnome/themes/Sandwish/metacity-1/active-top-center-right.png
-share/gnome/themes/Sandwish/metacity-1/active-top-left-border.png
-share/gnome/themes/Sandwish/metacity-1/active-top-left-corner.png
-share/gnome/themes/Sandwish/metacity-1/active-top-mid-left-border.png
-share/gnome/themes/Sandwish/metacity-1/active-top-mid-right-border.png
-share/gnome/themes/Sandwish/metacity-1/active-top-right-border.png
-share/gnome/themes/Sandwish/metacity-1/active-top-right-corner.png
-share/gnome/themes/Sandwish/metacity-1/inactive-border-top-left-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-border-top-right-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-bottom-left-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-bottom-left-corner.png
-share/gnome/themes/Sandwish/metacity-1/inactive-bottom-mid-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-bottom-right-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-bottom-right-corner.png
-share/gnome/themes/Sandwish/metacity-1/inactive-button-prelight.png
-share/gnome/themes/Sandwish/metacity-1/inactive-button-pressed.png
-share/gnome/themes/Sandwish/metacity-1/inactive-button.png
-share/gnome/themes/Sandwish/metacity-1/inactive-close-button.png
-share/gnome/themes/Sandwish/metacity-1/inactive-left-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-left-top-border-shaded.png
-share/gnome/themes/Sandwish/metacity-1/inactive-left-top-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-maximize-button.png
-share/gnome/themes/Sandwish/metacity-1/inactive-menu-button-prelight.png
-share/gnome/themes/Sandwish/metacity-1/inactive-menu-button-pressed.png
-share/gnome/themes/Sandwish/metacity-1/inactive-menu-button.png
-share/gnome/themes/Sandwish/metacity-1/inactive-minimize-button.png
-share/gnome/themes/Sandwish/metacity-1/inactive-right-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-right-top-border-shaded.png
-share/gnome/themes/Sandwish/metacity-1/inactive-right-top-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-center-left.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-center-mid.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-center-right.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-left-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-left-corner.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-mid-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-right-border.png
-share/gnome/themes/Sandwish/metacity-1/inactive-top-right-corner.png
-share/gnome/themes/Sandwish/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Smokey/metacity-1/button-base.png
-share/gnome/themes/Smokey/metacity-1/button-pressed-shine.png
-share/gnome/themes/Smokey/metacity-1/button-pressed.png
-share/gnome/themes/Smokey/metacity-1/button-shine.png
-share/gnome/themes/Smokey/metacity-1/close.png
-share/gnome/themes/Smokey/metacity-1/maximize.png
-share/gnome/themes/Smokey/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Smokey/metacity-1/minimize.png
-share/gnome/themes/Smokey/metacity-1/stripes.png
-share/icons/Crux/12x12/filesystems/gnome-fs-directory.png
-share/icons/Crux/12x12/filesystems/gnome-fs-regular.png
-share/icons/Crux/192x192/filesystems/gnome-fs-directory.png
-share/icons/Crux/192x192/filesystems/gnome-fs-regular.png
-share/icons/Crux/20x20/filesystems/gnome-fs-directory.png
-share/icons/Crux/20x20/filesystems/gnome-fs-regular.png
-share/icons/Crux/24x24/filesystems/gnome-fs-directory.png
-share/icons/Crux/24x24/filesystems/gnome-fs-regular.png
-share/icons/Crux/36x36/filesystems/gnome-fs-directory.png
-share/icons/Crux/36x36/filesystems/gnome-fs-regular.png
-share/icons/Crux/48x48/emblems/emblem-nowrite.png
-share/icons/Crux/48x48/filesystems/gnome-fs-directory.png
-share/icons/Crux/48x48/filesystems/gnome-fs-regular.png
-share/icons/Crux/72x72/emblems/emblem-nowrite.png
-share/icons/Crux/72x72/filesystems/gnome-fs-directory.png
-share/icons/Crux/72x72/filesystems/gnome-fs-regular.png
-share/icons/Crux/96x96/emblems/emblem-nowrite.png
-share/icons/Crux/96x96/filesystems/gnome-fs-directory.png
-share/icons/Crux/96x96/filesystems/gnome-fs-regular.png
+share/icons/Crux/16x16/actions/back.png
+share/icons/Crux/16x16/actions/bottom.png
+share/icons/Crux/16x16/actions/document-open.png
+share/icons/Crux/16x16/actions/down.png
+share/icons/Crux/16x16/actions/fileopen.png
+share/icons/Crux/16x16/actions/finish.png
+share/icons/Crux/16x16/actions/forward.png
+share/icons/Crux/16x16/actions/go-bottom.png
+share/icons/Crux/16x16/actions/go-down.png
+share/icons/Crux/16x16/actions/go-first.png
+share/icons/Crux/16x16/actions/go-home.png
+share/icons/Crux/16x16/actions/go-last.png
+share/icons/Crux/16x16/actions/go-next.png
+share/icons/Crux/16x16/actions/go-previous.png
+share/icons/Crux/16x16/actions/go-top.png
+share/icons/Crux/16x16/actions/go-up.png
+share/icons/Crux/16x16/actions/gohome.png
+share/icons/Crux/16x16/actions/gtk-go-back-ltr.png
+share/icons/Crux/16x16/actions/gtk-go-back-rtl.png
+share/icons/Crux/16x16/actions/gtk-go-down.png
+share/icons/Crux/16x16/actions/gtk-go-forward-ltr.png
+share/icons/Crux/16x16/actions/gtk-go-forward-rtl.png
+share/icons/Crux/16x16/actions/gtk-go-up.png
+share/icons/Crux/16x16/actions/gtk-goto-bottom.png
+share/icons/Crux/16x16/actions/gtk-goto-first-ltr.png
+share/icons/Crux/16x16/actions/gtk-goto-first-rtl.png
+share/icons/Crux/16x16/actions/gtk-goto-last-ltr.png
+share/icons/Crux/16x16/actions/gtk-goto-last-rtl.png
+share/icons/Crux/16x16/actions/gtk-goto-top.png
+share/icons/Crux/16x16/actions/gtk-home.png
+share/icons/Crux/16x16/actions/gtk-open.png
+share/icons/Crux/16x16/actions/gtk-refresh.png
+share/icons/Crux/16x16/actions/kfm_home.png
+share/icons/Crux/16x16/actions/next.png
+share/icons/Crux/16x16/actions/previous.png
+share/icons/Crux/16x16/actions/redhat-home.png
+share/icons/Crux/16x16/actions/reload.png
+share/icons/Crux/16x16/actions/reload3.png
+share/icons/Crux/16x16/actions/reload_all_tabs.png
+share/icons/Crux/16x16/actions/reload_page.png
+share/icons/Crux/16x16/actions/start.png
+share/icons/Crux/16x16/actions/stock_bottom.png
+share/icons/Crux/16x16/actions/stock_down.png
+share/icons/Crux/16x16/actions/stock_first.png
+share/icons/Crux/16x16/actions/stock_home.png
+share/icons/Crux/16x16/actions/stock_last.png
+share/icons/Crux/16x16/actions/stock_left.png
+share/icons/Crux/16x16/actions/stock_refresh.png
+share/icons/Crux/16x16/actions/stock_right.png
+share/icons/Crux/16x16/actions/stock_top.png
+share/icons/Crux/16x16/actions/stock_up.png
+share/icons/Crux/16x16/actions/top.png
+share/icons/Crux/16x16/actions/up.png
+share/icons/Crux/16x16/actions/view-refresh.png
+share/icons/Crux/16x16/places/application-x-gnome-saved-search.png
+share/icons/Crux/16x16/places/folder-remote.png
+share/icons/Crux/16x16/places/folder-saved-search.png
+share/icons/Crux/16x16/places/folder.png
+share/icons/Crux/16x16/places/folder_home.png
+share/icons/Crux/16x16/places/gnome-fs-directory.png
+share/icons/Crux/16x16/places/gnome-fs-ftp.png
+share/icons/Crux/16x16/places/gnome-fs-home.png
+share/icons/Crux/16x16/places/gnome-fs-nfs.png
+share/icons/Crux/16x16/places/gnome-fs-share.png
+share/icons/Crux/16x16/places/gnome-fs-smb.png
+share/icons/Crux/16x16/places/gnome-fs-ssh.png
+share/icons/Crux/16x16/places/gnome-mime-x-directory-smb-share.png
+share/icons/Crux/16x16/places/network.png
+share/icons/Crux/16x16/places/stock_folder.png
+share/icons/Crux/16x16/places/user-home.png
+share/icons/Crux/16x16/status/folder-drag-accept.png
+share/icons/Crux/16x16/status/folder-open.png
+share/icons/Crux/16x16/status/folder-visiting.png
+share/icons/Crux/16x16/status/folder_open.png
+share/icons/Crux/16x16/status/gnome-fs-directory-accept.png
+share/icons/Crux/16x16/status/gnome-fs-directory-visiting.png
+share/icons/Crux/16x16/status/stock_open.png
+share/icons/Crux/22x22/actions/back.png
+share/icons/Crux/22x22/actions/bottom.png
+share/icons/Crux/22x22/actions/document-open.png
+share/icons/Crux/22x22/actions/down.png
+share/icons/Crux/22x22/actions/fileopen.png
+share/icons/Crux/22x22/actions/finish.png
+share/icons/Crux/22x22/actions/forward.png
+share/icons/Crux/22x22/actions/go-bottom.png
+share/icons/Crux/22x22/actions/go-down.png
+share/icons/Crux/22x22/actions/go-first.png
+share/icons/Crux/22x22/actions/go-home.png
+share/icons/Crux/22x22/actions/go-last.png
+share/icons/Crux/22x22/actions/go-next.png
+share/icons/Crux/22x22/actions/go-previous.png
+share/icons/Crux/22x22/actions/go-top.png
+share/icons/Crux/22x22/actions/go-up.png
+share/icons/Crux/22x22/actions/gohome.png
+share/icons/Crux/22x22/actions/gtk-go-back-ltr.png
+share/icons/Crux/22x22/actions/gtk-go-back-rtl.png
+share/icons/Crux/22x22/actions/gtk-go-down.png
+share/icons/Crux/22x22/actions/gtk-go-forward-ltr.png
+share/icons/Crux/22x22/actions/gtk-go-forward-rtl.png
+share/icons/Crux/22x22/actions/gtk-go-up.png
+share/icons/Crux/22x22/actions/gtk-goto-bottom.png
+share/icons/Crux/22x22/actions/gtk-goto-first-ltr.png
+share/icons/Crux/22x22/actions/gtk-goto-first-rtl.png
+share/icons/Crux/22x22/actions/gtk-goto-last-ltr.png
+share/icons/Crux/22x22/actions/gtk-goto-last-rtl.png
+share/icons/Crux/22x22/actions/gtk-goto-top.png
+share/icons/Crux/22x22/actions/gtk-home.png
+share/icons/Crux/22x22/actions/gtk-open.png
+share/icons/Crux/22x22/actions/gtk-refresh.png
+share/icons/Crux/22x22/actions/kfm_home.png
+share/icons/Crux/22x22/actions/next.png
+share/icons/Crux/22x22/actions/previous.png
+share/icons/Crux/22x22/actions/redhat-home.png
+share/icons/Crux/22x22/actions/reload.png
+share/icons/Crux/22x22/actions/reload3.png
+share/icons/Crux/22x22/actions/reload_all_tabs.png
+share/icons/Crux/22x22/actions/reload_page.png
+share/icons/Crux/22x22/actions/start.png
+share/icons/Crux/22x22/actions/stock_bottom.png
+share/icons/Crux/22x22/actions/stock_down.png
+share/icons/Crux/22x22/actions/stock_first.png
+share/icons/Crux/22x22/actions/stock_home.png
+share/icons/Crux/22x22/actions/stock_last.png
+share/icons/Crux/22x22/actions/stock_left.png
+share/icons/Crux/22x22/actions/stock_refresh.png
+share/icons/Crux/22x22/actions/stock_right.png
+share/icons/Crux/22x22/actions/stock_top.png
+share/icons/Crux/22x22/actions/stock_up.png
+share/icons/Crux/22x22/actions/top.png
+share/icons/Crux/22x22/actions/up.png
+share/icons/Crux/22x22/actions/view-refresh.png
+share/icons/Crux/22x22/places/application-x-gnome-saved-search.png
+share/icons/Crux/22x22/places/folder-remote.png
+share/icons/Crux/22x22/places/folder-saved-search.png
+share/icons/Crux/22x22/places/folder.png
+share/icons/Crux/22x22/places/folder_home.png
+share/icons/Crux/22x22/places/gnome-fs-directory.png
+share/icons/Crux/22x22/places/gnome-fs-ftp.png
+share/icons/Crux/22x22/places/gnome-fs-home.png
+share/icons/Crux/22x22/places/gnome-fs-nfs.png
+share/icons/Crux/22x22/places/gnome-fs-share.png
+share/icons/Crux/22x22/places/gnome-fs-smb.png
+share/icons/Crux/22x22/places/gnome-fs-ssh.png
+share/icons/Crux/22x22/places/gnome-mime-x-directory-smb-share.png
+share/icons/Crux/22x22/places/network.png
+share/icons/Crux/22x22/places/stock_folder.png
+share/icons/Crux/22x22/places/user-home.png
+share/icons/Crux/22x22/status/folder-drag-accept.png
+share/icons/Crux/22x22/status/folder-open.png
+share/icons/Crux/22x22/status/folder-visiting.png
+share/icons/Crux/22x22/status/folder_open.png
+share/icons/Crux/22x22/status/gnome-fs-directory-accept.png
+share/icons/Crux/22x22/status/gnome-fs-directory-visiting.png
+share/icons/Crux/22x22/status/stock_open.png
+share/icons/Crux/24x24/actions/back.png
+share/icons/Crux/24x24/actions/bottom.png
+share/icons/Crux/24x24/actions/document-open.png
+share/icons/Crux/24x24/actions/down.png
+share/icons/Crux/24x24/actions/fileopen.png
+share/icons/Crux/24x24/actions/finish.png
+share/icons/Crux/24x24/actions/forward.png
+share/icons/Crux/24x24/actions/go-bottom.png
+share/icons/Crux/24x24/actions/go-down.png
+share/icons/Crux/24x24/actions/go-first.png
+share/icons/Crux/24x24/actions/go-home.png
+share/icons/Crux/24x24/actions/go-last.png
+share/icons/Crux/24x24/actions/go-next.png
+share/icons/Crux/24x24/actions/go-previous.png
+share/icons/Crux/24x24/actions/go-top.png
+share/icons/Crux/24x24/actions/go-up.png
+share/icons/Crux/24x24/actions/gohome.png
+share/icons/Crux/24x24/actions/gtk-go-back-ltr.png
+share/icons/Crux/24x24/actions/gtk-go-back-rtl.png
+share/icons/Crux/24x24/actions/gtk-go-down.png
+share/icons/Crux/24x24/actions/gtk-go-forward-ltr.png
+share/icons/Crux/24x24/actions/gtk-go-forward-rtl.png
+share/icons/Crux/24x24/actions/gtk-go-up.png
+share/icons/Crux/24x24/actions/gtk-goto-bottom.png
+share/icons/Crux/24x24/actions/gtk-goto-first-ltr.png
+share/icons/Crux/24x24/actions/gtk-goto-first-rtl.png
+share/icons/Crux/24x24/actions/gtk-goto-last-ltr.png
+share/icons/Crux/24x24/actions/gtk-goto-last-rtl.png
+share/icons/Crux/24x24/actions/gtk-goto-top.png
+share/icons/Crux/24x24/actions/gtk-home.png
+share/icons/Crux/24x24/actions/gtk-open.png
+share/icons/Crux/24x24/actions/gtk-refresh.png
+share/icons/Crux/24x24/actions/kfm_home.png
+share/icons/Crux/24x24/actions/next.png
+share/icons/Crux/24x24/actions/previous.png
+share/icons/Crux/24x24/actions/redhat-home.png
+share/icons/Crux/24x24/actions/reload.png
+share/icons/Crux/24x24/actions/reload3.png
+share/icons/Crux/24x24/actions/reload_all_tabs.png
+share/icons/Crux/24x24/actions/reload_page.png
+share/icons/Crux/24x24/actions/start.png
+share/icons/Crux/24x24/actions/stock_bottom.png
+share/icons/Crux/24x24/actions/stock_down.png
+share/icons/Crux/24x24/actions/stock_first.png
+share/icons/Crux/24x24/actions/stock_home.png
+share/icons/Crux/24x24/actions/stock_last.png
+share/icons/Crux/24x24/actions/stock_left.png
+share/icons/Crux/24x24/actions/stock_refresh.png
+share/icons/Crux/24x24/actions/stock_right.png
+share/icons/Crux/24x24/actions/stock_top.png
+share/icons/Crux/24x24/actions/stock_up.png
+share/icons/Crux/24x24/actions/top.png
+share/icons/Crux/24x24/actions/up.png
+share/icons/Crux/24x24/actions/view-refresh.png
+share/icons/Crux/24x24/places/application-x-gnome-saved-search.png
+share/icons/Crux/24x24/places/folder-remote.png
+share/icons/Crux/24x24/places/folder-saved-search.png
+share/icons/Crux/24x24/places/folder.png
+share/icons/Crux/24x24/places/folder_home.png
+share/icons/Crux/24x24/places/gnome-fs-directory.png
+share/icons/Crux/24x24/places/gnome-fs-ftp.png
+share/icons/Crux/24x24/places/gnome-fs-home.png
+share/icons/Crux/24x24/places/gnome-fs-nfs.png
+share/icons/Crux/24x24/places/gnome-fs-share.png
+share/icons/Crux/24x24/places/gnome-fs-smb.png
+share/icons/Crux/24x24/places/gnome-fs-ssh.png
+share/icons/Crux/24x24/places/gnome-mime-x-directory-smb-share.png
+share/icons/Crux/24x24/places/network.png
+share/icons/Crux/24x24/places/stock_folder.png
+share/icons/Crux/24x24/places/user-home.png
+share/icons/Crux/24x24/status/folder-drag-accept.png
+share/icons/Crux/24x24/status/folder-open.png
+share/icons/Crux/24x24/status/folder-visiting.png
+share/icons/Crux/24x24/status/folder_open.png
+share/icons/Crux/24x24/status/gnome-fs-directory-accept.png
+share/icons/Crux/24x24/status/gnome-fs-directory-visiting.png
+share/icons/Crux/24x24/status/stock_open.png
+share/icons/Crux/32x32/actions/document-open.png
+share/icons/Crux/32x32/actions/fileopen.png
+share/icons/Crux/32x32/actions/gtk-open.png
+share/icons/Crux/32x32/places/application-x-gnome-saved-search.png
+share/icons/Crux/32x32/places/folder-remote.png
+share/icons/Crux/32x32/places/folder-saved-search.png
+share/icons/Crux/32x32/places/folder.png
+share/icons/Crux/32x32/places/folder_home.png
+share/icons/Crux/32x32/places/gnome-fs-directory.png
+share/icons/Crux/32x32/places/gnome-fs-ftp.png
+share/icons/Crux/32x32/places/gnome-fs-home.png
+share/icons/Crux/32x32/places/gnome-fs-nfs.png
+share/icons/Crux/32x32/places/gnome-fs-share.png
+share/icons/Crux/32x32/places/gnome-fs-smb.png
+share/icons/Crux/32x32/places/gnome-fs-ssh.png
+share/icons/Crux/32x32/places/gnome-mime-x-directory-smb-share.png
+share/icons/Crux/32x32/places/network.png
+share/icons/Crux/32x32/places/stock_folder.png
+share/icons/Crux/32x32/places/user-home.png
+share/icons/Crux/32x32/status/folder-drag-accept.png
+share/icons/Crux/32x32/status/folder-open.png
+share/icons/Crux/32x32/status/folder-visiting.png
+share/icons/Crux/32x32/status/folder_open.png
+share/icons/Crux/32x32/status/gnome-fs-directory-accept.png
+share/icons/Crux/32x32/status/gnome-fs-directory-visiting.png
+share/icons/Crux/32x32/status/stock_open.png
 share/icons/Crux/index.theme
-share/icons/Flat-Blue/12x12/emblems/emblem-symbolic-link.png
-share/icons/Flat-Blue/12x12/filesystems/gnome-fs-directory-accept.png
-share/icons/Flat-Blue/12x12/filesystems/gnome-fs-directory.png
-share/icons/Flat-Blue/12x12/filesystems/gnome-fs-regular.png
-share/icons/Flat-Blue/192x192/filesystems/gnome-fs-trash-empty.png
-share/icons/Flat-Blue/192x192/filesystems/gnome-fs-trash-full.png
-share/icons/Flat-Blue/20x20/filesystems/gnome-fs-bookmark-missing.png
-share/icons/Flat-Blue/20x20/filesystems/gnome-fs-bookmark.png
-share/icons/Flat-Blue/24x24/emblems/emblem-symbolic-link.png
-share/icons/Flat-Blue/24x24/filesystems/gnome-fs-directory-accept.png
-share/icons/Flat-Blue/24x24/filesystems/gnome-fs-directory.png
-share/icons/Flat-Blue/24x24/filesystems/gnome-fs-regular.png
-share/icons/Flat-Blue/36x36/emblems/emblem-symbolic-link.png
-share/icons/Flat-Blue/36x36/filesystems/gnome-fs-directory-accept.png
-share/icons/Flat-Blue/36x36/filesystems/gnome-fs-directory.png
-share/icons/Flat-Blue/36x36/filesystems/gnome-fs-regular.png
-share/icons/Flat-Blue/48x48/devices/gnome-dev-broken-image.png
-share/icons/Flat-Blue/48x48/devices/gnome-dev-spreadsheet.png
-share/icons/Flat-Blue/48x48/devices/gnome-dev-stalled.png
-share/icons/Flat-Blue/48x48/devices/gnome-dev-symlink.png
-share/icons/Flat-Blue/48x48/emblems/emblem-art.png
-share/icons/Flat-Blue/48x48/emblems/emblem-broken-link.png
-share/icons/Flat-Blue/48x48/emblems/emblem-camera.png
-share/icons/Flat-Blue/48x48/emblems/emblem-documents.png
-share/icons/Flat-Blue/48x48/emblems/emblem-generic.png
-share/icons/Flat-Blue/48x48/emblems/emblem-mail.png
-share/icons/Flat-Blue/48x48/emblems/emblem-multimedia.png
-share/icons/Flat-Blue/48x48/emblems/emblem-package.png
-share/icons/Flat-Blue/48x48/emblems/emblem-pictures.png
-share/icons/Flat-Blue/48x48/emblems/emblem-sound.png
-share/icons/Flat-Blue/48x48/emblems/emblem-symbolic-link.png
-share/icons/Flat-Blue/48x48/emblems/emblem-trash.png
-share/icons/Flat-Blue/48x48/emblems/emblem-web.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-bookmark-missing.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-bookmark.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-directory-accept.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-directory.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-home.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-loading.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-regular.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-trash-empty.png
-share/icons/Flat-Blue/48x48/filesystems/gnome-fs-trash-full.png
-share/icons/Flat-Blue/72x72/devices/gnome-dev-search.png
-share/icons/Flat-Blue/72x72/filesystems/gnome-fs-directory-accept.png
-share/icons/Flat-Blue/72x72/filesystems/gnome-fs-directory.png
-share/icons/Flat-Blue/72x72/filesystems/gnome-fs-regular.png
-share/icons/Flat-Blue/72x72/filesystems/gnome-fs-web.png
-share/icons/Flat-Blue/96x96/filesystems/gnome-fs-directory-accept.png
-share/icons/Flat-Blue/96x96/filesystems/gnome-fs-directory.png
-share/icons/Flat-Blue/96x96/filesystems/gnome-fs-regular.png
-share/icons/Flat-Blue/index.theme
-share/icons/Flat-Blue/scalable/emblems/emblem-OK.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-certified.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-cool.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-danger.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-distinguished.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-draft.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-favorite.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-important.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-new.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-noread.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-nowrite.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-ohno.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-personal.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-special.svg
-share/icons/Flat-Blue/scalable/emblems/emblem-urgent.svg
+share/icons/Crux/scalable/actions/back.svg
+share/icons/Crux/scalable/actions/bottom.svg
+share/icons/Crux/scalable/actions/document-open.svg
+share/icons/Crux/scalable/actions/down.svg
+share/icons/Crux/scalable/actions/fileopen.svg
+share/icons/Crux/scalable/actions/finish.svg
+share/icons/Crux/scalable/actions/forward.svg
+share/icons/Crux/scalable/actions/go-bottom.svg
+share/icons/Crux/scalable/actions/go-down.svg
+share/icons/Crux/scalable/actions/go-first.svg
+share/icons/Crux/scalable/actions/go-home.svg
+share/icons/Crux/scalable/actions/go-last.svg
+share/icons/Crux/scalable/actions/go-next.svg
+share/icons/Crux/scalable/actions/go-previous.svg
+share/icons/Crux/scalable/actions/go-top.svg
+share/icons/Crux/scalable/actions/go-up.svg
+share/icons/Crux/scalable/actions/gohome.svg
+share/icons/Crux/scalable/actions/gtk-go-back-ltr.svg
+share/icons/Crux/scalable/actions/gtk-go-back-rtl.svg
+share/icons/Crux/scalable/actions/gtk-go-down.svg
+share/icons/Crux/scalable/actions/gtk-go-forward-ltr.svg
+share/icons/Crux/scalable/actions/gtk-go-forward-rtl.svg
+share/icons/Crux/scalable/actions/gtk-go-up.svg
+share/icons/Crux/scalable/actions/gtk-goto-bottom.svg
+share/icons/Crux/scalable/actions/gtk-goto-first-ltr.svg
+share/icons/Crux/scalable/actions/gtk-goto-first-rtl.svg
+share/icons/Crux/scalable/actions/gtk-goto-last-ltr.svg
+share/icons/Crux/scalable/actions/gtk-goto-last-rtl.svg
+share/icons/Crux/scalable/actions/gtk-goto-top.svg
+share/icons/Crux/scalable/actions/gtk-home.svg
+share/icons/Crux/scalable/actions/gtk-open.svg
+share/icons/Crux/scalable/actions/gtk-refresh.svg
+share/icons/Crux/scalable/actions/kfm_home.svg
+share/icons/Crux/scalable/actions/next.svg
+share/icons/Crux/scalable/actions/previous.svg
+share/icons/Crux/scalable/actions/redhat-home.svg
+share/icons/Crux/scalable/actions/reload.svg
+share/icons/Crux/scalable/actions/reload3.svg
+share/icons/Crux/scalable/actions/reload_all_tabs.svg
+share/icons/Crux/scalable/actions/reload_page.svg
+share/icons/Crux/scalable/actions/start.svg
+share/icons/Crux/scalable/actions/stock_bottom.svg
+share/icons/Crux/scalable/actions/stock_down.svg
+share/icons/Crux/scalable/actions/stock_first.svg
+share/icons/Crux/scalable/actions/stock_home.svg
+share/icons/Crux/scalable/actions/stock_last.svg
+share/icons/Crux/scalable/actions/stock_left.svg
+share/icons/Crux/scalable/actions/stock_refresh.svg
+share/icons/Crux/scalable/actions/stock_right.svg
+share/icons/Crux/scalable/actions/stock_top.svg
+share/icons/Crux/scalable/actions/stock_up.svg
+share/icons/Crux/scalable/actions/top.svg
+share/icons/Crux/scalable/actions/up.svg
+share/icons/Crux/scalable/actions/view-refresh.svg
+share/icons/Crux/scalable/places/application-x-gnome-saved-search.svg
+share/icons/Crux/scalable/places/folder-remote.svg
+share/icons/Crux/scalable/places/folder-saved-search.svg
+share/icons/Crux/scalable/places/folder.svg
+share/icons/Crux/scalable/places/folder_home.svg
+share/icons/Crux/scalable/places/gnome-fs-directory.svg
+share/icons/Crux/scalable/places/gnome-fs-ftp.svg
+share/icons/Crux/scalable/places/gnome-fs-home.svg
+share/icons/Crux/scalable/places/gnome-fs-nfs.svg
+share/icons/Crux/scalable/places/gnome-fs-share.svg
+share/icons/Crux/scalable/places/gnome-fs-smb.svg
+share/icons/Crux/scalable/places/gnome-fs-ssh.svg
+share/icons/Crux/scalable/places/gnome-mime-x-directory-smb-share.svg
+share/icons/Crux/scalable/places/network.svg
+share/icons/Crux/scalable/places/stock_folder.svg
+share/icons/Crux/scalable/places/user-home.svg
+share/icons/Crux/scalable/status/folder-drag-accept.svg
+share/icons/Crux/scalable/status/folder-open.svg
+share/icons/Crux/scalable/status/folder-visiting.svg
+share/icons/Crux/scalable/status/folder_open.svg
+share/icons/Crux/scalable/status/gnome-fs-directory-accept.svg
+share/icons/Crux/scalable/status/gnome-fs-directory-visiting.svg
+share/icons/Crux/scalable/status/stock_open.svg
+share/icons/HighContrast-SVG/48x48/animations/gnome-spinner-rest.png
+share/icons/HighContrast-SVG/48x48/animations/gnome-spinner.png
+share/icons/HighContrast-SVG/48x48/animations/process-idle.png
+share/icons/HighContrast-SVG/48x48/animations/process-working.png
+share/icons/HighContrast-SVG/index.theme
+share/icons/HighContrast-SVG/scalable/actions/add.svg
+share/icons/HighContrast-SVG/scalable/actions/application-exit.svg
+share/icons/HighContrast-SVG/scalable/actions/back.svg
+share/icons/HighContrast-SVG/scalable/actions/bottom.svg
+share/icons/HighContrast-SVG/scalable/actions/button_cancel.svg
+share/icons/HighContrast-SVG/scalable/actions/cancel.svg
+share/icons/HighContrast-SVG/scalable/actions/centrejust.svg
+share/icons/HighContrast-SVG/scalable/actions/dialog-cancel.svg
+share/icons/HighContrast-SVG/scalable/actions/dialog-close.svg
+share/icons/HighContrast-SVG/scalable/actions/dialog-ok.svg
+share/icons/HighContrast-SVG/scalable/actions/document-new.svg
+share/icons/HighContrast-SVG/scalable/actions/document-open-recent.svg
+share/icons/HighContrast-SVG/scalable/actions/document-open.svg
+share/icons/HighContrast-SVG/scalable/actions/document-print-preview.svg
+share/icons/HighContrast-SVG/scalable/actions/document-print.svg
+share/icons/HighContrast-SVG/scalable/actions/document-properties.svg
+share/icons/HighContrast-SVG/scalable/actions/document-revert.svg
+share/icons/HighContrast-SVG/scalable/actions/document-save-as.svg
+share/icons/HighContrast-SVG/scalable/actions/document-save.svg
+share/icons/HighContrast-SVG/scalable/actions/down.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-clear.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-copy.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-cut.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-delete.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-find-replace.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-find.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-paste.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-redo.svg
+share/icons/HighContrast-SVG/scalable/actions/edit-undo.svg
+share/icons/HighContrast-SVG/scalable/actions/editclear.svg
+share/icons/HighContrast-SVG/scalable/actions/editcopy.svg
+share/icons/HighContrast-SVG/scalable/actions/editcut.svg
+share/icons/HighContrast-SVG/scalable/actions/editdelete.svg
+share/icons/HighContrast-SVG/scalable/actions/editpaste.svg
+share/icons/HighContrast-SVG/scalable/actions/exit.svg
+share/icons/HighContrast-SVG/scalable/actions/filefind.svg
+share/icons/HighContrast-SVG/scalable/actions/filenew.svg
+share/icons/HighContrast-SVG/scalable/actions/fileopen.svg
+share/icons/HighContrast-SVG/scalable/actions/fileprint.svg
+share/icons/HighContrast-SVG/scalable/actions/filequickprint.svg
+share/icons/HighContrast-SVG/scalable/actions/filesave.svg
+share/icons/HighContrast-SVG/scalable/actions/filesaveas.svg
+share/icons/HighContrast-SVG/scalable/actions/find.svg
+share/icons/HighContrast-SVG/scalable/actions/finish.svg
+share/icons/HighContrast-SVG/scalable/actions/format-indent-less.svg
+share/icons/HighContrast-SVG/scalable/actions/format-indent-more.svg
+share/icons/HighContrast-SVG/scalable/actions/format-justify-center.svg
+share/icons/HighContrast-SVG/scalable/actions/format-justify-fill.svg
+share/icons/HighContrast-SVG/scalable/actions/format-justify-left.svg
+share/icons/HighContrast-SVG/scalable/actions/format-justify-right.svg
+share/icons/HighContrast-SVG/scalable/actions/format-text-bold.svg
+share/icons/HighContrast-SVG/scalable/actions/format-text-italic.svg
+share/icons/HighContrast-SVG/scalable/actions/format-text-strikethrough.svg
+share/icons/HighContrast-SVG/scalable/actions/format-text-underline.svg
+share/icons/HighContrast-SVG/scalable/actions/forward.svg
+share/icons/HighContrast-SVG/scalable/actions/gnome-lockscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/gnome-logout.svg
+share/icons/HighContrast-SVG/scalable/actions/gnome-run.svg
+share/icons/HighContrast-SVG/scalable/actions/gnome-searchtool.svg
+share/icons/HighContrast-SVG/scalable/actions/gnome-stock-mail-new.svg
+share/icons/HighContrast-SVG/scalable/actions/gnome-stock-text-indent.svg
+share/icons/HighContrast-SVG/scalable/actions/gnome-stock-text-unindent.svg
+share/icons/HighContrast-SVG/scalable/actions/go-bottom.svg
+share/icons/HighContrast-SVG/scalable/actions/go-down.svg
+share/icons/HighContrast-SVG/scalable/actions/go-first.svg
+share/icons/HighContrast-SVG/scalable/actions/go-home.svg
+share/icons/HighContrast-SVG/scalable/actions/go-jump.svg
+share/icons/HighContrast-SVG/scalable/actions/go-last.svg
+share/icons/HighContrast-SVG/scalable/actions/go-next.svg
+share/icons/HighContrast-SVG/scalable/actions/go-previous.svg
+share/icons/HighContrast-SVG/scalable/actions/go-top.svg
+share/icons/HighContrast-SVG/scalable/actions/go-up.svg
+share/icons/HighContrast-SVG/scalable/actions/gohome.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-add.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-bold.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-cancel.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-clear.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-close.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-copy.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-cut.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-delete.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-find-and-replace.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-find.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-fullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-go-back-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-go-back-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-go-down.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-go-forward-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-go-forward-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-go-up.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-goto-bottom.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-goto-first-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-goto-first-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-goto-last-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-goto-last-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-goto-top.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-home.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-indent.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-italic.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-jump-to-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-jump-to-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-justify-center.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-justify-fill.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-justify-left.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-justify-right.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-leave-fullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-forward-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-forward-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-next-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-next-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-pause.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-play-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-previous-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-previous-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-record.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-rewind-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-rewind-rtl.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-media-stop.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-new.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-open.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-paste.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-print-preview.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-print.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-properties.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-quit.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-redo-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-refresh.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-remove.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-save-as.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-save.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-sort-ascending.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-sort-descending.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-stop.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-strikethrough.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-underline.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-undo-ltr.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-unindent.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-100.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-fit.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-in.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-out.svg
+share/icons/HighContrast-SVG/scalable/actions/help-about.svg
+share/icons/HighContrast-SVG/scalable/actions/insert-object.svg
+share/icons/HighContrast-SVG/scalable/actions/kfind.svg
+share/icons/HighContrast-SVG/scalable/actions/kfm_home.svg
+share/icons/HighContrast-SVG/scalable/actions/leftjust.svg
+share/icons/HighContrast-SVG/scalable/actions/list-add.svg
+share/icons/HighContrast-SVG/scalable/actions/list-remove.svg
+share/icons/HighContrast-SVG/scalable/actions/lock.svg
+share/icons/HighContrast-SVG/scalable/actions/mail-message-new.svg
+share/icons/HighContrast-SVG/scalable/actions/mail_new.svg
+share/icons/HighContrast-SVG/scalable/actions/media-eject.svg
+share/icons/HighContrast-SVG/scalable/actions/media-playback-pause.svg
+share/icons/HighContrast-SVG/scalable/actions/media-playback-start.svg
+share/icons/HighContrast-SVG/scalable/actions/media-playback-stop.svg
+share/icons/HighContrast-SVG/scalable/actions/media-record.svg
+share/icons/HighContrast-SVG/scalable/actions/media-seek-backward.svg
+share/icons/HighContrast-SVG/scalable/actions/media-seek-forward.svg
+share/icons/HighContrast-SVG/scalable/actions/media-skip-backward.svg
+share/icons/HighContrast-SVG/scalable/actions/media-skip-forward.svg
+share/icons/HighContrast-SVG/scalable/actions/next.svg
+share/icons/HighContrast-SVG/scalable/actions/player_eject.svg
+share/icons/HighContrast-SVG/scalable/actions/player_end.svg
+share/icons/HighContrast-SVG/scalable/actions/player_fwd.svg
+share/icons/HighContrast-SVG/scalable/actions/player_pause.svg
+share/icons/HighContrast-SVG/scalable/actions/player_play.svg
+share/icons/HighContrast-SVG/scalable/actions/player_record.svg
+share/icons/HighContrast-SVG/scalable/actions/player_rew.svg
+share/icons/HighContrast-SVG/scalable/actions/player_start.svg
+share/icons/HighContrast-SVG/scalable/actions/player_stop.svg
+share/icons/HighContrast-SVG/scalable/actions/previous.svg
+share/icons/HighContrast-SVG/scalable/actions/process-stop.svg
+share/icons/HighContrast-SVG/scalable/actions/redhat-home.svg
+share/icons/HighContrast-SVG/scalable/actions/redo.svg
+share/icons/HighContrast-SVG/scalable/actions/reload.svg
+share/icons/HighContrast-SVG/scalable/actions/reload3.svg
+share/icons/HighContrast-SVG/scalable/actions/reload_all_tabs.svg
+share/icons/HighContrast-SVG/scalable/actions/reload_page.svg
+share/icons/HighContrast-SVG/scalable/actions/remove.svg
+share/icons/HighContrast-SVG/scalable/actions/rightjust.svg
+share/icons/HighContrast-SVG/scalable/actions/search.svg
+share/icons/HighContrast-SVG/scalable/actions/start.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_bottom.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_close.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_copy.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_cut.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_delete.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_down.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_file-properites.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_first.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_fullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_home.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_last.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_leave-fullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_left.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_mail-compose.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-fwd.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-next.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-pause.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-play.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-prev.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-rec.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-rew.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_media-stop.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_new-text.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_new-window.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_paste.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_print-preview.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_print.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_properties.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_redo.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_refresh.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_right.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_save-as.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_save.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_search-and-replace.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_search.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_stop.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text-strikethrough.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_bold.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_center.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_indent.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_italic.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_justify.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_left.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_right.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_underlined.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_text_unindent.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_top.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_undo.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_up.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_zoom-1.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_zoom-in.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_zoom-out.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_zoom-page.svg
+share/icons/HighContrast-SVG/scalable/actions/stop.svg
+share/icons/HighContrast-SVG/scalable/actions/system-lock-screen.svg
+share/icons/HighContrast-SVG/scalable/actions/system-log-out.svg
+share/icons/HighContrast-SVG/scalable/actions/system-run.svg
+share/icons/HighContrast-SVG/scalable/actions/system-search.svg
+share/icons/HighContrast-SVG/scalable/actions/system-shutdown.svg
+share/icons/HighContrast-SVG/scalable/actions/text_bold.svg
+share/icons/HighContrast-SVG/scalable/actions/text_italic.svg
+share/icons/HighContrast-SVG/scalable/actions/text_strike.svg
+share/icons/HighContrast-SVG/scalable/actions/text_under.svg
+share/icons/HighContrast-SVG/scalable/actions/tools-check-spelling.svg
+share/icons/HighContrast-SVG/scalable/actions/top.svg
+share/icons/HighContrast-SVG/scalable/actions/undo.svg
+share/icons/HighContrast-SVG/scalable/actions/up.svg
+share/icons/HighContrast-SVG/scalable/actions/view-fullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/view-refresh.svg
+share/icons/HighContrast-SVG/scalable/actions/view-restore.svg
+share/icons/HighContrast-SVG/scalable/actions/view-sort-ascending.svg
+share/icons/HighContrast-SVG/scalable/actions/view-sort-descending.svg
+share/icons/HighContrast-SVG/scalable/actions/window-close.svg
+share/icons/HighContrast-SVG/scalable/actions/window-new.svg
+share/icons/HighContrast-SVG/scalable/actions/window_fullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/window_new.svg
+share/icons/HighContrast-SVG/scalable/actions/window_nofullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/xfce-system-exit.svg
+share/icons/HighContrast-SVG/scalable/actions/xfce-system-lock.svg
+share/icons/HighContrast-SVG/scalable/actions/zoom-best-fit.svg
+share/icons/HighContrast-SVG/scalable/actions/zoom-in.svg
+share/icons/HighContrast-SVG/scalable/actions/zoom-original.svg
+share/icons/HighContrast-SVG/scalable/actions/zoom-out.svg
+share/icons/HighContrast-SVG/scalable/apps/accessories-calculator.svg
+share/icons/HighContrast-SVG/scalable/apps/accessories-character-map.svg
+share/icons/HighContrast-SVG/scalable/apps/accessories-text-editor.svg
+share/icons/HighContrast-SVG/scalable/apps/arts.svg
+share/icons/HighContrast-SVG/scalable/apps/calc.svg
+share/icons/HighContrast-SVG/scalable/apps/fonts.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-calculator.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-character-map.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-help.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-mixer.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-monitor.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-settings-font.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-terminal.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-window-manager.svg
+share/icons/HighContrast-SVG/scalable/apps/gtk-help.svg
+share/icons/HighContrast-SVG/scalable/apps/gucharmap.svg
+share/icons/HighContrast-SVG/scalable/apps/help-browser.svg
+share/icons/HighContrast-SVG/scalable/apps/help.svg
+share/icons/HighContrast-SVG/scalable/apps/kcalc.svg
+share/icons/HighContrast-SVG/scalable/apps/kcharselect.svg
+share/icons/HighContrast-SVG/scalable/apps/kcmkwm.svg
+share/icons/HighContrast-SVG/scalable/apps/kcmsound.svg
+share/icons/HighContrast-SVG/scalable/apps/kedit.svg
+share/icons/HighContrast-SVG/scalable/apps/khelpcenter.svg
+share/icons/HighContrast-SVG/scalable/apps/konsole.svg
+share/icons/HighContrast-SVG/scalable/apps/ksysguard.svg
+share/icons/HighContrast-SVG/scalable/apps/kwin.svg
+share/icons/HighContrast-SVG/scalable/apps/multimedia-volume-control.svg
+share/icons/HighContrast-SVG/scalable/apps/multimedia.svg
+share/icons/HighContrast-SVG/scalable/apps/openterm.svg
+share/icons/HighContrast-SVG/scalable/apps/preferences-desktop-font.svg
+share/icons/HighContrast-SVG/scalable/apps/preferences-system-windows.svg
+share/icons/HighContrast-SVG/scalable/apps/stock_help.svg
+share/icons/HighContrast-SVG/scalable/apps/susehelpcenter.svg
+share/icons/HighContrast-SVG/scalable/apps/terminal.svg
+share/icons/HighContrast-SVG/scalable/apps/text-editor.svg
+share/icons/HighContrast-SVG/scalable/apps/utilities-system-monitor.svg
+share/icons/HighContrast-SVG/scalable/apps/utilities-terminal.svg
+share/icons/HighContrast-SVG/scalable/apps/volume-knob.svg
+share/icons/HighContrast-SVG/scalable/apps/xfce-terminal.svg
+share/icons/HighContrast-SVG/scalable/apps/xfce4-mixer.svg
+share/icons/HighContrast-SVG/scalable/apps/xfwm4.svg
+share/icons/HighContrast-SVG/scalable/categories/applications-accessories.svg
+share/icons/HighContrast-SVG/scalable/categories/applications-games.svg
+share/icons/HighContrast-SVG/scalable/categories/applications-graphics.svg
+share/icons/HighContrast-SVG/scalable/categories/applications-internet.svg
+share/icons/HighContrast-SVG/scalable/categories/gnome-control-center.svg
+share/icons/HighContrast-SVG/scalable/categories/gnome-globe.svg
+share/icons/HighContrast-SVG/scalable/categories/gnome-graphics.svg
+share/icons/HighContrast-SVG/scalable/categories/gnome-joystick.svg
+share/icons/HighContrast-SVG/scalable/categories/gnome-settings.svg
+share/icons/HighContrast-SVG/scalable/categories/gnome-util.svg
+share/icons/HighContrast-SVG/scalable/categories/gtk-preferences.svg
+share/icons/HighContrast-SVG/scalable/categories/kcontrol.svg
+share/icons/HighContrast-SVG/scalable/categories/package_games.svg
+share/icons/HighContrast-SVG/scalable/categories/package_graphics.svg
+share/icons/HighContrast-SVG/scalable/categories/package_network.svg
+share/icons/HighContrast-SVG/scalable/categories/package_utilities.svg
+share/icons/HighContrast-SVG/scalable/categories/preferences-desktop.svg
+share/icons/HighContrast-SVG/scalable/categories/redhat-accessories.svg
+share/icons/HighContrast-SVG/scalable/categories/redhat-games.svg
+share/icons/HighContrast-SVG/scalable/categories/redhat-graphics.svg
+share/icons/HighContrast-SVG/scalable/categories/redhat-internet.svg
+share/icons/HighContrast-SVG/scalable/categories/redhat-preferences.svg
+share/icons/HighContrast-SVG/scalable/categories/stock_internet.svg
+share/icons/HighContrast-SVG/scalable/categories/xfce-games.svg
+share/icons/HighContrast-SVG/scalable/categories/xfce-graphics.svg
+share/icons/HighContrast-SVG/scalable/categories/xfce-internet.svg
+share/icons/HighContrast-SVG/scalable/categories/xfce-utils.svg
+share/icons/HighContrast-SVG/scalable/categories/xfce4-settings.svg
+share/icons/HighContrast-SVG/scalable/devices/3floppy_unmount.svg
+share/icons/HighContrast-SVG/scalable/devices/audio-input-microphone.svg
+share/icons/HighContrast-SVG/scalable/devices/camera-photo.svg
+share/icons/HighContrast-SVG/scalable/devices/camera.svg
+share/icons/HighContrast-SVG/scalable/devices/camera_unmount.svg
+share/icons/HighContrast-SVG/scalable/devices/cdrom_unmount.svg
+share/icons/HighContrast-SVG/scalable/devices/cdwriter_unmount.svg
+share/icons/HighContrast-SVG/scalable/devices/chardevice.svg
+share/icons/HighContrast-SVG/scalable/devices/computer.svg
+share/icons/HighContrast-SVG/scalable/devices/display.svg
+share/icons/HighContrast-SVG/scalable/devices/drive-harddisk.svg
+share/icons/HighContrast-SVG/scalable/devices/drive-removable-media.svg
+share/icons/HighContrast-SVG/scalable/devices/dvd_unmount.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-cdrom-audio.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-computer.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-disc-cdr.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-disc-cdrw.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-disc-dvdr-plus.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-disc-dvdr.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-disc-dvdram.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-disc-dvdrom.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-disc-dvdrw.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-floppy.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-harddisk-1394.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-harddisk-usb.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-harddisk.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-keyboard.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-mouse-ball.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-mouse-optical.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-printer.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-removable-1394.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-removable-usb.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-dev-removable.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-fs-client.svg
+share/icons/HighContrast-SVG/scalable/devices/gnome-stock-mic.svg
+share/icons/HighContrast-SVG/scalable/devices/gtk-cdrom.svg
+share/icons/HighContrast-SVG/scalable/devices/gtk-floppy.svg
+share/icons/HighContrast-SVG/scalable/devices/gtk-harddisk.svg
+share/icons/HighContrast-SVG/scalable/devices/harddrive.svg
+share/icons/HighContrast-SVG/scalable/devices/hdd_unmount.svg
+share/icons/HighContrast-SVG/scalable/devices/input-keyboard.svg
+share/icons/HighContrast-SVG/scalable/devices/input-mouse.svg
+share/icons/HighContrast-SVG/scalable/devices/keyboard.svg
+share/icons/HighContrast-SVG/scalable/devices/kjobviewer.svg
+share/icons/HighContrast-SVG/scalable/devices/kxkb.svg
+share/icons/HighContrast-SVG/scalable/devices/media-cdrom.svg
+share/icons/HighContrast-SVG/scalable/devices/media-floppy.svg
+share/icons/HighContrast-SVG/scalable/devices/media-optical.svg
+share/icons/HighContrast-SVG/scalable/devices/mouse.svg
+share/icons/HighContrast-SVG/scalable/devices/printer-remote.svg
+share/icons/HighContrast-SVG/scalable/devices/printer.svg
+share/icons/HighContrast-SVG/scalable/devices/printer1.svg
+share/icons/HighContrast-SVG/scalable/devices/printmgr.svg
+share/icons/HighContrast-SVG/scalable/devices/stock_mic.svg
+share/icons/HighContrast-SVG/scalable/devices/stock_printers.svg
+share/icons/HighContrast-SVG/scalable/devices/system-floppy.svg
+share/icons/HighContrast-SVG/scalable/devices/system.svg
+share/icons/HighContrast-SVG/scalable/devices/usbpendrive_unmount.svg
+share/icons/HighContrast-SVG/scalable/devices/video-display.svg
+share/icons/HighContrast-SVG/scalable/devices/xfce-printer.svg
+share/icons/HighContrast-SVG/scalable/devices/xfce4-display.svg
+share/icons/HighContrast-SVG/scalable/devices/xfce4-keyboard.svg
+share/icons/HighContrast-SVG/scalable/devices/xfce4-mouse.svg
+share/icons/HighContrast-SVG/scalable/devices/yast_HD.svg
+share/icons/HighContrast-SVG/scalable/devices/yast_idetude.svg
+share/icons/HighContrast-SVG/scalable/devices/yast_mouse.svg
+share/icons/HighContrast-SVG/scalable/devices/yast_printer.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-documents.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-favorite.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-photos.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-readonly.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-symbolic-link.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/application-x-executable.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/ascii.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/audio-x-generic.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/binary.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/empty.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/exec.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/font-x-generic.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/font.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/font_bitmap.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/font_truetype.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/font_type1.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-fs-executable.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-fs-regular.icon
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-fs-regular.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-ogg.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.lotus-1-2-3.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.ms-excel.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-web.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.rn-realmedia-secure.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.rn-realmedia-vbr.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.rn-realmedia.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.stardivision.calc.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.calc.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-applix-spreadsheet.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-executable.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-font-afm.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-font-bdf.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-font-linux-psf.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-font-pcf.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-font-sunos-news.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-font-ttf.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-gnumeric.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-killustrator.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-kspread.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-ms-dos-executable.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-perl.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-php.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-python-bytecode.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-shellscript.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-x-shockwave-flash.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-application-xhtml+xml.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-audio.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-image.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-text-html.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-text-vnd.wap.wml.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-text-x-csh.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-text-x-python.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-text-x-sh.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-text-x-zsh.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-text.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-video.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gnome-mime-x-font-afm.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/gtk-file.icon
+share/icons/HighContrast-SVG/scalable/mimetypes/gtk-file.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/html.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/image-x-generic.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/image.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/mime_ascii.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/misc.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/package_editors.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/shellscript.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/sound.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/spreadsheet.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/stock_script.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/text-html.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/text-x-generic.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/text-x-preview.icon
+share/icons/HighContrast-SVG/scalable/mimetypes/text-x-preview.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/text-x-script.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/txt.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/txt2.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/unknown.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/video-x-generic.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/video.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/www.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/x-office-spreadsheet.svg
+share/icons/HighContrast-SVG/scalable/places/desktop.svg
+share/icons/HighContrast-SVG/scalable/places/distributor-logo.svg
+share/icons/HighContrast-SVG/scalable/places/emptytrash.svg
+share/icons/HighContrast-SVG/scalable/places/folder-remote.svg
+share/icons/HighContrast-SVG/scalable/places/folder.svg
+share/icons/HighContrast-SVG/scalable/places/folder_home.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-desktop.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-directory.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-ftp.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-home.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-network.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-nfs.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-server.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-share.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-smb.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-ssh.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-fs-trash-empty.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-main-menu.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-mime-x-directory-nfs-server.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-mime-x-directory-smb-server.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-mime-x-directory-smb-share.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-mime-x-directory-smb-workgroup.svg
+share/icons/HighContrast-SVG/scalable/places/gnome-stock-trash.svg
+share/icons/HighContrast-SVG/scalable/places/gtk-network.svg
+share/icons/HighContrast-SVG/scalable/places/network-server.svg
+share/icons/HighContrast-SVG/scalable/places/network-workgroup.svg
+share/icons/HighContrast-SVG/scalable/places/network.svg
+share/icons/HighContrast-SVG/scalable/places/network_local.svg
+share/icons/HighContrast-SVG/scalable/places/novell-button.svg
+share/icons/HighContrast-SVG/scalable/places/redhat-network-server.svg
+share/icons/HighContrast-SVG/scalable/places/server.svg
+share/icons/HighContrast-SVG/scalable/places/start-here.svg
+share/icons/HighContrast-SVG/scalable/places/stock_folder.svg
+share/icons/HighContrast-SVG/scalable/places/trashcan_empty.svg
+share/icons/HighContrast-SVG/scalable/places/user-desktop.svg
+share/icons/HighContrast-SVG/scalable/places/user-home.svg
+share/icons/HighContrast-SVG/scalable/places/user-trash.svg
+share/icons/HighContrast-SVG/scalable/places/xfce-trash_empty.svg
+share/icons/HighContrast-SVG/scalable/status/connect_no.svg
+share/icons/HighContrast-SVG/scalable/status/dialog-error.svg
+share/icons/HighContrast-SVG/scalable/status/dialog-information.svg
+share/icons/HighContrast-SVG/scalable/status/dialog-question.svg
+share/icons/HighContrast-SVG/scalable/status/dialog-warning.svg
+share/icons/HighContrast-SVG/scalable/status/edittrash.svg
+share/icons/HighContrast-SVG/scalable/status/error.svg
+share/icons/HighContrast-SVG/scalable/status/folder-drag-accept.svg
+share/icons/HighContrast-SVG/scalable/status/folder-open.svg
+share/icons/HighContrast-SVG/scalable/status/folder-visiting.svg
+share/icons/HighContrast-SVG/scalable/status/folder_open.svg
+share/icons/HighContrast-SVG/scalable/status/gnome-fs-directory-accept.svg
+share/icons/HighContrast-SVG/scalable/status/gnome-fs-directory-visiting.svg
+share/icons/HighContrast-SVG/scalable/status/gnome-fs-trash-full.svg
+share/icons/HighContrast-SVG/scalable/status/gnome-netstatus-disconn.svg
+share/icons/HighContrast-SVG/scalable/status/gnome-stock-trash-full.svg
+share/icons/HighContrast-SVG/scalable/status/gtk-dialog-error.svg
+share/icons/HighContrast-SVG/scalable/status/gtk-dialog-info.svg
+share/icons/HighContrast-SVG/scalable/status/gtk-dialog-question.svg
+share/icons/HighContrast-SVG/scalable/status/gtk-dialog-warning.svg
+share/icons/HighContrast-SVG/scalable/status/gtk-missing-image.svg
+share/icons/HighContrast-SVG/scalable/status/image-missing.svg
+share/icons/HighContrast-SVG/scalable/status/important.svg
+share/icons/HighContrast-SVG/scalable/status/info.svg
+share/icons/HighContrast-SVG/scalable/status/mail-attachment.svg
+share/icons/HighContrast-SVG/scalable/status/messagebox_critical.svg
+share/icons/HighContrast-SVG/scalable/status/messagebox_info.svg
+share/icons/HighContrast-SVG/scalable/status/messagebox_warning.svg
+share/icons/HighContrast-SVG/scalable/status/network-offline.svg
+share/icons/HighContrast-SVG/scalable/status/network-online.svg
+share/icons/HighContrast-SVG/scalable/status/nm-no-connection.svg
+share/icons/HighContrast-SVG/scalable/status/stock_dialog-error.svg
+share/icons/HighContrast-SVG/scalable/status/stock_dialog-info.svg
+share/icons/HighContrast-SVG/scalable/status/stock_dialog-question.svg
+share/icons/HighContrast-SVG/scalable/status/stock_dialog-warning.svg
+share/icons/HighContrast-SVG/scalable/status/stock_open.svg
+share/icons/HighContrast-SVG/scalable/status/stock_trash_full.svg
+share/icons/HighContrast-SVG/scalable/status/trashcan_full.svg
+share/icons/HighContrast-SVG/scalable/status/user-trash-full.svg
+share/icons/HighContrast-SVG/scalable/status/xfce-trash_full.svg
 share/icons/HighContrast/index.theme
 share/icons/HighContrastInverse/index.theme
 share/icons/HighContrastLargePrint/48x48/apps/JUSimageIcon.png
@@ -1152,47 +1895,134 @@ share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-video-x-msvideo.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-x-font-afm.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-package.png
 share/icons/LowContrastLargePrint/index.theme
-share/icons/Sandy/12x12/filesystems/gnome-fs-directory-accept.png
-share/icons/Sandy/12x12/filesystems/gnome-fs-directory.png
-share/icons/Sandy/24x24/filesystems/gnome-fs-directory-accept.png
-share/icons/Sandy/24x24/filesystems/gnome-fs-directory.png
-share/icons/Sandy/36x36/filesystems/gnome-fs-directory-accept.png
-share/icons/Sandy/36x36/filesystems/gnome-fs-directory.png
-share/icons/Sandy/48x48/filesystems/gnome-fs-directory-accept.png
-share/icons/Sandy/48x48/filesystems/gnome-fs-directory.png
-share/icons/Sandy/72x72/filesystems/gnome-fs-directory-accept.png
-share/icons/Sandy/72x72/filesystems/gnome-fs-directory.png
-share/icons/Sandy/96x96/filesystems/gnome-fs-directory-accept.png
-share/icons/Sandy/96x96/filesystems/gnome-fs-directory.png
-share/icons/Sandy/index.theme
-share/icons/Smokey-Blue/48x48/emblems/emblem-nowrite.png
-share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-nfs.png
-share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-empty-accept.png
-share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-empty.png
-share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-full-accept.png
-share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-full.png
-share/icons/Smokey-Blue/72x72/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Blue/96x96/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Blue/index.theme
-share/icons/Smokey-Red/48x48/emblems/emblem-nowrite.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-empty-accept.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-empty.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-full-accept.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-full.png
-share/icons/Smokey-Red/64x64/filesystems/gnome-fs-directory.icon
-share/icons/Smokey-Red/64x64/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Red/64x64/filesystems/gnome-fs-nfs.png
-share/icons/Smokey-Red/72x72/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Red/96x96/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Red/index.theme
+share/icons/Mist/16x16/actions/document-open.svg
+share/icons/Mist/16x16/actions/fileopen.svg
+share/icons/Mist/16x16/actions/gtk-open.svg
+share/icons/Mist/16x16/places/application-x-gnome-saved-search.png
+share/icons/Mist/16x16/places/folder-new.png
+share/icons/Mist/16x16/places/folder-remote.png
+share/icons/Mist/16x16/places/folder-saved-search.png
+share/icons/Mist/16x16/places/folder.png
+share/icons/Mist/16x16/places/folder_home.svg
+share/icons/Mist/16x16/places/gnome-fs-directory.png
+share/icons/Mist/16x16/places/gnome-fs-ftp.png
+share/icons/Mist/16x16/places/gnome-fs-home.svg
+share/icons/Mist/16x16/places/gnome-fs-nfs.png
+share/icons/Mist/16x16/places/gnome-fs-share.png
+share/icons/Mist/16x16/places/gnome-fs-smb.png
+share/icons/Mist/16x16/places/gnome-fs-ssh.png
+share/icons/Mist/16x16/places/gnome-mime-x-directory-smb-share.png
+share/icons/Mist/16x16/places/network.png
+share/icons/Mist/16x16/places/stock_folder.png
+share/icons/Mist/16x16/places/user-home.svg
+share/icons/Mist/22x22/actions/document-open.svg
+share/icons/Mist/22x22/actions/fileopen.svg
+share/icons/Mist/22x22/actions/gtk-open.svg
+share/icons/Mist/22x22/places/application-x-gnome-saved-search.png
+share/icons/Mist/22x22/places/folder-new.png
+share/icons/Mist/22x22/places/folder-remote.png
+share/icons/Mist/22x22/places/folder-saved-search.png
+share/icons/Mist/22x22/places/folder.png
+share/icons/Mist/22x22/places/folder_home.svg
+share/icons/Mist/22x22/places/gnome-fs-directory.png
+share/icons/Mist/22x22/places/gnome-fs-ftp.png
+share/icons/Mist/22x22/places/gnome-fs-home.svg
+share/icons/Mist/22x22/places/gnome-fs-nfs.png
+share/icons/Mist/22x22/places/gnome-fs-share.png
+share/icons/Mist/22x22/places/gnome-fs-smb.png
+share/icons/Mist/22x22/places/gnome-fs-ssh.png
+share/icons/Mist/22x22/places/gnome-mime-x-directory-smb-share.png
+share/icons/Mist/22x22/places/network.png
+share/icons/Mist/22x22/places/stock_folder.png
+share/icons/Mist/22x22/places/user-home.svg
+share/icons/Mist/22x22/status/folder-drag-accept.svg
+share/icons/Mist/22x22/status/folder-open.svg
+share/icons/Mist/22x22/status/folder_open.svg
+share/icons/Mist/22x22/status/gnome-fs-directory-accept.svg
+share/icons/Mist/22x22/status/stock_open.svg
+share/icons/Mist/24x24/actions/document-open.png
+share/icons/Mist/24x24/actions/fileopen.png
+share/icons/Mist/24x24/actions/gtk-open.png
+share/icons/Mist/24x24/places/application-x-gnome-saved-search.png
+share/icons/Mist/24x24/places/folder-new.png
+share/icons/Mist/24x24/places/folder-remote.png
+share/icons/Mist/24x24/places/folder-saved-search.png
+share/icons/Mist/24x24/places/folder.png
+share/icons/Mist/24x24/places/folder_home.png
+share/icons/Mist/24x24/places/gnome-fs-directory.png
+share/icons/Mist/24x24/places/gnome-fs-ftp.png
+share/icons/Mist/24x24/places/gnome-fs-home.png
+share/icons/Mist/24x24/places/gnome-fs-nfs.png
+share/icons/Mist/24x24/places/gnome-fs-share.png
+share/icons/Mist/24x24/places/gnome-fs-smb.png
+share/icons/Mist/24x24/places/gnome-fs-ssh.png
+share/icons/Mist/24x24/places/gnome-mime-x-directory-smb-share.png
+share/icons/Mist/24x24/places/network.png
+share/icons/Mist/24x24/places/stock_folder.png
+share/icons/Mist/24x24/places/user-home.png
+share/icons/Mist/24x24/status/folder-drag-accept.png
+share/icons/Mist/24x24/status/folder-open.png
+share/icons/Mist/24x24/status/folder_open.png
+share/icons/Mist/24x24/status/gnome-fs-directory-accept.png
+share/icons/Mist/24x24/status/stock_open.png
+share/icons/Mist/32x32/actions/document-open.svg
+share/icons/Mist/32x32/actions/fileopen.svg
+share/icons/Mist/32x32/actions/gtk-open.svg
+share/icons/Mist/32x32/places/application-x-gnome-saved-search.svg
+share/icons/Mist/32x32/places/folder-new.svg
+share/icons/Mist/32x32/places/folder-remote.svg
+share/icons/Mist/32x32/places/folder-saved-search.svg
+share/icons/Mist/32x32/places/folder.svg
+share/icons/Mist/32x32/places/folder_home.svg
+share/icons/Mist/32x32/places/gnome-fs-directory.svg
+share/icons/Mist/32x32/places/gnome-fs-ftp.svg
+share/icons/Mist/32x32/places/gnome-fs-home.svg
+share/icons/Mist/32x32/places/gnome-fs-nfs.svg
+share/icons/Mist/32x32/places/gnome-fs-share.svg
+share/icons/Mist/32x32/places/gnome-fs-smb.svg
+share/icons/Mist/32x32/places/gnome-fs-ssh.svg
+share/icons/Mist/32x32/places/gnome-mime-x-directory-smb-share.svg
+share/icons/Mist/32x32/places/network.svg
+share/icons/Mist/32x32/places/stock_folder.svg
+share/icons/Mist/32x32/places/user-home.svg
+share/icons/Mist/32x32/status/folder-drag-accept.svg
+share/icons/Mist/32x32/status/folder-open.svg
+share/icons/Mist/32x32/status/folder_open.svg
+share/icons/Mist/32x32/status/gnome-fs-directory-accept.svg
+share/icons/Mist/32x32/status/stock_open.svg
+share/icons/Mist/index.theme
+share/icons/Mist/scalable/actions/document-open.svg
+share/icons/Mist/scalable/actions/fileopen.svg
+share/icons/Mist/scalable/actions/gtk-open.svg
+share/icons/Mist/scalable/places/application-x-gnome-saved-search.svg
+share/icons/Mist/scalable/places/folder-new.svg
+share/icons/Mist/scalable/places/folder-remote.svg
+share/icons/Mist/scalable/places/folder-saved-search.svg
+share/icons/Mist/scalable/places/folder.svg
+share/icons/Mist/scalable/places/folder_home.svg
+share/icons/Mist/scalable/places/gnome-fs-directory.svg
+share/icons/Mist/scalable/places/gnome-fs-ftp.svg
+share/icons/Mist/scalable/places/gnome-fs-home.svg
+share/icons/Mist/scalable/places/gnome-fs-nfs.svg
+share/icons/Mist/scalable/places/gnome-fs-share.svg
+share/icons/Mist/scalable/places/gnome-fs-smb.svg
+share/icons/Mist/scalable/places/gnome-fs-ssh.svg
+share/icons/Mist/scalable/places/gnome-mime-x-directory-smb-share.svg
+share/icons/Mist/scalable/places/network.svg
+share/icons/Mist/scalable/places/stock_folder.svg
+share/icons/Mist/scalable/places/user-home.svg
+share/icons/Mist/scalable/status/folder-drag-accept.svg
+share/icons/Mist/scalable/status/folder-open.svg
+share/icons/Mist/scalable/status/folder_open.svg
+share/icons/Mist/scalable/status/gnome-fs-directory-accept.svg
+share/icons/Mist/scalable/status/stock_open.svg
 share/locale/am/LC_MESSAGES/gnome-themes.mo
 share/locale/ar/LC_MESSAGES/gnome-themes.mo
 share/locale/az/LC_MESSAGES/gnome-themes.mo
 share/locale/be/LC_MESSAGES/gnome-themes.mo
 share/locale/bg/LC_MESSAGES/gnome-themes.mo
 share/locale/bn/LC_MESSAGES/gnome-themes.mo
-share/locale/br/LC_MESSAGES/gnome-themes.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-themes.mo
 share/locale/bs/LC_MESSAGES/gnome-themes.mo
 share/locale/ca/LC_MESSAGES/gnome-themes.mo
 share/locale/cs/LC_MESSAGES/gnome-themes.mo
@@ -1227,15 +2057,16 @@ share/locale/ky/LC_MESSAGES/gnome-themes.mo
 share/locale/li/LC_MESSAGES/gnome-themes.mo
 share/locale/lt/LC_MESSAGES/gnome-themes.mo
 share/locale/lv/LC_MESSAGES/gnome-themes.mo
+share/locale/mg/LC_MESSAGES/gnome-themes.mo
 share/locale/mk/LC_MESSAGES/gnome-themes.mo
 share/locale/ml/LC_MESSAGES/gnome-themes.mo
 share/locale/mn/LC_MESSAGES/gnome-themes.mo
+share/locale/mr/LC_MESSAGES/gnome-themes.mo
 share/locale/ms/LC_MESSAGES/gnome-themes.mo
 share/locale/nb/LC_MESSAGES/gnome-themes.mo
 share/locale/ne/LC_MESSAGES/gnome-themes.mo
 share/locale/nl/LC_MESSAGES/gnome-themes.mo
 share/locale/nn/LC_MESSAGES/gnome-themes.mo
-share/locale/no/LC_MESSAGES/gnome-themes.mo
 share/locale/or/LC_MESSAGES/gnome-themes.mo
 share/locale/pa/LC_MESSAGES/gnome-themes.mo
 share/locale/pl/LC_MESSAGES/gnome-themes.mo
@@ -1244,6 +2075,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-themes.mo
 share/locale/ro/LC_MESSAGES/gnome-themes.mo
 share/locale/ru/LC_MESSAGES/gnome-themes.mo
 share/locale/rw/LC_MESSAGES/gnome-themes.mo
+share/locale/si/LC_MESSAGES/gnome-themes.mo
 share/locale/sk/LC_MESSAGES/gnome-themes.mo
 share/locale/sl/LC_MESSAGES/gnome-themes.mo
 share/locale/sq/LC_MESSAGES/gnome-themes.mo
@@ -1265,43 +2097,6 @@ share/themes/Clearlooks/index.theme
 share/themes/Crux/index.theme
 share/themes/Glider/gtk-2.0/gtkrc
 share/themes/Glider/index.theme
-share/themes/Grand-Canyon/gtk-2.0/3d_all_flat.png
-share/themes/Grand-Canyon/gtk-2.0/3d_all_normal.png
-share/themes/Grand-Canyon/gtk-2.0/3d_all_prelight.png
-share/themes/Grand-Canyon/gtk-2.0/3d_bottom_flat.png
-share/themes/Grand-Canyon/gtk-2.0/3d_bottom_normal.png
-share/themes/Grand-Canyon/gtk-2.0/3d_bottom_prelight.png
-share/themes/Grand-Canyon/gtk-2.0/3d_top_flat.png
-share/themes/Grand-Canyon/gtk-2.0/3d_top_normal.png
-share/themes/Grand-Canyon/gtk-2.0/3d_top_prelight.png
-share/themes/Grand-Canyon/gtk-2.0/arrow_down.png
-share/themes/Grand-Canyon/gtk-2.0/arrow_left.png
-share/themes/Grand-Canyon/gtk-2.0/arrow_null.png
-share/themes/Grand-Canyon/gtk-2.0/arrow_right.png
-share/themes/Grand-Canyon/gtk-2.0/arrow_sub.png
-share/themes/Grand-Canyon/gtk-2.0/arrow_up.png
-share/themes/Grand-Canyon/gtk-2.0/blank.png
-share/themes/Grand-Canyon/gtk-2.0/button_default.png
-share/themes/Grand-Canyon/gtk-2.0/check2.png
-share/themes/Grand-Canyon/gtk-2.0/entry1.png
-share/themes/Grand-Canyon/gtk-2.0/gtkrc
-share/themes/Grand-Canyon/gtk-2.0/gtkrc.pants
-share/themes/Grand-Canyon/gtk-2.0/hline.png
-share/themes/Grand-Canyon/gtk-2.0/htrough.png
-share/themes/Grand-Canyon/gtk-2.0/in.png
-share/themes/Grand-Canyon/gtk-2.0/menu_shadow.png
-share/themes/Grand-Canyon/gtk-2.0/minus.png
-share/themes/Grand-Canyon/gtk-2.0/mradio1.png
-share/themes/Grand-Canyon/gtk-2.0/mradio2.png
-share/themes/Grand-Canyon/gtk-2.0/notebook_bottom_flat.png
-share/themes/Grand-Canyon/gtk-2.0/notebook_left_flat.png
-share/themes/Grand-Canyon/gtk-2.0/notebook_right_flat.png
-share/themes/Grand-Canyon/gtk-2.0/notebook_top_flat.png
-share/themes/Grand-Canyon/gtk-2.0/option_menu.png
-share/themes/Grand-Canyon/gtk-2.0/plus.png
-share/themes/Grand-Canyon/gtk-2.0/radio2.png
-share/themes/Grand-Canyon/gtk-2.0/vtrough.png
-share/themes/Grand-Canyon/index.theme
 share/themes/HighContrast/gtk-2.0/gtkrc
 share/themes/HighContrast/index.theme
 share/themes/HighContrastInverse/gtk-2.0/gtkrc
@@ -1865,39 +2660,9 @@ share/themes/LowContrastLargePrint/pixmaps/volume-min.png
 share/themes/LowContrastLargePrint/pixmaps/volume-mute.png
 share/themes/LowContrastLargePrint/pixmaps/volume-zero.png
 share/themes/Mist/index.theme
-share/themes/Ocean-Dream/index.theme
 share/themes/Simple/gtk-2.0/gtkrc
-share/themes/Simple/index.theme
-share/themes/Smokey-Blue/gtk-2.0/bubble-blue-prelight.png
-share/themes/Smokey-Blue/gtk-2.0/bubble-blue-pressed.png
-share/themes/Smokey-Blue/gtk-2.0/bubble-blue-sb.png
-share/themes/Smokey-Blue/gtk-2.0/bubble-blue.png
-share/themes/Smokey-Blue/gtk-2.0/bubble-grey.png
-share/themes/Smokey-Blue/gtk-2.0/check1.png
-share/themes/Smokey-Blue/gtk-2.0/check2.png
-share/themes/Smokey-Blue/gtk-2.0/gtkrc
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-bottom-blue.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-bottom-grey.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-left-blue.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-left-grey.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-right-blue.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-right-grey.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-top-blue.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-top-blue1.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-top-grey.png
-share/themes/Smokey-Blue/gtk-2.0/halfbubble-top-grey1.png
-share/themes/Smokey-Blue/gtk-2.0/lines_background.png
-share/themes/Smokey-Blue/gtk-2.0/lines_background_blue.png
-share/themes/Smokey-Blue/gtk-2.0/option1.png
-share/themes/Smokey-Blue/gtk-2.0/option2.png
-share/themes/Smokey-Blue/index.theme
-share/themes/Traditional/index.theme
-@dirrm share/themes/Traditional
-@dirrm share/themes/Smokey-Blue/gtk-2.0
-@dirrm share/themes/Smokey-Blue
 @dirrm share/themes/Simple/gtk-2.0
 @dirrm share/themes/Simple
-@dirrm share/themes/Ocean-Dream
 @dirrm share/themes/Mist
 @dirrm share/themes/LowContrastLargePrint/pixmaps
 @dirrm share/themes/LowContrastLargePrint/gtk-2.0
@@ -1917,56 +2682,31 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/HighContrastInverse
 @dirrm share/themes/HighContrast/gtk-2.0
 @dirrm share/themes/HighContrast
-@dirrm share/themes/Grand-Canyon/gtk-2.0
-@dirrm share/themes/Grand-Canyon
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
 @dirrm share/themes/Crux
 @dirrm share/themes/Clearlooks
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
-@dirrm share/icons/Smokey-Red/96x96/filesystems
-@dirrm share/icons/Smokey-Red/96x96
-@dirrm share/icons/Smokey-Red/72x72/filesystems
-@dirrm share/icons/Smokey-Red/72x72
-@dirrm share/icons/Smokey-Red/64x64/filesystems
-@dirrm share/icons/Smokey-Red/64x64
-@dirrm share/icons/Smokey-Red/48x48/filesystems
-@dirrm share/icons/Smokey-Red/48x48/emblems
-@dirrm share/icons/Smokey-Red/48x48
-@dirrm share/icons/Smokey-Red
-@dirrm share/icons/Smokey-Blue/96x96/filesystems
-@dirrm share/icons/Smokey-Blue/96x96
-@dirrm share/icons/Smokey-Blue/72x72/filesystems
-@dirrm share/icons/Smokey-Blue/72x72
-@dirrm share/icons/Smokey-Blue/64x64/filesystems
-@dirrm share/icons/Smokey-Blue/64x64
-@dirrm share/icons/Smokey-Blue/48x48/emblems
-@dirrm share/icons/Smokey-Blue/48x48
-@dirrm share/icons/Smokey-Blue
-@dirrm share/icons/Sandy/96x96/filesystems
-@dirrm share/icons/Sandy/96x96
-@dirrm share/icons/Sandy/72x72/filesystems
-@dirrm share/icons/Sandy/72x72
-@dirrm share/icons/Sandy/48x48/filesystems
-@dirrm share/icons/Sandy/48x48
-@dirrm share/icons/Sandy/36x36/filesystems
-@dirrm share/icons/Sandy/36x36
-@dirrm share/icons/Sandy/24x24/filesystems
-@dirrm share/icons/Sandy/24x24
-@dirrm share/icons/Sandy/12x12/filesystems
-@dirrm share/icons/Sandy/12x12
-@dirrm share/icons/Sandy
+@dirrmtry share/themes
+@dirrm share/icons/Mist/scalable/status
+@dirrm share/icons/Mist/scalable/places
+@dirrm share/icons/Mist/scalable/actions
+@dirrm share/icons/Mist/scalable
+@dirrm share/icons/Mist/32x32/status
+@dirrm share/icons/Mist/32x32/places
+@dirrm share/icons/Mist/32x32/actions
+@dirrm share/icons/Mist/32x32
+@dirrm share/icons/Mist/24x24/status
+@dirrm share/icons/Mist/24x24/places
+@dirrm share/icons/Mist/24x24/actions
+@dirrm share/icons/Mist/24x24
+@dirrm share/icons/Mist/22x22/status
+@dirrm share/icons/Mist/22x22/places
+@dirrm share/icons/Mist/22x22/actions
+@dirrm share/icons/Mist/22x22
+@dirrm share/icons/Mist/16x16/places
+@dirrm share/icons/Mist/16x16/actions
+@dirrm share/icons/Mist/16x16
+@dirrm share/icons/Mist
 @dirrm share/icons/LowContrastLargePrint/48x48/mimetypes
 @dirrm share/icons/LowContrastLargePrint/48x48/filesystems
 @dirrm share/icons/LowContrastLargePrint/48x48/emblems
@@ -1991,60 +2731,104 @@ share/themes/Traditional/index.theme
 @dirrm share/icons/HighContrastLargePrint/48x48
 @dirrm share/icons/HighContrastLargePrint
 @dirrm share/icons/HighContrastInverse
+@dirrm share/icons/HighContrast-SVG/scalable/status
+@dirrm share/icons/HighContrast-SVG/scalable/places
+@dirrm share/icons/HighContrast-SVG/scalable/mimetypes
+@dirrm share/icons/HighContrast-SVG/scalable/emblems
+@dirrm share/icons/HighContrast-SVG/scalable/devices
+@dirrm share/icons/HighContrast-SVG/scalable/categories
+@dirrm share/icons/HighContrast-SVG/scalable/apps
+@dirrm share/icons/HighContrast-SVG/scalable/actions
+@dirrm share/icons/HighContrast-SVG/scalable
+@dirrm share/icons/HighContrast-SVG/48x48/animations
+@dirrm share/icons/HighContrast-SVG/48x48
+@dirrm share/icons/HighContrast-SVG
 @dirrm share/icons/HighContrast
-@dirrm share/icons/Flat-Blue/scalable/emblems
-@dirrm share/icons/Flat-Blue/scalable
-@dirrm share/icons/Flat-Blue/96x96/filesystems
-@dirrm share/icons/Flat-Blue/96x96
-@dirrm share/icons/Flat-Blue/72x72/filesystems
-@dirrm share/icons/Flat-Blue/72x72/devices
-@dirrm share/icons/Flat-Blue/72x72
-@dirrm share/icons/Flat-Blue/48x48/filesystems
-@dirrm share/icons/Flat-Blue/48x48/emblems
-@dirrm share/icons/Flat-Blue/48x48/devices
-@dirrm share/icons/Flat-Blue/48x48
-@dirrm share/icons/Flat-Blue/36x36/filesystems
-@dirrm share/icons/Flat-Blue/36x36/emblems
-@dirrm share/icons/Flat-Blue/36x36
-@dirrm share/icons/Flat-Blue/24x24/filesystems
-@dirrm share/icons/Flat-Blue/24x24/emblems
-@dirrm share/icons/Flat-Blue/24x24
-@dirrm share/icons/Flat-Blue/20x20/filesystems
-@dirrm share/icons/Flat-Blue/20x20
-@dirrm share/icons/Flat-Blue/192x192/filesystems
-@dirrm share/icons/Flat-Blue/192x192
-@dirrm share/icons/Flat-Blue/12x12/filesystems
-@dirrm share/icons/Flat-Blue/12x12/emblems
-@dirrm share/icons/Flat-Blue/12x12
-@dirrm share/icons/Flat-Blue
-@dirrm share/icons/Crux/96x96/filesystems
-@dirrm share/icons/Crux/96x96/emblems
-@dirrm share/icons/Crux/96x96
-@dirrm share/icons/Crux/72x72/filesystems
-@dirrm share/icons/Crux/72x72/emblems
-@dirrm share/icons/Crux/72x72
-@dirrm share/icons/Crux/48x48/filesystems
-@dirrm share/icons/Crux/48x48/emblems
-@dirrm share/icons/Crux/48x48
-@dirrm share/icons/Crux/36x36/filesystems
-@dirrm share/icons/Crux/36x36
-@dirrm share/icons/Crux/24x24/filesystems
+@dirrm share/icons/Crux/scalable/status
+@dirrm share/icons/Crux/scalable/places
+@dirrm share/icons/Crux/scalable/actions
+@dirrm share/icons/Crux/scalable
+@dirrm share/icons/Crux/32x32/status
+@dirrm share/icons/Crux/32x32/places
+@dirrm share/icons/Crux/32x32/actions
+@dirrm share/icons/Crux/32x32
+@dirrm share/icons/Crux/24x24/status
+@dirrm share/icons/Crux/24x24/places
+@dirrm share/icons/Crux/24x24/actions
 @dirrm share/icons/Crux/24x24
-@dirrm share/icons/Crux/20x20/filesystems
-@dirrm share/icons/Crux/20x20
-@dirrm share/icons/Crux/192x192/filesystems
-@dirrm share/icons/Crux/192x192
-@dirrm share/icons/Crux/12x12/filesystems
-@dirrm share/icons/Crux/12x12
+@dirrm share/icons/Crux/22x22/status
+@dirrm share/icons/Crux/22x22/places
+@dirrm share/icons/Crux/22x22/actions
+@dirrm share/icons/Crux/22x22
+@dirrm share/icons/Crux/16x16/status
+@dirrm share/icons/Crux/16x16/places
+@dirrm share/icons/Crux/16x16/actions
+@dirrm share/icons/Crux/16x16
 @dirrm share/icons/Crux
-@dirrm share/gnome/themes/Smokey/metacity-1
-@dirrm share/gnome/themes/Smokey
-@dirrm share/gnome/themes/Sandwish/metacity-1
-@dirrm share/gnome/themes/Sandwish
+@dirrmtry share/icons
 @dirrm share/gnome/themes/Mist/metacity-1
 @dirrm share/gnome/themes/Mist
 @dirrm share/gnome/themes/Glider/metacity-1
 @dirrm share/gnome/themes/Glider
 @dirrm share/gnome/themes/Clearlooks/metacity-1
 @dirrm share/gnome/themes/Clearlooks
-@dirrmtry share/icons
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

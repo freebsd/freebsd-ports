@@ -2,14 +2,12 @@ lib/gtk-2.0/%%GTK2_VERSION%%/engines/libclearlooks.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libclearlooks.so
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcrux-engine.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcrux-engine.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libglide.la
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libglide.so
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libhcengine.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libhcengine.so
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libindustrial.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libindustrial.so
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/liblighthouseblue.la
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/liblighthouseblue.so
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmetal.la
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmetal.so
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmist.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmist.so
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libredmond95.la
@@ -21,101 +19,19 @@ lib/gtk-2.0/%%GTK2_VERSION%%/engines/libthinice.so
 libdata/pkgconfig/gtk-engines-2.pc
 share/themes/Clearlooks/gtk-2.0/gtkrc
 share/themes/Crux/gtk-2.0/gtkrc
-share/themes/Crux/pixmaps/arrow_down-spinner.png
-share/themes/Crux/pixmaps/arrow_down.png
-share/themes/Crux/pixmaps/arrow_left.png
-share/themes/Crux/pixmaps/arrow_right.png
-share/themes/Crux/pixmaps/arrow_up-spinner.png
-share/themes/Crux/pixmaps/arrow_up.png
-share/themes/Crux/pixmaps/check-active-default-focus.png
-share/themes/Crux/pixmaps/check-active-default.png
-share/themes/Crux/pixmaps/check-active-hilight-focus.png
-share/themes/Crux/pixmaps/check-active-hilight.png
-share/themes/Crux/pixmaps/check-active-insensitive.png
-share/themes/Crux/pixmaps/check-active-pressed-focus.png
-share/themes/Crux/pixmaps/check-active-pressed.png
-share/themes/Crux/pixmaps/check-default-focus.png
-share/themes/Crux/pixmaps/check-default.png
-share/themes/Crux/pixmaps/check-hilight-focus.png
-share/themes/Crux/pixmaps/check-hilight.png
-share/themes/Crux/pixmaps/check-insensitive.png
-share/themes/Crux/pixmaps/check-pressed-focus.png
-share/themes/Crux/pixmaps/check-pressed.png
-share/themes/Crux/pixmaps/progressbar-left.png
-share/themes/Crux/pixmaps/progressbar-right.png
-share/themes/Crux/pixmaps/progressbar.png
-share/themes/Crux/pixmaps/progressbar_trough.png
-share/themes/Crux/pixmaps/radio-active-default-focus.png
-share/themes/Crux/pixmaps/radio-active-default.png
-share/themes/Crux/pixmaps/radio-active-hilight-focus.png
-share/themes/Crux/pixmaps/radio-active-hilight.png
-share/themes/Crux/pixmaps/radio-active-insensitive.png
-share/themes/Crux/pixmaps/radio-active-pressed-focus.png
-share/themes/Crux/pixmaps/radio-active-pressed.png
-share/themes/Crux/pixmaps/radio-default-focus.png
-share/themes/Crux/pixmaps/radio-default.png
-share/themes/Crux/pixmaps/radio-hilight-focus.png
-share/themes/Crux/pixmaps/radio-hilight.png
-share/themes/Crux/pixmaps/radio-insensitive.png
-share/themes/Crux/pixmaps/radio-pressed-focus.png
-share/themes/Crux/pixmaps/radio-pressed.png
-share/themes/Crux/pixmaps/scroller-arrow-down-hilight.png
-share/themes/Crux/pixmaps/scroller-arrow-down-pressed.png
-share/themes/Crux/pixmaps/scroller-arrow-down.png
-share/themes/Crux/pixmaps/scroller-arrow-left-hilight.png
-share/themes/Crux/pixmaps/scroller-arrow-left-pressed.png
-share/themes/Crux/pixmaps/scroller-arrow-left.png
-share/themes/Crux/pixmaps/scroller-arrow-right-hilight.png
-share/themes/Crux/pixmaps/scroller-arrow-right-pressed.png
-share/themes/Crux/pixmaps/scroller-arrow-right.png
-share/themes/Crux/pixmaps/scroller-arrow-up-hilight.png
-share/themes/Crux/pixmaps/scroller-arrow-up-pressed.png
-share/themes/Crux/pixmaps/scroller-arrow-up.png
-share/themes/Crux/pixmaps/scroller-h-hilight.png
-share/themes/Crux/pixmaps/scroller-h-thumb-hilight.png
-share/themes/Crux/pixmaps/scroller-h-thumb.png
-share/themes/Crux/pixmaps/scroller-h-trough.png
-share/themes/Crux/pixmaps/scroller-h.png
-share/themes/Crux/pixmaps/scroller-v-hilight.png
-share/themes/Crux/pixmaps/scroller-v-thumb-hilight.png
-share/themes/Crux/pixmaps/scroller-v-thumb.png
-share/themes/Crux/pixmaps/scroller-v-trough.png
-share/themes/Crux/pixmaps/scroller-v.png
-share/themes/Crux/pixmaps/slider_h_thumb.png
-share/themes/Crux/pixmaps/slider_h_trough.png
-share/themes/Crux/pixmaps/slider_h_trough_focus.png
-share/themes/Crux/pixmaps/slider_v_thumb.png
-share/themes/Crux/pixmaps/slider_v_trough.png
-share/themes/Crux/pixmaps/slider_v_trough_focus.png
-share/themes/Crux/pixmaps/tab_left-unsel.png
-share/themes/Crux/pixmaps/tab_left.png
-share/themes/Crux/pixmaps/tab_right.png
-share/themes/Crux/pixmaps/tab_sel-bottom.png
-share/themes/Crux/pixmaps/tab_sel.png
-share/themes/Crux/pixmaps/tab_usel-bottom-left.png
-share/themes/Crux/pixmaps/tab_usel-bottom.png
-share/themes/Crux/pixmaps/tab_usel-left.png
-share/themes/Crux/pixmaps/tab_usel.png
 share/themes/Industrial/gtk-2.0/gtkrc
-share/themes/LighthouseBlue/gtk-2.0/gtkrc
-share/themes/Metal/gtk-2.0/gtkrc
 share/themes/Mist/gtk-2.0/gtkrc
 share/themes/Redmond/gtk-2.0/gtkrc
 share/themes/ThinIce/gtk-2.0/gtkrc
 @dirrm share/themes/ThinIce/gtk-2.0
 @dirrm share/themes/Redmond/gtk-2.0
 @dirrm share/themes/Mist/gtk-2.0
-@dirrm share/themes/Metal/gtk-2.0
-@dirrm share/themes/LighthouseBlue/gtk-2.0
 @dirrm share/themes/Industrial/gtk-2.0
-@dirrm share/themes/Crux/pixmaps
 @dirrm share/themes/Crux/gtk-2.0
 @dirrm share/themes/Clearlooks/gtk-2.0
 @unexec /bin/rmdir %D/share/themes/ThinIce 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Redmond 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Mist 2>/dev/null || true
-@unexec /bin/rmdir %D/share/themes/Metal 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/themes/LighthouseBlue 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Industrial 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Crux 2>/dev/null || true
 @unexec /bin/rmdir %D/share/themes/Clearlooks 2>/dev/null || true

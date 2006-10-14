@@ -3,26 +3,26 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/evince/Makefile,v 1.50 2006/04/24 00:54:32 ahze Exp $
+#   $MCom: ports/graphics/evince/Makefile,v 1.58 2006/10/10 02:27:26 ahze Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	graphics print gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
+MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
 
 LIB_DEPENDS=	poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk
 
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT=yes
 INSTALLS_OMF=	yes
@@ -38,6 +38,7 @@ OPTIONS=	DVI		"Enable DVI viewer support"		off \
 		NAUTILUS	"Enable Nautilus plugin"		on  \
 		DBUS		"Enable D-BUS support"			on \
 		COMICS		"Enable comic book archives support"	off
+#		IMPRESS		"Enable Impress presentations support"	off \
 #		DJVU		"Enable DJVU support"			off
 
 .include <bsd.port.pre.mk>
@@ -69,12 +70,18 @@ CONFIGURE_ARGS+=	--disable-nautilus
 PLIST_SUB+=		NAUTILUS="@comment "
 .endif
 
-.if exists(${X11BASE}/bin/djview)
-DJVU_DIR?=	# empty
-.else
-DJVU_DIR?=	-nox11
-.endif
+#.if defined(WITH_IMPRESS)
+#CONFIGURE_ARGS+=	--enable-impress
+#.else
+CONFIGURE_ARGS+=	--disable-impress
+#.endif
 
+#.if exists(${X11BASE}/bin/djview)
+#DJVU_DIR?=	# empty
+#.else
+#DJVU_DIR?=	-nox11
+#.endif
+#
 #.if defined(WITH_DJVU)
 #LIB_DEPENDS+=		djvulibre.17:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
 #CONFIGURE_ARGS+=	--enable-djvu
@@ -84,7 +91,7 @@ CONFIGURE_ARGS+=	--disable-djvu
 #.endif
 
 .if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
 .if defined(WITH_COMICS)

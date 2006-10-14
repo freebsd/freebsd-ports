@@ -1,3 +1,4 @@
+include/poppler/poppler-link-qt3.h
 include/poppler/poppler-page-transition.h
 include/poppler/poppler-qt.h
 lib/libpoppler-qt.a

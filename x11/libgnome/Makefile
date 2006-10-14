@@ -3,12 +3,12 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnome/Makefile,v 1.78 2006/04/13 07:52:41 bland Exp $
+#   $MCom: ports/x11/libgnome/Makefile,v 1.86 2006/09/04 18:09:21 marcus Exp $
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.14.1
-PORTREVISION?=	1
+PORTVERSION=	2.16.0
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -30,8 +30,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack esound \
 		gnomevfs2 libxslt ltverhack referencehack
 USE_BISON=	yes
-USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_XLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

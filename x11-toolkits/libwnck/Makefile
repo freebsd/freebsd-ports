@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/libwnck/Makefile,v 1.70 2006/04/13 07:52:43 bland Exp $
+#   $MCom: ports/x11-toolkits/libwnck/Makefile,v 1.81 2006/10/03 01:48:04 ahze Exp $
 #
 
 PORTNAME=	libwnck
-PORTVERSION=	2.14.3
+PORTVERSION=	2.16.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -27,8 +27,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 ltverhack referencehack
 USE_BISON=	yes
-USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

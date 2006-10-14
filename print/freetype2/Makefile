@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.1.10
-PORTREVISION=	5
+PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -24,7 +24,7 @@ COMMENT=	A free and portable TrueType font rendering engine
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP=""
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget pkgconfig
 LIBTOOLFILES=	builds/unix/configure
@@ -36,11 +36,11 @@ CFLAGS+=	-DTT_CONFIG_OPTION_BYTECODE_INTERPRETER
 .endif
 
 .if defined(WITH_CJK)
-PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/ \
+#PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
 		http://bsdchat.com/dist/firefly-cjk-patchset/
-PATCHFILES+=	cjk-freetype-2.1.10-20051219.patch.gz
-PATCH_DIST_STRIP+=	-p1
+#PATCHFILES+=	cjk-freetype-2.1.10-20051219.patch.gz
+#PATCH_DIST_STRIP+=	-p1
 .endif
 
 pre-everything::
@@ -60,6 +60,10 @@ pre-everything::
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/builds/unix/install.mk
+.if !defined(WITHOUT_TTF_BYTECODE_ENABLED)
+	@${REINPLACE_CMD} -e '/#define TT_CONFIG_OPTION_BYTECODE_INTERPRETER/s,/\* \(.*\) \*/,\1,; /#define TT_CONFIG_OPTION_UNPATENTED_HINTING/s,^\(.*\),/* \1 \*/,' \
+		${WRKSRC}/include/freetype/config/ftoption.h
+.endif
 
 post-configure:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)

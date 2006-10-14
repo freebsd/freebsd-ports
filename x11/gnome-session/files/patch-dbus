@@ -1,39 +1,3 @@
---- gnome-session/main.c.orig	Tue Mar 21 12:37:40 2006
-+++ gnome-session/main.c	Sun Apr 23 23:05:38 2006
-@@ -43,6 +43,7 @@
- #include "command.h"
- #include "splash-widget.h"
- #include "util.h"
-+#include "gsm-dbus.h"
- #include "gsm-sound.h"
- #include "gsm-gsd.h"
- #include "gsm-keyring.h"
-@@ -334,6 +335,7 @@ main (int argc, char *argv[])
-   char *display_str;
-   char **versions;
-   GConfClient *gconf_client;
-+  gboolean dbus_daemon_owner;
-   
-   if (getenv ("GSM_VERBOSE_DEBUG"))
-     gsm_set_verbose (TRUE);
-@@ -415,6 +417,7 @@ main (int argc, char *argv[])
-   fprintf (stderr, "SESSION_MANAGER=%s\n", getenv ("SESSION_MANAGER"));
-   gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-session.png");
- 
-+  dbus_daemon_owner = gsm_dbus_daemon_start ();
- 
-   /* Make sure children see the right value for DISPLAY.  This is
-      useful if --display was specified on the command line.  */
-@@ -495,6 +498,9 @@ main (int argc, char *argv[])
-   gsm_sound_logout ();
- 
-   gsm_keyring_daemon_stop ();
-+
-+  if (dbus_daemon_owner)
-+    gsm_dbus_daemon_stop ();
- 
-   g_object_unref (gconf_client);
-   gsm_shutdown_gconfd ();
 --- gnome-session/gsm-dbus.h.orig	Sun Apr 23 23:01:47 2006
 +++ gnome-session/gsm-dbus.h	Sun Apr 23 23:00:53 2006
 @@ -0,0 +1,27 @@
@@ -427,3 +391,39 @@
 +   */
 +  g_setenv ("DBUS_SESSION_BUS_ADDRESS", address_str, TRUE);
 +}
+--- gnome-session/main.c.orig	Wed Jul 26 08:46:36 2006
++++ gnome-session/main.c	Mon Aug  7 21:17:49 2006
+@@ -43,6 +43,7 @@
+ #include "command.h"
+ #include "splash-widget.h"
+ #include "util.h"
++#include "gsm-dbus.h"
+ #include "gsm-sound.h"
+ #include "gsm-gsd.h"
+ #include "gsm-keyring.h"
+@@ -329,6 +330,7 @@
+   Session *the_session;
+   gboolean splashing;
+   gboolean a_t_support;
++  gboolean dbus_daemon_owner;
+   GError *err;
+   int status;
+   char *display_str;
+@@ -419,6 +421,7 @@
+   fprintf (stderr, "SESSION_MANAGER=%s\n", getenv ("SESSION_MANAGER"));
+   gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-session.png");
+ 
++  dbus_daemon_owner = gsm_dbus_daemon_start ();
+ 
+   /* Make sure children see the right value for DISPLAY.  This is
+      useful if --display was specified on the command line.  */
+@@ -502,6 +505,9 @@
+   gsm_sound_logout ();
+ 
+   gsm_keyring_daemon_stop ();
++
++  if (dbus_daemon_owner)
++    gsm_dbus_daemon_stop ();
+ 
+   g_object_unref (gconf_client);
+   gsm_shutdown_gconfd ();

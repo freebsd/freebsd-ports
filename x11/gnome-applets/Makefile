@@ -3,44 +3,48 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/gnome-applets/Makefile,v 1.141 2006/10/08 02:12:50 marcus Exp $
 #
 
 PORTNAME=	gnome-applets
-PORTVERSION=	2.14.2
-PORTREVISION=	1
+PORTVERSION=	2.16.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Applets components for the Gnome 2 Desktop Environment
+COMMENT=	Applets components for the GNOME 2 Desktop Environment
 
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-system-tools.pc:${PORTSDIR}/sysutils/gnome-system-tools
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends.pc:${PORTSDIR}/sysutils/gnome-system-tools \
+    		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		xklavier.10:${PORTSDIR}/x11/libxklavier \
-		gucharmap.4:${PORTSDIR}/deskutils/gucharmap
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/system-tools-backends.pc:${PORTSDIR}/sysutils/gnome-system-tools
+		xklavier.11:${PORTSDIR}/x11/libxklavier \
+		gucharmap.5:${PORTSDIR}/deskutils/gucharmap
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends.pc:${PORTSDIR}/sysutils/gnome-system-tools \
+    		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel \
 		gail gnomedocutils
+WANT_GNOME=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gstreamer=0.10
+CONFIGURE_ARGS=	--with-gstreamer=0.10 \
+		--enable-stickynotes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		FREEBSD_SYS=${FREEBSD_SYS}
 
 GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
-		gswitchit.schemas gtik.schemas gweather.schemas \
+		gswitchit.schemas gweather.schemas \
 		mixer.schemas multiload.schemas \
 		stickynotes.schemas
 
@@ -48,10 +52,15 @@ OPTIONS=	MINI_COMMANDER "Enable mini-commander applet" off
 
 FREEBSD_SYS?=	/usr/src/sys
 
+.if defined(PACKAGE_BUILDING)
+.undef WITHOUT_GNOME
+WITH_GNOME=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \
-	defined(WITH_NOTIFY)
+	!defined(WITHOUT_LIBNOTIFY)
 LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .endif
 
@@ -78,8 +87,23 @@ PLIST_SUB+=	COMMANDER=""
 PLIST_SUB+=	COMMANDER="@comment "
 .endif
 
+.if ( exists(${pygnomedesktop_DETECT}) && exists(${pygnomeextras_DETECT}) ) || \
+	( ( ${HAVE_GNOME:Mpygnomedesktop}!="" && \
+	${HAVE_GNOME:Mpygnomeextras}!="" ) && ${ARCH}!="sparc64" )
+USE_PYTHON=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+USE_GNOME+=	pygnomedesktop pygnomeextras
+PLIST_SUB+=	PYTHON=""
+.else
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/libgweather/weather-met.c
+.if !defined(USE_PYTHON)
+	@${REINPLACE_CMD} -e 's|HAVE_PYGTK="yes"|HAVE_PYGTK="no"|' \
+		${WRKSRC}/configure
+.endif
 
 .include <bsd.port.post.mk>

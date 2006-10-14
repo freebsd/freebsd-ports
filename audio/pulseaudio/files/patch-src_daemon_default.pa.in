@@ -1,0 +1,11 @@
+--- src/daemon/default.pa.in.orig	Sat Jul 22 11:58:50 2006
++++ src/daemon/default.pa.in	Sat Jul 22 12:22:20 2006
+@@ -60,7 +60,7 @@
+ .nofail
+ 
+ ### Load something to the sample cache
+-load-sample x11-bell /usr/share/sounds/gtk-events/activate.wav
++load-sample x11-bell %%LOCALBASE%%/share/gnome/sounds/gtk-events/activate.wav
+ #load-sample-dir-lazy /usr/share/sounds/*.wav
+ 
+ ### Load X11 bell module

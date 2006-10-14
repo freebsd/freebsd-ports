@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-core80/Makefile,v 1.4 2006/01/24 18:49:48 marcus Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins-core80/Makefile,v 1.6 2006/07/21 19:25:28 ahze Exp $
 
 PORTNAME=	gstreamer-plugins-core80
 PORTVERSION=	0.8.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,7 +16,6 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Core set of typical audio and video gstreamer-plugins
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 GST_DIR=	lib/gstreamer-${GST80_VERSION}

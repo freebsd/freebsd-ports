@@ -5,7 +5,7 @@
  					      FALSE);
  	gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser),
 -					     "/usr/bin");
-+					     "%%X11BASE%%/bin");
++					     "%%LOCALBASE%%/bin");
  
  	gtk_widget_show (chooser);
  }

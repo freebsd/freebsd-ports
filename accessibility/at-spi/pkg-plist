@@ -10,6 +10,7 @@ include/at-spi-1.0/libspi/application.h
 include/at-spi-1.0/libspi/base.h
 include/at-spi-1.0/libspi/component.h
 include/at-spi-1.0/libspi/devicelistener.h
+include/at-spi-1.0/libspi/document.h
 include/at-spi-1.0/libspi/editabletext.h
 include/at-spi-1.0/libspi/eventlistener.h
 include/at-spi-1.0/libspi/hyperlink.h
@@ -61,6 +62,7 @@ share/gnome/idl/at-spi-1.0/Accessibility_Action.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Application.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Component.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Desktop.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Document.idl
 share/gnome/idl/at-spi-1.0/Accessibility_EditableText.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Event.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Hyperlink.idl
@@ -119,7 +121,6 @@ share/locale/nb/LC_MESSAGES/at-spi.mo
 share/locale/ne/LC_MESSAGES/at-spi.mo
 share/locale/nl/LC_MESSAGES/at-spi.mo
 share/locale/nn/LC_MESSAGES/at-spi.mo
-share/locale/no/LC_MESSAGES/at-spi.mo
 share/locale/or/LC_MESSAGES/at-spi.mo
 share/locale/pa/LC_MESSAGES/at-spi.mo
 share/locale/pl/LC_MESSAGES/at-spi.mo
@@ -144,23 +145,59 @@ share/locale/xh/LC_MESSAGES/at-spi.mo
 share/locale/zh_CN/LC_MESSAGES/at-spi.mo
 share/locale/zh_HK/LC_MESSAGES/at-spi.mo
 share/locale/zh_TW/LC_MESSAGES/at-spi.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
 @dirrm share/gnome/idl/at-spi-1.0
 @dirrm lib/orbit-2.0
 @dirrm include/at-spi-1.0/login-helper
 @dirrm include/at-spi-1.0/libspi
 @dirrm include/at-spi-1.0/cspi
 @dirrm include/at-spi-1.0
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/sr@ije/LC_MESSAGES
+@dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

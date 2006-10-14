@@ -1,36 +1,20 @@
---- Src/DasherCore/FileLogger.cpp.orig	Tue Jan 17 01:41:44 2006
-+++ Src/DasherCore/FileLogger.cpp	Tue Jan 17 01:51:33 2006
-@@ -17,7 +17,7 @@ static char THIS_FILE[] = __FILE__;
- #include <windows.h>
- #endif
- 
--#include <sys/timeb.h>
-+#include <sys/time.h>
- 
- CFileLogger::CFileLogger(const std::string& strFilenamePath, eLogLevel iLogLevel, int iOptionsMask)
- {
-@@ -492,12 +492,12 @@ std::string CFileLogger::GetTimeDateStam
- 
-   if ((m_bTimeStamp) || (m_bDateStamp))
-   {
--    struct timeb sTimeBuffer;
-+    struct timeval sTimeBuffer;
-     char* szTimeLine = NULL;
- 
--    ftime(&sTimeBuffer);
-+    gettimeofday(&sTimeBuffer, NULL);
- 
--    szTimeLine = ctime(&(sTimeBuffer.time));
+--- Src/DasherCore/FileLogger.cpp.orig	Fri Apr 21 17:41:01 2006
++++ Src/DasherCore/FileLogger.cpp	Sun Jun 11 07:33:19 2006
+@@ -511,7 +511,7 @@
+     szTimeLine = ctime(&(sTimeBuffer.time));
+ #else
+     gettimeofday(&sTimeBuffer, &sTimezoneBuffer);
+-    szTimeLine = ctime(&(sTimeBuffer.tv_sec));
 +    szTimeLine = ctime((const time_t *)&(sTimeBuffer.tv_sec));
- 
+ #endif
+  
      // Format is:
-     // Wed Jun 22 10:22:00 2005
-@@ -520,7 +520,7 @@ std::string CFileLogger::GetTimeDateStam
-           strTimeStamp += szTimeLine[i];
-         strTimeStamp += ".";
-         char strMs[16];
--        sprintf(strMs, "%d", sTimeBuffer.millitm);
+@@ -538,7 +538,7 @@
+ #ifdef _WIN32
+         sprintf(strMs, "%d", sTimeBuffer.millitm);
+ #else
+-        sprintf(strMs, "%d", sTimeBuffer.tv_usec / 1000);
 +        sprintf(strMs, "%d", (int) (sTimeBuffer.tv_usec / 1000));
+ #endif
          if (strlen(strMs) == 1)
            strTimeStamp += "00";
-         else if (strlen(strMs) == 2)

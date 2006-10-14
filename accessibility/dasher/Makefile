@@ -3,11 +3,11 @@
 # Whom:					lewiz <purple@lewiz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/dasher/Makefile,v 1.34 2006/04/13 07:52:29 bland Exp $
+#   $MCom: ports/accessibility/dasher/Makefile,v 1.44 2006/09/03 21:33:52 marcus Exp $
 #
 
 PORTNAME=	dasher
-PORTVERSION=	4.0.4
+PORTVERSION=	4.2.0
 PORTEPOCH=	1
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -22,14 +22,14 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \
-		libwnck
+		libwnck gnomedocutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
+INSTALLS_OMF=	yes
 USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

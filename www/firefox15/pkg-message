@@ -16,7 +16,7 @@ The SSH sever on remote_host must allow pub key authentication.
 
 Any bug reports should be addressed to the maintainers at:
 	gnome@FreeBSD.org
-You may also Cc: freebsd-ports@freebsd.org. Please do not send
+You may also Cc: freebsd-ports@FreeBSD.org. Please do not send
 bug reports to any other addresses.
 
 Please include the following information with any bug report:

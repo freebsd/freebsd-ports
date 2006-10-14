@@ -4,6 +4,7 @@ lib/tomboy/Plugins/ExportToHTML.dll
 lib/tomboy/Plugins/FixedWidth.dll
 lib/tomboy/Plugins/NoteOfTheDay.dll
 lib/tomboy/Plugins/PrintNotes.dll
+lib/tomboy/Plugins/StickyNoteImport.dll
 lib/tomboy/Tomboy.exe
 lib/tomboy/Tomboy.exe.config
 lib/tomboy/libtomboy.la
@@ -11,42 +12,106 @@ lib/tomboy/libtomboy.so
 libdata/bonobo/servers/GNOME_TomboyApplet.server
 libdata/pkgconfig/tomboy-plugins.pc
 share/dbus-1/services/com.beatniksoftware.Tomboy.service
-share/gnome/gnome-2.0/ui/GNOME_TomboyApplet.xml
-share/gnome/pixmaps/tintin.png
+share/gnome/applications/DefaultPlugins.desktop
+share/gnome/applications/tomboy.desktop
+share/gnome/help/tomboy/C/figures/tomboy-new-note.png
+share/gnome/help/tomboy/C/figures/tomboy-panel.png
+share/gnome/help/tomboy/C/figures/tomboy-preferences-editing.png
+share/gnome/help/tomboy/C/figures/tomboy-preferences-hotkeys.png
+share/gnome/help/tomboy/C/figures/tomboy-tools.png
+share/gnome/help/tomboy/C/legal.xml
+share/gnome/help/tomboy/C/tomboy.xml
+share/gnome/help/tomboy/es/figures/tomboy-new-note.png
+share/gnome/help/tomboy/es/figures/tomboy-panel.png
+share/gnome/help/tomboy/es/figures/tomboy-preferences-editing.png
+share/gnome/help/tomboy/es/figures/tomboy-preferences-hotkeys.png
+share/gnome/help/tomboy/es/figures/tomboy-tools.png
+share/gnome/help/tomboy/es/legal.xml
+share/gnome/help/tomboy/es/tomboy.xml
+share/gnome/help/tomboy/sv/figures/tomboy-new-note.png
+share/gnome/help/tomboy/sv/figures/tomboy-panel.png
+share/gnome/help/tomboy/sv/figures/tomboy-preferences-editing.png
+share/gnome/help/tomboy/sv/figures/tomboy-preferences-hotkeys.png
+share/gnome/help/tomboy/sv/figures/tomboy-tools.png
+share/gnome/help/tomboy/sv/legal.xml
+share/gnome/help/tomboy/sv/tomboy.xml
+share/gnome/omf/tomboy/tomboy-C.omf
+share/gnome/omf/tomboy/tomboy-es.omf
+share/gnome/omf/tomboy/tomboy-sv.omf
+share/gnome/pixmaps/tomboy.png
+share/icons/hicolor/16x16/apps/tomboy.png
+share/icons/hicolor/22x22/apps/tomboy.png
+share/icons/hicolor/48x48/apps/tomboy.png
+share/icons/hicolor/scalable/apps/tomboy.svg
 share/locale/bg/LC_MESSAGES/tomboy.mo
+share/locale/bn/LC_MESSAGES/tomboy.mo
+share/locale/bn_IN/LC_MESSAGES/tomboy.mo
 share/locale/ca/LC_MESSAGES/tomboy.mo
 share/locale/cs/LC_MESSAGES/tomboy.mo
 share/locale/da/LC_MESSAGES/tomboy.mo
 share/locale/de/LC_MESSAGES/tomboy.mo
+share/locale/dz/LC_MESSAGES/tomboy.mo
+share/locale/el/LC_MESSAGES/tomboy.mo
 share/locale/en_CA/LC_MESSAGES/tomboy.mo
 share/locale/en_GB/LC_MESSAGES/tomboy.mo
 share/locale/es/LC_MESSAGES/tomboy.mo
+share/locale/et/LC_MESSAGES/tomboy.mo
 share/locale/eu/LC_MESSAGES/tomboy.mo
 share/locale/fi/LC_MESSAGES/tomboy.mo
 share/locale/fr/LC_MESSAGES/tomboy.mo
+share/locale/gl/LC_MESSAGES/tomboy.mo
+share/locale/gu/LC_MESSAGES/tomboy.mo
+share/locale/hi/LC_MESSAGES/tomboy.mo
 share/locale/hu/LC_MESSAGES/tomboy.mo
 share/locale/is/LC_MESSAGES/tomboy.mo
 share/locale/it/LC_MESSAGES/tomboy.mo
 share/locale/ja/LC_MESSAGES/tomboy.mo
 share/locale/ko/LC_MESSAGES/tomboy.mo
+share/locale/ku/LC_MESSAGES/tomboy.mo
 share/locale/lt/LC_MESSAGES/tomboy.mo
+share/locale/lv/LC_MESSAGES/tomboy.mo
+share/locale/mk/LC_MESSAGES/tomboy.mo
+share/locale/ml/LC_MESSAGES/tomboy.mo
 share/locale/nb/LC_MESSAGES/tomboy.mo
 share/locale/ne/LC_MESSAGES/tomboy.mo
 share/locale/nl/LC_MESSAGES/tomboy.mo
-share/locale/no/LC_MESSAGES/tomboy.mo
+share/locale/or/LC_MESSAGES/tomboy.mo
 share/locale/pa/LC_MESSAGES/tomboy.mo
 share/locale/pl/LC_MESSAGES/tomboy.mo
+share/locale/pt/LC_MESSAGES/tomboy.mo
 share/locale/pt_BR/LC_MESSAGES/tomboy.mo
 share/locale/ro/LC_MESSAGES/tomboy.mo
 share/locale/ru/LC_MESSAGES/tomboy.mo
 share/locale/rw/LC_MESSAGES/tomboy.mo
 share/locale/sq/LC_MESSAGES/tomboy.mo
+share/locale/sr/LC_MESSAGES/tomboy.mo
+share/locale/sr@Latn/LC_MESSAGES/tomboy.mo
 share/locale/sv/LC_MESSAGES/tomboy.mo
+share/locale/ta/LC_MESSAGES/tomboy.mo
+share/locale/th/LC_MESSAGES/tomboy.mo
 share/locale/tr/LC_MESSAGES/tomboy.mo
 share/locale/uk/LC_MESSAGES/tomboy.mo
 share/locale/vi/LC_MESSAGES/tomboy.mo
 share/locale/zh_CN/LC_MESSAGES/tomboy.mo
+share/locale/zh_HK/LC_MESSAGES/tomboy.mo
+share/locale/zh_TW/LC_MESSAGES/tomboy.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrm share/gnome/omf/tomboy
+@dirrm share/gnome/help/tomboy/sv/figures
+@dirrm share/gnome/help/tomboy/sv
+@dirrm share/gnome/help/tomboy/es/figures
+@dirrm share/gnome/help/tomboy/es
+@dirrm share/gnome/help/tomboy/C/figures
+@dirrm share/gnome/help/tomboy/C
+@dirrm share/gnome/help/tomboy
 @dirrm lib/tomboy/Plugins
 @dirrm lib/tomboy

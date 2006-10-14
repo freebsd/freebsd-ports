@@ -3,11 +3,12 @@
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/eel/Makefile,v 1.35 2006/04/13 07:52:42 bland Exp $
+#   $MCom: ports/x11-toolkits/eel/Makefile,v 1.46 2006/09/07 21:36:05 ahze Exp $
 #
 
 PORTNAME=	eel
-PORTVERSION=	2.14.3
+PORTVERSION=	2.16.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,7 +20,7 @@ COMMENT=	Generally useful classes and extensions to GNOME
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gail gnomedesktop gnomemenus ltverhack
 USE_AUTOTOOLS=	libtool:15
@@ -29,7 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/eel/eel-open-with-dialog.c
 
 .include <bsd.port.mk>

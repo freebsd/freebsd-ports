@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2/Makefile,v 1.142 2006/04/23 20:10:22 marcus Exp $
+#   $MCom: ports/x11/gnome2/Makefile,v 1.182 2006/10/14 06:34:16 marcus Exp $
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.14.3
-PORTREVISION?=	0
+PORTVERSION=	2.16.1
+PORTREVISION?=	2
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,7 +17,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	The "meta-port" for the GNOME 2 integrated X11 desktop
 
-RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets \
+RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets \
 		gnome-cd:${PORTSDIR}/audio/gnome-media \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnome-utils \
 		eog:${PORTSDIR}/graphics/eog \
@@ -29,38 +29,43 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets
 		bug-buddy:${PORTSDIR}/devel/bug-buddy \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnome-system-monitor \
 		nautilus:${PORTSDIR}/x11-fm/nautilus \
-		${X11BASE}/sbin/gdm:${PORTSDIR}/x11/gdm \
-		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
-		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnome-audio \
-		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc:${PORTSDIR}/x11-toolkits/libgail-gnome \
+		${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm \
+		${LOCALBASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
+		${LOCALBASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnome-audio \
+		${LOCALBASE}/libdata/pkgconfig/libgail-gnome.pc:${PORTSDIR}/x11-toolkits/libgail-gnome \
 		file-roller:${PORTSDIR}/archivers/file-roller \
-		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
+		${LOCALBASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
 		gok:${PORTSDIR}/accessibility/gok \
 		nautilus-cd-burner:${PORTSDIR}/sysutils/nautilus-cd-burner \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		gucharmap:${PORTSDIR}/deskutils/gucharmap \
 		zenity:${PORTSDIR}/x11/zenity \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
-		gnopernicus:${PORTSDIR}/accessibility/gnopernicus \
-		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnome-netstatus \
+		${LOCALBASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnome-netstatus \
 		dasher:${PORTSDIR}/accessibility/dasher \
-		evolution-2.6:${PORTSDIR}/mail/evolution \
-		${X11BASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
+		evolution-2.8:${PORTSDIR}/mail/evolution \
+		${LOCALBASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
 		network-admin:${PORTSDIR}/sysutils/gnome-system-tools \
 		gnome-nettool:${PORTSDIR}/net/gnome-nettool \
 		vino-session:${PORTSDIR}/net/vino \
-		ximian-connector-setup-2.6:${PORTSDIR}/mail/evolution-exchange \
-		${X11BASE}/lib/gstreamer-0.10/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
-		${X11BASE}/lib/gstreamer-0.10/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
+		exchange-connector-setup-2.8:${PORTSDIR}/mail/evolution-exchange \
+		${LOCALBASE}/lib/gstreamer-0.10/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
+		${LOCALBASE}/lib/gstreamer-0.10/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
 		totem:${PORTSDIR}/multimedia/totem-gstreamer \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
-		${X11BASE}/share/gnome/gnome-background-properties/gnome-branded.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
+		${LOCALBASE}/share/gnome/gnome-background-properties/gnome-branded.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
 		gnome-keyring-manager:${PORTSDIR}/security/gnome-keyring-manager \
-		${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc:${PORTSDIR}/www/libgtkhtml \
+		${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc:${PORTSDIR}/www/libgtkhtml \
 		evince:${PORTSDIR}/graphics/evince \
-		${X11BASE}/libexec/fast-user-switch-applet:${PORTSDIR}/x11/fast-user-switch-applet \
-		${X11BASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
+		${LOCALBASE}/libexec/fast-user-switch-applet:${PORTSDIR}/x11/fast-user-switch-applet \
+		${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
+    		alacarte:${PORTSDIR}/deskutils/alacarte \
+		gnome-power-manager:${PORTSDIR}/sysutils/gnome-power-manager \
+		gnome-volume-manager:${PORTSDIR}/sysutils/gnome-volume-manager \
+		orca:${PORTSDIR}/accessibility/orca \
+		epiphany:${PORTSDIR}/www/epiphany \
+		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 		ekiga:${PORTSDIR}/net/ekiga
 
 NO_BUILD=	yes
@@ -78,8 +83,8 @@ do-install:	# empty
 .include <bsd.port.pre.mk>
 
 .if !defined(GNOME_SLAVE)
-.if ${ARCH} == "i386" || ${OSVERSION} > 500035
-RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
+.if ${ARCH} == "i386"
+RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
 .endif
 .if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
 RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
@@ -88,7 +93,7 @@ RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
 
 .if ${.CURDIR}==${MASTERDIR} || ${.CURDIR:T}=="gnome2-lite"
 .if defined(WITH_XSCREENSAVER)
-RUN_DEPENDS+=	${X11BASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+RUN_DEPENDS+=	${LOCALBASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
 .else
 RUN_DEPENDS+=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver
 .endif
