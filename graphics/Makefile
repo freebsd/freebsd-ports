@@ -551,6 +551,7 @@
     SUBDIR += py-gdchart
     SUBDIR += py-gdchart2
     SUBDIR += py-glewpy
+    SUBDIR += py-goocanvas
     SUBDIR += py-graphviz
     SUBDIR += py-imaging
     SUBDIR += py-ming
