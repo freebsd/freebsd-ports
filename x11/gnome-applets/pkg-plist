@@ -47,7 +47,7 @@ libdata/bonobo/servers/GNOME_CharpickerApplet.server
 libdata/bonobo/servers/GNOME_DriveMountApplet.server
 libdata/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 libdata/bonobo/servers/GNOME_GeyesApplet.server
-libdata/bonobo/servers/GNOME_GtikApplet.server
+%%PYTHON%%libdata/bonobo/servers/GNOME_GtikApplet.server
 libdata/bonobo/servers/GNOME_KeyboardApplet.server
 libdata/bonobo/servers/GNOME_MailcheckApplet_Factory.server
 libdata/bonobo/servers/GNOME_MiniCommanderApplet.server
