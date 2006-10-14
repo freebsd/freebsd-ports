@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -45,7 +45,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
 USE_MYSQL=	yes
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+IGNORE_WITH_MYSQL=	323 40
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER:S/323//}
 .endif
 
 .if ! (${OSVERSION} > 700014 || ( ${OSVERSION} >= 601101 && ${OSVERSION} < 700000 ))
