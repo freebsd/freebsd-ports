@@ -1,0 +1,10 @@
+%%PYTHON_SITELIBDIR%%/gsf/__init__.py
+%%PYTHON_SITELIBDIR%%/gsf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gsf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gsf/_gsfmodule.a
+%%PYTHON_SITELIBDIR%%/gsf/_gsfmodule.la
+%%PYTHON_SITELIBDIR%%/gsf/_gsfmodule.so
+%%PYTHON_SITELIBDIR%%/gsf/gnomemodule.a
+%%PYTHON_SITELIBDIR%%/gsf/gnomemodule.la
+%%PYTHON_SITELIBDIR%%/gsf/gnomemodule.so
+@dirrm %%PYTHON_SITELIBDIR%%/gsf
