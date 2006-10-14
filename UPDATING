@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061014:
+  AFFECTS: All GNOME users
+  AUTHOR: gnome@FreeBSD.org
+
+  GNOME has been updated to 2.16 and all GNOME components have been
+  moved from X11BASE to LOCALBASE, to upgrade your GNOME desktop and
+  applications you will need either sysutils/portupgrade or
+  sysutils/portmanager.
+
+ Portupgrade users:
+  pkgdb -Ff
+  portupgrade -rf glib-2\* cairo gnome-doc-utils gnome-mime-data \
+	gnome-audio startup-notification dbus
+
+ Portmaster users:
+  portmaster -r pkg-config\*
+
 20061010:
   AFFECTS: users of devel/avr-gcc*
   AUTHOR: joerg@FreeBSD.org
