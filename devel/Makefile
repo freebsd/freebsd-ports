@@ -1693,6 +1693,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-levenshtein
+    SUBDIR += py-libgsf
     SUBDIR += py-ll-core
     SUBDIR += py-log4py
     SUBDIR += py-logging
