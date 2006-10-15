@@ -4,9 +4,10 @@
 #
 # $FreeBSD$
 #    $MCom: ports/devel/xdg-utils/Makefile,v 1.2 2006/09/02 21:01:28 ahze Exp $
+#
 
 PORTNAME=	xdg-utils
-DISTVERSION=	1.0beta3
+PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 EXTRACT_SUFX=	.tgz
