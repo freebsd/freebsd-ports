@@ -58,6 +58,7 @@ pike/%%PORTVERSION%%/lib/modules/sprintf.pmod
 pike/%%PORTVERSION%%/lib/modules/sybase.so
 pike/%%PORTVERSION%%/lib/modules/system.pmod
 pike/%%PORTVERSION%%/lib/modules/GL.so
+pike/%%PORTVERSION%%/lib/modules/GLU.pmod.o
 pike/%%PORTVERSION%%/lib/modules/GLUT.so
 pike/%%PORTVERSION%%/lib/modules/Colors.pmod
 pike/%%PORTVERSION%%/lib/modules/Array.pmod
@@ -267,7 +268,6 @@ pike/%%PORTVERSION%%/lib/modules/Remote.pmod/obj.pike.o
 pike/%%PORTVERSION%%/lib/modules/Sql.pmod/mysql_result.pike
 pike/%%PORTVERSION%%/lib/modules/Sql.pmod/msql.pike
 pike/%%PORTVERSION%%/lib/modules/Sql.pmod/mysql.pike
-pike/%%PORTVERSION%%/lib/modules/Sql.pmod/mysql.pike.o
 pike/%%PORTVERSION%%/lib/modules/Sql.pmod/odbc.pike
 pike/%%PORTVERSION%%/lib/modules/Sql.pmod/postgres_result.pike
 pike/%%PORTVERSION%%/lib/modules/Sql.pmod/odbc_result.pike
@@ -433,8 +433,6 @@ pike/%%PORTVERSION%%/include/pike/language.h
 pike/%%PORTVERSION%%/include/pike/treeopt.h
 pike/%%PORTVERSION%%/include/pike/case_info.h
 pike/%%PORTVERSION%%/include/pike/aclocal.m4
-pike/%%PORTVERSION%%/man/man1/hilfe.1
-pike/%%PORTVERSION%%/man/man1/pike.1
 @dirrm pike/%%PORTVERSION%%/bin
 @dirrm pike/%%PORTVERSION%%/lib/modules/ADT.pmod
 @dirrm pike/%%PORTVERSION%%/lib/modules/Crypto
@@ -471,7 +469,5 @@ pike/%%PORTVERSION%%/man/man1/pike.1
 @dirrm pike/%%PORTVERSION%%/lib
 @dirrm pike/%%PORTVERSION%%/include/pike
 @dirrm pike/%%PORTVERSION%%/include
-@dirrm pike/%%PORTVERSION%%/man/man1
-@dirrm pike/%%PORTVERSION%%/man
 @dirrm pike/%%PORTVERSION%%
 @dirrm pike
