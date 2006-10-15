@@ -7427,6 +7427,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/local_variables-i.yaml
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/loop-i.yaml
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/method_missing-i.yaml
+%%ONIGURUMA%%%%RDOC%%%%RUBY_RIDIR%%/Kernel/onig_stat_print-i.yaml
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/open-i.yaml
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/open_uri_original_open-i.yaml
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/p-i.yaml
@@ -10407,8 +10408,12 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/intern.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/missing.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/node.h
+%%ONIGURUMA%%%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/oniguruma.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/re.h
+%%ONIGURUMA%%%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/regenc.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/regex.h
+%%ONIGURUMA%%%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/regint.h
+%%ONIGURUMA%%%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/regparse.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/ruby.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/rubyio.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/rubysig.h
