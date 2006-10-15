@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVAJARDIR}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
 RUN_DEPENDS=	${JAVAJARDIR}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
 
+BROKEN=		Does not compile
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 USE_ANT=	yes
