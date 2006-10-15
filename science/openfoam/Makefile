@@ -31,6 +31,8 @@ RUN_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		${LOCALBASE}/share/java/java3d/jar/j3dutils.jar:${PORTSDIR}/java/java3d	\
 		paraview:${PORTSDIR}/science/paraview
 
+BROKEN=		Incorrect pkg-plist
+
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
 		dot:${PORTSDIR}/graphics/graphviz

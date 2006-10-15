@@ -19,6 +19,8 @@ PKGNAMESUFFIX+=	-${EMACS_NAME}
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	${LOCALBASE}/share/applications/.keep_me:${PORTSDIR}/misc/kdehier
 
+BROKEN=		Incorrect pkg-plist
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
