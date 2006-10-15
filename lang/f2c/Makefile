@@ -18,6 +18,8 @@ COMMENT=	Fortran-to-C converter and its run-time libraries
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
+BROKEN=		Corrupt distfile
+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
