@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	7.0.0p1
+PORTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
-DISTNAME=	PDFlib-Lite-${PORTVERSION}
+DISTNAME=	PDFlib-Lite-${PORTVERSION}p1
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
