@@ -19,7 +19,8 @@ COMMENT=	An X11 image grabber
 
 BUILD_DEPENDS=	xrdb:${X_CLIENTS_PORT}
 .if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
 USE_X_PREFIX=	yes
