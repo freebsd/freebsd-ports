@@ -138,12 +138,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20371</bid>
+      <cvename>CVE-2006-5227</cvename>
       <url>http://www.stevenroddis.com.au/2006/10/06/torrentflux-user-agent-xss-vulnerability/</url>
       <url>http://secunia.com/advisories/22293/</url>
     </references>
     <dates>
       <discovery>2006-09-30</discovery>
       <entry>2006-10-07</entry>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -432,13 +435,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20326</bid>
+      <cvename>CVE-2006-5178</cvename>
       <url>http://www.hardened-php.net/advisory_082006.132.html</url>
       <url>http://secunia.com/advisories/22235/</url>
     </references>
     <dates>
       <discovery>2006-10-02</discovery>
       <entry>2006-10-05</entry>
-      <modified>2006-10-08</modified>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -470,6 +475,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20347</bid>
       <cvename>CVE-2006-4758</cvename>
       <url>http://secunia.com/advisories/22188/</url>
       <url>http://xforce.iss.net/xforce/xfdb/28884</url>
@@ -478,7 +484,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-12</discovery>
       <entry>2006-10-04</entry>
-      <modified>2006-10-05</modified>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -503,13 +509,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20317</bid>
       <cvename>CVE-2006-5121</cvename>
       <url>http://xforce.iss.net/xforce/xfdb/29271</url>
       <url>http://www.securityfocus.com/archive/1/archive/1/447361/100/0/threaded</url>
+      <url>http://secunia.com/advisories/22197/</url>
     </references>
     <dates>
       <discovery>2006-09-29</discovery>
       <entry>2006-10-03</entry>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -653,6 +662,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20228</bid>
       <cvename>CVE-2006-5080</cvename>
       <url>http://secunia.com/advisories/22109</url>
       <url>http://www.sixapart.com/movabletype/news/2006/09/mt_333-mte_103_updates.html</url>
@@ -660,6 +670,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-26</discovery>
       <entry>2006-10-02</entry>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -684,8 +695,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	  <cvename>CVE-2006-5116</cvename>
-	  <cvename>CVE-2006-5117</cvename>
+      <cvename>CVE-2006-5116</cvename>
+      <cvename>CVE-2006-5117</cvename>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-5</url>
       <url>http://secunia.com/advisories/22126/</url>
       <bid>20253</bid>
@@ -1061,6 +1072,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>14069</bid>
       <url>http://secunia.com/advisories/15167/</url>
       <url>http://secunia.com/advisories/15854/</url>
       <url>http://planscalendar.com/forum/viewtopic.php?t=660</url>
@@ -1068,6 +1080,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-04-28</discovery>
       <entry>2006-09-26</entry>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -1091,11 +1104,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20213</bid>
+      <cvename>CVE-2006-5071</cvename>
       <url>http://eyeos.blogspot.com/2006/09/eyeos-091-released.html</url>
     </references>
     <dates>
       <discovery>2006-09-25</discovery>
       <entry>2006-09-25</entry>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -1122,13 +1138,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20022</bid>
+      <cvename>CVE-2006-4684</cvename>
       <url>http://secunia.com/advisories/21947/</url>
       <url>http://www.zope.org/Products/Zope/Hotfix-2006-08-21/Hotfix-20060821/README.txt</url>
     </references>
     <dates>
       <discovery>2006-08-21</discovery>
       <entry>2006-09-22</entry>
-      <modified>2006-10-05</modified>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -1275,6 +1293,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20042</bid>
       <cvename>CVE-2006-4253</cvename>
       <cvename>CVE-2006-4340</cvename>
       <cvename>CVE-2006-4565</cvename>
@@ -1296,7 +1315,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-14</discovery>
       <entry>2006-09-15</entry>
-      <modified>2006-09-22</modified>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
@@ -1323,6 +1342,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20138</bid>
       <cvename>CVE-2006-4381</cvename>
       <cvename>CVE-2006-4382</cvename>
       <cvename>CVE-2006-4384</cvename>
@@ -1335,6 +1355,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-08</discovery>
       <entry>2006-09-14</entry>
+      <modified>2006-10-15</modified>
     </dates>
   </vuln>
 
