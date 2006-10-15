@@ -22,6 +22,7 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	PINE(tm) -- a Program for Internet News & Email
 
 OPTIONS=	PICO "Build and install pico, the default editor" on \
+		MAILDIR "Add a patch that provides maildir support" off \
 		LDAP "Add support for LDAP" off \
 		IPV6 "Add support for IPv6" off
 
