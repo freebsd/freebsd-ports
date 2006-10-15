@@ -234,4 +234,5 @@ share/doc/avr-libc/LICENSE
 @dirrm avr/lib/avr3
 @dirrm avr/lib/avr4
 @dirrm avr/lib/avr5
+@dirrm avr/lib/avr6
 @dirrm share/doc/avr-libc
