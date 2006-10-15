@@ -242,7 +242,8 @@ CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
 		--with-x11incdir=${X11BASE}/include
 .else
 WITHOUT_GUI=	yes
-CONFIGURE_ARGS+=--disable-x11
+CONFIGURE_ARGS+=--disable-x11 \
+		--disable-fontconfig
 .endif
 
 .if defined(WITH_LANG)
