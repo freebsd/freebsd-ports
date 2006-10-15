@@ -14,17 +14,13 @@ MASTER_SITES=	http://www.enderunix.org/zabit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zabit is a content/attachment filter for qmail
 
-BROKEN=		Size mismatch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_QMAIL_RUN=	yes
 
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-QMAIL_QUEUE=    ${QMAIL_PREFIX}/bin/qmail-queue
+QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 
 pre-build:
 .if !defined(BATCH)
