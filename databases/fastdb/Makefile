@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	fastdb
-PORTVERSION=	3.30
+PORTVERSION=	3.32
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Main Memory Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -33,4 +33,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/FastDB.htm ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} < 601105
+	${REINPLACE_CMD} -e 's|^#define HAVE_GETHOSTBYNAME_R||' ${WRKSRC}/inc/config.h
+.endif
+
+.include <bsd.port.post.mk>
