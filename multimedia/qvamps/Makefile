@@ -29,6 +29,8 @@ RUN_DEPENDS=	\
 		play_cell:${PORTSDIR}/multimedia/vamps \
 		vamps:${PORTSDIR}/multimedia/vamps
 
+BROKEN=		Touches filesystem prior to 'make install'
+
 CONFLICTS=	lxdvdrip-{{0.,1.[0-3],1.4[0-7]}*
 OPTIONS=	MPLAYER "Enable DVD playing using mplayer" on
 
