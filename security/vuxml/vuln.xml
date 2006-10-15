@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="93ba13f8-5c41-11db-a5ae-00508d6a62df">
+    <topic>tkdiff -- temporary file symlink privilege escalation</topic>
+    <affects>
+      <package>
+	<name>tkdiff</name>
+	<range><lt>4.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Javier Fernández-Sanguino Peña reports a vulnerability in
+	  tkdiff which allows local users to gain priveleges of the
+	  user running tkdiff due to insecure temporary file creation.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.debian.org/security/2005/dsa-927</url>
+      <cvename>CVE-2005-3343</cvename>
+      <bid>16064</bid>
+      <url>http://secunia.com/advisories/18083</url>
+    </references>
+    <dates>
+      <discovery>2005-12-20</discovery>
+      <entry>2006-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c8a84d9-5bee-11db-a5ae-00508d6a62df">
     <topic>vtiger -- multiple remote file inclusion vulnerabilities</topic>
     <affects>
@@ -4554,7 +4581,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Javier Fernandez-Sanguino Pena reports two temporary file
+	<p>Javier Fernández-Sanguino Peña reports two temporary file
 	  vulnerability within f2c.  The vulnerabilities are caused
 	  due to weak temporary file handling.  An attacker could
 	  create an symbolic link, causing a local user running f2c
