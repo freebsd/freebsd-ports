@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.7
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
