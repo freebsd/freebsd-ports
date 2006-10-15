@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
+BROKEN=		Segfaults when MALLOC_OPTIONS=AJ
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
