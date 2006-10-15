@@ -9,7 +9,8 @@
 PORTNAME=	nautilus-open-terminal
 PORTVERSION=	0.7
 CATEGORIES=	deskutils
-MASTER_SITES=	http://manny.cluecoder.org/packages/nautilus-open-terminal/
+MASTER_SITES=	http://manny.cluecoder.org/packages/nautilus-open-terminal/ \
+    		http://www.marcuscom.com/downloads/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus extension which allows you to open a terminal
