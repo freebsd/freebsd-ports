@@ -16,6 +16,8 @@ COMMENT=	An implementation of Macromedia Flash plugin for Netscape
 
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		Incorrect pkg-plist
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
