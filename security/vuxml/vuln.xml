@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2c8a84d9-5bee-11db-a5ae-00508d6a62df">
+    <topic>vtiger -- multiple remote file inclusion vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vtiger</name>
+	<range><lt>5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dedi Dwianto a.k.a the_day reports:</p>
+	<blockquote cite="http://www.milw0rm.com/exploits/2508">
+	  <p>Input passed to the "$calpath" parameter in update.php is
+	    not properly verified before being used. This can be
+	    exploited to execute arbitrary PHP code by including files
+	    from local or external resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5289</cvename>
+      <bid>20435</bid>
+      <mlist msgid="20061009094328.15530.qmail@securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=116049557032343</mlist>
+      <url>http://advisories.echo.or.id/adv/adv54-theday-2006.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-10-09</discovery>
+      <entry>2006-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c9a2769-5ade-11db-a5ae-00508d6a62df">
     <topic>google-earth -- heap overflow in the KML engine</topic>
     <affects>
