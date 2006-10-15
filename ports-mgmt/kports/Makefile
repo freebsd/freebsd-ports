@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	hannes.hauswedell@gmail.com
 COMMENT=	Powerful KDE-Frontend to the Ports
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
