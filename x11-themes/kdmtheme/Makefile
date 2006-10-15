@@ -8,7 +8,8 @@
 PORTNAME=	kdmtheme
 PORTVERSION=	1.1.2
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/
+MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/ \
+		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 
 MAINTAINER=	illusia@inbox.lv
 COMMENT=	KDM Theme Manager
