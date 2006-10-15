@@ -14,6 +14,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
 
+BROKEN=		Size mismatch
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 RESTRICTED=	No commercial nor military use, no sale
