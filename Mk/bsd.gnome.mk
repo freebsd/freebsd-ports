@@ -743,7 +743,7 @@ gnome-pre-su-install:
 	@${MTREE_CMD} ${MTREE_ARGS:S/${MTREE_FILE}/${GNOME_MTREE_FILE}/} ${TARGETDIR}/ >/dev/null
 .endif
 .if defined(GCONF_SCHEMAS)
-	@${MKDIR} ${TARGETDIR}${PREFIX}/etc/gconf/gconf.xml.defaults/
+	@${MKDIR} ${TARGETDIR}/etc/gconf/gconf.xml.defaults/
 .else
 	@${DO_NADA}
 .endif
