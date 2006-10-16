@@ -15,7 +15,8 @@ PKGNAMEPREFIX=
 MAINTAINER=	jabra@ccs.neu.edu
 COMMENT=	A suite of tools to monitor changes on a network
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
+BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
+		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
 		${SITE_PERL}/Nmap/Parser.pm:${PORTSDIR}/security/p5-Nmap-Parser \
 		${SITE_PERL}/mach/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/mach/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
