@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	glom
-PORTVERSION=	0.8.30
-PORTREVISION=	3
+PORTVERSION=	1.0.4
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNOME database designed
+COMMENT=	GNOME database designer and user interface
 
 LIB_DEPENDS=	bakery-2.4:${PORTSDIR}/x11-toolkits/bakery \
-		gdamm-1.3:${PORTSDIR}/databases/libgdamm
+		gdamm-1.3:${PORTSDIR}/databases/libgdamm \
+		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
@@ -27,20 +27,23 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix pygnomeextras
+USE_GNOME=	gnomedocutils gnomehack gnomeprefix pygnomeextras
+USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-INSTALLS_OMF=	yes
-
-BROKEN=	needs an update to 1.0
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} < 500000)
 BROKEN=		doesn't play well with 4.X.
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' ${WRKSRC}/Makefile.in
+
+post-install:
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>
