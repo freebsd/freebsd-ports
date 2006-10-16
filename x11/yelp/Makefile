@@ -19,7 +19,7 @@ COMMENT=	A help browser for the GNOME 2 desktop
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_GECKO=	firefox seamonkey xulrunner firefox-devel<->firefox
+USE_GECKO=	firefox xulrunner firefox-devel<->firefox
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
