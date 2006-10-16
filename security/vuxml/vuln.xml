@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a6d9da4a-5d5e-11db-8faf-000c6ec775d9">
+    <topic>nvidia-driver -- arbitrary root code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>nvidia-driver</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rapid7 reports:</p>
+	<blockquote cite="http://www.rapid7.com/advisories/R7-0025.jsp">
+	  <p>The NVIDIA Binary Graphics Driver for Linux is vulnerable
+	    to a buffer overflow that allows an attacker to run
+	    arbitrary code as root. This bug can be exploited both
+	    locally or remotely (via a remote X client or an X client
+	    which visits a malicious web page).	 A working
+	    proof-of-concept root exploit is included with this
+	    advisory.</p>
+	  <p>The NVIDIA drivers for Solaris and FreeBSD are also
+	    likely to be vulnerable.</p>
+	  <p>4. Solution</p>
+	  <p>Disable the binary blob driver and use the open-source
+	    "nv" driver that is included by default with X.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.rapid7.com/advisories/R7-0025.jsp</url>
+    </references>
+    <dates>
+      <discovery>2006-10-16</discovery>
+      <entry>2006-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8012a79d-5d21-11db-bb8d-00123ffe8333">
     <topic>clamav -- CHM unpacker and PE rebuilding vulnerabilities</topic>
     <affects>
