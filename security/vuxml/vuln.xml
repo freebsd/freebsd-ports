@@ -422,7 +422,8 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>php4</name>
 	<name>php5</name>
-	<range><ge>0</ge></range>
+	<range><lt>4.4.4_1</lt></range>
+	<range><ge>5.*</ge><lt>5.1.6_2</lt></range>
       </package>
       <package>
 	<name>php-suhosin</name>
@@ -481,7 +482,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-10-02</discovery>
       <entry>2006-10-05</entry>
-      <modified>2006-10-15</modified>
+      <modified>2006-10-16</modified>
     </dates>
   </vuln>
 
