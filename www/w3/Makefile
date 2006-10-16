@@ -8,8 +8,7 @@
 PORTNAME=	w3
 PORTVERSION=	2.2.26
 CATEGORIES+=	www elisp
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
-		ftp://ftp.cs.indiana.edu/pub/elisp/w3/
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/www/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	WWW browser based on emacs/mule
