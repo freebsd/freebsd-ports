@@ -12,6 +12,9 @@ include/pixie/sdr.h
 include/pixie/shadeop.h
 lib/pixie/file.so
 lib/pixie/framebuffer.so
+lib/pixie/libcommon.a
+lib/pixie/libcommon.so
+lib/pixie/libcommon.so.0
 lib/pixie/libri.a
 lib/pixie/libri.so
 lib/pixie/libri.so.0
