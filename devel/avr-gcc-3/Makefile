@@ -34,7 +34,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	avr-gcc-devel-4*
+CONFLICTS=	avr-gcc-4*
 
 CONFIGURE_ARGS=	--target=avr --disable-nls
 
