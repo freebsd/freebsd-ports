@@ -17,6 +17,8 @@ COMMENT=	Generate customized TEI-DTDs
 RUN_DEPENDS=	carthage:${PORTSDIR}/textproc/carthage \
 		${LOCALBASE}/share/sgml/tei/p4/tei2.dtd:${PORTSDIR}/textproc/tei-p4
 
+BROKEN=		Checksum mismatch
+
 USE_PERL5=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
