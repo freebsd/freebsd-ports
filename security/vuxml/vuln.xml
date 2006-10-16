@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8012a79d-5d21-11db-bb8d-00123ffe8333">
+    <topic>clamav -- CHM unpacker and PE rebuilding vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.88.5</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><le>20060922</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/22370/">
+	  <p>Two vulnerabilities have been reported in Clam AntiVirus, which
+	    potentially can be exploited by malicious people to cause a DoS
+	    (Denial of Service) or compromise a vulnerable system.</p>
+	  <p>1) An unspecified error in the CHM unpacker in chmunpack.c can be
+	    exploited to cause a DoS.</p>
+	  <p>2) An unspecified error in rebuildpe.c when rebuilding PE files
+	    after unpacking can be exploited to cause a heap-based buffer
+	    overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/22370/</url>
+      <url>http://lurker.clamav.net/message/20061016.015114.dc6a8930.en.html</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=455799</url>
+    </references>
+    <dates>
+      <discovery>2006-10-15</discovery>
+      <entry>2006-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93ba13f8-5c41-11db-a5ae-00508d6a62df">
     <topic>tkdiff -- temporary file symlink privilege escalation</topic>
     <affects>
