@@ -7,6 +7,7 @@
 
 PORTNAME=	tiemu2
 PORTVERSION=	2.08
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ticalc.org/pub/unix/ \
 		http://freebsd.nsu.ru/distfiles/tiemu/
@@ -15,7 +16,7 @@ DISTNAME=	tiemu
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
 
-LIB_DEPENDS=	ticalcs.9:${PORTSDIR}/devel/libticalcs \
+LIB_DEPENDS=	ticalcs.10:${PORTSDIR}/devel/libticalcs \
 		ticables.12:${PORTSDIR}/comms/libticables \
 		tifiles.6:${PORTSDIR}/devel/libtifiles
 
