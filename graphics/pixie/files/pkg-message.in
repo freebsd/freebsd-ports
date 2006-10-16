@@ -1,5 +1,0 @@
-******************************************************************************
- Before running any Pixie executable make sure to add the following
- directory to your LD_LIBRARY_PATH environment variable:
-	%%PREFIX%%/lib/%%PORTNAME%%
-******************************************************************************

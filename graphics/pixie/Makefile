@@ -28,14 +28,13 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/in
 		CXXFLAGS="${CXXFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS="${PTHREAD_LIBS}"
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}
+CONFIGURE_ARGS+=	--with-docdir=${PREFIX}/share/doc/${PORTNAME} --with-shaderdir=${PREFIX}/share/${PORTNAME}/shaders --with-modeldir=${PREFIX}/share/${PORTNAME} --with-texturedir=${PREFIX}/share/${PORTNAME} --with-proceduraldir=${PREFIX}/share/${PORTNAME} --with-displaysdir=${PREFIX}/lib/${PORTNAME}
+USE_LDCONFIG=	%%PREFIX%%/lib/${PORTNAME}
 WRKSRC=		${WRKDIR}/Pixie
 
 PIXIE_EXES=	precomp rndr sdrc sdrinfo show texmake
 PIXIE_SHLIBS=	file framebuffer rgbe
 
-SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -64,7 +63,7 @@ do-install:
 # libs
 	# avoid conflicts by installing in separate dir
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
-.for i in sdr ri
+.for i in sdr ri common
 	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/lib${i}.a \
 		${PREFIX}/lib/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/lib${i}.so.0 \
@@ -100,8 +99,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${i}/* ${DOCSDIR}/${i}
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
