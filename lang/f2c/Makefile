@@ -18,8 +18,7 @@ COMMENT=	Fortran-to-C converter and its run-time libraries
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
-BROKEN=		Corrupt distfile
-
+GUNZIP_CMD=	minigzip -d
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
