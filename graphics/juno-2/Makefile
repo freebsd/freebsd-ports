@@ -22,7 +22,7 @@ RUN_DEPENDS=	${L1}libm3netobj${L2}:${PORTSDIR}/lang/pm3-netobj \
 
 MAN1=		Juno.1
 PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
-		TARGETDIR=${TARGETDIR} WORDSIZE=${WORDSIZE}
+		INST_TARGET=${INST_TARGET} WORDSIZE=${WORDSIZE}
 
 BUILD1=		juno-machine \
 		juno-compiler
@@ -39,16 +39,16 @@ EXAMPLESDIR=	${PREFIX}/share/examples/Juno
 .if ${PORTOBJFORMAT} == "aout"
 L2=		.so.${SOVERSION}.0
 TARGET=		FreeBSD2
-TARGETDIR=	freebsd-2
+INST_TARGET=	freebsd-2
 WORDSIZE=	32
 .elif ${ARCH} == "i386"
 L2=		.so.${SOVERSION}
 .if ${OSVERSION} < 400011
 TARGET=		FreeBSD3
-TARGETDIR=	freebsd-3
+INST_TARGET=	freebsd-3
 .else
 TARGET=		FreeBSD4
-TARGETDIR=	freebsd-4
+INST_TARGET=	freebsd-4
 .endif
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
@@ -58,7 +58,7 @@ IGNORE=		not supported on older versions of FreeBSD/Alpha
 CFLAGS+=	-mieee
 L2=		.so.${SOVERSION}
 TARGET=		FBSD_ALPHA
-TARGETDIR=	fbsd-alpha
+INST_TARGET=	fbsd-alpha
 WORDSIZE=	64
 .endif
 
