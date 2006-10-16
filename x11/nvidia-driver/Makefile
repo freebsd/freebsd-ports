@@ -17,6 +17,8 @@ DISTNAME=	NVIDIA-FreeBSD-x86-${PORTVERSION:S/0./0-/}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
+FORBIDDEN=	Buffer overflow vulnerability: http://vuxml.FreeBSD.org/a6d9da4a-5d5e-11db-8faf-000c6ec775d9.html
+
 ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
