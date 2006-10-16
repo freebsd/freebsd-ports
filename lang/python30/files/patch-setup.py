@@ -27,13 +27,13 @@
              curses_libs = ['ncursesw']
              # Bug 1464056: If _curses.so links with ncursesw,
              # _curses_panel.so must link with panelw.
--@@ -1498,8 +1500,7 @@
--           ext_modules=[Extension('_struct', ['_struct.c'])],
-- 
--           # Scripts to install
---          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
---                     'Lib/smtpd.py']
--+          scripts = []
--         )
-- 
-- # --install-platlib
+@@ -1498,8 +1500,7 @@
+           ext_modules=[Extension('_struct', ['_struct.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
+-                     'Lib/smtpd.py']
++          scripts = []
+         )
+ 
+ # --install-platlib
