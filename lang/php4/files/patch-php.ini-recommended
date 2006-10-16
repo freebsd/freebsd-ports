@@ -1,0 +1,18 @@
+--- php.ini-recommended.orig	Fri Dec 30 18:19:43 2005
++++ php.ini-recommended	Mon Oct 16 08:13:05 2006
+@@ -169,6 +169,15 @@
+ ;
+ ; Safe Mode
+ ;
++; SECURITY NOTE: The FreeBSD Security Officer strongly recommend that
++; the PHP Safe Mode feature not be relied upon for security, since the
++; issues Safe Mode tries to handle cannot properly be handled in PHP
++; (primarily due to PHP's use of external libraries).  While many bugs
++; in Safe Mode has been fixed it's very likely that more issues exist
++; which allows a user to bypass Safe Mode restrictions.
++; For increased security we recommend to always install the Suhosin
++; extension.
++;
+ safe_mode = Off
+ 
+ ; By default, Safe Mode does a UID compare check when
