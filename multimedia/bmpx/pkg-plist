@@ -250,8 +250,6 @@ share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-media-library-query
 share/mime/packages/bmp-2.0.xml
 %%NLS%%@dirrmtry share/locale/th_TH/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/th_TH
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/musicbrainz
 @dirrm %%DATADIR%%/images/streams
