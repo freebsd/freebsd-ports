@@ -1,0 +1,94 @@
+--- libguile/continuations.c.orig	Fri Sep 12 18:58:00 2003
++++ libguile/continuations.c	Wed Nov 24 07:50:54 2004
+@@ -114,15 +114,6 @@
+   return 1;
+ }
+ 
+-#ifdef __ia64__
+-struct rv
+-{
+-  long retval;
+-  long first_return;
+-};
+-extern struct rv ia64_getcontext (ucontext_t *) __asm__ ("getcontext");
+-#endif /* __ia64__ */
+-
+ /* this may return more than once: the first time with the escape
+    procedure, then subsequently with the value to be passed to the
+    continuation.  */
+@@ -135,9 +126,6 @@
+   scm_t_contregs *rootcont = SCM_CONTREGS (scm_rootcont);
+   long stack_size;
+   SCM_STACKITEM * src;
+-#ifdef __ia64__
+-  struct rv rv;
+-#endif
+ 
+   SCM_ENTER_A_SECTION;
+   SCM_FLUSH_REGISTER_WINDOWS;
+@@ -162,17 +150,15 @@
+   memcpy (continuation->stack, src, sizeof (SCM_STACKITEM) * stack_size);
+ 
+ #ifdef __ia64__
+-  rv = ia64_getcontext (&continuation->ctx);
+-  if (rv.first_return)
++  continuation->backing_store = NULL;
++  getcontext(&continuation->ctx);
++  if (continuation->backing_store == NULL)
+     {
+       continuation->backing_store_size = 
+-        continuation->ctx.uc_mcontext.sc_ar_bsp - 
+-        __libc_ia64_register_backing_store_base;
+-      continuation->backing_store = NULL;
++        continuation->ctx.uc_mcontext.mc_special.bspstore - (4UL << 61);
+       continuation->backing_store = 
+         scm_must_malloc (continuation->backing_store_size, FUNC_NAME);
+-      memcpy (continuation->backing_store, 
+-              (void *) __libc_ia64_register_backing_store_base, 
++      memcpy (continuation->backing_store, (void *)(4UL << 61),
+               continuation->backing_store_size);
+       *first = 1;
+       return cont;
+@@ -235,8 +221,7 @@
+ 
+   continuation->throw_value = val;
+ #ifdef __ia64__
+-  memcpy ((void *) __libc_ia64_register_backing_store_base,
+-          continuation->backing_store,
++  memcpy ((void *)(4UL << 61), continuation->backing_store,
+           continuation->backing_store_size);
+   setcontext (&continuation->ctx);
+ #else
+--- libguile/gc.c.orig	Wed Nov 24 07:41:44 2004
++++ libguile/gc.c	Wed Nov 24 07:53:51 2004
+@@ -1041,8 +1041,8 @@
+     scm_mark_locations ((SCM_STACKITEM *) &ctx.uc_mcontext,           \
+       ((size_t) (sizeof (SCM_STACKITEM) - 1 + sizeof ctx.uc_mcontext) \
+        / sizeof (SCM_STACKITEM)));                                    \
+-    bot = (SCM_STACKITEM *) __libc_ia64_register_backing_store_base;  \
+-    top = (SCM_STACKITEM *) ctx.uc_mcontext.sc_ar_bsp;                \
++    bot = (SCM_STACKITEM *) (4UL << 61);                              \
++    top = (SCM_STACKITEM *) ctx.uc_mcontext.mc_special.bspstore;      \
+     scm_mark_locations (bot, top - bot); } while (0)
+ #else
+ # define SCM_MARK_BACKING_STORE()
+--- libguile/init.c.orig	Sun Sep  5 23:05:37 2004
++++ libguile/init.c	Wed Nov 24 07:59:48 2004
+@@ -188,6 +188,7 @@
+   {
+     scm_t_contregs *contregs = scm_must_malloc (sizeof (scm_t_contregs),
+ 					      "continuation");
++    memset(contregs, 0, sizeof(*contregs));
+     contregs->num_stack_items = 0;
+     contregs->seq = 0;
+     SCM_NEWSMOB (scm_rootcont, scm_tc16_continuation, contregs);
+--- libguile/root.c.orig	Sat Dec  7 22:41:32 2002
++++ libguile/root.c	Wed Nov 24 08:00:14 2004
+@@ -254,6 +254,7 @@
+       scm_t_contregs *contregs = scm_must_malloc (sizeof (scm_t_contregs),
+ 						"inferior root continuation");
+ 
++      memset(contregs, 0, sizeof(*contregs));
+       contregs->num_stack_items = 0;
+       contregs->dynenv = SCM_EOL;
+       contregs->base = stack_start;

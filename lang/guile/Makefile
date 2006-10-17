@@ -39,6 +39,10 @@ PLIST_SUB+=	THREADS:=""
 PLIST_SUB+=	THREADS:="@comment "
 .endif
 
+.if ${ARCH} == "ia64"
+EXTRA_PATCHES=  ${FILESDIR}/extra-patch-ia64
+.endif
+
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
