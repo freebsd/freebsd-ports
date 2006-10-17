@@ -21,10 +21,7 @@ COMMENT=	XFree86-4 virtual framebuffer server
 
 CONFLICTS=	xorg-vfbserver-[0-9]*
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_bitmap_pcfread.c \
-                ${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_FreeType_ftfuncs.c \
-                ${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_FreeType_ftfuncs.h \
-                ${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_FreeType_ftsystem.c
+EXTRA_PATCHES=	${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_bitmap_pcfread.c
 MAN1=			Xvfb.1
 PLIST_FILES=		bin/Xvfb
 
