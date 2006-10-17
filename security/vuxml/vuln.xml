@@ -285,19 +285,36 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<blockquote cite="http://cvs.php.net/viewvc.cgi/ZendEngine2/zend_alloc.c?view=log#rev1.162">
-	  <p>Ilia Alshanetsky reports lack of safety checks against
-	    integer overflow in Zend Engine II.</p>
+	<p>Stefan Esser reports:</p>
+	<blockquote cite="http://www.hardened-php.net/advisory_092006.133.html">
+	  <p>The PHP 5 branch of the PHP source code lacks the
+	    protection against possible integer overflows inside
+	    ecalloc() that is present in the PHP 4 branch and also for
+	    several years part of our Hardening-Patch and our new
+	    Suhosin-Patch.</p>
+	  <p>It was discovered that such an integer overflow can be
+	    triggered when user input is passed to the unserialize()
+	    function. Earlier vulnerabilities in PHP's unserialize()
+	    that were also discovered by one of our audits in December
+	    2004 are unrelated to the newly discovered flaw, but they
+	    have shown, that the unserialize() function is exposed to
+	    user-input in many popular PHP applications.  Examples for
+	    applications that use the content of COOKIE variables with
+	    unserialize() are phpBB and Serendipity.</p>
+	  <p>The successful exploitation of this integer overflow will
+	    result in arbitrary code execution.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2006-4812</cvename>
+      <url>http://www.hardened-php.net/advisory_092006.133.html</url>
       <url>http://secunia.com/advisories/22280/</url>
     </references>
     <dates>
       <discovery>2006-09-30</discovery>
       <entry>2006-10-06</entry>
+      <modified>2006-10-17</modified>
     </dates>
   </vuln>
 
