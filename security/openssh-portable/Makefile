@@ -147,7 +147,7 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.4p1-hpn.diff.gz
+PATCHFILES+=		openssh-4.4p1-hpn12v11.diff.gz
 .endif
 
 .if defined(WITH_LPK)
@@ -218,6 +218,10 @@ post-patch:
 		${WRKSRC}/version.h
 	@${ECHO_CMD} '#define SSH_RELEASE	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
 		${WRKSRC}/version.h
+.if defined(WITH_HPN)
+	@${REINPLACE_CMD} -e 's|TMP_SSH_VERSION SSH_PORTABLE|TMP_SSH_VERSION SSH_PORTABLE SSH_HPN|' \
+		${WRKSRC}/version.h
+.endif
 
 pre-install:
 .if defined(WITH_OVERWRITE_BASE)
