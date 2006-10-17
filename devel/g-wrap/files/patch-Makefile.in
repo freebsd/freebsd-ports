@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Nov  7 23:40:46 2002
++++ Makefile.in	Tue Feb  4 20:43:51 2003
+@@ -144,7 +144,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = doc rpm bin g-wrap example test
++SUBDIRS = doc rpm bin g-wrap example
+ 
+ guilemoduledir = @GUILEMODDIR@
+ guilemodule_DATA = @GUILEMOD_TARGET@
