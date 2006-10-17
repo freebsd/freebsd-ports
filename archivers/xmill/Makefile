@@ -8,13 +8,11 @@
 PORTNAME=	xmill
 DISTVERSION=	0-7
 CATEGORIES=	archivers
-MASTER_SITES=
-DISTNAME=	${PORTNAME}-${DISTVERSION}.src
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An efficient compressor for XML
-
-BROKEN=		Unfetchable
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
@@ -23,12 +21,6 @@ USE_ZIP=	yes
 
 PLIST_FILES=	bin/xmill bin/xdemill bin/xbmill bin/xbdemill
 PORTDOCS=	COPYRIGHT.txt LICENSE.txt MANUAL.txt README.txt xmill.ps.gz
-
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		requires explicit agreement to the terms and conditions of the license.  Download ${DISTNAME}${EXTRACT_SUFX} manually from http://www.research.att.com/sw/tools/XMILL/, put it under ${DISTDIR} and run make again
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,friend,& class,' \
@@ -48,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/paper/xmill.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
