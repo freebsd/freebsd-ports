@@ -8,7 +8,7 @@
 PORTNAME=	lcab
 DISTVERSION=	1.0b11
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.geekshop.be/rien/lcab/files/
+MASTER_SITES=	http://coding.wooyayhoopla.be/lcab/sources/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Microsoft .CABinet file creator
