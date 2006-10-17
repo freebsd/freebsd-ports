@@ -8,7 +8,9 @@
 PORTNAME=	neonpp
 PORTVERSION=	0.2
 CATEGORIES=	www
-MASTER_SITES=	http://files.beep-media-player.org/releases/neonpp/
+MASTER_SITES=	http://files.beep-media-player.org/releases/neonpp/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	novel
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	C++ wrapper library for neon
