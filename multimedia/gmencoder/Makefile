@@ -19,8 +19,6 @@ COMMENT=	Gmencoder is Gnome2 front-end to mplayer/mencoder
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
 
-BROKEN=		Incomplete pkg-plist
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
