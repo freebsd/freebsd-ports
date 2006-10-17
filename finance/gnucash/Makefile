@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.8.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
 		ofx.3:${PORTSDIR}/finance/libofx \
-		gw-guile-standard.0:${PORTSDIR}/devel/g-wrap
+		gw-guile-gw-glib.0:${PORTSDIR}/devel/g-wrap
 RUN_DEPENDS=	${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
