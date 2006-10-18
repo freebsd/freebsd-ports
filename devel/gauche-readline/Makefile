@@ -20,23 +20,18 @@ COMMENT=	A pure gauche/scheme implementation of the Readline library
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 BUILD_DEPENDS=	gauche-config:${PORTSDIR}/lang/gauche
 
-BROKEN=		Changes permissions on installed file
-
 GAUCHE_LIBDIR=	share/gauche/site/lib
+GAUCHE_FILES=	readline/history.scm readline/keymap.scm readline/term-util.scm
+
 PLIST_SUB+=	GAUCHE_LIBDIR=${GAUCHE_LIBDIR}
 
-# XXX: exists untill it will be committed to bsd.port.mk
-COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-		2>&1) && \
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
-		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
-		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
-
 do-install:
-.if !exists(${PREFIX}/share/gauche/site/lib)
-	${MKDIR} ${PREFIX}/share/gauche/site/lib
+.if !exists(${PREFIX}/${GAUCHE_LIBDIR}/readline)
+	${MKDIR} ${PREFIX}/${GAUCHE_LIBDIR}/readline
 .endif
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "readline.scm readline" \
-		${PREFIX}/share/gauche/site/lib)
+	${INSTALL_DATA} ${WRKSRC}/readline.scm ${PREFIX}/${GAUCHE_LIBDIR}
+.	for f in ${GAUCHE_FILES}
+		${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${GAUCHE_LIBDIR}/readline
+.	endfor
 
 .include <bsd.port.mk>
