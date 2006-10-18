@@ -28,7 +28,7 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-OOOVERSION=	2.0.4.rc3
+OOOVERSION=	2.0.4
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
@@ -73,7 +73,7 @@ IGNORE=		install lang/perl5.8 then try again
 CODELINE=		680
 RELEASE_NR=		2.0
 OOOTAG?=		OOD680_m5
-OOOSRC?=		OOo_2.0.4rc3_src.tar.gz
+OOOSRC?=		OOo_2.0.4_src.tar.gz
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
