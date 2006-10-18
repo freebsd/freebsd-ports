@@ -7,6 +7,7 @@
 
 PORTNAME=	dancer
 PORTVERSION=	4.16
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +22,7 @@ MAKE_ARGS+=	CSPECIAL="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin/
 	cd ${WRKSRC}/../example && ${INSTALL_DATA} \
 		dancer.config dancer.users \
 		dancer.funcs dancer.explain ${DATADIR}
