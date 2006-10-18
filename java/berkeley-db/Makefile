@@ -8,7 +8,9 @@
 PORTNAME=	je
 PORTVERSION=	3.1.0
 CATEGORIES=	java databases
-MASTER_SITES=	http://download.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
+		http://download-east.oracle.com/berkeley-db/	\
+		http://download-west.oracle.com/berkeley-db/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Berkeley DB Java Edition
