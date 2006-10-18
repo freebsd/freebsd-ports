@@ -1,5 +1,5 @@
---- camel-object.c.orig	Wed Oct 18 15:53:34 2006
-+++ camel-object.c	Wed Oct 18 15:55:01 2006
+--- camel/camel-object.c.orig	Wed Oct 18 15:53:34 2006
++++ camel/camel-object.c	Wed Oct 18 15:55:01 2006
 @@ -457,7 +457,7 @@
  		}
  		
