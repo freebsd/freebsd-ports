@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -34,7 +34,8 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	iceauth:${X_CLIENTS_PORT} \
 		${FONTSCALE}:${X_FONTS_TTF_PORT} \
-		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
+		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT} \
+		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-4]* kdepim-3.2*
 .if defined(WITHOUT_CUPS) || defined(KDE_WITHOUT_CUPS)
@@ -86,6 +87,7 @@ pre-configure:
 			 -e "s,pcreposix.h,pcre.h,g" ${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s,applications.menu,kde-applications.menu,g" \
 		${WRKSRC}/kded/Makefile.in ${WRKSRC}/kded/kbuildsycoca.cpp
+	${REINPLACE_CMD} -e "s,hicolor,,g" ${WRKSRC}/pics/Makefile.in
 	${MV} ${WRKSRC}/kded/applications.menu ${WRKSRC}/kded/kde-applications.menu
 
 post-configure:
