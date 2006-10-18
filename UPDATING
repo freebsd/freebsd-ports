@@ -7,14 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061014:
-  AFFECTS: All GNOME users
+  AFFECTS: All GTK+2 and GNOME users
   AUTHOR: gnome@FreeBSD.org
 
-  GNOME has been updated to 2.16 and all GNOME components have been
-  moved from X11BASE to LOCALBASE, to upgrade your GNOME desktop and
-  applications you will need either sysutils/portupgrade or
-  sysutils/portmaster. To use portmaster, make sure you have least
-  1.9 version to have the upgrade success.
+  GNOME has been updated to 2.16. All GTK+2 and GNOME components have
+  been moved from X11BASE (/usr/X11R6) to LOCALBASE (/usr/local). To
+  upgrade your GNOME desktop or/and other applications you will need
+  to use either sysutils/portupgrade or sysutils/portmaster. To use
+  portmaster, make sure you have least 1.9 version to have the
+  upgrade success.
 
  Portupgrade users:
   pkgdb -Ff
