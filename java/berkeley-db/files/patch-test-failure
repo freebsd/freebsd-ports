@@ -1,6 +1,13 @@
-This is a temporary work-around for a spurious test failure. See the discussion at
+This are temporary work-arounds for spurious test failures. See the discussions at
 
 	http://forums.oracle.com/forums/thread.jspa?threadID=431242
+and
+	http://forums.oracle.com/forums/thread.jspa?threadID=431549
+
+The last one appears somewhat scary, but SleepyCat/Oracle's support assures me, the problem
+can be ignored as it has to do with the test framework and not the software itself.
+
+	-mi
 
 --- test/com/sleepycat/je/recovery/CheckpointActivationTest.java	Tue Sep 12 15:17:22 2006
 +++ test/com/sleepycat/je/recovery/CheckpointActivationTest.java	Fri Oct  6 23:42:55 2006
@@ -10,4 +17,20 @@ This is a temporary work-around for a spurious test failure. See the discussion 
 -    public void testLogSizeBasedCheckpoints() 
 +    public void meowLogSizeBasedCheckpoints() 
          throws Exception {
+ 
+--- test/com/sleepycat/je/test/DeferredWriteTest.java	Tue Sep 12 15:17:24 2006
++++ test/com/sleepycat/je/test/DeferredWriteTest.java	Tue Oct 10 17:22:34 2006
+@@ -524,5 +524,5 @@
+     }
+ 
+-    public void testCleaning5000() 
++    public void meowCleaning5000() 
+         throws Throwable {
+ 
+@@ -530,5 +530,5 @@
+     }
+ 
+-    public void testCleaning2000() 
++    public void meowCleaning2000() 
+         throws Throwable {
  
