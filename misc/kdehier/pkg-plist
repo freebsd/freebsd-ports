@@ -166,49 +166,6 @@ share/icons/crystalsvg/scalable/apps/.keep_me
 share/icons/crystalsvg/scalable/devices/.keep_me
 share/icons/crystalsvg/scalable/filesystems/.keep_me
 share/icons/crystalsvg/scalable/mimetypes/.keep_me
-share/icons/hicolor/.keep_me
-share/icons/hicolor/128x128/.keep_me
-share/icons/hicolor/128x128/actions/.keep_me
-share/icons/hicolor/128x128/apps/.keep_me
-share/icons/hicolor/128x128/devices/.keep_me
-share/icons/hicolor/128x128/filesystems/.keep_me
-share/icons/hicolor/128x128/mimetypes/.keep_me
-share/icons/hicolor/16x16/.keep_me
-share/icons/hicolor/16x16/actions/.keep_me
-share/icons/hicolor/16x16/apps/.keep_me
-share/icons/hicolor/16x16/devices/.keep_me
-share/icons/hicolor/16x16/filesystems/.keep_me
-share/icons/hicolor/16x16/mimetypes/.keep_me
-share/icons/hicolor/22x22/.keep_me
-share/icons/hicolor/22x22/actions/.keep_me
-share/icons/hicolor/22x22/apps/.keep_me
-share/icons/hicolor/22x22/devices/.keep_me
-share/icons/hicolor/22x22/filesystems/.keep_me
-share/icons/hicolor/22x22/mimetypes/.keep_me
-share/icons/hicolor/32x32/.keep_me
-share/icons/hicolor/32x32/actions/.keep_me
-share/icons/hicolor/32x32/apps/.keep_me
-share/icons/hicolor/32x32/devices/.keep_me
-share/icons/hicolor/32x32/filesystems/.keep_me
-share/icons/hicolor/32x32/mimetypes/.keep_me
-share/icons/hicolor/48x48/.keep_me
-share/icons/hicolor/48x48/actions/.keep_me
-share/icons/hicolor/48x48/apps/.keep_me
-share/icons/hicolor/48x48/devices/.keep_me
-share/icons/hicolor/48x48/filesystems/.keep_me
-share/icons/hicolor/48x48/mimetypes/.keep_me
-share/icons/hicolor/64x64/.keep_me
-share/icons/hicolor/64x64/actions/.keep_me
-share/icons/hicolor/64x64/apps/.keep_me
-share/icons/hicolor/64x64/devices/.keep_me
-share/icons/hicolor/64x64/filesystems/.keep_me
-share/icons/hicolor/64x64/mimetypes/.keep_me
-share/icons/hicolor/scalable/.keep_me
-share/icons/hicolor/scalable/actions/.keep_me
-share/icons/hicolor/scalable/apps/.keep_me
-share/icons/hicolor/scalable/devices/.keep_me
-share/icons/hicolor/scalable/filesystems/.keep_me
-share/icons/hicolor/scalable/mimetypes/.keep_me
 share/icons/locolor/.keep_me
 share/icons/locolor/128x128/.keep_me
 share/icons/locolor/128x128/actions/.keep_me
@@ -323,49 +280,6 @@ share/wallpapers/.keep_me
 @dirrm share/icons/locolor/128x128/actions
 @dirrm share/icons/locolor/128x128
 @dirrm share/icons/locolor
-@dirrm share/icons/hicolor/scalable/mimetypes
-@dirrm share/icons/hicolor/scalable/filesystems
-@dirrm share/icons/hicolor/scalable/devices
-@dirrm share/icons/hicolor/scalable/apps
-@dirrm share/icons/hicolor/scalable/actions
-@dirrm share/icons/hicolor/scalable
-@dirrm share/icons/hicolor/64x64/mimetypes
-@dirrm share/icons/hicolor/64x64/filesystems
-@dirrm share/icons/hicolor/64x64/devices
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64/actions
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/mimetypes
-@dirrm share/icons/hicolor/48x48/filesystems
-@dirrm share/icons/hicolor/48x48/devices
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48/actions
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/filesystems
-@dirrm share/icons/hicolor/32x32/devices
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/mimetypes
-@dirrm share/icons/hicolor/22x22/filesystems
-@dirrm share/icons/hicolor/22x22/devices
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/mimetypes
-@dirrm share/icons/hicolor/16x16/filesystems
-@dirrm share/icons/hicolor/16x16/devices
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor/128x128/mimetypes
-@dirrm share/icons/hicolor/128x128/filesystems
-@dirrm share/icons/hicolor/128x128/devices
-@dirrm share/icons/hicolor/128x128/apps
-@dirrm share/icons/hicolor/128x128/actions
-@dirrm share/icons/hicolor/128x128
-@dirrm share/icons/hicolor
 @dirrm share/icons/crystalsvg/scalable/mimetypes
 @dirrm share/icons/crystalsvg/scalable/filesystems
 @dirrm share/icons/crystalsvg/scalable/devices

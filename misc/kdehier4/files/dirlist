@@ -509,49 +509,49 @@ share/icons/crystalsvg/scalable/apps
 share/icons/crystalsvg/scalable/devices
 share/icons/crystalsvg/scalable/filesystems
 share/icons/crystalsvg/scalable/mimetypes
-share/icons/hicolor
-share/icons/hicolor/128x128
-share/icons/hicolor/128x128/actions
-share/icons/hicolor/128x128/apps
-share/icons/hicolor/128x128/devices
-share/icons/hicolor/128x128/filesystems
-share/icons/hicolor/128x128/mimetypes
-share/icons/hicolor/16x16
-share/icons/hicolor/16x16/actions
-share/icons/hicolor/16x16/apps
-share/icons/hicolor/16x16/devices
-share/icons/hicolor/16x16/filesystems
-share/icons/hicolor/16x16/mimetypes
-share/icons/hicolor/22x22
-share/icons/hicolor/22x22/actions
-share/icons/hicolor/22x22/apps
-share/icons/hicolor/22x22/devices
-share/icons/hicolor/22x22/filesystems
-share/icons/hicolor/22x22/mimetypes
-share/icons/hicolor/32x32
-share/icons/hicolor/32x32/actions
-share/icons/hicolor/32x32/apps
-share/icons/hicolor/32x32/devices
-share/icons/hicolor/32x32/filesystems
-share/icons/hicolor/32x32/mimetypes
-share/icons/hicolor/48x48
-share/icons/hicolor/48x48/actions
-share/icons/hicolor/48x48/apps
-share/icons/hicolor/48x48/devices
-share/icons/hicolor/48x48/filesystems
-share/icons/hicolor/48x48/mimetypes
-share/icons/hicolor/64x64
-share/icons/hicolor/64x64/actions
-share/icons/hicolor/64x64/apps
-share/icons/hicolor/64x64/devices
-share/icons/hicolor/64x64/filesystems
-share/icons/hicolor/64x64/mimetypes
-share/icons/hicolor/scalable
-share/icons/hicolor/scalable/actions
-share/icons/hicolor/scalable/apps
-share/icons/hicolor/scalable/devices
-share/icons/hicolor/scalable/filesystems
-share/icons/hicolor/scalable/mimetypes
+@comment share/icons/hicolor
+@comment share/icons/hicolor/128x128
+@comment share/icons/hicolor/128x128/actions
+@comment share/icons/hicolor/128x128/apps
+@comment share/icons/hicolor/128x128/devices
+@comment share/icons/hicolor/128x128/filesystems
+@comment share/icons/hicolor/128x128/mimetypes
+@comment share/icons/hicolor/16x16
+@comment share/icons/hicolor/16x16/actions
+@comment share/icons/hicolor/16x16/apps
+@comment share/icons/hicolor/16x16/devices
+@comment share/icons/hicolor/16x16/filesystems
+@comment share/icons/hicolor/16x16/mimetypes
+@comment share/icons/hicolor/22x22
+@comment share/icons/hicolor/22x22/actions
+@comment share/icons/hicolor/22x22/apps
+@comment share/icons/hicolor/22x22/devices
+@comment share/icons/hicolor/22x22/filesystems
+@comment share/icons/hicolor/22x22/mimetypes
+@comment share/icons/hicolor/32x32
+@comment share/icons/hicolor/32x32/actions
+@comment share/icons/hicolor/32x32/apps
+@comment share/icons/hicolor/32x32/devices
+@comment share/icons/hicolor/32x32/filesystems
+@comment share/icons/hicolor/32x32/mimetypes
+@comment share/icons/hicolor/48x48
+@comment share/icons/hicolor/48x48/actions
+@comment share/icons/hicolor/48x48/apps
+@comment share/icons/hicolor/48x48/devices
+@comment share/icons/hicolor/48x48/filesystems
+@comment share/icons/hicolor/48x48/mimetypes
+@comment share/icons/hicolor/64x64
+@comment share/icons/hicolor/64x64/actions
+@comment share/icons/hicolor/64x64/apps
+@comment share/icons/hicolor/64x64/devices
+@comment share/icons/hicolor/64x64/filesystems
+@comment share/icons/hicolor/64x64/mimetypes
+@comment share/icons/hicolor/scalable
+@comment share/icons/hicolor/scalable/actions
+@comment share/icons/hicolor/scalable/apps
+@comment share/icons/hicolor/scalable/devices
+@comment share/icons/hicolor/scalable/filesystems
+@comment share/icons/hicolor/scalable/mimetypes
 share/icons/locolor
 share/icons/locolor/128x128
 share/icons/locolor/128x128/actions
