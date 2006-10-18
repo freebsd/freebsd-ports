@@ -42,6 +42,7 @@ XINSTALL_MAN_DIRS=	programs
 
 .for pf in patch-bdftruncate.pl patch-ucs2any.pl \
 	   patch-programs::fonttosfnt::read.c \
+	   patch-programs::fonttosfnt::util.c \
 	   patch-programs::Imakefile
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
