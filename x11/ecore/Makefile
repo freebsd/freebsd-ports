@@ -7,7 +7,7 @@
 
 PORTNAME=	ecore
 PORTVERSION=	20060926
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
@@ -74,7 +74,6 @@ PLIST_SUB+=		CURL="@comment "
 .if defined(WITH_DBUS)
 CONFIGURE_ARGS+=	--enable-ecore-dbus
 PLIST_SUB+=		DBUS=""
-LIB_DEPENDS+=		dbus-1.2:${PORTSDIR}/devel/dbus
 .else
 CONFIGURE_ARGS+=	--disable-ecore-dbus
 PLIST_SUB+=		DBUS="@comment "
