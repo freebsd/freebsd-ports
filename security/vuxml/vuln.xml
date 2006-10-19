@@ -34,6 +34,114 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="19207592-5f17-11db-ae08-0008743bf21a">
+    <topic>drupal -- HTML attribute injection</topic>
+    <affects>
+      <package>
+        <name>drupal</name>
+        <range><lt>4.6.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Team reports:</p>
+	<blockquote cite="http://drupal.org/files/sa-2006-026/advisory.txt">
+	  <p>A malicious user may entice users to visit a specially
+	    crafted URL that may result in the redirection of Drupal
+	    form submission to a third-party site. A user visiting the
+	    user registration page via such a url, for example, will
+	    submit all data, such as his/her e-mail address, but also
+	    possible private profile data, to a third-party site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/files/sa-2006-026/advisory.txt</url>
+      <url>http://drupal.org/drupal-4.7.4</url>
+    </references>
+    <dates>
+      <discovery>2006-10-18</discovery>
+      <entry>2006-10-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="937d5911-5f16-11db-ae08-0008743bf21a">
+    <topic>drupal -- cross site request forgeries</topic>
+    <affects>
+      <package>
+        <name>drupal</name>
+        <range><lt>4.6.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Team reports:</p>
+	<blockquote cite="http://drupal.org/files/sa-2006-025/advisory.txt">
+	  <p>Visiting a specially crafted page, anywhere on the web, may
+	    allow that page to post forms to a Drupal site in the
+	    context of the visitor's session. To illustrate; suppose
+	    one has an active user 1 session, the most powerful
+	    administrator account for a site, to a Drupal site while
+	    visiting a website created by an attacker. This website
+	    will now be able to submit any form to the Drupal site with
+	    the privileges of user 1, either by enticing the user to
+	    submit a form or by automated means.</p>
+	  <p>An attacker can exploit this vulnerability by changing
+	    passwords, posting PHP code or creating new users, for
+	    example. The attack is only limited by the privileges of
+	    the session it executes in.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/files/sa-2006-025/advisory.txt</url>
+      <url>http://drupal.org/drupal-4.7.4</url>
+    </references>
+    <dates>
+      <discovery>2006-10-18</discovery>
+      <entry>2006-10-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b2383758-5f15-11db-ae08-0008743bf21a">
+    <topic>drupal -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>drupal</name>
+        <range><lt>4.6.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Team reports:</p>
+	<blockquote cite="http://drupal.org/files/sa-2006-024/advisory.txt">
+	  <p>A bug in input validation and lack of output validation
+	    allows HTML and script insertion on several pages.</p>
+	  <p>Drupal's XML parser passes unescaped data to watchdog
+	    under certain circumstances. A malicious user may execute
+	    an XSS attack via a specially crafted RSS feed. This
+	    vulnerability exists on systems that do not use PHP's
+	    mb_string extension (to check if mb_string is being used,
+	    navigate to admin/settings and look under "String
+	    handling"). Disabling the aggregator module provides an
+	    immediate workaround.</p>
+	  <p>The aggregator module, profile module, and forum module do
+	    not properly escape output of certain fields.</p>
+	  <p>Note: XSS attacks may lead to administrator access if
+	    certain conditions are met.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/files/sa-2006-024/advisory.txt</url>
+      <url>http://drupal.org/drupal-4.7.4</url>
+    </references>
+    <dates>
+      <discovery>2006-10-18</discovery>
+      <entry>2006-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18a14baa-5ee5-11db-ae08-0008743bf21a">
     <topic>ingo -- local arbitrary shell command execution</topic>
     <affects>
