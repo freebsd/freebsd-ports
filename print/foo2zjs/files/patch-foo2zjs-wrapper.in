@@ -1,0 +1,65 @@
+--- foo2zjs-wrapper.in	Mon May  1 23:33:58 2006
++++ foo2zjs-wrapper.in	Fri Oct 13 12:34:22 2006
+@@ -40,13 +40,6 @@
+ PREFIX=/usr
+ SHARE=$PREFIX/share/foo2zjs
+ 
+-#
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- "foo2zjs-wrapper $@" </dev/null
+-fi
+-
+ usage() {
+ 	cat <<EOF
+ Usage:
+@@ -141,11 +134,7 @@
+ #
+ # N.B. := operator used here, when :- would be better, because "ash"
+ # doesn't have :-
+-if gs8 -v >/dev/null 2>&1; then
+-        GSBIN=${GSBIN:-gs8}
+-else
+-        GSBIN=${GSBIN:-gs}
+-fi
++GSBIN=${GSBIN:-gs}
+ 
+ CMDLINE="$*"
+ DEBUG=0
+@@ -154,13 +143,9 @@
+ COLORMODE=0
+ MODEL=0
+ # What mode to use if the user wants us to pick the "best" mode
+-case `$GSBIN --version` in
+-7*)	DEFAULTCOLORMODE=10
+-	DEFAULTCOLORMODE=2
+-	;;
+-*)	DEFAULTCOLORMODE=2
+-	;;
+-esac
++
++DEFAULTCOLORMODE=10
++DEFAULTCOLORMODE=2
+ QUALITY=1
+ MEDIA=1
+ COPIES=1
+@@ -600,18 +585,6 @@
+ 	    -z$MODEL $COLOR $CLIP_UL $CLIP_LR $CLIP_LOG $SAVETONER \
+ 	    -J "$LPJOB" -U "$USER" \
+ 	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
+-
+-#
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"$GSBIN $PAPERSIZE -g$DIM -r$RES $GSDEV $GSOPT $GAMAFILE"
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"foo2zjs -r$RES -g$DIM -p$PAPER -m$MEDIA \
+--n$COPIES -d$DUPLEX -s$SOURCE -z$MODEL $COLOR $CLIP_UL $CLIP_LR $CLIP_LOG \
+-$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
+-fi
+ 
+ #
+ #	Remove cruft

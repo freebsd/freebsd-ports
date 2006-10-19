@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foo2zjs
-PORTVERSION=	20061004
+PORTVERSION=	20061010
 CATEGORIES=	print
 MASTER_SITES=	http://foo2zjs.rkkda.com/
 DISTNAME=	${PORTNAME}
@@ -16,7 +16,8 @@ COMMENT=	Driver for printers that use the ZjStream wire protocol
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foomatic-db \
-		foomatic-rip:${PORTSDIR}/print/foomatic-filters
+		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
+		espgs:${PORTSDIR}/print/cups-pstoraster
 
 USE_GHOSTSCRIPT=	yes
 USE_GMAKE=	yes
