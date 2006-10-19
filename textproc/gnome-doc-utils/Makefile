@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-doc-utils
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.7
