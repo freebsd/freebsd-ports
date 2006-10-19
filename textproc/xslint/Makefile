@@ -8,7 +8,7 @@
 PORTNAME=	xslint
 PORTVERSION=	005
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://nwalsh.com/xml/xslint/
+MASTER_SITES=	http://nwalsh.com/obsolete/xslint/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

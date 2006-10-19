@@ -2,6 +2,7 @@ XSLint is an XSL lint checker. It reads an XSL stylesheet and looks
 for semantic errors.
 
 XSLint looks for:
+
 * an incorrect XSLT URI;
 * failure to provide a version;
 * duplicate match patterns;
@@ -15,4 +16,4 @@ XSLint looks for:
 * fo: elements that aren't part of the XSL 1.0 PR;
 * fo: element properties that aren't part of the XSL 1.0 PR.
 
-WWW: http://nwalsh.com/xml/xslint/
+WWW: http://nwalsh.com/obsolete/xslint/
