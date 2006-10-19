@@ -12,7 +12,7 @@ CATEGORIES=	german textproc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell German Old Spelling (Deutsch - Alter Spelling) dictionary
 
-DICT=	 	de-alt
+DICT=	 	de
 
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
