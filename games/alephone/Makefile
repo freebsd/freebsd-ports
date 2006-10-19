@@ -17,19 +17,18 @@ MAINTAINER=	ray@cultofray.net
 COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
-LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
-		lua.5:${PORTSDIR}/lang/lua50
+LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnometarget
-USE_SDL=	image net sdl sound
 USE_GL=		yes
+USE_GNOME=	gnometarget
+USE_LUA=	5.0
+USE_SDL=	image net sdl sound
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -I${LUA_INCDIR}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LUA_LIBDIR}
 
 .include <bsd.port.pre.mk>
 
