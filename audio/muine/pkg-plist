@@ -64,3 +64,5 @@ share/locale/zh_CN/LC_MESSAGES/muine.mo
 @dirrm lib/mono/gac/muine-plugin
 @dirrm lib/mono/gac/muine-dbus/1.0.0.0__e6bf890338fa2913
 @dirrm lib/mono/gac/muine-dbus
+@dirrmtry lib/monodoc/sources
+@dirrmtry lib/monodoc
