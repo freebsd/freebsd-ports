@@ -7,7 +7,7 @@
 
 PORTNAME=	bazaar
 PORTVERSION=	1.4.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar.canonical.com/releases/src/
 DISTNAME=	bazaar_${PORTVERSION}
