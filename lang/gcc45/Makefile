@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20060923
+PORTREVISION=	20061014
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -51,7 +51,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 CONFIGURE_ARGS+=	--disable-libgomp
 .endif
 
-.if ${ARCH} != i386 && ${ARCH} != amd64
+.if ${ARCH} != i386
 WITHOUT_JAVA=	yes
 .endif
 
@@ -102,7 +102,6 @@ PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 .if ! defined(WITHOUT_JAVA)
-CONFLICTS+=	gcc-4.1.*
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
