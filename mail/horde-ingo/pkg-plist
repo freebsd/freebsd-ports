@@ -35,6 +35,7 @@
 %%INGODIR%%/lib/api.php
 %%INGODIR%%/lib/base.php
 %%INGODIR%%/lib/version.php
+%%INGODIR%%/locale/ca_ES/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/cs_CZ/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/da_DK/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/de_DE/LC_MESSAGES/ingo.mo
@@ -59,10 +60,12 @@
 %%INGODIR%%/locale/pt_BR/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/pt_PT/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/ro_RO/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/sl_SI/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/sv_SE/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/tr_TR/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/zh_TW/LC_MESSAGES/ingo.mo
 %%INGODIR%%/po/README
+%%INGODIR%%/po/ca_ES.po
 %%INGODIR%%/po/cs_CZ.po
 %%INGODIR%%/po/da_DK.po
 %%INGODIR%%/po/de_DE.po
@@ -83,6 +86,7 @@
 %%INGODIR%%/po/pt_BR.po
 %%INGODIR%%/po/pt_PT.po
 %%INGODIR%%/po/ro_RO.po
+%%INGODIR%%/po/sl_SI.po
 %%INGODIR%%/po/sv_SE.po
 %%INGODIR%%/po/tr_TR.po
 %%INGODIR%%/po/zh_TW.po
@@ -143,6 +147,8 @@
 @dirrm %%INGODIR%%/locale/tr_TR
 @dirrm %%INGODIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/sv_SE
+@dirrm %%INGODIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/sl_SI
 @dirrm %%INGODIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/ro_RO
 @dirrm %%INGODIR%%/locale/pt_PT/LC_MESSAGES
@@ -182,6 +188,8 @@
 @dirrm %%INGODIR%%/locale/da_DK
 @dirrm %%INGODIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/cs_CZ
+@dirrm %%INGODIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/ca_ES
 @dirrm %%INGODIR%%/locale
 @dirrm %%INGODIR%%/js
 @dirrm %%INGODIR%%/lib/Storage

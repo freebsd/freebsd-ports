@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
 		ftp://ftp.planetmirror.com/pub/horde/ingo/		\
