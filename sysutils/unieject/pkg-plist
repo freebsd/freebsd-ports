@@ -15,3 +15,5 @@ share/locale/nl/LC_MESSAGES/unieject.mo
 share/locale/pt_BR/LC_MESSAGES/unieject.mo
 share/locale/pt/LC_MESSAGES/unieject.mo
 @dirrm include/unieject
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
