@@ -29,6 +29,7 @@ SUB_FILES+=	pkg-message
 #
 BACULA_DIR?=/var/db/bacula
 #
+MANCOMPRESSED=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
@@ -166,6 +167,8 @@ MAN8=bacula-fd.8 bconsole.8
 MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
 MAN1=bsmtp.1 bacula-console-gnome.1 bacula-tray-monitor.1 bacula-wxconsole.1
 .endif
+MAKE_ARGS+=	-E MAN8 -E MAN1
+MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
@@ -206,7 +209,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
 #	In server port don't install filed
-	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' ${WRKSRC}/Makefile.in
 .endif
 
 pre-install:
@@ -222,18 +225,6 @@ pre-install:
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
-.if defined(MAN8)
-.	for manpage in ${MAN8}
-		${INSTALL_MAN} ${WRKSRC}/manpages/${manpage} ${PREFIX}/man/man8/${manpage}
-.	endfor
-.endif
-
-.if defined(MAN1)
-.	for manpage in ${MAN1}
-		${INSTALL_MAN} ${WRKSRC}/manpages/${manpage} ${PREFIX}/man/man1/${manpage}
-.	endfor
-.endif
-
 .if defined(WITH_CLIENT_ONLY)
 # 	Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
