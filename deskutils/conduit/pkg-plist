@@ -59,6 +59,7 @@ share/pixmaps/conduit-icon.png
 @dirrm %%DATADIR%%/contrib/EXIF-15-FEB-04
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%
+@dirrmtry share/pixmaps
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/datatypes
 @dirrm %%PYTHON_SITELIBDIR%%/conduit
