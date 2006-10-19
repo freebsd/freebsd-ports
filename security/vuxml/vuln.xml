@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="18a14baa-5ee5-11db-ae08-0008743bf21a">
+    <topic>ingo -- local arbitrary shell command execution</topic>
+    <affects>
+      <package>
+        <name>ingo</name>
+        <range><lt>1.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Horde team reports a vulnerability within Ingo, the
+	  filter management suite. The vulnerability is caused due to
+	  inadequete escaping, possibly allowing a local user to execute
+	  arbitrary shell commands via procmail.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.horde.org/ticket/?id=4513</url>
+      <url>http://cvs.horde.org/diff.php/ingo/docs/CHANGES?r1=1.55.2.49&amp;r2=1.55.2.59&amp;ty=h</url>
+      <url>http://lists.horde.org/archives/announce/2006/000296.html</url>
+    </references>
+    <dates>
+      <discovery>2006-10-18</discovery>
+      <entry>2006-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a6d9da4a-5d5e-11db-8faf-000c6ec775d9">
     <topic>nvidia-driver -- arbitrary root code execution vulnerability</topic>
     <affects>
