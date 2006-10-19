@@ -8,13 +8,15 @@
 PORTNAME=	rboot
 PORTVERSION=	3.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.bs.ni.schule.de/support/rboot/download/
+MASTER_SITES=	http://www.franksworld.org/dist/${PORTNAME}/
 
-MAINTAINER=	m.butkus@tu-bs.de
-COMMENT=	A remote-boot solution for M$$ operating systems
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A remote-boot solution for Microsoft operating systems
 
-NO_PACKAGE=	"this port creates devices"
-BROKEN=		Unfetchable
+NO_PACKAGE=	this port creates devices
+
+DEPRECATED=	The project is no longer under development, and has no homepage
+EXPIRATION_DATE=2007-06-01
 
 MAN7=		rboot.7
 MAN8=		netboot.8
