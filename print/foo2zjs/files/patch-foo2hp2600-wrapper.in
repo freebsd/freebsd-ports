@@ -1,0 +1,87 @@
+--- foo2hp2600-wrapper.in	Wed Oct  4 08:30:16 2006
++++ foo2hp2600-wrapper.in	Fri Oct 13 12:33:20 2006
+@@ -31,13 +31,6 @@
+ PREFIX=/usr
+ SHARE=$PREFIX/share/foo2hp
+ 
+-#
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- "foo2hp2600-wrapper $@" </dev/null
+-fi
+-
+ usage() {
+ 	cat <<EOF
+ Usage:
+@@ -174,11 +167,7 @@
+ #
+ # N.B. := operator used here, when :- would be better, because "ash"
+ # doesn't have :-
+-if gs8 -v >/dev/null 2>&1; then
+-        GSBIN=${GSBIN:-gs8}
+-else
+-        GSBIN=${GSBIN:-gs}
+-fi
++GSBIN=${GSBIN:-gs}
+ 
+ CMDLINE="$*"
+ DEBUG=0
+@@ -211,24 +200,8 @@
+ GSDEV=-sDEVICE=pbmraw
+ DefaultRGB=sRGB
+ # What mode to use if the user wants us to pick the "best" mode
+-case `$GSBIN --version` in
+-7*)
+-	DEFAULTCOLORMODE=10
+-	;;
+-8.1*)
+-	# Buggy 8.14/8.15 in Ubuntu
+-	DEFAULTCOLORMODE=10
+-	if is32 $GSBIN; then
+-	    GAMMAFILE=km2430_2.icm
+-	else
+-	    GAMMAFILE=hpclj2600n-0.icm
+-	fi
+-	QUALITY=1
+-	;;
+-*)
+-	DEFAULTCOLORMODE=10
+-	;;
+-esac
++
++DEFAULTCOLORMODE=10
+ 
+ while getopts "24o:b:cC:d:g:l:u:L:m:n:p:q:r:s:tABS:D:G:I:PX:Vh?" opt
+ do
+@@ -302,9 +275,11 @@
+ 	    # error "2-bpp monochrome is not yet supported"
+ 	    GSDEV="-sDEVICE=cups -dcupsColorSpace=3 -dcupsBitsPerColor=2"
+ 	    GSDEV="$GSDEV -dcupsColorOrder=2"
++	    GSBIN="$PREFIX/bin/espgs"
+ 	else
+ 	    GSDEV="-sDEVICE=cups -dcupsColorSpace=6 -dcupsBitsPerColor=2"
+ 	    GSDEV="$GSDEV -dcupsColorOrder=2"
++	    GSBIN="$PREFIX/bin/espgs"
+ 	fi
+ 
+ 	case "$GAMMAFILE" in
+@@ -651,18 +626,6 @@
+ 	    $COLOR -b$BPP $CLIP_UL $CLIP_LR $CLIP_LOG $SAVETONER \
+ 	    -J "$LPJOB" -U "$USER" \
+ 	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
+-
+-#
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"$GSBIN $PAPERSIZE -g$DIM -r$RES $GSDEV $GSOPT $GAMAFILE"
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"foo2hp -r$RES -g$DIM -p$PAPER -m$MEDIA \
+--n$COPIES -d$DUPLEX -s$SOURCE $COLOR -b$BPP $CLIP_UL $CLIP_LR $CLIP_LOG \
+-$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
+-fi
+ 
+ #
+ #	Remove cruft

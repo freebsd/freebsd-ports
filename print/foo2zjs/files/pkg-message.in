@@ -1,4 +1,4 @@
-###############################################################################################
+###############################################################################
 
 1) Please read the detailed installation instructions in the file:
 
@@ -15,6 +15,9 @@
      cp hpclj26*.icm km2430*.icm %%PREFIX%%/share/foo2hp/icm && \
      rm *.icm *.img
 
-4) Enjoy it ;)
+4) If you are testing foo2hp driver, do not use 2bpp because it causes a crash
+   in the foo2hp program.
 
-###############################################################################################
+5) Enjoy it ;)
+
+###############################################################################
