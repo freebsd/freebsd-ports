@@ -8,7 +8,8 @@
 PORTNAME=	dnswalk
 PORTVERSION=	2.0.2
 CATEGORIES=	dns
-MASTER_SITES=	http://www.visi.com/~barr/dnswalk/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mark@foster.cc
 COMMENT=	DNS debugger - requests a zone transfer and analyzes the result
