@@ -15,7 +15,7 @@ upgrades.
   upgrade your GNOME desktop or/and other applications you will need
   to use either sysutils/portupgrade or sysutils/portmaster. To use
   portmaster, make sure you have least 1.9 version to have the
-  upgrade success.
+  upgrade succeed.
 
  Portupgrade users:
   pkgdb -Ff
