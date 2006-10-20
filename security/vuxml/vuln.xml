@@ -239,7 +239,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>nvidia-driver</name>
-	<range><gt>1.0.8762</gt><lt>1.0.8776</lt></range>
+	<range><ge>1.0.8762</ge><lt>1.0.8776</lt></range>
       </package>
     </affects>
     <description>
