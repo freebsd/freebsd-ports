@@ -47,27 +47,25 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Plone Team reports:</p>
 	<blockquote cite="http://dev.plone.org/plone/ticket/5432">
 	  <p>Plone 2.0.5, 2.1.2, and 2.5-beta1 does not restrict
-             access to the: </p>
-          <ul>
-          <li>changeMemberPortrait</li>
-          <li>deletePersonalPortrait</li>
-          <li>testCurrentPassword</li>
-          </ul>
-          <p>
-    	     methods, which allows remote attackers to modify portraits.
-	 </p>
+	    access to the:</p>
+	  <ul>
+	    <li>changeMemberPortrait</li>
+	    <li>deletePersonalPortrait</li>
+	    <li>testCurrentPassword</li>
+	  </ul>
+	  <p>methods, which allows remote attackers to modify portraits.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-        <url>http://plone.org/products/plone/releases/2.1.4</url>
-        <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1711</url>
-        <url>https://svn.plone.org/svn/plone/PloneHotfix20060410/trunk/README.txt</url>
-        <cvename>CVE-2006-1711</cvename>
+      <cvename>CVE-2006-1711</cvename>
+      <url>http://plone.org/products/plone/releases/2.1.4</url>
+      <url>https://svn.plone.org/svn/plone/PloneHotfix20060410/trunk/README.txt</url>
     </references>
     <dates>
       <discovery>2006-10-19</discovery>
       <entry>2006-10-19</entry>
+      <modified>2006-10-20</modified>
     </dates>
   </vuln>
 
