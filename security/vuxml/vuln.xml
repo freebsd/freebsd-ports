@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4867ae85-608d-11db-8faf-000c6ec775d9">
+    <topic>opera -- URL parsing heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><gt>9.*</gt><lt>9.02</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense Labs reports:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=424">
+	  <p>Remote exploitation of a heap overflow vulnerability
+	    within version 9 of Opera Software's Opera Web browser
+	    could allow an attacker to execute arbitrary code on the
+	    affected host.</p>
+	  <p>A flaw exists within Opera when parsing a tag that
+	    contains a URL. A heap buffer with a constant size of 256
+	    bytes is allocated to store the URL, and the tag's URL is
+	    copied into this buffer without sufficient bounds checking
+	    of its length.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4819</cvename>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=424</url>
+      <url>http://secunia.com/advisories/22218/</url>
+    </references>
+    <dates>
+      <discovery>2006-10-17</discovery>
+      <entry>2006-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1c0def84-5fb1-11db-b2e9-0008c79fa3d2">
     <topic>asterisk -- remote heap overwrite vulnerability</topic>
     <affects>
