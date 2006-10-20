@@ -7,6 +7,7 @@
 
 PORTNAME=	ch
 PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.softintegration.com/download/software/release/FreeBSD/
 DISTNAME=	chstandard-${PORTVERSION}.freebsd5.1
@@ -14,12 +15,12 @@ DISTNAME=	chstandard-${PORTVERSION}.freebsd5.1
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An embeddable C/C++ interpreter/shell
 
-# possibly ia64?
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	is an i386 binary
+IA32_BINARY_PORT=	yes
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/${PORTNAME}
+
+SUB_FILES=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -34,7 +35,7 @@ LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 do-install:
 	${MKDIR} ${DATADIR}
 	${TAR} zxf ${WRKSRC}/ch.bin -C ${DATADIR}
-	${LN} -s ${DATADIR}/bin/ch ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
 	@if ${GREP} -q '${PREFIX}/bin/ch' /etc/shells; then ${TRUE}; else \
