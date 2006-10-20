@@ -7,6 +7,7 @@
 
 PORTNAME=	rpc2
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/ \
 		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
