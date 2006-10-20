@@ -239,7 +239,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>nvidia-driver</name>
-	<range><gt>0</gt></range>
+	<range><gt>1.0.8762</gt><lt>1.0.8776</lt></range>
       </package>
     </affects>
     <description>
@@ -255,18 +255,23 @@ Note:  Please add new entries to the beginning of this file.
 	    advisory.</p>
 	  <p>The NVIDIA drivers for Solaris and FreeBSD are also
 	    likely to be vulnerable.</p>
-	  <p>4. Solution</p>
-	  <p>Disable the binary blob driver and use the open-source
-	    "nv" driver that is included by default with X.</p>
 	</blockquote>
+	<p>Disabling Render acceleration in the "nvidia" driver, via
+	  the "RenderAccel" X configuration option, can be used as a
+	  workaround for this issue.</p>
       </body>
     </description>
     <references>
+      <certvu>147252</certvu>
+      <cvename>CVE-2006-5379</cvename>
+      <url>http://nvidia.custhelp.com/cgi-bin/nvidia.cfg/php/enduser/std_adp.php?p_faqid=1971</url>
+      <url>http://secunia.com/advisories/22419/</url>
       <url>http://www.rapid7.com/advisories/R7-0025.jsp</url>
     </references>
     <dates>
       <discovery>2006-10-16</discovery>
       <entry>2006-10-16</entry>
+      <modified>2006-10-21</modified>
     </dates>
   </vuln>
 
