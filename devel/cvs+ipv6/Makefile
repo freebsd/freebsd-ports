@@ -7,9 +7,10 @@
 
 PORTNAME=	cvs
 PORTVERSION=	1.11.17
+PORTREVISION=	1
 CATEGORIES=	devel ipv6
-MASTER_SITES=	http://musthave.sunbase.org/progs/ccvs/ \
-		http://keyserver.kjsl.com/~jharris/distfiles/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	non-gnu/${PORTNAME}/source/stable/${PORTVERSION}
 PKGNAMESUFFIX=	+ipv6
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
