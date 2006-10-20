@@ -7,6 +7,7 @@
 
 PORTNAME=	svnmailer
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://storage.perlig.de/${PORTNAME}/archive/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
