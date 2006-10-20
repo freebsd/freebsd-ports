@@ -290,7 +290,6 @@ graphics/p5-Gimp||2003-05-05|port depended on the broken PDL port which was remo
 japanese/ee||2003-05-05|port was broken with no sign of a fix
 japanese/kdevelop||2003-05-05|port was broken with no sign of a fix
 korean/byeoroo||2003-05-05|port was broken with no sign of a fix
-lang/gpc||2003-05-05|port was broken with no sign of a fix
 misc/cassowary||2003-05-05|port was broken with no sign of a fix
 net/coda_client||2003-05-05|port was broken with no sign of a fix
 net/coda_server||2003-05-05|port was broken with no sign of a fix
