@@ -50,8 +50,10 @@ GCC_VER?=	3.4.3
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-.if ${OSVERSION} >= 700019
-BROKEN=		does not compile on FreeBSD >= 7.0
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+PLIST_SUB+=	CFM=""
+.else
+PLIST_SUB+=	CFM="@comment "
 .endif
 
 post-extract:

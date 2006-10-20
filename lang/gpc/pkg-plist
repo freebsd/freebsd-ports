@@ -7,6 +7,7 @@ lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtbegin.o
 lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtbeginS.o
 lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtend.o
 lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtendS.o
+%%CFM%%lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtfastmath.o
 lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/gpc-in-c.h
 lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/libgcc.a
 lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/libgcc_eh.a
