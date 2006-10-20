@@ -4,9 +4,3 @@ bin/torify
 etc/tor/tor-tsocks.conf.sample
 etc/tor/torrc.sample
 @dirrm etc/tor
-bin/tor
-bin/tor-resolve
-bin/torify
-etc/tor/tor-tsocks.conf.sample
-etc/tor/torrc.sample
-@dirrm etc/tor
