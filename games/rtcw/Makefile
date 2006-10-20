@@ -17,9 +17,10 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
-ONLY_FOR_ARCHS=	i386
 REINPLACE_ARGS=	-i ""
+IA32_BINARY_PORT=	yes
 USE_LINUX=	yes
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message
