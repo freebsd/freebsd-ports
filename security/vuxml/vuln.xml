@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c0def84-5fb1-11db-b2e9-0008c79fa3d2">
+    <topic>asterisk -- remote heap overwrite vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<name>asterisk-bristuff</name>
+	<range><lt>1.2.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adam Boileau of Security-Assessment.com reports:</p>
+	<blockquote cite="http://www.security-assessment.com/files/advisories/Asterisk_remote_heap_overflow.pdf">
+	  <p>The Asterisk Skinny channel driver for Cisco SCCP phones
+	    (chan_skinny.so) incorrectly validates a length value in
+	    the packet header.  An integer wrap-around leads to heap
+	    overwrite, and arbitrary remote code execution as root.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.security-assessment.com/files/advisories/Asterisk_remote_heap_overflow.pdf</url>
+      <mlist msgid="4536A2F2.2020902@security-assessment.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=116121567530170</mlist>
+    </references>
+    <dates>
+      <discovery>2006-10-17</discovery>
+      <entry>2006-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6c18956-5fa3-11db-ad2d-0016179b2dd5">
     <topic>plone -- unprotected MembershipTool methods</topic>
     <affects>
