@@ -29,6 +29,8 @@ LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
 		curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/1c0def84-5fb1-11db-b2e9-0008c79fa3d2.html
+
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
 GNU_CONFIGURE=	yes
