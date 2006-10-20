@@ -18,9 +18,9 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Doom III for Linux
 
-ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
+IA32_BINARY_PORT=	yes
 USE_LINUX=	yes
+USE_XLIB=	yes
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

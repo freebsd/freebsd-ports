@@ -19,8 +19,7 @@ COMMENT=	ET Pub - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary
+IA32_BINARY_PORT=	yes
 USE_ZIP=	yes
 USE_LINUX=	yes
 
