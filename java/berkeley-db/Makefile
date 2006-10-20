@@ -36,12 +36,13 @@ test:
 	#
 	# Running the vendor-provided self-tests. This may take a while
 	#
-	@cd ${BUILD_WRKSRC} && \
-	    ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${.TARGET} || \
+	if ! (cd ${BUILD_WRKSRC} ; ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${.TARGET}) ; \
+	then	\
 		${ECHO_MSG} Please, review test failures and consider \
 			reporting them via \
-			http://forums.oracle.com/forums/forum.jspa?forumID=273 \
-			&& ${FALSE}
+			http://forums.oracle.com/forums/forum.jspa?forumID=273 ; \
+		${FALSE} ; \
+	fi
 
 .include <bsd.port.pre.mk>
 
