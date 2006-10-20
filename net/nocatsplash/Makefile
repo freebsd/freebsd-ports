@@ -9,16 +9,13 @@ PORTNAME=	nocatsplash
 PORTVERSION=	0.82
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://nocat.net/download/NoCatSplash/
+MASTER_SITES=	http://farrokhi.net/distfiles/ \
+		http://nocat.net/download/NoCatSplash/
 DISTNAME=	NoCatSplash-nightly
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open 802.11 Splash Screen
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 USE_GNOME=	glib12
 
