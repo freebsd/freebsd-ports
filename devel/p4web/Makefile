@@ -19,6 +19,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
+BROKEN=		Size mismatch
+
 ONLY_FOR_ARCHS=	i386 amd64 alpha
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${PLATFORM}

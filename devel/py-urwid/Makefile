@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Curses-based user interface library for Python
 
+BROKEN=		Size mismatch
+
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
 
