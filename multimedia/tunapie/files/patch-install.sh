@@ -1,7 +1,11 @@
---- install.sh	Thu Aug 17 09:17:10 2006
-+++ install.sh.port	Sun Sep  3 17:24:54 2006
-@@ -3,9 +3,7 @@
- else cp src/tunersafe.py src/tuner.py
+--- install.sh	Sat Sep 30 01:02:29 2006
++++ install.sh.port	Wed Oct 18 14:18:49 2006
+@@ -1,11 +1,9 @@
+ #!/bin/sh
+-if [ "$1" = "--adult" ]; then echo '1'>/etc/tunapie.config 
+-else echo '0'>/etc/tunapie.config
++if [ "$1" = "--adult" ]; then echo '1'>%%PREFIX%%/etc/tunapie.config.default
++else echo '0'>%%PREFIX%%/etc/tunapie.config.default
  fi
  python src/compile
 -cp tunapie /usr/local/bin
