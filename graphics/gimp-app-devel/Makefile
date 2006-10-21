@@ -36,6 +36,7 @@ LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 CONFLICTS=	gimp-1.* gimp-2.2.*
+NO_LATEST_LINK=	yes
 
 SHLIBVER?=	0
 
