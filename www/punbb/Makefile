@@ -22,6 +22,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A fast and lightweight PHP-powered discussion board
 
+BROKEN=		Checksum mismatch
+
 NO_BUILD=	yes
 PUNBBDIR?=	${TARGETDIR}/www/punbb
 USE_PHP=	yes
