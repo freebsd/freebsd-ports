@@ -25,6 +25,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gettextpo.1:${PORTSDIR}/devel/gettext \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
 
+BROKEN=		Does not build
+
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
 USE_PYTHON=	2.3
