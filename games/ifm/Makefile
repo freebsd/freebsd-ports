@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	if-archive/mapping-tools
 MAINTAINER=	spear@protect-ya-neck.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
 
+BROKEN=		Incorrect pkg-plist
+
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USE_GMAKE=	yes
