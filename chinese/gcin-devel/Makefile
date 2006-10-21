@@ -16,6 +16,8 @@ EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20 gnomecontrolcenter2 gnomehier
