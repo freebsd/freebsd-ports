@@ -22,6 +22,8 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
+BROKEN=		Installs file into /usr/bin and does so prior to make install
+
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	sdl image net
