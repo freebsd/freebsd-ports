@@ -15,6 +15,8 @@ COMMENT=	KDE frontend for Subversion
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 
