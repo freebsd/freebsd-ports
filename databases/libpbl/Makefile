@@ -14,6 +14,8 @@ DISTNAME=	pbl_1_03
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Peter Graf's Program Base Library
 
+BROKEN=		Checksum mismatch
+
 ALL_TARGET=	libpbl.a
 MAKEFILE=	makefile
 PLIST_FILES=	lib/libpbl.a include/pbl.h
