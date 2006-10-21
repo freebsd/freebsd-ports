@@ -20,20 +20,10 @@ USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -ffast-math
-.endif
-
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700014
-BROKEN=		depends on posix_memalign(3)
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
 .endif
 
 pre-patch:
