@@ -30,6 +30,8 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		dvdread:${PORTSDIR}/multimedia/libdvdread \
 		enchant:${PORTSDIR}/textproc/enchant
 
+BROKEN=		Incorrect pkg-plist
+
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 glib20 gconf2 libglade2 intlhack
