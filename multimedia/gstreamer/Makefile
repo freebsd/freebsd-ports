@@ -4,9 +4,11 @@
 #
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer/Makefile,v 1.52 2006/09/14 20:51:42 ahze Exp $
+#
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_LOCAL}
