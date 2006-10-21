@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${JAVALIBDIR}/xmms2java.jar:${PORTSDIR}/audio/java-xmms2 \
 		${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom \
 		${JAVALIBDIR}/jid3lib.jar:${PORTSDIR}/audio/jid3lib
 
+BROKEN=		Does not build
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
