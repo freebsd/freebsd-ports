@@ -1,9 +1,0 @@
-This port installs a few frequently-needed packages from SuSE Linux 9.3.  These
-packages, in conjunction with the linux.ko kernel module, form the basis of the
-Linux compatibility environment.
-
-This port is available for the i386 architecture and experimentally for amd64.
-If you use an Alpha computer, please install the linux_base-debian or
-linux_base-gentoo-stage1 port instead.
-
-WWW:	http://www.novell.com/linux/suse
