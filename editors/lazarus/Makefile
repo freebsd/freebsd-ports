@@ -19,6 +19,8 @@ COMMENT=	A portable Delphi-like IDE for the FreePascal compiler
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
 
+BROKEN=		Does not build
+
 ONLY_FOR_ARCHS=	i386
 
 USE_ICONV=	yes
