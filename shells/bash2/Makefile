@@ -51,7 +51,8 @@ INFO=		bash
 post-patch:
 	@${REINPLACE_CMD} -e "s,.FN /bin/bash,.FN ${PREFIX}/bin/bash," \
 		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/doc/bash.1
-	@${RM} -rf ${WRKSRC}/lib/readline/*
+	@${RM} -rf ${WRKSRC}/lib/readline/*.[ch] \
+		${WRKSRC}/lib/readline/Makefile
 	@${TOUCH} ${WRKSRC}/lib/readline/Makefile.in
 	@${REINPLACE_CMD} -E "s,^((RL|HIST)_LIBSRC = ).*,\1/usr/include/readline," ${WRKSRC}/Makefile.in
 
