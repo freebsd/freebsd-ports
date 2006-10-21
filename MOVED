@@ -2487,3 +2487,6 @@ devel/cscout-devel||2006-10-09|Has expired: The (long overdue) release of 2.2 ha
 sysutils/cfengine2|sysutils/cfengine|2006-10-09|moved to systuils/cfengine
 lang/python-devel|lang/python25|2006-10-09|moved to lang/python25
 multimedia/bmpx-devel||2006-10-09|Development version is not active
+emulators/linux_base-suse-9.1||2006-10-20|Port expired and was removed
+emulators/linux_base-suse-9.2||2006-10-20|Port expired and was removed
+emulators/linux_base-suse-9.3||2006-10-20|Port expired and was removed
