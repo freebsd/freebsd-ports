@@ -6527,9 +6527,6 @@ linux_base-fc4	ports/emulators/linux_base-fc4
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
 linux_base-gentoo-stage2	ports/emulators/linux_base-gentoo-stage2
 linux_base-gentoo-stage3	ports/emulators/linux_base-gentoo-stage3
-linux_base-suse-9.1	ports/emulators/linux_base-suse-9.1
-linux_base-suse-9.2	ports/emulators/linux_base-suse-9.2
-linux_base-suse-9.3	ports/emulators/linux_base-suse-9.3
 linux_dist-gentoo-stage1	ports/emulators/linux_dist-gentoo-stage1
 linux_dist-gentoo-stage2	ports/emulators/linux_dist-gentoo-stage2
 linux_dist-gentoo-stage3	ports/emulators/linux_dist-gentoo-stage3
