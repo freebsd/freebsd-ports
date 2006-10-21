@@ -7,16 +7,18 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Fast and portable Forth system
 
-STRIP=		#none
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS=${CFLAGS:N-O*:N-f*}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 ALL_TARGET=	all info
 USE_GNOME=	gnometarget
@@ -24,6 +26,9 @@ USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs22
 EMACS_NO_BUILD_DEPENDS=	yes
 EMACS_NO_RUN_DEPENDS=	yes
+
+CFLAGS+=	-fno-reorder-blocks -fno-inline
+STRIP=		#none
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
 		EMACS_DIR="${EMACS_SITE_LISPDIR}" \
@@ -38,10 +43,6 @@ INFO=		gforth vmgen
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on pointyhat, report if you have similar problems
-.endif
 
 .if ${ARCH} == i386
 WORDSIZE=32
