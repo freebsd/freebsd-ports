@@ -9,6 +9,7 @@ PORTNAME=	dinotrace
 DISTVERSION=	9.3b
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.com/ftp/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical signal trace waveform viewer
