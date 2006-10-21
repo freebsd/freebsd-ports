@@ -19,8 +19,6 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
-BROKEN=		Size mismatch
-
 ONLY_FOR_ARCHS=	i386 amd64 alpha
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
@@ -34,7 +32,7 @@ ARCH?=	i386
 
 .if (${ARCH} == i386) || (${ARCH} == amd64)
 VERSION=	06.1
-REVISION=	2
+REVISION=	3
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
 REL_NOTES=	http://www.perforce.com/perforce/doc.061/user/relnotes.txt
