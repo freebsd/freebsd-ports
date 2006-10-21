@@ -8,8 +8,8 @@
 PORTNAME=	z88
 PORTVERSION=	11.0
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.uni-bayreuth.de/pub/uni-bayreuth/LS-CAD/unix/:srcs \
-		ftp://ftp.uni-bayreuth.de/pub/uni-bayreuth/LS-CAD/manual/:dcs
+MASTER_SITES=	ftp://ftp.uni-bayreuth.de/pub/uni-bayreuth/LS-CAD/Version11/unix/:srcs \
+		ftp://ftp.uni-bayreuth.de/pub/uni-bayreuth/LS-CAD/Version11/manual//:dcs
 DISTFILES=	${PORTNAME}src${EXTRACT_SUFX}:srcs ${PORTNAME}mane.pdf:dcs
 DIST_SUBDIR=	z88
 EXTRACT_ONLY=	${PORTNAME}src${EXTRACT_SUFX}
