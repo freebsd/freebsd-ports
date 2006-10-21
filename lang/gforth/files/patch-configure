@@ -1,0 +1,12 @@
+--- configure.orig	Sat Oct 21 02:49:22 2006
++++ configure	Sat Oct 21 02:49:27 2006
+@@ -8079,8 +8079,8 @@
+   if (x) {
+   label1:
+     asm("$i");
+-  label2:
+   }
++  label2:
+   return (&&label2)-(&&label1);
+ }
+ 
