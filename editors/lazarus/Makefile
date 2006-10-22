@@ -19,8 +19,6 @@ COMMENT=	A portable Delphi-like IDE for the FreePascal compiler
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
 
-BROKEN=		Does not build
-
 ONLY_FOR_ARCHS=	i386
 
 USE_ICONV=	yes
@@ -28,7 +26,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 USE_GMAKE=	yes
 
-MAKE_ENV=	OPT="-Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${X11BASE}/lib"
+MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${X11BASE}/lib"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 BUILDNAME=	${ARCH}-freebsd
