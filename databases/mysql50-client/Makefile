@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	mysql
-PORTREVISION=	1
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Multithreaded SQL database (client)
