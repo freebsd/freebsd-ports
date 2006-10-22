@@ -8,7 +8,7 @@
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://icon-theme.freedesktop.org/releases/
 
@@ -45,8 +45,18 @@ pre-install:
 . for ctxt in ${ICON_CONTEXTS}
 	if [ "${ctxt}" = "stock" ] ; then \
 	 for sub in ${STOCK_SUBS} ; do \
-	${ECHO_CMD} "@dirrmtry ${ICON_DIR}/${dir}/${ctxt}/$${sub}" >> ${PLIST} ; \
-	 done \
+		${ECHO_CMD} "${ICON_DIR}/${dir}/${ctxt}/$${sub}/.keep_me" >> ${PLIST} ; \
+	 done ; \
+	fi
+	${ECHO_CMD} "${ICON_DIR}/${dir}/${ctxt}/.keep_me" >> ${PLIST} ;
+. endfor
+.endfor
+.for dir in ${ICON_SIZES}
+. for ctxt in ${ICON_CONTEXTS}
+	if [ "${ctxt}" = "stock" ] ; then \
+	 for sub in ${STOCK_SUBS} ; do \
+		${ECHO_CMD} "@dirrmtry ${ICON_DIR}/${dir}/${ctxt}/$${sub}" >> ${PLIST} ; \
+	 done ; \
 	fi
 	${ECHO_CMD} "@dirrmtry ${ICON_DIR}/${dir}/${ctxt}" >> ${PLIST}
 . endfor
@@ -54,5 +64,17 @@ pre-install:
 .endfor
 	${ECHO_CMD} "@dirrmtry ${ICON_DIR}" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/icons" >> ${PLIST}
+
+post-install:
+.for dir in ${ICON_SIZES}
+. for ctxt in ${ICON_CONTEXTS}
+	if [ "${ctxt}" = "stock" ] ; then \
+	 for sub in ${STOCK_SUBS} ; do \
+		${TOUCH} ${PREFIX}/${ICON_DIR}/${dir}/${ctxt}/$${sub}/.keep_me ; \
+	 done ; \
+	fi
+	${TOUCH} ${PREFIX}/${ICON_DIR}/${dir}/${ctxt}/.keep_me
+. endfor
+.endfor
 
 .include <bsd.port.post.mk>
