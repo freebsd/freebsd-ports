@@ -9,14 +9,14 @@ PORTNAME=	gcin
 PORTVERSION=	1.2.7
 PORTREVISION=	2
 CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
+		LOCAL/chinsan:main \
+		http://yilan.twbbs.org/chinsan/gcin/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
-
-BROKEN=		Unfetchable
 
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
