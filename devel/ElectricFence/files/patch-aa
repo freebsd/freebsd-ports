@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Apr 13 10:22:49 1999
-+++ Makefile	Fri May 25 02:57:38 2001
-@@ -1,6 +1,12 @@
+--- Makefile.orig	Wed Apr 14 03:22:49 1999
++++ Makefile	Sun Oct 22 14:27:23 2006
+@@ -1,8 +1,14 @@
  PIC= -fPIC
 -CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
 -LIBS= -lpthread
@@ -16,25 +16,53 @@
 -prefix=/usr
 +prefix=$(PREFIX)
  BIN_INSTALL_DIR= $(prefix)/bin
-@@ -22,3 +28,3 @@
- 	@ echo "After the last test, it should print that the test has PASSED."
+ LIB_INSTALL_DIR= $(prefix)/lib
+ MAN_INSTALL_DIR= $(prefix)/man/man3
+@@ -17,14 +23,18 @@
+ OBJECTS= efence.o page.o print.o
+ 
+ all:	libefence.a libefence.so.0.0 tstheap eftest
+-	@ echo
+-	@ echo "Testing Electric Fence."
+-	@ echo "After the last test, it should print that the test has PASSED."
 -	./eftest
-+	EF_PROTECT_BELOW= && EF_PROTECT_FREE= && EF_ALIGNMENT= && ./eftest
- 	./tstheap 3072
-@@ -56,4 +62,4 @@
+-	./tstheap 3072
+-	@ echo
+-	@ echo "Electric Fence confidence test PASSED." 
+-	@ echo
++# This test is not run.  Breaks on pointyhat because the host
++# delivers a different "page-protection-violated" signal to what
++# is expected by the port running inside a lower-version jail.
++# (ie. in 6.x jail it expects SIGBUS, 7.x host delivers SIGSEGV).
++#	@ echo
++#	@ echo "Testing Electric Fence."
++#	@ echo "After the last test, it should print that the test has PASSED."
++#	EF_PROTECT_BELOW= && EF_PROTECT_FREE= && EF_ALIGNMENT= && ./eftest
++#	./tstheap 3072
++#	@ echo
++#	@ echo "Electric Fence confidence test PASSED." 
++#	@ echo
+ 
+ install: libefence.a efence.3 libefence.so.0.0
+ 	$(INSTALL) -m 755 ef.sh $(BIN_INSTALL_DIR)/ef
+@@ -54,16 +64,16 @@
+ 	$(AR) crv libefence.a $(OBJECTS)
+ 
  libefence.so.0.0: $(OBJECTS)
 -	gcc -g -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
 -		$(OBJECTS) -lpthread -lc 
 +	$(CC) $(CFLAGS) -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
 +		$(OBJECTS) $(LIB_PTHREADS)
  
-@@ -61,3 +67,3 @@
+ tstheap: libefence.a tstheap.o
  	- rm -f tstheap
 -	$(CC) $(CFLAGS) tstheap.o libefence.a -o tstheap $(LIBS)
 +	$(CC) $(CFLAGS) tstheap.o libefence.a -o tstheap $(LIB_PTHREADS)
  
-@@ -65,3 +71,3 @@
+ eftest: libefence.a eftest.o
  	- rm -f eftest
 -	$(CC) $(CFLAGS) eftest.o libefence.a -o eftest $(LIBS)
 +	$(CC) $(CFLAGS) eftest.o libefence.a -o eftest $(LIB_PTHREADS)
+ 
+ $(OBJECTS) tstheap.o eftest.o: efence.h
  
