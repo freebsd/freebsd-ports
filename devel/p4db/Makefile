@@ -8,13 +8,15 @@
 PORTNAME=	p4db
 PORTVERSION=	2.01
 CATEGORIES=	devel www
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web/Perforce Browser
 
-RUN_DEPENDS=	p4:${.CURDIR}/../perforce
+RUN_DEPENDS=	p4:${PORTSDIR}/devel/perforce
 
 USE_PERL5=	yes
 NO_BUILD=	yes
