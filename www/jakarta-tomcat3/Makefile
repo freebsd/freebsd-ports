@@ -17,8 +17,7 @@ COMMENT=	Open-source Java web server by Apache, stable 3.x branch
 
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/jakarta-tomcat4:pre-everything
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
+DEPRECATED=	Please use www/tomcat55 instead
 EXPIRATION_DATE=2006-12-01
 
 .if !defined(NOPORTDOCS)
