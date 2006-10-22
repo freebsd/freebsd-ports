@@ -731,9 +731,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/lv/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/install.html
 %%DOKUWIKI_DIR%%/inc/lang/lv/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/lv/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/login.txt
@@ -742,9 +744,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/lv/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/searchpage.txt
