@@ -45,7 +45,6 @@ bin/resolveip
 %%NDB%%include/mysql/ndb/ndbapi/NdbBlob.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbDictionary.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbError.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbEventOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbIndexOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbIndexScanOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbOperation.hpp
