@@ -7,7 +7,7 @@
 
 PORTNAME=	AquaGatekeeper
 PORTVERSION=	1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
-RESTRICTED=	"No commercial redistribution"
+RESTRICTED=	No commercial redistribution
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -54,6 +54,8 @@ post-install:
 BROKEN=		"Supported only on 4.x systems and later"
 .elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+.elif ${OSVERSION} >= 600000 && ${ARCH} == "amd64"
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 .if ${ARCH} == "amd64"
