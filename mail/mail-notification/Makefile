@@ -66,10 +66,11 @@ PLIST_SUB+=	GMAIL=""
 .endif
 .if defined(WITHOUT_EVOLUTION)
 CONFIGURE_ARGS+=--disable-evolution
-PLIST_SUB+=	EVOLUTION="@comment "
+EVO_VERSION=	2.8
+PLIST_SUB+=	EVOLUTION="@comment " EVO_VERSION=${EVO_VERSION}
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-2.8.pc:${PORTSDIR}/mail/evolution
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-2.8.pc:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.pc:${PORTSDIR}/mail/evolution
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.pc:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION=""
 .endif
 .if defined(WITHOUT_SYLPHEED)
