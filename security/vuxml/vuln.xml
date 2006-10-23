@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d8fbf13a-6215-11db-a59e-0211d85f11fb">
+    <topic>kdelibs -- integer overflow in khtml</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<name>kdelibs-nocups</name>
+	<range><lt>3.5.4_4</lt></range>
+      </package>
+      <package>
+	<name>qt</name>
+	<name>qt-copy</name>
+	<range><lt>3.3.6_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Red Hat reports:</p>
+	<blockquote cite="http://rhn.redhat.com/errata/RHSA-2006-0720.html">
+	  <p>An integer overflow flaw was found in the way Qt handled pixmap
+	    images. The KDE khtml library uses Qt in such a way that untrusted
+	    parameters could be passed to Qt, triggering the overflow.
+	    An attacker could for example create a malicious web page that when
+	    viewed by a victim in the Konqueror browser would cause Konqueror
+	    to crash or possibly execute arbitrary code with the privileges of
+	    the victim.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4811</cvename>
+      <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=210742</url>
+      <url>http://rhn.redhat.com/errata/RHSA-2006-0720.html</url>
+    </references>
+    <dates>
+      <discovery>2006-10-14</discovery>
+      <entry>2006-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4867ae85-608d-11db-8faf-000c6ec775d9">
     <topic>opera -- URL parsing heap overflow vulnerability</topic>
     <affects>
