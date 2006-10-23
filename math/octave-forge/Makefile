@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	2006.03.17
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	octave
@@ -22,8 +23,6 @@ RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
 		qhull:${PORTSDIR}/math/qhull \
 		bash:${PORTSDIR}/shells/bash
 
-BROKEN=		Incorrect pkg-plist
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
@@ -33,7 +32,7 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 501000
-BROKEN=		"texinfo problem"
+BROKEN=		texinfo problem
 .endif
 
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}

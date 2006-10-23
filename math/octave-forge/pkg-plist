@@ -16,8 +16,6 @@ libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grinit__.
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grishold__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grnewset__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grsetgraph__.oct
-libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__imagemagick__.oct
-libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__magick_read__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__voronoi__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/_errcore.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/_gfweight.oct
@@ -931,4 +929,12 @@ share/octave/%%OCTAVE_VERSION%%/site/octave-forge-alternatives/m/graceplot/ylabe
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/NaN
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/FIXES
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge
+@dirrmtry share/octave/%%OCTAVE_VERSION%%/site/m
 @dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge
+@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%%
+@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/exec
+@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
+@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/oct
+@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site
+@dirrmtry libexec/octave/%%OCTAVE_VERSION%%
+@dirrmtry libexec/octave
