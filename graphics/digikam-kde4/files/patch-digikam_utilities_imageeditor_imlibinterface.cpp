@@ -1,5 +1,5 @@
---- digikam/utilities/imageeditor/imlibinterface.cpp.orig	Mon Jan 16 19:10:18 2006
-+++ digikam/utilities/imageeditor/imlibinterface.cpp	Tue Apr 11 13:31:25 2006
+--- digikam/utilities/imageeditor/imlibinterface.cpp.orig	Mon Jan 16 20:10:18 2006
++++ digikam/utilities/imageeditor/imlibinterface.cpp	Fri Jul 28 08:52:39 2006
 @@ -21,14 +21,6 @@
  
  // Lib Tiff includes.
@@ -39,3 +39,12 @@
      {
          // RAW File test using dcraw.  
          // Need to test it before TIFF because any RAW file 
+@@ -293,7 +293,7 @@
+             // -2 : 8bit ppm output
+             // -w : Use camera white balance, if possible  
+             // -a : Use automatic white balance
+-            command  = "dcraw -c -2 -w -a -q 0 ";
++            command  = "dcraw -c -w -a -q 0 ";
+             command += QFile::encodeName( KProcess::quote( filename ) );
+             kdWarning() << "Running dcraw command : " << command << endl;
+         
