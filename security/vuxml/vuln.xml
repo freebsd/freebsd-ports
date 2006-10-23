@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="96ed277b-60e0-11db-ad2d-0016179b2dd5">
+    <topic>Serendipity -- XSS Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>serendipity</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Serendipity Team reports:</p>
+	<blockquote cite="http://blog.s9y.org/archives/147-Serendipity-1.0.2-and-1.1-beta5-released.html">
+	  <p>Serendipity failed to correctly sanitize user input on the
+	    media manager administration page. The content of GET variables
+	    were written into JavaScript strings. By using standard string
+	    evasion techniques it was possible to execute arbitrary
+	    JavaScript.</p>
+	  <p>Additionally Serendipity dynamically created a HTML form on
+	    the media manager administration page that contained all
+	    variables found in the URL as hidden fields. While the variable
+	    values were correctly escaped it was possible to break out
+	    by specifying strange variable names.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hardened-php.net/advisory_112006.136.htmlSerendipity</url>
+      <url>http://secunia.com/advisories/22501/</url>
+    </references>
+    <dates>
+      <discovery>2006-10-19</discovery>
+      <entry>2006-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d8fbf13a-6215-11db-a59e-0211d85f11fb">
     <topic>kdelibs -- integer overflow in khtml</topic>
     <affects>
