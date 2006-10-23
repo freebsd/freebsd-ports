@@ -7,7 +7,7 @@
 
 PORTNAME=	vdrift
 PORTVERSION=	20061006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
-
-BROKEN=		Installs file into /usr/bin and does so prior to make install
 
 USE_BZIP2=	yes
 USE_GL=		yes
@@ -66,6 +64,7 @@ BROKEN=		Does not compile on sparc64
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e "s|'openal'|'openal','alut'|g" ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's|^os.system.*||g' ${WRKSRC}/src/SConscript
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
