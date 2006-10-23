@@ -7,6 +7,7 @@
 
 PORTNAME=	ifm
 PORTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	games tk84
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		http://www.ifarchive.org/%SUBDIR%/
@@ -14,8 +15,6 @@ MASTER_SITE_SUBDIR=	if-archive/mapping-tools
 
 MAINTAINER=	spear@protect-ya-neck.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
-
-BROKEN=		Incorrect pkg-plist
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
