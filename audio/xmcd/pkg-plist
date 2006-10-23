@@ -1,6 +1,7 @@
 bin/.xmcd_start
 bin/cda
 bin/xmcd
+lib/X11/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XKeysymDB
 lib/X11/xmcd/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XMcd.sgi
