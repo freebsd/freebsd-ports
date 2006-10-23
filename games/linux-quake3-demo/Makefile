@@ -22,7 +22,7 @@ EXTRACT_SUFX=	.gz.sh
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake III Arena Demo
 
-IA32_BINARY_PORT=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
