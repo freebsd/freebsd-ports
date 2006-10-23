@@ -8,7 +8,8 @@
 PORTNAME=	chicken
 PORTVERSION=	2.3
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://www.call-with-current-continuation.org/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alepulver
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Scheme-to-C compiler
