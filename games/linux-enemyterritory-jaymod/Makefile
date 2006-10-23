@@ -20,7 +20,7 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-IA32_BINARY_PORT=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}

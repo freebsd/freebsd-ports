@@ -23,7 +23,7 @@ COMMENT=	ET Pro - The Enemy Territory Competition Mod
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-IA32_BINARY_PORT=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 USE_ZIP=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
