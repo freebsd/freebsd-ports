@@ -7,6 +7,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.16.2
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -67,7 +68,7 @@ CONFIGURE_ARGS+=--without-mozilla \
 
 .if defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=--enable-gstreamer=yes
-USE_GSTREAMER+=	gnomevfs core gconf hal good
+USE_GSTREAMER+=	gnomevfs core gconf hal good mpeg2dec ugly
 WITHOUT_DVDNAV=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
