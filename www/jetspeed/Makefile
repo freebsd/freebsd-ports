@@ -15,13 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-war
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jetspeed is an Open Source Portal, written in Java and XML
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
 		${JAKARTA_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/jakarta-tomcat41
 
+WRKSRC=		${WRKDIR}/${DISTNAME:C/-war//}
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
