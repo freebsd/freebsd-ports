@@ -1308,7 +1308,7 @@ libexec/octave/ls-R
 @dirrm %%DATADIR%%/%%OCTAVE_VERSION%%/m/statistics
 @dirrm %%DATADIR%%/%%OCTAVE_VERSION%%/m/strings
 @dirrm %%DATADIR%%/%%OCTAVE_VERSION%%/m/time
-@dirrm %%DATADIR%%/%%OCTAVE_VERSION%%/m
+@dirrmtry %%DATADIR%%/%%OCTAVE_VERSION%%/m
 @dirrm %%DATADIR%%/%%OCTAVE_VERSION%%/imagelib
 @dirrm %%DATADIR%%/%%OCTAVE_VERSION%%
 @dirrm %%DATADIR%%/site/m/startup
@@ -1341,9 +1341,9 @@ libexec/octave/ls-R
 @dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/oct
 @dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%
+@dirrmtry libexec/octave/%%OCTAVE_VERSION%%
 @dirrm libexec/octave/site
-@dirrm libexec/octave
+@dirrmtry libexec/octave
 @dirrm lib/octave-%%OCTAVE_VERSION%%
 @dirrm include/octave-%%OCTAVE_VERSION%%/octave
 @dirrm include/octave-%%OCTAVE_VERSION%%
