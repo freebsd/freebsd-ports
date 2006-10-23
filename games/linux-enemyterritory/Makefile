@@ -17,7 +17,7 @@ DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
 MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_ZIP=	yes
 NO_CDROM=	Redistribution is limited, see license
