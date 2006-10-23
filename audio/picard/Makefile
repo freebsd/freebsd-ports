@@ -8,7 +8,8 @@
 PORTNAME=	picard
 DISTVERSION=	0.7.0
 CATEGORIES=	audio python
-MASTER_SITES=	https://helixcommunity.org/download.php/2093/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alexbl
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Next generation MusicBrainzTagger
