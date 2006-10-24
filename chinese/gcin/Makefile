@@ -7,7 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
 		LOCAL/chinsan:main \
@@ -52,10 +52,12 @@ pre-patch:
 		s/\/usr\/share/$$prefix\/share/; \
 		123,124 s/control-center-2\.0/gnome\/control-center-2\.0/g; \
 		s/gcc/$$CC/; s/gcin-$$GCIN_VERSION/gcin/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's/qsort/mergesort/' ${WRKSRC}/gcin2tab.c
 	@${REINPLACE_CMD} -e 's|/usr/local|/usr|g' \
 	    	${WRKSRC}/gtk-im/Makefile \
 		${WRKSRC}/menu/Makefile
+	@${REINPLACE_CMD} -e '28,29 d' ${WRKSRC}/im-client/Makefile
 	@${REINPLACE_CMD} -e 's/modify-XIM //; 8,10 d' ${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//;' ${WRKSRC}/scripts/gcin-user-setup
 	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//; s/opt\/gnome/usr\/X11R6/;' \
