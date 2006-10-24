@@ -66,5 +66,7 @@ share/icons/gcin/pin-float16.png
 @dirrmtry %%DATADIR%%/table
 @dirrmtry %%DATADIR%%/script
 @dirrmtry %%DATADIR%%
+@dirrmtry lib/gtk-2.0/immodules
+@dirrmtry lib/gtk-2.0
 @exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
