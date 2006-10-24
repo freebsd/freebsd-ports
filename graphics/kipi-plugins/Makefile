@@ -7,7 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	0.1.0.r1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,8 +21,6 @@ LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
 		kipi.1:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2
-
-BROKEN=		Incomplete pkg-plist
 
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \
