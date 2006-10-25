@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.10.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.10/ \
@@ -117,6 +117,8 @@ post-patch:
 		s|@LDFLAGS@|& ${PTHREAD_LIBS}|' \
 		${WRKSRC}/demos/gtk-demo/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LN_S@|${LN} -sf|' ${WRKSRC}/gtk/Makefile.in
+	@${REINPLACE_CMD} -e 's|file,cups|file,cups,lpr|' \
+		${WRKSRC}/gtk/Makefile.in
 
 pre-build:
 	@${RM} -rf ${WRKSRC}/docs/gtk.info*
