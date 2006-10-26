@@ -18,7 +18,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux RealPlayer 10 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
+		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png \
+		${LINUXBASE}/usr/lib/gdk-pixbuf/loaders/libpixbufloader-png.so:${PORTSDIR}/graphics/linux-gdk-pixbuf
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
