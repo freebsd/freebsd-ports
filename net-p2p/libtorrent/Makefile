@@ -7,7 +7,7 @@
 
 PORTNAME?=	libtorrent
 PORTVERSION?=	0.10.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -37,7 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/configure
 
 .if !defined(WITHOUT_KQUEUE)
-CONFIGURE_ARGS=--with-kqueue
+CONFIGURE_ARGS+=	--with-kqueue
 .endif
 
 .include <bsd.port.post.mk>
