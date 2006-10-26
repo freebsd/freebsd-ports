@@ -22,8 +22,4 @@ CONFLICTS=	libtorrent-[0-9]*
 
 EXTRA_PATCHES=	${.CURDIR}/files/devel-*
 
-.if defined(WITH_KQUEUE)
-CONFIGURE_ARGS=--with-kqueue
-.endif
-
 .include "${MASTERDIR}/Makefile"
