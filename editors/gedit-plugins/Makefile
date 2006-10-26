@@ -52,4 +52,8 @@ CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's| \\t\\r\\n\\f|[:space:]|g' \
+	    	${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
