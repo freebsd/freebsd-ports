@@ -1,4 +1,9 @@
 include/torrent/bitfield.h
+include/torrent/block.h
+include/torrent/block_list.h
+include/torrent/block_transfer.h
+include/torrent/chunk_manager.h
+include/torrent/common.h
 include/torrent/connection_manager.h
 include/torrent/download.h
 include/torrent/event.h
@@ -10,16 +15,20 @@ include/torrent/object.h
 include/torrent/object_stream.h
 include/torrent/path.h
 include/torrent/peer.h
+include/torrent/peer_info.h
+include/torrent/peer_list.h
 include/torrent/piece.h
 include/torrent/poll.h
 include/torrent/poll_epoll.h
 include/torrent/poll_kqueue.h
 include/torrent/poll_select.h
 include/torrent/rate.h
+include/torrent/resume.h
 include/torrent/torrent.h
 include/torrent/tracker.h
 include/torrent/tracker_list.h
+include/torrent/transfer_list.h
 lib/libtorrent.so
-lib/libtorrent.so.7
+lib/libtorrent.so.9
 libdata/pkgconfig/libtorrent.pc
 @dirrm include/torrent
