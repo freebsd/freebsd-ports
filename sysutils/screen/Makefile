@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	screen
-PORTVERSION=	4.0.2
-PORTREVISION=	4
+PORTVERSION=	4.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
