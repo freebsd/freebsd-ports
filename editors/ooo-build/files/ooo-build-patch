@@ -22,16 +22,16 @@ gnu patch is gpatch for FreeBSD.
 
 --- patches/src680/apply.orig	Thu Aug 31 02:44:39 2006
 +++ patches/src680/apply	Sat Sep  2 14:50:24 2006
-@@ -80,6 +80,8 @@
+@@ -81,6 +81,8 @@
  # Novell
- NovellWin32: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver
- NovellWin32ISO: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver
+ NovellWin32: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver, cairocanvas
+ NovellWin32ISO: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver, cairocanvas
 +# FreeBSD
 +FreeBSD : LinuxCommon, NotDebian, Lockdown, CalcSolver
  # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
  
  
-@@ -727,7 +729,7 @@
+@@ -755,7 +757,7 @@
  autodoc-add-missing-stdio-h.diff, rengelha
  
  # do not pack any potential .orig files with ppds
@@ -40,7 +40,7 @@ gnu patch is gpatch for FreeBSD.
  
  # changes the SDK gid module name to gid_Module_Root_SDK, so the generated list
  # of files does not conflict with the main package, i#64802
-@@ -821,7 +823,7 @@
+@@ -848,7 +850,7 @@
  buildfix-gcc41-pointers-icu.diff, pmladek
  
  # Don't re-define NULL
@@ -49,4 +49,3 @@ gnu patch is gpatch for FreeBSD.
  
  # Fix warnings that appear on x86-64 & are considered dangerous
  # FIXME file up-stream
-
