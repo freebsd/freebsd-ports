@@ -5755,7 +5755,6 @@
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/ActionManagement/ActionManager.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/ActionManagement/IActionProvider.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/App$1.class
-%%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/App$1ExitEvent.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/App$ExitAction.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/App$ShowHTMLAction.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/App$ShowHTMLOnlineAction.class
@@ -5767,7 +5766,6 @@
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$2.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$3.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$4.class
-%%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$5.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$CloneCaseAction.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$CreateCaseAction.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$DeleteCaseAction.class
@@ -5787,7 +5785,6 @@
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$StartProcessEditorAction.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$StopCaseBrowserAction.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel$UnlockCaseAction.class
-%%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseBrowserPanel.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseChooserDlg$1.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseChooserDlg.class
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement/CaseManager.class
@@ -8023,9 +8020,9 @@
 @dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/Editors/DictionaryEntryEditor
 @dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/Editors/ApplicationEditor
 @dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/Editors
-@dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement
+@unexec rm -rf %D/%%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/CaseManagement 2>&1 >/dev/null || true
 @dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX/ActionManagement
-@dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX
+@unexec rm -rf %D/%%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes/FoamX 2>&1 >/dev/null || true
 @dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make/classes
 @dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/Make
 @dirrm %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/META-INF
