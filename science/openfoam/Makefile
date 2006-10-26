@@ -7,7 +7,7 @@
 
 PORTNAME=	${REALNAME:L}
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foam
@@ -23,15 +23,14 @@ BUILD_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		${PARAVIEW_LIB}/ParaViewConfig.cmake:${PORTSDIR}/science/paraview	\
 		${LOCALBASE}/share/java/java3d/jar/j3dutils.jar:${PORTSDIR}/java/java3d	\
 		${LOCALBASE}/include/libiberty/demangle.h:${PORTSDIR}/devel/gnulibiberty\
-		${LOCALBASE}/include/vtk/vtkDataSetSource.h:${PORTSDIR}/math/vtk-headers
+		${LOCALBASE}/include/vtk/vtkDataSetSource.h:${PORTSDIR}/math/vtk-headers\
+		${X11BASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		dx:${PORTSDIR}/graphics/opendx						\
 		${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty		\
 		${LOCALBASE}/share/java/java3d/jar/j3dutils.jar:${PORTSDIR}/java/java3d	\
 		paraview:${PORTSDIR}/science/paraview
-
-BROKEN=		Incorrect pkg-plist
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
@@ -40,7 +39,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
 
 USE_GCC=	3.4+
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.5+
 USE_GL=		yes
 REINPLACE_ARGS=	-i ""
 
@@ -215,9 +214,8 @@ do-install:
 	cd ${WRKSRC}/${APPDIR}					\
 	&& ${FIND} . -type f -exec ${INSTALL_PROGRAM} {}	\
 		${PREFIX}/${REALNAME}/${APPDIR}/{} \;
-	@${RMDIR} ${DIR2PRUNE:S|^|${PREFIX}/${REALNAME}/|}
+	${RMDIR} ${DIR2PRUNE:S|^|${PREFIX}/${REALNAME}/|}
 	${TOUCH} ${PREFIX}/${REALNAME}/jobControl/.keepme
-
 .if !defined(NOPORTDOCS)
 	${CP} -R ${DOCS:S|^|${WRKSRC}/|} ${PREFIX}/${REALNAME}
 	${CP} -R ${WRKSRC}/tutorials ${PREFIX}/${REALNAME}
