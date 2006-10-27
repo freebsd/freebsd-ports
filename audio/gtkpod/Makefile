@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	0.99.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,6 +48,8 @@ pre-configure:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/locale|(datadir)/locale|' \
 		${WRKSRC}/po/Makefile.in.in
+# work-around a segfault when attempting to delete track from iPod
+	@${REINPLACE_CMD} '83,85d' ${WRKSRC}/src/confirmation.c
 
 post-install:
 .if !defined(NOPORTDOCS)
