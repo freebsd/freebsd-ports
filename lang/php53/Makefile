@@ -7,7 +7,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.1.6
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -58,7 +58,7 @@ MAN1=		php-config.1 phpize.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.5.patch.gz
+PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.6.patch.gz
 PATCH_SITES=	http://www.hardened-php.net/suhosin/_media/
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=	SUHOSIN=""
