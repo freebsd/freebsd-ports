@@ -16,7 +16,7 @@ COMMENT=	Tcl/Tk based jabber client, development version
 
 LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg \
 		tkXwin.1:${PORTSDIR}/x11/tkXwin
-RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.7/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.9/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
