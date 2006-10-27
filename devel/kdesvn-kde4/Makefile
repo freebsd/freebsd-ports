@@ -15,8 +15,6 @@ COMMENT=	KDE frontend for Subversion
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
-BROKEN=		Incomplete pkg-plist
-
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 
@@ -33,6 +31,7 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 
 CXXFLAGS+=	-lc
 
@@ -51,8 +50,12 @@ do-configure:
 	@(cd ${WRKSRC}; \
 	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${PATCH_WRKSRC})
 
-post-install:
-	@${MV} ${PREFIX}/share/man/man1/kdesvn.1 ${PREFIX}/man/man1/kdesvn.1
-	@${MV} ${PREFIX}/share/man/man1/kdesvnaskpass.1 ${PREFIX}/man/man1/kdesvnaskpass.1
+post-build:
+	@${ECHO_CMD} "*************************************************************************"
+	@${ECHO_CMD} "				NOTE					       "
+	@${ECHO_CMD} "If you cannot build kdesvn successfully, please *pkg_delete* the existing"
+	@${ECHO_CMD} "kdesvn on your machine first and then try again. This issue should be    "
+	@${ECHO_CMD} "fixed in the next release version of kdesvn, hopefully.		       "
+	@${ECHO_CMD} "*************************************************************************"
 
 .include <bsd.port.post.mk>
