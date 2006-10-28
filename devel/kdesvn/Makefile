@@ -50,12 +50,13 @@ do-configure:
 	@(cd ${WRKSRC}; \
 	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${PATCH_WRKSRC})
 
-post-build:
+pre-build:
 	@${ECHO_CMD} "*************************************************************************"
 	@${ECHO_CMD} "				NOTE					       "
 	@${ECHO_CMD} "If you cannot build kdesvn successfully, please *pkg_delete* the existing"
 	@${ECHO_CMD} "kdesvn on your machine first and then try again. This issue should be    "
 	@${ECHO_CMD} "fixed in the next release version of kdesvn, hopefully.		       "
 	@${ECHO_CMD} "*************************************************************************"
+	@sleep 3
 
 .include <bsd.port.post.mk>
