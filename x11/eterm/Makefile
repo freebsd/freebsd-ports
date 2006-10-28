@@ -9,7 +9,8 @@ PORTNAME=	eterm
 PORTVERSION=	0.9.3
 PORTREVISION=	5
 CATEGORIES+=	x11
-MASTER_SITES=	http://www.eterm.org/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER?=	olgeni@FreeBSD.org
@@ -21,7 +22,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
