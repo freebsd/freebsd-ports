@@ -34,6 +34,66 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a9c51caf-6603-11db-ab90-000e35fd8194">
+    <topic>mysql -- database suid privilege escalation</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>5.1</ge><lt>5.1.12</lt></range>
+	<range><ge>5.0</ge><lt>5.0.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dmitri Lenev reports reports a privilege escalation in
+	  MySQL.  MySQL evaluates arguments of suid routines in the
+	  security context of the routine's definer instead of the
+	  routine's caller, which allows remote and local
+	  authenticated users to gain privileges through a routine
+	  that has been made available using GRANT EXECUTE.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4227</cvename>
+      <url>http://bugs.mysql.com/bug.php?id=18630</url>
+    </references>
+    <dates>
+      <discovery>2006-03-29</discovery>
+      <entry>2006-10-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a0e92718-6603-11db-ab90-000e35fd8194">
+    <topic>mysql -- database "case-sensitive" privilege escalation</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>5.1</ge><lt>5.1.12</lt></range>
+	<range><ge>5.0</ge><lt>5.0.25</lt></range>
+	<range><lt>4.1.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michal Prokopiuk reports a privilege escalation in MySQL.
+	  The vulnerability causes MySQL, when run on case-sensitive
+	  filesystems, to allow remote and local authenticated users
+	  to create or access a database when the database name
+	  differs only in case from a database for which they have
+	  permissions.</p>
+      </body>
+    </description>
+    <references>
+      <bid>19559</bid>
+      <cvename>CVE-2006-4226</cvename>
+      <url>http://bugs.mysql.com/bug.php?id=17647</url>
+    </references>
+    <dates>
+      <discovery>2006-08-09</discovery>
+      <entry>2006-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96ed277b-60e0-11db-ad2d-0016179b2dd5">
     <topic>Serendipity -- XSS Vulnerabilities</topic>
     <affects>
