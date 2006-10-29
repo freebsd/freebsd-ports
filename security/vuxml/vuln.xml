@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b318dc8c-6756-11db-83c3-000c6ec775d9">
+    <topic>screen -- combined UTF-8 characters vulnerability</topic>
+    <affects>
+      <package>
+	<name>screen</name>
+	<range><lt>4.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A vulnerability in the handling handling of combined UTF-8
+	  characters in screen may allow an user-assisted attacker to
+	  crash screen or potentially allow code execution as the user
+	  running screen.  To exploit this issue the user running
+	  scren must in some way interact with the attacker.</p>
+      </body>
+    </description>
+    <references>
+      <bid>20727</bid>
+      <cvename>CVE-2006-4573</cvename>
+      <mlist>http://lists.gnu.org/archive/html/screen-users/2006-10/msg00028.html</mlist>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=212056</url>
+    </references>
+    <dates>
+      <discovery>2006-10-23</discovery>
+      <entry>2006-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a9c51caf-6603-11db-ab90-000e35fd8194">
     <topic>mysql -- database suid privilege escalation</topic>
     <affects>
