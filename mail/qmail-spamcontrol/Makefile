@@ -9,7 +9,9 @@ PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${SPAMCONTROL_VERSION}
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:spamcontrol
+MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:spamcontrol \
+		${MASTER_SITE_LOCAL:S/$/:spamcontrol/}
+MASTER_SITE_SUBDIR=	garga/qmail/:spamcontrol
 PKGNAMESUFFIX=	-spamcontrol
 DISTFILES=	${QMAIL_DIST} ${SPAMCONTROL_DIST}:spamcontrol
 EXTRACT_ONLY=	${QMAIL_DIST}
