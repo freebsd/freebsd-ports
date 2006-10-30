@@ -13,9 +13,10 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.29.0
+lib/libestraier.so.8.30.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estfraud.cgi
+libexec/estproxy.cgi
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
@@ -236,6 +237,7 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/uguide-en.html
 %%DATADIR%%/doc/uguide-ja.html
 %%DATADIR%%/estfraud.conf
+%%DATADIR%%/estproxy.conf
 %%DATADIR%%/estraier.idl
 %%DATADIR%%/estresult.dtd
 %%DATADIR%%/estseek.conf
