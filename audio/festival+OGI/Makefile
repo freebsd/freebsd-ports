@@ -25,10 +25,6 @@ COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
-BROKEN=		Touches filesystem prior to make install
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 CONFLICTS=	festival-*
 DIST_SUBDIR=	festival
 
@@ -53,12 +49,6 @@ USE_GCC=	2.95
 USE_GMAKE=	yes
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 WRKSRC=		${WRKDIR}
-
-pre-everything::
-	@${ECHO_CMD} "* WARNING:  the source code for this port has not   *"
-	@${ECHO_CMD} "* been properly reviewed by the FreeBSD maintainer. *"
-	@${ECHO_CMD} "* Waiting ten seconds (control-C cancels build).    *"
-	@sleep 10
 
 post-extract:
 	@${TAR} -C ${WRKSRC} -xzf \
