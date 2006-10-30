@@ -3,11 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/xdg-utils/Makefile,v 1.2 2006/09/02 21:01:28 ahze Exp $
+#    $MCom: ports-stable/devel/xdg-utils/Makefile,v 1.1 2006/10/27 20:43:38 ahze Exp $
 #
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 EXTRACT_SUFX=	.tgz
@@ -28,5 +29,12 @@ XDG_FILES=	xdg-desktop-icon \
 PLIST_FILES+=	bin/${file}
 MAN1+=		${file}.1
 .endfor
+
+pre-patch:
+	@${RM} -f ${WRKSRC}/*/*.orig
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/scripts/xdg-*
 
 .include <bsd.port.mk>
