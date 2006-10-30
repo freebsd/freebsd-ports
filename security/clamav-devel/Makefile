@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20060922
+PORTVERSION=	20061029
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
-
-FORBIDDEN=	http://www.vuxml.org/freebsd/8012a79d-5d21-11db-bb8d-00123ffe8333.html
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
