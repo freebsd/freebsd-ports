@@ -74,7 +74,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Dmitri Lenev reports reports a privilege escalation in
+	<p>Dmitri Lenev reports a privilege escalation in
 	  MySQL.  MySQL evaluates arguments of suid routines in the
 	  security context of the routine's definer instead of the
 	  routine's caller, which allows remote and local
