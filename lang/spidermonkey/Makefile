@@ -6,7 +6,7 @@
 
 PORTNAME=	spidermonkey
 DISTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA:src,older
 MASTER_SITE_SUBDIR=	js/:src js/older-packages/:older
@@ -18,6 +18,11 @@ COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
 CONFLICTS=	njs-[0-9]*
 
+LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
+MAKE_ARGS+=	JS_THREADSAFE=YES \
+		PROG_LIBS="-lreadline -ltermcap -lm ${PTHREAD_LIBS}" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include/nspr
 .if defined(WITH_TEST)
 USE_PERL5_BUILD=test harness
 PATCHFILES=	spidermonkey-patch-tests-ecma.bz2	\
@@ -25,11 +30,6 @@ PATCHFILES=	spidermonkey-patch-tests-ecma.bz2	\
 		spidermonkey-patch-tests-js.bz2
 PATCH_SITES=	http://virtual-estates.net/~mi/port-stuff/
 BUILD_DEPENDS+=	${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
-LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
-MAKE_ARGS+=	JS_THREADSAFE=YES \
-		PROG_LIBS="-lreadline -ltermcap -lm ${PTHREAD_LIBS}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CFLAGS+=	-I${LOCALBASE}/include/nspr
 
 DISTFILES+=	js-tests-20021118${EXTRACT_SUFX}:older
 post-build:	test
@@ -43,7 +43,6 @@ post-patch:
 		js1_2/function/function-001-n.js	\
 		js1_3/Script/function-001-n.js	\
 		js1_5/Array/regress-101964.js
-
 .endif
 
 USE_GMAKE=	YES
