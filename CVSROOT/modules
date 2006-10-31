@@ -4763,6 +4763,7 @@ ja-jargon-fpw	ports/japanese/jargon-fpw
 ja-jcode.pl	ports/japanese/jcode.pl
 ja-jed		ports/japanese/jed
 ja-jhd		ports/japanese/jhd
+ja-jishyo	ports/japanese/jishyo
 ja-jisx0213-fonts	ports/japanese/jisx0213-fonts
 ja-jls		ports/japanese/jls
 ja-jmode	ports/japanese/jmode
