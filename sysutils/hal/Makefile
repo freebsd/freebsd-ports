@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 PORTVERSION=	${HALVERSION}.${SNAPVERSION}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
@@ -31,6 +31,7 @@ USE_PYTHON=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-hwdata=${LOCALBASE}/share/pciids \
 		--with-backend=freebsd \
+		--disable-docbook-docs \
 		--with-socket-dir=/var/run/hald \
 		--with-pid-file=/var/run/hald/hald.pid
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -38,7 +39,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTKDOC="false"
 
 HALVERSION=	0.5.8
-SNAPVERSION=	20060917
+SNAPVERSION=	20061030
 
 .if !defined(HAL_SLAVE)
 USE_RC_SUBR=	hald
