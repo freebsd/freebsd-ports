@@ -3,6 +3,4 @@ a simple interface with which you can launch programs. It is
 designed to be a part of the Slit. bbrun will maintain a history
 file in $HOME/.bbrun_history
 
-WWW: http://www.darkops.net/bbrun/
-
 - Adam Weinberger <adamw@FreeBSD.org>
