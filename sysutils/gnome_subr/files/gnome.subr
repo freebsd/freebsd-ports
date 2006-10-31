@@ -1,0 +1,9 @@
+# $FreeBSD$
+
+# Add the following to /etc/rc.conf to start GNOME services (dbus,
+# hald, gdm, and so on) at boot time:
+#
+# gnome_enable="YES"
+#
+
+gnome_enable=${gnome_enable-"NO"}
