@@ -1445,6 +1445,7 @@
     SUBDIR += p5-Thread-Apartment
     SUBDIR += p5-Thread-Queue-Duplex
     SUBDIR += p5-Tie-Array-Sorted
+    SUBDIR += p5-Tie-CPHash
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_File-SplitHash
     SUBDIR += p5-Tie-DB_FileLock
