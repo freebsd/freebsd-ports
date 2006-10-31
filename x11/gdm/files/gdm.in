@@ -10,9 +10,10 @@
 # gdm_enable="YES"
 #
 
-gdm_enable=${gdm_enable-"NO"}
-
 . %%RC_SUBR%%
+. %%GNOME_SUBR%%
+
+gdm_enable=${gdm_enable-${gnome_enable}}
 
 name=gdm
 rcvar=`set_rcvar`
