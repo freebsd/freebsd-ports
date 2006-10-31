@@ -18,7 +18,7 @@ COMMENT=	DrWeb antivirus suite
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-ONLY_FOR_ARCHS=	i386
+IA32_BINARY_PORT=yes
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
