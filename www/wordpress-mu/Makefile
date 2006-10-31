@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.5.1.3
-PORTEPOCH=	1
+PORTVERSION=	1.0
+PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.twaren.net/local-distfiles/wpmu/ \
-		http://blogs.linux.ie/download/wpmu/ \
-		http://mu.wordpress.org/nightly-builds/
-DISTNAME=	wpmu-stable-${PORTVERSION:S/./_/g}
+MASTER_SITES=	http://blogs.linux.ie/download/wpmu/ \
+		http://ftp.twaren.net/local-distfiles/wpmu/
+DISTNAME=	wordpressmu-${PORTVERSION}
 
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Multi-user version of the famous WordPress blogging application
@@ -20,35 +19,40 @@ COMMENT=	Multi-user version of the famous WordPress blogging application
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_PHP=	mysql pcre xml
-NO_BUILD=	yes
-WANT_PHP_WEB=	yes
+NO_BUILD=	YES
+WANT_PHP_WEB=	YES
 WORDPRESSMU?=	www/data/wordpress-mu
 PLIST_SUB+=	WORDPRESSMU=${WORDPRESSMU}
 PLIST=		${WRKDIR}/pkg-plist
 
-PORTDOCS=	license.txt readme.html
+PORTDOCS=	license.txt README.txt
 
-do-install:
-	@${MKDIR} ${PREFIX}/${WORDPRESSMU}
-	@${CHOWN} www:www ${PREFIX}/${WORDPRESSMU}
-	@${CHMOD} 755 ${PREFIX}/${WORDPRESSMU}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${WORDPRESSMU}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/wp-inst/${i} ${DOCSDIR}
-.endfor
-.endif
+pre-everything::
+	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
+	@${ECHO_CMD} ""
+	@sleep 1
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${WORDPRESSMU}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
-	${SED} -e 's|^|@dirrm ${WORDPRESSMU}/|' >> ${PLIST} \
+		${SED} -e 's|^|@dirrm ${WORDPRESSMU}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${WORDPRESSMU} >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
+do-install:
+	@${MKDIR} ${PREFIX}/${WORDPRESSMU}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${WORDPRESSMU}
+	@${CHMOD} 755 ${PREFIX}/${WORDPRESSMU}
+	@${CP} -R ${WRKSRC}/ ${PREFIX}/${WORDPRESSMU}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
