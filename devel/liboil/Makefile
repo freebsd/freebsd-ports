@@ -3,7 +3,7 @@
 # Whom:					ijliao
 #
 # $FreeBSD$
-#
+#      $Id: Makefile 23 2006-10-25 14:24:32Z buhnux $
 
 PORTNAME=	liboil
 PORTVERSION=	0.3.9
@@ -16,10 +16,11 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-gtk-doc \
+		--disable-glib
 CFLAGS+=	-O2
 
 .include <bsd.port.pre.mk>
