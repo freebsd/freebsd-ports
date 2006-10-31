@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pecl_http
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.3
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--with-http-magic-mime=${MAGICBASE}
 CONFIGURE_ARGS+=--without-http-magic-mime
 .endif
 
-.if defined(WITH_ZLIB_COMPRESSION) && ${OSVERSION} < 500000
+.if defined(WITH_ZLIB_COMPRESSION) && ${OSVERSION} > 500000
 CONFIGURE_ARGS+=--with-http-zlib-compression=/usr
 .else
 CONFIGURE_ARGS+=--without-http-zlib-compression
