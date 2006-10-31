@@ -27,6 +27,7 @@ sbin/gkrellmd
 %%NLS%%share/locale/ja/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gkrellm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo

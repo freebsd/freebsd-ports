@@ -1,10 +1,10 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	Tue May 10 01:54:03 2005
-+++ src/Makefile	Mon May 16 18:38:15 2005
-@@ -32,16 +32,18 @@
- 	CONFIGURE_ARGS += --without-ssl
+--- src/Makefile.orig	Wed Oct 25 08:42:42 2006
++++ src/Makefile	Fri Oct 27 12:44:24 2006
+@@ -39,17 +39,19 @@
  endif
+ 
  
 -DUMMY_VAR := $(shell ./configure $(CONFIGURE_ARGS))
 +DUMMY_VAR := $(shell env OPENSSLINC=$(OPENSSLINC) OPENSSLLIB=$(OPENSSLLIB) \
@@ -13,6 +13,7 @@ diff -u src/Makefile.orig src/Makefile
  
  HAVE_GNUTLS = $(shell grep -c HAVE_GNUTLS configure.h)
  HAVE_SSL = $(shell grep -c HAVE_SSL configure.h)
+ HAVE_LIBSENSORS = $(shell grep -c HAVE_LIBSENSORS configure.h)
  
  ifeq ($(HAVE_GNUTLS),1)
 -    SSL_LIBS ?= -lgnutls-openssl
@@ -24,7 +25,7 @@ diff -u src/Makefile.orig src/Makefile
  else
      EXTRAOBJS ?= md5c.o
  endif
-@@ -56,8 +58,16 @@
+@@ -68,8 +70,16 @@
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
@@ -40,5 +41,5 @@ diff -u src/Makefile.orig src/Makefile
 +endif
 +endif
  
- LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS)
+ LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS)
  
