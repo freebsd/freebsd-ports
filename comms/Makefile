@@ -53,6 +53,7 @@
     SUBDIR += libirman
     SUBDIR += libticables
     SUBDIR += libticables2
+    SUBDIR += libticalcs2
     SUBDIR += linpsk
     SUBDIR += linrad
     SUBDIR += lirc
