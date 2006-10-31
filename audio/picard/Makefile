@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	picard
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.2
 CATEGORIES=	audio python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alexbl
+MASTER_SITES=	https://helixcommunity.org/frs/download.php/2252/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Next generation MusicBrainzTagger
