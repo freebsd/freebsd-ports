@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bib2html
-DISTVERSION=	5.0-1
+DISTVERSION=	5.1-1
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.arakhne.org/IMG/gz/ \
 		http://fresh.t-systems-sfr.com/fresh/unix/src/privat2/
