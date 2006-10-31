@@ -7,6 +7,7 @@
 
 PORTNAME=	mozplugger
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +20,6 @@ EXTRACT_DEPENDS=bzip2:${PORTSDIR}/archivers/bzip2
 MAN7=		mozplugger.7
 
 USE_XLIB=	yes
-USE_X_PREFIX=	yes
 
 FETCH_CMD=	/usr/bin/fetch -Rr
 
