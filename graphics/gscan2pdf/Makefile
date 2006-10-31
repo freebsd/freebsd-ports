@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,7 +15,8 @@ COMMENT=	Produce PDF from scanned documents
 
 RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
