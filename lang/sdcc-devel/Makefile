@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.6.1.2006.08.10
+PORTVERSION=	2.6.1.2006.10.12
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://www.kalimero.be/mirror/
-DISTNAME=	${PORTNAME}-src-20060810-4330
+DISTNAME=	${PORTNAME}-src-20061012-4408
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
