@@ -1,5 +1,5 @@
-bin/wsdl2dispatch.py
-bin/wsdl2py.py
+bin/wsdl2dispatch
+bin/wsdl2py
 %%EXAMPLESDIR%%/interop/InteropTest.wsdl
 %%EXAMPLESDIR%%/interop/InteropTestB.wsdl
 %%EXAMPLESDIR%%/interop/README
@@ -19,6 +19,7 @@ bin/wsdl2py.py
 %%EXAMPLESDIR%%/samples/poly.py
 %%EXAMPLESDIR%%/test/README
 %%EXAMPLESDIR%%/test/cgicli.py
+%%EXAMPLESDIR%%/test/test_TCtimes.py
 %%EXAMPLESDIR%%/test/test_t1.py
 %%EXAMPLESDIR%%/test/test_t2.py
 %%EXAMPLESDIR%%/test/test_t3.py
@@ -36,35 +37,18 @@ bin/wsdl2py.py
 %%EXAMPLESDIR%%/test/wsdl2py/ServiceTest.py
 %%EXAMPLESDIR%%/test/wsdl2py/config.txt
 %%EXAMPLESDIR%%/test/wsdl2py/runTests.py
+%%EXAMPLESDIR%%/test/wsdl2py/servers/EchoServer.py
 %%EXAMPLESDIR%%/test/wsdl2py/servers/WhiteMesa.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/CommonService_services.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/CommonService_services_server.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/CommonService_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/EchoServer_services.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/EchoServer_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/OpcXmlDaSrv_services.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/OpcXmlDaSrv_services_server.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/OpcXmlDaSrv_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/RPC_Literal_TestDefinitions_services.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/RPC_Literal_TestDefinitions_services_server.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/RPC_Literal_TestDefinitions_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/SessionCreateRQService_services.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/SessionCreateRQService_services_server.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/SessionCreateRQService_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/ZipCodeResolver_services.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/ZipCodeResolver_services_server.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/ZipCodeResolver_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/test_Attributes_xsd_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/stubs/test_Choice_xsd_services_types.py
-%%EXAMPLESDIR%%/test/wsdl2py/test_AmazonWebService.py
+%%EXAMPLESDIR%%/test/wsdl2py/test_AmazonS3.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_Attributes.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_Attributes.xsd
+%%EXAMPLESDIR%%/test/wsdl2py/test_AWSECommerceService.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_Choice.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_Choice.xsd
+%%EXAMPLESDIR%%/test/wsdl2py/test_DerivedTypes.py
+%%EXAMPLESDIR%%/test/wsdl2py/test_DerivedTypes.xsd
 %%EXAMPLESDIR%%/test/wsdl2py/test_Echo.py
-%%EXAMPLESDIR%%/test/wsdl2py/test_FreeDBService.py
-%%EXAMPLESDIR%%/test/wsdl2py/test_GlobalWeather_gw.py
-%%EXAMPLESDIR%%/test/wsdl2py/test_GlobalWeather_si.py
+%%EXAMPLESDIR%%/test/wsdl2py/test_InfoBil.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_MapPoint.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_OpcDaGateway.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_Sabre.py
@@ -73,8 +57,6 @@ bin/wsdl2py.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_WhiteMesa.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_XMethodsQuery.py
 %%EXAMPLESDIR%%/test/wsdl2py/test_ZipCodeResolver.py
-%%EXAMPLESDIR%%/test/wsdl2py/test_compile.py
-%%EXAMPLESDIR%%/test/wsdl2py/test_wsdl2py.py
 %%PYTHON_SITELIBDIR%%/ZSI/ServiceContainer.py
 %%PYTHON_SITELIBDIR%%/ZSI/ServiceContainer.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/ServiceContainer.pyo
@@ -123,6 +105,9 @@ bin/wsdl2py.py
 %%PYTHON_SITELIBDIR%%/ZSI/generate/containers.py
 %%PYTHON_SITELIBDIR%%/ZSI/generate/containers.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/generate/containers.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/generate/commands.py
+%%PYTHON_SITELIBDIR%%/ZSI/generate/commands.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/generate/commands.pyo
 %%PYTHON_SITELIBDIR%%/ZSI/generate/pyclass.py
 %%PYTHON_SITELIBDIR%%/ZSI/generate/pyclass.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/generate/pyclass.pyo
@@ -141,9 +126,24 @@ bin/wsdl2py.py
 %%PYTHON_SITELIBDIR%%/ZSI/resolvers.py
 %%PYTHON_SITELIBDIR%%/ZSI/resolvers.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/resolvers.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/schema.py
+%%PYTHON_SITELIBDIR%%/ZSI/schema.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/schema.pyo
 %%PYTHON_SITELIBDIR%%/ZSI/typeinterpreter.py
 %%PYTHON_SITELIBDIR%%/ZSI/typeinterpreter.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/typeinterpreter.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/__init__.py
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/client.py
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/client.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/client.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/WSresource.py
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/WSresource.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/WSresource.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/WSsecurity.py
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/WSsecurity.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/twisted/WSsecurity.pyo
 %%PYTHON_SITELIBDIR%%/ZSI/version.py
 %%PYTHON_SITELIBDIR%%/ZSI/version.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/version.pyo
@@ -180,14 +180,14 @@ bin/wsdl2py.py
 %%PYTHON_SITELIBDIR%%/ZSI/wstools/logging.py
 %%PYTHON_SITELIBDIR%%/ZSI/wstools/logging.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/wstools/logging.pyo
-@dirrm %%EXAMPLESDIR%%/test/wsdl2py/stubs
+@dirrm %%EXAMPLESDIR%%/interop
+@dirrm %%EXAMPLESDIR%%/samples/Echo
+@dirrm %%EXAMPLESDIR%%/samples
 @dirrm %%EXAMPLESDIR%%/test/wsdl2py/servers
 @dirrm %%EXAMPLESDIR%%/test/wsdl2py
 @dirrm %%EXAMPLESDIR%%/test
-@dirrm %%EXAMPLESDIR%%/samples/Echo
-@dirrm %%EXAMPLESDIR%%/samples
-@dirrm %%EXAMPLESDIR%%/interop
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/ZSI/wstools
 @dirrm %%PYTHON_SITELIBDIR%%/ZSI/generate
+@dirrm %%PYTHON_SITELIBDIR%%/ZSI/twisted
+@dirrm %%PYTHON_SITELIBDIR%%/ZSI/wstools
 @dirrm %%PYTHON_SITELIBDIR%%/ZSI
