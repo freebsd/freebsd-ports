@@ -1666,6 +1666,7 @@ dbs		ports/benchmarks/dbs
 dbtool		ports/databases/dbtool
 dbus		ports/devel/dbus
 dbus-glib	ports/devel/dbus-glib
+dbus-qt3	ports/devel/dbus-qt3
 dbus-sharp	ports/devel/dbus-sharp
 dbview		ports/databases/dbview
 dc20ctrl	ports/graphics/dc20ctrl
