@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+INN_LAYOUT?=		old
+
 .if !empty(INN_LAYOUT:L:Mnew)
 #-----------------------------------------------------------------------
 # New-style layout. Keep database, spool, and other transient data under
