@@ -1,13 +1,13 @@
-Warzone 2100 was an innovative 3D real-time strategy game back in 1999, and
-most will agree it didn't enjoy the commercial success it should have had. The
-game's source code was liberated on December 6th, 2004, under a GPL license
-(see COPYING in this directory for details). Soon after that, the Warzone 2100
-ReDev project was formed to take care of its future.
+Warzone 2100 is a real-time strategy game, developed by Pumpkin Studios and
+published by Eidos-Interactive. Although comparable to Earth2150 in many
+significant respects, it does contain aspects that are unique. These include
+various radar technologies, a greater focus on artillery and counter-battery
+technologies, more frequent in-game cinematic updates as gameplay progress, as
+well as a different vehicle design method. It was released in 1999 for both PC
+and Playstation.
 
-Our goal is to make warzone run on all possible platforms. Therefore, we
-stripped the original code of all proprietary technologies and replaced them
-with cross-platform and free equivalents, like OpenGL, OpenAL, etc... Right
-now, Warzone 2100 works very well on Windows and GNU/Linux, and we have even
-heard of it running on BSD with no particular issue.
+In late 2004 warzone was released by its copyright holders, Eidos-Interactive,
+to the public under the GNU General Public License (GPL), and the Warzone 2100
+Resurrection Project was born.
 
-WWW: http://wz.rootzilla.de/site/
+WWW: http://wz2100.net/

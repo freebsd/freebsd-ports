@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	warzone2100
-PORTVERSION=	2.0.4
+DISTVERSION=	2.0.5_rc1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
@@ -26,14 +26,13 @@ USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GL=		yes
 USE_SDL=	net sdl
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
-		`${SDL_CONFIG} --cflags`
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+WRKSRC=		${WRKDIR}/warzone-${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -47,15 +46,11 @@ post-patch:
 		 s|/usr/local|${LOCALBASE}|; \
 		 s|/usr/X11R6|${X11BASE}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.for f in configure *.c *.h
-	@${FIND} ${WRKSRC} -type f -name "${f}" -print0 | \
-		${XARGS} -0 ${REINPLACE_CMD} -e 's|SDL/||'
-.endfor
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
