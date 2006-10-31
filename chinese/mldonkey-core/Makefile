@@ -13,14 +13,12 @@ CATEGORIES=	chinese
 MAINTAINER=	piaip@csie.ntu.edu.tw
 COMMENT=	Client 'core' for MLDonkey with Traditional Chinese (Big5) support
 
-BROKEN=		Fails to patch
-
 WITHOUT_GUI=	yes
 MASTERDIR=	${.CURDIR}/../../net-p2p/mldonkey
 EXTRA_PATCHES=	${.CURDIR}/files/patch-driverControlers.ml
 
-WRAPPERPREFIX=  ${.CURDIR}/files/wrapper-prefix
-WRAPPER= 	${WRKDIR}/wrapper.sh
+WRAPPERPREFIX=	${.CURDIR}/files/wrapper-prefix
+WRAPPER=	${WRKDIR}/wrapper.sh
 
 # build our own wrapper script
 post-patch-script:
@@ -31,4 +29,4 @@ post-patch-script:
 
 # I know this will lead portlint to fail,
 # but we have to do so.
-PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}tw-
