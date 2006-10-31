@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fwlogwatch
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
@@ -16,6 +15,7 @@ MAINTAINER=	mranner@inode.at
 COMMENT=	A packet filter and firewall log analyzer
 
 USE_GETTEXT=	yes
+USE_BZIP2=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 INSTALL_TARGET=	install install-config install-i18n
 

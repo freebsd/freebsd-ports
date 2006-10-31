@@ -1,27 +1,24 @@
---- Makefile.orig	Sun Apr  4 17:42:16 2004
-+++ Makefile	Tue May 18 21:46:48 2004
+--- Makefile.orig	Wed Mar  8 20:36:02 2006
++++ Makefile	Sat Oct 21 20:44:00 2006
 @@ -2,10 +2,10 @@
- # $Id: Makefile,v 1.73 2004/04/04 14:42:16 bw Exp $
+ # $Id: Makefile,v 1.76 2006/03/08 19:36:02 bw Exp $
  
  # Linux
 -CC = gcc
 -CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall #-pedantic -Wpointer-arith #-g #-p
 -LDFLAGS = #-g #-static -p
--LIBS = -lcrypt -lz #-lc_p
+-LIBS = -lcrypt -lz #-ladns #-lc_p
 +#CC = gcc
 +#CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall #-pedantic -Wpointer-arith #-g #-p
 +#LDFLAGS = #-g #-static -p
-+#LIBS = -lcrypt -lz #-lc_p
++#LIBS = -lcrypt -lz #-ladns #-lc_p
  
  # Solaris
  #LIBS = -lnsl -lsocket -lcrypt -lz
-@@ -23,9 +23,12 @@
- #LIBS = -L/usr/local/lib -lz -lintl
- 
- # FreeBSD
--#CC = gcc
--#CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall -I/usr/local/include
--#LIBS = -L/usr/local/lib -lcrypt -lz -lintl
+@@ -26,6 +26,12 @@
+ #CC = gcc
+ #CFLAGS = -DHAVE_ZLIB -DHAVE_GETTEXT -pipe -O2 -Wall -I/usr/local/include
+ #LIBS = -L/usr/local/lib -lcrypt -lz -lintl
 +CC ?= gcc
 +CFLAGS += -DHAVE_ZLIB -DHAVE_GETTEXT -I${LOCALBASE}/include \
 +	-DINSTALL_DIR=\"${INSTALL_DIR}\" \
@@ -29,9 +26,9 @@
 +	-DLOCALE_DIR=\"${LOCALE_DIR}\"
 +LIBS = -L${LOCALBASE}/lib -lcrypt -lz -lintl
  
- # You might want to add -DSHORT_NAMES to CFLAGS if you only intend to
- # analyze log formats with short list/chain/branch/interface names like
-@@ -38,12 +41,12 @@
+ # You might want to add -DSHORT_NAMES to CFLAGS if you only intend to analyze
+ # log formats with short list/chain/branch/interface names like ipchains.
+@@ -39,12 +45,18 @@
  LFLAGS = -B #-f #-p -p -d
  
  INSTALL = install
@@ -41,6 +38,12 @@
 -INSTALL_DIR = /usr/local
 -CONF_DIR = /etc
 -LOCALE_DIR = /usr
++#INSTALL_PROGRAM = $(INSTALL) -s -m 0755
++#INSTALL_SCRIPT = $(INSTALL) -m 0755
++#INSTALL_DATA = $(INSTALL) -m 0644
++#INSTALL_DIR = /usr/local
++#CONF_DIR = /etc
++#LOCALE_DIR = /usr
 +INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
 +INSTALL_SCRIPT = ${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA = ${BSD_INSTALL_DATA}
@@ -50,7 +53,7 @@
  
  OBJS = cisco_ios.o cisco_pix.o compare.o ipchains.o ipfilter.o ipfw.o \
         lancom.o main.o modes.o net.o netfilter.o netscreen.o output.o \
-@@ -85,19 +88,25 @@
+@@ -86,19 +98,25 @@
  	$(INSTALL_PROGRAM) fwlogwatch $(INSTALL_DIR)/sbin/fwlogwatch
  	$(INSTALL_SCRIPT) contrib/fwlw_notify $(INSTALL_DIR)/sbin/fwlw_notify
  	$(INSTALL_SCRIPT) contrib/fwlw_respond $(INSTALL_DIR)/sbin/fwlw_respond
@@ -78,3 +81,9 @@
  	$(INSTALL_DATA) po/zh_TW.mo $(LOCALE_DIR)/share/locale/zh_TW/LC_MESSAGES/fwlogwatch.mo
  
  install-rhinit:
+@@ -120,4 +138,4 @@
+ 
+ clean:
+ 	rm -f *.o *~ *.bak fwlogwatch
+-	cd po; make clean
++	cd po; $(MAKE) clean
