@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	log_analysis
-PORTVERSION=	0.43
+PORTVERSION=	0.45
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lug.umbc.edu/~mabzug1/
+MASTER_SITES=	http://userpages.umbc.edu/~mabzug1/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A utility that extracts a summary of useful data from logs
 
 USE_PERL5=	yes
