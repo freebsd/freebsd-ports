@@ -237,6 +237,7 @@
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome-system-tools
     SUBDIR += gnome-volume-manager
+    SUBDIR += gnome_subr
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
     SUBDIR += gpart
