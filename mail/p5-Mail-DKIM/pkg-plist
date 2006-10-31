@@ -1,13 +1,18 @@
 lib/perl5/site_perl/5.8.8/Mail/DKIM.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/Base.pm
+lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/rsa_sha1.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/rsa_sha256.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/Base.pm
+lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/DkCommon.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/DkimCommon.pm
+lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/dk_nofws.pm
+lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/dk_simple.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/nowsp.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/relaxed.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/simple.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Common.pm
+lib/perl5/site_perl/5.8.8/Mail/DKIM/DkSignature.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Key.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/KeyValueList.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/MessageParser.pm
@@ -17,7 +22,6 @@ lib/perl5/site_perl/5.8.8/Mail/DKIM/PublicKey.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Signature.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Signer.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/SignerPolicy.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/SigningFilter.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Verifier.pm
 lib/perl5/site_perl/5.8.8/mach/auto/Mail/DKIM/.packlist
 @dirrm lib/perl5/site_perl/5.8.8/mach/auto/Mail/DKIM
