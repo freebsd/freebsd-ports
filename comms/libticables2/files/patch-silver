@@ -1,0 +1,78 @@
+Index: src/ticables.c
+===================================================================
+--- src/ticables.c	(revision 2995)
++++ src/ticables.c	(working copy)
+@@ -33,6 +33,9 @@
+ #ifdef __LINUX__
+ #include <sys/utsname.h>
+ #endif
++#if defined(HAVE_LIBUSB)
++#include <usb.h>
++#endif
+ 
+ #include "gettext.h"
+ #include "ticables.h"
+@@ -140,6 +143,10 @@
+ 	    ticables_info("kernel: %s", buf.release);
+ 	}
+ #endif
++#if defined(HAVE_LIBUSB)
++	/* init the libusb */
++	usb_init();
++#endif
+ 
+   	return (++ticables_instance);
+ }
+Index: src/linux/link_slv.c
+===================================================================
+--- src/linux/link_slv.c	(revision 2995)
++++ src/linux/link_slv.c	(working copy)
+@@ -245,11 +245,11 @@
+ 	han = usb_open(dev);
+ 	ret = usb_get_string_simple(han, dev->descriptor.iProduct, 
+ 				    string, sizeof(string));
++	usb_close(han);
+ 	if (ret > 0)
+ 	    return string;
+ 	else
+ 	    return "";
+-	usb_close(han);
+     }
+ 
+     return string;
+@@ -276,7 +276,7 @@
+ 		    if(dev->descriptor.idProduct == tigl_infos[i].pid)
+ 		    {
+ 			ticables_info(" found <%s> on #%i, version <%x.%02x>", 
+-				      tigl_get_product(dev), j+1, 
++				      /*tigl_get_product(dev)*/ "", j+1,
+ 				      dev->descriptor.bcdDevice >> 8,
+ 				      dev->descriptor.bcdDevice & 0xff);
+ 
+@@ -296,9 +296,6 @@
+ {
+     int ret = 0;
+     
+-    /* init the libusb */
+-    usb_init();
+-    
+     /* find all usb busses on the system */
+     ret = usb_find_busses();
+     if (ret < 0)
+@@ -480,6 +477,7 @@
+ 
+ static int slv_reset(CableHandle *h)
+ {
++#if !defined(__BSD__)
+     /* Reset both endpoints */
+ #ifdef SLV_RESET
+     TRYC(tigl_reset(uHdl));
+@@ -487,7 +485,7 @@
+ 	TRYC(slv_close(h));
+ 	TRYC(slv_open(h));
+ #endif
+-    
++#endif
+     return 0;
+ }
+ 
