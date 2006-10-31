@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	34.t25.d9
+PORTVERSION=	34.t26.b3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/ \
 		${MASTER_SITE_LOCAL}

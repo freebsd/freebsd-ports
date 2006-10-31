@@ -63,6 +63,7 @@ etc/fastlibs.sample
 %%EXAMPLESDIR%%/musplfm.aa
 %%EXAMPLESDIR%%/mwkw.aa
 %%EXAMPLESDIR%%/mwrtc1.aa
+%%EXAMPLESDIR%%/myosin_bp.aa
 %%EXAMPLESDIR%%/n0.aa
 %%EXAMPLESDIR%%/n1.aa
 %%EXAMPLESDIR%%/n2.aa
@@ -73,6 +74,7 @@ etc/fastlibs.sample
 %%EXAMPLESDIR%%/oohu.aa
 %%EXAMPLESDIR%%/prio_atepa.aa
 %%EXAMPLESDIR%%/qrhuld.aa
+%%EXAMPLESDIR%%/titin_hum.aa
 %%EXAMPLESDIR%%/xurt8c.aa
 %%EXAMPLESDIR%%/xurtg.aa
 %%EXAMPLESDIR%%/mgstm1.lc
@@ -84,6 +86,7 @@ etc/fastlibs.sample
 %%EXAMPLESDIR%%/humgstd.seq
 %%EXAMPLESDIR%%/mgstm1.seq
 %%EXAMPLESDIR%%/mgtt2_x.seq
+%%EXAMPLESDIR%%/titin_hum.seq
 %%DATADIR%%/blosum45.mat
 %%DATADIR%%/blosum50.mat
 %%DATADIR%%/blosum62.mat
