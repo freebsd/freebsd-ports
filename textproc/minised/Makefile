@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minised
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.exactcode.de/oss/minised/ CSME
 
