@@ -1,0 +1,11 @@
+include/tilp2/charset.h
+include/tilp2/export4.h
+include/tilp2/stdints4.h
+include/tilp2/ticonv.h
+include/tilp2/ticonv.h-e
+lib/libticonv.a
+lib/libticonv.la
+lib/libticonv.so
+lib/libticonv.so.2
+libdata/pkgconfig/ticonv.pc
+@dirrmtry include/tilp2

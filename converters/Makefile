@@ -28,6 +28,7 @@
     SUBDIR += konwert
     SUBDIR += ktextdecode
     SUBDIR += libiconv
+    SUBDIR += libticonv
     SUBDIR += libutf-8
     SUBDIR += mimelib
     SUBDIR += mmencode
