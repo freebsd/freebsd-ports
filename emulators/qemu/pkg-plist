@@ -8,6 +8,7 @@ bin/qemu-system-sparc
 bin/qemu-system-x86_64
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/bios.bin
 %%DATADIR%%/linux_boot.bin
 %%DATADIR%%/vgabios.bin
@@ -52,4 +53,3 @@ bin/qemu-system-x86_64
 %%DATADIR%%/keymaps/tr
 @dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
