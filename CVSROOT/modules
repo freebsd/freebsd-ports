@@ -11705,6 +11705,7 @@ prboom		ports/games/prboom
 prc-tools	ports/palm/prc-tools
 prcs		ports/devel/prcs
 predict		ports/comms/predict
+preferencepanes	ports/deskutils/preferencepanes
 preferences.app	ports/deskutils/preferences.app
 preferential	ports/www/preferential
 prelude-lml	ports/security/prelude-lml
