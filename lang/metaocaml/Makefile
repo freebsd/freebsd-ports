@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	metaocaml
-PORTVERSION=	3.08.a27
+PORTVERSION=	3.09.a30
 CATEGORIES=	lang
 MASTER_SITES=	http://www.metaocaml.org/dist/old/
-DISTNAME=	MetaOCaml_308_alpha_027
+DISTNAME=	MetaOCaml_309_alpha_030
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	The MetaOCaml compiler and programming environment
@@ -21,7 +21,7 @@ REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix ${PREFIX} -cc "${CC} ${CFLAGS}" -with-pthread \
 		-libdir ${PREFIX}/lib/metaocaml/lib \
-	        -bindir ${PREFIX}/lib/metaocaml/bin \
+		-bindir ${PREFIX}/lib/metaocaml/bin \
 		-mandir ${DATADIR}/man
 
 USE_GMAKE=	yes
@@ -36,15 +36,16 @@ MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamldoc.1 ocamlopt.1 \
 		ocamllex.1 ocamlprof.1 camlp4.1
 MANN=		Arg.n Array.n ArrayLabels.n Bigarray.Array1.n \
 		Bigarray.Array2.n Bigarray.Array3.n Bigarray.Genarray.n \
-		Bigarray.n Buffer.n Callback.n CamlinternalOO.n Char.n \
-		Complex.n Digest.n Filename.n Format.n Gc.n Genlex.n \
-		Hashtbl.HashedType.n Hashtbl.Make.n Hashtbl.S.n Hashtbl.n \
-		Int32.n Int64.n Lazy.n Lexing.n List.n ListLabels.n \
-		Map.Make.n Map.OrderedType.n Map.S.n Map.n Marshal.n \
-		MoreLabels.Hashtbl.HashedType.n MoreLabels.Hashtbl.Make.n \
-		MoreLabels.Hashtbl.S.n MoreLabels.Hashtbl.n \
-		MoreLabels.Map.Make.n MoreLabels.Map.OrderedType.n \
-		MoreLabels.Map.S.n MoreLabels.Map.n MoreLabels.Set.Make.n \
+		Bigarray.n Buffer.n Callback.n CamlinternalOO.n \
+		CamlinternalMod.n Char.n Complex.n Digest.n Filename.n \
+		Format.n Gc.n Genlex.n Hashtbl.HashedType.n Hashtbl.Make.n \
+		Hashtbl.S.n Hashtbl.n Int32.n Int64.n Lazy.n Lexing.n List.n \
+		ListLabels.n Map.Make.n Map.OrderedType.n Map.S.n Map.n \
+		Marshal.n MoreLabels.Hashtbl.HashedType.n \
+		MoreLabels.Hashtbl.Make.n MoreLabels.Hashtbl.S.n \
+		MoreLabels.Hashtbl.n MoreLabels.Map.Make.n \
+		MoreLabels.Map.OrderedType.n MoreLabels.Map.S.n \
+		MoreLabels.Map.n MoreLabels.Set.Make.n \
 		MoreLabels.Set.OrderedType.n MoreLabels.Set.S.n \
 		MoreLabels.Set.n MoreLabels.n Nativeint.n Num.n Obj.n Oo.n \
 		Parsing.n Pervasives.LargeFile.n Pervasives.n Printexc.n \
@@ -61,7 +62,14 @@ MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 OPTIONS=	X11 "build the X11 graphics library" on \
 		LABLTK "build the LablTk library" on
 
+PLISTDIR=	${PREFIX}/lib/metaocaml \
+		${PREFIX}/share/examples/metaocaml \
+		${PREFIX}/bin/metaocaml \
+		${PREFIX}/bin/metaocamlc \
+		${PREFIX}/bin/metaocamlopt
+
 .include <bsd.port.pre.mk>
+
 # Have to set this here and can't use ${DATADIR} or MLINKS get screwed up
 MANPREFIX=	${TARGETDIR}/share/metaocaml
 
@@ -76,8 +84,9 @@ PLIST_SUB+=	X11="@comment "
 # We would like to use bsd.tcl.mk here, but we can't USE_TCL after including
 # bsd.port.pre.mk and we can't test WITH_LABLTK before including bsd.port.pre.mk
 .if defined(WITH_LABLTK)
-LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-CONFIGURE_ARGS+=-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
+USE_TK=		84
+USE_TK_BUILD=	84
+CONFIGURE_ARGS+=-tkdefs -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
 CONFIGURE_ARGS+=-tklibs "-L${LOCALBASE}/lib"
 PLIST_SUB+=	LABLTK=""
 .if defined(WITHOUT_X11)
@@ -123,6 +132,17 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/lib/metaocaml/bin/${p}
 .endfor
 	${CHMOD} u+w ${PREFIX}/lib/metaocaml/lib/ld.conf
+.for dir in ${PLISTDIR}
+	@${FIND} ${dir} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${dir} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.endfor
+	echo "@exec mkdir -p  %D/lib/metaocaml/lib/ocamldoc/custom" >> ${TMPPLIST}
+	echo "@dirrm ${MANPREFIX:S|${PREFIX}/||}/man/man1" >> ${TMPPLIST}
+	echo "@dirrm ${MANPREFIX:S|${PREFIX}/||}/man/mann" >> ${TMPPLIST}
+	echo "@dirrm ${MANPREFIX:S|${PREFIX}/||}/man" >> ${TMPPLIST}
+	echo "@dirrm ${MANPREFIX:S|${PREFIX}/||}" >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
