@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evtViewer
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://contribs.martymac.com/evtViewer/ \
 		${MASTER_SITE_LOCAL}
