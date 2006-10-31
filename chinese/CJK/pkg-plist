@@ -26,6 +26,7 @@ bin/sjispdflatex
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/TDS.txt
+%%PORTDOCS%%%%DOCSDIR%%/TeXLive.txt
 %%PORTDOCS%%%%DOCSDIR%%/chinese/README
 %%PORTDOCS%%%%DOCSDIR%%/chinese/READMEb5.tex
 %%PORTDOCS%%%%DOCSDIR%%/chinese/READMEgb.tex
@@ -47,20 +48,20 @@ bin/sjispdflatex
 %%PORTDOCS%%%%DOCSDIR%%/japanese/jp-tex.txt
 %%PORTDOCS%%%%DOCSDIR%%/japanese/preview.txt
 %%PORTDOCS%%%%DOCSDIR%%/japanese/shibuaki.txt
-%%PORTDOCS%%%%DOCSDIR%%/pdf/HOWTO.txt
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/bkai.map
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/cid-x.map
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/cwtb.map
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/dvipdfmx.cfg
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/gen-map.pl
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/map.list
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/texinput/Bg5/c00cwtb.fd
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/texinput/Bg5/c00tmpl.fd
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/texinput/GB/c10tmpl.fd
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/texinput/JIS/c40tmpl.fd
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/texinput/SJIS/c49tmpl.fd
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/updmap.my
-%%PORTDOCS%%%%DOCSDIR%%/pdf/examples/wcl.sfd
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/HOWTO.txt
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/bkai.map
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/cid-x.map
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/cwtb.map
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/dvipdfmx.cfg
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/gen-map.pl
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/map.list
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/texinput/Bg5/c00cwtb.fd
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/texinput/Bg5/c00tmpl.fd
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/texinput/GB/c10tmpl.fd
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/texinput/JIS/c40tmpl.fd
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/texinput/SJIS/c49tmpl.fd
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/updmap.my
+%%PORTDOCS%%%%DOCSDIR%%/pdfhowto/examples/wcl.sfd
 %%PORTDOCS%%%%DOCSDIR%%/pinyin.txt
 %%PORTDOCS%%%%DOCSDIR%%/pyhyphen.txt
 %%PORTDOCS%%%%DOCSDIR%%/reftex.txt
@@ -1619,6 +1620,7 @@ share/texmf/tex/latex/CJK/Bg5/Bg5.cap
 share/texmf/tex/latex/CJK/Bg5/Bg5.chr
 share/texmf/tex/latex/CJK/Bg5/Bg5.cpx
 share/texmf/tex/latex/CJK/Bg5/Bg5.enc
+share/texmf/tex/latex/CJK/Bg5/HK.enc
 share/texmf/tex/latex/CJK/Bg5/c00bkai.fdx
 share/texmf/tex/latex/CJK/Bg5/c00bsmi.fd
 share/texmf/tex/latex/CJK/Bg5/c00bsmi.fdx
@@ -1627,12 +1629,13 @@ share/texmf/tex/latex/CJK/Bg5/c00bsmir.fdx
 share/texmf/tex/latex/CJK/Bg5/c00cns.fd
 share/texmf/tex/latex/CJK/Bg5/c00fs.fd
 share/texmf/tex/latex/CJK/Bg5/c00kai.fd
-share/texmf/tex/latex/CJK/Bg5/c00t1kai.fd
 share/texmf/tex/latex/CJK/Bg5/c00kair.fd
 share/texmf/tex/latex/CJK/Bg5/c00kair.fdx
 share/texmf/tex/latex/CJK/Bg5/c00song.fd
+share/texmf/tex/latex/CJK/Bg5/c00t1kai.fd
 share/texmf/tex/latex/CJK/Bg5/c00t1song.fd
 share/texmf/tex/latex/CJK/Bg5/c01song.fd
+share/texmf/tex/latex/CJK/Bg5/c05song.fd
 share/texmf/tex/latex/CJK/Bg5/c09song.fd
 share/texmf/tex/latex/CJK/CEF/c80song.fd
 share/texmf/tex/latex/CJK/CEF/c81song.fd
@@ -1772,18 +1775,24 @@ share/texmf/tex/latex/CJK/SJIS/c49song.fd
 share/texmf/tex/latex/CJK/UTF8/UTF8.bdg
 share/texmf/tex/latex/CJK/UTF8/UTF8.chr
 share/texmf/tex/latex/CJK/UTF8/UTF8.enc
+share/texmf/tex/latex/CJK/UTF8/c70b5kai.fd
+share/texmf/tex/latex/CJK/UTF8/c70b5song.fd
 share/texmf/tex/latex/CJK/UTF8/c70bkai.fd
 share/texmf/tex/latex/CJK/UTF8/c70bkai.fdx
 share/texmf/tex/latex/CJK/UTF8/c70bsmi.fd
 share/texmf/tex/latex/CJK/UTF8/c70bsmi.fdx
+share/texmf/tex/latex/CJK/UTF8/c70gbkai.fd
 share/texmf/tex/latex/CJK/UTF8/c70gbsn.fd
+share/texmf/tex/latex/CJK/UTF8/c70gbsong.fd
 share/texmf/tex/latex/CJK/UTF8/c70gkai.fd
 share/texmf/tex/latex/CJK/UTF8/c70mj.fd
 share/texmf/tex/latex/CJK/UTF8/c70song.fd
-share/texmf/tex/latex/CJK/UTF8/c70gbsong.fd
-share/texmf/tex/latex/CJK/UTF8/c70gbkai.fd
-share/texmf/tex/latex/CJK/UTF8/c70b5song.fd
-share/texmf/tex/latex/CJK/UTF8/c70b5kai.fd
+share/texmf/tex/latex/CJK/UTF8/ja.cpx
+share/texmf/tex/latex/CJK/UTF8/ko-Hang.cpx
+share/texmf/tex/latex/CJK/UTF8/ko-Hang2.cpx
+share/texmf/tex/latex/CJK/UTF8/ko-Hani.cpx
+share/texmf/tex/latex/CJK/UTF8/zh-Hans.cpx
+share/texmf/tex/latex/CJK/UTF8/zh-Hant.cpx
 share/texmf/tex/latex/CJK/extended.chr
 share/texmf/tex/latex/CJK/extended.enc
 share/texmf/tex/latex/CJK/mule/MULEenc.sty
@@ -2380,13 +2389,13 @@ share/texmf/tex/latex/CJK/thai/thaicjk.ldf
 %%CCMAP%%share/texmf/tex/latex/CJK/ccmap/c09/c0994.cmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/chinese
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/japanese
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf/examples/texinput/Bg5
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf/examples/texinput/GB
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf/examples/texinput/JIS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf/examples/texinput/SJIS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf/examples/texinput
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdfhowto/examples/texinput/Bg5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdfhowto/examples/texinput/GB
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdfhowto/examples/texinput/JIS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdfhowto/examples/texinput/SJIS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdfhowto/examples/texinput
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdfhowto/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdfhowto
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/emacs/site-lisp/CJK/emacs
 @dirrm share/emacs/site-lisp/CJK/mule-2.3

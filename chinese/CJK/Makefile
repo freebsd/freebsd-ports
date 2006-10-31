@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CJK
-PORTVERSION=	4.6.0
-PORTREVISION=	2
+PORTVERSION=	4.7.0
 CATEGORIES=	chinese
 MASTER_SITES=	http://cjk.ffii.org/ \
 		ftp://freebsd.csie.ntu.edu.tw/users/rafan/
