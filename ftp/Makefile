@@ -99,6 +99,7 @@
     SUBDIR += urlgfe
     SUBDIR += vcheck
     SUBDIR += vsftpd
+    SUBDIR += waiho
     SUBDIR += weex
     SUBDIR += wget
     SUBDIR += wgetpro
