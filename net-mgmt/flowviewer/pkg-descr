@@ -1,0 +1,11 @@
+FlowViewer, FlowGrapher, and now FlowTracker are tools that provide an easy
+web-based user interface for selecting, viewing, graphing, and now tracking
+NetFlow data stored using Mark Fullmer's flow-tools software. 
+
+The user is able to filter data (inclusion or exclusion) by device, IP address
+range, port, router interface, autonomous system (AS), specified time interval,
+and now by protocols, TOS field, and TCP flags. Many of the flow-tools reports
+are configured as drop-down selections. Users are also able to save reports and
+graphs for later viewing.
+
+WWW: http://ensight.eos.nasa.gov/FlowViewer/

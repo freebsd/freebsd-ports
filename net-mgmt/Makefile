@@ -56,6 +56,7 @@
     SUBDIR += flow-tools
     SUBDIR += flowd
     SUBDIR += flowscan
+    SUBDIR += flowviewer
     SUBDIR += fprobe
     SUBDIR += gps
     SUBDIR += grepcidr

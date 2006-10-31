@@ -1,0 +1,19 @@
+%%FLOWVIEWERDIR%%/FlowGrapher.cgi
+%%FLOWVIEWERDIR%%/FlowGrapher_Main.cgi
+%%FLOWVIEWERDIR%%/FlowTracker.cgi
+%%FLOWVIEWERDIR%%/FlowTracker_Main.cgi
+%%FLOWVIEWERDIR%%/FlowViewer.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_Main.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_Save.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_Utilities.pm
+%%FLOWVIEWERDIR%%/FlowViewer_Configuration.pm.dist
+%%FLOWVIEWERDIR%%/FlowTracker_Collector
+%%FLOWVIEWERDIR%%/FlowTracker_Grapher
+%%FLOWVIEWERDIR%%/FlowGrapher_Colors
+%%FLOWVIEWERDIR%%/FlowGrapher.png
+%%FLOWVIEWERDIR%%/FlowTracker.png
+%%FLOWVIEWERDIR%%/FlowTracker_Links.png
+%%FLOWVIEWERDIR%%/FlowViewer.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%FLOWVIEWERDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
