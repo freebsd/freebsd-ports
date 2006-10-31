@@ -6,6 +6,7 @@
 
 PORTNAME=	915resolution
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.geocities.com/stomljen/ \
@@ -15,14 +16,14 @@ MASTER_SITE_SUBDIR=	ehaupt
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Resolution tool for Intel i915 video cards
 
-USE_LINUX=	yes
-NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
-
 PLIST_FILES=	bin/915resolution
+ALL_TARGET=	915resolution
+
+do-build:
+	cd ${WRKSRC} && \
+		${CC} ${CFLAGS} 915resolution.c -o 915resolution
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/915resolution ${PREFIX}/bin
-	${BRANDELF} -t Linux ${PREFIX}/bin/915resolution
 
 .include <bsd.port.mk>
