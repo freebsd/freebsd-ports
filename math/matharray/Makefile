@@ -1,0 +1,27 @@
+# New ports collection makefile for:    matharray
+# Date created:         30 Oct 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	matharray
+PORTVERSION=	1.0
+CATEGORIES=	math
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	contrib
+DISTNAME=	MathArray-${PORTVERSION}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Class library for mathematical manipulation of matrices
+
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BASE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+MAKEFILE=	GNUmakefile
+NO_FILTER_SHLIBS=	yes
+
+.include <bsd.port.mk>
