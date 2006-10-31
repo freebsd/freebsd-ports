@@ -18,7 +18,7 @@ COMMENT=	PornView is an image viewer/manager
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gdkpixbuf gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
