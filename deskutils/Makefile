@@ -70,6 +70,7 @@
     SUBDIR += gucharmap
     SUBDIR += gworkspace
     SUBDIR += gxmessage
+    SUBDIR += helpviewer
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += ical
