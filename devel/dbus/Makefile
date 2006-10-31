@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION?=	0.94
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -33,6 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if !defined(DBUS_SLAVE)
 USE_RC_SUBR=	dbus
+USE_GNOME_SUBR=	yes
 
 PLIST_SUB=	VERSION="1.0"
 
