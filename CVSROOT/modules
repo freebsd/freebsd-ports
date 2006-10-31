@@ -6291,6 +6291,7 @@ libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
 libticables2	ports/comms/libticables2
 libticalcs	ports/devel/libticalcs
+libticalcs2	ports/comms/libticalcs2
 libticonv	ports/converters/libticonv
 libtifiles	ports/devel/libtifiles
 libtifiles2	ports/devel/libtifiles2
