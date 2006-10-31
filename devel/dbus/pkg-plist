@@ -3,6 +3,7 @@ bin/dbus-daemon
 bin/dbus-launch
 bin/dbus-monitor
 bin/dbus-send
+bin/dbus-uuidgen
 etc/dbus-1/session.conf
 etc/dbus-1/system.conf
 include/dbus-%%VERSION%%/dbus/dbus-address.h
