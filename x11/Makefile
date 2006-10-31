@@ -219,6 +219,7 @@
     SUBDIR += tycoon
     SUBDIR += vdesk
     SUBDIR += wdm
+    SUBDIR += widgetfactory
     SUBDIR += wmappl
     SUBDIR += wmblob
     SUBDIR += wmbutton
