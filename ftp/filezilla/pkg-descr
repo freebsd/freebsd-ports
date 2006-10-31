@@ -1,0 +1,21 @@
+FileZilla is a powerful FTP-client. It has been designed for ease of use and
+with support for as many features as possible, while still being fast and
+reliable.
+
+The main features of FileZilla are:
+
+* Ability to resume Uploads/Downloads (if the server supports it).
+* Custom Commands.
+* Site Manager with folders.
+* Keep Alive system.
+* Timeout detection.
+* Firewall support.
+* SOCKS4/5 and HTTP1.1 Proxy support.
+* SSL secured connections.
+* SFTP support.
+* Upload/Download Queue.
+* Drag&Drop.
+* Multi-language support.
+* GSS authentication and encryption using Kerberos.
+
+WWW: http://filezilla.sourceforge.net/

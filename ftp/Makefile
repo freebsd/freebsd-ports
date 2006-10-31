@@ -18,6 +18,7 @@
     SUBDIR += downloader
     SUBDIR += emacs-wget
     SUBDIR += fget
+    SUBDIR += filezilla
     SUBDIR += fmirror
     SUBDIR += frox
     SUBDIR += ftp-tls
