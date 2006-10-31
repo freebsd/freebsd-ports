@@ -1,0 +1,28 @@
+Local/Applications/Duncan.app/Duncan
+Local/Applications/Duncan.app/Resources/Back.tiff
+Local/Applications/Duncan.app/Resources/Bookmark.plist
+Local/Applications/Duncan.app/Resources/Cache.plist
+Local/Applications/Duncan.app/Resources/Dictionary.plist
+Local/Applications/Duncan.app/Resources/Duncan.desktop
+Local/Applications/Duncan.app/Resources/Duncan_icon_48.tiff
+Local/Applications/Duncan.app/Resources/English.lproj/MainMenu.gorm/Back.tiff
+Local/Applications/Duncan.app/Resources/English.lproj/MainMenu.gorm/Forward.tiff
+Local/Applications/Duncan.app/Resources/English.lproj/MainMenu.gorm/MagnifyingGlass.tiff
+Local/Applications/Duncan.app/Resources/English.lproj/MainMenu.gorm/data.classes
+Local/Applications/Duncan.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+Local/Applications/Duncan.app/Resources/Forward.tiff
+Local/Applications/Duncan.app/Resources/Info-gnustep.plist
+Local/Applications/Duncan.app/Resources/MagnifyingGlass.tiff
+Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm/Back.tiff
+Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm/Forward.tiff
+Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm/MagnifyingGlass.tiff
+Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm/data.classes
+Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm/objects.gorm
+Local/Applications/Duncan.app/library_paths.openapp
+Local/Applications/Duncan.app/stamp.make
+@dirrm Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm
+@dirrm Local/Applications/Duncan.app/Resources/Thai.lproj
+@dirrm Local/Applications/Duncan.app/Resources/English.lproj/MainMenu.gorm
+@dirrm Local/Applications/Duncan.app/Resources/English.lproj
+@dirrm Local/Applications/Duncan.app/Resources
+@dirrm Local/Applications/Duncan.app

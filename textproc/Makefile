@@ -112,6 +112,7 @@
     SUBDIR += dtd2relax
     SUBDIR += dtdinst
     SUBDIR += dtdparse
+    SUBDIR += duncan
     SUBDIR += dwdiff
     SUBDIR += easydiff
     SUBDIR += ecromedos
