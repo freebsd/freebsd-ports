@@ -7,28 +7,46 @@
 
 PORTNAME=	bopm
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://static.blitzed.org/www.blitzed.org/bopm/files/ \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	aquatique-ports@rambler.ru
-COMMENT=	Open proxy monitor and blocker, designed for use with ircds
+COMMENT=	Open proxy and DNSBL monitor, designed for use with ircds
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
+LOGDIR=		/var/log/${PORTNAME}
+
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--sysconfdir=${PREFIX}/etc --localstatedir=${LOGDIR}
 
 USE_LDCONFIG=	yes
+USE_RC_SUBR=	bopm
+
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
+PLIST_SUB=	LOGDIR=${LOGDIR}
+SUB_LIST=	LOGDIR=${LOGDIR}
+
+pre-su-install:
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,^[[:space:]]*$$(mkinstalldirs) $$(localstatedir),,' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's,= bopm.conf.sample,= ,' ${WRKSRC}/Makefile.in
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${REINPLACE_CMD} \
+		-e 's,data_DATA = bopm.conf.sample,data_DATA =,g' \
+		-e 's,$(sysconfdir)/bopm.conf,$(sysconfdir)/bopm.conf.sample,g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's,/some/path/bopm.pid,${LOGDIR}/bopm.pid,g' \
+		-e 's,/some/path/scan.log,${LOGDIR}/scan.log,g' \
+		${WRKSRC}/bopm.conf.sample
 
 post-install:
-	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/bopm.sh.sample ${PREFIX}/etc/rc.d
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CHOWN} bopm:bopm ${LOGDIR}
+	@${CHMOD} 750 ${LOGDIR}
+	@${CHOWN} bopm:bopm ${PREFIX}/etc/bopm.conf.sample
+	@${CHMOD} 640 ${PREFIX}/etc/bopm.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
