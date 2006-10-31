@@ -1,6 +1,6 @@
---- parsefile.c.orig Wed Jan  5 20:53:04 2005
-+++ parsefile.c      Tue Jul 26 11:10:08 2005
-@@ -33,11 +33,12 @@
+--- parsefile.c.orig	Mon May  1 00:37:13 2006
++++ parsefile.c	Mon May  1 00:37:47 2006
+@@ -69,9 +69,10 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <fcntl.h>
@@ -8,9 +8,7 @@
 +#include <stdlib.h>
  #include <string.h>
  #include <sys/stat.h>
- #include "parsefile.h"
- #include "getline.h"
 +#include <netinet/in.h>
-
- #define NONULL(x) ( x==NULL ? "" : x) /* this is nice, found in the mutt code */
-
+ #include "parsefile.h"
+ #include "getlinep3.h"
+ #include "p3scan.h"
