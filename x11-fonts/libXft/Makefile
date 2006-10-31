@@ -27,12 +27,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 
 MAN3=		Xft.3
 
-.if defined(WITH_CJK)
-PATCH_SITES=    http://bsdchat.com/dist/firefly-cjk-patchset/ \
-		http://bbs.ilc.edu.tw/~chinsan/ \
-		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
-PATCHFILES+=    cjk-patch-libXft-20050716.diff.gz
-.endif
+#.if defined(WITH_CJK)
+#PATCH_SITES=    http://bsdchat.com/dist/firefly-cjk-patchset/ \
+#		http://bbs.ilc.edu.tw/~chinsan/ \
+#		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
+#PATCHFILES+=    cjk-patch-libXft-20050716.diff.gz
+#.endif
 
 .include <bsd.port.pre.mk>
 
