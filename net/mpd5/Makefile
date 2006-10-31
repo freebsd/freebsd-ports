@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpd4
-PORTVERSION=	4.0b4
+PORTVERSION=	4.0b5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	glebius
@@ -20,6 +20,13 @@ LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
 MTREE_FILE=	${FILESDIR}/mpd4.mtree
 MAN8=		mpd4.8
 MANCOMPRESSED=	maybe
+USE_RC_SUBR=	mpd4.sh
+HTMLNUM!=	jot 60 1
+CONFSUF=	conf links secret script
+PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
+		mpd_toc.html
+PLIST_DIRS=	etc/mpd4
+PLIST_FILES=	${CONFSUF:S/^/etc\/mpd4\/mpd./:S/$/.sample/} sbin/mpd4
 
 USE_OPENSSL=	yes
 
@@ -28,8 +35,5 @@ USE_OPENSSL=	yes
 .if ${OSVERSION} < 500000
 IGNORE=		does not compile on FreeBSD 4.x; use net/mpd instead
 .endif
-
-post-install:
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/mpd4.sh ${PREFIX}/etc/rc.d/mpd4.sh.sample
 
 .include <bsd.port.post.mk>
