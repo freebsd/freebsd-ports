@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	txt2man
-PORTVERSION=	1.4.8
+PORTVERSION=	1.5.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mvertes.free.fr/download/
 
@@ -17,10 +17,13 @@ COMMENT=	Converts flat ASCII text to man page format
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-ALL_TARGET=	txt2man.1
+USE_GMAKE=	yes
 INSTALL_TARGET=	install prefix=${PREFIX}
 
-MAN1=		txt2man.1
-PLIST_FILES=	bin/txt2man
+MAN1=		bookman.1 src2man.1 txt2man.1
+PLIST_FILES=	bin/bookman bin/src2man bin/txt2man
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,awk,gawk," ${WRKSRC}/bookman ${WRKSRC}/src2man
 
 .include <bsd.port.mk>
