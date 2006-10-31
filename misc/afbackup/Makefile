@@ -20,7 +20,7 @@ COMMENT=	AF's backup system
 # version 3.4 is out, maybe it is worth saving this port
 IGNORE=		Uses unregistered uid that conflicts with other ports
 DEPRECATED=	${IGNORE}
-EXPIRATION_DATE=2006-10-17
+EXPIRATION_DATE=2006-12-01
 
 WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
