@@ -272,6 +272,7 @@
     SUBDIR += polymake
     SUBDIR += proofgeneral
     SUBDIR += pspp
+    SUBDIR += py-basemap
     SUBDIR += py-fpconst
     SUBDIR += py-gato
     SUBDIR += py-gnuplot
