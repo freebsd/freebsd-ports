@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-make
 PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -36,9 +36,11 @@ post-install:
 	${LN} -s Library/Makefiles ${PREFIX}/System/
 	-${MKDIR} ${PREFIX}/Local/Applications
 	-${MKDIR} ${PREFIX}/Local/Library/Bundles
+	-${MKDIR} ${PREFIX}/Local/Library/Documentation
 	-${MKDIR} ${PREFIX}/Local/Library/Frameworks
 	-${MKDIR} ${PREFIX}/Local/Library/Headers
 	-${MKDIR} ${PREFIX}/Local/Library/Libraries
 	-${MKDIR} ${PREFIX}/Local/Library/Preferences
+	-${MKDIR} ${PREFIX}/Local/Tools
 
 .include <bsd.port.mk>
