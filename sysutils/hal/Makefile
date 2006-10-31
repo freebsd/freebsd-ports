@@ -97,6 +97,7 @@ post-patch:
 		${WRKSRC}/policy/Makefile.in
 	@${REINPLACE_CMD} -e 's|user="0"|group="operator"|g' \
 		${WRKSRC}/hal.conf.in
+	@${TOUCH} ${WRKSRC}/doc/spec/hal-spec.html
 
 post-install:
 .if !defined(HAL_SLAVE)
