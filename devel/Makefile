@@ -220,6 +220,7 @@
     SUBDIR += datadesigner
     SUBDIR += dbus
     SUBDIR += dbus-glib
+    SUBDIR += dbus-qt3
     SUBDIR += dbus-sharp
     SUBDIR += ddd
     SUBDIR += desktop-file-utils
