@@ -3,7 +3,7 @@ You can find example configuration in
 
 	%%PREFIX%%/share/examples/torque/var/spool/torque
 
-On all machines, both server and computing nodes, copy it's
+On all machines, both server and computing nodes, copy its
 contents into
 
 	/var/spool/torque/

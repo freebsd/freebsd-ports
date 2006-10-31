@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	torque
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.5
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
 
 MAINTAINER=	trasz@pin.if.uz.zgora.pl
 COMMENT=	Open source resource manager
 
-RESTRICTED=	Redistribution is only permitted for non-commercial, non-profit purposes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rcp=scp
 USE_GMAKE=	yes
