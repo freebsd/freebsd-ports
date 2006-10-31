@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	punbb
-PORTVERSION=	1.2.12
-PORTREVISION=	1
+PORTVERSION=	1.2.14
 CATEGORIES=	www
 MASTER_SITES=	http://www.punbb.org/download/ \
-		http://punbb.pxtek.com/ \
-		http://punbb.nhost.co.uk/ \
 		http://mirror.ordo.dk/punbb.org/ \
 		http://punbb.mirrors.typhon.net/ \
 		http://punbb.4any.org/
@@ -24,11 +21,12 @@ COMMENT=	A fast and lightweight PHP-powered discussion board
 
 BROKEN=		Checksum mismatch
 
+BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+
 NO_BUILD=	yes
 PUNBBDIR?=	${TARGETDIR}/www/punbb
 USE_PHP=	yes
 USE_ZIP=	yes
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 OPTIONS=	LANGUAGE_PACK "Install language packs" on
 
