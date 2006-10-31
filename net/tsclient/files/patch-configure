@@ -1,0 +1,27 @@
+--- configure.	Fri Oct 13 03:55:18 2006
++++ configure	Fri Oct 13 03:55:40 2006
+@@ -4198,7 +4198,6 @@
+ 
+ 
+ pkg_modules="libgnomeui-2.0"
+-pkg_modules="libpanelapplet-2.0"
+ 
+   succeeded=no
+ 
+@@ -5614,7 +5613,7 @@
+ fi
+ 
+ 
+-                                        ac_config_files="$ac_config_files Makefile src/Makefile applet/Makefile po/Makefile.in"
++                                        ac_config_files="$ac_config_files Makefile src/Makefile po/Makefile.in"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -6188,7 +6187,6 @@
+   # Handling of arguments.
+   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+   "src/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+-  "applet/Makefile" ) CONFIG_FILES="$CONFIG_FILES applet/Makefile" ;;
+   "po/Makefile.in" ) CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
+   "default-1" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default-1" ;;
+   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
