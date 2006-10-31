@@ -1,4 +1,5 @@
 bin/bouml
+%%DESKTOPDIR%%/bouml.desktop
 %%DATADIR%%/FileControl/1024.bodies
 %%DATADIR%%/FileControl/1152.bodies
 %%DATADIR%%/FileControl/1280.bodies
@@ -229,6 +230,7 @@ bin/bouml
 %%DATADIR%%/deploy/tools
 %%DATADIR%%/empty/1024.bodies
 %%DATADIR%%/empty/1152.bodies
+%%DATADIR%%/empty/128.diagram
 %%DATADIR%%/empty/1280.bodies
 %%DATADIR%%/empty/128002.diagram
 %%DATADIR%%/empty/128130.diagram
@@ -253,7 +255,44 @@ bin/bouml
 %%DATADIR%%/empty/132224.bodies
 %%DATADIR%%/empty/132480.bodies
 %%DATADIR%%/empty/132736.bodies
+%%DATADIR%%/empty/133120.bodies
+%%DATADIR%%/empty/133376.bodies
+%%DATADIR%%/empty/133888.bodies
+%%DATADIR%%/empty/134144.bodies
+%%DATADIR%%/empty/134272.bodies
+%%DATADIR%%/empty/134528.bodies
+%%DATADIR%%/empty/134912.bodies
+%%DATADIR%%/empty/135168.bodies
+%%DATADIR%%/empty/135424.bodies
+%%DATADIR%%/empty/135680.bodies
+%%DATADIR%%/empty/135936.bodies
+%%DATADIR%%/empty/136192.bodies
+%%DATADIR%%/empty/136448.bodies
+%%DATADIR%%/empty/136704.bodies
+%%DATADIR%%/empty/136960.bodies
+%%DATADIR%%/empty/137216.bodies
+%%DATADIR%%/empty/137472.bodies
+%%DATADIR%%/empty/137728.bodies
+%%DATADIR%%/empty/137984.bodies
+%%DATADIR%%/empty/138240.bodies
+%%DATADIR%%/empty/138496.bodies
+%%DATADIR%%/empty/138752.bodies
+%%DATADIR%%/empty/139008.bodies
+%%DATADIR%%/empty/139264.bodies
+%%DATADIR%%/empty/139776.bodies
+%%DATADIR%%/empty/140032.bodies
+%%DATADIR%%/empty/140288.bodies
+%%DATADIR%%/empty/140544.bodies
 %%DATADIR%%/empty/1408.bodies
+%%DATADIR%%/empty/140800.bodies
+%%DATADIR%%/empty/141056.bodies
+%%DATADIR%%/empty/141312.bodies
+%%DATADIR%%/empty/141568.bodies
+%%DATADIR%%/empty/141952.bodies
+%%DATADIR%%/empty/142208.bodies
+%%DATADIR%%/empty/142592.bodies
+%%DATADIR%%/empty/142848.bodies
+%%DATADIR%%/empty/143104.bodies
 %%DATADIR%%/empty/1536.bodies
 %%DATADIR%%/empty/1664.bodies
 %%DATADIR%%/empty/1792.bodies
@@ -263,6 +302,7 @@ bin/bouml
 %%DATADIR%%/empty/2304.bodies
 %%DATADIR%%/empty/2432.bodies
 %%DATADIR%%/empty/256
+%%DATADIR%%/empty/256.diagram
 %%DATADIR%%/empty/2560.bodies
 %%DATADIR%%/empty/257.diagram
 %%DATADIR%%/empty/2688.bodies
@@ -274,6 +314,7 @@ bin/bouml
 %%DATADIR%%/empty/3584.bodies
 %%DATADIR%%/empty/3712.bodies
 %%DATADIR%%/empty/384
+%%DATADIR%%/empty/384.diagram
 %%DATADIR%%/empty/3840.bodies
 %%DATADIR%%/empty/385.diagram
 %%DATADIR%%/empty/3968.bodies
@@ -284,12 +325,16 @@ bin/bouml
 %%DATADIR%%/empty/4864.bodies
 %%DATADIR%%/empty/4992.bodies
 %%DATADIR%%/empty/512
+%%DATADIR%%/empty/512.diagram
 %%DATADIR%%/empty/5120.bodies
 %%DATADIR%%/empty/513.diagram
 %%DATADIR%%/empty/5248.bodies
+%%DATADIR%%/empty/640.diagram
 %%DATADIR%%/empty/641
 %%DATADIR%%/empty/6528.bodies
 %%DATADIR%%/empty/768.bodies
+%%DATADIR%%/empty/768.diagram
+%%DATADIR%%/empty/769
 %%DATADIR%%/empty/896.bodies
 %%DATADIR%%/empty/cpp_includes
 %%DATADIR%%/empty/empty.prj
@@ -404,7 +449,80 @@ bin/bouml
 %%DATADIR%%/html/132738.bodies
 %%DATADIR%%/html/132864.bodies
 %%DATADIR%%/html/132994.bodies
+%%DATADIR%%/html/133248.bodies
+%%DATADIR%%/html/133378.bodies
+%%DATADIR%%/html/133504.bodies
+%%DATADIR%%/html/133634.bodies
+%%DATADIR%%/html/134016.bodies
+%%DATADIR%%/html/134146.bodies
+%%DATADIR%%/html/134272.bodies
+%%DATADIR%%/html/134400.bodies
+%%DATADIR%%/html/134530.bodies
+%%DATADIR%%/html/134656.bodies
+%%DATADIR%%/html/134786.bodies
+%%DATADIR%%/html/135040.bodies
+%%DATADIR%%/html/135170.bodies
+%%DATADIR%%/html/135296.bodies
+%%DATADIR%%/html/135426.bodies
+%%DATADIR%%/html/135552.bodies
+%%DATADIR%%/html/135682.bodies
+%%DATADIR%%/html/135808.bodies
+%%DATADIR%%/html/135938.bodies
+%%DATADIR%%/html/136064.bodies
+%%DATADIR%%/html/136194.bodies
+%%DATADIR%%/html/136320.bodies
+%%DATADIR%%/html/136450.bodies
+%%DATADIR%%/html/136576.bodies
+%%DATADIR%%/html/136706.bodies
+%%DATADIR%%/html/136832.bodies
+%%DATADIR%%/html/136962.bodies
+%%DATADIR%%/html/137088.bodies
+%%DATADIR%%/html/137218.bodies
+%%DATADIR%%/html/137344.bodies
+%%DATADIR%%/html/137474.bodies
+%%DATADIR%%/html/137600.bodies
+%%DATADIR%%/html/137730.bodies
+%%DATADIR%%/html/137856.bodies
+%%DATADIR%%/html/137986.bodies
+%%DATADIR%%/html/138112.bodies
+%%DATADIR%%/html/138242.bodies
+%%DATADIR%%/html/138368.bodies
+%%DATADIR%%/html/138498.bodies
+%%DATADIR%%/html/138624.bodies
+%%DATADIR%%/html/138754.bodies
+%%DATADIR%%/html/138880.bodies
+%%DATADIR%%/html/139010.bodies
+%%DATADIR%%/html/139136.bodies
+%%DATADIR%%/html/139266.bodies
+%%DATADIR%%/html/139392.bodies
+%%DATADIR%%/html/139522.bodies
+%%DATADIR%%/html/139778.bodies
+%%DATADIR%%/html/139904.bodies
+%%DATADIR%%/html/140034.bodies
+%%DATADIR%%/html/140160.bodies
+%%DATADIR%%/html/140290.bodies
+%%DATADIR%%/html/140416.bodies
+%%DATADIR%%/html/140546.bodies
+%%DATADIR%%/html/140672.bodies
 %%DATADIR%%/html/1408.bodies
+%%DATADIR%%/html/140802.bodies
+%%DATADIR%%/html/140928.bodies
+%%DATADIR%%/html/141058.bodies
+%%DATADIR%%/html/141184.bodies
+%%DATADIR%%/html/141314.bodies
+%%DATADIR%%/html/141440.bodies
+%%DATADIR%%/html/141570.bodies
+%%DATADIR%%/html/141696.bodies
+%%DATADIR%%/html/141826.bodies
+%%DATADIR%%/html/142080.bodies
+%%DATADIR%%/html/142336.bodies
+%%DATADIR%%/html/142466.bodies
+%%DATADIR%%/html/142720.bodies
+%%DATADIR%%/html/142850.bodies
+%%DATADIR%%/html/142976.bodies
+%%DATADIR%%/html/143106.bodies
+%%DATADIR%%/html/143232.bodies
+%%DATADIR%%/html/143362.bodies
 %%DATADIR%%/html/1536.bodies
 %%DATADIR%%/html/1664.bodies
 %%DATADIR%%/html/1792.bodies
@@ -719,7 +837,45 @@ bin/bouml
 %%DATADIR%%/sort/132224.bodies
 %%DATADIR%%/sort/132480.bodies
 %%DATADIR%%/sort/132994.bodies
+%%DATADIR%%/sort/133120.bodies
+%%DATADIR%%/sort/133504.bodies
+%%DATADIR%%/sort/133760.bodies
+%%DATADIR%%/sort/134272.bodies
+%%DATADIR%%/sort/134528.bodies
+%%DATADIR%%/sort/134656.bodies
+%%DATADIR%%/sort/134912.bodies
+%%DATADIR%%/sort/135296.bodies
+%%DATADIR%%/sort/135552.bodies
+%%DATADIR%%/sort/135808.bodies
+%%DATADIR%%/sort/136064.bodies
+%%DATADIR%%/sort/136320.bodies
+%%DATADIR%%/sort/136576.bodies
+%%DATADIR%%/sort/136832.bodies
+%%DATADIR%%/sort/137088.bodies
+%%DATADIR%%/sort/137344.bodies
+%%DATADIR%%/sort/137600.bodies
+%%DATADIR%%/sort/137856.bodies
+%%DATADIR%%/sort/138112.bodies
+%%DATADIR%%/sort/138368.bodies
+%%DATADIR%%/sort/138624.bodies
+%%DATADIR%%/sort/138880.bodies
+%%DATADIR%%/sort/139136.bodies
+%%DATADIR%%/sort/139392.bodies
+%%DATADIR%%/sort/139648.bodies
+%%DATADIR%%/sort/140160.bodies
+%%DATADIR%%/sort/140416.bodies
+%%DATADIR%%/sort/140672.bodies
 %%DATADIR%%/sort/1408.bodies
+%%DATADIR%%/sort/140928.bodies
+%%DATADIR%%/sort/141184.bodies
+%%DATADIR%%/sort/141440.bodies
+%%DATADIR%%/sort/141696.bodies
+%%DATADIR%%/sort/141952.bodies
+%%DATADIR%%/sort/142336.bodies
+%%DATADIR%%/sort/142592.bodies
+%%DATADIR%%/sort/142976.bodies
+%%DATADIR%%/sort/143232.bodies
+%%DATADIR%%/sort/143488.bodies
 %%DATADIR%%/sort/1536.bodies
 %%DATADIR%%/sort/1664.bodies
 %%DATADIR%%/sort/1792.bodies
@@ -951,6 +1107,20 @@ bin/bouml
 %%DATADIR%%/xmi/stereotypes
 %%DATADIR%%/xmi/tools
 %%DATADIR%%/xmi/xmi.prj
+share/icons/hicolor/16x16/apps/bouml.png
+share/icons/hicolor/32x32/apps/bouml.png
+share/icons/hicolor/48x48/apps/bouml.png
+share/icons/hicolor/64x64/apps/bouml.png
+@dirrm share/icons/hicolor/64x64/apps
+@dirrm share/icons/hicolor/64x64
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm %%DATADIR%%/xmi
 @dirrm %%DATADIR%%/usecase_wizard
 @dirrm %%DATADIR%%/sm_generator
@@ -964,3 +1134,4 @@ bin/bouml
 @dirrm %%DATADIR%%/cpp_utilities
 @dirrm %%DATADIR%%/FileControl
 @dirrm %%DATADIR%%
+@dirrm share/applications
