@@ -14806,6 +14806,7 @@ webmin		ports/sysutils/webmin
 webredirect	ports/www/webredirect
 webreport	ports/www/webreport
 webresolve	ports/www/webresolve
+webserver	ports/www/webserver
 websieve	ports/mail/websieve
 website		ports/textproc/website
 webstats	ports/www/webstats
