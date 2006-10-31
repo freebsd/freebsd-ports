@@ -4,8 +4,9 @@ bin/log_analysis
 %%EXAMPLESDIR%%/sample-new.conf
 %%EXAMPLESDIR%%/sample-qpopper.conf
 %%EXAMPLESDIR%%/sample-tcpdump.conf
-share/log_analysis/Tk/resizebutton.pm
-@dirrm share/log_analysis/Tk
-@dirrm share/log_analysis
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/Tk/resizebutton.pm
+@dirrm %%DATADIR%%/Tk
+@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
