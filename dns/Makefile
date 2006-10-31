@@ -28,6 +28,7 @@
     SUBDIR += dnsjava
     SUBDIR += dnsmasq
     SUBDIR += dnsmax-perl
+    SUBDIR += dnsperf
     SUBDIR += dnsproxy
     SUBDIR += dnstop
     SUBDIR += dnstracer
