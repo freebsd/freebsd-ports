@@ -1,46 +1,134 @@
 bin/basket
+lib/kde3/kcm_basket.a
+lib/kde3/kcm_basket.la
+lib/kde3/kcm_basket.so
+lib/kde3/libbasketpart.a
+lib/kde3/libbasketpart.la
+lib/kde3/libbasketpart.so
+%%KONTACT%%lib/kde3/libkontact_basket.a
+%%KONTACT%%lib/kde3/libkontact_basket.la
+%%KONTACT%%lib/kde3/libkontact_basket.so
+lib/libbasketcommon.a
+lib/libbasketcommon.la
+lib/libbasketcommon.so
 share/applnk/Utilities/basket.desktop
+share/apps/basket/backgrounds/abstract.png
+share/apps/basket/backgrounds/alien-artifact.png
+share/apps/basket/backgrounds/alien-artifact.png.config
+share/apps/basket/backgrounds/basket-title.png
+share/apps/basket/backgrounds/green-curves.png
+share/apps/basket/backgrounds/light.png
+share/apps/basket/backgrounds/painting.png
+share/apps/basket/backgrounds/pens.png
+share/apps/basket/backgrounds/pins.png
+share/apps/basket/backgrounds/previews/abstract.png
+share/apps/basket/backgrounds/previews/alien-artifact.png
+share/apps/basket/backgrounds/previews/basket-title.png
+share/apps/basket/backgrounds/previews/green-curves.png
+share/apps/basket/backgrounds/previews/light.png
+share/apps/basket/backgrounds/previews/painting.png
+share/apps/basket/backgrounds/previews/pens.png
+share/apps/basket/backgrounds/previews/pins.png
+share/apps/basket/backgrounds/previews/rainbow-balls.png
+share/apps/basket/backgrounds/previews/rounds-line.png
+share/apps/basket/backgrounds/previews/todo.png
+share/apps/basket/backgrounds/previews/working.png
+share/apps/basket/backgrounds/rainbow-balls.png
+share/apps/basket/backgrounds/rounds-line.png
+share/apps/basket/backgrounds/todo.png
+share/apps/basket/backgrounds/working.png
+share/apps/basket/basket_part.rc
 share/apps/basket/basketui.rc
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_checkbox.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_checkbox_checked.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_for_later.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_fun.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_important.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_preference_bad.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_preference_excelent.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_preference_good.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_priority_high.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_priority_low.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_priority_medium.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_progress_000.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_progress_025.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_progress_050.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_progress_075.png
+share/apps/basket/icons/crystalsvg/16x16/actions/tag_progress_100.png
+share/apps/basket/images/insertion_help.png
+share/apps/basket/images/tag_export_help.png
+share/apps/basket/images/tag_export_on_every_lines_help.png
+%%KONTACT%%share/apps/kontact/ksettingsdialog/kontact_basketplugin.setdlg
 share/doc/HTML/en/basket/common
 share/doc/HTML/en/basket/index.cache.bz2
 share/doc/HTML/en/basket/index.docbook
 share/icons/crystalsvg/128x128/apps/basket.png
+share/icons/crystalsvg/16x16/actions/likeback_bug.png
+share/icons/crystalsvg/16x16/actions/likeback_dislike.png
+share/icons/crystalsvg/16x16/actions/likeback_feature.png
+share/icons/crystalsvg/16x16/actions/likeback_like.png
+share/icons/crystalsvg/16x16/actions/tag_checkbox.png
+share/icons/crystalsvg/16x16/actions/tag_checkbox_checked.png
+share/icons/crystalsvg/16x16/actions/tag_for_later.png
+share/icons/crystalsvg/16x16/actions/tag_fun.png
+share/icons/crystalsvg/16x16/actions/tag_important.png
+share/icons/crystalsvg/16x16/actions/tag_preference_bad.png
+share/icons/crystalsvg/16x16/actions/tag_preference_excelent.png
+share/icons/crystalsvg/16x16/actions/tag_preference_good.png
+share/icons/crystalsvg/16x16/actions/tag_priority_high.png
+share/icons/crystalsvg/16x16/actions/tag_priority_low.png
+share/icons/crystalsvg/16x16/actions/tag_priority_medium.png
+share/icons/crystalsvg/16x16/actions/tag_progress_000.png
+share/icons/crystalsvg/16x16/actions/tag_progress_025.png
+share/icons/crystalsvg/16x16/actions/tag_progress_050.png
+share/icons/crystalsvg/16x16/actions/tag_progress_075.png
+share/icons/crystalsvg/16x16/actions/tag_progress_100.png
 share/icons/crystalsvg/16x16/apps/basket.png
 share/icons/crystalsvg/22x22/apps/basket.png
 share/icons/crystalsvg/32x32/apps/basket.png
 share/icons/crystalsvg/48x48/apps/basket.png
 share/icons/crystalsvg/64x64/apps/basket.png
 share/icons/crystalsvg/scalable/apps/basket.svg
+share/locale/cs/LC_MESSAGES/basket.mo
 share/locale/de/LC_MESSAGES/basket.mo
 share/locale/es/LC_MESSAGES/basket.mo
 share/locale/fr/LC_MESSAGES/basket.mo
+share/locale/ja/LC_MESSAGES/basket.mo
 share/locale/nl/LC_MESSAGES/basket.mo
+share/locale/nn/LC_MESSAGES/basket.mo
 share/locale/pl_PL/LC_MESSAGES/basket.mo
+share/locale/pt/LC_MESSAGES/basket.mo
+share/locale/ru/LC_MESSAGES/basket.mo
+share/locale/tr/LC_MESSAGES/basket.mo
 share/locale/zh_TW/LC_MESSAGES/basket.mo
+share/services/basket_config_apps.desktop
+share/services/basket_config_baskets.desktop
+share/services/basket_config_features.desktop
+share/services/basket_config_general.desktop
+share/services/basket_config_new_notes.desktop
+share/services/basket_config_notes.desktop
+share/services/basket_config_notes_appearance.desktop
+share/services/basket_part.desktop
+%%KONTACT%%share/services/kontact/basket.desktop
+%%KONTACT%%@dirrm share/services/kontact
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
-@dirrmtry share/icons/crystalsvg/scalable/apps
-@dirrmtry share/icons/crystalsvg/scalable
-@dirrmtry share/icons/crystalsvg/64x64/apps
-@dirrmtry share/icons/crystalsvg/64x64
-@dirrmtry share/icons/crystalsvg/48x48/apps
-@dirrmtry share/icons/crystalsvg/48x48
-@dirrmtry share/icons/crystalsvg/32x32/apps
-@dirrmtry share/icons/crystalsvg/32x32
-@dirrmtry share/icons/crystalsvg/22x22/apps
-@dirrmtry share/icons/crystalsvg/22x22
-@dirrmtry share/icons/crystalsvg/16x16/apps
-@dirrmtry share/icons/crystalsvg/16x16
-@dirrmtry share/icons/crystalsvg/128x128/apps
-@dirrmtry share/icons/crystalsvg/128x128
-@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
 @dirrm share/doc/HTML/en/basket
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
+%%KONTACT%%@dirrm share/apps/kontact/ksettingsdialog
+%%KONTACT%%@dirrm share/apps/kontact
+@dirrm share/apps/basket/images
+@dirrm share/apps/basket/icons/crystalsvg/16x16/actions
+@dirrm share/apps/basket/icons/crystalsvg/16x16
+@dirrm share/apps/basket/icons/crystalsvg
+@dirrm share/apps/basket/icons
+@dirrm share/apps/basket/backgrounds/previews
+@dirrm share/apps/basket/backgrounds
 @dirrm share/apps/basket
-@dirrmtry share/apps
-@dirrmtry share/applnk/Utilities
-@dirrmtry share/applnk
