@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rl
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://ch.tudelft.nl/~arthur/rl/
 
@@ -14,6 +14,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Randomizes lines from a specified input file
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		rl.1
 PLIST_FILES=	bin/rl
