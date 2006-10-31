@@ -113,6 +113,7 @@
     SUBDIR += jcode.pl
     SUBDIR += jed
     SUBDIR += jhd
+    SUBDIR += jishyo
     SUBDIR += jisx0213-fonts
     SUBDIR += jls
     SUBDIR += jmode

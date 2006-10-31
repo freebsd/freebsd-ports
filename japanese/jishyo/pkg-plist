@@ -1,0 +1,25 @@
+Local/Applications/Jishyo.app/Jishyo
+Local/Applications/Jishyo.app/Resources/English.lproj/Jishyo.gorm/data.classes
+Local/Applications/Jishyo.app/Resources/English.lproj/Jishyo.gorm/data.info
+Local/Applications/Jishyo.app/Resources/English.lproj/Jishyo.gorm/objects.gorm
+Local/Applications/Jishyo.app/Resources/English.lproj/Localizable.strings
+Local/Applications/Jishyo.app/Resources/English.lproj/Localizable.strings~
+Local/Applications/Jishyo.app/Resources/Info-gnustep.plist
+Local/Applications/Jishyo.app/Resources/Japanese.lproj/Localizable.strings
+Local/Applications/Jishyo.app/Resources/Japanese.lproj/Localizable.strings~
+Local/Applications/Jishyo.app/Resources/Jishyo.desktop
+Local/Applications/Jishyo.app/Resources/Jishyo.gif
+Local/Applications/Jishyo.app/Resources/Jishyo.tiff
+Local/Applications/Jishyo.app/Resources/Search.tiff
+Local/Applications/Jishyo.app/Resources/Thai.lproj/Localizable.strings
+Local/Applications/Jishyo.app/Resources/Thai.lproj/Localizable.strings~
+Local/Applications/Jishyo.app/Resources/edict
+Local/Applications/Jishyo.app/Resources/edict.xjdx
+Local/Applications/Jishyo.app/library_paths.openapp
+Local/Applications/Jishyo.app/stamp.make
+@dirrm Local/Applications/Jishyo.app/Resources/Thai.lproj
+@dirrm Local/Applications/Jishyo.app/Resources/Japanese.lproj
+@dirrm Local/Applications/Jishyo.app/Resources/English.lproj/Jishyo.gorm
+@dirrm Local/Applications/Jishyo.app/Resources/English.lproj
+@dirrm Local/Applications/Jishyo.app/Resources
+@dirrm Local/Applications/Jishyo.app
