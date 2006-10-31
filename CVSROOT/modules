@@ -2616,6 +2616,7 @@ filepp		ports/textproc/filepp
 fileprune	ports/sysutils/fileprune
 filerunner	ports/x11-fm/filerunner
 fileschanged	ports/sysutils/fileschanged
+filezilla	ports/ftp/filezilla
 fillets-ng	ports/games/fillets-ng
 filtermail	ports/mail/filtermail
 filters		ports/games/filters
