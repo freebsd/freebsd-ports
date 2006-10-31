@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tome
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	games
 MASTER_SITES=	http://t-o-m-e.net/dl/src/
-DISTNAME=	tome-233-src
+DISTNAME=	tome-234-src
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Roguelike dungeon exploration game based on JRR Tolkien's works
