@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gphys
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	science ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gphys/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -11,6 +11,7 @@ bin/gpview
 bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/dclext_datetime_ax.rb
 %%RUBY_SITELIBDIR%%/numru/derivative.rb
+%%RUBY_SITELIBDIR%%/numru/vizshot.rb
 %%RUBY_SITELIBDIR%%/numru/gdir.rb
 %%RUBY_SITELIBDIR%%/numru/gdir_connect_ftp-like.rb
 %%RUBY_SITELIBDIR%%/numru/ggraph.rb
@@ -63,6 +64,7 @@ bin/grads2nc_with_gphys
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.grib
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.nc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.packed.withmiss.nc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/UV.jan.nc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/cira86.dat
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample/ep_flux
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
