@@ -11733,6 +11733,7 @@ proguard	ports/java/proguard
 proj		ports/graphics/proj
 projectcenter.app	ports/devel/projectcenter.app
 projectionlib	ports/misc/projectionlib
+projectmanager	ports/devel/projectmanager
 projectx	ports/multimedia/projectx
 prokyon3	ports/audio/prokyon3
 prom-wl		ports/mail/prom-wl
