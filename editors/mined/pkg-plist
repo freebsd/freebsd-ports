@@ -1,36 +1,88 @@
 bin/mined
-bin/xmined
-bin/mstar
-bin/mpico
 bin/minmacs
-bin/uterm
+bin/mpico
+bin/mstar
 bin/umined
+bin/uterm
+bin/xmined
 share/applications/mined.desktop
-%%DATADIR%%/bin/minedmar
-%%DATADIR%%/bin/mterm
-%%DATADIR%%/bin/umined
-%%DATADIR%%/bin/uprint
-%%DATADIR%%/bin/uterm
-%%DATADIR%%/bin/wmined
-%%DATADIR%%/bin/xmined
-%%DATADIR%%/conf_user/Xdefaults.mined
-%%DATADIR%%/conf_user/mlterm/key
-%%DATADIR%%/conf_user/mlterm/main
-%%DATADIR%%/conf_user/profile.mined
-%%DATADIR%%/conf_user/xinitrc.mined
-%%DATADIR%%/help/mined.hlp
-%%DATADIR%%/setup_install/bin/bdf18to20
-%%DATADIR%%/setup_install/bin/configure-xterm
-%%DATADIR%%/setup_install/bin/installfonts
-%%DATADIR%%/setup_install/bin/makeprint
-%%DATADIR%%/setup_install/bin/mkicon
-%%DATADIR%%/setup_install/mined.desktop
-%%DATADIR%%/setup_install/mined.ico
-@dirrm %%DATADIR%%/setup_install/bin
-@dirrm %%DATADIR%%/setup_install
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/conf_user/mlterm
-@dirrm %%DATADIR%%/conf_user
+%%DATADIR%%/CHANGES
+%%DATADIR%%/LICENSE.GNU
+%%DATADIR%%/README
+%%DATADIR%%/VERSION
+%%DATADIR%%/Xdefaults.mined
+%%DATADIR%%/bin/bdf18to20
+%%DATADIR%%/bin/configure-xterm
+%%DATADIR%%/bin/installfonts
+%%DATADIR%%/bin/makeprint
+%%DATADIR%%/bin/mkicon
+%%DATADIR%%/bin/postinstall
+%%DATADIR%%/cancel.html
+%%DATADIR%%/changes.html
+%%DATADIR%%/combined.png
+%%DATADIR%%/combining.png
+%%DATADIR%%/contact.html
+%%DATADIR%%/design.html
+%%DATADIR%%/dollar.gif
+%%DATADIR%%/donate.html
+%%DATADIR%%/download.html
+%%DATADIR%%/euro1.gif
+%%DATADIR%%/features.html
+%%DATADIR%%/handr.gif
+%%DATADIR%%/haninfo-big5.png
+%%DATADIR%%/haninfo-menu.png
+%%DATADIR%%/haninfo-utf8.png
+%%DATADIR%%/header.html
+%%DATADIR%%/index-dl.html
+%%DATADIR%%/index.html
+%%DATADIR%%/konsole/xterm-modified.keytab
+%%DATADIR%%/logo.gif
+%%DATADIR%%/menu.png
+%%DATADIR%%/mined-html.png
+%%DATADIR%%/mined-pw.png
+%%DATADIR%%/mined-sep.png
+%%DATADIR%%/mined-uni.png
+%%DATADIR%%/mined.desktop
+%%DATADIR%%/mined.hlp
+%%DATADIR%%/mined.html
+%%DATADIR%%/mined.ico
+%%DATADIR%%/minedmar
+%%DATADIR%%/minedmar.bat
+%%DATADIR%%/mlterm/key
+%%DATADIR%%/mlterm/main
+%%DATADIR%%/mnemodoc.html
+%%DATADIR%%/mterm
+%%DATADIR%%/navigate.html
+%%DATADIR%%/new-rot.gif
+%%DATADIR%%/new.gif
+%%DATADIR%%/overview.html
+%%DATADIR%%/paypal_donate.gif
+%%DATADIR%%/paypal_logo.gif
+%%DATADIR%%/paypal_payments.gif
+%%DATADIR%%/picklist.png
+%%DATADIR%%/profile.mined
+%%DATADIR%%/script-arabic.gif
+%%DATADIR%%/script-cyrillic.gif
+%%DATADIR%%/script-greek.gif
+%%DATADIR%%/script-han.gif
+%%DATADIR%%/script-hebrew.gif
+%%DATADIR%%/script-highlighting.png
+%%DATADIR%%/script-hiragana.gif
+%%DATADIR%%/script-thai.gif
+%%DATADIR%%/separated.png
+%%DATADIR%%/thankyou.html
+%%DATADIR%%/umined
+%%DATADIR%%/unicode.html
+%%DATADIR%%/unicode.org.png
+%%DATADIR%%/uprint
+%%DATADIR%%/uterm
+%%DATADIR%%/uterm.html
+%%DATADIR%%/wmined
+%%DATADIR%%/wmined.bat
+%%DATADIR%%/xinitrc.mined
+%%DATADIR%%/xmined
+@dirrm %%DATADIR%%/mlterm
+@dirrm %%DATADIR%%/konsole
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
 @dirrmtry share/applications

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2000.12.2
+PORTVERSION=	2000.13.1
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/
 
@@ -61,7 +61,7 @@ post-install:
 	cd ${WRKSRC}/usrshare/package_doc && ${INSTALL_DATA} * ${DOCSDIR}
 	@${RM} ${DOCSDIR}/CHANGES ${DOCSDIR}/LICENSE.GNU
 .endif
-	@${RM} ${DATADIR}/bin/*.bat
+#	@${RM} ${DATADIR}/bin/*.bat
 	@${RM} -rf ${DATADIR}/doc_user ${DATADIR}/package_doc
 
 .include <bsd.port.mk>
