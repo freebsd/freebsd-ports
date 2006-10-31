@@ -1,0 +1,21 @@
+--- ffmpeg/configure.orig	Wed Oct 25 21:31:11 2006
++++ ffmpeg/configure	Mon Oct 30 23:32:55 2006
+@@ -556,7 +556,7 @@
+ audio_oss="yes"
+ dv1394="no"
+ make="gmake"
+-add_cflags "-pthread"
++add_cflags "-fomit-frame-pointer"
+ ;;
+ GNU/kFreeBSD)
+ v4l="no"
+@@ -1514,9 +1514,6 @@
+ check_cflags -Wall
+ check_cflags -Wno-switch
+ check_cflags -Wdisabled-optimization
+-check_cflags -Wpointer-arith
+-check_cflags -Wredundant-decls
+-check_cflags -Winline
+ 
+ # add some linker flags
+ check_ldflags '-Wl,-rpath-link,\$(BUILD_ROOT)/libavcodec' '-Wl,-rpath-link,\$(BUILD_ROOT)/libavformat' '-Wl,-rpath-link,\$(BUILD_ROOT)/libavutil'
