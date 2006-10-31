@@ -1,0 +1,6 @@
+MD5 (SDL_Pango-0.1.2.tar.gz) = 85bbf9bb7b1cee0538154dadd045418c
+SHA256 (SDL_Pango-0.1.2.tar.gz) = 7f75d3b97acf707c696ea126424906204ebfa07660162de925173cdd0257eba4
+SIZE (SDL_Pango-0.1.2.tar.gz) = 405967
+MD5 (SDL_Pango-0.1.2-API-adds.patch) = 5decf3d7eb724e27548af3142131a2f6
+SHA256 (SDL_Pango-0.1.2-API-adds.patch) = 5a989c7acb539fce640323d3995cca8913a4b8869f5c690b78501ec6b5c86d5d
+SIZE (SDL_Pango-0.1.2-API-adds.patch) = 3624
