@@ -7,4 +7,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/asterisk-perl/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/asterisk-perl
 @dirrm %%SITE_PERL%%/Asterisk
-@unexec rmdir %%SITE_PERL%%/%%PERL_ARCH%%/auto/asterisk-perl 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/asterisk-perl
