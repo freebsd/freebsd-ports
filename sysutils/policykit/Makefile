@@ -8,7 +8,7 @@
 
 PORTNAME=	policykit
 PORTVERSION=	0.1.20060514
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 DISTNAME=	PolicyKit-${PORTVERSION}
@@ -31,6 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTKDOC="false"
 
 USE_RC_SUBR=	polkitd
+USE_GNOME_SUBR=	yes
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
