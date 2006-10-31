@@ -1,7 +1,6 @@
-%%SITE_PERL%%/mach/auto/Test/Class/.packlist
+@comment $FreeBSD$
 %%SITE_PERL%%/Test/Class.pm
-%%SITE_PERL%%/Test/Class/MethodInfo.pm
 %%SITE_PERL%%/Test/Class/Load.pm
-@dirrm %%SITE_PERL%%/Test/Class
-@dirrm %%SITE_PERL%%/mach/auto/Test/Class
+%%SITE_PERL%%/Test/Class/MethodInfo.pm
+@dirrmtry %%SITE_PERL%%/Test/Class
 @dirrmtry %%SITE_PERL%%/Test

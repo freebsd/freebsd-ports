@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Class
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -15,34 +15,28 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test::Class - Easily create test classes in an xUnit style
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${SITE_PERL}/Test/Differences.pm:${PORTSDIR}/devel/p5-Test-Differences
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Devel-Symdump>=2.03:${PORTSDIR}/devel/p5-Devel-Symdump
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Test::Class.3 \
-    		Test::Class::MethodInfo.3 \
-    		Test::Class::Load.3
+		Test::Class::Load.3 \
+		Test::Class::MethodInfo.3
 
 .include <bsd.port.pre.mk>
 
-##
-## this port requires PERL 5.6.x or later
-##
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+.if ${PERL_LEVEL} < 500702
+RUN_DEPENDS+=	p5-Attribute-Handlers>=0.77:${PORTSDIR}/devel/p5-Attribute-Handlers
+.if ${PERL_LEVEL} < 500701
+RUN_DEPENDS+=	p5-Class-ISA>=0.32:${PORTSDIR}/devel/p5-Class-ISA
+.if ${PERL_LEVEL} < 500700
+RUN_DEPENDS+=	p5-Storable>=2.04:${PORTSDIR}/devel/p5-Storable
+.endif
+.endif
 .endif
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
