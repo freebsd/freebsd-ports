@@ -1,14 +1,16 @@
---- server/Makefile.orig	Mon Apr 12 08:30:48 2004
-+++ server/Makefile	Mon Jun 13 07:45:44 2005
+Index: server/Makefile
+diff -u server/Makefile.orig server/Makefile
+--- server/Makefile.orig	Wed Oct 25 08:41:53 2006
++++ server/Makefile	Fri Oct 27 12:39:38 2006
 @@ -18,6 +18,7 @@
  MANMODE ?= 644
  MANDIRMODE ?= 755
  INSTALL ?= install
 +PKGCONFIGDIR ?= $(INSTALLROOT)/lib/pkgconfig
  LINK_FLAGS ?= -Wl,-E
- CC ?= gcc
- STRIP ?= -s
-@@ -27,18 +28,18 @@
+ 
+ 
+@@ -44,18 +45,18 @@
  PKG_INCLUDE = `$(PKG_CONFIG) --cflags glib-2.0 gthread-2.0`
  PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0`
  
@@ -31,9 +33,9 @@
 -FLAGS+= $(PTHREAD_INC)
 +FLAGS+= $(PTHREAD_INC) -I$(LOCALBASE)/include
  
- LIBS = $(PKG_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) 
- ifeq ($(glib12),1)
-@@ -87,10 +88,18 @@
+ LIBS = $(PKG_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
+ 
+@@ -105,10 +106,18 @@
  
  all:	gkrellmd
  
@@ -54,7 +56,7 @@
  	$(CC) $(OBJS) -o gkrellmd.static -static \
  		$(LIBS) $(LINK_FLAGS)
  
-@@ -127,17 +136,22 @@
+@@ -145,17 +154,22 @@
  		LINK_FLAGS="" gkrellmd
  endif
  
@@ -79,10 +81,10 @@
  
  install_darwin:
  	$(MAKE) install STRIP=
-@@ -162,6 +176,7 @@
+@@ -180,6 +194,7 @@
  
  clean:
- 	rm -f *.o *~ *.bak gkrellmd core
+ 	rm -f *.o *~ *.bak configure.h configure.log gkrellmd core
 +	rm -f gkrellmd.pc
  
  SYSDEPS = ../src/sysdeps/bsd-common.c ../src/sysdeps/bsd-net-open.c \
