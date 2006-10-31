@@ -61,6 +61,7 @@
     SUBDIR += gnome-pim
     SUBDIR += gnome-utils
     SUBDIR += gnotime
+    SUBDIR += gnustep-notebook
     SUBDIR += gourmet
     SUBDIR += gruler
     SUBDIR += gtimer
