@@ -1888,6 +1888,7 @@ dnshijacker	ports/dns/dnshijacker
 dnsjava		ports/dns/dnsjava
 dnsmasq		ports/dns/dnsmasq
 dnsmax-perl	ports/dns/dnsmax-perl
+dnsperf		ports/dns/dnsperf
 dnsproxy	ports/dns/dnsproxy
 dnstop		ports/dns/dnstop
 dnstracer	ports/dns/dnstracer
