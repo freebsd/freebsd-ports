@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	jaMailHost
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.4
 CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	yasi@yasi.to
 COMMENT=	A Zope hotfix Product to send mail in Japanese
@@ -16,13 +17,12 @@ COMMENT=	A Zope hotfix Product to send mail in Japanese
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 
-USE_PYTHON=	yes
+USE_PYTHON?=	< 2.4
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=${PORTNAME}
 
-PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 .include <bsd.port.pre.mk>
@@ -31,17 +31,6 @@ PKGNAMEPREFIX:=	${PKGNAMEPREFIX}zope-
 
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
-	@cd ${WRKDIR} ;\
-	for f in `${FIND} ${ZOPEPRODUCTNAME} -type f`; do \
-		${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
-	done; \
-	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
-		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
-	done; \
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
