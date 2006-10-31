@@ -1,6 +1,6 @@
-# New ports collection makefile for:   decurs
-# Date created:		19 January 2002
-# Whom:			Miguel Mendez <flynn@energyhq.homeip.net>
+# New ports collection makefile for:	DeCurs
+# Date created:				19 January 2002
+# Whom:					Miguel Mendez <flynn@energyhq.homeip.net>
 #
 # $FreeBSD$
 #
@@ -23,11 +23,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not compile on FreeBSD >= 6.0"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-patch:
@@ -35,7 +31,7 @@ post-patch:
 		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
 .if ${OSVERSION} > 500035
 # Hack for contemporary GCC
-	@${REINPLACE_CMD} -e 's/, CppString \&str/, const CppString \&str/' \
+	@${REINPLACE_CMD} -e 's/CppString \&str/const &/' \
 		${WRKSRC}/src/cppstring.cc ${WRKSRC}/src/cppstring.hh
 	@${REINPLACE_CMD} -E 's/^\/\/ friend//; s/([^:])ostream/\1std::ostream/g' \
 		${WRKSRC}/src/cppstring.hh
