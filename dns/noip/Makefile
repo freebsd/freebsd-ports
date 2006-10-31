@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	noip
-PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kay.abendroth@raxion.net
 COMMENT=	No-IP.com's dynamic DNS update client
 
 ALL_TARGET=	noip2

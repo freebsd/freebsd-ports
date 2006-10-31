@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Aug  2 05:56:55 2003
-+++ Makefile	Wed Nov 30 01:35:17 2005
+--- Makefile.orig	Wed Oct 18 11:13:47 2006
++++ Makefile	Wed Oct 18 11:16:45 2006
 @@ -1,13 +1,13 @@
  TGT=noip2
 -CC=gcc
@@ -18,7 +18,7 @@
 +#LIBS=
 +#ARCH=linux
  
- # for BSD systems that have getifaddr(), uncomment the next line
+ # for Mac OS X and BSD systems that have getifaddr(), uncomment the next line
  #ARCH=bsd_with_getifaddrs
 @@ -21,7 +21,7 @@
  # ARCH=sun
