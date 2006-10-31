@@ -14762,6 +14762,7 @@ wbd		ports/mbone/wbd
 wbl		ports/mail/wbl
 wbxml2		ports/textproc/wbxml2
 wcol		ports/www/wcol
+wdiag		ports/net-mgmt/wdiag
 wdiff		ports/textproc/wdiff
 wdm		ports/x11/wdm
 weatherspect	ports/astro/weatherspect
