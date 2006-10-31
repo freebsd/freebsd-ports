@@ -1,0 +1,17 @@
+Pango is the text rendering engine of GNOME 2.x. SDL_Pango connects
+the engine to SDL.
+
+If you are a game software developer, you should know the difficulties
+of distribution. So I will start to introduce SDL_Pango from the
+viewpoint of distribution.
+
+In Un*x, SDL_Pango is hard to use as system-independent module,
+because it depends on fontconfig and Pango which are designed as
+system-singleton modules. If you use SDL_Pango, your software will
+require those modules installed to target system. If your software
+is shipped as shrink-wrap package, it may cause much problem on
+your support desk. You should carefully design your installation
+process.
+
+WWW:	http://sdlpango.sourceforge.net/
+Author:	NAKAMURA Ken'ichi <nakamura@sbp.fp.a.u-tokyo.ac.jp>

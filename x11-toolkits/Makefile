@@ -210,6 +210,7 @@
     SUBDIR += scintilla
     SUBDIR += scx
     SUBDIR += sdl_gui
+    SUBDIR += sdl_pango
     SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt31
