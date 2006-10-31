@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Zip
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
@@ -17,7 +17,8 @@ COMMENT=	Perl module to create, manipulate, read, and write Zip archive files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
