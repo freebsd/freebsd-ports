@@ -3,12 +3,13 @@ bin/sketchy
 include/sketchy.h
 lib/libsketchy.a
 lib/libsketchy.so
-lib/libsketchy.so.0
+lib/libsketchy.so.22
 %%DATADIR%%/LICENSE
 %%DATADIR%%/lib/abs.scm
 %%DATADIR%%/lib/append.scm
 %%DATADIR%%/lib/assoc.scm
 %%DATADIR%%/lib/assq.scm
+%%DATADIR%%/lib/assv.scm
 %%DATADIR%%/lib/booleanp.scm
 %%DATADIR%%/lib/c-alphabeticp.scm
 %%DATADIR%%/lib/c-cieqp.scm
@@ -34,6 +35,7 @@ lib/libsketchy.so.0
 %%DATADIR%%/lib/divide.scm
 %%DATADIR%%/lib/equal.scm
 %%DATADIR%%/lib/equalp.scm
+%%DATADIR%%/lib/eqvp.scm
 %%DATADIR%%/lib/evenp.scm
 %%DATADIR%%/lib/expt.scm
 %%DATADIR%%/lib/gcd.scm
@@ -42,6 +44,7 @@ lib/libsketchy.so.0
 %%DATADIR%%/lib/id.scm
 %%DATADIR%%/lib/if.scm
 %%DATADIR%%/lib/integer.scm
+%%DATADIR%%/lib/integerp.scm
 %%DATADIR%%/lib/lcm.scm
 %%DATADIR%%/lib/length.scm
 %%DATADIR%%/lib/less.scm
@@ -55,6 +58,7 @@ lib/libsketchy.so.0
 %%DATADIR%%/lib/max.scm
 %%DATADIR%%/lib/member.scm
 %%DATADIR%%/lib/memq.scm
+%%DATADIR%%/lib/memv.scm
 %%DATADIR%%/lib/min.scm
 %%DATADIR%%/lib/minus.scm
 %%DATADIR%%/lib/modulo.scm
@@ -149,6 +153,7 @@ lib/libsketchy.so.0
 %%DATADIR%%/src/queens.scm
 %%DATADIR%%/src/read-line.scm
 %%DATADIR%%/src/remove.scm
+%%DATADIR%%/src/scmtocps.scm
 %%DATADIR%%/src/sketchy-ext.scm
 %%DATADIR%%/src/some.scm
 %%DATADIR%%/src/sublist.scm
@@ -167,6 +172,7 @@ lib/libsketchy.so.0
 %%DOCSDIR%%/library/append.html
 %%DOCSDIR%%/library/assoc.html
 %%DOCSDIR%%/library/assq.html
+%%DOCSDIR%%/library/assv.html
 %%DOCSDIR%%/library/booleanp.html
 %%DOCSDIR%%/library/c-alphabeticp.html
 %%DOCSDIR%%/library/c-cieqp.html
@@ -192,6 +198,7 @@ lib/libsketchy.so.0
 %%DOCSDIR%%/library/divide.html
 %%DOCSDIR%%/library/equal.html
 %%DOCSDIR%%/library/equalp.html
+%%DOCSDIR%%/library/eqvp.html
 %%DOCSDIR%%/library/evenp.html
 %%DOCSDIR%%/library/expt.html
 %%DOCSDIR%%/library/gcd.html
@@ -201,6 +208,7 @@ lib/libsketchy.so.0
 %%DOCSDIR%%/library/if.html
 %%DOCSDIR%%/library/index.html
 %%DOCSDIR%%/library/integer.html
+%%DOCSDIR%%/library/integerp.html
 %%DOCSDIR%%/library/lcm.html
 %%DOCSDIR%%/library/length.html
 %%DOCSDIR%%/library/less.html
@@ -214,6 +222,7 @@ lib/libsketchy.so.0
 %%DOCSDIR%%/library/max.html
 %%DOCSDIR%%/library/member.html
 %%DOCSDIR%%/library/memq.html
+%%DOCSDIR%%/library/memv.html
 %%DOCSDIR%%/library/min.html
 %%DOCSDIR%%/library/minus.html
 %%DOCSDIR%%/library/modulo.html
@@ -283,6 +292,7 @@ lib/libsketchy.so.0
 %%DOCSDIR%%/prog/qsort.html
 %%DOCSDIR%%/prog/queens.html
 %%DOCSDIR%%/prog/read-line.html
+%%DOCSDIR%%/prog/scmtocps.html
 %%DOCSDIR%%/prog/zebra.html
 %%DOCSDIR%%/progs.html
 %%DOCSDIR%%/sk01.html
