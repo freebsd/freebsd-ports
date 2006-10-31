@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tabmixplus
-PORTVERSION=	0.3.0.5
-DISTVERSIONSUFFIX=	-fx
+DISTVERSION=	0.3.5rc1
 CATEGORIES=	www
+MASTER_SITES=	http://tmp.garyr.net/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	An extension that enhances tab browsing capabilities
+COMMENT=	Enhances tab browsing capabilities
 
 XPI_DISTNAME=	tab_mix_plus
 XPI_ID=		{dc572301-7619-498c-a57d-39143191b318}
