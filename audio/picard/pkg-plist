@@ -158,9 +158,34 @@ bin/picard
 share/applications/picard.desktop
 share/icons/picard16.png
 share/icons/picard32.png
-@dirrm %%PYTHON_SITELIBDIR%%/picard/browser
+share/locale/cs/LC_MESSAGES/picard.mo
+share/locale/da/LC_MESSAGES/picard.mo
+share/locale/de/LC_MESSAGES/picard.mo
+share/locale/en/LC_MESSAGES/picard.mo
+share/locale/en_GB/LC_MESSAGES/picard.mo
+share/locale/es/LC_MESSAGES/picard.mo
+share/locale/fi/LC_MESSAGES/picard.mo
+share/locale/fr/LC_MESSAGES/picard.mo
+share/locale/fy/LC_MESSAGES/picard.mo
+share/locale/hu/LC_MESSAGES/picard.mo
+share/locale/is/LC_MESSAGES/picard.mo
+share/locale/it/LC_MESSAGES/picard.mo
+share/locale/ko/LC_MESSAGES/picard.mo
+share/locale/lt/LC_MESSAGES/picard.mo
+share/locale/nl/LC_MESSAGES/picard.mo
+share/locale/no/LC_MESSAGES/picard.mo
+share/locale/pl/LC_MESSAGES/picard.mo
+share/locale/pt/LC_MESSAGES/picard.mo
+share/locale/pt_BR/LC_MESSAGES/picard.mo
+share/locale/ro/LC_MESSAGES/picard.mo
+share/locale/ru/LC_MESSAGES/picard.mo
+share/locale/sk/LC_MESSAGES/picard.mo
+share/locale/sv/LC_MESSAGES/picard.mo
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
+@dirrmtry share/icons
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui/options
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui
+@dirrm %%PYTHON_SITELIBDIR%%/picard/browser
 @dirrm %%PYTHON_SITELIBDIR%%/picard
-@dirrmtry share/applications
-@dirrmtry share/icons
