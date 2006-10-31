@@ -7,7 +7,7 @@
 
 PORTNAME=	ssync
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mnmconsulting.org/ssync/ \
 		ftp://ftp.netsw.org/system/tools/fileutils/install/ssync/
@@ -24,7 +24,8 @@ MAN1=		ssync.1
 post-patch:
 	@${REINPLACE_CMD} -e 's@/etc/init.d/ssyncd@\$$0@g' ${WRKSRC}/ssyncd.init
 	@${REINPLACE_CMD} -e "s@/etc@${PREFIX}/etc@g;s@/usr/sbin@${PREFIX}/sbin@g;" \
-		${WRKSRC}/ssyncd.init ${WRKSRC}/ssyncd.conf ${WRKSRC}/daemon.c
+		${WRKSRC}/ssyncd.init ${WRKSRC}/ssyncd.conf ${WRKSRC}/daemon.c \
+		${WRKSRC}/ssync.man
 	@${REINPLACE_CMD} -e "s@FLAGS=@FLAGS+=@g" ${WRKSRC}/makefile
 
 do-install:
