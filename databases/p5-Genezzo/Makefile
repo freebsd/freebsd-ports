@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Genezzo
-PORTVERSION=	0.64
+PORTVERSION=	0.68
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/J/JC/JCOHEN
@@ -31,6 +31,7 @@ MAN3=		Genezzo.3 Genezzo::Block::RDBArray.3 \
 		Genezzo::GenDBI.3 Genezzo::Havok.3 Genezzo::Havok::Basic.3 \
 		Genezzo::Havok::DebugUtils.3 Genezzo::Havok::Examples.3 \
 		Genezzo::Havok::OO_Examples.3 Genezzo::Havok::SQLScalar.3 \
+    		Genezzo::Havok::SQLCompare.3 \
 		Genezzo::Havok::SysHook.3 Genezzo::Havok::UserExtend.3 \
 		Genezzo::Havok::UserFunctions.3 Genezzo::Index::bt2.3 \
 		Genezzo::Index::bt3.3 Genezzo::Index::btHash.3 \
@@ -46,7 +47,9 @@ MAN3=		Genezzo.3 Genezzo::Block::RDBArray.3 \
 		Genezzo::Row::RSJoinA.3 Genezzo::Row::RSTab.3 \
 		Genezzo::SpaceMan::SMExtent.3 Genezzo::SpaceMan::SMFile.3 \
 		Genezzo::SpaceMan::SMHook.3 Genezzo::TSHash.3 \
+		Genezzo::SpaceMan::SMFreeBlock.3 \
 		Genezzo::Tablespace.3 Genezzo::TestSetup.3 \
+		Genezzo::TestSQL.3 \
 		Genezzo::Util.3 Genezzo::XEval.3 Genezzo::XEval::Prepare.3 \
 		Genezzo::XEval::SQLAlter.3 Genezzo::gendba.3 Genezzo::genexp.3
 
