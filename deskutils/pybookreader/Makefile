@@ -15,6 +15,8 @@ DISTNAME=	PyBookReader-${PORTVERSION}
 MAINTAINER=	valeri_ufo@web.de
 COMMENT=	Program for reading e-books
 
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 USE_GNOME=	pygtk2
