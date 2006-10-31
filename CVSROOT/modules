@@ -10989,6 +10989,7 @@ peps		ports/graphics/peps
 perdition	ports/mail/perdition
 perf		ports/sysutils/perf
 perforce	ports/devel/perforce
+performance	ports/devel/performance
 perl2html	ports/textproc/perl2html
 perl5		ports/lang/perl5
 perl5.8		ports/lang/perl5.8
