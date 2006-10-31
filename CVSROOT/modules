@@ -4172,6 +4172,7 @@ hi-aspell	ports/textproc/hi-aspell
 hicolor-icon-theme	ports/misc/hicolor-icon-theme
 hidentd		ports/net/hidentd
 highlight	ports/textproc/highlight
+highlighterkit	ports/devel/highlighterkit
 highlnk		ports/sysutils/highlnk
 highmoon	ports/games/highmoon
 hil-aspell	ports/textproc/hil-aspell
