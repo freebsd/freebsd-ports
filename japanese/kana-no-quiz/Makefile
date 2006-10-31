@@ -6,24 +6,32 @@
 #
 
 PORTNAME=	kana-no-quiz
-DISTVERSION=	1.5
-PORTREVISION=	1
+DISTVERSION=	1.7
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	Kana_no_quiz-${DISTVERSION}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A little tool to memorize Japanese KANA (Hiragana/Katakana)
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
-WRKSRC=		"${WRKDIR}/Kana no quiz-1.5"
 NO_BUILD=	yes
+
+RM_FILES=	CHANGES.txt FAL.txt  GPL.txt
+RM_OPTS=	-f
+
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 USE_PYDISTUTILS=yes
 
+WRKSRC=		"${WRKDIR}/Kana no quiz-${DISTVERSION}"
+
 post-extract:
-	@${RM} -f ${WRKSRC}/GPL.txt
+	for f in ${RM_FILES}; do \
+	    ${RM} ${RM_OPTS} ${WRKSRC}/$${f}; \
+	done
 
 .include <bsd.port.mk>
