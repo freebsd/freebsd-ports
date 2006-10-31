@@ -19,7 +19,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
 
-LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
+LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh10 \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util
 
 USE_GNOME=	gtk20 gnomehack

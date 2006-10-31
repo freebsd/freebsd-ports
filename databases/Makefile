@@ -32,6 +32,7 @@
     SUBDIR += dbf
     SUBDIR += dbf2mysql
     SUBDIR += dbh
+    SUBDIR += dbh10
     SUBDIR += dbmetrix
     SUBDIR += dbow
     SUBDIR += dbtool
