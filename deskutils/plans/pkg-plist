@@ -345,6 +345,7 @@
 %%DIR%%/fr_french.pl
 %%DIR%%/it_italian.pl
 %%DIR%%/nl_dutch.pl
+%%DIR%%/sp_spanish.pl
 %%DIR%%/zh_tw.pl
 @dirrm %%DIR%%/theme/icons
 @dirrm %%DIR%%/theme/graphics
