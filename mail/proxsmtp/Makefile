@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proxsmtp
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	mail security
 MASTER_SITES=	http://memberwebs.com/nielsen/software/proxsmtp/
 
