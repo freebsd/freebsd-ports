@@ -6,31 +6,29 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 CATEGORIES=	lang scheme
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
+MASTER_SITES=	http://www.call-with-current-continuation.org/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		chicken-profile.1 chicken-setup.1 chicken.1 csc.1 csi.1
-INFO=		chicken
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog INSTALL LICENSE NEWS README TASKS chicken.html chicken.pdf
-.endif
 
 OPTIONS=	PCRE "With PCRE support" off
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ChangeLog INSTALL LICENSE NEWS README
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		Coredump during build on ia64
+BROKEN=		coredump during build on ia64
 .endif
 
 .if defined(WITH_PCRE)
@@ -43,7 +41,6 @@ CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
 post-patch:
 	@${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|"/usr/local/include" ||' ${WRKSRC}/csc.scm.in
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
@@ -51,7 +48,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 	@${MKDIR} ${EXAMPLESDIR}/benchmarks
-	${INSTALL_DATA} ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks
+	@${MKDIR} ${EXAMPLESDIR}/benchmarks/options
+	@${MKDIR} ${EXAMPLESDIR}/benchmarks/others
+	${CP} -R ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks/
 .endif
 
 .include <bsd.port.post.mk>
