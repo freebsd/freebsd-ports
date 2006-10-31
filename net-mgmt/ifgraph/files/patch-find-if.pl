@@ -1,8 +1,14 @@
---- find-if.pl.orig	Sat Sep 20 14:35:38 2003
-+++ find-if.pl	Sat Sep 20 14:36:07 2003
+--- ./find-if.pl.orig	Sat Jan  3 23:44:21 2004
++++ ./find-if.pl	Mon Oct  9 13:49:17 2006
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!%%PERL%% -w
+ #ifGraph 0.4.10 - Network Interface Data to RRD
+ #Copyright (C) 2001-200333 Ricardo Sartori
+ #
 @@ -19,10 +19,6 @@
- #Sugestoes e criticas (sem flames!!) mailto:sartori@ifgraph.org
- #Visite: http://www.ifgraph.org
+ #Sugestoes e criticas (sem flames!!) mailto:sartori@lrv.ufsc.br
+ #Visite: http://ifgraph.lrv.ufsc.br
  
 -# Let's find out where we are
 -use FindBin;

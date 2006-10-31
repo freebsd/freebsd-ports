@@ -7,6 +7,7 @@
 
 PORTNAME=	ifgraph
 PORTVERSION=	0.4.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Simple grapher of SNMP data with RRD
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
+		p5-Color-Rgb>0:${PORTSDIR}/graphics/p5-Color-Rgb
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -30,7 +33,8 @@ PLFILES=	find-if.pl ifgraph.pl makegraph.pl
 DOCFILES=	CHANGELOG INSTALACAO INSTALL TODO LICENSE.TXT MUDANCAS
 
 FILES_SUB=	USER=${IFGRAPH_USER} GROUP=${IFGRAPH_GROUP} \
-		PREFIX=${PREFIX} DOCSDIR=${DOCSDIR}
+		PREFIX=${PREFIX} DOCSDIR=${DOCSDIR} \
+		PERL=${PERL} LOCALBASE=${LOCALBASE}
 
 pre-install:
 	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -43,13 +47,17 @@ do-install:
 	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 .for plfile in ${PLFILES}
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/${plfile} ${PREFIX}/bin
+	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${WRKSRC}/${plfile} > ${WRKDIR}/${plfile}
+	@ ${INSTALL_SCRIPT} ${WRKDIR}/${plfile} ${PREFIX}/bin
 .endfor
 	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/ifgraph.conf > ${WRKSRC}/ifgraph.conf.sample
 	@ ${INSTALL_DATA} ${WRKSRC}/ifgraph.conf.sample ${PREFIX}/etc
 	@ ${MKDIR} ${PREFIX}/ifgraph
 	@ ${MKDIR} ${PREFIX}/ifgraph/htdocs
+	@ ${MKDIR} ${PREFIX}/ifgraph/lib
+	@ ${CP} ${WRKSRC}/lib/rgb.txt ${PREFIX}/ifgraph/lib
 	@ ${CP} -Rp ${WRKSRC}/templates ${PREFIX}/ifgraph
 	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/crontab.in > ${PREFIX}/ifgraph/crontab.in
@@ -72,8 +80,10 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP3
 RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP3
 .else
+BUILD_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
 
