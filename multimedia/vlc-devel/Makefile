@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.0.20060926
+DISTVERSION=	0.9.0.20061020
 PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
@@ -25,6 +25,42 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 LIB_DEPENDS=	notify.2:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+
+OPTIONS+=	A52 "a52 audio support, many DVDs use this" On
+OPTIONS+=	AALIB "Aalib Console Graphics Support" Off
+OPTIONS+=	AVAHI "Avahi (Rendezvous/Bonjour (R) ) networking" On
+OPTIONS+=	CACA "Libcaca Console Graphics Support" Off
+OPTIONS+=	ARTS "Enable arts sound support" Off
+OPTIONS+=	CORBA "Enable a Corba interface via orbit2" Off
+OPTIONS+=	DAAP "Connect to iTunes(R) music shares" On
+OPTIONS+=	DBUS "Dbus support" On
+OPTIONS+=	DEBUG "Enable debuging support" Off
+OPTIONS+=	DTS "DTS decoder support, many DVDs use this" On
+OPTIONS+=	ESOUND "Esound Support" Off
+OPTIONS+=	FAAC "Faac audio encoder (mp4/aac) support" Off
+OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" Off
+OPTIONS+=	FLAC "Flac audio codec support" Off
+OPTIONS+=	HTTPD "Streaming media control via http" On
+OPTIONS+=	LAME "Lame mp3 audio encoder support" On
+OPTIONS+=	LIVEMEDIA "Support for rstp/rtp/sdp protocols" On
+OPTIONS+=	MAD "Mad mp3 audio decoder support" On
+OPTIONS+=	MATROSKA "Matroska Container Format support" On
+OPTIONS+=	MPEG2 "Mpeg-2 audio/video decoder Support" On
+OPTIONS+=	NCURSES "Enable ncueses (console) interface" Off
+OPTIONS+=	OGG "Ogg audio decoder support" On
+OPTIONS+=	REALAUDIO "Real audio(R) support" On
+OPTIONS+=	SAMBA "SAMBA Access module" On
+OPTIONS+=	SDL "SDL video output" On
+OPTIONS+=	SVG "SVG graphics support" Off
+OPTIONS+=	SVGALIB "SVGALIB video output" Off
+OPTIONS+=	SHOUT "Shout2 support" Off
+OPTIONS+=	SKINS "Enable GTK+ skinsned interface" Off
+OPTIONS+=	SPEEX "Speex voice codec support" On
+OPTIONS+=	THEORA "OGG/Vorbis video codec support" Off
+OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" Off
+OPTIONS+=	VORBIS "Vorbis support" On
+OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
+OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 
 CONFLICTS=	vlc-[0-9]*
 
