@@ -5,8 +5,8 @@
  
  
 +let iac_will_8bit = "\255\253\000"  
- let iac_will_naws = "\255\253\031"  
-   
+ let iac_will_naws = "\255\253\031"
+ 
  let user_reader o telnet sock nread  = 
 @@ -348,7 +349,7 @@
        
@@ -14,7 +14,7 @@
        telnet.telnet_iac <- false;
 -      let is_normal_char = i > 31 && i < 127 in
 +      let is_normal_char = i > 31 (*&& i < 127*) in
-       
+ 
        if telnet.telnet_wait = 1 then begin
            Buffer.add_char telnet.telnet_buffer c;
 @@ -469,6 +470,7 @@
