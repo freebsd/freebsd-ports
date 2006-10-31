@@ -9,7 +9,6 @@ PORTNAME=	seamonkey
 PORTVERSION=	1.5.a${SNAPDATE:S/-/./g}
 DISTVERSION=	1.5a
 DISTVERSIONSUFFIX=	.en-US.linux-i686
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
@@ -23,7 +22,7 @@ DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-SNAPDATE=	2006-09-21
+SNAPDATE=	2006-10-30
 USE_BZIP2=	yes
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"

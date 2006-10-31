@@ -28,6 +28,7 @@ lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/components/libxpinstall.so
+lib/%%APP_NAME%%/components/nsBookmarkTransactionManager.js
 lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
 lib/%%APP_NAME%%/components/nsBrowserGlue.js
 lib/%%APP_NAME%%/components/nsCloseAllWindows.js

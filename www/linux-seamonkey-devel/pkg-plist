@@ -159,6 +159,7 @@ lib/%%APP_NAME%%/components/libmime.so
 lib/%%APP_NAME%%/components/libmimeemitter.so
 lib/%%APP_NAME%%/components/libmork.so
 lib/%%APP_NAME%%/components/libmozfind.so
+lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libmozldap.so
 lib/%%APP_NAME%%/components/libmsgcompose.so
 lib/%%APP_NAME%%/components/libmsgdb.so
@@ -248,6 +249,7 @@ lib/%%APP_NAME%%/components/nsProgressDialog.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
 lib/%%APP_NAME%%/components/nsResetPref.js
 lib/%%APP_NAME%%/components/nsSidebar.js
+lib/%%APP_NAME%%/components/nsURLFormatter.js
 lib/%%APP_NAME%%/components/nsUpdateNotifier.js
 lib/%%APP_NAME%%/components/nsXmlRpcClient.js
 lib/%%APP_NAME%%/components/offlineStartup.js
@@ -284,6 +286,7 @@ lib/%%APP_NAME%%/components/txtsvc.xpt
 lib/%%APP_NAME%%/components/uconv.xpt
 lib/%%APP_NAME%%/components/unicharutil.xpt
 lib/%%APP_NAME%%/components/uriloader.xpt
+lib/%%APP_NAME%%/components/urlformatter.xpt
 lib/%%APP_NAME%%/components/venkman-service.js
 lib/%%APP_NAME%%/components/wallet.xpt
 lib/%%APP_NAME%%/components/walleteditor.xpt
@@ -297,6 +300,7 @@ lib/%%APP_NAME%%/components/windowds.xpt
 lib/%%APP_NAME%%/components/windowwatcher.xpt
 lib/%%APP_NAME%%/components/xml-rpc.xpt
 lib/%%APP_NAME%%/components/xpautocomplete.xpt
+lib/%%APP_NAME%%/components/xpcom.xpt
 lib/%%APP_NAME%%/components/xpcom_base.xpt
 lib/%%APP_NAME%%/components/xpcom_components.xpt
 lib/%%APP_NAME%%/components/xpcom_ds.xpt
