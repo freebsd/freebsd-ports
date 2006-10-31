@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	biology python
-MASTER_SITES=	http://www.biopython.org/files/
+MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mauricio@arareko.net
