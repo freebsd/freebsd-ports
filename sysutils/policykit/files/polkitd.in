@@ -10,9 +10,10 @@
 # polkitd_enable="YES"
 #
 
-polkitd_enable=${polkitd_enable-"NO"}
-
 . %%RC_SUBR%%
+. %%GNOME_SUBR%%
+
+polkitd_enable=${polkitd_enable-${gnome_enable}}
 
 name=polkitd
 rcvar=`set_rcvar`
