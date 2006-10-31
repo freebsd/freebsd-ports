@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jsi@jules.de
 COMMENT=	Web-based requirement, test and bugtracking system
 
-BROKEN=		Size mismatch
-
 NO_BUILD=	yes
 USE_PHP=	mysql gd
 
