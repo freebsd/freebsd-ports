@@ -47,7 +47,9 @@ bin/gqview
 %%DOCSDIR%%/html/11_4_management.html
 %%DOCSDIR%%/html/12_credits.html
 share/locale/ar/LC_MESSAGES/gqview.mo
+share/locale/be/LC_MESSAGES/gqview.mo
 share/locale/bg/LC_MESSAGES/gqview.mo
+share/locale/ca/LC_MESSAGES/gqview.mo
 share/locale/cs/LC_MESSAGES/gqview.mo
 share/locale/da/LC_MESSAGES/gqview.mo
 share/locale/de/LC_MESSAGES/gqview.mo
@@ -59,6 +61,7 @@ share/locale/hu/LC_MESSAGES/gqview.mo
 share/locale/id/LC_MESSAGES/gqview.mo
 share/locale/it/LC_MESSAGES/gqview.mo
 share/locale/ja/LC_MESSAGES/gqview.mo
+share/locale/ko/LC_MESSAGES/gqview.mo
 share/locale/nl/LC_MESSAGES/gqview.mo
 share/locale/no/LC_MESSAGES/gqview.mo
 share/locale/pl/LC_MESSAGES/gqview.mo
