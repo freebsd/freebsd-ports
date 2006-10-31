@@ -250,6 +250,14 @@ share/gnome/help/gedit/ko/legal.xml
 share/gnome/help/gedit/ro/figures/gedit_window.png
 share/gnome/help/gedit/ro/gedit.xml
 share/gnome/help/gedit/ro/legal.xml
+share/gnome/help/gedit/ru/figures/gedit_format_bold.png
+share/gnome/help/gedit/ru/figures/gedit_format_italic.png
+share/gnome/help/gedit/ru/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/ru/figures/gedit_format_underline.png
+share/gnome/help/gedit/ru/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/ru/figures/gedit_window.png
+share/gnome/help/gedit/ru/gedit.xml
+share/gnome/help/gedit/ru/legal.xml
 share/gnome/help/gedit/sv/figures/gedit_format_bold.png
 share/gnome/help/gedit/sv/figures/gedit_format_italic.png
 share/gnome/help/gedit/sv/figures/gedit_format_strikethrough.png
@@ -292,6 +300,7 @@ share/gnome/omf/gedit/gedit-it.omf
 share/gnome/omf/gedit/gedit-ja.omf
 share/gnome/omf/gedit/gedit-ko.omf
 share/gnome/omf/gedit/gedit-ro.omf
+share/gnome/omf/gedit/gedit-ru.omf
 share/gnome/omf/gedit/gedit-sv.omf
 share/gnome/omf/gedit/gedit-zh_CN.omf
 share/gnome/omf/gedit/gedit-zh_HK.omf
@@ -385,6 +394,8 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/help/gedit/zh_CN
 @dirrm share/gnome/help/gedit/sv/figures
 @dirrm share/gnome/help/gedit/sv
+@dirrm share/gnome/help/gedit/ru/figures
+@dirrm share/gnome/help/gedit/ru
 @dirrm share/gnome/help/gedit/ro/figures
 @dirrm share/gnome/help/gedit/ro
 @dirrm share/gnome/help/gedit/ko/figures
