@@ -7,6 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061031:
+  AFFECTS: Users of math/rkward
+  AUTHOR: thierry@FreeBSD.org
+
+  The way some information such as descriptive labels is stored in the
+  R workspace was changed in RKWard 0.4.0.
+  While the data itself can still be loaded, labels will not be
+  available from workspaces created with an earlier version of RKWard.
+  To convert the old labels to the new format, run
+  rk.convert.pre040 ()
+  in the RKWard R console after loading the workspace in question.
+
+20061031:
   AFFECTS: Users of news/inn-current or news/inn-stable
   AUTHOR: shaun@FreeBSD.org
 
