@@ -174,6 +174,7 @@
     SUBDIR += notif2
     SUBDIR += openbox-themes
     SUBDIR += phase
+    SUBDIR += polymer
     SUBDIR += qinx
     SUBDIR += qnxstyle
     SUBDIR += qt-bluecurve-theme

@@ -1,0 +1,6 @@
+Polymer (formerly known as Plastique) is a port of KDE style Plastik, which
+does not depend on any KDE libraries.  This means that you only need QT 3.x
+to make your QT applications look as if you had KDE installed.  Full source
+code is released under GPL license.
+
+WWW: http://static.int.pl/~mig21/dev/releases/polymer/
