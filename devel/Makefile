@@ -1974,6 +1974,7 @@
     SUBDIR += websvn
     SUBDIR += wfut
     SUBDIR += wininfo
+    SUBDIR += wizardkit
     SUBDIR += wxGlade
     SUBDIR += xdg-utils
     SUBDIR += xfc
