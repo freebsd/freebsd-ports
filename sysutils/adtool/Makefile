@@ -8,7 +8,7 @@
 PORTNAME=	adtool
 PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dexy.mine.nu/adtool/
+MASTER_SITES=	http://gp2x.org/adtool/
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Active Directory administration tool
