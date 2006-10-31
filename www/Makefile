@@ -176,6 +176,7 @@
     SUBDIR += glibwww
     SUBDIR += gnome-user-share
     SUBDIR += gnome-web-photo
+    SUBDIR += gnustep-ticker
     SUBDIR += google-sitemapgen
     SUBDIR += goose
     SUBDIR += gstreamer-plugins-neon
