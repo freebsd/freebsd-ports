@@ -10,10 +10,11 @@
 # hald_enable="YES"
 #
 
-hald_enable=${hald_enable-"NO"}
-hald_flags=${hald_flags-""}
-
 . %%RC_SUBR%%
+. %%GNOME_SUBR%%
+
+hald_enable=${hald_enable-${gnome_enable}}
+hald_flags=${hald_flags-""}
 
 name=hald
 rcvar=`set_rcvar`
