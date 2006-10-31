@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.7.6.1
-DISTVERSION=	7.7.6
+PORTVERSION=	7.7.7
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
@@ -19,9 +18,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:plans \
 		fr_french.pl:addons \
 		de_german.pl:addons \
 		it_italian.pl:addons \
+		sp_spanish.pl:addons \
 		zh_tw.pl:addons \
 		powerani.gif:logo
-DIST_SUBDIR=	${PORTNAME}/rerolled
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	infofarmer@FreeBSD.org
