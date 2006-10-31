@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061031:
+  AFFECTS: Users of news/inn-current or news/inn-stable
+  AUTHOR: shaun@FreeBSD.org
+
+  The stable and current ports of inn have been updated. They suffered
+  from the same problem previously documented and fixed in news/inn.
+  When upgrading either of the two mentioned ports, users are advised
+  to move inn's database directory (/usr/local/news/db) out of the way
+  prior to _deinstallation_ in order to save its contents from being
+  erased.
+
 20061014:
   AFFECTS: All GTK+2 and GNOME users
   AUTHOR: gnome@FreeBSD.org
