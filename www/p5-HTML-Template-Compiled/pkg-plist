@@ -6,6 +6,7 @@
 %%SITE_PERL%%/HTML/Template/Compiled/Expression.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression/Expressions.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Filter.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Formatter.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Lazy.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Parser.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
