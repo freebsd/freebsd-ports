@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	uvscan
-PORTVERSION=	4.40e
-PORTREVISION=	4
+PORTVERSION=	5.10e
 CATEGORIES=	security
-MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v4.40/
-DISTNAME=	vbsd440e
+MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v5.10/
+DISTNAME=	vbsd510e
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jeh@FreeBSD.org
@@ -48,7 +47,7 @@ RESTRICTED=	"restrictive 30 day evaluation license"
 
 MAN1=		uvscan.1
 
-PORTDOCS=	e4400upg.pdf readme.txt
+PORTDOCS=	e5100upg.pdf readme.txt
 
 PROGFILES=	contact.txt license.dat license.txt messages.dat \
 		signlic.txt
@@ -93,7 +92,9 @@ post-install:
 	@${ECHO_CMD} "libc.so.3         libc.so.4"
 	@${ECHO_CMD} ""
 .endif
+.if !defined (PACKAGE_BUILDING)
 	@${ECHO_CMD} "Trying to fetch the current DAT file"
 	${SH} ${PREFIX}/sbin/update_dat
+.endif
 
 .include <bsd.port.post.mk>
