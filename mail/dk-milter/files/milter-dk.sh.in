@@ -40,7 +40,7 @@ load_rc_config $name
 milterdk_enable=${milterdk_enable:-"NO"}
 milterdk_uid=${milterdk_uid:-"dkfilter"}
 milterdk_profiles=${milterdk_profiles:-}
-milterdk_socket=${milterdk_socket:-"local:/var/run/dk-filter"}
+milterdk_socket=${milterdk_socket:-"unix:/var/run/milterdk/filter"}
 milterdk_domain=${milterdk_domain:-"example.com"}
 milterdk_key=${milterdk_key:-"/var/db/domainkeys/default.key.pem"}
 milterdk_selector=${milterdk_selector:-"default"}
