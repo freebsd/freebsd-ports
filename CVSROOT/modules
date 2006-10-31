@@ -6289,6 +6289,7 @@ libtext-wrapi18n-perl	ports/textproc/libtext-wrapi18n-perl
 libthai		ports/devel/libthai
 libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
+libticables2	ports/comms/libticables2
 libticalcs	ports/devel/libticalcs
 libticonv	ports/converters/libticonv
 libtifiles	ports/devel/libtifiles
