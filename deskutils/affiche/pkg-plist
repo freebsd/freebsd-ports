@@ -1,0 +1,30 @@
+Local/Applications/Affiche.app/Affiche
+Local/Applications/Affiche.app/Resources/Affiche.desktop
+Local/Applications/Affiche.app/Resources/Affiche.tiff
+Local/Applications/Affiche.app/Resources/English.lproj/Localizable.strings
+Local/Applications/Affiche.app/Resources/French.lproj/Localizable.strings
+Local/Applications/Affiche.app/Resources/German.lproj/Localizable.strings
+Local/Applications/Affiche.app/Resources/Info-gnustep.plist
+Local/Applications/Affiche.app/Resources/Lojban.lproj/Localizable.strings
+Local/Applications/Affiche.app/Resources/Spanish.lproj/Localizable.strings
+Local/Applications/Affiche.app/Resources/Swedish.lproj/Localizable.strings
+Local/Applications/Affiche.app/Resources/buttons_blue.tiff
+Local/Applications/Affiche.app/Resources/buttons_gray.tiff
+Local/Applications/Affiche.app/Resources/buttons_green.tiff
+Local/Applications/Affiche.app/Resources/buttons_purple.tiff
+Local/Applications/Affiche.app/Resources/buttons_yellow.tiff
+Local/Applications/Affiche.app/Resources/resize_blue.tiff
+Local/Applications/Affiche.app/Resources/resize_gray.tiff
+Local/Applications/Affiche.app/Resources/resize_green.tiff
+Local/Applications/Affiche.app/Resources/resize_purple.tiff
+Local/Applications/Affiche.app/Resources/resize_yellow.tiff
+Local/Applications/Affiche.app/library_paths.openapp
+Local/Applications/Affiche.app/stamp.make
+@dirrm Local/Applications/Affiche.app/Resources/Swedish.lproj
+@dirrm Local/Applications/Affiche.app/Resources/Spanish.lproj
+@dirrm Local/Applications/Affiche.app/Resources/Lojban.lproj
+@dirrm Local/Applications/Affiche.app/Resources/German.lproj
+@dirrm Local/Applications/Affiche.app/Resources/French.lproj
+@dirrm Local/Applications/Affiche.app/Resources/English.lproj
+@dirrm Local/Applications/Affiche.app/Resources
+@dirrm Local/Applications/Affiche.app
