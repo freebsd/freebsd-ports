@@ -101,6 +101,7 @@
     SUBDIR += gnomephotoprinter
     SUBDIR += gribouy
     SUBDIR += gsfonts
+    SUBDIR += gspdf
     SUBDIR += gtklp
     SUBDIR += guitartex
     SUBDIR += gutenprint
