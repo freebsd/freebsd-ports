@@ -1,7 +1,4 @@
 bin/xchat
-%%DBUS%%bin/xchat-remote
-%%DBUS%%lib/xchat/plugins/dbus.la
-%%DBUS%%lib/xchat/plugins/dbus.so
 %%PERL%%lib/xchat/plugins/perl.la
 %%PERL%%lib/xchat/plugins/perl.so
 %%PYTHON%%lib/xchat/plugins/python.la
@@ -9,6 +6,8 @@ bin/xchat
 %%TCL%%lib/xchat/plugins/tcl.la
 %%TCL%%lib/xchat/plugins/tcl.so
 share/applications/xchat.desktop
+%%DBUS%%share/dbus-1/services/org.xchat.service.service
+share/locale/be/LC_MESSAGES/xchat.mo
 share/locale/de/LC_MESSAGES/xchat.mo
 share/locale/el/LC_MESSAGES/xchat.mo
 share/locale/es/LC_MESSAGES/xchat.mo
@@ -16,10 +15,14 @@ share/locale/fi/LC_MESSAGES/xchat.mo
 share/locale/fr/LC_MESSAGES/xchat.mo
 share/locale/gl/LC_MESSAGES/xchat.mo
 share/locale/hu/LC_MESSAGES/xchat.mo
+share/locale/it/LC_MESSAGES/xchat.mo
 share/locale/ja/LC_MESSAGES/xchat.mo
 share/locale/ko/LC_MESSAGES/xchat.mo
+share/locale/lt/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
 share/locale/pa/LC_MESSAGES/xchat.mo
+share/locale/pt/LC_MESSAGES/xchat.mo
+share/locale/ru/LC_MESSAGES/xchat.mo
 share/locale/sq/LC_MESSAGES/xchat.mo
 share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
