@@ -24,7 +24,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.96.1
+PORTVERSION=	0.96.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -55,6 +55,7 @@ OPTIONS=	GTK2 "Build with GTK2 frontend" on \
 		NLS "Enable native language support" on \
 		IPV6 "Enable IPv6 support" on \
 		DBUS "Enable D-BUS IPC support" off \
+		SQLITE "Enable SQLite support" off \
 		DEBUG "Build with debugging symbols" off \
 		PORTABILITY "Use the PATH variable at run-time" off
 
@@ -96,6 +97,7 @@ PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/es/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/fr/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/hu/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/it/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/ja/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/nb/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/nl/LC_MESSAGES/gtk-gnutella.mo \
@@ -111,6 +113,10 @@ CONFIGURE_ARGS+=	-D ipv6=false
 LIB_DEPENDS+=		dbus:${PORTSDIR}/devel/dbus
 .else
 CONFIGURE_ARGS+=	-D dbus=false
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=		yes
 .endif
 
 .include <bsd.port.post.mk>

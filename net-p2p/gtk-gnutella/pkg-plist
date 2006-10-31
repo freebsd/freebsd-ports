@@ -29,6 +29,9 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/icon.xpm
 %%DATADIR%%/pixmaps/leaf.xpm
 %%DATADIR%%/pixmaps/legacy.xpm
+%%DATADIR%%/pixmaps/magnet.16x16.png
+%%DATADIR%%/pixmaps/magnet.32x32.png
+%%DATADIR%%/pixmaps/magnet.64x64.png
 %%DATADIR%%/pixmaps/no_firewall.xpm
 %%DATADIR%%/pixmaps/offline.xpm
 %%DATADIR%%/pixmaps/online.xpm
