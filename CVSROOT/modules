@@ -11438,6 +11438,7 @@ polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
 polygraph	ports/benchmarks/polygraph
 polymake	ports/math/polymake
+polymer		ports/x11-themes/polymer
 polyml		ports/lang/polyml
 polypaudio	ports/audio/polypaudio
 polypuzzle	ports/games/polypuzzle
