@@ -7,6 +7,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
     		http://www.goodking.ca/pub/files/
