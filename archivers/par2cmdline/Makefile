@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	parchive
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jonathan@kc8onw.net
 COMMENT=	Tools for using Parity v2 Archive files
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
