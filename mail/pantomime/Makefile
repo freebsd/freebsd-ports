@@ -1,4 +1,4 @@
-# New ports collection makefile for:    Pantomime
+# New ports collection makefile for:    pantomime
 # Date created:         17 Sep 2001
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pantomime
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/
-DISTNAME=	Pantomime-${PORTVERSION}
+DISTNAME=	Pantomime-${PORTVERSION}pre2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail/MIME handling library for GNUstep
@@ -24,6 +23,7 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 LDCONFIG_DIRS=	${LOCALLIBDIR}
+NO_FILTER_SHLIBS=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
