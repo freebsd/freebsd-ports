@@ -16,6 +16,7 @@ share/lush/demos/simple-gui
 share/lush/etc/README.ivtools
 share/lush/etc/compile-all
 share/lush/etc/lush-find-string
+share/lush/etc/lush.1
 share/lush/etc/lush.el
 share/lush/etc/make-html-manual
 share/lush/etc/make-latex-manual
@@ -39,6 +40,8 @@ share/lush/lsh/compiler/compiler.hlp
 share/lush/lsh/compiler/dh-compile.lsh
 share/lush/lsh/compiler/dh-macro.lsh
 share/lush/lsh/compiler/dh-util.lsh
+share/lush/lsh/compiler/lush_runtime.c
+share/lush/lsh/compiler/make-standalone.lsh
 share/lush/lsh/compiler/old/dh-graphics.sn
 share/lush/lsh/libc/add-makehelp.lsh
 share/lush/lsh/libc/constants.lsh
@@ -46,11 +49,13 @@ share/lush/lsh/libc/cparse.lsh
 share/lush/lsh/libc/fortran.lsh
 share/lush/lsh/libc/libc.lsh
 share/lush/lsh/libc/make.lsh
+share/lush/lsh/libc/mallinfo.lsh
 share/lush/lsh/libc/shell.lsh
 share/lush/lsh/libc/stdio.lsh
 share/lush/lsh/libc/stopwatch.lsh
-share/lush/lsh/libdb/image-db.lsh
-share/lush/lsh/libdb/libdb.hlp
+share/lush/lsh/libdb/db.lsh
+share/lush/lsh/libdb/examples/forest.lsh
+share/lush/lsh/libdb/examples/mnist.lsh
 share/lush/lsh/libgraph/grammar.lsh
 share/lush/lsh/libgraph/graph.lsh
 share/lush/lsh/libgraph/gsearch.lsh
@@ -99,6 +104,7 @@ share/lush/lsh/libogre/treebrowser-test.lsh
 share/lush/lsh/libogre/treebrowser.lsh
 share/lush/lsh/libplot/plotter.lsh
 share/lush/lsh/libstd/brace.lsh
+share/lush/lsh/libstd/cluster.lsh
 share/lush/lsh/libstd/compat.lsh
 share/lush/lsh/libstd/dynamic.lsh
 share/lush/lsh/libstd/dz.lsh
@@ -106,11 +112,11 @@ share/lush/lsh/libstd/graphenv.lsh
 share/lush/lsh/libstd/help.lsh
 share/lush/lsh/libstd/ldoc.lsh
 share/lush/lsh/libstd/ltree.lsh
+share/lush/lsh/libstd/oldplotenv.lsh
 share/lush/lsh/libstd/overload.lsh
+share/lush/lsh/libstd/plotenv.lsh
 share/lush/lsh/libstd/remote.lsh
-share/lush/lsh/libsvqp/svqp.cpp
-share/lush/lsh/libsvqp/svqp.h
-share/lush/lsh/libsvqp/svqp.lsh
+share/lush/lsh/libstd/svgwindow.lsh
 share/lush/lsh/lush-manual-latex.hlp
 share/lush/lsh/lush-manual.hlp
 share/lush/lsh/manual/boolean.hlp
@@ -132,17 +138,18 @@ share/lush/lsh/manual/inputoutput.hlp
 share/lush/lsh/manual/list.hlp
 share/lush/lsh/manual/lush-basics.hlp
 share/lush/lsh/manual/lush-definition.hlp
+share/lush/lsh/manual/lush-interpreter-internals.hlp
 share/lush/lsh/manual/lush-intro.hlp
 share/lush/lsh/manual/lush-tutorial.hlp
 share/lush/lsh/manual/miscellaneous.hlp
 share/lush/lsh/manual/numberlists.hlp
 share/lush/lsh/manual/numbers.hlp
 share/lush/lsh/manual/objects.hlp
-share/lush/lsh/manual/open.hlp
 share/lush/lsh/manual/storage.hlp
 share/lush/lsh/manual/strings.hlp
 share/lush/lsh/manual/symbol.hlp
 share/lush/lsh/manual/tltools.hlp
+share/lush/lsh/profiler/profile.lsh
 share/lush/packages/alsa/alsa-config.lsh
 share/lush/packages/alsa/alsa.hlp
 share/lush/packages/alsa/alsa.lsh
@@ -150,6 +157,10 @@ share/lush/packages/alsa/demos/play-wav.lsh
 share/lush/packages/alsa/pcm.lsh
 share/lush/packages/alsa/rawmidi.lsh
 share/lush/packages/alsa/seq.lsh
+share/lush/packages/audio/audio.hlp
+share/lush/packages/audio/ronde3-susato.ogg
+share/lush/packages/audio/simple-audio.lsh
+share/lush/packages/audio/spectrogram-demo.lsh
 share/lush/packages/audiofile/audiofile-config.lsh
 share/lush/packages/audiofile/audiofile.hlp
 share/lush/packages/audiofile/audiofile.lsh
@@ -167,6 +178,19 @@ share/lush/packages/cblas/cblas-constants.lsh
 share/lush/packages/cblas/cblas.lsh
 share/lush/packages/devices/devices.hlp
 share/lush/packages/devices/joystick.lsh
+share/lush/packages/devices/parport.lsh
+share/lush/packages/devices/serial.lsh
+share/lush/packages/devices/usb2rc.lsh
+share/lush/packages/ffmpeg/avsource.lsh
+share/lush/packages/ffmpeg/ffmpeg-config.lsh
+share/lush/packages/ffmpeg/ffmpeg-enum.lsh
+share/lush/packages/ffmpeg/ffmpeg.hlp
+share/lush/packages/ffmpeg/ffmpeg.lsh
+share/lush/packages/ffmpeg/play.lsh
+share/lush/packages/fftw/fftw-config.lsh
+share/lush/packages/fftw/fftw-test.lsh
+share/lush/packages/fftw/fftw.lsh
+share/lush/packages/fftw/sample-image.mat
 share/lush/packages/gblearn2/ccc-tdnn.lsh
 share/lush/packages/gblearn2/data-sources.lsh
 share/lush/packages/gblearn2/demos/dsource-mnist.lsh
@@ -183,6 +207,7 @@ share/lush/packages/gblearn2/gb-params.lsh
 share/lush/packages/gblearn2/gb-states.lsh
 share/lush/packages/gblearn2/gb-trainers.lsh
 share/lush/packages/gblearn2/net-c.lsh
+share/lush/packages/gblearn2/net-cc.lsh
 share/lush/packages/gblearn2/net-ccc.lsh
 share/lush/packages/gblearn2/net-cf.lsh
 share/lush/packages/gblearn2/net-cfe.lsh
@@ -335,7 +360,9 @@ share/lush/packages/lapack/lapack-x.lsh
 share/lush/packages/lapack/lapack-z.lsh
 share/lush/packages/lapack/lapack.hlp
 share/lush/packages/lapack/lapack.lsh
+share/lush/packages/libnum/interpolator.lsh
 share/lush/packages/libnum/libcomplex.lsh
+share/lush/packages/libnum/libnum-config.lsh
 share/lush/packages/libnum/libnum.hlp
 share/lush/packages/libnum/libnum.lsh
 share/lush/packages/libnum/linalgebra.lsh
@@ -462,6 +489,7 @@ share/lush/packages/python/pytype.lsh
 share/lush/packages/python/pyunicode.lsh
 share/lush/packages/python/pyweakref.lsh
 share/lush/packages/sdl/SDL.lsh
+share/lush/packages/sdl/SDLMain.m
 share/lush/packages/sdl/SDL_active.lsh
 share/lush/packages/sdl/SDL_audio.lsh
 share/lush/packages/sdl/SDL_byteorder.lsh
@@ -596,6 +624,37 @@ share/lush/packages/sn28/src/miscop.c
 share/lush/packages/sn28/src/network.c
 share/lush/packages/sn28/src/nlf.c
 share/lush/packages/sn28/src/sn2sn1.c
+share/lush/packages/svm/README
+share/lush/packages/svm/demos/mnist-kernel.lsh
+share/lush/packages/svm/demos/mnist-libsvm.lsh
+share/lush/packages/svm/demos/mnist-svqp.lsh
+share/lush/packages/svm/kernel.lsh
+share/lush/packages/svm/lasvm.lsh
+share/lush/packages/svm/lasvm/kcache.c
+share/lush/packages/svm/lasvm/kcache.h
+share/lush/packages/svm/lasvm/kernel.c
+share/lush/packages/svm/lasvm/kernel.h
+share/lush/packages/svm/lasvm/lasvm.c
+share/lush/packages/svm/lasvm/lasvm.h
+share/lush/packages/svm/lasvm/messages.c
+share/lush/packages/svm/lasvm/messages.h
+share/lush/packages/svm/lasvm/vector.c
+share/lush/packages/svm/lasvm/vector.h
+share/lush/packages/svm/lasvmcache.lsh
+share/lush/packages/svm/lasvmload.lsh
+share/lush/packages/svm/lasvmvector.lsh
+share/lush/packages/svm/libsvm.lsh
+share/lush/packages/svm/libsvm/README
+share/lush/packages/svm/libsvm/svm.cpp
+share/lush/packages/svm/libsvm/svm.h
+share/lush/packages/svm/svqp.lsh
+share/lush/packages/svm/svqp/README
+share/lush/packages/svm/svqp/svqp.cpp
+share/lush/packages/svm/svqp/svqp.h
+share/lush/packages/svm/svqp2/svqp2.cpp
+share/lush/packages/svm/svqp2/svqp2.h
+share/lush/packages/svm/svqp2svm.lsh
+share/lush/packages/svm/svqpsvm.lsh
 share/lush/packages/torch/aux_const.lsh
 share/lush/packages/torch/aux_structure.lsh
 share/lush/packages/torch/demos/DiskIdx2UbyteDataSet.cc
@@ -642,6 +701,8 @@ share/lush/src/Makefile
 share/lush/src/Makefile.in
 share/lush/src/allocate.c
 share/lush/src/allocate.o
+share/lush/src/arith.c
+share/lush/src/arith.o
 share/lush/src/at.c
 share/lush/src/at.o
 share/lush/src/binary.c
@@ -691,6 +752,8 @@ share/lush/src/io.c
 share/lush/src/io.o
 share/lush/src/lisp_c.c
 share/lush/src/lisp_c.o
+share/lush/src/lisp_driver.c
+share/lush/src/lisp_driver.o
 share/lush/src/lush
 share/lush/src/main.c
 share/lush/src/main.o
@@ -729,6 +792,12 @@ share/lush/sys/sysenv.lsh
 @dirrm share/lush/packages/video
 @dirrm share/lush/packages/torch/demos
 @dirrm share/lush/packages/torch
+@dirrm share/lush/packages/svm/svqp2
+@dirrm share/lush/packages/svm/svqp
+@dirrm share/lush/packages/svm/libsvm
+@dirrm share/lush/packages/svm/lasvm
+@dirrm share/lush/packages/svm/demos
+@dirrm share/lush/packages/svm
 @dirrm share/lush/packages/sn28/src
 @dirrm share/lush/packages/sn28/lib
 @dirrm share/lush/packages/sn28/examples/tsp
@@ -770,17 +839,19 @@ share/lush/sys/sysenv.lsh
 @dirrm share/lush/packages/gsl
 @dirrm share/lush/packages/gblearn2/demos
 @dirrm share/lush/packages/gblearn2
+@dirrm share/lush/packages/fftw
+@dirrm share/lush/packages/ffmpeg
 @dirrm share/lush/packages/devices
 @dirrm share/lush/packages/cblas
 @dirrm share/lush/packages/blas
 @dirrm share/lush/packages/audiofile/demos
 @dirrm share/lush/packages/audiofile
+@dirrm share/lush/packages/audio
 @dirrm share/lush/packages/alsa/demos
 @dirrm share/lush/packages/alsa
 @dirrm share/lush/packages
-@dirrm share/lush/lsh/libc
+@dirrm share/lush/lsh/profiler
 @dirrm share/lush/lsh/manual
-@dirrm share/lush/lsh/libsvqp
 @dirrm share/lush/lsh/libstd
 @dirrm share/lush/lsh/libplot
 @dirrm share/lush/lsh/libogre
@@ -788,11 +859,13 @@ share/lush/sys/sysenv.lsh
 @dirrm share/lush/lsh/libimage
 @dirrm share/lush/lsh/libidx
 @dirrm share/lush/lsh/libgraph
+@dirrm share/lush/lsh/libdb/examples
 @dirrm share/lush/lsh/libdb
+@dirrm share/lush/lsh/libc
 @dirrm share/lush/lsh/compiler/old
 @dirrm share/lush/lsh/compiler
 @dirrm share/lush/lsh
-@dirrm share/lush/demos
-@dirrm share/lush/etc
 @dirrm share/lush/include
+@dirrm share/lush/etc
+@dirrm share/lush/demos
 @dirrm share/lush
