@@ -278,6 +278,7 @@
     SUBDIR += golddig
     SUBDIR += gomoku.app
     SUBDIR += goonies
+    SUBDIR += gpuzzle
     SUBDIR += gracer
     SUBDIR += grande
     SUBDIR += greed
