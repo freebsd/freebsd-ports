@@ -5,15 +5,24 @@ all data packets strictly in the kernel.  It supports several of
 the numerous PPP sub-protocols and extensions, such as:
 
       Multi-link PPP capability 
-      PAP, CHAP, and MS-CHAP authentication 
-      EAP authentication
+      PAP, CHAP, MS-CHAP and EAP authentication 
       PPP compression and encryption
+      IPCP and IPV6CP parameter negotiation
+      
+Mpd have support for many link types:
+
+      Serial port modem
       Point-to-Point Tunnelling Protocol (PPTP)
       PPP over Ethernet (PPPoE)
-      RADIUS (authentication and accounting)
+      PPP over TCP
+      PPP over UDP
+      PPP over specified netgraph(4) node
 
 Mpd also includes many additional features: 
 
+      IPv4 and IPv6 support
+      RADIUS authentication and accounting
+      NetFlow traffic accounting
       Dial-on-demand with idle timeout 
       Multiple active connections running simultaneously 
       Dynamic demand based link management (also known as ``rubber bandwidth'') 
