@@ -8,7 +8,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=	3.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
@@ -98,16 +98,16 @@ gnat_gcc!=	if ${WHICH} gnatgcc > /dev/null 2>&1; then \
 .endif
 
 .if !empty(gnat_gcc) && !empty(gnat_bind)
-bootstrap_path!=	if [ -x ${gnat_gcc} -a -x ${gnat_bind} ]; then \
+build_path!=	if [ -x ${gnat_gcc} -a -x ${gnat_bind} ]; then \
 				${ECHO_CMD} "$$PATH"; \
 			else \
 				${ECHO_CMD} ""; \
 			fi
 .else
-bootstrap_path=
+build_path=
 .endif
 
-.if empty(bootstrap_path)
+.if empty(build_path)
 DISTFILES+=		gnat-3.15p-boot.tar.gz:boot
 MASTER_SITES+=	${MASTER_SITE_LOCAL}:boot
 MASTER_SITE_SUBDIR+=	deischen/gcc/:boot
@@ -118,7 +118,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
 compiler_data=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
 				ADA_INCLUDE_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adainclude \
 				ADA_OBJECTS_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adalib
-bootstrap_path=	${WRKDIR}/adaboot/bin:${PATH}
+bootstrap_path=	${WRKDIR}/adaboot/bin
+build_path=		${bootstrap_path}:${PATH}
 gnat_gcc=		adagcc
 .endif
 
@@ -126,8 +127,8 @@ gnat_gcc=		adagcc
 CC=				${gnat_gcc}
 # C compiler from GNAT 3.15 doesn't understand modern flags.
 CFLAGS=
-CONFIGURE_ENV+=	${compiler_data} PATH=${bootstrap_path}
-MAKE_ENV+=		${compiler_data} PATH=${bootstrap_path} PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC}
+CONFIGURE_ENV+=	${compiler_data} PATH=${build_path}
+MAKE_ENV+=		${compiler_data} PATH=${build_path} PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC}
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} target=${CONFIGURE_TARGET}"
@@ -138,9 +139,13 @@ post-patch:
 	    ${WRKSRC}/gcc/version.c
 
 pre-configure:
-	cd ${WRKSRC} ; contrib/gcc_update --touch
+	cd ${WRKSRC}; contrib/gcc_update --touch
 	@${RM} -f ${WRKSRC}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
+	# Ada and C compilers should be the same.
+	if [ -d ${bootstrap_path} ]; then \
+		${LN} -s ${bootstrap_path}/adagcc ${bootstrap_path}/cc; \
+	fi
 
 do-build:
 	(cd ${BUILD_WRKSRC}; \
@@ -162,19 +167,21 @@ post-install:
 		${MV} -f ${PREFIX}/man/man7/$${mp}.7 \
 			${PREFIX}/man/man7/$${mp}${fsf_suffix}.7; \
 	done
-	# Add target libraries and include files to packaging list.
+	# Prepare a temporary list of installed libraries and include files.
 	${RM} -f ${WRKDIR}/PLIST.lib
 	for d in ${targlib:S/^${PREFIX}\///} ${targlib:S/^${PREFIX}\///:S/lib/libexec/}; do \
-		cd ${PREFIX} ; \
+		cd ${PREFIX}; \
 		if [ -d $${d} ]; then \
-			${FIND} $${d} -type f -o -type l >>${WRKDIR}/PLIST.lib ; \
-			${FIND} $${d} -type d | ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ; \
-		fi ; \
+			${FIND} $${d} -type f -o -type l >>${WRKDIR}/PLIST.lib; \
+			${FIND} $${d} -type d | ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib; \
+		fi; \
 	done
+	# Following directories should be removed on deinstal if empty. Add them to the temporary list.
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
-	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
+	# Insert the temporary list in the packing list.
+	cd ${WRKDIR}; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
 
 .include <bsd.port.post.mk>
