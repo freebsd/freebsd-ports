@@ -1,0 +1,20 @@
+A Linux RSS monitor for RSS and Atom feeds that lets you
+monitor many feeds at once and supports feed access through a web 
+(HTTP) proxy. Configure a feed to your liking, click "add/update" to
+record your data and "instantiate" to create a window for the feed.
+Right-click on the feed browser to display the feed menu, or use the
+main menu. A ticker window for a feed displays headlines for all
+articles in the feed. Right-click on the window or on the main menu to
+display the "article" menu, where you may display the text of the
+article, view it in a browser, follow the article link if there was
+one or display a browser for all articles in the feed. Right-click on
+the browser or the article content view to display the article menu
+and apply it to the currently selected article. Right-click on the
+article text view to display the "article" menu. Article text views
+will be collected when the feed updates. The headline view will
+flash/beep when the data in the feed change. You may have to
+experiment to find a font that displays your language correctly. I
+have found that Helvetica works well with Google's German, French and
+Spanish feeds.
+
+WWW: http://www.gnustep.it/marko/Ticker/index.html

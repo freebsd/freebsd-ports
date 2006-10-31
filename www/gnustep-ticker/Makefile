@@ -1,0 +1,27 @@
+# New ports collection makefile for:    ticker
+# Date created:         29 Oct 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ticker
+PORTVERSION=	0.1
+CATEGORIES=	www
+MASTER_SITES=	http://www.gnustep.it/marko/Ticker/
+PKGNAMEPREFIX=	gnustep-
+DISTNAME=	Ticker
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	RSS monitor for RSS and Atom feeds
+
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+MAKEFILE=
+
+.include <bsd.port.mk>
