@@ -5,7 +5,7 @@ You have to ensure that you have a mysql server installed and configured.
 Further information on these installation procedures may 
 be found in:
 
-  %%PREFIX%%/%%PHPSURVEYORDIR%%/admin/instructions.html
+  %%PREFIX%%/%%PHPSURVEYORDIR%%/admin/manual.html
 
 Once these steps have been taken, you may connect to the following URL to
 configure your installation of phpsurveyor:
