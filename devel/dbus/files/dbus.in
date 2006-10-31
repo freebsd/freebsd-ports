@@ -10,12 +10,11 @@
 # dbus_enable="YES"
 #
 
+. %%RC_SUBR%%
 . %%GNOME_SUBR%%
 
 dbus_enable=${dbus_enable-${gnome_enable}}
 dbus_flags=${dbus_flags-"--system"}
-
-. %%RC_SUBR%%
 
 name=dbus
 rcvar=`set_rcvar`
