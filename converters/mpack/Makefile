@@ -12,7 +12,7 @@ CATEGORIES=	converters mail news
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/mpack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	External MIME packer/unpacker
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
