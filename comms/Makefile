@@ -106,6 +106,7 @@
     SUBDIR += sredird
     SUBDIR += thebridge
     SUBDIR += tilp
+    SUBDIR += tilp2
     SUBDIR += tits
     SUBDIR += tkhylafax
     SUBDIR += tkscanfax
