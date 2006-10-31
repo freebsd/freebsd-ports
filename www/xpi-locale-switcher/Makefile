@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	locale-switcher
-PORTVERSION=	1.5.1
+PORTVERSION=	2.0
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
