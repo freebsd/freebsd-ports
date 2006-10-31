@@ -63,16 +63,24 @@
 # USE_GNUSTEP_INSTALL=yes
 #	call install target with GNUstep.sh sourced in the current shell
 #
+# USE_GNUSTEP_MAKE_DIRS=	App Tools
+#	call build and install target in each of the given dirs.
+#
 # USE_GNUSTEP_MAKE=yes
 #	require GNUstep.sh for build and install
 #
-# USE_GNUSTEP_SYSTEM_LIBS=	Renaissance:x11-toolkits/renaissance
+# USE_GNUSTEP_SYSTEM_LIBS+=	Renaissance:x11-toolkits/renaissance
 #	depends on a shared lib in System directrory
 #
-# USE_GNUSTEP_LOCAL_LIBS=	pantomime:mail/pantomime
+# USE_GNUSTEP_LOCAL_LIBS+=	pantomime:mail/pantomime
 #	depends on a shared lib in Local directrory
 #
-
+# USE_GNUSTEP_SYSTEM_APPS+=	ProjectCenter:devel/projectcenter.app
+#	depends on Application installed in System directrory at runtime
+#
+# USE_GNUSTEP_LOCAL_APPS+=	Ink:misc/gnustep-examples
+#	depends on Application installed in Local directrory at runtime
+#
 # ---------------------------------------------------------------------------
 .if !defined(_POSTMKINCLUDED)
 
@@ -250,7 +258,7 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=cairo
 .endif
 
 # ---------------------------------------------------------------------------
-# source system liibs
+# source system libs
 #
 .if defined(USE_GNUSTEP_SYSTEM_LIBS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_LIBS}
@@ -260,13 +268,30 @@ RUN_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTE
 .endif
 
 # ---------------------------------------------------------------------------
-# source local liibs
+# source local libs
 #
-:C/[.][0-9]*$//1
 .if defined(USE_GNUSTEP_LOCAL_LIBS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_LIBS}
 BUILD_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 RUN_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source system apps
+#
+.if defined(USE_GNUSTEP_SYSTEM_APPS)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_APPS}
+RUN_DEPENDS+=	${SYSTEMDIR}/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source local apps
+#
+.if defined(USE_GNUSTEP_LOCAL_APPS)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_APPS}
+RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -298,8 +323,15 @@ do-configure:
 #
 .if defined(USE_GNUSTEP_BUILD)
 do-build:
+.if defined(USE_GNUSTEP_MAKE_DIRS)
+.for i in ${USE_GNUSTEP_MAKE_DIRS}
+	@(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+.endfor
+.else
 	@(cd ${WRKSRC}; . ${SYSMAKEDIR}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+.endif
 
 .endif
 
@@ -308,8 +340,15 @@ do-build:
 #
 .if defined(USE_GNUSTEP_INSTALL)
 do-install:
+.if defined(USE_GNUSTEP_MAKE_DIRS)
+.for i in ${USE_GNUSTEP_MAKE_DIRS}
+	@(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+.endfor
+.else
 	@(cd ${WRKSRC}; . ${SYSMAKEDIR}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+.endif
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH) || defined(CLEAN_ROOT)
 	rm -rf /root/GNUstep
 .endif
