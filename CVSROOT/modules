@@ -12454,6 +12454,7 @@ quftp		ports/ftp/quftp
 quick-lounge-applet	ports/misc/quick-lounge-applet
 quickie		ports/www/quickie
 quickml		ports/mail/quickml
+quilt		ports/devel/quilt
 quintuple-agent	ports/security/quintuple-agent
 quirc		ports/irc/quirc
 quit		ports/games/quit
