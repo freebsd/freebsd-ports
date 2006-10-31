@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Afterstep clock with some language extensions
 
 USE_IMAKE=	yes
