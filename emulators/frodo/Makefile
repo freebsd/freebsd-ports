@@ -17,7 +17,7 @@ COMMENT=	Emulates a Commodore 64
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 ALL_TARGET=	Frodo
 WRKNAME=	Frodo-4.1b
 WRKSRC=		${WRKDIR}/${WRKNAME}/Src

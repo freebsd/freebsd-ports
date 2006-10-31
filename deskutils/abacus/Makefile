@@ -21,7 +21,7 @@ COMMENT=	Spread sheet for X Window System
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated" LFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L$(X11BASE)/lib -L$(LOCALBASE)/lib
