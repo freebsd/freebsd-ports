@@ -1,0 +1,11 @@
+--- zone.tab.orig	Tue Oct 17 07:38:12 2006
++++ zone.tab	Tue Oct 17 07:38:31 2006
+@@ -312,7 +312,7 @@
+ QA	+2517+05132	Asia/Qatar
+ RE	-2052+05528	Indian/Reunion
+ RO	+4426+02606	Europe/Bucharest
+-RS	+4450+02030	Europe/Belgrade
++#RS	+4450+02030	Europe/Belgrade
+ RU	+5443+02030	Europe/Kaliningrad	Moscow-01 - Kaliningrad
+ RU	+5545+03735	Europe/Moscow	Moscow+00 - west Russia
+ RU	+4844+04425	Europe/Volgograd	Moscow+00 - Caspian Sea

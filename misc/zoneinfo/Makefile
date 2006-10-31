@@ -6,6 +6,7 @@
 
 PORTNAME=	zoneinfo
 DISTVERSION=	2006n
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}
@@ -23,31 +24,23 @@ TZFILES=	africa antarctica asia australasia etcetera europe \
 POSIXRULES=	America/New_York
 
 # Prevent packages if on the FreeBSD building cluster. This because
-# it overwrite system files and directories.
+# it overwrites system files and directories.
 .if defined(PACKAGE_BUILDING)
 NO_PACKAGE=	yes
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/patch4-zone.tab
-.endif
+# The following country codes can be missing from /usr/share/misc/iso3166 and
+# shouldn't appear in the zoneinfo file.
+MISSING=	ax gg im je me rs
 
-HAS_GG!=	${GREP} -c ^GG /usr/share/misc/iso3166 || ${TRUE}
-.if ${HAS_GG} == "0"
-EXTRA_PATCHES+=	${FILESDIR}/patchremove-gg
+.for M in ${MISSING}
+HAS_${M:U}!=	${GREP} -c ^${M:U} /usr/share/misc/iso3166 || ${TRUE}
+.if ${HAS_${M:U}} == "0"
+EXTRA_PATCHES+=	${FILESDIR}/patchremove-${M}
 .endif
-
-HAS_IM!=	${GREP} -c ^IM /usr/share/misc/iso3166 || ${TRUE}
-.if ${HAS_IM} == "0"
-EXTRA_PATCHES+=	${FILESDIR}/patchremove-im
-.endif
-
-HAS_JE!=	${GREP} -c ^JE /usr/share/misc/iso3166 || ${TRUE}
-.if ${HAS_JE} == "0"
-EXTRA_PATCHES+=	${FILESDIR}/patchremove-je
-.endif
+.endfor
 
 do-build:
 	umask 022; \
