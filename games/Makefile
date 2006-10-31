@@ -370,6 +370,7 @@
     SUBDIR += ktritoc
     SUBDIR += kwappen
     SUBDIR += ladder
+    SUBDIR += lapispuzzle
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud
