@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
 
@@ -30,7 +30,7 @@ DEMOMISC1DIR=	bitlib chglib chklib chnlib clcklib datelib fmtlib hexlib \
 		misclib randlib timelib
 DEMORAKUDIR=	color kihon layout map3d miss quick u2d uspack uxyz
 
-RESTRICTED=	"No commercial use"
+RESTRICTED=	No commercial use
 
 post-install:
 .if !defined(NOPORTDOCS)

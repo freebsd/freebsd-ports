@@ -2,7 +2,7 @@ bin/dclcc
 bin/dclclr
 bin/dclcmap
 bin/dclconfig
-bin/dclconfig531
+bin/dclconfig532
 bin/dcldate
 bin/dcldbs
 bin/dclexec
@@ -17,6 +17,7 @@ bin/dclpsline
 bin/dclpsmargin
 bin/dclpsmerge
 bin/dclpsnup
+bin/dclpsrgb2cmyk
 bin/dclpsrmcm
 bin/dclpsrot
 bin/dclpsselect
@@ -52,7 +53,7 @@ lib/dcldbase/font2u
 lib/dcldbase/plate_world
 lib/dcldbase/pref_japan
 lib/dcldbase/state_usa
-lib/libf77dcl531.a
+lib/libf77dcl532.a
 %%PORTDOCS%%%%DOCSDIR%%/CHECK
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
