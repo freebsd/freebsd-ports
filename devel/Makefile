@@ -590,6 +590,7 @@
     SUBDIR += libthai
     SUBDIR += libticalcs
     SUBDIR += libtifiles
+    SUBDIR += libtifiles2
     SUBDIR += libtool15
     SUBDIR += libukcprog
     SUBDIR += libunicode
