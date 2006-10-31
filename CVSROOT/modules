@@ -14738,6 +14738,7 @@ wa-aspell	ports/textproc/wa-aspell
 waccess	ports/www/waccess
 wacko		ports/www/wacko
 wahcade		ports/emulators/wahcade
+waiho		ports/ftp/waiho
 waimea		ports/x11-wm/waimea
 waimea-devel		ports/x11-wm/waimea-devel
 wais		ports/net/wais
