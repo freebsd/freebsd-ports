@@ -3561,6 +3561,7 @@ gnome2-hacker-tools	ports/devel/gnome2-hacker-tools
 gnome2-lite	ports/x11/gnome2-lite
 gnome2-office	ports/editors/gnome2-office
 gnome2-power-tools	ports/x11/gnome2-power-tools
+gnome_subr	ports/sysutils/gnome_subr
 gnomeattacks	ports/games/gnomeattacks
 gnomebaker	ports/sysutils/gnomebaker
 gnomebasic	ports/lang/gnomebasic
