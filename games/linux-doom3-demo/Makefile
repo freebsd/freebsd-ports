@@ -7,25 +7,28 @@
 
 PORTNAME=	doom3-demo
 PORTVERSION=	1.1.1286
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.hup.hu/~trey/DOOM3/ \
 		http://darkstar.ist.utl.pt/pub/games/ \
-		ftp://ftp.headoff.com/GameDemos/Doom3/
+		ftp://ftp.headoff.com/GameDemos/Doom3/ \
+		IDSOFTWARE/doom3/linux
 PKGNAMEPREFIX=	linux-
 DISTNAME=	doom3-linux-${PORTVERSION}-demo.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	jylefort@FreeBSD.org
-COMMENT=	DOOM III demo
+COMMENT=	DOOM III demo for Linux
 
-ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
+ONLY_FOR_ARCHS=	i386 amd64
+USE_XLIB=	yes
 USE_LINUX=	yes
-NO_PACKAGE=	Distfile is 462MB, set FORCE_PACKAGE if you really want to build this package
-RESTRICTED=	Redistribution is limited, see license
+NO_PACKAGE=	Distfile size is 462MB, set FORCE_PACKAGE if you really want to build this package
+NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-DOOMDIR=	${PREFIX}/lib/${PORTNAME}
+DOOMDIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 SUB_FILES=	doom3-demo
 SUB_LIST=	DOOMDIR="${DOOMDIR}"
@@ -47,13 +50,13 @@ do-extract:
 	@cd ${WRKSRC} && ${TAIL} -c +8767 ${_DISTDIR}/${DISTFILES} | ${TAR} zxf -
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/doom3-demo ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/doom3-demo ${PREFIX}/bin/${PKGNAMEPREFIX}doom3-demo
 
 	${MKDIR} ${DOOMDIR}/demo
 	${INSTALL_DATA} ${WRKSRC}/demo/demo00.pk4 ${DOOMDIR}/demo
 
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/doom.x86 ${DOOMDIR}
-.for f in gamex86.so libgcc_s.so.1 libstdc++.so.5
+.for f in gamex86.so
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOOMDIR}
 	-${CHOWN} ${LIBOWN}:${LIBGRP} ${DOOMDIR}/${f}
 	${CHMOD} ${LIBMODE} ${DOOMDIR}/${f}
