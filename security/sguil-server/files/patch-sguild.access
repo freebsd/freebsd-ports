@@ -1,0 +1,12 @@
+--- sguild.access.orig	Tue Mar 28 03:36:31 2006
++++ sguild.access	Tue Mar 28 03:37:44 2006
+@@ -4,7 +4,8 @@
+ # This file is used by sguild for access control. It is read upon init  #
+ # or when sguild receives a HUP signal.                                 #
+ #                                                                       #
+-# By default, sguild will look first for /etc/sguild/sguild.access,     #
++# By default, sguild will look first for                                #
++# /usrlocal//etc/sguild/sguild.access,                                  #
+ # then ./sguild.access unless the -A /path/to/sguild.access switch      #
+ # is used.                                                              #
+ #                                                                       #

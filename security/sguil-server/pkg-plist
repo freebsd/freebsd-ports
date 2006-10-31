@@ -1,0 +1,41 @@
+bin/archive_sguildb.tcl
+bin/incident_report.tcl
+bin/sguild
+etc/%%SGUILDIR%%/autocat.conf-sample
+etc/%%SGUILDIR%%/sguild.access-sample
+etc/%%SGUILDIR%%/sguild.conf-sample
+etc/%%SGUILDIR%%/sguild.email-sample
+etc/%%SGUILDIR%%/sguild.queries-sample
+etc/%%SGUILDIR%%/sguild.reports-sample
+etc/%%SGUILDIR%%/sguild.users-sample
+lib/%%SGUILDIR%%/SguildAccess.tcl
+lib/%%SGUILDIR%%/SguildAutoCat.tcl
+lib/%%SGUILDIR%%/SguildClientCmdRcvd.tcl
+lib/%%SGUILDIR%%/SguildConnect.tcl
+lib/%%SGUILDIR%%/SguildCreateDB.tcl
+lib/%%SGUILDIR%%/SguildEmailEvent.tcl
+lib/%%SGUILDIR%%/SguildEvent.tcl
+lib/%%SGUILDIR%%/SguildGenericDB.tcl
+lib/%%SGUILDIR%%/SguildHealthChecks.tcl
+lib/%%SGUILDIR%%/SguildLoaderd.tcl
+lib/%%SGUILDIR%%/SguildMysqlMerge.tcl
+lib/%%SGUILDIR%%/SguildQueryd.tcl
+lib/%%SGUILDIR%%/SguildReportBuilder.tcl
+lib/%%SGUILDIR%%/SguildSendComms.tcl
+lib/%%SGUILDIR%%/SguildSensorAgentComms.tcl
+lib/%%SGUILDIR%%/SguildSensorCmdRcvd.tcl
+lib/%%SGUILDIR%%/SguildTranscript.tcl
+lib/%%SGUILDIR%%/SguildUtils.tcl
+share/%%SGUILDIR%%/create_ruledb.sql
+share/%%SGUILDIR%%/create_sguildb.sql
+share/%%SGUILDIR%%/migrate_event.tcl
+share/%%SGUILDIR%%/migrate_sancp.tcl
+share/%%SGUILDIR%%/update_sguildb_v5-v6.sql
+share/%%SGUILDIR%%/update_sguildb_v6-v7.sql
+share/%%SGUILDIR%%/update_sguildb_v7-v8.sql
+share/%%SGUILDIR%%/update_sguildb_v8-v9.sql
+share/%%SGUILDIR%%/update_sguildb_v9-v10.sql
+share/%%SGUILDIR%%/update_sguildb_v10-v11.sql
+@dirrm share/%%SGUILDIR%%
+@unexec if [ ! -f %D/etc/%%SGUILDIR%%/sguild.conf ] ; then rmdir %D/etc/%%SGUILDIR%%; fi
+@dirrm lib/%%SGUILDIR%%

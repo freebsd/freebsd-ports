@@ -1,0 +1,22 @@
+Sguil is an open source tool to implement Network 
+Security Monitoring (NSM).  NSM is the collection, 
+analysis, and escalation of indications and warnings 
+to detect and respond to intrusions.  NSM tools are 
+used more for network audit and specialized 
+applications than traditional alert-centric "intrusion 
+detection" systems.
+
+Want to learn more about Network Security Monitoring 
+(NSM)? Then check out Richard Bejtlich's recently 
+released book, The Tao of Network Security Monitoring: 
+Beyond Intrusion Detection. An excerpt reads:
+
+"Network security monitoring (NSM) equips security 
+staff to deal with the inevitable consequences of too 
+few resources and too many responsibilities. NSM collects 
+the data needed to generate better assessment, detection, 
+and response processes--resulting in decreased impact from 
+unauthorized activities."
+
+WWW: http://sguil.sourceforge.net/index.php
+pauls@utdallas.edu
