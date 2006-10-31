@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sguil
 
 MAINTAINER=	pauls@utdallas.edu
-COMMENT=	Squil is a network security management program
+COMMENT=	Squil is a network security monitoring program
 
 RUN_DEPENDS=	snort:${PORTSDIR}/security/snort \
 		barnyard:${PORTSDIR}/security/barnyard-sguil6 \
