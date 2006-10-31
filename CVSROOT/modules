@@ -3016,6 +3016,7 @@ gail-reference	ports/accessibility/gail-reference
 gaim		ports/net-im/gaim
 gaim-assistant	ports/net-im/gaim-assistant
 gaim-bangexec	ports/net-im/gaim-bangexec
+gaim-consoleui-devel ports/net-im/gaim-consoleui-devel
 gaim-devel	ports/net-im/gaim-devel
 gaim-encryption	ports/security/gaim-encryption
 gaim-extprefs	ports/net-im/gaim-extprefs
@@ -6017,6 +6018,7 @@ libftdi		ports/devel/libftdi
 libfwbuilder	ports/security/libfwbuilder
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
+libgaim		ports/net-im/libgaim
 libgconf-java	ports/devel/libgconf-java
 libgcrypt	ports/security/libgcrypt
 libgda		ports/databases/libgda
