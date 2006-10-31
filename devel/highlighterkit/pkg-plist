@@ -1,0 +1,27 @@
+Local/Library/Frameworks/HighlighterKit.framework/Headers
+Local/Library/Frameworks/HighlighterKit.framework/Resources
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Headers/HKSyntaxDefinition.h
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Headers/HKSyntaxHighlighter.h
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Headers/HKTextPattern.h
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Headers/HighlighterKit.h
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/HighlighterKit
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources/C++.syntax
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources/C-Header.syntax
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources/C.syntax
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources/Info-gnustep.plist
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources/ObjC++.syntax
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources/ObjC.syntax
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources/Plist.syntax
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/libHighlighterKit.so
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/libHighlighterKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/HighlighterKit.framework/Versions/A/libHighlighterKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/HighlighterKit.framework/Versions/Current
+Local/Library/Headers/HighlighterKit
+Local/Library/Libraries/libHighlighterKit.so
+Local/Library/Libraries/libHighlighterKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libHighlighterKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Resources
+@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions/A/Headers
+@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions/A
+@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions
+@dirrm Local/Library/Frameworks/HighlighterKit.framework

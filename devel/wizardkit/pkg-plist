@@ -1,0 +1,19 @@
+Local/Library/Frameworks/WizardKit.framework/Headers
+Local/Library/Frameworks/WizardKit.framework/Resources
+Local/Library/Frameworks/WizardKit.framework/Versions/A/Headers/WKWizardPanel.h
+Local/Library/Frameworks/WizardKit.framework/Versions/A/Headers/WizardKit.h
+Local/Library/Frameworks/WizardKit.framework/Versions/A/Resources/Info-gnustep.plist
+Local/Library/Frameworks/WizardKit.framework/Versions/A/WizardKit
+Local/Library/Frameworks/WizardKit.framework/Versions/A/libWizardKit.so
+Local/Library/Frameworks/WizardKit.framework/Versions/A/libWizardKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/WizardKit.framework/Versions/A/libWizardKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/WizardKit.framework/Versions/Current
+Local/Library/Headers/WizardKit
+Local/Library/Libraries/libWizardKit.so
+Local/Library/Libraries/libWizardKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libWizardKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Frameworks/WizardKit.framework/Versions/A/Resources
+@dirrm Local/Library/Frameworks/WizardKit.framework/Versions/A/Headers
+@dirrm Local/Library/Frameworks/WizardKit.framework/Versions/A
+@dirrm Local/Library/Frameworks/WizardKit.framework/Versions
+@dirrm Local/Library/Frameworks/WizardKit.framework
