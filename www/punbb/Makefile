@@ -19,8 +19,6 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A fast and lightweight PHP-powered discussion board
 
-BROKEN=		Checksum mismatch
-
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_BUILD=	yes
