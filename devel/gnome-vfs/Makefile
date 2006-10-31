@@ -18,12 +18,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
 
-LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
-
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
+LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
