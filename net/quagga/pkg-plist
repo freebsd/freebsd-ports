@@ -52,6 +52,7 @@ include/quagga/pqueue.h
 include/quagga/prefix.h
 include/quagga/privs.h
 include/quagga/routemap.h
+include/quagga/route_types.h
 include/quagga/sigevent.h
 include/quagga/smux.h
 include/quagga/sockopt.h

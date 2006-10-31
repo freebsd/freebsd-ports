@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.4
-PORTREVISION=	2
+PORTVERSION=	0.99.5
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://quagga.net/download/
+MASTER_SITES=	http://quagga.net/download/ \
+		http://www.ru.quagga.net/download/ \
+		http://www.de.quagga.net/download/ \
+		http://www.us.quagga.net/download/ \
+		http://www.us2.quagga.net/download/ \
+		http://www.au.quagga.net/download/
 
 PATCH_SITES=	http://quagga.net/
 
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
-CONFLICTS=	openbgpd-* zebra-0*
+CONFLICTS=	openbgpd-[0-9]* zebra-0*
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 USE_PERL5_BUILD=	yes
 LIBTOOLFILES=		configure
 
