@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION?=	0.93
-PORTREVISION?=	3
+PORTVERSION?=	0.94
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://dbus.freedesktop.org/releases/
+MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A message bus system for inter-application communication
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_GNOME=	gnomehack gnometarget libxml2
+USE_GNOME=	gnomehack gnometarget libxml2 ltverhack
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
 	        --with-test-socket-dir=${WRKDIR} \
@@ -37,7 +37,7 @@ USE_RC_SUBR=	dbus
 PLIST_SUB=	VERSION="1.0"
 
 MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
-		dbus-monitor.1 dbus-send.1
+		dbus-monitor.1 dbus-send.1 dbus-uuidgen.1
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
