@@ -1,5 +1,5 @@
---- lib/XML/XPathEngine.pm.orig	Tue Aug  8 22:49:51 2006
-+++ lib/XML/XPathEngine.pm	Tue Aug  8 22:50:29 2006
+--- lib/XML/XPathEngine.pm.orig	Mon Aug 28 16:06:18 2006
++++ lib/XML/XPathEngine.pm	Sun Sep 24 22:19:33 2006
 @@ -1,27 +1,10 @@
  package XML::XPathEngine;
  
@@ -8,7 +8,7 @@
  
 -use vars qw($VERSION $AUTOLOAD $revision);
 -
- $VERSION = '0.03';
+ $VERSION = '0.04';
  $XML::XPathEngine::Namespaces = 0;
  $XML::XPathEngine::DEBUG = 0;
 -
