@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xpilot
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	An enhanced version of XPilot (server program)
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
