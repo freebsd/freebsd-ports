@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -29,11 +29,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		lighttpd.1 spawn-fcgi.1
 
-OPTIONS=	OPENSSL		"Enable SSL support"	on  \
-		OPENLDAP	"Enable LDAP support"	off \
-		MYSQL		"Enable MYSQL support"	off \
-		IPV6		"Enable IPV6 support"	on \
-		CML		"Enable Cache Meta Language support" off
+OPTIONS=	BZIP2		"Enable Bzip2 support" off \
+		CML		"Enable Cache Meta Language support" off \
+		FAM		"Enable fam/gamin support" off \
+		GDBM		"Enable gdbm storage support" off \
+		IPV6		"Enable IPV6 support" on \
+		MEMCACHE	"Enable memcached storage support" off \
+		MYSQL		"Enable MYSQL support" off \
+		OPENLDAP	"Enable LDAP support" off \
+		OPENSSL		"Enable SSL support" on \
+		VALGRIND	"Enable valgrind support" off
 
 .include <bsd.port.pre.mk>
 
@@ -47,10 +52,34 @@ CONFIGURE_ARGS+=	--with-openssl \
 			--with-openssl-libs=${OPENSSLLIB}
 .endif
 
-.if defined(WITH_OPENLDAP)
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap
-_REQUIRE+=		slapd
+.if defined(WITH_BZIP2)
+LIB_DEPENDS+=		bz2:${PORTSDIR}/archivers/bzip2
+CONFIGURE_ARGS+=	--with-bzip2
+.endif
+
+.if defined(WITH_CML)
+USE_LUA=		yes
+CONFIGURE_ARGS+=	--with-lua
+CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR}"
+.endif
+
+.if defined(WITH_FAM)
+LIB_DEPENDS+=		fam:${PORTSDIR}/devel/fam
+CONFIGURE_ARGS+=	--with-fam
+CONFIGURE_ENV+=		FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
+.endif
+
+.if defined(WITH_GDBM)
+LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--with-gdbm
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITH_MEMCACHE)
+CONFIGURE_ARGS+=	--with-memcache
 .endif
 
 .if defined(WITH_MYSQL)
@@ -59,20 +88,23 @@ CONFIGURE_ARGS+=	--with-mysql
 _REQUIRE+=		mysql
 .endif
 
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
+.if defined(WITH_OPENLDAP)
+USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--with-ldap
+_REQUIRE+=		slapd
 .endif
 
-.if defined(WITH_CML)
-USE_LUA=	5.0
-CONFIGURE_ARGS+=	--with-lua
-CONFIGURE_ENV+=		CPPFLAGS="-I${LUA_INCDIR}" LDFLAGS="-L${LUA_LIBDIR}"
+.if defined(WITH_VALGRIND)
+BUILD_DEPENDS+=		valgrind:${PORTSDIR}/devel/valgrind
+RUN_DEPENDS+=		valgrind:${PORTSDIR}/devel/valgrind
+CONFIGURE_ARGS+=	--with-valgrind
 .endif
 
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|-D_XOPEN_SOURCE=600||' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|-D_XOPEN_SOURCE=600||' -e 's|-std=gnu99||' \
+		${WRKSRC}/configure.in
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc
