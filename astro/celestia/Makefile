@@ -7,7 +7,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	celestia
@@ -93,6 +93,11 @@ post-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/celestia/gtk/data/celestia.png \
 		${PREFIX}/share/pixmaps
+.for m in apollo cassini galileo gemini hubble iss marsglobalsurvr \
+	marsodyssey mercury7 mir skylab
+	${INSTALL_DATA} ${WRKSRC}/models/${m}.3ds \
+		${PREFIX}/share/celestia/models
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
