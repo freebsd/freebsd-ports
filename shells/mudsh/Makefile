@@ -16,6 +16,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An "intelligent" game-like shell
 
+DEPRECATED=	Project disappeared from the internet
+EXPIRATION_DATE=2006-12-10
+
 NO_WRKSUBDIR=	yes
 
 NO_BUILD=	yes
