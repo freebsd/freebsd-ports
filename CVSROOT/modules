@@ -5773,6 +5773,7 @@ langspec	ports/java/langspec
 lapack		ports/math/lapack
 lapack++	ports/math/lapack++
 lapack95	ports/math/lapack95
+lapispuzzle	ports/games/lapispuzzle
 larbin		ports/www/larbin
 larswm		ports/x11-wm/larswm
 lasi		ports/devel/lasi
