@@ -5,17 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
-PORTVERSION=		1.8
+PORTVERSION=		2.0
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
-DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
+DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=		squirrelmail
 
 MAINTAINER=		alexander@wittig.name
 COMMENT=		Allows users to change their passwords stored in LDAP Tree
 
-RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
-			${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 SQUIRREL_PLUGIN_NAME=	change_ldappass
 
@@ -41,6 +40,7 @@ NO_WRKSUBDIR=		yes
 USE_PERL5_BUILD=	yes
 USE_PHP=		ldap
 WANT_PHP_WEB=		yes
+USE_GETTEXT=		yes
 
 pre-everything::
 	@${ECHO} ""
@@ -57,7 +57,6 @@ pre-everything::
 
 do-install:
 	${CP} -rp ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 
 post-install:
 .ifndef WITHOUT_ACTIVATE
