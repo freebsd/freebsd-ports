@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	blocksshd
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blocksshd
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Protects computers from SSH brute force attacks
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS/Resolver.pm:${PORTSDIR}/dns/p5-Net-DNS \
@@ -27,6 +27,7 @@ MAN1=		blocksshd.1
 
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/init
+	@${REINPLACE_CMD} -e 's|^MANCOMPRESS = .gz||g' ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/blocksshd.conf ${TARGETDIR}/etc
