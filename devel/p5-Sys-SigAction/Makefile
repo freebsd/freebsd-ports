@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sys-SigAction
-PORTVERSION=	0.07
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sys
@@ -20,5 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 PERL_CONFIGURE=	yes
 
 MAN3=	Sys::SigAction.3
+
+post-build:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
