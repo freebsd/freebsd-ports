@@ -1,15 +1,15 @@
---- noip2.c.orig	Fri Jan  9 06:18:39 2004
-+++ noip2.c	Thu Jan 29 12:45:11 2004
-@@ -156,7 +156,7 @@
+--- noip2.c.orig	Fri Feb 24 16:45:23 2006
++++ noip2.c	Wed Oct 18 11:12:03 2006
+@@ -170,7 +170,7 @@
  #define CLIENT_IP_PORT		8245
  
- #define VERSION			"2.1.1"
+ #define VERSION			"2.1.3"
 -#define USER_AGENT		"User-Agent: Linux-DUC/"VERSION
 +#define USER_AGENT		"User-Agent: FreeBSD-DUC/"VERSION
  #define SETTING_SCRIPT		"settings.php?"
  #define USTRNG			"username="
  #define PWDSTRNG		"&pass="
-@@ -264,7 +264,7 @@
+@@ -278,7 +278,7 @@
  #define CMSG21	"Please select the Internet interface from this list.\n"
  #define CMSG22	"By typing the number associated with it."
  #define CMSG23	"Too many network devices.  Limit is %d"
@@ -18,7 +18,7 @@
  #define CMSG25	"Can't create config file (%s)"
  #define CMSG25a	"Re-run noip, adding '-c configfilename' as a parameter."
  #define CMSG26	"Can't rename config file (%s)"
-@@ -466,7 +466,7 @@
+@@ -484,7 +484,7 @@
          fprintf(stderr, "[ -d][ -D pid]");
  #endif                                                                          
  	fprintf(stderr, "[ -i addr][ -S][ -M][ -h]");
@@ -27,8 +27,8 @@
  	fprintf(stderr, "Options: -C               create configuration data\n");
  	fprintf(stderr, "         -F               force NAT off\n");
  	fprintf(stderr, "         -Y               select all hosts/groups\n");
-@@ -1984,17 +1984,12 @@
- 	dq = devs;     // point at name list
+@@ -2040,17 +2040,12 @@
+ 	dq = (unsigned char *)devs;     // point at name list
  	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
  		if (ifa->ifa_addr->sa_family == AF_LINK) {
 -// FreeBSD doesn't define some of these!
