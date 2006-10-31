@@ -1,0 +1,8 @@
+StepTalk is the official GNUstep scripting framework. StepTalk is more
+than a scripting framework with an illusion of single objective
+environment between objects of scriptable servers or applications.
+StepTalk, when combined with the dynamism that the Objective-C
+language provides, goes way beyond mere scripting. It is language
+independent - it uses languages as separate bundles.
+
+WWW: http://www.gnustep.org/experience/StepTalk.html
