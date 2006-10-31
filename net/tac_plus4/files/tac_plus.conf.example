@@ -15,7 +15,7 @@ user=fred {
     # declaration.
     member = admin
 
-    expires = "May 23 2005"
+    expires = "May 23 2010"
 
     service = exec {
         # When Fred starts an exec, his connection access list is 5
@@ -76,5 +76,5 @@ group = admin {
     login = file /etc/passwd
 
     # group members who have no expiry date set will use this one
-    expires = "Jan 1 1998"
+    expires = "Jan 1 2038"
 }
