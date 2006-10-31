@@ -32,4 +32,5 @@ bin/srch_strings
 %%PORTDOCS%%%%DOCSDIR%%/skins_fat.txt
 %%PORTDOCS%%%%DOCSDIR%%/skins_iso9660.txt
 %%PORTDOCS%%%%DOCSDIR%%/skins_ntfs.txt
+%%PORTDOCS%%%%DOCSDIR%%/skins_windows.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	2.05
+PORTVERSION=	2.06
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,7 +42,7 @@ post-patch:
 		${WRKSRC}/src/disktools/Makefile ${WRKSRC}/src/fstools/Makefile \
 		${WRKSRC}/src/hashtools/Makefile ${WRKSRC}/src/imgtools/Makefile \
 		${WRKSRC}/src/auxtools/Makefile ${WRKSRC}/src/mmtools/Makefile \
-		${WRKSRC}/src/srchtools/Makefile ${WRKSRC}/src/libewf/Makefile
+		${WRKSRC}/src/srchtools/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		-e '8s|-g -Wall|${CFLAGS}| ; 9s|-g -Wall|${CXXFLAGS}|' \
 		${WRKSRC}/src/afflib/Makefile.defs ${WRKSRC}/src/afflib/Makefile
