@@ -92,6 +92,8 @@ include/wine/windows/basetyps.h
 include/wine/windows/cderr.h
 include/wine/windows/cguid.h
 include/wine/windows/cierror.h
+include/wine/windows/cfgmgr32.h
+include/wine/windows/clusapi.h
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
@@ -367,6 +369,8 @@ include/wine/windows/tom.idl
 include/wine/windows/twain.h
 include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
+include/wine/windows/urlhist.h
+include/wine/windows/urlhist.idl
 include/wine/windows/urlmon.h
 include/wine/windows/urlmon.idl
 include/wine/windows/usp10.h
@@ -423,7 +427,6 @@ include/wine/windows/xmldso.h
 include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
-include/wine/windows/ddk/cfgmgr32.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddser.h
@@ -609,6 +612,7 @@ lib/wine/libpowrprof.def
 lib/wine/libpsapi.def
 lib/wine/libquartz.def
 lib/wine/librasapi32.def
+lib/wine/libresutils.def
 lib/wine/librsaenh.def
 lib/wine/libriched20.def
 lib/wine/librpcrt4.def
@@ -670,6 +674,7 @@ lib/wine/msacm32.dll.so
 lib/wine/msacm32.drv.so
 lib/wine/msadp32.acm.so
 lib/wine/mscms.dll.so
+lib/wine/mscoree.dll.so
 lib/wine/msdmo.dll.so
 lib/wine/msftedit.dll.so
 lib/wine/msg711.acm.so
@@ -726,6 +731,7 @@ lib/wine/rasapi16.dll16
 lib/wine/rasapi32.dll.so
 lib/wine/regedit.exe.so
 lib/wine/regsvr32.exe.so
+lib/wine/resutils.dll.so
 lib/wine/riched20.dll.so
 lib/wine/riched32.dll.so
 lib/wine/rpcrt4.dll.so
