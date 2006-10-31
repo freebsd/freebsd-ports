@@ -1,0 +1,11 @@
+The well-known mastermind game.
+Drag-and-drop colors from the palette or from the board itself. The
+object is to determine the hidden combination of four colors. The game
+may be played in two modes: with replacement, which means that colors
+may repeat, and without replacement, which means that colors are
+unique. The user selects a choice of four colors and "commits" them.
+The program replies with an evaluation -- a black peg for a color that
+is placed correctly, and a white peg for a color that is in the wrong
+position. The user may make a total of eight queries.
+
+WWW: http://www.gnustep.it/marko/GMastermind/

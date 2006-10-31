@@ -254,6 +254,7 @@
     SUBDIR += glpuzzle
     SUBDIR += gltron
     SUBDIR += gma
+    SUBDIR += gmastermind
     SUBDIR += gnarr
     SUBDIR += gnmm
     SUBDIR += gno3dtet

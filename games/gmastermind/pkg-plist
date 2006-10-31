@@ -1,0 +1,10 @@
+Local/Applications/GMastermind2.app/GMastermind2
+Local/Applications/GMastermind2.app/Resources/French.lproj/Localizable.strings
+Local/Applications/GMastermind2.app/Resources/GMastermind2.desktop
+Local/Applications/GMastermind2.app/Resources/GMastermind2.tiff
+Local/Applications/GMastermind2.app/Resources/Info-gnustep.plist
+Local/Applications/GMastermind2.app/library_paths.openapp
+Local/Applications/GMastermind2.app/stamp.make
+@dirrm Local/Applications/GMastermind2.app/Resources/French.lproj
+@dirrm Local/Applications/GMastermind2.app/Resources
+@dirrm Local/Applications/GMastermind2.app
