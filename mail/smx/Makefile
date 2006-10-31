@@ -1,4 +1,4 @@
-# New ports collection makefile for:	sms
+# New ports collection makefile for:	smx
 # Date created:				04 Nov 2005
 # Whom:					dirk.meyer@dinoex.sub.org
 #
@@ -17,6 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
 
 NOT_FOR_ARCHS=	ia64
+CONFILCTS=	meta1-*
 PORTNAME2=	smX
 WRKSRC=		${WRKDIR}/${PORTNAME2}-${PORTVERSION}
 GNU_CONFIGURE=	yes
@@ -53,7 +54,7 @@ SMXCONFDIR?=	${PREFIX}/etc/smx
 SMX_WITH_BERKELEYDB=	yes
 OBSOLETE_BDB_VAR=	SMX_WITH_BERKELEYDB_VER BERKELEYDB_PORT \
 	BERKELEYDB_LIB BERKELEYDB_LIBDIR BERKELEYDB_INCLUDE
-IGNORE= Use SMX_WITH_BERKELEYDB to select Berkeley DB.
+IGNORE=	use SMX_WITH_BERKELEYDB to select Berkeley DB
 .endif
 
 .if defined(SMX_WITH_INTERNAL_BERKELEYD)
