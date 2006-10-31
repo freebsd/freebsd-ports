@@ -14846,6 +14846,7 @@ wireshark	ports/net/wireshark
 wireshark-lite	ports/net/wireshark-lite
 wise		ports/biology/wise
 wistumbler2	ports/net/wistumbler2
+wizardkit	ports/devel/wizardkit
 wm2		ports/x11-wm/wm2
 wmDeskGuide	ports/x11-wm/wmDeskGuide
 wmScoreBoard	ports/misc/wmScoreBoard
