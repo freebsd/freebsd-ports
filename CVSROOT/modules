@@ -4149,6 +4149,7 @@ helixplayer	ports/multimedia/helixplayer
 hellanzb	ports/news/hellanzb
 hello		ports/misc/hello
 help2man	ports/misc/help2man
+helpviewer	ports/deskutils/helpviewer
 hercules	ports/emulators/hercules
 heretic		ports/games/heretic
 heroes		ports/games/heroes
