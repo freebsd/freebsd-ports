@@ -21,37 +21,89 @@ COMMENT=	A dynamic programming language with a syntax similar to C++
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 
-IS_INTERACTIVE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--without-debug --with-poll --with-oob --with-max-fds=10000 --without-GTK
 MAN1=		hilfe.1 pike.1
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+OPTIONS=	FREETYPE        "TrueType font rendering" off \
+		JPEG            "support JPEG" off \
+		THREADS         "threads support" on \
+		GDBM            "GNU database manager support" off \
+		ZLIB            "zlib library support" on \
+		GMP             "support bignums" on \
+		READLINE        "support for command line editing" on \
+		MYSQL           "MySQL database support" off \
+		POSTGRESQL      "PostgreSQL database support" off \
+		MSQL            "mSQL database support" off \
+		SSL             "SSL support" off \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if !defined(WITHOUT_FREETYPE)
+LIB_DEPENDS+=		ttf.4:${PORTSDIR}/print/freetype
+CONFIGURE_ARGS+=	--with-ttflib
 .else
-CONFIGURE_ARGS?= \
-	--without-ttflib \
-	--without-gdbm \
-	--without-mysql \
-	--without-postgresql \
-	--without-msql \
-	--without-jpeg
+CONFIGURE_ARGS+=	--without-ttflib
 .endif
-CONFIGURE_ARGS+= --without-debug --with-poll --with-oob --with-max-fds=10000 --without-GTK
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-pre-fetch:
-.if !defined(BATCH)
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.pike
+.if !defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--with-threads
+.else
+CONFIGURE_ARGS+=	--without-threads
 .endif
-
-pre-configure:
-	@${ECHO} ${CONFIGURE_ARGS}
-
-pre-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+.if !defined(WITHOUT_GMP)
+LIB_DEPENDS+=		gmp.7:${PORTSDIR}/math/libgmp4
+CONFIGURE_ARGS+=	--with-gmp --with-bignums
+.else
+CONFIGURE_ARGS+=	--without-gmp --without-bignums
+.endif
+.if !defined(WITHOUT_READLINE)
+CONFIGURE_ARGS+=	--with-readline
+.else
+CONFIGURE_ARGS+=	--without-readline
+.endif
+.if !defined(WITHOUT_JPEG)
+LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
+CONFIGURE_ARGS+=	--with-jpeg=${PREFIX}
+.else
+CONFIGURE_ARGS+=	--without-jpeg
+.endif
+.if !defined(WITHOUT_GDBM)
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--with-gdbm=${PREFIX}
+.else
+CONFIGURE_ARGS+=	--without-gdbm
+.endif
+.if !defined(WITHOUT_ZLIB)
+CONFIGURE_ARGS+=	--with-zlib
+.else
+CONFIGURE_ARGS+=	--without-zlib
+.endif
+.if !defined(WITHOUT_MYSQL)
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
+.else
+CONFIGURE_ARGS+=	--without-mysql
+.endif
+.if !defined(WITHOUT_POSTGRESQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}/pgsql
+.else
+CONFIGURE_ARGS+=	--without-pgsql
+.endif
+.if !defined(WITHOUT_MSQL)
+BUILD_DEPENDS+=		msql:${PORTSDIR}/databases/msql
+CONFIGURE_ARGS+=	--with-msql=${PREFIX}
+.else
+CONFIGURE_ARGS+=	--without-msql
+.endif
+.if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--with-ssleay
+.else
+CONFIGURE_ARGS+=	--without-ssleay
+.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}pike ${PREFIX}/bin
