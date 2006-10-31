@@ -150,6 +150,7 @@
     SUBDIR += sunbird
     SUBDIR += superkaramba-lwp
     SUBDIR += superswitcher
+    SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskjuggler
     SUBDIR += taskstep
