@@ -9,7 +9,6 @@ PORTNAME=	firefox
 PORTVERSION=	3.0.a${SNAPDATE:S/-/./g}
 DISTVERSION=	3.0a1
 DISTVERSIONSUFFIX=	.en-US.linux-i686
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=   http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
@@ -23,7 +22,7 @@ DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-SNAPDATE=	2006-09-21
+SNAPDATE=	2006-10-30
 USE_BZIP2=	yes
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
