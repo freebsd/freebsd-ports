@@ -272,6 +272,7 @@ afbackup-client	ports/misc/afbackup-client
 afbackup-server	ports/misc/afbackup-server
 afbinit		ports/sysutils/afbinit
 affenspiel	ports/games/affenspiel
+affiche		ports/deskutils/affiche
 afio		ports/sysutils/afio
 afm		ports/print/afm
 afni		ports/science/afni
