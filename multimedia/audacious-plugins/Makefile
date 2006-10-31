@@ -31,8 +31,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lstdc++" \
 		INPUT_PLUGINS="${INPUT_PLUGINS}" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
-CONFIGURE_ARGS=	--disable-jack --disable-flc --disable-adplug \
-	--disable-lirc --disable-alsa --disable-amidiplug --disable-arts --disable-wma
+CONFIGURE_ARGS=	--disable-jack --disable-adplug --disable-lirc \
+--disable-alsa --disable-amidiplug --disable-arts --disable-wma
 
 MAN1=		audacious.1
 
@@ -45,6 +45,7 @@ VISUALIZATION_PLUGINS=	blur_scope
 
 OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		MODPLUG	"Enable modplug input" off \
+		FLAC	"Enable FLAC input" off \
 		SID	"Enable sid input" off \
 		MPC	"Enable mpc input" off \
 		ESOUND	"Enable Esound output"  off \
@@ -73,6 +74,15 @@ LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 .else
 PLIST_SUB+=	MODPLUG="@comment "
 CONFIGURE_ARGS+=	--disable-modplug
+.endif
+
+.if !defined(WITHOUT_FLAC)
+INPUT_PLUGINS+=	flac
+PLIST_SUB+=	FLACPLUGIN=""
+LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+.else
+PLIST_SUB+=	FLACPLUGIN="@comment "
+CONFIGURE_ARGS+=	--disable-flac
 .endif
 
 .if !defined(WITHOUT_SID)
