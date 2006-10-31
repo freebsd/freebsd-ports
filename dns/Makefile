@@ -59,6 +59,7 @@
     SUBDIR += mydns
     SUBDIR += noip
     SUBDIR += nsd
+    SUBDIR += nsd2
     SUBDIR += nslint
     SUBDIR += nsping
     SUBDIR += nss_resinit
