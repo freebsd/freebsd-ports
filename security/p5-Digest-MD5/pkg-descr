@@ -1,7 +1,7 @@
 The Digest::MD5 module allows you to use the RSA Data Security Inc.
-MD5 Message Digest algorithm from within Perl programs.  The
-algorithm takes as input a message of arbitrary length and produces
-as output a 128-bit "fingerprint" or "message digest" of the input.
+MD5 Message Digest algorithm from within Perl programs.  The algorithm
+takes as input a message of arbitrary length and produces as output
+a 128-bit "fingerprint" or "message digest" of the input.
 
 The Digest::MD5 module provide a procedural interface for simple
 use, as well as an object oriented interface that can handle messages
@@ -10,5 +10,3 @@ of arbitrary length and which can read files directly.
 Further documentation is embedded in the individual modules.
 
 WWW: http://search.cpan.org/dist/Digest-MD5/
-- Pete
-petef@databits.net
