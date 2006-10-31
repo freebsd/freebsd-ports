@@ -7,7 +7,7 @@
 
 PORTNAME=	bash-completion
 PORTVERSION=	20060301
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.caliban.org/files/bash/
 
@@ -43,7 +43,8 @@ post-patch:
 		s|/usr/share\(/ssl/openssl.cnf\)|/etc\1|g; \
 		s|/usr/ports|${PORTSDIR}|g; \
 		s|/usr/lib\(/aspell\)|${LOCALBASE}/share\1|g; \
-		s|/usr/share/info|&:${LOCALBASE}/info:${X11BASE}/info|g' \
+		s|/usr/share/info|&:${LOCALBASE}/info:${X11BASE}/info|g; \
+		s|\(FLAC\)|\1\|flv\|FLV|' \
 		${WRKSRC}/bash_completion
 
 do-install:
