@@ -1,9 +1,7 @@
-bin/doom3-demo
-lib/doom3-demo/demo/demo00.pk4
-lib/doom3-demo/doom.x86
-lib/doom3-demo/gamex86.so
-lib/doom3-demo/libgcc_s.so.1
-lib/doom3-demo/libstdc++.so.5
+bin/linux-doom3-demo
+lib/linux-doom3-demo/demo/demo00.pk4
+lib/linux-doom3-demo/doom.x86
+lib/linux-doom3-demo/gamex86.so
 %%PORTDOCS%%%%DOCSDIR%%/License.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm lib/doom3-demo/demo
