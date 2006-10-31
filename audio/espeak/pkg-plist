@@ -1,5 +1,7 @@
 @comment $FreeBSD$
 bin/speak
+lib/libespeak.so.1
+lib/%%ESPEAK_LIBRARY%%
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
 %%PORTDOCS%%%%DOCSDIR%%/dictionary.html
@@ -9,23 +11,29 @@ bin/speak
 %%PORTDOCS%%%%DOCSDIR%%/images/lips.png
 %%PORTDOCS%%%%DOCSDIR%%/images/sand-light.jpg
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/languages.html
 %%PORTDOCS%%%%DOCSDIR%%/phonemes.html
 %%PORTDOCS%%%%DOCSDIR%%/phontab.html
 %%PORTDOCS%%%%DOCSDIR%%/speak_lib.h
+%%PORTDOCS%%%%DOCSDIR%%/ssml.html
 %%PORTDOCS%%%%DOCSDIR%%/voices.html
 %%DATADIR%%/espeak-data/af_dict
 %%DATADIR%%/espeak-data/config
+%%DATADIR%%/espeak-data/cy_dict
 %%DATADIR%%/espeak-data/de_dict
 %%DATADIR%%/espeak-data/el_dict
 %%DATADIR%%/espeak-data/en_dict
 %%DATADIR%%/espeak-data/eo_dict
 %%DATADIR%%/espeak-data/es_dict
+%%DATADIR%%/espeak-data/fi_dict
 %%DATADIR%%/espeak-data/it_dict
 %%DATADIR%%/espeak-data/phondata
 %%DATADIR%%/espeak-data/phonindex
 %%DATADIR%%/espeak-data/phontab
 %%DATADIR%%/espeak-data/pl_dict
+%%DATADIR%%/espeak-data/ru_dict
 %%DATADIR%%/espeak-data/voices/af
+%%DATADIR%%/espeak-data/voices/cy
 %%DATADIR%%/espeak-data/voices/de
 %%DATADIR%%/espeak-data/voices/default
 %%DATADIR%%/espeak-data/voices/el
@@ -47,9 +55,11 @@ bin/speak
 %%DATADIR%%/espeak-data/voices/en/en8
 %%DATADIR%%/espeak-data/voices/eo
 %%DATADIR%%/espeak-data/voices/es
+%%DATADIR%%/espeak-data/voices/fi
 %%DATADIR%%/espeak-data/voices/it
 %%DATADIR%%/espeak-data/voices/pl
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images
+%%DATADIR%%/espeak-data/voices/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/espeak-data/soundicons
 @dirrm %%DATADIR%%/espeak-data/voices/en
