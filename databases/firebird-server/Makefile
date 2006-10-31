@@ -16,6 +16,8 @@ DISTNAME=	firebird-1.5.3.4870
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

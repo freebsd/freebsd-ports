@@ -16,7 +16,7 @@ DISTNAME=	Firebird-2.0.0.12724-ReleaseCandidate4
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
-UNIQUENAME?=	${PORTNAME}2
+LATEST_LINK=	${PORTNAME}2${PKGNAMESUFFIX}
 
 USE_BISON=	yes
 USE_BZIP2=	yes
