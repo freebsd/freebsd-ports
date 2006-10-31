@@ -4,11 +4,10 @@
 #
 # $FreeBSD$
 #    $MCom: ports-stable/audio/libcddb/Makefile,v 1.1 2005/08/09 04:21:26 ahze Exp $
-#
+#      $Id: Makefile 17 2006-10-17 02:09:55Z buhnux $
 
 PORTNAME=	libcddb
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +16,9 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A library to access data on a CDDB server
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-cdio
 CONFIGURE_ENV=	CPPFLAGS="-DICONV_CONST=\"const\""
 
