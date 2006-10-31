@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PySQLite
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${PORTVERSION:C/\.[0-9]$//}/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,6 @@ CONFLICTS=	py*-PySQLite-1.0.*
 
 NO_LATEST_LINK=	yes
 
-WRKSRC=		${WRKDIR}/pysqlite
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 MAKE_ENV=	LOCALBASE="${LOCALBASE}"
@@ -36,9 +35,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/rest/manual.txt ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif
 # fix lib shared permission
 	@${CHMOD} ${BINMODE} ${PYTHON_SITELIBDIR}/_sqlite.so
