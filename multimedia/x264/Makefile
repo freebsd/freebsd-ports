@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#      $Id: Makefile 12 2006-09-30 06:25:13Z buhnux $
+#      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20060926
-PORTREVISION=	2
+PORTVERSION=	0.0.20061030
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
