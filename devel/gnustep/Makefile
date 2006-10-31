@@ -23,6 +23,7 @@ USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_XLIB=	yes
 USE_GNUSTEP_LIBART=	yes
+USE_GNUSTEP_CAIRO=	yes
 
 do-install:	# empty
 
