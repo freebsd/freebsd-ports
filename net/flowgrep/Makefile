@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flowgrep
-PORTVERSION=	0.8a
+PORTVERSION=	0.9
 CATEGORIES=	net security
 MASTER_SITES=	http://www.monkey.org/~jose/software/flowgrep/
 DISTNAME=	flowgrep-${PORTVERSION}
