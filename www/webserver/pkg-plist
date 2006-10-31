@@ -1,0 +1,10 @@
+Local/Library/Documentation/WebServer/WebServer.gsdoc
+Local/Library/Documentation/WebServer/WebServer.html
+Local/Library/Documentation/WebServer/WebServer.igsdoc
+Local/Library/Documentation/WebServer/dependencies
+Local/Library/Headers/WebServer/WebServer.h
+Local/Library/Libraries/libWebServer.so
+Local/Library/Libraries/libWebServer.so.%%MAJORVERSION%%.1
+Local/Library/Libraries/libWebServer.so.%%VERSION%%
+@dirrm Local/Library/Headers/WebServer
+@dirrm Local/Library/Documentation/WebServer

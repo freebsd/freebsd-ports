@@ -1073,6 +1073,7 @@
     SUBDIR += webredirect
     SUBDIR += webreport
     SUBDIR += webresolve
+    SUBDIR += webserver
     SUBDIR += webstats
     SUBDIR += webstone
     SUBDIR += webstone-ssl
