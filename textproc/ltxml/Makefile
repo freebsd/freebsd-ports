@@ -8,7 +8,7 @@
 PORTNAME=	ltxml
 PORTVERSION=	1.2.7
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Toolkit
@@ -34,12 +34,21 @@ OPTIONS=	OPTIMIZED_CFLAGS "Extra optimizations" off
 
 .include <bsd.port.pre.mk>
 
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+ECHO_MSG=/usr/bin/printf
+IGNORE=	:\n\
+You have to download the distribution manually from \n\
+http://www.inf.ed.ac.uk/research/isdd/admin/package?download=74.\n\
+Download the file ${DISTNAME}${EXTRACT_SUFX}, and place it in\n\
+${DISTDIR}.\n
+.endif
+
 .ifdef WITH_OPTIMIZED_CFLAGS
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations -O3
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=        -fPIC
+CFLAGS+=	-fPIC
 .endif
 
 post-install:
