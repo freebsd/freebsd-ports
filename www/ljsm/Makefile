@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ljsm
-PORTVERSION=    2.7
+PORTVERSION=    2.8
 CATEGORIES=	www perl5 deskutils
-MASTER_SITES=	http://www.offtopia.net/ljsm/
+MASTER_SITES=	http://ljsm.feechki.org/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
