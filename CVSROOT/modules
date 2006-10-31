@@ -3309,6 +3309,7 @@ gkrellm-gift	ports/net-p2p/gkrellm-gift
 gkrellm-gtodo	ports/deskutils/gkrellm-gtodo
 gkrellm-helium	ports/misc/gkrellm-helium
 gkrellm-reminder2	ports/deskutils/gkrellm-reminder2
+gkrellm-timers	ports/deskutils/gkrellm-timers
 gkrellm-trayicons	ports/sysutils/gkrellm-trayicons
 gkrellm-xkb	ports/misc/gkrellm-xkb
 gkrellm2	ports/sysutils/gkrellm2
