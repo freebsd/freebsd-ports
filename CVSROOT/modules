@@ -7754,6 +7754,7 @@ nulib		ports/archivers/nulib
 nullmailer	ports/mail/nullmailer
 nullpop		ports/mail/nullpop
 numchar		ports/misc/numchar
+numdiff		ports/math/numdiff
 numlockx	ports/x11/numlockx
 nunnimcax	ports/textproc/nunnimcax
 nuppelvideo	ports/multimedia/nuppelvideo
