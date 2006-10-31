@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	2.17.1
+PORTVERSION=	2.18
 CATEGORIES=	devel
 MASTER_SITES=	http://bouml.free.fr/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -22,8 +22,11 @@ QTDIR?=		${X11BASE}
 ALL_TARGET=	compile
 MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
 		QTDIR="${QTDIR}"
+INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+
+PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc${EXTRACT_SUFX}
@@ -38,7 +41,8 @@ BROKEN=	Does not compile with gcc-2.95
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
+		-e 's|%%DESKTOPDIR%%|${DESKTOPDIR}|' ${WRKSRC}/${MAKEFILE}
 	${FIND} ${WRKSRC} -name "*.pro" |	\
 		${XARGS} ${REINPLACE_CMD} -e '/^CONFIG/s/$$/ thread/'
 

@@ -1,13 +1,26 @@
---- Makefile.orig	Thu Feb 17 18:39:54 2005
-+++ Makefile	Tue Jun 14 21:58:51 2005
-@@ -1,8 +1,8 @@
- # the directory where all the bouml files will be installed
+--- Makefile.orig	Tue Oct 17 19:53:42 2006
++++ Makefile	Tue Oct 31 10:36:34 2006
+@@ -1,19 +1,19 @@
+ # The directory where all the bouml files will be installed, you
+ # can change it for instance because you don't have root permission
 -BOUML_LIB = /usr/lib/bouml
 +BOUML_LIB = %%PREFIX%%/share/bouml
  
- # the directory where the bouml shell script will be installed
+ # The directory where the bouml shell script will be installed, you
+ # can change it for instance because you don't have root permission
 -BOUML_DIR = /usr/bin
 +BOUML_DIR = %%PREFIX%%/bin
  
- QMAKE = qmake
+ # The directory containing bouml.desktop
+ # The copy is not done if you comment the definition
+-BOUML_DESKTOP_DIR = /usr/share/applications
++BOUML_DESKTOP_DIR = %%DESKTOPDIR%%
  
+ # The directories containing the bouml icons are
+ # <BOUML_ICONS_PREFIX_DIR>/<size>x<size>/apps
+ # The copy is not done if you comment the definition
+-BOUML_ICONS_PREFIX_DIR = /usr/share/icons/hicolor
++BOUML_ICONS_PREFIX_DIR = %%PREFIX%%/share/icons/hicolor
+ 
+ # for packaging purpose, useless by default
+ # DESTDIR = 
