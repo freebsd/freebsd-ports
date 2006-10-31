@@ -3712,6 +3712,7 @@ gpsmanshp	ports/graphics/gpsmanshp
 gpt31		ports/misc/gpt31
 gpte		ports/sysutils/gpte
 gputils		ports/devel/gputils
+gpuzzle		ports/games/gpuzzle
 gq		ports/net/gq
 gqlplus		ports/databases/gqlplus
 gqmpeg		ports/audio/gqmpeg
