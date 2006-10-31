@@ -3140,12 +3140,10 @@ gdeskcal	ports/deskutils/gdeskcal
 gdeskcal-skins	ports/deskutils/gdeskcal-skins
 gdesklets	ports/deskutils/gdesklets
 gdesklets-clock	ports/x11-clocks/gdesklets-clock
-gdesklets-cornerxmms	ports/audio/gdesklets-cornerxmms
 gdesklets-countdown	ports/x11-clocks/gdesklets-countdown
 gdesklets-ebichuclock	ports/x11-clocks/gdesklets-ebichuclock
 gdesklets-irc	ports/irc/gdesklets-irc
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
-gdesklets-sensor-displayconstraints	ports/deskutils/gdesklets-sensor-displayconstraints
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-tasklist	ports/x11/gdesklets-tasklist
 gdesklets-xmms	ports/audio/gdesklets-xmms
@@ -6520,7 +6518,6 @@ linux-sun-jdk15	ports/java/linux-sun-jdk15
 linux-sunbird	ports/deskutils/linux-sunbird
 linux-thunderbird	ports/mail/linux-thunderbird
 linux-tiff	ports/graphics/linux-tiff
-linux-unace	ports/archivers/linux-unace
 linux-ungif	ports/graphics/linux-ungif
 linux-ut	ports/games/linux-ut
 linux-ut2003-demo	ports/games/linux-ut2003-demo
@@ -10772,7 +10769,6 @@ pdmenu		ports/misc/pdmenu
 pdnmesh		ports/cad/pdnmesh
 pdnsd		ports/dns/pdnsd
 pdq		ports/print/pdq
-pdss		ports/lang/pdss
 pdumpfs		ports/sysutils/pdumpfs
 pdumpfs-clean	ports/sysutils/pdumpfs-clean
 pdumpfs-rsync	ports/sysutils/pdumpfs-rsync
@@ -13215,7 +13211,6 @@ sdl12		ports/devel/sdl12
 sdl_gfx		ports/graphics/sdl_gfx
 sdl_gui		ports/x11-toolkits/sdl_gui
 sdl_image	ports/graphics/sdl_image
-sdl_ldbad	ports/devel/sdl_ldbad
 sdl_mixer	ports/audio/sdl_mixer
 sdl_net		ports/net/sdl_net
 sdl_sound	ports/audio/sdl_sound
@@ -13442,7 +13437,6 @@ slib-gauche	ports/lang/slib-gauche
 slib-guile	ports/lang/slib-guile
 sliderule	ports/deskutils/sliderule
 slides		ports/textproc/slides
-slideshow	ports/multimedia/slideshow
 slim		ports/x11/slim
 slime		ports/editors/slime
 slimserver	ports/audio/slimserver

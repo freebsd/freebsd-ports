@@ -1861,7 +1861,6 @@
     SUBDIR += scons
     SUBDIR += scsh-install-lib
     SUBDIR += sdl12
-    SUBDIR += sdl_ldbad
     SUBDIR += sdlmm
     SUBDIR += sdts++
     SUBDIR += sedsed

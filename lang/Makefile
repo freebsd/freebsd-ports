@@ -201,7 +201,6 @@
     SUBDIR += p5-v6
     SUBDIR += parrot
     SUBDIR += pbasic
-    SUBDIR += pdss
     SUBDIR += perl5
     SUBDIR += perl5.8
     SUBDIR += pexts

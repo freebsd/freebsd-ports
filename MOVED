@@ -2490,3 +2490,9 @@ multimedia/bmpx-devel||2006-10-09|Development version is not active
 emulators/linux_base-suse-9.1||2006-10-20|Port expired and was removed
 emulators/linux_base-suse-9.2||2006-10-20|Port expired and was removed
 emulators/linux_base-suse-9.3||2006-10-20|Port expired and was removed
+archivers/linux-unace||2006-10-31|Has expired: security issues
+audio/gdesklets-cornerxmms||2006-10-31|Has expired: dead project and not fetchable any more
+deskutils/gdesklets-sensor-displayconstraints||2006-10-31|Has expired: dead project and not fetchable any more
+devel/sdl_ldbad||2006-10-31|Has expired: incorrect pkg-plist and doesn't required anymore
+lang/pdss||2006-10-31|Has expired: fails to compile on recent FreeBSD versions
+multimedia/slideshow||2006-10-31|Has expired: dead project and doesn't work with recent sdl

@@ -171,7 +171,6 @@
     SUBDIR += gaim-festival
     SUBDIR += gbsplay
     SUBDIR += gdam
-    SUBDIR += gdesklets-cornerxmms
     SUBDIR += gdesklets-xmms
     SUBDIR += gdrdao
     SUBDIR += gkrellmms
