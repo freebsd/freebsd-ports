@@ -6,27 +6,25 @@
 #
 
 PORTNAME=	Net-Delicious
-PORTVERSION=	1.01
+PORTVERSION=	1.1
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OOP for managing posts on del.icio.us
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/IO/AtomicFile.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/Config/Simple.pm:${PORTSDIR}/devel/p5-Config-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-YAML>=0.35:${PORTSDIR}/textproc/p5-YAML \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Log-Dispatch>=2:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-XML-Simple>=2:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Time-HiRes>=1.65:${PORTSDIR}/devel/p5-Time-HiRes \
+		p5-IO-stringy>=2.1:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-PathTools>=0.8:${PORTSDIR}/devel/p5-PathTools \
+		p5-TimeDate>=2.27:${PORTSDIR}/devel/p5-TimeDate \
+		p5-Config-Simple>=2:${PORTSDIR}/devel/p5-Config-Simple \
+		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
