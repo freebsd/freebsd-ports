@@ -1651,6 +1651,7 @@
     SUBDIR += present
     SUBDIR += privman
     SUBDIR += projectcenter.app
+    SUBDIR += projectmanager
     SUBDIR += prototype
     SUBDIR += psvn
     SUBDIR += pth
