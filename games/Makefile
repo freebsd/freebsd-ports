@@ -641,6 +641,7 @@
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += slige
+    SUBDIR += slump
     SUBDIR += slune
     SUBDIR += smiley
     SUBDIR += sokoban
