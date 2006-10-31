@@ -1,6 +1,6 @@
---- common.pro.orig	Mon Nov  3 09:40:15 2003
-+++ common.pro	Mon Dec  1 03:16:47 2003
-@@ -29,32 +29,12 @@
+--- common.pro.orig	Wed Nov  9 13:50:09 2005
++++ common.pro	Wed Nov  9 13:51:25 2005
+@@ -20,8 +20,6 @@
  # Now leaving these ON for general distribution as they DO have SOME effect 
  # (or at least they have in the past... see the README), and should be portable.
  # NB Switching on -funroll-loops causes some versions of gcc to segv
@@ -9,10 +9,10 @@
  
  ##################
  # Architecture specific optimisations
- # The following architecture options make the compiled executables less portable.
- # (On a different setup you may need to change what's subtracted out of the flags.)
+@@ -29,23 +27,6 @@
+ # (On a different setup you may need to change what is subtracted out of the flags.)
  # NB -march=X implies -mcpu=X... no need to specify both the same
--
+ 
 -contains(CONFIG_OPTS, p4 ){ 
 -  QMAKE_CXXFLAGS_RELEASE -= -march=i386 -mcpu=i686
 -  QMAKE_CXXFLAGS_RELEASE += -march=pentium4 -mfpmath=sse -msse2
