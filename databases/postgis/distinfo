@@ -1,3 +1,3 @@
-SIZE (postgis-1.1.4.tar.gz) = 1853989
-MD5 (postgis-1.1.4.tar.gz) = a550dfbe2e20223ed530cd0faf747967
-SHA256 (postgis-1.1.4.tar.gz) = 8f7c74c34431120364d623d0d7ef2556ae6c9bb153b9621eb93ebf56a5396018
+MD5 (postgis-1.1.5.tar.gz) = cd838ec5062a3e721f011c2abfb22e07
+SHA256 (postgis-1.1.5.tar.gz) = 8d3c4e5c823db25a378b781dd004d0b0a5781f93001789a89d0469dfd64f2e11
+SIZE (postgis-1.1.5.tar.gz) = 1913497
