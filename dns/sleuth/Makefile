@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	sleuth
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	dns
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/mj/net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A tool for checking DNS zones
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_PERL5=	yes
+
+PLIST_FILES=	bin/sleuth etc/sleuth.conf.sample
 
 post-patch:
 	${PERL} -pi -e "s|/etc/sleuth.conf|${PREFIX}/etc/sleuth.conf|g; \
