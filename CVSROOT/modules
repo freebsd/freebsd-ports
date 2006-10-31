@@ -13908,6 +13908,7 @@ syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
 system-tools-backends	ports/sysutils/system-tools-backends
 systemc		ports/cad/systemc
+systempreferences	ports/deskutils/systempreferences
 sysupdate	ports/sysutils/sysupdate
 sysutils_gag	ports/sysutils/gag
 szip		ports/archivers/szip
