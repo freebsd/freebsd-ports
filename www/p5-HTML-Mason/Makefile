@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.33
+PORTVERSION=	1.35
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	High-performance, dynamic web site authoring system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+BUILD_DEPENDS=	p5-Module-Build>=0.26:${PORTSDIR}/devel/p5-Module-Build
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
-		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 PERL_MODBUILD=	yes
@@ -30,8 +30,8 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason.3 \
 		HTML::Mason::Admin.3 \
 		HTML::Mason::ApacheHandler.3 \
-		HTML::Mason::Cache::BaseCache.3 \
 		HTML::Mason::CGIHandler.3 \
+		HTML::Mason::Cache::BaseCache.3 \
 		HTML::Mason::Compiler.3 \
 		HTML::Mason::Compiler::ToObject.3 \
 		HTML::Mason::Component.3 \
