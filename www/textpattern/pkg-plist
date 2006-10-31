@@ -2,7 +2,8 @@
 %%TEXTPATTERN%%/README.txt
 %%TEXTPATTERN%%/images/1.gif
 %%TEXTPATTERN%%/index.php
-%%TEXTPATTERN%%/textpattern/config.php.default
+%%TEXTPATTERN%%/textpattern/checksums.txt
+%%TEXTPATTERN%%/textpattern/config-dist.php
 %%TEXTPATTERN%%/textpattern/css.php
 %%TEXTPATTERN%%/textpattern/include/import/BloggerImportTemplate.txt
 %%TEXTPATTERN%%/textpattern/include/import/import_b2.php
@@ -46,6 +47,7 @@
 %%TEXTPATTERN%%/textpattern/lib/txplib_html.php
 %%TEXTPATTERN%%/textpattern/lib/txplib_misc.php
 %%TEXTPATTERN%%/textpattern/lib/txplib_update.php
+%%TEXTPATTERN%%/textpattern/lib/txplib_wrapper.php
 %%TEXTPATTERN%%/textpattern/license.txt
 %%TEXTPATTERN%%/textpattern/publish.php
 %%TEXTPATTERN%%/textpattern/publish/atom.php
@@ -60,26 +62,19 @@
 %%TEXTPATTERN%%/textpattern/setup/txpsql.php
 %%TEXTPATTERN%%/textpattern/textpattern.css
 %%TEXTPATTERN%%/textpattern/textpattern.js
-%%TEXTPATTERN%%/textpattern/txp_img/button.gif
 %%TEXTPATTERN%%/textpattern/txp_img/carver.gif
 %%TEXTPATTERN%%/textpattern/txp_img/down.gif
 %%TEXTPATTERN%%/textpattern/txp_img/down2.gif
-%%TEXTPATTERN%%/textpattern/txp_img/header.gif
-%%TEXTPATTERN%%/textpattern/txp_img/howto.gif
 %%TEXTPATTERN%%/textpattern/txp_img/htmldown.gif
 %%TEXTPATTERN%%/textpattern/txp_img/htmlup.gif
 %%TEXTPATTERN%%/textpattern/txp_img/previewdown.gif
 %%TEXTPATTERN%%/textpattern/txp_img/previewup.gif
-%%TEXTPATTERN%%/textpattern/txp_img/reset_time.gif
 %%TEXTPATTERN%%/textpattern/txp_img/tabs.gif
 %%TEXTPATTERN%%/textpattern/txp_img/tabshadow.gif
 %%TEXTPATTERN%%/textpattern/txp_img/textdown.gif
 %%TEXTPATTERN%%/textpattern/txp_img/textpattern.gif
 %%TEXTPATTERN%%/textpattern/txp_img/texttabshadow.gif
 %%TEXTPATTERN%%/textpattern/txp_img/textup.gif
-%%TEXTPATTERN%%/textpattern/txp_img/tplogoGreyer.gif
-%%TEXTPATTERN%%/textpattern/txp_img/txp1_0.gif
-%%TEXTPATTERN%%/textpattern/txp_img/txp_editorheader.gif
 %%TEXTPATTERN%%/textpattern/txp_img/txp_slug105x45.gif
 %%TEXTPATTERN%%/textpattern/txp_img/txp_slug105x70.gif
 %%TEXTPATTERN%%/textpattern/txp_img/up.gif
@@ -87,11 +82,11 @@
 %%TEXTPATTERN%%/textpattern/update/_to_1.0.0.php
 %%TEXTPATTERN%%/textpattern/update/_to_4.0.2.php
 %%TEXTPATTERN%%/textpattern/update/_to_4.0.3.php
+%%TEXTPATTERN%%/textpattern/update/_to_4.0.4.php
 %%TEXTPATTERN%%/textpattern/update/_update.php
 %%TEXTPATTERN%%/textpattern/update/index.html
 @dirrm %%TEXTPATTERN%%/textpattern/update
 @dirrm %%TEXTPATTERN%%/textpattern/txp_img
-@dirrm %%TEXTPATTERN%%/textpattern/tmp/\
 @dirrm %%TEXTPATTERN%%/textpattern/tmp
 @dirrm %%TEXTPATTERN%%/textpattern/setup
 @dirrm %%TEXTPATTERN%%/textpattern/publish
@@ -101,7 +96,6 @@
 @dirrm %%TEXTPATTERN%%/textpattern/include
 @dirrm %%TEXTPATTERN%%/textpattern
 @dirrm %%TEXTPATTERN%%/images
-@dirrm %%TEXTPATTERN%%/files/\
 @dirrm %%TEXTPATTERN%%/files
 @dirrm %%TEXTPATTERN%%
 @dirrmtry www/data-dist
