@@ -1957,6 +1957,7 @@ downtime	ports/sysutils/downtime
 doxygen		ports/devel/doxygen
 doxymacs	ports/editors/doxymacs
 dparser		ports/devel/dparser
+dphys-config	ports/misc/dphys-config
 dpkg		ports/archivers/dpkg
 dprog		ports/devel/dprog
 dpsearch	ports/www/dpsearch
