@@ -69,6 +69,7 @@
     SUBDIR += dnetc
     SUBDIR += documancer
     SUBDIR += dotfile
+    SUBDIR += dphys-config
     SUBDIR += dtach
     SUBDIR += dvorak7min
     SUBDIR += dvorakng

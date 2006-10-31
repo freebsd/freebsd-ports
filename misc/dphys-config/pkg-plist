@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+bin/dphys-config
+@unexec if cmp -s %D/etc/dphys-config %D/etc/dphys-config.sample; then rm -f %D/etc/dphys-config; fi
+etc/dphys-config.sample
+@exec [ -f %B/dphys-config ] || cp %B/%f %B/dphys-config
+%%EXAMPLESDIR%%/cron.d.example
+%%EXAMPLESDIR%%/dphys-config.example
+%%EXAMPLESDIR%%/init.d.example
+%%EXAMPLESDIR%%/site.example/dphys-config-filesys.list
+%%EXAMPLESDIR%%/site.example/dphys-config-x
+%%EXAMPLESDIR%%/site.example/dphys-config.list
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-altern-wwwbrowser
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-altern-xcursor
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-altern-xsession
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-altern-xterminal
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-exports
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-filesys
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-quota
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-usb-storage
+%%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-x
+@dirrm %%EXAMPLESDIR%%/site.example/local/sbin
+@dirrm %%EXAMPLESDIR%%/site.example/local
+@dirrm %%EXAMPLESDIR%%/site.example
+@dirrm %%EXAMPLESDIR%%
