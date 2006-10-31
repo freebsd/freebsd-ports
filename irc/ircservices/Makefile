@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ircservices.za.net/download/ \
 	ftp://ftp.ircd.com.br/ircservices/ \
 	http://banana.irc.gr/ircservices/ \
 	http://ircservices.swissirc.ch/ \
-	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/ 
+	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/
 
 DISTNAME=	${PORTNAME}-5.0.0
 
@@ -37,6 +37,10 @@ CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH}=="sparc64"
+CFLAGS:=	${CFLAGS:C/-O[0-3]//g}
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
