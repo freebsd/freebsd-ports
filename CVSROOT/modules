@@ -13449,6 +13449,7 @@ slib-gauche	ports/lang/slib-gauche
 slib-guile	ports/lang/slib-guile
 sliderule	ports/deskutils/sliderule
 slides		ports/textproc/slides
+slige		ports/games/slige
 slim		ports/x11/slim
 slime		ports/editors/slime
 slimserver	ports/audio/slimserver
