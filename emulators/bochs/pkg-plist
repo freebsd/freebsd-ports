@@ -23,6 +23,7 @@ bin/bximage
 %%DATADIR%%/keymaps/x11-pc-si.map
 %%DATADIR%%/keymaps/x11-pc-uk.map
 %%DATADIR%%/keymaps/x11-pc-us.map
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO

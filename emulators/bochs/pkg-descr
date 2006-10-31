@@ -5,7 +5,7 @@ be compiled to emulate a 386, 486, Pentium, Pentium Pro or AMD64 CPU,
 including optional MMX, SSE, SSE2 and 3DNow instructions.
 
 Bochs is capable of running most Operating Systems inside the emulation
-including Linux, Windows 95, DOS, and Windows NT 4.
+including Linux, DOS, Windows® 95/98 and Windows® NT/2000/XP.
 
 Bochs was written by Kevin Lawton and is currently maintained by the Bochs
 project.
