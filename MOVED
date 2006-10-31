@@ -2496,3 +2496,4 @@ deskutils/gdesklets-sensor-displayconstraints||2006-10-31|Has expired: dead proj
 devel/sdl_ldbad||2006-10-31|Has expired: incorrect pkg-plist and doesn't required anymore
 lang/pdss||2006-10-31|Has expired: fails to compile on recent FreeBSD versions
 multimedia/slideshow||2006-10-31|Has expired: dead project and doesn't work with recent sdl
+dns/queryperf|dns/dnsperf|2006-11-01|Project was improved and renamed

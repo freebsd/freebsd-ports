@@ -94,7 +94,6 @@
     SUBDIR += py-dns
     SUBDIR += py-dnspython
     SUBDIR += py-twistedNames
-    SUBDIR += queryperf
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += scavenge
