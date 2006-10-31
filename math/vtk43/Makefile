@@ -1,32 +1,22 @@
-# New ports collection makefile for:    vtk
+# New ports collection makefile for:    vtk43
 # Date created:         10 Oct 2003
 # Whom:                 Mykola Khotyaintsev <ko@irfu.se>
 #
 # $FreeBSD$
 #
-# By default
-#
-# There are some options to tune VTK towards your specific needs.
-# You can activate a feature by typing something like
-# "make -DKNOB" or "make KNOB=yes" instead of just "make"
-#
-# WITH_TESTING		build the testing binaries (only for vtk and vtk-java port)
-#
 
-PORTNAME=	vtk
+PORTNAME=	vtk43
 PORTVERSION=	4.3.0
 PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/\
 		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/VTK43/
-DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
+DISTNAME?=	VTK-${PORTVERSION}-cvs${CVSDATE}
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT?=	The Visualization Toolkit shared libs
 
 LATEST_LINK=	vtk43
-
-PREFIX=		${LOCALBASE}/vtk43
 
 LIBVER=		1
 CVSDATE=	20031006
@@ -38,6 +28,10 @@ PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
 RESTRICTED=	yes
 NO_MTREE=	yes
+
+.if !defined(PKGNAMESUFFIX)
+OPTIONS=	TESTING "Build the testing binaries" off
+.endif
 
 VTK_KITS=	Common Filtering Graphics Hybrid IO Imaging Rendering Parallel Patented
 
@@ -57,17 +51,11 @@ LIB_DEPENDS+=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-.if defined(WITH_TESTING) && (!defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-java")
-RUN_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
-BUILD_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
-.endif
-
 ONLY_FOR_ARCHS=	i386 # was not tested on other ARCHS
 USE_GMAKE=	yes
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
 
-# if optimization flag -O2 or -O3 is present - use g++33
+# if optimization flag -O2 or -O3 is present - use g++33 or later
 # There is a problem compiling Imaging/vtkImageEuclideanDistance.o by gcc 3.2.2
 # with -02 -march=pentium3
 .if defined(CXXFLAGS)
@@ -85,7 +73,7 @@ ADDITIONAL_EXE_LINKER_FLAGS=	${PTHREAD_LIBS}
 CMAKE?=		${LOCALBASE}/bin/cmake
 CXXFLAGS+=	-Wno-deprecated
 CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-		-DBUILD_SHARED_LIBS:BOOL=ON \
+		-DBUILD_SHARED_LIBS:BOOL=OFF \
 		-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="${LINKERFLAGS}" \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${ADDITIONAL_EXE_LINKER_FLAGS}" \
@@ -114,7 +102,7 @@ CMAKE_DEFS+=	-DBUILD_TESTING:BOOL=OFF
 PLIST_SUB+=	TESTING_ONLY="@comment "
 .endif
 
-################################# vtk port start #############################################
+################################# vtk43 port start #############################################
 
 .ifndef(PKGNAMESUFFIX)
 
@@ -126,23 +114,13 @@ BINARIES+=	TestCxxFeatures TestInstantiator TimeRenderer TimeRenderer2 ParallelI
 BINARIES+=	SocketClient SocketServer GenericCommunicator ThreadedCommunicator TestPStream
 .endif
 
-.ifndef(WITH_TESTING)
-pre-everything::
-	@${ECHO_MSG} "---------------------- N   O   T   E ------------------------"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you want to build C++ Testing binaries press Ctrl-C now"
-	@${ECHO_MSG} "and execute \"make WITH_TESTING=yes\""
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "-------------------------------------------------------------"
-.endif
-
 post-patch: patch-common
 
 do-install: install-cnotice install-binaries install-libs
 
 .endif
 
-################################# vtk port end #############################################
+################################# vtk43 port end #############################################
 
 pre-configure:
 	${MKDIR} ${WRKSRC}
@@ -153,7 +131,7 @@ do-configure:
 patch-common:
 	@${FIND} ${VTKSRCDIR} -name "*.cxx" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|g'
-	@${REINPLACE_CMD} -E 's|lib/vtk\)|lib\)|g' \
+	@${REINPLACE_CMD} -E 's|lib/vtk\)|lib/vtk43\)|g' \
 		${VTKSRCDIR}/vtkGenerateVTKConfig.cmake
 .if defined(WRAP)
 # No need to build many libs, such as: vtkCommon,... Better link to those ones installed by vtk port.
@@ -164,7 +142,7 @@ patch-common:
 #
 # ${VTKSRCDIR}/[Common Filtering IO ...]/CMakeLists.txt :
 #       -ADD_LIBRARY(vtk${KIT} ...
-#       +FIND_LIBRARY(MAIN_KIT_LIB NAMES vtk${KIT} PATHS ${PREFIX}/lib)
+#       +FIND_LIBRARY(MAIN_KIT_LIB NAMES vtk${KIT} PATHS ${PREFIX}/lib/vtk43)
 #
 #       -TARGET_LINK_LIBRARIES(vtk${KIT}Python vtk${KIT} ...
 #       +TARGET_LINK_LIBRARIES(vtk${KIT}Python ${MAIN_KIT_LIB} ...
@@ -185,7 +163,7 @@ patch-common:
 
 	@for dir in ${VTK_KITS} ; do \
 		${ECHO_MSG} "Patching ${WRKDIR}/${VTKSRCDIR}/$$dir/CMakeLists.txt ..." ; \
-		${REINPLACE_CMD} -E 's|ADD_LIBRARY *\(vtk\$$\{KIT\} .*$$|FIND_LIBRARY\('$$dir'_LIB NAMES vtk\$$\{KIT\} PATHS ${PREFIX}/lib\)|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\}${WRAP} vtk\$$\{KIT\}|TARGET_LINK_LIBRARIES\(vtk\$$\{KIT\}${WRAP} \$$\{'$$dir'_LIB\}|g ; s|^[ \t]*vtk\$$\{KIT\}[ \t]*$$| \$$\{'$$dir'_LIB\}|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\} .*$$||g' \
+		${REINPLACE_CMD} -E 's|ADD_LIBRARY *\(vtk\$$\{KIT\} .*$$|FIND_LIBRARY\('$$dir'_LIB NAMES vtk\$$\{KIT\} PATHS ${PREFIX}/lib/vtk43\)|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\}${WRAP} vtk\$$\{KIT\}|TARGET_LINK_LIBRARIES\(vtk\$$\{KIT\}${WRAP} \$$\{'$$dir'_LIB\}|g ; s|^[ \t]*vtk\$$\{KIT\}[ \t]*$$| \$$\{'$$dir'_LIB\}|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\} .*$$||g' \
 			${VTKSRCDIR}/$$dir/CMakeLists.txt ; \
 	done
 
@@ -209,14 +187,12 @@ install-binaries:
 .endif
 
 install-libs:
-	@${MKDIR} ${PREFIX}/lib
-	@${ECHO_MSG} "Installing shared libraries to ${PREFIX}/lib ..."
+	@${MKDIR} ${PREFIX}/lib/vtk43
+	@${ECHO_MSG} "Installing static libraries to ${PREFIX}/lib/vtk43 ..."
 .for i in ${VTK_KITS:S/$/${WRAP}/} ${EXTRA_LIBS}
-	@${ECHO_MSG} "Installing libvtk${i}.so ..."
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/libvtk${i}.so \
-			${PREFIX}/lib/libvtk${i}.so.${LIBVER}
-	@${LN} -sf ${PREFIX}/lib/libvtk${i}.so.${LIBVER} \
-			${PREFIX}/lib/libvtk${i}.so
+	${RANLIB} ${WRKSRC}/bin/libvtk${i}.a
+	${INSTALL_DATA} ${WRKSRC}/bin/libvtk${i}.a \
+			${PREFIX}/lib/vtk43/libvtk${i}.a
 .endfor
 
 .endif
