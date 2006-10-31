@@ -13289,6 +13289,7 @@ sgmltools-lite	ports/textproc/sgmltools-lite
 sgrep		ports/textproc/sgrep
 sgrep2		ports/textproc/sgrep2
 sguil-sensor	ports/security/sguil-sensor
+sguil-server	ports/security/sguil-server
 sh-rtems-binutils	ports/devel/sh-rtems-binutils
 sh-rtems-g77	ports/devel/sh-rtems-g77
 sh-rtems-gcc	ports/devel/sh-rtems-gcc
