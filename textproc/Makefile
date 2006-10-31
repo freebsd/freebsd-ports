@@ -97,6 +97,7 @@
     SUBDIR += docbook-xml
     SUBDIR += docbook-xml-430
     SUBDIR += docbook-xml-440
+    SUBDIR += docbook-xml-450
     SUBDIR += docbook-xsd
     SUBDIR += docbook-xsl
     SUBDIR += docbookide.el
