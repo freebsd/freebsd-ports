@@ -2,484 +2,492 @@ bin/mytool
 bin/uniconv
 bin/uniprint
 bin/yudit
-share/yudit/config/yudit.properties
-share/yudit/data/ASCII-IPA.my
-share/yudit/data/ArabTeX.my
-share/yudit/data/Arabic.my
-share/yudit/data/ArabicBuck.my
-share/yudit/data/ArabicKeyboard.my
-share/yudit/data/ArabicTranslit.my
-share/yudit/data/ArmenianEast.my
-share/yudit/data/ArmenianEastPhon.my
-share/yudit/data/ArmenianWest.my
-share/yudit/data/Azeri.my
-share/yudit/data/Belarusian.my
-share/yudit/data/Bengali-Inscript.my
-share/yudit/data/Bengali.my
-share/yudit/data/BengaliSona.my
-share/yudit/data/Berbere-conversion1.my
-share/yudit/data/Berbere-etendu.my
-share/yudit/data/Berbere-standard.my
-share/yudit/data/BlissSymbolics.my
-share/yudit/data/Bulgarian.my
-share/yudit/data/CS-qwerty.my
-share/yudit/data/CS.my
-share/yudit/data/Cherokee.my
-share/yudit/data/Chinese-CJ.my
-share/yudit/data/Chinese-Pinyin.my
-share/yudit/data/Chinese-WB.my
-share/yudit/data/Croatian.my
-share/yudit/data/Cyrillic.my
-share/yudit/data/Czech-deadkeys.my
-share/yudit/data/Czech.my
-share/yudit/data/Dakelh.my
-share/yudit/data/Danish.my
-share/yudit/data/Devanagari-Inscript.my
-share/yudit/data/Devanagari-Phonetic.my
-share/yudit/data/Devanagari.my
-share/yudit/data/Dutch.my
-share/yudit/data/Esperanto.my
-share/yudit/data/Ethiopic.my
-share/yudit/data/Farsi.my
-share/yudit/data/French.my
-share/yudit/data/Georgian.my
-share/yudit/data/GeorgianB.my
-share/yudit/data/German.my
-share/yudit/data/GrandLatin.my
-share/yudit/data/GreekAncient.my
-share/yudit/data/GreekBible.my
-share/yudit/data/GreekMonotonic.my
-share/yudit/data/GreekPolytonic.my
-share/yudit/data/Guarani.my
-share/yudit/data/Gujarati-Inscript.my
-share/yudit/data/Gujarati.my
-share/yudit/data/Gurmukhi-Inscript.my
-share/yudit/data/Gurmukhi.my
-share/yudit/data/Hangul.my
-share/yudit/data/Hangul2.my
-share/yudit/data/Hangul3.my
-share/yudit/data/Hanunoo.my
-share/yudit/data/Hebrew.my
-share/yudit/data/HebrewIsraeli.my
-share/yudit/data/Hungarian-prefix.my
-share/yudit/data/Hungarian.my
-share/yudit/data/HungarianRunes.my
-share/yudit/data/IS_AS.my
-share/yudit/data/IS_BN.my
-share/yudit/data/IS_DV.my
-share/yudit/data/IS_GJ.my
-share/yudit/data/IS_KN.my
-share/yudit/data/IS_ML.my
-share/yudit/data/IS_OR.my
-share/yudit/data/IS_PJ.my
-share/yudit/data/IS_RM.my
-share/yudit/data/IS_TL.my
-share/yudit/data/IS_TM.my
-share/yudit/data/Inuktitut-ICI.my
-share/yudit/data/Inuktitut-KBD.my
-share/yudit/data/Israeli.my
-share/yudit/data/Kana.my
-share/yudit/data/Kanji.my
-share/yudit/data/Kannada-Inscript.my
-share/yudit/data/Kannada.my
-share/yudit/data/Kazakh-prefix.my
-share/yudit/data/Klingon.my
-share/yudit/data/Latin.my
-share/yudit/data/Lithuanian.my
-share/yudit/data/Malayalam-Inscript.my
-share/yudit/data/Malayalam.my
-share/yudit/data/MiddleKorean.my
-share/yudit/data/Mnemonic.my
-share/yudit/data/Mongolian.my
-share/yudit/data/OldItalic.my
-share/yudit/data/Oriya-Inscript.my
-share/yudit/data/Oriya.my
-share/yudit/data/Persian.my
-share/yudit/data/Polish.my
-share/yudit/data/Romanian.my
-share/yudit/data/Runic-Futhark.my
-share/yudit/data/Runic-Futhorc.my
-share/yudit/data/Runic.my
-share/yudit/data/Russian-ISO-Latinitsa.my
-share/yudit/data/Russian-JAVERTY.my
-share/yudit/data/Russian-Translit-German.my
-share/yudit/data/Russian-Translit-Nordic.my
-share/yudit/data/Russian-Translit-Slovene.my
-share/yudit/data/Russian-Translit.my
-share/yudit/data/Russian-extended.my
-share/yudit/data/Russian.my
-share/yudit/data/SAMPA.my
-share/yudit/data/SGML.my
-share/yudit/data/Sanskrit-Translit.my
-share/yudit/data/Sanskrit.my
-share/yudit/data/Serbian.my
-share/yudit/data/Slavic.my
-share/yudit/data/Slovak-Programmer.my
-share/yudit/data/Slovenian.my
-share/yudit/data/Spanish.my
-share/yudit/data/SpanishPrefix.my
-share/yudit/data/Syriac.my
-share/yudit/data/TIS_620.my
-share/yudit/data/Tamil-Inscript.my
-share/yudit/data/Tamil.my
-share/yudit/data/TeX-smeTeX.my
-share/yudit/data/TeX.my
-share/yudit/data/Telugu-Inscript.my
-share/yudit/data/Telugu-Rts.my
-share/yudit/data/Telugu.my
-share/yudit/data/Thai.my
-share/yudit/data/Tibetan-Wylie.my
-share/yudit/data/Troff.my
-share/yudit/data/Ukrainian-Extended.my
-share/yudit/data/Ukrainian-Translit.my
-share/yudit/data/Ukrainian.my
-share/yudit/data/Unicode.my
-share/yudit/data/Urdu-ArabTeX.my
-share/yudit/data/Urdu-Nastaliq.my
-share/yudit/data/Urdu.my
-share/yudit/data/Vietnamese-TCVNcombine.my
-share/yudit/data/Vietnamese-TCVNkey.my
-share/yudit/data/Vietnamese-Telex1.my
-share/yudit/data/Vietnamese-Telex2.my
-share/yudit/data/Vietnamese.my
-share/yudit/data/Welsh.my
-share/yudit/data/Yiddish.my
-share/yudit/data/bidiclass.my
-share/yudit/data/big-5.my
-share/yudit/data/charclass.my
-share/yudit/data/cluster.my
-share/yudit/data/cp-1250.my
-share/yudit/data/cp-1251.my
-share/yudit/data/example.my
-share/yudit/data/gb-18030.my
-share/yudit/data/gb-2312-l.my
-share/yudit/data/gb-2312-r.my
-share/yudit/data/gnome-yudit.png
-share/yudit/data/hanzi.hwd
-share/yudit/data/hiragana.hwd
-share/yudit/data/indic.my
-share/yudit/data/iso-646.my
-share/yudit/data/iso-8859-1.my
-share/yudit/data/iso-8859-15.my
-share/yudit/data/iso-8859-16.my
-share/yudit/data/iso-8859-2.my
-share/yudit/data/iso-8859-3.my
-share/yudit/data/iso-8859-4.my
-share/yudit/data/iso-8859-5.my
-share/yudit/data/iso-8859-6.my
-share/yudit/data/iso-8859-7.my
-share/yudit/data/iso-8859-8.my
-share/yudit/data/iso-8859-9.my
-share/yudit/data/iso-8859e.my
-share/yudit/data/jis-0201.my
-share/yudit/data/jis-0208.my
-share/yudit/data/jis-0212.my
-share/yudit/data/jis-0213-1.my
-share/yudit/data/jis-0213-2.my
-share/yudit/data/jodakshar.hwd
-share/yudit/data/kanji.hwd
-share/yudit/data/katakana.hwd
-share/yudit/data/koi8-c.my
-share/yudit/data/koi8-r.my
-share/yudit/data/koi8-u.my
-share/yudit/data/ksc-5601-l.my
-share/yudit/data/ksc-5601-r.my
-share/yudit/data/ksx-1001.my
-share/yudit/data/marathi.hwd
-share/yudit/data/mik.my
-share/yudit/data/mirroring.my
-share/yudit/data/nastaliq.my
-share/yudit/data/precompose.my
-share/yudit/data/roman.hwd
-share/yudit/data/rovas.my
-share/yudit/data/shape.my
-share/yudit/data/shift-jis-3.my
-share/yudit/data/shift-jis.my
-share/yudit/data/tcvn.my
-share/yudit/data/tscii.my
-share/yudit/data/viscii.my
-share/yudit/data/windows-1255.my
-share/yudit/data/wingreek.my
-share/yudit/doc/COPYING.TXT
-share/yudit/doc/FAQ.TXT
-share/yudit/doc/HOWTO-arabic.txt
-share/yudit/doc/HOWTO-berber.txt
-share/yudit/doc/HOWTO-bidi.txt
-share/yudit/doc/HOWTO-configure.txt
-share/yudit/doc/HOWTO-devanagari.txt
-share/yudit/doc/HOWTO-freehand.txt
-share/yudit/doc/HOWTO-japanese.txt
-share/yudit/doc/HOWTO-keymap.txt
-share/yudit/doc/HOWTO-malayalam.txt
-share/yudit/doc/HOWTO-rovasiras.txt
-share/yudit/doc/HOWTO-tamil.txt
-share/yudit/doc/HOWTO-tibetan.txt
-share/yudit/doc/HOWTO-vietnamese.txt
-share/yudit/doc/HOWTO-windows.txt
-share/yudit/doc/README.TXT
-share/yudit/doc/TestPage.txt
-share/yudit/doc/UTF-8-demo-README.txt
-share/yudit/doc/UTF-8-demo.txt
-share/yudit/doc/UTF-8-test.txt
-share/yudit/doc/bg/FAQ.TXT
-share/yudit/doc/cs/CHANGELOG-DOCS.TXT
-share/yudit/doc/cs/COPYING-DOCS
-share/yudit/doc/cs/FAQ.TXT
-share/yudit/doc/cs/HOWTO-configure.txt
-share/yudit/doc/cs/HOWTO-keymap.txt
-share/yudit/doc/cs/HOWTO-windows.txt
-share/yudit/doc/cs/README-DOCS.TXT
-share/yudit/doc/cs/TODO-DOCS.TXT
-share/yudit/doc/de/FAQ.TXT
-share/yudit/doc/es/FAQ.TXT
-share/yudit/doc/fi/FAQ.TXT
-share/yudit/doc/hu/FAQ.TXT
-share/yudit/doc/ja/FAQ.TXT
-share/yudit/doc/ko/FAQ.TXT
-share/yudit/doc/my-format.txt
-share/yudit/doc/ru/FAQ.TXT
-share/yudit/doc/sr/FAQ.TXT
-share/yudit/doc/vi/FAQ.TXT
-share/yudit/doc/yi/FAQ.TXT
-share/yudit/doc/zh/FAQ.TXT
-share/yudit/fonts/README.TXT
-share/yudit/fonts/yudit.hex
-share/yudit/fonts/yudit.ttf
-share/yudit/locale/am/LC_MESSAGES/messages.mo
-share/yudit/locale/ar/LC_MESSAGES/messages.mo
-share/yudit/locale/az/LC_MESSAGES/messages.mo
-share/yudit/locale/bg/LC_MESSAGES/messages.mo
-share/yudit/locale/bn/LC_MESSAGES/messages.mo
-share/yudit/locale/cs/LC_MESSAGES/messages.mo
-share/yudit/locale/de/LC_MESSAGES/messages.mo
-share/yudit/locale/el/LC_MESSAGES/messages.mo
-share/yudit/locale/en/LC_MESSAGES/messages.mo
-share/yudit/locale/es/LC_MESSAGES/messages.mo
-share/yudit/locale/fi/LC_MESSAGES/messages.mo
-share/yudit/locale/fr/LC_MESSAGES/messages.mo
-share/yudit/locale/ga/LC_MESSAGES/messages.mo
-share/yudit/locale/gu/LC_MESSAGES/messages.mo
-share/yudit/locale/hi/LC_MESSAGES/messages.mo
-share/yudit/locale/hu/LC_MESSAGES/messages.mo
-share/yudit/locale/ja/LC_MESSAGES/messages.mo
-share/yudit/locale/ko/LC_MESSAGES/messages.mo
-share/yudit/locale/mn/LC_MESSAGES/messages.mo
-share/yudit/locale/mr/LC_MESSAGES/messages.mo
-share/yudit/locale/pa/LC_MESSAGES/messages.mo
-share/yudit/locale/pl/LC_MESSAGES/messages.mo
-share/yudit/locale/ru/LC_MESSAGES/messages.mo
-share/yudit/locale/sl/LC_MESSAGES/messages.mo
-share/yudit/locale/sr/LC_MESSAGES/messages.mo
-share/yudit/locale/ta/LC_MESSAGES/messages.mo
-share/yudit/locale/uk/LC_MESSAGES/messages.mo
-share/yudit/locale/ur/LC_MESSAGES/messages.mo
-share/yudit/locale/vi/LC_MESSAGES/messages.mo
-share/yudit/locale/yi/LC_MESSAGES/messages.mo
-share/yudit/locale/zh/LC_MESSAGES/messages.mo
-share/yudit/src/ASCII-IPA.kmap
-share/yudit/src/ArabTeX.kmap
-share/yudit/src/Arabic.kmap
-share/yudit/src/ArabicBuck.kmap
-share/yudit/src/ArabicKeyboard.kmap
-share/yudit/src/ArabicTranslit.kmap
-share/yudit/src/ArmenianEast.kmap
-share/yudit/src/ArmenianEastPhon.kmap
-share/yudit/src/ArmenianWest.kmap
-share/yudit/src/Azeri.kmap
-share/yudit/src/Belarusian.kmap
-share/yudit/src/Bengali-Inscript.kmap
-share/yudit/src/Bengali.kmap
-share/yudit/src/BengaliSona.kmap
-share/yudit/src/Berbere-conversion1.kmap
-share/yudit/src/Berbere-etendu.kmap
-share/yudit/src/Berbere-standard.kmap
-share/yudit/src/BlissSymbolics.kmap
-share/yudit/src/Bulgarian.kmap
-share/yudit/src/CS-qwerty.kmap
-share/yudit/src/CS.kmap
-share/yudit/src/Cherokee.kmap
-share/yudit/src/Chinese-CJ.kmap
-share/yudit/src/Chinese-Pinyin.kmap
-share/yudit/src/Chinese-WB.kmap
-share/yudit/src/Croatian.kmap
-share/yudit/src/Cyrillic.kmap
-share/yudit/src/Czech-deadkeys.kmap
-share/yudit/src/Czech.kmap
-share/yudit/src/Dakelh.kmap
-share/yudit/src/Danish.kmap
-share/yudit/src/Devanagari-Inscript.kmap
-share/yudit/src/Devanagari-Phonetic.kmap
-share/yudit/src/Devanagari.kmap
-share/yudit/src/Dutch.kmap
-share/yudit/src/Esperanto.kmap
-share/yudit/src/Ethiopic.kmap
-share/yudit/src/Farsi.kmap
-share/yudit/src/French.kmap
-share/yudit/src/Georgian.kmap
-share/yudit/src/GeorgianB.kmap
-share/yudit/src/German.kmap
-share/yudit/src/GrandLatin.kmap
-share/yudit/src/GreekAncient.kmap
-share/yudit/src/GreekBible.kmap
-share/yudit/src/GreekMonotonic.kmap
-share/yudit/src/GreekPolytonic.kmap
-share/yudit/src/Guarani.kmap
-share/yudit/src/Gujarati-Inscript.kmap
-share/yudit/src/Gujarati.kmap
-share/yudit/src/Gurmukhi-Inscript.kmap
-share/yudit/src/Gurmukhi.kmap
-share/yudit/src/Hangul2.kmap
-share/yudit/src/Hangul3.kmap
-share/yudit/src/Hanunoo.kmap
-share/yudit/src/Hebrew.kmap
-share/yudit/src/HebrewIsraeli.kmap
-share/yudit/src/Hungarian-prefix.kmap
-share/yudit/src/Hungarian.kmap
-share/yudit/src/HungarianRunes.kmap
-share/yudit/src/Inuktitut-ICI.kmap
-share/yudit/src/Inuktitut-KBD.kmap
-share/yudit/src/Israeli.kmap
-share/yudit/src/Kana.kmap
-share/yudit/src/Kanji.kmap
-share/yudit/src/Kannada-Inscript.kmap
-share/yudit/src/Kannada.kmap
-share/yudit/src/Kazakh-prefix.kmap
-share/yudit/src/Klingon.kmap
-share/yudit/src/Latin.kmap
-share/yudit/src/Lithuanian.kmap
-share/yudit/src/Malayalam-Inscript.kmap
-share/yudit/src/Malayalam.kmap
-share/yudit/src/MiddleKorean.kmap
-share/yudit/src/Mnemonic.kmap
-share/yudit/src/Mongolian.kmap
-share/yudit/src/Oriya-Inscript.kmap
-share/yudit/src/Oriya.kmap
-share/yudit/src/Persian.kmap
-share/yudit/src/Polish.kmap
-share/yudit/src/Romanian.kmap
-share/yudit/src/Runic-Futhark.kmap
-share/yudit/src/Runic-Futhorc.kmap
-share/yudit/src/Runic.kmap
-share/yudit/src/Russian-ISO-Latinitsa.kmap
-share/yudit/src/Russian-JAVERTY.kmap
-share/yudit/src/Russian-Translit-German.kmap
-share/yudit/src/Russian-Translit-Nordic.kmap
-share/yudit/src/Russian-Translit-Slovene.kmap
-share/yudit/src/Russian-Translit.kmap
-share/yudit/src/Russian-extended.kmap
-share/yudit/src/Russian.kmap
-share/yudit/src/SAMPA.kmap
-share/yudit/src/SGML.kmap
-share/yudit/src/Sanskrit-Translit.kmap
-share/yudit/src/Sanskrit.kmap
-share/yudit/src/Serbian.kmap
-share/yudit/src/Slavic.kmap
-share/yudit/src/Slovak-Programmer.kmap
-share/yudit/src/Slovenian.kmap
-share/yudit/src/Spanish.kmap
-share/yudit/src/SpanishPrefix.kmap
-share/yudit/src/Syriac.kmap
-share/yudit/src/Tamil-Inscript.kmap
-share/yudit/src/Tamil.kmap
-share/yudit/src/TeX-smeTeX.kmap
-share/yudit/src/TeX.kmap
-share/yudit/src/Telugu-Inscript.kmap
-share/yudit/src/Telugu-Rts.kmap
-share/yudit/src/Telugu.kmap
-share/yudit/src/Thai.kmap
-share/yudit/src/Tibetan-Wylie.kmap
-share/yudit/src/Troff.kmap
-share/yudit/src/Ukrainian-Translit.kmap
-share/yudit/src/Unicode.kmap
-share/yudit/src/Urdu-ArabTeX.kmap
-share/yudit/src/Urdu-Nastaliq.kmap
-share/yudit/src/Urdu.kmap
-share/yudit/src/Vietnamese-TCVNcombine.kmap
-share/yudit/src/Vietnamese-TCVNkey.kmap
-share/yudit/src/Vietnamese-Telex1.kmap
-share/yudit/src/Vietnamese-Telex2.kmap
-share/yudit/src/Vietnamese.kmap
-share/yudit/src/Welsh.kmap
-share/yudit/src/Yiddish.kmap
-@dirrm share/yudit/src
-@dirrm share/yudit/locale/zh/LC_MESSAGES
-@dirrm share/yudit/locale/zh
-@dirrm share/yudit/locale/yi/LC_MESSAGES
-@dirrm share/yudit/locale/yi
-@dirrm share/yudit/locale/vi/LC_MESSAGES
-@dirrm share/yudit/locale/vi
-@dirrm share/yudit/locale/ur/LC_MESSAGES
-@dirrm share/yudit/locale/ur
-@dirrm share/yudit/locale/uk/LC_MESSAGES
-@dirrm share/yudit/locale/uk
-@dirrm share/yudit/locale/ta/LC_MESSAGES
-@dirrm share/yudit/locale/ta
-@dirrm share/yudit/locale/sr/LC_MESSAGES
-@dirrm share/yudit/locale/sr
-@dirrm share/yudit/locale/sl/LC_MESSAGES
-@dirrm share/yudit/locale/sl
-@dirrm share/yudit/locale/ru/LC_MESSAGES
-@dirrm share/yudit/locale/ru
-@dirrm share/yudit/locale/pl/LC_MESSAGES
-@dirrm share/yudit/locale/pl
-@dirrm share/yudit/locale/pa/LC_MESSAGES
-@dirrm share/yudit/locale/pa
-@dirrm share/yudit/locale/mr/LC_MESSAGES
-@dirrm share/yudit/locale/mr
-@dirrm share/yudit/locale/mn/LC_MESSAGES
-@dirrm share/yudit/locale/mn
-@dirrm share/yudit/locale/ko/LC_MESSAGES
-@dirrm share/yudit/locale/ko
-@dirrm share/yudit/locale/ja/LC_MESSAGES
-@dirrm share/yudit/locale/ja
-@dirrm share/yudit/locale/hu/LC_MESSAGES
-@dirrm share/yudit/locale/hu
-@dirrm share/yudit/locale/hi/LC_MESSAGES
-@dirrm share/yudit/locale/hi
-@dirrm share/yudit/locale/gu/LC_MESSAGES
-@dirrm share/yudit/locale/gu
-@dirrm share/yudit/locale/ga/LC_MESSAGES
-@dirrm share/yudit/locale/ga
-@dirrm share/yudit/locale/fr/LC_MESSAGES
-@dirrm share/yudit/locale/fr
-@dirrm share/yudit/locale/fi/LC_MESSAGES
-@dirrm share/yudit/locale/fi
-@dirrm share/yudit/locale/es/LC_MESSAGES
-@dirrm share/yudit/locale/es
-@dirrm share/yudit/locale/en/LC_MESSAGES
-@dirrm share/yudit/locale/en
-@dirrm share/yudit/locale/el/LC_MESSAGES
-@dirrm share/yudit/locale/el
-@dirrm share/yudit/locale/de/LC_MESSAGES
-@dirrm share/yudit/locale/de
-@dirrm share/yudit/locale/cs/LC_MESSAGES
-@dirrm share/yudit/locale/cs
-@dirrm share/yudit/locale/bn/LC_MESSAGES
-@dirrm share/yudit/locale/bn
-@dirrm share/yudit/locale/bg/LC_MESSAGES
-@dirrm share/yudit/locale/bg
-@dirrm share/yudit/locale/az/LC_MESSAGES
-@dirrm share/yudit/locale/az
-@dirrm share/yudit/locale/ar/LC_MESSAGES
-@dirrm share/yudit/locale/ar
-@dirrm share/yudit/locale/am/LC_MESSAGES
-@dirrm share/yudit/locale/am
-@dirrm share/yudit/locale
-@dirrm share/yudit/fonts
-@dirrm share/yudit/doc/zh
-@dirrm share/yudit/doc/yi
-@dirrm share/yudit/doc/vi
-@dirrm share/yudit/doc/sr
-@dirrm share/yudit/doc/ru
-@dirrm share/yudit/doc/ko
-@dirrm share/yudit/doc/ja
-@dirrm share/yudit/doc/hu
-@dirrm share/yudit/doc/fi
-@dirrm share/yudit/doc/es
-@dirrm share/yudit/doc/de
-@dirrm share/yudit/doc/cs
-@dirrm share/yudit/doc/bg
-@dirrm share/yudit/doc
-@dirrm share/yudit/data
-@dirrm share/yudit/config
-@dirrm share/yudit
+%%DATADIR%%/config/yudit.properties
+%%DATADIR%%/data/ASCII-IPA.my
+%%DATADIR%%/data/ArabTeX.my
+%%DATADIR%%/data/Arabic.my
+%%DATADIR%%/data/ArabicBuck.my
+%%DATADIR%%/data/ArabicKeyboard.my
+%%DATADIR%%/data/ArabicTranslit.my
+%%DATADIR%%/data/ArmenianEast.my
+%%DATADIR%%/data/ArmenianEastPhon.my
+%%DATADIR%%/data/ArmenianWest.my
+%%DATADIR%%/data/Azeri.my
+%%DATADIR%%/data/Baybayin.my
+%%DATADIR%%/data/Belarusian.my
+%%DATADIR%%/data/Bengali-Inscript.my
+%%DATADIR%%/data/Bengali.my
+%%DATADIR%%/data/BengaliSona.my
+%%DATADIR%%/data/Berbere-conversion1.my
+%%DATADIR%%/data/Berbere-etendu.my
+%%DATADIR%%/data/Berbere-standard.my
+%%DATADIR%%/data/BlissSymbolics.my
+%%DATADIR%%/data/Bulgarian.my
+%%DATADIR%%/data/CS-qwerty.my
+%%DATADIR%%/data/CS.my
+%%DATADIR%%/data/Cherokee.my
+%%DATADIR%%/data/Chinese-CJ.my
+%%DATADIR%%/data/Chinese-Pinyin.my
+%%DATADIR%%/data/Chinese-WB.my
+%%DATADIR%%/data/Croatian.my
+%%DATADIR%%/data/Cyrillic.my
+%%DATADIR%%/data/Czech-deadkeys.my
+%%DATADIR%%/data/Czech.my
+%%DATADIR%%/data/Dakelh.my
+%%DATADIR%%/data/Danish.my
+%%DATADIR%%/data/Devanagari-Inscript.my
+%%DATADIR%%/data/Devanagari-Phonetic.my
+%%DATADIR%%/data/Devanagari-Velthuis.my
+%%DATADIR%%/data/Devanagari.my
+%%DATADIR%%/data/Dutch.my
+%%DATADIR%%/data/Esperanto.my
+%%DATADIR%%/data/Ethiopic.my
+%%DATADIR%%/data/Farsi.my
+%%DATADIR%%/data/French.my
+%%DATADIR%%/data/Georgian.my
+%%DATADIR%%/data/GeorgianB.my
+%%DATADIR%%/data/German.my
+%%DATADIR%%/data/Glagolitic.my
+%%DATADIR%%/data/GrandLatin.my
+%%DATADIR%%/data/GreekAncient.my
+%%DATADIR%%/data/GreekBible.my
+%%DATADIR%%/data/GreekMonotonic.my
+%%DATADIR%%/data/GreekPolytonic.my
+%%DATADIR%%/data/Guarani.my
+%%DATADIR%%/data/Gujarati-Inscript.my
+%%DATADIR%%/data/Gujarati.my
+%%DATADIR%%/data/Gurmukhi-Inscript.my
+%%DATADIR%%/data/Gurmukhi.my
+%%DATADIR%%/data/Hangul.my
+%%DATADIR%%/data/Hangul2.my
+%%DATADIR%%/data/Hangul3.my
+%%DATADIR%%/data/Hanunoo.my
+%%DATADIR%%/data/Hebrew.my
+%%DATADIR%%/data/HebrewIsraeli.my
+%%DATADIR%%/data/Hungarian-prefix.my
+%%DATADIR%%/data/Hungarian.my
+%%DATADIR%%/data/HungarianRunes.my
+%%DATADIR%%/data/IS_AS.my
+%%DATADIR%%/data/IS_BN.my
+%%DATADIR%%/data/IS_DV.my
+%%DATADIR%%/data/IS_GJ.my
+%%DATADIR%%/data/IS_KN.my
+%%DATADIR%%/data/IS_ML.my
+%%DATADIR%%/data/IS_OR.my
+%%DATADIR%%/data/IS_PJ.my
+%%DATADIR%%/data/IS_RM.my
+%%DATADIR%%/data/IS_TL.my
+%%DATADIR%%/data/IS_TM.my
+%%DATADIR%%/data/Inuktitut-ICI.my
+%%DATADIR%%/data/Inuktitut-KBD.my
+%%DATADIR%%/data/Israeli.my
+%%DATADIR%%/data/Kana.my
+%%DATADIR%%/data/Kanji.my
+%%DATADIR%%/data/Kannada-Inscript.my
+%%DATADIR%%/data/Kannada.my
+%%DATADIR%%/data/Kazakh-prefix.my
+%%DATADIR%%/data/Klingon.my
+%%DATADIR%%/data/Latin.my
+%%DATADIR%%/data/Lithuanian.my
+%%DATADIR%%/data/Malayalam-Inscript.my
+%%DATADIR%%/data/Malayalam.my
+%%DATADIR%%/data/MiddleKorean.my
+%%DATADIR%%/data/Mnemonic.my
+%%DATADIR%%/data/Mongolian.my
+%%DATADIR%%/data/OldItalic.my
+%%DATADIR%%/data/Oriya-Inscript.my
+%%DATADIR%%/data/Oriya.my
+%%DATADIR%%/data/Persian.my
+%%DATADIR%%/data/Polish-slash.my
+%%DATADIR%%/data/Polish.my
+%%DATADIR%%/data/Romanian.my
+%%DATADIR%%/data/Runic-Futhark.my
+%%DATADIR%%/data/Runic-Futhorc.my
+%%DATADIR%%/data/Runic.my
+%%DATADIR%%/data/Russian-ISO-Latinitsa.my
+%%DATADIR%%/data/Russian-JAVERTY.my
+%%DATADIR%%/data/Russian-Translit-German.my
+%%DATADIR%%/data/Russian-Translit-Nordic.my
+%%DATADIR%%/data/Russian-Translit-Slovene.my
+%%DATADIR%%/data/Russian-Translit.my
+%%DATADIR%%/data/Russian-extended.my
+%%DATADIR%%/data/Russian.my
+%%DATADIR%%/data/SAMPA.my
+%%DATADIR%%/data/SGML.my
+%%DATADIR%%/data/Sanskrit-Translit.my
+%%DATADIR%%/data/Sanskrit.my
+%%DATADIR%%/data/Serbian.my
+%%DATADIR%%/data/Slavic.my
+%%DATADIR%%/data/Slovak-Programmer.my
+%%DATADIR%%/data/Slovenian.my
+%%DATADIR%%/data/Spanish.my
+%%DATADIR%%/data/SpanishPrefix.my
+%%DATADIR%%/data/Syriac.my
+%%DATADIR%%/data/TIS_620.my
+%%DATADIR%%/data/Tamil-Inscript.my
+%%DATADIR%%/data/Tamil.my
+%%DATADIR%%/data/TeX-smeTeX.my
+%%DATADIR%%/data/TeX.my
+%%DATADIR%%/data/Telugu-Inscript.my
+%%DATADIR%%/data/Telugu-Rts.my
+%%DATADIR%%/data/Telugu.my
+%%DATADIR%%/data/Thai.my
+%%DATADIR%%/data/Tibetan-Wylie.my
+%%DATADIR%%/data/Troff.my
+%%DATADIR%%/data/Ukrainian-Extended.my
+%%DATADIR%%/data/Ukrainian-Translit.my
+%%DATADIR%%/data/Ukrainian.my
+%%DATADIR%%/data/Unicode.my
+%%DATADIR%%/data/Urdu-ArabTeX.my
+%%DATADIR%%/data/Urdu-Nastaliq.my
+%%DATADIR%%/data/Urdu.my
+%%DATADIR%%/data/Vietnamese-TCVNcombine.my
+%%DATADIR%%/data/Vietnamese-TCVNkey.my
+%%DATADIR%%/data/Vietnamese-Telex1.my
+%%DATADIR%%/data/Vietnamese-Telex2.my
+%%DATADIR%%/data/Vietnamese.my
+%%DATADIR%%/data/Welsh.my
+%%DATADIR%%/data/Yiddish.my
+%%DATADIR%%/data/bidiclass.my
+%%DATADIR%%/data/big-5.my
+%%DATADIR%%/data/charclass.my
+%%DATADIR%%/data/cluster.my
+%%DATADIR%%/data/cp-1250.my
+%%DATADIR%%/data/cp-1251.my
+%%DATADIR%%/data/example.my
+%%DATADIR%%/data/gb-18030.my
+%%DATADIR%%/data/gb-2312-l.my
+%%DATADIR%%/data/gb-2312-r.my
+%%DATADIR%%/data/gnome-yudit.png
+%%DATADIR%%/data/hanzi.hwd
+%%DATADIR%%/data/hiragana.hwd
+%%DATADIR%%/data/indic.my
+%%DATADIR%%/data/iso-646.my
+%%DATADIR%%/data/iso-8859-1.my
+%%DATADIR%%/data/iso-8859-15.my
+%%DATADIR%%/data/iso-8859-16.my
+%%DATADIR%%/data/iso-8859-2.my
+%%DATADIR%%/data/iso-8859-3.my
+%%DATADIR%%/data/iso-8859-4.my
+%%DATADIR%%/data/iso-8859-5.my
+%%DATADIR%%/data/iso-8859-6.my
+%%DATADIR%%/data/iso-8859-7.my
+%%DATADIR%%/data/iso-8859-8.my
+%%DATADIR%%/data/iso-8859-9.my
+%%DATADIR%%/data/iso-8859e.my
+%%DATADIR%%/data/jis-0201.my
+%%DATADIR%%/data/jis-0208.my
+%%DATADIR%%/data/jis-0212.my
+%%DATADIR%%/data/jis-0213-1.my
+%%DATADIR%%/data/jis-0213-2.my
+%%DATADIR%%/data/jodakshar.hwd
+%%DATADIR%%/data/kanji.hwd
+%%DATADIR%%/data/katakana.hwd
+%%DATADIR%%/data/koi8-c.my
+%%DATADIR%%/data/koi8-r.my
+%%DATADIR%%/data/koi8-u.my
+%%DATADIR%%/data/ksc-5601-l.my
+%%DATADIR%%/data/ksc-5601-r.my
+%%DATADIR%%/data/ksx-1001.my
+%%DATADIR%%/data/marathi.hwd
+%%DATADIR%%/data/mik.my
+%%DATADIR%%/data/mirroring.my
+%%DATADIR%%/data/nastaliq.my
+%%DATADIR%%/data/precompose.my
+%%DATADIR%%/data/roman.hwd
+%%DATADIR%%/data/rovas.my
+%%DATADIR%%/data/shape.my
+%%DATADIR%%/data/shift-jis-3.my
+%%DATADIR%%/data/shift-jis.my
+%%DATADIR%%/data/tcvn.my
+%%DATADIR%%/data/tscii.my
+%%DATADIR%%/data/viscii.my
+%%DATADIR%%/data/windows-1255.my
+%%DATADIR%%/data/wingreek.my
+%%DATADIR%%/doc/COPYING.TXT
+%%DATADIR%%/doc/FAQ.TXT
+%%DATADIR%%/doc/HOWTO-arabic.txt
+%%DATADIR%%/doc/HOWTO-berber.txt
+%%DATADIR%%/doc/HOWTO-bidi.txt
+%%DATADIR%%/doc/HOWTO-configure.txt
+%%DATADIR%%/doc/HOWTO-devanagari.txt
+%%DATADIR%%/doc/HOWTO-freehand.txt
+%%DATADIR%%/doc/HOWTO-japanese.txt
+%%DATADIR%%/doc/HOWTO-keymap.txt
+%%DATADIR%%/doc/HOWTO-malayalam.txt
+%%DATADIR%%/doc/HOWTO-rovasiras.txt
+%%DATADIR%%/doc/HOWTO-tamil.txt
+%%DATADIR%%/doc/HOWTO-tibetan.txt
+%%DATADIR%%/doc/HOWTO-vietnamese.txt
+%%DATADIR%%/doc/HOWTO-windows.txt
+%%DATADIR%%/doc/README.TXT
+%%DATADIR%%/doc/TestPage.txt
+%%DATADIR%%/doc/UTF-8-demo-README.txt
+%%DATADIR%%/doc/UTF-8-demo.txt
+%%DATADIR%%/doc/UTF-8-test.txt
+%%DATADIR%%/doc/bg/FAQ.TXT
+%%DATADIR%%/doc/cs/CHANGELOG-DOCS.TXT
+%%DATADIR%%/doc/cs/COPYING-DOCS
+%%DATADIR%%/doc/cs/FAQ.TXT
+%%DATADIR%%/doc/cs/HOWTO-configure.txt
+%%DATADIR%%/doc/cs/HOWTO-keymap.txt
+%%DATADIR%%/doc/cs/HOWTO-windows.txt
+%%DATADIR%%/doc/cs/README-DOCS.TXT
+%%DATADIR%%/doc/cs/TODO-DOCS.TXT
+%%DATADIR%%/doc/de/FAQ.TXT
+%%DATADIR%%/doc/es/FAQ.TXT
+%%DATADIR%%/doc/fi/FAQ.TXT
+%%DATADIR%%/doc/hu/FAQ.TXT
+%%DATADIR%%/doc/ja/FAQ.TXT
+%%DATADIR%%/doc/ko/FAQ.TXT
+%%DATADIR%%/doc/my-format.txt
+%%DATADIR%%/doc/ru/FAQ.TXT
+%%DATADIR%%/doc/sr/FAQ.TXT
+%%DATADIR%%/doc/vi/FAQ.TXT
+%%DATADIR%%/doc/yi/FAQ.TXT
+%%DATADIR%%/doc/zh/FAQ.TXT
+%%DATADIR%%/fonts/README.TXT
+%%DATADIR%%/fonts/yudit.hex
+%%DATADIR%%/fonts/yudit.ttf
+%%DATADIR%%/locale/am/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ar/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/az/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/bg/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/bn/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/cs/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/de/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/el/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/en/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/es/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/fi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/fr/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ga/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/gu/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/hi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/hu/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ja/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ko/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/mn/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/mr/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/pa/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/pl/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ru/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/sl/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/sr/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ta/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/uk/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ur/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/vi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/yi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/zh/LC_MESSAGES/messages.mo
+%%DATADIR%%/src/ASCII-IPA.kmap
+%%DATADIR%%/src/ArabTeX.kmap
+%%DATADIR%%/src/Arabic.kmap
+%%DATADIR%%/src/ArabicBuck.kmap
+%%DATADIR%%/src/ArabicKeyboard.kmap
+%%DATADIR%%/src/ArabicTranslit.kmap
+%%DATADIR%%/src/ArmenianEast.kmap
+%%DATADIR%%/src/ArmenianEastPhon.kmap
+%%DATADIR%%/src/ArmenianWest.kmap
+%%DATADIR%%/src/Azeri.kmap
+%%DATADIR%%/src/Baybayin.kmap
+%%DATADIR%%/src/Belarusian.kmap
+%%DATADIR%%/src/Bengali-Inscript.kmap
+%%DATADIR%%/src/Bengali.kmap
+%%DATADIR%%/src/BengaliSona.kmap
+%%DATADIR%%/src/Berbere-conversion1.kmap
+%%DATADIR%%/src/Berbere-etendu.kmap
+%%DATADIR%%/src/Berbere-standard.kmap
+%%DATADIR%%/src/BlissSymbolics.kmap
+%%DATADIR%%/src/Bulgarian.kmap
+%%DATADIR%%/src/CS-qwerty.kmap
+%%DATADIR%%/src/CS.kmap
+%%DATADIR%%/src/Cherokee.kmap
+%%DATADIR%%/src/Chinese-CJ.kmap
+%%DATADIR%%/src/Chinese-Pinyin.kmap
+%%DATADIR%%/src/Chinese-WB.kmap
+%%DATADIR%%/src/Croatian.kmap
+%%DATADIR%%/src/Cyrillic.kmap
+%%DATADIR%%/src/Czech-deadkeys.kmap
+%%DATADIR%%/src/Czech.kmap
+%%DATADIR%%/src/Dakelh.kmap
+%%DATADIR%%/src/Danish.kmap
+%%DATADIR%%/src/Devanagari-Inscript.kmap
+%%DATADIR%%/src/Devanagari-Phonetic.kmap
+%%DATADIR%%/src/Devanagari-Velthuis.kmap
+%%DATADIR%%/src/Devanagari.kmap
+%%DATADIR%%/src/Dutch.kmap
+%%DATADIR%%/src/Esperanto.kmap
+%%DATADIR%%/src/Ethiopic.kmap
+%%DATADIR%%/src/Farsi.kmap
+%%DATADIR%%/src/French.kmap
+%%DATADIR%%/src/Georgian.kmap
+%%DATADIR%%/src/GeorgianB.kmap
+%%DATADIR%%/src/German.kmap
+%%DATADIR%%/src/Glagolitic.kmap
+%%DATADIR%%/src/GrandLatin.kmap
+%%DATADIR%%/src/GreekAncient.kmap
+%%DATADIR%%/src/GreekBible.kmap
+%%DATADIR%%/src/GreekMonotonic.kmap
+%%DATADIR%%/src/GreekPolytonic.kmap
+%%DATADIR%%/src/Guarani.kmap
+%%DATADIR%%/src/Gujarati-Inscript.kmap
+%%DATADIR%%/src/Gujarati.kmap
+%%DATADIR%%/src/Gurmukhi-Inscript.kmap
+%%DATADIR%%/src/Gurmukhi.kmap
+%%DATADIR%%/src/Hangul2.kmap
+%%DATADIR%%/src/Hangul3.kmap
+%%DATADIR%%/src/Hanunoo.kmap
+%%DATADIR%%/src/Hebrew.kmap
+%%DATADIR%%/src/HebrewIsraeli.kmap
+%%DATADIR%%/src/Hungarian-prefix.kmap
+%%DATADIR%%/src/Hungarian.kmap
+%%DATADIR%%/src/HungarianRunes.kmap
+%%DATADIR%%/src/Inuktitut-ICI.kmap
+%%DATADIR%%/src/Inuktitut-KBD.kmap
+%%DATADIR%%/src/Israeli.kmap
+%%DATADIR%%/src/Kana.kmap
+%%DATADIR%%/src/Kanji.kmap
+%%DATADIR%%/src/Kannada-Inscript.kmap
+%%DATADIR%%/src/Kannada.kmap
+%%DATADIR%%/src/Kazakh-prefix.kmap
+%%DATADIR%%/src/Klingon.kmap
+%%DATADIR%%/src/Latin.kmap
+%%DATADIR%%/src/Lithuanian.kmap
+%%DATADIR%%/src/Malayalam-Inscript.kmap
+%%DATADIR%%/src/Malayalam.kmap
+%%DATADIR%%/src/MiddleKorean.kmap
+%%DATADIR%%/src/Mnemonic.kmap
+%%DATADIR%%/src/Mongolian.kmap
+%%DATADIR%%/src/Oriya-Inscript.kmap
+%%DATADIR%%/src/Oriya.kmap
+%%DATADIR%%/src/Persian.kmap
+%%DATADIR%%/src/Polish-slash.kmap
+%%DATADIR%%/src/Polish.kmap
+%%DATADIR%%/src/Romanian.kmap
+%%DATADIR%%/src/Runic-Futhark.kmap
+%%DATADIR%%/src/Runic-Futhorc.kmap
+%%DATADIR%%/src/Runic.kmap
+%%DATADIR%%/src/Russian-ISO-Latinitsa.kmap
+%%DATADIR%%/src/Russian-JAVERTY.kmap
+%%DATADIR%%/src/Russian-Translit-German.kmap
+%%DATADIR%%/src/Russian-Translit-Nordic.kmap
+%%DATADIR%%/src/Russian-Translit-Slovene.kmap
+%%DATADIR%%/src/Russian-Translit.kmap
+%%DATADIR%%/src/Russian-extended.kmap
+%%DATADIR%%/src/Russian.kmap
+%%DATADIR%%/src/SAMPA.kmap
+%%DATADIR%%/src/SGML.kmap
+%%DATADIR%%/src/Sanskrit-Translit.kmap
+%%DATADIR%%/src/Sanskrit.kmap
+%%DATADIR%%/src/Serbian.kmap
+%%DATADIR%%/src/Slavic.kmap
+%%DATADIR%%/src/Slovak-Programmer.kmap
+%%DATADIR%%/src/Slovenian.kmap
+%%DATADIR%%/src/Spanish.kmap
+%%DATADIR%%/src/SpanishPrefix.kmap
+%%DATADIR%%/src/Syriac.kmap
+%%DATADIR%%/src/Tamil-Inscript.kmap
+%%DATADIR%%/src/Tamil.kmap
+%%DATADIR%%/src/TeX-smeTeX.kmap
+%%DATADIR%%/src/TeX.kmap
+%%DATADIR%%/src/Telugu-Inscript.kmap
+%%DATADIR%%/src/Telugu-Rts.kmap
+%%DATADIR%%/src/Telugu.kmap
+%%DATADIR%%/src/Thai.kmap
+%%DATADIR%%/src/Tibetan-Wylie.kmap
+%%DATADIR%%/src/Troff.kmap
+%%DATADIR%%/src/Ukrainian-Translit.kmap
+%%DATADIR%%/src/Unicode.kmap
+%%DATADIR%%/src/Urdu-ArabTeX.kmap
+%%DATADIR%%/src/Urdu-Nastaliq.kmap
+%%DATADIR%%/src/Urdu.kmap
+%%DATADIR%%/src/Vietnamese-TCVNcombine.kmap
+%%DATADIR%%/src/Vietnamese-TCVNkey.kmap
+%%DATADIR%%/src/Vietnamese-Telex1.kmap
+%%DATADIR%%/src/Vietnamese-Telex2.kmap
+%%DATADIR%%/src/Vietnamese.kmap
+%%DATADIR%%/src/Welsh.kmap
+%%DATADIR%%/src/Yiddish.kmap
+@dirrmtry %%DATADIR%%/src
+@dirrmtry %%DATADIR%%/locale/zh/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/zh
+@dirrmtry %%DATADIR%%/locale/yi/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/yi
+@dirrmtry %%DATADIR%%/locale/vi/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/vi
+@dirrmtry %%DATADIR%%/locale/ur/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ur
+@dirrmtry %%DATADIR%%/locale/uk/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/uk
+@dirrmtry %%DATADIR%%/locale/ta/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ta
+@dirrmtry %%DATADIR%%/locale/sr/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/sr
+@dirrmtry %%DATADIR%%/locale/sl/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/sl
+@dirrmtry %%DATADIR%%/locale/ru/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ru
+@dirrmtry %%DATADIR%%/locale/pl/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/pl
+@dirrmtry %%DATADIR%%/locale/pa/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/pa
+@dirrmtry %%DATADIR%%/locale/mr/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/mr
+@dirrmtry %%DATADIR%%/locale/mn/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/mn
+@dirrmtry %%DATADIR%%/locale/ko/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ko
+@dirrmtry %%DATADIR%%/locale/ja/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ja
+@dirrmtry %%DATADIR%%/locale/hu/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/hu
+@dirrmtry %%DATADIR%%/locale/hi/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/hi
+@dirrmtry %%DATADIR%%/locale/gu/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/gu
+@dirrmtry %%DATADIR%%/locale/ga/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ga
+@dirrmtry %%DATADIR%%/locale/fr/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/fr
+@dirrmtry %%DATADIR%%/locale/fi/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/fi
+@dirrmtry %%DATADIR%%/locale/es/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/es
+@dirrmtry %%DATADIR%%/locale/en/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/en
+@dirrmtry %%DATADIR%%/locale/el/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/el
+@dirrmtry %%DATADIR%%/locale/de/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/de
+@dirrmtry %%DATADIR%%/locale/cs/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/cs
+@dirrmtry %%DATADIR%%/locale/bn/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/bn
+@dirrmtry %%DATADIR%%/locale/bg/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/bg
+@dirrmtry %%DATADIR%%/locale/az/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/az
+@dirrmtry %%DATADIR%%/locale/ar/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ar
+@dirrmtry %%DATADIR%%/locale/am/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/am
+@dirrmtry %%DATADIR%%/locale
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%/doc/zh
+@dirrmtry %%DATADIR%%/doc/yi
+@dirrmtry %%DATADIR%%/doc/vi
+@dirrmtry %%DATADIR%%/doc/sr
+@dirrmtry %%DATADIR%%/doc/ru
+@dirrmtry %%DATADIR%%/doc/ko
+@dirrmtry %%DATADIR%%/doc/ja
+@dirrmtry %%DATADIR%%/doc/hu
+@dirrmtry %%DATADIR%%/doc/fi
+@dirrmtry %%DATADIR%%/doc/es
+@dirrmtry %%DATADIR%%/doc/de
+@dirrmtry %%DATADIR%%/doc/cs
+@dirrmtry %%DATADIR%%/doc/bg
+@dirrmtry %%DATADIR%%/doc
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%/config
+@dirrmtry %%DATADIR%%
