@@ -11,11 +11,13 @@
 
 name=innd
 
+PREFIX=%%PREFIX%%
+
 innd_enable=${innd_enable-"NO"}
 innd_user=${innd_user-"news"}
 innd_group=${innd_group-"news"}
 
-required_files="%%PREFIX%%/news/db/history.dir"
+required_files="%%DBDIR%%/history.dir"
 
 load_rc_config ${name}
 
@@ -24,7 +26,7 @@ stop_cmd=${name}_stop
 
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/news/bin/rc.news
+command=%%NEWSBASE%%/bin/rc.news
 
 innd_start() {
 	su -fm ${innd_user} -c "${command} start"

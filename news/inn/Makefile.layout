@@ -1,0 +1,58 @@
+# $FreeBSD$
+
+.if !empty(INN_LAYOUT:L:Mnew)
+#-----------------------------------------------------------------------
+# New-style layout. Keep database, spool, and other transient data under
+# /var, where it should be.
+#-----------------------------------------------------------------------
+INN_NEWSBASE=		${PREFIX}/news
+INN_ETCDIR=		${INN_NEWSBASE}/etc
+INN_RUNDIR=		${VARBASE}/run/news
+INN_LOGDIR=		${VARBASE}/log/news
+INN_DBDIR=		${VARBASE}/news/db
+INN_TMPDIR=		${VARBASE}/news/tmp
+INN_NEWSSPOOL=		${VARBASE}/news
+.elif !empty(INN_LAYOUT:L:Mhier)
+#-----------------------------------------------------------------------
+# hier(7)-ish layout. As above, but try to use standard directories
+# under /var.
+#-----------------------------------------------------------------------
+INN_NEWSBASE=		${PREFIX}/news
+INN_ETCDIR=		${PREFIX}/etc/news
+INN_RUNDIR=		${VARBASE}/run/news
+INN_LOGDIR=		${VARBASE}/log/news
+INN_DBDIR=		${VARBASE}/db/news
+INN_TMPDIR=		${VARBASE}/tmp/news
+INN_NEWSSPOOL=		${VARBASE}/spool/news
+.else
+#-----------------------------------------------------------------------
+# Default layout ("old") - put everything in one place,
+# except for log files (and possible spool data)
+# Respect some legacy variables for backwards-compatibility.
+#-----------------------------------------------------------------------
+INN_NEWSBASE=		${PREFIX}/news
+.  if defined(WITH_STANDARD_ETC)
+INN_ETCDIR=		${PREFIX}/etc/inn
+.  else
+INN_ETCDIR?=		${INN_NEWSBASE}/etc
+.  endif
+INN_RUNDIR=		${INN_NEWSBASE}/run
+INN_NEWSLOG?=		${VARBASE}/log/news
+INN_LOGDIR?=		${INN_NEWSLOG}
+INN_DBDIR=		${INN_NEWSBASE}/db
+INN_TMPDIR=		${INN_NEWSBASE}/tmp
+.  if exists(${VARBASE}/news) && !defined(PACKAGE_BUILDING)
+INN_NEWSSPOOL?=		${VARBASE}/news
+.  elif exists(${VARBASE}/spool/news) && !defined(PACKAGE_BUILDING)
+INN_NEWSSPOOL?=		${VARBASE}/spool/news
+.  else
+INN_NEWSSPOOL?=		${PREFIX}/news/spool
+.  endif
+.endif
+
+.for sub in NEWSBASE ETCDIR RUNDIR LOGDIR DBDIR TMPDIR NEWSSPOOL
+PLIST_SUB+=		${sub}="${INN_${sub}:C,^${PREFIX},%D,}"
+SUB_LIST+=		${sub}="${INN_${sub}:C,^${PREFIX},\\$\\${PREFIX},}"
+.endfor
+
+PLIST_SUB+=		CWDNEWSBASE="@cwd ${INN_NEWSBASE}"
