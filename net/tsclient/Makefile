@@ -7,6 +7,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.148
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 
@@ -24,7 +25,7 @@ RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
 .endif
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomepanel
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
