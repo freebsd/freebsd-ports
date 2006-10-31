@@ -298,6 +298,7 @@
     SUBDIR += squeak
     SUBDIR += sr
     SUBDIR += starlogo
+    SUBDIR += steptalk
     SUBDIR += stklos
     SUBDIR += stldoc
     SUBDIR += swi-pl
