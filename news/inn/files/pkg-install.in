@@ -1,0 +1,88 @@
+#!/bin/sh
+
+PKGNAME=$1
+[ ! -n ${PKG_PREFIX} ] && exit 1
+PREFIX=${PKG_PREFIX}
+
+DBDIR="%%DBDIR%%"
+ETCDIR="%%ETCDIR%%"
+RUNDIR="%%RUNDIR%%"
+TMPDIR="%%TMPDIR%%"
+NEWSBASE="%%NEWSBASE%%"
+NEWSSPOOL="%%NEWSSPOOL%%"
+
+EGDIR="%%EGDIR%%"
+
+case $2 in
+    PRE-INSTALL)
+	echo "===>  Checking for old database files"
+	if [ ! -d ${DBDIR} ]; then
+		mkdir -p ${EGDIR}/db
+	fi
+	;;
+    CHECK-CONF)
+	ETCDIR=${3}
+	echo "Checking for configuration files"
+	for f in $(find ${EGDIR} -type f -mindepth 1 -maxdepth 1 -execdir echo "{}" \;)
+		do
+			REALFILE=${ETCDIR}/${f}
+			EGFILE=${EGDIR}/${f}
+			echo -n "Checking if ${REALFILE} exists:   "
+			if [ -e ${REALFILE} ]
+				then
+					echo "[YES]"
+				else
+					echo "[NO]  Installing ${EGFILE} to ${REALFILE}"
+					cp -p ${EGFILE} ${REALFILE}
+			fi
+		done
+	;;
+    POST-INSTALL)
+        install -d -o news -g news -m 755 \
+	    ${RUNDIR} \
+	    ${NEWSSPOOL} \
+	    ${NEWSSPOOL}/archive \
+	    ${NEWSSPOOL}/articles \
+	    ${NEWSSPOOL}/incoming \
+	    ${NEWSSPOOL}/incoming/bad \
+	    ${NEWSSPOOL}/innfeed \
+	    ${NEWSSPOOL}/outgoing \
+	    ${NEWSSPOOL}/overview \
+	    ${TMPDIR}
+
+	if [ ${3:-""} = "PORTMODE" ]; then
+		fc=`ls ${EGDIR}/db/* 2>/dev/null | wc -l`
+
+		if [ -d ${EGDIR}/db -a $fc -eq 0 ]; then
+			for f in ${DBDIR}/*; do
+				cp -pR ${f} ${EGDIR}/db
+			done
+		else
+			mkdir -p ${EGDIR}/db
+			for f in ${DBDIR}/*; do
+				touch ${EGDIR}/db/${f##*/}
+			done
+		fi
+
+		# Fix permissions
+
+		for f in ${ETCDIR}/*.ctl ${ETCDIR}/readers.conf; do
+			chmod 640 ${f}
+		done
+	else
+		fc=`ls ${DBDIR}/* 2>/dev/null | wc -l`
+
+		if [ -d ${DBDIR} -a $fc -eq 0 ]; then
+			for f in ${EGDIR}/db/*; do
+				cp -pR ${f} ${DBDIR}
+			done
+		fi
+	fi
+
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+exit 0

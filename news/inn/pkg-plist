@@ -1,289 +1,214 @@
-@exec mkdir -p %D/news/db
-news/bin/actmerge
-news/bin/actsync
-news/bin/actsyncd
-news/bin/archive
-news/bin/auth/passwd/auth_smb
-news/bin/auth/passwd/ckpasswd
-news/bin/auth/passwd/radius
-news/bin/auth/resolv/domain
-news/bin/auth/resolv/ident
-news/bin/batcher
-news/bin/buffchan
-news/bin/cnfsheadconf
-news/bin/cnfsstat
-news/bin/control/checkgroups.pl
-news/bin/control/ihave.pl
-news/bin/control/newgroup.pl
-news/bin/control/rmgroup.pl
-news/bin/control/sendme.pl
-news/bin/control/sendsys.pl
-news/bin/control/senduuname.pl
-news/bin/control/version.pl
-news/bin/controlbatch
-news/bin/controlchan
-news/bin/convdate
-news/bin/ctlinnd
-news/bin/cvtbatch
-news/bin/docheckgroups
-news/bin/expire
-news/bin/expireover
-news/bin/expirerm
-news/bin/fastrm
-news/bin/filechan
-news/bin/filter/INN.py
-news/bin/filter/filter.tcl
-news/bin/filter/filter_innd.pl
-news/bin/filter/filter_innd.py
-news/bin/filter/filter_nnrpd.pl
-news/bin/filter/nnrpd_access.pl
-news/bin/filter/nnrpd_auth.pl
-news/bin/filter/nnrpd_auth.py
-news/bin/filter/startup.tcl
-news/bin/filter/startup_innd.pl
-news/bin/getlist
-news/bin/gpgverify
-news/bin/grephistory
-news/bin/imapfeed
-news/bin/inews
-news/bin/inncheck
-news/bin/innconfval
-news/bin/innd
-news/bin/inndf
-news/bin/inndstart
-news/bin/innfeed
-news/bin/innmail
-news/bin/innreport
-news/bin/innstat
-news/bin/innupgrade
-news/bin/innwatch
-news/bin/innxbatch
-news/bin/innxmit
-news/bin/mailpost
-news/bin/makedbz
-news/bin/makehistory
-news/bin/mod-active
-news/bin/news.daily
-news/bin/news2mail
-news/bin/ninpaths
-news/bin/nnrpd
-news/bin/nntpget
-news/bin/nntpsend
-news/bin/ovdb_init
-news/bin/ovdb_monitor
-news/bin/ovdb_server
-news/bin/ovdb_stat
-news/bin/overchan
-news/bin/perl-nocem
-news/bin/pgpverify
-news/bin/procbatch
-news/bin/prunehistory
-news/bin/pullnews
-news/bin/rc.news
-news/bin/rnews
-news/bin/rnews.libexec/c7unbatch
-news/bin/rnews.libexec/decode
-news/bin/rnews.libexec/encode
-news/bin/rnews.libexec/gunbatch
-news/bin/scanlogs
-news/bin/scanspool
-news/bin/send-ihave
-news/bin/send-nntp
-news/bin/send-uucp
-news/bin/sendinpaths
-news/bin/sendxbatches
-news/bin/shlock
-news/bin/shrinkfile
-news/bin/signcontrol
-news/bin/simpleftp
-news/bin/sm
-news/bin/startinnfeed
-news/bin/tally.control
-news/bin/tdx-util
-news/bin/writelog
-@unexec f=active;       if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-@unexec f=active.times; if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-@unexec f=history;      if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-@unexec f=history.dir;  if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-@unexec f=newsgroups;   if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-news/db.dist/active
-news/db.dist/active.times
-news/db.dist/history
-news/db.dist/history.dir
-news/db.dist/newsgroups
-@unexec rm -f %D/news/db.dist/active.old      || true
-@unexec rm -f %D/news/db.dist/history.n.dir   || true
-@unexec rm -f %D/news/db.dist/history.n.hash  || true
-@unexec rm -f %D/news/db.dist/history.n.index || true
-%%SUB_WITHOUT_TAGGED_HASH%%@unexec f=history.hash;  if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-%%SUB_WITHOUT_TAGGED_HASH%%@unexec f=history.index; if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-%%SUB_WITHOUT_TAGGED_HASH%%@unexec rm -f %D/news/db.dist/history.hash  2> /dev/null || true
-%%SUB_WITHOUT_TAGGED_HASH%%@unexec rm -f %D/news/db.dist/history.index 2> /dev/null || true
-%%SUB_WITH_TAGGED_HASH%%@unexec f=history.pag; if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-%%SUB_WITH_TAGGED_HASH%%@unexec rm -f %D/news/db.dist/history.pag 2> /dev/null || true
-news/doc/CONTRIBUTORS
-news/doc/GPL
-news/doc/HACKING
-news/doc/INSTALL
-news/doc/LICENSE
-news/doc/NEWS
-news/doc/README
-news/doc/TODO
-news/doc/compliance-nntp
-news/doc/config-design
-news/doc/config-semantics
-news/doc/config-syntax
-news/doc/external-auth
-news/doc/history
-news/doc/hook-perl
-news/doc/hook-python
-news/doc/hook-tcl
-news/doc/sample-control
-@unexec if cmp -s %D/%%ETCDIR%%/actsync.cfg %D/%%ETCDIR%%/actsync.cfg.dist; then rm -f %D/%%ETCDIR%%/actsync.cfg ; fi
-%%ETCDIR%%/actsync.cfg.dist
-@exec [ -f %B/actsync.cfg ] || cp -fp %B/%f %B/actsync.cfg
-@unexec if cmp -s %D/%%ETCDIR%%/actsync.ign %D/%%ETCDIR%%/actsync.ign.dist; then rm -f %D/%%ETCDIR%%/actsync.ign ; fi
-%%ETCDIR%%/actsync.ign.dist
-@exec [ -f %B/actsync.ign ] || cp -fp %B/%f %B/actsync.ign
-@unexec if cmp -s %D/%%ETCDIR%%/buffindexed.conf %D/%%ETCDIR%%/buffindexed.conf.dist; then rm -f %D/%%ETCDIR%%/buffindexed.conf ; fi
-%%ETCDIR%%/buffindexed.conf.dist
-@exec [ -f %B/buffindexed.conf ] || cp -fp %B%/%f %B/buffindexed.conf
-@unexec if cmp -s %D/%%ETCDIR%%/control.ctl %D/%%ETCDIR%%/control.ctl.dist; then rm -f %D/%%ETCDIR%%/control.ctl ; fi
-%%ETCDIR%%/control.ctl.dist
-@exec [ -f %B/control.ctl ] || cp -fp %B/%f %B/control.ctl
-@unexec if cmp -s %D/%%ETCDIR%%/cycbuff.conf %D/%%ETCDIR%%/cycbuff.conf.dist; then rm -f %D/%%ETCDIR%%/cycbuff.conf ; fi
-%%ETCDIR%%/cycbuff.conf.dist
-@exec [ -f %B/cycbuff.conf ] || cp -fp %B/%f %B/cycbuff.conf
-@unexec if cmp -s %D/%%ETCDIR%%/distrib.pats %D/%%ETCDIR%%/distrib.pats.dist; then rm -f %D/%%ETCDIR%%/distrib.pats ; fi
-%%ETCDIR%%/distrib.pats.dist
-@exec [ -f %B/distrib.pats ] || cp -fp %B/%f %B/distrib.pats
-@unexec if cmp -s %D/%%ETCDIR%%/expire.ctl %D/%%ETCDIR%%/expire.ctl.dist; then rm -f %D/%%ETCDIR%%/expire.ctl ; fi
-%%ETCDIR%%/expire.ctl.dist
-@exec [ -f %B/expire.ctl ] || cp -fp %B/%f %B/expire.ctl
-@unexec if cmp -s %D/%%ETCDIR%%/incoming.conf %D/%%ETCDIR%%/incoming.conf.dist; then rm -f %D/%%ETCDIR%%/incoming.conf ; fi
-%%ETCDIR%%/incoming.conf.dist
-@exec [ -f %B/incoming ] || cp -fp %B/%f %B/incoming.conf
-@unexec if cmp -s %D/%%ETCDIR%%/inn.conf %D/%%ETCDIR%%/inn.conf.dist; then rm -f %D/%%ETCDIR%%/inn.conf ; fi
-%%ETCDIR%%/inn.conf.dist
-@exec [ -f %B/inn.conf ] || cp -fp %B/%f %B/inn.conf
-@unexec if cmp -s %D/%%ETCDIR%%/innfeed.conf %D/%%ETCDIR%%/innfeed.conf.dist; then rm -f %D/%%ETCDIR%%/innfeed.conf ; fi
-%%ETCDIR%%/innfeed.conf.dist
-@exec [ -f %B/innfeed.conf.dist ] || cp -fp %B/%f %B/innfeed.conf.dist
-@unexec if cmp -s %D/%%ETCDIR%%/innreport.conf %D/%%ETCDIR%%/innreport.conf.dist; then rm -f %D/%%ETCDIR%%/innreport.conf ; fi
-%%ETCDIR%%/innreport.conf.dist
-@exec [ -f %B/innreport.conf ] || cp -fp %B/%f %B/innreport.conf
-@unexec if cmp -s %D/%%ETCDIR%%/innwatch.ctl %D/%%ETCDIR%%/innwatch.ctl.dist; then rm -f %D/%%ETCDIR%%/innwatch.ctl ; fi
-%%ETCDIR%%/innwatch.ctl.dist
-@exec [ -f %B/innwatch.ctl ] || cp -fp %B/%f %B/innwatch.ctl
-@unexec if cmp -s %D/%%ETCDIR%%/moderators %D/%%ETCDIR%%/moderators.dist; then rm -f %D/%%ETCDIR%%/moderators ; fi
-%%ETCDIR%%/moderators.dist
-@exec [ -f %B/moderators ] || cp -fp %B/%f %B/moderators
-@unexec if cmp -s %D/%%ETCDIR%%/motd.news %D/%%ETCDIR%%/motd.news.dist; then rm -f %D/%%ETCDIR%%/motd.news ; fi
-%%ETCDIR%%/motd.news.dist
-@exec [ -f %B/motd.news ] || cp -fp %B/%f %B/motd.news
-@unexec if cmp -s %D/%%ETCDIR%%/news2mail.cf %D/%%ETCDIR%%/news2mail.cf.dist; then rm -f %D/%%ETCDIR%%/news2mail.cf ; fi
-%%ETCDIR%%/news2mail.cf.dist
-@exec [ -f %B/news2mail.cf ] || cp -fp %B/%f %B/news2mail.cf
-@unexec if cmp -s %D/%%ETCDIR%%/newsfeeds %D/%%ETCDIR%%/newsfeeds.dist; then rm -f %D/%%ETCDIR%%/newsfeeds ; fi
-%%ETCDIR%%/newsfeeds.dist
-@exec [ -f %B/newsfeeds ] || cp -fp %B/%f %B/newsfeeds
-@unexec if cmp -s %D/%%ETCDIR%%/nnrpd.track %D/%%ETCDIR%%/nnrpd.track.dist; then rm -f %D/%%ETCDIR%%/nnrpd.track ; fi
-%%ETCDIR%%/nnrpd.track.dist
-@exec [ -f %B/nnrpd.track ] || cp -fp %B/%f %B/nnrpd.track
-@unexec if cmp -s %D/%%ETCDIR%%/nntpsend.ctl %D/%%ETCDIR%%/nntpsend.ctl.dist; then rm -f %D/%%ETCDIR%%/nntpsend.ctl ; fi
-%%ETCDIR%%/nntpsend.ctl.dist
-@exec [ -f %B/nntpsend.ctl ] || cp -fp %B/%f %B/nntpsend.ctl
-@unexec if cmp -s %D/%%ETCDIR%%/ovdb.conf %D/%%ETCDIR%%/ovdb.conf.dist; then rm -f %D/%%ETCDIR%%/ovdb.conf ; fi
-%%ETCDIR%%/ovdb.conf.dist
-@exec [ -f %B/ovdb.conf ] || cp -fp %B/%f %B/ovdb.conf
-@unexec if cmp -s %D/%%ETCDIR%%/overview.fmt %D/%%ETCDIR%%/overview.fmt.dist; then rm -f %D/%%ETCDIR%%/overview.fmt ; fi
-%%ETCDIR%%/overview.fmt.dist
-@exec [ -f %B/overview.fmt ] || cp -fp %B/%f %B/overview.fmt
-@unexec if cmp -s %D/%%ETCDIR%%/passwd.nntp %D/%%ETCDIR%%/passwd.nntp.dist; then rm -f %D/%%ETCDIR%%/passwd.nntp ; fi
-%%ETCDIR%%/passwd.nntp.dist
-@exec [ -f %B/passwd.nntp ] || cp -fp %B/%f %B/passwd.nntp
-@unexec if cmp -s %D/%%ETCDIR%%/radius.conf %D/%%ETCDIR%%/radius.conf.dist; then rm -f %D/%%ETCDIR%%/radius.conf ; fi
-%%ETCDIR%%/radius.conf.dist
-@exec [ -f %B/radius.conf ] || cp -fp %B/%f %B/radius.conf
-@unexec if cmp -s %D/%%ETCDIR%%/readers.conf %D/%%ETCDIR%%/readers.conf.dist; then rm -f %D/%%ETCDIR%%/readers.conf; fi
-%%ETCDIR%%/readers.conf.dist
-@exec [ -f %B/readers.conf ] || cp -fp %B/%f %B/readers.conf
-@unexec if cmp -s %D/%%ETCDIR%%/sasl.conf %D/%%ETCDIR%%/sasl.conf.dist; then rm -f %D/%%ETCDIR%%/sasl.conf ; fi
-%%ETCDIR%%/sasl.conf.dist
-@exec [ -f %B/sasl.conf ] || cp -fp %B/%f %B/sasl.conf
-@unexec if cmp -s %D/%%ETCDIR%%/storage.conf %D/%%ETCDIR%%/storage.conf.dist; then rm -f %D/%%ETCDIR%%/storage.conf ; fi
-%%ETCDIR%%/storage.conf.dist
-@exec [ -f %B/storage.conf ] || cp -fp %B/%f %B/storage.conf
-@unexec if cmp -s %D/%%ETCDIR%%/subscriptions %D/%%ETCDIR%%/subscriptions.dist; then rm -f %D/%%ETCDIR%%/subscriptions ; fi
-%%ETCDIR%%/subscriptions.dist
-@exec [ -f %B/subscriptions ] || cp -fp %B/%f %B/subscriptions
-news/include/clibrary.h
-news/include/conffile.h
-news/include/config.h
-news/include/dbz.h
-news/include/inn/buffer.h
-news/include/inn/confparse.h
-news/include/inn/defines.h
-news/include/inn/hashtab.h
-news/include/inn/history.h
-news/include/inn/innconf.h
-news/include/inn/list.h
-news/include/inn/md5.h
-news/include/inn/messages.h
-news/include/inn/mmap.h
-news/include/inn/qio.h
-news/include/inn/sequence.h
-news/include/inn/system.h
-news/include/inn/timer.h
-news/include/inn/tst.h
-news/include/inn/vector.h
-news/include/inn/version.h
-news/include/inn/wire.h
-news/include/inndcomm.h
-news/include/libinn.h
-news/include/nntp.h
-news/include/ov.h
-news/include/paths.h
-news/include/storage.h
-news/lib/innreport_inn.pm
-news/lib/innshellvars
-news/lib/innshellvars.pl
-news/lib/innshellvars.tcl
-news/lib/libinn.a
-news/lib/libinnhist.a
-news/lib/libstorage.a
-%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry news/tmp
-@dirrmtry news/spool/overview
-@dirrmtry news/spool/outgoing
-@dirrmtry news/spool/innfeed
-@dirrmtry news/spool/incoming/bad
-@dirrmtry news/spool/incoming
-@dirrmtry news/spool/articles
-@dirrmtry news/spool/archive
-@dirrmtry news/spool/tmp
-@dirrmtry news/spool
-@dirrm news/run
-@dirrm news/lib
-@dirrm news/include/inn
-@dirrm news/include
-@dirrmtry %%ETCDIR%%
-@dirrm news/doc
-@dirrmtry news/db
-@dirrmtry news/db.dist
-@dirrm news/bin/rnews.libexec
-@dirrm news/bin/filter
-@dirrm news/bin/control
-@dirrm news/bin/auth/resolv
-@dirrm news/bin/auth/passwd
-@dirrm news/bin/auth
-@dirrm news/bin
-@unexec rmdir %D/news 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %D/news. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)
+@exec mkdir -p %%NEWSBASE%%
+%%CWDNEWSBASE%%
+bin/actmerge
+bin/actsync
+bin/actsyncd
+bin/archive
+bin/auth/passwd/auth_smb
+bin/auth/passwd/ckpasswd
+bin/auth/passwd/radius
+bin/auth/resolv/domain
+bin/auth/resolv/ident
+bin/batcher
+bin/buffchan
+bin/cnfsheadconf
+bin/cnfsstat
+bin/control/checkgroups.pl
+bin/control/ihave.pl
+bin/control/newgroup.pl
+bin/control/rmgroup.pl
+bin/control/sendme.pl
+bin/control/sendsys.pl
+bin/control/senduuname.pl
+bin/control/version.pl
+bin/controlbatch
+bin/controlchan
+bin/convdate
+bin/ctlinnd
+bin/cvtbatch
+bin/docheckgroups
+bin/expire
+bin/expireover
+bin/expirerm
+bin/fastrm
+bin/filechan
+bin/filter/INN.py
+%%NOTCURRENT%%bin/filter/filter.tcl
+bin/filter/filter_innd.pl
+bin/filter/filter_innd.py
+bin/filter/filter_nnrpd.pl
+bin/filter/nnrpd_access.pl
+bin/filter/nnrpd_auth.pl
+bin/filter/nnrpd_auth.py
+%%NOTCURRENT%%bin/filter/startup.tcl
+bin/filter/startup_innd.pl
+bin/getlist
+bin/gpgverify
+bin/grephistory
+bin/imapfeed
+bin/inews
+bin/inncheck
+bin/innconfval
+bin/innd
+bin/inndf
+%%NOTCURRENT%%bin/inndstart
+bin/innfeed
+bin/innmail
+bin/innreport
+bin/innstat
+bin/innupgrade
+bin/innwatch
+bin/innxbatch
+bin/innxmit
+bin/mailpost
+bin/makedbz
+bin/makehistory
+bin/mod-active
+bin/news.daily
+bin/news2mail
+bin/ninpaths
+bin/nnrpd
+bin/nntpget
+bin/nntpsend
+bin/ovdb_init
+bin/ovdb_monitor
+bin/ovdb_server
+bin/ovdb_stat
+bin/overchan
+bin/perl-nocem
+bin/pgpverify
+bin/procbatch
+bin/prunehistory
+bin/pullnews
+bin/rc.news
+bin/rnews
+bin/rnews.libexec/c7unbatch
+bin/rnews.libexec/decode
+bin/rnews.libexec/encode
+bin/rnews.libexec/gunbatch
+bin/scanlogs
+bin/scanspool
+bin/send-ihave
+bin/send-nntp
+bin/send-uucp
+bin/sendinpaths
+bin/sendxbatches
+bin/shlock
+bin/shrinkfile
+bin/signcontrol
+bin/simpleftp
+bin/sm
+%%NOTCURRENT%%bin/startinnfeed
+bin/tally.control
+bin/tdx-util
+bin/writelog
+doc/CONTRIBUTORS
+doc/GPL
+doc/HACKING
+doc/INSTALL
+doc/LICENSE
+doc/NEWS
+doc/README
+doc/TODO
+doc/compliance-nntp
+doc/config-design
+doc/config-semantics
+doc/config-syntax
+doc/external-auth
+doc/history
+doc/hook-perl
+doc/hook-python
+%%NOTCURRENT%%doc/hook-tcl
+doc/sample-control
+include/clibrary.h
+include/conffile.h
+include/config.h
+include/dbz.h
+include/inn/buffer.h
+include/inn/confparse.h
+include/inn/defines.h
+include/inn/hashtab.h
+include/inn/history.h
+include/inn/innconf.h
+include/inn/list.h
+include/inn/md5.h
+include/inn/messages.h
+include/inn/mmap.h
+include/inn/qio.h
+include/inn/sequence.h
+include/inn/system.h
+include/inn/timer.h
+include/inn/tst.h
+include/inn/vector.h
+include/inn/version.h
+include/inn/wire.h
+include/inndcomm.h
+include/libinn.h
+include/nntp.h
+include/ov.h
+include/paths.h
+include/storage.h
+lib/innreport_inn.pm
+lib/innshellvars
+lib/innshellvars.pl
+lib/innshellvars.tcl
+lib/libinn.a
+lib/libinnhist.a
+lib/libstorage.a
+@comment --------------------------------------------------------------
+@cwd
+@exec mkdir -p %%DBDIR%%
+@exec mkdir -p %%EXAMPLESDIR%%/db
+@unexec f=active;       if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+@unexec f=active.times; if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+@unexec f=history;      if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+@unexec f=history.dir;  if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+@unexec f=newsgroups;   if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%EXAMPLESDIR%%/db/active
+%%EXAMPLESDIR%%/db/active.times
+%%EXAMPLESDIR%%/db/history
+%%EXAMPLESDIR%%/db/history.dir
+%%EXAMPLESDIR%%/db/newsgroups
+@unexec rm -f %D/%%EXAMPLESDIR%%/db/active.old      2> /dev/null || true
+@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.n.dir   2> /dev/null || true
+@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.n.hash  2> /dev/null || true
+@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.n.index 2> /dev/null || true
+@comment --------------------------------------------------------------
+%%WITHOUT_TAGGED_HASH%%@unexec f=history.hash;  if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@unexec f=history.index; if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.hash  2> /dev/null || true
+%%WITHOUT_TAGGED_HASH%%@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
+%%WITH_TAGGED_HASH%%@unexec f=history.pag; if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITH_TAGGED_HASH%%@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
+@comment --------------------------------------------------------------
+@unexec for f in %%ETCFILES%%; do if cmp -s %%ETCDIR%%/${f} %D/%%EXAMPLESDIR%%/${f}; then rm -f %%ETCDIR%%/${f}; fi; done
+@unexec for f in %%ETCFILES%%; do rm -f %D/%%EXAMPLESDIR%%/${f}; done
+@exec for f in %%ETCFILES%%; do [ -f %%ETCDIR%%/${f} ] || cp -fp %D/%%EXAMPLESDIR%%/${f} %%ETCDIR%%/${f}; done
+@comment --------------------------------------------------------------
+@dirrm %%EXAMPLESDIR%%/db
+@dirrm %%EXAMPLESDIR%%
+@unexec rm -Rf %%TMPDIR%%                 2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%/overview     2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%/outgoing     2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%/innfeed      2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%/incoming/bad 2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%/incoming     2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%/articles     2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%/archive      2>/dev/null || true
+@unexec rm -Rf %%NEWSSPOOL%%/tmp          2>/dev/null || true
+@unexec rmdir  %%NEWSSPOOL%%              2>/dev/null || true
+@unexec rm -Rf %%RUNDIR%%                 2>/dev/null || true
+@unexec rm -R  %%NEWSBASE%%/lib
+@unexec rm -R  %%NEWSBASE%%/include/inn
+@unexec rm -R  %%NEWSBASE%%/include
+@unexec rmdir  %%ETCDIR%%                 2>/dev/null || true
+@unexec rm -Rf %%NEWSBASE%%/doc
+@unexec rmdir  %%DBDIR%%
+@unexec rm -Rf %%NEWSBASE%%/bin/rnews.libexec
+@unexec rm -Rf %%NEWSBASE%%/bin/filter
+@unexec rm -Rf %%NEWSBASE%%/bin/control
+@unexec rm -Rf %%NEWSBASE%%/bin/auth/resolv
+@unexec rm -Rf %%NEWSBASE%%/bin/auth/passwd
+@unexec rm -Rf %%NEWSBASE%%/bin/auth
+@unexec rm -Rf %%NEWSBASE%%/bin
+@unexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)

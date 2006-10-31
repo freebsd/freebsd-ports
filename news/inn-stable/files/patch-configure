@@ -1,15 +1,13 @@
---- configure.orig	Mon Jun 14 16:49:57 2004
-+++ configure	Fri Jul  9 07:47:06 2004
-@@ -5811,49 +5811,18 @@
-     BERKELEY_DB_LIB=
- else
+--- configure.orig	Tue Oct 24 10:07:29 2006
++++ configure	Mon Oct 30 15:50:31 2006
+@@ -7523,48 +7523,10 @@
      echo "$ac_t""yes" 1>&6
--    echo $ac_n "checking for BerkeleyDB location""... $ac_c" 1>&6
-+    echo $ac_n "checking for BerkeleyDB ${DB_VER} location""... $ac_c" 1>&6
- echo "configure:5816: checking for BerkeleyDB location" >&5
+     echo $ac_n "checking for BerkeleyDB location""... $ac_c" 1>&6
+ echo "configure:7526: checking for BerkeleyDB location" >&5
 -    if test x"$BERKELEY_DB_DIR" = xyes ; then
 -        for v in BerkeleyDB BerkeleyDB.3.0 BerkeleyDB.3.1 BerkeleyDB.3.2 \
--                 BerkeleyDB.3.3 BerkeleyDB.4.0 BerkeleyDB.4.1 BerkeleyDB.4.2 ; do
+-                 BerkeleyDB.3.3 BerkeleyDB.4.0 BerkeleyDB.4.1 BerkeleyDB.4.2 \
+-                 BerkeleyDB.4.3 BerkeleyDB.4.4; do
 -            for d in $prefix /usr/local /opt /usr ; do
 -                if test -d "$d/$v" ; then
 -                    BERKELEY_DB_DIR="$d/$v"
@@ -19,17 +17,19 @@
 -        done
 -    fi
 -    if test x"$BERKELEY_DB_DIR" = xyes ; then
--        for v in db42 db41 db4 db3 db2 ; do
+-        for v in db44 db43 db42 db41 db4 db3 db2 ; do
 -            if test -d "/usr/local/include/$v" ; then
--                BERKELEY_DB_LDFLAGS="-L/usr/local/lib"
+                 BERKELEY_DB_LDFLAGS="-L/usr/local/lib"
 -                BERKELEY_DB_CFLAGS="-I/usr/local/include/$v"
 -                BERKELEY_DB_LIB="-l$v"
--                echo "$ac_t""FreeBSD locations" 1>&6
++                BERKELEY_DB_CFLAGS="-I/usr/local/include/${DB_VER}"
++                BERKELEY_DB_LIB="-l${DB_VER}"
+                 echo "$ac_t""FreeBSD locations" 1>&6
 -                break
 -            fi
 -        done
 -        if test x"$BERKELEY_DB_LIB" = x ; then
--            for v in db42 db41 db4 db3 db2 ; do
+-            for v in db44 db43 db42 db41 db4 db3 db2 ; do
 -                if test -d "/usr/include/$v" ; then
 -                    BERKELEY_DB_CFLAGS="-I/usr/include/$v"
 -                    BERKELEY_DB_LIB="-l$v"
@@ -48,16 +48,6 @@
 -        BERKELEY_DB_LIB="-ldb"
 -        echo "$ac_t""$BERKELEY_DB_DIR" 1>&6
 -    fi
-+	  BERKELEY_DB_DIR="${LOCALBASE}"
-+          BERKELEY_DB_LDFLAGS="-L${LOCALBASE}/lib"
-+          BERKELEY_DB_CFLAGS="-I${LOCALBASE}/include/${DB_VER}"
-+	if [ "${DB_VER}" != "db42" ]
-+	then
-+         BERKELEY_DB_LIB="-l${DB_VER}"
-+	else 
-+          BERKELEY_DB_LIB="-ldb-4.2"
-+	fi
-+	echo "$ac_t""$BERKELEY_DB_DIR" 1>&6
      cat >> confdefs.h <<\EOF
  #define USE_BERKELEY_DB 1
  EOF

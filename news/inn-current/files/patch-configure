@@ -1,13 +1,14 @@
---- configure.orig	Mon Jan 12 06:10:08 2004
-+++ configure	Thu Jan 22 11:40:42 2004
-@@ -10949,51 +10949,11 @@
-     echo "$as_me:$LINENO: checking for Berkeley DB location" >&5
- echo $ECHO_N "checking for Berkeley DB location... $ECHO_C" >&6
+--- configure.orig	Tue Oct 24 18:54:13 2006
++++ configure	Tue Oct 24 20:49:19 2006
+@@ -24229,52 +24229,11 @@
+     { echo "$as_me:$LINENO: checking for Berkeley DB location" >&5
+ echo $ECHO_N "checking for Berkeley DB location... $ECHO_C" >&6; }
  
 -        if test x"$DB_DIR" = xyes ; then
--        for version in BerkeleyDB.4.1 BerkeleyDB.4.0 BerkeleyDB.3.3 \
--                       BerkeleyDB.3.2 BerkeleyDB.3.1 BerkeleyDB.3.0 \
--                       BerkeleyDB ; do
+-        for version in BerkeleyDB.4.4 BerkeleyDB.4.3 BerkeleyDB.4.2 \
+-                       BerkeleyDB.4.1 BerkeleyDB.4.0 \
+-                       BerkeleyDB.3.3 BerkeleyDB.3.2 BerkeleyDB.3.1 \
+-                       BerkeleyDB.3.0 BerkeleyDB ; do
 -            if test -d "/usr/local/$version" ; then
 -                DB_DIR=/usr/local/$version
 -                break
@@ -16,40 +17,40 @@
 -    fi
 -
 -            if test x"$DB_DIR" = xyes ; then
--        for version in db41 db4 db3 db2 ; do
+-        for version in db44 db43 db42 db41 db4 db3 db2 ; do
 -            if test -d "/usr/local/include/$version" ; then
 -                DB_CPPFLAGS="-I/usr/local/include/$version"
 +                DB_CPPFLAGS="-I/usr/local/include/${DB_VER}"
                  DB_LDFLAGS="-L/usr/local/lib"
 -                DB_LIBS="-l$version"
 +                DB_LIBS="-l${DB_VER}"
-                 echo "$as_me:$LINENO: result: FreeBSD locations" >&5
- echo "${ECHO_T}FreeBSD locations" >&6
+                 { echo "$as_me:$LINENO: result: FreeBSD locations" >&5
+ echo "${ECHO_T}FreeBSD locations" >&6; }
 -                break
 -            fi
 -        done
 -        if test x"$DB_LIBS" = x ; then
--            for version in db41 db4 db3 db2 ; do
+-            for version in db44 db43 db42 db41 db4 db3 db2 ; do
 -                if test -d "/usr/include/$version" ; then
 -                    DB_CPPFLAGS="-I/usr/include/$version"
 -                    DB_LIBS="-l$version"
--                    echo "$as_me:$LINENO: result: Red Hat locations" >&5
--echo "${ECHO_T}Red Hat locations" >&6
+-                    { echo "$as_me:$LINENO: result: Red Hat locations" >&5
+-echo "${ECHO_T}Red Hat locations" >&6; }
 -                    break
 -                fi
 -            done
 -            if test x"$DB_LIBS" = x ; then
 -                DB_LIBS=-ldb
--                echo "$as_me:$LINENO: result: trying -ldb" >&5
--echo "${ECHO_T}trying -ldb" >&6
+-                { echo "$as_me:$LINENO: result: trying -ldb" >&5
+-echo "${ECHO_T}trying -ldb" >&6; }
 -            fi
 -        fi
 -    else
 -        DB_CPPFLAGS="-I$DB_DIR/include"
 -        DB_LDFLAGS="-L$DB_DIR/lib"
 -        DB_LIBS="-ldb"
--        echo "$as_me:$LINENO: result: $DB_DIR" >&5
--echo "${ECHO_T}$DB_DIR" >&6
+-        { echo "$as_me:$LINENO: result: $DB_DIR" >&5
+-echo "${ECHO_T}$DB_DIR" >&6; }
 -    fi
  
  cat >>confdefs.h <<\_ACEOF
