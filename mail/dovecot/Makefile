@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.rc7
-PORTREVISION=	2
+DISTVERSION=	1.0.rc10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -38,13 +37,16 @@ CONFIGURE_ARGS+=	--without-docs
 .endif
 
 OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
+		SSL		"SSL support"		on  \
+		IPV6		"IPv6 support"		on  \
+		POP3		"POP3 support"		on  \
+		LDA		"LDA support"		on  \
 		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
 		MYSQL		"MySQL support"		off \
-		SQLITE		"SQLite support"	off \
-		IPV6		"IPv6 support"		on
+		SQLITE		"SQLite support"	off
 
 .include <bsd.port.pre.mk>
 
@@ -52,6 +54,38 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 #
 .if !defined(WITHOUT_KQUEUE)
 CONFIGURE_ARGS+=	--with-ioloop=kqueue
+.endif
+
+## SSL support
+#
+.if defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--without-ssl
+.endif
+
+## IPv6 support
+#
+.if defined(WITHOUT_IPV6) || ${OSVERSION} <= 400014
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+## POP3 support
+#
+.if defined(WITHOUT_POP3)
+CONFIGURE_ARGS+=	--without-pop3d
+PROTOCOLS=		imap
+PLIST_SUB+=		POP3="@comment "
+.else
+PROTOCOLS=		imap pop3
+PLIST_SUB+=		POP3=""
+.endif
+
+## LDA support
+#
+.if defined(WITHOUT_LDA)
+CONFIGURE_ARGS+=	--without-deliver
+PLIST_SUB+=		LDA="@comment "
+.else
+PLIST_SUB+=		LDA=""
 .endif
 
 ## GSSAPI support
@@ -100,12 +134,6 @@ USE_SQLITE=		3
 CONFIGURE_ARGS+=	--with-sqlite
 .endif
 
-## IPv6 support
-#
-.if defined(WITHOUT_IPV6) || ${OSVERSION} <= 400014
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
 post-patch:
 .if defined(WITH_GSSAPI)
 	@${REINPLACE_CMD} -e 's,<gssapi/gssapi\.h>,<gssapi.h>,' \
@@ -114,7 +142,9 @@ post-patch:
 .endif
 
 post-build:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+	@${REINPLACE_CMD} \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%PROTOCOLS%%,${PROTOCOLS},g' \
 		${WRKSRC}/dovecot-example.conf
 
 pre-install:
@@ -124,6 +154,8 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-ldap.conf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-sql.conf ${DATADIR}
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 

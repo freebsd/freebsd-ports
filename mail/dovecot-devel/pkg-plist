@@ -35,14 +35,14 @@ lib/dovecot/lib02_trash_plugin.la
 lib/dovecot/lib02_trash_plugin.so
 @dirrm lib/dovecot
 libexec/dovecot/checkpassword-reply
-libexec/dovecot/deliver
+%%LDA%%libexec/dovecot/deliver
 libexec/dovecot/dict
 libexec/dovecot/dovecot-auth
 libexec/dovecot/gdbhelper
 libexec/dovecot/imap
 libexec/dovecot/imap-login
-libexec/dovecot/pop3
-libexec/dovecot/pop3-login
+%%POP3%%libexec/dovecot/pop3
+%%POP3%%libexec/dovecot/pop3-login
 libexec/dovecot/rawlog
 libexec/dovecot/ssl-build-param
 @dirrm libexec/dovecot
@@ -50,4 +50,6 @@ sbin/dovecot
 sbin/dovecotpw
 %%DATADIR%%/dovecot-openssl.cnf
 %%DATADIR%%/mkcert.sh
+%%DATADIR%%/dovecot-ldap.conf
+%%DATADIR%%/dovecot-sql.conf
 @dirrm %%DATADIR%%
