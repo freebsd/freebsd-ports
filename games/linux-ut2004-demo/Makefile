@@ -18,10 +18,10 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Unreal Tournament 2004 demo
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_X_PREFIX=	yes
 USE_LINUX=	yes
-NO_PACKAGE=	Distfile is 275MB, set FORCE_PACKAGE if you really want to build this package
+NO_PACKAGE=	Distfile size is 275MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
