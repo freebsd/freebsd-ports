@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-InterBase
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dbi-interbase
@@ -16,10 +16,10 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	DBI driver for InterBase RDBMS server
 
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-LIB_DEPENDS=	gds:${PORTSDIR}/databases/firebird-client
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_FIREBIRD=	yes
 
 post-patch:
 		@${PERL} -pi -e 's,%%IB_BASE%%,${LOCALBASE},g' \
