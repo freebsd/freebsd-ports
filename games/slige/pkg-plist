@@ -1,0 +1,6 @@
+bin/slige
+%%EXAMPLESDIR%%/blue.cfg
+%%EXAMPLESDIR%%/slige.cfg
+%%PORTDOCS%%%%DOCSDIR%%/slige.txt
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
