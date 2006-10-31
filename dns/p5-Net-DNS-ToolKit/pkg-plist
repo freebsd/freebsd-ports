@@ -8,12 +8,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/CNAME.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/HINFO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MINFO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MR.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/NS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/NULL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/PTR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/RP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/SOA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/TXT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/Template.pm

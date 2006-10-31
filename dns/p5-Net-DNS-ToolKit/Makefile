@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS-ToolKit
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	dns perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -30,12 +30,14 @@ MAN3=		Net::DNS::ToolKit.3 \
 		Net::DNS::ToolKit::RR::CNAME.3 \
 		Net::DNS::ToolKit::RR::HINFO.3 \
 		Net::DNS::ToolKit::RR::MB.3 \
+		Net::DNS::ToolKit::RR::MINFO.3 \
 		Net::DNS::ToolKit::RR::MG.3 \
 		Net::DNS::ToolKit::RR::MR.3 \
 		Net::DNS::ToolKit::RR::MX.3 \
 		Net::DNS::ToolKit::RR::NS.3 \
 		Net::DNS::ToolKit::RR::NULL.3 \
 		Net::DNS::ToolKit::RR::PTR.3 \
+		Net::DNS::ToolKit::RR::RP.3 \
 		Net::DNS::ToolKit::RR::SOA.3 \
 		Net::DNS::ToolKit::RR::TXT.3 \
 		Net::DNS::ToolKit::RR::Template.3 \
