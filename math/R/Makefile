@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
