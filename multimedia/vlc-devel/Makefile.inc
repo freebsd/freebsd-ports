@@ -1,4 +1,3 @@
-
 # NOTES about VLC Knobs:
 # Below you will see a number of knobs, if it starts with WITHOUT_ it is
 # enabled by default, if it starts with WITH_ it is disabled by default
@@ -56,6 +55,7 @@
 # WITH_FLAC=yes
 #  Flac Support
 #
+
 # WITHOUT_LAME=yes
 #  Mp3 encoder Support
 #   ** NOT DEFINED if PACKAGE_BUILDING is defined **
@@ -116,6 +116,7 @@
 #
 # WITH_XOSD=yes
 #
+
 # Multimedia Knobs:
 #
 # WITH_DIRAC
@@ -132,12 +133,6 @@
 #
 # WITH_THEORA=yes
 #  Video codec for OGG/Vorbis Support
-#
-# WITH_TRANSCODE=yes
-#  Disable transcode of multimedia via transcode (multimedia/transcode).
-#  This option allows you to convert a media file, dvd, A/V stream, etc
-#  in to another format. This also allows you to transcode multimedia
-#  on-the-fly and stream to a network and/or local playback.
 #
 # Streaming Knobs:
 #
@@ -236,15 +231,6 @@
 #  Do not install Vlc's Documents
 #
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take a careful look at the beginning of the Makefile.inc in order"
-	@${ECHO_MSG} "to learn how to tune VLC to your personal preferences!"
-	@${ECHO_MSG} ""
-.if !defined(BATCH) || !defined(PACKAGE_BUILDING)
-	@sleep 2
-.endif
-
 post-patch:
 # Subtitle default font
 	@${REINPLACE_CMD} -e \
@@ -281,6 +267,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
 		${WRKSRC}/loader/module.c
 .endif
+	@${REINPLACE_CMD} -e 's|bindings/java/src/Makefile||' ${WRKSRC}/configure
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
