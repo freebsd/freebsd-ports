@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fetchyahoo
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.6
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.sourceforge.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Download e-mail from a Yahoo account to a Berkeley mailbox
 
 RUN_DEPENDS=	\
@@ -20,8 +20,9 @@ RUN_DEPENDS=	\
 	${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-	${SITE_PERL}/${PERL_ARCH}/HTML/Filter.pm:${PORTSDIR}/www/p5-HTML-Parser\
-	${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww
+	${SITE_PERL}/${PERL_ARCH}/HTML/Filter.pm:${PORTSDIR}/www/p5-HTML-Parser \
+	${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
+	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 
 MAN1=		fetchyahoo.1
 PLIST_DIRS=	share/examples/fetchyahoo
@@ -33,7 +34,7 @@ USE_PERL5=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again.
+IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500800
