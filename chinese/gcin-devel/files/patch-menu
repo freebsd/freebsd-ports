@@ -1,6 +1,6 @@
---- menu/Makefile.orig	Sun Aug 28 21:40:32 2005
-+++ menu/Makefile	Fri Oct 13 14:43:28 2006
-@@ -10,14 +10,14 @@ install:
+--- menu/Makefile.bak	Mon Oct 30 12:44:59 2006
++++ menu/Makefile	Mon Oct 30 12:43:10 2006
+@@ -10,14 +10,10 @@
  	   install gcin-setup.desktop /usr/share/applications; \
  	   install -d /usr/lib/menu; \
  	   install -m 644 $(MENUS) /usr/lib/menu; \
@@ -15,10 +15,6 @@
 -	   install -m 644 gcin-setup.desktop $(datadir)/applications; \
 +	   install -d $(prefix)/share/applications; \
 +	   install -m 644 $(MENUS) $(prefix)/share/applications; \
-+	   echo "install Gnome's control center panel ..."; \
-+	   install -d $(datadir)/gnome/control-center-2.0/capplets; \
-+	   install -m 644 gcin-setup.desktop $(datadir)/gnome/control-center-2.0/capplets; \
-+	   echo "installing Other common wm(ie:xfce4)'s menu panel ..."; \
  	fi
  clean:
  	rm -f $(MENUS) *~

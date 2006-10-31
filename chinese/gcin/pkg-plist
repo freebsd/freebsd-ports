@@ -14,8 +14,10 @@ bin/tsd2a32
 bin/tslearn
 include/gcin-im-client.h
 lib/gtk-2.0/immodules/im-gcin.so
+lib/gcin1.so
 lib/libgcin-im-client.so
 %%DATADIR%%/script/gcin-user-setup
+%%DATADIR%%/script/noseeing-inst
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
 %%DATADIR%%/table/cj-punc.gtab
@@ -52,7 +54,6 @@ lib/libgcin-im-client.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/applications/gcin
 share/applications/gcin-setup
-share/gnome/control-center-2.0/capplets/gcin-setup.desktop
 share/icons/gcin/gcin-tray.png
 share/icons/gcin/greek.png
 share/icons/gcin/tsin.png
