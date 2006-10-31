@@ -36,6 +36,7 @@
 %%SITE_PERL%%/Acme/MetaSyntactic/garbage.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/garfield.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/gems.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/good_omens.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/groo.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/haddock.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/hhgg.pm
@@ -48,6 +49,7 @@
 %%SITE_PERL%%/Acme/MetaSyntactic/lotr.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/magic8ball.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/magicroundabout.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/magma.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/metro.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/monty_spam.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/nis.pm
@@ -89,6 +91,7 @@
 %%SITE_PERL%%/Acme/MetaSyntactic/state_flowers.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/swords.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/teletubbies.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/thunderbirds.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/tld.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/tmnt.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/tour_de_france.pm
