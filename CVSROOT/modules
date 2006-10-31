@@ -6290,6 +6290,7 @@ libthai		ports/devel/libthai
 libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
+libticonv	ports/converters/libticonv
 libtifiles	ports/devel/libtifiles
 libtnl		ports/net/libtnl
 libtomcrypt	ports/security/libtomcrypt
