@@ -1,0 +1,59 @@
+@exec [ -f %D/etc/quilt.quiltrc ] || cp %D/etc/quilt.quiltrc.sample %D/etc/quilt.quiltrc
+@unexec if cmp -s %D/etc/quilt.quiltrc %D/etc/quilt.quiltrc.sample; then rm -f %D/etc/quilt.quiltrc; fi
+bin/guards
+bin/quilt
+etc/bash_completion.d/quilt
+etc/quilt.quiltrc.sample
+share/libexec/quilt/add
+share/libexec/quilt/annotate
+share/libexec/quilt/applied
+share/libexec/quilt/backup-files
+share/libexec/quilt/compat/cp
+share/libexec/quilt/compat/date
+share/libexec/quilt/compat/getopt
+share/libexec/quilt/compat/patch
+share/libexec/quilt/compat/rpmbuild
+share/libexec/quilt/compat/sed
+share/libexec/quilt/compat/sendmail
+share/libexec/quilt/delete
+share/libexec/quilt/diff
+share/libexec/quilt/edit
+share/libexec/quilt/files
+share/libexec/quilt/fold
+share/libexec/quilt/fork
+share/libexec/quilt/graph
+share/libexec/quilt/grep
+share/libexec/quilt/header
+share/libexec/quilt/import
+share/libexec/quilt/mail
+share/libexec/quilt/new
+share/libexec/quilt/next
+share/libexec/quilt/patches
+share/libexec/quilt/pop
+share/libexec/quilt/previous
+share/libexec/quilt/push
+share/libexec/quilt/refresh
+share/libexec/quilt/remove
+share/libexec/quilt/rename
+share/libexec/quilt/scripts/dependency-graph
+share/libexec/quilt/scripts/edmail
+share/libexec/quilt/scripts/inspect
+share/libexec/quilt/scripts/parse-patch
+share/libexec/quilt/scripts/patchfns
+share/libexec/quilt/scripts/remove-trailing-ws
+share/libexec/quilt/series
+share/libexec/quilt/setup
+share/libexec/quilt/snapshot
+share/libexec/quilt/top
+share/libexec/quilt/unapplied
+share/libexec/quilt/upgrade
+share/libexec/quilt/wrapper/patch
+share/locale/de/LC_MESSAGES/quilt.mo
+share/locale/fr/LC_MESSAGES/quilt.mo
+share/locale/ja/LC_MESSAGES/quilt.mo
+@dirrm share/libexec/quilt/wrapper
+@dirrm share/libexec/quilt/scripts
+@dirrm share/libexec/quilt/compat
+@dirrm share/libexec/quilt
+@dirrm share/libexec
+@dirrm etc/bash_completion.d

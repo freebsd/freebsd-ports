@@ -1765,6 +1765,7 @@
     SUBDIR += qmake
     SUBDIR += qsa
     SUBDIR += qssl
+    SUBDIR += quilt
     SUBDIR += radrails
     SUBDIR += ragel
     SUBDIR += raknet
