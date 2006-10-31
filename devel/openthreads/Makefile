@@ -6,31 +6,31 @@
 #
 
 PORTNAME=	openthreads
-PORTVERSION=	1.2d3
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.csie.nctu.edu.tw/~yinjieh/
-DISTNAME=	OpenThreads-v1.2dev3-osg0.9.6
+MASTER_SITES=	http://www.openscenegraph.org/downloads/snapshots/
+#
+# the following master distribution contains the version of OpenThreads
+# as described above by PORTVERSION and PORTREVISION.
+DISTNAME=	OSG_OP_OT-1.0
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A library which provides OO thread interface for C++ programmers
 
+USE_ZIP=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKEFILE=	GNUmakefile
+WRKSRC=		${WRKDIR}/${DISTNAME}/OpenThreads
+MAKE_ENV+=	FREEBSD_ARCH="${ARCH}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-# opt = optimized ($OPTF added); debug = debug ($DBGF added); opt is default
+# Optimisation/Debug flags:
+#   opt = optimised ($OPTF added)
+#   debug = debug ($DBGF added)
+# opt is default
+#
 ALL_TARGET=	opt
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%CXXFLAGS%%,${CXXFLAGS},g' \
-	${WRKSRC}/Make/makedefs
-	@${FIND} ${WRKSRC} -name '*.o' -delete
-	@${FIND} ${WRKSRC} -name '*.so' -delete
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
