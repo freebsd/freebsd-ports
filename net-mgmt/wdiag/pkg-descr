@@ -1,0 +1,4 @@
+wdiag is a utility to monitor Westell DSL modem diagnostics and line
+statistics. It reports SNR, Attenuation, etc for the DSL line.
+
+WWW: http://wdiag.sourceforge.net/
