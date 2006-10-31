@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://jason.long.name/dkimproxy/
 PKGNAMEPREFIX=	p5-
@@ -31,11 +31,11 @@ MAN3=		Mail::DKIM.3 \
 		Mail::DKIM::Algorithm::rsa_sha256.3 \
 		Mail::DKIM::Canonicalization::Base.3 \
 		Mail::DKIM::Canonicalization::DkimCommon.3 \
+    		Mail::DKIM::DkSignature.3 \
 		Mail::DKIM::Policy.3 \
 		Mail::DKIM::Signature.3 \
 		Mail::DKIM::Signer.3 \
 		Mail::DKIM::SignerPolicy.3 \
-		Mail::DKIM::SigningFilter.3 \
 		Mail::DKIM::Verifier.3
 
 .include <bsd.port.pre.mk>
