@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.14.5
+PORTVERSION=	2.14.7
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
+MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
 		${MASTER_SITE_RINGSERVER} \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
