@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A circuit-level firewall/proxy
 
+CONFLICTS=	socks5-[0-9]*
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
