@@ -1,19 +1,35 @@
---- src/Makefile	Thu Apr  6 17:40:54 2006
-+++ src/Makefile.port	Sat Sep  2 12:03:47 2006
-@@ -1,13 +1,13 @@
- SRCS=$(wildcard *.cpp)
- OBJS=$(patsubst %.cpp,%.o,$(SRCS))
--LIBS=-lstdc++ -lportaudio
-+LIBS=-lstdc++ -L%%LOCALBASE%%/lib $(LDFLAGS) -lportaudio
- all: speak
+--- src/Makefile	Tue Sep 19 23:56:53 2006
++++ src/Makefile.port	Fri Sep 22 13:14:34 2006
+@@ -11,7 +11,7 @@
+ 
+ SRCS1=$(speak_SOURCES)
+ OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
+-LIBS1=-lstdc++ -lportaudio
++LIBS1=-lstdc++ -L%%LOCALBASE%%/lib $(LDFLAGS) -lportaudio
+ 
+ SRCS2=$(libespeak_SOURCES)
+ OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
+@@ -23,19 +23,19 @@
+ 	mv libespeak.so libespeak.so.1.1.14
  
  .cpp.o:
 -	$(CXX) $(CXXFLAGS) -O2 -Wall -pedantic -I. -c -fno-exceptions $<
 +	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -pedantic -I. -c -fno-exceptions $<
  
- speak: $(OBJS)
--	$(CXX) -o $@ $(OBJS) $(LIBS)
-+	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS) $(LIBS)
+ speak: $(OBJS1)
+-	$(CXX) -o $@ $(OBJS1) $(LIBS1)
++	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS1) $(LIBS1)
+ 
+ 
+ 
+ x_%.o: %.cpp
+-	$(CXX) $(CXXFLAGS) -O2 -Wall -fpic -fvisibility=hidden -pedantic \
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -fpic -pedantic \
+ 	-I. -D LIBRARY -c -fno-exceptions $<  -o x_$*.o
+ 
+ libespeak.so: $(OBJS2)
+-	$(CXX) -shared -Wl,-soname,libespeak.so.1 -o $@ $(OBJS2) $(LIBS2)
++	$(CXX) $(PTHREAD_LIBS) -shared -Wl,-soname,libespeak.so.1 -o $@ $(OBJS2) $(LIBS2)
  
  clean:
  	rm -f *.o *~
