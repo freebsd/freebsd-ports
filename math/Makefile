@@ -133,6 +133,7 @@
     SUBDIR += linux-relview
     SUBDIR += lp_solve
     SUBDIR += ltl
+    SUBDIR += matharray
     SUBDIR += mathomatic
     SUBDIR += matrix
     SUBDIR += maxima
