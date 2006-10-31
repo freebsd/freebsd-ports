@@ -18,7 +18,7 @@ COMMENT=	A modern tactical Enemy Territory modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_ZIP=	yes
 USE_LINUX=	yes
 NO_PACKAGE=	Distfile size is 450MB, set FORCE_PACKAGE if you really want to build this package
