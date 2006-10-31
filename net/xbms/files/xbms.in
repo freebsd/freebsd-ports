@@ -15,9 +15,9 @@
 name="xbms"
 rcvar=${name}_enable
 
-command=%%PREFIX%%/sbin/${name}
+command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}.pid
-required_files=%%PREFIX%%/etc/$[name}.conf
+required_files=%%PREFIX%%/etc/${name}.conf
 
 load_rc_config $name
 
