@@ -9,9 +9,9 @@ PORTNAME=	bbrun
 PORTVERSION=	1.6
 PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	http://www.darkops.net/bbrun/
+MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A Run box for Blackbox
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
