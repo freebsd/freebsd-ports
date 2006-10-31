@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	textpattern
-PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTVERSION=	4.0.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.textpattern.com/dload/
+MASTER_SITES=	http://www.farrokhi.net/distfiles/
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A free, flexible, elegant, easy-to-use content management system
