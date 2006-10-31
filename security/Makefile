@@ -624,6 +624,7 @@
     SUBDIR += secure_delete
     SUBDIR += sfs
     SUBDIR += sguil-sensor
+    SUBDIR += sguil-server
     SUBDIR += sha
     SUBDIR += shishi
     SUBDIR += shttpscanner

@@ -1,0 +1,105 @@
+--- sguild.orig	Tue Mar 28 04:36:05 2006
++++ sguild	Tue Mar 28 04:37:10 2006
+@@ -229,7 +229,7 @@
+   package require tls
+   # Check for certs
+   if {![info exists CERTS_PATH]} {
+-    set CERTS_PATH /etc/sguild/certs
++    set CERTS_PATH /usr/local/etc/sguil-server/certs
+   }
+   if {![file exists $CERTS_PATH] || ![file isdirectory $CERTS_PATH]} {
+     puts "ERROR: $CERTS_PATH does not exist or is not a directory"
+@@ -251,13 +251,13 @@
+ 
+ if { ![info exists CONF_FILE] } {
+   # No conf file specified check the defaults
+-  if { [file exists /etc/sguild/sguild.conf] } {
+-    set CONF_FILE /etc/sguild/sguild.conf
++  if { [file exists /usr/local/etc/sguil-server/sguild.conf] } {
++    set CONF_FILE /usr/local/etc/sguil-server/sguild.conf
+   } elseif { [file exists ./sguild.conf] } {
+     set CONF_FILE ./sguild.conf
+   } else {
+     puts "Couldn't determine where the sguil config file is"
+-    puts "Looked for ./sguild.conf and /etc/sguild/sguild.conf."
++    puts "Looked for ./sguild.conf and /usr/local/etc/sguil-server/sguild.conf."
+     DisplayUsage $argv0
+   }
+ }
+@@ -338,17 +338,17 @@
+ # Check for a valid USERS file
+ if { ![info exists USERS_FILE] } {
+   # No users file was specified. Go with the defaults
+-  if { [file exists /etc/sguild/sguild.users] } {
+-    set USERS_FILE "/etc/sguild/sguild.users"
++  if { [file exists /usr/local/etc/sguil-server/sguild.users] } {
++    set USERS_FILE "/usr/local/etc/sguil-server/sguild.users"
+   } elseif { [file exists ./sguild.users] } {
+     set USERS_FILE "./sguild.users"
+   } else {
+     if { [info exists ADDUSER] && $ADDUSER } {
+-      CreateUsersFile "/etc/sguild/sguild.users"
++      CreateUsersFile "/usr/local/etc/sguil-server/sguild.users"
+     } else {
+       set DEBUG 2
+       LogMessage "ERROR: Could not find a sguild.users file."
+-      LogMessage "       Checked in ./ and /etc/sguild/"
++      LogMessage "       Checked in ./ and /usr/local/etc/sguil-server/"
+       DisplayUsage $argv0
+     }
+   }
+@@ -376,8 +376,8 @@
+ # Load accessfile
+ if { ![info exists ACCESS_FILE] } {
+   # Check the defaults
+-  if { [file exists /etc/sguild/sguild.access] } {
+-    set ACCESS_FILE "/etc/sguild/sguild.access"
++  if { [file exists /usr/local/etc/sguil-server/sguild.access] } {
++    set ACCESS_FILE "/usr/local/etc/sguil-server/sguild.access"
+   } elseif { [file exists ./sguild.access] } {
+     set ACCESS_FILE "./sguild.access"
+   } else {
+@@ -391,8 +391,8 @@
+ }
+ # Load auto cat config
+ if { ![info exists AUTOCAT_FILE] } {
+-   if { [file exists /etc/sguild/autocat.conf] } {
+-     set AUTOCAT_FILE "/etc/sguild/autocat.conf"
++   if { [file exists /usr/local/etc/sguil-server/autocat.conf] } {
++     set AUTOCAT_FILE "/usr/local/etc/sguil-server/autocat.conf"
+    } else {
+      set AUTOCAT_FILE "./autocat.conf"
+    }
+@@ -402,8 +402,8 @@
+ }
+ # Load email config file
+ if { ![info exists EMAIL_FILE] } {
+-  if { [file exists /etc/sguild/sguild.email] } {
+-    set EMAIL_FILE "/etc/sguild/sguild.email"
++  if { [file exists /usr/local/etc/sguil-server/sguild.email] } {
++    set EMAIL_FILE "/usr/local/etc/sguil-server/sguild.email"
+   } else {
+     set EMAIL_FILE "./sguild.email"
+   }
+@@ -415,8 +415,8 @@
+ }
+ # Load global queries.
+ if { ![info exists GLOBAL_QRY_FILE] } {
+-  if { [file exists /etc/sguild/sguild.queries] } {
+-    set GLOBAL_QRY_FILE "/etc/sguild/sguild.queries"
++  if { [file exists /usr/local/etc/sguil-server/sguild.queries] } {
++    set GLOBAL_QRY_FILE "/usr/local/etc/sguil-server/sguild.queries"
+   } else {
+     set GLOBAL_QRY_FILE "./sguild.queries"
+   }
+@@ -428,8 +428,8 @@
+ }
+ # Load report queries.
+ if { ![info exists REPORT_QRY_FILE] } {
+-  if { [file exists /etc/sguild/sguild.reports] } {
+-    set REPORT_QRY_FILE "/etc/sguild/sguild.reports"
++  if { [file exists /usr/local/etc/sguil-server/sguild.reports] } {
++    set REPORT_QRY_FILE "/usr/local/etc/sguil-server/sguild.reports"
+   } else {
+     set REPORT_QRY_FILE "./sguild.reports"
+   }

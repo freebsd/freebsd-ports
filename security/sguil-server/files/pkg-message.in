@@ -1,0 +1,30 @@
+         ***********************************
+         * !!!!!!!!!!! WARNING !!!!!!!!!!! *
+         ***********************************
+
+If you had existing config files in %%PREFIX%%/etc/%%SGUILDIR%%
+they were not overwritten.  If this is a first time install, you
+must copy the sample files to the corresponding conf file and 
+edit the various config files for your site.  See the INSTALL
+doc in %%DOCSDIR%% for details.
+
+The sql scripts for creating database tables were placed in
+the %%PREFIX%%/share/%%SGUILDIR%%/ directory.  PLEASE 
+NOTE: LOG_DIR is not set by this install.  You MUST create the 
+correct LOG_DIRS and put a copy of the snort rules you use in 
+LOG_DIR/rules.
+
+The sguild, archive_sguildb.tcl and incident_report.tcl scripts
+were placed in %%PREFIX%%/bin/.  The incident_report.tcl
+script is from the contrib section.  There is no documentation
+and the script's variables must be edited before it is used.
+
+A startup script, named sguild.sh was installed in
+%%PREFIX%%/etc/rc.d/.  To enable it, edit /etc/rc.conf
+per the instructions in the script.
+
+For general questions, see the sguil faq: 
+http://sguil.sourceforge.net/index.php?page=faq
+For detailed install instructions see Richard Bejtlich's
+excellent guide at his blog: 
+http://taosecurity.blogspot.com/2006/03/new-sguil-scripts-and-vm-i-have-not.html
