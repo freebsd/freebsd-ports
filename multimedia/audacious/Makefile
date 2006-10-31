@@ -131,12 +131,12 @@ post-install:
 .if defined(WITH_GNOME)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You have installed audacious with gconf support."
-	@${ECHO_MSG} "ALL PRESETS will be storing in the gconf database."
+	@${ECHO_MSG} "ALL PRESETS will be stored in the gconf database."
 	@${ECHO_MSG} ""
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README AUTHORS ChangeLog NEWS
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
