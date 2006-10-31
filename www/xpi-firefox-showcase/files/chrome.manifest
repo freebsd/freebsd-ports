@@ -37,3 +37,7 @@ locale	showcase	sk-SK	jar:chrome/showcase.jar!/locale/sk-SK/showcase/
 locale	showcase	zh-CN	jar:chrome/showcase.jar!/locale/zh-CN/showcase/
 
 locale	showcase	hu-HU	jar:chrome/showcase.jar!/locale/hu-HU/showcase/
+
+locale	showcase	uk-UA	jar:chrome/showcase.jar!/locale/uk-UA/showcase/
+
+locale	showcase	zh-TW	jar:chrome/showcase.jar!/locale/zh-TW/showcase/
