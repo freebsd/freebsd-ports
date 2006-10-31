@@ -1,0 +1,7 @@
+Jishyo is an English -> Japanese dictionary. Currently it only supports
+English queries. In the future I hope to add support for kana and kanji
+queries, as well as multi-radical lookups for kanji. Jishyo is based in
+large part on code from Jim Breen's xjdic. It also uses the dictionary
+data from the same software.
+
+WWW: http://www.eskimo.com/~pburns/Dictionaries/
