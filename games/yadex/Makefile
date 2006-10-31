@@ -15,12 +15,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD= yes
 MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"
