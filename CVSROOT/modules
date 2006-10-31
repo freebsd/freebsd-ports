@@ -13470,6 +13470,7 @@ slrnface	ports/news/slrnface
 sls		ports/misc/sls
 slsc		ports/math/slsc
 slst		ports/sysutils/slst
+slump		ports/games/slump
 slune		ports/games/slune
 slurm		ports/net/slurm
 slurp		ports/news/slurp
