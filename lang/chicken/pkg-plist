@@ -1,3 +1,4 @@
+@exec mkdir -p %D/lib/chicken
 bin/chicken
 bin/chicken-profile
 bin/chicken-setup
@@ -18,13 +19,25 @@ lib/libuchicken.so
 lib/libuchicken.so.0
 %%DATADIR%%/banner.scm
 %%DATADIR%%/chicken-ffi-macros.scm
-%%DATADIR%%/chicken-match-macros.scm
 %%DATADIR%%/chicken-more-macros.scm
+%%DATADIR%%/eval.exports
+%%DATADIR%%/extras.exports
+%%DATADIR%%/library.exports
+%%DATADIR%%/lolevel.exports
+%%DATADIR%%/posix.exports
+%%DATADIR%%/regex.exports
+%%DATADIR%%/scheduler.exports
+%%DATADIR%%/srfi-1.exports
+%%DATADIR%%/srfi-13.exports
+%%DATADIR%%/srfi-14.exports
+%%DATADIR%%/srfi-18.exports
+%%DATADIR%%/srfi-4.exports
+%%DATADIR%%/tcp.exports
+%%DATADIR%%/utils.exports
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/boyer.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/browse.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/conform.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/cpstak.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/cscbench
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/ctak.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/dderiv.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/deriv.scm
@@ -42,17 +55,25 @@ lib/libuchicken.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/lattice.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/maze.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/nqueens.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/plists
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/except.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/except2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/exception.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/results.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others/setlongjmp.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/plists.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/puzzle.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/scheme.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/stack-size.cmake
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/tak.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/takl.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/takr.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/traverse.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/travinit.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/triangl.scm
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/benchmarks
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/options
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
-@exec mkdir -p %D/lib/chicken
 @dirrm lib/chicken

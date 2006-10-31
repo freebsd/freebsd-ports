@@ -1,4 +1,4 @@
-CHICKEN is a compiler for the Scheme programming language.  CHICKEN
+CHICKEN is a compiler for the Scheme programming language. CHICKEN
 produces portable, efficient C, supports almost all of the current
 Scheme language standard (R5RS), and includes many enhancements and
 extensions.
