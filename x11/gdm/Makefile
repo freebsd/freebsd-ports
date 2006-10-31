@@ -8,6 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.16.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -26,6 +27,7 @@ USE_XLIB=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
+USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
 		gnomeprefix
@@ -42,7 +44,8 @@ GNOME_LOCALSTATEDIR=	/var
 
 MAN1=		gdm.1
 
-OPTIONS=	IPV6 "Enable IPv6 support" on
+OPTIONS=	IPV6 "Enable IPv6 support" on \
+		LOG_LIMIT "Limit ~/.xsession-errors size" on
 
 .include <bsd.port.pre.mk>
 
@@ -62,6 +65,10 @@ PLIST_SUB+=	PAM_MISC="@comment "
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITHOUT_LOG_LIMIT)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-daemon_slave.c
 .endif
 
 post-patch:
