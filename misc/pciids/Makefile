@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/misc/pciids/Makefile,v 1.5 2006/09/29 20:57:46 ahze Exp $
+#    $MCom: ports/misc/pciids/Makefile,v 1.8 2006/10/26 16:14:10 ahze Exp $
 
 PORTNAME=	pciids
-PORTVERSION=	20060929
+PORTVERSION=	20061026
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ahze.net/~ahze/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -26,6 +26,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pci.db ${DATADIR}
 
+.include <bsd.port.pre.mk>
+
 # Below only contains code to create a tar file for this beast
 CT_DATE!=	date "+%Y%m%d"
 CT_WRKSRC=	${WRKDIR}/tmp
@@ -34,11 +36,15 @@ CT_TEMPDIR=	${CT_WRKSRC}/${CT_DESTDIR}
 CT_MASTER_SITE=	http://pciids.sourceforge.net/v2.2/
 CT_DISTFILES=	pci.ids pci.db
 
-maketar:
+maketar: extract
 	${MKDIR} ${CT_TEMPDIR}
 .for file in ${CT_DISTFILES}
 	(cd ${CT_TEMPDIR} && ${FETCH_CMD} ${CT_MASTER_SITE}/${file})
 .endfor
+	${DIFF} -u ${WRKSRC}/pci.ids ${CT_TEMPDIR}/pci.ids || ${TRUE}
 	(cd ${CT_WRKSRC} && ${TAR} -jcf ${PORTNAME}-${CT_DATE}.tar.bz2 ${CT_DESTDIR})
+	${SED} -i.bak -e 's|${PORTVERSION}|${CT_DATE}|' ${.CURDIR}/Makefile
+	@(cd ${.CURDIR} && ${CP} -f ${CT_WRKSRC}/${PORTNAME}-${CT_DATE}.tar.bz2 ${DISTDIR} && \
+		${MAKE} makesum)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
