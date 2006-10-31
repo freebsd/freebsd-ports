@@ -1,0 +1,9 @@
+Slump is a random map generator for FreeDoom that is based on David M. Chess'
+SLIGE map generator.
+
+Basically Slump is a fork of SLIGE that is optimized for making FreeDoom maps.
+In particular, Slump only places monsters that the FreeDoom artists have drawn
+in to maps; this way one can play FreeDoom without feeling that the game is
+incomplete.
+
+WWW:	http://www.samiam.org/slump.html
