@@ -1,11 +1,17 @@
 bin/crc32
 %%SITE_PERL%%/Archive/Zip.pm
-%%SITE_PERL%%/Archive/Zip.pod
-%%SITE_PERL%%/Archive/Zip/FAQ.pod
+%%SITE_PERL%%/Archive/Zip/Archive.pm
+%%SITE_PERL%%/Archive/Zip/DirectoryMember.pm
 %%SITE_PERL%%/Archive/Zip/BufferedFileHandle.pm
+%%SITE_PERL%%/Archive/Zip/FAQ.pod
+%%SITE_PERL%%/Archive/Zip/FileMember.pm
+%%SITE_PERL%%/Archive/Zip/Member.pm
 %%SITE_PERL%%/Archive/Zip/MemberRead.pm
 %%SITE_PERL%%/Archive/Zip/MockFileHandle.pm
+%%SITE_PERL%%/Archive/Zip/NewFileMember.pm
+%%SITE_PERL%%/Archive/Zip/StringMember.pm
 %%SITE_PERL%%/Archive/Zip/Tree.pm
+%%SITE_PERL%%/Archive/Zip/ZipFileMember.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Zip/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Zip
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
