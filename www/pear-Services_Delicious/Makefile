@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Delicious
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	www pear
 
 MAINTAINER=	chinsan@FreeBSD.org
