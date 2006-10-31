@@ -640,6 +640,7 @@
     SUBDIR += sjeng
     SUBDIR += sl
     SUBDIR += slashem-tty
+    SUBDIR += slige
     SUBDIR += slune
     SUBDIR += smiley
     SUBDIR += sokoban
