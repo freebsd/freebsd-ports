@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p3scan
-PORTVERSION=	2.1
+PORTVERSION=	2.3.2
 CATEGORIES=	mail net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	UVSCAN "Use UVSCAN" on
+OPTIONS=	UVSCAN "Use UVSCAN" off
 
 PORTDOCS=	AUTHORS CHANGELOG LICENSE NEWS README
 
@@ -37,9 +37,16 @@ RUN_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
 .endif
 
 do-install:
+.if !exists(${PREFIX}/etc/p3scan)
+	${MKDIR} ${PREFIX}/etc/p3scan
+.endif
+.if !exists(/var/spool/p3scan)
+	${MKDIR} /var/spool/p3scan
+.endif
+	${CHOWN} mailnull:mail /var/spool/p3scan
 	${INSTALL_PROGRAM} ${WRKSRC}/p3scan ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/p3scan.conf ${PREFIX}/etc/p3scan.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/p3scan-en.mail ${PREFIX}/etc/p3scan.mail.sample
+	${INSTALL_DATA} ${WRKSRC}/p3scan.conf ${PREFIX}/etc/p3scan/p3scan.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/p3scan-en.mail ${PREFIX}/etc/p3scan/p3scan.mail.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/p3scan.sh ${PREFIX}/etc/rc.d/
 .for f in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/${f}.gz ${MAN8PREFIX}/man/man8/

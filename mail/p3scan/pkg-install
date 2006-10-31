@@ -107,8 +107,8 @@ EOF
 	exit 1
     fi
 
-    user=p3scan
-    group=p3scan
+    user=mailnull
+    group=mail
     spooldir=/var/spool/p3scan
     childrendir=/var/spool/p3scan/children
     notifydir=/var/spool/p3scannotify
