@@ -132,6 +132,7 @@
     SUBDIR += planner
     SUBDIR += planner.el
     SUBDIR += plans
+    SUBDIR += preferencepanes
     SUBDIR += preferences.app
     SUBDIR += py-dosage
     SUBDIR += pybookreader

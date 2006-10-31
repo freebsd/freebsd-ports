@@ -1,0 +1,3 @@
+NSPreferencePane is an abstract class that defines the interface for
+subclassers to provide preference panes to System Preferences or other
+applications.
