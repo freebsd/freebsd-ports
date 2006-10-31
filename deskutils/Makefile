@@ -47,7 +47,6 @@
     SUBDIR += gdeskcal-skins
     SUBDIR += gdesklets
     SUBDIR += gdesklets-recentlyused
-    SUBDIR += gdesklets-sensor-displayconstraints
     SUBDIR += gdesklets-starterbar
     SUBDIR += gemcal
     SUBDIR += genius
