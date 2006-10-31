@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	thomas@goodking.ca
