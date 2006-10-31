@@ -2021,6 +2021,7 @@ dummyflash	ports/www/dummyflash
 dump9660	ports/sysutils/dump9660
 dumpasn1	ports/converters/dumpasn1
 dumpmpeg	ports/multimedia/dumpmpeg
+duncan		ports/textproc/duncan
 dungeon		ports/games/dungeon
 dungeoncrawl	ports/games/dungeoncrawl
 dupfind		ports/sysutils/dupfind
