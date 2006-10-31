@@ -10942,6 +10942,7 @@ pecl-json	ports/devel/pecl-json
 pecl-lzf	ports/archivers/pecl-lzf
 pecl-mailparse	ports/mail/pecl-mailparse
 pecl-memcache	ports/databases/pecl-memcache
+pecl-mnogosearch	ports/www/pecl-mnogosearch
 pecl-operator	ports/devel/pecl-operator
 pecl-panda	ports/print/pecl-panda
 pecl-paradox	ports/databases/pecl-paradox
