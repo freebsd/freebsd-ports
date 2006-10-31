@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.9.6
+PORTVERSION=	0.10
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -26,7 +26,7 @@ CONFLICTS=	ja-trac-*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		trac-admin.1 tracd.1 tracdb2env.1
+MAN1=		trac-admin.1 tracd.1
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
