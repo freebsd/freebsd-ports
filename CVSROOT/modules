@@ -3794,6 +3794,7 @@ gsmc		ports/science/gsmc
 gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
 gsoap		ports/devel/gsoap
+gspdf		ports/print/gspdf
 gspeakers	ports/audio/gspeakers
 gspiceui	ports/cad/gspiceui
 gspoof		ports/net/gspoof
