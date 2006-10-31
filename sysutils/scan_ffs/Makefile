@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	scan_ffs
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
 MAINTAINER=	mranner@inode.at
 COMMENT=	Scan_ffs recovers lost disklabel
+
+USE_BZIP2=	yes
 
 MAN8=		scan_ffs.8
 PLIST_FILES=	sbin/scan_ffs
