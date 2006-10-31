@@ -6293,6 +6293,7 @@ libticables2	ports/comms/libticables2
 libticalcs	ports/devel/libticalcs
 libticonv	ports/converters/libticonv
 libtifiles	ports/devel/libtifiles
+libtifiles2	ports/devel/libtifiles2
 libtnl		ports/net/libtnl
 libtomcrypt	ports/security/libtomcrypt
 libtommath	ports/math/libtommath
