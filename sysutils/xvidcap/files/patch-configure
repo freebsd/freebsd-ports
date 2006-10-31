@@ -1,34 +1,29 @@
---- configure.orig	Sat Jan  1 23:53:48 2005
-+++ configure	Sun Jan  2 22:05:19 2005
-@@ -5297,7 +5297,7 @@
+--- configure.orig	Mon Oct 30 09:11:11 2006
++++ configure	Tue Oct 31 19:26:30 2006
+@@ -9078,7 +9078,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lXmu  $LIBS"
++LIBS="-L$x_libraries -lXmu  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9140,7 +9140,7 @@
+ #define HAVE_LIBXMU 1
+ _ACEOF
+ 
+-  LIBS="-lXmu $LIBS"
++  LIBS="-L$x_libraries -lXmu $LIBS"
+ 
+ else
+   unset ac_cv_lib_Xmu_XmuClientWindow; echo "Couldn't find libXmu in LD_LIBRARY_PATH, checking X11 paths"; echo "$as_me:$LINENO: checking for XmuClientWindow in -lXmu" >&5
+@@ -9513,7 +9513,7 @@
  # if cache empty (not tested or failed) and want static avcodec (then it failed) ...
- if ( `test \( \( x${ac_cv_lib_avcodec_img_convert+set} = x \) -a \( x$static_avcodec = xyes \) \)` ) ; then
+ if ( `test \( \( x${ac_cv_lib_avutil_av_rescale+set} = x \) -a \( x$static_avutil = xyes \) \)` ) ; then
  	# build embedded ffmpeg
--	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ${MAKE-make} )
-+	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=$CC --extra-libs=-lm --disable-opts --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ${MAKE-gmake} )
+-	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=${CC} --enable-gpl ${ac_my_ffmpeg_cfg_lame_switch} --enable-pthreads --enable-swscaler --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ln -s libavutil/common.h ./ && ln -s libavutil/avutil.h ./ && ln -s libavutil/mathematics.h ./ && ln -s libavutil/int*.h ./ && ln -s libavutil/rational.h ./ && ln -s libswscale/swscale.h ./ && ln -s libswscale/rgb2rgb.h . && ${MAKE-make} )
++	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=${CC} --extra-libs=-lm --disable-opts --enable-gpl ${ac_my_ffmpeg_cfg_lame_switch} --enable-pthreads --enable-swscaler --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ln -s libavutil/common.h ./ && ln -s libavutil/avutil.h ./ && ln -s libavutil/mathematics.h ./ && ln -s libavutil/int*.h ./ && ln -s libavutil/rational.h ./ && ln -s libswscale/swscale.h ./ && ln -s libswscale/rgb2rgb.h . && ${MAKE-make} )
+ 	#echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=${CC} ${ac_my_ffmpeg_cfg_lame_switch} --enable-pthreads --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ln -s libavutil/common.h ./ && ln -s libavutil/avutil.h ./ && ln -s libavutil/mathematics.h ./ && ln -s libavutil/int*.h ./ && ln -s libavutil/rational.h ./ && ${MAKE-make} )
  	# try to link it statically, or reset cache, set static_avcodec=no
  	top_srcdir=`pwd`
- 	ac_my_ldflags_save=${LDFLAGS} ; LDFLAGS="${LDFLAGS} -L$top_srcdir/ffmpeg/libavcodec -L$top_srcdir/ffmpeg/libavformat"
-@@ -5658,9 +5658,6 @@
- 
- echo "$as_me:$LINENO: checking for audio_init in -lavformat" >&5
- echo $ECHO_N "checking for audio_init in -lavformat... $ECHO_C" >&6
--if test "${ac_cv_lib_avformat_audio_init+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
--else
- 
- echo -n "(static?) ... "
- ac_check_lib_save_LIBS=$LIBS
-@@ -5722,11 +5719,8 @@
- fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_avformat_audio_init" >&5
- echo "${ECHO_T}$ac_cv_lib_avformat_audio_init" >&6
--else
--  ac_cv_lib_avformat_audio_init=no
--fi
- 
--if test $ac_cv_lib_avformat_audio_init = yes; then
-+if test x$ac_cv_lib_avformat_audio_init = xyes; then
-   ac_my_have_ffmpeg_audio="1"
- else
-   unset ac_cv_lib_avformat_audio_init ; echo "$as_me:$LINENO: checking for audio_init in -lavformat" >&5

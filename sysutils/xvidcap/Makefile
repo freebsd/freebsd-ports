@@ -6,52 +6,53 @@
 #
 
 PORTNAME=		xvidcap
-PORTVERSION=		1.1.3.7
-PORTREVISION=		3
+PORTVERSION=		1.1.4
 CATEGORIES=		sysutils multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}-${PORTVERSION:C/.7/-p7/}
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Capture your X display to individual frames or MPEG video
 
-#LIB_DEPENDS=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg	# To be reactivated after 1.1.4
-#LIB_DEPENDS=		mp3lame.0:${PORTSDIR}/audio/lame
+BUILD_DEPENDS=		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper	\
+			xml2po:${PORTSDIR}/textproc/gnome-doc-utils	\
+			texi2html:${PORTSDIR}/textproc/texi2html
+# To be reactivated when ffmpeg-devel will install libswscale.
+#LIB_DEPENDS=		avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
+LIB_DEPENDS=		mp3lame.0:${PORTSDIR}/audio/lame
 RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-#CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-#			LDFLAGS=-L${LOCALBASE}/lib
+# Remove MAKE="${GMAKE}" after ffmpeg-devel's upgrade
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
+			LDFLAGS="-L${LOCALBASE}/lib"	\
+			MAKE="${GMAKE}"
 CONFIGURE_ARGS=		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib	\
-			--with-forced-embedded-ffmpeg	# To be removed after 1.1.4pre2?
+			-with-forced-embedded-ffmpeg	# To be removed after ffmpeg-devel's upgrade
 USE_GETOPT_LONG=	yes
 
-PLIST_FILES=		bin/xvidcap
+USE_GMAKE=		yes	# To be removed after ffmpeg-devel's upgrade
+USE_GNOME=		glib20 libglade2
+USE_GETTEXT=		yes
+INSTALLS_OMF=		yes
 
-PORTDOCS=		AUTHORS ChangeLog INSTALL NEWS README TODO XVidcap.ad
-DOC_HOOK=		$$(MAKE) $$(AM_MAKEFLAGS) install-data-hook
+PORTDOCS=		ChangeLog INSTALL README
+NULLDOCS=		AUTHORS COPYING NEWS
 
 MAN1=			xvidcap.1
 
-.if !defined(WITHOUT_GTK)
-USE_GNOME=		gtk20
-CONFIGURE_ARGS+=	--with-gtk2
-PLIST_SUB+=		GTK=""
-PLIST_FILES+=		bin/gvidcap
-MAN1+=			gvidcap.1
-.else
-PLIST_SUB+=		GTK="@comment "
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libavutil.so)
+# To be removed after ffmep-devel'upgrade
+BROKEN=	Cannot compile when ffmpeg-devel is installed
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|@PTHREAD_LIBS@|${PTHREAD_LIBS}|'	\
-		 -e 's|@PTHREAD_CFLAGS@|${PTHREAD_CFLAGS}|'		\
-			${WRKSRC}/src/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|${DOC_HOOK}|#${DOC_HOOK}|'		\
-			${WRKSRC}/src/Makefile.in
-.endif
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+post-install:
+	@${RM} ${NULLDOCS:S|^|${DOCSDIR}/|}
+
+.include <bsd.port.post.mk>
