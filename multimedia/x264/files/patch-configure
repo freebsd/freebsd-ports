@@ -1,6 +1,6 @@
---- configure.orig	Tue Sep 26 16:45:03 2006
-+++ configure	Wed Sep 27 07:56:11 2006
-@@ -115,8 +115,6 @@
+--- configure.orig	Tue Oct 24 16:45:02 2006
++++ configure	Wed Oct 25 08:21:32 2006
+@@ -113,8 +113,6 @@
      HAVE_GETOPT_LONG=0
      ;;
    *)
@@ -9,7 +9,7 @@
      ;;
  esac
  
-@@ -136,7 +134,7 @@
+@@ -134,7 +132,7 @@
        ASFLAGS="$ASFLAGS -f elf"
      fi
      ;;
@@ -18,7 +18,7 @@
      ARCH="X86_64"
      CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
      AS="yasm"
-@@ -293,7 +291,7 @@
+@@ -283,7 +281,7 @@
      esac
  fi
  
@@ -27,3 +27,13 @@
  if [ $SYS = CYGWIN -o $SYS = MINGW ]; then
      MP4_LDFLAGS="$MP4_LDFLAGS -lwinmm"
  fi
+@@ -363,7 +361,8 @@
+ cp config.mak gtk/config.mak
+ 
+ if [ "$shared" = "yes" ]; then
+-    API=$(grep '#define X264_BUILD' < x264.h | cut -f 3 -d ' ')
++#    API=$(grep '#define X264_BUILD' < x264.h | cut -f 3 -d ' ')
++    API=50
+     echo "SONAME=libx264.so.$API" >> config.mak
+     echo 'default: $(SONAME)' >> config.mak
+     if [ "$gtk" = "yes" ]; then
