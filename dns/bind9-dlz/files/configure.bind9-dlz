@@ -17,7 +17,7 @@ OpenSSL		"OpenSSL support" ON \
 Threads		"Thread support" ON \
 PostgreSQL	"PostgreSQL driver" ON \
 MySQL		"MySQL driver" OFF \
-OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
+OpenLDAP	"OpenLDAP backend" OFF \
 BerkleyDB	"Berkley DB 4.1+ backend" OFF \
 FileSystem	"Filesystem driver" ON \
 Stub		"Stub driver" OFF \
