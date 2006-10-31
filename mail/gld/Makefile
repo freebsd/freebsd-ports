@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gld
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gasmi.net/down/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Greylisting daemon for Postfix
 
 USE_RC_SUBR=	gld
@@ -27,7 +26,7 @@ OPTIONS=	MYSQL   "MySQL support"         on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL) && defined(WITH_PGSQL)
-BROKEN=		"Cannot compile with both MySQL and PgSQL support"
+BROKEN=		Cannot compile with both MySQL and PgSQL support
 .endif
 
 .if defined(WITH_MYSQL)
