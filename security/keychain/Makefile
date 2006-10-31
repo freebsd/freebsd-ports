@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.8
 CATEGORIES=	security
 MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/
 
