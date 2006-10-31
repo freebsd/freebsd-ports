@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnumail
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/
-DISTNAME=	GNUMail-${PORTVERSION}
+DISTNAME=	GNUMail-${PORTVERSION}pre2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep mail client
