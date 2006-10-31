@@ -1587,6 +1587,7 @@
     SUBDIR += pecl-svn
     SUBDIR += pedisassem
     SUBDIR += perforce
+    SUBDIR += performance
     SUBDIR += perltidy
     SUBDIR += pharmacy
     SUBDIR += php-dbg

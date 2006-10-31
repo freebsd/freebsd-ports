@@ -1,0 +1,16 @@
+Local/Library/Documentation/Performance/GSCache.gsdoc
+Local/Library/Documentation/Performance/GSCache.html
+Local/Library/Documentation/Performance/GSThroughput.gsdoc
+Local/Library/Documentation/Performance/GSThroughput.html
+Local/Library/Documentation/Performance/GSTicker.gsdoc
+Local/Library/Documentation/Performance/GSTicker.html
+Local/Library/Documentation/Performance/Performance.igsdoc
+Local/Library/Documentation/Performance/dependencies
+Local/Library/Headers/Performance/GSCache.h
+Local/Library/Headers/Performance/GSThroughput.h
+Local/Library/Headers/Performance/GSTicker.h
+Local/Library/Libraries/libPerformance.so
+Local/Library/Libraries/libPerformance.so.%%MAJORVERSION%%.1
+Local/Library/Libraries/libPerformance.so.%%VERSION%%
+@dirrm Local/Library/Headers/Performance
+@dirrm Local/Library/Documentation/Performance
