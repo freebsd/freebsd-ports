@@ -454,6 +454,7 @@
     SUBDIR += rubygem-activerecord
     SUBDIR += rubygem-memcache-client
     SUBDIR += slony1
+    SUBDIR += sqlclient
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlrelay
