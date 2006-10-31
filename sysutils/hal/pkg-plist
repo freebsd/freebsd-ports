@@ -4,6 +4,9 @@ bin/hal-find-by-property
 bin/hal-get-property
 bin/hal-set-property
 bin/lshal
+@exec mkdir -p %D/etc/hal/fdi/preprobe
+@exec mkdir -p %D/etc/hal/fdi/policy
+@exec mkdir -p %D/etc/hal/fdi/information
 include/hal/libhal-storage.h
 include/hal/libhal.h
 lib/libhal-storage.a
@@ -70,13 +73,16 @@ sbin/hald
 %%DATADIR%%/fdi/information/10freedesktop/10-usb-pda.fdi
 %%DATADIR%%/fdi/information/10freedesktop/10-usb-zip-drives.fdi
 %%DATADIR%%/fdi/information/10freedesktop/10-wireless-mice.fdi
+@exec mkdir -p %D/%%DATADIR%%/fdi/information/20thirdparty
 %%DATADIR%%/fdi/policy/10osvendor/10-keyboard-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-laptop-panel-mgmt-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-power-mgmt-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-toshiba-buttons.fdi
 %%DATADIR%%/fdi/policy/10osvendor/15-storage-luks.fdi
 %%DATADIR%%/fdi/policy/10osvendor/20-storage-methods.fdi
+@exec mkdir -p %D/%%DATADIR%%/fdi/policy/20thirdparty
 %%DATADIR%%/fdi/preprobe/10osvendor/10-ide-drives.fdi
+@exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/20thirdparty
 share/locale/cs/LC_MESSAGES/hal.mo
 share/locale/da/LC_MESSAGES/hal.mo
 share/locale/de/LC_MESSAGES/hal.mo
