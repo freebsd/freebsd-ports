@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AF's backup system
 
+# version 3.4 is out, maybe it is worth saving this port
 IGNORE=		Uses unregistered uid that conflicts with other ports
 DEPRECATED=	${IGNORE}
 EXPIRATION_DATE=2006-10-17
