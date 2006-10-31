@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gomoku.app
+PORTNAME=	gomoku
 PORTVERSION=	1.2.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/

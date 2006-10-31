@@ -1,11 +1,11 @@
-# New ports collection makefile for:    ProjectCenter
+# New ports collection makefile for:    projectcenter
 # Date created:         22 Sep 2000
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	projectcenter.app
+PORTNAME=	projectcenter
 PORTVERSION=	0.4.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}

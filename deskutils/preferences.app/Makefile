@@ -1,11 +1,11 @@
-# New ports collection makefile for:   preferences.app
+# New ports collection makefile for:   preferences
 # Date created:         04 Feb 2003
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	preferences.app
+PORTNAME=	preferences
 PORTVERSION=	1.2.0
 PORTREVISION=	2
 CATEGORIES=	deskutils
