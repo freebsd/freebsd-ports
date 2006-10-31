@@ -1,0 +1,14 @@
+DHCPerf Provides Communication Providers with Predictive Planning
+Tools to Scale Networks.
+
+This tool, DHCPerf, delivers accurate performance metrics
+of Dynamic Host Configuration Protocol (DHCP) services.  These tools
+are easy-to-use and simulate real Internet workloads to provide the
+necessary insight that carriers need to plan and deploy network
+services.
+
+DHCPerf measures the DHCP lease assignments to client computers by
+ramping up lease assignment over time to determine the maximum
+performance profile.
+
+WWW: http://www.nominum.com/testing_tools.php

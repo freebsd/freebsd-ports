@@ -97,6 +97,7 @@
     SUBDIR += dhcp-agent
     SUBDIR += dhcp6
     SUBDIR += dhcpdump
+    SUBDIR += dhcperf
     SUBDIR += dhcping
     SUBDIR += dhcprelay
     SUBDIR += dictd
