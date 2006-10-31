@@ -18,6 +18,8 @@ COMMENT=	SOCKS v5 application layer gateway and clients
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
 
+CONFLICTS=	dante-[0-9]*
+
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
 #
