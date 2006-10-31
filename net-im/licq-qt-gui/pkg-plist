@@ -1,5 +1,6 @@
 lib/licq/licq_%%GUI_NAME%%-gui.la
 lib/licq/licq_%%GUI_NAME%%-gui.so
+share/applications/licq.desktop
 share/licq/qt-gui/dock.console/away.xpm
 share/licq/qt-gui/dock.console/bothmsg.xpm
 share/licq/qt-gui/dock.console/console.dock
@@ -82,34 +83,6 @@ share/licq/qt-gui/emoticons/Default/sunglasses.png
 share/licq/qt-gui/emoticons/Default/tongue.png
 share/licq/qt-gui/emoticons/Default/unhappy.png
 share/licq/qt-gui/emoticons/Default/wink.png
-share/licq/qt-gui/emoticons/Mirabelis3/README
-share/licq/qt-gui/emoticons/Mirabelis3/emoticons.xml
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_annoyed.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_disgusted.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_drooling.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_giggling.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_inlove.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_jokingly.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_shocked.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_surprised1.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_surprised2.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_e_whining.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_angel.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_angry.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_bandaid.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_crying.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_embarrassed.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_glasses.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_happy.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_kiss.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_nofingidea.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_sad.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_sealed.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_surprised.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_teeth.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_tongue.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_unsure.png
-share/licq/qt-gui/emoticons/Mirabelis3/icq_s_wink.png
 share/licq/qt-gui/emoticons/Mirabelis4/README
 share/licq/qt-gui/emoticons/Mirabelis4/emoticons.xml
 share/licq/qt-gui/emoticons/Mirabelis4/icq_s_ack.png
@@ -140,6 +113,36 @@ share/licq/qt-gui/emoticons/Mirabelis4/icq_s_tiredly.png
 share/licq/qt-gui/emoticons/Mirabelis4/icq_s_tongue.png
 share/licq/qt-gui/emoticons/Mirabelis4/icq_s_unsure.png
 share/licq/qt-gui/emoticons/Mirabelis4/icq_s_wink.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/README
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley1.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley10.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley11.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley12.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley13.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley14.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley15.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley16.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley17.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley18.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley19.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley2.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley20.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley21.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley22.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley23.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley24.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley25.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley26.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley27.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley28.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley3.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley4.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley5.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley6.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley7.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley8.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/Smiley9.png
+share/licq/qt-gui/emoticons/Mirabelis5.1/emoticons.xml
 share/licq/qt-gui/emoticons/Mirabelis5/README
 share/licq/qt-gui/emoticons/Mirabelis5/Smiley1.png
 share/licq/qt-gui/emoticons/Mirabelis5/Smiley10.png
@@ -170,7 +173,6 @@ share/licq/qt-gui/emoticons/Mirabelis5/Smiley7.png
 share/licq/qt-gui/emoticons/Mirabelis5/Smiley8.png
 share/licq/qt-gui/emoticons/Mirabelis5/Smiley9.png
 share/licq/qt-gui/emoticons/Mirabelis5/emoticons.xml
-share/licq/qt-gui/emoticons/None/emoticons.xml
 share/licq/qt-gui/emoticons/bugeyes/README
 share/licq/qt-gui/emoticons/bugeyes/bug_angel.png
 share/licq/qt-gui/emoticons/bugeyes/bug_angry.png
@@ -329,6 +331,23 @@ share/licq/qt-gui/extended.icons.basic/pixPhoneFollowMeActive.xpm
 share/licq/qt-gui/extended.icons.basic/pixPhoneFollowMeBusy.xpm
 share/licq/qt-gui/extended.icons.basic/pixSharedFiles.xpm
 share/licq/qt-gui/extended.icons.basic/pixTyping.xpm
+share/licq/qt-gui/extended.icons.kde/README
+share/licq/qt-gui/extended.icons.kde/birthday.png
+share/licq/qt-gui/extended.icons.kde/collapsed.png
+share/licq/qt-gui/extended.icons.kde/customar.png
+share/licq/qt-gui/extended.icons.kde/expanded.png
+share/licq/qt-gui/extended.icons.kde/gpgkey_disabled.png
+share/licq/qt-gui/extended.icons.kde/gpgkey_enabled.png
+share/licq/qt-gui/extended.icons.kde/invisible.png
+share/licq/qt-gui/extended.icons.kde/kde.icons
+share/licq/qt-gui/extended.icons.kde/phone.png
+share/licq/qt-gui/extended.icons.kde/phone2.png
+share/licq/qt-gui/extended.icons.kde/pixICQphoneActive.png
+share/licq/qt-gui/extended.icons.kde/pixICQphoneBusy.png
+share/licq/qt-gui/extended.icons.kde/pixPhoneFollowMeActive.png
+share/licq/qt-gui/extended.icons.kde/pixPhoneFollowMeBusy.png
+share/licq/qt-gui/extended.icons.kde/sharedfiles.png
+share/licq/qt-gui/extended.icons.kde/typing.png
 share/licq/qt-gui/extended.icons.thomas/itemCollapsed.xpm
 share/licq/qt-gui/extended.icons.thomas/itemExpanded.xpm
 share/licq/qt-gui/extended.icons.thomas/pixBirthday.xpm
@@ -417,6 +436,39 @@ share/licq/qt-gui/icons.icq2/offline.xpm
 share/licq/qt-gui/icons.icq2/online.xpm
 share/licq/qt-gui/icons.icq2/sms.xpm
 share/licq/qt-gui/icons.icq2/url.xpm
+share/licq/qt-gui/icons.kde/README
+share/licq/qt-gui/icons.kde/aim_away.png
+share/licq/qt-gui/icons.kde/aim_offline.png
+share/licq/qt-gui/icons.kde/aim_online.png
+share/licq/qt-gui/icons.kde/authorize.png
+share/licq/qt-gui/icons.kde/away.png
+share/licq/qt-gui/icons.kde/chat.png
+share/licq/qt-gui/icons.kde/contact.png
+share/licq/qt-gui/icons.kde/dnd.png
+share/licq/qt-gui/icons.kde/ffc.png
+share/licq/qt-gui/icons.kde/file.png
+share/licq/qt-gui/icons.kde/gpgkey.png
+share/licq/qt-gui/icons.kde/history.png
+share/licq/qt-gui/icons.kde/info.png
+share/licq/qt-gui/icons.kde/invisible.png
+share/licq/qt-gui/icons.kde/kde.icons
+share/licq/qt-gui/icons.kde/message.png
+share/licq/qt-gui/icons.kde/msn_away.png
+share/licq/qt-gui/icons.kde/msn_occupied.png
+share/licq/qt-gui/icons.kde/msn_offline.png
+share/licq/qt-gui/icons.kde/msn_online.png
+share/licq/qt-gui/icons.kde/msn_private.png
+share/licq/qt-gui/icons.kde/na.png
+share/licq/qt-gui/icons.kde/occupied.png
+share/licq/qt-gui/icons.kde/offline.png
+share/licq/qt-gui/icons.kde/online.png
+share/licq/qt-gui/icons.kde/remove.png
+share/licq/qt-gui/icons.kde/reqauthorize.png
+share/licq/qt-gui/icons.kde/search.png
+share/licq/qt-gui/icons.kde/secureoff.png
+share/licq/qt-gui/icons.kde/secureon.png
+share/licq/qt-gui/icons.kde/sms.png
+share/licq/qt-gui/icons.kde/www.png
 share/licq/qt-gui/icons.mark/away.ppm
 share/licq/qt-gui/icons.mark/chat.ppm
 share/licq/qt-gui/icons.mark/dnd.ppm
@@ -463,6 +515,15 @@ share/licq/qt-gui/icons.thomas/secureon.xpm
 share/licq/qt-gui/icons.thomas/sms.xpm
 share/licq/qt-gui/icons.thomas/thomas.icons
 share/licq/qt-gui/icons.thomas/url.xpm
+share/licq/qt-gui/skin.Mirabilis/Mirabilis.skin
+share/licq/qt-gui/skin.Mirabilis/README
+share/licq/qt-gui/skin.Mirabilis/background.png
+share/licq/qt-gui/skin.Mirabilis/background.xcf
+share/licq/qt-gui/skin.Mirabilis/btnDown.png
+share/licq/qt-gui/skin.Mirabilis/btnHighlight.png
+share/licq/qt-gui/skin.Mirabilis/btnUp.png
+share/licq/qt-gui/skin.Mirabilis/lblmsg.png
+share/licq/qt-gui/skin.Mirabilis/status.png
 share/licq/qt-gui/skin.basic-ncb/basic-ncb.skin
 share/licq/qt-gui/skin.basic/basic.skin
 share/licq/qt-gui/skin.bheart/Frame.png
@@ -518,6 +579,7 @@ share/licq/qt-gui/skin.thomas/btnUp.png
 share/licq/qt-gui/skin.thomas/thomas.skin
 share/licq/qt-gui/locale/be.qm
 share/licq/qt-gui/locale/bg_BG.qm
+share/licq/qt-gui/locale/cs.qm
 share/licq/qt-gui/locale/cs_CZ.qm
 share/licq/qt-gui/locale/de.qm
 share/licq/qt-gui/locale/es.qm
@@ -549,23 +611,25 @@ share/licq/qt-gui/locale/uk.qm
 @dirrm share/licq/qt-gui/skin.bheart
 @dirrm share/licq/qt-gui/skin.basic-ncb
 @dirrm share/licq/qt-gui/skin.basic
+@dirrm share/licq/qt-gui/skin.Mirabilis
 @dirrm share/licq/qt-gui/icons.thomas
 @dirrm share/licq/qt-gui/icons.mark
+@dirrm share/licq/qt-gui/icons.kde
 @dirrm share/licq/qt-gui/icons.icq2
 @dirrm share/licq/qt-gui/icons.icq
 @dirrm share/licq/qt-gui/icons.computer
 @dirrm share/licq/qt-gui/icons.ami
 @dirrm share/licq/qt-gui/extended.icons.thomas
+@dirrm share/licq/qt-gui/extended.icons.kde
 @dirrm share/licq/qt-gui/extended.icons.basic
 @dirrm share/licq/qt-gui/emoticons/thomas
 @dirrm share/licq/qt-gui/emoticons/phpBB
 @dirrm share/licq/qt-gui/emoticons/msn
 @dirrm share/licq/qt-gui/emoticons/ccmathteam.com
 @dirrm share/licq/qt-gui/emoticons/bugeyes
+@dirrm share/licq/qt-gui/emoticons/Mirabelis5.1
 @dirrm share/licq/qt-gui/emoticons/Mirabelis5
 @dirrm share/licq/qt-gui/emoticons/Mirabelis4
-@dirrm share/licq/qt-gui/emoticons/Mirabelis3
-@dirrm share/licq/qt-gui/emoticons/None
 @dirrm share/licq/qt-gui/emoticons/Default
 @dirrm share/licq/qt-gui/emoticons
 @dirrm share/licq/qt-gui/dock.pli
@@ -575,3 +639,4 @@ share/licq/qt-gui/locale/uk.qm
 @dirrm share/licq/qt-gui/dock.flower
 @dirrm share/licq/qt-gui/dock.console
 @dirrm share/licq/qt-gui
+@dirrm share/applications

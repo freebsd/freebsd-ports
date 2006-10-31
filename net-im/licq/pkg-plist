@@ -1,10 +1,12 @@
 bin/licq
+bin/viewurl-firefox.sh
 bin/viewurl-lynx.sh
+bin/viewurl-mozilla.sh
 bin/viewurl-ncftp.sh
 bin/viewurl-netscape.sh
-bin/viewurl-mozilla.sh
-bin/viewurl-w3m.sh
 bin/viewurl-opera.sh
+bin/viewurl-seamonkey.sh
+bin/viewurl-w3m.sh
 include/licq/licq_backgroundcodes.h
 include/licq/licq_buffer.h
 include/licq/licq_chat.h

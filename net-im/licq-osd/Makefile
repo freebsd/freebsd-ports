@@ -8,10 +8,9 @@
 
 PORTNAME=	osd
 PORTVERSION=	${OSD_LICQ_VER}
-PORTREVISION=	1
 CATEGORIES=	net-im
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	OnScreenDisplay messages in licq
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
@@ -24,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 LICQ_PORT?=	net-im/licq
 
-LOCALES=	de cs es fr pt pt_BR ro ru sv sk
+LOCALES=	be de cs es fr pt pt_BR ro ru sv sk
 PLIST_FILES=	lib/licq/licq_osd.la \
 		lib/licq/licq_osd.so \
 		${LOCALES:C+^.*$+share/locale/&/LC_MESSAGES/licq_osd_plugin.mo+}
