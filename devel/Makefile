@@ -393,6 +393,7 @@
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hc12mem
+    SUBDIR += highlighterkit
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hptools
