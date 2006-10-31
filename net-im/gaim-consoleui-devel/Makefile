@@ -3,31 +3,28 @@
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/net-im/gaim-devel/Makefile,v 1.3 2006/10/29 18:55:29 marcus Exp $
+#   $MCom: ports-stable/net-im/gaim-consoleui-devel/Makefile,v 1.2 2006/10/29 18:55:28 marcus Exp $
 #
 
 PORTNAME=	gaim
 PKGNAMEPREFIX=
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	-consoleui-devel
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	Gaim multi-protocol messaging client (GTK+ UI)
+COMMENT=	Gaim multi-protocol messaging client (Console UI)
 
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-    		gaim.0:${PORTSDIR}/net-im/libgaim
+LIB_DEPENDS=	gaim.0:${PORTSDIR}/net-im/libgaim
 
 MASTERDIR=	${.CURDIR}/../libgaim
-BUILD_WRKSRC=	${WRKSRC}/gtk
+BUILD_WRKSRC=	${WRKSRC}/console
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 GAIM_SLAVE=	yes
-WITH_GTKUI=	yes
+WITH_CONSOLEUI=	yes
 
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20
-WANT_GNOME=	yes
-CONFIGURE_ARGS=	--disable-consoleui
+CONFIGURE_ARGS=	--disable-gtkui
 
 .include "${MASTERDIR}/Makefile"
