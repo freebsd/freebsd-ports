@@ -1,0 +1,4 @@
+If you are using a Linux JDK and linprocfs is mounted on /compat/linux/proc,
+RadRails may print the error "Fatal: Stack size too small" and fail to run.
+
+If this happens please unmount /compat/linux/proc before running RadRails.

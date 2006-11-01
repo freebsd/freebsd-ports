@@ -69,5 +69,6 @@ post-install:
 	    | ${SED} 's,^\.,${DATADIR:S,^${PREFIX}/,,},' >>${TMPPLIST} \
 	  && ${FIND} -s -d . -type d \
 	    | ${SED} 's,^\.,@dirrm ${DATADIR:S,^${PREFIX}/,,},' >>${TMPPLIST}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
