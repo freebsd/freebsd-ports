@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTEPOCH=	1
+
 PKGNAMESUFFIX=	-headers
 
 COMMENT=	The Visualization Toolkit C++ headers, CMake includes, Doxygen
