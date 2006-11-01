@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.3.15
+PORTVERSION=	0.3.17
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python ipv6
-MASTER_SITES=	http://www.bittornado.com/download/ \
-		http://e.scarywater.net/bt/download/ \
-		http://mediahost.inetsalestech.com/shadow/ \
-		http://www.hypermax.net.au/~gamr/ \
+MASTER_SITES=	http://download.bittornado.com/download/ \
+		http://download2.bittornado.com/download/ \
 		http://ftp.acc.umu.se/mirror/bittornado/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
