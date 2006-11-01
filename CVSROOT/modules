@@ -14203,6 +14203,7 @@ tkcon		ports/devel/tkcon
 tkcvs		ports/devel/tkcvs
 tkdesk		ports/x11-fm/tkdesk
 tkdiff		ports/textproc/tkdiff
+tkdnd		ports/x11-toolkits/tkdnd
 tkfont		ports/x11-fonts/tkfont
 tkgate		ports/cad/tkgate
 tkgeomap	ports/astro/tkgeomap
