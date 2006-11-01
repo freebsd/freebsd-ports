@@ -203,6 +203,8 @@ lib/%%APP_NAME%%/searchplugins/jajah.gif
 lib/%%APP_NAME%%/searchplugins/jajah.src
 lib/%%APP_NAME%%/searchplugins/jeeves.gif
 lib/%%APP_NAME%%/searchplugins/jeeves.src
+lib/%%APP_NAME%%/searchplugins/pixsy.gif
+lib/%%APP_NAME%%/searchplugins/pixsy.src
 lib/%%APP_NAME%%/searchplugins/shadows.gif
 lib/%%APP_NAME%%/searchplugins/shadows.src
 lib/%%APP_NAME%%/searchplugins/technorati.png
@@ -223,23 +225,23 @@ lib/%%APP_NAME%%/xpicleanup
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/components/myspell
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults/profile/chrome
 @dirrm lib/%%APP_NAME%%/defaults/profile
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/components/myspell
-@dirrm lib/%%APP_NAME%%/components
-@dirrm lib/%%APP_NAME%%/plugins
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res/html
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res
 @dirrm lib/%%APP_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}
 @dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/icons
 @dirrm lib/%%APP_NAME%%/greprefs
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
