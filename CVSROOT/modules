@@ -3618,6 +3618,7 @@ gnuserv-emacs20	ports/editors/gnuserv-emacs20
 gnusget		ports/ftp/gnusget
 gnushogi	ports/games/gnushogi
 gnustep		ports/devel/gnustep
+gnustep-app	ports/x11/gnustep-app
 gnustep-art	ports/x11-toolkits/gnustep-art
 gnustep-back	ports/x11-toolkits/gnustep-back
 gnustep-base	ports/lang/gnustep-base
