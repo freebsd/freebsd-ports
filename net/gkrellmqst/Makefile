@@ -14,7 +14,7 @@ MASTER_SITES=	http://tadpol.org/projects/archives/ \
 		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	gkrellm_qst-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Plugin for Gkrellm that displays updated info on several game servers
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
