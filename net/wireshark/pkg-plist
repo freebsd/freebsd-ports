@@ -48,8 +48,6 @@ lib/wireshark/plugins/%%PORTVERSION%%/pcli.la
 lib/wireshark/plugins/%%PORTVERSION%%/pcli.so
 lib/wireshark/plugins/%%PORTVERSION%%/profinet.la
 lib/wireshark/plugins/%%PORTVERSION%%/profinet.so
-lib/wireshark/plugins/%%PORTVERSION%%/rdm.la
-lib/wireshark/plugins/%%PORTVERSION%%/rdm.so
 lib/wireshark/plugins/%%PORTVERSION%%/rlm.la
 lib/wireshark/plugins/%%PORTVERSION%%/rlm.so
 lib/wireshark/plugins/%%PORTVERSION%%/rtnet.la
@@ -71,6 +69,7 @@ lib/libwiretap.la
 lib/libwiretap.so
 lib/libwiretap.so.0
 %%DATADIR%%/AUTHORS-SHORT
+%%DATADIR%%/COPYING
 %%DATADIR%%/capinfos.html
 %%DATADIR%%/cfilters
 %%DATADIR%%/colorfilters
@@ -89,6 +88,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/dtds/pocsettings.dtd
 %%DATADIR%%/dtds/presence.dtd
 %%DATADIR%%/dtds/reginfo.dtd
+%%DATADIR%%/dtds/rlmi.dtd
 %%DATADIR%%/dtds/rss.dtd
 %%DATADIR%%/dtds/smil.dtd
 %%DATADIR%%/dtds/watcherinfo.dtd
