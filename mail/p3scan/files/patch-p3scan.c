@@ -1,5 +1,5 @@
---- p3scan.c.orig	Mon Dec 12 18:00:00 2005
-+++ p3scan.c	Mon May  1 00:45:41 2006
+--- p3scan.c.orig	Tue Dec 13 02:00:00 2005
++++ p3scan.c	Wed Nov  1 11:44:03 2006
 @@ -41,36 +41,37 @@
  TODO: Wanted: white-list support
  TODO: Wanted: no iptables support
@@ -52,6 +52,17 @@
  
  #include "p3scan.h"
  #include "getline_ssl.h"
+@@ -182,8 +183,8 @@
+      do_log(LOG_NOTICE, "ERR: Exiting now...\n");
+      fprintf(stderr, "%s\n", puffer);
+      if (strlen(NONULL(config->emergency))){
+-        snprintf(puffer,4096,"echo '%s' | %s -s 'P3Scan Terminating!' %s", config->emergency, config->mail, config->emergcon);
+-        do_log(LOG_DEBUG,"echo '%s' | %s -s 'P3Scan Terminating!' %s", config->emergency, config->mail, config->emergcon);
++        snprintf(puffer,4096,"echo \"%s\" | %s -s 'P3Scan Terminating' %s", config->emergency, config->mail, config->emergcon);
++        do_log(LOG_DEBUG,"echo \"%s\" | %s -s 'P3Scan Terminating' %s", config->emergency, config->mail, config->emergcon);
+         if (system(puffer)) fprintf(stderr,"ERR: Calling do_log!");
+      }
+      /* Tell main p3scan to abort */
 @@ -1640,8 +1641,9 @@
        }
     } else {
