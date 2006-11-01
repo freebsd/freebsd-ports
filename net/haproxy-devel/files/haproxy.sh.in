@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/net/haproxy-devel/files/Attic/haproxy.sh.in,v 1.1 2006-11-01 14:42:14 clement Exp $
 #
 
 # PROVIDE: haproxy
@@ -30,7 +30,7 @@ pidfile="/var/run/haproxy.pid"
 required_files=%%PREFIX%%/etc/haproxy.conf
 
 [ -z "$haproxy_enable" ]       && haproxy_enable="NO"
-[ -z "$haproxy_flags" ]        && haproxy_flags="-p ${pidfile}"
+[ -z "$haproxy_flags" ]        && haproxy_flags="-p ${pidfile} -f /usr/local/etc/haproxy.conf"
 [ -z "$haproxylimits_enable" ] && haproxylimits_enable="NO"
 [ -z "$haproxylimits_args" ]   && haproxylimits_args="-e -C daemon"
 

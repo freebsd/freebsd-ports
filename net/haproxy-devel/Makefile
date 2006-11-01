@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.2.15
+PORTVERSION=	1.2.16
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.2/src/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	haproxy.sh
 
 STATS_INTERVAL?=	0
 CFLAGS+=	-DSTATTIME=${STATS_INTERVAL}
@@ -49,14 +48,9 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!localtime(!localtime((time_t *)!' ${WRKSRC}/haproxy.c
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/haproxy.sh > ${WRKDIR}/haproxy.sh
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKDIR}/haproxy.sh \
-			${PREFIX}/etc/rc.d/haproxy.sh
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
