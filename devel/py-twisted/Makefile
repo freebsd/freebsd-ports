@@ -9,9 +9,7 @@ PORTNAME=	twisted
 PORTVERSION=	1.3.0
 PORTREVISION=	2
 CATEGORIES=	devel net python
-MASTER_SITES=	http://twisted.sourceforge.net/ \
-		http://twistedmatrix.com/downloads/ \
-		http://twistedmatrix.com/downloads/old/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted_NoDocs-${PORTVERSION}
