@@ -14227,6 +14227,7 @@ tkshape		ports/x11-toolkits/tkshape
 tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
 tktable		ports/x11-toolkits/tktable
+tktray		ports/x11-toolkits/tktray
 tktreectrl	ports/x11-toolkits/tktreectrl
 tktz		ports/x11-clocks/tktz
 tkxanim		ports/multimedia/tkxanim
