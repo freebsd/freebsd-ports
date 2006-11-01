@@ -1,13 +1,16 @@
 %%DATADIR%%/songs/defy/guitar.ogg
 %%DATADIR%%/songs/defy/notes.mid
+%%DATADIR%%/songs/defy/label.png
 %%DATADIR%%/songs/defy/song.ini
 %%DATADIR%%/songs/defy/song.ogg
 %%DATADIR%%/songs/bangbang/guitar.ogg
 %%DATADIR%%/songs/bangbang/notes.mid
+%%DATADIR%%/songs/bangbang/label.png
 %%DATADIR%%/songs/bangbang/song.ini
 %%DATADIR%%/songs/bangbang/song.ogg
 %%DATADIR%%/songs/twibmpg/guitar.ogg
 %%DATADIR%%/songs/twibmpg/notes.mid
+%%DATADIR%%/songs/twibmpg/label.png
 %%DATADIR%%/songs/twibmpg/song.ini
 %%DATADIR%%/songs/twibmpg/song.ogg
 %%DATADIR%%/songs/tutorial/guitar.ogg
@@ -49,6 +52,7 @@
 %%DATADIR%%/jurgen5.ogg
 %%DATADIR%%/key.dae
 %%DATADIR%%/keyboard.svg
+%%DATADIR%%/label.dae
 %%DATADIR%%/left.svg
 %%DATADIR%%/logo.svg
 %%DATADIR%%/menu.ogg

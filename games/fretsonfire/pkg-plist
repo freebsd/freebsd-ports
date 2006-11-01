@@ -10,6 +10,7 @@ lib/fretsonfire/FretsOnFire/Data.py
 lib/fretsonfire/FretsOnFire/Debug.py
 lib/fretsonfire/FretsOnFire/DialogTest.py
 lib/fretsonfire/FretsOnFire/Dialogs.py
+lib/fretsonfire/FretsOnFire/DummyAmanith.py
 lib/fretsonfire/FretsOnFire/Editor.py
 lib/fretsonfire/FretsOnFire/Engine.py
 lib/fretsonfire/FretsOnFire/EngineTest.py
@@ -22,6 +23,7 @@ lib/fretsonfire/FretsOnFire/GameTask.py
 lib/fretsonfire/FretsOnFire/Guitar.py
 lib/fretsonfire/FretsOnFire/GuitarScene.py
 lib/fretsonfire/FretsOnFire/Input.py
+lib/fretsonfire/FretsOnFire/Language.py
 lib/fretsonfire/FretsOnFire/Lobby.py
 lib/fretsonfire/FretsOnFire/Log.py
 lib/fretsonfire/FretsOnFire/MainMenu.py
@@ -60,8 +62,6 @@ lib/fretsonfire/FretsOnFire/VideoTest.py
 lib/fretsonfire/FretsOnFire/View.py
 lib/fretsonfire/FretsOnFire/ViewTest.py
 lib/fretsonfire/FretsOnFire/World.py
-lib/fretsonfire/FretsOnFire/fretsonfire.ini
-lib/fretsonfire/FretsOnFire/fretsonfire.log
 lib/fretsonfire/FretsOnFire/midi/DataTypeConverters.py
 lib/fretsonfire/FretsOnFire/midi/EventDispatcher.py
 lib/fretsonfire/FretsOnFire/midi/MidiFileParser.py
@@ -76,6 +76,7 @@ lib/fretsonfire/FretsOnFire/midi/__init__.py
 lib/fretsonfire/FretsOnFire/midi/constants.py
 lib/fretsonfire/FretsOnFire/rgb2py.py
 lib/fretsonfire/FretsOnFire/setup.py
+lib/fretsonfire/FretsOnFire/svg2png.py
 lib/fretsonfire/data/2x.svg
 lib/fretsonfire/data/3x.svg
 lib/fretsonfire/data/4x.svg
@@ -107,6 +108,7 @@ lib/fretsonfire/data/jurgen4.ogg
 lib/fretsonfire/data/jurgen5.ogg
 lib/fretsonfire/data/key.dae
 lib/fretsonfire/data/keyboard.svg
+lib/fretsonfire/data/label.dae
 lib/fretsonfire/data/left.svg
 lib/fretsonfire/data/logo.svg
 lib/fretsonfire/data/menu.ogg
@@ -275,6 +277,9 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Dialogs.LoadingScreen-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Dialogs.MessageScreen-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Dialogs.SongChooser-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/DummyAmanith.GKernel-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/DummyAmanith.GOpenGLBoard-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/DummyAmanith-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Engine-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Engine.Engine-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/EngineTest-module.html
@@ -304,6 +309,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Input.KeyListener-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Input.MouseListener-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Input.SystemEventListener-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/Language-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Lobby-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Lobby.Lobby-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Log-module.html
@@ -470,6 +476,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/pickle.Pickler-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/pickle.Unpickler-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/rgb2py-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/svg2png-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/threading.Thread-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/threading._Verbose-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Audio-module.html
@@ -482,6 +489,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Debug-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-DialogTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Dialogs-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/toc-DummyAmanith-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Engine-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-EngineTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Font-module.html
@@ -493,6 +501,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Guitar-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-GuitarScene-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Input-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Language-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Lobby-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Log-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-MainMenu-module.html
@@ -533,6 +542,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-World-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-rgb2py-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/toc-svg2png-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/trees.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/unittest.TestCase-class.html
@@ -685,6 +695,9 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Dialogs.LoadingScreen-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Dialogs.MessageScreen-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Dialogs.SongChooser-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/DummyAmanith.GKernel-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/DummyAmanith.GOpenGLBoard-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/DummyAmanith-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Engine-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Engine.Engine-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/EngineTest-module.html
@@ -714,6 +727,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Input.KeyListener-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Input.MouseListener-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Input.SystemEventListener-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/Language-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Lobby-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Lobby.Lobby-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Log-module.html
@@ -880,6 +894,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/pickle.Pickler-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/pickle.Unpickler-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/rgb2py-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/svg2png-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/threading.Thread-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Audio-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-AudioTest-module.html
@@ -891,6 +906,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Debug-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-DialogTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Dialogs-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/toc-DummyAmanith-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Engine-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-EngineTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Font-module.html
@@ -902,6 +918,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Guitar-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-GuitarScene-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Input-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Language-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Lobby-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Log-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-MainMenu-module.html
@@ -942,6 +959,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-World-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-rgb2py-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/toc-svg2png-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/trees.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/unittest.TestCase-class.html
