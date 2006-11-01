@@ -11359,6 +11359,7 @@ pkg-config	ports/devel/pkg-config
 pkg-orphan	ports/sysutils/pkg-orphan
 pkg_cutleaves	ports/sysutils/pkg_cutleaves
 pkg_remove	ports/sysutils/pkg_remove
+pkg_replace	ports/sysutils/pkg_replace
 pkg_rmleaves	ports/sysutils/pkg_rmleaves
 pkg_trackinst	ports/sysutils/pkg_trackinst
 pkg_tree	ports/sysutils/pkg_tree
