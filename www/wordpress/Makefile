@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/
+MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/ \
+		ftp://ftp.twaren.net/local-distfiles/wordpress/
 MASTER_SITE_SUBDIR=	cafelog
 
 MAINTAINER=	ychsiao@ychsiao.org
