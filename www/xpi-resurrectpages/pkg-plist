@@ -5,6 +5,8 @@
 %%XPI_XPIDIR%%/content/resurrect.js
 %%XPI_XPIDIR%%/defaults/preferences/resurrect.js
 %%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/locale/de-DE/overlay.dtd
+%%XPI_XPIDIR%%/locale/de-DE/overlay.properties
 %%XPI_XPIDIR%%/locale/en-US/overlay.dtd
 %%XPI_XPIDIR%%/locale/en-US/overlay.properties
 %%XPI_XPIDIR%%/locale/es-AR/overlay.dtd
@@ -23,6 +25,8 @@
 %%XPI_XPIDIR%%/locale/pt-BR/overlay.properties
 %%XPI_XPIDIR%%/locale/ru-RU/overlay.dtd
 %%XPI_XPIDIR%%/locale/ru-RU/overlay.properties
+%%XPI_XPIDIR%%/locale/zh-TW/overlay.dtd
+%%XPI_XPIDIR%%/locale/zh-TW/overlay.properties
 %%XPI_XPIDIR%%/skin/em-icon.png
 %%XPI_XPIDIR%%/skin/netError.css
 %%XPI_XPIDIR%%/skin/resurrect-overlay.css
@@ -31,6 +35,7 @@
 @dirrm %%XPI_XPIDIR%%/content
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/locale/de-DE
 @dirrm %%XPI_XPIDIR%%/locale/en-US
 @dirrm %%XPI_XPIDIR%%/locale/es-AR
 @dirrm %%XPI_XPIDIR%%/locale/es-CL
@@ -40,5 +45,6 @@
 @dirrm %%XPI_XPIDIR%%/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/locale
 @dirrm %%XPI_XPIDIR%%/skin
