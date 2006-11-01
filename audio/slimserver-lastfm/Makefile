@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lastfm
-PORTVERSION=	1.1.6
+PORTVERSION=	1.13.1
 CATEGORIES=	audio
 MASTER_SITES=	http://petherton.pwp.blueyonder.co.uk/SlimServer/
 MASTER_SITE_SUBDIR=	${PORTNAME}
