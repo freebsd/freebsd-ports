@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	urllink
-PORTVERSION=	1.07.0
+PORTVERSION=	2.00.1
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
@@ -15,8 +15,8 @@ COMMENT=	Select a non-URL and open it in a browser window
 
 XPI_DISTNAME=	url_link
 XPI_ID=		{139a120b-c2ea-41d2-bf70-542d9f063dfd}
-XPI_FILES=	chrome/urllink.jar chrome.manifest install.rdf
-XPI_DIRS=	chrome release/chrome release
+XPI_FILES=	chrome/urllink.jar chrome.manifest defaults/preferences/urllink.js install.rdf 
+XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
