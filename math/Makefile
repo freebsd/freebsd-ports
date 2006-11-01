@@ -135,6 +135,7 @@
     SUBDIR += ltl
     SUBDIR += matharray
     SUBDIR += mathomatic
+    SUBDIR += matrices
     SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += mbasecalc

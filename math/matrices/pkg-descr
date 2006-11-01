@@ -1,0 +1,10 @@
+This is a program which can calculate with several martices.
+It can multiplicate (by matrix or number), add, substract, invert,
+transpose and get the determinant of matrices. And these calculations
+can be done on matrices of any order.
+
+It has two interfaces: GTK GUI and console-interface.
+
+Morten Slot Kristensen <ontherenth@gmail.com>
+
+WWW: http://mplus.dk/matrices/
