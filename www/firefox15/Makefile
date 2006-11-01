@@ -3,38 +3,33 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/www/firefox/Makefile,v 1.21 2006/10/25 01:20:12 ahze Exp $
+#   $MCom: ports-stable/www/firefox15/Makefile,v 1.21 2006/10/24 17:48:39 ahze Exp $
 
 PORTNAME=	firefox
-DISTVERSION=	2.0
+DISTVERSION=	1.5.0.7
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
-
-LATEST_LINK=	firefox2
-#MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
-MOZILLA_NAME=	Firefox
-#MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
-#MOZILLA_SUFX=	-devel
+LATEST_LINK=	firefox15
+MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
+MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
+MOZILLA_SUFX=	15
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/'
-
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
-LIBS=		-Wl,-Bsymbolic -lc
+
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
 
@@ -43,8 +38,7 @@ FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-system-cairo	\
 		--enable-official-branding \
-		--enable-canvas	\
-		--with-system-nss
+		--enable-canvas
 
 SYSTEM_PREFS=		${FAKEDIR}/lib/${MOZILLA}/defaults/pref/firefox.js
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
@@ -54,8 +48,12 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	does not build
+.if ${ARCH}=="alpha" && ${OSVERSION} < 500035
+IGNORE=	core dumps on ${ARCH}
+.endif
+
+.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
+IGNORE=	core dumps on ${ARCH}, kern.osreldate>=601101 needed
 .endif
 
 .if ${OSVERSION} >= 600000
@@ -67,13 +65,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
 
 post-extract::
-	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
-		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
+	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/security/manager/ssl/src/Makefile.in
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
 	embedding/minimo
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
