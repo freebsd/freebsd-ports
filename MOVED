@@ -2512,3 +2512,5 @@ x11-themes/e17-theme-mclaren||2006-11-01|Has expired: doesn't work with recent e
 x11-themes/e17-theme-grey||2006-11-01|Has expired: doesn't work with recent e17
 devel/ac-archive|devel/autoconf-archive|2006-11-01|Replace broken ac-archive with working autoconf-archive
 www/firefox-devel|www/firefox|2006-11-01|Firefox 2.0 is now stable
+graphics/php4-imlib2|graphics/pecl-imlib2|2006-11-01|Follow PECL ports naming conversion
+graphics/php5-imlib2|graphics/pecl-imlib2|2006-11-01|Follow PECL ports naming conversion
