@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/CurveFit/.packlist
+%%SITE_PERL%%/Algorithm/CurveFit.pm
+@dirrmtry %%SITE_PERL%%/Algorithm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/CurveFit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
