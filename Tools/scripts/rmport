@@ -100,6 +100,13 @@ mkcodir()
 {
 	log "creating temporary directory"
 	d=`mktemp -d -t rmport`
+	mkdir ${d}/CVS
+	cat > ${d}/CVS/Repository <<REPOSITORY
+We need ./CVS directory in order to create a custom commit message template
+(and put it in ./CVS/Template). Anyway cvs insists on CVS/Repository existence
+although it (hopefully) does not care about its contents.
+REPOSITORY
+	touch ${d}/CVS/Template
 	log "created ${d}"
 	echo "${d}"
 }
@@ -145,7 +152,8 @@ check_dep()
 
 		# check if some Makefiles mention the port to be deleted
 		portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]|/|$)"
-		r="`find ${PORTSDIR} -mindepth 2 -maxdepth 3 \( -name "Makefile*" -or -path "*Mk/*.mk" \) \
+		r="`find ${PORTSDIR} -mindepth 2 -maxdepth 3 \
+			\( -name "Makefile*" -or -path "*Mk/*.mk" \) \
 			|xargs grep -EH "${portdir_grep}" \
 			|grep -vE "^(${rmcatports})" || :`"
 		if [ -n "${r}" ] ; then
@@ -162,7 +170,7 @@ check_dep()
 			break
 		fi
 
-		read -p 'deal with the above issues and hit <enter> when ready' answer
+		read -p 'deal with the above issues and hit <enter> when ready' dummy
 	done
 }
 
@@ -186,7 +194,7 @@ check_LEGAL()
 		msg="${catport}: checking if ${checkstr} is in ports/LEGAL"
 		log "${msg}"
 		while grep -i ${checkstr} ports/LEGAL ; do
-			read -p "${checkstr} is in ports/LEGAL, remove it and hit <enter> when ready" answer
+			read -p "${checkstr} is in ports/LEGAL, remove it and hit <enter> when ready" dummy
 			log "${msg}"
 		done
 	done
@@ -213,7 +221,11 @@ edit_MOVED()
 
 	DEPRECATED="`make -C ${PORTSDIR}/${catport} -V DEPRECATED`"
 	DEPRECATED=${DEPRECATED:+: ${DEPRECATED}}
-	REASON="Has expired${DEPRECATED}"
+	if [ -n "`make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE`" ] ; then
+		REASON="Has expired${DEPRECATED}"
+	else
+		REASON="Removed${DEPRECATED}"
+	fi
 
 	log "${catport}: adding entry to ports/MOVED"
 
@@ -244,6 +256,27 @@ rm_port()
 	${PCVS} rm `find ports/${catport} -type f -not -path "*/CVS/*" -delete -print`
 }
 
+append_Template()
+{
+	catport=${1}
+
+	msg=${catport}
+
+	EXPIRATION_DATE=`make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE`
+	if [ -n "${EXPIRATION_DATE}" ] ; then
+		msg="${EXPIRATION_DATE} ${msg}"
+	fi
+
+	DEPRECATED="`make -C ${PORTSDIR}/${catport} -V DEPRECATED`"
+	if [ -n "${DEPRECATED}" ] ; then
+		msg="${msg}: ${DEPRECATED}"
+	fi
+
+	log "${catport}: adding entry to commit message template"
+
+	echo "${msg}" >> ./CVS/Template
+}
+
 # diff
 diff()
 {
@@ -251,23 +284,34 @@ diff()
 
 	diffout=${codir}/diff
 
-	${PCVS} diff -u CVSROOT/modules ports/MOVED ports/LEGAL \
-	ports > ${diffout} 2>&1 || :
+	${PCVS} diff -u CVSROOT/modules ports > ${diffout} 2>&1 || :
 
-	read -p "hit <enter> to view cvs diff output" answer
+	read -p "hit <enter> to view cvs diff output" dummy
 
-	# give this to the outside world so it can be removed when we are done
+	# give this to the outside world so it can be showed to the committer
+	# and removed when we are done
 	echo ${diffout}
+}
+
+ask()
+{
+	question=${1}
+
+	answer=x
+	while [ "${answer}" != "y" -a "${answer}" != "n" ] ; do
+		read -p "${question} [yn] " answer
+	done
+
+	echo ${answer}
 }
 
 # ask for confirmation and commit
 commit()
 {
-	read -p "do you want to commit? [yn] " answer
+	answer=`ask "do you want to commit?"`
 
-	if [ "${answer}" = "y" -o "${answer}" = "Y" ] ; then
-		${PCVS} ci CVSROOT/modules ports/MOVED ports/LEGAL \
-		ports
+	if [ "${answer}" = "y" ] ; then
+		${PCVS} ci CVSROOT/modules ports
 	fi
 }
 
@@ -280,6 +324,9 @@ cleanup()
 
 	rm ${diffout}
 
+	rm CVS/Entries.Log CVS/Repository CVS/Template
+	rmdir CVS
+
 	# release cvs directories
 	${PCVS} rel -d CVSROOT ports
 
@@ -290,12 +337,19 @@ cleanup()
 usage()
 {
 	echo "Usage:" >&2
+	echo "" >&2
 	echo "find expired ports:" >&2
 	echo "${0} -F" >&2
+	echo "" >&2
 	echo "remove port(s):" >&2
 	echo "${0} category1/port1 [ category2/port2 ... ]" >&2
+	echo "" >&2
+	echo "remove all expired ports (as returned by -F):" >&2
+	echo "${0} -a" >&2
+	echo "" >&2
 	echo "just check dependencies:" >&2
 	echo "${0} -d category/port" >&2
+
 	exit 64
 }
 
@@ -322,6 +376,14 @@ if [ ${1} = "-F" ] ; then
 	exit
 fi
 
+if [ ${1} = "-a" ] ; then
+	if [ ${#} -ne 1 ] ; then
+		usage
+	fi
+	${0} `find_expired |cut -f 2 -d ' '`
+	exit
+fi
+
 codir=`mkcodir`
 cd ${codir}
 
@@ -334,7 +396,7 @@ for catport in $* ; do
 	port=`basename ${catport}`
 	# remove any trailing slashes
 	catport="${cat}/${port}"
-	pkgname=`pkgname ${cat}/${port}`
+	pkgname=`pkgname ${catport}`
 
 	check_dep ${catport} 1 "${*}"
 
@@ -351,12 +413,22 @@ for catport in $* ; do
 	edit_Makefile ${cat} ${port}
 
 	rm_port ${catport}
+
+	append_Template ${catport}
 done
 
-diffout=`diff`
+# give a chance to the committer to edit files by hand and recreate/review
+# the diff afterwards
+answer=y
+while [ "${answer}" = "y" ] ; do
+	diffout=`diff`
 
-# EDITOR instead of PAGER because vim has nice syntax highlighting ;-)
-${EDITOR} ${diffout}
+	# EDITOR instead of PAGER because vim has nice syntax highlighting ;-)
+	${EDITOR} ${diffout}
+
+	echo "you can now edit files under ${codir}/ by hand"
+	answer=`ask "do you want to recreate the diff?"`
+done
 
 commit
 
