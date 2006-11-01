@@ -61,6 +61,7 @@
     SUBDIR += atlas-devel
     SUBDIR += aunit
     SUBDIR += autobook
+    SUBDIR += autoconf-archive
     SUBDIR += autoconf213
     SUBDIR += autoconf253
     SUBDIR += autoconf259
