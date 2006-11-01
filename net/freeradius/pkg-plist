@@ -387,13 +387,13 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/rlm_fastusers
 %%PORTDOCS%%%%DOCSDIR%%/rlm_krb5
 %%PORTDOCS%%%%DOCSDIR%%/rlm_ldap
-%%PORTDOCS%%%%DOCSDIR%%/rlm_otp
 %%PORTDOCS%%%%DOCSDIR%%/rlm_pam
 %%PORTDOCS%%%%DOCSDIR%%/rlm_passwd
 %%PORTDOCS%%%%DOCSDIR%%/rlm_python
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sim_triplets
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sql
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sqlcounter
+%%PORTDOCS%%%%DOCSDIR%%/rlm_sqlippool
 %%PORTDOCS%%%%DOCSDIR%%/supervise-radiusd.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning_guide
 %%PORTDOCS%%%%DOCSDIR%%/variables.txt
@@ -406,6 +406,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.alcatel
 %%DATADIR%%/dictionary.alteon
 %%DATADIR%%/dictionary.altiga
+%%DATADIR%%/dictionary.alvarion
 %%DATADIR%%/dictionary.aptis
 %%DATADIR%%/dictionary.aruba
 %%DATADIR%%/dictionary.ascend
@@ -468,6 +469,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.rfc3162
 %%DATADIR%%/dictionary.rfc3576
 %%DATADIR%%/dictionary.rfc3580
+%%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
@@ -477,10 +479,12 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.t_systems_nova
 %%DATADIR%%/dictionary.telebit
 %%DATADIR%%/dictionary.trapeze
+%%DATADIR%%/dictionary.tropos
 %%DATADIR%%/dictionary.unix
 %%DATADIR%%/dictionary.usr
 %%DATADIR%%/dictionary.valemount
 %%DATADIR%%/dictionary.versanet
+%%DATADIR%%/dictionary.walabi
 %%DATADIR%%/dictionary.waverider
 %%DATADIR%%/dictionary.wispr
 %%DATADIR%%/dictionary.xedia

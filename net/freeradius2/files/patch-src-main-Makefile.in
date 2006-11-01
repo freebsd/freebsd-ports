@@ -1,5 +1,5 @@
---- src/main/Makefile.in.orig	Mon Mar 27 15:22:33 2006
-+++ src/main/Makefile.in	Mon Mar 27 15:27:58 2006
+--- src/main/Makefile.in.orig	Mon Aug 21 13:47:46 2006
++++ src/main/Makefile.in	Fri Oct 27 12:18:50 2006
 @@ -19,6 +19,7 @@
  CFLAGS		+= -DHOSTINFO=\"${HOSTINFO}\"
  CFLAGS		+= -DRADIUSD_VERSION=\"${RADIUSD_VERSION}\"
@@ -30,9 +30,9 @@
  radrelay.lo: radrelay.c $(INCLUDES)
  	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c radrelay.c
  
- radrelay: radrelay.lo mainconfig.lo util.lo nas.lo client.lo log.lo conffile.lo files.lo xlat.lo ../lib/libradius.la
--	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) $(LINK_MODE) -o radrelay radrelay.lo mainconfig.lo util.lo nas.lo client.lo log.lo conffile.lo files.lo xlat.lo $(LIBS)
-+	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS_MAIN) $(LINK_MODE) -o radrelay radrelay.lo mainconfig.lo util.lo nas.lo client.lo log.lo conffile.lo files.lo xlat.lo $(LIBS)
+ radrelay: radrelay.lo util.lo nas.lo client.lo log.lo conffile.lo files.lo xlat.lo ../lib/libradius.la
+-	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) $(LINK_MODE) -o radrelay radrelay.lo util.lo nas.lo client.lo log.lo conffile.lo files.lo xlat.lo $(LIBS)
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS_MAIN) $(LINK_MODE) -o radrelay radrelay.lo util.lo nas.lo client.lo log.lo conffile.lo files.lo xlat.lo $(LIBS)
  
  radwho.lo: radwho.c $(INCLUDES)
  	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c radwho.c
