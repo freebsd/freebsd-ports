@@ -1,0 +1,21 @@
+Collection of GNUstep software
+
+System libs:	Gorm, ScriptKit, gnustep-db2, Renaissance, PreferencePanes
+
+System apps:	GShisen, ProjectCenter, Preferences, GWorkspace, guile-gui,
+		gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf,
+		SystemPreferences
+
+Local libs:	Pantomime, GToolKit, rigs, Addresses, SlideShow, netclasses,
+		WizardKit, HighlighterKit, Performance, SQLClient, WebServer,
+		StepTalk, MathArray
+
+Local apps:	Gomoku, GNUMail, EasyDiff, Calculator, CurrencyConverter,
+		Finger, GFractal, GSTest, HostAddress, Ink, NSBrowserTest,
+		NSImageTest, NSPanelTest, NSScreenTest, md5Digest,
+		GSCommander, ImageViewer, SlideShow, Preview, oolite, Cenon,
+		Gridlock, PRICE, EdenMath, Stepulator, VolumeControl,
+		Cynthiune, TalkSoup, Grouch, Zipper, Camera, Ladder, StepBill,
+		Charmap, GTAMSAnalyzer, Paje, AClock, PhotoClip, LapisPuzzle,
+		Waiho, Affiche, ProjectManager, GMastermind2, GPuzzle2,
+		Ticker, NoteBook, HelpViewer, Duncan, Jishyo
