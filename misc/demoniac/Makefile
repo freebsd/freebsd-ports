@@ -10,7 +10,7 @@ PORTNAME=	demoniac
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.calodox.org/demoniac/files/
+MASTER_SITES=	http://www.calodox.scene.org/demoniac/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for exploring and animating graphics effects
