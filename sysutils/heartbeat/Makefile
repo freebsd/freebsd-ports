@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heartbeat
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux-ha.org/download/
 
@@ -24,7 +24,9 @@ USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-fatal-warnings \
-			--with-initdir=${PREFIX}/etc/rc.d
+			--with-initdir=${PREFIX}/etc/rc.d \
+			--localstatedir=/var \
+			--with-group-id=275 --with-ccmuser-id=275
 
 SUB_FILES=	pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
@@ -63,11 +65,15 @@ post-patch:
 		${WRKSRC}/telecom/cms/Makefile.in
 .endif
 
+.if !defined(BATCH)
+BATCH=no
+.endif
+
 post-deinstall:
-	@${SH} ${PKGINSTALL} ${PKGNAME} DEINSTALL
+	@BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} DEINSTALL
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 # some subdirs treat man as documentation, therefor we have to install
 # those man pages manually if NOPORTDOCS is defined
