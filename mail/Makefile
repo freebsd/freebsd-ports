@@ -348,6 +348,7 @@
     SUBDIR += p5-Net-QMTP
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-SMTP-TLS
+    SUBDIR += p5-Net-SMTP_auth
     SUBDIR += p5-Net-Server-Mail
     SUBDIR += p5-POE-Component-Client-POP3
     SUBDIR += p5-POE-Component-Client-SMTP
