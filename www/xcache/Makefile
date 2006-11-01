@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcache
-DISTVERSION=	1.0
+DISTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://210.51.190.228/pub/XCache/Releases/
 
