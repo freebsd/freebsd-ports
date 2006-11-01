@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.cs.berkeley.edu/ucb/people/dglo/xless/
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	An X11 viewer for text files.  Useful as an add-on tool for other apps
 
 USE_IMAKE=	yes
