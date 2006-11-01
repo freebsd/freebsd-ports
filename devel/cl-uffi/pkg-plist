@@ -40,5 +40,3 @@ lib/common-lisp/uffi/src/strings.lisp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/common-lisp/uffi/src
 @dirrm lib/common-lisp/uffi
-@dirrm share/doc/cl-uffi/examples
-@dirrm share/doc/cl-uffi
