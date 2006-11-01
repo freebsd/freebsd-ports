@@ -7,6 +7,7 @@
 
 PORTNAME=	nspr
 PORTVERSION=	4.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
@@ -27,6 +28,15 @@ CONFIGURE_ENV=	BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 MAKE_ENV=	DIST=${WRKSRC}/dist
 
 LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 601104
+post-patch:
+	@${REINPLACE_CMD} -e 's|pthread_cond_wait|_pthread_cond_wait|g' \
+	    	${WRKSRC}/../pr/src/md/unix/pthreads_user.c \
+		${WRKSRC}/../pr/src/pthreads/ptsynch.c
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
@@ -68,4 +78,4 @@ post-build:
 	#
 #.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
