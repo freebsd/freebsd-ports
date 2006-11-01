@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061101:
+  AFFECTS: Users of mail/dovecot
+  AUTHOR: shaun@FreeBSD.org
+
+  Dovecot now requires the mail root to be set explicitly in the the
+  default_mail_env variable, where it could previously be omitted.
+  Using the old-style syntax may result in dovecot being unable to find
+  mailboxes. Installations using the example/default configuration
+  settings should not be affected.
+
+  This is noted in the release announcement:
+
+  http://dovecot.org/list/dovecot-news/2006-October/000016.html
+
 20061031:
   AFFECTS: Users of math/rkward
   AUTHOR: thierry@FreeBSD.org
