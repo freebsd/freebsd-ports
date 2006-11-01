@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	libmba
-PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A collection of C modules potentially useful to any project
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -30,7 +29,7 @@ MAN3=		allocator.3m bitset.3m cfg.3m csv.3m diff.3m eval.3m hashmap.3m \
 		stack.3m suba.3m svcond.3m svsem.3m text.3m time.3m varray.3m
 MANCOMPRESSED=	yes
 
-SHLIB_MAJOR=	1
+SHLIB_MAJOR=	0
 
 .include <bsd.port.pre.mk>
 
