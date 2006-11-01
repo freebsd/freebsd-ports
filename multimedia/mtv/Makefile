@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance MPEG video player (shareware)
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	No new releases in the past 5 years
+EXPIRATION_DATE=2007-01-01
 
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 RESTRICTED=	No redistribution
