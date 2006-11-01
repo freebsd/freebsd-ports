@@ -7,20 +7,15 @@
 
 PORTNAME=	themes
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.eyelook.org/themes/ \
-		http://bsd1.csme.ru/myports/${DIST_SUBDIR}/ \
-		http://bsd2.csme.ru/myports/${DIST_SUBDIR}/ \
-		http://bsd3.csme.ru/myports/${DIST_SUBDIR}/
+MASTER_SITES=	http://www.eyelook.org/themes/ CSME/myports/${DIST_SUBDIR}
 PKGNAMEPREFIX=	eyeOS-
 DISTFILES=	${EYETHEMES:S/$/.zip/}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A themes collection for eyeOS
-
-RUN_DEPENDS=	${EYEDIR}/index.php:${PORTSDIR}/www/eyeos
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -39,6 +34,7 @@ OPTIONS+=	NuoveXT_THEME "based on 'NuoveXT' Open Source icons" On
 OPTIONS+=	Nuvola_THEME "inspired in the great icons Nuvola" On
 OPTIONS+=	WaterSide_THEME "inspired in countryside of Saskatchewan" On
 OPTIONS+=	fromX_THEME "based on Tango Icons" On
+OPTIONS+=	eyeOSVista_THEME "based on the new Vista style" On
 
 .include <bsd.port.pre.mk>
 
