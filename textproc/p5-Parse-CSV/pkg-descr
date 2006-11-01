@@ -1,0 +1,19 @@
+Surely the CPAN doesn't need yet another CSV parsing module.
+
+Text::CSV_XS is the standard parser for CSV files. It is fast
+as hell, but unfortunately it can be a bit verbose to use.
+
+A number of other modules have attempted to put usability
+wrappers around this venerable module, but they have all
+focussed on parsing the entire file into memory at once.
+
+This method is fine unless your CSV files start to get large.
+Once that happens, the only existing option is to fall back
+on the relatively slow and heavyweight XML::SAXDriver::CSV
+module.
+
+Parse::CSV fills this functionality gap. It provides a flexible
+and light-weight streaming parser for large, extremely large,
+or arbitrarily large CSV files.
+
+WWW:	http://search.cpan.org/dist/Parse-CSV/

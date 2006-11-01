@@ -400,6 +400,7 @@
     SUBDIR += p5-POSIX-Regex
     SUBDIR += p5-PPI
     SUBDIR += p5-PPI-HTML
+    SUBDIR += p5-Parse-CSV
     SUBDIR += p5-Parse-FixedLength
     SUBDIR += p5-Parse-Flex
     SUBDIR += p5-Parse-PhoneNumber
