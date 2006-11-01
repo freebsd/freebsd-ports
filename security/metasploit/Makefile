@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metasploit
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.metasploit.org/tools/
 DISTNAME=	framework-${PORTVERSION}
@@ -17,7 +16,8 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 
 RUN_DEPENDS=	${SITE_PERL}/mach/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu	\
 		${SITE_PERL}/mach/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
+		${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm \
+		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 
 CONFLICTS=	metasploit-3*
 
@@ -25,8 +25,8 @@ NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 REINPLACE_ARGS=	-i ''
 
-SCRIPTS=	msfcli msfconsole msfelfscan msfencode msflogdump msfpayload msfpescan \
-		msfupdate msfweb
+SCRIPTS=	msfcli msfconsole msfelfscan msfencode msflogdump msfpayload \
+		msfpescan msfupdate msfweb msfdldebug
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +38,7 @@ post-patch:
 .for f in ${SCRIPTS}
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's|framework-2.x|${DATADIR}|' ${WRKSRC}/msfupdate
 
 do-install:
 	${MKDIR} ${DATADIR}
