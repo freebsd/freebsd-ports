@@ -3,6 +3,7 @@ include/mba/bitset.h
 include/mba/cfg.h
 include/mba/csv.h
 include/mba/daemon.h
+include/mba/dbug.h
 include/mba/diff.h
 include/mba/eval.h
 include/mba/hashmap.h
