@@ -11,7 +11,7 @@ PORTVERSION=	4.13.1
 CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.polito.it/pub/tools/unix/harvest/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	Text search engine
 
 NO_CDROM=	"Restrictive copyright (don't sell for profit)"

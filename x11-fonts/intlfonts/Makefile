@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	intlfonts
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	Free X11 fonts for all characters that Emacs can handle
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
