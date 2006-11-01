@@ -2,6 +2,7 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal.pm
 %%SITE_PERL%%/Perlbal/AIO.pm
 %%SITE_PERL%%/Perlbal/BackendHTTP.pm
+%%SITE_PERL%%/Perlbal/Cache.pm
 %%SITE_PERL%%/Perlbal/ClientHTTP.pm
 %%SITE_PERL%%/Perlbal/ClientHTTPBase.pm
 %%SITE_PERL%%/Perlbal/ClientManage.pm
@@ -10,6 +11,7 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/HTTPHeaders.pm
 %%SITE_PERL%%/Perlbal/ManageCommand.pm
 %%SITE_PERL%%/Perlbal/Plugin/AccessControl.pm
+%%SITE_PERL%%/Perlbal/Plugin/EchoService.pm
 %%SITE_PERL%%/Perlbal/Plugin/Highpri.pm
 %%SITE_PERL%%/Perlbal/Plugin/Palimg.pm
 %%SITE_PERL%%/Perlbal/Plugin/Queues.pm
