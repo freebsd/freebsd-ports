@@ -15,7 +15,6 @@
     SUBDIR += efltk
     SUBDIR += enhance
     SUBDIR += etk
-    SUBDIR += etox
     SUBDIR += ewl
     SUBDIR += fl_editor
     SUBDIR += fltk
