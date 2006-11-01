@@ -24,3 +24,5 @@ locale	tabletools	it-IT	jar:chrome/tabletools.jar!/locale/tabletools/it-IT/
 locale	tabletools	ja-JP	jar:chrome/tabletools.jar!/locale/tabletools/ja-JP/
 
 locale	tabletools	nl-NL	jar:chrome/tabletools.jar!/locale/tabletools/nl-NL/
+
+locale	tabletools	sk-SK	jar:chrome/tabletools.jar!/locale/tabletools/sk-SK/
