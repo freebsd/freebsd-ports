@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Perlbal
-PORTVERSION=	1.41
+PORTVERSION=	1.51
 CATEGORIES=	www
-MASTER_SITES=	http://www.danga.com/dist/Perlbal/
+MASTER_SITES=	http://www.danga.com/dist/Perlbal/ \
+		http://www.powertrip.co.za/distfiles/danga/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jacques@php.net
@@ -22,7 +23,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=	perlbal.1
-MAN3=	Perlbal.3
+MAN1=		perlbal.1
+MAN3=		Perlbal.3 Perlbal::Plugin::Palimg.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+.endif
+
+.include <bsd.port.post.mk>
