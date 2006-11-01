@@ -2,6 +2,11 @@ bin/ufraw
 bin/ufraw-batch
 libexec/gimp/2.2/plug-ins/ufraw-gimp
 share/applications/ufraw.desktop
+share/locale/fr/LC_MESSAGES/ufraw.mo
+share/locale/ru/LC_MESSAGES/ufraw.mo
+share/mime/packages/ufraw-mime.xml
 share/pixmaps/ufraw.png
 @dirrmtry share/pixmaps
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrmtry share/applications
