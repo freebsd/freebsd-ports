@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.5
+PORTVERSION=	1.5.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,15 +16,18 @@ COMMENT=	Command-line tools to collect and process NetFlow data
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+#flow-tools support
+OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
+		SFLOW		"Build sflow collector daemon also" off
+
+.include <bsd.port.pre.mk>
+
 #for compatibility
 #
 .ifndef(WITHOUT_NFDUMP14_SUPPORT)
 CONFIGURE_ARGS=		--enable-compat14
 .endif
-#flow-tools support
-OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off
-
-.include <bsd.port.pre.mk>
 
 PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfprofile bin/nfreplay bin/nfclean.pl
 MAN1=		nfcapd.1 nfdump.1 nfprofile.1 nfreplay.1
@@ -36,6 +39,13 @@ BUILD_DEPENDS+=		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 CONFIGURE_ARGS+=	--enable-ftconv --with-ftpath=${LOCALBASE}
 PLIST_FILES+=	bin/ft2nfdump
 MAN1+=		ft2nfdump.1
+.endif
+
+#sflow capture support
+.if defined(WITH_SFLOW)
+CONFIGURE_ARGS+=	--enable-sflow
+PLIST_FILES+=	bin/sfcapd
+MAN1+=		sfcapd.1
 .endif
 
 .if !defined(NOPORTDOCS)
