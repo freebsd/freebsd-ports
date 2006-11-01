@@ -53,8 +53,7 @@ USE_PERL5=		yes
 USE_RC_SUBR=		yes
 USE_APACHE=		common20
 LIBTOOLFILES=		configure
-INSTALLS_SHLIB=		yes
-LDCONFIG_DIRS=		${PREFIX}/lib/apache2
+USE_LDCONFIG=		${PREFIX}/lib/apache2
 USE_BZIP2=		yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
@@ -190,8 +189,6 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
@@ -217,15 +214,11 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 install-startup-script:
-.if !exists(${WRKDIR}/apache2libs.sh) || !exists(${WRKDIR}/apache2.sh)
+.if !exists(${WRKDIR}/apache2.sh
 	@${MKDIR} ${WRKDIR}
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
 .endif
-	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup script."
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache2libs.sh ${PREFIX}/etc/rc.d/000.apache2libs.sh
 	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
 	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
 

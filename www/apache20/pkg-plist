@@ -12,7 +12,6 @@
 @unexec if cmp -s %D/etc/apache2/ssl.conf %D/%%EXAMPLESDIR%%/ssl-std.conf; then rm -f %D/etc/apache2/ssl.conf; fi
 %%EXAMPLESDIR%%/ssl-std.conf
 @exec [ -f %D/etc/apache2/ssl.conf ] || cp %D/%%EXAMPLESDIR%%/ssl-std.conf %D/etc/apache2/ssl.conf
-etc/rc.d/000.apache2libs.sh
 etc/rc.d/apache2.sh
 include/apache2/ap_compat.h
 include/apache2/ap_config.h
