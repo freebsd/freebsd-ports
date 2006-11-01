@@ -20,6 +20,7 @@ RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 RESTRICTED=	"tos.img is copyrighted"
 
 TOSIMG?=	tos.img
+#USE_XLIB=	yes
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 
@@ -85,6 +86,10 @@ post-install:
 .if !exists(${DISTDIR}/${TOSIMG})
 IGNORE="Please get a ROM dump from your AtariST and save it as"\
 "\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make install again"
+.endif
+
+.if ${X_WINDOW_SYSTEM:L} == xorg
+BUILD_DEPENDS+=		${X11BASE}/lib/X11/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
 .endif
 
 .include <bsd.port.post.mk>
