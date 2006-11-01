@@ -50,6 +50,7 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man			\
 			--with-tmp-dir=${INN_TMPDIR}		\
 			--with-openssl=${OPENSSLBASE}		\
 			--with-etc-dir=${INN_ETCDIR}		\
+			--with-db-dir=${INN_DBDIR}		\
 			--enable-ipv6
 
 .include <bsd.port.pre.mk>
@@ -245,7 +246,7 @@ post-install:
 	    ${TOUCH} history ; \
 	    ${CHMOD} 644 history ; \
 	    ${CHOWN} news:news history ; \
-	    su -fm news -c "../bin/makedbz -i" ; \
+	    su -fm news -c "${INN_NEWSBASE}/bin/makedbz -i" ; \
 	    for s in ${DBZ_FILES}  ; do \
 	        ${MV} history.n.$${s} history.$${s} ; \
 	    done ; \
