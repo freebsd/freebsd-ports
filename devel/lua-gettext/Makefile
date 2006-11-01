@@ -13,9 +13,9 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	lua_gettext.c?rev=${CVER} gettext.lua?rev=${LVER}
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
-COMMENT=	Gettext ibinding for Lua 5.0.x
+COMMENT=	Gettext binding for Lua 5
 
-USE_LUA=	5.0
+USE_LUA?=	5.1
 USE_GETTEXT=	yes
 
 CVER=		1.15
