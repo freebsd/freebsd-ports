@@ -220,6 +220,7 @@
     SUBDIR += tk82
     SUBDIR += tk83
     SUBDIR += tk84
+    SUBDIR += tkdnd
     SUBDIR += tkshape
     SUBDIR += tkstep80
     SUBDIR += tktable
