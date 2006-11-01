@@ -7,16 +7,12 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	www editors
-MASTER_SITES=	http://pkedu.fbt.wur.nl/~olivier/${DOWNLOAD}/ \
-		http://bluefish.mrball.net/${DOWNLOAD}/ \
-		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8 \
@@ -29,7 +25,6 @@ RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
 RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
 .endif
 
-DOWNLOAD=	downloads
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehier gtk20 gnomevfs2
