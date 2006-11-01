@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dangerdeep
-PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dangerdeep
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open source World War II German submarine simulation
@@ -18,15 +18,14 @@ COMMENT=	Open source World War II German submarine simulation
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/maps/default.xml:${PORTSDIR}/games/dangerdeep-data
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 SCONS_ARGS=	installbindir=${PREFIX}/bin installdatadir=${DATADIR}
 
-PLIST=		${WRKDIR}/pkg-plist
 PLIST_FILES=	bin/dangerdeep bin/crosssection bin/damagemodel \
 		bin/oceantest bin/portal bin/viewmodel
 PLIST_DIRS=	%%DATADIR%%
@@ -51,20 +50,10 @@ post-patch:
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
 
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC}/data && \
-	${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-	${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-
 do-install:
 	@cd ${WRKSRC}/build/freebsd && \
 		${INSTALL_PROGRAM} dangerdeep crosssection damagemodel oceantest \
 			portal viewmodel ${PREFIX}/bin
-
-	cd ${WRKSRC}/data && \
-	${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 
 	${INSTALL_MAN} ${WRKSRC}/doc/man/dangerdeep.6 ${PREFIX}/man/man6
 
