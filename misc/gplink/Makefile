@@ -8,7 +8,7 @@
 PORTNAME=	gplink
 PORTVERSION=	1.5
 CATEGORIES=	misc
-MASTER_SITES=	http://gpx2.org/gp32/gplink/
+MASTER_SITES=	http://gp2x.org/gp32/gplink/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GP32 USB linker tool
