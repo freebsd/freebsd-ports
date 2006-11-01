@@ -9,5 +9,3 @@ perform a stealth and untrackable information collect.
 As far as GPS needs to sniff the responses from the target host, it
 requires to be run using a loopback or an ethernet interface (including
 cable modem).
-
-WWW: http://gps.sourceforge.net/

@@ -10,10 +10,10 @@ PORTNAME=	gps
 PORTVERSION=	0.9.3
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://gps.sourceforge.net/release/
+MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-FRC
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Ghost Port Scan
 
 BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
