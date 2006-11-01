@@ -20,15 +20,19 @@ PKGNAMESUFFIX=	-${SLAVE_PORT_MPM}
 .else
 .   if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=		-${WITH_MPM:L}
+.      if ${WITH_MPM:L} != "itk"
 WITH_THREADS=		yes
 WITH_THREADS_MODULES=	yes
 WITHOUT_MODULES+=	cgi
+.      endif
 .      if ${WITH_MPM:L} == "worker"
 PLIST_SUB+=	PREFORK="@comment " WORKER="" THREADPOOL="@comment "
 .      elif  ${WITH_MPM:L} == "perchild"
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
 .      elif  ${WITH_MPM:L} == "threadpool"
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL=""
+.      elif  ${WITH_MPM:L} == "itk"
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
 .      else
 IGNORE=		"Unknown MPM: ${WITH_MPM}"
 .      endif
