@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	A Motif based audio mixer
 
 USE_IMAKE=	yes

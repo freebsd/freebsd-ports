@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	A KDE midi sequencer
 
 LIB_DEPENDS=	tse3:${PORTSDIR}/audio/tse3

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
 USE_X_PREFIX=	yes

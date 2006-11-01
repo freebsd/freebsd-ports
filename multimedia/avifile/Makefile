@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-0.7-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	AVI player/converter with numerous codecs, including MPEG-4(DivX ;-))
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

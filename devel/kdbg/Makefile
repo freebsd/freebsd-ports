@@ -11,7 +11,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	A graphical user interface around gdb using KDE
 
 USE_KDELIBS_VER=	3

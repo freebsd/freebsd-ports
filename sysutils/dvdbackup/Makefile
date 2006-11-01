@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dvd-create.sourceforge.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	Backup content from DVD to hard disk
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
