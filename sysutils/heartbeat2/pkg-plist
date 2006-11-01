@@ -271,6 +271,6 @@ sbin/supervise-ldirectord-config
 @dirrmtry etc/ha.d/conf
 @dirrmtry etc/ha.d
 @cwd /
-@dirrmtry var/lib/heartbeat/ckpt
-@dirrmtry var/lib/heartbeat/ccm
-@dirrmtry var/lib/heartbeat
+@dirrmtry var/lock/subsys
+@dirrmtry var/lock
+@dirrmtry var/lib
