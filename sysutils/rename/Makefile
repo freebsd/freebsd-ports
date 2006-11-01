@@ -8,9 +8,11 @@
 PORTNAME=	rename
 PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://portfolio.iu.edu/crcastle/
+MASTER_SITES=	https://oncourse.iu.edu/access/content/user/crcastle/Filemanager_Public_Files/ \
+		http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	crcastle@ius.edu
+MAINTAINER=	chadcastleberry@gmail.com
 COMMENT=	Rename multiple files using regular expressions
 
 GNU_CONFIGURE=	yes
