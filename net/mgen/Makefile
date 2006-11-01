@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mgen
-PORTVERSION=	4.2b5
+PORTVERSION=	4.2b6
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/
 DISTNAME=	src-${PORTNAME}-${PORTVERSION}
