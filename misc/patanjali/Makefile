@@ -8,7 +8,7 @@
 PORTNAME=	patanjali
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://www.linuxlabs.com/software/download/
+MASTER_SITES=	http://www.linux.edu/download/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
