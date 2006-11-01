@@ -8,9 +8,9 @@
 PORTNAME=	cnd
 PORTVERSION=	0.7
 CATEGORIES=	net
-MASTER_SITES=	http://members.iinet.net.au/~lynx/cnd/
+MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Console network display
 
 PLIST_FILES=	bin/cnd
