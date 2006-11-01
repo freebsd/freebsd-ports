@@ -1,3 +1,4 @@
+libexec/nagios/check_apt
 libexec/nagios/check_breeze
 libexec/nagios/check_by_ssh
 libexec/nagios/check_clamd
@@ -55,7 +56,6 @@ libexec/nagios/check_swap
 libexec/nagios/check_tcp
 libexec/nagios/check_time
 libexec/nagios/check_udp
-libexec/nagios/check_udp2
 libexec/nagios/check_ups
 libexec/nagios/check_users
 libexec/nagios/check_wave

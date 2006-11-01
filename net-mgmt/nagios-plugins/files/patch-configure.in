@@ -1,5 +1,5 @@
---- configure.in.orig	Wed Apr 19 13:12:33 2006
-+++ configure.in	Fri May 12 23:42:58 2006
+--- configure.in.orig	Fri Oct 20 05:34:23 2006
++++ configure.in	Sat Oct 28 09:57:25 2006
 @@ -10,8 +10,6 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -7,26 +7,18 @@
 -AC_PREFIX_DEFAULT(/usr/local/nagios)
 -
  dnl Deprecated configure options
- 
- dnl Figure out how to invoke "install" and what install options to use.
-@@ -25,7 +23,6 @@
+ AC_ARG_WITH(nagios_user,,
+  	AC_MSG_ERROR([--with-nagios-user is a deprecated option]))
+@@ -29,7 +27,7 @@
  AC_PROG_CC
  AC_PROG_CPP
  AC_PROG_GCC_TRADITIONAL
 -AC_PROG_LIBTOOL
++AC_PROG_RANLIB
  
  AC_PROG_MAKE_SET
  AC_PROG_AWK
-@@ -73,7 +70,7 @@
- 	with_nagios_group=nagios)
- AC_SUBST(with_nagios_user)
- AC_SUBST(with_nagios_group)
--INSTALL_OPTS="-o $with_nagios_user -g $with_nagios_group"
-+INSTALL_OPTS="-o root -g wheel"
- AC_SUBST(INSTALL_OPTS)
- 
- AC_ARG_WITH(trusted_path,
-@@ -181,11 +178,12 @@
+@@ -167,11 +165,12 @@
  	ACX_HELP_STRING([--with-pgsql=DIR],
  		[sets path to pgsql installation]),
  	PGSQL=$withval,)
@@ -41,7 +33,7 @@
    fi
    AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
-@@ -222,30 +220,42 @@
+@@ -208,30 +207,42 @@
    AC_MSG_WARN([Skipping PostgreSQL plugin (check_pgsql)])
    AC_MSG_WARN([install lib crypt and PostgreSQL libs to compile this plugin (see REQUIREMENTS).])
  fi
@@ -91,15 +83,15 @@
    AC_CHECK_FUNCS(ldap_set_option)
    EXTRAS="$EXTRAS check_ldap"
  	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -254,6 +264,7 @@
+@@ -240,6 +251,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
 +fi
  
  dnl Check for mysql libraries
- AC_ARG_WITH(mysql,
-@@ -664,47 +675,10 @@
+ dnl Default is to search path for mysql_config
+@@ -654,47 +666,10 @@
  	ac_cv_ps_cols="$PS_COLS"
  	AC_MSG_RESULT([(command-line) $ac_cv_ps_command])
  
@@ -126,7 +118,7 @@
 -	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
 -	ac_cv_ps_cols=8
 -	AC_MSG_RESULT([using nagios-plugins internal ps for solaris])
--	AM_CONDITIONAL(WANT_PST3, true)
+-	EXTRAS_ROOT="$EXTRAS_ROOT pst3"
 -
 -dnl Some gnu/linux systems (debian for one) don't like -axwo and need axwo.
 -dnl so test for this first...
@@ -150,7 +142,7 @@
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
  	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -712,9 +686,8 @@
+@@ -702,9 +677,8 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -162,7 +154,7 @@
  elif ps -axwo 'stat uid pid ppid vsz rss pcpu ucomm command' 2>/dev/null | \
  	egrep -i ["^ *STAT +UID +PID +PPID +VSZ +RSS +%CPU +UCOMM +COMMAND"] > /dev/null
  then
-@@ -724,209 +697,6 @@
+@@ -714,209 +688,6 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -372,7 +364,7 @@
  else
  	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
  fi
-@@ -1310,6 +1080,8 @@
+@@ -1286,6 +1057,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -381,7 +373,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  AC_ARG_WITH(snmpget_command,
              ACX_HELP_STRING([--with-snmpget-command=PATH],
-@@ -1340,7 +1112,10 @@
+@@ -1316,7 +1089,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -392,7 +384,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  AC_ARG_WITH(qstat_command,
-@@ -1365,7 +1140,10 @@
+@@ -1341,7 +1117,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -403,7 +395,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  AC_ARG_WITH(fping_command,
              ACX_HELP_STRING([--with-fping-command=PATH],
-@@ -1377,6 +1155,7 @@
+@@ -1353,6 +1132,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -411,7 +403,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  AC_ARG_WITH(ssh_command,
-@@ -1444,32 +1223,12 @@
+@@ -1420,32 +1200,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  
