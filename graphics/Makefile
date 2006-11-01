@@ -499,11 +499,9 @@
     SUBDIR += php-magickwand
     SUBDIR += php4-exif
     SUBDIR += php4-gd
-    SUBDIR += php4-imlib2
     SUBDIR += php4-ming
     SUBDIR += php5-exif
     SUBDIR += php5-gd
-    SUBDIR += php5-imlib2
     SUBDIR += php5-ming
     SUBDIR += phplot
     SUBDIR += phpsview
