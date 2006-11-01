@@ -1,6 +1,8 @@
 bin/gqview
 %%NLS%%share/locale/ar/LC_MESSAGES/gqview.mo
+%%NLS%%share/locale/be/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gqview.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gqview.mo
@@ -12,6 +14,7 @@ bin/gqview
 %%NLS%%share/locale/id/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gqview.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/no/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gqview.mo
@@ -29,3 +32,27 @@ bin/gqview
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gqview.mo
 share/gnome/apps/Graphics/gqview.desktop
 share/gnome/pixmaps/gqview.png
+%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/no/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/no
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
