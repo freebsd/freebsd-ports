@@ -2497,3 +2497,16 @@ devel/sdl_ldbad||2006-10-31|Has expired: incorrect pkg-plist and doesn't require
 lang/pdss||2006-10-31|Has expired: fails to compile on recent FreeBSD versions
 multimedia/slideshow||2006-10-31|Has expired: dead project and doesn't work with recent sdl
 dns/queryperf|dns/dnsperf|2006-11-01|Project was improved and renamed
+x11-toolkits/etox||2006-11-01|Has expired: doesn't work with recent e17 and obsoleted
+x11-themes/e17-theme-blokkie||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-blue_default||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-carbon||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-detour||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-gant||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-japan2007||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-milky||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-neptun||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-simply_white||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-winter||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-mclaren||2006-11-01|Has expired: doesn't work with recent e17
+x11-themes/e17-theme-grey||2006-11-01|Has expired: doesn't work with recent e17
