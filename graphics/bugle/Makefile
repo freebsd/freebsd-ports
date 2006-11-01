@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20060913
+PORTVERSION=	0.0.20061022
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,9 +33,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 MAN1=	gldb.1
 MAN3=	bugle.3
 MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7 \
-	bugle-frontbuffer.7 bugle-log.7 bugle-screenshot.7 \
-	bugle-showerror.7 bugle-showextensions.7 bugle-showstats.7 \
-	bugle-stats.7 bugle-trace.7 bugle-unwindstack.7 bugle-wireframe.7
+	bugle-frontbuffer.7 bugle-log.7 bugle-logstats.7 		\
+	bugle-screenshot.7 bugle-showerror.7 bugle-showextensions.7 	\
+	bugle-showstats.7 bugle-stats_basic.7 bugle-stats_fragments.7	\
+	bugle-stats_nv.7 bugle-stats_primitives.7 bugle-trace.7		\
+	bugle-unwindstack.7 bugle-wireframe.7
 
 OPTIONS=	AVCODEC	"Use lavc from multimedia/ffmpeg"	off
 OPTIONS+=	GUI	"Use gktglext"				off
