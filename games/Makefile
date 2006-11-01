@@ -130,6 +130,7 @@
     SUBDIR += daimonin-client
     SUBDIR += dangen
     SUBDIR += dangerdeep
+    SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
     SUBDIR += deal
     SUBDIR += defendguin
