@@ -1,13 +1,10 @@
---- etc/Rules.mk.orig	Thu Mar 31 10:50:37 2005
-+++ etc/Rules.mk	Thu Mar 31 10:50:29 2005
-@@ -11,9 +11,7 @@
- 
+--- etc/Rules.mk.orig	Fri Mar 17 13:39:14 2006
++++ etc/Rules.mk	Sun Oct 29 15:46:17 2006
+@@ -13,7 +13,6 @@
  CMD_INSTETC	:= $(CMD_INSTETC) \
- 		   $(INST) $(d)/subdicts/* -m 644 -d $(DIR_ETC)/subdicts \
--			   $(d)/modules/* -m 644 -d $(DIR_ETC)/modules \
--			   $(d)/legacy/* -m 640 -d $(DIR_ETC)/legacy ;
--
-+			   $(d)/modules/* -m 644 -d $(DIR_ETC)/modules ;
- 
- # Standard things
- 
+ 		   $(INST) $(d)/dictionary -m 644 -d $(INST_PREFIX)$(DIR_ETC) \
+ 		   	   $(d)/subdicts/* -m 644 -d $(INST_PREFIX)$(DIR_ETC)/subdicts \
+-			   $(d)/legacy/*   -m 640 -d $(INST_PREFIX)$(DIR_ETC)/legacy \
+ 			   $(d)/modules/radldap.attrmap \
+ 			   		   -m 644 -d $(INST_PREFIX)$(DIR_ETC)/modules ; \
+ 		   cp examples/configuration.sample-usersfile $(INST_PREFIX)$(DIR_ETC)/configuration ; \
