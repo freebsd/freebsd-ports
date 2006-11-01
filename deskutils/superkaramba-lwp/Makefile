@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=		lwp
-PORTVERSION=		13.1.1
+PORTVERSION=		13.2
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
 			http://mirror1.liquidweather.net/ \
-			http://mirrors.borgnet.us/matt-lw/ \
 			http://liquidweather.net/
 PKGNAMEPREFIX=		superkaramba-
 EXTRACT_SUFX=		.skz
