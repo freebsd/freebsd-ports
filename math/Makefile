@@ -349,6 +349,7 @@
     SUBDIR += unixstat
     SUBDIR += vtk
     SUBDIR += vtk43
+    SUBDIR += vtk43-headers
     SUBDIR += vtk-data
     SUBDIR += vtk-examples
     SUBDIR += vtk-headers
