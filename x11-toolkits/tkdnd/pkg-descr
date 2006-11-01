@@ -1,0 +1,8 @@
+tkdnd is an extension that adds native drag & drop capabilities to the
+tk toolkit. It can be used with any tk version equal or greater to 8.4
+and currently only the UNIX (X-Windows) and Microsoft Windows operating
+systems are supported. Under unix the drag & drop protocol in use is the
+XDND protocol version 4 (also used by the QT toolkit, KDE & GNOME
+Desktops).
+
+WWW: http://www.iit.demokritos.gr/~petasis/Tcl/tkDND/tkDND.html
