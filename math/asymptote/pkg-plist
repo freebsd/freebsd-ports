@@ -68,6 +68,7 @@ bin/xasy
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
 %%EXAMPLESDIR%%/Bode.asy
 %%EXAMPLESDIR%%/Gouraud.asy
+%%EXAMPLESDIR%%/Gouraudcontour.asy
 %%EXAMPLESDIR%%/Pythagoras.asy
 %%EXAMPLESDIR%%/PythagoreanTree.asy
 %%EXAMPLESDIR%%/Sierpinski.asy
@@ -81,6 +82,7 @@ bin/xasy
 %%EXAMPLESDIR%%/bezier2.asy
 %%EXAMPLESDIR%%/bigsquare.asy
 %%EXAMPLESDIR%%/brokenaxis.asy
+%%EXAMPLESDIR%%/buildcycle.asy
 %%EXAMPLESDIR%%/cardiod.asy
 %%EXAMPLESDIR%%/centroidfg.asy
 %%EXAMPLESDIR%%/circles.asy
@@ -154,6 +156,7 @@ bin/xasy
 %%EXAMPLESDIR%%/lowint.asy
 %%EXAMPLESDIR%%/lowupint.asy
 %%EXAMPLESDIR%%/makepen.asy
+%%EXAMPLESDIR%%/mexicanhat.asy
 %%EXAMPLESDIR%%/monthaxis.asy
 %%EXAMPLESDIR%%/mosaic.asy
 %%EXAMPLESDIR%%/mosquito.asy
@@ -162,6 +165,7 @@ bin/xasy
 %%EXAMPLESDIR%%/orthocenter.asy
 %%EXAMPLESDIR%%/parametricgraph.asy
 %%EXAMPLESDIR%%/parametricsurface.asy
+%%EXAMPLESDIR%%/penimage.asy
 %%EXAMPLESDIR%%/phase.asy
 %%EXAMPLESDIR%%/piicon.eps
 %%EXAMPLESDIR%%/planes.asy
