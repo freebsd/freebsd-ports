@@ -1111,16 +1111,16 @@ share/icons/hicolor/16x16/apps/bouml.png
 share/icons/hicolor/32x32/apps/bouml.png
 share/icons/hicolor/48x48/apps/bouml.png
 share/icons/hicolor/64x64/apps/bouml.png
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/xmi
 @dirrm %%DATADIR%%/usecase_wizard
 @dirrm %%DATADIR%%/sm_generator
@@ -1134,4 +1134,4 @@ share/icons/hicolor/64x64/apps/bouml.png
 @dirrm %%DATADIR%%/cpp_utilities
 @dirrm %%DATADIR%%/FileControl
 @dirrm %%DATADIR%%
-@dirrm share/applications
+@dirrmtry share/applications
