@@ -1,35 +1,47 @@
-diff -urN ../Producer.orig/Make/makedefs ./Make/makedefs
---- ../Producer.orig/Make/makedefs	Fri Aug 20 10:00:23 2004
-+++ ./Make/makedefs	Tue Jan 25 21:36:56 2005
-@@ -287,19 +287,25 @@
-       CXX               = g++
-     endif
-   DEPARG            = -MM
--  INC               +=  -I/usr/local/include -I/usr/X11R6/include
-+  INC               +=  -I${LOCALBASE}/include -I${X11BASE}/include
-   DEF               += -W -Wall
--  OPTF              = -O2 
-+  OPTF              = %%CXXFLAGS%%
-   DBGF              = -g 
-   SHARED            = -shared
-   ARCH              = 32
-   ARCHARGS          = 
--  INST_LOCATION   = /opt/X11R6
--  INST_SHARE = /usr/share/Producer
--
-+  INST_SYS_PREFIX   = $(PREFIX)
-+  INST_SHARE_PREFIX = $(DATADIR)
-+  LINKARGS          = -L${X11BASE}/lib -L${LOCALBASE}/lib -rpath ${LOCALBASE}/lib -rpath ${X11BASE}/lib
-+  INST_LOCATION     = $(INST_SYS_PREFIX)
-+  INST_SHARE        = $(INST_SHARE_PREFIX)
-+  INST_DEMOS        = $(EXAMPLESDIR)/bin
-+  INST_SRC          = $(EXAMPLESDIR)/src
-+  INST_DOC          = $(DOCSDIR)
-+  INST_DATA         = $(DATADIR)
-   GL_LIBS           = -lGL
-   X_LIBS            = -lXmu -lX11
--  OPEN_THREAD_LIB   = -lOpenThreads -lpthread
-+  OPEN_THREAD_LIB   = -lOpenThreads ${PTHREAD_LIBS}
+--- Make/makedefs.orig	Sat Dec 10 09:51:33 2005
++++ Make/makedefs	Wed Nov  1 18:19:31 2006
+@@ -55,7 +55,7 @@
+ DEF        = -DPRODUCER_VERSION=\"$(VERSION)\"\
+              -DPRODUCER_VERSION_REVISION="$(VERSION_REVISION)"
  
+-INC        = -I$(TOPDIR)/include 
++INC	   +=  -I${LOCALBASE}/include -I${X11BASE}/include
+ 
+ CXXFLAGS   = $(ARCHARGS) $(DOF) $(DEF) $(INC)
+ LDFLAGS    = $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
+@@ -64,20 +64,20 @@
+ 	     	 $(YACCFILES:.y=.o)\
+ 	     	 $(LEXFILES:.l=.o)	    
+ 
+-DOF        = $(OPTF)
++OPTF	   = ${CXXFLAGS}
+ DEBUGDIR   = $(OS)$(ARCH).Debug
+ OPTDIR     = $(OS)$(ARCH).Opt
+ BININST    = bin
+ LIBINST    = lib
+ 
+-INST_LOCATION      ?= /usr/local
++INST_LOCATION      = $(PREFIX)
+ INST_LIBS          = $(INST_LOCATION)/lib$(ARCH_EXT)
+ INST_INCLUDE       = $(INST_LOCATION)/include
+ INST_SHARE         = $(INST_LOCATION)/share/Producer
+-INST_DEMOS         = $(INST_SHARE)/bin
+-INST_SRC           = $(INST_SHARE)/src
+-INST_DOC           = $(INST_SHARE)/doc
+-INST_DATA          = $(INST_SHARE)/data
++INST_DEMOS         = $(EXAMPLESDIR)/bin
++INST_SRC           = $(EXAMPLESDIR)/src
++INST_DOC           = $(DOCSDIR)
++INST_DATA          = $(DATADIR)
+ INST_DEMO_SRC      = $(INST_SRC)/demos
+ 
+ LINK               = ln -sf
+@@ -124,7 +124,7 @@
+ LDFLAGS += -L$(OPENTHREADS_LIB_DIR)
  endif
  
+-OPEN_THREAD_LIB = -lOpenThreads
++OPEN_THREAD_LIB = -lOpenThreads ${PTHREAD_LIBS}
+ PTHREAD_LIB = -lpthread
+ 
+ STATICLIB_EXT = a
