@@ -1,0 +1,22 @@
+--- ./Makefile.orig	Fri Sep 22 04:48:22 2006
++++ ./Makefile	Wed Nov  1 19:01:16 2006
+@@ -2,14 +2,15 @@
+ EXECUTABLE = tss
+ 
+ SRC    = src/main.c
+-CFLAGS = -Wall -ansi -pedantic -lcurses -lcrypt -s #-DBSD
+-COMPILE= $(CC) $(CFLAGS)
+-CC = gcc
++CFLAGS += -Wall -ansi -pedantic -s -DBSD $(CPPFLAGS)
++LDFLAGS += -lcurses -lcrypt
++COMPILE = $(CC) $(CFLAGS)
++CC ?= gcc
+ 
+ all: $(EXECUTABLE)
+ 
+ $(EXECUTABLE): $(SRC)
+-	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(SRC)
++	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(SRC) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	$(COMPILE) -o $@ $<
