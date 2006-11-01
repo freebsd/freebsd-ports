@@ -7,7 +7,7 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
@@ -27,6 +27,8 @@ EMACS_PORT_NAME?=	emacs22
 EMACS_NO_BUILD_DEPENDS=	yes
 EMACS_NO_RUN_DEPENDS=	yes
 
+OPTIONS=	FFCALL	"Use ffcall"	on
+
 CFLAGS+=	-fno-reorder-blocks -fno-inline
 STRIP=		#none
 
@@ -44,6 +46,14 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_FFCALL)
+BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
+.endif
+
+.if ${OSVERSION} < 700000
+BROKEN=	Does not compile on pointyhat
+.endif
+
 .if ${ARCH} == i386
 WORDSIZE=32
 .else
@@ -54,10 +64,6 @@ WORDSIZE=64
 BYTEORDER=b
 .else
 BYTEORDER=l
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile on 4.x
 .endif
 
 post-install: install-doc install-el remove-empty-files remove-empty-dirs
