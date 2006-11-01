@@ -7,6 +7,7 @@
 
 PORTNAME=	p3scan
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	mail net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,19 +17,23 @@ COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+PLIST_FILES=	etc/p3scan/p3scan.conf.sample etc/p3scan/p3scan.mail.sample \
+		etc/rc.d/p3scan.sh sbin/p3scan
+
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" GMAKE=${GMAKE}
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
-SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	UVSCAN "Use UVSCAN" off
 
 PORTDOCS=	AUTHORS CHANGELOG LICENSE NEWS README
-
 MAN8=		p3scan.8 p3scan_readme.8
 MANCOMPRESSED=	yes
+
+USE_RC_SUBR=	p3scan.sh
+SUB_FILES=	p3scan.sh pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -47,7 +52,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p3scan ${PREFIX}/sbin/
 	${INSTALL_DATA} ${WRKSRC}/p3scan.conf ${PREFIX}/etc/p3scan/p3scan.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/p3scan-en.mail ${PREFIX}/etc/p3scan/p3scan.mail.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/p3scan.sh ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/p3scan.sh ${PREFIX}/etc/rc.d/
 .for f in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/${f}.gz ${MAN8PREFIX}/man/man8/
 .endfor
