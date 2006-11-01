@@ -224,6 +224,7 @@
     SUBDIR += tkshape
     SUBDIR += tkstep80
     SUBDIR += tktable
+    SUBDIR += tktray
     SUBDIR += tktreectrl
     SUBDIR += v
     SUBDIR += vdk
