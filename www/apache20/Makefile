@@ -214,7 +214,7 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 install-startup-script:
-.if !exists(${WRKDIR}/apache2.sh
+.if !exists(${WRKDIR}/apache2.sh)
 	@${MKDIR} ${WRKDIR}
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
