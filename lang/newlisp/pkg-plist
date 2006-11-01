@@ -3,18 +3,19 @@ bin/newlisp-tk
 %%DATADIR%%/COPYING
 %%DATADIR%%/CREDITS
 %%DATADIR%%/cgi.lsp
+%%DATADIR%%/doc/CodePatterns.html
 %%DATADIR%%/doc/manual_frame.html
 %%DATADIR%%/doc/newlisp-tk.html
 %%DATADIR%%/doc/newlisp_index.html
 %%DATADIR%%/doc/newlisp_manual.html
 %%DATADIR%%/ftp.lsp
 %%DATADIR%%/gmp.lsp
-%%DATADIR%%/hash.lsp
 %%DATADIR%%/infix.lsp
 %%DATADIR%%/init.lsp.example
 %%DATADIR%%/link.lsp
 %%DATADIR%%/mysql.lsp
 %%DATADIR%%/mysql5.lsp
+%%DATADIR%%/newlispdoc
 %%DATADIR%%/newlisp-tk/Demo.lsp
 %%DATADIR%%/newlisp-tk/Drag.lsp
 %%DATADIR%%/newlisp-tk/Hanoi.lsp
@@ -47,11 +48,14 @@ bin/newlisp-tk
 %%DATADIR%%/newlisp-tk/tcltk-app.lsp
 %%DATADIR%%/odbc.lsp
 %%DATADIR%%/pop3.lsp
+%%DATADIR%%/postscript.lsp
 %%DATADIR%%/smtp.lsp
 %%DATADIR%%/sqlite3.lsp
 %%DATADIR%%/stat.lsp
+%%DATADIR%%/syntax.cgi
 %%DATADIR%%/tcltk.lsp
 %%DATADIR%%/zlib.lsp
+%%DATADIR%%/unix.lsp
 @dirrm %%DATADIR%%/newlisp-tk/images
 @dirrm %%DATADIR%%/newlisp-tk
 @dirrm %%DATADIR%%/doc

@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	newlisp
-PORTVERSION=	8.9.0
+PORTVERSION=	9.0.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	LISP like scripting language
 
 RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${TK_VER:S,.,,g}
