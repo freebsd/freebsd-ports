@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	adns
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.chiark.greenend.org.uk/users/ian/adns/ \
 		http://www.chiark.greenend.org.uk/~ian/adns/ftp/
@@ -16,7 +15,7 @@ MAINTAINER=	babak@farrokhi.net
 COMMENT=	Easy to use, asynchronous-capable DNS client library and utilities
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
 LIBVERSION=	1
