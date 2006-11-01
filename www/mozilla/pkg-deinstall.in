@@ -1,7 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#    $MCom: ports/www/mozilla/pkg-deinstall.in,v 1.15 2006/08/01 21:09:04 ahze Exp $
+#    $MCom: ports-stable/www/mozilla/pkg-deinstall.in,v 1.9 2006/10/18 17:29:07 ahze Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)

@@ -2,7 +2,7 @@
 # ex:ts=4
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla/bsd.gecko.mk,v 1.26 2006/10/13 04:20:21 ahze Exp $
+#    $MCom: ports-stable/www/mozilla/bsd.gecko.mk,v 1.3 2006/10/24 17:48:39 ahze Exp $
 #
 # 4 column tabs prevent hair loss and tooth decay!
 
@@ -35,7 +35,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #
 # Ports should use the following:
 #
-# USE_GECKO= mozilla firefox-devel firefox seamonkey
+# USE_GECKO= mozilla firefox seamonkey
 #  The list of gecko backends that the port supports. Unless the user
 #  overrides it with WITH_GECKO, the first gecko listed in USE_GECKO
 #  will be the default. In the above example, www/mozilla will be used
@@ -69,7 +69,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 
 .if ${OSVERSION} >= 500000
 .if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
-_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner firefox-devel flock
+_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock firefox15
 .endif
 .endif
 _GECKO_ALL+=	mozilla
