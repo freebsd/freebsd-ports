@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	${APACHE_VERSION}+${RA_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	russian www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	${PORTNAME}_${APACHE_VERSION}
@@ -34,8 +34,8 @@ CONFLICTS=	apache+ipv6-* \
 		publicfile-* \
 		ru-apache+mod_ssl-*
 
-RA_VERSION=	30.22
-APACHE_VERSION=	1.3.34
+RA_VERSION=	30.23
+APACHE_VERSION=	1.3.37
 
 #
 # Small hack for alternate processing patchfiles
