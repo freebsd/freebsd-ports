@@ -2684,9 +2684,15 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>apache_fp</name>
-	<name>ru-apache</name>
-	<name>ru-apache+mod_ssl</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ru-apache</name>
+	<range><ge>1.3.28</ge><lt>1.3.37+30.23</lt></range>
+      </package>
+      <package>
+	<name>ru-apache+mod_ssl</name>
+	<range><ge>1.3.28</ge><lt>1.3.34.1.57_2</lt></range>
       </package>
       <package>
 	<name>apache+ssl</name>
@@ -2761,6 +2767,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-07-27</discovery>
       <entry>2006-07-28</entry>
+      <modified>2006-11-01</modified>
     </dates>
   </vuln>
 
