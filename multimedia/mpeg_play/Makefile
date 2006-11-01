@@ -8,10 +8,11 @@
 PORTNAME=	mpeg_play
 PORTVERSION=	2.4
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
+MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/ \
+		ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
 EXTRACT_SUFX=	-patched-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A program to play mpeg movies on X displays
 
 WRKSRC=		${WRKDIR}/mpeg_play
@@ -22,7 +23,7 @@ PLIST_FILES=	bin/mpeg_play
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+BROKEN=		Does not compile on ia64
 .endif
 
 pre-patch:
