@@ -9,7 +9,7 @@ PORTVERSION=	3.5.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${SCRM_DISPATCHER}/sugarcrm/SugarOSArchive/SugarSuiteDownloadArchive/:src \
 		${SCRM_DISPATCHER}/sugardocs/Manuals/v3.5Manuals/:userdoc \
-		${SCRM_DISPATCHER}/sugardocs/Manuals/InstallationandUpgradeManuals/:installdoc
+		${SCRM_DISPATCHER}/sugardocs/Manuals/v3.5InstallandUpgradeManuals/:installdoc
 DISTFILES=	${USERDOCFILE}:userdoc \
 		${INSTALLDOCFILE}:installdoc \
 		${SRCNAME}${EXTRACT_SUFX}:src
