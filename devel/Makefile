@@ -631,6 +631,7 @@
     SUBDIR += lua50-gettext
     SUBDIR += lua50-posix
     SUBDIR += lua50-pty
+    SUBDIR += lua-gettext
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs

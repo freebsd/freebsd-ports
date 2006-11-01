@@ -5,34 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gettext
-PORTVERSION=	1.5
-CATEGORIES=	devel
-MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/gettext/
-PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
-DISTFILES=	lua_gettext.c?rev=${CVER} gettext.lua?rev=${LVER}
-
-MAINTAINER=	andrew+ports@fubar.geek.nz
-COMMENT=	Gettext ibinding for Lua 5.0.x
-
 USE_LUA=	5.0
-USE_GETTEXT=	yes
 
-CVER=		1.15
-LVER=		${PORTVERSION}
+MASTERDIR=	${.CURDIR}/../lua-gettext
 
-PLIST_FILES=	%%LUA_MODSHAREDIR%%/gettext.lua \
-		%%LUA_MODLIBDIR%%/lgettext.so
-
-do-extract:
-	${MKDIR} ${WRKSRC}
-.for file in ${DISTFILES}
-	${CP} ${DISTDIR}/${file} ${WRKSRC}/${file:C/\?.*$//}
-.endfor
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/gettext.lua ${LUA_MODSHAREDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lgettext.so ${LUA_MODLIBDIR}
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
