@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
