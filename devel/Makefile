@@ -11,7 +11,6 @@
     SUBDIR += ZendOptimizer
     SUBDIR += a2dev
     SUBDIR += aap
-    SUBDIR += ac-archive
     SUBDIR += ace
     SUBDIR += ace+tao
     SUBDIR += ace+tao-doc
