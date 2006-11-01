@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	1.0.225
+PORTVERSION=	1.0.263
 CATEGORIES=	games python
 MASTER_SITES=	http://louhi.kempele.fi/~skyostil/uv/fretsonfire/dist/
 PKGNAMEPREFIX=	fretsonfire-
@@ -28,8 +28,5 @@ do-install:
 	@cd ${WRKSRC}/data && \
 		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/{}" \;
-
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

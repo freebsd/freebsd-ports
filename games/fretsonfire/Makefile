@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fretsonfire
-PORTVERSION=	1.0.225
+PORTVERSION=	1.0.263
 CATEGORIES=	games python
 MASTER_SITES=	http://louhi.kempele.fi/~skyostil/uv/fretsonfire/dist/
 DISTNAME=	${PORTNAME:S/f/F/g:S/o/O/}-${PORTVERSION:S/^/src-/}
@@ -59,7 +59,6 @@ do-install:
 .endif
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
