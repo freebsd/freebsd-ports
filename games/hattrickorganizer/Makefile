@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	hattrickorganizer
-PORTVERSION=	1.39
+PORTVERSION=	1.393
 PORTEPOCH=	1
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ho1
-DISTNAME=	ho_${PORTVERSION:S/.//g}
+DISTNAME=	HO_${PORTVERSION:S/.//g}
 
 MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A management tool for Hattrick.org written in Java
