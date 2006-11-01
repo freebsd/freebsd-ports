@@ -7,6 +7,7 @@
 
 PORTNAME=	xgngeo
 PORTVERSION=	16
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
@@ -38,6 +39,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/data/py/configfile.py
+	@${REINPLACE_CMD} -e 's|gtk.threads_init|gtk.gdk.threads_init|g' -e \
+		's|gtk.threads_enter|gtk.gdk.threads_enter|g' -e \
+		's|gtk.threads_leave|gtk.gdk.threads_leave|g' ${WRKSRC}/data/py/__init__.py
 
 post-install:
 .if !defined(NOPORTDOCS)
