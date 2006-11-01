@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.8.2
+PORTVERSION=	7.8.4
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	brlcad
@@ -24,13 +24,14 @@ USE_GMAKE=	yes
 PREFIX?=	${LOCALBASE}/${PORTNAME}
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
-INSTALLS_SHLIB=	yes	# Not really useful, but pet portlint
+USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--with-libs="-lpng ${EXTRA_LIBS}" --program-transform-name="" \
-		--disable-jove-build
+CONFIGURE_ARGS+=--enable-tcl-build --enable-tk-build --disable-adrt-build \
+	--with-libs="-lpng ${EXTRA_LIBS}" --program-transform-name="" \
+	--disable-jove-build
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1		\
@@ -69,8 +70,8 @@ MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1		\
 	rtg3.1 rthide.1 rtpp.1 rtrange.1 rtray.1 rtregis.1 rtscale.1 rtshot.1	\
 	rttherm.1 rtwalk.1 rtweight.1 rtxray.1 scriptsort.1 secpass.1		\
 	shapefact.1 showshot.1 showtherm.1 ssamp-bw.1 stl-g.1 sun-pix.1		\
-	tabinterp.1 tabsub.1 tankill-g.1 tclsh.1 terrain.1 ug-g.1 vas4.1	\
-	vdeck.1 viewpoint-g.1 wavelet.1 wish.1
+	tabinterp.1 tabsub.1 tankill-g.1 tclsh.1 terrain.1 vas4.1 vdeck.1 	\
+	viewpoint-g.1 wavelet.1 wish.1
 
 MAN3=	3DBorder.3 Access.3 AddErrInfo.3 AddOption.3 Alloc.3 AllowExc.3		\
 	AppInit.3 AssocData.3 Async.3 BackgdErr.3 Backslash.3 BindTable.3	\
@@ -158,9 +159,7 @@ OPTIONS=	OPTIMIZATION "Try building with optimizations" on
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == sparc64
 EXTRA_LIBS=	${PTHREAD_LIBS}
-.endif
 
 # we only run on i386 and amd64 release 5+
 .if ${OSVERSION} < 500000

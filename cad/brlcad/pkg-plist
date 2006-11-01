@@ -62,6 +62,7 @@ bin/c-d
 bin/cad_boundp
 bin/cad_parea
 bin/cadbug.sh
+bin/canonize
 bin/cat-fb
 bin/cell-fb
 bin/chan_add
@@ -107,6 +108,7 @@ bin/euclid_format
 bin/euclid_unformat
 bin/f-d
 bin/f-i
+bin/facetall.sh
 bin/fast4-g
 bin/fb-bw
 bin/fb-cmap
@@ -175,6 +177,8 @@ bin/ihist
 bin/imgdims
 bin/imod
 bin/indent.sh
+bin/ipuscan
+bin/ipustat
 bin/ir-X
 bin/ir-sgi
 bin/irdisp
@@ -183,6 +187,7 @@ bin/jack-g
 bin/kurt
 bin/lgt
 bin/loop
+bin/lowp
 bin/mac-pix
 bin/mged
 bin/mged.sh
@@ -215,6 +220,7 @@ bin/pix-alias
 bin/pix-bw
 bin/pix-bw3
 bin/pix-fb
+bin/pix-ipu
 bin/pix-orle
 bin/pix-png
 bin/pix-ppm
@@ -284,6 +290,7 @@ bin/plstat
 bin/ply-g
 bin/png-bw
 bin/png-fb
+bin/png-ipu
 bin/png-pix
 bin/png_info
 bin/polar-fb
@@ -453,6 +460,8 @@ include/brlcad/dm-ogl.h
 include/brlcad/dm-pex.h
 include/brlcad/dm-plot.h
 include/brlcad/dm-ps.h
+include/brlcad/dm-tk.h
+include/brlcad/dm-wgl.h
 include/brlcad/dm.h
 include/brlcad/dm_color.h
 include/brlcad/dm_xvars.h
@@ -460,7 +469,6 @@ include/brlcad/exit_status.h
 include/brlcad/fb.h
 include/brlcad/fbio.h
 include/brlcad/fbserv_obj.h
-include/brlcad/forms.h
 include/brlcad/itcl.h
 include/brlcad/itclDecls.h
 include/brlcad/itclInt.h
@@ -553,13 +561,16 @@ lib/blt2.4/dd_protocols/dd-color.tcl
 lib/blt2.4/dd_protocols/dd-file.tcl
 lib/blt2.4/dd_protocols/dd-number.tcl
 lib/blt2.4/dd_protocols/dd-text.tcl
+lib/blt2.4/dd_protocols/tclIndex
 lib/blt2.4/dnd.tcl
 lib/blt2.4/dragdrop.tcl
 lib/blt2.4/graph.tcl
 lib/blt2.4/hierbox.tcl
 lib/blt2.4/hiertable.tcl
+lib/blt2.4/pkgIndex.tcl
 lib/blt2.4/tabnotebook.tcl
 lib/blt2.4/tabset.tcl
+lib/blt2.4/tclIndex
 lib/blt2.4/treeview.tcl
 lib/blt2.4/treeview.xbm
 lib/blt2.4/treeview_m.xbm
@@ -989,6 +1000,7 @@ lib/tkimg.a
 lib/tkimg.la
 lib/tkimg.so
 lib/tkimg.so.0
+man/man1/canonize.1
 %%DATADIR%%/%%PORTVERSION%%/AUTHORS
 %%DATADIR%%/%%PORTVERSION%%/COPYING
 %%DATADIR%%/%%PORTVERSION%%/HACKING
@@ -1027,18 +1039,21 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/db/star.g
 %%DATADIR%%/%%PORTVERSION%%/db/tank_car.g
 %%DATADIR%%/%%PORTVERSION%%/db/terra.g
-%%DATADIR%%/%%PORTVERSION%%/db/truck.g
 %%DATADIR%%/%%PORTVERSION%%/db/toyjeep.g
+%%DATADIR%%/%%PORTVERSION%%/db/truck.g
 %%DATADIR%%/%%PORTVERSION%%/db/wave.g
 %%DATADIR%%/%%PORTVERSION%%/db/woodsman.g
 %%DATADIR%%/%%PORTVERSION%%/db/world.g
 %%DATADIR%%/%%PORTVERSION%%/db/xmp.g
+%%DATADIR%%/%%PORTVERSION%%/doc/IDEAS
+%%DATADIR%%/%%PORTVERSION%%/doc/PROJECTS
 %%DATADIR%%/%%PORTVERSION%%/doc/README.AIX
 %%DATADIR%%/%%PORTVERSION%%/doc/README.BSD
 %%DATADIR%%/%%PORTVERSION%%/doc/README.IRIX
 %%DATADIR%%/%%PORTVERSION%%/doc/README.Linux
 %%DATADIR%%/%%PORTVERSION%%/doc/README.MacOSX
 %%DATADIR%%/%%PORTVERSION%%/doc/README.Solaris
+%%DATADIR%%/%%PORTVERSION%%/doc/README.VAX
 %%DATADIR%%/%%PORTVERSION%%/doc/README.Windows
 %%DATADIR%%/%%PORTVERSION%%/doc/anim.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/archer_ack.txt
@@ -1059,6 +1074,7 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/doc/mk.tr
 %%DATADIR%%/%%PORTVERSION%%/doc/movie.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/old-mged.tr
+%%DATADIR%%/%%PORTVERSION%%/doc/pad_file.xml
 %%DATADIR%%/%%PORTVERSION%%/doc/pkg.tr
 %%DATADIR%%/%%PORTVERSION%%/doc/regions.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/rounding.txt
@@ -1296,7 +1312,6 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/bool.gif
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/brlcad_glossary.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/brlcad_solids.html
-%%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/bugs
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/build_def_index.sh
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/cmd_line_ed.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/concl.html
@@ -1364,6 +1379,9 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/pix/star.pix
 %%DATADIR%%/%%PORTVERSION%%/pix/world.log
 %%DATADIR%%/%%PORTVERSION%%/pix/world.pix
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/Command/README
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/Core/README
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/Utility/README
 %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA.tcl
 %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA/TankWizardIA.tcl
 %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA/images/tank.png
@@ -1404,6 +1422,7 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Plugin.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/RhcEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/RpcEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/ShaderEdit.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/SketchEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/SphereEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/TgcEditFrame.tcl
@@ -1653,7 +1672,9 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/editmenu.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/editobj.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/eobjmenu.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/expand_comb.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/extract.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/facetize_all_regions.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/font.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/g2asc.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/garbage_collect.tcl
@@ -1867,6 +1888,9 @@ lib/tkimg.so.0
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA/images
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Utility
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Core
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Command
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins
 @dirrm %%DATADIR%%/%%PORTVERSION%%/pix
