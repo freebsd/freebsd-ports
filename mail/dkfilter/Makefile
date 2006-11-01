@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dkfilter
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	mail
 MASTER_SITES=	http://jason.long.name/dkfilter/
 
