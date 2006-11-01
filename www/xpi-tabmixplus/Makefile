@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tabmixplus
-DISTVERSION=	0.3.5rc1
+DISTVERSION=	0.3.5rc2
 CATEGORIES=	www
 MASTER_SITES=	http://tmp.garyr.net/ CSME
 
