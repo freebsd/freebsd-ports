@@ -44,9 +44,9 @@ include/gsk-1.0/gsk/gskprocessinfo.h
 include/gsk-1.0/gsk/gskqsortmacro.h
 include/gsk-1.0/gsk/gskrbtreemacros.h
 include/gsk-1.0/gsk/gskrequest.h
-include/gsk-1.0/gsk/gskshutdown.h
 include/gsk-1.0/gsk/gsksimplefilter.h
 include/gsk-1.0/gsk/gsksocketaddress.h
+include/gsk-1.0/gsk/gsksocketaddresssymbolic.h
 include/gsk-1.0/gsk/gskstdio.h
 include/gsk-1.0/gsk/gskstream.h
 include/gsk-1.0/gsk/gskstreamclient.h
