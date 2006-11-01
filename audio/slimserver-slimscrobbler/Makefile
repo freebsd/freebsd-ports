@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	slimscrobbler
-PORTVERSION=	0.34
+PORTVERSION=	0.37.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	slimserver-
-DISTNAME=	SlimScrobblerV${DISTVERSION}
+DISTNAME=	SlimScrobbler${DISTVERSION:S/.//g}
 
 MAINTAINER=	freebsd-ports@varju.ca
 COMMENT=	SlimServer plugin for submitting updates to last.fm
