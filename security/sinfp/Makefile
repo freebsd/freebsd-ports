@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	sinfp
-PORTVERSION=	2.02.1
 
 BUILD_DEPENDS=	p5-Net-SinFP>=2.02:${PORTSDIR}/security/p5-Net-SinFP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -16,7 +15,7 @@ PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.db
 PLIST_DIRS=	%%DATADIR%%
 NO_BUILD=	yes
 MASTERDIR=	${.CURDIR}/../p5-Net-SinFP
-DBDATE=		20061009
+#DBDATE=
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!$$Bin/../db/!${DATADIR}/!' ${WRKSRC}/bin/${PORTNAME}.pl
