@@ -610,6 +610,7 @@
     SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tree
+    SUBDIR += tss
     SUBDIR += ttyload
     SUBDIR += tua
     SUBDIR += tw_cli
