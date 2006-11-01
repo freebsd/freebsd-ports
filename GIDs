@@ -67,6 +67,7 @@ smxq:*:261:
 smxc:*:262:
 smxm:*:263:
 smx:*:264:
+haclient:*:275:
 mrtg:*:279:
 dkfilter:*:325:
 ldap:*:389:
