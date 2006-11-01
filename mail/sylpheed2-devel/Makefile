@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTVERSION=	2.3.0.b4
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.2/ \
+MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v2.3beta/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.b/beta/}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-IGNORE=		"is out-of-dated, use mail/sylpheed2 instead of this, until the next development starts."
+#IGNORE=	"is out-of-dated, use mail/sylpheed2 instead of this, until the next development starts."
 
-LATEST_LINK=	${PORTNAME}22
+LATEST_LINK=	${PORTNAME}23
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -117,6 +117,8 @@ post-patch:
 .endif
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/applications/
 .if !defined(NOPORTDOCS)
