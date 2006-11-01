@@ -1,15 +1,22 @@
---- Rules.mk.orig	Thu Mar 31 10:55:15 2005
-+++ Rules.mk	Thu Mar 31 10:55:43 2005
-@@ -69,12 +69,7 @@
- 		$(CMD_INSTBIN)
- 		$(INST) $(TGT_SBIN) -m 750 -d $(DIR_SBIN)
+--- Rules.mk.orig	Thu Mar 23 17:19:04 2006
++++ Rules.mk	Sun Oct 29 15:49:17 2006
+@@ -74,19 +74,6 @@
  		$(CMD_INSTSBIN)
--ifeq ($(wildcard $(DIR_ETC)/*),)
--		$(INST) $(TGT_ETC) -m 644 -d $(DIR_ETC)
- 		$(CMD_INSTETC)
--else
--		@echo Configuration directory $(DIR_ETC) already present -- skipping
--endif
- 		$(INST) $(TGT_LIB) -m 750 -d $(DIR_LIB)
+ 		$(INST) $(TGT_LIB) -m 755 -d $(INST_PREFIX)$(DIR_LIB)
  		$(CMD_INSTLIB)
+-ifeq ($(wildcard $(INST_PREFIX)$(DIR_ETC)/*),)
+-		$(INST) $(TGT_ETC) -m 644 -d $(INST_PREFIX)$(DIR_ETC)
+-		$(CMD_INSTETC)
+-else
+-		@echo
+-		@echo Configuration directory $(DIR_ETC) already present -- skipping. 
+-		@echo
+-		@echo When upgrading, is recommended to rename your existing configuration
+-		@echo directory $(DIR_ETC) to eg. $(DIR_ETC).orig,
+-		@echo to redo the installation, and to copy only the configuration- and behaviour 
+-		@echo files and the files in the legacy and modules subdirectories that have 
+-		@echo local changes back from the .orig directory.
+-endif
+ 		@echo
+ 		@echo If no error messages appeared, OpenRADIUS has been installed successfully. 
  		@echo
