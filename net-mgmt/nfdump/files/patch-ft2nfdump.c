@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- ft2nfdump.c.orig
 +++ ft2nfdump.c
-@@ -54,7 +54,7 @@
+@@ -64,7 +64,7 @@
+ #endif
  
- #include <string.h>
- #include <errno.h>
+ #include "version.h"
 -#include "ftbuild.h"
-+/*#include "ftbuild.h" */
- 
- #include <sys/stat.h>
- 
++/*#include "ftbuild.h"*/
+ #include "nf_common.h"
+ #include "nffile.h"
+ #include "launch.h"
