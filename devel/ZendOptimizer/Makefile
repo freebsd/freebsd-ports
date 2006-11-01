@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ZendOptimizer
-DISTVERSION=	3.0.1
-PORTREVISION=	1
+DISTVERSION=	3.0.2
 CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ale
 DISTNAME=	${PORTNAME}-${DISTVERSION}-freebsd${VER}-${ARCH}
 
 MAINTAINER=	ale@FreeBSD.org
@@ -34,15 +35,6 @@ IGNORE=		this port is for FreeBSD 6 or above
 VER=		5.4
 .else
 VER=		6.0
-.endif
-# Check for ZendOptimizer sources
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-You have to fetch the binary distribution manually from the\n\
-http://www.zend.com/free_download/optimizer URL.\n\
-Download the file ${DISTNAME}${EXTRACT_SUFX},\n\
-and place it in ${DISTDIR}.\n
 .endif
 .endif
 
