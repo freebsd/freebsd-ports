@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
+		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
+		ftp://ftp.uk.freeradius.org/pub/radius/ \
+		ftp://ftp.freeradius.org/pub/radius/old/ \
 		http://freeradius.portal-to-web.de/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@wood2.org.uk
 COMMENT=	A free RADIUS server implementation
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
@@ -27,6 +29,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CFLAGS+=	"-I${LOCALBASE}/include"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -42,9 +45,9 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--localstatedir=/var \
+		--with-system-libtool \
 		--disable-ltdl-install \
-		--with-ltdl-include=${LOCALBASE}/include \
-		--with-ltdl-lib=${LOCALBASE}/lib \
+		--with-docdir=${DOCSDIR} \
 		--with-large-files --without-rlm_sql_unixodbc \
 		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
 		--without-rlm_sql_db2 \
@@ -148,8 +151,9 @@ MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
 
 DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.airespace dictionary.alcatel dictionary.alteon \
-		dictionary.altiga dictionary.aptis dictionary.aruba dictionary.ascend \
-		dictionary.avaya dictionary.bay dictionary.bintec dictionary.bristol \
+		dictionary.alvarion dictionary.altiga dictionary.aptis \
+		dictionary.aruba dictionary.ascend dictionary.avaya \
+		dictionary.bay dictionary.bintec dictionary.bristol \
 		dictionary.cablelabs dictionary.cabletron dictionary.cisco \
 		dictionary.cisco.bbsm dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
 		dictionary.colubris dictionary.columbia_university dictionary.compat \
@@ -164,15 +168,16 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.motorola dictionary.navini dictionary.netscreen \
 		dictionary.nokia dictionary.nomadix dictionary.nortel dictionary.ntua \
 		dictionary.packeteer dictionary.propel dictionary.quintum \
-		dictionary.redback dictionary.redcreek dictionary.rfc2865 \
-		dictionary.rfc2866 dictionary.rfc2867 dictionary.rfc2868 \
-		dictionary.rfc2869 dictionary.rfc3162 dictionary.rfc3576 \
-		dictionary.rfc3580 dictionary.roaringpenguin dictionary.shasta \
-		dictionary.shiva dictionary.sonicwall dictionary.springtide \
-		dictionary.starent dictionary.t_systems_nova dictionary.telebit \
-		dictionary.trapeze dictionary.unix dictionary.usr dictionary.valemount \
-		dictionary.versanet dictionary.waverider dictionary.wispr \
-		dictionary.xedia dictionary.xylan dictionary.zyxel
+		dictionary.redback dictionary.redcreek dictionary.riverstone \
+		dictionary.rfc2865 dictionary.rfc2866 dictionary.rfc2867 \
+		dictionary.rfc2868 dictionary.rfc2869 dictionary.rfc3162 \
+		dictionary.rfc3576 dictionary.rfc3580 dictionary.roaringpenguin \
+		dictionary.shasta dictionary.shiva dictionary.sonicwall \
+		dictionary.springtide dictionary.starent dictionary.t_systems_nova \
+		dictionary.telebit dictionary.trapeze dictionary.tropos \
+		dictionary.unix dictionary.usr dictionary.valemount \
+		dictionary.versanet dictionary.walabi dictionary.waverider \
+		dictionary.wispr dictionary.xedia dictionary.xylan dictionary.zyxel
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/Makefile.orig
