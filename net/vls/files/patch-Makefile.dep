@@ -1,0 +1,11 @@
+--- Makefile.dep.orig	Wed Nov  1 16:06:02 2006
++++ Makefile.dep	Wed Nov  1 16:06:35 2006
+@@ -50,7 +50,7 @@
+ 	@test -d dep/$(dir $*) || mkdir -p dep/$(dir $*)
+ 	@echo "Generating dependancies for $<..."
+ 	@$(SHELL) -ec '$(CXX) $(DCFLAGS) $(INCLUDE) $< \
+-	| sed '\''s/$(subst .,\.,$(notdir $*))\.o[ :]*/src\/$(subst /,\/,$*).o \
++	| sed '\''s/$(subst .,\.,$(notdir $*))\.o[ :]*/src\/$(subst /,\/,$*).o : \
+ 	dep\/$(subst /,\/,$*).d : /g'\'' > $@; \
+ 	[ -s $@ ] || rm -f $@'
+ 
