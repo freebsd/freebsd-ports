@@ -1,6 +1,6 @@
---- SConstruct.orig	Fri Apr 14 14:13:03 2006
-+++ SConstruct	Tue Sep 12 18:18:20 2006
-@@ -77,10 +77,11 @@
+--- SConstruct	Thu Oct 12 17:14:02 2006
++++ SConstruct	Thu Oct 12 17:16:36 2006
+@@ -69,7 +69,7 @@
  	SDL_CONFIG = os.environ['SDL_CONFIG']
  	env.Replace(CC = os.environ['CC'])
  	env.Replace(CXX = os.environ['CXX'])
@@ -9,7 +9,33 @@
  	libpath = [LOCALBASE + '/lib', X11BASE + '/lib'] 
  	gllibs = ['GL', 'GLU']
  	sdllibs = ['SDL_image']
-+	extralibs = ['execinfo']
- 	cpuinfof = os.popen('sysctl -n hw.instruction_sse')
+@@ -78,7 +78,7 @@
  	cpuinfol = cpuinfof.readlines()
  	mmxsupported = False
+ 	ssesupported = False
+-        for i in cpuinfol:
++	for i in cpuinfol:
+ 		if i == '1\n':
+ 			mmxsupported = True
+ 			ssesupported = True
+@@ -89,14 +89,15 @@
+ 	                osspecificsrc += ['water_sse.cpp']
+ 	                print 'Using x86 SSE/MMX optimizations.'
+ 
+-        env.Replace(CCFLAGS = os.environ['CFLAGS'])
++	env.Replace(CCFLAGS = os.environ['CFLAGS'])
+ 	if (debug == 1):
+ 		env.Append(CCFLAGS = '-g')
+ 		env.Append(CPPDEFINES = ['DEBUG'])
+-        env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
+-        env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
+-        datadir = '/usr/local/share/dangerdeep'
+-        build_dir = 'freebsd'
++	env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
++	env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
++	env.Append(LIBPATH = [LOCALBASE + '/lib', X11BASE + '/lib'])
++	datadir = '/usr/local/share/dangerdeep'
++	build_dir = 'freebsd'
+ 	
+         if (os.system('grep glBindProgram ' + X11BASE + '/include/GL/gl*.h > /dev/null') == 0):
+                 gllibdirs = [X11BASE + '/lib/', '/usr/lib/', LOCALBASE + '/lib/']
