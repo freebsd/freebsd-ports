@@ -13,7 +13,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Sather compiler
 
 #
@@ -42,6 +42,10 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		boehm-gc is broken on ia64
+.endif
 
 BC_DIR!=	cd ${PORTSDIR}/devel/boehm-gc && ${MAKE} -V WRKSRC
 
