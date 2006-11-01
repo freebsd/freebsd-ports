@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -34,8 +34,6 @@ OPTIONS=	QSTAT "Game server query support (check_game)" OFF \
 
 GNU_CONFIGURE=	yes
 
-NAGIOSUSER?=	nagios
-NAGIOSGROUP?=	nagios
 NAGIOSDIR?=	/var/spool/nagios
 
 NAGIOSWWWDIR?=	www/nagios
@@ -44,9 +42,7 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \
-		--with-nagios-group=${NAGIOSGROUP} \
-		--with-cgiurl=${NAGIOSCGIURL} \
+CONFIGURE_ARGS=	--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
@@ -108,6 +104,7 @@ USE_MYSQL=	YES
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 PLIST_SUB+=	SUB_MYSQL=""
 .else
+CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=	SUB_MYSQL="@comment "
 .endif
 

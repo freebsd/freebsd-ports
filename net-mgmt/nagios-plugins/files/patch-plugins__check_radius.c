@@ -1,6 +1,6 @@
---- plugins/check_radius.c.orig	Sun Dec 26 09:47:44 2004
-+++ plugins/check_radius.c	Fri May 12 23:35:17 2006
-@@ -27,7 +27,7 @@
+--- plugins/check_radius.c.orig	Tue Jun 20 20:47:02 2006
++++ plugins/check_radius.c	Sat Oct 28 09:57:25 2006
+@@ -40,7 +40,7 @@
  #include "utils.h"
  #include "netutils.h"
  
@@ -9,7 +9,7 @@
  
  int process_arguments (int, char **);
  void print_help (void);
-@@ -108,6 +108,7 @@
+@@ -121,6 +121,7 @@
  	int result = STATE_UNKNOWN;
  	UINT4 client_id;
  	char *str;
@@ -17,7 +17,7 @@
  
  	setlocale (LC_ALL, "");
  	bindtextdomain (PACKAGE, LOCALEDIR);
-@@ -117,32 +118,35 @@
+@@ -130,32 +131,35 @@
  		usage4 (_("Could not parse arguments"));
  
  	str = strdup ("dictionary");
