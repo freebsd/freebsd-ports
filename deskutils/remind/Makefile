@@ -9,7 +9,7 @@ PORTNAME=	remind
 PORTVERSION=	3.0.24
 DISTVERSION=	03.00.24
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.roaringpenguin.com/penguin/ \
+MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
