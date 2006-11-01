@@ -1,3 +1,6 @@
 MD5 (Net-SinFP-2.03.tar.gz) = 5f852f2c072cbfa3ec6f401dec619fa3
 SHA256 (Net-SinFP-2.03.tar.gz) = 4ce7ceccf8b040a2ff0292630426723a329cb9ae78c32b3e22be7812a624b98f
 SIZE (Net-SinFP-2.03.tar.gz) = 26233
+MD5 (sinfp-20061101.db) = dc5556b7cbaa5739ce70e323ee49d9d7
+SHA256 (sinfp-20061101.db) = 800cab77b7ce62e775afc2416deedf94e4bb981f2881cee62661a9f7d842897c
+SIZE (sinfp-20061101.db) = 35840
