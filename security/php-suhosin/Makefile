@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suhosin
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.hardened-php.net/suhosin/_media/
 PKGNAMEPREFIX=	php-
