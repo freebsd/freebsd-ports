@@ -6641,6 +6641,7 @@ ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
 ltxml		ports/textproc/ltxml
 lua		ports/lang/lua
+lua-gettext	ports/devel/lua-gettext
 lua-mode.el	ports/lang/lua-mode.el
 lua4		ports/lang/lua4
 lua50		ports/lang/lua50
