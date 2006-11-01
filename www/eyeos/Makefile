@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eyeOS
-DISTVERSION=	0.9.1-4
+DISTVERSION=	0.9.3
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -30,7 +30,7 @@ post-extract:
 	@${MV} ${WRKSRC}/README.txt ${WRKSRC}/DOCS/USER.MANUAL
 
 post-patch:
-	@${FIND} ${WRKSRC}/ -iname \*php | xargs ${REINPLACE_CMD} -e 's/0777/0775/g'
+	@${FIND} ${WRKSRC}/ -iname \*php | ${XARGS} ${REINPLACE_CMD} -e 's/0777/0775/g'
 	@${FIND} ${WRKSRC}/ -iname \*bak -delete
 
 do-install:
