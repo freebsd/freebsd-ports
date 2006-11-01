@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-XPathEngine
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -24,11 +24,7 @@ MAN3=		XML::XPathEngine.3 XML::XPathEngine::Boolean.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/extra-*
-
-post-patch:
-	${PERL} -pi -e '$$_ = "" if /^use warnings/' ${WRKSRC}/Makefile.PL
-	${FIND} ${WRKSRC} -name '*.orig' -delete
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
