@@ -9867,6 +9867,7 @@ p5-Params-Classify	ports/devel/p5-Params-Classify
 p5-Params-Util	ports/devel/p5-Params-Util
 p5-Params-Validate	ports/devel/p5-Params-Validate
 p5-Parse-CPAN-Packages	ports/devel/p5-Parse-CPAN-Packages
+p5-Parse-CSV	ports/textproc/p5-Parse-CSV
 p5-Parse-FixedLength	ports/textproc/p5-Parse-FixedLength
 p5-Parse-Flex	ports/textproc/p5-Parse-Flex
 p5-Parse-PerlConfig	ports/devel/p5-Parse-PerlConfig
