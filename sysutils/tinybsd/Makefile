@@ -18,10 +18,16 @@ COMMENT=	Shell script to build embedded systems based on FreeBSD
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 601104
+IGNORE=	the port was added in base system in /usr/src/tools/tools/tinybsd
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/tinybsd
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
