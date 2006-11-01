@@ -1,0 +1,7 @@
+Tktray is an extension that is able to create system tray icons. It
+follows http://www.freedesktop.org specifications when looking up the
+system tray manager. This protocol is supported by modern versions of
+KDE and Gnome panels, and by some other panel-like application.
+
+WWW: http://sw4me.com/wiki/Tktray
+Author: Anton Kovalenko <anton@sw4me.com>
