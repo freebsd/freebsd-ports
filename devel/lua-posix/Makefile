@@ -15,11 +15,19 @@ DISTFILES=	lposix.tar.gz
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	A POSIX layer for Lua
 
-USE_LUA=	5.0
+USE_LUA?=	5.1
 WRKSRC=		${WRKDIR}/posix
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/posix.lua \
 		%%LUA_MODLIBDIR%%/lposix.so
+
+.if ${USE_LUA} == 5.1
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-51-lposix.c \
+		${FILESDIR}/extrapatch-51-posix.lua \
+		${FILESDIR}/extrapatch-51-test.lua
+.elif ${USE_LUA} == 5.0
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-50-Makefile
+.endif
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/posix.lua ${LUA_MODSHAREDIR}
