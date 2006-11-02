@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gobby
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.1
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/
 
@@ -15,14 +15,22 @@ COMMENT=	A free collaborative editor
 
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		net6-1.2.0:${PORTSDIR}/net/net6 \
-		obby-0.3.0:${PORTSDIR}/devel/obby
+		net6-1.3:${PORTSDIR}/net/net6 \
+		obby-0.4:${PORTSDIR}/devel/obby
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gtksourceview
 USE_GCC=	3.4
 
-PLIST_FILES=	bin/gobby
+CONFIGURE_ARGS=	"--mandir=${PREFIX}/man"
+
+PLIST_FILES=	bin/gobby share/pixmaps/gobby.png \
+		share/pixmaps/gobby/userlist.png \
+		share/pixmaps/gobby/doclist.png \
+		share/pixmaps/gobby/chat.png
+PLIST_DIRS=	share/pixmaps/gobby share/pixmaps
+
+MAN1=	gobby.1
 
 .include <bsd.port.mk>
