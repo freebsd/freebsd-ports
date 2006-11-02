@@ -5,25 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=		p4v
-PORTVERSION=		2005.2.94595
-CATEGORIES=		devel
-MASTER_SITES=		ftp://ftp.perforce.com/pub/perforce/r05.2/bin.freebsd4/
-DISTNAME=		${PORTNAME}
-EXTRACT_SUFX=		.tgz
+PORTNAME=	p4v
+PORTVERSION=	2006.1.108384
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r06.1/bin.freebsd54x86/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		bms@FreeBSD.org
-COMMENT=		Visual client for Perforce SCM
+MAINTAINER=	bms@FreeBSD.org
+COMMENT=	Visual client for Perforce SCM
 
-NO_CDROM=		Binary redistribution restrictions in effect
-RESTRICTED=		${NO_CDROM}
+NO_CDROM=	Binary redistribution restrictions in effect
+RESTRICTED=	${NO_CDROM}
 
-ONLY_FOR_ARCHS=		i386
-NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
+ONLY_FOR_ARCHS=	i386
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=		${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 P4V_ICONS_DIR=	P4VResources/icons
 P4V_ICONS=	p4v_16_low.png p4v_32_high.png p4v_32_low.png p4v_48_high.png
@@ -84,8 +85,11 @@ P4V_IMGS=	p4v_bookmark.png p4v_file_add.png p4v_file_add_other.png \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=		please upgrade to FreeBSD 5.x or newer
+.endif
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS+=	c_r.5:${PORTSDIR}/misc/compat5x
 .endif
 
 do-install:
