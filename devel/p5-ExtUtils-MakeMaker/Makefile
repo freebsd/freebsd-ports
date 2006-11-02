@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	6.30
-PORTREVISION=	1
+PORTVERSION=	6.31
+PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
@@ -20,7 +20,7 @@ PERL_CONFIGURE=	YES
 
 MAN1=	instmodsh.1
 MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
-	ExtUtils::Install.3 ExtUtils::Manifest.3 ExtUtils::Command.3 \
+	ExtUtils::Install.3 ExtUtils::Manifest.3 \
 	ExtUtils::MM_Unix.3 ExtUtils::Mksymlists.3 ExtUtils::MM.3 \
 	ExtUtils::MM_Win32.3 ExtUtils::MM_UWIN.3 ExtUtils::testlib.3 \
 	ExtUtils::MakeMaker::vmsish.3 ExtUtils::MY.3 ExtUtils::MM_DOS.3 \
@@ -35,14 +35,15 @@ MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .if ${PERL_LEVEL} >= 500800
 .undef MAN1
-PLIST_SUB+=	EXE_FILES="@comment "
+PLIST_SUB+=	EXE_FILES="@comment " EXEUTILS_COMMAND="@comment "
 .else
-PLIST_SUB+=	EXE_FILES=""
+PLIST_SUB+=	EXE_FILES="" EXEUTILS_COMMAND=""
+MAN3+=		ExtUtils::Command.3
 .endif
 
 post-patch:
