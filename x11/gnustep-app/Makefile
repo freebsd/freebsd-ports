@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -91,8 +92,8 @@ USE_GNUSTEP_LOCAL_APPS+=	GPuzzle2:games/gpuzzle
 USE_GNUSTEP_LOCAL_APPS+=	Ticker:www/gnustep-ticker
 USE_GNUSTEP_LOCAL_APPS+=	NoteBook:deskutils/gnustep-notebook
 USE_GNUSTEP_LOCAL_APPS+=	HelpViewer:deskutils/helpviewer
-#USE_GNUSTEP_LOCAL_APPS+=	Duncan:textproc/duncan
-#USE_GNUSTEP_LOCAL_APPS+=	Jishyo:japanese/jishyo
+USE_GNUSTEP_LOCAL_APPS+=	Duncan:textproc/duncan
+USE_GNUSTEP_LOCAL_APPS+=	Jishyo:japanese/jishyo
 
 do-install:	# empty
 
