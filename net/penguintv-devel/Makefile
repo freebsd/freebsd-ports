@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	1.93
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -24,7 +23,7 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-IGNORE=		has been overtaken by the non-devel version
+BROKEN=		Cannot be run without PyLucence
 
 OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF
 
