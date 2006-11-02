@@ -893,3 +893,4 @@
 %%DFROMX%%
 @dirrmtry %%EYEDIR%%/system/themes
 @dirrmtry %%EYEDIR%%/system
+@dirrmtry %%EYEDIR%%

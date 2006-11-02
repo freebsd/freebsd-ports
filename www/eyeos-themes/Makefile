@@ -55,6 +55,7 @@ post-extract:
 	@${FIND} ${WRKSRC} -name \*~ -delete
 
 do-install:
+	${INSTALL} -d ${THEMESDIR}/
 	${CP} -Rp ${EYETHEMES:S,^,${WRKDIR}/,} ${THEMESDIR}/
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${THEMESDIR}
 	${CHMOD} -R go-w ${THEMESDIR}
@@ -63,7 +64,7 @@ do-install:
 
 # Maintainer section
 create-plist: build
-	: > ${PLIST}
+	:>${PLIST}
 .for theme in ${OPTIONS:M*_THEME:S/_THEME//:O}
 	${FIND} -s ${WRKSRC}/${theme} -type f -or -type l | \
 		${SED} -e 's#^${WRKSRC}/${theme}#%%${theme:U}%%#' >> ${PLIST}
@@ -74,5 +75,6 @@ create-plist: build
 .endfor
 	${ECHO_CMD} @dirrmtry %%EYEDIR%%/system/themes >> ${PLIST}
 	${ECHO_CMD} @dirrmtry %%EYEDIR%%/system >> ${PLIST}
+	${ECHO_CMD} @dirrmtry %%EYEDIR%% >> ${PLIST}
 
 .include <bsd.port.post.mk>
