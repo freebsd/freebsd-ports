@@ -3708,6 +3708,7 @@ gpsim		ports/devel/gpsim
 gpsk31		ports/comms/gpsk31
 gpsman		ports/astro/gpsman
 gpsmanshp	ports/graphics/gpsmanshp
+gpstk		ports/astro/gpstk
 gpt31		ports/misc/gpt31
 gpte		ports/sysutils/gpte
 gputils		ports/devel/gputils
