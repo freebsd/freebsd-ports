@@ -22,6 +22,7 @@
     SUBDIR += gpsd
     SUBDIR += gpsdrive
     SUBDIR += gpsman
+    SUBDIR += gpstk
     SUBDIR += jday
     SUBDIR += libnova
     SUBDIR += luna
