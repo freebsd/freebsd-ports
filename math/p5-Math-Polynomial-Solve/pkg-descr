@@ -1,0 +1,13 @@
+This package supplies a set of functions that find the roots of
+polynomials. Polynomials up to the quartic may be solved directly by
+numerical formulae. Polynomials of fifth and higher powers will be
+solved by an iterative method, as there are no general solutions for
+fifth and higher powers.
+
+The linear, quadratic, cubic, and quartic *_roots() functions all
+expect to have a non-zero value for the $a term.
+
+If the constant term is zero then the first value returned in the list
+of answers will always be zero, for all functions.
+
+WWW:	http://search.cpan.org/dist/Math-Polynomial-Solve/

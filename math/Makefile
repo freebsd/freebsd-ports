@@ -210,6 +210,7 @@
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-Math-Matrix
     SUBDIR += p5-Math-Pari
+    SUBDIR += p5-Math-Polynomial-Solve
     SUBDIR += p5-Math-Random
     SUBDIR += p5-Math-Random-MT
     SUBDIR += p5-Math-Random-MT-Auto
