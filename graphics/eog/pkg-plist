@@ -6,7 +6,51 @@ share/gnome/help/eog/C/eog.xml
 share/gnome/help/eog/C/figures/eog_save_as_window.png
 share/gnome/help/eog/C/figures/eog_start_window.png
 share/gnome/help/eog/C/legal.xml
+share/gnome/help/eog/de/eog.xml
+share/gnome/help/eog/de/figures/eog_start_window.png
+share/gnome/help/eog/de/legal.xml
+share/gnome/help/eog/es/eog.xml
+share/gnome/help/eog/es/figures/eog_save_as_window.png
+share/gnome/help/eog/es/figures/eog_start_window.png
+share/gnome/help/eog/eu/eog.xml
+share/gnome/help/eog/eu/figures/eog_start_window.png
+share/gnome/help/eog/eu/legal.xml
+share/gnome/help/eog/fr/eog.xml
+share/gnome/help/eog/fr/figures/eog_save_as_window.png
+share/gnome/help/eog/fr/figures/eog_start_window.png
+share/gnome/help/eog/it/eog.xml
+share/gnome/help/eog/it/figures/eog_start_window.png
+share/gnome/help/eog/it/legal.xml
+share/gnome/help/eog/ja/eog.xml
+share/gnome/help/eog/ja/figures/eog_start_window.png
+share/gnome/help/eog/ja/legal.xml
+share/gnome/help/eog/ko/eog.xml
+share/gnome/help/eog/ko/figures/eog_start_window.png
+share/gnome/help/eog/ko/legal.xml
+share/gnome/help/eog/sv/eog.xml
+share/gnome/help/eog/sv/figures/eog_start_window.png
+share/gnome/help/eog/sv/legal.xml
+share/gnome/help/eog/uk/eog.xml
+share/gnome/help/eog/uk/figures/eog_save_as_window.png
+share/gnome/help/eog/uk/figures/eog_start_window.png
+share/gnome/help/eog/zh_CN/eog.xml
+share/gnome/help/eog/zh_CN/figures/eog_start_window.png
+share/gnome/help/eog/zh_CN/legal.xml
+share/gnome/help/eog/zh_TW/eog.xml
+share/gnome/help/eog/zh_TW/figures/eog_start_window.png
+share/gnome/help/eog/zh_TW/legal.xml
 share/gnome/omf/eog/eog-C.omf
+share/gnome/omf/eog/eog-de.omf
+share/gnome/omf/eog/eog-es.omf
+share/gnome/omf/eog/eog-eu.omf
+share/gnome/omf/eog/eog-fr.omf
+share/gnome/omf/eog/eog-it.omf
+share/gnome/omf/eog/eog-ja.omf
+share/gnome/omf/eog/eog-ko.omf
+share/gnome/omf/eog/eog-sv.omf
+share/gnome/omf/eog/eog-uk.omf
+share/gnome/omf/eog/eog-zh_CN.omf
+share/gnome/omf/eog/eog-zh_TW.omf
 share/gnome/pixmaps/eog/down-right.png
 share/gnome/pixmaps/eog/loading.png
 share/gnome/pixmaps/eog/orient-horizontal.png
@@ -98,13 +142,35 @@ share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
 @dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
+@dirrm share/gnome/help/eog/zh_TW/figures
+@dirrm share/gnome/help/eog/zh_TW
+@dirrm share/gnome/help/eog/zh_CN/figures
+@dirrm share/gnome/help/eog/zh_CN
+@dirrm share/gnome/help/eog/uk/figures
+@dirrm share/gnome/help/eog/uk
+@dirrm share/gnome/help/eog/sv/figures
+@dirrm share/gnome/help/eog/sv
+@dirrm share/gnome/help/eog/ko/figures
+@dirrm share/gnome/help/eog/ko
+@dirrm share/gnome/help/eog/ja/figures
+@dirrm share/gnome/help/eog/ja
+@dirrm share/gnome/help/eog/it/figures
+@dirrm share/gnome/help/eog/it
+@dirrm share/gnome/help/eog/fr/figures
+@dirrm share/gnome/help/eog/fr
+@dirrm share/gnome/help/eog/eu/figures
+@dirrm share/gnome/help/eog/eu
+@dirrm share/gnome/help/eog/es/figures
+@dirrm share/gnome/help/eog/es
+@dirrm share/gnome/help/eog/de/figures
+@dirrm share/gnome/help/eog/de
 @dirrm share/gnome/help/eog/C/figures
 @dirrm share/gnome/help/eog/C
 @dirrm share/gnome/help/eog
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
