@@ -7,18 +7,14 @@
 
 PORTNAME=	awstats
 PORTVERSION=	6.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
-
-FORBIDDEN=	Command Injection Vulnerability
-DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=2006-12-01
 
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
