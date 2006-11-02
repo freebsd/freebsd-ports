@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plagger
-PORTVERSION=	0.7.13
+PORTVERSION=	0.7.15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -42,12 +42,14 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		COOKIESHARING "Cookie sharing with Firefox Support" off \
 		LIBERALXML "Liberal XML parsing Support" on \
 		XPATH "XPath Support" on \
+		BETTERHTML "Better html to text formatter" on \
 		PUBLISHEXCEL "Publish::Excel Support" off \
 		FILTERPIPE "Filter::Pipe Support" off \
 		PUBLISHPLANET "Publish::Planet Support" on \
 		PUBLISHCSV "Publish::CSV Support" off \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
 		GUESSLANG "Filter::GuessLanguage Support" off \
+		GUESSTZ "Filter::GuessTimeZoneByDomain Support" off \
 		PUBLISHMT "Publish::MT Support" off \
 		PUBSERLZR "Publish-Serializer Support" off \
 		PUBICAL "Publish::iCal Support" off \
@@ -61,6 +63,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		FLICKRSEARCH "CustomFeed::FlickrSearch Support" off \
 		HATENABKMK "Filter::HatenaBookmarkUsersCount Support" off \
 		PALMDOC "Publish::PalmDoc Support" off \
+		PUBLISHSWF "Publish::SWF Support" off \
 		SUBSCRDBI "Subscription::DBI Support" off \
 		NOTIFYBEEP "Notify::Beep Support" off \
 		FILTERPPT "Filter::TTP Support" off \
@@ -89,9 +92,9 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
 		NTFYNETSEND "Notify::NetSend Support" off \
 		FILHTMLSCRB "Filter::HTMLScrubber Support" on \
-		PLANETINI "Subscription::PlanetINI Support" off
-# The below options are not supported yet due to missing depending modules
-#		PUBLISHSWF "Publish::SWF Support" off \
+		PLANETINI "Subscription::PlanetINI Support" off \
+		SUMMARYENG "Summary-English Support" off \
+		SUMTEXTORG "Summary-TextOriginal Support" off \
 
 .include <bsd.port.pre.mk>
 
@@ -114,6 +117,11 @@ BUILD_DEPENDS+=	${SITE_PERL}/XML/Liberal.pm:${PORTSDIR}/textproc/p5-XML-Liberal 
 .endif
 
 .if !defined(WITHOUT_XPATH)
+BUILD_DEPENDS+=	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
+		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format
+.endif
+
+.if !defined(WITHOUT_BETTERHTML)
 BUILD_DEPENDS+=	${SITE_PERL}/HTML/TreeBuilder/XPath.pm:${PORTSDIR}/www/p5-HTML-TreeBuilder-XPath
 .endif
 
@@ -143,6 +151,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Lingua/ZH/HanDetect.pm:${PORTSDIR}/chinese/p5-Lingu
 		${SITE_PERL}/Text/Language/Guess.pm:${PORTSDIR}/textproc/p5-Text-Language-Guess
 .endif
 
+.if defined(WITH_GUESSTZ)
+BUILD_DEPENDS+=	${SITE_PERL}/IP/Country.pm:${PORTSDIR}/net/p5-IP-Country
+.endif
+
 .if defined(WITH_PUBLISHMT)
 BUILD_DEPENDS+=	${SITE_PERL}/Net/MovableType.pm:${PORTSDIR}/net/p5-Net-MovableType
 .endif
@@ -152,7 +164,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/Data/Serializer.pm:${PORTSDIR}/devel/p5-Data-Serial
 .endif
 
 .if defined(WITH_PUBICAL)
-BUILD_DEPENDS+=	${SITE_PERL}/Data/ICal.pm:${PORTSDIR}/deskutils/p5-Data-ICal
+BUILD_DEPENDS+=	${SITE_PERL}/Data/ICal.pm:${PORTSDIR}/deskutils/p5-Data-ICal \
+		${SITE_PERL}/DateTime/Format/ICal.pm:${PORTSDIR}/devel/p5-DateTime-Format-ICal
 .endif
 
 .if defined(WITH_ROMANIZE)
@@ -194,6 +207,11 @@ BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 
 .if defined(WITH_PALMDOC)
 BUILD_DEPENDS+=	${SITE_PERL}/Palm/PalmDoc.pm:${PORTSDIR}/palm/p5-Palm-PalmDoc
+.endif
+
+.if defined(WITH_PUBLISHSWF)
+BUILD_DEPENDS+=	${SITE_PERL}/SWF/Builder.pm:${PORTSDIR}/graphics/p5-SWF-Builder \
+		${SITE_PERL}/Text/WrapI18N.pm:${PORTSDIR}/textproc/libtext-wrapi18n-perl
 .endif
 
 .if defined(WITH_SUBSCRDBI)
@@ -320,6 +338,14 @@ BUILD_DEPENDS+=	${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber
 BUILD_DEPENDS+=	${SITE_PERL}/Config/INI/Simple.pm:${PORTSDIR}/devel/p5-Config-INI-Simple
 .endif
 
+.if defined(WITH_SUMMARYENG)
+BUILD_DEPENDS+=	${SITE_PERL}/Lingua/EN/Summarize.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Summarize
+.endif
+
+.if defined(WITH_SUMTEXTORG)
+BUILD_DEPENDS+=	${SITE_PERL}/Text/Original.pm:${PORTSDIR}/textproc/p5-Text-Original
+.endif
+
 RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
@@ -329,6 +355,7 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin.3 \
 		Plagger::Plugin::Aggregator::Null.3 \
 		Plagger::Plugin::Aggregator::Simple.3 \
+		Plagger::Plugin::Bundle::Defaults.3 \
 		Plagger::Plugin::Bundle::Planet.3 \
 		Plagger::Plugin::CustomFeed::2chSearch.3 \
 		Plagger::Plugin::CustomFeed::AmazonAssociateReportJP.3 \
@@ -370,7 +397,9 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Filter::FetchEnclosure::Wget.3 \
 		Plagger::Plugin::Filter::FindEnclosures.3 \
 		Plagger::Plugin::Filter::FloatingDateTime.3 \
+		Plagger::Plugin::Filter::ForceTimeZone.3 \
 		Plagger::Plugin::Filter::GuessLanguage.3 \
+		Plagger::Plugin::Filter::GuessTimeZoneByDomain.3 \
 		Plagger::Plugin::Filter::HEADEnclosureMetadata.3 \
 		Plagger::Plugin::Filter::HTMLScrubber.3 \
 		Plagger::Plugin::Filter::HatenaBookmarkTag.3 \
@@ -380,6 +409,7 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Filter::HatenaFormat.3 \
 		Plagger::Plugin::Filter::HatenaKeywordTag.3 \
 		Plagger::Plugin::Filter::ImageInfo.3 \
+		Plagger::Plugin::Filter::Kansai.3 \
 		Plagger::Plugin::Filter::LivedoorClipUsersCount.3 \
 		Plagger::Plugin::Filter::LivedoorKeywordUnlink.3 \
 		Plagger::Plugin::Filter::Markdown.3 \
@@ -401,6 +431,9 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Filter::TruePermalink.3 \
 		Plagger::Plugin::Filter::UnicodeNormalize.3 \
 		Plagger::Plugin::Filter::tDiaryComment.3 \
+		Plagger::Plugin::Namespace::ApplePhotocast.3 \
+		Plagger::Plugin::Namespace::HatenaFotolife.3 \
+		Plagger::Plugin::Namespace::MediaRSS.3 \
 		Plagger::Plugin::Notify::Audio.3 \
 		Plagger::Plugin::Notify::Balloon.3 \
 		Plagger::Plugin::Notify::Beep.3 \
@@ -470,6 +503,13 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Subscription::PlanetINI.3 \
 		Plagger::Plugin::Subscription::XOXO.3 \
 		Plagger::Plugin::Subscription::XPath.3 \
+		Plagger::Plugin::Summary::Auto.3 \
+		Plagger::Plugin::Summary::English.3 \
+		Plagger::Plugin::Summary::GetSen.3 \
+		Plagger::Plugin::Summary::HatenaBookmark.3 \
+		Plagger::Plugin::Summary::Simple.3 \
+		Plagger::Plugin::Summary::TextOriginal.3 \
+		Plagger::Plugin::Summary::TrackbackRDF.3 \
 		Plagger::Plugin::UserAgent::AuthenRequest.3 \
 		Plagger::Plugin::UserAgent::RequestHeader.3 \
 		Plagger::Plugin::Widget::BloglinesSubscription.3 \
