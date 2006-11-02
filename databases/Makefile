@@ -6,6 +6,7 @@
     SUBDIR += WWWdb
     SUBDIR += adodb
     SUBDIR += adstudio
+    SUBDIR += animenfo-client
     SUBDIR += bbdb
     SUBDIR += bbdb-emacs20
     SUBDIR += cdb
