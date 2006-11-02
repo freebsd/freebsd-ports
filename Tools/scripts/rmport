@@ -92,7 +92,11 @@ find_expired()
 	find ${PORTSDIR} -mindepth 3 -maxdepth 3 -name "Makefile*" \
 		|xargs grep -H ${EXPVAR} \
 		|sed -E "s|${PORTSDIR}/?([^/]+/[^/]+)/Makefile:${EXPVAR}=[[:space:]]*([0-9-]{10})$|\2 \1|g" \
-		|perl -ne "if ((substr(\$_, 0, 10) cmp '${TODAY}') <= 0) { print(\$_); }"
+		|perl -ne "if ((substr(\$_, 0, 10) cmp '${TODAY}') <= 0) { print(\$_); }" \
+		|while read expdate catport ; do \
+			echo -n "${expdate} ${catport}: " ; \
+			make -C ${PORTSDIR}/${catport} -V DEPRECATED ; \
+		done
 }
 
 # create temporary checkout directory
@@ -380,7 +384,7 @@ if [ ${1} = "-a" ] ; then
 	if [ ${#} -ne 1 ] ; then
 		usage
 	fi
-	${0} `find_expired |cut -f 2 -d ' '`
+	${0} `find_expired |cut -f 2 -d ' ' |cut -f 1 -d :`
 	exit
 fi
 
