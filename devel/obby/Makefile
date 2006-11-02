@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	obby
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	A library for synced document buffers
 
-LIB_DEPENDS=	sigc++-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		gmp.7:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		net6:${PORTSDIR}/net/net6
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-libgmp-prefix=${LOCALBASE} --without-howl
-INSTALLS_SHLIB=		yes
+CONFIGURE_ARGS=		--without-howl
+USE_LDCONFIG=		yes
 
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

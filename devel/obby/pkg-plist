@@ -3,6 +3,7 @@ include/obby/client_buffer.hpp
 include/obby/chat.hpp
 include/obby/client_document_info.hpp
 include/obby/colour.hpp
+include/obby/command.hpp
 include/obby/common.hpp
 include/obby/delete_operation.hpp
 include/obby/document.hpp
@@ -16,9 +17,9 @@ include/obby/host_document_info.hpp
 include/obby/insert_operation.hpp
 include/obby/jupiter_algorithm.hpp
 include/obby/jupiter_client.hpp
+include/obby/jupiter_error.hpp
 include/obby/jupiter_server.hpp
 include/obby/jupiter_undo.hpp
-include/obby/line.hpp
 include/obby/local_buffer.hpp
 include/obby/local_document_info.hpp
 include/obby/no_operation.hpp
@@ -26,13 +27,11 @@ include/obby/operation.hpp
 include/obby/position.hpp
 include/obby/ptr_iterator.hpp
 include/obby/record.hpp
-include/obby/reversible_insert_operation.hpp
 include/obby/ring.hpp
-include/obby/rsa.hpp
 include/obby/server_buffer.hpp
 include/obby/server_document_info.hpp
-include/obby/sha1.hpp
 include/obby/split_operation.hpp
+include/obby/text.hpp
 include/obby/user.hpp
 include/obby/user_table.hpp
 include/obby/vector_time.hpp
@@ -41,15 +40,17 @@ include/obby/serialise/error.hpp
 include/obby/serialise/object.hpp
 include/obby/serialise/parser.hpp
 include/obby/serialise/token.hpp
-lib/libobby-0.3.so
-lib/libobby-0.3.so.0
+lib/libobby-0.4.so
+lib/libobby-0.4.so.0
 lib/libobby.a
 lib/libobby.la
 lib/libobby.so
-libdata/pkgconfig/obby-0.3.pc
-%%NLS%%share/locale/de/LC_MESSAGES/obby.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/obby.mo
+libdata/pkgconfig/obby-0.4.pc
 %%NLS%%share/locale/ca/LC_MESSAGES/obby.mo
+%%NLS%%share/locale/de/LC_MESSAGES/obby.mo
+%%NLS%%share/locale/es/LC_MESSAGES/obby.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/obby.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/obby.mo
 @dirrm include/obby/serialise
 @dirrm include/obby
