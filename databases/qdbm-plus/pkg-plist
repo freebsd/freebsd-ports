@@ -69,6 +69,7 @@ lib/libxqdbm.so.3.0.0
 %%DATADIR%%/plus/xapidoc/ftv2vertline.png
 %%DATADIR%%/plus/xapidoc/functions.html
 %%DATADIR%%/plus/xapidoc/functions_func.html
+%%DATADIR%%/plus/xapidoc/functions_rela.html
 %%DATADIR%%/plus/xapidoc/functions_vars.html
 %%DATADIR%%/plus/xapidoc/hierarchy.html
 %%DATADIR%%/plus/xapidoc/index.html
@@ -88,6 +89,10 @@ lib/libxqdbm.so.3.0.0
 %%DATADIR%%/plus/xapidoc/namespacemembers_vars.html
 %%DATADIR%%/plus/xapidoc/namespaceqdbm.html
 %%DATADIR%%/plus/xapidoc/namespaces.html
+%%DATADIR%%/plus/xapidoc/tab_b.gif
+%%DATADIR%%/plus/xapidoc/tab_l.gif
+%%DATADIR%%/plus/xapidoc/tab_r.gif
+%%DATADIR%%/plus/xapidoc/tabs.css
 %%DATADIR%%/plus/xapidoc/tree.html
 %%DATADIR%%/plus/xspex-ja.html
 %%DATADIR%%/plus/xspex.html

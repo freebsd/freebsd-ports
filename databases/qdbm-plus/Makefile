@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-plus
 
 COMMENT=	C++ API for QDBM
