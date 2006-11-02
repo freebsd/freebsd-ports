@@ -8,7 +8,7 @@ them by their non-graphic analogues ('-', '+', etc.).
 Besides, the rux can detect a code page of the input files automatically.
 
 Usually rux is used without any options because some values are accepted
-by default. There are -o koi8-r, -e, -t, -s 10240.
+by default. There are -o koi8-r, -e, -t.
 
 The expectancy value of the presence of every Cyrillic characters in the
 some text were taken from the dump of Russian translation of the `FreeBSD
