@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	unplug
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.4
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
-MASTER_SITES=	CSME
 
 MAINTAINER=	chinsan@FreeBSD.org
-COMMENT=	An extension to convert embedded plug-ins to html links
+COMMENT=	Converts embedded media to html links
 
 XPI_ID=		unplug@compunach
 
