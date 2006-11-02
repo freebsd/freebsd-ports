@@ -7,7 +7,7 @@
 
 PORTNAME=	ser
 PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/ser/ \
 		http://download2.berlios.de/ser/
@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib"
+
+NOPRECIOUSMAKEVARS=	yes
 
 MAN8=		ser.8
 MAN5=		ser.cfg.5
