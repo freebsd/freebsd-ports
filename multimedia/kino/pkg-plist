@@ -92,6 +92,8 @@ share/gnome/kino/scripts/exports/ffmpeg_mp4.sh
 share/gnome/kino/scripts/exports/ffmpeg_mp4_dual.sh
 share/gnome/kino/scripts/exports/ffmpeg_utils.sh
 share/gnome/kino/scripts/exports/ffmpeg_vcd.sh
+share/gnome/kino/scripts/exports/ffmpeg_xvid.sh
+share/gnome/kino/scripts/exports/ffmpeg_xvid_dual.sh
 share/gnome/kino/scripts/exports/mencoder.sh
 share/gnome/kino/scripts/exports/mencoder_dual.sh
 share/gnome/kino/scripts/exports/rawplay.sh
