@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gave
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gave/
 DIST_SUBDIR=	ruby
