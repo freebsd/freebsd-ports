@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus-cd-burner
 PORTVERSION=	2.16.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,7 +26,6 @@ USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-hal
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
