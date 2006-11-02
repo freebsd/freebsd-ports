@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polynomial/Solve/.packlist
+%%SITE_PERL%%/Math/Polynomial/Solve.pm
+@dirrmtry %%SITE_PERL%%/Math/Polynomial
+@dirrmtry %%SITE_PERL%%/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polynomial/Solve
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polynomial
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
