@@ -20,6 +20,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_MYSQL=	yes
 USE_PGSQL=	yes
+INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}

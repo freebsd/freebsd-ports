@@ -71,10 +71,6 @@ share/locale/de/LC_MESSAGES/ksqlshell.mo
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/hicolor
-@dirrmtry share/icons
 @dirrmtry share/doc/HTML
 @dirrm share/doc/HTML/en/ksqlshell
 @dirrm share/doc/HTML/de/ksqlshell
