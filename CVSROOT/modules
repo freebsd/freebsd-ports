@@ -13915,6 +13915,7 @@ synce-multisync	ports/palm/synce-multisync
 synce-rra	ports/palm/synce-rra
 synce-serial	ports/palm/synce-serial
 synce-trayicon	ports/palm/synce-trayicon
+syncterm	ports/comms/syncterm
 syndigator	ports/www/syndigator
 synergy		ports/sysutils/synergy
 synonym		ports/mail/synonym
