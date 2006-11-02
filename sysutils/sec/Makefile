@@ -1,13 +1,13 @@
-# New ports collection Makefile for: 	sec
-# Date created:				25, February 2003
-# Whom:					Nicolas Jombart <ecu@ipv42.net>
+# ex:ts=8
+# New ports collection Makefile for:	sec
+# Date created:			25, February 2003
+# Whom:				Nicolas Jombart <ecu@ipv42.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sec
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	simple-evcorr
@@ -22,8 +22,12 @@ USE_RC_SUBR=	sec
 SUB_LIST=	PERL=${PERL}
 
 MAN8=		sec.8
-PORTDOCS=	ChangeLog README convert.pl itostream.c
+PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/sec
+DATADIR=	share/sec
+PORTCONTRIB=	convert.pl itostream.c swatch2sec.pl
+PLIST_FILES+=	${PORTCONTRIB:S|^|%%DATADIR%%/|}
+PLIST_DIRS+=	${DATADIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -36,5 +40,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@${MKDIR} ${PREFIX}/${DATADIR}
+	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTCONTRIB} ${PREFIX}/${DATADIR}
 
 .include <bsd.port.mk>
