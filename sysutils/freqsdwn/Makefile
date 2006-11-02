@@ -8,7 +8,7 @@
 PORTNAME=	freqsdwn
 PORTVERSION=	2.00
 CATEGORIES=	sysutils japanese
-MASTER_SITES=	http://www.mitsubishielectric.co.jp/frequps/down/
+MASTER_SITES=	http://www.mitsubishielectric.co.jp/frequps/f_down/f_dl_sw_data/
 DISTNAME=	${PORTNAME:C/freq//}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	freqship
