@@ -28,9 +28,10 @@ load_rc_config $name
 : ${xorp_rtrmgr_pidfile="/var/run/xorp_rtrmgr.pid"}
 
 required_files=${xorp_config_boot}
-command=%%PREFIX%%/rtrmgr/xorp_rtrmgr
+command=%%PREFIX%%/bin/xorp_rtrmgr
 command_args="-b ${xorp_config_boot}"
 pidfile=${xorp_rtrmgr_pidfile}
 sig_stop=INT
 
-run_rc_command "$1"
+# XXX: This is not the correct fix.
+run_rc_command "$1" 2>&1 &
