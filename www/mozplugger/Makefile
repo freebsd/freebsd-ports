@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lorenl@alzatex.com
+MAINTAINER=	lorenl@north-winds.org
 COMMENT=	Framework for loading web content in external viewers
 
 EXTRACT_DEPENDS=bzip2:${PORTSDIR}/archivers/bzip2

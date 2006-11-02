@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=distfiles
 
-MAINTAINER=	lorenl@alzatex.com
+MAINTAINER=	lorenl@north-winds.org
 COMMENT=	You are the fearless Blob agent, Bob
 
 MAKEFILE=	makefile
