@@ -1,0 +1,11 @@
+===>  INSTALL NOTES:
+
+	To run milter-regex daemon on startup, add milterregex_enable="YES"
+	in your /etc/rc.conf.  You will need to create a config file:
+
+		/usr/local/etc/milter-regex.conf
+
+	The plugin needs to be registered in the sendmail(8) configuration.
+
+	See milter-regex(8) for details.
+
