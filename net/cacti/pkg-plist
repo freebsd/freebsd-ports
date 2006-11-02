@@ -86,14 +86,17 @@
 %%CACTIDIR%%/images/button_cancel.gif
 %%CACTIDIR%%/images/button_cancel2.gif
 %%CACTIDIR%%/images/button_clear.gif
+%%CACTIDIR%%/images/button_colapse_all.gif
 %%CACTIDIR%%/images/button_create.gif
 %%CACTIDIR%%/images/button_default.gif
 %%CACTIDIR%%/images/button_delete.gif
+%%CACTIDIR%%/images/button_expand_all.gif
 %%CACTIDIR%%/images/button_export.gif
 %%CACTIDIR%%/images/button_go.gif
 %%CACTIDIR%%/images/button_help.gif
 %%CACTIDIR%%/images/button_import.gif
 %%CACTIDIR%%/images/button_no.gif
+%%CACTIDIR%%/images/button_purge.gif
 %%CACTIDIR%%/images/button_refresh.gif
 %%CACTIDIR%%/images/button_save.gif
 %%CACTIDIR%%/images/button_view.gif
@@ -110,6 +113,7 @@
 %%CACTIDIR%%/images/hide.gif
 %%CACTIDIR%%/images/left_border.gif
 %%CACTIDIR%%/images/menu_line.gif
+%%CACTIDIR%%/images/menuarrow.gif
 %%CACTIDIR%%/images/move_down.gif
 %%CACTIDIR%%/images/move_up.gif
 %%CACTIDIR%%/images/reload_icon_small.gif
@@ -147,13 +151,22 @@
 %%CACTIDIR%%/include/html/inc_graph_items_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_template_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_view_filter_table.php
+%%CACTIDIR%%/include/html/inc_poller_item_filter_table.php
+%%CACTIDIR%%/include/html/inc_snmp_cache_filter_table.php
 %%CACTIDIR%%/include/html/inc_timespan_selector.php
 %%CACTIDIR%%/include/html/inc_timespan_settings.php
+%%CACTIDIR%%/include/html/inc_user_log_filter_table.php
+%%CACTIDIR%%/include/html/inc_view_logfile_table.php
 %%CACTIDIR%%/include/jscalendar/calendar-setup.js
 %%CACTIDIR%%/include/jscalendar/calendar.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-af.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-al.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-bg.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-big5-utf8.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-big5.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-br.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-ca.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-cs-utf8.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-cs-win.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-da.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-de.js
@@ -163,6 +176,7 @@
 %%CACTIDIR%%/include/jscalendar/lang/calendar-es.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-fi.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-fr.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-he-utf8.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-hr-utf8.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-hr.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-hu.js
@@ -172,6 +186,7 @@
 %%CACTIDIR%%/include/jscalendar/lang/calendar-ko.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-lt-utf8.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-lt.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-lv.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-nl.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-no.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-pl-utf8.js
@@ -179,15 +194,16 @@
 %%CACTIDIR%%/include/jscalendar/lang/calendar-pt.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-ro.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-ru.js
+%%CACTIDIR%%/include/jscalendar/lang/calendar-ru_win_.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-si.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-sk.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-sp.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-sv.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-tr.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-zh.js
+%%CACTIDIR%%/include/jscalendar/lang/cn_utf8.js
 %%CACTIDIR%%/include/layout.js
 %%CACTIDIR%%/include/main.css
-%%PLUGIN%%%%CACTIDIR%%/include/plugins.php
 %%CACTIDIR%%/include/top_graph_header.php
 %%CACTIDIR%%/include/top_header.php
 %%CACTIDIR%%/include/treeview/ftiens4.js
@@ -214,6 +230,7 @@
 %%CACTIDIR%%/install/0_8_6d_to_0_8_6e.php
 %%CACTIDIR%%/install/0_8_6f_to_0_8_6g.php
 %%CACTIDIR%%/install/0_8_6g_to_0_8_6h.php
+%%CACTIDIR%%/install/0_8_6h_to_0_8_6i.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -226,7 +243,6 @@
 %%CACTIDIR%%/lib/adodb/adodb-exceptions.inc.php
 %%CACTIDIR%%/lib/adodb/adodb-iterator.inc.php
 %%CACTIDIR%%/lib/adodb/adodb-lib.inc.php
-%%CACTIDIR%%/lib/adodb/adodb-pager.inc.php
 %%CACTIDIR%%/lib/adodb/adodb-pear.inc.php
 %%CACTIDIR%%/lib/adodb/adodb-perf.inc.php
 %%CACTIDIR%%/lib/adodb/adodb-php4.inc.php
@@ -338,7 +354,6 @@
 %%CACTIDIR%%/lib/xml.php
 @unexec [ ! -s %%PREFIX%%/%%CACTIDIR%%/log/cacti.log ] && rm -f %%PREFIX%%/%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
-%%PLUGIN%%%%CACTIDIR%%/plugins/index.php
 %%CACTIDIR%%/poller.php
 %%CACTIDIR%%/poller_commands.php
 %%CACTIDIR%%/poller_export.php
@@ -391,7 +406,6 @@
 @dirrm %%CACTIDIR%%/resource/script_server
 @dirrm %%CACTIDIR%%/resource/script_queries
 @dirrm %%CACTIDIR%%/resource
-%%PLUGIN%%@dirrm %%CACTIDIR%%/plugins
 @dirrmtry %%CACTIDIR%%/log
 @dirrm %%CACTIDIR%%/lib/adodb/lang
 @dirrm %%CACTIDIR%%/lib/adodb/drivers
