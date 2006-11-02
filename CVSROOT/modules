@@ -9519,6 +9519,7 @@ p5-Math-LinearCombination	ports/math/p5-Math-LinearCombination
 p5-Math-Logic	ports/math/p5-Math-Logic
 p5-Math-Matrix	ports/math/p5-Math-Matrix
 p5-Math-Pari	ports/math/p5-Math-Pari
+p5-Math-Polynomial-Solve	ports/math/p5-Math-Polynomial-Solve
 p5-Math-Random	ports/math/p5-Math-Random
 p5-Math-Random-MT	ports/math/p5-Math-Random-MT
 p5-Math-Random-MT-Auto	ports/math/p5-Math-Random-MT-Auto
