@@ -14,19 +14,10 @@ you may have to follow this steps to make it work correctly:
 */5 * * * * %%CACTIUSER%% %%LOCALBASE%%/bin/php %%PREFIX%%/%%CACTIDIR%%/poller.php > /dev/null 2>&1
 6. Add alias in apache config for the cacti dir:
 Alias /cacti "%%PREFIX%%/%%CACTIDIR%%/"
-7. Open a cacti login page in your web browser and login with admin/admin.
+7. Be sure apache gives an access to the directory ('Allow from' keywords).
+8. Open a cacti login page in your web browser and login with admin/admin.
 
-If you update cacti, open a login page right now. An updating process
-will run automatically.
-
-If you are using PLUGIN option set, in file %%PREFIX%%/%%CACTIDIR%%/include/config.php change the follow line
-
-$config["url_path"] = '/';
-
-with
-
-$config["url_path"] = '/cacti/';
-
-if your URL is http://yoursite.com/cacti
+If you update cacti, open a login page, an updating process
+will start automatically.
 
 =======================================================================
