@@ -1,0 +1,30 @@
+# New ports collection makefile for:	animenfo-client
+# Date created:		3rd August 2001
+# Whom:			dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	animenfo
+PORTVERSION=	20020819
+CATEGORIES=	databases
+MASTER_SITES=	http://www.animenfo.com/extension/files/
+PKGNAMESUFFIX=	-client-gui-gtk
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	AnimeNfo client with GTK support
+
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	gtk20
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CFLAGS+=	${CPPFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_FILES=	bin/animenfo-client-gtk
+
+.include <bsd.port.mk>
