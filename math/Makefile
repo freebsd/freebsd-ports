@@ -179,6 +179,7 @@
     SUBDIR += p5-Chart-Math-Axis
     SUBDIR += p5-Data-Float
     SUBDIR += p5-Date-Handler
+    SUBDIR += p5-GIS-Distance
     SUBDIR += p5-Geo-Distance
     SUBDIR += p5-Graph
     SUBDIR += p5-Math-Algebra-Symbols
