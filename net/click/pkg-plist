@@ -16,6 +16,7 @@ bin/click-undead
 bin/click-xform
 bin/click2xml
 bin/testie
+%%XMLCLICK%%bin/xml2click
 etc/click/conf/dnsproxy.click
 etc/click/conf/fake-iprouter.click
 etc/click/conf/fromhost-tunnel.click
@@ -32,8 +33,6 @@ etc/click/conf/test3.click
 etc/click/conf/thomer-nat.click
 etc/click/conf/udpcount.click
 etc/click/conf/udpgen.click
-etc/click/conf/roofnet/etx.click
-etc/click/conf/roofnet/srcr.click
 etc/click/conf/wifi/access-point.click
 etc/click/conf/wifi/dump.click
 etc/click/conf/wifi/pseudo-ibss.click
@@ -81,6 +80,7 @@ include/click/iptable.hh
 include/click/lexer.hh
 include/click/llrpc.h
 include/click/master.hh
+include/click/nameinfo.hh
 include/click/notifier.hh
 include/click/package.hh
 include/click/packet.hh
@@ -92,9 +92,9 @@ include/click/router.hh
 include/click/routerthread.hh
 include/click/simclick.h
 include/click/skbmgr.hh
+include/click/timestamp.hh
 include/click/standard/addressinfo.hh
 include/click/standard/alignmentinfo.hh
-include/click/standard/drivermanager.hh
 include/click/standard/errorelement.hh
 include/click/standard/portinfo.hh
 include/click/standard/storage.hh
@@ -109,6 +109,7 @@ include/click/userutils.hh
 include/click/variableenv.hh
 include/click/vector.cc
 include/click/vector.hh
+include/clicknet/dhcp.h
 include/clicknet/ether.h
 include/clicknet/fddi.h
 include/clicknet/icmp.h
@@ -117,6 +118,7 @@ include/clicknet/ip.h
 include/clicknet/ip6.h
 include/clicknet/llc.h
 include/clicknet/ppp.h
+include/clicknet/radiotap.h
 include/clicknet/rfc1483.h
 include/clicknet/tcp.h
 include/clicknet/udp.h
@@ -135,6 +137,14 @@ include/clicktool/toolutils.hh
 @unexec rm -rf %D/etc/click 2>&1 >/dev/null || true
 lib/libclick.a
 lib/libclicktool.a
+%%NSCLICK%%lib/libnsclick.so
+%%DATADIR%%/mkinstalldirs
+%%DATADIR%%/config.mk
+%%DATADIR%%/pkg-config.mk
+%%DATADIR%%/pkg-Makefile
+%%DATADIR%%/pkg-userlevel.mk
+%%DATADIR%%/pkg-linuxmodule.mk
+%%DATADIR%%/pkg-linuxmodule-26.mk
 %%DATADIR%%/elementmap.xml
 %%DATADIR%%/srcdir
 %%DATADIR%%/src

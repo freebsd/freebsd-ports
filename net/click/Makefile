@@ -5,18 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	click
-PORTVERSION=	1.4.3
-CATEGORIES=	net
-MASTER_SITES=	http://pdos.csail.mit.edu/click/
+# XXX: TODO: fix kernel module
 
-MAINTAINER=	gnn@neville-neil.com
+PORTNAME=	click
+PORTVERSION=	1.5.0
+CATEGORIES=	net
+MASTER_SITES=	http://www.read.cs.ucla.edu/click/
+
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	The Click Modular Router
 
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-linuxmodule
 USE_GMAKE=	yes
+
+SRC_BASE?=	/usr/src
+INC_BASE?=	/usr/include
+
+CONFIGURE_ARGS+=	--disable-linuxmodule
+CONFIGURE_ARGS+=	--enable-nanotimestamp
 
 MANCOMPRESSED=	no
 INFO=	click
@@ -27,20 +34,25 @@ MAN1=	click.1 click-align.1 click-combine.1 click-devirtualize.1 \
 MAN5=	click.5
 MAN7=	elementdoc.7
 MAN8=	click.o.8
-MANN=	FTPPortMapper.n ARPFaker.n ARPQuerier.n ARPResponder.n \
+MANN=	FTPPortMapper.n ARPFaker.n ARPPrint.n ARPQuerier.n ARPResponder.n \
+	elements-click.n ChangeUID.n \
 	EnsureEther.n EtherEncap.n EtherMirror.n HostEtherFilter.n \
+	CheckARPHeader.n DirectIPLookup.n \
+	RFC2507Comp.n RFC2507Decomp.n \
 	CheckICMPHeader.n ICMPError.n ICMPPingResponder.n ICMPPingRewriter.n \
 	ICMPRewriter.n CheckIPHeader.n CheckIPHeader2.n \
 	DecIPTTL.n FixIPSrc.n FromSocket.n GetIPAddress.n ICMPPingEncap.n \
 	ICMPPingSource.n IPAddrRewriter.n IPAddrPairRewriter.n IPClassifier.n \
 	IPEncap.n IPFilter.n IPFragmenter.n IPGWOptions.n IPInputCombo.n \
+	IPNameInfo.n \
 	IPMirror.n IPOutputCombo.n IPPrint.n IPRateMonitor.n IPRewriterPatterns.n \
-	KernelTun.n LinearIPLookup.n LinkUnqueue.n LookupIPRoute2.n \
+	KernelTun.n LinearIPLookup.n LinkUnqueue.n \
 	MarkIPCE.n MarkIPHeader.n Message.n MixedQueue.n NotifierQueue.n \
-	PaintSwitch.n PortInfo.n RIPSend.n RandomSwitch.n \
+	PaintSwitch.n PortInfo.n RIPSend.n RandomSwitch.n RangeIPLookup.n \
 	RoundRobinIPMapper.n SetAnnoByte.n SetIPAddress.n SetIPChecksum.n SetIPDSCP.n \
 	SetRandIPAddress.n SetUDPChecksum.n SimpleQueue.n StoreData.n \
 	StoreIPAddress.n StripIPHeader.n ToSocket.n UnstripIPHeader.n \
+	Socket.n Script.n Truncate.n \
 	AddressInfo.n Align.n AlignmentInfo.n AverageCounter.n \
 	BandwidthMeter.n BandwidthShaper.n Burster.n BandwidthRatedSplitter.n \
 	BandwidthRatedUnqueue.n CheckCRC32.n CheckLength.n CheckPaint.n \
@@ -48,7 +60,7 @@ MANN=	FTPPortMapper.n ARPFaker.n ARPQuerier.n ARPResponder.n \
 	Discard.n DiscardNoFree.n DriverManager.n DropBroadcasts.n DRRSched.n \
 	Error.n FrontDropQueue.n HashSwitch.n Idle.n \
 	InfiniteSource.n Meter.n MSQueue.n Null.n PushNull.n PullNull.n \
-	Null1.n Null2.n Null3.n Null4.n Null5.n Null6.n Null7.n Null8.n \
+	Null1.n \
 	Paint.n PaintTee.n PokeHandlers.n Print.n PrioSched.n \
 	PullSwitch.n Queue.n QuitWatcher.n \
 	RandomBitErrors.n RandomSource.n RatedSource.n \
@@ -57,21 +69,146 @@ MANN=	FTPPortMapper.n ARPFaker.n ARPQuerier.n ARPResponder.n \
 	SourceIPHashMapper.n SortedIPLookup.n \
 	SpinlockAcquire.n SpinlockInfo.n SpinlockRelease.n StaticPullSwitch.n \
 	StaticSwitch.n StrideSched.n StrideSwitch.n Strip.n Suppressor.n \
-	Switch.n Tee.n PullTee.n TimedSink.n TimedSource.n TrieIPLookup.n Unqueue.n \
+	Switch.n Tee.n PullTee.n TimedSink.n TimedSource.n Unqueue.n \
 	Unqueue2.n Unstrip.n CheckTCPHeader.n CheckUDPHeader.n \
 	DynamicUDPIPEncap.n IPRewriter.n SetTCPChecksum.n TCPRewriter.n \
 	UDPIPEncap.n ChatterSocket.n ControlSocket.n FromDevice.u.n \
-	FromDump.n KernelTap.n KernelHandlerProxy.n PrintOld.n \
+	FromDump.n KernelTap.n KernelHandlerProxy.n \
 	ToDevice.u.n ToDump.n elements.n AdaptiveRED.n IPReassembler.n \
 	IPRouteTable.n StaticIPLookup.n LinuxIPLookup.n RadixIPLookup.n \
 	RandomSample.n SetPacketType.n StripToNetworkHeader.n ProgressBar.n
 
 CONFDIR=	${PREFIX}/etc/click/conf
 
+OPTIONS=								\
+	 XML		 "Enable XML support with expat" Off		\
+	 USERCLICK	 "Build user-space Click" On			\
+	 KERNEL_MODULE	 "Build BSD kernel module (BROKEN)" Off		\
+	 ANALYSIS_ELEMS	 "Build network analysis elements" Off		\
+	 ETHERSWITCH_ELEMS "Build etherswitch elements" Off		\
+	 GRID_ELEMS	 "Build Grid elements (see FAQ)" Off		\
+	 IPSEC_ELEMS	 "Build IPSEC elements" Off			\
+	 LOCAL_ELEMS	 "Build local elements" Off			\
+	 WIFI_ELEMS	 "Build Wi-Fi elements" Off			\
+	 IPV6_ELEMS	 "Build IPv6 elements (EXPERIMENTAL)" Off	\
+	 NS_ELEMS	 "Build NS elements (EXPERIMENTAL)" Off		\
+	 RADIO_ELEMS	 "Build radio elements (EXPERIMENTAL)" Off
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha 4.x"
+BROKEN=		does not compile on alpha 4.x
+.endif
+
+.if defined(WITH_XML)
+CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}
+LIB_DEPENDS=		expat.6:${PORTSDIR}/textproc/expat2
+PLIST_SUB+=		XMLCLICK=""
+.else
+PLIST_SUB+=		XMLCLICK="@comment "
+.endif
+
+.if !defined(WITH_USERCLICK)
+CONFIGURE_ARGS+=	--disable-userlevel
+.else
+MANN+=			IPFlowRawSockets.n
+.endif
+
+.if defined(WITH_KERNEL_MODULE)
+.if !exists(${SRC_BASE}/sys/Makefile)
+IGNORE=		kernel source files required
+.endif
+CONFIGURE_ARGS+=	--enable-bsdmodule				\
+			--with-freebsd=${SRC_BASE}/sys,${INC_BASE}
+.endif
+
+.if defined(WITH_ANALYSIS_ELEMS)
+CONFIGURE_ARGS+=	--enable-analysis
+MANN+=		AggregateFilter.n TimeSortedSched.n TimeRange.n \
+		FromTcpdump.n ToIPFlowDumps.n AggregateLast.n \
+		SimPacketAnalyzer.n AggregatePaint.n \
+		FromNetFlowSummaryDump.n AggregateFirst.n AggregateCounter.n \
+		FromDAGDump.n StoreTimestamp.n AggregateIPFlows.n \
+		SetTimestampDelta.n FromCapDump.n AggregateIP.n \
+		TimestampAccum.n AnonymizeIPAddr.n AggregateLength.n \
+		FromIPSummaryDump.n ToIPSummaryDump.n AggregateIPAddrPair.n \
+		AggregatePacketCounter.n TimeFilter.n
+.endif
+
+.if defined(WITH_ETHERSWITCH_ELEMS)
+CONFIGURE_ARGS+=	--enable-etherswitch
+MANN+=			EtherSwitch.n ListenEtherSwitch.n
+.endif
+
+.if defined(WITH_GRID_ELEMS)
+CONFIGURE_ARGS+=	--enable-grid
+MANN+=		ACKResponder.n ACKResponder2.n ACKRetrySender.n \
+		ACKRetrySender2.n AiroInfo.n BottleneckMetric.n \
+		CheckGridHeader.n DSDVRouteTable.n DSRArpTable.n \
+		DSRRouteTable.n E2ELossMetric.n ETX2Metric.n ETXMetric.n \
+		EstimateRouterRegion.n FilterByGridHops.n FilterByRange.n \
+		FixDstLoc.n FixSrcLoc.n FloodingLocQuerier.n FromNLANRDump.n \
+		GridEncap.n GridGatewayInfo.n GridHeaderInfo.n \
+		GridLocationInfo.n GridLocationInfo2.n GridLogger.n \
+		GridProbeHandler.n GridProbeReplyReceiver.n \
+		GridProbeSender.n GridProxy.n GridRouteTable.n GridTxError.n \
+		HopcountMetric.n IncrementSeqNo.n LIRMetric.n LinkStat.n \
+		LinkTable.n LinkTestReceiver.n LinkTester.n LinkTracker.n \
+		LocFromFile.n LocQueryResponder.n LocationTable.n \
+		LookupGeographicGridRoute.n LookupLocalGridRoute.n \
+		LookupLocalGridRoute2.n MovementSimulator.n PEP.n \
+		PacketLogger.n PacketLogger2.n PingPong.n PrintGrid.n \
+		SendGridHello.n SendGridLRHello.n SetGridChecksum.n \
+		SimpleLocQuerier.n ThresholdMetric.n UpdateGridRoutes.n \
+		YarvisMetric.n
+.endif
+
+.if defined(WITH_IPSEC_ELEMS)
+CONFIGURE_ARGS+=	--enable-ipsec
+MANN+=			IPsecAuthSHA1.n IPsecDES.n IPsecESPUnencap.n \
+			IPsecESPEncap.n
+.endif
+
+.if defined(WITH_LOCAL_ELEMS)
+CONFIGURE_ARGS+=	--enable-local
+.endif
+
+.if defined(WITH_WIFI_ELEMS)
+CONFIGURE_ARGS+=	--enable-wifi
+MANN+=		FilterPhyErr.n AssociationResponder.n FilterFailures.n \
+		ReadAnno.n PacketStore.n AvailableRates.n \
+		AssociationRequester.n OpenAuthResponder.n \
+		OpenAuthRequeser.n Prism2Encap.n ProbeResponder.n \
+		AutoRateFallback.n ProbeTXRate.n ARPTable.n WepEncap.n \
+		WepDecap.n WifiDecap.n FilterTX.n EtherCount.n \
+		RadiotapDecap.n RadiotapEncap.n WifiFragment.n \
+		BeaconSource.n BeaconTracker.n BeaconScanner.n RXStats.n \
+		WirelessInfo.n PrintTXFeedback.n SetTXRate.n SetTXPower.n \
+		Prism2Decap.n WifiEncap.n WifiDefrag.n MadwifiRate.n \
+		PrintWifi.n WifiSeq.n PushAnno.n WifiDupeFilter.n \
+		ExtraEncap.n ExtraDecap.n AthdescDecap.n AthdescEncap.n
+.endif
+
+#
+# The following Click elements are marked experimental as of 1.5.0.
+#
+
+.if defined(WITH_IPV6_ELEMS)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if defined(WITH_NS_ELEMS)
+CONFIGURE_ARGS+=	--enable-nsclick
+MANN+=			ToSimTrace.n ToSimDevice.u.n FromSimDevice.u.n \
+			EraseIPPayload.n
+PLIST_SUB+=		NSCLICK=""
+.else
+PLIST_SUB+=		NSCLICK="@comment "
+.endif
+
+.if defined(WITH_RADIO_ELEMS)
+CONFIGURE_ARGS+=	--enable-radio
+MANN+=			RadioSim.n
 .endif
 
 post-install:
@@ -80,9 +217,6 @@ post-install:
 	  click-flatten click-mkmindriver click-undead click-xform
 	@${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/*.click ${CONFDIR}
-	@${MKDIR} ${CONFDIR}/roofnet
-	${INSTALL_DATA} ${WRKSRC}/conf/roofnet/etx.click ${CONFDIR}/roofnet
-	${INSTALL_DATA} ${WRKSRC}/conf/roofnet/srcr.click ${CONFDIR}/roofnet
 	@${MKDIR} ${CONFDIR}/wifi
 	${INSTALL_DATA} ${WRKSRC}/conf/wifi/*.click ${CONFDIR}/wifi
 	@${ECHO_CMD}
