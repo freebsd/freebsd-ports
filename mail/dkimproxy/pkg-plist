@@ -3,7 +3,6 @@ bin/dkimproxy.in
 bin/dkimproxy.out
 bin/dkimsign.pl
 bin/dkimverify.pl
-lib/DKMessage.pm
 lib/MSDW/SMTP/Client.pm
 lib/MSDW/SMTP/Server.pm
 lib/MySmtpProxyServer.pm
