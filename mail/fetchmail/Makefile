@@ -10,16 +10,20 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.4
-PORTREVISION=	3
+PORTVERSION=	6.3.5
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
+MASTER_SITES=	${MASTER_SITE_BERLIOS}/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
 		http://home.leo.org/~barner/freebsd/distfiles/
 MASTER_SITE_SUBDIR=	fetchmail
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+
+PATCH_SITES=	${MASTER_SITE_BERLIOS}/fetchmail/ \
+		http://home.leo.org/~barner/freebsd/distfiles/
+PATCHFILES=	fm635-daemon-logfile.patch
 
 MAINTAINER=	barner@FreeBSD.org
-COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/ETRN/ODMR
+COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 
@@ -31,7 +35,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-POP2 --enable-SDPS \
+CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--with-hesiod=no --enable-fallback=no
 # bsd.openssl.mk will add the LDFLAGS to CONFIGURE_ENV:
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -41,12 +45,23 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
 
+OPTIONS=	X11	"Python/Tkinter dependencies for fetchmailconf" off \
+		NLS	"National language support (NLS)."		on \
+		NTLM	"Building in support for NTLM/MSN authentication." off \
+		POP2	"Build pop2 support (obsolete)." off \
+		GSSAPI	"Build GSSAPI support (requires KRB5_HOME to be set)" off
+
 .if defined(WITH_X11)
 USE_PYTHON=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
 .include <bsd.port.pre.mk>
+
+# Pop2 is obsolete
+.if defined(WITH_POP2)
+CONFIGURE_ARGS+=--enable-POP2
+.endif
 
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
@@ -65,8 +80,18 @@ PLIST_SUB+=		NLS="@comment "
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libkrb5.a)
 CONFIGURE_ARGS += --with-kerberos5=${KRB5_HOME}
+
+.if defined(WITH_GSSAPI)
+CONFIGURE_ARGS+=--with-gssapi=${KRB5_HOME}
+.endif
+
 .elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS += --with-kerberos=/usr
+
+.if defined(WITH_GSSAPI)
+CONFIGURE_ARGS+=--with-gssapi=/usr
+.endif
+
 .endif
 
 .if defined(WITH_NTLM)
@@ -85,21 +110,44 @@ pre-patch:
 		 ${WRKDIR}/fetchmailconf
 
 pre-configure:
-.if defined(WITH_NTLM)
-	@${ECHO_CMD} "Building in support for NTLM/MSN authentication."
+
+	@${ECHO_CMD} ""
+
+.if ${OSVERSION} >= 500000
+.if defined(KRB5_HOME)
+	@${ECHO_CMD} "Using Kerberos V support in ${KRB5_HOME}."
 .else
-	@${ECHO_CMD} "Add -DWITH_NTLM to add support for NTLM/MSN authentication."
+	@${ECHO_CMD} "Use KRB5_HOME=<directory> to enable Kerberos V support in <directory> (usually /usr)."
 .endif
-.if defined(WITH_X11)
-	@${ECHO_CMD} "Adding Python/Tkinter dependencies for fetchmailconf."
+
 .else
-	@${ECHO_CMD} "Add -DWITH_X11 to add Python/Tkinter dependencies for fetchmailconf."
-.endif
-.if defined(WITHOUT_NLS)
-	@${ECHO_CMD} "Using national language support (NLS)."
+# FreeBSD 4
+.if defined(MAKE_KERBEROS4)
+.if exists(/usr/lib/libkrb.a)
+	@${ECHO_CMD} "Enabling Kerberos IV support in /usr."
 .else
-	@${ECHO_CMD} "You can use -DWITHOUT_NLS to suppress national language support (NLS)."
+	@${ECHO_CMD} "Kerberos IV is not installed on your system."
 .endif
+.else
+	@${ECHO_CMD} "Use -DMAKE_KERBEROS4 to enable Kerberos IV support."
+.endif
+.endif
+
+.if defined(WITH_GSSAPI)
+.if defined(KRB5_HOME)
+	@${ECHO_CMD} "Enabling GSSAPI support in ${KRB5_HOME}."
+.elif defined(MAKE_KERBEROS4)
+.if exists(/usr/lib/libkrb.a)
+	@${ECHO_CMD} "Enabling GSSAPI support in /usr."
+.else
+	@${ECHO_CMD} "Unable to detect Kerberos in your system. Disabling GSSAPI support."
+.endif
+.else
+	@${ECHO_CMD} "GSSAPI requires Kerberos which is not enabled in your current configuration."
+.endif
+.endif
+
+	@${ECHO_CMD} ""
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -117,6 +165,5 @@ post-install:
 	if [ ! -f ${PREFIX}/etc/fetchmailrc ]; then \
 		${CP} -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
 	fi
-
 
 .include <bsd.port.post.mk>
