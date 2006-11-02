@@ -127,6 +127,7 @@
     SUBDIR += faad
     SUBDIR += fapg
     SUBDIR += fcplay
+    SUBDIR += fdmf
     SUBDIR += festalon
     SUBDIR += festdoc
     SUBDIR += festival
