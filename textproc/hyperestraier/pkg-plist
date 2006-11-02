@@ -13,7 +13,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.30.0
+lib/libestraier.so.8.31.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estfraud.cgi
 libexec/estproxy.cgi
@@ -241,6 +241,7 @@ libexec/estseek.cgi
 %%DATADIR%%/estraier.idl
 %%DATADIR%%/estresult.dtd
 %%DATADIR%%/estseek.conf
+%%DATADIR%%/estseek.help
 %%DATADIR%%/estseek.tmpl
 %%DATADIR%%/estseek.top
 %%DATADIR%%/filter/estfxasis
@@ -252,6 +253,7 @@ libexec/estseek.cgi
 %%DATADIR%%/increm/estseek-form.html
 %%DATADIR%%/increm/estseek-frame.html
 %%DATADIR%%/locale/ja/estseek.conf
+%%DATADIR%%/locale/ja/estseek.help
 %%DATADIR%%/locale/ja/estseek.tmpl
 %%DATADIR%%/locale/ja/estseek.top
 @dirrm %%DATADIR%%/locale/ja
