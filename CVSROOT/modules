@@ -386,6 +386,7 @@ analog		ports/www/analog
 and		ports/sysutils/and
 angband		ports/games/angband
 angst		ports/net-mgmt/angst
+animenfo-client	ports/databases/animenfo-client
 anjuta		ports/devel/anjuta
 annelid		ports/games/annelid
 annextools	ports/net-mgmt/annextools
