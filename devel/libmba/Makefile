@@ -9,7 +9,9 @@
 PORTNAME=	libmba
 PORTVERSION=	0.9.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/
+MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A collection of C modules potentially useful to any project
