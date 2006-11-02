@@ -3416,6 +3416,7 @@ gmfsk		ports/comms/gmfsk
 gmime		ports/mail/gmime
 gmime2		ports/mail/gmime2
 gmime2-sharp	ports/mail/gmime2-sharp
+gmines		ports/games/gmines
 gmixer		ports/audio/gmixer
 gmp-ecm		ports/math/gmp-ecm
 gmpc		ports/audio/gmpc
