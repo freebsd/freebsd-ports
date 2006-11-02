@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Class/Measure.pm
+%%SITE_PERL%%/Class/Measure/Length.pm
+@dirrmtry %%SITE_PERL%%/Class/Measure
+@dirrmtry %%SITE_PERL%%/Class
