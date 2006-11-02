@@ -46,10 +46,11 @@ CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man			\
 			--prefix=${INN_NEWSBASE}		\
 			--with-spool-dir=${INN_NEWSSPOOL}	\
-			--with-log-dir=${INN_NEWSLOG}		\
+			--with-log-dir=${INN_LOGDIR}		\
 			--with-tmp-dir=${INN_TMPDIR}		\
 			--with-openssl=${OPENSSLBASE}		\
 			--with-etc-dir=${INN_ETCDIR}		\
+			--with-run-dir=${INN_RUNDIR}		\
 			--with-db-dir=${INN_DBDIR}		\
 			--enable-ipv6
 
