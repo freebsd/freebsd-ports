@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/news/pan/Makefile,v 1.4 2006/10/11 11:55:59 ahze Exp $
+#   $MCom: ports-stable/news/pan/Makefile,v 1.1 2006/10/19 16:50:55 mezz Exp $
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.116
-PORTREVISION=	1
+PORTVERSION=	0.117
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -38,5 +37,9 @@ CONFIGURE_ARGS+=	--without-gtkspell
 LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=	--with-gtkspell
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in"| ${XARGS} ${REINPLACE_CMD} -e \
+		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
 
 .include <bsd.port.post.mk>
