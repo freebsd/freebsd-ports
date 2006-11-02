@@ -2526,6 +2526,7 @@ fcrackzip	ports/security/fcrackzip
 fcron		ports/sysutils/fcron
 fd		ports/shells/fd
 fdm		ports/mail/fdm
+fdmf		ports/audio/fdmf
 fdp-tools	ports/textproc/fdp-tools
 fdupes		ports/sysutils/fdupes
 feappv		ports/cad/feappv
