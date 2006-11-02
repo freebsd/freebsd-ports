@@ -11,7 +11,7 @@ CATEGORIES=	sysutils archivers
 MASTER_SITES=	http://www.dirvish.org/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lorenl@alzatex.com
+MAINTAINER=	lorenl@north-winds.org
 COMMENT=	Network backup system based off of rsync
 
 RUN_DEPENDS=	${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
