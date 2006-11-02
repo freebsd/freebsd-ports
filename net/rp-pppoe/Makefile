@@ -8,7 +8,7 @@
 PORTNAME=	rp-pppoe
 PORTVERSION=	3.8
 CATEGORIES=	net
-MASTER_SITES=	http://www.roaringpenguin.com/penguin/pppoe/
+MASTER_SITES=	http://www.roaringpenguin.com/files/download/
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The popular Roaring Penguin's PPPoE software
