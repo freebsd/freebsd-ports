@@ -1,0 +1,5 @@
+An ANSI-BBS terminal designed to connect to remote BBSs via telnet, rlogin, or
+SSH. Supports ANSI music and the IBM charset when possible. Will run from a
+console, under X11 using XLib, or using SDL.
+
+WWW: http://syncterm.bbsdev.net/

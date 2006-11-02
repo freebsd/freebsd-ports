@@ -104,6 +104,7 @@
     SUBDIR += spandsp
     SUBDIR += splat
     SUBDIR += sredird
+    SUBDIR += syncterm
     SUBDIR += thebridge
     SUBDIR += tilp
     SUBDIR += tilp2
