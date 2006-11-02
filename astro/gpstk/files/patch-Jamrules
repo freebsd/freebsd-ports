@@ -1,0 +1,22 @@
+--- Jamrules.orig	Wed Jan 19 19:36:30 2005
++++ Jamrules	Thu May 12 15:29:05 2005
+@@ -9,7 +9,7 @@
+ KEEPOBJS = true ;
+ 
+ # where to install the .hpp files
+-INCDIR = /usr/local/include ;
++#INCDIR = /usr/local/include ;
+ 
+ # override the built-in EXEMODE
+ EXEMODE = 755 ;
+@@ -29,6 +29,10 @@
+    {
+       case CYGWIN :
+          LINKLIBS += -lstdc++ ;
++
++      case FREEBSD :
++         LINKLIBS += -lstdc++ ;
++         CCSHARE_FLAGS = -fPIC ;
+ 
+       case LINUX :
+          LINKLIBS += -lstdc++ ;
