@@ -1,4 +1,4 @@
-# New ports collection makefile for:    p5-GDBM
+# New ports collection makefile for:	p5-GDBM
 # Date created:				Nov 9 1999
 # Whom:	      				Nick Sayer <nsayer@FreeBSD.ORG>
 #
@@ -7,28 +7,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-GDBM
-PORTVERSION=	1.00
+PORTNAME=	GDBM
+PORTVERSION=	1.08
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../src
-DISTNAME=	perl5.005_03
+MASTER_SITES=	CPAN/../../src
+PKGNAMEPREFIX=	p5-
+DISTNAME=	perl-5.8.8
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl module to use the GNU Data Base Manager (gdbm)
+COMMENT=	GNU Data Base Manager (gdbm) interface
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
-
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/ext/GDBM_File
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
-
+CFLAGS=		-I${LOCALBASE}/include
 MAN3=		GDBM_File.3
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/MAN3PODS/s|.*||' ${WRKSRC}/Makefile.PL
 
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
