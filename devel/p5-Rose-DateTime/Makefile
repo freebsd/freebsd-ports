@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DateTime
-PORTVERSION=	0.531
+PORTVERSION=	0.532
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	DateTime helper functions and objects
 
-BUILD_DEPENDS=	${SITE_PERL}/Rose/Object.pm:${PORTSDIR}/devel/p5-Rose-Object \
+BUILD_DEPENDS=	p5-Rose-Object>=0.82:${PORTSDIR}/devel/p5-Rose-Object \
 		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
