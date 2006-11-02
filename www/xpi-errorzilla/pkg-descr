@@ -1,0 +1,10 @@
+Changes the default error page from basically having a reload button
+to having the following choices:
+ - Google cache
+ - Archival snapshot from the wayback machine
+ - Ping
+ - Trace route
+ - Whois lookup
+ - Coral cache
+
+WWW: http://www.jaybaldwin.com/News.aspx?id=51
