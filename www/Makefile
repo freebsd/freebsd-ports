@@ -1107,6 +1107,7 @@
     SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-delicious
     SUBDIR += xpi-downthemall
+    SUBDIR += xpi-errorzilla
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-firefox-showcase
     SUBDIR += xpi-fission
