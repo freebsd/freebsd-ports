@@ -1736,7 +1736,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>firefox</name>
 	<range><lt>1.5.0.7,1</lt></range>
-	<range><gt>2.*,1</gt></range>
+	<range><gt>2.*,1</gt><lt>2.0_1,1</lt></range>
       </package>
       <package>
 	<name>linux-firefox</name>
@@ -1814,7 +1814,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-14</discovery>
       <entry>2006-09-15</entry>
-      <modified>2006-10-15</modified>
+      <modified>2006-11-02</modified>
     </dates>
   </vuln>
 
@@ -2777,7 +2777,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>firefox</name>
 	<range><lt>1.5.0.5,1</lt></range>
-	<range><gt>2.*,1</gt></range>
+	<range><gt>2.*,1</gt><lt>2.0_1,1</lt></range>
       </package>
       <package>
 	<name>linux-firefox</name>
@@ -2868,7 +2868,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-07-25</discovery>
       <entry>2006-07-27</entry>
-      <modified>2006-07-29</modified>
+      <modified>2006-11-02</modified>
     </dates>
   </vuln>
 
