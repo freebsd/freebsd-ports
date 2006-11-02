@@ -1,0 +1,8 @@
+Local/Applications/GMines.app/GMines
+Local/Applications/GMines.app/Resources/GMines.desktop
+Local/Applications/GMines.app/Resources/GMines.tiff
+Local/Applications/GMines.app/Resources/Info-gnustep.plist
+Local/Applications/GMines.app/library_paths.openapp
+Local/Applications/GMines.app/stamp.make
+@dirrm Local/Applications/GMines.app/Resources
+@dirrm Local/Applications/GMines.app

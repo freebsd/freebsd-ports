@@ -256,6 +256,7 @@
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gmastermind
+    SUBDIR += gmines
     SUBDIR += gnarr
     SUBDIR += gnmm
     SUBDIR += gno3dtet
