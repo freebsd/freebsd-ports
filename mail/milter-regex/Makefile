@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	milter-regex-${PORTVERSION}
 
-MAINTAINER=	dhartmei@FreeBSD.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Milter plugin to sendmail for regular expression filtering
 
 WRKSRC=		${WRKDIR}/milter-regex
@@ -20,6 +20,11 @@ MAILUSER?=	mailnull
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+
+USE_RC_SUBR=	milterregex.sh
+
+SPOOLDIR=	/var/run/milter-regex
+SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -43,9 +48,11 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e \
 	    "s:/etc/milter-regex.conf:${PREFIX}/etc/milter-regex.conf:g; \
+	    s:/var/spool/milter-regex:${SPOOLDIR}:g; \
 	    s:_milter-regex:${MAILUSER}:g;" ${WRKSRC}/milter-regex.c
 	@${REINPLACE_CMD} -e \
 	    "s:/etc/milter-regex.conf:${PREFIX}/etc/milter-regex.conf:g; \
+	    s:/var/spool/milter-regex:${SPOOLDIR}:g; \
 	    s:mailstats 1:mailstats 8:;" ${WRKSRC}/milter-regex.8
 	@${REINPLACE_CMD} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
 	    s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g; \
@@ -55,6 +62,9 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/milter-regex ${PREFIX}/libexec
 	@${INSTALL_MAN} ${WRKSRC}/milter-regex.8 ${PREFIX}/man/man8
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${INSTALL} -d -o ${MAILUSER} -g daemon -m 0700 ${SPOOLDIR}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
