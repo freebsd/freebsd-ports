@@ -19,6 +19,23 @@ $FreeBSD$
  
  #set some vars from the environment (and not make builtins)
  CC   := $(shell echo "$${CC}")
+@@ -321,14 +322,14 @@
+ 	 -DNAME='"$(MAIN_NAME)"' -DVERSION='"$(RELEASE)"' -DARCH='"$(ARCH)"' \
+ 	 -DOS='"$(OS)"' -DCOMPILER='"$(CC_VER)"' -D__CPU_$(ARCH) -D__OS_$(OS) \
+ 	 -DCFG_DIR='"$(cfg-target)"'\
+-	 -DPKG_MALLOC \
+ 	 -DSHM_MEM  -DSHM_MMAP \
+ 	 -DDNS_IP_HACK \
+ 	 -DUSE_IPV6 \
+ 	 -DUSE_MCAST \
+ 	 -DUSE_TCP \
+ 	 -DDISABLE_NAGLE \
+-	 -DF_MALLOC \
++	 #-DPKG_MALLOC \
++	 #-DF_MALLOC \
+ 	 #-DDBG_QM_MALLOC \
+ 	 #-DDBG_F_MALLOC \
+ 	 #-DNO_DEBUG \
 @@ -464,8 +465,8 @@
  	found_lock_method=yes
  endif
