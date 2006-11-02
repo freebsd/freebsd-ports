@@ -3,6 +3,8 @@ include/net6/client.hpp
 include/net6/common.hpp
 include/net6/connection.hpp
 include/net6/default_accumulator.hpp
+include/net6/encrypt.hpp
+include/net6/enum_ops.hpp
 include/net6/error.hpp
 include/net6/gettext_package.hpp
 include/net6/host.hpp
@@ -11,18 +13,21 @@ include/net6/main.hpp
 include/net6/non_copyable.hpp
 include/net6/object.hpp
 include/net6/packet.hpp
+include/net6/queue.hpp
 include/net6/select.hpp
 include/net6/serialise.hpp
 include/net6/server.hpp
 include/net6/socket.hpp
 include/net6/user.hpp
-lib/libnet6-1.2.so
-lib/libnet6-1.2.so.0
+lib/libnet6-1.3.so
+lib/libnet6-1.3.so.0
 lib/libnet6.a
 lib/libnet6.la
 lib/libnet6.so
-libdata/pkgconfig/net6-1.2.pc
+libdata/pkgconfig/net6-1.3.pc
 %%NLS%%share/locale/de/LC_MESSAGES/net6.mo
+%%NLS%%share/locale/es/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/net6.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/net6.mo
 @dirrm include/net6
