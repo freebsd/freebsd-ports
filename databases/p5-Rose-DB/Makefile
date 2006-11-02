@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.727
+PORTVERSION=	0.729
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -16,12 +16,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	A DBI wrapper and abstraction layer
 
-BUILD_DEPENDS=	${SITE_PERL}/Rose/DateTime/Util.pm:${PORTSDIR}/devel/p5-Rose-DateTime \
+BUILD_DEPENDS=	p5-Rose-DateTime>=0.532:${PORTSDIR}/devel/p5-Rose-DateTime \
 		${SITE_PERL}/SQL/ReservedWords.pm:${PORTSDIR}/databases/p5-SQL-ReservedWords \
 		${SITE_PERL}/${PERL_ARCH}/Bit/Vector/Overload.pm:${PORTSDIR}/math/p5-Bit-Vector \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/DateTime/Format/MySQL.pm:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
 		${SITE_PERL}/DateTime/Format/Pg.pm:${PORTSDIR}/devel/p5-DateTime-Format-Pg \
+		${SITE_PERL}/Clone/PP.pm:${PORTSDIR}/devel/p5-Clone-PP \
     		${SITE_PERL}/Time/Clock.pm:${PORTSDIR}/devel/p5-Time-Clock
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
