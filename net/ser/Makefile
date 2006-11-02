@@ -7,7 +7,7 @@
 
 PORTNAME=	ser
 PORTVERSION=	0.9.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/ser/ \
 		http://download2.berlios.de/ser/
@@ -29,6 +29,10 @@ MAN5=		ser.cfg.5
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_SYSTEM_MALLOC)
+MAKE_ENV+=	"extra_defs=-DF_MALLOC -DPKG_MALLOC"
+.endif
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
