@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,9 @@ COMMENT=	A DV non-linear video editor
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
 		Magick.10:${PORTSDIR}/graphics/ImageMagick	\
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
+RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg	\
+		mencoder:${PORTSDIR}/multimedia/mplayer	\
+		mplex:${PORTSDIR}/multimedia/mjpegtools
 
 OPTIONS=	QUICKTIME "With Quicktime support" off
 
