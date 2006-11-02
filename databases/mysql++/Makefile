@@ -7,25 +7,26 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	2.1.1
-PORTREVISION=	0
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 PKGNAMESUFFIX=	-mysql${MYSQL_VER}
 
-MAINTAINER=	sergey@network-asp.biz
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
-
-BROKEN=		Does not compile
 
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --disable-examples
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 USE_GMAKE=      yes
 
 CONFLICTS=	${PORTNAME}*-1.*
+
+NOT_FOR_ARCHS=	amd64 sparc64
+NOT_FOR_ARCHS_REASON_amd64=	Fails to compile
+NOT_FOR_ARCHS_REASON_sparc64=	Fails to compile
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
