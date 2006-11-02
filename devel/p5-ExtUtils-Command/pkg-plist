@@ -1,0 +1,7 @@
+%%SITE_PERL%%/ExtUtils/Command.pm
+%%SITE_PERL%%/Shell/Command.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Command/.packlist
+@dirrmtry %%SITE_PERL%%/ExtUtils
+@dirrmtry %%SITE_PERL%%/Shell
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Command
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
