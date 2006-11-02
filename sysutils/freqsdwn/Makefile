@@ -16,7 +16,7 @@ DIST_SUBDIR=	freqship
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	FREQSHIP-mini Mitsubishi Electric UPS controller daemon
 
-RESTRICTED=	See http://www.mitsubishielectric.co.jp/frequps/keiyaku.html
+RESTRICTED=	See http://www.mitsubishielectric.co.jp/frequps/f_down/keiyaku.html
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 IGNORE=		${RESTRICTED}
 .endif
@@ -33,7 +33,7 @@ CONFDIR?=	${PREFIX}/etc/freqship
 pre-fetch::
 		@[ -f ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ] || (   \
 		${ECHO} "Please read and accept following LICENSE:";                \
-		${ECHO} "http://www.mitsubishielectric.co.jp/frequps/keiyaku.html"; \
+		${ECHO} "http://www.mitsubishielectric.co.jp/frequps/f_down/keiyaku.html"; \
 		${ECHO} "Please 'make do-fetch' manually, if you accept it.";       \
 		${FALSE})
 
