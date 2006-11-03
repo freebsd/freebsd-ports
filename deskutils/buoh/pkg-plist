@@ -1,8 +1,6 @@
 bin/buoh
 share/applications/buoh.desktop
 %%DATADIR%%/comics/comics.xml
-%%DATADIR%%/pixmaps/buoh16x16.png
-%%DATADIR%%/pixmaps/buoh64x64.png
 %%DATADIR%%/ui/buoh-ui.xml
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -10,11 +8,10 @@ share/applications/buoh.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/pixmaps/buoh64x64.png
-@dirrmtry share/pixmaps
+share/icons/hicolor/16x16/apps/buoh.png
+share/icons/hicolor/64x64/apps/buoh.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/comics
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
