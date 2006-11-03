@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Bundle/Object/InsideOut.pm
 %%SITE_PERL%%/Object/InsideOut.pm
 %%SITE_PERL%%/Object/InsideOut/Autoload.pm
 %%SITE_PERL%%/Object/InsideOut/Chained.pm
@@ -10,6 +11,7 @@
 %%SITE_PERL%%/Object/InsideOut/Overload.pm
 %%SITE_PERL%%/Object/InsideOut/Universal.pm
 %%SITE_PERL%%/Object/InsideOut/Util.pm
+%%SITE_PERL%%/Object/InsideOut/Secure.pm
 %%SITE_PERL%%/Object/InsideOut/attributes.pm
 %%SITE_PERL%%/Object/InsideOut/lvalue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut/.packlist
@@ -17,3 +19,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
 @dirrm %%SITE_PERL%%/Object/InsideOut
 @dirrmtry %%SITE_PERL%%/Object
+@dirrmtry %%SITE_PERL%%/Bundle/Object
+@dirrmtry %%SITE_PERL%%/Bundle
