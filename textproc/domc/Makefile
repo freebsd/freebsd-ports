@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A light weight implementation of the DOM in ANSI C
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		mba.1:${PORTSDIR}/devel/libmba
+		mba.0:${PORTSDIR}/devel/libmba
 
 MAN3=		DOM_CharacterData.3m DOM_Document.3m DOM_Element.3m \
 		DOM_Implementation.3m DOM_NamedNodeMap.3m DOM_Node.3m \
