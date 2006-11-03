@@ -8,10 +8,9 @@
 PORTNAME=	xtet42
 PORTVERSION=	2.21
 CATEGORIES=	games
-MASTER_SITES=	http://www.gufi.org/~gmarco/files/distfiles/ \
-		http://www.giovannelli.it/~gmarco/files/
+MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ 
 
-MAINTAINER=	gmarco@giovannelli.it
+MAINTAINER=	gmarco@gufi.org
 COMMENT=	A one or two player t*tris game
 
 USE_X_PREFIX=	yes
