@@ -8,7 +8,7 @@
 PORTNAME=	libofa
 PORTVERSION=	0.9.3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.musicdns.org/themes/musicdns_org/downloads/
+MASTER_SITES=	http://www.musicdns.org/files/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	The Open Fingerprint Architecture Library
@@ -21,7 +21,7 @@ USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
