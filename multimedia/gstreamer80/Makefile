@@ -21,6 +21,9 @@ COMMENT=	Development framework for creating media applications
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+DEPRECATED=	Obsolete version, use gstreamer 0.10 instead
+EXPIRATION_DATE=2007-05-31
+
 USE_XLIB=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes

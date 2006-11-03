@@ -27,6 +27,8 @@ LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer80 \
 SHLIB_VERSION=	1
 VERSION=	0.8
 
+DEPRECATED=	Obsolete version, use gstreamer 0.10 instead
+EXPIRATION_DATE=2007-05-31
 WANT_GSTREAMER=	yes
 USE_XLIB=	yes
 USE_BZIP2=	yes
