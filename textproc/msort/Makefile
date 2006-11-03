@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	msort
-PORTVERSION=	8.27
+PORTVERSION=	8.29
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sorting files in sophisticated ways
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -28,8 +28,6 @@ MAN1=		msort.1
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	${REINPLACE_CMD} -e 's,^#include <alloca.h>,,g' ${WRKSRC}/msort.c
 .if ${OSVERSION} < 500035
 BROKEN=		Does not build with older versions of FreeBSD
 .endif
