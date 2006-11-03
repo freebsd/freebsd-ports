@@ -19,7 +19,7 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Open X Input Method server
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-RUN_DEPENDS=	zh-fireflyttf>=0:${PORTSDIR}/chinese/fireflyttf
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chinese/fireflyttf
 
 OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 		CHEWING "Enable Chewing input module" On \
