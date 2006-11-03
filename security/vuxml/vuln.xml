@@ -11299,9 +11299,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>p5-Crypt-OpenPGP</name>
-	<name>pgp</name>
-	<name>pgpin</name>
 	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>pgp</name>
+	<range><ge>3.0</ge></range>
       </package>
     </affects>
     <description>
