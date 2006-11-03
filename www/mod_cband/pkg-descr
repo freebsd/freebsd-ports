@@ -4,4 +4,4 @@ virtualhost's transfer limit is exceeded, mod_cband will redirect all
 further requests to a location specified in the configuration file.
 
 
-WWW: http://dembol.nasa.pl/mod_cband
+WWW: http://mod-cband.com/
