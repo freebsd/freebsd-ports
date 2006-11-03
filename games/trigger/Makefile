@@ -13,7 +13,7 @@ MASTER_SITES=	http://0day.icculus.org/mirrors/trigger/
 DISTFILES=	trigger-${PORTVERSION}-src${EXTRACT_SUFX} \
 		trigger-${PORTVERSION}-data${EXTRACT_SUFX}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A rally car racing game
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam

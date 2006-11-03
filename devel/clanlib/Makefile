@@ -14,7 +14,7 @@ MASTER_SITES=	http://clanlib.org/~sphair/download/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LIB_DEPENDS=	Hermes:${PORTSDIR}/graphics/Hermes \

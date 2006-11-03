@@ -12,7 +12,7 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple GNOME music player
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

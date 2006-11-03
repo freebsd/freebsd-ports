@@ -12,7 +12,7 @@ CATEGORIES=		games
 MASTER_SITES=		http://linux.tlk.fr/games/TecnoballZ/download/
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A brick breaker (Arkanoid-like game)
 
 LIB_DEPENDS=		mikmod.2:${PORTSDIR}/audio/libmikmod

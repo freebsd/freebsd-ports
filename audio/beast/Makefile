@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.6/ \
 		http://beast.gtk.org/beast-ftp/v0.6/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful music composition and modular synthesis application
 
 LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \

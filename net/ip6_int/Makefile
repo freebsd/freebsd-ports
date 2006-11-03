@@ -13,7 +13,7 @@ DISTNAME=	ip6_int
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert an IPv4/IPv6 address to an in-addr.arpa/ip6.int PTR value
 
 PLIST_FILES=	bin/ip6_int

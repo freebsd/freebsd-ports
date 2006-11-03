@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH} \
 			http://gnu.rtin.bz/ftp/savannah/files/beaver/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A programmer's text editor for GTK+ 2.0
 
 USE_X_PREFIX=		yes

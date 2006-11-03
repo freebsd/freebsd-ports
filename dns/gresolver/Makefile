@@ -10,7 +10,7 @@ PORTVERSION=	0.0.5
 CATEGORIES=	dns
 MASTER_SITES=	http://jodrell.net/files/gresolver/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical DNS query tool using GTK+
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \

@@ -12,7 +12,7 @@ CATEGORIES=		games
 MASTER_SITES=		http://www.usebox.net/jjm/dd2/releases/
 DISTNAME=		dd2-${PORTVERSION}
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An old school shoot'em up game
 
 USE_X_PREFIX=		yes

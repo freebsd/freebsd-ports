@@ -12,7 +12,7 @@ MASTER_SITES=		http://urban.bengburken.net/files/linux/
 DISTNAME=		sound
 DIST_SUBDIR=		urban
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The sounds for use with URBAN
 
 RUN_DEPENDS=		urban:${PORTSDIR}/games/urban

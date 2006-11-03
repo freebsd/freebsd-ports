@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	musicbox
 DISTNAME=		musicbox-${PORTVERSION}
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A simple GTK+ audio tag editor
 
 LIB_DEPENDS=		tag:${PORTSDIR}/audio/taglib
