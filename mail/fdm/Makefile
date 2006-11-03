@@ -30,8 +30,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x
+.if ${OSVERSION} < 601000
+BROKEN=	needs strtonum(3)
 .endif
 
 .include <bsd.port.post.mk>
