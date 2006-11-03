@@ -257,10 +257,9 @@ post-install:
 			-e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
-.if defined(WITH_KDE)
 	@{LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
-			${PREFIX}/share/applnk/${EXECBASE}
-	@${PRINTF} "share/applnk/${EXECBASE}\n" >> ${TMPPLIST}
+			${PREFIX}/share/applications/${EXECBASE}
+	@${PRINTF} "share/applications/${EXECBASE}\n" >> ${TMPPLIST}
 	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
@@ -275,7 +274,6 @@ post-install:
 			${PRINTF} "share/icons/hicolor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
 		done ; \
 	done
-.endif
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
