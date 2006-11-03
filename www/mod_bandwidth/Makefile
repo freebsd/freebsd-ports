@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_bandwidth
-PORTVERSION=	2.0.6.b
+PORTVERSION=	2.0.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://potatohead.estat.com/FreeBSD/
 #Orignal locations: ftp://ftp.cohprog.com/pub/apache/module/1.3.0/mod_bandwidth.c
