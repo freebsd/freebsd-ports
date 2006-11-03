@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lesstif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	API compatible clone of the Motif toolkit
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
