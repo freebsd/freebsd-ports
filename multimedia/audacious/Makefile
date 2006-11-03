@@ -76,7 +76,7 @@ PLIST_SUB+=	MODPLUG="@comment "
 CONFIGURE_ARGS+=	--disable-modplug
 .endif
 
-.if !defined(WITHOUT_FLAC)
+.if defined(WITH_FLAC)
 INPUT_PLUGINS+=	flac
 PLIST_SUB+=	FLACPLUGIN=""
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
