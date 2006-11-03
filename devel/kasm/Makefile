@@ -11,8 +11,11 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	k-asm
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A System RPL/Machine Language assembler for the HP48/HP49 calculators
+
+DEPRECATED=	Buggy and unmaintained, use devel/hptools instead
+EXPIRATION_DATE=2007-01-01
 
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
