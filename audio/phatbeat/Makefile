@@ -12,7 +12,7 @@ CATEGORIES=		audio
 MASTER_SITES=		http://www.postreal.org/files/
 DISTNAME=		PhatBeat-${PORTVERSION}
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A beat counter
 
 USE_X_PREFIX=		yes

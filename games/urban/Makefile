@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://urban.bengburken.net/files/linux/
 DIST_SUBDIR=	urban
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bloody, violent sidescrolling shoot-em-up
 
 LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi \

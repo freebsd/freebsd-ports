@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.peercast.org/
 DISTNAME=	peercast-linux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
 USE_LINUX=	yes

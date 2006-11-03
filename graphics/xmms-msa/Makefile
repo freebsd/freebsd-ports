@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://republika.pl/kunik/msa/dl/
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A spectrum analyzer with a skin support and some visualization modes
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

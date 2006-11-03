@@ -12,7 +12,7 @@ CATEGORIES=		net
 MASTER_SITES=		http://www.nomachine.com/download/nxclient/${PORTVERSION}/Linux-Static-Tar/
 DISTNAME=		nxclient-${PORTVERSION}-91.i386
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The NoMachine NX client
 
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg

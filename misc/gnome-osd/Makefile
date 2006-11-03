@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/${DISTVERSION:C|-.*$||}/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An On-Screen-Display infrastructure using Pango text rendering
 
 USE_X_PREFIX=	yes

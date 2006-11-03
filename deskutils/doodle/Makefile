@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://gnunet.org/doodle/download/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quickly search documents
 
 LIB_DEPENDS=	extractor.2:${PORTSDIR}/textproc/libextractor

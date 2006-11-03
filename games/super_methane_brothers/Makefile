@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	methane
 DISTNAME=	methane-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the Amiga platform game of the same name
 
 LIB_DEPENDS=	clanCore-0.7:${PORTSDIR}/devel/clanlib-devel \

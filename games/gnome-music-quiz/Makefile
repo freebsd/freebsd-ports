@@ -12,7 +12,7 @@ CATEGORIES=	games audio
 MASTER_SITES=	http://ishamael.inactivex.net/software/tarballs/
 DISTNAME=	mq-${PORTVERSION}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game similar to the television show 'Name That Tune'
 
 RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
