@@ -37,6 +37,10 @@ SUB_FILES=	p3scan.sh pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=		is not supported on 4.x
+.endif
+
 .if !defined(WITHOUT_UVSCAN)
 RUN_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
 .endif
