@@ -54,7 +54,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-CONFIGURE_ENV+=		VLS_LIB="-L/usr/lib -lcipher"
+BROKEN=		Does not build
 .endif
 
 .if ${OSVERSION} >= 502122
