@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pacpl
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SFE
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Perl Audio Converter
