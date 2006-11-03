@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.07.00
+PORTVERSION=	1.08.00
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/stable/1_0x/ \
 		http://dl.cihar.com/gammu/stable/1_0x/
 
-MAINTAINER=	bsam@ipt.ru
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
 
 MAN1=		gammu.1
