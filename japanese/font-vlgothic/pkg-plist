@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+etc/fonts/conf.d/25.vlgothic.conf
+%%FONTSDIR%%/VL-PGothic-Regular.ttf
+%%FONTSDIR%%/VL-Gothic-Regular.ttf
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.en
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_E.mplus
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_J.mplus
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.sazanami
+%%PORTDOCS%%%%DOCSDIR%%/README_J.mplus
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
+@unexec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
+@unexec [ -s %D/%%FONTSDIR%%/fonts.cache-1 ] || rm -f %D/%%FONTSDIR%%/fonts.cache-1
+@dirrmtry %%FONTSDIR%%
