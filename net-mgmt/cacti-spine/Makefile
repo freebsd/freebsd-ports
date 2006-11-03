@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cactid
-PORTVERSION=	0.8.6.g
+PORTVERSION=	0.8.6.i
 CATEGORIES=	net
 MASTER_SITES=	http://www.cacti.net/downloads/cactid/
-DISTNAME=	cacti-${PORTNAME}-0.8.6g
+DISTNAME=	cacti-${PORTNAME}-0.8.6i
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
@@ -25,10 +25,10 @@ post-patch:
 	@${REINPLACE_CMD} 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/cactid.h
 
-post-install:
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/cactid ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/cactid.conf ${EXAMPLESDIR}
 	@[ -e ${PREFIX}/etc/cactid.conf ] || \
 		${INSTALL_DATA} ${EXAMPLESDIR}/cactid.conf ${PREFIX}/etc/
-
 .include <bsd.port.mk>
