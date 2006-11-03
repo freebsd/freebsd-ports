@@ -9,12 +9,12 @@ PORTNAME=	tetrinet-x
 PORTVERSION=	1.13.16
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/ \
+MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
 	     	ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gmarco@giovannelli.it
+MAINTAINER=	gmarco@gufi.org
 COMMENT=	An addictive 6 player tetr*s game
 
 WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
