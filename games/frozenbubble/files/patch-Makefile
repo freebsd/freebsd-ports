@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jan  6 23:52:45 2003
-+++ Makefile	Tue May 17 21:51:48 2005
+--- c_stuff/Makefile.orig	Mon Jan  6 23:52:45 2003
++++ c_stuff/Makefile	Tue May 17 21:51:48 2005
 @@ -6,7 +6,7 @@
  
  install:
