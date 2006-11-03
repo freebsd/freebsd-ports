@@ -11,7 +11,7 @@ CATEGORIES=	print python
 MASTER_SITES=	http://www.pykota.com/software/pkpgcounter/download/tarballs/
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A generic Page Description Language parser
+COMMENT=	Count pages and ink coverage precent
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -19,17 +19,17 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		pkpgcounter.1
-NOMANCOMPRES=	no
+MAN1=		${PORTNAME}.1
 
 PORTDOCS=	README COPYING BUGS CREDITS NEWS
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	for f in ${PORTDOCS}; do \
-	  ${INSTALL_MAN} ${WRKSRC}/$$f ${DOCSDIR}; \
-	done
+.ifdef NOPORTDOCS
+_SED_NODOCS=	-e '/^data_files.append.*docfiles/s|.*||'
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '/^directory.*man1/s|=.*|= "man/man1"|' \
+		-e '/^docdir/s|".*"|"${DOCSDIR}"|' \
+		${_SED_NODOCS} ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

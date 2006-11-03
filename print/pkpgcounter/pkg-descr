@@ -15,4 +15,7 @@ It currently supports the following file types:
   - Samsung QPDL (aka SPL2)
   - Samsung SPL1
 
+The five latter ones, as well as some TIFF documents, are currently
+only supported in page counting mode.
+
 WWW: http://www.pykota.com/software/pkpgcounter/
