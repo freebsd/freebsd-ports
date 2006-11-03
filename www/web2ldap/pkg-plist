@@ -47,6 +47,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/etc/httpd/sample-mod_fastcgi.conf
+%%DATADIR%%/etc/httpd/sample-mod_fcgid.conf
 %%DATADIR%%/etc/httpd/sample-mod_scgi.conf
 %%DATADIR%%/etc/init.d/web2ldap
 %%DATADIR%%/AUTHORS
