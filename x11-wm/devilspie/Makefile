@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	devilspie
-PORTVERSION=	0.17.1
+PORTVERSION=	0.18
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A window manipulation tool
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	libwnck
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir="${PREFIX}/man"
 
 MAN1=		devilspie.1
 PORTDOCS=	AUTHORS NEWS README TODO
