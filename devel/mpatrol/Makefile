@@ -18,7 +18,7 @@ LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build/unix
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 INSTALLS_SHLIB=	yes
 
 USE_GMAKE=	yes
@@ -41,6 +41,12 @@ DOCSIMG=	cc1.eps cc1.jpg cc1.pdf \
 		mpatrol.eps mpatrol.jpg mpatrol.pdf mpatrol.txt \
 		test.eps test.jpg test.pdf \
 		trace.eps trace.jpg trace.pdf
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-DENVIRON=\"ENVIRON_64\" -DMP_INIT_SUPPORT=0
+.endif
 
 do-install:
 .for file in hexwords mpedit mpsym mupdate
@@ -77,4 +83,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
