@@ -1,6 +1,6 @@
---- setup.py.orig	Wed Apr 13 23:03:04 2005
-+++ setup.py	Sun May 22 11:44:58 2005
-@@ -413,7 +413,6 @@
+--- setup.py.orig	Fri Sep 22 12:15:34 2006
++++ setup.py	Fri Nov  3 12:18:45 2006
+@@ -471,7 +471,6 @@
      # windows does not have unistd.h
      define_macros.append(('YY_NO_UNISTD_H', None))
  else:
@@ -8,16 +8,16 @@
      if win_compiling:
          # we are cross compiling with mingw
          # add directory for pyconfig.h
-@@ -430,7 +429,7 @@
+@@ -488,7 +487,7 @@
  data_files = [
           ('share/linkchecker',
               ['config/linkcheckerrc', 'config/logging.conf', ]),
 -         ('share/linkchecker/examples',
 +         ('share/examples/linkchecker',
-              ['cgi/lconline/leer.html.en', 'cgi/lconline/leer.html.de',
-               'cgi/lconline/index.html', 'cgi/lconline/lc_cgi.html.en',
-               'cgi/lconline/lc_cgi.html.de', 'cgi/lconline/check.js',
-@@ -438,10 +437,8 @@
+              ['cgi-bin/lconline/leer.html.en',
+               'cgi-bin/lconline/leer.html.de',
+               'cgi-bin/lconline/index.html',
+@@ -500,10 +499,8 @@
        ]
  
  if os.name == 'posix':
