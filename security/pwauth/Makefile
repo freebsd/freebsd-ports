@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pwauth
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	security www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
