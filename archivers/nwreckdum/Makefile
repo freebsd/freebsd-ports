@@ -7,6 +7,7 @@
 
 PORTNAME=	nwreckdum
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	archivers games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
