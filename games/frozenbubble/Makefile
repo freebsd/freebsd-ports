@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	frozenbubble
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	2.0.0
+PORTREVISION=	0
 CATEGORIES=	games
-MASTER_SITES=	http://zarb.org/~gc/fb/
+MASTER_SITES=	http://www.frozen-bubble.org/data/
 DISTNAME=	frozen-bubble-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
@@ -19,48 +18,50 @@ COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
 
-USE_SDL=	mixer image sdl
+USE_SDL=	mixer sdl pango
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-MAKE_ENV=	MKDIR="${MKDIR}" \
-		TAR="${TAR}"
+USE_GETTEXT=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/c_stuff/
-BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
+CONFIGURE_WRKSRC=	${WRKSRC}/c_stuff
+REINPLACE_ARGS=	-i ""
+
+MAN6=		frozen-bubble-editor.6 frozen-bubble.6
+
+LEXECDIR=	${PREFIX}/libexec/${PORTNAME}
+
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' ${WRKSRC}/Makefile.PL
-	@${RM} ${WRKSRC}/lib/FBLE.pm.orig
+	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' \
+		${WRKSRC}/c_stuff/Makefile.PL
+	@${REINPLACE_CMD} -E -e \
+		"s,^(\\\$$FPATH[[:space:]]+=[[:space:]]+).*,\1'${DATADIR}';," \
+		-e \
+		"s,^(\\\$$FLPATH[[:space:]]+=[[:space:]]+).*,\1'${LEXECDIR}';,"\
+		${WRKSRC}/c_stuff/lib/fb_stuff.pm
 
 do-install:
-	cd ${WRKSRC}; ${GMAKE} install
-	@${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble ${PREFIX}/bin/frozen-bubble.pl
+	cd ${WRKSRC}/c_stuff && ${GMAKE} install
+	cd ${WRKSRC}/po && ${GMAKE} install
 
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/data
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/snd
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/balls
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/pinguins
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/shoot
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/menu
+	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble-editor ${PREFIX}/bin/
 
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/data/levels  ${PREFIX}/share/frozen-bubble/data/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/data/plasma.raw  ${PREFIX}/share/frozen-bubble/data/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/*.png  ${PREFIX}/share/frozen-bubble/gfx/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/*.gif  ${PREFIX}/share/frozen-bubble/gfx/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/balls/*.png  ${PREFIX}/share/frozen-bubble/gfx/balls/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/balls/*.gif  ${PREFIX}/share/frozen-bubble/gfx/balls/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/pinguins/*.png  ${PREFIX}/share/frozen-bubble/gfx/pinguins/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/shoot/data ${PREFIX}/share/frozen-bubble/gfx/shoot/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/shoot/*.png  ${PREFIX}/share/frozen-bubble/gfx/shoot/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/menu/*.png  ${PREFIX}/share/frozen-bubble/gfx/menu/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.wav  ${PREFIX}/share/frozen-bubble/snd/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.xm  ${PREFIX}/share/frozen-bubble/snd/
+	${INSTALL_MAN} ${MAN6:S,^,${WRKSRC}/doc/,} ${PREFIX}/man/man6/
 
-	@printf '#!/bin/sh\nLD_PRELOAD=/usr/lib/libc_r.so perl ${PREFIX}/bin/frozen-bubble.pl $$\@\n' > ${WRKSRC}/frozen-bubble
-	@${INSTALL_SCRIPT} ${WRKSRC}/frozen-bubble ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "gfx snd data" ${DATADIR}/)
+
+	${MKDIR} ${LEXECDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/server/fb-server ${LEXECDIR}/
 
 .include <bsd.port.mk>

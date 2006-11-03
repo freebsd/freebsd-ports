@@ -1,0 +1,13 @@
+--- server/Makefile.orig	Fri Nov  3 01:26:53 2006
++++ server/Makefile	Fri Nov  3 01:27:30 2006
+@@ -1,8 +1,8 @@
+ PREFIX = /usr/local
+ LIBDIR = $(PREFIX)/lib
+ 
+-CFLAGS ?= -g -Wall -Werror -pipe `pkg-config glib-2.0 --cflags`
+-LIBS ?= `pkg-config glib-2.0 --libs`
++CFLAGS+=	`pkg-config glib-2.0 --cflags`
++LIBS+=		`pkg-config glib-2.0 --libs`
+ 
+ ALLSRC = fb-server.c log.c tools.c game.c net.c
+ ALLOBJ = $(subst .c,.o,$(ALLSRC))
