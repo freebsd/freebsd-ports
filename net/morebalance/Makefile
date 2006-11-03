@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	morebalance
-PORTVERSION=	0.3
-PORTREVISION=	3
+PORTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	http://morebalance.coolprojects.org/
 
