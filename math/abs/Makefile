@@ -8,10 +8,10 @@
 PORTNAME=	abs
 PORTVERSION=	0908
 CATEGORIES=	math
-MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/
+MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ 
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	gmarco@giovannelli.it
+MAINTAINER=	gmarco@gufi.org
 COMMENT=	A free spreadsheet with graphical user interface
 
 PLIST_FILES=	bin/abs
