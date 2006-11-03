@@ -17,5 +17,6 @@ lib/MySmtpProxyServer.pm
 lib/MySmtpServer.pm
 @dirrm lib/Mail/DomainKeys/Key
 @dirrm lib/Mail/DomainKeys
+@dirrm lib/Mail
 @dirrm lib/MSDW/SMTP
 @dirrm lib/MSDW
