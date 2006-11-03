@@ -1,5 +1,5 @@
---- network.pl.in.orig	Mon Jan  2 10:50:54 2006
-+++ network.pl.in	Fri Jan  6 01:11:58 2006
+--- network.pl.in.orig	Thu Jul  6 16:43:53 2006
++++ network.pl.in	Thu Jul  6 16:48:47 2006
 @@ -94,7 +94,7 @@
    my ($fd, $line, $iface);
    my (@ifaces, $command);
@@ -9,68 +9,89 @@
    open $fd, "$command |";
    return @ifaces if $fd eq undef;
  
-@@ -535,6 +535,7 @@
-        "vlos-1.2"     => "debian-2.2",
-        "freebsd-5"    => "debian-2.2",
-        "freebsd-6"    => "debian-2.2",
-+       "freebsd-7"    => "debian-2.2",
-        );
+@@ -117,6 +117,38 @@
+   return \@ifaces;
+ }
  
-   return $cmd_map{$dist_map{$gst_dist}};
-@@ -804,7 +805,7 @@
++sub gst_network_get_freebsd_ethernet_ifaces
++{
++  my ($fd, $line, $iface);
++  my (@ifaces, $command);
++
++  $command = &gst_file_get_cmd_path ("ifconfig");
++  open $fd, "$command |";
++  return @ifaces if $fd eq undef;
++
++  while (<$fd>)
++  {
++    if (/^([a-zA-Z]+[0-9]+):/)
++    {
++      $iface = $1;
++    }
++
++    if (/media:.*ethernet.*/i)
++    {
++      push @ifaces, $iface;
++    }
++    elsif (/ether:*/i)
++    {
++      push @ifaces, $iface;
++    }
++  }
++
++  &gst_file_close ($fd);
++  &gst_report_leave ();
++
++  return \@ifaces;
++}
++
+ # Returns an array with the wireless devices found
+ sub gst_network_get_wireless_ifaces
+ {
+@@ -126,6 +158,13 @@
+   return &gst_network_get_freebsd_wireless_ifaces if ($plat eq "FreeBSD");
+ }
+ 
++sub gst_network_get_ethernet_ifaces
++{
++  my ($plat) = $$tool{"system"};
++
++  return &gst_network_get_freebsd_ethernet_ifaces if ($plat eq "FreeBSD");
++}
++
+ # set of functions for enabling an interface
+ sub gst_network_config_wireless
+ {
+@@ -778,9 +817,21 @@
+ {
+   my ($dev) = @_;
+   my (@wireless_ifaces, $wi, $type);
++  my (@ethernet_ifaces, $eth, $type);
+ 
+   return $types_cache{$dev} if (exists $types_cache{$dev});
+ 
++  #check whether interface is ethernet
++  $ethernet_ifaces = &gst_network_get_ethernet_ifaces ();
++  foreach $eth (@$ethernet_ifaces)
++  {
++    if ($dev eq $eth)
++    {
++      $types_cache{$dev} = "ethernet";
++      return $types_cache{$dev};
++    }
++  }
++
+   #check whether interface is wireless
+   $wireless_ifaces = &gst_network_get_wireless_ifaces ();
+   foreach $wi (@$wireless_ifaces)
+@@ -803,10 +854,6 @@
+     {
        $types_cache{$dev} = "modem";
      }
-   }
+-  }
 -  elsif ($dev =~ /^(eth|dc|ed|bfe|em|fxp|bge|de|xl|ixgb|txp|vx|lge|nge|pcn|re|rl|sf|sis|sk|ste|ti|tl|tx|vge|vr|wb|cs|ex|ep|fe|ie|lnc|sn|xe|le|an|awi|wi|ndis|wlaue|axe|cue|kue|rue|fwe|nve)[0-9]/)
-+  elsif ($dev =~ /(eth|dc|ed|bfe|em|fxp|bge|de|xl|ixgb|txp|vx|lge|nge|pcn|re|rl|sf|sis|sk|ste|ti|tl|tx|vge|vr|wb|cs|ex|ep|fe|ie|lnc|sn|xe|le|an|awi|wi|ndis|wl|aue|axe|cue|kue|rue|fwe|nve|hme|ath|iwi|ipw|ral|ural|my)[0-9]/)
-   {
-     $types_cache{$dev} = "ethernet";
+-  {
+-    $types_cache{$dev} = "ethernet";
    }
-@@ -1838,6 +1839,7 @@
-           "gentoo"       => \&gst_network_deb22_get_file,
-           "freebsd-5"    => \&gst_network_deb22_get_file,
-           "freebsd-6"    => \&gst_network_deb22_get_file,
-+          "freebsd-7"    => \&gst_network_deb22_get_file,
- 	 );
- 
-   $proc = $dist_map{$gst_dist};
-@@ -3959,6 +3961,7 @@
-           "vlos-1.2"     => "",
-           "freebsd-5"    => "",
-           "freebsd-6"    => "",
-+          "freebsd-7"    => "",
-          );
- 
-   $dev = $dist_map {$gst_dist};
-@@ -4124,6 +4127,7 @@
-           "vlos-1.2"     => "gentoo",
-           "freebsd-5"    => "freebsd-5",
-           "freebsd-6"    => "freebsd-5",
-+          "freebsd-7"    => "freebsd-5",
-          );
- 
-   my %dist_tables =
-@@ -4545,6 +4549,7 @@
-           "vlos-1.2"     => "gentoo",
-           "freebsd-5"    => "freebsd-5",
-           "freebsd-6"    => "freebsd-5",
-+          "freebsd-7"    => "freebsd-5",
-          );
-   
-   my %dist_tables =
-@@ -5383,6 +5388,7 @@
-           "vlos-1.2"     => "gentoo",
-           "freebsd-5"    => "freebsd-5",
-           "freebsd-6"    => "freebsd-5",
-+          "freebsd-7"    => "freebsd-5",
-          );
- 
-   my %dist_tables =
-@@ -5789,6 +5795,7 @@
-           "vlos-1.2"     => "gentoo",
-           "freebsd-5"    => "freebsd-5",
-           "freebsd-6"    => "freebsd-5",
-+          "freebsd-7"    => "freebsd-5",
-          );
- 
-   my %dist_tables =
+   elsif ($dev =~ /^irlan[0-9]/)
+   {
