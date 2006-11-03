@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	milter-regex-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter plugin to sendmail for regular expression filtering
 
 WRKSRC=		${WRKDIR}/milter-regex
