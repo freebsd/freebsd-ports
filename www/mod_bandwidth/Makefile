@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mod_bandwidth
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.6.b
 CATEGORIES=	www
-MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
-		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
+MASTER_SITES=	http://potatohead.estat.com/FreeBSD/
 #Orignal locations: ftp://ftp.cohprog.com/pub/apache/module/1.3.0/mod_bandwidth.c
 #                   ftp://ftp.cohprog.com/pub/apache/module/cleanlink.pl
 DIST_SUBDIR=	apache
@@ -17,7 +16,7 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Bandwidth management module for the Apache webserver
 
-USE_APACHE=	YES
+USE_APACHE=	1.3
 USE_PERL5=	YES
 
 CONFLICTS=	apache-contrib-1.*
