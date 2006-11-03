@@ -26,7 +26,7 @@ _TTF_MODULES=	xttfm
 .endif
 
 .if defined(WITH_GS)
-RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 _TTF_MODULES+=	gscjk
 .endif
 
