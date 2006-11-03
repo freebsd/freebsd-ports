@@ -29,4 +29,10 @@ MAN3=		GDBM_File.3
 post-patch:
 	@${REINPLACE_CMD} -e '/MAN3PODS/s|.*||' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl from ports. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
