@@ -49,12 +49,14 @@ MAN1=		bash.1 bashbug.1
 INFO=		bash
 
 post-patch:
+.if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e "s,.FN /bin/bash,.FN ${PREFIX}/bin/bash," \
 		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/doc/bash.1
 	@${RM} -rf ${WRKSRC}/lib/readline/*.[ch] \
 		${WRKSRC}/lib/readline/Makefile
 	@${TOUCH} ${WRKSRC}/lib/readline/Makefile.in
 	@${REINPLACE_CMD} -E "s,^((RL|HIST)_LIBSRC = ).*,\1/usr/include/readline," ${WRKSRC}/Makefile.in
+.endif
 
 update-etc-shells:
 	@${ECHO_MSG} "updating /etc/shells"
