@@ -7,6 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	5.10e
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v5.10/
 DISTNAME=	vbsd510e

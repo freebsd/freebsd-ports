@@ -6,8 +6,8 @@ cd @PREFIX@/libexec/uvscan/
 
 # Force a low default and then get the current version's value
 cur_AVVER="1"
-if [ -f "file_id.diz" ]; then
-	cur_AVVER="`tail -1 file_id.diz | sed -e 's/^(\(4[0-9]*\)).*$/\1/'`"
+if [ -f pkgdesc.ini ]; then
+	cur_AVVER=`grep Version pkgdesc.ini | cut -f2 -d= |sed -e 's/^(\(4[0-9]+\)).*$/\1/'`
 fi
 
 # Find what the website has for the current version
