@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mod_auth_mysql
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.heuer.org/mod_auth_mysql/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	apache2
+DIST_SUBDIR=	apache20
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
