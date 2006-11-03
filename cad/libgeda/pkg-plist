@@ -11,7 +11,7 @@ include/libgeda/struct.h
 lib/libgeda.a
 lib/libgeda.la
 lib/libgeda.so
-lib/libgeda.so.26
+lib/libgeda.so.27
 libdata/pkgconfig/libgeda.pc
 share/geda/prolog.ps
 @dirrm share/geda

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	symbols
-PORTVERSION=	20060906
+PORTVERSION=	20061020
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \

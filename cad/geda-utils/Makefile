@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	utils
-PORTVERSION=	20060906
+PORTVERSION=	20061020
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
@@ -19,7 +19,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's utilities
 
 RUN_DEPENDS=	${LOCALBASE}/share/geda/sym:${PORTSDIR}/cad/geda-symbols
-LIB_DEPENDS=	geda.26:${PORTSDIR}/cad/libgeda
+LIB_DEPENDS=	geda.27:${PORTSDIR}/cad/libgeda
 
 DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda
