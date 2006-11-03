@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sshit
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	security
 MASTER_SITES=	http://anp.ath.cx/sshit/ \
 		${MASTER_SITE_LOCAL}
@@ -33,7 +32,7 @@ IGNORE=		perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try 
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
 
 post-install:
