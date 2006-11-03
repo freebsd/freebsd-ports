@@ -7,6 +7,7 @@
 
 PORTNAME=	haproxy
 PORTVERSION=	1.2.16
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.2/src/
 
@@ -45,9 +46,6 @@ pre-everything::
 	@${ECHO_MSG} "STATS_INTERVAL=###:   Statistics interval in milliseconds,"
 	@${ECHO_MSG} "                         (default to 0, disabled)"
 	@${ECHO_MSG} ""
-
-post-patch:
-	@${REINPLACE_CMD} -e 's!localtime(!localtime((time_t *)!' ${WRKSRC}/haproxy.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
