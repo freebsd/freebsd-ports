@@ -27,6 +27,8 @@ PORTDOCS=	*
 .endif
 
 .if defined(WITH_UTF8)
+CONFLICTS=	pcre-[0-9]*
+PKGNAMESUFFIX=	-utf8
 CONFIGURE_ARGS+=--enable-utf8 \
 		--enable-unicode-properties
 .endif
