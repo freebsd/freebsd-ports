@@ -6329,6 +6329,7 @@ libvisual-plugins	ports/graphics/libvisual-plugins
 libvm68k	ports/emulators/libvm68k
 libvmime	ports/mail/libvmime
 libvncserver	ports/net/libvncserver
+libvolume_id	ports/devel/libvolume_id
 libvorbis	ports/audio/libvorbis
 libwhisker	ports/security/libwhisker
 libwmf		ports/graphics/libwmf
