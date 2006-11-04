@@ -32,7 +32,7 @@ share/gnome/applications/gnome-sound-recorder.desktop
 share/gnome/applications/gnome-volume-control.desktop
 share/gnome/applications/gstreamer-properties.desktop
 share/gnome/applications/reclevel.desktop
-share/gnome/applications/vumeter.desktop.in
+share/gnome/applications/vumeter.desktop
 share/gnome/gnome-media/glade/gnome-audio-profiles.glade2
 share/gnome/gnome-media/pixmaps/3dsound.png
 share/gnome/gnome-media/pixmaps/chain-broken.png
