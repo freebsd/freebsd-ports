@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.2
 CATEGORIES=	devel
 MASTER_SITES=	http://panoramicfeedback.com/opensource/
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng \
 		rsync:${PORTSDIR}/net/rsync \
 		dot:${PORTSDIR}/graphics/graphviz
 
+WRKSRC=	${WRKDIR}/bzrtools
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
