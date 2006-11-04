@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	glib-java
-PORTVERSION=	0.2.6
+PORTVERSION=	0.4.0
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -25,9 +24,9 @@ JAVA_VERSION=	1.2+
 JAVA_OS=	native
 USE_GCC=	3.4+
 USE_GNOME=	gnomehack glib20
-CONFIGURE_ARGS=	--without-gcj-compile
+CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
-GLIB_API_VERSION=	0.2
+GLIB_API_VERSION=	0.4
 PLIST_SUB=		GLIB_API_VERSION=${GLIB_API_VERSION} PORTNAME=${PORTNAME}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
@@ -45,6 +44,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/glib-java.pc ${PREFIX}/libdata/pkgconfig
 	${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/jni/jg_jnu.h ${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/jni/glib_java.h ${PREFIX}/include/${PORTNAME}
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/glib${GLIB_API_VERSION}.jar ${JAVAJARDIR}
 	${MKDIR} ${PREFIX}/share/${PORTNAME}/macros
