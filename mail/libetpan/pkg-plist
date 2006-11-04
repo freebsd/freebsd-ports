@@ -2,4 +2,4 @@ bin/libetpan-config
 lib/libetpan.a
 lib/libetpan.la
 lib/libetpan.so
-lib/libetpan.so.8
+lib/libetpan.so.10
