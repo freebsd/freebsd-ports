@@ -12,7 +12,7 @@
 
      o The default configuration will deny everyone access to the
        proxy service. Edit the "http_access" directives in
-       %%PREFIX%%/etc/squid.conf to suit your needs.
+       %%PREFIX%%/etc/squid/squid.conf to suit your needs.
 
      Please note that the Squid start script is an rc.d style script.
      This means that Squid will not start automatically at boot

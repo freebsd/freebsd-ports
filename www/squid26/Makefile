@@ -75,10 +75,10 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://archive.progeny.com/squid/%SUBDIR%/ \
+		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
 		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
@@ -87,7 +87,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE3
+DISTNAME=	squid-2.6.STABLE4
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -99,8 +99,12 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets/
-PATCHFILES=
+PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
+PATCHFILES=	11036.patch 11037.patch 11038.patch 11041.patch 11042.patch \
+		11043.patch 11044.patch 11045.patch 11046.patch 11047.patch \
+		11048.patch 11049.patch 11050.patch 11051.patch 11054.patch \
+		11059.patch 11060.patch 11061.patch 11062.patch 11063.patch \
+		11064.patch 11065.patch 11066.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -185,7 +189,7 @@ libexec=	cachemgr.cgi digest_pw_auth diskd-daemon ip_user_check \
 libexec+=	unlinkd
 .endif
 
-sbin=		RunCache cossdump squidclient squid
+sbin=		RunCache squidclient squid
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
@@ -239,6 +243,10 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 storage_schemes=	ufs diskd null
 .if defined(WITH_SQUID_AUFS)
 storage_schemes+=	aufs
+.if ${OSVERSION}>=501000
+# Only document libmap.conf where it is available:
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
+.endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
 CONFIGURE_ARGS+=	--enable-async-io \
 			--with-pthreads
@@ -247,6 +255,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 .if defined(WITH_SQUID_COSS)
 storage_schemes+=	coss
 CONFIGURE_ARGS+=	--enable-coss-aio-ops
+sbin+=		cossdump
 .endif
 CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
 
@@ -387,7 +396,8 @@ PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
-	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' ${WRKSRC}/src/cf.data.pre
+	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' \
+	    -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cf.data.pre
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/helpers/basic_auth/SMB/Makefile.in \
 	    ${WRKSRC}/helpers/basic_auth/SMB/smb_auth.sh

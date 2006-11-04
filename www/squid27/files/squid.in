@@ -16,7 +16,7 @@
 
 squid_stop() {
 	echo "Stopping ${name}."
-	${command} -k shutdown
+	${command} ${squid_flags} -k shutdown
 	run_rc_command poll
 }
 
@@ -27,7 +27,7 @@ rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/squid
 extra_commands=reload
-reload_cmd="${command} -k reconfigure"
+reload_cmd="${command} ${squid_flags} -k reconfigure"
 stop_cmd="squid_stop"
 
 load_rc_config ${name}
