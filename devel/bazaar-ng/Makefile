@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/
 MASTER_SITE_SUBDIR=	gnu-arch
