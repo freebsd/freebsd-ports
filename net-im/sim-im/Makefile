@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/-im//}-${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin-based instant messenger
 
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
