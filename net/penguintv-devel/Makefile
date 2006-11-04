@@ -23,9 +23,8 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Cannot be run without PyLucence
-
-OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF
+OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF \
+		PYLUCENCE "Use Lucence search engine" ON
 
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
@@ -33,6 +32,12 @@ USE_PYTHON=	yes
 CONFLICTS=	PenguinTV-[0-9]*
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_PYLUCENCE)
+BROKEN=		Cannot be run without PyLucence
+.else
+RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/PyLucene.py:${PORTSDIR}/devel/py-lucence
+.endif
 
 .if defined(WITH_MOZILLA)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex \
