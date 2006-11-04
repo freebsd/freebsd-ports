@@ -74,6 +74,10 @@ OPTIONS=	DEBUG "debugging" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.X
+.endif
+
 #.if defined(WITHOUT_EXIF)
 CONFIGURE_ARGS+=	--without-libexif
 #.else

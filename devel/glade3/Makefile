@@ -31,6 +31,10 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.X
+.endif
+
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
 CONFIGURE_ARGS+=--enable-gnome

@@ -31,6 +31,10 @@ OPTIONS=	GTKSPELL "Enable spell checking support" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.X
+.endif
+
 .if defined(WITHOUT_GTKSPELL)
 CONFIGURE_ARGS+=	--without-gtkspell
 .else
