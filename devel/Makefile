@@ -599,6 +599,7 @@
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
+    SUBDIR += libvolume_id
     SUBDIR += libxalloc
     SUBDIR += libytnef
     SUBDIR += libzrtpcpp

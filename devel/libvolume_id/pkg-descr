@@ -1,0 +1,3 @@
+Libvolume_id is a library that provides file system information for a given
+volume device (i.e. file system type, label, etc.). It supports all of the
+major file systems.
