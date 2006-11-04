@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vtiger
-DISTVERSION=	4.2.4
+DISTVERSION=	5.0.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vtigercrm
@@ -15,10 +15,13 @@ DISTNAME=	vtigercrm-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	vtiger CRM is open source Customer Relationship Management (CRM) software
 
-USE_PHP=	mysql gd session pcre xml
+USE_PHP=	mysql gd imap session pcre xml
+IGNORE_WITH_PHP=4
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	50
 
 WWWDIR?=	${PREFIX}/www/vtiger
 WRKSRC=		${WRKDIR}/vtiger_crm
