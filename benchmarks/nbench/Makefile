@@ -8,7 +8,7 @@
 PORTNAME=	nbench
 PORTVERSION=	2.2.2
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.tux.org/pub/tux/mayer/
+MASTER_SITES=	http://www.tux.org/~mayer/linux/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
 MAINTAINER=	laszlof@vonostingroup.com
