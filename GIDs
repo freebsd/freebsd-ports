@@ -59,6 +59,7 @@ polipo:*:173:
 moinmoin:*:192:
 sympa:*:200:
 dspam:*:202:
+bs:*:220:
 _tor:*:256:
 _dns-proxy-tor:*:257:
 _trans-proxy-tor:*:258:
