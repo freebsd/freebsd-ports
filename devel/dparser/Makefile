@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dparser
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ MAKE_ARGS=	CC="${CC}" D_OPTIMIZE=
 MAN1=		make_dparser.1
 PORTDOCS=	faq.html index.html manual.html
 PLIST_FILES=	bin/make_dparser include/dparse.h include/dparse_tables.h \
-		include/dsymtab.h lib/${LIBDPARSE}
+		include/dparse_tree.h include/dsymtab.h lib/${LIBDPARSE}
 
 .if defined(WITH_GC)
 LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
@@ -46,6 +46,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/make_dparser.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/dparse.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/dparse_tables.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/dparse_tree.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/dsymtab.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/${LIBDPARSE} ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
