@@ -1,11 +1,11 @@
---- configure.orig	Sun Jun 19 12:47:14 2005
-+++ configure	Sun Jun 19 12:48:24 2005
-@@ -19759,7 +19759,7 @@
+--- configure.orig	Fri Nov  3 23:24:43 2006
++++ configure	Fri Nov  3 23:25:42 2006
+@@ -20305,7 +20305,7 @@
  
- WINDOWS_LIB_VERSION="2-6"
+ WINDOWS_LIB_VERSION="2-10"
  
--INSTALLED_CLASSPATH=\${prefix}/share/java/gtk${gtkapiversion}-${VERSION}.jar
-+INSTALLED_CLASSPATH=\${prefix}/share/java/classes/gtk${gtkapiversion}.jar
+-INSTALLED_CLASSPATH=\${jardir}/gtk${gtkapiversion}-${VERSION}.jar
++INSTALLED_CLASSPATH=\${jardir}/gtk${gtkapiversion}.jar
  INSTALLED_JNI_DIR=\${prefix}/lib/
- INSTALLED_MACRO_DIR=\${prefix}/share/libgtk-java/macros/
+ INSTALLED_MACRO_DIR=\${macrobasedir}/libgtk-java/macros/
  

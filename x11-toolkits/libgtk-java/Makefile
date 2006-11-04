@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	libgtk-java
-PORTVERSION=	2.8.5
+PORTVERSION=	2.10.0
 CATEGORIES=	x11-toolkits java
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,16 +20,18 @@ LIB_DEPENDS=	cairojni-${CAIRO_API_VERSION}.1:${PORTSDIR}/graphics/cairo-java
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
 USE_GCC=	3.4+
 USE_GNOME=	gnomehack gtk20
-CONFIGURE_ARGS=	--without-gcj-compile
+CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR} \
+		--without-javadocs # needs docbook-utils
+NOPORTDOCS=	yes # needs docbook-utils and some parts are broken.
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
-GTK_API_VERSION=	2.8
+GTK_API_VERSION=	2.10
 CAIRO_API_VERSION=	1.0
 PLIST_SUB=		GTK_API_VERSION=${GTK_API_VERSION} PORTNAME=${PORTNAME}
 PKGMESSAGE=		${WRKDIR}/pkg-message
