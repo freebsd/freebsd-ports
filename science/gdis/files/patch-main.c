@@ -1,15 +1,32 @@
---- main.c.orig	Tue Nov  4 15:08:29 2003
-+++ main.c	Wed Dec 31 02:11:54 2003
-@@ -433,6 +433,12 @@
-     }
-   }
+--- main.c.orig	Wed Jul 26 15:15:28 2006
++++ main.c	Wed Nov  1 23:53:11 2006
+@@ -364,7 +364,7 @@
+ void sys_init(gint argc, gchar *argv[])
+ {
+ gchar *temp;
+-const gchar *ctemp;
++const gchar *envdir, *ctemp;
+ struct light_pak *light;
+ FILE *fp;
  
+@@ -500,7 +500,7 @@
+ 
+ /* setup directory and file pointers */
+ sysenv.cwd = g_get_current_dir();
+-const gchar *envdir = g_getenv("GDIS_START_DIR");
++envdir = g_getenv("GDIS_START_DIR");
+ if (envdir)
+   sysenv.cwd = (gchar *) envdir;
+ 
+@@ -510,7 +510,11 @@
+ 
+ /* generate element file full pathname */
+ /* sometimes this returns the program name, and sometimes it doesn't */
 +#ifdef INSTALL
-+strcpy(sysenv.elem_file, INSTALL);
-+strcat(sysenv.elem_file, DIR_SEP);
-+strcat(sysenv.elem_file, ELEM_FILE);
++temp = g_strdup(INSTALL);
++#else
+ temp = g_find_program_in_path(argv[0]);
 +#endif
-+
- /* defaults */
- sysenv.povray_exe = g_strdup("povray");
- sysenv.convert_exe = g_strdup("convert");
+ /* remove program name (if attached) */
+ if (g_file_test(temp, G_FILE_TEST_IS_DIR))
+   sysenv.gdis_path = temp;
