@@ -6,6 +6,7 @@
 
 PORTNAME=	PenguinTV
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -24,7 +25,8 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF \
-		PYLUCENE "Use Lucene search engine" ON
+		PYLUCENE "Use Lucene search engine" ON \
+		GSTREAMER "Use GStreamer engine" ON
 
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
@@ -32,6 +34,10 @@ USE_PYTHON=	yes
 CONFLICTS=	PenguinTV-[0-9]*
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GSTREAMER)
+RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/pygst.py:${PORTSDIR}/multimedia/py-gstreamer
+.endif
 
 .if defined(WITHOUT_PYLUCENE)
 BROKEN=		Cannot be run without PyLucene
