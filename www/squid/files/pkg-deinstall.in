@@ -16,7 +16,7 @@ POST-DEINSTALL)
 	echo "===> post-deinstallation information for $1:"
 	echo ""
 	echo "     Note:"
-	echo "     squid related user accounts and groups were not removed."
+	echo "     Squid related user accounts and groups were not removed."
 	echo ""
 	echo "     To remove the '%%SQUID_UID%%' user and the '%%SQUID_GID%%' group which were"
 	echo "     created by a default installation of this package, run"
@@ -29,7 +29,7 @@ POST-DEINSTALL)
 		echo "     all configuration files modified by you were preserved."
 		echo ""
 		echo "     Please remove them manually if you do not want to use"
-	       	echo "     squid any longer."
+	       	echo "     Squid any longer."
 	fi
 	echo ""
 	;;

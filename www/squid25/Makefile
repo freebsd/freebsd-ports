@@ -6,7 +6,7 @@
 #
 # Tunables not (yet) configurable via 'make config':
 # SQUID_{U,G}ID
-#   Which user/group squid should run as (default: squid/squid).
+#   Which user/group Squid should run as (default: squid/squid).
 #   The user and group will be created if they do not already exist using
 #   a uid:gid of 100:100.
 #   NOTE: before version 2.5.4_6, these settings defaulted to
@@ -68,16 +68,16 @@
 #     of filedescriptors the resulting binary is expected to support.
 #    --enable-ntlm-fail-open
 #     Enable NTLM fail open, where a helper that fails one of the
-#     Authentication steps can allow squid to still authenticate the user
+#     Authentication steps can allow Squid to still authenticate the user
 #
 
 PORTNAME=	squid
 PORTVERSION=	2.5.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://archive.progeny.com/squid/%SUBDIR%/ \
+		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
 		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
@@ -105,7 +105,7 @@ PATCHFILES=	squid-2.5.STABLE14-httpReplyDestroy.patch \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
-COMMENT=	The successful WWW proxy cache and accelerator
+COMMENT=	HTTP Caching Proxy
 
 CONFLICTS=	squid-2.[^5]*
 GNU_CONFIGURE=	yes

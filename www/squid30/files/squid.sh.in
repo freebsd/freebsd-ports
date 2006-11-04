@@ -20,7 +20,7 @@ name=squid
 command=%%PREFIX%%/sbin/squid
 # --begin rcng
 extra_commands=reload
-reload_cmd="${command} -k reconfigure"
+reload_cmd="${command} ${squid_flags} -k reconfigure"
 # --end rcng
 stop_cmd="squid_stop"
 squid_chdir=${squid_chdir:-%%PREFIX%%/squid/logs}
@@ -44,7 +44,7 @@ squid_stop() {
 # --begin rcng
 squid_stop() {
 	echo "Stopping ${name}."
-	${command} -k shutdown
+	${command} ${squid_flags} -k shutdown
 	run_rc_command poll
 }
 

@@ -1,15 +1,10 @@
-This is the Squid Internet Object Cache developed by the National
-Laboratory for Applied Networking Research (NLANR) and Internet
-volunteers.  This software is freely available for anyone to use.
+Squid is a high-performance proxy caching server for web clients,
+supporting FTP, gopher, and HTTP data objects. Unlike traditional
+caching software, Squid handles all requests in a single, non-blocking,
+I/O-driven process.
 
-This software is based on the Harvest Object Cache developed by
-the University of Colorado and the University of Southern California.
-The Harvest home page is http://harvest.cs.colorado.edu/.
-
-ARPA funding for the Harvest project has ended, the squid project has
-continued development of the cache where Harvest finished.
-
-This port provides many configuration options, most of which are
-available via 'make config'.
+Squid supports SSL, extensive access controls, and full request logging.
+By using the lightweight Internet Cache Protocol, Squid caches can be
+arranged in a hierarchy or mesh for additional bandwidth savings.
 
 WWW: http://www.squid-cache.org/
