@@ -10,8 +10,8 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/errors.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fai.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fetch_ghosts.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/hunk_selector.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patchsource.py
@@ -25,6 +25,21 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/upstream_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/userinteractor.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/zap.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/clean_tree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/shelf_tests.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/clean_tree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/shelf_tests.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/clean_tree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/shelf_tests.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branch_mark.pyc
@@ -37,10 +52,11 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/errors.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fai.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fetch_ghosts.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/hunk_selector.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/zap.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patchsource.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/progress.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.pyc
@@ -51,7 +67,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/test.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/upstream_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/userinteractor.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/zap.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/__init__.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/branch_mark.pyo
@@ -64,8 +79,8 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/errors.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fai.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fetch_ghosts.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/hunk_selector.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/patchsource.pyo
@@ -79,6 +94,7 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/upstream_import.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/userinteractor.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/zap.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
