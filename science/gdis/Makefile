@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gdis
-PORTVERSION=	0.86
-PORTREVISION=	3
+PORTVERSION=	0.89
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,36 +20,27 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
 USE_GNOME=	gtk20
+USE_GMAKE=	yes
+MAKEFILE=	makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	${PORTNAME}
 
 CFLAGS+=	-DINSTALL=\"\\\"${DATADIR}\\\"\"
 
-PORTDOCS=	CHANGELOG README TODO gdis_manual.txt
-PLIST_FILES=	bin/gdis %%DATADIR%%/gdis.elements
+PORTDOCS=	CHANGELOG README TODO
+PLIST_FILES=	bin/gdis %%DATADIR%%/gdis.elements %%DATADIR%%/gdis.library \
+		%%DATADIR%%/gdis.manual
 PLIST_DIRS=	%%DATADIR%%
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<sys/dir.h>|<dirent.h>|g ; \
-		 s|struct direct|struct dirent|g'
-
-do-configure:
-	@${SED} 's|SRC.*=|SRCS=|g' < ${WRKSRC}/makefile.src > ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'PROG=gdis' >> ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'CFLAGS+=`pkg-config --cflags gtk+-2.0 gthread-2.0 gtkglext-1.0`' >> ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'LDADD=`pkg-config --libs gtk+-2.0 gthread-2.0 gtkglext-1.0`' >> ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'PREFIX?=/usr/local' >> ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'DESTDIR=$${PREFIX}' >> ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'BINDIR=/bin' >> ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'NOMAN=true' >> ${WRKSRC}/Makefile
-	@${ECHO_CMD} '.include <bsd.prog.mk>' >> ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdis ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gdis.elements ${DATADIR}
+.for file in gdis.elements gdis.library gdis.manual
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGELOG README TODO gdis_manual.txt
+.for file in CHANGELOG README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
