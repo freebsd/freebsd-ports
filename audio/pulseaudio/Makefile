@@ -4,6 +4,7 @@
 #
 # $FreeBSD$
 #    $MCom: ports/audio/pulseaudio/Makefile,v 1.5 2006/09/10 00:51:05 mezz Exp $
+#
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.3
@@ -33,6 +34,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=	--disable-lirc # untested
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.X
+.endif
 
 .if (exists(${LOCALBASE}/lib/libavahi-core.a) || defined(PACKAGE_BUILDING) \
 	|| defined(WITH_AVAHI)) && !defined(WITHOUT_AVAHI)
