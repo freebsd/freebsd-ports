@@ -34,4 +34,10 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.X
+.endif
+
+.include <bsd.port.post.mk>
