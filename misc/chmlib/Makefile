@@ -9,7 +9,7 @@
 PORTNAME=	chmlib
 PORTVERSION=	0.38
 CATEGORIES=	misc
-MASTER_SITES=	http://morte.jedrea.com/~jedwin/projects/chmlib/
+MASTER_SITES=	http://www.jedrea.com/chmlib/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
