@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ab8dbe98-6be4-11db-ae91-0012f06707f0">
+    <topic>ruby -- cgi.rb library Denial of Service</topic>
+    <affects>
+      <package>
+        <name>ruby</name>
+        <name>ruby_static</name>
+        <range><ge>1.8.*</ge><lt>1.8.5_4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2006/11/03/CVE-2006-5467/">
+	  <p>A vulnerability has been discovered in the CGI library (cgi.rb)
+	    that ships with Ruby which could be used by a malicious user to
+	    create a denial of service attack (DoS). The problem is triggered
+	    by sending the library an HTTP request that uses multipart MIME
+	    encoding and as an invalid boundary specifier that begins with
+	    &quot;-&quot; instead of &quot;--&quot;. Once triggered it will
+	    exhaust all available memory resources effectively creating a DoS
+	    condition.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5467</cvename>
+      <bid>20777</bid>
+      <url>http://rubyforge.org/pipermail/mongrel-users/2006-October/001946.html</url>
+    </references>
+    <dates>
+      <discovery>2006-10-25</discovery>
+      <entry>2006-11-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b318dc8c-6756-11db-83c3-000c6ec775d9">
     <topic>screen -- combined UTF-8 characters vulnerability</topic>
     <affects>
