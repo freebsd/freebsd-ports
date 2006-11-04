@@ -1,0 +1,23 @@
+--- assemble.org.eclipse.sdk.freebsd.gtk.amd64.xml.orig	Thu Oct 26 13:49:34 2006
++++ assemble.org.eclipse.sdk.freebsd.gtk.amd64.xml	Thu Oct 26 14:04:20 2006
+@@ -747,18 +747,7 @@
+ 		<exec executable="rm" dir="${basedir}">
+ 			<arg line="-rf '${assemblyTempDir}/${collectingFolder}/freebsd.gtk.amd64'"/>
+ 		</exec>
+-		<exec executable="tar" dir="${assemblyTempDir}">
+-			<arg line="${tarargs}-cvf '${archiveFullPath}' ${archivePrefix} "/>
+-		</exec>
+-		<antcall target="gzipResults"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="'${assemblyTempDir}'"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+-	</target>
+-	<target name="gzipResults" unless="runPackager">
+-		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+-		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
++		<move file="${eclipse.base}" todir="${buildDirectory}"/>
++                <delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>

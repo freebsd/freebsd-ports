@@ -1,0 +1,24 @@
+--- plugins/org.eclipse.core.resources/build.xml.orig	Thu Jul 27 18:44:45 2006
++++ plugins/org.eclipse.core.resources/build.xml	Tue Jul 25 19:18:21 2006
+@@ -102,6 +102,10 @@
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
++			<pathelement path="../org.eclipse.core.filesystem.freebsd.x86/@dot"/>
++                        <pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.freebsd.x86/@dot"/>
++                        <pathelement path="../org.eclipse.core.filesystem.freebsd.amd64/@dot"/>
++                        <pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.freebsd.amd64/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.qnx.x86/@dot"/>
+@@ -176,6 +180,10 @@
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
++			<pathelement path="../org.eclipse.core.filesystem.freebsd.x86/@dot"/>
++                        <pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.freebsd.x86/@dot"/>
++                        <pathelement path="../org.eclipse.core.filesystem.freebsd.amd64/@dot"/>
++                        <pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.freebsd.amd64/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.qnx.x86/@dot"/>

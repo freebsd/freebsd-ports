@@ -10,9 +10,8 @@
 DEFAULT_JAVA_HOME=%%PREFIX%%
 ECLIPSE_HOME=%%ECLIPSE_HOME%%
 DEFAULT_JAVA_CMD=java
-export MOZILLA_FIVE_HOME=%%LOCALBASE%%/lib/%%BROWSER%%
-export LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
-
+MOZILLA_FIVE_HOME=%%LOCALBASE%%/include/%%BROWSER%%
+export MOZILLA_FIVE_HOME
 
 #-----------------------------------------------------------------------------
 # Determine configuration settings

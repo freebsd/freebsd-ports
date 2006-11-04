@@ -1,0 +1,11 @@
+--- plugins/org.eclipse.platform.doc.user/customBuildCallbacks.xml.orig	Sun Jul 30 00:26:51 2006
++++ plugins/org.eclipse.platform.doc.user/customBuildCallbacks.xml	Sun Jul 30 00:28:00 2006
+@@ -82,6 +82,8 @@
+ 	<!-- ===================================================================== -->
+ 	<target name="post.gather.bin.parts">
+ 	</target>
++	<target name="pre.gather.bin.parts">
++        </target>
+ 
+ 	<target name="build.index" description="Builds search index for the plug-in: org.eclipse.platform.doc.user." if="eclipse.running">
+ 		<help.buildHelpIndex manifest="plugin.xml" destination="."/>

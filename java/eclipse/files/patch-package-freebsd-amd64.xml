@@ -1,0 +1,23 @@
+--- package.org.eclipse.sdk.freebsd.gtk.amd64.xml.orig	Thu Oct 26 13:50:27 2006
++++ package.org.eclipse.sdk.freebsd.gtk.amd64.xml	Thu Oct 26 14:07:26 2006
+@@ -57,18 +57,7 @@
+ 			<param name="elementName" value="com.jcraft.jsch_0.1.28"/>
+ 		</antcall>
+ 		<eclipse.brand root="${eclipse.base}/freebsd.gtk.amd64/${collectingFolder}" icons="${launcherIcons}" name="${launcherName}" os="${os}"		/>
+-		<exec executable="tar" dir="${assemblyTempDir}">
+-			<arg line="${tarargs}-rvf '${archiveFullPath}' ${archivePrefix} "/>
+-		</exec>
+-		<antcall target="gzipResults"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="'${assemblyTempDir}'"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+-	</target>
+-	<target name="gzipResults">
+-		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+-		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
++		<move file="${eclipse.base}" todir="${buildDirectory}"/>
++                <delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>
