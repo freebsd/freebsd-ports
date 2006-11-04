@@ -20,7 +20,7 @@ CONFLICTS?=	pcre-utf8-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
