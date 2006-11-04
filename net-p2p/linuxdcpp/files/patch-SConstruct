@@ -1,5 +1,5 @@
---- SConstruct.orig	Fri Sep  1 16:52:46 2006
-+++ SConstruct	Fri Sep  1 16:55:38 2006
+--- SConstruct.orig	Fri Nov  3 14:00:07 2006
++++ SConstruct	Fri Nov  3 14:02:32 2006
 @@ -23,21 +23,6 @@
       context.Result(ret)
       return ret
@@ -49,10 +49,14 @@
  env.SConsignFile('build/sconf/.sconsign')
  opts.Save('build/sconf/scache.conf', env)
  Help(opts.GenerateHelpText(env))
-@@ -89,19 +67,6 @@
+@@ -89,23 +67,6 @@
  # Dependencies
  # ----------------------------------------------------------------------
  
+-if not env['CXX']:
+-	print 'CXX env variable is not set, attempting to use g++'
+-	env['CXX'] = 'g++'
+-
 -if not conf.CheckCXXVersion(env['CXX'], 3, 4):
 -	print 'Compiler version check failed. g++ 3.4 or later is needed'
 -	Exit(1)
@@ -69,7 +73,7 @@
  if not conf.CheckPKGConfig():
       print 'pkg-config not found.'
       Exit(1)
-@@ -133,11 +98,6 @@
+@@ -137,11 +98,6 @@
  	print 'Can\'t live without it, sorry'
  	Exit(1)
  
@@ -81,13 +85,13 @@
  if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
  	print 'Did not find the z library (gzip/z compression)'
  	print 'Can\'t live without it, exiting'
-@@ -160,11 +120,11 @@
- env.Append(CXXFLAGS = Split('-I. -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64'))
+@@ -165,11 +121,11 @@
+ env.Append(LINKFLAGS = ['-Wl,--as-needed'])
  
  if env['debug']:
 -	env.Append(CXXFLAGS = Split('-g -ggdb -D_DEBUG -Wall'))
 +	env.Append(CXXFLAGS = Split('%%CXXFLAGS%% -g -ggdb -D_DEBUG -Wall'))
- 	env.Append(LDFLAGS = Split('-g -ggdb'))
+ 	env.Append(LINKFLAGS = Split('-g -ggdb -Wall'))
  
  if env['release']:
 -	env.Append(CXXFLAGS = '-O3')
