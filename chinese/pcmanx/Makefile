@@ -7,6 +7,7 @@
 
 PORTNAME=	pcmanx
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx.csie.net/release/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
@@ -19,7 +20,7 @@ USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
