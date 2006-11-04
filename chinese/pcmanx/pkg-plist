@@ -15,6 +15,7 @@ lib/libpcmanx_core.so.0
 share/applications/pcmanx.desktop
 share/pixmaps/pcmanx.png
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
 @dirrmtry %%DATADIR%%/nancy_bot
 @dirrmtry %%DATADIR%%/script
 @dirrm %%DATADIR%%
