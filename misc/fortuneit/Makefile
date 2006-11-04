@@ -6,61 +6,45 @@
 #
 
 PORTNAME=	fortuneit
-PORTVERSION=	1.51
-PORTREVISION=	1
+PORTVERSION=	1.99
 CATEGORIES=	misc
-MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/
-DISTNAME=	fortune.it-${PORTVERSION}
+MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/
+DISTNAME=	fortune-it-${PORTVERSION}
 
-MAINTAINER=	gmarco@giovannelli.it
+MAINTAINER=	gmarco@gufi.org
 COMMENT=	A very funny fortune file in Italian
-
-NO_BUILD=	yes
 
 STRCMD=		/usr/games/strfile
 
-.if defined(INSTALL_OFFENSIVE)
-PLIST=		${PKGDIR}/pkg-plist.off
+FORTUNEFILES=	adams banner computer definizioni formiche italia itatrek \
+		jackfr leggi luke luttazzi norm paolotedeschi zuse \
+		computer-o definizioni-o film-o italia-o jackfr-o leggi-o \
+		luttazzi-o obsc-o zuse-o
+
+pre-build:
+.if !exists(${STRCMD})
+	@${ECHO_MSG} "Please install the games distribution"
+	@exit 1
 .endif
 
-pre-fetch:
-.if !defined(INSTALL_OFFENSIVE)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you want to install potentially offensive italian"
-	@${ECHO_MSG} "fortunes \"make INSTALL_OFFENSIVE=yes\""
-	@${ECHO_MSG} ""
-.else
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Potentially offensive fortunes will be installed"
-	@${ECHO_MSG} ""
-.endif
+do-build:
+.for f in ${FORTUNEFILES}
+	${STRCMD} ${WRKSRC}/testi/${f}
+.endfor
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/games
 	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/italia ${PREFIX}/share/games/fortune
-.if defined(INSTALL_OFFENSIVE)
-	@${INSTALL_DATA} ${WRKSRC}/zozzital ${PREFIX}/share/games/fortune
-.endif
-
-pre-install:
-.if !exists(${STRCMD})
-	@ ${ECHO_MSG}	"Please install the games distribution"
-	@ exit 1
-.endif
+.for f in ${FORTUNEFILES}
+	@${INSTALL_DATA} ${WRKSRC}/testi/${f}* ${PREFIX}/share/games/fortune
+.endfor
 
 post-install:
-	@${STRCMD} ${PREFIX}/share/games/fortune/italia
-.if defined(INSTALL_OFFENSIVE)
-	@${STRCMD} ${PREFIX}/share/games/fortune/zozzital
-.endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Usage:"
-	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/italia"
-.if defined(INSTALL_OFFENSIVE)
-	@${ECHO_MSG} "or"
-	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/zozzital"
-.endif
+	@${ECHO_MSG} "/usr/games/fortune [-aDefilosw] ${PREFIX}/share/games/fortune/"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Please check fortune manual pages for more informations"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
