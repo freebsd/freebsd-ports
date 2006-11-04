@@ -1,15 +1,22 @@
---- features/org.eclipse.pde.source/build.xml.orig	Sat Feb 19 12:09:29 2005
-+++ features/org.eclipse.pde.source/build.xml	Sat Mar 26 18:34:22 2005
-@@ -86,6 +86,12 @@
+--- features/org.eclipse.pde.source/build.xml.orig	Thu Jul 27 17:45:38 2006
++++ features/org.eclipse.pde.source/build.xml	Tue Jul 25 19:22:14 2006
+@@ -89,6 +89,10 @@
  	</target>
  	<target name="rootFileslinux_motif_x86">
  	</target>
 +	<target name="rootFilesfreebsd_gtk_x86">
-+	</target>
++        </target>
 +	<target name="rootFilesfreebsd_gtk_amd64">
-+	</target>
-+	<target name="rootFilesfreebsd_motif_x86">
-+	</target>
- 	<target name="rootFilessolaris_motif_sparc">
- 	</target>
++        </target>
  	<target name="rootFilessolaris_gtk_sparc">
+ 	</target>
+ 	<target name="rootFilessolaris_gtk_x86">
+@@ -114,6 +118,8 @@
+ 		<antcall target="rootFileslinux_gtk_x86_64"/>
+ 		<antcall target="rootFileslinux_gtk_ia64"/>
+ 		<antcall target="rootFileslinux_motif_x86"/>
++		<antcall target="rootFilesfreebsd_gtk_x86"/>
++		<antcall target="rootFilesfreebsd_gtk_amd64"/>
+ 		<antcall target="rootFilessolaris_gtk_sparc"/>
+ 		<antcall target="rootFilessolaris_gtk_x86"/>
+ 		<antcall target="rootFilessolaris_motif_sparc"/>

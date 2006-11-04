@@ -1,22 +1,57 @@
---- build.xml.orig	Mon Jun 27 21:55:26 2005
-+++ build.xml	Sun Jul 17 18:50:50 2005
-@@ -63,11 +63,11 @@
+--- build.xml.orig	Thu Sep 21 10:57:38 2006
++++ build.xml	Thu Oct 26 14:32:58 2006
+@@ -86,11 +86,11 @@
  		<!--unzip launcher -->
  		<property name="launcherlibs" value="${buildDirectory}/launchertmp" />
  		<mkdir dir="${launcherlibs}" />
 -		<unzip dest="${launcherlibs}">
 -			<fileset dir="${buildDirectory}/plugins/org.eclipse.platform.source/src/">
 -				<include name="org.eclipse.platform_*/launchersrc.zip" />
-+		<copy todir="${launcherlibs}">
-+			<fileset dir="${buildDirectory}/features/org.eclipse.platform.launchers">
-+				<include name ="**"/>
- 			</fileset>
+-			</fileset>
 -		</unzip>
-+		</copy>
-		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" failonerror="true">
++		<copy todir="${launcherlibs}">
++                        <fileset dir="${buildDirectory}/features/org.eclipse.platform.launchers">
++                                <include name ="**"/>
++                        </fileset>
++                </copy>
+ 		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" failonerror="true">
  			<arg line="build.sh" />
  		</exec>
-@@ -265,7 +265,10 @@
+@@ -142,7 +142,6 @@
+ 	<target name="build.doc.plugins">
+ 		<!--Build doc plug-ins using antRunner in eclipse to gain access to classpath required for
+ 		 pde.convertSchemaToHTML and help.buildHelpIndex tasks which are used when generating extension-point and help indeces.-->
+-		<antcall target="install.eclipse.${archive.format}" />
+ 		<property name="plugin.destination" value="${buildDirectory}/tmp/eclipse/plugins" />
+ 		<mkdir dir="${plugin.destination}" />
+ 		
+@@ -179,7 +178,6 @@
+ 			<fileset dir="${buildDirectory}/${buildLabel}" />
+ 		</move>
+ 		<mkdir dir="${buildDirectory}/${buildLabel}" />
+-		<antcall target="archive.eclipse.${archive.format}" />
+ 		<delete dir="${buildDirectory}/${buildLabel}-old" />
+ 	</target>
+ 
+@@ -285,8 +283,8 @@
+ 		</fail>
+ 
+ 		<property name="compilerArg" value="-encoding ISO-8859-1" />
+-		<property name="javacSource" value="1.3" />
+-		<property name="javacTarget" value="1.2" />
++		<property name="javacSource" value="1.5" />
++		<property name="javacTarget" value="1.5" />
+ 		<property name="javacDebugInfo" value="true" />
+ 		<property name="javacFailOnError" value="true" />
+ 
+@@ -306,12 +304,17 @@
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-ia64" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-ia64_32" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="solaris-gtk-x86" />
++				<equals arg1="${install0s}-${installWs}-${installArch}" arg2="freebsd-gtk-x86" />
++                               <equals arg1="${install0s}-${installWs}-${installArch}" arg2="freebsd-gtk-amd64" />
+ 			</or>
+ 		</condition>
  
  		<!--used to add doc plug-ins to result after initial assembly-->
  		<condition property="archive.format" value="tar">

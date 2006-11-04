@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.1.2
-PORTREVISION=	0
+PORTVERSION=	3.2.1
+#PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200601181600
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200609210945
 DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	dsledge@appriss.com
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip
+
 BUILD_DEPENDS+=	${EXTRACT_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_ZIP=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 
 NO_WRKSUBDIR=	yes
@@ -36,18 +37,26 @@ PORTDESTDIR=	${PREFIX}/eclipse
 
 ECLIPSE_OS=	freebsd
 
-.if defined(WITH_MOTIF)
-ECLIPSE_WS=	motif
-USE_ICONV=	yes
-USE_MOTIF=	yes
-.else
 ECLIPSE_WS=	gtk
+
+.if !defined(WITHOUT_MOZILLA)
+MAKE_MOZILLA=	make_mozilla
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA} != "mozilla"
+BROWSER=	${WITH_MOZILLA}
+BUILD_DEPENDS+=	${BROWSER}:${PORTSDIR}/www/${BROWSER}
+.else
+BUILD_DEPENDS+=	mozilla:${PORTSDIR}/www/mozilla
+BROWSER=	mozilla
+.endif
+.else
+BROWSER=
+MAKE_MOZILLA=
+.endif
 .if defined(WITHOUT_CAIRO)
 MAKE_CAIRO=
 .else
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 MAKE_CAIRO=	make_cairo
-.endif
 .endif
 
 .if defined(WITHOUT_GNOMEVFS)
@@ -68,17 +77,6 @@ ECLIPSE_ARCH=	x86
 ECLIPSE_SWT=	gtk
 .endif
 
-.if !defined(WITHOUT_MOZILLA)
-MAKE_MOZILLA=	make_mozilla
-USE_GECKO=	firefox mozilla seamonkey xulrunner
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
-BROWSER=	${GECKO}
-USE_LDCONFIG=	yes
-.else
-BROWSER=
-MAKE_MOZILLA=
-.endif
-
 MAKE_ENV+=	BROWSER=${BROWSER} \
 		ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		ECLIPSE_OS=${ECLIPSE_OS} \
@@ -87,43 +85,26 @@ MAKE_ENV+=	BROWSER=${BROWSER} \
 		MAKE_GNOME=${MAKE_GNOME} \
 		MAKE_MOZILLA=${MAKE_MOZILLA} \
 		MAKE_CAIRO=${MAKE_CAIRO} \
-		MACHINE_ARCH=${MACHINE_ARCH} \
-		MOTIF_HOME=${X11_HOME} \
-		GECKO_CONFIG=${GECKO_CONFIG}
+		MACHINE_ARCH=${MACHINE_ARCH}
 
 PLIST_FILES=	bin/eclipse share/applications/eclipse.desktop
 
 SWTCAIRO=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library
 SWTGTK=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library
-SWTMOTIF=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/motif/library
 
 # Manually patch some files with spaces in the path
 post-patch:
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTMOTIF}/build.sh" \
-	  ${FILESDIR}/manualpatch-plugins-swt-motif-build.sh
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTMOTIF}/make_freebsd.mak" \
-	  ${FILESDIR}/manualpatch-plugins-swt-motif-make_freebsd.mak
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/make_freebsd.mak" \
-	  ${FILESDIR}/manualpatch-plugins-swt-gtk-make_freebsd.mak
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/build.sh" \
-	  ${FILESDIR}/manualpatch-plugins-swt-gtk-build.sh
-	@${PATCH} ${PATCH_DIST_ARGS} \
-	  "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo.c" \
-	  ${FILESDIR}/manualpatch-plugins-swt-cairo-library \
-	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo.h" \
-	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_custom.c" \
-	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_stats.c" \
-	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_stats.h" \
-	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_structs.c" \
-	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_structs.h"
- 
+	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/build.sh" ${FILESDIR}/post-patch-plugins-swt-gtk-build.sh
+	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/make_freebsd.mak" ${FILESDIR}/post-patch-plugins-swt-gtk-make_freebsd.mak
+	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/os_custom.h" ${FILESDIR}/post-patch-plugins-swt-gtk-os_custom.h
+
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-	  ./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs)
+	  ./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -java5home ${JAVA_HOME} -compilelibs)
 
 do-install:
 	@${MKDIR} ${PORTDESTDIR}
-	@${TAR} -xzf ${WRKSRC}/result/*.tar.gz -C ${PREFIX}
+	@${CP} -R ${WRKSRC}/eclipse ${PREFIX}
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \

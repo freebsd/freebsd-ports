@@ -51,11 +51,6 @@ prepare_files()
 	echo Copying $src into $dst
 	copy_file "${WRKSRC}/$src" "${WRKSRC}/$dst"
 
-	src="${SWTMOTIF}/make_linux.mak"
-	dst=`echo $src | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g; s/x86_64/amd64/g'`
-	echo Copying $src into $dst
-	copy_file "${WRKSRC}/$src" "${WRKSRC}/$dst"
-
 	find ${WRKSRC} -name \*.so -delete
 	find ${WRKSRC} -name \*.so.\* -delete
 }
@@ -63,42 +58,30 @@ prepare_files()
 COPY_LIST="
 assemble.org.eclipse.sdk.linux.gtk.x86.xml
 assemble.org.eclipse.sdk.linux.gtk.x86_64.xml
-assemble.org.eclipse.sdk.linux.motif.x86.xml
+package.org.eclipse.sdk.linux.gtk.x86.xml
+package.org.eclipse.sdk.linux.gtk.x86_64.xml
 features/org.eclipse.platform/about_files/linux.gtk.x86
 features/org.eclipse.platform/about_files/linux.gtk.x86_64
-features/org.eclipse.platform/about_files/linux.motif.x86
 features/org.eclipse.platform.launchers/bin/gtk/linux/x86
 features/org.eclipse.platform.launchers/bin/gtk/linux/x86_64
-features/org.eclipse.platform.launchers/bin/motif/linux
 features/org.eclipse.platform.launchers/library/gtk/make_linux.mak
-features/org.eclipse.platform.launchers/library/motif/make_linux.mak
-plugins/org.eclipse.core.resources.linux
-plugins/org.eclipse.core.resources.linux/os/linux
-plugins/org.eclipse.core.resources.linux/os/linux/x86
-plugins/org.eclipse.core.resources.linux/os/linux/x86_64
+plugins/org.eclipse.core.filesystem.linux.x86
+plugins/org.eclipse.core.filesystem.linux.x86_64
 plugins/org.eclipse.jdt.source.linux.gtk.x86
 plugins/org.eclipse.jdt.source.linux.gtk.x86_64
-plugins/org.eclipse.jdt.source.linux.motif.x86
-plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux.properties
-plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux_gtk.properties
 plugins/org.eclipse.pde.source.linux.gtk.x86
 plugins/org.eclipse.pde.source.linux.gtk.x86_64
-plugins/org.eclipse.pde.source.linux.motif.x86
 plugins/org.eclipse.platform.source.linux.gtk.x86
 plugins/org.eclipse.platform.source.linux.gtk.x86_64
-plugins/org.eclipse.platform.source.linux.motif.x86
 plugins/org.eclipse.rcp.source.linux.gtk.x86
 plugins/org.eclipse.rcp.source.linux.gtk.x86_64
-plugins/org.eclipse.rcp.source.linux.motif.x86
 plugins/org.eclipse.swt.gtk.linux.x86
 plugins/org.eclipse.swt.gtk.linux.x86_64
-plugins/org.eclipse.swt.motif.linux.x86
 plugins/org.eclipse.update.core.linux
 plugins/org.eclipse.update.core.linux/os/linux
 "
 
 SWTGTK="plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library"
-SWTMOTIF="plugins/org.eclipse.swt/Eclipse SWT PI/motif/library"
 
 prepare_files
 exit 0

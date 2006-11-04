@@ -1,9 +1,10 @@
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h.orig	Mon Jun 27 21:54:10 2005
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h	Thu Jul 14 20:28:19 2005
-@@ -21,31 +21,31 @@
- #define PTR_sizeof() sizeof(void *)
- 
- /* Libraries for dynamic loaded functions */
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h.orig	Thu Sep 21 10:57:34 2006
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h	Tue Oct  3 15:02:26 2006
+@@ -36,50 +36,50 @@
+ #define XRenderFreePicture_LIB "libXrender.so"
+ #define XRenderSetPictureClipRectangles_LIB "libXrender.so"
+ #define XRenderSetPictureTransform_LIB "libXrender.so"
+-#define gtk_entry_text_index_to_layout_index_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_chooser_add_filter_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_chooser_dialog_new_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_chooser_get_current_folder_LIB "libgtk-x11-2.0.so.0"
@@ -17,6 +18,13 @@
 -#define gtk_file_filter_add_pattern_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_filter_new_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_filter_set_name_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_get_expanded_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_get_label_widget_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_new_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_set_expanded_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_set_label_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_set_label_widget_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_tree_selection_count_selected_rows_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_tree_selection_get_selected_rows_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_tree_view_column_cell_get_position_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_entry_set_alignment_LIB "libgtk-x11-2.0.so.0"
@@ -29,6 +37,18 @@
 -#define gdk_window_set_keep_above_LIB "libgdk-x11-2.0.so.0"
 -#define gdk_window_set_accept_focus_LIB "libgdk-x11-2.0.so.0"
 -#define gdk_x11_screen_get_window_manager_name_LIB "libgdk-x11-2.0.so.0"
+-#define gdk_x11_screen_lookup_visual_LIB "libgdk-x11-2.0.so.0"
+-#define atk_object_add_relationship_LIB "libatk-1.0.so.0"
+-#define pango_layout_set_auto_dir_LIB "libpango-1.0.so.0"
+-#define pango_cairo_create_layout_LIB "libpangocairo-1.0.so.0"
+-#define pango_cairo_layout_path_LIB "libpangocairo-1.0.so.0"
+-#define pango_cairo_show_layout_LIB "libpangocairo-1.0.so.0"
+-#define pango_cairo_font_map_create_context_LIB "libpangocairo-1.0.so.0"
+-#define pango_cairo_font_map_new_LIB "libpangocairo-1.0.so.0"
+-#define pango_cairo_font_map_get_default_LIB "libpangocairo-1.0.so.0"
+-#define gdk_cairo_set_source_color_LIB "libgdk-x11-2.0.so.0"
+-#define gdk_cairo_region_LIB "libgdk-x11-2.0.so.0"
++#define gtk_entry_text_index_to_layout_index_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_chooser_add_filter_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_chooser_dialog_new_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_chooser_get_current_folder_LIB "libgtk-x11-2.0.so"
@@ -42,6 +62,13 @@
 +#define gtk_file_filter_add_pattern_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_filter_new_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_filter_set_name_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_get_expanded_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_get_label_widget_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_new_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_set_expanded_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_set_label_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_set_label_widget_LIB "libgtk-x11-2.0.so"
++#define gtk_tree_selection_count_selected_rows_LIB "libgtk-x11-2.0.so"
 +#define gtk_tree_selection_get_selected_rows_LIB "libgtk-x11-2.0.so"
 +#define gtk_tree_view_column_cell_get_position_LIB "libgtk-x11-2.0.so"
 +#define gtk_entry_set_alignment_LIB "libgtk-x11-2.0.so"
@@ -54,6 +81,17 @@
 +#define gdk_window_set_keep_above_LIB "libgdk-x11-2.0.so"
 +#define gdk_window_set_accept_focus_LIB "libgdk-x11-2.0.so"
 +#define gdk_x11_screen_get_window_manager_name_LIB "libgdk-x11-2.0.so"
++#define gdk_x11_screen_lookup_visual_LIB "libgdk-x11-2.0.so"
++#define atk_object_add_relationship_LIB "libatk-1.0.so"
++#define pango_layout_set_auto_dir_LIB "libpango-1.0.so"
++#define pango_cairo_create_layout_LIB "libpangocairo-1.0.so"
++#define pango_cairo_layout_path_LIB "libpangocairo-1.0.so"
++#define pango_cairo_show_layout_LIB "libpangocairo-1.0.so"
++#define pango_cairo_font_map_create_context_LIB "libpangocairo-1.0.so"
++#define pango_cairo_font_map_new_LIB "libpangocairo-1.0.so"
++#define pango_cairo_font_map_get_default_LIB "libpangocairo-1.0.so"
++#define gdk_cairo_set_source_color_LIB "libgdk-x11-2.0.so"
++#define gdk_cairo_region_LIB "libgdk-x11-2.0.so"
  
  /* Field accessors */
  #define GTK_ACCEL_LABEL_SET_ACCEL_STRING(arg0, arg1) (arg0)->accel_string = arg1

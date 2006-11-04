@@ -1,5 +1,5 @@
---- features/org.eclipse.platform.launchers/library/eclipseShm.c.orig	Fri Apr  1 13:55:58 2005
-+++ features/org.eclipse.platform.launchers/library/eclipseShm.c	Sun Apr  3 11:34:02 2005
+--- features/org.eclipse.platform.launchers/library/eclipseShm.c.orig	Wed Aug  2 11:32:25 2006
++++ features/org.eclipse.platform.launchers/library/eclipseShm.c	Wed Aug  2 11:33:30 2006
 @@ -182,11 +182,13 @@
  
  #else /* Unix like platforms */

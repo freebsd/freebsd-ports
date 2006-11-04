@@ -1,0 +1,11 @@
+--- plugins/org.eclipse.platform.doc.isv/customBuildCallbacks.xml.orig	Sun Jul 30 00:30:12 2006
++++ plugins/org.eclipse.platform.doc.isv/customBuildCallbacks.xml	Sun Jul 30 00:30:38 2006
+@@ -88,6 +88,8 @@
+ 	<!-- ===================================================================== -->
+ 	<target name="post.gather.bin.parts">
+ 	</target>
++	<target name="pre.gather.bin.parts">
++        </target>
+ 	
+ 	<!-- ===================================================================== -->
+ 	<!-- Steps to do before the target gather.sources                          -->
