@@ -49,7 +49,7 @@ PRE-INSTALL)
 		echo "There is no account '${squid_user}' on this system, so I will try to create it:"
 		if ! pw useradd -q -n ${squid_user} \
 		    -u ${squid_uid} -g ${squid_group} \
-	  	    -c "squid caching-proxy pseudo user" \
+	  	    -c "Squid caching-proxy pseudo user" \
 		    -d "${squid_base}" -s "${nologin}" \
 		    -h - ; then
 			echo "Failed to create user '${squid_user}'!" >&2
@@ -72,19 +72,19 @@ PRE-INSTALL)
 		echo ""
 		echo " * NOTICE *"
 		echo ""
-		echo "The squid pseudo-user's uid and/or gid have been found"
+		echo "The Squid pseudo-user's uid and/or gid have been found"
 		echo "to be greater than or equal 3128."
 		echo ""
 		echo "This is not a problem as such, but violates the FreeBSD"
 		echo "ports' principle that a ports must not claim a uid greater"
 		echo "than 999."
 		echo ""
-		echo "Since version 2.5.4_11, the squid user is thus created"
+		echo "Since version 2.5.4_11, the Squid user is thus created"
 		echo "with an id of ${squid_uid}:${squid_gid} while earlier versions of this"
 		echo "port used the first unused uid/gid greater than or"
 		echo "equal 3128."
 		echo ""
-		echo "If you want to change the existing squid user's id, run"
+		echo "If you want to change the existing Squid user's id, run"
 		echo "'make changeuser' after the installation has completed."
 		echo "If you installed this port via a package, issue the"
 		echo "following commands as root:"
@@ -92,13 +92,13 @@ PRE-INSTALL)
 		echo "pw userdel -u ${current_uid}"
 		echo "pw groupadd -n ${squid_group} -g ${squid_gid}"
 		echo "pw useradd -n ${squid_user} -u ${squid_uid} \\"
-		echo "    -c \"squid caching-proxy pseudo user\" \\"
+		echo "    -c \"Squid caching-proxy pseudo user\" \\"
 		echo "    -g ${squid_group} -d ${squid_base} -s /sbin/nologin \\"
 		echo "    -h -"
 		echo "find -H ${PKG_PREFIX} -user ${current_uid} -exec chown ${squid_user} {} \\;"
 		echo "find -H ${PKG_PREFIX} -group ${current_gid} -exec chgrp ${squid_group} {} \\;"
 		echo ""
-		echo "In case you have installed third party software for squid"
+		echo "In case you have installed third party software for Squid"
 		echo "like squidGuard, you should additionally run:"
 		echo "find -H /var -user ${current_uid} -exec chown ${squid_user} {} \\;"
 		echo "find -H /var -group ${current_gid} -exec chgrp ${squid_group} {} \\;"
