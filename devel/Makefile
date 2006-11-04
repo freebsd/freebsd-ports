@@ -1708,6 +1708,7 @@
     SUBDIR += py-log4py
     SUBDIR += py-logging
     SUBDIR += py-logilab-common
+    SUBDIR += py-lucene
     SUBDIR += py-mx-experimental
     SUBDIR += py-ncurses
     SUBDIR += py-ocempgui

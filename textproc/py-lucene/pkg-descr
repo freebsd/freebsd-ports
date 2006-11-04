@@ -1,0 +1,6 @@
+PyLucene is a GCJ-compiled version of Java Lucene integrated with Python.
+Its goal is to allow you to use Lucene's text indexing and searching 
+capabilities from Python. It is designed to be API compatible with the 
+latest version of Java Lucene.
+
+WWW: http://pylucene.osafoundation.org/
