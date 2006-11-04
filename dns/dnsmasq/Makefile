@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.34
+PORTVERSION=	2.35
 CATEGORIES=	dns ipv6
-MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
+		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	babak@farrokhi.net
@@ -16,7 +17,7 @@ COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
 
 MAN8=		dnsmasq.8
 
-docs=		CHANGELOG FAQ UPGRADING_to_2.0 doc.html setup.html
+docs=		CHANGELOG FAQ doc.html setup.html
 PORTDOCS=	${docs:T}
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
