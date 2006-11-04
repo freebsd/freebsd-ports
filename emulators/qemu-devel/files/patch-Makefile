@@ -1,4 +1,15 @@
 Index: qemu/Makefile
+@@ -20,6 +20,10 @@
+ LDFLAGS+=-static
+ endif
+ ifdef BUILD_DOCS
++ifdef NOPORTDOCS
++DOCS=qemu.1 qemu-img.1
++else
+ DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1
++endif
+ else
+ DOCS=
 @@ -28,7 +28,8 @@
  ifndef CONFIG_DARWIN
  ifndef CONFIG_WIN32
@@ -9,3 +20,14 @@ Index: qemu/Makefile
  endif
  endif
  endif
+@@ -72,8 +75,10 @@
+ common  de-ch  es     fo  fr-ca  hu     ja  mk  nl-be      pt  sl     tr
+ 
+ install-doc: $(DOCS)
++ifndef NOPORTDOCS
+ 	mkdir -p "$(DESTDIR)$(docdir)"
+ 	$(INSTALL) -m 644 qemu-doc.html  qemu-tech.html "$(DESTDIR)$(docdir)"
++endif
+ ifndef CONFIG_WIN32
+ 	mkdir -p "$(DESTDIR)$(mandir)/man1"
+ 	$(INSTALL) qemu.1 qemu-img.1 "$(DESTDIR)$(mandir)/man1"
