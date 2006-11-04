@@ -71,7 +71,6 @@ bin/tkabber
 %%DATADIR%%/messages.tcl
 %%DATADIR%%/msgs/ca.msg
 %%DATADIR%%/msgs/de.msg
-%%DATADIR%%/msgs/en.msg
 %%DATADIR%%/msgs/eo.msg
 %%DATADIR%%/msgs/es.msg
 %%DATADIR%%/msgs/eu.msg
@@ -85,6 +84,7 @@ bin/tkabber
 %%DATADIR%%/msgs/ru.msg
 %%DATADIR%%/msgs/ru.rc
 %%DATADIR%%/msgs/uk.msg
+%%DATADIR%%/msgs/uk.rc
 %%DATADIR%%/muc.tcl
 %%DATADIR%%/negotiate.tcl
 %%DATADIR%%/pixmaps.tcl
@@ -179,11 +179,13 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/services/yahoo_online.gif
 %%DATADIR%%/pixmaps/default/services/yahoo_xa.gif
 %%DATADIR%%/pixmaps/default/tkabber/chat-bookmark.gif
+%%DATADIR%%/pixmaps/default/tkabber/gpg-badencrypted.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-badsigned.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-encrypted.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-signed.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-unencrypted.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-unsigned.gif
+%%DATADIR%%/pixmaps/default/tkabber/gpg-vsigned.gif
 %%DATADIR%%/pixmaps/default/tkabber/new-msg.gif
 %%DATADIR%%/pixmaps/default/tkabber/search_bk.gif
 %%DATADIR%%/pixmaps/default/tkabber/search_case.gif
@@ -484,6 +486,7 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/info_commands.tcl
 %%DATADIR%%/plugins/chat/insert_nick.tcl
 %%DATADIR%%/plugins/chat/irc_commands.tcl
+%%DATADIR%%/plugins/chat/log_on_open.tcl
 %%DATADIR%%/plugins/chat/logger.tcl
 %%DATADIR%%/plugins/chat/me_command.tcl
 %%DATADIR%%/plugins/chat/nick_colors.tcl
@@ -529,6 +532,7 @@ bin/tkabber
 %%DATADIR%%/plugins/search/rawxml.tcl
 %%DATADIR%%/plugins/search/search.tcl
 %%DATADIR%%/plugins/si/ibb.tcl
+%%DATADIR%%/plugins/si/iqibb.tcl
 %%DATADIR%%/plugins/si/socks5.tcl
 %%DATADIR%%/plugins/unix/dockingtray.tcl
 %%DATADIR%%/plugins/unix/ispell.tcl
@@ -542,6 +546,7 @@ bin/tkabber
 %%DATADIR%%/plugins/windows/taskbar.tcl
 %%DATADIR%%/presence.tcl
 %%DATADIR%%/privacy.tcl
+%%DATADIR%%/pubsub.tcl
 %%DATADIR%%/register.tcl
 %%DATADIR%%/roster.tcl
 %%DATADIR%%/search.tcl
@@ -561,9 +566,10 @@ bin/tkabber
 %%DATADIR%%/sounds/psi/presence_available.wav
 %%DATADIR%%/sounds/psi/presence_unavailable.wav
 %%DATADIR%%/splash.tcl
-%%DATADIR%%/textundo/dkflib.tcl
-%%DATADIR%%/textundo/textundo.tcl
 %%DATADIR%%/tkabber.tcl
+%%DATADIR%%/trans.tcl
+%%DATADIR%%/trans/pl.msg
+%%DATADIR%%/trans/ru.msg
 %%DATADIR%%/userinfo.tcl
 %%DATADIR%%/utils.tcl
 %%DATADIR%%/version
@@ -603,19 +609,10 @@ bin/tkabber
 @dirrm %%DATADIR%%/emoticons-tkabber
 @dirrm %%DATADIR%%/ifaceck
 @dirrm %%DATADIR%%/ifacetk
-@dirrm %%DATADIR%%/plugins/iq
-@dirrm %%DATADIR%%/plugins/unix
-@dirrm %%DATADIR%%/plugins/filetransfer
-@dirrm %%DATADIR%%/plugins/jidlink
-@dirrm %%DATADIR%%/plugins/search
-@dirrm %%DATADIR%%/plugins/chat
-@dirrm %%DATADIR%%/plugins/windows
-@dirrm %%DATADIR%%/plugins/si
-@dirrm %%DATADIR%%/plugins/general
-@dirrm %%DATADIR%%/plugins/roster
-@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/jabberlib-tclxml/tclxml
 @dirrm %%DATADIR%%/jabberlib-tclxml
+@dirrm %%DATADIR%%/mclistbox-1.02
+@dirrm %%DATADIR%%/msgs
 @dirrm %%DATADIR%%/pixmaps/jarl/roster
 @dirrm %%DATADIR%%/pixmaps/jarl
 @dirrm %%DATADIR%%/pixmaps/gabber/services
@@ -656,15 +653,24 @@ bin/tkabber
 @dirrm %%DATADIR%%/pixmaps/kroc/roster
 @dirrm %%DATADIR%%/pixmaps/kroc
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/plugins/iq
+@dirrm %%DATADIR%%/plugins/unix
+@dirrm %%DATADIR%%/plugins/filetransfer
+@dirrm %%DATADIR%%/plugins/jidlink
+@dirrm %%DATADIR%%/plugins/search
+@dirrm %%DATADIR%%/plugins/chat
+@dirrm %%DATADIR%%/plugins/windows
+@dirrm %%DATADIR%%/plugins/si
+@dirrm %%DATADIR%%/plugins/general
+@dirrm %%DATADIR%%/plugins/roster
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds/psi
 @dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/textundo
-@dirrm %%DATADIR%%/msgs
-@dirrm %%DATADIR%%/mclistbox-1.02
+@dirrm %%DATADIR%%/trans
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%/xrdb
 @dirrm %%EXAMPLESDIR%%/tools
-@dirrm %%EXAMPLESDIR%%/configs
 @dirrm %%EXAMPLESDIR%%/tclCarbonNotification-1.0.0
+@dirrm %%EXAMPLESDIR%%/configs
 @dirrm %%EXAMPLESDIR%%
