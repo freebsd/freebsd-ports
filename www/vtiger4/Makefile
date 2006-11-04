@@ -1,11 +1,11 @@
-# New ports collection makefile for:	vtiger
+# New ports collection makefile for:	vtiger4
 # Date created:			Fri Mar 11 20:59:31 EST 2005
 # Whom:				Edwin Groothuis <edwin@mavetju.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	vtiger
+PORTNAME=	vtiger4
 DISTVERSION=	4.2.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
