@@ -9,10 +9,10 @@ PORTNAME=	minimalist
 PORTVERSION=	2.5.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mml.org.ua/LIST/ \
-		http://www.giovannelli.it/~gmarco/files/
+		http://utenti.gufi.org/~gmarco/files/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-/}
 
-MAINTAINER=	gmarco@giovannelli.it
+MAINTAINER=	gmarco@gufi.org
 COMMENT=	A minimalistic mailing list manager
 
 USE_PERL5_RUN=	yes
