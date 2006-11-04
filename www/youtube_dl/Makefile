@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2006.08.28
+PORTVERSION=	2006.09.25
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/youtube-dl/ \
 		http://pankovpv.sovietservers.com/freebsd/ports/distfiles/
