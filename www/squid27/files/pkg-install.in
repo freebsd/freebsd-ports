@@ -37,7 +37,7 @@ PRE-INSTALL)
 		echo "There is no account '${squid_user}' on this system, so I will try to create it (using user id ${squid_uid}):"
 		if ! pw useradd -q -n ${squid_user} \
 		    -u ${squid_uid} -g ${squid_group} \
-	  	    -c "squid caching-proxy pseudo user" \
+	  	    -c "Squid caching-proxy pseudo user" \
 		    -d "${squid_base}" -s "${nologin}" \
 		    -h - ; then
 			echo "Failed to create user '${squid_user}'!" >&2
