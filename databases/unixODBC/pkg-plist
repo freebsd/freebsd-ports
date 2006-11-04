@@ -16,6 +16,7 @@ include/sql.h
 include/sqlext.h
 include/sqltypes.h
 include/sqlucode.h
+include/uodbc_extras.h
 include/uodbc_stats.h
 lib/libboundparam.a
 lib/libboundparam.la
