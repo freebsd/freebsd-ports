@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTVERSION=	1.4.10
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -102,7 +101,6 @@ CONFIGURE_ENV+=	ac_cv_header_ladspa_h=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^AM_CFLAGS=|#AM_CFLAGS=|g ; \
-		 s|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/AM_CFLAGS=/s|-g||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
