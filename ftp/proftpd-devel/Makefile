@@ -102,8 +102,8 @@ CONFIGURE_ARGS+=	--disable-ipv6
 #allow user to override
 MODULES?=	mod_ratio:mod_readme:mod_rewrite:mod_wrap:mod_ifsession
 
-INCLUDEDIRS=
-LIBDIRS=
+INCLUDEDIRS?=
+LIBDIRS?=
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
