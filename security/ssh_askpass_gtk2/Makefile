@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	ssh_askpass_gtk2
-PORTVERSION=	0.3
-PORTREVISION=	5
+PORTVERSION=	0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.cgabriel.org/download/ssh-askpass-fullscreen/
-DISTNAME=	gtk2-ssh-askpass-0.3
+DISTNAME=	ssh-askpass-fullscreen-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A tiny GTK2 ssh askpass replacement
 
 USE_GNOME=	gtk20
 
-MAN1=		ssh-askpass-gtk2.1
-PLIST_FILES=	bin/ssh-askpass-gtk2
+PLIST_FILES=	bin/ssh-askpass-fullscreen
 
 do-install:
 	cd ${WRKSRC};\
-	${INSTALL_PROGRAM} gtk2-ssh-askpass ${PREFIX}/bin/ssh-askpass-gtk2;\
-	${INSTALL_MAN} debian/gtk2-ssh-askpass.1 ${PREFIX}/man/man1/ssh-askpass-gtk2.1
+	${INSTALL_PROGRAM} ssh-askpass-fullscreen ${PREFIX}/bin/ssh-askpass-fullscreen;\
 
 .include <bsd.port.mk>
