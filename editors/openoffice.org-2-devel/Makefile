@@ -72,10 +72,10 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		186
+MILESTONE?=		191
 OOOTAG?=		SRC680_m${MILESTONE}
-OOOSRC?=		OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
-SNAPDATE=		20060928
+OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
+SNAPDATE=		20061101
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -149,7 +149,7 @@ LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC?=		${WRKDIR}/SRC680_m${MILESTONE}
+WRKSRC?=		${WRKDIR}/${OOOTAG}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
