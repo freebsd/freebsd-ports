@@ -2,7 +2,7 @@
 
 Simple config:
 
-  LoadModule perl_module modules/mod_perl.so
+  LoadModule perl_module libexec/apache2/mod_perl.so
   #PerlModule Apache::compat
   # your config comes here
 
