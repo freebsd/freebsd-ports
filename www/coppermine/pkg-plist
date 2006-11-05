@@ -342,7 +342,6 @@
 %%CPGDIR%%/include/crop.inc.php
 %%CPGDIR%%/include/debugger.inc.php
 %%CPGDIR%%/include/exif.php
-%%CPGDIR%%/include/exifReader.inc.php
 %%CPGDIR%%/include/exif_php.inc.php
 %%CPGDIR%%/include/functions.inc.php
 %%CPGDIR%%/include/imageObjectGD.class.php
@@ -400,6 +399,7 @@
 %%CPGDIR%%/lang/greek.php
 %%CPGDIR%%/lang/hebrew.php
 %%CPGDIR%%/lang/hungarian.php
+%%CPGDIR%%/lang/indonesian.php
 %%CPGDIR%%/lang/italian.php
 %%CPGDIR%%/lang/japanese.php
 %%CPGDIR%%/lang/korean.php
@@ -451,6 +451,7 @@
 %%CPGDIR%%/themes/classic/template.html
 %%CPGDIR%%/themes/classic/theme.php
 %%CPGDIR%%/themes/eyeball/images/bg.gif
+%%CPGDIR%%/themes/eyeball/images/blank.gif
 %%CPGDIR%%/themes/eyeball/images/button_bg.gif
 %%CPGDIR%%/themes/eyeball/images/button_bg_anim.gif
 %%CPGDIR%%/themes/eyeball/images/ecard.gif
