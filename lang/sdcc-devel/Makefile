@@ -9,7 +9,7 @@ PORTNAME=	sdcc
 PORTVERSION=	2.6.1.2006.10.12
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
-		http://www.kalimero.be/mirror/
+		http://kalimero.be/mirror/
 DISTNAME=	${PORTNAME}-src-20061012-4408
 
 MAINTAINER=	tijl@ulyssis.org
