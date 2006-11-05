@@ -9353,6 +9353,7 @@ p5-LEGO-RCX	ports/misc/p5-LEGO-RCX
 p5-LJ-Cache	ports/sysutils/p5-LJ-Cache
 p5-LJ-SpellCheck	ports/textproc/p5-LJ-SpellCheck
 p5-LJ-TextMessage	ports/sysutils/p5-LJ-TextMessage
+p5-LMAP-CID2SPF	ports/mail/p5-LMAP-CID2SPF
 p5-LWP-Authen-Wsse	ports/www/p5-LWP-Authen-Wsse
 p5-Lingua-Conjunction	ports/textproc/p5-Lingua-Conjunction
 p5-Lingua-EN-AddressParse	ports/textproc/p5-Lingua-EN-AddressParse
