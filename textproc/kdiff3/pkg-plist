@@ -219,15 +219,31 @@ share/locale/tr/LC_MESSAGES/kdiff3.mo
 share/locale/zh_CN/LC_MESSAGES/kdiff3.mo
 share/services/kdiff3part.desktop
 @dirrm share/doc/HTML/sv/kdiff3
+@dirrmtry share/doc/HTML/sv
 @dirrm share/doc/HTML/pt/kdiff3
+@dirrmtry share/doc/HTML/pt
 @dirrm share/doc/HTML/nl/kdiff3
+@dirrmtry share/doc/HTML/nl
 @dirrm share/doc/HTML/it/kdiff3
+@dirrmtry share/doc/HTML/it
 @dirrm share/doc/HTML/fr/kdiff3
+@dirrmtry share/doc/HTML/fr
 @dirrm share/doc/HTML/et/kdiff3
+@dirrmtry share/doc/HTML/et
 @dirrm share/doc/HTML/es/kdiff3
+@dirrmtry share/doc/HTML/es
 @dirrm share/doc/HTML/en/kdiff3
+@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/de/kdiff3
+@dirrmtry share/doc/HTML/de
 @dirrm share/doc/HTML/da/kdiff3
+@dirrmtry share/doc/HTML/da
 @dirrm share/doc/HTML/kdiff3
+@dirrmtry share/doc/HTML
+@dirrmtry share/doc
 @dirrm share/apps/kdiff3part
 @dirrm share/apps/kdiff3
+@dirrmtry share/apps
+@dirrmtry share/applnk/Development
+@dirrmtry share/applnk
+@dirrmtry share
