@@ -2,7 +2,7 @@
 #
 
 # PROVIDE: tpop3d
-# REQUIRE:  LOGIN
+# REQUIRE:  postgresql mysql LOGIN
 
 #
 # Add the following line to /etc/rc.conf to enable tpop3d:
