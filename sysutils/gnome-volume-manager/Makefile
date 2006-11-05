@@ -22,6 +22,7 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-multiuser
