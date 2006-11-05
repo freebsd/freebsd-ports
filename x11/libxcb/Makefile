@@ -43,7 +43,14 @@ XDMCP_LIBS=	-L${X11BASE}/lib -lXdmcp
 XPROTO_CFLAGS=	-I${X11BASE}/include
 XPROTO_LIBS=	-L${X11BASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__xcb.h \
+		${FILESDIR}/extra-patch-src__xcb_auth.c
+.endif
+
 post-build:
 	DISPLAY= ${GMAKE} -C ${WRKSRC} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
