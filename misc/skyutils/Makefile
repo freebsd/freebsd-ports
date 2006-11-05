@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.franksworld.org/dist/skyutils/	
 #		http://zekiller.skytech.org/fichiers/ 
 
-MAINTAINER=	machiel_mastenbroek@hotmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library required by smssend (same author)
 
 GNU_CONFIGURE=	yes
