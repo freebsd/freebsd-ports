@@ -1,51 +1,44 @@
---- configure.orig	Fri Aug 25 15:22:45 2006
-+++ configure	Wed Aug 30 06:02:33 2006
-@@ -19263,10 +19263,10 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS=" /usr/local/share/libtool/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='$(SHELL) /usr/local/bin/libtool'
- 
- # Prevent multiple expansion
- 
-@@ -19361,7 +19361,7 @@
+--- configure.orig	Sun Nov  5 05:57:07 2006
++++ configure	Sun Nov  5 18:57:50 2006
+@@ -19366,7 +19366,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="%%PTHREAD_LIBS%% $LIBS"
++LIBS="-pthread $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -19424,7 +19424,7 @@
+@@ -19429,7 +19429,7 @@
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
 -  LIBS="-lpthread $LIBS"
-+  LIBS="%%PTHREAD_LIBS%% $LIBS"
++  LIBS="-pthread $LIBS"
  
  else
    { { echo "$as_me:$LINENO: error: POSIX thread library is required" >&5
-@@ -19599,7 +19599,7 @@
+@@ -19455,8 +19455,8 @@
+         else
+                 svd_LDFLAGS=$LDFLAGS
+                 svd_CPPFLAGS=$CPPFLAGS
+-                LDFLAGS="-L$with_mysql/lib $LDFLAGS"
+-                CPPFLAGS="-I$with_mysql/include $CPPFLAGS"
++                LDFLAGS="-L$with_mysql/lib/mysql $LDFLAGS"
++                CPPFLAGS="-I$with_mysql/include/mysql $CPPFLAGS"
+ 
+ for ac_header in mysql.h
+ do
+@@ -19604,9 +19604,9 @@
  _ACEOF
  
                          mysql="yes"
 -                        if test -r "$with_mysql/lib/libmysqlclient.a"; then
+-                                DBCPPFLAGS="$DBCPPFLAGS -I$with_mysql/include"
+-                                DBLDFLAGS="$DBLDFLAGS -L$with_mysql/lib/ -lmysqlclient"
 +                        if test -r "$with_mysql/lib/mysql/libmysqlclient.a"; then
-                                 DBCPPFLAGS="$DBCPPFLAGS -I$with_mysql/include"
-                                 DBLDFLAGS="$DBLDFLAGS -L$with_mysql/lib/ -lmysqlclient"
++                                DBCPPFLAGS="$DBCPPFLAGS -I$with_mysql/includemysql"
++                                DBLDFLAGS="$DBLDFLAGS -L$with_mysql/lib/mysql -lmysqlclient"
                          else
-@@ -20657,7 +20657,7 @@
- 
- # If the compiler is gcc, tune warnings and make the char type unsigned
- if test "x$GCC" = "xyes"; then
--	CFLAGS="$CFLAGS -Wall -Wunused -Wno-unused-label -funsigned-char";
-+	#CFLAGS="$CFLAGS -Wall -Wunused -Wno-unused-label -funsigned-char";
-         # does this compiler support -Wno-pointer-sign ?
-         svd_CFLAGS="$CFLAGS"
-         CFLAGS="$CFLAGS -Wno-pointer-sign"
+                                 mysql="no"
+                         fi

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
@@ -19,18 +19,20 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 OPTIONS=	MYSQL "Add MySQL support" on \
-		SQLITE " Add Sqlite support" on
+		SQLITE " Add Sqlite support" on \
+		PGSQL "Add PgSQL support" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
-CONFIGURE_ENV+=	CPPFLAGS+="-I${LOCALBASE}/include/mysql" \
-		LDFLAGS+="-L${LOCALBASE}/lib/mysql"
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
@@ -40,6 +42,13 @@ USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--without-sqlite
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
+.else
+CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 post-patch:
