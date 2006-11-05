@@ -8,19 +8,16 @@
 PORTNAME=	skyutils
 PORTVERSION=	2.9
 CATEGORIES=	misc
-MASTER_SITES=	http://zekiller.skytech.org/fichiers/
+MASTER_SITES=	http://www.franksworld.org/dist/skyutils/	
+#		http://zekiller.skytech.org/fichiers/ 
 
 MAINTAINER=	machiel_mastenbroek@hotmail.com
 COMMENT=	A library required by smssend (same author)
 
-BROKEN=		does not fetch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOTOOLS=	autoconf:259 libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
