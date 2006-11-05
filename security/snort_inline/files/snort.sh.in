@@ -4,7 +4,7 @@
 # PROVIDE: snort
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: shutdown
+# KEYWORD: FreeBSD shutdown
 
 # Add the following lines to /etc/rc.conf to enable snort:
 # snort_enable (bool):		Set to YES to enable snort
@@ -22,7 +22,7 @@
 name="snort"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/snort"
+command="%%PREFIX%%/bin/snort_inline"
 
 load_rc_config $name
 
