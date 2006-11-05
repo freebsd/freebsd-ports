@@ -1748,6 +1748,7 @@
     SUBDIR += py-tables
     SUBDIR += py-testgears
     SUBDIR += py-tconfpy
+    SUBDIR += py-testoob
     SUBDIR += py-twisted
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
