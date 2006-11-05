@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	planet
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.wave2.co.uk/freebsd/planet/
 
