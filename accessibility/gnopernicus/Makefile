@@ -8,6 +8,7 @@
 
 PORTNAME=	gnopernicus
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,6 +22,7 @@ LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
+USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
