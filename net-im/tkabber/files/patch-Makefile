@@ -1,0 +1,10 @@
+--- Makefile.orig	Tue Oct 31 13:24:25 2006
++++ Makefile	Tue Oct 31 13:28:00 2006
+@@ -21,6 +21,6 @@
+ 	cp README COPYING AUTHORS $(DESTDIR)/$(PREFIX)/share/doc/tkabber
+ 	cp doc/tkabber.html $(DESTDIR)/$(PREFIX)/share/doc/tkabber/html
+ 	mkdir -p $(DESTDIR)/$(PREFIX)/bin/
+-	echo -e "#!/bin/sh\nexec wish $(PREFIX)/share/tkabber/tkabber.tcl -name tkabber \"\$$@\"\n" > $(DESTDIR)/$(PREFIX)/bin/tkabber
++	echo -e "#!/bin/sh\nexec wish8.4 $(PREFIX)/share/tkabber/tkabber.tcl -name tkabber \"\$$@\"\n" > $(DESTDIR)/$(PREFIX)/bin/tkabber
+ 	chmod +x $(DESTDIR)/$(PREFIX)/bin/tkabber
+ 
