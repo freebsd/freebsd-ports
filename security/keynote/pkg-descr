@@ -13,4 +13,4 @@ assertions but are also signed by the principal delegating the trust.
 This is an example implementation of the KeyNote Trust-Management System
 as specified in IETF draft <draft-blaze-ietf-trustmgt-keynote-02.txt>.
 
-WWW: http://www.cis.upenn.edu/~angelos/keynote.html
+WWW: http://www1.cs.columbia.edu/~angelos/keynote.html
