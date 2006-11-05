@@ -19,6 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
+USE_GCC=	3.2
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	mixer sdl
@@ -29,10 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		Does not compile with gcc 3.4
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SDL\/||g; s|/usr/local|${PREFIX}|g" \
