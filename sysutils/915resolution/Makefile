@@ -19,6 +19,14 @@ COMMENT=	Resolution tool for Intel i915 video cards
 PLIST_FILES=	bin/915resolution
 ALL_TARGET=	915resolution
 
+ONLY_FOR_ARCHS=	i386
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not build
+.endif
+
 do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} 915resolution.c -o 915resolution
@@ -26,4 +34,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/915resolution ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
