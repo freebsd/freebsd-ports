@@ -14,6 +14,9 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/lan.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/lan.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/lan.pyo
 %%PYTHON_SITELIBDIR%%/glchess/chess/pgn.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyo
@@ -80,6 +83,9 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.py
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.pyc
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.pyo
+%%PYTHON_SITELIBDIR%%/glchess/uci.py
+%%PYTHON_SITELIBDIR%%/glchess/uci.pyc
+%%PYTHON_SITELIBDIR%%/glchess/uci.pyo
 %%PYTHON_SITELIBDIR%%/glchess/ui/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyo
@@ -103,20 +109,13 @@ share/applications/glchess.desktop
 %%DATADIR%%/textures/board.png
 %%DATADIR%%/textures/piece.png
 share/locale/de/LC_MESSAGES/glchess.mo
-share/locale/en/LC_MESSAGES/glchess.mo
-share/locale/en_AU/LC_MESSAGES/glchess.mo
-share/locale/en_NZ/LC_MESSAGES/glchess.mo
-share/locale/en_US/LC_MESSAGES/glchess.mo
+share/locale/es/LC_MESSAGES/glchess.mo
+share/locale/fr/LC_MESSAGES/glchess.mo
 share/locale/it/LC_MESSAGES/glchess.mo
+share/locale/tr/LC_MESSAGES/glchess.mo
 share/mime/packages/glchess.xml
 share/pixmaps/glchess.svg
 @dirrmtry share/pixmaps
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrmtry share/locale/en_NZ/LC_MESSAGES
-@dirrmtry share/locale/en_NZ
-@dirrmtry share/locale/en_AU/LC_MESSAGES
-@dirrmtry share/locale/en_AU
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/gui
 @dirrm %%DATADIR%%
