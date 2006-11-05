@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	talkfilters
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
 		http://critical.ch/distfiles/ \
