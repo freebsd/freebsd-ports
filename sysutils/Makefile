@@ -718,6 +718,7 @@
     SUBDIR += xosview
     SUBDIR += xperfmon
     SUBDIR += xperfmon3
+    SUBDIR += xsi
     SUBDIR += xstow
     SUBDIR += xsu
     SUBDIR += xsysinfo

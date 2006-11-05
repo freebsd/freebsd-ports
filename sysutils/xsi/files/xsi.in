@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: xsi
+# REQUIRE: NETWORKING
+#
+# Add the following line to /etc/rc.conf to enable the XSI daemon
+#
+# xsi_enable="YES"
+#
+
+xsi_enable=${hald_enable-"NO"}
+xsi_flags=${hald_flags-""}
+
+. %%RC_SUBR%%
+
+name=xsi
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/${name}
+load_rc_config ${name}
+run_rc_command "$1"
