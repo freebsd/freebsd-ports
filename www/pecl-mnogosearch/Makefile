@@ -9,6 +9,7 @@ PORTNAME=	mnogosearch
 PORTVERSION=	1.0.0
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
+PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
