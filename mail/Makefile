@@ -291,6 +291,7 @@
     SUBDIR += p5-IMAP-Admin
     SUBDIR += p5-IMAP-Client
     SUBDIR += p5-IMAP-Sieve
+    SUBDIR += p5-LMAP-CID2SPF
     SUBDIR += p5-Log-Procmail
     SUBDIR += p5-MIME-Fast
     SUBDIR += p5-MIME-Lite
