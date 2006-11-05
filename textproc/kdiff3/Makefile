@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdiff3
-PORTVERSION=	0.9.90
+PORTVERSION=	0.9.91
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,14 +21,5 @@ USE_GETTEXT=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
 MAN1=	kdiff3.1
-
-pre-configure:
-.for i in config.h.in Makefile.in
-	${TOUCH} ${WRKSRC}/${i}
-.endfor
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 ||g; s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
