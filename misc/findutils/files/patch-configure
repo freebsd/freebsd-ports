@@ -1,0 +1,18 @@
+--- configure.orig	Sun Nov  5 17:53:42 2006
++++ configure	Sun Nov  5 18:02:59 2006
+@@ -16231,6 +16231,15 @@
+ 
+ 
+ 
++  if test $ac_use_included_regex = yes; then
++    case $LIBOBJS in
++    "regex.$ac_objext"   | \
++  *" regex.$ac_objext"   | \
++    "regex.$ac_objext "* | \
++  *" regex.$ac_objext "* ) ;;
++  *) LIBOBJS="$LIBOBJS regex.$ac_objext" ;;
++    esac
++  fi
+ 
+ 
+   { echo "$as_me:$LINENO: checking for C/C++ restrict keyword" >&5

@@ -6,6 +6,7 @@ libexec/gbigram
 libexec/gcode
 libexec/gfrcode
 share/locale/be/LC_MESSAGES/findutils.mo
+share/locale/bg/LC_MESSAGES/findutils.mo
 share/locale/ca/LC_MESSAGES/findutils.mo
 share/locale/da/LC_MESSAGES/findutils.mo
 share/locale/de/LC_MESSAGES/findutils.mo
