@@ -12213,6 +12213,7 @@ py-taglib	ports/audio/py-taglib
 py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
 py-testgears	ports/devel/py-testgears
+py-testoob	ports/devel/py-testoob
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-tlslite	ports/security/py-tlslite
 py-tofu		ports/net/py-tofu
