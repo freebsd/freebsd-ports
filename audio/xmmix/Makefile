@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	xmmix
-PORTVERSION=	1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/1.2.2/src/
 
 MAINTAINER=	conrads@cox.net
-COMMENT=	A Motif based audio mixer
+COMMENT=	A Motif-based audio mixer
+
+WRKSRC=		${WRKDIR}/xmmix-1.2
 
 USE_IMAKE=	yes
 USE_MOTIF=	yes
