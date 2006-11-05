@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bitefusion
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/
 
