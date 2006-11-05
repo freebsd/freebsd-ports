@@ -84,9 +84,8 @@ PLIST_SUB+=	X11="@comment "
 # We would like to use bsd.tcl.mk here, but we can't USE_TCL after including
 # bsd.port.pre.mk and we can't test WITH_LABLTK before including bsd.port.pre.mk
 .if defined(WITH_LABLTK)
-USE_TK=		84
-USE_TK_BUILD=	84
-CONFIGURE_ARGS+=-tkdefs -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+CONFIGURE_ARGS+=-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
 CONFIGURE_ARGS+=-tklibs "-L${LOCALBASE}/lib"
 PLIST_SUB+=	LABLTK=""
 .if defined(WITHOUT_X11)
