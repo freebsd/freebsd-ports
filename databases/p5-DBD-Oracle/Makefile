@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-Oracle
-PORTVERSION=	1.16
+PORTVERSION=	1.19
 PORTREVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -39,9 +39,11 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_OCI8
-PORTVERSION=	1.16
+PORTVERSION=	1.19
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ORACLE_HOME=	${LOCALBASE}/oracle8-client
 BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
+CONFIGURE_ARGS=	-V 8.1.7
 .else
 PORTVERSION=	1.14
 ORACLE_HOME=	${LOCALBASE}/oracle7
@@ -51,7 +53,7 @@ CONFIGURE_ARGS=	-m ${ORACLE_HOME}/rdbms/demo/oracle.mk
 
 .if ${PERL_LEVEL} < 500600
 .ifdef WITH_OCI8
-IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again.
+IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 and try again
 .endif
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 .else
