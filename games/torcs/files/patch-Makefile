@@ -1,11 +1,11 @@
---- Makefile.orig	Thu May 19 17:39:25 2005
-+++ Makefile	Thu Aug 25 23:08:36 2005
+--- Makefile.orig	Sat Aug 19 17:07:30 2006
++++ Makefile	Mon Oct  9 22:08:30 2006
 @@ -78,7 +78,7 @@
  
  DATADIR 	= .
  
--DATA    	= CHANGELOG.html COPYING Ticon.png Ticon.ico tux.png logo-skinner.png
-+DATA    	= CHANGELOG.html Ticon.png Ticon.ico tux.png logo-skinner.png
+-DATA    	= COPYING Ticon.png Ticon.ico tux.png logo-skinner.png
++DATA    	= Ticon.png Ticon.ico tux.png logo-skinner.png
  
  SHIPEXECDIR	= .
  
