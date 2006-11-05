@@ -4,8 +4,8 @@
  def make_version_header(app_name, pkgname, dir = "src")
    version = PKGConfig.modversion(pkgname).split(/\./)
  
-+  if "#{version[2]}" == ""
-+    version[2] = 0
++  (0..2).each do |v|
++    version[v] = "0" unless version[v]
 +  end
 +
    filename = "rb#{app_name.downcase}version.h"
