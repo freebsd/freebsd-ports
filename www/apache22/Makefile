@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%\//clement\/:aprmysql/}
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 \
-		apr_dbd_mysql.rev-50.c:aprmysql
+		apr_dbd_mysql.rev-57.c:aprmysql
 DIST_SUBDIR=	apache22
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
@@ -73,7 +73,7 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
-WITH_MPM?=	prefork # or worker, perchild, threadpool, event
+WITH_MPM?=	prefork # or worker, perchild, event, itk
 
 WITH_HTTP_PORT?=	80
 
