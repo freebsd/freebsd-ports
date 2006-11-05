@@ -5,13 +5,13 @@ bin/g++%%SUFFIX%%
 bin/gcc%%SUFFIX%%
 bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
+bin/gfortran%%SUFFIX%%
 bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
+bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
-%%FORTRAN%%bin/gfortran%%SUFFIX%%
-%%FORTRAN%%bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 %%JAVA%%bin/addr2name.awk%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
 %%JAVA%%bin/gcj%%SUFFIX%%
@@ -29,7 +29,7 @@ info/gcc%%SUFFIX%%/dir
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
 %%JAVA%%bin/%%GNU_HOST%%-gcjh%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-4.2.pc
+%%JAVA%%libdata/pkgconfig/libgcj-4.3.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
 @comment Insert PLIST.lib here

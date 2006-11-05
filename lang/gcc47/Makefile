@@ -7,29 +7,28 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.2.0
-PORTREVISION=	20061024
+PORTVERSION=	4.3.0
+PORTREVISION=	20061104
 CATEGORIES=	lang java
-VERSIONSTRING=	4.2-${PORTREVISION}
+VERSIONSTRING=	4.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 4.2
+COMMENT?=	GNU Compiler Collection 4.3
 
-.if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.1:${PORTSDIR}/math/mpfr
-.endif
 .if defined(WITH_JAVA_AWT)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 .endif
 
-SUFFIX=		42
+SUFFIX=		43
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha
 USE_BISON=	yes
@@ -68,6 +67,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
+		--with-gmp=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
@@ -82,24 +82,16 @@ USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
+		gfortran${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1
 INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/cppinternals \
+		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint
-
-.if defined(WITH_FORTRAN)
-DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
-CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
-MAN1+=		gfortran${SUFFIX}.1
-INFO+=		gcc${SUFFIX}/gfortran
-PLIST_SUB+=	FORTRAN=""
-.else
-PLIST_SUB+=	FORTRAN="@comment "
-.endif
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
