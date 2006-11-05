@@ -18,6 +18,7 @@ COMMENT=	A small C++ tools library based on STL
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -27,7 +28,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" || ${OSVERSION} >= 500000
-BROKEN=		"Does not compile on !i386 or on FreeBSD >= 5.x"
+BROKEN=		Does not compile on !i386 or on FreeBSD >= 5.x
 .endif
 
 pre-configure:
