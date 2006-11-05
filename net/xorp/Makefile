@@ -51,8 +51,8 @@ pre-everything::
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile on ia64
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64 or sparc64
 .endif
 
 XORP_GROUP=	xorp
