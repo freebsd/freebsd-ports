@@ -15,7 +15,7 @@ DISTNAME=	Quixote-${PORTVERSION}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A framework for developing web applications in Python
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.3-2.4
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
