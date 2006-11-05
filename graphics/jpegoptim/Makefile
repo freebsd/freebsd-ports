@@ -8,7 +8,7 @@
 PORTNAME=	jpegoptim
 PORTVERSION=	1.2.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cc.jyu.fi/~tjko/src/
+MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to optimize jpeg files
