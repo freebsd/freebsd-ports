@@ -16,7 +16,7 @@ DISTNAME?=	VTK-${PORTVERSION}-cvs${CVSDATE}
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT?=	The Visualization Toolkit shared libs
 
-LATEST_LINK=	vtk43
+LATEST_LINK=	vtk43${PKGNAMESUFFIX}
 
 LIBVER=		1
 CVSDATE=	20031006
