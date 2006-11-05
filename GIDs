@@ -84,6 +84,7 @@ messagebus:*:556:
 realtime:*:557:
 avahi:*:558:
 tacacs:*:559:
+_xsi:*:600:
 bnetd:*:700:
 bopm:*:717:
 openxpki:*:777:

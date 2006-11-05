@@ -95,6 +95,7 @@ ircdru:*:555:555:Russian hybrid IRC server:/nonexistent:/bin/sh
 messagebus:*:556:556:D-BUS Daemon User:/nonexistent:/sbin/nologin
 avahi:*:558:558:Avahi Daemon User:/nonexistent:/sbin/nologin
 tacacs:*:559:559:TACACS+ Daemon User:/nonexistent:/sbin/nologin
+_xsi:*:600:600:XMLSysInfo User:/nonexistent:/sbin/nologin
 bnetd:*:700:700:Bnetd user:/nonexistent:/sbin/nologin
 bopm:*:717:717:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
