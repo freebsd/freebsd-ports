@@ -21,6 +21,7 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 CONFLICTS=	ImageMagick-[0-9]* display-*
 
 USE_GMAKE=	yes
+USE_GCC=	3.2
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		LD="${CXX}" LIBS="-lm ${LDFLAGS}" LISShared="-lm ${LDFLAGS}" \
@@ -35,10 +36,6 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 WISH=		${LOCALBASE}/bin/wish8.3
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if ${OSVERSION} < 500035
 CXXFLAGS+=	-fhuge-objects
