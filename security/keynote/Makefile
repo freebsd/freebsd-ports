@@ -9,7 +9,7 @@ PORTNAME=	keynote
 PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.cis.upenn.edu/~angelos/Code/
+MASTER_SITES=	http://www1.cs.columbia.edu/~angelos/Code/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Trust-Management System
