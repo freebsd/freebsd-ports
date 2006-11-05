@@ -110,8 +110,8 @@ PLIST_SUB+=		XMLCLICK="@comment "
 
 .if !defined(WITH_USERCLICK)
 CONFIGURE_ARGS+=	--disable-userlevel
-.else
-MANN+=			IPFlowRawSockets.n
+#.else
+#MANN+=			IPFlowRawSockets.n
 .endif
 
 .if defined(WITH_KERNEL_MODULE)
@@ -120,6 +120,8 @@ IGNORE=		kernel source files required
 .endif
 CONFIGURE_ARGS+=	--enable-bsdmodule				\
 			--with-freebsd=${SRC_BASE}/sys,${INC_BASE}
+.else
+CONFIGURE_ARGS+=	--disable-bsdmodule
 .endif
 
 .if defined(WITH_ANALYSIS_ELEMS)
