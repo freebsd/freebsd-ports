@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Nagios/Plugin.pm
-%%SITE_PERL%%/Nagios/Plugin/Base.pm
+%%SITE_PERL%%/Nagios/Plugin/ExitResult.pm
+%%SITE_PERL%%/Nagios/Plugin/Functions.pm
+%%SITE_PERL%%/Nagios/Plugin/Getopt.pm
 %%SITE_PERL%%/Nagios/Plugin/Performance.pm
 %%SITE_PERL%%/Nagios/Plugin/Range.pm
 %%SITE_PERL%%/Nagios/Plugin/Threshold.pm
