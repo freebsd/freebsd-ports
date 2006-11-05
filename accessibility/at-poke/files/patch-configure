@@ -1,0 +1,86 @@
+--- configure	Thu Oct 26 20:52:31 2006
++++ configure.new	Thu Oct 26 20:54:20 2006
+@@ -19660,14 +19660,12 @@
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome \"") >&5
++	libgnomeui-2.0 \"") >&5
+   ($PKG_CONFIG --exists --print-errors "
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome ") 2>&5
++	libgnomeui-2.0 ") 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+@@ -19675,8 +19673,7 @@
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome " 2>/dev/null`
++	libgnomeui-2.0 " 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -19689,14 +19686,12 @@
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome \"") >&5
++	libgnomeui-2.0 \"") >&5
+   ($PKG_CONFIG --exists --print-errors "
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome ") 2>&5
++	libgnomeui-2.0 ") 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+@@ -19704,8 +19699,7 @@
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome " 2>/dev/null`
++	libgnomeui-2.0 " 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -19718,8 +19712,7 @@
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome "`
++	libgnomeui-2.0 "`
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$POKE_PKG_ERRORS" 1>&5
+ 
+@@ -19727,8 +19720,7 @@
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome ) were not met.
++	libgnomeui-2.0 ) were not met.
+ Consider adjusting the PKG_CONFIG_PATH environment variable if you
+ installed software in a non-standard prefix.
+ 
+@@ -19739,8 +19731,7 @@
+ 	libglade-2.0
+ 	cspi-1.0 >= 1.3.12
+ 	gtk+-2.0 >= 2.0.0
+-	libgnomeui-2.0
+-	libgail-gnome ) were not met.
++	libgnomeui-2.0 ) were not met.
+ Consider adjusting the PKG_CONFIG_PATH environment variable if you
+ installed software in a non-standard prefix.
+ 
