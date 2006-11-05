@@ -12,9 +12,9 @@ CLIENT ONLY
 2) Modify psclient.cfg
 
     ; Change this line
-    Planeshift.GUI.Skin.Ingame = /this/art/skins/cvs.zip
+    Planeshift.GUI.Skin.Selected = cvs
     ; to
-    Planeshift.GUI.Skin.Ingame = /this/art/skins/default.zip
+    Planeshift.GUI.Skin.Selected = default
 
     ; Uncomment this line
     SndSys.Driver = crystalspace.sndsys.software.driver.oss
@@ -69,9 +69,9 @@ SERVER ONLY
 
 4) Copy worldnet's dict directory to planeshift's data directory
 
-   # cd /usr/local/share/WordNet
-   # mkdir /usr/X11R6/lib/planeshift/data/dict
-   # cp * /usr/X11R6/lib/planeshift/data/dict
+   # cd %%LOCALBASE%%/share/WordNet
+   # mkdir %%LOCALBASE%%/lib/planeshift/data/dict
+   # cp * %%LOCALBASE%%/lib/planeshift/data/dict
 
 5) Start planeshift server
 	
