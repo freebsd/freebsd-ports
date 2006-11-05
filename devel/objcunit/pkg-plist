@@ -1,0 +1,37 @@
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/AbstractExpectation.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/AbstractExpectationCollection.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/AssertionFailedException.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/ExpectationCounter.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/ExpectationGroup.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/ExpectationList.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/ExpectationSet.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/ExpectationValue.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/NSObject-ObjcUnitAdditions.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/ObjcUnit.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/Test.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/TestCase.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/TestFailure.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/TestListener.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/TestResult.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/TestRunner.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/TestSuite.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/_WarningTest.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/MockCoder.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers/MockObjects.h
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Resources/Info-gnustep.plist
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/ObjcUnit
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/libObjcUnit.so
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/libObjcUnit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/ObjcUnit.framework/Versions/A/libObjcUnit.so.%%LIBVERSION%%
+Local/Library/Frameworks/ObjcUnit.framework/Versions/Current
+Local/Library/Frameworks/ObjcUnit.framework/Resources
+Local/Library/Frameworks/ObjcUnit.framework/Headers
+Local/Library/Libraries/libObjcUnit.so
+Local/Library/Libraries/libObjcUnit.so.%%LIBVERSION%%
+Local/Library/Libraries/libObjcUnit.so.%%MAJORLIBVERSION%%
+Local/Library/Headers/ObjcUnit
+@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Resources
+@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions/A/Headers
+@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions/A
+@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions
+@dirrm Local/Library/Frameworks/ObjcUnit.framework
