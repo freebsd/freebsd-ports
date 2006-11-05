@@ -1,0 +1,11 @@
+--- src/modules/graphic/ssggraph/Makefile.orig	Wed Jul 20 03:52:30 2005
++++ src/modules/graphic/ssggraph/Makefile	Mon Oct  9 23:37:51 2006
+@@ -24,7 +24,7 @@
+ 
+ MODULEDIR = modules/graphic
+ 
+-LIBS      = -lplibsl -lplibsm -lplibsg -lplibssg -lplibul -lplibssgaux -lopenal
++LIBS      = -lplibsl -lplibsm -lplibsg -lplibssg -lplibul -lplibssgaux -lopenal -lalut
+ 
+ SHIPDIR   = config
+ 

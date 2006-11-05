@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		torcs
-DISTVERSION=		1.2.4
-PORTREVISION=		2
+DISTVERSION=		1.3.0
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,7 +47,7 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile on FreeBSD-4."
+BROKEN=		Does not compile on FreeBSD-4.
 .endif
 
 .if ${OSVERSION} < 500041

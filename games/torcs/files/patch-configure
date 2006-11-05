@@ -1,11 +1,11 @@
---- configure.orig	Fri Feb  4 23:30:08 2005
-+++ configure	Mon Feb 14 23:05:09 2005
-@@ -4930,13 +4930,13 @@
+--- configure.orig	Sat Oct  7 23:02:55 2006
++++ configure	Mon Oct  9 22:24:36 2006
+@@ -4931,13 +4931,13 @@
  fi
  
  #CFLAGS="-ansi -Wall -Wstrict-prototypes -W"
--ADDCFLAGS="-Wall -fPIC"
-+ADDCFLAGS="$CFLAGS -Wall -fPIC"
+-ADDCFLAGS="-Wall -fPIC -fno-strict-aliasing"
++ADDCFLAGS="$CFLAGS -Wall -fPIC -fno-strict-aliasing"
  # Check whether --enable-debug or --disable-debug was given.
  if test "${enable_debug+set}" = set; then
    enableval="$enable_debug"
