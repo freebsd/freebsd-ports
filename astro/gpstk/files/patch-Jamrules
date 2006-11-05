@@ -1,5 +1,5 @@
 --- Jamrules.orig	Wed Jan 19 19:36:30 2005
-+++ Jamrules	Thu May 12 15:29:05 2005
++++ Jamrules	Sun Nov  5 09:33:26 2006
 @@ -9,7 +9,7 @@
  KEEPOBJS = true ;
  
@@ -9,14 +9,23 @@
  
  # override the built-in EXEMODE
  EXEMODE = 755 ;
-@@ -29,6 +29,10 @@
-    {
+@@ -30,6 +30,10 @@
        case CYGWIN :
           LINKLIBS += -lstdc++ ;
-+
+ 
 +      case FREEBSD :
 +         LINKLIBS += -lstdc++ ;
 +         CCSHARE_FLAGS = -fPIC ;
- 
++
        case LINUX :
           LINKLIBS += -lstdc++ ;
+          CCSHARE_FLAGS = -fPIC ;
+@@ -81,7 +85,7 @@
+ # fix does this need to be forward/backslash independent? darn windows.
+    BINDIR = [ FDirName $(PREFIX) bin ] ;
+    LIBDIR = [ FDirName $(PREFIX) lib ] ;
+-   INCDIR = [ FDirName $(PREFIX) include ] ;
++   INCDIR = [ FDirName $(PREFIX) include/gpstk ] ;
+ }
+ 
+ # debug - edit this as needed.
