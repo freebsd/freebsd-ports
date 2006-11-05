@@ -8,7 +8,7 @@
 PORTNAME=	wmnd
 PORTVERSION=	0.4.12
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.yuv.info/pub/wmnd/releases/
+MASTER_SITES=	http://www.yuv.info/wmnd/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
