@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filter
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.0
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
