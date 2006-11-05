@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	An extremely fast and flexible web server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
