@@ -8,7 +8,7 @@
 PORTNAME=	xtypo
 PORTVERSION=	1.02
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.hipecs.hokudai.ac.jp/pub/unix/ftp.intec.co.jp/
+MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/
 
 MAINTAINER=	mutoh@openedu.org
 COMMENT=	X-based keyboard trainer
