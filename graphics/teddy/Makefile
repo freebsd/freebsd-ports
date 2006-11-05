@@ -33,8 +33,11 @@ PLIST_FILES=	lib/libTeddy.a libdata/pkgconfig/Teddy.pc
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+BROKEN=		Does not compile on FreeBSD >= 5.x
 .endif
+
+DEPRECATED=	No new releases in the past 4 years
+EXPIRATION_DATE=2007-01-01
 
 post-extract:
 	@${CHMOD} +x ${WRKSRC}/configure
