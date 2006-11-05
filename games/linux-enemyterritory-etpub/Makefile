@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	etpub
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	games linux
 MASTER_SITES=	http://et.tjw.org/etpub/dist/
 PKGNAMEPREFIX=	linux-enemyterritory-
