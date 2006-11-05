@@ -8,7 +8,7 @@
 PORTNAME=	cherokee
 PORTVERSION=	0.5.5
 CATEGORIES=	www
-MASTER_SITES=	http://www.0x50.org/download/%SUBDIR%/
+MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

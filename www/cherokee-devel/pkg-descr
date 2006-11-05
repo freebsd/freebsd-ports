@@ -3,4 +3,4 @@ entirely in C, and has no dependencies beyond a standard C library. It
 provides only the most basic HTTP functionality, but is extremely fast and
 small.
 
-WWW: http://www.0x50.org/
+WWW: http://www.cherokee-project.com/
