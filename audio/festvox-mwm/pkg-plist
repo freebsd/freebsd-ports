@@ -10,3 +10,4 @@ share/festival/lib/voices/english/mwm_diphone/group/mwm_di_resLPC.group
 @dirrm share/festival/lib/voices/english/mwm_diphone/festvox
 @dirrm share/festival/lib/voices/english/mwm_diphone/dic
 @dirrm share/festival/lib/voices/english/mwm_diphone
+@dirrmtry share/festival/lib/voices/english
