@@ -1,10 +1,10 @@
---- ldap2dns.c.orig	Fri Dec 16 20:49:47 2005
-+++ ldap2dns.c	Thu Jan 12 18:36:43 2006
-@@ -15,7 +15,7 @@
- #include <unistd.h>
+--- ldap2dns.c.orig	Thu Oct 19 20:54:23 2006
++++ ldap2dns.c	Sun Oct 29 16:41:24 2006
+@@ -18,7 +18,7 @@
+ #include <sys/types.h>
  
- #define UPDATE_INTERVALL 59
--#define LDAP_CONF "/etc/ldap/ldap.conf"
+ #define UPDATE_INTERVAL 59
+-#define LDAP_CONF "/etc/ldap.conf"
 +#define LDAP_CONF "%%PREFIX%%/etc/openldap/ldap.conf"
  #define OUTPUT_DATA 1
  #define OUTPUT_DB 2

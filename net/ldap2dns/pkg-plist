@@ -4,6 +4,6 @@ bin/ldap2dnsd
 %%DATADIR%%/ldap2dns.schema
 %%DATADIR%%/example.ldif
 %%DATADIR%%/axfr2ldap.pl
-%%DATADIR%%/data2ldap.pl
+%%DATADIR%%/data2ldif.pl
 %%DATADIR%%/ldap2tinydns-conf
 @dirrm %%DATADIR%%

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ldap2dns
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.1
 CATEGORIES=	net
-MASTER_SITES=	http://projects.alkaloid.net/dist/ldap2dns/
+MASTER_SITES=	http://projects.alkaloid.net/e107_files/downloads/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Maintain DNS zones using an LDAP directory
@@ -35,6 +35,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/README.html ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/ldap2tinydns-conf ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/axfr2ldap.pl ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/data2ldap.pl ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/data2ldif.pl ${DATADIR}
 
 .include <bsd.port.mk>
