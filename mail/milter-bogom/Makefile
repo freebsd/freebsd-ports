@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-bogom
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.usebox.net/jjm/bogom/ \
 		http://blackshell.usebox.net/bogom/
