@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-cups-manager
 PORTVERSION=	0.31
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -27,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
 		desktopfileutils
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -38,6 +38,8 @@ post-patch:
 		> ${WRKSRC}/gnome-cups-manager.desktop
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
+		${WRKSRC}/libgnomecups/gnome-cups-ui-driver.c
 
 post-install:
 	${MKDIR} ${PREFIX}/share/gnome/applications
