@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
+PORTREVISION=	0
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby extension library to use SDL library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${RUBY_OPENGL_PORTDIR}:patch
