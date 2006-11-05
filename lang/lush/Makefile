@@ -32,6 +32,10 @@ MAN1=		lush.1
 BROKEN=		"Does not build on sparc64"
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not build
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|opt=.+$$||; \
