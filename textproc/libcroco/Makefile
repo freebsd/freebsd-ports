@@ -17,7 +17,7 @@ COMMENT=	CSS2 parsing library
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 libxml2 ltverhack
 
 PLIST_SUB=	VERSION="0.6"

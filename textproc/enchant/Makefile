@@ -17,7 +17,7 @@ COMMENT=	Dictionary/spellchecking framework
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnometarget glib20 ltverhack
 CONFIGURE_ARGS=	--disable-hspell \
 		--disable-uspell
