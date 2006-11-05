@@ -9,6 +9,7 @@ PORTNAME=	metasploit
 DISTVERSION=	3.0-beta-1
 CATEGORIES=	security
 MASTER_SITES=	#
+PKGNAMESUFFIX=	-devel
 DISTNAME=	framework-${DISTVERSION}
 
 MAINTAINER=	onatan@gmail.com
