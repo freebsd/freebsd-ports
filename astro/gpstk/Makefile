@@ -29,6 +29,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${JAM_ENV} ${JAM}
 
 do-install:
+	${MKDIR} ${PREFIX}/include/gpstk
 	cd ${WRKSRC} && ${SETENV} ${JAM_ENV} ${JAM} install
 
 .include <bsd.port.mk>
