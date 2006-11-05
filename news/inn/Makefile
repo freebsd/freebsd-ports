@@ -162,7 +162,7 @@ MAN8=		actsync.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 MAN1+=		startinnfeed.1
 MAN3+=		parsedate.3
 MAN5+=		sasl.conf.5
-MAN8+=		actsyncd.8 inndstart.8
+MAN8+=		actsyncd.8 inndstart.8 innbind.8 tinyleaf.8
 PLIST_SUB+=	NOTCURRENT=""
 .else
 PLIST_SUB+=	NOTCURRENT="@comment "
@@ -222,7 +222,7 @@ post-build:
 post-install:
 .if !defined(WITHOUT_STRIP)
 .    for FILE in ${TO_BE_STRIPPED}
-	${STRIP_CMD} ${INN_NEWSBASE}/${FILE}
+	@[ -e ${INN_NEWSBASE}/${FILE} ] && ${STRIP_CMD} ${INN_NEWSBASE}/${FILE}
 .    endfor
 .endif
 	${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man ${PREFIX}/man/man1 ${PREFIX}/man/man3 \
