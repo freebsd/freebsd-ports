@@ -2864,6 +2864,7 @@ freefonts	ports/x11-fonts/freefonts
 freeglut	ports/graphics/freeglut
 freegrep	ports/textproc/freegrep
 freeguide	ports/misc/freeguide
+freehdl		ports/cad/freehdl
 freeimage	ports/graphics/freeimage
 freeipmi	ports/sysutils/freeipmi
 freelibiberty	ports/devel/freelibiberty
