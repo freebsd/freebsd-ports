@@ -1,3 +1,11 @@
-BSD mail utility with MIME extensions
+Heirloom mailx (formerly known as "nail") is derived from Berkeley
+Mail and provides the functionality of the System V and POSIX mailx
+commands. Additional features include support for MIME, IMAP
+(including caching and disconnected use), POP3, SMTP, S/MIME,
+international character sets, maildir folders, message threading,
+powerful search methods, scoring, and a Bayesian junk mail filter.
+Mailx can be used as a mail batch language in nearly the same way as
+it is used interactively. It can thus act as a mailbox filter, can
+fetch mail from remote accounts, and can send files as attachments.
 
-WWW: http://nail.sourceforge.net/
+WWW: http://heirloom.sourceforge.net/mailx.html

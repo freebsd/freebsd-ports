@@ -137,6 +137,7 @@
     SUBDIR += gubby
     SUBDIR += hashcash
     SUBDIR += hbiff
+    SUBDIR += heirloom-mailx
     SUBDIR += hotwayd
     SUBDIR += ifile
     SUBDIR += ilohamail
@@ -248,7 +249,6 @@
     SUBDIR += mutt-ng
     SUBDIR += mutt_vc_query
     SUBDIR += muttzilla
-    SUBDIR += nail
     SUBDIR += nbsmtp
     SUBDIR += newmail
     SUBDIR += nmh
