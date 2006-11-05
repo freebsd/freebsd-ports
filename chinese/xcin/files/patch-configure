@@ -1,0 +1,68 @@
+--- configure.orig	Tue Nov 27 09:21:17 2001
++++ configure	Sat Apr 22 01:24:08 2006
+@@ -32,6 +32,8 @@
+ ac_help="$ac_help
+   --with-db-lib=PATH        set the library dir of Berkeley DB2/3."
+ ac_help="$ac_help
++  --with-db-name=NAME       set the library name of Berkeley DB."
++ac_help="$ac_help
+   --with-tabe-inc=PATH      set the include dir of libtabe."
+ ac_help="$ac_help
+   --with-tabe-lib=PATH      set the library dir of libtabe."
+@@ -869,6 +871,15 @@
+ fi
+ 
+ 
++# Check whether --with-db_name or --without-db_name was given.
++if test "${with_db_name+set}" = set; then
++  withval="$with_db_name"
++    test x$withval != x && with_db_name="$withval"
++else
++    with_db_name='db'
++fi;
++
++
+ # Check whether --with-tabe_inc or --without-tabe_inc was given.
+ if test "${with_tabe_inc+set}" = set; then
+   withval="$with_tabe_inc"
+@@ -7869,7 +7880,7 @@
+ fi
+ 
+ LIBS="$OLD_LIBS"
+-for f in db db3; do
++for f in $with_db_name; do
+     echo $ac_n "checking for db_create in -l$f""... $ac_c" 1>&6
+ echo "configure:7875: checking for db_create in -l$f" >&5
+ ac_lib_var=`echo $f'_'db_create | sed 'y%./+-%__p_%'`
+@@ -7878,16 +7889,20 @@
+ else
+   ac_save_LIBS="$LIBS"
+ LIBS="-l$f  $LIBS"
++__db_create="db_create"
++if [ "$f" = "db-4.2" ]; then
++  __db_create="db_create_4002"
++fi
+ cat > conftest.$ac_ext <<EOF
+ #line 7883 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char db_create();
++char $__db_create();
+ 
+ int main() {
+-db_create()
++$__db_create()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:7894: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -7914,7 +7929,7 @@
+     test $found = y && break
+ done
+ if test $found = n; then
+-    for f in db db2; do
++    for f in $with_db_name; do
+ 	echo $ac_n "checking for db_open in -l$f""... $ac_c" 1>&6
+ echo "configure:7920: checking for db_open in -l$f" >&5
+ ac_lib_var=`echo $f'_'db_open | sed 'y%./+-%__p_%'`

@@ -1,0 +1,11 @@
+xcin is a Chinese INput application in X, well support in both Traditional
+Chinese(Big5) and Simplified Chinese(GB) charsets. New version of xcin support
+standard XIM too. You can activate one xcin-XIM server, meanwhile, use 
+different locale configuration to input Big5/GB words at the different 
+sessions. This port is current version of xcin, code rewritten by 
+Tung-Han Hsieh <thhsieh@linux.org.tw>.
+
+WWW: http://xcin.linux.org.tw/
+
+Porting to FreeBSD by Yung-Jen Hung <winard@ms11.url.com.tw>
+& Keith Jang <jtjang@gcn.net.tw>.

@@ -1,0 +1,9 @@
+--- src/util/cin2tab/Makefile.in.orig	Sat Sep  8 21:35:30 2001
++++ src/util/cin2tab/Makefile.in	Sun Nov  4 17:09:07 2001
+@@ -25,4 +25,5 @@
+ distclean: clean
+ 	rm -rf Makefile .libs
+ install: $(BIN)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(BIN) $(xcin_binp)
++	mkdir -p $(xcin_modp)/bin
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(BIN) $(xcin_modp)/bin
