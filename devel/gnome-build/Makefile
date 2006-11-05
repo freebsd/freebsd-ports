@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gnomevfs2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_PERL5_RUN=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

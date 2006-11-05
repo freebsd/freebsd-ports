@@ -19,7 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 
 pre-configure:

@@ -19,7 +19,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

@@ -29,7 +29,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeprintui \
 		libgsf_gnome pygtk2 desktopfileutils libgnomeui
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-guile --with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

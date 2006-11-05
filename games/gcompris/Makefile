@@ -32,7 +32,7 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_SDL=	mixer
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS} -lm"
