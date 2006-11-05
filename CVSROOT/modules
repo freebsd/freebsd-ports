@@ -691,6 +691,7 @@ basket		ports/deskutils/basket
 bass		ports/games/bass
 bastet		ports/games/bastet
 batik		ports/graphics/batik
+batmon		ports/sysutils/batmon
 battalion	ports/games/battalion
 battfink	ports/sysutils/battfink
 battleball	ports/games/battleball
