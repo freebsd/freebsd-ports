@@ -1,4 +1,4 @@
-# New ports collection makefile for:	xcin25
+# New ports collection makefile for:	xcin
 # Date created:		18 Oct 1999
 # Whom:			Keith Jang <keith@FreeBSD.org>
 #
@@ -7,7 +7,7 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.3.p2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/xcin/ \
 		ftp://ftp.linux.org.tw/pub/xcin/xcin/devel/ \
@@ -26,12 +26,12 @@ USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib \
-		--with-xcin-dir=${PREFIX}/lib/X11/xcin25 \
+		--with-xcin-dir=${PREFIX}/lib/xcin \
 		--with-db-name=${BDB_LIB_NAME} \
 		--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
@@ -68,32 +68,33 @@ post-patch:
 		${WRKSRC}/cin/gb/Makefile.in
 
 post-install:
+	${LN} -fs ${PREFIX}/bin/xcin2.5 ${PREFIX}/bin/xcin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc
+	${MKDIR} ${DOCSDIR}
 .for DOC in Bugs COPYING CREDITS Changes Cin CopyRight FAQ README \
 		SETUP Todo Usage UserGuide
-	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${PREFIX}/lib/X11/xcin25/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${DOCSDIR}
 .endfor
-	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/En
-	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/En/internal
+	${MKDIR} ${DOCSDIR}/En
+	${MKDIR} ${DOCSDIR}/En/internal
 .for En in README.En SETUP.En Usage.En UserGuide.En
-	${INSTALL_DATA} ${WRKSRC}/doc/En/${En} ${PREFIX}/lib/X11/xcin25/doc/En
+	${INSTALL_DATA} ${WRKSRC}/doc/En/${En} ${DOCSDIR}/En
 .endfor
 .for Eninternal in module.En structer.En
-	${INSTALL_DATA} ${WRKSRC}/doc/En/internal/${Eninternal} ${PREFIX}/lib/X11/xcin25/doc/En/internal
+	${INSTALL_DATA} ${WRKSRC}/doc/En/internal/${Eninternal} ${DOCSDIR}/En/internal
 .endfor
-	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/history
+	${MKDIR} ${DOCSDIR}/history
 	${INSTALL_DATA} ${WRKSRC}/doc/history/Changes-19991011 \
-		${PREFIX}/lib/X11/xcin25/doc/history
-	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/internal
+		${DOCSDIR}/history
+	${MKDIR} ${DOCSDIR}/internal
 .for INTERNAL in IMdkit gen_inp gui_request module structer
 	${INSTALL_DATA} ${WRKSRC}/doc/internal/${INTERNAL} \
-		${PREFIX}/lib/X11/xcin25/doc/internal
+		${DOCSDIR}/internal
 .endfor
-	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/modules
+	${MKDIR} ${DOCSDIR}/modules
 .for MODULES in bimsphone gen_inp im_comm zh_hex
 	${INSTALL_DATA} ${WRKSRC}/doc/modules/${MODULES} \
-		${PREFIX}/lib/X11/xcin25/doc/modules
+		${DOCSDIR}/modules
 .endfor
 .endif
 
