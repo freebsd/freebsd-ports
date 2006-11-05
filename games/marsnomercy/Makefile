@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	marsnomercy
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mars
@@ -29,7 +28,7 @@ SUB_FILES=	mars-nomercy pkg-message
 WRKSRC=		${WRKDIR}/mars-${PORTVERSION}
 
 OPTIONS=	DEBUG	"With additional debug information"	off \
-		OPENGL	"Install binary with opengl support"	off
+		OPENGL	"Install support for opengl"	off
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +40,12 @@ IGNORE=		does not build on FreeBSD 4.x
 SCONS_ARGS+=	debug=1
 .else
 SCONS_ARGS+=	debug=0
+.endif
+
+.if defined(WITH_OPENGL)
+SCONS_ARGS+=	with_opengl=1
+.else
+SCONS_ARGS+=	with_opengl=0
 .endif
 
 do-build:
@@ -58,11 +63,7 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 	@${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${PREFIX}/bin
-.if defined(WITH_OPENGL)
-	@${INSTALL_PROGRAM} ${WRKSRC}/mars_gl ${PREFIX}/libexec/mars
-.else
-	@${INSTALL_PROGRAM} ${WRKSRC}/mars_sdl ${PREFIX}/libexec/mars
-.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/libexec/mars
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -1,12 +1,13 @@
---- SConstruct.orig	Tue Jul 25 03:19:52 2006
-+++ SConstruct	Tue Sep 12 18:56:39 2006
-@@ -1,3 +1,5 @@
+--- SConstruct	Thu Nov  2 07:10:42 2006
++++ SConstruct	Sun Nov  5 14:30:31 2006
+@@ -1,3 +1,6 @@
 +import os
 +import sys
++
  # create build environment and options
  env = Environment()
  opts = Options()
-@@ -40,12 +42,19 @@
+@@ -40,13 +43,19 @@
  
  # PLATFORM posix or pure cygwin
  else:
@@ -20,7 +21,8 @@
 +	env.ParseConfig(SDL_CONFIG + ' --cflags')
 +	env.ParseConfig(SDL_CONFIG + ' --libs')
  	# add additional compiler flags
--	env.Append(CCFLAGS = ['-O2'])
+-	if not int(env['debug']):
+-		env.Append(CXXFLAGS = ['-O2'])
 -
 +	env.Replace(CC = os.environ['CC'])
 +	env.Replace(CXX = os.environ['CXX'])
@@ -30,24 +32,7 @@
  
  # generate help for options
  Help(opts.GenerateHelpText(env))
-@@ -53,7 +62,7 @@
- 
- # build for debug
- if int(env['debug']):
--	env.Append(CCFLAGS = ['-g', '-O0'])
-+	env.Append(CXXFLAGS = ['-g', '-O0'])
- 	# of course no stripping if debug
- 	env['strip'] = 0
- 
-@@ -63,20 +72,20 @@
- 
- # print all warnings
- if int(env['warnings']):
--	env.Append(CCFLAGS = ['-Wall'])
-+	env.Append(CXXFLAGS = ['-Wall'])
- 
- 
- # check for libraries and headers (if not cleaning)
+@@ -69,13 +78,13 @@
  if not env.GetOption('clean'):
  	print ":: Checking for libs"
  	conf = Configure(env)
@@ -64,12 +49,3 @@
  		print 'Did not find libSDL_ttf, exiting!'
  		Exit(1)
  	if int(env['with_opengl']):
-@@ -85,7 +94,7 @@
- 			print 'Try "scons with_opengl=no"'
- 			Exit(1)
- 		else:
--			env.Append(CCFLAGS = ['-DWITH_OPENGL'])
-+			env.Append(CXXFLAGS = ['-DWITH_OPENGL'])
- 	env = conf.Finish()
- 
- 
