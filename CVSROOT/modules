@@ -7807,6 +7807,7 @@ obconf		ports/x11-wm/obconf
 obexapp		ports/comms/obexapp
 obfuscatejs	ports/devel/obfuscatejs
 objc		ports/lang/objc
+objcunit	ports/devel/objcunit
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 obtuner		ports/x11-wm/obtuner
