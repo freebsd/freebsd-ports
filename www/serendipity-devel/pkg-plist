@@ -674,6 +674,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/pngbehavior.htc
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/serendipity_event_browsercompatibility.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_fr.inc.php
@@ -682,6 +683,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_es.inc.php
@@ -905,6 +907,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/36daysago.ttf
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/36daysago.txt
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_fr.inc.php
@@ -948,6 +951,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/chumbly.ttf
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/chumbly.txt
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_es.inc.php
@@ -1783,9 +1787,14 @@
 %%SERENDIPITY%%/templates/wp/trackbacks.tpl
 %%SERENDIPITY%%/templates/wp/wp-layout.css
 %%SERENDIPITY%%/templates_c/.empty
+%%SERENDIPITY%%/tests/gui/README
+%%SERENDIPITY%%/tests/gui/SerendipityTestSuite.php
+%%SERENDIPITY%%/tests/gui/TestConfiguration.php.dist
 %%SERENDIPITY%%/uploads/.empty
 %%SERENDIPITY%%/wfwcomment.php
 @dirrm %%SERENDIPITY%%/uploads
+@dirrm %%SERENDIPITY%%/tests/gui
+@dirrm %%SERENDIPITY%%/tests
 @dirrm %%SERENDIPITY%%/templates_c
 @dirrm %%SERENDIPITY%%/templates/wp
 @dirrm %%SERENDIPITY%%/templates/newspaper/img
