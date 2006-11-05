@@ -6,6 +6,7 @@
 
 PORTNAME=	fsplib
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fsp
@@ -13,17 +14,9 @@ MASTER_SITE_SUBDIR=	fsp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library implementing FSP protocol
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+NO_WRKSUBDIR=	yes
+USE_SCONS=	yes
 
 PLIST_FILES=	include/fsplib.h lib/libfsp.a
-NO_WRKSUBDIR=	yes
-
-do-build:
-	@cd ${WRKSRC} && scons prefix=${PREFIX}
-
-do-install:
-	@cd ${WRKSRC} && scons prefix=${PREFIX} ${INSTALL_TARGET}
-	@${FIND} ${PREFIX}/include/ -name .sconsign -exec ${RM} {} \;
-	@${FIND} ${PREFIX}/lib/ -name .sconsign -exec ${RM} {} \;
 
 .include <bsd.port.mk>
