@@ -13,7 +13,8 @@ inspecting variables, and stepping through code.
   possible. 
 * Conditional breakpoints.
 
-WWW: http://members.nextra.at/johsixt/kdbg.html
+WWW: http://www.kdbg.org/
 
--Chris D. Faulhaber
-jedgar@FreeBSD.org
+-- 
+conrads@cox.net
+
