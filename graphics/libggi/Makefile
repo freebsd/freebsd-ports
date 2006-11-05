@@ -20,7 +20,7 @@ COMMENT=	A flexible drawing library
 LIB_DEPENDS=	gii.1:${PORTSDIR}/devel/libgii
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
