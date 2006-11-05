@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 MAINTAINER=	oli@isnic.is
 COMMENT=	An authoritative only non-recursive name server
 
+CONFLICTS=	nsd-[0-2]*
+
 USE_RC_SUBR=	yes
 
 NSDUSER?=	bind
