@@ -36,6 +36,7 @@
     SUBDIR += egroupware
     SUBDIR += estickies
     SUBDIR += etask
+    SUBDIR += etoile
     SUBDIR += everygui
     SUBDIR += evolution-jescs
     SUBDIR += freemind
