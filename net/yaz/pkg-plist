@@ -11,6 +11,7 @@ include/yaz/charneg.h
 include/yaz/comstack.h
 include/yaz/cql.h
 include/yaz/diagbib1.h
+include/yaz/diagsru_update.h
 include/yaz/diagsrw.h
 include/yaz/ill-core.h
 include/yaz/ill.h
@@ -22,6 +23,7 @@ include/yaz/marcdisp.h
 include/yaz/nfa.h
 include/yaz/nfaxml.h
 include/yaz/nmem.h
+include/yaz/nmem_xml.h
 include/yaz/odr.h
 include/yaz/oid.h
 include/yaz/options.h
@@ -121,6 +123,7 @@ share/aclocal/yaz.m4
 %%DOCSDIR%%/introduction.html
 %%DOCSDIR%%/license.html
 %%DOCSDIR%%/license.other.html
+%%DOCSDIR%%/marc.html
 %%DOCSDIR%%/odr.debugging.html
 %%DOCSDIR%%/odr.html
 %%DOCSDIR%%/odr.programming.html
@@ -138,11 +141,10 @@ share/aclocal/yaz.m4
 %%DOCSDIR%%/soap.xml.html
 %%DOCSDIR%%/tools.html
 %%DOCSDIR%%/tools.log.html
-%%DOCSDIR%%/tools.marc.html
 %%DOCSDIR%%/tools.nmem.html
 %%DOCSDIR%%/tools.oid.html
 %%DOCSDIR%%/zoom.events.html
-%%DOCSDIR%%/zoom.ext.html
+%%DOCSDIR%%/zoom.extendedservices.html
 %%DOCSDIR%%/zoom.html
 %%DOCSDIR%%/zoom.options.html
 %%DOCSDIR%%/zoom.query.html
