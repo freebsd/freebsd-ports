@@ -3,13 +3,13 @@
 #
 # This files contains:
 #      - make options output
-#      - apache2 man/docs routines
+#      - apache22 man/docs routines
 #
 # $FreeBSD$
 #
 
 ## Available knobs:
-## By default, modules are compiled as dynamically loadable (DSO) modules.
+## By default, modules are compiled as dynamically loadable modules (DSO).
 ##
 ## Modules knobs philosophy:
 ## Modules are split in categories, "make show-categories" shows you 
@@ -24,11 +24,12 @@
 ##   Apache-related
 ##      WITH_MPM:                 prefork (default)
 ##                                worker
-##                                perchild (deprecated)
-##                                threadpool (testing purpose only)
+##                                event
+##                                itk
 ##      WITH_HTTP_PORT:           default: 80
 ##      WITH_LDAP:                Enable LDAP support (mod_auth_ldap) (implies WITH_LDAP_MODULES)
-##      WITH_(MYSQL|PGSQL|SQLITE): Enable SQL backend *dbd
+##      WITH_(MYSQL|PGSQL|SQLITE): Enable SQL backend for dbd and apr_dbd.
+##                                 When MySQL is chosen, threads are enabled.
 ##      WITHOUT_V4MAPPED
 ##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 
 ##                                connections
@@ -37,7 +38,8 @@
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
 ##                                ndbm (default)
 ##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3,
-##                                db4, db41, db42 or FreeBSD (1.85)(default)
+##                                db4, db41, db42, db43, db44 or FreeBSD 
+##                                (1.85, default)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
 ##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
 ##                                WITH_STATIC_MODULES)
