@@ -85,8 +85,8 @@ post-patch:
 		${WRKSRC}/avahi-daemon/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%RC_SUBR%%|${RC_SUBR}| ; \
 	    	s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
-		${WRKSRC}/initscripts/freebsd/avahi-dnsconfd.sh.in \
-		${WRKSRC}/initscripts/freebsd/avahi-daemon.sh.in
+		${WRKSRC}/initscript/freebsd/avahi-dnsconfd.sh.in \
+		${WRKSRC}/initscript/freebsd/avahi-daemon.sh.in
 
 post-install:
 .if !defined(PACKAGE_BUILDING)

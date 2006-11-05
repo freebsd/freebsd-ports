@@ -1,5 +1,5 @@
---- initscripts/freebsd/avahi-daemon.sh.in.orig	Sun Nov  5 12:35:16 2006
-+++ initscripts/freebsd/avahi-daemon.sh.in	Sun Nov  5 12:36:51 2006
+--- initscript/freebsd/avahi-daemon.sh.in.orig	Sun Nov  5 12:35:16 2006
++++ initscript/freebsd/avahi-daemon.sh.in	Sun Nov  5 12:36:51 2006
 @@ -9,10 +9,12 @@
  # Avahi's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
  #
