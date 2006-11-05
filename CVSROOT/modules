@@ -2384,6 +2384,7 @@ etherboot	ports/net/etherboot
 etk		ports/x11-toolkits/etk
 etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
+etoile		ports/deskutils/etoile
 etrace		ports/net/etrace
 ettercap	ports/net-mgmt/ettercap
 etunnel		ports/net/etunnel
