@@ -31,7 +31,11 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ( ${ARCH} == "alpha" && ${OSVERSION} > 502102 ) || ${ARCH} == "sparc64"
-BROKEN=		"Configure fails on alpha 5.x and sparc64"
+BROKEN=		Configure fails on alpha 5.x and sparc64
+.endif
+
+.if ${OSVERSION} >= 700000
+WITH_FORTRAN=	yes
 .endif
 
 .include <bsd.port.post.mk>
