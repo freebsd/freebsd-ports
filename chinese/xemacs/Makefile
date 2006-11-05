@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	20.4
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES=	chinese editors
 MASTER_SITES=	ftp://ftp.tnt.uni-hannover.de/pub/editors/xemacs/20.4/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-mule${EXTRACT_SUFX}
