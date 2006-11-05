@@ -624,6 +624,7 @@
     SUBDIR += py-mantissa
     SUBDIR += py-medusa
     SUBDIR += py-mp-random
+    SUBDIR += py-netstring
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
     SUBDIR += py-pypcap
