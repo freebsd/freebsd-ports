@@ -7,7 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.14
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -20,6 +20,8 @@ LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_GNOME?=	gnomehack ltverhack glib20
+USE_GNOME_SUBR=yes
+USE_RC_SUBR=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -81,6 +83,10 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \
 		${WRKSRC}/avahi-daemon/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%RC_SUBR%%|${RC_SUBR}| ; \
+	    	s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
+		${WRKSRC}/initscripts/freebsd/avahi-dnsconfd.sh.in \
+		${WRKSRC}/initscripts/freebsd/avahi-daemon.sh.in
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
