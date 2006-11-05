@@ -14,7 +14,7 @@ MAINTAINER=	clive@FreeBSD.org
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
-		xcin2.5:${PORTSDIR}/chinese/xcin25
+		xcin2.5:${PORTSDIR}/chinese/xcin
 .endif
 
 WITH_XPG4=	yes
