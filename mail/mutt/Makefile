@@ -29,6 +29,7 @@ MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
 CONFLICTS=	mutt-devel-*
+.include <bsd.port.pre.mk>
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 .if defined(PACKAGE_BUILDING) && !defined (MUTT_LITE)
@@ -122,8 +123,9 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .if exists(${LOCALBASE}/bin/krb5-config)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
-.else
+.elif (defined(MAKE_KERBEROS5) && (${OSVERSION} > 500105)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
+USE_KRB5_SYS=YES
 .endif
 .endif
 MAN1=		mutt.1 mutt_dotlock.1
@@ -147,7 +149,7 @@ post-patch::
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
-.if !exists(${LOCALBASE}/bin/krb5-config)
+.if defined(USE_KRB5_SYS)
 	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \
 		${WRKSRC}/imap/auth_gss.c
@@ -209,4 +211,4 @@ post-install:
 	@${ECHO} ""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
