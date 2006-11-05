@@ -1,0 +1,5 @@
+The goals of the FreeHDL project are to develop a VHDL simulator that has
+a graphical waveform viewer and a source level debugger. It also aims at
+VHDL-93 compliancy. The project is at a very early development stage.
+
+WWW: http://www.freehdl.seul.org/
