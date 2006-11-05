@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_FILES=	include/svg-cairo.h \
 		lib/libsvg-cairo.a \
 		lib/libsvg-cairo.la \

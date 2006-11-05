@@ -22,7 +22,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprint libglade2 \
 		libgsf_gnome ltverhack
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

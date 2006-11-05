@@ -26,7 +26,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel intlhack
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

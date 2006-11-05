@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GCC=	3.4
 USE_GMAKE=	yes
 LATEST_LINK=	libsigc++20
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ COMMENT?=	A file and directory monitoring system
 
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack glib20
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \

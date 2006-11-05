@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A simple network library built upon Glib-2
 
 USE_GNOME=	gnomehack glib20
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)
