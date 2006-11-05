@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.9
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/tkabber/
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 
-SUBDIRS=	aniemoteicons emoticons-tkabber ifaceck ifacetk plugins \
+SUBDIRS=	aniemoteicons emoticons-tkabber ifacetk plugins \
 		jabberlib-tclxml pixmaps sounds textundo msgs mclistbox-1.02
 
 do-install:
