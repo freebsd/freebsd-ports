@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.sh.bin
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Unreal Tournament 2003 demo
 
-ONLY_FOR_ARCHS=	i386 amd64
 USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_PACKAGE=	Distfile is 130MB, set FORCE_PACKAGE if you really want to build this package

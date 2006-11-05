@@ -18,7 +18,6 @@ DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
 
-ONLY_FOR_ARCHS=	i386 amd64
 USE_ZIP=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
