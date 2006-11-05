@@ -15,5 +15,9 @@
 %%FLOWVIEWERDIR%%/FlowTracker_Links.png
 %%FLOWVIEWERDIR%%/FlowViewer.png
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%FLOWVIEWERDIR%%
+@dirrmtry %%FLOWVIEWERDIR%%/reports
+@dirrmtry %%FLOWVIEWERDIR%%/graphs
+@dirrmtry %%FLOWVIEWERDIR%%/tracker
+@dirrmtry %%FLOWVIEWERDIR%%/tmp
+@dirrmtry %%FLOWVIEWERDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
