@@ -8,7 +8,7 @@
 PORTNAME=	tkirc
 PORTVERSION=	2.46
 CATEGORIES=	irc tk83
-MASTER_SITES=	ftp://ftp.netsplit.de/pub/tcltk/
+MASTER_SITES=	http://netsplit.de/tkirc2/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
