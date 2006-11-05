@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CJKUnifonts
-PORTVERSION=	0.1.20060903
+PORTVERSION=	0.1.20060928
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://yilan.twbbs.org/distfiles/:uming \
 		http://ftp.debian.org/debian/pool/main/t/ttf-arphic-uming/:uming \
