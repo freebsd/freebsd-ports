@@ -8,7 +8,8 @@
 PORTNAME=	bubblegum
 PORTVERSION=	1.12
 CATEGORIES=	security
-MASTER_SITES=	http://arbornet.org/~bjk/bubblegum/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bjk
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watch a file for changes
