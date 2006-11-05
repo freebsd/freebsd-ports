@@ -33,7 +33,19 @@ yesno() {
 }
 
 if [ ":$2" = ":POST-INSTALL" ]; then
-    if [ `grep monthly_statistics /etc/periodic.conf | wc -l` = 0 ]; then
+    if [ -f "/etc/periodic.conf" ]; then
+        if [ `grep monthly_statistics /etc/periodic.conf | wc -l` = 0 ]; then
+            if yesno "Would you like to activate monthly reporting in /etc/periodic.conf" n; then
+                echo "monthly_statistics_enable=\"YES\"" >> /etc/periodic.conf
+                if yesno "Would you like to send a list of installed hardware as well" n; then
+                    echo "monthly_statistics_report_devices=\"YES\"" >> /etc/periodic.conf
+                fi
+                if yesno "Would you like to run it now" y; then
+                   /usr/local/etc/periodic/monthly/300.statistics
+                fi
+            fi
+        fi
+    elif [ ! -f "/etc/periodic.conf" ]; then
         if yesno "Would you like to activate monthly reporting in /etc/periodic.conf" n; then
             echo "monthly_statistics_enable=\"YES\"" >> /etc/periodic.conf
             if yesno "Would you like to send a list of installed hardware as well" n; then
