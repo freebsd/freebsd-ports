@@ -1,21 +1,23 @@
---- configure.in.orig	Thu May 11 22:06:55 2006
-+++ configure.in	Wed Jun 28 22:22:07 2006
-@@ -634,6 +634,10 @@
+--- configure.in.orig	Sat Sep 16 16:10:20 2006
++++ configure.in	Thu Oct 12 17:57:12 2006
+@@ -653,6 +653,11 @@
  
  test $OPT_DISABLE_AVR = 0 && AC_CONFIG_FILES([src/avr/Makefile])
  
 +if test $OPT_DISABLE_DS390 = 0 -o $OPT_DISABLE_MCS51 = 0; then
-+  AC_CONFIG_FILES([as/mcs51/Makefile])
++  AC_CONFIG_FILES([as/mcs51/Makefile
++                   as/link/mcs51/Makefile])
 +fi
 +
  if test $OPT_DISABLE_DS390 = 0; then
    AC_CONFIG_FILES([src/ds390/Makefile])
    test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/ds390/Makefile])
-@@ -652,7 +656,6 @@
+@@ -671,8 +676,6 @@
  
  if test $OPT_DISABLE_MCS51 = 0; then
    AC_CONFIG_FILES([src/mcs51/Makefile
 -                   as/mcs51/Makefile
+-                   as/link/mcs51/Makefile
                     debugger/mcs51/Makefile])
    test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/mcs51/Makefile
                                                         device/lib/small/Makefile
