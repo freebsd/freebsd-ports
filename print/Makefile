@@ -199,6 +199,7 @@
     SUBDIR += pdfmerge
     SUBDIR += pdftk
     SUBDIR += pdq
+    SUBDIR += pear-File_PDF
     SUBDIR += pecl-panda
     SUBDIR += pecl-pdflib
     SUBDIR += perlftlib
