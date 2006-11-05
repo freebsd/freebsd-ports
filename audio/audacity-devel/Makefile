@@ -9,6 +9,7 @@ PORTVERSION=	1.3.0b
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -16,6 +17,8 @@ COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
+
+CONFLICTS=	audacity-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}-beta
 GNU_CONFIGURE=	yes
