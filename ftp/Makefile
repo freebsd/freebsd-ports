@@ -36,6 +36,7 @@
     SUBDIR += ftptool
     SUBDIR += gftp
     SUBDIR += gnusget
+    SUBDIR += gnustep-ftp
     SUBDIR += gollem
     SUBDIR += greed
     SUBDIR += gwget
