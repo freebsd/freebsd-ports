@@ -1,0 +1,13 @@
+This module can be used to convert between two of the LMAP (Lightweight
+MTA Authentication Protocol) formats currently being proposed:
+
+  CID = Microsoft's Caller-ID
+  SPF = Sender Policy Framework
+
+It will convert an XML-fragment as proposed by CID to a record that can
+be added to DNS as proposed by SPF.
+
+SEE ALSO
+
+  CID: http://www.microsoft.com/mscorp/twc/privacy/spam_callerid.mspx
+  SPF: http://spf.pobox.com/
