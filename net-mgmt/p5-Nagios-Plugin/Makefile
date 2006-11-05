@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Nagios-Plugin
-PORTVERSION=		0.12
+PORTVERSION=		0.14
 CATEGORIES=		net-mgmt perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TO/TONVOON
@@ -18,7 +18,9 @@ COMMENT=		Object oriented helper routines for Nagios plugin
 PERL_CONFIGURE=		yes
 
 MAN3=			Nagios::Plugin.3 \
-			Nagios::Plugin::Base.3 \
+			Nagios::Plugin::ExitResult.3 \
+			Nagios::Plugin::Functions.3 \
+			Nagios::Plugin::Getopt.3 \
 			Nagios::Plugin::Performance.3 \
 			Nagios::Plugin::Range.3 \
 			Nagios::Plugin::Threshold.3 \
