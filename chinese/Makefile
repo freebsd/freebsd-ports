@@ -132,7 +132,7 @@
     SUBDIR += vflib
     SUBDIR += vim-scdoc
     SUBDIR += wenju
-    SUBDIR += xcin25
+    SUBDIR += xcin
     SUBDIR += xemacs
     SUBDIR += xemacs21
     SUBDIR += xmms
