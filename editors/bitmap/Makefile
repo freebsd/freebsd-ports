@@ -41,8 +41,8 @@ PORTCLASS?=	master
 # Setup EMACS_PORT_NAME variable.
 .if (${PORTCLASS} == "master")
 USE_EMACS=	yes
-EMACS_PORT_NAME=	emacs21
-DEPPORT_SUFFIX=		
+EMACS_PORT_NAME?=	emacs21
+DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
 .endif
@@ -67,6 +67,10 @@ MAKE_ARGS=	PREFIX="${LOCALBASE}" \
 # depends on apel
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
+DESCR=		${PKGDIR}/pkg-descr.emacs21
+PLIST=		${PKGDIR}/pkg-plist.emacs21
+.endif
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
