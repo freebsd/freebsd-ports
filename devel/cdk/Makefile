@@ -21,6 +21,7 @@ COMMENT=	Curses Development Kit for speedy development of full screen programs
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
+NOPRECIOUSSOFTMAKEVARS=	yes # to many _MLINKS
 
 .include <bsd.port.pre.mk>
 
