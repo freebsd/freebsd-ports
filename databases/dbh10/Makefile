@@ -16,8 +16,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Based Hashtables
 
+CONFLICTS=	dbh-[2-9]*
+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+LATEST_LINK=	dbh10
 
 .include <bsd.port.mk>
