@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	snort_inline
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.4.5
 CATEGORIES=	security
 MASTER_SITES=	http://freebsd.rogness.net/ports/snort_inline/
-DISTNAME=	snort_inline-2.3.0-RC1
 
 MAINTAINER=	nick@rogness.net
 COMMENT=	An inline IPS system based on snort using ipfw
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
-
-WRKSRC=		${WRKDIR}/snort_inline-2.3.0-RC1
 
 USE_GPG=	yes
 SIG_SUFFIX=	.asc
@@ -26,9 +22,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-inline --enable-ipfw
 
-BUILD_DEPENDS+=		libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
-CONFIGURE_ARGS+=	--with-libnet-includes=${LOCALBASE}/include \
-			--with-libnet-libraries=${LOCALBASE}/lib
+LIB_DEPENDS+=		dnet:${PORTSDIR}/net/libdnet
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
@@ -55,14 +49,20 @@ LDFLAGS+=		-lssl -lcrypto
 CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
-MAN8=		snort.8
+MAN8=		snort.8 snort_inline.8
 DOCS=		ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/faq* doc/NEWS \
 		doc/README* doc/TODO doc/USAGE doc/*.pdf
+
+RULE_PATH=	${DATADIR}/rules
 
 USE_RC_SUBR=	snort.sh
 
 post-patch:
 	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
+	${REINPLACE_CMD} "s,/etc/snort_inline/drop-rules,${RULE_PATH}," ${WRKSRC}/etc/snort_inline.conf
+	${REINPLACE_CMD} "s,$RULE_PATH/classification.config,${DATADIR}/classification.config," ${WRKSRC}/etc/snort_inline.conf
+	${REINPLACE_CMD} "s,$RULE_PATH/reference.config,${DATADIR}/reference.config," ${WRKSRC}/etc/snort_inline.conf
+	${REINPLACE_CMD} -e "s/^unicode.map/\/usr\/local\/share\/snort_inline\/unicode.map/" ${WRKSRC}/etc/snort_inline.conf
 
 pre-configure:
 	@${ECHO} ""
@@ -72,7 +72,7 @@ pre-configure:
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}
+	@${MKDIR} ${RULE_PATH}
 	${INSTALL_DATA} ${WRKSRC}/etc/classification.config \
 		${DATADIR}/classification.config-sample
 	[ -f ${DATADIR}/classification.config ] || \
@@ -82,7 +82,13 @@ post-install:
 		${DATADIR}/reference.config-sample
 	[ -f ${DATADIR}/reference.config ] ||  \
 		${CP} ${DATADIR}/reference.config-sample ${DATADIR}/reference.config
-.for f in snort.conf snort_inline.conf unicode.map threshold.conf
+	${INSTALL_DATA} ${WRKSRC}/etc/threshold.conf \
+		${DATADIR}/threshold.conf-sample
+	[ -f ${DATADIR}/threshold.conf ] ||  \
+		${CP} ${DATADIR}/threshold.conf-sample ${DATADIR}/threshold.conf
+	${INSTALL_DATA} ${WRKSRC}/etc/unicode.map \
+		${DATADIR}/unicode.map
+.for f in snort.conf snort_inline.conf
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
 	[ -f ${PREFIX}/etc/${f} ] || \
 		${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
