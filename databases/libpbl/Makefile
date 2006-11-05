@@ -8,13 +8,11 @@
 PORTNAME=	libpbl
 PORTVERSION=	1.03
 CATEGORIES=	databases
-MASTER_SITES=	http://mission.base.com/peter/source/
+MASTER_SITES=	http://www.mission-base.com/peter/source/
 DISTNAME=	pbl_1_03
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Peter Graf's Program Base Library
-
-BROKEN=		Checksum mismatch
 
 ALL_TARGET=	libpbl.a
 MAKEFILE=	makefile
