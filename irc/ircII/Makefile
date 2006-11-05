@@ -8,9 +8,8 @@
 PORTNAME=	ircii
 PORTVERSION=	20040820
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
-		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
-		ftp://ftp.sergei.cc/pub/ircII/
+MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/old/ \
+		ftp://ftp.irc.org/irc/clients/unix/ircII/old
 
 MAINTAINER=	sylvioc@gmail.com
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
