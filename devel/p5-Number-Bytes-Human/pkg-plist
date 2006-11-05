@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Bytes/Human/.packlist
+%%SITE_PERL%%/Number/Bytes/Human.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Bytes/Human
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Bytes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
+@dirrmtry %%SITE_PERL%%/Number/Bytes
+@dirrmtry %%SITE_PERL%%/Number
