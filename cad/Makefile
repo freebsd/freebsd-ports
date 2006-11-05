@@ -21,6 +21,7 @@
     SUBDIR += electric-ng
     SUBDIR += fandango
     SUBDIR += feappv
+    SUBDIR += freehdl
     SUBDIR += geda
     SUBDIR += geda-docs
     SUBDIR += geda-examples
