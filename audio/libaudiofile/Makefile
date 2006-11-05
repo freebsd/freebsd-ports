@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A sound library for SGI audio file
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	osalp-0.7.*

@@ -20,7 +20,7 @@ USE_GNOME=	gnometarget
 LIBTOOLFILES=	configure libcharset/configure
 CONFIGURE_ARGS=	--enable-static \
 		--without-libintl-prefix
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_open.3 iconv_close.3
