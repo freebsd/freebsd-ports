@@ -1,0 +1,13 @@
+Local/Applications/batmon.app/Resources/Info-gnustep.plist
+Local/Applications/batmon.app/Resources/LICENSE
+Local/Applications/batmon.app/Resources/README
+Local/Applications/batmon.app/Resources/batmon.desktop
+Local/Applications/batmon.app/Resources/batmon.gorm/data.classes
+Local/Applications/batmon.app/Resources/batmon.gorm/data.info
+Local/Applications/batmon.app/Resources/batmon.gorm/objects.gorm
+Local/Applications/batmon.app/batmon
+Local/Applications/batmon.app/library_paths.openapp
+Local/Applications/batmon.app/stamp.make
+@dirrm Local/Applications/batmon.app/Resources/batmon.gorm
+@dirrm Local/Applications/batmon.app/Resources
+@dirrm Local/Applications/batmon.app

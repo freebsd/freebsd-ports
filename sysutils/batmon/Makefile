@@ -1,0 +1,28 @@
+# New ports collection makefile for:    batmon
+# Date created:         05 Nov 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	batmon
+PORTVERSION=	0.2
+CATEGORIES=	sysutils
+MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep battery monitor for laptops
+
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+MAKEFILE=	GNUmakefile
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
+		${WRKSRC}/GNUmakefile
+
+.include <bsd.port.mk>

@@ -1,0 +1,5 @@
+Battery Monitor is a battery monitor for laptops. It displays the current
+status of the battery (charge/discharge and energy level) as well as some
+information about the general health of the cell.
+
+WWW: http://www.nongnu.org/gap/batmon/index.html

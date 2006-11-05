@@ -40,6 +40,7 @@
     SUBDIR += bacula-server
     SUBDIR += bacula-server-devel
     SUBDIR += barry
+    SUBDIR += batmon
     SUBDIR += battfink
     SUBDIR += battmond
     SUBDIR += bbapm
