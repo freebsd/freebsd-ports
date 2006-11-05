@@ -1,0 +1,47 @@
+--- etc/xcinrc.FREEBSD.orig	Thu Nov 29 21:50:42 2001
++++ etc/xcinrc.FREEBSD	Sat Apr 20 02:08:58 2002
+@@ -75,7 +75,7 @@
+           (BEEP_WRONG           YES)
+           (BEEP_DUPCHAR         NO)
+           (TSI_FNAME            "%tabe_data%tsi.db")
+-	  (HINT_SELECT		NO)
++	  (HINT_SELECT		YES)
+ 	  (HINT_TSI		NO)))
+ 
+ (define bimsphone_default
+@@ -126,31 +126,27 @@
+ 
+ (define phone@big5
+ 	'((SETKEY		3)
+-	  (END_KEY		YES)
+-	  (BEEP_DUPCHAR		YES)))
++	  (END_KEY		YES)))
+ 
+ (define jyutping@big5
+ 	'((SETKEY		4)
+-	  (END_KEY		YES)
+-	  (BEEP_DUPCHAR		YES)))
++	  (END_KEY		YES)))
+ 
+ (define bimsphone@big5
+ 	'((SETKEY		6)
+ 	  (MODULE		"bimsphone")))
+ 
+ (define bimspinyin@big5
+-	'((SETKEY		7)
++	'((SETKEY		5)
+ 	  (MODULE		"bimsphone")))
+ 
+ (define array30@big5
+ 	'((SETKEY		8)
+-      	  (BEEP_DUPCHAR		YES)
+ 	  (DISABLE_SEL_LIST	"w")
+ 	  (KEYSTROKE_REMAP	"t:0xaaba;T:0xaaba;")))
+ 
+ (define jyutping0@big5
+-	'((SETKEY		9)
+-	  (BEEP_DUPCHAR		YES)))
++	'((SETKEY		9)))
+ 
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

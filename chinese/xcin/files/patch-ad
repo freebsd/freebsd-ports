@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Sep 22 00:41:41 2001
++++ src/Makefile.in	Sun Nov  4 17:20:59 2001
+@@ -9,7 +9,7 @@
+ LIB	= ${xcinlib} -lXimd -lim_comm lib/libxcin.la \
+ 	  ${x_libraries} ${locale_lib} ${dl_lib} ${intl_lib} -lm
+ 
+-BIN	= xcin
++BIN	= xcin2.5
+ SRC	= xcin_main.c module.c gui.c xim.c xim_IC.c fkey.c gui_main.c \
+ 	  gui_menusel.c gui_overspot.c gui_main2.c
+ OBJ	= $(SRC:.c=.o)

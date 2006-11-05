@@ -1,0 +1,11 @@
+--- po/Makefile.in.orig	Sun Oct  8 12:12:14 2000
++++ po/Makefile.in	Mon Oct  9 01:11:33 2000
+@@ -27,7 +27,7 @@
+ install: 
+ 	if [ "$(GNU_GETTEXT)" = 1 ]; then \
+ 	    for l in $(LC_MESG); do \
+-		msgpath=$(xcin_msgp)/$$l/LC_MESSAGES; \
++		msgpath=$(xcin_msgp)/zh_TW.Big5/LC_MESSAGES; \
+ 		if [ ! -d $$msgpath ]; then \
+ 	            $(INSTALL) -d $$msgpath; fi; \
+ 	        msgfmt -o $$msgpath/xcin.mo xcin-$$l.po; \
