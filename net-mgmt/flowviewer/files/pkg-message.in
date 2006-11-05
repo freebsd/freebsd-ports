@@ -8,10 +8,10 @@ and edit it to suit your needs.
 To make FlowViewer available through your web site, I suggest
 that you add something like the following to httpd.conf:
 
-    Alias /FlowViewer/ "%%FLOWVIEWERDIR%%"
+    Alias /FlowViewer/ "%%FLOWVIEWERDIR%%/"
 
 
-    <Directory "%%FLOWVIEWERDIR%%">
+    <Directory "%%FLOWVIEWERDIR%%/">
         Options +ExecCGI
         AddHandler cgi-script .cgi
         Order allow,deny

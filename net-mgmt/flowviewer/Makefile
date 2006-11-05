@@ -61,6 +61,12 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/FlowTracker.png ${FLOWVIEWERDIR}
 	@${INSTALL_DATA} ${WRKSRC}/FlowTracker_Links.png ${FLOWVIEWERDIR}
 	@${INSTALL_DATA} ${WRKSRC}/FlowViewer.png ${FLOWVIEWERDIR}
+	@${MKDIR} ${FLOWVIEWERDIR}/tmp ${FLOWVIEWERDIR}/reports \
+	${FLOWVIEWERDIR}/graphs ${FLOWVIEWERDIR}/tracker 
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${FLOWVIEWERDIR}/tmp \
+	${FLOWVIEWERDIR}/reports ${FLOWVIEWERDIR}/graphs \
+	${FLOWVIEWERDIR}/tracker
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

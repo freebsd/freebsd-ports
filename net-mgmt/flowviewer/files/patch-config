@@ -1,6 +1,6 @@
---- FlowViewer_Configuration.pm.dist	Tue Oct 17 23:39:53 2006
-+++ FlowViewer_Configuration.pm	Wed Oct 18 00:19:10 2006
-@@ -43,22 +43,25 @@
+--- FlowViewer_Configuration.pm.orig	Wed Oct  4 23:19:00 2006
++++ FlowViewer_Configuration.pm	Thu Nov  2 22:21:03 2006
+@@ -43,22 +43,26 @@
  
  # Directories and Files:
  
@@ -12,7 +12,6 @@
 -$tracker_short           = "/FlowTracker";
 -$cgi_bin_directory       = "/htp/cgi-bin/FlowViewer_3.0";
 -$cgi_bin_short           = "/cgi-bin/FlowViewer_3.0";
--$work_directory          = "/tmp";
 +$reports_directory       = "%%FLOWVIEWERDIR%%/reports";
 +$reports_short           = "/FlowViewer/reports";
 +$graphs_directory        = "%%FLOWVIEWERDIR%%/graphs";
@@ -25,11 +24,12 @@
 +$reports_short           = "/FlowViewer/reports";
 +$graphs_directory        = "%%FLOWVIEWERDIR%%/graphs";
 +$graphs_short            = "/FlowViewer/graphs";
+ $work_directory          = "/tmp";
  $names_directory         = "/tmp";
 -$filter_directory        = "/htp/cgi-bin/Flow_Temp/FlowTracker_Filters";
 -$rrdtool_directory       = "/htp/cgi-bin/Flow_Temp/FlowTracker_RRDtool";
-+$filter_directory        = "%%FLOWVIEWERDIR%%/tracker_filters";
-+$rrdtool_directory       = "%%FLOWVIEWERDIR%%/tracket_rrdtools";
++$filter_directory        = "%%FLOWVIEWERDIR%%/tmp/filters";
++$rrdtool_directory       = "%%FLOWVIEWERDIR%%/tmp/rrdtools";
  
 -$flow_data_directory     = "/htp/flows";
 -$flow_bin_directory      = "/usr/bin";
