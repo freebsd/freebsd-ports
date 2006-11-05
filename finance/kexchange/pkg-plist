@@ -35,12 +35,6 @@ share/locale/fi/LC_MESSAGES/kexchange.mo
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm share/doc/HTML/en/kexchange
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML
