@@ -16,6 +16,6 @@ COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

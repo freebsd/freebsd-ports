@@ -20,7 +20,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	JW=false
 USE_GETOPT_LONG=yes
