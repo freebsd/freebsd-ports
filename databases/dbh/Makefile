@@ -15,6 +15,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Based Hashtables
 
+CONFLICTS=	dbh-[0-3]*
+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
