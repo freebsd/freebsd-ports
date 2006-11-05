@@ -17,6 +17,8 @@ COMMENT=	Audacity is a GUI editor for digital audio waveforms
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
+CONFLICTS=	audacity-devel-[0-9]*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
