@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.3.3.2
+PORTVERSION=	1.3.3.4
 CATEGORIES=	print editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -32,6 +32,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+USE_LDCONFIG=	yes
 
 PLIST_SUB+=	SCRIBUS_VERSION=${PORTVERSION}
 MAN1=		scribus.1
@@ -41,6 +42,10 @@ MANLANG=	"" pl
 
 .if ${OSVERSION} < 500035
 CXXFLAGS+=	-fpermissive
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
 .endif
 
 post-patch:
