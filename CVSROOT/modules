@@ -16036,7 +16036,7 @@ zh-ve		ports/chinese/ve
 zh-vflib	ports/chinese/vflib
 zh-vim-scdoc	ports/chinese/vim-scdoc
 zh-wenju	ports/chinese/wenju
-zh-xcin25	ports/chinese/xcin25
+zh-xcin		ports/chinese/xcin
 zh-xemacs	ports/chinese/xemacs
 zh-xemacs21	ports/chinese/xemacs21
 zh-xmms		ports/chinese/xmms
