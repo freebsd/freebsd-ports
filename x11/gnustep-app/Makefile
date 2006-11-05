@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -55,6 +55,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	SQLClient:databases/sqlclient
 USE_GNUSTEP_LOCAL_LIBS+=	WebServer:www/webserver
 USE_GNUSTEP_LOCAL_LIBS+=	StepTalk:lang/steptalk
 USE_GNUSTEP_LOCAL_LIBS+=	MathArray:math/matharray
+USE_GNUSTEP_LOCAL_LIBS+=	ObjcUnit:devel/objcunit
 
 USE_GNUSTEP_LOCAL_APPS+=	Gomoku:games/gomoku.app
 USE_GNUSTEP_LOCAL_APPS+=	GNUMail:mail/gnumail
@@ -96,6 +97,9 @@ USE_GNUSTEP_LOCAL_APPS+=	Duncan:textproc/duncan
 USE_GNUSTEP_LOCAL_APPS+=	Jishyo:japanese/jishyo
 USE_GNUSTEP_LOCAL_APPS+=	GMines:games/gmines
 USE_GNUSTEP_LOCAL_APPS+=	InnerSpace:x11/innerspace
+USE_GNUSTEP_LOCAL_APPS+=	FTP:ftp/gnustep-ftp
+USE_GNUSTEP_LOCAL_APPS+=	DictionaryReader:deskutils/etoile
+USE_GNUSTEP_LOCAL_APPS+=	batmon:sysutils/batmon
 
 do-install:	# empty
 
