@@ -719,4 +719,11 @@ install_cmd=dhcpd_install
 uninstall_cmd=dhcpd_uninstall
 extra_commands="install uninstall"
 
+# Override /etc/rc.subr JID determiniation, because it doesn't
+# work when we launch dhcpd in a jail.
+if checkyesno dhcpd_jail_enable ; then
+	read pid junk < $pidfile 2>/dev/null
+	[ -n "$pid" ] && JID=`ps -o jid= -p $pid`
+fi
+
 run_rc_command "$1"
