@@ -9,7 +9,7 @@ PORTVERSION=		1.6
 PORTREVISION=		1
 PORTEPOCH=		2
 CATEGORIES=		polish net-im
-MASTER_SITES=		http://dev.null.pl/ekg/
+MASTER_SITES=		http://ekg.chmurka.net/
 
 MAINTAINER=		alex@bsdguru.org
 COMMENT=		Text-mode Gadu-Gadu client
@@ -28,7 +28,7 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		ekg.1
 MANLANG=	"" pl
