@@ -16,7 +16,7 @@ COMMENT=	A grammar checking library
 USE_GNOME=	gnometarget ltverhack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DOCS=		AUTHORS LICENSE MAINTAINERS README
 

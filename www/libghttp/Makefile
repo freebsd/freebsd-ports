@@ -16,6 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME http client library
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
