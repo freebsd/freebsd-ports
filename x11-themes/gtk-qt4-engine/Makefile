@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-qt-engine
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://people.freedesktop.org/~davidsansome/ \
 		http://freebsd.ricin.com/ports/distfiles/
@@ -36,10 +36,6 @@ OPTIONS=	BONOBOUI "With libbonoboui (recommended)" on
 .if !defined(WITHOUT_BONOBOUI)
 LIB_DEPENDS+=	bonoboui-2:${PORTSDIR}/x11-toolkits/libbonoboui
 .endif
-
-pre-configure:
-	@${REINPLACE_CMD} -e "s|/share/themes/|${LOCALBASE}/share/themes/|" \
-		${WRKSRC}/kcm_gtk/kcmgtk.cpp
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|/usr/lib/menu|/tmp/menu|" \
