@@ -20,6 +20,7 @@ LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
 USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nautilus-extension
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
