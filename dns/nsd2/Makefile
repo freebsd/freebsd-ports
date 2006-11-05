@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 MAINTAINER=	oli@isnic.is
 COMMENT=	An authoritative only non-recursive name server
 
+CONFLICTS=	nsd-[3-9]*
+
 USE_RC_SUBR=	nsd.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${NSDUSER} \
@@ -46,6 +48,8 @@ NSDDBFILE?=	/var/db/nsd.database
 SUB_LIST=	NSDUSER="${NSDUSER}" \
 		NSDDIR="${NSDDIR}" \
 		NSDDBFILE="${NSDDBFILE}"
+
+LATEST_LINK=	nsd2
 
 .include <bsd.port.pre.mk>
 
