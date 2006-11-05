@@ -11,4 +11,4 @@ The standard functions can be used to create terms, compare them for
 equality, read and write them on files in various formats and do
 manipulations like list concatenation.
 
-WWW: http://purl.oclc.org/net/kimwitu/
+WWW: http://fmt.cs.utwente.nl/kimwitu/
