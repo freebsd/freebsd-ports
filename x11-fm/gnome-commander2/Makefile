@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
@@ -16,16 +16,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for Gnome2
 
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
+
 CONFLICTS=	gnome-commander-*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gnomedocutils libgnomeui
+USE_GNOME=	gnomedocutils gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--without-libiptcdata
 INSTALLS_OMF=	yes
 
 MAN1=		gnome-commander.1
