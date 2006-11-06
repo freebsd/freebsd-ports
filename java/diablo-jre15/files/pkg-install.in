@@ -12,7 +12,7 @@ fi
 # Attempt to install a link for the browser plugin during post-install
 if [ "$2" = "POST-INSTALL" ]; then
 	# Plugin location variables
-	BROWSERPLUGINDIR=%%X11BASE%%/lib/browser_plugins
+	BROWSERPLUGINDIR=%%LOCALBASE%%/lib/browser_plugins
 	if [ `echo "$1" | grep jdk` ]; then
 		DIABLOPLUGINDIR=${PKG_PREFIX}/diablo-jdk1.5.0/jre/plugin/`uname -p`/ns7
 	else
