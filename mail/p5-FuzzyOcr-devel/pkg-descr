@@ -1,0 +1,12 @@
+FuzzyOcr is a plugin for SpamAssassin which scans image attachments for
+spam keywords, using an Optical Character Recognition program.
+
+This plugin can be used to detect spam that puts all the real spam
+content in an attached image. The mail itself only random text and
+random html, without any URLs or identifiable information.
+
+It is also able to do approximate matches on words, so errors in
+recognition or attempts to obfuscate the text inside the image will not
+cause the detection to fail.
+
+WWW: http://wiki.apache.org/spamassassin/FuzzyOcrPlugin
