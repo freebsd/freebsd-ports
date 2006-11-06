@@ -71,10 +71,6 @@ USE_GNOME=	libxml2
 CONFIGURE_ARGS+=--enable-exif
 .endif
 
-.if ${PHP_MODNAME} == "filepro"
-CONFIGURE_ARGS+=--enable-filepro
-.endif
-
 .if ${PHP_MODNAME} == "ftp"
 CONFIGURE_ARGS+=--enable-ftp \
 		--with-openssl-dir=${OPENSSLBASE}
