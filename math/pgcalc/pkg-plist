@@ -126,10 +126,6 @@ share/doc/HTML/en/pgcalc2/index.cache.bz2
 %%DOCSDIR%%/var_dlg1.png
 @dirrm %%DOCSDIR%%
 share/icons/hicolor/32x32/apps/pgcalc2.png
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 share/applnk/Office/PGCalculator/pgcalc2.desktop
 share/applnk/Office/PGCalculator/pgcalc2-BHP49G.desktop
 share/applnk/Office/PGCalculator/pgcalc2-Metallic.desktop
