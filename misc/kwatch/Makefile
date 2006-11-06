@@ -17,6 +17,10 @@ COMMENT=	KDE/Qt log file viewer
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/HTML
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2 ,,g ; \
