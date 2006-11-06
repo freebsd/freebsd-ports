@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	tatter-tools
-PORTVERSION=	0.9.6
+PORTVERSION=	1.0.6.1
 CATEGORIES=	chinese www
-MASTER_SITES=	ftp://bbs.ilc.edu.tw/chinsan/distfiles/ \
-		http://bbs.ilc.edu.tw/~chinsan/ports/tatter-tools/ \
-		ftp://news.giga.net.tw/chinsan/distfiles/ \
-		http://www.twtt.org/ttfile/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.zh_TW.UTF-8
+MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
+		ftp://chinsan2.twbbs.org/distfiles/
 
 MAINTAINER=	chinsan@FreeBSD.org
-COMMENT=	Cute and easy blog Tool with Traditional-Chinese(zh_TW.UTF-8)
+COMMENT=	Cute and easy blog tool with Traditional-Chinese(zh_TW.UTF-8)
 
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
@@ -24,10 +21,6 @@ WANT_PHP_WEB=	YES
 TMPDIR?=	${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${TMPDIR}
 
-.if defined(WITH_MYSQL5)
-IGNORE=		take a look at http://www.twtt.org/viewtopic.php?t=192&highlight=bsd for soultion
-.endif
-
 .if !defined(TT_URL)
 pre-fetch:
 	@${ECHO_MSG} ""
@@ -35,15 +28,12 @@ pre-fetch:
 	@${ECHO_MSG} ""
 .endif
 
-WWWDOCROOT?=	www/data
+WWWDOCROOT?=	www
 TT_URL?=	tatter
 TT_DIR?=	${WWWDOCROOT}/${TT_URL}
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
-
-# Get HOSTNAME
-HOSTNAME!=	${SYSCTL} -n kern.hostname
 
 pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
@@ -61,7 +51,7 @@ do-install:
 	@${CHMOD} 777 ${TARGETDIR}/${TT_DIR}/
 
 post-install:
-	@${SED} -e 's|%%HOSTNAME%%|${HOSTNAME}|; s|%%TT_URL%%|${TT_URL}|' \
-		${PKGMESSAGE}
+	@${SED} -e 's,%%TT_URL%%,${TT_URL},; s,%%PREFIX%%,${PREFIX},; \
+		s,%%TT_DIR%%,${TT_DIR},' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
