@@ -1,5 +1,7 @@
 bin/event_rpcgen.py
 include/event.h
+include/evhttp.h
+include/evdns.h
 lib/libevent-%%PORTVERSION%%.so
 lib/libevent-%%PORTVERSION%%.so.1
 lib/libevent.a
