@@ -1,0 +1,25 @@
+# New ports collection makefile for:	linux-libGLU
+# Date created:				06 Nov 2006
+# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libGLU
+PORTVERSION=	6.8.2
+CATEGORIES=	graphics linux
+DISTNAME=	xorg-x11-Mesa-libGLU-${PORTVERSION}-37.FC4.49.2.1
+
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	OpenGL utility library (Linux version)
+
+CONFLICTS=	linux_dri-[0-9]*
+
+ONLY_FOR_ARCHS=	i386 amd64
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	4
+INSTALLS_SHLIB=	yes
+AUTOMATIC_PLIST=yes
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+
+.include <bsd.port.mk>

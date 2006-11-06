@@ -379,6 +379,7 @@
     SUBDIR += linux-gdk-pixbuf
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
+    SUBDIR += linux-libGLU
     SUBDIR += linux-libmng
     SUBDIR += linux-panorama-tools
     SUBDIR += linux-png
