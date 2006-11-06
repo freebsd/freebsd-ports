@@ -14,11 +14,3 @@ share/icons/hicolor/48x48/apps/kallers.png
 @dirrm share/apps/kallers/sound
 @dirrm share/apps/kallers/pics
 @dirrm share/apps/kallers
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
