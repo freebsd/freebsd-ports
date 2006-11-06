@@ -15,8 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	IO::Multiplex - Manage IO on many file handles
 
+.if ${PERL_LEVEL} < 500805
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
 
 PERL_CONFIGURE=	yes
 
