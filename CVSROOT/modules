@@ -9058,6 +9058,7 @@ p5-FreezeThaw	ports/devel/p5-FreezeThaw
 p5-Frontier-RPC	ports/net/p5-Frontier-RPC
 p5-Fuse		ports/sysutils/p5-Fuse
 p5-Fuse-Simple	ports/sysutils/p5-Fuse-Simple
+p5-FuzzyOcr	ports/mail/p5-FuzzyOcr
 p5-GD		ports/graphics/p5-GD
 p5-GD-Arrow	ports/graphics/p5-GD-Arrow
 p5-GD-Barcode	ports/graphics/p5-GD-Barcode
