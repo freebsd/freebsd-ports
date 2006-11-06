@@ -7,6 +7,7 @@
 
 PORTNAME=	fdmf
 DISTVERSION=	0.0.9r
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://w140.com/audio/ CSME
 
@@ -27,7 +28,7 @@ MAKE_ENV=	VPATH=common
 PORTDOCS=	README
 BINS=		sonic_reducer vector_pairs
 SCRS=		${PORTNAME} ${PORTNAME}_bench cleanup_dups optparam
-PLIST_FILES=	${BINS:S,^,bin/,}
+PLIST_FILES=	${BINS:S,^,bin/,} ${SCRS:S,^,bin/,}
 
 post-patch:
 	@${REINPLACE_CMD} -Ee '/^(CFLAGS|CC) =/s|.*||' -e 's|common/||g' ${WRKSRC}/Makefile
