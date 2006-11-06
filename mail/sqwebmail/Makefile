@@ -22,6 +22,7 @@ RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 OPTIONS=	CACHEDIR	"Cache logins"					on \
+		FAM		"Build in fam support for IDLE command"		on \
 		GDBM		"Use gdbm db instead of system bdb"		off \
 		GZIP		"Compress messages with gzip"			on \
 		HTTPS		"Generate https:// URLs for all accesses"	off \
@@ -104,6 +105,10 @@ INSTALL_TARGET=	install-strip install-configure
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
+.endif
+
+.if defined(WITH_FAM)
+USE_FAM=	yes
 .endif
 
 .if defined(WITH_RCORDER)
@@ -198,13 +203,20 @@ CONFIGURE_ARGS+=--with-db=db
 .endif
 
 post-patch:
+.if !defined(WITH_FAM)
+	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
+		${WRKSRC}/maildir/configure
+.endif
 	@${REINPLACE_CMD} -e 's|LIBPCRE=-lpcre|LIBPCRE="-L${LOCALBASE}/lib -lpcre"|g' \
 		${WRKSRC}/maildir/configure
+
+	@${REINPLACE_CMD} -e 's|@echo|echo|g'  ${WRKSRC}/maildir/configure
 
 	@${REINPLACE_CMD} -e 's|-lpcre|-L${LOCALBASE}/lib &|g' \
 		 ${WRKSRC}/sqwebmail/Makefile.in
 
-	@${REINPLACE_CMD} -e 's|\$$(testmaildirfilter_LDADD)|& \$$(LIBPCRE)|g' \
+	@${REINPLACE_CMD} -e 's|\$$(testmaildirfilter_LDADD)|& \$$(LIBPCRE)|g; \
+		s|$$(LINK) $$(maildirkw_LDFLAGS)|$$(CXXLINK) $$(maildirkw_LDFLAGS)|' \
 		${WRKSRC}/maildir/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
