@@ -5,7 +5,7 @@ ask() {
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
         read -p "${question} [${default}]? " answer
     fi
     if [ x${answer} = x ]; then
@@ -112,8 +112,10 @@ case $2 in
 	make_group munin
 	;;      
     POST-INSTALL)
-	init_plugins
-	${PKG_PREFIX}/etc/rc.d/munin-node.sh start
-	newsyslog
+	if [ -z "${PACKAGE_BUILDING}" ]; then
+		init_plugins
+		${PKG_PREFIX}/etc/rc.d/munin-node.sh start
+		newsyslog
+	fi
 	;;      
 esac
