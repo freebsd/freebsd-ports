@@ -1521,6 +1521,7 @@
     SUBDIR += p5-mixin
     SUBDIR += p5-orz
     SUBDIR += p5-prefork
+    SUBDIR += p5-reaper
     SUBDIR += p5-rpm-build-perl
     SUBDIR += p5-subatom
     SUBDIR += p5-threads
