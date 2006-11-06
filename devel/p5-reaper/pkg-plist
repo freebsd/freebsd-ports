@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/reaper/.packlist
+%%SITE_PERL%%/reaper.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/reaper
