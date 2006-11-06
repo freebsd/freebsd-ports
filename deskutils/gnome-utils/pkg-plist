@@ -83,6 +83,12 @@ share/gnome/help/baobab/C/figures/baobab_remote.png
 share/gnome/help/baobab/C/figures/baobab_treemaps.png
 share/gnome/help/baobab/C/figures/baobab_window.png
 share/gnome/help/baobab/C/legal.xml
+share/gnome/help/baobab/fr/baobab.xml
+share/gnome/help/baobab/fr/figures/baobab_fullscan.png
+share/gnome/help/baobab/fr/figures/baobab_prefs.png
+share/gnome/help/baobab/fr/figures/baobab_remote.png
+share/gnome/help/baobab/fr/figures/baobab_treemaps.png
+share/gnome/help/baobab/fr/figures/baobab_window.png
 share/gnome/help/baobab/sv/baobab.xml
 share/gnome/help/baobab/sv/figures/baobab_fullscan.png
 share/gnome/help/baobab/sv/figures/baobab_prefs.png
@@ -180,6 +186,7 @@ share/gnome/help/gnome-system-log/sv/gnome-system-log.xml
 share/gnome/help/gnome-system-log/uk/figures/syslog_window.png
 share/gnome/help/gnome-system-log/uk/gnome-system-log.xml
 share/gnome/omf/baobab/baobab-C.omf
+share/gnome/omf/baobab/baobab-fr.omf
 share/gnome/omf/baobab/baobab-sv.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-C.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-el.omf
@@ -323,6 +330,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-dictionary
 @dirrm share/gnome/help/baobab/sv/figures
 @dirrm share/gnome/help/baobab/sv
+@dirrm share/gnome/help/baobab/fr/figures
+@dirrm share/gnome/help/baobab/fr
 @dirrm share/gnome/help/baobab/C/figures
 @dirrm share/gnome/help/baobab/C
 @dirrm share/gnome/help/baobab
