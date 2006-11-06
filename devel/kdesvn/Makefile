@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 		http://www.yuanjue.net/download/
@@ -21,7 +21,8 @@ PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_C_COMPILER:STRING='${CC}' \
 		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}"
+		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
+		-DCMAKE_INSTALL_PREFIX=${PREFIX}
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 		svn_client-1:${PORTSDIR}/devel/subversion \
@@ -32,8 +33,6 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
-
-CXXFLAGS+=	-lc
 
 MAN1=	kdesvn.1 kdesvnaskpass.1
 
@@ -49,14 +48,5 @@ post-extract:
 do-configure:
 	@(cd ${WRKSRC}; \
 	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${PATCH_WRKSRC})
-
-pre-build:
-	@${ECHO_CMD} "*************************************************************************"
-	@${ECHO_CMD} "				NOTE					       "
-	@${ECHO_CMD} "If you cannot build kdesvn successfully, please *pkg_delete* the existing"
-	@${ECHO_CMD} "kdesvn on your machine first and then try again. This issue should be    "
-	@${ECHO_CMD} "fixed in the next release version of kdesvn, hopefully.		       "
-	@${ECHO_CMD} "*************************************************************************"
-	@sleep 3
 
 .include <bsd.port.post.mk>
