@@ -11,7 +11,7 @@ PORTVERSION=	0.10.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A fast, powerful, and language-neutral template system
 
 GNU_CONFIGURE=	yes

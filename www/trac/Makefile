@@ -11,7 +11,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20 \
