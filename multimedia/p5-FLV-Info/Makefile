@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FLV-Info
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLOTHO
@@ -24,7 +24,7 @@ PERL_CONFIGURE=	yes
 
 MAN1=		flv2mp3.1 flv2flv.1 flv2swf.1 flvinfo.1 swf2flv.1
 MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
-		FLV::Base.3 FLV::Body.3 FLV::Constants.3 FLV::File.3 \
+		FLV::Base.3 FLV::Body.3 FLV::Util.3 FLV::File.3 \
 		FLV::FromSWF.3 FLV::Header.3 FLV::Info.3 FLV::MetaTag.3 \
 	       	FLV::Tag.3 FLV::ToMP3.3 FLV::ToSWF.3 FLV::VideoTag.3
 
