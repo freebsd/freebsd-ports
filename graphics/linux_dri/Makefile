@@ -16,7 +16,7 @@ DISTFILES=	Mesa-linux-bin-${PORTVERSION}.tar.bz2 \
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of linux apps
 
-CONFLICTS=	linux_dri-6.5.2006*
+CONFLICTS=	linux_dri-6.5.2006* linux-libGLU-[0-9]*
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
