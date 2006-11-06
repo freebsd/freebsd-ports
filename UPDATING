@@ -7,11 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061106
+  AFFECTS: users of syutils/munin-*
+  AUTHOR: miwi@FreeBSD.org
+
+  - The default install location has changed from
+    ${PREFIX}/www/data/munin to ${PREFIX}/www/munin.
+
+20061106
   AFFECTS: users of chinese/tatter-tools
   AUTHOR: chinsan.tw@gmail.com
 
-  -The default install location has changed from
-  ${PREFIX}/www/data/tatter to ${PREFIX}/www/tatter.
+  - The default install location has changed from
+    ${PREFIX}/www/data/tatter to ${PREFIX}/www/tatter.
 
 20061102
   AFFECTS: users of mail/fetchmail
