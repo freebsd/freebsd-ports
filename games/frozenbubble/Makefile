@@ -64,4 +64,8 @@ do-install:
 	${MKDIR} ${LEXECDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/server/fb-server ${LEXECDIR}/
 
+post-install:
+
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
