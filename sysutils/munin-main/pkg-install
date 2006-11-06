@@ -5,7 +5,7 @@ ask() {
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
         read -p "${question} [${default}]? " answer
     fi
     if [ x${answer} = x ]; then
@@ -97,21 +97,31 @@ EOT
     fi  
 }
 
+move_www_dir() {
+    if [ -d ${PKG_PREFIX}/www/data/munin -a ! -d ${PKG_PREFIX}/www/munin ]; then
+	echo Migrating ${PKG_PREFIX}/www/data/munin to ${PKG_PREFIX}/www/munin
+	mv ${PKG_PREFIX}/www/data/munin ${PKG_PREFIX}/www/munin
+    fi
+}
+
 
 ########################################################################
 
 case $2 in
     PRE-INSTALL)
 	make_account munin munin "Munin owner"
+	move_www_dir # at some point in the installation, the www dir is created
 	;;      
     POST-INSTALL)
-	newsyslog
-	create_crontab_entries '#BEGIN_MUNIN_MAIN' '#END_MUNIN_MAIN' <<EOT
+	if [ -z "${PACKAGE_BUILDING}" ]; then
+		newsyslog
+		create_crontab_entries '#BEGIN_MUNIN_MAIN' '#END_MUNIN_MAIN' <<EOT
 #BEGIN_MUNIN_MAIN
 MAILTO=root
 
 */5 * * * *     ${PKG_PREFIX}/bin/munin-cron
 #END_MUNIN_MAIN
 EOT
+	fi
 	;;      
 esac
