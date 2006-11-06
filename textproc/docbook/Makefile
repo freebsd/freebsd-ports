@@ -86,4 +86,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879
 RUN_DEPENDS+=	${LOCALBASE}/share/xml/sdocbook/4.1.2.5:${PORTSDIR}/textproc/sdocbook-xml
 .endif
 
+do-install:
+	@${DO_NADA}
+
 .include <bsd.port.post.mk>
