@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-0.fc4.1
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of esound
 
-NOT_FOR_ARCHS=	amd64
-
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile
 
 USE_LINUX_RPM=	yes
