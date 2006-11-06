@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -20,10 +20,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
 
 LATEST_LINK=	firefox2
-#MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
 MOZILLA_NAME=	Firefox
-#MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
-#MOZILLA_SUFX=	-devel
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/'
 
 WANT_GNOME=	yes
@@ -34,7 +31,6 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
-LIBS=		-Wl,-Bsymbolic -lc
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
 
@@ -54,6 +50,8 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 
 .include <bsd.port.pre.mk>
 
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+
 .if ${OSVERSION} < 500000
 BROKEN=	does not build
 .endif
@@ -72,6 +70,8 @@ post-extract::
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${GECKO_PTHREAD_LIBS}|' \
+		${WRKSRC}/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
