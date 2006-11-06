@@ -33,6 +33,7 @@ POST-INSTALL)
 	fi
 
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/dbus
+	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/db/dbus
 	exit 0
 	;;
 esac

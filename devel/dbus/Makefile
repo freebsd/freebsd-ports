@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION?=	0.94
-PORTREVISION?=	1
+PORTVERSION?=	0.95
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -49,8 +49,13 @@ USE_XLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' \
-		${WRKSRC}/bus/session.conf.in \
 		${WRKSRC}/bus/system.conf.in
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
+	    	s|/usr/X11R6|${X11BASE}|g' \
+		${WRKSRC}/dbus/dbus-sysdeps-unix.c
+	@${REINPLACE_CMD} -e 's|/lib/dbus/machine-id|/db/dbus/machine-id|g' \
+		${WRKSRC}/dbus/Makefile.in \
+		${WRKSRC}/tools/Makefile.in
 
 .if !defined(DBUS_SLAVE)
 post-install:
@@ -59,7 +64,6 @@ post-install:
 .endif
 	${MKDIR} ${X11BASE}/etc/dbus-1/system.d
 	${MKDIR} ${X11BASE}/share/dbus-1/services
-
 .endif
 
 .include <bsd.port.post.mk>

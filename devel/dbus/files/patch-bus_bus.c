@@ -5,7 +5,7 @@
    _dbus_list_foreach (bus_config_parser_get_conf_dirs (parser),
  		      (DBusForeachFunction) bus_watch_directory,
 -		      NULL);
-+		      bus_context_get_loop (context));
++		      context);
  
    _DBUS_ASSERT_ERROR_IS_CLEAR (error);
    retval = TRUE;
