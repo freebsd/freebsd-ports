@@ -8487,6 +8487,7 @@ p5-Class-DBI-Pg		ports/databases/p5-Class-DBI-Pg
 p5-Class-DBI-Plugin	ports/databases/p5-Class-DBI-Plugin
 p5-Class-DBI-Plugin-AbstractCount	ports/databases/p5-Class-DBI-Plugin-AbstractCount
 p5-Class-DBI-Plugin-Iterator	ports/databases/p5-Class-DBI-Plugin-Iterator
+p5-Class-DBI-Plugin-Pager	ports/databases/p5-Class-DBI-Plugin-Pager
 p5-Class-DBI-Plugin-RetrieveAll	ports/databases/p5-Class-DBI-Plugin-RetrieveAll
 p5-Class-DBI-Plugin-Senna	ports/databases/p5-Class-DBI-Plugin-Senna
 p5-Class-DBI-Plugin-Type	ports/databases/p5-Class-DBI-Plugin-Type
