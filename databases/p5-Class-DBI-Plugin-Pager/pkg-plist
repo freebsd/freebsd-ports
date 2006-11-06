@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Class/DBI/Plugin/Pager.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Pager/LimitOffset.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Pager/LimitXY.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Pager/LimitYX.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Pager/RowsTo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Pager/.packlist
+@dirrm %%SITE_PERL%%/Class/DBI/Plugin/Pager
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Pager
