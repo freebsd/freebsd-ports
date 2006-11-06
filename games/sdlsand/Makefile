@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	sdlsand
-PORTVERSION=	20060207
-PORTREVISION=	2
+PORTVERSION=	20061017
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	sldsand-src-${PORTVERSION}
 
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Simulation of falling sand and other materials
@@ -20,14 +18,17 @@ USE_ZIP=	yes
 USE_SDL=	sdl
 USE_X_PREFIX=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/SDL\ Sand/SDL\ Sand
+WRKSRC=		${WRKDIR}/SDL\ Sand/SDL\ Sand
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	readme.txt
 
+post-patch:
+	@${REINPLACE_CMD} -e '/crtdbg/ d' ${WRKSRC}/CmdLine.cpp
+
 do-build:
 	cd ${WRKSRC} && ${CXX} -o ${PORTNAME} ${CXXFLAGS} \
-		`${SDL_CONFIG} --cflags --libs` main.cpp
+		`${SDL_CONFIG} --cflags --libs` main.cpp CmdLine.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
