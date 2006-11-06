@@ -34,7 +34,7 @@ SAUDATDIR=	packages data
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_CLIENT) && !defined(WITH_DEDICATED)
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
 IGNORE=		needs at least one executable (CLIENT or DEDICATED)
 .endif
 
@@ -42,7 +42,7 @@ IGNORE=		needs at least one executable (CLIENT or DEDICATED)
 BROKEN=		does not compile
 .endif
 
-.if defined(WITH_CLIENT)
+.if !defined(WITHOUT_CLIENT)
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
@@ -52,7 +52,7 @@ SAUER_BIN+=	client
 PLIST_SUB+=	CLIENT=""
 .endif
 
-.if defined(WITH_DEDICATED)
+.if !defined(WITHOUT_DEDICATED)
 ALL_TARGET+=	server
 PLIST_SUB+=	DEDICATED=""
 SAUER_BIN+=	server
