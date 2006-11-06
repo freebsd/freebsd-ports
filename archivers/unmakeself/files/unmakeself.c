@@ -1,7 +1,7 @@
 /*
  * unmakeself - extracts Makeself archives
  *
- * Copyright (C) 2005 Jean-Yves Lefort
+ * Copyright (C) 2005, 2006 Jean-Yves Lefort
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -43,7 +43,11 @@
 #include <getopt.h>
 #include <archive.h>
 
-static char *self = NULL;				/* program name */
+#define N_ELEMENTS(arr)		(sizeof(arr) / sizeof((arr)[0]))
+
+static char *self;					/* program name */
+static char *filename;
+static struct archive *archive;
 static int extract_flags = ARCHIVE_EXTRACT_TIME;	/* bsdtar default */
 
 static void
@@ -66,66 +70,135 @@ unmakeself_print_help (void)
 static void
 unmakeself_print_version (void)
 {
-  printf("unmakeself version 1.0\n");
-  printf("Copyright (C) 2005 Jean-Yves Lefort\n");
+  printf("unmakeself version 1.1\n");
+  printf("Copyright (C) 2005, 2006 Jean-Yves Lefort\n");
 }
 
 static void
-unmakeself_extract (const char *filename, int print_offset)
+unmakeself_error (const char *func, const char *error)
 {
-  int fd;
-  char buf[4096];
-  int pos = 0;
-  int last_newline = -1;
-  int offset = -1;
-  int done = 0;
-  ssize_t len;
+  if (func)
+    fprintf(stderr, "%s %s: %s() error: %s\n", self, filename, func, error);
+  else
+    fprintf(stderr, "%s %s: error: %s\n", self, filename, error);
+  exit(1);
+}
 
-  fd = open(filename, O_RDONLY);
-  if (fd < 0)
+static void
+unmakeself_handle_libc_result (int result, const char *func)
+{
+  if (result < 0)
+    unmakeself_error(func, strerror(errno));
+}
+
+static void
+unmakeself_handle_libarchive_result_full (int ok, const char *func)
+{
+  if (! ok)
+    unmakeself_error(func, archive_error_string(archive));
+}
+
+static void
+unmakeself_handle_libarchive_result (int result, const char *func)
+{
+  unmakeself_handle_libarchive_result_full(result == ARCHIVE_OK, func);
+}
+
+static ssize_t
+unmakeself_read (int fd, void *buf, size_t nbytes)
+{
+  ssize_t result;
+
+  result = read(fd, buf, nbytes);
+  unmakeself_handle_libc_result(result, "read");
+
+  return result;
+}
+
+static off_t
+unmakeself_lseek (int fd, off_t offset, int whence)
+{
+  off_t result;
+
+  result = lseek(fd, offset, whence);
+  unmakeself_handle_libc_result(result, "lseek");
+
+  return result;
+}
+
+static off_t
+unmakeself_get_offset (int fd)
+{
+  static const char *magic_numbers[] = {
+    "\n\037\213",		/* newline + gzip */
+    "\nBZh"			/* newline + bzip2 */
+  };
+  char buf[4096];
+  ssize_t len;
+  off_t pos = 0;
+  off_t last_newline = -1;
+  int i;
+
+  /*
+   * First try to find a gzip or bzip2 magic number following a newline.
+   */
+
+  while ((len = unmakeself_read(fd, buf, sizeof(buf))) > 0)
     {
-      fprintf(stderr, "%s: unable to open %s: %s\n", self, filename, strerror(errno));
-      exit(1);
+      for (i = 0; i < N_ELEMENTS(magic_numbers); i++)
+	{
+	  char *start;
+
+	  start = memmem(buf, len, magic_numbers[i], strlen(magic_numbers[i]));
+	  if (start)
+	    return pos + (start - buf) + 1;
+	}
+      pos += len;
     }
 
   /*
-   * We find the start offset of the archive inside the shell script
-   * by locating the first non-printable character following a
-   * newline. The archive starts immediately after that newline.
+   * Then fallback to locating the first non-printable character
+   * following a newline. The archive should start immediately after
+   * that newline.
    */
-  while (! done && (len = read(fd, buf, sizeof(buf))) > 0)
-    {
-      int i;
 
-      for (i = 0; i < len; i++, pos++)
-	if (buf[i] == '\n')
-	  last_newline = pos;
-	else if (buf[i] != '\t' && (buf[i] < 32 || buf[i] > 126))
-	  {
-	    if (last_newline != -1)
-	      offset = last_newline + 1;
-	    
-	    done = 1;
-	    break;
-	  }
-    }
+  unmakeself_lseek(fd, 0, SEEK_SET);
+  pos = 0;
 
+  while ((len = unmakeself_read(fd, buf, sizeof(buf))) > 0)
+    for (i = 0; i < len; i++, pos++)
+      if (buf[i] == '\n')
+	last_newline = pos;
+      else if (buf[i] != '\t' && (buf[i] < 32 || buf[i] > 126))
+	{
+	  if (last_newline != -1)
+	    return last_newline + 1;
+	}
+
+  return -1;			/* not found */
+}
+
+static void
+unmakeself_extract (int print_offset)
+{
+  int fd;
+  off_t offset;
+
+  fd = open(filename, O_RDONLY);
+  unmakeself_handle_libc_result(fd, "open");
+
+  offset = unmakeself_get_offset(fd);
   if (offset != -1)		/* offset found */
     {
       if (print_offset)		/* only print the offset */
-	printf("%i\n", offset);
+	printf("%ji\n", offset);
       else			/* extract using libarchive */
 	{
-	  struct archive *archive;
 	  struct archive_entry *entry;
 	  int status;
 
-	  if (lseek(fd, offset, SEEK_SET) < 0)
-	    {
-	      fprintf(stderr, "%s: unable to seek into %s: %s\n", self, filename, strerror(errno));
-	      exit(1);
-	    }
-      
+	  unmakeself_lseek(fd, offset, SEEK_SET);
+
 	  archive = archive_read_new();
 
 	  if (archive_read_support_compression_all(archive) != ARCHIVE_OK)
@@ -134,53 +207,22 @@ unmakeself_extract (const char *filename, int print_offset)
 	    fprintf(stderr, "%s: warning: unable to support all archive formats: %s\n", self, archive_error_string(archive));
 
 	  /* same block size as DEFAULT_BYTES_PER_BLOCK in bsdtar.h */
-	  if (archive_read_open_fd(archive, fd, 20 * 512) != ARCHIVE_OK)
-	    {
-	      fprintf(stderr, "%s: unable to open %s with libarchive: %s\n", self, filename, archive_error_string(archive));
-	      exit(1);
-	    }
-      
-	  while ((status = archive_read_next_header(archive, &entry)) == ARCHIVE_OK)
-	    if (archive_read_extract(archive, entry, extract_flags) != ARCHIVE_OK)
-	      {
-		fprintf(stderr, "%s: unable to extract %s: %s\n", self, filename, archive_error_string(archive));
-		exit(1);
-	      }
+	  unmakeself_handle_libarchive_result(archive_read_open_fd(archive, fd, 20 * 512), "archive_read_open_fd");
 
-	  if (status != ARCHIVE_EOF)
-	    {
-	      fprintf(stderr, "%s: unable to read next header of %s: %s\n", self, filename, archive_error_string(archive));
-	      exit(1);
-	    }
-      
-	  if (archive_read_close(archive) != ARCHIVE_OK)
-	    {
-	      fprintf(stderr, "%s: unable to close %s with libarchive: %s\n", self, filename, archive_error_string(archive));
-	      exit(1);
-	    }
-      
+	  while ((status = archive_read_next_header(archive, &entry)) == ARCHIVE_OK)
+	    unmakeself_handle_libarchive_result(archive_read_extract(archive, entry, extract_flags), "archive_read_extract");
+
+	  unmakeself_handle_libarchive_result_full(status == ARCHIVE_EOF, "archive_read_next_header");
+
+	  unmakeself_handle_libarchive_result(archive_read_close(archive), "archive_read_close");
+
 	  archive_read_finish(archive);
 	}
     }
-  else
-    {
-      if (len >= 0)		/* EOF, or couldn't find start offset */
-	{
-	  fprintf(stderr, "%s: %s is not a valid Makeself archive\n", self, filename);
-	  exit(1);
-	}
-      else			/* read error */
-	{
-	  fprintf(stderr, "%s: unable to read %s: %s\n", self, filename, strerror(errno));
-	  exit(1);
-	}
-    }
+  else				/* offset not found */
+    unmakeself_error(NULL, "invalid Makeself archive");
 
-  if (close(fd) < 0)
-    {
-      fprintf(stderr, "%s: unable to close %s: %s\n", self, filename, strerror(errno));
-      exit(1);
-    }
+  unmakeself_handle_libc_result(close(fd), "close");
 }
 
 int
@@ -258,7 +300,8 @@ main (int argc, char **argv)
       exit(1);
     }
 
-  unmakeself_extract(argv[0], print_offset);
+  filename = argv[0];
+  unmakeself_extract(print_offset);
 
   /* on some systems, the return value of main() is ignored */
   exit(0);
