@@ -1,5 +1,11 @@
 --- Makefile.orig	Tue May  6 16:00:40 2003
-+++ Makefile	Sat Feb 11 14:38:36 2006
++++ Makefile	Fri Oct 27 11:40:19 2006
+@@ -1,4 +1,4 @@
+-include Make.include
++#include Make.include
+ 
+ DISTFILES=\
+ add-xscreensaver \
 @@ -21,18 +21,17 @@
  win32/
  
