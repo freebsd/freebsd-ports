@@ -1,0 +1,9 @@
+
+If the game fails with:
+
+	[SDL Init] Bad system call: 12 (core dumped)
+
+Try to start it with:
+
+	$ LD_PRELOAD=/usr/lib/libc_r.so frozen-bubble
+
