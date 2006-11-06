@@ -8,7 +8,7 @@
 PORTNAME=	autosig
 PORTVERSION=	2.3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.irendi.com/
+MASTER_SITES=	http://www.irendi.com/~msharpe/
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A random .signature generator with header file included
