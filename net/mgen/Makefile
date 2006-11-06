@@ -8,7 +8,9 @@
 PORTNAME=	mgen
 PORTVERSION=	4.2b6
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/
+MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/ \
+	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	src-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
