@@ -92,6 +92,7 @@ MAN3+=	Acme::MetaSyntactic::space_missions.3
 MAN3+=	Acme::MetaSyntactic::sql.3
 MAN3+=	Acme::MetaSyntactic::stars.3
 MAN3+=	Acme::MetaSyntactic::state_flowers.3
+MAN3+=	Acme::MetaSyntactic::summerwine.3
 MAN3+=	Acme::MetaSyntactic::swords.3
 MAN3+=	Acme::MetaSyntactic::teletubbies.3
 MAN3+=	Acme::MetaSyntactic::thunderbirds.3
