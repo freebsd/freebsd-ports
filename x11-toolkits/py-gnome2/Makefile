@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.2
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,6 +25,7 @@ LATEST_LINK=	py-gnome2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack libgnomeui pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

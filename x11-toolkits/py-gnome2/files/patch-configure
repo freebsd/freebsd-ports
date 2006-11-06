@@ -1,10 +1,10 @@
---- configure.orig	Tue Aug 22 00:47:05 2006
-+++ configure	Tue Aug 22 00:47:29 2006
-@@ -19036,7 +19036,7 @@ PYTHON_LIB_DEPS=`$PYTHON -c "from distut
+--- configure.orig	Mon Nov  6 02:40:04 2006
++++ configure	Mon Nov  6 02:40:26 2006
+@@ -19038,7 +19038,7 @@
  
  save_LIBS="$LIBS"
  
--PYTHON_EMBED_LIBS="-L${py_prefix}/lib/ ${PYTHON_LIB_DEPS} -lpython${PYTHON_VERSION}"
+-PYTHON_EMBED_LIBS="-L${PYTHON_LIBDIR} ${PYTHON_LIB_DEPS} -lpython${PYTHON_VERSION}"
 +PYTHON_EMBED_LIBS="-L${py_prefix}/lib/ ${PYTHON_LIB_DEPS} -lpython${PYTHON_VERSION} ${PTHREAD_LIBS}"
  
  LIBS="$LIBS $PYTHON_EMBED_LIBS"
