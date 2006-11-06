@@ -2,7 +2,7 @@
 @exec mkdir -p %D/etc/munin/plugin-conf.d && chmod 755 %D/etc/munin/plugin-conf.d
 @exec mkdir -p %D/var/munin/plugin-state && chgrp munin %D/var/munin/plugin-state && chmod 775 %D/var/munin/plugin-state
 @unexec rm %D/bin/munin-node-revive 2>/dev/null || true
-@comment etc/munin/VERSION.node must remain for upgrade version check
+@unexec if [ -n "$PACKAGE_BUILDING" ]; then rm -f %D/etc/munin/VERSION.node; fi
 @unexec if cmp -s %D/etc/munin/munin-node.conf %D/etc/munin/munin-node.conf.sample; then rm -f %D/etc/munin/munin-node.conf; fi
 etc/munin/munin-node.conf.sample
 @unexec if cmp -s %D/etc/munin/plugin-conf.d/plugins.conf %D/etc/munin/plugin-conf.d/plugins.conf.sample; then rm -f %D/etc/munin/plugin-conf.d/plugins.conf; fi
@@ -113,9 +113,12 @@ sbin/munin-run
 @dirrmtry %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%
 @dirrmtry etc/munin/plugin-conf.d
+@dirrmtry etc/munin/plugins
 @dirrmtry etc/munin
-@unexec rmdir %%LOCALBASE%%/%%SITE_PERL%%/Munin/Plugin 2>/dev/null || true
-@unexec rmdir %%LOCALBASE%%/%%SITE_PERL%%/Munin 2>/dev/null || true
+@unexec echo remove %%SITE_PERL%%/Munin/Plugin
+@unexec echo remove %%SITE_PERL%%/Munin
+@dirrmtry %%SITE_PERL%%/Munin/Plugin
+@dirrmtry %%SITE_PERL%%/Munin
 @unexec echo
 @unexec echo '********************************************************************'
 @unexec echo "If you want to *completely* remove munin-node, you have to"

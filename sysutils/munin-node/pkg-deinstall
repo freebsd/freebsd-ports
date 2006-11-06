@@ -5,7 +5,7 @@ ask() {
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
 	read -p "${question} [${default}]? " answer
     fi
     if [ x${answer} = x ]; then
@@ -83,9 +83,11 @@ Do you want me to delete it?" y; then
 
 case $2 in
     DEINSTALL)
-	delete_crontab_entries ${PKG_PREFIX}/bin/munin-node-revive
-	stop_process
-	newsyslog
+	if [ -z "${PACKAGE_BUILDING}" ]; then
+		delete_crontab_entries ${PKG_PREFIX}/bin/munin-node-revive
+		stop_process
+		newsyslog
+	fi
 	;;
     POST-DEINSTALL)
 	delete_group munin
