@@ -24,6 +24,12 @@ MAN8=		iscsi-target.8
 
 USE_RC_SUBR=	iscsi_target
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		needs PRIu64 definition in <inttypes.h>
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|_LDFLAGS= -pthread|_LDFLAGS= ${PTHREAD_CFLAGS}|' ${WRKSRC}/Makefile.in
@@ -51,4 +57,4 @@ post-install:
 	fi
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
