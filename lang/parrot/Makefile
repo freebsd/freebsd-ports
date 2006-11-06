@@ -7,7 +7,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LT/LTOETSCH
@@ -15,18 +15,15 @@ MASTER_SITE_SUBDIR=	../../authors/id/L/LT/LTOETSCH
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		bison2:${PORTSDIR}/devel/bison2 \
+		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		icudata.34:${PORTSDIR}/devel/icu
-
-BROKEN=		doesn not package
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
+		icudata.36:${PORTSDIR}/devel/icu
 
 USE_GCC=	3.4+
 USE_PERL5=	yes
 USE_GMAKE=	yes
-#USE_SDL=	yes
 
 INSTALLS_SHLIB=	yes
 
@@ -34,12 +31,19 @@ CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
 		--ldflags="${LDFLAGS} -L/usr/lib -L${LOCALBASE}/lib" \
 		--icu-config=${LOCALBASE}/bin/icu-config \
-		--optimize --jitcapable --parrot_is_shared \
+		--optimize --parrot_is_shared \
+		--lex=${LOCALBASE}/bin/flex \
+		--yacc=${LOCALBASE}/bin/bison \
 		--verbose \
 		--prefix=${PREFIX}
-#		--verbose
 
-PLIST_SUB+=	SHLIB_VER="${PORTVERSION}"
+
+PARROT_SHARE_DIR=	share/doc/${PORTNAME}
+PARROT_DOCS=		${PARROT_SHARE_DIR}/docs
+PARROT_EXAMPLES=	${PARROT_SHARE_DIR}/examples
+PLIST_SUB+=	SHLIB_VER="${PORTVERSION}" \
+		PARROT_DOCS="${PARROT_DOCS}" \
+		PARROT_EXAMPLES="${PARROT_EXAMPLES}"
 
 post-patch:
 	${PERL} -pi -e "s=libdir}, 'pkgconfig=prefix}, 'libdata/pkgconfig=" \
@@ -51,7 +55,25 @@ do-configure:
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
+x-generate-plist:
+	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
+	| ${SED} -E \
+		's,.*share/nls/.+$$,,g \
+		;s,${PARROT_DOCS}(/.+)?$$,%%PARROT_DOCS%%\1,g \
+		;s,${PARROT_EXAMPLES}(/.+)?$$,%%PARROT_EXAMPLES%%\1,g \
+		;s,${PARROT_SHARE_DIR}(/.+)?$$,%%DOCSDIR%%\1,g \
+		;s,${PORTVERSION}(/.+)?$$,%%SHLIB_VER%%\1,g \
+		' | ${TR} -s '\n') > temp-pkg-plist
+
 .include <bsd.port.pre.mk>
+
+# JIT only works on x86
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--jitcapable
+PLIST_SUB+=	JIT=""
+.else
+PLIST_SUB+=	JIT="@comment "
+.endif
 
 .if ${PERL_LEVEL} < 500800
 IGNORE=	perl 5.8 or newer required. Install lang/perl5.8 and try again
