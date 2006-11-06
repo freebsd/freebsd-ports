@@ -11,3 +11,35 @@ $FreeBSD$
  #define EXTENSIONS_DIR "/lib/ext"
  #define ENDORSED_DIR "/lib/endorsed"
  
+@@ -1968,16 +1968,23 @@
+ 
+ static int os_sleep(jlong millis, bool interruptible) {
+   int res;
+-  if (!interruptible) {
+-    do {
+-	res = os_nanosleep(&millis);
+-    } while ((res == OS_ERR) && (errno == EINTR) && (millis > 0));
+-  } else {
+-    INTERRUPTIBLE_NORESTART_VM(os_nanosleep(&millis), res, os::Bsd::clear_interrupted);
++
++  while (millis > 0) {
++    if (!interruptible) {
++      res = os_nanosleep(&millis);
++    } else {
++      INTERRUPTIBLE_NORESTART_VM(os_nanosleep(&millis), res, os::Bsd::clear_interrupted);
++    }
++    // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
++
++    if((res == OS_ERR) && (errno == EINTR)) {
++      if(millis <= 0)
++	return OS_OK;
++    } else
++      return res;
+   }
+-  // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
+ 
+-  return res;
++  return OS_OK;
+ }
+ 
+ int os::Bsd::naked_sleep() {
