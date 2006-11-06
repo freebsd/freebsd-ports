@@ -87,7 +87,7 @@ MAIL_GID?=	mail
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4)
 BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID?=	mailman
+MAIL_GID?=	nobody
 .endif
 
 .if defined(WITH_CHINESE)
