@@ -89,6 +89,7 @@
 %%SITE_PERL%%/Acme/MetaSyntactic/sql.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/stars.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/state_flowers.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/summerwine.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/swords.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/teletubbies.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/thunderbirds.pm
