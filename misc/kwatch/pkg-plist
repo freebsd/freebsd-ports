@@ -1,9 +1,9 @@
 bin/kwatch
 share/applnk/Utilities/kwatch.desktop
 share/apps/kwatch/kwatchui.rc
-share/doc/HTML/default/kwatch/common
-share/doc/HTML/default/kwatch/index.cache.bz2
-share/doc/HTML/default/kwatch/index.docbook
+%%DOCSDIR%%/default/kwatch/common
+%%DOCSDIR%%/default/kwatch/index.cache.bz2
+%%DOCSDIR%%/default/kwatch/index.docbook
 share/icons/hicolor/16x16/apps/kwatch.png
 share/icons/hicolor/32x32/apps/kwatch.png
 share/icons/locolor/16x16/apps/kwatch.png
@@ -15,13 +15,8 @@ share/locale/de/LC_MESSAGES/kwatch.mo
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrm share/doc/HTML/default/kwatch
-@dirrmtry share/doc/HTML/default
-@dirrmtry share/doc/HTML
+@dirrm %%DOCSDIR%%/default/kwatch
+@dirrmtry %%DOCSDIR%%/default
+@dirrmtry %%DOCSDIR%%
 @dirrm share/apps/kwatch
 @dirrmtry share/applnk/Utilities
