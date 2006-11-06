@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arpalert
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.arpalert.org/src/
 
