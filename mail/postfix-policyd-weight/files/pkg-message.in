@@ -1,8 +1,7 @@
 **********
-* To run this from %%PREFIX%%/etc/postfix/master.cf:
+* Start with:
 
-policy  unix  -       n       n       -       -       spawn
-  user=polw argv=%%PREFIX%%/libexec/postfix/policyd-weight
+# %%PREFIX%%/libexec/postfix/policyd-weight start
 
 * To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf
 
@@ -12,7 +11,7 @@ smtpd_recipient_restrictions =
 	...
 	reject_unauth_destination
 	reject_unauth_pipelining
-	check_policy_service unix:private/policy
+	check_policy_service inet:127.0.0.1:12525
 	...
 
 * NOTE: specify check_policy_service AFTER reject_unauth_destination
@@ -26,8 +25,8 @@ smtpd_recipient_restrictions =
 *
 * ATTENTION !!! ATTENTION
 *
-* if you are already using policyd-weight you MUST update your master.cf and
-* change the user=nobody argument to user=polw
+* Since version 0.1.14 beta the master.cf mode is deprecated. Use the daemon
+* mode instead. More info in man 8 policyd-weight.
 * 
 * ATTENTION !!! ATTENTION
 *************
