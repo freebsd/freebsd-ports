@@ -8,9 +8,8 @@
 PORTNAME=	nbtscan
 PORTVERSION=	1.5.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.sourcefiles.org/Networking/Tools/Miscellanenous/ \
-		http://swoolley.org/source_cache/ \
-		http://www.goodking.ca/pub/files/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	NetBIOS name network scanner
