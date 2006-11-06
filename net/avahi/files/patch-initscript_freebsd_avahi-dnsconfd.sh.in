@@ -11,7 +11,7 @@
 +. %%RC_SUBR%%
 +. %%GNOME_SUBR%%
 +
-+avahi_dnsconfd_enable=${avahi_dnsconfd_enable-${gone_enable}}
++avahi_dnsconfd_enable=${avahi_dnsconfd_enable-${gnome_enable}}
  
  name=avahi_dnsconfd
  rcvar=`set_rcvar`
