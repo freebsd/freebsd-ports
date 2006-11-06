@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	2.5.0p2
+PORTVERSION=	2.5.1p1
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
@@ -20,9 +20,6 @@ COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
-
 NO_LATEST_LINK=	yes
 USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
@@ -31,10 +28,10 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--disable-libtool --prefix=${PREFIX} \
-		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
-		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
-		--with-gnutar=${LOCALBASE}/bin/gtar
+		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP}
 INSTALLS_SHLIB=	yes
+
+OPTIONS=	GNUTAR "use GNU tar" on
 
 .include <bsd.port.pre.mk>
 
@@ -63,6 +60,13 @@ CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
 CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 .endif
 
+.if defined(WITH_GNUTAR)
+CONFIGURE_ARGS+=--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
+		--with-gnutar=${LOCALBASE}/bin/gtar
+BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+.endif
+
 # amanda-server part
 .if !defined(CLIENT_ONLY)
 
@@ -70,9 +74,6 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "    -DWITH_PLOT to enable ploting, requires X11 libraries"
-	@${ECHO} "    -DWITH_SAMBA to enable the use of smbclient"
-	@${ECHO} "    -DWITH_MTX to enable the use of mtx changer scripts"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_TAPE=tape to specify the default tape device"
@@ -101,10 +102,15 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 CONFIGURE_ARGS+=--without-client
 
 MAN8=		amadmin.8 amaespipe.8 amcheck.8 \
-		amcheckdb.8 amcleanup.8 amcrypt.8 amdd.8 \
+		amcheckdb.8 amcleanup.8 \
+		amcrypt.8 amcrypt-ossl-asym.8 amcrypt-ossl.8 amdd.8 \
 		amdump.8 amfetchdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
 		amoverview.8 amreport.8 amrmtape.8 amstatus.8 \
 		amtape.8 amtoc.8 amverify.8 amverifyrun.8 amtapetype.8
+
+OPTIONS+=	PLOT "enable ploting, requires X11 libraries" off\
+		SAMBA "enable the use of smbclient" off \
+		MTX "enable the use of mtx changer scripts" off
 
 .if defined (WITH_PLOT)
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
@@ -153,8 +159,6 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "    -DWITH_AMANDA_DUMP_SNAPSHOT"
-	@${ECHO} "        Use dump -L to use snapshot"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
@@ -178,8 +182,10 @@ pre-fetch:
 
 CONFIGURE_ARGS+=--without-server
 
-MAN5=		amanda.conf.5
+MAN5=		amanda.conf.5 amanda-client.conf.5
 MAN8=		amanda.8 amrecover.8 amrestore.8
+
+OPTIONS+=	DUMP_SNAPSHOT "use snapshot by using dump -L" off
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/amanda

@@ -1,14 +1,8 @@
-Index: client-src/sendbackup-dump.c
-===================================================================
-RCS file: /home/cvs/opensources/amanda/client-src/sendbackup-dump.c,v
-retrieving revision 1.1.1.2
-retrieving revision 1.5
-diff -u -r1.1.1.2 -r1.5
---- client-src/sendbackup-dump.c	25 Jun 2003 04:39:28 -0000	1.1.1.2
-+++ client-src/sendbackup-dump.c	25 Jun 2003 04:43:20 -0000	1.5
-@@ -40,6 +40,10 @@
- #define NAUGHTY_BITS			/* but then I'd have to kill you */
- #endif
+--- client-src/sendbackup-dump.c.orig	Fri Sep  8 13:09:14 2006
++++ client-src/sendbackup-dump.c	Fri Sep  8 13:15:44 2006
+@@ -35,6 +35,10 @@
+ #include "clock.h"
+ #include "version.h"
  
 +#ifdef __FreeBSD__
 +#include <sys/param.h>
@@ -16,8 +10,8 @@ diff -u -r1.1.1.2 -r1.5
 +
  #define LEAF_AND_DIRS "sed -e \'\ns/^leaf[ \t]*[0-9]*[ \t]*\\.//\nt\n/^dir[ \t]/ {\ns/^dir[ \t]*[0-9]*[ \t]*\\.//\ns%$%/%\nt\n}\nd\n\'"
  
- static regex_t re_table[] = {
-@@ -306,6 +310,12 @@
+ static amregex_t re_table[] = {
+@@ -370,6 +374,12 @@
  
  	dumpkeys = vstralloc(level_str,
  			     options->no_record ? "" : "u",
@@ -30,9 +24,9 @@ diff -u -r1.1.1.2 -r1.5
  			     "s",
  #ifdef HAVE_HONOR_NODUMP
  			     "h",
-@@ -328,6 +338,9 @@
+@@ -392,6 +402,9 @@
  			    &dumpin, &dumpout, &mesgf, 
- 			    "dump",
+ 			    cmd, config,
  			    dumpkeys,
 +#ifdef __FreeBSD__
 +			    "64",
