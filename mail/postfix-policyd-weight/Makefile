@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/
 PKGNAMEPREFIX=	postfix-
@@ -20,9 +20,22 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 SUB_FILES=	pkg-message
 PLIST_FILES=	libexec/postfix/${PORTNAME} etc/${PORTNAME}.conf.sample
 
+USE_RC_SUBR+=	policyd-weight
+
+MAN8+=	policyd-weight.8
+MAN5+=	policyd-weight.conf.5
+
+.include <bsd.port.pre.mk>
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec/postfix
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${PREFIX}/etc
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec/postfix/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${PREFIX}/etc/
+.for i in 5 8
+	@${MKDIR} ${PREFIX}/man/man$i
+. for j in ${MAN${i}}
+	${INSTALL_MAN} ${WRKSRC}/man/man${i}/$j ${PREFIX}/man/man${i}/
+. endfor
+.endfor
 
 pre-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -30,4 +43,4 @@ pre-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
