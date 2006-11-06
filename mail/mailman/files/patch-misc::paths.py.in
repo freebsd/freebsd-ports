@@ -1,0 +1,41 @@
+Index: misc/paths.py.in	
+--- branches/Release_2_1-maint/mailman/misc/paths.py.in	2005/12/30 18:50:08	7694
++++ branches/Release_2_1-maint/mailman/misc/paths.py.in	2006/10/12 00:48:48	8056
+@@ -35,6 +35,19 @@
+ if exec_prefix == '${prefix}':
+     exec_prefix = prefix
+ 
++# Check if ja/ko codecs are available before changing path.
++try:
++    s = unicode('OK', 'iso-2022-jp')
++    jaok = True
++except LookupError:
++    jaok = False
++
++try:
++    s = unicode('OK', 'euc-kr')
++    kook = True
++except LookupError:
++    kook = False
++
+ # Hack the path to include the parent directory of the $prefix/Mailman package
+ # directory.
+ sys.path.insert(0, prefix)
+@@ -53,12 +66,14 @@
+ # In a normal interactive Python environment, the japanese.pth and korean.pth
+ # files would be imported automatically.  But because we inhibit the importing
+ # of the site module, we need to be explicit about importing these codecs.
+-import japanese
++if not jaok:
++    import japanese
+ # As of KoreanCodecs 2.0.5, you had to do the second import to get the Korean
+ # codecs installed, however leave the first import in there in case an upgrade
+ # changes this.
+-import korean
+-import korean.aliases
++if not kook:
++    import korean
++    import korean.aliases
+ # Arabic and Hebrew (RFC-1556) encoding aliases. (temporary solution)
+ import encodings.aliases
+ encodings.aliases.aliases.update({
