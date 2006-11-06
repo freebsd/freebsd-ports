@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cimg
-DISTVERSION=	1-16
+DISTVERSION=	1-17
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,8 +27,8 @@ USE_GCC=	3.4
 REINPLACE_ARGS=	-i ""
 DOCBASE=	CHANGES.txt README.txt
 DOCREFS=	download.shtml favicon.ico favicon.png foot_reference.html	\
-		head.html head_reference.html img index.shtml news.html		\
-		reference screenshots.shtml
+		head.html head_reference.html img index.shtml links.shtml	\
+		news.shtml reference screenshots.shtml
 .else
 NOBUILD=	yes
 .endif

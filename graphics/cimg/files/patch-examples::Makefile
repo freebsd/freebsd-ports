@@ -1,9 +1,9 @@
---- examples/Makefile.orig	Thu Sep 21 15:25:22 2006
-+++ examples/Makefile	Thu Sep 21 20:34:29 2006
+--- examples/Makefile.orig	Mon Nov  6 15:26:08 2006
++++ examples/Makefile	Mon Nov  6 16:16:00 2006
 @@ -8,10 +8,10 @@
  
  # Set correct variables and paths
- CIMGVER = 1.16
+ CIMGVER = 1.17
 -CC      = g++
 -X11PATH = /usr/X11R6
 -CFLAGS  = -Wall -W -ansi -pedantic -ffast-math -I$(X11PATH)/include
