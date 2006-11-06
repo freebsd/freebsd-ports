@@ -22,6 +22,7 @@ CONFLICTS?=	${PORTNAME}-client-7.[0-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]* \
 		${PORTNAME}-client-8.0.* \
 		${PORTNAME}${PKGNAMESUFFIX}-8.0.*
+BROKEN=		work in progress
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
