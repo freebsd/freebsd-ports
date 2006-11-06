@@ -10,16 +10,15 @@ PORTVERSION=	2.1.a15
 PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
-		http://www.mirrors.wiretapped.net/security/network-monitoring/arpwatch/ \
-		ftp://ftp.riken.go.jp/pub/net/lbl/ \
-		http://www.goodking.ca/pub/files/
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	Monitor arp & rarp requests
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--quiet
+CONFIGURE_ARGS=	--quiet --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
 
