@@ -20,7 +20,7 @@ share/applications/gxine.desktop
 %%DATADIR%%/pixmaps/set-volume.svg
 %%DATADIR%%/pixmaps/speaker.png
 %%DATADIR%%/pixmaps/splash.png
-share/icons/hicolor/48x48/apps/gxine.png
+share/icons/hicolor/64x64/apps/gxine.png
 %%NLS%%share/locale/cs/LC_MESSAGES/gxine.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gxine.theme.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gxine.mo
@@ -29,6 +29,8 @@ share/icons/hicolor/48x48/apps/gxine.png
 %%NLS%%share/locale/fr/LC_MESSAGES/gxine.theme.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gxine.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gxine.theme.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gxine.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gxine.theme.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gxine.mo
@@ -40,6 +42,21 @@ share/icons/hicolor/48x48/apps/gxine.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.theme.mo
 share/pixmaps/gxine.png
+@dirrmtry share/pixmaps
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/sq/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sq
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry share/applications

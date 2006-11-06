@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTVERSION=	0.5.8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
@@ -15,7 +14,8 @@ MASTER_SITE_SUBDIR=	xine
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An alternative GUI for the Xine media player
 
-LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -23,7 +23,7 @@ USE_GNOME=	gtk20 gnomehier
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=--mandir=${PREFIX}/man --with-dbus
 CFLAGS=		-O2 -fno-strict-aliasing -pipe
 INSTALLS_ICONS=	yes
 
@@ -31,7 +31,8 @@ MANLANG=	"" de
 MAN1=		gxine.1 gxine_client.1
 MANCOMPRESSED=	no
 
-OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on
+OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on \
+		LIRC "Enable lirc support" off
 
 .include <bsd.port.pre.mk>
 .if defined(WITHOUT_NLS)
@@ -42,16 +43,29 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+.if defined(WITH_LIRC)
+LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
+CONFIGURE_ARGS+=	--enable-lirc
+.else
+CONFIGURE_ARGS+=	--disable-lirc
+.endif
+
 .if defined(WITHOUT_MOZILLA_PLUGIN)
 LIB_DEPENDS+=	js.1:${PORTSDIR}/lang/spidermonkey
 CONFIGURE_ARGS+=--without-browser-plugin
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
-USE_GECKO=	firefox mozilla seamonkey xulrunner firefox-devel
+USE_GECKO=	firefox mozilla xulrunner firefox15
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
 CONFIGURE_ARGS+=--disable-libjs
+CFLAGS+=	-I${LOCALBASE}/include/nspr
 PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|firefox/nspr/||g" \
+			${WRKSRC}/configure
 
 post-install:
 .if !defined(WITHOUT_MOZILLA_PLUGIN)
