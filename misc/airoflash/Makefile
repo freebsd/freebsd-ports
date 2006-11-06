@@ -8,16 +8,12 @@
 PORTNAME=	airoflash
 PORTVERSION=	${AF_VERSION}
 CATEGORIES=	misc
-MASTER_SITES=	"http://cvs.sourceforge.net/viewcvs.py/*checkout*/airo-linux/airo-linux/tools/airoflash.c?rev=${AF_VERSION}"
+MASTER_SITES=	"http://airo-linux.cvs.sourceforge.net/*checkout*/airo-linux/airo-linux/tools/airoflash.c?revision=${AF_VERSION}"
 DISTNAME=	airoflash.c
 EXTRACT_SUFX=
 
 MAINTAINER=	ambrisko@freebsd.org
 COMMENT=	Flash utiltity for Cisco/Aironet 802.11 wireless cards
-
-BROKEN=		unfetchable: connection refused
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 AF_VERSION=	1.7
 PLIST_FILES=	bin/airoflash
