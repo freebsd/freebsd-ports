@@ -18,8 +18,7 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena 2006 (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri \
-		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -43,7 +42,10 @@ DESKTOP_ENTRIES="Alien Arena 2006 (Linux version)" \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
+		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
 .endif
 
 .if ${ARCH} == "i386"
