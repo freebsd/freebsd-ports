@@ -642,7 +642,7 @@
 %%MMDIR%%/templates/ar/admindbdetails.html
 %%MMDIR%%/templates/ar/admindbpreamble.html
 %%MMDIR%%/templates/ar/admindbsummary.html
-%%MMDIR%%/templates/ar/admlogin.html  
+%%MMDIR%%/templates/ar/admlogin.html
 %%MMDIR%%/templates/ar/archidxentry.html
 %%MMDIR%%/templates/ar/archidxfoot.html
 %%MMDIR%%/templates/ar/archidxhead.html
@@ -651,7 +651,7 @@
 %%MMDIR%%/templates/ar/archtoc.html
 %%MMDIR%%/templates/ar/archtocentry.html
 %%MMDIR%%/templates/ar/archtocnombox.html
-%%MMDIR%%/templates/ar/article.html 
+%%MMDIR%%/templates/ar/article.html
 %%MMDIR%%/templates/ar/emptyarchive.html
 %%MMDIR%%/templates/ar/headfoot.html
 %%MMDIR%%/templates/ar/listinfo.html

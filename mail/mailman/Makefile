@@ -7,6 +7,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.9
+PORTREVISION=	1
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -25,7 +26,7 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		HTDIG "htdig integration patches" off
 
 HAS_CONFIGURE=	yes
-USE_PYTHON=	2.4
+USE_PYTHON=	yes
 CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
@@ -95,7 +96,7 @@ RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py
 .endif
 
 .if defined(WITH_HTDIG)
-BROKEN= patch to mailman 2.1.9 was not released yet, please remove htdig option and try again.
+BROKEN=		patch to mailman 2.1.9 was not released yet, please remove htdig option and try again.
 PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mm/patches/444884/:patch2
 PATCHFILES+=	indexing-2.1.6-0.1.patch.gz:patch1 \
