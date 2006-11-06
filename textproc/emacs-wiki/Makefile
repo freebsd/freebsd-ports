@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-wiki
-PORTVERSION=	2.71
+PORTVERSION=	2.72
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www.mwolson.org/static/dist/emacs-wiki/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
