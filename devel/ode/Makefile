@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	3.4+
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
@@ -57,7 +58,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
 		-e '/CFLAGS/ s|-O[12]||'
-	@${FIND} ${WRKSRC} -type f -name "*.h" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-i "" -e 's|<malloc.h>|<stdlib.h>|g'
 
 post-install:
