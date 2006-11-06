@@ -8,9 +8,9 @@
 PORTNAME=	tzfile
 PORTVERSION=	0.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://cvs.m17n.org/cgi-bin/viewcvs/${PORTNAME}/
+MASTER_SITES=	http://cvs.m17n.org/viewcvs/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	TZFile-${PORTVERSION}${EXTRACT_SUFX}\?tarball=1\&only_with_tag=${PORTNAME}-${PORTVERSION:S/./_/g}\&cvsroot=ruby\&
+DISTNAME=	tzfile.tar.gz\?only_with_tag=${PORTNAME}-${PORTVERSION:S/./_/g}\&view=tar
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
