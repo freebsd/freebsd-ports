@@ -44,6 +44,8 @@ GCONF_SCHEMAS=	clock.schemas fish.schemas \
 		panel-toplevel.schemas window-list.schemas \
 		workspace-switcher.schemas
 
+OPTIONS=	EVOLUTION "use the Evolution calendar if installed" on
+
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_GNOME
 WITH_GNOME=	yes
@@ -51,7 +53,7 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mevolutiondataserver}!=""
+.if defined(WITH_EVOLUTION) && ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=	evolutiondataserver
 CONFIGURE_ARGS+=--enable-eds
 .else
