@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 
 .if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .elif defined(WITH_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .elif defined(WITH_SQLITE)
