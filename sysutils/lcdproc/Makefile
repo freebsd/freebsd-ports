@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	lcdproc
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mmdolze@users.sourceforge.net
+MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	A client/server suite for LCD devices
 
 ONLY_FOR_ARCHS=	i386
 
+USE_AUTOTOOLS=	autoconf:259 automake:19 aclocal:19
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
@@ -23,10 +24,13 @@ USE_RC_SUBR=	LCDd lcdproc
 
 CONFIGURE_ARGS=	--enable-drivers=all \
 		--disable-ldap \
-		--disable-doxygen
+		--disable-doxygen \
+		--mandir=${PREFIX}/man \
+		--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 
 MAN1=		lcdexec.1 lcdproc.1
+MAN5=		lcdproc-config.5
 MAN8=		LCDd.8
 
 .if defined(WITH_USB)
@@ -43,6 +47,8 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LCDd.conf ${PREFIX}/etc/LCDd.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/LCDclients.conf ${PREFIX}/etc/LCDclients.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/clients/lcdproc/lcdproc.conf ${PREFIX}/etc/lcdproc.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/clients/lcdexec/lcdexec.conf ${PREFIX}/etc/lcdexec.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/clients/lcdvc/lcdvc.conf ${PREFIX}/etc/lcdvc.conf.sample
 
 .include <bsd.port.mk>
