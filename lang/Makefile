@@ -84,6 +84,7 @@
     SUBDIR += gcc41-withgcjawt
     SUBDIR += gcc42
     SUBDIR += gcc42-withgcjawt
+    SUBDIR += gcc43
     SUBDIR += gcl
     SUBDIR += gdc
     SUBDIR += gforth
