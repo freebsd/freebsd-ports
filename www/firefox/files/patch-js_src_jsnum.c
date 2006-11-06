@@ -14,7 +14,7 @@
  
  #else
  
-+#if defined(__FreeBSD__) && __FreeBSD_version >= 503000
++#if defined(__FreeBSD__) && __FreeBSD_version >= 601000
 +#include <fenv.h>
 +#define FIX_FPU() (fedisableexcept(FE_ALL_EXCEPT))
 +
