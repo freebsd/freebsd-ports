@@ -12,10 +12,9 @@
 name="nsca"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/libexec/nagios/nsca"
-pidfile="/var/spool/nagios/nsca.lock"
-nsca_user="nagios"
-extra_commands="restart"
+command="%%PREFIX%%/sbin/nsca"
+pidfile="/var/run/nsca.pid"
+extra_commands=reload
 
 nsca_enable=${nsca_enable:-"NO"}
 nsca_flags=${nsca_flags:-"--single"}
@@ -24,6 +23,6 @@ nsca_configfile=${nsca_configfile:-"%%PREFIX%%/etc/nagios/nsca.cfg"}
 load_rc_config "${name}"
 
 required_files="${nsca_configfile}"
-command_args="-c ${nsca_configfile} ${nsca_flags}"
+command_args="-c ${nsca_configfile}"
 
 run_rc_command "$1"
