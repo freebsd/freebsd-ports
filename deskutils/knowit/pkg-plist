@@ -2,10 +2,10 @@ bin/knowit
 share/applnk/Applications/knowit.desktop
 share/apps/knowit/knowitui.rc
 share/apps/knowit/tips
-share/doc/HTML/en/knowit/common
-share/doc/HTML/en/knowit/index.cache.bz2
-share/doc/HTML/en/knowit/index.docbook
-share/doc/HTML/en/knowit/screenshot.png
+%%DOCSDIR%%/en/knowit/common
+%%DOCSDIR%%/en/knowit/index.cache.bz2
+%%DOCSDIR%%/en/knowit/index.docbook
+%%DOCSDIR%%/en/knowit/screenshot.png
 share/icons/hicolor/16x16/apps/knowit.png
 share/icons/hicolor/32x32/apps/knowit.png
 share/locale/de/LC_MESSAGES/knowit.mo
@@ -18,15 +18,9 @@ share/locale/sk/LC_MESSAGES/knowit.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/knowit.mo
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm share/doc/HTML/en/knowit
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
+@dirrm %%DOCSDIR%%/en/knowit
+@dirrmtry %%DOCSDIR%%/en
+@dirrmtry %%DOCSDIR%%
 @dirrm share/apps/knowit
 @dirrmtry share/applnk/Applications
 @dirrmtry share/applnk
