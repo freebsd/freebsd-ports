@@ -19,6 +19,7 @@ include/svnqt/pool.hpp
 include/svnqt/repository.hpp
 include/svnqt/repositorylistener.hpp
 include/svnqt/revision.hpp
+include/svnqt/shared_pointer.hpp
 include/svnqt/smart_pointer.hpp
 include/svnqt/status.hpp
 include/svnqt/svnfilestream.hpp
@@ -37,7 +38,7 @@ lib/kde3/libkdesvnpart.so
 lib/libsvnqt.la
 lib/libsvnqt.so
 lib/libsvnqt.so.3
-lib/libsvnqt.so.3.0.0
+lib/libsvnqt.so.3.1.0
 share/applications/kde/kdesvn.desktop
 share/apps/kdesvn/kdesvnui.rc
 share/apps/kdesvnpart/kdesvn_part.rc
