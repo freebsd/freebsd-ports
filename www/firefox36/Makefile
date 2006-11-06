@@ -19,7 +19,6 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
 
-LATEST_LINK=	firefox2
 MOZILLA_NAME=	Firefox
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/'
 
