@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061106
+  AFFECTS: users of chinese/tatter-tools
+  AUTHOR: chinsan.tw@gmail.com
+
+  -The default install location has changed from
+  ${PREFIX}/www/data/tatter to ${PREFIX}/www/tatter.
+
 20061102
   AFFECTS: users of mail/fetchmail
   AUTHOR: barner@FreeBSD.org
