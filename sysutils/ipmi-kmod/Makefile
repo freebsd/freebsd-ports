@@ -37,8 +37,8 @@ STRIP=
 IGNORE=		requires kernel source to be installed
 .endif
 
-.if ${OSVERSION} >= 601102
-IGNORE=		already in the base system
+.if exists(${SRC_BASE}/sys/dev/ipmi)
+IGNORE=		is already included in the base system
 .elif ${OSVERSION} < 503000
 IGNORE=		does not support FreeBSD before 5.3
 .endif
