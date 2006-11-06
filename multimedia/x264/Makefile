@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
+BROKEN=	does not build
 WITHOUT_GPAC=	yes
 WITHOUT_GTK2=	yes
 .endif
