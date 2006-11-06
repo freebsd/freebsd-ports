@@ -1,4 +1,3 @@
-
 ********************************************************************
 Unless this file already existed, a sample configuration file
 has been placed in %%PREFIX%%/etc/munin/munin.conf.
@@ -7,4 +6,3 @@ Please edit it according to your needs.
 
 The Munin server will be run from cron under the user 'munin'.
 ********************************************************************
-
