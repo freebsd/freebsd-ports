@@ -46,3 +46,5 @@ libdata/pkgconfig/dbus-1.pc
 @unexec rm -f /var/run/dbus/dbus.pid
 @unexec rm -f /var/run/dbus/dbus.pipe
 @unexec rmdir /var/run/dbus 2>/dev/null || true
+@unexec rm -f /var/db/dbus/machine-id
+@unexec rmdir /var/db/dbus 2>/dev/null || true
