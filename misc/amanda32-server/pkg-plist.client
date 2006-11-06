@@ -1,6 +1,10 @@
 @unexec if cmp -s /etc/amandates /dev/null; then rm -f /etc/amandates; fi
 dumper/generic-dumper
 dumper/gnutar
+lib/libamandad-%%SHLIBVER%%.so
+lib/libamandad.so
+lib/libamandad.la
+lib/libamandad.a
 lib/libamanda-%%SHLIBVER%%.so
 lib/libamanda.so
 lib/libamanda.la
@@ -21,18 +25,26 @@ libexec/amanda/sendbackup
 libexec/amanda/sendsize
 libexec/amanda/versionsuffix
 sbin/amrecover
+sbin/amoldrecover
 share/amanda/Appendix.txt
 share/amanda/COPYRIGHT
 share/amanda/COPYRIGHT-APACHE
 share/amanda/COPYRIGHT-REGEX
+share/amanda/ReleaseNotes
 share/amanda/amadmin.8.txt
+share/amanda/amaespipe.8.txt
+share/amanda/amanda-client.conf.5.txt
 share/amanda/amanda.8.txt
 share/amanda/amanda.conf.5.txt
 share/amanda/amcheck.8.txt
 share/amanda/amcheckdb.8.txt
 share/amanda/amcleanup.8.txt
+share/amanda/amcrypt-asym-ossl.8.txt
+share/amanda/amcrypt-ossl.8.txt
+share/amanda/amcrypt.8.txt
 share/amanda/amdd.8.txt
 share/amanda/amdump.8.txt
+share/amanda/amfetchdump.8.txt
 share/amanda/amflush.8.txt
 share/amanda/amgetconf.8.txt
 share/amanda/amlabel.8.txt
@@ -56,6 +68,7 @@ share/amanda/exclude.txt
 share/amanda/faq.txt
 share/amanda/historical.txt
 share/amanda/howto-afs.txt
+share/amanda/howto-auth.txt
 share/amanda/howto-cygwin.txt
 share/amanda/howto-filedriver.txt
 share/amanda/howto-wrapper.txt

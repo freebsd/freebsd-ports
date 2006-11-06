@@ -1,9 +1,9 @@
---- client-src/sendbackup-gnutar.c.orig	Sat Jan  4 12:46:08 2003
-+++ client-src/sendbackup-gnutar.c	Thu Oct 23 19:22:31 2003
-@@ -480,7 +480,11 @@
- 
- 	start_index(options->createindex, dumpout, mesgf, indexf, indexcmd);
- 
+--- client-src/sendbackup-gnutar.c.orig	Wed Jul 26 03:35:21 2006
++++ client-src/sendbackup-gnutar.c	Thu Sep  7 12:13:59 2006
+@@ -543,7 +543,11 @@
+ 	    my_argv[i++] = g_options->config;
+ 	else
+ 	    my_argv[i++] = "NOCONFIG";
 +#ifdef GNUTAR
 +	my_argv[i++] = "GNUTAR";
 +#else

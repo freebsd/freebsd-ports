@@ -45,6 +45,8 @@ sbin/amcheck
 sbin/amcheckdb
 sbin/amcleanup
 sbin/amcrypt
+sbin/amcrypt-ossl
+sbin/amcrypt-ossl-asym
 sbin/amdd
 sbin/amdump
 sbin/amfetchdump
