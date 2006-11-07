@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.16.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -77,6 +77,8 @@ CONFIGURE_ARGS+=--disable-avahi
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|@PTHREAD_LIB@|${PTHREAD_LIBS}|' \
+		${WRKSRC}/gnome-vfs-2.0.pc.in ${WRKSRC}/gnome-vfs-module-2.0.pc.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
