@@ -532,6 +532,7 @@ sbin/streamplayer
 %%DATADIR%%/sounds/dir-nomatch.gsm
 %%DATADIR%%/sounds/dir-nomore.gsm
 %%DATADIR%%/sounds/hello-world.gsm
+%%DATADIR%%/sounds/hours.gsm
 %%DATADIR%%/sounds/invalid.gsm
 %%DATADIR%%/sounds/letters/a.gsm
 %%DATADIR%%/sounds/letters/at.gsm
@@ -569,6 +570,7 @@ sbin/streamplayer
 %%DATADIR%%/sounds/letters/y.gsm
 %%DATADIR%%/sounds/letters/z.gsm
 %%DATADIR%%/sounds/letters/zed.gsm
+%%DATADIR%%/sounds/minutes.gsm
 %%DATADIR%%/sounds/pbx-invalid.gsm
 %%DATADIR%%/sounds/pbx-invalidpark.gsm
 %%DATADIR%%/sounds/pbx-transfer.gsm
@@ -618,6 +620,7 @@ sbin/streamplayer
 %%DATADIR%%/sounds/queue-thereare.gsm
 %%DATADIR%%/sounds/queue-youarenext.gsm
 %%DATADIR%%/sounds/screen-callee-options.gsm
+%%DATADIR%%/sounds/seconds.gsm
 %%DATADIR%%/sounds/spy-agent.gsm
 %%DATADIR%%/sounds/spy-h323.gsm
 %%DATADIR%%/sounds/spy-iax.gsm

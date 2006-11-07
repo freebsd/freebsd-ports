@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.7.1
-PORTREVISION=	1
+PORTVERSION=	1.2.13
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -17,7 +16,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	fjoe
 PATCH_DIST_STRIP=	-p1
-BRIVER=		bristuff-0.3.0-PRE-1p
+BRIVER=		bristuff-0.3.0-PRE-1s
 CONFLICTS=	asterisk-[0-9]*
 
 MAINTAINER=	fjoe@FreeBSD.org
@@ -28,8 +27,6 @@ LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt \
 		curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-
-FORBIDDEN=	http://www.vuxml.org/freebsd/1c0def84-5fb1-11db-b2e9-0008c79fa3d2.html
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
@@ -50,7 +47,6 @@ MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
 WITHOUT_H323=	1
 WITHOUT_ZAPTEL=	1
 .endif
