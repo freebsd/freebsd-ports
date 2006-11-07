@@ -48,7 +48,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . \
 		| ${TAR} -C ${DOCSDIR} --unlink -xf -
+.if !defined(INSTALL_AS_USER)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
 .endif
 
 .include <bsd.port.mk>
