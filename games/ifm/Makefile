@@ -7,7 +7,7 @@
 
 PORTNAME=	ifm
 PORTVERSION=	5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games tk84
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		http://www.ifarchive.org/%SUBDIR%/
@@ -34,4 +34,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ifm/* ${DOCSDIR}/html
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	RELENG4=""
+.else
+PLIST_SUB+=	RELENG4="@comment "
+.endif
+
+.include <bsd.port.post.mk>
