@@ -14,12 +14,13 @@
 
 PORTNAME=	dkim-milter
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	umq@ueo.co.jp
-COMMENT=	Domainkeys milter for Sendmail
+COMMENT=	Domainkeys Identified Mail (DKIM) milter
 
 USE_RC_SUBR=	milter-dkim.sh
 
@@ -46,7 +47,7 @@ SENDMAIL_MILTER_PORT?=	sendmail
 SUB_FILES=	milter-dkim.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		dkim-filter.8
-PLIST_FILES=	lib/libar.a libexec/dkim-filter sbin/gentxt
+PLIST_FILES=	libexec/dkim-filter sbin/gentxt-dkim
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh
 
@@ -64,13 +65,27 @@ SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}"
 SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR}"
 .endif
 
-.if defined(SENDMAIL_WITHOUT_MILTER)
+.if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
+LIBDK_PORT=	mail/dk-milter
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${LIBDK_PORT}:patch
+DKMILTER_DISTNAME!=	cd ${PORTSDIR}/${LIBDK_PORT} && ${MAKE} -V DISTNAME
+LIBDK_PATH=	${PORTSDIR}/${LIBDK_PORT}/work/${DKMILTER_DISTNAME}/libdk
+.endif
+
 pre-fetch:
+.if defined(SENDMAIL_WITHOUT_MILTER)
 	@${ECHO_MSG}
 	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
 	@${ECHO_MSG} and rebuild sendmail in the ports
 	@${FALSE}
 .endif
+	@${ECHO_MSG}
+	@${ECHO_MSG} "dkim-milter has the following tunable option(s):"
+	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
+	@${ECHO_MSG} " SENDMAIL_MILTER_IN_BASE=yes	Build to run with base sendmail"
+	@${ECHO_MSG} " WITH_POSTFIX=yes		Build to run with postfix port"
+	@${ECHO_MSG}
+	@sleep 5
 
 post-extract:
 	@${CP} ${WRKSRC}/dkim-filter/autorespond.csh ${WRKSRC}
@@ -85,10 +100,18 @@ post-patch:
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${SITE} > ${WCONF}/site.config.m4
 
+.if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
+	@${REINPLACE_CMD} -e "/bldPUSH_SMLIB(\`dk')/s|^dnl ||" \
+		-e "/-I\.\.\/libdk\//s|^dnl ||" \
+		-e '/-D_FFR_VERIFY_DOMAINKEYS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+	${LN} -s ${LIBDK_PATH} ${WRKSRC}/
+.endif
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/libexec/dkim-filter
 	${INSTALL_SCRIPT} ${WRKSRC}/dkim-filter/gentxt.csh \
-		${PREFIX}/sbin/gentxt
+		${PREFIX}/sbin/gentxt-dkim
 .for i in ${MAN8}
 	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8/
