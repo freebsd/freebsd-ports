@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.15.5
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -80,7 +81,7 @@ CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .if defined(WITH_CARES)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcares.a:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS+=	cares.1:${PORTSDIR}/dns/c-ares
 CONFIGURE_ARGS+=	--enable-ares=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-ares
