@@ -1,11 +1,11 @@
---- extra/yassl/taocrypt/Makefile.in.orig	Mon Jun 19 10:52:14 2006
-+++ extra/yassl/taocrypt/Makefile.in	Mon Jun 19 10:52:30 2006
-@@ -350,7 +350,7 @@
+--- extra/yassl/taocrypt/Makefile.in.orig	Thu Oct 26 14:02:59 2006
++++ extra/yassl/taocrypt/Makefile.in	Tue Nov  7 08:18:38 2006
+@@ -351,7 +351,7 @@
  yassl_libs = @yassl_libs@
  yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
  zlib_dir = @zlib_dir@
 -SUBDIRS = src test benchmark
 +SUBDIRS = src
- EXTRA_DIST = taocrypt.dsw taocrypt.dsp taocrypt.vcproj CMakeLists.txt
+ EXTRA_DIST = taocrypt.dsw taocrypt.dsp taocrypt.vcproj CMakeLists.txt $(wildcard mySTL/*.hpp)
  all: all-recursive
  

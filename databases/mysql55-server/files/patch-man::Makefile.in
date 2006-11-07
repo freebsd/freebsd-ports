@@ -1,11 +1,13 @@
---- man/Makefile.in.orig	Sun Nov 27 00:09:54 2005
-+++ man/Makefile.in	Sun Nov 27 00:09:03 2005
-@@ -338,7 +338,7 @@
+--- man/Makefile.in.orig	Thu Oct 26 14:03:04 2006
++++ man/Makefile.in	Tue Nov  7 08:19:50 2006
+@@ -363,8 +363,8 @@
  yassl_libs = @yassl_libs@
- yassl_libs_with_path = @yassl_libs_with_path@
+ yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
  zlib_dir = @zlib_dir@
 -man1_MANS = @man1_files@
+-man8_MANS = @man8_files@
 +man1_MANS =
- EXTRA_DIST = $(man1_MANS)
++man8_MANS =
+ EXTRA_DIST = $(man1_MANS) $(man8_MANS)
  all: all-am
  
