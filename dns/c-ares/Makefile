@@ -7,6 +7,7 @@
 
 PORTNAME=	c-ares
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://daniel.haxx.se/projects/c-ares/
 
@@ -15,10 +16,15 @@ COMMENT=	An asynchronous DNS resolver library
 
 CONFLICTS=	ares-1.*
 
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+SHLIB_VER=	1
+
+MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
+PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --enable-shared
 
 MAN3=	ares_cancel.3 \
 	ares_destroy.3 \
