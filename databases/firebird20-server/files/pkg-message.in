@@ -6,9 +6,9 @@ Before start the server ensure that the following line exists in /etc/services:
 
 gds_db		3050/tcp  #InterBase Database Remote Protocol
 
-And add the following line to /etc/inetd.conf
+If you use inetd then add the following line to /etc/inetd.conf
 
-gds_db	stream	tcp	nowait	firebird	%%PREFIX%%/sbin/fb_inet_server  fb_inet_server
+gds_db	stream	tcp	nowait	firebird	%%PREFIX%%/bin/fb_inet_server  fb_inet_server
 
 And finally restart inetd.
 
@@ -21,6 +21,7 @@ GSEC> quit
 
 before doing anything serious with Firebird.
 
-See %%LOCALSTATEDIR%%/RELNOTES for more.
+See documentation in %%DOCSDIR%%/
+for more information.
 ---------------------------------------------------------
 
