@@ -1,0 +1,13 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	Sat Sep 30 04:41:56 2006
++++ configure	Wed Nov  8 02:02:41 2006
+@@ -7287,8 +7287,6 @@
+ 
+ fi
+ 
+-LIBS="$LIBS -lresolv"
+-
+ echo "$as_me:$LINENO: checking for herror" >&5
+ echo $ECHO_N "checking for herror... $ECHO_C" >&6
+ if test "${ac_cv_func_herror+set}" = set; then
