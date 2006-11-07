@@ -1,0 +1,6 @@
+Quaqut is a simple program that queries Unreal Tournament 2004 (TM)
+game servers and retrieves information like those available while
+browsing servers in the game. That means information like server
+name, game type and current map, names and scores of players, and much more.
+
+WWW: http://quaqut.sourceforge.net/
