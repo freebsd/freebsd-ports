@@ -89,7 +89,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
