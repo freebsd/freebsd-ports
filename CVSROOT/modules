@@ -14519,6 +14519,7 @@ umfpack		ports/math/umfpack
 umix		ports/audio/umix
 umodplayer	ports/audio/umodplayer
 ump		ports/www/ump
+umr		ports/multimedia/umr
 unace		ports/archivers/unace
 unadf		ports/archivers/unadf
 unalz		ports/archivers/unalz
