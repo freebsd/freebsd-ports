@@ -168,7 +168,7 @@ show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 post-extract:
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/apr_dbd_mysql.rev-50.c \
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/apr_dbd_mysql.rev-57.c \
 		${WRKSRC}/srclib/apr-util/dbd/apr_dbd_mysql.c
 
 post-patch:
