@@ -8,9 +8,9 @@
 PORTNAME=	cvs
 PORTVERSION=	0.2
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://cvs.m17n.org/cgi-bin/viewcvs/ruby-${PORTNAME}/
+MASTER_SITES=	http://cvs.m17n.org/viewcvs/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}\?tarball=1\&only_with_tag=ruby-${PORTNAME}-${PORTVERSION:S/./_/g}\&cvsroot=ruby\&
+DISTNAME=	ruby-${PORTNAME}.tar.gz\?only_with_tag=ruby-${PORTNAME}-${PORTVERSION:S/./_/g}\&view=tar
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
