@@ -213,6 +213,7 @@
     SUBDIR += toxine
     SUBDIR += transcode
     SUBDIR += tunapie
+    SUBDIR += umr
     SUBDIR += v4l_compat
     SUBDIR += vamps
     SUBDIR += vcdgear

@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Feb 18 15:37:53 2000
++++ Makefile	Thu Oct 19 17:53:14 2006
+@@ -8,20 +8,6 @@
+ OBJS = main.o unrealfmt.o unrealfmtdata.o
+ 
+ CC = gcc
+-CFLAGS = -march=k6 -mcpu=k6 -Wall
+-
+-ifdef DEBUG
+-CFLAGS += -g
+-else
+-ifdef PROFILE
+-CFLAGS += -p
+-else
+-CFLAGS += -O9 
+-endif
+-endif
+-
+-%.o: %.c
+-	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ all: $(OBJS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $(EXECNAME) $(OBJS)
