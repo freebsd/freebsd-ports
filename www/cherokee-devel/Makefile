@@ -7,8 +7,10 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/
+MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/ \
+		http://www.alaskaparadise.com/freebsd/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com
@@ -26,6 +28,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
 		--with-wwwroot=${PREFIX}/www
+
+OPTIONS=	GNUTLS	"TLS/SSL Use gnutls"	on \
+		OPENSSL	"TLS/SSL Use openssl"	off \
+		NOTLS	"No TLS/SSL"		off \
+		NOIPV6	"No IPv6"		off
+
 USE_LDCONFIG=	yes
 
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
@@ -33,16 +41,26 @@ MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if defined(WITHOUT_GNUTLS)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-tls=openssl
-LDFLAGS+=	-lssl -lcrypto
-.else
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_GNUTLS)
 LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-tls=gnutls
 .endif
 
-.include <bsd.port.pre.mk>
+.if defined(WITH_OPENSSL)
+CFLAGS+=	-DHAVE_OPENSSL
+CONFIGURE_ARGS+=--enable-tls=openssl
+LDFLAGS+=	-lssl -lcrypto
+.endif
+
+.if defined(WITH_NOTLS)
+CONFIGURE_ARGS+=--disable-tls
+.endif
+
+.if defined(WITH_NOIPV6)
+CONFIGURE_ARGS+=--disable-ipv6
+.endif
 
 .if ${OSVERSION} < 500000
 PLIST_SUB+=	PAM=""
