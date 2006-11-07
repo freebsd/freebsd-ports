@@ -9,6 +9,7 @@
 PORTNAME=	PyLucene
 PORTVERSION=	2.0.0
 PATCHSET=	-3
+PORTREVISION=	1
 CATEGORIES=	devel python java
 MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
