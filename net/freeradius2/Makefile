@@ -7,6 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
