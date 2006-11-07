@@ -28,4 +28,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:${PANTOMIME_PORT}
 MAKEFILE=	GNUmakefile
 PANTOMIME_PORT?=	mail/pantomime
 
+IGNORE=		is obsolete, it is now part of mail/pantomime
+EXPIRATION_DATE=2006-12-01
+
 .include <bsd.port.mk>
