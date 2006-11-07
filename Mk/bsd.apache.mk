@@ -179,7 +179,7 @@ CONFIGURE_ARGS+=	--${SUEXEC_CONFARGS}-bin="${PREFIX}/sbin/suexec"
 .endif
 
 .   if defined(WITH_SUEXEC_UMASK)
-CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-umask=${WITH_SUEXEC_UMASK}
+CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-umask=${SUEXEC_UMASK}
 .   endif
 .endif
 
