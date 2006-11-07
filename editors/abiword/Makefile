@@ -21,7 +21,7 @@ COMMENT=	An open-source, cross-platform WYSIWYG word processor
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		png.5:${PORTSDIR}/graphics/png \
-		wv-1.2.1:${PORTSDIR}/textproc/wv \
+		wv-1.2:${PORTSDIR}/textproc/wv \
 		fribidi.0:${PORTSDIR}/converters/fribidi
 
 USE_BZIP2=	yes
