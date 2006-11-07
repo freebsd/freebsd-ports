@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- /dev/null	Thu Jan 12 17:48:54 2006
-+++ apps/app_txfax.c	Thu Jan 12 17:48:36 2006
-@@ -0,0 +1,295 @@
+--- apps/app_txfax.c.orig
++++ apps/app_txfax.c
+@@ -0,0 +1,320 @@
 +/*
 + * Asterisk -- A telephony toolkit for Linux.
 + *
@@ -17,27 +17,34 @@ $FreeBSD$
 + * the GNU General Public License
 + */
 + 
-+#include <stdio.h>
-+#include <asterisk/lock.h>
-+#include <asterisk/file.h>
-+#include <asterisk/logger.h>
-+#include <asterisk/channel.h>
-+#include <asterisk/pbx.h>
-+#include <asterisk/module.h>
-+#include <asterisk/translate.h>
 +#include <string.h>
 +#include <stdlib.h>
-+#include <math.h>
-+#if defined(__FreeBSD__) && __FreeBSD_version < 500028
++#include <stdio.h>
++#if !defined(__FreeBSD__) || __FreeBSD_version < 500028
 +#include <inttypes.h>
 +#else
 +#include <stdint.h>
 +#endif
 +#include <pthread.h>
 +#include <errno.h>
++#if !defined(__FreeBSD__) || __FreeBSD_version >= 503000
++#include <tgmath.h>
++#endif
 +#include <tiffio.h>
 +
 +#include <spandsp.h>
++
++#include "asterisk.h"
++
++ASTERISK_FILE_VERSION(__FILE__, "$Revision:$")
++
++#include "asterisk/lock.h"
++#include "asterisk/file.h"
++#include "asterisk/logger.h"
++#include "asterisk/channel.h"
++#include "asterisk/pbx.h"
++#include "asterisk/module.h"
++#include "asterisk/translate.h"
 +
 +static char *tdesc = "Trivial FAX Transmit Application";
 +
@@ -62,6 +69,20 @@ $FreeBSD$
 +
 +#define MAX_BLOCK_SIZE 240
 +
++static void span_message(int level, const char *msg)
++{
++    int ast_level;
++    
++    if (level == SPAN_LOG_WARNING)
++        ast_level = __LOG_WARNING;
++    else if (level == SPAN_LOG_WARNING)
++        ast_level = __LOG_WARNING;
++    else
++        ast_level = __LOG_DEBUG;
++    ast_log(ast_level, __FILE__, __LINE__, __PRETTY_FUNCTION__, msg);
++}
++/*- End of function --------------------------------------------------------*/
++
 +static void t30_flush(t30_state_t *s, int which)
 +{
 +    //TODO:
@@ -74,15 +95,15 @@ $FreeBSD$
 +    char far_ident[21];
 +    
 +    chan = (struct ast_channel *) user_data;
-+    if (result)
++    if (result == T30_ERR_OK)
 +    {
-+        fax_get_far_ident(s, far_ident);
++        t30_get_far_ident(s, far_ident);
 +        pbx_builtin_setvar_helper(chan, "REMOTESTATIONID", far_ident);
 +    }
 +    else
 +    {
 +        ast_log(LOG_DEBUG, "==============================================================================\n");
-+        ast_log(LOG_DEBUG, "Fax send not successful.\n");
++        ast_log(LOG_DEBUG, "Fax send not successful - result (%d) %s.\n", result, t30_completion_code_to_str(result));
 +        ast_log(LOG_DEBUG, "==============================================================================\n");
 +    }
 +}
@@ -119,6 +140,8 @@ $FreeBSD$
 +        return -1;
 +    }
 +
++    span_set_message_handler(span_message);
++
 +    /* The next few lines of code parse out the filename and header from the input string */
 +    if (data == NULL)
 +    {
@@ -136,7 +159,7 @@ $FreeBSD$
 +        t = s;
 +        v = strchr(s, '|');
 +        s = (v)  ?  v  :  s + strlen(s);
-+        strncpy(buf, t, s - t);
++        strncpy((char *) buf, t, s - t);
 +        buf[s - t] = '\0';
 +        if (option == 0)
 +        {
@@ -194,18 +217,19 @@ $FreeBSD$
 +            }
 +        }
 +        fax_init(&fax, calling_party, NULL);
-+        fax.verbose = verbose;
++        if (verbose)
++	    fax.logging.level = SPAN_LOG_SHOW_SEVERITY | SPAN_LOG_SHOW_PROTOCOL | SPAN_LOG_FLOW;
 +
 +        x = pbx_builtin_getvar_helper(chan, "LOCALSTATIONID");
 +        if (x  &&  x[0])
-+            fax_set_local_ident(&fax, x);
++            t30_set_local_ident(&fax, x);
 +        x = pbx_builtin_getvar_helper(chan, "LOCALHEADERINFO");
 +        if (x  &&  x[0])
-+            fax_set_header_info(&fax, x);
-+        fax_set_tx_file(&fax, source_file);
-+        //fax_set_phase_b_handler(&fax, phase_b_handler, chan);
-+        //fax_set_phase_d_handler(&fax, phase_d_handler, chan);
-+        fax_set_phase_e_handler(&fax, phase_e_handler, chan);
++            t30_set_header_info(&fax, x);
++        t30_set_tx_file(&fax, source_file, -1, -1);
++        //t30_set_phase_b_handler(&fax, phase_b_handler, chan);
++        //t30_set_phase_d_handler(&fax, phase_d_handler, chan);
++        t30_set_phase_e_handler(&fax, phase_e_handler, chan);
 +        while (ast_waitfor(chan, -1) > -1)
 +        {
 +            inf = ast_read(chan);
@@ -216,10 +240,10 @@ $FreeBSD$
 +            }
 +            if (inf->frametype == AST_FRAME_VOICE)
 +            {
-+                if (fax_rx_process(&fax, inf->data, inf->samples))
++                if (fax_rx(&fax, inf->data, inf->samples))
 +                    break;
 +                samples = (inf->samples <= MAX_BLOCK_SIZE)  ?  inf->samples  :  MAX_BLOCK_SIZE;
-+                len = fax_tx_process(&fax, (int16_t *) &buf[AST_FRIENDLY_OFFSET], samples);
++                len = fax_tx(&fax, (int16_t *) &buf[AST_FRIENDLY_OFFSET], samples);
 +                if (len)
 +                {
 +                    memset(&outf, 0, sizeof(outf));
@@ -255,6 +279,7 @@ $FreeBSD$
 +            if (res)
 +                ast_log(LOG_WARNING, "Unable to restore write format on '%s'\n", chan->name);
 +        }
++        fax_release(&fax);
 +    }
 +    else
 +    {

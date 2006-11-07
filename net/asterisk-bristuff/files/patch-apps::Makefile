@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- apps/Makefile.orig
-+++ apps/Makefile
+--- apps/Makefile.orig	Sun Apr 30 16:38:22 2006
++++ apps/Makefile	Wed Jun 14 14:03:42 2006
 @@ -45,25 +45,27 @@
  #APPS+=app_rpt.so
  
@@ -40,7 +37,7 @@ $FreeBSD$
  
  ifeq (${OSARCH},CYGWIN)
  CYGSOLINK=-Wl,--out-implib=lib$@.a -Wl,--export-all-symbols
-@@ -95,24 +97,32 @@
+@@ -95,18 +97,26 @@
  	$(CC) $(SOLINK) -o $@ ${CYGSOLINK} $< ${CYGSOLIB} -ltonezone
  
  install: all
@@ -70,10 +67,3 @@ $FreeBSD$
  
  app_sql_odbc.so: app_sql_odbc.o
  	$(CC) $(SOLINK) -o $@ ${CYGSOLINK} $< ${CYGSOLIB} -lodbc
- 
- look:	look.c
--	$(CC) -pipe -O6 -g look.c -o look -lncurses
-+	$(CC) look.c -o look -lncurses
- 
- ifeq (SunOS,$(shell uname))
- app_chanspy.so: app_chanspy.o

@@ -16,9 +16,11 @@ name=asterisk
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/asterisk
-pidfile=/var/run/asterisk.pid
+
+load_rc_config $name
+
+pidfile=${asterisk_pidfile:-"/var/run/asterisk.pid"}
 
 asterisk_enable=${asterisk_enable:-"NO"}
 
-load_rc_config $name
 run_rc_command "$1"
