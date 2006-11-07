@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: quaqut
+# REQUIRE: NETWORKING
+#
+# Add the following line to /etc/rc.conf[.local] to enable quaqut
+#
+# quaqut_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable quaqut.
+# quaqut_host (str):		Server hostname.
+# quaqut_logfile (str):		Logfile name.
+# quaqut_interval (number):	Query interval duration.
+#				It must be a number between 10 and 9999.
+#
+
+. %%RC_SUBR%%
+
+name="quaqut"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${quaqut_enable="NO"}
+: ${quaqut_host="some.ut2004server.tld"}
+: ${quaqut_logfile="/var/log/quaqut.log"}
+: ${quaqut_interval="10"}
+
+command="/usr/local/bin/quaqut"
+command_args="-d ${quaqut_interval} ${quaqut_flags} ${quaqut_host} >> ${quaqut_logfile} &"
+
+run_rc_command "$1"
