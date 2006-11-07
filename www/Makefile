@@ -1165,6 +1165,7 @@
     SUBDIR += yabb
     SUBDIR += yaws
     SUBDIR += youtube_dl
+    SUBDIR += zend-framework
     SUBDIR += zerowait-httpd
     SUBDIR += ziproxy
     SUBDIR += znavigator
