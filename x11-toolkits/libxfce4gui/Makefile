@@ -7,7 +7,7 @@
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -19,7 +19,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
 
-LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh10 \
+LIB_DEPENDS=	dbh-4.5.4:${PORTSDIR}/databases/dbh \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util
 
 USE_GNOME=	gtk20 gnomehack
@@ -34,5 +34,8 @@ CONFIGURE_ARGS+=--enable-gtk-doc
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|dbh-1\.0|dbh|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
