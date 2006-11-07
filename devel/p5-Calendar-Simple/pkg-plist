@@ -1,2 +1,3 @@
+bin/pcal
 %%SITE_PERL%%/Calendar/Simple.pm
 @dirrmtry %%SITE_PERL%%/Calendar
