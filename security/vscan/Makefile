@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdl
 DISTNAME=	vbsd510e
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 
 # misc/compat3x is forbidden, but with FreeBSD 5.1 or later you can use
