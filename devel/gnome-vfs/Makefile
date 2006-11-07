@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-vfs
-PORTVERSION=	2.16.1
+PORTVERSION=	2.16.2
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -39,8 +39,7 @@ CONFIGURE_ARGS=	--enable-openssl \
 		--enable-hal \
 		--with-hal-mount=/sbin/mount \
 		--with-hal-umount=/sbin/umount
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DPTHREAD_LIB=\"${PTHREAD_LIBS}\""
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PKGINSTALL=	${WRKDIR}/pkg-install

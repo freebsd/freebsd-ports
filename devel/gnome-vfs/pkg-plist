@@ -148,6 +148,7 @@ share/locale/ko/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/li/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/mg/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -228,6 +229,8 @@ share/locale/zu/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/li/LC_MESSAGES
 @dirrmtry share/locale/li
 @dirrmtry share/locale/ko/LC_MESSAGES
