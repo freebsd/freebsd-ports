@@ -344,6 +344,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/libpq-notice-processing.html
 %%DATADIR%%/docs/en_US/pg/libpq-notify.html
 %%DATADIR%%/docs/en_US/pg/libpq-pgpass.html
+%%DATADIR%%/docs/en_US/pg/libpq-pgservice.html
 %%DATADIR%%/docs/en_US/pg/libpq-ssl.html
 %%DATADIR%%/docs/en_US/pg/libpq-status.html
 %%DATADIR%%/docs/en_US/pg/libpq-threading.html
@@ -476,6 +477,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-7-3-12.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-13.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-14.html
+%%DATADIR%%/docs/en_US/pg/release-7-3-15.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-2.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-3.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-4.html
@@ -489,6 +491,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-7-4-10.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-11.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-12.html
+%%DATADIR%%/docs/en_US/pg/release-7-4-13.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-2.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-3.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-4.html
@@ -505,9 +508,11 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-8-0-5.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-6.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-7.html
+%%DATADIR%%/docs/en_US/pg/release-8-0-8.html
 %%DATADIR%%/docs/en_US/pg/release-8-0.html
 %%DATADIR%%/docs/en_US/pg/release-8-1-1.html
 %%DATADIR%%/docs/en_US/pg/release-8-1-2.html
+%%DATADIR%%/docs/en_US/pg/release-8-1-3.html
 %%DATADIR%%/docs/en_US/pg/release-8-1.html
 %%DATADIR%%/docs/en_US/pg/release.html
 %%DATADIR%%/docs/en_US/pg/resources.html
@@ -915,6 +920,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/reshape.html
 %%DATADIR%%/docs/en_US/slony/runtime-config.html
 %%DATADIR%%/docs/en_US/slony/schema.html
+%%DATADIR%%/docs/en_US/slony/slon-archive-logging.html
 %%DATADIR%%/docs/en_US/slony/slon-config-connection.html
 %%DATADIR%%/docs/en_US/slony/slon-config-interval.html
 %%DATADIR%%/docs/en_US/slony/slon.html
@@ -941,6 +947,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/stmtlockset.html
 %%DATADIR%%/docs/en_US/slony/stmtmergeset.html
 %%DATADIR%%/docs/en_US/slony/stmtmoveset.html
+%%DATADIR%%/docs/en_US/slony/stmtrepairconfig.html
 %%DATADIR%%/docs/en_US/slony/stmtrestartnode.html
 %%DATADIR%%/docs/en_US/slony/stmtsetaddsequence.html
 %%DATADIR%%/docs/en_US/slony/stmtsetaddtable.html
@@ -1051,6 +1058,10 @@ bin/pgagent
 %%DATADIR%%/i18n/tr_TR/pgadmin3.mo
 %%DATADIR%%/i18n/tr_TR/wxstd.mo
 %%DATADIR%%/i18n/wxstd.mo
+%%DATADIR%%/i18n/zh_CN/pgadmin3.mo
+%%DATADIR%%/i18n/zh_CN/wxstd.mo
+%%DATADIR%%/i18n/zh_TW/pgadmin3.mo
+%%DATADIR%%/i18n/zh_TW/wxstd.mo
 %%DATADIR%%/pgagent.sql
 %%DATADIR%%/ui/dlgAggregate.xrc
 %%DATADIR%%/ui/dlgCast.xrc
@@ -1109,6 +1120,8 @@ bin/pgagent
 %%DATADIR%%/ui/frmStatus.xrc
 %%DATADIR%%/ui/frmUpdate.xrc
 @dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/i18n/zh_TW
+@dirrm %%DATADIR%%/i18n/zh_CN
 @dirrm %%DATADIR%%/i18n/tr_TR
 @dirrm %%DATADIR%%/i18n/sl_SI
 @dirrm %%DATADIR%%/i18n/pl_PL
