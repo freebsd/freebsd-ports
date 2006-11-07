@@ -37,7 +37,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:U}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=	--without-kde
@@ -54,6 +54,10 @@ PREFIX2FIX=	help/preferences.html totool.cpp
 .if ${OSVERSION} < 500000
 # Just defining time_t as long in topiechart.h could be sufficient?
 BROKEN=		does not compile with gcc 2.95
+.endif
+
+.if ${OSVERSION} >= 700000
+BROKEN=		does not link with oracle8-client
 .endif
 
 pre-configure:
