@@ -78,7 +78,7 @@ pre-configure:
 post-install:
 	-${STRIP_CMD} ${PREFIX}/libexec/dk-filter
 	${INSTALL_SCRIPT} ${WRKSRC}/dk-filter/gentxt.csh \
-		${PREFIX}/sbin/gentxt
+		${PREFIX}/sbin/gentxt-dk
 .for i in ${MAN8}
 	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8/
