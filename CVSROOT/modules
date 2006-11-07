@@ -11132,7 +11132,6 @@ php4-gettext	ports/devel/php4-gettext
 php4-gmp	ports/math/php4-gmp
 php4-iconv	ports/converters/php4-iconv
 php4-imap	ports/mail/php4-imap
-php4-imlib2	ports/graphics/php4-imlib2
 php4-interbase	ports/databases/php4-interbase
 php4-ldap	ports/net/php4-ldap
 php4-mbstring	ports/converters/php4-mbstring
@@ -11191,7 +11190,6 @@ php5-gettext	ports/devel/php5-gettext
 php5-gmp	ports/math/php5-gmp
 php5-iconv	ports/converters/php5-iconv
 php5-imap	ports/mail/php5-imap
-php5-imlib2	ports/graphics/php5-imlib2
 php5-interbase	ports/databases/php5-interbase
 php5-ldap	ports/net/php5-ldap
 php5-mbstring	ports/converters/php5-mbstring
