@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	WebCalendar
-DISTVERSION=	1.0.4
+PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	webcalendar
@@ -19,10 +20,14 @@ USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/WebCalendar-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-WEBWCDIR?=	www/data/WebCalendar
+WCURL?=		${PORTNAME:L}
+WCDIR?=		www/${WCURL}
 PLIST=		${WRKDIR}/pkg-plist
+
+SUB_FILES=	pkg-message
+SUB_LIST=	WCURL=${WCURL} WCDIR=${WCDIR}
 
 DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
 DOCS=		docs/README \
@@ -87,26 +92,27 @@ USE_PHP+=	ldap
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WEBWCDIR}/|' > ${PLIST} \
+		${SED} -e 's|^|${WCDIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WEBWCDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WEBWCDIR} >> ${PLIST}
+		${SED} -e 's|^|@dirrm ${WCDIR}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${WCDIR} >> ${PLIST}
 	@${CAT} pkg-plist >> ${PLIST}
 	@${ECHO_CMD} @dirrmtry www/data-dist >> ${PLIST}
 	@${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${WEBWCDIR}
-	${CP} -R ${WRKSRC}/* ${PREFIX}/${WEBWCDIR}
-	${CHOWN} -R www:www ${PREFIX}/${WEBWCDIR}
-	${FIND} ${PREFIX}/${WEBWCDIR} -type f | ${XARGS} ${CHMOD} 644
+	@${MKDIR} ${PREFIX}/${WCDIR}
+	${CP} -R ${WRKSRC}/* ${PREFIX}/${WCDIR}
+	${CHOWN} -R www:www ${PREFIX}/${WCDIR}
+	${FIND} ${PREFIX}/${WCDIR} -type f | ${XARGS} ${CHMOD} 644
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%WEBWCDIR%%|${WEBWCDIR}|g' -e 's|%%DOCSDIR%%|${DOCSDIR}|g'
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
