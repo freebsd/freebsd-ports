@@ -38,7 +38,7 @@ load_rc_config $name
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 milterdk_enable=${milterdk_enable:-"NO"}
-milterdk_uid=${milterdk_uid:-"dkfilter"}
+milterdk_uid=${milterdk_uid:-"mailnull"}
 milterdk_profiles=${milterdk_profiles:-}
 milterdk_socket=${milterdk_socket:-"unix:/var/run/milterdk/filter"}
 milterdk_domain=${milterdk_domain:-"example.com"}
@@ -100,10 +100,9 @@ dk_prepcmd ()
     elif [ -S ${milterdk_socket##unix:} ] ; then
         rm -f ${milterdk_socket##unix:}
     fi
-    if [ -d ${_piddir} ] ; then
-	return;
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
     fi
-    mkdir -p ${_piddir}
     if [ -n "${milterdk_uid}" ] ; then
 	chown ${milterdk_uid} ${_piddir}
     fi

@@ -1,5 +1,5 @@
 libexec/dk-filter
-sbin/gentxt
+sbin/gentxt-dk
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
