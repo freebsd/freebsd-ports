@@ -38,17 +38,29 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/ExampleTroisPoints.tex
 %%PROSPERDIR%%/contrib/img/angleHG.ps
 %%PROSPERDIR%%/contrib/img/barre-rico.ps
+%%PROSPERDIR%%/contrib/img/blue-inverted-arrow.ps
+%%PROSPERDIR%%/contrib/img/boule-base.eps
+%%PROSPERDIR%%/contrib/img/boulebleue-fondblanc.eps
+%%PROSPERDIR%%/contrib/img/boulerouge-fondblanc.eps
+%%PROSPERDIR%%/contrib/img/bouleverte-fondblanc.eps
+%%PROSPERDIR%%/contrib/img/degrade-base.eps
+%%PROSPERDIR%%/contrib/img/degrade-blanc-bleu.eps
+%%PROSPERDIR%%/contrib/img/green-bullet-on-blue-wc.gif
+%%PROSPERDIR%%/contrib/img/green-bullet-on-blue-wc.ps
+%%PROSPERDIR%%/contrib/img/green-bullet-on-white.gif
+%%PROSPERDIR%%/contrib/img/green-bullet-on-white.ps
+%%PROSPERDIR%%/contrib/img/green-inverted-arrow.ps
+%%PROSPERDIR%%/contrib/img/red-bullet-on-blue-wc.gif
+%%PROSPERDIR%%/contrib/img/red-bullet-on-blue-wc.ps
+%%PROSPERDIR%%/contrib/img/red-bullet-on-white.gif
+%%PROSPERDIR%%/contrib/img/red-bullet-on-white.ps
+%%PROSPERDIR%%/contrib/img/red-inverted-arrow.ps
 %%PROSPERDIR%%/contrib/img/rico_bullet1.ps
 %%PROSPERDIR%%/contrib/img/rico_bullet2.ps
 %%PROSPERDIR%%/contrib/img/rico_bullet3.ps
-%%PROSPERDIR%%/contrib/img/blue-inverted-arrow.ps
-%%PROSPERDIR%%/contrib/img/green-bullet-on-blue-wc.ps
-%%PROSPERDIR%%/contrib/img/green-bullet-on-white.ps
-%%PROSPERDIR%%/contrib/img/green-inverted-arrow.ps
-%%PROSPERDIR%%/contrib/img/red-bullet-on-blue-wc.ps
-%%PROSPERDIR%%/contrib/img/red-bullet-on-white.ps
-%%PROSPERDIR%%/contrib/img/red-inverted-arrow.ps
+%%PROSPERDIR%%/contrib/img/yellow-bullet-on-blue-wc.gif
 %%PROSPERDIR%%/contrib/img/yellow-bullet-on-blue-wc.ps
+%%PROSPERDIR%%/contrib/img/yellow-bullet-on-white.gif
 %%PROSPERDIR%%/contrib/img/yellow-bullet-on-white.ps
 %%PROSPERDIR%%/contrib/PPRalcatel.sty
 %%PROSPERDIR%%/contrib/PPRblends.sty
@@ -106,5 +118,5 @@
 @dirrm %%PROSPERDIR%%/designer
 @dirrm %%PROSPERDIR%%/img
 @dirrm %%PROSPERDIR%%
-@exec %D/bin/mktexlsr
-@unexec %D/bin/mktexlsr
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

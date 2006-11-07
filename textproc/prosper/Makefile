@@ -7,7 +7,7 @@
 
 PORTNAME=	prosper
 PORTVERSION=	1.00.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_BUILD=	yes
 USE_GHOSTSCRIPT_RUN=	yes
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -28,7 +29,8 @@ TEXMFDIR?=	share/texmf
 LPROSPERDIR=	${TEXMFDIR}/tex/latex/prosper
 PROSPERDIR=	${PREFIX}/${LPROSPERDIR}
 
-PLIST_SUB=	PROSPERDIR=${LPROSPERDIR}
+PLIST_SUB=	PROSPERDIR=${LPROSPERDIR} \
+		MKTEXLSR=${MKTEXLSR}
 
 DOCS=		AUTHORS ChangeLog FAQ INSTALL NEWS README TODO \
 		TROUBLESHOOTINGS doc/compilation.eps doc/compilation.fig \
@@ -61,8 +63,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/*.ps  ${PROSPERDIR}/contrib
 	${INSTALL_DATA} ${WRKSRC}/contrib/*.tex ${PROSPERDIR}/contrib
 	${INSTALL_DATA} ${WRKSRC}/contrib/img/*.ps ${PROSPERDIR}/contrib/img
+	${INSTALL_DATA} ${WRKSRC}/contrib/img/*.eps ${PROSPERDIR}/contrib/img
+	${INSTALL_DATA} ${WRKSRC}/contrib/img/*.gif ${PROSPERDIR}/contrib/img
 	${INSTALL_DATA} ${WRKSRC}/designer/prosper* ${PROSPERDIR}/designer
-	mktexlsr
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -75,5 +78,8 @@ do-install:
 .endfor
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
+
+post-install:
+	${MKTEXLSR}
 
 .include <bsd.port.mk>
