@@ -104,7 +104,7 @@ pre-everything::
 pre-su-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
-post-su-install:
+post-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .endif
