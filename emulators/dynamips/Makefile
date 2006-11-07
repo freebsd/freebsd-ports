@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynamips
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
