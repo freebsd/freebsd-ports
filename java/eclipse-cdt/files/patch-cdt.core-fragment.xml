@@ -1,22 +1,13 @@
---- eclipse/plugins/org.eclipse.cdt.core.freebsd_3.0.2/fragment.xml.orig	Tue Mar 28 22:55:21 2006
-+++ eclipse/plugins/org.eclipse.cdt.core.freebsd_3.0.2/fragment.xml	Tue Mar 28 22:56:00 2006
-@@ -1,8 +1,8 @@
- <?xml version="1.0" encoding="UTF-8"?>
- <?eclipse version="3.0"?>
- <fragment
--   id="org.eclipse.cdt.core.linux"
--   name="%fragmentName.linux"
-+   id="org.eclipse.cdt.core.freebsd"
-+   name="%fragmentName.freebsd"
-    version="3.0.2"
-    provider-name="%providerName"
-    plugin-id="org.eclipse.cdt.core"
-@@ -16,7 +16,7 @@
-    <extension
+--- eclipse/plugins/org.eclipse.cdt.core.freebsd_3.1.1.200609270800/fragment.xml.orig	Mon Nov  6 13:53:49 2006
++++ eclipse/plugins/org.eclipse.cdt.core.freebsd_3.1.1.200609270800/fragment.xml	Mon Nov  6 13:54:04 2006
+@@ -5,8 +5,8 @@
+     <extension
           point="org.eclipse.cdt.core.ProcessList">
        <processList
 -      		platform="linux"
+-            class="org.eclipse.cdt.internal.core.linux.ProcessList">
 +      		platform="freebsd"
-             class="org.eclipse.cdt.internal.core.linux.ProcessList">
++            class="org.eclipse.cdt.internal.core.freebsd.ProcessList">
        </processList>
     </extension>
+ </fragment>
