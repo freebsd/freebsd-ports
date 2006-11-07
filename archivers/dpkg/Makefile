@@ -15,10 +15,6 @@ DISTNAME=	dpkg_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Package maintenance system for Debian
 
-BROKEN=		fails to install
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
