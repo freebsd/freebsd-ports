@@ -6,9 +6,6 @@ sbin/splatd
 %%PYTHON_SITELIBDIR%%/splat/daemon.py
 %%PYTHON_SITELIBDIR%%/splat/daemon.pyc
 %%PYTHON_SITELIBDIR%%/splat/daemon.pyo
-%%PYTHON_SITELIBDIR%%/splat/ldaputils.py
-%%PYTHON_SITELIBDIR%%/splat/ldaputils.pyc
-%%PYTHON_SITELIBDIR%%/splat/ldaputils.pyo
 %%PYTHON_SITELIBDIR%%/splat/plugin.py
 %%PYTHON_SITELIBDIR%%/splat/plugin.pyc
 %%PYTHON_SITELIBDIR%%/splat/plugin.pyo
@@ -24,8 +21,21 @@ sbin/splatd
 %%PYTHON_SITELIBDIR%%/splat/helpers/homeDirectory.py
 %%PYTHON_SITELIBDIR%%/splat/helpers/homeDirectory.pyc
 %%PYTHON_SITELIBDIR%%/splat/helpers/homeDirectory.pyo
+%%PYTHON_SITELIBDIR%%/splat/helpers/homeHelper.py
+%%PYTHON_SITELIBDIR%%/splat/helpers/homeHelper.pyc
+%%PYTHON_SITELIBDIR%%/splat/helpers/homeHelper.pyo
+%%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.py
+%%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.pyc
+%%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.pyo
 %%PYTHON_SITELIBDIR%%/splat/data/splat_conf.xml
+%%PYTHON_SITELIBDIR%%/splat/ldaputils/__init__.py
+%%PYTHON_SITELIBDIR%%/splat/ldaputils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/splat/ldaputils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/splat/ldaputils/client.py
+%%PYTHON_SITELIBDIR%%/splat/ldaputils/client.pyc
+%%PYTHON_SITELIBDIR%%/splat/ldaputils/client.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/splat/helpers
+@dirrm %%PYTHON_SITELIBDIR%%/splat/ldaputils
 @dirrm %%PYTHON_SITELIBDIR%%/splat/data
 @dirrm %%PYTHON_SITELIBDIR%%/splat
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01.html
@@ -35,6 +45,7 @@ sbin/splatd
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s02.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s04.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s05.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch03s02.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/docbook.css

@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	splatd
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	http://dpw.threerings.net/projects/splat/
-DISTNAME=	splat-1.0
+DISTNAME=	splat-${PORTVERSION}
 
 MAINTAINER=	snb@threerings.net
 COMMENT=	Splat is the Scalable Periodic LDAP Attribute Transmogrifier
@@ -20,10 +20,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_RC_SUBR=	splatd.sh
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 MAN5=		splat.conf.5
 MAN8=		splatd.8
 
