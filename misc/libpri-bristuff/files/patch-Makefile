@@ -1,8 +1,8 @@
---- Makefile.orig	Sat Jun  3 21:21:43 2006
-+++ Makefile	Sat Jun  3 21:22:16 2006
-@@ -27,21 +27,21 @@
- # Uncomment if you want libpri to count number of Q921/Q931 sent/received
- #LIBPRI_COUNTERS=-DLIBPRI_COUNTERS
+--- Makefile.orig	Sun Oct 29 15:38:22 2006
++++ Makefile	Sun Oct 29 15:39:37 2006
+@@ -34,21 +34,21 @@
+ # device sends a RELEASE COMPLETE with cause 17
+ #FASTBUSYONBUSY=-DFASTBUSYONBUSY
  
 -CC=gcc
 +CC?=gcc
@@ -18,43 +18,42 @@
 +DYNAMIC_LIBRARY=libpri-bristuff.so.1
  STATIC_OBJS=copy_string.o pri.o q921.o prisched.o q931.o pri_facility.o
  DYNAMIC_OBJS=copy_string.lo pri.lo q921.lo prisched.lo q931.lo pri_facility.lo
--CFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) -DRELAX_TRB
--INSTALL_PREFIX?=
+-CFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) $(LAYER2ALWAYSUP) $(FASTBUSYONBUSY) -DRELAX_TRB
+-INSTALL_PREFIX=$(DESTDIR)
 -INSTALL_BASE=/usr
 -SOFLAGS = -Wl,-hlibpri.so.1.0
-+CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) -DRELAX_TRB
++CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) $(LAYER2ALWAYSUP) $(FASTBUSYONBUSY) -DRELAX_TRB
 +INSTALL_PREFIX?=$(PREFIX)
 +INSTALL_BASE=
 +SOFLAGS = -Wl,-hlibpri-bristuff.so.1
  LDCONFIG = /sbin/ldconfig
- ifeq (${OSARCH},Linux)
+ ifneq (,$(findstring $(OSARCH), Linux GNU/kFreeBSD))
  LDCONFIG_FLAGS=-n
-@@ -84,14 +84,13 @@
+@@ -91,12 +91,11 @@
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/include
  ifneq (${OSARCH},SunOS)
 -	install -m 644 libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include
 -	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
--	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then  restorecon -v $(INSTALL_PREFIX)$(INSTALL_BASE)/lib/$(DYNAMIC_LIBRARY); fi
++	$(BSD_INSTALL_DATA) libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include/libpri-bristuff.h
++	$(BSD_INSTALL_PROGRAM) $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
+ 	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then  restorecon -v $(INSTALL_PREFIX)$(INSTALL_BASE)/lib/$(DYNAMIC_LIBRARY); fi
 -	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri.so.1.0 libpri.so ; ln -sf libpri.so.1.0 libpri.so.1 )
 -	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
--	if test $$(id -u) = 0; then $(LDCONFIG); fi
-+	echo installing libpri-bristuff.h
-+	$(BSD_INSTALL_DATA) libpri.h $(INSTALL_PREFIX)/include/libpri-bristuff.h
-+	$(BSD_INSTALL_PROGRAM) $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)/lib
-+	( cd $(INSTALL_PREFIX)/lib ; ln -sf libpri-bristuff.so.1 libpri-bristuff.so )
-+	$(BSD_INSTALL_DATA) $(STATIC_LIBRARY) $(INSTALL_PREFIX)/lib
+-	if test $$(id -u) = 0; then $(LDCONFIG) $(LDCONFIG_FLAGS) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib; fi
++	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri-bristuff.so.1 libpri-bristuff.so )
++	$(BSD_INSTALL_DATA) $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
  else
--	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include -m 644 libpri.h
-+	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include/libpri.h -m 644 libpri.h
+ 	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include -m 644 libpri.h
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/lib -m 755 $(DYNAMIC_LIBRARY)
- 	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri.so.1.0 libpri.so ; $(SOSLINK) )
- 	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/lib -m 644 $(STATIC_LIBRARY)
-@@ -130,7 +129,6 @@
+@@ -137,9 +136,7 @@
  
  $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
  	$(CC) -shared $(SOFLAGS) -o $@ $(DYNAMIC_OBJS)
 -	$(LDCONFIG) $(LDCONFIG_FLAGS) .
- 	ln -sf libpri.so.1.0 libpri.so
- 	ln -sf libpri.so.1.0 libpri.so.1
+-	ln -sf libpri.so.1.0 libpri.so
+-	ln -sf libpri.so.1.0 libpri.so.1
++	ln -sf libpri.so.1 libpri.so
  	$(SOSLINK)
+ 
+ clean:
