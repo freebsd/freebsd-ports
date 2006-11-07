@@ -16,7 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Hardware Abstraction Layer for simplifying device access
 
 .if !defined(HAL_SLAVE)
-LIB_DEPENDS=	polkit.0:${PORTSDIR}/sysutils/policykit
+LIB_DEPENDS=	polkit.0:${PORTSDIR}/sysutils/policykit \
+    		volume_id.0:${PORTSDIR}/devel/libvolume_id
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
 		isoinfo:${PORTSDIR}/sysutils/cdrtools
 .endif
@@ -39,7 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTKDOC="false"
 
 HALVERSION=	0.5.8
-SNAPVERSION=	20061102
+SNAPVERSION=	20061107
 
 .if !defined(HAL_SLAVE)
 USE_RC_SUBR=	hald
