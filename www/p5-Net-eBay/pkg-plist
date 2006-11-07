@@ -5,8 +5,10 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/ebay-get-my-selling.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ebay-get-seller-list.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ebay-get-suggested-categories.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ebay-leave-feedback.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ebay-official-time.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ebay-search.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ebay-revise-item.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ebay-validate-test-user.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/eBay
