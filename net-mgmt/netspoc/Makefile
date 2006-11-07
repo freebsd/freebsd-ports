@@ -11,7 +11,7 @@ PORTVERSION=	3.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.berlios.de/netspoc/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	A Network Security Policy Compiler
 
 USE_PERL5=	yes

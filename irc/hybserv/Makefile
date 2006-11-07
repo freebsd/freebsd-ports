@@ -10,7 +10,7 @@ PORTVERSION=	1.9.2
 CATEGORIES=	irc
 MASTER_SITES=	http://www.hybserv.net/downloads/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	HybServ2 IRCD Services
 
 # uses a uid registered to the ircservices user

@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://download.berlios.de/ngircd/ \
 		ftp://ftp.berlios.de/pub/ngircd/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
 USE_RC_SUBR=	ngircd

@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Readline wrapper
 
 USE_GETOPT_LONG=	yes

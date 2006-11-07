@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.gnu.org/gnu/readline/${PORTNAME}-${PORTVERSION}-patches/ 
 		ftp://ftp.cwru.edu/pub/bash/${PORTNAME}-${PORTVERSION}-patches/
 PATCHFILES=	readline51-001
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	A library for editing command lines as they are typed
 
 GNU_CONFIGURE=	yes

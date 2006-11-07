@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.fourmilab.ch/atlast/ \
 		http://www.fourmilab.to/atlast/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Autodesk Threaded Language Application System Toolkit
 
 SRC=		atlast.c atlmain.c

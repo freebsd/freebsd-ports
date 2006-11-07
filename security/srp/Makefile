@@ -10,7 +10,7 @@ PORTVERSION=	2.1.1
 CATEGORIES=	security net
 MASTER_SITES=	http://srp.stanford.edu/source/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	4.5.6
 CATEGORIES=	www devel
 MASTER_SITES=	http://gforge.org/frs/download.php/205/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Open Source collaborative software development tool
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \

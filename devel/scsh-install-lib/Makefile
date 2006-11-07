@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	devel scheme
 MASTER_SITES=	http://lamp.epfl.ch/~schinz/scsh_packages/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	An scsh library for installing other scsh packages
 
 RUN_DEPENDS=	scsh:${PORTSDIR}/lang/scsh
