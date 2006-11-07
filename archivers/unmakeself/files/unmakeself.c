@@ -42,6 +42,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include <archive.h>
+#include "config.h"
 
 #define N_ELEMENTS(arr)		(sizeof(arr) / sizeof((arr)[0]))
 
@@ -49,6 +50,40 @@ static char *self;					/* program name */
 static char *filename;
 static struct archive *archive;
 static int extract_flags = ARCHIVE_EXTRACT_TIME;	/* bsdtar default */
+
+#ifndef HAS_MEMMEM
+/* taken from lib/libc/string/memmem.c */
+static void *
+memmem(l, l_len, s, s_len)
+	const void *l; size_t l_len;
+	const void *s; size_t s_len;
+{
+	register char *cur, *last;
+	const char *cl = (const char *)l;
+	const char *cs = (const char *)s;
+
+	/* we need something to compare */
+	if (l_len == 0 || s_len == 0)
+		return NULL;
+
+	/* "s" must be smaller or equal to "l" */
+	if (l_len < s_len)
+		return NULL;
+
+	/* special case where s_len == 1 */
+	if (s_len == 1)
+		return memchr(l, (int)*cs, l_len);
+
+	/* the last position where its possible to find "s" in "l" */
+	last = (char *)cl + l_len - s_len;
+
+	for (cur = (char *)cl; cur <= last; cur++)
+		if (cur[0] == cs[0] && memcmp(cur, cs, s_len) == 0)
+			return cur;
+
+	return NULL;
+}
+#endif /* HAS_MEMMEM */
 
 static void
 unmakeself_print_help (void)
