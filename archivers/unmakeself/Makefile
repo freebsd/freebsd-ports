@@ -27,8 +27,16 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
+do-configure:
+	@${RM} -f ${WRKSRC}/config.h
+	@if ${GREP} -q memmem /usr/include/string.h; then \
+		${ECHO_CMD} "#define HAS_MEMMEM" > ${WRKSRC}/config.h; \
+	else \
+		${ECHO_CMD} "#undef HAS_MEMMEM" > ${WRKSRC}/config.h; \
+	fi
+
 do-build:
-	${CC} ${CFLAGS} ${CPPFLAGS} -o ${WRKSRC}/unmakeself \
+	${CC} ${CFLAGS} ${CPPFLAGS} -I${WRKSRC} -o ${WRKSRC}/unmakeself \
 		${FILESDIR}/unmakeself.c ${LDFLAGS}
 
 do-install:
