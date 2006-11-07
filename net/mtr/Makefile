@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/mtr/ \
@@ -36,6 +36,9 @@ CONFIGURE_ARGS+=--with-gtk-prefix=${X11BASE}
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS=--without-gtk --with-gtk-prefix=/nonexistant
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/Makefile
 
 post-install:
 	@${ECHO} ""
