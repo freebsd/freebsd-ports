@@ -7,7 +7,7 @@
 
 PORTNAME=	tclhttpd
 PORTVERSION=	3.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www tcl83 tcl84
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	httpd
@@ -45,7 +45,7 @@ do-build:
 	# file(n) and is finally removed from this port
 	#
 
-pre-install:
+pre-su-install:
 	${MKDIR} ${PREFIX}/tclhttpd/custom
 
 post-install:
