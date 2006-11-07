@@ -33,8 +33,6 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no
 
 USE_GMAKE=		yes
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS:N-funroll-loops:N-O*} -O2" CXX="${CXX}"
-CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS:N-funroll-loops:N-O*} -O2" CC="${CC}"
 
 MAN1+=	derb.1
 MAN1+=	genbrk.1
@@ -56,6 +54,14 @@ PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=0
 PLIST_SUB+=	ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if ${CC:T} == "cc"
+CFLAGS:=	${CFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fstrict-aliasing
+.endif
+.if ${CXX:T} == "c++"
+CXXFLAGS:=	${CXXFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fstrict-aliasing
+.endif
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads=yes
