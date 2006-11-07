@@ -31,7 +31,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 milterdkim_enable=${milterdkim_enable:-"NO"}
-milterdkim_uid=${milterdkim_uid:-"dkimfilter"}
+milterdkim_uid=${milterdkim_uid:-"mailnull"}
 milterdkim_profiles=${milterdkim_profiles:-}
 milterdkim_socket=${milterdkim_socket:-"local:/var/run/milterdkim/filter"}
 milterdkim_domain=${milterdkim_domain:-"example.com"}
@@ -101,10 +101,9 @@ dkim_prepcmd ()
     elif [ -S ${milterdkim_socket##unix:} ] ; then
         rm -f ${milterdkim_socket##unix:}
     fi
-    if [ -d ${_piddir} ] ; then
-	return;
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
     fi
-    mkdir -p ${_piddir}
     if [ -n "${milterdkim_uid}" ] ; then
 	chown ${milterdkim_uid} ${_piddir}
     fi
