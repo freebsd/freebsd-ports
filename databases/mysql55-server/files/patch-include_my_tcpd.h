@@ -1,7 +1,7 @@
---- sql/mytcpd.h.orig	Sun Jan  9 13:33:51 2005
-+++ sql/mytcpd.h	Sun Jan  9 13:41:42 2005
+--- include/my_tcpd.h.orig	Sun Jan  9 13:33:51 2005
++++ include/my_tcpd.h	Sun Jan  9 13:41:42 2005
 @@ -6,6 +6,25 @@
-   * $FreeBSD: /tmp/pcvs/ports/databases/percona55-server/files/Attic/patch-sql::mytcpd.h,v 1.1 2005-01-10 13:17:30 ale Exp $
+   * $FreeBSD$
    */
  
 +#ifndef _TCPWRAPPERS_TCPD_H

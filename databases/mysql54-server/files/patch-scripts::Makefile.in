@@ -1,6 +1,6 @@
---- scripts/Makefile.in.orig	Fri Jun  2 20:03:10 2006
-+++ scripts/Makefile.in	Thu Jun 15 07:56:56 2006
-@@ -371,23 +371,7 @@
+--- scripts/Makefile.in.orig	Thu Oct 26 14:03:08 2006
++++ scripts/Makefile.in	Tue Nov  7 08:23:48 2006
+@@ -371,22 +371,7 @@
  yassl_libs = @yassl_libs@
  yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
  zlib_dir = @zlib_dir@
@@ -18,16 +18,15 @@
 -			mysql_find_rows \
 -			mysqlhotcopy \
 -			mysqldumpslow \
--			mysql_explain_log \
 -			mysqld_multi \
 -			mysql_create_system_tables
 +bin_SCRIPTS =
  
  noinst_SCRIPTS = make_binary_distribution \
- 			make_sharedlib_distribution \
-@@ -419,7 +403,7 @@
- 			mysqlaccess.conf \
- 			mysqlbug
+ 			make_sharedlib_distribution
+@@ -416,7 +401,7 @@
+ 			mysqlbug \
+ 			make_win_bin_dist
  
 -dist_pkgdata_DATA = fill_help_tables.sql mysql_fix_privilege_tables.sql
 +dist_pkgdata_DATA =
