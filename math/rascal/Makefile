@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	The Advanced Scientific CALculator
 
 WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}

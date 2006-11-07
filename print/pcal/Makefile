@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	PostScript calendar program
 
 MAKE_ENV=	CC="${CC}" HOST_CC="${CC}"

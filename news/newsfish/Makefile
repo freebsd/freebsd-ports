@@ -10,7 +10,7 @@ PORTVERSION=	1.2.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.saddi.com/pub/software/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Batch USENET news reader with filter capabilities
 
 USE_GMAKE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=		irc kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		laszlof@vonostingroup.com
+MAINTAINER=		laszlof@FreeBSD.org
 COMMENT=		Easy to use IRC client for KDE
 
 USE_AUTOTOOLS=		libtool:15

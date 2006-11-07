@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/serial
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	RFC 2217 compliant serial port redirector
 
 PLIST_FILES=	libexec/sredird

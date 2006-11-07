@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	A tool to replay saved packet capture files
 
 BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet \

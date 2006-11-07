@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Solitaire empire game "VMS Empire"
 
 MAN6=		empire.6

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	LambdaMOO-${PORTVERSION}
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	The most commonly used program to run MOOs
 
 WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}

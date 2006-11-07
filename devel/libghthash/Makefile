@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Generic Hash Table
 
 USE_AUTOTOOLS=	libtool:15

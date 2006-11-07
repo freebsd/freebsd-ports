@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.v-i-t.de/mirkos_hp/pub/
 EXTRACT_SUFX=	.py
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \

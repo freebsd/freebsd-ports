@@ -13,7 +13,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	laszlof@vonostingroup.com
+MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	An interactive, multi-threaded web browser for text terminals
 
 USE_GETTEXT=	yes
