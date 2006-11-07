@@ -18,13 +18,13 @@ MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C/C++ IDE for Eclipse
 
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
+PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 USE_GMAKE=	yes
-USE_ZIP=	yes
 PORTVERSION_TS=	${PORTVERSION}.200609270800
 
 .include <bsd.port.pre.mk>
