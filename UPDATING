@@ -7,6 +7,46 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061106
+  AFFECTS: Users of net/freeradius
+  AUTHOR: David Wood <david@wood2.org.uk>
+
+  FreeBSD used to patch FreeRADIUS's rlm_mschap.c to strip all domain names
+  when calculating the hash of an MS-CHAP challenge (a requirement specified
+  in RFC 2759 paragraph 4 and amplified in paragraph 8.2). FreeRADIUS now
+  offers its own solution to discard a domain name before hashing in the
+  MS-CHAP code, which can be enabled via a configuration option. As there is
+  no longer any need for the FreeBSD patch, it has been removed, leaving the
+  MS-CHAP code behaving as supplied by the FreeRADIUS team.
+
+  If the previous behaviour of the MS-CHAP code is required, add:
+
+  with_ntdomain_hack = yes
+
+  to the mschap { } section of your FreeRADIUS configuration. There should be
+  a commented out line that can be modified around line 696 of
+  ${PREFIX}/etc/raddb/radiusd.conf if your configuration is based on the
+  sample FreeRADIUS configuration.
+
+  This option is not set by default in the sample FreeRADIUS configuration.
+  Only those who have clients sending a domain name as part of the user name
+  when using MS-CHAP will be affected by this change; they will need to set
+  this option to allow FreeRADIUS to authenticate their clients successfully.
+  This may only affect those with older Windows clients, but I cannot be sure.
+
+  Some sources suggest setting this configuration option anyway to prevent
+  FreeRADIUS from breaching RFC 2759 inadvertently, leading to authentication
+  failure. It is left to the user whether to set this configuration option
+  anyway, or only to set it in the event of authentication failures stemming
+  from MS-CHAP.
+
+  Debug output from radiusd that reads "rlm_mschap: NT Domain delimeter found,
+  should we have enabled with_ntdomain_hack?" suggests that this configuration
+  option should be enabled.
+
+  New maintainer alerted to this issue by private mail from Thomas Vogt
+  <thomas@bsdunix.ch>.
+
+20061106
   AFFECTS: users of syutils/munin-*
   AUTHOR: miwi@FreeBSD.org
 
