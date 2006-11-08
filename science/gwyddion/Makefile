@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -58,10 +58,6 @@ PLIST_SUB+=	NLS=""
 post-patch:
 	@${REINPLACE_CMD} -e '/# Install the pseudo-library/,/^$$/d' ${WRKSRC}/ltmain.sh
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/,/[^\]$$/d' ${WRKSRC}/devel-docs/Makefile.in
-
-# Remove private header installed by mistake
-post-install:
-	${RM} ${PREFIX}/include/gwyddion/libgwydgets/gwydgetmarshals.h
 
 .include <bsd.port.pre.mk>
 

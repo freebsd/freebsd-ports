@@ -19,6 +19,7 @@ lib/gwyddion/modules/file/createc.so
 lib/gwyddion/modules/file/ezdfile.so
 lib/gwyddion/modules/file/ecsfile.so
 lib/gwyddion/modules/file/gwyfile.so
+lib/gwyddion/modules/file/hdf4file.so
 lib/gwyddion/modules/file/hitachi-afm.so
 lib/gwyddion/modules/file/jpkscan.so
 lib/gwyddion/modules/file/metropro.so
@@ -30,6 +31,7 @@ lib/gwyddion/modules/file/nt-mdt.so
 lib/gwyddion/modules/file/omicron.so
 lib/gwyddion/modules/file/pixmap.so
 lib/gwyddion/modules/file/pnifile.so
+lib/gwyddion/modules/file/psia.so
 lib/gwyddion/modules/file/rawfile.so
 lib/gwyddion/modules/file/rhk-sm3.so
 lib/gwyddion/modules/file/rhk-spm32.so
@@ -68,6 +70,7 @@ lib/gwyddion/modules/process/facet-level.so
 lib/gwyddion/modules/process/facet_analysis.so
 lib/gwyddion/modules/process/fractal.so
 lib/gwyddion/modules/process/fft.so
+lib/gwyddion/modules/process/fft_filter_1d.so
 lib/gwyddion/modules/process/fft_filter_2d.so
 lib/gwyddion/modules/process/fit_2d.so
 lib/gwyddion/modules/process/fraccor.so
@@ -210,6 +213,11 @@ include/gwyddion/libgwydgets/gwypixmaplayer.h
 include/gwyddion/libgwydgets/gwyruler.h
 include/gwyddion/libgwydgets/gwyradiobuttons.h
 include/gwyddion/libgwydgets/gwyscitext.h
+include/gwyddion/libgwydgets/gwyselectiongraph1darea.h
+include/gwyddion/libgwydgets/gwyselectiongrapharea.h  
+include/gwyddion/libgwydgets/gwyselectiongraphline.h
+include/gwyddion/libgwydgets/gwyselectiongraphpoint.h
+include/gwyddion/libgwydgets/gwyselectiongraphzoom.h
 include/gwyddion/libgwydgets/gwysensitivitygroup.h
 include/gwyddion/libgwydgets/gwyshader.h
 include/gwyddion/libgwydgets/gwystatusbar.h
