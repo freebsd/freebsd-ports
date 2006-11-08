@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xppaut
-PORTVERSION=	5.91
+PORTVERSION=	5.96
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.math.pitt.edu/~bard/bardware/
 DISTNAME=	${PORTNAME}${PORTVERSION}
