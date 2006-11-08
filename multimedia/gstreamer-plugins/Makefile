@@ -75,9 +75,8 @@ USE_GSTREAMER=	yes
 
 .if ${OSVERSION} < 500000
 IGNORE=	many plugins don't build or even work on 4.x
-.else
-.include "${MASTERDIR}/Makefile.common"
 .endif
+.include "${MASTERDIR}/Makefile.common"
 
 .if ${DIST}=="base"
 EXTRACT_ONLY=${BASE_DISTFILE}
