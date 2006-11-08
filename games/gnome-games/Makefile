@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnome-games
-PORTVERSION=	2.16.1
-PORTREVISION=	1
+PORTVERSION=	2.16.1.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -43,9 +42,9 @@ CONFLICTS=	sol-1.0.*
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
-.endif
+#.if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
+#LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin/python|bin/env python|g' \
