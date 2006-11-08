@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION?=	0.95
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
 	        --with-test-socket-dir=${WRKDIR} \
 		--with-system-pid-file=/var/run/dbus/dbus.pid \
-		--with-system-socket=/var/run/dbus/dbus.pipe \
+		--with-system-socket=/var/run/dbus/system_bus_socket \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs

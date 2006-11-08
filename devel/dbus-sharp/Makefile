@@ -7,7 +7,7 @@
 #
 
 PORTVERSION=	0.62
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-sharp
 
@@ -35,8 +35,8 @@ CONFIGURE_ARGS=	--enable-mono \
 		--disable-gtk \
 		--disable-qt \
 		--with-test-socket-dir=${WRKDIR} \
-		--with-system-pid-file=/var/run/dbus.pid \
-		--with-system-socket=/var/run/dbus \
+		--with-system-pid-file=/var/run/dbus/dbus.pid \
+		--with-system-socket=/var/run/dbus/system_bus_socket \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs

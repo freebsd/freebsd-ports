@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--enable-python \
 		--disable-xml-docs \
 		--disable-doxygen-dot \
 		--localstatedir=/var \
-		--with-dbus-system-address=unix:path=/var/run/dbus/dbus.pipe \
+		--with-dbus-system-address=unix:path=/var/run/dbus/system_bus_socket \
 		--with-distro=freebsd
 
 MAN1=		avahi-bookmarks.1 avahi-discover.1
