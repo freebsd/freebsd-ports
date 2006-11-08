@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	open79xxdir
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	PHP based XML menuing system for cisco 79xx IP phones
 
 NO_BUILD=	YES

@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/ \
 		http://mirror.trouble-free.net/sources/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Rootkit detection tool
 
 OPTIONS=	LSOF "Use LSOF" on \

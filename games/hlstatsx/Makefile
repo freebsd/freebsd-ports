@@ -11,7 +11,7 @@ CATEGORIES=	games www
 MASTER_SITES=	http://www.hlstatsx.com/downloads/
 DISTNAME=	HLstatsX_V${PORTVERSION}
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql

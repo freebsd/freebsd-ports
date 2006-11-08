@@ -10,7 +10,7 @@ PORTVERSION=	2006.04.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/weekly/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A tool for extracting portions of pcap files
 
 MAN1=		tcpslice.1

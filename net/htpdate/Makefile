@@ -10,7 +10,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.clevervest.com/htp/archive/c/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Time synchronization over http utility
 
 USE_BZIP2=	yes

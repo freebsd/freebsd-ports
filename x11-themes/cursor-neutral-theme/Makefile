@@ -11,7 +11,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/content/files/
 DISTNAME=	28310-neutral-${DISTVERSION}
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Extended Jaguar X cursor theme
 
 NO_BUILD=	yes

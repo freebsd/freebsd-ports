@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://awstats.sourceforge.net/files/
 DISTNAME=	awstats-${PORTVERSION}
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois

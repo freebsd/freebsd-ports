@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
 
 MAN8=		dnsmasq.8

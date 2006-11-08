@@ -10,7 +10,7 @@ PORTVERSION=	4.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.farrokhi.net/distfiles/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES

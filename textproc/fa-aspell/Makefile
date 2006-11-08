@@ -9,7 +9,7 @@ PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-fa-0.10-0
 CATEGORIES=	textproc
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Aspell Persian (Farsi) dictionary
 
 DICT=	 	fa

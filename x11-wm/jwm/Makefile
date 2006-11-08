@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://joewing.net/programs/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Joe's Window Manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
