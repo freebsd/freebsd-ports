@@ -1,12 +1,23 @@
 lib/php/%%PHP_EXT_DIR%%/xcache.so
 @dirrmtry lib/php/%%PHP_EXT_DIR%%
+%%EXAMPLESDIR%%/admin/common-en.lang.php
+%%EXAMPLESDIR%%/admin/common-zh-simplified-utf-8.lang.php
+%%EXAMPLESDIR%%/admin/common-zh-traditional-utf-8.lang.php
+%%EXAMPLESDIR%%/admin/common.php
 %%EXAMPLESDIR%%/admin/config.php.example
+%%EXAMPLESDIR%%/admin/help-en.lang.php
+%%EXAMPLESDIR%%/admin/help-zh-simplified-utf-8.lang.php
+%%EXAMPLESDIR%%/admin/help-zh-traditional-utf-8.lang.php
 %%EXAMPLESDIR%%/admin/help.php
 %%EXAMPLESDIR%%/admin/index.php
 %%EXAMPLESDIR%%/admin/tablesort.js
 %%EXAMPLESDIR%%/admin/xcache.css
 %%EXAMPLESDIR%%/admin/xcache.php
 %%EXAMPLESDIR%%/admin/xcache.tpl.php
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/common-en.lang.php
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/common-zh-simplified-gb2312.lang.php
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/common-zh-simplified-utf-8.lang.php
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/common.php
 %%COVERAGER%%%%EXAMPLESDIR%%/coverager/config.php.example
 %%COVERAGER%%%%EXAMPLESDIR%%/coverager/coverager.css
 %%COVERAGER%%%%EXAMPLESDIR%%/coverager/coverager.php

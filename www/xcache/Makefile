@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	xcache
-DISTVERSION=	1.0.2
+DISTVERSION=	1.2-beta2
 CATEGORIES=	www
-MASTER_SITES=	http://210.51.190.228/pub/XCache/Releases/
+MASTER_SITES=	http://210.51.190.228/pub/XCache/Releases/ \
+		http://210.51.190.228/pub/XCache/snapshots/
+DISTNAME=	${PORTNAME}-trunk-r272
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A fast and stable php opcode cacher
@@ -24,6 +26,16 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+ADMINFILES=	common-en.lang.php common-zh-simplified-utf-8.lang.php \
+		common-zh-traditional-utf-8.lang.php common.php config.php.example \
+		help-en.lang.php help-zh-simplified-utf-8.lang.php \
+		help-zh-traditional-utf-8.lang.php help.php index.php \
+		tablesort.js xcache.css xcache.php xcache.tpl.php
+
+COVERAGERFILES=	common-en.lang.php common-zh-simplified-gb2312.lang.php \
+		common-zh-simplified-utf-8.lang.php common.php config.php.example \
+		coverager.css coverager.php coverager.tpl.php index.php
 
 .include <bsd.port.pre.mk>
 
@@ -48,22 +60,14 @@ do-install:
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}/admin
-	${INSTALL_DATA} ${WRKSRC}/admin/config.php.example \
-		${WRKSRC}/admin/help.php \
-		${WRKSRC}/admin/index.php \
-		${WRKSRC}/admin/tablesort.js \
-		${WRKSRC}/admin/xcache.css \
-		${WRKSRC}/admin/xcache.php \
-		${WRKSRC}/admin/xcache.tpl.php \
-		${EXAMPLESDIR}/admin
+.for f in ${ADMINFILES}
+	${INSTALL_DATA} ${WRKSRC}/admin/${f} ${EXAMPLESDIR}/admin
+.endfor
 .if defined(WITH_COVERAGER)
 	@${MKDIR} ${EXAMPLESDIR}/coverager
-	${INSTALL_DATA} ${WRKSRC}/coverager/config.php.example \
-		${WRKSRC}/coverager/coverager.css \
-		${WRKSRC}/coverager/coverager.php \
-		${WRKSRC}/coverager/coverager.tpl.php \
-		${WRKSRC}/coverager/index.php \
-		${EXAMPLESDIR}/coverager
+.for f in ${COVERAGERFILES}
+	${INSTALL_DATA} ${WRKSRC}/coverager/${f} ${EXAMPLESDIR}/coverager
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
