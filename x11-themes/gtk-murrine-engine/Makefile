@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-murrine-engine
-PORTVERSION=	0.13
+PORTVERSION=	0.30.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrie/
 DISTNAME=	murrine-${PORTVERSION}
@@ -17,12 +17,20 @@ COMMENT=	Murrine GTK+ 2.x cairo based engine
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-animation
-USE_GMAKE=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gtk20
 FETCH_CMD=	/usr/bin/fetch
-USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gtk20
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+OPTIONS=	ANIMATION "Enable animation support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ANIMATION)
+CONFIGURE_ARGS+=--enable-animation
+.endif
+
+.include <bsd.port.post.mk>
