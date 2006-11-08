@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-fm
 PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -20,7 +20,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 file manager
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
+LIB_DEPENDS=	dbh-4.5.4:${PORTSDIR}/databases/dbh \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
@@ -43,5 +43,8 @@ CONFIGURE_ARGS+=--enable-librsvg
 .else
 CONFIGURE_ARGS+=--disable-librsvg
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|dbh-1\.0|dbh|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
