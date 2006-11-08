@@ -7491,6 +7491,10 @@ Note:  Please add new entries to the beginning of this file.
 	<range><ge>4.11</ge><lt>4.11_12</lt></range>
 	<range><ge>4.10</ge><lt>4.10_18</lt></range>
       </system>
+      <package>
+	<name>cvs+ipv6</name>
+	<range><lt>1.11.17_1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -7524,6 +7528,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-09-07</discovery>
       <entry>2006-01-27</entry>
+      <modified>2006-11-08</modified>
     </dates>
   </vuln>
 
