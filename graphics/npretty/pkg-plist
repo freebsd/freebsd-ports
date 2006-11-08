@@ -1,0 +1,5 @@
+bin/npretty.pl
+etc/npretty/npretty.conf
+etc/npretty/novideo.gif
+etc/npretty/npretty_template.tpl
+@dirrm etc/npretty
