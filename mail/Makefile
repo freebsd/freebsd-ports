@@ -424,6 +424,7 @@
     SUBDIR += prom-wl
     SUBDIR += pronto
     SUBDIR += proxsmtp
+    SUBDIR += py-cyruslib
     SUBDIR += py-email
     SUBDIR += py-email2
     SUBDIR += py-libgmail
