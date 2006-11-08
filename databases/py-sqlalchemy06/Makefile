@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/S/SQLAlchemy/ \
@@ -34,7 +34,7 @@ OPTIONS+=	SQLITE "support Sqlite" on
 PORTDOCS=	adv_datamapping.html alphaapi.html \
 		alphaimplementation.html datamapping.html \
 		dbengine.html docs.css docstrings.html \
-		documentation.html index.html metadata.html \
+		index.html metadata.html \
 		plugins.html pooling.html scripts.js \
 		sqlconstruction.html style.css syntaxhighlight.css \
 		tutorial.html types.html unitofwork.html
