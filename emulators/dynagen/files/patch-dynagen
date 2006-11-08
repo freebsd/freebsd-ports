@@ -1,0 +1,11 @@
+--- dynagen.orig	Wed Nov  8 07:26:20 2006
++++ dynagen	Wed Nov  8 07:26:47 2006
+@@ -29,7 +29,7 @@
+ 
+ VERSION = '0.6.0.101006'
+ DEBUG = False
+-CONFIGSPECPATH = [ "/usr/share/dynagen", "/usr/local/share" ]
++CONFIGSPECPATH = [ "/usr/local/share/dynagen", "/usr/share/dynagen", "/usr/local/share" ]
+ CONFIGSPEC = 'configspec'
+ INIPATH = [ "/etc", "/usr/local/etc" ]
+ INIFILE = 'dynagen.ini'

@@ -21,6 +21,7 @@
     SUBDIR += dosbox
     SUBDIR += doscmd
     SUBDIR += dtcyber
+    SUBDIR += dynagen
     SUBDIR += dynamips
     SUBDIR += e-uae
     SUBDIR += extract-xiso
