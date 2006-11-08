@@ -12,6 +12,6 @@ If the sender is badly configured, an uncooperative recipient might actually
 delay his entire queue handling for several minutes each time he connects to
 the tarpit. And many spammers use badly configured open relays
 
-WWW: http://www.benzedrine.cx/relaydb.html
+WWW: http://www.OpenBSD.org/spamd/
 
 -Max <max@love2party.net>
