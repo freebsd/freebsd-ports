@@ -62,10 +62,6 @@ DEFAULT_AUDIOSRC?=	osssrc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	many plugins don't build or even work on 4.x
-.endif
-
 .if ${GST_PLUGIN} == "base"
 gst_base_DIST=	base
 NO_GSTREAMER_COMMON=	yes
@@ -77,7 +73,11 @@ PLIST_SUB+=	VERSION="${VERSION}" \
 USE_GSTREAMER=	yes
 .endif
 
+.if ${OSVERSION} < 500000
+IGNORE=	many plugins don't build or even work on 4.x
+.else
 .include "${MASTERDIR}/Makefile.common"
+.endif
 
 .if ${DIST}=="base"
 EXTRACT_ONLY=${BASE_DISTFILE}
