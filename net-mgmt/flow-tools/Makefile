@@ -7,7 +7,7 @@
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
@@ -26,6 +26,19 @@ MAN1=	flow-capture.1 flow-cat.1 flow-dscan.1 flow-expire.1	\
 	flow-tag.1 flow-tools.1	flow-tools-examples.1 		\
 	flow-xlate.1 flow-rptfmt.1 flow-log2rrd.1 flow-rpt2rrd.1
 
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST=	FLOW_CAPTURE_SPOOL="${FLOW_CAPTURE_SPOOL}" \
+		FLOW_CAPTURE_USER="${FLOW_CAPTURE_USER}" \
+		FLOW_CAPTURE_GROUP="${FLOW_CAPTURE_GROUP}" \
+		FLOW_CAPTURE_PIDDIR="${FLOW_CAPTURE_PIDDIR}"
+USE_RC_SUBR=	flow_capture
+
+VARDIR?=		${DESTDIR}/var
+FLOW_CAPTURE_SPOOL=	${VARDIR}/db/flows
+FLOW_CAPTURE_USER=	flowtools
+FLOW_CAPTURE_GROUP=	flowtools
+FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
+
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=--with-pgsql=${PREFIX}
 USE_PGSQL=	yes
@@ -42,9 +55,15 @@ post-patch:
 	 -e 's|@localstatedir@/cfg/|${PREFIX}/etc/flow-tools/|' \
 	  ${WRKSRC}/docs/flow-*.1.in ${WRKSRC}/docs/flow-*.html.in
 
+pre-su-install:
+	@${SETENV} ${SCRIPTS_ENV} \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 post-install:
 .for I in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/docs/${I} ${PREFIX}/man/man1/
 .endfor
+	@${SETENV} ${SCRIPTS_ENV} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
