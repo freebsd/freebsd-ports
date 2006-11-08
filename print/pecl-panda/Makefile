@@ -19,6 +19,10 @@ COMMENT=	A PECL extension to create PDF documents
 
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda
 
+DEPRECATED=	Project is dead and does not work
+EXPIRATION_DATE=	2006-11-19
+BROKEN=		Does not build
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
