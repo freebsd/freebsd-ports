@@ -15,6 +15,9 @@ DISTNAME=	email-${PORTVERSION}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Email package for Python 2.1.3 or upper
 
+DEPRECATED=	Only usable python versions schedualed to expire
+EXPIRATION_DATE=2007-01-07
+
 NO_LATEST_LINK=	yes
 CONFLICTS=	py*-mimelib-3.* py*-email-3.*
 
