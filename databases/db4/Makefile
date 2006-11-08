@@ -21,7 +21,6 @@ COMMENT=	The Berkeley DB package, revision 4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-RANDOMIZE_MASTER_SITES=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
