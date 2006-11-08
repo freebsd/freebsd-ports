@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mapyrus
-PORTVERSION=	0.610
+PORTVERSION=	0.612
 CATEGORIES=	graphics print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,7 @@ SUB_LIST=	MAPYRUSJAR=${MAPYRUSJAR}
 MAPYRUSJAR=	${PORTNAME}.jar
 MAPYRUSDOCS=	${PORTNAME}.pdf
 
-FIND_DATA=	-type f -not \( -name "copying" -or -name "*.tex" \)
+FIND_DATA=	-type f -not \( -iname "copying" -or -iname "*.tex" \)
 FIND_HERE=	userdoc
 
 .if defined(WITH_EXAMPLES)
