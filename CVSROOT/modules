@@ -14564,6 +14564,7 @@ upnp104		ports/devel/upnp104
 upp		ports/devel/upp
 uppaal		ports/devel/uppaal
 uppc-kmod	ports/palm/uppc-kmod
+uproxy		ports/net/uproxy
 ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsdaemon	ports/sysutils/upsdaemon
