@@ -7,3 +7,6 @@ SIZE (bdb/patch.4.1.25.1) = 610
 MD5 (bdb/patch.4.1.25.2) = 5eedc6818783b4b89317d89d2babb6f7
 SHA256 (bdb/patch.4.1.25.2) = 391e652b0b6a1e2410a8e4b8d7e0ed0d53c9af549a29754e04532f390bee8f5d
 SIZE (bdb/patch.4.1.25.2) = 18100
+MD5 (bdb/patch.4.1.25.3) = bda83ce3ce18a3e9001d0c2eb90d9508
+SHA256 (bdb/patch.4.1.25.3) = e55642b62cdd571f715f9109f522e0be6258fbe85c770228d8d0e2d29c2cfe9c
+SIZE (bdb/patch.4.1.25.3) = 1641
