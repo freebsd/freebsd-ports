@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	nbd-server
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.5
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nbd
 DISTNAME=	nbd-${PORTVERSION}
 
-MAINTAINER=	xi@borderworlds.dk
+MAINTAINER=	rebehn@ant.uni-bremen.de
 COMMENT=	A server for the linux network block device (nbd)
 
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20
 USE_GETOPT_LONG=yes
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --enable-lfs --enable-syslog
 
 PLIST_FILES=	bin/nbd-server
