@@ -1,4 +1,3 @@
-%%DOCSDIR%%/UPGRADING
 %%RCUBEDIR%%/SQL/mssql.initial.sql
 %%RCUBEDIR%%/SQL/mysql.initial.sql
 %%RCUBEDIR%%/SQL/mysql.update-0.1a.sql
@@ -61,17 +60,36 @@
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/jscripts/functions.js
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/langs/en.js
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/css/content.css
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/css/media.css
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/images/flash.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/images/media.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/images/quicktime.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/images/realmedia.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/images/shockwave.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/images/windowsmedia.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/jscripts/embed.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/jscripts/media.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/langs/en.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/media/media.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/nonbreaking/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/nonbreaking/images/nonbreaking.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/nonbreaking/langs/en.js
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/css/searchreplace.css
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/editor_plugin.js
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/editor_plugin_src.js
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images/replace.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images/replace_all_button_bg.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images/replace_button_bg.gif
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images/search.gif
-%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts/replace.js
-%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts/search.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts/searchreplace.js
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/langs/en.js
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/readme.txt
-%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/replace.htm
-%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/search.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/searchreplace.htm
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/changelog
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/classes/TinyGoogleSpell.class.php
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/classes/TinyPspell.class.php
@@ -113,6 +131,10 @@
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/readme.txt
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/row.htm
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/table.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/visualchars/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/visualchars/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/visualchars/images/visualchars.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/visualchars/langs/en.js
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/about.htm
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/anchor.htm
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/charmap.htm
@@ -607,6 +629,9 @@
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/visualchars/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/visualchars/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/visualchars
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/langs
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/jscripts
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images
@@ -620,7 +645,16 @@
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/langs
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/css
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/nonbreaking/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/nonbreaking/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/nonbreaking
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/media/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/media/jscripts
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/media/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/media/css
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/media
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/langs
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/jscripts
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images
@@ -637,4 +671,3 @@
 @dirrmtry %%RCUBEDIR%%/logs
 @dirrmtry %%RCUBEDIR%%/config
 @dirrmtry %%RCUBEDIR%%
-@dirrm %%DOCSDIR%%
