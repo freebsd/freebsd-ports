@@ -25,6 +25,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/B/Deobfuscate.pm:${PORTSDIR}/devel/p5-B-Deobfuscate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	sketchy-*
+
 PERL_CONFIGURE=	yes
 
 MAN1=		par.pl.1 parl.1 pp.1 tkpp.1
