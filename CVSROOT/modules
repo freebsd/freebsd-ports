@@ -11257,6 +11257,7 @@ phpeclipse	ports/java/phpeclipse
 phpgedview	ports/www/phpgedview
 phpgroupware	ports/deskutils/phpgroupware
 phpicalendar	ports/deskutils/phpicalendar
+phpip		ports/www/phpip
 phpldapadmin	ports/net/phpldapadmin
 phpldapadmin098	ports/net/phpldapadmin098
 phplot		ports/graphics/phplot
