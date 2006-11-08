@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	mpc
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12.0
 CATEGORIES=	audio ipv6
-MASTER_SITES=	http://mercury.chem.pitt.edu/~shank/
+MASTER_SITES=	http://musicpd.org/uploads/files/
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Command line client for the musicpd
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 OPTIONS=	ICONV "Support for international characters" on \
 

@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.11.5
-PORTREVISION=	2
+PORTVERSION=	0.12.0
 CATEGORIES=	audio ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://musicpd.org/uploads/files/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	mpd-${PORTVERSION}
 
-MAINTAINER=	ports@mark.reidel.info
+MAINTAINER=	redchrom@gmail.com
 COMMENT=	A remote-controllable music-daemon
 
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
-		mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	musicpd.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	FLAC "Support for FLAC Audio" on \
@@ -32,12 +32,6 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		IPV6 "Support for IPV6" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	${DESTDIR}/etc/rc.subr
-.else
-USE_RC_SUBR=	yes
-.endif
 
 .ifdef(WITHOUT_FLAC)
 CONFIGURE_ARGS+=--disable-flac
@@ -89,29 +83,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CFLAGS+=	-I${PREFIX}/include
 
 MAN1=		mpd.1
+MAN5=		mpd.conf.5
 
-DOCS=		README \
-		UPGRADING \
-		doc/COMMANDS
+DOCSDIR=	${PREFIX}/share/doc/mpd
+DOCS=	COMMANDS \
+		mpdconf.example \
+		README \
+		UPGRADING
 
-SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g'
 
 post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/musicpd.sh >${WRKDIR}/musicpd.sh
 	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-message >${PKGMESSAGE}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd ${PREFIX}/bin/
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/mpd.conf.sample ${EXAMPLESDIR}/mpd.conf
-	${INSTALL_SCRIPT} ${WRKDIR}/musicpd.sh ${PREFIX}/etc/rc.d/
-	${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${MAN1PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
-.endif
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
