@@ -6,6 +6,7 @@ bin/git-apply
 bin/git-applymbox
 bin/git-applypatch
 bin/git-archimport
+bin/git-archive
 bin/git-bisect
 bin/git-blame
 bin/git-branch
@@ -44,6 +45,7 @@ bin/git-http-push
 bin/git-imap-send
 bin/git-index-pack
 bin/git-init-db
+bin/git-instaweb
 bin/git-local-fetch
 bin/git-log
 bin/git-lost-found
@@ -58,7 +60,9 @@ bin/git-merge-index
 bin/git-merge-octopus
 bin/git-merge-one-file
 bin/git-merge-ours
+bin/git-merge-recur
 bin/git-merge-recursive
+bin/git-merge-recursive-old
 bin/git-merge-resolve
 bin/git-merge-stupid
 bin/git-merge-tree
@@ -91,6 +95,7 @@ bin/git-rev-list
 bin/git-rev-parse
 bin/git-revert
 bin/git-rm
+bin/git-runstatus
 bin/git-send-email
 bin/git-send-pack
 bin/git-sh-setup
@@ -105,6 +110,7 @@ bin/git-ssh-push
 bin/git-ssh-upload
 bin/git-status
 bin/git-stripspace
+bin/git-svn
 bin/git-svnimport
 bin/git-symbolic-ref
 bin/git-tag
@@ -114,14 +120,17 @@ bin/git-unpack-objects
 bin/git-update-index
 bin/git-update-ref
 bin/git-update-server-info
+bin/git-upload-archive
 bin/git-upload-pack
-bin/git-upload-tar
 bin/git-var
 bin/git-verify-pack
 bin/git-verify-tag
 bin/git-whatchanged
 bin/git-write-tree
 bin/gitk
+%%SITE_PERL%%/Error.pm
+%%SITE_PERL%%/Git.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
 share/git-core/python/gitMergeCommon.py
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg
@@ -133,10 +142,11 @@ share/git-core/templates/hooks/pre-commit
 share/git-core/templates/hooks/pre-rebase
 share/git-core/templates/hooks/update
 share/git-core/templates/info/exclude
-@dirrm share/git-core/python
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm share/git-core/templates/branches
 @dirrm share/git-core/templates/hooks
 @dirrm share/git-core/templates/info
 @dirrm share/git-core/templates/remotes
 @dirrm share/git-core/templates
+@dirrm share/git-core/python
 @dirrm share/git-core

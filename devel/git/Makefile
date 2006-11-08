@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	cogito-0.1[012] git-4.*
 
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 MAN1=		git-add.1 \
 		git-am.1 \
 		git-annotate.1 \
@@ -30,6 +31,7 @@ MAN1=		git-add.1 \
 		git-applymbox.1 \
 		git-applypatch.1 \
 		git-archimport.1 \
+		git-archive.1 \
 		git-bisect.1 \
 		git-blame.1 \
 		git-branch.1 \
@@ -68,6 +70,7 @@ MAN1=		git-add.1 \
 		git-imap-send.1 \
 		git-index-pack.1 \
 		git-init-db.1 \
+		git-instaweb.1 \
 		git-local-fetch.1 \
 		git-log.1 \
 		git-lost-found.1 \
@@ -123,6 +126,7 @@ MAN1=		git-add.1 \
 		git-status.1 \
 		git-stripspace.1 \
 		git-svnimport.1 \
+		git-svn.1 \
 		git-symbolic-ref.1 \
 		git-tag.1 \
 		git-tar-tree.1 \
@@ -131,14 +135,15 @@ MAN1=		git-add.1 \
 		git-update-index.1 \
 		git-update-ref.1 \
 		git-update-server-info.1 \
+		git-upload-archive.1 \
 		git-upload-pack.1 \
-		git-upload-tar.1 \
 		git-var.1 \
 		git-verify-pack.1 \
 		git-verify-tag.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
+MAN3=		Git.3 private-Error.3
 MAN7=		git.7
 
 USE_PERL5=	yes
@@ -151,7 +156,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		PYTHON_PATH=${LOCALBASE}/bin/python
+		PYTHON_PATH=${LOCALBASE}/bin/python \
+		PERL_PATH=${PERL}
 MAKE_ARGS+=	prefix="${PREFIX}"
 
 .include <bsd.port.mk>

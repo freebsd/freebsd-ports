@@ -1,23 +1,21 @@
---- Makefile.orig	Sat Jun 10 12:41:54 2006
-+++ Makefile	Thu Jul  6 16:59:27 2006
-@@ -85,8 +85,8 @@
- 
- # CFLAGS and LDFLAGS are for the users to override from the command line.
- 
--CFLAGS = -g -O2 -Wall
--LDFLAGS =
-+#CFLAGS = -g -O2 -Wall
-+#LDFLAGS =
- ALL_CFLAGS = $(CFLAGS)
- ALL_LDFLAGS = $(LDFLAGS)
- STRIP ?= strip
-@@ -135,7 +135,8 @@
- 	git-send-email.perl
+--- Makefile.orig	Tue Nov  7 20:47:34 2006
++++ Makefile	Tue Nov  7 20:47:55 2006
+@@ -178,7 +178,8 @@
+ 	git-send-email.perl git-svn.perl
  
  SCRIPT_PYTHON = \
--	git-merge-recursive.py
-+	git-merge-recursive.py \
+-	git-merge-recursive-old.py
++	git-merge-recursive-old.py \
 +	git-p4import.py
  
  SCRIPTS = $(patsubst %.sh,%,$(SCRIPT_SH)) \
  	  $(patsubst %.perl,%,$(SCRIPT_PERL)) \
+@@ -823,7 +824,7 @@
+ 	$(INSTALL) $(ALL_PROGRAMS) '$(DESTDIR_SQ)$(gitexecdir_SQ)'
+ 	$(INSTALL) git$X gitk '$(DESTDIR_SQ)$(bindir_SQ)'
+ 	$(MAKE) -C templates DESTDIR='$(DESTDIR_SQ)' install
+-	$(MAKE) -C perl install
++	$(MAKE) -C perl pure_install
+ 	$(INSTALL) -d -m755 '$(DESTDIR_SQ)$(GIT_PYTHON_DIR_SQ)'
+ 	$(INSTALL) $(PYMODULES) '$(DESTDIR_SQ)$(GIT_PYTHON_DIR_SQ)'
+ 	if test 'z$(bindir_SQ)' != 'z$(gitexecdir_SQ)'; \
