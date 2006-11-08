@@ -37,7 +37,7 @@ PLIST_SUB+=		SPOOLDIR=${SPOOLDIR} \
 			PREFIX=${PREFIX}
 
 HAS_CONFIGURE=		yes
-.if defined(WITHOUT_INN)
+.if defined(WITHOUT_INN) || defined (BATCH)
 CONFIGURE_ARGS+=	--without-news
 .else
 CONFIGURE_ARGS+=	--with-newsbindir=${LOCALBASE}/news/bin
