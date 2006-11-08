@@ -1,0 +1,5 @@
+Ipsectrace is a simple utility designed to profile the 
+ipsec traffic (esp and ah) in a pcap capture file. 
+It is somewhat inspired by tcptrace.
+
+WWW:	http://freshmeat.net/projects/ipsectrace/

@@ -73,6 +73,7 @@
     SUBDIR += ipcalc
     SUBDIR += ipfm
     SUBDIR += ipplan
+    SUBDIR += ipsectrace
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
     SUBDIR += irrtoolset
