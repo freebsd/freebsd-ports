@@ -7,7 +7,7 @@
 
 PORTNAME=	frozenbubble
 PORTVERSION=	2.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 DISTNAME=	frozen-bubble-${PORTVERSION}
@@ -40,6 +40,12 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
 		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600020
+IGNORE=		doesn't work unless MSG_NOSIGNAL is defined (FreeBSD version 600020 and higher)
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' \
 		${WRKSRC}/c_stuff/Makefile.PL
@@ -68,4 +74,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
