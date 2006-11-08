@@ -7,7 +7,7 @@
 
 PORTNAME=	ifm
 PORTVERSION=	5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games tk84
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		http://www.ifarchive.org/%SUBDIR%/
@@ -18,6 +18,7 @@ COMMENT=	Interactive Fiction mapper and walkthrough generator
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -34,12 +35,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ifm/* ${DOCSDIR}/html
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	RELENG4=""
-.else
-PLIST_SUB+=	RELENG4="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
