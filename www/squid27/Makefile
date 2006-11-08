@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.4
+PORTVERSION=	2.6.5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
@@ -87,7 +87,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE4
+DISTNAME=	squid-2.6.STABLE5
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -100,11 +100,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
-PATCHFILES=	11036.patch 11037.patch 11038.patch 11041.patch 11042.patch \
-		11043.patch 11044.patch 11045.patch 11046.patch 11047.patch \
-		11048.patch 11049.patch 11050.patch 11051.patch 11054.patch \
-		11059.patch 11060.patch 11061.patch 11062.patch 11063.patch \
-		11064.patch 11065.patch 11066.patch
+PATCHFILES=	11086.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -248,13 +244,18 @@ storage_schemes+=	aufs
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 .endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
-CONFIGURE_ARGS+=	--enable-async-io \
-			--with-pthreads
+CONFIGURE_ARGS+=	--with-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 .if defined(WITH_SQUID_COSS)
 storage_schemes+=	coss
+.if !defined(WITH_SQUID_AUFS)
+# use Posix AIO instead of aufs' AIO; note that you then need the kernel to
+# supply AIO support, either by loading the aio(4) module (n/a on 4.x) or by
+# adding the option VFS_AIO to your kernel configuration if you want to
+# actually use COSS storage:
 CONFIGURE_ARGS+=	--enable-coss-aio-ops
+.endif
 sbin+=		cossdump
 .endif
 CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
