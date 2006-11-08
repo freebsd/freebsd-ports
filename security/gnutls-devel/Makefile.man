@@ -285,6 +285,8 @@ MAN3=	\
 	gnutls_strerror.3 \
 	gnutls_transport_get_ptr.3 \
 	gnutls_transport_get_ptr2.3 \
+	gnutls_transport_set_errno.3 \
+	gnutls_transport_set_global_errno.3 \
 	gnutls_transport_set_lowat.3 \
 	gnutls_transport_set_ptr.3 \
 	gnutls_transport_set_ptr2.3 \

@@ -58,6 +58,5 @@ share/aclocal/libgnutls.m4
 %%NLS%%share/locale/en@quot/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnutls.mo
-@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm include/gnutls
