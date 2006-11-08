@@ -7,6 +7,7 @@
 
 PORTNAME=	m2crypto
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://wiki.osafoundation.org/pub/Projects/MeTooCrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
