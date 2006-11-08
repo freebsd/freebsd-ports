@@ -9,7 +9,8 @@ PORTNAME=	cmail
 PORTVERSION=	4.02
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/ \
-		http://www.franksworld.org/dist/cmail/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	laszlof
 
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	A simple mail counter, useful for multiple mailfiles
