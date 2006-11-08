@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	nocol
-PORTVERSION=	4.3
-PORTREVISION=	1
+PORTVERSION=	4.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netplex-tech.com/software/downloads/nocol/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Network/Service monitoring software
 
 MANPREFIX=	${TARGETDIR}/nocol/
@@ -36,4 +35,4 @@ post-install:
 BROKEN=		Does not compile on FreeBSD >= 6.x
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
