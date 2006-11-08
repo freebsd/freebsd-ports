@@ -8,8 +8,8 @@
 PORTNAME=	skyutils
 PORTVERSION=	2.9
 CATEGORIES=	misc
-MASTER_SITES=	http://www.franksworld.org/dist/skyutils/	
-#		http://zekiller.skytech.org/fichiers/ 
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	laszlof
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library required by smssend (same author)
