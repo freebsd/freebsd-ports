@@ -7736,6 +7736,7 @@ noweb		ports/devel/noweb
 npadmin		ports/sysutils/npadmin
 npc		ports/www/npc
 nph		ports/net/nph
+npretty		ports/graphics/npretty
 nqc		ports/lang/nqc
 nqueens		ports/benchmarks/nqueens
 nrg		ports/net-mgmt/nrg
