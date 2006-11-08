@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ump
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	math
-MASTER_SITES=	http://home.swipnet.se/${PORTNAME}/downloads/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	u-m-p
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A graphical, easy to use math program
@@ -33,11 +32,6 @@ MAKE_ENV+=	CXX="${CXX}" CC="${CC}" DATADIR="${DATADIR}" \
 FIND_DIRS=	-type d
 FIND_DATA=	-type f
 
-.if !defined(NOPORTDOCS)
-DOCSDIST=	${PORTNAME}-${PORTVERSION}-doc
-DISTFILES+=	${PORTNAME}-documentation${EXTRACT_SUFX}
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
@@ -51,15 +45,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ump.conf ${PREFIX}/etc/ump.conf.dist
 .if !exists(${PREFIX}/etc/ump.conf)
 	${INSTALL_DATA} ${WRKSRC}/ump.conf ${PREFIX}/etc
-.endif
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/${DOCSDIST} && ${FIND} . ${FIND_DIRS} \
-		-exec ${MKDIR} ${DOCSDIR}/{} \;
-	cd ${WRKDIR}/${DOCSDIST} && ${FIND} . ${FIND_DATA} \
-		-exec ${INSTALL_DATA} {} ${DOCSDIR} \;
-
 .endif
 
 .include <bsd.port.post.mk>
