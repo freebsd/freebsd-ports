@@ -16,7 +16,10 @@ COMMENT=	A client/server jitter measurement utility
 
 WRKSRC=		${WRKDIR}
 USE_GMAKE=	yes
+
 MAN1=		sjitter.1
+MANCOMPRESSED=	yes
+
 PLIST_FILES=	sbin/sjitters sbin/sjitterc
 
 post-patch:
