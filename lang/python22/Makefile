@@ -19,6 +19,9 @@ PATCHFILES=	patch-2.2.txt
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	An interpreted object-oriented programming language
 
+DEPRECATED=	Version branch long since retired
+EXPIRATION_DATE=2007-01-07
+
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
