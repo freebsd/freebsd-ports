@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	at-spi
-PORTVERSION=	1.7.12
+PORTVERSION=	1.7.13
 PORTREVISION?=	0
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -29,8 +29,8 @@ USE_XLIB=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 post-extract:
 	@${RM} -f ${WRKSRC}/registryd/Accessibility_Registry.server
