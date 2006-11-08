@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	2.16.1
-PORTREVISION=	1
+PORTVERSION=	2.16.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -29,10 +28,17 @@ INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libwnck \
 		gnomedocutils
-CONFIGURE_ARGS=	--disable-icon-framing
+CONFIGURE_ARGS=	--disable-icon-framing \
+		--docdir=${PREFIX}/share/doc/${PORTNAME} \
+		--with-doc-dir=${PREFIX}/share/doc \
+		--disable-docbook-docs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gnome-power-manager.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lresolv||' \
+	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>
