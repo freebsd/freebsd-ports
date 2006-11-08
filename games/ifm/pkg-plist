@@ -1,7 +1,7 @@
 bin/ifm
-%%RELENG4%%bin/ifm2dev
-%%RELENG4%%bin/ifm2tex
-%%RELENG4%%bin/scr2ifm
+bin/ifm2dev
+bin/ifm2tex
+bin/scr2ifm
 bin/tkifm
 lib/ifm/gpp
 %%PORTDOCS%%%%DOCSDIR%%/html/WARNINGS
