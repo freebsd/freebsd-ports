@@ -1,5 +1,5 @@
---- ./Makefile.orig	Mon May 29 00:02:54 2006
-+++ ./Makefile	Sun Jun 11 17:26:26 2006
+--- ./Makefile.orig	Thu Oct 19 17:49:40 2006
++++ ./Makefile	Sun Nov  5 19:55:44 2006
 @@ -26,11 +26,19 @@
    endif
  endif
@@ -57,7 +57,7 @@
  CDIR=$(MOUNT_DIR)/client
  SDIR=$(MOUNT_DIR)/server
  RDIR=$(MOUNT_DIR)/renderer
-@@ -407,18 +395,12 @@
+@@ -444,18 +432,12 @@
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -79,7 +79,7 @@
  
    ifeq ($(USE_OPENAL),1)
      BASE_CFLAGS += -DUSE_OPENAL=1
-@@ -431,46 +413,61 @@
+@@ -468,47 +450,61 @@
      BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
    endif
  
@@ -105,15 +105,16 @@
 -      -march=pentium -fomit-frame-pointer -pipe -ffast-math \
 -      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
 -      -funroll-loops -fstrength-reduce
+-    HAVE_VM_COMPILED=true
 -  else
 -    BASE_CFLAGS += -DNO_VM_COMPILED
 +  ifeq ($(USE_SDL_AUDIO),1)
 +    BASE_CFLAGS += -DUSE_SDL_SOUND=1
-+   endif
+   endif
 +
 +  ifeq ($(USE_SDL_VIDEO),1)
 +    BASE_CFLAGS += -DUSE_SDL_VIDEO=1
-   endif
++  endif
 +
 +  ifeq ($(USE_OPTIMIZED_CFLAGS),1)
 +    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
@@ -163,7 +164,7 @@
      endif
    endif
  
-@@ -478,7 +475,6 @@
+@@ -516,7 +512,6 @@
      CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
    endif
  
@@ -171,7 +172,7 @@
  else # ifeq freebsd
  
  #############################################################################
-@@ -632,24 +628,24 @@
+@@ -670,24 +665,24 @@
  TARGETS =
  
  ifneq ($(BUILD_SERVER),0)
@@ -205,7 +206,7 @@
  endif
  
  ifneq ($(BUILD_GAME_QVM),0)
-@@ -707,11 +703,11 @@
+@@ -749,11 +744,11 @@
  	$(MAKE)  targets B=$(BD) CFLAGS="$(CFLAGS) $(DEBUG_CFLAGS) $(DEPEND_CFLAGS)"
  
  build_release: B=$(BR)
@@ -219,21 +220,23 @@
  
  targets: $(TARGETS)
  
-@@ -919,11 +915,11 @@
-     $(B)/client/ftola.o \
-     $(B)/client/snapvectora.o
- endif
--ifeq ($(ARCH),x86_64)
-+ifeq ($(ARCH),amd64)
-   Q3OBJ += $(B)/client/vm_x86_64.o
- endif
- 
--ifeq ($(ARCH),ppc)
-+ifeq ($(ARCH),powerpc)
-   ifneq ($(VM_PPC),)
+@@ -964,13 +959,10 @@
+   ifeq ($(ARCH),i386)
+     Q3OBJ += $(B)/client/vm_x86.o
+   endif
+-  ifeq ($(ARCH),x86)
+-    Q3OBJ += $(B)/client/vm_x86.o
+-  endif
+-  ifeq ($(ARCH),x86_64)
++  ifeq ($(ARCH),amd64)
+     Q3OBJ += $(B)/client/vm_x86_64.o
+   endif
+-  ifeq ($(ARCH),ppc)
++  ifeq ($(ARCH),powerpc)
      Q3OBJ += $(B)/client/$(VM_PPC).o
    endif
-@@ -971,10 +967,10 @@
+ endif
+@@ -1017,10 +1009,10 @@
      $(B)/client/sdl_glimp_smp.o
  endif
  
@@ -246,18 +249,19 @@
  	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
  		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
  
-@@ -1253,17 +1249,17 @@
-       $(B)/ded/snapvectora.o $(B)/ded/matha.o
- endif
- 
--ifeq ($(ARCH),x86_64)
-+ifeq ($(ARCH),amd64)
-   Q3DOBJ += $(B)/ded/vm_x86_64.o
- endif
- 
--ifeq ($(ARCH),ppc)
-+ifeq ($(ARCH),powerpc)
-   ifneq ($(VM_PPC),)
+@@ -1317,18 +1309,15 @@
+   ifeq ($(ARCH),i386)
+     Q3DOBJ += $(B)/ded/vm_x86.o
+   endif
+-  ifeq ($(ARCH),x86)
+-    Q3DOBJ += $(B)/ded/vm_x86.o
+-  endif
+-  ifeq ($(ARCH),x86_64)
++  ifeq ($(ARCH),amd64)
+     Q3DOBJ += $(B)/ded/vm_x86_64.o
+   endif
+-  ifeq ($(ARCH),ppc)
++  ifeq ($(ARCH),powerpc)
      Q3DOBJ += $(B)/ded/$(VM_PPC).o
    endif
  endif
@@ -267,7 +271,7 @@
  	$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
  
  $(B)/ded/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_DED_CC)
-@@ -1377,7 +1373,7 @@
+@@ -1445,7 +1434,7 @@
  Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseq3/cgame/cg_syscalls.o
  Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -276,7 +280,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
  
  $(B)/baseq3/vm/cgame.qvm: $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm
-@@ -1418,7 +1414,7 @@
+@@ -1486,7 +1475,7 @@
  MPCGOBJ = $(MPCGOBJ_) $(B)/missionpack/cgame/cg_syscalls.o
  MPCGVMOBJ = $(MPCGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
  
@@ -285,7 +289,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(MPCGOBJ)
  
  $(B)/missionpack/vm/cgame.qvm: $(MPCGVMOBJ) $(CGDIR)/cg_syscalls.asm
-@@ -1468,7 +1464,7 @@
+@@ -1536,7 +1525,7 @@
  Q3GOBJ = $(Q3GOBJ_) $(B)/baseq3/game/g_syscalls.o
  Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -294,7 +298,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
  
  $(B)/baseq3/vm/qagame.qvm: $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm
-@@ -1516,7 +1512,7 @@
+@@ -1584,7 +1573,7 @@
  MPGOBJ = $(MPGOBJ_) $(B)/missionpack/game/g_syscalls.o
  MPGVMOBJ = $(MPGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
  
@@ -303,7 +307,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(MPGOBJ)
  
  $(B)/missionpack/vm/qagame.qvm: $(MPGVMOBJ) $(GDIR)/g_syscalls.asm
-@@ -1576,7 +1572,7 @@
+@@ -1644,7 +1633,7 @@
  Q3UIOBJ = $(Q3UIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
  Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -312,7 +316,7 @@
  	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
  
  $(B)/baseq3/vm/ui.qvm: $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm
-@@ -1601,7 +1597,7 @@
+@@ -1669,7 +1658,7 @@
  MPUIOBJ = $(MPUIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
  MPUIVMOBJ = $(MPUIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
