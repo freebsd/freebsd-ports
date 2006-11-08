@@ -189,6 +189,7 @@
     SUBDIR += sendip
     SUBDIR += sing
     SUBDIR += sipcalc
+    SUBDIR += sjitter
     SUBDIR += slate
     SUBDIR += snmptt
     SUBDIR += softflowd
