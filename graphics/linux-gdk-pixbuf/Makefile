@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+)\./\1-/}
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Linux version of the graphic library for GTK+
 
-CONFLICTS=	linux-gtk2*
-
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
 ONLY_FOR_ARCHS=	i386 amd64
