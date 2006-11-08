@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimetex
-PORTVERSION=	20060925.1.64
+PORTVERSION=	20061028.1.64
 CATEGORIES=	www math
 MASTER_SITES=	http://www.forkosh.com/ \
 		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
