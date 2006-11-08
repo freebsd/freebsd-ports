@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Nov 27 09:44:15 2005
-+++ Makefile	Tue Sep 12 18:22:27 2006
-@@ -17,7 +17,6 @@
+--- ./Makefile.orig	Thu Oct 19 04:41:49 2006
++++ ./Makefile	Mon Nov  6 15:59:13 2006
+@@ -18,7 +18,6 @@
  
  # Where to install things:
  
@@ -8,7 +8,7 @@
  
  
  # Root directory to place files when creating packages.
-@@ -39,7 +38,7 @@
+@@ -40,7 +39,7 @@
  # Docs and man page:
  
  DOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint
@@ -17,25 +17,16 @@
  
  
  # 'System-wide' Config file:
-@@ -88,14 +87,14 @@
- 
- # Libraries, paths, and flags:
- 
--SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
-+SDL_LIBS=$(shell ${SDL_CONFIG} --libs) -lSDL_image -lSDL_ttf -lpng $(SDL_MIXER_LIB)
- SDL_MIXER_LIB=-lSDL_mixer
--SDL_CFLAGS=$(shell sdl-config --cflags)
-+SDL_CFLAGS=$(shell ${SDL_CONFIG} --cflags)
- 
- 
+@@ -97,7 +96,7 @@
  # The entire set of CFLAGS:
  
--CFLAGS=-O2 -W -Wall -fno-common -ffast-math \
-+CFLAGS+= -W -Wall -fno-common -ffast-math \
+ #-ffast-math
+-CFLAGS=-O2 -W -Wall -fno-common -ffloat-store \
++CFLAGS+=-I${LOCALBASE}/include -O2 -W -Wall -fno-common -ffloat-store \
  	-Wcast-align -Wredundant-decls \
  	-Wbad-function-cast -Wwrite-strings \
  	-Waggregate-return \
-@@ -207,8 +206,7 @@
+@@ -222,8 +221,7 @@
  install:	install-bin install-data install-man install-doc \
  		install-icon install-gettext install-importscript \
  		install-default-config install-example-stamps \
@@ -45,7 +36,18 @@
  	@echo
  	@echo "--------------------------------------------------------------"
  	@echo
-@@ -552,9 +550,6 @@
+@@ -471,8 +469,8 @@
+ 	@echo
+ 	@echo "...Installing default config file..."
+ 	@install -d $(CONFDIR)
+-	@cp src/tuxpaint.conf $(CONFDIR)
+-	@chmod 644 $(CONFDIR)/tuxpaint.conf
++	@cp src/tuxpaint.conf $(CONFDIR)/tuxpaint.conf.sample
++	@chmod 644 $(CONFDIR)/tuxpaint.conf.sample
+ 
+ 
+ # Install example stamps
+@@ -590,9 +588,6 @@
  	@install -d $(ICON_PREFIX)
  	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
  	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
@@ -55,7 +57,7 @@
  
  
  # Install the program:
-@@ -912,12 +907,6 @@
+@@ -1008,12 +1003,6 @@
  	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
  	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
@@ -68,12 +70,12 @@
  	@# tuxpaint-import.1
  	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
-@@ -933,7 +922,7 @@
- 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
- 		-o tuxpaint obj/tuxpaint.o $(HQXX_O) \
- 		$(ARCH_LIBS) $(SDL_LIBS) \
+@@ -1034,7 +1023,7 @@
+ 		$^ \
+ 		$(HQXX_O) \
+ 		$(SDL_LIBS) \
 -		-lm $(ARCH_LINKS)
-+		-lm $(ARCH_LINKS) -lintl
++		-lm $(ARCH_LINKS) -lintl -lpng
  	@$(RSRC_CMD)
  	@$(MIMESET_CMD)
  
