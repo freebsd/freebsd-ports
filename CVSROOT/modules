@@ -14521,6 +14521,7 @@ umatrix		ports/math/umatrix
 umfpack		ports/math/umfpack
 umix		ports/audio/umix
 umodplayer	ports/audio/umodplayer
+umodunpack	ports/misc/umodunpack
 ump		ports/www/ump
 umr		ports/multimedia/umr
 unace		ports/archivers/unace
