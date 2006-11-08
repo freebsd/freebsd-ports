@@ -7,6 +7,7 @@
 
 PORTNAME=	eris
 PORTVERSION=	1.3.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	worldforge
@@ -15,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	WorldForge client entity library
 
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
-		skstream-0.3.3:${PORTSDIR}/net/skstream \
+		skstream-0.3.4:${PORTSDIR}/net/skstream \
 		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
