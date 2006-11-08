@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blobandconquer
-DISTVERSION=	0.5-1
+DISTVERSION=	0.6-1
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
 DISTNAME=	blobAndConquer-${DISTVERSION}
@@ -21,6 +21,8 @@ USE_SDL=	sdl mixer image ttf
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_DOS2UNIX=	makefile src/headers.h src/main.cpp
+
+FETCH_CMD=	/usr/bin/fetch
 
 WRKSRC=		${WRKDIR}/blobAndConquer-${DISTVERSION:C/^([0-9]\.[0-9]).*/\1/}
 PORTDOCS=	*
