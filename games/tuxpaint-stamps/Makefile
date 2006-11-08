@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tuxpaint
-DISTVERSION=	2005.11.25
+DISTVERSION=	2006.10.21
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,6 @@ RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 NO_BUILD=	yes
 
 do-install:
-	@${CP} -R ${WRKSRC}/stamps ${DATADIR}
+	${CP} -R ${WRKSRC}/stamps ${DATADIR}
 
 .include <bsd.port.mk>
