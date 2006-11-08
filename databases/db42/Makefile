@@ -7,17 +7,20 @@
 
 PORTNAME=	db42
 PORTVERSION=	4.2.52
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 PKGNAMESUFFIX?=
 
 PATCHFILES=	patch.${PORTVERSION}.1  patch.${PORTVERSION}.2 \
-		patch.${PORTVERSION}.3  patch.${PORTVERSION}.4
+		patch.${PORTVERSION}.3  patch.${PORTVERSION}.4 \
+		patch.${PORTVERSION}.5
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The Berkeley DB package, revision 4.2
 
 MASTERDIR?=	${.CURDIR}
+
+RANDOMIZE_MASTER_SITES=	yes
 
 SLAVE_PORT=	no
 
