@@ -10,11 +10,13 @@ PORTVERSION=	3.3.11
 PORTREVISION=	3
 PORTEPOCH?=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://downloads.sleepycat.com/
+MASTER_SITES=	http://download-east.oracle.com/berkeley-db/ \
+		http://download-west.oracle.com/berkeley-db/ \
+		http://download-uk.oracle.com/berkeley-db/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
@@ -23,7 +25,8 @@ COMMENT=	The Berkeley DB package, revision 3.3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-INSTALLS_SHLIB=		yes
+RANDOMIZE_MASTER_SITES=	yes
+USE_LDCONFIG=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
 LIBTOOLFILES=		${CONFIGURE_SCRIPT}

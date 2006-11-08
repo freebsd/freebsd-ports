@@ -10,7 +10,9 @@ PORTVERSION=	4.0.14
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://downloads.sleepycat.com/
+MASTER_SITES=	http://download-east.oracle.com/berkeley-db/ \
+		http://download-west.oracle.com/berkeley-db/ \
+		http://download-uk.oracle.com/berkeley-db/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
@@ -19,13 +21,14 @@ COMMENT=	The Berkeley DB package, revision 4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
+RANDOMIZE_MASTER_SITES=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--enable-cxx --enable-dynamic \
 		--includedir=${PREFIX}/include/db4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install_docs
