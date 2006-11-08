@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: flow_capture
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable flow-capture:
+# flow_capture_enable (bool):	Set it to "YES" to enable flow-capture daemon.
+#				Set to "NO" by default.
+# flow_tools_datadir (str):	Base flow data directory.
+#				Default is "/var/db/flows"
+# flow_tools_datasize (str):	Maximum allowed size of the flow data on disk
+#				Default is "128M"
+# flow_capture_localip (str):	IP address to bind to
+#				Default to "0.0.0.0"
+# flow_capture_remoteip (str):	IP address to accept flows from
+#				Default to "0.0.0.0" or all IPs
+# flow_capture_port (int):	Port to accept flow data on
+#				Default is "8787"
+# flow_capture_args (str):	Custom additional arguments to be passed
+#				to flow-collector (default empty).
+#
+
+. /etc/rc.subr
+
+name="flow_capture"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${flow_capture_enable="NO"}
+: ${flow_tools_datadir="%%FLOW_CAPTURE_SPOOL%%"}
+: ${flow_tools_datasize="128M"}
+: ${flow_capture_localip="0.0.0.0"}
+: ${flow_capture_remoteip="0.0.0.0"}
+: ${flow_capture_port="8787"}
+: ${flow_capture_pid="%%FLOW_CAPTURE_PIDDIR%%/flow-capture.pid"}
+: ${flow_capture_user="flowtools"}
+: ${flow_capture_group="flowtools"}
+: ${flow_capture_args=""}
+
+pidfile="${flow_capture_pid}.${flow_capture_port}"
+
+command="%%PREFIX%%/bin/flow-capture"
+command_args="${flow_capture_args} -E ${flow_tools_datasize} -w ${flow_tools_datadir} -p ${flow_capture_pid} ${flow_capture_localip}/${flow_capture_remoteip}/${flow_capture_port}"
+
+run_rc_command "$1"
