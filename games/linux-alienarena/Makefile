@@ -7,6 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2007
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.alienarena.org/downloads/ \
@@ -21,7 +22,6 @@ COMMENT=	Alien Arena 2006 (Linux version)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
-ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -48,12 +48,6 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
 .endif
 
-.if ${ARCH} == "i386"
-ENGINE_ARCH=	x86
-.elif ${ARCH} == "amd64"
-ENGINE_ARCH=	x86_64
-.endif
-
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && \
@@ -62,14 +56,14 @@ do-extract:
 
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
-	cd ${WRKSRC}/engine/${ENGINE_ARCH} && \
+	cd ${WRKSRC}/engine/x86 && \
 		${INSTALL_PROGRAM} arena/gamei386.so ${LIBDIR}/arena && \
 		${INSTALL_PROGRAM} data1/gamei386.so ${LIBDIR}/data1
 	${LN} -sf ${DATADIR}/arena/* ${LIBDIR}/arena
 	${LN} -sf ${DATADIR}/botinfo ${LIBDIR}
 	${LN} -sf ${DATADIR}/data1/* ${LIBDIR}/data1
 .for f in crx.sdl crded
-	${INSTALL_PROGRAM} ${WRKSRC}/engine/${ENGINE_ARCH}/${f} ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/x86/${f} ${LIBDIR}
 .endfor
 .for f in linux-alienarena linux-alienarena-ded
 	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
