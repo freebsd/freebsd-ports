@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	ioquake3
-PORTVERSION=	1.33.${SVN_REV}
-PORTREVISION=	1
+DISTVERSION=	1.34-rc2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
+MASTER_SITES=	http://offload1.icculus.org/quake3/files/
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Cleaned-up and enhaced version of Quake 3
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
+USE_GCC=	3.4+
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/quake3
 
 OPTIONS=	CLIENT "Build client" on \
 		GAMELIBS "Build game libraries (when not mandatory)" off \
