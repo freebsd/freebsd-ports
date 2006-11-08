@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="92442c4b-6f4a-11db-bd28-0012f06707f0">
+    <topic>Imlib2 -- multiple image file processing vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>imlib2</name>
+        <range><lt>20060926_1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/22732/">
+
+	  <p>Some vulnerabilities have been reported in imlib2, which can be
+	    exploited by malicious people to cause a DoS (Denial of Service) or
+	    potentially compromise an application using the library.</p>
+
+	  <p>The vulnerabilities are caused due to unspecified errors within
+	    the processing of JPG, ARGB, PNG, LBM, PNM, TIFF, and TGA images.
+	    This may be exploited to execute arbitrary code by e.g. tricking a
+	    user into opening a specially crafted image file with an
+	    application using imlib2.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4806</cvename>
+      <cvename>CVE-2006-4807</cvename>
+      <cvename>CVE-2006-4808</cvename>
+      <cvename>CVE-2006-4809</cvename>
+      <bid>20903</bid>
+    </references>
+    <dates>
+      <discovery>2006-11-03</discovery>
+      <entry>2006-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab8dbe98-6be4-11db-ae91-0012f06707f0">
     <topic>ruby -- cgi.rb library Denial of Service</topic>
     <affects>
