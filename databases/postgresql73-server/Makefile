@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	postgresql
-PKGNAMESUFFIX?=	-server
-PORTVERSION?=	7.3.15
-PORTREVISION?=	1
+PORTVERSION?=	7.3.16
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
+PKGNAMESUFFIX?=	-server
 DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -46,12 +46,11 @@ PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/backend src/backend/utils/mb/conversion_procs src/pl
 INSTALL_DIRS?=	${BUILD_DIRS}
-PKGMESSAGE=	${WRKDIR}/.pkg-message${PKGNAMESUFFIX}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
-USE_RC_SUBR=	yes
-RCSCRIPT=	${PREFIX}/etc/rc.d/010.pgsql.sh
+USE_RC_SUBR=	postgresql
+SUB_FILES+=	dot.cshrc dot.profile
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 .endif
@@ -141,9 +140,13 @@ CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
 .    endif
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_TESTS)
+.  if (defined(SERVER_ONLY) && defined(WITH_TESTS)) || make(makesum)
 DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
 EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
+.  endif
+
+.  ifmake makesum
+DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
@@ -203,11 +206,9 @@ do-build:
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE}; \
 	done
 
-.  if exists(${MASTERDIR}/pkg-message${PKGNAMESUFFIX})
-post-build:
-	@ ${SED} "s|/usr/local|${PREFIX}|g" \
-		< ${MASTERDIR}/pkg-message${PKGNAMESUFFIX} \
-		> ${PKGMESSAGE}
+.  if exists(${FILESDIR}/pkg-message${PKGNAMESUFFIX}.in)
+SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
+PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .endif
 
@@ -228,20 +229,13 @@ do-install:
 .  elif defined(SERVER_ONLY)
 	@ ${MKDIR} ${PREFIX}/share/postgresql
 .    for i in profile cshrc
-	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
-		< ${FILESDIR}/dot.$i.in \
-		> ${PREFIX}/share/postgresql/dot.$i.dist; \
-	${CP} ${PREFIX}/share/postgresql/dot.$i.dist ~pgsql/; \
+	${INSTALL_DATA} ${WRKDIR}/dot.$i ${PREFIX}/share/postgresql/dot.$i.dist; \
+	${INSTALL_DATA} -o pgsql -g pgsql ${WRKDIR}/dot.$i ~pgsql/dot.$i.dist ; \
 	if [ ! -f ~pgsql/.$i ]; then \
-		${CP} ${PREFIX}/share/postgresql/dot.$i.dist ~pgsql/.$i; \
+		${CP} -p ~pgsql/dot.$i.dist ~pgsql/.$i; \
 	fi
 .    endfor
-	@ ${SED} -e "s|%%PREFIX%%|${PREFIX}|g; s|%%RC_SUBR%%|${RC_SUBR}|g" \
-		< ${FILESDIR}/pgsql.sh.tmpl \
-		> ${RCSCRIPT} ;\
-	${CHMOD} 555 ${RCSCRIPT} ;\
-	${CHOWN} root:pgsql ${RCSCRIPT} ;\
-	${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
+	@ ${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
