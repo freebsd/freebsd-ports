@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Nov 25 21:55:46 2005
-+++ Makefile	Mon Nov 28 19:07:02 2005
-@@ -18,7 +18,6 @@
+--- ./Makefile.orig	Thu Oct 19 04:42:09 2006
++++ ./Makefile	Mon Nov  6 16:05:08 2006
+@@ -19,7 +19,6 @@
  
  # Where to install things:
  
@@ -8,7 +8,7 @@
  
  
  # Program:
-@@ -35,7 +34,7 @@
+@@ -36,7 +35,7 @@
  # Docs and man page:
  
  DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
@@ -18,15 +18,15 @@
  
  # Tux Paint's 'System-wide' Config file:
 @@ -74,7 +73,7 @@
+ FLTK_LIBS=`fltk-config --ldstaticflags`
+ 
+ # Default CFLAGS:
+-CFLAGS=-O2 -Wall
++CFLAGS+=-O2 -Wall
  
  # The entire set of CFLAGS:
- 
--CFLAGS=-O2 -Wall $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-+CFLAGS+= -Wall $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
- 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
- 	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\" \
- 	-DVER_VERSION=\"$(VER_VERSION)\" -DVER_DATE=\"$(VER_DATE)\"
-@@ -140,8 +139,7 @@
+ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
+@@ -143,8 +142,7 @@
  # to do this as superuser ("root"))
  
  install:	install-bin install-data install-man install-doc \
@@ -36,7 +36,7 @@
  	@echo
  	@echo "All done! Now (preferably NOT as 'root' superuser),"
  	@echo "you can type the command 'tuxpaint-config' to run the"
-@@ -230,9 +228,6 @@
+@@ -233,9 +231,6 @@
  	install -d $(ICON_PREFIX)
  	cp data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
  	chmod 644 $(ICON_PREFIX)tuxpaint-config.png
@@ -46,9 +46,9 @@
  
  
  # Install the program:
-@@ -296,7 +291,7 @@
+@@ -299,7 +294,7 @@
  			obj/defaults.o $(ARCH_LIBS)
- 	$(CXX) $(CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
+ 	$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
  			obj/tuxpaint-config2.o obj/defaults.o $(ARCH_LIBS) \
 -			$(FLTK_LIBS) $(ARCH_LINKS)
 +			$(FLTK_LIBS) $(ARCH_LINKS) -lintl
