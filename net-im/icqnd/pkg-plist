@@ -3,6 +3,15 @@ lib/licq/licq_icqnd.so
 share/licq/icqnd/adduser.png
 share/licq/icqnd/auth.png
 share/licq/icqnd/chat.png
+share/licq/icqnd/computer/author
+share/licq/icqnd/computer/status/icq/away.png
+share/licq/icqnd/computer/status/icq/dnd.png
+share/licq/icqnd/computer/status/icq/ffc.png
+share/licq/icqnd/computer/status/icq/invisible.png
+share/licq/icqnd/computer/status/icq/na.png
+share/licq/icqnd/computer/status/icq/occ.png
+share/licq/icqnd/computer/status/icq/offline.png
+share/licq/icqnd/computer/status/icq/online.png
 share/licq/icqnd/contacts.png
 share/licq/icqnd/default/author
 share/licq/icqnd/default/events/arrow_c1.png
@@ -17,6 +26,8 @@ share/licq/icqnd/default/events/history.png
 share/licq/icqnd/default/events/info.png
 share/licq/icqnd/default/events/keyring.png
 share/licq/icqnd/default/events/message.png
+share/licq/icqnd/default/events/showgroups.png
+share/licq/icqnd/default/events/showoffline.png
 share/licq/icqnd/default/events/smiley.png
 share/licq/icqnd/default/events/sysmsg.png
 share/licq/icqnd/default/events/url.png
@@ -94,6 +105,24 @@ share/licq/icqnd/default/status/msn/na.png
 share/licq/icqnd/default/status/msn/occ.png
 share/licq/icqnd/default/status/msn/offline.png
 share/licq/icqnd/default/status/msn/online.png
+share/licq/icqnd/icq/author
+share/licq/icqnd/icq/status/aim/away.png
+share/licq/icqnd/icq/status/aim/offline.png
+share/licq/icqnd/icq/status/aim/online.png
+share/licq/icqnd/icq/status/icq/away.png
+share/licq/icqnd/icq/status/icq/dnd.png
+share/licq/icqnd/icq/status/icq/ffc.png
+share/licq/icqnd/icq/status/icq/invisible.png
+share/licq/icqnd/icq/status/icq/message.png
+share/licq/icqnd/icq/status/icq/na.png
+share/licq/icqnd/icq/status/icq/occ.png
+share/licq/icqnd/icq/status/icq/offline.png
+share/licq/icqnd/icq/status/icq/online.png
+share/licq/icqnd/icq/status/msn/away.png
+share/licq/icqnd/icq/status/msn/invisible.png
+share/licq/icqnd/icq/status/msn/occ.png
+share/licq/icqnd/icq/status/msn/offline.png
+share/licq/icqnd/icq/status/msn/online.png
 share/licq/icqnd/keyring.png
 share/licq/icqnd/old_default/author
 share/licq/icqnd/old_default/events/arrow_c1.png
@@ -170,8 +199,73 @@ share/licq/icqnd/old_default/status/msn/invisible_set.png
 share/licq/icqnd/old_default/status/msn/na.png
 share/licq/icqnd/old_default/status/msn/offline.png
 share/licq/icqnd/old_default/status/msn/online.png
+share/licq/icqnd/phpBB/author
+share/licq/icqnd/phpBB/smileys/README.txt
+share/licq/icqnd/phpBB/smileys/biggrin.png
+share/licq/icqnd/phpBB/smileys/confused.png
+share/licq/icqnd/phpBB/smileys/cry.png
+share/licq/icqnd/phpBB/smileys/devil.png
+share/licq/icqnd/phpBB/smileys/oh.png
+share/licq/icqnd/phpBB/smileys/smile.png
+share/licq/icqnd/phpBB/smileys/sunglasses.png
+share/licq/icqnd/phpBB/smileys/tokens.conf
+share/licq/icqnd/phpBB/smileys/tongue.png
+share/licq/icqnd/phpBB/smileys/unhappy.png
+share/licq/icqnd/phpBB/smileys/wink.png
 share/licq/icqnd/save.png
 share/licq/icqnd/search.gif
+share/licq/icqnd/statistics.png
+share/licq/icqnd/thomas/author
+share/licq/icqnd/thomas/events/auth.png
+share/licq/icqnd/thomas/events/chat.png
+share/licq/icqnd/thomas/events/contacts.png
+share/licq/icqnd/thomas/events/file.png
+share/licq/icqnd/thomas/events/history.png
+share/licq/icqnd/thomas/events/info.png
+share/licq/icqnd/thomas/events/keyring.png
+share/licq/icqnd/thomas/events/message.png
+share/licq/icqnd/thomas/events/url.png
+share/licq/icqnd/thomas/extended/aresponse.png
+share/licq/icqnd/thomas/extended/birthday.png
+share/licq/icqnd/thomas/extended/cell.png
+share/licq/icqnd/thomas/extended/phone.png
+share/licq/icqnd/thomas/smileys/biggrin.png
+share/licq/icqnd/thomas/smileys/confused.png
+share/licq/icqnd/thomas/smileys/cry.png
+share/licq/icqnd/thomas/smileys/oh.png
+share/licq/icqnd/thomas/smileys/pig.png
+share/licq/icqnd/thomas/smileys/smile.png
+share/licq/icqnd/thomas/smileys/sunglasses.png
+share/licq/icqnd/thomas/smileys/tokens.conf
+share/licq/icqnd/thomas/smileys/tongue.png
+share/licq/icqnd/thomas/smileys/unhappy.png
+share/licq/icqnd/thomas/smileys/wink.png
+share/licq/icqnd/thomas/status/aim/away.png
+share/licq/icqnd/thomas/status/aim/offline.png
+share/licq/icqnd/thomas/status/aim/online.png
+share/licq/icqnd/thomas/status/icq/away.png
+share/licq/icqnd/thomas/status/icq/dnd.png
+share/licq/icqnd/thomas/status/icq/ffc.png
+share/licq/icqnd/thomas/status/icq/invisible.png
+share/licq/icqnd/thomas/status/icq/na.png
+share/licq/icqnd/thomas/status/icq/occ.png
+share/licq/icqnd/thomas/status/icq/offline.png
+share/licq/icqnd/thomas/status/icq/online.png
+share/licq/icqnd/thomas/status/msn/away.png
+share/licq/icqnd/thomas/status/msn/invisible.png
+share/licq/icqnd/thomas/status/msn/occ.png
+share/licq/icqnd/thomas/status/msn/offline.png
+share/licq/icqnd/thomas/status/msn/online.png
+@dirrm share/licq/icqnd/thomas/status/msn
+@dirrm share/licq/icqnd/thomas/status/icq
+@dirrm share/licq/icqnd/thomas/status/aim
+@dirrm share/licq/icqnd/thomas/status
+@dirrm share/licq/icqnd/thomas/smileys
+@dirrm share/licq/icqnd/thomas/extended
+@dirrm share/licq/icqnd/thomas/events
+@dirrm share/licq/icqnd/thomas
+@dirrm share/licq/icqnd/phpBB/smileys
+@dirrm share/licq/icqnd/phpBB
 @dirrm share/licq/icqnd/old_default/status/msn
 @dirrm share/licq/icqnd/old_default/status/icq
 @dirrm share/licq/icqnd/old_default/status/aim
@@ -180,6 +274,11 @@ share/licq/icqnd/search.gif
 @dirrm share/licq/icqnd/old_default/extended
 @dirrm share/licq/icqnd/old_default/events
 @dirrm share/licq/icqnd/old_default
+@dirrm share/licq/icqnd/icq/status/msn
+@dirrm share/licq/icqnd/icq/status/icq
+@dirrm share/licq/icqnd/icq/status/aim
+@dirrm share/licq/icqnd/icq/status
+@dirrm share/licq/icqnd/icq
 @dirrm share/licq/icqnd/default/status/msn
 @dirrm share/licq/icqnd/default/status/icq
 @dirrm share/licq/icqnd/default/status/aim
@@ -188,4 +287,7 @@ share/licq/icqnd/search.gif
 @dirrm share/licq/icqnd/default/extended
 @dirrm share/licq/icqnd/default/events
 @dirrm share/licq/icqnd/default
+@dirrm share/licq/icqnd/computer/status/icq
+@dirrm share/licq/icqnd/computer/status
+@dirrm share/licq/icqnd/computer
 @dirrm share/licq/icqnd
