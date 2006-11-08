@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notification
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
