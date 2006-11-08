@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	imglikeopera
-PORTVERSION=	0.6.12
+PORTVERSION=	0.6.14
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_MOZDEV}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	MOZDEV
 
 MAINTAINER=	triosoft@triosoft.com.ua
 COMMENT=	Load only the images that you want in Firefox
 
 XPI_ID=		imglikeopera@imfo.ru
-USE_XPI=	*firefox*
 
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
