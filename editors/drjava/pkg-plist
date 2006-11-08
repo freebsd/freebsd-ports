@@ -1,4 +1,4 @@
 @comment $FreeBSD$
 bin/drjava
-%%JAVASHAREDIR%%/drjava/drjava-stable-20060918-1737.jar
-@dirrm %%JAVASHAREDIR%%/drjava
+%%DATADIR%%/%%DRJAVAJAR%%
+@dirrm %%DATADIR%%
