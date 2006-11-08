@@ -21,6 +21,7 @@
     SUBDIR += apwal
     SUBDIR += aterm
     SUBDIR += bbappconf
+    SUBDIR += bbdock
     SUBDIR += bbrun
     SUBDIR += bbuname
     SUBDIR += bgrot
