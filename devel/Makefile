@@ -171,6 +171,7 @@
     SUBDIR += cook
     SUBDIR += cpan-upload
     SUBDIR += cppadvio
+    SUBDIR += cppi
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += crossgo32
