@@ -1,12 +1,13 @@
 lib/libskstream-0.3.la
 lib/libskstream-0.3.so
-lib/libskstream-0.3.so.3
+lib/libskstream-0.3.so.4
 libdata/pkgconfig/skstream-0.3.pc
 libdata/pkgconfig/skstream-unix-0.3.pc
 lib/skstream-0.3/include/skstream/skstreamconfig.h
 @dirrm lib/skstream-0.3/include/skstream
 @dirrm lib/skstream-0.3/include
 @dirrm lib/skstream-0.3
+include/skstream-0.3/skstream/sksocket.h
 include/skstream-0.3/skstream/skstream.h
 include/skstream-0.3/skstream/skstream_unix.h
 include/skstream-0.3/skstream/skserver.h
