@@ -6,7 +6,7 @@ kern.maxfiles using sysctl(8), or reconfigure your kernel
 appropriately.
 
 You should vacuum and backup your database regularly. There is a
-periodic script, ${LOCALBASE}/etc/periodic/daily/502.pgsql, that you
+periodic script, %%PREFIX%%/etc/periodic/daily/502.pgsql, that you
 may find useful. Per default, it perfoms vacuum on all databases
 nightly. See the script for instructions.
 
@@ -24,18 +24,30 @@ postgresql.conf also needed, of course):
   options         SEMMNU=120
 
 If you plan to access your PostgreSQL server using ODBC, please
-consider running the SQL script /usr/local/share/postgresql/odbc.sql
+consider running the SQL script %%PREFIX%%/share/postgresql/odbc.sql
 to get the functions required for ODBC compliance.
+
+If you need to store any characters besides strict ASCII in your
+database, you will want to set a character set, and possibly a
+collation locale, before initializing the database. Add something
+similar to this to /etc/login.conf:
+---
+postgres:\
+	:setenv=LC_ALL=en_US.UTF-8,LC_COLLATE=C:\
+	:tc=default:
+---
+and run `cap_mkdb /etc/login.conf'.
+Then add 'postgresql_class="postgres"' to /etc/rc.conf.
 
 ======================================================================
 
 To initialize the database, run
 
-  /usr/local/etc/rc.d/010.pgsql.sh initdb
+  %%PREFIX%%/etc/rc.d/postgresql initdb
 
 You can then start PostgreSQL by running:
 
-  /usr/local/etc/rc.d/010.pgsql.sh start
+  %%PREFIX%%/etc/rc.d/postgresql start
 
 For postmaster settings, see ~pgsql/data/postgresql.conf
 
