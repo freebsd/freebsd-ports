@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	linux-realplayer
-DISTVERSION=	10.0.7.785-20060201
-PORTREVISION=	1
+DISTVERSION=	10.0.8.805-20060718
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	https://helixcommunity.org/download.php/1917/:player \
+MASTER_SITES=	https://helixcommunity.org/download.php/2152/:player \
 		ftp://rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/:codecs
 DISTFILES=	RealPlayer-${DISTVERSION}.i586.rpm:player \
 		mplayer-codecs-linux-real-20040626-1.i386.rpm:codecs
@@ -63,7 +62,7 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@set -x; for f in ${_DISTFILES}; do\
 		cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/$$f | \
-		    ${CPIO} -id --quiet; \
+		    ${CPIO} -idm --quiet; \
 	done
 
 post-patch:
@@ -90,7 +89,7 @@ do-install:
 
 .if !defined(WITHOUT_NLS)
 	@${MKDIR} ${RADIR}/share/locale
-	${CP} -R ${WRKSRC}/share/locale/* ${RADIR}/share/locale
+	${CP} -Rp ${WRKSRC}/share/locale/* ${RADIR}/share/locale
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${RADIR}/share/locale
 .endif
 
