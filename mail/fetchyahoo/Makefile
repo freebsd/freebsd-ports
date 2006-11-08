@@ -10,7 +10,7 @@ PORTVERSION=	2.10.6
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.sourceforge.net/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Download e-mail from a Yahoo account to a Berkeley mailbox
 
 RUN_DEPENDS=	\

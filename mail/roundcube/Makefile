@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.farrokhi.net/roundcube/:unixified \
 MASTER_SITE_SUBDIR=	flz/${PORTNAME}/:freebsd
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}${EXTRACT_SUFX}:unixified
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
 SNAPSHOT=	20061013

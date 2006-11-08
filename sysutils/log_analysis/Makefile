@@ -10,7 +10,7 @@ PORTVERSION=	0.45
 CATEGORIES=	sysutils
 MASTER_SITES=	http://userpages.umbc.edu/~mabzug1/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A utility that extracts a summary of useful data from logs
 
 USE_PERL5=	yes

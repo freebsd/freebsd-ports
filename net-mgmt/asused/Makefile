@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.ripe.net/tools/ \
 		http://ftp.belnet.be/pub/mirror/ftp.ripe.net/ripe/tools/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_whois_new_query_fix
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Command-line tool to run a check on the usage of the RIPE Whois DB
 
 USE_PERL5=	yes

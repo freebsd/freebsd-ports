@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/ \
 		http://www.ucolick.org/~will/RUE/super/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
 GNU_CONFIGURE=	yes

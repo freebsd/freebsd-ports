@@ -10,7 +10,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	dns
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/mj/net/
 
-MAINTAINER=	babak@farrokhi.net
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A tool for checking DNS zones
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
