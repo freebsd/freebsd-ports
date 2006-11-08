@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_Getargs
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	thomas@goodking.ca
