@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzvbi
-PORTVERSION=	0.2.22
+PORTVERSION=	0.2.23
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,12 +23,13 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAN1=		zvbi-ntsc-cc.1
 
 CONFIGURE_ENV= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -L/usr/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|mandir = .*|mandir = ${MANPREFIX}/man|g' ${WRKSRC}/contrib/Makefile.in
 
 .include <bsd.port.mk>

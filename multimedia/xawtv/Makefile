@@ -65,7 +65,7 @@ PLIST_SUB+=	AA=""
 .endif
 
 .if defined(WITH_ZVBI)
-LIB_DEPENDS+=	zvbi.9:${PORTSDIR}/devel/libzvbi
+LIB_DEPENDS+=	zvbi.10:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 .if ${OSVERSION} > 500000
 PLIST_SUB+=	ZVBI="" ZVBI5=""
