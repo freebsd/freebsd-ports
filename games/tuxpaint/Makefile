@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.15b
-PORTREVISION=	1
+PORTVERSION=	0.9.16
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Drawing program designed for young children
@@ -33,10 +31,5 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|install-doc\([^:]\)|\1|' ${WRKSRC}/${MAKEFILE}
 .endif
-
-# Fix SDL include statement and remove "#error" statement
-	@${REINPLACE_CMD} -e 's|\(#include.*\)SDL/\(SDL.*\)|\1\2| ; \
-		s|#error.*||' \
-		${WRKSRC}/src/${PORTNAME}.c
 
 .include <bsd.port.post.mk>
