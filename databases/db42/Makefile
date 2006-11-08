@@ -20,8 +20,6 @@ COMMENT=	The Berkeley DB package, revision 4.2
 
 MASTERDIR?=	${.CURDIR}
 
-RANDOMIZE_MASTER_SITES=	yes
-
 SLAVE_PORT=	no
 
 .include <${MASTERDIR}/Makefile.db>
