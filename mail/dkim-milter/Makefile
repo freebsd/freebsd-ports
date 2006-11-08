@@ -66,6 +66,7 @@ SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR}"
 .endif
 
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
+BROKEN=		dkim-milter does not verify DomainKeys correctly
 LIBDK_PORT=	mail/dk-milter
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${LIBDK_PORT}:patch
 DKMILTER_DISTNAME!=	cd ${PORTSDIR}/${LIBDK_PORT} && ${MAKE} -V DISTNAME
@@ -81,7 +82,7 @@ pre-fetch:
 .endif
 	@${ECHO_MSG}
 	@${ECHO_MSG} "dkim-milter has the following tunable option(s):"
-	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
+#	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
 	@${ECHO_MSG} " SENDMAIL_MILTER_IN_BASE=yes	Build to run with base sendmail"
 	@${ECHO_MSG} " WITH_POSTFIX=yes		Build to run with postfix port"
 	@${ECHO_MSG}
