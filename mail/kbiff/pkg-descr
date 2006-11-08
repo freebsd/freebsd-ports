@@ -1,14 +1,11 @@
 KBiff is a mail notification utility for the KDE project.
-It has several advantages over much of its competition:
+Features:
 
 	o Pure GUI Configuration
 	o Session Management
 	o Panel Docking
 	o Animated Gifs
 	o Sounds
-	o POP3 Support
+	o Supported mailbox formats: mbox, maildir, mh, POP3(s), IMAP4(s), and NNTP.
 
-Home page and online handbook:
-
-Author: Kurt Granroth <granroth@kde.org>
 WWW: http://kbiff.granroth.org/
