@@ -1,9 +1,7 @@
 bin/mpd
-@unexec etc/rc.d/musicpd.sh stop 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/COMMANDS
+%%PORTDOCS%%%%DOCSDIR%%/mpdconf.example
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/mpd.conf
-@dirrm %%EXAMPLESDIR%%
-etc/rc.d/musicpd.sh
+%%PORTDOCS%%@unexec %D/%%DOCSDIR%% 2>/dev/null || true
