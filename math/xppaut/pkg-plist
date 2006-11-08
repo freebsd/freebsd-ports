@@ -61,7 +61,6 @@ bin/xppaut
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/evelyn.ode
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/evelyn.ode.set
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/evelyn.ode~
-%%PORTDOCS%%%%EXAMPLESDIR%%/ode/fort.3
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/getmax.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/getmax.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/gill_bruss.ode
@@ -181,6 +180,37 @@ bin/xppaut
 %%PORTDOCS%%%%EXAMPLESDIR%%/odesol.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/odesol2.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/odesol2.o
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/ai.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/ai.ode.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/ai.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/allinfo.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/amari.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/amari.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/amari2.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/amari2.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/amarig.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/amarig.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/diagram.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/getmin.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/getmin.c~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/getmin.so
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/minode.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/minode.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/nthet.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/nthet.c~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/nthet.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/nthet.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/t.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/t.c~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/t.so
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/testbd.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/testbd.ps~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/testdll.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/testdll.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/triple.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/triple.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/x.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/x.ps~
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/odes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
