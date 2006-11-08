@@ -413,6 +413,7 @@
     SUBDIR += netpbm
     SUBDIR += netpbm-devel
     SUBDIR += nip2
+    SUBDIR += npretty
     SUBDIR += nurbs++
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
