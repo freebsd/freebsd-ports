@@ -14049,6 +14049,7 @@ tcptraceroute	ports/net/tcptraceroute
 tcptrack	ports/net-mgmt/tcptrack
 tcpview		ports/net/tcpview
 tcpwatch	ports/net/tcpwatch
+tcpxd		ports/net/tcpxd
 tcpxtract	ports/net/tcpxtract
 tcsh-bofh	ports/shells/tcsh-bofh
 tcsh_nls	ports/shells/tcsh_nls
