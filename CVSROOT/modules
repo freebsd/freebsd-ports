@@ -1441,6 +1441,7 @@ cpmtools	ports/emulators/cpmtools
 cpp-xmms2	ports/audio/cpp-xmms2
 cpp2latex	ports/print/cpp2latex
 cppadvio	ports/devel/cppadvio
+cppi		ports/devel/cppi
 cppunit		ports/devel/cppunit
 cproto		ports/devel/cproto
 cpu		ports/sysutils/cpu
