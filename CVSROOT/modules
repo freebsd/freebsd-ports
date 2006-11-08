@@ -11957,6 +11957,7 @@ py-csv		ports/textproc/py-csv
 py-ctypes	ports/devel/py-ctypes
 py-curl		ports/ftp/py-curl
 py-cxx		ports/devel/py-cxx
+py-cyruslib	ports/mail/py-cyruslib
 py-dateutil	ports/devel/py-dateutil
 py-dbus		ports/devel/py-dbus
 py-dbutils	ports/databases/py-dbutils
