@@ -1,13 +1,15 @@
-MASTER_SITES=	http://downloads.sleepycat.com/
+MASTER_SITES=	http://download-east.oracle.com/berkeley-db/ \
+		http://download-west.oracle.com/berkeley-db/ \
+		http://download-uk.oracle.com/berkeley-db/
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION}/
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 USE_AUTOTOOLS=		libtool:15
 CONFIGURE_SCRIPT=	../dist/configure
 LIBTOOLFILES=		${CONFIGURE_SCRIPT}
