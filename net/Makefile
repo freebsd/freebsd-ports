@@ -822,6 +822,7 @@
     SUBDIR += unison
     SUBDIR += unix2tcp
     SUBDIR += uplog
+    SUBDIR += uproxy
     SUBDIR += urelay
     SUBDIR += urlendec
     SUBDIR += utftpd

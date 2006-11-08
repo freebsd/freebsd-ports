@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+#
+# PROVIDE: uproxy
+# REQUIRE: NETWORKING
+#
+# Add the following line to /etc/rc.conf to enable uproxy
+#
+# uproxy_enable (bool):			Set to "NO" by default.
+#					Set it to "YES" to enable uproxy.
+# uproxy_connections (str):		Name for each uproxy connection.
+# uproxy_connectionname_options (str):	Commandline for each uproxy connection.
+#
+
+. %%RC_SUBR%%
+
+name="uproxy"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${uproxy_enable="NO"}
+
+command="/usr/local/sbin/${name}"
+start_cmd="uproxy_startcmd"
+
+uproxy_startcmd()
+{
+    if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+        echo "${name} already running? (pid=$rc_pid)."
+        return 1
+    fi
+    if [ -z "${uproxy_connections}" ]; then
+	err 1 "can't find uproxy_connections in /etc/rc.conf"
+    fi	
+    echo Starting ${name}.
+    for connection in ${uproxy_connections}; do
+	eval options=\$uproxy_${connection}_options
+        if [ -z "${options}" ]; then
+	    continue
+	fi
+	command_args="${options}"
+        cmd="${command} ${command_args}"
+        if [ -n "$uproxy_user" ]; then
+	    cmd="su -m $uproxy_user -c '$cmd'"
+        fi
+        eval "$cmd > /dev/null &"
+	sleep 1
+    done
+}
+
+run_rc_command "$1"
