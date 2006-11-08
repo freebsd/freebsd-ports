@@ -20,7 +20,6 @@ COMMENT=	Quake 4 for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
-ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Redistribution is limited, see license

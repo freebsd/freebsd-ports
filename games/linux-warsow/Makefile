@@ -28,7 +28,6 @@ COMMENT=	Free multiplayer first person shooter with cartoon design
 RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl \
 		${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
 
-ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

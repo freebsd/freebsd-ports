@@ -27,7 +27,6 @@ COMMENT=	The Savage game (linux version)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff
 
-ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	Savage is freeware, but i am not sure of its license

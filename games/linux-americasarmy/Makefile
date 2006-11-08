@@ -19,8 +19,6 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	America's Army (Linux version)
 
-ONLY_FOR_ARCHS=	i386 amd64
-USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is limited, see license
