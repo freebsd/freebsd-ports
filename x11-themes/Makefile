@@ -159,6 +159,7 @@
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
     SUBDIR += moodin
+    SUBDIR += murrine-configurator
     SUBDIR += notif2
     SUBDIR += openbox-themes
     SUBDIR += phase

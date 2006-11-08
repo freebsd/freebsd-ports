@@ -1,0 +1,5 @@
+--- files/murrine-configurator.orig
++++ files/murrine-configurator
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
