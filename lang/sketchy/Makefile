@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	sketchy
-PORTVERSION=	20061023
+PORTVERSION=	20061108
 CATEGORIES=	lang devel lisp scheme
 MASTER_SITES=	http://www.t3x.org/files/
 
 MAINTAINER=	nmh@t3x.org
 COMMENT=	An interpreter for purely applicative Scheme
+
+CONFLICTS=	p5-PAR-0.*
 
 USE_LDCONFIG=	yes
 MAKE_ENV+=	BINOWN=${BINOWN} \
