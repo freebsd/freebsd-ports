@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
+DEPRECATED=     Discontinued and depends on pswrap which will disappear soon
+EXPIRATION_DATE=2006-12-25
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
