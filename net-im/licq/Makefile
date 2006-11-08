@@ -46,6 +46,7 @@ CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
 .endif
 
 .if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
