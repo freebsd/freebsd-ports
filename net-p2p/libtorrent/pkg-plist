@@ -28,6 +28,7 @@ include/torrent/torrent.h
 include/torrent/tracker.h
 include/torrent/tracker_list.h
 include/torrent/transfer_list.h
+lib/libtorrent.la
 lib/libtorrent.so
 lib/libtorrent.so.9
 libdata/pkgconfig/libtorrent.pc
