@@ -456,6 +456,7 @@
     SUBDIR += uf-view
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
+    SUBDIR += umodunpack
     SUBDIR += unclutter
     SUBDIR += upclient
     SUBDIR += us-zipcodes
