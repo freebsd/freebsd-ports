@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Oct 29 21:51:38 2006
++++ src/Makefile.in	Sun Oct 29 21:52:16 2006
+@@ -188,7 +188,7 @@
+ 	utils.cc utils.h		\
+ 	Trans.h
+ 
+-xanalyser_LDADD = -lXext -lXm -lXt -lSM -lICE -lXmu -lXpm -lX11		\
++xanalyser_LDADD = -lXext ${MOTIFLIB} -lXt -lSM -lICE -lXmu -lXpm -lX11		\
+ 	$(FFTWLDADD) $(ALSALDADD)
+ 
+ EXTRA_DIST = XAnalyser.ad help.txt *.xpm
