@@ -1080,6 +1080,7 @@ cave		ports/misc/cave
 cavezofphear	ports/games/cavezofphear
 cbb		ports/finance/cbb
 cbedic		ports/textproc/cbedic
+cbind		ports/devel/cbind
 cbrowser	ports/devel/cbrowser
 cbrpager	ports/graphics/cbrpager
 cbview		ports/graphics/cbview

@@ -114,6 +114,7 @@
     SUBDIR += c_parser
     SUBDIR += calibrator
     SUBDIR += callgrind
+    SUBDIR += cbind
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache
