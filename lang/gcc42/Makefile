@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20061031
+PORTREVISION=	20061107
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -47,7 +47,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "ia64"
 BROKEN=		Fails to build due to "illegal instruction" error
 .endif
 
