@@ -1,11 +1,3 @@
-*********************************************************************
-*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *
-* You have installed an insecure program.                           *
-* This program has known security problems which may allow a remote *
-* attacker to take control of your machine.                         *
-* Use with great caution!                                           *
-* See FreeBSD security advisory 00:04 for more information.         *
-*********************************************************************
 
 ----------------------------------------------------------------------
 Now, edit the sample script in /usr/local/share/examples/delegate directory

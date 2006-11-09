@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	9.2.4
+PORTVERSION=	9.3.0
 CATEGORIES=	net www
 MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 		ftp://ftp.delegate.org/pub/DeleGate/
