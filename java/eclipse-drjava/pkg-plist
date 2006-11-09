@@ -1,7 +1,9 @@
 @comment $FreeBSD$
-eclipse/plugins/edu.rice.cs.drjava_0.9.5/drjava-eclipse.jar
-eclipse/plugins/edu.rice.cs.drjava_0.9.5/icons/drjava16.gif
-eclipse/plugins/edu.rice.cs.drjava_0.9.5/icons/drjava16.png
-eclipse/plugins/edu.rice.cs.drjava_0.9.5/plugin.xml
-@dirrm eclipse/plugins/edu.rice.cs.drjava_0.9.5/icons
-@dirrm eclipse/plugins/edu.rice.cs.drjava_0.9.5
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/META-INF/MANIFEST.MF
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/drjava-eclipse.jar
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/icons/drjava16.gif
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/icons/drjava16.png
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/plugin.xml
+@dirrm %%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/META-INF
+@dirrm %%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/icons
+@dirrm %%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%
