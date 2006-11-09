@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	asp
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://gregoire.lejeune.free.fr/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	An Active Server Pages port to Apache with Ruby scripting
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xml/xslt.so:${PORTSDIR}/textproc/ruby-xslt \
