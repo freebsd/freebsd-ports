@@ -9,7 +9,7 @@ PORTNAME=	Crypt_RC4
 PORTVERSION=	1.0.2
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR encryption class for RC4 encryption
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
