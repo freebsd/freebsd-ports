@@ -197,17 +197,22 @@ bin/lazarus
 %%DATADIR%%/components/chmhelp/democontrol/unit1.lrs
 %%DATADIR%%/components/chmhelp/democontrol/unit1.pas
 %%DATADIR%%/components/chmhelp/lhelp/back.xpm
+%%DATADIR%%/components/chmhelp/lhelp/basecontentprovider.pas
+%%DATADIR%%/components/chmhelp/lhelp/chmcontentprovider.pas
 %%DATADIR%%/components/chmhelp/lhelp/chmdataprovider.pas
 %%DATADIR%%/components/chmhelp/lhelp/chmpopup.lfm
 %%DATADIR%%/components/chmhelp/lhelp/chmpopup.lrs
 %%DATADIR%%/components/chmhelp/lhelp/chmpopup.pas
 %%DATADIR%%/components/chmhelp/lhelp/chmspecialparser.pas
+%%DATADIR%%/components/chmhelp/lhelp/filecontentprovider.pas
+%%DATADIR%%/components/chmhelp/lhelp/httpcontentprovider.pas
 %%DATADIR%%/components/chmhelp/lhelp/lhelp.lpi
 %%DATADIR%%/components/chmhelp/lhelp/lhelp.lpr
 %%DATADIR%%/components/chmhelp/lhelp/lhelpcontrol.pas
 %%DATADIR%%/components/chmhelp/lhelp/lhelpcore.lfm
 %%DATADIR%%/components/chmhelp/lhelp/lhelpcore.lrs
 %%DATADIR%%/components/chmhelp/lhelp/lhelpcore.pas
+%%DATADIR%%/components/chmhelp/lhelp/lnethttpdataprovider.pas
 %%DATADIR%%/components/chmhelp/packages/chm/chmbase.pas
 %%DATADIR%%/components/chmhelp/packages/chm/chmpkg.lpk
 %%DATADIR%%/components/chmhelp/packages/chm/chmpkg.pas
@@ -222,6 +227,9 @@ bin/lazarus
 %%DATADIR%%/components/fpcunit/Makefile
 %%DATADIR%%/components/fpcunit/Makefile.fpc
 %%DATADIR%%/components/fpcunit/blueball.xpm
+%%DATADIR%%/components/fpcunit/console/consoletestrunner.pas
+%%DATADIR%%/components/fpcunit/console/fpcunitconsolerunner.lpk
+%%DATADIR%%/components/fpcunit/console/fpcunitconsolerunner.pas
 %%DATADIR%%/components/fpcunit/fpcunittestrunner.lpk
 %%DATADIR%%/components/fpcunit/fpcunittestrunner.pas
 %%DATADIR%%/components/fpcunit/guitestrunner.lfm
@@ -234,6 +242,7 @@ bin/lazarus
 %%DATADIR%%/components/fpcunit/ide/fpcunitide.pas
 %%DATADIR%%/components/fpcunit/ide/fpcunitlazideintf.pas
 %%DATADIR%%/components/fpcunit/ide/fpcunitproject1.inc
+%%DATADIR%%/components/fpcunit/ide/fpcunitproject1.pas
 %%DATADIR%%/components/fpcunit/ide/lib/README.txt
 %%DATADIR%%/components/fpcunit/ide/testcaseopts.lfm
 %%DATADIR%%/components/fpcunit/ide/testcaseopts.lrs
@@ -269,6 +278,7 @@ bin/lazarus
 %%DATADIR%%/components/images/laztga.pas
 %%DATADIR%%/components/images/lazxpm.pas
 %%DATADIR%%/components/images/readme.txt
+%%DATADIR%%/components/images/registerimg4laz.pas
 %%DATADIR%%/components/interbase/README.txt
 %%DATADIR%%/components/interbase/interbaselaz.lpk
 %%DATADIR%%/components/interbase/interbaselaz.pas
@@ -364,11 +374,16 @@ bin/lazarus
 %%DATADIR%%/components/printers/printersdlgs.lrs
 %%DATADIR%%/components/printers/printersdlgs.pp
 %%DATADIR%%/components/printers/readme.txt
-%%DATADIR%%/components/printers/sample/frmselprinter.lfm
-%%DATADIR%%/components/printers/sample/frmselprinter.lrs
-%%DATADIR%%/components/printers/sample/frmselprinter.pas
-%%DATADIR%%/components/printers/sample/selectprinter.lpi
-%%DATADIR%%/components/printers/sample/selectprinter.lpr
+%%DATADIR%%/components/printers/samples/dialogs/frmselprinter.lfm
+%%DATADIR%%/components/printers/samples/dialogs/frmselprinter.lrs
+%%DATADIR%%/components/printers/samples/dialogs/frmselprinter.pas
+%%DATADIR%%/components/printers/samples/dialogs/selectprinter.lpi
+%%DATADIR%%/components/printers/samples/dialogs/selectprinter.lpr
+%%DATADIR%%/components/printers/samples/rawmode/rawmodetest.lpi
+%%DATADIR%%/components/printers/samples/rawmode/rawmodetest.lpr
+%%DATADIR%%/components/printers/samples/rawmode/unitmain.lfm
+%%DATADIR%%/components/printers/samples/rawmode/unitmain.lrs
+%%DATADIR%%/components/printers/samples/rawmode/unitmain.pas
 %%DATADIR%%/components/printers/unix/cupsdyn.pp
 %%DATADIR%%/components/printers/unix/cupsprinters.inc
 %%DATADIR%%/components/printers/unix/cupsprinters_h.inc
@@ -483,7 +498,11 @@ bin/lazarus
 %%DATADIR%%/components/sqldb/sqldblaz.lpk
 %%DATADIR%%/components/sqldb/sqldblaz.pas
 %%DATADIR%%/components/sqldb/tibconnection.xpm
+%%DATADIR%%/components/sqldb/tmysql40connection.xpm
+%%DATADIR%%/components/sqldb/tmysql41connection.xpm
+%%DATADIR%%/components/sqldb/tmysql50connection.xpm
 %%DATADIR%%/components/sqldb/tmysqlconnection.xpm
+%%DATADIR%%/components/sqldb/toracleconnection.xpm
 %%DATADIR%%/components/sqldb/tpqconnection.xpm
 %%DATADIR%%/components/sqldb/tsqlquery.xpm
 %%DATADIR%%/components/sqldb/tsqltransaction.xpm
@@ -1017,6 +1036,7 @@ bin/lazarus
 %%DATADIR%%/docs/xml/lcl/lclclasses.xml
 %%DATADIR%%/docs/xml/lcl/lclintf.xml
 %%DATADIR%%/docs/xml/lcl/lclmemmanager.xml
+%%DATADIR%%/docs/xml/lcl/lclmessageglue.xml
 %%DATADIR%%/docs/xml/lcl/lclproc.xml
 %%DATADIR%%/docs/xml/lcl/lclrescache.xml
 %%DATADIR%%/docs/xml/lcl/lclstrconsts.xml
@@ -1158,6 +1178,15 @@ bin/lazarus
 %%DATADIR%%/examples/groupbox.pp
 %%DATADIR%%/examples/groupboxnested.lpi
 %%DATADIR%%/examples/groupboxnested.pas
+%%DATADIR%%/examples/helpforpackage/README.txt
+%%DATADIR%%/examples/helpforpackage/demopackagewithhelp.lpk
+%%DATADIR%%/examples/helpforpackage/demopackagewithhelp.pas
+%%DATADIR%%/examples/helpforpackage/html/index.html
+%%DATADIR%%/examples/helpforpackage/html/pkghelpdemounit1/index-5.html
+%%DATADIR%%/examples/helpforpackage/html/pkghelpdemounit1/index.html
+%%DATADIR%%/examples/helpforpackage/html/pkghelpdemounit1/register.html
+%%DATADIR%%/examples/helpforpackage/pkghelpdemounit1.pas
+%%DATADIR%%/examples/helpforpackage/xml/pkghelpdemounit1.xml
 %%DATADIR%%/examples/helphtml/html/edit1.html
 %%DATADIR%%/examples/helphtml/html/edit2.html
 %%DATADIR%%/examples/helphtml/html/index.html
@@ -2001,6 +2030,8 @@ bin/lazarus
 %%DATADIR%%/images/components/tselectdirdialog.xpm
 %%DATADIR%%/images/components/tselectdirectorydialog.xpm
 %%DATADIR%%/images/components/tshape.xpm
+%%DATADIR%%/images/components/tsimpleipcclient.xpm
+%%DATADIR%%/images/components/tsimpleipcserver.xpm
 %%DATADIR%%/images/components/tspeedbutton.ico
 %%DATADIR%%/images/components/tspeedbutton.xpm
 %%DATADIR%%/images/components/tspinedit.ico
@@ -2044,6 +2075,7 @@ bin/lazarus
 %%DATADIR%%/images/formatunderline.bmp
 %%DATADIR%%/images/icon-naming-spec.xml
 %%DATADIR%%/images/ide_icon48x48.png
+%%DATADIR%%/images/includefile.ico
 %%DATADIR%%/images/insertcodetag.xpm
 %%DATADIR%%/images/insertremark.xpm
 %%DATADIR%%/images/insertvartag.xpm
@@ -2058,7 +2090,7 @@ bin/lazarus
 %%DATADIR%%/images/lazaruspackage.ico
 %%DATADIR%%/images/leftarrow.ico
 %%DATADIR%%/images/leftarrow.xpm
-%%DATADIR%%/images/logo_big.jpg
+%%DATADIR%%/images/lprfile.ico
 %%DATADIR%%/images/mainicon.ico
 %%DATADIR%%/images/mainicon.lrs
 %%DATADIR%%/images/mainicon.xpm
@@ -2177,6 +2209,8 @@ bin/lazarus
 %%DATADIR%%/languages/installerstrconsts.nl.po
 %%DATADIR%%/languages/installerstrconsts.pl.po
 %%DATADIR%%/languages/installerstrconsts.po
+%%DATADIR%%/languages/installerstrconsts.ru.po
+%%DATADIR%%/languages/lazaruside.af_ZA.po
 %%DATADIR%%/languages/lazaruside.ar.po
 %%DATADIR%%/languages/lazaruside.ca.po
 %%DATADIR%%/languages/lazaruside.de.po
@@ -2195,7 +2229,7 @@ bin/lazarus
 %%DATADIR%%/languages/lazaruside.po
 %%DATADIR%%/languages/lazaruside.ru.po
 %%DATADIR%%/languages/lazaruside.ua.po
-%%DATADIR%%/languages/lazaruside.zh-cn.po
+%%DATADIR%%/languages/lazaruside.zh_CN.po
 %%DATADIR%%/languages/objinspstrconsts.ca.po
 %%DATADIR%%/languages/objinspstrconsts.de.po
 %%DATADIR%%/languages/objinspstrconsts.es.po
@@ -2212,7 +2246,7 @@ bin/lazarus
 %%DATADIR%%/languages/objinspstrconsts.po
 %%DATADIR%%/languages/objinspstrconsts.ru.po
 %%DATADIR%%/languages/objinspstrconsts.ua.po
-%%DATADIR%%/languages/objinspstrconsts.zh-cn.po
+%%DATADIR%%/languages/objinspstrconsts.zh_CN.po
 %%DATADIR%%/lazarus
 %%DATADIR%%/lcl/LAYOUT.txt
 %%DATADIR%%/lcl/Makefile
@@ -2483,6 +2517,36 @@ bin/lazarus
 %%DATADIR%%/lcl/interfaces/carbon/carbonwstoolwin.pp
 %%DATADIR%%/lcl/interfaces/carbon/fpcmacosall.pas
 %%DATADIR%%/lcl/interfaces/carbon/interfaces.pas
+%%DATADIR%%/lcl/interfaces/fpgui/Makefile
+%%DATADIR%%/lcl/interfaces/fpgui/Makefile.fpc
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiint.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiobject.inc
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsactnlist.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsarrow.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsbuttons.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwscalendar.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsclistbox.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwscomctrls.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwscontrols.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwschecklst.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsdbctrls.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsdbgrids.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsdialogs.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsdirsel.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwseditbtn.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsextctrls.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsextdlgs.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsfilectrl.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsforms.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsgrids.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsimglist.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsmaskedit.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsmenus.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwspairsplitter.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsspin.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwsstdctrls.pp
+%%DATADIR%%/lcl/interfaces/fpgui/fpguiwstoolwin.pp
+%%DATADIR%%/lcl/interfaces/fpgui/interfaces.pp
 %%DATADIR%%/lcl/interfaces/gnome/Makefile
 %%DATADIR%%/lcl/interfaces/gnome/Makefile.fpc
 %%DATADIR%%/lcl/interfaces/gnome/gnomeint.pp
@@ -2625,7 +2689,6 @@ bin/lazarus
 %%DATADIR%%/lcl/interfaces/qt/Makefile.fpc
 %%DATADIR%%/lcl/interfaces/qt/README.txt
 %%DATADIR%%/lcl/interfaces/qt/interfaces.pp
-%%DATADIR%%/lcl/interfaces/qt/qt.pp
 %%DATADIR%%/lcl/interfaces/qt/qt4.pas
 %%DATADIR%%/lcl/interfaces/qt/qtcallback.inc
 %%DATADIR%%/lcl/interfaces/qt/qtint.pp
@@ -2634,6 +2697,7 @@ bin/lazarus
 %%DATADIR%%/lcl/interfaces/qt/qtobject.inc
 %%DATADIR%%/lcl/interfaces/qt/qtobjects.pas
 %%DATADIR%%/lcl/interfaces/qt/qtprivate.pp
+%%DATADIR%%/lcl/interfaces/qt/qtwidgets.pas
 %%DATADIR%%/lcl/interfaces/qt/qtwinapi.inc
 %%DATADIR%%/lcl/interfaces/qt/qtwinapih.inc
 %%DATADIR%%/lcl/interfaces/qt/qtwsactnlist.pp
@@ -2755,6 +2819,7 @@ bin/lazarus
 %%DATADIR%%/lcl/lclicons.lrs
 %%DATADIR%%/lcl/lclintf.pas
 %%DATADIR%%/lcl/lclmemmanager.pas
+%%DATADIR%%/lcl/lclmessageglue.pas
 %%DATADIR%%/lcl/lclproc.pas
 %%DATADIR%%/lcl/lclrescache.pas
 %%DATADIR%%/lcl/lclstrconsts.pas
@@ -2955,6 +3020,8 @@ bin/lazarus
 %%DATADIR%%/lcl/units/i386-freebsd/lclintf.ppu
 %%DATADIR%%/lcl/units/i386-freebsd/lclmemmanager.o
 %%DATADIR%%/lcl/units/i386-freebsd/lclmemmanager.ppu
+%%DATADIR%%/lcl/units/i386-freebsd/lclmessageglue.o
+%%DATADIR%%/lcl/units/i386-freebsd/lclmessageglue.ppu
 %%DATADIR%%/lcl/units/i386-freebsd/lclproc.o
 %%DATADIR%%/lcl/units/i386-freebsd/lclproc.ppu
 %%DATADIR%%/lcl/units/i386-freebsd/lclrescache.o
@@ -3107,6 +3174,8 @@ bin/lazarus
 %%DATADIR%%/packager/globallinks/cgilaz-0.lpl
 %%DATADIR%%/packager/globallinks/cgilazide-0.lpl
 %%DATADIR%%/packager/globallinks/dbflaz-0.lpl
+%%DATADIR%%/packager/globallinks/demopackagewithhelp-0.lpl
+%%DATADIR%%/packager/globallinks/fpcunitconsolerunner-1.lpl
 %%DATADIR%%/packager/globallinks/fpcunitide-0.lpl
 %%DATADIR%%/packager/globallinks/fpcunittestrunner-0.lpl
 %%DATADIR%%/packager/globallinks/gtk2interface-0.lpl
@@ -3253,7 +3322,6 @@ bin/lazarus
 %%DATADIR%%/tools/install/win32/build-fpc.bat
 %%DATADIR%%/tools/install/win32/build-lazarus.bat
 %%DATADIR%%/tools/install/win32/create_installer.bat
-%%DATADIR%%/tools/install/win32/create_snapshot_installer.bat
 %%DATADIR%%/tools/install/win32/editoroptions.xml
 %%DATADIR%%/tools/install/win32/environmentoptions.xml
 %%DATADIR%%/tools/install/win32/installerstrconsts.pas
@@ -3524,7 +3592,6 @@ bin/lazarus
 %%DATADIR%%/units/i386-freebsd/pkgvirtualuniteditor.ppu
 %%DATADIR%%/units/i386-freebsd/procedurelist.o
 %%DATADIR%%/units/i386-freebsd/procedurelist.ppu
-%%DATADIR%%/units/i386-freebsd/procedurelist.rst
 %%DATADIR%%/units/i386-freebsd/processdebugger.o
 %%DATADIR%%/units/i386-freebsd/processdebugger.ppu
 %%DATADIR%%/units/i386-freebsd/processlist.o
@@ -3625,6 +3692,7 @@ bin/lazarus
 @dirrm %%DATADIR%%/components/customform/demo
 @dirrm %%DATADIR%%/components/customform
 @dirrm %%DATADIR%%/components/fpcunit/lib
+@dirrm %%DATADIR%%/components/fpcunit/console
 @dirrm %%DATADIR%%/components/fpcunit/ide/lib
 @dirrm %%DATADIR%%/components/fpcunit/ide
 @dirrm %%DATADIR%%/components/fpcunit
@@ -3651,8 +3719,10 @@ bin/lazarus
 @dirrm %%DATADIR%%/components/prettyformat
 @dirrm %%DATADIR%%/components/printers/lib
 @dirrm %%DATADIR%%/components/printers/unix
-@dirrm %%DATADIR%%/components/printers/sample
 @dirrm %%DATADIR%%/components/printers/win32
+@dirrm %%DATADIR%%/components/printers/samples/rawmode
+@dirrm %%DATADIR%%/components/printers/samples/dialogs
+@dirrm %%DATADIR%%/components/printers/samples
 @dirrm %%DATADIR%%/components/printers
 @dirrm %%DATADIR%%/components/projecttemplates/lib
 @dirrm %%DATADIR%%/components/projecttemplates
@@ -3722,6 +3792,10 @@ bin/lazarus
 @dirrm %%DATADIR%%/examples/grid_semaphor/example
 @dirrm %%DATADIR%%/examples/grid_semaphor
 @dirrm %%DATADIR%%/examples/help
+@dirrm %%DATADIR%%/examples/helpforpackage/xml
+@dirrm %%DATADIR%%/examples/helpforpackage/html/pkghelpdemounit1
+@dirrm %%DATADIR%%/examples/helpforpackage/html
+@dirrm %%DATADIR%%/examples/helpforpackage
 @dirrm %%DATADIR%%/examples/helphtml/html
 @dirrm %%DATADIR%%/examples/helphtml
 @dirrm %%DATADIR%%/examples/htmlhelp_ipro
@@ -3776,6 +3850,7 @@ bin/lazarus
 @dirrm %%DATADIR%%/lcl/interfaces/gnome
 @dirrm %%DATADIR%%/lcl/interfaces/win32
 @dirrm %%DATADIR%%/lcl/interfaces/wince
+@dirrm %%DATADIR%%/lcl/interfaces/fpgui
 @dirrm %%DATADIR%%/lcl/interfaces
 @dirrm %%DATADIR%%/lcl/languages
 @dirrm %%DATADIR%%/lcl/nonwin32
