@@ -52,7 +52,6 @@
     SUBDIR += golem
     SUBDIR += gwm
     SUBDIR += hackedbox
-    SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += ion-2

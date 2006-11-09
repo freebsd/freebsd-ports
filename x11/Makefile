@@ -177,8 +177,6 @@
     SUBDIR += nvidia-driver
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
-    SUBDIR += offix-clipboard
-    SUBDIR += offix-execute
     SUBDIR += oooqs
     SUBDIR += p5-Clipboard
     SUBDIR += p5-X11-GUITest

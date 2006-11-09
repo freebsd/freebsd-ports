@@ -4383,7 +4383,6 @@ icecast		ports/audio/icecast
 icecast2	ports/audio/icecast2
 icegenerator	ports/audio/icegenerator
 icegradient	ports/x11-themes/icegradient
-icepref		ports/x11-wm/icepref
 ices		ports/audio/ices
 ices0		ports/audio/ices0
 icewm		ports/x11-wm/icewm
@@ -6979,11 +6978,6 @@ mined		ports/editors/mined
 ming		ports/graphics/ming
 mingplot	ports/graphics/mingplot
 mingunittf	ports/chinese/mingunittf
-mingw		ports/devel/mingw
-mingw-bin-msvcrt	ports/devel/mingw-bin-msvcrt
-mingw-binutils	ports/devel/mingw-binutils
-mingw-gcc	ports/devel/mingw-gcc
-mingw-opengl-headers	ports/devel/mingw-opengl-headers
 mingw32-bin-msvcrt	ports/devel/mingw32-bin-msvcrt
 mingw32-binutils	ports/devel/mingw32-binutils
 mingw32-directx	ports/devel/mingw32-directx
@@ -7883,12 +7877,6 @@ ods2		ports/sysutils/ods2
 ods2reader	ports/emulators/ods2reader
 odsclient	ports/dns/odsclient
 ofc		ports/lang/ofc
-offix-clipboard	ports/x11/offix-clipboard
-offix-editor	ports/editors/offix-editor
-offix-execute	ports/x11/offix-execute
-offix-files	ports/x11-fm/offix-files
-offix-printer	ports/print/offix-printer
-offix-trash	ports/deskutils/offix-trash
 offlineimap	ports/mail/offlineimap
 oftpd		ports/ftp/oftpd
 ogg2mp3		ports/audio/ogg2mp3
@@ -8341,7 +8329,6 @@ p5-CGI-Application	ports/www/p5-CGI-Application
 p5-CGI-Application-Plugin-DBH	ports/www/p5-CGI-Application-Plugin-DBH
 p5-CGI-Application-Plugin-HTDot	ports/www/p5-CGI-Application-Plugin-HTDot
 p5-CGI-Application-Plugin-ValidateRM	ports/www/p5-CGI-Application-Plugin-ValidateRM
-p5-CGI-Application-ValidateRM	ports/www/p5-CGI-Application-ValidateRM
 p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Builder	ports/www/p5-CGI-Builder
 p5-CGI-Builder-TT2	ports/www/p5-CGI-Builder-TT2
@@ -15003,7 +14990,6 @@ wmmemmon	ports/sysutils/wmmemmon
 wmmenu		ports/x11/wmmenu
 wmminichess	ports/games/wmminichess
 wmmixer		ports/audio/wmmixer
-wmmon		ports/sysutils/wmmon
 wmmoonclock	ports/astro/wmmoonclock
 wmmount		ports/sysutils/wmmount
 wmmp3		ports/audio/wmmp3
@@ -15456,7 +15442,6 @@ xml-lite.el	ports/textproc/xml-lite.el
 xml-parse.el	ports/textproc/xml-parse.el
 xml2rfc		ports/textproc/xml2rfc
 xml2rfc-xxe	ports/editors/xml2rfc-xxe
-xmlada		ports/textproc/xmlada
 xmlcatmgr	ports/textproc/xmlcatmgr
 xmlcharent	ports/textproc/xmlcharent
 xmldiff		ports/textproc/xmldiff
@@ -15789,7 +15774,6 @@ xstream		ports/textproc/xstream
 xstroke		ports/x11/xstroke
 xsu		ports/sysutils/xsu
 xsvg		ports/graphics/xsvg
-xsysinfo	ports/sysutils/xsysinfo
 xsysstats	ports/sysutils/xsysstats
 xsystem35	ports/emulators/xsystem35
 xt		ports/textproc/xt

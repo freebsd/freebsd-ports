@@ -23,7 +23,6 @@
     SUBDIR += krusader
     SUBDIR += mtoolsfm
     SUBDIR += nautilus
-    SUBDIR += offix-files
     SUBDIR += pcmanfm
     SUBDIR += py-nautilus
     SUBDIR += rox-filer

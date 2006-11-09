@@ -676,7 +676,6 @@
     SUBDIR += wmmemfree
     SUBDIR += wmmemload
     SUBDIR += wmmemmon
-    SUBDIR += wmmon
     SUBDIR += wmmount
     SUBDIR += wmpccard
     SUBDIR += wmshutdown
@@ -721,7 +720,6 @@
     SUBDIR += xsi
     SUBDIR += xstow
     SUBDIR += xsu
-    SUBDIR += xsysinfo
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += xwipower

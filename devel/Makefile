@@ -659,11 +659,6 @@
     SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mimir
-    SUBDIR += mingw
-    SUBDIR += mingw-bin-msvcrt
-    SUBDIR += mingw-binutils
-    SUBDIR += mingw-gcc
-    SUBDIR += mingw-opengl-headers
     SUBDIR += mingw32-bin-msvcrt
     SUBDIR += mingw32-binutils
     SUBDIR += mingw32-directx
