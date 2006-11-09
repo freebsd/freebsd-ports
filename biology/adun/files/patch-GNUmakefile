@@ -1,0 +1,17 @@
+--- GNUmakefile.orig	Tue Apr  4 18:23:24 2006
++++ GNUmakefile	Sun Nov  5 13:56:03 2006
+@@ -2,12 +2,12 @@
+ include $(GNUSTEP_MAKEFILES)/common.make
+ 
+ SUBPROJECTS =  Kernel/ MolTalk/ UL/ 
+-GNUSTEP_INSTALLATION_DIR=$(HOME)/GNUstep
++#GNUSTEP_INSTALLATION_DIR=$(HOME)/GNUstep
+ 
+ #Rpm
+ 
+ PACKAGE_NAME=Adun
+-PACKAGE_VERSION=0.5
++PACKAGE_VERSION=0.6
+ 
+ -include GNUmakefile.preamble
+ 
