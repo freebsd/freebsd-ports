@@ -1,0 +1,9 @@
+Local/Library/Bundles/simpleZillionJob.bundle/Resources/Info-gnustep.plist
+Local/Library/Bundles/simpleZillionJob.bundle/simpleZillionJob
+Local/Library/Bundles/simpleZillionJob.bundle/stamp.make
+Local/Tools/zillion
+Local/Tools/zillionClient
+Local/Tools/zillionLoader
+@dirrm Local/Library/Bundles/simpleZillionJob.bundle/Resources
+@dirrm Local/Library/Bundles/simpleZillionJob.bundle
+@dirrm Local/Library/Bundles
