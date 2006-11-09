@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.technocage.com/~caskey/wbl/download/
 
-MAINTAINER=	garga@localhost.bsd
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Simple tool to manage white/black list on qmail
 
 USE_BZIP2=	yes
