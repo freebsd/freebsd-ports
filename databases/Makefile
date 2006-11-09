@@ -173,7 +173,6 @@
     SUBDIR += p5-Cache-Memcached
     SUBDIR += p5-Cache-Memcached-Managed
     SUBDIR += p5-Cache-Memcached-XS
-    SUBDIR += p5-Catalyst-Model-CDBI-Plain
     SUBDIR += p5-Class-DBI
     SUBDIR += p5-Class-DBI-AbstractSearch
     SUBDIR += p5-Class-DBI-AsForm
