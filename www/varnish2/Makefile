@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +16,11 @@ COMMENT=	The Varnish high-performance HTTP accelerator
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_LDCONFIG=	yes
 
-MAN1=		varnishd.1 varnishhist.1 varnishlog.1 varnishncsa.1 \
-		varnishstat.1 varnishtop.1
+MAN=		varnishd.1 varnishhist.1 varnishlog.1 varnishncsa.1 \
+		varnishstat.1 varnishtop.1 vcl.7
 
 .include <bsd.port.pre.mk>
 
