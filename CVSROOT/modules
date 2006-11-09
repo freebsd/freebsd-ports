@@ -257,6 +257,7 @@ adpcm		ports/audio/adpcm
 adplay		ports/audio/adplay
 adstudio	ports/databases/adstudio
 adtool		ports/sysutils/adtool
+adun		ports/biology/adun
 advancecomp	ports/archivers/advancecomp
 advi		ports/print/advi
 adzap		ports/www/adzap
