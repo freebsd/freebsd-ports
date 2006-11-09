@@ -1,0 +1,6 @@
+bin/cbfe
+bin/cbind
+bin/cbpp
+%%PORTDOCS%%%%DOCSDIR%%/DOCS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

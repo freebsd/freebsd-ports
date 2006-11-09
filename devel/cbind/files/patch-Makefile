@@ -1,0 +1,22 @@
+--- Makefile.orig	Fri Sep 22 12:21:32 1995
++++ Makefile	Sun Nov  5 13:48:50 2006
+@@ -1,8 +1,8 @@
+ VERSION		  = 6
+ 
+-CFLAGS= -g -DPUBLIC
++CFLAGS+= -DPUBLIC
+ LIBS		  =
+-LINKER		  = cc
++LINKER		  = $(CC)
+ 
+ MAKEFILE= Makefile
+ 
+@@ -139,7 +139,7 @@
+ touch:;	touch $(GENED_SRC)
+ 
+ hostinfo.h: htype hostinfo
+-		hostinfo $@
++		./hostinfo $@
+ 
+ c_perf.c:	c.prf
+ 		gperf -N c_rsvd -t -p c.prf > $@
