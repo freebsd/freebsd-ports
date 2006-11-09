@@ -709,6 +709,7 @@ bbdate		ports/x11-clocks/bbdate
 bbdb		ports/databases/bbdb
 bbdb-emacs20	ports/databases/bbdb-emacs20
 bbdock		ports/x11/bbdock
+bbe		ports/textproc/bbe
 bbftp		ports/ftp/bbftp
 bbjd		ports/misc/bbjd
 bbkeys		ports/x11-wm/bbkeys
