@@ -1,0 +1,8 @@
+#!/bin/sh
+# $Id$
+
+mkdir -p ~/.belote || exit 1
+ln -sf %%DATADIR%%/data.bin ~/.belote || exit 1
+
+cd ~/.belote || exit 1
+exec %%JAVA%% -jar %%DATADIR%%/belote.jar

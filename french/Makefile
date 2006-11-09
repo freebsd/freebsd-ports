@@ -7,6 +7,7 @@
     SUBDIR += alphabet_sounds_fr
     SUBDIR += aspell
     SUBDIR += aster
+    SUBDIR += belote
     SUBDIR += dico
     SUBDIR += eficas
     SUBDIR += facturier
