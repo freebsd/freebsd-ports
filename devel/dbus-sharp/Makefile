@@ -6,10 +6,12 @@
 #   $Id: Makefile,v 1.18 2006/01/02 20:54:03 tmclau02 Exp $
 #
 
+PORTNAME=	dbus-sharp
 PORTVERSION=	0.62
 PORTREVISION=	17
 CATEGORIES=	devel gnome
-PKGNAMESUFFIX=	-sharp
+MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
+DISTNAME=	dbus-${PORTVERSION}
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono interface to the D-BUS messaging system
@@ -18,17 +20,12 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	monodoc:${PORTSDIR}/devel/mono-tools
 RUN_DEPENDS=	monodoc:${PORTSDIR}/devel/mono-tools
 
-MASTERDIR=	${.CURDIR}/../dbus
 BUILD_WRKSRC=	${WRKSRC}/mono
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-PATCHDIR=	${.CURDIR}/files
-MD5_FILE=	${.CURDIR}/distinfo
-DESCR=		${.CURDIR}/pkg-descr
-PLIST=		${.CURDIR}/pkg-plist
-
-DBUS_SLAVE=	yes
 
 USE_GNOME=	gnomehack gnometarget
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-mono \
 		--disable-python \
 		--disable-gcj \
@@ -40,6 +37,9 @@ CONFIGURE_ARGS=	--enable-mono \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 # Disable those, since it doesn't install docs yet.
 #post-patch:
@@ -47,4 +47,4 @@ CONFIGURE_ARGS=	--enable-mono \
 #		${WRKSRC}/mono/doc/Makefile.in
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
