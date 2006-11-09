@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	milter_regex
+PORTNAME=	milter-regex
 PORTVERSION=	1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
@@ -20,10 +20,8 @@ MAILUSER?=	mailnull
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
-
 USE_RC_SUBR=	milterregex.sh
-
-SPOOLDIR=	/var/run/milter-regex
+SPOOLDIR?=	/var/run/milter-regex
 SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
 .include <bsd.port.pre.mk>
