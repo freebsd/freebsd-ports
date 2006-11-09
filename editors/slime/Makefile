@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	slime
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://common-lisp.net/project/slime/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Superior Lisp Interaction Mode for Emacs
