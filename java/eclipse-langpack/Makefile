@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.2.1
+PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	L-${PORTVERSION}_Language_Packs-200510051300
+MASTER_SITE_SUBDIR=	L-${PORTVERSION}_Language_Packs-200609210945
 PKGNAMESUFFIX=	-langpack
-DISTFILES=	NLpack1-eclipse-SDK-3.1.1a-gtk${EXTRACT_SUFX} \
-		NLpack2-eclipse-SDK-3.1.1a-gtk${EXTRACT_SUFX} \
-		NLpackBidi-eclipse-SDK-3.1.1a-gtk${EXTRACT_SUFX} \
-		NLpack1_FeatureOverlay-eclipse-SDK-3.1.1${EXTRACT_SUFX} \
-		NLpack2_FeatureOverlay-eclipse-SDK-3.1.1${EXTRACT_SUFX} \
-		NLpackBidi_FeatureOverlay-eclipse-SDK-3.1.1${EXTRACT_SUFX}
+DISTFILES=	NLpack1-eclipse-SDK-${PORTVERSION}-gtk${EXTRACT_SUFX} \
+		NLpack2-eclipse-SDK-${PORTVERSION}-gtk${EXTRACT_SUFX} \
+		NLpack2a-eclipse-SDK-${PORTVERSION}-gtk${EXTRACT_SUFX} \
+		NLpackBidi-eclipse-SDK-${PORTVERSION}-gtk${EXTRACT_SUFX}
 DIST_SUBDIR=    eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
