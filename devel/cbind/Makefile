@@ -21,12 +21,6 @@ MAN1=		cbind.1
 
 ${WRKSRC}=	${WRKDIR}/${PORTNAME}
 
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cbind ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/cbfe ${PREFIX}/bin
