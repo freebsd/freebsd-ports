@@ -889,6 +889,7 @@
     SUBDIR += zabbix-agent
     SUBDIR += zebra
     SUBDIR += zebra-server
+    SUBDIR += zillion
     SUBDIR += zsync
     SUBDIR += ztelnet
 
