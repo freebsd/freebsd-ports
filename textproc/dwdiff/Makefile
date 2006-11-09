@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@logvinov.com
@@ -16,22 +15,23 @@ COMMENT=	A delimited word diff program
 
 HAS_CONFIGURE=	yes
 
-OPTIONS=	GETTEXT   "Build with gettext support"	on
-
-MAN1=		dwdiff.1
+MAN1=		${PORTNAME}.1
 PORTDOCS=	COPYING Changelog README
-PLIST_FILES=	bin/dwdiff
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GETTEXT)
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+PLIST_SUB+=	NLS=""
+MANLANG=	"" nl
+LANGS=		de nl
 .else
 CONFIGURE_ARGS+=--without-gettext
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 do-install:
@@ -39,8 +39,19 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in COPYING Changelog README
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(WITHOUT_NLS)
+.for lang in ${MANLANG:N""}
+	@${MKDIR} ${MAN1PREFIX}/man/${lang}/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${lang}/${MAN1} ${MAN1PREFIX}/man/${lang}/man1
+.endfor
+.for lang in ${LANGS}
+	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
+	    ${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 .endif
 

@@ -1,0 +1,9 @@
+bin/dwdiff
+%%NLS%%share/locale/de/LC_MESSAGES/dwdiff.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/dwdiff.mo
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry man/nl/man1
+%%NLS%%@dirrmtry man/nl
