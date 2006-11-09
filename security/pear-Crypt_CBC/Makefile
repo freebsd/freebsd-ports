@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 PORTREVISION=	3
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR class to emulate Perl's Crypt::CBC module
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
