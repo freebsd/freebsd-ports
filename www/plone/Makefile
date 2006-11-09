@@ -22,6 +22,8 @@ USE_ZOPE=	yes
 USE_PYTHON=	yes
 PLIST=	${WRKDIR}/pkg-plist
 
+BROKEN=		Incorrect pkg-plist
+
 CONFLICTS=	zope-archetypes-[0-9]* \
 		zope-btreefolder2-[0-9]* \
 		zope-cmf-[0-9]* \
