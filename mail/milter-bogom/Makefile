@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	milter-bogom
+PORTNAME=	bogom
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.usebox.net/jjm/bogom/ \
 		http://blackshell.usebox.net/bogom/
-DISTNAME=	bogom-${PORTVERSION}
+PKGNAMEPREFIX=	milter-
 
 MAINTAINER=	victor@bsdes.net
 COMMENT=	Simple sendmail milter to interface bogofilter
@@ -51,7 +51,6 @@ do-install:
 .endif
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
