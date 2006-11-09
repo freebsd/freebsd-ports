@@ -6,16 +6,17 @@
 #   $MCom: ports-stable/www/firefox15/Makefile,v 1.21 2006/10/24 17:48:39 ahze Exp $
 
 PORTNAME=	firefox
-DISTVERSION=	1.5.0.7
-PORTREVISION=	1
+DISTVERSION=	1.5.0.8
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
+
+DEPRECATED=	Obsolete version, use Firefox 2.0 or great instead
 
 LATEST_LINK=	firefox15
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
