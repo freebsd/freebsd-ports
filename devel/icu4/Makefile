@@ -56,10 +56,10 @@ PLIST_SUB+=	ICUVER=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${CC:T} == "cc"
-CFLAGS:=	${CFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fstrict-aliasing
+CFLAGS:=	${CFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fno-strict-aliasing
 .endif
 .if ${CXX:T} == "c++"
-CXXFLAGS:=	${CXXFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fstrict-aliasing
+CXXFLAGS:=	${CXXFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fno-strict-aliasing
 .endif
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
