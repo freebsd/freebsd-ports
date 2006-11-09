@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amatch
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	A Ruby library for approximate string matching and searching
 
 USE_RUBY=	yes
