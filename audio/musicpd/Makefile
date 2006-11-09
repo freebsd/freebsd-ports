@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	mpd-${PORTVERSION}
 
-MAINTAINER=	redchrom@gmail.com
+MAINTAINER=	ports@mark.reidel.info
 COMMENT=	A remote-controllable music-daemon
 
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
