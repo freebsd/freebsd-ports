@@ -1,0 +1,14 @@
+Local/Applications/RemoteDesk.app/RemoteDesk
+Local/Applications/RemoteDesk.app/Resources/Info-gnustep.plist
+Local/Applications/RemoteDesk.app/Resources/LICENSE
+Local/Applications/RemoteDesk.app/Resources/README
+Local/Applications/RemoteDesk.app/Resources/RemoteDesk.desktop
+Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.classes
+Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.info
+Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/objects.gorm
+Local/Applications/RemoteDesk.app/Resources/remotedesk.tiff
+Local/Applications/RemoteDesk.app/library_paths.openapp
+Local/Applications/RemoteDesk.app/stamp.make
+@dirrm Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm
+@dirrm Local/Applications/RemoteDesk.app/Resources
+@dirrm Local/Applications/RemoteDesk.app
