@@ -123,7 +123,6 @@ Local/Library/Libraries/libAddresses.so.0.0.1
 @dirrm Local/Library/Frameworks/AddressView.framework/Versions/A
 @dirrm Local/Library/Frameworks/AddressView.framework/Versions
 @dirrm Local/Library/Frameworks/AddressView.framework
-@dirrm Local/Library/Frameworks
 @dirrm Local/Applications/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm
 @dirrm Local/Applications/AddressManager.app/Resources/Dutch.lproj
 @dirrm Local/Applications/AddressManager.app/Resources/English.lproj/AddressManager.gorm
