@@ -408,7 +408,6 @@ mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial
 						character data
 mindterm-*		security/mindterm-binary Do not sell for profit
-mingw/Opengl95.exe	devel/mingw-opengl-headers Not sure if we can redistribute it freely
 miracl*			math/miracl		Free for non-profit
 						use but a commercial license is
 						required for all other usages

@@ -182,7 +182,6 @@
     SUBDIR += nenscript
     SUBDIR += nl-acroread
     SUBDIR += no-acroread
-    SUBDIR += offix-printer
     SUBDIR += p5-Net-Printer
     SUBDIR += p5-PDF-Template
     SUBDIR += p5-PDFLib

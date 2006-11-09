@@ -1,4 +1,0 @@
-This is a port of IcePref, a graphical configuration utility for the
-Ice Window Manager that uses Python and GTK. This port fixes the
-problem with the Restart button not working in FreeBSD if you install
-from the original source.
