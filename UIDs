@@ -65,7 +65,6 @@ rbldns:*:153:153:rbldnsd pseudo-user:/nonexistent:/sbin/nologin
 sfs:*:171:171:Self-Certifying File System:/nonexistent:/sbin/nologin
 agk:*:172:172:AquaGateKeeper:/nonexistent:/nonexistent
 polipo:*:173:173:polipo web cache:/nonexistent:/sbin/nologin
-bogomilter:*:174:174:milter-bogom:/nonexistent:/sbin/nologin
 moinmoin:*:192:192:MoinMoin User:/nonexistent:/sbin/nologin
 sympa:*:200:200:Sympa Owner:/nonexistent:/sbin/nologin
 privoxy:*:201:201:Privoxy proxy user:/nonexistent:/sbin/nologin
@@ -82,7 +81,6 @@ smxm:*:263:263:Sendmail X misc:/nonexistent:/sbin/nologin
 smx:*:264:264:Sendmail X other:/nonexistent:/sbin/nologin
 hacluster:*:275:275:Heartbeat cluster user:/nonexistent:/sbin/nologin
 mrtg:*:279:279:MRTG daemon:/nonexistent:/sbin/nologin
-dkfilter:*:325:325:DK Filter Owner:/nonexistent:/sbin/nologin
 ldap:*:389:389:OpenLDAP Server:/nonexistent:/sbin/nologin
 tiarra:*:398:398:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
 drweb:*:426:426:Dr.Web Mail Scanner:/nonexistent:/sbin/nologin
