@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1-freebsd-5.4-i386
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	DHCPerf delivers accurate performance metrics of Dynamic Host Configuration Protocol service
 
-ONLY_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	Rebuild of i386 package provided by Nominum.
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1/
 
