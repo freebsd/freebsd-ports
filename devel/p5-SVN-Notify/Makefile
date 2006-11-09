@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Notify
-PORTVERSION=	2.63
+PORTVERSION=	2.64
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SVN
@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Subversion activity notification
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Net/SMTP_auth.pm:${PORTSDIR}/mail/p5-Net-SMTP_auth \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
