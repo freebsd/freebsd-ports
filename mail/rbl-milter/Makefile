@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://opensource.confusticate.com/rbl-milter/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A milter that adds mail header warnings on mail from open-relays
 
 SUB_FILES=	rbl-milter.sh

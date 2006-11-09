@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sendmail milter API implementation
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
