@@ -15122,6 +15122,7 @@ xacpim		ports/sysutils/xacpim
 xalan-c		ports/textproc/xalan-c
 xalan-j		ports/textproc/xalan-j
 xalarm		ports/x11-clocks/xalarm
+xanalyser	ports/audio/xanalyser
 xanim		ports/multimedia/xanim
 xaniroc		ports/x11/xaniroc
 xantfarm	ports/x11/xantfarm
