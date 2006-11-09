@@ -75,9 +75,9 @@
 # LUA_SUBDIR	- The directory under bin/share/lib where Lua is installed.
 # LUA_INCDIR	- The directory where Lua and tolua header files are installed.
 # LUA_LIBDIR	- The directory where Lua and tolua libraries are installed.
-# LUA_MODLIBDIR	- The directory where Lua modules (.lua) are installed.
+# LUA_MODLIBDIR	- The directory where Lua module libraries (.so) are installed.
 # LUA_MODSHAREDIR
-#				- The directory where Lua module libraries (.so) are installed.
+#				- The directory where Lua modules (.lua) are installed.
 # LUA_PKGNAMEPREFIX
 #				- The package name prefix used by Lua modules.
 #
