@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwox
-PORTVERSION=	5.34.0
+PORTVERSION=	5.35.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwox/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwox/download/v5/ \
