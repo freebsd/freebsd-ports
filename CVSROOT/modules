@@ -16066,6 +16066,7 @@ zh-xttmgr	ports/chinese/xttmgr
 zh-zhcon	ports/chinese/zhcon
 zidrav		ports/sysutils/zidrav
 zile		ports/editors/zile
+zillion		ports/net/zillion
 zim		ports/editors/zim
 zimg		ports/graphics/zimg
 zinf		ports/audio/zinf
