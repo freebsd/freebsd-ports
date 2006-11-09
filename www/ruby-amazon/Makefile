@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	amazon
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	A Ruby interface to Amazon's Web Services
 
 USE_RUBY=	yes
