@@ -64,7 +64,6 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		gnome-power-manager:${PORTSDIR}/sysutils/gnome-power-manager \
 		gnome-volume-manager:${PORTSDIR}/sysutils/gnome-volume-manager \
 		orca:${PORTSDIR}/accessibility/orca \
-		epiphany:${PORTSDIR}/www/epiphany \
 		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 		ekiga:${PORTSDIR}/net/ekiga
 
@@ -87,7 +86,8 @@ do-install:	# empty
 RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
 .endif
 .if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
-RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
+RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp \
+		epiphany:${PORTSDIR}/www/epiphany
 .endif
 .endif
 
