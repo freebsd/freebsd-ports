@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061109
+  AFFECTS: users of milter-bogom, dk-milter, dkim-milter
+  AUTHOR: ache@freebsd.org
+
+  All 3 milters change their default user to "mailnull".
+
 20061108
   AFFECTS: Users of databases/postgresql*-server
   AUTHOR: Palle Girgensohn <girgen@FreeBSD.org>
