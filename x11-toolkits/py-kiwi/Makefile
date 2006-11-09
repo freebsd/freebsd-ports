@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kiwi
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.11
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.async.com.br/projects/${PORTNAME}/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -24,9 +24,15 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+FIND_DOCSDIR=	api howto
 
 post-install:
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	for d in ${FIND_DOCSDIR}; do \
+		${MKDIR} ${DOCSDIR}/$${d}; \
+		cd ${WRKSRC}/doc/$${d} && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/$${d} ";" ; \
+	done;
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} ";"
 	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} ";"
