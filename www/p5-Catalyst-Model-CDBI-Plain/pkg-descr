@@ -1,0 +1,9 @@
+Catalyst::Model::CDBI::Plain is a Model class for Catalyst to be used
+with user-specified Class::DBI classes.
+
+It does not automatically set anything up or create relationships;
+this is left to the user. This module can be used with existing
+Class::DBI classes, so that they can be used with Catalyst, or as a
+way of writing CDBI-based Model classes within Catalyst.
+
+WWW: http://search.cpan.org/dist/Catalyst-Model-CDBI-Plain/
