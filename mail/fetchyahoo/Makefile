@@ -8,7 +8,9 @@
 PORTNAME=	fetchyahoo
 PORTVERSION=	2.10.6
 CATEGORIES=	mail
-MASTER_SITES=	http://fetchyahoo.sourceforge.net/
+MASTER_SITES=	http://fetchyahoo.sourceforge.net/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	farrokhi
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Download e-mail from a Yahoo account to a Berkeley mailbox
