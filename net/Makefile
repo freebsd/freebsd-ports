@@ -667,6 +667,7 @@
     SUBDIR += recvnet
     SUBDIR += redir
     SUBDIR += relay
+    SUBDIR += remotedesk
     SUBDIR += repeater
     SUBDIR += rexx-sock
     SUBDIR += rfbproxy

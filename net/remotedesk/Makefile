@@ -1,0 +1,32 @@
+# New ports collection makefile for:    remotedesk
+# Date created:         09 Nov 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	remotedesk
+PORTVERSION=	0.1
+CATEGORIES=	net
+MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
+DISTNAME=	RemoteDesk-${PORTVERSION}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Graphical interface to rdesktop
+
+RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
+
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+MAKEFILE=
+ALL_TARGET=
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
+		${WRKSRC}/GNUmakefile
+
+.include <bsd.port.mk>
