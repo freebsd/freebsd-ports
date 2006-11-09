@@ -618,6 +618,7 @@
     SUBDIR += wsoundserver
     SUBDIR += x11amp
     SUBDIR += x4x
+    SUBDIR += xanalyser
     SUBDIR += xaylet
     SUBDIR += xcd
     SUBDIR += xcdplayer
