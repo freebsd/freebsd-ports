@@ -1,0 +1,14 @@
+Instead of reading input in lines as sed, bbe reads
+arbitrary blocks from an input stream and performs
+byte-related transformations on found blocks. Blocks
+can be defined using start/stop strings, stream offset
+and block length, or a combination. Basic editing commands
+include delete, replace, search/replace, binary operations
+(and, or, etc.), append, and bcd/ASCII conversion. For
+examining the input stream, it contains some grep-like
+features like printing the input file name, stream offset,
+and block number of found blocks. Block contents can also 
+be printed in different formats like hex, octal, ASCII, and
+binary.
+
+WWW: http://sourceforge.net/projects/bbe-/

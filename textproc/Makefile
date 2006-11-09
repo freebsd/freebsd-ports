@@ -23,6 +23,7 @@
     SUBDIR += aspell-without-dicten
     SUBDIR += az-aspell
     SUBDIR += bar
+    SUBDIR += bbe
     SUBDIR += be-aspell
     SUBDIR += bedic-data
     SUBDIR += bg-aspell
