@@ -137,7 +137,7 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 CONFIGURE_ARGS+=	--disable-imagemagick
 .endif
 
-.if !defined(WITHOUT_GTK2) && (exists(${X11BASE}/lib/libgtk-x11-2.0.so.0) || defined (WITH_GTK2))
+.if !defined(WITHOUT_GTK2) && (${HAVE_GNOME:Mgtk20} != "" || defined(WITH_GTK2))
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
 .else
