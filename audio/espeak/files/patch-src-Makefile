@@ -24,7 +24,7 @@
  
  x_%.o: %.cpp
 -	$(CXX) $(CXXFLAGS) -O2 -Wall -fpic -fvisibility=hidden -pedantic \
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -fpic -pedantic \
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -fPIC -pedantic \
  	-I. -D LIBRARY -c -fno-exceptions $<  -o x_$*.o
  
  libespeak.so: $(OBJS2)
