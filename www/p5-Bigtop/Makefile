@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Bigtop
-PORTVERSION=	0.16
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Bigtop
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A web application data language processor
 
 RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
@@ -29,12 +29,13 @@ MAN1=		bigtop.1 tentmaker.1
 
 MAN3=		Bigtop.3 Bigtop::Backend::CGI.3 \
 		Bigtop::Backend::CGI::Gantry.3 Bigtop::Backend::Conf.3 \
+		Bigtop::Backend::Conf::Gantry.3 \
 		Bigtop::Backend::Conf::General.3 Bigtop::Backend::Control.3 \
 		Bigtop::Backend::Control::Gantry.3 \
 		Bigtop::Backend::HttpdConf.3 \
 		Bigtop::Backend::HttpdConf::Gantry.3 \
 		Bigtop::Backend::Init::Std.3 \
-		Bigtop::Backend::Model.3 Bigtop::Backend::Model::Gantry.3 \
+		Bigtop::Backend::Model.3 \
 		Bigtop::Backend::Model::GantryCDBI.3 \
 		Bigtop::Backend::Model::GantryDBIxClass.3 \
 		Bigtop::Backend::SQL.3 Bigtop::Backend::SQL::MySQL.3 \

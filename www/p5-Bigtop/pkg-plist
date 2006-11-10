@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Bigtop/Backend/CGI.pm
 %%SITE_PERL%%/Bigtop/Backend/CGI/Gantry.pm
 %%SITE_PERL%%/Bigtop/Backend/Conf.pm
+%%SITE_PERL%%/Bigtop/Backend/Conf/Gantry.pm
 %%SITE_PERL%%/Bigtop/Backend/Conf/General.pm
 %%SITE_PERL%%/Bigtop/Backend/Control.pm
 %%SITE_PERL%%/Bigtop/Backend/Control/Gantry.pm
@@ -10,7 +11,6 @@
 %%SITE_PERL%%/Bigtop/Backend/HttpdConf/Gantry.pm
 %%SITE_PERL%%/Bigtop/Backend/Init/Std.pm
 %%SITE_PERL%%/Bigtop/Backend/Model.pm
-%%SITE_PERL%%/Bigtop/Backend/Model/Gantry.pm
 %%SITE_PERL%%/Bigtop/Backend/Model/GantryCDBI.pm
 %%SITE_PERL%%/Bigtop/Backend/Model/GantryDBIxClass.pm
 %%SITE_PERL%%/Bigtop/Backend/SQL.pm
