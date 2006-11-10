@@ -8266,6 +8266,7 @@ p5-B-Size	ports/devel/p5-B-Size
 p5-B-Utils	ports/devel/p5-B-Utils
 p5-BBS-UserInfo	ports/net/p5-BBS-UserInfo
 p5-BBS-UserInfo-Maple3	ports/net/p5-BBS-UserInfo-Maple3
+p5-BBS-UserInfo-Maple3itoc	ports/net/p5-BBS-UserInfo-Maple3itoc
 p5-BBS-UserInfo-Ptt	ports/net/p5-BBS-UserInfo-Ptt
 p5-BFD		ports/devel/p5-BFD
 p5-BIND-Conf_Parser	ports/dns/p5-BIND-Conf_Parser
