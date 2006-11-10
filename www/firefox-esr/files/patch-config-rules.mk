@@ -1,14 +1,13 @@
---- config/rules.mk.orig	Tue Aug 26 13:28:47 2003
-+++ config/rules.mk	Sun Feb  1 15:11:41 2004
-@@ -444,7 +444,11 @@
+--- config/rules.mk.orig	Thu Sep 14 14:07:03 2006
++++ config/rules.mk	Wed Oct 18 11:00:09 2006
+@@ -442,9 +442,7 @@
+ endif
  
  ifeq ($(OS_ARCH),FreeBSD)
- ifdef IS_COMPONENT
-+ifneq (,$(filter alpha ia64,$(OS_TEST)))
+-ifdef IS_COMPONENT
+-EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
+-endif
 +EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic -lc
-+else
- EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
-+endif
- endif
  endif
  
+ ifeq ($(OS_ARCH),NetBSD)
