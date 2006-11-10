@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Pari.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/PariInit.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/libPARI.dumb.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/libPARI.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Pari/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Pari/Pari.bs
