@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	byaccj
-PORTVERSION=	1.1
+PORTVERSION=	1.13
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	byaccj
-DISTNAME=	byaccj1.1
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
-MAINTAINER=	davidxu@viatech.com.cn
+MAINTAINER=	pauls@utdallas.edu
 COMMENT=	A java extension of BSD YACC-compatible parser generator
 
 PLIST_FILES=	bin/byaccj
-WRKSRC=		$(WRKDIR)/byaccj1.1/src
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#' ${WRKSRC}/defs.h ${WRKSRC}/*c
