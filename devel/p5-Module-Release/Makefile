@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Release
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/B/BD/BDFOY
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		${SITE_PERL}/HTTP/Message.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Unfetchable
 
 PERL_CONFIGURE=	yes
 
