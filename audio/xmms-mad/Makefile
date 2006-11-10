@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	xmms-mad
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A XMMS input plugin that uses libmad
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
