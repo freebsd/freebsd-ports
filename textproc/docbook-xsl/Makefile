@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-xsl
-PORTVERSION=	1.70.1
+PORTVERSION=	1.71.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
@@ -28,8 +28,9 @@ NO_BUILD=	yes
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/docbook
 PINSTDIR=	${PREFIX}/${INSTDIR}
-COPYDIRS=	common fo extensions html htmlhelp images \
-		javahelp lib manpages params profiling template xhtml
+COPYDIRS=	common extensions fo html htmlhelp images \
+		javahelp lib manpages params profiling slides \
+		template tools wordml xhtml
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
@@ -38,6 +39,8 @@ CATALOG_PORTS=	${XMLDIR}/catalog.ports
 
 post-extract:
 	${FIND} ${WRKSRC} -name '.#*' -delete
+	${FIND} ${WRKSRC}/extensions -type d -mindepth 1 -maxdepth 1 -print0 |\
+		${XARGS} -0 ${RM} -rf
 
 post-configure:
 	@${SED} -e 's,@INSTDIR@,${INSTDIR},g ; \
@@ -58,8 +61,6 @@ do-install:
 		${TAR} -xf - -C${PINSTDIR})
 
 post-install:
-	${RMDIR} ${PREFIX}/share/xsl/docbook/extensions/build
-	${RMDIR} ${PREFIX}/share/xsl/docbook/extensions/build2
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

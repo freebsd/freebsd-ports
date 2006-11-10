@@ -1,6 +1,9 @@
-%%PORTDOCS%%%%DOCSDIR%%/book.xsl
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/common/common.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/css/reference.css
 %%PORTDOCS%%%%DOCSDIR%%/fo/abstract.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/abstract.title.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/admon.graphics.extension.html
@@ -11,7 +14,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/admonition.title.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/admons.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/alignment.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/appendix.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/arbortext.extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/article.appendix.title.properties.html
@@ -77,6 +79,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/ebnf.assignment.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ebnf.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ebnf.statement.terminator.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/email.delimiters.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/equation.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/example.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/figure.properties.html
@@ -123,6 +126,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/header.rule.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/header.table.height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/headers.on.blank.pages.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/highlight.default.language.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/highlight.source.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.verbatim.characters.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.verbatim.html
@@ -158,7 +163,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.lang.value.rfc.compliant.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/label.from.part.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/labels.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e5441.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e5573.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/line-height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.everyNth.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.extension.html
@@ -206,11 +211,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/page.width.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/page.width.portrait.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/paper.type.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/param.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/part.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/passivetex.extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/pgwide.properties.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/preface.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/prefer.internal.olink.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/preferred.mediaobject.role.html
@@ -229,6 +232,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/profile.role.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/profile.security.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/profile.separator.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/profile.status.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/profile.userlevel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/profile.value.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/profile.vendor.html
@@ -253,6 +257,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/refentry.pagebreak.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/refentry.title.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/refentry.xref.manvolnum.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/reference.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/region.after.extent.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/region.before.extent.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/revhistory.table.cell.properties.html
@@ -289,6 +294,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/sidebar.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/sidebar.title.Properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/simplesect.in.toc.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/stylesheet.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/subscript.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/superscript.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/symbol.font.family.html
@@ -357,7 +363,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/annotation.graphic.open.html
 %%PORTDOCS%%%%DOCSDIR%%/html/annotation.js.html
 %%PORTDOCS%%%%DOCSDIR%%/html/annotation.support.html
-%%PORTDOCS%%%%DOCSDIR%%/html/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/author.othername.in.middle.html
 %%PORTDOCS%%%%DOCSDIR%%/html/autotoc.label.in.hyperlink.html
@@ -367,6 +372,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/biblioentry.item.separator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bibliography.collection.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bibliography.numbered.html
+%%PORTDOCS%%%%DOCSDIR%%/html/blurb.on.titlepage.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bridgehead.in.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/callout.defaultcolumn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/callout.graphics.extension.html
@@ -380,6 +386,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/callouts.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/html/callouts.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chapter.autolabel.html
+%%PORTDOCS%%%%DOCSDIR%%/html/chunk.append.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.first.sections.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.quietly.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.section.depth.html
@@ -400,6 +407,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/citerefentry.link.html
 %%PORTDOCS%%%%DOCSDIR%%/html/collect.xref.targets.html
 %%PORTDOCS%%%%DOCSDIR%%/html/component.label.includes.part.label.html
+%%PORTDOCS%%%%DOCSDIR%%/html/contrib.inline.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/html/css.decoration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/current.docid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dbk_ext.html
@@ -419,6 +427,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/eclipse.plugin.name.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eclipse.plugin.provider.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eclipse_help.html
+%%PORTDOCS%%%%DOCSDIR%%/html/editedby.enabled.html
+%%PORTDOCS%%%%DOCSDIR%%/html/email.delimiters.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/html/emphasis.propagates.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/entry.propagates.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/firstterm.only.link.html
@@ -448,6 +458,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/graphicsize.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/html/graphicsize.use.img.src.path.html
 %%PORTDOCS%%%%DOCSDIR%%/html/header.rule.html
+%%PORTDOCS%%%%DOCSDIR%%/html/highlight.default.language.html
+%%PORTDOCS%%%%DOCSDIR%%/html/highlight.source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/html.append.html
 %%PORTDOCS%%%%DOCSDIR%%/html/html.base.html
 %%PORTDOCS%%%%DOCSDIR%%/html/html.cellpadding.html
 %%PORTDOCS%%%%DOCSDIR%%/html/html.cellspacing.html
@@ -569,13 +582,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.pubid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.resolver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.sysid.html
+%%PORTDOCS%%%%DOCSDIR%%/html/othercredit.like.author.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/html/para.propagates.style.html
-%%PORTDOCS%%%%DOCSDIR%%/html/param.html
 %%PORTDOCS%%%%DOCSDIR%%/html/part.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phrase.propagates.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pixels.per.inch.html
 %%PORTDOCS%%%%DOCSDIR%%/html/points.per.em.html
-%%PORTDOCS%%%%DOCSDIR%%/html/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/html/preface.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/prefer.internal.olink.html
 %%PORTDOCS%%%%DOCSDIR%%/html/preferred.mediaobject.role.html
@@ -592,6 +604,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/profile.role.html
 %%PORTDOCS%%%%DOCSDIR%%/html/profile.security.html
 %%PORTDOCS%%%%DOCSDIR%%/html/profile.separator.html
+%%PORTDOCS%%%%DOCSDIR%%/html/profile.status.html
 %%PORTDOCS%%%%DOCSDIR%%/html/profile.userlevel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/profile.value.html
 %%PORTDOCS%%%%DOCSDIR%%/html/profile.vendor.html
@@ -600,6 +613,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/qa.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qanda.defaultlabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qanda.inherit.numeration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qanda.nested.in.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qandadiv.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refclass.suppress.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refentry.generate.name.html
@@ -607,6 +621,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/refentry.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refentry.separator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refentry.xref.manvolnum.html
+%%PORTDOCS%%%%DOCSDIR%%/html/reference.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/root.filename.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rootid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/runinhead.default.title.end.punct.html
@@ -622,6 +637,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/show.revisionflag.html
 %%PORTDOCS%%%%DOCSDIR%%/html/simplesect.in.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/spacing.paras.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stylesheet.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.footer.navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.header.navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.navigation.html
@@ -732,9 +748,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.tif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/jrefhtml.xsl
 %%PORTDOCS%%%%DOCSDIR%%/lib/lib.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/charmap.html
+%%PORTDOCS%%%%DOCSDIR%%/manpages/email.delimiters.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/fonts.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/general.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/indent.html
@@ -784,8 +800,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/manpages/man.th.title.max.length.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/other.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/output.html
-%%PORTDOCS%%%%DOCSDIR%%/manpages/param.html
-%%PORTDOCS%%%%DOCSDIR%%/manpages/preface.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/refentry.date.profile.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/refentry.date.profile.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/refentry.manual.fallback.profile.html
@@ -804,32 +818,38 @@
 %%PORTDOCS%%%%DOCSDIR%%/manpages/th.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/variablelist.term.break.after.html
 %%PORTDOCS%%%%DOCSDIR%%/manpages/variablelist.term.separator.html
+%%PORTDOCS%%%%DOCSDIR%%/pi/FIXME.html
+%%PORTDOCS%%%%DOCSDIR%%/pi/common.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/dbhtml.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/dbhtml.filename.html
+%%PORTDOCS%%%%DOCSDIR%%/pi/html.html
 %%PORTDOCS%%%%DOCSDIR%%/pi/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pi/pi.html
-%%PORTDOCS%%%%DOCSDIR%%/pi/pr01.html
-%%PORTDOCS%%%%DOCSDIR%%/pi/rn01.html
-%%PORTDOCS%%%%DOCSDIR%%/pi/rn02.html
-%%PORTDOCS%%%%DOCSDIR%%/pi/rn02re03.html
-%%PORTDOCS%%%%DOCSDIR%%/ref.css
 %%PORTDOCS%%%%DOCSDIR%%/refentry/refentry.html
-%%PORTDOCS%%%%DOCSDIR%%/reference.css
 %%PORTDOCS%%%%DOCSDIR%%/reference.html
-%%PORTDOCS%%%%DOCSDIR%%/reference.xsl
+%%PORTDOCS%%%%DOCSDIR%%/reference.pdf.gz
+%%PORTDOCS%%%%DOCSDIR%%/reference.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/slides/active.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/body.bg.color.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/bullet.image.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/css.stylesheet.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/css.stylesheet.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/dynamic.toc.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/fo_general_params.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/fo_property_sets.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/foil.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/foil.subtitle.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/foil.title.master.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/foil.title.size.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/foilgroup.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/foilgroup.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/graphics.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/hidetoc.image.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/home.image.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/html_general.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/html_output.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/html_frame_params.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/html_general_params.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/html_graphic_parms.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/html_javascript_params.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/html_l10n_params.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/index.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/keyboard.nav.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/minus.image.html
@@ -848,19 +868,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/slides/overlay.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/overlay.js.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/overlay.logo.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/param.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/plus.image.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/pr01.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/pr02.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/prev.image.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/rn02.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/rn03.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/rn04.html
-%%PORTDOCS%%%%DOCSDIR%%/slides/rn05.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/running.foot.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/script.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/show.foil.number.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/showtoc.image.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/slide.font.family.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/slide.title.font.family.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/slides.js.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/slides.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/speakernote.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/slides/styleheet.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/text.home.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/text.next.html
 %%PORTDOCS%%%%DOCSDIR%%/slides/text.prev.html
@@ -881,7 +900,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/slides/xbStyle.js.html
 %%PORTDOCS%%%%DOCSDIR%%/template/titlepage.html
 %%PORTDOCS%%%%DOCSDIR%%/warranty.html
-%%PORTDOCS%%%%DOCSDIR%%/website/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/website/autolayout-file.html
 %%PORTDOCS%%%%DOCSDIR%%/website/banner.before.navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/website/body.attributes.html
@@ -899,11 +917,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/website/navbodywidth.html
 %%PORTDOCS%%%%DOCSDIR%%/website/navtocwidth.html
 %%PORTDOCS%%%%DOCSDIR%%/website/output-root.html
-%%PORTDOCS%%%%DOCSDIR%%/website/param.html
-%%PORTDOCS%%%%DOCSDIR%%/website/pr01.html
+%%PORTDOCS%%%%DOCSDIR%%/website/params.html
 %%PORTDOCS%%%%DOCSDIR%%/website/rebuild-all.html
-%%PORTDOCS%%%%DOCSDIR%%/website/rn01.html
 %%PORTDOCS%%%%DOCSDIR%%/website/sequential.links.html
+%%PORTDOCS%%%%DOCSDIR%%/website/stylesheet.html
 %%PORTDOCS%%%%DOCSDIR%%/website/suppress.homepage.title.html
 %%PORTDOCS%%%%DOCSDIR%%/website/table.spacer.image.html
 %%PORTDOCS%%%%DOCSDIR%%/website/textbgcolor.html
@@ -916,18 +933,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/website/toc.spacer.graphic.html
 %%PORTDOCS%%%%DOCSDIR%%/website/toc.spacer.image.html
 %%PORTDOCS%%%%DOCSDIR%%/website/toc.spacer.text.html
-%%PORTDOCS%%%%DOCSDIR%%/wordml/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/wordml/index.html
 %%PORTDOCS%%%%DOCSDIR%%/wordml/pages.template.html
-%%PORTDOCS%%%%DOCSDIR%%/wordml/param.html
-%%PORTDOCS%%%%DOCSDIR%%/wordml/preface.html
+%%PORTDOCS%%%%DOCSDIR%%/wordml/params.html
+%%PORTDOCS%%%%DOCSDIR%%/wordml/stylesheet.html
 %%PORTDOCS%%%%DOCSDIR%%/wordml/wordml.template.html
 share/xsl/docbook/VERSION
 share/xsl/docbook/catalog
 share/xsl/docbook/common/af.xml
 share/xsl/docbook/common/am.xml
 share/xsl/docbook/common/ar.xml
-share/xsl/docbook/common/autoidx-ng.xsl
+share/xsl/docbook/common/autoidx-kimber.xsl
+share/xsl/docbook/common/autoidx-kosek.xsl
 share/xsl/docbook/common/az.xml
 share/xsl/docbook/common/bg.xml
 share/xsl/docbook/common/bn.xml
@@ -1000,69 +1017,12 @@ share/xsl/docbook/common/vi.xml
 share/xsl/docbook/common/xh.xml
 share/xsl/docbook/common/zh_cn.xml
 share/xsl/docbook/common/zh_tw.xml
-share/xsl/docbook/extensions/build.xml
-share/xsl/docbook/extensions/saxon643.jar
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/CVS.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/Callout.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/CalloutEmitter.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/ColumnScanEmitter.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/ColumnUpdateEmitter.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/CopyEmitter.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/FormatCallout.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/FormatGraphicCallout.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/FormatTextCallout.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/FormatUnicodeCallout.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/ImageIntrinsics.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/LineCountEmitter.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/NumberLinesEmitter.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/Table.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/Text.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/TextFactory.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/UnwrapLinks.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/UnwrapLinksEmitter.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/Verbatim.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/Windows1252.java
-share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon/package.html
-share/xsl/docbook/extensions/saxon644.jar
 share/xsl/docbook/extensions/saxon65.jar
-share/xsl/docbook/extensions/saxon651.jar
-share/xsl/docbook/extensions/saxon652.jar
-share/xsl/docbook/extensions/saxon653.jar
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/CVS.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Callout.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/FormatCallout.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/FormatDingbatCallout.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/FormatGraphicCallout.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/FormatTextCallout.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/FormatUnicodeCallout.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Func.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/ImageIntrinsics.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Params.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Table.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Text.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Verbatim.java
-share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/package.html
-share/xsl/docbook/extensions/xalan25.jar
+share/xsl/docbook/extensions/xalan2.jar
 share/xsl/docbook/extensions/xalan27.jar
-share/xsl/docbook/extensions/xalan27/build.xml
-share/xsl/docbook/extensions/xalan27/nbproject/build-impl.xml
-share/xsl/docbook/extensions/xalan27/nbproject/genfiles.properties
-share/xsl/docbook/extensions/xalan27/nbproject/project.properties
-share/xsl/docbook/extensions/xalan27/nbproject/project.xml
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/CVS.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/Callout.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/FormatCallout.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/FormatDingbatCallout.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/FormatGraphicCallout.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/FormatTextCallout.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/FormatUnicodeCallout.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/Func.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/ImageIntrinsics.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/Params.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/Table.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/Text.java
-share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan/Verbatim.java
 share/xsl/docbook/fo/admon.xsl
+share/xsl/docbook/fo/autoidx-kimber.xsl
+share/xsl/docbook/fo/autoidx-kosek.xsl
 share/xsl/docbook/fo/autoidx-ng.xsl
 share/xsl/docbook/fo/autoidx.xsl
 share/xsl/docbook/fo/autotoc.xsl
@@ -1084,6 +1044,7 @@ share/xsl/docbook/fo/fop1.xsl
 share/xsl/docbook/fo/formal.xsl
 share/xsl/docbook/fo/glossary.xsl
 share/xsl/docbook/fo/graphics.xsl
+share/xsl/docbook/fo/highlight.xsl
 share/xsl/docbook/fo/htmltbl.xsl
 share/xsl/docbook/fo/index.xsl
 share/xsl/docbook/fo/info.xsl
@@ -1092,10 +1053,7 @@ share/xsl/docbook/fo/keywords.xsl
 share/xsl/docbook/fo/lists.xsl
 share/xsl/docbook/fo/math.xsl
 share/xsl/docbook/fo/pagesetup.xsl
-share/xsl/docbook/fo/param.ent
-share/xsl/docbook/fo/param.xml
 share/xsl/docbook/fo/param.xsl
-share/xsl/docbook/fo/param.xweb
 share/xsl/docbook/fo/passivetex.xsl
 share/xsl/docbook/fo/pdf2index
 share/xsl/docbook/fo/pi.xsl
@@ -1117,6 +1075,8 @@ share/xsl/docbook/fo/xep.xsl
 share/xsl/docbook/fo/xref.xsl
 share/xsl/docbook/html/admon.xsl
 share/xsl/docbook/html/annotations.xsl
+share/xsl/docbook/html/autoidx-kimber.xsl
+share/xsl/docbook/html/autoidx-kosek.xsl
 share/xsl/docbook/html/autoidx-ng.xsl
 share/xsl/docbook/html/autoidx.xsl
 share/xsl/docbook/html/autotoc.xsl
@@ -1140,6 +1100,7 @@ share/xsl/docbook/html/footnote.xsl
 share/xsl/docbook/html/formal.xsl
 share/xsl/docbook/html/glossary.xsl
 share/xsl/docbook/html/graphics.xsl
+share/xsl/docbook/html/highlight.xsl
 share/xsl/docbook/html/html-rtf.xsl
 share/xsl/docbook/html/html.xsl
 share/xsl/docbook/html/htmltbl.xsl
@@ -1153,10 +1114,7 @@ share/xsl/docbook/html/manifest.xsl
 share/xsl/docbook/html/math.xsl
 share/xsl/docbook/html/oldchunker.xsl
 share/xsl/docbook/html/onechunk.xsl
-share/xsl/docbook/html/param.ent
-share/xsl/docbook/html/param.xml
 share/xsl/docbook/html/param.xsl
-share/xsl/docbook/html/param.xweb
 share/xsl/docbook/html/pi.xsl
 share/xsl/docbook/html/profile-chunk-code.xsl
 share/xsl/docbook/html/profile-chunk.xsl
@@ -1247,25 +1205,18 @@ share/xsl/docbook/images/warning.svg
 share/xsl/docbook/images/warning.tif
 share/xsl/docbook/javahelp/javahelp.xsl
 share/xsl/docbook/javahelp/profile-javahelp.xsl
-share/xsl/docbook/lib/lib.xml
 share/xsl/docbook/lib/lib.xsl
-share/xsl/docbook/lib/lib.xweb
 share/xsl/docbook/manpages/ChangeLog.20020917
-share/xsl/docbook/manpages/README
 share/xsl/docbook/manpages/block.xsl
 share/xsl/docbook/manpages/charmap.groff.xsl
 share/xsl/docbook/manpages/docbook.xsl
 share/xsl/docbook/manpages/html-synop.xsl
-share/xsl/docbook/manpages/html2roff.xsl
 share/xsl/docbook/manpages/info.xsl
 share/xsl/docbook/manpages/inline.xsl
 share/xsl/docbook/manpages/links.xsl
 share/xsl/docbook/manpages/lists.xsl
 share/xsl/docbook/manpages/other.xsl
-share/xsl/docbook/manpages/param.ent
-share/xsl/docbook/manpages/param.xml
 share/xsl/docbook/manpages/param.xsl
-share/xsl/docbook/manpages/param.xweb
 share/xsl/docbook/manpages/refentry.xsl
 share/xsl/docbook/manpages/synop.xsl
 share/xsl/docbook/manpages/table.xsl
@@ -1299,6 +1250,7 @@ share/xsl/docbook/params/biblioentry.properties.xml
 share/xsl/docbook/params/bibliography.collection.xml
 share/xsl/docbook/params/bibliography.numbered.xml
 share/xsl/docbook/params/blockquote.properties.xml
+share/xsl/docbook/params/blurb.on.titlepage.enabled.xml
 share/xsl/docbook/params/body.end.indent.xml
 share/xsl/docbook/params/body.font.family.xml
 share/xsl/docbook/params/body.font.master.xml
@@ -1319,6 +1271,7 @@ share/xsl/docbook/params/callout.unicode.start.character.xml
 share/xsl/docbook/params/callout.unicode.xml
 share/xsl/docbook/params/callouts.extension.xml
 share/xsl/docbook/params/chapter.autolabel.xml
+share/xsl/docbook/params/chunk.append.xml
 share/xsl/docbook/params/chunk.first.sections.xml
 share/xsl/docbook/params/chunk.quietly.xml
 share/xsl/docbook/params/chunk.section.depth.xml
@@ -1353,6 +1306,7 @@ share/xsl/docbook/params/column.gap.titlepage.xml
 share/xsl/docbook/params/compact.list.item.spacing.xml
 share/xsl/docbook/params/component.label.includes.part.label.xml
 share/xsl/docbook/params/component.title.properties.xml
+share/xsl/docbook/params/contrib.inline.enabled.xml
 share/xsl/docbook/params/crop.mark.bleed.xml
 share/xsl/docbook/params/crop.mark.offset.xml
 share/xsl/docbook/params/crop.mark.width.xml
@@ -1376,6 +1330,8 @@ share/xsl/docbook/params/eclipse.autolabel.xml
 share/xsl/docbook/params/eclipse.plugin.id.xml
 share/xsl/docbook/params/eclipse.plugin.name.xml
 share/xsl/docbook/params/eclipse.plugin.provider.xml
+share/xsl/docbook/params/editedby.enabled.xml
+share/xsl/docbook/params/email.delimiters.enabled.xml
 share/xsl/docbook/params/emphasis.propagates.style.xml
 share/xsl/docbook/params/entry.propagates.style.xml
 share/xsl/docbook/params/equation.properties.xml
@@ -1427,6 +1383,9 @@ share/xsl/docbook/params/header.content.properties.xml
 share/xsl/docbook/params/header.rule.xml
 share/xsl/docbook/params/header.table.height.xml
 share/xsl/docbook/params/headers.on.blank.pages.xml
+share/xsl/docbook/params/highlight.default.language.xml
+share/xsl/docbook/params/highlight.source.xml
+share/xsl/docbook/params/html.append.xml
 share/xsl/docbook/params/html.base.xml
 share/xsl/docbook/params/html.cellpadding.xml
 share/xsl/docbook/params/html.cellspacing.xml
@@ -1613,6 +1572,7 @@ share/xsl/docbook/params/olink.sysid.xml
 share/xsl/docbook/params/orderedlist.label.properties.xml
 share/xsl/docbook/params/orderedlist.label.width.xml
 share/xsl/docbook/params/orderedlist.properties.xml
+share/xsl/docbook/params/othercredit.like.author.enabled.xml
 share/xsl/docbook/params/page.height.portrait.xml
 share/xsl/docbook/params/page.height.xml
 share/xsl/docbook/params/page.margin.bottom.xml
@@ -1648,12 +1608,14 @@ share/xsl/docbook/params/profile.revisionflag.xml
 share/xsl/docbook/params/profile.role.xml
 share/xsl/docbook/params/profile.security.xml
 share/xsl/docbook/params/profile.separator.xml
+share/xsl/docbook/params/profile.status.xml
 share/xsl/docbook/params/profile.userlevel.xml
 share/xsl/docbook/params/profile.value.xml
 share/xsl/docbook/params/profile.vendor.xml
 share/xsl/docbook/params/punct.honorific.xml
 share/xsl/docbook/params/qanda.defaultlabel.xml
 share/xsl/docbook/params/qanda.inherit.numeration.xml
+share/xsl/docbook/params/qanda.nested.in.toc.xml
 share/xsl/docbook/params/qanda.title.level1.properties.xml
 share/xsl/docbook/params/qanda.title.level2.properties.xml
 share/xsl/docbook/params/qanda.title.level3.properties.xml
@@ -1682,6 +1644,7 @@ share/xsl/docbook/params/refentry.version.profile.enabled.xml
 share/xsl/docbook/params/refentry.version.profile.xml
 share/xsl/docbook/params/refentry.version.suppress.xml
 share/xsl/docbook/params/refentry.xref.manvolnum.xml
+share/xsl/docbook/params/reference.autolabel.xml
 share/xsl/docbook/params/region.after.extent.xml
 share/xsl/docbook/params/region.before.extent.xml
 share/xsl/docbook/params/revhistory.table.cell.properties.xml
@@ -1794,12 +1757,77 @@ share/xsl/docbook/profiling/profile-mode.xsl
 share/xsl/docbook/profiling/profile.xsl
 share/xsl/docbook/profiling/strip-attributes.xsl
 share/xsl/docbook/profiling/xsl2profile.xsl
-share/xsl/docbook/template/README
-share/xsl/docbook/template/biblioentry.xsl
-share/xsl/docbook/template/testtemplate.xml
+share/xsl/docbook/slides/fo/plain-titlepage.xml
+share/xsl/docbook/slides/fo/plain.xsl
+share/xsl/docbook/slides/html/css.xsl
+share/xsl/docbook/slides/html/default.xsl
+share/xsl/docbook/slides/html/flat.xsl
+share/xsl/docbook/slides/html/frames.xsl
+share/xsl/docbook/slides/html/graphics.xsl
+share/xsl/docbook/slides/html/jscript.xsl
+share/xsl/docbook/slides/html/plain.xsl
+share/xsl/docbook/slides/html/slides-common.xsl
+share/xsl/docbook/slides/html/tables.xsl
+share/xsl/docbook/slides/html/vslides.xsl
+share/xsl/docbook/slides/html/w3c.xsl
+share/xsl/docbook/slides/htmlhelp/htmlhelp.xsl
+share/xsl/docbook/slides/keynote/default.xsl
+share/xsl/docbook/slides/keynote/xsltsl/cmp.xsl
+share/xsl/docbook/slides/keynote/xsltsl/date-time.xsl
+share/xsl/docbook/slides/keynote/xsltsl/example.xsl
+share/xsl/docbook/slides/keynote/xsltsl/markup.xsl
+share/xsl/docbook/slides/keynote/xsltsl/math.xsl
+share/xsl/docbook/slides/keynote/xsltsl/node.xsl
+share/xsl/docbook/slides/keynote/xsltsl/stdlib.xsl
+share/xsl/docbook/slides/keynote/xsltsl/string.xsl
+share/xsl/docbook/slides/keynote/xsltsl/svg.xsl
+share/xsl/docbook/slides/keynote/xsltsl/uri.xsl
+share/xsl/docbook/slides/svg/default.xsl
 share/xsl/docbook/template/titlepage.xsl
+share/xsl/docbook/tools/make/Makefile.DocBook
+share/xsl/docbook/tools/make/Makefile.combine
+share/xsl/docbook/tools/make/Makefile.docParam
+share/xsl/docbook/tools/xsl/build/addnewline.xsl
+share/xsl/docbook/tools/xsl/build/clrefentry.xsl
+share/xsl/docbook/tools/xsl/build/dblatex-release-notes.xsl
+share/xsl/docbook/tools/xsl/build/doc-link-docbook.xsl
+share/xsl/docbook/tools/xsl/build/docbook-elements.xsl
+share/xsl/docbook/tools/xsl/build/docparam2txt.xsl
+share/xsl/docbook/tools/xsl/build/html2roff.xsl
+share/xsl/docbook/tools/xsl/build/identity.xsl
+share/xsl/docbook/tools/xsl/build/jref2refsect1.xsl
+share/xsl/docbook/tools/xsl/build/jrefhtml.xsl
+share/xsl/docbook/tools/xsl/build/lrefentry.xsl
+share/xsl/docbook/tools/xsl/build/make-elements.xsl
+share/xsl/docbook/tools/xsl/build/make-xsl-params.xsl
+share/xsl/docbook/tools/xsl/build/pirefentry.xsl
+share/xsl/docbook/tools/xsl/build/reference-fo.xsl
+share/xsl/docbook/tools/xsl/build/reference-txt.xsl
+share/xsl/docbook/tools/xsl/build/reference.xsl
+share/xsl/docbook/tools/xsl/build/tdg-link.xsl
+share/xsl/docbook/tools/xsl/build/xsl-param-link.xsl
+share/xsl/docbook/tools/xsl/build/xsl-params.xsl
+share/xsl/docbook/tools/xsl/build/xsl2jref.xsl
+share/xsl/docbook/wordml/blocks-spec.xml
+share/xsl/docbook/wordml/docbook-pages.xsl
+share/xsl/docbook/wordml/docbook.xsl
+share/xsl/docbook/wordml/pages-normalise.xsl
+share/xsl/docbook/wordml/param.xsl
+share/xsl/docbook/wordml/sections-spec.xml
+share/xsl/docbook/wordml/specifications.xml
+share/xsl/docbook/wordml/supported.xml
+share/xsl/docbook/wordml/template-pages.xml
+share/xsl/docbook/wordml/template.dot
+share/xsl/docbook/wordml/template.xml
+share/xsl/docbook/wordml/wordml-blocks.xsl
+share/xsl/docbook/wordml/wordml-final.xsl
+share/xsl/docbook/wordml/wordml-normalise.xsl
+share/xsl/docbook/wordml/wordml-sections.xsl
+share/xsl/docbook/wordml/wordml.xsl
 share/xsl/docbook/xhtml/admon.xsl
 share/xsl/docbook/xhtml/annotations.xsl
+share/xsl/docbook/xhtml/autoidx-kimber.xsl
+share/xsl/docbook/xhtml/autoidx-kosek.xsl
 share/xsl/docbook/xhtml/autoidx-ng.xsl
 share/xsl/docbook/xhtml/autoidx.xsl
 share/xsl/docbook/xhtml/autotoc.xsl
@@ -1823,6 +1851,7 @@ share/xsl/docbook/xhtml/footnote.xsl
 share/xsl/docbook/xhtml/formal.xsl
 share/xsl/docbook/xhtml/glossary.xsl
 share/xsl/docbook/xhtml/graphics.xsl
+share/xsl/docbook/xhtml/highlight.xsl
 share/xsl/docbook/xhtml/html-rtf.xsl
 share/xsl/docbook/xhtml/html.xsl
 share/xsl/docbook/xhtml/html2xhtml.xsl
@@ -1855,7 +1884,20 @@ share/xsl/docbook/xhtml/toc.xsl
 share/xsl/docbook/xhtml/verbatim.xsl
 share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/xhtml
+@dirrm share/xsl/docbook/wordml
+@dirrm share/xsl/docbook/tools/xsl/build
+@dirrm share/xsl/docbook/tools/xsl
+@dirrm share/xsl/docbook/tools/make
+@dirrm share/xsl/docbook/tools
 @dirrm share/xsl/docbook/template
+@dirrm share/xsl/docbook/slides/xhtml
+@dirrm share/xsl/docbook/slides/svg
+@dirrm share/xsl/docbook/slides/keynote/xsltsl
+@dirrm share/xsl/docbook/slides/keynote
+@dirrm share/xsl/docbook/slides/htmlhelp
+@dirrm share/xsl/docbook/slides/html
+@dirrm share/xsl/docbook/slides/fo
+@dirrm share/xsl/docbook/slides
 @dirrm share/xsl/docbook/profiling
 @dirrm share/xsl/docbook/params
 @dirrm share/xsl/docbook/manpages
@@ -1866,35 +1908,21 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/htmlhelp
 @dirrm share/xsl/docbook/html
 @dirrm share/xsl/docbook/fo
-@dirrm share/xsl/docbook/extensions/xalan27/src/com/nwalsh/xalan
-@dirrm share/xsl/docbook/extensions/xalan27/src/com/nwalsh
-@dirrm share/xsl/docbook/extensions/xalan27/src/com
-@dirrm share/xsl/docbook/extensions/xalan27/src
-@dirrm share/xsl/docbook/extensions/xalan27/nbproject
-@dirrm share/xsl/docbook/extensions/xalan27
-@dirrm share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan
-@dirrm share/xsl/docbook/extensions/xalan2/com/nwalsh
-@dirrm share/xsl/docbook/extensions/xalan2/com
-@dirrm share/xsl/docbook/extensions/xalan2
-@dirrm share/xsl/docbook/extensions/saxon643/com/nwalsh/saxon
-@dirrm share/xsl/docbook/extensions/saxon643/com/nwalsh
-@dirrm share/xsl/docbook/extensions/saxon643/com
-@dirrm share/xsl/docbook/extensions/saxon643
 @dirrm share/xsl/docbook/extensions
 @dirrm share/xsl/docbook/common
 @dirrm share/xsl/docbook
-@dirrmtry share/xsl
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/wordml
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/website
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/template
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/slides
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/refentry
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/pi
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/manpages
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/lib
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images/callouts
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/fo
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/common
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/wordml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/website
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/template
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/slides
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refentry
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/callouts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
