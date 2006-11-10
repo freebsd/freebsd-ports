@@ -19,6 +19,7 @@
     SUBDIR += bg5ps
     SUBDIR += big5con
     SUBDIR += big5fs
+    SUBDIR += big5width
     SUBDIR += bind8
     SUBDIR += bitchx
     SUBDIR += c2t
