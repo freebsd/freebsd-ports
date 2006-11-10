@@ -18,7 +18,7 @@ CONFLICTS=	gmime-1.0.*
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget glib20
+USE_GNOME?=	gnomehack gnometarget glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
