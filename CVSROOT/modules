@@ -7181,6 +7181,7 @@ mod_rpaf2	ports/www/mod_rpaf2
 mod_ruby	ports/www/mod_ruby
 mod_scgi	ports/www/mod_scgi
 mod_security	ports/www/mod_security
+mod_security2	ports/www/mod_security2
 mod_sed		ports/www/mod_sed
 mod_sequester	ports/www/mod_sequester
 mod_shapvh	ports/www/mod_shapvh

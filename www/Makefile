@@ -380,6 +380,7 @@
     SUBDIR += mod_ruby
     SUBDIR += mod_scgi
     SUBDIR += mod_security
+    SUBDIR += mod_security2
     SUBDIR += mod_sed
     SUBDIR += mod_sequester
     SUBDIR += mod_shapvh
