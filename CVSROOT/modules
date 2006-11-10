@@ -15948,6 +15948,7 @@ zh-bg5pdf	ports/chinese/bg5pdf
 zh-bg5ps	ports/chinese/bg5ps
 zh-big5con	ports/chinese/big5con
 zh-big5fs	ports/chinese/big5fs
+zh-big5width	ports/chinese/big5width
 zh-bind8	ports/chinese/bind8
 zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
