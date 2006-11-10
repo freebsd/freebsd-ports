@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-murrine-themes
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/
 DISTNAME=	MurrineThemePack
