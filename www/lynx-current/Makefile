@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.6p5
+PORTVERSION=	2.8.7d2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}2.8.6pre.5
+DISTNAME=	${PORTNAME}2.8.7dev.2
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
-WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
+WRKSRC=		${WRKDIR}/${PORTNAME}2-8-7
 USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
