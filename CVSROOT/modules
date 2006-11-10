@@ -13478,6 +13478,7 @@ slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
 slate		ports/net-mgmt/slate
 slay		ports/sysutils/slay
+slbd		ports/net/slbd
 sleuth		ports/dns/sleuth
 sleuthkit	ports/sysutils/sleuthkit
 slffea		ports/cad/slffea
