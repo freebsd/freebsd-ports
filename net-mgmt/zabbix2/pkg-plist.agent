@@ -1,7 +1,0 @@
-bin/zabbix_agent
-bin/zabbix_agentd
-bin/zabbix_get
-bin/zabbix_sender
-etc/zabbix/zabbix_agent.conf.sample
-etc/zabbix/zabbix_agentd.conf.sample
-@dirrm etc/zabbix

@@ -1,12 +1,6 @@
-bin/zabbix_agent
-bin/zabbix_agentd
-bin/zabbix_get
-bin/zabbix_sender
-bin/zabbix_server
-etc/zabbix/zabbix_agent.conf.sample
-etc/zabbix/zabbix_agentd.conf.sample
-etc/zabbix/zabbix_server.conf.sample
 %%DATADIR%%/create/data/data.sql
+%%DATADIR%%/create/data/images.sql
+%%DATADIR%%/create/data/images_pgsql.sql
 %%DATADIR%%/create/dbsetup.sh
 %%DATADIR%%/create/mysql/schema.sql
 %%DATADIR%%/create/oracle/schema.sql
@@ -228,10 +222,13 @@ etc/zabbix/zabbix_server.conf.sample
 %%DATADIR%%/php/include/locales/en_gb.inc.php
 %%DATADIR%%/php/include/locales/fr_fr.inc.php
 %%DATADIR%%/php/include/locales/it_it.inc.php
+%%DATADIR%%/php/include/locales/nl_nl.inc.php
 %%DATADIR%%/php/include/locales/ja_jp.inc.php
 %%DATADIR%%/php/include/locales/lv_lv.inc.php
+%%DATADIR%%/php/include/locales/pt_br.inc.php
 %%DATADIR%%/php/include/locales/ru_ru.inc.php
 %%DATADIR%%/php/include/locales/sp_sp.inc.php
+%%DATADIR%%/php/include/locales/sv_se.inc.php
 %%DATADIR%%/php/include/maps.inc.php
 %%DATADIR%%/php/include/media.inc.php
 %%DATADIR%%/php/include/perm.inc.php
@@ -405,4 +402,3 @@ etc/zabbix/zabbix_server.conf.sample
 @dirrm %%DATADIR%%/create/data
 @dirrm %%DATADIR%%/create
 @dirrm %%DATADIR%%
-@dirrm etc/zabbix

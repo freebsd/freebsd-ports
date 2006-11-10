@@ -8,10 +8,10 @@
 name="zabbix_agentd"
 rcvar=${name}_enable
 load_rc_config $name
+eval : \${${rcvar}='NO'}
 
 command="%%PREFIX%%/bin/${name}"
 required_files="%%PREFIX%%/etc/zabbix/${name}.conf"
 
-eval "${rcvar}=\${${rcvar}:-'NO'}"
 
 run_rc_command "$1"
