@@ -27,8 +27,8 @@ MAKEFILE=	GNUmakefile
 NO_FILTER_SHLIBS=	yes
 
 post-patch:
-	${CP} ${WRKSRC}/MolTalk/Defs/Linux_i686.def \
-		${WRKSRC}/MolTalk/Defs/i386.def
+	${REINPLACE_CMD} -e 's|include Defs/|-include Defs/|' \
+		${WRKSRC}/MolTalk/GNUmakefile.preamble
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
 		${WRKSRC}/Tools/GNUmakefile \
 		${WRKSRC}/Tools/ResultsConverter/GNUmakefile \
