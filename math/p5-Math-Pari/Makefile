@@ -6,37 +6,30 @@
 #
 
 PORTNAME=	Math-Pari
-PORTVERSION=	2.010500
+PORTVERSION=	2.010709
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
-BROKEN=		fails to install
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
+LIB_DEPENDS=	pari:${PORTSDIR}/math/pari
 
-USE_GMAKE=	yes
 USE_GCC=	3.2+
 PERL_CONFIGURE=	yes
 
-MAN3=		Math::Pari.3 Math::libPARI.3 \
-		Math::PariInit.3 Math::libPARI.dumb.3
+CONFIGURE_ARGS=	parilib="-L${LOCALBASE}/lib -lpari" \
+		paridir=`${MAKE} -C ${PORTSDIR}/math/pari -V WRKSRC`
 
-.include <bsd.port.pre.mk>
+MAN3=		Math::Pari.3 Math::libPARI.3 Math::PariInit.3
 
-PARI_PORT?=	math/pari
-PARI_PORTDIR?=	${PORTSDIR}/${PARI_PORT}
-PARI_WRKSRC!=	cd ${PARI_PORTDIR} && ${MAKE} -V WRKSRC
-
-CONFIGURE_ARGS=	paridir=${PARI_WRKSRC}
+post-patch:
+	${REINPLACE_CMD} -e 's/2001004/2003000/' ${WRKSRC}/Makefile.PL
 
 post-clean:
-	@cd ${PARI_PORTDIR} && ${MAKE} -DBATCH clean
+	${MAKE} -C ${PORTSDIR}/math/pari -DBATCH clean
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
