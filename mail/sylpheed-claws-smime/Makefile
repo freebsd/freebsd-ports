@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smime
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -24,6 +24,7 @@ USE_AUTOTOOLS=	autoconf:259
 
 PLIST_FILES=lib/sylpheed-claws/plugins/smime.a \
 	lib/sylpheed-claws/plugins/smime.la \
-	lib/sylpheed-claws/plugins/smime.so
+	lib/sylpheed-claws/plugins/smime.so \
+	lib/sylpheed-claws/plugins/smime.deps
 
 .include <bsd.port.mk>
