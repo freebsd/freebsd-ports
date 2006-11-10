@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.1/
 
@@ -38,6 +38,10 @@ BROKEN=		does not compile on ia64
 
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))
 MAKE_ENV=	LP64=yes
+.endif
+
+.if defined(NOPORTDOCS)
+	${RM} -rf ${WRKSRC}/doc
 .endif
 
 post-patch:
