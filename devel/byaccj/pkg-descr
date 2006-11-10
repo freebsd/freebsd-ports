@@ -5,6 +5,3 @@ grammar parser. this extension support a -J option to generate Java source
 code.
 
 WWW: http://byaccj.sourceforge.net
-
-- David Xu
-davidxu@viatech.com.cn
