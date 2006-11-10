@@ -1,5 +1,5 @@
---- session.c.orig	Fri Sep  1 02:38:37 2006
-+++ session.c	Sat Sep 30 19:32:06 2006
+--- session.c.orig	Mon Oct 23 14:01:56 2006
++++ session.c	Fri Nov 10 12:21:51 2006
 @@ -776,6 +776,24 @@
  {
  	FILE *f;
@@ -99,15 +99,10 @@
  #ifndef HAVE_CYGWIN
  	if (getuid() == 0 || geteuid() == 0)
  #endif /* HAVE_CYGWIN */
-@@ -1314,10 +1347,31 @@
+@@ -1313,8 +1346,27 @@
+ 			do_pam_setcred(0);
  		}
  # endif /* USE_PAM */
- 		if (setusercontext(lc, pw, pw->pw_uid,
--		    (LOGIN_SETALL & ~LOGIN_SETPATH)) < 0) {
-+		    (LOGIN_SETALL & ~(LOGIN_SETENV|LOGIN_SETPATH))) < 0) {
- 			perror("unable to set user context");
- 			exit(1);
- 		}
 +#ifdef CHROOT
 +		user_dir = xstrdup(pw->pw_dir);
 +		new_root = user_dir + 1;
@@ -119,7 +114,7 @@
 +				new_root += 2;
 +
 +				if(chroot(user_dir) != 0)
-+					fatal("Couldn't chroot to user directory %s", user_dir);
++					fatal("Couldn't chroot to user directory %s. %s", user_dir, strerror(errno));
 +				pw->pw_dir = new_root;
 +				break;
 +			}
@@ -127,12 +122,13 @@
 +			new_root += 2;
 +		}
 +#endif /* CHROOT */
-+		/* Permanently switch to the desired uid. */
-+		permanently_set_uid(pw);
- #else
- # if defined(HAVE_GETLUID) && defined(HAVE_SETLUID)
- 		/* Sets login uid for accounting */
-@@ -1472,6 +1526,9 @@
+ 		if (setusercontext(lc, pw, pw->pw_uid,
+-		    (LOGIN_SETALL & ~LOGIN_SETPATH)) < 0) {
++		    (LOGIN_SETALL & ~(LOGIN_SETENV|LOGIN_SETPATH))) < 0) {
+ 			perror("unable to set user context");
+ 			exit(1);
+ 		}
+@@ -1472,6 +1524,9 @@
  	char *argv[10];
  	const char *shell, *shell0, *hostname = NULL;
  	struct passwd *pw = s->pw;
@@ -142,7 +138,7 @@
  
  	/* remove hostkey from the child's memory */
  	destroy_sensitive_data();
-@@ -1559,6 +1616,10 @@
+@@ -1559,6 +1614,10 @@
  	 */
  	environ = env;
  
@@ -153,7 +149,7 @@
  #if defined(KRB5) && defined(USE_AFS)
  	/*
  	 * At this point, we check to see if AFS is active and if we have
-@@ -1590,7 +1651,7 @@
+@@ -1590,7 +1649,7 @@
  		fprintf(stderr, "Could not chdir to home directory %s: %s\n",
  		    pw->pw_dir, strerror(errno));
  #ifdef HAVE_LOGIN_CAP
