@@ -1,14 +1,14 @@
---- Makefile.defs.in.orig	Thu Aug 28 21:11:46 2003
-+++ Makefile.defs.in	Tue Nov  4 14:27:53 2003
-@@ -21,9 +21,9 @@
- PLATFORM    = @platform@
- GXX         = @gxx@
- INCPATH     = -I$(srcdir)/src/patches/Xerces2_1_0/src -I@xerces_src@ -I$(srcdir)/src
--LIBPATH	    = -L@xerces_lib@
-+LIBPATH	    = -L@xerces_lib@ -L/usr/local/lib
- TESTFLAGS   = -DTEST
--XERCESLIB   = -l@xerces_library@
-+XERCESLIB   = -lxerces-c -liconv
- LIBS        = @LIBS@
+--- Makefile.defs.in.orig	Mon Aug  9 20:19:33 2004
++++ Makefile.defs.in	Wed Nov  1 23:18:35 2006
+@@ -20,9 +20,9 @@
+ DEFINES       = -D@system_type@
+ XERCESINCPATH = -I@xerces_src@
+ INCPATH       =  ${XERCESINCPATH} -I$(srcdir)/src -I$(srcincdir)
+-LIBPATH	      = -L@xerces_lib@
++LIBPATH       = -L@xerces_lib@ -L/usr/local/lib
+ TESTFLAGS     = -DTEST
+-XERCESLIB     = -l@xerces_library@
++XERCESLIB     = -lxerces-c -liconv
+ LIBS          = @LIBS@ -lm -lstdc++
  
  ###### Output directories

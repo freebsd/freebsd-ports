@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libpathan
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	2.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://software.decisionsoft.com/software/pathan-1.2r2/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2-src
+MASTER_SITES=	http://software.decisionsoft.com/software/pathan-2.0.0/
+DISTNAME=	${PORTNAME}-${PORTVERSION}beta-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
@@ -22,7 +21,7 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}beta
 USE_LDCONFIG=	yes
 XERCESCROOT=	`cd ${PORTSDIR}/textproc/xerces-c2; ${MAKE} -V WRKSRC`
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -30,7 +29,7 @@ CONFIGURE_ENV+=	XERCESCROOT=${XERCESCROOT}
 CONFIGURE_SCRIPT=	runConfigure
 CONFIGURE_ARGS+=	--disable-static
 
-PATHAN_LIB_VERSION=	2
+PATHAN_LIB_VERSION=	3
 PLIST_SUB+=	PATHAN_LIB_VERSION=${PATHAN_LIB_VERSION}
 
 .include <bsd.port.pre.mk>
@@ -38,24 +37,8 @@ PLIST_SUB+=	PATHAN_LIB_VERSION=${PATHAN_LIB_VERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBS="-lpthread|LIBS="${PTHREAD_LIBS}|g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-			${WRKSRC}/examples/tests/Makefile
 	@${REINPLACE_CMD} -e 's|targetoptions="-O2"|targetoptions="${CFLAGS}"|g' \
 			${WRKSRC}/runConfigure
 
-.if !defined(NO_EXAMPLES)
-PLIST_SUB+=	NO_EXAMPLES=""
-.else
-PLIST_SUB+=	NO_EXAMPLES="@comment "
-.endif
-
-EXAMPLEDIR?=	${PREFIX}/share/examples/pathan
-post-install:
-.if !defined(NO_EXAMPLES)
-	@${MKDIR} ${EXAMPLEDIR}
-.for i in basic common xgrep timing tests Makefile
-	@${CP} -r ${WRKSRC}/examples/$i ${EXAMPLEDIR}
-.endfor
-.endif
 
 .include <bsd.port.post.mk>
