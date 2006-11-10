@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FSM
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		FSM.php
 DOCS=		guide.txt
-TESTS=		001.phpt
+TESTS=		001.phpt addTransitionsArray.phpt
 EXAMPLES=	rpn.php
 _EXAMPLESDIR=	docs/examples
 
