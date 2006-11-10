@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -100,6 +100,11 @@ USE_GNUSTEP_LOCAL_APPS+=	InnerSpace:x11/innerspace
 USE_GNUSTEP_LOCAL_APPS+=	FTP:ftp/gnustep-ftp
 USE_GNUSTEP_LOCAL_APPS+=	DictionaryReader:deskutils/etoile
 USE_GNUSTEP_LOCAL_APPS+=	batmon:sysutils/batmon
+USE_GNUSTEP_LOCAL_APPS+=	UL:biology/adun
+USE_GNUSTEP_LOCAL_APPS+=	RemoteDesk:net/remotedesk
+USE_GNUSTEP_LOCAL_APPS+=	RemoteDesk:net/zillion
+
+RUN_DEPENDS+=	${LOCALBASE}/Local/Tools/zillion:${PORTSDIR}/net/zillion
 
 do-install:	# empty
 
