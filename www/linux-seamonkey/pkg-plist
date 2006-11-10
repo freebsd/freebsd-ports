@@ -475,31 +475,31 @@ lib/%%APP_NAME%%/xpt_link
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res/html
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res
-@dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
 @dirrm lib/%%APP_NAME%%/components/myspell
 @dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults/isp/US
 @dirrm lib/%%APP_NAME%%/defaults/isp
-@dirrm lib/%%APP_NAME%%/defaults/pref
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
-@dirrm lib/%%APP_NAME%%/defaults/wallet
 @dirrm lib/%%APP_NAME%%/defaults/messenger/US
 @dirrm lib/%%APP_NAME%%/defaults/messenger
+@dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults/profile/US/chrome
 @dirrm lib/%%APP_NAME%%/defaults/profile/US
 @dirrm lib/%%APP_NAME%%/defaults/profile/chrome
 @dirrm lib/%%APP_NAME%%/defaults/profile
+@dirrm lib/%%APP_NAME%%/defaults/wallet
 @dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/init.d
 @dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
