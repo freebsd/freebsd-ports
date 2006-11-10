@@ -9,7 +9,7 @@ PORTNAME=	mysql-editor
 PORTVERSION=	0.2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=Contrib
+MASTER_SITE_SUBDIR=Contrib/Old-Versions
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
