@@ -736,6 +736,7 @@
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += sl2tps
+    SUBDIR += slbd
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smb4k
