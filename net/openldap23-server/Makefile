@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.3.27
+DISTVERSION=		2.3.29
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -151,7 +151,7 @@ CONFIGURE_ARGS+=	--disable-slapd \
 			--disable-glue \
 			--disable-syncprov
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 SUB_FILES+=		pkg-message.client
 PKGMESSAGE=		${WRKSRC}/pkg-message.client
 
@@ -339,7 +339,7 @@ PLIST_SUB+=		BACK_SQL="@comment "
 .if defined(WITH_SLAPI)
 CONFIGURE_ARGS+=	--enable-slapi
 PLIST_SUB+=		SLAPI=""
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 .else
 PLIST_SUB+=		SLAPI="@comment "
 .endif
