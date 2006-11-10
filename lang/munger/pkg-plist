@@ -13,8 +13,6 @@ lib/libmunger.so.7
 %%DATADIR%%/blog.fcgi
 %%DATADIR%%/rss.munger
 %%DATADIR%%/mime2munger.munger
-%%DATADIR%%/google.munger
-%%DATADIR%%/google.template
 %%DATADIR%%/ed.munger
 %%DATADIR%%/xmlquery.munger
 %%DATADIR%%/filter.munger
