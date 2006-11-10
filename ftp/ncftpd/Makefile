@@ -9,14 +9,13 @@ PORTNAME=	ncftpd
 PORTVERSION=	2.8.3
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/ \
 		ftp://ftp.nl.uu.net/pub/unix/ftp/ncftpd/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${ARCH}-export
 
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A well known commercial FTP daemon with a 30-day evaluation license
-
-BROKEN=		Size mismatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
