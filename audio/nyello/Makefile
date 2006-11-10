@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nyello
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://sirius.cine7.net/nyello/releases/
 
@@ -14,6 +14,7 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An advanced command-line interface and shell for xmms2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
+RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
