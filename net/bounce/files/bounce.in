@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+#
+# PROVIDE: bounce
+# REQUIRE: NETWORKING
+#
+# Add the following line to /etc/rc.conf to enable bounce
+#
+# bounce_enable (bool):			Set to "NO" by default.
+#					Set it to "YES" to enable bounce.
+# bounce_connections (str):		Name for each bounce connection.
+# bounce_connectionname_options (str):	Commandline for each bounce connection.
+#
+
+. %%RC_SUBR%%
+
+name="bounce"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${bounce_enable="NO"}
+
+command="/usr/local/sbin/${name}"
+start_cmd="bounce_startcmd"
+
+bounce_startcmd()
+{
+    if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+	echo "${name} already running? (pid=$rc_pid)."
+	return 1
+    fi
+    if [ -z "${bounce_connections}" ]; then
+	err 1 "can't find bounce_connections in /etc/rc.conf"
+    fi	
+    echo Starting ${name}.
+    for connection in ${bounce_connections}; do
+	eval options=\$bounce_${connection}_options
+	if [ -z "${options}" ]; then
+	    continue
+	fi
+	cmd="${command} ${options}"
+	if [ -n "$bounce_user" ]; then
+	    cmd="su -m $bounce_user -c '$cmd'"
+	fi
+	eval "$cmd"
+	done
+}
+
+run_rc_command "$1"

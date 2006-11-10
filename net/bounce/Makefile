@@ -8,7 +8,7 @@
 
 PORTNAME=	bounce
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	http://www.iagora.com/~espel/ \
 		${MASTER_SITE_LOCAL}
@@ -19,11 +19,12 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	matt@efs.org
 COMMENT=	Bounce tcp connections to another machine/port
 
-NO_WRKSUBDIR=	yes
+USE_RC_SUBR=	bounce
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${DISTNAME} ${DISTNAME}.c)
