@@ -7,7 +7,7 @@
 
 PORTNAME=	frozenbubble
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 DISTNAME=	frozen-bubble-${PORTVERSION}
@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL \
+		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
 USE_SDL=	mixer sdl pango
 USE_GMAKE=	yes
