@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elog
-DISTVERSION=	2.6.1-4
+DISTVERSION=	2.6.2-1
 CATEGORIES=	www
 MASTER_SITES=	http://midas.psi.ch/elog/download/tar/
 
@@ -23,7 +23,7 @@ LOGBOOKDIR?=	www/elog
 PLIST_SUB+=		LOGBOOKDIR=${LOGBOOKDIR}
 
 USE_GMAKE=		yes
-WRKSRC=			${WRKDIR}/elog-2.6.1
+WRKSRC=			${WRKDIR}/elog-2.6.2
 MAKE_ENV=		LOGBOOKDIR=${LOGBOOKDIR}
 
 pre-fetch:
