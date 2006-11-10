@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkhtml2_viewer
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
