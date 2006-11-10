@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.40
+PORTVERSION=	3.42
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Gantry
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web application framework for mod_perl, cgi, etc
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
@@ -47,8 +47,7 @@ MAN3=		Gantry.3 Gantry::Conf.3 Gantry::Conf::FAQ.3 \
 		Gantry::Control::C::AuthzBase.3 \
 		Gantry::Control::C::AuthzCDBI.3 \
 		Gantry::Control::C::AuthzRegular.3 \
-		Gantry::Control::C::Groups.3 \
-		Gantry::Control::C::Pages.3 \
+		Gantry::Control::C::Groups.3 Gantry::Control::C::Pages.3 \
 		Gantry::Control::C::Users.3 \
 		Gantry::Control::Model::GEN::auth_group_members.3 \
 		Gantry::Control::Model::GEN::auth_groups.3 \
@@ -72,22 +71,21 @@ MAN3=		Gantry.3 Gantry::Conf.3 Gantry::Conf::FAQ.3 \
 		Gantry::Plugins::AutoCRUDHelper::DBIxClass.3 \
 		Gantry::Plugins::CRUD.3 Gantry::Plugins::Calendar.3 \
 		Gantry::Plugins::DBIxClassConn.3 Gantry::Plugins::Static.3 \
-		Gantry::Plugins::Validate.3 Gantry::Server.3 \
-		Gantry::Stash.3 Gantry::Stash::Controller.3 \
-		Gantry::Stash::View.3 Gantry::Stash::View::Form.3 \
-		Gantry::Template::Default.3 Gantry::Template::Framing.3 \
-		Gantry::Template::TT.3 Gantry::Utils::AuthCDBI.3 \
-		Gantry::Utils::CDBI.3 Gantry::Utils::CRUDHelp.3 \
-		Gantry::Utils::DB.3 Gantry::Utils::DBConnHelper.3 \
+		Gantry::Plugins::Validate.3 Gantry::Server.3 Gantry::Stash.3 \
+		Gantry::Stash::Controller.3 Gantry::Stash::View.3 \
+		Gantry::Stash::View::Form.3 Gantry::Template::Default.3 \
+		Gantry::Template::Framing.3 Gantry::Template::TT.3 \
+		Gantry::Utils::AuthCDBI.3 Gantry::Utils::CDBI.3 \
+		Gantry::Utils::CRUDHelp.3 Gantry::Utils::DB.3 \
+		Gantry::Utils::DBConnHelper.3 \
 		Gantry::Utils::DBConnHelper::MP13.3 \
 		Gantry::Utils::DBConnHelper::MP20.3 \
 		Gantry::Utils::DBConnHelper::Script.3 \
 		Gantry::Utils::DBIxClass.3 Gantry::Utils::HTML.3 \
 		Gantry::Utils::Model.3 Gantry::Utils::Model::Auth.3 \
-		Gantry::Utils::Model::Regular.3 \
-		Gantry::Utils::ModelHelper.3 Gantry::Utils::PODViewer.3 \
-		Gantry::Utils::PerlbalFixup.3 Gantry::Utils::SQL.3 \
-		Gantry::Utils::Validate.3
+		Gantry::Utils::Model::Regular.3 Gantry::Utils::ModelHelper.3 \
+		Gantry::Utils::PODViewer.3 Gantry::Utils::PerlbalFixup.3 \
+		Gantry::Utils::SQL.3 Gantry::Utils::Validate.3
 
 .include <bsd.port.pre.mk>
 
