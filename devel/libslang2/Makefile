@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.0/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v2.0/ \
@@ -34,9 +34,7 @@ DATADIR=	${PREFIX}/share/slsh
 OPTIONS=	PCRE "Include pcre support" on \
 		PNG  "Include png support"  on
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 .include <bsd.port.pre.mk>
 
