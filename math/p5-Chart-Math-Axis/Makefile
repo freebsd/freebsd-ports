@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Chart-Math-Axis
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	1.00
 CATEGORIES=	math graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
@@ -18,6 +17,7 @@ COMMENT=	Implements an algorithm to find good values for chart axis
 
 BUILD_DEPENDS=	${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt \
 		${SITE_PERL}/Math/BigFloat.pm:${PORTSDIR}/math/p5-Math-BigInt \
+		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
