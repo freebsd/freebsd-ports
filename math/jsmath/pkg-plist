@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%WWWDIR%%/COPYING.txt
 %%WWWDIR%%/blank.gif
 %%WWWDIR%%/extensions/AMSsymbols.js
 %%WWWDIR%%/extensions/HTML.js

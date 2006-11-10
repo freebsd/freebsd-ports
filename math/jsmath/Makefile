@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jsMath
-PORTVERSION=	3.3e
+PORTVERSION=	3.3g
 CATEGORIES=	math www
 MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -31,6 +31,9 @@ RUN_DEPENDS+=	${WWWDIR}/fonts/cm-fonts/alpha/def.js:${PORTSDIR}/math/jsmath-font
 .if defined(WITH_SPRITE_FONTS)
 RUN_DEPENDS+=	${WWWDIR}/fonts-sprite/cm-fonts/font.js:${PORTSDIR}/math/jsmath-fonts-sprite
 .endif
+
+post-extract:
+	@${RM} ${WRKSRC}/COPYING.txt
 
 do-install:
 	@${INSTALL} -d ${WWWDIR}
