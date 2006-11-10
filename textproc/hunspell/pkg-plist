@@ -1,5 +1,4 @@
 bin/hunspell
-bin/hunstem
 share/myspell/hu_HU.aff
 share/myspell/hu_HU.dic
 share/myspell/hungarian.aff
@@ -8,6 +7,4 @@ share/myspell/magyar.aff
 share/myspell/magyar.dic
 share/myspell/default.aff
 share/myspell/default.dic
-share/myspell/default.lst
-share/locale/hu/LC_MESSAGES/hunspell.mo
 @dirrm share/myspell

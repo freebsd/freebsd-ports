@@ -6,39 +6,40 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	1.0.R.2
+PORTVERSION=	1.1.4
 CATEGORIES=	hungarian textproc
-#MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
-MASTER_SITES=	http://magyarispell.sourceforge.net/
-DISTFILES=	${PORTNAME}-1.0-RC2${EXTRACT_SUFX} hu_HU-1.0-RC2${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}${PORTNAME}/:code \
+		http://magyarispell.sourceforge.net/:data
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:code hu_HU-pack.zip:data
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Improved Hungarian spelling checker
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0-RC2
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	"--with-ui"
 
 MAN1=		hunspell.1
 MAN4=		hunspell.4
 
-PORTDOCS=	OLVASS.EL README README.myspell
+PORTDOCS=	README README.myspell
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD-4.x at this time"
+BROKEN=		Does not compile on FreeBSD-4.x at this time
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/hunspell.cxx
+		${WRKSRC}/src/tools/hunspell.cxx
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/hunspell.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/hunspell.4 ${PREFIX}/man/man4
-	${INSTALL_PROGRAM} ${WRKSRC}/hunspell ${PREFIX}/bin
-	${LN} -s ${PREFIX}/bin/hunspell ${PREFIX}/bin/hunstem
+	${INSTALL_PROGRAM} ${WRKSRC}/src/tools/hunspell ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/myspell/ && \
 	${INSTALL_DATA} ${WRKDIR}/hu_HU.dic \
 	${PREFIX}/share/myspell/ && \
@@ -50,11 +51,9 @@ do-install:
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.aff ${PREFIX}/share/myspell/magyar.aff
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.aff ${PREFIX}/share/myspell/hungarian.aff
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.aff ${PREFIX}/share/myspell/default.aff
-	${INSTALL_DATA} ${WRKSRC}/dictionary.lst \
-	${PREFIX}/share/myspell/default.lst
-	${LOCALBASE}/bin/msgfmt -o ${WRKSRC}/hunspell.mo ${WRKSRC}/hunspell.po
-	${MKDIR} ${PREFIX}/share/locale/hu/LC_MESSAGES/ && \
-	${INSTALL_DATA} ${WRKSRC}/hunspell.mo ${PREFIX}/share/locale/hu/LC_MESSAGES/
+	#${LOCALBASE}/bin/msgfmt -o ${WRKSRC}/hunspell.mo ${WRKSRC}/hunspell.po
+	#${MKDIR} ${PREFIX}/share/locale/hu/LC_MESSAGES/ && \
+	#${INSTALL_DATA} ${WRKSRC}/hunspell.mo ${PREFIX}/share/locale/hu/LC_MESSAGES/
 
 .ifndef(NOPORTDOCS)
 post-install:
