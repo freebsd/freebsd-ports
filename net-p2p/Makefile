@@ -61,7 +61,6 @@
     SUBDIR += linux-edonkey-server
     SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += linux-jigdo
-    SUBDIR += linux-overnet-core
     SUBDIR += linuxdcpp
     SUBDIR += microdc
     SUBDIR += minder
