@@ -51,6 +51,7 @@ www/validator/htdocs/dev/tests/xhtml1-strict-missing-xmlns.html
 www/validator/htdocs/dev/tests/xhtml1-strict.html
 www/validator/htdocs/dev/tests/xhtml11-minimal.html
 www/validator/htdocs/docs.css
+www/validator/htdocs/docs/api.html
 www/validator/htdocs/docs/devel.html
 www/validator/htdocs/docs/errors.html
 www/validator/htdocs/docs/help.html
@@ -77,9 +78,6 @@ www/validator/htdocs/images/footer.jpg
 www/validator/htdocs/images/footer.png
 www/validator/htdocs/images/header.jpg
 www/validator/htdocs/images/header.png
-www/validator/htdocs/images/ppm_1.png
-www/validator/htdocs/images/ppm_2.png
-www/validator/htdocs/images/ppm_3.png
 www/validator/htdocs/images/v15445.gif
 www/validator/htdocs/images/v15445.png
 www/validator/htdocs/images/vcss.gif
@@ -308,6 +306,8 @@ www/validator/httpd/cgi-bin/check
 www/validator/httpd/cgi-bin/sendfeedback.pl
 www/validator/share/templates/en_US/docs_errors.tmpl
 www/validator/share/templates/en_US/doctype_spiel.tmpl
+www/validator/share/templates/en_US/earl_n3.tmpl
+www/validator/share/templates/en_US/earl_xml.tmpl
 www/validator/share/templates/en_US/error_loop.tmpl
 www/validator/share/templates/en_US/error_messages.cfg
 www/validator/share/templates/en_US/fatal-error.tmpl
@@ -326,10 +326,16 @@ www/validator/share/templates/en_US/opt_show_source.tmpl
 www/validator/share/templates/en_US/popup_charset.tmpl
 www/validator/share/templates/en_US/popup_doctype.tmpl
 www/validator/share/templates/en_US/result.tmpl
+www/validator/share/templates/en_US/soap_fault.tmpl
+www/validator/share/templates/en_US/soap_output.tmpl
+www/validator/share/templates/en_US/soap_warnings.tmpl
 www/validator/share/templates/en_US/table.tmpl
 www/validator/share/templates/en_US/tip.tmpl
+www/validator/share/templates/en_US/ucn_output.tmpl
+www/validator/share/templates/en_US/ucn_warnings.tmpl
 www/validator/share/templates/en_US/valid.tmpl
 www/validator/share/templates/en_US/warnings.tmpl
+www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/share/templates/en_US
 @dirrm www/validator/share/templates
 @dirrm www/validator/share
