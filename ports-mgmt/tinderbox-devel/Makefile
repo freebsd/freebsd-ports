@@ -5,23 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTVERSION=	2.3.3
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
+RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
 		CSUP  "Use csup for updates" On \
-		CVSUP "Use cvsup for updates" Off
+		CVSUP "Use cvsup for updates" Off \
+		APACHE "Use Apache for web interface" On \
+		LIGHTTPD "Use LightHTTPD for web interface" Off
 
 NO_BUILD=	yes
-USE_APACHE=	1.3+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -34,6 +34,7 @@ MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
 
+WANT_PHP_WEB=	yes
 USE_PHP=	session
 
 .if defined(WITH_PGSQL)
@@ -59,6 +60,12 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
 .endif
 
+.if !defined(WITHOUT_APACHE)
+USE_APACHE=	1.3+
+.elif defined(WITH_LIGHTTPD)
+RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
+.endif
+
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 
 post-extract:
@@ -73,7 +80,7 @@ post-patch:
 		${WRKSRC}/lib/setup-mysql.sh
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
 .endif
-	@${RM} ${WRKSRC}/create.orig ${WRKSRC}/setup.sh.orig
+	 @${RM} ${WRKSRC}/tc.orig
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
