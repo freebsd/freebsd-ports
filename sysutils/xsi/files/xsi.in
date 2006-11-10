@@ -5,19 +5,21 @@
 # PROVIDE: xsi
 # REQUIRE: NETWORKING
 #
-# Add the following line to /etc/rc.conf to enable the XSI daemon
-#
+# Add the following line to /etc/rc.conf to enable the XSI daemon:
 # xsi_enable="YES"
 #
+# Optional variables:
+# xsi_flags
+#
 
-xsi_enable=${hald_enable-"NO"}
-xsi_flags=${hald_flags-""}
+xsi_enable=${xsi_enable-"NO"}
+xsi_flags=${xsi_flags-""}
 
 . %%RC_SUBR%%
 
 name=xsi
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/bin/${name}
+command=%%PREFIX%%/bin/${name} ${xsi_flags}
 load_rc_config ${name}
 run_rc_command "$1"

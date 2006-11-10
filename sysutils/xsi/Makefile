@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	xsi
+PORTREVISION=	1
 PORTVERSION=	0.98.20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xsi.kolabore.ath.cx/download/
