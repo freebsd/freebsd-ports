@@ -7,7 +7,7 @@
 +#ifdef __FreeBSD__
 +#include <resolv.h>
 +#ifdef GSSAPI
-+#include <gssapi.h>
++#include "ssh-gss.h"
 +#endif
 +#endif
 +
