@@ -1911,6 +1911,7 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/extensions
 @dirrm share/xsl/docbook/common
 @dirrm share/xsl/docbook
+@dirrmtry share/xsl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/wordml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/website
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/template
