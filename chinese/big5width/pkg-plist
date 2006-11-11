@@ -1,5 +1,5 @@
 share/locale/%%LANG%%/LC_CTYPE
-@unexec rm -f %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE; mv -f %D/share/locale/%%LANG%%/LC_CTYPE.old %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE
+@unexec mv -f %D/share/locale/%%LANG%%/LC_CTYPE.old %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE
 @dirrm share/locale/%%LANG%%
 @dirrmtry share/locale
-@exec cp -p %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE %D/share/locale/%%LANG%%/LC_CTYPE.old; ln -sf %D/share/locale/%%LANG%%/LC_CTYPE %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE
+@exec cp -p %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE %D/share/locale/%%LANG%%/LC_CTYPE.old; cp -p %D/share/locale/%%LANG%%/LC_CTYPE %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE

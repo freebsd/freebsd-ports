@@ -48,10 +48,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LC_CTYPE ${LOCALEDIR}/${LANG}
 	${CP} -p ${BASELOCALEDIR}/${LANG}/LC_CTYPE \
 		${LOCALEDIR}/${LANG}/LC_CTYPE.old
-.if !defined(PACKAGE_BUILDING) # don't modify building environment
-	${LN} -sf ${LOCALEDIR}/${LANG}/LC_CTYPE \
+	${CP} -p ${LOCALEDIR}/${LANG}/LC_CTYPE \
 		${BASELOCALEDIR}/${LANG}/LC_CTYPE
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
