@@ -28,8 +28,12 @@ USE_ANT=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar -Dlibdir=${JAVALIBDIR} -Dnoget=""
 MAKE_ENV+=	LANG=C
-ALL_TARGET=	dist
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+.if defined(PACKAGE_BUILDING)
+ALL_TARGET=	dist
+.else
+ALL_TARGET=	compile test jar dist
+.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE.txt NOTICE.txt api
