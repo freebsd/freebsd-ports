@@ -70,10 +70,6 @@ DOC_FILES=	AUTHORS INSTALL NEWS README \
 		doc/protocol-1.txt doc/status-1.txt \
 		doc/protocol-2.txt doc/reporting-bugs.txt
 
-pre-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
@@ -82,28 +78,26 @@ do-install:
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
 
-post-install: install-doc install-man
+post-install:
 	@${TOUCH} ${DISTCCD_PIDFILE}
-	@${CHOWN} distcc:distcc ${DISTCCD_PIDFILE}
 .if defined(WITH_COMPILER_LINKS)
 	@${MKDIR} ${PREFIX}/${CCLINKDIR}
 .for link in ${DISTCC_COMPILERS}
 	${LN} -sf ${PREFIX}/bin/distcc ${PREFIX}/${CCLINKDIR}/${link}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
-
-install-doc:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
-
-install-man:
 .for f in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/man/${f} ${MANPREFIX}/man/man1
 .endfor
+	@${CAT} ${PKGMESSAGE}
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 
 .include <bsd.port.post.mk>
