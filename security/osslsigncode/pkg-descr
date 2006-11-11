@@ -1,0 +1,4 @@
+Platform-independent tool for Authenticode signing of EXE/CAB files - uses
+OpenSSL and libcurl. It also supports timestamping.
+
+WWW: http://sourceforge.net/projects/osslsigncode/
