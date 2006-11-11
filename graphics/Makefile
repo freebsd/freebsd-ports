@@ -664,6 +664,7 @@
     SUBDIR += vigra
     SUBDIR += vips
     SUBDIR += visionegg
+    SUBDIR += visprint
     SUBDIR += vp
     SUBDIR += vvv
     SUBDIR += whirlgif
