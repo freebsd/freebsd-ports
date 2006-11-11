@@ -44,8 +44,6 @@ include/gaim/gtkutils.h
 include/gaim/gtkwhiteboard.h
 %%CAP%%lib/gaim/cap.la
 %%CAP%%lib/gaim/cap.so
-lib/gaim/docklet.la
-lib/gaim/docklet.so
 lib/gaim/extplacement.la
 lib/gaim/extplacement.so
 lib/gaim/gaimrc.la
@@ -548,7 +546,6 @@ share/gnome/pixmaps/gaim/tb_drag_arrow_right.xpm
 share/gnome/pixmaps/gaim/tb_drag_arrow_up.xpm
 share/gnome/pixmaps/gaim/typed.png
 share/gnome/pixmaps/gaim/typing.png
-share/gnome/sounds/gaim/Makefile.mingw
 share/gnome/sounds/gaim/alert.wav
 share/gnome/sounds/gaim/login.wav
 share/gnome/sounds/gaim/logout.wav
