@@ -8,9 +8,11 @@ etc/lynx.lss
 %%DOCSDIR%%/COPYHEADER
 @exec ln -sf %D/%F %D/share/lynx_help/%f
 @unexec rm -f %D/share/lynx_help/%f
+%%DOCSDIR%%/COPYHEADER.asc
 %%DOCSDIR%%/COPYING
 @exec ln -sf %D/%F %D/share/lynx_help/%f
 @unexec rm -f %D/share/lynx_help/%f
+%%DOCSDIR%%/COPYING.asc
 %%DOCSDIR%%/PROBLEMS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/docs/CHANGES2.3
