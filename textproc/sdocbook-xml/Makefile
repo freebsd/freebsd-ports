@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdocbook-xml
-PORTVERSION= 	4.1.2.5
-PORTREVISION=	2
+PORTVERSION= 	1.1
+PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/4.1.2.5/
-DISTNAME=	simple${PORTVERSION:S/.//g}
+MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/${PORTVERSION}/
+DISTNAME=	docbook-simple-${PORTVERSION}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	"Simplified" DocBook XML DTD
