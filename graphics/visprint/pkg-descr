@@ -1,0 +1,9 @@
+Visprint makes fractal fingerprint png images based on the contents of any
+file. The image will be different for almost every file with even slightly
+different contents. Visprint uses the IFS fractal generation process,
+pioneered by Michael Barnsley. It is a way to create images which are
+self-similar to infinite depths. In other words, the picture is made up of
+smaller versions of itself.
+
+Author:	Goiz "Samhain" <hackerbunny@tastyrabbit.net>
+WWW:	http://www.tastyrabbit.net/visprint/
