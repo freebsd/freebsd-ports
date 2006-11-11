@@ -26,6 +26,7 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		VORBIS "Support for OGG Vorbis Audio" on \
 		WAV "Support for WAV Audio" on \
 		AAC "Support for MP4/AAC Audio" off \
+		MUSEPACK "Support for MPC Audio" off \
 		MOD "Support for MOD Audio" off \
 		ICONV "Support for international characters" on \
 	        ID3TAG "Support for id3v1 tag encoding" off \
@@ -55,6 +56,12 @@ LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
+.endif
+
+.ifdef(WITH_MUSEPACK)
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+.else
+CONFIGURE_ARGS+=--disable-mpc
 .endif
 
 .ifdef(WITH_MOD)
