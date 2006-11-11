@@ -16,7 +16,7 @@ MAINTAINER=	des@FreeBSD.org
 COMMENT=	XSL DocBook stylesheets
 
 RUN_DEPENDS=	${XMLDIR}/docbook/4.2/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
-		${XMLDIR}/sdocbook/4.1.2.5/catalog:${PORTSDIR}/textproc/sdocbook-xml
+		${XMLDIR}/sdocbook/1.1/catalog:${PORTSDIR}/textproc/sdocbook-xml
 
 .ifndef NOPORTDOCS
 DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}
