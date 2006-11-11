@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d68618a-7199-11db-a2ad-000c6ec775d9">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<name>ja-bugzilla</name>
+	<range><gt>2.*</gt><lt>2.22.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/2.18.5/">
+	  <ul>
+	    <li>Sometimes the information put into the &lt;h1&gt; and
+	      &lt;h2&gt; tags in Bugzilla was not properly escaped,
+	      leading to a possible XSS vulnerability.</li>
+	    <li>Bugzilla administrators were allowed to put raw,
+	      unfiltered HTML into many fields in Bugzilla, leading to
+	      a possible XSS vulnerability.  Now, the HTML allowed in
+	      those fields is limited.</li>
+	    <li>attachment.cgi could leak the names of private
+	      attachments</li>
+	    <li>The "deadline" field was visible in the XML format of
+	      a bug, even to users who were not a member of the
+	      "timetrackinggroup."</li>
+	    <li>A malicious user could pass a URL to an admin, and
+	      make the admin delete or change something that he had
+	      not intended to delete or change.</li>
+	    <li>It is possible to inject arbitrary HTML into the
+	      showdependencygraph.cgi page, allowing for a cross-site
+	      scripting attack.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5453</cvename>
+      <cvename>CVE-2006-5454</cvename>
+      <cvename>CVE-2006-5455</cvename>
+      <url>http://www.bugzilla.org/security/2.18.5/</url>
+    </references>
+    <dates>
+      <discovery>2006-10-15</discovery>
+      <entry>2006-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92442c4b-6f4a-11db-bd28-0012f06707f0">
     <topic>Imlib2 -- multiple image file processing vulnerabilities</topic>
     <affects>
@@ -6493,11 +6541,12 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="46f7b598-a781-11da-906a-fde5cdde365e">
-    <topic>bugzilla -- multiple vulnerability</topic>
+    <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>bugzilla</name>
-	<range><ge>2.*</ge><lt>2.20.1</lt></range>
+	<name>ja-bugzilla</name>
+	<range><ge>2.17.1</ge><lt>2.20.1</lt></range>
       </package>
     </affects>
     <description>
@@ -6509,11 +6558,17 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2006-2420</cvename>
+      <cvename>CVE-2006-0916</cvename>
+      <cvename>CVE-2006-0915</cvename>
+      <cvename>CVE-2006-0914</cvename>
+      <cvename>CVE-2006-0913</cvename>
       <url>http://www.bugzilla.org/security/2.18.4/</url>
     </references>
     <dates>
       <discovery>2006-02-20</discovery>
       <entry>2006-02-27</entry>
+      <modified>2006-11-11</modified>
     </dates>
   </vuln>
 
