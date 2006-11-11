@@ -7,6 +7,7 @@
 
 PORTNAME=	proofgeneral
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 DISTNAME=	ProofGeneral-3.6pre051004
@@ -19,12 +20,10 @@ PKGNAMESUFFIX+=	-${EMACS_NAME}
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	${LOCALBASE}/share/applications/.keep_me:${PORTSDIR}/misc/kdehier
 
-BROKEN=		Incorrect pkg-plist
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64"
+BROKEN="Does not build on amd64"
 .endif
 
 #
