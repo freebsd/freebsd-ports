@@ -1,5 +1,5 @@
 --- Make/makedefs.orig	Sat Dec 10 09:51:33 2005
-+++ Make/makedefs	Wed Nov  1 18:19:31 2006
++++ Make/makedefs	Sat Nov 11 21:44:06 2006
 @@ -55,7 +55,7 @@
  DEF        = -DPRODUCER_VERSION=\"$(VERSION)\"\
               -DPRODUCER_VERSION_REVISION="$(VERSION_REVISION)"
@@ -36,12 +36,12 @@
  INST_DEMO_SRC      = $(INST_SRC)/demos
  
  LINK               = ln -sf
-@@ -124,7 +124,7 @@
- LDFLAGS += -L$(OPENTHREADS_LIB_DIR)
+@@ -305,7 +305,7 @@
+ 
+   GL_LIBS           = -lGL
+   X_LIBS            = -lXmu -lX11
+-  OPEN_THREAD_LIB   = -lOpenThreads -lpthread
++  OPEN_THREAD_LIB   = -lOpenThreads $(PTHREAD_LIBS)
+ 
  endif
  
--OPEN_THREAD_LIB = -lOpenThreads
-+OPEN_THREAD_LIB = -lOpenThreads ${PTHREAD_LIBS}
- PTHREAD_LIB = -lpthread
- 
- STATICLIB_EXT = a
