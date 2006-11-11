@@ -8,12 +8,11 @@
 PORTNAME=	Ice
 PORTVERSION=	3.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.1/ \
-		ftp://ftp.ipt.ru/pub/download/
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.1/
 PKGNAMEPREFIX=	py-
 DISTNAME=	IcePy-${PORTVERSION}
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
