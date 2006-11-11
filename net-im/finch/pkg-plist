@@ -12,6 +12,7 @@ include/gaim/gnt/gntrequest.h
 include/gaim/gnt/gntstatus.h
 include/gaim/gnt/gntui.h
 include/gnt/gnt.h
+include/gnt/gntbindable.h
 include/gnt/gntbox.h
 include/gnt/gntbutton.h
 include/gnt/gntcheckbox.h
@@ -24,6 +25,7 @@ include/gnt/gntline.h
 include/gnt/gntmarshal.h
 include/gnt/gntmenu.h
 include/gnt/gntmenuitem.h
+include/gnt/gntmenuitemcheck.h
 include/gnt/gntstyle.h
 include/gnt/gnttextview.h
 include/gnt/gnttree.h

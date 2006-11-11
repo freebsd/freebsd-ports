@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	2.0.0.b4
+PORTVERSION=	2.0.0.b5
 PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX?=	lib
-DISTNAME=	gaim-2.0.0beta4
+DISTNAME=	${PORTNAME}-2.0.0beta5
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Gaim multi-protocol messaging client
