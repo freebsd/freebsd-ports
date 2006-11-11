@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-power-manager
 PORTVERSION=	2.16.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -31,7 +32,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libwnck \
 CONFIGURE_ARGS=	--disable-icon-framing \
 		--docdir=${PREFIX}/share/doc/${PORTNAME} \
 		--with-doc-dir=${PREFIX}/share/doc \
-		--disable-docbook-docs
+		--disable-docbook-docs \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
