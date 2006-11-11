@@ -10,7 +10,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	klog
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ADIF compatible logging application
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
