@@ -7,6 +7,7 @@
 
 PORTNAME=	belote
 PORTVERSION=	20061109
+PORTREVISION=	1
 CATEGORIES=	french games java
 MASTER_SITES=	http://coincher.free.fr/
 DISTNAME=	belote
