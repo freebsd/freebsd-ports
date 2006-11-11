@@ -1,6 +1,12 @@
 #!/bin/sh
 # $Id$
 
+if [ -n "$LANG" ]; then
+	# Pour une raison inconnue, les accents ne sont pas affichés
+	# avec les locales UTF-8. Changeons donc UTF-8 en ISO8859-15.
+	export LANG=`echo "$LANG" | sed -e 's|\.UTF-8|.ISO8859-15|'`
+fi
+
 mkdir -p ~/.belote || exit 1
 ln -sf %%DATADIR%%/data.bin ~/.belote || exit 1
 
