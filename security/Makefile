@@ -297,6 +297,7 @@
     SUBDIR += openvpn-devel
     SUBDIR += opieprint
     SUBDIR += osiris
+    SUBDIR += osslsigncode
     SUBDIR += outguess
     SUBDIR += p5-Authen-Captcha
     SUBDIR += p5-Authen-CyrusSASL
