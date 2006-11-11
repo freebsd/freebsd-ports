@@ -7,7 +7,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:timidity/} \
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/:ump \
@@ -39,7 +39,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump --with-default-path=${LOCALBASE}/share/timidity
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_XPM=	yes
 WANT_GNOME=	yes
 # CONFIGURE_ARGS+=	--enable-motif
