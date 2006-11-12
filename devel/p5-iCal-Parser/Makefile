@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iCal-Parser
-PORTVERSION=	1.11
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/R/RF/RFRANKEL
@@ -16,12 +16,13 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Parse iCalendar files into a data structure
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-	${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
-	${SITE_PERL}/DateTime/Format/ICal.pm:${PORTSDIR}/devel/p5-DateTime-Format-ICal \
-	${SITE_PERL}/Text/vFile/asData.pm:${PORTSDIR}/devel/p5-Text-vFile-asData
+	p5-FreezeThaw>=0.43:${PORTSDIR}/devel/p5-FreezeThaw \
+	p5-DateTime-Format-ICal>=0.08:${PORTSDIR}/devel/p5-DateTime-Format-ICal \
+	p5-Text-vFile-asData>=0.02:${PORTSDIR}/devel/p5-Text-vFile-asData
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
 MAN3=		iCal::Parser.3
 
 .include <bsd.port.mk>
