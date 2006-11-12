@@ -31,6 +31,15 @@ gnu patch is gpatch for FreeBSD.
  # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
  
  
+@@ -169,7 +169,7 @@
+ cws-cmcfixes28.diff
+ 
+ # fix build with newer gccs
+-buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
++# buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
+ 
+ # [ LinuxOnly ]
+ 
 @@ -755,7 +757,7 @@
  autodoc-add-missing-stdio-h.diff, rengelha
  
@@ -49,3 +58,12 @@ gnu patch is gpatch for FreeBSD.
  
  # Fix warnings that appear on x86-64 & are considered dangerous
  # FIXME file up-stream
+@@ -908,7 +908,7 @@
+ sixtyfour-warnings-binfilter.diff, jholesov
+ 
+ # fix build with newer gccs
+-buildfix-binfilter-gcc-4.1.2-NULL.diff, rengelha, i#70684
++# buildfix-binfilter-gcc-4.1.2-NULL.diff, rengelha, i#70684
+ 
+ [ VCL ]
+ 

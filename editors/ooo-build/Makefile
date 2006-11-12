@@ -30,7 +30,7 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOOBUILD_VERSION=2.0.4.1
+OOOBUILD_VERSION=2.0.4.3
 OOOBUILD_TAG=ood680-m5
 OOOSRC=		OOo_2.0.4_src.tar.gz
 OOOTAG=		OOD680_m5
