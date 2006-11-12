@@ -161,6 +161,9 @@
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/ToggleButton.py
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/ToggleButton.pyc
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/ToggleButton.pyo
+%%PYTHON_SITELIBDIR%%/ocempgui/widgets/TooltipWindow.py
+%%PYTHON_SITELIBDIR%%/ocempgui/widgets/TooltipWindow.pyc
+%%PYTHON_SITELIBDIR%%/ocempgui/widgets/TooltipWindow.pyo
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/TwistedRenderer.py
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/TwistedRenderer.pyc
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/TwistedRenderer.pyo
@@ -250,6 +253,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/examples/tictactoe/cross.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/tictactoe/tictactoe.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/togglebutton.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/tooltipwindow.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/tuffy.ttf
 %%PORTDOCS%%%%DOCSDIR%%/examples/twisted_client.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/twisted_server.py
@@ -298,6 +302,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/uml/statusbar.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/table.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/togglebutton.png
+%%PORTDOCS%%%%DOCSDIR%%/uml/tooltipwindow.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/twistedrenderer.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/viewport.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/window.png
