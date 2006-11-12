@@ -1,0 +1,20 @@
+bin/wsjt
+bin/wsjt.py
+%%DATADIR%%/CALL3.TXT
+%%PYTHON_SITELIBDIR%%/Audio.so
+%%PYTHON_SITELIBDIR%%/Pmw.py
+%%PYTHON_SITELIBDIR%%/PmwBlt.py
+%%PYTHON_SITELIBDIR%%/PmwColor.py
+%%PYTHON_SITELIBDIR%%/astro.py
+%%PYTHON_SITELIBDIR%%/g.py
+%%PYTHON_SITELIBDIR%%/go.py
+%%PYTHON_SITELIBDIR%%/options.py
+%%PYTHON_SITELIBDIR%%/palettes.py
+%%PYTHON_SITELIBDIR%%/smeter.py
+%%PYTHON_SITELIBDIR%%/specjt.py
+%%PORTDOCS%%%%DOCSDIR%%/Announce.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/UpdateHistory.txt
+%%PORTDOCS%%%%DOCSDIR%%/WSJT_Source_Code.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

@@ -119,6 +119,7 @@
     SUBDIR += viewfax
     SUBDIR += vpb-driver
     SUBDIR += vrflash
+    SUBDIR += wsjt
     SUBDIR += wwl
     SUBDIR += wy60
     SUBDIR += xastir
