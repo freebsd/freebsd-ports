@@ -79,7 +79,7 @@ OPTIONS+=	CYRUS23_LDA "Use Cyrus's 2.3 deliver as LDA" off
 OPTIONS+=	EXIM_LDA "Use Exim as local delivery agent" off
 OPTIONS+=	MAILDROP_LDA "Use Maildrop as local delivery agent" off
 OPTIONS+=	PROCMAIL_LDA "Use Procmail as local delivery agent" off
-OPTIONS+=	SAFECAT_LDA "Use Safecat as local delivery agent" off"
+OPTIONS+=	SAFECAT_LDA "Use Safecat as local delivery agent" off
 OPTIONS+=	SENDMAIL_LDA "Use Sendmail as local delivery agent" off
 
 OPTIONS+=	SENDMAIL "Play nice with sendmail server" off
