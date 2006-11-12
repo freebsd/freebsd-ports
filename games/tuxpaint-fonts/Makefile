@@ -22,18 +22,16 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 # Available font languages.
-LANGS=		Chinese Chinese_Simplified Japanese Korean
+LANGS=		Chinese Chinese_Simplified Korean
 
 # Define distfiles for all languages.
 CHINESE_DISTFILES=		${PORTNAME}-ttf-chinese-2003.01.05
 CHINESE_SIMPLIFIED_DISTFILES=	${PORTNAME}-ttf-chinese-simplified-2004.06.05
-JAPANESE_DISTFILES=		${PORTNAME}-ttf-japanese-2003.01.24
 KOREAN_DISTFILES=		${PORTNAME}-ttf-korean-2002.12.05
 
 # Define language codes.
 CHINESE_CODE=			zh
 CHINESE_SIMPLIFIED_CODE=	zh_cn
-JAPANESE_CODE=			ja
 KOREAN_CODE=			ko
 
 # Generate options menu.
