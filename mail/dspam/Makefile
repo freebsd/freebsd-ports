@@ -79,6 +79,7 @@ OPTIONS+=	CYRUS23_LDA "Use Cyrus's 2.3 deliver as LDA" off
 OPTIONS+=	EXIM_LDA "Use Exim as local delivery agent" off
 OPTIONS+=	MAILDROP_LDA "Use Maildrop as local delivery agent" off
 OPTIONS+=	PROCMAIL_LDA "Use Procmail as local delivery agent" off
+OPTIONS+=	SAFECAT_LDA "Use Safecat as local delivery agent" off"
 OPTIONS+=	SENDMAIL_LDA "Use Sendmail as local delivery agent" off
 
 OPTIONS+=	SENDMAIL "Play nice with sendmail server" off
@@ -513,7 +514,7 @@ pre-configure:
 	@${ECHO_CMD}
 .if !( ${LDA_TOTAL_COUNT:S/o//}==${LDA_COUNT} || ${LDA_TOTAL_COUNT}==${LDA_COUNT} )
 	@${ECHO_CMD} "You can only use one local delivery agent at once."
-	@${ECHO_CMD} "See ${DSPAM_ETC}/dspam.conf for how to chage it at run time."
+	@${ECHO_CMD} "See ${DSPAM_ETC}/dspam.conf for how to change it at run time."
 	@${FALSE}
 .endif
 .if ${_DBDRV}==""
