@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/
 
@@ -45,6 +45,7 @@ CONFIGURE_ARGS+=	--disable-nls
 .else
 USE_GETTEXT=	yes
 PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
+		share/locale/es/LC_MESSAGES/monotone.mo \
 		share/locale/fr/LC_MESSAGES/monotone.mo \
 		share/locale/it/LC_MESSAGES/monotone.mo \
 		share/locale/ja/LC_MESSAGES/monotone.mo \
