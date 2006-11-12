@@ -1636,7 +1636,6 @@
     SUBDIR += pinstall
     SUBDIR += pkg-config
     SUBDIR += plan9port
-    SUBDIR += ply
     SUBDIR += pmake
     SUBDIR += pmd
     SUBDIR += pmk
@@ -1722,6 +1721,7 @@
     SUBDIR += py-pefile
     SUBDIR += py-period
     SUBDIR += py-plex
+    SUBDIR += py-ply
     SUBDIR += py-pmock
     SUBDIR += py-pqueue
     SUBDIR += py-protocols
