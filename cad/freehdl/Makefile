@@ -34,6 +34,8 @@ MANCOMPRESSED=	no
 
 PLIST_TMP=	${WRKDIR}/plist_tmp/
 
+PLIST_REPL=	${SED} "s|share/${PORTNAME}|%%DATADIR%%|1"
+
 plist: build
 	@${ECHO} "===>  Rebuilding PLIST."
 	@${TOUCH} ${PLIST}
@@ -41,13 +43,19 @@ plist: build
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
 		prefix=${PLIST_TMP} ${INSTALL_TARGET}
-	@${RM} -rf ${PLIST_TMP}/man
-	@${FIND} -d ${PLIST_TMP} -type f \
+	@${RM} -rf ${PLIST_TMP}/man ${PLIST_TMP}/info
+	@${FIND} -d ${PLIST_TMP} -not -type d \
 		| ${SED} "s|${PLIST_TMP}||1" \
-		>> ${PLIST}
-	@${FIND} -d ${PLIST_TMP}/*/* -type d \
+		| ${PLIST_REPL} >> ${PLIST}
+	@${FIND} -d ${PLIST_TMP} -type d -mindepth 2 \
 		| ${SED} "s|${PLIST_TMP}|@dirrm |1" \
-		>> ${PLIST}
+		| ${PLIST_REPL} >> ${PLIST}
 	@${RM} -rf ${PLIST_TMP}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	doesn't link
+.endif
+
+.include <bsd.port.post.mk>
