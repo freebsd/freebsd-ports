@@ -66,6 +66,9 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/accept_language.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/accept_language.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/accept_language.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/wsgi_handler.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/wsgi_handler.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/wsgi_handler.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.pyo
