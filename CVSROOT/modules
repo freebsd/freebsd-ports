@@ -4102,6 +4102,7 @@ gwhich		ports/misc/gwhich
 gwm		ports/x11-wm/gwm
 gworkspace	ports/deskutils/gworkspace
 gwyddion	ports/science/gwyddion
+gx2osd		ports/audio/gx2osd
 gxanim		ports/multimedia/gxanim
 gxditview	ports/textproc/gxditview
 gxemul		ports/emulators/gxemul
