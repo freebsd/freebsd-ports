@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # generate full build shell script for OpenOffice.org
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/generate.pl,v 1.8 2005-11-25 23:22:20 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/generate.pl,v 1.9 2006-11-12 22:11:34 maho Exp $
 
 print "#!/bin/csh\n";
 print "make deinstall clean\n";

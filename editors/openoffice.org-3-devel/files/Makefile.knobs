@@ -31,6 +31,12 @@ CONFIGURE_ARGS+=	--disable-gnome-vfs
 USE_GNOME+=		gnomevfs2
 .endif
 
+.if defined(WITH_EVOLUTION2)
+CONFIGURE_ARGS+=	--enable-evolution2=yes
+.else
+USE_GNOME+=		glib20
+.endif
+
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
 .else
@@ -120,6 +126,11 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You can compile OOo with gpc instead of libart by"
 	@${ECHO} "make -DWITH_GPC"
+.endif
+.if !defined(WITH_EVOLUTION2)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with evolution2 support by"
+	@${ECHO} "make -DWITH_EVOLUTION2"
 .endif
 	@${ECHO}
 	@${ECHO} "NOTICE:"
