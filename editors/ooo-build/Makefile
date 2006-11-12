@@ -89,9 +89,9 @@ pre-configure:
 .endif
 
 .if defined(DEVELOPER_VER)
-MASTERDIR=	${.CURDIR}/../openoffice.org-2.0-devel
+MASTERDIR=	${.CURDIR}/../openoffice.org-2-devel
 .else
-MASTERDIR=	${.CURDIR}/../openoffice.org-2.0
+MASTERDIR=	${.CURDIR}/../openoffice.org-2
 .endif
 
 .include "${MASTERDIR}/Makefile"
