@@ -11441,7 +11441,6 @@ plugdaemon	ports/net/plugdaemon
 plugger		ports/www/plugger
 plugger-plugins-hubbe	ports/www/plugger-plugins-hubbe
 plwm		ports/x11-wm/plwm
-ply		ports/devel/ply
 pm-lib		ports/mail/pm-lib
 pm3-base	ports/lang/pm3-base
 pm3-forms	ports/lang/pm3-forms
@@ -12125,6 +12124,7 @@ py-pefile	ports/devel/py-pefile
 py-period	ports/devel/py-period
 py-pexpect	ports/misc/py-pexpect
 py-plex		ports/devel/py-plex
+py-ply		ports/devel/py-ply
 py-pmock	ports/devel/py-pmock
 py-posix1e	ports/security/py-posix1e
 py-pow		ports/security/py-pow

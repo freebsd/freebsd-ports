@@ -2538,3 +2538,4 @@ databases/p5-Catalyst-Model-CDBI-Plain|www/p5-Catalyst-Model-CDBI-Plain|2006-11-
 net-p2p/linux-overnet-core||2006-11-10|No longer downloadable
 editors/openoffice.org-2.0|editors/openoffice.org-2|2006-11-12|Better version number handling
 editors/openoffice.org-2.0-devel|editors/openoffice.org-2-devel|2006-11-12|Better version number handling
+devel/ply|devel/py-ply|2006-11-12|Rename to consistency with other Python ports
