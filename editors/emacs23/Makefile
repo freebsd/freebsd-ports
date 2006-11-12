@@ -30,7 +30,7 @@ USE_XPM=	yes
 .endif
 
 .if defined(WITH_MENUBAR_FONTSET)
-PATCH_SITES=		http://www.nijino.com/ari/emacs/
+PATCH_SITES=		http://nijino.homelinux.net/emacs/
 PATCHFILES=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
 PATCH_DIST_STRIP=	-p1
 .endif
