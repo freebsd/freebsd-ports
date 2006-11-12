@@ -7,7 +7,7 @@
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libodbcxx
@@ -21,6 +21,8 @@ USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-isqlxx
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CXXFLAGS+=	${PTHREAD_CFLAGS}
 
 # libodbc++ needs an ODBC driver manager to be installed, and it supports
 # both iODBC and unixODBC.
@@ -30,7 +32,7 @@ IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
 .endif
 
 .if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
-WITH_IODBC?=	yes
+WITH_UNIXODBC?=	yes
 .endif
 
 .if defined(WITH_IODBC)
@@ -39,8 +41,6 @@ CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 .elif defined(WITH_UNIXODBC)
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
-CXXFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
