@@ -135,6 +135,7 @@
 %%DATADIR%%/ac_lib_id3.m4
 %%DATADIR%%/ac_lib_readline.m4
 %%DATADIR%%/ac_lib_upnp.m4
+%%DATADIR%%/ac_lib_wad.m4
 %%DATADIR%%/ac_libtoolize_cflags.m4
 %%DATADIR%%/ac_need_stdint_h.m4
 %%DATADIR%%/ac_need_target_h.m4
@@ -278,7 +279,10 @@
 %%DATADIR%%/acx_mpi.m4
 %%DATADIR%%/acx_pthread.m4
 %%DATADIR%%/acx_restrict.m4
+%%DATADIR%%/adl_compute_relative_paths.m4
+%%DATADIR%%/adl_compute_standard_relative_paths.m4
 %%DATADIR%%/adl_func_getopt_long.m4
+%%DATADIR%%/adl_normalize_path.m4
 %%DATADIR%%/ag_check_allocated_ctime.m4
 %%DATADIR%%/ag_check_pathfind.m4
 %%DATADIR%%/ag_check_posix_regcomp.m4
@@ -291,6 +295,7 @@
 %%DATADIR%%/am_with_mpatrol.m4
 %%DATADIR%%/ax_add_am_macro.m4
 %%DATADIR%%/ax_add_recursive_am_macro.m4
+%%DATADIR%%/ax_am_jobserver.m4
 %%DATADIR%%/ax_am_macros.m4
 %%DATADIR%%/ax_append_to_file.m4
 %%DATADIR%%/ax_auto_include_headers.m4
@@ -308,6 +313,7 @@
 %%DATADIR%%/ax_boost_unit_test_framework.m4
 %%DATADIR%%/ax_boost_wserialization.m4
 %%DATADIR%%/ax_c___attribute__.m4
+%%DATADIR%%/ax_c_declare_block.m4
 %%DATADIR%%/ax_cc_maxopt.m4
 %%DATADIR%%/ax_cflags_aix_option.m4
 %%DATADIR%%/ax_cflags_gcc_option.m4
@@ -318,6 +324,7 @@
 %%DATADIR%%/ax_cflags_sun_option.m4
 %%DATADIR%%/ax_cflags_warn_all.m4
 %%DATADIR%%/ax_cflags_warn_all_ansi.m4
+%%DATADIR%%/ax_check_aligned_access_required.m4
 %%DATADIR%%/ax_check_compiler_flags.m4
 %%DATADIR%%/ax_check_define.m4
 %%DATADIR%%/ax_check_gd.m4
@@ -328,6 +335,7 @@
 %%DATADIR%%/ax_compare_version.m4
 %%DATADIR%%/ax_compiler_vendor.m4
 %%DATADIR%%/ax_config_feature.m4
+%%DATADIR%%/ax_count_cpus.m4
 %%DATADIR%%/ax_create_pkgconfig_info.m4
 %%DATADIR%%/ax_create_stdint_h.m4
 %%DATADIR%%/ax_cvs.m4
@@ -353,8 +361,11 @@
 %%DATADIR%%/ax_func_posix_memalign.m4
 %%DATADIR%%/ax_func_which_gethostbyname_r.m4
 %%DATADIR%%/ax_gcc_archflag.m4
+%%DATADIR%%/ax_gcc_const_call.m4
 %%DATADIR%%/ax_gcc_install_dir.m4
+%%DATADIR%%/ax_gcc_malloc_call.m4
 %%DATADIR%%/ax_gcc_option.m4
+%%DATADIR%%/ax_gcc_warn_unused_result.m4
 %%DATADIR%%/ax_gcc_x86_cpuid.m4
 %%DATADIR%%/ax_install_files.m4
 %%DATADIR%%/ax_lang_compiler_ms.m4
@@ -370,6 +381,7 @@
 %%DATADIR%%/ax_path_milter.m4
 %%DATADIR%%/ax_prefix_config_h.m4
 %%DATADIR%%/ax_print_to_file.m4
+%%DATADIR%%/ax_prog_tcl.m4
 %%DATADIR%%/ax_python.m4
 %%DATADIR%%/ax_python_config_var.m4
 %%DATADIR%%/ax_require_one_func.m4
@@ -403,6 +415,7 @@
 %%DATADIR%%/etr_struct_semun.m4
 %%DATADIR%%/etr_sysv_ipc.m4
 %%DATADIR%%/immdx_lib_metis.m4
+%%DATADIR%%/klm_sys_weak_alias.m4
 %%DATADIR%%/lib_socket_nsl.m4
 %%DATADIR%%/mdl_cxx_function_try_blocks.m4
 %%DATADIR%%/mdl_have_opengl.m4
@@ -413,7 +426,6 @@
 %%DATADIR%%/ms_check_pgsql_db.m4
 %%DATADIR%%/ms_pgsql_priv_root.m4
 %%DATADIR%%/ms_prog_pgclient.m4
-%%DATADIR%%/normpath.m4
 %%DATADIR%%/patch_libtool_changing_cmds_ifs.m4
 %%DATADIR%%/patch_libtool_on_darwin_pass_all.m4
 %%DATADIR%%/patch_libtool_on_darwin_zsh_overquoting.m4
@@ -423,11 +435,13 @@
 %%DATADIR%%/peti_silent_mode.m4
 %%DATADIR%%/peti_with_dmalloc.m4
 %%DATADIR%%/qef_c_noreturn.m4
-%%DATADIR%%/relpaths.m4
+%%DATADIR%%/rlc_xercesc.m4
 %%DATADIR%%/rssh_check_sunpro_c.m4
 %%DATADIR%%/sg_afs.m4
 %%DATADIR%%/smr_with_build_path.m4
-%%DATADIR%%/stdrelpaths.m4
+%%DATADIR%%/swig_enable_cxx.m4
+%%DATADIR%%/swig_multi_module_support.m4
+%%DATADIR%%/swig_python.m4
 %%DATADIR%%/type_socklen_t.m4
 %%DATADIR%%/vl_check_sign.m4
 %%DATADIR%%/vl_decl_wchar_max.m4
@@ -440,7 +454,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_ac_c_ifdef.html
 %%PORTDOCS%%%%DOCSDIR%%/html/_ac_latex_test.html
 %%PORTDOCS%%%%DOCSDIR%%/html/_acltx_test.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ac-archive.css
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_arg_with_path_style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_as_dirname.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_as_mkdir_p.html
@@ -575,6 +588,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_lib_id3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_lib_readline.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_lib_upnp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ac_lib_wad.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_libtoolize_cflags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_need_stdint_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ac_need_target_h.html
@@ -718,7 +732,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/acx_mpi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/acx_pthread.html
 %%PORTDOCS%%%%DOCSDIR%%/html/acx_restrict.html
+%%PORTDOCS%%%%DOCSDIR%%/html/adl_compute_relative_paths.html
+%%PORTDOCS%%%%DOCSDIR%%/html/adl_compute_standard_relative_paths.html
 %%PORTDOCS%%%%DOCSDIR%%/html/adl_func_getopt_long.html
+%%PORTDOCS%%%%DOCSDIR%%/html/adl_normalize_path.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ag_check_allocated_ctime.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ag_check_pathfind.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ag_check_posix_regcomp.html
@@ -729,8 +746,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ag_check_uname_syscall.html
 %%PORTDOCS%%%%DOCSDIR%%/html/am_rpm_init.html
 %%PORTDOCS%%%%DOCSDIR%%/html/am_with_mpatrol.html
+%%PORTDOCS%%%%DOCSDIR%%/html/autoconf-archive.css
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_add_am_macro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_add_recursive_am_macro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_am_jobserver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_am_macros.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_append_to_file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_auto_include_headers.html
@@ -748,6 +767,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_unit_test_framework.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_wserialization.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c___attribute__.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_c_declare_block.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cc_maxopt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_aix_option.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_gcc_option.html
@@ -758,6 +778,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_sun_option.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_warn_all.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_warn_all_ansi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_check_aligned_access_required.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_check_compiler_flags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_check_define.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_check_gd.html
@@ -768,6 +789,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_compare_version.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_compiler_vendor.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_config_feature.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_count_cpus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_create_pkgconfig_info.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_create_stdint_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cvs.html
@@ -793,8 +815,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_func_posix_memalign.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_func_which_gethostbyname_r.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_gcc_archflag.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_gcc_const_call.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_gcc_install_dir.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_gcc_malloc_call.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_gcc_option.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_gcc_warn_unused_result.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_gcc_x86_cpuid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_install_files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_lang_compiler_ms.html
@@ -810,6 +835,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_path_milter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_prefix_config_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_print_to_file.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_prog_tcl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_python.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_python_config_var.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_require_one_func.html
@@ -844,6 +870,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/etr_sysv_ipc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/immdx_lib_metis.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/klm_sys_weak_alias.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib_socket_nsl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macros-by-category.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mdl_cxx_function_try_blocks.html
@@ -855,7 +882,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ms_check_pgsql_db.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ms_pgsql_priv_root.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ms_prog_pgclient.html
-%%PORTDOCS%%%%DOCSDIR%%/html/normpath.html
 %%PORTDOCS%%%%DOCSDIR%%/html/notfound.html
 %%PORTDOCS%%%%DOCSDIR%%/html/patch_libtool_changing_cmds_ifs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/patch_libtool_on_darwin_pass_all.html
@@ -866,11 +892,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/peti_silent_mode.html
 %%PORTDOCS%%%%DOCSDIR%%/html/peti_with_dmalloc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qef_c_noreturn.html
-%%PORTDOCS%%%%DOCSDIR%%/html/relpaths.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rlc_xercesc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rssh_check_sunpro_c.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sg_afs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/smr_with_build_path.html
-%%PORTDOCS%%%%DOCSDIR%%/html/stdrelpaths.html
+%%PORTDOCS%%%%DOCSDIR%%/html/swig_enable_cxx.html
+%%PORTDOCS%%%%DOCSDIR%%/html/swig_multi_module_support.html
+%%PORTDOCS%%%%DOCSDIR%%/html/swig_python.html
 %%PORTDOCS%%%%DOCSDIR%%/html/type_socklen_t.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vl_check_sign.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vl_decl_wchar_max.html
