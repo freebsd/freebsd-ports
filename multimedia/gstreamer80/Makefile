@@ -10,9 +10,7 @@ PORTNAME=	gstreamer
 PORTVERSION=	0.8.12
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://gstreamer.freedesktop.org/src/gstreamer/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${GST_VERSION}
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	80
 DIST_SUBDIR=	gnome2
 
