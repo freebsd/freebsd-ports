@@ -6,9 +6,9 @@
 
 PORTNAME=	aspathtree
 PORTVERSION=	4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	#http://carmen.ipv6.cselt.it/ipv6/tools/ASpath-tree/index.html
+MASTER_SITES=	http://ipv6.niif.hu/~mohacsi/downloads/
 DISTNAME=	ASpath-tree-v${PORTVERSION}
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
@@ -18,14 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
 		whois3:${PORTSDIR}/net/ripe-whois
 
 WRKSRC=			${WRKDIR}/ASpath-tree-v${PORTVERSION}/
-RESTRICTED=		"not redistributable, license agreement required"
-
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		"You need to read the license and disclaimer on http://carmen.ipv6.tilab.com/cgi-bin/download.pl?pkg=ASpath-tree and download ${DISTFILES} into ${DISTDIR}"
-.endif
-BROKEN=		Unfetchable
+RESTRICTED=		not redistributable, license agreement required
 
 NO_BUILD=	yes
 USE_PERL5=	yes
@@ -82,4 +75,4 @@ post-install:
 	@${ECHO}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
