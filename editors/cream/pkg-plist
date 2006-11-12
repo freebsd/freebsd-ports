@@ -26,6 +26,7 @@ share/applications/cream.desktop
 %%PORTDOCS%%%%DOCSDIR%%/docs-html/statusline-thumb.png
 %%PORTDOCS%%%%DOCSDIR%%/docs-html/statusline.html
 %%PORTDOCS%%%%DOCSDIR%%/docs-html/statusline.png
+%%PORTDOCS%%%%DOCSDIR%%/docs-html/statusline-orig.png
 %%PORTDOCS%%%%DOCSDIR%%/docs-html/vim.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/COPYING.txt
@@ -67,7 +68,7 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/cream-conf.example.vim
 %%VIMRUNTIME%%/cream/cream-devel.vim
 %%VIMRUNTIME%%/cream/cream-expertmode.vim
-%%VIMRUNTIME%%/cream/cream-explorer.vim
+@comment %%VIMRUNTIME%%/cream/cream-explorer.vim
 %%VIMRUNTIME%%/cream/cream-filetype.vim
 %%VIMRUNTIME%%/cream/cream-find.vim
 %%VIMRUNTIME%%/cream/cream-gui.vim
@@ -130,6 +131,7 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/addons/cream-highlight-ctrlchars.vim
 %%VIMRUNTIME%%/cream/addons/cream-highlight-mbyte.vim
 %%VIMRUNTIME%%/cream/addons/cream-ispell.vim
+%%VIMRUNTIME%%/cream/addons/cream-slide-generator.vim
 %%VIMRUNTIME%%/cream/addons/cream-sort.vim
 %%VIMRUNTIME%%/cream/addons/cream-spell-french.vim
 %%VIMRUNTIME%%/cream/addons/cream-stamp-filename.vim
@@ -221,7 +223,7 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/creamrc
 %%VIMRUNTIME%%/cream/genutils.vim
 %%VIMRUNTIME%%/cream/multvals.vim
-%%VIMRUNTIME%%/cream/opsplorer.vim
+@comment %%VIMRUNTIME%%/cream/opsplorer.vim
 %%VIMRUNTIME%%/cream/taglist.vim
 @dirrm %%VIMRUNTIME%%/cream/spelldicts
 @dirrm %%VIMRUNTIME%%/cream/lang
