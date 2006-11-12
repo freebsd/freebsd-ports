@@ -1,5 +1,5 @@
---- ./system.mk.orig	Wed May 24 13:23:51 2006
-+++ ./system.mk	Mon Jul 17 18:15:24 2006
+--- system.mk.orig	Thu Nov  2 20:15:51 2006
++++ system.mk	Thu Nov  2 20:40:45 2006
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -53,7 +53,26 @@
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -107,7 +107,7 @@
+@@ -82,8 +82,8 @@
+ X11_INCLUDES=-I$(X11_PREFIX)/include
+ 
+ # Change commenting to disable Xinerama support
+-XINERAMA_LIBS=-lXinerama
+-DEFINES += -DCF_XINERAMA
++#XINERAMA_LIBS=-lXinerama
++#DEFINES += -DCF_XINERAMA
+ # For Solaris
+ #XINERAMA_LIBS=
+ #DEFINES += -DCF_SUN_XINERAMA
+@@ -101,7 +101,6 @@
+ # on SunOS.
+ #DEFINES += -DCF_SUN_F1X_REMAP
+ 
+-
+ ##
+ ## libc
+ ##
+@@ -110,7 +109,7 @@
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
@@ -62,7 +81,7 @@
  
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
-@@ -116,24 +116,24 @@
+@@ -119,24 +118,24 @@
  #DEFINES += -DCF_NO_LOCALE
  
  # On some other systems you may something like this:
@@ -93,7 +112,7 @@
  EXPORT_DYNAMIC=-Xlinker --export-dynamic
  
  # The following options are mainly for development use and can be used
-@@ -147,7 +147,7 @@
+@@ -150,7 +149,7 @@
  #POSIX_SOURCE=-D_POSIX_SOURCE
  
  # Most systems
