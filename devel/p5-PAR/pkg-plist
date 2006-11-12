@@ -5,6 +5,7 @@ bin/par.pl
 bin/tkpp
 %%SITE_PERL%%/App/Packer/PAR.pm
 %%SITE_PERL%%/PAR.pm
+%%SITE_PERL%%/PAR/Environment.pod
 %%SITE_PERL%%/PAR/FAQ.pod
 %%SITE_PERL%%/PAR/Filter.pm
 %%SITE_PERL%%/PAR/Filter/Bleach.pm
@@ -14,9 +15,14 @@ bin/tkpp
 %%SITE_PERL%%/PAR/Filter/PodStrip.pm
 %%SITE_PERL%%/PAR/Heavy.pm
 %%SITE_PERL%%/PAR/Packer.pm
+%%SITE_PERL%%/PAR/StrippedPARL
+%%SITE_PERL%%/PAR/StrippedPARL/Base.pm
+%%SITE_PERL%%/PAR/StrippedPARL/Dynamic.pm
+%%SITE_PERL%%/PAR/StrippedPARL/Static.pm
 %%SITE_PERL%%/PAR/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
 @dirrmtry %%SITE_PERL%%/App/Packer
 @dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/PAR/StrippedPARL
 @dirrmtry %%SITE_PERL%%/PAR/Filter
 @dirrmtry %%SITE_PERL%%/PAR
