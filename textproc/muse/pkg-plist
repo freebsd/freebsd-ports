@@ -29,8 +29,12 @@
 %%EMACS_SITE_LISPDIR%%/muse/muse-html.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-http.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-http.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-import-docbook.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-import-docbook.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-latex.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-latex.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-import-xml.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-import-xml.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-journal.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-journal.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-latex.el
