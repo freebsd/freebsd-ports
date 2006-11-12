@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	Net-FTP-Common
-PORTVERSION=	5.31
+PORTVERSION=	5.32
 CATEGORIES=	ftp perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/T/TB/TBONE
+MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module to provide simplify common usages of Net::FTP
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 PERL_CONFIGURE=	yes
