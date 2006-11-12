@@ -37,6 +37,8 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
+	@${CP} -R ${WRKSRC}/flags ${DATADIR}
+	@${CP} -R ${WRKSRC}/icons ${DATADIR}
 	@${CP} -R ${WRKSRC}/scripts ${DATADIR}
 	@${CP} -R ${WRKSRC}/styles ${DATADIR}
 .if !defined(NOPORTDOCS)
