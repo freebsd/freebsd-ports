@@ -259,6 +259,7 @@
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
     SUBDIR += guspat
+    SUBDIR += gx2osd
     SUBDIR += gxmms2
     SUBDIR += hawkvoice
     SUBDIR += herrie

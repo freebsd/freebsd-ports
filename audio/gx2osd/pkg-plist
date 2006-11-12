@@ -1,0 +1,11 @@
+bin/gx2osd
+%%DATADIR%%/skins/skin.xsd
+%%DATADIR%%/skins/default/default.xml
+%%DATADIR%%/skins/default/noimage.png
+%%DATADIR%%/skins/default/paused.png
+%%DATADIR%%/skins/default/playing.png
+%%DATADIR%%/skins/default/skin.png
+%%DATADIR%%/skins/default/stopped.png
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%
