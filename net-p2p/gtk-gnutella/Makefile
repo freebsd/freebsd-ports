@@ -24,7 +24,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.96.2
+PORTVERSION=	0.96.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -101,6 +101,7 @@ PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/ja/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/nb/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/nl/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/tr/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/uk/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 .endif
