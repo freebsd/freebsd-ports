@@ -80,6 +80,9 @@
 #				- The directory where Lua modules (.lua) are installed.
 # LUA_PKGNAMEPREFIX
 #				- The package name prefix used by Lua modules.
+# LUA_CMD		- The path to the Lua interpreter.
+# LUAC_CMD		- The path to the Lua compiler.
+# TOLUA_CMD		- The path to the tolua program.
 #
 # Examples:
 # - A port that needs Lua 4.0 and tolua (also 4.0) libraries (lua for building
@@ -313,7 +316,7 @@ _LUA_VER=				${ver}
 #
 
 # Version.
-LUA_VER=				${_LUA_VER}
+LUA_VER?=				${_LUA_VER}
 LUA_VER_SH?=			${LUA_VER:C/[[:digit:]]\.([[:digit:]])/\1/}
 LUA_VER_STR?=			${LUA_VER:S/.//g}
 
@@ -328,6 +331,11 @@ LUA_MODSHAREDIR?=		${LUA_PREFIX}/share/lua/${LUA_VER}
 
 # Package name.
 LUA_PKGNAMEPREFIX?=		lua${LUA_VER_STR}-
+
+# Programs.
+LUA_CMD?=				${LUA_PREFIX}/bin/lua-${LUA_VER}
+LUAC_CMD?=				${LUA_PREFIX}/bin/luac-${LUA_VER}
+TOLUA_CMD?=				${LUA_PREFIX}/bin/tolua-${LUA_VER}
 
 .endif		# !_LUA_Version_Done && (_POSTMKINCLUDED || \
 #			(LUA_PREMK && BEFOREPORTMK && (USE_LUA || USE_LUA_NOT)))
