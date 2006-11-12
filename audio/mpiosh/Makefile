@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpio
 DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digit@lway MPIO MP3 player tool
 
 LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb

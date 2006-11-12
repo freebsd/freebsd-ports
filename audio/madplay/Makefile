@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
 MASTER_SITE_SUBDIR=	mad
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Madplay MP3 player (part of MAD project)
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \

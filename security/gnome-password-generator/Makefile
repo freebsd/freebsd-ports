@@ -12,7 +12,7 @@ CATEGORIES=	security gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnome-password
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME 2 password generator
 
 USE_GNOME=	pygnome2

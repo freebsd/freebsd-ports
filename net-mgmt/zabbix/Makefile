@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and network monitoring solution
 
 .ifdef(ZABBIX_AGENT_ONLY)

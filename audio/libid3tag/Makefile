@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
 MASTER_SITE_SUBDIR=	mad
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags library (part of MAD project)
 
 USE_GNOME=	pkgconfig
