@@ -7,13 +7,12 @@
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
-# or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING and
-# modify _UPD_LINE_NO=(no_of_added_lines-1) in this Makefile.
-# Else the port will be broken. Thanks.
+# or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING
+# Thanks.
 
 PORTNAME=	dspam
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
 
@@ -22,9 +21,8 @@ COMMENT=	Bayesian spam filter - stable maintenance version
 
 PORTVER_MAJ=	3.6.8
 #SNAP_DATE=	.20060421.2101
-_UPD_LINE_NO=	13
 
-MIN_OPTIONS_VER=	${PORTNAME}-3.6.6
+MIN_OPTIONS_VER=	${PORTNAME}-3.6.8_1
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
@@ -120,6 +118,7 @@ DSPAM_MODE?=	4510
 DSPAM_OWNER?=	root
 DSPAM_GROUP?=	mail
 
+DSPAM_ETC?=	${LOCALBASE}/etc
 DSPAM_HOME?=	${_VAR_DIR}/db/dspam
 DSPAM_HOME_OWNER?=	${DSPAM_OWNER}
 DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
@@ -127,6 +126,7 @@ DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
 
@@ -339,7 +339,7 @@ CONFIGURE_ARGS+=	--enable-domain-scale
 .endif
 
 # add one 'o' here for each new LDA
-LDA_TOTAL_COUNT=	oooooooo	# 8
+LDA_TOTAL_COUNT=	ooooooooo	# 9
 LDA_COUNT=	${LDA_TOTAL_COUNT}
 
 .if defined(WITH_CYRUS21_LDA)
@@ -380,6 +380,12 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 .ifdef(WITH_PROCMAIL_LDA)
 RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/procmail'
+LDA_COUNT:=	${LDA_COUNT:S/o//}
+.endif
+
+.ifdef(WITH_SAFECAT_LDA)
+RUN_DEPENDS+=	safecat:${PORTSDIR}/sysutils/safecat
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/safecat tmp new'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
 
@@ -455,7 +461,8 @@ pre-everything::
 .ifndef(MAINT)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
-	@${GREP} -B 1 -A ${_UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
+	@${ECHO_CMD} "###########################################################################"
+	@${SED} -n < ${FILESDIR}/UPDATING "/^# ${PKGNAME}/,/^#####/p"
 	@${ECHO_CMD} ""
 	@sleep 5
 .endif
@@ -469,6 +476,7 @@ pre-extract:	check-options-version
 	@${ECHO_CMD} "DSPAM_OWNER=${DSPAM_OWNER} (default: root)"
 	@${ECHO_CMD} "DSPAM_GROUP=${DSPAM_GROUP} (default: mail)"
 	@${ECHO_CMD} "DSPAM_MODE=${DSPAM_MODE}"
+	@${ECHO_CMD} "DSPAM_ETC=${DSPAM_ETC} (default: ${LOCALBASE}/etc"
 	@${ECHO_CMD} "DSPAM_HOME=${DSPAM_HOME} (default: ${_VAR_DIR}/db/dspam)"
 	@${ECHO_CMD} "DSPAM_HOME_OWNER=${DSPAM_HOME_OWNER}"
 	@${ECHO_CMD} "DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP}"
@@ -505,7 +513,7 @@ pre-configure:
 	@${ECHO_CMD}
 .if !( ${LDA_TOTAL_COUNT:S/o//}==${LDA_COUNT} || ${LDA_TOTAL_COUNT}==${LDA_COUNT} )
 	@${ECHO_CMD} "You can only use one local delivery agent at once."
-	@${ECHO_CMD} "See ${LOCALBASE}/etc/dspam.conf for how to chage it at run time."
+	@${ECHO_CMD} "See ${DSPAM_ETC}/dspam.conf for how to chage it at run time."
 	@${FALSE}
 .endif
 .if ${_DBDRV}==""
