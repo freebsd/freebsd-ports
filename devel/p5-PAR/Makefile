@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PAR
-PORTVERSION=	0.95.7
+PORTVERSION=	0.95.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PAR
@@ -19,9 +19,9 @@ COMMENT=	Perl Archive Toolkit
 BUILD_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Compress-Zlib>=1.30:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Getopt-ArgvFile>=1.07:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
-		p5-Module-ScanDeps>=0.62:${PORTSDIR}/devel/p5-Module-ScanDeps \
+		p5-Module-ScanDeps>=0.69:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature \
-		p5-PAR-Dist>=0.15:${PORTSDIR}/devel/p5-PAR-Dist \
+		p5-PAR-Dist>=0.21:${PORTSDIR}/devel/p5-PAR-Dist \
 		${SITE_PERL}/B/Deobfuscate.pm:${PORTSDIR}/devel/p5-B-Deobfuscate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -30,11 +30,21 @@ CONFLICTS=	sketchy-*
 PERL_CONFIGURE=	yes
 
 MAN1=		par.pl.1 parl.1 pp.1 tkpp.1
-MAN3=		App::Packer::PAR.3 PAR.3 \
-		PAR::Packer.3 PAR::FAQ.3 PAR::Filter.3 \
-		PAR::Filter::Bleach.3 PAR::Filter::Bytecode.3 \
-		PAR::Filter::Obfuscate.3 PAR::Filter::PatchContent.3 \
-		PAR::Filter::PodStrip.3 PAR::Heavy.3 PAR::Tutorial.3
+MAN3=		App::Packer::PAR.3 \
+		PAR.3 \
+		PAR::Environment.3 \
+		PAR::FAQ.3 \
+		PAR::Filter.3 \
+		PAR::Filter::Bleach.3 \
+		PAR::Filter::Bytecode.3 \
+		PAR::Filter::Obfuscate.3 \
+		PAR::Filter::PatchContent.3 \
+		PAR::Filter::PodStrip.3 \
+		PAR::Heavy.3 PAR::Tutorial.3 \
+		PAR::Packer.3 \
+		PAR::StrippedPARL::Base.3 \
+		PAR::StrippedPARL::Dynamic.3 \
+		PAR::StrippedPARL::Static.3
 
 .include <bsd.port.pre.mk>
 
