@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTVERSION=	1.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,9 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ARGS+=	--disable-portmon --disable-proc-uptime
+CONFIGURE_ARGS+=	--disable-portmon \
+			--disable-proc-uptime \
+			--disable-hddtemp
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
@@ -27,6 +28,13 @@ MAN1=		conky.1
 
 PORTDOCS=	README AUTHORS ChangeLog TODO \
 		docs.html variables.html config_settings.html
+
+.if defined(WITH_AUDACIOUS)
+LIB_DEPENDS+=		audacious.3:${PORTSDIR}/multimedia/audacious
+CONFIGURE_ARGS+=	--enable-audacious
+.else
+CONFIGURE_ARGS+=	--disable-audacious
+.endif
 
 .if defined(WITH_BMPX)
 BUILD_DEPENDS+=		beep-media-player-2:${PORTSDIR}/multimedia/bmpx
