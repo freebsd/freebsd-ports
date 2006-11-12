@@ -58,7 +58,7 @@ MAN1=		php-config.1 phpize.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.6.1.patch.gz
+PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.6.2.patch.gz
 PATCH_SITES=	http://www.hardened-php.net/suhosin/_media/
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=	SUHOSIN=""
