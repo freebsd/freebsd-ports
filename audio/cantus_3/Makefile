@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://dl.debain.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2

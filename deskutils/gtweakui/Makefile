@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtweakui
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of simple dialogs as a front end to GConf
 
 USE_X_PREFIX=	yes

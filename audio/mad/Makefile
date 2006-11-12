@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "meta-port" for the MAD sound playback system
 
 RUN_DEPENDS=	madplay:${PORTSDIR}/audio/madplay
