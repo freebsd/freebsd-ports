@@ -7,6 +7,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -18,13 +19,13 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
-		skstream-0.3.3:${PORTSDIR}/net/skstream \
+		skstream-0.3.4:${PORTSDIR}/net/skstream \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	YES
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 USE_GCC=	3.4
 USE_BZIP2=	YES
 USE_PGSQL=	YES
@@ -36,7 +37,7 @@ MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		Does not compile
+IGNORE=		does not compile
 .endif
 
 post-patch:
