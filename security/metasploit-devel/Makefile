@@ -6,23 +6,33 @@
 #
 
 PORTNAME=	metasploit
-DISTVERSION=	3.0-beta-1
+DISTVERSION=	3.0-beta-3
 CATEGORIES=	security
 MASTER_SITES=	#
 PKGNAMESUFFIX=	-devel
-DISTNAME=	framework-${DISTVERSION}
+DISTNAME=	framework-${DISTVERSION}-svn
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
-NO_CDROM=	May not be re-sold for more than the cost of duplication
-NO_PACKAGE=	May not be redistributed after patching
+RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
+		${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems \
+		${LOCALBASE}/lib/ruby/gems/1.8/specifications/activerecord-1.14.4.gemspec:${PORTSDIR}/databases/rubygem-activerecord
+
+SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
+		msfpayload msfpescan msfweb
+
+.if defined(WITH_MSFWX)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/wxruby.so:${PORTSDIR}/x11-toolkits/ruby-wx
+SCRIPTS+=	msfwx
+.endif
+
+WRKSRC=	${WRKDIR}/framework-${DISTVERSION}
+RESTRICTED=	May not be re-sold for more than the cost of duplication, nor redistributed after patching
+
 CONFLICTS=	metasploit-2*
 NO_BUILD=	yes
 USE_RUBY=	yes
-
-SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
-		msfpayload msfpescan msfweb msfwx
 
 .include <bsd.port.pre.mk>
 
