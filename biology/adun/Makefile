@@ -37,8 +37,5 @@ post-patch:
 		${WRKSRC}/Kernel/AdunKernel/GNUmakefile \
 		${WRKSRC}/UL/GNUmakefile \
 		${WRKSRC}/UL/AdunServer/GNUmakefile
-	${REINPLACE_CMD} -e 's|HOME|${PREFIX}|' \
-		${WRKSRC}/Plugins/Analyse/GNUmakefile \
-		${WRKSRC}/Plugins/Results/GNUmakefile
 
 .include <bsd.port.mk>
