@@ -9,8 +9,7 @@ PORTNAME=	cantus_3
 PORTVERSION=	3.0.0
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.gascom.ru/pub/asa/ \
-		http://web222.mis02.de/releases/cantus_3/
+MASTER_SITES=	http://dl.debain.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	asa@gascom.ru
