@@ -1,6 +1,7 @@
 bin/nfsen
 bin/nfsen.rc
 bin/nfsend
+bin/RebuildHierarchy.pl
 bin/testPlugin
 @unexec if cmp -s %D/etc/nfsen.conf %D/etc/nfsen-dist.conf; then rm -f %D/etc/nfsen.conf; fi
 @exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
