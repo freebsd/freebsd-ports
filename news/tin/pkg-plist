@@ -7,11 +7,8 @@ bin/tinews.pl
 bin/url_handler.sh
 bin/w2r.pl
 @unexec if cmp -s %D/etc/tin.defaults %D/etc/tin.defaults.dist; then rm -f %D/etc/tin.defaults; fi
-@unexec if cmp -s %D/etc/mime.types %D/etc/tin.mime.types.dist; then rm -f %D/etc/mime.types; fi
 etc/tin.defaults.dist
 @exec [ -f %B/tin.defaults ] || cp %B/%f %B/tin.defaults
-etc/tin.mime.types.dist
-@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
 share/locale/de/LC_MESSAGES/tin.mo
 share/locale/en_GB/LC_MESSAGES/tin.mo
 share/locale/et/LC_MESSAGES/tin.mo

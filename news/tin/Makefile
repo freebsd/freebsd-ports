@@ -7,10 +7,10 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES+=	news ipv6
-MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/stable/ \
+MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.stikman.com/pub/tin/stable/ \
-		ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/stable/
 
 MAINTAINER?=	ache@FreeBSD.org
@@ -18,6 +18,7 @@ COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
 		pcre.0:${PORTSDIR}/devel/pcre
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -91,11 +92,14 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-patch:
-	@${MV} ${WRKSRC}/doc/tin.1 ${WRKSRC}/doc/tin.1.dist
-	@${SED} -e 's:/var/spool/news:/var/news:' \
+	${REINPLACE_CMD} -e 's:/var/spool/news:/var/news:' \
 		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:' \
 		-e 's:/usr/lib/news:${PREFIX}/news/lib:' \
-		<${WRKSRC}/doc/tin.1.dist >${WRKSRC}/doc/tin.1
+		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:' \
+		${WRKSRC}/doc/tin.1 ${WRKSRC}/doc/tin.5
+	${REINPLACE_CMD} \
+		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:' \
+		${WRKSRC}/src/mimetypes.c
 
 .if defined(WITH_TIN_CANLOCK)
 MAKE_ARGS+=	CANLIB='-L../libcanlock -lcanlock' \
@@ -114,10 +118,6 @@ post-install:
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} tin.defaults ${PREFIX}/etc/tin.defaults.dist
 	if [ ! -f ${PREFIX}/etc/tin.defaults ] ; then \
 		${CP} ${PREFIX}/etc/tin.defaults.dist ${PREFIX}/etc/tin.defaults; \
-	fi
-	cd ${WRKSRC}/doc; ${INSTALL_DATA} mime.types ${PREFIX}/etc/tin.mime.types.dist
-	if [ ! -f ${PREFIX}/etc/mime.types ] ; then \
-		${CP} ${PREFIX}/etc/tin.mime.types.dist ${PREFIX}/etc/mime.types; \
 	fi
 
 .include <bsd.port.post.mk>
