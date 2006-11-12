@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	Implementation of ANSI Forth
 
+DEPRECATED=	obsoleted by lang/pfe; use of this port is pretty much senseless
+EXPIRATION_DATE=	2006-12-14
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_BZIP2=	yes
