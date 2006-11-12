@@ -2536,3 +2536,5 @@ x11-fm/offix-files||2006-11-09|Has expired: development ceased in 1996
 x11-wm/icepref||2006-11-09|Has expired: is for IceWM version 1.04 (6 years old)
 databases/p5-Catalyst-Model-CDBI-Plain|www/p5-Catalyst-Model-CDBI-Plain|2006-11-09|Moved to correct category
 net-p2p/linux-overnet-core||2006-11-10|No longer downloadable
+editors/openoffice.org-2.0|editors/openoffice.org-2|2006-11-12|Better version number handling
+editors/openoffice.org-2.0-devel|editors/openoffice.org-2-devel|2006-11-12|Better version number handling
