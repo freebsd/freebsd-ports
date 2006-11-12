@@ -17,6 +17,17 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.6.8_1
+#
+
+Port changes:
+- added safecat as LDA [1]
+- give user the possibility to configure where dspam.conf is [1]
+
+[1] patch from Emil Isberg <emil@pyttemjuk.se> [1]
+
+
+###########################################################################
 # dspam-3.6.8
 #
 
