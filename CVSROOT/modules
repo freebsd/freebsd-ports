@@ -15074,6 +15074,7 @@ wput		ports/ftp/wput
 wqy		ports/x11-fonts/wqy
 wrapper		ports/x11/wrapper
 wsdlpull	ports/www/wsdlpull
+wsjt		ports/comms/wsjt
 wsmake		ports/www/wsmake
 wsoundprefs	ports/audio/wsoundprefs
 wsoundserver	ports/audio/wsoundserver
