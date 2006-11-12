@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_QueryTool
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	databases www pear
 
 MAINTAINER=	ports@FreeBSD.org
