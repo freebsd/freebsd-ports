@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${DISTDATE}
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	A set of useful GNU Autoconf macros
 
-DISTDATE=	2006-10-13
+DISTDATE=	2006-10-30
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
@@ -32,10 +32,10 @@ plist:
 		${ECHO_MSG} >&2 "do 'make configure' first!"; exit 64; }
 	cd ${WRKSRC} && ${MAKE} -V DATA | \
 	${TR} ' ' '\n' | \
-	${SED}	-e 's,^./m4src/,%%DATADIR%%/,' \
-		-e 's,^./,%%PORTDOCS%%%%DOCSDIR%%/,' \
+	${SED}  -e 's,^\./m4[a-z]*/,%%DATADIR%%/,' \
+		-e 's,^\./,%%PORTDOCS%%%%DOCSDIR%%/,' \
 		-e 's,/htmldoc/,/html/,' \
-		-e 's,^[A-Z],%%PORTDOCS%%%%DOCSDIR%%/&,' | \
+		-e 's,^[A-Za-z_],%%PORTDOCS%%%%DOCSDIR%%/&,' | \
 	${SORT} -u >${PLIST}
 	${ECHO_CMD} '%%PORTDOCS%%@dirrm %%DOCSDIR%%/html' >>${PLIST}
 	${ECHO_CMD} '%%PORTDOCS%%@dirrm %%DOCSDIR%%' >>${PLIST}
