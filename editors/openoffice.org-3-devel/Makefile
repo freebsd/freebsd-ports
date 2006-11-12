@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	2.0.${SNAPDATE}
+PORTVERSION?=	2.2.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680_m${MILESTONE}/&,} \
 		http://openoffice.lunarshells.com/sources/ \
@@ -71,11 +71,11 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-RELEASE_NR=		2.0
-MILESTONE?=		191
+RELEASE_NR=		2.2
+MILESTONE?=		193
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20061101
+SNAPDATE=		20061110
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -98,9 +98,9 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .if defined(WITH_GNUGCJ)
 GCCVER=41
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
-BUILD_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
+BUILD_DEPENDS+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
 RUN_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
-RUN_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
+RUN_DEPENDS+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
 .else
 .if ${ARCH} == amd64
 GCCVER=41
@@ -257,7 +257,7 @@ post-install:
 			-e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
-	@{LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
+	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
 			${PREFIX}/share/applications/${EXECBASE}
 	@${PRINTF} "share/applications/${EXECBASE}\n" >> ${TMPPLIST}
 	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
