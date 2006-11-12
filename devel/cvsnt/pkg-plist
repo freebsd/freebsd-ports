@@ -4,40 +4,47 @@ bin/cvsnt
 etc/cvsnt/PServer.example
 etc/cvsnt/Plugins.example
 etc/cvsnt/ca.pem
-lib/cvsnt/audit_trigger.la
-lib/cvsnt/audit_trigger.so
-lib/cvsnt/checkout_trigger.la
-lib/cvsnt/checkout_trigger.so
-lib/cvsnt/default_trigger.la
-lib/cvsnt/default_trigger.so
-lib/cvsnt/email_trigger.la
-lib/cvsnt/email_trigger.so
-lib/cvsnt/enum_protocol.la
-lib/cvsnt/enum_protocol.so
-lib/cvsnt/ext_protocol.la
-lib/cvsnt/ext_protocol.so
-lib/cvsnt/ext_xdiff.la
-lib/cvsnt/ext_xdiff.so
-lib/cvsnt/fork_protocol.la
-lib/cvsnt/fork_protocol.so
-lib/cvsnt/gserver_protocol.la
-lib/cvsnt/gserver_protocol.so
-lib/cvsnt/pserver_protocol.la
-lib/cvsnt/pserver_protocol.so
-lib/cvsnt/server_protocol.la
-lib/cvsnt/server_protocol.so
-lib/cvsnt/sserver_protocol.la
-lib/cvsnt/sserver_protocol.so
-lib/cvsnt/sspi_protocol.la
-lib/cvsnt/sspi_protocol.so
-lib/libcvsapi-2.5.02.2115.so
+lib/cvsnt/mdns/mini.la
+lib/cvsnt/mdns/mini.so
+lib/cvsnt/protocols/enum.la
+lib/cvsnt/protocols/enum.so
+lib/cvsnt/protocols/ext.la
+lib/cvsnt/protocols/ext.so
+lib/cvsnt/protocols/fork.la
+lib/cvsnt/protocols/fork.so
+lib/cvsnt/protocols/gserver.la
+lib/cvsnt/protocols/gserver.so
+lib/cvsnt/protocols/pserver.la
+lib/cvsnt/protocols/pserver.so
+lib/cvsnt/protocols/server.la
+lib/cvsnt/protocols/server.so
+lib/cvsnt/protocols/sserver.la
+lib/cvsnt/protocols/sserver.so
+lib/cvsnt/protocols/sspi.la
+lib/cvsnt/protocols/sspi.so
+lib/cvsnt/triggers/audit.la
+lib/cvsnt/triggers/audit.so
+lib/cvsnt/triggers/checkout.la
+lib/cvsnt/triggers/checkout.so
+lib/cvsnt/triggers/email.la
+lib/cvsnt/triggers/email.so
+lib/cvsnt/triggers/info.la
+lib/cvsnt/triggers/info.so
+lib/cvsnt/xdiff/extdiff.la
+lib/cvsnt/xdiff/extdiff.so
+lib/libcvsapi-2.5.03.2382.so
 lib/libcvsapi.la
 lib/libcvsapi.so
-lib/libcvstools-2.5.02.2115.so
+lib/libcvstools-2.5.03.2382.so
 lib/libcvstools.la
 lib/libcvstools.so
-lib/libmdnsclient-2.5.02.2115.so
+lib/libmdnsclient-2.5.03.2382.so
 lib/libmdnsclient.la
 lib/libmdnsclient.so
+@dirrm lib/cvsnt/xdiff
+@dirrm lib/cvsnt/triggers
+@dirrm lib/cvsnt/protocols
+@dirrm lib/cvsnt/mdns
+@dirrm lib/cvsnt/database
 @dirrm lib/cvsnt
 @dirrm etc/cvsnt
