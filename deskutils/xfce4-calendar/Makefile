@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-calendar
 PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -22,7 +22,7 @@ COMMENT=	A calendar application to manage your time with XFce 4
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		dbh-1.0.1:${PORTSDIR}/databases/dbh
+		dbh-4.5.4:${PORTSDIR}/databases/dbh
 
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
