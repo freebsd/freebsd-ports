@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_Table
-PORTVERSION=	1.2.1
+PORTVERSION=	1.4.0
 CATEGORIES=	databases www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +20,11 @@ LATEST_LINK=	pear-DB_Table
 OPTIONS=	PEAR_HTML_QUICKFORM "PEAR::HTML_QuickForm support" off
 
 CATEGORY=	DB
-FILES=		Table.php Table/Manager.php Table/QuickForm.php Table/Valid.php
+FILES=		Table.php Table/Manager/ibase.php Table/Manager/mysql.php \
+		Table/Manager/mysqli.php Table/Manager/oci8.php \
+		Table/Manager/pgsql.php Table/Manager/sqlite.php \
+		Table/Date.php Table/Manager.php Table/QuickForm.php \
+		Table/Valid.php
 DOCS=		_sources.txt all-words.txt mssql-words.txt mysql-words.txt \
 		oci8-words.txt pgsql-words.txt sql92-words.txt sql99-words.txt \
 		sqlite-words.txt
