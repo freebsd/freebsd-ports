@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	3.02.92
+PORTVERSION=	3.02.93
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
