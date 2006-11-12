@@ -1,4 +1,4 @@
-# New ports collection makefile for:    price.app
+# New ports collection makefile for:    price
 # Date created:         28 Aug 2006
 # Whom:                 gurkan@linuks.mine.nu
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	price
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
