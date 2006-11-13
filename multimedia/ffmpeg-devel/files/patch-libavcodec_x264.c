@@ -1,6 +1,17 @@
---- libavcodec/x264.c.orig	Mon Feb 20 16:01:06 2006
-+++ libavcodec/x264.c	Mon Oct  2 22:26:03 2006
-@@ -148,7 +148,7 @@
+--- libavcodec/x264.c.orig	Mon Feb 20 14:01:29 2006
++++ libavcodec/x264.c	Mon Nov 13 10:29:53 2006
+@@ -142,13 +142,17 @@
+     x4->params.rc.b_stat_write = (avctx->flags & CODEC_FLAG_PASS1);
+     if(avctx->flags & CODEC_FLAG_PASS2) x4->params.rc.b_stat_read = 1;
+     else{
+-        if(avctx->crf) x4->params.rc.i_rf_constant = avctx->crf;
++#if X264_BUILD >= 54
++        if(avctx->crf) x4->params.rc.f_rf_constant = avctx->crf;
++#else
++	if(avctx->crf) x4->params.rc.i_rf_constant = avctx->crf;
++#endif
+         else if(avctx->cqp > -1) x4->params.rc.i_qp_constant = avctx->cqp;
+     }
  
      // if neither crf nor cqp modes are selected we have to enable the RC
      // we do it this way because we cannot check if the bitrate has been set
