@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pronto
-PORTVERSION=	2.2.5
-PORTREVISION=	2
+PORTVERSION=	2.2.6
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://muhri.net/pronto/
 
