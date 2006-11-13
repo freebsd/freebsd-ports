@@ -1,11 +1,16 @@
---- gen_eth.c.orig	Wed Oct 18 22:39:46 2006
-+++ gen_eth.c	Wed Oct 18 22:39:55 2006
-@@ -46,7 +46,7 @@
-       goto pcap_error;
+--- gen_eth.c.orig	Thu Sep 14 17:59:13 2006
++++ gen_eth.c	Tue Nov 14 00:28:18 2006
+@@ -25,6 +25,13 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <pthread.h>
++#ifdef __FreeBSD__
++#include <osreldate.h>
++
++#if __FreeBSD_version < 602100 || __FreeBSD_version < 700021
++#define PCAP_D_IN D_IN
++#endif
++#endif
  
-    /* Accept only incoming packets */
--   pcap_setdirection(p,PCAP_D_IN);
-+   pcap_setdirection(p,D_IN);
- #else
-    p = pcap_open(device,2048,
-                  PCAP_OPENFLAG_PROMISCUOUS | 
+ #ifdef CYGWIN
+ /* Needed for pcap_open() flags */
