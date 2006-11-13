@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang-doc
 PORTVERSION=	r11b1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.se/doc/doc-5.5.1/pdf/:release \
@@ -80,8 +81,6 @@ EXTRACT_ONLY=
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Documentation (PDF) for the Erlang/OTP system
-
-BROKEN=		Size mismatch
 
 NO_BUILD=	yes
 
