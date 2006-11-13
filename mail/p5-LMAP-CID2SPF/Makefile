@@ -29,4 +29,10 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} cid2spf ${PREFIX}/bin
 	cd ${WRKSRC} && ${INSTALL_DATA} CID2SPF.pm ${SITE_PERL}/LMAP
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires Perl 5.6 or newer. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
