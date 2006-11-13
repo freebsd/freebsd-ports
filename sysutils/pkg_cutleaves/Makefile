@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_cutleaves
-PORTVERSION=	20060430
+PORTVERSION=	20061113
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gegenunendlich.de/projects/${PORTNAME}/
 
