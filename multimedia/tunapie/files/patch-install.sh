@@ -1,5 +1,5 @@
---- install.sh	Sat Sep 30 01:02:29 2006
-+++ install.sh.port	Wed Oct 18 14:18:49 2006
+--- install.sh	Sat Nov 11 21:19:00 2006
++++ install.sh.port	Sun Nov 12 23:10:26 2006
 @@ -1,11 +1,9 @@
  #!/bin/sh
 -if [ "$1" = "--adult" ]; then echo '1'>/etc/tunapie.config 

@@ -24,4 +24,4 @@ etc/tunapie.config.default
 %%DATADIR%%/tuner.pyc
 %%DESKTOPDIR%%/tunapie.desktop
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
+@dirrmtry %%DESKTOPDIR%%
