@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		desktop-file-utils
-PORTVERSION=		0.11
+PORTVERSION=		0.12
 CATEGORIES=		devel
 MASTER_SITES=		http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -47,6 +47,8 @@ post-patch:
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/misc/desktop-entry-mode.el \
+	    	${PREFIX}/share/emacs/site-lisp/desktop-entry-mode.el
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
