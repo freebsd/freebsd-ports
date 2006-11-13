@@ -8,11 +8,10 @@
 #
 
 PORTNAME=	poedit
-PORTVERSION=	1.3.5
-PORTREVISION=	2
+PORTVERSION=	1.3.6
+PORTREVISION=	0
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
@@ -30,7 +29,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		WXRC="${X11BASE}/bin/wxrc-gtk2u-2.6"
-CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2u-2.6-config
+CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2u-2.6-config \
+		--mandir=${MANPREFIX}/man
 
 CPPFLAGS=	-I${BDB_INCLUDE_DIR} \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
