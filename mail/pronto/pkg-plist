@@ -1,15 +1,11 @@
+bin/cpronto.pl
 bin/pronto
 bin/pronto-main
-bin/prontoget
-bin/prontosend
 bin/prontobrowser
-bin/cpronto.pl
+bin/prontoget
 bin/prontolock
-lib/pronto/Pronto/Data/Message.pm
-lib/pronto/Pronto/Data/MessageOp.pm
-lib/pronto/Pronto/Crypt/GPG.pm
-lib/pronto/Pronto/Crypt/GUI.pm
-lib/pronto/Pronto/Crypt/PGP.pm
+bin/prontosend
+lib/pronto/HtmlStripper.pm
 lib/pronto/Pronto/About.pm
 lib/pronto/Pronto/AddressBook.pm
 lib/pronto/Pronto/CListView.pm
@@ -17,13 +13,17 @@ lib/pronto/Pronto/CPronto.pm
 lib/pronto/Pronto/Compose.pm
 lib/pronto/Pronto/Config.pm
 lib/pronto/Pronto/Crypt.pm
+lib/pronto/Pronto/Crypt/GPG.pm
+lib/pronto/Pronto/Crypt/GUI.pm
+lib/pronto/Pronto/Crypt/PGP.pm
+lib/pronto/Pronto/Data/Message.pm
+lib/pronto/Pronto/Data/MessageOp.pm
 lib/pronto/Pronto/Export.pm
 lib/pronto/Pronto/Filter.pm
 lib/pronto/Pronto/FirstRun.pm
 lib/pronto/Pronto/FolderMenus.pm
 lib/pronto/Pronto/FolderTree.pm
 lib/pronto/Pronto/Get.pm
-lib/pronto/Pronto/Getnonblocking.pm
 lib/pronto/Pronto/Help.pm
 lib/pronto/Pronto/IPC.pm
 lib/pronto/Pronto/Import.pm
@@ -39,6 +39,56 @@ lib/pronto/Pronto/Send.pm
 lib/pronto/Pronto/TableEdit.pm
 lib/pronto/Pronto/ViewAttachment.pm
 lib/pronto/Pronto/Widget.pm
+lib/pronto/docs/images/logo.gif
+lib/pronto/docs/index.html
+lib/pronto/docs/main.html
+lib/pronto/docs/option.html
+lib/pronto/migration-scripts/1.0to1.2
+lib/pronto/migration-scripts/1.2to2.0
+lib/pronto/migration-scripts/2.0to2.2
+lib/pronto/migration-scripts/MSOutlookAddresses2SQLPronto.pl
+lib/pronto/migration-scripts/addfiltercount.pl
+lib/pronto/migration-scripts/addref.pl
+lib/pronto/migration-scripts/bodytext2db
+lib/pronto/migration-scripts/combine.sh
+lib/pronto/migration-scripts/convert-dates.pl
+lib/pronto/migration-scripts/dbmigrate.pl
+lib/pronto/migration-scripts/dbswitch.pl
+lib/pronto/migration-scripts/dbswitch.pl~
+lib/pronto/migration-scripts/decodesubj.pl
+lib/pronto/migration-scripts/dropconfig.pl
+lib/pronto/migration-scripts/filter.pl
+lib/pronto/migration-scripts/fixboxlist.pl
+lib/pronto/migration-scripts/fixboxlist.pl~
+lib/pronto/migration-scripts/fixcontent.sh
+lib/pronto/migration-scripts/migrate.pl
+lib/pronto/migration-scripts/mkaddbtable.pl
+lib/pronto/migration-scripts/mkmimetable.pl
+lib/pronto/migration-scripts/setupfriendly.pl
+lib/pronto/pixmaps/aqua/ab.xpm
+lib/pronto/pixmaps/aqua/about.xpm
+lib/pronto/pixmaps/aqua/addressbook.xpm
+lib/pronto/pixmaps/aqua/back.xpm
+lib/pronto/pixmaps/aqua/down.xpm
+lib/pronto/pixmaps/aqua/exclamation.xpm
+lib/pronto/pixmaps/aqua/forward_flag.xpm
+lib/pronto/pixmaps/aqua/go.xpm
+lib/pronto/pixmaps/aqua/newm.xpm
+lib/pronto/pixmaps/aqua/paperclip.xpm
+lib/pronto/pixmaps/aqua/prefs.xpm
+lib/pronto/pixmaps/aqua/pronto-icon.xpm
+lib/pronto/pixmaps/aqua/reply_flag.xpm
+lib/pronto/pixmaps/aqua/search.xpm
+lib/pronto/pixmaps/aqua/spellcheck.xpm
+lib/pronto/pixmaps/aqua/tb_delete.xpm
+lib/pronto/pixmaps/aqua/tb_forward.xpm
+lib/pronto/pixmaps/aqua/tb_new_mail.xpm
+lib/pronto/pixmaps/aqua/tb_reply.xpm
+lib/pronto/pixmaps/aqua/tb_replyall.xpm
+lib/pronto/pixmaps/aqua/tb_send.xpm
+lib/pronto/pixmaps/aqua/top.xpm
+lib/pronto/pixmaps/aqua/up.xpm
+lib/pronto/pixmaps/aqua/vfolder.xpm
 lib/pronto/pixmaps/neon/ab.xpm
 lib/pronto/pixmaps/neon/about.xpm
 lib/pronto/pixmaps/neon/addressbook.xpm
@@ -63,6 +113,31 @@ lib/pronto/pixmaps/neon/tb_send.xpm
 lib/pronto/pixmaps/neon/top.xpm
 lib/pronto/pixmaps/neon/up.xpm
 lib/pronto/pixmaps/neon/vfolder.xpm
+lib/pronto/pixmaps/penguin/ab.xpm
+lib/pronto/pixmaps/penguin/about.xpm
+lib/pronto/pixmaps/penguin/addressbook.xpm
+lib/pronto/pixmaps/penguin/attach.xpm
+lib/pronto/pixmaps/penguin/back.xpm
+lib/pronto/pixmaps/penguin/down.xpm
+lib/pronto/pixmaps/penguin/exclamation.xpm
+lib/pronto/pixmaps/penguin/forward_flag.xpm
+lib/pronto/pixmaps/penguin/go.xpm
+lib/pronto/pixmaps/penguin/newm.xpm
+lib/pronto/pixmaps/penguin/paperclip.xpm
+lib/pronto/pixmaps/penguin/prefs.xpm
+lib/pronto/pixmaps/penguin/pronto-icon.xpm
+lib/pronto/pixmaps/penguin/reply_flag.xpm
+lib/pronto/pixmaps/penguin/search.xpm
+lib/pronto/pixmaps/penguin/spellcheck.xpm
+lib/pronto/pixmaps/penguin/tb_delete.xpm
+lib/pronto/pixmaps/penguin/tb_forward.xpm
+lib/pronto/pixmaps/penguin/tb_new_mail.xpm
+lib/pronto/pixmaps/penguin/tb_reply.xpm
+lib/pronto/pixmaps/penguin/tb_replyall.xpm
+lib/pronto/pixmaps/penguin/tb_send.xpm
+lib/pronto/pixmaps/penguin/top.xpm
+lib/pronto/pixmaps/penguin/up.xpm
+lib/pronto/pixmaps/penguin/vfolder.xpm
 lib/pronto/pixmaps/pro/ab.xpm
 lib/pronto/pixmaps/pro/about.xpm
 lib/pronto/pixmaps/pro/addressbook.xpm
@@ -89,94 +164,19 @@ lib/pronto/pixmaps/pro/tb_send.xpm
 lib/pronto/pixmaps/pro/top.xpm
 lib/pronto/pixmaps/pro/up.xpm
 lib/pronto/pixmaps/pro/vfolder.xpm
-lib/pronto/pixmaps/aqua/ab.xpm
-lib/pronto/pixmaps/aqua/about.xpm
-lib/pronto/pixmaps/aqua/addressbook.xpm
-lib/pronto/pixmaps/aqua/back.xpm
-lib/pronto/pixmaps/aqua/down.xpm
-lib/pronto/pixmaps/aqua/exclamation.xpm
-lib/pronto/pixmaps/aqua/forward_flag.xpm
-lib/pronto/pixmaps/aqua/go.xpm
-lib/pronto/pixmaps/aqua/newm.xpm
-lib/pronto/pixmaps/aqua/paperclip.xpm
-lib/pronto/pixmaps/aqua/prefs.xpm
-lib/pronto/pixmaps/aqua/pronto-icon.xpm
-lib/pronto/pixmaps/aqua/reply_flag.xpm
-lib/pronto/pixmaps/aqua/search.xpm
-lib/pronto/pixmaps/aqua/spellcheck.xpm
-lib/pronto/pixmaps/aqua/tb_delete.xpm
-lib/pronto/pixmaps/aqua/tb_forward.xpm
-lib/pronto/pixmaps/aqua/tb_new_mail.xpm
-lib/pronto/pixmaps/aqua/tb_reply.xpm
-lib/pronto/pixmaps/aqua/tb_replyall.xpm
-lib/pronto/pixmaps/aqua/tb_send.xpm
-lib/pronto/pixmaps/aqua/top.xpm
-lib/pronto/pixmaps/aqua/up.xpm
-lib/pronto/pixmaps/aqua/vfolder.xpm
-lib/pronto/pixmaps/penguin/ab.xpm
-lib/pronto/pixmaps/penguin/about.xpm
-lib/pronto/pixmaps/penguin/addressbook.xpm
-lib/pronto/pixmaps/penguin/attach.xpm
-lib/pronto/pixmaps/penguin/back.xpm
-lib/pronto/pixmaps/penguin/down.xpm
-lib/pronto/pixmaps/penguin/exclamation.xpm
-lib/pronto/pixmaps/penguin/forward_flag.xpm
-lib/pronto/pixmaps/penguin/go.xpm
-lib/pronto/pixmaps/penguin/newm.xpm
-lib/pronto/pixmaps/penguin/paperclip.xpm
-lib/pronto/pixmaps/penguin/prefs.xpm
-lib/pronto/pixmaps/penguin/pronto-icon.xpm
-lib/pronto/pixmaps/penguin/reply_flag.xpm
-lib/pronto/pixmaps/penguin/search.xpm
-lib/pronto/pixmaps/penguin/spellcheck.xpm
-lib/pronto/pixmaps/penguin/tb_delete.xpm
-lib/pronto/pixmaps/penguin/tb_forward.xpm
-lib/pronto/pixmaps/penguin/tb_new_mail.xpm
-lib/pronto/pixmaps/penguin/tb_reply.xpm
-lib/pronto/pixmaps/penguin/tb_replyall.xpm
-lib/pronto/pixmaps/penguin/tb_send.xpm
-lib/pronto/pixmaps/penguin/top.xpm
-lib/pronto/pixmaps/penguin/up.xpm
-lib/pronto/pixmaps/penguin/vfolder.xpm
 lib/pronto/pixmaps/splash.xpm
-lib/pronto/migration-scripts/1.0to1.2
-lib/pronto/migration-scripts/1.2to2.0
-lib/pronto/migration-scripts/2.0to2.2
-lib/pronto/migration-scripts/MSOutlookAddresses2SQLPronto.pl
-lib/pronto/migration-scripts/addfiltercount.pl
-lib/pronto/migration-scripts/addref.pl
-lib/pronto/migration-scripts/combine.sh
-lib/pronto/migration-scripts/convert-dates.pl
-lib/pronto/migration-scripts/dbmigrate.pl
-lib/pronto/migration-scripts/dbswitch.pl
-lib/pronto/migration-scripts/dbswitch.pl~
-lib/pronto/migration-scripts/decodesubj.pl
-lib/pronto/migration-scripts/dropconfig.pl
-lib/pronto/migration-scripts/filter.pl
-lib/pronto/migration-scripts/fixboxlist.pl
-lib/pronto/migration-scripts/fixcontent.sh
-lib/pronto/migration-scripts/migrate.pl
-lib/pronto/migration-scripts/mkaddbtable.pl
-lib/pronto/migration-scripts/mkmimetable.pl
-lib/pronto/migration-scripts/setupfriendly.pl
-lib/pronto/migration-scripts/bodytext2db
-lib/pronto/docs/images/logo.gif
-lib/pronto/docs/index.html
-lib/pronto/docs/main.html
-lib/pronto/docs/option.html
-lib/pronto/prontolib.pl
-lib/pronto/HtmlStripper.pm
 lib/pronto/pronto.gtkrc
+lib/pronto/prontolib.pl
+@dirrm lib/pronto/pixmaps/pro
+@dirrm lib/pronto/pixmaps/penguin
+@dirrm lib/pronto/pixmaps/neon
+@dirrm lib/pronto/pixmaps/aqua
+@dirrm lib/pronto/pixmaps
+@dirrm lib/pronto/migration-scripts
+@dirrm lib/pronto/docs/images
+@dirrm lib/pronto/docs
+@dirrm lib/pronto/Prontocrypt
 @dirrm lib/pronto/Pronto/Data
 @dirrm lib/pronto/Pronto/Crypt
 @dirrm lib/pronto/Pronto
-@dirrm lib/pronto/pixmaps/neon
-@dirrm lib/pronto/pixmaps/pro
-@dirrm lib/pronto/pixmaps/aqua
-@dirrm lib/pronto/pixmaps/penguin
-@dirrm lib/pronto/pixmaps
-@dirrm lib/pronto/migration-scripts
-@dirrm lib/pronto/Prontocrypt
-@dirrm lib/pronto/docs/images
-@dirrm lib/pronto/docs
 @dirrm lib/pronto
