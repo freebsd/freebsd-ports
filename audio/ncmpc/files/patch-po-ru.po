@@ -1,0 +1,194 @@
+--- po/ru.po	Sun Jan 23 18:37:43 2005
++++ po/ru.po	Sun Nov 12 20:28:22 2006
+@@ -3,16 +3,17 @@
+ # This file is distributed under the same license as the ncmpc package.
+ # Nikolay Pavlov <quetzal@roks.biz>, 2004.
+ #, fuzzy
++# Modified by Alexey Ivanov aka LexxTheFox <lexx@orenubrg.rfn.ru>
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: ncmpc 0.11.0\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2005-01-04 21:55+0100\n"
+ "PO-Revision-Date: 2004-12-29 09:40+0200\n"
+-"Last-Translator: Nikolay Pavlov <quetzal@roks.biz>\n"
++"Last-Translator: Alexey Ivanov aka LexxTheFox <lexx@orenubrg.rfn.ru>\n"
+ "Language-Team: ru <ru@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=ISO-8859-1\n"
++"Content-Type: text/plain; charset=koi8-r\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: src/ncmpc.h:36
+@@ -30,7 +31,7 @@
+ #: src/main.c:266
+ #, c-format
+ msgid "Error: MPD version %d.%d.%d is to old (0.11.0 needed).\n"
+-msgstr "Ошибка: MPD версия %d.%d.%d устарела (необходимо 0.11.0).\n"
++msgstr "Ошибка: MPD версии %d.%d.%d устарел (необходим 0.11.0).\n"
+ 
+ #: src/main.c:318
+ #, c-format
+@@ -69,7 +70,7 @@
+ 
+ #: src/screen.c:271
+ msgid "Playing:"
+-msgstr "Проигрываеться:"
++msgstr "Проигрывается:"
+ 
+ #: src/screen.c:274
+ msgid "[Paused]"
+@@ -98,7 +99,7 @@
+ #: src/screen.c:652
+ #, c-format
+ msgid "Crossfade %d seconds"
+-msgstr "Ознакомление %d секунд"
++msgstr "Кроссфейд %d секунд"
+ 
+ #: src/screen.c:655
+ msgid "Database updated!"
+@@ -138,7 +139,7 @@
+ 
+ #: src/screen_utils.c:38
+ msgid "Find: "
+-msgstr "Поиск: "
++msgstr "Искать: "
+ 
+ #: src/screen_utils.c:39
+ msgid "Find backward: "
+@@ -179,7 +180,7 @@
+ #: src/screen_play.c:326
+ #, c-format
+ msgid "Playlist on %s"
+-msgstr "Плайлист в %s"
++msgstr "Плейлист в %s"
+ 
+ #: src/screen_file.c:282
+ #, c-format
+@@ -216,7 +217,7 @@
+ 
+ #: src/screen_file.c:658
+ msgid "Screen updated!"
+-msgstr "Экран обновляеться!"
++msgstr "Экран обновляется!"
+ 
+ #: src/screen_file.c:665
+ #, c-format
+@@ -229,7 +230,7 @@
+ 
+ #: src/screen_search.c:51
+ msgid "Artist"
+-msgstr "Артист"
++msgstr "Автор"
+ 
+ #: src/screen_search.c:52
+ msgid "Album"
+@@ -246,12 +247,12 @@
+ #: src/screen_search.c:162
+ #, c-format
+ msgid "Press %s for a new search"
+-msgstr ""
++msgstr "Нажмите %s чтобы начать новый поиск"
+ 
+ #: src/screen_search.c:214
+ #, c-format
+ msgid "Search: Results for %s [%s]"
+-msgstr ""
++msgstr "Результаты поиска $s [$s]"
+ 
+ #: src/screen_search.c:218
+ #, c-format
+@@ -265,19 +266,19 @@
+ 
+ #: src/screen_keydef.c:46
+ msgid "===> Apply & Save key bindings  "
+-msgstr "===> Применить & Сохранить новые клавиши  "
++msgstr "===> Применить и сохранить новые комбинации клавиш  "
+ 
+ #: src/screen_keydef.c:47
+ msgid "===> Apply key bindings "
+-msgstr "===> Применить новые клавиши "
++msgstr "===> Применить новые комбинации клавиш "
+ 
+ #: src/screen_keydef.c:76
+ msgid "You have new key bindings!"
+-msgstr "У вас есть новые клавиши!"
++msgstr "У вас есть новые комбинации клавиш!"
+ 
+ #: src/screen_keydef.c:79
+ msgid "Keybindings unchanged."
+-msgstr "Настройки не изменились."
++msgstr "Настройки клавиатурных комбинаций не изменились."
+ 
+ #: src/screen_keydef.c:90
+ #, c-format
+@@ -301,7 +302,7 @@
+ #: src/screen_keydef.c:155
+ #, c-format
+ msgid "Enter new key for %s: "
+-msgstr "Введите новую клавишу для %s"
++msgstr "Введите новую комбинацию для %s"
+ 
+ #: src/screen_keydef.c:168
+ #, c-format
+@@ -324,16 +325,16 @@
+ 
+ #: src/screen_keydef.c:283
+ msgid "Note: Did you forget to 'Apply' your changes?"
+-msgstr "Внимание: Вы не забыли 'Применить' ваши изменения?"
++msgstr "Внимание: Вы не забыли Применить ваши изменения?"
+ 
+ #: src/screen_keydef.c:290
+ msgid "Edit key bindings"
+-msgstr "Редактировать клавиши"
++msgstr "Редактировать клавиатурные комбинации"
+ 
+ #: src/screen_keydef.c:292
+ #, c-format
+ msgid "Edit keys for %s"
+-msgstr "Редактировать клавиши для %s"
++msgstr "Редактировать комбинацию для %s"
+ 
+ #: src/screen_clock.c:154
+ msgid "Clock"
+@@ -341,7 +342,7 @@
+ 
+ #: src/screen_help.c:43
+ msgid "Keys - Movement"
+-msgstr "Команды - Перемещения"
++msgstr "Команды - Перемещение"
+ 
+ #: src/screen_help.c:68
+ msgid "Keys - Global"
+@@ -349,11 +350,11 @@
+ 
+ #: src/screen_help.c:95
+ msgid "Keys - Playlist screen"
+-msgstr "Команды - Экран Плейлист"
++msgstr "Команды - Экран Плейлиста"
+ 
+ #: src/screen_help.c:97
+ msgid "Play"
+-msgstr "Проигрывать"
++msgstr "Воспроизведение"
+ 
+ #: src/screen_help.c:100
+ msgid "Move song up"
+@@ -433,7 +434,7 @@
+ 
+ #: src/command.c:94
+ msgid "Playlist screen"
+-msgstr "Экран Плейлист"
++msgstr "Экран Плейлиста"
+ 
+ #: src/command.c:96
+ msgid "Browse screen"
+@@ -441,7 +442,7 @@
+ 
+ #: src/command.c:101
+ msgid "Play/Enter directory"
+-msgstr "Проигрывать/Прейти в директорию"
++msgstr "Воспроизвести/Прейти в директорию"
+ 
+ #: src/command.c:103
+ msgid "Pause"
