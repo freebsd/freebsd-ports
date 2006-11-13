@@ -96,6 +96,7 @@
     SUBDIR += py-twistedNames
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
+    SUBDIR += rbllookup-ng
     SUBDIR += scavenge
     SUBDIR += sheerdns
     SUBDIR += skadns
