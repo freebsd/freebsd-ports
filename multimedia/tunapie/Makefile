@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +15,13 @@ MAINTAINER=	nivit@email.it
 COMMENT=	Tuner for streaming internet radio and TV
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
-		${PYTHON_SITELIBDIR}/${WX_PYTHON_DIR}/wxPython/_wx.py:${PORTSDIR}/x11-toolkits/py-wxPython26 \
 		streamripper:${PORTSDIR}/audio/streamripper \
 		xmms:${PORTSDIR}/multimedia/xmms
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
+USE_WX=	2.6
+USE_COMPS=	python_run
 
 OPTIONS=	ADULT	"non-censored TV listings" off \
 		XINE	"use xine instead of mplayer" off
@@ -41,8 +41,7 @@ post-patch:
 		-e 's|%%MANPREFIX%%|${MANPREFIX}|g' \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%VIDEOPLAYER%%|${VIDEOPLAYER}|g' \
-		-e 's|%%X11BASE%%|${X11BASE}|g' \
-		-e 's|wxversion.select("2.6")|wxversion.select("${WX_PYTHON_DIR:S/^wx-//g}")|g' {} \;
+		-e 's|%%X11BASE%%|${X11BASE}|g' {} ";"
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -61,12 +60,6 @@ VIDEOPLAYER=	${X11BASE}/bin/xine
 .else
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 VIDEOPLAYER=	${LOCALBASE}/bin/mplayer
-.endif
-
-.if defined(WITH_UNICODE) && (${OSVERSION} > 500000)
-WX_PYTHON_DIR=	wx-2.6-gtk2-unicode
-.else
-WX_PYTHON_DIR=	wx-2.6-gtk2-ansi
 .endif
 
 .include <bsd.port.post.mk>
