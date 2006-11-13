@@ -21,7 +21,7 @@ JAVA_RUN=	yes
 SUB_FILES=	uppaal verifyta
 SUB_LIST+=	PORTNAME=${PORTNAME}
 PLIST_SUB+=	PORTNAME=${PORTNAME}
-DOWNLOAD_URL=	http://www.it.uu.se/research/group/darts/uppaal/download/registration.php
+DOWNLOAD_URL=	http://www.it.uu.se/research/group/darts/uppaal/download/registration.php?id=0&subid=0
 NO_BUILD=	yes
 
 MAN1=		uppaal.1
