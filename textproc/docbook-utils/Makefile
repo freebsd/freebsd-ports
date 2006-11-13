@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
@@ -18,7 +19,8 @@ BUILD_DEPENDS+=	nsgmls:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/3.1/docbook.dtd:${PORTSDIR}/textproc/docbook-310 \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 RUN_DEPENDS+=	${LOCALBASE}/share/texmf/tex/jadetex/dsssl.def:${PORTSDIR}/print/jadetex \
-		sgmlspl:${PORTSDIR}/textproc/p5-SGMLSpm
+		sgmlspl:${PORTSDIR}/textproc/p5-SGMLSpm \
+    		jade:${PORTSDIR}/textproc/jade
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
