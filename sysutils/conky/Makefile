@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -75,6 +75,7 @@ CONFIGURE_ARGS+=	--disable-seti
 pre-everything::
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} " "
+	@${ECHO_MSG} "WITH_AUDACIOUS=yes to enable Audacious support"
 	@${ECHO_MSG} "WITH_BMPX=yes to enable BMPx support"
 	@${ECHO_MSG} "WITH_XFT=yes to enable XFT support"
 	@${ECHO_MSG} "WITHOUT_OWN_WINDOW=yes to disable own window support"
