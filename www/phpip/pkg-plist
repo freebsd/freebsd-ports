@@ -20,6 +20,7 @@
 %%PHPIP%%/classes/clsMetaContent.php
 %%PHPIP%%/classes/clsParseXML.php
 %%PHPIP%%/classes/index.php
+%%PHPIP%%/classes/overlib.js
 %%PHPIP%%/classes/xPandMenu.js
 %%PHPIP%%/classes/xPandMenu.php
 %%PHPIP%%/common.php
@@ -89,9 +90,11 @@
 %%PHPIP%%/prefix_remove.php
 %%PHPIP%%/print.php
 %%PHPIP%%/search.php
-%%PHPIP%%/sql/Upgrade_3.1_to_4.2.sql
 %%PHPIP%%/sql/index.php
 %%PHPIP%%/sql/phpip.sql
+%%PHPIP%%/sql/phpip_upgrade_3.1_to_4.2.sql
+%%PHPIP%%/sql/phpip_upgrade_4.1-4.2.sql
+%%PHPIP%%/sql/phpip_upgrade_4.2-4.3.2.sql
 %%PHPIP%%/subnetSummary.php
 %%PHPIP%%/user_management.php
 @dirrm %%PHPIP%%/sql
