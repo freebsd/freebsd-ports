@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tikiwiki
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 USE_PHP=	gettext pcre posix session xml zlib
 
 NO_BUILD=	YES
+USE_BZIP2=	YES
 TIKIWIKI?=	www/tikiwiki
 PLIST_SUB+=	TIKIWIKI=${TIKIWIKI}
 
