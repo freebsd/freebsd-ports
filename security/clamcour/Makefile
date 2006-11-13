@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamcour
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.8
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.becrux.com/pages/projects/clamcour/
 
@@ -27,6 +27,7 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 MAN1=		clamcour.1
+PLIST_DIRS=	etc/courier/clamcour
 PLIST_FILES=	libexec/filters/clamcour
 
 .include <bsd.port.mk>
