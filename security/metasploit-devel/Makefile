@@ -46,6 +46,9 @@ accept the license. Once downloaded, save ${DISTNAME}${EXTRACT_SUFX} \n \
 in ${DISTDIR} and try again.\n
 .endif
 
+post-extract:
+	@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -rf
+
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/ ${DATADIR}
