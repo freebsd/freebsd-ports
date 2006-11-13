@@ -22,4 +22,10 @@ USE_GMAKE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on FreeBSD < 5.x
+.endif
+
+.include <bsd.port.post.mk>
