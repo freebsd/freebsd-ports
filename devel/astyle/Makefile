@@ -6,33 +6,44 @@
 #
 
 PORTNAME=	astyle
-PORTVERSION=	1.15.3
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	devel textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
 
 MAINTAINER=	andrew.nau.ua@gmail.com
-COMMENT=	A reindenter and reformatter of C++, C and Java source code
+COMMENT=	A reindenter and reformatter of C, C++, C\# and Java source code
 
-USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-q -aa
-EXTRACT_AFTER_ARGS=	-d ${DISTNAME}
-CFLAGS+=	"-fpermissive"
 ALL_TARGET=	astyle
-MAKE_ARGS=	CPPFLAGS="${CXXFLAGS}"
+CXXFLAGS+=	-fno-rtti -fno-exceptions
+LDFLAGS+=	-s
+MAKE_ARGS=	CPPFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_GCC=	3.3+
+
+WRKSRC=		${WRKDIR}/astyle/src
+
+pre-patch:
+	${REINPLACE_CMD} -e \
+		's,^ifdef,#ifdef,; \
+		s,^else,#else,; \
+		s,^endif,#endif,; \
+		s,^CPPFLAGS,#CPPFLAGS,; \
+		s,^LDFLAGS,#LDFLAGS,;' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,g++,$$(CXX),' ${WRKSRC}/Makefile
 
 PLIST_FILES=	bin/astyle
 .if !defined(NOPORTDOCS)
-PORTDOCS=	astyle.html astyle_release_notes.html license.html
+PORTDOCS=	astyle.html astyleX.html astyle_news.html astyle_release_notes.html install.txt license.html
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/astyle/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/astyle/doc/*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
