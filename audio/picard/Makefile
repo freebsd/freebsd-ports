@@ -19,17 +19,11 @@ RUN_DEPENDS=	\
 		${PYTHON_SITELIBDIR}/musicbrainz2/__init__.py:${PORTSDIR}/audio/py-musicbrainz2
 
 USE_WX=		2.6
-WX_COMPS=	python_run
+WX_COMPS=	python:run
 WX_UNICODE=	yes
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	systems prior to FreeBSD 5.0 do not support Unicode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
