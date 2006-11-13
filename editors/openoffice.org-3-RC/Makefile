@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	openoffice.org
-PORTVERSION?=	${OOOVERSION}
+PORTNAME?=	openoffice.org-RC
+PORTVERSION?=	2.1.${SNAPDATE}
 CATEGORIES+=	editors java
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOVERSION}/&,} \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680_m${MILESTONE}/&,} \
 		http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
@@ -26,9 +26,8 @@ DISTFILES+=     ${ANT_DISTFILE}:antbin
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
+COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-OOOVERSION=	2.0.4
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
@@ -44,6 +43,7 @@ USE_KDELIBS_VER=        3
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 .if !defined(WITH_GNUGCJ)
@@ -56,7 +56,7 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
 .if ${ARCH} == amd64
 GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
@@ -71,17 +71,19 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-RELEASE_NR=		2.0
-OOOTAG?=		OOD680_m5
-OOOSRC?=		OOo_2.0.4_src.tar.gz
-INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
-EXECBASE?=		openoffice.org-${OOOVERSION}
+RELEASE_NR=		2.1
+MILESTONE?=		2
+OOOTAG?=		OOE680_m${MILESTONE}
+OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
+SNAPDATE=		20061107
+INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
+EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
-PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86_64
+PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}X86_64
 .else
-PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
+PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}Intel
 .endif
 
 LOCALIZED_LANG?=	en-US
@@ -236,7 +238,7 @@ post-install:
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
+			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
@@ -282,6 +284,7 @@ post-install:
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
+			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
