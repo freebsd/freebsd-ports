@@ -7,6 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux-ha.org/download/
 
@@ -72,8 +73,8 @@ BATCH=no
 post-deinstall:
 	@BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} DEINSTALL
 
-post-install:
-	@BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+pre-install:
+	@BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 # some subdirs treat man as documentation, therefor we have to install
 # those man pages manually if NOPORTDOCS is defined
