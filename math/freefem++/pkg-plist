@@ -6,7 +6,6 @@ bin/FreeFem++-ide
 bin/FreeFem++-server
 bin/FreeFem++-nw
 %%MPI%%bin/FreeFem++-mpi
-%%PORTDOCS%%%%EXAMPLESDIR%%/._aaa-adp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/D2.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/FE-medit.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P1.edp
@@ -40,7 +39,6 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/mesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/zArithmetic_bug1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/ccc-adp.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/._lame.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/BlackScholes2D.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/NSprojection.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/all.edp
@@ -72,13 +70,13 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/LapnosymEigenValue.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/Stokes-eigen.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/all.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/eigen/bb.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/neuman.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/testeigen.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/funct.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/include.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/lap_mat.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/lapacienprecon.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/load/._testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/AFunction.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/AFunction_ext.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/AddNewFE.h
@@ -109,6 +107,9 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/RefCounter.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Serialize.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/String.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/addNewType.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/addNewType.o
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/addNewType.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/bilapMorley.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/config-wrapper.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/config.h
@@ -117,6 +118,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/dfft.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/dfft.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/dfft.link
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/environment.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/error.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem3.hpp
@@ -135,6 +137,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/makeref.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/mat_dervieux.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/mat_psi.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/myType.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/myfunction.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/myfunction.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/problem.hpp
@@ -164,14 +167,6 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/testadp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/teste.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._AdaptResidualErrorIndicator.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._FEComplex.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._LapDG2.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._VI-adap.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._VI.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._adapt.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._adaptindicatorP1.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/._sparse-matrix.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/AdaptResidualErrorIndicator.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FEComplex.edp
