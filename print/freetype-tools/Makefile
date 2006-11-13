@@ -7,7 +7,7 @@
 
 PORTNAME=	freetype-tools
 PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -22,7 +22,8 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Tools for FreeType 1
 
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
-RUN_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base \
+		t1asm:${PORTSDIR}/print/t1utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	yes
@@ -39,6 +40,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LIBTOOL =.*|LIBTOOL = ${LIBTOOL}|'
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${REINPLACE_CMD} -e 's|^PROGRAMS = t1asm|PROGRAMS =|' \
+		${WRKSRC}/contrib/ttf2pfb/Makefile.in
 
 post-build:
 	@cd ${WRKSRC}/contrib/ttf2bdf && ./configure --prefix=${TARGETDIR} && ${GMAKE}

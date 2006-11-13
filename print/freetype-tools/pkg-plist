@@ -1,5 +1,4 @@
 bin/getafm
-bin/t1asm
 bin/ttf2bdf
 bin/ttf2pfb
 bin/ttf2pk
