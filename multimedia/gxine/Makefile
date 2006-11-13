@@ -7,6 +7,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
@@ -14,8 +15,7 @@ MASTER_SITE_SUBDIR=	xine
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An alternative GUI for the Xine media player
 
-LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -23,7 +23,7 @@ USE_GNOME=	gtk20 gnomehier
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"
-CONFIGURE_ARGS+=--mandir=${PREFIX}/man --with-dbus
+CONFIGURE_ARGS+=--mandir=${PREFIX}/man
 CFLAGS=		-O2 -fno-strict-aliasing -pipe
 INSTALLS_ICONS=	yes
 
@@ -32,9 +32,18 @@ MAN1=		gxine.1 gxine_client.1
 MANCOMPRESSED=	no
 
 OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on \
+		DBUS "Enable dbus support" on \
 		LIRC "Enable lirc support" off
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_DBUS)
+CONFIGURE_ARGS+=--with-dbus
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+.else
+CONFIGURE_ARGS+=--without-dbus
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "

@@ -47,8 +47,6 @@ share/pixmaps/gxine.png
 %%NLS%%@dirrmtry share/locale/zh_CN
 %%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/uk
-%%NLS%%@dirrmtry share/locale/sq/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sq
 %%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pl
 %%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
