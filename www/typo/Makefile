@@ -26,6 +26,7 @@ do-install:
 	${CP} -R ${WRKSRC} ${PREFIX}/${TYPODIR}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPODIR}/log
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPODIR}/public
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPODIR}/tmp
 
 post-install:
 	@${FIND} ${PREFIX}/${TYPODIR} -not -type d \
