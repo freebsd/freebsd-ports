@@ -26,7 +26,7 @@ NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
 MAKEFILE=		makefile
 ALL_TARGET=		default FreeBSD shared
-USE_GCC=		3.2+
+USE_GCC=		3.3+
 USE_LDCONFIG=		yes
 
 PORTDOCS=		README
@@ -39,8 +39,8 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -e 's/%%CFLAGS%%/${CFLAGS}/' ${WRKSRC}/makefile
 .endif
-	@${REINPLACE_CMD} -e 's/%%PTHREAD_CFLAGS%%/${PTHREAD_CFLAGS}/;s/%%PTHREAD_LIBS%%/${PTHREAD_LIBS}/' \
-		${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's/%%PTHREAD_CFLAGS%%/${PTHREAD_CFLAGS}/' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's/%%PTHREAD_LIBS%%/${PTHREAD_LIBS}/' ${WRKSRC}/tools/getlibs.sh
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.${PORTVERSION}.0 \
