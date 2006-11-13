@@ -85,7 +85,7 @@ delete_account() {
 
 case $2 in
 
-POST-INSTALL)
+PRE-INSTALL)
     echo ""
     user=hacluster
     group=haclient
@@ -96,6 +96,14 @@ POST-INSTALL)
     echo "Adding empty dirs and pid file."
     test -d /var/lib/heartbeat/ckpt || \
             install -d -m 755 /var/lib/heartbeat/ckpt
+    test -d /var/lib/heartbeat/ccm || \
+            install -d -m 750 -o ${user} -g ${group} /var/lib/heartbeat/ccm
+    test -d /var/lib/heartbeat/cores/root || \
+            install -d -m 700 /var/lib/heartbeat/cores/root
+    test -d /var/lib/heartbeat/cores/nobody || \
+            install -d -m 700 -o nobody /var/lib/heartbeat/cores/nobody
+    test -d /var/lib/heartbeat/cores/hacluster || \
+            install -d -m 700 -o ${user} /var/lib/heartbeat/cores/hacluster
     test -d /var/lock/subsys || \
             install -d -m 755 /var/lock/subsys
     test -f /var/run/heartbeat.pid || \
