@@ -37,6 +37,10 @@ USE_GNOME=		glib20 libglade2
 USE_GETTEXT=		yes
 INSTALLS_OMF=		yes
 
+.if !defined(CFLAGS) || ${CFLAGS:M-fno-strict-aliasing*} == ""
+CFLAGS+=	-O2 -fno-strict-aliasing
+.endif
+
 PORTDOCS=		ChangeLog INSTALL README
 NULLDOCS=		AUTHORS COPYING NEWS
 
