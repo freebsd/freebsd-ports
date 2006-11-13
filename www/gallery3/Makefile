@@ -31,7 +31,7 @@ WWWGRP?=	www
 
 # Note that USE_PHP must be set before bsd.port.pre.mk is included, so
 # OPTIONS can't be used right now without making portlint angry
-#OPTIONS=	NETPBM "Enable netpbm support" on \
+#OPTIONS=	NETPBM "Enable netpbm support" off \
 #		IMAGEMAGICK "Enable imagemagick support" on \
 #		PGSQL "Use PostgreSQL instead of MySQL" off \
 #		JHEAD "Enable jhead support" on \
@@ -49,10 +49,13 @@ USE_PHP+=	mysql
 USE_PHP+=	gd
 RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
 .endif
+.if !defined(WITHOUT_NLS)
+USE_PHP+=	gettext
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_NETPBM)
+.if defined(WITH_NETPBM)
 RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
 .endif
 .if !defined(WITHOUT_IMAGEMAGICK)
