@@ -266,6 +266,7 @@
 %%TIKIWIKI%%/img/flags/Sweden.gif
 %%TIKIWIKI%%/img/flags/Switzerland.gif
 %%TIKIWIKI%%/img/flags/Taiwan.gif
+%%TIKIWIKI%%/img/flags/Tanzania.gif
 %%TIKIWIKI%%/img/flags/Thailand.gif
 %%TIKIWIKI%%/img/flags/Tonga.gif
 %%TIKIWIKI%%/img/flags/Trinidad_Tobago.gif
@@ -311,6 +312,7 @@
 %%TIKIWIKI%%/img/icn/pdf.gif
 %%TIKIWIKI%%/img/icn/pl.gif
 %%TIKIWIKI%%/img/icn/png.gif
+%%TIKIWIKI%%/img/icn/pps.gif
 %%TIKIWIKI%%/img/icn/ppt.gif
 %%TIKIWIKI%%/img/icn/ps.gif
 %%TIKIWIKI%%/img/icn/py.gif
@@ -1231,10 +1233,25 @@
 %%TIKIWIKI%%/lib/pdflib/fonts/php_a010013l.afm
 %%TIKIWIKI%%/lib/pdflib/index.php
 %%TIKIWIKI%%/lib/pdflib/pdflib.php
+%%TIKIWIKI%%/lib/pear/Auth.php
+%%TIKIWIKI%%/lib/pear/Auth/Anonymous.php
 %%TIKIWIKI%%/lib/pear/Auth/Auth.php
 %%TIKIWIKI%%/lib/pear/Auth/Container.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/DB.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/DBLite.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/File.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/IMAP.php
 %%TIKIWIKI%%/lib/pear/Auth/Container/LDAP.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/MDB.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/MDB2.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/PEAR.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/POP3.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/RADIUS.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/SMBPasswd.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/SOAP.php
 %%TIKIWIKI%%/lib/pear/Auth/Container/index.php
+%%TIKIWIKI%%/lib/pear/Auth/Container/vpopmail.php
+%%TIKIWIKI%%/lib/pear/Auth/Controller.php
 %%TIKIWIKI%%/lib/pear/Auth/index.php
 %%TIKIWIKI%%/lib/pear/CMD.php
 %%TIKIWIKI%%/lib/pear/DB.php
@@ -1564,7 +1581,6 @@
 %%TIKIWIKI%%/lib/polls/index.php
 %%TIKIWIKI%%/lib/polls/polllib.php
 %%TIKIWIKI%%/lib/polls/polllib_shared.php
-%%TIKIWIKI%%/lib/projects/projectlib.php
 %%TIKIWIKI%%/lib/quicktags/index.php
 %%TIKIWIKI%%/lib/quicktags/quicktagslib.php
 %%TIKIWIKI%%/lib/quizzes/index.php
@@ -2400,6 +2416,8 @@
 %%TIKIWIKI%%/templates/mail/user_watch_file_gallery_remove_file.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_file_gallery_upload.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_map_changed.tpl
+%%TIKIWIKI%%/templates/mail/user_watch_wiki_new_attach.tpl
+%%TIKIWIKI%%/templates/mail/user_watch_wiki_new_attach_subject.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_wiki_page_changed.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_wiki_page_changed_subject.tpl
 %%TIKIWIKI%%/templates/mail/user_watch_wiki_page_comment.tpl
@@ -3425,6 +3443,8 @@
 @dirrm %%TIKIWIKI%%/popups
 @dirrm %%TIKIWIKI%%/modules/cache
 @dirrm %%TIKIWIKI%%/modules
+@dirrm %%TIKIWIKI%%/mods
+@dirrm %%TIKIWIKI%%/maps
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br/arca/morcego
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br/arca
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br
@@ -3506,7 +3526,6 @@
 @dirrm %%TIKIWIKI%%/lib/rankings
 @dirrm %%TIKIWIKI%%/lib/quizzes
 @dirrm %%TIKIWIKI%%/lib/quicktags
-@dirrm %%TIKIWIKI%%/lib/projects
 @dirrm %%TIKIWIKI%%/lib/polls
 @dirrm %%TIKIWIKI%%/lib/phplayers_tiki/lib
 @dirrm %%TIKIWIKI%%/lib/phplayers_tiki
