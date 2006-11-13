@@ -7,12 +7,12 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 PKGNAMESUFFIX?=	-server
-DISTNAME=	Firebird-2.0.0.12745-ReleaseCandidate5
+DISTNAME=	Firebird-2.0.0.12748
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
@@ -54,14 +54,15 @@ LIB_DEPENDS+=	fbembed.2:${PORTSDIR}/databases/firebird2-client
 AUTOGENARGS=	--with-lock-manager
 
 ALL_TARGET=	firebird_boot ref_databases msgs libfbembed intl otherfiles \
-		inet_server extlib embed_gfix embed_gbak embed_gdef embed_util
+		inet_server extlib embed_gfix embed_gbak embed_gdef embed_util \
+		embed_fbudf
 
 SUB_FILES=	pkg-install pkg-message aliases.conf
 
 SUID_BIN=	fb_inet_server fb_lock_mgr gds_drop
 UTIL_BIN=	fb_lock_print gbak gdef gfix gsec gstat nbackup
-UDF_SO=		ib_udf.so
-UDF_SQL=	src/extlib/ib_udf2.sql
+UDF_SO=		ib_udf.so fbudf.so
+UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 .else
 # Client part stuff
 LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
@@ -85,6 +86,9 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
+FB_DOCS_FILES=	WhatsNew README.* Firebird* ReleaseNotes.pdf ambiguity.txt \
+                ods11-index-structure.html
+FB_DOCS_DIRS=	sql.extensions license upgrade
 .endif
 .endif
 
@@ -180,6 +184,7 @@ do-install:
 		${LOCALSTATEDIR}/help
 
 	${INSTALL_FB} -m 0555 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LIBEXECDIR}/intl/fbintl
+	${INSTALL_FB} -m 0444 ${WRKSRC}/gen/firebird/misc/fbintl.conf ${LIBEXECDIR}/intl/
 .else
 # defined CLIENT_ONLY
 	${INSTALL_PROGRAM} ${CLIENT_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} \
@@ -214,10 +219,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/*.msg ${DATADIR}
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/sql.extensions
-	${INSTALL_DATA} ${WRKSRC}/doc/WhatsNew ${WRKSRC}/doc/README.* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/README.user ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/README.* ${DOCSDIR}/sql.extensions
+	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
+	@${MKDIR} ${FB_DOCS_DIRS:S!^!${DOCSDIR}/!}
+	@${INSTALL_DATA} ${FB_DOCS_FILES:S!^!${WRKSRC}/doc/!} ${DOCSDIR}
+	@${LN} -sf ${DOCSDIR}/README.user ${DOCSDIR}/README
+	@${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/* ${DOCSDIR}/sql.extensions
+	@${INSTALL_DATA} ${WRKSRC}/doc/license/* ${DOCSDIR}/license
+	@${INSTALL_DATA} ${WRKSRC}/src/misc/upgrade/v2/* ${DOCSDIR}/upgrade
 .endif
 .endif
 
