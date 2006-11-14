@@ -9,7 +9,9 @@
 PORTNAME=	goblin
 PORTVERSION=	2.6.4
 CATEGORIES=	misc
-MASTER_SITES=	http://www.math.uni-augsburg.de/opt/goblin.docs/
+MASTER_SITES=	http://www.math.uni-augsburg.de/opt/goblin.docs/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
