@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	4.2.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -60,10 +60,10 @@ do-install:	# empty
 
 post-install:
 .if defined(WITH_GDM)
-	@${TEST} -d ${LOCALBASE}/etc/gdm/Sessions || \
-		${MKDIR} -p ${LOCALBASE}/etc/gdm/Sessions
-	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${LOCALBASE}/etc/gdm/Sessions
-	@${INSTALL_DATA} ${FILESDIR}/XFce4.desktop ${LOCALBASE}/etc/dm/Sessions
+	@${TEST} -d ${PREFIX}/etc/gdm/Sessions || \
+		${MKDIR} -p ${PREFIX}/etc/gdm/Sessions
+	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${PREFIX}/etc/gdm/Sessions
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/XFce4.desktop > ${PREFIX}/etc/dm/Sessions
 .endif
 
 .include <bsd.port.mk>
