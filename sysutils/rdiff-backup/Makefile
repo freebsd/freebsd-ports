@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
