@@ -8,6 +8,7 @@
 
 PORTNAME=	wprint
 PORTVERSION=	2.05
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -15,9 +16,9 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mozilla/HtmlDoc/Netscape Postscript Filter
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
+USE_ICONV=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -30,5 +31,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/wprint\.conf|${PREFIX}/etc/wprint.conf|g" \
 		${WRKSRC}/${file}
 .endfor
+	@${REINPLACE_CMD} -e 's,$$(srcdir)/wprint.conf $$(sysconfdir),$$(srcdir)/wprint.conf $$(sysconfdir)/wprint.conf.dist,g' \
+		${WRKSRC}/etc/Makefile.in
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/wprint.conf ]; then \
+	  ${CP} -p ${PREFIX}/etc/wprint.conf.dist ${PREFIX}/etc/wprint.conf ; \
+	fi
 
 .include <bsd.port.mk>
