@@ -10956,6 +10956,7 @@ pear-UDDI	ports/www/pear-UDDI
 pear-VFS	ports/devel/pear-VFS
 pear-Validate	ports/devel/pear-Validate
 pear-Validate_Finance	ports/devel/pear-Validate_Finance
+pear-Validate_Finance_CreditCard	ports/devel/pear-Validate_Finance_CreditCard
 pear-Var_Dump	ports/devel/pear-Var_Dump
 pear-XML_Beautifier	ports/textproc/pear-XML_Beautifier
 pear-XML_DTD	ports/textproc/pear-XML_DTD
