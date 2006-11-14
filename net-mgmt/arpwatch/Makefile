@@ -7,7 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		${MASTER_SITE_GENTOO}
@@ -19,6 +19,7 @@ COMMENT=	Monitor arp & rarp requests
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ENV+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}"
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
 
