@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-calendar
 PORTVERSION=	4.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -30,5 +30,8 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} 's|dbh-1\.0|dbh|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
