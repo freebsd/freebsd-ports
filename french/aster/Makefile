@@ -70,8 +70,8 @@ FLAGARCH=	P_LINUX		# 32 bits
 FLAGARCH=	TRU64		# 64 bits
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile on FreeBSD-4.x, and cannot be patched easily.
+.if ${OSVERSION} < 600022
+BROKEN=	Does not compile on this version, and cannot be patched easily.
 .endif
 .if ${ARCH} == "amd64"
 BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
