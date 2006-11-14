@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	unzoo
-DISTVERSION=	4.4
+PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ehaupt
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	unzoo_4.4-4.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A zoo archive extractor
 
+USE_GCC=	3.2+
+
 EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR
 
-PLIST_FILES=	bin/unzoo
-
 MAN1=		unzoo.1
+PLIST_FILES=	bin/unzoo
 
 .include <bsd.port.pre.mk>
 
@@ -28,12 +32,16 @@ MAN1=		unzoo.1
 CFLAGS+=	-trigraphs
 .endif
 
+post-extract:
+	@${MKDIR} ${WRKSRC}
+	@${MV} ${WRKDIR}/${PORTNAME}.c ${WRKSRC}
+
 do-build:
 	${CC} ${CFLAGS} ${EXTRA_DEFINES} -o ${WRKSRC}/${PORTNAME} \
 		${WRKSRC}/${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
