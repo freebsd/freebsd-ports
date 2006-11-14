@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-power-manager
 PORTVERSION=	2.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the GNOME Desktop
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
-		notify.2:${PORTSDIR}/devel/libnotify
+		notify.1:${PORTSDIR}/devel/libnotify
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes

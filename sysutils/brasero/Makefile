@@ -7,6 +7,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	0.4.90
+PORTREVISION=	1
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	SOURCEFORGE
 MASTER_SITE_SUBDIR=	bonfire
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	bonfire
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD/DVD mastering tool for the GNOME desktop
 
-LIB_DEPENDS=	notify.2:${PORTSDIR}/devel/libnotify \
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 		totem-plparser.1:${PORTSDIR}/multimedia/totem-gstreamer
 
 USE_GETTEXT=	yes

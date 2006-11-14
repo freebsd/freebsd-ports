@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-volume-manager
 PORTVERSION=	2.15.0
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -16,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Automatically mount removable media, and more
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
-		notify.2:${PORTSDIR}/devel/libnotify
+		notify.1:${PORTSDIR}/devel/libnotify
 
 USE_XLIB=	yes
 USE_BZIP2=	yes

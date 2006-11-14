@@ -8,7 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-daap
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=		notify.2:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=	--disable-libnotify
 .endif

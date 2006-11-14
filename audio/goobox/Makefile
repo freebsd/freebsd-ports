@@ -8,7 +8,7 @@
 
 PORTNAME=	goobox
 PORTVERSION=	0.9.93
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -42,7 +42,7 @@ BROKEN=	does not build on 4.X
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=		notify.2:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=	--enable-notification
 .else
 CONFIGURE_ARGS+=	--disable-notification
