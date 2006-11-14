@@ -2406,6 +2406,7 @@ eva		ports/net-im/eva
 eval		ports/math/eval
 evangeline	ports/irc/evangeline
 evas		ports/graphics/evas
+eventlog	ports/sysutils/eventlog
 eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
 everygui	ports/deskutils/everygui
