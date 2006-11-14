@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.3.5
-PORTREVISION=	3
+PORTVERSION=	0.3.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Send small notifications to your desktop
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
