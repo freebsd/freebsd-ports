@@ -42,6 +42,8 @@ OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
 PKGNAMESUFFIX=	#empty
 .if defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=--enable-pthread
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+pthreads
 .else
 CONFIGURE_ARGS+=--disable-pthread
@@ -81,8 +83,8 @@ EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LIBS="${LIBS} ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		LIBS="${LDFLAGS}"
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 MLINKS=		${RUBY_NAME}.1 ruby.1
