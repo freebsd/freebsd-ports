@@ -267,6 +267,7 @@ aestats		ports/games/aestats
 aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
 af-aspell	ports/textproc/af-aspell
+afay		ports/devel/afay
 afbackup	ports/misc/afbackup
 afbackup-client	ports/misc/afbackup-client
 afbackup-server	ports/misc/afbackup-server
