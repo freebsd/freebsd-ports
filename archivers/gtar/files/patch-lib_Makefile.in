@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- lib/Makefile.in.orig
 +++ lib/Makefile.in
-@@ -720,7 +720,7 @@
+@@ -938,7 +938,7 @@
  
  install-data-am:
  
