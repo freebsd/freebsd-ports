@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Packet
-DISTVERSION=	3.00_01
+DISTVERSION=	3.20
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN/../by-authors/id/G/GO/GOMOR
 PKGNAMEPREFIX=	p5-
@@ -55,7 +55,14 @@ MAN3=		Net::Packet.3 \
 		Net::Packet::TCP.3 \
 		Net::Packet::UDP.3 \
 		Net::Packet::Utils.3 \
-		Net::Packet::VLAN.3
+		Net::Packet::VLAN.3 \
+		Net::Packet::CDP::Type.3 \
+		Net::Packet::PPPoE.3 \
+		Net::Packet::CDP::TypeDeviceId.3 \
+		Net::Packet::PPP.3 \
+		Net::Packet::CDP.3 \
+		Net::Packet::LLC.3 \
+		Net::Packet::PPPLCP.3
 
 .include <bsd.port.pre.mk>
 
