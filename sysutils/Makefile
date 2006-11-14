@@ -155,6 +155,7 @@
     SUBDIR += est
     SUBDIR += estctrl
     SUBDIR += etcmerge
+    SUBDIR += eventlog
     SUBDIR += eventwatcher
     SUBDIR += evtviewer
     SUBDIR += extipl
