@@ -12,8 +12,10 @@ CATEGORIES=	editors
 MASTER_SITES=	http://personal.gscit.monash.edu.au/~dougt/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text editor which uses many of the shortcuts used in MSDOS EDIT
+
+BROKEN=		Does not fetch
 
 MAN1=		dte.1
 PORTDOCS=	dte.doc dte.hlp dte.rc
