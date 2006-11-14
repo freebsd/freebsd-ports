@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.5.6
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-2.56
+WRKSRC=		${WRKDIR}/PenguinTV-2.56
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical RSS feed reader with incorperated playback functions - development version
@@ -40,7 +41,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/pygst.py:${PORTSDIR}/mult
 .endif
 
 .if defined(WITHOUT_PYLUCENE)
-BROKEN=		Cannot be run without PyLucene
+#BROKEN=		Cannot be run without PyLucene
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/PyLucene.py:${PORTSDIR}/devel/py-lucene
 .endif

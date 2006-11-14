@@ -130,8 +130,6 @@
 %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/subProcess.py
 %%PYTHON_SITELIBDIR%%/penguintv/subProcess.pyc
-%%PYTHON_SITELIBDIR%%/penguintv/timeoutsocket.py
-%%PYTHON_SITELIBDIR%%/penguintv/timeoutsocket.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/utils.py
 %%PYTHON_SITELIBDIR%%/penguintv/utils.pyc
 
