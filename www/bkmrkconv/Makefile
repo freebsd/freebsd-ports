@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bkmrkconv
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.bleb.org/software/bkmrkconv/
 
