@@ -2,37 +2,40 @@
 %%SITE_PERL%%/Chart/Clicker.pm
 %%SITE_PERL%%/Chart/document.pl
 %%SITE_PERL%%/Chart/critique.pl
-%%SITE_PERL%%/Chart/Clicker/Drawing.pm
 %%SITE_PERL%%/Chart/Clicker/Axis.pm
-%%SITE_PERL%%/Chart/Clicker/Shape.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/Point.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/Base.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/Area.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/Marker.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/Bar.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/Line.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Insets.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Container.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Border.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Stroke.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Component.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Point.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Font.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/ColorAllocator.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Color.pm
-%%SITE_PERL%%/Chart/Clicker/Drawing/Dimension.pm
+%%SITE_PERL%%/Chart/Clicker/Axis/DateTime.pm
+%%SITE_PERL%%/Chart/Clicker/Data/DataSet.pm
+%%SITE_PERL%%/Chart/Clicker/Data/Marker.pm
+%%SITE_PERL%%/Chart/Clicker/Data/Range.pm
+%%SITE_PERL%%/Chart/Clicker/Data/Series.pm
+%%SITE_PERL%%/Chart/Clicker/Decoration.pm
+%%SITE_PERL%%/Chart/Clicker/Decoration/Glass.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/Grid.pm
-%%SITE_PERL%%/Chart/Clicker/Decoration/Base.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/Label.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/Legend.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/LegendItem.pm
+%%SITE_PERL%%/Chart/Clicker/Decoration/MarkerOverlay.pm
 %%SITE_PERL%%/Chart/Clicker/Decoration/Plot.pm
-%%SITE_PERL%%/Chart/Clicker/Decoration/Marker.pm
-%%SITE_PERL%%/Chart/Clicker/Shape/Rectangle.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Border.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Color.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/ColorAllocator.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Component.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Container.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Dimension.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Font.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Insets.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Point.pm
+%%SITE_PERL%%/Chart/Clicker/Drawing/Stroke.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/Area.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/Bar.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/Base.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/Line.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/Measurement.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/Point.pm
+%%SITE_PERL%%/Chart/Clicker/Shape.pm
 %%SITE_PERL%%/Chart/Clicker/Shape/Arc.pm
-%%SITE_PERL%%/Chart/Clicker/Data/DataSet.pm
-%%SITE_PERL%%/Chart/Clicker/Data/Series.pm
-%%SITE_PERL%%/Chart/Clicker/Data/Range.pm
+%%SITE_PERL%%/Chart/Clicker/Shape/Rectangle.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Clicker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Shape
@@ -40,5 +43,6 @@
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Drawing
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Decoration
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Data
+@dirrmtry %%SITE_PERL%%/Chart/Clicker/Axis
 @dirrmtry %%SITE_PERL%%/Chart/Clicker
 @dirrmtry %%SITE_PERL%%/Chart

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
+MASTER_SITE_SUBDIR=	Chart
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -22,15 +22,20 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN3=		Chart::Clicker.3 Chart::Clicker::Axis.3 \
-		Chart::Clicker::Data::DataSet.3 Chart::Clicker::Data::Range.3 \
+    		Chart::Clicker::Axis::DateTime.3 \
+		Chart::Clicker::Data::DataSet.3 \
+		Chart::Clicker::Data::Marker.3 \
+		Chart::Clicker::Data::Range.3 \
 		Chart::Clicker::Data::Series.3 \
-		Chart::Clicker::Decoration::Base.3 \
+		Chart::Clicker::Decoration.3 \
+		Chart::Clicker::Decoration::Glass.3 \
 		Chart::Clicker::Decoration::Grid.3 \
 		Chart::Clicker::Decoration::Label.3 \
 		Chart::Clicker::Decoration::Legend.3 \
 		Chart::Clicker::Decoration::LegendItem.3 \
-		Chart::Clicker::Decoration::Marker.3 \
-		Chart::Clicker::Decoration::Plot.3 Chart::Clicker::Drawing.3 \
+		Chart::Clicker::Decoration::MarkerOverlay.3 \
+		Chart::Clicker::Decoration::Plot.3 \
+		Chart::Clicker::Drawing.3 \
 		Chart::Clicker::Drawing::Border.3 \
 		Chart::Clicker::Drawing::Color.3 \
 		Chart::Clicker::Drawing::ColorAllocator.3 \
@@ -45,9 +50,10 @@ MAN3=		Chart::Clicker.3 Chart::Clicker::Axis.3 \
 		Chart::Clicker::Renderer::Bar.3 \
 		Chart::Clicker::Renderer::Base.3 \
 		Chart::Clicker::Renderer::Line.3 \
-		Chart::Clicker::Renderer::Marker.3 \
+		Chart::Clicker::Renderer::Measurement.3 \
 		Chart::Clicker::Renderer::Point.3 \
-		Chart::Clicker::Shape.3 Chart::Clicker::Shape::Arc.3 \
+		Chart::Clicker::Shape.3 \
+		Chart::Clicker::Shape::Arc.3 \
 		Chart::Clicker::Shape::Rectangle.3
 
 .include <bsd.port.mk>
