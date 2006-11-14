@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/	\
 		ftp://ftp.srware.com/pub/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An adaptation of the Berkeley Spice3f4 with superconductivity
 
 CONFLICTS=	spice-[0-9]*
