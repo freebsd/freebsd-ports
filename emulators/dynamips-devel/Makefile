@@ -37,10 +37,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-DYNAMIPS_ARCH=	"x86"
-.elif ${ARCH} == "amd64"
-DYNAMIPS_ARCH=	"nojit"	# JIT does not work on amd64 for some reason
+.if ${ARCH} == "i386" #|| ${ARCH} == "amd64"
+DYNAMIPS_ARCH=	"${ARCH}"
 .else
 DYNAMIPS_ARCH=	"nojit"
 .endif
