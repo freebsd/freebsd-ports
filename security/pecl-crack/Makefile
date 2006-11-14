@@ -7,6 +7,7 @@
 
 PORTNAME=	crack
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.osuweb.net/~ahaning/
 PKGNAMEPREFIX=	pecl-
@@ -15,6 +16,8 @@ DIST_SUBDIR=	PECL
 
 MAINTAINER=	wmoran@collaborativefusion.com
 COMMENT=	PECL extension to cracklib
+
+RUN_DEPENDS=	${LOCALBASE}/libdata/cracklib/pw_dict.pwi:${PORTSDIR}/security/cracklib
 
 USE_PHP=	yes
 USE_PHPIZE=	yes

@@ -1,4 +1,3 @@
-include/php/ext/crack
 include/php/ext/crack/config.h
 include/php/ext/crack/php_crack.h
-lib/php/20050922/crack.so
+@dirrm include/php/ext/crack
