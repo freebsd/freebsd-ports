@@ -1,6 +1,15 @@
---- cpuid.c
-+++ cpuid.c
-@@ -20,17 +20,34 @@
+--- cpuid.c.orig	Tue Nov 14 10:17:30 2006
++++ cpuid.c	Tue Nov 14 11:24:57 2006
+@@ -10,6 +10,8 @@
+  * http://developer.intel.com/design/Pentium4/manuals/24547103.pdf
+  * http://developer.intel.com/design/pentiumiii/applnots/24512501.pdf (AP-909)
+  * http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/20734.pdf
++ * http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/24594.pdf
++ * http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/25481.pdf
+  * 
+  */
+ 
+@@ -20,17 +22,34 @@
  void dointel(int),doamd(int),docyrix(int);
  void printregs(int eax,int ebx,int ecx,int edx);
  
@@ -41,7 +50,7 @@
  };
  
  #define cpuid(in,a,b,c,d)\
-@@ -89,7 +106,7 @@
+@@ -89,7 +108,7 @@
    exit(0);
  }
  
@@ -50,7 +59,7 @@
    "FPU    Floating Point Unit",
    "VME    Virtual 8086 Mode Enhancements",
    "DE     Debugging Extensions",
-@@ -124,6 +141,49 @@
+@@ -124,6 +143,49 @@
    "31     reserved",
  };
  
@@ -100,7 +109,7 @@
  /* Intel-specific information */
  void dointel(int maxi){
    printf("Intel-specific functions:\n");
-@@ -131,12 +191,15 @@
+@@ -131,12 +193,15 @@
    if(maxi >= 1){
      /* Family/model/type etc */
      int clf,apic_id,feature_flags;
@@ -118,7 +127,7 @@
      printf("Version %08lx:\n",eax);
      stepping = eax & 0xf;
      model = (eax >> 4) & 0xf;
-@@ -147,6 +210,7 @@
+@@ -147,6 +212,7 @@
      apic_id = (ebx >> 24) & 0xff;
      siblings = (ebx >> 16) & 0xff;
      feature_flags = edx;
@@ -126,7 +135,7 @@
  
      printf("Type %d - ",type);
      switch(type){
-@@ -253,9 +317,25 @@
+@@ -253,9 +319,25 @@
        case 8:
  	printf("Pentium III/Pentium III Xeon - internal L2 cache");
  	break;
@@ -152,7 +161,7 @@
        break;
      }
      printf("\n");
-@@ -270,16 +350,22 @@
+@@ -270,16 +352,22 @@
      brand = ebx & 0xff;
      if(brand > 0){
        printf("Brand index: %d [",brand);
@@ -177,7 +186,7 @@
        if(maxe >= 0x80000004){
  	int i;
  
-@@ -303,12 +389,48 @@
+@@ -303,12 +391,48 @@
        printf("Hyper threading siblings: %d\n",siblings);
      }
  
@@ -227,7 +236,7 @@
      printf("\n");
    }
    if(maxi >= 2){
-@@ -408,6 +530,33 @@
+@@ -408,6 +532,33 @@
    case 0xc:
      printf("1st-level data cache: 16KB, 4-way set assoc, 32 byte line size\n");
      break;
@@ -261,7 +270,7 @@
    case 0x40:
      printf("No 2nd-level cache, or if 2nd-level cache exists, no 3rd-level cache\n");
      break;
-@@ -426,6 +575,12 @@
+@@ -426,6 +577,12 @@
    case 0x45:
      printf("2nd-level cache: 2MB, 4-way set assoc, 32 byte line size\n");
      break;
@@ -274,7 +283,7 @@
    case 0x50:
      printf("Instruction TLB: 4KB and 2MB or 4MB pages, 64 entries\n");
      break;
-@@ -436,13 +591,16 @@
+@@ -436,13 +593,16 @@
      printf("Instruction TLB: 4KB and 2MB or 4MB pages, 256 entries\n");
      break;
    case 0x5b:
@@ -294,7 +303,7 @@
      break;
    case 0x66:
      printf("1st-level data cache: 8KB, 4-way set assoc, 64 byte line size\n");
-@@ -462,6 +620,9 @@
+@@ -462,6 +622,9 @@
    case 0x72:
      printf("Trace cache: 32K-micro-op, 4-way set assoc\n");
      break;
@@ -304,7 +313,7 @@
    case 0x79:
      printf("2nd-level cache: 128KB, 8-way set assoc, sectored, 64 byte line size\n");
      break;
-@@ -474,6 +635,12 @@
+@@ -474,6 +637,12 @@
    case 0x7c:
      printf("2nd-level cache: 1MB, 8-way set assoc, sectored, 64 byte line size\n");    
      break;
@@ -317,11 +326,10 @@
    case 0x82:
      printf("2nd-level cache: 256KB, 8-way set assoc, 32 byte line size\n");
      break;
-@@ -485,6 +652,24 @@
-     break;
+@@ -486,44 +655,97 @@
    case 0x85:
      printf("2nd-level cache: 2MB, 8-way set assoc, 32 byte line size\n");
-+    break;
+     break;
 +  case 0x86:
 +    printf("2nd-level cache: 512KB, 4-way set assoc, 64 byte line size\n");
 +    break;
@@ -339,6 +347,121 @@
 +    break;
 +  case 0xF1:
 +    printf("128-byte prefetching\n");
-     break;
++    break;
     default:
      printf("unknown TLB/cache descriptor\n");
+     break;
+   }
+ }
+ char *AMD_feature_flags[] = {
+-  "Floating Point Unit",
+-  "Virtual Mode Extensions",
+-  "Debugging Extensions",
+-  "Page Size Extensions",
+-  "Time Stamp Counter (with RDTSC and CR4 disable bit)",
+-  "Model Specific Registers with RDMSR & WRMSR",
+-  "PAE - Page Address Extensions",
+-  "Machine Check Exception",
+-  "COMPXCHG8B Instruction",
+-  "APIC",
+-  "10 - Reserved",
+-  "SYSCALL/SYSRET or SYSENTER/SYSEXIT instructions",
+-  "MTRR - Memory Type Range Registers",
+-  "Global paging extension",
+-  "Machine Check Architecture",
+-  "Conditional Move Instruction",
+-  "PAT - Page Attribute Table",
+-  "PSE-36 - Page Size Extensions",
+-  "18 - reserved",
+-  "19 - reserved",
+-  "20 - reserved",
+-  "21 - reserved",
+-  "AMD MMX Instruction Extensions",
+-  "MMX instructions",
+-  "FXSAVE/FXRSTOR",
+-  "25 - reserved",
+-  "26 - reserved",
+-  "27 - reserved",
+-  "28 - reserved",
+-  "29 - reserved",
+-  "3DNow! Instruction Extensions",
+-  "3DNow instructions",
++  "FPU    Floating Point Unit",
++  "VME    Virtual 8086 Mode Enhancements",
++  "DE     Debugging Extensions",
++  "PSE    Page Size Extensions",
++  "TSC    Time Stamp Counter",
++  "MSR    Model Specific Registers",
++  "PAE    Physical Address Extension",
++  "MCE    Machine Check Exception",
++  "CX8    COMPXCHG8B Instruction",
++  "APIC   On-chip Advanced Programmable Interrupt Controller present and enabled",
++  "10     Reserved",
++  "SEP    Fast System Call",
++  "MTRR   Memory Type Range Registers",
++  "PGE    PTE Global Flag",
++  "MCA    Machine Check Architecture",
++  "CMOV   Conditional Move and Compare Instructions",
++  "PAT    Page Attribute Table",
++  "PSE36  36-bit Page Size Extension",
++  "18     Reserved",
++  "CLFSH  CLFLUSH instruction",
++  "20     Reserved",
++  "21     Reserved",
++  "22     Reserved",
++  "MMX    MMX instruction set",
++  "FXSR   Fast FP/MMX Streaming SIMD Extensions save/restore",
++  "SSE    SSE extensions",
++  "SSE2   SSE2 extensions",
++  "27     Reserved",
++  "HTT    Hyper-Threading Technology",
++  "29     Reserved",
++  "30     Reserved",
++  "31     Reserved",
++};
++
++char *AMD_feature_flags2[] = {
++  "FPU    Floating Point Unit",
++  "VME    Virtual 8086 Mode Enhancements",
++  "DE     Debugging Extensions",
++  "PSE    Page Size Extensions",
++  "TSC    Time Stamp Counter",
++  "MSR    Model Specific Registers",
++  "PAE    Physical Address Extension",
++  "MCE    Machine Check Exception",
++  "CX8    COMPXCHG8B Instruction",
++  "APIC   On-chip Advanced Programmable Interrupt Controller present and enabled",
++  "10     Reserved",
++  "SEP    Fast System Call",
++  "MTRR   Memory Type Range Registers",
++  "PGE    PTE Global Flag",
++  "MCA    Machine Check Architecture",
++  "CMOV   Conditional Move and Compare Instructions",
++  "PAT    Page Attribute Table",
++  "PSE36  36-bit Page Size Extension",
++  "18     Reserved",
++  "19     Reserved",
++  "NX     No-execute page protection",
++  "21     Reserved",
++  "MmxExt MMX instruction extensions",
++  "MMX    MMX instructions",
++  "FXSR   Fast FP/MMX Streaming SIMD Extensions save/restore",
++  "FFXSR  FXSAVE and FXRSTOR instruction optimizations",
++  "26     Reserved",
++  "RDTSCP RDTSCP instruction",
++  "28     Reserved",
++  "LM     64 bit long mode",
++  "3DNowE 3DNow! instruction extensions",
++  "3DNow  3DNow! instructions",
+ };
+ 
+ char *Assoc[] = {
+@@ -657,7 +879,7 @@
+ 	printf("Global Paging Extensions\n");
+       } else {
+ 	if(edx & (1<<i)){
+-	  printf("%s\n",AMD_feature_flags[i]);
++	  printf("%s\n",AMD_feature_flags2[i]);
+ 	}
+       }
+     }
