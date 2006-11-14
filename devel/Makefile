@@ -1578,6 +1578,7 @@
     SUBDIR += pear-Text_Diff
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
+    SUBDIR += pear-Validate_Finance
     SUBDIR += pear-Var_Dump
     SUBDIR += pear-XML_NITF
     SUBDIR += pear-XML_Parser

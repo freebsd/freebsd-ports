@@ -1,0 +1,4 @@
+Package to validate various data. It includes:
+* IBAN
+
+WWW: http://pear.php.net/package/Validate_Finance
