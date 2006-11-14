@@ -7,12 +7,15 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.7d2
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.7dev.2
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
+
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-7
 USE_BZIP2=	yes
@@ -58,6 +61,11 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's:/usr/local/lib/mosaic/mime\.types:${PREFIX}/etc/mime.types:' \
+		${WRKSRC}/lynx.cfg ${WRKSRC}/userdefs.h
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_DOC}
