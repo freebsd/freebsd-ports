@@ -25,6 +25,12 @@ PLIST_FILES=	include/libvolume_id.h \
 		lib/libvolume_id.so.0 \
 		libdata/pkgconfig/libvolume_id.pc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	not supported on 4.X
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/libvolume_id.pc ${PREFIX}/libdata/pkgconfig/libvolume_id.pc
@@ -33,4 +39,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libvolume_id.so.0 ${PREFIX}/lib/libvolume_id.so.0
 	${LN} -sf ${PREFIX}/lib/libvolume_id.so.0 ${PREFIX}/lib/libvolume_id.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
