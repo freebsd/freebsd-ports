@@ -1,0 +1,23 @@
+--- configure.orig	Wed Nov  8 15:14:56 2006
++++ configure	Wed Nov  8 15:16:36 2006
+@@ -3426,7 +3426,7 @@
+ echo $ECHO_N "checking how to enable static linking for certain libraries... $ECHO_C" >&6
+ ldversion=`ld -V 2>&1 | head -1`
+ ostype=`uname -s`
+-if echo $ldversion | egrep "GNU|Solaris" > /dev/null; then
++if echo $ldversion | egrep "Solaris" > /dev/null; then
+         LD_START_STATIC="-Wl,-Bstatic"
+         LD_END_STATIC="-Wl,-Bdynamic"
+         echo "$as_me:$LINENO: result: GNU or Solaris" >&5
+@@ -3441,6 +3441,11 @@
+         LD_END_STATIC="-Wl,-bdynamic"
+         echo "$as_me:$LINENO: result: AIX" >&5
+ echo "${ECHO_T}AIX" >&6
++elif test "$ostype" = "FreeBSD"; then
++        LD_START_STATIC=""
++        LD_END_STATIC=""
++        echo "$as_me:$LINENO: result: FreeBSD" >&5
++echo "${ECHO_T}FreeBSD" >&6
+ else
+         LD_START_STATIC=""
+         LD_END_STATIC=""
