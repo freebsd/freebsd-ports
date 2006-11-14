@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Sep 14 17:59:13 2006
-+++ Makefile	Wed Oct 18 22:38:24 2006
++++ Makefile	Tue Nov 14 10:27:26 2006
 @@ -12,6 +12,9 @@
  # (WinPcap is used for Cygwin)
  HAS_PCAP?=1
@@ -28,7 +28,7 @@
 -   LIBS=-L/usr/local/lib -L. -lelf $(PTHREAD_LIBS)
 +   LOCALBASE?=/usr/local
 +   CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libelf $(PTHREAD_CFLAGS)
-+   LIBS=-L$(LOCALBASE)/lib -L. -lelf $(PTHREAD_LIBS)
++   LIBS=-L$(LOCALBASE)/lib -L. -lelf $(PTHREAD_LIBS) $(LDFLAGS)
  else
  ifeq ($(shell uname -s), Darwin)
     CFLAGS+=-I/usr/local/include -mdynamic-no-pic
