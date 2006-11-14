@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cca97f5f-7435-11db-91de-0008743bf21a">
+    <topic>proftpd -- Remote Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+        <name>proftpd</name>
+        <range><le>1.3.0_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>FrSIRT reports:</p>
+	<blockquote cite="http://www.frsirt.com/english/advisories/2006/4451">
+	  <p>A vulnerability has been identified in ProFTPD, which could be
+	    exploited by attackers to cause a denial of service or execute
+	    arbitrary commands. This flaw is due to a buffer overflow error
+	    in the "main.c" file where the "cmd_buf_size" size of the buffer
+	    used to handle FTP commands sent by clients is not properly set
+	    to the size configured via the "CommandBufferSize" directive,
+	    which could be exploited by attackers to compromise a vulnerable
+	    server via a specially crafted FTP command.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.frsirt.com/english/advisories/2006/4451</url>
+    </references>
+    <dates>
+      <discovery>2006-11-10</discovery>
+      <entry>2006-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5a945904-73b1-11db-91d2-0002a5c2f4ef">
     <topic>unzoo -- Directory Traversal Vulnerability</topic>
     <affects>
