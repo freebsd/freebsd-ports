@@ -8562,6 +8562,7 @@ p5-Compress-LZF	ports/archivers/p5-Compress-LZF
 p5-Compress-LZO	ports/archivers/p5-Compress-LZO
 p5-Compress-LZW	ports/archivers/p5-Compress-LZW
 p5-Compress-LeadingBlankSpaces	ports/www/p5-Compress-LeadingBlankSpaces
+p5-Compress-Raw-Zlib	ports/archivers/p5-Compress-Raw-Zlib
 p5-Compress-Zlib	ports/archivers/p5-Compress-Zlib
 p5-Config-Any	ports/devel/p5-Config-Any
 p5-Config-ApacheFormat	ports/devel/p5-Config-ApacheFormat
