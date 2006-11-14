@@ -9,23 +9,17 @@ share/apps/krefty/data/krefty.dtd
 share/apps/krefty/data/krefty.xsl
 share/apps/krefty/data/note.png
 share/apps/krefty/krefty_shell.rc
-share/doc/HTML/en/krefty/common
-share/doc/HTML/en/krefty/index.cache.bz2
-share/doc/HTML/en/krefty/index.docbook
-share/doc/HTML/en/krefty/krefty01.png
+%%DOCSDIR%%/en/krefty/common
+%%DOCSDIR%%/en/krefty/index.cache.bz2
+%%DOCSDIR%%/en/krefty/index.docbook
+%%DOCSDIR%%/en/krefty/krefty01.png
 share/icons/hicolor/16x16/apps/krefty.png
 share/icons/hicolor/32x32/apps/krefty.png
 share/services/krefty_part.desktop
 @dirrmtry share/services
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm share/doc/HTML/en/krefty
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
+@dirrm %%DOCSDIR%%/en/krefty
+@dirrmtry %%DOCSDIR%%/en
+@dirrmtry %%DOCSDIR%%
 @dirrm share/apps/krefty/data
 @dirrm share/apps/krefty
 @dirrmtry share/apps
