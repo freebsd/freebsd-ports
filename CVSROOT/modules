@@ -13967,6 +13967,7 @@ sysbench	ports/benchmarks/sysbench
 sysconftool	ports/devel/sysconftool
 sysgather	ports/sysutils/sysgather
 syslog-ng	ports/sysutils/syslog-ng
+syslog-ng2	ports/sysutils/syslog-ng2
 sysmon		ports/net-mgmt/sysmon
 system-tools-backends	ports/sysutils/system-tools-backends
 systemc		ports/cad/systemc
