@@ -4412,7 +4412,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>awstats</name>
-	<range><lt>6.6,1</lt></range>
+	<range><lt>6.5_2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -4446,7 +4446,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-05-03</discovery>
       <entry>2006-05-05</entry>
-      <modified>2006-06-07</modified>
+      <modified>2006-11-15</modified>
     </dates>
   </vuln>
 
