@@ -18,10 +18,10 @@ RUN_DEPENDS=	maxima:${PORTSDIR}/math/maxima
 
 USE_GETTEXT=	yes
 USE_GNOME=	libxml2
-USE_WX=	2.6
+USE_WX=		2.6
 WX_COMPS=	wx
 WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
+WANT_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=
 
