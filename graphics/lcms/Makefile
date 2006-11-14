@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--without-tiff
 PLIST_SUB+=	TIFFICC="@comment "
 .endif
 
-.if defined(WITH_TIFFICC)
+.if defined(WITH_JPEGICC)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEGICC=""
 .else
