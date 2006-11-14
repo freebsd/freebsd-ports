@@ -25,6 +25,14 @@
 %%SITE_PERL%%/Net/Packet/UDP.pm
 %%SITE_PERL%%/Net/Packet/Utils.pm
 %%SITE_PERL%%/Net/Packet/VLAN.pm
+%%SITE_PERL%%/Net/Packet/PPPoE.pm
+%%SITE_PERL%%/Net/Packet/PPP.pm
+%%SITE_PERL%%/Net/Packet/CDP.pm
+%%SITE_PERL%%/Net/Packet/LLC.pm
+%%SITE_PERL%%/Net/Packet/PPPLCP.pm
+%%SITE_PERL%%/Net/Packet/CDP/Type.pm
+%%SITE_PERL%%/Net/Packet/CDP/TypeDeviceId.pm
+@dirrmtry %%SITE_PERL%%/Net/Packet/CDP
 @dirrmtry %%SITE_PERL%%/Net/Packet
 @dirrmtry %%SITE_PERL%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Packet
