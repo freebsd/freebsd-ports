@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.15.1
-PORTREVISION=	2
+PORTVERSION=	1.16
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +20,8 @@ INFO=		tar
 USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g \
+		--infodir=${PREFIX}/${INFO_PATH}
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
 		DEFAULT_ARCHIVE=/dev/sa0 \
@@ -41,7 +41,11 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+# avoid triggering auto framework rebuilds
+post-patch:
+	@${TOUCH} -r ${WRKSRC}/configure.orig ${WRKSRC}/configure
+
 test: build
-	@cd ${WRKSRC} && make check
+	@cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>

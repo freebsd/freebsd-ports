@@ -1,0 +1,140 @@
+
+$FreeBSD$
+
+--- tests/testsuite.orig
++++ tests/testsuite
+@@ -20582,7 +20582,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20608,7 +20608,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20630,7 +20630,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20669,7 +20669,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20695,7 +20695,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20717,7 +20717,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20756,7 +20756,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20782,7 +20782,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20804,7 +20804,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20843,7 +20843,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20869,7 +20869,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20891,7 +20891,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20930,7 +20930,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20956,7 +20956,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
+@@ -20978,7 +20978,7 @@
+ 
+ mkdir directory
+ (cd directory && touch a b c d e f g h i j k l m n o p q r)
+-tar -c -b 1 directory | tar -t -f - >/dev/null
++tar -c -b 1 -f - directory | tar -t -f - >/dev/null| tar -t -f - >/dev/null
+ tar -c -b 1 -f archive directory
+ tar -t -f archive >/dev/null
+ tar -t -f - < archive >/dev/null
