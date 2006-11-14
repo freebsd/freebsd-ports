@@ -1,3 +1,4 @@
+bin/googleearth
 %%DATADIR%%/EULA-GoogleEarth-de.txt
 %%DATADIR%%/EULA-GoogleEarth-en.txt
 %%DATADIR%%/EULA-GoogleEarth-es.txt
@@ -26,7 +27,6 @@
 %%DATADIR%%/lang/qt_it.qm
 %%DATADIR%%/lang/qt_ja.qm
 %%DATADIR%%/lang/qt_pt-br.qm
-%%DATADIR%%/lib3dconnexion.so
 %%DATADIR%%/libGLU.so.1
 %%DATADIR%%/libIGAttrs.so
 %%DATADIR%%/libIGCollision.so
@@ -57,6 +57,7 @@
 %%DATADIR%%/libgoogleearth.so
 %%DATADIR%%/libgooglesearch.so
 %%DATADIR%%/libgps.so
+%%DATADIR%%/libinput.so
 %%DATADIR%%/libjpeg.so.62
 %%DATADIR%%/liblayer.so
 %%DATADIR%%/libmath.so
@@ -131,6 +132,134 @@
 %%DATADIR%%/res/nav_background.png
 %%DATADIR%%/res/notfound.png
 %%DATADIR%%/res/overviewframe.png
+%%DATADIR%%/res/paddle/1-lv.png
+%%DATADIR%%/res/paddle/1.png
+%%DATADIR%%/res/paddle/10-lv.png
+%%DATADIR%%/res/paddle/10.png
+%%DATADIR%%/res/paddle/2-lv.png
+%%DATADIR%%/res/paddle/2.png
+%%DATADIR%%/res/paddle/3-lv.png
+%%DATADIR%%/res/paddle/3.png
+%%DATADIR%%/res/paddle/4-lv.png
+%%DATADIR%%/res/paddle/4.png
+%%DATADIR%%/res/paddle/5-lv.png
+%%DATADIR%%/res/paddle/5.png
+%%DATADIR%%/res/paddle/6-lv.png
+%%DATADIR%%/res/paddle/6.png
+%%DATADIR%%/res/paddle/7-lv.png
+%%DATADIR%%/res/paddle/7.png
+%%DATADIR%%/res/paddle/8-lv.png
+%%DATADIR%%/res/paddle/8.png
+%%DATADIR%%/res/paddle/9-lv.png
+%%DATADIR%%/res/paddle/9.png
+%%DATADIR%%/res/paddle/A-lv.png
+%%DATADIR%%/res/paddle/A.png
+%%DATADIR%%/res/paddle/B-lv.png
+%%DATADIR%%/res/paddle/B.png
+%%DATADIR%%/res/paddle/C-lv.png
+%%DATADIR%%/res/paddle/C.png
+%%DATADIR%%/res/paddle/D-lv.png
+%%DATADIR%%/res/paddle/D.png
+%%DATADIR%%/res/paddle/E-lv.png
+%%DATADIR%%/res/paddle/E.png
+%%DATADIR%%/res/paddle/F-lv.png
+%%DATADIR%%/res/paddle/F.png
+%%DATADIR%%/res/paddle/G-lv.png
+%%DATADIR%%/res/paddle/G.png
+%%DATADIR%%/res/paddle/H-lv.png
+%%DATADIR%%/res/paddle/H.png
+%%DATADIR%%/res/paddle/I-lv.png
+%%DATADIR%%/res/paddle/I.png
+%%DATADIR%%/res/paddle/J-lv.png
+%%DATADIR%%/res/paddle/J.png
+%%DATADIR%%/res/paddle/K-lv.png
+%%DATADIR%%/res/paddle/K.png
+%%DATADIR%%/res/paddle/L-lv.png
+%%DATADIR%%/res/paddle/L.png
+%%DATADIR%%/res/paddle/M-lv.png
+%%DATADIR%%/res/paddle/M.png
+%%DATADIR%%/res/paddle/N-lv.png
+%%DATADIR%%/res/paddle/N.png
+%%DATADIR%%/res/paddle/O-lv.png
+%%DATADIR%%/res/paddle/O.png
+%%DATADIR%%/res/paddle/P-lv.png
+%%DATADIR%%/res/paddle/P.png
+%%DATADIR%%/res/paddle/Q-lv.png
+%%DATADIR%%/res/paddle/Q.png
+%%DATADIR%%/res/paddle/R-lv.png
+%%DATADIR%%/res/paddle/R.png
+%%DATADIR%%/res/paddle/S-lv.png
+%%DATADIR%%/res/paddle/S.png
+%%DATADIR%%/res/paddle/T-lv.png
+%%DATADIR%%/res/paddle/T.png
+%%DATADIR%%/res/paddle/U-lv.png
+%%DATADIR%%/res/paddle/U.png
+%%DATADIR%%/res/paddle/V-lv.png
+%%DATADIR%%/res/paddle/V.png
+%%DATADIR%%/res/paddle/W-lv.png
+%%DATADIR%%/res/paddle/W.png
+%%DATADIR%%/res/paddle/X-lv.png
+%%DATADIR%%/res/paddle/X.png
+%%DATADIR%%/res/paddle/Y-lv.png
+%%DATADIR%%/res/paddle/Y.png
+%%DATADIR%%/res/paddle/Z-lv.png
+%%DATADIR%%/res/paddle/Z.png
+%%DATADIR%%/res/paddle/blu-blank-lv.png
+%%DATADIR%%/res/paddle/blu-blank.png
+%%DATADIR%%/res/paddle/blu-circle-lv.png
+%%DATADIR%%/res/paddle/blu-circle.png
+%%DATADIR%%/res/paddle/blu-diamond-lv.png
+%%DATADIR%%/res/paddle/blu-diamond.png
+%%DATADIR%%/res/paddle/blu-square-lv.png
+%%DATADIR%%/res/paddle/blu-square.png
+%%DATADIR%%/res/paddle/blu-stars-lv.png
+%%DATADIR%%/res/paddle/blu-stars.png
+%%DATADIR%%/res/paddle/grn-blank-lv.png
+%%DATADIR%%/res/paddle/grn-blank.png
+%%DATADIR%%/res/paddle/grn-circle-lv.png
+%%DATADIR%%/res/paddle/grn-circle.png
+%%DATADIR%%/res/paddle/grn-diamond-lv.png
+%%DATADIR%%/res/paddle/grn-diamond.png
+%%DATADIR%%/res/paddle/grn-square-lv.png
+%%DATADIR%%/res/paddle/grn-square.png
+%%DATADIR%%/res/paddle/grn-stars-lv.png
+%%DATADIR%%/res/paddle/grn-stars.png
+%%DATADIR%%/res/paddle/purple-circle-lv.png
+%%DATADIR%%/res/paddle/purple-circle.png
+%%DATADIR%%/res/paddle/purple-diamond-lv.png
+%%DATADIR%%/res/paddle/purple-diamond.png
+%%DATADIR%%/res/paddle/purple-square-lv.png
+%%DATADIR%%/res/paddle/purple-square.png
+%%DATADIR%%/res/paddle/purple-stars-lv.png
+%%DATADIR%%/res/paddle/purple-stars.png
+%%DATADIR%%/res/paddle/red-circle-lv.png
+%%DATADIR%%/res/paddle/red-circle.png
+%%DATADIR%%/res/paddle/red-diamond-lv.png
+%%DATADIR%%/res/paddle/red-diamond.png
+%%DATADIR%%/res/paddle/red-square-lv.png
+%%DATADIR%%/res/paddle/red-square.png
+%%DATADIR%%/res/paddle/red-stars-lv.png
+%%DATADIR%%/res/paddle/red-stars.png
+%%DATADIR%%/res/paddle/wht-blank-lv.png
+%%DATADIR%%/res/paddle/wht-blank.png
+%%DATADIR%%/res/paddle/wht-circle-lv.png
+%%DATADIR%%/res/paddle/wht-circle.png
+%%DATADIR%%/res/paddle/wht-diamond-lv.png
+%%DATADIR%%/res/paddle/wht-diamond.png
+%%DATADIR%%/res/paddle/wht-square-lv.png
+%%DATADIR%%/res/paddle/wht-square.png
+%%DATADIR%%/res/paddle/wht-stars-lv.png
+%%DATADIR%%/res/paddle/wht-stars.png
+%%DATADIR%%/res/paddle/ylw-blank-lv.png
+%%DATADIR%%/res/paddle/ylw-blank.png
+%%DATADIR%%/res/paddle/ylw-circle-lv.png
+%%DATADIR%%/res/paddle/ylw-circle.png
+%%DATADIR%%/res/paddle/ylw-diamond-lv.png
+%%DATADIR%%/res/paddle/ylw-diamond.png
+%%DATADIR%%/res/paddle/ylw-square-lv.png
+%%DATADIR%%/res/paddle/ylw-square.png
+%%DATADIR%%/res/paddle/ylw-stars-lv.png
+%%DATADIR%%/res/paddle/ylw-stars.png
 %%DATADIR%%/res/pal2/icon0.png
 %%DATADIR%%/res/pal2/icon0s.png
 %%DATADIR%%/res/pal2/icon0t.png
@@ -979,6 +1108,14 @@
 %%DATADIR%%/res/palette-3.png
 %%DATADIR%%/res/palette-4.png
 %%DATADIR%%/res/palette-5.png
+%%DATADIR%%/res/pushpin/blue-pushpin.png
+%%DATADIR%%/res/pushpin/grn-pushpin.png
+%%DATADIR%%/res/pushpin/ltblu-pushpin.png
+%%DATADIR%%/res/pushpin/pink-pushpin.png
+%%DATADIR%%/res/pushpin/purple-pushpin.png
+%%DATADIR%%/res/pushpin/red-pushpin.png
+%%DATADIR%%/res/pushpin/wht-pushpin.png
+%%DATADIR%%/res/pushpin/ylw-pushpin.png
 %%DATADIR%%/res/resizeiconmac.png
 %%DATADIR%%/res/rightbar_active.png
 %%DATADIR%%/res/rightbar_hover.png
@@ -988,6 +1125,17 @@
 %%DATADIR%%/res/ring-norm.png
 %%DATADIR%%/res/ring-thumb-md.png
 %%DATADIR%%/res/ring-thumb-mo.png
+%%DATADIR%%/res/shapes/arrow-reverse.png
+%%DATADIR%%/res/shapes/arrow.png
+%%DATADIR%%/res/shapes/donut.png
+%%DATADIR%%/res/shapes/forbidden.png
+%%DATADIR%%/res/shapes/info-i.png
+%%DATADIR%%/res/shapes/open-diamond.png
+%%DATADIR%%/res/shapes/polygon.png
+%%DATADIR%%/res/shapes/square.png
+%%DATADIR%%/res/shapes/star.png
+%%DATADIR%%/res/shapes/target.png
+%%DATADIR%%/res/shapes/triangle.png
 %%DATADIR%%/res/slider-tilt-left-md.png
 %%DATADIR%%/res/slider-tilt-left-mo.png
 %%DATADIR%%/res/slider-tilt-norm.png
@@ -1029,6 +1177,7 @@
 %%DATADIR%%/res/timeplay_hover.png
 %%DATADIR%%/res/timeplay_norm.png
 %%DATADIR%%/res/timewindow.png
+%%DATADIR%%/res/userpalette.kml
 %%DATADIR%%/res/v-slider-zoom-thumb-md.png
 %%DATADIR%%/res/v-slider-zoom-thumb-mo.png
 %%DATADIR%%/res/v-slider-zoom-thumb-norm.png
@@ -1040,17 +1189,90 @@
 %%DATADIR%%/res/zoombar_active.png
 %%DATADIR%%/res/zoombar_hover.png
 %%DATADIR%%/res/zoombar_norm.png
+%%DATADIR%%/resources/1-lv.png
+%%DATADIR%%/resources/1.png
+%%DATADIR%%/resources/10-lv.png
+%%DATADIR%%/resources/10.png
 %%DATADIR%%/resources/16x16.png
+%%DATADIR%%/resources/2-lv.png
+%%DATADIR%%/resources/2.png
+%%DATADIR%%/resources/3-lv.png
+%%DATADIR%%/resources/3.png
 %%DATADIR%%/resources/3d_buildings_16.png
 %%DATADIR%%/resources/3d_terrain_16.png
 %%DATADIR%%/resources/3dterrain_off.png
 %%DATADIR%%/resources/3dterrain_on.png
+%%DATADIR%%/resources/4-lv.png
+%%DATADIR%%/resources/4.png
 %%DATADIR%%/resources/4x4_RGBW_columns.png
+%%DATADIR%%/resources/5-lv.png
+%%DATADIR%%/resources/5.png
+%%DATADIR%%/resources/6-lv.png
+%%DATADIR%%/resources/6.png
+%%DATADIR%%/resources/7-lv.png
+%%DATADIR%%/resources/7.png
+%%DATADIR%%/resources/8-lv.png
+%%DATADIR%%/resources/8.png
+%%DATADIR%%/resources/9-lv.png
+%%DATADIR%%/resources/9.png
+%%DATADIR%%/resources/A-lv.png
+%%DATADIR%%/resources/A.png
+%%DATADIR%%/resources/B-lv.png
+%%DATADIR%%/resources/B.png
+%%DATADIR%%/resources/C-lv.png
+%%DATADIR%%/resources/C.png
+%%DATADIR%%/resources/D-lv.png
+%%DATADIR%%/resources/D.png
+%%DATADIR%%/resources/E-lv.png
+%%DATADIR%%/resources/E.png
+%%DATADIR%%/resources/F-lv.png
+%%DATADIR%%/resources/F.png
+%%DATADIR%%/resources/G-lv.png
+%%DATADIR%%/resources/G.png
+%%DATADIR%%/resources/H-lv.png
+%%DATADIR%%/resources/H.png
+%%DATADIR%%/resources/I-lv.png
+%%DATADIR%%/resources/I.png
+%%DATADIR%%/resources/J-lv.png
+%%DATADIR%%/resources/J.png
+%%DATADIR%%/resources/K-lv.png
+%%DATADIR%%/resources/K.png
+%%DATADIR%%/resources/L-lv.png
+%%DATADIR%%/resources/L.png
+%%DATADIR%%/resources/M-lv.png
+%%DATADIR%%/resources/M.png
+%%DATADIR%%/resources/N-lv.png
+%%DATADIR%%/resources/N.png
 %%DATADIR%%/resources/Non_Square.png
+%%DATADIR%%/resources/O-lv.png
+%%DATADIR%%/resources/O.png
+%%DATADIR%%/resources/P-lv.png
+%%DATADIR%%/resources/P.png
+%%DATADIR%%/resources/Q-lv.png
+%%DATADIR%%/resources/Q.png
+%%DATADIR%%/resources/R-lv.png
+%%DATADIR%%/resources/R.png
+%%DATADIR%%/resources/S-lv.png
+%%DATADIR%%/resources/S.png
 %%DATADIR%%/resources/San_Mateo.png
 %%DATADIR%%/resources/SouthBayTransparency.png
 %%DATADIR%%/resources/South_Bay_(GrayScale).png
+%%DATADIR%%/resources/T-lv.png
+%%DATADIR%%/resources/T.png
+%%DATADIR%%/resources/U-lv.png
+%%DATADIR%%/resources/U.png
 %%DATADIR%%/resources/UV-Clamp.png
+%%DATADIR%%/resources/V-lv.png
+%%DATADIR%%/resources/V.png
+%%DATADIR%%/resources/W-lv.png
+%%DATADIR%%/resources/W.png
+%%DATADIR%%/resources/X-lv.png
+%%DATADIR%%/resources/X.png
+%%DATADIR%%/resources/Y-lv.png
+%%DATADIR%%/resources/Y.png
+%%DATADIR%%/resources/Z-lv.png
+%%DATADIR%%/resources/Z.png
+%%DATADIR%%/resources/aboutlogo.png
 %%DATADIR%%/resources/ad_center.png
 %%DATADIR%%/resources/ad_l.png
 %%DATADIR%%/resources/ad_ll.png
@@ -1070,6 +1292,7 @@
 %%DATADIR%%/resources/alhl.png
 %%DATADIR%%/resources/american-flag.png
 %%DATADIR%%/resources/american_state_border_fade_out_mask.png
+%%DATADIR%%/resources/arrow-reverse.png
 %%DATADIR%%/resources/arrow.png
 %%DATADIR%%/resources/arrows_e_active.png
 %%DATADIR%%/resources/arrows_e_hover.png
@@ -1106,6 +1329,17 @@
 %%DATADIR%%/resources/balloon_x.png
 %%DATADIR%%/resources/bang.png
 %%DATADIR%%/resources/bars.png
+%%DATADIR%%/resources/blu-blank-lv.png
+%%DATADIR%%/resources/blu-blank.png
+%%DATADIR%%/resources/blu-circle-lv.png
+%%DATADIR%%/resources/blu-circle.png
+%%DATADIR%%/resources/blu-diamond-lv.png
+%%DATADIR%%/resources/blu-diamond.png
+%%DATADIR%%/resources/blu-square-lv.png
+%%DATADIR%%/resources/blu-square.png
+%%DATADIR%%/resources/blu-stars-lv.png
+%%DATADIR%%/resources/blu-stars.png
+%%DATADIR%%/resources/blue-pushpin.png
 %%DATADIR%%/resources/bookmark_01_16.png
 %%DATADIR%%/resources/borders_off.png
 %%DATADIR%%/resources/borders_on.png
@@ -1212,6 +1446,7 @@
 %%DATADIR%%/resources/dfwblocks.png
 %%DATADIR%%/resources/dining.png
 %%DATADIR%%/resources/dining_16.png
+%%DATADIR%%/resources/donut.png
 %%DATADIR%%/resources/dot.png
 %%DATADIR%%/resources/down.png
 %%DATADIR%%/resources/draw_big_placemark_mask.png
@@ -1253,6 +1488,7 @@
 %%DATADIR%%/resources/fast-food.png
 %%DATADIR%%/resources/flatarrow.png
 %%DATADIR%%/resources/fonts_mask.png
+%%DATADIR%%/resources/forbidden.png
 %%DATADIR%%/resources/forward_click.png
 %%DATADIR%%/resources/forward_click_1.png
 %%DATADIR%%/resources/forward_disabled_1.png
@@ -1291,6 +1527,17 @@
 %%DATADIR%%/resources/green_tile_glow.png
 %%DATADIR%%/resources/greenheader.png
 %%DATADIR%%/resources/grey_head_tile.png
+%%DATADIR%%/resources/grn-blank-lv.png
+%%DATADIR%%/resources/grn-blank.png
+%%DATADIR%%/resources/grn-circle-lv.png
+%%DATADIR%%/resources/grn-circle.png
+%%DATADIR%%/resources/grn-diamond-lv.png
+%%DATADIR%%/resources/grn-diamond.png
+%%DATADIR%%/resources/grn-pushpin.png
+%%DATADIR%%/resources/grn-square-lv.png
+%%DATADIR%%/resources/grn-square.png
+%%DATADIR%%/resources/grn-stars-lv.png
+%%DATADIR%%/resources/grn-stars.png
 %%DATADIR%%/resources/h-slider-zoom-thumb-md.png
 %%DATADIR%%/resources/h-slider-zoom-thumb-mo.png
 %%DATADIR%%/resources/h-slider-zoom-thumb-norm.png
@@ -1556,6 +1803,7 @@
 %%DATADIR%%/resources/icon9t.png
 %%DATADIR%%/resources/indxed-interlaced.png
 %%DATADIR%%/resources/indxed-non-interlaced.png
+%%DATADIR%%/resources/info-i.png
 %%DATADIR%%/resources/instances_mask.png
 %%DATADIR%%/resources/interstate_highway_16.png
 %%DATADIR%%/resources/invisible.png
@@ -1596,6 +1844,7 @@
 %%DATADIR%%/resources/logo.png
 %%DATADIR%%/resources/logobluewhite200.png
 %%DATADIR%%/resources/logouticon.png
+%%DATADIR%%/resources/ltblu-pushpin.png
 %%DATADIR%%/resources/ltnv_print_banner.png
 %%DATADIR%%/resources/mail-gr.png
 %%DATADIR%%/resources/mail-md.png
@@ -1677,6 +1926,7 @@
 %%DATADIR%%/resources/one-dollar.png
 %%DATADIR%%/resources/ontab_trans.png
 %%DATADIR%%/resources/ontab_trans_glow.png
+%%DATADIR%%/resources/open-diamond.png
 %%DATADIR%%/resources/openarrow.png
 %%DATADIR%%/resources/openfolder.png
 %%DATADIR%%/resources/opennetworkfolder.png
@@ -1715,6 +1965,7 @@
 %%DATADIR%%/resources/pin-md.png
 %%DATADIR%%/resources/pin-mo.png
 %%DATADIR%%/resources/pin-pl.png
+%%DATADIR%%/resources/pink-pushpin.png
 %%DATADIR%%/resources/pinpoint.png
 %%DATADIR%%/resources/placemark_off.png
 %%DATADIR%%/resources/placemark_on.png
@@ -1746,8 +1997,35 @@
 %%DATADIR%%/resources/print_off.png
 %%DATADIR%%/resources/print_on.png
 %%DATADIR%%/resources/printlogo.png
+%%DATADIR%%/resources/progress0.png
+%%DATADIR%%/resources/progress1.png
+%%DATADIR%%/resources/progress2.png
+%%DATADIR%%/resources/progress3.png
+%%DATADIR%%/resources/progress4.png
+%%DATADIR%%/resources/progress5.png
+%%DATADIR%%/resources/progress6.png
+%%DATADIR%%/resources/progress7.png
+%%DATADIR%%/resources/purple-circle-lv.png
+%%DATADIR%%/resources/purple-circle.png
+%%DATADIR%%/resources/purple-diamond-lv.png
+%%DATADIR%%/resources/purple-diamond.png
+%%DATADIR%%/resources/purple-pushpin.png
+%%DATADIR%%/resources/purple-square-lv.png
+%%DATADIR%%/resources/purple-square.png
+%%DATADIR%%/resources/purple-stars-lv.png
+%%DATADIR%%/resources/purple-stars.png
 %%DATADIR%%/resources/query.png
 %%DATADIR%%/resources/recreation.png
+%%DATADIR%%/resources/red-circle-lv.png
+%%DATADIR%%/resources/red-circle.png
+%%DATADIR%%/resources/red-diamond-lv.png
+%%DATADIR%%/resources/red-diamond.png
+%%DATADIR%%/resources/red-pushpin.png
+%%DATADIR%%/resources/red-square-lv.png
+%%DATADIR%%/resources/red-square.png
+%%DATADIR%%/resources/red-stars-lv.png
+%%DATADIR%%/resources/red-stars.png
+%%DATADIR%%/resources/red_and_green_boxes_mask.png
 %%DATADIR%%/resources/red_mid.png
 %%DATADIR%%/resources/red_mid_glow.png
 %%DATADIR%%/resources/red_tabclick_arrow.png
@@ -1853,6 +2131,8 @@
 %%DATADIR%%/resources/slider_zoom_out_glow.png
 %%DATADIR%%/resources/smallbutton.png
 %%DATADIR%%/resources/smalllogo.png
+%%DATADIR%%/resources/square.png
+%%DATADIR%%/resources/star.png
 %%DATADIR%%/resources/statue_of_liberty_mask.png
 %%DATADIR%%/resources/stop-dis.png
 %%DATADIR%%/resources/stop.png
@@ -1861,6 +2141,7 @@
 %%DATADIR%%/resources/streamed_layer.png
 %%DATADIR%%/resources/streamed_layers.png
 %%DATADIR%%/resources/tab_background_tile.png
+%%DATADIR%%/resources/target.png
 %%DATADIR%%/resources/terrain_16.png
 %%DATADIR%%/resources/three-dollars.png
 %%DATADIR%%/resources/tile.png
@@ -1914,6 +2195,7 @@
 %%DATADIR%%/resources/trans_handle.png
 %%DATADIR%%/resources/transportation.png
 %%DATADIR%%/resources/trialmode_overlay.png
+%%DATADIR%%/resources/triangle.png
 %%DATADIR%%/resources/two-dollars.png
 %%DATADIR%%/resources/up.png
 %%DATADIR%%/resources/v-slider-zoom-thumb-md.png
@@ -1928,13 +2210,38 @@
 %%DATADIR%%/resources/websearch_glow_1.png
 %%DATADIR%%/resources/websearch_off.png
 %%DATADIR%%/resources/websearch_off_1.png
+%%DATADIR%%/resources/white_3d.png
+%%DATADIR%%/resources/white_linestring.png
 %%DATADIR%%/resources/white_pixel.png
+%%DATADIR%%/resources/white_polygon.png
+%%DATADIR%%/resources/wht-blank-lv.png
+%%DATADIR%%/resources/wht-blank.png
+%%DATADIR%%/resources/wht-circle-lv.png
+%%DATADIR%%/resources/wht-circle.png
+%%DATADIR%%/resources/wht-diamond-lv.png
+%%DATADIR%%/resources/wht-diamond.png
+%%DATADIR%%/resources/wht-pushpin.png
+%%DATADIR%%/resources/wht-square-lv.png
+%%DATADIR%%/resources/wht-square.png
+%%DATADIR%%/resources/wht-stars-lv.png
+%%DATADIR%%/resources/wht-stars.png
 %%DATADIR%%/resources/x_click.png
 %%DATADIR%%/resources/x_click_1.png
 %%DATADIR%%/resources/x_glow.png
 %%DATADIR%%/resources/x_glow_1.png
 %%DATADIR%%/resources/x_off.png
 %%DATADIR%%/resources/x_off_1.png
+%%DATADIR%%/resources/ylw-blank-lv.png
+%%DATADIR%%/resources/ylw-blank.png
+%%DATADIR%%/resources/ylw-circle-lv.png
+%%DATADIR%%/resources/ylw-circle.png
+%%DATADIR%%/resources/ylw-diamond-lv.png
+%%DATADIR%%/resources/ylw-diamond.png
+%%DATADIR%%/resources/ylw-pushpin.png
+%%DATADIR%%/resources/ylw-square-lv.png
+%%DATADIR%%/resources/ylw-square.png
+%%DATADIR%%/resources/ylw-stars-lv.png
+%%DATADIR%%/resources/ylw-stars.png
 %%DATADIR%%/resources/zoom_back01.png
 %%DATADIR%%/resources/zoom_in.png
 %%DATADIR%%/resources/zoom_in_click.png
@@ -1965,29 +2272,38 @@
 %%DATADIR%%/xml/navigate.module.xml
 %%DATADIR%%/xml/render.module.xml
 %%DATADIR%%/xml/web.module.xml
+share/applications/googleearth.desktop
+share/mime/application/earthviewer.xml
+share/mime/application/keyhole.xml
+share/mime/application/vnd.google-earth.kml+xml.xml
+share/mime/application/vnd.google-earth.kmz.xml
+share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/kvw
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/linux/xdg
+@dirrm %%DATADIR%%/linux/mailto-scripts
+@dirrm %%DATADIR%%/linux
+@dirrm %%DATADIR%%/res/pal4
 @dirrm %%DATADIR%%/res/pal2
 @dirrm %%DATADIR%%/res/pal3
-@dirrm %%DATADIR%%/res/pal4
+@dirrm %%DATADIR%%/res/paddle
 @dirrm %%DATADIR%%/res/pal5
+@dirrm %%DATADIR%%/res/pushpin
+@dirrm %%DATADIR%%/res/shapes
 @dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%/resources/en.locale
 @dirrm %%DATADIR%%/resources/en_US.locale
 @dirrm %%DATADIR%%/resources/en_CA.locale
-@dirrm %%DATADIR%%/resources/en_NZ.locale
 @dirrm %%DATADIR%%/resources/en_GB.locale
+@dirrm %%DATADIR%%/resources/en.locale
+@dirrm %%DATADIR%%/resources/en_NZ.locale
 @dirrm %%DATADIR%%/resources/en_AU.locale
 @dirrm %%DATADIR%%/resources/es.locale
 @dirrm %%DATADIR%%/resources/fr.locale
 @dirrm %%DATADIR%%/resources/it.locale
-@dirrm %%DATADIR%%/resources/de.locale
 @dirrm %%DATADIR%%/resources/ja.locale
+@dirrm %%DATADIR%%/resources/de.locale
 @dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%/linux/xdg
-@dirrm %%DATADIR%%/linux/mailto-scripts
-@dirrm %%DATADIR%%/linux
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/kvw
 @dirrm %%DATADIR%%/xml
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
