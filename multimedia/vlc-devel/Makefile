@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.9.0.20061020
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
@@ -23,7 +23,7 @@ DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.9.0.//}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
-LIB_DEPENDS=	notify.2:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 OPTIONS+=	A52 "a52 audio support, many DVDs use this" On

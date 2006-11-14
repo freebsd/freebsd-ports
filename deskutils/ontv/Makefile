@@ -8,7 +8,7 @@
 
 PORTNAME=	ontv
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Applet frontend of XMLTV
 
-LIB_DEPENDS=	notify.2:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
 		tv_grab_be:${PORTSDIR}/textproc/p5-xmltv
 
