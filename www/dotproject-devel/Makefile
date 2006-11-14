@@ -30,6 +30,7 @@ SUB_FILES=	pkg-message
 do-install:
 	${MKDIR} ${DOTPROJECTDIR}
 	${CP} -R ${WRKSRC}/* ${DOTPROJECTDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DOTPROJECTDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
