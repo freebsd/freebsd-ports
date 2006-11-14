@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AL/ALVAROL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Peter Guttman cryptlib API
 
 LIB_DEPENDS=	cl:${PORTSDIR}/security/cryptlib
@@ -30,4 +30,10 @@ post-patch:
 post-configure:
 	${PERL} -pi -e 's,-lpthread,${PTHREAD_LIBS},' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
