@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pychm
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	textproc python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnochm
+MASTER_SITES=	SF/gnochm
 
 MAINTAINER=	radek@raadradd.com
-COMMENT=	A package that provides bindings for CHMLIB library
+COMMENT=	Bindings for CHMLIB library
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib
 
