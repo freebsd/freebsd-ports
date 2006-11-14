@@ -137,6 +137,7 @@
     SUBDIR += preferencepanes
     SUBDIR += preferences.app
     SUBDIR += py-dosage
+    SUBDIR += py-tagfu
     SUBDIR += pybookreader
     SUBDIR += pypanel
     SUBDIR += recoll

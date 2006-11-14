@@ -1,0 +1,9 @@
+TagFu is a library for tagging entities (which can be anything with
+a url) with Tags or metadata. TagFu is implemented in Python and very
+closely mimics basic Python data structures. Tags is a Python list of
+tags, Entities is a Python List of Entity objects, and Entity is a
+dict which contains all the key-value pairs for all tags associated
+to the Entity. The key is the Tag name and value is an arbitrary value,
+if no value is set, the tag is considered to be a simple tag.
+
+WWW: http://www.geekfire.com/~alex/tagfu/

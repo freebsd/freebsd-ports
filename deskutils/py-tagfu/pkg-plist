@@ -1,0 +1,10 @@
+%%PYTHON_SITELIBDIR%%/tagfu/__init__.py
+%%PYTHON_SITELIBDIR%%/tagfu/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tagfu/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tagfu/tagfu.py
+%%PYTHON_SITELIBDIR%%/tagfu/tagfu.pyc
+%%PYTHON_SITELIBDIR%%/tagfu/tagfu.pyo
+%%PYTHON_SITELIBDIR%%/tagfu/tagfu_attrs.py
+%%PYTHON_SITELIBDIR%%/tagfu/tagfu_attrs.pyc
+%%PYTHON_SITELIBDIR%%/tagfu/tagfu_attrs.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tagfu
