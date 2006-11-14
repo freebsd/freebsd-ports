@@ -46,9 +46,7 @@ do-build:
 do-install:
 	${MKDIR} ${LOCALEDIR}/${LANG}
 	${INSTALL_DATA} ${WRKSRC}/LC_CTYPE ${LOCALEDIR}/${LANG}
-	${CP} -p ${BASELOCALEDIR}/${LANG}/LC_CTYPE \
-		${LOCALEDIR}/${LANG}/LC_CTYPE.old
-	${CP} -p ${LOCALEDIR}/${LANG}/LC_CTYPE \
+	${LN} -fs ${LOCALEDIR}/${LANG}/LC_CTYPE \
 		${BASELOCALEDIR}/${LANG}/LC_CTYPE
 
 post-install:
