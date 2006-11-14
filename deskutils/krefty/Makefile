@@ -14,8 +14,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick Reference sheets for KDE
 
 USE_KDELIBS_VER=3
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+
+DOCSDIR=	share/doc/HTML
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/config.h.in
