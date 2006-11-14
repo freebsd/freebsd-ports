@@ -280,7 +280,7 @@ CONFIGURE_ARGS+=	--disable-carp
 CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-I${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
