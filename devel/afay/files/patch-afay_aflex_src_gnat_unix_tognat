@@ -1,0 +1,12 @@
+--- afay/aflex/src/gnat_unix/tognat.old	Thu Nov  9 19:18:25 2006
++++ afay/aflex/src/gnat_unix/tognat	Thu Nov  9 19:19:21 2006
+@@ -1,8 +1,7 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ for I
+   in `ls *.a`; do
+ #  ls -l $I;
+   echo "gnatchopping $I...";
+   gnatchop -w $I 
+ done
+-

@@ -1,0 +1,5 @@
+A modified version of Aflex/Ayacc for Ada95 parent/child feature support. A new
+directive "%unit A.B.C" is added, enabling the Ada unit A.B.C to be the parent
+of the generated lexer/parser.
+
+Aflex/Ayacc are copyrighted by the The University of California.
