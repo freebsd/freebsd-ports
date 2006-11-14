@@ -5,7 +5,7 @@ include/libnotify/notify.h
 lib/libnotify.a
 lib/libnotify.la
 lib/libnotify.so
-lib/libnotify.so.2
+lib/libnotify.so.1
 libdata/pkgconfig/libnotify.pc
 share/gtk-doc/html/libnotify/NotifyNotification.html
 share/gtk-doc/html/libnotify/ch01.html
