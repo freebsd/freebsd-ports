@@ -1,6 +1,12 @@
-%%RUBY_SITEARCHLIBDIR%%/cdb.so
 %%RUBY_SITELIBDIR%%/cdb.rb
+%%RUBY_SITEARCHLIBDIR%%/cdb.so
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
