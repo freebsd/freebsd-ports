@@ -590,6 +590,7 @@
     SUBDIR += synergy
     SUBDIR += sysgather
     SUBDIR += syslog-ng
+    SUBDIR += syslog-ng2
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
     SUBDIR += tcplist
