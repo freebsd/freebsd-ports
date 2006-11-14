@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Scraper-ISBN-ORA_Driver
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -29,7 +29,7 @@ MAN3=	WWW::Scraper::ISBN::ORA_Driver.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	"Requires perl 5.6.x or higher"
+IGNORE=	requires perl 5.6.x or higher. Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
