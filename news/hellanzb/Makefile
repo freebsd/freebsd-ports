@@ -3,11 +3,11 @@
 # Whom:			Philip Jenvey <pjenvey@groovie.org>
 #
 # $FreeBSD$
-# $Id: Makefile 737 2006-03-25 04:19:54Z pjenvey $
+# $Id: Makefile 828 2006-09-10 01:20:41Z pjenvey $
 #
 
 PORTNAME=	hellanzb
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	news
 MASTER_SITES=	http://www.hellanzb.com/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -18,6 +18,7 @@ COMMENT=	Nzb downloader and post processor
 RUN_DEPENDS=	par2:${PORTSDIR}/archivers/par2cmdline \
 		flac:${PORTSDIR}/audio/flac \
 		shorten:${PORTSDIR}/audio/shorten \
+		${PYTHON_SITELIBDIR}/yenc.py:${PORTSDIR}/news/py-yenc \
 		${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
 		${PYTHON_SITELIBDIR}/twisted/web:${PORTSDIR}/www/py-twistedWeb
 
