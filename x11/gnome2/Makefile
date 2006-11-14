@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.16.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -60,12 +60,13 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		evince:${PORTSDIR}/graphics/evince \
 		${LOCALBASE}/libexec/fast-user-switch-applet:${PORTSDIR}/x11/fast-user-switch-applet \
 		${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
-    		alacarte:${PORTSDIR}/deskutils/alacarte \
+		alacarte:${PORTSDIR}/deskutils/alacarte \
 		gnome-power-manager:${PORTSDIR}/sysutils/gnome-power-manager \
 		gnome-volume-manager:${PORTSDIR}/sysutils/gnome-volume-manager \
 		orca:${PORTSDIR}/accessibility/orca \
 		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
-		ekiga:${PORTSDIR}/net/ekiga
+		ekiga:${PORTSDIR}/net/ekiga \
+		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
 NO_BUILD=	yes
 
