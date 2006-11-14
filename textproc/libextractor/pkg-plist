@@ -43,6 +43,8 @@ lib/libextractor/libextractor_mp3.la
 lib/libextractor/libextractor_mp3.so
 lib/libextractor/libextractor_mpeg.la
 lib/libextractor/libextractor_mpeg.so
+lib/libextractor/libextractor_nsf.la
+lib/libextractor/libextractor_nsf.so
 %%VORBIS%%lib/libextractor/libextractor_ogg.la
 %%VORBIS%%lib/libextractor/libextractor_ogg.so
 lib/libextractor/libextractor_oo.la

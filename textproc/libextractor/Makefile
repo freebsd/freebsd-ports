@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.15
+PORTVERSION=	0.5.16
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -23,7 +23,7 @@ USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl:15
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/libextractor
 CONFIGURE_ARGS=	--disable-ltdl-install --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
