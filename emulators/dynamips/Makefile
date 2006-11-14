@@ -48,7 +48,6 @@ DYNAMIPS_ARCH=	"nojit"
 .if ${OSVERSION} < 602100 || ${OSVERSION} < 700021
 #
 # Requires libpcap 0.9.4
-LIB_DEPENDS+=	pcap.2:${PORTSDIR}/net/libpcap
 BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
 .endif
 
