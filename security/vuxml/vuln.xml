@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5a945904-73b1-11db-91d2-0002a5c2f4ef">
+    <topic>unzoo -- Directory Traversal Vulnerability</topic>
+    <affects>
+      <package>
+	<name>unzoo</name>
+	<range><lt>4.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/12857/">
+	  <p>Doubles has discovered a vulnerability in Unzoo, which
+	    potentially can be exploited by malicious people to
+	    compromise a user's system.</p>
+	  <p>The vulnerability is caused due to an input validation error
+	    when unpacking archives. This can be exploited via a
+	    directory traversal attack to overwrite files outside the
+	    directory, where the files are extracted to, if a user is
+	    tricked into extracting a malicious archive using Unzoo.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/12857/</url>
+      <url>http://securitytracker.com/alerts/2004/Oct/1011673.html</url>
+      <bid>11417</bid>
+    </references>
+    <dates>
+      <discovery>2004-10-18</discovery>
+      <entry>2006-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d68618a-7199-11db-a2ad-000c6ec775d9">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
