@@ -7,12 +7,12 @@
 
 PORTNAME=	dynamips
 PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	Cisco 7200 Simulator
+COMMENT=	Cisco 3600/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 
@@ -37,16 +37,19 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" #|| ${ARCH} == "amd64"
-DYNAMIPS_ARCH=	"${ARCH}"
+.if ${ARCH} == "i386"
+DYNAMIPS_ARCH=	"x86"
+.elif ${ARCH} == "amd64"
+DYNAMIPS_ARCH=	"nojit"	# JIT does not work on amd64 for some reason
 .else
 DYNAMIPS_ARCH=	"nojit"
 .endif
 
-.if ${OSVERSION} < 600029
+.if ${OSVERSION} < 602100 || ${OSVERSION} < 700021
 #
-# Requires libpcap 0.9+
-MAKE_ENV+=	HAS_PCAP=0
+# Requires libpcap 0.9.4
+LIB_DEPENDS+=	pcap.2:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
 .endif
 
 .if ${OSVERSION} >= 700013
