@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.0.2091
+PORTVERSION=	4.0.2414
 CATEGORIES=	astro deskutils
 MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
 DISTFILES=	${TARGET_DISTFILE}
@@ -18,8 +18,10 @@ COMMENT=	Explore, Search and Discover
 BUILD_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+# Current version of Google Earth might not be vulnerable anymore.
+# Use NO_IGNORE=yes and DISABLE_VULNERABILITIES=yes if you're using portaudit
+# to bypass the security checks.
 FORBIDDEN=	Buffer-overflow vulnerability: http://vuxml.FreeBSD.org/5c9a2769-5ade-11db-a5ae-00508d6a62df.html
-BROKEN=		Incomplete pkg-plist
 
 RESTRICTED=	Not sure about redistribution rights
 
@@ -49,8 +51,10 @@ RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
 .endif
 
 do-fetch:
-	@cd ${DISTDIR}; \
-		${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${REAL_DISTFILE}|g} ${FETCH_AFTER_ARGS}
+	@if [ ! -f ${DISTDIR}/${TARGET_DISTFILE} ]; then \
+		cd ${DISTDIR}; \
+		${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${REAL_DISTFILE}|g} ${FETCH_AFTER_ARGS}; \
+	fi
 
 do-build:
 	@${MKDIR} ${WRKSRC}
