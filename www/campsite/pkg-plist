@@ -39,6 +39,9 @@ campsite/instance/database/upgrade/2.5.x/upgrade_article_types.php
 campsite/instance/database/upgrade/2.5.x/upgrade_user_perms.php
 campsite/instance/database/upgrade/2.6.0/data-required.sql
 campsite/instance/database/upgrade/2.6.0/tables.sql
+campsite/instance/database/upgrade/2.6.1/data-required.sql
+campsite/instance/database/upgrade/2.6.1/tables.sql
+campsite/instance/database/upgrade/2.6.1/upgrade_phorum_users.php
 campsite/sbin/campsite_autopublish
 campsite/sbin/campsite_autopublish.php
 campsite/sbin/campsite_config
@@ -68,6 +71,7 @@ campsite/www-common/html/classes/DatabaseObject.php
 campsite/www-common/html/classes/DbObjectArray.php
 campsite/www-common/html/classes/DynMenuItem.php
 campsite/www-common/html/classes/Event.php
+campsite/www-common/html/classes/FileTextSearch.php
 campsite/www-common/html/classes/IPAccess.php
 campsite/www-common/html/classes/Image.php
 campsite/www-common/html/classes/ImageSearch.php
@@ -396,6 +400,7 @@ campsite/www-common/html/include/captcha/fonts/VeraSeBd.ttf
 campsite/www-common/html/include/captcha/fonts/local.conf
 campsite/www-common/html/include/captcha/image.php
 campsite/www-common/html/include/captcha/php-captcha.inc.php
+campsite/www-common/html/include/crypto/rc4Encrypt.php
 campsite/www-common/html/include/pear/Archive/Tar.php
 campsite/www-common/html/include/pear/Console/Getopt.php
 campsite/www-common/html/include/pear/File.php
@@ -1002,6 +1007,7 @@ campsite/www-common/html/javascript/SyntaxHighlighter/shBrushVb.js
 campsite/www-common/html/javascript/SyntaxHighlighter/shBrushXml.js
 campsite/www-common/html/javascript/SyntaxHighlighter/shCore.js
 campsite/www-common/html/javascript/campsite.js
+campsite/www-common/html/javascript/crypt.js
 campsite/www-common/html/javascript/fValidate/fValidate.basic.js
 campsite/www-common/html/javascript/fValidate/fValidate.config.js
 campsite/www-common/html/javascript/fValidate/fValidate.controls.js
@@ -2754,6 +2760,7 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common/html/include/pear/Console
 @dirrm campsite/www-common/html/include/pear/Archive
 @dirrm campsite/www-common/html/include/pear
+@dirrm campsite/www-common/html/include/crypto
 @dirrm campsite/www-common/html/include/captcha/fonts
 @dirrm campsite/www-common/html/include/captcha
 @dirrm campsite/www-common/html/include/adodb/xsl
@@ -2779,6 +2786,7 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common
 @dirrm campsite/www
 @dirrm campsite/sbin
+@dirrm campsite/instance/database/upgrade/2.6.1
 @dirrm campsite/instance/database/upgrade/2.6.0
 @dirrm campsite/instance/database/upgrade/2.5.x
 @dirrm campsite/instance/database/upgrade/2.4.x
