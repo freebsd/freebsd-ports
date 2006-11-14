@@ -8,7 +8,7 @@
 PORTNAME=	xnview
 PORTVERSION=	1.70
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.xnview.com/
+MASTER_SITES=	http://www.xnview-download.de/download/
 DISTNAME=	XnView-x86-unknown-FreeBSD5.x-static
 EXTRACT_SUFX=	.tgz
 
