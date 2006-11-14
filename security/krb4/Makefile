@@ -7,14 +7,14 @@
 
 PORTNAME=	krb4
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/krb/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KTH Kerberos 4
 
-CONFLICTS=	krb5-[0-9]* heimdal-[0-9]*
+CONFLICTS=	krb5-[0-9]* heimdal-[0-9]* srp-[0-9]*
 USE_LDCONFIG=	yes
 # Don't remove this.  This port installs several applications
 # which have the same name as some in the base system (e.g.
