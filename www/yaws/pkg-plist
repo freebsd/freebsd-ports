@@ -71,6 +71,7 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/ymnesia.erl
 %%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
 www/yaws/END
 www/yaws/END2
@@ -279,6 +280,7 @@ www/yaws/todo.yaws
 www/yaws/upload.yaws
 www/yaws/upload0.yaws
 www/yaws/urandom.yaws
+www/yaws/yapp_intro.yaws
 www/yaws/yaws-1.55_to_1.56.patch
 www/yaws/ybed.erl
 www/yaws/yman.yaws
