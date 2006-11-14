@@ -1579,6 +1579,7 @@
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
     SUBDIR += pear-Validate_Finance
+    SUBDIR += pear-Validate_Finance_CreditCard
     SUBDIR += pear-Var_Dump
     SUBDIR += pear-XML_NITF
     SUBDIR += pear-XML_Parser
