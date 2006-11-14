@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Scraper-ISBN-Amazon_Driver
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -30,7 +30,7 @@ MAN3=	WWW::Scraper::ISBN::AmazonUK_Driver.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	"Requires perl 5.6.x or higher"
+IGNORE=	requires perl 5.6.x or higher. Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
