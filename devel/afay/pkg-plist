@@ -1,0 +1,26 @@
+bin/aflex
+bin/ayacc
+%%PORTDOCS%%%%DOCSDIR%%/READ_ME.aflex
+%%PORTDOCS%%%%DOCSDIR%%/READ_ME.ayacc
+%%PORTDOCS%%%%DOCSDIR%%/aflex.html
+%%PORTDOCS%%%%DOCSDIR%%/aflex_user_man.bib
+%%PORTDOCS%%%%DOCSDIR%%/aflex_user_man.tex
+%%PORTDOCS%%%%DOCSDIR%%/ayacc.html
+%%PORTDOCS%%%%DOCSDIR%%/ayacc_user_man.tex
+%%EXAMPLESDIR%%/ada_parser/COMPILE
+%%EXAMPLESDIR%%/ada_parser/READ.ME
+%%EXAMPLESDIR%%/ada_parser/ada.y
+%%EXAMPLESDIR%%/ada_parser/ada_lex.l
+%%EXAMPLESDIR%%/ada_parser/driver.a
+%%EXAMPLESDIR%%/calc/COMPILE
+%%EXAMPLESDIR%%/calc/READ.ME
+%%EXAMPLESDIR%%/calc/calc.input
+%%EXAMPLESDIR%%/calc/calc.y
+%%EXAMPLESDIR%%/calc/calc_lex.l
+%%EXAMPLESDIR%%/calc/driver.a
+%%EXAMPLESDIR%%/example.l
+%%EXAMPLESDIR%%/test95.l
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/ada_parser
+@dirrm %%EXAMPLESDIR%%/calc
+@dirrm %%EXAMPLESDIR%%
