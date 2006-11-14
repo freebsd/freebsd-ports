@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	rssyl
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
+MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
 
-MAINTAINER=	v.velox@vvelox.net
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	A RSS/Atom plugin for sylheed-claws
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
@@ -26,8 +26,5 @@ USE_ICONV=	yes
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 	--with-libintl-prefix=${LOCALBASE}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/100\.93/100/' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
