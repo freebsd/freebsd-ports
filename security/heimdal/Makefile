@@ -7,7 +7,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/pub/heimdal/src/ \
@@ -20,7 +20,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A popular BSD-licensed implementation of Kerberos 5
 
-CONFLICTS=	krb4-[0-9]* krb5-[0-9]*
+CONFLICTS=	krb4-[0-9]* krb5-[0-9]* srp-[0-9]*
 
 OPTIONS+=	LDAP	 "Use OpenLDAP as the KDC backend"		off
 OPTIONS+=	CRACKLIB "Use CrackLib for password quality checking"	off

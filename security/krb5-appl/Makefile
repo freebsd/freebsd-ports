@@ -7,6 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.5.1
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -17,13 +18,13 @@ COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
-CONFLICTS=		krb4-[0-9]* heimdal-[0-9]*
+CONFLICTS=		krb4-[0-9]* heimdal-[0-9]* srp-[0-9]*
 
 LATEST_LINK=		${PORTNAME}
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 USE_AUTOTOOLS=		libtool:15
 CONFIGURE_ARGS?=	--enable-shared
 # CONFIGURE_ARGS+=	--disable-thread-support
