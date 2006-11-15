@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.18
-PORTREVISION=	1
+PORTVERSION=	4.19
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -71,6 +70,8 @@ post-patch:
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /; s/^(SUBDIRS.+)doc/\1/' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E -e 's/([^n])install-examplesDATA/\1/' \
+		${WRKSRC}/tools/Makefile.in
 .endif
 
 post-install:
