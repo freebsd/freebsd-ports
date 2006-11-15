@@ -1,11 +1,11 @@
---- data/Makefile.in.orig	Mon Dec 20 17:28:59 2004
-+++ data/Makefile.in	Mon Dec 20 17:29:43 2004
-@@ -170,7 +170,7 @@
+--- data/Makefile.in.orig	Tue Nov 14 13:33:28 2006
++++ data/Makefile.in	Tue Nov 14 13:36:09 2006
+@@ -252,7 +252,7 @@
+ sharedmimepackagedir = $(sharedmimedir)/packages
  sharedmimepackage_in_files = gdesklets.xml.in
  sharedmimepackage_DATA = $(sharedmimepackage_in_files:.xml.in=.xml)
- 
 -mimeicondir = $(datadir)/icons/gnome/48x48/mimetypes
 +mimeicondir = $(prefix)/share/icons/gnome/48x48/mimetypes
  mimeicon_DATA = gnome-mime-application-x-gdesklets-display.png
- 
  pixmapdir = $(PIXMAPDIR)
+ pixmap_DATA = gdesklets.png

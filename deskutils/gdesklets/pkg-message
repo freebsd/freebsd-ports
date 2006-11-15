@@ -4,7 +4,7 @@ which desklets to install. It will probably be named
 "gdesklets-desklets".
 
 There are only few desklets in the ports tree at the moment. To help porting
-more desklets please visit http://gdesklets.gnomedesktop.org/ and port
+more desklets please visit http://www.gdesklets.org/ and port
 some desklets. Those ports should have a PKGNAMEPREFIX of "gdesklets-".
 If the port only provides a sensor or a display the name should have a
 sensor- or display- appended, so it would be e.g.

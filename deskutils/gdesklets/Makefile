@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.35.3
-PORTREVISION=	4
+PORTVERSION=	0.35.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.org/downloads/ \
 		http://www.pycage.de/download/${PORTNAME}/ \
@@ -30,6 +29,9 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack librsvg2 pygnomeextras
 
 OPTIONS=	GDBM "install py-gdbm instead py-bsddb for config storage" off
 
+MAN1=	gdesklets.1
+MANCOMPRESSED=	no
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GDBM)
@@ -40,8 +42,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
-
-MAN1=		gdesklets.1
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man/
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays
