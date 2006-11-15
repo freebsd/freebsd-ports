@@ -10440,6 +10440,7 @@ p5-Unicode-Normalize	ports/textproc/p5-Unicode-Normalize
 p5-Unicode-RecursiveDowngrade	ports/converters/p5-Unicode-RecursiveDowngrade
 p5-Unicode-String	ports/converters/p5-Unicode-String
 p5-Unicode-UTF8simple	ports/converters/p5-Unicode-UTF8simple
+p5-Unicode-Unihan	ports/textproc/p5-Unicode-Unihan
 p5-Unix-ConfigFile	ports/sysutils/p5-Unix-ConfigFile
 p5-Unix-Mknod	ports/sysutils/p5-Unix-Mknod
 p5-Unix-Processors	ports/sysutils/p5-Unix-Processors
