@@ -200,3 +200,10 @@ xpi-plist:	extract
 		then ${ECHO_CMD} %%XPI_XPIDIR%%/chrome.manifest >> ${PLIST} ; fi
 	@${FIND} -ds ${WRKSRC} -type d -not -name ${DISTNAME} | \
 		${SED} -e "s,^${WRKSRC},@dirrm %%XPI_XPIDIR%%," >> ${PLIST}
+
+xpi-pre-chrome:
+	@${CHMOD} g+w ${_TD_FULL}
+	@${RM} -f ${_TD_FULL}/chrome.manifest
+
+xpi-post-chrome:
+	@${CP} -f ${_TD_FULL}/chrome.manifest ${FILESDIR}/
