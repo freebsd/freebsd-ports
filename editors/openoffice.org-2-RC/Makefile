@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	openoffice.org-RC
+PORTNAME?=	openoffice.org
 PORTVERSION?=	2.1.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680_m${MILESTONE}/&,} \
