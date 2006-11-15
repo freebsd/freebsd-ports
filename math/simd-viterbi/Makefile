@@ -7,6 +7,7 @@
 
 PORTNAME=	simd-viterbi
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.ka9q.net/code/fec/
 
@@ -15,13 +16,13 @@ COMMENT=	A fast Viterbi CODEC library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKEFILE=	makefile
 
 MAN3=		simd-viterbi.3
 
 PLIST_FILES=	include/parity.h include/viterbi27.h include/viterbi29.h \
-		lib/libviterbi.a lib/libviterbi.so lib/libviterbi.so.2.0.1
+		lib/libviterbi.a lib/libviterbi.so lib/libviterbi.so.2
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
