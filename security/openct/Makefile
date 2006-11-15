@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	openct
-PORTVERSION=	0.6.9
+DISTVERSION=	0.6.11-pre1
 CATEGORIES=	security
-MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
+MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
+		http://www.opensc-project.org/files/${PORTNAME}/testing/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A middleware framework for smart card terminals
@@ -26,6 +27,8 @@ SUB_FILES=	etoken.conf
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		openct-tool.1
 
