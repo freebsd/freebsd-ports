@@ -17,6 +17,8 @@ COMMENT=	Fortran to Python Interface Generator
 
 RUN_DEPENDS=	${PYNUMERIC}
 
+CONFLICTS=	py*-numpy-1.*
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
