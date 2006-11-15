@@ -3377,6 +3377,7 @@ glchess		ports/games/glchess
 glclock		ports/x11-clocks/glclock
 gld		ports/mail/gld
 gle		ports/graphics/gle
+gle-graphics	ports/graphics/gle-graphics
 glean		ports/graphics/glean
 glest		ports/games/glest
 glest-data		ports/games/glest-data
