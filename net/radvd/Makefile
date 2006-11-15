@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radvd
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/ CSME
 
