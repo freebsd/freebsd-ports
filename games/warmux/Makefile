@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wormux
-DISTVERSION=	0.7beta3
+DISTVERSION=	0.7.4
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/
 
@@ -16,10 +16,11 @@ COMMENT=	Wormux game
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USE_SDL=	sdl image mixer ttf gfx
+USE_SDL=	sdl image mixer ttf gfx net
 
 CONFIGURE_ARGS=	--with-datadir-name=${PORTNAME} --program-prefix=""
+
+MAN6=	wormux.6
 
 .include <bsd.port.pre.mk>
 
