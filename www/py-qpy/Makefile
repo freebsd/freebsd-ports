@@ -1,0 +1,31 @@
+# New ports collection makefile for:	py-qpy
+# Date created:		13 Nov 2006
+# Whom:	      		Dryice Liu <dryice@dryice.name>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qpy
+PORTVERSION=	1.4
+CATEGORIES=	www python
+MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
+		http://dryice.name/computer/FreeBSD/distfiles/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	dryice@dryice.name
+COMMENT=	Generating safely-quoted html text from python code
+
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	yes
+
+.include <bsd.port.pre.mk>
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${DOCSDIR}
+.for docfile in CHANGES.txt LICENSE.txt README.txt
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
