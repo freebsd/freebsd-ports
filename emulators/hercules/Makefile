@@ -7,6 +7,7 @@
 
 PORTNAME=	hercules
 PORTVERSION=	3.04
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 
