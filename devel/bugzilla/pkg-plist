@@ -71,12 +71,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/security-os.html
 %%PORTDOCS%%%%DOCSDIR%%/html/security-webserver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/security.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-bundlebugzilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-dbdsponge.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-passwd-encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-perlmodule.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-relogin-everyone.html
+%%PORTDOCS%%%%DOCSDIR%%/html/trbl-relogin-some.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trbl-testserver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/trouble-filetemp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/troubleshooting.html
@@ -88,7 +88,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/versions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/voting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/whining.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x3269.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x757.html
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.xml
 %%PORTDOCS%%%%DOCSDIR%%/images/callouts/1.gif
@@ -300,11 +300,11 @@
 %%BUGZILLADIR%%/template/en/default/account/password/set-forgotten-password.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/prefs/account.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/prefs/email.html.tmpl
-%%BUGZILLADIR%%/template/en/default/account/prefs/footer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/prefs/permissions.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/prefs/prefs.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/prefs/saved-searches.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/prefs/settings.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/confirm-action.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/sudo.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/table.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/add.html.tmpl
