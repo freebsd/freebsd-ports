@@ -1,0 +1,29 @@
+--- Makefile.orig	Tue Nov 14 13:26:24 2006
++++ Makefile	Tue Nov 14 13:26:51 2006
+@@ -2,7 +2,6 @@
+ SBINDIR=/usr/sbin/
+ BINDIR=/usr/bin/
+ CONFIGDIR="/etc/powerdns/"
+-OPTFLAGS?=-O3
+ CXXFLAGS:= $(CXXFLAGS) -Wall $(OPTFLAGS) $(PROFILEFLAGS)
+ CFLAGS:=$(CFLAGS) -Wall $(OPTFLAGS) $(PROFILEFLAGS)
+ LINKCC=$(CXX)
+@@ -52,16 +52,14 @@
+ 	 fi
+ 
+ install: all
+-	-mkdir -p $(DESTDIR)/$(SBINDIR)
+ 	mv pdns_recursor $(DESTDIR)/$(SBINDIR)
+ 	strip $(DESTDIR)/$(SBINDIR)/pdns_recursor
+-	mkdir -p $(DESTDIR)/$(BINDIR)
+ 	mv rec_control $(DESTDIR)/$(BINDIR)
+ 	strip $(DESTDIR)/$(BINDIR)/rec_control
+ 	-mkdir -p $(DESTDIR)/$(CONFIGDIR)
+ 	$(DESTDIR)/$(SBINDIR)/pdns_recursor --config > $(DESTDIR)/$(CONFIGDIR)/recursor.conf-dist
+-	-mkdir -p $(DESTDIR)/usr/share/man/man1
+-	cp pdns_recursor.1 rec_control.1 $(DESTDIR)/usr/share/man/man1
++	mv pdns_recursor.1 pdns_recursor.8
++	mv rec_control.1 rec_control.8
+ 	$(OS_SPECIFIC_INSTALL)	
+ 
+ clean:
