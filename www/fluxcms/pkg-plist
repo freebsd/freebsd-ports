@@ -28,6 +28,7 @@
 %%INSTALLDIR%%/admin/lang/plugins/siteoptions_de.xml
 %%INSTALLDIR%%/admin/lang/plugins/siteoptions_en.xml
 %%INSTALLDIR%%/admin/sitemap/admin.xml
+%%INSTALLDIR%%/admin/sitemap/assets.xml
 %%INSTALLDIR%%/admin/sitemap/blog.xml
 %%INSTALLDIR%%/admin/sitemap/bxe.xml
 %%INSTALLDIR%%/admin/sitemap/dbform.xml
@@ -41,6 +42,7 @@
 %%INSTALLDIR%%/admin/sitemap/newsletter.xml
 %%INSTALLDIR%%/admin/sitemap/oneform.xml
 %%INSTALLDIR%%/admin/sitemap/ooo.xml
+%%INSTALLDIR%%/admin/sitemap/permissions.xml
 %%INSTALLDIR%%/admin/sitemap/versioning.xml
 %%INSTALLDIR%%/admin/webinc/approval/index.php
 %%INSTALLDIR%%/admin/webinc/deletetmp.php
@@ -83,6 +85,24 @@
 %%INSTALLDIR%%/admin/webinc/img/space.gif
 %%INSTALLDIR%%/admin/webinc/img/up.gif
 %%INSTALLDIR%%/admin/webinc/install/linklog/index.php
+%%INSTALLDIR%%/admin/webinc/install/matrix/index.php
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/.configxml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/.configxml.children
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/activation-txt.de.xhtml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/archive/.configxml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/archive/2006/.configxml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/drafts/.configxml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/index.de.xhtml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/subscribe.de.xhtml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/data/unsubscribe.de.xhtml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/dbforms2/newsletter_feeds.xml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/dbforms2/newsletter_from.xml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/dbforms2/newsletter_groups.xml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/dbforms2/newsletter_lists.xml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/dbforms2/newsletter_mailservers.xml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/dbforms2/newsletter_users.xml
+%%INSTALLDIR%%/admin/webinc/install/newsletter/index.php
+%%INSTALLDIR%%/admin/webinc/install/newsletter/xsl/newsletter.xsl
 %%INSTALLDIR%%/admin/webinc/js/admin.js
 %%INSTALLDIR%%/admin/webinc/js/adminfields.js
 %%INSTALLDIR%%/admin/webinc/js/adminpopup.js
@@ -94,7 +114,6 @@
 %%INSTALLDIR%%/admin/webinc/lostpw/index.php
 %%INSTALLDIR%%/admin/webinc/openid/index.php
 %%INSTALLDIR%%/admin/webinc/openid/trust.php
-%%INSTALLDIR%%/admin/webinc/sxip-cookiehandler.php
 %%INSTALLDIR%%/admin/webinc/update/index.php
 %%INSTALLDIR%%/admin/webinc/xlt/images/I.png
 %%INSTALLDIR%%/admin/webinc/xlt/images/L.png
@@ -116,12 +135,14 @@
 %%INSTALLDIR%%/bin/blog/convert2loginname.sql
 %%INSTALLDIR%%/bin/blog/kwa-to-bxb-import.php
 %%INSTALLDIR%%/bin/blog/twoday-to-bxb.php
+%%INSTALLDIR%%/bin/branch-switcher-2.sh
 %%INSTALLDIR%%/bin/branch-switcher.sh
 %%INSTALLDIR%%/bin/svnBuildUpdate.sh
 %%INSTALLDIR%%/bin/switch-to-1_3-branch.sh
 %%INSTALLDIR%%/bin/switch-to-1_3_0-tag.sh
 %%INSTALLDIR%%/bin/switch-to-1_4-branch.sh
 %%INSTALLDIR%%/bin/switch-to-1_4_0-tag.sh
+%%INSTALLDIR%%/bin/switch-to-1_5-branch.sh
 %%INSTALLDIR%%/bin/switch-to-trunk.sh
 %%INSTALLDIR%%/dbforms2/article.xml
 %%INSTALLDIR%%/dbforms2/article_description.xml
@@ -132,6 +153,12 @@
 %%INSTALLDIR%%/dbforms2/blogposts.xml
 %%INSTALLDIR%%/dbforms2/events.xml
 %%INSTALLDIR%%/dbforms2/group.xml
+%%INSTALLDIR%%/dbforms2/newsletter_feeds.xml
+%%INSTALLDIR%%/dbforms2/newsletter_from.xml
+%%INSTALLDIR%%/dbforms2/newsletter_groups.xml
+%%INSTALLDIR%%/dbforms2/newsletter_mailservers.xml
+%%INSTALLDIR%%/dbforms2/newsletter_users.xml
+%%INSTALLDIR%%/dbforms2/perm_groups.xml
 %%INSTALLDIR%%/dbforms2/users.xml
 %%INSTALLDIR%%/div/db/bxcms.sql
 %%INSTALLDIR%%/div/db/dbexport.sh
@@ -157,8 +184,6 @@
 %%INSTALLDIR%%/forms/users/config.xml
 %%INSTALLDIR%%/forms/users/deletecache.php
 %%INSTALLDIR%%/forms/users/index.php
-%%INSTALLDIR%%/inc/.externals
-%%INSTALLDIR%%/inc/.externals.old
 %%INSTALLDIR%%/inc/.filemap
 %%INSTALLDIR%%/inc/.registry/archive_tar.reg
 %%INSTALLDIR%%/inc/.registry/console_getopt.reg
@@ -173,7 +198,6 @@
 %%INSTALLDIR%%/inc/Auth/Auth.php
 %%INSTALLDIR%%/inc/Auth/Container.php
 %%INSTALLDIR%%/inc/Auth/Container/MDB2.php
-%%INSTALLDIR%%/inc/Auth/Container/sxip.php
 %%INSTALLDIR%%/inc/Auth/HTTP.php
 %%INSTALLDIR%%/inc/Auth/OpenID.php
 %%INSTALLDIR%%/inc/Auth/OpenID/Association.php
@@ -233,6 +257,7 @@
 %%INSTALLDIR%%/inc/Image/CropInterface.php
 %%INSTALLDIR%%/inc/Image/Text.php
 %%INSTALLDIR%%/inc/ImageDirectoryIterator.php
+%%INSTALLDIR%%/inc/JSON.php
 %%INSTALLDIR%%/inc/Log.php
 %%INSTALLDIR%%/inc/Log/composite.php
 %%INSTALLDIR%%/inc/Log/console.php
@@ -316,19 +341,6 @@
 %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer/HTML.php
 %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer/Text.php
 %%INSTALLDIR%%/inc/SQL/Tree.php
-%%INSTALLDIR%%/inc/SXIP/Base.php
-%%INSTALLDIR%%/inc/SXIP/Config.php
-%%INSTALLDIR%%/inc/SXIP/Data.php
-%%INSTALLDIR%%/inc/SXIP/Request.php
-%%INSTALLDIR%%/inc/SXIP/Request/Fetch.php
-%%INSTALLDIR%%/inc/SXIP/Request/FetchX.php
-%%INSTALLDIR%%/inc/SXIP/Request/Login.php
-%%INSTALLDIR%%/inc/SXIP/Request/LoginX.php
-%%INSTALLDIR%%/inc/SXIP/Request/Logout.php
-%%INSTALLDIR%%/inc/SXIP/Request/Store.php
-%%INSTALLDIR%%/inc/SXIP/Request/StoreX.php
-%%INSTALLDIR%%/inc/SXIP/Response.php
-%%INSTALLDIR%%/inc/SXIP/XMLResponse.php
 %%INSTALLDIR%%/inc/Services/flickr.php
 %%INSTALLDIR%%/inc/System.php
 %%INSTALLDIR%%/inc/Text/CAPTCHA.php
@@ -346,7 +358,6 @@
 %%INSTALLDIR%%/inc/XML/db2xml/Format/Extended_NG.php
 %%INSTALLDIR%%/inc/XML/db2xml/Input/Array.php
 %%INSTALLDIR%%/inc/XML/db2xml/Input/Dbresult.php
-%%INSTALLDIR%%/inc/XML/db2xml/Input/Dbresult_NG.php
 %%INSTALLDIR%%/inc/XML/db2xml/Input/File.php
 %%INSTALLDIR%%/inc/XML/db2xml/Input/Http.php
 %%INSTALLDIR%%/inc/XML/db2xml/Input/Sql.php
@@ -476,6 +487,8 @@
 %%INSTALLDIR%%/inc/bx/dynimage/request.php
 %%INSTALLDIR%%/inc/bx/dynimage/validators/filemtime.php
 %%INSTALLDIR%%/inc/bx/editor.php
+%%INSTALLDIR%%/inc/bx/editors/assets.php
+%%INSTALLDIR%%/inc/bx/editors/assets/assets.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog.php
 %%INSTALLDIR%%/inc/bx/editors/blog/comment.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/livesearch.xsl
@@ -488,12 +501,14 @@
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/files.php
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/gallery.php
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/options.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/sidebar.php
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/blogroll.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/categories.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/comments.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/files.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/gallery.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/options.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/sidebar.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/subeditor.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/tabs.xsl
 %%INSTALLDIR%%/inc/bx/editors/blog/uploadimage.xsl
@@ -545,6 +560,8 @@
 %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/mimetype
 %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/settings.xml
 %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/styles.xml
+%%INSTALLDIR%%/inc/bx/editors/permissions.php
+%%INSTALLDIR%%/inc/bx/editors/permissions/permissions.xsl
 %%INSTALLDIR%%/inc/bx/editors/versioning.php
 %%INSTALLDIR%%/inc/bx/editors/versioning/versioning.xsl
 %%INSTALLDIR%%/inc/bx/errorhandler.php
@@ -581,6 +598,7 @@
 %%INSTALLDIR%%/inc/bx/helpers/http.php
 %%INSTALLDIR%%/inc/bx/helpers/image.php
 %%INSTALLDIR%%/inc/bx/helpers/int.php
+%%INSTALLDIR%%/inc/bx/helpers/json.php
 %%INSTALLDIR%%/inc/bx/helpers/mail.php
 %%INSTALLDIR%%/inc/bx/helpers/moblog.php
 %%INSTALLDIR%%/inc/bx/helpers/openid.php
@@ -596,6 +614,7 @@
 %%INSTALLDIR%%/inc/bx/helpers/xsl/rssmerge.xsl
 %%INSTALLDIR%%/inc/bx/indexer/audio/mpeg.php
 %%INSTALLDIR%%/inc/bx/indexer/image/jpeg.php
+%%INSTALLDIR%%/inc/bx/indexer/text/html.php
 %%INSTALLDIR%%/inc/bx/init.php
 %%INSTALLDIR%%/inc/bx/interfaces/editor.php
 %%INSTALLDIR%%/inc/bx/interfaces/plugin.php
@@ -616,6 +635,7 @@
 %%INSTALLDIR%%/inc/bx/permm/auth/http.php
 %%INSTALLDIR%%/inc/bx/permm/auth/pearauth.php
 %%INSTALLDIR%%/inc/bx/permm/perm/common.php
+%%INSTALLDIR%%/inc/bx/permm/perm/matrix.php
 %%INSTALLDIR%%/inc/bx/permm/perm/simple.php
 %%INSTALLDIR%%/inc/bx/permm/perm/simpleexample.php
 %%INSTALLDIR%%/inc/bx/permm/perm/true.php
@@ -629,6 +649,7 @@
 %%INSTALLDIR%%/inc/bx/php/openid/common.php
 %%INSTALLDIR%%/inc/bx/php/openid/finish_auth.php
 %%INSTALLDIR%%/inc/bx/php/openid/start_auth.php
+%%INSTALLDIR%%/inc/bx/php/preview.php
 %%INSTALLDIR%%/inc/bx/php/setthemecookie.php
 %%INSTALLDIR%%/inc/bx/plugin.php
 %%INSTALLDIR%%/inc/bx/plugins/address.php
@@ -649,8 +670,10 @@
 %%INSTALLDIR%%/inc/bx/plugins/admin/siteoptions.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/themes.php
 %%INSTALLDIR%%/inc/bx/plugins/aggregator.php
+%%INSTALLDIR%%/inc/bx/plugins/assets.php
 %%INSTALLDIR%%/inc/bx/plugins/basket.php
 %%INSTALLDIR%%/inc/bx/plugins/blog.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/akismet.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/authorarchive.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/categories.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/comments.php
@@ -663,6 +686,8 @@
 %%INSTALLDIR%%/inc/bx/plugins/blog/handlecomment.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/montharchive.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/plazes.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/preview.xml
+%%INSTALLDIR%%/inc/bx/plugins/blog/preview.xsl
 %%INSTALLDIR%%/inc/bx/plugins/blog/prevnext.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/spam.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/tagarchive.php
@@ -688,9 +713,12 @@
 %%INSTALLDIR%%/inc/bx/plugins/metainfo.php
 %%INSTALLDIR%%/inc/bx/plugins/metasearch.php
 %%INSTALLDIR%%/inc/bx/plugins/navitree.php
+%%INSTALLDIR%%/inc/bx/plugins/newsletter.php
 %%INSTALLDIR%%/inc/bx/plugins/openblog.php
+%%INSTALLDIR%%/inc/bx/plugins/permissions.php
 %%INSTALLDIR%%/inc/bx/plugins/rss.php
 %%INSTALLDIR%%/inc/bx/plugins/search.php
+%%INSTALLDIR%%/inc/bx/plugins/search2.php
 %%INSTALLDIR%%/inc/bx/plugins/sitemap.php
 %%INSTALLDIR%%/inc/bx/plugins/sql2xml.php
 %%INSTALLDIR%%/inc/bx/plugins/structure2xml.php
@@ -755,6 +783,7 @@
 %%INSTALLDIR%%/inc/bx/tests/testhelper/coverage.php
 %%INSTALLDIR%%/inc/bx/tests/testhelper/runner.php
 %%INSTALLDIR%%/inc/bx/tests/testhelper/scanner.php
+%%INSTALLDIR%%/inc/bx/tools/dbupdate/switchdbutf8.php
 %%INSTALLDIR%%/inc/bx/tools/dbupdate/update.php
 %%INSTALLDIR%%/inc/bx/tools/fluxcli/fluxcli.php
 %%INSTALLDIR%%/inc/bx/tools/generate/builds/plugin.xml
@@ -765,11 +794,13 @@
 %%INSTALLDIR%%/inc/bx/tools/generate/skeletons/plugin.php
 %%INSTALLDIR%%/inc/bx/tools/generate/skeletons/plugin.xsl
 %%INSTALLDIR%%/inc/bx/tools/i18n/i18ngenerator.xsl
+%%INSTALLDIR%%/inc/bx/tools/indexer/xhtml.php
 %%INSTALLDIR%%/inc/bx/tools/mdb2forms/README
 %%INSTALLDIR%%/inc/bx/tools/mdb2forms/configsinstall.php
 %%INSTALLDIR%%/inc/bx/tools/mdb2forms/mdbschema2forms.xsl
 %%INSTALLDIR%%/inc/bx/tools/mdb2forms/reverse_engineer_xml_schema.php
 %%INSTALLDIR%%/inc/bx/tools/newsmailer/newsmailer.php
+%%INSTALLDIR%%/inc/bx/tools/newsmailer/newsmailer.sh
 %%INSTALLDIR%%/inc/bx/tools/svnsync
 %%INSTALLDIR%%/inc/bx/tree.php
 %%INSTALLDIR%%/inc/bx/versioning.php
@@ -808,6 +839,7 @@
 %%INSTALLDIR%%/inc/patForms/Element/Date/Element/Month.php
 %%INSTALLDIR%%/inc/patForms/Element/Date/Element/Second.php
 %%INSTALLDIR%%/inc/patForms/Element/Date/Element/Year.php
+%%INSTALLDIR%%/inc/patForms/Element/Email.php
 %%INSTALLDIR%%/inc/patForms/Element/Enum.php
 %%INSTALLDIR%%/inc/patForms/Element/File.php
 %%INSTALLDIR%%/inc/patForms/Element/Group.php
@@ -820,6 +852,7 @@
 %%INSTALLDIR%%/inc/patForms/Element/String.php
 %%INSTALLDIR%%/inc/patForms/Element/Switch.php
 %%INSTALLDIR%%/inc/patForms/Element/Text.php
+%%INSTALLDIR%%/inc/patForms/Element/Wysiwyg.php
 %%INSTALLDIR%%/inc/patForms/Filter.php
 %%INSTALLDIR%%/inc/patForms/Filter/Multiplier.php
 %%INSTALLDIR%%/inc/patForms/Filter/Strtolower.php
@@ -932,6 +965,7 @@
 %%INSTALLDIR%%/inc/popoon/components/serializers/html2html.php
 %%INSTALLDIR%%/inc/popoon/components/serializers/html2html/html2html.xsl
 %%INSTALLDIR%%/inc/popoon/components/serializers/htmlwithmailobfuscator.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/json.php
 %%INSTALLDIR%%/inc/popoon/components/serializers/text.php
 %%INSTALLDIR%%/inc/popoon/components/serializers/xhtml.php
 %%INSTALLDIR%%/inc/popoon/components/serializers/xml.php
@@ -1147,6 +1181,37 @@
 %%INSTALLDIR%%/install/installAll.sh
 %%INSTALLDIR%%/install/lock.sh
 %%INSTALLDIR%%/install/master.sql
+%%INSTALLDIR%%/install/newsletter/data/newsletter/.configxml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/activation-txt.de.xhtml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/activation-txt.en.xhtml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/archive/.configxml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/archive/2006/.configxml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/drafts/.configxml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/index.de.xhtml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/index.en.xhtml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/subscribe.de.xhtml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/subscribe.en.xhtml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/unsubscribe.de.xhtml
+%%INSTALLDIR%%/install/newsletter/data/newsletter/unsubscribe.en.xhtml
+%%INSTALLDIR%%/install/newsletter/files/_galleries/gallery/arrow_head_footer.gif
+%%INSTALLDIR%%/install/newsletter/files/_galleries/gallery/arrow_right.gif
+%%INSTALLDIR%%/install/newsletter/files/_galleries/gallery/arrow_top.gif
+%%INSTALLDIR%%/install/newsletter/files/_galleries/gallery/footer_background.gif
+%%INSTALLDIR%%/install/newsletter/files/_galleries/gallery/footer_logo.gif
+%%INSTALLDIR%%/install/newsletter/files/_galleries/gallery/header.jpg
+%%INSTALLDIR%%/install/newsletter/files/_galleries/gallery/pdf_icon.gif
+%%INSTALLDIR%%/install/newsletter/themes/3-cols/archive.xsl
+%%INSTALLDIR%%/install/newsletter/themes/3-cols/css/newsletter.css
+%%INSTALLDIR%%/install/newsletter/themes/3-cols/htmlimage.xsl
+%%INSTALLDIR%%/install/newsletter/themes/3-cols/master-newsletter.xsl
+%%INSTALLDIR%%/install/newsletter/themes/3-cols/newsfeeds.xsl
+%%INSTALLDIR%%/install/newsletter/themes/3-cols/textfeeds.xsl
+%%INSTALLDIR%%/install/newsletter/themes/scansystems/htmlimage.xsl
+%%INSTALLDIR%%/install/newsletter/themes/scansystems/newsfeeds.xsl
+%%INSTALLDIR%%/install/newsletter/themes/scansystems/scansystems.xsl
+%%INSTALLDIR%%/install/newsletter/themes/scansystems/static.xsl
+%%INSTALLDIR%%/install/newsletter/themes/scansystems/templates/scansystems.xhtml
+%%INSTALLDIR%%/install/newsletter/themes/scansystems/textfeeds.xsl
 %%INSTALLDIR%%/install/phing/CHANGELOG
 %%INSTALLDIR%%/install/phing/CREDITS
 %%INSTALLDIR%%/install/phing/INSTALL.UNIX
@@ -1373,10 +1438,9 @@
 %%INSTALLDIR%%/structure/bloglinks.xml
 %%INSTALLDIR%%/structure/news.xml
 %%INSTALLDIR%%/structure/quicklinks.php
-%%INSTALLDIR%%/themes/.externals
-%%INSTALLDIR%%/themes/.externals.old
 %%INSTALLDIR%%/themes/2-cols/aggregator.xsl
 %%INSTALLDIR%%/themes/2-cols/blog.xsl
+%%INSTALLDIR%%/themes/2-cols/blogmicrosummary.xsl
 %%INSTALLDIR%%/themes/2-cols/buttons/bxcms.png
 %%INSTALLDIR%%/themes/2-cols/buttons/comments.png
 %%INSTALLDIR%%/themes/2-cols/buttons/fluxcms.png
@@ -1412,6 +1476,7 @@
 %%INSTALLDIR%%/themes/2-cols/vote.xsl
 %%INSTALLDIR%%/themes/3-cols/aggregator.xsl
 %%INSTALLDIR%%/themes/3-cols/blog.xsl
+%%INSTALLDIR%%/themes/3-cols/blogmicrosummary.xsl
 %%INSTALLDIR%%/themes/3-cols/buttons/bxcms.png
 %%INSTALLDIR%%/themes/3-cols/buttons/comments.png
 %%INSTALLDIR%%/themes/3-cols/buttons/fluxcms.png
@@ -1497,6 +1562,7 @@
 %%INSTALLDIR%%/themes/standard/admin/themes.xsl
 %%INSTALLDIR%%/themes/standard/common.xsl
 %%INSTALLDIR%%/themes/standard/copy.xsl
+%%INSTALLDIR%%/themes/standard/mastercommon.xsl
 %%INSTALLDIR%%/themes/standard/pagenotallowed.xsl
 %%INSTALLDIR%%/themes/standard/plugins/aggregator/aggregator.xsl
 %%INSTALLDIR%%/themes/standard/plugins/aggregator/aggregator2rss.xsl
@@ -1504,6 +1570,8 @@
 %%INSTALLDIR%%/themes/standard/plugins/blog/blog2atom.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/blog2rss.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/comments2rss.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog/microsummary.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog/osd.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/trackback.xsl
 %%INSTALLDIR%%/themes/standard/plugins/dms/dms.xsl
 %%INSTALLDIR%%/themes/standard/plugins/dms/dms2rss.xsl
@@ -1511,6 +1579,9 @@
 %%INSTALLDIR%%/themes/standard/plugins/linklog/linklog2rss.xsl
 %%INSTALLDIR%%/themes/standard/plugins/metainfo/podcast.xsl
 %%INSTALLDIR%%/themes/standard/plugins/metasearch/result2html.xsl
+%%INSTALLDIR%%/themes/standard/plugins/newsletter/htmlimage.xsl
+%%INSTALLDIR%%/themes/standard/plugins/newsletter/htmlimagelinks.xsl
+%%INSTALLDIR%%/themes/standard/plugins/newsletter/textfeeds.xsl
 %%INSTALLDIR%%/themes/standard/plugins/vote/vote.xsl
 %%INSTALLDIR%%/themes/standard/static.xsl
 %%INSTALLDIR%%/themes/standard/text.xsl
@@ -1707,6 +1778,7 @@
 %%INSTALLDIR%%/webinc/fck/editor/css/fck_showtableborders_gecko.css
 %%INSTALLDIR%%/webinc/fck/editor/css/images/fck_anchor.gif
 %%INSTALLDIR%%/webinc/fck/editor/css/images/fck_flashlogo.gif
+%%INSTALLDIR%%/webinc/fck/editor/css/images/fck_pagebreak.gif
 %%INSTALLDIR%%/webinc/fck/editor/dialog/common/fck_dialog_common.css
 %%INSTALLDIR%%/webinc/fck/editor/dialog/common/fck_dialog_common.js
 %%INSTALLDIR%%/webinc/fck/editor/dialog/common/fcknumericfield.htc
@@ -1715,6 +1787,7 @@
 %%INSTALLDIR%%/webinc/fck/editor/dialog/common/images/unlocked.gif
 %%INSTALLDIR%%/webinc/fck/editor/dialog/common/moz-bindings.xml
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about/lgpl.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about/logo_fckeditor.gif
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about/logo_fredck.gif
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_anchor.html
@@ -1726,10 +1799,12 @@
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_find.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_flash.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_flash/fck_flash.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_flash/fck_flash_preview.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_form.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_hiddenfield.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_image.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_image/fck_image.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_image/fck_image_preview.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_link.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_link/fck_link.js
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_listprop.html
@@ -1849,33 +1924,34 @@
 %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/js/common.js
 %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/js/fckxml.js
 %%INSTALLDIR%%/webinc/fck/editor/images/anchor.gif
+%%INSTALLDIR%%/webinc/fck/editor/images/arrow_ltr.gif
+%%INSTALLDIR%%/webinc/fck/editor/images/arrow_rtl.gif
 %%INSTALLDIR%%/webinc/fck/editor/images/spacer.gif
-%%INSTALLDIR%%/webinc/fck/editor/js/fck_startup.js
-%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_gecko_1.js
-%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_gecko_2.js
-%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_ie_1.js
-%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_ie_2.js
+%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_gecko.js
+%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_ie.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/_getfontformat.html
 %%INSTALLDIR%%/webinc/fck/editor/lang/_translationstatus.txt
 %%INSTALLDIR%%/webinc/fck/editor/lang/de.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/en-au.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/en-uk.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/en.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/es.js
-%%INSTALLDIR%%/webinc/fck/editor/lang/fcklanguagemanager.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/fi.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/fr.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/it.js
 %%INSTALLDIR%%/webinc/fck/editor/lang/sv.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/fck_placeholder.html
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/fckplugin.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/de.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/en.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/fr.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/it.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/placeholder.gif
 %%INSTALLDIR%%/webinc/fck/editor/plugins/tablecommands/fckplugin.js
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_contextmenu.css
+%%INSTALLDIR%%/webinc/fck/editor/skins/_fckviewstrips.html
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_dialog.css
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_editor.css
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_strip.gif
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.arrowright.gif
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.buttonarrow.gif
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.collapse.gif
@@ -1883,80 +1959,11 @@
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.expand.gif
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.separator.gif
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.start.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/about.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/anchor.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/bgcolor.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/bold.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/bulletedlist.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/button.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/checkbox.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/copy.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/cut.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/docprops.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/find.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/flash.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/form.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/hiddenfield.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/image.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/imagebutton.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/indent.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/inserthorizontalrule.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/insertorderedlist.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/insertunorderedlist.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/italic.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifycenter.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifyfull.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifyleft.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifyright.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/link.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/newpage.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/numberedlist.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/outdent.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/paste.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/pastetext.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/pasteword.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/preview.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/print.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/radio.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/redo.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/removeformat.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/replace.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/save.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/select.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/selectall.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/showdetails.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/showtableborders.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/smiley.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/source.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/specialchar.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/spellcheck.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/strikethrough.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/subscript.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/superscript.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/table.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tablecell.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tabledeletecells.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tabledeletecolumns.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tabledeleterows.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tableinsertcell.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tableinsertcolumn.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tableinsertrow.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tablemergecells.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tablesplitcell.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/templates.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/textarea.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/textcolor.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/textfield.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/underline.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/undo.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/universalkey.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/unlink.gif
-%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/unorderedlist.gif
 %%INSTALLDIR%%/webinc/fck/fckconfig.js
 %%INSTALLDIR%%/webinc/fck/fckeditor.js
 %%INSTALLDIR%%/webinc/fck/fckstyles.xml
 %%INSTALLDIR%%/webinc/fck/fcktemplates.xml
-%%INSTALLDIR%%/webinc/fck/fix-init-issue.patch
+%%INSTALLDIR%%/webinc/fck/patch-against-2.3.1.patch
 %%INSTALLDIR%%/webinc/images/openid.gif
 %%INSTALLDIR%%/webinc/images/privat.gif
 %%INSTALLDIR%%/webinc/js/CalendarPopup.js
@@ -1972,9 +1979,17 @@
 %%INSTALLDIR%%/webinc/js/livesearch.js
 %%INSTALLDIR%%/webinc/js/moo.ajax.js
 %%INSTALLDIR%%/webinc/js/openId.js
+%%INSTALLDIR%%/webinc/js/prototype.js
 %%INSTALLDIR%%/webinc/js/prototype.lite.js
 %%INSTALLDIR%%/webinc/js/sarissa.js
 %%INSTALLDIR%%/webinc/js/sarissa_dbform.js
+%%INSTALLDIR%%/webinc/js/scriptaculous/builder.js
+%%INSTALLDIR%%/webinc/js/scriptaculous/controls.js
+%%INSTALLDIR%%/webinc/js/scriptaculous/dragdrop.js
+%%INSTALLDIR%%/webinc/js/scriptaculous/effects.js
+%%INSTALLDIR%%/webinc/js/scriptaculous/scriptaculous.js
+%%INSTALLDIR%%/webinc/js/scriptaculous/slider.js
+%%INSTALLDIR%%/webinc/js/scriptaculous/unittest.js
 %%INSTALLDIR%%/webinc/js/spacer.gif
 %%INSTALLDIR%%/webinc/js/vote.js
 %%INSTALLDIR%%/webinc/kupu.html
@@ -2083,6 +2098,7 @@
 %%INSTALLDIR%%/webinc/plugins/blog/fck.js
 %%INSTALLDIR%%/webinc/plugins/blog/kupu.js
 %%INSTALLDIR%%/webinc/plugins/blog/quicktags.js
+%%INSTALLDIR%%/webinc/plugins/blog/sidebar.js
 %%INSTALLDIR%%/webinc/plugins/dbform/css/admin.css
 %%INSTALLDIR%%/webinc/plugins/dbform/js/formxmlcheck.js
 %%INSTALLDIR%%/webinc/plugins/dbforms2/common.js
@@ -2102,6 +2118,7 @@
 %%INSTALLDIR%%/webinc/plugins/dbforms2/transport.js
 %%INSTALLDIR%%/webinc/plugins/linklog/admin.css
 %%INSTALLDIR%%/webinc/plugins/metasearch/livesearch.js
+%%INSTALLDIR%%/webinc/plugins/patforms/fck.js
 %%INSTALLDIR%%/webinc/tests/bx_collection.php
 %%INSTALLDIR%%/webinc/tests/index.php
 %%INSTALLDIR%%/webinc/tests/web.php
@@ -2110,9 +2127,11 @@
 @exec mkdir -p %D/%%INSTALLDIR%%/admin/data/admin/navi/tree
 @exec mkdir -p %D/%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Pictures
 @exec mkdir -p %D/%%INSTALLDIR%%/themes/mobile/preview
+@exec mkdir -p %D/%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%INSTALLDIR%%
 @dirrm %%INSTALLDIR%%/xml
 @dirrm %%INSTALLDIR%%/webinc/tests
+@dirrm %%INSTALLDIR%%/webinc/plugins/patforms
 @dirrm %%INSTALLDIR%%/webinc/plugins/metasearch
 @dirrm %%INSTALLDIR%%/webinc/plugins/linklog
 @dirrm %%INSTALLDIR%%/webinc/plugins/dbforms2
@@ -2129,6 +2148,7 @@
 @dirrm %%INSTALLDIR%%/webinc/kupu/common/kupudrawers
 @dirrm %%INSTALLDIR%%/webinc/kupu/common
 @dirrm %%INSTALLDIR%%/webinc/kupu
+@dirrm %%INSTALLDIR%%/webinc/js/scriptaculous
 @dirrm %%INSTALLDIR%%/webinc/js/bx
 @dirrm %%INSTALLDIR%%/webinc/js
 @dirrm %%INSTALLDIR%%/webinc/images
@@ -2215,6 +2235,7 @@
 @dirrm %%INSTALLDIR%%/webinc/bxe
 @dirrm %%INSTALLDIR%%/webinc
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/vote
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/newsletter
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/metasearch
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/metainfo
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/linklog
@@ -2271,6 +2292,20 @@
 @dirrm %%INSTALLDIR%%/install/phing/classes
 @dirrm %%INSTALLDIR%%/install/phing/bin
 @dirrm %%INSTALLDIR%%/install/phing
+@dirrm %%INSTALLDIR%%/install/newsletter/themes/scansystems/templates
+@dirrm %%INSTALLDIR%%/install/newsletter/themes/scansystems
+@dirrm %%INSTALLDIR%%/install/newsletter/themes/3-cols/css
+@dirrm %%INSTALLDIR%%/install/newsletter/themes/3-cols
+@dirrm %%INSTALLDIR%%/install/newsletter/themes
+@dirrm %%INSTALLDIR%%/install/newsletter/files/_galleries/gallery
+@dirrm %%INSTALLDIR%%/install/newsletter/files/_galleries
+@dirrm %%INSTALLDIR%%/install/newsletter/files
+@dirrm %%INSTALLDIR%%/install/newsletter/data/newsletter/drafts
+@dirrm %%INSTALLDIR%%/install/newsletter/data/newsletter/archive/2006
+@dirrm %%INSTALLDIR%%/install/newsletter/data/newsletter/archive
+@dirrm %%INSTALLDIR%%/install/newsletter/data/newsletter
+@dirrm %%INSTALLDIR%%/install/newsletter/data
+@dirrm %%INSTALLDIR%%/install/newsletter
 @dirrm %%INSTALLDIR%%/install/dist/sitemap
 @dirrm %%INSTALLDIR%%/install/dist/lang
 @dirrm %%INSTALLDIR%%/install/dist/files/images
@@ -2345,6 +2380,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/versioning
 @dirrm %%INSTALLDIR%%/inc/bx/tools/newsmailer
 @dirrm %%INSTALLDIR%%/inc/bx/tools/mdb2forms
+@dirrm %%INSTALLDIR%%/inc/bx/tools/indexer
 @dirrm %%INSTALLDIR%%/inc/bx/tools/i18n
 @dirrm %%INSTALLDIR%%/inc/bx/tools/generate/skeletons
 @dirrm %%INSTALLDIR%%/inc/bx/tools/generate/builds
@@ -2384,6 +2420,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/metadatas/text
 @dirrm %%INSTALLDIR%%/inc/bx/metadatas
 @dirrm %%INSTALLDIR%%/inc/bx/interfaces
+@dirrm %%INSTALLDIR%%/inc/bx/indexer/text
 @dirrm %%INSTALLDIR%%/inc/bx/indexer/image
 @dirrm %%INSTALLDIR%%/inc/bx/indexer/audio
 @dirrm %%INSTALLDIR%%/inc/bx/indexer
@@ -2396,6 +2433,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/filters
 @dirrm %%INSTALLDIR%%/inc/bx/exceptions
 @dirrm %%INSTALLDIR%%/inc/bx/editors/versioning
+@dirrm %%INSTALLDIR%%/inc/bx/editors/permissions
 @dirrm %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Thumbnails
 @dirrm %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Pictures
 @dirrm %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/META-INF
@@ -2416,6 +2454,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl
 @dirrm %%INSTALLDIR%%/inc/bx/editors/blog/sub
 @dirrm %%INSTALLDIR%%/inc/bx/editors/blog
+@dirrm %%INSTALLDIR%%/inc/bx/editors/assets
 @dirrm %%INSTALLDIR%%/inc/bx/editors
 @dirrm %%INSTALLDIR%%/inc/bx/dynimage/validators
 @dirrm %%INSTALLDIR%%/inc/bx/dynimage/filters/gd
@@ -2460,8 +2499,6 @@
 @dirrm %%INSTALLDIR%%/inc/Text/CAPTCHA
 @dirrm %%INSTALLDIR%%/inc/Text
 @dirrm %%INSTALLDIR%%/inc/Services
-@dirrm %%INSTALLDIR%%/inc/SXIP/Request
-@dirrm %%INSTALLDIR%%/inc/SXIP
 @dirrm %%INSTALLDIR%%/inc/SQL
 @dirrm %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer
 @dirrm %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage
@@ -2522,6 +2559,14 @@
 @dirrm %%INSTALLDIR%%/admin/webinc/openid
 @dirrm %%INSTALLDIR%%/admin/webinc/lostpw
 @dirrm %%INSTALLDIR%%/admin/webinc/js
+@dirrm %%INSTALLDIR%%/admin/webinc/install/newsletter/xsl
+@dirrm %%INSTALLDIR%%/admin/webinc/install/newsletter/dbforms2
+@dirrm %%INSTALLDIR%%/admin/webinc/install/newsletter/data/drafts
+@dirrm %%INSTALLDIR%%/admin/webinc/install/newsletter/data/archive/2006
+@dirrm %%INSTALLDIR%%/admin/webinc/install/newsletter/data/archive
+@dirrm %%INSTALLDIR%%/admin/webinc/install/newsletter/data
+@dirrm %%INSTALLDIR%%/admin/webinc/install/newsletter
+@dirrm %%INSTALLDIR%%/admin/webinc/install/matrix
 @dirrm %%INSTALLDIR%%/admin/webinc/install/linklog
 @dirrm %%INSTALLDIR%%/admin/webinc/install
 @dirrm %%INSTALLDIR%%/admin/webinc/img/icons/text
