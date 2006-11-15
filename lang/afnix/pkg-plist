@@ -5,12 +5,22 @@ bin/axl
 bin/axs
 etc/afnix/afnix-gud.el
 etc/afnix/afnix-mode.el
+include/afnix/cpy/Aes.hpp
+include/afnix/cpy/Cipher.hpp
+include/afnix/cpy/Crypto.hpp
+include/afnix/cpy/Hasher.hpp
+include/afnix/cpy/InputCipher.hpp
+include/afnix/cpy/Key.hpp
+include/afnix/cpy/Md5.hpp
+include/afnix/cpy/Sha1.hpp
+include/afnix/cpy/Sha256.hpp
+include/afnix/cpy/Sha384.hpp
+include/afnix/cpy/Sha512.hpp
 include/afnix/eng/Argument.hpp
 include/afnix/eng/Builtin.hpp
 include/afnix/eng/Class.hpp
 include/afnix/eng/Closure.hpp
 include/afnix/eng/Constant.hpp
-include/afnix/eng/Engsid.hpp
 include/afnix/eng/Enum.hpp
 include/afnix/eng/Extracter.hpp
 include/afnix/eng/Form.hpp
@@ -55,6 +65,11 @@ include/afnix/net/TcpSocket.hpp
 include/afnix/net/UdpClient.hpp
 include/afnix/net/UdpServer.hpp
 include/afnix/net/UdpSocket.hpp
+include/afnix/nwg/Libnwg.hpp
+include/afnix/nwg/Mime.hpp
+include/afnix/nwg/Prednwg.hpp
+include/afnix/nwg/Uri.hpp
+include/afnix/nwg/UriQuery.hpp
 include/afnix/pim/Appointer.hpp
 include/afnix/pim/Assistant.hpp
 include/afnix/pim/Libpim.hpp
@@ -76,17 +91,6 @@ include/afnix/plt/cstr.hpp
 include/afnix/plt/csys.hpp
 include/afnix/plt/cthr.hpp
 include/afnix/plt/ctrm.hpp
-include/afnix/sci/Aes.hpp
-include/afnix/sci/Cipher.hpp
-include/afnix/sci/Crypto.hpp
-include/afnix/sci/Hasher.hpp
-include/afnix/sci/InputCipher.hpp
-include/afnix/sci/Key.hpp
-include/afnix/sci/Md5.hpp
-include/afnix/sci/Sha1.hpp
-include/afnix/sci/Sha256.hpp
-include/afnix/sci/Sha384.hpp
-include/afnix/sci/Sha512.hpp
 include/afnix/sio/Directory.hpp
 include/afnix/sio/Libsio.hpp
 include/afnix/sio/Logtee.hpp
@@ -103,7 +107,6 @@ include/afnix/sps/Predsps.hpp
 include/afnix/sps/Record.hpp
 include/afnix/sps/Sheet.hpp
 include/afnix/sps/SpsCalls.hpp
-include/afnix/sps/Spssid.hpp
 include/afnix/sps/Xref.hpp
 include/afnix/std/Ascii.hpp
 include/afnix/std/BitSet.hpp
@@ -117,7 +120,6 @@ include/afnix/std/Cons.hpp
 include/afnix/std/Cursor.hpp
 include/afnix/std/Date.hpp
 include/afnix/std/Exception.hpp
-include/afnix/std/Finalize.hpp
 include/afnix/std/HashTable.hpp
 include/afnix/std/Heap.hpp
 include/afnix/std/Input.hpp
@@ -140,13 +142,16 @@ include/afnix/std/Method.hpp
 include/afnix/std/Monitor.hpp
 include/afnix/std/Mutex.hpp
 include/afnix/std/NameTable.hpp
+include/afnix/std/Nameable.hpp
 include/afnix/std/Object.hpp
 include/afnix/std/Options.hpp
 include/afnix/std/Output.hpp
 include/afnix/std/OutputFile.hpp
 include/afnix/std/OutputString.hpp
 include/afnix/std/OutputTerm.hpp
+include/afnix/std/Plist.hpp
 include/afnix/std/PrintTable.hpp
+include/afnix/std/Property.hpp
 include/afnix/std/Qarray.hpp
 include/afnix/std/QuarkTable.hpp
 include/afnix/std/QuarkZone.hpp
@@ -176,6 +181,7 @@ include/afnix/std/Unimapper.hpp
 include/afnix/std/Unitabler.hpp
 include/afnix/std/Utility.hpp
 include/afnix/std/Vector.hpp
+include/afnix/std/cucd.hpp
 include/afnix/sys/Libsys.hpp
 include/afnix/sys/Predsys.hpp
 include/afnix/sys/SysCalls.hpp
@@ -186,19 +192,60 @@ include/afnix/txt/Pattern.hpp
 include/afnix/txt/Predtxt.hpp
 include/afnix/txt/Scanner.hpp
 include/afnix/txt/Sort.hpp
-include/afnix/www/CgiQuery.hpp
-include/afnix/www/Cookie.hpp
-include/afnix/www/HtmlDiv.hpp
-include/afnix/www/HtmlElement.hpp
-include/afnix/www/HtmlPage.hpp
-include/afnix/www/HtmlRef.hpp
-include/afnix/www/HtmlTable.hpp
-include/afnix/www/HtmlTag.hpp
-include/afnix/www/HtmlTd.hpp
-include/afnix/www/HtmlTr.hpp
-include/afnix/www/Libwww.hpp
-include/afnix/www/Predwww.hpp
-include/afnix/www/Url.hpp
+include/afnix/wam/Cookie.hpp
+include/afnix/wam/HttpReply.hpp
+include/afnix/wam/Libwam.hpp
+include/afnix/wam/Predwam.hpp
+include/afnix/wam/Session.hpp
+include/afnix/wam/XhtmlBody.hpp
+include/afnix/wam/XhtmlCaption.hpp
+include/afnix/wam/XhtmlCgr.hpp
+include/afnix/wam/XhtmlCol.hpp
+include/afnix/wam/XhtmlDiv.hpp
+include/afnix/wam/XhtmlHead.hpp
+include/afnix/wam/XhtmlHr.hpp
+include/afnix/wam/XhtmlHtml.hpp
+include/afnix/wam/XhtmlImg.hpp
+include/afnix/wam/XhtmlMeta.hpp
+include/afnix/wam/XhtmlPara.hpp
+include/afnix/wam/XhtmlRef.hpp
+include/afnix/wam/XhtmlRoot.hpp
+include/afnix/wam/XhtmlStyle.hpp
+include/afnix/wam/XhtmlTable.hpp
+include/afnix/wam/XhtmlTbody.hpp
+include/afnix/wam/XhtmlTd.hpp
+include/afnix/wam/XhtmlTelem.hpp
+include/afnix/wam/XhtmlTfoot.hpp
+include/afnix/wam/XhtmlTh.hpp
+include/afnix/wam/XhtmlThead.hpp
+include/afnix/wam/XhtmlTitle.hpp
+include/afnix/wam/XhtmlTr.hpp
+include/afnix/xml/Libxml.hpp
+include/afnix/xml/Predxml.hpp
+include/afnix/xml/XmlAttlist.hpp
+include/afnix/xml/XmlBuffer.hpp
+include/afnix/xml/XmlComment.hpp
+include/afnix/xml/XmlCref.hpp
+include/afnix/xml/XmlData.hpp
+include/afnix/xml/XmlDecl.hpp
+include/afnix/xml/XmlDoctype.hpp
+include/afnix/xml/XmlDocument.hpp
+include/afnix/xml/XmlElement.hpp
+include/afnix/xml/XmlEnd.hpp
+include/afnix/xml/XmlEntity.hpp
+include/afnix/xml/XmlEref.hpp
+include/afnix/xml/XmlGe.hpp
+include/afnix/xml/XmlNode.hpp
+include/afnix/xml/XmlPe.hpp
+include/afnix/xml/XmlPi.hpp
+include/afnix/xml/XmlReader.hpp
+include/afnix/xml/XmlRef.hpp
+include/afnix/xml/XmlRoot.hpp
+include/afnix/xml/XmlSection.hpp
+include/afnix/xml/XmlStream.hpp
+include/afnix/xml/XmlSystem.hpp
+include/afnix/xml/XmlTag.hpp
+include/afnix/xml/XmlText.hpp
 lib/libafnix-eng.a
 lib/libafnix-eng.so
 lib/libafnix-eng.so.1
@@ -208,15 +255,15 @@ lib/libafnix-gfx.so.1
 lib/libafnix-net.a
 lib/libafnix-net.so
 lib/libafnix-net.so.1
+lib/libafnix-nwg.a
+lib/libafnix-nwg.so
+lib/libafnix-nwg.so.1
 lib/libafnix-pim.a
 lib/libafnix-pim.so
 lib/libafnix-pim.so.1
 lib/libafnix-plt.a
 lib/libafnix-plt.so
 lib/libafnix-plt.so.1
-lib/libafnix-sci.a
-lib/libafnix-sci.so
-lib/libafnix-sci.so.1
 lib/libafnix-sio.a
 lib/libafnix-sio.so
 lib/libafnix-sio.so.1
@@ -232,20 +279,25 @@ lib/libafnix-sys.so.1
 lib/libafnix-txt.a
 lib/libafnix-txt.so
 lib/libafnix-txt.so.1
-lib/libafnix-www.a
-lib/libafnix-www.so
-lib/libafnix-www.so.1
+lib/libafnix-wam.a
+lib/libafnix-wam.so
+lib/libafnix-wam.so.1
+lib/libafnix-xml.a
+lib/libafnix-xml.so
+lib/libafnix-xml.so.1
 @dirrm etc/afnix
+@dirrm include/afnix/cpy
 @dirrm include/afnix/eng
 @dirrm include/afnix/gfx
 @dirrm include/afnix/net
+@dirrm include/afnix/nwg
 @dirrm include/afnix/pim
 @dirrm include/afnix/plt
-@dirrm include/afnix/sci
 @dirrm include/afnix/sio
 @dirrm include/afnix/sps
 @dirrm include/afnix/std
 @dirrm include/afnix/sys
 @dirrm include/afnix/txt
-@dirrm include/afnix/www
+@dirrm include/afnix/wam
+@dirrm include/afnix/xml
 @dirrm include/afnix
