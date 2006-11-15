@@ -1,0 +1,11 @@
+--- doc/gv.texi.orig	Fri Sep 15 04:51:20 2006
++++ doc/gv.texi	Mon Oct 16 04:03:24 2006
+@@ -9,7 +9,7 @@
+ 
+ @copying
+ This is the @value{EDITION} edition of the @cite{GNU gv Manual},
+-updated for gv version @value{VERSION}.
++updated for gv version @value{GVVER}.
+ 
+ Copyright @copyright{} 1995, 1996, 1997 Johannes Plass
+ 

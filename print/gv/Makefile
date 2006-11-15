@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gv
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,11 +24,9 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/X11
-
-CPPFLAGS=	-I${X11BASE}/include
-LDFLAGS=	-L${X11BASE}/lib
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/X11 \
+		--mandir=${MANPREFIX}/man \
+		--infodir=${PREFIX}/${INFO_PATH}
 
 MAN1=		gv.1
 INFO=		gv
@@ -40,7 +38,6 @@ PLIST_FILES=	bin/gv \
 		lib/X11/gv/gv_system.ad \
 		lib/X11/gv/gv_user.ad \
 		lib/X11/gv/gv_user_res.dat
-
 PLIST_DIRS=	lib/X11/gv
 
 post-install:
