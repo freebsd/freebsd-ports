@@ -1,0 +1,11 @@
+--- client/sguil.tk.orig	Mon Nov 13 13:19:24 2006
++++ client/sguil.tk	Mon Nov 13 13:21:03 2006
+@@ -1679,6 +1679,8 @@
+     set CONF_FILE $env(HOME)/sguil.conf
+   } elseif { [file exists ./sguil.conf] } {
+     set CONF_FILE ./sguil.conf
++  } elseif { [file exists /usr/local/etc/sguil.conf] } {
++    set CONF_FILE /usr/local/etc/sguil.conf
+   } elseif { [file exists /etc/sguil] &&\
+              [file isdirectory /etc/sguil] &&\
+              [file exists /etc/sguil/sguil.conf] &&\
