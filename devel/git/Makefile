@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.4.3.4
+PORTVERSION=	1.4.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -61,6 +61,7 @@ MAN1=		git-add.1 \
 		git-fetch.1 \
 		git-fmt-merge-msg.1 \
 		git-format-patch.1 \
+		git-for-each-ref.1 \
 		git-fsck-objects.1 \
 		git-get-tar-commit-id.1 \
 		git-grep.1 \
@@ -91,6 +92,7 @@ MAN1=		git-add.1 \
 		git-p4import.1 \
 		git-pack-objects.1 \
 		git-pack-redundant.1 \
+		git-pack-refs.1 \
 		git-parse-remote.1 \
 		git-patch-id.1 \
 		git-peek-remote.1 \
@@ -120,6 +122,7 @@ MAN1=		git-add.1 \
 		git-shortlog.1 \
 		git-show-branch.1 \
 		git-show-index.1 \
+		git-show-ref.1 \
 		git-show.1 \
 		git-ssh-fetch.1 \
 		git-ssh-upload.1 \
@@ -143,7 +146,7 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN3=		Git.3 private-Error.3
+MAN3=		Git.3
 MAN7=		git.7
 
 USE_PERL5=	yes
@@ -159,5 +162,17 @@ MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		PYTHON_PATH=${LOCALBASE}/bin/python \
 		PERL_PATH=${PERL}
 MAKE_ARGS+=	prefix="${PREFIX}"
+
+post-install:
+	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
+	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp/git
+	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
+		${PREFIX}/share/emacs/site-lisp/git/
+	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/vc-git.el \
+		${PREFIX}/share/emacs/site-lisp/git/
+	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git.el    \
+		${PREFIX}/lib/xemacs/site-lisp/git/git.el
+	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/vc-git.el \
+		${PREFIX}/lib/xemacs/site-lisp/git/vc-git.el
 
 .include <bsd.port.mk>

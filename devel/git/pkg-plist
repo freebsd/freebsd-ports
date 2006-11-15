@@ -35,6 +35,7 @@ bin/git-diff-tree
 bin/git-fetch
 bin/git-fetch-pack
 bin/git-fmt-merge-msg
+bin/git-for-each-ref
 bin/git-format-patch
 bin/git-fsck-objects
 bin/git-get-tar-commit-id
@@ -73,6 +74,7 @@ bin/git-name-rev
 bin/git-p4import
 bin/git-pack-objects
 bin/git-pack-redundant
+bin/git-pack-refs
 bin/git-parse-remote
 bin/git-patch-id
 bin/git-peek-remote
@@ -104,6 +106,7 @@ bin/git-shortlog
 bin/git-show
 bin/git-show-branch
 bin/git-show-index
+bin/git-show-ref
 bin/git-ssh-fetch
 bin/git-ssh-pull
 bin/git-ssh-push
@@ -128,9 +131,11 @@ bin/git-verify-tag
 bin/git-whatchanged
 bin/git-write-tree
 bin/gitk
-%%SITE_PERL%%/Error.pm
-%%SITE_PERL%%/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
+lib/xemacs/site-lisp/git/git.el
+lib/xemacs/site-lisp/git/vc-git.el
+share/emacs/site-lisp/git/git.el
+share/emacs/site-lisp/git/vc-git.el
 share/git-core/python/gitMergeCommon.py
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg
@@ -143,6 +148,12 @@ share/git-core/templates/hooks/pre-rebase
 share/git-core/templates/hooks/update
 share/git-core/templates/info/exclude
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
+@dirrm lib/xemacs/site-lisp/git
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
+@dirrm share/emacs/site-lisp/git
+@dirrmtry share/emacs/site-lisp
+@dirrmtry share/emacs
 @dirrm share/git-core/templates/branches
 @dirrm share/git-core/templates/hooks
 @dirrm share/git-core/templates/info
