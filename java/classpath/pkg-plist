@@ -1,7 +1,18 @@
+bin/gappletviewer
+bin/gjar
+bin/gjarsigner
+bin/gkeytool
+bin/gnative2ascii
+bin/gserialver
 include/jawt.h
 include/jawt_md.h
 include/jni.h
 include/jni_md.h
+lib/classpath/libgcjwebplugin.la
+lib/classpath/libgcjwebplugin.so
+lib/classpath/libgconfpeer.la
+lib/classpath/libgconfpeer.so
+lib/classpath/libgconfpeer.so.0
 lib/classpath/libjavaio.la
 lib/classpath/libjavaio.so
 lib/classpath/libjavaio.so.0
@@ -22,6 +33,10 @@ lib/classpath/libjavautil.so
 lib/classpath/libjavautil.so.0
 lib/logging.properties
 lib/security/classpath.security
+@dirrm lib/classpath
+@dirrm lib/security
+%%DATADIR%%/README
+%%DATADIR%%/examples/Makefile.java2d
 %%DATADIR%%/examples/Makefile.jawt
 %%DATADIR%%/examples/README
 %%DATADIR%%/examples/examples.zip
@@ -63,9 +78,12 @@ lib/security/classpath.security
 %%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_GameManager_Stub.java
 %%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_PlayerImpl_Tie.java
 %%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_Player_Stub.java
+%%DATADIR%%/examples/gnu/classpath/examples/awt/AicasGraphicsBenchmark.java
+%%DATADIR%%/examples/gnu/classpath/examples/awt/AnimationApplet.java
 %%DATADIR%%/examples/gnu/classpath/examples/awt/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/datatransfer/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/html/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/icons/badge.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-fullscreen.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-home.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-warning.png
@@ -82,72 +100,54 @@ lib/security/classpath.security
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-save-as.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-save.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-spell-check.png
+%%DATADIR%%/examples/gnu/classpath/examples/java2d/J2dBenchmark.java
+%%DATADIR%%/examples/gnu/classpath/examples/java2d/J2dBenchmarkGUI.java
+%%DATADIR%%/examples/gnu/classpath/examples/java2d/JNIOverhead.java
+%%DATADIR%%/examples/gnu/classpath/examples/java2d/bench.c
+%%DATADIR%%/examples/gnu/classpath/examples/java2d/bench.h
 %%DATADIR%%/examples/gnu/classpath/examples/jawt/DemoJAWT.c
 %%DATADIR%%/examples/gnu/classpath/examples/jawt/DemoJAWT.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestBeans.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestClassLoading.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestCompilation.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestGarbageCollector.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestMemory.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestMemoryManager.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestMemoryPool.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestOS.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestRuntime.java
+%%DATADIR%%/examples/gnu/classpath/examples/management/TestThread.java
 %%DATADIR%%/examples/gnu/classpath/examples/midi/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/print/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ButtonDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ComboBoxDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/DemoDesktop.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/DemoFactory.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/DocumentFilterDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/FileChooserDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/GNULookAndFeel.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/HtmlDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/ListDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/MetalThemeEditor.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/MiniDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/NavigationFilterDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ProgressBarDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ScrollBarDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/SliderDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/SpinnerDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/TabbedPaneDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/TableDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/TextAreaDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/TextFieldDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/TreeDemo.java
 %%DATADIR%%/glibj.zip
-%%DATADIR%%/tools/gnu/classpath/tools/AbstractMethodGenerator.java
-%%DATADIR%%/tools/gnu/classpath/tools/HelpPrinter.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/GRMIC.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/GRMIC.txt
-%%DATADIR%%/tools/gnu/classpath/tools/giop/IorParser.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/IorParser.txt
-%%DATADIR%%/tools/gnu/classpath/tools/giop/NameService.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/NameServicePersistent.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/NameServicePersistent.txt
-%%DATADIR%%/tools/gnu/classpath/tools/giop/NamingService.txt
-%%DATADIR%%/tools/gnu/classpath/tools/giop/README
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/CompilationError.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/Generator.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/GiopIo.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/GiopRmicCompiler.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/HashFinder.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/MethodGenerator.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/ImplTie.jav
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/Stub.jav
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/StubMethod.jav
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/StubMethodVoid.jav
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/Tie.jav
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/TieMethod.jav
-%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/TieMethodVoid.jav
-%%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice/PersistentContext.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice/PersistentContextMap.java
-%%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice/PersistentMap.java
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/RMIC.java
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/RMIC.txt
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/RmiMethodGenerator.java
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/RmicCompiler.java
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/WrapUnWrapper.java
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates/Stub_12.jav
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates/Stub_12Method.jav
-%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates/Stub_12MethodVoid.jav
-%%DATADIR%%/tools/tools.zip
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools/rmi
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop/grmic
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop
-@dirrm %%DATADIR%%/tools/gnu/classpath/tools
-@dirrm %%DATADIR%%/tools/gnu/classpath
-@dirrm %%DATADIR%%/tools/gnu
-@dirrm %%DATADIR%%/tools
+%%DATADIR%%/tools.zip
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/swing
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/print
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/midi
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/management
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/jawt
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/java2d
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/icons
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/html
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/datatransfer
@@ -162,6 +162,4 @@ lib/security/classpath.security
 @dirrm %%DATADIR%%/examples/gnu/classpath
 @dirrm %%DATADIR%%/examples/gnu
 @dirrm %%DATADIR%%/examples
-@dirrm share/classpath
-@dirrm lib/security
-@dirrm lib/classpath
+@dirrm %%DATADIR%%
