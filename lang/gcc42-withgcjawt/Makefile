@@ -20,6 +20,10 @@ WITH_JAVA_AWT=	yes
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-configure
 USE_AUTOTOOLS=	libtool:15
 
+.if ${MACHINE_ARCH} != i386
+BROKEN=	Only for gcj supported platforms
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${SRCDIR}/libjava/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${SRCDIR}/libjava/classpath/configure
