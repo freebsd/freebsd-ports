@@ -13,7 +13,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.33.0
+lib/libestraier.so.8.34.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estfraud.cgi
 libexec/estproxy.cgi
@@ -136,6 +136,7 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000059.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000060.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000061.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000062.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000029.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000030.html
@@ -185,6 +186,8 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000071.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000072.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000073.html
+%%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000074.html
+%%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000075.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Node.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Node.src/M000001.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Node.src/M000002.html
