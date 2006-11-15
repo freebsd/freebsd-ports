@@ -39,6 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>proftpd</name>
+        <name>proftpd-mysql</name>
         <range><le>1.3.0_2</le></range>
       </package>
     </affects>
