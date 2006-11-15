@@ -1,0 +1,63 @@
+bin/%%LIBDIR%%/SguilUtil.tcl
+bin/%%LIBDIR%%/dkffont.tcl
+bin/%%LIBDIR%%/email17.tcl
+bin/%%LIBDIR%%/extdata.tcl
+bin/%%LIBDIR%%/guilib.tcl
+bin/%%LIBDIR%%/nessusheader.html
+bin/%%LIBDIR%%/qrybuild.tcl
+bin/%%LIBDIR%%/qrylib.tcl
+bin/%%LIBDIR%%/report.tcl
+bin/%%LIBDIR%%/sancp.tcl
+bin/%%LIBDIR%%/sellib.tcl
+bin/%%LIBDIR%%/sound.tcl
+bin/%%LIBDIR%%/stdquery.tcl
+bin/%%LIBDIR%%/whois.tcl
+bin/%%IMAGEDIR%%/DarkLineDown10x9.xbm
+bin/%%IMAGEDIR%%/DarkLineDown12x11.xbm
+bin/%%IMAGEDIR%%/DarkLineDown8x7.xbm
+bin/%%IMAGEDIR%%/DarkLineUp10x9.xbm
+bin/%%IMAGEDIR%%/DarkLineUp12x11.xbm
+bin/%%IMAGEDIR%%/DarkLineUp8x7.xbm
+bin/%%IMAGEDIR%%/LightLineDown10x9.xbm
+bin/%%IMAGEDIR%%/LightLineDown12x11.xbm
+bin/%%IMAGEDIR%%/LightLineDown8x7.xbm
+bin/%%IMAGEDIR%%/LightLineUp10x9.xbm
+bin/%%IMAGEDIR%%/LightLineUp12x11.xbm
+bin/%%IMAGEDIR%%/LightLineUp8x7.xbm
+bin/%%IMAGEDIR%%/TriangleDown10x9.xbm
+bin/%%IMAGEDIR%%/TriangleDown12x11.xbm
+bin/%%IMAGEDIR%%/TriangleDown7x4.xbm
+bin/%%IMAGEDIR%%/TriangleDown7x7.xbm
+bin/%%IMAGEDIR%%/TriangleDown8x5.xbm
+bin/%%IMAGEDIR%%/TriangleDown8x7.xbm
+bin/%%IMAGEDIR%%/TriangleDown9x5.xbm
+bin/%%IMAGEDIR%%/TriangleUp10x9.xbm
+bin/%%IMAGEDIR%%/TriangleUp12x11.xbm
+bin/%%IMAGEDIR%%/TriangleUp7x4.xbm
+bin/%%IMAGEDIR%%/TriangleUp7x7.xbm
+bin/%%IMAGEDIR%%/TriangleUp8x5.xbm
+bin/%%IMAGEDIR%%/TriangleUp8x7.xbm
+bin/%%IMAGEDIR%%/TriangleUp9x5.xbm
+bin/%%IMAGEDIR%%/checked.xbm
+bin/%%IMAGEDIR%%/unchecked.xbm
+bin/%%SCRIPTDIR%%/mwutil.tcl
+bin/%%SCRIPTDIR%%/repair.tcl
+bin/%%SCRIPTDIR%%/tablelistBind.tcl
+bin/%%SCRIPTDIR%%/tablelistConfig.tcl
+bin/%%SCRIPTDIR%%/tablelistEdit.tcl
+bin/%%SCRIPTDIR%%/tablelistMove.tcl
+bin/%%SCRIPTDIR%%/tablelistSort.tcl
+bin/%%SCRIPTDIR%%/tablelistThemes.tcl
+bin/%%SCRIPTDIR%%/tablelistUtil.tcl
+bin/%%SCRIPTDIR%%/tablelistWidget.tcl
+bin/%%SCRIPTDIR%%/tclIndex
+bin/%%LIBDIR%%/tablelist4.1/tablelist.tcl
+bin/%%LIBDIR%%/tablelist4.1/tablelistPublic.tcl
+bin/%%LIBDIR%%/tablelist4.1/COPYRIGHT.txt
+bin/%%SGUILDIR%%/sguil.tk
+etc/sguil.conf-sample
+@dirrm bin/%%SCRIPTDIR%%
+@dirrm bin/%%IMAGEDIR%%
+@dirrm bin/%%LIBDIR%%/tablelist4.1
+@dirrm bin/%%LIBDIR%%
+@dirrm bin/%%SGUILDIR%%

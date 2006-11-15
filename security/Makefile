@@ -624,6 +624,7 @@
     SUBDIR += sectok
     SUBDIR += secure_delete
     SUBDIR += sfs
+    SUBDIR += sguil-client
     SUBDIR += sguil-sensor
     SUBDIR += sguil-server
     SUBDIR += sha
