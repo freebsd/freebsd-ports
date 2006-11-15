@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon May  1 07:29:07 2006
++++ Makefile	Sun Nov 12 14:57:38 2006
+@@ -6,7 +6,7 @@
+ #
+ 
+ CC = cc
+-FLAGS = -ansi -pedantic -Wall -O2 -fno-strict-aliasing
++FLAGS = -ansi -Wall -O2 -fno-strict-aliasing # -pedantic
+ 
+ BIN_PROGRAM = opendd
+ 
