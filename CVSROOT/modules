@@ -7952,6 +7952,7 @@ opencv		ports/graphics/opencv
 opencyc		ports/misc/opencyc
 opendbx		ports/databases/opendbx
 opendchub	ports/net-p2p/opendchub
+opendd		ports/dns/opendd
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
 opendx-samples	ports/graphics/opendx-samples
