@@ -1,0 +1,14 @@
+******************************************************************
+To run the demo:
+
+1. copy %%EXAMPLESDIR%% to ~/qp_sites
+2. link %%PREFIX%%/lib/%%PYTHON_VERSION%%/site-packages/qp/sites to
+   ~/qp_sites
+3. run "qp start"
+4. point you browser to
+   http://localhost:8000
+   http://localhost:8001
+   http://localhost:8002
+
+Read %%DOCSDIR%%/README.txt for more info.
+******************************************************************

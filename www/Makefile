@@ -920,6 +920,7 @@
     SUBDIR += py-openssl-proxy
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
+    SUBDIR += py-qp
     SUBDIR += py-qpy
     SUBDIR += py-scgi
     SUBDIR += py-slimmer
