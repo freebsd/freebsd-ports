@@ -1,5 +1,5 @@
---- src/main.c.orig	Wed Mar 15 21:41:01 2006
-+++ src/main.c	Tue Nov 14 08:47:12 2006
+--- src/main.c.orig	Wed Mar 15 19:41:01 2006
++++ src/main.c	Wed Nov 15 19:06:18 2006
 @@ -116,6 +116,8 @@
  
  static char sbuf[PR_TUNABLE_BUFFER_SIZE] = {'\0'};
@@ -27,9 +27,9 @@
 -	cmd_buf_size = 512;
 +      if (bufsz == NULL ||
 +          *bufsz <= 0) {
-+	pr_log_pri(PR_LOG_WARNING, "invalid CommandBufferSize size (%d) "
++	pr_log_pri(PR_LOG_WARNING, "invalid CommandBufferSize size "
 +          "given, resetting to default buffer size (%u)",
-+          *bufsz, (unsigned int) PR_DEFAULT_CMD_BUFSZ);
++          (unsigned int) PR_DEFAULT_CMD_BUFSZ);
 +        cmd_buf_size = PR_DEFAULT_CMD_BUFSZ;
 +
 +      } else if (*bufsz + 1 > sizeof(buf)) {
