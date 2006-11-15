@@ -7,6 +7,7 @@
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
@@ -15,7 +16,7 @@ MAINTAINER=	thomas@goodking.ca
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
@@ -29,6 +30,10 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 #
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ADDAUTH_PATCH)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-addauth
+.endif
 
 .if exists(${LOCALBASE}/lib/libldap.so)
 WITH_LDAP=yes
@@ -75,6 +80,12 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		spamass-milter.1
+
+pre-fetch:
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You may set environment variable WITH_ADDAUTH_PATCH to bypass"
+	@${ECHO_CMD} "checks if a connection authenticated via SMTP."
+	@${ECHO_CMD} ""
 
 post-patch:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
