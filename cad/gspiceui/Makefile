@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	gspiceui
-PORTVERSION=	0.8.55
+PORTVERSION=	0.8.90
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GUI frontend for gnucap/ng-spice circuit simulators
 
-LIB_DEPENDS=	wx_gtk2u_core-2.6:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
 RUN_DEPENDS=	gwave:${PORTSDIR}/cad/gwave
 
-USE_X_PREFIX=	yes
+USE_WX=		2.6
+WX_UNICODE=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	NGSPICE "Use ng-spice as backend" on \
@@ -35,6 +35,10 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -E -e "s,%%WX_CONFIG%%,${WX_CONFIG},g" \
+		${WRKSRC}/src/Makefile
 
 .if !defined(WITHOUT_NGSPICE)
 RUN_DEPENDS+=	ngspice:${PORTSDIR}/cad/ngspice_rework
