@@ -7,7 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION?=	3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
@@ -209,8 +209,8 @@ do-install:
 	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so.2
 	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so
 
-	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libgds.so.2
-	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libgds.so
+	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libgds.so.2
+	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libgds.so
 
 	@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/include/*.h ${PREFIX}/include
