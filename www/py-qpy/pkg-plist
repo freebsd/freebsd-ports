@@ -1,0 +1,26 @@
+bin/qpcheck.py
+bin/qpyrun.py
+%%PYTHON_SITELIBDIR%%/qpy/__init__.py
+%%PYTHON_SITELIBDIR%%/qpy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qpy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qpy/c8.py
+%%PYTHON_SITELIBDIR%%/qpy/c8.pyc
+%%PYTHON_SITELIBDIR%%/qpy/c8.pyo
+%%PYTHON_SITELIBDIR%%/qpy/c8.so
+%%PYTHON_SITELIBDIR%%/qpy/compile.py
+%%PYTHON_SITELIBDIR%%/qpy/compile.pyc
+%%PYTHON_SITELIBDIR%%/qpy/compile.pyo
+%%PYTHON_SITELIBDIR%%/qpy/qpcheck.py
+%%PYTHON_SITELIBDIR%%/qpy/qpcheck.pyc
+%%PYTHON_SITELIBDIR%%/qpy/qpcheck.pyo
+%%PYTHON_SITELIBDIR%%/qpy/qpyrun.py
+%%PYTHON_SITELIBDIR%%/qpy/qpyrun.pyc
+%%PYTHON_SITELIBDIR%%/qpy/qpyrun.pyo
+%%PYTHON_SITELIBDIR%%/qpy/setup.py
+%%PYTHON_SITELIBDIR%%/qpy/setup.pyc
+%%PYTHON_SITELIBDIR%%/qpy/setup.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/qpy
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
