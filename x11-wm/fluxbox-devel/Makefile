@@ -73,11 +73,11 @@ CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
 .if !defined(WITHOUT_NLS)
+USE_ICONV=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib -liconv"
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS:=""
-USE_GETTEXT=		yes
 .else
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
