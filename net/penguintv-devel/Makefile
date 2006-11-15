@@ -43,7 +43,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/pygst.py:${PORTSDIR}/mult
 .if defined(WITHOUT_PYLUCENE)
 #BROKEN=		Cannot be run without PyLucene
 .else
-RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/PyLucene.py:${PORTSDIR}/devel/py-lucene
+RUN_DEPENDS+=	${LOCALBASE}/lib/python2.4/site-packages/PyLucene.py:${PORTSDIR}/textproc/py-lucene
 .endif
 
 .if defined(WITH_MOZILLA)
