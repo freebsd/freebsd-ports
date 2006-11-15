@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	swfdec-plugin
-PORTVERSION=	0.3.5
-PORTREVISION=	3
+PORTVERSION=	0.3.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 DISTNAME=	swfdec-${PORTVERSION}
@@ -23,10 +22,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/fi
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 .endif
-
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
