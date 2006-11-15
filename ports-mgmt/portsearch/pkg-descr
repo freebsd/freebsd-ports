@@ -6,4 +6,3 @@ dependencies), path, info (comment), maintainer, category, fetch, extract,
 patch, build and run dependencies and www site.
 
 WWW: http://people.freebsd.org/~vd/portsearch
--- Vasil Dimov <vd@FreeBSD.org>
