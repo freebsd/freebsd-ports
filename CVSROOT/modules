@@ -11724,6 +11724,7 @@ povray		ports/graphics/povray
 povray31	ports/graphics/povray31
 poweradmin	ports/dns/poweradmin
 powerdns	ports/dns/powerdns
+powerdns-recursor	ports/dns/powerdns-recursor
 powerman	ports/sysutils/powerman
 powermanga	ports/games/powermanga
 powerpc-binutils	ports/devel/powerpc-binutils
