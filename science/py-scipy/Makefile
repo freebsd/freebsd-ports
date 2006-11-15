@@ -7,23 +7,29 @@
 #
 
 PORTNAME=	scipy
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scipy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	SciPy_complete-${PORTVERSION}
-LATEST_LINK=	py-${PORTNAME}
 
 MAINTAINER=	db@db.net
 COMMENT=	Scientific tools for Python
 
-BUILD_DEPENDS=	${PYNUMERIC} \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft \
-		f2py:${PORTSDIR}/lang/f2py \
-		${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+		f2py:${PORTSDIR}/lang/f2py
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+.if exists(${PYTHON_SITELIBDIR}/wx.pth)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wx.pth:${PORTSDIR}/x11-toolkits/py-wxPython26
+.elif exists(${PYTHON_SITELIBDIR}/wx/__init__.py)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+.else
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wx.pth:${PORTSDIR}/x11-toolkits/py-wxPython26
+.endif
+
+LATEST_LINK=	py-${PORTNAME}
+OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
@@ -38,22 +44,17 @@ post-patch:
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
-IGNORE=	Atlas needs to be built with WITH_STATICLIB for scipy to function properly
+IGNORE=		Atlas needs to be built with WITH_STATICLIB for scipy to function properly
 .endif
 .else
 LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack \
-		blas.1:${PORTSDIR}/math/blas	
+		blas.1:${PORTSDIR}/math/blas
 .endif
 
 post-install:
-	@${RMDIR} ${PYTHON_SITELIBDIR}/weave/swig # empty
-.for dir in ${PYTHON_SITELIBDIR}/gui_thread ${PYTHON_SITELIBDIR}/scipy \
-		${PYTHON_SITELIBDIR}/scipy_base ${PYTHON_SITELIBDIR}/scipy_distutils \
-		${PYTHON_SITELIBDIR}/scipy_test ${PYTHON_SITELIBDIR}/weave
-	@${FIND} ${dir} ! -type d | \
+	@${FIND} ${PYTHON_SITELIBDIR}/scipy ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
+	@${FIND} ${PYTHON_SITELIBDIR}/scipy -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
 
 .include <bsd.port.post.mk>
