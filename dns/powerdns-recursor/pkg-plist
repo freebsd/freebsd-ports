@@ -1,0 +1,6 @@
+@unexec if cmp -s %D/etc/pdns/recursor.conf %D/etc/pdns/recursor.conf-dist; then rm -f %D/etc/pdns/recursor.conf; fi
+etc/pdns/recursor.conf-dist
+@exec [ -f %B/recursor.conf ] || cp %B/%f %B/recursor.conf
+bin/rec_control
+sbin/pdns_recursor
+@dirrmtry etc/pdns

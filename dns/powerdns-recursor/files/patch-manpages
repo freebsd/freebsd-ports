@@ -1,0 +1,58 @@
+--- rec_control.1.orig	Tue Nov 14 13:47:26 2006
++++ rec_control.1	Tue Nov 14 13:47:55 2006
+@@ -17,7 +17,7 @@
+ .el .ne 3
+ .IP "\\$1" \\$2
+ ..
+-.TH "REC_CONTROL" 1 "" "" ""
++.TH "REC_CONTROL" 8 "" "" ""
+ .SH NAME
+ rec_control \- control pdns_recursor
+ .SH "SYNOPSIS"
+@@ -28,7 +28,7 @@
+ .SH "DESCRIPTION"
+ 
+ 
+-rec_control(1) allows the operator to control a running instance of the pdns_recursor\&.
++rec_control(8) allows the operator to control a running instance of the pdns_recursor\&.
+ 
+ 
+ The commands that can be passed to the recursor are described on http://doc\&.powerdns\&.com/rec\-control\&.html
+@@ -111,7 +111,7 @@
+ .SH "SEE ALSO"
+ 
+ 
+-pdns_recursor(1)
++pdns_recursor(8)
+ 
+ .SH "COPYING"
+ 
+--- pdns_recursor.1.orig	Tue Nov 14 13:48:13 2006
++++ pdns_recursor.1	Tue Nov 14 13:48:44 2006
+@@ -17,7 +17,7 @@
+ .el .ne 3
+ .IP "\\$1" \\$2
+ ..
+-.TH "PDNS_RECURSOR" 1 "" "" ""
++.TH "PDNS_RECURSOR" 8 "" "" ""
+ .SH NAME
+ pdns_recursor \- high-performance, simple and secure recursing nameserver
+ .SH "SYNOPSIS"
+@@ -28,7 +28,7 @@
+ .SH "DESCRIPTION"
+ 
+ 
+-pdns_recursor(1) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
++pdns_recursor(8) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
+ 
+ 
+ The recursor is configured via a configuration file, but each item in that file can be overridden on the command line\&.
+@@ -211,7 +211,7 @@
+ .SH "SEE ALSO"
+ 
+ 
+-rec_control(1)
++rec_control(8)
+ 
+ .SH "COPYING"
+ 
