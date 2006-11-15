@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gap
-PORTVERSION=	4.4.8.${GAP_PKGDATE}
+PORTVERSION=	4.4.9.${GAP_PKGDATE}
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/ \
 		ftp://ftp.stack.nl/pub/users/johans/gap/ \
 		ftp://ftp.gap-system.org/pub/gap/gap4/old/
 DISTFILES=	packages-${GAP_PKGTIME}.tar.bz2 \
-		gap4r4p8.tar.bz2 \
+		gap4r4p9.tar.bz2 \
 		xtom1r1p2.tar.bz2
 DIST_SUBDIR=	gap
 
@@ -34,7 +34,7 @@ OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2006_09_13-09_49_UTC
+GAP_PKGTIME=	2006_11_09-19_37_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
@@ -43,7 +43,7 @@ PLIST_FILES=	bin/gap
 do-extract:
 	(${MKDIR} ${WRKSRC}; \
 	cd ${WRKSRC}; \
-	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p8.tar.bz2; \
+	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p9.tar.bz2; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/xtom1r1p2.tar.bz2 ; \
 	cd ${GAP_WRKSRC}/pkg; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-${GAP_PKGTIME}.tar.bz2 )
