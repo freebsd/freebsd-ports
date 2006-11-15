@@ -11976,6 +11976,7 @@ py-docutils	ports/textproc/py-docutils
 py-dosage	ports/deskutils/py-dosage
 py-dpkt		ports/net/py-dpkt
 py-dsv		ports/textproc/py-dsv
+py-durus	ports/devel/py-durus
 py-editobj	ports/graphics/py-editobj
 py-elementtree	ports/devel/py-elementtree
 py-email	ports/mail/py-email
