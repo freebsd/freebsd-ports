@@ -3,5 +3,6 @@ lib/notification-daemon-1.0/engines/libstandard.la
 lib/notification-daemon-1.0/engines/libstandard.so
 libexec/notification-daemon
 share/dbus-1/services/org.freedesktop.Notifications.service
+share/locale/nl/LC_MESSAGES/notification-daemon.mo
 @dirrm lib/notification-daemon-1.0/engines
 @dirrm lib/notification-daemon-1.0
