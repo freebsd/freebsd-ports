@@ -8,10 +8,13 @@
 PORTNAME=	wmi
 PORTVERSION=	10
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://wmii.de/download/
+MASTER_SITES=	http://suckless.org/download/
 
 MAINTAINER=	wxs@atarininja.org
 COMMENT=	A window manager designed to be like Ion and LarsWM
+
+DEPRECATED=	This port is unsupported by the author.  Please use x11-wm/wmii instead.
+EXPIRATION_DATE=	2007-01-15
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
