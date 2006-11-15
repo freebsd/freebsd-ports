@@ -7,3 +7,4 @@ share/festival/lib/voices/english/tll_diphone/festvox/tllgain.dat
 @dirrm share/festival/lib/voices/english/tll_diphone/festvox
 @dirrm share/festival/lib/voices/english/tll_diphone
 @dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
