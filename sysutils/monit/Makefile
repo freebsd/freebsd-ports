@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	4.8.1
+PORTVERSION=	4.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tildeslash.com/monit/dist/
 
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
-OPTIONS=	MONIT_SSL "Enable SSL support" on
+OPTIONS=	SSL "Enable SSL support" on
 
 PLIST_FILES=	bin/monit \
 		etc/monitrc.sample
@@ -38,7 +38,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MONIT_SSL)
+.if defined(WITH_SSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--enable-ssl --with-openssl="${OPENSSLBASE}"
 .else
