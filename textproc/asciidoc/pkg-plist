@@ -37,6 +37,7 @@ etc/asciidoc/images/icons/prev.png
 etc/asciidoc/images/icons/tip.png
 etc/asciidoc/images/icons/up.png
 etc/asciidoc/images/icons/warning.png
+etc/asciidoc/latex.conf
 etc/asciidoc/linuxdoc.conf
 etc/asciidoc/stylesheets/docbook-xsl.css
 etc/asciidoc/stylesheets/xhtml-deprecated-manpage.css

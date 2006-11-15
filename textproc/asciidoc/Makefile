@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION= 	7.1.2
+PORTVERSION= 	8.0.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.methods.co.nz/asciidoc/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
+		SF
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A text document format for writing short documents and man pages
