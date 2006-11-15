@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	jailctl
-PORTVERSION=	0.71
+PORTVERSION=	0.80
 CATEGORIES=	sysutils
 MASTER_SITES=	http://anduin.net/jailctl/
 
 MAINTAINER=	ltning-jailctl@anduin.net
 COMMENT=	Jail management tool
 
-MAN1=		jailctl.1
+MAN1=		jailctl.1 \
+		jails.conf.1
 MANCOMPRESSED=	yes
 
 NO_BUILD=	yes
