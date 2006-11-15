@@ -6,3 +6,4 @@ share/festival/lib/voices/spanish/hvs_diphone/group/hvs_di_resLPC.group
 @dirrm share/festival/lib/voices/spanish/hvs_diphone/festvox
 @dirrm share/festival/lib/voices/spanish/hvs_diphone
 @dirrmtry share/festival/lib/voices/spanish
+@dirrmtry share/festival/lib/voices
