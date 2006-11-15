@@ -7,6 +7,7 @@
 
 PORTNAME=	wsjt
 PORTVERSION=	5.9.6
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	wsjt
@@ -17,7 +18,7 @@ MAINTAINER=	db@db.net
 COMMENT=	Weak signal ham radio communication pakage
 
 BUILD_DEPENDS=	gfortran41:${PORTSDIR}/lang/gfortran \
-		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
+		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy03 \
 		${PYTHON_SITELIBDIR}/f2py2e:${PORTSDIR}/lang/f2py
 #		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSIDR}/x11-toolkits/py-tkinter
 LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate
