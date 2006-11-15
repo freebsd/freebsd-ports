@@ -561,6 +561,7 @@
     SUBDIR += p5-URI-Find
     SUBDIR += p5-Unicode-CheckUTF8
     SUBDIR += p5-Unicode-Normalize
+    SUBDIR += p5-Unicode-Unihan
     SUBDIR += p5-WDDX
     SUBDIR += p5-WWW-Google-SiteMap
     SUBDIR += p5-WordNet-QueryData
