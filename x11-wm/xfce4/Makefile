@@ -29,6 +29,12 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xfce4/mcs-plugins/ui_plugin.so:${PORTSDIR}/sysutil
 		xfce4-iconbox:${PORTSDIR}/misc/xfce4-iconbox \
 		${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libxfce.so:${PORTSDIR}/x11-themes/gtk-xfce-engine
 
+USE_GNOME=	gtk20
+NO_BUILD=	yes
+LATEST_LINK=	xfce4
+
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/sbin/gdm)
 WITH_GDM=	yes
 .endif
@@ -52,10 +58,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xfce4/panel-plugins/libmixer.so:${PORTSDIR}/audio
 .endif
 .endif
 
-LATEST_LINK=	xfce4
-NO_BUILD=	yes
-USE_GNOME=	gtk20
-
 do-install:	# empty
 
 post-install:
@@ -63,7 +65,7 @@ post-install:
 	@${TEST} -d ${PREFIX}/etc/gdm/Sessions || \
 		${MKDIR} -p ${PREFIX}/etc/gdm/Sessions
 	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${PREFIX}/etc/gdm/Sessions
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/XFce4.desktop > ${PREFIX}/etc/dm/Sessions
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/XFce4.desktop > ${PREFIX}/etc/dm/Sessions/XFce4.desktop
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
