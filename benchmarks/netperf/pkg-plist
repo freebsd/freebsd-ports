@@ -1,11 +1,11 @@
-netperf/netperf
-netperf/netserver
-netperf/tcp_range_script
-netperf/tcp_stream_script
-netperf/tcp_rr_script
-netperf/udp_stream_script
-netperf/udp_rr_script
-netperf/snapshot_script
-%%PORTDOCS%%%%DOCSDIR%%/netperf.ps.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm netperf
+bin/netperf
+bin/netserver
+%%EXAMPLESDIR%%/arr_script
+%%EXAMPLESDIR%%/packet_byte_script
+%%EXAMPLESDIR%%/sctp_stream_script
+%%EXAMPLESDIR%%/snapshot_script
+%%EXAMPLESDIR%%/tcp_range_script
+%%EXAMPLESDIR%%/tcp_rr_script
+%%EXAMPLESDIR%%/tcp_stream_script
+%%EXAMPLESDIR%%/udp_rr_script
+%%EXAMPLESDIR%%/udp_stream_script

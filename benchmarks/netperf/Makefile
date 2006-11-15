@@ -7,6 +7,7 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/
 
@@ -18,6 +19,7 @@ CONFIGURE_ENV=	"transform="
 CONFIGURE_ARGS=	--program-prefix=""  --program-suffix=""
 MAN1=		netperf.1 netserver.1
 
+INFO=		netperf
 SCRIPTS=	arr_script packet_byte_script sctp_stream_script snapshot_script \
 		tcp_range_script tcp_rr_script tcp_stream_script udp_rr_script \
 		udp_stream_script
@@ -29,6 +31,12 @@ BUILD_DEFS+=	USE_INET6
 post-patch:
 .for i in ${SCRIPTS}
 	@${REINPLACE_CMD} -e 's^%%PREFIX%%^${PREFIX}^' ${WRKSRC}/doc/examples/$i
+.endfor
+
+post-install:
+	${MKDIR} ${EXAMPLESDIR}
+.for i in ${SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/examples/$i ${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.post.mk>
