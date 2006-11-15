@@ -1,0 +1,15 @@
+$FreeBSD$
+--- configure	Thu Sep 14 00:41:37 2006
++++ configure.port	Sat Nov 11 17:57:58 2006
+@@ -4555,9 +4555,9 @@
+ 
+ 
+ if test "$prefix" = "NONE"; then
+-	GLE_INSTALL_DATA=/usr/share/gle/$GLE_VERSION
++	GLE_INSTALL_DATA=%%DATADIR%%
+ else
+-	GLE_INSTALL_DATA=$prefix/share/gle/$GLE_VERSION
++	GLE_INSTALL_DATA=%%DATADIR%%
+ fi
+ 
+ if test "$exec_prefix" = "NONE"; then

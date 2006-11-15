@@ -190,6 +190,7 @@
     SUBDIR += gkrellkam
     SUBDIR += gkrellkam2
     SUBDIR += gle
+    SUBDIR += gle-graphics
     SUBDIR += glean
     SUBDIR += glew
     SUBDIR += glexcess
