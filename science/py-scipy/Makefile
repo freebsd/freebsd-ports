@@ -17,8 +17,7 @@ MAINTAINER=	db@db.net
 COMMENT=	Scientific tools for Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
-		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft \
-		f2py:${PORTSDIR}/lang/f2py
+		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 .if exists(${PYTHON_SITELIBDIR}/wx.pth)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wx.pth:${PORTSDIR}/x11-toolkits/py-wxPython26
