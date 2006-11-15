@@ -7,7 +7,7 @@ PORTNAME=	firebird
 PORTVERSION=	3.0R
 PORTREVISION=	1
 CATEGORIES=	chinese net
-MASTER_SITES=	ftp://ftp4.firebird.org.tw/Network/BBS/Firebird/
+MASTER_SITES=	ftp://ftp.isu.edu.tw/pub/Unix/BBS/FireBird/ftp.firebird.org.tw/
 DISTNAME=	3.0-RELEASE
 
 MAINTAINER=	edwardchuang@gmail.com
