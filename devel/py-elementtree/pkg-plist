@@ -40,7 +40,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.SgmlopXMLTreeBuilder.html
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.SimpleXMLTreeBuilder.html
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.SimpleXMLWriter.html
-%%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.TidyHTMLTreeBuilder.html
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.TidyTools.html
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.XMLTreeBuilder.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple-ns.xml

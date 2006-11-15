@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	elementtree
-PORTVERSION=	1.2
+PORTVERSION=	1.2.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://effbot.org/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-20040618
+DISTNAME=	${PORTNAME}-${PORTVERSION}-20050316
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Container for hierarchical data structures written in Python
