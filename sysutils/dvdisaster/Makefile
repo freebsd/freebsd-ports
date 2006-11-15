@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdisaster
-PORTVERSION=	0.70.1
+PORTVERSION=	0.70.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvdisaster
@@ -16,7 +16,7 @@ COMMENT=	A CD/DVD error recovery tool
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-WRKSRC=		${WRKDIR}/dvdisaster-0.70
+WRKSRC=		${WRKDIR}/dvdisaster-0.70.2
 MAKEFILE=	GNUmakefile
 
 USE_BZIP2=	yes
