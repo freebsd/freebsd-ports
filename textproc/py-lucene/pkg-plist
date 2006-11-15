@@ -1,5 +1,5 @@
-lib/python2.4/site-packages/README
-lib/python2.4/site-packages/PyLucene.py
-lib/python2.4/site-packages/_PyLucene.so
-lib/python2.4/site-packages/security/classpath.security
-lib/python2.4/site-packages/security/libgcj.security
+%%PYTHON_SITELIBDIR%%/PyLucene.py
+%%PYTHON_SITELIBDIR%%/_PyLucene.so
+%%PYTHON_SITELIBDIR%%/security/classpath.security
+%%PYTHON_SITELIBDIR%%/security/libgcj.security
+@dirrmtry %%PYTHON_SITELIBDIR%%/security
