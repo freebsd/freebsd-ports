@@ -1,0 +1,11 @@
+Durus is a persistent object system for applications written in
+the Python programming language.
+
+Durus offers an easy way to use and maintain a consistent collection
+of object instances used by one or more processes. Access and change
+of a persistent instances is managed through a cached Connection
+instance which includes commit() and abort() methods so that changes
+are transactional. Durus is best suited to collections of less than a
+million instances with relatively stable state.
+
+WWW:      http://www.mems-exchange.org/software/durus/

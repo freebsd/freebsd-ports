@@ -1686,6 +1686,7 @@
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
     SUBDIR += py-dialog
+    SUBDIR += py-durus
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
     SUBDIR += py-fam
