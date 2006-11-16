@@ -35,3 +35,7 @@ libexec/grmt
 %%NLS%%share/locale/uk/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tar.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
