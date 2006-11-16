@@ -3659,6 +3659,7 @@ gnustep-wrapper	ports/deskutils/gnustep-wrapper
 gnustep-xdps	ports/x11-toolkits/gnustep-xdps
 gnutls		ports/security/gnutls
 gnutls-devel	ports/security/gnutls-devel
+gnuwash		ports/deskutils/gnuwash
 gob		ports/x11-toolkits/gob
 gob2		ports/devel/gob2
 gobby		ports/editors/gobby
