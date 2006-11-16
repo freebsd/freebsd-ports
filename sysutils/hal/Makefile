@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 PORTVERSION=	${HALVERSION}.${SNAPVERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
@@ -17,7 +17,7 @@ COMMENT?=	Hardware Abstraction Layer for simplifying device access
 
 .if !defined(HAL_SLAVE)
 LIB_DEPENDS=	polkit.0:${PORTSDIR}/sysutils/policykit \
-    		volume_id.0:${PORTSDIR}/devel/libvolume_id
+		volume_id.0:${PORTSDIR}/devel/libvolume_id
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
 		isoinfo:${PORTSDIR}/sysutils/cdrtools
 .endif
@@ -97,7 +97,7 @@ post-patch:
 		${WRKSRC}/hald/Makefile.in
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|txt||' \
 		${WRKSRC}/policy/Makefile.in
-	@${REINPLACE_CMD} -e 's|user="0"|group="operator"|g' \
+	@${REINPLACE_CMD} -e 's|user="0"|group="wheel"|g' \
 		${WRKSRC}/hal.conf.in
 	@${TOUCH} ${WRKSRC}/doc/spec/hal-spec.html
 
