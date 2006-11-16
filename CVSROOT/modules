@@ -1856,6 +1856,7 @@ disktype	ports/sysutils/disktype
 diskusage	ports/sysutils/diskusage
 dislin		ports/math/dislin
 display		ports/misc/display
+displaycalibrator	ports/deskutils/displaycalibrator
 dissembler	ports/security/dissembler
 distcache	ports/security/distcache
 distcache-devel	ports/security/distcache-devel
