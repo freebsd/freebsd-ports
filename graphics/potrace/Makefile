@@ -8,7 +8,8 @@
 PORTNAME=	potrace
 PORTVERSION=	1.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://potrace.sourceforge.net/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	Transforms bitmaps into vector graphics
