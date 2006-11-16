@@ -52,6 +52,7 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		FAM "Support to update Media Library on file change" off \
 		MDNS_AVAHI "Support to announce XMMS2d via mDNS (Avahi)" off \
 		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on \
+		ICES "Support to playback files to an icecast server" off \
 		JACK "Support to output via the Jack output server" off #\
 #		SDL "Support for visualization" on
 .endif
@@ -197,6 +198,14 @@ PLIST_SUB+=	FAM=""
 .else
 EXCLUDE+=	medialib-updater
 PLIST_SUB+=	FAM="@comment "
+.endif
+
+.if defined(WITH_ICES)
+LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
+PLIST_SUB+=	ICES=""
+.else
+EXCLUDE+=	ices
+PLIST_SUB+=	ICES="@comment "
 .endif
 
 .if defined(WITH_MDNS_AVAHI)
