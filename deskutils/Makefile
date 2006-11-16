@@ -65,6 +65,7 @@
     SUBDIR += gnotime
     SUBDIR += gnustep-notebook
     SUBDIR += gnustep-wrapper
+    SUBDIR += gnuwash
     SUBDIR += gourmet
     SUBDIR += gruler
     SUBDIR += gtimer
