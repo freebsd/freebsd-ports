@@ -81,6 +81,9 @@
 # USE_GNUSTEP_LOCAL_APPS+=	Ink:misc/gnustep-examples
 #	depends on Application installed in Local directrory at runtime
 #
+# USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
+#	depends on Tool installed in Local directrory at runtime
+#
 # ---------------------------------------------------------------------------
 .if !defined(_POSTMKINCLUDED)
 
@@ -292,6 +295,15 @@ RUN_DEPENDS+=	${SYSTEMDIR}/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_D
 .if defined(USE_GNUSTEP_LOCAL_APPS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_APPS}
 RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source local tools
+#
+.if defined(USE_GNUSTEP_LOCAL_TOOLS)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_TOOLS}
+RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Tools/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
