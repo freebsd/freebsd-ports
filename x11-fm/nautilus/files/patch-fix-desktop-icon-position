@@ -1,0 +1,25 @@
+--- src/file-manager/fm-icon-view.c.orig	2006-11-14 16:35:04.304162544 +0000
++++ src/file-manager/fm-icon-view.c	2006-11-14 16:51:02.820445920 +0000
+@@ -531,12 +531,20 @@
+ file_has_lazy_position (FMDirectoryView *view,
+ 			NautilusFile *file)
+ {
++	gboolean lazy_position;
++
+ 	/* For volumes (i.e. cdrom icon) we use lazy positioning so that when
+ 	 * an old cdrom gets re-mounted in a place that now has another
+ 	 * icon we don't overlap that one.
+ 	 */
+-
+-	return NAUTILUS_IS_DESKTOP_ICON_FILE (file);
++	lazy_position = nautilus_file_has_volume (file);
++	if (lazy_position && fm_directory_view_get_loading (view)) {
++		/* if volumes are loaded during directory load, don't mark them
++		 * as lazy. This is wrong for files that were mounted during user
++		 * log-off, but it is right for files that were mounted during login. */
++		lazy_position = FALSE;
++	}
++	return lazy_position;
+ }
+ 
+ static void
