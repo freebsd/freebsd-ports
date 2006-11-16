@@ -102,9 +102,10 @@ USE_GNUSTEP_LOCAL_APPS+=	DictionaryReader:deskutils/etoile
 USE_GNUSTEP_LOCAL_APPS+=	batmon:sysutils/batmon
 USE_GNUSTEP_LOCAL_APPS+=	UL:biology/adun
 USE_GNUSTEP_LOCAL_APPS+=	RemoteDesk:net/remotedesk
-USE_GNUSTEP_LOCAL_APPS+=	RemoteDesk:net/zillion
 
-RUN_DEPENDS+=	${LOCALBASE}/Local/Tools/zillion:${PORTSDIR}/net/zillion
+USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
+
+RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Tools/zillion:${PORTSDIR}/net/zillion
 
 do-install:	# empty
 
