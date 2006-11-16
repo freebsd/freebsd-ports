@@ -1,5 +1,14 @@
---- configure.orig	Wed Nov  8 15:14:56 2006
-+++ configure	Wed Nov  8 15:16:36 2006
+--- configure.orig	Sat Oct 28 17:40:18 2006
++++ configure	Thu Nov 16 10:45:49 2006
+@@ -341,7 +341,7 @@
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+ datadir='${prefix}/share'
+-sysconfdir='${prefix}/etc'
++sysconfdir='${prefix}/etc/syslog-ng'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
+ libdir='${exec_prefix}/lib'
 @@ -3426,7 +3426,7 @@
  echo $ECHO_N "checking how to enable static linking for certain libraries... $ECHO_C" >&6
  ldversion=`ld -V 2>&1 | head -1`
