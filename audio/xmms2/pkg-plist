@@ -70,6 +70,7 @@ lib/xmms2/libxmms_equalizer.so
 %%FLAC%%lib/xmms2/libxmms_flac.so
 lib/xmms2/libxmms_file.so
 %%GNOMEVFS%%lib/xmms2/libxmms_gnomevfs.so
+%%ICES%%lib/xmms2/libxmms_ices.so
 lib/xmms2/libxmms_icymetaint.so
 lib/xmms2/libxmms_id3v2.so
 %%JACK%%lib/xmms2/libxmms_jack.so
