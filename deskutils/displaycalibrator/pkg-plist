@@ -1,0 +1,15 @@
+Local/Applications/DisplayCalibrator.app/DisplayCalibrator
+Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.desktop
+Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaControl.png
+Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaCorrect.png
+Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.classes
+Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.info
+Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/objects.gorm
+Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/white-black.png
+Local/Applications/DisplayCalibrator.app/Resources/Info-gnustep.plist
+Local/Applications/DisplayCalibrator.app/Resources/gammascrew.png
+Local/Applications/DisplayCalibrator.app/library_paths.openapp
+Local/Applications/DisplayCalibrator.app/stamp.make
+@dirrm Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm
+@dirrm Local/Applications/DisplayCalibrator.app/Resources
+@dirrm Local/Applications/DisplayCalibrator.app

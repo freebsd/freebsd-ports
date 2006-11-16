@@ -29,6 +29,7 @@
     SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deskbar-applet
+    SUBDIR += displaycalibrator
     SUBDIR += dlume
     SUBDIR += doodle
     SUBDIR += dragstack
