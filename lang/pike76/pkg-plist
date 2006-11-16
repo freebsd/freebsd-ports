@@ -318,7 +318,6 @@ pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/md5.pike
 pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/module.pmod
 pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/pipe.pike
 pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/sha.pike
-pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/rijndael.pike.o
 pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/sha.pike.o
 pike/%%PORTVERSION%%/lib/7.4/modules/Locale.pmod/Charset.pmod.o
 pike/%%PORTVERSION%%/lib/7.4/modules/Locale.pmod/Charset.pmod
