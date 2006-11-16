@@ -314,6 +314,7 @@
 %%DATADIR%%/ax_boost_wserialization.m4
 %%DATADIR%%/ax_c___attribute__.m4
 %%DATADIR%%/ax_c_declare_block.m4
+%%DATADIR%%/ax_c_float_words_bigendian.m4
 %%DATADIR%%/ax_cc_maxopt.m4
 %%DATADIR%%/ax_cflags_aix_option.m4
 %%DATADIR%%/ax_cflags_gcc_option.m4
@@ -768,6 +769,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_wserialization.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c___attribute__.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c_declare_block.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_c_float_words_bigendian.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cc_maxopt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_aix_option.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_gcc_option.html

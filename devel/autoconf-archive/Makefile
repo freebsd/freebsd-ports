@@ -9,13 +9,14 @@ PORTNAME=	autoconf-archive
 PORTVERSION=	0.${DISTDATE:C/-/./g}
 CATEGORIES=	devel
 MASTER_SITES=	http://autoconf-archive.cryp.to/ \
+		http://www.sbox.TUGraz.at/home/d/dada/distfiles/ \
 		http://mitglied.lycos.de/mkamm/distfiles/
 DISTNAME=	${PORTNAME}-${DISTDATE}
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	A set of useful GNU Autoconf macros
 
-DISTDATE=	2006-10-30
+DISTDATE=	2006-11-10
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
