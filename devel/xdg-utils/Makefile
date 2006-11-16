@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xdg-utils
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 EXTRACT_SUFX=	.tgz
@@ -25,10 +24,8 @@ XDG_FILES=	xdg-desktop-icon \
 		xdg-open \
 		xdg-screensaver
 
-.for file in ${XDG_FILES}
-PLIST_FILES+=	bin/${file}
-MAN1+=		${file}.1
-.endfor
+PLIST_FILES+=	${XDG_FILES:S|^|bin/|}
+MAN1+=		${XDG_FILES:S|$|.1|}
 
 pre-patch:
 	@${RM} -f ${WRKSRC}/*/*.orig
