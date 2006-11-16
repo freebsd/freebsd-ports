@@ -3655,6 +3655,7 @@ gnustep-objc	ports/lang/gnustep-objc
 gnustep-slideshow	ports/graphics/gnustep-slideshow
 gnustep-slideshowkit	ports/graphics/gnustep-slideshowkit
 gnustep-ticker	ports/www/gnustep-ticker
+gnustep-wrapper	ports/deskutils/gnustep-wrapper
 gnustep-xdps	ports/x11-toolkits/gnustep-xdps
 gnutls		ports/security/gnutls
 gnutls-devel	ports/security/gnutls-devel
