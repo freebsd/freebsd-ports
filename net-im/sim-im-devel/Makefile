@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	sim-im-devel
-PORTVERSION=	0.9.5.970
+PORTVERSION=	0.9.5.1538
 CATEGORIES=	net-im
-MASTER_SITES=	http://sim-im.lehis.ru/dist/
+MASTER_SITES=	http://sim-im.lehis.ru/dist/ \
+		http://www.sim-im.lehis.ru/dist/
 
 MAINTAINER=	sim-im@lehis.ru
 COMMENT=	Plugin-based instant messenger
@@ -35,11 +36,14 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${X11BASE}/include --x-libraries
 OPTIONS=	KDE "Enable KDE support" off \
 		DEBUG "Enable debug" on
 
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	it doesn't work on FreeBSD 4.X
+.endif
+
+.if !defined(WITHOUT_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if !defined(WITH_KDE)
@@ -51,10 +55,7 @@ PLIST_SUB+=	KDE="@comment " \
 USE_KDELIBS_VER=3
 PLIST_SUB+=	KDE="" \
 		SPELL="@comment "
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

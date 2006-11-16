@@ -110,6 +110,7 @@ lib/sim/zodiak.a
 lib/sim/zodiak.la
 lib/sim/zodiak.so
 share/applications/kde/sim.desktop
+share/apps/sim/icons/GPL-Icons.jisp
 share/apps/sim/icons/icqlite.jisp
 share/apps/sim/icons/additional.jisp
 share/apps/sim/icons/icq5.jisp
@@ -141,6 +142,7 @@ share/apps/sim/styles/SIM.2.xsl
 share/apps/sim/styles/SIM.3.xsl
 share/apps/sim/styles/SIM.4.(2+3).xsl
 share/apps/sim/styles/SIM.5.2.2.xsl
+share/apps/sim/styles/SIM.5.2.3.xsl
 share/apps/sim/styles/SIM.5.2.xsl
 share/apps/sim/styles/SIM.5.xsl
 share/apps/sim/styles/SIM.xsl
@@ -156,13 +158,9 @@ share/apps/sim/styles/XChat.xsl
 share/apps/sim/styles/XChat2seconds.xsl
 share/apps/sim/styles/XChat3fullDate.xsl
 share/icons/hicolor/16x16/apps/sim.png
-share/icons/hicolor/22x22/apps/sim.png
 share/icons/hicolor/32x32/apps/sim.png
 share/icons/hicolor/48x48/apps/sim.png
 share/icons/hicolor/64x64/apps/sim.png
-share/icons/locolor/16x16/apps/sim.png
-share/icons/locolor/22x22/apps/sim.png
-share/icons/locolor/32x32/apps/sim.png
 share/locale/bg/LC_MESSAGES/sim.mo
 share/locale/ca/LC_MESSAGES/sim.mo
 share/locale/cs/LC_MESSAGES/sim.mo
@@ -183,7 +181,6 @@ share/locale/sv/LC_MESSAGES/sim.mo
 share/locale/th/LC_MESSAGES/sim.mo
 share/locale/tr/LC_MESSAGES/sim.mo
 share/locale/uk/LC_MESSAGES/sim.mo
-share/locale/zh_TW/LC_MESSAGES/sim.mo
 share/mimelnk/application/x-icq.desktop
 share/services/simctrl.desktop
 @dirrm lib/sim/styles
@@ -198,8 +195,6 @@ share/services/simctrl.desktop
 @dirrmtry share/apps
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor/48x48/apps
@@ -207,13 +202,6 @@ share/services/simctrl.desktop
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor
-@dirrmtry share/icons/locolor/16x16/apps
-@dirrmtry share/icons/locolor/16x16
-@dirrmtry share/icons/locolor/22x22/apps
-@dirrmtry share/icons/locolor/22x22
-@dirrmtry share/icons/locolor/32x32/apps
-@dirrmtry share/icons/locolor/32x32
-@dirrmtry share/icons/locolor
 @dirrmtry share/icons
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
@@ -229,8 +217,6 @@ share/services/simctrl.desktop
 @dirrmtry share/locale/sw
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
 @dirrmtry share/services
