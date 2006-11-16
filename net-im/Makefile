@@ -122,6 +122,7 @@
     SUBDIR += tmsnc
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
+    SUBDIR += wildfire
     SUBDIR += ymessenger
     SUBDIR += ysm
 
