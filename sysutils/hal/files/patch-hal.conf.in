@@ -1,0 +1,17 @@
+--- hal.conf.in.orig	Fri Apr 14 12:33:12 2006
++++ hal.conf.in	Thu Nov 16 20:47:25 2006
+@@ -42,7 +42,13 @@
+   </policy>
+ 
+   <!-- You can change this to a more suitable user, or make per-group -->
+-  <policy user="0">
++  <policy group="wheel">
++    <allow send_interface="org.freedesktop.Hal.Device.SystemPowerManagement"/>
++    <allow send_interface="org.freedesktop.Hal.Device.LaptopPanel"/>
++    <allow send_interface="org.freedesktop.Hal.Device.Volume"/>
++    <allow send_interface="org.freedesktop.Hal.Device.Volume.Crypto"/>
++  </policy>
++  <policy group="operator">
+     <allow send_interface="org.freedesktop.Hal.Device.SystemPowerManagement"/>
+     <allow send_interface="org.freedesktop.Hal.Device.LaptopPanel"/>
+     <allow send_interface="org.freedesktop.Hal.Device.Volume"/>
