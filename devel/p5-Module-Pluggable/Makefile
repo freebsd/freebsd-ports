@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	3.1
-PORTREVISION=	2
+PORTVERSION=	3.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Automatically give your module the ability to have plugins
 
-RUN_DEPENDS=	p5-Class-Inspector>0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-PathTools>=3.0:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS=	p5-PathTools>=3.0:${PORTSDIR}/devel/p5-PathTools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
