@@ -8,7 +8,7 @@
 PORTNAME=	xgame
 PORTVERSION=	1.7.1
 CATEGORIES=	games
-MASTER_SITES=	http://downloads.tlhiv.com/xgame/
+MASTER_SITES=	http://downloads.tlhiv.org/xgame/
 
 MAINTAINER=	aberg@doomnet.de
 COMMENT=	A Perl script which enhances gameplay under Linux/Unix
