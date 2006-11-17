@@ -23,4 +23,6 @@ MD5_FILE=	${.CURDIR}/distinfo
 
 MASTERDIR=	${.CURDIR}/../inn
 
+BROKEN=		Fails to patch
+
 .include "${MASTERDIR}/Makefile"
