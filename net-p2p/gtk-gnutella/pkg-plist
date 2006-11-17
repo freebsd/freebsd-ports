@@ -44,7 +44,9 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/warning.xpm
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg
+@dirrmtry bin
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/el
 @dirrm %%DATADIR%%/en
