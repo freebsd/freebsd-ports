@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendd
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	dns
 MASTER_SITES=	http://www.bsdmon.com/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
