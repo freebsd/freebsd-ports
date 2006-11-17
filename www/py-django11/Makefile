@@ -13,7 +13,7 @@ MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 
-MAINTAINER?=	acm@FreeBSD.org
+MAINTAINER?=	python@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
