@@ -8,7 +8,7 @@
 PORTNAME=	murrine-configurator
 PORTVERSION=	0.4.1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrie/
+MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrine/
 DISTNAME=	murrine-configurator-${PORTVERSION}
 
 MAINTAINER=	tstodgell@gmail.com
@@ -17,8 +17,6 @@ COMMENT=	GUI gtkrc configuration tool for the Murrine GTK engine
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${NONEXISTENT}:${PORTSDIR}/x11-themes/gtk-murrine-engine \
 		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity
-
-BROKEN=		Unfetchable
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
