@@ -47,6 +47,10 @@ USE_TK=		yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not build on sparc64
+.endif
+
 .if ${OSVERSION} < 502102
 WITHOUT_ODBC=	yes
 .endif
