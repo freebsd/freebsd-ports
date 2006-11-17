@@ -1,0 +1,22 @@
+Local/Library/Frameworks/GSKrab.framework/Headers
+Local/Library/Frameworks/GSKrab.framework/Resources
+Local/Library/Frameworks/GSKrab.framework/Versions/A/GSKrab
+Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrab.h
+Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrabClient.h
+Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrabKeyCode.h
+Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrabServer.h
+Local/Library/Frameworks/GSKrab.framework/Versions/A/Resources/Info-gnustep.plist
+Local/Library/Frameworks/GSKrab.framework/Versions/A/libGSKrab.so
+Local/Library/Frameworks/GSKrab.framework/Versions/A/libGSKrab.so.%%MAJORVERSION%%
+Local/Library/Frameworks/GSKrab.framework/Versions/A/libGSKrab.so.%%VERSION%%
+Local/Library/Frameworks/GSKrab.framework/Versions/Current
+Local/Library/Headers/GSKrab
+Local/Library/Libraries/libGSKrab.so
+Local/Library/Libraries/libGSKrab.so.%%MAJORVERSION%%
+Local/Library/Libraries/libGSKrab.so.%%VERSION%%
+Local/Tools/gsks
+@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/A/Resources
+@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers
+@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/A
+@dirrm Local/Library/Frameworks/GSKrab.framework/Versions
+@dirrm Local/Library/Frameworks/GSKrab.framework
