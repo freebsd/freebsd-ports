@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugger for PHP4
 
+BROKEN=		Does not compile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PHP=	yes
 USE_PHPIZE=	yes
