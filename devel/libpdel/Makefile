@@ -5,24 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=		libpdel
-PORTVERSION=		0.5.3
-PORTREVISION=		1
-CATEGORIES=		devel net www
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	archie
+PORTNAME=	libpdel
+PORTVERSION=	0.5.3
+PORTREVISION=	1
+CATEGORIES=	devel net www
+MASTER_SITES=	LOCAL/archie
 
-MAINTAINER=		archie@freebsd.org
+MAINTAINER=	archie@FreeBSD.org
 COMMENT=	Packet Design multi-purpose C library for embedded applications
 
-LIB_DEPENDS=		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
