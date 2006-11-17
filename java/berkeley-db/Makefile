@@ -19,6 +19,8 @@ OPTIONS=	TEST "Run the self-tests after building automatically" on
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
+BROKEN=		Self-tests fail
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_ANT=	yes
