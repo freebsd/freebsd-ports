@@ -17,7 +17,6 @@ bin/durus
 %%PYTHON_SITELIBDIR%%/durus/__init__.py
 %%PYTHON_SITELIBDIR%%/durus/persistent_list.py
 %%PYTHON_SITELIBDIR%%/durus/file_storage.py
-%%PYTHON_SITELIBDIR%%/durus/convert_file_storage.py
 %%PYTHON_SITELIBDIR%%/durus/utils.py
 %%PYTHON_SITELIBDIR%%/durus/error.pyc
 %%PYTHON_SITELIBDIR%%/durus/client_storage.pyc
@@ -37,7 +36,6 @@ bin/durus
 %%PYTHON_SITELIBDIR%%/durus/__init__.pyc
 %%PYTHON_SITELIBDIR%%/durus/persistent_list.pyc
 %%PYTHON_SITELIBDIR%%/durus/file_storage.pyc
-%%PYTHON_SITELIBDIR%%/durus/convert_file_storage.pyc
 %%PYTHON_SITELIBDIR%%/durus/utils.pyc
 %%PYTHON_SITELIBDIR%%/durus/_persistent.so
 %%PYTHON_SITELIBDIR%%/durus/error.pyo
@@ -58,7 +56,6 @@ bin/durus
 %%PYTHON_SITELIBDIR%%/durus/__init__.pyo
 %%PYTHON_SITELIBDIR%%/durus/persistent_list.pyo
 %%PYTHON_SITELIBDIR%%/durus/file_storage.pyo
-%%PYTHON_SITELIBDIR%%/durus/convert_file_storage.pyo
 %%PYTHON_SITELIBDIR%%/durus/utils.pyo
 %%PORTDOCS%%%%DOCSDIR%%/ACKS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt

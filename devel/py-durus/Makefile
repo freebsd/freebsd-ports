@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	durus
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.mems-exchange.org/software/durus/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
