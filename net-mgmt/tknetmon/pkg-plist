@@ -1,0 +1,95 @@
+bin/TkNetmon
+lib/%%PORTNAME%%-%%PORTVERSION%%/TkNetmon.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/.tknetmonrc
+lib/%%PORTNAME%%-%%PORTVERSION%%/README.ru
+lib/%%PORTNAME%%-%%PORTVERSION%%/README.en
+lib/%%PORTNAME%%-%%PORTVERSION%%/KNOWNBUGS.ru
+lib/%%PORTNAME%%-%%PORTVERSION%%/CHANGES.ru
+lib/%%PORTNAME%%-%%PORTVERSION%%/LICENSE
+lib/%%PORTNAME%%-%%PORTVERSION%%/devices/devtable
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Node.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Monitor.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Dialogs.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Preferences.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Link.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Line.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Text.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/SaveFile.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/LoadFile.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Discovery.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/snmpNames.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/selectTargets.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/IpAddrLib.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/LoadHostsFile.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/LoadNetStateObjs.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/msgcat.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/menuConfig.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/EventsLog.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Bgp.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Interface.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/ifGroups.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Service.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Misc.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Methods.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Variables.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/stateSignal.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Logo.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/fontDialog.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/SNMP.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Sql.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/lib/Traps.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/TkPortHistory.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/TkDeviceView.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/TkIfUtil.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/TkSnmpTable.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/EventsLog.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/SystemLog.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/NodeReport.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/object-sql-log.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/subobject-sql-log.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/libexec/SndCtrl.tcl
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/unknown32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/unknown48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/pc32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/pc48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/cisco32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/cisco48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/win32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/win48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/pix32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/printer32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/printer48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/linux32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/linux48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/freebsd32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/freebsd48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/hub32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/hub48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/router32.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/router48.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/HPUX.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/icons/APCsymmetra.gif
+lib/%%PORTNAME%%-%%PORTVERSION%%/locale/ru.msg
+lib/%%PORTNAME%%-%%PORTVERSION%%/sounds/Up.wav
+lib/%%PORTNAME%%-%%PORTVERSION%%/sounds/Down.wav
+%%PORTDOCS%%%%DOCSDIR%%/UserGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/UserGuide.ru.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerGuide.ru.html
+%%PORTDOCS%%%%DOCSDIR%%/Libexec.ru.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.ru.html
+%%PORTDOCS%%%%DOCSDIR%%/Example1.ru.html
+%%PORTDOCS%%%%DOCSDIR%%/EventsLog.ru.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/netmon.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmp.list
+%%PORTDOCS%%%%EXAMPLESDIR%%/targets.list
+%%PORTDOCS%%%%EXAMPLESDIR%%/netmon.db.sql
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%/devices
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%/icons
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%/lib
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%/libexec
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%/locale
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%/sounds
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/%%PORTNAME%%-%%PORTVERSION%%

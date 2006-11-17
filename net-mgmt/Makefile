@@ -199,6 +199,7 @@
     SUBDIR += tas
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
+    SUBDIR += tknetmon
     SUBDIR += torrus
     SUBDIR += trafd
     SUBDIR += wdiag
