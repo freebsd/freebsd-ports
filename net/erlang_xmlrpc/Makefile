@@ -20,6 +20,8 @@ COMMENT=	A library for XMLRPC support in Erlang
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
+BROKEN=		Unfetchable
+
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 
