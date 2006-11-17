@@ -1114,6 +1114,7 @@ cdbakeoven	ports/sysutils/cdbakeoven
 cdbkup		ports/sysutils/cdbkup
 cdcat		ports/deskutils/cdcat
 cdcl		ports/science/cdcl
+cddb-bundle	ports/audio/cddb-bundle
 cdecl		ports/devel/cdecl
 cdf		ports/sysutils/cdf
 cdf3		ports/science/cdf
