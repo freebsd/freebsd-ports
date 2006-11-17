@@ -22,6 +22,8 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		curl.3:${PORTSDIR}/ftp/curl \
 		tag.5:${PORTSDIR}/audio/taglib
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GNOME=	gtk20 libglade2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -20,6 +20,8 @@ COMMENT=	Firefox Japanese(ja) Language Pack
 BUILD_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 
+BROKEN=		Incomplete pkg-plist
+
 NO_BUILD=	yes
 
 FIREFOX=	${PORTNAME}
