@@ -8,10 +8,7 @@ PORTNAME=	jfduke3d
 PORTVERSION=	20051009
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://dialup.edgefiles.com/edgenetwork.org/jonof/buildport/ \
-		ftp://ftp1.edgefiles.com/edgenetwork.org/jonof/buildport/ \
-		ftp://ftp2.edgefiles.com/edgenetwork.org/jonof/buildport/ \
-		http://members.iinet.net.au.nyud.net:8090/~jonof/
+MASTER_SITES=	http://users.on.net/~jonof/buildport/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.zip \
 		jfbuild_src_${PORTVERSION}.zip
 
