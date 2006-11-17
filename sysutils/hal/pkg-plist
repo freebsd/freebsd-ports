@@ -1,3 +1,4 @@
+%%MEDIA%%@exec mkdir -p /media
 bin/hal-device
 bin/hal-find-by-capability
 bin/hal-find-by-property
@@ -156,3 +157,4 @@ share/locale/zh_TW/LC_MESSAGES/hal.mo
 @dirrmtry share/locale/el
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
+%%MEDIA%%@unexec rmdir /media 2>/dev/null || true

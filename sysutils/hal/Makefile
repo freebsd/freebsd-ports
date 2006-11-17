@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 PORTVERSION=	${HALVERSION}.${SNAPVERSION}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
@@ -40,7 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTKDOC="false"
 
 HALVERSION=	0.5.8
-SNAPVERSION=	20061107
+SNAPVERSION=	20061117
 
 .if !defined(HAL_SLAVE)
 USE_RC_SUBR=	hald
@@ -81,8 +81,17 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(HAL_SLAVE) && (${ARCH}=="i386" || ${ARCH}=="amd64" || ${ARCH}=="ia64")
+.if !defined(HAL_SLAVE)
+.if (${ARCH}=="i386" || ${ARCH}=="amd64" || ${ARCH}=="ia64")
 RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+.endif
+
+.if ${OSVERSION} <= 601100
+NEEDS_MEDIA=	yes
+PLIST_SUB+=	MEDIA=""
+.else
+PLIST_SUB+=	MEDIA="@comment "
+.endif
 .endif
 
 post-patch:
@@ -108,6 +117,9 @@ post-install:
 		${DATADIR}/dist
 	@${SETENV} PKG_PREFIX=${PREFIX} PACKAGE_BUILDING=${PACKAGE_BUILDING} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if !defined(PACKAGE_BUILDING) && defined(NEEDS_MEDIA)
+	${MKDIR} /media
+.endif
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/hald/freebsd/README \
 		${DOCSDIR}/README.freebsd
