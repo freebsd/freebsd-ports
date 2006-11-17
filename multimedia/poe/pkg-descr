@@ -1,0 +1,8 @@
+Poe: A Pugnacious Ogg Editor. Poe is a vorbis comment editor. It tries to
+ follow the vorbis comment header specification closely, while being convenient
+ and flexible to use. Towards that end, it doesn't have a static 'form' style
+ interface. Instead, it has an editable table of comments. The contents of the
+ table change dependent upon preference settings, and what comments are in the
+ ogg file you are editing.
+
+WWW: http://www.eskimo.com/~pburns/Poe/
