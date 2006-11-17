@@ -17,6 +17,8 @@ COMMENT=	Murrine theme pack
 BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.la:${PORTSDIR}/x11-themes/gtk-murrine-engine
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.la:${PORTSDIR}/x11-themes/gtk-murrine-engine
 
+BROKEN=		Size mismatch
+
 GTKRC_DIR=	${DISTNAME}/gtk-2.0
 USE_GNOME=	gtk20
 NO_BUILD=	yes
