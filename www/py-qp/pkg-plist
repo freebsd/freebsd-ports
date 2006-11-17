@@ -65,6 +65,9 @@ bin/qpcensus.py
 %%PYTHON_SITELIBDIR%%/qp/lib/spec.py
 %%PYTHON_SITELIBDIR%%/qp/lib/spec.pyc
 %%PYTHON_SITELIBDIR%%/qp/lib/spec.pyo
+%%PYTHON_SITELIBDIR%%/qp/lib/tz.py
+%%PYTHON_SITELIBDIR%%/qp/lib/tz.pyc
+%%PYTHON_SITELIBDIR%%/qp/lib/tz.pyo
 %%PYTHON_SITELIBDIR%%/qp/lib/util.py
 %%PYTHON_SITELIBDIR%%/qp/lib/util.pyc
 %%PYTHON_SITELIBDIR%%/qp/lib/util.pyo
@@ -95,6 +98,9 @@ bin/qpcensus.py
 %%PYTHON_SITELIBDIR%%/qp/pub/user.py
 %%PYTHON_SITELIBDIR%%/qp/pub/user.pyc
 %%PYTHON_SITELIBDIR%%/qp/pub/user.pyo
+%%PYTHON_SITELIBDIR%%/qp/sites/__init__.py
+%%PYTHON_SITELIBDIR%%/qp/sites/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qp/sites/__init__.pyo
 %%PYTHON_SITELIBDIR%%/qp/setup.py
 %%PYTHON_SITELIBDIR%%/qp/setup.pyc
 %%PYTHON_SITELIBDIR%%/qp/setup.pyo
@@ -127,6 +133,7 @@ bin/qpcensus.py
 @dirrm %%PYTHON_SITELIBDIR%%/qp/hub
 @dirrm %%PYTHON_SITELIBDIR%%/qp/http
 @dirrm %%PYTHON_SITELIBDIR%%/qp/fill
+@dirrm %%PYTHON_SITELIBDIR%%/qp/sites
 @dirrm %%PYTHON_SITELIBDIR%%/qp
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
