@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 PORTVERSION=	${HALVERSION}.${SNAPVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
@@ -97,6 +97,8 @@ post-patch:
 		${WRKSRC}/hald/Makefile.in
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|txt||' \
 		${WRKSRC}/policy/Makefile.in
+	@${REINPLACE_CMD} -e 's|user="0"|group="operator"|g' \
+		${WRKSRC}/hal.conf.in
 	@${TOUCH} ${WRKSRC}/doc/spec/hal-spec.html
 
 post-install:
