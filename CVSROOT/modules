@@ -11143,6 +11143,7 @@ php4-dio	ports/devel/php4-dio
 php4-domxml	ports/textproc/php4-domxml
 php4-exif	ports/graphics/php4-exif
 php4-extensions	ports/lang/php4-extensions
+php4-ffmpeg	ports/graphics/php4-ffmpeg
 php4-filepro	ports/databases/php4-filepro
 php4-ftp	ports/ftp/php4-ftp
 php4-gd		ports/graphics/php4-gd
