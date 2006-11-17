@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qpy
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
