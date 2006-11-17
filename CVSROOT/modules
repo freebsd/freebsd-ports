@@ -14270,6 +14270,7 @@ tkirc		ports/irc/tkirc
 tkman		ports/misc/tkman
 tkmerge		ports/devel/tkmerge
 tkmoo		ports/games/tkmoo
+tknetmon	ports/net-mgmt/tknetmon
 tkp4		ports/devel/tkp4
 tkpng		ports/graphics/tkpng
 tkrat2		ports/mail/tkrat2
