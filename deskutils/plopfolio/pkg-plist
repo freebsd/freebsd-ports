@@ -1,0 +1,29 @@
+Local/Applications/PlopFolio.app/PlopFolio
+Local/Applications/PlopFolio.app/Resources/English.lproj/Localizable.strings
+Local/Applications/PlopFolio.app/Resources/Info-gnustep.plist
+Local/Applications/PlopFolio.app/Resources/PlopFolio.desktop
+Local/Applications/PlopFolio.app/Resources/PlopFolio.tiff
+Local/Applications/PlopFolio.app/Resources/anim1%%MAJORVERSION%%.tiff
+Local/Applications/PlopFolio.app/Resources/anim1.tiff
+Local/Applications/PlopFolio.app/Resources/anim11.tiff
+Local/Applications/PlopFolio.app/Resources/anim12.tiff
+Local/Applications/PlopFolio.app/Resources/anim13.tiff
+Local/Applications/PlopFolio.app/Resources/anim14.tiff
+Local/Applications/PlopFolio.app/Resources/anim15.tiff
+Local/Applications/PlopFolio.app/Resources/anim16.tiff
+Local/Applications/PlopFolio.app/Resources/anim2.tiff
+Local/Applications/PlopFolio.app/Resources/anim3.tiff
+Local/Applications/PlopFolio.app/Resources/anim4.tiff
+Local/Applications/PlopFolio.app/Resources/anim5.tiff
+Local/Applications/PlopFolio.app/Resources/anim6.tiff
+Local/Applications/PlopFolio.app/Resources/anim7.tiff
+Local/Applications/PlopFolio.app/Resources/anim8.tiff
+Local/Applications/PlopFolio.app/Resources/anim9.tiff
+Local/Applications/PlopFolio.app/Resources/reload.tiff
+Local/Applications/PlopFolio.app/Resources/resize.tiff
+Local/Applications/PlopFolio.app/Resources/stop.tiff
+Local/Applications/PlopFolio.app/library_paths.openapp
+Local/Applications/PlopFolio.app/stamp.make
+@dirrm Local/Applications/PlopFolio.app/Resources/English.lproj
+@dirrm Local/Applications/PlopFolio.app/Resources
+@dirrm Local/Applications/PlopFolio.app
