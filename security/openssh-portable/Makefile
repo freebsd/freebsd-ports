@@ -146,7 +146,7 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.4p1-hpn12v11.diff.gz
+PATCHFILES+=		openssh-4.5p1-hpn12v14.diff.gz
 .endif
 
 .if defined(WITH_LPK)
