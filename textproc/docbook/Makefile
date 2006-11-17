@@ -67,15 +67,15 @@ RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xm
 .endif
 
 .if defined(WITH_DB43_XML)
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.3:${PORTSDIR}/textproc/docbook-ml-430
+RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.3:${PORTSDIR}/textproc/docbook-xml-430
 .endif
 
 .if defined(WITH_DB44_XML)
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.4:${PORTSDIR}/textproc/docbook-ml-440
+RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.4:${PORTSDIR}/textproc/docbook-xml-440
 .endif
 
 .if defined(WITH_DB45_XML)
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-ml-450
+RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450
 .endif
 
 .if defined(WITH_ISO8879)
