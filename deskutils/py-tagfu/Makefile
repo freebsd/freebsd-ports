@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tagfu
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	deskutils devel python
 MASTER_SITES=	http://www.geekfire.com/~alex/tagfu/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
