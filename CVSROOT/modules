@@ -11492,6 +11492,7 @@ poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 podcastamatic	ports/www/podcastamatic
 podcatcher	ports/multimedia/podcatcher
+poe		ports/multimedia/poe
 poedit		ports/editors/poedit
 poink		ports/net/poink
 policykit	ports/sysutils/policykit
