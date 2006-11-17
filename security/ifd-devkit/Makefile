@@ -11,12 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	IFD Handler Developer's Kit for MUSCLE PC/SC Lite
-
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
