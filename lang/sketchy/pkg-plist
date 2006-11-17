@@ -1,10 +1,10 @@
-bin/pp
 bin/sk
 bin/sketchy
+bin/skpp
 include/sketchy.h
 lib/libsketchy.a
 lib/libsketchy.so
-lib/libsketchy.so.24
+lib/libsketchy.so.25
 %%DATADIR%%/LICENSE
 %%DATADIR%%/ext/assp.scm
 %%DATADIR%%/ext/count.scm
@@ -346,7 +346,6 @@ lib/libsketchy.so.24
 %%DOCSDIR%%/sk08.html
 %%DOCSDIR%%/sk09.html
 %%DOCSDIR%%/sk10.html
-%%DOCSDIR%%/sk11.html
 %%DOCSDIR%%/toc2-x.html
 %%DOCSDIR%%/toc2.html
 @dirrm %%DATADIR%%/ext
