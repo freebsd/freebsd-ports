@@ -1,16 +1,16 @@
 # New ports collection makefile for:   snortreport
 # Date created:        18 Jan 2004
-# Whom:                Andrea Venturoli <a.ventu@flashnet.it>
+# Whom:                Andrea Venturoli <freebsd@netfence.it>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	snortreport
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	security www
-MASTER_SITES=	http://www.circuitsmaximus.com/snortreport/
+MASTER_SITES=	http://www.symmetrixtech.com/ids/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@netfence.it
 COMMENT=	Add-on module for snort to generate real-time web reports
 
 .if !defined(WITHOUT_JPGRAPH)
@@ -19,11 +19,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph
 
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
+IGNORE_WITH_PHP=	5
+DEFAULT_PHP_VER=	4
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
-
-BROKEN=		does not package; depends on multiple versions of PHP
 
 pre-everything::
 	@${ECHO} ""
