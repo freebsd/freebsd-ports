@@ -6,9 +6,10 @@
 #
 
 PORTNAME=		smb4k
-PORTVERSION=		0.6.10
+PORTVERSION=	0.7.3
 CATEGORIES=		net kde
-MASTER_SITES=		http://download.berlios.de/smb4k/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	smb4k
 
 MAINTAINER=		shelton@www.granch.ru
 COMMENT=		KDE 3.x SMB Network browser and SMB shares mounting center
@@ -17,14 +18,16 @@ RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
 			smbstatus:${PORTSDIR}/net/samba3
 
 USE_KDEBASE_VER=	3
-USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
-USE_GETTEXT=		yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=	yes
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
 DOCSDIR=		${PREFIX}/share/doc/HTML/en/${PORTNAME}
-INSTALLS_SHLIB=		yes
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
