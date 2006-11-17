@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-murrine-themes
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/
 DISTNAME=	MurrineThemePack
@@ -16,8 +16,6 @@ COMMENT=	Murrine theme pack
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.la:${PORTSDIR}/x11-themes/gtk-murrine-engine
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.la:${PORTSDIR}/x11-themes/gtk-murrine-engine
-
-BROKEN=		Size mismatch
 
 GTKRC_DIR=	${DISTNAME}/gtk-2.0
 USE_GNOME=	gtk20
