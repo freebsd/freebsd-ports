@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	sketchy
-PORTVERSION=	20061108
+PORTVERSION=	20061116
 CATEGORIES=	lang devel lisp scheme
 MASTER_SITES=	http://www.t3x.org/files/
 
 MAINTAINER=	nmh@t3x.org
 COMMENT=	An interpreter for purely applicative Scheme
 
-CONFLICTS=	p5-PAR-0.*
-
 USE_LDCONFIG=	yes
 MAKE_ENV+=	BINOWN=${BINOWN} \
 		BINGRP=${BINGRP}
 
-MAN7=		sketchy.7
+MAN1=		sketchy.1 skpp.1
+MLINKS=		sketchy.1 sk.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/sketchy.h
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/src/pp.scm
 
 .include <bsd.port.mk>
