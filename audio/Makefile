@@ -389,6 +389,7 @@
     SUBDIR += mp3stat
     SUBDIR += mp3wrap
     SUBDIR += mpc
+    SUBDIR += mpdcon
     SUBDIR += mpdscribble
     SUBDIR += mpegaudio
     SUBDIR += mpeglib_artsplug
