@@ -3645,6 +3645,7 @@ gnustep-art	ports/x11-toolkits/gnustep-art
 gnustep-back	ports/x11-toolkits/gnustep-back
 gnustep-base	ports/lang/gnustep-base
 gnustep-cairo	ports/x11-toolkits/gnustep-cairo
+gnustep-cdplayer	ports/audio/gnustep-cdplayer
 gnustep-examples	ports/misc/gnustep-examples
 gnustep-ftp	ports/ftp/gnustep-ftp
 gnustep-gui	ports/x11-toolkits/gnustep-gui
