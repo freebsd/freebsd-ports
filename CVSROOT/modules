@@ -7289,6 +7289,7 @@ mpb		ports/science/mpb
 mpc		ports/audio/mpc
 mpd		ports/net/mpd
 mpd4		ports/net/mpd4
+mpdcon		ports/audio/mpdcon
 mpdscribble	ports/audio/mpdscribble
 mpeg		ports/multimedia/mpeg
 mpeg2codec	ports/multimedia/mpeg2codec
