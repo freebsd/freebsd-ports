@@ -75,6 +75,9 @@
 # USE_GNUSTEP_LOCAL_LIBS+=	pantomime:mail/pantomime
 #	depends on a shared lib in Local directrory
 #
+# USE_GNUSTEP_LOCAL_BUNDLES+=	Cddb:audio/cddb-bundle
+#	depends on Bundles installed in Local directrory at build and runtime
+#
 # USE_GNUSTEP_SYSTEM_APPS+=	ProjectCenter:devel/projectcenter.app
 #	depends on Application installed in System directrory at runtime
 #
@@ -277,6 +280,16 @@ RUN_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTE
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_LIBS}
 BUILD_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 RUN_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source local bundles
+#
+.if defined(USE_GNUSTEP_LOCAL_BUNDLES)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_BUNDLES}
+BUILD_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Library/Bundles/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Library/Bundles/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
