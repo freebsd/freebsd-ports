@@ -20,6 +20,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		Does not build on ia64
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 .else
@@ -32,4 +38,4 @@ MAN1=		yasm.1
 MAN7=		yasm_arch.7
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
