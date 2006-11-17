@@ -24,4 +24,8 @@ MAN1=		xanalyser.1
 PLIST_FILES=	bin/xanalyser \
 		lib/X11/app-defaults/XAnalyser
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500000
+BROKEN= Does not compile
+.endif
+.include <bsd.port.post.mk>
