@@ -73,6 +73,7 @@
     SUBDIR += cd-console
     SUBDIR += cd-discid
     SUBDIR += cd2mp3
+    SUBDIR += cddb-bundle
     SUBDIR += cdparanoia
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
