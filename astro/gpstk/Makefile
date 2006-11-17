@@ -16,6 +16,8 @@ COMMENT=		Toolkit for developing GPS applications
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/jam:${PORTSDIR}/devel/jam
 
+BROKEN=			Does not build
+
 USE_GCC=		3.4+
 USE_LDCONFIG=		yes
 
