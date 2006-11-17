@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/textproc/py-enchant/pkg-plist,v 1.1 2006-04-06 15:05:08 garga Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/textproc/py-enchant/pkg-plist,v 1.2 2006-11-17 10:42:57 miwi Exp $
 %%PYTHON_SITELIBDIR%%/enchant/__init__.py
 %%PYTHON_SITELIBDIR%%/enchant/__init__.pyc
 %%PYTHON_SITELIBDIR%%/enchant/_enchant.so
@@ -6,6 +6,8 @@
 %%PYTHON_SITELIBDIR%%/enchant/checker/CmdLineChecker.pyc
 %%PYTHON_SITELIBDIR%%/enchant/checker/__init__.py
 %%PYTHON_SITELIBDIR%%/enchant/checker/__init__.pyc
+%%PYTHON_SITELIBDIR%%/enchant/checker/GtkSpellCheckerDialog.py
+%%PYTHON_SITELIBDIR%%/enchant/checker/GtkSpellCheckerDialog.pyc
 %%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.py
 %%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyc
 %%PYTHON_SITELIBDIR%%/enchant/tokenize/__init__.py
