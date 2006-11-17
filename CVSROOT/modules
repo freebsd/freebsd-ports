@@ -11203,6 +11203,7 @@ php5-dbase	ports/databases/php5-dbase
 php5-dom	ports/textproc/php5-dom
 php5-exif	ports/graphics/php5-exif
 php5-extensions	ports/lang/php5-extensions
+php5-ffmpeg	ports/graphics/php5-ffmpeg
 php5-ftp	ports/ftp/php5-ftp
 php5-gd		ports/graphics/php5-gd
 php5-gettext	ports/devel/php5-gettext
