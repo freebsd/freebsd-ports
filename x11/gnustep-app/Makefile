@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,6 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Metaport for GNUstep applications
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
@@ -41,6 +42,7 @@ USE_GNUSTEP_SYSTEM_APPS+=	Terminal:x11/terminal.app
 USE_GNUSTEP_SYSTEM_APPS+=	Emacs:editors/emacs.app
 USE_GNUSTEP_SYSTEM_APPS+=	GSPdf:print/gspdf
 USE_GNUSTEP_SYSTEM_APPS+=	SystemPreferences:deskutils/systempreferences
+USE_GNUSTEP_SYSTEM_APPS+=	WrapperFactory:deskutils/gnustep-wrapper
 
 USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:mail/pantomime
 USE_GNUSTEP_LOCAL_LIBS+=	GToolKit:x11-toolkits/gtoolkit
@@ -56,6 +58,9 @@ USE_GNUSTEP_LOCAL_LIBS+=	WebServer:www/webserver
 USE_GNUSTEP_LOCAL_LIBS+=	StepTalk:lang/steptalk
 USE_GNUSTEP_LOCAL_LIBS+=	MathArray:math/matharray
 USE_GNUSTEP_LOCAL_LIBS+=	ObjcUnit:devel/objcunit
+USE_GNUSTEP_LOCAL_LIBS+=	GSKrab:x11/gskrab
+
+USE_GNUSTEP_LOCAL_BUNDLES+=	Cddb:audio/cddb-bundle
 
 USE_GNUSTEP_LOCAL_APPS+=	Gomoku:games/gomoku.app
 USE_GNUSTEP_LOCAL_APPS+=	GNUMail:mail/gnumail
@@ -102,11 +107,13 @@ USE_GNUSTEP_LOCAL_APPS+=	DictionaryReader:deskutils/etoile
 USE_GNUSTEP_LOCAL_APPS+=	batmon:sysutils/batmon
 USE_GNUSTEP_LOCAL_APPS+=	UL:biology/adun
 USE_GNUSTEP_LOCAL_APPS+=	RemoteDesk:net/remotedesk
+USE_GNUSTEP_LOCAL_APPS+=	DisplayCalibrator:deskutils/displaycalibrator
+USE_GNUSTEP_LOCAL_APPS+=	GNUWash:deskutils/gnuwash
+USE_GNUSTEP_LOCAL_APPS+=	Poe:multimedia/poe
+USE_GNUSTEP_LOCAL_APPS+=	MPDCon:audio/mpdcon
+USE_GNUSTEP_LOCAL_APPS+=	PlopFolio:deskutils/plopfolio
+USE_GNUSTEP_LOCAL_APPS+=	CDPlayer:audio/gnustep-cdplayer
 
 USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
-
-RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Tools/zillion:${PORTSDIR}/net/zillion
-
-do-install:	# empty
 
 .include <bsd.port.mk>
