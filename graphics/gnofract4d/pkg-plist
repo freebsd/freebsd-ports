@@ -1,3 +1,4 @@
+bin/gnofract4d
 lib/gnofract4d/buildtools/__init__.py
 lib/gnofract4d/buildtools/__init__.pyc
 lib/gnofract4d/buildtools/__init__.pyo
@@ -634,9 +635,14 @@ share/gnome/help/gnofract4d/C/tutorial002.xml
 share/gnome/help/gnofract4d/C/tutorial003.xml
 share/mime/packages/gnofract4d-mime.xml
 share/pixmaps/gnofract4d-logo.png
+@dirrmtry share/pixmaps
 @dirrm share/gnome/help/gnofract4d/C/figures
 @dirrm share/gnome/help/gnofract4d/C
 @dirrm share/gnome/help/gnofract4d
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/formulas
+@dirrm %%DATADIR%%
 @dirrm lib/gnofract4d/fractutils
 @dirrm lib/gnofract4d/fract4dgui
 @dirrm lib/gnofract4d/fract4d

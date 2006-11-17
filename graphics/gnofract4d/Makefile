@@ -7,6 +7,7 @@
 
 PORTNAME=	gnofract4d
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,14 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui lthack \
 		pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GCC=	3.4
-
-PLIST_FILES=	bin/gnofract4d
 
 PORTDOCS=	*
 
@@ -37,13 +35,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/gnofract4d
 # where to install docs
 	@${REINPLACE_CMD} -e "s,share/doc/gnofract4d-%s/'.*,${DOCSDIR:C/${PREFIX}\///}'\,," ${WRKSRC}/setup.py
-
-post-install:
-.for dir in ${PREFIX}/lib/gnofract4d ${PREFIX}/share/gnofract4d ${PREFIX}/share/gnome/help/gnofract4d
-	@${FIND} ${dir} ! -type d | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
-		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
-.endfor
+# fixup library detection
+	@${REINPLACE_CMD} -e "s/libpng/libpng12/" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s,/usr/include/jpeglib.h,${LOCALBASE}/include/jpeglib.h," ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
