@@ -1,0 +1,6 @@
+Graphical user interface for network monitoring package "netmond".
+With TkNetmon someone can create graphical network map, produce config file 
+for "netmond", restart it, and view current network objects state, 
+as it reported by netmond.
+
+WWW:  http://vfom.narod.ru/TkNetmon
