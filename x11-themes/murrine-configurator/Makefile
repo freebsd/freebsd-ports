@@ -18,6 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${NONEXISTENT}:${PORTSDIR}/x11-themes/gtk-murrine-engine \
 		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
