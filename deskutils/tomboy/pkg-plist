@@ -1,5 +1,5 @@
 bin/tomboy
-%%EVO:%%lib/tomboy/Plugins/Evolution.dll
+lib/tomboy/Plugins/Evolution.dll
 lib/tomboy/Plugins/ExportToHTML.dll
 lib/tomboy/Plugins/FixedWidth.dll
 lib/tomboy/Plugins/NoteOfTheDay.dll
