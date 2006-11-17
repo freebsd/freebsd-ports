@@ -11443,6 +11443,7 @@ pload		ports/net/pload
 plod		ports/sysutils/plod
 plone		ports/www/plone
 plonx		ports/games/plonx
+plopfolio	ports/deskutils/plopfolio
 plor		ports/news/plor
 ploticus	ports/math/ploticus
 ploticus-nox11	ports/math/ploticus-nox11
