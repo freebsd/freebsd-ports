@@ -1,0 +1,7 @@
+Local/Library/Bundles/Cddb.bundle/Cddb
+Local/Library/Bundles/Cddb.bundle/Resources/Info-gnustep.plist
+Local/Library/Bundles/Cddb.bundle/stamp.make
+Local/Library/Headers/Cddb/Cddb.h
+@dirrm Local/Library/Headers/Cddb
+@dirrm Local/Library/Bundles/Cddb.bundle/Resources
+@dirrm Local/Library/Bundles/Cddb.bundle
