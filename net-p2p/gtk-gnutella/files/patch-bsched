@@ -1,0 +1,22 @@
+--- src/core/bsched.c	Fri Nov 10 00:01:26 2006
++++ src/core/bsched.c	Tue Nov 14 12:19:18 2006
+@@ -1591,16 +1591,11 @@
+ 	 */
+ 
+ 	{
+-		off_t written;
+-		int flags = 0;
++		off_t written = 0;
+ 
+-#if defined(SF_NODISKIO)
+-		flags |= SF_NODISKIO;
+-#endif	/* SF_NODISKIO */
+-		
+-		r = sendfile(in_fd, out_fd, start, amount, NULL, &written, flags);
++		r = sendfile(in_fd, out_fd, start, amount, NULL, &written, 0);
+ 		if ((ssize_t) -1 == r) {
+-			if (is_temporary_error(errno) || EBUSY == errno)
++			if (is_temporary_error(errno))
+ 				r = written > 0 ? (ssize_t) written : (ssize_t) -1;
+ 		} else {
+ 			r = amount;			/* Everything written, but returns 0 if OK */
