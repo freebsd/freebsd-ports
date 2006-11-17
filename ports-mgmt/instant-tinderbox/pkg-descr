@@ -1,8 +1,0 @@
-This port is simlar to misc/instant-workstation or misc/instant-server.
-It creates a whole lot of often used ports, so that after a cvsup
-on a tinderbox build system, you can just tinderbuild this port and
-all primary dependencies are updated.
-
-If you think a port is missing, let me know!
-
-Author: Edwin Groothuis <edwin@mavetju.org>

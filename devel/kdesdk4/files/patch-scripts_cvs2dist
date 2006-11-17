@@ -1,8 +1,0 @@
---- scripts/cvs2dist.orig	Mon Oct  3 17:30:54 2005
-+++ scripts/cvs2dist	Mon Oct  3 17:31:00 2005
-@@ -1,4 +1,4 @@
--#! /bin/bash
-+#!/usr/bin/env bash
- 
- # This is cvs2dist
- # Webpage: http://www.katzbrown.com/shiritsu/programming/cvs2dist/

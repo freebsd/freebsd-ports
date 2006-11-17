@@ -1,3 +1,0 @@
-#!/bin/sh
-cp -R %%PREFIX%%/share/daimonin_client ~/.daimonin
-cd ~/.daimonin && ./daimonin $*

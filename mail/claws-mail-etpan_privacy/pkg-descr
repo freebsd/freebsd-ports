@@ -1,2 +1,0 @@
-This plugin handles signature verification and decryption of encrypted
-messages in S/MIME, OpenPGP, and ascii-armored PGP formats.

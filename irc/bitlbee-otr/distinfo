@@ -1,6 +1,0 @@
-MD5 (bitlbee-1.0.3.tar.gz) = e46682d54cbd6265dd4436b3b6838d63
-SHA256 (bitlbee-1.0.3.tar.gz) = 1d272c8712ee279ee8ac305562e7b8591e634fae69664a5a2d43301cb1d6277d
-SIZE (bitlbee-1.0.3.tar.gz) = 455344
-MD5 (bitlbee-1.0-ldap.diff) = f6641ed9b36ca2ceae292370200452fb
-SHA256 (bitlbee-1.0-ldap.diff) = 2da18c740b1c1ff6851f3a52ab0100cec251d9e1683c281a306cbbc21e6847f5
-SIZE (bitlbee-1.0-ldap.diff) = 7240

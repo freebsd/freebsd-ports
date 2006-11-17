@@ -1,3 +1,0 @@
-@comment $FreeBSD$
-bin/pgpool
-etc/pgpool.conf.sample

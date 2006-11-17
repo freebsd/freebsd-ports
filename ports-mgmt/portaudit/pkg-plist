@@ -1,7 +1,0 @@
-sbin/portaudit
-etc/portaudit.conf.sample
-%%PERIODICDIR%%/security/410.portaudit
-@dirrmtry %%PERIODICDIR%%/security
-@dirrmtry %%PERIODICDIR%%
-@exec mkdir -p %%DATABASEDIR%%
-@unexec rmdir %%DATABASEDIR%% 2>/dev/null || true

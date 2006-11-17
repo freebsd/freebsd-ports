@@ -1,6 +1,0 @@
-MD5 (squid2.5/squid-2.5.STABLE14.tar.bz2) = f413e0b887a5f9b2a75350243ed5564c
-SIZE (squid2.5/squid-2.5.STABLE14.tar.bz2) = 1073745
-MD5 (squid2.5/squid-2.5.STABLE14-httpReplyDestroy.patch) = 1529f8b0170e24b26353578778435bd4
-SIZE (squid2.5/squid-2.5.STABLE14-httpReplyDestroy.patch) = 1277
-MD5 (squid2.5/squid-2.5.STABLE14-hierarchy_tag.patch) = 9abe563ca3d01dc58502737edc6f3c60
-SIZE (squid2.5/squid-2.5.STABLE14-hierarchy_tag.patch) = 1319

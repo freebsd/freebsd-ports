@@ -1,3 +1,0 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/RRD/Simple.pm
-@dirrmtry %%SITE_PERL%%/RRD
