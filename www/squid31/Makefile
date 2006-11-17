@@ -75,30 +75,21 @@ PORTNAME=	squid
 PORTVERSION=	2.5.14
 PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	\
-		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
-		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
-		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
-		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
-		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
-MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE14
-DIST_SUBDIR=	squid2.5
-
-PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
+MASTER_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
 		http://www3.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
-		http://www1.nl.squid-cache.org/%SUBDIR%/ \
+		http://www2.nl.squid-cache.org/%SUBDIR%/ \
 		http://www1.ru.squid-cache.org/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/%SUBDIR%/ \
 		http://www1.gr.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
+MASTER_SITE_SUBDIR=	Versions/v2/2.5
+DISTNAME=	squid-2.5.STABLE14
+DIST_SUBDIR=	squid2.5
+
+PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	Versions/v2/2.5/bugs
 PATCHFILES=	squid-2.5.STABLE14-httpReplyDestroy.patch \
 		squid-2.5.STABLE14-hierarchy_tag.patch
