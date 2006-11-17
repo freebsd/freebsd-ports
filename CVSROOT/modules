@@ -3813,6 +3813,7 @@ gsfv		ports/security/gsfv
 gshisen		ports/games/gshisen
 gsi		ports/audio/gsi
 gsk		ports/net/gsk
+gskrab		ports/x11/gskrab
 gsl		ports/math/gsl
 gsm		ports/audio/gsm
 gsmc		ports/science/gsmc
