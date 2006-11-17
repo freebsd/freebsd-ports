@@ -14,6 +14,8 @@ MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Cute and easy blog tool with Traditional-Chinese(zh_TW.UTF-8)
 
+BROKEN=		Incorrect pkg-plist
+
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
