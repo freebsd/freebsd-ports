@@ -194,6 +194,7 @@
     SUBDIR += gnuitar
     SUBDIR += gnump3d
     SUBDIR += gnupod
+    SUBDIR += gnustep-cdplayer
     SUBDIR += gogo
     SUBDIR += gogo-petit
     SUBDIR += goobox
