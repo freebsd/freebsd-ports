@@ -16,6 +16,8 @@ COMMENT=	A collection of utility modules for Tcl
 
 BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 
+BROKEN=		Fails self-tests
+
 TCL_VER?=	8.4
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
