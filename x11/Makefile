@@ -106,6 +106,7 @@
     SUBDIR += gpctool
     SUBDIR += grabc
     SUBDIR += gromit
+    SUBDIR += gskrab
     SUBDIR += gsynaptics
     SUBDIR += gtk-launch
     SUBDIR += gtk-theme-switch
