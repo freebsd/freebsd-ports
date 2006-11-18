@@ -11980,6 +11980,7 @@ py-clamav	ports/security/py-clamav
 py-clientcookie	ports/devel/py-clientcookie
 py-clientform	ports/www/py-clientform
 py-compiler	ports/lang/py-compiler
+py-configobj	ports/devel/py-configobj
 py-coro		ports/devel/py-coro
 py-crack	ports/security/py-crack
 py-cryptkit	ports/security/py-cryptkit
