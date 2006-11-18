@@ -1,0 +1,8 @@
+A GNUstep-aware scheme interpreter. You need libflex installed on your system.
+Includes many examples, e.g. the sieve of Erathostenes to compute primes,
+a Koch curve plotter, mandelbrot set, graphs of various functions etc.
+GScheme is fully tail recursive. The garbage collector bypasses GNUstep's
+retain/release mechanism in order to deal with circular data structures.
+GScheme is document-based and you can edit more than one file at the same time.
+
+WWW: http://www.gnustep.it/marko/GScheme/index.html

@@ -109,6 +109,7 @@
     SUBDIR += gpc
     SUBDIR += gprolog
     SUBDIR += groovy
+    SUBDIR += gscheme
     SUBDIR += guile
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
