@@ -6398,6 +6398,7 @@ lifelines	ports/misc/lifelines
 liferea		ports/net/liferea
 lifetype	ports/www/lifetype
 lightning	ports/devel/lightning
+lightning-xpi	ports/deskutils/lightning-xpi
 lightsquid	ports/www/lightsquid
 lighttpd	ports/www/lighttpd
 lila-xfwm4	ports/x11-themes/lila-xfwm4
