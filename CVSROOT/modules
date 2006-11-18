@@ -3653,6 +3653,7 @@ gnustep-gui	ports/x11-toolkits/gnustep-gui
 gnustep-guile	ports/lang/gnustep-guile
 gnustep-ladder	ports/games/gnustep-ladder
 gnustep-make	ports/devel/gnustep-make
+gnustep-mplayer	ports/multimedia/gnustep-mplayer
 gnustep-notebook	ports/deskutils/gnustep-notebook
 gnustep-objc	ports/lang/gnustep-objc
 gnustep-slideshow	ports/graphics/gnustep-slideshow
