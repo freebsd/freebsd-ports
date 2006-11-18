@@ -61,6 +61,7 @@
     SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
     SUBDIR += bubblemon2
+    SUBDIR += burn
     SUBDIR += ccd2iso
     SUBDIR += ccze
     SUBDIR += cd-write
