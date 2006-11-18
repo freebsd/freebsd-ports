@@ -15,9 +15,6 @@ DISTNAME=	mrxvt-${PORTVERSION}
 MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Development version of mrxvt
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
-
 CONFLICTS=	mrxvt-0.4.*
 
 USE_X_PREFIX=	yes
@@ -28,10 +25,16 @@ MAN1=		mrxvt.1
 SUB_FILES+=	pkg-message
 
 OPTIONS=	XFT "Enable Xft support for fonts" Off \
+		BACKGROUND "Enable background images" On\
+		JPEG "Enable JPEG background images" On \
+		PNG "Enable PNG background images" On \
+		TRANSPARENCY "Enable transparency" On \
+		SWAPSCREEN "Enable swapscreen" On \
 		JAPANESE "Enable support for Japanese language" Off \
 		24BITS "Prefer 24 bits color" On \
 		MENUBAR "Enable menubar" On \
-		TEXTSHADOW "Enable text shadow" Off
+		TEXTSHADOW "Enable text shadow" Off \
+		FRILLS "Enable internal borders and smart resizing" Off
 
 .include <bsd.port.pre.mk>
 
@@ -52,12 +55,66 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ARGS+=	--enable-24bits
 .endif
 
-.if defined(WITH_MENUBAR)
+.if defined(WITHOUT_BACKGROUND)
+CONFIGURE_ARGS+=	--disable-xpm
+.endif
+
+.if defined(WITHOUT_JPEG) || defined(WITHOUT_BACKGROUND)
+CONFIGURE_ARGS+=	--disable-jpeg
+.else
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+.endif
+
+.if defined(WITHOUT_PNG) || defined(WITHOUT_BACKGROUND)
+CONFIGURE_ARGS+=	--disable-png
+.else
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+.endif
+
+.if defined(WITHOUT_TRANSPARENCY)
+CONFIGURE_ARGS+=	--disable-transparency
+.endif
+
+.if !defined(WITHOUT_MENUBAR)
 CONFIGURE_ARGS+=	--enable-menubar
 .endif
 
 .if defined(WITH_TEXTSHADOW)
 CONFIGURE_ARGS+=	--enable-text-shadow
+.endif
+
+.if defined(WITHOUT_SWAPSCREEN)
+CONFIGURE_ARGS+=	--disable-swapscreen
+.endif
+
+.if defined(WITH_FRILLS)
+CONFIGURE_ARGS+=	--enable-frills
+.endif
+
+## Rarely used options, not in the main menu
+# How many lines to save in the scroll buffer
+.if defined(SAVE_LINES)
+CONFIGURE_ARGS+=	--with-save-lines=${SAVE_LINES:M[0-9]*}
+.endif
+
+# Maximal number of terminals
+.if defined(MAX_TERMINALS)
+CONFIGURE_ARGS+=	--with-max-term=${MAX_TERMINALS:M[0-9]*}
+.endif
+
+# Maximal number of profiles
+.if defined(MAX_PROFILES)
+CONFIGURE_ARGS+=	--with-max-profiles=${MAX_PROFILES:M[0-9]*}
+.endif
+
+# Extra height of active tab as a percentage of the font height
+.if defined(EXTRA_ATAB_HEIGHT)
+CONFIGURE_ARGS+=	--with-atab-extra=${EXTRA_ATAB_HEIGHT:M[0-9]*}
+.endif
+
+# The radius of tab corners as a percentage of the font X offset
+.if defined(TAB_RADIUS)
+CONFIGURE_ARGS+=	--with-tab-radius=${TAB_RADIUS:M[0-9]*}
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
