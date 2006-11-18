@@ -1,0 +1,10 @@
+Local/Applications/GScheme.app/GScheme
+Local/Applications/GScheme.app/Resources/GScheme.desktop
+Local/Applications/GScheme.app/Resources/GScheme.tiff
+Local/Applications/GScheme.app/Resources/Info-gnustep.plist
+Local/Applications/GScheme.app/Resources/lambda1.tiff
+Local/Applications/GScheme.app/Resources/library.scm
+Local/Applications/GScheme.app/library_paths.openapp
+Local/Applications/GScheme.app/stamp.make
+@dirrm Local/Applications/GScheme.app/Resources
+@dirrm Local/Applications/GScheme.app
