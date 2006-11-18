@@ -49,23 +49,39 @@ bin/pbs-config
 %%EXAMPLESDIR%%/var/spool/torque/sched_priv/resource_group
 %%EXAMPLESDIR%%/var/spool/torque/sched_priv/holidays
 %%EXAMPLESDIR%%/var/spool/torque/sched_priv/dedicated_time
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/aux
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/aux
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/checkpoint
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/checkpoint
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/mom_logs
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_logs
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/mom_priv
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/sched_logs
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_logs
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_logs
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_logs
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/undelivered
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/undelivered
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/spool
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/spool
 @dirrm %%EXAMPLESDIR%%/var/spool/torque
 @dirrm %%EXAMPLESDIR%%/var/spool
