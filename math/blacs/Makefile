@@ -27,6 +27,10 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
+WITH_OPENMPI=   yes
+.endif
+
 .if defined(WITH_OPENMPI)
 BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
 RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
