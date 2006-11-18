@@ -1,16 +1,15 @@
-# New ports collection makefile for: 	pbnj
-# Date created:				July 26, 2006
-# Whom:					Joshua D. Abraham <jabra@ccs.neu.edu>
+# New ports collection makefile for:		pbnj
+# Date created:					July 26, 2006
+# Whom:						Joshua D. Abraham <jabra@ccs.neu.edu>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pbnj
-PORTVERSION=	2.02
+PORTVERSION=	2.04
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMEPREFIX=
 
 MAINTAINER=	jabra@ccs.neu.edu
 COMMENT=	A suite of tools to monitor changes on a network
@@ -25,11 +24,11 @@ BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=		yes
 
-MAN1=	scanpbnj.1 \
-	outputpbnj.1 \
-	genlist.1
+MAN1=	scanpbnj.1p \
+	outputpbnj.1p \
+	genlist.1p
 
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
