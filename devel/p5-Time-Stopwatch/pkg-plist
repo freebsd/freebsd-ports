@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Stopwatch/.packlist
+%%SITE_PERL%%/Time/Stopwatch.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Stopwatch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
+@dirrmtry %%SITE_PERL%%/Time
