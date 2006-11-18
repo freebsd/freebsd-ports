@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xcache
-DISTVERSION=	1.2-beta2
+DISTVERSION=	1.2-beta3
 CATEGORIES=	www
 MASTER_SITES=	http://210.51.190.228/pub/XCache/Releases/ \
 		http://210.51.190.228/pub/XCache/snapshots/
-DISTNAME=	${PORTNAME}-trunk-r272
+DISTNAME=	${PORTNAME}-trunk-r278
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A fast and stable php opcode cacher
