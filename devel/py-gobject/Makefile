@@ -6,7 +6,7 @@
 #   $MCom: ports/devel/py-gobject/Makefile,v 1.17 2006/10/03 20:44:25 ahze Exp $
 
 PORTNAME=	gobject
-PORTVERSION=	2.12.2
+PORTVERSION=	2.12.3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
