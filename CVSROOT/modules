@@ -3798,6 +3798,7 @@ grpn		ports/math/grpn
 grpplaylist	ports/multimedia/grpplaylist
 gru		ports/games/gru
 grub		ports/sysutils/grub
+grubik		ports/games/grubik
 grubinvaders	ports/games/grubinvaders
 gruftistats	ports/irc/gruftistats
 gruler		ports/deskutils/gruler
