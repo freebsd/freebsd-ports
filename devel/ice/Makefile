@@ -41,7 +41,7 @@ MAKE_ENV=	LP64=yes
 .endif
 
 .if defined(NOPORTDOCS)
-	${RM} -rf ${WRKSRC}/doc
+MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 post-patch:
