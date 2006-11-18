@@ -1,0 +1,28 @@
+# New ports collection makefile for:    X
+# Date created:         18 Nov 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mplayer
+PORTVERSION=	0.4.1
+CATEGORIES=	multimedia
+MASTER_SITES=	http://www.sonappart.net/gnustep/mplayer/
+PKGNAMEPREFIX=	gnustep-
+DISTNAME=	Mplayer-0.4-1
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep port of MPlayerOSX
+
+WRKSRC=		${WRKDIR}/mplayerPort/Sources
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+MAKEFILE=
+ALL_TARGET=
+
+.include <bsd.port.mk>

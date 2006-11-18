@@ -1,0 +1,12 @@
+GNUstep port of MPlayerOSX
+
+Mplayer.app have many useful features:
+ * PlayList
+ * Statistics
+ * Info Panel
+ * Fullscreen
+ * Add/remove subtitles
+ * Full source code available
+ * Sttings and Preferences Panel
+
+WWW: http://www.sonappart.net/gnustep/mplayer/

@@ -42,6 +42,7 @@
     SUBDIR += gdvrecv
     SUBDIR += ggrab
     SUBDIR += gmencoder
+    SUBDIR += gnustep-mplayer
     SUBDIR += goggles
     SUBDIR += gopchop
     SUBDIR += gpac-libgpac
