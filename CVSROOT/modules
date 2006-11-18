@@ -7321,6 +7321,7 @@ mpgtx		ports/multimedia/mpgtx
 mph		ports/devel/mph
 mpich		ports/net/mpich
 mpich2		ports/net/mpich2
+mpiexec		ports/sysutils/mpiexec
 mping		ports/net/mping
 mpiosh		ports/audio/mpiosh
 mplayer		ports/multimedia/mplayer
