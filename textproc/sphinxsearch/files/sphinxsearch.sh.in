@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
+#
+# %%PORTNAME%%_enable="YES"
+#
+# Other rc.conf variables:
+#
+# %%PORTNAME%%_conffile="%%CFGFILE%%"
+#                          -- path to config file
+# %%PORTNAME%%_pidfile="/var/run/searchd.pid"
+#                          -- location of pidfile: must match setting
+#                             in ${%%PORTNAME%%_conffile}
+#
+
+. /etc/rc.subr
+
+name=%%PORTNAME%%
+rcvar=`set_rcvar`
+
+%%PORTNAME%%_enable=${%%PORTNAME%%_enable-"NO"}
+%%PORTNAME%%_conffile=${%%PORTNAME%%_conffile-"%%CFGFILE%%"}
+%%PORTNAME%%_pidfile=${%%PORTNAME%%_pidfile-"/var/run/searchd.pid"}
+
+command=%%PREFIX%%/sbin/searchd
+pidfile=${%%PORTNAME%%_pidfile}
+required_files=${%%PORTNAME%%_conffile}
+%%PORTNAME%%_flags="--config ${%%PORTNAME%%_conffile}"
+
+load_rc_config ${name}
+run_rc_command "$1"
