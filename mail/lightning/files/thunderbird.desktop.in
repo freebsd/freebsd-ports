@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Thunderbird
+GenericName=Mail Client and Calendar
+Comment=Mail client, News Reader, and Calendar
+Exec=thunderbird %U
+Icon=@MOZILLA_ICON@
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;
