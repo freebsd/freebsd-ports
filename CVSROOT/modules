@@ -12906,6 +12906,7 @@ ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-ecore	ports/devel/ruby-ecore
 ruby-edje	ports/graphics/ruby-edje
 ruby-eet	ports/devel/ruby-eet
+ruby-erbscan	ports/textproc/ruby-erbscan
 ruby-esmart	ports/graphics/ruby-esmart
 ruby-esound	ports/audio/ruby-esound
 ruby-evas	ports/graphics/ruby-evas
