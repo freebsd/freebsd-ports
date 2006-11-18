@@ -16,6 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C libraries based on the OpenStep standard
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
@@ -24,7 +25,5 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_XLIB=	yes
 USE_GNUSTEP_LIBART=	yes
 USE_GNUSTEP_CAIRO=	yes
-
-do-install:	# empty
 
 .include <bsd.port.mk>
