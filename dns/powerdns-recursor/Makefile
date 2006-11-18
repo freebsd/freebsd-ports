@@ -7,6 +7,7 @@
 
 PORTNAME=	powerdns-recursor
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -45,7 +46,7 @@ post-patch:
 	   -e 's;BINDIR=/usr/bin/;BINDIR=${PREFIX}/bin/;' \
 	   -e 's;CONFIGDIR="/etc/powerdns/";CONFIGDIR=${PREFIX}/etc/pdns/;' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's;"/etc/powerdns/";"${PREFIX}/etc/powerdns/";' \
+	@${REINPLACE_CMD} -e 's;"/etc/powerdns/";"${PREFIX}/etc/pdns/";' \
 		${WRKSRC}/config.h
 
 post-install:
