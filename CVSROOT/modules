@@ -4481,6 +4481,7 @@ ija		ports/news/ija
 ike-scan	ports/security/ike-scan
 iksemel		ports/textproc/iksemel
 ilbc		ports/net/ilbc
+ilias		ports/www/ilias
 ilohamail	ports/mail/ilohamail
 im		ports/mail/im
 im-ja		ports/japanese/im-ja
