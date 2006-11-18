@@ -43,6 +43,7 @@ USE_GNUSTEP_SYSTEM_APPS+=	Emacs:editors/emacs.app
 USE_GNUSTEP_SYSTEM_APPS+=	GSPdf:print/gspdf
 USE_GNUSTEP_SYSTEM_APPS+=	SystemPreferences:deskutils/systempreferences
 USE_GNUSTEP_SYSTEM_APPS+=	WrapperFactory:deskutils/gnustep-wrapper
+USE_GNUSTEP_SYSTEM_APPS+=	GRubik:games/grubik
 
 USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:mail/pantomime
 USE_GNUSTEP_LOCAL_LIBS+=	GToolKit:x11-toolkits/gtoolkit
@@ -113,6 +114,8 @@ USE_GNUSTEP_LOCAL_APPS+=	Poe:multimedia/poe
 USE_GNUSTEP_LOCAL_APPS+=	MPDCon:audio/mpdcon
 USE_GNUSTEP_LOCAL_APPS+=	PlopFolio:deskutils/plopfolio
 USE_GNUSTEP_LOCAL_APPS+=	CDPlayer:audio/gnustep-cdplayer
+USE_GNUSTEP_LOCAL_APPS+=	Burn:sysutils/burn
+USE_GNUSTEP_LOCAL_APPS+=	GScheme:lang/gscheme
 
 USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
 
