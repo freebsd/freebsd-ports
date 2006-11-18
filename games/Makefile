@@ -289,6 +289,7 @@
     SUBDIR += gridlock
     SUBDIR += groundhog
     SUBDIR += gru
+    SUBDIR += grubik
     SUBDIR += grubinvaders
     SUBDIR += gshisen
     SUBDIR += gtetrinet
