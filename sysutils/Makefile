@@ -374,6 +374,7 @@
     SUBDIR += most
     SUBDIR += mount.app
     SUBDIR += mountsmb2
+    SUBDIR += mpiexec
     SUBDIR += msyslog
     SUBDIR += mtxorbd
     SUBDIR += multitail
