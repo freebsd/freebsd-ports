@@ -7,17 +7,15 @@
 
 PORTNAME=	slideshowkit
 PORTVERSION=	0.0.1
-PORTREVISION=	20041011
+PORTREVISION=	20050207
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
-DISTNAME=	SlideShowKit-${PORTREVISION}
+DISTNAME=	SlideShowKit-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SlideShow Framework
 
-USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/SlideShowKit
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
