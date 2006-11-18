@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	9.0
-PORTREVISION=	2
+PORTVERSION=	9.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -22,13 +21,17 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MD5_FILE=	${MASTERDIR}/distinfo${BINVER}
-PLIST_SUB+=	VER=${PORTVERSION}
+PLIST_SUB+=	VER=${PORTVERSION} MAJ=${MAJ}
 SUB_FILES=	dislin.sh pkg-message
 SUB_LIST+=	DISLIN_DIR=${DISLIN_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DISLIN_DIR=	${PREFIX}/dislin
 PROGRAMS=	clink disaps disdrv disdrv_nw disdrv_w disgcl disgif dishlp	\
 		disimg disman dismov distif dlink f2clink gclhelp gclhlp gclman
+LIBS=		dislin dislin_d
+MAJ=		${PORTVERSION:R}
+
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +49,15 @@ do-install:
 .for _program in ${PROGRAMS}
 	${LN} -s ${DISLIN_DIR}/bin/dislin.sh ${PREFIX}/bin/${_program}
 .endfor
+.for _lib in ${LIBS}
+	${LN} -s ${DISLIN_DIR}/lib/${_lib}-${PORTVERSION}.a	\
+		${PREFIX}/lib/lib${_lib}.a
+	${LN} -s ${DISLIN_DIR}/lib/${_lib}-${PORTVERSION}.so	\
+		${PREFIX}/lib/lib${_lib}.so.${MAJ}
+.endfor
+	${LN} -s ${DISLIN_DIR}/java/disjava-${PORTVERSION}.so	\
+		${PREFIX}/lib/libdisjava.so
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DISLIN_DIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
