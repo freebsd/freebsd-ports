@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/configobj.py
+%%PYTHON_SITELIBDIR%%/validate.py
+%%PYTHON_SITELIBDIR%%/configobj.pyc
+%%PYTHON_SITELIBDIR%%/validate.pyc
+%%PYTHON_SITELIBDIR%%/configobj.pyo
+%%PYTHON_SITELIBDIR%%/validate.pyo
