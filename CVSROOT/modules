@@ -3807,6 +3807,7 @@ grustibus	ports/emulators/grustibus
 grx		ports/graphics/grx
 gsasl		ports/security/gsasl
 gscan2pdf	ports/graphics/gscan2pdf
+gscheme		ports/lang/gscheme
 gscmxx		ports/comms/gscmxx
 gscommander	ports/shells/gscommander
 gsculpt		ports/graphics/gsculpt
