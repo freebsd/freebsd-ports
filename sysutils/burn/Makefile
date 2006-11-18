@@ -32,7 +32,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	Inspector:${GWORKSPACE_PORT}
 MAKEFILE=	GNUmakefile
 
 CDDB_BUNDLE_PORT?=	audio/cddb-bundle
-CDPLAYER_PORT?=		sysutils/gnustep-cdplayer
+CDPLAYER_PORT?=		audio/gnustep-cdplayer
 PREFERENCES_PORT?=	deskutils/preferences.app
 GWORKSPACE_PORT?=	deskutils/gworkspace
 
