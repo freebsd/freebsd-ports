@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
+CONFLICTS=	lightning-0.[0-9]*
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
