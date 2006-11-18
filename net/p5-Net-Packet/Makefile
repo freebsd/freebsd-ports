@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Net-Packet
-DISTVERSION=	3.20
+DISTVERSION=	3.22
 CATEGORIES=	net perl5
-MASTER_SITES=	CPAN/../by-authors/id/G/GO/GOMOR
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	netpkt@gomor.org
@@ -30,39 +30,17 @@ PERL_CONFIGURE=	yes
 ONLY_FOR_ARCHS=		i386 amd64 alpha
 ONLY_FOR_ARCHS_REASON=	Big endian architectures not supported yet
 
-MAN3=		Net::Packet.3 \
-		Net::Packet::ARP.3 \
-		Net::Packet::Consts.3 \
-		Net::Packet::Desc.3 \
-		Net::Packet::DescL2.3 \
-		Net::Packet::DescL3.3 \
-		Net::Packet::DescL4.3 \
-		Net::Packet::Dump.3 \
-		Net::Packet::ETH.3 \
-		Net::Packet::Env.3 \
-		Net::Packet::Frame.3 \
-		Net::Packet::ICMPv4.3 \
-		Net::Packet::IPv4.3 \
-		Net::Packet::IPv6.3 \
-		Net::Packet::Layer.3 \
-		Net::Packet::Layer2.3 \
-		Net::Packet::Layer3.3 \
-		Net::Packet::Layer4.3 \
-		Net::Packet::Layer7.3 \
-		Net::Packet::NULL.3 \
-		Net::Packet::RAW.3 \
-		Net::Packet::SLL.3 \
-		Net::Packet::TCP.3 \
-		Net::Packet::UDP.3 \
-		Net::Packet::Utils.3 \
-		Net::Packet::VLAN.3 \
-		Net::Packet::CDP::Type.3 \
-		Net::Packet::PPPoE.3 \
-		Net::Packet::CDP::TypeDeviceId.3 \
-		Net::Packet::PPP.3 \
-		Net::Packet::CDP.3 \
-		Net::Packet::LLC.3 \
-		Net::Packet::PPPLCP.3
+MAN3=	Net::Packet.3 Net::Packet::ARP.3 Net::Packet::CDP.3 Net::Packet::CDP::Address.3 \
+Net::Packet::CDP::Type.3 Net::Packet::CDP::TypeAddresses.3 Net::Packet::CDP::TypeCapabilities.3 \
+Net::Packet::CDP::TypeDeviceId.3 Net::Packet::CDP::TypePortId.3 \
+Net::Packet::CDP::TypeSoftwareVersion.3 Net::Packet::Consts.3 Net::Packet::Desc.3 \
+Net::Packet::DescL2.3 Net::Packet::DescL3.3 Net::Packet::DescL4.3 Net::Packet::Dump.3 \
+Net::Packet::ETH.3 Net::Packet::Env.3 Net::Packet::Frame.3 Net::Packet::ICMPv4.3 Net::Packet::IGMPv4.3 \
+Net::Packet::IPv4.3 Net::Packet::IPv6.3 Net::Packet::LLC.3 Net::Packet::Layer.3 Net::Packet::Layer2.3 \
+Net::Packet::Layer3.3 Net::Packet::Layer4.3 Net::Packet::Layer7.3 Net::Packet::NULL.3 \
+Net::Packet::OSPF.3 Net::Packet::PPP.3 Net::Packet::PPPLCP.3 Net::Packet::PPPoE.3 Net::Packet::RAW.3 \
+Net::Packet::SLL.3 Net::Packet::STP.3 Net::Packet::TCP.3 Net::Packet::UDP.3 Net::Packet::Utils.3 \
+Net::Packet::VLAN.3
 
 .include <bsd.port.pre.mk>
 
