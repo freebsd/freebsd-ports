@@ -1,0 +1,19 @@
+Local/Applications/NeXTGo.app/NeXTGo
+Local/Applications/NeXTGo.app/Resources/Background.tiff
+Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/data.classes
+Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/data.info
+Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/objects.gorm
+Local/Applications/NeXTGo.app/Resources/Info-gnustep.plist
+Local/Applications/NeXTGo.app/Resources/NeXTGo.background-2.0.draw
+Local/Applications/NeXTGo.app/Resources/NeXTGo.background.draw
+Local/Applications/NeXTGo.app/Resources/NeXTGo.desktop
+Local/Applications/NeXTGo.app/Resources/NeXTGo.tiff
+Local/Applications/NeXTGo.app/Resources/NeXTGoFile.tiff
+Local/Applications/NeXTGo.app/Resources/NeXTGoHelp.rtf
+Local/Applications/NeXTGo.app/Resources/intergo.dct
+Local/Applications/NeXTGo.app/library_paths.openapp
+Local/Applications/NeXTGo.app/stamp.make
+@dirrm Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm
+@dirrm Local/Applications/NeXTGo.app/Resources/English.lproj
+@dirrm Local/Applications/NeXTGo.app/Resources
+@dirrm Local/Applications/NeXTGo.app

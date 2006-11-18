@@ -475,6 +475,7 @@
     SUBDIR += nettoe
     SUBDIR += neverball
     SUBDIR += newvox
+    SUBDIR += nextgo
     SUBDIR += nexuiz
     SUBDIR += nibbles
     SUBDIR += nighthawk
