@@ -4,7 +4,7 @@ System libs:	Gorm, ScriptKit, gnustep-db2, Renaissance, PreferencePanes
 
 System apps:	GShisen, ProjectCenter, Preferences, GWorkspace, guile-gui,
 		gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf,
-		SystemPreferences, WrapperFactory
+		SystemPreferences, WrapperFactory, GRubik
 
 Local libs:	Pantomime, GToolKit, rigs, Addresses, SlideShow, netclasses,
 		WizardKit, HighlighterKit, Performance, SQLClient, WebServer,
@@ -21,6 +21,7 @@ Local apps:	Gomoku, GNUMail, EasyDiff, Calculator, CurrencyConverter,
 		Waiho, Affiche, ProjectManager, GMastermind2, GPuzzle2,
 		Ticker, NoteBook, HelpViewer, Duncan, Jishyo, GMines,
 		InnerSpace, FTP, DictionaryReader, batmon, Adun, RemoteDesk,
-		DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer
+		DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer,
+		Burn, GScheme
 
 Local tools:	zillion
