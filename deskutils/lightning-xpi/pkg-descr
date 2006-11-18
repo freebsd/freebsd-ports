@@ -1,0 +1,6 @@
+An integrated calendar for Thunderbird
+
+** Note that this port is a binary plugin for Thunderbird and you may want
+** to build from source via ports/mail/lightning (includes Thunderbird)
+
+WWW: http://www.mozilla.org/projects/calendar/lightning/
