@@ -7447,6 +7447,7 @@ mybudget	ports/finance/mybudget
 mydns		ports/dns/mydns
 myfaces		ports/www/myfaces
 myghty		ports/www/myghty
+mylibrary	ports/databases/mylibrary
 mymoon		ports/astro/mymoon
 myphpmoney	ports/finance/myphpmoney
 mysar		ports/www/mysar
