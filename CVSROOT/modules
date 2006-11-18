@@ -4153,6 +4153,7 @@ harvest		ports/www/harvest
 hashcash	ports/mail/hashcash
 hashish		ports/security/hashish
 haskell-mode.el	ports/lang/haskell-mode.el
+hastymail	ports/www/hastymail
 hatari		ports/emulators/hatari
 hattrickorganizer	ports/games/hattrickorganizer
 havp		ports/www/havp
