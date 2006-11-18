@@ -17,6 +17,9 @@ COMMENT=	Kills a login shell and process(es) of a user
 
 NO_BUILD=	"binary distribution"
 
+DEPRECATED=	Author doesn't see it as needed anymore
+EXPIRATION_DATE=	2006-12-31
+
 do-install:
 	${INSTALL_SCRIPT}	${WRKSRC}/slay ${PREFIX}/bin
 
