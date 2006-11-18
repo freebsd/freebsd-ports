@@ -857,6 +857,7 @@
     SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += spellutils
+    SUBDIR += sphinxsearch
     SUBDIR += sr-aspell
     SUBDIR += srilm
     SUBDIR += ssddiff

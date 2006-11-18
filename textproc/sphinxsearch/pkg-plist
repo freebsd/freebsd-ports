@@ -1,0 +1,16 @@
+bin/indexer
+bin/search
+sbin/searchd
+@unexec if cmp -s %D/etc/sphinx.conf.sample %D/etc/sphinx.conf; then rm -f %D/etc/sphinx.conf; fi
+etc/sphinx.conf.sample
+@exec if [ ! -f %D/etc/sphinx.conf ] ; then cp -p %D/%F %B/sphinx.conf; fi
+%%PORTDOCS%%%%DOCSDIR%%/sphinx.css
+%%PORTDOCS%%%%DOCSDIR%%/sphinx.html
+%%PORTDOCS%%%%DOCSDIR%%/sphinx.txt
+%%PORTDOCS%%%%DOCSDIR%%/sphinx.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/example.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/sphinxapi.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2.php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
