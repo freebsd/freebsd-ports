@@ -9,6 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://dl1.maptools.org/dl/libtiff/
@@ -23,8 +24,6 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib
-LDFLAGS+=	-lcompat
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_X11) && !defined(WITHOUT_X11)
 USE_XLIB=	yes
