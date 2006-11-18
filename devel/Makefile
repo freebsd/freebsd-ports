@@ -1681,6 +1681,7 @@
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
     SUBDIR += py-clientcookie
+    SUBDIR += py-configobj
     SUBDIR += py-coro
     SUBDIR += py-ctypes
     SUBDIR += py-cxx
