@@ -1,6 +1,15 @@
---- src/Makefile	Tue Sep 19 23:56:53 2006
-+++ src/Makefile.port	Fri Sep 22 13:14:34 2006
-@@ -11,7 +11,7 @@
+--- src/Makefile	Thu Nov 16 23:59:58 2006
++++ src/Makefile.port	Fri Nov 17 23:23:12 2006
+@@ -1,7 +1,7 @@
+ BINDIR=/usr/local/bin
+ INCDIR=/usr/include/espeak
+ LIBDIR=/usr/lib
+-DATADIR=/usr/share/espeak-data
++DATADIR=%%DATADIR%%
+ 
+ RELEASE = 1.17
+ BIN_NAME = speak
+@@ -26,7 +26,7 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
@@ -9,27 +18,27 @@
  
  SRCS2=$(libespeak_SOURCES)
  OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
-@@ -23,19 +23,19 @@
- 	mv libespeak.so libespeak.so.1.1.14
+@@ -39,19 +39,19 @@
+ 	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
  
  .cpp.o:
--	$(CXX) $(CXXFLAGS) -O2 -Wall -pedantic -I. -c -fno-exceptions $<
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -pedantic -I. -c -fno-exceptions $<
+-	$(CXX) $(CXXFLAGS) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions $<
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS)-D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions $<
  
- speak: $(OBJS1)
+ $(BIN_NAME): $(OBJS1)
 -	$(CXX) -o $@ $(OBJS1) $(LIBS1)
 +	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS1) $(LIBS1)
  
  
  
  x_%.o: %.cpp
--	$(CXX) $(CXXFLAGS) -O2 -Wall -fpic -fvisibility=hidden -pedantic \
+-	$(CXX) $(CXXFLAGS) -Wall -fpic -fvisibility=hidden -pedantic \
 +	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -fPIC -pedantic \
  	-I. -D LIBRARY -c -fno-exceptions $<  -o x_$*.o
  
- libespeak.so: $(OBJS2)
--	$(CXX) -shared -Wl,-soname,libespeak.so.1 -o $@ $(OBJS2) $(LIBS2)
-+	$(CXX) $(PTHREAD_LIBS) -shared -Wl,-soname,libespeak.so.1 -o $@ $(OBJS2) $(LIBS2)
+ $(LIB_NAME): $(OBJS2)
+-	$(CXX) -shared -Wl,-soname,$(LIB_NAME).$(LIB_VERSION) -o $@ $(OBJS2) $(LIBS2)
++	$(CXX) $(PTHREAD_LIBS) -shared -Wl,-soname,$(LIB_NAME).$(LIB_VERSION) -o $@ $(OBJS2) $(LIBS2)
  
  clean:
  	rm -f *.o *~
