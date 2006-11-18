@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.82
+PORTVERSION=	2.83
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	science math
@@ -35,23 +35,22 @@ PORTDOCS=	${TXT_DOCS}
 .endif
 TOOLS=		tools/grid.py tools/easy.py tools/subset.py
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	DATADIR=${DATADIR}
 
 .include <bsd.port.pre.mk>
 
 pre-everything::
 .if defined(WITH_PYTHON)
-	@${ECHO_MSG} "Build with Python interface."
+	@${ECHO_CMD} "Build with Python interface."
 .else
-	@${ECHO_MSG} "You can enable Python interface by defining WITH_PYTHON."
+	@${ECHO_CMD} "You can enable Python interface by defining WITH_PYTHON."
 .endif
 
 post-patch:
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e "s,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR}," ${WRKSRC}/python/Makefile
 .endif
-	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 post-build:
 .if defined(WITH_PYTHON)
@@ -81,8 +80,8 @@ do-install:
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .endif
-	@${ECHO} ""
+	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} ""
+	@${ECHO_CMD} ""
 
 .include <bsd.port.post.mk>
