@@ -27,6 +27,12 @@ RUN_DEPENDS+= ${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gc
 ANT_DISTFILE=   apache-ant-${ANT_VERSION}-bin.tar.bz2
 ANT_VERSION=    1.6.5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000 || ${OSVERSION} > 700000
+IGNORE=	dumps core on FreeBSD 4.x and 7.x
+.endif
+
 GCJ=	gcj41
 GIJ=	gij41
 JAR=	fastjar41
@@ -54,4 +60,5 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/ecj.jar.so           ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKDIR}/ecj.jar              ${PREFIX}/share/java/
 #	${INSTALL_DATA} ${WRKDIR}/ecj.db              ${PREFIX}/share/gcj-4.1/classmap.d
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
