@@ -15,7 +15,7 @@ MAINTAINER=	tstodgell@gmail.com
 COMMENT=	GUI gtkrc configuration tool for the Murrine GTK engine
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${NONEXISTENT}:${PORTSDIR}/x11-themes/gtk-murrine-engine \
+		${LOCALBASE}/lib/gtk-2.0/2.10.0/engines/libmurrine.so:${PORTSDIR}/x11-themes/gtk-murrine-engine \
 		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity
 
 NO_BUILD=	yes
