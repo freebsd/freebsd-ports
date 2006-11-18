@@ -99,6 +99,7 @@
     SUBDIR += ksmoothdock
     SUBDIR += ktagebuch
     SUBDIR += kuake
+    SUBDIR += lightning-xpi
     SUBDIR += linux-sunbird
     SUBDIR += ljcharm
     SUBDIR += ljclive
