@@ -125,6 +125,7 @@
     SUBDIR += msql
     SUBDIR += msql3
     SUBDIR += mtop
+    SUBDIR += mylibrary
     SUBDIR += mysql++
     SUBDIR += mysql++1
     SUBDIR += mysql-administrator
