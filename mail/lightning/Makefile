@@ -17,6 +17,7 @@ COMMENT=	Thunderbird mail client with lightning calendar plugin
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+LATEST_LINK=	thunderbird-${PORTNAME}
 CONFLICTS=	thunderbird-[0-9]* lightning-0.[0-9]*
 USE_GCC=	3.4+
 ALL_TARGET=	default
