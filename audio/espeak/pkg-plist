@@ -27,10 +27,12 @@ lib/%%ESPEAK_LIBRARY%%
 %%DATADIR%%/espeak-data/es_dict
 %%DATADIR%%/espeak-data/fi_dict
 %%DATADIR%%/espeak-data/it_dict
+%%DATADIR%%/espeak-data/nl_dict
 %%DATADIR%%/espeak-data/phondata
 %%DATADIR%%/espeak-data/phonindex
 %%DATADIR%%/espeak-data/phontab
 %%DATADIR%%/espeak-data/pl_dict
+%%DATADIR%%/espeak-data/pt_dict
 %%DATADIR%%/espeak-data/ru_dict
 %%DATADIR%%/espeak-data/voices/af
 %%DATADIR%%/espeak-data/voices/cy
@@ -57,7 +59,9 @@ lib/%%ESPEAK_LIBRARY%%
 %%DATADIR%%/espeak-data/voices/es
 %%DATADIR%%/espeak-data/voices/fi
 %%DATADIR%%/espeak-data/voices/it
+%%DATADIR%%/espeak-data/voices/nl
 %%DATADIR%%/espeak-data/voices/pl
+%%DATADIR%%/espeak-data/voices/pt
 %%DATADIR%%/espeak-data/voices/ru
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
