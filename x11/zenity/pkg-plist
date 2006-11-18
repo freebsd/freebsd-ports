@@ -49,6 +49,18 @@ share/gnome/help/zenity/fr/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/fr/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/fr/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/fr/zenity.xml
+share/gnome/help/zenity/sv/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/sv/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/sv/zenity.xml
 share/gnome/help/zenity/uk/figures/zenity-calendar-screenshot.png
 share/gnome/help/zenity/uk/figures/zenity-entry-screenshot.png
 share/gnome/help/zenity/uk/figures/zenity-error-screenshot.png
@@ -65,6 +77,7 @@ share/gnome/omf/zenity/zenity-C.omf
 share/gnome/omf/zenity/zenity-bg.omf
 share/gnome/omf/zenity/zenity-es.omf
 share/gnome/omf/zenity/zenity-fr.omf
+share/gnome/omf/zenity/zenity-sv.omf
 share/gnome/omf/zenity/zenity-uk.omf
 share/gnome/zenity/clothes/gnome-tshirt.png
 share/gnome/zenity/clothes/hawaii-shirt.png
@@ -159,6 +172,8 @@ share/locale/zh_TW/LC_MESSAGES/zenity.mo
 @dirrm share/gnome/omf/zenity
 @dirrm share/gnome/help/zenity/uk/figures
 @dirrm share/gnome/help/zenity/uk
+@dirrm share/gnome/help/zenity/sv/figures
+@dirrm share/gnome/help/zenity/sv
 @dirrm share/gnome/help/zenity/fr/figures
 @dirrm share/gnome/help/zenity/fr
 @dirrm share/gnome/help/zenity/es/figures
