@@ -185,6 +185,7 @@
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += harvest
+    SUBDIR += hastymail
     SUBDIR += havp
     SUBDIR += hinventory-client
     SUBDIR += horde
