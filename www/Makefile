@@ -205,6 +205,7 @@
     SUBDIR += hydra
     SUBDIR += hypermail
     SUBDIR += igal
+    SUBDIR += ilias
     SUBDIR += imgsizer
     SUBDIR += indexme
     SUBDIR += instiki
