@@ -7,7 +7,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/blacs/
 DISTNAME=	BLACS
@@ -22,13 +22,20 @@ EXTRACT_ONLY=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The BLACS (Basic Linear Algebra Communication Subprograms)
 
-BUILD_DEPENDS=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
-RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENMPI)
+BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
+RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-openmpi.diff
+.else
+BUILD_DEPENDS=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
+RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
+EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
+.endif
 
 pre-fetch:
 	@${ECHO} "If you want to use compiler other than f77,"
