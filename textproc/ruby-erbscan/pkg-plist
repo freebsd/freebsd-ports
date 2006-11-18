@@ -1,0 +1,5 @@
+%%RUBY_SITEARCHLIBDIR%%/erbscan.so
+%%RUBY_SITELIBDIR%%/erb_fast.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

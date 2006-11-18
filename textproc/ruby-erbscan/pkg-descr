@@ -1,0 +1,8 @@
+erbscan is ERB::Compiler accelerator
+8 times faster than erb.rb(Ruby1.8.0)
+
+require "erb" # slow
+require "erb_fast" # FAST!!!!
+
+Author:	MoonWolf <moonwolf@moonwolf.com>
+WWW:	http://raa.ruby-lang.org/project/erbscan/

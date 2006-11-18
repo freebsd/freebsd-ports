@@ -785,6 +785,7 @@
     SUBDIR += ruby-amrita
     SUBDIR += ruby-csv
     SUBDIR += ruby-diff
+    SUBDIR += ruby-erbscan
     SUBDIR += ruby-format
     SUBDIR += ruby-formvalidator
     SUBDIR += ruby-gdome
