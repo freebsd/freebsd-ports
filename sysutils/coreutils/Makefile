@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coreutils
-PORTVERSION=	5.2.1
+PORTVERSION=	6.4
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,11 +19,12 @@ COMMENT=	The Free Software Foundation's core utilities
 CONFLICTS=	fileutils-[0-9]* id-utils-[0-9]* linux-gid-[0-9]* \
 		sh-utils-[0-9]*  textutils-[0-9]*
 
+USE_GCC=	3.4+
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g --infodir=${PREFIX}/info --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	yes
@@ -50,7 +51,8 @@ MAN1=	gbasename.1 gcat.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 gcksum.1 \
 	gstat.1 gstty.1 gsu.1 gsum.1 gsync.1 gtac.1 gtail.1 gtee.1 \
 	gtest.1 gtouch.1 gtr.1 gtrue.1 gtsort.1 gtty.1 guname.1 \
 	gunexpand.1 guniq.1 gunlink.1 guptime.1 gusers.1 gvdir.1 \
-	gwc.1 gwho.1 gwhoami.1 gyes.1
+	gwc.1 gwho.1 gwhoami.1 gyes.1 gbase64.1 gsha224sum.1 gsha256sum.1 \
+	gsha384sum.1 gsha512sum.1 gshuf.1
 
 post-patch:
 .if !defined(WITH_SUID)
