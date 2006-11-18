@@ -24,7 +24,7 @@ KDEDIR?=${LOCALBASE}/bin
 CONFIGURE_TARGET=
 CONFIGURE_ENV+=QTDIR=${QTDIR} KDEDIR=${KDEDIR}
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+LD_CONFIG=	yes
 
 MAN1=	krusader.1
 
@@ -44,4 +44,10 @@ pre-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
+
+.include <bsd.port.post.mk>
