@@ -6,8 +6,7 @@
 #      $Id: Makefile 23 2006-10-25 14:24:32Z buhnux $
 
 PORTNAME=	liboil
-PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTVERSION=	0.3.10
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/ \
 		${MASTER_SITE_LOCAL}
@@ -26,11 +25,23 @@ CFLAGS+=	-O2
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
-#USE_GCC=	3.4
-BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-RUN_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-CC:=	gcc34
-CXX:=	g++34
+USE_GCC=	3.4+
+RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/${CC}
+.endif
+
+.if defined(WITH_3DNOW_GCC40)
+USE_GCC=	4.0+
+.endif
+
+pre-everything::
+.if ${MACHINE_CPU:M3dnow}!=""
+.if !defined(WITH_3DNOW_GCC40)
+	@${ECHO_MSG} "You can enable 3dnow extensions by defining"
+	@${ECHO_MSG} "WITH_3DNOW_GCC40=yes"
+.endif
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Note: ${PORTNAME} will depend on gcc4.0+ with WITH_3DNOW_GCC40"
+	@${ECHO_MSG} "defined."
 .endif
 
 post-patch:
