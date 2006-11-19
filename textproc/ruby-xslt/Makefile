@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xslt
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://gregoire.lejeune.free.fr/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,10 +22,15 @@ USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+.include <bsd.port.post.mk>
