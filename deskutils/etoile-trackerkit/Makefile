@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Etoile Project frameowrks and bundles
+COMMENT=	Etoile Project TrackerKit framework
 
 SNAPSHOT=	20060917
 WRKSRC=	${WRKDIR}/etoile-0+${SNAPSHOT}+dfsg/Etoile/
