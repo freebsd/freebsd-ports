@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	matplotlib
-PORTVERSION=	0.87.2
+PORTVERSION=	0.87.6
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,16 +17,17 @@ MAINTAINER=	mainland@apeiron.net
 COMMENT=	A plotting library uses a syntax familiar to matlab users
 
 BUILD_DEPENDS=	${PYNUMERIC} \
+		${PYTHON_SITELIBDIR}/dateutil/__init__.py:${PORTSDIR}/devel/py-dateutil \
+		${PYTHON_SITELIBDIR}/pytz/__init__.py:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${LOCALBASE}/lib/libagg.a:${PORTSDIR}/graphics/agg
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
-
-CONFLICTS=	devel/py-dateutil-[0-9]*
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
@@ -35,8 +36,9 @@ CFLAGS+=	-I${X11BASE}/include
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-PLISTDIR=	${PYTHON_SITELIBDIR}/${PORTNAME} ${PYTHON_SITELIBDIR}/dateutil ${PYTHON_SITELIBDIR}/pytz \
-		${PYTHON_SITELIBDIR}/pylab*
+PLISTDIR=	${PYTHON_SITELIBDIR}/${PORTNAME} \
+		${PYTHON_SITELIBDIR}/pylab* \
+		${PYTHON_SITELIBDIR}/matplotlib-0.87.6-py2.5.egg-info
 .if !defined(NOPORTDOCS)
 PLISTDIR+=	${EXAMPLESDIR}
 .endif
