@@ -2400,6 +2400,7 @@ etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/deskutils/etoile
 etoile-trackerkit	ports/deskutils/etoile-trackerkit
 etoile-unitkit	ports/devel/etoile-unitkit
+etoile-xwindowserverkit	ports/x11/etoile-xwindowserverkit
 etrace		ports/net/etrace
 ettercap	ports/net-mgmt/ettercap
 etunnel		ports/net/etunnel
