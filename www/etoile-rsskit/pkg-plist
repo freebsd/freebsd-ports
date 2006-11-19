@@ -1,0 +1,18 @@
+Local/Library/Headers/RSSKit/Atom%%MAJORVERSION%%3Parser.h
+Local/Library/Headers/RSSKit/Atom1%%MAJORVERSION%%Parser.h
+Local/Library/Headers/RSSKit/AtomParser.h
+Local/Library/Headers/RSSKit/DOMParser.h
+Local/Library/Headers/RSSKit/DublinCore.h
+Local/Library/Headers/RSSKit/FeedParser.h
+Local/Library/Headers/RSSKit/NewRSSArticleListener.h
+Local/Library/Headers/RSSKit/RSS1%%MAJORVERSION%%Parser.h
+Local/Library/Headers/RSSKit/RSS2%%MAJORVERSION%%Parser.h
+Local/Library/Headers/RSSKit/RSSArticle.h
+Local/Library/Headers/RSSKit/RSSArticleCreationListener.h
+Local/Library/Headers/RSSKit/RSSFeed+Fetching.h
+Local/Library/Headers/RSSKit/RSSFeed.h
+Local/Library/Headers/RSSKit/RSSKit.h
+Local/Library/Libraries/libRSSKit.so
+Local/Library/Libraries/libRSSKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libRSSKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/RSSKit
