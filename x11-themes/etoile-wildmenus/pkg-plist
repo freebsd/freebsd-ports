@@ -1,0 +1,5 @@
+Local/Library/Bundles/WildMenus.themeEngine/Resources/Info-gnustep.plist
+Local/Library/Bundles/WildMenus.themeEngine/WildMenus
+Local/Library/Bundles/WildMenus.themeEngine/stamp.make
+@dirrm Local/Library/Bundles/WildMenus.themeEngine/Resources
+@dirrm Local/Library/Bundles/WildMenus.themeEngine

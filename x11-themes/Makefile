@@ -37,6 +37,7 @@
     SUBDIR += etoile-camaelon
     SUBDIR += etoile-etoilemenus
     SUBDIR += etoile-iconkit
+    SUBDIR += etoile-wildmenus
     SUBDIR += flux-art
     SUBDIR += fluxbox-sid-pack
     SUBDIR += fvwm-themes
