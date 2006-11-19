@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.2.7
 DIST_SUBDIR=		squirrelmail
 
-MAINTAINER=		matt@gsicomp.on.ca
+MAINTAINER=		neil@darlow.co.uk
 COMMENT=		Adds multi-site-hosting capabilities to SquirrelMail
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
