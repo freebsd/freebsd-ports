@@ -2399,6 +2399,7 @@ etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/deskutils/etoile
 etoile-bookmarkkit	ports/www/etoile-bookmarkkit
+etoile-camaelon	ports/x11-themes/etoile-camaelon
 etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
 etoile-etoilemenus	ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
