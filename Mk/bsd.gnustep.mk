@@ -72,6 +72,9 @@
 # USE_GNUSTEP_SYSTEM_LIBS+=	Renaissance:x11-toolkits/renaissance
 #	depends on a shared lib in System directrory
 #
+# USE_GNUSTEP_SYSTEM_BUNDLES+=	EtoileMenus:x11-themes/etoile-etoilemenus
+#	depends on Bundles installed in System directrory at build and runtime
+#
 # USE_GNUSTEP_LOCAL_LIBS+=	pantomime:mail/pantomime
 #	depends on a shared lib in Local directrory
 #
@@ -270,6 +273,16 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=cairo
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_LIBS}
 BUILD_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 RUN_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source system bundles
+#
+.if defined(USE_GNUSTEP_SYSTEM_BUNDLES)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_BUNDLES}
+BUILD_DEPENDS+=	${BUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${BUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
