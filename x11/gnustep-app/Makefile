@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -30,7 +30,13 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	ScriptKit:lang/gnustep-guile \
 	gnustep-db2:databases/gdl2 \
 	Renaissance:x11-toolkits/renaissance \
-	PreferencePanes:deskutils/preferencepanes
+	PreferencePanes:deskutils/preferencepanes \
+	TrackerKit:deskutils/etoile-trackerkit \
+	PreferencesKit:deskutils/etoile-preferenceskit \
+	ExtendedWorkspace:deskutils/etoile-extendedworkspacekit \
+	BookmarkKit:www/etoile-bookmarkkit \
+	ServicesBarKit:deskutils/etoile-servicesbarkit \
+	IconKit:x11-themes/etoile-iconkit \
 
 USE_GNUSTEP_SYSTEM_APPS+=	\
 	GShisen:games/gshisen \
@@ -44,7 +50,7 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	GSPdf:print/gspdf \
 	SystemPreferences:deskutils/systempreferences \
 	WrapperFactory:deskutils/gnustep-wrapper \
-	GRubik:games/grubik
+	GRubik:games/grubik \
 
 USE_GNUSTEP_LOCAL_LIBS+=	\
 	Pantomime:mail/pantomime \
@@ -61,7 +67,11 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	StepTalk:lang/steptalk \
 	MathArray:math/matharray \
 	ObjcUnit:devel/objcunit \
-	GSKrab:x11/gskrab
+	GSKrab:x11/gskrab \
+	UnitKit:devel/etoile-unitkit \
+	XWindowServerKit:x11/etoile-xwindowserverkit \
+	RSSKit:www/etoile-rsskit \
+	EtoileExtensions:deskutils/etoile-etoileextensionskit \
 
 USE_GNUSTEP_LOCAL_BUNDLES+=	Cddb:audio/cddb-bundle
 
@@ -121,7 +131,12 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	GScheme:lang/gscheme \
 	Mplayer:multimedia/gnustep-mplayer \
 	MyLibrary:databases/mylibrary \
-	NeXTGo:games/nextgo
+	NeXTGo:games/nextgo \
+	Grr:www/etoile-grr \
+	iTerm:x11/etoile-iterm \
+	Installer:sysutils/etoile-installer \
+	Hardware:deskutils/etoile-hardware \
+	LookAndBehavior:deskutils/etoile-lookandbehavior \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
 
