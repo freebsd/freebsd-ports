@@ -2406,6 +2406,7 @@ etoile-hardware	ports/deskutils/etoile-hardware
 etoile-iconkit	ports/x11-themes/etoile-iconkit
 etoile-installer	ports/sysutils/etoile-installer
 etoile-iterm	ports/x11/etoile-iterm
+etoile-lookandbehavior	ports/deskutils/etoile-lookandbehavior
 etoile-preferenceskit	ports/deskutils/etoile-preferenceskit
 etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
