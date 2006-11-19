@@ -7,7 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/
 
@@ -34,7 +34,7 @@ SUB_FILES=	${HOWTO} pkg-message
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_COMPILER_LINKS)
-GNU_COMPILERS=		295 32 33 34 40 41 42
+GNU_COMPILERS=		295 32 33 34 40 41 42 43
 CCACHE_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH}=="i386"
 CCACHE_COMPILERS+=	icc icpc

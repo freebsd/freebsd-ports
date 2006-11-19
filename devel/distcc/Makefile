@@ -7,7 +7,7 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.18.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -36,7 +36,7 @@ OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
 .if defined(WITH_COMPILER_LINKS)
 CCLINKDIR?=		libexec/distcc
 PLIST_DIRS=		${CCLINKDIR}
-GNU_COMPILERS=		295 32 33 34 40 41 42
+GNU_COMPILERS=		295 32 33 34 40 41 42 43
 DISTCC_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH} == "i386"
 DISTCC_COMPILERS+=	icc icpc
