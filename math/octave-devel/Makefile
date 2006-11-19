@@ -22,7 +22,6 @@ BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/lib/libcxsparse.a:${PORTSDIR}/math/suitesparse
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		atlas.1:${PORTSDIR}/math/atlas \
 		hdf5:${PORTSDIR}/science/hdf5
 
 LATEST_LINK=    octave-devel
@@ -35,6 +34,22 @@ USE_AUTOTOOLS=	autoconf:259 autoheader:259
 
 INFO=		octave liboctave
 MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas  -lcblas -latlas
+LAPACK=		-lalapack
+.else
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
+.endif
 
 OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
@@ -56,14 +71,12 @@ CONFIGURE_ENV+=	GPERF="${LOCALBASE}/bin/gperf" \
 		CC="${CC}" \
 		CXX="${CXX}"
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
-		--with-blas="-L${LOCALBASE}/lib -lf77blas -lcblas -latlas" \
-		--with-lapack=-lalapack \
+		--with-blas="-L${LOCALBASE}/lib ${BLAS}" \
+		--with-lapack="${LAPACK}" \
 		--enable-shared
 
 SUB_FILES=	octave
 SUB_LIST=	OCTAVE_VERSION="${OCTAVE_VERSION}" GNU_HOST="${GNU_HOST}"
-
-.include <bsd.port.pre.mk>
 
 pre-configure:
 	@cd ${WRKSRC}/scripts ; autoconf259
