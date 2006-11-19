@@ -156,6 +156,7 @@
     SUBDIR += est
     SUBDIR += estctrl
     SUBDIR += etcmerge
+    SUBDIR += etoile-installer
     SUBDIR += eventlog
     SUBDIR += eventwatcher
     SUBDIR += evtviewer
