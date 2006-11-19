@@ -143,3 +143,55 @@
  AC_SUBST(HAVE_LAPACK)
  if test X$HAVE_LAPACK != Xyes; then
    echo "Could not link to the LAPACK library.  It can be obtained at"
+--- configure.in~	Sun Nov 19 16:09:19 2006
++++ configure.in	Sun Nov 19 16:11:58 2006
+@@ -513,7 +513,7 @@
+   CCA_CHEM_CONFIG=$withval
+   echo Using cca-chem-config: $withval
+ ],[
+-  if test "$components" == "yes"; then
++  if test "$components" = "yes"; then
+     AC_PATH_PROG(CCA_CHEM_CONFIG,cca-chem-config,"not-found")
+   fi
+ ]
+@@ -789,7 +789,7 @@
+      ;;
+ esac
+ 
+-if test X$GXX == Xyes; then
++if test X$GXX = Xyes; then
+   AC_MSG_CHECKING([for C++ cpu tuning flag])
+   AC_LANG_SAVE
+   AC_LANG_CPLUSPLUS
+@@ -801,7 +801,7 @@
+   AC_MSG_RESULT($cxx_tuneflag)
+ fi
+ 
+-if test X$GCC == Xyes; then
++if test X$GCC = Xyes; then
+   AC_MSG_CHECKING([for C cpu tuning flag])
+   CFLAGS_SAV=$CFLAGS
+   CFLAGS="-mtune=$opt_target_cpu $CFLAGS_SAV"
+@@ -1098,7 +1098,7 @@
+     char c[sizeof (long)];
+   } u;
+   u.l = 1;
+-  exit (u.c[sizeof (long) - 1] == 1);
++  exit (u.c[sizeof (long) - 1] = 1);
+ }], sc_cv_c_bigendian=no, sc_cv_c_bigendian=yes,
+ AC_MSG_ERROR([Could not determine endianness and cross compiling])
+ )
+@@ -1840,10 +1840,10 @@
+ 
+ dnl --------- CCA component configuration ---------
+ 
+-if test $components == "yes"; then
++if test $components = "yes"; then
+ 
+-  if test $HAVE_MPI == "yes" &&
+-     test $HAVE_MPIPP == "no"; then
++  if test $HAVE_MPI = "yes" &&
++     test $HAVE_MPIPP = "no"; then
+     AC_MSG_ERROR([libmpi++ needed for mpi cca components])
+   fi
+ 
