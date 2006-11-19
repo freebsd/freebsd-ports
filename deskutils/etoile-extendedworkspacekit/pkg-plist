@@ -1,0 +1,23 @@
+System/Library/Headers/ExtendedWorkspaceKit/EXAttribute.h
+System/Library/Headers/ExtendedWorkspaceKit/EXBasicFSAttributesExtracter.h
+System/Library/Headers/ExtendedWorkspaceKit/EXContext.h
+System/Library/Headers/ExtendedWorkspaceKit/EXEXIFAttributesExtracter.h
+System/Library/Headers/ExtendedWorkspaceKit/EXExtendedFSAttributesExtracter.h
+System/Library/Headers/ExtendedWorkspaceKit/EXExtensionProtocols.h
+System/Library/Headers/ExtendedWorkspaceKit/EXFileManager.h
+System/Library/Headers/ExtendedWorkspaceKit/EXPresentationAttribute.h
+System/Library/Headers/ExtendedWorkspaceKit/EXPreviewAttribute.h
+System/Library/Headers/ExtendedWorkspaceKit/EXQuery.h
+System/Library/Headers/ExtendedWorkspaceKit/EXTypeAttribute.h
+System/Library/Headers/ExtendedWorkspaceKit/EXVFS.h
+System/Library/Headers/ExtendedWorkspaceKit/EXVFSHandle.h
+System/Library/Headers/ExtendedWorkspaceKit/EXVFSProtocol.h
+System/Library/Headers/ExtendedWorkspaceKit/EXWorkspace.h
+System/Library/Headers/ExtendedWorkspaceKit/EXXMLAttributesExtracter.h
+System/Library/Headers/ExtendedWorkspaceKit/ExtendedWorkspaceConfig.h
+System/Library/Headers/ExtendedWorkspaceKit/ExtendedWorkspaceKit.h
+System/Library/Headers/ExtendedWorkspaceKit/NSURL+ExtendedWorkspace.h
+System/Library/Libraries/libExtendedWorkspace.so
+System/Library/Libraries/libExtendedWorkspace.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libExtendedWorkspace.so.%%MAJORLIBVERSION%%.1
+@dirrm System/Library/Headers/ExtendedWorkspaceKit
