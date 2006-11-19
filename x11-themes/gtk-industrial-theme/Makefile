@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	stoerte@dreamwarrior.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slick theme for GTK1 from Ximian
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
