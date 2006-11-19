@@ -7,7 +7,7 @@
 
 PORTNAME=	nvu
 DISTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 NVU=		${PORTNAME}-${DISTVERSION}
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
+MOZ_EXTENSIONS=	wallet,xml-rpc,xmlextras,pref,universalchardet,editor/cascades,spellcheck
 PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
 CFLAGS+=	-I${X11BASE}/include
 
