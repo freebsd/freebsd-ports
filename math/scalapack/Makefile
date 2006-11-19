@@ -6,28 +6,23 @@
 #
 
 PORTNAME=	scalapack
-PORTVERSION=	1.7
-PORTREVISION=	2
+PORTVERSION=	1.7.4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
-DISTNAME=	SCALAPACK
-DISTFILES=	scalapack.tgz manpages.tgz
+DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
 		lawn100.ps pblasqref.ps manual.ps design.ps \
 		pumma_refmanual.ps trans.ps
 .endif
 DIST_SUBDIR=	scalapack
-EXTRACT_ONLY=	scalapack.tgz manpages.tgz
+EXTRACT_ONLY=	scalapack-${PORTVERSION}.tgz manpages.tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The ScaLAPACK Scalable LAPACK library
 
-BUILD_DEPENDS=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2 \
-		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
-		atlas:${PORTSDIR}/math/atlas
 
 CONFLICTS=	elmer-mathlibs-1*
 
@@ -35,7 +30,6 @@ F77?=	f77
 
 ARCH2FIX=	PBLAS/SRC PBLAS/SRC/PBBLAS PBLAS/SRC/PTOOLS PBLAS/SRC/PTZBLAS \
 		REDIST/SRC SRC TOOLS TOOLS/LAPACK
-BLAS=		-lf77blas -latlas
 
 DATADIR=	${PREFIX}/share/${PORTNAME:U}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:U}
@@ -45,6 +39,32 @@ SUB_FILES=	pkg-message
 .include "files/manpages"
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=		yes
+.endif
+
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+.else
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+.endif
+
+.if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
+WITH_OPENMPI=   yes
+.endif
+
+.if defined(WITH_OPENMPI)
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
+RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-openmpi.diff
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
+EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-mpich.diff
+.endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if ${ARCH} == "amd64"

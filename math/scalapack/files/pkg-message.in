@@ -20,6 +20,14 @@
   ? end
   % %%LOCALBASE%%/mpich2/bin/mpdallexit
 
+ If you're using OpenMPI, use this instead:
+  % cd %%DATADIR%%/TESTING
+  % LD_LIBRARY_PATH=%%LOCALBASE%%/mpi/openmpi/lib/ export LD_LIBRARY_PATH
+  % PATH=$PATH:%%LOCALBASE%%/mpi/openmpi/bin/ export PATH
+  % mpirun -np 4 ./xcbrd
+  % mpirun -np 4 ./xcdblu
+   etc., etc. ...
+
 You can change -np 4 to any number to meet your environment.
 See files at %%DOCSDIR%% for detail.
 **********************************************************************
