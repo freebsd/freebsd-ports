@@ -2402,6 +2402,7 @@ etoile-bookmarkkit	ports/www/etoile-bookmarkkit
 etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
 etoile-grr	ports/www/etoile-grr
+etoile-iconkit	ports/x11-themes/etoile-iconkit
 etoile-installer	ports/sysutils/etoile-installer
 etoile-iterm	ports/x11/etoile-iterm
 etoile-preferenceskit	ports/deskutils/etoile-preferenceskit
