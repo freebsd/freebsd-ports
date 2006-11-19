@@ -41,6 +41,7 @@
     SUBDIR += etoile-extendedworkspacekit
     SUBDIR += etoile-preferenceskit
     SUBDIR += etoile-trackerkit
+    SUBDIR += etoile-workspaceswitcher
     SUBDIR += everygui
     SUBDIR += evolution-jescs
     SUBDIR += freemind
