@@ -559,6 +559,20 @@ share/icons/hicolor/22x22/apps/kadu.png
 share/icons/hicolor/24x24/apps/kadu.png
 share/icons/hicolor/32x32/apps/kadu.png
 share/icons/hicolor/48x48/apps/kadu.png
+%%ARTS_MOD%%include/kadu/modules/player_arts.h
+%%ARTS_MOD%%share/kadu/modules/bin/arts_sound/arts_connector
+%%ARTS_MOD%%share/kadu/modules/arts_sound.desc
+%%ASPELL_MOD%%include/kadu/modules/spellchecker.h
+%%ASPELL_MOD%%share/kadu/modules/translations/spellchecker_pl.qm
+%%ASPELL_MOD%%share/kadu/modules/data/spellchecker/config.png
+%%ASPELL_MOD%%share/kadu/modules/spellchecker.desc
+%%ESOUND_MOD%%include/kadu/modules/esd_sound.h
+%%ESOUND_MOD%%share/kadu/modules/esd_sound.desc
+%%TABS_MOD%%include/kadu/modules/tabs.h
+%%TABS_MOD%%include/kadu/modules/tabwidget.h
+%%TABS_MOD%%share/kadu/modules/translations/tabs_pl.qm
+%%TABS_MOD%%share/kadu/modules/data/tabs/attach.png
+%%TABS_MOD%%share/kadu/modules/tabs.desc
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/22x22/apps
@@ -586,7 +600,10 @@ share/icons/hicolor/48x48/apps/kadu.png
 @dirrm %%DATADIR%%/modules/data/config_wizard/ronk2
 @dirrm %%DATADIR%%/modules/data/config_wizard/joi
 @dirrm %%DATADIR%%/modules/data/config_wizard
+%%ASPELL_MOD%%@dirrm %%DATADIR%%/modules/data/spellchecker
+%%TABS_MOD%%@dirrm %%DATADIR%%/modules/data/tabs
 @dirrm %%DATADIR%%/modules/data
+%%ARTS_MOD%%@dirrm %%DATADIR%%/modules/bin/arts_sound
 @dirrm %%DATADIR%%/modules/bin
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%
