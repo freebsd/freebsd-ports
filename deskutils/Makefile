@@ -38,6 +38,7 @@
     SUBDIR += estickies
     SUBDIR += etask
     SUBDIR += etoile
+    SUBDIR += etoile-trackerkit
     SUBDIR += everygui
     SUBDIR += evolution-jescs
     SUBDIR += freemind
