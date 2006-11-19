@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lawrance
 
-MAINTAINER=	stoerte@dreamwarrior.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, fast Emacs-like editor
 
 MANSECTS=	1
