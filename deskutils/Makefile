@@ -38,6 +38,7 @@
     SUBDIR += estickies
     SUBDIR += etask
     SUBDIR += etoile
+    SUBDIR += etoile-extendedworkspacekit
     SUBDIR += etoile-preferenceskit
     SUBDIR += etoile-trackerkit
     SUBDIR += everygui
