@@ -1,0 +1,9 @@
+System/Library/Headers/TrackerKit/TKCollection.h
+System/Library/Headers/TrackerKit/TKKeyValuePredicate.h
+System/Library/Headers/TrackerKit/TKObject.h
+System/Library/Headers/TrackerKit/TKQuery.h
+System/Library/Headers/TrackerKit/TKTracker.h
+System/Library/Libraries/libTrackerKit.so
+System/Library/Libraries/libTrackerKit.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libTrackerKit.so.%%MAJORLIBVERSION%%.1
+@dirrm System/Library/Headers/TrackerKit
