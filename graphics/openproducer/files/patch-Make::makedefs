@@ -1,5 +1,5 @@
---- Make/makedefs.orig	Sat Dec 10 09:51:33 2005
-+++ Make/makedefs	Sat Nov 11 21:44:06 2006
+--- Make/makedefs.orig	Fri Dec  9 23:51:33 2005
++++ Make/makedefs	Sun Nov 19 19:33:13 2006
 @@ -55,7 +55,7 @@
  DEF        = -DPRODUCER_VERSION=\"$(VERSION)\"\
               -DPRODUCER_VERSION_REVISION="$(VERSION_REVISION)"
@@ -36,6 +36,15 @@
  INST_DEMO_SRC      = $(INST_SRC)/demos
  
  LINK               = ln -sf
+@@ -294,7 +294,7 @@
+     endif
+   DEPARG            = -MM
+   INC               +=  -I/usr/local/include -I/usr/X11R6/include
+-  DEF               += -W -Wall
++  DEF               += -fPIC -W -Wall
+   OPTF              = -O2 
+   DBGF              = -g 
+   SHARED            = -shared
 @@ -305,7 +305,7 @@
  
    GL_LIBS           = -lGL
