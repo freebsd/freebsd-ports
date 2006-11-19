@@ -123,6 +123,7 @@
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
     SUBDIR += erwn
+    SUBDIR += etoile-rsskit
     SUBDIR += eventum
     SUBDIR += evolution-webcal
     SUBDIR += eyeos
