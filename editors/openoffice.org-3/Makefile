@@ -172,9 +172,9 @@ EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 EXTRA_PATCHES+=	${FILESDIR}/gcj-fbsdworkaround
 .endif
 
-#.if defined(WITH_TTF_BYTECODE_ENABLED)
-#EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
-#.endif
+.if defined(WITH_TTF_BYTECODE_ENABLED)
+EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
+.endif
 
 ICONS=	${WRKSRC}/sysui/desktop/icons
 
