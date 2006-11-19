@@ -25,6 +25,7 @@ COMMENT?=	GNU Compiler Collection 3.3
 
 SUFFIX=		33
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
+NOT_FOR_ARCHS=	amd64
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -38,7 +39,6 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-BROKEN=			Bus errors in stage2; system compiler may be broken.
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
