@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	stoerte@dreamwarrior.net
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Slick GNOME2 theme from Ximian
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
