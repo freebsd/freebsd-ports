@@ -8,7 +8,7 @@
 
 PORTNAME=	nautilus-cd-burner
 PORTVERSION=	2.16.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -16,6 +16,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD burner view for Nautilus
+
+RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
