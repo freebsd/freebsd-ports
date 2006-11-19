@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1.8F1
+DISTVERSION=	1.9B08
 PORTEPOCH=	6
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}		\
-		http://dknapp.ca/mirror/mercury/stable/	\
+		http://dknapp.ca/mirror/mercury/beta/	\
 		http://download.mercury.to/
 MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
 DISTNAME=	${DISTVERSION}
