@@ -16,7 +16,7 @@ PostgreSQL	"PostgreSQL driver" ON \
 MySQL		"MySQL driver" OFF \
 OpenLDAP	"OpenLDAP backend" OFF \
 SQLite		"SQLite backend" OFF \
-Recursor	"Build Recursor" OFF \
+Recursor	"Build Recursor (DEPRECATED)" OFF \
 2> /tmp/checklist.tmp.$$
 
         retval=$?
