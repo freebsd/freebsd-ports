@@ -13,4 +13,4 @@ for file in %%JMF_JARS%%
 do
 classpath="$JMF_INSTALL_PATH/$file:$classpath"
 done
-JAVA_VERSION=%%JAVA_VERSION%% %%LOCALBASE%%/bin/java -classpath $classpath com.dMSN.Main
+JAVA_VERSION=%%JAVA_VERSION%% %%LOCALBASE%%/bin/java -Xmx512m -classpath $classpath com.dMSN.Main
