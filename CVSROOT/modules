@@ -2398,6 +2398,7 @@ etk		ports/x11-toolkits/etk
 etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/deskutils/etoile
+etoile-trackerkit	ports/deskutils/etoile-trackerkit
 etoile-unitkit	ports/devel/etoile-unitkit
 etrace		ports/net/etrace
 ettercap	ports/net-mgmt/ettercap
