@@ -34,13 +34,13 @@ Local/Library/ApplicationSupport/TalkSoup/InFilters/Deunderline/stamp.make
 Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Emoticon
 Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/English.lproj/Localizable.strings
 Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/Info-gnustep.plist
-Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face%%MAJORVERSION%%%%MAJORLIBVERSION%%.tiff
-Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face%%MAJORVERSION%%%%MAJORVERSION%%.tiff
-Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face%%MAJORVERSION%%.tiff
-Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face%%MAJORVERSION%%3.tiff
-Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face%%MAJORVERSION%%4.tiff
-Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face%%MAJORVERSION%%5.tiff
-Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face%%MAJORVERSION%%9.tiff
+Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face1.tiff
+Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face10.tiff
+Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face11.tiff
+Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face13.tiff
+Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face14.tiff
+Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face15.tiff
+Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face19.tiff
 Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face2.tiff
 Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face3.tiff
 Local/Library/ApplicationSupport/TalkSoup/InFilters/Emoticon/Resources/emoticon-face4.tiff
@@ -162,10 +162,10 @@ Local/Library/Headers/TalkSoupBundles
 Local/Library/Libraries/libTalkSoupBundles.so
 Local/Library/Libraries/libTalkSoupBundles.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libTalkSoupBundles.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%/Resources/English.lproj
-@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Resources/English.lproj
+@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Resources
+@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Headers
+@dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework
 @dirrm Local/Library/ApplicationSupport/TalkSoup/Output/GNUstepOutput/Resources/Tools
