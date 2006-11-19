@@ -7,7 +7,7 @@
 
 PORTNAME=	suitesparse
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/current/
 DISTNAME=	SuiteSparse
@@ -19,6 +19,17 @@ COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 CONFLICTS=	elmer-umfpack-4*
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+FPIC=	-fPIC
+.else
+FPIC=	-fpic
+.endif
+
+CFLAGS+=	${FPIC}
+FFLAGS+=	${FPIC}
 
 .if defined(WITH_BLAS)
 LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
@@ -44,7 +55,11 @@ post-patch:
 			  -e 's,%%LAPACK%%,${LAPACK},g' \
 			  -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk
-do-install:
+	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
+			  -e 's,%%CFLAGS%%,${CFLAGS},g' \
+				${WRKSRC}/CSparse/Source/Makefile \
+				${WRKSRC}/CXSparse/Source/Makefile
+do-install:			 
 	${MKDIR} ${PREFIX}/include/suitesparse
 	${LN} -sf ${PREFIX}/include/suitesparse ${PREFIX}/include/ufsparse
 	${INSTALL_DATA} ${WRKSRC}/UFconfig/UFconfig.h                       ${PREFIX}/include/suitesparse
@@ -67,4 +82,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CAMD/Lib/libcamd.a                        ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/CXSparse/Source/libcxsparse.a             ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
