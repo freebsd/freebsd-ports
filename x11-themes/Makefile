@@ -34,6 +34,7 @@
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
     SUBDIR += enlightenment-theme-Ganymede
     SUBDIR += enlightenment-theme-ShinyMetal
+    SUBDIR += etoile-etoilemenus
     SUBDIR += etoile-iconkit
     SUBDIR += flux-art
     SUBDIR += fluxbox-sid-pack
