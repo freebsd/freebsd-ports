@@ -274,6 +274,7 @@
     SUBDIR += error
     SUBDIR += esdl
     SUBDIR += esvn
+    SUBDIR += etoile-unitkit
     SUBDIR += evfs
     SUBDIR += evolution-gconf-tools
     SUBDIR += excalibur-configuration

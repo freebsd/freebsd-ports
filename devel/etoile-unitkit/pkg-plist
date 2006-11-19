@@ -1,0 +1,10 @@
+Local/Library/Headers/UnitKit/UKRunner.h
+Local/Library/Headers/UnitKit/UKTask.h
+Local/Library/Headers/UnitKit/UKTest.h
+Local/Library/Headers/UnitKit/UKTestHandler.h
+Local/Library/Headers/UnitKit/UnitKit.h
+Local/Library/Libraries/libUnitKit.so
+Local/Library/Libraries/libUnitKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libUnitKit.so.%%LIBVERSION%%
+Local/Tools/ukrun
+@dirrm Local/Library/Headers/UnitKit
