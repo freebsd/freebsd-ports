@@ -40,6 +40,7 @@
     SUBDIR += etoile
     SUBDIR += etoile-etoileextensionskit
     SUBDIR += etoile-extendedworkspacekit
+    SUBDIR += etoile-hardware
     SUBDIR += etoile-preferenceskit
     SUBDIR += etoile-servicesbarkit
     SUBDIR += etoile-trackerkit
