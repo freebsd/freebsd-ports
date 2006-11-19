@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Etoile Project frameowrks and bundles
+COMMENT=	Etoile Project UnitKit test framework on GNUstep
 
 SNAPSHOT=	20060917
 WRKSRC=	${WRKDIR}/etoile-0+${SNAPSHOT}+dfsg/Etoile/
@@ -24,6 +24,8 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
+LDCONFIG_DIRS=	${LOCALLIBDIR}
+INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 USE_GNUSTEP_MAKE_DIRS+=	Frameworks/UnitKit
 
