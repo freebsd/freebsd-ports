@@ -2399,6 +2399,7 @@ etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/deskutils/etoile
 etoile-bookmarkkit	ports/www/etoile-bookmarkkit
+etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
 etoile-grr	ports/www/etoile-grr
 etoile-installer	ports/sysutils/etoile-installer
