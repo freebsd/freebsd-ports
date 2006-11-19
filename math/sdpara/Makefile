@@ -22,7 +22,7 @@ COMMENT=	SDPARA paralell version of SDPA (math/sdpa)
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 BUILD_DEPENDS=	${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
-		${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
+		${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
