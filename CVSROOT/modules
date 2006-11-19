@@ -2414,6 +2414,7 @@ etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
 etoile-trackerkit	ports/deskutils/etoile-trackerkit
 etoile-unitkit	ports/devel/etoile-unitkit
+etoile-wildmenus	ports/x11-themes/etoile-wildmenus
 etoile-workspaceswitcher	ports/deskutils/etoile-workspaceswitcher
 etoile-xwindowserverkit	ports/x11/etoile-xwindowserverkit
 etrace		ports/net/etrace
