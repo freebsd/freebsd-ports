@@ -20,12 +20,12 @@
  
 -MPIBIN=
 -CC = $(MPIBIN)mpicxx
-+MPIBIN= %%LOCALBASE%%/mpich/bin/
-+CC = $(MPIBIN)mpiCC
++MPIBIN= %%LOCALBASE%%/mpich2/bin/
++CC = $(MPIBIN)mpicxx
  F77 = $(MPIBIN)mpif77
  OPTION = -O3  #-g
 +FFLAGS = %%FFLAGS%%
-+CXXFLAGS = %%CXXFLAGS%%
++CXXFLAGS = %%CXXFLAGS%% -DMPICH_IGNORE_CXX_SEEK
  
  TARGET_EXE = $(RSDPA_LIB_NAME)
  #TARGET_EXE = rsdpa_main.exe
