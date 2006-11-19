@@ -2400,6 +2400,7 @@ etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/deskutils/etoile
 etoile-bookmarkkit	ports/www/etoile-bookmarkkit
 etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
+etoile-etoilemenus	ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
 etoile-grr	ports/www/etoile-grr
 etoile-hardware	ports/deskutils/etoile-hardware
