@@ -1,0 +1,5 @@
+System/Library/Bundles/Camaelon.themeEngine/Camaelon
+System/Library/Bundles/Camaelon.themeEngine/Resources/Info-gnustep.plist
+System/Library/Bundles/Camaelon.themeEngine/stamp.make
+@dirrm System/Library/Bundles/Camaelon.themeEngine/Resources
+@dirrm System/Library/Bundles/Camaelon.themeEngine
