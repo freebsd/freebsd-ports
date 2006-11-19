@@ -68,6 +68,7 @@
     SUBDIR += enterminus
     SUBDIR += erun
     SUBDIR += eterm
+    SUBDIR += etoile-iterm
     SUBDIR += etoile-xwindowserverkit
     SUBDIR += examine
     SUBDIR += fast-user-switch-applet
