@@ -1,0 +1,28 @@
+Local/Applications/Installer.app/Installer
+Local/Applications/Installer.app/Resources/Deb.tiff
+Local/Applications/Installer.app/Resources/Gpkg.installer/Gpkg
+Local/Applications/Installer.app/Resources/Gpkg.installer/Resources/Info-gnustep.plist
+Local/Applications/Installer.app/Resources/Gpkg.installer/stamp.make
+Local/Applications/Installer.app/Resources/Info-gnustep.plist
+Local/Applications/Installer.app/Resources/Installer.app.tiff
+Local/Applications/Installer.app/Resources/Installer.desktop
+Local/Applications/Installer.app/Resources/Installer.gorm/data.classes
+Local/Applications/Installer.app/Resources/Installer.gorm/data.info
+Local/Applications/Installer.app/Resources/Installer.gorm/objects.gorm
+Local/Applications/Installer.app/Resources/Package.gorm/data.classes
+Local/Applications/Installer.app/Resources/Package.gorm/data.info
+Local/Applications/Installer.app/Resources/Package.gorm/objects.gorm
+Local/Applications/Installer.app/Resources/Pkg.tiff
+Local/Applications/Installer.app/library_paths.openapp
+Local/Applications/Installer.app/stamp.make
+Local/Library/Headers/Gpkg/Gpkg.h
+Local/Tools/lsgbom
+Local/Tools/mkgbom
+@dirrm Local/Tools
+@dirrm Local/Library/Headers/Gpkg
+@dirrm Local/Applications/Installer.app/Resources/Package.gorm
+@dirrm Local/Applications/Installer.app/Resources/Installer.gorm
+@dirrm Local/Applications/Installer.app/Resources/Gpkg.installer/Resources
+@dirrm Local/Applications/Installer.app/Resources/Gpkg.installer
+@dirrm Local/Applications/Installer.app/Resources
+@dirrm Local/Applications/Installer.app
