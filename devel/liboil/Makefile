@@ -24,13 +24,19 @@ CFLAGS+=	-O2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
-USE_GCC=	3.4+
-RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/${CC}
+.if ${OSVERSION} < 600000 && ${OSVERSION} > 500000 && !defined(WITH_3DNOW_GCC40)
+BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+RUN_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+CC:=	gcc34
+CXX:=	g++34
 .endif
 
 .if defined(WITH_3DNOW_GCC40)
 USE_GCC=	4.0+
+.if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
+# yeah yeah, I know other stuff will be added that shouldn't...
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+.endif
 .endif
 
 pre-everything::
