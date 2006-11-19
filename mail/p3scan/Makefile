@@ -7,7 +7,7 @@
 
 PORTNAME=	p3scan
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 PLIST_FILES=	etc/p3scan/p3scan.conf.sample etc/p3scan/p3scan.mail.sample \
 		etc/rc.d/p3scan.sh sbin/p3scan
+PLIST_DIRS=	etc/p3scan
 
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
