@@ -15,7 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CDDB_DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby binding to the audiofile library
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
@@ -27,11 +27,12 @@ CDDB_DISTNAME=	cddb-0.2
 CDDB_WRKSRC=	${WRKDIR}/example
 
 INSTALL_TARGET=	site-install
+REINPLACE_ARGS=	-i ""
 
 DOCS=		audiofile.rd
 
 post-patch:
-	${RUBY} -i -pe 'gsub %r|/home/jaredj/ruby-lib/cddb\b|, "cddb"' \
+	${REINPLACE_CMD} -E -e "s,/home/jaredj/ruby-lib/(cddb),\1,g" \
 		${CDDB_WRKSRC}/wavcddb
 
 post-install:
@@ -40,9 +41,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_MODEXAMPLESDIR}/
 	${INSTALL_DATA} ${CDDB_WRKSRC}/* ${RUBY_MODEXAMPLESDIR}/cddb/
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>
