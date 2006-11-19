@@ -7,12 +7,13 @@
 
 PORTNAME=	bz2
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	archivers ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby extension to use libbz2
 
 USE_RUBY=	yes
@@ -26,14 +27,21 @@ RUBY_RD_FILES=	bz2.rd
 DOCS=		Changes \
 		README.en \
 		${RUBY_RD_FILES} \
-		${RUBY_RD_HTML_FILES} \
-		docs/doc
+		${RUBY_RD_HTML_FILES}
+
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
 .include <bsd.port.pre.mk>
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
 .endif
 
 post-install: doc-install
@@ -41,9 +49,8 @@ post-install: doc-install
 doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+	@(cd  ${WRKSRC}/ && ${COPYTREE_SHARE} "${DOCS}" ${RUBY_MODDOCDIR}/)
+	@(cd  ${WRKSRC}/docs/ && ${COPYTREE_SHARE} doc ${RUBY_MODDOCDIR}/)
 .endif
 
 .include <bsd.port.post.mk>
