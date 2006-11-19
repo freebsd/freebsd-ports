@@ -40,10 +40,11 @@ OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
 .include <bsd.port.pre.mk>
 
 PKGNAMESUFFIX=	#empty
+CFLAGS+=	${PTHREAD_CFLAGS}	# Keep this, else ruby will fail to load
+LDFLAGS+=	${PTHREAD_LIBS}		# libraries dependent op libpthread.
+
 .if defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=--enable-pthread
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+pthreads
 .else
 CONFIGURE_ARGS+=--disable-pthread
