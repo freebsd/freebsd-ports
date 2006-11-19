@@ -7,6 +7,7 @@
 
 PORTNAME=	lightning
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	mail deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}/source
@@ -42,6 +43,8 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=mail,calendar
 
 .include <bsd.port.pre.mk>
 
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+
 .if ${OSVERSION} < 500000
 BROKEN=	does not build
 .endif
@@ -60,6 +63,8 @@ pre-everything::
 post-patch:
 	@${SED} -e 's|@MOZILLA_ICON@|${MOZILLA_ICON}|' \
 		${FILESDIR}/${MOZILLA}.desktop.in >${WRKDIR}/${MOZILLA}.desktop
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${GECKO_PTHREAD_LIBS}|' \
+		${WRKSRC}/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in
 
