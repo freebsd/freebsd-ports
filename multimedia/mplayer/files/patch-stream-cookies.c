@@ -1,6 +1,6 @@
---- libmpdemux/cookies.c.orig	Mon Jun 12 03:35:46 2006
-+++ libmpdemux/cookies.c	Tue Aug 15 03:01:58 2006
-@@ -20,6 +20,10 @@
+--- stream/cookies.c.orig	Mon Oct 23 00:32:25 2006
++++ stream/cookies.c	Tue Oct 24 21:52:00 2006
+@@ -21,6 +21,10 @@
  
  #define MAX_COOKIES 20
  

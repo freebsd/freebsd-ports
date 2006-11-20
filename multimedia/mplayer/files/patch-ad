@@ -1,6 +1,6 @@
---- configure.orig	Sun Jun 11 20:35:47 2006
-+++ configure	Tue Jul 11 23:56:05 2006
-@@ -61,9 +61,9 @@
+--- configure.orig	Mon Oct 23 00:32:31 2006
++++ configure	Tue Oct 24 22:19:10 2006
+@@ -59,9 +59,9 @@
    echo >> "$TMPLOG"
    cat "$1" >> "$TMPLOG"
    echo >> "$TMPLOG"
@@ -12,16 +12,16 @@
    TMP="$?"
    echo >> "$TMPLOG"
    echo "ldd $TMPO" >> "$TMPLOG"
-@@ -453,7 +453,7 @@
- _sse=auto
- _sse2=auto
+@@ -474,7 +474,7 @@
+ _armv5te=auto
+ _iwmmxt=auto
  _mtrr=auto
 -_install=install
 +_install=@${BSD_INSTALL_PROGRAM}
  _ranlib=ranlib
  _cc=cc
  test "$CC" && _cc="$CC"
-@@ -574,14 +574,7 @@
+@@ -599,14 +599,7 @@
        case "`uname -m 2>&1`" in
        i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686|BePC) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
@@ -37,7 +37,7 @@
        macppc|ppc|ppc64) host_arch=ppc ;;
        alpha) host_arch=alpha ;;
        sparc) host_arch=sparc ;;
-@@ -806,25 +799,10 @@
+@@ -831,25 +824,10 @@
  _cpuinfo="echo"
  # Cygwin has /proc/cpuinfo, but only supports Intel CPUs
  # FIXME: Remove the cygwin check once AMD CPUs are supported
@@ -54,7 +54,7 @@
 -elif aix; then
 -  # use 'lsattr' on AIX
 -  _cpuinfo="lsattr -E -l proc0 -a type"
--elif x86; then
+-elif x86 || x86_64; then
    # all other OSes try to extract CPU information from a small helper
    # program TOOLS/cpuinfo instead
    $_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
@@ -63,7 +63,7 @@
  
  if x86 || x86_64 ; then
    # gather more CPU information
-@@ -1526,7 +1504,7 @@
+@@ -1539,7 +1517,7 @@
    fi
    _stripbinaries=no
  elif test -z "$CFLAGS" ; then
@@ -72,7 +72,7 @@
  else
    _warn_CFLAGS=yes
  fi
-@@ -2177,8 +2155,7 @@
+@@ -2204,8 +2182,7 @@
      ;;
  
    *)
@@ -82,7 +82,7 @@
      ;;
  
    esac
-@@ -2826,13 +2803,7 @@
+@@ -2898,13 +2875,7 @@
  
  
  echocheck "memalign()"
@@ -96,11 +96,11 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -2931,20 +2902,8 @@
+@@ -3005,20 +2976,8 @@
  _def_threads='#undef HAVE_THREADS'
  
  echocheck "pthread"
--if test "$_pthreads" != no ; then
+-if test "$_pthreads" = auto ; then
 -cat > $TMPC << EOF
 -#include <pthread.h>
 -void* func(void *arg) { return arg; }
@@ -119,17 +119,17 @@
  if test "$_pthreads" = yes ; then
    _res_comment="using $_ld_pthread"
    _def_pthreads='#define HAVE_PTHREADS 1'
-@@ -6529,7 +6488,8 @@
+@@ -6555,7 +6514,8 @@
  #endif
  int main(void) { x264_encoder_open((void*)0); return 0; }
  EOF
--_ld_x264="$_ld_x264 -lx264 $_ld_pthread"
-+_ld_x264pc=`pkg-config x264 --libs 2>/dev/null`
-+_ld_x264="$_ld_x264 $_ld_x264pc $_ld_pthread"
- if test "$_x264" != no ; then 
+-  _ld_x264="$_ld_x264 -lx264 $_ld_pthread"
++  _ld_x264pc=`pkg-config x264 --libs 2>/dev/null`
++  _ld_x264="$_ld_x264 $_ld_x264pc $_ld_pthread"
    _x264=no
-   if cc_check $_inc_x264 $_ld_x264 $_ld_lm ; then 
-@@ -6723,8 +6683,11 @@
+   if cc_check $_ld_x264 $_ld_lm ; then 
+     _x264=yes
+@@ -6685,8 +6645,11 @@
   if test "$_tv" = yes ; then
      cat > $TMPC <<EOF
  #include <sys/types.h>
@@ -141,7 +141,7 @@
  #else
  #include <machine/ioctl_bt848.h>
  #endif
-@@ -7166,7 +7129,7 @@
+@@ -7218,7 +7181,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
@@ -150,19 +150,3 @@
  fi
  # 64 bit file offsets?
  if test "$_largefiles" = yes || freebsd ; then
-@@ -7318,13 +7281,11 @@
- echocheck "lirc"
- if test "$_lirc" = auto ; then
-   _lirc=no
--  if test -c /dev/lirc -o -c /dev/lirc/0 ; then
--      cat > $TMPC <<EOF
-+  cat > $TMPC <<EOF
- #include <lirc/lirc_client.h>
- int main(void) { return 0; }
- EOF
--      cc_check -llirc_client && _lirc=yes
--  fi
-+  cc_check -llirc_client && _lirc=yes
- fi
- if test "$_lirc" = yes ; then
-   _def_lirc='#define HAVE_LIRC 1'

@@ -83,8 +83,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.99.8
-PORTREVISION=	5
+PORTVERSION=	0.99.10
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -96,7 +95,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-1.0pre8
+DISTNAME=	MPlayer-1.0rc1
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
@@ -119,9 +118,7 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--disable-libfame \
 		--disable-external-faad \
 		--disable-external-vidix \
-		--disable-tv-v4l \
-		--disable-liblzo \
-		--disable-libcdio
+		--disable-tv-v4l
 
 OPTIONS=	DEBUG "Include debug symbols in mplayer's binary files" off
 
@@ -141,14 +138,20 @@ OPTIONS+=	FREETYPE "Use freetype for OSD fonts (TrueType!)" on
 OPTIONS+=	RTC "Add support for kernel real time clock timing" off
 OPTIONS+=	ARTS "Enable KDE sound system support" off
 OPTIONS+=	ESOUND "Enable GNOME esound support" off
+OPTIONS+=	JACK "Enable JackIt audio server support" off
 OPTIONS+=	POLYP "Enable polyp sound server support" off
+OPTIONS+=	OPENAL "Enable OpenAL sound support" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
 OPTIONS+=	AALIB "Enable aalib support" off
 OPTIONS+=	LIBCACA "Enable libcaca support" off
 OPTIONS+=	SVGALIB "Enable svgalib support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
+OPTIONS+=	TWOLAME "Enable twolame MPEG audio codec support" off
 OPTIONS+=	DTS "Enable DTS audio codec support" on
+OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
+OPTIONS+=	FAAC "Enable FAAC audio codec support" off
+OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
 OPTIONS+=	SPEEX "Enable speex audio codec support" off
 OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
 OPTIONS+=	XMMS "Enable XMMS plugin support" off
@@ -161,7 +164,9 @@ OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
 OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
 OPTIONS+=	LIRC "Enable lirc support" off
+OPTIONS+=	LIBCDIO "Enable libcdio support" off
 OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
+OPTIONS+=	LIBLZO "Enable external liblzo library" off
 .endif
 
 WANT_GNOME=	yes
@@ -179,6 +184,7 @@ TOOLFILES=	calcbpp.pl countquant.pl dvd2divxscript.pl \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
+USE_GCC=	3.4+
 CFLAGS+=	-Duint_fast64_t=uint64_t
 CFLAGS+=	-Droundf=rintf
 .if ${ARCH} == "i386"
@@ -216,7 +222,7 @@ PLIST_SUB+=	VIDIX="@comment "
 #Compiler flags
 CFLAGS=		#let mplayer decide the flags
 
-.for module in ARTS FRIBIDI CDPARANOIA LIBCACA LIBUNGIF LIBDV MAD THEORA X264 FRIBIDI LIVEMEDIA ESOUND OCFLAGS RTC MENCODER NVIDIA LIRC XMMS
+.for module in ARTS CDPARANOIA LIBCACA LIBUNGIF LIBDV MAD THEORA X264 FRIBIDI LIVEMEDIA ESOUND OCFLAGS RTC MENCODER NVIDIA LIRC XMMS
 WITHOUT_${module}=yes
 .undef(WITH_${module})
 .endfor
@@ -237,7 +243,7 @@ CFLAGS+=	-fno-force-addr
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-CFLAGS+=	-I${X11BASE}/include
+#CFLAGS+=	-I${X11BASE}/include
 CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
 		--with-x11incdir=${X11BASE}/include
 .else
@@ -264,10 +270,6 @@ CATEGORIES+=	ipv6
 PLIST_SUB+=	GMPLAYER=""
 .if !defined(WITHOUT_SKINS)
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/skins:${PORTSDIR}/multimedia/mplayer-skins
-.endif
-
-.if ( ${OSVERSION} < 500000 )
-USE_GCC=	3.4
 .endif
 
 USE_GNOME+=	gtk20
@@ -319,6 +321,12 @@ CONFIGURE_ARGS+=	--enable-fribidi
 CONFIGURE_ARGS+=	--disable-fribidi
 .endif
 
+.if defined(WITH_LIBCDIO) && !defined(WITH_CDPARANOIA)
+BUILD_DEPENDS+=	${LOCALBASE}/include/cdio/cdio.h:${PORTSDIR}/sysutils/libcdio
+.else
+CONFIGURE_ARGS+=	--disable-libcdio
+.endif
+
 .if defined(WITH_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 .else
@@ -340,7 +348,6 @@ CONFIGURE_ARGS+=	--disable-gif
 
 .if defined(WITH_LIBDV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
-
 CONFIGURE_ARGS+=	--enable-libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
@@ -351,6 +358,12 @@ LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--enable-lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
+.endif
+
+.if defined(WITH_TWOLAME)
+LIB_DEPENDS+=	twolame.0:${PORTSDIR}/audio/twolame
+.else
+CONFIGURE_ARGS+=	--disable-twolame
 .endif
 
 .if defined(WITH_MAD)
@@ -402,11 +415,23 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--disable-jack
+.endif
+
 .if defined(WITH_POLYP)
 CONFIGURE_ARGS+=	--enable-polyp
 LIB_DEPENDS+=		polyp-0.7.0:${PORTSDIR}/audio/polypaudio
 .else
 CONFIGURE_ARGS+=	--disable-polyp
+.endif
+
+.if defined(WITH_OPENAL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+.else
+CONFIGURE_ARGS+=	--disable-openal
 .endif
 
 .if !defined(WITH_TREMOR)
@@ -459,6 +484,24 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 CONFIGURE_ARGS+=	--disable-libdts
 .endif
 
+.if defined(WITH_LIBMPCDEC)
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+.else
+CONFIGURE_ARGS+=	--disable-musepack
+.endif
+
+.if defined(WITH_FAAC)
+LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+.else
+CONFIGURE_ARGS+=	--disable-faac
+.endif
+
+.if defined(WITH_LADSPA)
+RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+.else
+CONFIGURE_ARGS+=	--disable-ladspa
+.endif
+
 .if !defined(WITHOUT_SPEEX)
 CONFIGURE_ARGS+=	--enable-speex
 LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
@@ -471,7 +514,9 @@ CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
 			--enable-freetype
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
 .else
+.if !defined(WITHOUT_X11)
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
+.endif
 CONFIGURE_ARGS+=	--disable-freetype
 .endif
 
@@ -480,6 +525,12 @@ BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
 CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
 .else
 CONFIGURE_ARGS+=--disable-xanim
+.endif
+
+.if defined(WITH_LIBLZO)
+LIB_DEPENDS+=		lzo.1:${PORTSDIR}/archivers/lzo
+.else
+CONFIGURE_ARGS+=	--disable-liblzo
 .endif
 
 .if defined(WITH_DVD_DEVICE)

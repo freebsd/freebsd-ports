@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Jun 15 10:20:29 2006
-+++ Makefile	Thu Jun 15 10:27:06 2006
-@@ -446,47 +446,11 @@
+--- Makefile.orig	Mon Oct 23 00:32:31 2006
++++ Makefile	Tue Oct 24 21:35:42 2006
+@@ -414,43 +414,11 @@
  	$(MAKE) -C libdha install
  	$(MAKE) -C vidix install
  endif
@@ -24,18 +24,14 @@
 -	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
 -	for i in $(MAN_LANG); do \
 -		if test "$$i" = en ; then \
--			ln -sf mplayer.1 $(MANDIR)/man1/mencoder.1 ; \
+-			cd $(MANDIR)/man1 && ln -sf mplayer.1 mencoder.1 ; \
 -		else \
--			ln -sf mplayer.1 $(MANDIR)/$$i/man1/mencoder.1 ; \
+-			cd $(MANDIR)/$$i/man1 && ln -sf mplayer.1 mencoder.1 ; \
 -		fi ; \
 -	done
 -endif
 -	@$(INSTALL) -d $(DATADIR)
 -	@$(INSTALL) -d $(DATADIR)/font
--	@if test ! -f $(DATADIR)/font/font.desc ; then \
--	echo "*** Download font at http://www.mplayerhq.hu/dload.html" ; \
--	echo "*** for OSD/Subtitles support and extract to $(DATADIR)/font/" ; \
--	fi
 -ifeq ($(GUI),yes)
 -	@$(INSTALL) -d $(DATADIR)/skins
 -	@echo "*** Download skin(s) at http://www.mplayerhq.hu/dload.html"
