@@ -1,54 +1,93 @@
-%%DTCROOT%%/Makefile
 %%DTCROOT%%/admin/checkbind.sh
 %%DTCROOT%%/admin/404.php
-%%DTCROOT%%/admin/dtcrm/main.php
-%%DTCROOT%%/admin/dtcrm/product_manager.php
-%%DTCROOT%%/admin/dtcrm/submit_to_sql.php
+%%DTCROOT%%/admin/cpugraph/createrrd.sh
+%%DTCROOT%%/admin/cpugraph/get_cpu_load.sh
+%%DTCROOT%%/admin/accesslog.php
 %%DTCROOT%%/admin/bw_per_month.php
+%%DTCROOT%%/admin/cpugraph.cgi
 %%DTCROOT%%/admin/cron.php
 %%DTCROOT%%/admin/deamons_state.php
 %%DTCROOT%%/admin/deamons_state_strings.php
 %%DTCROOT%%/admin/favicon.ico
 %%DTCROOT%%/admin/index.php
+%%DTCROOT%%/admin/mailgraph.cgi
+%%DTCROOT%%/admin/memgraph.cgi
+%%DTCROOT%%/admin/netusegraph.cgi
+%%DTCROOT%%/admin/patch_saslatuhd_startup
+%%DTCROOT%%/admin/queuegraph.cgi
+%%DTCROOT%%/admin/reminders.php
+%%DTCROOT%%/admin/updateChroot.sh
 %%DTCROOT%%/admin/view_waitingusers.php
+%%DTCROOT%%/admin/dtcrm/main.php
+%%DTCROOT%%/admin/dtcrm/product_manager.php
+%%DTCROOT%%/admin/dtcrm/submit_to_sql.php
+%%DTCROOT%%/admin/genfiles/change_debconf_domain.sh
+%%DTCROOT%%/admin/genfiles/change_debconf_ip.sh
+%%DTCROOT%%/admin/genfiles/gen_awstats.php
 %%DTCROOT%%/admin/genfiles/gen_backup_script.php
 %%DTCROOT%%/admin/genfiles/gen_email_account.php
 %%DTCROOT%%/admin/genfiles/gen_maildrop_userdb.php
+%%DTCROOT%%/admin/genfiles/gen_mailfilter.sh
 %%DTCROOT%%/admin/genfiles/gen_named_files.php
 %%DTCROOT%%/admin/genfiles/gen_perso_vhost.php
 %%DTCROOT%%/admin/genfiles/gen_postfix_email_account.php
 %%DTCROOT%%/admin/genfiles/gen_pro_vhost.php
 %%DTCROOT%%/admin/genfiles/gen_qmail_email_account.php
 %%DTCROOT%%/admin/genfiles/gen_sasl.sh
+%%DTCROOT%%/admin/genfiles/gen_ssh_account.php
 %%DTCROOT%%/admin/genfiles/gen_webalizer_stat.php
 %%DTCROOT%%/admin/genfiles/genfiles.php
+%%DTCROOT%%/admin/genfiles/mailfilter_vacation_template
 %%DTCROOT%%/admin/genfiles/remote_mail_list.php
-%%DTCROOT%%/admin/genfiles/gen_awstats.php
-%%DTCROOT%%/admin/genfiles/gen_mailfilter.sh
+%%DTCROOT%%/admin/genfiles/gen_customer_ssl_cert.sh
+%%DTCROOT%%/admin/inc/adddomain.png
+%%DTCROOT%%/admin/inc/databases.png
+%%DTCROOT%%/admin/inc/dedic-server.png
 %%DTCROOT%%/admin/inc/domains.png
-%%DTCROOT%%/admin/inc/ftp-accounts.png
 %%DTCROOT%%/admin/inc/draw_user_admin.php
 %%DTCROOT%%/admin/inc/dtc_config.php
 %%DTCROOT%%/admin/inc/dtc_config_strings.php
-%%DTCROOT%%/admin/inc/mailboxs.png
 %%DTCROOT%%/admin/inc/folder.png
+%%DTCROOT%%/admin/inc/ftp-accounts.png
 %%DTCROOT%%/admin/inc/help.png
 %%DTCROOT%%/admin/inc/img.php
-%%DTCROOT%%/admin/inc/my-account.png
-%%DTCROOT%%/admin/inc/nav.php
-%%DTCROOT%%/admin/inc/package-installer.png
-%%DTCROOT%%/admin/inc/submit_root_querys.php
-%%DTCROOT%%/admin/inc/adddomain.png
-%%DTCROOT%%/admin/inc/arial.ttf
-%%DTCROOT%%/admin/inc/databases.png
+%%DTCROOT%%/admin/inc/img_alt.php
+%%DTCROOT%%/admin/inc/img_alt_skin.php
+%%DTCROOT%%/admin/inc/imglong.png
+%%DTCROOT%%/admin/inc/imgshort.png
+%%DTCROOT%%/admin/inc/mailboxs.png
 %%DTCROOT%%/admin/inc/mailing-lists.png
+%%DTCROOT%%/admin/inc/my-account.png
 %%DTCROOT%%/admin/inc/nameservers.png
+%%DTCROOT%%/admin/inc/nav.php
 %%DTCROOT%%/admin/inc/nickhandles.png
+%%DTCROOT%%/admin/inc/package-installer.png
 %%DTCROOT%%/admin/inc/password.png
 %%DTCROOT%%/admin/inc/reseller.png
+%%DTCROOT%%/admin/inc/ssh-accounts.png
 %%DTCROOT%%/admin/inc/stats.png
 %%DTCROOT%%/admin/inc/subdomains.png
+%%DTCROOT%%/admin/inc/submit_root_querys.php
+%%DTCROOT%%/admin/inc/ticket.png
 %%DTCROOT%%/admin/inc/tools.png
+%%DTCROOT%%/admin/inc/virtual-server.png
+%%DTCROOT%%/admin/memgraph/createrrd.sh
+%%DTCROOT%%/admin/memgraph/get_meminfo.sh
+%%DTCROOT%%/admin/netusegraph/createrrd.sh
+%%DTCROOT%%/admin/netusegraph/get_net_usage.sh
+%%DTCROOT%%/admin/queuegraph/count_postfix.sh
+%%DTCROOT%%/admin/queuegraph/count_qmail.sh
+%%DTCROOT%%/admin/queuegraph/createrrd.sh
+%%DTCROOT%%/admin/reminders_msg/shared_expired_already.txt
+%%DTCROOT%%/admin/reminders_msg/shared_expired_last_warning.txt
+%%DTCROOT%%/admin/reminders_msg/shared_expired_shutdown.txt
+%%DTCROOT%%/admin/reminders_msg/shared_expired_today.txt
+%%DTCROOT%%/admin/reminders_msg/shared_will_expire.txt
+%%DTCROOT%%/admin/reminders_msg/vps_expired_already.txt
+%%DTCROOT%%/admin/reminders_msg/vps_expired_last_warning.txt
+%%DTCROOT%%/admin/reminders_msg/vps_expired_shutdown.txt
+%%DTCROOT%%/admin/reminders_msg/vps_expired_today.txt
+%%DTCROOT%%/admin/reminders_msg/vps_will_expire.txt
 %%DTCROOT%%/admin/tables/admin.sql
 %%DTCROOT%%/admin/tables/backup.sql
 %%DTCROOT%%/admin/tables/clients.sql
@@ -65,22 +104,37 @@
 %%DTCROOT%%/admin/tables/groups.sql
 %%DTCROOT%%/admin/tables/handle.sql
 %%DTCROOT%%/admin/tables/http_accounting.sql
+%%DTCROOT%%/admin/tables/ip_port_service.sql
+%%DTCROOT%%/admin/tables/mailinglist.sql
 %%DTCROOT%%/admin/tables/nameservers.sql
 %%DTCROOT%%/admin/tables/new_admin.sql
 %%DTCROOT%%/admin/tables/paiement.sql
 %%DTCROOT%%/admin/tables/pending_queries.sql
+%%DTCROOT%%/admin/tables/pending_renewal.sql
 %%DTCROOT%%/admin/tables/pop_access.sql
 %%DTCROOT%%/admin/tables/product.sql
 %%DTCROOT%%/admin/tables/secpayconf.sql
 %%DTCROOT%%/admin/tables/smtp_logs.sql
+%%DTCROOT%%/admin/tables/ssh_access.sql
+%%DTCROOT%%/admin/tables/ssh_groups.sql
+%%DTCROOT%%/admin/tables/ssh_user_group.sql
 %%DTCROOT%%/admin/tables/subdomain.sql
+%%DTCROOT%%/admin/tables/tik_admins.sql
+%%DTCROOT%%/admin/tables/tik_cats.sql
+%%DTCROOT%%/admin/tables/tik_queries.sql
+%%DTCROOT%%/admin/tables/vps.sql
+%%DTCROOT%%/admin/tables/vps_ip.sql
+%%DTCROOT%%/admin/tables/vps_server.sql
 %%DTCROOT%%/admin/tables/whitelist.sql
 %%DTCROOT%%/admin/tables/whois.sql
-%%DTCROOT%%/admin/tables/mailinglist.sql
+%%DTCROOT%%/admin/tables/scheduled_updates.sql
+%%DTCROOT%%/admin/ip_change.sh
 %%DTCROOT%%/admin/dtc_db.php
 %%DTCROOT%%/admin/restor_db.php
 %%DTCROOT%%/client/bw_per_month.php
 %%DTCROOT%%/client/dynip.php
+%%DTCROOT%%/client/enets-notify.php
+%%DTCROOT%%/client/enets_pay_icon.gif
 %%DTCROOT%%/client/favicon.ico
 %%DTCROOT%%/client/img2.php
 %%DTCROOT%%/client/index.php
@@ -88,39 +142,46 @@
 %%DTCROOT%%/client/login.php
 %%DTCROOT%%/client/new_account.php
 %%DTCROOT%%/client/new_account_form.php
+%%DTCROOT%%/client/new_account_renewal.php
 %%DTCROOT%%/client/paypal.php
 %%DTCROOT%%/client/secpaycallback_worldpay.php
+%%DTCROOT%%/client/inc/adddomain.png
 %%DTCROOT%%/client/inc/database.png
+%%DTCROOT%%/client/inc/databases.png
+%%DTCROOT%%/client/inc/dedic-server.png
 %%DTCROOT%%/client/inc/dns.png
 %%DTCROOT%%/client/inc/domain.png
+%%DTCROOT%%/client/inc/domains.png
 %%DTCROOT%%/client/inc/floppy.png
 %%DTCROOT%%/client/inc/folder.png
+%%DTCROOT%%/client/inc/ftp-accounts.png
 %%DTCROOT%%/client/inc/help.png
 %%DTCROOT%%/client/inc/home.png
 %%DTCROOT%%/client/inc/img.php
+%%DTCROOT%%/client/inc/img_alt.php
+%%DTCROOT%%/client/inc/img_alt_skin.php
+%%DTCROOT%%/client/inc/imglong.png
+%%DTCROOT%%/client/inc/imgshort.png
 %%DTCROOT%%/client/inc/mail.png
-%%DTCROOT%%/client/inc/man.png
-%%DTCROOT%%/client/inc/package-installer.png
-%%DTCROOT%%/client/inc/stat.png
-%%DTCROOT%%/client/inc/tool.png
-%%DTCROOT%%/client/inc/tst_icon.png
-%%DTCROOT%%/client/inc/adddomain.png
-%%DTCROOT%%/client/inc/arial.ttf
-%%DTCROOT%%/client/inc/databases.png
-%%DTCROOT%%/client/inc/domains.png
-%%DTCROOT%%/client/inc/ftp-accounts.png
 %%DTCROOT%%/client/inc/mailboxs.png
 %%DTCROOT%%/client/inc/mailing-lists.png
+%%DTCROOT%%/client/inc/man.png
 %%DTCROOT%%/client/inc/my-account.png
 %%DTCROOT%%/client/inc/nameservers.png
 %%DTCROOT%%/client/inc/nickhandles.png
+%%DTCROOT%%/client/inc/package-installer.png
 %%DTCROOT%%/client/inc/password.png
 %%DTCROOT%%/client/inc/reseller.png
+%%DTCROOT%%/client/inc/ssh-accounts.png
+%%DTCROOT%%/client/inc/stat.png
 %%DTCROOT%%/client/inc/stats.png
 %%DTCROOT%%/client/inc/subdomains.png
+%%DTCROOT%%/client/inc/ticket.png
+%%DTCROOT%%/client/inc/tool.png
 %%DTCROOT%%/client/inc/tools.png
+%%DTCROOT%%/client/inc/tst_icon.png
+%%DTCROOT%%/client/inc/virtual-server.png
 %%DTCROOT%%/doc/changelog
-%%DTCROOT%%/doc/INSTALL
 %%DTCROOT%%/doc/LICENSE
 %%DTCROOT%%/doc/bind_conf/etc/bind/db.1.2.3.4
 %%DTCROOT%%/doc/bind_conf/etc/bind/db.0
@@ -130,14 +191,19 @@
 %%DTCROOT%%/doc/bind_conf/etc/bind/db.root
 %%DTCROOT%%/doc/bind_conf/etc/named.conf
 %%DTCROOT%%/doc/bind_conf/db.root
-%%DTCROOT%%/doc/changelog.Debian
-%%DTCROOT%%/doc/copyright
-%%DTCROOT%%/doc/.#todo.1.8
+%%DTCROOT%%/doc/README.gentoo
 %%DTCROOT%%/doc/todo
-%%DTCROOT%%/doc/upgrade_sql_from_beta.sql
+%%DTCROOT%%/doc/update_stable_rtag.sh
 %%DTCROOT%%/doc/daemonconf_howto/ftp_http_logging_to_mysql
 %%DTCROOT%%/doc/daemonconf_howto/my_init.d_qmail.startup.script
 %%DTCROOT%%/doc/daemonconf_howto/qmail_anti_spam_measures
+%%DTCROOT%%/doc/dtc_storefront/README
+%%DTCROOT%%/doc/dtc_storefront/dtc_storefront/dbconnect.php
+%%DTCROOT%%/doc/dtc_storefront/dtc_storefront.php
+%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials-delete.php
+%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials-record.php
+%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials-validate.php
+%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials.php
 %%DTCROOT%%/doc/html/en/addzone.png
 %%DTCROOT%%/doc/html/en/1.html
 %%DTCROOT%%/doc/html/en/2.html
@@ -181,17 +247,25 @@
 %%DTCROOT%%/doc/html/fr/menudtc.png
 %%DTCROOT%%/doc/html/fr/newadmin.png
 %%DTCROOT%%/doc/html/fr/page_top.html
-%%DTCROOT%%/doc/ssl_cert.sh.txt
+%%DTCROOT%%/doc/iglobalwall/doc.txt
+%%DTCROOT%%/doc/iglobalwall/iglobalwall.tar.gz
+%%DTCROOT%%/doc/iglobalwall/mail_header.rar
+%%DTCROOT%%/doc/dns_transfer.sh
+%%DTCROOT%%/doc/build_debian_upload.sh
 %%DTCROOT%%/email/index.php
 %%DTCROOT%%/email/api.php
+%%DTCROOT%%/email/inc/domain.png
+%%DTCROOT%%/email/inc/domains.png
 %%DTCROOT%%/email/inc/img.php
 %%DTCROOT%%/email/login.php
 %%DTCROOT%%/email/submit_to_sql_dtcemail.php
-%%DTCROOT%%/email/gfx
-%%DTCROOT%%/email/imgcache
-%%DTCROOT%%/shared/404_template/index.php
+%%DTCROOT%%/Makefile
+%%DTCROOT%%/shared/404_template/expired.php
 %%DTCROOT%%/shared/404_template/404.php
+%%DTCROOT%%/shared/404_template/index.php
 %%DTCROOT%%/shared/autoSQLconfig.php
+%%DTCROOT%%/shared/cyradm.php
+%%DTCROOT%%/shared/default_admin_site.php
 %%DTCROOT%%/shared/dtc_lib.php
 %%DTCROOT%%/shared/upgrade_sql.php
 %%DTCROOT%%/shared/drawlib/anotherDtc.php
@@ -223,9 +297,15 @@
 %%DTCROOT%%/shared/dtcrm/srs_base.php
 %%DTCROOT%%/shared/dtcrm/srs_nameserver.php
 %%DTCROOT%%/shared/dtcrm/srs_registernames.php
+%%DTCROOT%%/shared/dtcrm/strings.php
 %%DTCROOT%%/shared/dtcrm/submit_to_sql.php
 %%DTCROOT%%/shared/dtcrm/todo
-%%DTCROOT%%/shared/dtcrm/strings.php
+%%DTCROOT%%/shared/dtcrm/webnic.cc/domainQuery.php
+%%DTCROOT%%/shared/dtcrm/webnic.cc/domainRegistration.php
+%%DTCROOT%%/shared/dtcrm/webnic.cc/test.php
+%%DTCROOT%%/shared/dtcrm/webnic.cc/webnic_base.php
+%%DTCROOT%%/shared/dtcrm/webnic.cc/webnic_settings.php
+%%DTCROOT%%/shared/dtcrm/webnic.cc/webnic_submit.php
 %%DTCROOT%%/shared/gfx/dtc_logo.gif
 %%DTCROOT%%/shared/gfx/dtc.css
 %%DTCROOT%%/shared/gfx/bar/middle_n.png
@@ -248,10 +328,14 @@
 %%DTCROOT%%/shared/gfx/dtc/generate_web2.gif
 %%DTCROOT%%/shared/gfx/dtc/reinit_named.gif
 %%DTCROOT%%/shared/gfx/dtc_logo_small.gif
+%%DTCROOT%%/shared/gfx/generate_pass.png
+%%DTCROOT%%/shared/gfx/see_password.png
 %%DTCROOT%%/shared/gfx/stock_add_24.png
 %%DTCROOT%%/shared/gfx/stock_apply_20.png
 %%DTCROOT%%/shared/gfx/stock_save_24.png
 %%DTCROOT%%/shared/gfx/stock_trash_24.png
+%%DTCROOT%%/shared/gfx/tucows.jpg
+%%DTCROOT%%/shared/gfx/wz_tooltip.js
 %%DTCROOT%%/shared/gfx/language/en/pub/banner_alight.gif
 %%DTCROOT%%/shared/gfx/language/en/button_en.gif
 %%DTCROOT%%/shared/gfx/language/de.gif
@@ -262,7 +346,10 @@
 %%DTCROOT%%/shared/gfx/language/hu.gif
 %%DTCROOT%%/shared/gfx/language/it.gif
 %%DTCROOT%%/shared/gfx/language/nl.gif
+%%DTCROOT%%/shared/gfx/language/pl.png
+%%DTCROOT%%/shared/gfx/language/pt.gif
 %%DTCROOT%%/shared/gfx/language/ru.gif
+%%DTCROOT%%/shared/gfx/language/se.png
 %%DTCROOT%%/shared/gfx/language/zh.gif
 %%DTCROOT%%/shared/gfx/language/fr/pub/banner_alight.gif
 %%DTCROOT%%/shared/gfx/language/fr/button_fr.gif
@@ -270,17 +357,25 @@
 %%DTCROOT%%/shared/gfx/language/nl/button_en.gif
 %%DTCROOT%%/shared/gfx/language/ru/pub/banner_alight.gif
 %%DTCROOT%%/shared/gfx/language/ru/button_en.gif
-%%DTCROOT%%/shared/gfx/language/pl.png
 %%DTCROOT%%/shared/gfx/menu/admins.png
 %%DTCROOT%%/shared/gfx/menu/bw_icon.png
+%%DTCROOT%%/shared/gfx/menu/client-interface.png
 %%DTCROOT%%/shared/gfx/menu/config.gif
 %%DTCROOT%%/shared/gfx/menu/config_panel.png
 %%DTCROOT%%/shared/gfx/menu/crm.png
 %%DTCROOT%%/shared/gfx/menu/daemons.png
+%%DTCROOT%%/shared/gfx/menu/domain-config.png
 %%DTCROOT%%/shared/gfx/menu/product_manager.png
 %%DTCROOT%%/shared/gfx/menu/recycle.gif
-%%DTCROOT%%/shared/gfx/menu/users.gif
+%%DTCROOT%%/shared/gfx/menu/renewals.png
 %%DTCROOT%%/shared/gfx/menu/user-editor.png
+%%DTCROOT%%/shared/gfx/menu/users.gif
+%%DTCROOT%%/shared/gfx/pagetop/dtc_banner.gif
+%%DTCROOT%%/shared/gfx/pagetop/dtc_banner_end.gif
+%%DTCROOT%%/shared/gfx/pagetop/dtc_logo.gif
+%%DTCROOT%%/shared/gfx/pagetop/logoend.gif
+%%DTCROOT%%/shared/gfx/pagetop/logofond.gif
+%%DTCROOT%%/shared/gfx/pagetop/logostart.gif
 %%DTCROOT%%/shared/gfx/securepay/poweredByWorldPay.gif
 %%DTCROOT%%/shared/gfx/skin/darkblue/background.gif
 %%DTCROOT%%/shared/gfx/skin/darkblue/bgcolor.php
@@ -324,6 +419,8 @@
 %%DTCROOT%%/shared/gfx/skin/green2/corner_2.gif
 %%DTCROOT%%/shared/gfx/skin/green2/corner_3.gif
 %%DTCROOT%%/shared/gfx/skin/green2/corner_4.gif
+%%DTCROOT%%/shared/gfx/skin/green2/imglong.png
+%%DTCROOT%%/shared/gfx/skin/green2/imgshort.png
 %%DTCROOT%%/shared/gfx/skin/green2/skin.css
 %%DTCROOT%%/shared/gfx/skin/green2/skin.php
 %%DTCROOT%%/shared/gfx/skin/green_gpl/icons/debian.gif
@@ -362,6 +459,8 @@
 %%DTCROOT%%/shared/gfx/skin/iglobal/corner_bottom_right.gif
 %%DTCROOT%%/shared/gfx/skin/iglobal/corner_top_left.gif
 %%DTCROOT%%/shared/gfx/skin/iglobal/corner_top_right.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/imglong.png
+%%DTCROOT%%/shared/gfx/skin/iglobal/imgshort.png
 %%DTCROOT%%/shared/gfx/skin/iglobal/skin.css
 %%DTCROOT%%/shared/gfx/skin/iglobal/skin.php
 %%DTCROOT%%/shared/gfx/skin/muedgrey/amp_style.css
@@ -376,6 +475,8 @@
 %%DTCROOT%%/shared/gfx/skin/muedgrey/corner_3.gif
 %%DTCROOT%%/shared/gfx/skin/muedgrey/corner_4.gif
 %%DTCROOT%%/shared/gfx/skin/muedgrey/degrade.jpg
+%%DTCROOT%%/shared/gfx/skin/muedgrey/imglong.png
+%%DTCROOT%%/shared/gfx/skin/muedgrey/imgshort.png
 %%DTCROOT%%/shared/gfx/skin/muedgrey/skin.css
 %%DTCROOT%%/shared/gfx/skin/muedgrey/skin.php
 %%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/background.png
@@ -390,16 +491,11 @@
 %%DTCROOT%%/shared/gfx/skin/tex/bgcolor.php
 %%DTCROOT%%/shared/gfx/skin/tex/bgtitlewin.png
 %%DTCROOT%%/shared/gfx/skin/tex/bgwin.png
+%%DTCROOT%%/shared/gfx/skin/tex/imglong.png
+%%DTCROOT%%/shared/gfx/skin/tex/imgshort.png
+%%DTCROOT%%/shared/gfx/skin/tex/pagetop.html
 %%DTCROOT%%/shared/gfx/skin/tex/skin.css
 %%DTCROOT%%/shared/gfx/skin/tex/skin.php
-%%DTCROOT%%/shared/gfx/skin/tex/pagetop.html
-%%DTCROOT%%/shared/gfx/pagetop/dtc_banner.gif
-%%DTCROOT%%/shared/gfx/pagetop/dtc_banner_end.gif
-%%DTCROOT%%/shared/gfx/pagetop/dtc_logo.gif
-%%DTCROOT%%/shared/gfx/pagetop/logoend.gif
-%%DTCROOT%%/shared/gfx/pagetop/logofond.gif
-%%DTCROOT%%/shared/gfx/pagetop/logostart.gif
-%%DTCROOT%%/shared/gfx/tucows.jpg
 %%DTCROOT%%/shared/inc/forms/admin_stats.php
 %%DTCROOT%%/shared/inc/forms/database.php
 %%DTCROOT%%/shared/inc/forms/dns.php
@@ -408,55 +504,97 @@
 %%DTCROOT%%/shared/inc/forms/email.php
 %%DTCROOT%%/shared/inc/forms/ftp.php
 %%DTCROOT%%/shared/inc/forms/lists.php
+%%DTCROOT%%/shared/inc/forms/lists_strings.php
 %%DTCROOT%%/shared/inc/forms/my_account.php
 %%DTCROOT%%/shared/inc/forms/packager.php
-%%DTCROOT%%/shared/inc/forms/root_admin.php
-%%DTCROOT%%/shared/inc/forms/subdomain.php
 %%DTCROOT%%/shared/inc/forms/reseller.php
+%%DTCROOT%%/shared/inc/forms/root_admin.php
+%%DTCROOT%%/shared/inc/forms/ssh.php
+%%DTCROOT%%/shared/inc/forms/subdomain.php
+%%DTCROOT%%/shared/inc/forms/ticket.php
+%%DTCROOT%%/shared/inc/forms/tools.php
+%%DTCROOT%%/shared/inc/forms/vps.php
+%%DTCROOT%%/shared/inc/forms/vps_strings.php
 %%DTCROOT%%/shared/inc/accounting.php
 %%DTCROOT%%/shared/inc/dbconect.php
+%%DTCROOT%%/shared/inc/domain_export.php
 %%DTCROOT%%/shared/inc/draw.php
 %%DTCROOT%%/shared/inc/fetch.php
 %%DTCROOT%%/shared/inc/fetchmail.php
+%%DTCROOT%%/shared/inc/nusoap.php
+%%DTCROOT%%/shared/inc/skin.class.php
 %%DTCROOT%%/shared/inc/submit_to_sql.php
+%%DTCROOT%%/shared/inc/tree_mem_to_db.php
+%%DTCROOT%%/shared/inc/vps.php
 %%DTCROOT%%/shared/inc/sql/database.php
+%%DTCROOT%%/shared/inc/sql/database_strings.php
 %%DTCROOT%%/shared/inc/sql/dns.php
 %%DTCROOT%%/shared/inc/sql/domain_info.php
+%%DTCROOT%%/shared/inc/sql/domain_info_strings.php
 %%DTCROOT%%/shared/inc/sql/email.php
+%%DTCROOT%%/shared/inc/sql/email_strings.php
 %%DTCROOT%%/shared/inc/sql/ftp.php
-%%DTCROOT%%/shared/inc/sql/subdomain.php
-%%DTCROOT%%/shared/inc/sql/reseller.php
+%%DTCROOT%%/shared/inc/sql/ftp_strings.php
 %%DTCROOT%%/shared/inc/sql/lists.php
-%%DTCROOT%%/shared/inc/.#submit_to_sql.php.1.26
-%%DTCROOT%%/shared/inc/tree_mem_to_db.php
-%%DTCROOT%%/shared/package-installer/phpbb/phpBB-2.0.17.tar.bz2
-%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-install.php
+%%DTCROOT%%/shared/inc/sql/reseller.php
+%%DTCROOT%%/shared/inc/sql/ssh.php
+%%DTCROOT%%/shared/inc/sql/ssh_strings.php
+%%DTCROOT%%/shared/inc/sql/subdomain.php
+%%DTCROOT%%/shared/inc/sql/subdomain_strings.php
+%%DTCROOT%%/shared/inc/sql/ticket.php
+%%DTCROOT%%/shared/inc/sql/vps.php
+%%DTCROOT%%/shared/inc/sql/vps_strings.php
+%%DTCROOT%%/shared/package-installer/drupal/drupal-4.7.2.tar.gz
+%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-install.php
 %%DTCROOT%%/shared/package-installer/horde/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/horde/horde-3.0.4.tar.gz
 %%DTCROOT%%/shared/package-installer/horde/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/horde/horde-3.0.4.tar.gz
+%%DTCROOT%%/shared/package-installer/joomla/Joomla_1.0.8-Stable-Full_Package.tar.bz2
+%%DTCROOT%%/shared/package-installer/joomla/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/joomla/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/joomla_pl/Joomla_1.0.10_rev2.tar.bz2
+%%DTCROOT%%/shared/package-installer/joomla_pl/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/joomla_pl/dtc-pkg-install.php
 %%DTCROOT%%/shared/package-installer/oscommerce/dtc-pkg-info.php
 %%DTCROOT%%/shared/package-installer/oscommerce/dtc-pkg-install.php
 %%DTCROOT%%/shared/package-installer/oscommerce/oscommerce-2.2ms2.tar.gz
+%%DTCROOT%%/shared/package-installer/oscommerce-creloaded/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/oscommerce-creloaded/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/oscommerce-creloaded/oscommerce-creloaded_6.15-1.tar.gz
+%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/phpbb/phpBB-2.0.17.tar.bz2
 %%DTCROOT%%/shared/package-installer/phpnuke/dtc-pkg-info.php
 %%DTCROOT%%/shared/package-installer/phpnuke/dtc-pkg-install.php
 %%DTCROOT%%/shared/package-installer/phpnuke/phpnuke-7.7.tar.gz
-%%DTCROOT%%/shared/package-installer/drupal/drupal-4.6.3.tar.gz
-%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-info.php
-%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/phpsurveyor/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/phpsurveyor/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/phpsurveyor/phpsurveyor.tar.gz
+%%DTCROOT%%/shared/package-installer/smf/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/smf/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/smf/smf.tar.bz2
+%%DTCROOT%%/shared/package-installer/vtiger/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/vtiger/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/vtiger/vtigercrm-5.0.0.tar.gz
+%%DTCROOT%%/shared/package-installer/wanewsletter/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/wanewsletter/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/wanewsletter/wanewsletter-2.3.0.tar.gz
+%%DTCROOT%%/shared/securepay/gateways/enets.php
 %%DTCROOT%%/shared/securepay/gateways/paypal.php
 %%DTCROOT%%/shared/securepay/gateways/worldpay.php
 %%DTCROOT%%/shared/securepay/RENAME_ME_paiement_config.php
 %%DTCROOT%%/shared/securepay/paiement.php
 %%DTCROOT%%/shared/securepay/pay_functions.php
 %%DTCROOT%%/shared/template/dtc_logo.gif
-%%DTCROOT%%/shared/template/index.php
 %%DTCROOT%%/shared/template/favicon.ico
+%%DTCROOT%%/shared/template/index.php
+%%DTCROOT%%/shared/vars/clear_lang_array.php
+%%DTCROOT%%/shared/vars/error_strings.php
 %%DTCROOT%%/shared/vars/global_vars.php
 %%DTCROOT%%/shared/vars/lang.php
 %%DTCROOT%%/shared/vars/strings.php
 %%DTCROOT%%/shared/vars/table_names.php
-%%DTCROOT%%/shared/default_admin_site.php
 %%DTCROOT%%/shared/dtc_version.php
 %%DTCROOT%%/admin/gfx
 %%DTCROOT%%/admin/imgcache
@@ -464,13 +602,21 @@
 %%DTCROOT%%/client/imgcache
 sbin/dtc-install
 sbin/dtc-deinstall
+/share
 @dirrm %%DTCROOT%%/shared/vars
 @dirrm %%DTCROOT%%/shared/template
 @dirrm %%DTCROOT%%/shared/securepay/gateways
 @dirrm %%DTCROOT%%/shared/securepay
+@dirrm %%DTCROOT%%/shared/package-installer/wanewsletter
+@dirrm %%DTCROOT%%/shared/package-installer/vtiger
+@dirrm %%DTCROOT%%/shared/package-installer/smf
+@dirrm %%DTCROOT%%/shared/package-installer/phpsurveyor
 @dirrm %%DTCROOT%%/shared/package-installer/phpnuke
 @dirrm %%DTCROOT%%/shared/package-installer/phpbb
+@dirrm %%DTCROOT%%/shared/package-installer/oscommerce-creloaded
 @dirrm %%DTCROOT%%/shared/package-installer/oscommerce
+@dirrm %%DTCROOT%%/shared/package-installer/joomla_pl
+@dirrm %%DTCROOT%%/shared/package-installer/joomla
 @dirrm %%DTCROOT%%/shared/package-installer/horde
 @dirrm %%DTCROOT%%/shared/package-installer/drupal
 @dirrm %%DTCROOT%%/shared/package-installer
@@ -478,7 +624,6 @@ sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/shared/inc/forms
 @dirrm %%DTCROOT%%/shared/inc
 @dirrm %%DTCROOT%%/shared/imgcache
-@dirrm %%DTCROOT%%/shared/gfx/usermenu
 @dirrm %%DTCROOT%%/shared/gfx/skin/tex
 @dirrm %%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla
 @dirrm %%DTCROOT%%/shared/gfx/skin/muedgrey
@@ -505,6 +650,7 @@ sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/shared/gfx/dtc
 @dirrm %%DTCROOT%%/shared/gfx/bar
 @dirrm %%DTCROOT%%/shared/gfx
+@dirrm %%DTCROOT%%/shared/dtcrm/webnic.cc
 @dirrm %%DTCROOT%%/shared/dtcrm/srs
 @dirrm %%DTCROOT%%/shared/dtcrm
 @dirrm %%DTCROOT%%/shared/drawlib
@@ -512,22 +658,28 @@ sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/shared
 @dirrm %%DTCROOT%%/email/inc
 @dirrm %%DTCROOT%%/email
+@dirrm %%DTCROOT%%/doc/iglobalwall
 @dirrm %%DTCROOT%%/doc/html/fr
 @dirrm %%DTCROOT%%/doc/html/en
 @dirrm %%DTCROOT%%/doc/html
+@dirrm %%DTCROOT%%/doc/dtc_storefront/dtc_storefront
+@dirrm %%DTCROOT%%/doc/dtc_storefront
 @dirrm %%DTCROOT%%/doc/daemonconf_howto
 @dirrm %%DTCROOT%%/doc/bind_conf/etc/bind
 @dirrm %%DTCROOT%%/doc/bind_conf/etc
 @dirrm %%DTCROOT%%/doc/bind_conf
 @dirrm %%DTCROOT%%/doc
 @dirrm %%DTCROOT%%/client/inc
-@dirrm %%DTCROOT%%/client/gateways
 @dirrm %%DTCROOT%%/client
 @dirrm %%DTCROOT%%/admin/tables
+@dirrm %%DTCROOT%%/admin/reminders_msg
+@dirrm %%DTCROOT%%/admin/queuegraph
+@dirrm %%DTCROOT%%/admin/netusegraph
+@dirrm %%DTCROOT%%/admin/memgraph
 @dirrm %%DTCROOT%%/admin/inc
 @dirrm %%DTCROOT%%/admin/genfiles
 @dirrm %%DTCROOT%%/admin/dtcrm
-@dirrm %%DTCROOT%%/admin
+@dirrm %%DTCROOT%%/admin/cpugraph
 @dirrm %%DTCROOT%%/etc/zones
 @dirrm %%DTCROOT%%/etc
 @dirrm %%DTCROOT%%
