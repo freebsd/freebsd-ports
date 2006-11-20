@@ -1239,6 +1239,7 @@ citadel		ports/net/citadel
 citrix_ica	ports/net/citrix_ica
 cjc		ports/net-im/cjc
 cjk-lyx		ports/print/cjk-lyx
+ck4up		ports/sysutils/ck4up
 cksfv		ports/security/cksfv
 cl-asdf		ports/devel/cl-asdf
 cl-asdf-clisp	ports/devel/cl-asdf-clisp
