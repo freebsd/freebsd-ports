@@ -1,0 +1,7 @@
+bin/IMB-EXT
+bin/IMB-IO
+bin/IMB-MPI1
+%%PORTDOCS%%%%DOCSDIR%%/IMB_ug-3.0.pdf
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/use-of-trademark-license.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

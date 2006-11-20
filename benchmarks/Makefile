@@ -16,6 +16,7 @@
     SUBDIR += himenobench
     SUBDIR += hpl
     SUBDIR += httperf
+    SUBDIR += imb
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += iperf
