@@ -59,7 +59,6 @@ then
 	TMP_FILE2=`${MKTEMP} DTC_uninstall.crontab.XXXXXX` || exit 1
 	grep -v "Configured by DTC" $PATH_CRONTAB_CONF > $TMP_FILE
 	grep -v "cd /usr/share/dtc/admin; " $TMP_FILE > $TMP_FILE2
-	cp -f $PATH_NAMED_CONF $PATH_NAMED_CONF.DTC.removed
 	# don't rm the original file, just empty it so we keep permissions
 	echo -n > $PATH_CRONTAB_CONF
 	cat < $TMP_FILE2 >> $PATH_CRONTAB_CONF
@@ -71,18 +70,16 @@ if grep "Configured by DTC" $PATH_NAMED_CONF >/dev/null
 then
 	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
 		echo "===> Uninstalling inclusion from named.conf"
-		echo "removing \"Configured by DTC\" and include \""${PATH_DTC_ETC}/named.conf"\" lines"
 	fi
 	TMP_FILE=`${MKTEMP} DTC_uninstall.named.conf.XXXXXX` || exit 1
 	TMP_FILE2=`${MKTEMP} DTC_uninstall.named.conf.XXXXXX` || exit 1
 	grep -v "Configured by DTC" $PATH_NAMED_CONF > $TMP_FILE
 	grep -v "include \"$PATH_DTC_ETC/named.conf\"" $TMP_FILE > $TMP_FILE2
 	cp -f $PATH_NAMED_CONF $PATH_NAMED_CONF.DTC.removed
-	# don't purge the original file, just empty it
+	# don't rm the original file, just empty it
 	echo -n > $PATH_NAMED_CONF
 	cat < $TMP_FILE2 >> $PATH_NAMED_CONF
-	rm -f $TMP_FILE
-	rm -f $TMP_FILE2
+	rm -f $TMP_FILE $TMP_FILE2
 fi
 
 #
@@ -110,6 +107,15 @@ then
 		cat $PATH_HTTPD_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
 		cat < $TMP_FILE >$PATH_HTTPD_CONF
 		rm $TMP_FILE
+	fi
+fi
+
+if [ -e /etc/apache2/ports.conf ] ; then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Uninstalling ports.conf"
+	fi
+	if [ -e /etc/apache2/ports.conf.DTC_backup ] ;then
+		cat </etc/apache2/ports.conf.DTC_backup /etc/apache2/ports.conf
 	fi
 fi
 
@@ -196,8 +202,34 @@ then
 fi
 
 #
+# uninstall postfix/master.cf
+#
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling inclusion from postfix/master.cf"
+fi
+if grep "Configured by DTC" ${PATH_POSTFIX_ETC}/master.cf >/dev/null 2>&1
+then
+	start_line=`grep -n "Configured by DTC" ${PATH_POSTFIX_ETC}/master.cf | cut -d":" -f1`
+	end_line=`grep -n "End of DTC configuration" ${PATH_POSTFIX_ETC}/master.cf | cut -d":" -f1`
+	nbr_line=`cat ${PATH_POSTFIX_ETC}/master.cf | wc -l`
+	TMP_FILE=`${MKTEMP} DTC_uninstall.postfix.conf.XXXXXX` || exit 1
+	cat ${PATH_POSTFIX_ETC}/master.cf | head -n $(($start_line - 1 )) > $TMP_FILE
+	cat ${PATH_POSTFIX_ETC}/master.cf | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+	cp -f ${PATH_POSTFIX_ETC}/master.cf ${PATH_POSTFIX_ETC}/master.cf.DTC.removed
+	echo -n > ${PATH_POSTFIX_ETC}/master.cf
+	cat < $TMP_FILE >> ${PATH_POSTFIX_ETC}/master.cf
+	rm $TMP_FILE
+fi
+
+#
 # uninstall amavis/amavisd.conf
 #
+
+PATH_AMAVISD_ETC=`dirname $PATH_AMAVISD_CONF`
+# if there is no amavisd conf, but there is a conf.d, delete a 99-dtc file
+if [ ! -f "$PATH_AMAVISD_CONF" -a -e $PATH_AMAVISD_ETC/conf.d/99-dtc ]; then
+        rm $PATH_AMAVISD_ETC/conf.d/99-dtc
+fi
 
 if [ ""$VERBOSE_INSTALL = "yes" ] ;then
 	echo "===> Uninstalling inclusion from amavis/amavisd.conf"
@@ -262,3 +294,162 @@ then
 		cp -f /etc/poppasswd.DTC.backup /etc/poppasswd
 	fi
 fi
+
+# Uninstall sudoers and shell
+# check for some path defaults...
+if [ -z "$PATH_SUDO" ]; then
+        PATH_SUDO=`which sudo`
+fi
+if [ -z "$PATH_CHROOT" ]; then
+        PATH_CHROOT=`which chroot`
+fi
+if [ -z "$PATH_SHELLS_CONF" ]; then
+        PATH_SHELLS_CONF=/etc/shells
+fi
+if [ -z "$PATH_SUDOERS_CONF" ]; then
+        PATH_SUDOERS_CONF=/etc/sudoers
+fi
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+        echo "===> Uninstalling inclusion from $PATH_SUDOERS_CONF"
+fi
+if grep "Configured by DTC" $PATH_SUDOERS_CONF >/dev/null 2>&1
+then
+        start_line=`grep -n "Configured by DTC" $PATH_SUDOERS_CONF | cut -d":" -f1`
+        end_line=`grep -n "End of DTC configuration" $PATH_SUDOERS_CONF | cut -d":" -f1`
+        nbr_line=`cat $PATH_SUDOERS_CONF | wc -l`
+        TMP_FILE=`${MKTEMP} DTC_uninstall.sudoers.XXXXXX` || exit 1
+        cat $PATH_SUDOERS_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+        cat $PATH_SUDOERS_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+        cp -f $PATH_SUDOERS_CONF $PATH_SUDOERS_CONF.DTC.removed
+        echo -n > $PATH_SUDOERS_CONF
+        cat < $TMP_FILE >> $PATH_SUDOERS_CONF
+        rm $TMP_FILE
+fi
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+        echo "===> Uninstalling inclusion from $PATH_SHELLS_CONF"
+fi
+if grep "Configured by DTC" $PATH_SHELLS_CONF >/dev/null 2>&1
+then
+        start_line=`grep -n "Configured by DTC" $PATH_SHELLS_CONF | cut -d":" -f1`
+        end_line=`grep -n "End of DTC configuration" $PATH_SHELLS_CONF | cut -d":" -f1`
+        nbr_line=`cat $PATH_SHELLS_CONF | wc -l`
+        TMP_FILE=`${MKTEMP} DTC_uninstall.shells.XXXXXX` || exit 1
+        cat $PATH_SHELLS_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+        cat $PATH_SHELLS_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+        cp -f $PATH_SHELLS_CONF $PATH_SHELLS_CONF.DTC.removed
+        echo -n > $PATH_SHELLS_CONF
+        cat < $TMP_FILE >> $PATH_SHELLS_CONF
+        rm $TMP_FILE
+fi
+
+if [ -z "$PATH_SSH_CONF" ]; then
+        PATH_SSH_CONF=/etc/ssh/sshd_config
+fi
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+        echo "===> Uninstalling inclusion from $PATH_SSH_CONF"
+fi
+if grep "Configured by DTC" $PATH_SSH_CONF >/dev/null 2>&1
+then
+        start_line=`grep -n "Configured by DTC" $PATH_SSH_CONF | cut -d":" -f1`
+        end_line=`grep -n "End of DTC configuration" $PATH_SSH_CONF | cut -d":" -f1`
+        nbr_line=`cat $PATH_SSH_CONF | wc -l`
+        TMP_FILE=`${MKTEMP} DTC_uninstall.ssh.XXXXXX` || exit 1
+        cat $PATH_SSH_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+        cat $PATH_SSH_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+        cp -f $PATH_SSH_CONF $PATH_SSH_CONF.DTC.removed
+        echo -n > $PATH_SSH_CONF
+        cat < $TMP_FILE >> $PATH_SSH_CONF
+        rm $TMP_FILE
+fi
+
+# stuff to remove from NSS mysql config / password
+
+if [ -z "$PATH_NSS_CONF" ]; then
+        PATH_NSS_CONF=/etc/nss-mysql.conf
+fi
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+        echo "===> Uninstalling inclusion from $PATH_NSS_CONF"
+fi
+if grep "Configured by DTC" $PATH_NSS_CONF >/dev/null 2>&1
+then
+        start_line=`grep -n "Configured by DTC" $PATH_NSS_CONF | cut -d":" -f1`
+        end_line=`grep -n "End of DTC configuration" $PATH_NSS_CONF | cut -d":" -f1`
+        nbr_line=`cat $PATH_NSS_CONF | wc -l`
+        TMP_FILE=`${MKTEMP} DTC_uninstall.nss-mysql.XXXXXX` || exit 1
+        cat $PATH_NSS_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+        cat $PATH_NSS_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+        cp -f $PATH_NSS_CONF $PATH_NSS_CONF.DTC.removed
+        echo -n > $PATH_NSS_CONF
+        cat < $TMP_FILE >> $PATH_NSS_CONF
+        rm $TMP_FILE
+fi
+
+# stuff to remove from NSS mysql root config / shadow
+
+if [ -z "$PATH_NSS_ROOT_CONF" ]; then
+        PATH_NSS_ROOT_CONF=/etc/nss-mysql-root.conf
+fi
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+        echo "===> Uninstalling inclusion from $PATH_NSS_ROOT_CONF"
+fi
+if grep "Configured by DTC" $PATH_NSS_ROOT_CONF >/dev/null 2>&1
+then
+        start_line=`grep -n "Configured by DTC" $PATH_NSS_ROOT_CONF | cut -d":" -f1`
+        end_line=`grep -n "End of DTC configuration" $PATH_NSS_ROOT_CONF | cut -d":" -f1`
+        nbr_line=`cat $PATH_NSS_ROOT_CONF | wc -l`
+        TMP_FILE=`${MKTEMP} DTC_uninstall.nss-mysql-root.XXXXXX` || exit 1
+        cat $PATH_NSS_ROOT_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+        cat $PATH_NSS_ROOT_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+        cp -f $PATH_NSS_ROOT_CONF $PATH_NSS_ROOT_CONF.DTC.removed
+        echo -n > $PATH_NSS_ROOT_CONF
+        cat < $TMP_FILE >> $PATH_NSS_ROOT_CONF
+        rm $TMP_FILE
+fi
+
+if [ -z "$PATH_NSSWITCH_CONF" ]; then
+        PATH_NSSWITCH_CONF=/etc/nsswitch.conf
+fi
+
+# remove the stuff from nsswitch.conf
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+        echo "===> Uninstalling inclusion from $PATH_NSSWITCH_CONF"
+fi
+if grep "Configured by DTC" $PATH_NSSWITCH_CONF >/dev/null 2>&1
+then
+        start_line=`grep -n "Configured by DTC" $PATH_NSSWITCH_CONF | cut -d":" -f1`
+        end_line=`grep -n "End of DTC configuration" $PATH_NSSWITCH_CONF | cut -d":" -f1`
+        nbr_line=`cat $PATH_NSSWITCH_CONF | wc -l`
+        TMP_FILE=`${MKTEMP} DTC_uninstall.nsswitch.XXXXXX` || exit 1
+        cat $PATH_NSSWITCH_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+        cat $PATH_NSSWITCH_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+        cp -f $PATH_NSSWITCH_CONF $PATH_NSSWITCH_CONF.DTC.removed
+        echo -n > $PATH_NSSWITCH_CONF
+        cat < $TMP_FILE >> $PATH_NSSWITCH_CONF
+        rm $TMP_FILE
+fi
+
+APACHE2_CONFD="/etc/conf.d/apache2"
+if [ -e ${APACHE2_CONFD} ]; then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Uninstalling inclusion from $APACHE2_CONFD"
+	fi
+	if grep "Configured by DTC" $APACHE2_CONFD >/dev/null 2>&1
+	then
+		start_line=`grep -n "Configured by DTC" $APACHE2_CONFD | cut -d":" -f1`
+		end_line=`grep -n "End of DTC configuration" $APACHE2_CONFD | cut -d":" -f1`
+		nbr_line=`cat $APACHE2_CONFD | wc -l`
+		TMP_FILE=`${MKTEMP} DTC_uninstall.conf.d_apache2.XXXXXX` || exit 1
+		cat $APACHE2_CONFD | head -n $(($start_line - 1 )) > $TMP_FILE
+		cat $APACHE2_CONFD | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+		cp -f $APACHE2_CONFD $APACHE2_CONFD.DTC.removed
+		echo -n > $APACHE2_CONFD
+		cat < $TMP_FILE >> $APACHE2_CONFD
+		rm $TMP_FILE
+	fi
+fi
+
+rm -f ${PATH_DTC_ADMIN}/.htaccess
+rm -f ${PATH_DTC_SHARED}/shared/cyrus.php
+rm -f ${PATH_DTC_SHARED}/shared/securepay/paiement_config.php
+rm -f ${PATH_DTC_SHARED}/shared/mysql_config.php
