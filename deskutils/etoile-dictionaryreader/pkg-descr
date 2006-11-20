@@ -5,7 +5,6 @@ workflow by reshaping or recombining provided Services (aka Applications),
 Components etc. Flexibility and modularity on both User Interface and code
 level should allow us to scale from PDA to computer environment.
 
-Currently this package only installs Camaelon, DictionaryReader and
-WildMenus.
+Currently this package only installs DictionaryReader.
 
 WWW: http://www.etoile-project.org/
