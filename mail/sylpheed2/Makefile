@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTVERSION=	2.2.10
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
 
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
@@ -40,7 +40,8 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 		JPILOT		"Enable JPilot support." off \
 		LDAP		"Enable LDAP support." off \
 		SSL		"Enable OpenSSL support." on \
-		GTKSPELL	"Enable Spell checking support" on
+		GTKSPELL	"Enable Spell checking support" on \
+		ONIGURUMA	"Enable Oniguruma support" off
 
 .include <bsd.port.pre.mk>
 
@@ -87,6 +88,13 @@ LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--enable-gtkspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell
+.endif
+
+.if defined(WITH_ONIGURUMA)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma
+CONFIGURE_ARGS+=--enable-oniguruma
+.else
+CONFIGURE_ARGS+=--disable-oniguruma
 .endif
 
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
