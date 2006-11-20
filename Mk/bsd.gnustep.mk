@@ -75,11 +75,17 @@
 # USE_GNUSTEP_SYSTEM_BUNDLES+=	EtoileMenus:x11-themes/etoile-etoilemenus
 #	depends on Bundles installed in System directrory at build and runtime
 #
+# USE_GNUSTEP_SYSTEM_THEMES+=	Camaelon:x11-themes/etoile-camaelon
+#	depends on Themes installed in System directrory at build and runtime
+#
 # USE_GNUSTEP_LOCAL_LIBS+=	pantomime:mail/pantomime
 #	depends on a shared lib in Local directrory
 #
 # USE_GNUSTEP_LOCAL_BUNDLES+=	Cddb:audio/cddb-bundle
 #	depends on Bundles installed in Local directrory at build and runtime
+#
+# USE_GNUSTEP_LOCAL_THEMES+=	WildMenus:x11-themes/etoile-wildmenus
+#	depends on Themes installed in Local directrory at build and runtime
 #
 # USE_GNUSTEP_SYSTEM_APPS+=	ProjectCenter:devel/projectcenter.app
 #	depends on Application installed in System directrory at runtime
@@ -135,10 +141,11 @@ NO_MTREE=	yes
 .endif
 SYSTEMDIR=	${GNUSTEP_PREFIX}/System
 SYSMAKEDIR=	${SYSTEMDIR}/Library/Makefiles
-BUNDLEDIR=	${SYSTEMDIR}/Library/Bundles
+SYSBUNDLEDIR=	${SYSTEMDIR}/Library/Bundles
 SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries
 COMBOLIBDIR=	${SYSTEMDIR}/Library/Libraries
 LOCALLIBDIR=	${GNUSTEP_PREFIX}/Local/Library/Libraries
+LOCALBUNDLEDIR=	${GNUSTEP_PREFIX}/Local/Library/Bundles
 .if defined(WITH_GNUSTEP_DEVEL)
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
 PLIST_SUB+=	GNUSTEP_DEVEL=""
@@ -226,8 +233,8 @@ USE_GNUSTEP_XLIB=yes
 # Backend using xlib
 #
 .if defined(USE_GNUSTEP_XLIB)
-BUILD_DEPENDS+=	${BUNDLEDIR}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
-RUN_DEPENDS+=	${BUNDLEDIR}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
+BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
+RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
 
 BACKXLIB=	libgnustep-back${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=back
@@ -237,8 +244,8 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=back
 # Backend using xdps
 #
 .if defined(USE_GNUSTEP_XDPS)
-BUILD_DEPENDS+=	${BUNDLEDIR}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
-RUN_DEPENDS+=	${BUNDLEDIR}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
+BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
+RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
 
 BACKXDPS=	libgnustep-xdps${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=xdps
@@ -248,8 +255,8 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=xdps
 # Backend using libart
 #
 .if defined(USE_GNUSTEP_LIBART)
-BUILD_DEPENDS+=	${BUNDLEDIR}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
-RUN_DEPENDS+=	${BUNDLEDIR}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
+BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
+RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
 
 BACKART=	libgnustep-art${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=art
@@ -259,8 +266,8 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=art
 # Backend using cairo
 #
 .if defined(USE_GNUSTEP_CAIRO)
-BUILD_DEPENDS+=	${BUNDLEDIR}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
-RUN_DEPENDS+=	${BUNDLEDIR}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
+BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
+RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
 
 BACKCAIRO=	libgnustep-cairo${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=cairo
@@ -281,8 +288,18 @@ RUN_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTE
 #
 .if defined(USE_GNUSTEP_SYSTEM_BUNDLES)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_BUNDLES}
-BUILD_DEPENDS+=	${BUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${BUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source system themes
+#
+.if defined(USE_GNUSTEP_SYSTEM_THEMES)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_THEMES}
+BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -301,8 +318,18 @@ RUN_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTE
 #
 .if defined(USE_GNUSTEP_LOCAL_BUNDLES)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_BUNDLES}
-BUILD_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Library/Bundles/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Library/Bundles/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source local themes
+#
+.if defined(USE_GNUSTEP_LOCAL_THEMES)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_THEMES}
+BUILD_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
