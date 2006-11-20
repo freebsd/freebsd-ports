@@ -17,6 +17,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Number.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/PI.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Parser.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Reader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Reader.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/RelaxNG.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pod
