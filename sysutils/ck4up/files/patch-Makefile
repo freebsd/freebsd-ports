@@ -1,0 +1,23 @@
+--- Makefile.orig	Mon Nov 20 19:12:16 2006
++++ Makefile	Mon Nov 20 19:12:51 2006
+@@ -1,15 +1,14 @@
+-# $Id: Makefile 70 2003-10-20 19:54:10Z juergen $
+ 
+-PREFIX=/usr
+-BINDIR=$(PREFIX)/bin
+-MANDIR=$(PREFIX)/man/man1
++
++BINDIR=%%PREFIX%%/bin
++MANDIR=%%PREFIX%%/man/man1
+ 
+ DESTDIR=
+ 
+ all : 	install
+ 
+ install:
+-	install -D -m 755 ck4up.rb $(DESTDIR)$(BINDIR)/ck4up
+-	install -D -m 644 ck4up.1 $(DESTDIR)$(MANDIR)/ck4up.1
++	install -m 755 ck4up.rb $(DESTDIR)$(BINDIR)/ck4up
++	install -m 644 ck4up.1 $(DESTDIR)$(MANDIR)/ck4up.1
+ 
+ # End of file
