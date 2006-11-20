@@ -7,7 +7,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.71.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
@@ -29,7 +29,7 @@ NO_BUILD=	yes
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/docbook
 PINSTDIR=	${PREFIX}/${INSTDIR}
-COPYDIRS=	common extensions fo html htmlhelp images \
+COPYDIRS=	common extensions fo highlighting html htmlhelp images \
 		javahelp lib manpages params profiling slides \
 		template tools wordml xhtml
 PKGINSTALL=	${WRKDIR}/pkg-install
