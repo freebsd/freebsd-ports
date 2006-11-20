@@ -340,6 +340,8 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-mark-calendar-offline.so
 %%DBUS%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-new-mail-notify.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-plugin-manager.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-plugin-manager.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-print-message.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-print-message.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.la
@@ -385,6 +387,7 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-mark-calendar-offline.eplug
 %%DBUS%%lib/evolution/%%VERSION%%/plugins/org-gnome-new-mail-notify.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-prefer-plain.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-print-message.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-print-message.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-publish-calendar.eplug
