@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	firebird
+PORTREVISION=	3
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Firebird-2 database client

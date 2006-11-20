@@ -7,7 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	2.0.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
@@ -59,8 +59,7 @@ ALL_TARGET=	firebird_boot ref_databases msgs libfbembed intl otherfiles \
 
 SUB_FILES=	pkg-install pkg-message aliases.conf
 
-SUID_BIN=	fb_inet_server fb_lock_mgr gds_drop
-UTIL_BIN=	fb_lock_print gbak gdef gfix gsec gstat nbackup
+UTIL_BIN=	fb_inet_server fb_lock_print gbak gdef gfix gsec gstat nbackup
 UDF_SO=		ib_udf.so fbudf.so
 UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 .else
@@ -156,9 +155,10 @@ do-install:
 .if !defined(CLIENT_ONLY)
 
 	${INSTALL_PROGRAM} ${UTIL_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/bin
-
-	${INSTALL_PROGRAM} -o firebird -g firebird -m 6550 \
-		${SUID_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -o root -g firebird -m 4550 \
+		${WRKSRC}/gen/firebird/bin/fb_lock_mgr ${PREFIX}/bin
+	${INSTALL_PROGRAM} -m 500 \
+		${WRKSRC}/gen/firebird/bin/gds_drop ${PREFIX}/bin
 
 	@${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKDIR}/aliases.conf ${CONFDIR}/aliases.conf.sample
