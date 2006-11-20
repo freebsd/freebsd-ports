@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	doodle
-PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTVERSION=	0.6.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://gnunet.org/doodle/download/
 
@@ -20,7 +19,7 @@ LIB_DEPENDS=	extractor.2:${PORTSDIR}/textproc/libextractor
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_FAM=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		doodle.1 doodled.1
@@ -32,4 +31,10 @@ post-patch:
 		 s|,\$$PTHREAD_LIBS,|,${PTHREAD_LIBS},|; \
 		 s|,\$$PTHREAD_LDFLAGS,|,,|;' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
