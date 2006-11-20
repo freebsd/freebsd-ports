@@ -7,7 +7,7 @@
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
@@ -25,8 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 # or
 #   WITH_SENDMAIL_PORT=yes
 #
-# If unspecified, check for an up-to-date system version but give an
-# installed port preference over it.
+# If unspecified, give base precedence.
 #
 
 .include <bsd.port.pre.mk>
@@ -47,17 +46,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITH_SENDMAIL_BASE) && \
     !defined(WITH_SENDMAIL_PORT) && \
-    !exists(${LOCALBASE}/lib/libmilter.a)
 WITH_SENDMAIL_BASE=yes
 .endif
 
-.if defined(WITH_SENDMAIL_BASE)
-.if exists(/usr/lib/libmilter.a)
+.if defined(WITH_SENDMAIL_BASE) && exists(/usr/lib/libmilter.a)
 MILTERBASE=	/usr
 .else
+.if !exists(/usr/lib/libmilter.a)
 BROKEN=	Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
-.else
+.endif
+
+.if defined(WITH_SENDMAIL_PORT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 MILTERBASE?=	${LOCALBASE}
 .endif
@@ -81,11 +81,22 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		spamass-milter.1
 
-pre-fetch:
+pre-patch:
+
+.if !defined(WITH_SENDMAIL_PORT)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "By default, ${PORTNAME} builds against the base system."
+	@${ECHO_CMD} "If you want to use the sendmail port please set the environment"
+	@${ECHO_CMD} "variable WITH_SENDMAIL_PORT"
+	@${ECHO_CMD} ""
+.endif
+
+.if !defined(WITH_ADDAUTH_PATCH)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You may set environment variable WITH_ADDAUTH_PATCH to bypass"
 	@${ECHO_CMD} "checks if a connection authenticated via SMTP."
 	@${ECHO_CMD} ""
+.endif
 
 post-patch:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
