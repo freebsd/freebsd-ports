@@ -7,6 +7,7 @@
 
 PORTNAME=	etoile
 PORTVERSION=	0.1.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://florida.ethz.ch/ports/distfiles/
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
@@ -23,6 +24,6 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
-USE_GNUSTEP_MAKE_DIRS=	Bundles/Camaelon Bundles/WildMenus Services/User/DictionaryReader
+USE_GNUSTEP_MAKE_DIRS+=	Services/User/DictionaryReader
 
 .include <bsd.port.mk>

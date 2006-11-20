@@ -12,16 +12,6 @@ Local/Applications/DictionaryReader.app/Resources/jargon.dict
 Local/Applications/DictionaryReader.app/Resources/jargon.index
 Local/Applications/DictionaryReader.app/library_paths.openapp
 Local/Applications/DictionaryReader.app/stamp.make
-Local/Library/Bundles/WildMenus.themeEngine/Resources/Info-gnustep.plist
-Local/Library/Bundles/WildMenus.themeEngine/WildMenus
-Local/Library/Bundles/WildMenus.themeEngine/stamp.make
-System/Library/Bundles/Camaelon.themeEngine/Camaelon
-System/Library/Bundles/Camaelon.themeEngine/Resources/Info-gnustep.plist
-System/Library/Bundles/Camaelon.themeEngine/stamp.make
-@dirrm System/Library/Bundles/Camaelon.themeEngine/Resources
-@dirrm System/Library/Bundles/Camaelon.themeEngine
-@dirrm Local/Library/Bundles/WildMenus.themeEngine/Resources
-@dirrm Local/Library/Bundles/WildMenus.themeEngine
 @dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm
 @dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj
 @dirrm Local/Applications/DictionaryReader.app/Resources
