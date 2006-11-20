@@ -1,0 +1,2 @@
+Python bindings for libmagic used to get a description of a
+file type, or a mime type for that file. 
