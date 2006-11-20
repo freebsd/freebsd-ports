@@ -1,6 +1,6 @@
---- configure.orig	Tue Nov  7 11:24:24 2006
-+++ configure	Tue Nov  7 11:24:24 2006
-@@ -23193,6 +23193,8 @@
+--- configure.orig	Tue Nov  7 04:08:31 2006
++++ configure	Mon Nov 20 10:52:37 2006
+@@ -21984,6 +21984,8 @@
  if test "${am_cv_val_LC_MESSAGES+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -9,23 +9,23 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23252,6 +23254,7 @@
- 
- rm -f core conftest.err conftest.$ac_objext \
+@@ -22030,6 +22032,7 @@
+ fi
+ rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
 +LIBS=$ac_check_lib_save_LIBS
  fi
- { echo "$as_me:$LINENO: result: $am_cv_val_LC_MESSAGES" >&5
- echo "${ECHO_T}$am_cv_val_LC_MESSAGES" >&6; }
-@@ -24873,6 +24876,7 @@
+ echo "$as_me:$LINENO: result: $am_cv_val_LC_MESSAGES" >&5
+ echo "${ECHO_T}$am_cv_val_LC_MESSAGES" >&6
+@@ -23495,6 +23498,7 @@
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_func" | $as_tr_cpp` 1
  _ACEOF
 + LIBS="-lintl $LIBS"
   have_ngettext=yes
  else
-   { echo "$as_me:$LINENO: checking for ngettext in -lintl" >&5
-@@ -26342,7 +26346,7 @@
+   echo "$as_me:$LINENO: checking for ngettext in -lintl" >&5
+@@ -24892,7 +24896,7 @@
  
  
  
@@ -33,8 +33,8 @@
 +for ac_header in mntent.h sys/mnttab.h sys/vfstab.h sys/cdio.h sys/mount.h sys/mntctl.h sys/vfs.h sys/vmount.h sys/sysctl.h fstab.h fnmatch.h sys/sysmacros.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
-@@ -36206,7 +36210,7 @@
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -33245,7 +33249,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -43,7 +43,7 @@
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -36531,7 +36535,7 @@
+@@ -33543,7 +33547,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -52,7 +52,7 @@
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -42634,6 +42638,9 @@
+@@ -39124,6 +39128,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -62,7 +62,7 @@
  #include <sys/statfs.h>
  #include <sys/fstyp.h>
  _ACEOF
-@@ -42681,6 +42688,9 @@
+@@ -39165,6 +39172,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
