@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	deskbar-applet
-PORTVERSION=	2.16.1
+PORTVERSION=	2.16.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Gnome panel applet similar to Google's (Windows only) Deskbar
+COMMENT=	Omnipresent versatile search interface
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
