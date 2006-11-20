@@ -19,7 +19,6 @@
 %%FONTSDIR%%/DejaVuSerifCondensed-BoldOblique.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed-Oblique.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed.ttf
-%%FONTSDIR%%/fonts.cache-1
 %%FONTSDIR%%/fonts.dir
 @exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
