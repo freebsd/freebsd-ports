@@ -1073,6 +1073,14 @@ share/xsl/docbook/fo/toc.xsl
 share/xsl/docbook/fo/verbatim.xsl
 share/xsl/docbook/fo/xep.xsl
 share/xsl/docbook/fo/xref.xsl
+share/xsl/docbook/highlighting/common.xsl
+share/xsl/docbook/highlighting/delphi-hl.xml
+share/xsl/docbook/highlighting/ini-hl.xml
+share/xsl/docbook/highlighting/java-hl.xml
+share/xsl/docbook/highlighting/m2-hl.xml
+share/xsl/docbook/highlighting/myxml-hl.xml
+share/xsl/docbook/highlighting/php-hl.xml
+share/xsl/docbook/highlighting/xslthl-config.xml
 share/xsl/docbook/html/admon.xsl
 share/xsl/docbook/html/annotations.xsl
 share/xsl/docbook/html/autoidx-kimber.xsl
@@ -1907,6 +1915,7 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/images
 @dirrm share/xsl/docbook/htmlhelp
 @dirrm share/xsl/docbook/html
+@dirrm share/xsl/docbook/highlighting
 @dirrm share/xsl/docbook/fo
 @dirrm share/xsl/docbook/extensions
 @dirrm share/xsl/docbook/common
