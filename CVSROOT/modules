@@ -2019,6 +2019,7 @@ dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
 dt		ports/sysutils/dt
 dtach		ports/misc/dtach
 dtc		ports/sysutils/dtc
+dtc-toaster	ports/sysutils/dtc-toaster
 dtcp		ports/net/dtcp
 dtcpclient	ports/net/dtcpclient
 dtcyber		ports/emulators/dtcyber
