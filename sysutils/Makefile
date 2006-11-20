@@ -133,6 +133,7 @@
     SUBDIR += downtime
     SUBDIR += dt
     SUBDIR += dtc
+    SUBDIR += dtc-toaster
     SUBDIR += du2ps
     SUBDIR += dump9660
     SUBDIR += dupfind
