@@ -7,6 +7,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	2.3.6
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/

@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+etc/rc.d/nsd.sh
+etc/nsd/nsdc.conf.sample
 etc/nsd/nsd.zones.sample
 sbin/nsd
 sbin/zonec
