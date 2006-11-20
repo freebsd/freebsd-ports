@@ -1,0 +1,7 @@
+
+This port is meant to build and provide a full installation of DTC, including
+all dependencies required to use it.  This isn't the only possible configuration
+of applications to run with it, see the main port for the various apps that
+can be used.
+
+WWW: http://www.gplhost.com/software-dtc.html
