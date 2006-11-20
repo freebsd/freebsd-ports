@@ -7,6 +7,7 @@
 
 PORTNAME=	dtc
 PORTVERSION=	0.24.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/
 
@@ -35,18 +36,6 @@ RUN_DEPENDS+=    ${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 USE_PHP+=	bz2 gd mbstring mcrypt mysql mysqli openssl pcre \
 		pear session sockets xml zlib
 .endif
-
-.if defined(DTC_TOASTER)
-RUN_DEPENDS+=	${LOCALBASE}/bin/webalizer:${PORTSDIR}/www/webalizer  \
-		${LOCALBASE}/www/awstats:${PORTSDIR}/www/awstats \
-		${LOCALBASE}/bin/mhonarc:${PORTSDIR}/www/mhonarc \
-		${LOCALBASE}/bin/mlmmj-list:${PORTSDIR}/mail/mlmmj \
-		${LOCALBASE}/sbin/pure-ftpd:${PORTSDIR}/ftp/pure-ftpd \
-		${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix \
-		${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd23
-USE_APACHE=	2.2+
-
-.else
 
 .if defined(WITH_WEBALIZER)
 RUN_DEPENDS+=	${LOCALBASE}/bin/webalizer:${PORTSDIR}/www/webalizer
@@ -82,8 +71,6 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/courier/courierd:${PORTSDIR}/mail/courier \
 
 .if defined(WITH_APACHE2)
 USE_APACHE=	2.2+
-.endif
-
 .endif
 
 DTCROOT?=	www/dtc
