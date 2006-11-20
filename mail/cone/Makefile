@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
