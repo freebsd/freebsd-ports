@@ -12130,6 +12130,7 @@ py-lucene	ports/textproc/py-lucene
 py-lzma		ports/archivers/py-lzma
 py-m2crypto	ports/security/py-m2crypto
 py-mad		ports/audio/py-mad
+py-magic	ports/devel/py-magic
 py-mantissa	ports/net/py-mantissa
 py-matplotlib	ports/math/py-matplotlib
 py-mcrypt	ports/security/py-mcrypt
