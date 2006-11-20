@@ -80,6 +80,7 @@
     SUBDIR += cfvers
     SUBDIR += checkservice
     SUBDIR += chgrep
+    SUBDIR += ck4up
     SUBDIR += clean
     SUBDIR += clockspeed
     SUBDIR += clockspeed-conf
