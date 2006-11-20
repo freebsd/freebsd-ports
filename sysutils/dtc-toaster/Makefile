@@ -6,6 +6,7 @@
 #
 
 PORTNAME=       dtc
+PORTREVISION=	1
 CATEGORIES=     sysutils
 PKGNAMESUFFIX=  -toaster
 
@@ -13,7 +14,16 @@ MAINTAINER=     scrappy@freebsd.org
 
 CONFLICTS=      dtc-[0-9]*
 
-DTC_TOASTER=	yes
+WITH_WEBALIZER=yes
+WITH_AWSTATS=yes
+WITH_MHONARC=yes
+WITH_MLMMJ=yes
+WITH_PUREFTPD=yes
+WITH_POSTFIX=yes
+WITH_CYRUS_IMAP=yes
+WITH_APACHE2=yes
+WITH_PHP5=yes
+
 DESCR=          ${PKGDIR}/pkg-descr
 
 MASTERDIR=      ${.CURDIR}/../dtc
