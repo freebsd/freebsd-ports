@@ -9,3 +9,4 @@ bin/netserver
 %%EXAMPLESDIR%%/tcp_stream_script
 %%EXAMPLESDIR%%/udp_rr_script
 %%EXAMPLESDIR%%/udp_stream_script
+@dirrm %%EXAMPLESDIR%%
