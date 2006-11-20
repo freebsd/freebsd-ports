@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.8.12
+PORTVERSION=	2.8.13
 PORTREVISION=	0
 CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/fc-solve/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	fc-solve
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that automatically solves games of Freecell
