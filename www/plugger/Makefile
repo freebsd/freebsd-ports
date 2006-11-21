@@ -7,14 +7,14 @@
 
 PORTNAME=	plugger
 PORTVERSION=	5.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
 MAINTAINER=	conrads@cox.net
 COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 
 MAN7=		plugger.7
