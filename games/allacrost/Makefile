@@ -33,10 +33,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
 .if ${OSVERSION} < 600000
 USE_GCC=	4.0+
 .endif
