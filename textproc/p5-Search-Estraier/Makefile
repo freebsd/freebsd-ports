@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Search-Estraier
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Search
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure perl module to use Hyper Estraier search engine
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
@@ -30,5 +30,8 @@ MAN3=		Search::Estraier.3
 .if ${PERL_LEVEL} < 500600	# inherited from www/p5-libwww
 IGNORE=		requires at least Perl 5.6.  Please install lang/perl5.8 and try again
 .endif
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
