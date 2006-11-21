@@ -8,7 +8,7 @@
 PORTNAME=	ioquake3
 DISTVERSION=	1.34-rc2
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/quake3/files/
+MASTER_SITES=	http://ioquake3.org/files/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
