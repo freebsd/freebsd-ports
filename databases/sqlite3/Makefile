@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	3.3.7
+PORTVERSION=	3.3.8
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
@@ -26,10 +26,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 DOCSDIR=	${PREFIX}/share/doc/sqlite3
 EXAMPLESDIR=	${PREFIX}/share/examples/sqlite3
 
-OPTIONS=	TCLWRAPPER	"TCL wrapper for SQLITE"		off \
-		THREADS		"Enable threads support"		off \
-		DEBUG		"Enable debugging & verbose explain"	off \
-		DOCS		"Building docs (depends on TCL)"	on
+OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
+		DOCS		"Building docs (depends on TCL)"	on \
+		TCLWRAPPER	"TCL wrapper for SQLITE"		off \
+		THREADS		"Enable threads support"		off
 
 # Defaults, for building the docs:
 TCL_V?=		8.4
@@ -37,6 +37,16 @@ MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
 MAKE_ENV+=	TCL_VER=${TCL_V}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
+BUILD_DEPENDS+=		tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
+ALL_TARGET+=		all doc
+PORTDOCS=		*
+.endif
 
 .if defined(WITH_TCLWRAPPER)
 CATEGORIES+=		lang tcl${TCL_V:S/.//}
@@ -50,16 +60,6 @@ PLIST_SUB+=		WITH_TCLWRAPPER="@comment "
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threadsafe
-.endif
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
-BUILD_DEPENDS+=		tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
-ALL_TARGET=		all doc
-PORTDOCS=		*
 .endif
 
 post-patch:
