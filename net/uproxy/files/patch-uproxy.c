@@ -14,7 +14,7 @@
      #include <stdlib.h>
  #endif
 @@ -50,7 +50,7 @@
- 
+
  SOCKET ProxySocket;
  struct sockaddr_in ProxySAddr, ClientSAddr, TargetSAddr;
 -struct sockaddr AnySAddr={AF_INET, {INADDR_ANY}};
