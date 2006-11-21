@@ -1,214 +1,215 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/examples/biojava/demos-1.4/ssaha/CreateDNAFastaHashTableCompact.java
-share/examples/biojava/demos-1.4/ssaha/CreateDNAFastaHashTableLarge.java
-share/examples/biojava/demos-1.4/ssaha/CreateDNAFastaHashTable.java
-share/examples/biojava/demos-1.4/ssaha/CreateEmblHashTable.java
-share/examples/biojava/demos-1.4/ssaha/CreateEmblHashTableLarge.java
-share/examples/biojava/demos-1.4/ssaha/ResultPrinter.java
-share/examples/biojava/demos-1.4/ssaha/SSAHA.java
-share/examples/biojava/demos-1.4/ssaha/SSAHALarge.java
-share/examples/biojava/demos-1.4/ssaha/SSAHASeq.java
-share/examples/biojava/demos-1.4/ssaha/SSAHASeqLarge.java
-share/examples/biojava/demos-1.4/unigene/CreateUnigeneFlat.java
-share/examples/biojava/demos-1.4/unigene/ParseLibInfo.java
-share/examples/biojava/demos-1.4/unigene/ParseUnigene.java
-share/examples/biojava/demos-1.4/unigene/SearchUnigeneFlat.java
-share/examples/biojava/demos-obsolete/bioseqdb/UploadSwissprot.java
-share/examples/biojava/demos-obsolete/search/FastaSearchParse.java
-share/examples/biojava/demos-obsolete/seq/TestSwissprotOrg.java
-share/examples/biojava/demos-obsolete/symbol/TestPackedSymbolList.java
-share/examples/biojava/demos/CircLocTest/CircularLocationTester.java
-share/examples/biojava/demos/CircLocTest/TestFrame.java
-share/examples/biojava/demos/ListChangeTypes.java
-share/examples/biojava/demos/RFetch.java
-share/examples/biojava/demos/biosql/DummyFromGFF.java
-share/examples/biojava/demos/biosql/LargeSequenceTest.java
-share/examples/biojava/demos/biosql/SeqDumper.java
-share/examples/biojava/demos/biosql/SeqEMBL.java
-share/examples/biojava/demos/biosql/SeqGFF.java
-share/examples/biojava/demos/biosql/SequenceTest.java
-share/examples/biojava/demos/biosql/UploadFlat.java
-share/examples/biojava/demos/das/TestDAS.java
-share/examples/biojava/demos/das/TestDASG.java
-share/examples/biojava/demos/das/TestDASH.java
-share/examples/biojava/demos/das/TestDSN.java
-share/examples/biojava/demos/dist/TestDistribution.java
-share/examples/biojava/demos/dist/TestOrderNAlphabet.java
-share/examples/biojava/demos/dist/TestOrderNDistribution.java
-share/examples/biojava/demos/dist/Tools.java
-share/examples/biojava/demos/dp/Dice.java
-share/examples/biojava/demos/dp/PairwiseAlignment.java
-share/examples/biojava/demos/dp/SearchProfile.java
-share/examples/biojava/demos/dp/ViterbiAlign.java
-share/examples/biojava/demos/dp/fake.fasta
-share/examples/biojava/demos/dp/fakepromoter.xml
-share/examples/biojava/demos/dp/package.html
-share/examples/biojava/demos/eventbasedparsing/Blast2HTML.java
-share/examples/biojava/demos/eventbasedparsing/BlastLike2XML.java
-share/examples/biojava/demos/eventbasedparsing/Fasta2XML.java
-share/examples/biojava/demos/eventbasedparsing/Pdb2XML.java
-share/examples/biojava/demos/eventbasedparsing/TutorialEx1.java
-share/examples/biojava/demos/eventbasedparsing/TutorialEx1Handler.java
-share/examples/biojava/demos/eventbasedparsing/stylesheets/copyall.xsl
-share/examples/biojava/demos/eventbasedparsing/stylesheets/hitlisthtml.xsl
-share/examples/biojava/demos/files/AL121903.embl
-share/examples/biojava/demos/files/AL121903.genbank
-share/examples/biojava/demos/files/ChrI.prom.fasta
-share/examples/biojava/demos/files/GCG/blast.report
-share/examples/biojava/demos/files/clustal/keratin.aln
-share/examples/biojava/demos/files/fake.fasta
-share/examples/biojava/demos/files/fakepromoter.xml
-share/examples/biojava/demos/files/fp_demo.db
-share/examples/biojava/demos/files/fp_demo.m10
-share/examples/biojava/demos/files/fp_queries.db
-share/examples/biojava/demos/files/hmmer/plus_tot.out
-share/examples/biojava/demos/files/ncbiblast/Massive.out
-share/examples/biojava/demos/files/ncbiblast/ReadMe
-share/examples/biojava/demos/files/ncbiblast/blastn.out
-share/examples/biojava/demos/files/ncbiblast/blastp.out
-share/examples/biojava/demos/files/ncbiblast/blastx.out
-share/examples/biojava/demos/files/ncbiblast/shortBlastn.out
-share/examples/biojava/demos/files/ncbiblast/tblastn.out
-share/examples/biojava/demos/files/ncbiblast/tblastx.out
-share/examples/biojava/demos/files/ncbiblast/unsuppVersionBlastn.out
-share/examples/biojava/demos/files/out.gff
-share/examples/biojava/demos/files/pdb/12E8.pdb
-share/examples/biojava/demos/files/pdb/hgh_ori.pdb
-share/examples/biojava/demos/files/pdb/hmga_1.pdb
-share/examples/biojava/demos/files/pdb/tnf.pdb
-share/examples/biojava/demos/files/scoptest.fa
-share/examples/biojava/demos/files/test.hmm
-share/examples/biojava/demos/files/varC4-2.dna
-share/examples/biojava/demos/files/varC4-2.gff
-share/examples/biojava/demos/files/wublast/blastn.out
-share/examples/biojava/demos/files/wublast/blastp.out
-share/examples/biojava/demos/files/wublast/blastx.out
-share/examples/biojava/demos/files/wublast/sh_blastn.out
-share/examples/biojava/demos/files/wublast/sh_blastp.out
-share/examples/biojava/demos/files/wublast/sh_blastx.out
-share/examples/biojava/demos/files/wublast/sh_tblastx.out
-share/examples/biojava/demos/files/wublast/tblastn.out
-share/examples/biojava/demos/files/wublast/tblastx.out
-share/examples/biojava/demos/game/AE002734.game
-share/examples/biojava/demos/game/README.txt
-share/examples/biojava/demos/game/SeqIOTatler.java
-share/examples/biojava/demos/game/TestGAME.java
-share/examples/biojava/demos/gff/AL121903.embl
-share/examples/biojava/demos/gff/EmblToGffFasta.java
-share/examples/biojava/demos/gff/GFFCompare.java
-share/examples/biojava/demos/gff/GFFFilter.java
-share/examples/biojava/demos/gff/GFFMask.java
-share/examples/biojava/demos/gff/GFFToFeatures.java
-share/examples/biojava/demos/gff/GenbankToGffFasta.java
-share/examples/biojava/demos/gff/SwissprotToGffFasta.java
-share/examples/biojava/demos/gff/XFF2GFF.java
-share/examples/biojava/demos/gff/varC4-2.gff
-share/examples/biojava/demos/indexing/CreateFAIndex.java
-share/examples/biojava/demos/indexing/CreateIndex.java
-share/examples/biojava/demos/indexing/CreateSPIndex.java
-share/examples/biojava/demos/indexing/ListIDs.java
-share/examples/biojava/demos/indexing/ReadRaw.java
-share/examples/biojava/demos/indexing/ReadRawSecondary.java
-share/examples/biojava/demos/nativeapps/BlastLike2XML.java
-share/examples/biojava/demos/nativeapps/Pdb2XML.java
-share/examples/biojava/demos/prot/TestDigestIO.java
-share/examples/biojava/demos/ragbag/README
-share/examples/biojava/demos/ragbag/SequenceDumper.java
-share/examples/biojava/demos/ragbag/TestRagbagAssembly.java
-share/examples/biojava/demos/ragbag/embldir.tgz
-share/examples/biojava/demos/ragbag/seqdir.tgz
-share/examples/biojava/demos/ragbag/testfeature.game
-share/examples/biojava/demos/ragbag/virtdir.tgz
-share/examples/biojava/demos/search/IndexFastaDB.java
-share/examples/biojava/demos/seq/AL121903.embl
-share/examples/biojava/demos/seq/AL121903.genbank
-share/examples/biojava/demos/seq/FetchSeq.java
-share/examples/biojava/demos/seq/GCContent.java
-share/examples/biojava/demos/seq/MotifFinder2.java
-share/examples/biojava/demos/seq/ReverseComplement.java
-share/examples/biojava/demos/seq/SimpleAssemblyTest.java
-share/examples/biojava/demos/seq/TestEmbl.java
-share/examples/biojava/demos/seq/TestEmbl2.java
-share/examples/biojava/demos/seq/TestGenbank.java
-share/examples/biojava/demos/seq/TestRefSeqPrt.java
-share/examples/biojava/demos/seq/TestSubSequence.java
-share/examples/biojava/demos/seq/TestSwissprot.java
-share/examples/biojava/demos/seq/TestTranslation.java
-share/examples/biojava/demos/seq/db/AddFilesToIndex.java
-share/examples/biojava/demos/seq/db/CreateIndex.java
-share/examples/biojava/demos/seq/db/FetchSequence.java
-share/examples/biojava/demos/seq/db/ListSeqsInIndex.java
-share/examples/biojava/demos/seq/utrs.fa
-share/examples/biojava/demos/seqviewer/BeadDemo.java
-share/examples/biojava/demos/seqviewer/EmblViewer.java
-share/examples/biojava/demos/seqviewer/EmblViewer2.java
-share/examples/biojava/demos/seqviewer/FastBeadDemo.java
-share/examples/biojava/demos/seqviewer/TraceViewer.java
-share/examples/biojava/demos/seqviewer/test.fa
-share/examples/biojava/demos/ssbind/AlignmentBuilder.java
-share/examples/biojava/demos/ssbind/CountHits.java
-share/examples/biojava/demos/ssbind/CountSubHits.java
-share/examples/biojava/demos/ssbind/Echoer.java
-share/examples/biojava/demos/ssbind/FilterByValue.java
-share/examples/biojava/demos/ssbind/ListQueries.java
-share/examples/biojava/demos/ssbind/ListSubjects.java
-share/examples/biojava/demos/ssbind/ProcessBlastReport.java
-share/examples/biojava/demos/ssbind/PropertyEchoer.java
-share/examples/biojava/demos/ssbind/SubHitBuilder.java
-share/examples/biojava/demos/ssbind/SubHitFilter.java
-share/examples/biojava/demos/symbol/MatrixValue.java
-share/examples/biojava/demos/symbol/PatternDemo.java
-share/examples/biojava/demos/symbol/TestAlphabetIndexers.java
-share/examples/biojava/demos/symbol/TestAmbiguity.java
-share/examples/biojava/demos/symbol/TestGappedSymbolList.java
-share/examples/biojava/demos/symbol/TestIndexedIntegers.java
-share/examples/biojava/demos/symbol/TestLocation.java
-share/examples/biojava/demos/symbol/TestOrderNSymbolList.java
-share/examples/biojava/demos/symbol/TestSimpleAlignment.java
-share/examples/biojava/demos/symbol/TestWindowedSymbolList.java
-share/examples/biojava/demos/symbol/Tools.java
-share/examples/biojava/demos/symbol/WindowCount.java
-share/examples/biojava/demos/tagvalue/ParseEmbl.java
-share/examples/biojava/demos/tagvalue/ParseSwissprot.java
-share/examples/biojava/demos/xff/TestXFFStreaming.java
-share/java/classes/biojava.jar
-share/java/classes/bytecode.jar
-@dirrm share/examples/biojava/demos/xff
-@dirrm share/examples/biojava/demos/tagvalue
-@dirrm share/examples/biojava/demos/symbol
-@dirrm share/examples/biojava/demos/ssbind
-@dirrm share/examples/biojava/demos/seqviewer
-@dirrm share/examples/biojava/demos/seq/db
-@dirrm share/examples/biojava/demos/seq
-@dirrm share/examples/biojava/demos/search
-@dirrm share/examples/biojava/demos/ragbag
-@dirrm share/examples/biojava/demos/prot
-@dirrm share/examples/biojava/demos/nativeapps
-@dirrm share/examples/biojava/demos/indexing
-@dirrm share/examples/biojava/demos/gff
-@dirrm share/examples/biojava/demos/game
-@dirrm share/examples/biojava/demos/files/wublast
-@dirrm share/examples/biojava/demos/files/pdb
-@dirrm share/examples/biojava/demos/files/ncbiblast
-@dirrm share/examples/biojava/demos/files/hmmer
-@dirrm share/examples/biojava/demos/files/clustal
-@dirrm share/examples/biojava/demos/files/GCG
-@dirrm share/examples/biojava/demos/files
-@dirrm share/examples/biojava/demos/eventbasedparsing/stylesheets
-@dirrm share/examples/biojava/demos/eventbasedparsing
-@dirrm share/examples/biojava/demos/dp
-@dirrm share/examples/biojava/demos/dist
-@dirrm share/examples/biojava/demos/das
-@dirrm share/examples/biojava/demos/biosql
-@dirrm share/examples/biojava/demos/CircLocTest
-@dirrm share/examples/biojava/demos-obsolete/symbol
-@dirrm share/examples/biojava/demos-obsolete/seq
-@dirrm share/examples/biojava/demos-obsolete/search
-@dirrm share/examples/biojava/demos-obsolete/bioseqdb
-@dirrm share/examples/biojava/demos-obsolete
-@dirrm share/examples/biojava/demos-1.4/unigene
-@dirrm share/examples/biojava/demos-1.4/ssaha
-@dirrm share/examples/biojava/demos-1.4
-@dirrm share/examples/biojava/demos
-@dirrm share/examples/biojava
+%%INSTEX%%%%EXAMPLESDIR%%/demos/CircLocTest/CircularLocationTester.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/CircLocTest/TestFrame.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ListChangeTypes.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/RFetch.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/annodb/CreateIndexDB.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/biosql/DummyFromGFF.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/biosql/LargeSequenceTest.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/biosql/SeqDumper.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/biosql/SeqEMBL.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/biosql/SeqGFF.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/biosql/SequenceTest.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/biosql/UploadFlat.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/blastxml/BlastParser.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/blastxml/input.xml
+%%INSTEX%%%%EXAMPLESDIR%%/demos/das/TestDAS.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/das/TestDASG.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/das/TestDASH.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/das/TestDSN.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dist/TestDistribution.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dist/TestOrderNAlphabet.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dist/TestOrderNDistribution.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dist/Tools.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/Dice.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/PairwiseAlignment.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/PatternFinder.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/SearchProfile.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/ViterbiAlign.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/fake.fasta
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/fakepromoter.xml
+%%INSTEX%%%%EXAMPLESDIR%%/demos/dp/package.html
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/Blast2HTML.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/BlastLike2XML.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/Fasta2XML.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/Pdb2XML.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/TutorialEx1.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/TutorialEx1Handler.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/stylesheets/copyall.xsl
+%%INSTEX%%%%EXAMPLESDIR%%/demos/eventbasedparsing/stylesheets/hitlisthtml.xsl
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ACTN_HUMAN.uniprot
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/AF438419.embl
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/AL121903.embl
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/AL121903.genbank
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ChrI.prom.fasta
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/GCG/blast.report
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/NP_001307.gp
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/clustal/keratin.aln
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/fake.fasta
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/fakepromoter.xml
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/fp_demo.db
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/fp_demo.m10
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/fp_queries.db
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/hmmer/plus_tot.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/Massive.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/ReadMe
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/blastn.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/blastp.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/blastx.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/shortBlastn.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/tblastn.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/tblastx.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/ncbiblast/unsuppVersionBlastn.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/out.gff
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/pdb/12E8.pdb
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/pdb/hgh_ori.pdb
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/pdb/hmga_1.pdb
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/pdb/tnf.pdb
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/scoptest.fa
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/test.hmm
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/varC4-2.dna
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/varC4-2.gff
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/blastn.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/blastp.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/blastx.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/sh_blastn.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/sh_blastp.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/sh_blastx.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/sh_tblastx.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/tblastn.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/files/wublast/tblastx.out
+%%INSTEX%%%%EXAMPLESDIR%%/demos/game/AE002734.game
+%%INSTEX%%%%EXAMPLESDIR%%/demos/game/README.txt
+%%INSTEX%%%%EXAMPLESDIR%%/demos/game/SeqIOTatler.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/game/TestGAME.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/AL121903.embl
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/EmblToGffFasta.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/GFFCompare.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/GFFFilter.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/GFFMask.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/GFFToFeatures.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/GenbankToGffFasta.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/SwissprotToGffFasta.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/XFF2GFF.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/gff/varC4-2.gff
+%%INSTEX%%%%EXAMPLESDIR%%/demos/indexing/CreateFAIndex.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/indexing/CreateIndex.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/indexing/CreateSPIndex.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/indexing/ListIDs.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/indexing/ReadRaw.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/indexing/ReadRawSecondary.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/nativeapps/BlastLike2XML.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/nativeapps/Pdb2XML.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/process/ProcessToolsTest.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/prot/TestDigestIO.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/search/IndexFastaDB.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/AL121903.embl
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/AL121903.genbank
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/FetchSeq.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/GCContent.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/MotifFinder2.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/ReverseComplement.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/SimpleAssemblyTest.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/TestEmbl.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/TestEmbl2.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/TestGenbank.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/TestRefSeqPrt.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/TestSubSequence.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/TestSwissprot.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/TestTranslation.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/UniProtDemo.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/db/AddFilesToIndex.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/db/CreateIndex.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/db/FetchSequence.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/db/ListSeqsInIndex.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seq/utrs.fa
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/BeadDemo.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/CircularEmblViewer.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/EmblViewer.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/EmblViewer2.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/FastBeadDemo.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/GappedViewer.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/TraceViewer.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/seqviewer/test.fa
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/CreateDNAFastaHashTable.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/CreateDNAFastaHashTableCompact.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/CreateDNAFastaHashTableLarge.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/CreateEmblHashTable.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/CreateEmblHashTableLarge.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/ResultPrinter.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/SSAHA.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/SSAHALarge.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/SSAHASeq.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssaha/SSAHASeqLarge.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/AlignmentBuilder.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/CountHits.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/CountSubHits.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/Echoer.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/FilterByValue.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/ListQueries.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/ListSubjects.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/ProcessBlastReport.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/PropertyEchoer.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/SubHitBuilder.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/ssbind/SubHitFilter.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/MatrixValue.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/PatternDemo.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestAlphabetIndexers.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestAmbiguity.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestGappedSymbolList.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestIndexedIntegers.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestLocation.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestOrderNSymbolList.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestSimpleAlignment.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/TestWindowedSymbolList.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/Tools.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/symbol/WindowCount.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/tagvalue/Grep.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/tagvalue/Index.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/tagvalue/Parse.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/tagvalue/ParseEmbl.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/tagvalue/ParseSwissprot.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/tagvalue/PrintFormat.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/unigene/CreateUnigeneFlat.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/unigene/ParseLibInfo.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/unigene/ParseUnigene.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/unigene/SearchUnigeneFlat.java
+%%INSTEX%%%%EXAMPLESDIR%%/demos/xff/TestXFFStreaming.java
+%%JAVAJARDIR%%/apps-%%VER%%.jar
+%%JAVAJARDIR%%/biojava.jar
+%%JAVAJARDIR%%/bytecode.jar
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/xff
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/unigene
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/tagvalue
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/symbol
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/ssbind
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/ssaha
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/seqviewer
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/seq/db
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/seq
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/search
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/prot
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/process
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/nativeapps
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/indexing
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/gff
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/game
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/files/wublast
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/files/pdb
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/files/ncbiblast
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/files/hmmer
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/files/clustal
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/files/GCG
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/files
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/eventbasedparsing/stylesheets
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/eventbasedparsing
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/dp
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/dist
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/das
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/blastxml
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/biosql
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/annodb
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos/CircLocTest
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%/demos
+%%INSTEX%%@dirrm %%EXAMPLESDIR%%

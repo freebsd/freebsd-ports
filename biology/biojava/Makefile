@@ -6,32 +6,62 @@
 #
 
 PORTNAME=	biojava
-PORTVERSION=	1.30
+DISTVERSION=	1.5-beta
+PORTEPOCH=	1
 CATEGORIES=	biology java
-MASTER_SITES=	http://www.biojava.org/download/source/
+MASTER_SITES=	http://www.biojava.org/download/bj15b/all/:source	\
+		http://www.biojava.org/download/bj15b/bin/:bin
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:source	\
+		bytecode.jar:bin
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	whitekid@gmail.com
 COMMENT=	Open-source java tools for processing biological data
 
-RUN_DEPENDS=	${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
-		${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
+BUILD_DEPENDS=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb \
+		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp \
+		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
+RUN_DEPENDS=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb \
+		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
+		${JAVALIBDIR}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp \
+		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
+		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp \
+		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool \
+		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
+.if !defined(WITHOUT_TESTS)
+BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
+.endif
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.4+
 USE_ANT=	yes
+MAKE_ENV=	CLASSPATH="${JAVALIBDIR}"
+ALL_TARGET=	compile-apps
 
-JARFILES=	biojava.jar bytecode.jar
-PORTDOCS=	api
-SAMPLES=	demos demos-1.4 demos-obsolete
+PLIST_SUB+=	VER=${DISTVERSION}
 
-post-build:
+JARFILES=	apps-${DISTVERSION}.jar biojava.jar bytecode.jar
+PORTDOCS=	biojava
+SAMPLES=	demos
+
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Build javadocs..."
-	@cd ${WRKSRC} && ant javadocs
+ALL_TARGET+=	javadocs-biojava
+.endif
+.if !defined(WITHOUT_SAMPLES)
+ALL_TARGET+=	compile-demos
+PLIST_SUB+=	INSTEX=""
+.else
+PLIST_SUB+=	INSTEX="@comment "
+.endif
+
+post-extract:
+	${CP} ${_DISTDIR}/bytecode.jar ${WRKSRC}
+
+.if !defined(WITHOUT_TESTS)
+regression-test:
+	@(cd ${BUILD_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} runtests)
 .endif
 
 # from textproc/xerces-j
@@ -53,7 +83,6 @@ do-install:
 		${FIND} ${PORTDOCS} -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
-
 .if !defined(WITHOUT_SAMPLES)
 	@${ECHO_MSG} -n ">> Installing demos in ${EXAMPLESDIR}..."
 	cd ${WRKSRC} && \
