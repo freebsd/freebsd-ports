@@ -1,4 +1,3 @@
-bin/gtkmm-demo
 include/atkmm-1.6/atkmm.h
 include/atkmm-1.6/atkmm/action.h
 include/atkmm-1.6/atkmm/component.h
