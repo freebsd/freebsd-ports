@@ -25,33 +25,27 @@ share/apps/ktagebuch/icons/crystalsvg/32x32/actions/yearback.png
 share/apps/ktagebuch/icons/crystalsvg/32x32/actions/yearforward.png
 share/apps/ktagebuch/ktagebuchui.rc
 share/apps/ktagebuch/mood.plugin
-share/doc/HTML/de/ktagebuch/common
-share/doc/HTML/de/ktagebuch/find.png
-share/doc/HTML/de/ktagebuch/generaloptions.png
-share/doc/HTML/de/ktagebuch/index.cache.bz2
-share/doc/HTML/de/ktagebuch/index.docbook
-share/doc/HTML/de/ktagebuch/mainwindow.png
-share/doc/HTML/en/ktagebuch/common
-share/doc/HTML/en/ktagebuch/find.png
-share/doc/HTML/en/ktagebuch/generaloptions.png
-share/doc/HTML/en/ktagebuch/index.cache.bz2
-share/doc/HTML/en/ktagebuch/index.docbook
-share/doc/HTML/en/ktagebuch/mainwindow.png
+%%DOCSDIR%%/de/ktagebuch/common
+%%DOCSDIR%%/de/ktagebuch/find.png
+%%DOCSDIR%%/de/ktagebuch/generaloptions.png
+%%DOCSDIR%%/de/ktagebuch/index.cache.bz2
+%%DOCSDIR%%/de/ktagebuch/index.docbook
+%%DOCSDIR%%/de/ktagebuch/mainwindow.png
+%%DOCSDIR%%/en/ktagebuch/common
+%%DOCSDIR%%/en/ktagebuch/find.png
+%%DOCSDIR%%/en/ktagebuch/generaloptions.png
+%%DOCSDIR%%/en/ktagebuch/index.cache.bz2
+%%DOCSDIR%%/en/ktagebuch/index.docbook
+%%DOCSDIR%%/en/ktagebuch/mainwindow.png
 share/icons/hicolor/16x16/apps/ktagebuch.png
 share/icons/hicolor/32x32/apps/ktagebuch.png
 share/locale/de/LC_MESSAGES/ktagebuch.mo
 share/locale/es/LC_MESSAGES/ktagebuch.mo
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm share/doc/HTML/en/ktagebuch
-@dirrmtry share/doc/HTML/en
-@dirrm share/doc/HTML/de/ktagebuch
-@dirrmtry share/doc/HTML/de
-@dirrmtry share/doc/HTML
+@dirrm %%DOCSDIR%%/en/ktagebuch
+@dirrmtry %%DOCSDIR%%/en
+@dirrm %%DOCSDIR%%/de/ktagebuch
+@dirrmtry %%DOCSDIR%%/de
+@dirrmtry %%DOCSDIR%%
 @dirrm share/apps/ktagebuch/icons/crystalsvg/32x32/actions
 @dirrm share/apps/ktagebuch/icons/crystalsvg/32x32
 @dirrm share/apps/ktagebuch/icons/crystalsvg/16x16/actions
