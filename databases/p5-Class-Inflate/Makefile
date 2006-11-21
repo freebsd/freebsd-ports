@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Class-Inflate
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inflate HASH Object from Values in Database
 
 RUN_DEPENDS=	${SITE_PERL}/Devel/Messenger.pm:${PORTSDIR}/devel/p5-Devel-Messenger
