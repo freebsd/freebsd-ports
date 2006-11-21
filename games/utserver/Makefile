@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
 OPTIONS=	BONUSPACKS	'install the official bonus packs collection' on
 
-ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_CDROM=	Size; the data set is much too big
 NO_BUILD=	yes
