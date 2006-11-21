@@ -293,7 +293,6 @@
 %%SERENDIPITY%%/bundled-libs/docs/WikiPage.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/WordsSmashedTogether.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/free links.wiki.txt
-%%SERENDIPITY%%/bundled-libs/docs/index.php
 %%SERENDIPITY%%/bundled-libs/docs/stylesheet.css
 %%SERENDIPITY%%/bundled-libs/dragdrop.js
 %%SERENDIPITY%%/bundled-libs/imgedit.js
@@ -726,6 +725,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_se.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_bg.inc.php
@@ -739,6 +739,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_se.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/serendipity_event_emoticate.php
@@ -868,6 +869,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_se.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_bg.inc.php
@@ -881,6 +883,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_se.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/serendipity_event_s9ymarkup.php
