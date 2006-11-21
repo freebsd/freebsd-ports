@@ -1,5 +1,0 @@
-NOTE: mod_jk2 is deprecated, please use mod_jk instead. See
-http://jakarta.apache.org/tomcat/connectors-doc/news/20041100.html#20041115.1
-for more information.
-
-WWW: http://jakarta.apache.org/tomcat/connectors-doc-archive/jk2/

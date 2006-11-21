@@ -1,4 +1,0 @@
-etc/apache%%APACHE2%%/workers2.properties.sample
-libexec/apache%%APACHE2%%/mod_jk2.so
-@exec %D/sbin/apxs -e -A -n jk2 %f || true
-@unexec %D/sbin/apxs -e -A -n jk2 %f || true

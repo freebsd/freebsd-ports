@@ -1,7 +1,0 @@
-%%SITE_PERL%%/AI/NeuralNet/Mesh.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/Mesh/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/Mesh
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
-@dirrmtry %%SITE_PERL%%/AI/NeuralNet
-@dirrmtry %%SITE_PERL%%/AI
