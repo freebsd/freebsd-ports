@@ -20,6 +20,8 @@ NO_BUILD=	yes
 
 MAN1=		dphys-config.1
 
+BROKEN=		not fetchable
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${PORTNAME}
 
