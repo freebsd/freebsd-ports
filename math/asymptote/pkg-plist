@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/asy
 bin/xasy
+%%DATADIR%%/CAD.asy
 %%DATADIR%%/animate.asy
 %%DATADIR%%/annotate.asy
 %%DATADIR%%/asy-init.el
@@ -54,6 +55,7 @@ bin/xasy
 %%DATADIR%%/unicode.asy
 %%DATADIR%%/version.asy
 %%DATADIR%%/x11colors.asy
+%%PORTDOCS%%%%DOCSDIR%%/CAD.pdf
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.ascii
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section1.html
@@ -67,6 +69,8 @@ bin/xasy
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
 %%EXAMPLESDIR%%/Bode.asy
+%%EXAMPLESDIR%%/CAD1.asy
+%%EXAMPLESDIR%%/CDlabel.asy
 %%EXAMPLESDIR%%/Gouraud.asy
 %%EXAMPLESDIR%%/Gouraudcontour.asy
 %%EXAMPLESDIR%%/Pythagoras.asy
@@ -130,6 +134,7 @@ bin/xasy
 %%EXAMPLESDIR%%/icon.asy
 %%EXAMPLESDIR%%/image.asy
 %%EXAMPLESDIR%%/imagecontour.asy
+%%EXAMPLESDIR%%/imagehistogram.asy
 %%EXAMPLESDIR%%/integraltest.asy
 %%EXAMPLESDIR%%/join.asy
 %%EXAMPLESDIR%%/join3.asy
@@ -140,6 +145,7 @@ bin/xasy
 %%EXAMPLESDIR%%/latticeshading.asy
 %%EXAMPLESDIR%%/leastsquares.asy
 %%EXAMPLESDIR%%/leastsquares.dat
+%%EXAMPLESDIR%%/legend.asy
 %%EXAMPLESDIR%%/lever.asy
 %%EXAMPLESDIR%%/limit.asy
 %%EXAMPLESDIR%%/lineargraph.asy
