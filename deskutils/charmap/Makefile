@@ -9,7 +9,7 @@ PORTNAME=	charmap
 PORTVERSION=	0.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.nongnu.org/charmap/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

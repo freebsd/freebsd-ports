@@ -9,7 +9,7 @@ PORTNAME=	renaissance
 PORTVERSION=	0.8.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.gnustep.it/Renaissance/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	Renaissance-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

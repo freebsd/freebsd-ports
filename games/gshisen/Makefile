@@ -9,7 +9,7 @@ PORTNAME=	gshisen
 PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for GNUstep

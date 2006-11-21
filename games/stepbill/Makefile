@@ -9,7 +9,7 @@ PORTNAME=	stepbill
 PORTVERSION=	2.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuks.mine.nu/stepbill/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Get rid of those nasty Wingdows viruses

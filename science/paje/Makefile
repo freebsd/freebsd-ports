@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://download.fr2.forge.objectweb.org/ \
 		http://download.forge.objectweb.org/paje/ \
 		http://download.zh.forge.objectweb.org/paje/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	Paje_${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

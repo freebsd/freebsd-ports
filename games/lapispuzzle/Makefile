@@ -9,7 +9,7 @@ PORTNAME=	lapispuzzle
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	LapisPuzzle-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

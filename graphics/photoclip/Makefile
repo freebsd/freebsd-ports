@@ -9,7 +9,7 @@ PORTNAME=	photoclip
 PORTVERSION=	0.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vaisburd.net/PhotoClip/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	PhotoClip-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

@@ -8,7 +8,7 @@
 PORTNAME=	rsskit
 PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	www
-MASTER_SITES=	http://florida.ethz.ch/ports/distfiles/
+MASTER_SITES=	http://io.debian.net/~tar/ports/distfiles/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 
