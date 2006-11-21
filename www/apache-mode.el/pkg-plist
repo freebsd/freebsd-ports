@@ -1,0 +1,4 @@
+lib/xemacs/site-lisp/apache-mode.el
+share/emacs/site-lisp/apache-mode.el
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
