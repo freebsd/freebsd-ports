@@ -22,6 +22,10 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
+
+DOCSDIR=	share/doc/HTML
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|-fPIC|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
