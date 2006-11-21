@@ -14796,6 +14796,7 @@ vmailmgr	ports/mail/vmailmgr
 vmd		ports/science/vmd
 vmips		ports/emulators/vmips
 vmsbackup	ports/emulators/vmsbackup
+vmw		ports/emulators/vmw
 vmware-guestd3	ports/emulators/vmware-guestd3
 vmware-guestd4	ports/emulators/vmware-guestd4
 vmware-guestd5	ports/emulators/vmware-guestd5
