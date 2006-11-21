@@ -9,7 +9,7 @@ PORTNAME=	pcsc-lite
 PORTVERSION=	1.3.2
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/download.php/1738/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1738/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
