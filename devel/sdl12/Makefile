@@ -50,7 +50,8 @@ DOCS=		BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
 OPTIONS=	NAS	"Include support for the Network Audio System"	Off	\
 		AALIB	"Include support for AA-lib"			On	\
 		GL	"Include support for OpenGL"			On	\
-		GGI	"Include support for GGI"			Off
+		GGI	"Include support for GGI"			Off	\
+		SVGALIB	"Include support for SVGALIB"			On
 
 .include <bsd.port.pre.mk>
 
@@ -61,6 +62,10 @@ DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
 CONFIGURE_ARGS+=--disable-video-vgl
 PKGMESSAGE=	none
 DISPLAY_MSG=	${DO_NADA}
+.endif
+
+.if ${OSVERSION} >= 500111
+CONFIGURE_ENV+=	ac_cv_header_libusbhid_h=no
 .endif
 
 .if defined(WITH_NAS)
