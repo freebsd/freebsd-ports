@@ -146,7 +146,7 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN3=		Git.3
+MAN3=		Git.3 private-Error.3
 MAN7=		git.7
 
 USE_PERL5=	yes
