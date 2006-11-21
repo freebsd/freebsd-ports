@@ -4572,6 +4572,7 @@ share/icons/gnome/scalable/categories/xfce-internet.svg
 share/icons/gnome/scalable/categories/xfce-system-settings.svg
 share/icons/gnome/scalable/categories/xfce-utils.svg
 share/icons/gnome/scalable/devices/3floppy_unmount.svg
+share/icons/gnome/scalable/devices/audio-input-microphone.svg
 share/icons/gnome/scalable/devices/battery.svg
 share/icons/gnome/scalable/devices/cdrom_unmount.svg
 share/icons/gnome/scalable/devices/cdwriter_unmount.svg
@@ -4612,6 +4613,7 @@ share/icons/gnome/scalable/devices/gnome-dev-removable-1394.svg
 share/icons/gnome/scalable/devices/gnome-dev-removable-usb.svg
 share/icons/gnome/scalable/devices/gnome-dev-removable.svg
 share/icons/gnome/scalable/devices/gnome-fs-client.svg
+share/icons/gnome/scalable/devices/gnome-stock-mic.svg
 share/icons/gnome/scalable/devices/gtk-cdrom.svg
 share/icons/gnome/scalable/devices/gtk-floppy.svg
 share/icons/gnome/scalable/devices/gtk-harddisk.svg
@@ -4633,6 +4635,7 @@ share/icons/gnome/scalable/devices/printer-remote.svg
 share/icons/gnome/scalable/devices/printer.svg
 share/icons/gnome/scalable/devices/printer1.svg
 share/icons/gnome/scalable/devices/printmgr.svg
+share/icons/gnome/scalable/devices/stock_mic.svg
 share/icons/gnome/scalable/devices/stock_printers.svg
 share/icons/gnome/scalable/devices/system-floppy.svg
 share/icons/gnome/scalable/devices/system.svg
