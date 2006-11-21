@@ -1,6 +1,0 @@
-%%SITE_PERL%%/IO/stty.pl
-%%SITE_PERL%%/IO/Stty.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Stty/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Stty
-@dirrmtry %%SITE_PERL%%/IO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
