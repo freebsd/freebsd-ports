@@ -770,6 +770,7 @@
     SUBDIR += wop
     SUBDIR += wordplay
     SUBDIR += wormux
+    SUBDIR += wormux-devel
     SUBDIR += wtf
     SUBDIR += x3eyes
     SUBDIR += xabacus
