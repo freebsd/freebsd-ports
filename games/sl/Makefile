@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar
 
 .if defined(WITH_PERSISTENT)
 SLPATCHVERSION=	.5p1
-PATCH_SITES=	http://www.linet.gr.jp/~izumi/sl/
+PATCH_SITES=	http://www.izumix.org.uk/sl/
 PATCHFILES=	sl5-1.patch
 PATCH_DIST_STRIP=	-p1
 .endif
