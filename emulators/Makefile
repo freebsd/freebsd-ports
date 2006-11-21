@@ -130,6 +130,7 @@
     SUBDIR += visualos
     SUBDIR += vmips
     SUBDIR += vmsbackup
+    SUBDIR += vmw
     SUBDIR += vmware-guestd3
     SUBDIR += vmware-guestd4
     SUBDIR += vmware-guestd5
