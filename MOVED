@@ -2540,3 +2540,7 @@ editors/openoffice.org-2.0|editors/openoffice.org-2|2006-11-12|Better version nu
 editors/openoffice.org-2.0-devel|editors/openoffice.org-2-devel|2006-11-12|Better version number handling
 devel/ply|devel/py-ply|2006-11-12|Rename to consistency with other Python ports
 devel/py-lucene|textproc/py-lucene|2006-11-15|Moved to be consistent with Lucene port
+math/p5-AI-NeuralNet-Mesh||2006-11-21|Has expired: project no longer exists
+net/p5-Archie||2006-11-21|Has expired: project no longer exists
+www/mod_jk2||2006-11-21|Has expired: "JK2 is officially unsupported, no further development will take place."
+www/mod_jk2-apache2||2006-11-21|Has expired: "JK2 is officially unsupported, no further development will take place."

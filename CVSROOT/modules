@@ -7183,8 +7183,6 @@ mod_injection	ports/www/mod_injection
 mod_jail	ports/www/mod_jail
 mod_jk		ports/www/mod_jk
 mod_jk-apache2	ports/www/mod_jk-apache2
-mod_jk2		ports/www/mod_jk2
-mod_jk2-apache2	ports/www/mod_jk2-apache2
 mod_layout	ports/www/mod_layout
 mod_layout2	ports/www/mod_layout2
 mod_limitipconn	ports/www/mod_limitipconn
@@ -8132,7 +8130,6 @@ p5-AI-Categorizer	ports/textproc/p5-AI-Categorizer
 p5-AI-DecisionTree	ports/math/p5-AI-DecisionTree
 p5-AI-Genetic	ports/math/p5-AI-Genetic
 p5-AI-NeuralNet-BackProp	ports/math/p5-AI-NeuralNet-BackProp
-p5-AI-NeuralNet-Mesh	ports/math/p5-AI-NeuralNet-Mesh
 p5-AI-Pathfinding-AStar	ports/devel/p5-AI-Pathfinding-AStar
 p5-AI-Perceptron	ports/math/p5-AI-Perceptron
 p5-AI-Prolog	ports/devel/p5-AI-Prolog
@@ -8234,7 +8231,6 @@ p5-App-Options	ports/devel/p5-App-Options
 p5-App-Trace	ports/devel/p5-App-Trace
 p5-AppConfig	ports/devel/p5-AppConfig
 p5-AppConfig-Std	ports/devel/p5-AppConfig-Std
-p5-Archie	ports/net/p5-Archie
 p5-Archive-Any	ports/archivers/p5-Archive-Any
 p5-Archive-Extract	ports/archivers/p5-Archive-Extract
 p5-Archive-Tar	ports/archivers/p5-Archive-Tar
