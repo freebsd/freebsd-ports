@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_Table
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -17,7 +17,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Console
 FILES=		Table.php
-TESTS=		assoziative_arrays.phpt multibyte.phpt no_header.phpt no_rows.phpt
+TESTS=		assoziative_arrays.phpt filters.phpt multibyte.phpt multiline.phpt \
+		no_header.phpt no_rows.phpt rules.phpt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
