@@ -25,18 +25,12 @@ USE_GL=		yes
 USE_SDL=	sdl net mixer
 USE_GCC=	3.4+
 
-CONFIGURE_ARGS=	--program-suffix=
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		SDL_CONFIG="${SDL_CONFIG}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/LDFLAGS=/ s|$$LIBS|$$LDFLAGS|' \
@@ -46,4 +40,4 @@ post-patch:
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
