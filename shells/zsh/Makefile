@@ -30,12 +30,9 @@ PORTNAME=	zsh
 PORTVERSION=	4.3.2
 PORTREVISION=	1
 CATEGORIES=	shells
-MASTER_SITES=	\
-		http://archive.progeny.com/zsh/ \
-		ftp://archive.progeny.com/zsh/ \
+MASTER_SITES=	http://zsh.open-mirror.com/ \
 		http://www.zsh.org/pub/ \
 		ftp://ftp.zsh.org/pub/ \
-		ftp://sunsite.dk/pub/unix/shells/zsh/ \
 		http://mirrors.dotsrc.org/zsh/ \
 		ftp://mirrors.dotsrc.org/zsh/ \
 		ftp://ftp.funet.fi/pub/unix/shells/zsh/ \
@@ -48,8 +45,7 @@ MASTER_SITES=	\
 		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
 		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
 		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
-		ftp://sunsite.org.uk/package/zsh/ \
-		http://zsh.open-mirror.com/
+		ftp://sunsite.org.uk/package/zsh/
 DISTNAME=	${PORTNAME}-${ZSH_VER}
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
