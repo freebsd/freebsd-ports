@@ -7,6 +7,7 @@
 
 PORTNAME=		hastymail
 PORTVERSION=		1.5
+PORTREVISION=		1
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	hastymail
@@ -20,7 +21,8 @@ SUB_FILES=	pkg-message
 
 WWWOWN?=	www
 WWWGRP?=	www
-INSTALL_DIR?=	www/data/${PORTNAME}
+INSTALL_DIR?=	www/${PORTNAME}
+PLIST=		${WRKDIR}/pkg-plist
 
 WANT_PHP_WEB=	yes
 USE_PHP=	session imap
