@@ -35,6 +35,8 @@ OPTIONS=	PNG "build with png support" off \
 
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
+CFLAGS+=		${PTHREAD_LIBS}
+CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 .endif
 
 .if defined(WITH_USB)
