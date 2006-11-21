@@ -13,7 +13,7 @@ MASTER_SITES=	https://helixcommunity.org/frs/download.php/1950/	\
 MASTER_SITE_SUBDIR=	shaun
 
 MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	The Helix Community's open source media player
+COMMENT=	The Helix Community's open source media player		# '
 
 LIB_DEPENDS=	theora.[1-9]:${PORTSDIR}/multimedia/libtheora		\
 		esd.2:${PORTSDIR}/audio/esound	\
@@ -43,6 +43,10 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S,^,--exclude ${DISTNAME}/,}
 OPTIONS=	PLUGIN	"Build with Gecko browser plug-in" off
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		coredumps during compilation on ${ARCH}
+.endif
 
 .if defined(WITH_PLUGIN)
 USE_GECKO=	firefox mozilla firefox-devel seamonkey
