@@ -1,0 +1,51 @@
+--- configure.orig	Sat Oct 28 19:51:24 2006
++++ configure	Sat Oct 28 19:42:03 2006
+@@ -118,11 +118,11 @@
+     echo "                              ... NOT found, module postgres disabled"
+ fi
+ 
+-echo "Checking for SVN (ibsvn_client-1 libapr-0.so libaprutil-0.so) ..."
++echo "Checking for SVN (ibsvn_client-1 libapr-1.so libaprutil-1.so) ..."
+ for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
+ do
+     if [ "X" = "X$SVN_PATH" ]; then
+-        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-0.so" ]&&[ -f "$i/libaprutil-0.so" ]; then
++        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-1.so" ]&&[ -f "$i/libaprutil-1.so" ]; then
+             SVN_PATH="$i"
+         fi
+     fi
+@@ -202,8 +202,8 @@
+         fi
+     fi  
+     if [ "X" = "X$APR_IPATH" ]; then
+-        if [ -d "$i/apr-0" ]; then
+-            APR_IPATH="$i/apr-0"
++        if [ -d "$i/apr-1" ]; then
++            APR_IPATH="$i/apr-1"
+         fi
+     fi  
+ done
+@@ -220,8 +220,8 @@
+         fi
+     fi  
+     if [ "X" = "X$APR_IPATH" ]; then
+-        if [ -d "$i/apr-0" ]; then
+-            APR_IPATH="$i/apr-0"
++        if [ -d "$i/apr-1" ]; then
++            APR_IPATH="$i/apr-1"
+         fi
+     fi  
+ done
+@@ -379,10 +379,10 @@
+     XLIBS="$XLIBS -lpq"
+ fi
+ if [ -n "$SVN_PATH" ]; then
+-    XLIBS="$XLIBS -lsvn_client-1 -lapr-0 -laprutil-0"
++    XLIBS="$XLIBS -lsvn_client-1 -lapr-1 -laprutil-1"
+ fi
+ if [ -n "$SVN_PATH" ]; then
+-    XLIBS="$XLIBS -lsvn_client-1 -lapr-0 -laprutil-0"
++    XLIBS="$XLIBS -lsvn_client-1 -lapr-1 -laprutil-1"
+ fi
+ if [ -n "$SSH_PATH" ]; then
+     XLIBS="$XLIBS -lssh"
