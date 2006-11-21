@@ -3,9 +3,9 @@ bin/gswitchit-plugins-capplet
 %%PYTHON%%bin/invest-chart
 %%BATTERY%%etc/sound/events/battstat_applet.soundlist
 include/libgswitchit/gnome-kbd-indicator.h
-include/libgswitchit/gswitchit-config-private.h
 include/libgswitchit/gswitchit-config.h
 include/libgswitchit/gswitchit-plugin.h
+include/libgswitchit/gswitchit-plugins-app.h
 include/libgswitchit/keyboard-config-registry-client.h
 include/libgswitchit/keyboard-config-registry.h
 include/libgweather/gweather-gconf.h
