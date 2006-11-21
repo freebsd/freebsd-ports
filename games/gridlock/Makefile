@@ -9,7 +9,7 @@ PORTNAME=	gridlock
 PORTVERSION=	1.10
 CATEGORIES=	games
 MASTER_SITES=	http://www.dozingcatsoftware.com/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	Gridlock-gnustep-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

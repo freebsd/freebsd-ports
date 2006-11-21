@@ -9,7 +9,7 @@ PORTNAME=	aclock
 PORTVERSION=	0.2.3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.linuks.mine.nu/aclock/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	aclock-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

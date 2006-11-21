@@ -9,7 +9,7 @@ PORTNAME=	zipper
 PORTVERSION=	1.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	Zipper-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

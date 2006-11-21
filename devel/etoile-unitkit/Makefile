@@ -8,7 +8,7 @@
 PORTNAME=	unitkit
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://florida.ethz.ch/ports/distfiles/
+MASTER_SITES=	http://io.debian.net/~tar/ports/distfiles/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 

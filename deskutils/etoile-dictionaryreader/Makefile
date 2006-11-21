@@ -9,7 +9,7 @@ PORTNAME=	etoile
 PORTVERSION=	0.1.${SNAPSHOT}
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://florida.ethz.ch/ports/distfiles/
+MASTER_SITES=	http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 
 MAINTAINER=	gurkan@linuks.mine.nu

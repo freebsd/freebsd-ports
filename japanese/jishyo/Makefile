@@ -9,7 +9,7 @@ PORTNAME=	jishyo
 PORTVERSION=	0.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	Jishyo-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

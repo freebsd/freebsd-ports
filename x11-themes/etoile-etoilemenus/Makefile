@@ -8,7 +8,7 @@
 PORTNAME=	etoilemenus
 PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://florida.ethz.ch/ports/distfiles/
+MASTER_SITES=	http://io.debian.net/~tar/ports/distfiles/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 

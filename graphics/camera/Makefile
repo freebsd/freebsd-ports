@@ -9,7 +9,7 @@ PORTNAME=	camera
 PORTVERSION=	0.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.gna.org/gsimageapps/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	Camera-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu

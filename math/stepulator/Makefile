@@ -9,7 +9,7 @@ PORTNAME=	stepulator
 PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.linuks.mine.nu/stepulator/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	${PORTNAME}-gs-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 

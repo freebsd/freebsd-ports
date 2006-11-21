@@ -9,7 +9,7 @@ PORTNAME=	grouch
 PORTVERSION=	20060713
 CATEGORIES=	net-im
 MASTER_SITES=	http://mail.rochester.edu/~asveikau/grouch/ \
-		http://florida.ethz.ch/ports/distfiles/
+		http://io.debian.net/~tar/ports/distfiles/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
