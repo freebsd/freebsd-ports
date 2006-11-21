@@ -10,7 +10,7 @@ PORTNAME=	ion-2
 PORTVERSION=	20040729
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
+MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 
 MAINTAINER=	anthony.ginepro@laposte.net
 COMMENT=	Ion is a tiling tabbed window manager
