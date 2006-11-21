@@ -414,6 +414,7 @@ apache-ant	ports/devel/apache-ant
 apache-contrib	ports/www/apache-contrib
 apache-forrest	ports/www/apache-forrest
 apache-jserv	ports/www/apache-jserv
+apache-mode.el	ports/www/apache-mode.el
 apache-soap	ports/net/apache-soap
 apache13	ports/www/apache13
 apache13+ipv6	ports/www/apache13+ipv6
