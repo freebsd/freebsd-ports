@@ -26,7 +26,7 @@ EXTRACT_ONLY=	all-20060611.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
 
-RESTRICTED=	Unsure of codec\'s license
+RESTRICTED=	Unsure of codec's license			# '
 
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
@@ -86,7 +86,11 @@ post-extract:
 do-install:
 	@${MKDIR} ${PREFIX}/lib/win32
 	@${CHMOD} 0755 ${PREFIX}/lib/win32
+.if !defined(WITHOUT_REALPLAYER)
 	@${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/lib/win32
+.else
+	@${INSTALL_DATA} ${WRKSRC}/*[^0] ${PREFIX}/lib/win32
+.endif
 # marker file
 	@${CP} /dev/null ${PREFIX}/lib/win32/${PKGNAME}
 	@${CHMOD} 0444 ${PREFIX}/lib/win32/${PKGNAME}

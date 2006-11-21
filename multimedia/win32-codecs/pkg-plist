@@ -1,7 +1,5 @@
 @comment Readmes
 lib/win32/README
-lib/win32/NOTE
-lib/win32/Readme.txt
 @comment win32codecs
 lib/win32/wmv8ds32.ax
 lib/win32/vp5vfw.dll
@@ -134,6 +132,8 @@ lib/win32/wvc1dmod.dll
 %%REALPLAYER%%lib/win32/sipr.so.6.0
 %%REALPLAYER%%lib/win32/tokf.so.6.0
 @comment rp9codecs-win32
+%%REALPLAYER%%lib/win32/NOTE
+%%REALPLAYER%%lib/win32/Readme.txt
 %%REALPLAYER%%lib/win32/atrc3260.dll
 %%REALPLAYER%%lib/win32/cook3260.dll
 %%REALPLAYER%%lib/win32/drv13260.dll
