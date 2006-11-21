@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${P
 
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
-USE_GSTREAMER80=	gconf
+USE_GSTREAMER=	yes
 USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
