@@ -847,6 +847,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/adding.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/birdmacro.pt
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/classes.py
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/classes.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/cockatiel.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/condor.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/cps_test_localizer.pt
@@ -879,6 +881,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource.zcml
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource_ftest.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource_subdir/resource.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/seagull.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/security.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/skin.txt
@@ -890,6 +893,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_absoluteurl.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_adding.py
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_adding.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_decode.py
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_decode.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_defaultview.py
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_defaultview.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_i18n.py
@@ -1380,6 +1385,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/batch.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/batch.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/Attributes.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckBatchIteration.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslate.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslateHooked.html
@@ -1398,6 +1404,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShop1.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShop2.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShopLAF.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/Attributes.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckBatchIteration.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslate.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslateHooked.html
@@ -2204,6 +2211,8 @@
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/testResult.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/testResult.pyc
+%%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_caching.py
+%%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_caching.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_results.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_results.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_sqlgroup.py
@@ -9467,6 +9476,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Five/doc/products
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Five/doc/presentations
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Five/doc
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource_subdir
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/pages
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Five/browser
