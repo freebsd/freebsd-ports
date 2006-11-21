@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061121:
+  AFFECTS: users of www/hastymail
+  AUTHOR: miwi@FreeBSD.org
+
+  The default install location has changed from
+  ${PREFIX}/www/data/hastymail to ${PREFIX}/www/hastymail.
+
 20061109
   AFFECTS: users of milter-bogom, dk-milter, dkim-milter
   AUTHOR: ache@freebsd.org
