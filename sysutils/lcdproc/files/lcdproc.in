@@ -17,8 +17,10 @@ rcvar=${name}_enable
 load_rc_config $name
 
 : ${lcdproc_enable="NO"}
-: ${lcdproc_flags="-d C S M U"}
+: ${lcdproc_conf="%%PREFIX%%/etc/lcdproc.conf"}
+: ${lcdproc_flags="-c ${lcdproc_conf}"}
 
+required_files=${lcdproc_conf}
 command="%%PREFIX%%/bin/lcdproc"
 
 run_rc_command "$1"
