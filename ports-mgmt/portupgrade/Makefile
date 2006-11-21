@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.1.3.3
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 PORTEPOCH=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://sunner.elcomnet.ru/~sem/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	pkgtools-${DISTVERSION}
 
@@ -28,9 +26,8 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse ruby18
 USE_PERL5_RUN=	yes
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/pkg
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
+LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/pkg
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
@@ -49,6 +46,9 @@ MLINKS=		pkgdb.1 pkg_which.1 \
 		portupgrade.1 portinstall.1 \
 		portsdb.1 ports_glob.1
 MANCOMPRESSED=	maybe
+
+EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
+DOCSDIR=	${PREFIX}/share/doc/pkgtools
 
 INSTALL_TARGET=		install
 .if !defined(NOPORTDOCS)
