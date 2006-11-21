@@ -1,0 +1,18 @@
+VMware Command Line Tools
+
+On this page, you'll find command line programs which can replace and/or
+supplement the VMware's official VMwareTools.
+
+These programs use VMware's undocumented and therefore not officially
+supported feature to communicate with VMware (see VMware Backdoor I/O Port).
+Information on these functions have come entirely from my personal research
+and quite a few contributions by fellow VMware users.
+
+These programs are intended partly as illustrative examples of how to use the
+VMware backdoor function and I have cut many corners writing them.
+
+* vmw: generic backdoor access program
+* vmshrink: virtual disk shrink program
+* vmftp: host-guest file transfer program
+
+WWW: http://chitchat.at.infoseek.co.jp/vmware/vmtools.html
