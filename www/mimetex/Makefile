@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mimetex
-PORTVERSION=	20061028.1.64
+PORTVERSION=	20061119.1.64
 CATEGORIES=	www math
-MASTER_SITES=	http://www.forkosh.com/ \
-		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
+		http://www.forkosh.com/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
