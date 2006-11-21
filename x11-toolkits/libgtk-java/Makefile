@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgtk-java
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 CATEGORIES=	x11-toolkits java
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -40,9 +40,9 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 
-post-extract:
-	@${REINPLACE_CMD} -e 's|||' \
-		${WRKSRC}/gtk2-java.pc.in
+post-patch:
+	@${REINPLACE_CMD} -e 's|sed -i|${SED} -i.bak -e|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/gtk2-java.pc.in
 
 do-install:
 	${MKDIR} ${PREFIX}/lib
