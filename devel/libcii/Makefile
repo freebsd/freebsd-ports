@@ -17,7 +17,7 @@ COMMENT=	Library from "C Interfaces and Implementations" by David Hanson
 NO_WRKSUBDIR=	yes
 
 MAKEFILE=	makefile
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DMAXALIGH=8 -Iinclude" \
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DMAXALIGN=8 -Iinclude" \
 		AS="${CC} -c -x assembler-with-cpp -traditional" \
 		LD="${CC}" LDFLAGS="" EXTRAS="" BUILDDIR=${PKGNAME}
 PLIST_SUB=	CIIMAJOR="${CIIMAJOR}"
@@ -27,12 +27,24 @@ CIIMAJOR=	1
 CIIDEST=	${PREFIX}/lib/cii
 
 SAMPLES=	double calc ids	mpcalc wf xref cref iref kref \
-		idents words basename dirname sort spin	sieve
+		idents words basename dirname
+I386_SAMPLES=	sort spin sieve
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
+.if ${ARCH} != "i386"
+MAKE_ARGS+=	"THREADS="
+PLIST_SUB+=	NOTI386="@comment "
+.else
+PLIST_SUB+=	NOTI386=""
+.endif
+
+post-patch:
+.if ${ARCH} != "i386"
+.  for i in ${I386_SAMPLES}
+	@${REINPLACE_CMD} -e 's/^	*\$$B${i}\$$E *\\\{0,1\}//' \
+	                  ${WRKSRC}/makefile
+.  endfor
 .endif
 
 pre-build:
@@ -61,6 +73,11 @@ do-install:
 .for a in ${SAMPLES}
 	${INSTALL_PROGRAM} ${CIIBUILD}/${a} ${CIIDEST}/${CIIMAJOR}/examples
 .endfor
+.if ${ARCH} == "i386"
+.  for a in ${I386_SAMPLES}
+	${INSTALL_PROGRAM} ${CIIBUILD}/${a} ${CIIDEST}/${CIIMAJOR}/examples
+.  endfor
+.endif
 ##
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/cii

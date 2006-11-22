@@ -11,9 +11,9 @@ lib/cii/%%CIIMAJOR%%/examples/idents
 lib/cii/%%CIIMAJOR%%/examples/words
 lib/cii/%%CIIMAJOR%%/examples/basename
 lib/cii/%%CIIMAJOR%%/examples/dirname
-lib/cii/%%CIIMAJOR%%/examples/sort
-lib/cii/%%CIIMAJOR%%/examples/spin
-lib/cii/%%CIIMAJOR%%/examples/sieve
+%%NOTI386%%lib/cii/%%CIIMAJOR%%/examples/sort
+%%NOTI386%%lib/cii/%%CIIMAJOR%%/examples/spin
+%%NOTI386%%lib/cii/%%CIIMAJOR%%/examples/sieve
 lib/cii/%%CIIMAJOR%%/include/ap.h
 lib/cii/%%CIIMAJOR%%/include/arena.h
 lib/cii/%%CIIMAJOR%%/include/arith.h
