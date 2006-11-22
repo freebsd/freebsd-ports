@@ -27,10 +27,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		Does not compile (bad C++ code)
-.endif
-
 post-patch:
 	${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.orig
 	${SED} -E "s:-ldl::g; \
