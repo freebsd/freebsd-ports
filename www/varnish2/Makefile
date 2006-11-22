@@ -7,7 +7,7 @@
 
 PORTNAME=	varnish
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 MAN1=		varnishd.1 varnishhist.1 varnishlog.1 varnishncsa.1 \
 		varnishstat.1 varnishtop.1
 MAN7=		vcl.7
+USE_RC_SUBR+=   varnishd
 
 .include <bsd.port.pre.mk>
 

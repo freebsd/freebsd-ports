@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $Id$
+#
+
+# PROVIDE: varnishd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable varnishd:
+#
+#varnishd_enable="YES"
+#
+# See varnishd(1) for flags.
+#
+
+. %%RC_SUBR%%
+
+name=varnishd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/varnishd
+
+# set defaults
+
+varnishd_enable=${varnishd_enable:-"NO"}
+varnishd_flags=${varnishd_flags:-""}
+
+load_rc_config ${name}
+
+run_rc_command "$1"
