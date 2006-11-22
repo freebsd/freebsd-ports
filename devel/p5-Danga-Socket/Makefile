@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Danga-Socket
-PORTVERSION=	1.48
+PORTVERSION=	1.53
 CATEGORIES=	devel net
-MASTER_SITES=	http://www.danga.com/dist/Danga-Socket/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Danga
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jacques@php.net
 COMMENT=	Event loop and event-driven async socket base class
+
+BUILD_DEPENDS=	${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall
 
 PERL_CONFIGURE=	yes
 
