@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.6.8
-PORTREVISION=	2
+PORTVERSION=	2.6.9
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -24,7 +23,7 @@ USE_RC_SUBR=	rsyncd.sh
 SUB_LIST=	NAME=rsyncd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
+CONFIGURE_ARGS=	--disable-debug --enable-ipv6  --mandir=${PREFIX}/man \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PATCH_STRIP=	-p1
@@ -38,8 +37,8 @@ MAN5=		rsyncd.conf.5
 
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		TIMELIMIT "Time limit patch" on \
-		FLAGS "File system flags support patch, adds --flags" on \
-		ACLS "ACL support patch, adds --acls" on \
+		FLAGSP "File system flags support patch, adds --flags" off \
+		ACLSP "ACL support patch, adds --acls" off \
 		SSH "Use SSH instead of RSH" on
 
 .include <bsd.port.pre.mk>
@@ -56,14 +55,18 @@ CONFIGURE_ARGS+=	--with-included-popt
 EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
 .endif
 
-.if !defined(WITHOUT_FLAGS)
+.if defined(WITH_FLAGSP)
 EXTRA_PATCHES+=	${WRKSRC}/patches/flags.diff
 .endif
 
-.if !defined(WITHOUT_ACLS)
+.if defined(WITH_ACLSP)
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 CONFIGURE_ARGS+=--enable-acl-support
+.endif
+
+.if defined(WITH_FLAGS)
+IGNORE=		can't be built: Flags and ACLs patches can't be both enabled at the same time. Please rerun 'make config' and disable one of them
 .endif
 .endif
 
