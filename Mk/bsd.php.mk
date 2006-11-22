@@ -231,7 +231,7 @@ _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 		exif fileinfo fribidi ftp gd gettext gmp \
 		hash iconv imap interbase ldap mbstring mcrypt \
 		mhash ming mssql mysql ncurses odbc \
-		openssl panda pcntl pcre pdf pgsql posix \
+		openssl pcntl pcre pdf pgsql posix \
 		pspell radius readline recode session shmop snmp \
 		sockets sybase_ct sysvmsg sysvsem sysvshm \
 		tokenizer wddx xml xmlrpc yaz zip zlib
@@ -281,7 +281,6 @@ odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 oracle_DEPENDS=	databases/php${PHP_VER}-oracle
 overload_DEPENDS=lang/php${PHP_VER}-overload
-panda_DEPENDS=	print/pecl-panda
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pcre_DEPENDS=	devel/php${PHP_VER}-pcre
 pdf_DEPENDS=	print/pecl-pdflib
