@@ -4,6 +4,4 @@ System/Applications/GRubik.app/Resources/Info-gnustep.plist
 System/Applications/GRubik.app/library_paths.openapp
 System/Applications/GRubik.app/stamp.make
 @dirrm System/Applications/GRubik.app/Resources
-@dirrm System/Applications/GRubik.app/%%GNU_ARCH%%/linux-gnu
-@dirrm System/Applications/GRubik.app/%%GNU_ARCH%%
 @dirrm System/Applications/GRubik.app

@@ -24,4 +24,8 @@ USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
 ALL_TARGET=
 
+post-patch:
+	${RMDIR} ${WRKSRC}/GRubik.app/ix86/linux-gnu
+	${RMDIR} ${WRKSRC}/GRubik.app/ix86
+
 .include <bsd.port.mk>
