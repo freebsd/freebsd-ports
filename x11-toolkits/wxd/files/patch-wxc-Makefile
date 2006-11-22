@@ -1,35 +1,11 @@
---- /home/default/ports/wxd/work/wxd/wxc/GNUmakefile	Sat Aug 26 23:25:11 2006
-+++ wxc/Makefile	Thu Aug 31 19:09:15 2006
-@@ -1,3 +1,4 @@
-+#wxc/Makefile
- LIBTARGET=../libwxc.a
+--- wxd/wxc/GNUmakefile	Fri Sep  8 11:46:33 2006
++++ wxc/Makefile	Thu Nov 16 15:09:32 2006
+@@ -183,7 +183,7 @@
  
- OBJECTS = \
-@@ -158,12 +159,10 @@
- 	
- all:  platform $(LIBTARGET)
- 
--WX_CONFIG = wx-config
--
- CXX = $(shell $(WX_CONFIG) --cxx)
--CXXFLAGS = -O2 -Wall
-+CXXFLAGS += -O2 -Wall -I/usr/X11R6/include
+ WXFLAGS = `$(WX_CONFIG) --cxxflags`
  
 -prefix=/usr/local
 +prefix=$(PREFIX)
  exec_prefix=$(prefix)
  includedir=$(prefix)/include
  libdir=$(exec_prefix)/lib
-@@ -172,9 +171,9 @@
- RANLIB = ranlib
- 
- install: $(LIBTARGET)
--	$(INSTALL) -d $(DESTDIR)$(libdir)
--	$(INSTALL) -p $(LIBTARGET) $(DESTDIR)$(libdir)
--	-$(RANLIB) $(DESTDIR)$(libdir)/`basename $(LIBTARGET)`
-+	$(INSTALL) -d $(libdir)
-+	$(INSTALL) -p $(LIBTARGET) $(libdir)
-+	-$(RANLIB) $(libdir)/`basename $(LIBTARGET)`
- 
- platform:
- 	$(WX_CONFIG) --cflags | sed -e 's/.*\-D__\(WX.*\)__.*/\1/' > $@
