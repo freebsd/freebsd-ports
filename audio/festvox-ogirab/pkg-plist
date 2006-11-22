@@ -6,5 +6,5 @@ share/festival/lib/voices/english/ogirab_diphone/group/ogirab_di_resLPC.group
 @dirrm share/festival/lib/voices/english/ogirab_diphone/group
 @dirrm share/festival/lib/voices/english/ogirab_diphone/festvox
 @dirrm share/festival/lib/voices/english/ogirab_diphone
-@dirrmtry share/festival/lib/voices
 @dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
