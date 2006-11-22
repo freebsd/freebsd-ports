@@ -7,7 +7,7 @@
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
