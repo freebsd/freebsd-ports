@@ -23,9 +23,8 @@ MAN3=	${PORTNAME:S/-/::/g}.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${REINPLACE_CMD} -e '/^use warnings;/s|||' ${WRKSRC}/lib/Net/Packet/Target.pm
+.if ${PERL_LEVEL} < 500601
+IGNORE=	requires perl 5.6.1 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
