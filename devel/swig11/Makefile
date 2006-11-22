@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC" PYTHON_VERSION=${PYTHON_VERSION}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DPIC" PYTHON_VERSION=${PYTHON_VERSION}
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.4/ \
 		--with-tcllib=${LOCALBASE}/lib/tcl8.4/ \
 		--with-pyincl=${PYTHONPREFIX_INCLUDEDIR} \
@@ -43,8 +43,8 @@ NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64 (needs -fPIC)"
+.if ${ARCH} != "sparc64"
+CFLAGS+=	-fpic
 .endif
 
 post-install:
