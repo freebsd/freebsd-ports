@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone-viz
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel
 MASTER_SITES=	http://oandrieu.nerim.net/monotone-viz/
 
