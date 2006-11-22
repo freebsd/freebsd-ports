@@ -21,7 +21,7 @@ EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RESTRICTED=		"May not be redistributed in binary form"
 NO_CDROM=		yes
 
-ONLY_FOR_ARCHS=		i386
+IA32_BINARY_PORT=	yes
 PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
