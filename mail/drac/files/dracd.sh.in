@@ -1,20 +1,17 @@
 #!/bin/sh
 # $FreeBSD$
-
+#
 # PROVIDE: dracd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
-
-# Define these dracd_* variables in one of these files:
-#       /etc/rc.conf
-#       /etc/rc.conf.local
-#       /etc/rc.conf.d/dracd
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# Add the following lines to /etc/rc.conf to enable postfix:
+# dracd_enable (bool):		Set it to "YES" to enable rpc.dracd.
+#				Default is "NO".
+# dracd_flags (str):		Set to "" by default.
+#                               Extra flags passed to rpc.dracd.
 #
-dracd_enable=${dracd_enable-"NO"}
-dracd_flags=${dracd_flags-""}
 
 . %%RC_SUBR%%
 
@@ -23,4 +20,10 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/rpc.dracd"
 
 load_rc_config $name
+
+: ${dracd_enable="NO"}
+: ${dracd_flags=""}
+
+required_files="%%PREFIX%%/etc/dracd.allow"
+
 run_rc_command "$1"
