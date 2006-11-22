@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-applets
 PORTVERSION=	2.16.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -87,12 +88,11 @@ PLIST_SUB+=	COMMANDER=""
 PLIST_SUB+=	COMMANDER="@comment "
 .endif
 
-.if ( exists(${pygnomedesktop_DETECT}) && exists(${pygnomeextras_DETECT}) ) || \
-	( ( ${HAVE_GNOME:Mpygnomedesktop}!="" && \
-	${HAVE_GNOME:Mpygnomeextras}!="" ) && ${ARCH}!="sparc64" )
+.if ( exists(${pygnomedesktop_DETECT}) ) || \
+	( ( ${HAVE_GNOME:Mpygnomedesktop}!="" ) && ${ARCH}!="sparc64" )
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygnomedesktop pygnomeextras
+USE_GNOME+=	pygnomedesktop
 PLIST_SUB+=	PYTHON=""
 .else
 PLIST_SUB+=	PYTHON="@comment "
