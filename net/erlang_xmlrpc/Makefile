@@ -9,7 +9,7 @@ PORTNAME=	erlang_xmlrpc
 PORTVERSION=	1.13
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://www.gleipnir.com/xmlrpc/
+MASTER_SITES=	http://www.erlang.org/contrib/
 DISTNAME=	xmlrpc-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	erlang
@@ -19,8 +19,6 @@ COMMENT=	A library for XMLRPC support in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
-
-BROKEN=		Unfetchable
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
