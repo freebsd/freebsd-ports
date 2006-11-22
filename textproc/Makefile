@@ -266,6 +266,7 @@
     SUBDIR += linux-aspell
     SUBDIR += linux-expat
     SUBDIR += linux-libxml
+    SUBDIR += linux-xerces-c2
     SUBDIR += linuxdoc
     SUBDIR += lt-aspell
     SUBDIR += ltxml

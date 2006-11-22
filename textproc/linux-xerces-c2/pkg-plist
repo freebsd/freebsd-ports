@@ -1,0 +1,7 @@
+usr/lib/libxerces-c.so.27
+usr/lib/libxerces-c.so.27.0
+usr/lib/libxerces-depdom.so.27
+usr/lib/libxerces-depdom.so.27.0
+usr/share/doc/xerces-c-%%PORTVERSION%%/LICENSE.txt
+usr/share/doc/xerces-c-%%PORTVERSION%%/Readme.html
+@dirrm usr/share/doc/xerces-c-%%PORTVERSION%%
