@@ -67,7 +67,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		NCURSES         "ncurses support (CLI only)" off \
 		ODBC            "unixODBC support" off \
 		OPENSSL         "OpenSSL support" off \
-		PANDA           "panda support" off \
 		PCNTL           "pcntl support (CLI only)" off \
 		PCRE            "Perl Compatible Regular Expression support" on \
 		PDF             "PDFlib support (implies GD)" off \
@@ -112,7 +111,7 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE \
 		DOM EXIF FILEINFO FRIBIDI FTP GD GETTEXT \
 		GMP ICONV IMAP INTERBASE LDAP MBSTRING MCRYPT \
 		MHASH MIME_MAGIC MING MSSQL MYSQL MYSQLI \
-		NCURSES ODBC OPENSSL PANDA PCNTL PCRE PDF PDO PGSQL POSIX \
+		NCURSES ODBC OPENSSL PCNTL PCRE PDF PDO PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
 		SOCKETS SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
 		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XMLWRITER XSL \
