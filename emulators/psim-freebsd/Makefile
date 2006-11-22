@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	psim-freebsd
-PORTVERSION=	6.4
+PORTVERSION=	6.5
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -16,10 +16,6 @@ DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 6
-
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -30,9 +26,8 @@ CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	${INSTALL_DATA} ${FILESDIR}/dot.gdbinit \
-		${PREFIX}/share/examples/${PORTNAME}
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/dot.gdbinit ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/HOW-TO ${DOCSDIR}

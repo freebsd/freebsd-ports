@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/psim-freebsd
-share/examples/psim-freebsd/dot.gdbinit
-%%PORTDOCS%%share/doc/psim-freebsd/HOW-TO
-%%PORTDOCS%%@dirrm share/doc/psim-freebsd
-@dirrm share/examples/psim-freebsd
+%%EXAMPLESDIR%%/dot.gdbinit
+%%PORTDOCS%%%%DOCSDIR%%/HOW-TO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
