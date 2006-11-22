@@ -7,16 +7,17 @@
 
 PORTNAME=	drac
 PORTVERSION=	1.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
+		ftp://ftp.parodius.com/pub/umanitoba/ \
 		http://atreides.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Dynamic Relay Authorization Control, a pop-before-smtp implementation
+MAINTAINER=	koitsu@FreeBSD.org
+COMMENT=	Dynamic Relay Authorization Control, a POP-before-SMTP implementation
 
 .if defined(WITH_POSTFIX_DB3)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
@@ -62,8 +63,5 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/dracauth.3 ${PREFIX}/man/man3/
 	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
