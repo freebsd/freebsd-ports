@@ -7,7 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -87,8 +87,8 @@ CONFIGURE_ARGS+=--disable-gd
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 .endif
 
-DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
-		Install.txt Readme.txt Todo.txt ed2k_links.txt
+DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt \
+		Install.txt Todo.txt ed2k_links.txt
 PORTDOCS=	${DOCFILES}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
