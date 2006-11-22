@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Packet-Target
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	net perl5 devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,4 +21,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 MAN3=	${PORTNAME:S/-/::/g}.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${REINPLACE_CMD} -e '/^use warnings;/s|||' ${WRKSRC}/lib/Net/Packet/Target.pm
+.endif
+
+.include <bsd.port.post.mk>
