@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case "$2" in
+    DEINSTALL)
+	rm -f %%PREFIX%%/bin/netbeans4
+	;;
+esac
+
+exit 0
