@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	rox-archive
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
 DISTNAME=	archive-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Archive management tool for the ROX desktop
@@ -20,6 +18,7 @@ COMMENT=	Archive management tool for the ROX desktop
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
+USE_BZIP2=	yes
 USE_PYTHON=	yes
 
 post-patch:
