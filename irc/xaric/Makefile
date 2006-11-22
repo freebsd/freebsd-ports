@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xaric
-PORTVERSION=	0.13.1
-PORTREVISION=	1
+PORTVERSION=	0.13.2
 CATEGORIES=	irc
 MASTER_SITES=	http://rf.cx/software/xaric/releases/
 
