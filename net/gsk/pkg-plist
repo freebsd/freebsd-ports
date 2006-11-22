@@ -58,6 +58,7 @@ include/gsk-1.0/gsk/gskstreamlistener.h
 include/gsk-1.0/gsk/gskstreamlistenersocket.h
 include/gsk-1.0/gsk/gskstreamqueue.h
 include/gsk-1.0/gsk/gskstreamtransferrequest.h
+include/gsk-1.0/gsk/gskstreamwatchdog.h
 include/gsk-1.0/gsk/gskthreadpool.h
 include/gsk-1.0/gsk/gsktree.h
 include/gsk-1.0/gsk/gsktypes.h
