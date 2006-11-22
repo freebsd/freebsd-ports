@@ -1,17 +1,3 @@
---- ./arch/i386/include/bits/string.h.orig	Sat Dec  4 09:31:24 2004
-+++ ./arch/i386/include/bits/string.h	Sat Dec  4 09:33:37 2004
-@@ -65,9 +65,10 @@ __asm__ __volatile__(
- return dest;
- }
- 
-+#ifndef __FreeBSD__
- #define memcmp __builtin_memcmp
- #define __HAVE_ARCH_MEMCMP
--
-+#endif
- 
- #define __HAVE_ARCH_MEMSET
- static inline void *memset(void *s, int c,size_t count)
 --- drivers/disk/ide_disk.c.orig	Sat Dec  4 09:24:19 2004
 +++ drivers/disk/ide_disk.c	Sat Dec  4 15:57:18 2004
 @@ -592,7 +592,8 @@ static int init_drive(struct harddisk_in
