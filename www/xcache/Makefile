@@ -7,6 +7,7 @@
 
 PORTNAME=	xcache
 DISTVERSION=	1.2-beta3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://210.51.190.228/pub/XCache/Releases/ \
 		http://210.51.190.228/pub/XCache/snapshots/
