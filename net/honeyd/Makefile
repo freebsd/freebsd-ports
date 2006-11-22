@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	1.5a
+PORTVERSION=	1.5b
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libdnsres.a:${PORTSDIR}/devel/libdnsres \
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libdnsres=${LOCALBASE}
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python
