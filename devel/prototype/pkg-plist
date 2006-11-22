@@ -1,29 +1,29 @@
 bin/makeproto
-share/prototype/Makedefs.h
-share/prototype/base/Makedefs.h
-share/prototype/base/Makefile
-share/prototype/base/PTMakefile
-share/prototype/common/PTMakefile
-share/prototype/lib/Makefile
-share/prototype/lib/PTMakefile
-share/prototype/main/Makefile
-share/prototype/main/PTMakefile
-share/prototype/maintainer/PTmakefile
-share/prototype/maintainer/makefile
-share/prototype/sub/Makefile
-share/prototype/sub/PTMakefile
-share/prototype/templ-inst/Makefile
-share/prototype/templ-inst/PTMakefile
-share/prototype/templ-inst/inst-all-templ
-share/prototype/templ-inst/inst-templ
-share/prototype/test/Makefile
-share/prototype/test/PTMakefile
-@dirrm share/prototype/base
-@dirrm share/prototype/common
-@dirrm share/prototype/lib
-@dirrm share/prototype/main
-@dirrm share/prototype/maintainer
-@dirrm share/prototype/sub
-@dirrm share/prototype/templ-inst
-@dirrm share/prototype/test
-@dirrm share/prototype
+%%DATADIR%%/Makedefs.h
+%%DATADIR%%/base/Makedefs.h
+%%DATADIR%%/base/Makefile
+%%DATADIR%%/base/PTMakefile
+%%DATADIR%%/common/PTMakefile
+%%DATADIR%%/lib/Makefile
+%%DATADIR%%/lib/PTMakefile
+%%DATADIR%%/main/Makefile
+%%DATADIR%%/main/PTMakefile
+%%DATADIR%%/maintainer/PTmakefile
+%%DATADIR%%/maintainer/makefile
+%%DATADIR%%/sub/Makefile
+%%DATADIR%%/sub/PTMakefile
+%%DATADIR%%/templ-inst/Makefile
+%%DATADIR%%/templ-inst/PTMakefile
+%%DATADIR%%/templ-inst/inst-all-templ
+%%DATADIR%%/templ-inst/inst-templ
+%%DATADIR%%/test/Makefile
+%%DATADIR%%/test/PTMakefile
+@dirrm %%DATADIR%%/base
+@dirrm %%DATADIR%%/common
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/main
+@dirrm %%DATADIR%%/maintainer
+@dirrm %%DATADIR%%/sub
+@dirrm %%DATADIR%%/templ-inst
+@dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%
