@@ -1,21 +1,19 @@
 --- make_configure.orig	Thu Nov  7 19:42:00 2002
-+++ make_configure	Fri Dec 20 19:23:07 2002
-@@ -1,14 +1,14 @@
++++ make_configure	Wed Nov 22 15:07:42 2006
+@@ -1,14 +1,4 @@
 -aclocal
 -autoheader
-+aclocal14
-+autoheader213
- 
- list=`find . -name Makefile.am -exec dirname {} \;`
- 
- for subdir in $list
- do
- 	echo making $subdir/Makefile.in
+-
+-list=`find . -name Makefile.am -exec dirname {} \;`
+-
+-for subdir in $list
+-do
+-	echo making $subdir/Makefile.in
 -	automake --add-missing --gnu $subdir/Makefile
-+	automake14 --add-missing --gnu $subdir/Makefile
- done
- 
+-done
+-
 -autoconf 
-+autoconf213
++cd cvsunix && autoreconf259
++cd ..
  
  ./configure $*

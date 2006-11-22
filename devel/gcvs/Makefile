@@ -7,7 +7,7 @@
 
 PORTNAME=	gcvs
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	devel tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,8 +18,6 @@ COMMENT=	High-end interface client for CVS
 
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-
-BROKEN=	Does not build
 
 USE_GETOPT_LONG=yes
 USE_GNOME=	gtk12
