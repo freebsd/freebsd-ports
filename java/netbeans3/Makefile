@@ -22,6 +22,8 @@ RESTRICTED=	Restrictive license
 
 WRKSRC=		${WRKDIR}/netbeans
 
+SUB_FILES=	pkg-install pkg-deinstall
+
 DOWNLOAD_URL?=	http://www.netbeans.org/download/release36/promoted/FCS/release36-build-tar-bz2.html
 
 .include <bsd.port.pre.mk>
@@ -41,5 +43,8 @@ do-install:
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans3
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans3
 	@${LN} -sf ${PREFIX}/netbeans3/bin/runide.sh ${PREFIX}/bin/netbeans3
+	@(cd ${WRKDIR}; ${FIND} -s netbeans -not -type d) | ${SED} -ne 's,^netbeans,netbeans3,p' >> ${TMPPLIST}
+	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d) | ${SED} -ne 's,^netbeans,netbeans3,' -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d -empty) | ${SED} -ne 's,^netbeans,netbeans3,' -ne 's,^,@exec mkdir -p %D/,p' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

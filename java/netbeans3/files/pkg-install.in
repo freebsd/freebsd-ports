@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case "$2" in
+    POST-INSTALL)
+	ln -sf %%PREFIX%%/netbeans3/bin/runide.sh %%PREFIX%%/bin/netbeans3
+	;;
+esac
+
+exit 0

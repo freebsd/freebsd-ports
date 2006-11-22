@@ -22,6 +22,8 @@ RESTRICTED=	Restrictive license
 
 WRKSRC=		${WRKDIR}/netbeans
 
+SUB_FILES=	pkg-install pkg-deinstall
+
 DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?p=1&a=bd&os=1&lang=1&rv=4.1&b_bt=2
 
 .include <bsd.port.pre.mk>
@@ -42,5 +44,8 @@ do-install:
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans4
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans4
 	@${LN} -sf ${PREFIX}/netbeans4/bin/netbeans ${PREFIX}/bin/netbeans4
+	@(cd ${WRKDIR}; ${FIND} -s netbeans -not -type d) | ${SED} -ne 's,^netbeans,netbeans4,p' >> ${TMPPLIST}
+	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d) | ${SED} -ne 's,^netbeans,netbeans4,' -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d -empty) | ${SED} -ne 's,^netbeans,netbeans4,' -ne 's,^,@exec mkdir -p %D/,p' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
