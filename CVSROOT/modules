@@ -6595,6 +6595,7 @@ linux-warsow	ports/games/linux-warsow
 linux-winetools	ports/emulators/linux-winetools
 linux-x-plane	ports/games/linux-x-plane
 linux-x-plane-net-installer	ports/games/linux-x-plane-net-installer
+linux-xerces-c2	ports/textproc/linux-xerces-c2
 linux-xmovie		ports/multimedia/linux-xmovie
 linux-xorg-libs	ports/x11/linux-xorg-libs
 linux-ymessenger	ports/net-im/linux-ymessenger
