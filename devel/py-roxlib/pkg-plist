@@ -22,6 +22,7 @@ lib/ROX-Lib2/Help/python/rox.fileutils.html
 lib/ROX-Lib2/Help/python/rox.html
 lib/ROX-Lib2/Help/python/rox.i18n.html
 lib/ROX-Lib2/Help/python/rox.icon_theme.html
+lib/ROX-Lib2/Help/python/rox.launch.html
 lib/ROX-Lib2/Help/python/rox.loading.html
 lib/ROX-Lib2/Help/python/rox.master_proxy.html
 lib/ROX-Lib2/Help/python/rox.mime.html
@@ -30,17 +31,25 @@ lib/ROX-Lib2/Help/python/rox.options.html
 lib/ROX-Lib2/Help/python/rox.processes.html
 lib/ROX-Lib2/Help/python/rox.proxy.html
 lib/ROX-Lib2/Help/python/rox.saving.html
+lib/ROX-Lib2/Help/python/rox.session.html
+lib/ROX-Lib2/Help/python/rox.settings.html
 lib/ROX-Lib2/Help/python/rox.su.html
 lib/ROX-Lib2/Help/python/rox.suchild.html
 lib/ROX-Lib2/Help/python/rox.tasks.html
-lib/ROX-Lib2/MakeDist
+lib/ROX-Lib2/Help/python/rox.xxmlrpc.html
 lib/ROX-Lib2/Messages/de.gmo
 lib/ROX-Lib2/Messages/de.po
 lib/ROX-Lib2/Messages/dist
+lib/ROX-Lib2/Messages/es.gmo
+lib/ROX-Lib2/Messages/es.po
 lib/ROX-Lib2/Messages/fr.gmo
 lib/ROX-Lib2/Messages/fr.po
+lib/ROX-Lib2/Messages/hu.gmo
+lib/ROX-Lib2/Messages/hu.po
 lib/ROX-Lib2/Messages/it.gmo
 lib/ROX-Lib2/Messages/it.po
+lib/ROX-Lib2/Messages/pl.gmo
+lib/ROX-Lib2/Messages/pl.po
 lib/ROX-Lib2/Messages/pt_BR.gmo
 lib/ROX-Lib2/Messages/pt_BR.po
 lib/ROX-Lib2/Messages/update-po
@@ -48,6 +57,7 @@ lib/ROX-Lib2/Messages/zh_CN.gmo
 lib/ROX-Lib2/Messages/zh_CN.po
 lib/ROX-Lib2/Messages/zh_TW.gmo
 lib/ROX-Lib2/Messages/zh_TW.po
+lib/ROX-Lib2/ROX-Lib2.xml
 lib/ROX-Lib2/python/make_docs.py
 lib/ROX-Lib2/python/make_docs.pyc
 lib/ROX-Lib2/python/make_docs.pyo
@@ -90,6 +100,9 @@ lib/ROX-Lib2/python/rox/i18n.pyo
 lib/ROX-Lib2/python/rox/icon_theme.py
 lib/ROX-Lib2/python/rox/icon_theme.pyc
 lib/ROX-Lib2/python/rox/icon_theme.pyo
+lib/ROX-Lib2/python/rox/launch.py
+lib/ROX-Lib2/python/rox/launch.pyc
+lib/ROX-Lib2/python/rox/launch.pyo
 lib/ROX-Lib2/python/rox/loading.py
 lib/ROX-Lib2/python/rox/loading.pyc
 lib/ROX-Lib2/python/rox/loading.pyo
@@ -114,6 +127,12 @@ lib/ROX-Lib2/python/rox/proxy.pyo
 lib/ROX-Lib2/python/rox/saving.py
 lib/ROX-Lib2/python/rox/saving.pyc
 lib/ROX-Lib2/python/rox/saving.pyo
+lib/ROX-Lib2/python/rox/session.py
+lib/ROX-Lib2/python/rox/session.pyc
+lib/ROX-Lib2/python/rox/session.pyo
+lib/ROX-Lib2/python/rox/settings.py
+lib/ROX-Lib2/python/rox/settings.pyc
+lib/ROX-Lib2/python/rox/settings.pyo
 lib/ROX-Lib2/python/rox/su.py
 lib/ROX-Lib2/python/rox/su.pyc
 lib/ROX-Lib2/python/rox/su.pyo
@@ -124,6 +143,9 @@ lib/ROX-Lib2/python/rox/suchild.sh
 lib/ROX-Lib2/python/rox/tasks.py
 lib/ROX-Lib2/python/rox/tasks.pyc
 lib/ROX-Lib2/python/rox/tasks.pyo
+lib/ROX-Lib2/python/rox/xxmlrpc.py
+lib/ROX-Lib2/python/rox/xxmlrpc.pyc
+lib/ROX-Lib2/python/rox/xxmlrpc.pyo
 lib/ROX-Lib2/tests/python/testall.py
 lib/ROX-Lib2/tests/python/testall.pyc
 lib/ROX-Lib2/tests/python/testall.pyo
@@ -157,6 +179,9 @@ lib/ROX-Lib2/tests/python/testsu.pyo
 lib/ROX-Lib2/tests/python/testtasks.py
 lib/ROX-Lib2/tests/python/testtasks.pyc
 lib/ROX-Lib2/tests/python/testtasks.pyo
+lib/ROX-Lib2/tests/python/testxxmlrpc.py
+lib/ROX-Lib2/tests/python/testxxmlrpc.pyc
+lib/ROX-Lib2/tests/python/testxxmlrpc.pyo
 @dirrm lib/ROX-Lib2/tests/python
 @dirrm lib/ROX-Lib2/tests
 @dirrm lib/ROX-Lib2/python/rox
