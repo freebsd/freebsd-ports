@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tigcc
-PORTVERSION=	0.96.b7
+PORTVERSION=	0.96.b8
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_GCC:S/$/:gcc/} \
 			${MASTER_SITE_GNU:S/$/:gas/} \
