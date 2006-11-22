@@ -1,38 +1,20 @@
---- /home/default/ports/wxd/work/wxd/wx/GNUmakefile	Sat Aug 26 23:26:21 2006
-+++ wx/Makefile	Thu Aug 31 19:36:21 2006
-@@ -1,3 +1,4 @@
-+#wx/Makefile
- LIBTARGET = ../libwxd.a
- 
- OBJECTS = \
-@@ -167,10 +168,10 @@
- 
- all:  $(LIBTARGET)
- 
--DMD = dmd
--DFLAGS = -O -w -g
-+DMD = gdc
-+DFLAGS += -O2
+--- wxd/wx/GNUmakefile	Fri Sep  8 13:12:52 2006
++++ wx/Makefile	Thu Nov 16 14:40:05 2006
+@@ -179,7 +179,7 @@
+ else
+ DC?=gdc
+ DMD?=gdmd
+-DFLAGS?=-O2 -g
++DFLAGS?=-O2 -fno-strict-aliasing -g
+ version=-fversion
+ output=-o $@
+ endif
+@@ -188,7 +188,7 @@
+ STCFLAGS = -$(version)=WXD_STYLEDTEXTCTRL
+ endif
  
 -prefix=/usr/local
 +prefix=$(PREFIX)
  exec_prefix=$(prefix)
  includedir=$(prefix)/include
  libdir=$(exec_prefix)/lib
-@@ -179,11 +180,11 @@
- RANLIB = ranlib
- 
- install: $(LIBTARGET)
--	$(INSTALL) -d $(DESTDIR)$(libdir)
--	$(INSTALL) -p $(LIBTARGET) $(DESTDIR)$(libdir)
--	$(INSTALL) -d $(DESTDIR)$(includedir)/d/wx
--	$(INSTALL) -p *.d $(DESTDIR)$(libdir)/d/wx
--	-$(RANLIB) $(DESTDIR)$(libdir)/`basename $(LIBTARGET)`
-+	$(INSTALL) -d $(libdir)
-+	$(INSTALL) -p $(LIBTARGET) $(libdir)
-+	$(INSTALL) -d $(includedir)/d/wx
-+	$(INSTALL) -p *.d $(includedir)/d/wx/
-+	-$(RANLIB) $(libdir)/`basename $(LIBTARGET)`
- 
- ddoc:
- 	$(DMD) -c -o- -D $(DFLAGS) -I.. $(SOURCES)

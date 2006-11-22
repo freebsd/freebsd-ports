@@ -154,7 +154,11 @@ include/d/wx/Wizard.d
 include/d/wx/WizardPage.d
 include/d/wx/WizardPageSimple.d
 include/d/wx/XmlResource.d
+include/d/wx/aui/DockArt.d
+include/d/wx/aui/FrameManager.d
+include/d/wx/aui/aui.d
 include/d/wx/common.d
+include/d/wx/ogl/ogl.d
 include/d/wx/wx.d
 include/d/wx/wxDateTime.d
 include/d/wx/wxObject.d
@@ -163,6 +167,11 @@ include/d/wx/wxString.d
 include/d/wx/wxVersion.d
 lib/libwxc.a
 lib/libwxd.a
+%%PORTDOCS%%%%EXAMPLESDIR%%/Aui/Aui.d
+%%PORTDOCS%%%%EXAMPLESDIR%%/Aui/GNUmakefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/Aui/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/Aui/mondrian.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Aui/wxauitest.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/Controls/Controls.d
 %%PORTDOCS%%%%EXAMPLESDIR%%/Controls/GNUmakefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Controls/Icons/choice.xpm
@@ -200,6 +209,7 @@ lib/libwxd.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/GLCube/GLCube.d
 %%PORTDOCS%%%%EXAMPLESDIR%%/GLCube/GNUmakefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/GLCube/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/GLCube/README.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/GLCube/glu32.lib
 %%PORTDOCS%%%%EXAMPLESDIR%%/GLCube/mondrian.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/GLCube/opengl32.lib
@@ -356,6 +366,12 @@ lib/libwxd.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/Printing/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Printing/Printing.d
 %%PORTDOCS%%%%EXAMPLESDIR%%/Printing/mondrian.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/SDLPanel/GNUmakefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/SDLPanel/GPL.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/SDLPanel/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/SDLPanel/README.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/SDLPanel/SDL.lib
+%%PORTDOCS%%%%EXAMPLESDIR%%/SDLPanel/SDLPanel.d
 %%PORTDOCS%%%%EXAMPLESDIR%%/SashWindow/GNUmakefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/SashWindow/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/SashWindow/SashWindow.d
@@ -369,6 +385,24 @@ lib/libwxd.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/Splitter/GNUmakefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Splitter/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Splitter/Splitter.d
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/Edit.d
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/GNUmakefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/Minimal.d
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/Prefs.d
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/StyledText.d
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/defsext.d
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/defsext.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/edit.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/edit.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/mondrian.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/prefs.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/prefs.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/stctest.app/Contents/Info.plist
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/stctest.app/Contents/MacOS/stctest
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/stctest.app/Contents/PkgInfo
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/stctest.app/Contents/Resources/wxmac.icns
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyledText/stctest.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/TreeCtrl/GNUmakefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/TreeCtrl/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/TreeCtrl/TreeCtrl.d
@@ -428,47 +462,56 @@ lib/libwxd.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/Xrc/rc/wxglade.wxg
 %%PORTDOCS%%%%EXAMPLESDIR%%/Xrc/rc/wxglade.xrc
 %%PORTDOCS%%%%EXAMPLESDIR%%/wxmac.icns
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Xrc/rc
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Xrc
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Wizard
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Tutorial/Doc
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Tutorial
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/TreeCtrl
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Splitter
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Sound
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/SashWindow
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Printing
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Platform
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Notebook
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Minimal
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Mdi/bitmaps
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Mdi
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Listbook/bmp
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Listbook
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/ListView
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/ListCtrl/bitmaps
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/ListCtrl
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Launcher/Bitmaps
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Launcher
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Internat/ru
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Internat/fr
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Internat/de
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Internat
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/HtmlListBox
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/HtmlHelp/helpfiles
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/HtmlHelp
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Hello
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/HTML/Data
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/HTML
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Grid
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/GLCube
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Font
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/EventDemo
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Dnd
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Display
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Dialogs
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Controls/Icons
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/Controls
-@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%
+@dirrm include/d/wx/ogl
+@dirrm include/d/wx/aui
 @dirrm include/d/wx
-@dirrmtry include/d
+@dirrm include/d
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Xrc/rc
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Xrc
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Wizard
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Tutorial/Doc
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Tutorial
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/TreeCtrl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyledText/stctest.app/Contents/Resources
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyledText/stctest.app/Contents/MacOS
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyledText/stctest.app/Contents
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyledText/stctest.app
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyledText
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Splitter
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/SashWindow
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/SDLPanel
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Printing
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Platform
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Notebook
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Minimal
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Mdi/bitmaps
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Mdi
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Listbook/bmp
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Listbook
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ListView
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ListCtrl/bitmaps
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ListCtrl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Launcher/Bitmaps
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Launcher
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Internat/ru
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Internat/fr
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Internat/de
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Internat
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HtmlListBox
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HtmlHelp/helpfiles
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HtmlHelp
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Hello
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HTML/Data
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HTML
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Grid
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/GLCube
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Font
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/EventDemo
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Dnd
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Display
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Dialogs
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Controls/Icons
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Controls
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Aui
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
