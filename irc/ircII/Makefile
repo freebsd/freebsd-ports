@@ -23,4 +23,10 @@ MAN1=		irc.1 ircII.1 ircbug.1
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=	Doesn't build
+.endif
+
+.include <bsd.port.post.mk>
