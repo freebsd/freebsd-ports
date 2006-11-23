@@ -12,7 +12,7 @@ DESCR=		${.CURDIR}/pkg-descr
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
-MAINTAINER=	honda@kashio.info.mie-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very lightweight Emacs-clone with Japanese and Canna support
 
 .include "${MASTERDIR}/Makefile"
