@@ -1,0 +1,15 @@
+--- SConstruct~	Wed Nov  8 01:42:33 2006
++++ SConstruct	Thu Nov 23 19:46:29 2006
+@@ -10,8 +10,10 @@
+ #######################################
+ # ENVIRONMENT
+ #######################################
+-env = Environment( CCFLAGS = [ '-Wall', '-g' ],
+-		   CXXFLAGS = [ '-Wall', '-g' ],
++env = Environment( CCFLAGS = Split("%%CFLAGS%% -DDATADIR='"'"%%DATADIR%%"'"'"),
++		   CXXFLAGS = Split("%%CXXFLAGS%% -DDATADIR='"'"%%DATADIR%%"'"'"),
++		   CC = Split ('%%CC%%'),
++		   CXX = Split('%%CXX%%'),
+ 		   CPPPATH = [ '/usr/local/include', '/usr/X11R6/include' ],
+ 		   LIBPATH = [ '/usr/X11R6/lib', '/usr/local/lib' ],
+ 		   options = opts )
