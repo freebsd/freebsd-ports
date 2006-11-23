@@ -10904,6 +10904,7 @@ pear-File_PDF	ports/print/pear-File_PDF
 pear-File_Passwd	ports/security/pear-File_Passwd
 pear-File_SMBPasswd	ports/security/pear-File_SMBPasswd
 pear-Games_Chess	ports/games/pear-Games_Chess
+pear-HTML_AJAX	ports/www/pear-HTML_AJAX
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
 pear-HTML_CSS	ports/devel/pear-HTML_CSS
 pear-HTML_Common	ports/devel/pear-HTML_Common
