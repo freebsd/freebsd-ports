@@ -162,6 +162,7 @@
     SUBDIR += pads
     SUBDIR += pancho
     SUBDIR += pfpro
+    SUBDIR += pftabled
     SUBDIR += php4-snmp
     SUBDIR += php5-snmp
     SUBDIR += pixilate

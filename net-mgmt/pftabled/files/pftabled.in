@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pftabled
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable pftabled:
+# pftabled_enable (bool):	Set it to "YES" to enable pftabled.
+#				Default is "NO".
+# pftabled_flags (flags):	Set flags to alter default behaviour of pftabled.
+# 				Consult with the man page for more info.
+#
+
+. %%RC_SUBR%%
+
+name="pftabled"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${pftabled_enable="NO"}
+: ${pftabled_flags=""}
+
+command="%%PREFIX%%/sbin/${name}"
+
+run_rc_command "$1"
