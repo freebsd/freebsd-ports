@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asmail
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	mail afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmail/
 
