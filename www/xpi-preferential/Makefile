@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	preferential
-PORTVERSION=	0.8.1
-DISTVERSIONSUFFIX=	-fx+mz+tb
+PORTVERSION=	0.8.2
+DISTVERSIONSUFFIX=	-fx+mz+zm+tb
 CATEGORIES=	www
 
 MAINTAINER=	simon@olofsson.de
