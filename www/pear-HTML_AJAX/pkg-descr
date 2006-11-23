@@ -1,0 +1,5 @@
+HTTP server class that allows you to easily implement HTTP servers by supplying
+callbacks. The base class will parse the request, call the appropriate callback
+and build a repsonse based on an array that the callbacks have to return.
+
+WWW: http://pear.php.net/package/HTTP_Server/
