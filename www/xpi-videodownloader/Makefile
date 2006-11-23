@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	videodownloader
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	chinsan@FreeBSD.org
-COMMENT=	An extension to download videos files
+COMMENT=	Download embedded video files
 
 XPI_ID=		videodowloader@videodownloader.net
 XPI_FILES=	chrome/videodownloader.jar chrome.manifest defaults/preferences/videodownloader.js \
