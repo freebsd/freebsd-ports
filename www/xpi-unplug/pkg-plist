@@ -4,6 +4,7 @@
 %%XPI_XPIDIR%%/chrome/content/notfound.xul
 %%XPI_XPIDIR%%/chrome/content/overlay.xul
 %%XPI_XPIDIR%%/chrome/content/settings.xul
+%%XPI_XPIDIR%%/chrome/content/songbird.xul
 %%XPI_XPIDIR%%/chrome/content/streamsave.xul
 %%XPI_XPIDIR%%/chrome/content/unplug.js
 %%XPI_XPIDIR%%/chrome/content/unplug_extern.js
@@ -159,10 +160,13 @@
 %%XPI_XPIDIR%%/chrome/skin/lair_vlc.png
 %%XPI_XPIDIR%%/chrome/skin/pagehog.png
 %%XPI_XPIDIR%%/chrome/skin/pagehogcheese.png
+%%XPI_XPIDIR%%/chrome/skin/songbird.css
 %%XPI_XPIDIR%%/chrome/skin/unplug-tool-sm.png
 %%XPI_XPIDIR%%/chrome/skin/unplug.css
 %%XPI_XPIDIR%%/chrome/skin/unplug.png
 %%XPI_XPIDIR%%/chrome/skin/unplug_large.css
+%%XPI_XPIDIR%%/chrome/skin/unplug_song.png
+%%XPI_XPIDIR%%/chrome/skin/unplug_song_hi.png
 %%XPI_XPIDIR%%/chrome/skin/unstar_flv.png
 %%XPI_XPIDIR%%/chrome/skin/unstar_flvplay.png
 %%XPI_XPIDIR%%/chrome/skin/unstar_link.png
