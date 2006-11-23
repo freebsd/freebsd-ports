@@ -19,6 +19,7 @@ share/gnome/gnome-pilot/conduits/memofile.conduit
 share/gnome/gnome-pilot/conduits/sendmail.conduit
 share/gnome/gnome-pilot/conduits/time.conduit
 share/gnome/pixmaps/avantgo.png
+share/locale/ar/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/az/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/be/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/bg/LC_MESSAGES/gnome-pilot-conduits.mo
