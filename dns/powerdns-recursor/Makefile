@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns-recursor
 PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -32,6 +32,12 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR+=	pdns-recursor
+
+.if defined(BUILD_STATIC) && ${BUILD_STATIC} == "semi"
+MAKE_ENV+=STATIC=semi
+.elif defined(BUILD_STATIC)
+MAKE_ENV+=STATIC=full
+.endif
 
 .if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
 UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
