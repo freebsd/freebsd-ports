@@ -23,6 +23,9 @@ PLIST_FILES=	bin/wmhm
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
+CONFIGURE_ARGS+=--with-xpm-includes=${X11BASE}/include \
+		--with-xpm-library=${X11BASE}/lib
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
