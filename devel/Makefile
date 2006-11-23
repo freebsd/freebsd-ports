@@ -649,6 +649,7 @@
     SUBDIR += m68k-rtems-gcc
     SUBDIR += m68k-rtems-gdb
     SUBDIR += m68k-rtems-objc
+    SUBDIR += make
     SUBDIR += make++
     SUBDIR += makedepend
     SUBDIR += makeplus
