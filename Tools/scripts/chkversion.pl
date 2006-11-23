@@ -30,7 +30,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER=   eik@FreeBSD.org
+# MAINTAINER=   erwin@FreeBSD.org
 #
 # PORTVERSION and PKGORIGIN auditing script
 #
