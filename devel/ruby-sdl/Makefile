@@ -9,7 +9,8 @@ PORTNAME=	sdl
 PORTVERSION=	1.2.0
 PORTREVISION=	0
 CATEGORIES=	devel graphics audio ruby
-MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
+MASTER_SITES=	http://mbsd.msk.ru/dist/ \
+		http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
