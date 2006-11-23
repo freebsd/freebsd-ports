@@ -14997,6 +14997,7 @@ winhelpcgi	ports/www/winhelpcgi
 wininfo		ports/devel/wininfo
 wipe		ports/security/wipe
 wire		ports/net/wire
+wired		ports/net/wired
 wireshark	ports/net/wireshark
 wireshark-lite	ports/net/wireshark-lite
 wise		ports/biology/wise
