@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://granch.ru/pub/kavmilter/
 
-MAINTAINER=	shelton@granch.ru
+MAINTAINER=	achilov-rn@askd.ru
 COMMENT=	Sendmail antivirus filter, based on Kaspersky Antivirus and Milter API
 
 .if !exists(/usr/lib/libmilter.a)
