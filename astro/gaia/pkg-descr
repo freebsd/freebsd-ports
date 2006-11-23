@@ -1,0 +1,7 @@
+Gaia is an open, portable, customizable and extendable Google Earth client,
+currently in an early stage of development.
+
+Optionally, the current position as reported by any GPS device supported 
+by "gpsd" can be tracked and displayed.
+
+WWW: http://gaia.serezhkin.com/
