@@ -10,6 +10,7 @@
     SUBDIR += dbench
     SUBDIR += dbs
     SUBDIR += dkftpbench
+    SUBDIR += fhourstones
     SUBDIR += flops
     SUBDIR += forkbomb
     SUBDIR += gtkperf

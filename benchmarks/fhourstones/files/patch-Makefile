@@ -1,0 +1,8 @@
+--- /dev/null	Thu Nov 23 08:54:18 2006
++++ Makefile	Thu Nov 23 08:54:28 2006
+@@ -0,0 +1,5 @@
++all: SearchGame
++
++SearchGame: Game.c SearchGame.c TransGame.c
++	$(CC) -o $@ $(CFLAGS) SearchGame.c
++
