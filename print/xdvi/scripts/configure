@@ -13,10 +13,8 @@ _read () {
 # paper size, default is not A4
 A4=n
 
-prefix=$PREFIX;
-if `echo $PREFIX |grep -q X11` ; then
-  prefix=${LOCALBASE}
-fi
+prefix=${LOCALBASE}
+
 CACHE=$prefix/share/texmf/fonts
 
 if [ -f $PREFIX/bin/MakeTeXPK ]; then
