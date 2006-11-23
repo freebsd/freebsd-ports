@@ -7,6 +7,7 @@
 
 PORTNAME=	gossip
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -26,7 +27,7 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gnomedocutils
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel gnomedocutils
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-dbus=yes
