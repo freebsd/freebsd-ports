@@ -27,6 +27,7 @@
     SUBDIR += gaim-devel
     SUBDIR += gaim-extprefs
     SUBDIR += gaim-guifications
+    SUBDIR += gaim-hotkeys
     SUBDIR += gaim-ignorance
     SUBDIR += gaim-latex
     SUBDIR += gaim-openq
