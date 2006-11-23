@@ -10,7 +10,7 @@ PORTVERSION=	0.90.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.granch.ru/pub/other/
 
-MAINTAINER=	shelton@www.granch.ru
+MAINTAINER=	achilov-rn@askd.ru
 COMMENT=	SMB/CIFS shares mounting scripts to do it at login
 
 RUN_DEPENDS=	nbtscan:${PORTSDIR}/net-mgmt/nbtscan \

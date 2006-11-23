@@ -10,7 +10,7 @@ PORTVERSION=	0.95.7
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://ftp.granch.ru/pub/kavmilter/
 
-MAINTAINER=	shelton@granch.ru
+MAINTAINER=	achilov-rn@askd.ru
 COMMENT=	Sendmail spam control and canceling filter, based on Milter API
 
 .if !exists(/usr/lib/libmilter.a)

@@ -12,7 +12,7 @@ CATEGORIES=		sysutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kkbswitch
 
-MAINTAINER=		shelton@granch.ru
+MAINTAINER=		achilov-rn@askd.ru
 COMMENT=		Keyboard layout switcher and indicator for KDE 3.x
 
 EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
