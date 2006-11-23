@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	server_switcher
-DISTVERSION=	0.3
+DISTVERSION=	0.4
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
