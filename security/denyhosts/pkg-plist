@@ -1,7 +1,7 @@
 bin/denyhosts.py
-@unexec if cmp -s %D/etc/denyhosts.cfg %D/etc/denyhosts.cfg-dist; then rm -f %D/etc/denyhosts.cfg; fi
-etc/denyhosts.cfg-dist
-@exec [ -f %B/denyhosts.cfg ] || cp -f %B/%f %B/denyhosts.cfg
+@unexec if cmp -s %D/etc/denyhosts.conf %D/etc/denyhosts.conf-dist; then rm -f %D/etc/denyhosts.conf; fi
+etc/denyhosts.conf-dist
+@exec [ -f %B/denyhosts.conf ] || cp -f %B/%f %B/denyhosts.conf
 %%DATADIR%%/daemon-control-dist
 %%DATADIR%%/denyhosts.cfg-dist
 %%DATADIR%%/setup.py
