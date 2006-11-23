@@ -438,6 +438,7 @@
     SUBDIR += p5-Digest-Whirlpool
     SUBDIR += p5-Email-Obfuscate
     SUBDIR += p5-File-Scan
+    SUBDIR += p5-File-Scan-ClamAV
     SUBDIR += p5-Filter-CBC
     SUBDIR += p5-Filter-Crypto
     SUBDIR += p5-GD-SecurityImage
