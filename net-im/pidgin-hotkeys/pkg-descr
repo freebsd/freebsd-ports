@@ -1,0 +1,6 @@
+A gaim plugin that allows user to assign global hotkeys (e.g. Ctrl+Alt+g) for
+togglling buddy list and reading queued message. When "Toggle List" hotkey is
+enabled, it makes the buddy list hidden from your taskbar and task switcher
+(similar to ICQ).
+
+WWW:	http://sourceforge.net/projects/gaim-hotkeys/
