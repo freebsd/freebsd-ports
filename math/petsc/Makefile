@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	petsc
-DISTVERSION=	2.3.2-p0
+DISTVERSION=	2.3.2-p6
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -18,6 +18,7 @@ RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
 
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
+USE_LDCONFIG=		yes
 CONFIGURE_SCRIPT=	config/configure.py
 CONFIGURE_LOG=		configure.log
 CONFIGURE_ENV=		PETSC_ARCH=${TARGET}	\
@@ -64,6 +65,11 @@ MPIDIR=		${LOCALBASE}/mpich2
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
+WITH_OPENMPI=	yes
+MPIDIR=		${LOCALBASE}/mpi/openmpi
+.endif
+
 .if ${ARCH} == "amd64"
 WITHOUT_SUPERLU=	yes
 .endif
@@ -79,12 +85,26 @@ WITH_MPI=	yes
 .endif
 .if defined(WITH_MPI)
 . if exists(${LOCALBASE}/include/mpi.h)
-BROKEN=		Cannot build with mpich when lam-7 is installed - set WITHOUT_MPI or deinstall net/lam
+BROKEN=		Cannot build with MPI when lam-7 is installed - set WITHOUT_MPI or deinstall net/lam
 . endif
+.if defined(WITH_OPENMPI)
+MPIDIR=			${LOCALBASE}/mpi/openmpi
+BUILD_DEPENDS+=		${MPIDIR}/lib/libmpi.so:${PORTSDIR}/net/openmpi
+RUN_DEPENDS+=		${MPIDIR}/lib/libmpi.so:${PORTSDIR}/net/openmpi
+PKGNAMESUFFIX+=		-openmpi
+MAKE_ENV+=		PATH=${MPIDIR}/bin:${PATH}
+# math/blocksolve95 does not pass regression test when compiled with OpenMPI.
+WITHOUT_BS95=		yes
+WITHOUT_SPOOLES=	yes
+WITHOUT_PARMETIS=	yes
+CONFIGURE_ARGS+=	--with-cc=${MPIDIR}/bin/mpicc --with-fc=${MPIDIR}/bin/mpif77
+.else
+BUILD_DEPENDS+=		${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=		${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 PKGNAMESUFFIX+=		-mpich
-BUILD_DEPENDS+=		${MPIDIR}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=		${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
-CONFIGURE_ARGS+=	--with-mpi-dir=${LOCALBASE}/mpich2
+.endif
+
+CONFIGURE_ARGS+=	--with-mpi-dir=${MPIDIR}
 CONFLICTS=		petsc-2*
 PLIST_SUB+=		MPIUNI="@comment "
 .else
@@ -198,10 +218,10 @@ CONFIGURE_ARGS+=	--with-spooles-include=${LOCALBASE}/include/spooles	\
 pre-everything::
 	@${ECHO_MSG}
 .if !defined (WITH_MPI)
-	@${ECHO_MSG} "Define WITH_MPI to use mpich."
+	@${ECHO_MSG} "Define WITH_MPI to use MPI."
 	@${ECHO_MSG} "Note: this is not compatible with Python bindings!"
 .elif !defined (WITHOUT_MPI)
-	@${ECHO_MSG} "Define WITHOUT_MPI to not use mpich."
+	@${ECHO_MSG} "Define WITHOUT_MPI to not use MPI."
 .endif
 .if !defined (WITH_SVN)
 	@${ECHO_MSG} "Define WITH_SVN to use subversion."
@@ -261,7 +281,7 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 regression-test:
-. if defined (WITH_MPI)
+. if defined (WITH_MPI) && !defined(WITH_OPENMPI)
 .  if !exists(${HOME}/.mpd.conf)
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
 	${CHMOD} go-r ${HOME}/.mpd.conf
@@ -271,7 +291,7 @@ regression-test:
 . endif
 	@(cd ${BUILD_WRKSRC};	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
-. if defined (WITH_MPI)
+. if defined (WITH_MPI) && !defined(WITH_OPENMPI)
 	${LOCALBASE}/mpich2/bin/mpdallexit
 . endif
 .endif
