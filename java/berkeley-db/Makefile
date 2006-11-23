@@ -19,8 +19,6 @@ OPTIONS=	TEST "Run the self-tests after building automatically" on
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
-BROKEN=		Self-tests fail
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_ANT=	yes
@@ -52,7 +50,8 @@ test:
 post-build:	test
 	#
 	# Please, review the reported failures (if any) and consider
-	# reporting them to the developers at support@sleepycat.com
+	# reporting them to the developers via:
+	# 	http://forums.oracle.com/forums/forum.jspa?forumID=273
 	# You can re-run the tests without rebuilding the port by
 	# simply doing `make test'
 	#

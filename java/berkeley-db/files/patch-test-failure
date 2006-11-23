@@ -1,8 +1,8 @@
 This are temporary work-arounds for spurious test failures. See the discussions at
 
 	http://forums.oracle.com/forums/thread.jspa?threadID=431242
-and
 	http://forums.oracle.com/forums/thread.jspa?threadID=431549
+	http://forums.oracle.com/forums/thread.jspa?threadID=446837
 
 The last one appears somewhat scary, but SleepyCat/Oracle's support assures me, the problem
 can be ignored as it has to do with the test framework and not the software itself.
@@ -34,3 +34,137 @@ can be ignored as it has to do with the test framework and not the software itse
 +    public void meowCleaning2000() 
          throws Throwable {
  
+Index: test/com/sleepycat/je/cleaner/ReadOnlyLockingTest.java
+===================================================================
+diff -c -r1.7 ReadOnlyLockingTest.java
+*** test/com/sleepycat/je/cleaner/ReadOnlyLockingTest.java      12 Sep 2006 19:17:14 -0000      1.7
+--- test/com/sleepycat/je/cleaner/ReadOnlyLockingTest.java      23 Nov 2006 00:07:40 -0000
+***************
+*** 36,41 ****
+--- 35,41 ----
+  public class ReadOnlyLockingTest extends TestCase {
+  
+      private static final int FILE_SIZE = 4096;
++     private static final int READER_STARTUP_SECS = 30;
+  
+      private static final CheckpointConfig forceConfig = new CheckpointConfig();
+      static {
+***************
+*** 48,53 ****
+--- 48,72 ----
+      private Database db;
+      private Process readerProcess;
+  
++     private static File getProcessFile() {
++         return new File(System.getProperty(TestUtils.DEST_DIR),
++                         "ReadOnlyProcessFile");
++     }
++ 
++     private static void deleteProcessFile() {
++         File file = getProcessFile();
++         file.delete();
++         TestCase.assertTrue(!file.exists());
++     }
++ 
++     static void createProcessFile()
++         throws IOException {
++             
++         File file = getProcessFile();
++         TestCase.assertTrue(file.createNewFile());
++         TestCase.assertTrue(file.exists());
++     }
++ 
+      public ReadOnlyLockingTest() {
+          envHome = new File(System.getProperty(TestUtils.DEST_DIR));
+      }
+***************
+*** 55,60 ****
+--- 74,81 ----
+      public void setUp()
+          throws IOException, DatabaseException {
+  
++         deleteProcessFile();
++ 
+          TestUtils.removeLogFiles("Setup", envHome, false);
+          TestUtils.removeFiles("Setup", envHome, FileManager.DEL_SUFFIX);
+      }
+***************
+*** 62,67 ****
+--- 83,90 ----
+      public void tearDown()
+          throws IOException, DatabaseException {
+  
++         deleteProcessFile();
++ 
+          try {
+              stopReaderProcess();
+          } catch (Throwable e) {
+***************
+*** 219,228 ****
+              ReadOnlyProcess.class.getName(),
+          };
+  
+!         /* Start it and give it a chance to open the environment. */
+          readerProcess = Runtime.getRuntime().exec(cmd);
+!         Thread.sleep(2000);
+          //printReaderStatus();
+      }
+  
+      private void stopReaderProcess()
+--- 242,264 ----
+              ReadOnlyProcess.class.getName(),
+          };
+  
+!         /* Start it and wait for it to open the environment. */
+          readerProcess = Runtime.getRuntime().exec(cmd);
+!         long startTime = System.currentTimeMillis();
+!         boolean running = false;
+!         while (!running &&
+!                ((System.currentTimeMillis() - startTime) <
+!                 (READER_STARTUP_SECS * 1000))) {
+!             if (getProcessFile().exists()) {
+!                 running = true;
+!             } else {
+!                 Thread.sleep(10);
+!             }
+!         }
+          //printReaderStatus();
++         assertTrue("ReadOnlyProcess did not start after " +
++                    READER_STARTUP_SECS + " + secs",
++                    running);
+      }
+  
+      private void stopReaderProcess()
+Index: test/com/sleepycat/je/cleaner/ReadOnlyProcess.java
+===================================================================
+*** test/com/sleepycat/je/cleaner/ReadOnlyProcess.java  12 Sep 2006 19:17:14 -0000      1.5
+--- test/com/sleepycat/je/cleaner/ReadOnlyProcess.java  23 Nov 2006 00:07:40 -0000
+***************
+*** 16,22 ****
+  import com.sleepycat.je.util.TestUtils;
+  
+  /**
+!  * @see ReadOnlyLockerTest
+   */
+  public class ReadOnlyProcess {
+  
+--- 15,21 ----
+  import com.sleepycat.je.util.TestUtils;
+  
+  /**
+!  * @see ReadOnlyLockingTest
+   */
+  public class ReadOnlyProcess {
+  
+***************
+*** 36,41 ****
+--- 35,43 ----
+  
+              //System.err.println("Opened read-only: " + envHome);
+              //System.err.println(System.getProperty("java.class.path"));
++ 
++             /* Notify the test that this process has opened the environment. */
++             ReadOnlyLockingTest.createProcessFile();
+  
+              /* Sleep until the parent process kills me. */
+              Thread.sleep(Long.MAX_VALUE);
