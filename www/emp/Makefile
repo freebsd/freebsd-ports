@@ -16,6 +16,9 @@ COMMENT=	CGI program to deliver hierarchy of web links
 
 HAS_CONFIGURE=	yes
 
+DEPRECATED=	project is shutting down
+EXPIRATION_DATE=	2006-12-23
+
 CGI_BIN=	${PREFIX}/www/cgi-bin
 
 do-install:
