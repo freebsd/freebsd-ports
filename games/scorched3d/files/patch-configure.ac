@@ -1,44 +1,15 @@
---- configure.ac.orig	Mon Jul 25 19:06:13 2005
-+++ configure.ac	Wed Mar 29 14:07:50 2006
-@@ -103,6 +103,7 @@
- 		    , enable_openaltest=yes)
- AC_MSG_CHECKING(for OpenAL)
- AC_PATH_PROG(OPENAL_CONFIG, openal-config, no)
-+AC_PATH_PROG(ALUT_CONFIG, freealut-config, no)
- have_openal=yes
- if test x$OPENAL_CONFIG = xno; then
- 	echo "*** The openal-config script installed by OpenAL could not be found"
-@@ -114,11 +115,11 @@
- 	if test x"$use_static_openal" = x"yes"; then
- 		LIBS="$LIBS /usr/local/lib/libopenal.a"
- 	else
--		LIBS="$LIBS `$OPENAL_CONFIG --libs`"
-+		LIBS="$LIBS `$OPENAL_CONFIG --libs` `$ALUT_CONFIG --libs`"
- 	fi
- 	
--	CFLAGS="$CFLAGS `$OPENAL_CONFIG --cflags`"
--	CXXFLAGS="$CXXFLAGS `$OPENAL_CONFIG --cflags`"
-+	CFLAGS="$CFLAGS `$OPENAL_CONFIG --cflags` `$ALUT_CONFIG --cflags`"
-+	CXXFLAGS="$CXXFLAGS `$OPENAL_CONFIG --cflags` `$ALUT_CONFIG --cflags`"
- fi
- 
- AC_MSG_CHECKING(for OpenAL compilation)
-@@ -248,13 +249,13 @@
-         ])
- fi
-      
--CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS"
--CXXFLAGS="$CXXFLAGS $WX_CXXFLAGS_ONLY"
--CFLAGS="$CFLAGS $WX_CFLAGS_ONLY"
-+CPPFLAGS="$WX_CPPFLAGS $CPPFLAGS"
-+CXXFLAGS="$WX_CXXFLAGS_ONLY $CXXFLAGS"
-+CFLAGS="$WX_CFLAGS_ONLY $CFLAGS"
- if test x"$use_static_wx" = x"yes"; then
--	LIBS="$LIBS $WX_LIBS_STATIC"
-+	LIBS="$WX_LIBS_STATIC $LIBS"
+--- configure.ac.orig	Tue Oct 31 17:42:00 2006
++++ configure.ac	Tue Oct 31 17:54:47 2006
+@@ -133,6 +133,12 @@
+ 	echo "*** environment variable to the full path to openal-config."
  else
--	LIBS="$LIBS $WX_LIBS"
-+	LIBS="$WX_LIBS $LIBS"
- fi
  
- dnl Check for FreeType2
++	if test x"$use_static_openal" = x"yes"; then
++		LIBS="$LIBS /usr/local/lib/libalut.a"
++	else
++		LIBS="$LIBS `$FREEALUT_CONFIG --libs`"
++	fi
++
+ 	CFLAGS="$CFLAGS `$FREEALUT_CONFIG --cflags`"
+ 	CXXFLAGS="$CXXFLAGS `$FREEALUT_CONFIG --cflags`"
+ 
