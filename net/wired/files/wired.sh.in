@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: wired
+# REQUIRE: 
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# wired_enable (bool):   Set to NO by default.
+#               Set it to YES to enable wired.
+#
+
+. %%RC_SUBR%%
+
+name="wired"
+rcvar=${name}_enable
+
+pidfile=%%PREFIX%%/wired/wired.pid
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${wired_enable="NO"}
+
+command_args=""
+
+run_rc_command "$1"
