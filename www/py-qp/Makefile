@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qp
-PORTVERSION=	1.9
+PORTVERSION=	1.9.1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qp/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
