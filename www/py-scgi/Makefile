@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	www
 MASTER_SITES=	http://quixote.python.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
