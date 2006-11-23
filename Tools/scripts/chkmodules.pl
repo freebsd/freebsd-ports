@@ -30,7 +30,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER=	eik@FreeBSD.org
+# MAINTAINER=	erwin@FreeBSD.org
 #
 # CVSROOT-ports/modules auditing script, based on a shell script by
 # Clement Laforet.

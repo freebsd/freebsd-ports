@@ -8,6 +8,9 @@
 # When INDEX is broken, assemble the list of committers who touched files
 # on the most recent 'cvs update', and put those committers "on the hook".
 # These committers all stay on the hook until INDEX is buildable again.
+#
+# MAINTAINER= erwin@FreeBSD.org
+#
 
 # --------------------------------------------------------
 # Change these!
