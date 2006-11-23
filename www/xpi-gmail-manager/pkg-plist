@@ -15,6 +15,7 @@
 %%XPI_XPIDIR%%/components/gmServiceGmail.xpt
 %%XPI_XPIDIR%%/defaults/preferences/gmanager.js
 %%XPI_XPIDIR%%/defaults/transforms/prefs-0.5.1.xsl
+%%XPI_XPIDIR%%/defaults/transforms/prefs-0.5.2.xsl
 %%XPI_XPIDIR%%/defaults/transforms/prefs-0.5.xsl
 %%XPI_XPIDIR%%/install.js
 %%XPI_XPIDIR%%/install.rdf
