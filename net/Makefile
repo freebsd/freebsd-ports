@@ -846,6 +846,7 @@
     SUBDIR += whois
     SUBDIR += widentd
     SUBDIR += wire
+    SUBDIR += wired
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
     SUBDIR += wistumbler2

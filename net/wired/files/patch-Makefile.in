@@ -1,0 +1,61 @@
+--- Makefile.in.orig	Sun Jun 18 15:08:08 2006
++++ Makefile.in	Thu Nov 23 21:07:15 2006
+@@ -12,8 +12,8 @@
+ 
+ WD_VERSION		= @WD_VERSION@
+ WD_MAINTAINER	= @WD_MAINTAINER@
+-WD_USER			= @WD_USER@
+-WD_GROUP		= @WD_GROUP@
++WD_USER			= wired
++WD_GROUP		= wired
+ 
+ DISTFILES		= INSTALL LICENSE NEWS README Makefile Makefile.in \
+ 				  config.guess config.status config.h.in config.sub configure \
+@@ -86,7 +86,7 @@
+ 
+ $(rundir)/wiredctl: $(top_srcdir)/wired/wiredctl.in
+ 	@test -d $(@D) || mkdir -p $(@D)
+-	sed -e 's,@wireddir\@,$(fake_prefix)/$(wireddir),g' $< > $@
++	sed -e 's,@wireddir\@,$(fake_prefix)/$(wireddir),g' -e 's,@prefix\@,$(prefix),g' $< > $@
+ 	chmod +x $@
+ 
+ $(rundir)/etc/wired.conf: $(top_srcdir)/wired/wired.conf.in
+@@ -145,15 +145,15 @@
+ 	fi
+ 
+ 	if [ ! -f $(installdir)/etc/wired.conf ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/etc/wired.conf $(installdir)/etc/; \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/etc/wired.conf $(installdir)/etc/wired.conf.sample; \
+ 	fi
+ 
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/hl2wired $(installdir)/
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/wired $(installdir)/
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/wiredctl $(installdir)/
++	$(INSTALL) -m 755 -o 0 -g 0 $(rundir)/hl2wired $(prefix)/sbin/
++	$(INSTALL) -m 755 -o 0 -g 0 $(rundir)/wired $(prefix)/sbin/
++	$(INSTALL) -m 755 -o 0 -g 0 $(rundir)/wiredctl $(prefix)/bin/
+ 
+ 	if [ -f /etc/resolv.conf ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) /etc/resolv.conf $(installdir)/etc/; \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) /etc/resolv.conf $(installdir)/etc/resolv.conf.sample; \
+ 	fi
+ 
+ 	@if [ -f .update ]; then \
+@@ -161,7 +161,7 @@
+ 		echo "Update complete!"; \
+ 		echo ""; \
+ 		echo "You should now run:"; \
+-		echo "    $(installdir)/wiredctl restart"; \
++		echo "    $(prefix)/bin/wiredctl restart"; \
+ 		echo "to restart a running server."; \
+ 	else \
+ 		echo ""; \
+@@ -172,7 +172,7 @@
+ 		echo "Remember to edit $(installdir)/etc/wired.conf if you want to make any changes before starting the server."; \
+ 		echo ""; \
+ 		echo "When you are done, run:"; \
+-		echo "    $(installdir)/wiredctl start"; \
++		echo "    $(prefix)/bin/wiredctl start"; \
+ 		echo "to start the server."; \
+ 	fi
+ 

@@ -1,0 +1,27 @@
+@unexec if cmp -s %D/wired/etc/certificate.pem.sample %D/wired/etc/certificate.pem; then rm -f %D/wired/etc/certificate.pem; fi
+wired/etc/certificate.pem.sample
+@exec if [ ! -f %D/wired/etc/certificate.pem ] ; then cp -p %D/%F %B/certificate.pem; fi
+@unexec if cmp -s %D/wired/etc/wired.conf.sample %D/wired/etc/wired.conf; then rm -f %D/wired/etc/wired.conf; fi
+wired/etc/wired.conf.sample
+@exec if [ ! -f %D/wired/etc/wired.conf ] ; then cp -p %D/%F %B/wired.conf; fi
+@unexec if cmp -s %D/wired/etc/resolv.conf.sample %D/wired/etc/resolv.conf; then rm -f %D/wired/etc/resolv.conf; fi
+wired/etc/resolv.conf.sample
+@exec if [ ! -f %D/wired/etc/resolv.conf ] ; then cp -p %D/%F %B/resolv.conf; fi
+wired/files/Uploads/.wired/type
+wired/files/Drop Box/.wired/type
+wired/banlist
+wired/groups
+wired/news
+wired/users
+sbin/hl2wired
+sbin/wired
+bin/wiredctl
+@exec mkdir -p %D/wired/tmp
+@dirrmtry wired/tmp
+@dirrmtry wired/files/Uploads/.wired
+@dirrmtry wired/files/Uploads
+@dirrmtry wired/files/Drop\ Box/.wired
+@dirrmtry wired/files/Drop\ Box
+@dirrmtry wired/files
+@dirrmtry wired/etc
+@dirrmtry wired
