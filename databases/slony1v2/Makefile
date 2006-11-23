@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
-MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
+MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}
 
@@ -74,7 +74,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
 #	${INSTALL_DATA} ${WRKSRC}/doc/*/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
-	${INSTALL_DATA} ${WRKDIR}/*.html ${WRKDIR}/*.png ${DOCSDIR}/adminguide/
+	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
