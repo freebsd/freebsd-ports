@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	rtfx
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://memberwebs.com/nielsen/software/rtfx/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An RTF to XML converter
 
-LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
+LIB_DEPENDS=	mba.1:${PORTSDIR}/devel/libmba
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --datarootdir=${PREFIX}
 USE_GMAKE=	yes
 
+PLIST_FILES=	bin/rtfx
 MAN1=		rtfx.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 500035
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src::domhelpers.h-gcc295
-post-patch:
-	@${REINPLACE_CMD} -e "s///g" ${WRKSRC}/src/xmlcomposer.cpp
-.endif
-.if ${OSVERSION} >= 502124
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src::reference.h-gcc342 \
-		${FILESDIR}/extra-patch-src::sablo.h-gcc342
+BROKEN=	does not build on 4.x
 .endif
 
 .include <bsd.port.post.mk>
