@@ -66,6 +66,7 @@
 
 require 5.005;
 use strict;
+use POSIX;
 use File::Find;
 use Cwd 'abs_path';
 
@@ -103,7 +104,7 @@ $portsdir = abs_path($portsdir);
 my $versionfile = "$versiondir/VERSIONS";
 my $useindex    = !-w $versiondir;
 
-my $starttime = localtime();
+my $starttime = strftime("%a %b %e %G %k:%M:%S %Z",localtime);
 
 sub readfrom {
     my $dir = shift;
