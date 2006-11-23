@@ -5,9 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	sim-im
-PORTVERSION=	0.9.4
-CATEGORIES=	net-im kde
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
+PORTVERSION=	0.9.4.1
+CATEGORIES=	net-im
+MASTER_SITES=	${MASTER_SITE_BERLIOS} \
+		http://sim-im.lehis.ru/dist/ \
+		http://www.sim-im.lehis.ru/dist/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/-im//}-${PORTVERSION}
 
@@ -19,7 +21,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 CONFLICTS=	simicq-[0-9]* sim-im-devel-[0-9]*
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+#EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -27,11 +29,14 @@ USE_QT_VER=	3
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
-.if defined(WITHOUT_KDE)
+.if !defined(WITH_KDE)
 CONFIGURE_ARGS+=--disable-kde --enable-mt
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	KDE="@comment " \
@@ -43,12 +48,12 @@ PLIST_SUB+=	KDE="" \
 .endif
 
 pre-everything::
-.if !defined(WITHOUT_KDE)
-	@${ECHO_MSG} "You can disable KDE support by defining WITHOUT_KDE."
+.if !defined(WITH_KDE)
+	@${ECHO_MSG} "You can enable KDE support by defining WITH_KDE."
 .endif
 
 post-patch:
-.if defined(WITHOUT_KDE)
+.if !defined(WITH_KDE)
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 		${CONFIGURE_WRKSRC}/configure
 .endif
