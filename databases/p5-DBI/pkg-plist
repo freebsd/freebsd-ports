@@ -28,6 +28,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/SQL/Nano.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/W32ODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Roadmap.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/TASKS.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Win32/DBIODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/DBI.bs

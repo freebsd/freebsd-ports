@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.52
+PORTVERSION=	1.53
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -50,6 +50,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::SQL::Nano.3 \
 		DBI::W32ODBC.3 \
 		Roadmap.3 \
+		TASKS.3 \
 		Win32::DBIODBC.3
 
 .if !defined(WITH_PROXY)
@@ -60,7 +61,7 @@ pre-everything::
 .endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changes README ToDo
+PORTDOCS=	Changes README
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
