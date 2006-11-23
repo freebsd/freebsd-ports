@@ -6,84 +6,123 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.0.10
+PORTVERSION=	2.2.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dbmail.org/download/2.0/
-PKGNAMESUFFIX=	-${DATABASE}
+MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
+
+CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.*
+
+OPTIONS=	MYSQL		"Build with MySQL support" on \
+		POSTGRESQL	"Build with PostgreSQL support"	off \
+		SQLITE		"Build with SQLite support" off \
+		SIEVE		"Build w. support for Sieve mail sorting language" off \
+		LDAP		"Build with support for LDAP authentication" off
+
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	YES
-USE_OPENSSL=	YES
+USE_GCC=	3.2+
+USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
-INSTALLS_SHLIB=	yes
+USE_GNOME=	glib20 pkgconfig
+USE_OPENSSL=	YES
 
-CFLAGS += -fPIC
+CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
 
-.if defined(WITH_POSTGRESQL)
-CONFIGURE_ARGS+=	--with-pgsql
-USE_PGSQL=		yes
-DATABASE=		postgresql
-PLIST_SUB+=		PGSQL=""
-PLIST_SUB+=		MYSQL="@comment "
-LDFLAGS+=		-L${LOCALBASE}/lib/
+PORTDOCS=	AUTHORS BUGS COPYING INSTALL NEWS README \
+		README.aliases README.exim README.ldap \
+		README.postfix README.qmail README.sieve \
+		README.smtp README.solaris README.usermap \
+		THANKS
+MAN1=		dbmail-smtp.1 dbmail.1
+MAN5=		dbmail.conf.5
+MAN8=		dbmail-export.8 dbmail-imapd.8 dbmail-lmtpd.8 \
+		dbmail-pop3d.8 dbmail-sievecmd.8 dbmail-timsieved.8 \
+		dbmail-users.8 dbmail-util.8
+MANCOMPRESSED=	no
+SUB_FILES=	pkg-message
+
+PLIST_SUB+=	PORTNAME=${PORTNAME}
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	PORTDOCS="@comment "
 .else
-USE_MYSQL=		YES
-CONFIGURE_ARGS+=	--with-mysql
-DATABASE=		mysql
-PLIST_SUB+=		MYSQL=""
-PLIST_SUB+=		PGSQL="@comment "
-CFLAGS+=		-I${LOCALBASE}/include/mysql
-LDFLAGS+=		-L${LOCALBASE}/lib/mysql
+PLIST_SUB+=	PORTDOCS=""
 .endif
 
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
-PORTDOCS=		INSTALL README EXTRAS
+.include <bsd.port.pre.mk>
 
-MAN1=			dbmail-smtp.1
-MAN8=			dbmail-imapd.8 dbmail-lmtpd.8 dbmail-pop3d.8 \
-			dbmail-users.8 dbmail-util.8
-MANCOMPRESSED=		no
+.if !defined(WITHOUT_MYSQL)
+CONFIGURE_ARGS+=--with-mysql
+USE_MYSQL=	YES
+DATABASE+=	mysql
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
+.endif
 
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} "   By default dbmail uses MySQL backend database."
-	@${ECHO} "   To build dbmail with PostgreSQL as backend database,"
-	@${ECHO} "	define WITH_POSTGRESQL"
-	@${ECHO} ""
+.if defined(WITH_POSTGRESQL)
+CONFIGURE_ARGS+=--with-pgsql
+USE_PGSQL=	yes
+DATABASE+=	postgresql
+PLIST_SUB+=	PGSQL=""
+.else
+PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if defined(WITH_SQLITE)
+CONFIGURE_ARGS+=--with-sqlite
+USE_SQLITE=	yes
+DATABASE+=	sqlite
+PLIST_SUB+=	SQLITE=""
+.else
+PLIST_SUB+=	SQLITE="@comment "
+.endif
+
+.if defined(WITH_SIEVE)
+CONFIGURE_ARGS+=--with-sieve=${LOCALBASE}/include
+LIB_DEPENDS+=	sieve.1:${PORTSDIR}/mail/libsieve
+PLIST_SUB+=	SIEVE=""
+.else
+PLIST_SUB+=	SIEVE="@comment "
+.endif
+
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=--with-auth-ldap=${LOCALBASE}/include
+USE_OPENLDAP=	yes
+.endif
+
+.if defined(WITHOUT_MYSQL) && !defined(WITH_POSTGRESQL) && !defined(WITH_SQLITE)
+IGNORE="requires at least one database backend selected. Run 'make config'"
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
-	@${FIND} ${WRKSRC} -name '*.orig' -type f -delete
+	@${FIND} ${WRKSRC} -name *.orig -type f | ${XARGS} ${RM} -fr
 
 post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
-		${WRKSRC}/dbmail.h
+				${WRKSRC}/dbmail.h
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
-	@${MKDIR} ${DATADIR}/sql
-	${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
+	@if [ ! -f ${PREFIX}/etc/dbmail.conf ] ; then \
+	  ${CP} -p ${PREFIX}/etc/dbmail.conf-dist ${PREFIX}/etc/dbmail.conf; \
+	fi
+	@${MKDIR} ${DATADIR}
+	@for f in ${DATABASE}; do \
+	  ${MKDIR} ${DATADIR}/$$f ; \
+	  ${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${DATADIR}/$$f; \
+	done
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-	@${ECHO} ""
-	@${ECHO} "IMPORTANT NOTE FOR ADMINS UPGRADING FROM 1.X->2.X!!!"
-	@${ECHO} ""
-	@${ECHO} "	*) Don't forget to update the database using a script from"
-	@${ECHO} "	   ${DATADIR}/sql/"
-	@${ECHO} "	*) Many programs have been renamed and their arguments changed."
-	@${ECHO} "	*) Read the upgrading notes."
-	@${ECHO} "	*) Don't be careless with this upgrade or mail will be lost!"
-	@${ECHO} "	*) dbmail can be controled by setting dbmail_imapd_enable,"
-	@${ECHO} "	   dbmail_lmtpd_enable, and/or dbmail_pop3d_enable in"
-	@${ECHO} "	   /etc/rc.conf."
-	@${ECHO} ""
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

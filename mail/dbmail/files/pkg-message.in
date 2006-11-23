@@ -1,0 +1,17 @@
+
+NOTE FOR ADMINS UPGRADING FROM 2.0.X -> 2.2.X :
+	*) Update database using a script
+	   %%DATADIR%%/mysql/migrate_from_2.0_to_2.2.mysql or
+	   %%DATADIR%%/postgresql/migrate_from_2.0_to_2.2.pgsql
+	*) Run `dbmail-util -by'
+	*) Edit configuration file
+	   `[DBMAIL]' section must have `driver=mysql/pgsql' and
+	   `authdriver=sql/ldap'.
+
+NOTE FOR ADMINS UPGRADING FROM 2.1.X -> 2.2 :
+
+	*) Update database using a script
+	   %%DATADIR%%/mysql/2_1_7-2_2_0.mysql (if you're using MySQL)
+	   %%DATADIR%%/postgresql/2_1_7-2_2_0.pgsql (PostgreSQL)
+	   %%DATADIR%%/sqlite/2_1_7-2_2_0.sqlite (SQLite3)
+	*) Run `dbmail-util -by'
