@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cssviewer
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	chinsan@FreeBSD.org
-COMMENT=	An extension to simple CSS property viewer
+COMMENT=	Simple CSS property viewer
 
 XPI_ID=		{8be51513-0433-45c1-9203-7b45019df871}
 XPI_FILES=	chrome/CSSViewer.jar chrome.manifest install.js install.rdf
