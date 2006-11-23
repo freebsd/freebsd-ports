@@ -1,0 +1,8 @@
+mysqlreport makes a friendly report of important MySQL status values.
+mysqlreport transforms the values from SHOW STATUS into an easy-to-read
+report that provides a much more in-depth understanding of how well
+MySQL is running. For this and many other reasons, mysqlreport is
+a better alternative (and practically the only alternative) to
+manually interpreting SHOW STATUS.
+
+WWW: http://hackmysql.com/mysqlreport
