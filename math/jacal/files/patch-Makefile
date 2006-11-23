@@ -1,11 +1,11 @@
---- ./Makefile.orig	Mon Dec  1 04:55:13 2003
-+++ ./Makefile	Mon Feb 14 21:44:19 2005
-@@ -37,7 +37,7 @@
+--- Makefile.orig	Thu Nov 23 09:57:49 2006
++++ Makefile	Thu Nov 23 09:58:00 2006
+@@ -36,7 +36,7 @@
  RELEASE = 1
  
- rpm_prefix=/usr/src/redhat/
+ rpm_prefix=$(HOME)/rpmbuild/
 -prefix = /usr/local/
-+prefix = %%PREFIX%%/
++prefix = %%PREFIX%%
  exec_prefix = $(prefix)
  # directory where `make install' will put executable.
  bindir = $(exec_prefix)bin/
