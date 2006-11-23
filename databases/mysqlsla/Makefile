@@ -1,0 +1,43 @@
+# New ports collection makefile for:	mysqlsla
+# Date created:			2006-11-23
+# Whom:				Alexander Zhuravlev <zaa@zaa.pp.ru>
+#
+# $FreeBSD$
+
+PORTNAME=	mysqlsla
+PORTVERSION=	1.3
+CATEGORIES=	databases
+MASTER_SITES=	http://hackmysql.com/scripts/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	zaa@zaa.pp.ru
+COMMENT=	Mysqlsla analyzes general, slow, and raw MySQL statement logs
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+
+USE_PERL5=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	bin/mysqlsla
+PORTDOCS=	mysqlsladoc.html
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500805
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+.endif
+
+do-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/mysqlsla ${PREFIX}/bin
+
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
+	@${MKDIR} ${DOCSDIR}
+.	for i in ${PORTDOCS}
+		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.	endfor
+.endif
+
+.include <bsd.port.post.mk>

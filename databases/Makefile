@@ -157,6 +157,7 @@
     SUBDIR += mysqlcppapi
     SUBDIR += mysqlman
     SUBDIR += mysqlreport
+    SUBDIR += mysqlsla
     SUBDIR += mysqltcl
     SUBDIR += mytop
     SUBDIR += namazu2

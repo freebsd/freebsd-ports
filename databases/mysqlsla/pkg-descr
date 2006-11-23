@@ -1,0 +1,12 @@
+mysqlsla analyzes general, slow, and raw MySQL statement logs.
+mysqlsla can read multiple MySQL general and slow logs (and logs
+containing raw SQL statements), combine them, then run various
+analyses on all the queries.  In addition, mysqlsla can correlate
+the analyses so that the queries in one analysis are used as the
+basis for subsequent analyses.  Other options include limiting the
+output of each analysis to the top N queries, averaging execution
+time over N runs, customizing the order in which the analyses are
+ran, statement filtering, statement pattern matching, and
+mysqldumpslow-like formatting.
+
+WWW: http://hackmysql.com/mysqlsla
