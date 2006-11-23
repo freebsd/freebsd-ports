@@ -11110,6 +11110,7 @@ pfpro		ports/net-mgmt/pfpro
 pfqueue		ports/mail/pfqueue
 pfstat		ports/sysutils/pfstat
 pft		ports/security/pft
+pftabled	ports/net-mgmt/pftabled
 pftop		ports/sysutils/pftop
 pftpd		ports/ftp/pftpd
 pftpx		ports/ftp/pftpx
