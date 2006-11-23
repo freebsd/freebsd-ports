@@ -103,6 +103,8 @@ $portsdir = abs_path($portsdir);
 my $versionfile = "$versiondir/VERSIONS";
 my $useindex    = !-w $versiondir;
 
+my $starttime = localtime();
+
 sub readfrom {
     my $dir = shift;
 
@@ -319,7 +321,7 @@ sub blame {
 }
 
 sub template {
-    my ($from, $rcpt, $replyto, $ports) = @_;
+    my ($from, $rcpt, $replyto, $starttime, $ports) = @_;
 
     my $portlist = join ', ', sort keys %{$ports};
     substr($portlist, 32) = '...'
@@ -350,6 +352,7 @@ sub template {
         $_ =~ s/%%CC%%/$cc/og;
         $_ =~ s/%%REPLYTO%%/$replyto/og;
         $_ =~ s/%%SUBJECT%%/$portlist/og;
+	$_ =~ s/%%STARTTIME%%/$starttime/og;
         $header .= $_;
     }
     return $header;
@@ -377,16 +380,16 @@ sub mail {
 
 my $tmpl;
 
-$tmpl = template $h_from, $rcpt_orig, $h_replyto, \%pkgorigin;
+$tmpl = template $h_from, $rcpt_orig, $h_replyto, $starttime, \%pkgorigin;
 mail $tmpl, $rcpt_orig, \%pkgorigin;
 
-$tmpl = template $h_from, $rcpt_vers, $h_replyto, \%backwards;
+$tmpl = template $h_from, $rcpt_vers, $h_replyto, $starttime, \%backwards;
 mail $tmpl, $rcpt_vers, \%backwards;
 
-$tmpl = template $h_from, $rcpt_watch, $h_replyto, \%watched;
+$tmpl = template $h_from, $rcpt_watch, $h_replyto, $starttime, \%watched;
 mail $tmpl, $rcpt_watch, \%watched;
 
-$tmpl = template $h_from, $rcpt_watch, $h_replyto, \%watchedm;
+$tmpl = template $h_from, $rcpt_watch, $h_replyto, $starttime, \%watchedm;
 mail $tmpl, $rcpt_watchm, \%watchedm;
 
 exit((%pkgorigin || %backwards) ? 1 : 0);
@@ -408,6 +411,8 @@ X-FreeBSD-Chkversion: PKGORIGIN
 
  Please fix any errors as soon as possible.
 
+ The ports tree was updated at %%STARTTIME%%.
+
 .
 From: %%FROM%%
 To: %%RCPT%%
@@ -426,6 +431,8 @@ X-FreeBSD-Chkversion: backwards
 
  Please fix any errors as soon as possible.
 
+ The ports tree was updated at %%STARTTIME%%.
+
 .
 From: %%FROM%%
 To: %%RCPT%%
@@ -438,6 +445,8 @@ X-FreeBSD-Chkversion: vwatch
  You have requested to be notified of version changes in the following
  ports:
 
+ The ports tree was updated at %%STARTTIME%%.
+
 .
 From: %%FROM%%
 To: %%RCPT%%
@@ -449,5 +458,7 @@ X-FreeBSD-Chkversion: mwatch
 
  You have requested to be notified of maintainer changes in the following
  ports:
+
+ The ports tree was updated at %%STARTTIME%%.
 
 .
