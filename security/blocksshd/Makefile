@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blocksshd
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blocksshd
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS/Resolver.pm:${PORTSDIR}/dns/p5-Ne
 		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon \
 		${SITE_PERL}/Proc/PID/File.pm:${PORTSDIR}/devel/p5-Proc-PID-File
 
-MAKE_ARGS=	PREFIX="${TARGETDIR}"
+MAKE_ARGS=	PREFIX="${TARGETDIR}" SYSCONFDIR="${TARGETDIR}/etc"
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
@@ -28,8 +28,5 @@ MAN1=		blocksshd.1
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/init
 	@${REINPLACE_CMD} -e 's|^MANCOMPRESS = .gz||g' ${WRKSRC}/Makefile
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/blocksshd.conf ${TARGETDIR}/etc
 
 .include <bsd.port.mk>
