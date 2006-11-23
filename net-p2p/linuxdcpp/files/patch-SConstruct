@@ -1,5 +1,5 @@
---- SConstruct.orig	Fri Nov  3 14:00:07 2006
-+++ SConstruct	Fri Nov  3 14:02:32 2006
+--- SConstruct.orig	Wed Nov 22 22:20:48 2006
++++ SConstruct	Wed Nov 22 22:22:59 2006
 @@ -23,21 +23,6 @@
       context.Result(ret)
       return ret
@@ -53,7 +53,7 @@
  # Dependencies
  # ----------------------------------------------------------------------
  
--if not env['CXX']:
+-if not (env.has_key('CXX') and env['CXX']):
 -	print 'CXX env variable is not set, attempting to use g++'
 -	env['CXX'] = 'g++'
 -
@@ -88,14 +88,14 @@
 @@ -165,11 +121,11 @@
  env.Append(LINKFLAGS = ['-Wl,--as-needed'])
  
- if env['debug']:
+ if env.has_key('debug') and env['debug']:
 -	env.Append(CXXFLAGS = Split('-g -ggdb -D_DEBUG -Wall'))
 +	env.Append(CXXFLAGS = Split('%%CXXFLAGS%% -g -ggdb -D_DEBUG -Wall'))
  	env.Append(LINKFLAGS = Split('-g -ggdb -Wall'))
  
- if env['release']:
+ if env.has_key('release') and env['release']:
 -	env.Append(CXXFLAGS = '-O3')
 +	env.Append(CXXFLAGS = '%%CXXFLAGS%%')
  
- if env['profile']:
+ if env.has_key('profile') and env['profile']:
  	env.Append(CXXFLAGS = '-pg')
