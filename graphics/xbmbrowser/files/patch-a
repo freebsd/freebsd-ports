@@ -14,7 +14,7 @@
   #    -DNO_TRANS_COLOR    Turn off setting the `none' color in xpixmaps
   
           DO_XPMS = -DDO_XPMS
-!         XPM_INC = -I/usr/X11R6/include/X11
+!         XPM_INC = -I$(INCDIR)/X11
 !         XPM_LIB = -lXpm
   
   
