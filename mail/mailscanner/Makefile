@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.56.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -284,7 +285,7 @@ do-install:
 		${DOCSDIR}/Sophos.install.freebsd
 .if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
 	# Upgrading MailScanner.conf file... Please wait
-	@${WRKSRC}/bin/upgrade_MailScanner_conf \
+	@${PERL} ${WRKSRC}/bin/upgrade_MailScanner_conf \
 		${PREFIX}/etc/MailScanner/MailScanner.conf \
 		${PREFIX}/etc/MailScanner/MailScanner.conf.sample > \
 		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION} \
@@ -303,7 +304,7 @@ do-install:
 	@for LANG_DIR in ${DATADIR}/reports/*; do \
 		if [ -f $${LANG_DIR}/languages.conf ]; then \
 			${ECHO} -n Upgrading $${LANG_DIR}/languages.conf... Please wait...; \
-			${WRKSRC}/bin/upgrade_languages_conf \
+			${PERL} ${WRKSRC}/bin/upgrade_languages_conf \
 				$${LANG_DIR}/languages.conf \
 				$${LANG_DIR}/languages.conf.sample > \
 				$${LANG_DIR}/languages.conf.new.${PORTVERSION} \

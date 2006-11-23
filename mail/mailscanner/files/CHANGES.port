@@ -1,7 +1,10 @@
+Version 4.56.8_1
+================
+- fixed problem with upgrade_mailscanner_config 
+
 Version 4.56.8
 ==============
 - Upgrade to MailScanenr 4.56
-
 
 Version 4.55.10
 ===============
