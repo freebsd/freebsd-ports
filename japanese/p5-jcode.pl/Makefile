@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jcode.pl
-PORTVERSION=	2.11
+PORTVERSION=	2.13
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
 		ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/
