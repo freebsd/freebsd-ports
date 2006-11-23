@@ -6793,6 +6793,7 @@ mairix		ports/mail/mairix
 maitretarot	ports/games/maitretarot
 majorcool	ports/mail/majorcool
 majordomo	ports/mail/majordomo
+make		ports/devel/make
 make++		ports/devel/make++
 makedepend	ports/devel/makedepend
 makefaq		ports/textproc/makefaq
