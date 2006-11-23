@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jacal
-PORTVERSION=	1b6
+PORTVERSION=	1b7
 CATEGORIES=	math
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	jacal1b6
