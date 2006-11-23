@@ -7,6 +7,7 @@
 
 PORTNAME=	denyhosts
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,16 +23,16 @@ USE_RC_SUBR=	denyhosts
 
 PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
 
-pre-configure:
+post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/daemon-control-dist \
 		${WRKSRC}/denyhosts.cfg-dist \
 		${WRKSRC}/setup.py
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc
-	[ -f ${PREFIX}/etc/denyhosts.cfg ] || \
-		${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc/denyhosts.cfg
+	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc/denyhosts.conf-dist
+	[ -f ${PREFIX}/etc/denyhosts.conf ] || \
+		${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc/denyhosts.conf
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 . for f in ${PORTDOCS}
