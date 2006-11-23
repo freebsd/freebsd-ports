@@ -7,7 +7,6 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
-PORTREVISION=	3
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
@@ -24,7 +23,7 @@ RUN_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26
 			openal-config:${PORTSDIR}/audio/openal
 LIB_DEPENDS=		alut.1:${PORTSDIR}/audio/freealut
 
-SCORCH_VERSION=		39.1
+SCORCH_VERSION=		40.1d
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
@@ -53,8 +52,8 @@ MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,g' \
 		${WRKSRC}/src/3dsparse/aseFile.tab.cpp \
-		${WRKSRC}/src/ode/config.h
-	
+		${WRKSRC}/src/ode/config.h \
+		${WRKSRC}/src/zlib/zutil.h
 
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
