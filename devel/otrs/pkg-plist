@@ -34,13 +34,14 @@ otrs/bin/otrs.getTicketThread
 otrs/bin/otrs.getUserID
 otrs/bin/otrs.setPassword
 otrs/bin/xml2sql.pl
+otrs/bin/CheckSum.pl
+otrs/bin/UnitTest.pl
 otrs/bin/cgi-bin/customer.pl
-otrs/bin/cgi-bin/faq.pl
 otrs/bin/cgi-bin/index.pl
 otrs/bin/cgi-bin/installer.pl
 otrs/bin/cgi-bin/public.pl
+otrs/bin/cgi-bin/rpc.pl
 otrs/bin/fcgi-bin/customer.fpl
-otrs/bin/fcgi-bin/faq.fpl
 otrs/bin/fcgi-bin/index.fpl
 otrs/bin/fcgi-bin/public.fpl
 otrs/scripts/SystemStatsGeneric.pm
@@ -58,6 +59,7 @@ otrs/scripts/restore.pl
 otrs/scripts/sync_node.sh
 otrs/scripts/syncuser_csv2otrs.pl
 otrs/scripts/webform.pl
+otrs/scripts/rpc-examlple.pl
 otrs/scripts/database/initial_insert.sapdb.sql
 otrs/scripts/database/initial_insert.sql
 otrs/scripts/database/otrs-schema-post.db2.sql
@@ -71,18 +73,18 @@ otrs/scripts/database/otrs-schema.mysql.sql
 otrs/scripts/database/otrs-schema.oracle.sql
 otrs/scripts/database/otrs-schema.postgresql.sql
 otrs/scripts/database/otrs-schema.xml
-otrs/scripts/test/CreateTickerNumber.pl
+otrs/scripts/database/otrs-schema-post.mssql.sql
+otrs/scripts/database/otrs-schema.mssql.sql
 otrs/scripts/test/CustomerBackend.pl
 otrs/scripts/test/CustomerUserAuth.pl
 otrs/scripts/test/TicketHistoryState.pl
-otrs/scripts/test/Time.pl
 otrs/scripts/test/UserAuth.pl
-otrs/scripts/test/XML.pl
 otrs/scripts/tools/base64.pl
 otrs/scripts/tools/charset-convert.pl
 otrs/scripts/tools/compress-mail.pl
 otrs/scripts/tools/sync-ldap2db.pl
 otrs/scripts/tools/xml2html.pl
+otrs/var/logo-otrs.png
 otrs/var/cron/aaa_base.dist
 otrs/var/cron/fetchmail.dist
 otrs/var/cron/generic_agent-database.dist
@@ -174,6 +176,9 @@ otrs/var/httpd/htdocs/images/Standard/up-small.png
 otrs/var/httpd/htdocs/images/Standard/up.png
 otrs/var/httpd/htdocs/images/Standard/warning.png
 otrs/var/httpd/htdocs/images/Standard/zoom.png
+otrs/var/httpd/htdocs/images/Standard/empty.png
+otrs/var/httpd/htdocs/images/Standard/notready-sw.png
+otrs/var/httpd/htdocs/images/Standard/watcher.png
 @unexec [ -s %D/otrs/var/log/TicketCounter.log ] || rm -f %D/otrs/var/log/TicketCounter.log
 @unexec if cmp -s %D/otrs/Kernel/Config.pm %D/otrs/Kernel/Config.pm.dist; then rm -f %D/otrs/Kernel/Config.pm; fi
 otrs/Kernel/Config.pm.dist
@@ -184,12 +189,8 @@ otrs/Kernel/Config/Defaults.pm
 otrs/Kernel/Config/GenericAgent.pm.dist
 @exec [ -f %B/GenericAgent.pm ] || cp %B/%f %B/GenericAgent.pm
 otrs/Kernel/Config/GenericAgent.pm.examples
-otrs/Kernel/Config/Files/FAQ.pm
-otrs/Kernel/Config/Files/FAQ.xml
 otrs/Kernel/Config/Files/Framework.xml
-otrs/Kernel/Config/Files/Ticket.pm
 otrs/Kernel/Config/Files/Ticket.xml
-otrs/Kernel/Config/Files/TicketPostMaster.pm
 otrs/Kernel/Language/bb.pm
 otrs/Kernel/Language/bg.pm
 otrs/Kernel/Language/cz.pm
@@ -210,6 +211,10 @@ otrs/Kernel/Language/sv.pm
 otrs/Kernel/Language/xx_AgentZoom.pm
 otrs/Kernel/Language/xx_Custom.pm
 otrs/Kernel/Language/zh_CN.pm
+otrs/Kernel/Language/da.pm
+otrs/Kernel/Language/el.pm
+otrs/Kernel/Language/fa.pm
+otrs/Kernel/Language/sk_SK.pm
 otrs/Kernel/Modules/Admin.pm
 otrs/Kernel/Modules/AdminAttachment.pm
 otrs/Kernel/Modules/AdminAutoResponse.pm
@@ -278,7 +283,6 @@ otrs/Kernel/Modules/AgentTicketZoom.pm
 otrs/Kernel/Modules/AgentZoom.pm
 otrs/Kernel/Modules/CustomerAccept.pm
 otrs/Kernel/Modules/CustomerCalendarSmall.pm
-otrs/Kernel/Modules/CustomerFAQ.pm
 otrs/Kernel/Modules/CustomerPreferences.pm
 otrs/Kernel/Modules/CustomerTicketAttachment.pm
 otrs/Kernel/Modules/CustomerTicketMessage.pm
@@ -286,23 +290,23 @@ otrs/Kernel/Modules/CustomerTicketOverView.pm
 otrs/Kernel/Modules/CustomerTicketSearch.pm
 otrs/Kernel/Modules/CustomerTicketZoom.pm
 otrs/Kernel/Modules/CustomerZoom.pm
-otrs/Kernel/Modules/FAQ.pm
-otrs/Kernel/Modules/FAQCategory.pm
-otrs/Kernel/Modules/FAQLanguage.pm
 otrs/Kernel/Modules/Installer.pm
-otrs/Kernel/Modules/PublicFAQ.pm
-otrs/Kernel/Modules/SystemStats.pm
 otrs/Kernel/Modules/Test.pm
-otrs/Kernel/Output/HTML/Agent.pm
+otrs/Kernel/Modules/AdminInit.pm
+otrs/Kernel/Modules/AdminPerformanceLog.pm
+otrs/Kernel/Modules/AgentStats.pm
+otrs/Kernel/Modules/AgentTicketPhoneOutbound.pm
+otrs/Kernel/Modules/AgentTicketResponsible.pm
+otrs/Kernel/Modules/AgentTicketWatcher.pm
+otrs/Kernel/Modules/CustomerTicketPrint.pm
+otrs/Kernel/Modules/PublicRepository.pm
 otrs/Kernel/Output/HTML/ArticleAttachmentDownload.pm
 otrs/Kernel/Output/HTML/ArticleAttachmentHTMLViewer.pm
 otrs/Kernel/Output/HTML/ArticleCheckPGP.pm
 otrs/Kernel/Output/HTML/ArticleCheckSMIME.pm
 otrs/Kernel/Output/HTML/ArticleComposeCrypt.pm
 otrs/Kernel/Output/HTML/ArticleComposeSign.pm
-otrs/Kernel/Output/HTML/Customer.pm
 otrs/Kernel/Output/HTML/CustomerNewTicketQueueSelectionGeneric.pm
-otrs/Kernel/Output/HTML/Generic.pm
 otrs/Kernel/Output/HTML/NavBarLockedTickets.pm
 otrs/Kernel/Output/HTML/NavBarModuleAdmin.pm
 otrs/Kernel/Output/HTML/NavBarTicketBulkAction.pm
@@ -322,6 +326,12 @@ otrs/Kernel/Output/HTML/PreferencesSMIME.pm
 otrs/Kernel/Output/HTML/PreferencesTheme.pm
 otrs/Kernel/Output/HTML/TicketMenuGeneric.pm
 otrs/Kernel/Output/HTML/TicketMenuLock.pm
+otrs/Kernel/Output/HTML/Layout.pm
+otrs/Kernel/Output/HTML/LayoutTicket.pm
+otrs/Kernel/Output/HTML/NavBarTicketWatcher.pm
+otrs/Kernel/Output/HTML/PreferencesTimeZone.pm
+otrs/Kernel/Output/HTML/TicketMenuResponsible.pm
+otrs/Kernel/Output/HTML/TicketMenuTicketWatcher.pm
 otrs/Kernel/Output/HTML/Lite/AgentNavigationBar.dtl
 otrs/Kernel/Output/HTML/Lite/AgentTicketQueue.dtl
 otrs/Kernel/Output/HTML/Lite/Copyright.dtl
@@ -329,7 +339,6 @@ otrs/Kernel/Output/HTML/Lite/Footer.dtl
 otrs/Kernel/Output/HTML/Lite/FooterSmall.dtl
 otrs/Kernel/Output/HTML/Lite/Header.dtl
 otrs/Kernel/Output/HTML/Lite/HeaderSmall.dtl
-otrs/Kernel/Output/HTML/Lite/Login.dtl
 otrs/Kernel/Output/HTML/Lite/Motd.dtl
 otrs/Kernel/Output/HTML/Lite/Notify.dtl
 otrs/Kernel/Output/HTML/Lite/Warning.dtl
@@ -353,7 +362,6 @@ otrs/Kernel/Output/HTML/Standard/AdminLog.dtl
 otrs/Kernel/Output/HTML/Standard/AdminNavigationBar.dtl
 otrs/Kernel/Output/HTML/Standard/AdminNotificationForm.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPGPForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminPOP3Form.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPackageManager.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPostMasterFilter.dtl
 otrs/Kernel/Output/HTML/Standard/AdminQueueAutoResponseForm.dtl
@@ -407,8 +415,6 @@ otrs/Kernel/Output/HTML/Standard/AgentTicketMove.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketNote.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketOwner.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPending.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketPhone.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketPhoneNew.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPlain.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPrint.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPriority.dtl
@@ -421,14 +427,12 @@ otrs/Kernel/Output/HTML/Standard/AgentTicketSearchResultPrint.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketSearchResultShort.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketStatusView.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketZoom.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketZoomStatus.dtl
 otrs/Kernel/Output/HTML/Standard/AgentWindowTabStart.dtl
 otrs/Kernel/Output/HTML/Standard/AgentWindowTabStop.dtl
 otrs/Kernel/Output/HTML/Standard/Copyright.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerAccept.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerCalendarSmallIcon.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerError.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerFAQ.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerFooter.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerFooterSmall.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerHeader.dtl
@@ -438,7 +442,6 @@ otrs/Kernel/Output/HTML/Standard/CustomerNavigationBar.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerPreferencesForm.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerStatusView.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketMessage.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerTicketMessageNew.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearch.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultCSV.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultPrint.dtl
@@ -446,9 +449,6 @@ otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultShort.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketZoom.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerWarning.dtl
 otrs/Kernel/Output/HTML/Standard/Error.dtl
-otrs/Kernel/Output/HTML/Standard/FAQ.dtl
-otrs/Kernel/Output/HTML/Standard/FAQCategoryForm.dtl
-otrs/Kernel/Output/HTML/Standard/FAQLanguageForm.dtl
 otrs/Kernel/Output/HTML/Standard/Footer.dtl
 otrs/Kernel/Output/HTML/Standard/FooterSmall.dtl
 otrs/Kernel/Output/HTML/Standard/Header.dtl
@@ -461,11 +461,27 @@ otrs/Kernel/Output/HTML/Standard/Notify.dtl
 otrs/Kernel/Output/HTML/Standard/PrintFooter.dtl
 otrs/Kernel/Output/HTML/Standard/PrintHeader.dtl
 otrs/Kernel/Output/HTML/Standard/Redirect.dtl
-otrs/Kernel/Output/HTML/Standard/SystemStats.dtl
 otrs/Kernel/Output/HTML/Standard/Test.dtl
 otrs/Kernel/Output/HTML/Standard/Warning.dtl
 otrs/Kernel/Output/HTML/Standard/css.dtl
 otrs/Kernel/Output/HTML/Standard/customer-css.dtl
+otrs/Kernel/Output/HTML/Standard/AAAStats.dtl
+otrs/Kernel/Output/HTML/Standard/AdminPOP3.dtl
+otrs/Kernel/Output/HTML/Standard/AdminPerformanceLog.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsDelete.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsEditRestrictions.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsEditSpecification.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsEditValueSeries.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsImport.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsOverview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsPrint.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsView.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketPhone.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketPhoneOutbound.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketResponsible.dtl
+otrs/Kernel/Output/HTML/Standard/AgentWindowTab.dtl
+otrs/Kernel/Output/HTML/Standard/CustomerTicketPrint.dtl
 otrs/Kernel/System/Auth.pm
 otrs/Kernel/System/AuthSession.pm
 otrs/Kernel/System/AutoResponse.pm
@@ -479,7 +495,6 @@ otrs/Kernel/System/DB.pm
 otrs/Kernel/System/Email.pm
 otrs/Kernel/System/EmailParser.pm
 otrs/Kernel/System/Encode.pm
-otrs/Kernel/System/FAQ.pm
 otrs/Kernel/System/FileTemp.pm
 otrs/Kernel/System/GenericAgent.pm
 otrs/Kernel/System/Group.pm
@@ -506,6 +521,11 @@ otrs/Kernel/System/Time.pm
 otrs/Kernel/System/User.pm
 otrs/Kernel/System/XML.pm
 otrs/Kernel/System/XMLMaster.pm
+otrs/Kernel/System/CSV.pm
+otrs/Kernel/System/DB/mssql.pm
+otrs/Kernel/System/PDF.pm
+otrs/Kernel/System/Stats.pm
+otrs/Kernel/System/UnitTest.pm
 otrs/Kernel/System/Auth/DB.pm
 otrs/Kernel/System/Auth/HTTPBasicAuth.pm
 otrs/Kernel/System/Auth/LDAP.pm
@@ -531,7 +551,6 @@ otrs/Kernel/System/Email/SMTP.pm
 otrs/Kernel/System/Email/Sendmail.pm
 otrs/Kernel/System/GenericAgent/AutoPriorityIncrease.pm
 otrs/Kernel/System/GenericAgent/NotifyAgentGroupOfCustomQueue.pm
-otrs/Kernel/System/LinkObject/FAQ.pm
 otrs/Kernel/System/LinkObject/Ticket.pm
 otrs/Kernel/System/Log/File.pm
 otrs/Kernel/System/Log/SysLog.pm
@@ -545,12 +564,10 @@ otrs/Kernel/System/PostMaster/Filter/AgentInterface.pm
 otrs/Kernel/System/PostMaster/Filter/CMD.pm
 otrs/Kernel/System/PostMaster/Filter/Match.pm
 otrs/Kernel/System/PostMaster/Filter/MatchDBSource.pm
+otrs/Kernel/System/PostMaster/Filter/NewTicketReject.pm
 otrs/Kernel/System/PostMaster/LoopProtection/DB.pm
 otrs/Kernel/System/PostMaster/LoopProtection/FS.pm
-otrs/Kernel/System/Stats/AccountedTime.pm
-otrs/Kernel/System/Stats/NewTickets.pm
-otrs/Kernel/System/Stats/StateAction.pm
-otrs/Kernel/System/Stats/TicketOverview.pm
+otrs/Kernel/System/Stats/Dynamic/Ticket.pm
 otrs/Kernel/System/Ticket/Article.pm
 otrs/Kernel/System/Ticket/ArticleStorageDB.pm
 otrs/Kernel/System/Ticket/ArticleStorageFS.pm
@@ -558,6 +575,10 @@ otrs/Kernel/System/Ticket/CustomerPermission/CustomerIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerUserIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/GroupCheck.pm
 otrs/Kernel/System/Ticket/Event/Test.pm
+otrs/Kernel/System/Ticket/Event/ForceOwnerReset.pm
+otrs/Kernel/System/Ticket/Event/ForceState.pm
+otrs/Kernel/System/Ticket/Event/ForceUnlock.pm
+otrs/Kernel/System/Ticket/Event/TicketFreeFieldDefault.pm
 otrs/Kernel/System/Ticket/IndexAccelerator/RuntimeDB.pm
 otrs/Kernel/System/Ticket/IndexAccelerator/StaticDB.pm
 otrs/Kernel/System/Ticket/Number/AutoIncrement.pm
@@ -575,7 +596,16 @@ otrs/Kernel/System/Web/UploadCache.pm
 otrs/Kernel/System/Web/UploadCache/DB.pm
 otrs/Kernel/System/Web/UploadCache/FS.pm
 otrs/Kernel/cpan-lib/HTML/Safe.pm
+otrs/Kernel/cpan-lib/Algorithm/DiffOld.pm
+otrs/Kernel/cpan-lib/Algorithm/Diff.pm
+otrs/Kernel/cpan-lib/Crypt/PasswdMD5.pm
+otrs/Kernel/cpan-lib/Text/Diff/Table.pm
+otrs/Kernel/cpan-lib/Text/Diff.pm
+@dirrm otrs/Kernel/cpan-lib/Algorithm
+@dirrm otrs/Kernel/cpan-lib/Crypt
 @dirrm otrs/Kernel/cpan-lib/HTML
+@dirrm otrs/Kernel/cpan-lib/Text/Diff
+@dirrm otrs/Kernel/cpan-lib/Text
 @dirrm otrs/Kernel/cpan-lib
 @dirrm otrs/Kernel/System/XMLMaster
 @dirrm otrs/Kernel/System/Web/UploadCache
@@ -588,6 +618,8 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 @dirrm otrs/Kernel/System/Ticket/Event
 @dirrm otrs/Kernel/System/Ticket/CustomerPermission
 @dirrm otrs/Kernel/System/Ticket
+@dirrm otrs/Kernel/System/Stats/Dynamic
+@dirrm otrs/Kernel/System/Stats/Static
 @dirrm otrs/Kernel/System/Stats
 @dirrm otrs/Kernel/System/PostMaster/LoopProtection
 @dirrm otrs/Kernel/System/PostMaster/Filter
@@ -643,7 +675,6 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.database
-%%PORTDOCS%%%%DOCSDIR%%/README.dtl
 %%PORTDOCS%%%%DOCSDIR%%/README.webserver
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
 %%PORTDOCS%%%%DOCSDIR%%/TODO

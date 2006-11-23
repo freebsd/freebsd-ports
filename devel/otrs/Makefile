@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.otrs.org/pub/otrs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-01
+MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
+		ftp://ftp.samurai.com/pub/otrs/ \
+		http://ftp.gwdg.de/pub/misc/otrs/ \
+		http://mirror.xaranet.de/otrs/
 
 MAINTAINER=	snb@threerings.net
 COMMENT=	Open Ticket Request System
@@ -27,7 +28,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/PDF/API2.pm:${PORTSDIR}/textproc/p5-PDF-API2 \
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	MYSQL "MySQL database support" on \
@@ -38,9 +41,6 @@ OPTIONS=	MYSQL "MySQL database support" on \
 		ISPELL "Enable spell checking" on \
 		GNUPG "Use GnuPG" off
 
-USE_BZIP2=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 OTRSDIR=	${PREFIX}/otrs
 
 SUB_FILES=	pkg-install pkg-message
@@ -150,5 +150,8 @@ do-install:
 .endfor
 .endif
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
