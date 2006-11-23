@@ -849,6 +849,7 @@
     SUBDIR += p5-webservice-validator-css-w3c
     SUBDIR += p5-webservice-validator-html-w3c
     SUBDIR += peacock
+    SUBDIR += pear-HTML_AJAX
     SUBDIR += pear-HTTP
     SUBDIR += pear-HTTP_Client
     SUBDIR += pear-HTTP_Download
