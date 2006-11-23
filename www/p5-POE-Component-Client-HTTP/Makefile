@@ -26,7 +26,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Client::HTTP.3 \
+		POE::Component::Client::HTTP::Request.3 \
 		POE::Component::Client::HTTP::RequestFactory.3 \
-		POE::Filter::HTTPHead.3
+		POE::Filter::HTTPChunk.3 POE::Filter::HTTPHead.3
 
 .include <bsd.port.mk>
