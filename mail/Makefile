@@ -56,7 +56,7 @@
     SUBDIR += cyrus-imapd23
     SUBDIR += cyrus2courier
     SUBDIR += dbmail
-    SUBDIR += dbmail-devel
+    SUBDIR += dbmail21
     SUBDIR += dcc-dccd
     SUBDIR += delatt
     SUBDIR += demime
