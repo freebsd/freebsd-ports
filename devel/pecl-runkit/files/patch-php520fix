@@ -1,0 +1,29 @@
+--- php_runkit.h	2006/06/07 17:35:33	1.29
++++ php_runkit.h	2006/10/26 16:18:52	1.30
+@@ -40,6 +40,13 @@
+ #define PHP_RUNKIT_IMPORT_CLASS_PROPS		0x0008
+ #define PHP_RUNKIT_IMPORT_CLASSES			(PHP_RUNKIT_IMPORT_CLASS_METHODS|PHP_RUNKIT_IMPORT_CLASS_CONSTS|PHP_RUNKIT_IMPORT_CLASS_PROPS)
+ #define PHP_RUNKIT_IMPORT_OVERRIDE			0x0010
++
++#if ZEND_MODULE_API_NO > 20050922
++#define ZEND_ENGINE_2_2
++#endif
++#if ZEND_MODULE_API_NO > 20050921
++#define ZEND_ENGINE_2_1
++#endif
+ 
+ /* The TSRM interpreter patch required by runkit_sandbox was added in 5.1, but this package includes diffs for older versions
+  * Those diffs include an additional #define to indicate that they've been applied
+--- runkit_import.c	2006/06/07 17:35:33	1.9
++++ runkit_import.c	2006/10/26 16:18:52	1.10
+@@ -228,7 +228,9 @@
+ 		if (zend_hash_get_current_key_ex(&ce->default_properties, &key, &key_len, &idx, 0, &pos) == HASH_KEY_IS_STRING) {
+ 			char *cname = NULL, *pname = key;
+ 
+-#ifdef ZEND_ENGINE_2
++#ifdef ZEND_ENGINE_2_2
++			zend_unmangle_property_name(key, key_len - 1, &cname, &pname);
++#elif defined(ZEND_ENGINE_2)
+ 			zend_unmangle_property_name(key, &cname, &pname);
+ #endif
+ 			if (zend_hash_exists(&dce->default_properties, key, key_len)) {

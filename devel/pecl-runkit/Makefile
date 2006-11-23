@@ -17,8 +17,6 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	PECL extension to modify constants, user-defined functions and classes
 
-BROKEN=		Does not compile
-
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	runkit
