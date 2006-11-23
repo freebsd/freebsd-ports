@@ -1,0 +1,11 @@
+--- mysqlreport.orig	Thu Nov 23 17:56:12 2006
++++ mysqlreport	Thu Nov 23 18:03:54 2006
+@@ -76,7 +76,7 @@ $mycnf{'user'}   = $op{'user'}   if have
+ # Default values if nothing else
+ $mycnf{'host'}   ||= 'localhost';
+ $mycnf{'port'}   ||= 3306;
+-$mycnf{'socket'} ||= '/var/run/mysqld/mysqld.sock'; # Debian default
++$mycnf{'socket'} ||= '/tmp/mysql.sock';
+ $mycnf{'user'}   ||= $ENV{'USER'};
+ 
+ if(exists $op{'password'})
