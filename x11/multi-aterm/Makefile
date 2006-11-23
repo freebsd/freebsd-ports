@@ -15,7 +15,8 @@ COMMENT=	A multi terminal based on aterm
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--with-xpm=${X11BASE}
 
 DOCS=		AUTHORS ChangeLog INSTALL TODO
 MAN1=		multi-aterm.1
