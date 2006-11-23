@@ -61,6 +61,7 @@ share/gnome/pixmaps/sync_icon.png
 share/gnome/pixmaps/sync_paused.png
 share/gnome/pixmaps/syncing_icon.png
 share/locale/am/LC_MESSAGES/gnome-pilot.mo
+share/locale/ar/LC_MESSAGES/gnome-pilot.mo
 share/locale/az/LC_MESSAGES/gnome-pilot.mo
 share/locale/ca/LC_MESSAGES/gnome-pilot.mo
 share/locale/cs/LC_MESSAGES/gnome-pilot.mo
