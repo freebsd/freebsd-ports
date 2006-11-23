@@ -13,6 +13,7 @@ include/dbus-%%VERSION%%/dbus/dbus-errors.h
 include/dbus-%%VERSION%%/dbus/dbus-macros.h
 include/dbus-%%VERSION%%/dbus/dbus-memory.h
 include/dbus-%%VERSION%%/dbus/dbus-message.h
+include/dbus-%%VERSION%%/dbus/dbus-misc.h
 include/dbus-%%VERSION%%/dbus/dbus-pending-call.h
 include/dbus-%%VERSION%%/dbus/dbus-protocol.h
 include/dbus-%%VERSION%%/dbus/dbus-server.h
