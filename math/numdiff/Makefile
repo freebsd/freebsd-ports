@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numdiff
-PORTVERSION=	3.0.2
+PORTVERSION=	4.0.0
 CATEGORIES=	math textproc
 MASTER_SITES=	http://download.savannah.gnu.org/releases/numdiff/
 
@@ -14,7 +14,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Compare putatively similar files, ignoring small numeric differences
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} --infodir=${PREFIX}/info LIBS=-lm
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --infodir=${PREFIX}/info LIBS=-lm
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 INFO=	numdiff
