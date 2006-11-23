@@ -2627,6 +2627,7 @@ fgfs-base	ports/games/fgfs-base
 fgkicker	ports/games/fgkicker
 fgsd		ports/games/fgsd
 fhist		ports/devel/fhist
+fhourstones	ports/benchmarks/fhourstones
 fhttpd		ports/www/fhttpd
 fi-aspell	ports/textproc/fi-aspell
 fib		ports/devel/fib
