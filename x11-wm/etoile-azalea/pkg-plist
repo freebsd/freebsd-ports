@@ -1,0 +1,22 @@
+Local/Applications/Azalea.app/Azalea
+Local/Applications/Azalea.app/Resources/Azalea.desktop
+Local/Applications/Azalea.app/Resources/Info-gnustep.plist
+Local/Applications/Azalea.app/Resources/openbox/menu.xml
+Local/Applications/Azalea.app/Resources/openbox/rc.xml
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/bullet.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/close.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/desk.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/desk_toggled.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/iconify.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max_toggled.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/shade.xbm
+Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/themerc
+Local/Applications/Azalea.app/library_paths.openapp
+Local/Applications/Azalea.app/stamp.make
+@dirrm Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3
+@dirrm Local/Applications/Azalea.app/Resources/themes/Azalea
+@dirrm Local/Applications/Azalea.app/Resources/themes
+@dirrm Local/Applications/Azalea.app/Resources/openbox
+@dirrm Local/Applications/Azalea.app/Resources
+@dirrm Local/Applications/Azalea.app

@@ -31,6 +31,7 @@
     SUBDIR += enlightenment-docs
     SUBDIR += epiwm
     SUBDIR += epplets
+    SUBDIR += etoile-azalea
     SUBDIR += evilwm
     SUBDIR += expocity
     SUBDIR += fbcmd
