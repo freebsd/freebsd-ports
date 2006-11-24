@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Nov 24 16:24:37 2006
++++ Makefile	Fri Nov 24 16:24:48 2006
+@@ -11,7 +11,7 @@
+ 
+ ## X11 base directory
+ 
+-X11BASE = /usr/X11R6
++#X11BASE = /usr/X11R6
+ 
+ 
+ ## directory for record files
