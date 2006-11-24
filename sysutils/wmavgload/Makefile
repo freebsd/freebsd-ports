@@ -21,4 +21,7 @@ NO_INSTALL_MANPAGES=	yes
 
 PLIST_FILES=	bin/wmavgload
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmavgload ${PREFIX}/bin
+
 .include <bsd.port.mk>
