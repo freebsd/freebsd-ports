@@ -1,5 +1,5 @@
---- Makefile.bsdg	Fri Aug 18 08:37:43 2006
-+++ Makefile.bsdg	Fri Aug 18 08:47:09 2006
+--- Makefile.bsdg	Fri Nov 24 13:42:55 2006
++++ Makefile.bsdg	Fri Nov 24 14:05:16 2006
 @@ -1,7 +1,7 @@
  .PHONY: clean release docs
  
@@ -9,15 +9,16 @@
  
  #-DX86_64
  #-DTIMER_CHECK
-@@ -25,7 +25,6 @@
+@@ -25,20 +25,19 @@
  #-DAFK_FIX	# fixes afk messages to count only PM's, and store and count local messages if the option is selected
  #-DFONTS_FIX		# dynamically loads all fonts with the filename in the format font*.bmp, and makes them accessable in the options
  
 -PLATFORM=-march=i686
- XDIR=-L/usr/X11R6/lib
+-XDIR=-L/usr/X11R6/lib
++XDIR=-L$(X11BASE)/lib -L$(LOCALBASE)/lib
  CWARN=
  #-Wdeclaration-after-statement -Wall -Werror
-@@ -33,12 +32,12 @@
+ CPPWARN=
  #-Wall -Werror
  
  # basic compiling and linking - rarely changed
@@ -25,9 +26,9 @@
 -_CFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags)
 -CXXFLAGS=$(PLATFORM) $(CPPWARN) -O -ggdb -pipe -I/usr/local/include $(OPTIONS)
 -_CXXFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS)
-+CFLAGS+=$(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -I/usr/X11R6/include/
++CFLAGS+=$(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -I$(X11BASE)/include/ -I$(LOCALBASE)/include
 +_CFLAGS=$(CFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags)
-+CXXFLAGS+=-I/usr/local/include $(OPTIONS)
++CXXFLAGS+=-I$(LOCALBASE)/include -I$(X11BASE)/include $(OPTIONS)
 +_CXXFLAGS=$(CXXFLAGS) -fomit-frame-pointer -ffast-math $(OPTIONS)
  
 -LDFLAGS=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
