@@ -1,0 +1,30 @@
+--- Makefile-xpm.orig	Fri Nov 24 17:15:55 2006
++++ Makefile-xpm	Fri Nov 24 17:16:17 2006
+@@ -2,7 +2,7 @@
+ # CFLAGS   = -O0 -Wall -g3 -ggdb -p 
+ # LDFLAGS   = -O0 -Wall -g3 -ggdb -p 
+ #for production use
+-CFLAGS   = -O3
++#CFLAGS   = -O3
+ LDFLAGS  = -s -pipe
+ 
+ # if you want swm to be installed somewhere else:
+@@ -10,9 +10,9 @@
+ 
+ # There should be nothing to edit below this line
+ # -----------------------------------------------------------------------------
+-CC			= gcc
++#CC			= gcc
+ 
+-XROOT    = /usr/X11R6
++XROOT    = $(X11BASE)
+ INCLPATH = -I$(XROOT)/include
+ LDPATH   = -L$(XROOT)/lib
+ 
+@@ -92,4 +92,4 @@
+ mrproper:
+ 	rm -f *~ swm core *.o $(OBJS)
+ 	cp -f Makefile.org Makefile
+-	
+\ No newline at end of file
++	
