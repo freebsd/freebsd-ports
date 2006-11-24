@@ -1,0 +1,25 @@
+--- Makefile.orig	Fri Nov 24 16:58:00 2006
++++ Makefile	Fri Nov 24 16:59:18 2006
+@@ -1,18 +1,13 @@
+ 
+ .SUFFIXES:
+ 
+-CC = gcc
++#CC = gcc
+ 
+-OPT = -s -Wall
++OPT = $(CFLAGS) -s -Wall
+ 
+-XLIBDIR = -L/usr/X11/lib -L/usr/X11R6/lib -L/usr/X11R5/lib -L/usr/X11R4/lib \
+-	-L/usr/lib/X11 -L/usr/lib/X11R6 -L/usr/lib/X11R5 -L/usr/lib/X11R4
++XLIBDIR = -L$(X11BASE)/lib
+ 
+-XINCLUDEDIR = -I/usr/X11/include -I/usr/X11R6/include -I/usr/X11R5/include -I/usr/X11R4/include \
+-	-I/usr/include/X11 -I/usr/include/X11R6 -I/usr/include/X11R5 -I/usr/include/X11R4 \
+-	-I/usr/local/X11/include -I/usr/local/X11R6/include -I/usr/local/X11R5/include -I/usr/local/X11R4/include \
+-	-I/usr/local/include/X11 -I/usr/local/include/X11R6 -I/usr/local/include/X11R5 -I/usr/local/include/X11R4 \
+-	-I/usr/X386/include -I/usr/x386/include -I/usr/XFree86/include/X11 -I/usr/local/x11r5/include
++XINCLUDEDIR = -I$(X11BASE)/include 
+ 
+ all: abclock abc_img
+ 
