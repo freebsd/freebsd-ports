@@ -1120,7 +1120,8 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/CTAN/&,} \
-	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/
+	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/ \
+	ftp://mirror.macomnet.net/pub/CTAN/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_THEMES)
