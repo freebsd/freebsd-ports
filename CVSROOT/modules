@@ -2402,6 +2402,7 @@ etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/deskutils/etoile
 etoile-azalea	ports/x11-wm/etoile-azalea
+etoile-azdock	ports/x11-wm/etoile-azdock
 etoile-bookmarkkit	ports/www/etoile-bookmarkkit
 etoile-camaelon	ports/x11-themes/etoile-camaelon
 etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
