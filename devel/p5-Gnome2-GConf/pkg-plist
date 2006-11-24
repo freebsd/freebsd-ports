@@ -8,9 +8,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install/gconfperl-version.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install/gconfperl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install/gconfperl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Engine.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Schema.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Value.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/main.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/GConf/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/GConf/GConf.bs
