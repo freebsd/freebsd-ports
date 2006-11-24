@@ -103,7 +103,8 @@ post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|^(CC[[:blank:]]*=).*|\1 ${CC}|; \
 		 s|^(CCOPT =)|\1 ${CPPFLAGS} ${CFLAGS}|; \
-		 s|^(LDOPT =)|\1 ${LDFLAGS}|' \
+		 s|^(LDOPT =)|\1 ${LDFLAGS}|; \
+		 s|/usr/X11R6|${X11BASE}|' \
 		${WRKSRC}/makedefs.grx
 	@${REINPLACE_CMD} -e 's/gcc/${CC}/' ${WRKSRC}/src/makefile.[lx]*
 
