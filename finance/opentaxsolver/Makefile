@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	${UPPORTNAME:L}
-PORTVERSION=	3.07
+PORTVERSION=	3.08
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opentaxsolver
-DISTNAME=	${UPPORTNAME}2005_3.07
+DISTNAME=	${UPPORTNAME}2005_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhein@timing.com
@@ -22,6 +22,8 @@ UPPORTNAME=	OpenTaxSolver
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%PREFIX%%/${PREFIX:C,/,\/,g}/' \
 	${WRKSRC}/src/GUI/ots_gui.c
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' \
+	${WRKSRC}/src/GUI/Makefile.linux
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
@@ -29,25 +31,30 @@ do-build:
 
 BUILDPROGLISTCMD=	${FIND} bin -type f
 BUILDEXAMPLELISTCMD=	${FIND} examples_and_templates -type f
+BUILDEXAMPLEDIRLISTCMD=	${FIND} examples_and_templates -type d
 NEWPLIST=		${WRKDIR}/plist.new
 
 do-install:
 	@(cd ${WRKSRC} && \
 	for prog in $$(${BUILDPROGLISTCMD}); do \
-		${INSTALL_PROGRAM} $${prog} ${PREFIX}/bin/. ; \
+	    ${INSTALL_PROGRAM} $${prog} ${PREFIX}/bin/. ; \
 	done && \
 	${MKDIR} ${PREFIX}/share/ots && \
 	${INSTALL_DATA} src/GUI/otslogo.ppm ${PREFIX}/share/ots/. && \
 	for example in $$(${BUILDEXAMPLELISTCMD}); do \
-		${MKDIR} ${PREFIX}/share/ots/$$(dirname $${example}) && \
-		${INSTALL_DATA} $${example} \
-		${PREFIX}/share/ots/$$(dirname $${example})/. ; \
+	    ${MKDIR} ${PREFIX}/share/ots/$$(dirname $${example}) && \
+	    ${INSTALL_DATA} $${example} \
+	    ${PREFIX}/share/ots/$$(dirname $${example})/. ; \
 	done)
 
 new-plist:
 	@(cd ${WRKSRC} && \
-	${BUILDPROGLISTCMD} > ${NEWPLIST} && \
+	${BUILDPROGLISTCMD} | ${SORT} > ${NEWPLIST} && \
 	${ECHO_CMD} share/ots/otslogo.ppm >> ${NEWPLIST} && \
-	${BUILDEXAMPLELISTCMD} | ${SED} 's,^,share/ots/,' >> ${NEWPLIST})
+	${BUILDEXAMPLELISTCMD} | ${SED} 's,^,share/ots/,' | ${SORT} \
+	    >> ${NEWPLIST} && \
+	for f in $$(${BUILDEXAMPLEDIRLISTCMD} | ${SED} 's,^,share/ots/,' && \
+	    ${ECHO_CMD} share/ots); do ${ECHO_CMD} @dirrm $$f; done | \
+	    ${SORT} -r >> ${NEWPLIST})
 
 .include <bsd.port.mk>
