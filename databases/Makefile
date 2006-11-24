@@ -77,6 +77,7 @@
     SUBDIR += gtksql
     SUBDIR += hk_classes
     SUBDIR += hsqldb
+    SUBDIR += innotop
     SUBDIR += ip4r
     SUBDIR += ipa_sdb
     SUBDIR += isql-viewer

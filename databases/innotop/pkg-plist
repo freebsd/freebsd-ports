@@ -1,0 +1,4 @@
+bin/innotop
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/innotop/.packlist
+%%SITE_PERL%%/InnoDBParser.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/innotop
