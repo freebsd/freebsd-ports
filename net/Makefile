@@ -405,6 +405,7 @@
     SUBDIR += p5-BBS-UserInfo-Maple3
     SUBDIR += p5-BBS-UserInfo-Maple3itoc
     SUBDIR += p5-BBS-UserInfo-Ptt
+    SUBDIR += p5-BBS-UserInfo-Wretch
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-File-RsyncP
