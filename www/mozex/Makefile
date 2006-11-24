@@ -13,7 +13,7 @@ CATEGORIES=	www mail news ftp
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mozex allows users of ${GEKO} to use external programs for mail, news, etc.
 
 SUB_FILES=	pkg-message
