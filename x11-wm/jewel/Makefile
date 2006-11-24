@@ -26,6 +26,7 @@ post-patch:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
 	@${SED} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
 		s,^prefix,#prefix,g ; s,prefix,PREFIX,g ; \
+		s,/usr/X11R6,${X11BASE},g ; \
 		s,CC,CXX,g ; s,CFLAGS,CXXFLAGS,g" < ${WRKSRC}/Makefile.orig \
 		> ${WRKSRC}/Makefile
 
