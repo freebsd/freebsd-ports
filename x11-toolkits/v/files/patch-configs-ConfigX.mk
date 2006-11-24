@@ -1,5 +1,16 @@
---- configs/ConfigX.mk.orig	Thu Apr  3 18:14:40 2003
-+++ configs/ConfigX.mk	Mon Mar  6 23:53:38 2006
+--- configs/ConfigX.mk.orig	Fri Nov 24 18:13:58 2006
++++ configs/ConfigX.mk	Fri Nov 24 18:14:19 2006
+@@ -34,8 +34,8 @@
+ #---------------------------------------------------------------------
+ # Tools used in the makefile execution
+ #---------------------------------------------------------------------
+-CC	=	gcc
+-CXX	=	g++
++#CC	=	gcc
++#CXX	=	g++
+ 
+ #---------------------------------------------------------------------
+ # VPATH for dependencies on header files
 @@ -51,7 +51,7 @@
  # User contributed definitions are available for:
  # hpux, aix, solaris, bsd
@@ -21,11 +32,15 @@
  
  
  #---------------------------------------------------------------------
-@@ -307,7 +307,7 @@
+@@ -305,9 +305,9 @@
+ # FreeBSD with gcc
+ #----------------------------------------------------------------------
  ifeq ($(Arch),bsd)
- INCDIR  +=       -I/usr/$(X11RV)/include
- LIBDIR  +=       -L/usr/$(X11RV)/lib
+-INCDIR  +=       -I/usr/$(X11RV)/include
+-LIBDIR  +=       -L/usr/$(X11RV)/lib
 -LIBS    +=       -lV -lXmu -lXt -lXext -lX11 -lxm
++INCDIR  +=       -I$(X11BASE)/include
++LIBDIR  +=       -L$(X11BASE)/lib
 +LIBS    +=       -lXmu -lXt -lXext -lX11
  TARZ    =
  RANLIB  =       ranlib
