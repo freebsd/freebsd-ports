@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -38,20 +38,6 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	ServicesBarKit:deskutils/etoile-servicesbarkit \
 	IconKit:x11-themes/etoile-iconkit \
 
-USE_GNUSTEP_SYSTEM_APPS+=	\
-	GShisen:games/gshisen \
-	ProjectCenter:devel/projectcenter.app \
-	Preferences:deskutils/preferences.app \
-	GWorkspace:deskutils/gworkspace \
-	TextEdit:editors/textedit.app \
-	TimeMon:sysutils/timemon \
-	Terminal:x11/terminal.app \
-	Emacs:editors/emacs.app \
-	GSPdf:print/gspdf \
-	SystemPreferences:deskutils/systempreferences \
-	WrapperFactory:deskutils/gnustep-wrapper \
-	GRubik:games/grubik \
-
 USE_GNUSTEP_LOCAL_LIBS+=	\
 	Pantomime:mail/pantomime \
 	GToolKit:x11-toolkits/gtoolkit \
@@ -73,7 +59,31 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	RSSKit:www/etoile-rsskit \
 	EtoileExtensions:deskutils/etoile-etoileextensionskit \
 
-USE_GNUSTEP_LOCAL_BUNDLES+=	Cddb:audio/cddb-bundle
+USE_GNUSTEP_SYSTEM_BUNDLES+=	\
+	EtoileMenus:x11-themes/etoile-etoilemenus \
+
+USE_GNUSTEP_LOCAL_BUNDLES+=	\
+	Cddb:audio/cddb-bundle
+
+USE_GNUSTEP_SYSTEM_THEMES+=	\
+	Camaelon:x11-themes/etoile-camaelon \
+
+USE_GNUSTEP_LOCAL_THEMES+=	\
+	WildMenus:x11-themes/etoile-wildmenus
+
+USE_GNUSTEP_SYSTEM_APPS+=	\
+	GShisen:games/gshisen \
+	ProjectCenter:devel/projectcenter.app \
+	Preferences:deskutils/preferences.app \
+	GWorkspace:deskutils/gworkspace \
+	TextEdit:editors/textedit.app \
+	TimeMon:sysutils/timemon \
+	Terminal:x11/terminal.app \
+	Emacs:editors/emacs.app \
+	GSPdf:print/gspdf \
+	SystemPreferences:deskutils/systempreferences \
+	WrapperFactory:deskutils/gnustep-wrapper \
+	GRubik:games/grubik \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
