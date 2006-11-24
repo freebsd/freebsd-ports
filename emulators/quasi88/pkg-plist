@@ -1,9 +1,9 @@
 bin/quasi88
-%%PORTDOCS%%share/doc/quasi88/FAQ.TXT
-%%PORTDOCS%%share/doc/quasi88/FORMAT.TXT
-%%PORTDOCS%%share/doc/quasi88/GET-IMAGE.TXT
-%%PORTDOCS%%share/doc/quasi88/HISTORY.TXT
-%%PORTDOCS%%share/doc/quasi88/MANUAL.TXT
-%%PORTDOCS%%share/doc/quasi88/QUASI88.TXT
-%%PORTDOCS%%share/doc/quasi88/_quasi88rc
-%%PORTDOCS%%@dirrm share/doc/quasi88
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.TXT
+%%PORTDOCS%%%%DOCSDIR%%/FORMAT.TXT
+%%PORTDOCS%%%%DOCSDIR%%/GET-IMAGE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY.TXT
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL.TXT
+%%PORTDOCS%%%%DOCSDIR%%/QUASI88.TXT
+%%PORTDOCS%%%%DOCSDIR%%/_quasi88rc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
