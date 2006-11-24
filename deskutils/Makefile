@@ -42,6 +42,7 @@
     SUBDIR += etoile-extendedworkspacekit
     SUBDIR += etoile-hardware
     SUBDIR += etoile-lookandbehavior
+    SUBDIR += etoile-menuserver
     SUBDIR += etoile-preferenceskit
     SUBDIR += etoile-servicesbarkit
     SUBDIR += etoile-trackerkit
