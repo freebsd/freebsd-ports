@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu May  2 02:27:40 2002
-+++ Makefile	Thu Feb 20 21:46:55 2003
++++ Makefile	Fri Nov 24 15:53:28 2006
 @@ -42,17 +42,17 @@
  #
  CONFIG_PNG_OUTPUT=y
@@ -24,3 +24,12 @@
  
  ########################################################
  # do not modify after this
+@@ -136,7 +136,7 @@
+ DEFINES+= -DCONFIG_XFT
+ LIBS+=-lXft
+ endif
+-LIBS+= -L/usr/X11R6/lib -lXext -lX11
++LIBS+= -L$(X11BASE)/lib -lXext -lX11
+ endif
+ 
+ ifdef CONFIG_HTML
