@@ -12748,7 +12748,6 @@ rio500		ports/audio/rio500
 rioutil		ports/audio/rioutil
 ripe-whois	ports/net/ripe-whois
 ripenc		ports/audio/ripenc
-ripetools	ports/net/ripetools
 ripit		ports/audio/ripit
 ripmime		ports/mail/ripmime
 ripole		ports/textproc/ripole
