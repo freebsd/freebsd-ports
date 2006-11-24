@@ -134,6 +134,7 @@
     SUBDIR += rox-edit
     SUBDIR += sam
     SUBDIR += scite
+    SUBDIR += scribes
     SUBDIR += semi
     SUBDIR += semi-emacs20
     SUBDIR += semi-xemacs21-mule
