@@ -32,6 +32,7 @@
     SUBDIR += epiwm
     SUBDIR += epplets
     SUBDIR += etoile-azalea
+    SUBDIR += etoile-azdock
     SUBDIR += evilwm
     SUBDIR += expocity
     SUBDIR += fbcmd

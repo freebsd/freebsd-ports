@@ -1,0 +1,8 @@
+System/Applications/AZDock.app/AZDock
+System/Applications/AZDock.app/Resources/AZDock.desktop
+System/Applications/AZDock.app/Resources/Info-gnustep.plist
+System/Applications/AZDock.app/Resources/Unknown.tiff
+System/Applications/AZDock.app/library_paths.openapp
+System/Applications/AZDock.app/stamp.make
+@dirrm System/Applications/AZDock.app/Resources
+@dirrm System/Applications/AZDock.app
