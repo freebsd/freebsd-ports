@@ -1,28 +1,30 @@
 @unexec if cmp -s %D/www/lightsquid/group.cfg %D/www/lightsquid/group.cfg.dist; then rm -f %D/www/lightsquid/group.cfg; fi
 @unexec if cmp -s %D/www/lightsquid/realname.cfg %D/www/lightsquid/realname.cfg.dist; then rm -f %D/www/lightsquid/realname.cfg; fi
+@unexec if cmp -s %D/www/lightsquid/skipuser.cfg %D/www/lightsquid/skipuser.cfg.dist; then rm -f %D/www/lightsquid/skipuser.cfg; fi
 @unexec if cmp -s %D/www/lightsquid/lightsquid.cfg %D/www/lightsquid/lightsquid.cfg.dist; then rm -f %D/www/lightsquid/lightsquid.cfg; fi
-www/lightsquid/doc/graph.txt
-www/lightsquid/doc/install.txt
-www/lightsquid/doc/logformat.txt
-www/lightsquid/doc/readme.txt
-www/lightsquid/doc/templates.txt
-www/lightsquid/doc/thanks.txt
-www/lightsquid/doc/version.txt
 www/lightsquid/ip2name/ip2name.demo
+www/lightsquid/ip2name/ip2name.dhcp
 www/lightsquid/ip2name/ip2name.dns
+www/lightsquid/ip2name/ip2name.ip
 www/lightsquid/ip2name/ip2name.list
 www/lightsquid/ip2name/ip2name.simple
+www/lightsquid/ip2name/ip2name.smb
+www/lightsquid/ip2name/ip2name.squidauth
 www/lightsquid/ip2name/ip2name.squidlist
 www/lightsquid/ip2name/ip2name.squidlist2
 www/lightsquid/lang/bg.lng
+www/lightsquid/lang/check_lng.pl
+www/lightsquid/lang/check_tpl_lng.pl
+www/lightsquid/lang/cz.lng
 www/lightsquid/lang/eng.lng
 www/lightsquid/lang/fr.lng
 www/lightsquid/lang/hu.lng
 www/lightsquid/lang/it.lng
 www/lightsquid/lang/pt_br.lng
+www/lightsquid/lang/ru-koi8.lng
 www/lightsquid/lang/ru.lng
 www/lightsquid/lang/sp.lng
-www/lightsquid/lang/check_lng.pl
+www/lightsquid/lang/ua.lng
 www/lightsquid/tpl/base/bigfiles.html
 www/lightsquid/tpl/base/day_detail.html
 www/lightsquid/tpl/base/graph.html
@@ -35,38 +37,35 @@ www/lightsquid/tpl/base/user_month.html
 www/lightsquid/tpl/base/user_time.html
 www/lightsquid/tpl/base/whousesite.html
 www/lightsquid/tpl/base/images/datetime.png
+www/lightsquid/tpl/base/images/flag_red.png
 www/lightsquid/tpl/base/images/graph.png
-www/lightsquid/tpl/base/images/groups.png
-www/lightsquid/tpl/base/images/users.png
-www/lightsquid/tpl/ric_1.6b-0.2/print.css
-www/lightsquid/tpl/ric_1.6b-0.2/screen.css
-www/lightsquid/tpl/ric_1.6b-0.2/bigfiles.html
-www/lightsquid/tpl/ric_1.6b-0.2/day_detail.html
-www/lightsquid/tpl/ric_1.6b-0.2/graph.html
-www/lightsquid/tpl/ric_1.6b-0.2/group_detail.html
-www/lightsquid/tpl/ric_1.6b-0.2/index.html
-www/lightsquid/tpl/ric_1.6b-0.2/month_detail.html
-www/lightsquid/tpl/ric_1.6b-0.2/topsites.html
-www/lightsquid/tpl/ric_1.6b-0.2/user_detail.html
-www/lightsquid/tpl/ric_1.6b-0.2/user_month.html
-www/lightsquid/tpl/ric_1.6b-0.2/user_time.html
-www/lightsquid/tpl/ric_1.6b-0.2/whousesite.html
-www/lightsquid/tpl/ric_1.6b-0.2/images/datetime.png
-www/lightsquid/tpl/ric_1.6b-0.2/images/graph.png
-www/lightsquid/tpl/ric_1.6b-0.2/images/groups.png
-www/lightsquid/tpl/ric_1.6b-0.2/images/month.png
-www/lightsquid/tpl/ric_1.6b-0.2/images/users.png
+www/lightsquid/tpl/base/images/printer.png
+www/lightsquid/tpl/text/bigfiles.html
+www/lightsquid/tpl/text/user_detail.html
+www/lightsquid/tpl/text/index.html
+www/lightsquid/tpl/text/group_detail.html
+www/lightsquid/tpl/text/user_month.html
+www/lightsquid/tpl/text/whousesite.html
+www/lightsquid/tpl/text/topsites.html
+www/lightsquid/tpl/text/month_detail.html
+www/lightsquid/tpl/text/day_detail.html
 www/lightsquid/report/delete.me
 www/lightsquid/group.cfg.dist
+@exec [ -f %B/group.cfg ] || cp %B/%f %B/group.cfg
 www/lightsquid/lightsquid.cfg.dist
+@exec [ -f %B/lightsquid.cfg ] || cp %B/%f %B/lightsquid.cfg
 www/lightsquid/realname.cfg.dist
+@exec [ -f %B/realname.cfg ] || cp %B/%f %B/realname.cfg
 www/lightsquid/bigfiles.cgi
 www/lightsquid/day_detail.cgi
+www/lightsquid/fixreport.pl
 www/lightsquid/get.cgi
 www/lightsquid/graph.cgi
 www/lightsquid/group_detail.cgi
 www/lightsquid/index.cgi
 www/lightsquid/month_detail.cgi
+www/lightsquid/skipuser.cfg.dist
+@exec [ -f %B/skipuser.cfg ] || cp %B/%f %B/skipuser.cfg
 www/lightsquid/topsites.cgi
 www/lightsquid/user_detail.cgi
 www/lightsquid/user_month.cgi
@@ -76,14 +75,11 @@ www/lightsquid/.htaccess
 www/lightsquid/check-setup.pl
 www/lightsquid/common.pl
 www/lightsquid/lightparser.pl
-www/lightsquid/lightparser.pl.src
-@dirrm www/lightsquid/doc
-@dirrm www/lightsquid/tpl/base/images
-@dirrm www/lightsquid/tpl/base
-@dirrm www/lightsquid/tpl/ric_1.6b-0.2/images
-@dirrm www/lightsquid/tpl/ric_1.6b-0.2
-@dirrm www/lightsquid/tpl
-@dirrm www/lightsquid/lang
-@dirrm www/lightsquid/ip2name
-@dirrm www/lightsquid/report
-@dirrm www/lightsquid
+@dirrmtry www/lightsquid/tpl/base/images
+@dirrmtry www/lightsquid/tpl/base
+@dirrmtry www/lightsquid/tpl/text
+@dirrmtry www/lightsquid/tpl
+@dirrmtry www/lightsquid/lang
+@dirrmtry www/lightsquid/ip2name
+@dirrmtry www/lightsquid/report
+@dirrmtry www/lightsquid
