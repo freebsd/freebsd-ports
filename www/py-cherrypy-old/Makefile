@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	cherrypy
-PORTVERSION=	2.2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	-old
 DISTNAME=	CherryPy-${PORTVERSION:C/\.b$/beta/}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A pythonic, object-oriented web development framework
 
 USE_PYTHON=	2.3+
