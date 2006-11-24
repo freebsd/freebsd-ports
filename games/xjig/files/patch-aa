@@ -1,5 +1,5 @@
---- Makefile.Linux.orig	Wed Jul 17 13:10:55 1996
-+++ Makefile.Linux	Sun Sep  8 14:02:00 2002
+--- Makefile.Linux.orig	Wed Jul 17 22:10:55 1996
++++ Makefile.Linux	Fri Nov 24 16:10:03 2006
 @@ -1,7 +1,7 @@
  
  ### compiler section
@@ -9,6 +9,18 @@
 +CXXFLAGS	   += -Wall -fstrength-reduce -fpcc-struct-return -DUSE_MIT_SHM -I${X_INCLUDE}
  
  ### default file to be used, when no options are set
+ 
+@@ -9,9 +9,9 @@
+ 
+ ### Directories for include files of X11 and libraries
+ 
+-X_INCLUDE	= /usr/X11R6/include
++X_INCLUDE	= $(X11BASE)/include
+ 
+-XLIB_DIR		= /usr/X11R6/lib
++XLIB_DIR		= $(X11BASE)/lib
+ 
+ ###################################################################
  
 @@ -20,7 +20,7 @@
  .SUFFIXES: .C .o
