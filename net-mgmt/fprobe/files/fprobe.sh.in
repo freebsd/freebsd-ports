@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: fprobe
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable %%NAME%%:
+#
+#%%NAME%%_enable="YES"
+#
+# See fprobe(8) for %%NAME%%_flags
+#
+
+. "%%RC_SUBR%%"
+
+name="%%NAME%%"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/fprobe"
+command_args="-i lo0 127.0.0.1:2055"
+pidfile="/var/run/$name.pid"
+
+load_rc_config "$name"
+: ${fprobe_enable="NO"}
+
+run_rc_command "$1"
