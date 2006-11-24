@@ -4553,6 +4553,7 @@ inn		ports/news/inn
 inn-current	ports/news/inn-current
 inn-stable	ports/news/inn-stable
 innerspace	ports/x11/innerspace
+innotop		ports/databases/innotop
 inplace		ports/misc/inplace
 installwatch	ports/sysutils/installwatch
 instant-server	ports/misc/instant-server
