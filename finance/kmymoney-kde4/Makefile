@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 WITHOUT_OFX=	yes
 
 .if defined(WITH_OFX)
-LIB_DEPENDS+=	ofx.2:${PORTSDIR}/finance/libofx
+LIB_DEPENDS+=	ofx.3:${PORTSDIR}/finance/libofx
 CONFIGURE_ARGS=	--enable-ofxplugin
 OFXPLUGIN=
 .else
