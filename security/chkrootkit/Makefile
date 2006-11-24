@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.46a
+PORTVERSION=	0.47
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 		ftp://gd.tuwien.ac.at/infosys/security/chkrootkit/ \
@@ -29,6 +29,26 @@ PORTDOCS=	ACKNOWLEDGMENTS COPYRIGHT README README.chklastlog README.chkwtmp
 .endif
 
 BINMODE=	0700
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+
+EXTRA_PATCHES=	${PATCHDIR}/600000-patch-chkproc.c
+
+pre-everything::
+	@${ECHO_CMD} "######################################################################"
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# WARNING: chkproc process gives false positives values on"
+	@${ECHO_CMD} "#          FreeBSD >= 6.x, and, due this fact, the getpriority code"
+	@${ECHO_CMD} "#          added to identify LKMs was removed."
+	@${ECHO_CMD} "#          So, use with caution."
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "#          This error will be fixed in the next chkrootkit version."
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "######################################################################"
+
+.endif
 
 pre-patch:
 	${REINPLACE_CMD} -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
@@ -58,4 +78,4 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:C,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
