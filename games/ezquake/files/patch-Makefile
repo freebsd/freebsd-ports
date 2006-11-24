@@ -1,5 +1,5 @@
---- ./Makefile.orig	Fri Apr  7 13:48:24 2006
-+++ ./Makefile	Tue Aug 29 21:08:26 2006
+--- Makefile.orig	Fri Apr  7 13:48:24 2006
++++ Makefile	Fri Nov 24 15:51:36 2006
 @@ -5,54 +5,26 @@
  
  
@@ -155,7 +155,8 @@
 +X11_LDFLAGS			=-L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm
  
  # opengl build
- BASE_GL_LDFLAGS			=-L/usr/X11R6/lib -lGL -lm -lX11 -lXext
+-BASE_GL_LDFLAGS			=-L/usr/X11R6/lib -lGL -lm -lX11 -lXext
++BASE_GL_LDFLAGS			=-L$(X11BASE)/lib -lGL -lm -lX11 -lXext
  ARCH_GL_LDFLAGS			=
 -ifeq ($(ARCH),x86)		# Linux/x86
 -	ARCH_GL_LDFLAGS		=-lXxf86dga -lXxf86vm
