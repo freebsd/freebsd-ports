@@ -20,6 +20,7 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--x-defaults=${X11BASE}/lib/X11/app-defaults
 
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
