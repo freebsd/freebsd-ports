@@ -6796,7 +6796,6 @@ mairix		ports/mail/mairix
 maitretarot	ports/games/maitretarot
 majorcool	ports/mail/majorcool
 majordomo	ports/mail/majordomo
-make		ports/devel/make
 make++		ports/devel/make++
 makedepend	ports/devel/makedepend
 makefaq		ports/textproc/makefaq
@@ -11659,6 +11658,7 @@ ports_libusb	ports/devel/libusb
 ports_lightning	ports/mail/lightning
 ports_lukemftp	ports/ftp/lukemftp
 ports_mail	ports/mail
+ports_make	ports/devel/make
 ports_math	ports/math
 ports_mbone	ports/mbone
 ports_misc	ports/misc
