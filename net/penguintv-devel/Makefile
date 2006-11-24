@@ -6,6 +6,7 @@
 
 PORTNAME=	PenguinTV
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -51,7 +52,6 @@ BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex \
 		mozilla-config:${PORTSDIR}/www/mozilla
 PLIST_SUB+=	WITH_MOZILLA=""
 .else
-EXTRA_PATCHES+=	${FILESDIR}/patchmozilla-setup.py
 PLIST_SUB+=	WITH_MOZILLA="@comment "
 .endif
 
