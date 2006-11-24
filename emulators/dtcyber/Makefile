@@ -28,6 +28,7 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 pre-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.x11
 	${REINPLACE_CMD} -e 's|CFLAGS  = -O2|CFLAGS+= |' ${WRKSRC}/Makefile.x11
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/Makefile.x11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dtcyber ${PREFIX}/bin
