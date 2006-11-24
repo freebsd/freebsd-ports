@@ -13310,6 +13310,7 @@ screamer	ports/lang/screamer
 screem		ports/www/screem
 screen		ports/sysutils/screen
 scriba		ports/lang/scriba
+scribes		ports/editors/scribes
 scribus		ports/print/scribus
 script4rss	ports/www/script4rss
 scrobbler	ports/audio/scrobbler
