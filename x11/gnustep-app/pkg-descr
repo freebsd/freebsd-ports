@@ -1,16 +1,17 @@
 Collection of GNUstep software
 
 System libs:	Gorm, ScriptKit, gnustep-db2, Renaissance, PreferencePanes,
-TrackerKit, PreferencesKit, BookmarkKit, ServicesBarKit, IconKit
+Camaelon, TrackerKit, PreferencesKit, BookmarkKit, ServicesBarKit, IconKit,
+EtoileMenus
+
+Local libs:	Pantomime, GToolKit, rigs, Addresses, SlideShow, netclasses,
+WizardKit, HighlighterKit, Performance, SQLClient, WebServer, StepTalk,
+MathArray, ObjcUnit, WildMenus, GSKrab, Cddb, UnitKit, XWindowServerKit,
+RSSKit, EtoileExtensions
 
 System apps:	GShisen, ProjectCenter, Preferences, GWorkspace, guile-gui,
 gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
 WrapperFactory, GRubik
-
-Local libs:	Pantomime, GToolKit, rigs, Addresses, SlideShow, netclasses,
-WizardKit, HighlighterKit, Performance, SQLClient, WebServer, StepTalk,
-MathArray, ObjcUnit, Camaelon, WildMenus, GSKrab, Cddb, UnitKit,
-XWindowServerKit, RSSKit, EtoileExtensions
 
 Local apps:	Gomoku, GNUMail, EasyDiff, Calculator, CurrencyConverter,
 Finger, GFractal, GSTest, HostAddress, Ink, NSBrowserTest, NSImageTest,
