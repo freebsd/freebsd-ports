@@ -12003,6 +12003,7 @@ py-chardet	ports/textproc/py-chardet
 py-chart	ports/graphics/py-chart
 py-cheetah	ports/devel/py-cheetah
 py-cherrypy	ports/www/py-cherrypy
+py-cherrypy-old	ports/www/py-cherrypy-old
 py-ciphon	ports/devel/py-ciphon
 py-cjkcodecs	ports/converters/py-cjkcodecs
 py-clamav	ports/security/py-clamav
