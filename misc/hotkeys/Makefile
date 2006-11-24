@@ -12,7 +12,7 @@ MASTER_SITES=	http://ypwong.org/hotkeys/${PORTVERSION}/	\
 		${MASTER_SITE_XCONTRIB}
 DISTNAME=	hotkeys_${PORTVERSION}
 
-MAINTAINER=	amp0928@rit.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
