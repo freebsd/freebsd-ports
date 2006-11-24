@@ -19,6 +19,9 @@ USE_XPM=	yes
 MAN1=		xjumpx.1
 MANCOMPRESSED=	yes
 
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xjumpx ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/lib/X11/xjumpx
