@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python_gui/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyGUI-${PORTVERSION}-1
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	A cross-platform pythonic GUI API
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
