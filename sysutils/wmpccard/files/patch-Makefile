@@ -1,0 +1,26 @@
+--- Makefile.orig	Fri Nov 24 16:52:07 2006
++++ Makefile	Fri Nov 24 16:53:46 2006
+@@ -26,18 +26,18 @@
+ PACKAGE = wmpccard
+ VERSION = 1.3
+ 
+-PREFIX = /usr/X11R6
++#PREFIX = /usr/X11R6
+ BINDIR = ${PREFIX}/bin
+ SYSCONFDIR = /etc
+ MANDIR = ${PREFIX}/man
+ MAN1DIR = ${MANDIR}/man1
+ 
+-X11INCLUDES = -I${PREFIX}/include
+-X11LDFLAGS = -L${PREFIX}/lib
++X11INCLUDES = -I${X11BASE}/include
++X11LDFLAGS = -L${X11BASE}/lib
+ X11LIBS = -lXext -lX11 -lXpm
+ 
+-CC = cc
+-CFLAGS = -I. ${X11INCLUDES} -O
++#CC = cc
++CFLAGS += -I. ${X11INCLUDES} -O
+ LDFLAGS = ${X11LDFLAGS} ${X11LIBS}
+ 
+ INSTALL = install -c
