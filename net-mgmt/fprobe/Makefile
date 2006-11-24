@@ -7,6 +7,7 @@
 
 PORTNAME=	fprobe
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,17 +15,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that collects network traffic data
 
-GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+GNU_CONFIGURE=	yes
+PLIST_FILES=	sbin/fprobe
+PORTDOCS=	ChangeLog README
+SUB_LIST=	NAME=${PORTNAME}
 USE_BZIP2=	yes
+USE_RC_SUBR=	fprobe.sh
 
 MAN8=		fprobe.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-
-PORTDOCS=	ChangeLog README
-PLIST_FILES=	sbin/fprobe
 
 post-install:
 .if !defined(NOPORTDOCS)
