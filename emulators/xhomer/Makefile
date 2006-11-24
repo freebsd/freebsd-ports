@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	xhomer
-DISTVERSION=	12-14-03
+DISTVERSION=	9-16-06
+PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://xhomer.isani.org/xhomer/
 EXTRACT_SUFX=	.tgz

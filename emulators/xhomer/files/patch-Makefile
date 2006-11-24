@@ -1,6 +1,23 @@
---- Makefile.orig	Tue Dec  9 18:36:07 2003
-+++ Makefile	Wed May 24 19:59:13 2006
-@@ -115,17 +115,17 @@
+--- Makefile.orig	Sun Feb  8 23:37:24 2004
++++ Makefile	Fri Nov 24 08:00:52 2006
+@@ -26,7 +26,7 @@
+ # be done by setting one of "USE_DGA1" and "USE_DGA2" to "N" and the
+ # other to "Y" or by setting both to "N" (most non-Linux systems).
+ 
+-X11DIR = /usr/X11R6
++X11DIR = $(X11BASE)
+ 
+ ifeq ($(X11DIR)/include/X11/extensions/xf86dga.h,$(wildcard $(X11DIR)/include/X11/extensions/xf86dga.h))
+   ifeq ($(X11DIR)/include/X11/extensions/xf86dga1.h,$(wildcard $(X11DIR)/include/X11/extensions/xf86dga1.h))
+@@ -101,6 +101,7 @@
+ 
+ CCDEFS = -DMM_CACHE=8
+ CCDEFS += -DPERF_MONITOR
++CCDEFS += $(CFLAGS)
+ # Skip boundary conditions for shift operations in the fp
+ # code.  (No check for shift by 0 or >=64 if you define this.)
+ # CCDEFS += -DF_SH_FAST
+@@ -115,17 +116,17 @@
  # C-Compiler configuration
  
  # All the rest of the flags in this section assume gcc
@@ -21,7 +38,7 @@
  
  # Some older gcc's need this on i386 to work around a bug.  As long as
  # omit-frame-pointer is also set, it doesn't seem to hurt performance, so
-@@ -184,8 +184,8 @@
+@@ -184,8 +185,8 @@
  
    # Try this as the default place for X11 stuff and ncurses
  
