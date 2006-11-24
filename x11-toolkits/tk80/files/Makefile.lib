@@ -1,7 +1,7 @@
 NOPROFILE=	yes
 LIB=		tk80
 TK_LIBRARY=	${PREFIX}/lib/tk80
-CFLAGS+=	-I. -I./../generic -I../bitmaps -I/usr/X11R6/include \
+CFLAGS+=	-I. -I./../generic -I../bitmaps -I$(X11BASE)/include \
 		-I${PREFIX}/include/tcl8.0/generic \
 		-DHAVE_UNISTD_H=1 -DHAVE_LIMITS_H=1 -DSTDC_HEADERS=1 \
 		 -DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 \
