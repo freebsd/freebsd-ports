@@ -75,6 +75,7 @@ include/wine/windows/accctrl.h
 include/wine/windows/aclapi.h
 include/wine/windows/activscp.h
 include/wine/windows/activscp.idl
+include/wine/windows/adshlp.h
 include/wine/windows/advpub.h
 include/wine/windows/amstream.h
 include/wine/windows/amstream.idl
@@ -285,6 +286,8 @@ include/wine/windows/objsafe.idl
 include/wine/windows/objsel.h
 include/wine/windows/ocidl.h
 include/wine/windows/ocidl.idl
+include/wine/windows/ocmm.h
+include/wine/windows/ocmm.idl
 include/wine/windows/odbcinst.h
 include/wine/windows/ole2.h
 include/wine/windows/ole2ver.h
@@ -381,6 +384,7 @@ include/wine/windows/vfw.h
 include/wine/windows/vfwmsgs.h
 include/wine/windows/winbase.h
 include/wine/windows/wincon.h
+include/wine/windows/wincred.h
 include/wine/windows/wincrypt.h
 include/wine/windows/windef.h
 include/wine/windows/windns.h
@@ -750,6 +754,7 @@ lib/wine/sfc.dll.so
 lib/wine/shdocvw.dll.so
 lib/wine/shell.dll16
 lib/wine/shell32.dll.so
+lib/wine/shdoclc.dll.so
 lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
 lib/wine/snmpapi.dll.so
