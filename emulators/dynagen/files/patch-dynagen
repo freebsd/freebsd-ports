@@ -1,9 +1,9 @@
---- dynagen.orig	Wed Nov  8 07:26:20 2006
-+++ dynagen	Wed Nov  8 07:26:47 2006
-@@ -29,7 +29,7 @@
+--- dynagen.orig	Sun Nov 19 18:28:17 2006
++++ dynagen	Sat Nov 25 09:56:09 2006
+@@ -32,7 +32,7 @@
  
- VERSION = '0.6.0.101006'
- DEBUG = False
+ # Constants
+ VERSION = '0.8.1.111906'
 -CONFIGSPECPATH = [ "/usr/share/dynagen", "/usr/local/share" ]
 +CONFIGSPECPATH = [ "/usr/local/share/dynagen", "/usr/share/dynagen", "/usr/local/share" ]
  CONFIGSPEC = 'configspec'

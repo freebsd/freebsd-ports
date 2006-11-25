@@ -27,20 +27,32 @@ lib/%%PYTHON_VERSION%%/site-packages/validate.pyo
 @dirrm %%EXAMPLESDIR%%/sample_labs/ethernet_switch
 @dirrm %%EXAMPLESDIR%%/sample_labs
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image001.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image010.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image002.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image011.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image003.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image012.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image004.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image013.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image005.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image014.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image006.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image007.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image008.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image009.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image001.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image002.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image003.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image004.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image005.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image006.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image007.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image008.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image009.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image010.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image011.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image012.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image013.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image014.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image015.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image015.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image016.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image016.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image017.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image017.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image018.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image018.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image019.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image019.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image020.gif
+%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image020.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial_files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
