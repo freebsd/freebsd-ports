@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=jcvm/
 
-MAINTAINER=	archie@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JVM that converts class files to C source and compiles them with GCC
 
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath

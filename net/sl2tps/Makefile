@@ -11,7 +11,7 @@ CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 
-MAINTAINER=		archie@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Simple L2TP server based on libpdel(3) and netgraph(4)
 
 LIB_DEPENDS=		pdel.0:${PORTSDIR}/devel/libpdel

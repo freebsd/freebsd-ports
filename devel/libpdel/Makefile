@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel net www
 MASTER_SITES=	LOCAL/archie
 
-MAINTAINER=	archie@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet Design multi-purpose C library for embedded applications
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
