@@ -1,6 +1,6 @@
 --- Makefile.orig	Tue Aug  1 20:36:42 2000
 +++ Makefile	Wed Aug 28 14:53:02 2002
-@@ -1,31 +1,40 @@
+@@ -1,31 +1,37 @@
 -# Muscle Smartcard Development
 -# Makefile
 -# David Corcoran
@@ -8,12 +8,9 @@
 +# BSD makefile for ifd-gen (in ifd-devkit)
 +#
 +
-+PREFIX?=        /usr/local
-+
-+#XXX
-+#LIBDIR=         /pcsc
-+LIBDIR=         /lib
-+INCSDIR=        /include
++LIBDIR=	${PREFIX}/lib
++INCLUDEDIR=	${PREFIX}/include
++INCSDIR=	${PREFIX}/include
 +
 +SHLIB_NAME=     libgen_ifd.so
 +SHLIB_MAJOR=    1
