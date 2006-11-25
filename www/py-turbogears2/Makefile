@@ -7,9 +7,10 @@
 
 PORTNAME=	TurboGears
 PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
-MASTER_SITES=	http://www.turbogears.org/download/eggs/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
+		http://www.turbogears.org/download/eggs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
 		kid:${PORTSDIR}/devel/py-kid \
 		sqlobject-admin:${PORTSDIR}/databases/py-sqlobject \
-		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy \
+		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
 		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/formencode/__init__.py:${PORTSDIR}/www/py-formencode \
