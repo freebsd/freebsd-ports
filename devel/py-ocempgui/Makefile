@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	ocempgui
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocemp
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		OcempGUI-${PORTVERSION}
+DISTNAME=	OcempGUI-${PORTVERSION}
 
-MAINTAINER=		mva@sysfault.org
-COMMENT=		GUI toolkit in python
+MAINTAINER=	mva@sysfault.org
+COMMENT=	GUI toolkit in python
 
 BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game

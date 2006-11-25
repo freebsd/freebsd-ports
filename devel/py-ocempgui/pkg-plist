@@ -214,6 +214,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/examples/draw_string_with_bg.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/draw_triangle.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/drawing_engine.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/embedded_partial.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/entry.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/event.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/eventcallback.py
