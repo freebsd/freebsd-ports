@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/S/SQLAlchemy/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	sqlalchemy
 DISTNAME=	SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	dryice@dryice.name
