@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=jikes/
 
-MAINTAINER=	archie@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very fast Java source to byte-code compiler made available by IBM
 
 MAN1=		jikes.1

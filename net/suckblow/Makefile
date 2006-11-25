@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 
-MAINTAINER=	archie@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two companion utilities for transferring data over a TCP socket
 
 CONFLICTS=	suck-4.* suck-cnews-4.*

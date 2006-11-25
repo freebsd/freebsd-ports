@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 DIST_SUBDIR=	mpd
 
-MAINTAINER=	archie@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
 MTREE_FILE=	${FILESDIR}/mpd.mtree
