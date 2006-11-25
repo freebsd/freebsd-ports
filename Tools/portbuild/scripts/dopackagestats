@@ -58,6 +58,10 @@ write_row () {
     else
       indexfile=$directory/ports/INDEX-$branch
     fi
+    # work around the fact that 5-exp is really 6-exp-prime
+    if [ ! -f $indexfile ]; then
+      indexfile=$directory/ports/`cd $directory/ports&&ls INDEX* | head -1`
+    fi
 
     # column: date of CVS checkout
     cvsdone="&nbsp;"
