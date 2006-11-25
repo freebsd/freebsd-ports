@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	2.1.4
+PORTVERSION=	2.5.1
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/plone\/:src/g}
 DISTFILES=	Plone-${PORTVERSION}.tar.gz:src
@@ -19,10 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
 WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}
 USE_ZOPE=	yes
-USE_PYTHON=	yes
-PLIST=	${WRKDIR}/pkg-plist
-
-BROKEN=		Incorrect pkg-plist
+ZOPE_VERSION=	2.9
+USE_PYTHON=	2.4
 
 CONFLICTS=	zope-archetypes-[0-9]* \
 		zope-btreefolder2-[0-9]* \
@@ -42,14 +40,16 @@ CONFLICTS=	zope-archetypes-[0-9]* \
 PLIST_SUB=	ZOPEPRODUCTDIR=${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 
 _MODULES=	ATContentTypes ATReferenceBrowserWidget Archetypes \
-		BTreeFolder2 CMFActionIcons CMFCalendar CMFCore CMFDefault \
-		CMFDynamicViewFTI CMFFormController CMFPlone \
-		CMFQuickInstallerTool CMFSetup CMFTopic CMFUid DCWorkflow \
-		ExtendedPathIndex ExternalEditor GroupUserFolder \
-		MimetypesRegistry PlacelessTranslationService \
-		PloneErrorReporting PloneLanguageTool PloneTranslations \
-		PortalTransforms ResourceRegistries SecureMailHost generator \
-		kupu validation
+		CMFActionIcons CMFCalendar CMFCore CMFDefault \
+		CMFDynamicViewFTI CMFFormController CMFPlacefulWorkflow \
+		CMFPlone CMFQuickInstallerTool CMFSetup CMFTopic CMFUid \
+		CacheFu DCWorkflow ExtendedPathIndex ExternalEditor Five \
+		GenericSetup GroupUserFolder Marshall MimetypesRegistry \
+		PasswordResetTool PlacelessTranslationService \
+		PloneErrorReporting PloneLanguageTool PlonePAS \
+		PloneTestCase PloneTranslations PluggableAuthService \
+		PluginRegistry PortalTransforms ResourceRegistries \
+		SecureMailHost kupu statusmessages validation
 
 pre-everything::
 .if !defined(BATCH)
@@ -64,19 +64,6 @@ do-build:
 .for m in ${_MODULES}
 	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/$m
 .endfor
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
-	@for m in ${_MODULES}; do \
-		cd ${WRKSRC}; \
-		for i in `${FIND} $${m} -type f`; do \
-			${ECHO_CMD} %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
-		done; \
-		for i in `${FIND} -d $${m} -type d`; do \
-			${ECHO_CMD} @dirrm %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
-		done; \
-	done
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
