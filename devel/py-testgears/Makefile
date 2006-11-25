@@ -8,7 +8,8 @@
 PORTNAME=	TestGears
 PORTVERSION=	0.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.turbogears.org/download/eggs/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
+		http://www.turbogears.org/download/eggs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
