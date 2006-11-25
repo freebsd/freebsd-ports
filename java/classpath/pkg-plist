@@ -8,8 +8,6 @@ include/jawt.h
 include/jawt_md.h
 include/jni.h
 include/jni_md.h
-lib/classpath/libgcjwebplugin.la
-lib/classpath/libgcjwebplugin.so
 lib/classpath/libgconfpeer.la
 lib/classpath/libgconfpeer.so
 lib/classpath/libgconfpeer.so.0
