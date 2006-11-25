@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fretsonfire
-PORTVERSION=	1.0.263
+PORTVERSION=	1.1.324
 CATEGORIES=	games python
-MASTER_SITES=	http://louhi.kempele.fi/~skyostil/uv/fretsonfire/dist/
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/f/F/g:S/o/O/}-${PORTVERSION:S/^/src-/}
 DIST_SUBDIR=	${PORTNAME}
 

@@ -31,6 +31,7 @@ lib/fretsonfire/FretsOnFire/Menu.py
 lib/fretsonfire/FretsOnFire/MenuTest.py
 lib/fretsonfire/FretsOnFire/Mesh.py
 lib/fretsonfire/FretsOnFire/Messages.py
+lib/fretsonfire/FretsOnFire/Mod.py
 lib/fretsonfire/FretsOnFire/Network.py
 lib/fretsonfire/FretsOnFire/NetworkTest.py
 lib/fretsonfire/FretsOnFire/Object.py
@@ -76,6 +77,7 @@ lib/fretsonfire/FretsOnFire/midi/__init__.py
 lib/fretsonfire/FretsOnFire/midi/constants.py
 lib/fretsonfire/FretsOnFire/rgb2py.py
 lib/fretsonfire/FretsOnFire/setup.py
+lib/fretsonfire/FretsOnFire/setup_mac.py
 lib/fretsonfire/FretsOnFire/svg2png.py
 lib/fretsonfire/data/2x.svg
 lib/fretsonfire/data/3x.svg
@@ -101,6 +103,7 @@ lib/fretsonfire/data/ghmidimap.txt
 lib/fretsonfire/data/glow.svg
 lib/fretsonfire/data/icon.png
 lib/fretsonfire/data/in.ogg
+lib/fretsonfire/data/international.ttf
 lib/fretsonfire/data/jurgen1.ogg
 lib/fretsonfire/data/jurgen2.ogg
 lib/fretsonfire/data/jurgen3.ogg
@@ -112,6 +115,7 @@ lib/fretsonfire/data/label.dae
 lib/fretsonfire/data/left.svg
 lib/fretsonfire/data/logo.svg
 lib/fretsonfire/data/menu.ogg
+lib/fretsonfire/data/mods
 lib/fretsonfire/data/myhero.ogg
 lib/fretsonfire/data/neck.svg
 lib/fretsonfire/data/note.dae
@@ -126,6 +130,7 @@ lib/fretsonfire/data/star1.svg
 lib/fretsonfire/data/star2.svg
 lib/fretsonfire/data/start.ogg
 lib/fretsonfire/data/title.ttf
+lib/fretsonfire/data/translations
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/html/epydoc.css
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
@@ -329,6 +334,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Messages.Message-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Messages.ObjectCreated-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Messages.ObjectDestroyed-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/Mod-module.html     
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Network-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Network.Connection-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Network.ObjectCollection-class.html
@@ -509,6 +515,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-MenuTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Mesh-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Messages-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Mod-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Network-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-NetworkTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/toc-Object-module.html
@@ -747,6 +754,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Messages.Message-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Messages.ObjectCreated-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Messages.ObjectDestroyed-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/Mod-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Network-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Network.Connection-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Network.ObjectCollection-class.html
@@ -926,6 +934,7 @@ lib/fretsonfire/data/title.ttf
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-MenuTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Mesh-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Messages-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Mod-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Network-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-NetworkTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/toc-Object-module.html
