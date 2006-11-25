@@ -71,7 +71,6 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-RELEASE_NR=		2.0
 OOOTAG?=		OOD680_m5
 OOOSRC?=		OOo_2.0.4_src.tar.gz
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
@@ -235,13 +234,12 @@ post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
 			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
 		${PREFIX}/bin/${EXECBASE}
-	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/openoffice.org
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sbase
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-scalc
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sdraw
@@ -250,9 +248,8 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
-	@${PRINTF} "bin/openoffice.org\n" > ${TMPPLIST}
-	@${REINPLACE_CMD} -e 's#${RELEASE_NR}#${OOOVERSION}#g' \
-			-e '/^Exec/s/printeradmin/spadmin/' \
+.if defined(WITH_MENU)
+	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
@@ -272,6 +269,7 @@ post-install:
 			${PRINTF} "share/icons/hicolor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
 		done ; \
 	done
+.endif
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
@@ -282,7 +280,7 @@ post-install:
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
-			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
