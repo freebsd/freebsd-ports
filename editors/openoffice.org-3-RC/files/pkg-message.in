@@ -1,9 +1,9 @@
-OpenOffice.org Build %%RELEASE_NR%% Personal Install How-To
+OpenOffice.org Build %%OOOTAG%% Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 		and Maho Nakata <maho@FreeBSD.org>
 
-OpenOffice.org %%RELEASE_NR%% will soon been installed in
+OpenOffice.org %%OOOTAG%% will soon been installed in
 %%PREFIX%%/%%EXECBASE%%
 
 1. User installation
