@@ -7,6 +7,7 @@
 
 PORTNAME=	murrine-configurator
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrine/
 DISTNAME=	murrine-configurator-${PORTVERSION}
@@ -22,14 +23,12 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
-PLIST_FILES=	bin/murrine-configurator \
-		share/pixmaps/murrine-configurator.png \
-		share/applications/murrine-configurator.desktop
-
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/files/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/pixmaps || ${TRUE}
 	@${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.png \
 		${PREFIX}/share/pixmaps
+	${MKDIR} ${PREFIX}/share/applications || ${TRUE}
 	@${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.desktop \
 		${PREFIX}/share/applications
 
