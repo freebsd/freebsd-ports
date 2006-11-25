@@ -56,7 +56,7 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${ARCH} == amd64
 GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
@@ -71,11 +71,10 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-RELEASE_NR=		2.2
 MILESTONE?=		194
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20061122
+SNAPDATE=		20061121
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -237,13 +236,12 @@ post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
+			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
 		${PREFIX}/bin/${EXECBASE}
-	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/openoffice.org
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sbase
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-scalc
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sdraw
@@ -252,9 +250,8 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
-	@${PRINTF} "bin/openoffice.org\n" > ${TMPPLIST}
-	@${REINPLACE_CMD} -e 's#${RELEASE_NR}#${OOOVERSION}#g' \
-			-e '/^Exec/s/printeradmin/spadmin/' \
+.if defined(WITH_MENU)
+	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
@@ -264,8 +261,8 @@ post-install:
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
 				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
-				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png ; \
-				${PRINTF} "share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png\n" >> ${TMPPLIST} ; \
+				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg-21-$${app}.png ; \
+				${PRINTF} "share/icons/hicolor/$${dir}/apps/openofficeorg-21-$${app}.png\n" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
 		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
@@ -274,6 +271,7 @@ post-install:
 			${PRINTF} "share/icons/hicolor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
 		done ; \
 	done
+.endif
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
@@ -285,7 +283,6 @@ post-install:
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
 			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
-			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
