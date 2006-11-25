@@ -7,7 +7,7 @@
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news
 MASTER_SITES=	http://www.nntpcache.com/pub/nntpcache/
 
@@ -33,10 +33,6 @@ OPTIONS=	LDAP "OpenLDAP support" off \
 		SPAMPHOBIA "Spamphobia NoCeM support" off
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
 
 .if !defined(WITHOUT_RADIUS)
 CONFIGURE_ARGS+=	--with-authinfo-radius
