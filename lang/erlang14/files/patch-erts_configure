@@ -3,18 +3,10 @@ $FreeBSD$
 
 --- erts/configure.orig
 +++ erts/configure
-@@ -1355,6 +1355,7 @@
- i586)	ARCH=x86;;
- i686)	ARCH=x86;;
- x86_64) ARCH=amd64;;
-+amd64)	ARCH=amd64;;
- ppc)	ARCH=ppc;;
- ppc64)	ARCH=ppc64;;
- "Power Macintosh")	ARCH=ppc;;
-@@ -6874,7 +6875,9 @@
+@@ -6895,7 +6895,9 @@
  
  echo $ac_n "checking for unreliable floating point execptions""... $ac_c" 1>&6
- echo "configure:6877: checking for unreliable floating point execptions" >&5
+ echo "configure:6898: checking for unreliable floating point execptions" >&5
 -if test "$cross_compiling" = yes; then
 +if test "${ARCH}" = amd64; then
 +  erl_ok=reliable

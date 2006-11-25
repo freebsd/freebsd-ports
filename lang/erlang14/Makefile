@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r11b1
+PORTVERSION=	r11b2
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.erlang.org/download/        \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R11B-1
+DISTNAME=	otp_src_R11B-2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -64,9 +64,9 @@ LIB_DEPENDS+=           iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=     otp_doc_man_R11B-1.tar.gz
+ERLANG_MAN=     otp_doc_man_R11B-2.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R11B-1.tar.gz
+ERLANG_DOCS=	otp_doc_html_R11B-2.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
@@ -77,7 +77,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 REINPLACE_ARGS=	-i
 
 CONFIGURE_TARGET=	# Empty
-CONFIGURE_ARGS+=	--enable-threads --enable-kernel-poll
+CONFIGURE_ARGS+=	--enable-threads
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-hipe
 .endif
@@ -135,11 +135,11 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${PREFIX}/lib/erlang
+	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
+		${LOCALBASE}/lib/erlang/lib/dialyzer-*/doc/
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang
 	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
-	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
-		${LOCALBASE}/lib/erlang/lib/dialyzer-*/doc/
 
 # All non-library files.
 
