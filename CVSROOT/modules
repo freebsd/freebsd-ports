@@ -1779,7 +1779,6 @@ deutex		ports/archivers/deutex
 devel-replay	ports/devel/replay
 devel_atlas-devel	ports/devel/atlas-devel
 devel_git	ports/devel/git
-devel_sge	ports/devel/sge
 devhelp		ports/devel/devhelp
 devil		ports/graphics/devil
 devilspie	ports/x11-wm/devilspie
@@ -13341,6 +13340,7 @@ sdl_image	ports/graphics/sdl_image
 sdl_mixer	ports/audio/sdl_mixer
 sdl_net		ports/net/sdl_net
 sdl_pango	ports/x11-toolkits/sdl_pango
+sdl_sge		ports/devel/sdl_sge
 sdl_sound	ports/audio/sdl_sound
 sdl_ttf		ports/graphics/sdl_ttf
 sdlmm		ports/devel/sdlmm
