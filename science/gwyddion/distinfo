@@ -1,3 +1,6 @@
 MD5 (gwyddion-2.1.tar.bz2) = a6cc909e0a3435ca239365e61aa1bb70
 SHA256 (gwyddion-2.1.tar.bz2) = ce9c270120067bc8582953f380b22ebdb8492d15e874f2d75ba955f90cf2d3c7
 SIZE (gwyddion-2.1.tar.bz2) = 1952888
+MD5 (gwyddion-2.1-bigendian-build.patch) = e906fe9b77b6104fc6adfcf09ae40580
+SHA256 (gwyddion-2.1-bigendian-build.patch) = 82a631ca48d15377f8341686f30edfee3197259c663107d35f82058227268ac8
+SIZE (gwyddion-2.1-bigendian-build.patch) = 568
