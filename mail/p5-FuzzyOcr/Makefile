@@ -7,6 +7,7 @@
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	2.3b
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/	\
@@ -54,7 +55,7 @@ post-patch:
 	                  -e 's,/bin/grep,/usr/bin/grep,g'		\
 	                  -e 's,/etc/mail,${LOCALBASE}/etc/mail,g'	\
 	                  ${WRKSRC}/FuzzyOcr.??
-	@${REINPLACE_CMD} -e 's,$$ENV{HOME},($$ENV{HOME} ? $$ENV{HOME} : "/nonexistent"),g' \
+	@${REINPLACE_CMD} -e 's,package FuzzyOcr;,package Mail::SpamAssassin::Plugin::FuzzyOcr;,'	\
 	                 ${WRKSRC}/FuzzyOcr.pm
 
 do-install:
