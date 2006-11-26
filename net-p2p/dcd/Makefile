@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcd
-PORTVERSION=	0.7.1
+PORTVERSION=	1.0.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
@@ -23,7 +23,8 @@ MAN8=		dcd.8 dcd.console.8
 MANLANG=	"" pl.ISO8859-2
 
 CONF_FILES=	console.allow dcd.banned dcd.conf dcd.motd dcd.penalties \
-		dcd.rules dcd.users dcd.welcome nicks.allow
+		dcd.rules dcd.users dcd.welcome nicks.allow dcd.hublinks \
+		dcd.usercommands
 
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	CONF_FILES="${CONF_FILES}" CONF_DIR="${PREFIX}/etc/dcd"
