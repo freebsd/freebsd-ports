@@ -10,8 +10,10 @@ etc/dcd/dcd.rules.default
 etc/dcd/dcd.users.default
 etc/dcd/dcd.welcome.default
 etc/dcd/nicks.allow.default
+etc/dcd/dcd.hublinks.default
+etc/dcd/dcd.usercommands.default
 @exec install -d -m 751 -o daemon -g daemon /var/log/dcd
-@unexec rmdir /var/log/dcd 2>/dev/null || true
+@dirrmtry /var/log/dcd
 @dirrmtry etc/dcd
 @dirrmtry man/pl.ISO8859-2/man8
 @dirrmtry man/pl.ISO8859-2
