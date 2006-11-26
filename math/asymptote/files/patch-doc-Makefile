@@ -1,5 +1,5 @@
 --- doc/Makefile	Sun Nov  5 09:02:52 2006
-+++ doc/Makefile.port	Tue Nov  7 13:50:15 2006
++++ doc/Makefile.port	Sat Nov 25 11:57:33 2006
 @@ -2,7 +2,7 @@
  ASYFILES = $(wildcard *.asy) latexusage.asy
  FIGURES = version.texi 
@@ -13,7 +13,7 @@
  	rm -rf asymptote
  
  install: man faq
-+	mkdir $(prefix)/share/doc/asympote
++	mkdir $(prefix)/share/doc/asymptote
  	cd FAQ; $(MAKE) install
  	${INSTALL} -d -m 755 $(docdir) $(mandir)/man1
 -	${INSTALL} -p -m 644 {$(DOCFILES)} $(docdir)
