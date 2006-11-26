@@ -408,6 +408,7 @@
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
     SUBDIR += py-memcached
+    SUBDIR += py-migrate
     SUBDIR += py-mssql
     SUBDIR += py-oops
     SUBDIR += py-psycopg
