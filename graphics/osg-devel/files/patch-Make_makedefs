@@ -1,0 +1,11 @@
+--- Make/makedefs.orig	Tue Sep 12 21:15:04 2006
++++ Make/makedefs	Tue Nov 21 17:02:38 2006
+@@ -459,7 +459,7 @@
+   X_INC             = -I/usr/X11R6/include
+   X_LIBS            = -lXmu -lX11
+   SOCKET_LIBS       = 
+-  OTHER_LIBS        = -lOpenThreads
++  OTHER_LIBS        = -lOpenThreads $(PTHREAD_LIBS)
+   PNG_LIBS          = -lpng
+   JPEG_LIBS         = -ljpeg
+   TIFF_LIB          = -ltiff

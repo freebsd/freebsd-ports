@@ -5,5 +5,3 @@ designed around "swappable" thread models which are defined at compile-time in
 a shared object library.
 
 WWW: http://openthreads.sourceforge.net/
-
-Maintainer: "Ying-Chieh Chen" <yinjieh@csie.nctu.edu.tw>
