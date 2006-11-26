@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	nap
-PORTVERSION=	1.5.3
-CATEGORIES+=	audio net
+PORTVERSION=	1.5.4
+CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nap
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	An MP3 sharing, search, and chat client for the OpenNAP network
+MAINTAINER=	araujo@bsdmail.org
+COMMENT=	An MP3 sharing, search, and chat client for the OpenNAP network
 
 CONFLICTS?=	ru-nap-*
 
