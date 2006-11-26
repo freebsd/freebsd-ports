@@ -22,11 +22,14 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 MAKEFILE=		Makefile.noimake
 ALL_TARGET=		9menu
-MAKE_ARGS=		CC="${CC}"
 
 NO_WRKSUBDIR=	yes
 
 MAN1=		9menu.1
 MANCOMPRESSED=	yes
+
+do-build:
+	cd ${WRKSRC} && \
+	${CC} ${CFLAGS} -I${X11BASE}/include -L${X11BASE}/lib -lX11 -o 9menu 9menu.c
 
 .include <bsd.port.mk>
