@@ -7,6 +7,7 @@
 
 PORTNAME=	wmwlmon
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.nazgul.ch/dev/ \
 		http://dougbarton.us/Downloads/
@@ -26,6 +27,12 @@ PLIST_FILES=	bin/wmwlmon
 .if ${OSVERSION} < 600100
 BROKEN=	Needs WLAN infrastructure from 6.0-RELEASE or newer
 .endif
+
+post-patch:
+	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.presed
+	${SED} -e 's#/usr/X11R6#${X11BASE}#g' \
+	    -e 's#/usr/local#${LOCALBASE}#g' \
+	    ${WRKSRC}/Makefile.presed > ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwlmon ${PREFIX}/bin
