@@ -32,7 +32,10 @@ SUB_LIST=	BOINC_HOME="${BOINC_HOME}" BOINC_USER="${BOINC_USER}" BOINC_GROUP="${B
 USE_RC_SUBR=	boinc.sh
 
 CONFIGURE_ARGS=	--disable-server
-CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include CXXFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -O3" CFLAGS="${CFLAGS} -O3"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS:=	${CXXFLAGS:N-O*:N-f*} -O3
+CFLAGS:=	${CFLAGS:N-O*:N-f*} -O3
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" CXXFLAGSS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
 
 OPTIONS=	X11 "Build Boinc Manager GUI" on
 
@@ -40,6 +43,7 @@ OPTIONS=	X11 "Build Boinc Manager GUI" on
 
 .if !defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.6-config
+CPPFLAGS+=		-I${X11BASE}/include
 .else
 CONFIGURE_ARGS+=	--with-wx-config=false
 .endif
