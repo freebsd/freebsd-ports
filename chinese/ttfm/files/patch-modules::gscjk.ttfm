@@ -1,5 +1,14 @@
---- modules/gscjk.ttfm.orig	Wed Sep 24 17:51:46 2003
-+++ modules/gscjk.ttfm	Sat Feb 19 09:14:28 2005
+--- ./modules/gscjk.ttfm.orig	Wed Sep 24 17:51:46 2003
++++ ./modules/gscjk.ttfm	Mon Nov 27 02:06:36 2006
+@@ -18,7 +18,7 @@
+ 
+ # Global constants
+ 
+-export PREFIX; PREFIX=/usr/local
++export PREFIX; PREFIX=%%PREFIX%%
+ export TTFINFOPath; TTFINFOPath="${PREFIX}/bin/ttfinfo"
+ export GS6Path; GS6Path="${PREFIX}/share/ghostscript"
+ export GS6CJKPath; GS6CJKPath="${GS6Path}/Resource"
 @@ -148,9 +148,8 @@
  remove_fonts()
  {

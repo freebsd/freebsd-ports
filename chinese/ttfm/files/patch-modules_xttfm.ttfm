@@ -1,5 +1,16 @@
---- modules/xttfm.ttfm.orig	Tue Nov  4 07:08:32 2003
-+++ modules/xttfm.ttfm	Sun Aug 28 18:03:43 2005
+--- ./modules/xttfm.ttfm.orig	Tue Nov  4 07:08:32 2003
++++ ./modules/xttfm.ttfm	Mon Nov 27 02:06:25 2006
+@@ -25,8 +25,8 @@
+ 
+ # Global constants
+ 
+-export PREFIX; PREFIX=/usr/local
+-export X11BASE; X11BASE=/usr/X11R6
++export PREFIX; PREFIX=%%PREFIX%%
++export X11BASE; X11BASE=%%X11BASE%%
+ export PATH; PATH=/bin:/sbin:/usr/bin:/usr/sbin:$PREFIX/bin:$PREFIX/sbin:$X11BASE/bin
+ export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXX`"
+ export DefaultFontPath; DefaultFontPath=$PREFIX/share/fonts/TrueType
 @@ -87,15 +87,11 @@
          targetname=`basename $f`
  

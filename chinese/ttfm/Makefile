@@ -20,6 +20,12 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 PORTDOCS=	README USAGE
 MAN1=		ttfm.sh.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%X11BASE%%,${X11BASE},' \
+		-e 's,%%PREFIX%%,${PREFIX},' \
+		${WRKSRC}/modules/gscjk.ttfm \
+		${WRKSRC}/modules/xttfm.ttfm
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttfinfo ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ttfm.sh ${PREFIX}/bin
