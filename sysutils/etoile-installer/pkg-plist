@@ -18,7 +18,6 @@ Local/Applications/Installer.app/stamp.make
 Local/Library/Headers/Gpkg/Gpkg.h
 Local/Tools/lsgbom
 Local/Tools/mkgbom
-@dirrm Local/Tools
 @dirrm Local/Library/Headers/Gpkg
 @dirrm Local/Applications/Installer.app/Resources/Package.gorm
 @dirrm Local/Applications/Installer.app/Resources/Installer.gorm
