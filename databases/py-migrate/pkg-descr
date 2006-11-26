@@ -1,0 +1,4 @@
+Inspired by Ruby on Rails' migrations, Migrate provides a way to deal
+with database schema changes in SQLAlchemy projects.
+
+WWW: http://erosson.com/migrate
