@@ -58,4 +58,6 @@ post-install:
 	cd ${WRKSRC}/examples; \
 	${FIND} . | ${CPIO} -pdm -R ${LIBOWN}:${LIBGRP} ${EXAMPLESDIR}/examples
 
+.include "${.CURDIR}/mancompress.mk"
+
 .include <bsd.port.post.mk>
