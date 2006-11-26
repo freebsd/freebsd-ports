@@ -9,12 +9,15 @@ include/Producer/InputArea
 include/Producer/Keyboard
 include/Producer/KeyboardMouse
 include/Producer/Math
+include/Producer/PipeTimer
 include/Producer/RefOpenThreads
 include/Producer/Referenced
 include/Producer/RenderSurface
+include/Producer/System
 include/Producer/Timer
 include/Producer/Trackball
 include/Producer/Types
+include/Producer/Utils
 include/Producer/Version
 include/Producer/VisualChooser
 include/Producer/Window3D
