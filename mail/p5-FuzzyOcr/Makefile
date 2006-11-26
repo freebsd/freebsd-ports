@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	FuzzyOcr
-DISTVERSION=	2.3rc1
+DISTVERSION=	2.3b
+PORTEPOCH=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -27,7 +28,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PORTDOCS=	FAQ samples
 PORTDOCS_F=	FAQ samples/README samples/animated-gif.eml		\
