@@ -11,7 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://gaia.serezhkin.com/
 
 MAINTAINER=	se@FreeBSD.org
-COMMENT=	An open source Google Earth client
+COMMENT=	Display geographic maps with optional GPS tracking support
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -22,6 +22,8 @@ USE_BZIP2=	yes
 USE_SCONS=	yes
 
 OPTIONS=	GPS "Build with GPS support" OFF
+
+IGNORE=		distribution stopped dur to complaints by Google (software changes required)
 
 .include <bsd.port.pre.mk>
 
