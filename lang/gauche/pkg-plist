@@ -30,6 +30,7 @@ lib/gauche/%%VERSION%%/%%TARGET%%/srfi-1-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/srfi-13-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/srfi-19-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/srfi-43-lib.so
+lib/gauche/%%VERSION%%/%%TARGET%%/sxml-serializer.so
 lib/gauche/%%VERSION%%/%%TARGET%%/sxml-ssax.so
 lib/gauche/%%VERSION%%/%%TARGET%%/sxml-sxpath.so
 lib/gauche/%%VERSION%%/%%TARGET%%/sxml-tools.so
@@ -40,6 +41,7 @@ lib/gauche/%%VERSION%%/%%TARGET%%/util-match-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/vport.so
 lib/gauche/%%VERSION%%/include/gauche.h
 lib/gauche/%%VERSION%%/include/gauche/arch.h
+lib/gauche/%%VERSION%%/include/gauche/bignum.h
 lib/gauche/%%VERSION%%/include/gauche/builtin-syms.h
 lib/gauche/%%VERSION%%/include/gauche/char_euc_jp.h
 lib/gauche/%%VERSION%%/include/gauche/char_none.h
@@ -53,8 +55,11 @@ lib/gauche/%%VERSION%%/include/gauche/extend.h
 lib/gauche/%%VERSION%%/include/gauche/int64.h
 lib/gauche/%%VERSION%%/include/gauche/mingw-compat.h
 lib/gauche/%%VERSION%%/include/gauche/net.h
+lib/gauche/%%VERSION%%/include/gauche/number.h
+lib/gauche/%%VERSION%%/include/gauche/port.h
 lib/gauche/%%VERSION%%/include/gauche/pthread.h
 lib/gauche/%%VERSION%%/include/gauche/scmconst.h
+lib/gauche/%%VERSION%%/include/gauche/system.h
 lib/gauche/%%VERSION%%/include/gauche/uthread.h
 lib/gauche/%%VERSION%%/include/gauche/uvector.h
 lib/gauche/%%VERSION%%/include/gauche/vm.h
@@ -67,6 +72,10 @@ lib/libgauche.so
 lib/libgauche.so.%%VERSION%%
 lib/libgauche.so.0
 share/aclocal/gauche.m4
+share/gauche/%%VERSION%%/lib/compat/norational.scm
+share/gauche/%%VERSION%%/lib/sxml/serializer.scm
+share/gauche/%%VERSION%%/lib/util/rbtree.scm
+share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/aclocal.m4
 %%DATADIR%%/%%VERSION%%/lib/.packages/.keepme
 %%DATADIR%%/%%VERSION%%/lib/binary/io.scm
