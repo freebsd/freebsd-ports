@@ -11,6 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.etek.chalmers.se/~e8cal1/sge/files/ \
 		http://www.digitalfanatics.org/cal/sge/files/
+PKGNAMEPREFIX=	sdl_
 DISTNAME=	${PORTNAME}030809
 
 MAINTAINER=	walkingshadow@grummel.net
@@ -19,8 +20,6 @@ COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 NO_FILTER_SHLIBS=	yes
-LATEST_LINK=	sdl-sge
-CONFLICTS=	sge-6*
 
 OPTIONS=	SDL_IMAGE "Enable support for SDL_IMAGE" On \
 		FREETYPE "Enable FreeType support" On \
