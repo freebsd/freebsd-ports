@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated" LFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L$(X11BASE)/lib -L$(LOCALBASE)/lib
 ALL_TARGET=	dep tcl_interf/nxlc
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		abacus.1
 
