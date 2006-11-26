@@ -23,7 +23,7 @@ USE_SCONS=	yes
 
 OPTIONS=	GPS "Build with GPS support" OFF
 
-IGNORE=		distribution stopped dur to complaints by Google (software changes required)
+IGNORE=		distribution stopped due to complaints by Google (software changes required)
 
 .include <bsd.port.pre.mk>
 
