@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sge
+PORTNAME=	sdl_sge
 PORTVERSION=	0.030809
 PORTREVISION=	2
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.etek.chalmers.se/~e8cal1/sge/files/ \
 		http://www.digitalfanatics.org/cal/sge/files/
-PKGNAMEPREFIX=	sdl_
-DISTNAME=	${PORTNAME}030809
+DISTNAME=	sdl030809
 
 MAINTAINER=	walkingshadow@grummel.net
 COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
