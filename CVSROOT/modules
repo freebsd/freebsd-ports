@@ -12154,6 +12154,7 @@ py-meld		ports/www/py-meld
 py-memcached	ports/databases/py-memcached
 py-metar	ports/astro/py-metar
 py-mhash	ports/security/py-mhash
+py-migrate	ports/databases/py-migrate
 py-milter	ports/mail/py-milter
 py-ming		ports/graphics/py-ming
 py-mp-random	ports/net/py-mp-random
