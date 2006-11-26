@@ -1880,6 +1880,7 @@
     SUBDIR += scandoc
     SUBDIR += scons
     SUBDIR += scsh-install-lib
+    SUBDIR += sdl_sge
     SUBDIR += sdl12
     SUBDIR += sdlmm
     SUBDIR += sdts++
@@ -1891,7 +1892,6 @@
     SUBDIR += sfslite-dbg
     SUBDIR += sfslite-noopt
     SUBDIR += sgb
-    SUBDIR += sge
     SUBDIR += sgl
     SUBDIR += sh-rtems-binutils
     SUBDIR += sh-rtems-g77
