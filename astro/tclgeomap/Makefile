@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tclgeomap
-PORTVERSION=	2.9
+PORTVERSION=	2.10.1
 CATEGORIES=	astro tcl84
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tkgeomap
@@ -181,6 +181,7 @@ MLINKS=	\
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/libtclgeomap2.9.so ${PREFIX}/lib/libtclgeomap2.9.so.0
+	@${LN} -sf ${PREFIX}/lib/libtclgeomap2.9.so ${PREFIX}/lib/libtclgeomap.so.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/@PACKAGE@@VERSION@/@PACKAGE@/g' ${WRKSRC}/Makefile.in ${WRKSRC}/pkgIndex.tcl.in
