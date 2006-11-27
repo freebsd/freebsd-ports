@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AcePerl
-PORTVERSION=	1.89
+PORTVERSION=	1.91
 CATEGORIES=	biology databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Ace
@@ -50,7 +50,7 @@ IGNORE=		requires Perl 5.6.0
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		Does not compile on amd64 or ia64 (missing -fPIC)
+CFLAGS+=	-fPIC
 .endif
 
 post-patch:
