@@ -1,6 +1,6 @@
 bin/wmlpq
-%%PORTDOCS%%share/doc/wmlpq/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%share/examples/wmlpq/sample.wmlpqrc
 %%PORTDOCS%%share/examples/wmlpq/wmlpqrc
 %%PORTDOCS%%@dirrm share/examples/wmlpq
-%%PORTDOCS%%@dirrm share/doc/wmlpq
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
