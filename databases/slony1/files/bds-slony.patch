@@ -1,0 +1,73 @@
+--- slony1-1.2.0-orig/src/slon/remote_worker.c	2006-10-05 08:40:37.000000000 -0600
++++ slony1-1.2.0/src/slon/remote_worker.c	2006-10-20 15:42:35.000000000 -0600
+@@ -5236,7 +5236,8 @@
+ 						 "    octet_length(log_cmddata), "
+ 						 "    case when octet_length(log_cmddata) <= %d "
+ 						 "        then log_cmddata "
+-						 "        else null end "
++						 "        else null end, "
++						 "    1 as which_log_table "
+ 						 "from %s.sl_log_1 %s order by log_actionseq; ",
+ 						 sync_max_rowsize,
+ 						 rtcfg_namespace,
+@@ -5251,7 +5252,8 @@
+ 						 "    octet_length(log_cmddata), "
+ 						 "    case when octet_length(log_cmddata) <= %d "
+ 						 "        then log_cmddata "
+-						 "        else null end "
++						 "        else null end, "
++						 "    2 as which_log_table "
+ 						 "from %s.sl_log_2 %s order by log_actionseq; ",
+ 						 sync_max_rowsize,
+ 						 rtcfg_namespace,
+@@ -5267,7 +5269,8 @@
+ 						 "    octet_length(log_cmddata), "
+ 						 "    case when octet_length(log_cmddata) <= %d "
+ 						 "        then log_cmddata "
+-						 "        else null end "
++						 "        else null end, "
++						 "    1 as which_log_table "
+ 						 "  from %s.sl_log_1 %s "
+ 						 "  union all "
+ 						 "  select log_origin, log_xid, log_tableid, "
+@@ -5275,7 +5278,8 @@
+ 						 "    octet_length(log_cmddata), "
+ 						 "    case when octet_length(log_cmddata) <= %d "
+ 						 "        then log_cmddata "
+-						 "        else null end "
++						 "        else null end, "
++						 "    2 as which_log_table "
+ 						 "  from %s.sl_log_2 %s) as log_union "
+ 						 "order by log_actionseq; ",
+ 						 sync_max_rowsize,
+@@ -5497,6 +5501,8 @@
+ 					int			log_cmdsize = strtol(PQgetvalue(res, tupno, 5),
+ 													 NULL, 10);
+ 					char	   *log_cmddata = PQgetvalue(res, tupno, 6);
++					int         which_log_table = strtol(PQgetvalue(res, tupno, 7),
++														 NULL, 10);
+ 					int			largemem = 0;
+ 
+ 					tupno++;
+@@ -5505,11 +5511,12 @@
+ 					{
+ 						slon_mkquery(&query2,
+ 								"select log_cmddata "
+-								"from %s.sl_log_1 "
++								"from %s.sl_log_%d "
+ 								"where log_origin = '%s' "
+ 								"  and log_xid = '%s' "
+ 								"  and log_actionseq = '%s'",
+ 								rtcfg_namespace,
++								which_log_table,
+ 								log_origin, log_xid, log_actionseq);
+ 						res2 = PQexec(dbconn, dstring_data(&query2));
+ 						if (PQresultStatus(res2) != PGRES_TUPLES_OK)
+@@ -5526,7 +5533,6 @@
+ 						{
+ 							slon_log(SLON_ERROR, "remoteHelperThread_%d_%d: large log_cmddata for actionseq %s not found\n",
+ 									 node->no_id, provider->no_id,
+-									 dstring_data(&query),
+ 									 log_actionseq);
+ 							PQclear(res2);
+ 							errors++;
