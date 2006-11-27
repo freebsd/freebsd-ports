@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	tkgeomap
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Displays U.S. Census Burea populated places on a map
 
-LIB_DEPENDS=	tkgeomap2.9.0:${PORTSDIR}/astro/tkgeomap
+LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap
 
 USE_XLIB=	yes
 USE_TK=		yes

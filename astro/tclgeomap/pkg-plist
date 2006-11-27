@@ -1,3 +1,4 @@
+lib/libtclgeomap.so.0
 lib/libtclgeomap2.9.so
 lib/libtclgeomap2.9.so.0
 %%INC%%/geoLines.h
