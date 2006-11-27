@@ -18,6 +18,7 @@ LATEST_LINK=	zh-chinput3
 USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 imlib
+USE_LDCONFIG=	${PREFIX}/lib/Chinput/im/
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -25,7 +26,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-patch:
@@ -39,7 +40,8 @@ pre-build:
 		-e 's|-lc_r|${PTHREAD_CFLAGS} ${PTHREAD_LIBS}|; \
 		    s|-I/usr/include|-I${LOCALBASE}/include|; \
 		    s|-L/usr/lib|-L${LOCALBASE}/lib|; \
-		    s|-L/usr/X11R6|-L${LOCALBASE}/lib -L/usr/X11R6|'
+		    s|-L/usr/X11R6|-L${LOCALBASE}/lib -L/usr/X11R6|; \
+		    s|/usr/X11R6|${X11BASE}|'
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
