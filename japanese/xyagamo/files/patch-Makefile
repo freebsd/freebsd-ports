@@ -1,0 +1,10 @@
+--- Makefile.orig	Sun Nov 26 23:31:17 2006
++++ Makefile	Sun Nov 26 23:31:34 2006
+@@ -1,6 +1,6 @@
+ INSTALL	= install -c -o root -g wheel
+ 
+-X11PREFIX = /usr/X11R6
++X11PREFIX = $(X11BASE)
+ 
+ INSTALL_BINDIR = $(X11PREFIX)/bin
+ INSTALL_LIBDIR = $(X11PREFIX)/lib/X11/xyagamo
