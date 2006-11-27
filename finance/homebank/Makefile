@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Manage your personal accounts at home
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
@@ -24,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude autom4te.cache
 
-DOCS=		AUTHORS COPYING ChangeLog LICENSE NEWS README
+DOCS=		AUTHORS COPYING ChangeLog NEWS README
 
 .include <bsd.port.pre.mk>
 
