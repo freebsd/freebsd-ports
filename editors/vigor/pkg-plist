@@ -1,22 +1,22 @@
 bin/vigor
-share/vigor/catalog/dutch
-share/vigor/catalog/english
-share/vigor/catalog/french
-share/vigor/catalog/german
-share/vigor/catalog/ru_SU.KOI8-R
-share/vigor/catalog/spanish
-share/vigor/catalog/swedish
-share/vigor/perl/VI.pm
-share/vigor/perl/forall.pl
-share/vigor/perl/make.pl
-share/vigor/perl/tk.pl
-share/vigor/perl/wc.pl
-share/vigor/recover
-share/vigor/tcl/errors.tcl
-share/vigor/tcl/gnats.tcl
-share/vigor/tcl/mailprocs.tcl
-share/vigor/tcl/wc.tcl
-@dirrm share/vigor/tcl
-@dirrm share/vigor/perl
-@dirrm share/vigor/catalog
-@dirrm share/vigor
+%%DATADIR%%/catalog/dutch
+%%DATADIR%%/catalog/english
+%%DATADIR%%/catalog/french
+%%DATADIR%%/catalog/german
+%%DATADIR%%/catalog/ru_SU.KOI8-R
+%%DATADIR%%/catalog/spanish
+%%DATADIR%%/catalog/swedish
+%%DATADIR%%/perl/VI.pm
+%%DATADIR%%/perl/forall.pl
+%%DATADIR%%/perl/make.pl
+%%DATADIR%%/perl/tk.pl
+%%DATADIR%%/perl/wc.pl
+%%DATADIR%%/recover
+%%DATADIR%%/tcl/errors.tcl
+%%DATADIR%%/tcl/gnats.tcl
+%%DATADIR%%/tcl/mailprocs.tcl
+%%DATADIR%%/tcl/wc.tcl
+@dirrm %%DATADIR%%/tcl
+@dirrm %%DATADIR%%/perl
+@dirrm %%DATADIR%%/catalog
+@dirrm %%DATADIR%%
