@@ -1,13 +1,14 @@
 --- setup.py.orig	Wed Apr  3 00:29:06 2002
-+++ setup.py	Tue Apr  6 11:53:15 2004
++++ setup.py	Mon Nov 27 10:32:24 2006
 @@ -13,8 +13,10 @@
  # Location of X libraries
  if sys.platform == 'win32':
      XLIBDIR = []
 +    XLIBINC = []
  else:
-     XLIBDIR = ['/usr/X11R6/lib']
-+    XLIBINC = ['/usr/X11R6/include']
+-    XLIBDIR = ['/usr/X11R6/lib']
++    XLIBDIR = ['%%X11BASE%%/lib']
++    XLIBINC = ['%%X11BASE%%/include']
  
  # Other libraries
  OLIBDIRS = ['c:\cygwin\usr\local\lib']

@@ -26,6 +26,9 @@ WRKSRC=		${WRKDIR}/FXPy-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+post-patch:
+	${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/setup.py
+
 do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install ${PYDISTUTILS_INSTALLARGS})
 .if !defined(NOPORTDOCS)
