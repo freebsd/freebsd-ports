@@ -44,7 +44,7 @@
 
 PORTNAME=	gtk-gnutella
 PORTVERSION=	0.96.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	-D optimize=-g  -D official=false
 CONFIGURE_ARGS+=	-D official=true
 .endif
 
-.if defined(WITH_X11)
+.if !defined(WITHOUT_X11)
 USE_XLIB=		yes
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	-D gtkversion=2
