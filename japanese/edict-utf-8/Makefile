@@ -6,44 +6,27 @@
 #
 
 PORTNAME=	edict-utf-8
-PORTVERSION=	20050310
-PORTREVISION=	1
+PORTVERSION=	20061125
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
-		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
-		ftp://ftp.nrc.ca/pub/packages/nihongo/ \
-		http://www.bcit-broadcast.com/monash/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.cc.monash.edu.au/pub/nihongo/ \
-		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
-		ftp://ftp.funet.fi/pub/culture/japan/mirrors/monash/pub/nihongo/ \
-		ftp://ftp.uni-duisburg.de/Mirrors/ftp.monash.edu.au/pub/nihongo/
+MASTER_SITES=	http://redundancy.redundancy.org/mirror/${PORTNAME}/
 DISTFILES=	${DICTFILES}
-EXTRACT_ONLY=	# intentionally left blank
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-BROKEN=		Size mismatch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_ICONV=	yes
 ICONV?=		iconv
 CONVERT_CMD=	${ICONV} -c -f EUC-JP -t UTF-8
-NO_BUILD=	yes
 
-DIST_SUBDIR=	edict
+DIST_SUBDIR=	edict-utf8
 
-DICTFILES=	edict.gz edicth compdic.gz \
-		jddict.v02.gz j_places.gz ediclsd3.zip \
-		kanjidic.gz kanjd212.gz lawgledt.zip \
-		lingdic.zip geodic.gz pandpdic.zip \
-		aviation.zip findic.zip mktdic.zip \
-		compverb.gz 4jwords.gz concrete.zip
-BROKENDICTFILES=	enamdict.gz
+DICTFILES=	edict.gz edicth compdic.gz jddict.v02.gz \
+		j_places.gz ediclsd3.zip kanjidic.gz kanjd212.gz \
+		lawgledt.zip lingdic.zip geodic.gz pandpdic.zip \
+		aviation.zip findic.zip mktdic.zip compverb.gz \
+		4jwords.gz concrete.zip enamdict.gz
 
 NODOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
 		enamdict_doc.txt enamdict_doc.html jddict.doc \
@@ -62,46 +45,44 @@ NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@for file in ${DICTFILES}; do \
+		${ECHO} "Extracting $$file"; \
+		case $$file in \
+		*.gz) \
+			instfile=`${BASENAME} $$file .gz` ; \
+			${GZIP_CMD} -dc ${_DISTDIR}/$$file > ${WRKSRC}/$$instfile.euc-jp \
+			;; \
+		*.zip) \
+			instfile=`${BASENAME} $$file .zip` ; \
+			${UNZIP_CMD} -c ${_DISTDIR}/$$file -x ${NODOCFILES} 2>/dev/null \
+			> ${WRKSRC}/$$instfile.euc-jp \
+			;; \
+		*) \
+			instfile=$$file ; \
+			${CP} ${_DISTDIR}/$$file ${WRKSRC}/$$file.euc-jp \
+			;; \
+		esac ; \
+		${ECHO} $$instfile >> ${WRKSRC}/filelist; \
+	done
+
+do-build:
+	@for file in `cat ${WRKSRC}/filelist`; do \
+		${ECHO} "Converting $$file"; \
+		${CONVERT_CMD} ${WRKSRC}/$$file.euc-jp > ${WRKSRC}/$$file; \
+	done
+
 do-install:
 	@if [ ! -d ${DATADIR} ] ; \
 	then \
 		${MKDIR} ${DATADIR} ; \
 	fi
-	@for file in ${DICTFILES}; do \
-		echo $$file; \
-		case $$file in \
-		*.gz) \
-			instfile=`${BASENAME} $$file .gz` ; \
-			if ${GZIP_CMD} -cd ${_DISTDIR}/$$file | ${CONVERT_CMD} \
-				> ${DATADIR}/$$instfile ; \
-			then \
-				${TRUE} ; \
-			else \
-				exit 1; \
-			fi \
-			;; \
-		*.zip) \
-			instfile=`${BASENAME} $$file .zip` ; \
-			if ${UNZIP_CMD} -c ${_DISTDIR}/$$file -x ${NODOCFILES} 2>/dev/null \
-			| ${CONVERT_CMD} > ${DATADIR}/$$instfile ; \
-			then \
-				${TRUE} ; \
-			else \
-				exit 1; \
-			fi \
-			;; \
-		*) \
-			instfile=`${BASENAME} $$file` ; \
-			${CONVERT_CMD} ${_DISTDIR}/$$file >${DATADIR}/$$instfile \
-			;; \
-		esac ; \
-		( \
-			cd ${DATADIR} ; \
-			${CHOWN} ${SHAREOWN}:${SHAREGRP} $$instfile ; \
-			${CHMOD} ${SHAREMODE} $$instfile  ; \
-		) ; \
+	@for file in `cat ${WRKSRC}/filelist`; do \
+		${ECHO} "Installing $$file"; \
+		${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
+		${WRKSRC}/$$file ${DATADIR}/$$file; \
 	done
 
-post-install:
-	${CAT} ${PKGMESSAGE}
 .include <bsd.port.post.mk>
