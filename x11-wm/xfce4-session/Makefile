@@ -31,7 +31,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB= yes
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \
+			-L${LOCALBASE}/lib -I${X11BASE}/include \
+			-L${X11BASE}/lib"
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
