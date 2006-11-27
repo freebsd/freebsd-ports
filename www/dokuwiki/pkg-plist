@@ -13,45 +13,49 @@
 %%DOKUWIKI_DIR%%/conf/entities.conf
 %%DOKUWIKI_DIR%%/conf/interwiki.conf
 %%DOKUWIKI_DIR%%/conf/local.php.dist
+%%DOKUWIKI_DIR%%/conf/mediameta.php
 %%DOKUWIKI_DIR%%/conf/mime.conf
+%%DOKUWIKI_DIR%%/conf/msg
 %%DOKUWIKI_DIR%%/conf/mysql.conf.php.example
 %%DOKUWIKI_DIR%%/conf/smileys.conf
 %%DOKUWIKI_DIR%%/conf/users.auth.php.dist
 %%DOKUWIKI_DIR%%/conf/wordblock.conf
 %%DOKUWIKI_DIR%%/conf/words.aspell.dist
 %%DOKUWIKI_DIR%%/data/.htaccess
-%%DOKUWIKI_DIR%%/data/changes.log
 %%DOKUWIKI_DIR%%/data/attic/_dummy
 %%DOKUWIKI_DIR%%/data/cache/_dummy
 %%DOKUWIKI_DIR%%/data/locks/_dummy
 %%DOKUWIKI_DIR%%/data/media/wiki/dokuwiki-128.png
+%%DOKUWIKI_DIR%%/data/meta/_dummy
 %%DOKUWIKI_DIR%%/data/pages/playground/playground.txt
 %%DOKUWIKI_DIR%%/data/pages/wiki/dokuwiki.txt
 %%DOKUWIKI_DIR%%/data/pages/wiki/syntax.txt
 %%DOKUWIKI_DIR%%/doku.php
 %%DOKUWIKI_DIR%%/feed.php
-%%DOKUWIKI_DIR%%/inc/.htaccess
 %%DOKUWIKI_DIR%%/inc/DifferenceEngine.php
+%%DOKUWIKI_DIR%%/inc/FeedParser.php
 %%DOKUWIKI_DIR%%/inc/HTTPClient.php
 %%DOKUWIKI_DIR%%/inc/JSON.php
 %%DOKUWIKI_DIR%%/inc/JpegMeta.php
+%%DOKUWIKI_DIR%%/inc/SimplePie.php
 %%DOKUWIKI_DIR%%/inc/actions.php
-%%DOKUWIKI_DIR%%/inc/admin_acl.php
 %%DOKUWIKI_DIR%%/inc/aspell.php
-%%DOKUWIKI_DIR%%/inc/auth.php
 %%DOKUWIKI_DIR%%/inc/auth/basic.class.php
 %%DOKUWIKI_DIR%%/inc/auth/ldap.class.php
 %%DOKUWIKI_DIR%%/inc/auth/mysql.class.php
 %%DOKUWIKI_DIR%%/inc/auth/pgsql.class.php
 %%DOKUWIKI_DIR%%/inc/auth/plain.class.php
 %%DOKUWIKI_DIR%%/inc/auth/punbb.class.php
+%%DOKUWIKI_DIR%%/inc/auth.php
 %%DOKUWIKI_DIR%%/inc/blowfish.php
+%%DOKUWIKI_DIR%%/inc/cache.php
+%%DOKUWIKI_DIR%%/inc/changelog.php
 %%DOKUWIKI_DIR%%/inc/cliopts.php
 %%DOKUWIKI_DIR%%/inc/common.php
 %%DOKUWIKI_DIR%%/inc/confutils.php
+%%DOKUWIKI_DIR%%/inc/events.php
 %%DOKUWIKI_DIR%%/inc/feedcreator.class.php
 %%DOKUWIKI_DIR%%/inc/fulltext.php
-%%DOKUWIKI_DIR%%/inc/geshi.php
 %%DOKUWIKI_DIR%%/inc/geshi/actionscript-french.php
 %%DOKUWIKI_DIR%%/inc/geshi/actionscript.php
 %%DOKUWIKI_DIR%%/inc/geshi/ada.php
@@ -62,10 +66,12 @@
 %%DOKUWIKI_DIR%%/inc/geshi/autoit.php
 %%DOKUWIKI_DIR%%/inc/geshi/bash.php
 %%DOKUWIKI_DIR%%/inc/geshi/blitzbasic.php
+%%DOKUWIKI_DIR%%/inc/geshi/bnf.php
 %%DOKUWIKI_DIR%%/inc/geshi/c.php
 %%DOKUWIKI_DIR%%/inc/geshi/c_mac.php
 %%DOKUWIKI_DIR%%/inc/geshi/caddcl.php
 %%DOKUWIKI_DIR%%/inc/geshi/cadlisp.php
+%%DOKUWIKI_DIR%%/inc/geshi/cfdg.php
 %%DOKUWIKI_DIR%%/inc/geshi/cfm.php
 %%DOKUWIKI_DIR%%/inc/geshi/cpp.php
 %%DOKUWIKI_DIR%%/inc/geshi/csharp.php
@@ -77,17 +83,23 @@
 %%DOKUWIKI_DIR%%/inc/geshi/div.php
 %%DOKUWIKI_DIR%%/inc/geshi/dos.php
 %%DOKUWIKI_DIR%%/inc/geshi/eiffel.php
+%%DOKUWIKI_DIR%%/inc/geshi/fortran.php
 %%DOKUWIKI_DIR%%/inc/geshi/freebasic.php
 %%DOKUWIKI_DIR%%/inc/geshi/gml.php
+%%DOKUWIKI_DIR%%/inc/geshi/groovy.php
 %%DOKUWIKI_DIR%%/inc/geshi/html4strict.php
+%%DOKUWIKI_DIR%%/inc/geshi/idl.php
 %%DOKUWIKI_DIR%%/inc/geshi/ini.php
 %%DOKUWIKI_DIR%%/inc/geshi/inno.php
+%%DOKUWIKI_DIR%%/inc/geshi/io.php
 %%DOKUWIKI_DIR%%/inc/geshi/java.php
 %%DOKUWIKI_DIR%%/inc/geshi/java5.php
 %%DOKUWIKI_DIR%%/inc/geshi/javascript.php
+%%DOKUWIKI_DIR%%/inc/geshi/latex.php
 %%DOKUWIKI_DIR%%/inc/geshi/lisp.php
 %%DOKUWIKI_DIR%%/inc/geshi/lua.php
 %%DOKUWIKI_DIR%%/inc/geshi/matlab.php
+%%DOKUWIKI_DIR%%/inc/geshi/mirc.php
 %%DOKUWIKI_DIR%%/inc/geshi/mpasm.php
 %%DOKUWIKI_DIR%%/inc/geshi/mysql.php
 %%DOKUWIKI_DIR%%/inc/geshi/nsis.php
@@ -102,20 +114,29 @@
 %%DOKUWIKI_DIR%%/inc/geshi/php.php
 %%DOKUWIKI_DIR%%/inc/geshi/python.php
 %%DOKUWIKI_DIR%%/inc/geshi/qbasic.php
+%%DOKUWIKI_DIR%%/inc/geshi/reg.php
 %%DOKUWIKI_DIR%%/inc/geshi/robots.php
 %%DOKUWIKI_DIR%%/inc/geshi/ruby.php
+%%DOKUWIKI_DIR%%/inc/geshi/sas.php
 %%DOKUWIKI_DIR%%/inc/geshi/scheme.php
 %%DOKUWIKI_DIR%%/inc/geshi/sdlbasic.php
+%%DOKUWIKI_DIR%%/inc/geshi/smalltalk.php
 %%DOKUWIKI_DIR%%/inc/geshi/smarty.php
 %%DOKUWIKI_DIR%%/inc/geshi/sql.php
+%%DOKUWIKI_DIR%%/inc/geshi/tcl.php
+%%DOKUWIKI_DIR%%/inc/geshi/text.php
+%%DOKUWIKI_DIR%%/inc/geshi/thinbasic.php
 %%DOKUWIKI_DIR%%/inc/geshi/tsql.php
 %%DOKUWIKI_DIR%%/inc/geshi/vb.php
 %%DOKUWIKI_DIR%%/inc/geshi/vbnet.php
 %%DOKUWIKI_DIR%%/inc/geshi/vhdl.php
 %%DOKUWIKI_DIR%%/inc/geshi/visualfoxpro.php
+%%DOKUWIKI_DIR%%/inc/geshi/winbatch.php
 %%DOKUWIKI_DIR%%/inc/geshi/xml.php
+%%DOKUWIKI_DIR%%/inc/geshi.php
 %%DOKUWIKI_DIR%%/inc/html.php
 %%DOKUWIKI_DIR%%/inc/indexer.php
+%%DOKUWIKI_DIR%%/inc/infoutils.php
 %%DOKUWIKI_DIR%%/inc/init.php
 %%DOKUWIKI_DIR%%/inc/io.php
 %%DOKUWIKI_DIR%%/inc/lang/.htaccess
@@ -186,20 +207,24 @@
 %%DOKUWIKI_DIR%%/inc/lang/cs/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/cs/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/stopwords.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/cs/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/cs/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/da/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/da/install.html
 %%DOKUWIKI_DIR%%/inc/lang/da/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/da/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/login.txt
@@ -208,9 +233,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/da/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/da/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/da/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/da/searchpage.txt
@@ -224,9 +251,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/de/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/de/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/de/install.html
 %%DOKUWIKI_DIR%%/inc/lang/de/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/de/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/login.txt
@@ -235,9 +264,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/de/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/de/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/de/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/searchpage.txt
@@ -246,14 +277,43 @@
 %%DOKUWIKI_DIR%%/inc/lang/de/subscribermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/de/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/admin.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/backlinks.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/conflict.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/denied.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/edit.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/editrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/lang.php
+%%DOKUWIKI_DIR%%/inc/lang/el/locked.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/login.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/mailtext.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/newpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/norev.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/password.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/read.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/recent.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/resendpwd.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/revisions.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/searchpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/updateprofile.txt
+%%DOKUWIKI_DIR%%/inc/lang/el/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/en/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/en/install.html
 %%DOKUWIKI_DIR%%/inc/lang/en/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/en/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/login.txt
@@ -262,9 +322,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/en/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/en/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/en/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/en/searchpage.txt
@@ -294,13 +356,16 @@
 %%DOKUWIKI_DIR%%/inc/lang/eo/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/eo/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/eo/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/install.html
 %%DOKUWIKI_DIR%%/inc/lang/es/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/es/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/login.txt
@@ -309,19 +374,25 @@
 %%DOKUWIKI_DIR%%/inc/lang/es/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/registermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/es/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/es/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/et/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/index.txt
@@ -333,12 +404,18 @@
 %%DOKUWIKI_DIR%%/inc/lang/et/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/et/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/et/registermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/et/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/et/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/et/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/et/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/et/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/eu/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/eu/denied.txt
@@ -368,6 +445,7 @@
 %%DOKUWIKI_DIR%%/inc/lang/fi/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/fi/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/fi/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/fi/install.html
 %%DOKUWIKI_DIR%%/inc/lang/fi/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/fi/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/fi/login.txt
@@ -384,14 +462,44 @@
 %%DOKUWIKI_DIR%%/inc/lang/fi/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/fi/subscribermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/fi/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/admin.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/backlinks.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/conflict.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/denied.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/edit.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/editrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/lang.php
+%%DOKUWIKI_DIR%%/inc/lang/fo/locked.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/login.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/mailtext.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/newpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/norev.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/password.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/read.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/recent.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/resendpwd.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/revisions.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/searchpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/updateprofile.txt
+%%DOKUWIKI_DIR%%/inc/lang/fo/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/admin.txt
+%%DOKUWIKI_DIR%%/inc/lang/fr/admin_acl.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/fr/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/fr/install.html
 %%DOKUWIKI_DIR%%/inc/lang/fr/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/fr/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/login.txt
@@ -400,9 +508,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/fr/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/fr/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/fr/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/searchpage.txt
@@ -411,13 +521,16 @@
 %%DOKUWIKI_DIR%%/inc/lang/fr/subscribermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/fr/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/install.html
 %%DOKUWIKI_DIR%%/inc/lang/he/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/he/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/login.txt
@@ -426,13 +539,46 @@
 %%DOKUWIKI_DIR%%/inc/lang/he/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/registermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/he/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/he/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/admin.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/backlinks.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/conflict.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/denied.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/edit.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/editrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/lang.php
+%%DOKUWIKI_DIR%%/inc/lang/hr/locked.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/login.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/mailtext.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/newpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/norev.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/password.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/read.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/recent.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/resendpwd.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/revisions.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/searchpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/updateprofile.txt
+%%DOKUWIKI_DIR%%/inc/lang/hr/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/hu/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/hu/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/hu/denied.txt
@@ -486,9 +632,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/it/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/it/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/it/install.html
 %%DOKUWIKI_DIR%%/inc/lang/it/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/it/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/login.txt
@@ -497,23 +645,29 @@
 %%DOKUWIKI_DIR%%/inc/lang/it/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/it/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/it/registermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/it/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/stopwords.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/it/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/it/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/ja/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/ja/install.html
 %%DOKUWIKI_DIR%%/inc/lang/ja/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/ja/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/login.txt
@@ -522,9 +676,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/ja/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/ja/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/ja/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/searchpage.txt
@@ -576,20 +732,23 @@
 %%DOKUWIKI_DIR%%/inc/lang/lt/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/lt/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/lt/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/lt/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/lt/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/lt/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/lt/showrev.txt
-%%DOKUWIKI_DIR%%/inc/lang/lt/stopwords.txt
 %%DOKUWIKI_DIR%%/inc/lang/lt/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/lt/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/lt/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/install.html
 %%DOKUWIKI_DIR%%/inc/lang/lv/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/lv/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/login.txt
@@ -598,9 +757,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/lv/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/lv/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/lv/searchpage.txt
@@ -664,9 +825,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/pl/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/pl/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/pl/install.html
 %%DOKUWIKI_DIR%%/inc/lang/pl/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/pl/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/login.txt
@@ -675,9 +838,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/pl/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/pl/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/pl/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/searchpage.txt
@@ -686,29 +851,6 @@
 %%DOKUWIKI_DIR%%/inc/lang/pl/subscribermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/wordblock.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/backlinks.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/conflict.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/denied.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/diff.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/edit.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/editrev.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/index.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/lang.php
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/locked.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/login.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/mailtext.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/newpage.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/norev.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/password.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/preview.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/read.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/recent.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/register.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/revisions.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/searchpage.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/showrev.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/stopwords.txt
-%%DOKUWIKI_DIR%%/inc/lang/pt-br/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/pt/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/pt/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/pt/conflict.txt
@@ -733,6 +875,29 @@
 %%DOKUWIKI_DIR%%/inc/lang/pt/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/pt/stopwords.txt
 %%DOKUWIKI_DIR%%/inc/lang/pt/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/backlinks.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/conflict.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/denied.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/edit.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/editrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/lang.php
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/locked.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/login.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/mailtext.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/newpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/norev.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/password.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/read.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/recent.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/revisions.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/searchpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/pt-br/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/ro/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/ro/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/ro/denied.txt
@@ -760,9 +925,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/ru/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/ru/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/ru/install.html
 %%DOKUWIKI_DIR%%/inc/lang/ru/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/ru/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/login.txt
@@ -771,9 +938,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/ru/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/ru/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/ru/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/ru/searchpage.txt
@@ -787,9 +956,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/sk/conflict.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/denied.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/sk/draft.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/edit.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/editrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/sk/install.html
 %%DOKUWIKI_DIR%%/inc/lang/sk/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/sk/locked.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/login.txt
@@ -798,9 +969,11 @@
 %%DOKUWIKI_DIR%%/inc/lang/sk/norev.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/password.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/sk/pwconfirm.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/sk/registermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/sk/searchpage.txt
@@ -903,6 +1076,37 @@
 %%DOKUWIKI_DIR%%/inc/lang/tr/stopwords.txt
 %%DOKUWIKI_DIR%%/inc/lang/tr/subscribermail.txt
 %%DOKUWIKI_DIR%%/inc/lang/tr/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/admin.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/backlinks.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/conflict.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/denied.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/draft.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/edit.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/editrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/install.html
+%%DOKUWIKI_DIR%%/inc/lang/uk/lang.php
+%%DOKUWIKI_DIR%%/inc/lang/uk/locked.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/login.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/mailtext.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/newpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/norev.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/password.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/pwconfirm.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/read.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/recent.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/registermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/resendpwd.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/revisions.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/searchpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/updateprofile.txt
+%%DOKUWIKI_DIR%%/inc/lang/uk/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/vi/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/vi/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/vi/conflict.txt
@@ -926,6 +1130,37 @@
 %%DOKUWIKI_DIR%%/inc/lang/vi/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/vi/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/vi/wordblock.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/admin.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/backlinks.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/conflict.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/denied.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/diff.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/draft.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/edit.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/editrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/index.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/install.html
+%%DOKUWIKI_DIR%%/inc/lang/zh/lang.php
+%%DOKUWIKI_DIR%%/inc/lang/zh/locked.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/login.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/mailtext.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/newpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/norev.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/password.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/preview.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/pwconfirm.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/read.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/recent.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/registermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/resendpwd.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/revisions.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/searchpage.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/showrev.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/updateprofile.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh/wordblock.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/conflict.txt
@@ -945,43 +1180,20 @@
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/read.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/recent.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/register.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh-tw/resendpwd.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/revisions.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/stopwords.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/subscribermail.txt
+%%DOKUWIKI_DIR%%/inc/lang/zh-tw/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/zh-tw/wordblock.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/admin.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/backlinks.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/conflict.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/denied.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/diff.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/edit.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/editrev.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/index.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/lang.php
-%%DOKUWIKI_DIR%%/inc/lang/zh/locked.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/login.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/mailtext.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/newpage.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/norev.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/password.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/preview.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/read.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/recent.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/register.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/revisions.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/searchpage.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/showrev.txt
-%%DOKUWIKI_DIR%%/inc/lang/zh/wordblock.txt
-%%DOKUWIKI_DIR%%/inc/magpie/rss_cache.inc
-%%DOKUWIKI_DIR%%/inc/magpie/rss_fetch.inc
-%%DOKUWIKI_DIR%%/inc/magpie/rss_parse.inc
-%%DOKUWIKI_DIR%%/inc/magpie/rss_utils.inc
 %%DOKUWIKI_DIR%%/inc/mail.php
+%%DOKUWIKI_DIR%%/inc/media.php
 %%DOKUWIKI_DIR%%/inc/pageutils.php
 %%DOKUWIKI_DIR%%/inc/parser/handler.php
 %%DOKUWIKI_DIR%%/inc/parser/lexer.php
+%%DOKUWIKI_DIR%%/inc/parser/metadata.php
 %%DOKUWIKI_DIR%%/inc/parser/parser.php
 %%DOKUWIKI_DIR%%/inc/parser/renderer.php
 %%DOKUWIKI_DIR%%/inc/parser/wiki.php
@@ -994,28 +1206,35 @@
 %%DOKUWIKI_DIR%%/inc/toolbar.php
 %%DOKUWIKI_DIR%%/inc/utf8.php
 %%DOKUWIKI_DIR%%/index.php
+%%DOKUWIKI_DIR%%/install.php
 %%DOKUWIKI_DIR%%/lib/exe/ajax.php
 %%DOKUWIKI_DIR%%/lib/exe/css.php
 %%DOKUWIKI_DIR%%/lib/exe/detail.php
 %%DOKUWIKI_DIR%%/lib/exe/fetch.php
 %%DOKUWIKI_DIR%%/lib/exe/indexer.php
 %%DOKUWIKI_DIR%%/lib/exe/js.php
-%%DOKUWIKI_DIR%%/lib/exe/media.php
+%%DOKUWIKI_DIR%%/lib/exe/mediamanager.php
 %%DOKUWIKI_DIR%%/lib/exe/spellcheck.php
 %%DOKUWIKI_DIR%%/lib/images/arrow_down.gif
 %%DOKUWIKI_DIR%%/lib/images/arrow_up.gif
+%%DOKUWIKI_DIR%%/lib/images/at.gif
 %%DOKUWIKI_DIR%%/lib/images/blank.gif
 %%DOKUWIKI_DIR%%/lib/images/del.png
 %%DOKUWIKI_DIR%%/lib/images/diff.png
 %%DOKUWIKI_DIR%%/lib/images/edit.gif
 %%DOKUWIKI_DIR%%/lib/images/error.png
+%%DOKUWIKI_DIR%%/lib/images/fileicons/bz2.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/conf.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/deb.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/doc.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/file.png
+%%DOKUWIKI_DIR%%/lib/images/fileicons/gif.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/gz.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/htm.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/html.png
+%%DOKUWIKI_DIR%%/lib/images/fileicons/index.php
+%%DOKUWIKI_DIR%%/lib/images/fileicons/jpeg.png
+%%DOKUWIKI_DIR%%/lib/images/fileicons/jpg.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/odc.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/odf.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/odg.png
@@ -1024,14 +1243,17 @@
 %%DOKUWIKI_DIR%%/lib/images/fileicons/ods.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/odt.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/pdf.png
+%%DOKUWIKI_DIR%%/lib/images/fileicons/png.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/ppt.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/ps.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/rpm.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/rtf.png
+%%DOKUWIKI_DIR%%/lib/images/fileicons/swf.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/sxc.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/sxd.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/sxi.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/sxw.png
+%%DOKUWIKI_DIR%%/lib/images/fileicons/tar.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/tgz.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/txt.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/xls.png
@@ -1039,7 +1261,6 @@
 %%DOKUWIKI_DIR%%/lib/images/fileicons/zip.png
 %%DOKUWIKI_DIR%%/lib/images/history.png
 %%DOKUWIKI_DIR%%/lib/images/info.png
-%%DOKUWIKI_DIR%%/lib/images/interwiki.png
 %%DOKUWIKI_DIR%%/lib/images/interwiki/amazon.de.gif
 %%DOKUWIKI_DIR%%/lib/images/interwiki/amazon.gif
 %%DOKUWIKI_DIR%%/lib/images/interwiki/amazon.uk.gif
@@ -1054,8 +1275,16 @@
 %%DOKUWIKI_DIR%%/lib/images/interwiki/wp.gif
 %%DOKUWIKI_DIR%%/lib/images/interwiki/wpde.gif
 %%DOKUWIKI_DIR%%/lib/images/interwiki/wpmeta.gif
+%%DOKUWIKI_DIR%%/lib/images/interwiki.png
 %%DOKUWIKI_DIR%%/lib/images/larger.gif
+%%DOKUWIKI_DIR%%/lib/images/list-minus.gif
+%%DOKUWIKI_DIR%%/lib/images/list-plus.gif
 %%DOKUWIKI_DIR%%/lib/images/loading.gif
+%%DOKUWIKI_DIR%%/lib/images/magnifier.png
+%%DOKUWIKI_DIR%%/lib/images/minus.gif
+%%DOKUWIKI_DIR%%/lib/images/notify.png
+%%DOKUWIKI_DIR%%/lib/images/pencil.png
+%%DOKUWIKI_DIR%%/lib/images/plus.gif
 %%DOKUWIKI_DIR%%/lib/images/smaller.gif
 %%DOKUWIKI_DIR%%/lib/images/smileys/delete.gif
 %%DOKUWIKI_DIR%%/lib/images/smileys/fixme.gif
@@ -1111,6 +1340,8 @@
 %%DOKUWIKI_DIR%%/lib/images/toolbar/strike.png
 %%DOKUWIKI_DIR%%/lib/images/toolbar/ul.png
 %%DOKUWIKI_DIR%%/lib/images/toolbar/underline.png
+%%DOKUWIKI_DIR%%/lib/images/trash.png
+%%DOKUWIKI_DIR%%/lib/images/wrap.gif
 %%DOKUWIKI_DIR%%/lib/plugins/acl/admin.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ar/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ar/lang.php
@@ -1122,14 +1353,20 @@
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/da/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/el/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/el/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/en/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/en/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/es/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/es/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/et/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/et/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/eu/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fi/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/he/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/he/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/it/intro.txt
@@ -1156,31 +1393,53 @@
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sr/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/tr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/tr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/uk/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/uk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/vi/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/vi/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh-tw/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh-tw/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/style.css
+%%DOKUWIKI_DIR%%/lib/plugins/action.php
 %%DOKUWIKI_DIR%%/lib/plugins/admin.php
+%%DOKUWIKI_DIR%%/lib/plugins/base.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/admin.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/cs/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/cs/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/da/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/da/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/el/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/el/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/en/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/en/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/es/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/es/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/he/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/he/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/it/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/it/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/lt/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pl/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pl/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ru/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ru/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/uk/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/uk/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/settings/config.class.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/settings/config.metadata.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/settings/extra.class.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/style.css
+%%DOKUWIKI_DIR%%/lib/plugins/importoldchangelog/action.php
 %%DOKUWIKI_DIR%%/lib/plugins/info/syntax.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/admin.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/inc/tarlib.class.php
@@ -1191,14 +1450,31 @@
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/da/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/el/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/el/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/en/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/en/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/es/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/es/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fr/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/he/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/he/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/it/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/it/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ja/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ja/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lt/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pl/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pl/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ru/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ru/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sk/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sk/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/uk/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/uk/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/zh/admin_plugin.txt
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/zh/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/style.css
 %%DOKUWIKI_DIR%%/lib/plugins/syntax.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/admin.php
@@ -1223,24 +1499,54 @@
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el/list.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en/add.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en/delete.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en/edit.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es/list.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr/add.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr/delete.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr/edit.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it/list.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/add.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/delete.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/edit.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt/list.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lv/add.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lv/delete.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lv/edit.txt
@@ -1259,12 +1565,38 @@
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ru/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ru/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ru/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/add.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/delete.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/edit.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/intro.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/list.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/style.css
 %%DOKUWIKI_DIR%%/lib/scripts/ajax.js
+%%DOKUWIKI_DIR%%/lib/scripts/cookie.js
 %%DOKUWIKI_DIR%%/lib/scripts/domLib.js
 %%DOKUWIKI_DIR%%/lib/scripts/domTT.js
 %%DOKUWIKI_DIR%%/lib/scripts/edit.js
 %%DOKUWIKI_DIR%%/lib/scripts/events.js
+%%DOKUWIKI_DIR%%/lib/scripts/media.js
 %%DOKUWIKI_DIR%%/lib/scripts/pngbehavior.htc
 %%DOKUWIKI_DIR%%/lib/scripts/script.js
 %%DOKUWIKI_DIR%%/lib/scripts/spellcheck.js
@@ -1283,8 +1615,10 @@
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/button-php.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/button-rss.png
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/button-xhtml.png
+%%DOKUWIKI_DIR%%/lib/tpl/default/images/buttonshadow.png
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/closed.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/favicon.ico
+%%DOKUWIKI_DIR%%/lib/tpl/default/images/inputshadow.png
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/link_icon.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/mail_icon.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/open.gif
@@ -1292,136 +1626,170 @@
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/windows.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/layout.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/main.php
-%%DOKUWIKI_DIR%%/lib/tpl/default/media.php
-%%DOKUWIKI_DIR%%/lib/tpl/default/mediaedit.php
-%%DOKUWIKI_DIR%%/lib/tpl/default/mediaref.php
+%%DOKUWIKI_DIR%%/lib/tpl/default/media.css
+%%DOKUWIKI_DIR%%/lib/tpl/default/mediamanager.php
 %%DOKUWIKI_DIR%%/lib/tpl/default/print.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/rtl.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/style.ini
-@dirrm %%DOKUWIKI_DIR%%/lib/tpl/default/images
-@dirrm %%DOKUWIKI_DIR%%/lib/tpl/default
-@dirrm %%DOKUWIKI_DIR%%/lib/tpl
-@dirrm %%DOKUWIKI_DIR%%/lib/styles
-@dirrm %%DOKUWIKI_DIR%%/lib/scripts
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/images
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/inc
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/settings
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/vi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/no
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/it
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/et
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins
-@dirrm %%DOKUWIKI_DIR%%/lib/images/toolbar
-@dirrm %%DOKUWIKI_DIR%%/lib/images/smileys
-@dirrm %%DOKUWIKI_DIR%%/lib/images/interwiki
-@dirrm %%DOKUWIKI_DIR%%/lib/images/fileicons
-@dirrm %%DOKUWIKI_DIR%%/lib/images
-@dirrm %%DOKUWIKI_DIR%%/lib/exe
-@dirrm %%DOKUWIKI_DIR%%/lib
-@dirrm %%DOKUWIKI_DIR%%/inc/parser
-@dirrm %%DOKUWIKI_DIR%%/inc/magpie
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/vi
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/no
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/it
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/id
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/hu
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/he
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/et
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/es
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/en
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/de
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/da
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/inc/lang
-@dirrm %%DOKUWIKI_DIR%%/inc/geshi
-@dirrm %%DOKUWIKI_DIR%%/inc/auth
-@dirrm %%DOKUWIKI_DIR%%/inc
+@dirrm %%DOKUWIKI_DIR%%/bin
+@dirrm %%DOKUWIKI_DIR%%/conf
+@dirrm %%DOKUWIKI_DIR%%/data/attic
+@dirrm %%DOKUWIKI_DIR%%/data/cache
+@dirrm %%DOKUWIKI_DIR%%/data/locks
+@dirrm %%DOKUWIKI_DIR%%/data/media/wiki
+@dirrm %%DOKUWIKI_DIR%%/data/media
+@dirrm %%DOKUWIKI_DIR%%/data/meta
 @dirrm %%DOKUWIKI_DIR%%/data/pages/wiki
 @dirrm %%DOKUWIKI_DIR%%/data/pages/playground
 @dirrm %%DOKUWIKI_DIR%%/data/pages
-@dirrm %%DOKUWIKI_DIR%%/data/meta
-@dirrm %%DOKUWIKI_DIR%%/data/media/wiki
-@dirrm %%DOKUWIKI_DIR%%/data/media
-@dirrm %%DOKUWIKI_DIR%%/data/locks
-@dirrm %%DOKUWIKI_DIR%%/data/cache
-@dirrm %%DOKUWIKI_DIR%%/data/attic
 @dirrm %%DOKUWIKI_DIR%%/data
-@dirrm %%DOKUWIKI_DIR%%/conf
-@dirrm %%DOKUWIKI_DIR%%/bin
+@dirrm %%DOKUWIKI_DIR%%/inc/auth
+@dirrm %%DOKUWIKI_DIR%%/inc/geshi
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/da
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/de
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/el
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/en
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/es
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/et
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/fo
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/he
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/hu
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/id
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/it
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/no
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt-br
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/vi
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/inc/lang
+@dirrm %%DOKUWIKI_DIR%%/inc/parser
+@dirrm %%DOKUWIKI_DIR%%/inc
+@dirrm %%DOKUWIKI_DIR%%/lib/exe
+@dirrm %%DOKUWIKI_DIR%%/lib/images/fileicons
+@dirrm %%DOKUWIKI_DIR%%/lib/images/interwiki
+@dirrm %%DOKUWIKI_DIR%%/lib/images/smileys
+@dirrm %%DOKUWIKI_DIR%%/lib/images/toolbar
+@dirrm %%DOKUWIKI_DIR%%/lib/images
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/et
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/no
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/vi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/settings
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/importoldchangelog
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/inc
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/images
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins
+@dirrm %%DOKUWIKI_DIR%%/lib/scripts
+@dirrm %%DOKUWIKI_DIR%%/lib/styles
+@dirrm %%DOKUWIKI_DIR%%/lib/tpl/default/images
+@dirrm %%DOKUWIKI_DIR%%/lib/tpl/default
+@dirrm %%DOKUWIKI_DIR%%/lib/tpl
+@dirrm %%DOKUWIKI_DIR%%/lib
 @dirrmtry %%DOKUWIKI_DIR%%
