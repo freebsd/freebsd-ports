@@ -95,6 +95,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprocedures3.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprocedures4.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprotect1.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprotect2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialrand1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialrand2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialrand3.mapyrus
