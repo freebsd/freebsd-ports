@@ -5,7 +5,7 @@
  # for Linux, try:                                                               
  # CFLAGS =  -I/usr/X11R6/LessTif/Motif2.0/include
 -CFLAGS = -g  -I/usr/X11R6/LessTif/Motif2.0/include
-+CFLAGS += -I/usr/X11R6/include
++CFLAGS += -I$(X11BASE)/include
  # for SGI use:
  # CFLAGS = -I/usr/include/X11
  # CFLAGS =  -g -I/usr/include/X11
@@ -16,7 +16,7 @@
 -LIBS = -L/usr/X11R6/LessTif/Motif2.0/lib -L/usr/X11R6/lib -lXm -lXt -lX11
 +# LIBS = -L/usr/X11R6/LessTif/Motif2.0/lib -L/usr/X11R6/lib -lXm -lXt -lX11
 +# For FreeBSD:
-+LIBS = -L/usr/X11R6/lib -lXm -lXt -lX11
++LIBS = -L$(X11BASE)/lib -lXm -lXt -lX11
  
  # ------------------------------------------------------------------------
  
