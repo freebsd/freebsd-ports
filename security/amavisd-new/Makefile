@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -76,13 +75,20 @@ SUB_FILES=	pkg-install pkg-deinstall pkg-message
 SUB_LIST+=	AMAVISUSER=${AMAVISUSER} \
 		AMAVISGROUP=${AMAVISGROUP} \
 		AMAVISDIR=${AMAVISDIR} \
-		AMAVISQUARANTINE=${AMAVISQUARANTINE}
+		AMAVISQUARANTINE=${AMAVISQUARANTINE} \
+		DAEMON="${DAEMON}"
 
 PLIST_SUB+=	AMAVIS_NOAMAVIS=${AMAVIS_NOAMAVIS} \
 		AMAVIS_NOMILTER=${AMAVIS_NOMILTER} \
 		AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+DAEMON=/usr/sbin/daemon
+.else
+DAEMON=/usr/sbin/daemon -p
+.endif
 
 USE_RC_SUBR+=	amavisd.sh
 
