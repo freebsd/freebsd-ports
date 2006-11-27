@@ -19,6 +19,8 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-xpm-includes=${X11BASE}/include \
+		--with-xpm-libraries=${X11BASE}/lib
 MAN8=		wmlmmon.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/wmlmmon
