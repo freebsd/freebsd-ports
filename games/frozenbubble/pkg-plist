@@ -1,23 +1,29 @@
 bin/frozen-bubble
 bin/frozen-bubble-editor
-%%SITE_PERL%%/%%PERL_ARCH%%/FBLE.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.so
-%%SITE_PERL%%/%%PERL_ARCH%%/fb_c_stuff.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/fb_net.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/fb_stuff.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/fbsyms.pm
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/FBLE.pm
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff/.packlist
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.bs
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.so
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_c_stuff.pm
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_net.pm
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_stuff.pm
+lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fbsyms.pm
 libexec/frozenbubble/fb-server
 %%DATADIR%%/data/demo1.bz2
 %%DATADIR%%/data/demo2.bz2
 %%DATADIR%%/data/demo3.bz2
+%%DATADIR%%/data/demo4.bz2
+%%DATADIR%%/data/demo5.bz2
 %%DATADIR%%/data/levels
 %%DATADIR%%/data/plasma.raw
 %%DATADIR%%/gfx/attack_rp1.png
 %%DATADIR%%/gfx/attack_rp2.png
 %%DATADIR%%/gfx/attack_rp3.png
 %%DATADIR%%/gfx/attack_rp4.png
+%%DATADIR%%/gfx/attackme_rp1.png
+%%DATADIR%%/gfx/attackme_rp2.png
+%%DATADIR%%/gfx/attackme_rp3.png
+%%DATADIR%%/gfx/attackme_rp4.png
 %%DATADIR%%/gfx/back_hiscores.png
 %%DATADIR%%/gfx/back_multiplayer.png
 %%DATADIR%%/gfx/back_netgame.png
@@ -40,13 +46,21 @@ libexec/frozenbubble/fb-server
 %%DATADIR%%/gfx/balls/bubble-7.gif
 %%DATADIR%%/gfx/balls/bubble-8-mini.png
 %%DATADIR%%/gfx/balls/bubble-8.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-1-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-1.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-2-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-2.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-3-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-3.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-4-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-4.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-5-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-5.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-6-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-6.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-7-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-7.gif
+%%DATADIR%%/gfx/balls/bubble-colourblind-8-mini.png
 %%DATADIR%%/gfx/balls/bubble-colourblind-8.gif
 %%DATADIR%%/gfx/balls/bubble_lose-mini.png
 %%DATADIR%%/gfx/balls/bubble_lose.png
@@ -748,6 +762,7 @@ libexec/frozenbubble/fb-server
 %%DATADIR%%/gfx/net_lose_rp2.png
 %%DATADIR%%/gfx/net_lose_rp3.png
 %%DATADIR%%/gfx/net_lose_rp4.png
+%%DATADIR%%/gfx/netspot-playing.png
 %%DATADIR%%/gfx/netspot-s%%PORTOBJFORMAT%%-1.png
 %%DATADIR%%/gfx/netspot-s%%PORTOBJFORMAT%%-2.png
 %%DATADIR%%/gfx/netspot-s%%PORTOBJFORMAT%%-3.png
@@ -3270,8 +3285,8 @@ share/locale/sv/LC_MESSAGES/frozen-bubble.mo
 @dirrm %%DATADIR%%
 @dirrm libexec/frozenbubble
 @dirrm lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%
+@dirrmtry lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto
+@dirrmtry lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%
+@dirrmtry lib/perl5/site_perl/%%PERL_VERSION%%
 @dirrmtry lib/perl5/site_perl
 @dirrmtry lib/perl5
