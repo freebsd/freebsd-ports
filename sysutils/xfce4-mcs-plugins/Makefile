@@ -28,8 +28,8 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
-		CPPFLAGS=-I${LOCALBASE}/include \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${X11BASE}/lib" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS=-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
