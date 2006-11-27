@@ -1,0 +1,11 @@
+--- modules/log-prelude/Makefile.in.orig	Sun Apr 23 19:49:07 2006
++++ modules/log-prelude/Makefile.in	Fri Oct 20 15:01:06 2006
+@@ -195,7 +195,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign
+-AM_CPPFLAGS = -I/usr/include/libprelude -I$(top_srcdir)/nepenthes-core/include -I$(top_srcdir)/nepenthes-core/src -pipe -D _GNU_SOURCE
++AM_CPPFLAGS = -I/usr/local/include/libprelude -I$(top_srcdir)/nepenthes-core/include -I$(top_srcdir)/nepenthes-core/src -pipe -D _GNU_SOURCE
+ AM_CXXFLAGS = -Wall
+ AM_LDFLAGS = 
+ pkglib_LTLIBRARIES = logprelude.la
