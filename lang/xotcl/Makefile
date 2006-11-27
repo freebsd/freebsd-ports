@@ -50,7 +50,7 @@ PLIST_SUB+=	TUTORIAL="@comment "
 .endif
 
 .if defined(WITH_THREADS)
-TCL_THREADED!=	${ECHO_EMD} 'puts [array names tcl_platform -exact threaded]' | ${TCLSH}
+TCL_THREADED!=	${ECHO_CMD} 'puts [array names tcl_platform -exact threaded]' | ${TCLSH}
 .if empty(TCL_THREADED)
 IGNORE=		WITH_THREADS option is selected. You need Tcl with threads to use this port. Please install Tcl with WITH_THREADS defined or from lang/tcl84-thread port and try again.
 .endif
