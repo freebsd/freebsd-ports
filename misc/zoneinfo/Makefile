@@ -6,6 +6,7 @@
 
 PORTNAME=	zoneinfo
 DISTVERSION=	2006o
+PORTVERSION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}
@@ -15,8 +16,6 @@ COMMENT=	Updated timezone definitions
 
 WRKSRC=		${WRKDIR}
 PREFIX=		/usr
-
-USE_PERL5_BUILD=yes
 
 TZFILES=	africa antarctica asia australasia etcetera europe \
 		factory northamerica southamerica systemv
