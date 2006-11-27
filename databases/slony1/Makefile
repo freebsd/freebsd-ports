@@ -7,6 +7,7 @@
 
 PORTNAME=	slony1
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/ \
 		http://freebsd.unixfreunde.de/sources/
