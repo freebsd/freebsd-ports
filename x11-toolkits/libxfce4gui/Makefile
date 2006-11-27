@@ -25,6 +25,8 @@ LIB_DEPENDS=	dbh-4.5.4:${PORTSDIR}/databases/dbh \
 USE_GNOME=	gtk20 gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${X11BASE}/lib" \
+		CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include"
 CONFIGURE_ARGS=	--enable-xinerama
 INSTALLS_SHLIB=	yes
 
