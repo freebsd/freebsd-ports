@@ -96,6 +96,7 @@ lib/xotcl%%PORTVERSION%%/xotclConfig.sh
 %%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.0
 %%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.1
 %%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.2
+%%PORTDOCS%%%%DOCSDIR%%/announces/Announce-1.5.3
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/JufGdbmStorage-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/MemStorage-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/MultiStorage-xotcl.html
