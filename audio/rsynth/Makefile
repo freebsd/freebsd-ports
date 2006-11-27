@@ -18,6 +18,8 @@ LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm	\
 		audio:${PORTSDIR}/audio/nas
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 
 pre-configure:
 	@${CP} ${FILESDIR}/freebsdplay.c ${WRKSRC}/config/freebsdplay.c
