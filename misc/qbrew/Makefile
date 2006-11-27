@@ -20,7 +20,10 @@ PORTDOCS=	*
 QT_NONSTANDARD=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
-			--x-libraries=${X11BASE}/lib
+			--x-libraries=${X11BASE}/lib \
+			--with-qt-dir=${X11BASE}
+CONFIGURE_ENV=		MOC=${X11BASE}/bin/moc \
+			UIC=${X11BASE}/bin/uic
 
 .include <bsd.port.pre.mk>
 
