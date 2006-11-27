@@ -1,4 +1,4 @@
-bin/whois
+bin/gwhois
 %%NLS%%share/locale/de/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/el/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/es/LC_MESSAGES/whois.mo
