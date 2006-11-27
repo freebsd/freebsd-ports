@@ -8,7 +8,9 @@
 PORTNAME=	mlmmj
 PORTVERSION=	1.2.12
 CATEGORIES=	mail
-MASTER_SITES=	http://mlmmj.mmj.dk/files/
+MASTER_SITES=	http://mlmmj.mmj.dk/files/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 
 MAINTAINER=	xi@borderworlds.dk
 COMMENT=	Mailing list managing made joyful
