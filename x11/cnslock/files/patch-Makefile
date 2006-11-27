@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct 27 09:34:22 2002
-+++ Makefile	Sun Jul  6 20:33:58 2003
+--- Makefile.orig	Sun Oct 27 02:34:22 2002
++++ Makefile	Mon Nov 27 00:06:07 2006
 @@ -2,11 +2,10 @@
  PREFIX = /usr/local
  
@@ -14,3 +14,12 @@
  
  all: cnslock
  
+@@ -17,7 +16,7 @@
+ 	gcc $(CFLAGS) -c applet.c -o applet.o
+ 
+ kleds.o: kleds.c include/kleds.h include/defines.h
+-	$(CC) -Wall -I/usr/X11R6/include -c kleds.c -o kleds.o
++	$(CC) -Wall -I$(X11BASE)/include -c kleds.c -o kleds.o
+ 
+ cnslock: $(OBJS)
+ 	$(CC) -o cnslock $(OBJS) $(LIBS)
