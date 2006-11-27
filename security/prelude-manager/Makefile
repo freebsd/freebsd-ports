@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
-LIB_DEPENDS+=	prelude.[6-?]:${PORTSDIR}/security/libprelude \
+LIB_DEPENDS+=	prelude.10:${PORTSDIR}/security/libprelude \
 		gnutls.13:${PORTSDIR}/security/gnutls
 
 USE_GPG=	yes

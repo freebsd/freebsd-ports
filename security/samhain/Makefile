@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	--with-logserver=${WITH_LOG_SERVER}
 CONFIGURE_ARGS+=	--with-altlogserver=${WITH_ALT_LOG_SERVER}
 .endif
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.[7-?]:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude.10:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--with-prelude
 .endif
 
