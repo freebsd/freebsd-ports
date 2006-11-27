@@ -1,11 +1,11 @@
---- zone.tab	Tue Aug 29 18:15:23 2006
-+++ zone.tab.orig	Tue Aug 29 18:15:14 2006
-@@ -213,7 +213,7 @@
+--- zone.tab.orig	Tue Nov 28 08:10:12 2006
++++ zone.tab	Tue Nov 28 08:10:25 2006
+@@ -212,7 +212,7 @@
  IR	+3540+05126	Asia/Tehran
  IS	+6409-02151	Atlantic/Reykjavik
  IT	+4154+01229	Europe/Rome
--JE	+4912-00237	Europe/Jersey
-+#JE	+4912-00237	Europe/Jersey
+-JE	+4912-00207	Europe/Jersey
++#JE	+4912-00207	Europe/Jersey
  JM	+1800-07648	America/Jamaica
  JO	+3157+03556	Asia/Amman
  JP	+353916+1394441	Asia/Tokyo
