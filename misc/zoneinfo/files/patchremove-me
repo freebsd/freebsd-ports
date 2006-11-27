@@ -1,11 +1,11 @@
---- zone.tab.orig	Tue Oct 17 07:38:12 2006
-+++ zone.tab	Tue Oct 17 07:38:31 2006
+--- zone.tab.orig	Tue Nov 28 08:11:37 2006
++++ zone.tab	Tue Nov 28 08:11:46 2006
 @@ -247,7 +247,7 @@
  MA	+3339-00735	Africa/Casablanca
  MC	+4342+00723	Europe/Monaco
  MD	+4700+02850	Europe/Chisinau
--ME	+4247+01928	Europe/Podgorica
-+#ME	+4247+01928	Europe/Podgorica
+-ME	+4226+01916	Europe/Podgorica
++#ME	+4226+01916	Europe/Podgorica
  MG	-1855+04731	Indian/Antananarivo
  MH	+0709+17112	Pacific/Majuro	most locations
  MH	+0905+16720	Pacific/Kwajalein	Kwajalein
