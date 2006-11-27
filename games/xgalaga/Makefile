@@ -19,7 +19,9 @@ USE_XPM=	yes
 HAS_CONFIGURE=	yes
 # xgalaga has a very strange usage of these variables...
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
-		--exec_prefix=${X11BASE}/bin
+		--exec_prefix=${X11BASE}/bin \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 
 .if defined(NOSOUND)
 CONFIGURE_ARGS+=	--without-sound
