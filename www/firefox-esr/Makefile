@@ -69,7 +69,7 @@ post-extract::
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${GECKO_PTHREAD_LIBS}|' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 		${WRKSRC}/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in

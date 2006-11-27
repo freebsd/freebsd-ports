@@ -63,7 +63,7 @@ pre-everything::
 post-patch:
 	@${SED} -e 's|@MOZILLA_ICON@|${MOZILLA_ICON}|' \
 		${FILESDIR}/${MOZILLA}.desktop.in >${WRKDIR}/${MOZILLA}.desktop
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${GECKO_PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 		${WRKSRC}/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in
