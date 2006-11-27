@@ -1,15 +1,18 @@
-Munger is a simplified, statically-scoped, interpreted lisp specialized
-for writing text processors for 8-bit text.  With Munger the programmer may
-write text-processing filters if serial access to the text is sufficient,
-or the programmer may load text into buffers and have line-oriented random
-access to those lines, if that is more convenient.  Buffer lines can be
-inserted, removed, overwritten, retrieved in whole or in part, with or
-without tabs expanded, searched for matches on regular expressions, read
-from and written to files, and piped to and from, or filtered through
-external processes.
+Munger is a simplified, statically-scoped, interpreted lisp specialized for
+writing text processors for 8-bit text.  With Munger the programmer may
+write line-by-line filters, if serial access to the text is sufficient, or
+the programmer may load text into buffers and have line-oriented random
+access to those lines, if that is more convenient.
 
-WWW: http://www.jamesbailie.com/munger.html
+Munger makes it easy to write simple text editors, shells, utility filters,
+CGI scripts, and simple network client and server programs.  Mung (or
+munge) is computer jargon for, "to make repeated changes which individually
+may be reversible, yet which ultimately result in an unintentional
+irreversible destruction of large portions of the original item."  Laugh,
+it's a joke.
+
+WWW: http://www.mammothcheese.ca/munger.html
 
 --
-James Bailie <jimmy@jamesbailie.com>
-http://www.jamesbailie.com
+James Bailie <jimmy@mammothcheese.ca>
+http://www.mammothcheese.ca
