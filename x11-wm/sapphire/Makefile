@@ -28,6 +28,7 @@ post-patch:
 	${REINPLACE_CMD} "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${ii}
 .endfor
 	${CP} ${WRKSRC}/data.inst ${WRKSRC}/sapphire.inst
+	${REINPLACE_CMD} "s|/usr/X11R6|${X11BASE}|g" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sapphire.inst ${PREFIX}/bin
