@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	mail-notification
-PORTVERSION=	3.0
-PORTREVISION=	1
+DISTVERSION=	4.0-rc1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A mail notification for freedesktop.org-compliant system trays
+
+LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 
 USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack eel2
@@ -24,6 +25,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GCONF_SCHEMAS=	mail-notification.schemas
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 
 OPTIONS=	MBOX "mbox support" on \
 		MH "MH support" on \
@@ -34,6 +36,7 @@ OPTIONS=	MBOX "mbox support" on \
 		SASL "SASL authentication support" on \
 		GMAIL "Gmail support" on \
 		EVOLUTION "Evolution support" off \
+		MOZILLA "Mozilla products support" on \
 		SYLPHEED "Sylpheed support" on
 
 .include <bsd.port.pre.mk>
@@ -73,6 +76,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.p
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.pc:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION="" EVO_VERSION=${EVO_VERSION}
 .endif
+.if defined(WITHOUT_MOZILLA)
+CONFIGURE_ARGS+=--disable-mozilla
+.endif
 .if defined(WITHOUT_SYLPHEED)
 CONFIGURE_ARGS+=--disable-sylpheed
 .endif
@@ -81,6 +87,7 @@ CONFIGURE_ARGS+=--disable-sylpheed
 	|| defined(WITH_MAILDIR) \
 	|| defined(WITH_POP3) \
 	|| defined(WITH_IMAP) \
+	|| defined(WITH_MOZILLA) \
 	|| defined(WITH_SYLPHEED)
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 .endif
