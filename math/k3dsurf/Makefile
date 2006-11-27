@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k3dsurf
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.0
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=	Visualize and manipulate Mathematical surfaces or curves
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+USE_GL=		yes
 USE_QT_VER=	3
 QTDIR?=		${X11BASE}
 MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
