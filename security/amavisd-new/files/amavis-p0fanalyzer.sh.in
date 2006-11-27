@@ -22,10 +22,10 @@ stop_cmd=p0fanalyzer_stop
 
 p0fanalyzer_start() {
 	echo "Starting p0f-analyzer." && \
-	  /usr/sbin/daemon -p ${amavis_p0fanalyzer_pidfile1} \
-	  %%PREFIX%%/bin/p0f "${amavis_p0f_daemon_flags}" \
+	  %%DAEMON%% ${amavis_p0fanalyzer_pidfile1} \
+	  %%PREFIX%%/bin/p0f ${amavis_p0f_daemon_flags} \
 	  -l "${amavis_p0fanalyzer_p0f_filter}" 2>&1 | \
-	  /usr/sbin/daemon -p ${amavis_p0fanalyzer_pidfile2} \
+	  %%DAEMON%% ${amavis_p0fanalyzer_pidfile2} \
 	  %%PREFIX%%/sbin/p0f-analyzer.pl ${amavis_p0fanalyzer_flags}
 }
 
