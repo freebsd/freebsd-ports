@@ -20,4 +20,7 @@ USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+post-patch:
+	${REINPLACE_CMD} 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/setup.py
+
 .include <bsd.port.mk>
