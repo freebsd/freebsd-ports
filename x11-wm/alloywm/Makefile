@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Has title bars, shading, resizing, automatic placement, window list
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--xroot=${X11BASE}
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
