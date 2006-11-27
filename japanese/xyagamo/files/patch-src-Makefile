@@ -1,0 +1,18 @@
+--- src/Makefile.orig	Sun Nov 26 23:32:06 2006
++++ src/Makefile	Sun Nov 26 23:32:40 2006
+@@ -1,10 +1,10 @@
+-CC	= gcc
+-CFLAGS	= -g -c -pipe -Wall
+-LFLAGS	= -g
++#CC	= gcc
++CFLAGS	+= -c
++#LFLAGS	= -g
+ 
+-X11PREFIX ?= /usr/X11R6
++X11PREFIX = $(X11BASE)
+ X11INCL	= -I$(X11PREFIX)/include
+-X11LIBS	= -L$(X11PREFIX)/lib -lX11 -lXpm -lxpg4
++X11LIBS	= -L$(X11PREFIX)/lib -lX11 -lXpm
+ 
+ .ifdef INSTALL_LIBDIR
+ DEFINE_IMAGEDIR = -DIMAGEDIR=\"$(INSTALL_LIBDIR)/images\"

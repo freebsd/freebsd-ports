@@ -20,9 +20,6 @@ MAN6=		xyagamo.6
 MANLANG=	ja
 MAN6COMPRESSED=	no
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/-lxpg4//' ${WRKSRC}/src/Makefile
-
 pre-build:
 	@cd ${BUILD_WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} depend
 
