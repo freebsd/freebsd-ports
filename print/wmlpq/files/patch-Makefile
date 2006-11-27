@@ -1,11 +1,13 @@
---- Makefile.orig	Thu Jul  5 20:09:50 2001
-+++ Makefile	Thu Jul  5 20:10:23 2001
+--- Makefile.orig	Wed Mar 28 00:19:12 2001
++++ Makefile	Mon Nov 27 00:14:57 2006
 @@ -1,13 +1,11 @@
 -prefix=
- CPPFLAGS = -I/usr/X11R6/include -I/usr/local/include
+-CPPFLAGS = -I/usr/X11R6/include -I/usr/local/include
++CPPFLAGS = -I$(X11BASE)/include -I/usr/local/include
  LIBS = -lXpm -lX11 -ldockapp  
- LDFLAGS = -L/usr/X11R6/lib -L/usr/local/lib
+-LDFLAGS = -L/usr/X11R6/lib -L/usr/local/lib
 -CFLAGS = -O2 -Wall
++LDFLAGS = -L$(X11BASE)/lib -L/usr/local/lib
 +CFLAGS += -Wall
  DFLAGS = -ggdb3 -Wall
  
@@ -15,3 +17,10 @@
  
  debug: wmlpq.c wmlpq-master.xpm
  	cc $(DFLAGS) $(LDFLAGS) $(CPPFLAGS) -o wmlpq $(LIBS) wmlpq.c
+@@ -23,6 +21,3 @@
+ 	cp -f wmlpq.1x /usr/local/man/man1/
+ 	chmod 644 /usr/local/man/man1/wmlpq.1x
+ 
+-install-debian: wmlpq
+-	cp -f wmlpq $(prefix)/usr/X11R6/bin/
+-	chmod 755 $(prefix)/usr/X11R6/bin/wmlpq
