@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xotcl
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	lang tcl83 tcl84
 MASTER_SITES=	http://media.wu-wien.ac.at/download/
 
@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 OPTIONS=	AOLSERVER	"AOL server module"		off \
+		THREADS		"Force threaded build"		off \
 		TUTORIAL	"Install XOTcl tutorial" 	off
 
 CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
@@ -46,6 +47,14 @@ PLIST_SUB+=		AOLSERVER="@comment "
 PLIST_SUB+=	TUTORIAL=""
 .else
 PLIST_SUB+=	TUTORIAL="@comment "
+.endif
+
+.if defined(WITH_THREADS)
+TCL_THREADED!=	${ECHO_EMD} 'puts [array names tcl_platform -exact threaded]' | ${TCLSH}
+.if empty(TCL_THREADED)
+IGNORE=		WITH_THREADS option is selected. You need Tcl with threads to use this port. Please install Tcl with WITH_THREADS defined or from lang/tcl84-thread port and try again.
+.endif
+CONFIGURE_ARGS+=	--enable-threads
 .endif
 
 INSTALL_TARGET+=	install-shells
