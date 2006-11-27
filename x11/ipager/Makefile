@@ -7,6 +7,7 @@
 
 PORTNAME=	ipager
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://useperl.ru/ipager/src/
 DISTNAME=	ipager-${PORTVERSION}
@@ -14,10 +15,9 @@ DISTNAME=	ipager-${PORTVERSION}
 MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	X11 pager program
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
-USE_X_PREFIX=	yes
+USE_SCONS=	yes
 
 PLIST_FILES=	bin/ipager \
 		%%DATADIR%%/themes/atlantis.conf \
@@ -43,14 +43,14 @@ IGNORE=	fails to build on FreeBSD 4.x (due to problems with threading support)
 .endif
 
 post-patch:
-	   @${REINPLACE_CMD} -e 's|/usr/local|${X11BASE}|' \
+		@${REINPLACE_CMD} -e '35,36d;89d;92,94d' \
 			${WRKSRC}/SConstruct
 
 do-build:
-	   @cd ${WRKSRC} && scons
+	   @cd ${WRKSRC} && ${SCONS_BIN}
 
 do-install:
-	   @cd ${WRKSRC} && scons install
+	   @cd ${WRKSRC} && ${SCONS_BIN} ${SCONS_INSTALL_TARGET}
 
 post-install:
 .if !defined (NOPORTDOCS)
@@ -63,7 +63,7 @@ post-install:
 .for t in ${THEMES}
 	${INSTALL_DATA} ${WRKSRC}/themes/${t} ${DATADIR}/themes
 .endfor
-	${STRIP_CMD} ${X11BASE}/bin/ipager
+	${STRIP_CMD} ${LOCALBASE}/bin/ipager
 
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
