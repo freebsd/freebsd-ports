@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//}-apache_${PORTVERSION}
@@ -17,11 +17,13 @@ COMMENT=	An intrusion detection and prevention engine
 USE_APACHE=	2.0+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
+MODULENAME=	mod_security2
 WRKSRCTOP=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKSRCTOP}/apache2
 SRC_FILE=	*.c
 PORTDOCS=	*
 DOCS=		CHANGES LICENSE README.TXT modsecurity.conf-minimal doc
+DOCSDIR=	${TARGETDIR}/share/doc/${MODULENAME}
 
 .if defined(WITH_LIBXML2)
 AP_EXTRAS+=	-DWITH_LIBXML2
