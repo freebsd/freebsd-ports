@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Graph/Easy/Edge.pm
 %%SITE_PERL%%/Graph/Easy/Edge/Cell.pm
 %%SITE_PERL%%/Graph/Easy/Group.pm
+%%SITE_PERL%%/Graph/Easy/Group/Anon.pm
 %%SITE_PERL%%/Graph/Easy/Group/Cell.pm
 %%SITE_PERL%%/Graph/Easy/Layout.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Chain.pm
