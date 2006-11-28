@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graph-Easy
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Graph
@@ -30,6 +30,7 @@ MAN3=	Graph::Easy.3 \
 	Graph::Easy::Edge.3 \
 	Graph::Easy::Edge::Cell.3 \
 	Graph::Easy::Group.3 \
+	Graph::Easy::Group::Anon.3 \
 	Graph::Easy::Group::Cell.3 \
 	Graph::Easy::Layout.3 \
 	Graph::Easy::Layout::Chain.3 \
