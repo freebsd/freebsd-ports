@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--libdir=${PREFIX}/mysql2odbc
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.post.mk>
