@@ -355,13 +355,13 @@ lib/asterisk/modules/pbx_realtime.so
 lib/asterisk/modules/pbx_spool.so
 lib/asterisk/modules/res_adsi.so
 lib/asterisk/modules/res_agi.so
-%%NEWGCC%%lib/asterisk/modules/res_config_odbc.so
+%%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
 lib/asterisk/modules/res_crypto.so
 lib/asterisk/modules/res_features.so
 lib/asterisk/modules/res_indications.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
-lib/asterisk/modules/res_odbc.so
+%%WITH_ODBC%%lib/asterisk/modules/res_odbc.so
 lib/asterisk/modules/res_watchdog.so
 sbin/asterisk
 sbin/astgenkey
