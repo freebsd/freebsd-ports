@@ -7,6 +7,7 @@
 
 PORTNAME=	msged
 PORTVERSION=	6.2RC1
+PORTREVISION=	1
 CATEGORIES=	news mail
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable-src
 EXTRACT_SUFX=	.tgz
@@ -19,6 +20,9 @@ LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 MAKE_ARGS=	MSGEDCFG="\\\"~/.msged\\\""
 
 INFO=		msged
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,html info,info,' -e 's,install-html install-info,install-info,' ${WRKSRC}/doc/manual/makefile.husky
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"
