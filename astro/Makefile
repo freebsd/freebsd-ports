@@ -48,6 +48,7 @@
     SUBDIR += p5-Weather-Underground
     SUBDIR += phoon
     SUBDIR += planets
+    SUBDIR += position
     SUBDIR += pp3
     SUBDIR += ptiger
     SUBDIR += py-metar
