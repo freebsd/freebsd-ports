@@ -18,7 +18,16 @@ USE_MOTIF=	yes
 
 MAN1=		psk31.1
 
-FILES_TO_PATCH=	Makefile psk31.1 twpskHelp
+FILES_TO_PATCH=	Makefile psk31.1 twpskHelp user-twpsk/makefile \
+				user-twpsk/savedir/makefile \
+				user-twpsk/savedir/INSTALL \
+				user-twpsk/twpskHelp \
+				user/term-psk31.C \
+				user-twpsk/twpsk.C \
+				user-twpsk/twpskDiags.C \
+				user-twpsk/savedir/twpsk.C \
+				user-twpsk/savedir/twpskDiags.C \
+				user-twpsk/savedir/twpskHelp
 post-patch:
 .for file in ${FILES_TO_PATCH}
 	@${REINPLACE_CMD} -e \
