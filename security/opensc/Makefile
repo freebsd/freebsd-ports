@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	opensc
-PORTVERSION=	0.11.1
+DISTVERSION=	0.11.2-pre3
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
+MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
+		http://www.opensc-project.org/files/${PORTNAME}/testing/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access smart cards
 
 OPTIONS=	OPENCT "Install openct for direct OpenCT backend support" on \
-		PCSC "Install pcsc-lite for PC/SC backend support" off
+		PCSC "Install pcsc-lite for PC/SC backend support" off \
+		SIGNER "Install signer browser plugin" off
 
 USE_AUTOTOOLS=	libltdl:15
 USE_OPENSSL=	yes
@@ -23,13 +25,15 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 INSTALLS_SHLIB=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -I${X11BASE}/lib
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
+
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 DOC_FILES=	README *.sh *.xsl *.css *.html api html tools
 
@@ -69,6 +73,20 @@ LIB_DEPENDS+=	openct.1:${PORTSDIR}/security/openct
 
 .if defined(WITH_PCSC) || exists(${LOCALBASE}/lib/libpcsclite.so)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+.endif
+
+.if defined(WITH_SIGNER) || exists(${LOCALBASE}/lib/libassuan.a)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
+PINENTRY?=	${LOCALBASE}/bin/pinentry
+PINENTRY_PORT?=	security/pinentry
+RUN_DEPENDS+=	pinentry:${PORTSDIR}/${PINENTRY_PORT}
+USE_XLIB=	yes
+CONFIGURE_ARGS+=--with-libassuan-prefix=${LOCALBASE} \
+		--with-plugin-dir=${LOCALBASE}/lib/browser_plugins \
+		--with-pin-entry=${PINENTRY}
+PLIST_SUB+=	SIGNER=""
+.else
+PLIST_SUB+=	SIGNER="@comment "
 .endif
 
 post-install:
