@@ -11729,7 +11729,6 @@ portupgrade-devel	ports/sysutils/portupgrade-devel
 posadis		ports/dns/posadis
 pose		ports/palm/pose
 poseidon	ports/java/poseidon
-position	ports/misc/position
 posixtestsuite	ports/misc/posixtestsuite
 poslib		ports/devel/poslib
 postal		ports/benchmarks/postal
