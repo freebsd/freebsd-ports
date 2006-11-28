@@ -31,6 +31,10 @@ include/opensc/ui.h
 libdata/pkgconfig/libopensc.pc
 libdata/pkgconfig/libpkcs15init.pc
 libdata/pkgconfig/libscconf.pc
+%%SIGNER%%lib/browser_plugins/opensc-signer.so
+%%SIGNER%%lib/opensc-signer.a
+%%SIGNER%%lib/opensc-signer.la
+%%SIGNER%%lib/opensc-signer.so
 lib/libopensc.a
 lib/libopensc.la
 lib/libopensc.so
@@ -56,6 +60,7 @@ lib/pkcs11-spy.so
 %%DATADIR%%/incrypto34.profile
 %%DATADIR%%/jcop.profile
 %%DATADIR%%/miocos.profile
+%%DATADIR%%/muscle.profile
 %%DATADIR%%/oberthur.profile
 %%DATADIR%%/pkcs15.profile
 %%DATADIR%%/setcos.profile
