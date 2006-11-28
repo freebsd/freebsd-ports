@@ -91,7 +91,7 @@ PLIST_SUB+=		EVO="@comment not installed: "
 .endif
 
 .if defined(WITH_GTKUI) && !defined(WITHOUT_GSTREAMER)
-LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer
+USE_GSTREAMER+= core good
 .else
 CONFIGURE_ARGS+=--disable-gstreamer
 .endif
