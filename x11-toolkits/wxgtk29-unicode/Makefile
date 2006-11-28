@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit (Unicode)
 
-PORTREVISION=	1
 WXGTK_FLAVOR=	gtk2-unicode
 MASTERDIR=	${.CURDIR}/../wxgtk26
 

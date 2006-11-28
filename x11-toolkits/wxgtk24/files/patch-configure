@@ -1,5 +1,13 @@
 --- configure.orig	Tue Nov  4 19:54:04 2003
 +++ configure	Tue Nov  4 20:12:59 2003
+@@ -11436,6 +11436,7 @@
+ 
+ 
+ SEARCH_INCLUDE="\
++    $X11BASE/include	      \
+     /usr/local/include        \
+                               \
+     /usr/Motif-1.2/include    \
 @@ -11731,7 +11731,7 @@
  
  
