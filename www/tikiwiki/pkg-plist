@@ -660,6 +660,8 @@
 %%TIKIWIKI%%/lang/fi/language.php
 %%TIKIWIKI%%/lang/fr/index.php
 %%TIKIWIKI%%/lang/fr/language.php
+%%TIKIWIKI%%/lang/gl/index.php
+%%TIKIWIKI%%/lang/gl/language.php
 %%TIKIWIKI%%/lang/he/index.php
 %%TIKIWIKI%%/lang/he/language.php
 %%TIKIWIKI%%/lang/hr/index.php
@@ -946,14 +948,6 @@
 %%TIKIWIKI%%/lib/cache/cachelib.php
 %%TIKIWIKI%%/lib/cache/index.php
 %%TIKIWIKI%%/lib/calendar/calendarlib.php
-%%TIKIWIKI%%/lib/calendar/iCal/class.iCal.inc.php
-%%TIKIWIKI%%/lib/calendar/iCal/class.iCalAlarm.inc.php
-%%TIKIWIKI%%/lib/calendar/iCal/class.iCalBase.inc.php
-%%TIKIWIKI%%/lib/calendar/iCal/class.iCalEvent.inc.php
-%%TIKIWIKI%%/lib/calendar/iCal/class.iCalFreeBusy.inc.php
-%%TIKIWIKI%%/lib/calendar/iCal/class.iCalJournal.inc.php
-%%TIKIWIKI%%/lib/calendar/iCal/class.iCalToDo.inc.php
-%%TIKIWIKI%%/lib/calendar/iCal/index.php
 %%TIKIWIKI%%/lib/calendar/index.php
 %%TIKIWIKI%%/lib/categories/categlib.php
 %%TIKIWIKI%%/lib/categories/index.php
@@ -1253,7 +1247,6 @@
 %%TIKIWIKI%%/lib/pear/Auth/Container/vpopmail.php
 %%TIKIWIKI%%/lib/pear/Auth/Controller.php
 %%TIKIWIKI%%/lib/pear/Auth/index.php
-%%TIKIWIKI%%/lib/pear/CMD.php
 %%TIKIWIKI%%/lib/pear/DB.php
 %%TIKIWIKI%%/lib/pear/DB/IDEAS
 %%TIKIWIKI%%/lib/pear/DB/MAINTAINERS
@@ -1946,6 +1939,7 @@
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_countdown.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_div.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_dl.php
+%%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_events.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_example.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_fancytable.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_flash.php
@@ -3609,7 +3603,6 @@
 @dirrm %%TIKIWIKI%%/lib/chat
 @dirrm %%TIKIWIKI%%/lib/charts
 @dirrm %%TIKIWIKI%%/lib/categories
-@dirrm %%TIKIWIKI%%/lib/calendar/iCal
 @dirrm %%TIKIWIKI%%/lib/calendar
 @dirrm %%TIKIWIKI%%/lib/cache
 @dirrm %%TIKIWIKI%%/lib/bookmarks
@@ -3665,6 +3658,7 @@
 @dirrm %%TIKIWIKI%%/lang/hu
 @dirrm %%TIKIWIKI%%/lang/hr
 @dirrm %%TIKIWIKI%%/lang/he
+@dirrm %%TIKIWIKI%%/lang/gl
 @dirrm %%TIKIWIKI%%/lang/fr
 @dirrm %%TIKIWIKI%%/lang/fi
 @dirrm %%TIKIWIKI%%/lang/es
