@@ -19,6 +19,7 @@ COMMENT=	A set of software tools for medical image processing
 
 LIB_DEPENDS=	Xm.2:${PORTSDIR}/x11-toolkits/lesstif
 
+USE_XLIB=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lapack --with-python
