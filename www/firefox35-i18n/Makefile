@@ -7,10 +7,12 @@
 
 PORTNAME=	firefox-i18n
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
+MASTER_SITES=	MOZILLA_EXTENDED/firefox/releases/${PORTVERSION}/linux-i686/xpi \
+		CSME/myports/${DIST_SUBDIR}:alt
 PKGNAMEPREFIX=
-DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
+DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/:C/.*uk-UA.*/&:alt/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -24,7 +26,7 @@ NO_BUILD=	yes
 USE_XPI=	*firefox
 
 FIREFOX_I18N_ALL=	ar bg ca cs da de el en-GB es-AR es-ES eu fi fr fy-NL ga-IE gu-IN hu it \
-			ja ko lt mk mn nb-NO nl nn-NO pl pt-BR ru sk sl sv-SE tr zh-CN zh-TW
+			ja ko lt mk mn nb-NO nl nn-NO pl pt-BR ru sk sl sv-SE tr uk-UA zh-CN zh-TW
 .ifdef PACKAGE_BUILDING
 FIREFOX_I18N?=	all
 .else
@@ -54,6 +56,7 @@ do-extract:
 			exit 1; \
 		fi \
 	done
+	@${RM} -rf ${WRKSRC}/langpack-uk-UA@firefox.mozilla.org/defaults
 
 do-install:
 	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
