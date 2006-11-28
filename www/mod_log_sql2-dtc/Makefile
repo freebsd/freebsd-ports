@@ -8,7 +8,7 @@ PORTNAME=	mod_log_sql
 PORTVERSION=	1.100
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
-PKGNAMESUFFIX=	dtc
+PKGNAMESUFFIX=	-dtc
 
 MAINTAINER=	scrappy@freebsd.org
 COMMENT=	Allows Apache to log to a MySQL database
