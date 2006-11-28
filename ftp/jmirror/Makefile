@@ -15,6 +15,9 @@ COMMENT=	FTP mirroring program written in PERL (REQUIRES PERL5,Net::FTP)
 
 RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2006-12-28
+
 USE_PERL5=	YES
 NO_BUILD=	YES
 PLIST_FILES=	bin/jmirror %%EXAMPLESDIR%%/sample.jmirror.conf
