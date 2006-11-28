@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.2.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -88,12 +89,6 @@ PLIST_SUB+=	WITH_FAX="@comment "
 MAKE_ENV+=	WITH_FAX=1
 LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp
 PLIST_SUB+=	WITH_FAX=""
-.endif
-
-.if ${OSVERSION} >= 500036
-PLIST_SUB+=	NEWGCC=""
-.else
-PLIST_SUB+=	NEWGCC="@comment "
 .endif
 
 post-patch:
