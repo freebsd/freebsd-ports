@@ -1,11 +1,13 @@
---- man/Makefile.in.orig	Thu Dec 22 16:04:55 2005
-+++ man/Makefile.in	Thu Dec 22 16:05:21 2005
-@@ -321,7 +321,7 @@
+--- man/Makefile.in.orig	Fri Nov  3 03:18:34 2006
++++ man/Makefile.in	Mon Nov 27 23:01:29 2006
+@@ -327,8 +327,8 @@
  vio_dir = @vio_dir@
  vio_libs = @vio_libs@
  zlib_dir = @zlib_dir@
 -man1_MANS = @man1_files@
+-man8_MANS = @man8_files@
 +man1_MANS =
- EXTRA_DIST = $(man1_MANS)
++man8_MANS =
+ EXTRA_DIST = $(man1_MANS) $(man8_MANS)
  all: all-am
  
