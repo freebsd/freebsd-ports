@@ -125,6 +125,7 @@
     SUBDIR += diskcheckd
     SUBDIR += diskmark
     SUBDIR += diskprep
+    SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
     SUBDIR += diskusage
