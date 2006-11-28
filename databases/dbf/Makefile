@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show and convert the content of dBASE III, IV, and 5.0 files
 
+DEPRECATED=	old distfile disappeared, the rerolled one is corrupt
+EXPIRATION_DATE=	2006-12-27
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PLIST_FILES=	bin/dbf
