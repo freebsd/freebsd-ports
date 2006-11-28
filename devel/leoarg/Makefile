@@ -16,6 +16,9 @@ DISTNAME=	LeoArg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A class for parsing command lines
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2006-12-27
+
 USE_GNOME=	gnometarget lthack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
