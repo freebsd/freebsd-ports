@@ -7,7 +7,7 @@
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	2.3b
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/	\
@@ -25,6 +25,8 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5	\
 		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx
+
+CONFLICTS=	p5-FuzzyOcr-devel-[0-9]*
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -55,8 +57,10 @@ post-patch:
 	                  -e 's,/bin/grep,/usr/bin/grep,g'		\
 	                  -e 's,/etc/mail,${LOCALBASE}/etc/mail,g'	\
 	                  ${WRKSRC}/FuzzyOcr.??
-	@${REINPLACE_CMD} -e 's,package FuzzyOcr;,package Mail::SpamAssassin::Plugin::FuzzyOcr;,'	\
+	@${REINPLACE_CMD} -e 's,package FuzzyOcr;,package Mail::SpamAssassin::Plugin::FuzzyOcr;,'			\
 	                 ${WRKSRC}/FuzzyOcr.pm
+	@${REINPLACE_CMD} -e 's,loadplugin FuzzyOcr FuzzyOcr\.pm,loadplugin Mail::SpamAssassin::Plugin::FuzzyOcr,'	\
+	                  ${WRKSRC}/FuzzyOcr.cf
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
