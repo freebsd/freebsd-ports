@@ -17,6 +17,9 @@ COMMENT=	A collection of programs to manipulate audio files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtsp.a:${PORTSDIR}/audio/afsp
 
+DEPRECATED=	is unfetchable and the project homepage disappeared
+EXPIRATION_DATE=	2006-12-27
+
 USE_GMAKE=	yes
 MAKE_ENV=	AFSP_INCLUDE_PATH="${LOCALBASE}/include" \
 		AFSP_LIBRARY_PATH="${LOCALBASE}/lib"
