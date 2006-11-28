@@ -391,6 +391,7 @@
     SUBDIR += portell
     SUBDIR += portless
     SUBDIR += posixtestsuite
+    SUBDIR += proj4
     SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += py-distutils

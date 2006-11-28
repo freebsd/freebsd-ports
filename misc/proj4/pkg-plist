@@ -1,0 +1,11 @@
+bin/geod
+bin/nad2nad
+bin/proj
+include/projects.h
+lib/libproj.a
+lib/proj.4/GL27
+lib/proj.4/nad27
+lib/proj.4/nad83
+lib/proj.4/proj_def.dat
+lib/proj.4/world
+@dirrm lib/proj.4
