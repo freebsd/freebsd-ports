@@ -44,17 +44,15 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Author reports:</p>
+	<p>Werner Koch reports:</p>
 	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000241.html">
-	  <p>When running GnuPG interactively, special crafted messages may be used
-to crash gpg or gpg2.  Running gpg in batch mode, as done by all
-software using gpg as a backend (e.g. mailers), is not affected by
-this bug.
-
-Exploiting this overflow seems to be possible.
-
-gpg-agent, gpgsm, gpgv or other tools from the GnuPG suite are not
-affected.</p>
+	  <p>When running GnuPG interactively, special crafted
+	    messages may be used to crash gpg or gpg2.	Running gpg in
+	    batch mode, as done by all software using gpg as a backend
+	    (e.g. mailers), is not affected by this bug.</p>
+	  <p>Exploiting this overflow seems to be possible.</p>
+	  <p>gpg-agent, gpgsm, gpgv or other tools from the GnuPG
+	    suite are not affected.</p>
 	</blockquote>
       </body>
     </description>
