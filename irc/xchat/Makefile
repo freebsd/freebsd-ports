@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	2.6.8
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://xchat.org/files/source/2.6/
@@ -70,6 +71,7 @@ PLIST_SUB+=	DBUS="@comment "
 
 .if !defined(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+CONFIGURE_ARGS+=--enable-spell=gtkspell
 .else
 CONFIGURE_ARGS+=--disable-spell
 .endif
