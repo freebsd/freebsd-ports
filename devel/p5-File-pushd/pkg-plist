@@ -1,4 +1,5 @@
 %%SITE_PERL%%/File/pushd.pm
+%%SITE_PERL%%/File/pushd.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/pushd/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/pushd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
