@@ -32,7 +32,7 @@ USE_RC_SUBR=	postfix.sh
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when
 # make config is run (happens first time port is built, too)
-.for o in SASL SASL2 SASLKRB SASLKRB5 SASLKRB5MIT SPF TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
+.for o in SASL SASL2 SASLKRB SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
 STATUS_${o}=off
 .endfor
 .if defined(POSTFIX_OPTIONS)
