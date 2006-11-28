@@ -16,7 +16,6 @@ COMMENT=	Generic Apache2 Request Library
 
 USE_APACHE=	2.0+
 USE_LDCONFIG=yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS}
 
