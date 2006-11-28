@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Call Utility
 
+DEPRECATED=	is unfetchable and project homepage disappeared
+EXPIRATION_DATE=	2006-12-27
+
 MAN1=		ecu.1
 
 do-configure:

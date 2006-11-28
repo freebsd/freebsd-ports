@@ -20,12 +20,3 @@
     late 1990.	It also	fares well, though imperfectly,	with Sun and VT-100
     in-band video control sequences.  Standards	are great: everybody should
     have one, especially if they call it "ANSI."
-
-    The	program	supports almost	any local terminal (console) which can be
-    described in a termcap database entry.  For	more information, refer	to
-    "Supported Terminals."
-
-    ECU	supports numerous file transfer	protocols: as of this writing,
-    XMODEM, XMODEM/CRC,	XMODEM-1K, YMODEM/CRC Batch, ZMODEM/CRC-16,
-    ZMODEM/CRC-32, Kermit and SEAlink are supported.
-
