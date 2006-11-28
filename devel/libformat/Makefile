@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME:S/^lib//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library that supports printf style like format printing
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2006-12-27
+
 MAKEFILE=	${FILESDIR}/Makefile.lib
 USE_LDCONFIG=	yes
 
