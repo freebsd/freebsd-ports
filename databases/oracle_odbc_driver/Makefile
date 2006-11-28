@@ -19,7 +19,7 @@ LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS=	--with-unixODBC=${LOCALBASE}
 
 BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ORACLE_HOME=	${LOCALBASE}/oracle8-client
