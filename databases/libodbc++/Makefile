@@ -7,7 +7,7 @@
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libodbcxx
@@ -16,7 +16,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C++ class library and toolset for ODBC access to data sources
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
