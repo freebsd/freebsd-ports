@@ -7,7 +7,7 @@
 
 PORTNAME=	popt
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
 		http://rpmfind.net/linux/rpm.org/rpm/dist/%SUBDIR%/ \
@@ -20,33 +20,30 @@ MASTER_SITE_SUBDIR=	rpm-4.1.x
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
-
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--program-prefix=""
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 USE_LDCONFIG=	yes
 
 MAN3=		popt.3
-
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-		--program-prefix=""
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
+# gettext 0.13 or higher
+USE_GETTEXT=	[^0-5]
 PLIST_SUB+=	NLS=""
 .endif
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
 pre-configure:
-	@if [ -n "`${PKG_INFO} -I 'gettext-0.1[012].*' 2>/dev/null`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: requires at least gettext 0.13, please upgrade your installed version."; \
-		${FALSE}; \
-	fi
+# remove check for xgettext - popt do not use it anyway
+	@${REINPLACE_CMD} -e \
+		's:if test ! -f ../rpm.c:if test "1" != "1":' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
