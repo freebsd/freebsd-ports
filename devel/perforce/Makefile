@@ -70,14 +70,18 @@ PLATFORM=	freebsd54x86
 .elif ${OSVERSION} > 400000
 PLATFORM=	freebsd4
 .else
-INGORE=		only supported on FreeBSD 4.x and greater
+IGNORE=		only supported on FreeBSD 4.x and greater
 .endif
+.endif
+
+.if (${ARCH} == amd64) && (${OSVERSION} < 504000)
+IGNORE=		amd64 is only supported on FreeBSD 5.4 and later
 .endif
 
 # Add compatability dependencies.
 .if ${OSVERSION} > 600000
 LIB_DEPENDS+=	c_r.5:${PORTSDIR}/misc/compat5x
-.elif (${OSVERSION} < 540000) && (${OSVERSION} > 500000)
+.elif (${OSVERSION} < 504000) && (${OSVERSION} > 500000)
 LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
