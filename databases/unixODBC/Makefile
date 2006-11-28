@@ -7,6 +7,7 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.2.12
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
@@ -42,6 +43,9 @@ CONFIGURE_ARGS+=	--enable-threads=yes
 .else
 CONFIGURE_ARGS+=	--enable-threads=no
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,@MSQL_TRUE@lib_LTLIBRARIES,#@MSQL_TRUE@lib_LTLIBRARIES,' ${WRKSRC}/Drivers/MiniSQL/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
