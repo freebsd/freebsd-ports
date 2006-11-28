@@ -1,0 +1,11 @@
+
+IMPORTANT NOTE FOR ADMINS UPGRADING FROM 1.X->2.X!!!
+
+      *) Don't forget to update the database using a script from
+         %%DATADIR%%/sql/
+      *) Many programs have been renamed and their arguments changed.
+      *) Read the upgrading notes.
+      *) Don't be careless with this upgrade or mail will be lost!
+      *) dbmail can be controled by setting dbmail_imapd_enable,
+         dbmail_lmtpd_enable, and/or dbmail_pop3d_enable in
+         /etc/rc.conf.

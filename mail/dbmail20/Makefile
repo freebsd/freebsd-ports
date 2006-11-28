@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.0/
 PKGNAMESUFFIX=	-${DATABASE}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
@@ -19,7 +20,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
 USE_OPENSSL=	YES
 USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CFLAGS += -fPIC
 
@@ -47,6 +48,7 @@ MAN1=			dbmail-smtp.1
 MAN8=			dbmail-imapd.8 dbmail-lmtpd.8 dbmail-pop3d.8 \
 			dbmail-users.8 dbmail-util.8
 MANCOMPRESSED=		no
+SUB_FILES=		pkg-message
 
 pre-everything::
 	@${ECHO} ""
@@ -73,17 +75,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-	@${ECHO} ""
-	@${ECHO} "IMPORTANT NOTE FOR ADMINS UPGRADING FROM 1.X->2.X!!!"
-	@${ECHO} ""
-	@${ECHO} "	*) Don't forget to update the database using a script from"
-	@${ECHO} "	   ${DATADIR}/sql/"
-	@${ECHO} "	*) Many programs have been renamed and their arguments changed."
-	@${ECHO} "	*) Read the upgrading notes."
-	@${ECHO} "	*) Don't be careless with this upgrade or mail will be lost!"
-	@${ECHO} "	*) dbmail can be controled by setting dbmail_imapd_enable,"
-	@${ECHO} "	   dbmail_lmtpd_enable, and/or dbmail_pop3d_enable in"
-	@${ECHO} "	   /etc/rc.conf."
-	@${ECHO} ""
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
