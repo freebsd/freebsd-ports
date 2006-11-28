@@ -11,6 +11,8 @@ bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify/EN.pm
 %%SITE_PERL%%/Lingua/Identify/EO.pm
 %%SITE_PERL%%/Lingua/Identify/ES.pm
+%%SITE_PERL%%/Lingua/Identify/ET.pm
+%%SITE_PERL%%/Lingua/Identify/EU.pm
 %%SITE_PERL%%/Lingua/Identify/FI.pm
 %%SITE_PERL%%/Lingua/Identify/FR.pm
 %%SITE_PERL%%/Lingua/Identify/FY.pm
@@ -21,6 +23,7 @@ bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify/IS.pm
 %%SITE_PERL%%/Lingua/Identify/IT.pm
 %%SITE_PERL%%/Lingua/Identify/LA.pm
+%%SITE_PERL%%/Lingua/Identify/LV.pm
 %%SITE_PERL%%/Lingua/Identify/MS.pm
 %%SITE_PERL%%/Lingua/Identify/NL.pm
 %%SITE_PERL%%/Lingua/Identify/NO.pm
