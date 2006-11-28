@@ -46,6 +46,29 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
 
+OPTIONS=	X11				"X11 support" on \
+		IMAGEMAGICK_PERL		"Perl support" on \
+		IMAGEMAGICK_MODULES		"Modules support" off \
+		IMAGEMAGICK_BZLIB		"Bzlib support" on \
+		IMAGEMAGICK_16BIT_PIXEL		"16bit pixel support" on \
+		IMAGEMAGICK_LCMS		"LCMS support" on \
+		IMAGEMAGICK_TTF			"Freetype support" on \
+		IMAGEMAGICK_FONTCONFIG		"Fontconfig support" on \
+		IMAGEMAGICK_JPEG		"JPG format support" on \
+		IMAGEMAGICK_PNG			"PNG format support" on \
+		IMAGEMAGICK_TIFF		"TIFF format support" on \
+		IMAGEMAGICK_FPX			"FPX format support" on \
+		IMAGEMAGICK_JBIG		"JBIG format support" on \
+		IMAGEMAGICK_JPEG2000		"JPEG2000 format support" on \
+		IMAGEMAGICK_DOT		"GraphViz dot graphs support" off \
+		IMAGEMAGICK_WMF			"WMF format support" off \
+		IMAGEMAGICK_SVG			"SVG format support" off \
+		IMAGEMAGICK_DPS		"DPS (Display PostScript) support" on \
+		IMAGEMAGICK_PDF			"PDF format support" on \
+		IMAGEMAGICK_MPEG2		"MPEG2 format support" on
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_IMAGEMAGICK_PERL)
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
 PLIST_SUB+=		WITH_PERL=''
@@ -294,4 +317,4 @@ post-install:
 	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q16/filters/.keep
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
