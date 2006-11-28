@@ -1,0 +1,17 @@
+Scrub iteratively writes patterns on files or disk devices to make retrieving
+the data more difficult. Scrub operates in one of three modes:
+
+1. The special file corresponding to an entire disk is scrubbed and
+   all data on it is destroyed. This mode is selected if file is a
+   character or block special file. This is the most effective method.
+2. A regular file is scrubbed and only the data in the file (and optionally
+   its name in the directory entry) is destroyed. The file size is rounded up
+   to fill out the last file system block. This mode is selected if file is a
+   regular file.
+3. A file is created, expanded until the file system is full, then scrubbed as
+   in item 2. This mode is selected with the -X option.
+
+Scrub implements user-selectable pattern algorithms that are compliant with
+DoD 5520.22-M or NNSA NAP-14.x.
+
+WWW: http://www.llnl.gov/linux/scrub/scrub.html
