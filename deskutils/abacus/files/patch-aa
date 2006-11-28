@@ -1,5 +1,5 @@
---- Makefile.options.orig	Wed Oct 21 05:19:08 1998
-+++ Makefile.options	Fri Aug  4 04:53:59 2000
+--- Makefile.options.orig	Tue Oct 20 22:19:08 1998
++++ Makefile.options	Tue Nov 28 06:56:07 2006
 @@ -3,22 +3,22 @@
  #
  
@@ -33,7 +33,8 @@
  
  # Add extra include dirs here
 -IFLAGS = -I$(IDIR)
-+IFLAGS = -I$(IDIR) -I$(X11BASE)/include -I$(LOCALBASE)/include/tcl8.2 -I$(LOCALBASE)/include/tk8.2
++IFLAGS = -I$(IDIR) ${CFLAGS}
  
  # Add extra directories where you want the abacus to search for libraries here
- LFLAGS = -L/usr/local/lib -L/usr/X11R6/lib -L$(LIBDIR) -L.
+-LFLAGS = -L/usr/local/lib -L/usr/X11R6/lib -L$(LIBDIR) -L.
++LFLAGS = ${LDFLAGS} -L$(LIBDIR) -L.
