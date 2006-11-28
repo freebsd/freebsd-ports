@@ -15,7 +15,9 @@ DISTNAME=	dist10
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG layer I, II and III audio file encoder
 
-RESTRICTED=	"Condition is not clear"
+RESTRICTED=	Condition is not clear
+DEPRECATED=	is unfetchable and has no homepage
+EXPIRATION_DATE=	2006-12-27
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lsf/encoder
 
