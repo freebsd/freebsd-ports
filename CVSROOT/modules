@@ -1855,6 +1855,7 @@ disco		ports/net-mgmt/disco
 diskcheckd	ports/sysutils/diskcheckd
 diskmark	ports/sysutils/diskmark
 diskprep	ports/sysutils/diskprep
+diskscrub	ports/sysutils/diskscrub
 disktool	ports/sysutils/disktool
 disktype	ports/sysutils/disktype
 diskusage	ports/sysutils/diskusage
