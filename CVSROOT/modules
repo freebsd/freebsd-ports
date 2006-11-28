@@ -11847,6 +11847,7 @@ proggy_fonts	ports/x11-fonts/proggy_fonts
 progsreiserfs	ports/sysutils/progsreiserfs
 proguard	ports/java/proguard
 proj		ports/graphics/proj
+proj4		ports/misc/proj4
 projectcenter.app	ports/devel/projectcenter.app
 projectionlib	ports/misc/projectionlib
 projectmanager	ports/devel/projectmanager
