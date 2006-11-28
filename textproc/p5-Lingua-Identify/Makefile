@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-Identify
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -36,6 +36,8 @@ MAN3=	Lingua::Identify.3 \
 	Lingua::Identify::EN.3 \
 	Lingua::Identify::EO.3 \
 	Lingua::Identify::ES.3 \
+	Lingua::Identify::ET.3 \
+	Lingua::Identify::EU.3 \
 	Lingua::Identify::FI.3 \
 	Lingua::Identify::FR.3 \
 	Lingua::Identify::FY.3 \
@@ -46,6 +48,7 @@ MAN3=	Lingua::Identify.3 \
 	Lingua::Identify::IS.3 \
 	Lingua::Identify::IT.3 \
 	Lingua::Identify::LA.3 \
+	Lingua::Identify::LV.3 \
 	Lingua::Identify::MS.3 \
 	Lingua::Identify::NL.3 \
 	Lingua::Identify::NO.3 \
