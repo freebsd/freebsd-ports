@@ -390,7 +390,6 @@
     SUBDIR += porteasy
     SUBDIR += portell
     SUBDIR += portless
-    SUBDIR += position
     SUBDIR += posixtestsuite
     SUBDIR += proj4
     SUBDIR += projectionlib
