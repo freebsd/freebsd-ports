@@ -12,7 +12,7 @@ MASTER_SITES=	http://jetmore.org/john/code/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Swiss Army Knife SMTP transaction tester
 
 PLIST_FILES=	bin/${PORTNAME}
