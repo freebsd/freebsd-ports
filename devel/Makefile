@@ -1645,6 +1645,7 @@
     SUBDIR += pmake
     SUBDIR += pmd
     SUBDIR += pmk
+    SUBDIR += poco
     SUBDIR += popt
     SUBDIR += portcheckout
     SUBDIR += portlet-api
