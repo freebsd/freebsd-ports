@@ -28,5 +28,7 @@ post-patch:
 	${SCRIPTDIR}/nomalloc $(WRKSRC) 2>&1 > /dev/zero
 	@${ECHO_MSG} removing unneccessary DependTarget from Imakefile-s
 	${SCRIPTDIR}/noextradepend $(WRKSRC) 2>&1 > /dev/zero
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+		-e 's|CcCmd gcc|CcCmd ${CC}|' '${WRKSRC}/XDiary.tmpl'
 
 .include <bsd.port.mk>
