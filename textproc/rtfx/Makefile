@@ -13,7 +13,7 @@ MASTER_SITES=	http://memberwebs.com/nielsen/software/rtfx/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An RTF to XML converter
 
-LIB_DEPENDS=	mba.1:${PORTSDIR}/devel/libmba
+LIB_DEPENDS=	mba:${PORTSDIR}/devel/libmba
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --datarootdir=${PREFIX}
