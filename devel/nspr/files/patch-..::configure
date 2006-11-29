@@ -1,6 +1,6 @@
---- ../configure.orig	Thu Aug  4 21:32:00 2005
-+++ ../configure	Thu Aug  4 21:35:41 2005
-@@ -3379,16 +3379,21 @@
+--- ../configure.orig	Tue Nov 14 10:37:41 2006
++++ ../configure	Mon Nov 27 22:52:52 2006
+@@ -3466,16 +3466,21 @@
  #define HAVE_SOCKLEN_T 1
  EOF
  
@@ -24,7 +24,19 @@
      MDCPUCFG_H=_freebsd.cfg
      PR_MD_CSRCS=freebsd.c
      ;;
-@@ -5729,6 +5734,7 @@
+@@ -5467,11 +5472,6 @@
+ #define _THREAD_SAFE 1
+ EOF
+ 
+-	    	    if test "$ac_cv_have_dash_pthread" = "yes"; then
+-	        _PTHREAD_LDFLAGS="-pthread"
+-	    else
+-	        _PTHREAD_LDFLAGS="-lc_r"
+-	    fi
+ 	    ;;
+     *-netbsd*)
+ 	    if test "$ac_cv_have_dash_pthread" = "yes"; then
+@@ -5864,6 +5864,7 @@
  config/nsprincl.mk
  config/nsprincl.sh
  config/nspr-config
