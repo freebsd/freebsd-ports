@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filesys
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	david@dyn-ns.net
+MAINTAINER=	david@trucs.org
 COMMENT=	Perl equivalent of df(2)
 
 PERL_CONFIGURE=	yes
