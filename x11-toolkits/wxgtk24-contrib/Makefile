@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	6
+PORTREVISION=	7
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit contributed libraries

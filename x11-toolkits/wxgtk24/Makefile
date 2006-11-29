@@ -7,7 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.4.2
-PORTREVISION?=	12
+PORTREVISION?=	14
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libtiff=sys \
 		--with-zlib=sys \
 		--with-opengl\
-		--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}
+		--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}\
+		--includedir=${PREFIX}/include/wx-2.4
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
 			  -I${X11BASE}/include \
