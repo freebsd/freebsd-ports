@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.etek.chalmers.se/~e8cal1/sge/files/ \
 		http://www.digitalfanatics.org/cal/sge/files/
-DISTNAME=	sdl030809
+DISTNAME=	sge030809
 
 MAINTAINER=	walkingshadow@grummel.net
 COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
