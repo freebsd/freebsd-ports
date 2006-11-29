@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spoofer
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://spoofer.csail.mit.edu/ CSME
 
@@ -16,7 +16,7 @@ COMMENT=	ANA Spoofer Project testing software
 PLIST_FILES=	bin/spoofer
 PORTDOCS=	README CHANGES
 
-SRC=		spoofer.c util.c trace.c
+SRC=		spoofer.c util.c trace.c net.c
 CFLAGS+=	-D_FBSD
 
 do-build:
