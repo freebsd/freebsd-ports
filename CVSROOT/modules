@@ -11546,6 +11546,7 @@ pnm2ppa		ports/print/pnm2ppa
 po4a		ports/textproc/po4a
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
+poco		ports/devel/poco
 podcastamatic	ports/www/podcastamatic
 podcatcher	ports/multimedia/podcatcher
 poe		ports/multimedia/poe
