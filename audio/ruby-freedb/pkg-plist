@@ -1,8 +1,5 @@
-%%RUBY_SITEARCHLIBDIR%%/freedb_cdrom.so
 %%RUBY_SITELIBDIR%%/freedb.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cd-disc.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cdinfo.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%RUBY_SITEARCHLIBDIR%%/freedb_cdrom.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGELOG
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/blank.html
@@ -23,9 +20,18 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cd-disc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cdinfo.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Freedb.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
