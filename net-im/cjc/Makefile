@@ -6,30 +6,40 @@
 #
 
 PORTNAME=	cjc
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.0.675
 CATEGORIES=	net-im python
-MASTER_SITES=	http://jabberstudio.2nw.net/cjc/ CSME
+MASTER_SITES=	CSME http://jabberstudio.2nw.net/cjc/
+# svn export -r675 http://cjc.jajcus.net/svn/cjc/trunk cjc
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The Console Jabber Client
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.0.0:${PORTSDIR}/net-im/py-pyxmpp
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.0.0.644:${PORTSDIR}/net-im/py-pyxmpp
 
+USE_BZIP2=	yes
 USE_PYTHON=	2.3+
 MAKE_ENV+=	prefix=${PREFIX} pkg_datadir=${DATADIR} INSTALL_DIR="${INSTALL} -d"
 MAKE_ARGS+=	-E prefix -E pkg_datadir -E pkg_docdir -E INSTALL -E INSTALL_DATA \
 		-E INSTALL_DIR
 
-.ifdef NOPORTDOCS
-MAKE_ENV+=	pkg_docdir= DOCS=
-MAKE_ARGS+=	-E DOCS
-.else
+.ifndef NOPORTDOCS
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 MAKE_ENV+=	pkg_docdir=${DOCSDIR}
-PORTDOCS=	manual.html COPYING ChangeLog README TODO
+PORTDOCS=	manual.html COPYING README TODO
 .endif
 
+post-extract:
+	@${MKDIR} ${WRKSRC}/.svn
+
 post-patch:
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} -e '/^DOCS=/s|=.*|=|' -e '/INSTALL_DATA.*DOCS/d' ${WRKSRC}/Makefile
+.endif
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e "s!/usr/bin/python!${PYTHON_CMD}!"
+	@${REINPLACE_CMD} -e '/^XSLTPROC=/s|=.*|=${LOCALBASE}/bin/xsltproc|' \
+			-e '/^XSL_DIR=/s|=.*|=${LOCALBASE}/share/xsl/docbook/|' ${WRKSRC}/doc/Makefile
+	@${REINPLACE_CMD} -e '/^DOCS=/s|ChangeLog||' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

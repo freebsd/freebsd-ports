@@ -8,4 +8,4 @@ blocks for creating Jabber clients and components. Developer
 uses them to setup XMPP streams, handle incoming events and
 create outgoing stanzas (XMPP "packets").
 
-WWW: http://pyxmpp.jabberstudio.org/
+WWW: http://pyxmpp.jajcus.net/
