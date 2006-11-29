@@ -1,26 +1,28 @@
 bin/gem
 bin/gem_server
 bin/gem_mirror
+bin/gemlock
+bin/gemri
 bin/gemwhich
-bin/generate_yaml_index.rb
+bin/index_gem_repository.rb
 bin/update_rubygems
 lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.1.gem
 lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1/lib/sources.rb
 lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
-@unexec rm %D/lib/ruby/gems/%%RUBY_VER%%/source_cache 2>/dev/null || true
 %%RUBY_SITELIBDIR%%/gemconfigure.rb
+%%RUBY_SITELIBDIR%%/rbconfig/datadir.rb
 %%RUBY_SITELIBDIR%%/rubygems/builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/cmd_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/command.rb
 %%RUBY_SITELIBDIR%%/rubygems/config_file.rb
 %%RUBY_SITELIBDIR%%/rubygems/custom_require.rb
 %%RUBY_SITELIBDIR%%/rubygems/dependency_list.rb
-%%RUBY_SITELIBDIR%%/rubygems/deployment.rb
 %%RUBY_SITELIBDIR%%/rubygems/doc_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/format.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_commands.rb
-%%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_openssl.rb
+%%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
+%%RUBY_SITELIBDIR%%/rubygems/incremental_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/installer.rb
 %%RUBY_SITELIBDIR%%/rubygems/loadpath_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/old_format.rb
@@ -38,12 +40,14 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
 @exec mkdir -p %D/lib/ruby/gems/%%RUBY_VER%%/doc
+@dirrm %%RUBY_SITELIBDIR%%/rbconfig
 @dirrm %%RUBY_SITELIBDIR%%/rubygems
-@dirrm lib/ruby/gems/1.8/specifications
-@dirrm lib/ruby/gems/1.8/gems/sources-0.0.1/lib
-@dirrm lib/ruby/gems/1.8/gems/sources-0.0.1
-@dirrm lib/ruby/gems/1.8/gems
-@dirrm lib/ruby/gems/1.8/doc
-@dirrm lib/ruby/gems/1.8/cache
-@dirrm lib/ruby/gems/1.8
+@dirrmtry lib/ruby/gems/%%RUBY_VER%%/source_cache
+@dirrm lib/ruby/gems/%%RUBY_VER%%/specifications
+@dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1/lib
+@dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1
+@dirrm lib/ruby/gems/%%RUBY_VER%%/gems
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc
+@dirrm lib/ruby/gems/%%RUBY_VER%%/cache
+@dirrm lib/ruby/gems/%%RUBY_VER%%
 @dirrm lib/ruby/gems
