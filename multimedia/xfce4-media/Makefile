@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-media
-PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTVERSION=	0.9.2
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -21,7 +20,8 @@ LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		xine.15:${PORTSDIR}/multimedia/libxine \
 		exo-0.3.0:${PORTSDIR}/x11/libexo
 
-OPTIONS=	TAGLIB	"Enable metadata editing"	off
+OPTIONS=	TAGLIB	"Enable metadata editing"	off \
+		DBUS	"Enable remote control support" off
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
@@ -43,6 +43,13 @@ LIB_DEPENDS+=	tag.5:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS=	--with-taglib
 .else
 CONFIGURE_ARGS=	--without-taglib
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=	--enable-dbus
+.else
+CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
 post-patch:
