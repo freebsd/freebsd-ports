@@ -5,14 +5,20 @@ to the SMB shares of your local network neighborhood.
 Features so far:
 
 - Scanning for (active) workgroups, hosts, and shares
-- Mounting and unmounting of SMB shares, including unmounting all shares at once
-- Access to the files of a mounted SMB share using Konqueror
+- Mounting and unmounting of SMB and CIFS shares, including unmounting
+  all shares at once
+- Access to the files of a mounted SMB or CIFS share using Konqueror
 - Auto-detection of external mounts/unmounts
-- Mounting of recently used shares on start-up
-- Miscellaneous infos about the SMB shares
-- Basic network search
+- Remounting of recently used shares on program start
+- Miscellaneous infos about the mounted SMB and CIFS shares
+- Network search
 - WINS server support
-- Preview of SMB shares
-- Selectable look-up method
+- Preview of shares
+- Selectable look-up and search methods
+- Default login
+- Ability to execute mount and umount SUID root (using super or sudo)
+- Special handling of homes shares
+- Ability to bookmark favorite shares
+- And many more :)
 
 WWW: http://smb4k.berlios.de
