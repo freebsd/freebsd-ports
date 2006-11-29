@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tktreectrl
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	SF
 
@@ -25,7 +25,7 @@ TCL_INCLUDES=	-I${LOCALBASE}/include/tcl${TK_VER} -I${LOCALBASE}/include/tcl${TK
 TK_INCLUDES=	-I${LOCALBASE}/include/tk${TK_VER} -I${LOCALBASE}/include/tk${TK_VER}/generic \
 		-I${LOCALBASE}/include/tk${TK_VER}/unix
 TKPKG=		treectrl${PORTVERSION}
-TKLIBVER=	2.1
+TKLIBVER=	2.2
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}
 USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
 MANN=	treectrl.n
@@ -33,5 +33,7 @@ MANN=	treectrl.n
 post-install:
 	@${LN} -sf ${PREFIX}/lib/${TKPKG}/libtreectrl${TKLIBVER}.so \
 		${PREFIX}/lib/${TKPKG}/libtreectrl${TKLIBVER}.so.0
+	@${LN} -sf ${PREFIX}/lib/${TKPKG}/libtreectrl${TKLIBVER}.so \
+		${PREFIX}/lib/${TKPKG}/libtreectrl.so.0
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 lib/%%TKPKG%%/filelist-bindings.tcl
 lib/%%TKPKG%%/htmldoc/What's New in TkTreeCtrl.html
 lib/%%TKPKG%%/htmldoc/treectrl.html
+lib/%%TKPKG%%/libtreectrl.so.0
 lib/%%TKPKG%%/libtreectrl%%TKLIBVER%%.so
 lib/%%TKPKG%%/libtreectrl%%TKLIBVER%%.so.0
 lib/%%TKPKG%%/pkgIndex.tcl
