@@ -1,4 +1,55 @@
 %%RUBY_SITEARCHLIBDIR%%/musicbrainz.so
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M0000%%RUBY_SHLIBVER%%.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000019.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000020.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000021.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000022.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000023.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000024.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000025.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Error.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Query.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/AUTHORS.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/COPYING.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/ChangeLog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/README.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/TODO.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/musicbrainz_c.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cdlookup.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/findalbum.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/findartist.rb
@@ -9,8 +60,16 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gettrm.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/submittrm.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/TRM.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz/Client.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MusicBrainz
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
