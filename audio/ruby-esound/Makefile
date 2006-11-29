@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby binding to the EsounD library
 
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
@@ -25,23 +25,23 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/ruby-EsounD-${PORTVERSION}
 INSTALL_TARGET=	site-install
 
+REINPLACE_ARGS=	-i ""
+
 DOCS_EN=	esound-0.2.22.patch
 DOCS_JA=	METHODS.ja	README.ja
 
 post-patch:
-	${RUBY} -i -pe 'gsub(%r:\./esd\.so:, "esd")' ${WRKSRC}/test/*.rb
+	${REINPLACE_CMD} -E \
+		-e "s,^(require[[:space:]]+')./esd.so('.*),\1esd\2," \
+		${WRKSRC}/test/*.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test/*.rb ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
-.endfor
+	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${DOCS_JA:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>
