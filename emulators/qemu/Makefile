@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.8.2s.20061102
+PORTVERSION=	0.8.2s.20061128
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.qemu.org/:release \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
 		http://people.freebsd.org/~maho/qemu/:misc
-DISTNAME=	${PORTNAME}-snapshot-2006-11-02_05
+DISTNAME=	${PORTNAME}-snapshot-2006-11-28_05
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -93,7 +93,7 @@ post-patch:
 .if defined(WITH_RTL8139_TIMER)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
 .endif
-.if !defined(WITHOUT_CDROM_DMA)
+.if defined(WITHOUT_CDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
 .endif
 	@${REINPLACE_CMD} -E \
