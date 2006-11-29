@@ -15,7 +15,7 @@ PATCH_SITES=	http://mikmod.raphnet.net/files/
 PATCHFILES=	libmikmod-3.1.11-a.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	david@dyn-ns.net
+MAINTAINER=	david@trucs.org
 COMMENT=	MikMod Sound Library
 
 WANT_GNOME=	yes
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ENV=	SHELL=/bin/sh
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		libmikmod-config.1
 INFO=		mikmod
