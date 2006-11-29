@@ -269,7 +269,7 @@ CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
 #
 
 pre-configure:
-	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
+	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL}
 .if defined(WITH_PGSQL)
 .if defined(WITH_PGSQL_DB)
 	${REINPLACE_CMD} -E -e "s/(#define DB.*)vpopmail(.*)/\1${WITH_PGSQL_DB}\2/" ${WRKSRC}/vpgsql.h

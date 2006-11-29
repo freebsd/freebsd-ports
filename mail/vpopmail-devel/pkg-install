@@ -50,7 +50,7 @@ if (! getpwnam ("alias")) {
 	do checkrpw;  # May exit
 
 	$x = "-u $uids{'alias'}";
-	$result = system ("/usr/sbin/pw useradd alias -g qnofiles -d \"$ENV{PKG_PREFIX}/alias\" -s /nonexistent $x");
+	$result = system ("/usr/sbin/pw useradd alias -g qnofiles -d \"$ENV{PKG_PREFIX}/vpopmail/alias\" -s /nonexistent $x");
 	if ($result) {
 		die "Failed to add user alias as uid $uids{'alias'}\n";
 	}
@@ -61,7 +61,7 @@ foreach $user (keys %users) {
 		do checkrpw;  # May exit
 
 		$x = "-u $uids{$user}";
-		$result = system ("/usr/sbin/pw useradd $user -g $users{$user} -d \"$ENV{PKG_PREFIX}\" -s /nonexistent $x");
+		$result = system ("/usr/sbin/pw useradd $user -g $users{$user} -d \"$ENV{PKG_PREFIX}/vpopmail\" -s /nonexistent $x");
 		if ($result) {
 			die "Failed to add user $user as uid $uids{$user}\n";
 		}
