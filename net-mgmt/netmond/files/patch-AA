@@ -1,5 +1,16 @@
---- dns.c.orig	Mon Aug 25 18:19:04 2003
-+++ dns.c	Tue Sep 16 23:43:05 2003
+--- Makefile.in.orig	Tue Nov 14 17:37:41 2006
++++ Makefile.in	Tue Nov 14 17:37:41 2006
+@@ -47,7 +47,7 @@
+ 
+ NETMOND_C = netmond.c netstate.c event.c session.c mib.c snmp.c router.c \
+ 	trap.c ping.c tcp.c udp.c dns.c radius.c tacacs.c md5.c util.c \
+-	variables.c save.c regex.c malloc.c reconfig.c
++	variables.c save.c regex.c malloc.c reconfig.c pipe.c
+ NETMOND_Y = calc.y parseconf.y
+ NETMOND_L = scanconf.l
+ NETMOND_G = version.c
+--- dns.c.orig	Tue Nov 14 17:37:41 2006
++++ dns.c	Tue Nov 14 17:37:41 2006
 @@ -149,6 +149,8 @@
  {
  	SESSION *sd = method->sd;
@@ -44,8 +55,27 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.send = dns_send;
---- netmon.h.orig	Tue Aug 26 10:00:38 2003
-+++ netmon.h	Wed Sep 17 00:39:11 2003
+@@ -332,6 +346,7 @@
+ 	IPPROTO_UDP,	/* network protocol */
+ 	NAMESERVER_PORT, /* server port */
+ 	0, 0,		/* timeout and retries undefined yet */
++        NULL,NULL,       /* when variables unused */
+ 	{ 0, 0 },	/* no parameters used */
+ 
+ 	/* Non-initialized data */
+--- event.c.orig	Tue Nov 14 17:37:41 2006
++++ event.c	Tue Nov 14 17:37:41 2006
+@@ -288,7 +288,7 @@
+ #ifdef	HAVE_PTHREAD
+ 	pthread_mutex_lock(&localtime_lock);
+ #endif
+-	tm = localtime(&tvp->tv_sec);
++	tm = localtime((time_t *)&tvp->tv_sec);
+ 	defect = tm->tm_sec + 60 * tm->tm_min + 3600 * tm->tm_hour + off;
+ #ifdef	HAVE_PTHREAD
+ 	pthread_mutex_unlock(&localtime_lock);
+--- netmon.h.orig	Tue Nov 14 17:37:41 2006
++++ netmon.h	Tue Nov 14 17:37:41 2006
 @@ -14,6 +14,9 @@
  #include <sys/socket.h>
  #include <sys/time.h>
@@ -61,14 +91,33 @@
  
  #define	NETMON			"netmon"
 -#define	DEFAULT_CONFIG		"/etc/netmon.conf"
-+#define	DEFAULT_CONFIG		"/usr/local/etc/netmon.conf"
++#define	DEFAULT_CONFIG		"/usr/local/etc/netmond.conf"
 +#define USERNAME		"netmon"
 +#define GROUPNAME		"netmon"
 +#define PIDFILE_PATH		"/var/run"
  #define	DEFAULT_WATCHDOG	600	/* 10 min */
  
  #define	POLLING_MIN		30	/* 30 sec */
-@@ -385,6 +391,7 @@
+@@ -90,6 +96,8 @@
+ 
+ #define	STATE_UP	1
+ #define	STATE_DOWN	2
++#define	STATE_DEGRADED	3
++#define	STATE_WARNING	4
+ #define	BGP_ESTABLISHED	6
+ #define	ENV_NOTPRESENT	5
+ 
+@@ -111,6 +119,9 @@
+ #define	TYPE_ENVFAN		9
+ #define	TYPE_ENVPS		10
+ 
++#define WHEN_PROTO		10099
++#define PIPE_PROTO		10098
++
+ struct object_ent;
+ struct method_ent;
+ 
+@@ -385,13 +396,14 @@
  	struct method_ent *method;	/* session method */
  	int sock;		/* socket file descriptor */
  	struct sockaddr peer;	/* address of peer */
@@ -76,7 +125,24 @@
  	long timeout;		/* number of microseconds until first timeout */
  	int retries;		/* number of retries before timeout */
  	int (*connect) __P((struct session_ent *));
-@@ -530,7 +537,9 @@
+ 	int (*send) __P((struct session_ent *, REQUEST *));
+ 	int (*recv) __P((struct session_ent *));
+ 	void (*read) __P((int, struct session_ent *, int));
+-
++	pid_t	pid;
+ 	/* returned values */
+ 	int data_int;		/* data length or chat-script matchs */
+ 	char *data_ptr;		/* pointer to resulting data if any */
+@@ -428,6 +440,8 @@
+ 	u_short	rport;		/* remote port number, 0=unused */
+ 	int timeout;		/* number of seconds until first timeout */
+ 	int retries;		/* number of retries before timeout */
++	char *when;	        /* condition string */
++	char *when_fmt;         /* message when condition is true */
+ 	union {
+ 		struct ping_param {
+ 			short send;	/* ICMP echo request packets to send */
+@@ -530,7 +544,9 @@
  	char *descr;		/* object description */
  	char *datadir;		/* directory where store data */
  	char *address;		/* domain name or dotted IP address */
@@ -86,7 +152,17 @@
  	int polling;		/* polling period in seconds */
  	int saving;		/* saving period in seconds */
  	int sync;		/* polling counter to synchronize saving */
-@@ -574,7 +583,14 @@
+@@ -544,6 +560,9 @@
+ 
+ 	int state;		/* current operational status (UP/DOWN/...) */
+ 	int prev_state;		/* previous operational status */
++	int mths_ok;		/* count of Ok finished methods */
++	int mths_fail;		/* count of Failed methods */
++	int smths_fail;		/* count of Failed services methods */
+ 	TIMEVAL last_request;	/* last time method requested */
+ 	TIMEVAL prev_request;	/* previous time method requested */
+ 	TIMEVAL last_reply;	/* last time method reply */
+@@ -574,7 +593,14 @@
  
  typedef	struct config_ent {
  	char *rootdir;		/* default work directory */
@@ -101,7 +177,7 @@
  	int polling;		/* default polling interval in seconds */
  	int saving;		/* default saving interval in seconds */
  	int timeout;		/* default timeout in seconds */
-@@ -582,9 +598,13 @@
+@@ -582,9 +608,13 @@
  
  	int enable_traps;	/* enable SNMP traps */
  	int source_traps;	/* match src-addr and agent-addr of traps */
@@ -115,8 +191,28 @@
  	int ns_timo;		/* client timeout in seconds */
  	GROUP_REF *ns_acl;	/* netstate client access list */
  
---- netmond.c.orig	Fri Aug 22 15:49:23 2003
-+++ netmond.c	Tue Sep 16 23:43:05 2003
+@@ -733,6 +763,19 @@
+ void tcp_start __P((METHOD *));
+ void tcp_stop __P((METHOD *));
+ int match_expect __P((SESSION *, CHATSCRIPT *, char *));
++int tcp_connect __P((SESSION *));
++int tcp_send __P((SESSION *,REQUEST *));
++int tcp_recv __P((SESSION *));
++void tcp_close __P((int, SESSION *, int));
++
++/* pipe.c */
++int pipe_init __P((OBJECT *, METHOD *));
++void pipe_start __P((METHOD *));
++void pipe_stop __P((METHOD *));
++
++int when_init __P((OBJECT *, METHOD *));
++void when_start __P((METHOD *));
++void when_stop __P((METHOD *));
+ 
+ /* udp.c */
+ int udp_init __P((OBJECT *, METHOD *));
+--- netmond.c.orig	Tue Nov 14 17:37:41 2006
++++ netmond.c	Tue Nov 14 17:37:41 2006
 @@ -79,7 +79,6 @@
  static int reconfig_pending;
  static int watchdog_timeout;
@@ -135,7 +231,134 @@
  	if ((fp = fopen(buf, "w")) != NULL) {
  		fprintf(fp, "%d\n", (int)mypid);
  		fclose(fp);
-@@ -831,6 +829,20 @@
+@@ -626,6 +624,11 @@
+ 	TIMEVAL tv;
+ 	VARIABLE *var;
+ 	OBJECT *service;
++	INTERFACE *interface;
++	BGP_AS	*bgp;
++	BGP_PEER *bgp_peer;
++	ENV_MON	*env;
++	ENV_GAUGE *gauge;
+ 
+ 	/* current timestamp */
+ 	gettimeofday(&tv, NULL);
+@@ -638,19 +641,38 @@
+ 		/*
+ 		 * Method list aborted or Start Trap received.
+ 		 */
++	    object->mths_fail++;
++	}  else {
++	    object->mths_ok++;
++	}
++	if (method->next) {
++		/*
++		 * Advance to next object method.
++		 */		 
++		method = method->next;
++		(*method->start)(method);
++		return;
++	}
++
++//	report(LOG_ERR, "method_finished: '%s' ok=%d f=%d sf=%d",object->name,object->mths_ok,object->mths_fail);
++	/*
++	 * Method list done.
++	 */
++
++	object->prev_reply = object->last_reply;
++	object->last_reply = tv; /* last reply timestamp */
+ 
+-		/* update object operational status */
+-		object->prev_state = object->state;
++	/* update object operational status */
++	object->prev_state = object->state;
++	if ( object->mths_ok == 0 ) {
+ 		object->state = STATE_DOWN;
+ 
+ 		if (object->state != object->prev_state)
+ 			object->last_change = tv;
+-
+ #ifdef	DEBUG
+ 		if (object->prev_state != STATE_DOWN)
+ 			dprintf(("object \"%s\" change state to DOWN\n", object->name));
+ #endif
+-
+ 		/* stop anything here */
+ 		object_stop(object);
+ 
+@@ -670,29 +692,48 @@
+ 			add_event(&tv, start_method_list, object);
+ 		}
+ 		return;
+-	}
+-
+-	if (method->next) {
+-		/*
+-		 * Advance to next object method.
+-		 */
+-
+-		method = method->next;
+-		(*method->start)(method);
+-		return;
+-	}
+-
+-	/*
+-	 * Method list done.
+-	 */
+-
+-	object->prev_reply = object->last_reply;
+-	object->last_reply = tv; /* last reply timestamp */
+-
+-	/* update object operational status */
+-	object->prev_state = object->state;
+-	object->state = STATE_UP;
+-
++	} else {
++	    if ( object->mths_fail ) {
++		object->state = STATE_DEGRADED;
++	    } else {
++		object->state = STATE_UP;
++		for (service = object->service; service; service = service->next) {
++		    if (service->state != STATE_UP) {
++			object->state = STATE_WARNING;		
++			break;
++		    }
++		}
++		for (interface = object->interface; interface; interface = interface->next) {
++			if (interface->state != STATE_UP) {
++			    object->state = STATE_WARNING;		
++			    break;
++			}
++		}
++		for ( bgp = object->bgp; bgp; bgp = bgp->next) {    
++		    for ( bgp_peer = bgp->peer; bgp_peer; bgp_peer=bgp_peer->next) {
++			    if ( bgp_peer->state != BGP_ESTABLISHED){
++				object->state = STATE_WARNING;		
++				break;
++			    }
++		    }
++			if (object->state == STATE_WARNING)
++			    break;		    
++		}	    
++		for (env = object->env; env; env = env->next) {
++		    for( gauge = env->gauge; gauge; gauge=gauge->next) {
++			if (gauge->state != STATE_UP) {
++			    object->state = STATE_WARNING;		
++			    break;
++			}
++		    }	
++		    if (object->state == STATE_WARNING)
++			    break;		    
++		}	
++	    }
++	}
++	object->mths_ok = 0;
++	object->mths_fail = 0;
++	object->smths_fail = 0;
+ 	if (object->state != object->prev_state)
+ 		object->last_change = tv;
+ 
+@@ -831,6 +872,20 @@
  		/* make session leader to be able killpg() latter */
  		setsid();
  
@@ -156,7 +379,7 @@
  		execve(file, av, environ);
  		report(LOG_ERR, "execve %s: %m", file);
  		_exit(127);
-@@ -928,8 +940,7 @@
+@@ -928,8 +983,7 @@
  #endif
  	{
  		char pidfile[100];
@@ -166,8 +389,8 @@
  		(void)unlink(pidfile);
  		report(LOG_CRIT, "aborted by signal %d", sig);
  	} else	report(LOG_INFO, "interrupted by signal %d", sig);
---- netstate.c.orig	Tue Aug 26 10:54:09 2003
-+++ netstate.c	Thu Sep 25 15:21:39 2003
+--- netstate.c.orig	Tue Nov 14 17:37:41 2006
++++ netstate.c	Tue Nov 14 17:37:41 2006
 @@ -128,7 +128,7 @@
  		memset(&sin, 0, sizeof(sin));
  		sin.sin_family = AF_INET;
@@ -204,9 +427,17 @@
  		next = input;
  		if ((cp = my_strsep(&next, " ")) == NULL) {
  			bad_input++;
---- parseconf.y.orig	Tue Aug 26 10:53:30 2003
-+++ parseconf.y	Wed Sep 17 00:22:40 2003
-@@ -197,11 +197,36 @@
+--- parseconf.y.orig	Tue Nov 14 17:37:41 2006
++++ parseconf.y	Tue Nov 14 17:37:41 2006
+@@ -13,6 +13,7 @@
+ #endif
+ 
+ #include <sys/types.h>
++#include <limits.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <stdio.h>
+@@ -197,11 +198,36 @@
  	BGP_AS *bgp;
  	ENV_MON *env;
  	char *cp, buf[1024];
@@ -243,7 +474,7 @@
  	if (config.polling) {
  		if (!config.timeout)
  			config.timeout = TIMEOUT_DEFAULT;
-@@ -273,6 +298,7 @@
+@@ -273,6 +299,7 @@
  
  		for (service = target->service; service; service = service->next) {
  			service->ip_addr = target->ip_addr;
@@ -251,7 +482,45 @@
  			service->parent = target;
  
  			(void)strcpy(cp, "/");
-@@ -1342,6 +1368,9 @@
+@@ -901,7 +928,9 @@
+ 	char *argument;
+ {
+ 	METHOD *new;
+-
++        char arg_list[1024], *av[MAX_ARGS+2];
++	int ac = 0;
++		
+ 	if ((new = (METHOD *)malloc(sizeof(METHOD))) == NULL) {
+ 		yyerror("Out of memory");
+ 		return NULL;
+@@ -915,10 +944,24 @@
+ 		yyerror("Out of memory");
+ 		return 0;
+ 	}
+-	if (argument)
++	if (argument) {
+ 		new->argument = argument;
+-	else if (new->argument)
++                (void)strncpy(arg_list, argument, sizeof(arg_list));
++		arg_list[sizeof(arg_list)-1] = '\0';
++	} else if (new->argument) {
+ 		new->argument = strdup(new->argument);
++                (void)strncpy(arg_list, new->argument, sizeof(arg_list));
++		arg_list[sizeof(arg_list)-1] = '\0';	
++	} else  arg_list[0] = '\0';
++        av[ac++] = new->name;
++        ac += make_argv(arg_list, (char ***)&av[ac], MAX_ARGS);
++	av[ac] = NULL;
++
++        if (new->when && (new->when = insert_args(new->when, av, ac)) == NULL)
++	        return NULL;
++	if (new->when_fmt && (new->when_fmt = insert_args(new->when_fmt, av, ac)) == NULL)
++                return NULL;
++	
+ 	if (new->chatscript) {
+ 		new->chatscript = dup_chatscript(new->name, new->argument, new->chatscript);
+ 		if (!new->chatscript) return NULL;
+@@ -1342,6 +1385,9 @@
  
  /* Lexical analyzer return values */
  %token TOKEN_ROOTDIR
@@ -261,7 +530,7 @@
  %token TOKEN_TIMEFMT
  %token TOKEN_POLLING
  %token TOKEN_SAVING
-@@ -1354,6 +1383,7 @@
+@@ -1354,6 +1400,7 @@
  
  %token TOKEN_NETSTATE
  %token TOKEN_PORT
@@ -269,7 +538,7 @@
  
  %token TOKEN_SAVE
  %token TOKEN_FILE
-@@ -1365,6 +1395,7 @@
+@@ -1365,6 +1412,7 @@
  
  %token TOKEN_OBJECT
  %token TOKEN_ADDRESS
@@ -277,7 +546,7 @@
  %token TOKEN_DESCRIPTION
  %token TOKEN_SERVICE
  %token TOKEN_INTERFACE
-@@ -1398,6 +1429,7 @@
+@@ -1398,6 +1446,7 @@
  %token TOKEN_V2
  
  %token TOKEN_TRAP
@@ -285,7 +554,7 @@
  %token TOKEN_SOURCECHECK
  %token TOKEN_COMMUNITY
  %token TOKEN_ENTERPRISE
-@@ -1442,6 +1474,60 @@
+@@ -1442,6 +1491,60 @@
  				YYABORT;
  			}
  		}
@@ -346,7 +615,7 @@
  	|	TOKEN_TIMEFMT quoted_string
  		{
  			if (config.timefmt) {
-@@ -1531,6 +1617,17 @@
+@@ -1531,6 +1634,17 @@
  		{
  			config.source_traps = 1;
  		}
@@ -364,7 +633,7 @@
  	|	TOKEN_TRAP legal_string '{' trap_config '}'
  		{
  			trap.name = $2;
-@@ -1556,6 +1653,13 @@
+@@ -1556,6 +1670,13 @@
  				yyerror("object address unspecified");
  				YYABORT;
  			}
@@ -378,7 +647,7 @@
  /*			if ((object.interface || object.ifgroup ||
  			     object.bgp || object.env) &&
  			    !find_method(object.method_list, "ROUTER")) {
-@@ -1637,6 +1741,17 @@
+@@ -1637,6 +1758,17 @@
  				YYABORT;
  			}
  		}
@@ -396,7 +665,79 @@
  	|	TOKEN_PERMIT quoted_string
  		{
  			/* for backward compatibility */
-@@ -2095,6 +2210,18 @@
+@@ -1763,6 +1895,19 @@
+ 			method.start = echo_start;
+ 			method.stop = echo_stop;
+ 		}
++	|	TOKEN_PIPE quoted_string
++		{
++			if (method.protocol) {
++				yyerror("method protocol duplicated");
++				YYABORT;
++			}
++			method.protocol = PIPE_PROTO;
++			method.when = $2;
++			method.init = pipe_init;
++			method.start = pipe_start;
++			method.stop = tcp_stop;
++			method.retries = 1;		
++		}
+ 	|	TOKEN_PORT TOKEN_NUMBER
+ 		{
+ 			if (method.protocol &&
+@@ -1808,12 +1953,30 @@
+ 				}
+ 			}
+ 		}
++	|	TOKEN_WHEN multiline_string TOKEN_NUMBER  optional_string
++		{
++			method.protocol = WHEN_PROTO;
++			if (method.when) {
++				yyerror("Method 'when condition' duplicated");
++				YYABORT;
++			}
++			method.init = when_init;
++			method.start = when_start;
++			method.stop = when_stop;
++			method.when = $2;
++			method.timeout = $3;
++			method.when_fmt = $4;
++		}
+ 	|	TOKEN_TIMEOUT TOKEN_NUMBER
+ 		{
+ 			if (method.timeout) {
+ 				yyerror("timeout statement duplicated");
+ 				YYABORT;
+ 			}
++			if (method.protocol == WHEN_PROTO) {
++				yyerror("timeout was defined in WHEN statement");
++				YYABORT;			
++			}
+ 			if ($2 < 1 || $2 > POLLING_MIN) {
+ 				yyerror("invalid timeout value (min 1 max %d sec.)",
+ 					POLLING_MIN);
+@@ -1827,6 +1990,10 @@
+ 				yyerror("retries statement duplicated");
+ 				YYABORT;
+ 			}
++			if (method.protocol == PIPE_PROTO) {
++				yyerror("no retries possible in PIPE method");
++				YYABORT;			
++			}
+ 			if ($2 < 1 || $2 > POLLING_MIN) {
+ 				yyerror("invalid retries number (min 1 max %d)",
+ 					POLLING_MIN);
+@@ -1838,7 +2005,8 @@
+ 		{
+ 			if (method.protocol &&
+ 			    method.protocol != IPPROTO_TCP &&
+-			    method.protocol != IPPROTO_UDP) {
++			    method.protocol != IPPROTO_UDP &&
++			    method.protocol != PIPE_PROTO) {
+ 				yyerror("no suitable method protocol");
+ 				YYABORT;
+ 			}
+@@ -2095,6 +2263,18 @@
  			}
  			object.address = $2;
  		}
@@ -415,8 +756,26 @@
  	|	TOKEN_POLLING TOKEN_NUMBER
  		{
  			if (object.polling) {
---- ping.c.orig	Fri Aug 22 11:07:53 2003
-+++ ping.c	Tue Sep 16 23:43:05 2003
+@@ -2241,7 +2421,7 @@
+ 		}
+ 	|	TOKEN_INTERFACE TOKEN_NUMBER
+ 		{
+-			if ($2 < 1 || $2 > 65535) {
++			if ($2 < 1 || $2 > INT_MAX) {
+ 				yyerror("interface index out of range");
+ 				YYABORT;
+ 			}
+@@ -2252,7 +2432,7 @@
+ 		}
+ 	|	TOKEN_INTERFACE TOKEN_NUMBER '{' interface_config '}'
+ 		{
+-			if ($2 < 1 || $2 > 65535) {
++			if ($2 < 1 || $2 > INT_MAX ) {
+ 				yyerror("interface index out of range");
+ 				YYABORT;
+ 			}
+--- ping.c.orig	Tue Nov 14 17:37:41 2006
++++ ping.c	Tue Nov 14 17:37:41 2006
 @@ -368,6 +368,7 @@
  	u_char buf[MAX_PACKETSZ];
  	struct ip *ip;
@@ -500,8 +859,25 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.send = echo_send;
---- radius.c.orig	Mon Aug 25 18:20:03 2003
-+++ radius.c	Tue Sep 16 23:43:05 2003
+@@ -798,6 +818,7 @@
+ 	IPPROTO_ICMP,	/* network protocol */
+ 	0,		/* no packet size for built-in method */
+ 	0, 0,		/* timeout and retries undefined yet */
++	NULL,NULL,	/* when variables unused */
+ 	{ 1, 1 },	/* send/expect packet counter */
+ 
+ 	/* Non-initialized data */
+--- radius.c.orig	Tue Nov 14 17:37:41 2006
++++ radius.c	Tue Nov 14 17:37:41 2006
+@@ -33,7 +33,7 @@
+  * RADIUS specification according to RFC2138.
+  */
+ 
+-#define	RADIUSSERVER_PORT	1645	/* 1812 suggested */
++#define	RADIUSSERVER_PORT	1812	/* 1812 suggested */
+ #define	HEADER_LEN		20
+ #define	MIN_PACKETSZ		HEADER_LEN
+ #define	MAX_PACKETSZ		4096
 @@ -208,6 +208,8 @@
  {
  	SESSION *sd = method->sd;
@@ -545,8 +921,16 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.send = radius_send;
---- reconfig.c.orig	Tue Aug 26 10:54:37 2003
-+++ reconfig.c	Wed Sep 17 00:26:06 2003
+@@ -355,6 +368,7 @@
+ 	IPPROTO_UDP,	/* network protocol */
+ 	RADIUSSERVER_PORT, /* server port */
+ 	0, 0,		/* timeout and retries undefined yet */
++        NULL,NULL,       /* when variables unused */
+ 	{ 0, 0 },	/* no parameters used */
+ 
+ 	/* Non-initialized data */
+--- reconfig.c.orig	Tue Nov 14 17:37:41 2006
++++ reconfig.c	Tue Nov 14 17:37:41 2006
 @@ -395,7 +395,7 @@
  	OBJECT *parent;
  	OBJECT *old, *new;
@@ -654,8 +1038,79 @@
  		free_trap_list(obj->trap_list);
  		free_var_list(obj->var_list);
  		free_save_list(obj->save_list);
---- router.c.orig	Mon Aug 25 16:07:07 2003
-+++ router.c	Tue Sep 16 23:43:05 2003
+--- regex.c.orig	Tue Nov 14 17:37:41 2006
++++ regex.c	Tue Nov 14 17:37:41 2006
+@@ -554,12 +554,12 @@
+  * the bitset form, since we may wish to extend it
+  * in the future for other character classifications. 
+  *
+- *	TRUE for 0-9 A-Z a-z _
++ *	TRUE for 0-9 A-Z a-z _ Á-Ñ á-ñ
+  */
+ static char chrtyp[MAXCHR] = {
+-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
+ 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 	0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 
+ 	1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 
+@@ -569,10 +569,23 @@
+ 	1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 
+ 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+ 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+-	1, 1, 1, 0, 0, 0, 0, 0
++	1, 1, 1, 0, 0, 0, 0, 0, 0, 0,	// 120-129
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 130-139
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 140-149
++	0, 0, 0, 1, 0, 0, 0, 0, 0, 0,   // 160-169     163=£
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 1,   // 170-179     179=³
++	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 180-189
++	0, 0, 1, 1, 1, 1, 1, 1, 1, 1,   // 190-199
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 200-209
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 210-219
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 220-229
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 230-239
++	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 240-249
++	1, 1, 1, 1, 1, 1                // 250-255
+ 	};
+ 
+-#define inascii(x)	(0177&(x))
++//#define inascii(x)	(0177&(x))
++#define inascii(x)	(0255&(x))
+ #define iswordc(x) 	chrtyp[inascii(x)]
+ #define isinset(x, y) 	((x)[((y)&BLKIND)>>3] & (1<<((y)&BITIND)))
+ 
+@@ -583,7 +596,7 @@
+ 
+ #define ANYSKIP	2 	/* CLO ANY END ...	   */
+ #define CHRSKIP	3	/* CLO CHR chr END ...	   */
+-#define CCLSKIP 18	/* CLO CCL 16bytes END ... */
++#define CCLSKIP BITBLK+2       /* CLO CCL 32bytes END ... */
+ 
+ static char *
+ pmatch(prog, lp, ap)
+--- regex.h.orig	Tue Nov 14 17:37:41 2006
++++ regex.h	Tue Nov 14 17:37:41 2006
+@@ -21,12 +21,12 @@
+  */
+ #define MAXDFA  1024
+ #define MAXTAG  10
+-#define MAXCHR	128
++#define MAXCHR	256
+ #define CHRBIT	8
+ #define BITBLK	MAXCHR/CHRBIT
+ #define BLKIND	0170
+ #define BITIND	07
+-#define ASCIIB	0177
++#define ASCIIB	0255
+ 
+ typedef /*unsigned*/ char CHAR;
+ 
+--- router.c.orig	Tue Nov 14 17:37:41 2006
++++ router.c	Tue Nov 14 17:37:41 2006
 @@ -2214,6 +2214,8 @@
  	METHOD *method;
  {
@@ -700,8 +1155,16 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.send = snmp_send;
---- scanconf.l.orig	Fri Aug 22 16:37:41 2003
-+++ scanconf.l	Wed Sep 17 00:28:19 2003
+@@ -2359,6 +2371,7 @@
+ 	IPPROTO_UDP,	/* network protocol */
+ 	SNMPSERVER_PORT,/* server port */
+ 	0, 0,		/* timeout and retries undefined yet */
++        NULL,NULL,       /* when variables unused */
+ 	{ SNMP_VERSION_1, /* version number */
+ 	  BATCH_DEFAULT },/* batch value */
+ 
+--- scanconf.l.orig	Tue Nov 14 17:37:41 2006
++++ scanconf.l	Tue Nov 14 17:37:41 2006
 @@ -88,6 +88,9 @@
  
  /* token names */
@@ -762,8 +1225,8 @@
  
  {SOURCECHECK}	{	return TOKEN_SOURCECHECK; }
  
---- session.c.orig	Sat Aug  2 11:26:38 2003
-+++ session.c	Tue Sep 16 23:43:05 2003
+--- session.c.orig	Tue Nov 14 17:37:41 2006
++++ session.c	Tue Nov 14 17:37:42 2006
 @@ -59,6 +59,7 @@
  	curr_session->method = template->method;
  	curr_session->sock = template->sock;
@@ -772,8 +1235,32 @@
  	curr_session->timeout = template->timeout;
  	curr_session->retries = template->retries;
  	curr_session->connect = template->connect;
---- snmp.c.orig	Tue Jul 20 17:51:25 2004
-+++ snmp.c	Thu Aug 12 16:57:35 2004
+@@ -302,7 +303,6 @@
+ 	int active = 0, pending = 0;
+ 
+ 	timerclear(&earliest);
+-
+ 	/*
+ 	 * For each request outstanding, add it's socket to the readfds,
+ 	 * and if it is the earliest timeout to expire, mark it as lowest.
+@@ -352,7 +352,6 @@
+ 	int reqid;
+ {
+ 	REQUEST *sr;
+-
+ 	if (reqid == 0) /* for single request per session (like tcp or icmp) */
+ 		return sd->request;
+ 
+@@ -443,7 +442,6 @@
+ 	int reqid;
+ 
+ 	gettimeofday(&now, NULL);
+-
+ 	/*
+ 	 * For each request outstanding, check to see if it has expired.
+ 	 */
+--- snmp.c.orig	Tue Nov 14 17:37:42 2006
++++ snmp.c	Tue Nov 14 17:37:42 2006
 @@ -1214,6 +1214,8 @@
  {
  	SESSION *sd = method->sd;
@@ -818,8 +1305,16 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.send = snmp_send;
---- tacacs.c.orig	Mon Aug 25 18:20:41 2003
-+++ tacacs.c	Tue Sep 16 23:43:05 2003
+@@ -1334,6 +1346,7 @@
+ 	IPPROTO_UDP,	/* network protocol */
+ 	SNMPSERVER_PORT,/* server port */
+ 	0, 0,		/* timeout and retries undefined yet */
++        NULL,NULL,       /* when variables unused */
+ 	{ SNMP_VERSION_1,/* version number */
+ 	  0 },		 /* no parameter used */
+ 
+--- tacacs.c.orig	Tue Nov 14 17:37:42 2006
++++ tacacs.c	Tue Nov 14 17:37:42 2006
 @@ -302,6 +302,8 @@
  {
  	SESSION *sd = method->sd;
@@ -863,9 +1358,57 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.connect = tacacs_connect;
---- tcp.c.orig	Thu Mar 20 16:16:38 2003
-+++ tcp.c	Tue Sep 16 23:43:05 2003
-@@ -319,6 +319,8 @@
+@@ -460,6 +473,7 @@
+ 	IPPROTO_TCP,	/* network protocol */
+ 	TACACSSERVER_PORT, /* server port */
+ 	0, 0,		/* timeout and retries undefined yet */
++        NULL,NULL,       /* when variables unused */
+ 	{ 0, 0 },	/* no parameters used */
+ 
+ 	/* Non-initialized data */
+--- tcp.c.orig	Tue Nov 14 17:37:42 2006
++++ tcp.c	Tue Nov 14 17:37:42 2006
+@@ -16,6 +16,7 @@
+ #include <netinet/in.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <syslog.h>
+ #include <errno.h>
+@@ -30,12 +31,10 @@
+ 
+ extern int errno;
+ 
+-static void tcp_close __P((int, SESSION *, int));
+-
+ /*
+  * Check to see if an TCP connection established at this session.
+  */
+-static int
++int
+ tcp_connect(sd)
+ 	SESSION *sd;
+ {
+@@ -89,7 +88,7 @@
+ /*
+  * Send the data through TCP session.
+  */
+-static int
++int
+ tcp_send(sd, request)
+ 	SESSION *sd;
+ 	REQUEST *request;
+@@ -191,7 +190,7 @@
+ /*
+  * Receive data through TCP session.
+  */
+-static int
++int
+ tcp_recv(sd)
+ 	SESSION *sd;
+ {
+@@ -319,6 +318,8 @@
  {
  	SESSION *sd = method->sd;
  	int tmpval;
@@ -874,7 +1417,7 @@
  
  	/* sanity check */
  	if (!sd) return;
-@@ -330,17 +332,13 @@
+@@ -330,17 +331,13 @@
  		tcp_close(errno, sd, 0);
  		return;
  	}
@@ -895,7 +1438,7 @@
  				tmpval = 0;
  				break;
  			}
-@@ -354,6 +352,13 @@
+@@ -354,6 +351,13 @@
  			tcp_close(EAGAIN, sd, 0);
  			return;
  		}
@@ -909,6 +1452,23 @@
  	}
  
  	/* turn on non-blocking I/O before connecting */
+@@ -378,7 +382,7 @@
+ 	}
+ }
+ 
+-static void
++void
+ tcp_close(op, sd, reqid)
+ 	int op;
+ 	SESSION *sd;
+@@ -414,6 +418,7 @@
+ 	dump_var_list(target->var_list);
+ 
+ 	tcp_stop(method);
++	if ((method->sd)->pid > 0) { kill((method->sd)->pid, SIGTERM); (method->sd)->pid=-1; }
+ 
+ 	method_finished(target, method, diag, !op);
+ }
 @@ -424,7 +429,7 @@
  	METHOD *method;
  {
@@ -918,7 +1478,12 @@
  
  	dprintf(("tcp_init(%s/%s)\n", target->name, method->name));
  
-@@ -439,6 +444,10 @@
+@@ -435,10 +440,15 @@
+ 	template.owner = target;
+ 	template.method = method;
+ 	template.sock = -1;	/* not yet opened */
++	template.pid = -1;	
+ 	to = (struct sockaddr_in *)&template.peer;
  	to->sin_family = AF_INET;
  	to->sin_port = htons(method->rport);
  	to->sin_addr = method->address ? method->ip_addr : target->ip_addr;
@@ -929,8 +1494,8 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.connect = tcp_connect;
---- trap.c.orig	Wed Sep 17 00:00:56 2003
-+++ trap.c	Wed Sep 17 00:35:21 2003
+--- trap.c.orig	Tue Nov 14 17:37:42 2006
++++ trap.c	Tue Nov 14 17:37:42 2006
 @@ -40,9 +40,10 @@
  {
  	static struct sockaddr_in sin;
@@ -964,8 +1529,8 @@
  	return 0;
  }
  
---- udp.c.orig	Sat Aug  2 11:40:56 2003
-+++ udp.c	Tue Sep 16 23:43:05 2003
+--- udp.c.orig	Tue Nov 14 17:37:42 2006
++++ udp.c	Tue Nov 14 17:37:42 2006
 @@ -197,6 +197,8 @@
  {
  	SESSION *sd = method->sd;
@@ -1030,9 +1595,38 @@
  	template.timeout = method->timeout * 1000000L; /* make microseconds */
  	template.retries = method->retries;
  	template.send = udp_send;
---- util.c.orig	Tue Aug 26 10:53:17 2003
-+++ util.c	Wed Sep 17 00:36:47 2003
-@@ -1415,16 +1415,27 @@
+--- util.c.orig	Tue Nov 14 17:37:42 2006
++++ util.c	Tue Nov 14 17:37:42 2006
+@@ -1236,11 +1236,9 @@
+ 		if (method->address)
+ 			printf("%s\tAddress = \"%s\" [%s]\n", prepend,
+ 			       method->address, intoa(ipaddr, method->ip_addr));
+-		if ((proto = getprotobynumber(method->protocol)) == NULL) {
+-			printf("%s\tUnknown protocol %d\n", prepend, method->protocol);
+-			continue;
++		if ((proto = getprotobynumber(method->protocol)) != NULL) {
++		    printf("%s\t%s ", prepend, proto->p_name);
+ 		}
+-		printf("%s\t%s ", prepend, proto->p_name);
+ 		switch (method->protocol) {
+ 		case IPPROTO_ICMP:
+ 			if (method->rport)
+@@ -1265,6 +1263,14 @@
+ 				printf("..%d", method->lport_max);
+ 			}
+ 			break;
++		case WHEN_PROTO:
++			printf("%s\tWHEN = \"%s\"",prepend, method->when);
++			printf(" delay = %d sec.", method->timeout);
++			printf(" Report Format = \"%s\"", method->when_fmt);
++			break;
++		case PIPE_PROTO:
++			printf("%s\tPIPE programm = \"%s\"",prepend, method->when);
++			break;
+ 		default:
+ 			printf("Unsupported");
+ 		}
+@@ -1415,16 +1421,27 @@
  	printf("NetState %s\n", cf->ns_port ? "enabled" : "disabled");
  	if (cf->ns_port) {
  		printf("\tPort = %d\n", cf->ns_port);
@@ -1045,10 +1639,10 @@
  	}
 +	printf("SrcAddress = \"%s\" [%s]\n", (cf->srcaddress!=NULL ) ? cf->srcaddress : "default",
 +	    intoa(ipaddr, cf->ip_srcaddr));
- 
++
 +	printf("UserName = \"%s\" [%d]\n", cf->username, cf->uid);
 +	printf("GroupName = \"%s\" [%d]\n", cf->groupname, cf->gid);
-+
+ 
 +	if (cf->chrootdir) 
 +	    printf("ChRootDir = \"%s\"\n", cf->chrootdir );
  	printf("Traps ");
@@ -1060,7 +1654,7 @@
  	} else	printf("disabled");
  	printf("\n");
  
-@@ -1434,6 +1445,8 @@
+@@ -1434,6 +1451,8 @@
  			printf("\tDescription = \"%s\"\n", target->descr);
  		printf("\tAddress = \"%s\" [%s]\n", target->address,
  		       intoa(ipaddr, target->ip_addr));
@@ -1069,74 +1663,42 @@
  		if (target->polling > 0)
  			printf("\tPolling = %d sec.\n", target->polling);
  		else	printf("\tPolling disabled\n");
---- regex.h.orig	Wed Sep 24 17:22:56 2003
-+++ regex.h	Wed Sep 24 17:37:09 2003
-@@ -21,12 +21,12 @@
-  */
- #define MAXDFA  1024
- #define MAXTAG  10
--#define MAXCHR	128
-+#define MAXCHR	256
- #define CHRBIT	8
- #define BITBLK	MAXCHR/CHRBIT
- #define BLKIND	0170
- #define BITIND	07
--#define ASCIIB	0177
-+#define ASCIIB	0255
+--- variables.c.orig	Tue Nov 14 17:37:42 2006
++++ variables.c	Tue Nov 14 17:37:42 2006
+@@ -39,8 +39,8 @@
+ static char buf[BUFSIZ];
+ static char *strbuf = NULL;
  
- typedef /*unsigned*/ char CHAR;
+-static char *obj_states[2] = {
+-	"UP", "DOWN" };
++static char *obj_states[4] = {
++	"UP", "DOWN","DEGRADED","WARNING" };
+ static char *if_states[5] = {
+ 	"UP", "DOWN", "TESTING", "UNKNOWN", "DORMANT" };
+ static char *bgp_states[6] = {
+@@ -52,7 +52,7 @@
+ 	int size;
+ 	char **name;
+ } states[4] = {
+-	{ 2, obj_states },
++	{ 4, obj_states },
+ 	{ 5, if_states },
+ 	{ 6, bgp_states },
+ 	{ 5, env_states },
+@@ -69,7 +69,7 @@
  
---- regex.c.orig	Wed Sep 24 17:09:07 2003
-+++ regex.c	Thu Sep 25 15:26:47 2003
-@@ -554,12 +554,12 @@
-  * the bitset form, since we may wish to extend it
-  * in the future for other character classifications. 
-  *
-- *	TRUE for 0-9 A-Z a-z _
-+ *	TRUE for 0-9 A-Z a-z _ â-ó Â-Ó
-  */
- static char chrtyp[MAXCHR] = {
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
-+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
-+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
- 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
- 	0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 
- 	1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 
-@@ -569,10 +569,23 @@
- 	1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 
- 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
- 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
--	1, 1, 1, 0, 0, 0, 0, 0
-+	1, 1, 1, 0, 0, 0, 0, 0, 0, 0,	// 120-129
-+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 130-139
-+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 140-149
-+	0, 0, 0, 1, 0, 0, 0, 0, 0, 0,   // 160-169     163=_
-+	0, 0, 0, 0, 0, 0, 0, 0, 0, 1,   // 170-179     179=_
-+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,   // 180-189
-+	0, 0, 1, 1, 1, 1, 1, 1, 1, 1,   // 190-199
-+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 200-209
-+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 210-219
-+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 220-229
-+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 230-239
-+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   // 240-249
-+	1, 1, 1, 1, 1, 1                // 250-255
- 	};
- 
--#define inascii(x)	(0177&(x))
-+//#define inascii(x)	(0177&(x))
-+#define inascii(x)	(0255&(x))
- #define iswordc(x) 	chrtyp[inascii(x)]
- #define isinset(x, y) 	((x)[((y)&BLKIND)>>3] & (1<<((y)&BITIND)))
-
-@@ -596,7 +596,7 @@
- 
- #define ANYSKIP	2 	/* CLO ANY END ...	   */
- #define CHRSKIP	3	/* CLO CHR chr END ...	   */
--#define CCLSKIP 18	/* CLO CCL 16bytes END ... */
-+#define CCLSKIP BITBLK+2	/* CLO CCL 32bytes END ... */
- 
- static char *
- pmatch(prog, lp, ap)
+ 	sp = &states[what];
+ 	if (!state)
+-		cp = "NONE";
++		cp = "UNKNOWN";
+ 	else if (state > 0 && state <= sp->size)
+ 		cp = sp->name[state-1];
+ 	else	cp = "ERROR";
+@@ -1511,6 +1511,7 @@
+ 		}
+ 		memcpy(var, vb, len);
+ 		var[len] = '\0';
++		
+ 		len = 0;
+ 		next = var;
+ 		while ((vb = my_strsep(&next, "!")) != NULL) {

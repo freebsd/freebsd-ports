@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: netmond
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+#
+# Define these netmond_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/netmond
+#
+
+. %%RC_SUBR%%
+
+name="netmond"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+required_files="${prefix}/etc/${name}.conf"
+
+stop_postcmd="netmond_poststop"
+
+netmond_poststop() {
+	/bin/rm -f ${pidfile}
+}
+
+load_rc_config $name
+
+: ${netmond_enable="NO"}
+
+run_rc_command "$1"

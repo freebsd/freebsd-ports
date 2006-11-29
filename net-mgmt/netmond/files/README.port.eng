@@ -128,3 +128,119 @@ PID-file all the time is written to /var/run/netmond.pid
 
 Possibility added to use russian letters in NetState requests and
 regular expressions.
+
+##################################################################
+
+Object multiple states
+
+##################################################################
+
+With this patch applied, the object have more states: UP DEGRADED WARNING DOWN NONE.
+(before was only UP DOWN NONE states)
+Object falls to DOWN state when ALL object checking "Methods" fall.
+DEGRADED state mean that some object "Methods" fall, but some finished successfully.
+WARNING state mean, that any slave subobject (interface, service, BGP peer, ENVMON, etc.)
+are not in UP|NORMAL|ESTABLISHED state. 
+
+##################################################################
+
+Method WHEN
+
+##################################################################
+
+Like in saving method WHEN, you can define logical expression, format
+for resulting string and timeout. If logical expression would evaluated
+as TRUE all the times during timeout, this method falls. As a result, variable 
+'OBJECT!methodname' became eqiual to evaluated resulting string.
+The object falls to DEGRADED state.
+
+Example:
+Пример:
+    Method "CPU_alarm" {
+	When "$LoadAve > 20" 300 "Attention! LoadAve too much! ($LoadAve)"
+    }
+
+The main goal of this method  -  to change (sub)object state when performance 
+thresholds exceeded.
+
+Attention! Variables used here have to be mined by other methods.
+
+##################################################################
+
+Method PIPE
+
+##################################################################
+
+Work like TCP checking method. But instead of tcp port for remote host,
+you have to define 'programm' name. This programm executed locally.
+You can use CHAT script statements, like in TCP method.
+From inside the 'programm' chat messages arrive on STDIN, and 
+the results have to be written to STDOUT.
+
+On startup, programm supplied by argument string, defined in method 
+call statement. Additionally, environment variables OBJECT_NAME, OBJECT_ADDRESS
+are preset. If explicitly defined in config file, variables
+OBJECT_SRC_ADDRESS, OBJECT_DATADIR are preset two.
+
+Example:
+     ..................... 
+     Method "CheckSSL" {
+        Pipe "/usr/local/bin/check_ssl.pl" 
+	Timeout 3
+	ChatScript { 
+	    Expect "verify"
+	    Send "GET /\n\r\n\r"
+	    Expect "<HTML>" 
+	}
+     }
+     ................
+/usr/local/bin/check_ssl.pl:
+    #!/usr/bin/perl
+    #
+    $addr = $ENV{"OBJECT_ADDRESS"};                                               
+    if ($ARGV[0] ) {                                                              
+	$port = $ARGV[0];                                                         
+    } else  {                                                                     
+        $port ="443";                                                             
+    }                                                                             
+    $SIG{TERM} = sub {
+        close PRGR;
+	close PRGW;
+	close STDIN;
+	close STDOUT;
+	kill $main::pid;
+	exit(0);				        
+    };
+    use FileHandle;                                                               
+    use IPC::Open2;                                                               
+    $main::pid=open2(PRGR,PRGW,"/usr/bin/openssl s_client -quiet -ssl3 -connect $addr:$port");      
+    $_=<STDIN>;      
+    print PRGW $_;       while  (<PRGR>){                                                              
+	print $_;                                                                 
+    }                                                                             
+    close STDOUT;                                                                 
+    exit 0;                                                                       
+        
+Every time checking interval elapsed only ONE 'programm' launch retry take place.
+When chat messges exchnage finished, pipe socket closed, and 'programm' notified
+by SIGTERM signal.
+
+The goal of this method - to check complex services, while simple TCP
+method can not be used and impossible to use RSH or other text based 
+protocols on remote side.
+
+The 'programm' launches with privileges defined globally 
+with directives UserName GroupName. If directive ChRootDir defined,
+chroot to this directory take place before run. 
+
+##################################################################
+
+Interfce index number limit  expanded up to INT_MAX. So, for MS Windows 
+servers you can write 
+    Interface 65539 { }
+
+  Thanks to Artemiy Kropachev <kropachev(sobaka)rdu.kirov.ru>
+
+##################################################################
+
+Default config file = /usr/local/etc/netmond.conf
