@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -18,11 +18,18 @@ RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 
-USE_PERL5_RUN=	yes
-NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME}
+USE_PERL5=	yes
+USE_GETTEXT=	yes
+PERL_CONFIGURE=	yes
+LOCALES=	de en_GB fr nl sv
+PLIST_FILES=	bin/${PORTNAME} share/applications/${PORTNAME}.desktop \
+		${LOCALES:S|^|share/locale/|:S|$|/LC_MESSAGES/${PORTNAME}.mo|} \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/${PORTNAME}/.packlist
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/${PORTNAME}
+USE_GMAKE=	yes
+MAN1=		${PORTNAME}.1
 
-do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+post-patch:
+	@${REINPLACE_CMD} -e 's/--parents/-p/g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
