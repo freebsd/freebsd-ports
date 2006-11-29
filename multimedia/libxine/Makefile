@@ -33,6 +33,7 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=	yes
+USE_GCC=	3.4+
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
@@ -200,7 +201,8 @@ post-patch:
 		 s|-L/usr/local/lib||g ; \
 		 s|-I/usr/local/include||g ; \
 		 s|-lgiconv|-liconv|g ; \
-		 s|-funroll-loops||g' ${WRKSRC}/configure
+		 s|-funroll-loops||g ; \
+		 s|LIBFFMPEG_CFLAGS|LIBFFMPEG_CPPFLAGS|g' ${WRKSRC}/configure
 .if ${OSVERSION} >= 500035
 	@${REINPLACE_CMD} -e \
 		 's|-malign-loops|-falign-loops|g ; \

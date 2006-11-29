@@ -1,7 +1,7 @@
---- src/xine-engine/xine_internal.h.orig	Tue Apr 26 17:09:12 2005
-+++ src/xine-engine/xine_internal.h	Sat Apr 30 14:16:33 2005
-@@ -70,6 +70,77 @@
- #  include <xine/info_helper.h>
+--- src/xine-engine/xine_internal.h.orig	Sat Apr 22 00:46:33 2006
++++ src/xine-engine/xine_internal.h	Thu Sep 28 16:13:27 2006
+@@ -72,6 +72,124 @@
+ #  include <xine/alphablend.h>
  #endif
  
 +#ifndef INT8_MIN
@@ -28,10 +28,40 @@
 +#define INT32_MIN (-0x7fffffff-1)
 +#endif
 +
++#ifndef PRIdMAX
++#define PRIdMAX "lld"
++#endif
++
++#ifndef SCNdMAX
++#define SCNdMAX "lld"
++#endif
++
 +#ifndef PRIiMAX
-+#define PRIiMAX	"lld"
++#define PRIiMAX "lld"
 +typedef long long intmax_t;
 +#endif
++
++
++#ifndef PRId32
++#define PRId32 "d"
++#endif
++
++#ifndef SCNd32
++#define SCNd32 "d"
++#endif
++
++#ifndef PRIdFAST16
++#define PRIdFAST16 "d"
++#endif
++
++#ifndef PRIdFAST32
++#define PRIdFAST32 "d"
++#endif
++
++#ifndef SCNu32
++#define SCNu32 "u"
++#endif
++
 +
 +#ifndef PRId64
 +#if defined(__alpha__) || defined(__amd64__) || defined(__ia64__) || defined(__sparc64__)
@@ -41,13 +71,30 @@
 +#endif
 +#endif
 +
-+#ifndef PRIdMAX
-+#define PRIdMAX	"lld"
++#ifndef SCNd64
++#define SCNd64 PRId64
 +#endif
 +
-+#ifndef	SCNdMAX
-+#define SCNdMAX	"lld"
++#ifndef PRIu64
++#if defined(__alpha__) || defined(__amd64__) || defined(__ia64__) || defined(__sparc64__)
++#define PRIu64 "lu"
++#else if defined(__i386__) || defined(__powerpc__)
++#define PRIu64 "llu"
 +#endif
++#endif
++
++#ifndef SCNu64
++#define SCNu64 PRIu64
++#endif
++
++#ifndef PRIX64
++#if defined(__alpha__) || defined(__amd64__) || defined(__ia64__) || defined(__sparc64__)
++#define PRIX64 "lX"
++#else if defined(__i386__) || defined(__powerpc__)
++#define PRIX64 "llX"
++#endif
++#endif
++
 +
 +#ifndef PRIx32
 +#define	PRIx32	"x"

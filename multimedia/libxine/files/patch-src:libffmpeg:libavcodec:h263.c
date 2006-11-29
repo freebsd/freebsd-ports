@@ -1,6 +1,14 @@
---- src/libffmpeg/libavcodec/h263.c.orig	Sun Jul  9 23:38:11 2006
-+++ src/libffmpeg/libavcodec/h263.c	Wed Aug  2 01:19:03 2006
-@@ -66,8 +66,8 @@
+--- src/libffmpeg/libavcodec/h263.c.orig	Sun Jul  9 16:38:11 2006
++++ src/libffmpeg/libavcodec/h263.c	Thu Sep 28 12:53:39 2006
+@@ -38,6 +38,7 @@
+ #include "mpegvideo.h"
+ #include "h263data.h"
+ #include "mpeg4data.h"
++#include "xine_internal.h"
+ 
+ //#undef NDEBUG
+ //#include <assert.h>
+@@ -66,8 +67,8 @@
  static int h263p_decode_umotion(MpegEncContext * s, int pred);
  static int h263_decode_block(MpegEncContext * s, DCTELEM * block,
                               int n, int coded);
@@ -11,7 +19,7 @@
                                int n, int coded, int intra, int rvlc);
  static int mpeg4_get_block_length(MpegEncContext * s, DCTELEM * block, int n, int intra_dc,
                                 uint8_t *scan_table);
-@@ -4684,7 +4684,7 @@
+@@ -4684,7 +4685,7 @@
   * @param dir_ptr the prediction direction will be stored here
   * @return the quantized dc
   */
@@ -20,7 +28,7 @@
  {
      int level, code;
  
-@@ -4729,7 +4729,7 @@
+@@ -4729,7 +4730,7 @@
   * decodes a block.
   * @return <0 if an error occured
   */
