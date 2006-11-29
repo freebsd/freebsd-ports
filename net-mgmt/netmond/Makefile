@@ -7,7 +7,7 @@
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.risp.ru/pub/RinetSoftware/
 DISTNAME=	netmond-2.2-b6
@@ -25,23 +25,26 @@ CONFIGURE_ARGS=	--without-ifgraph
 .endif
 
 GNU_CONFIGURE=	yes
+USE_BISON=	yes
 
 BINOWN=		root
 BINGRP=		netmon
 BINMODE=	0550
 
-PLIST_FILES=	sbin/netmond sbin/netmondctl sbin/netmond_watchdog \
-		etc/netmon.conf.sample etc/rc.d/netmond.sh
+PLIST_FILES=	sbin/netmond sbin/netmond_watchdog sbin/netmondctl \
+		etc/netmond.conf.sample
 .if defined(MK_IFGRAPH)
 PLIST_FILES+=	sbin/ifgraph
 .endif
 
+USE_RC_SUBR=	netmond.sh
+
+SUB_FILES+=	pkg-message netmond_watchdog netmondctl
+
 PORTDOCS=	README README.ru CHANGES README.port README.port.ru
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-patch:
-	${REINPLACE_CMD} "s/1645/1812/" ${WRKSRC}/radius.c
+pre-build:
+	${CP} ${FILESDIR}/*.c ${WRKSRC}
 
 do-install:
 	@if pw user show netmon 2>/dev/null ; then \
@@ -58,15 +61,15 @@ do-install:
 .if defined(MK_IFGRAPH)
 	${INSTALL_PROGRAM} ${WRKSRC}/ifgraph      ${PREFIX}/sbin/ifgraph
 .endif
-	${INSTALL_SCRIPT}   ${FILESDIR}/netmondctl ${PREFIX}/sbin/netmondctl
-	${INSTALL_SCRIPT}   ${FILESDIR}/netmond_watchdog ${PREFIX}/sbin/netmond_watchdog
-	${INSTALL_SCRIPT}   ${FILESDIR}/netmond.sh ${PREFIX}/etc/rc.d/netmond.sh
-	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${PREFIX}/etc
+	${INSTALL_SCRIPT}   ${WRKDIR}/netmond_watchdog ${PREFIX}/sbin/netmond_watchdog
+	${INSTALL_SCRIPT}   ${WRKDIR}/netmondctl ${PREFIX}/sbin/netmondctl
+	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${PREFIX}/etc//netmond.conf.sample
 	${CHMOD} u+s ${PREFIX}/sbin/netmond
 .if !defined(NOPORTDOCS)
 	${MKDIR}  ${DOCSDIR}
 	${CHMOD} 555 ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README  ${DOCSDIR}/README.ru
+
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
 	${INSTALL_DATA} ${FILESDIR}/README.port.ru ${DOCSDIR}/
 	${INSTALL_DATA} ${FILESDIR}/README.port.eng ${DOCSDIR}/README.port
@@ -74,7 +77,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} "s#%%PREFIX%%#${PREFIX}#" ${MASTERDIR}/pkg-message > ${PKGMESSAGE}; \
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

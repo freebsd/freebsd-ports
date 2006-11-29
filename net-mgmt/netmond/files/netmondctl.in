@@ -7,10 +7,10 @@
 # 
 #
 # the path to your NETMOND binary, including options if necessary
-NETMOND=/usr/local/sbin/netmond
+NETMOND=%%PREFIX%%/sbin/netmond
 PIDFILE=/var/run/netmond.pid
 #
-# config file  (default is "/usr/local/etc/netmon.conf")
+# config file  (default is "/usr/local/etc/netmond.conf")
 #
 TTT=X$2
 if [ $TTT = "X" ]
