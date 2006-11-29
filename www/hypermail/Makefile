@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	hypermail
-PORTVERSION=	2.1.8
+PORTVERSION=	2.2.0
 CATEGORIES=	www mail
-MASTER_SITES=	http://isc.hypermail.org/dist/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dan@langille.org
 COMMENT=	A program to generate a cross-referenced HTML mail archive
 
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm \
