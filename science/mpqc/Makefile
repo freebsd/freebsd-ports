@@ -66,7 +66,8 @@ CONFIGURE_ARGS+=--with-cc=${CC} \
 		--with-coptflags="${CFLAGS}" \
 		--with-cxxoptflags="${CXXFLAGS}" \
 		--with-f77optflags="${FFLAGS}" \
-		--with-include="-I${WRKDIR}"
+		--with-include="-I${WRKDIR}" \
+		--enable-shared
 .if defined(WITH_ICC)
 CONFIGURE_ARGS+=--with-libs="-lsvml"
 .endif
