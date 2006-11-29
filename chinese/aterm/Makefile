@@ -14,7 +14,7 @@ MAINTAINER=	gugod@gugod.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
 USE_XPM=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKSRC}/..
 CONFIGURE_ARGS=	--enable-fading --enable-xim --enable-big5
 
