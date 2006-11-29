@@ -7,7 +7,7 @@
 
 PORTNAME=	lukemftp
 PORTVERSION=	1.5
-CATEGORIES=	ftp
+CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/old/
 
 MAINTAINER=	ports@FreeBSD.org
