@@ -11,9 +11,10 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Provides an API to execute callback functions on certain events
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -88,11 +89,7 @@ MLINKS=	event.3 event_init.3 \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
+		${WRKSRC}/epoll.c ${WRKSRC}/epoll_sub.c ${WRKSRC}/evdns.c
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
