@@ -54,12 +54,18 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,qsort,mergesort,' ${WRKSRC}/gcin2tab.c
 	@${REINPLACE_CMD} -e 's|/usr/local|/usr|g' \
 	    	${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
+	@${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib,' ${WRKSRC}/qt-im/Makefile
 	@${REINPLACE_CMD} -e 's/modify-XIM //; 8,10 d' ${WRKSRC}/scripts/Makefile
-	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//; s/opt\/gnome/usr\/X11R6/;' \
+	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//; s,/opt/gnome,${X11BASE},;' \
 		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup
 	@${REINPLACE_CMD} -e 's,wget,fetch,' ${WRKSRC}/scripts/noseeing-inst
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,' \
 		${WRKSRC}/gtk-im/gtkimcontextgcin.c
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' \
+		${WRKSRC}/IMdkit/lib/Makefile \
+		${WRKSRC}/IMdkit/Xi18n_sample/Makefile ${WRKSRC}/Makefile \
+		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
+		${WRKSRC}/scripts/utf8-edit
 
 .if defined(WITH_BOSHIAMY)
 post-patch:
