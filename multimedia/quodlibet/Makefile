@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quodlibet
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
@@ -37,6 +37,7 @@ OPTIONS+=	OGG "OGG multimedia container support" on
 OPTIONS+=	SPEEX "OGG/Speex audio support" on
 OPTIONS+=	VORBIS "OGG/Vorbis audio support" on
 OPTIONS+=	WAVPACK "Wavpack support" on
+OPTIONS+=	DBUS "Enable dbus (iPod, storage) support" on
 OPTIONS+=	REMOTE "Enable remote playback" on
 OPTIONS+=	EXTENSIONS "Enable extensions" off
 
@@ -81,6 +82,11 @@ USE_GSTREAMER+=	wavpack
 .if !defined(WITHOUT_MPEG4IP)
 LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 USE_GSTREAMER+=	faad
+.endif
+
+.if !defined(WITHOUT_DBUS)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 .endif
 
 .if !defined(WITHOUT_REMOTE)

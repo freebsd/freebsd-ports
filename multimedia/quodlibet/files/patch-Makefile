@@ -1,23 +1,21 @@
---- Makefile.orig	2005-12-13 19:46:30.000000000 -0700
-+++ Makefile	2006-01-04 03:20:58.787760884 -0700
-@@ -13,7 +13,6 @@
- 	@./check.py
+--- Makefile.orig	Thu Oct  5 06:03:59 2006
++++ Makefile	Sat Nov 18 22:32:11 2006
+@@ -13,13 +13,12 @@
+ 	@./check.py $(DESTDIR)$(PREFIX)/$(TO)
  
  make-install-dirs:
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
  	mkdir -p $(DESTDIR)$(PREFIX)/bin
  	mkdir -p $(DESTDIR)$(PREFIX)/$(TO)
  
-@@ -24,7 +23,7 @@
- # installing the SVN version will have intltool and so it will build fine.
  install: make-install-dirs install-dirs install-programs
- 	install -m 644 $(MODULES) rhythmbox-*.png $(DESTDIR)$(PREFIX)/$(TO)
--	-for E in $(EXTENSIONS); do (test -e $$E && install -m 755 -D $$E $(DESTDIR)$(PREFIX)/$(TODEP)/$$E); done
+ 	install -m 644 $(MODULES) audio-*.png media-*.png device-*.png $(DESTDIR)$(PREFIX)/$(TO)
+-	for E in $(EXTENSIONS); do (test -e $$E && install -m 755 -D $$E $(DESTDIR)$(PREFIX)/$(TODEP)/$$E); done
 +	-for E in $(EXTENSIONS); do (test -e $$E && install -m 755 $$E $(DESTDIR)$(PREFIX)/$(TODEP)/$$E); done
- 	-cd po && make install-po DESTDIR=$(DESTDIR)
+ 	cd po && make install-po DESTDIR=$(DESTDIR)
  
  install-dirs: $(addprefix dir-install-, $(MODULE_DIRS))
-@@ -37,10 +36,10 @@
+@@ -32,10 +31,10 @@
  
  app-install-%: make-install-dirs %.desktop
  	install -m 755 $*.py $(DESTDIR)$(PREFIX)/$(TO)

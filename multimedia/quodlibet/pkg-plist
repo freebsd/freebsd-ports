@@ -22,18 +22,25 @@ share/locale/nb/LC_MESSAGES/quodlibet.mo
 share/locale/nl/LC_MESSAGES/quodlibet.mo
 share/locale/pl/LC_MESSAGES/quodlibet.mo
 share/locale/pt/LC_MESSAGES/quodlibet.mo
+share/locale/ro/LC_MESSAGES/quodlibet.mo
 share/locale/ru/LC_MESSAGES/quodlibet.mo
+share/locale/sk/LC_MESSAGES/quodlibet.mo
 share/locale/sv/LC_MESSAGES/quodlibet.mo
 share/locale/zh_CN/LC_MESSAGES/quodlibet.mo
 share/locale/zh_TW/LC_MESSAGES/quodlibet.mo
 share/pixmaps/exfalso.png
 share/pixmaps/quodlibet.png
+%%DATADIR%%/audio-volume-high.png
+%%DATADIR%%/audio-volume-low.png
+%%DATADIR%%/audio-volume-medium.png
+%%DATADIR%%/audio-volume-muted.png
 %%DATADIR%%/browsers/__init__.py
 %%DATADIR%%/browsers/_base.py
 %%DATADIR%%/browsers/albums.py
 %%DATADIR%%/browsers/audiofeeds.py
 %%DATADIR%%/browsers/filesystem.py
 %%DATADIR%%/browsers/iradio.py
+%%DATADIR%%/browsers/media.py
 %%DATADIR%%/browsers/paned.py
 %%DATADIR%%/browsers/playlists.py
 %%DATADIR%%/browsers/search.py
@@ -42,6 +49,12 @@ share/pixmaps/quodlibet.png
 %%DATADIR%%/exfalso.png
 %%DATADIR%%/exfalso.py
 %%DATADIR%%/exfalso.svg
+%%DATADIR%%/device-generic.png
+%%DATADIR%%/device-ipod.png
+%%DATADIR%%/devices/__init__.py
+%%DATADIR%%/devices/_base.py
+%%DATADIR%%/devices/ipod.py
+%%DATADIR%%/devices/storage.py
 %%DATADIR%%/formats/__init__.py
 %%DATADIR%%/formats/_apev2.py
 %%DATADIR%%/formats/_audio.py
@@ -58,6 +71,7 @@ share/pixmaps/quodlibet.png
 %%DATADIR%%/library/__init__.py
 %%DATADIR%%/library/_library.py
 %%DATADIR%%/library/songs.py
+%%DATADIR%%/media-eject.png
 %%DATADIR%%/parse/__init__.py
 %%DATADIR%%/parse/_match.py
 %%DATADIR%%/parse/_pattern.py
@@ -115,10 +129,6 @@ share/pixmaps/quodlibet.png
 %%DATADIR%%/quodlibet.png
 %%DATADIR%%/quodlibet.py
 %%DATADIR%%/quodlibet.svg
-%%DATADIR%%/rhythmbox-volume-max.png
-%%DATADIR%%/rhythmbox-volume-medium.png
-%%DATADIR%%/rhythmbox-volume-min.png
-%%DATADIR%%/rhythmbox-volume-zero.png
 %%DATADIR%%/stock.py
 %%DATADIR%%/util/__init__.py
 %%DATADIR%%/util/copool.py
@@ -135,5 +145,6 @@ share/pixmaps/quodlibet.png
 @dirrm %%DATADIR%%/parse
 @dirrm %%DATADIR%%/library
 @dirrm %%DATADIR%%/formats
+@dirrm %%DATADIR%%/devices
 @dirrm %%DATADIR%%/browsers
 @dirrm %%DATADIR%%
