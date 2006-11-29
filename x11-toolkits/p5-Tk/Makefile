@@ -17,6 +17,7 @@ COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 USE_XLIB=	yes
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	X11LIB=${X11BASE}/lib X11INC=${X11BASE}/include
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAN1=		ptked.1 \
@@ -142,7 +143,7 @@ MAN3=		Tie::Watch.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		"This port needs Perl 5.8.0 or greater, please upgrade your Perl!"
+IGNORE=		this port needs Perl 5.8.0 or greater, please upgrade your Perl!
 .endif
 
 .if defined(WITH_XFT)
