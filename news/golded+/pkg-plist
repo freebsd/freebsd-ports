@@ -1,14 +1,8 @@
 bin/golded
 bin/goldnode
 bin/rddt
-%%PORTDOCS%%%%DOCSDIR%%/copying
-%%PORTDOCS%%%%DOCSDIR%%/copying.lib
-%%PORTDOCS%%%%DOCSDIR%%/gold_ref.txt
-%%PORTDOCS%%%%DOCSDIR%%/gold_usr.txt
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/notework.txt
-%%PORTDOCS%%%%DOCSDIR%%/rusfaq.txt
-%%PORTDOCS%%%%DOCSDIR%%/tips.txt
+%%EXAMPLESDIR%%/charset/1125_i-5.chs
+%%EXAMPLESDIR%%/charset/1125_u8.chs
 %%EXAMPLESDIR%%/charset/12501250.chs
 %%EXAMPLESDIR%%/charset/12501251.chs
 %%EXAMPLESDIR%%/charset/12501252.chs
@@ -37,6 +31,7 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/1251_859.chs
 %%EXAMPLESDIR%%/charset/1251_asc.chs
 %%EXAMPLESDIR%%/charset/1251_i-1.chs
+%%EXAMPLESDIR%%/charset/1251_i-5.chs
 %%EXAMPLESDIR%%/charset/1251_i15.chs
 %%EXAMPLESDIR%%/charset/1251_mac.chs
 %%EXAMPLESDIR%%/charset/12521250.chs
@@ -129,6 +124,7 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/437_i-1.chs
 %%EXAMPLESDIR%%/charset/437_i15.chs
 %%EXAMPLESDIR%%/charset/437_mac.chs
+%%EXAMPLESDIR%%/charset/437_u8.chs
 %%EXAMPLESDIR%%/charset/850_1250.chs
 %%EXAMPLESDIR%%/charset/850_1251.chs
 %%EXAMPLESDIR%%/charset/850_1252.chs
@@ -140,12 +136,14 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/850_850.chs
 %%EXAMPLESDIR%%/charset/850_858.chs
 %%EXAMPLESDIR%%/charset/850_859.chs
+%%EXAMPLESDIR%%/charset/850_866.chs
 %%EXAMPLESDIR%%/charset/850_asc.chs
 %%EXAMPLESDIR%%/charset/850_i-1.chs
 %%EXAMPLESDIR%%/charset/850_i15.chs
 %%EXAMPLESDIR%%/charset/850_iqp.chs
 %%EXAMPLESDIR%%/charset/850_iso.chs
 %%EXAMPLESDIR%%/charset/850_mac.chs
+%%EXAMPLESDIR%%/charset/850_u8.chs
 %%EXAMPLESDIR%%/charset/858_1250.chs
 %%EXAMPLESDIR%%/charset/858_1251.chs
 %%EXAMPLESDIR%%/charset/858_1252.chs
@@ -177,10 +175,25 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/859_i15.chs
 %%EXAMPLESDIR%%/charset/859_mac.chs
 %%EXAMPLESDIR%%/charset/865_iso.chs
+%%EXAMPLESDIR%%/charset/865_u8.chs
+%%EXAMPLESDIR%%/charset/866_850.chs
+%%EXAMPLESDIR%%/charset/866_866.chs
+%%EXAMPLESDIR%%/charset/866_ISO.chs
+%%EXAMPLESDIR%%/charset/866_i-5.chs
 %%EXAMPLESDIR%%/charset/866_koi.chs
+%%EXAMPLESDIR%%/charset/866_koi7.chs
+%%EXAMPLESDIR%%/charset/866_koiX.chs
 %%EXAMPLESDIR%%/charset/866_kou.chs
+%%EXAMPLESDIR%%/charset/866_mcyr.chs
+%%EXAMPLESDIR%%/charset/866_u8.chs
 %%EXAMPLESDIR%%/charset/866_ukr.chs
 %%EXAMPLESDIR%%/charset/866_win.chs
+%%EXAMPLESDIR%%/charset/DK1_866.chs
+%%EXAMPLESDIR%%/charset/DK2_866.chs
+%%EXAMPLESDIR%%/charset/IK1_866.chs
+%%EXAMPLESDIR%%/charset/IK2_866.chs
+%%EXAMPLESDIR%%/charset/WK1_866.chs
+%%EXAMPLESDIR%%/charset/WK2_866.chs
 %%EXAMPLESDIR%%/charset/asc_1250.chs
 %%EXAMPLESDIR%%/charset/asc_1251.chs
 %%EXAMPLESDIR%%/charset/asc_1252.chs
@@ -223,6 +236,10 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/i-1_i-1.chs
 %%EXAMPLESDIR%%/charset/i-1_i15.chs
 %%EXAMPLESDIR%%/charset/i-1_mac.chs
+%%EXAMPLESDIR%%/charset/i-5_1125.chs
+%%EXAMPLESDIR%%/charset/i-5_1251.chs
+%%EXAMPLESDIR%%/charset/i-5_866.chs
+%%EXAMPLESDIR%%/charset/i-5_koi8r.chs
 %%EXAMPLESDIR%%/charset/i15_1250.chs
 %%EXAMPLESDIR%%/charset/i15_1251.chs
 %%EXAMPLESDIR%%/charset/i15_1252.chs
@@ -252,6 +269,7 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/ibm_vt1.chs
 %%EXAMPLESDIR%%/charset/iqp_850.chs
 %%EXAMPLESDIR%%/charset/iqp_ibm.chs
+%%EXAMPLESDIR%%/charset/iso1_u8.chs
 %%EXAMPLESDIR%%/charset/iso_850.chs
 %%EXAMPLESDIR%%/charset/iso_asc.chs
 %%EXAMPLESDIR%%/charset/iso_ibm.chs
@@ -260,6 +278,12 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/iso_vt1.chs
 %%EXAMPLESDIR%%/charset/ita_asc.chs
 %%EXAMPLESDIR%%/charset/itl_ibm.chs
+%%EXAMPLESDIR%%/charset/k7_k7.chs
+%%EXAMPLESDIR%%/charset/k7_k8.chs
+%%EXAMPLESDIR%%/charset/k8_k7.chs
+%%EXAMPLESDIR%%/charset/koi7_866.chs
+%%EXAMPLESDIR%%/charset/koi8_u8.chs
+%%EXAMPLESDIR%%/charset/koi8r_i-5.chs
 %%EXAMPLESDIR%%/charset/koi_866.chs
 %%EXAMPLESDIR%%/charset/kou_866.chs
 %%EXAMPLESDIR%%/charset/kou_ukr.chs
@@ -281,6 +305,7 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/mac_iso.chs
 %%EXAMPLESDIR%%/charset/mac_mac.chs
 %%EXAMPLESDIR%%/charset/mac_vt1.chs
+%%EXAMPLESDIR%%/charset/mcyr_866.chs
 %%EXAMPLESDIR%%/charset/mne_850.esc
 %%EXAMPLESDIR%%/charset/mne_ibm.esc
 %%EXAMPLESDIR%%/charset/nor_asc.chs
@@ -329,6 +354,8 @@ bin/rddt
 %%EXAMPLESDIR%%/colorset/gedmon02.cfg
 %%EXAMPLESDIR%%/config/advanced.cfg
 %%EXAMPLESDIR%%/config/advanced.rus
+%%EXAMPLESDIR%%/config/aliasru.cfg
+%%EXAMPLESDIR%%/config/charsets.cfg
 %%EXAMPLESDIR%%/config/gedcolor.cfg
 %%EXAMPLESDIR%%/config/gedcolor.rus
 %%EXAMPLESDIR%%/config/gedlngdk.cfg
@@ -348,15 +375,16 @@ bin/rddt
 %%EXAMPLESDIR%%/config/goldlang.rus
 %%EXAMPLESDIR%%/config/goldlang.sv
 %%EXAMPLESDIR%%/config/simple.cfg
+%%EXAMPLESDIR%%/config/xlatcfg.pl
 %%EXAMPLESDIR%%/template/dansk.tpl
 %%EXAMPLESDIR%%/template/default.tpl
 %%EXAMPLESDIR%%/template/email.tpl
 %%EXAMPLESDIR%%/template/golded.cfm
 %%EXAMPLESDIR%%/template/golded.tpl
 %%EXAMPLESDIR%%/template/newsgrps.tpl
+%%EXAMPLESDIR%%/template/rusCP866.tpl
 @dirrm %%EXAMPLESDIR%%/template
 @dirrm %%EXAMPLESDIR%%/config
 @dirrm %%EXAMPLESDIR%%/colorset
 @dirrm %%EXAMPLESDIR%%/charset
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
