@@ -1,6 +1,8 @@
 bin/cjc
 %%DATADIR%%/cjc/__init__.py
 %%DATADIR%%/cjc/__init__.pyc
+%%DATADIR%%/cjc/cjc_globals.py
+%%DATADIR%%/cjc/cjc_globals.pyc
 %%DATADIR%%/cjc/cjclogging.py
 %%DATADIR%%/cjc/cjclogging.pyc
 %%DATADIR%%/cjc/common.py
@@ -67,12 +69,16 @@ bin/cjc
 %%DATADIR%%/plugins/message.pyc
 %%DATADIR%%/plugins/muc.py
 %%DATADIR%%/plugins/muc.pyc
+%%DATADIR%%/plugins/multicast.py
+%%DATADIR%%/plugins/multicast.pyc
 %%DATADIR%%/plugins/presence.py
 %%DATADIR%%/plugins/presence.pyc
 %%DATADIR%%/plugins/python.py
 %%DATADIR%%/plugins/python.pyc
 %%DATADIR%%/plugins/roster.py
 %%DATADIR%%/plugins/roster.pyc
+%%DATADIR%%/plugins/roster_ei.py
+%%DATADIR%%/plugins/roster_ei.pyc
 %%DATADIR%%/plugins/shell.py
 %%DATADIR%%/plugins/shell.pyc
 %%DATADIR%%/plugins/test.py
