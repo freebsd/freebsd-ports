@@ -8,6 +8,7 @@ include/xfmedia/xfmedia-plugin.h
 include/xfmedia/xfmedia-remote-client.h
 include/xfmedia/xfmedia-remote-common.h
 include/xfmedia/xfmedia-settings.h
+include/xfmedia/xfmedia-video-window.h
 lib/xfmedia/plugins/xfmedia-infopipe.a
 lib/xfmedia/plugins/xfmedia-infopipe.la
 lib/xfmedia/plugins/xfmedia-infopipe.so
@@ -29,6 +30,17 @@ share/locale/pt_BR/LC_MESSAGES/xfmedia.mo
 share/locale/sk/LC_MESSAGES/xfmedia.mo
 share/locale/vi/LC_MESSAGES/xfmedia.mo
 share/locale/zh_CN/LC_MESSAGES/xfmedia.mo
+share/locale/he/LC_MESSAGES/xfmedia.mo
+share/locale/it/LC_MESSAGES/xfmedia.mo
+share/locale/ja/LC_MESSAGES/xfmedia.mo
+share/locale/ka/LC_MESSAGES/xfmedia.mo
+share/locale/ru/LC_MESSAGES/xfmedia.mo
+share/locale/ca/LC_MESSAGES/xfmedia.mo
+share/locale/cs/LC_MESSAGES/xfmedia.mo
+share/locale/dz/LC_MESSAGES/xfmedia.mo
+share/locale/gl/LC_MESSAGES/xfmedia.mo
+share/locale/uk/LC_MESSAGES/xfmedia.mo
+share/locale/zh_TW/LC_MESSAGES/xfmedia.mo
 share/xfmedia/doc/C/ch01s02.html
 share/xfmedia/doc/C/ch01s03.html
 share/xfmedia/doc/C/ch01.html
@@ -64,3 +76,26 @@ share/xfmedia/doc/xfce.css
 @dirrmtry share/locale/pl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
+@dirrmtry share/locale/he/LC_MESSAGES
+@dirrmtry share/locale/he
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/ka/LC_MESSAGES
+@dirrmtry share/locale/ka
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+
