@@ -31,6 +31,7 @@ smlnj/lib/SMLNJ-LIB/PP/.cm/%%MLARCH%%-unix/pp-lib.cm
 smlnj/lib/SMLNJ-LIB/Util/.cm/%%MLARCH%%-unix/smlnj-lib.cm
 smlnj/lib/SMLNJ-ML-YACC-LIB/.cm/%%MLARCH%%-unix/ml-yacc-lib.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/ALPHA.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/AMD64.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Control.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Graphs.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/HPPA.cm
@@ -74,6 +75,7 @@ smlnj/lib/smlnj/.cm/%%MLARCH%%-unix/cmb.cm
 smlnj/lib/smlnj/.cm/%%MLARCH%%-unix/compiler.cm
 smlnj/lib/smlnj/.cm/%%MLARCH%%-unix/installer.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/ALPHA.cm
+smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/AMD64.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/Control.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/Graphs.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/HPPA.cm
@@ -88,6 +90,7 @@ smlnj/lib/smlnj/basis/.cm/%%MLARCH%%-unix/basis.cm
 smlnj/lib/smlnj/cm/.cm/%%MLARCH%%-unix/cm.cm
 smlnj/lib/smlnj/cm/.cm/%%MLARCH%%-unix/tools.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/alpha32-unix.cm
+smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/amd64-unix.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/current.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/hppa-unix.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/ppc-macos.cm
@@ -97,6 +100,7 @@ smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/x86-unix.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/x86-win32.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/all.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/alpha32.cm
+smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/amd64.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/compiler.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/current.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/hppa.cm
@@ -118,6 +122,7 @@ smlnj/lib/smlnj/smlnj-lib/.cm/%%MLARCH%%-unix/html-lib.cm
 smlnj/lib/smlnj/smlnj-lib/.cm/%%MLARCH%%-unix/pp-lib.cm
 smlnj/lib/smlnj/smlnj-lib/.cm/%%MLARCH%%-unix/smlnj-lib.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/alpha32.cm
+smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/amd64.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/basics.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/core.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/debugprof.cm
@@ -129,9 +134,6 @@ smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/parser.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/ppc.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/sparc.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/x86.cm
-smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/back-trace.cm
-smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/coverage.cm
-smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/plugins.cm
 smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/bin/.heap
 @dirrm smlnj/bin/.run
@@ -251,9 +253,6 @@ smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/lib/smlnj/viscomp/.cm
 @dirrm smlnj/lib/smlnj/viscomp
 @dirrm smlnj/lib/smlnj
-@dirrm smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix
-@dirrm smlnj/lib/smlnj-tdp/.cm
-@dirrm smlnj/lib/smlnj-tdp
 @dirrm smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/unix-lib.cm/.cm
 @dirrm smlnj/lib/unix-lib.cm

@@ -1,11 +1,17 @@
+bin/ml-antlr
 bin/ml-burg
 bin/ml-nlffigen
+bin/ml-ulex
 bin/nowhere
+smlnj/bin/.heap/ml-antlr.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-burg.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-nlffigen.%%MLARCH%%-bsd
+smlnj/bin/.heap/ml-ulex.%%MLARCH%%-bsd
 smlnj/bin/.heap/nowhere.%%MLARCH%%-bsd
+smlnj/bin/ml-antlr
 smlnj/bin/ml-burg
 smlnj/bin/ml-nlffigen
+smlnj/bin/ml-ulex
 smlnj/bin/nowhere
 smlnj/lib/c/.cm/%%MLARCH%%-unix/c.cm
 smlnj/lib/c/internals/.cm/%%MLARCH%%-unix/c-int.cm
@@ -18,6 +24,9 @@ smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/prec-parser.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/sml-ast.cm
 smlnj/lib/mlrisc-tools/.cm/%%MLARCH%%-unix/source-map.cm
 smlnj/lib/pgraph-util.cm/.cm/%%MLARCH%%-unix/pgraph-util.cm
+smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/back-trace.cm
+smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/coverage.cm
+smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/plugins.cm
 @dirrm smlnj/lib/eXene.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/eXene.cm/.cm
 @dirrm smlnj/lib/eXene.cm
@@ -36,3 +45,6 @@ smlnj/lib/pgraph-util.cm/.cm/%%MLARCH%%-unix/pgraph-util.cm
 @dirrm smlnj/lib/pgraph-util.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/pgraph-util.cm/.cm
 @dirrm smlnj/lib/pgraph-util.cm
+@dirrm smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/smlnj-tdp/.cm
+@dirrm smlnj/lib/smlnj-tdp

@@ -1,5 +1,5 @@
---- src/runtime/c-libs/posix-tty/tcgetattr.c.orig	Thu Jun  1 20:33:46 2000
-+++ src/runtime/c-libs/posix-tty/tcgetattr.c	Fri Jun  9 12:33:48 2006
+--- base/runtime/c-libs/posix-tty/tcgetattr.c.orig	Thu Jun  1 20:34:03 2000
++++ base/runtime/c-libs/posix-tty/tcgetattr.c	Sun Nov 19 13:36:18 2006
 @@ -40,7 +40,7 @@
      
    /* allocate the vector; note that this might cause a GC */
