@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	2.5.1p1
+PORTVERSION=	2.5.1p2
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
 CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 .endif
 
-.if defined(WITH_GNUTAR)
+.if !defined(WITHOUT_GNUTAR)
 CONFIGURE_ARGS+=--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
 		--with-gnutar=${LOCALBASE}/bin/gtar
 BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
@@ -199,7 +199,7 @@ post-install:
 	${TOUCH} /etc/amandates
 	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} /etc/amandates
 
-.if defined (WITH_AMANDA_DUMP_SNAPSHOT)
+.if defined (WITH_DUMP_SNAPSHOT)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendbackup-dump.c
 .endif
 
