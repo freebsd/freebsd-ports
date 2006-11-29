@@ -250,6 +250,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
+	@${PRINTF} "" > ${TMPPLIST}
 .if defined(WITH_MENU)
 	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
@@ -283,6 +284,7 @@ post-install:
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
 			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
+			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
