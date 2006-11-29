@@ -1,5 +1,5 @@
---- src/runtime/c-libs/posix-tty/tcsetattr.c.orig	Thu Jun  1 20:33:46 2000
-+++ src/runtime/c-libs/posix-tty/tcsetattr.c	Fri Jun  9 12:33:59 2006
+--- base/runtime/c-libs/posix-tty/tcsetattr.c.orig	Thu Jun  1 20:34:03 2000
++++ base/runtime/c-libs/posix-tty/tcsetattr.c	Sun Nov 19 13:36:18 2006
 @@ -30,7 +30,7 @@
      data.c_oflag = REC_SELWORD(termio_rep, 1);
      data.c_cflag = REC_SELWORD(termio_rep, 2);

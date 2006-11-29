@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.59
+PORTVERSION=	110.60
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -37,8 +37,8 @@ DISTFILES+=	boot.x86-unix.tgz
 #MLARCH=		alpha32
 #DISTFILES+=	boot.alpha32-unix.tgz
 .endif
-DISTFILES+=	ml-yacc.tgz ml-lex.tgz lexgen.tgz smlnj-lib.tgz cml.tgz \
-		MLRISC.tgz ckit.tgz heap2asm.tgz
+DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz heap2asm.tgz lexgen.tgz \
+		ml-lex.tgz ml-yacc.tgz smlnj-lib.tgz
 
 PLIST_SUB=	MLARCH=${MLARCH}
 
@@ -47,22 +47,27 @@ WITH_EVERYTHING?=	${WITH_RECOMPILE}
 .endif
 
 .if defined(WITH_EVERYTHING)
-DISTFILES+=	ml-burg.tgz ml-nlffi-lib.tgz ml-nlffigen.tgz smlnj-c.tgz \
-		eXene.tgz cm.tgz compiler.tgz system.tgz tools.tgz
+DISTFILES+=	cm.tgz compiler.tgz eXene.tgz ml-burg.tgz ml-lpt.tgz \
+		nlffi.tgz pgraph.tgz smlnj-c.tgz system.tgz \
+		trace-debug-profile.tgz
 .endif
 
 MLROOTRELATIVE=	smlnj
 MLROOT=		${PREFIX}/${MLROOTRELATIVE}
 MLBIN=		${MLROOT}/bin
 MLLIB=		${MLROOT}/lib
-MLSRCSBASE=	ckit src
-MLSRCS=		${MLROOT}/ckit ${MLROOT}/src
+MLSRCDIRS=	base ckit cml eXene heap2asm lexgen ml-burg ml-lex ml-lpt \
+		ml-yacc nlffi pgraph smlnj-c smlnj-lib
+MLSRCS=
+.for srcdir in ${MLSRCDIRS}
+MLSRCS+=	${MLROOT}/${srcdir}
+.endfor
 MLTARGETS=	heap2asm
-MLEXE=		sml ml-yacc lexgen ml-lex ml-build ml-makedepend heap2exec
+MLEXE=		heap2exec lexgen ml-build ml-lex ml-makedepend ml-yacc sml
 .if defined(WITH_EVERYTHING)
-MLTARGETS+=	ml-burg eXene src-smlnj \
-		ml-nlffi-lib ml-nlffigen nowhere pgraph-util
-MLEXE+=		ml-burg ml-nlffigen nowhere
+MLTARGETS+=	eXene ml-antlr ml-burg ml-nlffi-lib ml-nlffigen ml-ulex \
+		mlrisc-tools nowhere pgraph-util tdp-util src-smlnj
+MLEXE+=		ml-antlr ml-burg ml-nlffigen ml-ulex nowhere
 PLIST=		${WRKDIR}/.PLIST
 MLRUNTIMEPLIST=	${WRKDIR}/.PLIST-runtime
 MLSRCPLIST=	${WRKDIR}/.PLIST-src
@@ -73,11 +78,14 @@ MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything \
 pre-fetch:
 	@${ECHO}
 .if !defined(WITH_EVERYTHING)
-	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build ml-burg'
-	@${ECHO} ' (tree transformer), eXene (X Windows toolkit),'
+	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build/install'
+	@${ECHO} ' eXene (X Windows toolkit),'
+	@${ECHO} ' ml-antlr (LL(k) parser generator),'
+	@${ECHO} ' ml-burg (tree transformer),'
 	@${ECHO} ' ml-nlffi (foreign function interface to C code),'
+	@${ECHO} ' ml-ulex (lexer generator with unicode support),'
 	@${ECHO} ' nowhere (preprocessor for conditional patterns),'
-	@${ECHO} ' and all the sources.'
+	@${ECHO} ' various libraries, and all the sources.'
 .endif
 .if !defined(WITH_RECOMPILE)
 	@${ECHO} 'Use make WITH_RECOMPILE=yes to recompile the compiler.'
@@ -92,7 +100,8 @@ post-extract:
 
 # Configuring is done by uncommenting the appropriate #request xxx
 # lines of config/targets. Dependency details are handled by
-# src/system/smlnj/installer using config/dependencies.
+# base/system/smlnj/installer using config/dependencies and
+# config/actions.
 
 do-configure:
 .if defined(MLTARGETS)
@@ -113,12 +122,12 @@ do-configure:
 .endif
 
 # The build target patches, builds, and installs the system within WRKDIR.
-# src/runtime is not cleaned afterwards to avoid its recompilation during
+# base/runtime is not cleaned afterwards to avoid its recompilation during
 # a subsequent make install.
-# See src/system/README for information on recompiling the compiler.
+# See base/system/README for information on recompiling the compiler.
 
 .if defined(WITH_RECOMPILE)
-RECOMPILEDIR=	src/system
+RECOMPILEDIR=	base/system
 .else
 RECOMPILEDIR=
 .endif
@@ -130,11 +139,11 @@ AUXDEVNULL!=	if [ -w ${AUXDEV}/null ]; then ${ECHO_CMD} -n ${AUXDEV}/null; \
 		else ${ECHO_CMD} -n '${WRKDIR}/.devnull'; fi
 
 MLRUNTIMEPATCHES!=	cd ${FILESDIR} && \
-			( ${LS} do-patch-src_runtime_* 2> ${AUXDEVNULL} || \
+			( ${LS} do-patch-base_runtime_* 2> ${AUXDEVNULL} || \
 			  ${TRUE} )
 .if defined(WITH_EVERYTHING)
 MLSOURCEPATCHES!=	cd ${FILESDIR} && \
-			( ${LS} do-patch-src_* 2> ${AUXDEVNULL} || \
+			( ${LS} do-patch-* 2> ${AUXDEVNULL} || \
 			  ${TRUE} )
 .else
 MLSOURCEPATCHES=
@@ -147,7 +156,7 @@ do-build:
 	MLRUNTIMEPATCHES="${MLRUNTIMEPATCHES}" \
 	MLSOURCEPATCHES="${MLSOURCEPATCHES}"	./config/install.sh
 .if defined(WITH_RECOMPILE)
-	${RM} ${WRKDIR}/config/targets.customized
+	-${RM} ${WRKDIR}/config/targets.customized
 	@${ECHO} '(* Recompiling the core system: *)'
 	cd ${WRKDIR}/${RECOMPILEDIR} && ( \
 	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
@@ -180,7 +189,7 @@ MLNOINSTALL=	.cm
 MLNOINSTALL+=	sml.bin.${MLARCH}-unix sml.boot.${MLARCH}-unix \
 		sml.lib sml.${MLARCH}-bsd
 .endif
-MLSRCEXCLUDEREGEX=	-e '^(@dirrm\ )?${MLROOTRELATIVE}/src/runtime'
+MLSRCEXCLUDEREGEX=	-e '^(@dirrm\ )?${MLROOTRELATIVE}/base/runtime'
 .for excl in ${MLNOINSTALL}
 MLSRCEXCLUDEREGEX+=	-e '/${excl}$$' -e '/${excl}/'
 .endfor
@@ -191,23 +200,26 @@ MLPATCHPATHREGEX=	-E -e 's%(^|[^_])_([^_]|$$)%\1/\2%g' \
 pre-install:
 	@${ECHO} -n '(* Computing package list ...'
 	@${TAR} -tzf ${WRKDIR}/runtime.tgz | \
-	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/src/\1%' \
-		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/src/\1%' \
+	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/base/\1%' \
+		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/base/\1%' \
 		> ${MLRUNTIMEPLIST}
 .for p in ${MLRUNTIMEPATCHES}
 	@${ECHO_CMD} '${p}' | \
 	${SED} ${MLPATCHPATHREGEX} | \
-	${SED} -E -e 's%^do-patch-(src/.*)%${MLROOTRELATIVE}/\1.orig%' \
+	${SED} -E -e 's%^do-patch-(base/.*)%${MLROOTRELATIVE}/\1.orig%' \
 	>> ${MLRUNTIMEPLIST}
 .endfor
 	@cd "${WRKDIR}" && ( \
-	( ${FIND} -s -d ${MLSRCSBASE} \! -type d | \
+	( ${FIND} -s -d ${MLSRCDIRS} \! -type d | \
 	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
-	( ${FIND} -s -d ${MLSRCSBASE} -type d | \
+	( ${FIND} -s -d ${MLSRCDIRS} -type d -empty | \
+	${AWK} '{ print "@exec mk""dir -p %D/${MLROOTRELATIVE}/" $$0 }' ) ; \
+	( ${FIND} -s -d ${MLSRCDIRS} -type d | \
 	${AWK} '{ print "@dirrm ${MLROOTRELATIVE}/" $$0 }' ) ) | \
 	${EGREP} -v ${MLSRCEXCLUDEREGEX} > ${MLSRCPLIST}
-	@${GREP} -h ^[^@] ${MLPLISTFILES} | ${SORT} -u > ${PLIST}
-	@${GREP} -h ^@dirrm ${MLPLISTFILES} | ${SORT} -r -u >> ${PLIST}
+	@${GREP} -h "^[^@]" ${MLPLISTFILES} | ${SORT} -u > ${PLIST}
+	@${GREP} -h "^@exec mk""dir" ${MLPLISTFILES} | ${SORT} -u >> ${PLIST}
+	@${GREP} -h "^@dirrm" ${MLPLISTFILES} | ${SORT} -r -u >> ${PLIST}
 	@${ECHO} ' done. *)'
 .endif
 
@@ -249,10 +261,10 @@ do-install:
 	${STRIP_CMD} "${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" )
 	@${CHOWN} -R ${BINOWN}:${BINGRP} "${MLBIN}" "${MLLIB}"
 .if defined(WITH_EVERYTHING)
-	@${ECHO} '(* Cleaning src/runtime: *)'
-	cd ${WRKDIR}/src/runtime/objs && ${GMAKE} clean
+	@${ECHO} '(* Cleaning base/runtime: *)'
+	cd ${WRKDIR}/base/runtime/objs && ${GMAKE} clean
 	@${ECHO} -n '(* Installing sources into ${MLROOT} ...'
-	@cd ${WRKDIR} && ${TAR} -cf - ${MLSRCEXCLUDES} ${MLSRCSBASE} | \
+	@cd ${WRKDIR} && ${TAR} -cf - ${MLSRCEXCLUDES} ${MLSRCDIRS} | \
 	${TAR} -xf - -C "${MLROOT}"
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MLSRCS}
 	@${ECHO} ' done. *)'
