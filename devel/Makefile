@@ -285,6 +285,7 @@
     SUBDIR += fastdep
     SUBDIR += fc++
     SUBDIR += ffcall
+    SUBDIR += fga
     SUBDIR += fhist
     SUBDIR += fib
     SUBDIR += fistgen
