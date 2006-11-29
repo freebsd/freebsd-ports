@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plagger
-PORTVERSION=	0.7.15
+PORTVERSION=	0.7.16
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -16,6 +16,9 @@ MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A pluggable RSS/Atom feed aggregator written in Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		${SITE_PERL}/DateTime/Locale.pm:${PORTSDIR}/devel/p5-DateTime-Locale \
 		${SITE_PERL}/DateTime/Format/Mail.pm:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
 		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		${SITE_PERL}/DateTime/Format/W3CDTF.pm:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
@@ -95,6 +98,10 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		PLANETINI "Subscription::PlanetINI Support" off \
 		SUMMARYENG "Summary-English Support" off \
 		SUMTEXTORG "Summary-TextOriginal Support" off \
+# The below are not supported yet due to lack of depending ports
+#		PRSJPNDATE "Parse Japanese datetime format" off \
+#		FILDEGYT "Filter-DegradeYouTube" off \
+#		SUMJPN "Summary::Japanes" off \
 
 .include <bsd.port.pre.mk>
 
@@ -124,6 +131,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 .if !defined(WITHOUT_BETTERHTML)
 BUILD_DEPENDS+=	${SITE_PERL}/HTML/TreeBuilder/XPath.pm:${PORTSDIR}/www/p5-HTML-TreeBuilder-XPath
 .endif
+
+#.if !defined(WITH_PRSJPNDATE)
+#BUILD_DEPENDS+=	${SITE_PERL}/DateTime/Format/Japanese.pm:${PORTSDIR}/devel/p5-DateTime-Format-Japanese
+#.endif
 
 .if defined(WITH_PUBLISHEXCEL)
 BUILD_DEPENDS+=	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
@@ -369,8 +380,8 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::CustomFeed::MixiDiarySearch.3 \
 		Plagger::Plugin::CustomFeed::POP3.3 \
 		Plagger::Plugin::CustomFeed::PerlMonks.3 \
-		Plagger::Plugin::CustomFeed::Script.3 \
 		Plagger::Plugin::CustomFeed::SVNLog.3 \
+		Plagger::Plugin::CustomFeed::Script.3 \
 		Plagger::Plugin::CustomFeed::Simple.3 \
 		Plagger::Plugin::CustomFeed::YouTube.3 \
 		Plagger::Plugin::CustomFeed::iTunesRecentPlay.3 \
@@ -384,6 +395,7 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Filter::BreakEntriesToFeeds.3 \
 		Plagger::Plugin::Filter::BulkfeedsTerms.3 \
 		Plagger::Plugin::Filter::CompositeFeed.3 \
+		Plagger::Plugin::Filter::DegradeYouTube.3 \
 		Plagger::Plugin::Filter::Delicious.3 \
 		Plagger::Plugin::Filter::DeliciousFeedTags.3 \
 		Plagger::Plugin::Filter::Emoticon.3 \
@@ -461,8 +473,8 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Publish::Gmail.3 \
 		Plagger::Plugin::Publish::HatenaBookmark.3 \
 		Plagger::Plugin::Publish::IMAP.3 \
-		Plagger::Plugin::Publish::JavaScript.3 \
 		Plagger::Plugin::Publish::JSON.3 \
+		Plagger::Plugin::Publish::JavaScript.3 \
 		Plagger::Plugin::Publish::LivedoorClip.3 \
 		Plagger::Plugin::Publish::MT.3 \
 		Plagger::Plugin::Publish::MTWidget.3 \
@@ -503,10 +515,12 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Subscription::PlanetINI.3 \
 		Plagger::Plugin::Subscription::XOXO.3 \
 		Plagger::Plugin::Subscription::XPath.3 \
+		Plagger::Plugin::Summary::AppleScript.3 \
 		Plagger::Plugin::Summary::Auto.3 \
 		Plagger::Plugin::Summary::English.3 \
 		Plagger::Plugin::Summary::GetSen.3 \
 		Plagger::Plugin::Summary::HatenaBookmark.3 \
+		Plagger::Plugin::Summary::Japanese.3 \
 		Plagger::Plugin::Summary::Simple.3 \
 		Plagger::Plugin::Summary::TextOriginal.3 \
 		Plagger::Plugin::Summary::TrackbackRDF.3 \
