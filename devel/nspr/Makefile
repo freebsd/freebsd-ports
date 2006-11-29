@@ -30,8 +30,9 @@ LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 601104
 post-patch:
+	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${OSVERSION} < 601104
 	@${REINPLACE_CMD} -e 's|pthread_cond_wait|_pthread_cond_wait|g' \
 	    	${WRKSRC}/../pr/src/md/unix/pthreads_user.c \
 		${WRKSRC}/../pr/src/pthreads/ptsynch.c
@@ -51,7 +52,7 @@ do-install:
 .endfor
 
 prtests:
-	${GMAKE} -C ${WRKSRC}/pr/tests
+	env PTHREAD_LIBS="${PTHREAD_LIBS}" ${GMAKE} -C ${WRKSRC}/pr/tests
 	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
 	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
 
