@@ -1,9 +1,9 @@
---- GNUmakef.def.orig	Mon Dec 22 14:02:19 2003
-+++ GNUmakef.def	Fri Dec 26 05:38:58 2003
-@@ -78,8 +78,8 @@
- LNKFLAGS+=-lbe -ltextencoding
- else
+--- GNUmakef.def.orig	Mon May 15 16:54:00 2006
++++ GNUmakef.def	Tue Oct 31 23:29:12 2006
+@@ -106,8 +106,8 @@
  CAT=cat
+ SED=sed
+ GREP=grep
 -CC=gcc
 -CXX=g++
 +#CC=gcc
@@ -11,14 +11,14 @@
  AR=ar
  RANLIB=ranlib
  PLATFORM=lnx
-@@ -91,8 +91,8 @@
+@@ -119,8 +119,8 @@
  endif
  endif
  endif
--CFLAGS+=-g -funsigned-char $(INCS) -Wall -Wno-sign-compare -pedantic -O2 -DPRAGMA_PACK # -fomit-frame-pointer
+-CFLAGS+=-funsigned-char -g $(INCS) -Wall -Wno-sign-compare -pedantic -O2 -DPRAGMA_PACK # -fomit-frame-pointer
 -LNKFLAGS+=-g
-+CFLAGS+=-funsigned-char $(INCS) -Wall -Wno-sign-compare -O2 -DPRAGMA_PACK # -pedantic -fomit-frame-pointer
++CFLAGS+=-funsigned-char $(INCS) -Wall -Wno-sign-compare -O2 -DPRAGMA_PACK # -g -pedantic -fomit-frame-pointer
 +#LNKFLAGS+=-g
- CPPFLAGS+=$(CFLAGS) -fno-exceptions -fno-rtti
+ CPPFLAGS+=$(CFLAGS) -fno-rtti # -fno-exceptions
  
  # comment following lines if you dislike ncurses
