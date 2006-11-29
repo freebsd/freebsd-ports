@@ -51,6 +51,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Filter/BreakEntriesToFeeds.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/BulkfeedsTerms.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/CompositeFeed.pm
+%%SITE_PERL%%/Plagger/Plugin/Filter/DegradeYouTube.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/Delicious.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/DeliciousFeedTags.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/Emoticon.pm
@@ -193,13 +194,15 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Subscription/PlanetINI.pm
 %%SITE_PERL%%/Plagger/Plugin/Subscription/XOXO.pm
 %%SITE_PERL%%/Plagger/Plugin/Subscription/XPath.pm
-%%SITE_PERL%%/Plagger/Plugin/Summary/TrackbackRDF.pm
+%%SITE_PERL%%/Plagger/Plugin/Summary/AppleScript.pm
+%%SITE_PERL%%/Plagger/Plugin/Summary/Auto.pm
+%%SITE_PERL%%/Plagger/Plugin/Summary/English.pm
 %%SITE_PERL%%/Plagger/Plugin/Summary/GetSen.pm
 %%SITE_PERL%%/Plagger/Plugin/Summary/HatenaBookmark.pm
-%%SITE_PERL%%/Plagger/Plugin/Summary/Auto.pm
-%%SITE_PERL%%/Plagger/Plugin/Summary/TextOriginal.pm
+%%SITE_PERL%%/Plagger/Plugin/Summary/Japanese.pm
 %%SITE_PERL%%/Plagger/Plugin/Summary/Simple.pm
-%%SITE_PERL%%/Plagger/Plugin/Summary/English.pm
+%%SITE_PERL%%/Plagger/Plugin/Summary/TextOriginal.pm
+%%SITE_PERL%%/Plagger/Plugin/Summary/TrackbackRDF.pm
 %%SITE_PERL%%/Plagger/Plugin/UserAgent/AuthenRequest.pm
 %%SITE_PERL%%/Plagger/Plugin/UserAgent/RequestHeader.pm
 %%SITE_PERL%%/Plagger/Plugin/Widget/BloglinesSubscription.pm
@@ -252,6 +255,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/common/html.tt
 %%DATADIR%%/assets/plugins/CustomFeed-Script/domain-expire.pl
 %%DATADIR%%/assets/plugins/CustomFeed-Script/jsports-football.pl
+%%DATADIR%%/assets/plugins/CustomFeed-Script/slims_calendar.pl
 %%DATADIR%%/assets/plugins/CustomFeed-Script/ssl-expire.pl
 %%DATADIR%%/assets/plugins/CustomFeed-Script/wowow-hv-51ch.pl
 %%DATADIR%%/assets/plugins/CustomFeed-Script/wowow-liga-espanola.pl
@@ -323,9 +327,11 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mainichi-msn.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/matino-akari_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/memn0ck.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/mt2.pl
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mtv-music.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mycom_journal.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/netkeiba.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/news_3yen_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/news_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/news_livedoor_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/newsforge.yaml
