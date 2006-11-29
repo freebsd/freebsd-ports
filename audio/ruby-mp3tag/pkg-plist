@@ -1,6 +1,11 @@
 %%RUBY_SITELIBDIR%%/mp3tag.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/mp3tag.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mp3tag_test.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/mp3tag.html
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
