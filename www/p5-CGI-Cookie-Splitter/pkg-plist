@@ -1,0 +1,7 @@
+%%SITE_PERL%%/CGI/Cookie/Splitter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/Splitter/.packlist
+@dirrmtry %%SITE_PERL%%/CGI/Cookie
+@dirrmtry %%SITE_PERL%%/CGI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/Splitter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
