@@ -10796,6 +10796,7 @@ panda		ports/print/panda
 pango		ports/x11-toolkits/pango
 pango-reference	ports/x11-toolkits/pango-reference
 pangoxsl	ports/x11-toolkits/pangoxsl
+panoptis	ports/net/panoptis
 panorama	ports/graphics/panorama
 panoramixext	ports/x11/panoramixext
 pantomime	ports/mail/pantomime
