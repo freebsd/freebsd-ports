@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061130:
+  AFFECTS: users of net/openldap2[34]-server
+  AUTHOR: delphij@FreeBSD.org
+
+  The default Berkeley DB version has been changed from
+  4.3 to 4.4, as suggested by OpenLDAP developers.
+
 20061121:
   AFFECTS: users of www/hastymail
   AUTHOR: miwi@FreeBSD.org
