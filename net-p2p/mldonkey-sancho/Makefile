@@ -35,6 +35,8 @@ RUN_DEPENDS=	\
 
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		Broken dependency
+
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jre

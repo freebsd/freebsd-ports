@@ -26,6 +26,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Cry
 		${X11BASE}/lib/X11/fonts/webfonts/verdana.ttf:${PORTSDIR}/x11-fonts/webfonts \
 		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server
 
+BROKEN=		Broken dependency
+
 NO_BUILD=	yes
 USE_PHP=	mysql pcre session
 
