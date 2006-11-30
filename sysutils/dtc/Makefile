@@ -7,7 +7,7 @@
 
 PORTNAME=	dtc
 PORTVERSION=	0.24.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/
 
@@ -34,7 +34,7 @@ DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
 RUN_DEPENDS+=    ${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 USE_PHP+=	bz2 gd mbstring mcrypt mysql mysqli openssl pcre \
-		pear session sockets xml zlib
+		session sockets xml zlib
 .endif
 
 .if defined(WITH_WEBALIZER)
