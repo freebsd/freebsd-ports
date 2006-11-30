@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${BUILDTOOL}:${PORTSDIR}/devel/buildtool \
 		${DOCBOOK_XML}:${PORTSDIR}/textproc/docbook-xml \
 		${DOCBOOK_XSL}:${PORTSDIR}/textproc/docbook-xsl
 
+BROKEN=		Incorrect pkg-plist
+
 .if defined(NOPORTDOCS)
 IGNORE=		contains only documentation
 .endif
