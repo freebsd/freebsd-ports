@@ -38,9 +38,9 @@ CONFIGURE_ARGS+=--enable-dynamic=${INTERFACE}
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 PKGDIR=		${.CURDIR}
-PLIST_SUB=	TIMID_LIBDIR=${TIMID_LIBDIR}
+PLIST_SUB+=	TIMID_LIBDIR=${TIMID_LIBDIR}
 
-TIMID_LIBDIR=	${PREFIX}/lib/timidity
+TIMID_LIBDIR=	lib/timidity
 
 .if ${INTERFACE} == "emacs"
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
@@ -101,7 +101,7 @@ LDFLAGS+=-export-dynamic
 .endif
 
 EUCJP_LOCALE=	ja_JP.eucJP
-PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE}
+PLIST_SUB+=	EUCJP_LOCALE=${EUCJP_LOCALE}
 
 .if ${INTERFACE} == "motif"
 post-configure:
