@@ -14,7 +14,7 @@ DISTFILES=	${DICTFILES}
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_ICONV=	yes
 ICONV?=		iconv
