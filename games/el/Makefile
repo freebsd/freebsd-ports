@@ -27,6 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_SDL=	sdl net
+USE_XLIB=	yes
 
 ALL_TARGET=	el.x86
 MAKEFILE=	Makefile.bsdg
