@@ -8,7 +8,7 @@
 PORTNAME=	planet
 PORTVERSION=	2.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.wave2.co.uk/freebsd/planet/
+MASTER_SITES=	http://www.planetplanet.org/download/
 
 MAINTAINER=	alan@wave2.co.uk
 COMMENT=	Planet is a flexible feed aggregator - and more!
@@ -16,6 +16,7 @@ COMMENT=	Planet is a flexible feed aggregator - and more!
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:${PORTSDIR}/devel/py-mx-experimental \
 		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
+USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message
