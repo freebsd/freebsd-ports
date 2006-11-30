@@ -17,6 +17,10 @@ COMMENT=	Fast and ultra light windowmanager with total keyboard control
 PLIST_FILES=	bin/weewm
 USE_X_PREFIX=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,^CC=,CC?=,' -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/src/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/weewm ${PREFIX}/bin
 
