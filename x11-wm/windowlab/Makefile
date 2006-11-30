@@ -26,9 +26,13 @@ PLIST_DIRS=	etc/windowlab
 
 PORTDOCS=	CHANGELOG README
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,^CC =,CC ?=,' \
+		-e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/windowlab ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/windowlab.1x ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/windowlab.1x ${MANPREFIX}/man/man1
 	${MKDIR} ${PREFIX}/etc/windowlab
 	${INSTALL_DATA} ${WRKSRC}/windowlab.menurc ${PREFIX}/etc/windowlab/menurc
 .if !defined(NOPORTDOCS)
