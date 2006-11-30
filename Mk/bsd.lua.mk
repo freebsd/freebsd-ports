@@ -162,6 +162,10 @@ _LUA_PORT_socket_5.0=	net/luasocket
 _LUA_PORT_lua_5.1=		lang/lua
 _LUA_DEPTYPE_lua_5.1=	build
 
+_LUA_PORT_filename_5.1= devel/lua-filename
+_LUA_PORT_gettext_5.1=  devel/lua-gettext
+_LUA_PORT_posix_5.1=    devel/lua-posix
+
 .for comp in ${_LUA_COMPS_ALL}
 _LUA_COMP=				${comp}
 .	for ver in ${_LUA_VERS_ALL}
