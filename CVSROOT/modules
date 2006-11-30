@@ -2534,6 +2534,7 @@ fandango	ports/cad/fandango
 fanout		ports/sysutils/fanout
 fapg		ports/audio/fapg
 farblazer	ports/games/farblazer
+farbot		ports/sysutils/farbot
 fargoal		ports/games/fargoal
 farsifonts	ports/x11-fonts/farsifonts
 fast-user-switch-applet	ports/x11/fast-user-switch-applet
