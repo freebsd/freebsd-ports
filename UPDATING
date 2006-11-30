@@ -13,6 +13,19 @@ upgrades.
   The default Berkeley DB version has been changed from
   4.3 to 4.4, as suggested by OpenLDAP developers.
 
+  Suggested upgrade step:
+    - Stop OpenLDAP server (i.e. ${PREFIX}/etc/rc.d/slapd stop)
+    - Backup the OpenLDAP database (typically, /var/db/openldap-data)
+      with your favorite tool
+    - Do a "slapcat > backup.ldif" to dump all data
+    - portupgrade net/openldap23-server
+    - Remove BDB files from your /var/db/openldap-data;  you will want
+      to keep DB_CONFIG as-is.
+    - Do a "slapadd < backup.ldif" to restore the data
+
+  Alternatively, if you want to keep the current BDB version (4.3),
+  please define WITH_BDB=43 when building the server.
+
 20061121:
   AFFECTS: users of www/hastymail
   AUTHOR: miwi@FreeBSD.org
