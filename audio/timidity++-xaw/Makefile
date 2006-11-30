@@ -12,4 +12,6 @@ COMMENT=	Xaw interface for TiMidity++
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
 
+PLIST_SUB+=	REALPREFIX=${PREFIX}
+
 .include "${MASTERDIR}/Makefile"

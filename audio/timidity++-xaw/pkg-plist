@@ -1,7 +1,7 @@
-@cwd /usr/X11R6
+@cwd %%X11BASE%%
 lib/X11/app-defaults/TiMidity
 lib/X11/%%EUCJP_LOCALE%%/app-defaults/TiMidity
-@cwd /usr/local
+@cwd %%REALPREFIX%%
 bin/xawmidi
 lib/timidity/bitmaps/back.xbm
 lib/timidity/bitmaps/fwrd.xbm
@@ -18,6 +18,6 @@ lib/timidity/interface_a.so
 %%PORTDOCS%%%%DOCSDIR%%/README.xaw
 %%PORTDOCS%%share/doc/ja/timidity++/README.xaw
 @dirrm lib/timidity/bitmaps
-@cwd /usr/X11R6
+@cwd %%X11BASE%%
 @dirrmtry lib/X11/%%EUCJP_LOCALE%%/app-defaults
 @dirrmtry lib/X11/%%EUCJP_LOCALE%%
