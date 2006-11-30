@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-transparency --enable-xpm-background \
 		--disable-delete-key --disable-backspace-key \
 		--enable-next-scrollbar --enable-utmp --enable-wtmp \
-		--enable-menubar --enable-graphics
+		--enable-menubar --enable-graphics --with-term=xterm-color \
+		--with-xpm-includes=${X11BASE} --with-xpm-library=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/WINGs"
 
 MAN1=		wterm.1
