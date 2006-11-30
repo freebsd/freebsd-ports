@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	link-grammar
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
