@@ -4,7 +4,7 @@
  XINCL=/usr/include
  if [ -d /usr/X11/include/X11 ]; then XINCL=/usr/X11/include; fi
  if [ -d /usr/openwin/include/X11 ]; then XINCL=/usr/openwin/include; fi
-+if [ -d /usr/X11R6/include/X11 ]; then XINCL=/usr/X11R6/include; fi
++if [ -d ${X11BASE}/include/X11 ]; then XINCL=${X11BASE}/include; fi
  if [ ! -d $XINCL/X11 ]; then XINCL=; fi
  
  XTANGO=/home/sr/xtango/include
@@ -14,15 +14,15 @@
  
 +# on FreeBSD, set X11R6 library
 +if [ "`(uname -s) 2>/dev/null`" = "FreeBSD" ]; then
-+    LIBR="-L/usr/X11R6/lib"
++    LIBR="-L${X11BASE}/lib"
 +fi
 +# on OpenBSD, set X11R6 library
 +if [ "`(uname -s) 2>/dev/null`" = "OpenBSD" ]; then
-+    LIBR="-L/usr/X11R6/lib"
++    LIBR="-L${X11BASE}/lib"
 +fi
 +# on NetBSD, set X11R6 library
 +if [ "`(uname -s) 2>/dev/null`" = "NetBSD" ]; then
-+    LIBR="-L/usr/X11R6/lib"
++    LIBR="-L${X11BASE}/lib"
 +fi
 +
  # if this looks like an Arizona system, use our srmap file
