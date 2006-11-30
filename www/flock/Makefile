@@ -52,6 +52,10 @@ OPTIONS=	SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		Does not build on amd64
+.endif
+
 .if ${ARCH}=="alpha" || ${ARCH}=="ia64"
 IGNORE=	core dumps on ${ARCH}
 .endif
