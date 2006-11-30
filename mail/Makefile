@@ -6,6 +6,7 @@
     SUBDIR += abook
     SUBDIR += adcomplain
     SUBDIR += addresses
+    SUBDIR += addresses-goodies
     SUBDIR += akpop3d
     SUBDIR += altermime
     SUBDIR += althea
