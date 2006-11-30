@@ -1,0 +1,8 @@
+--- Makefile.orig	Mon Nov 27 22:50:17 2006
++++ Makefile	Mon Nov 27 23:00:33 2006
+@@ -1,4 +1,4 @@
+-prefix = /usr/local
++prefix = $(PREFIX)
+ BINDIR = $(prefix)/bin
+ MANDIR = $(prefix)/man
+ ETCDIR = $(prefix)/etc
