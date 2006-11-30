@@ -18,13 +18,15 @@ COMMENT=	A table/matrix widget extension to tk/tcl
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+USE_XLIB=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER} \
 		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER} \
-		--with-x=${X11BASE}
+		--with-x
 
 TK_VER=		8.4
 PLIST_SUB=	DESTDIR=lib/${DISTNAME}
