@@ -36,6 +36,10 @@ SCM_MODULES=	byte.so crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ${ARCH}
+.endif
+
 post-extract:
 	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/slib-psd1-3.tar.gz
 	@${CP} ${FILESDIR}/require.scm.in ${WRKDIR}/require.scm
