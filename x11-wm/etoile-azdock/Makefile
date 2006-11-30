@@ -15,18 +15,19 @@ DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project AZDock is a wm-dock
 
-SNAPSHOT=	20060917
-WRKSRC=	${WRKDIR}/etoile-0+${SNAPSHOT}+dfsg/Etoile/
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
 USE_GNUSTEP_LOCAL_LIBS+=	XWindowServerKit:${XWINDOWSERVERKIT_PORT}
+
+SNAPSHOT=	20060917
+WRKSRC=	${WRKDIR}/etoile-0+${SNAPSHOT}+dfsg/Etoile/
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/AZDock
 
 XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit
+ADDITIONAL_OBJCFLAGS+=	-I${X11BASE}/include
+ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
 
 .include <bsd.port.mk>
