@@ -28,7 +28,7 @@ MAN3=		readline.3 history.3
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=	Does not compile on sparc64
+EXTRA_PATCHES+=	${FILESDIR}/support_shobj-conf.diff
 .endif
 
 pre-configure:

@@ -1,0 +1,14 @@
+--- support/shobj-conf.orig	Thu Nov 30 17:39:36 2006
++++ support/shobj-conf	Thu Nov 30 17:42:35 2006
+@@ -125,7 +125,10 @@
+ 
+ # FreeBSD-3.x ELF
+ freebsd[3-9]*|freebsdelf[3-9]*|freebsdaout[3-9]*|dragonfly*)
+-	SHOBJ_CFLAGS=-fpic
++	# SHOBJ_CFLAGS=-fpic
++	# This breaks shared lib linking with FreeBSD 6.2RC1/SPARC64 with
++	# gcc version 3.4.6 [FreeBSD] 20060305 - gcc bug?
++	# Submitted By: John Wood <john@charpa.org>
+ 	SHOBJ_LD='${CC}'
+ 
+ 	if [ -x /usr/bin/objformat ] && [ "`/usr/bin/objformat`" = "elf" ]; then
