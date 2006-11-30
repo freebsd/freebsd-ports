@@ -18,7 +18,8 @@ COMMENT=	Fully featured neural network simulator
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}/snns --enable-global
+CONFIGURE_ARGS=	--prefix=${PREFIX}/snns --enable-global \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 post-configure:
 	@(${SED} -e "s#%prefix%#${PREFIX}#g" < ${FILESDIR}/snns > ${WRKSRC}/snns)
