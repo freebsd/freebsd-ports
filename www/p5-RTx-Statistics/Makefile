@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	ftp://anonftp.mqsoftware.com/kfh/RT/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RTx::Statistics - Produces statistical information based on RT3 data
 
 BUILD_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
