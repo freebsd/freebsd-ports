@@ -162,7 +162,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 _PYTHON_PORTBRANCH=		2.4
 _PYTHON_ALLBRANCHES=	2.4 2.5 2.3 2.2 2.1 # preferred first
 _ZOPE_PORTBRANCH=		2.7
-_ZOPE_ALLBRANCHES=		2.7 2.8 2.9 3.2
+_ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
 
 
 # Determine version number of Zope to use
@@ -174,10 +174,10 @@ _ZOPE_VERSION:=			${_ZOPE_PORTBRANCH}
 .endif
 
 # Validate Zope version whether it meets USE_ZOPE version restriction.
-_ZOPE_VERSION_CHECK:=		${USE_ZOPE:C/^([1-9]\.[0-9])$/\1-\1/}
-_ZOPE_VERSION_MINIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/([1-9]\.[0-9])[-+].*/\1/}
+_ZOPE_VERSION_CHECK:=		${USE_ZOPE:C/^([1-9]\.[0-9]*)$/\1-\1/}
+_ZOPE_VERSION_MINIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/([1-9]\.[0-9]*)[-+].*/\1/}
 _ZOPE_VERSION_MINIMUM:=		${_ZOPE_VERSION_MINIMUM_TMP:M[1-9].[0-9]}
-_ZOPE_VERSION_MAXIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/.*-([1-9]\.[0-9])/\1/}
+_ZOPE_VERSION_MAXIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/.*-([1-9]\.[0-9]*)/\1/}
 _ZOPE_VERSION_MAXIMUM:=		${_ZOPE_VERSION_MAXIMUM_TMP:M[1-9].[0-9]}
 
 .if !empty(_ZOPE_VERSION_MINIMUM) && ( \
@@ -390,6 +390,10 @@ PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 SZOPEBASEDIR?=			www/Zope3
 ZOPE_PORTSDIR=			${PORTSDIR}/www/zope3
 ZOPESKELDIR=			${ZOPEBASEDIR}/zopeskel
+.elif ${ZOPE_VERSION} == "2.10"
+SZOPEBASEDIR?=			www/Zope210
+ZOPE_PORTDIR=			${PORTSDIR}/www/zope210
+ZOPESKELDIR=			${ZOPEBASEDIR}/skel
 .elif ${ZOPE_VERSION} == "2.9"
 SZOPEBASEDIR?=			www/Zope29
 ZOPE_PORTSDIR=			${PORTSDIR}/www/zope29
@@ -405,7 +409,7 @@ ZOPESKELDIR=			${ZOPEBASEDIR}/skel
 .else
 check-makevars::
 	@${ECHO} "Makefile error: bad value for ZOPE_VERSION: ${ZOPE_VERSION}."
-	@${ECHO} "Legal values are:	2.7 (default), 2.8, 2.9, 3.2"
+	@${ECHO} "Legal values are:	2.7 (default), 2.8, 2.9, 2.10, 3.2"
 	@${FALSE}
 .endif
 ZOPEBASEDIR?=			${TARGETDIR}/${SZOPEBASEDIR}
