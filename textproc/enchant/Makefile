@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	enchant
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://www.abisource.com/downloads/enchant/${PORTVERSION}/
+MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
