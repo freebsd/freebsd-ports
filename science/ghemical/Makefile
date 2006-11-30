@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghemical
-PORTVERSION=	2.01
+PORTVERSION=	2.10
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/ \
 		http://bioinformatics.org/ghemical/download/
