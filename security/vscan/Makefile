@@ -21,6 +21,7 @@ COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 # security. Use at your own risk.
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64"
+BROKEN=		Incomplete pkg-plist
 WITHOUT_COMPAT3=1
 UVSCAN_LIB32=	32
 USE_LDCONFIG32=	${PREFIX}/lib32
