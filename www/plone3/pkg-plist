@@ -4597,6 +4597,8 @@
 %%ZOPEBASEDIR%%/Products/Five/site/tests/test_sitemanager.pyc
 %%ZOPEBASEDIR%%/Products/Five/site/tests/test_utility.pyc
 %%ZOPEBASEDIR%%/Products/Five/site/utility.py
+%%ZOPEBASEDIR%%/Products/Five/site/utility.pyc
+%%ZOPEBASEDIR%%/Products/Five/site/localsite.pyc
 %%ZOPEBASEDIR%%/Products/Five/site/__init__.pyc
 %%ZOPEBASEDIR%%/Products/Five/site/browser.pyc
 %%ZOPEBASEDIR%%/Products/Five/site/interfaces.pyc
@@ -5361,6 +5363,7 @@
 %%ZOPEBASEDIR%%/Products/PasswordResetTool/tests/utils/mailhost.py
 %%ZOPEBASEDIR%%/Products/PasswordResetTool/tests/utils/monkey.py
 %%ZOPEBASEDIR%%/Products/PasswordResetTool/tests/utils/testbrowser.py
+%%ZOPEBASEDIR%%/Products/PasswordResetTool/tests/utils/testbrowser.pyc
 %%ZOPEBASEDIR%%/Products/PasswordResetTool/tests/utils/__init__.pyc
 %%ZOPEBASEDIR%%/Products/PasswordResetTool/tests/utils/mailhost.pyc
 %%ZOPEBASEDIR%%/Products/PasswordResetTool/tests/utils/monkey.pyc
@@ -7634,3 +7637,5 @@
 @dirrm %%ZOPEBASEDIR%%/Products/validation/tests
 @dirrm %%ZOPEBASEDIR%%/Products/validation/validators
 @dirrm %%ZOPEBASEDIR%%/Products/validation
+@dirrm %%ZOPEBASEDIR%%/Products
+@dirrm %%ZOPEBASEDIR%%
