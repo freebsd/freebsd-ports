@@ -1,6 +1,6 @@
 Collection of GNUstep software
 
-System libs:	Gorm, ScriptKit, gnustep-db2, Renaissance, PreferencePanes,
+System libs:	ScriptKit, gnustep-db2, Renaissance, PreferencePanes,
 Camaelon, TrackerKit, PreferencesKit, BookmarkKit, ServicesBarKit, IconKit,
 EtoileMenus
 
@@ -9,9 +9,9 @@ WizardKit, HighlighterKit, Performance, SQLClient, WebServer, StepTalk,
 MathArray, ObjcUnit, WildMenus, GSKrab, Cddb, UnitKit, XWindowServerKit,
 RSSKit, EtoileExtensions
 
-System apps:	GShisen, ProjectCenter, Preferences, GWorkspace, guile-gui,
-gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
-WrapperFactory, GRubik
+System apps:	Gorm, GShisen, ProjectCenter, Preferences, GWorkspace,
+guile-gui, gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
+WrapperFactory, GRubik, AZDock
 
 Local apps:	Gomoku, GNUMail, EasyDiff, Calculator, CurrencyConverter,
 Finger, GFractal, GSTest, HostAddress, Ink, NSBrowserTest, NSImageTest,
@@ -22,6 +22,7 @@ GTAMSAnalyzer, Paje, AClock, PhotoClip, LapisPuzzle, Waiho, Affiche,
 ProjectManager, GMastermind2, GPuzzle2, Ticker, NoteBook, HelpViewer, Duncan,
 Jishyo, GMines, InnerSpace, FTP, DictionaryReader, batmon, Adun, RemoteDesk,
 DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer, Burn, GScheme,
-Mplayer, MyLibrary, NeXTGo, Grr, iTerm, Installer, Hardware, LookAndBehavior
+Mplayer, MyLibrary, NeXTGo, Grr, iTerm, Installer, Hardware, LookAndBehavior,
+Azalea, EtoileMenuServer, Position
 
 Local tools:	zillion
