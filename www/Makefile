@@ -1182,6 +1182,7 @@
     SUBDIR += ziproxy
     SUBDIR += znavigator
     SUBDIR += zope
+    SUBDIR += zope210
     SUBDIR += zope28
     SUBDIR += zope29
     SUBDIR += zope3
