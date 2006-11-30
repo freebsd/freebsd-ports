@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -68,10 +68,7 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 
-post-extract:
-.for f in inc_ds.php inc_tinderbox.php
-	${MV} ${WRKSRC}/www-exp/${f} ${WRKSRC}/www-exp/${f}-dist
-.endfor
+#post-extract:
 
 post-patch:
 .if defined(WITH_MYSQL)
@@ -80,7 +77,6 @@ post-patch:
 		${WRKSRC}/lib/setup-mysql.sh
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
 .endif
-	 @${RM} ${WRKSRC}/tc.orig
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts

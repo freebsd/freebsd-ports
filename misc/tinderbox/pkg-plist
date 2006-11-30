@@ -49,9 +49,11 @@ tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.0_to_2.1.1.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.1_to_2.2.0.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.2.0_to_2.3.0.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.0_to_2.3.1.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.1_to_2.3.2.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.1.1_to_2.2.0.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.2.0_to_2.3.0.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.0_to_2.3.1.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.1_to_2.3.2.sql
 tinderbox/scripts/upgrade/mig_shlib.sh
 tinderbox/scripts/www-exp/core/Build.php
 tinderbox/scripts/www-exp/core/BuildPortsQueue.php
@@ -64,8 +66,8 @@ tinderbox/scripts/www-exp/core/TinderObject.php
 tinderbox/scripts/www-exp/core/TinderboxDS.php
 tinderbox/scripts/www-exp/core/User.php
 tinderbox/scripts/www-exp/core/functions.php
-tinderbox/scripts/www-exp/inc_ds.php-dist
-tinderbox/scripts/www-exp/inc_tinderbox.php-dist
+tinderbox/scripts/www-exp/inc_ds.php.dist
+tinderbox/scripts/www-exp/inc_tinderbox.php.dist
 tinderbox/scripts/www-exp/index.php
 tinderbox/scripts/www-exp/module/module.php
 tinderbox/scripts/www-exp/module/moduleBuildPorts.php
@@ -99,8 +101,8 @@ tinderbox/scripts/www/PortsTree.php
 tinderbox/scripts/www/TinderObject.php
 tinderbox/scripts/www/TinderboxDS.php
 tinderbox/scripts/www/failures.php
-tinderbox/scripts/www/inc_ds.php
-tinderbox/scripts/www/inc_tinderbox.php
+tinderbox/scripts/www/inc_ds.php.dist
+tinderbox/scripts/www/inc_tinderbox.php.dist
 tinderbox/scripts/www/index.php
 tinderbox/scripts/www/lastbuilds.php
 tinderbox/scripts/www/showbuild.php
