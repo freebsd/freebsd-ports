@@ -2795,6 +2795,7 @@ fortune-mod-ferengi_rules_of_acquisition	ports/misc/fortune-mod-ferengi_rules_of
 fortune-mod-futurama	ports/misc/fortune-mod-futurama
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
+fortytwo	ports/graphics/fortytwo
 fortytwo-bdb	ports/databases/fortytwo-bdb
 fortytwo-encore	ports/devel/fortytwo-encore
 fotaq		ports/games/fotaq
