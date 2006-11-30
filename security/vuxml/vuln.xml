@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3dd7eb58-80ae-11db-b4ec-000854d03344">
+    <topic>gtar -- GNUTYPE_NAMES directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>gtar</name>
+	<range><lt>1.16_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Teemu Salmela reports:</p>
+	<blockquote cite="http://archives.neohapsis.com/archives/fulldisclosure/2006-11/0344.html">
+	  <p>There is a tar record type, called GNUTYPE_NAMES (an
+	    obsolete GNU extension), that allows the creation of
+	    symbolic links pointing to arbitrary locations in the
+	    filesystem, which makes it possible to create/overwrite
+	    arbitrary files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>21235</bid>
+      <cvename>CVE-2006-6097</cvename>
+      <url>http://archives.neohapsis.com/archives/fulldisclosure/2006-11/0344.html</url>
+    </references>
+    <dates>
+      <discovery>2006-11-21</discovery>
+      <entry>2006-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8af7d70-8007-11db-b280-0008743bf21a">
     <topic>kronolith -- arbitrary local file inclusion vulnerability</topic>
     <affects>
