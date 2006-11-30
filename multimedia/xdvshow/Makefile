@@ -20,11 +20,13 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
 USE_AUTOTOOLS=	autoconf:253
+USE_XLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g" \
 		-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
+		-e "s|/usr/X11R6|${X11BASE}|g" \
 		${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
