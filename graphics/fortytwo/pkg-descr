@@ -1,0 +1,8 @@
+FT is a generic, native graph management system for GNUstep and Cocoa and
+is written in Objective-C. With FT you can persistently manage graphs
+consisting of nodes and edges. Each node may provide so-called services.
+Such a service may be e.g. a dictionary services, which all nodes provide
+at present. This service allows the storage of any data in a node and is
+based on keys which uniquely identify content within a dictionary.
+
+WWW: http://FortyTwo.sourceforge.net/index.html
