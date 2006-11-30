@@ -37,6 +37,7 @@ BROKEN=		"Does not compile on sparc64"
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
 		 s|^CXXFLAGS|#CXXFLAGS|g ; \
+		 s|/usr/X11R6|${X11BASE}|g ; \
 		 s|-lSDL | |g ; \
 		 s|-lpng12|-lpng|g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
