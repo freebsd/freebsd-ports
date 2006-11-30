@@ -21,6 +21,7 @@ COMMENT=	The massively parallel quantum computing library and program
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 ALL_TARGET=	# empty
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
