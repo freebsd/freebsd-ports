@@ -637,6 +637,7 @@
     SUBDIR += lua50-gettext
     SUBDIR += lua50-posix
     SUBDIR += lua50-pty
+    SUBDIR += lua-filename
     SUBDIR += lua-gettext
     SUBDIR += lua-posix
     SUBDIR += lwp
