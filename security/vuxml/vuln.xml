@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a8af7d70-8007-11db-b280-0008743bf21a">
+    <topic>kronolith -- arbitrary local file inclusion vulnerability</topic>
+    <affects>
+      <package>
+	<name>kronolith</name>
+	<range><lt>2.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense Labs reports:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=445">
+	  <p>Remote exploitation of a design error in Horde's Kronolith
+	    could allow an authenticated web mail user to execute
+	    arbitrary PHP code under the security context of the running
+	    web server.</p>
+	  <p>The vulnerability specifically exists due to a design error
+	    in the way it includes certain files. Specifically, the
+	    'lib/FBView.php' file contains a function 'Kronolith_FreeBusy_View::factory'
+	    which will include local files that are supplied via the
+	    'view' HTTP GET request parameter.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.horde.org/archives/announce/2006/000307.html</url>
+    </references>
+    <dates>
+      <discovery>2006-11-29</discovery>
+      <entry>2006-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="34c93ae8-7e6f-11db-bf00-02e081235dab">
     <topic>gnupg -- buffer overflow</topic>
     <affects>
