@@ -37,6 +37,10 @@ OPTIONS=	DEBUG	"Enable debug information"	off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=full
 .endif
