@@ -31,6 +31,10 @@ MAKE_ARGS=	PREFIX=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
+.endif
+
 PKGDEINSTALL=	${PKGINSTALL}
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
