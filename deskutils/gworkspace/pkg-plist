@@ -389,6 +389,7 @@ System/Library/Frameworks/FSNode.framework/Versions/A/libFSNode.so.%%LIBVERSION2
 System/Library/Frameworks/FSNode.framework/Versions/Current
 System/Library/Frameworks/Inspector.framework/Headers
 System/Library/Frameworks/Inspector.framework/Resources
+System/Library/Frameworks/Inspector.framework/Versions/A/Headers/ContentViewersProtocol.h
 System/Library/Frameworks/Inspector.framework/Versions/A/Headers/Inspector.h
 System/Library/Frameworks/Inspector.framework/Versions/A/Inspector
 System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-0.tiff
