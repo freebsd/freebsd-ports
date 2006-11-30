@@ -1,5 +1,5 @@
 --- sys/unix/Makefile.src.orig	Sun Jun 24 18:57:24 2001
-+++ sys/unix/Makefile.src	Fri Aug 24 02:20:56 2001
++++ sys/unix/Makefile.src	Thu Nov 30 18:50:42 2006
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
@@ -14,8 +14,8 @@
  #   compile normally
 -CFLAGS = -O2 -fomit-frame-pointer -I../include -I/usr/X11/include
 -LFLAGS = -L/usr/X11/lib
-+CFLAGS += -I../include -I/usr/X11/include -DHACKDIR=\"${NHDIR}\" -DHAVE_SYS_PARAM_H
-+LFLAGS = -L/usr/X11R6/lib
++CFLAGS += -I../include -I${X11BASE}/include -DHACKDIR=\"${NHDIR}\" -DHAVE_SYS_PARAM_H
++LFLAGS = -L${X11BASE}/lib
  #   OR compile backwards compatible a.out format
  # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include -I/usr/X11/include
  # LFLAGS = -b i486-linuxaout -L/usr/X11/lib
