@@ -30,6 +30,10 @@ OPTIONS=	MECAB	"use mecab for morphological analysis" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ${ARCH}
+.endif
+
 .if defined(WITH_MECAB)
 CONFIGURE_ARGS+=	--with-mecab
 LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
