@@ -1,6 +1,9 @@
 bin/contacts
 share/applications/contacts.desktop
 %%DATADIR%%/contacts.glade
+share/locale/et/LC_MESSAGES/Contacts.mo
+share/locale/fr/LC_MESSAGES/Contacts.mo
 share/pixmaps/oh-contacts.png
+@dirrmtry share/pixmaps
 @dirrmtry share/applications
-@dirrm share/contacts
+@dirrm %%DATADIR%%
