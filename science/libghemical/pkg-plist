@@ -36,9 +36,11 @@ include/ghemical/utility.h
 include/ghemical/v3d.h
 @dirrm include/ghemical
 lib/libghemical.so.0
+lib/libghemical.so
 lib/libghemical.la
 lib/libghemical.a
 lib/pkgconfig/libghemical.pc
+@dirrm lib/pkgconfig
 share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_amino02.in
 share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminoct02.in
 share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminont02.in

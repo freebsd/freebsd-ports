@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmpqc.a:${PORTSDIR}/science/mpqc \
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=   yes
 
 .include <bsd.port.pre.mk>
 
