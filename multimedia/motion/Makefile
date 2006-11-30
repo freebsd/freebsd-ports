@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	motion
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	motion
 
 PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
-PATCHFILES=	motion-3.2.6.port-freebsd.diff.gz
+PATCHFILES=	motion-3.2.7.port-freebsd.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ack@telefonica.net
@@ -39,7 +39,8 @@ PORTDOCS=	CHANGELOG CREDITS README.FreeBSD README \
 EXAMPLES=	motion-dist.conf motion.init-FreeBSD.sh thread1.conf \
 		thread2.conf thread3.conf thread4.conf
 
-OPTIONS=	BKTR "Support for TV Capture cards" on
+OPTIONS=	BKTR "Support for TV Capture cards" on \
+		LINUXTHREADS "Use LinuxThreads" off
 
 MAKE_ENV+=	CC="${CC}"
 
@@ -49,10 +50,15 @@ MAKE_ENV+=	CC="${CC}"
 CFLAGS+=	-DWITHOUT_V4L
 .endif
 
+.if defined(WITH_LINUXTHREADS) || ${OSVERSION} < 504000
+CONFIGURE_ARGS=	--with-linuxthreads
+
 .if ${OSVERSION} > 500000
 LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
 .else
 LIB_DEPENDS+=	lthread.[24]:${PORTSDIR}/devel/linuxthreads
+.endif
+
 .endif
 
 post-install:
