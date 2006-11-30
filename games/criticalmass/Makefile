@@ -19,10 +19,10 @@ COMMENT=	An SDL/OpenGL space shoot\'em up game
 
 CONFLICTS=	shaaft-[0-9]*
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_SDL=	image mixer sdl
 USE_GL=		yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-optimize

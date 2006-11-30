@@ -34,6 +34,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_XLIB=	yes
 
 MANDIR=	${WRKDIR}/${DISTNAME}/manpage/man1
 MAN1=	soya_editor.1
