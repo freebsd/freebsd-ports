@@ -1,12 +1,12 @@
-# New ports collection makefile for:	Zope-2.9.x
-# Date created:				Mon Jan 10 14:40:00 JST 2006
+# New ports collection makefile for:	Zope-2.10.x
+# Date created:				Mon Nov 28 22:09:00 JST 2006
 # Whom:					Yasushi Hayashi <yasi@yasi.to>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	zope29
-PORTVERSION=	2.9.6
+PORTNAME=	zope210
+PORTVERSION=	2.10.1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
@@ -17,8 +17,7 @@ MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.4
-USE_RC_SUBR=	${PORTNAME}.sh zeo29.sh
-LATEST_LINK=	zope29
+USE_RC_SUBR=	${PORTNAME}.sh zeo210.sh
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -27,7 +26,7 @@ LATEST_LINK=	zope29
 # Change these, if you like, via the environment.
 ZOPE_USER?=		www
 WEBBASEDIR?=		www
-SZOPEBASEDIR?=		${WEBBASEDIR}/Zope29
+SZOPEBASEDIR?=		${WEBBASEDIR}/Zope210
 
 # Do not change anything below this line.
 
@@ -71,6 +70,9 @@ post-configure:
 		-e 's,\(--home="\).*",\1${ZOPEBASEDIR}",g' \
 		-e 's,^.*LN.*PYTHON.*$$,,g' \
 		${WRKSRC}/${MAKEFILE}
+
+post-build:
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
 
 post-install:
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
