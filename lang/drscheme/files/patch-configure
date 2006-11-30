@@ -1,5 +1,6 @@
---- configure--	Mon Jul 17 18:53:27 2006
-+++ configure	Fri Sep 22 14:10:56 2006
+
+--- configure.orig	Mon Jul 17 15:23:27 2006
++++ configure	Fri Nov 10 18:15:30 2006
 @@ -5331,6 +5331,7 @@
      ;;
    FreeBSD)
@@ -8,3 +9,28 @@
      ;;
    OpenBSD)
      LIBS="$LIBS -rdynamic"
+@@ -11114,16 +11115,16 @@
+     plt_lib_version=`grep " MZSCHEME_VERSION " ${srcdir}/mzscheme/src/schvers.h | cut -d '"' -f 2`
+   fi
+ 
+-  AR="${LIBTOOLPROG} --mode=link $CC${need_gcc_static_libgcc}${ar_libtool_no_undefined} -release ${plt_lib_version} -rpath ${absprefix}/lib -o"
+-  STATIC_AR="${LIBTOOLPROG} --mode=link $CC -o"
++  AR="${LIBTOOLPROG} --mode=link --tag=CC $CC${need_gcc_static_libgcc}${ar_libtool_no_undefined} -release ${plt_lib_version} -rpath ${absprefix}/lib -o"
++  STATIC_AR="${LIBTOOLPROG} --mode=link --tag=CC $CC -o"
+   ARFLAGS=""
+   RANLIB=":"
+-  MZLINKER="${LIBTOOLPROG} --mode=link $CC${need_gcc_static_libgcc} -rpath ${absprefix}/lib"
+-  MREDLINKER="${LIBTOOLPROG} --mode=link $CXX${need_gcc_static_libgcc} -rpath ${absprefix}/lib"
++  MZLINKER="${LIBTOOLPROG} --mode=link --tag=CC $CC${need_gcc_static_libgcc} -rpath ${absprefix}/lib"
++  MREDLINKER="${LIBTOOLPROG} --mode=link --tag=CXX $CXX${need_gcc_static_libgcc} -rpath ${absprefix}/lib"
+   PLAIN_CC="$CC"
+-  CC="${LIBTOOLPROG} --mode=compile $CC"
+-  CXX="${LIBTOOLPROG} --mode=compile $CXX"
+-  AS="${LIBTOOLPROG} --mode=compile $AS"
++  CC="${LIBTOOLPROG} --mode=compile --tag=CC $CC"
++  CXX="${LIBTOOLPROG} --mode=compile --tag=CXX $CXX"
++  AS="${LIBTOOLPROG} --mode=compile --tag=AS $AS"
+   LIBSFX=la
+   WXLIBS=WXLIBSDYN
+   ICP="${LIBTOOLPROG} --mode=install cp"
+
