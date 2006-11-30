@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.parodius.com/pub/epic/EPIC4-PRODUCTION/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
-		ftp://ftp.eu.uu.net/pub/unix/irc/epic/EPIC4-PRODUCTION/ \
-		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-PRODUCTION/
+		ftp://ftp.eu.uu.net/pub/unix/irc/epic/EPIC4-PRODUCTION/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-help-20050315.tar.gz
 
@@ -29,7 +28,10 @@ USE_OPENSSL=	yes
 
 OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
-		PERL	"Perl scripting support" off
+		PERL	"Perl scripting support" off \
+		SOCKS5	"Enable SOCKS5 proxy support" off \
+		SSL	"Enable SSL support" off \
+		TERMCAP	"Refuse to use terminfo/ncurses" off
 
 .include <bsd.port.pre.mk>
 
@@ -59,6 +61,28 @@ IGNORE=		requires perl 5.6.1 or newer; we recommend perl 5.8.5
 .endif
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
+.endif
+
+## WITH_SOCKS5:                enable SOCKS5 support
+#
+.if defined(WITH_SOCKS5)
+.if exists(${LOCALBASE}/lib/libdsocks.so)
+BROKEN=                        Optional socks5 support will only build against net/socks5 which conflicts with net/dante
+.endif
+BUILD_DEPENDS+=                ${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+CONFIGURE_ARGS+=       --with-socks5=${LOCALBASE}/include
+.endif
+
+## WITH_SSL            enable SSL support
+#
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=       --with-ssl
+.endif
+
+## WITH_TERMCAP                forceably refuse to use terminfo/ncurses
+#
+.if defined(WITH_TERMCAP)
+CONFIGURE_ARGS+=       --with-termcap
 .endif
 
 post-extract:
