@@ -68,7 +68,7 @@
  
  tcpview: $(TCPVIEW_OBJ)
 -	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) $(XLIB) $(LIB)
-+	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) -L/usr/X11R6/lib $(XLIB) $(LIB)
++	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) -L${X11BASE}/lib $(XLIB) $(LIB)
  
  tcpslice: $(TCPSLICE_OBJ)
  	$(CC) $(CFLAGS) -o $@ $(TCPSLICE_OBJ)
