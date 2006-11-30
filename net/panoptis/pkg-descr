@@ -1,0 +1,13 @@
+Panoptis is a project started some time ago,
+with the aim to stop the Denial of Service
+and Distributed Denial of Service attacks that
+have been torturing the Internet for the last
+few years.
+It is based on real-time processing of Cisco (R)
+NetFlow (TM) data, since this seems to be the
+most efficient approach as it is router-centric,
+allowing for automated central response without
+intervention from the affected organizations'
+network administrators.
+
+WWW:	http://panoptis.sourceforge.net/
