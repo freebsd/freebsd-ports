@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crystalentitylayer
-PORTVERSION=	20060708
+PORTVERSION=	20061105
 CATEGORIES=	graphics
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 PKGNAMESUFFIX=	-devel
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--without-bfd
 
 post-configure:
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 61d ${WRKSRC}/Jamfile
+	@${REINPLACE_CMD} -e 63d ${WRKSRC}/Jamfile
 .endif
 
 do-build:

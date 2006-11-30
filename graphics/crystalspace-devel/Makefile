@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crystalspace
-PORTVERSION=	20060710
-PORTREVISION=	3
+PORTVERSION=	20061105
 CATEGORIES=	graphics
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 PKGNAMESUFFIX=	-devel
@@ -37,8 +36,9 @@ MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" \
 		CPPFLAGS="${CPPFLAGS} "LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--disable-cpu-specific-optimizations \
 			--disable-make-emulation \
-			--prefix=${PREFIX}
-DOCSDIR=	share/doc/${PORTNAME}-0.99
+			--prefix=${PREFIX} \
+			--datarootdir=${PREFIX}/share
+DOCSDIR=	share/doc/${PORTNAME}-1.1
 JAM_CMD=	${LOCALBASE}/bin/jam
 JAM_ARGS=	-qa
 
@@ -169,10 +169,10 @@ post-configure:
 	@${REINPLACE_CMD} -i "" -e 's|^COMPILER.LFLAGS += "-lm"|COMPILER.LFLAGS += "-lm -lc"|g' \
 		${WRKSRC}/Jamconfig
 	@${REINPLACE_CMD} -i "" -e 's|-lcaca|-lcaca_pic|g' ${WRKSRC}/Jamconfig
+	@${REINPLACE_CMD} -i "" -e 's|$$(datarootdir)|${PREFIX}/share|g' ${WRKSRC}/Jamconfig
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 42,44d ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 26d ${WRKSRC}/Jamfile
-	@${REINPLACE_CMD} -e 79d ${WRKSRC}/Jamfile
+	@${REINPLACE_CMD} -e 84d ${WRKSRC}/Jamfile
 .endif
 
 do-build:
@@ -181,6 +181,6 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC} && \
-		${JAM_CMD} install
+		${SETENV} PREFIX=${PREFIX} ${JAM_CMD} install
 
 .include <bsd.port.post.mk>
