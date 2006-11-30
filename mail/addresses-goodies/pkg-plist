@@ -1,0 +1,10 @@
+Local/Tools/adgnumailconverter
+Local/Tools/adserver
+Local/Tools/adtool
+System/Library/Bundles/VCFViewer.inspector/Resources/Info-gnustep.plist
+System/Library/Bundles/VCFViewer.inspector/Resources/InspectorInfo.plist
+System/Library/Bundles/VCFViewer.inspector/Resources/VCFImage.tiff
+System/Library/Bundles/VCFViewer.inspector/VCFViewer
+System/Library/Bundles/VCFViewer.inspector/stamp.make
+@dirrm System/Library/Bundles/VCFViewer.inspector/Resources
+@dirrm System/Library/Bundles/VCFViewer.inspector
