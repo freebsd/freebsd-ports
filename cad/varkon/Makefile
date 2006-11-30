@@ -38,6 +38,8 @@ post-patch:
 	     ${VARKON_ROOT}/cnf/ini/english/linux
 	@${REINPLACE_CMD} -e 's+%%VARKON_PREFIX%%+${VARKON_PREFIX}+ ; s+%%DOCSDIR%%+${DOCSDIR}+g ' \
 	     ${VARKON_ROOT}/com/english/varkon
+	@${FIND} ${WRKSRC} -name 'Makefile.FreeBSD' -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's+/usr/X11R6+${X11BASE}+g'
 do-build:
 	@(cd ${WRKSRC};${SETENV} ${MAKE_ENV} ${SH} make_varkon )
 
