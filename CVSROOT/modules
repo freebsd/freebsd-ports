@@ -2488,6 +2488,7 @@ exmh2		ports/mail/exmh2
 exml		ports/textproc/exml
 expat2		ports/textproc/expat2
 expect		ports/lang/expect
+expense		ports/finance/expense
 expiretable	ports/security/expiretable
 explosions	ports/misc/explosions
 expocity	ports/x11-wm/expocity
