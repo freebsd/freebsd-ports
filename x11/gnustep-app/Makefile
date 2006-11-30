@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -58,6 +58,9 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	XWindowServerKit:x11/etoile-xwindowserverkit \
 	RSSKit:www/etoile-rsskit \
 	EtoileExtensions:deskutils/etoile-etoileextensionskit \
+	Encore:devel/fortytwo-encore \
+	BDB:databases/fortytwo-bdb \
+	FT:graphics/fortytwo
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -151,8 +154,11 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	LookAndBehavior:deskutils/etoile-lookandbehavior \
 	Azalea:x11-wm/etoile-azalea \
 	EtoileMenuServer:deskutils/etoile-menuserver \
-	Position:astro/position
+	Position:astro/position \
+	Expense:finance/expense \
 
-USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
+USE_GNUSTEP_LOCAL_TOOLS+=	\
+	zillion:net/zillion \
+	adtool:mail/addresses-goodies \
 
 .include <bsd.port.mk>
