@@ -1,9 +1,9 @@
 bin/bootstrap
 bin/cel-config
 bin/cel.cex
+bin/celstart
 bin/celtst
 bin/hovertest
-bin/mechtest
 bin/nettest
 bin/walktut
 bin/wheeledtest
@@ -36,6 +36,7 @@ include/cel/propclass/camera.h
 include/cel/propclass/colldet.h
 include/cel/propclass/craft.h
 include/cel/propclass/chars.h
+include/cel/propclass/damage.h
 include/cel/propclass/defcam.h
 include/cel/propclass/gravity.h
 include/cel/propclass/hover.h
@@ -66,6 +67,7 @@ include/cel/propclass/simpcam.h
 include/cel/propclass/solid.h
 include/cel/propclass/sound.h
 include/cel/propclass/spawn.h
+include/cel/propclass/stabiliser_dist.h
 include/cel/propclass/test.h
 include/cel/propclass/timer.h
 include/cel/propclass/tooltip.h
@@ -79,7 +81,6 @@ include/cel/tools/entitytplloader.h
 include/cel/tools/expression.h
 include/cel/tools/questmanager.h
 include/cel/tools/rulebase.h
-include/cel/tools/stabiliser_dist.h
 lib/cel/addon_celentity.so
 lib/cel/addon_celentitytpl.so
 lib/cel/addon_questdef.so
@@ -95,6 +96,7 @@ lib/cel/mgr_quests.so
 lib/cel/pfactormove.so
 lib/cel/pfawswin.so
 lib/cel/pfbillboard.so
+lib/cel/pfdamage.so
 lib/cel/pfdefcam.so
 lib/cel/pfengine.so
 lib/cel/pfhover.so
@@ -170,6 +172,8 @@ lib/libceltool.a
 %%DATADIR%%/data/images/bomb.png
 %%DATADIR%%/data/images/brick_broken.png
 %%DATADIR%%/data/images/brick_full.png
+%%DATADIR%%/data/images/button.png
+%%DATADIR%%/data/images/button_press.png
 %%DATADIR%%/data/images/chair5.gif
 %%DATADIR%%/data/images/chocolate.png
 %%DATADIR%%/data/images/dark_wood.png
@@ -205,7 +209,6 @@ lib/libceltool.a
 %%DATADIR%%/data/images/leaves.png
 %%DATADIR%%/data/images/light_wood.png
 %%DATADIR%%/data/images/marble.png
-%%DATADIR%%/data/images/menu.png
 %%DATADIR%%/data/images/menu_arrow.png
 %%DATADIR%%/data/images/monster.png
 %%DATADIR%%/data/images/mushroom.png
@@ -230,7 +233,6 @@ lib/libceltool.a
 %%DATADIR%%/data/images/rock.png
 %%DATADIR%%/data/images/sand_monster.png
 %%DATADIR%%/data/images/sand_stone.png
-%%DATADIR%%/data/images/save.png
 %%DATADIR%%/data/images/slanted_stone.png
 %%DATADIR%%/data/images/table_coffee5.gif
 %%DATADIR%%/data/images/to_the_tavern.jpg
@@ -439,6 +441,7 @@ lib/libceltool.a
 %%PORTDOCS%%%%DOCSDIR%%/html/api/persisthelper_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/pl_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/portal_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/projectile_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/prop_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/propclas_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/propclass_2billboard_8h-source.html
@@ -672,6 +675,8 @@ lib/libceltool.a
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcNpcMove.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcPortal-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcPortal.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcProjectile-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcProjectile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcProperties-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcProperties.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcPropertyListener-members.html
@@ -703,6 +708,8 @@ lib/libceltool.a
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcTrigger.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcTriggerListener-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcTriggerListener.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcWheeled-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcWheeled.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcZoneManager-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPcZoneManager.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiPropertyChangeQuestTriggerFactory-members.html
@@ -755,6 +762,8 @@ lib/libceltool.a
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiTransformQuestSeqOpFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiTriggerQuestTriggerFactory-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/structiTriggerQuestTriggerFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/structiWatchQuestTriggerFactory-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/structiWatchQuestTriggerFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/api/tab_l.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/api/tab_r.gif
@@ -764,6 +773,7 @@ lib/libceltool.a
 %%PORTDOCS%%%%DOCSDIR%%/html/api/tools_2billboard_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/tooltip_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/trigger_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/api/wheeled_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/api/zone_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_1.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_1.10.html
@@ -784,6 +794,7 @@ lib/libceltool.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_3.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_3.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_3.3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_3.4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_4.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_4.2.1.1.html
@@ -806,15 +817,16 @@ lib/libceltool.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_4.4.4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_4.4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_4.5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_4.6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_Index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_abt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cel_toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/index.html
 @dirrm etc/cel
+@dirrm include/cel/celtool
 @dirrm include/cel/tools
 @dirrm include/cel/behaviourlayer
-@dirrm include/cel/celtool
 @dirrm include/cel/propclass
 @dirrm include/cel/physicallayer
 @dirrm include/cel

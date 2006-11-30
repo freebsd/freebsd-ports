@@ -6,12 +6,14 @@ bin/csdemo
 bin/csfgen
 bin/cslight
 bin/docconv
+bin/genmeshify
 bin/heightmapgen
 bin/levtool
 bin/lighter2
 bin/maya2spr
 bin/md32spr
 bin/mdl2spr
+bin/partconv
 bin/partedit
 bin/partedit2
 bin/python.cex
@@ -28,6 +30,11 @@ etc/crystalspace/bugplug.key
 etc/crystalspace/cacacanvas.cfg
 etc/crystalspace/csdemo.cfg
 etc/crystalspace/dynavis.cfg
+etc/crystalspace/emulate_gf2.cfg
+etc/crystalspace/emulate_gf3.cfg
+etc/crystalspace/emulate_gf4.cfg
+etc/crystalspace/emulate_rad8500.cfg
+etc/crystalspace/emulate_rad9500.cfg
 etc/crystalspace/engine.cfg
 etc/crystalspace/fancycon.cfg
 etc/crystalspace/fontplex.cfg
@@ -44,6 +51,7 @@ etc/crystalspace/null3d.cfg
 etc/crystalspace/partedit2.cfg
 etc/crystalspace/picview.cfg
 etc/crystalspace/r3dopengl.cfg
+etc/crystalspace/shader-debug.cfg
 etc/crystalspace/shadermgr.cfg
 etc/crystalspace/simpcon.cfg
 etc/crystalspace/simpvs.cfg
@@ -58,6 +66,18 @@ etc/crystalspace/vfs.cfg
 etc/crystalspace/video.cfg
 etc/crystalspace/walktest.cfg
 etc/crystalspace/waterdemo.cfg
+include/crystalspace/bindings/cspace.i
+include/crystalspace/bindings/java/javapost.i
+include/crystalspace/bindings/java/javapre.i
+include/crystalspace/bindings/perl/perl1st.i
+include/crystalspace/bindings/perl/perlpost.i
+include/crystalspace/bindings/perl/perlpre.i
+include/crystalspace/bindings/python/pycscegui.i
+include/crystalspace/bindings/python/pyeventh.i
+include/crystalspace/bindings/python/pythpost.i
+include/crystalspace/bindings/python/pythpre.i
+include/crystalspace/bindings/python/pythvarg.i
+include/crystalspace/bindings/scf.i
 include/crystalspace/crystalspace.h
 include/crystalspace/csconfig.h
 include/crystalspace/csdef.h
@@ -80,6 +100,7 @@ include/crystalspace/csgeom/math3d_d.h
 include/crystalspace/csgeom/matrix2.h
 include/crystalspace/csgeom/matrix3.h
 include/crystalspace/csgeom/obb.h
+include/crystalspace/csgeom/odesolver.h
 include/crystalspace/csgeom/path.h
 include/crystalspace/csgeom/plane2.h
 include/crystalspace/csgeom/plane3.h
@@ -112,9 +133,11 @@ include/crystalspace/csgeom/vector4.h
 include/crystalspace/csgfx.h
 include/crystalspace/csgfx/bakekeycolor.h
 include/crystalspace/csgfx/gradient.h
+include/crystalspace/csgfx/imageautoconvert.h
 include/crystalspace/csgfx/imagebase.h
 include/crystalspace/csgfx/imagecubemapmaker.h
 include/crystalspace/csgfx/imagemanipulate.h
+include/crystalspace/csgfx/imagememory.h
 include/crystalspace/csgfx/imagetools.h
 include/crystalspace/csgfx/imagevolumemaker.h
 include/crystalspace/csgfx/inv_cmap.h
@@ -131,6 +154,7 @@ include/crystalspace/csgfx/shadervar.h
 include/crystalspace/csgfx/shadervarblockalloc.h
 include/crystalspace/csgfx/shadervarcontext.h
 include/crystalspace/csgfx/shadervarframeholder.h
+include/crystalspace/csgfx/trianglestream.h
 include/crystalspace/csgfx/vertexlight.h
 include/crystalspace/csgfx/vertexlistwalker.h
 include/crystalspace/csgfx/xorpat.h
@@ -170,7 +194,6 @@ include/crystalspace/csplugincommon/opengl/glhelper.h
 include/crystalspace/csplugincommon/opengl/glss.h
 include/crystalspace/csplugincommon/opengl/glstates.h
 include/crystalspace/csplugincommon/particlesys/partgen.h
-include/crystalspace/csplugincommon/particlesys/particle.h
 include/crystalspace/csplugincommon/render3d/normalizationcube.h
 include/crystalspace/csplugincommon/render3d/txtmgr.h
 include/crystalspace/csplugincommon/renderstep/basesteploader.h
@@ -215,6 +238,7 @@ include/crystalspace/cstool/keyval.h
 include/crystalspace/cstool/mapnode.h
 include/crystalspace/cstool/meshobjtmpl.h
 include/crystalspace/cstool/normalcalc.h
+include/crystalspace/cstool/numberedfilenamehelper.h
 include/crystalspace/cstool/objmodel.h
 include/crystalspace/cstool/pen.h
 include/crystalspace/cstool/primitives.h
@@ -227,6 +251,7 @@ include/crystalspace/cstool/rendermeshlist.h
 include/crystalspace/cstool/saverfile.h
 include/crystalspace/cstool/saverref.h
 include/crystalspace/cstool/tokenlist.h
+include/crystalspace/cstool/uberscreenshot.h
 include/crystalspace/cstool/userrndbuf.h
 include/crystalspace/cstool/vertexcompress.h
 include/crystalspace/cstool/vfsdirchange.h
@@ -310,6 +335,7 @@ include/crystalspace/csutil/mmap_dummy.h
 include/crystalspace/csutil/mmap_posix.h
 include/crystalspace/csutil/mmapio.h
 include/crystalspace/csutil/nobjvec.h
+include/crystalspace/csutil/noncopyable.h
 include/crystalspace/csutil/nulcache.h
 include/crystalspace/csutil/objiter.h
 include/crystalspace/csutil/objpool.h
@@ -355,6 +381,17 @@ include/crystalspace/csutil/strset.h
 include/crystalspace/csutil/sysfunc.h
 include/crystalspace/csutil/syspath.h
 include/crystalspace/csutil/thread.h
+include/crystalspace/csutil/threading/atomicops.h
+include/crystalspace/csutil/threading/condition.h
+include/crystalspace/csutil/threading/mutex.h
+include/crystalspace/csutil/threading/pthread_condition.h
+include/crystalspace/csutil/threading/pthread_mutex.h
+include/crystalspace/csutil/threading/pthread_thread.h
+include/crystalspace/csutil/threading/thread.h
+include/crystalspace/csutil/threading/win32_apifuncs.h
+include/crystalspace/csutil/threading/win32_condition.h
+include/crystalspace/csutil/threading/win32_mutex.h
+include/crystalspace/csutil/threading/win32_thread.h
 include/crystalspace/csutil/threadjobqueue.h
 include/crystalspace/csutil/timer.h
 include/crystalspace/csutil/tree.h
@@ -367,6 +404,7 @@ include/crystalspace/csutil/vfsplat.h
 include/crystalspace/csutil/virtclk.h
 include/crystalspace/csutil/weakref.h
 include/crystalspace/csutil/weakrefarr.h
+include/crystalspace/csutil/weakreferenced.h
 include/crystalspace/csutil/win32/APIdeclare.inc
 include/crystalspace/csutil/win32/DbgHelpAPI.fun
 include/crystalspace/csutil/win32/DbgHelpAPI.h
@@ -449,12 +487,8 @@ include/crystalspace/imap/writer.h
 include/crystalspace/imesh.h
 include/crystalspace/imesh/bezier.h
 include/crystalspace/imesh/emit.h
-include/crystalspace/imesh/explode.h
-include/crystalspace/imesh/fire.h
-include/crystalspace/imesh/fountain.h
 include/crystalspace/imesh/genmesh.h
 include/crystalspace/imesh/gmeshanim.h
-include/crystalspace/imesh/gmeshskel.h
 include/crystalspace/imesh/gmeshskel2.h
 include/crystalspace/imesh/haze.h
 include/crystalspace/imesh/instmesh.h
@@ -467,10 +501,7 @@ include/crystalspace/imesh/particle.h
 include/crystalspace/imesh/particles.h
 include/crystalspace/imesh/partsys.h
 include/crystalspace/imesh/protomesh.h
-include/crystalspace/imesh/rain.h
 include/crystalspace/imesh/skeleton.h
-include/crystalspace/imesh/snow.h
-include/crystalspace/imesh/spiral.h
 include/crystalspace/imesh/sprite2d.h
 include/crystalspace/imesh/sprite3d.h
 include/crystalspace/imesh/spritecal3d.h
@@ -533,28 +564,17 @@ include/crystalspace/ivaria/bugplug.h
 include/crystalspace/ivaria/collider.h
 include/crystalspace/ivaria/conin.h
 include/crystalspace/ivaria/conout.h
-include/crystalspace/ivaria/cspace.i
 include/crystalspace/ivaria/dynamics.h
 include/crystalspace/ivaria/engseq.h
 include/crystalspace/ivaria/gradient.h
 include/crystalspace/ivaria/icegui.h
-include/crystalspace/ivaria/javapost.i
-include/crystalspace/ivaria/javapre.i
 include/crystalspace/ivaria/keyval.h
 include/crystalspace/ivaria/mapnode.h
 include/crystalspace/ivaria/movierecorder.h
 include/crystalspace/ivaria/ode.h
 include/crystalspace/ivaria/pagingformer.h
-include/crystalspace/ivaria/perl1st.i
-include/crystalspace/ivaria/perlpost.i
-include/crystalspace/ivaria/perlpre.i
 include/crystalspace/ivaria/pmeter.h
-include/crystalspace/ivaria/pyeventh.i
-include/crystalspace/ivaria/pythpost.i
-include/crystalspace/ivaria/pythpre.i
-include/crystalspace/ivaria/pythvarg.i
 include/crystalspace/ivaria/reporter.h
-include/crystalspace/ivaria/scf.i
 include/crystalspace/ivaria/script.h
 include/crystalspace/ivaria/sequence.h
 include/crystalspace/ivaria/simpleformer.h
@@ -585,8 +605,8 @@ lib/crystalspace/bindoc.so
 lib/crystalspace/bruteblock.so
 lib/crystalspace/bugplug.so
 lib/crystalspace/cacacanvas.so
-lib/crystalspace/cegui.so
 lib/crystalspace/csbmpimg.so
+lib/crystalspace/cscegui.so
 lib/crystalspace/csconin.so
 lib/crystalspace/csconout.so
 lib/crystalspace/cscursor.so
@@ -608,14 +628,8 @@ lib/crystalspace/emit.so
 lib/crystalspace/emitldr.so
 lib/crystalspace/engine.so
 lib/crystalspace/engseq.so
-lib/crystalspace/explo.so
-lib/crystalspace/exploldr.so
 lib/crystalspace/fancycon.so
-lib/crystalspace/fire.so
-lib/crystalspace/fireldr.so
 lib/crystalspace/fontplex.so
-lib/crystalspace/fountain.so
-lib/crystalspace/fountldr.so
 lib/crystalspace/freefnt2.so
 lib/crystalspace/frustvis.so
 lib/crystalspace/genmesh.so
@@ -627,7 +641,6 @@ lib/crystalspace/glx2d.so
 lib/crystalspace/gmesh3ds.so
 lib/crystalspace/gmeshanim.so
 lib/crystalspace/gmeshldr.so
-lib/crystalspace/gmeshskelanim.so
 lib/crystalspace/gmeshskelanim2.so
 lib/crystalspace/haze.so
 lib/crystalspace/hazeldr.so
@@ -647,14 +660,11 @@ lib/crystalspace/pagingformer.so
 lib/crystalspace/pagingformerldr.so
 lib/crystalspace/particles.so
 lib/crystalspace/particlesldr.so
-lib/crystalspace/partphys_ode.so
-lib/crystalspace/partphys_simple.so
 lib/crystalspace/physldr.so
 lib/crystalspace/protomesh.so
 lib/crystalspace/protomeshldr.so
 lib/crystalspace/ptanimimg.so
-lib/crystalspace/rain.so
-lib/crystalspace/rainldr.so
+lib/crystalspace/ptpdlight.so
 lib/crystalspace/rendloop_loader.so
 lib/crystalspace/rendstep_fatrl.so
 lib/crystalspace/rendstep_std.so
@@ -676,12 +686,8 @@ lib/crystalspace/sndsysogg.so
 lib/crystalspace/sndsysoss.so
 lib/crystalspace/sndsyssoft.so
 lib/crystalspace/sndsyswav.so
-lib/crystalspace/snow.so
-lib/crystalspace/snowldr.so
 lib/crystalspace/soft3d.so
 lib/crystalspace/softshader.so
-lib/crystalspace/spiral.so
-lib/crystalspace/spirldr.so
 lib/crystalspace/spr2d.so
 lib/crystalspace/spr2dldr.so
 lib/crystalspace/spr3d.so
@@ -712,6 +718,7 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/bindings/python/_cspace.so
 %%DATADIR%%/bindings/python/cshelper.py
 %%DATADIR%%/bindings/python/cspace.py
+%%DATADIR%%/bindings/python/pyceguitest.py
 %%DATADIR%%/bindings/python/pysimp.py
 %%DATADIR%%/bindings/python/pysimp2.py
 %%DATADIR%%/bindings/python/pysimpcd.py
@@ -725,6 +732,7 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/build/autoconf/config.sub
 %%DATADIR%%/build/autoconf/crystal.m4
 %%DATADIR%%/build/autoconf/cs_check_host.m4
+%%DATADIR%%/build/autoconf/checkbinutils.m4
 %%DATADIR%%/build/autoconf/checkbuild.m4
 %%DATADIR%%/build/autoconf/checkcommon.m4
 %%DATADIR%%/build/autoconf/checkcppunit.m4
@@ -776,6 +784,7 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/build/jam/options.jam
 %%DATADIR%%/build/jam/plugin.jam
 %%DATADIR%%/build/jam/property.jam
+%%DATADIR%%/build/jam/pythmod.jam
 %%DATADIR%%/build/jam/resource.jam
 %%DATADIR%%/build/jam/static.jam
 %%DATADIR%%/build/jam/strip.jam
@@ -802,7 +811,10 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/build/maketemplate/Makefile.template
 %%DATADIR%%/build/maketemplate/README
 %%DATADIR%%/build/maketemplate/appwrap.sh
+%%DATADIR%%/build/msvcgen/config.jam
 %%DATADIR%%/build/msvcgen/control.tlib
+%%DATADIR%%/build/msvcgen/custom.cslib
+%%DATADIR%%/build/msvcgen/custom2.cslib
 %%DATADIR%%/build/msvcgen/macros.tlib
 %%DATADIR%%/build/msvcgen/project6.tlib
 %%DATADIR%%/build/msvcgen/project7.tlib
@@ -810,6 +822,7 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/build/msvcgen/projectx7.tlib
 %%DATADIR%%/build/msvcgen/workspace6.tlib
 %%DATADIR%%/build/msvcgen/workspace7.tlib
+%%DATADIR%%/build/msvcgen/workspaces.jam
 %%DATADIR%%/conversion/hammer/README
 %%DATADIR%%/conversion/hammer/crystal.fgd
 %%DATADIR%%/conversion/max/Poly_Counter.mcr
@@ -903,11 +916,18 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/aws/windowTest.def
 %%DATADIR%%/data/aws/windows_skin.def
 %%DATADIR%%/data/awsdef.zip
+%%DATADIR%%/data/ceguitest/0.5/Falagard.xsd
+%%DATADIR%%/data/ceguitest/0.5/GUILayout.xsd
+%%DATADIR%%/data/ceguitest/0.5/GUIScheme.xsd
+%%DATADIR%%/data/ceguitest/0.5/Imageset.xsd
+%%DATADIR%%/data/ceguitest/0.5/ice.imageset
+%%DATADIR%%/data/ceguitest/0.5/ice.layout
+%%DATADIR%%/data/ceguitest/0.5/ice.looknfeel
+%%DATADIR%%/data/ceguitest/0.5/ice.png
+%%DATADIR%%/data/ceguitest/0.5/ice.scheme
 %%DATADIR%%/data/ceguitest/Falagard.xsd
-%%DATADIR%%/data/ceguitest/Falagard.xsx
 %%DATADIR%%/data/ceguitest/GUILayout.xsd
 %%DATADIR%%/data/ceguitest/GUIScheme.xsd
-%%DATADIR%%/data/ceguitest/GUIScheme.xsx
 %%DATADIR%%/data/ceguitest/Imageset.xsd
 %%DATADIR%%/data/ceguitest/ice.imageset
 %%DATADIR%%/data/ceguitest/ice.layout
@@ -922,6 +942,91 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/cube/cubemap_rt.jpg
 %%DATADIR%%/data/cube/cubemap_up.jpg
 %%DATADIR%%/data/fancycon.zip
+%%DATADIR%%/data/kwartz.zip
+%%DATADIR%%/data/maps/castle/factories/genCube
+%%DATADIR%%/data/maps/castle/factories/genCube.002
+%%DATADIR%%/data/maps/castle/factories/genCube.003
+%%DATADIR%%/data/maps/castle/factories/genCube.004
+%%DATADIR%%/data/maps/castle/factories/genCube.005
+%%DATADIR%%/data/maps/castle/factories/genCube.006
+%%DATADIR%%/data/maps/castle/factories/genCube.007
+%%DATADIR%%/data/maps/castle/factories/genCube.009
+%%DATADIR%%/data/maps/castle/factories/genCube.010
+%%DATADIR%%/data/maps/castle/factories/genCube.012
+%%DATADIR%%/data/maps/castle/factories/genCube.013
+%%DATADIR%%/data/maps/castle/factories/genCube.016
+%%DATADIR%%/data/maps/castle/factories/genCube.027
+%%DATADIR%%/data/maps/castle/factories/genCube.219
+%%DATADIR%%/data/maps/castle/factories/genCube.356
+%%DATADIR%%/data/maps/castle/factories/genCube.358
+%%DATADIR%%/data/maps/castle/factories/genCube.491
+%%DATADIR%%/data/maps/castle/factories/genCube.493
+%%DATADIR%%/data/maps/castle/factories/genCube.496
+%%DATADIR%%/data/maps/castle/factories/genCube.505
+%%DATADIR%%/data/maps/castle/factories/genCube.508
+%%DATADIR%%/data/maps/castle/factories/genCube.517
+%%DATADIR%%/data/maps/castle/factories/genCube.518
+%%DATADIR%%/data/maps/castle/factories/genCube.520
+%%DATADIR%%/data/maps/castle/factories/genCube.542
+%%DATADIR%%/data/maps/castle/factories/genCube.546
+%%DATADIR%%/data/maps/castle/factories/genCube.550
+%%DATADIR%%/data/maps/castle/factories/genCube.551
+%%DATADIR%%/data/maps/castle/factories/genCube.552
+%%DATADIR%%/data/maps/castle/factories/genCube.553
+%%DATADIR%%/data/maps/castle/factories/genCube.554
+%%DATADIR%%/data/maps/castle/factories/genCube.556
+%%DATADIR%%/data/maps/castle/factories/genCylinder.001
+%%DATADIR%%/data/maps/castle/factories/genCylinder.002
+%%DATADIR%%/data/maps/castle/factories/genCylinder.003
+%%DATADIR%%/data/maps/castle/factories/genCylinder.004
+%%DATADIR%%/data/maps/castle/factories/genCylinder.006
+%%DATADIR%%/data/maps/castle/factories/genCylinder.009
+%%DATADIR%%/data/maps/castle/factories/genCylinder.010
+%%DATADIR%%/data/maps/castle/factories/genCylinder.014
+%%DATADIR%%/data/maps/castle/factories/genCylinder.018
+%%DATADIR%%/data/maps/castle/factories/genCylinder.022
+%%DATADIR%%/data/maps/castle/factories/genCylinder.026
+%%DATADIR%%/data/maps/castle/factories/genCylinder.027
+%%DATADIR%%/data/maps/castle/factories/genCylinder.211
+%%DATADIR%%/data/maps/castle/factories/genCylinder.219
+%%DATADIR%%/data/maps/castle/factories/genCylinder.220
+%%DATADIR%%/data/maps/castle/factories/genCylinder.224
+%%DATADIR%%/data/maps/castle/factories/genCylinder.233
+%%DATADIR%%/data/maps/castle/factories/genCylinder.235
+%%DATADIR%%/data/maps/castle/factories/genGRAB IT
+%%DATADIR%%/data/maps/castle/factories/genLine01.002
+%%DATADIR%%/data/maps/castle/factories/genMesh
+%%DATADIR%%/data/maps/castle/factories/genMesh.001
+%%DATADIR%%/data/maps/castle/factories/genMesh.002
+%%DATADIR%%/data/maps/castle/factories/genPlane.003
+%%DATADIR%%/data/maps/castle/factories/genSphere
+%%DATADIR%%/data/maps/castle/factories/genSphere.001
+%%DATADIR%%/data/maps/castle/factories/genSphere.006
+%%DATADIR%%/data/maps/castle/factories/genbase-floor00
+%%DATADIR%%/data/maps/castle/factories/genbase-stair-wall
+%%DATADIR%%/data/maps/castle/factories/genbase-stairs.001
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.003
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.004
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.007
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.008
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.013
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.014
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.019
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.020
+%%DATADIR%%/data/maps/castle/factories/genbasement-walls.021
+%%DATADIR%%/data/maps/castle/factories/genbment2-candleholders
+%%DATADIR%%/data/maps/castle/factories/genbment2-floor
+%%DATADIR%%/data/maps/castle/factories/genbment2-walls
+%%DATADIR%%/data/maps/castle/factories/genbment2_tables
+%%DATADIR%%/data/maps/castle/factories/genbment2_tables.001
+%%DATADIR%%/data/maps/castle/factories/genbment2_tables.002
+%%DATADIR%%/data/maps/castle/factories/genbment2_tables.003
+%%DATADIR%%/data/maps/castle/factories/genbment2_tables.004
+%%DATADIR%%/data/maps/castle/factories/genbment_arras-pole.003
+%%DATADIR%%/data/maps/castle/factories/gencastle_front_wall.003
+%%DATADIR%%/data/maps/castle/factories/thingCube.549
+%%DATADIR%%/data/maps/castle/license.txt
+%%DATADIR%%/data/maps/castle/world
 %%DATADIR%%/data/maps/flarge/cube_street.dds
 %%DATADIR%%/data/maps/flarge/christmasTree.png
 %%DATADIR%%/data/maps/flarge/factories/thingCircle
@@ -949,8 +1054,7 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/maps/parallaxtest/floor.jpg
 %%DATADIR%%/data/maps/parallaxtest/walls.jpg
 %%DATADIR%%/data/maps/parallaxtest/world
-%%DATADIR%%/data/maps/particles/dot.png
-%%DATADIR%%/data/maps/particles/world
+%%DATADIR%%/data/maps/partsys/dot.png
 %%DATADIR%%/data/maps/partsys/world
 %%DATADIR%%/data/maps/r3dtest/world
 %%DATADIR%%/data/maps/stenciltest/bricks.png
@@ -1002,30 +1106,49 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/shader/cg_vertexlight.xml
 %%DATADIR%%/data/shader/compressed_splatting_scattering.avp
 %%DATADIR%%/data/shader/compressed_splatting_scattering_a.avp
+%%DATADIR%%/data/shader/character/cg-skinning.inc
 %%DATADIR%%/data/shader/character/character.cgvp
 %%DATADIR%%/data/shader/character/character.xml
+%%DATADIR%%/data/shader/character/character2.cgvp
+%%DATADIR%%/data/shader/character/character2.xml
 %%DATADIR%%/data/shader/character/character_bump.cgvp
 %%DATADIR%%/data/shader/character/character_bump.xml
+%%DATADIR%%/data/shader/character/character_bump2.cgvp
+%%DATADIR%%/data/shader/character/character_bump2.xml
+%%DATADIR%%/data/shader/character/std_character2.xml
+%%DATADIR%%/data/shader/character/std_character_fixed2.xml
+%%DATADIR%%/data/shader/extrudeGlow/extrudeGlow.cgfp
+%%DATADIR%%/data/shader/extrudeGlow/extrudeGlow.cgvp
+%%DATADIR%%/data/shader/extrudeGlow/extrudeGlow.xml
 %%DATADIR%%/data/shader/flat_ppl_attenuation.avp
 %%DATADIR%%/data/shader/flat_ppl_attenuation2.avp
 %%DATADIR%%/data/shader/flat_ppl_diffuse.avp
 %%DATADIR%%/data/shader/flat_ppl_diffuse_a.avp
 %%DATADIR%%/data/shader/flat_ppl_diffuse_b.avp
-%%DATADIR%%/data/shader/fog/cg-sectorfog.cginc
-%%DATADIR%%/data/shader/fog/cg-sectorfog.inc
+%%DATADIR%%/data/shader/fog/cg-fog-sector.inc
 %%DATADIR%%/data/shader/light.xml
 %%DATADIR%%/data/shader/light2.xml
 %%DATADIR%%/data/shader/light_bumpmap.xml
 %%DATADIR%%/data/shader/light_bumpmap2.xml
 %%DATADIR%%/data/shader/light_projection_bumpmap.xml
 %%DATADIR%%/data/shader/light_scattering.xml
-%%DATADIR%%/data/shader/lighting/cg-light-classic.cginc
 %%DATADIR%%/data/shader/lighting/cg-light-classic.inc
+%%DATADIR%%/data/shader/lighting/vproc.xml
+%%DATADIR%%/data/shader/lighting/vproc_fixed.xml
 %%DATADIR%%/data/shader/parallax/parallax.afp
 %%DATADIR%%/data/shader/parallax/parallax.avp
 %%DATADIR%%/data/shader/parallax/parallax.cgfp
 %%DATADIR%%/data/shader/parallax/parallax.cgvp
 %%DATADIR%%/data/shader/parallax/parallax.xml
+%%DATADIR%%/data/shader/parallaxAtt/attenuation.cgvp
+%%DATADIR%%/data/shader/parallaxAtt/parallax.cgfp
+%%DATADIR%%/data/shader/parallaxAtt/parallax.cgvp
+%%DATADIR%%/data/shader/parallaxAtt/parallaxAtt.afp
+%%DATADIR%%/data/shader/parallaxAtt/parallaxAtt.avp
+%%DATADIR%%/data/shader/parallaxAtt/parallaxAtt.cgfp
+%%DATADIR%%/data/shader/parallaxAtt/parallaxAtt.cgvp
+%%DATADIR%%/data/shader/parallaxAtt/parallaxAtt.xml
+%%DATADIR%%/data/shader/parallaxAtt/parallaxAtt_workaround.cgfp
 %%DATADIR%%/data/shader/particle_basic.xml
 %%DATADIR%%/data/shader/reflect.xml
 %%DATADIR%%/data/shader/reflectsphere.xml
@@ -1043,20 +1166,22 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/shader/shadowmap/shadowmap.cgvp
 %%DATADIR%%/data/shader/shadowmap/shadowmap.xml
 %%DATADIR%%/data/shader/sky_scattering.xml
-%%DATADIR%%/data/shader/snippets/cg-base.inc
-%%DATADIR%%/data/shader/snippets/cg-i-surface.cginc
+%%DATADIR%%/data/shader/snippets/cg-common.cginc
+%%DATADIR%%/data/shader/snippets/cg-mixmode-alpha.inc
 %%DATADIR%%/data/shader/snippets/fog-ffp.inc
 %%DATADIR%%/data/shader/snippets/fog-fvp.inc
 %%DATADIR%%/data/shader/snippets/fog-mappings.inc
 %%DATADIR%%/data/shader/snippets/fog-pass.inc
 %%DATADIR%%/data/shader/snippets/projection-pass.inc
-%%DATADIR%%/data/shader/snippets/std_lighting-pass.inc
-%%DATADIR%%/data/shader/snippets/std_lighting.cscg
+%%DATADIR%%/data/shader/snippets/shadercond-tools.inc
+%%DATADIR%%/data/shader/snippets/shaderframework-cg.inc
+%%DATADIR%%/data/shader/snippets/shaderframework.inc
 %%DATADIR%%/data/shader/specular/bump.cgvp
 %%DATADIR%%/data/shader/specular/light_spec_bumpmap.xml
 %%DATADIR%%/data/shader/specular/specular.cgfp
 %%DATADIR%%/data/shader/splatting_amb.avp
 %%DATADIR%%/data/shader/splatting_amb.xml
+%%DATADIR%%/data/shader/splatting_amb_l.avp
 %%DATADIR%%/data/shader/splatting_base.avp
 %%DATADIR%%/data/shader/splatting_base.xml
 %%DATADIR%%/data/shader/splatting_base_b.avp
@@ -1078,6 +1203,7 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/shader/std_lighting_detail_add.xml
 %%DATADIR%%/data/shader/std_lighting_detail_alpha.xml
 %%DATADIR%%/data/shader/std_lighting_detail_alpha_scroll.xml
+%%DATADIR%%/data/shader/std_lighting_detail_fixed.xml
 %%DATADIR%%/data/shader/std_lighting_fixed.xml
 %%DATADIR%%/data/shader/std_lighting_nofog.xml
 %%DATADIR%%/data/shader/std_lighting_portal.xml
@@ -1093,9 +1219,7 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/shader/std_rloop_standard.xml
 %%DATADIR%%/data/shader/std_rloop_terrain.xml
 %%DATADIR%%/data/shader/std_rloop_terrainfixed.xml
-%%DATADIR%%/data/shader/surface/cg-parallax.cginc
 %%DATADIR%%/data/shader/surface/cg-parallax.inc
-%%DATADIR%%/data/shader/surface/cg-surface-classic.cginc
 %%DATADIR%%/data/shader/surface/cg-surface-classic.inc
 %%DATADIR%%/data/shader/terrain_fixed_base.xml
 %%DATADIR%%/data/shader/terrain_fixed_splatting.xml
@@ -1104,15 +1228,12 @@ lib/libcrystalspace_python.a
 %%DATADIR%%/data/shader/water.xml
 %%DATADIR%%/data/standard.zip
 %%DATADIR%%/data/startme.zip
-%%DATADIR%%/data/stdtex.zip
 %%DATADIR%%/data/teapot.zip
 %%DATADIR%%/data/ttf-dejavu.zip
 %%DATADIR%%/data/ttf-vera.zip
 %%DATADIR%%/data/unifont.zip
 %%DATADIR%%/data/varia/partedit.def
 %%DATADIR%%/data/varia/picview.def
-%%DATADIR%%/data/varia/vidprefs.def
-%%DATADIR%%/data/varia/viewmesh.def
 %%DATADIR%%/data/varia/walktest.cam
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -1188,6 +1309,9 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.10.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.10.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.11.1.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.11.1.2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.11.1.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.11.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.11.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.11.3.1.html
@@ -1329,6 +1453,7 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.22.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.3.1.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.3.1.10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.3.1.11.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.3.1.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.3.1.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.3.1.4.html
@@ -1354,6 +1479,7 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.5.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.5.2.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.5.2.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.5.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.6.1.html
@@ -1392,12 +1518,7 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.16.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.17.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.18.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.19.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.20.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.21.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.22.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.23.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_4.9.5.html
@@ -1413,10 +1534,12 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.7.1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.7.2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.7.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.8.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.8.2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.8.3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_6.1.1.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_6.1.1.2.html
@@ -1436,27 +1559,35 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_A.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_B.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.10.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.11.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.12.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.13.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.14.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.15.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.16.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.17.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.18.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.19.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.20.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.21.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.12.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.13.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.14.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.15.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.16.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.17.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.18.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.18.2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.18.3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.18.4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.18.5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.18.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.19.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.20.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.21.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.22.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.4.html
@@ -1464,6 +1595,7 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_C.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_D.1.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_D.1.2.html
@@ -1479,6 +1611,7 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_INDEX1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_INDEX2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_INDEX3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_INDEX4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_Index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_abt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cs_ovr.html
@@ -1516,22 +1649,20 @@ lib/libcrystalspace_python.a
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/usingcs/ownprojects/msvc7proj/snap8.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/usingcs/ownprojects/msvc7proj/snap9.jpg
 @dirrm etc/crystalspace
-@dirrm include/crystalspace/iutil
-@dirrm include/crystalspace/cstool
-@dirrm include/crystalspace/imesh
-@dirrm include/crystalspace/ivaria
-@dirrm include/crystalspace/csgeom
+@dirrm include/crystalspace/csgfx
 @dirrm include/crystalspace/iengine/rendersteps
 @dirrm include/crystalspace/iengine
+@dirrm include/crystalspace/ivideo/shader
+@dirrm include/crystalspace/ivideo
 @dirrm include/crystalspace/imap
-@dirrm include/crystalspace/igeom
+@dirrm include/crystalspace/iutil
+@dirrm include/crystalspace/csplugincommon/render3d
 @dirrm include/crystalspace/csplugincommon/directx
 @dirrm include/crystalspace/csplugincommon/particlesys
 @dirrm include/crystalspace/csplugincommon/softshader
 @dirrm include/crystalspace/csplugincommon/win32
 @dirrm include/crystalspace/csplugincommon/sndsys
 @dirrm include/crystalspace/csplugincommon/opengl
-@dirrm include/crystalspace/csplugincommon/render3d
 @dirrm include/crystalspace/csplugincommon/shader
 @dirrm include/crystalspace/csplugincommon/imageloader
 @dirrm include/crystalspace/csplugincommon/macosx
@@ -1540,30 +1671,37 @@ lib/libcrystalspace_python.a
 @dirrm include/crystalspace/csplugincommon/iopengl
 @dirrm include/crystalspace/csplugincommon
 @dirrm include/crystalspace/iaws
-@dirrm include/crystalspace/csutil/unix
 @dirrm include/crystalspace/csutil/win32
+@dirrm include/crystalspace/csutil/unix
+@dirrm include/crystalspace/csutil/threading
 @dirrm include/crystalspace/csutil/macosx
 @dirrm include/crystalspace/csutil
 @dirrm include/crystalspace/itexture
-@dirrm include/crystalspace/csgfx
+@dirrm include/crystalspace/csgeom
 @dirrm include/crystalspace/igraphic
-@dirrm include/crystalspace/ivideo/shader
-@dirrm include/crystalspace/ivideo
 @dirrm include/crystalspace/isndsys
+@dirrm include/crystalspace/bindings/java
+@dirrm include/crystalspace/bindings/python
+@dirrm include/crystalspace/bindings/perl
+@dirrm include/crystalspace/bindings
+@dirrm include/crystalspace/igeom
+@dirrm include/crystalspace/cstool
+@dirrm include/crystalspace/imesh
+@dirrm include/crystalspace/ivaria
 @dirrm include/crystalspace
 @dirrm lib/crystalspace
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/content/sprites
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/content
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build/platform/win32/cygwin
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build/platform/win32
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build/platform
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/usingcs/engine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/usingcs/lighting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/usingcs/ownprojects/kdevproj
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/usingcs/ownprojects/msvc7proj
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/usingcs/ownprojects
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/usingcs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build/platform/win32/cygwin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build/platform/win32
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build/platform
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/build
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/content/sprites
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual/content
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -1578,12 +1716,13 @@ lib/libcrystalspace_python.a
 @dirrm %%DATADIR%%/build
 @dirrm %%DATADIR%%/data/maps/isomap
 @dirrm %%DATADIR%%/data/maps/parallaxtest
-@dirrm %%DATADIR%%/data/maps/particles
 @dirrm %%DATADIR%%/data/maps/partsys
 @dirrm %%DATADIR%%/data/maps/r3dtest
 @dirrm %%DATADIR%%/data/maps/stenciltest
 @dirrm %%DATADIR%%/data/maps/terrain
 @dirrm %%DATADIR%%/data/maps/terrainf
+@dirrm %%DATADIR%%/data/maps/castle/factories
+@dirrm %%DATADIR%%/data/maps/castle
 @dirrm %%DATADIR%%/data/maps/flarge/factories
 @dirrm %%DATADIR%%/data/maps/flarge
 @dirrm %%DATADIR%%/data/maps
@@ -1591,12 +1730,15 @@ lib/libcrystalspace_python.a
 @dirrm %%DATADIR%%/data/aws/skins
 @dirrm %%DATADIR%%/data/aws/layouts
 @dirrm %%DATADIR%%/data/aws
+@dirrm %%DATADIR%%/data/ceguitest/0.5
 @dirrm %%DATADIR%%/data/ceguitest
 @dirrm %%DATADIR%%/data/cube
-@dirrm %%DATADIR%%/data/shader/surface
 @dirrm %%DATADIR%%/data/shader/fog
+@dirrm %%DATADIR%%/data/shader/surface
+@dirrm %%DATADIR%%/data/shader/extrudeGlow
 @dirrm %%DATADIR%%/data/shader/lighting
 @dirrm %%DATADIR%%/data/shader/parallax
+@dirrm %%DATADIR%%/data/shader/parallaxAtt
 @dirrm %%DATADIR%%/data/shader/specular
 @dirrm %%DATADIR%%/data/shader/snippets
 @dirrm %%DATADIR%%/data/shader/character
