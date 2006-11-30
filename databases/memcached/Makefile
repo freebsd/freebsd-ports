@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.1.12
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/ \
 		${MASTER_SITE_GENTOO}
@@ -41,5 +40,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .endif
+
+test:
+	${MAKE} -C ${WRKSRC} test
 
 .include <bsd.port.mk>
