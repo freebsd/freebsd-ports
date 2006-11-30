@@ -4,6 +4,7 @@
 #
 # $FreeBSD$
 #    $MCom: ports/graphics/imlib/Makefile,v 1.2 2006/09/10 00:51:11 mezz Exp $
+#
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.15
@@ -20,6 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gnomehack
