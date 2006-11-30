@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -94,6 +94,9 @@ PLIST_SUB+=	WITH_FAX=""
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 	${REINPLACE_CMD} -e 's,^#include <libpri\.h>,#include <libpri-bristuff.h>,' ${WRKSRC}/channels/chan_zap.c
-	${REINPLACE_CMD} -e 's,-lpri,-lpri-bristuff,' ${WRKSRC}/channels/Makefile
+	${REINPLACE_CMD}\
+		-e 's,-lpri,-lpri-bristuff,'\
+		-e 's,libpri\.so,libpri-bristuff.so,g'\
+			${WRKSRC}/channels/Makefile
 
 .include <bsd.port.post.mk>
