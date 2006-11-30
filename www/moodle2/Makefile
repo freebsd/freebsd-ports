@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.5.4
+PORTVERSION=	1.7
 CATEGORIES=	www
-MASTER_SITES=	http://download.moodle.org/stable15/
+MASTER_SITES=	http://download.moodle.org/stable17/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmrueda@diatel.upm.es

@@ -11,8 +11,9 @@ POST-INSTALL CONFIGURATION FOR MOODLE
 2) Add the following to your Apache configuration, and
    restart the server:
 
+   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
    Alias /moodle %%PREFIX%%/%%MOODLEDIR%%/
-   AcceptPathInfo On  ### Add this directive only for Apache 2.0.30 or later.
+   AcceptPathInfo On
    <Directory %%PREFIX%%/%%MOODLEDIR%%>
       AllowOverride None
       Order Allow,Deny
@@ -20,7 +21,7 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    </Directory>
    <Directory %%PREFIX%%/%%MOODLEDATADIR%%>
       AllowOverride None
-      Order Deny,Allow
+      Order Allow,Deny
       Deny from all 
    </Directory>
 
@@ -38,14 +39,18 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    set up whatever file permissions you deem more adequate.
    For instance, user=root, group=www, mask=640.
 
-4) Set up a cron task to call the file admin/cron.php
-   every five minutes or so. You can do so by using wget,
-   links or something similar to open the web page
-   http://your.server.com/moodle/admin/cron.php.
+4) Set up a cron task to invoke the file admin/cron.php
+   every five minutes or so. For instance:
+   */5 * * * * fetch http://your.server.com/moodle/admin/cron.php
 
 For more information, see the INSTALL DOCUMENTATION:
 
    http://docs.moodle.org/en/Installing_Moodle
+
+If you are upgrading from an earlier version of Moodle, check out
+possible additional steps at:
+
+   http://docs.moodle.org/en/Upgrading_to_Moodle_1.7
 
 If you have real trouble, please visit the Moodle course
 "Using Moodle" on moodle.org.
