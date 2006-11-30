@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	contacts
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.openedhand.com/~chris/ \
+MASTER_SITES=	http://projects.o-hand.com/sources/contacts/ \
 		http://smyru.petronet.pl/freebsd/
 DIST_SUBDIR=	gnome2
 
@@ -19,9 +18,9 @@ COMMENT=	Simple yet powerful address book based on Evolution data server
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 gnomehier evolutiondataserver
 USE_AUTOTOOLS=	libtool:15
+GCONF_SCHEMAS=	contacts.schemas
 # CFLAGS+=	-g
 
 .include <bsd.port.mk>
