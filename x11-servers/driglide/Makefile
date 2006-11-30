@@ -28,6 +28,11 @@ ONLY_FOR_ARCHS=		i386
 # Glide DOES NOT work with CFLAGS greater than -O2
 CFLAGS+=	-O
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/h3/glide3/src/Makefile.am
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/h5/glide3/src/Makefile.am
+
 pre-configure:
 	@cd $(WRKSRC) && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
