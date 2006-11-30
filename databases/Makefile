@@ -50,6 +50,7 @@
     SUBDIR += firebird2-server
     SUBDIR += fireprofile
     SUBDIR += flamerobin
+    SUBDIR += fortytwo-bdb
     SUBDIR += fpc-gdbm
     SUBDIR += fpc-ibase
     SUBDIR += fpc-mysql
