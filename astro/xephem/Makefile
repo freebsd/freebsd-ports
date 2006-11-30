@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
 MAN1=		xephem.1
 
-RESTRICTED=	"Personal use only"
+RESTRICTED=	Personal use only
 
 # XXX needs to be the same as DISTFILES
 XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
@@ -43,7 +43,9 @@ place it in ${DISTDIR} and then run make again.\n
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|/usr/X11R6|${X11BASE}' \
+		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC}/../.. -name Makefile -type f | \
 		${XARGS} ${REINPLACE_CMD} -e 's|CC =|CC?=|g ; \
 		s|CFLAGS=|CFLAGS+=|g ; \
@@ -58,7 +60,7 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xephem ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xephem.1 ${PREFIX}/man/man1 
+	${INSTALL_MAN} ${WRKSRC}/xephem.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/XEphem.ad ${PREFIX}/lib/X11/app-defaults/XEphem
 	@${MKDIR} ${PREFIX}/lib/X11/xephem
 	${TAR} -C ${WRKSRC} -cf - auxil catalogs fifos fits gallery help lo tools \
