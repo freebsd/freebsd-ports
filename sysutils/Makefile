@@ -167,6 +167,7 @@
     SUBDIR += extrackt
     SUBDIR += ezjail
     SUBDIR += fanout
+    SUBDIR += farbot
     SUBDIR += fastest_cvsup
     SUBDIR += fatback
     SUBDIR += fcron
