@@ -1,14 +1,3 @@
-bin/client_test
-bin/dump_torrent
-bin/make_torrent
-bin/simple_client
-bin/test_bencoding
-bin/test_buffer
-bin/test_hasher
-bin/test_ip_filter
-bin/test_metadata_extension
-bin/test_piece_picker
-bin/test_storage
 include/libtorrent/alert.hpp
 include/libtorrent/alert_types.hpp
 include/libtorrent/allocate_resources.hpp
@@ -20,8 +9,7 @@ include/libtorrent/asio/basic_resolver.hpp
 include/libtorrent/asio/basic_socket.hpp
 include/libtorrent/asio/basic_socket_acceptor.hpp
 include/libtorrent/asio/basic_socket_iostream.hpp
-include/libtorrent/asio/basic_socketbuf.hpp
-include/libtorrent/asio/basic_strand.hpp
+include/libtorrent/asio/basic_socket_streambuf.hpp
 include/libtorrent/asio/basic_stream_socket.hpp
 include/libtorrent/asio/basic_streambuf.hpp
 include/libtorrent/asio/buffer.hpp
@@ -41,11 +29,13 @@ include/libtorrent/asio/detail/buffered_stream_storage.hpp
 include/libtorrent/asio/detail/call_stack.hpp
 include/libtorrent/asio/detail/const_buffers_iterator.hpp
 include/libtorrent/asio/detail/consuming_buffers.hpp
+include/libtorrent/asio/detail/deadline_timer_service.hpp
 include/libtorrent/asio/detail/epoll_reactor.hpp
 include/libtorrent/asio/detail/epoll_reactor_fwd.hpp
 include/libtorrent/asio/detail/event.hpp
 include/libtorrent/asio/detail/fd_set_adapter.hpp
 include/libtorrent/asio/detail/handler_alloc_helpers.hpp
+include/libtorrent/asio/detail/handler_invoke_helpers.hpp
 include/libtorrent/asio/detail/hash_map.hpp
 include/libtorrent/asio/detail/io_control.hpp
 include/libtorrent/asio/detail/kqueue_reactor.hpp
@@ -61,15 +51,14 @@ include/libtorrent/asio/detail/old_win_sdk_compat.hpp
 include/libtorrent/asio/detail/pipe_select_interrupter.hpp
 include/libtorrent/asio/detail/pop_options.hpp
 include/libtorrent/asio/detail/posix_event.hpp
+include/libtorrent/asio/detail/posix_fd_set_adapter.hpp
 include/libtorrent/asio/detail/posix_mutex.hpp
 include/libtorrent/asio/detail/posix_signal_blocker.hpp
 include/libtorrent/asio/detail/posix_thread.hpp
 include/libtorrent/asio/detail/posix_tss_ptr.hpp
 include/libtorrent/asio/detail/push_options.hpp
-include/libtorrent/asio/detail/reactive_deadline_timer_service.hpp
 include/libtorrent/asio/detail/reactive_socket_service.hpp
 include/libtorrent/asio/detail/reactor_op_queue.hpp
-include/libtorrent/asio/detail/reactor_timer_queue.hpp
 include/libtorrent/asio/detail/resolver_service.hpp
 include/libtorrent/asio/detail/scoped_lock.hpp
 include/libtorrent/asio/detail/select_interrupter.hpp
@@ -87,8 +76,11 @@ include/libtorrent/asio/detail/strand_service.hpp
 include/libtorrent/asio/detail/task_io_service.hpp
 include/libtorrent/asio/detail/task_io_service_fwd.hpp
 include/libtorrent/asio/detail/thread.hpp
+include/libtorrent/asio/detail/timer_queue.hpp
+include/libtorrent/asio/detail/timer_queue_base.hpp
 include/libtorrent/asio/detail/tss_ptr.hpp
 include/libtorrent/asio/detail/win_event.hpp
+include/libtorrent/asio/detail/win_fd_set_adapter.hpp
 include/libtorrent/asio/detail/win_iocp_io_service.hpp
 include/libtorrent/asio/detail/win_iocp_io_service_fwd.hpp
 include/libtorrent/asio/detail/win_iocp_operation.hpp
@@ -103,6 +95,7 @@ include/libtorrent/asio/detail/wrapped_handler.hpp
 include/libtorrent/asio/error.hpp
 include/libtorrent/asio/error_handler.hpp
 include/libtorrent/asio/handler_alloc_hook.hpp
+include/libtorrent/asio/handler_invoke_hook.hpp
 include/libtorrent/asio/impl/io_service.ipp
 include/libtorrent/asio/impl/read.ipp
 include/libtorrent/asio/impl/read_until.ipp
@@ -143,13 +136,14 @@ include/libtorrent/asio/ssl/stream.hpp
 include/libtorrent/asio/ssl/stream_base.hpp
 include/libtorrent/asio/ssl/stream_service.hpp
 include/libtorrent/asio/strand.hpp
-include/libtorrent/asio/strand_service.hpp
 include/libtorrent/asio/stream_socket_service.hpp
 include/libtorrent/asio/streambuf.hpp
 include/libtorrent/asio/system_exception.hpp
 include/libtorrent/asio/thread.hpp
 include/libtorrent/asio/time_traits.hpp
 include/libtorrent/asio/write.hpp
+include/libtorrent/aux_/allocate_resources_impl.hpp
+include/libtorrent/aux_/session_impl.hpp
 include/libtorrent/bencode.hpp
 include/libtorrent/bt_peer_connection.hpp
 include/libtorrent/buffer.hpp
@@ -165,6 +159,18 @@ include/libtorrent/identify_client.hpp
 include/libtorrent/invariant_check.hpp
 include/libtorrent/io.hpp
 include/libtorrent/ip_filter.hpp
+include/libtorrent/kademlia/closest_nodes.hpp
+include/libtorrent/kademlia/dht_tracker.hpp
+include/libtorrent/kademlia/find_data.hpp
+include/libtorrent/kademlia/logging.hpp
+include/libtorrent/kademlia/node.hpp
+include/libtorrent/kademlia/node_entry.hpp
+include/libtorrent/kademlia/node_id.hpp
+include/libtorrent/kademlia/packet_iterator.hpp
+include/libtorrent/kademlia/refresh.hpp
+include/libtorrent/kademlia/routing_table.hpp
+include/libtorrent/kademlia/rpc_manager.hpp
+include/libtorrent/kademlia/traversal_algorithm.hpp
 include/libtorrent/peer.hpp
 include/libtorrent/peer_connection.hpp
 include/libtorrent/peer_id.hpp
@@ -173,9 +179,11 @@ include/libtorrent/peer_request.hpp
 include/libtorrent/piece_block_progress.hpp
 include/libtorrent/piece_picker.hpp
 include/libtorrent/policy.hpp
+include/libtorrent/random_sample.hpp
 include/libtorrent/resource_request.hpp
 include/libtorrent/session.hpp
 include/libtorrent/session_settings.hpp
+include/libtorrent/session_status.hpp
 include/libtorrent/size_type.hpp
 include/libtorrent/socket.hpp
 include/libtorrent/stat.hpp
@@ -188,11 +196,17 @@ include/libtorrent/udp_tracker_connection.hpp
 include/libtorrent/utf8.hpp
 include/libtorrent/version.hpp
 include/libtorrent/web_peer_connection.hpp
+lib/libdata/pkgconfig/libtorrent.pc
 lib/libtorrent.a
 lib/libtorrent.la
 lib/libtorrent.so
 lib/libtorrent.so.1
-libdata/pkgconfig/libtorrent.pc
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm lib/libdata/pkgconfig
+@dirrm lib/libdata
+@dirrm include/libtorrent/kademlia
+@dirrm include/libtorrent/aux_
 @dirrm include/libtorrent/asio/ssl/detail
 @dirrm include/libtorrent/asio/ssl
 @dirrm include/libtorrent/asio/ip/detail

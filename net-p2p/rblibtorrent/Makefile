@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=libtorrent
 PKGNAMEPREFIX=	rb
 
-MAINTAINER=	johan@stromnet.org
+MAINTAINER=	johan@stromnet.se
 COMMENT=	A C++ library implementing a BitTorrent client
 
 LIB_DEPENDS=	boost_date_time.3:${PORTSDIR}/devel/boost \
