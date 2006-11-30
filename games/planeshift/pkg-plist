@@ -70,6 +70,9 @@ bin/updater
 %%PLANEDIR%%/art/things/weapons.zip
 %%PLANEDIR%%/art/world/lighting.xml
 %%PLANEDIR%%/art/world/npcroom.zip
+%%PLANEDIR%%/art/world/npcroom1.zip
+%%PLANEDIR%%/art/world/npcroom2.zip
+%%PLANEDIR%%/art/world/npcroom_corr.zip
 %%PLANEDIR%%/art/world/podium.zip
 %%PLANEDIR%%/art/world/sound.xml
 %%PLANEDIR%%/ase_2_spr
@@ -107,11 +110,13 @@ bin/updater
 %%PLANEDIR%%/data/effects/misc/target.eff
 %%PLANEDIR%%/data/gui/activemagicwindow.xml
 %%PLANEDIR%%/data/gui/birth.xml
+%%PLANEDIR%%/data/gui/bookwriting.xml
 %%PLANEDIR%%/data/gui/borderlist.xml
 %%PLANEDIR%%/data/gui/buddy.xml
 %%PLANEDIR%%/data/gui/configcamera.xml
 %%PLANEDIR%%/data/gui/configchat.xml
 %%PLANEDIR%%/data/gui/configchatfilter.xml
+%%PLANEDIR%%/data/gui/configchattabs.xml
 %%PLANEDIR%%/data/gui/configdetails.xml
 %%PLANEDIR%%/data/gui/configentityinter.xml
 %%PLANEDIR%%/data/gui/configentitylabels.xml
@@ -314,6 +319,8 @@ bin/updater
 %%EXAMPLE%%share/examples/planeshift/quest_scripts.sql
 %%EXAMPLE%%share/examples/planeshift/quests.sql
 %%EXAMPLE%%share/examples/planeshift/race_info.sql
+%%EXAMPLE%%share/examples/planeshift/sc_location_type.sql
+%%EXAMPLE%%share/examples/planeshift/sc_locations.sql
 %%EXAMPLE%%share/examples/planeshift/sc_npc_definitions.sql
 %%EXAMPLE%%share/examples/planeshift/sc_waypoint_links.sql
 %%EXAMPLE%%share/examples/planeshift/sc_waypoints.sql
@@ -328,6 +335,7 @@ bin/updater
 %%EXAMPLE%%share/examples/planeshift/trade_combinations.sql
 %%EXAMPLE%%share/examples/planeshift/trade_constraints.sql
 %%EXAMPLE%%share/examples/planeshift/trade_patterns.sql
+%%EXAMPLE%%share/examples/planeshift/trade_processes.sql
 %%EXAMPLE%%share/examples/planeshift/trade_transformations.sql
 %%EXAMPLE%%share/examples/planeshift/trainer_skills.sql
 %%EXAMPLE%%share/examples/planeshift/traits.sql
