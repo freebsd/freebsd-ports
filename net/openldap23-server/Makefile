@@ -39,7 +39,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
@@ -77,6 +77,8 @@ OPENLDAP_PKGFILESUFX=	.client
 OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 .endif
+
+CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g'
 
 .include <bsd.port.pre.mk>
 
@@ -269,7 +271,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 .else
 
-WITH_BDB_VER?=		43
+WITH_BDB_VER?=		44
 USE_BDB=		yes
 
 .if ${WITH_BDB_VER} >= 42
