@@ -1,0 +1,35 @@
+bin/farbot
+etc/farbot.conf.sample
+%%PYTHON_SITELIBDIR%%/farb/__init__.py
+%%PYTHON_SITELIBDIR%%/farb/builder.py
+%%PYTHON_SITELIBDIR%%/farb/config.py
+%%PYTHON_SITELIBDIR%%/farb/sysinstall.py
+%%PYTHON_SITELIBDIR%%/farb/utils.py
+%%PYTHON_SITELIBDIR%%/farb/data/boot.conf.tmpl
+%%PYTHON_SITELIBDIR%%/farb/data/farb_conf.xml
+%%PYTHON_SITELIBDIR%%/farb/data/install_package.sh
+%%PYTHON_SITELIBDIR%%/farb/data/loader.conf
+%%PYTHON_SITELIBDIR%%/farb/data/loader.rc
+%%PYTHON_SITELIBDIR%%/farb/data/netinstall.4th.tmpl
+%%PYTHON_SITELIBDIR%%/farb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/farb/builder.pyc
+%%PYTHON_SITELIBDIR%%/farb/config.pyc
+%%PYTHON_SITELIBDIR%%/farb/sysinstall.pyc
+%%PYTHON_SITELIBDIR%%/farb/utils.pyc
+%%PYTHON_SITELIBDIR%%/farb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/farb/builder.pyo
+%%PYTHON_SITELIBDIR%%/farb/config.pyo
+%%PYTHON_SITELIBDIR%%/farb/sysinstall.pyo
+%%PYTHON_SITELIBDIR%%/farb/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/farb/data
+@dirrm %%PYTHON_SITELIBDIR%%/farb
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s02.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s04.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/docbook.css
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/index.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/pr01.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xhtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
