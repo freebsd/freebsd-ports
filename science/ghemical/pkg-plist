@@ -113,15 +113,18 @@ share/ghemical/%%GHEMICAL_VERSION%%/examples/cyclohexane.gpr
 share/ghemical/%%GHEMICAL_VERSION%%/examples/dna_AGTC.gpr
 share/ghemical/%%GHEMICAL_VERSION%%/examples/naphtalene.gpr
 share/ghemical/%%GHEMICAL_VERSION%%/examples/rna_aguc.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/glade/constraint_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/efp_dialog.glade
 share/ghemical/%%GHEMICAL_VERSION%%/glade/file_export_dialog.glade
 share/ghemical/%%GHEMICAL_VERSION%%/glade/file_import_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/gamess_dialog.glade
 share/ghemical/%%GHEMICAL_VERSION%%/glade/geomopt_dialog.glade
 share/ghemical/%%GHEMICAL_VERSION%%/glade/moldyn_dialog.glade
 share/ghemical/%%GHEMICAL_VERSION%%/glade/progress_dialog.glade
-share/ghemical/%%GHEMICAL_VERSION%%/glade/gamess_dialog.glade
-share/ghemical/%%GHEMICAL_VERSION%%/glade/constraint_dialog.glade
 share/ghemical/%%GHEMICAL_VERSION%%/glade/setup_dialog.glade
 share/ghemical/%%GHEMICAL_VERSION%%/glade/trajview_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/pixmaps/ghemical.png
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/pixmaps
 @dirrm share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images
 @dirrm share/ghemical/%%GHEMICAL_VERSION%%/user-docs
 @dirrm share/ghemical/%%GHEMICAL_VERSION%%/glade
