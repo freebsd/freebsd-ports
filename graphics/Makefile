@@ -132,6 +132,7 @@
     SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fnlib
+    SUBDIR += fortytwo
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-ggi
     SUBDIR += fpc-graph
