@@ -19,6 +19,8 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A portable implementation of MPI-1 and MPI-2
 
+BROKEN=		Incorrect pkg-plist
+
 #-----------------------------------------------------------------------
 # You may define these options:
 #
