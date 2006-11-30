@@ -20,6 +20,8 @@ COMMENT=	A dynamic programming language with a syntax similar to C++
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
 
+ONLY_FOR_ARCHS=	i386
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 
