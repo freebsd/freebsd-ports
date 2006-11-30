@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UMFPACK library used by ELMER FEM package
 
+BROKEN=		Configure fails
+
 CONFLICTS=	umfpack-[0-9].[0-9]* suitesparse-[0-9].[0-9]*
 
 USE_GCC=	4.1+

@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math libraries build with F90 for used in ELMER FEM
 
+BROKEN=		Configure fails
+
 .ifdef WITH_MPI
 BUILD_DEPENDS+=	${LOCALBASE}/mpich/include/mpif.h:${PORTSDIR}/net/mpich
 .endif
