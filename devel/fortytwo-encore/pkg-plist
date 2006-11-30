@@ -1,0 +1,617 @@
+Local/Library/Frameworks/Encore.framework/Headers
+Local/Library/Frameworks/Encore.framework/Resources
+Local/Library/Frameworks/Encore.framework/Versions/A/Encore
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECArrayIterator.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECCache.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECCacheItem.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECDefaultLoggingFormatter.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECEmptyIterator.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECEnumeratorIterator.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECExceptions.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECFileLoggingWriter.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECIterator.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECKeyToListMap.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECLogger.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECLogging.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECLoggingConfiguration.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECLoggingFormatter.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECLoggingWriter.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECLoggingXMLConfiguration.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECMemory.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECNSLogLoggingWriter.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECObject.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECParameterString.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECStack.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECStandardOutput.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECStringUtils.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECTestResult.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECTestSuite.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECTestcase.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControl.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlContext.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlDefaultAllocatorRule.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlDefaultRule.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlDelegateMessageRule.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlEvent.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlReferenceRule.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlRule.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlRuleSelector.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/ECXMLControlState.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Headers/Encore.h
+Local/Library/Frameworks/Encore.framework/Versions/A/Resources/Info-gnustep.plist
+Local/Library/Frameworks/Encore.framework/Versions/A/libEncore.so
+Local/Library/Frameworks/Encore.framework/Versions/A/libEncore.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/Encore.framework/Versions/A/libEncore.so.%%LIBVERSION%%
+Local/Library/Frameworks/Encore.framework/Versions/Current
+Local/Library/Headers/Encore
+Local/Library/Libraries/libEncore.so
+Local/Library/Libraries/libEncore.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
+@dirrm Local/Library/Frameworks/Encore.framework/Versions/A/Resources
+@dirrm Local/Library/Frameworks/Encore.framework/Versions/A/Headers
+@dirrm Local/Library/Frameworks/Encore.framework/Versions/A
+@dirrm Local/Library/Frameworks/Encore.framework/Versions
+@dirrm Local/Library/Frameworks/Encore.framework
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/ECArrayIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/ECArrayIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/Classes/ECCache/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/Classes/ECCache/ECCache.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/Classes/ECCache/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/Classes/ECCache/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/Classes/ECCache/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/ECCache.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCache/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/Classes/ECCacheItem/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/Classes/ECCacheItem/ECCacheItem.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/Classes/ECCacheItem/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/Classes/ECCacheItem/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/Classes/ECCacheItem/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/ECCacheItem.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECCacheItem/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/Classes/ECDefaultLoggingFormatter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/Classes/ECDefaultLoggingFormatter/ECDefaultLoggingFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/Classes/ECDefaultLoggingFormatter/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/Classes/ECDefaultLoggingFormatter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/Classes/ECDefaultLoggingFormatter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/ECDefaultLoggingFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECDefaultLoggingFormatter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/Classes/ECEmptyIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/Classes/ECEmptyIterator/ECEmptyIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/Classes/ECEmptyIterator/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/Classes/ECEmptyIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/Classes/ECEmptyIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/ECEmptyIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEmptyIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/Classes/ECEnumeratorIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/Classes/ECEnumeratorIterator/ECEnumeratorIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/Classes/ECEnumeratorIterator/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/Classes/ECEnumeratorIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/Classes/ECEnumeratorIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/ECEnumeratorIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECEnumeratorIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAlreadyExistsException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAlreadyExistsException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAlreadyExistsException/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAlreadyExistsException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAlreadyExistsException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAssertionException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAssertionException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAssertionException/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAssertionException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECAssertionException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECException/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalArgumentException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalArgumentException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalArgumentException/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalArgumentException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalArgumentException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalOperationException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalOperationException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalOperationException/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalOperationException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalOperationException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalStateException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalStateException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalStateException/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalStateException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIllegalStateException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIncompleteInitializationException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIncompleteInitializationException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIncompleteInitializationException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECIncompleteInitializationException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECNotImplementedException/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECNotImplementedException/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECNotImplementedException/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECNotImplementedException/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/Classes/ECNotImplementedException/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/ECExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECExceptions/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/Classes/ECFileLoggingWriter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/Classes/ECFileLoggingWriter/ECFileLoggingWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/Classes/ECFileLoggingWriter/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/Classes/ECFileLoggingWriter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/Classes/ECFileLoggingWriter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/ECFileLoggingWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/PDefines/PDefines.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECFileLoggingWriter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/ECIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/Protocols/ECIterator/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/Protocols/ECIterator/ECIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/Protocols/ECIterator/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/Protocols/ECIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/Protocols/ECIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECIterator/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/Classes/ECKeyToListMap/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/Classes/ECKeyToListMap/ECKeyToListMap.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/Classes/ECKeyToListMap/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/Classes/ECKeyToListMap/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/Classes/ECKeyToListMap/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/ECKeyToListMap.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECKeyToListMap/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/Classes/ECLogger/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/Classes/ECLogger/ECLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/Classes/ECLogger/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/Classes/ECLogger/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/Classes/ECLogger/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/ECLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogger/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/Classes/ECLogging/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/Classes/ECLogging/ECLogging.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/Classes/ECLogging/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/Classes/ECLogging/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/Classes/ECLogging/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/DataTypes/DataTypes.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/ECLogging.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLogging/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration/ECLoggingConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/ECLoggingConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/ECLoggingFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter/ECLoggingFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/ECLoggingWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/Protocols/ECLoggingWriter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/Protocols/ECLoggingWriter/ECLoggingWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/Protocols/ECLoggingWriter/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/Protocols/ECLoggingWriter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/Protocols/ECLoggingWriter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingWriter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingContext/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingContext/ECLoggingXMLConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingContext/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingContext/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingContext/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingXMLConfiguration/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingXMLConfiguration/ECLoggingXMLConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingXMLConfiguration/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingXMLConfiguration/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingXMLConfiguration/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/ECLoggingXMLConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingXMLConfiguration/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECMemory/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECMemory/ECMemory.html
+%%PORTDOCS%%%%DOCSDIR%%/ECMemory/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECMemory/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/Classes/ECNSLogLoggingWriter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/Classes/ECNSLogLoggingWriter/ECNSLogLoggingWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/Classes/ECNSLogLoggingWriter/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/Classes/ECNSLogLoggingWriter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/Classes/ECNSLogLoggingWriter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/ECNSLogLoggingWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECNSLogLoggingWriter/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Classes/ECObject/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Classes/ECObject/ECObject.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Classes/ECObject/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Classes/ECObject/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/ECObject.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Protocols/ECObject/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Protocols/ECObject/ECObject.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Protocols/ECObject/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/Protocols/ECObject/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECObject/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl/ECParameterString.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECParameterString/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECParameterString/ECParameterString.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECParameterString/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECParameterString/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECParameterString/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/ECParameterString.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/ECParameterString.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/Classes/ECStack/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/Classes/ECStack/ECStack.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/Classes/ECStack/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/Classes/ECStack/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/Classes/ECStack/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/ECStack.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStack/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/Classes/ECStandardOutput/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/Classes/ECStandardOutput/ECStandardOutput.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/Classes/ECStandardOutput/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/Classes/ECStandardOutput/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/Classes/ECStandardOutput/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/ECStandardOutput.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStandardOutput/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/Categories/NSString_ECStringUtils_/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/Categories/NSString_ECStringUtils_/ECStringUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/Categories/NSString_ECStringUtils_/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/Categories/NSString_ECStringUtils_/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/Categories/NSString_ECStringUtils_/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/ECStringUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECStringUtils/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/Classes/ECTestResult/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/Classes/ECTestResult/ECTestResult.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/Classes/ECTestResult/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/Classes/ECTestResult/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/Classes/ECTestResult/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/ECTestResult.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestResult/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/Classes/ECTestSuite/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/Classes/ECTestSuite/ECTestSuite.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/Classes/ECTestSuite/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/Classes/ECTestSuite/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/Classes/ECTestSuite/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/ECTestSuite.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestSuite/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/Classes/ECTestcase/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/Classes/ECTestcase/ECTestcase.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/Classes/ECTestcase/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/Classes/ECTestcase/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/Classes/ECTestcase/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/ECTestcase.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECTestcase/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/Classes/ECXMLControl/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/Classes/ECXMLControl/ECXMLControl.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/Classes/ECXMLControl/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/Classes/ECXMLControl/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/Classes/ECXMLControl/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/ECXMLControl.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControl/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/Classes/ECXMLControlContext/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/Classes/ECXMLControlContext/ECXMLControlContext.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/Classes/ECXMLControlContext/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/Classes/ECXMLControlContext/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/Classes/ECXMLControlContext/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/ECXMLControlContext.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlContext/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/Classes/ECXMLControlDefaultAllocatorRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/Classes/ECXMLControlDefaultAllocatorRule/ECXMLControlDefaultAllocatorRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/Classes/ECXMLControlDefaultAllocatorRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/Classes/ECXMLControlDefaultAllocatorRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/ECXMLControlDefaultAllocatorRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlLinkObjectRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlLinkObjectRule/ECXMLControlDefaultRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlLinkObjectRule/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlLinkObjectRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlLinkObjectRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetAttributeRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetAttributeRule/ECXMLControlDefaultRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetAttributeRule/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetAttributeRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetAttributeRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetterLookupUtil/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetterLookupUtil/ECXMLControlDefaultRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetterLookupUtil/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetterLookupUtil/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetterLookupUtil/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/ECXMLControlDefaultRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDefaultRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes/ECXMLControlDelegateMessageRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes/ECXMLControlDelegateMessageRule/ECXMLControlDelegateMessageRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes/ECXMLControlDelegateMessageRule/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes/ECXMLControlDelegateMessageRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes/ECXMLControlDelegateMessageRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/ECXMLControlDelegateMessageRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlDelegateMessageRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/Classes/ECXMLControlEvent/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/Classes/ECXMLControlEvent/ECXMLControlEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/Classes/ECXMLControlEvent/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/Classes/ECXMLControlEvent/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/Classes/ECXMLControlEvent/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/ECXMLControlEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlEvent/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/Classes/ECXMLControlReferenceRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/Classes/ECXMLControlReferenceRule/ECXMLControlReferenceRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/Classes/ECXMLControlReferenceRule/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/Classes/ECXMLControlReferenceRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/Classes/ECXMLControlReferenceRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/ECXMLControlReferenceRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlReferenceRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/ECXMLControlRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/Protocols/ECXMLControlRule/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/Protocols/ECXMLControlRule/ECXMLControlRule.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/Protocols/ECXMLControlRule/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/Protocols/ECXMLControlRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/Protocols/ECXMLControlRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRule/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/Classes/ECXMLControlRuleSelector/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/Classes/ECXMLControlRuleSelector/ECXMLControlRuleSelector.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/Classes/ECXMLControlRuleSelector/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/Classes/ECXMLControlRuleSelector/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/Classes/ECXMLControlRuleSelector/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/ECXMLControlRuleSelector.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlRuleSelector/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState/ECXMLControlState.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState/Methods/Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/ECXMLControlState.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLControlState/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLEventHandler/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLEventHandler/ECXMLEventHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLEventHandler/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECXMLEventHandler/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/Encore/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/Encore/Encore.html
+%%PORTDOCS%%%%DOCSDIR%%/Encore/index.html
+%%PORTDOCS%%%%DOCSDIR%%/Encore/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/MasterTOC.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Encore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLEventHandler
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlState/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlState
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRuleSelector/Classes/ECXMLControlRuleSelector/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRuleSelector/Classes/ECXMLControlRuleSelector
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRuleSelector/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRuleSelector
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRule/Protocols/ECXMLControlRule/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRule/Protocols/ECXMLControlRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRule/Protocols
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlReferenceRule/Classes/ECXMLControlReferenceRule/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlReferenceRule/Classes/ECXMLControlReferenceRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlReferenceRule/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlReferenceRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlEvent/Classes/ECXMLControlEvent/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlEvent/Classes/ECXMLControlEvent
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlEvent/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlEvent
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes/ECXMLControlDelegateMessageRule/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes/ECXMLControlDelegateMessageRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDelegateMessageRule/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDelegateMessageRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetterLookupUtil/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetterLookupUtil
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetAttributeRule/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlSetAttributeRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlLinkObjectRule/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule/Classes/ECXMLControlLinkObjectRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/Classes/ECXMLControlDefaultAllocatorRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultAllocatorRule/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlDefaultAllocatorRule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlContext/Classes/ECXMLControlContext/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlContext/Classes/ECXMLControlContext
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlContext/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlContext
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControl/Classes/ECXMLControl/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControl/Classes/ECXMLControl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControl/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestcase/Classes/ECTestcase/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestcase/Classes/ECTestcase
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestcase/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestcase
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestSuite/Classes/ECTestSuite/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestSuite/Classes/ECTestSuite
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestSuite/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestSuite
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestResult/Classes/ECTestResult/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestResult/Classes/ECTestResult
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestResult/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECTestResult
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStringUtils/Categories/NSString_ECStringUtils_/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStringUtils/Categories/NSString_ECStringUtils_
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStringUtils/Categories
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStringUtils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStandardOutput/Classes/ECStandardOutput/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStandardOutput/Classes/ECStandardOutput
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStandardOutput/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStandardOutput
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStack/Classes/ECStack/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStack/Classes/ECStack
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStack/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECStack
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Protocols
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes/ECParameterString/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes/ECParameterString
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECObject/Protocols/ECObject
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECObject/Protocols
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECObject/Classes/ECObject
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECObject/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECObject
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECNSLogLoggingWriter/Classes/ECNSLogLoggingWriter/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECNSLogLoggingWriter/Classes/ECNSLogLoggingWriter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECNSLogLoggingWriter/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECNSLogLoggingWriter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECMemory
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingXMLConfiguration/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingXMLConfiguration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingContext/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingXMLConfiguration/Classes/ECLoggingContext
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingXMLConfiguration/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingXMLConfiguration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingWriter/Protocols/ECLoggingWriter/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingWriter/Protocols/ECLoggingWriter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingWriter/Protocols
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingWriter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingFormatter/Protocols
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingFormatter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfiguration/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfiguration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogging/DataTypes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogging/Classes/ECLogging/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogging/Classes/ECLogging
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogging/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogging
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogger/Classes/ECLogger/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogger/Classes/ECLogger
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogger/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLogger
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECKeyToListMap/Classes/ECKeyToListMap/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECKeyToListMap/Classes/ECKeyToListMap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECKeyToListMap/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECKeyToListMap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECIterator/Protocols/ECIterator/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECIterator/Protocols/ECIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECIterator/Protocols
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECFileLoggingWriter/PDefines
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECFileLoggingWriter/Classes/ECFileLoggingWriter/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECFileLoggingWriter/Classes/ECFileLoggingWriter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECFileLoggingWriter/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECFileLoggingWriter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECNotImplementedException/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECNotImplementedException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECIncompleteInitializationException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECIllegalStateException/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECIllegalStateException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECIllegalOperationException/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECIllegalOperationException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECIllegalArgumentException/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECIllegalArgumentException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECException/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECAssertionException/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECAssertionException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECAlreadyExistsException/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes/ECAlreadyExistsException
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECExceptions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEnumeratorIterator/Classes/ECEnumeratorIterator/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEnumeratorIterator/Classes/ECEnumeratorIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEnumeratorIterator/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEnumeratorIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEmptyIterator/Classes/ECEmptyIterator/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEmptyIterator/Classes/ECEmptyIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEmptyIterator/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECEmptyIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECDefaultLoggingFormatter/Classes/ECDefaultLoggingFormatter/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECDefaultLoggingFormatter/Classes/ECDefaultLoggingFormatter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECDefaultLoggingFormatter/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECDefaultLoggingFormatter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCacheItem/Classes/ECCacheItem/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCacheItem/Classes/ECCacheItem
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCacheItem/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCacheItem
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCache/Classes/ECCache/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCache/Classes/ECCache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCache/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECCache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/Methods
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECArrayIterator/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECArrayIterator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

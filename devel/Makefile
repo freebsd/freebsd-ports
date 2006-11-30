@@ -297,6 +297,7 @@
     SUBDIR += fnccheck
     SUBDIR += fnorb
     SUBDIR += fortran-utils
+    SUBDIR += fortytwo-encore
     SUBDIR += fpc-bfd
     SUBDIR += fpc-fcl
     SUBDIR += fpc-fv
