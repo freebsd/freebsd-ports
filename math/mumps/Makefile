@@ -17,6 +17,8 @@ DISTNAME=	MUMPS_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 
+BROKEN=		Does not build
+
 #-----------------------------------------------------------------------
 
 # WARNING: Non-serviceable parts inside, can break other ports
