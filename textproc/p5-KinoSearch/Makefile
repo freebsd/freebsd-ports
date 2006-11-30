@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	KinoSearch
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.rectangular.com/downloads/
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,6 @@ BUILD_DEPENDS+=	${MODULE_DEPENDS}
 
 PERL_MODBUILD=	yes
 
-MAN1=	dump_index.1
 MAN3=	KinoSearch.3 \
 	KinoSearch::Analysis::Analyzer.3 \
 	KinoSearch::Analysis::LCNormalizer.3 \
@@ -77,12 +76,15 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Search::HitCollector.3 \
 	KinoSearch::Search::HitQueue.3 \
 	KinoSearch::Search::Hits.3 \
+	KinoSearch::Search::MultiSearcher.3 \
 	KinoSearch::Search::PhraseQuery.3 \
 	KinoSearch::Search::PhraseScorer.3 \
 	KinoSearch::Search::Query.3 \
 	KinoSearch::Search::QueryFilter.3 \
 	KinoSearch::Search::Scorer.3 \
 	KinoSearch::Search::Searchable.3 \
+	KinoSearch::Search::SearchServer.3 \
+	KinoSearch::Search::SearchClient.3 \
 	KinoSearch::Search::Similarity.3 \
 	KinoSearch::Search::TermQuery.3 \
 	KinoSearch::Search::TermScorer.3 \
@@ -110,7 +112,6 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Util::ToStringUtils.3 \
 	KinoSearch::Util::ToolSet.3 \
 	KinoSearch::Util::VerifyArgs.3
-
 
 .include <bsd.port.pre.mk>
 
