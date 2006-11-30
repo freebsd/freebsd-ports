@@ -26,4 +26,7 @@ PLIST_FILES=	bin/vp
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
