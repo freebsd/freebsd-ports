@@ -1,0 +1,20 @@
+Encore is a set of utility classes written in Objective-C for GNUstep and
+Mac OS X.  The motivation of writting these classes was driven by
+implementing the projects BDB and FT. The classes may be useful for other
+projects as well.
+
+The classes include
+  - logging:  A flexible logging mechanism similiar to log4j. Supports
+    logging levels, logging contexts, different output channels per context,
+    configuration per xml, ...
+    
+  - XML-based reflection: a configuration mechanism which is based on XML and
+    uses inversion of control (see tests for an example)
+    
+  - a simple testing framework
+
+  - StringUtils class
+
+  - an iterator interface
+  
+WWW: http://fortytwo.sourceforge.net/
