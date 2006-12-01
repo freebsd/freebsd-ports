@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
+DISTFILES=	${PORTNAME:U}_1.2.5-Install${EXTRACT_SUFX} \
+		${PORTNAME:U}_1.2.5_Rev.2-Update${EXTRACT_SUFX}
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Anti-Spam SMTP Proxy
@@ -22,7 +23,7 @@ USE_PERL5_RUN=	yes
 USE_DOS2UNIX=	addservice.pl \
 		assp.pl \
 		changelog.txt \
-		freshclam.sh \
+		helpreport.txt \
 		move2num.pl \
 		nodelay.txt \
 		notspamreport.txt \
@@ -97,7 +98,7 @@ RUN_DEPENDS+=	${SITE_PERL}/mach/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compre
 .endif
 
 .if !defined(WITHOUT_CLAMAV)
-RUN_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=	${SITE_PERL}/File/Scan/ClamAV.pm:${PORTSDIR}/security/p5-File-Scan-ClamAV
 PLIST_SUB+=	ASSP_CLAMAV=""
 .else
 PLIST_SUB+=	ASSP_CLAMAV="@comment "
@@ -109,6 +110,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
 
+do-extract:
+	${MKDIR} ${WRKSRC}
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION};		${UNZIP_CMD} -q  ${DISTDIR}/${PORTNAME:U}_1.2.5-Install${EXTRACT_SUFX}
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U};	${UNZIP_CMD} -oq ${DISTDIR}/${PORTNAME:U}_1.2.5_Rev.2-Update${EXTRACT_SUFX}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
 
@@ -116,13 +122,10 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/assp
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${PREFIX}/lib/assp
 	${INSTALL_SCRIPT} ${WRKSRC}/stats.sh ${PREFIX}/lib/assp
-.if defined(WITH_CLAMAV)
-	${INSTALL_SCRIPT} ${WRKSRC}/freshclam.sh ${PREFIX}/lib/assp
-.endif
-	${INSTALL_DATA} ${WRKSRC}/*report.txt ${PREFIX}/lib/assp
 	${INSTALL_DATA} ${WRKSRC}/nodelay.txt ${PREFIX}/lib/assp
 	${INSTALL_DATA} ${WRKSRC}/redre.txt ${PREFIX}/lib/assp
-
+	${MKDIR} ${PREFIX}/lib/assp/reports
+	${INSTALL_DATA} ${WRKSRC}/*report.txt ${PREFIX}/lib/assp/reports
 	${MKDIR} ${PREFIX}/lib/assp/images
 	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/lib/assp/images
 
