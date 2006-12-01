@@ -34,3 +34,4 @@ bin/rtags
 @dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/scripts
 @dirrm %%GEM_LIB_DIR%%
+@dirrmtry %%GEM_DOC_DIR%%
