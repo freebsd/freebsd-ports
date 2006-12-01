@@ -7,24 +7,32 @@
 
 PORTNAME=	xyaku
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/xyaku/
+MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/xyaku/ \
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A general dictionary/search engine front-end for X
 
-RUN_DEPENDS=	${EDICT_FILE}:${PORTSDIR}/japanese/edict \
-		${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
+
+OPTIONS=	UTF8 "Use UTF-8 edict dictionaries" on
+
+.if !defined(WITHOUT_UTF8)
+EDICT_FILE=	${LOCALBASE}/share/dict/edict-utf-8/edict
+RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict-utf-8
+.else
+EDICT_FILE=	${LOCALBASE}/share/dict/edict/edict
+RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict
+.endif
 
 USE_X_PREFIX=	yes
 USE_RUBY=	yes
 USE_AUTOTOOLS=	autoconf:213 libtool:15
 CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}" \
-		--with-ruby="${RUBY}" \
-		--with-netscape="${LOCALBASE}/bin/netscape"
+		--with-ruby="${RUBY}"
 
-EDICT_FILE=	${LOCALBASE}/share/dict/edict/edict
 DOCS_EN=	AUTHORS ChangeLog INSTALL NEWS README TODO \
 		addin/ADDIN.ChangeLog addin/ADDIN.txt
 DOCS_JA=	addin/README.searcheb.ja
@@ -34,12 +42,13 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xyaku/ja
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/xyaku/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/xyaku/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/ja
 .endfor
 .endif
 

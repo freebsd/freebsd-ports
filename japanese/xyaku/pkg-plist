@@ -11,14 +11,14 @@ libexec/xyaku/showrc.sh
 libexec/xyaku/websearch.sh
 libexec/xyaku/xyakurc
 @dirrm libexec/xyaku
-%%PORTDOCS%%share/doc/xyaku/ADDIN.txt
-%%PORTDOCS%%share/doc/xyaku/ADDIN.ChangeLog
-%%PORTDOCS%%share/doc/xyaku/AUTHORS
-%%PORTDOCS%%share/doc/xyaku/ChangeLog
-%%PORTDOCS%%share/doc/xyaku/INSTALL
-%%PORTDOCS%%share/doc/xyaku/NEWS
-%%PORTDOCS%%share/doc/xyaku/README
-%%PORTDOCS%%share/doc/xyaku/TODO
-%%PORTDOCS%%share/doc/xyaku/ja/README.searcheb.ja
-%%PORTDOCS%%@dirrm share/doc/xyaku/ja
-%%PORTDOCS%%@dirrm share/doc/xyaku
+%%PORTDOCS%%%%DOCSDIR%%/ADDIN.txt
+%%PORTDOCS%%%%DOCSDIR%%/ADDIN.ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ja/README.searcheb.ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
