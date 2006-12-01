@@ -22,6 +22,10 @@ USE_PYTHON=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+post-extract:
+	@${RM}	${WRKSRC}/.bzrignore
+	@${FIND} ${WRKSRC}/ -type d -name '.bzr' | ${XARGS} ${RM} -rf
+
 do-install:
 	${MKDIR} ${PREFIX}/share/planet
 	${CP} -R ${WRKSRC}/ ${PREFIX}/share/planet
