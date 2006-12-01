@@ -36,7 +36,9 @@ CXXFLAGS+=	-Wno-deprecated
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cxxflags='${CXXFLAGS}'	\
 		--with-libdirs=-L${LOCALBASE}/lib	\
-		--with-blas="-L${LOCALBASE}/lib ${BLAS_LIBS} -lg2c"
+		--with-blas="-L${LOCALBASE}/lib ${BLAS_LIBS} -lg2c" \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 USE_GCC=	3.2+
 
 ALL_TARGET=	all

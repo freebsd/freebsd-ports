@@ -13,5 +13,7 @@ MASTERDIR=	${.CURDIR}/../gnuserv
 # emacs port setup
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
+CONFIGURE_ARGS+=	--x-includes=${X11BASE}/includes \
+			--x-libraries=${X11BASE}/lib
 
 .include "${MASTERDIR}/Makefile"
