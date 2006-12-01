@@ -1,5 +1,6 @@
 bin/schema
 bin/wsdl
+include/wsdl/schemaparser/Annotation.h
 include/wsdl/schemaparser/Attribute.h
 include/wsdl/schemaparser/AttributeGroup.h
 include/wsdl/schemaparser/ComplexType.h
