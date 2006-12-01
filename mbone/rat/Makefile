@@ -21,6 +21,8 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+
 MAN1=		rat.1
 MANCOMPRESSED=	no
 
