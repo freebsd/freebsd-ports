@@ -1,0 +1,99 @@
+bin/argus-config
+etc/argus-monitor/config.example
+etc/argus-monitor/locale/de_DE
+etc/argus-monitor/locale/el_gr
+etc/argus-monitor/locale/eubonics
+etc/argus-monitor/locale/fr_fr
+etc/argus-monitor/locale/piglatin
+etc/argus-monitor/locale/sp_ar
+etc/argus-monitor/locale/template
+etc/argus-monitor/log
+etc/argus-monitor/notno
+etc/argus-monitor/users.example
+lib/argus-monitor/Alias.pm
+lib/argus-monitor/Argus/Agent.pm
+lib/argus-monitor/Argus/Asterisk.pm
+lib/argus-monitor/Argus/BER.pm
+lib/argus-monitor/Argus/Ctl.pm
+lib/argus-monitor/Argus/Encode.pm
+lib/argus-monitor/Argus/IP.pm
+lib/argus-monitor/Argus/RPC.pm
+lib/argus-monitor/Argus/RPC/TCP.pm
+lib/argus-monitor/Argus/RPC/UDP.pm
+lib/argus-monitor/Argus/SIP.pm
+lib/argus-monitor/Argus/SIP/TCP.pm
+lib/argus-monitor/Argus/SIP/UDP.pm
+lib/argus-monitor/Artistic
+lib/argus-monitor/BaseIO.pm
+lib/argus-monitor/Chart/Strip.pm
+lib/argus-monitor/Commands.pm
+lib/argus-monitor/Conf.pm
+lib/argus-monitor/Configable.pm
+lib/argus-monitor/Control.pm
+lib/argus-monitor/Cron.pm
+lib/argus-monitor/DNS.pm
+lib/argus-monitor/DNS/TCP.pm
+lib/argus-monitor/DNS/UDP.pm
+lib/argus-monitor/DataBase.pm
+lib/argus-monitor/Doc.pm
+lib/argus-monitor/Error.pm
+lib/argus-monitor/Graph.pm
+lib/argus-monitor/GraphData.pm
+lib/argus-monitor/Group.pm
+lib/argus-monitor/LICENSE
+lib/argus-monitor/LOCATION
+lib/argus-monitor/MonEl.pm
+lib/argus-monitor/NotMe.pm
+lib/argus-monitor/Notify.pm
+lib/argus-monitor/NullConf.pm
+lib/argus-monitor/NullCtl.pm
+lib/argus-monitor/Override.pm
+lib/argus-monitor/Ping.pm
+lib/argus-monitor/Prog.pm
+lib/argus-monitor/README
+lib/argus-monitor/Resolv.pm
+lib/argus-monitor/SNMP.pm
+lib/argus-monitor/SSL.pm
+lib/argus-monitor/Self.pm
+lib/argus-monitor/Server.pm
+lib/argus-monitor/Service.pm
+lib/argus-monitor/Stats.pm
+lib/argus-monitor/TCP.pm
+lib/argus-monitor/TestPort.pm
+lib/argus-monitor/UDP.pm
+lib/argus-monitor/UserCron.pm
+lib/argus-monitor/Web.pm
+lib/argus-monitor/conf.pl
+lib/argus-monitor/graphd
+lib/argus-monitor/localization.pl
+lib/argus-monitor/misc.pl
+lib/argus-monitor/picasso
+lib/argus-monitor/web_about.pl
+lib/argus-monitor/web_acl.pl
+lib/argus-monitor/web_auth_file.pl
+lib/argus-monitor/web_graph.pl
+lib/argus-monitor/web_login.pl
+lib/argus-monitor/web_misc.pl
+lib/argus-monitor/web_notify.pl
+lib/argus-monitor/web_override.pl
+lib/argus-monitor/web_page.pl
+lib/argus-monitor/web_utils.pl
+sbin/argus-agent
+sbin/arguscgi
+sbin/argusctl
+sbin/argusd
+sbin/argusvxml
+@dirrm lib/argus-monitor/DNS
+@dirrm lib/argus-monitor/Chart
+@dirrm lib/argus-monitor/Argus/SIP
+@dirrm lib/argus-monitor/Argus/RPC
+@dirrm lib/argus-monitor/Argus
+@dirrm lib/argus-monitor
+@dirrm etc/argus-monitor/stats
+@dirrm etc/argus-monitor/perl
+@dirrm etc/argus-monitor/notify
+@dirrm etc/argus-monitor/locale
+@dirrm etc/argus-monitor/html
+@dirrm etc/argus-monitor/gdata
+@dirrm etc/argus-monitor/gcache
+@dirrm etc/argus-monitor
