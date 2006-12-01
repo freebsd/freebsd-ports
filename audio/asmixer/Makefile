@@ -19,7 +19,9 @@ PLIST_FILES=	bin/asmixer
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--x-includes=${X11BASE}/include \
+			--x-libraries=${X11BASE}/lib
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
