@@ -8,7 +8,9 @@
 PORTNAME=	wire
 PORTVERSION=	1.1.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.zankasoftware.com/dist/
+MASTER_SITES=	http://www.zankasoftware.com/dist/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 
 MAINTAINER=	trasz@pin.if.uz.zgora.pl
 COMMENT=	Wire is a screen-oriented command line Wired client
