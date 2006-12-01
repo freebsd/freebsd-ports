@@ -102,6 +102,7 @@ THEORA			Theora video codec support
 TREMOR			Tremor (integer-only Vorbis) audio support
 UNIXODBC		Use UNIXODBC as the ODBC driver
 VORBIS			OGG/Vorbis audio support
+WX			wxWindows support
 X11			Support for X11
 X264			H.264/AVC (MPEG4 part 10) multimedia codec
 XINE			XINE multimedia support
