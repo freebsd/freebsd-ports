@@ -16,6 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library to split an HTML document into tags and contents
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2006-12-30
+
 USE_ZIP=	yes
 USE_RUBY=	yes
 
