@@ -23,7 +23,8 @@ USE_GNOME=	gtk20 gnomehier
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"
-CONFIGURE_ARGS+=--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=--mandir=${PREFIX}/man --x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 CFLAGS=		-O2 -fno-strict-aliasing -pipe
 INSTALLS_ICONS=	yes
 
