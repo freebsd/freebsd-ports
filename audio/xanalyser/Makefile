@@ -26,6 +26,11 @@ PLIST_FILES=	bin/xanalyser \
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
-BROKEN= Does not compile
+BROKEN=	Does not compile
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	-e 's|-lXm |${MOTIFLIB} |g' ${WRKSRC}/src/Makefile.in
+
 .include <bsd.port.post.mk>
