@@ -5,7 +5,7 @@ CFLAGS+=	-I. -I./../generic \
 		-I${PREFIX}/include/tcl8.4/generic \
 		-I${PREFIX}/include/itcl${MAJOR}.${MINOR}/ \
 		-I${PREFIX}/include/tk8.4/generic \
-		-I/usr/X11R6/include \
+		-I${X11BASE}/include \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
 		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
 		-DHAVE_TM_GMTOFF=1 -DHAVE_ST_BLKSIZE=1 -DSTDC_HEADERS=1\

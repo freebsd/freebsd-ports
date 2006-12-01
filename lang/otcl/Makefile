@@ -23,6 +23,10 @@ USE_LDCONFIG=	yes
 PKGINSTALL=	${PORTSDIR}/lang/tcl84/pkg-install.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl84/pkg-deinstall.tclsh
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/conf/configure.in.x11
+
 post-install:
 	${LN} -sf libotcl.so ${PREFIX}/lib/libotcl.so.1
 	${STRIP_CMD} ${PREFIX}/bin/otclsh
