@@ -1,6 +1,0 @@
-Local/Library/Pantomime/TCPSSLConnection.bundle/Resources/Info-gnustep.plist
-Local/Library/Pantomime/TCPSSLConnection.bundle/TCPSSLConnection
-Local/Library/Pantomime/TCPSSLConnection.bundle/stamp.make
-@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/Resources
-@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle
-@dirrm Local/Library/Pantomime
