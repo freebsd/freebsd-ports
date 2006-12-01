@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,11 +26,12 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4 \
+		ac_cv_path_XML2PO=""
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
 		--disable-oss-sound \
 		--enable-docbook-stylesheet=${STYLESHEET}
-MAKE_ARGS=	skipmanual=YES
+MAKE_ARGS=	skipmanual=yes
 
 MAN1=		lessonfile_editor.1 solfege.1
 
