@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: argusd
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# argusd_enable (bool):   Set to NO by default.
+#               Set it to YES to enable argusd
+#
+
+. %%RC_SUBR%%
+
+name="argusd"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${argusd_enable="NO"}
+
+run_rc_command "$1"
