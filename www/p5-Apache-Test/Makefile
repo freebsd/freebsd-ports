@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Apache-Test
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Test.pm wrapper with helpers for testing Apache
 
 .if defined(WITH_MODPERL2)
