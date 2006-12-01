@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text::Format for Ruby
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2006-12-30
+
 USE_RUBY=	yes
 
 NO_BUILD=	yes
