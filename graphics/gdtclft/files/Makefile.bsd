@@ -1,11 +1,12 @@
 PACKAGE		= Gdtclft
-VERSION		= 2.2
-SHLIB_NAME	= lib${PACKAGE}2.so.2
+VERSION		= 2.3
+SHLIB_NAME	= lib${PACKAGE}2.so.3
 
 SRCS		= gdhandle.c gdCmd.c
 
 PREFIX		?=/usr/local
-TCL_VER		?=8.2
+TCL_VER		?=8.4
+WARNS		= 2
 
 .if exists(${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh)
 # If for some reason  the file does not exist -- make the best guess. In
