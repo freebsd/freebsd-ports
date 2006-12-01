@@ -9,7 +9,7 @@
 #
 # Explicitly listing /usr/X11R6/bin here is debatable.
 #
-BINDIR="${PKG_PREFIX}/bin /usr/X11R6/bin"
+BINDIR="${PKG_PREFIX}/bin ${X11BASE}/bin"
 TCLSH=${PKG_PREFIX}/bin/tclsh
 
 tclshs=$(/bin/ls ${BINDIR} 2> /dev/null | \
