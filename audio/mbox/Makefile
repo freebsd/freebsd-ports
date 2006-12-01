@@ -12,17 +12,17 @@ MASTER_SITES=	http://www.mbox.wz.cz/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program intended to help with organizing your music files
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24 \
-		${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-ogg \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-ogg \
 		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
 		lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		mplayer:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_BZIP2=	yes
+USE_WX=		2.4
+WX_COMPS=	python
 WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
 
 .include <bsd.port.mk>

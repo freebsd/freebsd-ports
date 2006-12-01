@@ -13,6 +13,4 @@ MASTERDIR=	${.CURDIR}/../py-wxPython26
 
 PLIST=	${.CURDIR}/pkg-plist
 
-LIB_DEPENDS+=  wx_gtk2_stc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-contrib
-
 .include "${MASTERDIR}/Makefile"

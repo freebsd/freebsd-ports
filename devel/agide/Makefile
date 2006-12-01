@@ -16,8 +16,7 @@ MAINTAINER=	rui@ruilopes.com
 COMMENT=	A-A-P GUI IDE: a framework for software development
 
 RUN_DEPENDS=	${LOCALBASE}/bin/aap:${PORTSDIR}/devel/aap \
-		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim \
-		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim
 
 MAN1=		agide.1
 
@@ -26,6 +25,8 @@ NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
+USE_WX=		2.4
+WX_COMPS=	python
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 pre-install:

@@ -29,6 +29,9 @@ PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \
 			WXPORT="${WXPORT}"
 PYDISTUTILS_CONFIGUREARGS=	${PYDISTUTILS_BUILDARGS}
+USE_WX=		2.6
+WX_COMPS=	contrib
+WX_PREMK=	yes
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 WXPORT=		gtk2
 
@@ -64,27 +67,15 @@ post-build:
 .include <bsd.port.pre.mk>
 
 # are we ready for unicode?
-.if defined(WITH_UNICODE)
+.if defined(WITH_WXPYTHON_UNICODE)
 . if ${OSVERSION} < 500000
 IGNORE=	systems prior to FreeBSD 5.0 do not support Unicode
 . endif
 .endif
 
-# build dependencies
-.if defined(WITH_UNICODE)
-BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
-
-WX_CONFIG=	${X11BASE}/bin/wxgtk2u-2.6-config
-.else
-BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
-
-WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.6-config
-.endif
-
 # wx version
 .if exists(${WX_CONFIG})
 WX_VERSION!=	${WX_CONFIG} --release
-
 PLIST_SUB+=	WX_VERSION=${WX_VERSION}
 .endif
 
@@ -104,9 +95,8 @@ PYDISTUTILS_BUILDARGS+=	\
 			INSTALL_MULTIVERSION=0
 INSTALLS_SHLIB=	yes
 
-. if defined(WITH_UNICODE)
-LIB_DEPENDS+=	wx_gtk2u_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
-		wx_gtk2u_gizmos-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode-contrib
+. if defined(WITH_WXPYTHON_UNICODE)
+WX_UNICODE=	yes
 
 PKGNAMESUFFIX=	-unicode
 
@@ -114,11 +104,8 @@ PYDISTUTILS_BUILDARGS+=	\
 			UNICODE=1
 WX_PYTHON_DIR=	wx-${WX_VERSION}-${WXPORT}-unicode
 . else
-LIB_DEPENDS+=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26 \
-		wx_gtk2_gizmos-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-contrib
-
 WX_PYTHON_DIR=wx-${WX_VERSION}-${WXPORT}-ansi
-. endif # defined(WITH_UNICODE)
+. endif # defined(WITH_WXPYTHON_UNICODE)
 
 # plist substitutions and library dirs
 PLIST_SUB+=	WX_PYTHON_DIR=${WX_PYTHON_DIR}

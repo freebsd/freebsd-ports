@@ -16,11 +16,11 @@ DISTFILES=	tqsllib-2.0.tar.gz TrustedQSL-1.11.tar.gz
 MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		wx_base-2.6:${PORTSDIR}/x11-toolkits/wxgtk26
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
+USE_WX=		2.6
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	INCDIR="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

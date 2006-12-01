@@ -68,6 +68,7 @@ USE_LDCONFIG=	yes
 .endif # *-common
 
 .if ${WXGTK_FLAVOR:M*-contrib*} != ""
+USE_WX=		2.6
 BUILD_WRKSRC=	${WRKSRC}/contrib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
@@ -75,37 +76,25 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 RUN_DEPENDS=	${X11BASE}/include/wx-2.6/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk26-contrib-common
 
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
-LIB_DEPENDS+=	wx_baseu-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
-.else
-LIB_DEPENDS+=	wx_base-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
+WX_UNICODE=	yes
 .endif
 
 pre-configure:
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-		-e "s|@CXXFLAGS@|${CFLAGS} `${WXGTK_CONFIG} --cxxflags`|" \
-		-e "s|@CFLAGS@|${CFLAGS} `${WXGTK_CONFIG} --cflags`|" \
+		-e "s|@CXXFLAGS@|${CFLAGS} `${WX_CONFIG} --cxxflags`|" \
+		-e "s|@CFLAGS@|${CFLAGS} `${WX_CONFIG} --cflags`|" \
 		-e "s|@CPPFLAGS@||"
 
 .endif # !gtk2-contrib-common
 .endif # *-contrib*
+
+.if ${WXGTK_FLAVOR:M*-unicode*} != ""
+CONFIGURE_ARGS+=--enable-unicode
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|pkg_config_args --cflags|pkg_config_args pangox --cflags|g ; \
 		s|pkg_config_args --libs|pkg_config_args pangox --libs|g' \
 			${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${WXGTK_FLAVOR:M*-unicode*} != ""
-.if ${OSVERSION} < 500000
-IGNORE=	systems prior to FreeBSD 5.0 currently out of support
-.else
-CONFIGURE_ARGS+=--enable-unicode
-.endif
-
-WXGTK_CONFIG=	${X11BASE}/bin/wxgtk2u-2.6-config
-.else
-WXGTK_CONFIG=	${X11BASE}/bin/wxgtk2-2.6-config
-.endif # *-unicode*
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

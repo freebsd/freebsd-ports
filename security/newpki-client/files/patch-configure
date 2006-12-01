@@ -55,8 +55,8 @@
  
 -WXCXX=`wx-config --cxxflags`
 -WXLIB=`wx-config --libs`
-+WXCXX=`${WXCONFIG} --cxxflags`
-+WXLIB=`${WXCONFIG} --libs`
++WXCXX=`${WX_CONFIG} --cxxflags`
++WXLIB=`${WX_CONFIG} --libs`
  
  CPPFLAGS="$WXCXX -DWXINTL_NO_GETTEXT_MACRO $CPPFLAGS"
  LIBS="$WXLIB -lnewpki $LIBS"

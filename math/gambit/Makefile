@@ -15,14 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of tools for doing computation in game theory
 
-LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
-
 USE_X_PREFIX=	yes
+USE_WX=		2.6
 USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		WX_CONFIG="${X11BASE}/bin/wxgtk2-2.6-config"
-MAKE_ENV=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.6-config"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 CPPFLAGS=	${PTHREAD_CFLAGS}

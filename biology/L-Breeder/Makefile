@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}-source
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Allows you to display and breed L-system forms
 
-LIB_DEPENDS=	wx_gtk2_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/Unix
@@ -26,8 +25,7 @@ USE_ZIP=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-
-WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
+USE_WX=		2.4
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math

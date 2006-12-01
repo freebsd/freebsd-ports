@@ -14,9 +14,6 @@ MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Client for SoulSeek filesharing system
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
-
 .if !defined(WITHOUT_VORBIS)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
 .endif
@@ -27,12 +24,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-b
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_WX=		2.6
+WX_COMPS=	python
 
-.include <bsd.port.pre.mk>
-
-pre-install:
-.if exists(${PYTHON_SITELIBDIR}/wx/__init__.py)
-BROKEN=	"pyslsk only works with py-wxPython >= 2.6, please deinstall old version first"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

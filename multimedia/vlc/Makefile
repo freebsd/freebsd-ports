@@ -56,15 +56,6 @@ CONFIGURE_ARGS+=	--enable-ffmpeg \
 MAN1=		vlc.1 \
 		vlc-config.1
 
-.if defined(WITH_WXGTK_VER) && ${WITH_WXGTK_VER}=="2.4"
-WX_CONFIG=	wxgtk2-2.4-config
-WXGTK2_PORT=	wxgtk24
-.else
-WX_CONFIG=	wxgtk2-2.6-config
-WXGTK2_PORT=	wxgtk26
-CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
@@ -145,7 +136,7 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
 LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2
-WITH_WXGTK=	yes
+.undef WITHOUT_WXGTK
 .else
 CONFIGURE_ARGS+=--disable-skins2
 .endif
@@ -158,10 +149,8 @@ CONFIGURE_ARGS+=--disable-loader
 .endif
 
 .if !defined(WITHOUT_WXGTK)
-BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
-RUN_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
+USE_WX=		2.6
 CONFIGURE_ARGS+=--enable-wxwidgets
-CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
 .else
 CONFIGURE_ARGS+=--disable-wxwidgets
 .endif

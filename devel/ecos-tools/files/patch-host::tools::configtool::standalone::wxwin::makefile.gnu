@@ -36,8 +36,8 @@ $FreeBSD$
    PROGRAM=configtool
 -  CPPFLAGS=`$(WXDIR)/bin/wx-config --cppflags`
 -  LDFLAGS=`$(WXDIR)/bin/wx-config --libs`
-+  CPPFLAGS=`$(WXDIR)/bin/$(WX_CONFIG) --cppflags`
-+  LDFLAGS=`$(WXDIR)/bin/$(WX_CONFIG) --libs`
++  CPPFLAGS=`$(WX_CONFIG) --cppflags`
++  LDFLAGS=`$(WX_CONFIG) --libs`
    EXTRAOBJECTS=
  endif
  

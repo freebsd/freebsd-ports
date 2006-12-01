@@ -42,7 +42,8 @@ OPTIONS=	X11 "Build Boinc Manager GUI" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.6-config
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
 CPPFLAGS+=		-I${X11BASE}/include
 .else
 CONFIGURE_ARGS+=	--with-wx-config=false
@@ -50,7 +51,6 @@ CONFIGURE_ARGS+=	--with-wx-config=false
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv \
-		wx_base:${PORTSDIR}/x11-toolkits/wxgtk26 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		glut:${PORTSDIR}/graphics/libglut
 .endif

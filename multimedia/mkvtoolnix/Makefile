@@ -61,13 +61,11 @@ PLIST_FILES+=	%%DATADIR%%/${file}
 PLIST_FILES+=	%%DATADIR%%/images/${file}
 .endfor
 
-WXGTK_CONFIG=	wxgtk2u-2.6-config
-
 .include <bsd.port.pre.mk>
 
 .ifndef(WITHOUT_WXGTK)
-LIB_DEPENDS+=	wx_gtk2u_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
-
+USE_WX=		2.6
+WX_UNICODE=	yes
 MAN1+=		mmg.1
 PLIST_FILES+=	bin/mmg
 .endif
@@ -90,7 +88,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
-	@${REINPLACE_CMD} -e 's|wx-config|${WXGTK_CONFIG}|' \
+	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/src/common/os.cpp

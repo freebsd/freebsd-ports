@@ -15,16 +15,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ PKI client from newpki project
 
 LIB_DEPENDS=	newpki.2:${PORTSDIR}/security/newpki-lib \
-		xml2:${PORTSDIR}/textproc/libxml2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+		xml2:${PORTSDIR}/textproc/libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0.0
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
+USE_WX=		2.4
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib" \

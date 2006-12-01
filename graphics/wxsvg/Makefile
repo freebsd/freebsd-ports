@@ -15,13 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	C++ library to create, manipulate, and render SVG files
 
-BUILD_DEPENDS=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
-RUN_DEPENDS=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
-
 USE_LDCONFIG=	yes
-WX_CONFIG=	wxgtk2-2.6-config
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	libartlgpl2
+USE_WX=		2.6
 
 .include <bsd.port.pre.mk>
 

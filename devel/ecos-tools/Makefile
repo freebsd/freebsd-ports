@@ -16,10 +16,10 @@ DISTNAME=	ecos-tools.${SNAPDATE}
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Configuration tools for the eCos embedded OS
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_BZIP2=	yes
+USE_WX=		2.4
 WRKSRC=		${WRKDIR}/infra-build
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../ecos/host/configure
@@ -31,7 +31,7 @@ SNAPDATE=	20040125
 
 ECOSSRCDIR=	${WRKDIR}/ecos/host
 CFGTOOL_WRKSRC=	${WRKDIR}/configtool-build
-CFGTOOL_MAKE_ENV=	WXDIR=${X11BASE} WX_CONFIG=wxgtk2-2.4-config \
+CFGTOOL_MAKE_ENV=	WX_CONFIG=${WX_CONFIG} \
 			ECOSSRCDIR=${ECOSSRCDIR} \
 			INSTALLDIR=${PREFIX}
 CFGTOOL_MAKEFILE=	${ECOSSRCDIR}/tools/configtool/standalone/wxwin/makefile.gnu

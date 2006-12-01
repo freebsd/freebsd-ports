@@ -17,14 +17,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		wx_gtk2u_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_BDB=	yes
 WITH_BDB_HIGHEST=	yes
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
+WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \

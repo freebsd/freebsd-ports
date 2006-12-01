@@ -21,9 +21,6 @@ LIB_DEPENDS=	ming.4:${PORTSDIR}/graphics/ming \
 .if !defined (WITHOUT_AVIPLAY)
 LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
 .endif
-.if defined (WITH_WXGTK2)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-.endif
 .if !defined (WITHOUT_ZIP)
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 .endif
@@ -33,7 +30,8 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 	       	CPPFLAGS="-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}"
 .if defined (WITH_WXGTK2)
-CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.4-config
+USE_WX=		2.4
+WX_CONF_ARGS=	absolute
 PLIST_FILES+=	bin/wxzphoto
 .else
 CONFIGURE_ARGS+=	--disable-wx

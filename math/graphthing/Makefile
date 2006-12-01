@@ -14,15 +14,14 @@ MASTER_SITES=	http://graph.seul.org/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A tool that allows you to create, manipulate and study graphs
 
-LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
-
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk20
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.6-config
 MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/graphthing bin/gt

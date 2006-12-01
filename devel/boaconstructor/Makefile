@@ -16,12 +16,12 @@ DISTNAME=	boa-constructor-${PORTVERSION}
 MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
-
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
+USE_WX=		2.6
+WX_COMPS=	python
 DATADIR=	${PREFIX}/share/Boa
 
 do-build:

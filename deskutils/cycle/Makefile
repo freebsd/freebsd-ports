@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A calendar program for women
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
-
 USE_BZIP2=	yes
 USE_PYTHON_RUN=	yes
+USE_WX=		2.6
+WX_COMPS=	python
 NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1

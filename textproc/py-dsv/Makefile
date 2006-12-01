@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python module to parse or write delimeter-separated (e.g. CSV) files
 
 .if defined(WITH_GUI)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+USE_WX=		2.4
+WX_COMPS=	python
 .endif
 
 USE_PYTHON=	yes

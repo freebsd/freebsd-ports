@@ -118,9 +118,8 @@ PLIST_SUB+=		GNOMECONS="@comment "
 .endif
 # Build wx-console
 .if defined(WITH_WXCONSOLE)
+USE_WX=			2.4
 CONFIGURE_ARGS+=	--enable-wx-console
-LIB_DEPENDS+=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-CONFIGURE_ENV+=		WXCONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 PLIST_SUB+=		WXCONS=""
 .else
 # We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)

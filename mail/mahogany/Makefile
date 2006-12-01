@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	mahogany
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An X11 mail and news client
 
-LIB_DEPENDS+=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-
 USE_X_PREFIX=		yes
+USE_WX=		2.4
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 ALL_TARGET=		all locales
@@ -25,8 +25,7 @@ INSTALL_TARGET=		install_bin install_locale
 
 MAN1=			M.1 mahogany.1
 
-CONFIGURE_ARGS=		--with-python=none \
-			--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
+CONFIGURE_ARGS=		--with-python=none
 CONFIGURE_ENV=		OSTYPE=${OPSYS} CFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>

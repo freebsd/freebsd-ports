@@ -18,8 +18,7 @@ COMMENT=	The all-platform eMule p2p client
 
 DEPRECATED=	use net-p2p/amule2 if you are running OSVERSION > 500000
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
-		curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 LATEST_LINK=	aMule1
 CONFLICTS=	aMule-2.* aMule-devel-[0-9]*
@@ -28,11 +27,12 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes
+USE_WX=		2.4
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-wx-config=${WX_CONFIG} \
 		--with-wxbase-config=${WX_CONFIG} \
 		--with-curl-config=${CURL_CONFIG} \
 		--program-transform-name="s/ed2k/amule-ed2k-handler/"
@@ -43,7 +43,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 OPTIONS=	OPTIMIZE "Build with optimization" on \
 		STATIC "Enable static linking" off
 
-WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 CURL_CONFIG?=	${LOCALBASE}/bin/curl-config
 
 .include <bsd.port.pre.mk>

@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	amule
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	The all-platform eMule p2p client
 
-LIB_DEPENDS=	wx_gtk2u_core-2.6:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
-		curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 #		gd.4:${PORTSDIR}/graphics/gd
 #		png.5:${PORTSDIR}/graphics/png
 
@@ -28,6 +27,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debug \
@@ -35,7 +36,6 @@ CONFIGURE_ARGS=	--disable-debug \
 		--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-wx-config=${WX_CONFIG} \
 		--with-curl-config=${CURL_CONFIG} \
 		--enable-embedded_crypto \
 		--enable-monolithic
@@ -53,7 +53,6 @@ OPTIONS=	OPTIMIZE "Build with optimization" on \
 		ALC "Compile aMule Link Creator (+GUI)" on \
 		AMULEDAEMON "Compile aMule daemon version - EXPERIMENTAL" off
 
-WX_CONFIG?=	${X11BASE}/bin/wxgtk2u-2.6-config
 CURL_CONFIG?=	${LOCALBASE}/bin/curl-config
 
 .include <bsd.port.pre.mk>

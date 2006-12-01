@@ -22,8 +22,6 @@ EXTRACT_ONLY=		${PORTNAME}-sources-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
-LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
-
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}.tgz:dat
 DOCVERSION=	2006-06-26
@@ -36,10 +34,7 @@ USE_ZIP=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-
-MAKE_ENV=	WX_CONFIG=${WX_CONFIG}
-
-WX_CONFIG=	wxgtk2-2.6-config
+USE_WX=		2.6
 
 INSTDIR=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR} OPSYS=${OPSYS}
