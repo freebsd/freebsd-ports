@@ -7,7 +7,7 @@
 
 PORTNAME=	nurbs++
 PORTVERSION=	3.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libnurbs
@@ -21,14 +21,4 @@ USE_LDCONFIG=	yes
 
 MAN1=	nurbs++-config.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/nurbs/nurbs.cpp ${WRKSRC}/nurbs/nurbsS.cpp
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
