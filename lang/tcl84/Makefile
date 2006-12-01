@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
-MAKE_ENV=	SHORT_TCL_VER=84 LANG=C	# LANG=C is required for some of UTF-using tests
+MAKE_ENV=	SHORT_TCL_VER=84 LANG=C LC_ALL=C	# LANG=C is required for some of UTF-using tests
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.4
