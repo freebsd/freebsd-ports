@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kbarcode
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,18 +17,18 @@ COMMENT=	A barcode and label printing application for KDE
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_KDELIBS_VER=	3
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_ICONS=	yes
-USE_GETTEXT=	yes
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's/ or / || /g ; \
-		 s/ and / \&\& /g ; \
-		 s/return false/return 0/g' ${WRKSRC}/kbarcode/tec.cpp
+	@${REINPLACE_CMD} -e 's/return false/return QString::null/g ; \
+		 s/ or / || /g ; \
+		 s/ and / \&\& /g' ${WRKSRC}/kbarcode/tec.cpp
 .endif
 
 .include <bsd.port.post.mk>
