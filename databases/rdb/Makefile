@@ -8,8 +8,7 @@
 PORTNAME=	rdb
 PORTVERSION=	2.6d
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.rand.org/pub/RDB-hobbs/ \
-		ftp://ftp.sunet.se/pub/unix/databases/flat-file/RDB/
+MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/flat-file/RDB/
 DISTNAME=	RDB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
