@@ -7,7 +7,9 @@
 PORTNAME=	mysqlsla
 PORTVERSION=	1.3
 CATEGORIES=	databases
-MASTER_SITES=	http://hackmysql.com/scripts/
+MASTER_SITES=	http://hackmysql.com/scripts/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zaa@zaa.pp.ru
