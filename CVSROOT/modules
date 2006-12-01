@@ -471,6 +471,7 @@ argparse	ports/misc/argparse
 argtable	ports/devel/argtable
 argus		ports/net-mgmt/argus
 argus-clients	ports/net-mgmt/argus-clients
+argus-monitor	ports/net-mgmt/argus-monitor
 ari-yahoo	ports/net-im/ari-yahoo
 aria		ports/www/aria
 aria2		ports/www/aria2
