@@ -1,0 +1,4 @@
+sbin/megacli
+libexec/MegaCli
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
