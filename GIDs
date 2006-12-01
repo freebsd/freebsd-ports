@@ -53,6 +53,7 @@ maildrop:*:126:
 vchat:*:128:
 _bgpd:*:130:
 _ospfd:*:131:
+dovecot:*:143:
 rbldns:*:153:
 sfs:*:171:
 agk:*:172:
