@@ -22,6 +22,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Tcl::Tk.3
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.PL
+
 do-configure:
 	-@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
