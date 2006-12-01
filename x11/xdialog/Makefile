@@ -8,6 +8,7 @@
 
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
@@ -41,12 +42,15 @@ post-patch:
 		 s|-I../lib||g ; \
 		 s|-L../lib -lgetopt||g ; \
 		 s| install-docDATA||g'
+	@${REINPLACE_CMD} -e 's,Xdialog\\-%%version%%,xdialog,' \
+		${WRKSRC}/doc/Xdialog.man
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/samples
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${DOCSDIR}/samples
 .endif
 
 .include <bsd.port.mk>
