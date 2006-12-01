@@ -36,11 +36,19 @@ share/applications/mined.desktop
 %%DATADIR%%/index-dl.html
 %%DATADIR%%/index.html
 %%DATADIR%%/konsole/xterm-modified.keytab
+%%DATADIR%%/kp5
 %%DATADIR%%/logo.gif
 %%DATADIR%%/menu.png
 %%DATADIR%%/mined-html.png
 %%DATADIR%%/mined-pw.png
 %%DATADIR%%/mined-sep.png
+%%DATADIR%%/mined-small-10x20.png
+%%DATADIR%%/mined-small-haninfo.png
+%%DATADIR%%/mined-small-html.png
+%%DATADIR%%/mined-small-picklist.png
+%%DATADIR%%/mined-small-pw.png
+%%DATADIR%%/mined-small-sep.png
+%%DATADIR%%/mined-small-uni.png
 %%DATADIR%%/mined-uni.png
 %%DATADIR%%/mined.desktop
 %%DATADIR%%/mined.hlp
@@ -61,6 +69,7 @@ share/applications/mined.desktop
 %%DATADIR%%/paypal_payments.gif
 %%DATADIR%%/picklist.png
 %%DATADIR%%/profile.mined
+%%DATADIR%%/screenshots.html
 %%DATADIR%%/script-arabic.gif
 %%DATADIR%%/script-cyrillic.gif
 %%DATADIR%%/script-greek.gif
