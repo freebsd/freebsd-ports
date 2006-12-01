@@ -329,6 +329,7 @@
     SUBDIR += lineakd
     SUBDIR += linux-acu
     SUBDIR += linux-afaapps
+    SUBDIR += linux-megacli
     SUBDIR += linux-megamgr
     SUBDIR += linuxfdisk
     SUBDIR += lire
