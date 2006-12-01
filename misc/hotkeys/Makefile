@@ -20,7 +20,9 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-db3-inc=${LOCALBASE}/include/db3 \
-		--with-db3-lib=${LOCALBASE}/lib
+		--with-db3-lib=${LOCALBASE}/lib \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
