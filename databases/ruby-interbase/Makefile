@@ -6,38 +6,35 @@
 #
 
 PORTNAME=	interbase
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.rowlandresearch.com/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	fb-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	skv@FreeBSD.org
-COMMENT=	Ruby interface to Interbase library
+COMMENT=	Ruby interface to Firebird/Interbase library
 
-LIB_DEPENDS=	gds:${PORTSDIR}/databases/firebird-client
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+USE_FIREBIRD=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-CONFIGURE_ARGS=	--with-interbase-include-dir="${LOCALBASE}/include" \
-		--with-interbase-lib-dir="${LOCALBASE}/lib"
+#CONFIGURE_ARGS=	--with-interbase-include-dir="${LOCALBASE}/include" \
+#		--with-interbase-lib-dir="${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-opt-dir=${LOCALBASE}
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	README
-DOCS_JA=	README.ja
+
+post-patch:
+	${REINPLACE_CMD} -e 's/gdslib/fbclient/' ${WRKSRC}/extconf.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 
