@@ -716,6 +716,7 @@
     SUBDIR += obby
     SUBDIR += obfuscatejs
     SUBDIR += objcunit
+    SUBDIR += objectivelib
     SUBDIR += ocaml-annexlib
     SUBDIR += ocaml-camljava
     SUBDIR += ocaml-camomile
