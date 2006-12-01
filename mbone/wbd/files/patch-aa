@@ -1,11 +1,13 @@
---- makefile.orig	Thu Jan 29 12:46:41 1998
-+++ makefile	Fri May 11 19:42:18 2001
-@@ -3,12 +3,12 @@
+--- makefile.orig	Thu Jan 29 06:46:41 1998
++++ makefile	Thu Nov 30 19:08:00 2006
+@@ -2,13 +2,13 @@
+ LEX = flex -I -i
  
  YFLAGS		= -dv
- CFLAGS		= -g $(LIBFLAGS) $(IFLAGS) -DSTAND_ALONE
+-CFLAGS		= -g $(LIBFLAGS) $(IFLAGS) -DSTAND_ALONE
 -LIBDIR		= /cs/research/mice/starship/common/solaris/lib
 -INCDIR		= /cs/research/mice/starship/common/solaris/include
++CFLAGS		+= -g $(LIBFLAGS) $(IFLAGS) -DSTAND_ALONE
 +LIBDIR		= $(PREFIX)/lib
 +INCDIR		= $(PREFIX)/include
  
@@ -37,9 +39,9 @@
  #LIBS            = -ll -ltk4.2 -ltcl7.6 -lm -lX11
  
 +# Uncomment these lines for FreeBSD
-+CC		 = cc
-+LIBFLAGS         = -L$(LIBDIR) -L/usr/X11R6/lib
-+IFLAGS           = -I$(INCDIR)/tk8.0 -I$(INCDIR)/tcl8.0 -I/usr/X11R6/include
++CC		 ?= cc
++LIBFLAGS         = -L$(LIBDIR) -L${X11BASE}/lib
++IFLAGS           = -I$(INCDIR)/tk8.0 -I$(INCDIR)/tcl8.0 -I${X11BASE}/include
 +LIBS             = -ll -ltk80 -ltcl80 -lm -lX11
 +
  # Tcl initialisation files to be compiled into a C string.
