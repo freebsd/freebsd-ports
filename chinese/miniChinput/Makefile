@@ -19,15 +19,19 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XLIB=	yes
+USE_LDCONFIG=	yes
 ALL_TARGET=	all data
 INSTALL_TARGET=	install data-install
 
 MAN1=		chinput.1
 
+CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include \
+			--x-libraries=${X11BASE}/lib
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Build fails on sparc64"
+BROKEN=		Build fails on sparc64
 .endif
 
 post-patch:
@@ -36,6 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#$$(prefix)$$(imdir)/{gb,gbk,big5}#$$(prefix)$$(imdir)/gb $$(prefix)$$(imdir)/gbk $$(prefix)$$(imdir)/big5#g' ${WRKSRC}/ImmModules/turbo/Makefile.in
 	@${REINPLACE_CMD} -e 's,-@PACKAGE_VERSION@,,g' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's,/share/man,/man,g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/src/IMdkit/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
