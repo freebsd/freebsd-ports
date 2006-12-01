@@ -15,12 +15,11 @@ MASTER_SITES=	http://www.mcaree.org/Comical/ \
 MAINTAINER=	john@mcaree.org
 COMMENT=	A sequential image viewer
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-
 USE_GMAKE=	yes
+USE_WX=		2.4
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 
 .include <bsd.port.pre.mk>
 

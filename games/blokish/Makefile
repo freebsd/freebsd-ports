@@ -16,12 +16,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Clone of the strategy board game 'Blokus'
 
-LIB_DEPENDS=	wx_base-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
+USE_WX=		2.6
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
@@ -39,6 +38,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-ai.h
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wx-config|wxgtk2-2.6-config|' ${WRKSRC}/makefile.in ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' ${WRKSRC}/makefile.in ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

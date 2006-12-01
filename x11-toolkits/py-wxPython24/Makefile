@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_BUILDARGS=	WX_CONFIG="${WX_CONFIG}"
+USE_WX=		2.4
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 
 post-build:
@@ -51,9 +52,6 @@ post-install:
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		"Does not build on ia64 or sparc64"
 .endif
-
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 
 CONFIGURE_ARGS+=	--enable-gtk2
 PYDISTUTILS_BUILDARGS+=	WXPORT=gtk2

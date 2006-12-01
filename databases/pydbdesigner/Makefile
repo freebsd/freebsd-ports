@@ -14,11 +14,11 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Graphical designer for relational databases
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
-
 EXTRACT_AFTER_ARGS=	| ${TAR} --exclude CVS -xf -
 
 USE_PYTHON=	2.2+
+USE_WX=		2.4
+WX_COMPS=	python
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/PyDBDesigner
 

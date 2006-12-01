@@ -37,11 +37,12 @@ BUILD_DEPENDS=	\
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 RUN_DEPENDS=	\
 		${BUILD_DEPENDS} \
-		bash:${PORTSDIR}/shells/bash \
-		${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
+		bash:${PORTSDIR}/shells/bash
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_WX=		2.6
+WX_COMPS=	python
 GNU_CONFIGURE=	yes
 
 MAN1=	idvid.1 makedvd.1 makemenu.1 makeslides.1 makexml.1 postproc.1 \

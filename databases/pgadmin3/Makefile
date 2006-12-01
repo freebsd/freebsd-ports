@@ -24,16 +24,10 @@ CONFLICTS=	pgadmin3-1.[12]*
 
 USE_WX=		2.6
 WX_COMPS=	wx contrib
-WX_UNICODE=	yes
 WX_CONF_ARGS=	relative
+WX_UNICODE=	yes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		cannot install: requires wchar_t
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

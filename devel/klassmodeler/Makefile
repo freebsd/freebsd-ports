@@ -16,14 +16,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}.bsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for visually creating and documenting classes
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	WXWINDOWS="yes"
+USE_WX=		2.4
 
 PLIST_FILES=	bin/klassmodeler
 

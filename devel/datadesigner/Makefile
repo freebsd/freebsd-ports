@@ -16,16 +16,15 @@ MASTER_SITE_SUBDIR=	dbdesign
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Schema Designer
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	libxml2 libxslt
 USE_ICONV=	yes
+USE_WX=		2.4
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
-WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

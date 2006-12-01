@@ -18,13 +18,12 @@ MAINTAINER=	jllovela@ncsu.edu
 COMMENT=	GUI file and string hashing utility
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
+USE_WX=		2.4
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		WX_CONFIG="${X11BASE}/bin/wxgtk2-2.4-config"
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 PLIST_FILES=	bin/hashish
 

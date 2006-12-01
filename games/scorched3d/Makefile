@@ -15,12 +15,8 @@ DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 MAINTAINER=		guy@device.dyndns.org
 COMMENT=		Scorched is a game based loosely on the classic DOS game
 
-BUILD_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common \
-			wxgtk2-2.6-config:${PORTSDIR}/x11-toolkits/wxgtk26 \
-			openal-config:${PORTSDIR}/audio/openal
-RUN_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common \
-			wxgtk2-2.6-config:${PORTSDIR}/x11-toolkits/wxgtk26 \
-			openal-config:${PORTSDIR}/audio/openal
+BUILD_DEPENDS=		openal-config:${PORTSDIR}/audio/openal
+RUN_DEPENDS=		openal-config:${PORTSDIR}/audio/openal
 LIB_DEPENDS=		alut.1:${PORTSDIR}/audio/freealut
 
 SCORCH_VERSION=		40.1d
@@ -33,13 +29,14 @@ GNU_CONFIGURE=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=	automake:15 autoconf:253
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
 
 WRKSRC=			${WRKDIR}/scorched
 AUTOMAKE_ARGS=		--foreign
 CONFIGURE_ARGS=		--program-prefix='' \
 			--prefix=${PREFIX}/games/scorched3d \
-			--datadir=${PREFIX}/games/scorched3d \
-			--with-wx-config=${X11BASE}/bin/wxgtk2-2.6-config
+			--datadir=${PREFIX}/games/scorched3d
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql
 .endif

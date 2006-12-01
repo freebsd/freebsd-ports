@@ -19,19 +19,14 @@ COMMENT=	Scientific tools for Python
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
-.if exists(${PYTHON_SITELIBDIR}/wx.pth)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wx.pth:${PORTSDIR}/x11-toolkits/py-wxPython26
-.elif exists(${PYTHON_SITELIBDIR}/wx/__init__.py)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
-.else
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/wx.pth:${PORTSDIR}/x11-toolkits/py-wxPython26
-.endif
 
 LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+USE_WX=		2.4-2.6
+WX_COMPS=	python:build python:run
 OPTIONS=	ATLAS "Use optimized blas library" OFF
 
 post-patch:

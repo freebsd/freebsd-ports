@@ -16,11 +16,11 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly customizable cross-platform ide to aid programming in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
-
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_WX=		2.6
+WX_COMPS=	python
 
 post-install:
 	@${ECHO} '#!/bin/sh' > ${WRKDIR}/drpython.sh

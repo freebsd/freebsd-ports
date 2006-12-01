@@ -47,7 +47,8 @@ WITHOUT_PSYCO=	yes
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+USE_WX=		2.4
+WX_COMPS=	python
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-gui-patch-setup.py
 

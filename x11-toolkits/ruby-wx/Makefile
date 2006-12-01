@@ -18,12 +18,11 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby bindings for wxWindows (aka wxWidgets)
 
-LIB_DEPENDS=	wx_gtk2-2.4:${PORTSDIR}/x11-toolkits/wxgtk24 \
-		wx_gtk2_xrc-2.4:${PORTSDIR}/x11-toolkits/wxgtk24-contrib
-
 USE_ICONV=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_WX=		2.4
+WX_COMPS=	contrib
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +36,7 @@ DOCS=		README README.linux ChangeLog
 post-patch:
 	@${FIND} ${WRKSRC} -name *.t | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${REINPLACE_CMD} -E 's/ html(processor|window).o//' ${WRKSRC}/depend
-	@${REINPLACE_CMD} -e 's/wx-config/wxgtk2-2.4-config/' ${WRKSRC}/extconf.rb
+	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG:T}|' ${WRKSRC}/extconf.rb
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -15,7 +15,6 @@ MAINTAINER=	craig@yekse.gank.org
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 CONFLICTS=	audacity-devel-[0-9]*
 
@@ -24,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
+USE_WX=		2.6
 
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
@@ -40,8 +40,7 @@ SSE_CFLAGS=	-mno-sse -mno-sse2
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}" \
-		WX_CONFIG=${X11BASE}/bin/wxgtk2-2.6-config
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}"
 
 .if !defined(NOPORTDOCS)
 MAKE_ENV=	DOC=yes

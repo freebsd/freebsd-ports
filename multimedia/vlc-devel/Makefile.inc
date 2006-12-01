@@ -22,13 +22,7 @@
 #  Skins can be found at http://www.videolan.org/vlc/download-skins.html
 #
 # WITHOUT_WXGTK=yes
-#  WxWindows/Gtk 2.x Interface
-#  This is the default and most supported
-#  x11 interface
-#
-# WITH_WXGTK_VER=[2.4|2.6]
-#  Choose a WxGTK version you want to use.
-#  Defaults to 26
+#  WxWidgets Interface
 #
 # Audio Knobs:
 #

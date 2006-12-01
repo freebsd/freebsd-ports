@@ -20,22 +20,17 @@ COMMENT?=	Top-tier vector/general purpose graphics program (recommended version)
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 
-#WXDEP=	${X11BASE}/libwx_baseu-2.6.so.0.3.1
-WXDEP=	wxgtk2-unicode>=2.6.3
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
-		${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
 		xml2-config:${PORTSDIR}/textproc/libxml2 \
 		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS+=	${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
-		convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS+=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	autoconf:259:env aclocal:19:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-wx-config=wxgtk2u-2.6-config \
-		--program-suffix=${PKGNAMESUFFIX}
+CONFIGURE_ARGS+=	--program-suffix=${PKGNAMESUFFIX}
 # we're using dlmalloc because the stock libc does not have malloc_usable_size()
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
 
@@ -43,6 +38,9 @@ USE_GMAKE=	yes
 MAKE_ENV?=	INCLUDES="-I${LOCALBASE}/include/dlmalloc" LANG=C
 
 USE_GCC=	3.4+
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
+WX_UNICODE=	yes
 
 MAN1=	xaralx${PKGNAMESUFFIX}.1
 MANFILE=	xaralx.1

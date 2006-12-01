@@ -17,8 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_GETTEXT=	yes
@@ -28,14 +27,15 @@ USE_GNOME=	gnomehier \
 		gnomehack \
 		gnomeprefix
 USE_GMAKE=	yes
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cryptopp-prefix=${LOCALBASE} \
 		--with-gtk-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
-		--enable-debug \
-		--with-wx-config=${WX_CONFIG}
+		--enable-debug
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAKE_ARGS=	-e
@@ -43,8 +43,6 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 # for debugging purposes
 STRIP=
-
-WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.6-config
 
 FILES_ATOLL_PATCH=	src/Preferences.cpp \
 			src/otherfunctions.cpp

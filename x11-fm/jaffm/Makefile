@@ -14,9 +14,8 @@ MASTER_SITES=	http://binary.is/download/ \
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A lightweight file manager inspired by MacOS Finder
 
-WXGTK_VER?=	2.6
-
 USE_BZIP2=	yes
+USE_WX=		2.4-2.6
 USE_X_PREFIX=	yes
 ALL_TARGET=	${PORTNAME}
 
@@ -24,19 +23,9 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${WXGTK_VER} == "2.4" || \
-    (exists(${X11BASE}/bin/wxgtk2-2.4-config) && \
-    !exists(${X11BASE}/bin/wxgtk2-2.6-config))
-LIB_DEPENDS+=	wx_gtk2_core-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-WXGTK_VER=	2.4
-.else
-LIB_DEPENDS+=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
-WXGTK_VER=	2.6
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's#^PREFIX=.*#PREFIX=${PREFIX}#' \
-		-e 's#$$(shell wx-config \(.*\))#`${X11BASE}/bin/wxgtk2-${WXGTK_VER}-config \1`#' \
+		-e 's#$$(shell wx-config \(.*\))#`${WX_CONFIG} \1`#' \
 		-e 's#^FLAGS=-ggdb#FLAGS=${CFLAGS}#' \
 		${WRKSRC}/Makefile
 

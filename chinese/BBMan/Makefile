@@ -16,11 +16,10 @@ DISTNAME=	${PORTNAME}-src-v${PORTVERSION:S,.,-,g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BBMan is a BBS client for X Window System
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
+USE_WX=		2.4
 
 PLIST_FILES=	bin/BBMan
 
@@ -35,7 +34,7 @@ BROKEN=		Hard-codes reference to libc_r
 .endif
 
 do-build:
-	cd ${WRKSRC} && ${CXX} main.cpp `wxgtk2-2.4-config --libs --cxxflags` -I${LOCALBASE}/include ${CFLAGS} -o BBMan
+	cd ${WRKSRC} && ${CXX} main.cpp `${WX_CONFIG} --libs --cxxflags` -I${LOCALBASE}/include ${CFLAGS} -o BBMan
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/BBMan ${TARGETDIR}/bin/BBMan

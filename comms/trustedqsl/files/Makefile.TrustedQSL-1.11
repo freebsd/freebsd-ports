@@ -5,8 +5,8 @@ TQSL_VERSION_MINOR = 0
 LIBS=-lz -lexpat -lcrypto
 INCDIR = -I$(TQSLINC)
 BUILD = unofficial
-WXFLAGS=`wxgtk2-2.6-config --cflags`
-WXLIBS=`wxgtk2-2.6-config --libs`
+WXFLAGS=`${WX_CONFIG} --cflags`
+WXLIBS=`${WX_CONFIG} --libs`
 DEFS = -DHAVE_CONFIG_H
 CXXFLAGS +=  $(DEFS) $(INCDIR)  -DHAVE_LIBCRYPTO=1 -DSTDC_HEADERS=1 -DHAVE_MKDIR=1 -DHAVE_STRERROR=1  $(WXFLAGS)
 

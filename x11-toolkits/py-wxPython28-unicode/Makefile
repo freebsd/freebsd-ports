@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-WITH_UNICODE=	yes
+WITH_WXPYTHON_UNICODE=	yes
 
 MASTERDIR=	${.CURDIR}/../py-wxPython26
 
