@@ -16,6 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby library to parse or generate data in CSV format
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2006-12-30
+
 USE_RUBY=	yes
 
 NO_BUILD=	yes
