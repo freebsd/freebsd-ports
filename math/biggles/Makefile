@@ -21,5 +21,10 @@ LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
