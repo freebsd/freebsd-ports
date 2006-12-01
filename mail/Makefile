@@ -368,7 +368,6 @@
     SUBDIR += p5-WWW-Hotmail
     SUBDIR += p5-vpopmail
     SUBDIR += pantomime
-    SUBDIR += pantomime-ssl
     SUBDIR += pathalias
     SUBDIR += pear-Contact_Vcard_Build
     SUBDIR += pear-Contact_Vcard_Parse
