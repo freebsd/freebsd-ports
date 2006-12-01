@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Diff
-PORTVERSION=	0.54
+PORTVERSION=	0.561
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	A Perl module for finding changes between two strings of HTML
+
+BUILD_DEPENDS=	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
