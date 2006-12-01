@@ -103,6 +103,7 @@ post-extract:
 	${CP} -f ${FILESDIR}/Makefile.FreeBSD_PORT ${WRKSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${WRKDIR}
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/afni.1
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.FreeBSD_PORT
 
 do-install:
 	${MKDIR} ${DATADIR} ${INSTALL_TEMP} \
