@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	i386
 
 CONFIGURE_ENV=	CC="${CC} -I${PREFIX}/include"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
