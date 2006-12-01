@@ -14,7 +14,7 @@
  
  # Includes
 -INCLUDES =-I/usr/include -I/usr/X11R6/include -I.
-+INCLUDES =-I/usr/include -I/usr/X11R6/include -I. $(shell %%WX_CONFIG%% --cxxflags)
++INCLUDES =-I/usr/include -I${X11BASE}/include -I. $(shell %%WX_CONFIG%% --cxxflags)
  
  # Libraries
 -LIB := $(shell wx-config --libs) $(shell pkg-config --libs pangox)
