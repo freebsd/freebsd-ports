@@ -1,0 +1,16 @@
+--- Makefile.orig	Wed Nov 29 00:03:23 2006
++++ Makefile	Wed Nov 29 00:03:36 2006
+@@ -15,11 +15,11 @@
+ PREFIX = /usr
+ EXEC_PREFIX = $(PREFIX)
+ BINDIR = $(EXEC_PREFIX)/bin
+-SYSCONFDIR = /etc
++SYSCONFDIR = $(PREFIX)/etc
+ MANDIR = $(PREFIX)/man
+ MAN1DIR = $(MANDIR)/man1
+ INIT = init/blocksshd
+-INITDIR = /etc/rc.d/init.d
++INITDIR = $(PREFIX)/etc/rc.d/init.d
+ DESTDIR =
+ 
+ all:	$(APPNAME).1$(MANCOMPRESS)
