@@ -22,7 +22,7 @@ $FreeBSD$
  OS 	   := -DLC_LINUX
  OSDIR 	   := linux
 -PREFIX     := /usr/local
-+PREFIX     := /usr/X11R6
++PREFIX     := %%X11BASE%%
  GTK_CONFIG := gtk12-config
 -CPPFLAGS   += -L/usr/local/lib
 +CPPFLAGS   += ${CFLAGS} -L%%LOCALBASE%%/lib -I%%LOCALBASE%%/include %%PTHREAD_CFLAGS%%
