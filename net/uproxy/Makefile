@@ -17,11 +17,9 @@ COMMENT=	Proxy for UDP protocols
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_RC_SUBR=	${PORTNAME}
+USE_DOS2UNIX=	${DISTNAME}.c
 PORTDOCS=	index.html
 PLIST_FILES=	sbin/${PORTNAME}
-
-pre-patch:
-	@${CAT} ${WRKSRC}/${DISTNAME}.c | ${SED} "s/`printf '\r'`//" > ${WRKSRC}/${DISTNAME}.c
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o t${PORTNAME} ${DISTNAME}.c)
