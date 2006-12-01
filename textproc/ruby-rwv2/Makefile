@@ -18,6 +18,9 @@ COMMENT=	A Ruby extension that wraps around wv2
 
 LIB_DEPENDS=	wv2.1:${PORTSDIR}/textproc/wv2
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2006-12-30
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
