@@ -8,11 +8,7 @@
 PORTNAME=	wsmake
 PORTVERSION=	0.6.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wsmake
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} examples.tar.gz
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SFE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites
@@ -20,29 +16,9 @@ COMMENT=	Software for production and maintenance of web sites
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(NOPORTDOCS)
-DISTFILES+=	user-manual-html.tar.gz
-.endif
-
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/wsmake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,void\*,char\*,g' ${WRKSRC}/libwsmake/wsUtil.cpp
 
-# Install examples and optional documentation.
-post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${EXAMPLESDIR} && \
-		 ${TAR} -xzf ${_DISTDIR}/examples.tar.gz --exclude '*/CVS/*'
-.for ex in 1 2 3 4 5 6 7 8 9 10 11 12 13
-	@${MV} ${EXAMPLESDIR}/examples/ex${ex} ${EXAMPLESDIR}
-.endfor
-	@${RM} -rf ${EXAMPLESDIR}/examples
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${DOCSDIR} && \
-		${TAR} -xzf ${_DISTDIR}/user-manual-html.tar.gz
-	${LN} ${DOCSDIR}/user-manual/book1.html ${DOCSDIR}/user-manual/index.html
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
