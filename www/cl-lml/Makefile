@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		lml
-PORTVERSION=		2.5.3
+PORTVERSION=		2.5.4
 CATEGORIES=		www textproc
 MASTER_SITES=		http://files.b9.com/lml/
 PKGNAMEPREFIX=		cl-
