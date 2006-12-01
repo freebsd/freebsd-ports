@@ -33,6 +33,7 @@
     SUBDIR += icbirc
     SUBDIR += iip
     SUBDIR += infobot
+    SUBDIR += inspircd
     SUBDIR += insub
     SUBDIR += irc
     SUBDIR += ircII
