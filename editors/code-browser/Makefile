@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	2.9
+PORTVERSION=	2.10
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GCC=	3.4+
 USE_GNOME=	gtk20
+USE_GMAKE=	yes
 
 PORTDOCS=	code-browser.chm doc.css doc.html
 PLIST_FILES=	bin/code-browser \
@@ -29,8 +30,12 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		does not build on !i386; signal 11 errors during build
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		does not build on ${ARCH}; signal 11 errors during build
+.endif
+
+.if ${ARCH} == "amd64"
+MAKE_ARGS+=	MODE=64
 .endif
 
 post-patch:
