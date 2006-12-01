@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
-WXCONFIG=	wxgtk2${_WX_UC}-${_WX_VER}-config
 
 OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off \
 		EDITOR	"Install scourge editor"	on
@@ -52,7 +51,7 @@ CONFIGURE_ARGS+=	--enable-debug
 .if !defined(WITHOUT_EDITOR)
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
-WX_UNICODE=	yes
+WANT_UNICODE=	yes
 PLIST_FILES+=	bin/${PORTNAME}-editor
 HAVE_EDITOR=	true
 .else
@@ -60,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-editor
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wx-config|${WXCONFIG} |g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG:T} |g' ${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
