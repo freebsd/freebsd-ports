@@ -13,6 +13,7 @@ MASTER_SITES=	http://chitchat.at.infoseek.co.jp/vmware/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VM Back Command Line Tools for VMware
 
+ONLY_FOR_ARCHS=	i386 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USE_ICONV=	yes
 
