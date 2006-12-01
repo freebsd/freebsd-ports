@@ -7,15 +7,14 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
-LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments
+LIB_DEPENDS=	rudiments.1:${PORTSDIR}/devel/rudiments
 
 USE_GMAKE=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
@@ -31,6 +30,8 @@ CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-zope
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
+
+PORTDOCS=	*
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -67,7 +68,7 @@ IF_MYSQL=	"@comment "
 .endif
 
 .if defined(WITH_INTERBASE) && ${WITH_INTERBASE:L} != no
-LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird-client
+USE_FIREBIRD=	yes
 CONFIGURE_ARGS+=	--with-interbase-prefix="${LOCALBASE}"
 IF_INTERBASE=	""
 .else
