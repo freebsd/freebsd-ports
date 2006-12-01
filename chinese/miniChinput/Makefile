@@ -25,9 +25,6 @@ INSTALL_TARGET=	install data-install
 
 MAN1=		chinput.1
 
-CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include \
-			--x-libraries=${X11BASE}/lib
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
