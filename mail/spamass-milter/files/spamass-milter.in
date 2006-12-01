@@ -34,6 +34,9 @@ start_postcmd()
 	sleep 1
 	kill -HUP `head -1 /var/run/sendmail.pid`
   fi
+
+  /usr/sbin/chown ${spamass_milter_socket_owner}:${spamass_milter_socket_group} ${spamass_milter_socket}
+  /bin/chmod ${spamass_milter_socket_mode} ${spamass_milter_socket}
 }
 
 stop_postcmd()
@@ -50,5 +53,8 @@ load_rc_config $name
 : ${spamass_milter_enable="NO"}
 : ${spamass_milter_socket="/var/run/spamass-milter.sock"}
 : ${spamass_milter_flags="-f -p ${spamass_milter_socket}"}
+: ${spamass_milter_socket_owner="root"}
+: ${spamass_milter_socket_group="wheel"}
+: ${spamass_milter_socket_mode="644"}
 
 run_rc_command "$1"
