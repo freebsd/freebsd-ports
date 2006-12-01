@@ -8,7 +8,7 @@
 PORTNAME=	mwdom
 PORTVERSION=	0.1.5
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
+MASTER_SITES=	http://raa.ruby-lang.org/cache/mwdom/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
