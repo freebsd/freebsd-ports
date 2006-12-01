@@ -2,9 +2,8 @@
 
 [ "$2" != "POST-INSTALL" ] && exit 0
 
-scripts_file=$PKG_PREFIX/scripts.log
-laspatch_file=$PKG_PREFIX/updater/lastpatch.txt
-patchindex_file=$PKG_PREFIX/updater/patchindex.txt
+scripts_file=$PKG_PREFIX/lib/linux-savage/scripts.log
+startup_file=$PKG_PREFIX/lib/linux-savage/game/startup.cfg
 
 if ! [ -e $scripts_file ]; then
 	touch $scripts_file
@@ -12,14 +11,5 @@ if ! [ -e $scripts_file ]; then
 	chmod 666 $scripts_file
 fi
 
-if ! [ -e $laspatch_file ]; then
-	echo "savage20031022a-patch.tar.gz" > $laspatch_file
-	chown root:wheel $laspatch_file 2>/dev/null
-	chmod 666 $laspatch_file
-fi
-
-if ! [ -e $patchindex_file ]; then
-	touch $patchindex_file
-	chown root:wheel $patchindex_file 2>/dev/null
-	chmod 666 $patchindex_file
-fi
+chown root:wheel $startup_file 2>/dev/null
+chmod 666 $startup_file

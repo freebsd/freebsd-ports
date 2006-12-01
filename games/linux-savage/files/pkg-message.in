@@ -6,17 +6,16 @@ The Savage game (Linux version) was installed
 
    # linux-savage_editor
 
-   Dedicated server
-
-   # linux-savage_server
-
    Client
 
    # linux-savage
 
-2) Nowadays, this port doesn't work with SEP and SAMURAI mods. It has some 
-   problems. If you can to do that savage runs with some of these mods, feel 
-   free to contact me.
+2) The sound doesn't work by default, if you want to solve the problem, you must 
+   to set the value of sound_softwareMode at:
+
+   # ee %%SAVAGEDIR%%/game/startup.cfg
+
+   setsave sound_softwareMode 1
 
 3) Enjoy it ;)
 

@@ -2,4 +2,4 @@
 
 cd %%SAVAGEDIR%% || exit 1
 export LD_LIBRARY_PATH=libs:$LD_LIBRARY_PATH
-exec ./silverback.bin set mod editor
+exec ./silverback.bin set mod graveyard
