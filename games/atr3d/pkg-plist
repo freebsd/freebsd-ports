@@ -1,40 +1,40 @@
 bin/atr3d
-share/atr3d/conf/ATRConfig
-share/atr3d/conf/ATRServerConfig
-share/atr3d/conf/ATRServerSingleConfig
-share/atr3d/conf/scores.dat
-share/atr3d/models/a.spec
-share/atr3d/models/h.spec
-share/atr3d/models/n.spec
-share/atr3d/models/nuke.spec
-share/atr3d/models/s.spec
-share/atr3d/models/ship.spec
-share/atr3d/models/shot.spec
-share/atr3d/sounds/0.wav
-share/atr3d/sounds/1.wav
-share/atr3d/sounds/10.wav
-share/atr3d/sounds/11.wav
-share/atr3d/sounds/12.wav
-share/atr3d/sounds/13.wav
-share/atr3d/sounds/14.wav
-share/atr3d/sounds/15.wav
-share/atr3d/sounds/16.wav
-share/atr3d/sounds/17.wav
-share/atr3d/sounds/18.wav
-share/atr3d/sounds/19.wav
-share/atr3d/sounds/2.wav
-share/atr3d/sounds/20.wav
-share/atr3d/sounds/21.wav
-share/atr3d/sounds/3.wav
-share/atr3d/sounds/4.wav
-share/atr3d/sounds/5.wav
-share/atr3d/sounds/6.wav
-share/atr3d/sounds/7.wav
-share/atr3d/sounds/8.wav
-share/atr3d/sounds/9.wav
-share/atr3d/textures/explosion.rgb
-@dirrm share/atr3d/conf
-@dirrm share/atr3d/models
-@dirrm share/atr3d/sounds
-@dirrm share/atr3d/textures
-@dirrm share/atr3d
+%%DATADIR%%/conf/ATRConfig
+%%DATADIR%%/conf/ATRServerConfig
+%%DATADIR%%/conf/ATRServerSingleConfig
+%%DATADIR%%/conf/scores.dat
+%%DATADIR%%/models/a.spec
+%%DATADIR%%/models/h.spec
+%%DATADIR%%/models/n.spec
+%%DATADIR%%/models/nuke.spec
+%%DATADIR%%/models/s.spec
+%%DATADIR%%/models/ship.spec
+%%DATADIR%%/models/shot.spec
+%%DATADIR%%/sounds/0.wav
+%%DATADIR%%/sounds/1.wav
+%%DATADIR%%/sounds/10.wav
+%%DATADIR%%/sounds/11.wav
+%%DATADIR%%/sounds/12.wav
+%%DATADIR%%/sounds/13.wav
+%%DATADIR%%/sounds/14.wav
+%%DATADIR%%/sounds/15.wav
+%%DATADIR%%/sounds/16.wav
+%%DATADIR%%/sounds/17.wav
+%%DATADIR%%/sounds/18.wav
+%%DATADIR%%/sounds/19.wav
+%%DATADIR%%/sounds/2.wav
+%%DATADIR%%/sounds/20.wav
+%%DATADIR%%/sounds/21.wav
+%%DATADIR%%/sounds/3.wav
+%%DATADIR%%/sounds/4.wav
+%%DATADIR%%/sounds/5.wav
+%%DATADIR%%/sounds/6.wav
+%%DATADIR%%/sounds/7.wav
+%%DATADIR%%/sounds/8.wav
+%%DATADIR%%/sounds/9.wav
+%%DATADIR%%/textures/explosion.rgb
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%/models
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%
