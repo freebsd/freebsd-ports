@@ -16,6 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TEMPlate Utility for Ruby Application
 
+DEPRECATED=	distfile and homepag disappeared
+EXPIRATION_DATE=	2006-12-30
+
 USE_RUBY=	yes
 RUBY_FEATURES=	rexml
 
