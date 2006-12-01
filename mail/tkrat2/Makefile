@@ -17,6 +17,8 @@ LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		c-client4.8:${PORTSDIR}/mail/cclient
 
+USE_XLIB=	yes
+
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.4 \
