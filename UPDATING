@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061201:
+  AFFECTS: users of mail/assp
+  AUTHOR: fbsd@opal.com
+
+  This version of ASSP switches virus detection support from
+  Mail::ClamAV to File::Scan::ClamAV which uses the external clamd
+  daemon from the security/clamav port. You will need to ensure
+  clamd is configured and running if you wish to use ASSP's CLAMAV
+  option. The default means for ASSP to communicate with clamd
+  has been set to match clamd's UNIX socket: /var/run/clamav/clamd.
+  If you use clamd with a TCP socket, you should configure ASSP's
+  AvClamdPort option to 3310 or whatever socket you use.
+
 20061130:
   AFFECTS: users of net/openldap2[34]-server
   AUTHOR: delphij@FreeBSD.org
