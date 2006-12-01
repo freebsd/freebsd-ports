@@ -7,7 +7,7 @@
 
 PORTNAME=	tetrinet
 PORTVERSION=	0.11
-CATEGORIES=	games net
+CATEGORIES=	games net ipv6
 MASTER_SITES=	http://tetrinet.or.cz/download/
 
 MAINTAINER=	ports@FreeBSD.org
