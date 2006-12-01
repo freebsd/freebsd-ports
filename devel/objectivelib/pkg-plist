@@ -1,0 +1,24 @@
+Local/Library/Headers/ObjectiveLib/Algorithm.h
+Local/Library/Headers/ObjectiveLib/Arithmetic.h
+Local/Library/Headers/ObjectiveLib/BitSet.h
+Local/Library/Headers/ObjectiveLib/Comparison.h
+Local/Library/Headers/ObjectiveLib/Copying.h
+Local/Library/Headers/ObjectiveLib/Deque.h
+Local/Library/Headers/ObjectiveLib/Functional.h
+Local/Library/Headers/ObjectiveLib/HashMap.h
+Local/Library/Headers/ObjectiveLib/HashSet.h
+Local/Library/Headers/ObjectiveLib/HashTable.h
+Local/Library/Headers/ObjectiveLib/Iterator.h
+Local/Library/Headers/ObjectiveLib/List.h
+Local/Library/Headers/ObjectiveLib/Map.h
+Local/Library/Headers/ObjectiveLib/Memory.h
+Local/Library/Headers/ObjectiveLib/Pair.h
+Local/Library/Headers/ObjectiveLib/Queue.h
+Local/Library/Headers/ObjectiveLib/Set.h
+Local/Library/Headers/ObjectiveLib/Stack.h
+Local/Library/Headers/ObjectiveLib/Types.h
+Local/Library/Headers/ObjectiveLib/Vector.h
+Local/Library/Libraries/libObjectiveLib.so
+Local/Library/Libraries/libObjectiveLib.so.%%MAJORVERSION%%
+Local/Library/Libraries/libObjectiveLib.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/ObjectiveLib
