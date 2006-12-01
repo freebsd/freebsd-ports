@@ -6,18 +6,19 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
-
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
 		CSUP  "Use csup for updates" On \
 		CVSUP "Use cvsup for updates" Off \
+		WEB   "Install web interface" Off \
+		WEB_EXP "Install the new web interface" On \
 		APACHE "Use Apache for web interface" On \
 		LIGHTTPD "Use LightHTTPD for web interface" Off
 
@@ -34,17 +35,36 @@ MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
 
+.if defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP)
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
+.endif
+
+.if defined(WITH_WEB)
+PLIST_SUB+=	WEB=""
+.else
+PLIST_SUB+=	WEB="@comment "
+.endif
+
+.if !defined(WITHOUT_WEB_EXP)
+PLIST_SUB+=	WEB_EXP=""
+.else
+PLIST_SUB+=	WEB_EXP="@comment "
+.endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
+.if defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP)
 USE_PHP+=	pgsql
+.endif
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if !defined(WITHOUT_MYSQL)
+.if defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP)
 USE_PHP+=	mysql
+.endif
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=	323 40
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER:S/323//}
@@ -60,15 +80,21 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
 .endif
 
-.if !defined(WITHOUT_APACHE)
+.if !defined(WITHOUT_APACHE) && (defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP))
 USE_APACHE=	1.3+
-.elif defined(WITH_LIGHTTPD)
+.elif defined(WITH_LIGHTTPD) && (defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP))
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
+.if defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP)
 .include "${PORTSDIR}/Mk/bsd.php.mk"
+.endif
 
-#post-extract:
+pre-everything::
+.if (!defined(WITHOUT_APACHE) || defined(WITH_LIGHTTPD)) && !(defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP))
+	@${ECHO_CMD} "It doesn't make sense to depend on Apache or LightHTTPD if not using either web interface."
+	@${FALSE}
+.endif
 
 post-patch:
 .if defined(WITH_MYSQL)
@@ -81,6 +107,16 @@ post-patch:
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
+.if !defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP)
+	@${ECHO_CMD} "Removing web interface componenets ..."
+	@${RM} -R ${PREFIX}/tinderbox/scripts/www
+	@${ECHO_CMD} "Done."
+.endif
+.if defined(WITHOUT_WEB_EXP)
+	@${ECHO_CMD} "Removing web interface componenets ..."
+	@${RM} -R ${PREFIX}/tinderbox/scripts/www-exp
+	@${ECHO_CMD} "Done."
+.endif
 
 post-install:
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
