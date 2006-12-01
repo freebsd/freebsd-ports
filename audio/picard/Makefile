@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 		${PYTHON_SITELIBDIR}/musicbrainz2/__init__.py:${PORTSDIR}/audio/py-musicbrainz2
 
 USE_WX=		2.6
-WX_COMPS=	python:run
+WX_COMPS=	python
 WX_UNICODE=	yes
 
 USE_PYTHON=	yes
