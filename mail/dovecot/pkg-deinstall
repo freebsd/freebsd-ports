@@ -29,13 +29,15 @@ yesno() {
 }
 
 delete_account() {
-	local u
+	local port user uid group gid
 
-	u=$1
-	if yesno "Do you want me to remove user \"${u}\"" n; then
-		pw userdel -n ${u}
-		echo "Done."
-	fi
+	port=$1
+	user=${2%:*}
+	uid=${2#*:}
+	group=${3%:*}
+	gid=${3#*:}
+
+	echo "If you do not intend to reinstall ${port}, you should manually remove the user '${user}' (uid='${uid}') and the group '${group}' (gid='${gid}')."
 }
 
 case $2 in
@@ -50,7 +52,7 @@ DEINSTALL)
 		fi
 	fi
 
-	delete_account dovecot
+	delete_account Dovecot dovecot:143 dovecot:143
 
 	base=/var/run/dovecot
 	DIRLIST="${base}/login ${base}"
