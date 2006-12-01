@@ -24,7 +24,7 @@ upgrades.
     - Do a "slapadd < backup.ldif" to restore the data
 
   Alternatively, if you want to keep the current BDB version (4.3),
-  please define WITH_BDB=43 when building the server.
+  please define WITH_BDB_VER=43 when building the server.
 
 20061121:
   AFFECTS: users of www/hastymail
