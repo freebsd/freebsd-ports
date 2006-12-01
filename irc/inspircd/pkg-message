@@ -1,0 +1,2 @@
+Don't forget to copy the example configuration file inspircd.conf.example
+as inspircd.conf, or use inspircd -config <filename> to start InspIRCd.
