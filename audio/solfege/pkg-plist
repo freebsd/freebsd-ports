@@ -174,6 +174,7 @@ share/gnome/solfege/help/C/idtone-module.html
 share/gnome/solfege/help/C/idtone.html
 share/gnome/solfege/help/C/index.html
 share/gnome/solfege/help/C/inverting-intervals.html
+share/gnome/solfege/help/C/lesson-files.html
 share/gnome/solfege/help/C/ly/inverting-intervals.png
 share/gnome/solfege/help/C/ly/theory-intervals-1.png
 share/gnome/solfege/help/C/ly/theory-intervals-fifths-1.png
@@ -248,6 +249,7 @@ share/gnome/solfege/help/fr/idtone-module.html
 share/gnome/solfege/help/fr/idtone.html
 share/gnome/solfege/help/fr/index.html
 share/gnome/solfege/help/fr/inverting-intervals.html
+share/gnome/solfege/help/fr/lesson-files.html
 share/gnome/solfege/help/fr/melodicinterval.html
 share/gnome/solfege/help/fr/melodicintervals-module.html
 share/gnome/solfege/help/fr/midi-instrument-names.html
@@ -309,6 +311,7 @@ share/gnome/solfege/help/no/idtone-module.html
 share/gnome/solfege/help/no/idtone.html
 share/gnome/solfege/help/no/index.html
 share/gnome/solfege/help/no/inverting-intervals.html
+share/gnome/solfege/help/no/lesson-files.html
 share/gnome/solfege/help/no/melodicinterval.html
 share/gnome/solfege/help/no/melodicintervals-module.html
 share/gnome/solfege/help/no/midi-instrument-names.html
@@ -370,6 +373,7 @@ share/gnome/solfege/help/tr/idtone-module.html
 share/gnome/solfege/help/tr/idtone.html
 share/gnome/solfege/help/tr/index.html
 share/gnome/solfege/help/tr/inverting-intervals.html
+share/gnome/solfege/help/tr/lesson-files.html
 share/gnome/solfege/help/tr/melodicinterval.html
 share/gnome/solfege/help/tr/melodicintervals-module.html
 share/gnome/solfege/help/tr/midi-instrument-names.html
@@ -469,6 +473,9 @@ share/gnome/solfege/lesson-files/id-tone-cde-6
 share/gnome/solfege/lesson-files/id-tone-cde-7
 share/gnome/solfege/lesson-files/id-tone-cde-8
 share/gnome/solfege/lesson-files/id-tone-cde-9
+share/gnome/solfege/lesson-files/include/interval-elements
+share/gnome/solfege/lesson-files/include/progression-elements
+share/gnome/solfege/lesson-files/include/sc-master
 share/gnome/solfege/lesson-files/jsb-inventions
 share/gnome/solfege/lesson-files/melodic-intervals
 share/gnome/solfege/lesson-files/melodic-intervals-10
@@ -525,13 +532,18 @@ share/gnome/solfege/lesson-files/sc-8tones
 share/gnome/solfege/lesson-files/sc-beb
 share/gnome/solfege/lesson-files/sc-beb-a
 share/gnome/solfege/lesson-files/sc-beb-d
+share/gnome/solfege/lesson-files/sc-beb-elem
+share/gnome/solfege/lesson-files/sc-beb-name
 share/gnome/solfege/lesson-files/sc-beb-s
 share/gnome/solfege/lesson-files/sc-church
 share/gnome/solfege/lesson-files/sc-dha
 share/gnome/solfege/lesson-files/sc-dha-a
 share/gnome/solfege/lesson-files/sc-dha-d
+share/gnome/solfege/lesson-files/sc-dha-elem
 share/gnome/solfege/lesson-files/sc-dha-f
 share/gnome/solfege/lesson-files/sc-dha-g
+share/gnome/solfege/lesson-files/sc-dha-name
+share/gnome/solfege/lesson-files/sc-dha-p
 share/gnome/solfege/lesson-files/sc-dha-s
 share/gnome/solfege/lesson-files/sc-dha-t
 share/gnome/solfege/lesson-files/sc-dom
@@ -543,30 +555,43 @@ share/gnome/solfege/lesson-files/sc-hal-jazz
 share/gnome/solfege/lesson-files/sc-ham
 share/gnome/solfege/lesson-files/sc-ham-a
 share/gnome/solfege/lesson-files/sc-ham-d
+share/gnome/solfege/lesson-files/sc-ham-elem
 share/gnome/solfege/lesson-files/sc-ham-f
 share/gnome/solfege/lesson-files/sc-ham-g
+share/gnome/solfege/lesson-files/sc-ham-name
+share/gnome/solfege/lesson-files/sc-ham-p
 share/gnome/solfege/lesson-files/sc-ham-s
 share/gnome/solfege/lesson-files/sc-ham-t
 share/gnome/solfege/lesson-files/sc-har
 share/gnome/solfege/lesson-files/sc-har-a
 share/gnome/solfege/lesson-files/sc-har-d
+share/gnome/solfege/lesson-files/sc-har-elem
 share/gnome/solfege/lesson-files/sc-har-f
 share/gnome/solfege/lesson-files/sc-har-g
+share/gnome/solfege/lesson-files/sc-har-name
+share/gnome/solfege/lesson-files/sc-har-p
 share/gnome/solfege/lesson-files/sc-har-s
 share/gnome/solfege/lesson-files/sc-har-t
 share/gnome/solfege/lesson-files/sc-hum-g
 share/gnome/solfege/lesson-files/sc-hun
 share/gnome/solfege/lesson-files/sc-hun-a
 share/gnome/solfege/lesson-files/sc-hun-d
+share/gnome/solfege/lesson-files/sc-hun-elem
 share/gnome/solfege/lesson-files/sc-hun-f
 share/gnome/solfege/lesson-files/sc-hun-g
+share/gnome/solfege/lesson-files/sc-hun-name
+share/gnome/solfege/lesson-files/sc-hun-p
 share/gnome/solfege/lesson-files/sc-hun-s
 share/gnome/solfege/lesson-files/sc-hun-t
 share/gnome/solfege/lesson-files/sc-maj
 share/gnome/solfege/lesson-files/sc-maj-a
 share/gnome/solfege/lesson-files/sc-maj-d
+share/gnome/solfege/lesson-files/sc-maj-elem
 share/gnome/solfege/lesson-files/sc-maj-f
 share/gnome/solfege/lesson-files/sc-maj-g
+share/gnome/solfege/lesson-files/sc-maj-name
+share/gnome/solfege/lesson-files/sc-maj-p
+share/gnome/solfege/lesson-files/sc-maj-px
 share/gnome/solfege/lesson-files/sc-maj-s
 share/gnome/solfege/lesson-files/sc-maj-t
 share/gnome/solfege/lesson-files/sc-mau
@@ -574,8 +599,11 @@ share/gnome/solfege/lesson-files/sc-mau-jazz
 share/gnome/solfege/lesson-files/sc-mel
 share/gnome/solfege/lesson-files/sc-mel-a
 share/gnome/solfege/lesson-files/sc-mel-d
+share/gnome/solfege/lesson-files/sc-mel-elem
 share/gnome/solfege/lesson-files/sc-mel-f
 share/gnome/solfege/lesson-files/sc-mel-g
+share/gnome/solfege/lesson-files/sc-mel-name
+share/gnome/solfege/lesson-files/sc-mel-p
 share/gnome/solfege/lesson-files/sc-mel-s
 share/gnome/solfege/lesson-files/sc-mel-t
 share/gnome/solfege/lesson-files/sc-min
@@ -584,26 +612,36 @@ share/gnome/solfege/lesson-files/sc-nat-g
 share/gnome/solfege/lesson-files/sc-nea
 share/gnome/solfege/lesson-files/sc-nea-a
 share/gnome/solfege/lesson-files/sc-nea-d
+share/gnome/solfege/lesson-files/sc-nea-elem
 share/gnome/solfege/lesson-files/sc-nea-f
 share/gnome/solfege/lesson-files/sc-nea-g
+share/gnome/solfege/lesson-files/sc-nea-name
+share/gnome/solfege/lesson-files/sc-nea-p
 share/gnome/solfege/lesson-files/sc-nea-s
 share/gnome/solfege/lesson-files/sc-nea-t
 share/gnome/solfege/lesson-files/sc-nem
 share/gnome/solfege/lesson-files/sc-nem-a
 share/gnome/solfege/lesson-files/sc-nem-d
+share/gnome/solfege/lesson-files/sc-nem-elem
 share/gnome/solfege/lesson-files/sc-nem-f
 share/gnome/solfege/lesson-files/sc-nem-g
+share/gnome/solfege/lesson-files/sc-nem-name
+share/gnome/solfege/lesson-files/sc-nem-p
 share/gnome/solfege/lesson-files/sc-nem-s
 share/gnome/solfege/lesson-files/sc-nem-t
 share/gnome/solfege/lesson-files/sc-pen
 share/gnome/solfege/lesson-files/sc-pen-a
 share/gnome/solfege/lesson-files/sc-pen-d
+share/gnome/solfege/lesson-files/sc-pen-elem
 share/gnome/solfege/lesson-files/sc-pen-g
+share/gnome/solfege/lesson-files/sc-pen-name
 share/gnome/solfege/lesson-files/sc-pen-s
 share/gnome/solfege/lesson-files/sc-plagal
 share/gnome/solfege/lesson-files/sc-sim
 share/gnome/solfege/lesson-files/sc-sim-a
 share/gnome/solfege/lesson-files/sc-sim-d
+share/gnome/solfege/lesson-files/sc-sim-elem
+share/gnome/solfege/lesson-files/sc-sim-name
 share/gnome/solfege/lesson-files/sc-sim-s
 share/gnome/solfege/lesson-files/scales
 share/gnome/solfege/lesson-files/scales-all
@@ -618,8 +656,6 @@ share/gnome/solfege/lesson-files/share/fifth-small-247.5.wav
 share/gnome/solfege/lesson-files/share/fifth-small-293.33.wav
 share/gnome/solfege/lesson-files/share/fil1.orc
 share/gnome/solfege/lesson-files/share/fil1.sco
-share/gnome/solfege/lesson-files/share/progression-elements
-share/gnome/solfege/lesson-files/share/sc-master
 share/gnome/solfege/lesson-files/sing-chord-tone
 share/gnome/solfege/lesson-files/sing-intervals
 share/gnome/solfege/lesson-files/sing-intervals-10
@@ -765,6 +801,7 @@ share/locale/tr/LC_MESSAGES/solfege.mo
 @dirrm share/gnome/solfege/soundcard
 @dirrm share/gnome/solfege/mpd
 @dirrm share/gnome/solfege/lesson-files/share
+@dirrm share/gnome/solfege/lesson-files/include
 @dirrm share/gnome/solfege/lesson-files/bin
 @dirrm share/gnome/solfege/lesson-files
 @dirrm share/gnome/solfege/help/tr/figures
