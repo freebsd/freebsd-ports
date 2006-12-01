@@ -1,8 +1,6 @@
 bin/kaffeine
-include/kaffeine_export.h
 include/kaffeine/kaffeineaudioencoder.h
 include/kaffeine/mrl.h
-include/kaffeine/playlistimport.h
 include/kaffeine/kaffeinepart.h
 include/kaffeine/xine_part.h
 include/kaffeine/xine_part_iface.h
@@ -19,7 +17,6 @@ lib/libkaffeineaudioencoder.a
 lib/libkaffeineaudioencoder.la
 lib/libkaffeineaudioencoder.so
 lib/libkaffeineaudioencoder.so.0
-lib/libkaffeinepart.so.0
 lib/libkaffeinepart.so
 lib/libkaffeinepart.la
 lib/libkaffeinepart.a
@@ -31,7 +28,7 @@ share/applications/kde/kaffeine.desktop
 share/apps/kaffeine/kaffeinedisc.rc
 share/apps/kaffeine/kaffeineplaylist.rc
 share/apps/kaffeine/kaffeineui.rc
-share/apps/kaffeine/nocover
+share/apps/kaffeine/nocover.png
 share/apps/kaffeine/logo
 share/apps/kaffeine/logo.mpg
 share/apps/kaffeine/mms.protocol
@@ -114,6 +111,7 @@ share/locale/pl/LC_MESSAGES/kaffeine.mo
 share/locale/pt/LC_MESSAGES/kaffeine.mo
 share/locale/pt_BR/LC_MESSAGES/kaffeine.mo
 share/locale/ru/LC_MESSAGES/kaffeine.mo
+share/locale/sk/LC_MESSAGES/kaffeine.mo
 share/locale/sr/LC_MESSAGES/kaffeine.mo
 share/locale/sr@Latn/LC_MESSAGES/kaffeine.mo
 share/locale/sv/LC_MESSAGES/kaffeine.mo
