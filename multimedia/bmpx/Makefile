@@ -42,6 +42,8 @@ CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include \
+			--x-libraries=${X11BASE}/lib
 
 MAN1=		beep-media-player-2.1
 
