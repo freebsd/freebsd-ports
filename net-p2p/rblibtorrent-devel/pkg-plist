@@ -201,8 +201,6 @@ lib/libtorrent.a
 lib/libtorrent.la
 lib/libtorrent.so
 lib/libtorrent.so.1
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm lib/libdata/pkgconfig
 @dirrm lib/libdata
 @dirrm include/libtorrent/kademlia
