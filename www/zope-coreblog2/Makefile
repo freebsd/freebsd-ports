@@ -7,6 +7,7 @@
 
 PORTNAME=	coreblog2
 PORTVERSION=	0.90b
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://coreblog.org/junk/
 PKGNAMEPREFIX=	zope-
@@ -16,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	yasi@yasi.to
 COMMENT=	A fully-featured blog product for Plone
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/OFS/__init__.py:${PORTSDIR}/www/plone
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
