@@ -33,10 +33,9 @@ USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 USE_GNOME=	glib20
 USE_OPENSSL=	YES
-USE_PTHREADS=	YES
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include -L${LOCALBASE}/lib
-LDFLAGS+=	-pthread
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
 
 PORTDOCS=	AUTHORS BUGS COPYING INSTALL NEWS README \
@@ -52,6 +51,7 @@ MAN8=		dbmail-export.8 dbmail-imapd.8 dbmail-lmtpd.8 \
 MANCOMPRESSED=	no
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+LATEST_LINK=	dbmail21
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 .if defined(NOPORTDOCS)
