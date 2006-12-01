@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ismail
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	www mail
 MASTER_SITES=	ftp://ftp.insidesystems.net/ISMail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 ISMAILDIR?=	www/data/ismail
 INSTALLDIR=	${PREFIX}/${ISMAILDIR}
 
-WRKSRC=		${WRKDIR}/ISMail
+WRKSRC=		${WRKDIR}
 
 PLIST_SUB=	ISMAILDIR=${ISMAILDIR}/ \
 		INSTALLDIR=${INSTALLDIR}/
@@ -28,8 +28,8 @@ USE_PHP=	yes
 
 .include <bsd.port.pre.mk>
 
-PORTDOC_FILES= docs.html
-PORT_EXAMPLES= mysql4.schema pgsql.schema
+PORTDOC_FILES=	docs.html
+PORT_EXAMPLES=	mysql4.schema pgsql.schema
 
 LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
 
