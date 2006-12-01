@@ -27,6 +27,7 @@ CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/configure
 	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
 	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.c" -or -name "*.h" \
 		           -type f -print0 | \
