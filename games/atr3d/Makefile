@@ -44,6 +44,9 @@ pre-patch:
 		${WRKSRC}/autogen.sh
 	@${REINPLACE_CMD} -e 's|-lopenal|& -lalut|' ${WRKSRC}/Makefile.am
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.am
+
 pre-configure:
 	cd ${WRKSRC}; ${SH} autogen.sh
 
