@@ -40,6 +40,9 @@ if [ ":$2" = ":POST-INSTALL" ]; then
                 if yesno "Would you like to send a list of installed hardware as well" n; then
                     echo "monthly_statistics_report_devices=\"YES\"" >> /etc/periodic.conf
                 fi
+                if yesno "Would you like to send a list of installed ports as well" n; then
+                    echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
+                fi
                 if yesno "Would you like to run it now" y; then
                    /usr/local/etc/periodic/monthly/300.statistics
                 fi
@@ -50,6 +53,9 @@ if [ ":$2" = ":POST-INSTALL" ]; then
             echo "monthly_statistics_enable=\"YES\"" >> /etc/periodic.conf
             if yesno "Would you like to send a list of installed hardware as well" n; then
                 echo "monthly_statistics_report_devices=\"YES\"" >> /etc/periodic.conf
+            fi
+            if yesno "Would you like to send a list of installed ports as well" n; then
+                echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
             fi
             if yesno "Would you like to run it now" y; then
                /usr/local/etc/periodic/monthly/300.statistics
