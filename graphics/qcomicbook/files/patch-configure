@@ -9,13 +9,3 @@
        bnv_try_1="$QT_MOC bnv_qt_test.h -o moc_bnv_qt_test.$ac_ext >/dev/null 2>/dev/null"
        { (eval echo "$as_me:$LINENO: \"$bnv_try_1\"") >&5
    (eval $bnv_try_1) 2>&5
-@@ -5921,7 +5921,8 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--#include <qglobal.h> #include <stdlib.h>
-+#include <qglobal.h>
-+#include <stdlib.h>
- int
- main ()
- {
