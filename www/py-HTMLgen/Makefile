@@ -15,6 +15,9 @@ DISTNAME=	HTMLgen
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python library for the generation of HTML documents
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2006-12-30
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
