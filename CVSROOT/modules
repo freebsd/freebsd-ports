@@ -10805,7 +10805,6 @@ panoptis	ports/net/panoptis
 panorama	ports/graphics/panorama
 panoramixext	ports/x11/panoramixext
 pantomime	ports/mail/pantomime
-pantomime-ssl	ports/mail/pantomime-ssl
 papercut	ports/news/papercut
 par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
