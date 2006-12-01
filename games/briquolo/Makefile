@@ -25,8 +25,6 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include \
-			--x-libraries=${X11BASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
