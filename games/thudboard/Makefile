@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thudboard
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.million.nl/file/
 
@@ -14,28 +14,27 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Discworld Boardgame Board
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/_xmlplus/sax/__init__.py:${PORTSDIR}/textproc/py-xml
+		${PYXML}
 
+NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-configure:
 	@${SED} -e "s#%%PREFIX%%#${PREFIX}# ; s#%%PYTHON_CMD%%#${PYTHON_CMD}#" \
 		${FILESDIR}/thudboard > ${WRKDIR}/thudboard.tmp
 
 do-build:
-	@${FIND} ${WRKSRC} -name "*.pyc" | ${XARGS} ${RM}
-	@${FIND} ${WRKSRC} \( -type f -or -type l \) | ${XARGS} ${CHMOD} 644
-	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/thudboard.tmp ${PREFIX}/bin/thudboard
 	@${MKDIR} ${DATADIR}
-	@${TAR} -C ${WRKSRC} --exclude="*.py.orig" --exclude="docs*" -cf - . | ${TAR} -C ${DATADIR} --unlink -xf -
-	@${INSTALL_SCRIPT} ${WRKDIR}/thudboard.tmp ${PREFIX}/bin/thudboard
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${TAR} -C ${WRKSRC}/docs/ -cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
-.endif
+	${INSTALL_DATA} ${WRKSRC}/*.py ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pyc ${DATADIR}
+	@${TAR} -C ${WRKSRC} -cf - docs koomvalley img | \
+		${TAR} -C ${DATADIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
+
 .include <bsd.port.mk>
