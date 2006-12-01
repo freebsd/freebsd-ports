@@ -20,9 +20,4 @@ PLIST_FILES=	bin/wbd
 WRKSRC=		${WRKDIR}/wbd
 MAKEFILE=	makefile
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,^CC.*=,CC ?=,' -e 's,^CFLAGS.*=,CFLAGS +=,' \
-		-e 's,/usr/X11R6,${X11BASE},g' \
-		${WRKSRC}/${MAKEFILE}
-
 .include <bsd.port.mk>
