@@ -68,7 +68,6 @@ include/rudiments/private/directoryincludes.h
 %%NOT4X%%include/rudiments/private/dtdincludes.h
 include/rudiments/private/dynamiclib.h
 include/rudiments/private/dynamiclibincludes.h
-include/rudiments/private/environment.h
 include/rudiments/private/environmentincludes.h
 include/rudiments/private/file.h
 include/rudiments/private/filedescriptor.h
@@ -197,7 +196,7 @@ include/rudiments/variablebuffer.h
 lib/librudiments.a
 lib/librudiments.la
 lib/librudiments.so
-lib/librudiments.so.0
+lib/librudiments.so.1
 libdata/pkgconfig/rudiments.pc
 %%DOCSDIR%%/classes/character.h.html
 %%DOCSDIR%%/classes/charstring.h.html

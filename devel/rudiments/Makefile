@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
@@ -23,7 +22,7 @@ CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLBASE}/include \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 		PTHREADLIB="${PTHREAD_LIBS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -31,12 +31,6 @@
  eval "PTHREADSTATIC=\"$STATIC\""
  if ( test -n "" )
  then
-@@ -30503,7 +30497,7 @@
- #define RUDIMENTS_VERSION "$RUDIMENTS_VERSION"
- _ACEOF
- 
--SONAME_VERSION_INFO="1:0:0"
-+SONAME_VERSION_INFO="0:0:0"
  
  
  
