@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Test/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Test5005compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestBuild.pm
@@ -33,7 +32,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestTrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestUtil.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Test/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
