@@ -18,6 +18,9 @@ COMMENT=	A Ruby binding to mnoGoSearch
 
 LIB_DEPENDS=	udmsearch.1:${PORTSDIR}/www/mnogosearch31
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2006-12-30
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
