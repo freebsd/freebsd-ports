@@ -5,7 +5,7 @@
  debian/rules
  
 -pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(libdir)/libdata/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libtorrent.pc
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive

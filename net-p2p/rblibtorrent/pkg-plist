@@ -196,13 +196,11 @@ include/libtorrent/udp_tracker_connection.hpp
 include/libtorrent/utf8.hpp
 include/libtorrent/version.hpp
 include/libtorrent/web_peer_connection.hpp
-lib/libdata/pkgconfig/libtorrent.pc
 lib/libtorrent.a
 lib/libtorrent.la
 lib/libtorrent.so
 lib/libtorrent.so.1
-@dirrm lib/libdata/pkgconfig
-@dirrm lib/libdata
+libdata/pkgconfig/libtorrent.pc
 @dirrm include/libtorrent/kademlia
 @dirrm include/libtorrent/aux_
 @dirrm include/libtorrent/asio/ssl/detail
