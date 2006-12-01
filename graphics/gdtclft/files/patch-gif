@@ -1,16 +1,338 @@
+This patch adds support for GIF, XPM, WBMP, and JPEG file formats, which
+are support by the underlying GD.
+
+GIF, JPEG, and WBMP formats are also added as _output_ formats.
+
+Also, in case of file-opening failure, a useful error string is
+returned.
+
+Use freely and get yourself a pademelon...
+
+	-mi (http://cafepress.com/buy/pademelon?pid=5934485)
+
 --- gdCmd.c	Fri Aug  4 17:11:05 2000
-+++ gdCmd.c	Fri Jul 27 16:22:18 2001
-@@ -65,4 +65,6 @@
++++ gdCmd.c	Fri Dec  1 01:12:23 2006
+@@ -19,4 +19,5 @@
+  */
+ 
++#include <errno.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -47,10 +48,10 @@
+ 
+ typedef  struct {
+-	char *cmd;
++	const char *cmd;
+ 	int (*f)();
+ 	int minargs, maxargs;
+ 	int subcmds;
+ 	int ishandle;
+-	char *usage;
++	const char *usage;
+ } cmdOptions;
+ 
+@@ -65,12 +66,33 @@
  	{"createFromPNG",	tclGdCreateCmd, 		1, 1,	0, 0,
  			"filehandle"},
 +	{"createFromGIF",	tclGdCreateCmd, 		1, 1,	0, 0,
 +			"filehandle"},
  	{"createFromGD",	tclGdCreateCmd, 		1, 1,	0, 0,
  			"filehandle"},
-@@ -432,4 +434,6 @@
- 		} else if (cmd[10] == 'X') {
- 			im = gdImageCreateFromXbm(filePtr);
-+		} else if (cmd[11] == 'I') {
-+			im = gdImageCreateFromGif(filePtr);
- 		} else {
- 			im = gdImageCreateFromGd(filePtr);
+ 	{"createFromXBM",	tclGdCreateCmd, 		1, 1,	0, 0,
+ 			"filehandle"},
++#ifdef NOX11
++	{"createFromXPM-NOT-AVAILABLE",	tclGdCreateCmd,		1, 1,	0, 0,
++			"filename"},
++#else
++	{"createFromXPM",	tclGdCreateCmd, 		1, 1,	0, 0,
++			"filename"},
++#endif
++	{"createFromJPG",	tclGdCreateCmd, 		1, 1,	0, 0,
++			"filehandle"},
++	{"createFromJPEG",	tclGdCreateCmd, 		1, 1,	0, 0,
++			"filehandle"},
++	{"createFromWBMP",	tclGdCreateCmd, 		1, 1,	0, 0,
++			"filehandle"},
+ 
+ 	{"destroy",			tclGdDestroyCmd,		1, 1,	0, 1,
+ 			"gdhandle"},
+ 
++	{"writeGIF",		tclGdWriteCmd,			2, 2,	0, 1,
++			"gdhandle filehandle"},
++	{"writeJPG",		tclGdWriteCmd,			2, 3,	0, 1,
++			"gdhandle filehandle ?quality?"},
++	{"writeJPEG",		tclGdWriteCmd,			2, 3,	0, 1,
++			"gdhandle filehandle ?quality?"},
+ 	{"writePNG",		tclGdWriteCmd,			2, 2,	0, 1,
+ 			"gdhandle filehandle"},
+@@ -79,4 +97,6 @@
+ 	{"writeGD",			tclGdWriteCmd,			2, 2,	0, 1,
+ 			"gdhandle filehandle"},
++	{"writeWBMP",		tclGdWriteCmd,			3, 3,	0, 1,
++			"gdhandle filehandle foreground"},
+ 
+ 	{"interlace",		tclGdInterlaceCmd,		1, 2,	0, 1,
+@@ -414,30 +434,67 @@
+ 		}
+ 	} else {
++		char *arg2 = Tcl_GetString(objv[2]);
+ 		fileByName = 0;  /* first try to get file from open channel */
+-		if (Tcl_GetOpenFile(interp, Tcl_GetString(objv[2]), 0, 1, &clientdata) == TCL_OK) {
+-			filePtr = (FILE *)clientdata;
+-		} else {
+-			/* Not a channel, or Tcl_GetOpenFile() not supported.
+-			 *   See if we can open directly.
+-			 */
+-			fileByName++;
+-			if ((filePtr = fopen(Tcl_GetString(objv[2]),"rb")) == NULL) {
++
++		if (cmd[10] == 'X' && cmd[11] == 'P' && cmd[12] == 'M')
++#ifdef NOX11
++			Tcl_SetResult(interp, "Support for XPM-files not "
++			    "compiled in");
++			return TCL_ERROR;
++#else
++			/* gdImageCreateFromXpm() takes fileNAME */
++			im = gdImageCreateFromXpm(arg2);
++#endif
++		else {
++			if (Tcl_GetOpenFile(interp, arg2, 0, 1, &clientdata)
++			    == TCL_OK) {
++				filePtr = (FILE *)clientdata;
++			} else {
++				/* Not a channel, or Tcl_GetOpenFile() not supported.
++				 *   See if we can open directly.
++				 */
++				fileByName++;
++				if ((filePtr = fopen(arg2, "rb")) == NULL) {
++					Tcl_AppendResult(interp,
++					    "could not open :", arg2, "': ",
++					    strerror(errno), NULL);
++					return TCL_ERROR;
++				}
++				Tcl_ResetResult(interp);
++			}
++
++			/* Read PNG, XBM, or GD file? */
++			switch (cmd[10]) {
++			case 'P':
++				im = gdImageCreateFromPng(filePtr);
++				break;
++			case 'X':
++				im = gdImageCreateFromXbm(filePtr);
++				break;
++			case 'G':
++				im = cmd[11] == 'I' ?
++				    gdImageCreateFromGif(filePtr) :
++				    gdImageCreateFromGd(filePtr);
++				break;
++			case 'J':
++				im = gdImageCreateFromJpeg(filePtr);
++				break;
++			case 'W':
++				im = gdImageCreateFromWBMP(filePtr);
++				break;
++			default:
++				Tcl_AppendResult(interp, cmd + 10,
++				    "unrecognizable format requested", NULL);
+ 				return TCL_ERROR;
+ 			}
+-			Tcl_ResetResult(interp);
+-		}
+-		/* Read PNG, XBM, or GD file? */
+-		if (cmd[10] == 'P') {
+-			im = gdImageCreateFromPng(filePtr);
+-		} else if (cmd[10] == 'X') {
+-			im = gdImageCreateFromXbm(filePtr);
+-		} else {
+-			im = gdImageCreateFromGd(filePtr);
+-		}
+-		if (fileByName) {
+-			fclose(filePtr);
++			if (fileByName) {
++				fclose(filePtr);
++			}
+ 		}
++
+ 		if (im == NULL) {
+-			Tcl_SetResult(interp,"GD unable to read image file", TCL_STATIC);
++			Tcl_AppendResult(interp,
++			    "GD unable to read image file `", arg2, "' as ",
++			    cmd + 10, NULL);
+ 			return TCL_ERROR;
+ 		}
+@@ -472,15 +529,41 @@
+ 	FILE *filePtr;
+ 	ClientData clientdata;
+-	char *cmd;
++	const char *cmd, *fname;
+ 	int fileByName;
++	int arg4;
+ 
+ 	cmd = Tcl_GetString(objv[1]);
++	if (cmd[5] == 'J' || cmd[5] == 'W') {
++		/* JPEG and WBMP expect an extra (integer) argument */
++		if (argc < 5) {
++			if (cmd[5] == 'J')
++				arg4 = -1; /* default quality-level */
++			else {
++				Tcl_SetResult(interp, "WBMP saving requires"
++				    " the foreground pixel value", TCL_STATIC);
++				return TCL_ERROR;
++			}
++		} else if (Tcl_GetIntFromObj(interp, objv[4], &arg4) != TCL_OK)
++			return TCL_ERROR;
++
++		if (cmd[5] == 'J' && argc > 4 && (arg4 > 100 || arg4 < 1)) {
++			Tcl_SetObjResult(interp, objv[4]);
++			Tcl_AppendResult(interp, ": JPEG image quality, if "
++			    "specified, must be an integer from 1 to 100, "
++			    "or -1 for default", NULL);
++			return TCL_ERROR;
++		}
++		/* XXX no error-checking for the WBMP case here */
++	}
++
+ 	/* Get the image pointer. */
+ 	im = *(gdImagePtr *)gdHandleXlate(interp, gdData->handleTbl, 
+ 		Tcl_GetString(objv[2]));
+ 
++	fname = Tcl_GetString(objv[3]);
++
+ 	/* Get the file reference. */
+ 	fileByName = 0;  /* first try to get file from open channel */
+-	if (Tcl_GetOpenFile(interp, Tcl_GetString(objv[3]), 1, 1, &clientdata) == TCL_OK) {
++	if (Tcl_GetOpenFile(interp, fname, 1, 1, &clientdata) == TCL_OK) {
+ 		filePtr = (FILE *)clientdata;
+ 	} else {
+@@ -489,5 +572,7 @@
+ 		 */
+ 		fileByName++;
+-		if ((filePtr = fopen(Tcl_GetString(objv[3]),"wb")) == NULL) {
++		if ((filePtr = fopen(fname, "wb")) == NULL) {
++			Tcl_AppendResult(interp, "could not open :", fname,
++			    "': ", strerror(errno), NULL);
+ 			return TCL_ERROR;
+ 		}
+@@ -496,8 +581,20 @@
+ 
+ 	/* Do it. */
+-	if (cmd[5] == 'P') {
++	switch (cmd[5]) {
++	case 'P':
+ 		gdImagePng(im, filePtr);
+-	} else {
+-		gdImageGd(im, filePtr);
++		break;
++	case 'G':
++		if (cmd[6] == 'I')
++			gdImageGif(im, filePtr);
++		else
++			gdImageGd(im, filePtr);
++		break;
++	case 'J':
++		gdImageJpeg(im, filePtr, arg4);
++		break;
++	case 'B':
++		gdImageWBMP(im, arg4, filePtr);
++		break;
+ 	}
+ 	if (fileByName) {
+--- gdtclft.n	Fri Aug  4 17:11:41 2000
++++ gdtclft.n	Fri Dec  1 01:59:32 2006
+@@ -12,16 +12,6 @@
+    Thomas Boutell's Gd package provides a convenient way to generate
+    PNG images with a C program. If you, like me, prefer Tcl for CGI
+-   applications, you'll want my TCL GD extension. You can get it by
+-   anonymous FTP from ftp://guraldi.hgp.med.umich.edu/pub/gdtcl.shar.
+-   
+-   Here's a quick overview of the package.
+-     * Overview
+-     * Installation
+-     * Reference
+-     * Examples
+-          + gdsample -- sample program written in Tcl.
+-          + Gddemo -- demo program written in Tcl.
+-          + gdshow -- procedure to display an image.
+-            
++   applications, you'll want my TCL GD extension.
++
+                        A TCL INTERFACE TO THE GD PACKAGE
+                                        
+@@ -34,25 +24,15 @@
+ 
+     TrueType font support using the FreeType library was added by
+-    John Ellson (ellson@graphviz.org)
++    John Ellson (ellson@graphviz.org).
+ 
+-    Latest sources available from:
+-
+-        http://www.graphviz.org/pub/
+-   
++    FreeBSD port maintained by Mikhail Teterin (mi@aldan.algebra.com).
+    
+ Overview
+ 
+    This package provides a simple Tcl interface to the gd (PNG drawing)
+-   package, version 1.1. It includes an interface to all the gd functions
++   package. It includes an interface to most of the gd functions
+    and data structures from Tcl commands.
+    
+-   
+-   
+-Installation
+-
+-      ./configure
+-    make
+-    make install
+-   
++ 
+ Reference
+ 
+@@ -70,20 +50,28 @@
+           Return a handle to a new gdImage that is width X height.
+           
+-   gd createFromPNG <filehandle>
+-          
+-   gd createFromGD <filehandle>
+-          
+-   gd createFromXBM <filehandle>
++   gd createFromGD <file>
++   gd createFromGIF <file>
++   gd createFromJPG <file>
++   gd createFromPNG <file>
++   gd createFromWBMP <file>
++   gd createFromXBM <file>
++   gd createFromXPM <filename>
++ 
+           Return a handle to a new gdImage created by reading a PNG
+-          (resp. GD or XBM) image from the file open on filehandle.
++          (resp. GD or XBM) image from the <file>, which is either
++          a TCl filehandle, or a filename (except for XPM, which only
++          accepts filenames).
+           
+    gd destroy <gdhandle>
+           Destroy the gdImage referred to by gdhandle.
+           
+-   gd writePNG <gdhandle> <filehandle>
++   gd writeGD <gdhandle> <file>
++   gd writeGIF <gdhandle> <file>
++   gd writeJPG <gdhandle> <file> ?quality?
++   gd writePNG <gdhandle> <file>
++   gd writeWBMP <gdhandle> <file> fgpixel
+           
+-   gd writeGD <gdhandle> <filehandle>
+-          Write the image in gdhandle to filehandle as a PNG (resp. GD)
+-          file.
++          Write the image in gdhandle to <file> (filehandle or filename)
++          in one of the specified formats.
+ 
+    gd writePNGvar <gdhandle> <varname>
+@@ -331,2 +319,7 @@
+   }
+ }
++
++.SH SEE ALSO
++	See also -- you will find Thomas Boutell's documentation for the
++	underlying GD library quite useful, especially, if you are dealing
++	with WBMP format.

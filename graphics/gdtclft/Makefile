@@ -7,7 +7,7 @@
 
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics tcl${TCL_DVER}
 MASTER_SITES=	http://www.graphviz.org/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -27,6 +27,9 @@ MAKE_ENV=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
 ALL_TARGET=	all
 
 MANN=		gdtclft.n
+
+post-patch:
+	${REINPLACE_CMD} -Ee 's,[[:space:]]+$$,,' ${WRKSRC}/${MANN}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MANN} ${PREFIX}/man/mann/
