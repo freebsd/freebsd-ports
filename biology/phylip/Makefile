@@ -23,7 +23,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
 		DC="${CC} -DX -I${X11BASE}/include ${CFLAGS}" \
-		GLIBS="-L${X11BASE}/lib -lX11 -lm"
+		DLIBS="-L${X11BASE}/lib -lX11 -lXaw -lXt"
 
 PORTDOCS=	*
 
