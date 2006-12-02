@@ -16174,6 +16174,7 @@ zh-unzip	ports/chinese/unzip
 zh-ve		ports/chinese/ve
 zh-vflib	ports/chinese/vflib
 zh-vim-scdoc	ports/chinese/vim-scdoc
+zh-wangttf	ports/chinese/wangttf
 zh-wenju	ports/chinese/wenju
 zh-xcin		ports/chinese/xcin
 zh-xemacs	ports/chinese/xemacs
