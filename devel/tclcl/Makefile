@@ -19,7 +19,8 @@ LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		otcl:${PORTSDIR}/lang/otcl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 .include <bsd.port.pre.mk>
 
