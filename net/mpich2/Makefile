@@ -19,8 +19,6 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A portable implementation of MPI-1 and MPI-2
 
-BROKEN=		Incorrect pkg-plist
-
 #-----------------------------------------------------------------------
 # You may define these options:
 #
@@ -66,16 +64,17 @@ RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""
 .endif
 
-.if defined(WITHOUT_F90)
+#.if defined(WITHOUT_F90)
 CONFIGURE_ARGS+=	--disable-f90
 PLIST_SUB+=	F90="@comment "
-.else
-F90=		gfortran41
-BUILD_DEPENDS+=	${F90}:${PORTSDIR}/lang/gfortran
-F90FLAGS+=	-ff2c
-CONFIGURE_ENV+=	F90=${F90} F90FLAGS=${F90FLAGS}
-PLIST_SUB+=	F90=""
-.endif
+#.else
+# Disabled ATM
+#F90=		gfortran41
+#BUILD_DEPENDS+=	${F90}:${PORTSDIR}/lang/gfortran
+#F90FLAGS+=	-ff2c
+#CONFIGURE_ENV+=	F90=${F90} F90FLAGS=${F90FLAGS}
+#PLIST_SUB+=	F90=""
+#.endif
 
 .if defined(WITH_SMPD)
 CONFIGURE_ARGS+=	--with-pmi=smpd --with-pm=smpd
