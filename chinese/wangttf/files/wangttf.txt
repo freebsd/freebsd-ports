@@ -1,0 +1,101 @@
+  第一次修改： Seventeen <seventeen@cle.linux.org.tw> 20040305.
+  Version 040305。
+  加入 GNU GPL 使用許可證內容。
+
+  第二次修改： Edward G.J. Lee <edt1023@cle.linux.org.tw> 20040326.
+  Version 040326。修改紀錄請參考 Changes.txt。
+
+  第三次修改： Edward G.J. Lee <edt1023@cle.linux.org.tw> 20040724.
+  Version 1.3。修改紀錄請參考 Changes.txt。
+
+
+  wt0*.ttf  繁體 Unicode 字型，僅含 Big-5 字集。
+  wp*.ttf   繁體注音 Unicode 字型，僅含 Big-5 字集。
+  wtcc*.ttf 繁體海報體 Unicode 字型，僅含 Big-5 字集。
+  wthc*.ttf 繁體鋼筆行楷 Unicode 字型，僅含 Big-5 字集。
+  wtg-*.ttf 繁體俏皮 Unicode 字型，僅含 Big-5 字集。
+  wts*.ttf  繁簡體 Unicode 字型，含繁簡 Big-5/GB2312 字集。
+            可用於 Big-5 繁體，會立即轉換成簡體來表現。
+
+  WCL 目錄為王漢宗博士以前捐贈的十套 WCL 系列 TTF 字型。修改自
+  螢火飛（firefly）所修改過的版本。目前標記之版本號為 Version 1.3。
+  全部的王博士的自由字型改採統一的版本號。
+
+  http://firefly.idv.tw/setfont-xft/freefonts/zh-tw/
+
+
+  FOP font metrics，這是供 FOP 使用的字型描述檔:
+
+  FOP-wangnew.tar.gz
+  WCL/FOP-wcl.tar.gz
+
+
+  Type1 目錄為供 LaTeX-CJK/dvips/pdflatex/dvipdfm 使用的中文 Type1
+  字型，由王漢宗博士 TTF 字型，經 ttf2pt1 轉換而成。CJK/FOP 字型名
+  稱對照表如下：
+
+  TTF 字型檔名   中文字體      PostScript 名            CJK/FOP 字型名
+
+  wt001.ttf      細明          HanWangMingLight           hwml
+  wt002.ttf      中明          HanWangMingMedium          hwmm
+  wt003.ttf      粗明          HanWangMingBold            hwmb
+  wt004.ttf      特明          HanWangMingHeavy           hwmh
+  wt005.ttf      超明          HanWangMingBlack           hwmbk
+  wt006.ttf      細圓          HanWangYenLight            hwyl
+  wt009.ttf      特圓          HanWangYenHeavy            hwyh
+  wt011.ttf      細黑          HanWangHeiLight            hwhl
+  wt014.ttf      特黑          HanWangHeiHeavy            hwhh
+  wt021.ttf      中隸書        HanWangLiSuMedium          hwlsm
+  wt024.ttf      中仿宋        HanWangFangSongMedium      hwfsm
+  wt028.ttf      疊圓          HanWangKanDaYan            hwkdy
+  wt034.ttf      勘流亭        HanWangKanTan              hwkt
+  wt040.ttf      綜藝體        HanWangZonYi               hwzy
+  wt064.ttf      顏體          HanWangYanKai              hwyk
+  wt071.ttf      中行書        HanWangShinSuMedium        hwssm
+  wtcc02.ttf     酷儷海報      HanWangCC02                hwcc02
+  wtcc15.ttf     正海報        HanWangCC15                hwcc15
+  wthc06.ttf     鋼筆行楷      HanWangGB06                hwhc
+  wtg-06cut1.ttf 超黑俏皮動物  HanWangGSolid06cut1        hwgsc1
+  wp010-05.ttf   中明注音體    HanWangMingMediumChuIn     hwmmci
+  wp110-05.ttf   中明破音字1   HanWangMingMediumChuIn1    hwmmci1
+  wp210-05.ttf   中明破音字2   HanWangMingMediumChuIn2    hwmmci2
+  wp310-05.ttf   中明破音字3   HanWangMingMediumChuIn3    hwmmci3
+  wp010-08.ttf   中楷注音體    HanWangKaiMediumChuIn      hwkmci
+  wp110-08.ttf   中楷破音字1   HanWangKaiMediumChuIn1     hwkmci1
+  wp210-08.ttf   中楷破音字2   HanWangKaiMediumChuIn2     hwkmci2
+  wp310-08.ttf   中楷破音字3   HanWangKaiMediumChuIn3     hwkmci3
+  wts11.ttf      粗楷體簡體    HanWang KaiBold-Gb5        wts11
+  wts43.ttf      中魏碑簡體    HanWang WeiBeiMedium-Gb5   wts43
+  wts47.ttf      中仿宋簡體    HanWang FangSongMedium-Gb5 wts47
+  wts55.ttf      細新宋簡體    HanWang SinSongThin-Gb5    wts55
+
+  WCL-01.ttf     波浪體        HanWangWCL01               wcl01
+  WCL-02.ttf     特明體        HanWangWCL02               wcl02
+  WCL-03.ttf     波卡體空陰    HanWangWCL03               wcl03
+  WCL-04.ttf     綜藝體雙空陰  HanWangWCL04               wcl04
+  WCL-05.ttf     標楷體空心    HanWangWCL05               wcl05
+  WCL-06.ttf     仿宋體        HanWangWCL06               wcl06
+  WCL-07.ttf     粗鋼體        HanWangWCL07               wcl07
+  WCL-08.ttf     粗黑體實陰    HanWangWCL08               wcl08
+  WCL-09.ttf     粗圓體雙空    HanWangWCL09               wcl09
+  WCL-10.ttf     海報體半天水  HanWangWCL10               wcl10
+
+
+  所有的字型 sample 可參考 sample-*.pdf：
+
+  sample-ooo.pdf   OO.o 的範例
+  sample-fop.pdf   FOP 的範例
+  sample-ltx.pdf   LaTeX 的範例
+  sample-1.png     PNG 圖檔第一頁
+  sample-2.png     PNG 圖檔第二頁
+
+
+
+
+CLE Project 字型維護：
+
+Seventeen <seventeen@cle.linux.org.tw>
+Edward G.J. Lee <edt1023@cle.linux.org.tw>
+
+ftp://cle.linux.org.tw/pub2/fonts/wangfonts
+
