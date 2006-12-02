@@ -40,9 +40,9 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${PREFIX}/bin
-	${INSTALL_DATA}    ${WRKSRC}/Nxtvepg.ad ${PREFIX}/lib/X11/app-defaults/Nxtvepg
-	${INSTALL_MAN}     ${WRKSRC}/nxtvepg.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${X11BASE}/bin
+	${INSTALL_DATA}    ${WRKSRC}/Nxtvepg.ad ${X11BASE}/lib/X11/app-defaults/Nxtvepg
+	${INSTALL_MAN}     ${WRKSRC}/nxtvepg.1 ${X11BASE}/man/man1
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
