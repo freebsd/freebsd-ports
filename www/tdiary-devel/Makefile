@@ -7,6 +7,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
@@ -14,11 +15,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
+PATCH_SITES=	http://www.tdiary.org/download/
+PATCHFILES=	tdiary.20061126.patch
+
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 NO_BUILD=	yes
-CONFLICTS?=	ja-tdiary-devel-[0-9]*
+CONFLICTS?=	tdiary-[0-9]* \
+		ja-tdiary-[0-9]* \
+		ja-tdiary-devel-[0-9]*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RUBY=	yes
 RUBY_VER=	1.8
@@ -33,7 +39,7 @@ PLIST_FILES=	${TDIARYDIR:S|${LOCALBASE}/||}/tdiaryinst.rb
 TDIARYDIR=	${EXAMPLESDIR}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.if  !defined(TDIARY_LANG)
+.if !defined(TDIARY_LANG) || ${TDIARY_LANG} != ja
 TDIARY_LANG=	en
 .endif
 .if defined(WITH_TDIARY_UCONV)
@@ -45,12 +51,16 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VERSION_CODE} < 182
-IGNORE=		needs ruby 1.8.2 or higher, install lang/ruby18 and try again
+IGNORE=		only works with Ruby 1.8.2 or later
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -type f -exec ${RM} -f {} \;
 
 do-install:
 	@-${MKDIR} ${TDIARYDIR}
-	@${SED} -e 's,@@@@PREFIX@@@@,${PREFIX},g' \
+	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
+		-e 's,@@@@PREFIX@@@@,${PREFIX},g' \
 		-e 's,@@@@TDIARY@@@@,${PORTNAME}${PKGNAMESUFFIX},g' \
 		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
 		${FILESDIR}/tdiaryinst.rb.in > ${TDIARYDIR}/tdiaryinst.rb
