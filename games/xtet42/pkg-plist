@@ -1,6 +1,6 @@
 bin/xtet42
-lib/X11/xtet42/.xtet42.hiscore.single
-lib/X11/xtet42/.xtet42.hiscore
-lib/X11/xtet42/.xtet42.unlock
-lib/X11/xtet42/.xtet42.log
-@dirrm lib/X11/xtet42
+%%DATADIR%%/.xtet42.hiscore.single
+%%DATADIR%%/.xtet42.hiscore
+%%DATADIR%%/.xtet42.unlock
+%%DATADIR%%/.xtet42.log
+@dirrm %%DATADIR%%
