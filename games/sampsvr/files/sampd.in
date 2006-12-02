@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: sampd
+# REQUIRE: NETWORKING
+#
+# Add the following line to /etc/rc.conf[.local] to enable sampd
+#
+# sampd_enable (bool):		Set to "NO" by default.
+#                               Set it to "YES" to enable sampd.
+
+. %%RC_SUBR%%
+
+name="sampd"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${sampd_enable="NO"}
+: ${sampd_chdir="%%SAMPDIR%%"}
+
+command="%%SAMPDIR%%/sampd"
+command_args="&"
+required_files="%%SAMPDIR%%/server.cfg"
+start_precmd="sampd_prestart"
+stop_precmd="sampd_prestop"
+
+sampd_prestart() {
+    if ! kldstat -v | grep -E 'linux(aout|elf)' > /dev/null; then
+	err 1 "Linux support required"
+    fi
+}
+		
+sampd_prestop() {
+    rc_pid=`echo $rc_pid | awk '{print $1}'`
+}
+		    
+run_rc_command "$1"
