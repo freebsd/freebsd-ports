@@ -7,12 +7,14 @@
 
 PORTNAME=	savage
 PORTVERSION=	2.00e
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.happypuppy.com/s2games/:full \
 		http://www.notforidiots.com/autoupdater/:patch
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME:S/s/S/}_with_sep3t.run:full \
-		SEP-3T_3T+-r2.tar.gz:patch
+		SEP-3T_3T+-r2.tar.gz:patch \
+		SEP-3T+-Crash-Hotfix-Linux.tar.gz:patch
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -28,20 +30,21 @@ NO_PACKAGE=	Package will be 350MB, set FORCE_PACKAGE if you really want it
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 SAVAGEDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 
-SUB_FILES=	pkg-message savage savage_editor
+SUB_FILES=	pkg-message savage savage_editor savage_server
 PLIST_SUB+=	SAVAGEDIR="${SAVAGEDIR}"
 SUB_LIST+=	SAVAGEDIR="${PREFIX}/${SAVAGEDIR}"
 
-OPTIONS=	NVIDIA	"Install support for nvidia"	off
+OPTIONS=	NVIDIA_GL	"Install support for nvidia"	off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NVIDIA)
-.	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.if defined(WITH_NVIDIA_GL)
+.	if !exists(${LINUXBASE}/usr/X11R6/lib/libGL.so.1)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
+		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
 .	endif
 .else
-.	if !exists(${LINUXBASE}/usr/X11R6/lib/libGL.so.1)
+.	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 .	endif
 .endif
@@ -62,6 +65,7 @@ do-extract:
 
 # Extract SEP patch
 	@${TAR} xfz ${_DISTDIR}/SEP-3T_3T+-r2.tar.gz --directory ${WRKSRC}
+	@${TAR} xfz ${_DISTDIR}/SEP-3T+-Crash-Hotfix-Linux.tar.gz --directory ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${SAVAGEDIR}
@@ -78,11 +82,11 @@ do-install:
 	@cd ${WRKSRC}/libs && \
 		${FIND} * -type f -exec ${INSTALL_PROGRAM} "{}" "${PREFIX}/${SAVAGEDIR}/libs/{}" \;
 
-.for FILE in silverback.bin update
+.for FILE in silverback.bin sep_dedicated.bin update
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/${SAVAGEDIR}
 .endfor
 
-.for FILE in savage savage_editor
+.for FILE in savage savage_editor savage_server
 	${INSTALL_SCRIPT} ${WRKDIR}/${FILE} ${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
 .endfor
 
