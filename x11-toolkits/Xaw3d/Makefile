@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A 3-D Athena Widget set that looks like Motif
 
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d

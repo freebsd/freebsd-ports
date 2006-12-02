@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.metzlerbros.org/dvb/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Remultiplex an MPEG2 TS into a PS for DVD
 
 USE_GETOPT_LONG=	yes
