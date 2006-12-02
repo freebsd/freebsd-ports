@@ -27,6 +27,9 @@ WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}
 MAN1=		tleenx2.1
 PORTDOCS=	README gg.txt sms.txt
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/src/Makefile.in
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
