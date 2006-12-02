@@ -212,6 +212,7 @@
     SUBDIR += sdl_pango
     SUBDIR += slingshot
     SUBDIR += soqt
+    SUBDIR += swt
     SUBDIR += swt31
     SUBDIR += tile
     SUBDIR += tix
