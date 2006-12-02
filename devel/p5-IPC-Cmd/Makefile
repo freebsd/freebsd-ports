@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IPC-Cmd
-PORTVERSION=	0.25
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IPC
@@ -17,8 +17,8 @@ COMMENT=	IPC::Cmd - finding and running system commands made easy
 
 RUN_DEPENDS=	${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		${SITE_PERL}/Module/Load/Conditional.pm:${PORTSDIR}/devel/p5-Module-Load-Conditional \
-		${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
-		${SITE_PERL}/Params/Check.pm:${PORTSDIR}/devel/p5-Params-Check
+		p5-IPC-Run>=0.55:${PORTSDIR}/devel/p5-IPC-Run \
+		p5-Params-Check>=0.20:${PORTSDIR}/devel/p5-Params-Check
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes

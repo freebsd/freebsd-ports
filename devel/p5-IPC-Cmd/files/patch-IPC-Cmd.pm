@@ -1,21 +1,13 @@
---- lib/IPC/Cmd.pm	Wed Sep  6 17:34:32 2006
-+++ lib/IPC/Cmd.pm	Thu Sep 21 13:15:15 2006
-@@ -260,8 +260,7 @@ sub _open3_run {
-     ### child process. This stops us from having to pump input
-     ### from ourselves to the childprocess. However, we will need
-     ### to revive the FH afterwards, as IPC::Open3 closes it.
--    my $save_stdin;
--    open $save_stdin, "<&STDIN" or (
-+    open IPC_CMD_SAVE_STDIN, "<&STDIN" or (
-         warn(loc("Could not dup STDIN: %1",$!)),
-         return
-     );
-@@ -317,7 +316,7 @@ sub _open3_run {
-     
-     ### restore STDIN after duping, or STDIN will be closed for
-     ### this current perl process!
--    open STDIN, "<&", $save_stdin or (
-+    open STDIN, "<& IPC_CMD_SAVE_STDIN" or (
-         warn(loc("Could not restore STDIN: %1", $!)),
-         return
-     );        
+$Id$
+
+--- lib/IPC/Cmd.pm.orig	Sat Dec  2 15:55:55 2006
++++ lib/IPC/Cmd.pm	Sat Dec  2 15:56:52 2006
+@@ -597,7 +597,7 @@ sub _system_run { 
+             ### we should re-open this filehandle right now, not
+             ### just dup it
+             if( $redir eq '>&' ) {
+-                open( $fh, '>', File::Spec->devnull ) or (
++                open( $fh, '> ' . File::Spec->devnull ) or (
+                     Carp::carp(loc("Could not reopen '$name': %1", $!)),
+                     return
+                 );
