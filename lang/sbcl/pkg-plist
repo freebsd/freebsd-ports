@@ -28,7 +28,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/asdf/missing-bits-in-implementation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/ANSI-Conformance.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Accessing-Foreign-Values.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Accurate-Profiler.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Additional-Distributed-Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Automatic-Recompilation-of-Stale-Fasls.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Beyond-the-ANSI-Standard.html
@@ -68,6 +67,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Declarations.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Defining-Constants.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Defining-Foreign-Types.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Deterministic-Profiler.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Development-Tools.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Diagnostic-Messages.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Diagnostic-Severity.html
@@ -245,6 +245,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dprofile_003aprofile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dprofile_003aunprofile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dsprof_003awith_002dprofiling.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dsprof_003awith_002dsampling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dthread_003awith_002dmutex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dthread_003awith_002drecursive_002dlock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Metaobject-Protocol.html
@@ -389,8 +390,6 @@ lib/sbcl/sb-bsd-sockets/inet.fasl
 lib/sbcl/sb-bsd-sockets/inet.lisp
 lib/sbcl/sb-bsd-sockets/local.fasl
 lib/sbcl/sb-bsd-sockets/local.lisp
-lib/sbcl/sb-bsd-sockets/malloc.fasl
-lib/sbcl/sb-bsd-sockets/malloc.lisp
 lib/sbcl/sb-bsd-sockets/misc.fasl
 lib/sbcl/sb-bsd-sockets/misc.lisp
 lib/sbcl/sb-bsd-sockets/name-service.fasl
@@ -489,7 +488,7 @@ lib/sbcl/sb-rotate-byte/sb-rotate-byte.asd
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.fasl
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.texinfo
 lib/sbcl/sb-rotate-byte/test-passed
-lib/sbcl/sb-rotate-byte/x86-vm.fasl
+%%I386_ONLY%%lib/sbcl/sb-rotate-byte/x86-vm.fasl
 lib/sbcl/sb-rotate-byte/x86-vm.lisp
 lib/sbcl/sb-rt/.cvsignore
 lib/sbcl/sb-rt/Makefile
