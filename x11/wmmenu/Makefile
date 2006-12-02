@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.fcoutant.freesurf.fr/download/
 MAINTAINER=	karlj000@unbc.ca
 COMMENT=	A popup menu of icons that launch programs for the WindowMaker dock
 
-LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp:install
+LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
