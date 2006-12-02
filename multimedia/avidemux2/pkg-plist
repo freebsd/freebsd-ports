@@ -1,1 +1,17 @@
 bin/avidemux2
+share/locale/es/LC_MESSAGES/avidemux.mo
+share/locale/fr/LC_MESSAGES/avidemux.mo
+share/locale/ru/LC_MESSAGES/avidemux.mo
+share/locale/cs/LC_MESSAGES/avidemux.mo
+share/locale/klingon/LC_MESSAGES/avidemux.mo
+@dirrmtry share/locale/klingon/LC_MESSAGES
+@dirrmtry share/locale/klingon
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+
