@@ -42,6 +42,7 @@ OPTIONS=	X11 "Build Boinc Manager GUI" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
+USE_XLIB=	yes
 USE_WX=		2.6
 WX_CONF_ARGS=	absolute
 CPPFLAGS+=		-I${X11BASE}/include
