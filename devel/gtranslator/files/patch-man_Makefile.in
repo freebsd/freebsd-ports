@@ -1,0 +1,25 @@
+--- man/Makefile.in.orig	Fri Dec  1 23:20:06 2006
++++ man/Makefile.in	Fri Dec  1 23:20:40 2006
+@@ -185,8 +185,8 @@
+ gtranslator_man_dir = $(mandir)/man1
+ 
+ gtranslator_man__DATA = \
+-	gtranslator.1.gz \
+-	pozilla.sh.1.gz
++	gtranslator.1 \
++	pozilla.sh.1
+ 
+ 
+ CLEANFILES = $(gtranslator_man__DATA)
+@@ -357,11 +357,6 @@
+ 	uninstall-gtranslator_man_DATA uninstall-info-am
+ 
+ 
+-gtranslator.1.gz: gtranslator.1
+-	gzip -9 < gtranslator.1 > gtranslator.1.gz
+-
+-pozilla.sh.1.gz: $(srcdir)/pozilla.sh.1
+-	gzip -9 < $(srcdir)/pozilla.sh.1 > pozilla.sh.1.gz
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
