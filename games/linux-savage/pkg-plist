@@ -1,5 +1,6 @@
 bin/linux-savage
 bin/linux-savage_editor
+bin/linux-savage_server
 %%SAVAGEDIR%%/agp_error.txt
 %%SAVAGEDIR%%/eula.txt
 %%SAVAGEDIR%%/game/CTF.cfg
@@ -302,6 +303,7 @@ bin/linux-savage_editor
 %%SAVAGEDIR%%/logo.png
 %%SAVAGEDIR%%/scripts.log
 %%SAVAGEDIR%%/silverback.bin
+%%SAVAGEDIR%%/sep_dedicated.bin
 %%SAVAGEDIR%%/update
 %%SAVAGEDIR%%/updater/lastpatch.txt
 %%SAVAGEDIR%%/updater/patchindex.txt
