@@ -44,6 +44,10 @@ PKGNAMESUFFIX=	-nox11
 USE_XPM=	yes
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/Makefile ${WRKSRC}/Makefile_api
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin/ploticus
 	@${MKDIR} ${DATADIR}
