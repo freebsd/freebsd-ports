@@ -1,6 +1,6 @@
---- HtmlOptionState.cpp.old	Sun Jul 23 01:47:29 2000
-+++ HtmlOptionState.cpp	Sun Jul 23 01:47:43 2000
-@@ -17,6 +17,9 @@
+--- HtmlOptionState.cpp.orig	Fri Jul 14 12:58:22 2000
++++ HtmlOptionState.cpp	Fri Dec  1 22:39:45 2006
+@@ -17,11 +17,15 @@
  //	along with this program; if not, write to the Free Software
  //	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  
@@ -10,3 +10,9 @@
  #include "HtmlOptionState.h"
  #include <fstream>
  
+ using std::ifstream;
+ using std::ofstream;
++using std::ios;
+ 
+ HtmlOptionState* HtmlOptionState::instance = 0;
+ HtmlOptionState* HtmlOptionState::Instance()
