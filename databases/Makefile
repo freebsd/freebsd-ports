@@ -40,6 +40,7 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += edb
+    SUBDIR += emma
     SUBDIR += erlang-mysql
     SUBDIR += erserver
     SUBDIR += evolution-data-server
