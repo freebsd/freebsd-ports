@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.4
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/				\
 		ftp://ftp.planetmirror.com/pub/horde/kronolith/			\
