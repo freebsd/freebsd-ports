@@ -18,7 +18,10 @@ USE_XPM=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-shaping
+CONFIGURE_ARGS=	--enable-shaping \
+		--with-xpm \
+		--with-xpm-includes=${LOCALBASE}/include \
+		--with-xpm-library=${LOCALBASE}/lib
 
 MAN1=	asmail.1x
 MAN5=	asmailrc.5x
