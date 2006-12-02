@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
@@ -56,7 +55,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-nls \
 		--with-gettext-includes=${LOCALBASE}/include \
