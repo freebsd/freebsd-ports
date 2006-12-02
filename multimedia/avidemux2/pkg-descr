@@ -5,7 +5,7 @@ for cutting without re-encoding.  Has the ability to re-encode and re-sample.
 Utilizes ECMAScript (aka. Javascript) to provide batch scripting and
 processing support.
 
-WWW: http://fixounet.free.fr/avidemux/
+WWW: http://avidemux.org/
 
 - Anish Mistry
 amistry@am-productions.biz
