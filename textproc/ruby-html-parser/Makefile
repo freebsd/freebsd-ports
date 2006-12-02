@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML-parser package for Ruby
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-01
+
 USE_RUBY=	yes
 
 NO_BUILD=	yes
