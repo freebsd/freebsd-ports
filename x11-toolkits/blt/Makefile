@@ -33,7 +33,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tcllibs=${LOCALBASE}/lib/ \
 		--with-tklibs=${LOCALBASE}/lib/ \
 		--with-tclincls=${LOCALBASE}/include/tcl${TK_VER} \
-		--with-tkincls=${LOCALBASE}/include/tk${TK_VER}
+		--with-tkincls=${LOCALBASE}/include/tk${TK_VER} \
+		--x-libraries=${X11BASE}/lib \
+		--x-includes=${X11BASE}/include
 INSTALLS_SHLIB=	yes
 
 TK_VER?=	8.4
