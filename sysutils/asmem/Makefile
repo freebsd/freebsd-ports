@@ -17,8 +17,8 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \
-		--with-xpm-includes=${LOCALBASE}/include \
-		--with-xpm-library=${LOCALBASE}/lib
+		--with-xpm-includes=${X11BASE}/include \
+		--with-xpm-library=${X11BASE}/lib
 
 MAN1=		asmem.1
 PLIST_FILES=	bin/asmem

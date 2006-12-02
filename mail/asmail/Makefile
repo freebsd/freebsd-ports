@@ -20,8 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shaping \
 		--with-xpm \
-		--with-xpm-includes=${LOCALBASE}/include \
-		--with-xpm-library=${LOCALBASE}/lib
+		--with-xpm-includes=${X11BASE}/include \
+		--with-xpm-library=${X11BASE}/lib
 
 MAN1=	asmail.1x
 MAN5=	asmailrc.5x
