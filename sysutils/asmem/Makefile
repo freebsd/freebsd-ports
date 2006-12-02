@@ -16,6 +16,9 @@ COMMENT=	An AfterStep look-n-feel memory utilization monitor
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-xpm \
+		--with-xpm-includes=${LOCALBASE}/include \
+		--with-xpm-library=${LOCALBASE}/lib
 
 MAN1=		asmem.1
 PLIST_FILES=	bin/asmem
