@@ -13249,6 +13249,7 @@ samhain		ports/security/samhain
 samhain-client	ports/security/samhain-client
 samhain-server	ports/security/samhain-server
 samplicator	ports/net/samplicator
+sampsvr		ports/games/sampsvr
 sancp		ports/security/sancp
 sanduhr		ports/x11-clocks/sanduhr
 sane-backends	ports/graphics/sane-backends
