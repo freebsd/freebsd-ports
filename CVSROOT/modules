@@ -6731,6 +6731,7 @@ lua50		ports/lang/lua50
 lua50-app	ports/devel/lua50-app
 lua50-compat51	ports/devel/lua50-compat51
 lua50-dfui	ports/devel/lua50-dfui
+lua50-filename	ports/devel/lua50-filename
 lua50-gettext	ports/devel/lua50-gettext
 lua50-posix	ports/devel/lua50-posix
 lua50-pty	ports/devel/lua50-pty
