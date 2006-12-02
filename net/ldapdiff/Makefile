@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldapdiff
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.ale.org/pub/mirrors/openpkg/sources/DST/ldapdiff/ \
 		http://webtomware.rhoen.de/
@@ -25,10 +25,10 @@ SAMPLES=	addentry webtomware_without_jpeg.user.ldif \
 MAN1=		ldapdiff.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/ldapdiff.conf \
-		${TARGETDIR}/etc/ldapdiff.conf.sample
+		${PREFIX}/etc/ldapdiff.conf.sample
 	@${MKDIR} ${DATADIR}/samples
 .for i in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${DATADIR}/samples
