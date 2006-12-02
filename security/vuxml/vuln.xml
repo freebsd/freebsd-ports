@@ -45,9 +45,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	  <p>tDiary was vulnerable to an unspecified Cross-Site 
-	     Scripting vulnerability</p>
-	</blockquote>
+	<p>tDiary was vulnerable to an unspecified Cross-Site
+	  Scripting vulnerability</p>
       </body>
     </description>
     <references>
