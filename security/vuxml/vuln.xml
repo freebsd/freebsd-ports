@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="18e3a5be-81f9-11db-95a2-0012f06707f0">
+    <topic>ImageMagick -- SGI Image File heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>ImageMagick</name>
+	<range><ge>6.0.0</ge><lt>6.2.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports about ImageMagick:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/21185/info">
+	  <p>ImageMagick is prone to a remote heap-based buffer-overflow
+            vulnerability because the application fails to properly
+	    bounds-check user-supplied input before copying it to an
+	    insufficiently sized memory buffer.</p>
+
+	  <p>Exploiting this issue allows attackers to execute arbitrary
+	    machine code in the context of applications that use the
+	    ImageMagick library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>21185</bid>
+      <cvename>CVE-2006-5868</cvename>
+      <url>http://www.securityfocus.com/bid/21185/discuss</url>
+    </references>
+    <dates>
+      <discovery>2006-11-14</discovery>
+      <entry>2006-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3dd7eb58-80ae-11db-b4ec-000854d03344">
     <topic>gtar -- GNUTYPE_NAMES directory traversal vulnerability</topic>
     <affects>
