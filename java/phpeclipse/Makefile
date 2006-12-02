@@ -15,11 +15,11 @@ DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}.bin.dist
 MAINTAINER=	lon_kamikaze@gmx.de
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
 
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+
 PLIST_SUB=	VER=${PORTVERSION}
 
 PLUGIN_PATHS=	features plugins
-
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
 USE_ZIP=	yes
@@ -33,12 +33,12 @@ do-install:
 	@${CP} -r ${WRKSRC}/${_path}/* ${ECLIPSE}/${_path}/
 .endfor
 
-plist: patch
+plist: build
 	@${ECHO} "===>  Rebuilding PLIST."
 	@${TOUCH} ${PLIST}
 	@${RM} ${PLIST}
 .for _path in ${PLUGIN_PATHS}
-	@${FIND} ${WRKSRC}/${_path}/ -type f \
+	@${FIND} ${WRKSRC}/${_path}/ -not -type d \
 		| ${SED} "s|${WRKSRC}|eclipse|1" \
 		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
 		>> ${PLIST}
