@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Compress-Zlib
-PORTVERSION=	1.42
+PORTVERSION=	2.001
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Compress
@@ -14,6 +14,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 interface to zlib compression library
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
+		${SITE_PERL}/${PERL_ARCH}/PerlIO/gzip.pm:${PORTSDIR}/archivers/p5-PerlIO-gzip
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
