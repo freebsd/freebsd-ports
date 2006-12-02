@@ -1,9 +1,15 @@
-%%RUBY_SITEARCHLIBDIR%%/gtksourceview.so
 %%RUBY_SITELIBDIR%%/gtksourceview.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sourcelanguagesmanager.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%RUBY_SITEARCHLIBDIR%%/gtksourceview.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sourcelanguagesmanager.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
