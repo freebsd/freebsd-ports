@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Next
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	File-finding iterator
+
+BUILD_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
 
 PERL_CONFIGURE=	yes
 
