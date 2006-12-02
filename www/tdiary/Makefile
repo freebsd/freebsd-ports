@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES?=	www ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
@@ -18,11 +17,13 @@ MAINTAINER=	tota@rtfm.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 NO_BUILD=	yes
-CONFLICTS?=	ja-tdiary-[0-9]*
+CONFLICTS?=	tdiary-devel-[0-9]* \
+		ja-tdiary-[0-9]* \
+		ja-tdiary-devel-[0-9]*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RUBY=	yes
 
-.if  !defined(WITHOUT_RUBY_FEATURES)
+.if !defined(WITHOUT_RUBY_FEATURES)
 USE_RUBY_FEATURES=	fileutils
 .endif
 
@@ -36,12 +37,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #TDIARY_LANG	ja:Japanese en:English zh:Traditional-Chinese
 
-.if  !defined(TDIARY_LANG)
+.if !defined(TDIARY_LANG) || ( defined(TDIARY_LANG) && ${TDIARY_LANG} != ja )
 TDIARY_LANG=	en
-.else
-.if ${TDIARY_LANG} == "tdiary.conf-ja"
-TDIARY_LANG=	ja
-.endif
 .endif
 .if defined(WITH_TDIARY_UCONV)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
@@ -49,15 +46,17 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .if defined(WITH_TDIARY_NORA)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif
+
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VERSION_CODE} < 167
-IGNORE=		Needs ruby 1.6.7 or higher, check ruby's version and try again
+IGNORE=		only works with Ruby 1.6.7 or later
 .endif
 
 do-install:
 	@-${MKDIR} ${TDIARYDIR}
-	@${SED} -e 's,@@@@PREFIX@@@@,${PREFIX},g' \
+	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
+		-e 's,@@@@PREFIX@@@@,${PREFIX},g' \
 		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
 		${FILESDIR}/tdiaryinst.rb.in > ${TDIARYDIR}/tdiaryinst.rb
 	@${CP} -pR ${WRKSRC}/ ${TDIARYDIR}

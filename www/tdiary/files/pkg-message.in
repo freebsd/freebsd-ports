@@ -11,11 +11,9 @@ This script should be run manually.
 	   --help   Display Help information
 
 ---
-There is a document by English in the following directories.
+There are documents in the following directories.
   See ...
+  %%EXAMPLESDIR%%/doc/
   %%EXAMPLESDIR%%/misc/i18n/
-   and
-  Explanation by English of a tDiary system can refer to the following page :
-
-  http://tdiary-users.sourceforge.jp/cgi-bin/wiki.cgi?FrontPage_en
 =============================================================================
+
