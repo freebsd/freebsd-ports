@@ -34,6 +34,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="666b8c9e-8212-11db-851e-0016179b2dd5">
+    <topic>tdiary  -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>tdiary</name>
+	<range><lt>2.0.2</lt></range>
+        <range><gt>2.1</gt><lt>2.1.4.20061115</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>tDiary was vulnerable to an unspecified Cross-Site 
+	     Scripting vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/forum/forum.php?forum_id=638868</url>
+    </references>
+    <dates>
+      <discovery>2006-11-26</discovery>
+      <entry>2006-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18e3a5be-81f9-11db-95a2-0012f06707f0">
     <topic>ImageMagick -- SGI Image File heap overflow vulnerability</topic>
     <affects>
