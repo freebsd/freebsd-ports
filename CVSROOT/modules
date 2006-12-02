@@ -14008,6 +14008,7 @@ swisswatch	ports/x11-clocks/swisswatch
 swm		ports/x11-wm/swm
 sword		ports/misc/sword
 swt		ports/x11-toolkits/swt
+swt-devel	ports/x11-toolkits/swt-devel
 swt31		ports/x11-toolkits/swt31
 sxm		ports/lang/sxm
 sxpc		ports/x11/sxpc
