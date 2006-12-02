@@ -44,7 +44,7 @@ place it in ${DISTDIR} and then run make again.\n
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		-e 's|/usr/X11R6|${X11BASE}' \
+		-e 's|/usr/X11R6|${X11BASE}|g' \
 		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC}/../.. -name Makefile -type f | \
 		${XARGS} ${REINPLACE_CMD} -e 's|CC =|CC?=|g ; \
