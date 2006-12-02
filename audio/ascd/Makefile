@@ -32,7 +32,10 @@ post-patch:
 	@${CAT} ${WRKSRC}/version.h >> ${WRKSRC}/config.h
 
 post-install:
-	@${CP} ${FILESDIR}/install ${WRKDIR}/${THEMESDIR}
-	@(cd ${WRKDIR}/${THEMESDIR} && ./install)
+	@${ECHO_CMD} "AScd additional themes installation"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Untarring"
+	@${TAR} xf ${WRKDIR}/${THEMESDIR}/themes.tar -C ${PREFIX}/share/ascd/Themes
+	@${ECHO_CMD} "Done."
 
 .include <bsd.port.mk>
