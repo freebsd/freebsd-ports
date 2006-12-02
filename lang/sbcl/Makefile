@@ -6,30 +6,17 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.9.18
+PORTVERSION=	1.0
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${DISTNAME}-html${EXTRACT_SUFX}
+DISTFILES+=	${DISTNAME}-documentation-html${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	sa2c@sa2c.net
 COMMENT=	A Common Lisp development system derived from the CMU CL system
-
-.undef BOOT_VERSION
-# If you have a previous version of SBCL installed, you can use it
-# instead of CMUCL to build the port, then deinstall it before
-# installing the new version.
-.if defined(WITH_SBCL)
-LISP_CMD=	""
-.elif defined(WITH_CMUCL)
-BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
-LISP_CMD=	"lisp -noinit -batch"
-.else
-BOOT_VERSION=	0.9.16
-.endif
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -37,7 +24,7 @@ USE_GMAKE=	yes
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 
 # Can currently only bootstrap using cmucl, which is i386-only
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 MAN1=		sbcl.1
 INFO=		asdf sbcl
@@ -45,27 +32,53 @@ INFODIR=	${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.pre.mk>
 
-.if defined(BOOT_VERSION)
-BOOT_ARCH=	${ARCH:S/i386/x86/}
+# If you have a previous version of SBCL installed, you can use it
+# instead of the binary distribution.
+.if defined(WITH_SBCL)
+LISP_CMD=	""
+.else
+BOOT_VERSION=	0.9.16
+BOOT_ARCH=	x86
 BOOT_OS=	${OPSYS:L}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH}-${BOOT_OS}
 DISTFILES+=	${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
 LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
 .if ${OSVERSION} >= 500000
+.if ${ARCH} == i386
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
+.elif ${ARCH} == amd64
+BUILD_DEPENDS+=	${LOCALBASE}/lib32/compat/libc.so.4:${PORTSDIR}/misc/compat4x
 .endif
+.endif
+.endif
+
+.if defined(WITH_THREADS) && ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x with threading
+.endif
+
+.if defined(WITH_THREADS) && ${ARCH} == amd64
+BROKEN=		Does not compile on AMD64 with threading
+.endif
+
+.if ${ARCH} == i386
+PLIST_SUB+=	I386_ONLY=""
+.else
+PLIST_SUB+=	I386_ONLY="@comment "
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \
-		's|CFLAGS = .*|CFLAGS = ${CFLAGS} -DSBCL_HOME=\\"${PREFIX}/lib/sbcl/\\"|' \
+		's|CFLAGS = .*|CFLAGS = ${CFLAGS} -g -DSBCL_HOME=\\"${PREFIX}/lib/sbcl/\\"|' \
 		${WRKSRC}/src/runtime/GNUmakefile
 	@${FIND} ${WRKSRC} -name '*.orig' -o -name '*.bak' | ${XARGS} ${RM}
+.if defined(WITH_THREADS)
+	@${CP} ${FILESDIR}/customize-target-features.lisp ${WRKSRC}
+.endif
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
+	@(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
 		${SH} make.sh ${LISP_CMD})
-	(cd ${WRKSRC}/doc/manual && \
+	@(cd ${WRKSRC}/doc/manual && \
 		${GMAKE} MAKEINFO='makeinfo --no-split' info)
 
 do-install:
@@ -78,5 +91,22 @@ do-install:
 
 test:	build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
+
+pre-everything::
+.if ${ARCH} == amd64
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> WARNING: AMD64 support is experimental."
+	@${ECHO_MSG} "====>"
+.else
+.if !defined(WITH_THREADS) && ${OSVERSION} >= 600000
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> To enable experimental threading support, define WITH_THREADS."
+	@${ECHO_MSG} "====>"
+.elif defined(WITH_THREADS) && ${OSVERSION} < 600000
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> WARNING: Current threading support is very unstable on FreeBSD 5.x."
+	@${ECHO_MSG} "====>"
+.endif
+.endif
 
 .include <bsd.port.post.mk>
