@@ -9,7 +9,9 @@ PORTNAME=	tomsfastmath
 PORTVERSION=	0.10
 CATEGORIES=	math
 MASTER_SITES=	http://tfm.libtomcrypt.com/files/ \
-		http://www.atarininja.org/~wxs/distfiles/
+		http://www.atarininja.org/~wxs/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	tfm-${PORTVERSION}
 
 MAINTAINER=	wxs@atarininja.org
