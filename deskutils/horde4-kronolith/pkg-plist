@@ -84,6 +84,7 @@
 %%KRONOLITHDIR%%/locale/ro_RO/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/ru_RU/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/sk_SK/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/sl_SI/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/sv_SE/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/tr_TR/help.xml
 %%KRONOLITHDIR%%/locale/zh_CN/LC_MESSAGES/kronolith.mo
@@ -115,6 +116,7 @@
 %%KRONOLITHDIR%%/po/ro_RO.po
 %%KRONOLITHDIR%%/po/ru_RU.po
 %%KRONOLITHDIR%%/po/sk_SK.po
+%%KRONOLITHDIR%%/po/sl_SI.po
 %%KRONOLITHDIR%%/po/sv_SE.po
 %%KRONOLITHDIR%%/po/zh_CN.po
 %%KRONOLITHDIR%%/po/zh_TW.po
@@ -134,6 +136,7 @@
 %%KRONOLITHDIR%%/scripts/upgrades/2004-05-19_convert_categories_to_strings.php
 %%KRONOLITHDIR%%/scripts/upgrades/2004-12-21_add_event_uid.pgsql.sql
 %%KRONOLITHDIR%%/scripts/upgrades/2004-12-21_add_event_uid.sql
+%%KRONOLITHDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
 %%KRONOLITHDIR%%/search.php
 %%KRONOLITHDIR%%/templates/attendees/attendees.inc
 %%KRONOLITHDIR%%/templates/calendars/calendars.inc
@@ -146,8 +149,6 @@
 %%KRONOLITHDIR%%/templates/day/all_day.inc
 %%KRONOLITHDIR%%/templates/day/head.inc
 %%KRONOLITHDIR%%/templates/day/head_side_by_side.inc
-%%KRONOLITHDIR%%/templates/day/row.inc
-%%KRONOLITHDIR%%/templates/day/row_half.inc
 %%KRONOLITHDIR%%/templates/day/rows.html
 %%KRONOLITHDIR%%/templates/delete/delete.inc
 %%KRONOLITHDIR%%/templates/delete/one.inc
@@ -162,7 +163,7 @@
 %%KRONOLITHDIR%%/templates/fbview/row.tpl
 %%KRONOLITHDIR%%/templates/fbview/section.tpl
 %%KRONOLITHDIR%%/templates/fbview/unknownblock.tpl
-%%KRONOLITHDIR%%/templates/javascript/goto.inc
+%%KRONOLITHDIR%%/templates/javascript/goto.js
 %%KRONOLITHDIR%%/templates/javascript/open_attendees_win.js
 %%KRONOLITHDIR%%/templates/javascript/open_calendar_search.js
 %%KRONOLITHDIR%%/templates/menu.inc
@@ -250,6 +251,8 @@
 @dirrm %%KRONOLITHDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/tr_TR
 @dirrm %%KRONOLITHDIR%%/locale/sv_SE
+@dirrm %%KRONOLITHDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/sl_SI
 @dirrm %%KRONOLITHDIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/sk_SK
 @dirrm %%KRONOLITHDIR%%/locale/ru_RU/LC_MESSAGES
