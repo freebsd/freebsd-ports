@@ -1,0 +1,11 @@
+--- tooltips/Makefile.linux.orig	Sat Dec  2 21:28:13 2006
++++ tooltips/Makefile.linux	Sat Dec  2 21:28:27 2006
+@@ -26,7 +26,7 @@
+ VERSION = 0.02g
+ 
+ # Define where the X11 include files are.
+-X11_INCLUDE_DIR = /usr/X11R6/include
++X11_INCLUDE_DIR = ${X11BASE}/include
+ 
+ # Uncomment out this line if you do not want debug information included.
+ # DEBUG = -g -Wall -ansi -pedantic
