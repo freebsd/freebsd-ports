@@ -1,5 +1,5 @@
 bin/wmmenu
-%%PORTDOCS%%share/doc/wmmenu/apps.sample
-%%PORTDOCS%%share/doc/wmmenu/defaults.sample
-%%PORTDOCS%%share/doc/wmmenu/README
-%%PORTDOCS%%@dirrm share/doc/wmmenu
+%%PORTDOCS%%%%DOCSDIR%%/apps.sample
+%%PORTDOCS%%%%DOCSDIR%%/defaults.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
