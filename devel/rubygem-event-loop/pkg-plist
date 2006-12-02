@@ -15,3 +15,4 @@
 @dirrm %%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib/event-loop
 @dirrm %%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib
 @dirrm %%GEMS_DIR%%/event-loop-%%PORTVERSION%%
+@dirrm %%GEM_DOC_DIR%%
