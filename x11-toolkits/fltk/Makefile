@@ -9,8 +9,13 @@ PORTNAME=	fltk
 PORTVERSION=	${VERSION}
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://ftp.easysw.com/pub/fltk/%SUBDIR%/ \
+		ftp://ftp.easysw.com/pub/fltk/%SUBDIR%/ \
+		ftp://ftp3.easysw.com/pub/fltk/%SUBDIR%/ \
+		http://mirror.nu6.org/ftp.easysw.com/pub/fltk/%SUBDIR%/ \
+		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/%SUBDIR%/ \
+		http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/fltk/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${VERSION}
 .ifdef WITH_THREADS
 PKGNAMESUFFIX=	-threads
 .endif
@@ -32,7 +37,7 @@ CONFLICTS=	fltk-1*
 CONFLICTS=	fltk-threads-1*
 .endif
 
-VERSION=	1.1.6
+VERSION=	1.1.7
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
