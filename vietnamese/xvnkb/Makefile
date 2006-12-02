@@ -20,10 +20,9 @@ USE_XLIB=	yes
 USE_GNOME=	gtk20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" X11BASE="${X11BASE}"
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" XLIB_DIR="${X11BASE}"
 
 .if defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--no-xft
@@ -31,7 +30,6 @@ CONFIGURE_ARGS+=	--no-xft
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_LIST=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-message
 
@@ -44,6 +42,9 @@ MAN1=		xvnkb.1
 .if ${OSVERSION} < 502110
 RUN_DEPENDS+=	${LOCALBASE}/share/locale/la_LN.UTF-8/LC_CTYPE:${PORTSDIR}/misc/utf8locale
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/tools/Makefile.dep
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/xvnkb
