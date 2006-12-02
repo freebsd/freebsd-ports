@@ -1,0 +1,5 @@
+#!%%PYTHON_CMD%%
+import sys
+import kid.compile
+
+sys.exit(kid.compile.main())

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kid
-PORTVERSION=	0.8
+PORTVERSION=	0.9.4
 CATEGORIES=	devel python
-MASTER_SITES=	http://lesscode.org/dist/kid/${PORTVERSION}/
+MASTER_SITES=	http://www.kid-templating.org/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	whitekid@gmail.com
@@ -26,6 +26,12 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 
 post-install:
+
+.for f in kid kidc
+	${CP} files/$f ${PREFIX}/bin/$f
+	${REINPLACE_CMD} -i '' -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' ${PREFIX}/bin/$f
+.endfor
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} ; ${CP} README HISTORY COPYING misc/* ${DOCSDIR}
