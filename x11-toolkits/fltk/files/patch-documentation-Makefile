@@ -1,17 +1,17 @@
---- documentation/Makefile.orig	Mon Oct 18 22:22:22 2004
-+++ documentation/Makefile	Fri Jan 28 23:16:46 2005
-@@ -225,19 +225,11 @@
- docdir = $(datadir)/doc/fltk
+--- documentation/Makefile.orig	Mon Jan 16 03:36:16 2006
++++ documentation/Makefile	Mon Nov 20 23:20:57 2006
+@@ -227,19 +227,11 @@
+ depend:
  
  install: $(MANPAGES)
 -	echo "Installing documentation files in $(DESTDIR)$(docdir)..."
 -	-$(MKDIR) $(DESTDIR)$(docdir)
--	$(CP) $(HTMLFILES) *.gif *.jpg index.html $(DESTDIR)$(docdir)
--	$(CHMOD) 644 $(DESTDIR)$(docdir)/*
+-	$(CP) $(HTMLFILES) $(IMAGEFILES) index.html $(DESTDIR)$(docdir)
+-	$(CHMOD) 644 $(DESTDIR)$(docdir)/*.*
 +%%DOCS%%	echo "Installing documentation files in $(DESTDIR)$(docdir)..."
 +%%DOCS%%	-$(MKDIR) $(DESTDIR)$(docdir)
-+%%DOCS%%	$(CP) $(HTMLFILES) *.gif *.jpg index.html $(DESTDIR)$(docdir)
-+%%DOCS%%	$(CHMOD) 644 $(DESTDIR)$(docdir)/*
++%%DOCS%%	$(CP) $(HTMLFILES) $(IMAGEFILES) index.html $(DESTDIR)$(docdir)
++%%DOCS%%	$(CHMOD) 644 $(DESTDIR)$(docdir)/*.*
  	echo "Installing man pages in $(DESTDIR)$(mandir)..."
 -	-$(MKDIR) $(DESTDIR)$(mandir)/cat1
 -	$(CP) fluid.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
