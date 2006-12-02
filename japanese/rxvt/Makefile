@@ -22,7 +22,9 @@ CONFIGURE_ARGS=	--enable-xpm-background --enable-transparency \
 		--enable-menubar --enable-graphics --enable-xim \
 		--enable-languages --with-encoding=eucj \
 		--disable-backspace-key --disable-delete-key \
-		--enable-utmp --enable-wtmp
+		--enable-utmp --enable-wtmp \
+		--with-xpm --with-xpm-includes=${X11BASE}/include/X11 \
+		--with-xpm-library=${X11BASE}/lib
 
 DOCDIR=		${PREFIX}/share/doc/ja/rxvt
 RXVTLIB=	${PREFIX}/lib/X11/rxvt
