@@ -213,6 +213,7 @@
     SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt
+    SUBDIR += swt-devel
     SUBDIR += swt31
     SUBDIR += tile
     SUBDIR += tix
