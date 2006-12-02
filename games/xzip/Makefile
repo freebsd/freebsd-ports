@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/zip/ \
 	ftp://mirror.holmoak.co.uk/if-archive/infocom/interpreters/zip/ \
 	ftp://ftp.funet.fi/pub/misc/if-archive/infocom/interpreters/zip/ \
 	ftp://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/zip/
-DISTFILES=	xzip182.tar.Z
+DISTNAME=	xzip182
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Infocom game interpreter that runs under X11
