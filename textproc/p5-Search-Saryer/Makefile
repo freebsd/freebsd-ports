@@ -17,9 +17,11 @@ COMMENT=	Perl interface to the Sary library
 
 LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
 
+DEPRECATED=	distfile disappeared
+EXPIRATION_DATE=	2007-01-01
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Search::Saryer.3
-
 
 .include <bsd.port.mk>
