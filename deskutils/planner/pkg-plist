@@ -6,6 +6,7 @@ include/planner-1.0/libplanner/mrp-day.h
 include/planner-1.0/libplanner/mrp-error.h
 include/planner-1.0/libplanner/mrp-group.h
 include/planner-1.0/libplanner/mrp-object.h
+include/planner-1.0/libplanner/mrp-paths.h
 include/planner-1.0/libplanner/mrp-project.h
 include/planner-1.0/libplanner/mrp-property.h
 include/planner-1.0/libplanner/mrp-relation.h
@@ -25,9 +26,6 @@ lib/planner/file-modules/libmrp-xml.so
 lib/planner/file-modules/libmrp-xsl.a
 lib/planner/file-modules/libmrp-xsl.la
 lib/planner/file-modules/libmrp-xsl.so
-lib/planner/libgantt-task.a
-lib/planner/libgantt-task.la
-lib/planner/libgantt-task.so
 lib/planner/plugins/libmsp-plugin.a
 lib/planner/plugins/libmsp-plugin.la
 lib/planner/plugins/libmsp-plugin.so
@@ -46,23 +44,10 @@ lib/planner/storage-modules/libstorage-mrproject-1.so
 %%GDA%%lib/planner/storage-modules/libstorage-sql.a
 %%GDA%%lib/planner/storage-modules/libstorage-sql.la
 %%GDA%%lib/planner/storage-modules/libstorage-sql.so
-lib/planner/views/libgantt-view.a
-lib/planner/views/libgantt-view.la
-lib/planner/views/libgantt-view.so
-lib/planner/views/libresource-view.a
-lib/planner/views/libresource-view.la
-lib/planner/views/libresource-view.so
-lib/planner/views/libtask-view.a
-lib/planner/views/libtask-view.la
-lib/planner/views/libtask-view.so
-lib/planner/views/libtimetable-view.a
-lib/planner/views/libtimetable-view.la
-lib/planner/views/libtimetable-view.so
 libdata/pkgconfig/libplanner-1.pc
 %%DOCSDIR%%/README.sql
 %%DOCSDIR%%/kitchen.planner
 %%DOCSDIR%%/sample-1.planner
-share/gnome/application-registry/planner.applications
 share/gnome/applications/planner.desktop
 share/gnome/help/planner/C/figures/calendar-new.png
 share/gnome/help/planner/C/figures/calendar-week.png
@@ -111,34 +96,63 @@ share/gnome/help/planner/C/figures/task-up.png
 share/gnome/help/planner/C/figures/task-view.png
 share/gnome/help/planner/C/legal.xml
 share/gnome/help/planner/C/planner.xml
-share/gnome/mime-info/planner.keys
-share/gnome/mime-info/planner.mime
+share/gnome/help/planner/eu/figures/calendar-new.png
+share/gnome/help/planner/eu/figures/calendar-week.png
+share/gnome/help/planner/eu/figures/calendar-working-time.png
+share/gnome/help/planner/eu/figures/calendar.png
+share/gnome/help/planner/eu/figures/day-types.png
+share/gnome/help/planner/eu/figures/eds1.png
+share/gnome/help/planner/eu/figures/gantt-view.png
+share/gnome/help/planner/eu/figures/group1-subtask-dialog.png
+share/gnome/help/planner/eu/figures/group1-subtasks.png
+share/gnome/help/planner/eu/figures/group1-task-linked.png
+share/gnome/help/planner/eu/figures/group1-task-linking.png
+share/gnome/help/planner/eu/figures/group1-task.png
+share/gnome/help/planner/eu/figures/group1-tasks-linked.png
+share/gnome/help/planner/eu/figures/new-project.png
+share/gnome/help/planner/eu/figures/print-project-paper.png
+share/gnome/help/planner/eu/figures/print-project-selectviews.png
+share/gnome/help/planner/eu/figures/print-project.png
+share/gnome/help/planner/eu/figures/project-properties-custom-add.png
+share/gnome/help/planner/eu/figures/project-properties-custom.png
+share/gnome/help/planner/eu/figures/project-properties.png
+share/gnome/help/planner/eu/figures/project-zoom-fit.png
+share/gnome/help/planner/eu/figures/project-zoom-up.png
+share/gnome/help/planner/eu/figures/resource-editor-sorted.png
+share/gnome/help/planner/eu/figures/resource-editor.png
+share/gnome/help/planner/eu/figures/resource-group-editor.png
+share/gnome/help/planner/eu/figures/resource-insert.png
+share/gnome/help/planner/eu/figures/resource-properties-calendar.png
+share/gnome/help/planner/eu/figures/resource-properties-general.png
+share/gnome/help/planner/eu/figures/resource-usage-view.png
+share/gnome/help/planner/eu/figures/several-projects.png
+share/gnome/help/planner/eu/figures/task-constraints.png
+share/gnome/help/planner/eu/figures/task-custom-properties-add.png
+share/gnome/help/planner/eu/figures/task-custom-properties.png
+share/gnome/help/planner/eu/figures/task-edit-advanced.png
+share/gnome/help/planner/eu/figures/task-edit-note.png
+share/gnome/help/planner/eu/figures/task-edit-predecessors-add-remove.png
+share/gnome/help/planner/eu/figures/task-edit-predecessors-add.png
+share/gnome/help/planner/eu/figures/task-edit-predecessors.png
+share/gnome/help/planner/eu/figures/task-edit-resource-assigned.png
+share/gnome/help/planner/eu/figures/task-edit-resources.png
+share/gnome/help/planner/eu/figures/task-edit.png
+share/gnome/help/planner/eu/figures/task-insert.png
+share/gnome/help/planner/eu/figures/task-properties-dialog.png
+share/gnome/help/planner/eu/figures/task-up.png
+share/gnome/help/planner/eu/figures/task-view.png
+share/gnome/help/planner/eu/legal.xml
+share/gnome/help/planner/eu/planner.xml
 share/gnome/omf/planner/planner-C.omf
-share/gnome/pixmaps/gnome-mime-application-x-planner.png
+share/gnome/omf/planner/planner-eu.omf
 share/gnome/pixmaps/gnome-planner.png
-share/gnome/pixmaps/planner/24_edit_resource.png
-share/gnome/pixmaps/planner/24_groups.png
-share/gnome/pixmaps/planner/24_indent_task.png
-share/gnome/pixmaps/planner/24_insert_resource.png
-share/gnome/pixmaps/planner/24_insert_task.png
-share/gnome/pixmaps/planner/24_link_task.png
-share/gnome/pixmaps/planner/24_remove_resource.png
-share/gnome/pixmaps/planner/24_remove_task.png
-share/gnome/pixmaps/planner/24_task_down.png
-share/gnome/pixmaps/planner/24_task_up.png
-share/gnome/pixmaps/planner/24_unindent_task.png
-share/gnome/pixmaps/planner/24_unlink_task.png
-share/gnome/pixmaps/planner/gantt.png
-share/gnome/pixmaps/planner/resources.png
-share/gnome/pixmaps/planner/resources_usage.png
-share/gnome/pixmaps/planner/tasks.png
 share/gnome/planner/dtd/mrproject-0.5.1.dtd
 share/gnome/planner/dtd/mrproject-0.6.dtd
 share/gnome/planner/glade/add-predecessor.glade
 share/gnome/planner/glade/calendar-dialog.glade
+share/gnome/planner/glade/column-dialog.glade
 share/gnome/planner/glade/eds.glade
 share/gnome/planner/glade/group-dialog.glade
-share/gnome/planner/glade/html-output.glade
 share/gnome/planner/glade/new-property.glade
 share/gnome/planner/glade/project-properties.glade
 share/gnome/planner/glade/property-dialog.glade
@@ -148,6 +162,23 @@ share/gnome/planner/glade/sql.glade
 share/gnome/planner/glade/task-date-widget.glade
 share/gnome/planner/glade/task-dialog.glade
 share/gnome/planner/glade/task-input-dialog.glade
+share/gnome/planner/images/24_edit_resource.png
+share/gnome/planner/images/24_groups.png
+share/gnome/planner/images/24_indent_task.png
+share/gnome/planner/images/24_insert_resource.png
+share/gnome/planner/images/24_insert_task.png
+share/gnome/planner/images/24_link_task.png
+share/gnome/planner/images/24_remove_resource.png
+share/gnome/planner/images/24_remove_task.png
+share/gnome/planner/images/24_task_down.png
+share/gnome/planner/images/24_task_up.png
+share/gnome/planner/images/24_unindent_task.png
+share/gnome/planner/images/24_unlink_task.png
+share/gnome/planner/images/gantt.png
+share/gnome/planner/images/gnome-planner.png
+share/gnome/planner/images/resources.png
+share/gnome/planner/images/resources_usage.png
+share/gnome/planner/images/tasks.png
 share/gnome/planner/sql/database-0.11.sql
 share/gnome/planner/sql/database-0.13.sql
 share/gnome/planner/sql/upgrade-0.11-0.13.sql
@@ -171,6 +202,7 @@ share/gnome/planner/ui/task-view.ui
 share/gnome/planner/ui/time-table-view.ui
 share/gnome/planner/ui/xml-planner-plugin.ui
 share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-planner.png
+share/locale/ar/LC_MESSAGES/planner.mo
 share/locale/am/LC_MESSAGES/planner.mo
 share/locale/az/LC_MESSAGES/planner.mo
 share/locale/be/LC_MESSAGES/planner.mo
@@ -179,12 +211,15 @@ share/locale/ca/LC_MESSAGES/planner.mo
 share/locale/cs/LC_MESSAGES/planner.mo
 share/locale/da/LC_MESSAGES/planner.mo
 share/locale/de/LC_MESSAGES/planner.mo
+share/locale/dz/LC_MESSAGES/planner.mo
 share/locale/el/LC_MESSAGES/planner.mo
 share/locale/en_CA/LC_MESSAGES/planner.mo
 share/locale/en_GB/LC_MESSAGES/planner.mo
 share/locale/es/LC_MESSAGES/planner.mo
 share/locale/et/LC_MESSAGES/planner.mo
+share/locale/eu/LC_MESSAGES/planner.mo
 share/locale/fa/LC_MESSAGES/planner.mo
+share/locale/fi/LC_MESSAGES/planner.mo
 share/locale/fr/LC_MESSAGES/planner.mo
 share/locale/hi/LC_MESSAGES/planner.mo
 share/locale/hr/LC_MESSAGES/planner.mo
@@ -200,38 +235,49 @@ share/locale/ml/LC_MESSAGES/planner.mo
 share/locale/mn/LC_MESSAGES/planner.mo
 share/locale/ms/LC_MESSAGES/planner.mo
 share/locale/nb/LC_MESSAGES/planner.mo
+share/locale/ne/LC_MESSAGES/planner.mo
 share/locale/nl/LC_MESSAGES/planner.mo
 share/locale/nn/LC_MESSAGES/planner.mo
-share/locale/no/LC_MESSAGES/planner.mo
 share/locale/pa/LC_MESSAGES/planner.mo
 share/locale/pl/LC_MESSAGES/planner.mo
 share/locale/pt/LC_MESSAGES/planner.mo
 share/locale/pt_BR/LC_MESSAGES/planner.mo
 share/locale/ru/LC_MESSAGES/planner.mo
+share/locale/rw/LC_MESSAGES/planner.mo
 share/locale/sk/LC_MESSAGES/planner.mo
 share/locale/sq/LC_MESSAGES/planner.mo
 share/locale/sr/LC_MESSAGES/planner.mo
 share/locale/sr@Latn/LC_MESSAGES/planner.mo
 share/locale/sv/LC_MESSAGES/planner.mo
 share/locale/uk/LC_MESSAGES/planner.mo
+share/locale/vi/LC_MESSAGES/planner.mo
 share/locale/zh_CN/LC_MESSAGES/planner.mo
 share/locale/zh_TW/LC_MESSAGES/planner.mo
 share/mime/application/x-planner.xml
 share/mime/packages/planner.xml
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/planner/ui
 @dirrm share/gnome/planner/stylesheets
 @dirrm share/gnome/planner/sql
+@dirrm share/gnome/planner/images
 @dirrm share/gnome/planner/glade
 @dirrm share/gnome/planner/dtd
 @dirrm share/gnome/planner
-@dirrm share/gnome/pixmaps/planner
 @dirrm share/gnome/omf/planner
+@dirrm share/gnome/help/planner/eu/figures
+@dirrm share/gnome/help/planner/eu
 @dirrm share/gnome/help/planner/C/figures
 @dirrm share/gnome/help/planner/C
 @dirrm share/gnome/help/planner
 @dirrm %%DOCSDIR%%
 @dirrm share/doc/libplanner
-@dirrm lib/planner/views
 @dirrm lib/planner/storage-modules
 @dirrm lib/planner/plugins
 @dirrm lib/planner/file-modules

@@ -7,18 +7,17 @@
 #
 
 PORTNAME=	planner
-PORTVERSION=	0.13
-PORTREVISION=	3
+PORTVERSION=	0.14.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.13
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.14
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Project management application for Gnome 2
+COMMENT=	Project management application for GNOME 2
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui \
 		libgsf
@@ -35,6 +34,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	planner.schemas
+
+MAN1=		planner.1
 
 .include <bsd.port.pre.mk>
 
