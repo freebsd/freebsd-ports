@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2006.10.30
+PORTVERSION=	2006.11.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/youtube-dl/
-DISTFILES=	youtube-dl-${PORTVERSION}
+DISTNAME=	youtube-dl-${PORTVERSION}
+EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	pankov_p@mail.ru
