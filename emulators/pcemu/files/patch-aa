@@ -23,7 +23,7 @@
 ! OPTIONS = -DBOOT720 -DLITTLE_ENDIAN -DBIGCASE -DINLINE_FUNCTIONS \
 ! 	-DBOOTFILE=\"${LOCALPREFIX}/lib/pcemu/DriveA\"
 ! #XROOT   = /usr/local/X11R5
-! XROOT   = /usr/X11R6
+! XROOT   = $(X11BASE)
 ! CFLAGS  = -I$(XROOT)/include -O2 -pipe #-fomit-frame-pointer
   
   # You may need to add -N to the LFLAGS if you get sporadic segmentation
