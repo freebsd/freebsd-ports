@@ -5,14 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=		xinfocom
-PORTVERSION=		1.8m
-CATEGORIES=		games
-MASTER_SITES=   	${MASTER_SITE_LOCAL}
+PORTNAME=	xinfocom
+PORTVERSION=	1.8m
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.gmd.de/if-archive/infocom/interpreters/itf/
 MASTER_SITE_SUBDIR=	mph
-DISTFILES=		unix8m.tgz
+DISTNAME=	unix8m
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Infocom game interpreter for X11
 
 PLIST_FILES=	bin/xinfocom
