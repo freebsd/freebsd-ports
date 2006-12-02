@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	swt2
+PORTNAME=	swt
 PORTVERSION=	3.2.1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
