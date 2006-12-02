@@ -1,13 +1,43 @@
 bin/irsim
-bin/ifsim
-bin/h2a
-bin/inet2sim
-lib/irsim/scmos1_6um.prm
-lib/irsim/scmos2um.prm
-lib/irsim/scmos100.prm
-lib/irsim/scmos30.prm
-lib/irsim/scmos35.prm
-lib/irsim/scmos50_3v.prm
-lib/irsim/scmos50_5v.prm
-lib/irsim/scmos60.prm
+%%SCHEME%%bin/gentbl
+%%SCHEME%%bin/genspktbl
+lib/irsim/doc/irsim-analyzer.doc
+lib/irsim/doc/irsim.doc
+lib/irsim/doc/netchange.doc
+lib/irsim/doc/powerEst.doc
+lib/irsim/prm/amiabn.80.n99z.5.prm
+lib/irsim/prm/amic5.30.n98s.3.3.prm
+lib/irsim/prm/amicwl.50.n97l.5.prm
+lib/irsim/prm/hpcmos10.20.n98v.3.3.prm
+lib/irsim/prm/hpcmos14.30.n9ae.3.3.prm
+lib/irsim/prm/hpcmos26.40.n88x.5.prm
+lib/irsim/prm/orbit.60.n96e.5.prm
+lib/irsim/prm/scmos100.prm
+lib/irsim/prm/scmos1_6um.prm
+lib/irsim/prm/scmos2um.prm
+lib/irsim/prm/scmos30.prm
+lib/irsim/prm/scmos35.prm
+lib/irsim/prm/scmos50_3v.prm
+lib/irsim/prm/scmos50_5v.prm
+lib/irsim/prm/scmos60.prm
+lib/irsim/prm/tsmc18.10.nxxx.1.8.prm
+lib/irsim/prm/tsmc25.15.n99y.2.5.prm
+lib/irsim/prm/tsmc35.20.n98t.3.3.prm
+lib/irsim/prm/tsmc35p.20.n98tp.3.3.prm
+%%TCL%%lib/irsim/tcl/bitmaps/center.xbm
+%%TCL%%lib/irsim/tcl/bitmaps/left.xbm
+%%TCL%%lib/irsim/tcl/bitmaps/lleft.xbm
+%%TCL%%lib/irsim/tcl/bitmaps/right.xbm
+%%TCL%%lib/irsim/tcl/bitmaps/rright.xbm
+%%TCL%%lib/irsim/tcl/console.tcl
+%%TCL%%lib/irsim/tcl/cver.tcl
+%%TCL%%lib/irsim/tcl/irsim.tcl
+%%TCL%%lib/irsim/tcl/irsimexec
+%%TCL%%lib/irsim/tcl/random.so
+%%TCL%%lib/irsim/tcl/tclirsim.so
+%%TCL%%lib/irsim/tcl/tkcon.tcl
+%%TCL%%@dirrm lib/irsim/tcl/bitmaps
+%%TCL%%@dirrm lib/irsim/tcl
+@dirrm lib/irsim/prm
+@dirrm lib/irsim/doc
 @dirrm lib/irsim
