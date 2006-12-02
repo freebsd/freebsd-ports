@@ -619,6 +619,7 @@
     SUBDIR += rtcw
     SUBDIR += rubix
     SUBDIR += ruby-exmars
+    SUBDIR += sampsvr
     SUBDIR += sarien
     SUBDIR += sauerbraten
     SUBDIR += scare
