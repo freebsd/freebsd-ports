@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
@@ -57,7 +56,7 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		ModPerl::PerlRunPrefork.3 ModPerl::Registry.3 \
 		ModPerl::RegistryBB.3 ModPerl::RegistryCooker.3 \
 		ModPerl::RegistryLoader.3 ModPerl::RegistryPrefork.3 \
-		ModPerl::Util.3 mod_perl2.3
+		ModPerl::Util.3 mod_perl2.3 Apache2::ConnectionUtil.3
 
 .include <bsd.port.pre.mk>
 
