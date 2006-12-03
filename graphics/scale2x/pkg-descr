@@ -1,0 +1,5 @@
+Scale2x is real-time graphics effect able to increase the size of small
+bitmaps guessing the missing pixels without interpolating pixels and
+blurring the images.
+
+WWW: http://scale2x.sourceforge.net/
