@@ -1,0 +1,8 @@
+Localize is an application to aid in the translation of .strings files.
+.strings files must be distributed in ASCII encoding, which generally
+isn't a convenient encoding to do translation in. As an example, its rather
+difficult to enter Chinese characters into an ASCII encoded text file.
+Localize will, with any luck, help out with this. Currently its just a
+shell of an application, but sometime in the future I hope to complete it.
+
+WWW: http://www.eskimo.com/~pburns/Localize/
