@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -60,7 +60,8 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	EtoileExtensions:deskutils/etoile-etoileextensionskit \
 	Encore:devel/fortytwo-encore \
 	BDB:databases/fortytwo-bdb \
-	FT:graphics/fortytwo
+	FT:graphics/fortytwo \
+	ObjectiveLib:devel/objectivelib \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -156,6 +157,9 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	EtoileMenuServer:deskutils/etoile-menuserver \
 	Position:astro/position \
 	Expense:finance/expense \
+	FreeTar:archivers/freetar \
+	CodeEditor:editors/codeeditor \
+	Localize:textproc/localize \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
