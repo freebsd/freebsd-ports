@@ -68,7 +68,6 @@
 +		geom_deletetree (&gmp);
  		return;
  	}
- 
 +	geom_stats_snapshot_timestamp (sc, &ts);
 +	etime = ts.tv_sec + (ts.tv_nsec * 1e-9);
 +	geom_stats_snapshot_reset (sc);
@@ -126,9 +125,10 @@
 +	buf->read = ld[0];
 +	buf->write = ld[1];
 +#else
+ #if !defined(__FreeBSD_kernel__)
  	buf->read = sfs.f_syncreads + sfs.f_asyncreads;
  	buf->write = sfs.f_syncwrites + sfs.f_asyncwrites;
+ #endif
 +#endif
- 
  	buf->flags |= (1 << GLIBTOP_FSUSAGE_READ) | (1 << GLIBTOP_FSUSAGE_WRITE);
  }

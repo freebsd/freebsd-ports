@@ -1,16 +1,16 @@
---- sysdeps/freebsd/procmap.c.orig	Mon Dec 12 19:09:39 2005
-+++ sysdeps/freebsd/procmap.c	Tue May  2 12:46:49 2006
-@@ -108,14 +108,16 @@
+--- sysdeps/freebsd/procmap.c.orig	Mon Nov 27 14:22:45 2006
++++ sysdeps/freebsd/procmap.c	Sun Dec  3 14:41:07 2006
+@@ -108,14 +108,16 @@ glibtop_get_proc_map_p (glibtop *server,
  #else
  	struct vm_object object;
  #endif
 -	glibtop_map_entry *maps;
 +	GArray *maps = g_array_sized_new(FALSE, FALSE,
-+					 sizeof(glibtop_map_entry),
-+					 100);
- #if defined __FreeBSD__
++			sizeof(glibtop_map_entry),
++			100);
+ #if (defined __FreeBSD__) || defined(__FreeBSD_kernel__)
  	struct vnode vnode;
- #if __FreeBSD_version < 500039
+ #if (__FreeBSD_version < 500039) && !defined(__FreeBSD_kernel__)
  	struct inode inode;
  #endif
  #endif
@@ -19,7 +19,7 @@
  	int update = 0;
  
  	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_MAP), 0);
-@@ -123,15 +125,15 @@
+@@ -123,15 +125,15 @@ glibtop_get_proc_map_p (glibtop *server,
  	memset (buf, 0, sizeof (glibtop_proc_map));
  
  	/* It does not work for the swapper task. */
@@ -38,7 +38,7 @@
  	}
  
  	/* Now we get the memory maps. */
-@@ -159,8 +161,6 @@
+@@ -159,8 +161,6 @@ glibtop_get_proc_map_p (glibtop *server,
  
  	buf->total = buf->number * buf->size;
  
@@ -47,7 +47,7 @@
  	buf->flags = _glibtop_sysdeps_proc_map;
  
  	/* Walk through the `vm_map_entry' list ... */
-@@ -170,6 +170,10 @@
+@@ -170,6 +170,10 @@ glibtop_get_proc_map_p (glibtop *server,
  	 * to OBJT_DEFAULT so if seems this really works. */
  
  	do {
@@ -58,7 +58,7 @@
  		if (update) {
  			if (kvm_read (server->machine.kd,
  				      (unsigned long) entry.next,
-@@ -197,22 +201,6 @@
+@@ -197,22 +201,6 @@ glibtop_get_proc_map_p (glibtop *server,
  #endif
  #endif
  
@@ -81,7 +81,7 @@
  
  #if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
  		if (!entry.object.uvm_obj)
-@@ -224,7 +212,7 @@
+@@ -224,7 +212,7 @@ glibtop_get_proc_map_p (glibtop *server,
  			      (unsigned long) entry.object.uvm_obj,
  			      &vnode, sizeof (vnode)) != sizeof (vnode)) {
  			glibtop_warn_io_r (server, "kvm_read (vnode)");
@@ -90,7 +90,7 @@
  		}
  #else
  		if (!entry.object.vm_object)
-@@ -251,8 +239,8 @@
+@@ -251,8 +239,8 @@ glibtop_get_proc_map_p (glibtop *server,
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
  
@@ -101,18 +101,18 @@
  #endif
  
  
-@@ -274,8 +262,8 @@
+@@ -274,8 +262,8 @@ glibtop_get_proc_map_p (glibtop *server,
                 switch (vnode.v_type) {
                     case VREG:
- #if __FreeBSD_version < 600006
+ #if (__FreeBSD_version < 600006) && !defined(__FreeBSD_kernel__)
 -                       maps [i-1].inode = vnode.v_cachedid;
 -                       maps [i-1].device = vnode.v_cachedfs;
-+                       inum = vnode.v_cachedid;
-+                       dev = vnode.v_cachedfs;
++			   inum = vnode.v_cachedid;
++			   dev = vnode.v_cachedfs;
  #endif
                     default:
                     continue;
-@@ -289,11 +277,37 @@
+@@ -289,11 +277,37 @@ glibtop_get_proc_map_p (glibtop *server,
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
  
