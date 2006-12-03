@@ -22,6 +22,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 PERL_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; s|/usr/X11R6|${X11BASE}|g" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
