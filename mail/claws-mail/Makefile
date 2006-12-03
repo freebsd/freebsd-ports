@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -28,7 +27,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomehack pkgconfig gtk20
 #USE_AUTOTOOLS=	autoconf:259 libtool:15
 GNU_CONFIGURE=	yes
