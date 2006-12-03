@@ -16,9 +16,11 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/appendices.html
 %%DATADIR%%/docs/en_US/backup.html
 %%DATADIR%%/docs/en_US/bugreport.html
+%%DATADIR%%/docs/en_US/commandline.html
 %%DATADIR%%/docs/en_US/connect-error.html
 %%DATADIR%%/docs/en_US/connect.html
 %%DATADIR%%/docs/en_US/control-server.html
+%%DATADIR%%/docs/en_US/default-xsl.html
 %%DATADIR%%/docs/en_US/editgrid.html
 %%DATADIR%%/docs/en_US/export.html
 %%DATADIR%%/docs/en_US/extend.html
@@ -34,6 +36,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/hints/fki.html
 %%DATADIR%%/docs/en_US/hints/instrumentation.html
 %%DATADIR%%/docs/en_US/hints/multiple.html
+%%DATADIR%%/docs/en_US/hints/object-editing.html
 %%DATADIR%%/docs/en_US/hints/pk.html
 %%DATADIR%%/docs/en_US/hints/vacuum.html
 %%DATADIR%%/docs/en_US/hints/view-without-pk.html
@@ -68,6 +71,8 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/images/query-analyze.png
 %%DATADIR%%/docs/en_US/images/query-connect.png
 %%DATADIR%%/docs/en_US/images/query.png
+%%DATADIR%%/docs/en_US/images/reporttool-html.png
+%%DATADIR%%/docs/en_US/images/reporttool-xml.png
 %%DATADIR%%/docs/en_US/images/restore-content.png
 %%DATADIR%%/docs/en_US/images/restore.png
 %%DATADIR%%/docs/en_US/images/server.png
@@ -124,7 +129,6 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/arrays.html
 %%DATADIR%%/docs/en_US/pg/auth-methods.html
 %%DATADIR%%/docs/en_US/pg/backup-file.html
-%%DATADIR%%/docs/en_US/pg/backup-online.html
 %%DATADIR%%/docs/en_US/pg/backup.html
 %%DATADIR%%/docs/en_US/pg/biblio.html
 %%DATADIR%%/docs/en_US/pg/bki-commands.html
@@ -160,6 +164,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/catalog-pg-proc.html
 %%DATADIR%%/docs/en_US/pg/catalog-pg-rewrite.html
 %%DATADIR%%/docs/en_US/pg/catalog-pg-shdepend.html
+%%DATADIR%%/docs/en_US/pg/catalog-pg-shdescription.html
 %%DATADIR%%/docs/en_US/pg/catalog-pg-statistic.html
 %%DATADIR%%/docs/en_US/pg/catalog-pg-tablespace.html
 %%DATADIR%%/docs/en_US/pg/catalog-pg-trigger.html
@@ -169,11 +174,17 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/client-authentication-problems.html
 %%DATADIR%%/docs/en_US/pg/client-authentication.html
 %%DATADIR%%/docs/en_US/pg/client-interfaces.html
+%%DATADIR%%/docs/en_US/pg/clustering-for-load-balancing.html
+%%DATADIR%%/docs/en_US/pg/clustering-for-parallel-query-execution.html
+%%DATADIR%%/docs/en_US/pg/commercial-solutions.html
 %%DATADIR%%/docs/en_US/pg/connect-estab.html
+%%DATADIR%%/docs/en_US/pg/continuous-archiving.html
+%%DATADIR%%/docs/en_US/pg/continuously-running-replication-server.html
 %%DATADIR%%/docs/en_US/pg/creating-cluster.html
 %%DATADIR%%/docs/en_US/pg/cvs-tree.html
 %%DATADIR%%/docs/en_US/pg/cvs.html
 %%DATADIR%%/docs/en_US/pg/cvsup.html
+%%DATADIR%%/docs/en_US/pg/data-partitioning.html
 %%DATADIR%%/docs/en_US/pg/datatype-binary.html
 %%DATADIR%%/docs/en_US/pg/datatype-bit.html
 %%DATADIR%%/docs/en_US/pg/datatype-boolean.html
@@ -184,8 +195,10 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/datatype-net-types.html
 %%DATADIR%%/docs/en_US/pg/datatype-oid.html
 %%DATADIR%%/docs/en_US/pg/datatype-pseudo.html
+%%DATADIR%%/docs/en_US/pg/datatype-xml.html
 %%DATADIR%%/docs/en_US/pg/datatype.html
 %%DATADIR%%/docs/en_US/pg/datetime-appendix.html
+%%DATADIR%%/docs/en_US/pg/datetime-config-files.html
 %%DATADIR%%/docs/en_US/pg/datetime-keywords.html
 %%DATADIR%%/docs/en_US/pg/datetime-units-history.html
 %%DATADIR%%/docs/en_US/pg/ddl-alter.html
@@ -216,8 +229,10 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/ecpg-disconnect.html
 %%DATADIR%%/docs/en_US/pg/ecpg-dynamic.html
 %%DATADIR%%/docs/en_US/pg/ecpg-errors.html
-%%DATADIR%%/docs/en_US/pg/ecpg-include.html
+%%DATADIR%%/docs/en_US/pg/ecpg-informix-compat.html
 %%DATADIR%%/docs/en_US/pg/ecpg-library.html
+%%DATADIR%%/docs/en_US/pg/ecpg-pgtypes.html
+%%DATADIR%%/docs/en_US/pg/ecpg-preproc.html
 %%DATADIR%%/docs/en_US/pg/ecpg-process.html
 %%DATADIR%%/docs/en_US/pg/ecpg-set-connection.html
 %%DATADIR%%/docs/en_US/pg/ecpg-variables.html
@@ -233,6 +248,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/extend.html
 %%DATADIR%%/docs/en_US/pg/external-extensions.html
 %%DATADIR%%/docs/en_US/pg/external-projects.html
+%%DATADIR%%/docs/en_US/pg/failover.html
 %%DATADIR%%/docs/en_US/pg/features.html
 %%DATADIR%%/docs/en_US/pg/functions-admin.html
 %%DATADIR%%/docs/en_US/pg/functions-aggregate.html
@@ -258,6 +274,12 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/geqo-intro2.html
 %%DATADIR%%/docs/en_US/pg/geqo-pg-intro.html
 %%DATADIR%%/docs/en_US/pg/geqo.html
+%%DATADIR%%/docs/en_US/pg/gin-examples.html
+%%DATADIR%%/docs/en_US/pg/gin-extensibility.html
+%%DATADIR%%/docs/en_US/pg/gin-implementation.html
+%%DATADIR%%/docs/en_US/pg/gin-limit.html
+%%DATADIR%%/docs/en_US/pg/gin-tips.html
+%%DATADIR%%/docs/en_US/pg/gin.html
 %%DATADIR%%/docs/en_US/pg/gist-examples.html
 %%DATADIR%%/docs/en_US/pg/gist-extensibility.html
 %%DATADIR%%/docs/en_US/pg/gist-implementation.html
@@ -281,7 +303,10 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/indexes-unique.html
 %%DATADIR%%/docs/en_US/pg/indexes.html
 %%DATADIR%%/docs/en_US/pg/information-schema.html
+%%DATADIR%%/docs/en_US/pg/infoschema-administrable-role-authorizations.html
 %%DATADIR%%/docs/en_US/pg/infoschema-applicable-roles.html
+%%DATADIR%%/docs/en_US/pg/infoschema-attributes.html
+%%DATADIR%%/docs/en_US/pg/infoschema-check-constraint-routine-usage.html
 %%DATADIR%%/docs/en_US/pg/infoschema-check-constraints.html
 %%DATADIR%%/docs/en_US/pg/infoschema-column-domain-usage.html
 %%DATADIR%%/docs/en_US/pg/infoschema-column-privileges.html
@@ -307,10 +332,12 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/infoschema-routine-privileges.html
 %%DATADIR%%/docs/en_US/pg/infoschema-routines.html
 %%DATADIR%%/docs/en_US/pg/infoschema-schemata.html
+%%DATADIR%%/docs/en_US/pg/infoschema-sequences.html
 %%DATADIR%%/docs/en_US/pg/infoschema-sql-features.html
 %%DATADIR%%/docs/en_US/pg/infoschema-sql-implementation-info.html
 %%DATADIR%%/docs/en_US/pg/infoschema-sql-languages.html
 %%DATADIR%%/docs/en_US/pg/infoschema-sql-packages.html
+%%DATADIR%%/docs/en_US/pg/infoschema-sql-parts.html
 %%DATADIR%%/docs/en_US/pg/infoschema-sql-sizing-profiles.html
 %%DATADIR%%/docs/en_US/pg/infoschema-sql-sizing.html
 %%DATADIR%%/docs/en_US/pg/infoschema-table-constraints.html
@@ -319,6 +346,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/infoschema-triggers.html
 %%DATADIR%%/docs/en_US/pg/infoschema-usage-privileges.html
 %%DATADIR%%/docs/en_US/pg/infoschema-view-column-usage.html
+%%DATADIR%%/docs/en_US/pg/infoschema-view-routine-usage.html
 %%DATADIR%%/docs/en_US/pg/infoschema-view-table-usage.html
 %%DATADIR%%/docs/en_US/pg/infoschema-views.html
 %%DATADIR%%/docs/en_US/pg/install-getsource.html
@@ -341,6 +369,8 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/libpq-example.html
 %%DATADIR%%/docs/en_US/pg/libpq-exec.html
 %%DATADIR%%/docs/en_US/pg/libpq-fastpath.html
+%%DATADIR%%/docs/en_US/pg/libpq-ldap.html
+%%DATADIR%%/docs/en_US/pg/libpq-misc.html
 %%DATADIR%%/docs/en_US/pg/libpq-notice-processing.html
 %%DATADIR%%/docs/en_US/pg/libpq-notify.html
 %%DATADIR%%/docs/en_US/pg/libpq-pgpass.html
@@ -410,8 +440,6 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/pltcl-unknown.html
 %%DATADIR%%/docs/en_US/pg/pltcl.html
 %%DATADIR%%/docs/en_US/pg/populate.html
-%%DATADIR%%/docs/en_US/pg/postmaster-shutdown.html
-%%DATADIR%%/docs/en_US/pg/postmaster-start.html
 %%DATADIR%%/docs/en_US/pg/preface.html
 %%DATADIR%%/docs/en_US/pg/privileges.html
 %%DATADIR%%/docs/en_US/pg/protocol-changes.html
@@ -425,7 +453,9 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/queries-select-lists.html
 %%DATADIR%%/docs/en_US/pg/queries-table-expressions.html
 %%DATADIR%%/docs/en_US/pg/queries-union.html
+%%DATADIR%%/docs/en_US/pg/queries-values.html
 %%DATADIR%%/docs/en_US/pg/queries.html
+%%DATADIR%%/docs/en_US/pg/query-broadcast-load-balancing.html
 %%DATADIR%%/docs/en_US/pg/reference-client.html
 %%DATADIR%%/docs/en_US/pg/reference-server.html
 %%DATADIR%%/docs/en_US/pg/reference.html
@@ -478,6 +508,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-7-3-13.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-14.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-15.html
+%%DATADIR%%/docs/en_US/pg/release-7-3-16.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-2.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-3.html
 %%DATADIR%%/docs/en_US/pg/release-7-3-4.html
@@ -492,6 +523,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-7-4-11.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-12.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-13.html
+%%DATADIR%%/docs/en_US/pg/release-7-4-14.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-2.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-3.html
 %%DATADIR%%/docs/en_US/pg/release-7-4-4.html
@@ -509,10 +541,13 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/release-8-0-6.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-7.html
 %%DATADIR%%/docs/en_US/pg/release-8-0-8.html
+%%DATADIR%%/docs/en_US/pg/release-8-0-9.html
 %%DATADIR%%/docs/en_US/pg/release-8-0.html
 %%DATADIR%%/docs/en_US/pg/release-8-1-1.html
 %%DATADIR%%/docs/en_US/pg/release-8-1-2.html
 %%DATADIR%%/docs/en_US/pg/release-8-1-3.html
+%%DATADIR%%/docs/en_US/pg/release-8-1-4.html
+%%DATADIR%%/docs/en_US/pg/release-8-1-5.html
 %%DATADIR%%/docs/en_US/pg/release-8-1.html
 %%DATADIR%%/docs/en_US/pg/release.html
 %%DATADIR%%/docs/en_US/pg/resources.html
@@ -545,6 +580,8 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/runtime-config.html
 %%DATADIR%%/docs/en_US/pg/runtime.html
 %%DATADIR%%/docs/en_US/pg/server-programming.html
+%%DATADIR%%/docs/en_US/pg/server-shutdown.html
+%%DATADIR%%/docs/en_US/pg/server-start.html
 %%DATADIR%%/docs/en_US/pg/source.html
 %%DATADIR%%/docs/en_US/pg/spi-examples.html
 %%DATADIR%%/docs/en_US/pg/spi-interface-support.html
@@ -641,6 +678,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/sql-deallocate.html
 %%DATADIR%%/docs/en_US/pg/sql-declare.html
 %%DATADIR%%/docs/en_US/pg/sql-delete.html
+%%DATADIR%%/docs/en_US/pg/sql-drop-owned.html
 %%DATADIR%%/docs/en_US/pg/sql-dropaggregate.html
 %%DATADIR%%/docs/en_US/pg/sql-dropcast.html
 %%DATADIR%%/docs/en_US/pg/sql-dropconversion.html
@@ -677,6 +715,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/sql-notify.html
 %%DATADIR%%/docs/en_US/pg/sql-prepare-transaction.html
 %%DATADIR%%/docs/en_US/pg/sql-prepare.html
+%%DATADIR%%/docs/en_US/pg/sql-reassign-owned.html
 %%DATADIR%%/docs/en_US/pg/sql-reindex.html
 %%DATADIR%%/docs/en_US/pg/sql-release-savepoint.html
 %%DATADIR%%/docs/en_US/pg/sql-reset.html
@@ -699,6 +738,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/sql-unlisten.html
 %%DATADIR%%/docs/en_US/pg/sql-update.html
 %%DATADIR%%/docs/en_US/pg/sql-vacuum.html
+%%DATADIR%%/docs/en_US/pg/sql-values.html
 %%DATADIR%%/docs/en_US/pg/sql.html
 %%DATADIR%%/docs/en_US/pg/ssh-tunnels.html
 %%DATADIR%%/docs/en_US/pg/ssl-tcp.html
@@ -739,9 +779,11 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/typeconv.html
 %%DATADIR%%/docs/en_US/pg/unsupported-features-sql-standard.html
 %%DATADIR%%/docs/en_US/pg/user-manag.html
+%%DATADIR%%/docs/en_US/pg/view-pg-cursors.html
 %%DATADIR%%/docs/en_US/pg/view-pg-group.html
 %%DATADIR%%/docs/en_US/pg/view-pg-indexes.html
 %%DATADIR%%/docs/en_US/pg/view-pg-locks.html
+%%DATADIR%%/docs/en_US/pg/view-pg-prepared-statements.html
 %%DATADIR%%/docs/en_US/pg/view-pg-prepared-xacts.html
 %%DATADIR%%/docs/en_US/pg/view-pg-roles.html
 %%DATADIR%%/docs/en_US/pg/view-pg-rules.html
@@ -749,6 +791,8 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/view-pg-shadow.html
 %%DATADIR%%/docs/en_US/pg/view-pg-stats.html
 %%DATADIR%%/docs/en_US/pg/view-pg-tables.html
+%%DATADIR%%/docs/en_US/pg/view-pg-timezone-abbrevs.html
+%%DATADIR%%/docs/en_US/pg/view-pg-timezone-names.html
 %%DATADIR%%/docs/en_US/pg/view-pg-user.html
 %%DATADIR%%/docs/en_US/pg/view-pg-views.html
 %%DATADIR%%/docs/en_US/pg/views-overview.html
@@ -756,6 +800,8 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/wal-internals.html
 %%DATADIR%%/docs/en_US/pg/wal-intro.html
 %%DATADIR%%/docs/en_US/pg/wal.html
+%%DATADIR%%/docs/en_US/pg/warm-standby-using-point-in-time-recovery.html
+%%DATADIR%%/docs/en_US/pg/warm-standby.html
 %%DATADIR%%/docs/en_US/pg/xaggr.html
 %%DATADIR%%/docs/en_US/pg/xfunc-c.html
 %%DATADIR%%/docs/en_US/pg/xfunc-internal.html
@@ -781,7 +827,9 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pgagent.html
 %%DATADIR%%/docs/en_US/query.html
 %%DATADIR%%/docs/en_US/querybuilder.html
+%%DATADIR%%/docs/en_US/reports.html
 %%DATADIR%%/docs/en_US/restore.html
+%%DATADIR%%/docs/en_US/sample-xml.html
 %%DATADIR%%/docs/en_US/slony-execute.html
 %%DATADIR%%/docs/en_US/slony-functions.html
 %%DATADIR%%/docs/en_US/slony-install.html
@@ -792,7 +840,6 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/addthings.html
 %%DATADIR%%/docs/en_US/slony/admconninfo.html
 %%DATADIR%%/docs/en_US/slony/altperl.html
-%%DATADIR%%/docs/en_US/slony/bestpractices.html
 %%DATADIR%%/docs/en_US/slony/cluster.html
 %%DATADIR%%/docs/en_US/slony/clustername.html
 %%DATADIR%%/docs/en_US/slony/cmds.html
@@ -803,11 +850,15 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/dropthings.html
 %%DATADIR%%/docs/en_US/slony/failover.html
 %%DATADIR%%/docs/en_US/slony/faq.html
+%%DATADIR%%/docs/en_US/slony/firstdb.html
 %%DATADIR%%/docs/en_US/slony/function.add-missing-table-field-text-text-text-text.html
+%%DATADIR%%/docs/en_US/slony/function.addpartiallogindices.html
 %%DATADIR%%/docs/en_US/slony/function.altertableforreplication-integer.html
 %%DATADIR%%/docs/en_US/slony/function.altertablerestore-integer.html
+%%DATADIR%%/docs/en_US/slony/function.checkmoduleversion.html
 %%DATADIR%%/docs/en_US/slony/function.cleanupevent.html
-%%DATADIR%%/docs/en_US/slony/function.cleanuplistener.html
+%%DATADIR%%/docs/en_US/slony/function.cleanupnodelock.html
+%%DATADIR%%/docs/en_US/slony/function.copyfields-integer.html
 %%DATADIR%%/docs/en_US/slony/function.createevent-name-text-text-text-text-text-text-text-text-text.html
 %%DATADIR%%/docs/en_US/slony/function.createevent-name-text-text-text-text-text-text-text-text.html
 %%DATADIR%%/docs/en_US/slony/function.createevent-name-text-text-text-text-text-text-text.html
@@ -817,8 +868,10 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/function.createevent-name-text-text-text.html
 %%DATADIR%%/docs/en_US/slony/function.createevent-name-text-text.html
 %%DATADIR%%/docs/en_US/slony/function.createevent-name-text.html
-%%DATADIR%%/docs/en_US/slony/function.ddlscript-int-integer-text-integer.html
-%%DATADIR%%/docs/en_US/slony/function.ddlscript-integer-text-integer.html
+%%DATADIR%%/docs/en_US/slony/function.ddlscript-complete-int-integer-integer.html
+%%DATADIR%%/docs/en_US/slony/function.ddlscript-complete-integer-text-integer.html
+%%DATADIR%%/docs/en_US/slony/function.ddlscript-prepare-int-integer-integer.html
+%%DATADIR%%/docs/en_US/slony/function.ddlscript-prepare-integer-integer.html
 %%DATADIR%%/docs/en_US/slony/function.denyaccess.html
 %%DATADIR%%/docs/en_US/slony/function.determineattkindserial-text.html
 %%DATADIR%%/docs/en_US/slony/function.determineattkindunique-text-name.html
@@ -849,15 +902,26 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/function.getmoduleversion.html
 %%DATADIR%%/docs/en_US/slony/function.getsessionrole-name.html
 %%DATADIR%%/docs/en_US/slony/function.initializelocalnode-integer-text.html
+%%DATADIR%%/docs/en_US/slony/function.killbackend-integer-text.html
 %%DATADIR%%/docs/en_US/slony/function.lockedset.html
 %%DATADIR%%/docs/en_US/slony/function.lockset-integer.html
+%%DATADIR%%/docs/en_US/slony/function.logswitch-finish.html
+%%DATADIR%%/docs/en_US/slony/function.logswitch-start.html
+%%DATADIR%%/docs/en_US/slony/function.logswitch-weekly.html
 %%DATADIR%%/docs/en_US/slony/function.logtrigger.html
 %%DATADIR%%/docs/en_US/slony/function.mergeset-int-integer-integer.html
 %%DATADIR%%/docs/en_US/slony/function.mergeset-integer-integer.html
 %%DATADIR%%/docs/en_US/slony/function.moveset-int-integer-integer-integer.html
 %%DATADIR%%/docs/en_US/slony/function.moveset-integer-integer.html
+%%DATADIR%%/docs/en_US/slony/function.reachablefromnode-integer-integerarray.html
 %%DATADIR%%/docs/en_US/slony/function.rebuildlistenentries.html
-%%DATADIR%%/docs/en_US/slony/function.rebuildlistenentriesone-integer-integer.html
+%%DATADIR%%/docs/en_US/slony/function.registernodeconnection-integer.html
+%%DATADIR%%/docs/en_US/slony/function.registry-get-int4-text-integer.html
+%%DATADIR%%/docs/en_US/slony/function.registry-get-text-text-text.html
+%%DATADIR%%/docs/en_US/slony/function.registry-get-timestamp-text-timestamp-without-time-zone.html
+%%DATADIR%%/docs/en_US/slony/function.registry-set-int4-text-integer.html
+%%DATADIR%%/docs/en_US/slony/function.registry-set-text-text-text.html
+%%DATADIR%%/docs/en_US/slony/function.registry-set-timestamp-text-timestamp-without-time-zone.html
 %%DATADIR%%/docs/en_US/slony/function.sequencelastvalue-text.html
 %%DATADIR%%/docs/en_US/slony/function.sequencesetvalue-integer-integer-bigint-bigint.html
 %%DATADIR%%/docs/en_US/slony/function.setaddsequence-int-integer-integer-text-text.html
@@ -894,7 +958,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/function.tableaddkey-text.html
 %%DATADIR%%/docs/en_US/slony/function.tabledropkey-integer.html
 %%DATADIR%%/docs/en_US/slony/function.tablehasserialkey-text.html
-%%DATADIR%%/docs/en_US/slony/function.terminatenodeconnections-name.html
+%%DATADIR%%/docs/en_US/slony/function.terminatenodeconnections-integer.html
 %%DATADIR%%/docs/en_US/slony/function.uninstallnode.html
 %%DATADIR%%/docs/en_US/slony/function.unlockset-integer.html
 %%DATADIR%%/docs/en_US/slony/function.unsubscribeset-int-integer-integer.html
@@ -906,16 +970,17 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/help.html
 %%DATADIR%%/docs/en_US/slony/index.html
 %%DATADIR%%/docs/en_US/slony/installation.html
-%%DATADIR%%/docs/en_US/slony/ix01.html
 %%DATADIR%%/docs/en_US/slony/listenpaths.html
 %%DATADIR%%/docs/en_US/slony/ln-legalnotice.html
 %%DATADIR%%/docs/en_US/slony/locking.html
+%%DATADIR%%/docs/en_US/slony/loganalysis.html
 %%DATADIR%%/docs/en_US/slony/logshipping.html
 %%DATADIR%%/docs/en_US/slony/maintenance.html
 %%DATADIR%%/docs/en_US/slony/metacmds.html
 %%DATADIR%%/docs/en_US/slony/monitoring.html
 %%DATADIR%%/docs/en_US/slony/noslonik.html
 %%DATADIR%%/docs/en_US/slony/plainpaths.html
+%%DATADIR%%/docs/en_US/slony/releasechecklist.html
 %%DATADIR%%/docs/en_US/slony/requirements.html
 %%DATADIR%%/docs/en_US/slony/reshape.html
 %%DATADIR%%/docs/en_US/slony/runtime-config.html
@@ -931,6 +996,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/slonyadmin.html
 %%DATADIR%%/docs/en_US/slony/slonyintro.html
 %%DATADIR%%/docs/en_US/slony/slonylistenercosts.html
+%%DATADIR%%/docs/en_US/slony/slonyupgrade.html
 %%DATADIR%%/docs/en_US/slony/stmtcreateset.html
 %%DATADIR%%/docs/en_US/slony/stmtddlscript.html
 %%DATADIR%%/docs/en_US/slony/stmtdefine.html
@@ -975,7 +1041,9 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/table.sl-log-1.html
 %%DATADIR%%/docs/en_US/slony/table.sl-log-2.html
 %%DATADIR%%/docs/en_US/slony/table.sl-node.html
+%%DATADIR%%/docs/en_US/slony/table.sl-nodelock.html
 %%DATADIR%%/docs/en_US/slony/table.sl-path.html
+%%DATADIR%%/docs/en_US/slony/table.sl-registry.html
 %%DATADIR%%/docs/en_US/slony/table.sl-seqlog.html
 %%DATADIR%%/docs/en_US/slony/table.sl-sequence.html
 %%DATADIR%%/docs/en_US/slony/table.sl-set.html
@@ -1001,6 +1069,7 @@ bin/pgagent
 %%DATADIR%%/docs/es_ES/hints/fki.html
 %%DATADIR%%/docs/es_ES/hints/instrumentation.html
 %%DATADIR%%/docs/es_ES/hints/multiple.html
+%%DATADIR%%/docs/es_ES/hints/object-editing.html
 %%DATADIR%%/docs/es_ES/hints/pk.html
 %%DATADIR%%/docs/es_ES/hints/vacuum.html
 %%DATADIR%%/docs/es_ES/hints/view-without-pk.html
@@ -1034,7 +1103,8 @@ bin/pgagent
 %%DATADIR%%/docs/sl_SI/tips.txt
 %%DATADIR%%/i18n/af_ZA/pgadmin3.mo
 %%DATADIR%%/i18n/af_ZA/wxstd.mo
-%%DATADIR%%/i18n/ar_SA/pgadmin3.mo
+%%DATADIR%%/i18n/bg_BG/pgadmin3.mo
+%%DATADIR%%/i18n/bg_BG/wxstd.mo
 %%DATADIR%%/i18n/ca_ES/pgadmin3.mo
 %%DATADIR%%/i18n/ca_ES/wxstd.mo
 %%DATADIR%%/i18n/de_DE/pgadmin3.mo
@@ -1045,6 +1115,8 @@ bin/pgagent
 %%DATADIR%%/i18n/fi_FI/wxstd.mo
 %%DATADIR%%/i18n/fr_FR/pgadmin3.mo
 %%DATADIR%%/i18n/fr_FR/wxstd.mo
+%%DATADIR%%/i18n/it_IT/pgadmin3.mo
+%%DATADIR%%/i18n/it_IT/wxstd.mo
 %%DATADIR%%/i18n/ja_JP/pgadmin3.mo
 %%DATADIR%%/i18n/ja_JP/wxstd.mo
 %%DATADIR%%/i18n/nl_NL/pgadmin3.mo
@@ -1053,16 +1125,13 @@ bin/pgagent
 %%DATADIR%%/i18n/pgadmin3.lng
 %%DATADIR%%/i18n/pl_PL/pgadmin3.mo
 %%DATADIR%%/i18n/pl_PL/wxstd.mo
-%%DATADIR%%/i18n/sl_SI/pgadmin3.mo
-%%DATADIR%%/i18n/sl_SI/wxstd.mo
-%%DATADIR%%/i18n/tr_TR/pgadmin3.mo
-%%DATADIR%%/i18n/tr_TR/wxstd.mo
 %%DATADIR%%/i18n/wxstd.mo
 %%DATADIR%%/i18n/zh_CN/pgadmin3.mo
 %%DATADIR%%/i18n/zh_CN/wxstd.mo
 %%DATADIR%%/i18n/zh_TW/pgadmin3.mo
 %%DATADIR%%/i18n/zh_TW/wxstd.mo
 %%DATADIR%%/pgagent.sql
+%%DATADIR%%/ui/dlgAddFavourite.xrc
 %%DATADIR%%/ui/dlgAggregate.xrc
 %%DATADIR%%/ui/dlgCast.xrc
 %%DATADIR%%/ui/dlgCheck.xrc
@@ -1072,6 +1141,7 @@ bin/pgagent
 %%DATADIR%%/ui/dlgDatabase.xrc
 %%DATADIR%%/ui/dlgDomain.xrc
 %%DATADIR%%/ui/dlgEditGridOptions.xrc
+%%DATADIR%%/ui/dlgFindReplace.xrc
 %%DATADIR%%/ui/dlgForeignKey.xrc
 %%DATADIR%%/ui/dlgFunction.xrc
 %%DATADIR%%/ui/dlgGroup.xrc
@@ -1081,7 +1151,9 @@ bin/pgagent
 %%DATADIR%%/ui/dlgJob.xrc
 %%DATADIR%%/ui/dlgLanguage.xrc
 %%DATADIR%%/ui/dlgMainConfig.xrc
+%%DATADIR%%/ui/dlgManageFavourites.xrc
 %%DATADIR%%/ui/dlgOperator.xrc
+%%DATADIR%%/ui/dlgPgpassConfig.xrc
 %%DATADIR%%/ui/dlgRepCluster.xrc
 %%DATADIR%%/ui/dlgRepClusterUpgrade.xrc
 %%DATADIR%%/ui/dlgRepListen.xrc
@@ -1116,23 +1188,23 @@ bin/pgagent
 %%DATADIR%%/ui/frmMaintenance.xrc
 %%DATADIR%%/ui/frmOptions.xrc
 %%DATADIR%%/ui/frmPassword.xrc
+%%DATADIR%%/ui/frmReport.xrc
 %%DATADIR%%/ui/frmRestore.xrc
 %%DATADIR%%/ui/frmStatus.xrc
 %%DATADIR%%/ui/frmUpdate.xrc
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/i18n/zh_TW
 @dirrm %%DATADIR%%/i18n/zh_CN
-@dirrm %%DATADIR%%/i18n/tr_TR
-@dirrm %%DATADIR%%/i18n/sl_SI
 @dirrm %%DATADIR%%/i18n/pl_PL
 @dirrm %%DATADIR%%/i18n/nl_NL
 @dirrm %%DATADIR%%/i18n/ja_JP
+@dirrm %%DATADIR%%/i18n/it_IT
 @dirrm %%DATADIR%%/i18n/fr_FR
 @dirrm %%DATADIR%%/i18n/fi_FI
 @dirrm %%DATADIR%%/i18n/es_ES
 @dirrm %%DATADIR%%/i18n/de_DE
 @dirrm %%DATADIR%%/i18n/ca_ES
-@dirrm %%DATADIR%%/i18n/ar_SA
+@dirrm %%DATADIR%%/i18n/bg_BG
 @dirrm %%DATADIR%%/i18n/af_ZA
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/docs/sl_SI/hints

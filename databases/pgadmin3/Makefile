@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgadmin3
-PORTVERSION=	1.4.3
+PORTVERSION=	1.6.0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	pgadmin3/release/v${PORTVERSION}/src
@@ -20,14 +20,28 @@ IGNORE_WITH_PGSQL=	73
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-wx-version=${USE_WX}
 CONFLICTS=	pgadmin3-1.[12]*
 
-USE_WX=		2.6
+USE_GNOME=	libxml2 libxslt
+USE_WX=		2.8
 WX_COMPS=	wx contrib
 WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},'\
+			-e 's,== yes,= yes,'\
+			-e 's,== no,= no,'\
+		${WRKSRC}/configure
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503105 || ${OSVERSION} < 600014
+IGNORE=		can not be built. Your system has broken vswprintf(3) function
+.endif
+
+.include <bsd.port.post.mk>
