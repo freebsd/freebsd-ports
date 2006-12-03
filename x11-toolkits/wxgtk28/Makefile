@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	wx
-PORTVERSION=	2.6.3
+PORTVERSION=	2.8.0rc1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
-DISTNAME=	wxGTK-${PORTVERSION}
+DISTNAME=	wxGTK-${PORTVERSION:rc1=-rc1}
 
 MAINTAINER?=	fjoe@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
@@ -22,13 +22,12 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
 		expat.6:${PORTSDIR}/textproc/expat2\
 		mspack.1:${PORTSDIR}/archivers/libmspack
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gtk20
-USE_GSTREAMER80=yes
+USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-libjpeg=sys\
@@ -40,24 +39,20 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-gtk\
 		--enable-mediactrl\
 		--disable-backtrace
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv \
-			 -L${X11BASE}/lib" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"\
-		X11BASE="${X11BASE}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
+		WXCONFIG_CPPFLAGS="${PTHREAD_CFLAGS}"\
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk2
 
 .if ${WXGTK_FLAVOR} == "gtk2"
-PORTREVISION=	1
-CONFLICTS=	wxgtk2-contrib-devel-2.5.2*
+PORTREVISION=	0
 .endif
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
-RUN_DEPENDS=	${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common
+RUN_DEPENDS=	${X11BASE}/include/wx-2.8/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk28-common
 .endif
 
 .if ${WXGTK_FLAVOR:M*-common} != ""
@@ -68,12 +63,12 @@ USE_LDCONFIG=	yes
 .endif # *-common
 
 .if ${WXGTK_FLAVOR:M*-contrib*} != ""
-USE_WX=		2.6
+USE_WX=		2.8
 BUILD_WRKSRC=	${WRKSRC}/contrib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
-RUN_DEPENDS=	${X11BASE}/include/wx-2.6/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk26-contrib-common
+RUN_DEPENDS=	${X11BASE}/include/wx-2.8/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk28-contrib-common
 
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
 WX_UNICODE=	yes
