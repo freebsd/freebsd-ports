@@ -268,6 +268,7 @@
     SUBDIR += linux-libxml
     SUBDIR += linux-xerces-c2
     SUBDIR += linuxdoc
+    SUBDIR += localize
     SUBDIR += lt-aspell
     SUBDIR += ltxml
     SUBDIR += lv-aspell
