@@ -16,10 +16,12 @@ DISTFILES=	cnprint330b.c cnprint330b.readme ttfb330b.c cnprint330b.hlp \
 		mshei.ttf.gz mshei.htf cc48s.hbf cc48.sym.gz cc48s.1.gz \
 		cc48s.2.gz hbf.tar.gz ntu_kai48.hbf ntu_kai48.bin.gz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
+MAINTAINER=	chinsan@FreeBSD.org
+COMMENT=	Print CJK text (or convert to PostScript)
 
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+FILES=		${WRKSRC}/*.sym ${WRKSRC}/*.htf ${WRKSRC}/*.hbf \
+		${WRKSRC}/*.bin ${WRKSRC}/*.ttf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -31,23 +33,21 @@ do-extract:
 	${RM} -fr hbf ; \
 	${GUNZIP_CMD} *.gz || ${TRUE}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local/src,${PREFIX}/share,' \
+		${WRKSRC}/cnprint330b.c
+	@${REINPLACE_CMD} -e 's/\(DEFAULT_JIS_FONT\):.*$$/\1: kanji48.hbf/; \
+		s/\(DEFAULT_BIG5FONT\):.*$$/\1: ntu_kai48.hbf/; \
+		s/\(DEFAULT_ENCODING\):.*$$/\1: BIG5/' ${WRKSRC}/cnprint33.cmd
+
 do-build:
 	cd ${WRKSRC} ; \
-	${CC} cnprint330b.c ttfb330b.c -o cnprint -DPREFIX=\"${PREFIX}\" ; \
-	${SED} \
-		-e 's/\(DEFAULT_JIS_FONT\):.*$$/\1: kanji48.hbf/' \
-		-e 's/\(DEFAULT_BIG5FONT\):.*$$/\1: ntu_kai48.hbf/' \
-		-e 's/\(DEFAULT_ENCODING\):.*$$/\1: BIG5/' \
-		>cnprint.cmd <cnprint33.cmd
+	${CC} cnprint330b.c ttfb330b.c -o cnprint -DPREFIX=\"${PREFIX}\"
 
 do-install:
-	${MKDIR} ${PREFIX}/share/cnprint
-	${INSTALL_DATA} ${WRKSRC}/cnprint.cmd ${PREFIX}/share/cnprint
-	${INSTALL_DATA} ${WRKSRC}/*.sym ${PREFIX}/share/cnprint
-	${INSTALL_DATA} ${WRKSRC}/*.htf ${PREFIX}/share/cnprint
-	${INSTALL_DATA} ${WRKSRC}/*.hbf ${PREFIX}/share/cnprint
-	${INSTALL_DATA} ${WRKSRC}/*.bin ${PREFIX}/share/cnprint
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/share/cnprint
+	${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/cnprint ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}33.cmd  ${DATADIR}/${PORTNAME}.cmd
+	${INSTALL_DATA} ${FILES} ${DATADIR}
 
 .include <bsd.port.mk>
