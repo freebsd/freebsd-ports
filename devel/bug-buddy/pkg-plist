@@ -94,8 +94,6 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/bug-buddy/bugzilla/gnome
 @dirrm share/gnome/bug-buddy/bugzilla
 @dirrm share/gnome/bug-buddy
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
