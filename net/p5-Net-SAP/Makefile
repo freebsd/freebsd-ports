@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.ORG
 COMMENT=	Session Announcement Protocol (rfc2974) packet parser
 
 RUN_DEPENDS=	${SITE_PERL}/Net/SDP.pm:${PORTSDIR}/net/p5-Net-SDP \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	YES

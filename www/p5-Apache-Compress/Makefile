@@ -16,7 +16,7 @@ MAINTAINER=	martin@matuska.org
 COMMENT=	Auto-compress web files with Gzip
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 
 PERL_CONFIGURE=	yes
 
