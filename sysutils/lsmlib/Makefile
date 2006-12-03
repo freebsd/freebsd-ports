@@ -18,6 +18,9 @@ COMMENT=	A lib that creates a libxml2 tree w/ info. token on a *NIX filesystem
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-02
+
 XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
