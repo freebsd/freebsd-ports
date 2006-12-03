@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--disable-fribidi
 .if defined(WITH_UIM)
 CONFIGURE_ARGS+=	--enable-uim
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
-LIB_DEPENDS+=	uim.2:${PORTSDIR}/textproc/uim
+LIB_DEPENDS+=	uim.3:${PORTSDIR}/textproc/uim
 PLIST_SUB+=	UIM=""
 .else
 CONFIGURE_ARGS+=	--disable-uim
