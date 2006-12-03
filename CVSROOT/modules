@@ -6669,6 +6669,7 @@ lmpc		ports/games/lmpc
 lmtp2nntp	ports/mail/lmtp2nntp
 lmtpd		ports/mail/lmtpd
 localedata	ports/misc/localedata
+localize	ports/textproc/localize
 locator		ports/comms/locator
 lockdown	ports/security/lockdown
 lodju		ports/graphics/lodju
