@@ -5,12 +5,10 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
-
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit (common files)
 
 WXGTK_FLAVOR=	gtk2-common
-MASTERDIR=	${.CURDIR}/../wxgtk26
+MASTERDIR=	${.CURDIR}/../wxgtk28
 
 .include "${MASTERDIR}/Makefile"
