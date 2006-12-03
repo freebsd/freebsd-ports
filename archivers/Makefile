@@ -24,6 +24,7 @@
     SUBDIR += file-roller
     SUBDIR += fpc-paszlib
     SUBDIR += fpc-unzip
+    SUBDIR += freetar
     SUBDIR += freeze
     SUBDIR += gtar
     SUBDIR += gzip
