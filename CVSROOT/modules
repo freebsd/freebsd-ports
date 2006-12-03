@@ -6197,6 +6197,7 @@ libieee1284	ports/sysutils/libieee1284
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
+libiptcdata	ports/graphics/libiptcdata
 libirman	ports/comms/libirman
 libjackasyn	ports/audio/libjackasyn
 libjbigi	ports/math/libjbigi
