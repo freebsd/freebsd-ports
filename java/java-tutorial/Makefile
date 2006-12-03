@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tutorial
-PORTVERSION=	2006.08.04
+PORTVERSION=	2006.12.04
 CATEGORIES=	java devel
 MASTER_SITES=	http://java.sun.com/docs/books/tutorialNB/download/
 PKGNAMEPREFIX=	jdk-
