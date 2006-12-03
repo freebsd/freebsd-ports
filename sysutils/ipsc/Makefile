@@ -17,6 +17,9 @@ COMMENT=	An IP Subnet Calculator
 
 BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-02
+
 WRKSRC=		${WRKDIR}/ipsc/src
 
 WANT_GNOME=	yes
