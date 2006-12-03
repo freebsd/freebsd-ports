@@ -28,7 +28,8 @@ USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=--enable-ltdl-install=no
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		GL_LIBS="-L${X11BASE}/lib"
 
 MAN1=	gldb.1
 MAN3=	bugle.3
@@ -68,5 +69,8 @@ CONFIGURE_ARGS+=--with-threads=pthreads
 .else
 CONFIGURE_ARGS+=--with-threads=single
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/gentokens/find_header.perl
 
 .include <bsd.port.post.mk>
