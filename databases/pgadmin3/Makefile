@@ -35,9 +35,6 @@ post-patch:
 			-e 's,== no,= no,'\
 		${WRKSRC}/configure
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503105 || ${OSVERSION} < 600014
