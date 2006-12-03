@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Jul 14 17:35:38 2006
-+++ Makefile.in	Fri Jul 28 13:12:35 2006
+--- Makefile.in.orig	Tue Nov  7 13:45:32 2006
++++ Makefile.in	Sun Dec  3 15:06:40 2006
 @@ -4,17 +4,14 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
@@ -16,7 +16,25 @@
 --Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
 --Wparentheses -Wstrict-prototypes -Werror -ffast-math \
 --fomit-frame-pointer -c -o
-+CFL	= ${CFLAGS} -I%%LOCALBASE%%/include -I%%X11BASE%%/include -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib -DOSNUM=1 -ffast-math -fomit-frame-pointer -c -o 
++CFL	= ${CFLAGS} -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -DOSNUM=1 -ffast-math -fomit-frame-pointer -c -o 
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
  -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+@@ -386,7 +383,7 @@
+ meter_graph.ol fonts.ol screensub.ol membeg.ol lxsys.ol memend.ol
+ 
+ 
+-	gcc -olinrad -lvgagl -lvga -lpthread -lm \
++	gcc -olinrad -lvgagl -lvga -pthread -lm \
+ -Wl,-Map,linrad.lmap,-warn-common \
+ 	membeg.ol lmain.ol linvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
+ mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
+@@ -432,7 +429,7 @@
+ 
+ 
+ 
+-	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
++	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -pthread -lm \
+ -Wl,-Map,linrad.xmap,-warn-common \
+ membeg.ol xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
+ mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \

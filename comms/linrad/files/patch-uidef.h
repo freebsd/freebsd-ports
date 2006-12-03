@@ -1,5 +1,5 @@
---- uidef.h.orig	Sat Jul 29 16:29:21 2006
-+++ uidef.h	Sat Jul 29 16:29:34 2006
+--- uidef.h.orig	Tue Nov  7 13:45:32 2006
++++ uidef.h	Fri Nov 24 18:02:31 2006
 @@ -5,7 +5,7 @@
  
  

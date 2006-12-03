@@ -1,5 +1,5 @@
---- lxsys.c.orig	Tue Aug 15 15:27:44 2006
-+++ lxsys.c	Fri Sep  8 16:35:10 2006
+--- lxsys.c.orig	Tue Nov  7 13:45:32 2006
++++ lxsys.c	Fri Nov 24 18:02:31 2006
 @@ -1,12 +1,14 @@
 -
 -#include <sys/io.h>
@@ -18,15 +18,15 @@
  #include <fcntl.h>
  #include <termios.h>
  #include "thrdef.h"
-@@ -16,6 +18,7 @@
+@@ -17,6 +19,7 @@
  #include "lindef.h"
  #include "hwaredef.h"
  
 +extern int saved_euid;
  
- char *locktext[6]={"*W A R N I N G*  Read z_MLOCK.txt for info.",
-                    "*** mlockall can cause system crashes!! ***",
-@@ -66,11 +69,9 @@
+ void lirerr(int errcod)
+ {
+@@ -60,11 +63,9 @@
  // Get permission to write to the parallel port
  if(ui.parport < 0x400-4)
    {
@@ -41,7 +41,7 @@
    }
  if(i != 0)
    {
-@@ -214,11 +215,9 @@
+@@ -208,11 +209,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -56,7 +56,7 @@
    }
  if(i!=0)lirerr(764921);
  i=1000;
-@@ -231,11 +230,9 @@
+@@ -225,11 +224,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -71,4 +71,3 @@
    }
  if(i!=0)lirerr(764921);
  return inb(port);
-
