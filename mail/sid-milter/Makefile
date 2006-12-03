@@ -14,17 +14,8 @@ MASTER_SITE_SUBDIR=	sid-milter
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An sid and spf milter for Sendmail
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
 RESTRICTED=	may incorporate intellectual property, possible patent issues
 
-SENDMAIL_MILTER_PORT?=	sendmail
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		sid-filter.8
 DOCSFILES=	INSTALL KNOWNBUGS LICENSE README README-SenderID RELEASE_NOTES
@@ -33,9 +24,6 @@ PLIST_FILES=	libexec/sid-filter
 PORTDOCS=	${DOCSFILES}
 
 SITE+=		${FILESDIR}/site.config.m4
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-SITE+=		${FILESDIR}/site.config.m4.milter
-.endif
 .if defined(WITH_SIDMILTER_AR)
 MAN3=		ar.3
 PLIST_FILES+=	include/libar.h lib/libar.a
@@ -48,12 +36,10 @@ USE_RC_SUBR=	milter-sid.sh
 
 .include <bsd.port.pre.mk>
 
-.if defined(SENDMAIL_WITHOUT_MILTER)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
+.include "${PORTSDIR}/${PKGCATEGORY}/sendmail/bsd.milter.mk"
+
+.if defined(WITH_SENDMAIL_PORT)
+SITE+=		${FILESDIR}/site.config.m4.milter
 .endif
 
 pre-configure:
