@@ -21,11 +21,6 @@ RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 PERL_CONFIGURE=	yes
-LOCALES=	de en_GB fr nl sv
-PLIST_FILES=	bin/${PORTNAME} share/applications/${PORTNAME}.desktop \
-		${LOCALES:S|^|share/locale/|:S|$|/LC_MESSAGES/${PORTNAME}.mo|} \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/${PORTNAME}/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/${PORTNAME}
 USE_GMAKE=	yes
 MAN1=		${PORTNAME}.1
 
