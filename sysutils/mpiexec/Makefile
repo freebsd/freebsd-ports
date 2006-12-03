@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpiexec
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.osc.edu/~pw/mpiexec/
 EXTRACT_SUFX=	.tgz
