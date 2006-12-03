@@ -19,6 +19,7 @@ LIB_DEPENDS=	tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
 USE_TK=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--with-tkinclude=${TK_INCLUDEDIR} --enable-shared
 CPPFLAGS=	-I${TK_INCLUDEDIR}/generic -I${TCL_INCLUDEDIR}/generic
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
