@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 USE_TK=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--with-tclinclude=${TCL_INCLUDEDIR} --with-tkinclude=${TK_INCLUDEDIR} --enable-shared
 CPPFLAGS=	-I${TK_INCLUDEDIR}/generic -I${TCL_INCLUDEDIR}/generic
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
