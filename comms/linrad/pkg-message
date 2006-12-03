@@ -1,5 +1,5 @@
 linrad is now installed.
-linrad is now a shell script which "wraps" xlinrad.
+linrad is a shell script which "wraps" xlinrad.
 When used for the first time, the linrad wrapper will create a ~/.linrad
 directory which will be your working directory.
 
