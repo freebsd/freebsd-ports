@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tla
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://regexps.srparish.net/src/${PORTNAME}/ \
