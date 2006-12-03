@@ -3017,6 +3017,7 @@ fusefs-gphotofs	ports/graphics/fusefs-gphotofs
 fusefs-httpfs	ports/sysutils/fusefs-httpfs
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
+fusefs-ntfs	ports/sysutils/fusefs-ntfs
 fusefs-smbnetfs	ports/sysutils/fusefs-smbnetfs
 fusefs-sqlfs	ports/sysutils/fusefs-sqlfs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
@@ -14822,6 +14823,7 @@ vipec		ports/cad/vipec
 vips		ports/graphics/vips
 virtualmin	ports/sysutils/virtualmin
 virtualpaper	ports/print/virtualpaper
+virtuoso	ports/databases/virtuoso
 viruskiller	ports/games/viruskiller
 vis5d+		ports/science/vis5d+
 visionegg	ports/graphics/visionegg
@@ -15220,6 +15222,12 @@ wxgtk26-contrib-common	ports/x11-toolkits/wxgtk26-contrib-common
 wxgtk26-docs	ports/x11-toolkits/wxgtk26-docs
 wxgtk26-unicode	ports/x11-toolkits/wxgtk26-unicode
 wxgtk26-unicode-contrib	ports/x11-toolkits/wxgtk26-unicode-contrib
+wxgtk28		ports/x11-toolkits/wxgtk28
+wxgtk28-common	ports/x11-toolkits/wxgtk28-common
+wxgtk28-contrib	ports/x11-toolkits/wxgtk28-contrib
+wxgtk28-contrib-common	ports/x11-toolkits/wxgtk28-contrib-common
+wxgtk28-unicode	ports/x11-toolkits/wxgtk28-unicode
+wxgtk28-unicode-contrib	ports/x11-toolkits/wxgtk28-unicode-contrib
 wxmozilla	ports/x11-toolkits/wxmozilla
 wxsvg		ports/graphics/wxsvg
 wy60		ports/comms/wy60
