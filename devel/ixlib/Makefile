@@ -8,7 +8,7 @@
 
 PORTNAME=	ixlib
 PORTVERSION=	0.96.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,8 +27,8 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" || ${OSVERSION} >= 500000
-BROKEN=		Does not compile on !i386 or on FreeBSD >= 5.x
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 pre-configure:

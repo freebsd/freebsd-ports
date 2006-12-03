@@ -27,6 +27,7 @@ include/ixlib_textfile.hh
 include/ixlib_token_lex.hh
 include/ixlib_xml.hh
 lib/libixion.a
+lib/libixion.la
 lib/libixion.so
 lib/libixion.so.6
 share/aclocal/ixlib.m4
