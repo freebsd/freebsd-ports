@@ -16,12 +16,13 @@ COMMENT=	Read, manipulate and display geo data
 LIB_DEPENDS=	tclgeomap.0:${PORTSDIR}/astro/tclgeomap \
 		tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
 
-CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x
+CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 USE_TK=		yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST_SUB=	INC=include/${PORTNAME} \
-		LIB=lib/${PORTNAME}
+		LIB=lib/${PORTNAME} VER=${PORTVERSION}
 MAKE_ENV=	MKLINKS_FLAGS=-s
 USE_LDCONFIG=	yes
 
@@ -31,8 +32,10 @@ MLINKS=	\
 	wdgeomap.n xytolatlon.n
 
 post-install:
-	@${LN} -sf ${PREFIX}/lib/libtkgeomap2.9.so ${PREFIX}/lib/libtkgeomap2.9.so.0
-	@${LN} -sf ${PREFIX}/lib/libtkgeomap2.9.so ${PREFIX}/lib/libtkgeomap.so.0
+	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so \
+		${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so.0
+	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so \
+		${PREFIX}/lib/lib${PORTNAME}.so.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/@PACKAGE@@VERSION@/@PACKAGE@/g' ${WRKSRC}/Makefile.in ${WRKSRC}/pkgIndex.tcl.in

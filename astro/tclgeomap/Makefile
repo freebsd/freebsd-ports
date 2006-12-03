@@ -20,7 +20,7 @@ USE_TCL=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST_SUB=	INC=include/${PORTNAME} \
-		LIB=lib/${PORTNAME}
+		LIB=lib/${PORTNAME} VER=${PORTVERSION}
 MAKE_ENV=	MKLINKS_FLAGS=-s
 USE_LDCONFIG=	yes
 
@@ -180,8 +180,10 @@ MLINKS=	\
 	tclgeomap_procs.n ocean_list.n
 
 post-install:
-	@${LN} -sf ${PREFIX}/lib/libtclgeomap2.9.so ${PREFIX}/lib/libtclgeomap2.9.so.0
-	@${LN} -sf ${PREFIX}/lib/libtclgeomap2.9.so ${PREFIX}/lib/libtclgeomap.so.0
+	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so \
+		${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so.0
+	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so \
+		${PREFIX}/lib/lib${PORTNAME}.so.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/@PACKAGE@@VERSION@/@PACKAGE@/g' ${WRKSRC}/Makefile.in ${WRKSRC}/pkgIndex.tcl.in
