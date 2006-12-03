@@ -143,6 +143,7 @@ include/sylpheed-claws/noticeview.h
 include/sylpheed-claws/partial_download.h
 include/sylpheed-claws/pine.h
 %%GPGME%%include/sylpheed-claws/plugins/pgpcore/passphrase.h
+%%GPGME%%include/sylpheed-claws/plugins/pgpcore/pgp_viewer.h
 %%GPGME%%include/sylpheed-claws/plugins/pgpcore/prefs_gpg.h
 %%GPGME%%include/sylpheed-claws/plugins/pgpcore/select-keys.h
 %%GPGME%%include/sylpheed-claws/plugins/pgpcore/sgpgme.h

@@ -7,6 +7,7 @@
 
 PORTNAME=	synce
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259
 
 CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE} \

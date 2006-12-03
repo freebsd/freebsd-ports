@@ -7,7 +7,7 @@
 
 PORTNAME=	vcalendar
 PORTVERSION=	1.89.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \

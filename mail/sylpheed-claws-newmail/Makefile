@@ -7,6 +7,7 @@
 
 PORTNAME=	newmail
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259
 
 PLIST_FILES=lib/sylpheed-claws/plugins/newmail.a \
