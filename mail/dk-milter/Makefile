@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dk.sh
@@ -34,6 +34,10 @@ LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 .endif
+.endif
+
+.if defined(PARALLEL_PACKAGE_BUILD)
+IGNORE=	pointhat cluster does not support sysvipc 
 .endif
 
 SENDMAIL_MILTER_PORT?=	sendmail
