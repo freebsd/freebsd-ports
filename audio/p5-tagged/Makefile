@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:cpan,sf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, change and write different tags of MP3 audio files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+BUILD_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

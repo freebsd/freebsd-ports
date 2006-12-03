@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Class-Autouse>=1.15:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Data-Hierarchy>=0.21:${PORTSDIR}/devel/p5-Data-Hierarchy \
 		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/File/Type.pm:${PORTSDIR}/devel/p5-File-Type \

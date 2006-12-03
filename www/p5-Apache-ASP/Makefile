@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Apache/Filter.pm:${PORTSDIR}/www/p5-Apache-Filter \
 		${SITE_PERL}/Tie/Cache.pm:${PORTSDIR}/devel/p5-Tie-Cache \
 		${SITE_PERL}/XML/XSLT.pm:${PORTSDIR}/textproc/p5-XML-XSLT \
 		${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
