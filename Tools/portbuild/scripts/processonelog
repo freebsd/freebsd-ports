@@ -267,6 +267,8 @@ elif bzgrep -q "/usr/bin/ld: cannot find -lXThrStub" $1; then
   reason="threads"; tag="threads"
 elif bzgrep -q "<varargs.h> is obsolete with this version of GCC" $1; then
   reason="varargs"; tag="varargs"
+elif bzgrep -q "shminit failed: Permission denied" $1; then
+  reason="sysvipc"; tag="sysvipc"
 
 # Although these can be fairly common, and thus in one sense ought to be
 # earlier in the evaluation, in practice they are most often secondary
