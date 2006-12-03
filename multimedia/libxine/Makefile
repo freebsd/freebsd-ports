@@ -95,7 +95,7 @@ USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	WITH_GNOMEVFS2=""
 .else
 PLIST_SUB+=	WITH_GNOMEVFS2="@comment "
-CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=	--disable-gnomevfs
 .endif
 
 .if !defined(WITHOUT_POLYPAUDIO) && (exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) || defined(WITH_POLYPAUDIO))
@@ -127,7 +127,7 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	WITH_AALIB=""
 .else
 PLIST_SUB+=	WITH_AALIB="@comment "
-CONFIGURE_ARGS+=	--disable-aalib
+CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK) && (exists(${LOCALBASE}/lib/libWand.so.10) || defined (WITH_IMAGEMAGICK))
@@ -157,37 +157,37 @@ pre-everything::
 	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> You can enable some features by defining following variables."
 	@${ECHO_MSG} "===>"
-.if !exists(${LOCALBASE}/bin/artsc-config) && !defined(WITH_ARTS)
+.if !exists(${LOCALBASE}/bin/artsc-config) && !defined(WITH_ARTS) || defined(WITHOUT_ARTS)
 	@${ECHO_MSG} "===> WITH_ARTS   (arts support)"
 .else
 	@${ECHO_MSG} "===> WITH_ARTS   (arts support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libcaca.a) && !defined(WITH_CACA)
+.if !exists(${LOCALBASE}/lib/libcaca.a) && !defined(WITH_CACA) || defined(WITHOUT_CACA)
 	@${ECHO_MSG} "===> WITH_CACA (libcaca support)"
 .else
 	@${ECHO_MSG} "===> WITH_CACA (libcaca support, enabled)"
 .endif
-.if !(${HAVE_GNOME:Mgnomevfs2} != "") && !defined(WITH_GNOMEVFS2)
+.if !(${HAVE_GNOME:Mgnomevfs2} != "") && !defined(WITH_GNOMEVFS2) || defined(WITHOUT_GNOMEVFS2)
 	@${ECHO_MSG} "===> WITH_GNOMEVFS2 (gnomevfs2 support)"
 .else
 	@${ECHO_MSG} "===> WITH_GNOMEVFS2 (gnomevfs2 support, enabled)"
 .endif
-.if !(${HAVE_GNOME:Mesound} != "") && !defined(WITH_ESOUND)
+.if !(${HAVE_GNOME:Mesound} != "") && !defined(WITH_ESOUND) || defined(WITHOUT_ESOUND)
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support)"
 .else
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) && !defined(WITH_POLYPAUDIO)
+.if !exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) && !defined(WITH_POLYPAUDIO) || defined(WITHOUT_POLYPAUDIO)
 	@${ECHO_MSG} "===> WITH_POLYPAUDIO (polypaudio support)"
 .else
 	@${ECHO_MSG} "===> WITH_POLYPAUDIO (polypaudio support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libsmbclient.so.0) && !defined (WITH_SMB)
+.if !exists(${LOCALBASE}/lib/libsmbclient.so.0) && !defined (WITH_SMB) || defined(WITHOUT_SMB)
 	@${ECHO_MSG} "===> WITH_SMB (SMB support)"
 .else
 	@${ECHO_MSG} "===> WITH_SMB (SMB support, enabled)"
 .endif
-.if !exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) && !defined(WITH_XVMC)
+.if !exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) && !defined(WITH_XVMC) || defined(WITHOUT_XVMC)
 	@${ECHO_MSG} "===> WITH_XVMC (XvMC support)"
 .else
 	@${ECHO_MSG} "===> WITH_XVMC (XvMC support, enabled)"
