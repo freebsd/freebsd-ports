@@ -27,6 +27,7 @@
     SUBDIR += chexedit
     SUBDIR += cle
     SUBDIR += code-browser
+    SUBDIR += codeeditor
     SUBDIR += color-mate
     SUBDIR += conglomerate
     SUBDIR += cooledit
