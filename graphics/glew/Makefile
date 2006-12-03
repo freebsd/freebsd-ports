@@ -16,9 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OpenGL Extension Wrangler Library
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
