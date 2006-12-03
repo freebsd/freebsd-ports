@@ -7,7 +7,7 @@
 
 PORTNAME=	xenon
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://sydney.proximity.com.au/~ben/xenon/dist/ \
 		ftp://yankee.proximitygroup.com/pub/xenon/
@@ -16,25 +16,29 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X-based text editor
 
 USE_GMAKE=	yes
+USE_GCC=	3.4+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAKEFILE=	${WRKSRC}/makefiles/Makefile.Linux
 
 MAN1=		xe.1
 
-FIX_FILES=	Xe.h XeApp.h XeFontTable.C XeFontTable.h XeKeyTable.C \
-		XeKeyTable.h XeObjectTable.h
+FIX_FILES=	Xe.h XeApp.C XeApp.h XeFontTable.C XeKeyTable.C \
+		XeKeyTable.h XeObject.C XeObject.h XeObjectTable.h XeText.C \
+		XeText.h
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=	"Does not compile (bad C++ code)"
-.endif
 
 do-configure:
 .for file in ${FIX_FILES}
 	@${REINPLACE_CMD} -e 's|#include <ext/|#include <|' \
-		-e 's|ulong|u_long|g' -e 's|uint|u_int|g' ${WRKSRC}/${file}
+		-e 's|ulong|u_long|g' -e 's|uint|u_int|g' \
+		-e 's|#include <slist>|#include <list>|' \
+		-e 's|std::slist|std::list|g' \
+		-e 's|#include <hash_map>|#include <ext/hash_map>|' \
+		-e 's|std::hash_map|__gnu_cxx::hash_map|g' \
+		-e 's|std::hash|__gnu_cxx::hash|g' \
+		${WRKSRC}/${file}
 .endfor
 
 do-install:
