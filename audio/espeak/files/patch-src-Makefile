@@ -5,7 +5,7 @@
  INCDIR=/usr/include/espeak
  LIBDIR=/usr/lib
 -DATADIR=/usr/share/espeak-data
-+DATADIR=%%DATADIR%%
++DATADIR=%%DATADIR%%/espeak-data
  
  RELEASE = 1.17
  BIN_NAME = speak
