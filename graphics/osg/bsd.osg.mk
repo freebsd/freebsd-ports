@@ -1,4 +1,4 @@
-# $Id$
+# $FreeBSD$
 
 MASTER_SITES=	http://www.openscenegraph.org/downloads/snapshots/
 DISTNAME=	OSG_OP_OT-1.2
