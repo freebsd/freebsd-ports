@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create an ISO 9660 image, possibly incrementally
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-02
+
 MAN8=		mk9660.8
 MAN5=		proto.5
 MLINKS=		mk9660.8 dump9660.8
