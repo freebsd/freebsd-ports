@@ -111,7 +111,7 @@ share/pixmaps/briquolo.svg
 @dirrm %%DATADIR%%/tableau
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm share/pixmaps
+@dirrmtry share/pixmaps
 share/applications/briquolo.desktop
 %%NLS%%@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
