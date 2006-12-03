@@ -8,7 +8,8 @@
 PORTNAME=	hevea
 PORTVERSION=	1.09
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/moscova/hevea/
+MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
+		ftp://ftp.inria.fr/INRIA/moscova/hevea/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-${PORTVERSION}-manual-dvi.tar.gz \
 		${PORTNAME}-${PORTVERSION}-manual.pdf \
