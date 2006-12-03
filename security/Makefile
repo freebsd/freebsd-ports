@@ -659,6 +659,7 @@
     SUBDIR += ssh2
     SUBDIR += ssh2-nox11
     SUBDIR += ssh_askpass_gtk2
+    SUBDIR += sshblock
     SUBDIR += sshit
     SUBDIR += sslproxy
     SUBDIR += sslsniffer
