@@ -133,9 +133,9 @@
     SUBDIR += p5-Gnome2-VFS
     SUBDIR += p5-Gtk
     SUBDIR += p5-Gtk2
+    SUBDIR += p5-Gtk2-Ex-PodViewer
     SUBDIR += p5-Gtk2-Ex-Simple-List
     SUBDIR += p5-Gtk2-Html2
-    SUBDIR += p5-Gtk2-PodViewer
     SUBDIR += p5-Gtk2-TrayIcon
     SUBDIR += p5-GtkXmHTML
     SUBDIR += p5-Prima

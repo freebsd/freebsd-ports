@@ -1,7 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/PodViewer/.packlist
+%%SITE_PERL%%/Gtk2/Ex/PodViewer.pm
+%%SITE_PERL%%/Gtk2/Ex/PodViewer/Parser.pm
 bin/podviewer
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/PodViewer/.packlist
-%%SITE_PERL%%/Gtk2/PodViewer.pm
-%%SITE_PERL%%/Gtk2/PodViewer/Parser.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/PodViewer
-@dirrm %%SITE_PERL%%/Gtk2/PodViewer
+@dirrmtry %%SITE_PERL%%/Gtk2/Ex/PodViewer
+@dirrmtry %%SITE_PERL%%/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/Gtk2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/PodViewer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
