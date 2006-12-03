@@ -1,0 +1,40 @@
+bin/iptc
+include/libiptcdata/iptc-dataset.h
+include/libiptcdata/iptc-data.h
+include/libiptcdata/iptc-jpeg.h
+include/libiptcdata/iptc-log.h
+include/libiptcdata/iptc-mem.h
+include/libiptcdata/iptc-tag.h
+include/libiptcdata/iptc-utils.h
+include/libiptcdata/_stdint.h
+lib/libiptcdata.a
+lib/libiptcdata.la
+lib/libiptcdata.so
+lib/libiptcdata.so.3
+libdata/pkgconfig/libiptcdata.pc
+share/gtk-doc/html/libiptcdata/home.png
+share/gtk-doc/html/libiptcdata/ch01.html
+share/gtk-doc/html/libiptcdata/ch02.html
+share/gtk-doc/html/libiptcdata/ch03.html
+share/gtk-doc/html/libiptcdata/index.html
+share/gtk-doc/html/libiptcdata/index.sgml
+share/gtk-doc/html/libiptcdata/iptc-about.html
+share/gtk-doc/html/libiptcdata/iptc-commandline.html
+share/gtk-doc/html/libiptcdata/iptc-i18n.html
+share/gtk-doc/html/libiptcdata/iptc-libjpeg.html
+share/gtk-doc/html/libiptcdata/iptc-overview.html
+share/gtk-doc/html/libiptcdata/left.png
+share/gtk-doc/html/libiptcdata/libiptcdata.devhelp
+share/gtk-doc/html/libiptcdata/libiptcdata-dataset.html
+share/gtk-doc/html/libiptcdata/libiptcdata-data.html
+share/gtk-doc/html/libiptcdata/libiptcdata-jpeg.html
+share/gtk-doc/html/libiptcdata/libiptcdata-log.html
+share/gtk-doc/html/libiptcdata/libiptcdata-mem.html
+share/gtk-doc/html/libiptcdata/libiptcdata-tag.html
+share/gtk-doc/html/libiptcdata/libiptcdata-utils.html
+share/gtk-doc/html/libiptcdata/right.png
+share/gtk-doc/html/libiptcdata/up.png
+@dirrm share/gtk-doc/html/libiptcdata
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/libiptcdata

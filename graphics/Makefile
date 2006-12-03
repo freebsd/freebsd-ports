@@ -356,6 +356,7 @@
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
     SUBDIR += libimg
+    SUBDIR += libiptcdata
     SUBDIR += libkexif
     SUBDIR += libkipi
     SUBDIR += liblug
