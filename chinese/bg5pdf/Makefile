@@ -9,10 +9,10 @@ PORTNAME=	bg5pdf
 PORTVERSION=	1.0.0
 PORTREVISION=	5
 CATEGORIES=	chinese print
-MASTER_SITES=	http://cschin.yydolphin.net/bg5pdf/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/ \
+		LOCAL/chinsan
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
 LIB_DEPENDS=	pdf.8:${PORTSDIR}/print/pdflib
@@ -22,8 +22,11 @@ USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR},g' \
-		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,/usr/bin/python,python,g'  ${WRKSRC}/bg5pdf
+
+do-build:
+	${CC} ${CFLAGS} -shared ${WRKSRC}/bg5pdflib.c -I${PREFIX}/include \
+		-I${PYTHON_INCLUDEDIR} -L${PREFIX}/lib -lpdf -o ${WRKSRC}/bg5pdflib.so
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
