@@ -1,0 +1,20 @@
+--- makefiles/Makefile.common.orig	Sat Aug  4 16:59:06 2001
++++ makefiles/Makefile.common	Fri Dec  1 20:33:15 2006
+@@ -67,7 +67,7 @@
+ MKDEPEND = ./mkdepend
+ DEPEND = .depend
+ 
+-_CCFLAGS = $(ARCH) $(CCFLAGS) $(INCLUDES)
++_CCFLAGS = $(CCFLAGS) $(INCLUDES)
+ _LDFLAGS = $(TARGETLIB) $(LIBS)
+ 
+ #LDFLAGS = $(TARGETLIB)  -lXpm -lX11
+@@ -94,7 +94,7 @@
+ #	$(CC) -shared -o $(TARGETSO) $(OBJECTS)
+ 
+ $(TARGET): $(TARGETLIB) $(AUXTARGET).o
+-	$(CC) $(ARCH) $(LDFLAGS) $(AUXTARGET).o $(_LDFLAGS) -o $(TARGET)
++	$(CC) $(LDFLAGS) $(AUXTARGET).o $(_LDFLAGS) -o $(TARGET)
+ 
+ #$(SHTARGET): $(TARGETSO) $(TARGET).o
+ #	$(CC) -o $(TARGET) -g $(TARGET).o $(SHLDFLAGS)
