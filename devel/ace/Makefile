@@ -7,6 +7,7 @@
 
 PORTNAME=	ace
 PORTVERSION=	5.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 		http://deuce.doc.wustl.edu/old_distribution/ \
