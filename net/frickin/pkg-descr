@@ -1,0 +1,4 @@
+Frickin PPTP Proxy is a way to NAT as many PPTP connections as you like
+through your OpenBSD PF firewall.
+
+WWW: http://frickin.sourceforge.net/

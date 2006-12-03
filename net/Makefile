@@ -130,6 +130,7 @@
     SUBDIR += freeradius
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
+    SUBDIR += frickin
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
