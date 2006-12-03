@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rsibreak
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	x11 kde
-MASTER_SITES=	http://www.rsibreak.org/images/e/e2/
+MASTER_SITES=	http://www.rsibreak.org/images/e/e0/
 DISTFILES=	Rsibreak-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's/install-data-local: install-apidox/install-data-local:/' \
