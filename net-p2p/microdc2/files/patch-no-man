@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Nov 29 21:15:24 2006
++++ src/Makefile.in	Sun Dec  3 14:11:19 2006
+@@ -695,7 +695,7 @@
+ 
+ install-info: install-info-recursive
+ 
+-install-man: install-man1
++install-man: 
+ 
+ installcheck-am:
+ 

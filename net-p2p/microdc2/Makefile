@@ -1,0 +1,35 @@
+# New ports collection makefile for:   microdc
+# Date created:                2006-12-02
+# Whom:                        Pankov Pavel <pankov_p@mail.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	microdc2
+PORTVERSION=	0.15.3
+CATEGORIES=	net-p2p
+MASTER_SITES=	http://corsair626.no-ip.org/microdc/
+
+MAINTAINER=	pankov_p@mail.ru
+COMMENT=	A command-line based Direct Connect client
+
+USE_GCC=	3.4+
+GNU_CONFIGURE=	yes
+USE_ICONV=	yes
+USE_GNOME=	libxml2
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	doesn't compile on FreeBSD 4.x
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	 NLS="@comment "
+.endif
+
+.include <bsd.port.post.mk>

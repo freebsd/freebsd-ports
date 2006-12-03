@@ -1,0 +1,7 @@
+microdc is a command-line based Direct Connect client that uses the
+GNU Readline library for user interaction. It was developed from
+ground up and does not depend on any other program. Despite the
+command-line user interface, microdc was designed to be user
+friendly and simple to use.
+
+WWW: http://corsair626.no-ip.org/microdc/
