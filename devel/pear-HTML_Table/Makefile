@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Table
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -19,6 +19,8 @@ CATEGORY=	HTML
 FILES=		Table.php Table/Storage.php
 EXAMPLES=	Table_example1.php Table_example2.php
 _EXAMPLESDIR=	docs
+DOCS=		LICENSE
+_DOCSDIR=	.
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
