@@ -364,6 +364,8 @@
 %%RCUBEDIR%%/program/localization/si/messages.inc
 %%RCUBEDIR%%/program/localization/sk/labels.inc
 %%RCUBEDIR%%/program/localization/sk/messages.inc
+%%RCUBEDIR%%/program/localization/sr/labels.inc
+%%RCUBEDIR%%/program/localization/sr/messages.inc
 %%RCUBEDIR%%/program/localization/tr/labels.inc
 %%RCUBEDIR%%/program/localization/tr/messages.inc
 %%RCUBEDIR%%/program/localization/tw/labels.inc
@@ -560,6 +562,7 @@
 %%RCUBEDIR%%/skins/default/templates/managefolders.html
 %%RCUBEDIR%%/skins/default/templates/message.html
 %%RCUBEDIR%%/skins/default/templates/messagepart.html
+%%RCUBEDIR%%/skins/default/templates/messagepreview.html
 %%RCUBEDIR%%/skins/default/templates/printmessage.html
 %%RCUBEDIR%%/skins/default/templates/settings.html
 %%RCUBEDIR%%/skins/default/templates/showcontact.html
@@ -581,6 +584,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/zh_CN
 @dirrm %%RCUBEDIR%%/program/localization/tw
 @dirrm %%RCUBEDIR%%/program/localization/tr
+@dirrm %%RCUBEDIR%%/program/localization/sr
 @dirrm %%RCUBEDIR%%/program/localization/sk
 @dirrm %%RCUBEDIR%%/program/localization/si
 @dirrm %%RCUBEDIR%%/program/localization/se
