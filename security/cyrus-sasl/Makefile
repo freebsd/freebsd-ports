@@ -28,6 +28,9 @@ PATCHFILES=	sasl_apop_patch.gz:apop \
 PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/:apop \
 		http://www.imasy.or.jp/~ume/ipv6/
 
+DEPRECATED=	patches are unfetchable and this software is unsupported
+EXPIRATION_DATE=	2007-01-02
+
 USE_SUBMAKE=	yes
 USE_OPENSSL=	yes
 
