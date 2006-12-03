@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	bug-buddy
-PORTVERSION=	2.16.0
-PORTREVISION=	2
+PORTVERSION=	2.16.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bug-buddy/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -27,7 +26,7 @@ INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop gnomemenus \
-		desktopfileutils gnomedocutils evolutiondataserver
+		gnomedocutils evolutiondataserver
 GNOME_DESKTOP_VERSION=2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -37,8 +36,5 @@ GCONF_SCHEMAS=	bug-buddy.schemas
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|' \
 		${WRKSRC}/src/bugzilla.c
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
