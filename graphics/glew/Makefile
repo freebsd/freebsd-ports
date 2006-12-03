@@ -15,10 +15,10 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OpenGL Extension Wrangler Library
 
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
