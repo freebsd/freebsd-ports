@@ -5422,6 +5422,7 @@ kaskade		ports/math/kaskade
 kasm		ports/devel/kasm
 kaspaliste	ports/print/kaspaliste
 katalog		ports/misc/katalog
+katapult	ports/deskutils/katapult
 katchtv		ports/multimedia/katchtv
 kate-plugins	ports/editors/kate-plugins
 katoob		ports/arabic/katoob
