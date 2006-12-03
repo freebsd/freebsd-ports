@@ -36,13 +36,9 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -Wl,--rpath,${PREFIX}/lib/gnash" \
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/gnash" \
 		--with-plugindir=${PLUGIN_DIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
 OPTIONS=	PLUGIN	"Enable firefox plugin" on
-.else
-OPTIONS=	PLUGIN	"Enable firefox plugin" off
-.endif
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITH_PLUGIN)
 CONFIGURE_ARGS+=	--disable-plugin
