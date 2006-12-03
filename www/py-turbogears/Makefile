@@ -7,7 +7,7 @@
 
 PORTNAME=	TurboGears
 PORTVERSION=	0.8.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 		http://www.turbogears.org/download/eggs/
@@ -19,7 +19,7 @@ COMMENT=	Python-Based Framework for Rapid Web Development
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
-		kid:${PORTSDIR}/devel/py-kid \
+		${PYTHON_SITELIBDIR}/kid/__init__.py:${PORTSDIR}/devel/py-kid \
 		sqlobject-admin:${PORTSDIR}/databases/py-sqlobject \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
