@@ -1,0 +1,149 @@
+bin/squirrel-sql
+share/java/squirrel-sql/doc/changes.txt
+share/java/squirrel-sql/doc/faq.html
+share/java/squirrel-sql/doc/images/add_alias_1.png
+share/java/squirrel-sql/doc/images/aliases_tool_window_1.png
+share/java/squirrel-sql/doc/images/chg_driver_1.png
+share/java/squirrel-sql/doc/images/chg_driver_2.png
+share/java/squirrel-sql/doc/images/connect_window.png
+share/java/squirrel-sql/doc/images/createresultwindow.gif
+share/java/squirrel-sql/doc/images/drivers_tool_window_1.png
+share/java/squirrel-sql/doc/images/error_st_obj.gif
+share/java/squirrel-sql/doc/images/global_data_types_1.png
+share/java/squirrel-sql/doc/images/global_data_types_2.png
+share/java/squirrel-sql/doc/images/global_general.png
+share/java/squirrel-sql/doc/images/global_proxy.png
+share/java/squirrel-sql/doc/images/global_sql.png
+share/java/squirrel-sql/doc/images/logo.jpg
+share/java/squirrel-sql/doc/images/logo_1.jpg
+share/java/squirrel-sql/doc/images/ok_st_obj.gif
+share/java/squirrel-sql/doc/images/plugins_1.png
+share/java/squirrel-sql/doc/images/session_1.png
+share/java/squirrel-sql/doc/images/session_2.png
+share/java/squirrel-sql/doc/images/session_props_general.png
+share/java/squirrel-sql/doc/images/session_props_object.png
+share/java/squirrel-sql/doc/images/session_props_sql.png
+share/java/squirrel-sql/doc/images/sql_1.png
+share/java/squirrel-sql/doc/images/sql_2.png
+share/java/squirrel-sql/doc/images/toolspopup.jpg
+share/java/squirrel-sql/doc/licences/dean_jones_icons_licence.txt
+share/java/squirrel-sql/doc/licences/eclipse-icons-licence.html
+share/java/squirrel-sql/doc/licences/eclipse-icons-licence.txt
+share/java/squirrel-sql/doc/licences/log4j-licence.txt
+share/java/squirrel-sql/doc/licences/nano_xml_licence.txt
+share/java/squirrel-sql/doc/licences/squirrel_licence.txt
+share/java/squirrel-sql/doc/licences/sun_icons_licence.txt
+share/java/squirrel-sql/doc/news.txt
+share/java/squirrel-sql/doc/plugins.html
+share/java/squirrel-sql/doc/quick_start.html
+share/java/squirrel-sql/doc/readme.html
+share/java/squirrel-sql/doc/readme.txt
+share/java/squirrel-sql/doc/style.css
+share/java/squirrel-sql/doc/welcome.html
+share/java/squirrel-sql/icons/acorn.ico
+share/java/squirrel-sql/icons/acorn.png
+share/java/squirrel-sql/icons/acorn.xpm
+share/java/squirrel-sql/lib/commons-cli.jar
+share/java/squirrel-sql/lib/forms.jar
+share/java/squirrel-sql/lib/fw.jar
+share/java/squirrel-sql/lib/log4j.jar
+share/java/squirrel-sql/lib/nanoxml-2.1.jar
+share/java/squirrel-sql/log4j.properties
+share/java/squirrel-sql/plugins/codecompletion.jar
+share/java/squirrel-sql/plugins/codecompletion/changes.txt
+share/java/squirrel-sql/plugins/codecompletion/completionpopup.jpg
+share/java/squirrel-sql/plugins/codecompletion/graph.jpg
+share/java/squirrel-sql/plugins/codecompletion/licence.txt
+share/java/squirrel-sql/plugins/codecompletion/readme.html
+share/java/squirrel-sql/plugins/codecompletion/readme.txt
+share/java/squirrel-sql/plugins/codecompletion/src.jar
+share/java/squirrel-sql/plugins/editextras.jar
+share/java/squirrel-sql/plugins/editextras/changes.txt
+share/java/squirrel-sql/plugins/editextras/licence.txt
+share/java/squirrel-sql/plugins/editextras/readme.html
+share/java/squirrel-sql/plugins/editextras/readme.txt
+share/java/squirrel-sql/plugins/editextras/src.jar
+share/java/squirrel-sql/plugins/editextras/toolspopup.jpg
+share/java/squirrel-sql/plugins/graph.jar
+share/java/squirrel-sql/plugins/graph/changes.txt
+share/java/squirrel-sql/plugins/graph/graph.jpg
+share/java/squirrel-sql/plugins/graph/licence.txt
+share/java/squirrel-sql/plugins/graph/readme.html
+share/java/squirrel-sql/plugins/graph/readme.txt
+share/java/squirrel-sql/plugins/graph/src.jar
+share/java/squirrel-sql/plugins/graph/zoomprint.jpg
+share/java/squirrel-sql/plugins/laf.jar
+share/java/squirrel-sql/plugins/laf/OYOAHA-licence.html
+share/java/squirrel-sql/plugins/laf/changes.txt
+share/java/squirrel-sql/plugins/laf/jgoodies-looks-licence.txt
+share/java/squirrel-sql/plugins/laf/kunststoff_Licence.txt
+share/java/squirrel-sql/plugins/laf/laf-plugin-licence.txt
+share/java/squirrel-sql/plugins/laf/lafs/kunststoff.jar
+share/java/squirrel-sql/plugins/laf/lafs/looks-1.3.1.jar
+share/java/squirrel-sql/plugins/laf/lafs/metouia.jar
+share/java/squirrel-sql/plugins/laf/lafs/oalnf.jar
+share/java/squirrel-sql/plugins/laf/lafs/readme.txt
+share/java/squirrel-sql/plugins/laf/lafs/skinlf.jar
+share/java/squirrel-sql/plugins/laf/lafs/swingsetthemes.jar
+share/java/squirrel-sql/plugins/laf/licences.html
+share/java/squirrel-sql/plugins/laf/metouia-licence.txt
+share/java/squirrel-sql/plugins/laf/oyoaha-theme-packs/gradient.otm
+share/java/squirrel-sql/plugins/laf/oyoaha-theme-packs/readme.txt
+share/java/squirrel-sql/plugins/laf/readme.html
+share/java/squirrel-sql/plugins/laf/readme.txt
+share/java/squirrel-sql/plugins/laf/skin_look_and_feel_licence.txt
+share/java/squirrel-sql/plugins/laf/skinlf-theme-packs/readme.txt
+share/java/squirrel-sql/plugins/laf/skinlf-theme-packs/whistlerthemepack.zip
+share/java/squirrel-sql/plugins/laf/src.jar
+share/java/squirrel-sql/plugins/readme.txt
+share/java/squirrel-sql/plugins/sqlbookmark.jar
+share/java/squirrel-sql/plugins/sqlbookmark/bookmarkspopup.jpg
+share/java/squirrel-sql/plugins/sqlbookmark/changes.txt
+share/java/squirrel-sql/plugins/sqlbookmark/licence.txt
+share/java/squirrel-sql/plugins/sqlbookmark/prefs.jpg
+share/java/squirrel-sql/plugins/sqlbookmark/readme.html
+share/java/squirrel-sql/plugins/sqlbookmark/src.jar
+share/java/squirrel-sql/plugins/sqlbookmark/toolspopup.jpg
+share/java/squirrel-sql/plugins/sqlscript.jar
+share/java/squirrel-sql/plugins/sqlscript/changes.txt
+share/java/squirrel-sql/plugins/sqlscript/creattable.jpg
+share/java/squirrel-sql/plugins/sqlscript/licence.txt
+share/java/squirrel-sql/plugins/sqlscript/readme.html
+share/java/squirrel-sql/plugins/sqlscript/readme.txt
+share/java/squirrel-sql/plugins/sqlscript/src.jar
+share/java/squirrel-sql/plugins/sqlscript/toolspopup.jpg
+share/java/squirrel-sql/plugins/syntax.jar
+share/java/squirrel-sql/plugins/syntax/changes.txt
+share/java/squirrel-sql/plugins/syntax/configdlg.jpg
+share/java/squirrel-sql/plugins/syntax/corrabrev.jpg
+share/java/squirrel-sql/plugins/syntax/lib/openide-loaders.jar
+share/java/squirrel-sql/plugins/syntax/lib/openide.jar
+share/java/squirrel-sql/plugins/syntax/lib/org-netbeans-modules-editor-fold.jar
+share/java/squirrel-sql/plugins/syntax/lib/org-netbeans-modules-editor-lib.jar
+share/java/squirrel-sql/plugins/syntax/lib/org-netbeans-modules-editor-util.jar
+share/java/squirrel-sql/plugins/syntax/lib/org-netbeans-modules-editor.jar
+share/java/squirrel-sql/plugins/syntax/lib/syntax.jar
+share/java/squirrel-sql/plugins/syntax/licence.txt
+share/java/squirrel-sql/plugins/syntax/readme.html
+share/java/squirrel-sql/plugins/syntax/src.jar
+share/java/squirrel-sql/plugins/syntax/standard-nbm-license.txt
+share/java/squirrel-sql/plugins/syntax/toolspopup.jpg
+share/java/squirrel-sql/squirrel-sql.jar
+@dirrm share/java/squirrel-sql/plugins/syntax/lib
+@dirrm share/java/squirrel-sql/plugins/syntax
+@dirrm share/java/squirrel-sql/plugins/sqlscript
+@dirrm share/java/squirrel-sql/plugins/sqlbookmark
+@dirrm share/java/squirrel-sql/plugins/laf/skinlf-theme-packs
+@dirrm share/java/squirrel-sql/plugins/laf/oyoaha-theme-packs
+@dirrm share/java/squirrel-sql/plugins/laf/lafs
+@dirrm share/java/squirrel-sql/plugins/laf
+@dirrm share/java/squirrel-sql/plugins/graph
+@dirrm share/java/squirrel-sql/plugins/editextras
+@dirrm share/java/squirrel-sql/plugins/codecompletion
+@dirrm share/java/squirrel-sql/plugins
+@dirrm share/java/squirrel-sql/lib
+@dirrm share/java/squirrel-sql/icons
+@dirrm share/java/squirrel-sql/doc/licences
+@dirrm share/java/squirrel-sql/doc/images
+@dirrm share/java/squirrel-sql/doc
+@dirrm share/java/squirrel-sql

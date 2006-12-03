@@ -1,0 +1,17 @@
+#! /bin/sh
+
+# Squirrel home.
+SQUIRREL_SQL_HOME=%%JAVASHAREDIR%%/squirrel-sql
+
+# First entry in classpath is the Squirrel application.
+TMP_CP=$SQUIRREL_SQL_HOME/squirrel-sql.jar
+
+# Then add all library jars to the classpath.
+for a in $SQUIRREL_SQL_HOME/lib/*; do
+	TMP_CP="$TMP_CP":"$a";
+done
+
+# Now add the system classpath to the classpath. 
+TMP_CP=$TMP_CP:$CLASSPATH
+
+java -cp $TMP_CP net.sourceforge.squirrel_sql.client.Main --log-config-file $SQUIRREL_SQL_HOME/log4j.properties --squirrel-home $SQUIRREL_SQL_HOME $1 $2 $3 $4 $5 $6 $7 $8 $9
