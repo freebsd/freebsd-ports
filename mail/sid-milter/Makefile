@@ -24,7 +24,7 @@ PLIST_FILES=	libexec/sid-filter
 PORTDOCS=	${DOCSFILES}
 
 .if defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	pointhat cluster does not support sysvipc
+IGNORE=	pointyhat cluster does not support sysvipc
 .endif
 
 SITE+=		${FILESDIR}/site.config.m4
@@ -40,7 +40,7 @@ USE_RC_SUBR=	milter-sid.sh
 
 .include <bsd.port.pre.mk>
 
-.include "${PORTSDIR}/${PKGCATEGORY}/sendmail/bsd.milter.mk"
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 .if defined(WITH_SENDMAIL_PORT)
 SITE+=		${FILESDIR}/site.config.m4.milter
