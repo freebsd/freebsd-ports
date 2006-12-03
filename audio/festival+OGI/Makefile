@@ -81,6 +81,8 @@ post-patch:
 	${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD${ii}.${jj}.mak
 .endfor
 .endfor
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/speech_tools/config/systems/default.mak
 
 do-install:
 	${MKDIR} ${FHOME}/lib/voices/english/ ${FHOME}/lib/voices/italian/ \
