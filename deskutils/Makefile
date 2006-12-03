@@ -91,6 +91,7 @@
     SUBDIR += ithought
     SUBDIR += jlj
     SUBDIR += karamba
+    SUBDIR += katapult
     SUBDIR += kbirthday
     SUBDIR += kblticker
     SUBDIR += kchm

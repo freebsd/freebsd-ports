@@ -1,0 +1,32 @@
+# New ports collection makefile for:	katapult
+# Date created:				11 October 2006
+# Whom:					Yu-Xi Lim <yuxi@gmx.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	katapult
+PORTVERSION=	0.3.1.3
+CATEGORIES=	deskutils kde
+MASTER_SITES=	http://superb-east.dl.sourceforge.net/sourceforge/katapult/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+
+MAINTAINER=	yuxi@gmx.net
+COMMENT=	Fast, extensible launcher for KDE similar to Quicksilver on OSX
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_KDELIBS_VER=3
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	${PREFIX}/lib/ ${PREFIX}/lib/kde3/
+INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	doesn't buiold
+.endif
+
+.include <bsd.port.post.mk>
