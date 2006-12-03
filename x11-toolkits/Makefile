@@ -246,6 +246,12 @@
     SUBDIR += wxgtk26-docs
     SUBDIR += wxgtk26-unicode
     SUBDIR += wxgtk26-unicode-contrib
+    SUBDIR += wxgtk28
+    SUBDIR += wxgtk28-common
+    SUBDIR += wxgtk28-contrib
+    SUBDIR += wxgtk28-contrib-common
+    SUBDIR += wxgtk28-unicode
+    SUBDIR += wxgtk28-unicode-contrib
     SUBDIR += wxmozilla
     SUBDIR += xbae
     SUBDIR += xclasses
