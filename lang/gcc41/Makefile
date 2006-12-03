@@ -29,6 +29,8 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 .endif
 
+CONFLICTS?=	gcc-withfortran-4.1.*
+
 SUFFIX=		41
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha
