@@ -21,6 +21,12 @@ DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib
 
 USE_LDCONFIG=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/config/Project.tmpl \
+		${WRKSRC}/config/X11.tmpl \
+		${WRKSRC}/Makefile.ini
+
 # Warning: we cannot use USE_IMAKE.
 do-build:
 	( cd ${WRKSRC} ; make World -f Makefile.ini )
