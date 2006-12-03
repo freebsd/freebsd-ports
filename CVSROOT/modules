@@ -10246,6 +10246,7 @@ p5-Sys-Sig	ports/devel/p5-Sys-Sig
 p5-Sys-SigAction	ports/devel/p5-Sys-SigAction
 p5-Sys-Syscall	ports/devel/p5-Sys-Syscall
 p5-Sys-Utmp	ports/sysutils/p5-Sys-Utmp
+p5-Sysadm-Install	ports/sysutils/p5-Sysadm-Install
 p5-SyslogScan	ports/sysutils/p5-SyslogScan
 p5-System2	ports/devel/p5-System2
 p5-T2		ports/databases/p5-T2
