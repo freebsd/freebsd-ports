@@ -16,6 +16,9 @@ COMMENT=	PC/SC Lite driver for Gemplus GPR400 PCMCIA Smart Card Readers
 BUILD_DEPENDS=	${LOCALBASE}/include/ifdhandler.h:${PORTSDIR}/security/ifd-devkit
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-02
+
 MAKE_ENV+=	DESTDIR="${PREFIX}"
 
 USE_LDCONFIG=	yes
