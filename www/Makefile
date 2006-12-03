@@ -191,6 +191,7 @@
     SUBDIR += harvest
     SUBDIR += hastymail
     SUBDIR += havp
+    SUBDIR += hiawatha
     SUBDIR += hinventory-client
     SUBDIR += horde
     SUBDIR += horde-passwd

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: httpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+
+# Add the following line(s) to /etc/rc.conf:
+# hiawatha_enable (bool): Set to "NO" by default, set it to "YES" to enable hiawatha
+
+. %%RC_SUBR%%
+
+name="hiawatha"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+: ${hiawatha_enable="NO"}
+run_rc_command "$1"

@@ -1,0 +1,5 @@
+Hiawatha is an advanced and secure webserver for Unix. It has been written with
+'being secure' as its main goal. Hiawatha has many security features that no
+other webserver has. Besides being very secure, it's also a very fast
+webserver. It's twice as fast as Apache for static content. It supports
+load-balanced FastCGI, which makes it fast and scalable for serving CGI.
