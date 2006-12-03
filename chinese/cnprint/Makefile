@@ -5,30 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=		cnprint
-PORTVERSION=		3.30b
-CATEGORIES=		chinese print
-MASTER_SITES=		http://ftp.wustl.edu/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
-			http://ftp.yz.yamagata-u.ac.jp/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
-			http://ftp.osuosl.org/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/
-DISTFILES=		cnprint330b.c \
-			cnprint330b.readme \
-			ttfb330b.c \
-			cnprint330b.hlp \
-			cnprint33.cmd \
-			helvet.dat  \
-			mssong.ttf.gz mssong.htf \
-			mshei.ttf.gz mshei.htf \
-			cc48s.hbf cc48.sym.gz \
-			cc48s.1.gz \
-			cc48s.2.gz \
-			hbf.tar.gz \
-			ntu_kai48.hbf ntu_kai48.bin.gz
+PORTNAME=	cnprint
+PORTVERSION=	3.30b
+CATEGORIES=	chinese print
+MASTER_SITES=	http://ftp.wustl.edu/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
+		http://ftp.yz.yamagata-u.ac.jp/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
+		http://ftp.osuosl.org/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/
+DISTFILES=	cnprint330b.c cnprint330b.readme ttfb330b.c cnprint330b.hlp \
+		cnprint33.cmd helvet.dat  mssong.ttf.gz mssong.htf \
+		mshei.ttf.gz mshei.htf cc48s.hbf cc48.sym.gz cc48s.1.gz \
+		cc48s.2.gz hbf.tar.gz ntu_kai48.hbf ntu_kai48.bin.gz
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
-DIST_SUBDIR=		${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 do-extract:
 	${MKDIR} ${WRKSRC}
