@@ -2948,6 +2948,7 @@ fressh		ports/security/fressh
 fretsonfire	ports/games/fretsonfire
 fretsonfire-data	ports/games/fretsonfire-data
 fribidi		ports/converters/fribidi
+frickin		ports/net/frickin
 frikqcc		ports/games/frikqcc
 frink		ports/devel/frink
 frodo		ports/emulators/frodo
