@@ -6,32 +6,17 @@
 #
 
 PORTNAME=	inline
-PORTVERSION=	2.2.0
-CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTVERSION=	3.5.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RubyInline-${PORTVERSION}
-DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
 
-USE_RUBY=	yes
+GEM_NAME=	${DISTNAME}
 
-NO_BUILD=	yes
-
-DOCS=	README.txt
-EXAMPLES=	example.rb tutorial/example1.rb tutorial/example2.rb
-
-post-install:
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
-.endfor
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}
-.endfor
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
+.include <bsd.port.post.mk>

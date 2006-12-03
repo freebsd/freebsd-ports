@@ -1,7 +1,21 @@
-%%RUBY_SITELIBDIR%%/inline.rb
-%%RUBY_MODDOCDIR%%/README.txt
-@dirrm %%RUBY_MODDOCDIR%%
-%%RUBY_MODEXAMPLESDIR%%/example.rb
-%%RUBY_MODEXAMPLESDIR%%/example1.rb
-%%RUBY_MODEXAMPLESDIR%%/example2.rb
-@dirrm %%RUBY_MODEXAMPLESDIR%%
+bin/inline_package
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/History.txt
+%%GEM_LIB_DIR%%/Makefile
+%%GEM_LIB_DIR%%/Manifest.txt
+%%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/demo/fastmath.rb
+%%GEM_LIB_DIR%%/demo/hello.rb
+%%GEM_LIB_DIR%%/example.rb
+%%GEM_LIB_DIR%%/example2.rb
+%%GEM_LIB_DIR%%/inline.gemspec
+%%GEM_LIB_DIR%%/inline.rb
+%%GEM_LIB_DIR%%/inline_package
+%%GEM_LIB_DIR%%/test_inline.rb
+%%GEM_LIB_DIR%%/tutorial/example1.rb
+%%GEM_LIB_DIR%%/tutorial/example2.rb
+@dirrm %%GEM_LIB_DIR%%/tutorial
+@dirrm %%GEM_LIB_DIR%%/demo
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
