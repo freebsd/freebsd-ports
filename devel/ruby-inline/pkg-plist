@@ -1,0 +1,16 @@
+bin/inline_package
+%%RUBY_SITELIBDIR%%/inline.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/History.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fastmath.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
