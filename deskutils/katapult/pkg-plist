@@ -1,0 +1,96 @@
+bin/katapult
+lib/kde3/katapult_amarokcatalog.a
+lib/kde3/katapult_amarokcatalog.la
+lib/kde3/katapult_amarokcatalog.so
+lib/kde3/katapult_bookmarkcatalog.a
+lib/kde3/katapult_bookmarkcatalog.la
+lib/kde3/katapult_bookmarkcatalog.so
+lib/kde3/katapult_calculatorcatalog.a
+lib/kde3/katapult_calculatorcatalog.la
+lib/kde3/katapult_calculatorcatalog.so
+lib/kde3/katapult_documentcatalog.a
+lib/kde3/katapult_documentcatalog.la
+lib/kde3/katapult_documentcatalog.so
+lib/kde3/katapult_glassdisplay.a
+lib/kde3/katapult_glassdisplay.la
+lib/kde3/katapult_glassdisplay.so
+lib/kde3/katapult_programcatalog.a
+lib/kde3/katapult_programcatalog.la
+lib/kde3/katapult_programcatalog.so
+lib/kde3/katapult_puredisplay.a
+lib/kde3/katapult_puredisplay.la
+lib/kde3/katapult_puredisplay.so
+lib/libkatapult.a
+lib/libkatapult.la
+lib/libkatapult.so
+lib/libkatapult.so.1
+lib/libkatapultcatalog.a
+lib/libkatapultcatalog.la
+lib/libkatapultcatalog.so
+lib/libkatapultcatalog.so.1
+lib/libkatapultdisplay.a
+lib/libkatapultdisplay.la
+lib/libkatapultdisplay.so
+lib/libkatapultdisplay.so.1
+share/applications/kde/katapult.desktop
+share/icons/hicolor/128x128/actions/checkmark.png
+share/icons/hicolor/128x128/actions/no.png
+share/icons/hicolor/128x128/apps/katapult.png
+share/icons/hicolor/128x128/apps/xcalc.png
+share/icons/hicolor/16x16/apps/katapult.png
+share/icons/hicolor/22x22/apps/katapult.png
+share/icons/hicolor/32x32/apps/katapult.png
+share/icons/hicolor/48x48/apps/katapult.png
+share/icons/hicolor/64x64/apps/katapult.png
+share/icons/hicolor/scalable/apps/katapult.svgz
+share/locale/bg/LC_MESSAGES/katapult.mo
+share/locale/br/LC_MESSAGES/katapult.mo
+share/locale/da/LC_MESSAGES/katapult.mo
+share/locale/el/LC_MESSAGES/katapult.mo
+share/locale/es/LC_MESSAGES/katapult.mo
+share/locale/fr/LC_MESSAGES/katapult.mo
+share/locale/ga/LC_MESSAGES/katapult.mo
+share/locale/it/LC_MESSAGES/katapult.mo
+share/locale/nl/LC_MESSAGES/katapult.mo
+share/locale/pl/LC_MESSAGES/katapult.mo
+share/locale/pt/LC_MESSAGES/katapult.mo
+share/locale/sv/LC_MESSAGES/katapult.mo
+share/services/katapult_amarokcatalog.desktop
+share/services/katapult_bookmarkcatalog.desktop
+share/services/katapult_calculatorcatalog.desktop
+share/services/katapult_documentcatalog.desktop
+share/services/katapult_glassdisplay.desktop
+share/services/katapult_programcatalog.desktop
+share/services/katapult_puredisplay.desktop
+share/servicetypes/katapultcatalog.desktop
+share/servicetypes/katapultdisplay.desktop
+@dirrmtry share/servicetypes
+@dirrmtry share/services
+@dirrmtry share/nls/en_US.US-ASCII
+@dirrmtry share/nls/POSIX
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128/actions
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications/kde
+@dirrmtry share/applications
+@dirrmtry lib/kde3
