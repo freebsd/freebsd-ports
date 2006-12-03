@@ -2930,6 +2930,7 @@ freesbie	ports/sysutils/freesbie
 freesci		ports/games/freesci
 freescope	ports/devel/freescope
 freesweep	ports/games/freesweep
+freetar		ports/archivers/freetar
 freetds		ports/databases/freetds
 freetds-msdblib	ports/databases/freetds-msdblib
 freetxl		ports/lang/freetxl
