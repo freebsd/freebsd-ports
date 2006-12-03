@@ -1,0 +1,6 @@
+bin/one-liner
+%%SITE_PERL%%/Sysadm/Install.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sysadm/Install/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sysadm/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sysadm
+@dirrmtry %%SITE_PERL%%/Sysadm
