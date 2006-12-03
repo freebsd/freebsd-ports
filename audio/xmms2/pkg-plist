@@ -33,6 +33,7 @@ include/xmms2/xmmsc/xmmsc_sockets.h
 include/xmms2/xmmsc/xmmsc_stdbool.h
 include/xmms2/xmmsc/xmmsc_stdint.h
 include/xmms2/xmmsc/xmmsc_stringport.h
+include/xmms2/xmmsc/xmmsc_strlist.h
 include/xmms2/xmmsc/xmmsc_unistd.h
 include/xmms2/xmmsc/xmmsc_util.h
 include/xmms2/xmmsclient/xmmsclient++/bindata.h
@@ -62,6 +63,7 @@ lib/libxmmsclient-glib.a
 lib/libxmmsclient-glib.so
 lib/libxmmsclient.a
 lib/libxmmsclient.so
+%%AO%%lib/xmms2/libxmms_ao.so
 %%CURL%%lib/xmms2/libxmms_curl_http.so
 lib/xmms2/libxmms_diskwrite.so
 lib/xmms2/libxmms_equalizer.so
@@ -71,6 +73,8 @@ lib/xmms2/libxmms_equalizer.so
 lib/xmms2/libxmms_file.so
 %%GNOMEVFS%%lib/xmms2/libxmms_gnomevfs.so
 %%ICES%%lib/xmms2/libxmms_ices.so
+%%LASTFM%%lib/xmms2/libxmms_lastfm.so
+%%LASTFM%%lib/xmms2/libxmms_lastfmeta.so
 lib/xmms2/libxmms_icymetaint.so
 lib/xmms2/libxmms_id3v2.so
 %%JACK%%lib/xmms2/libxmms_jack.so
@@ -85,6 +89,7 @@ lib/xmms2/libxmms_oss.so
 lib/xmms2/libxmms_replaygain.so
 %%SAMBA%%lib/xmms2/libxmms_samba.so
 %%SID%%lib/xmms2/libxmms_sid.so
+%%VOCODER%%lib/xmms2/libxmms_vocoder.so
 lib/xmms2/libxmms_vorbisfile.so
 lib/xmms2/libxmms_wave.so
 %%WMA%%lib/xmms2/libxmms_wma.so

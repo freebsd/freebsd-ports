@@ -6,11 +6,11 @@
 #
 
 PORTNAME?=	xmms2
-PORTVERSION=	0.2.d.7
+PORTVERSION=	0.2.d.8
+DISTVERSION=	0.2DrHouse
 CATEGORIES?=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTVERSION=	0.2DrGonzo
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	alexbl@FreeBSD.org
@@ -33,8 +33,7 @@ USE_LDCONFIG=	yes
 .endif
 
 .if !defined(XMMS2_SLAVE)
-MAN1=		xmms2.1 xmms2-et.1
-MAN8=		xmms2d.8 xmms2-launcher.8 xmms2-mdns-avahi.8
+MAN1=		xmms2.1 xmms2-et.1 xmms2d.1 xmms2-launcher.1 xmms2-mdns-avahi.1
 MANCOMPRESSED=	yes
 
 OPTIONS=	FAAD "Support to playback AAC files" on \
@@ -45,6 +44,7 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		WMA "Support to playback WMA files" off \
 		APE "Support to playback Monkey's Audio files" off \
 		CURL "Support to playback files via HTTP" on \
+		LASTFM "Support to playback audio via Last.fm radio" on \
 		GNOMEVFS "Support to playback files via GnomeVFS" off \
 		MMS "Support to playback streams via MMS" off \
 		SAMBA "Support to playback files via SMB" off \
@@ -53,7 +53,9 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		MDNS_AVAHI "Support to announce XMMS2d via mDNS (Avahi)" off \
 		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on \
 		ICES "Support to playback files to an icecast server" off \
-		JACK "Support to output via the Jack output server" off #\
+		JACK "Support to output via the Jack output server" off \
+		AO "Support to output via libao" off \
+		VOCODER "Phase Vocoder effect plugin" off #\
 #		SDL "Support for visualization" on
 .endif
 
@@ -80,6 +82,16 @@ PLIST_SUB+=	CURL=""
 .else
 EXCLUDE+=	curl
 PLIST_SUB+=	CURL="@comment "
+.endif
+
+.if !defined(WITHOUT_LASTFM)
+.if defined(WITHOUT_CURL)
+LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+.endif
+PLIST_SUB+=	LASTFM=""
+.else
+EXCLUDE+=	lastfm lastfmeta
+PLIST_SUB+=	LASTMFM="@comment "
 .endif
 
 .if defined(WITH_SID)
@@ -208,6 +220,14 @@ EXCLUDE+=	ices
 PLIST_SUB+=	ICES="@comment "
 .endif
 
+.if defined(WITH_AO)
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+PLIST_SUB+=	AO=""
+.else
+EXCLUDE+=	ao
+PLIST_SUB+=	AO="@comment "
+.endif
+
 .if defined(WITH_MDNS_AVAHI)
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
 PLIST_SUB+=	MDNS_AVAHI=""
@@ -223,6 +243,14 @@ PLIST_SUB+=	MDNS_APPLE=""
 EXCLUDE+=	dns_sd
 PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
+.endif
+
+.if defined(WITH_VOCODER)
+LIB_DEPENDS+=	fftw3f.4:${PORTSDIR}/math/fftw3-float
+PLIST_SUB+=	VOCODER=""
+.else
+EXCLUDE+=	vocoder
+PLIST_SUB+=	VOCODER="@comment "
 .endif
 
 .if defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} != "java"
