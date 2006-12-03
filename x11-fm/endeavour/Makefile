@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	A graphical file manager and image viewer aimed towards new users
 
 PLIST_FILES=	bin/endeavour
@@ -30,6 +30,8 @@ MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CPP="${CXX}" \
 		INC_DIRS="`imlib-config --cflags` -I${X11BASE}/include" \
 		LIBS="`imlib-config --libs` -lXpm" \
 		LIB_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+DEPRECATED=	Development ceased, this port should be updated to Endeavour Mark II
 
 .include <bsd.port.pre.mk>
 
