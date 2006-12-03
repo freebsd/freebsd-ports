@@ -6,14 +6,16 @@
 
 PORTNAME=	redcloth
 PORTVERSION=	3.0.3
-PORTREVISION=	1
-DISTNAME=	RedCloth-${PORTVERSION}
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	RedCloth-${PORTVERSION}
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	A module for using Textile in Ruby
+
+GEM_NAME=	${DISTNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
