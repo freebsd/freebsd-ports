@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mantisbt
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dan@langille.org
 COMMENT=	A bug tracking system written in PHP
