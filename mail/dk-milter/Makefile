@@ -37,7 +37,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 .endif
 
 .if defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	pointhat cluster does not support sysvipc 
+IGNORE=	pointyhat cluster does not support sysvipc 
 .endif
 
 SENDMAIL_MILTER_PORT?=	sendmail

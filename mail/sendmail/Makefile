@@ -56,7 +56,7 @@ MILTER_SOVER?=	3
 # SENDMAIL_WITH_SHARED_MILTER=yes
 
 .if defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	pointhat cluster does not supoort sysvipc
+IGNORE=	pointyhat cluster does not support sysvipc
 .endif
 
 .if defined(SENDMAIL_WITH_SMTPS) && !defined(SENDMAIL_WITH_TLS) && !defined(WITH_TLS)
