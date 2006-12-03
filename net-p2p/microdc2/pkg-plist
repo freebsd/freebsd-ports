@@ -1,0 +1,6 @@
+bin/microdc2
+bin/tthsum
+%%NLS%%share/locale/pl/LC_MESSAGES/microdc2.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/microdc2.mo
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl

@@ -63,6 +63,7 @@
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
     SUBDIR += microdc
+    SUBDIR += microdc2
     SUBDIR += minder
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
