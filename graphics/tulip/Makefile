@@ -25,7 +25,7 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" GLDIR="${X11BASE}"
 CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
 		--with-qt-libraries=${QT_PREFIX}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
