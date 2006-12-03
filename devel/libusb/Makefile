@@ -22,7 +22,7 @@ OPTIONS=	SGML "Install developer guide from SGML" off
 .if defined(WITH_SGML)
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/jade/catalog:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		${LOCALBASE}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
+		docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/4.2/catalog:${PORTSDIR}/textproc/docbook-420
 MAKE_ENV+=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/jade/catalog:${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${LOCALBASE}/share/sgml/docbook/catalog:${LOCALBASE}/share/sgml/docbook/4.2/catalog
 PLIST_SUB=	SGML=""

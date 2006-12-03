@@ -16,7 +16,7 @@ COMMENT=	O'Reilly's SGML formatting package
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nsgmls:${PORTSDIR}/textproc/sp		\
 		${LOCALBASE}/bin/procmail:${PORTSDIR}/mail/procmail	\
-		${LOCALBASE}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
+		docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/iso12083/book.dtd:${PORTSDIR}/textproc/iso12083 \
 		gv:${PORTSDIR}/print/gv
 
