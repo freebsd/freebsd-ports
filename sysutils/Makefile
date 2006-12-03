@@ -438,6 +438,7 @@
     SUBDIR += p5-Sys-Hostname-FQDN
     SUBDIR += p5-Sys-Hostname-Long
     SUBDIR += p5-Sys-Utmp
+    SUBDIR += p5-Sysadm-Install
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Tie-Syslog
     SUBDIR += p5-UPS-Nut

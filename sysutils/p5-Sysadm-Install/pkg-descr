@@ -1,0 +1,5 @@
+Sysadm::Install executes shell-like commands performing typical installation
+tasks: Copying files, extracting tarballs, calling make.
+
+Author: Mike Schilli <m@perlmeister.com>
+WWW: http://search.cpan.org/dist/Sysadm-Install
