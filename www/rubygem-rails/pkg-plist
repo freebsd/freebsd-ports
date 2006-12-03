@@ -218,3 +218,4 @@ bin/rails
 @dirrm %%GEM_LIB_DIR%%/bin/performance
 @dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
