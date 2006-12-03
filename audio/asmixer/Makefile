@@ -19,6 +19,9 @@ PLIST_FILES=	bin/asmixer
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-xpm \
+		--with-xpm-includes=${X11BASE} \
+		--with-xpm-library=${X11BASE}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
