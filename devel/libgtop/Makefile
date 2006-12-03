@@ -6,8 +6,7 @@
 #   $MCom: ports/devel/libgtop/Makefile,v 1.5 2006/10/02 23:26:51 ahze Exp $
 
 PORTNAME=	libgtop
-PORTVERSION=	2.14.4
-PORTREVISION=	1
+PORTVERSION=	2.14.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,7 +24,9 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 ltverhack intlhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info \
+		--disable-gtk-doc \
+		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
