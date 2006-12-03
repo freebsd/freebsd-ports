@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
 
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-openssl \
+#CPPFLAGS=	-g
+#DONTSTRIP=	yes
+#CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
+#MAKE_ENV=	DONTSTRIP=
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --mandir=${MANPREFIX}/man --with-openssl \
 		--with-libxml2 --without-gnutls --without-libares --without-libcares
 
 USE_GCC=	3.4+

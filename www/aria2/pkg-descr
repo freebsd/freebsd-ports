@@ -1,16 +1,19 @@
-Aria2 is an utility for downloading files with nice features:
-
-* Command-line interface
-* Download files through HTTP/HTTPS/FTP/BitTorrent
+aria2 has segmented downloading engine in its core. It therefore, it
+can download files a lot faster than ordinary browsers. Currently it
+has following features:
+* HTTP/HTTPS GET support
 * HTTP Proxy support
-* FTP though HTTP proxy
 * HTTP BASIC authentication support
 * HTTP Proxy authentication support
-* Segmented downloading
+* FTP support (active, passive mode)
+* FTP through HTTP proxy (GET command or tunneling)
+* Segmented download
 * Cookie support (currently aria2 ignores "expires")
-* Run as a daemon process.
+* It can run as a daemon process
+* BitTorrent protocol support with fast extension
 * Selective download in multi-file torrent
-* Metalink 3.0 support
+* Metalink version 3.0 support (HTTP/FTP/BitTorrent)
+* Limiting download/upload speed
 
 WWW: http://aria2.sourceforge.net/
-Author: Tatsuhiro Tsujikawa <t-tujikawa@users.sourceforge.net>
+Author: Tatsuhiro Tsujikawa <tujikawa at rednoah dot com>
