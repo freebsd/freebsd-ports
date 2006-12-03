@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	jsview
-PORTVERSION=	1.1.7
-DISTVERSIONSUFFIX=	-fx+zm
+PORTVERSION=	1.2.4
 CATEGORIES=	www
+MASTER_SITES=	http://forum.softwareblaze.com/jsview/ CSME
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Easily view embedded/external JS and CSS
 
 XPI_ID=		{cf15270e-cf08-4def-b4ea-6a5ac23f3bca}
-XPI_FILES=	chrome/jsview.jar chrome.manifest defaults/preferences/jsview.js install.js install.rdf 
+XPI_FILES=	chrome/jsview.jar chrome.manifest defaults/preferences/jsview.js install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
 post-extract:
