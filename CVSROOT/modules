@@ -13864,6 +13864,7 @@ ssh-multiadd	ports/security/ssh-multiadd
 ssh2		ports/security/ssh2
 ssh2-nox11	ports/security/ssh2-nox11
 ssh_askpass_gtk2	ports/security/ssh_askpass_gtk2
+sshblock	ports/security/sshblock
 sshbuddy	ports/misc/sshbuddy
 sshfp		ports/dns/sshfp
 sshit		ports/security/sshit
