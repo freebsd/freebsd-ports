@@ -615,6 +615,7 @@
     SUBDIR += sam2p
     SUBDIR += sane-backends
     SUBDIR += sane-frontends
+    SUBDIR += scale2x
     SUBDIR += sced
     SUBDIR += scr2png
     SUBDIR += scrot
