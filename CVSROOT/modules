@@ -13815,6 +13815,7 @@ squidguard	ports/www/squidguard
 squidpurge	ports/www/squidpurge
 squidtimes	ports/www/squidtimes
 squirm		ports/www/squirm
+squirrel-sql	ports/databases/squirrel-sql
 squirrelmail	ports/mail/squirrelmail
 squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plugin
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
