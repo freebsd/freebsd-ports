@@ -15,9 +15,6 @@ DISTNAME=		Linux_MegaCli_${PORTVERSION}
 MAINTAINER=	ruben@verweg.com
 COMMENT=	LSI MegaRAID SAS controller management utility
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		${RPM2CPIO}:${PORTSDIR}/archivers/rpm
-
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 RESTRICTED=	Redistribution prohibited, see: http://lsi.com/cm/License.do
@@ -29,10 +26,12 @@ SUB_FILES=	megacli.sh
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
 EXTRACT_DEPENDS+=		${RPM2CPIO}:${PORTSDIR}/archivers/rpm
 
-do-build:
+post-extract:
 	@cd ${WRKSRC} && \
 		${UNZIP_CMD} MegaCliLin.zip && \
 		${RPM2CPIO} MegaCli-${PORTVERSION}-0.i386.rpm | ${CPIO} -id --quiet
+
+do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/sbin/MegaCli
 
 do-install:
