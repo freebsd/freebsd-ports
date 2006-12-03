@@ -22,7 +22,7 @@ USE_GECKO=	mozilla
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-python
 USE_WX=		2.4
-WX_COMPS=	python
+WX_COMPS=	wx python
 WX_CONF_ARGS=	absolute
 USE_LDCONFIG=	yes
 
