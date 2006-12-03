@@ -44,6 +44,8 @@ post-patch:
 do-configure:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${QMAKE} \
 		-spec ${QMAKESPEC} \
+		INCLUDEPATH=${X11BASE}/include \
+		LIBS=-L${X11BASE}/lib \
 		PARSER=LIBXML \
 		LIBXML_DIR=${LOCALBASE} \
 		JPEG=YES \
@@ -55,6 +57,8 @@ do-configure:
 		PREFIX="${PREFIX}"
 	cd ${WRKSRC}/examples && ${SETENV} ${MAKE_ENV} ${QMAKE} \
 		-spec ${QMAKESPEC} \
+		INCLUDEPATH=${X11BASE}/include \
+		LIBS=-L${X11BASE}/lib \
 		PARSER=LIBXML \
 		LIBXML_DIR=${LOCALBASE} \
 		JPEG=YES \
