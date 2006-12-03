@@ -17,7 +17,7 @@ COMMENT=	Generates various output formats from DocBook SGML documents
 
 BUILD_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade \
 		${LOCALBASE}/share/texmf:${PORTSDIR}/print/teTeX
-RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
+RUN_DEPENDS+=	docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
 USE_PYTHON_BUILD=	yes

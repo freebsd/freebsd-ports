@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		${LOCALBASE}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
+		docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
 		${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl \
