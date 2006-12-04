@@ -7,6 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
@@ -139,6 +140,7 @@ post-patch:
 		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
 		-e 's,[[:<:]]gtk-config[[:>:]],${GTK_CONFIG:T},g;' \
 			${WRKSRC}/acsite.m4
+	@${REINPLACE_CMD} -e '/EXAMPLEDIR/d' ${WRKSRC}/etc/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 
