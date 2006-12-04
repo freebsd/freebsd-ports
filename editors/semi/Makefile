@@ -16,6 +16,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs21
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-04
+
 PORTCLASS?=	master
 
 # distfile version
