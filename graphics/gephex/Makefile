@@ -24,8 +24,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-V4L --without-ASOUNDLIB --without-LINUX_JOYSTICK \
 		--without-FFMPEG --without-AVIFILE --without-MPEG3 \
 		--without-LIBPNG --without-SDL --without-SDL_IMAGE \
-		--without-SDL_TTF --without-AALIB --disable-static
+		--without-SDL_TTF --without-AALIB --disable-static \
+		--with-qt-libdir="${X11BASE}/lib" \
+		--with-qt-incdir="${X11BASE}/include" \
+		--with-qt-bindir="${X11BASE}/bin"
 USE_QT_VER=	3
+USE_XLIB=	yes
 WANT_SDL=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}-${PORTVERSION:R}
