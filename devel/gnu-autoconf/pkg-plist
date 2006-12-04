@@ -22,6 +22,7 @@ share/autoconf/autoconf/autoscan.m4
 share/autoconf/autoconf/autotest.m4
 share/autoconf/autoconf/autoupdate.m4
 share/autoconf/autoconf/c.m4
+share/autoconf/autoconf/erlang.m4
 share/autoconf/autoconf/fortran.m4
 share/autoconf/autoconf/functions.m4
 share/autoconf/autoconf/general.m4
