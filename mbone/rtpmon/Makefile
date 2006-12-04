@@ -7,7 +7,7 @@
 
 PORTNAME=	rtpmon
 PORTVERSION=	1.0a7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mbone tk83
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 
@@ -19,14 +19,11 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 USE_AUTOTOOLS=	autoconf:253:env
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_GCC=	3.2
 MAN1=		rtpmon.1
 PLIST_FILES=	bin/rtpmon
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		Does not compile on FreeBSD > 5.0
-.endif
 
 pre-configure:
 	@cd ${WRKSRC}; ${CHMOD} +w configure; ${AUTOCONF}
