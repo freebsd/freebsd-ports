@@ -5,45 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=	audacious
-PORTVERSION=	1.1.2
+PORTNAME=	audacious-plugins
+PORTVERSION=	1.2.5
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://audacious-media-player.org/release/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	novel
-DISTNAME=	audacious-${PORTVERSION}
+MASTER_SITES=	http://audacious-media-player.org/release/
 EXTRACT_SUFX=.tgz
 
-MAINTAINER=	redchrom@gmail.com
-COMMENT=	A media player based on BMP and XMMS
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	Plugins needed for audacious
 
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
-		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
+BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile  \
 		curl.3:${PORTSDIR}/ftp/curl \
 		tag.5:${PORTSDIR}/audio/taglib
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GNOME=	gtk20 libglade2
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lstdc++" \
-		INPUT_PLUGINS="${INPUT_PLUGINS}" \
-		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
-		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-jack --disable-adplug --disable-lirc \
---disable-alsa --disable-amidiplug --disable-arts --disable-wma
+		--disable-alsa --disable-amidiplug --disable-arts --disable-wma
 
-MAN1=		audacious.1
-
-PORTDOCS=	README AUTHORS ChangeLog NEWS
-
-INPUT_PLUGINS=	cdaudio mpg123 wav tonegen wma console \
-		sexypsf aac timidity
-OUTPUT_PLUGINS=	OSS disk_writer
-VISUALIZATION_PLUGINS=	blur_scope
+PORTDOCS=	AUTHORS ChangeLog NEWS
 
 OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		MODPLUG	"Enable modplug input" off \
@@ -51,18 +36,12 @@ OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		SID	"Enable sid input" off \
 		MPC	"Enable mpc input" off \
 		ESOUND	"Enable Esound output"  off \
-		GNOME   "Build with gnomevfs/gconf support" off \
-		NLS	"Native Language Support" on
+		GNOME   "Build with gnomevfs/gconf support" off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN="Does not build"
-.endif
-
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
@@ -70,7 +49,6 @@ PLIST_SUB+=	VORBISPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_MODPLUG)
-INPUT_PLUGINS+=	modplug
 PLIST_SUB+=	MODPLUG=""
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 .else
@@ -79,7 +57,6 @@ CONFIGURE_ARGS+=	--disable-modplug
 .endif
 
 .if defined(WITH_FLAC)
-INPUT_PLUGINS+=	flac
 PLIST_SUB+=	FLACPLUGIN=""
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 .else
@@ -88,7 +65,6 @@ CONFIGURE_ARGS+=	--disable-flac
 .endif
 
 .if !defined(WITHOUT_SID)
-INPUT_PLUGINS+=	sid
 PLIST_SUB+=	SIDPLUGIN=""
 LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
 .else
@@ -97,7 +73,6 @@ CONFIGURE_ARGS+=	--disable-sid
 .endif
 
 .if !defined(WITHOUT_MPC)
-INPUT_PLUGINS+=	musepack
 PLIST_SUB+=	MPCPLUGIN=""
 LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec \
 	tag.5:${PORTSDIR}/audio/taglib
@@ -108,7 +83,6 @@ CONFIGURE_ARGS+=	--disable-musepack
 
 .if defined(WITH_ESOUND)
 USE_GNOME+=	esound
-OUTPUT_PLUGINS+=	esd
 PLIST_SUB+=	ESDPLUGIN=""
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
@@ -125,21 +99,19 @@ USE_GNOME+=	gnomevfs2
 CONFIGURE_ARGS+=	--enable-gnome-vfs --enable-gconf
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
+.if ${OSVERSION} < 500000
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wno-nonnull ||g' ${WRKSRC}/src/sexypsf/Makefile
+	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes\.h|g' \
+		${WRKSRC}/src/alac/plugin.c ${WRKSRC}/src/alac/alac.c \
+		${WRKSRC}/src/alac/stream.h ${WRKSRC}/src/alac/demux.c \
+		${WRKSRC}/src/alac/demux.h ${WRKSRC}/src/alac/stream.c \
+		${WRKSRC}/src/aac/mp4ff/mp4ff_int_types.h
+	@${REINPLACE_CMD} -e 's|	going = 1|int &|' \
+		${WRKSRC}/src/scrobbler/xmms_scrobbler.c
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|(LIBDIR)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile
-
 post-install:
-	@${CAT} ${PKGMESSAGE}
 .if defined(WITH_GNOME)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You have installed audacious with gconf support."
