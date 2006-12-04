@@ -20,6 +20,9 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \
 		tex:${PORTSDIR}/print/teTeX
 .endif
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		hyphen_show.1 xtem.1
