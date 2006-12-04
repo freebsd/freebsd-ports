@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Aug  3 17:11:14 2004
-+++ Makefile.in	Tue Aug  3 17:11:33 2004
-@@ -19885,10 +19885,10 @@
+--- Makefile.in.orig	Mon Dec  4 15:02:51 2006
++++ Makefile.in	Mon Dec  4 15:03:06 2006
+@@ -19886,10 +19886,10 @@
  maybe-install-libiberty:
  
  install-libiberty: installdirs
