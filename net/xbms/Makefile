@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xbms, the unix streaming server for xbox mediaplayer
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 USE_RC_SUBR=	${PORTNAME}
 
 post-patch:
