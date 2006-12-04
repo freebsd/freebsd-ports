@@ -1,0 +1,12 @@
+cw is a non-intrusive real-time ANSI color wrapper for common unix-based
+command.
+
+cw is designed to simulate the environment of the commands being
+executed, so that if a person types 'du', 'df', 'ping', etc.  in their
+shell it will automatically color the output in real-time according to
+a definition file containing the color format desired.  cw has support
+for wildcard match coloring, tokenized coloring, headers/footers, case
+scenario coloring, command line dependent definition coloring, and
+includes over 50 pre-made definition files.
+
+WWW: http://cwrapper.sourceforge.net/

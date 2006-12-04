@@ -105,6 +105,7 @@
     SUBDIR += cronolog
     SUBDIR += curly
     SUBDIR += cvsweb-converters
+    SUBDIR += cw
     SUBDIR += daedalus
     SUBDIR += daemontools
     SUBDIR += daemontools53
