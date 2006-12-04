@@ -21,8 +21,12 @@ bin/sqlrclientwrapper-config
 %%IF_SQLITE%%bin/sqlr-connection-sqlite-debug
 %%IF_INTERBASE%%bin/sqlr-connection-interbase
 %%IF_INTERBASE%%bin/sqlr-connection-interbase-debug
+bin/sqlr-connection-router
+bin/sqlr-connection-router-debug
 bin/sqlr-listener
 bin/sqlr-listener-debug
+bin/sqlr-status
+bin/sqlr-status-debug
 bin/sqlr-scaler
 bin/sqlr-start
 bin/sqlr-stop
