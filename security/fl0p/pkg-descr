@@ -1,0 +1,7 @@
+The tool is a simple flow-analyzing passive L7 fingerprinter. It
+examines the sequence of client-server exchanges, their relative
+layer 7 payload sizes, and transmission intervals (as opposed to
+inspecting the contents, which is what most passive fingerprinters
+and "smart" sniffers would do to analyze transmissions). This is
+then matched against a database of traffic pattern signatures to
+infer some interesting facts about the traffic.

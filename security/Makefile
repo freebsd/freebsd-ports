@@ -118,6 +118,7 @@
     SUBDIR += find-zlib
     SUBDIR += find_ddos
     SUBDIR += firewalk
+    SUBDIR += fl0p
     SUBDIR += flawfinder
     SUBDIR += fpc-hash
     SUBDIR += fpm
