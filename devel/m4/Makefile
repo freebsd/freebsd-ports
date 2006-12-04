@@ -7,6 +7,7 @@
 
 PORTNAME=	m4
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	m4
@@ -24,6 +25,7 @@ CONFIGURE_ARGS+=	--enable-changeword
 .endif
 
 INFO=	m4
+MAN1=	gm4.1
 
 EXAMPLESDIR=	share/examples/gm4
 
