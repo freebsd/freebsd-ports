@@ -7,11 +7,12 @@
 
 PORTNAME=	wired
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/
 
 MAINTAINER=	trasz@pin.if.uz.zgora.pl
-COMMENT=	Wired Server
+COMMENT=	Wired server
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -31,9 +32,22 @@ post-install:
 	@if [ ! -f ${PREFIX}/wired/etc/resolv.conf ]; then \
 		${CP} -p ${PREFIX}/wired/etc/resolv.conf.sample ${PREFIX}/wired/etc/resolv.conf ; \
 	fi
+	@if [ ! -f ${PREFIX}/wired/banlist ]; then \
+		${CP} -p ${PREFIX}/wired/banlist.sample ${PREFIX}/wired/banlist ; \
+	fi
+	@if [ ! -f ${PREFIX}/wired/groups ]; then \
+		${CP} -p ${PREFIX}/wired/groups.sample ${PREFIX}/wired/groups ; \
+	fi
+	@if [ ! -f ${PREFIX}/wired/news ]; then \
+		${CP} -p ${PREFIX}/wired/news.sample ${PREFIX}/wired/news ; \
+	fi
+	@if [ ! -f ${PREFIX}/wired/users ]; then \
+		${CP} -p ${PREFIX}/wired/users.sample ${PREFIX}/wired/users ; \
+	fi
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-deinstall:
+	${RM} -f ${PREFIX}/wired/etc/certificate.pem.sample
 	PKG_PREFIX=${PREFIX} ${SH} pkg-deinstall ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.mk>
