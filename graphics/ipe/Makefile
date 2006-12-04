@@ -17,6 +17,9 @@ COMMENT=	Extensible drawing editor
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
