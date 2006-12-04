@@ -1,0 +1,30 @@
+--- configure.in.orig	Wed Apr  5 03:22:01 2006
++++ configure.in	Tue Nov 21 14:23:37 2006
+@@ -8,6 +8,10 @@
+ AC_PROG_INSTALL
+ AC_PROG_AWK
+ 
++CPPFLAGS="-I${includedir}"
++LDFLAGS="-L${libdir}"
++LIBS="-L${libdir} ${LIBS}"
++
+ # Checks for header files.
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/ioctl.h unistd.h])
+@@ -22,6 +26,7 @@
+ #AC_CHECK_LIB(hamlib,main,,AC_MSG_ERROR([Hamradio control libraries (hamlib) not found! ABORTED!]))
+ #AC_CHECK_HEADERS(hamlib/rig.h hamlib/riglist.h,,AC_MSG_ERROR([hamlib header(s) not found! ABORTED]))
+ 
++
+ dnl Check if we want to link the Hamradio control libraries (hamlib)
+ AC_ARG_ENABLE([hamlib],
+ [  --enable-hamlib   Add support for hamradio control libraries],
+@@ -33,7 +38,7 @@
+ [wanthamlib=false])
+ 
+ if test "x${wanthamlib}" != "xfalse"; then
+-	AC_CHECK_LIB(hamlib,main,,AC_MSG_ERROR([Hamradio control libraries not found...]))
++	AC_CHECK_LIB(hamlib,rig_init,,AC_MSG_ERROR([Hamradio control libraries not found...]))
+ 	AC_CHECK_HEADERS(hamlib/rig.h,,AC_MSG_ERROR([Hamlib headers not found...]))
+ 	AC_DEFINE([WANT_HAMLIB], 1, [Want Hamlib])
+ 	echo "enabling hamlib support"
