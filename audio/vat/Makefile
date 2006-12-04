@@ -34,10 +34,6 @@ PLIST_FILES=	bin/vat
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		Does not compile on FreeBSD > 5.0
-.endif
-
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/vat
 
