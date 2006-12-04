@@ -1,0 +1,9 @@
+Changes the name of the input form field on the login screen so that newer
+browsers have an almost impossible time trying to remember your name and
+password. Use this if you want extra security or the majority of your users
+use public terminals.
+
+WWW: http://www.squirrelmail.org
+
+- Neil Darlow
+neil@darlow.co.uk
