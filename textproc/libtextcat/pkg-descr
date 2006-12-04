@@ -1,0 +1,17 @@
+Libtextcat is a library with functions that implement the classification
+technique described in Cavnar & Trenkle, "N-Gram-Based Text Categorization" [1].
+It was primarily developed for language guessing, a task on which it is known to
+perform with near-perfect accuracy.
+
+The central idea of the Cavnar & Trenkle technique is to calculate a
+"fingerprint" of a document with an unknown category, and compare this with the
+fingerprints of a number of documents of which the categories are known. The
+categories of the closest matches are output as the classification. A
+fingerprint is a list of the most frequent n-grams occurring in a document,
+ordered by frequency. Fingerprints are compared with a simple out-of-place
+metric.
+
+[1] The document that started it all: William B. Cavnar & John M. Trenkle (1994)
+N-Gram-Based Text Categorization, <http://citeseer.ist.psu.edu/68861.html>.
+
+WWW: http://software.wise-guys.nl/libtextcat/

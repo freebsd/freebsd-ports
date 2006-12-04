@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu May 22 13:39:52 2003
++++ src/Makefile.in	Sat Nov 18 22:55:18 2006
+@@ -126,7 +126,7 @@
+ 
+ WARNS = -W -Wall -Wshadow -Wpointer-arith 
+ IFLAGS = 
+-FLAGS = -g -O3 -funroll-loops -D_THREAD_SAFE -D_GNU_SOURCE
++FLAGS = -g -funroll-loops -D_THREAD_SAFE -D_GNU_SOURCE
+ VERBOSE = -DVERBOSE
+ AM_CFLAGS = $(IFLAGS) $(VERBOSE) $(WARNS) $(FLAGS)
+ AM_LDFLAGS = -g
