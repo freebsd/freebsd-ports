@@ -148,8 +148,11 @@ post-patch:
 	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	    ${WRKSRC}/dist/util/arch_variables \
 	    ${WRKSRC}/dist/pvm/src/aimk
-	@${REINPLACE_CMD} -e "s|%%CC%%|${CC}|g" -e "s|%%CXX%%|${CXX}|g" \
-	    -e "s|%%CFLAGS%%|${CFLAGS}|g" -e "s|%CXXFLAGS%%|${CXXFLAGS}|g" \
+	@${REINPLACE_CMD} -e "s|%%CC%%|${CC}|g" \
+	    -e "s|%%CXX%%|${CXX}|g" \
+	    -e "s|%%CFLAGS%%|${CFLAGS}|g" \
+	    -e "s|%%CXXFLAGS%%|${CXXFLAGS}|g" \
+	    -e "s|%%X11BASE%%|${X11BASE}|g" \
 	    ${WRKSRC}/aimk \
 	    ${WRKSRC}/dist/pvm/src/aimk
 	@${REINPLACE_CMD} -e 's|^CC = gcc|CC = ${CC}|' \
