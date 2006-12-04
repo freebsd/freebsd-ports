@@ -17,6 +17,9 @@ COMMENT=	A C library for creating IP packets (development version)
 
 CONFLICTS=	libnet*-1.*
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
