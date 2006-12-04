@@ -7,13 +7,14 @@
 
 PORTNAME=	obexapp
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Obex application to transfer objects to mobile equipment
 
-LIB_DEPENDS=	openobex-1.0.1:${PORTSDIR}/comms/openobex
+LIB_DEPENDS=	openobex:${PORTSDIR}/comms/openobex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
