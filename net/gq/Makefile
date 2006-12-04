@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gq
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -17,14 +17,16 @@ DISTNAME=	gq-${PORTVERSION:S/r/rc/}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	GTK-based LDAP client
 
+LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
+
 USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_OPENLDAP=	yes
 USE_OPENSSL=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gtk20 libxml2
+USE_XLIB=	yes
+USE_GNOME=	gnomehier gtk20 libxml2 libglade2 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
 
@@ -36,6 +38,10 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
 
 .if !defined(WITHOUT_JPEG)
 USE_GNOME+=	gdkpixbuf

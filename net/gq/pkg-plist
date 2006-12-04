@@ -1,11 +1,16 @@
 bin/gq
 share/applications/gq.desktop
-%%DATADIR%%/bomb.xpm
+%%DATADIR%%/gq.glade
 %%DATADIR%%/hide.xpm
-%%DATADIR%%/line.xpm
-%%DATADIR%%/logo.xpm
 %%DATADIR%%/new.xpm
-%%DATADIR%%/textarea.xpm
-%%DATADIR%%/warning.xpm
+share/mime/packages/gq-ldif.xml
+share/mime/text/x-ldif.xml
+share/pixmaps/gq/bomb.xpm
+share/pixmaps/gq/entry.png
+share/pixmaps/gq/gq.xpm
+share/pixmaps/gq/textview.png
+share/pixmaps/gq/warning.xpm
+@dirrm share/pixmaps/gq
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
