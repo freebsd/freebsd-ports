@@ -12,8 +12,7 @@
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.6.6
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ipsec-tools
+MASTER_SITES=	SF
 
 MAINTAINER=	vanhu@netasq.com
 COMMENT=	KAME racoon IKE daemon, ipsec-tools version
@@ -25,7 +24,7 @@ USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \
 		--localstatedir=${STATEDIR:S/\/racoon//} \
@@ -41,6 +40,7 @@ OPTIONS=	DEBUG		"enable Debug support" on \
 		STATS		"enable Statistics logging function" off \
 		DPD		"enable Dead Peer Detection" on \
 		NATT		"enable NAT-Traversal (kernel-patch required)" on \
+		NATTF		"require NAT-Traversal (fail without kernel-patch)" off \
 		FRAG		"enable IKE fragmentation payload support" on \
 		HYBRID		"enable Hybrid Mode-cfg and Xauth support" off \
 		PAM		"enable PAM authentication" off \
@@ -89,7 +89,11 @@ CONFIGURE_ARGS+=	--disable-dpd
 .endif
 
 .ifdef(WITH_NATT)
+.	ifdef(WITH_NATTF)
+CONFIGURE_ARGS+=	--enable-natt=yes
+.	else
 CONFIGURE_ARGS+=	--enable-natt=kernel
+.	endif
 .else
 CONFIGURE_ARGS+=	--disable-natt
 .endif
