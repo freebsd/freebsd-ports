@@ -1,0 +1,20 @@
+--- configure.orig	Sat Dec  2 01:33:02 2006
++++ configure	Sat Dec  2 01:33:12 2006
+@@ -4945,7 +4945,7 @@
+ 	if test "$wt_pthreads_found" != yes ; then
+ 		# Save libs
+ 		OLD_LIBS="$LIBS"
+-		LIBS="-lpthread $LIBS"
++		LIBS="-pthread $LIBS"
+ 
+ 		# Try to run it
+ 		if test "$cross_compiling" = yes; then
+@@ -5077,7 +5077,7 @@
+ 		# Did we find something?
+ 		if test "$wt_pthreads_test" = yes ; then
+ 			wt_pthreads_found=yes
+-			wt_pthreads_libs="-lpthread"
++			wt_pthreads_libs="-pthread"
+ 		fi
+ 	fi
+ 
