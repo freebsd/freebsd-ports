@@ -15050,6 +15050,7 @@ wininfo		ports/devel/wininfo
 wipe		ports/security/wipe
 wire		ports/net/wire
 wired		ports/net/wired
+wired-tracker	ports/net/wired-tracker
 wireshark	ports/net/wireshark
 wireshark-lite	ports/net/wireshark-lite
 wise		ports/biology/wise
