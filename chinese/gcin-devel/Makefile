@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://yilan.twbbs.org/chinsan/gcin/:main \
