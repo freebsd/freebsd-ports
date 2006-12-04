@@ -1,2 +1,10 @@
 audacious supports Gzipped and uncompressed skins.  If you would like to use
 Zip format skins you will need to ensure archivers/unzip is installed.
+
+
+ATTENTION!
+
+  You should now go and install multimedia/audacious-plugins. Without it,
+  audacious is useless!
+
+

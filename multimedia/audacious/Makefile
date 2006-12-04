@@ -6,139 +6,59 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://audacious-media-player.org/release/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	novel
-DISTNAME=	audacious-${PORTVERSION}
+MASTER_SITES=	http://audacious-media-player.org/release/
 EXTRACT_SUFX=.tgz
 
-MAINTAINER=	redchrom@gmail.com
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
 
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
-		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		curl.3:${PORTSDIR}/ftp/curl \
-		tag.5:${PORTSDIR}/audio/taglib
-
-BROKEN=		Incomplete pkg-plist
-
-USE_GNOME=	gtk20 libglade2
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
+USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lstdc++" \
-		INPUT_PLUGINS="${INPUT_PLUGINS}" \
-		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
-		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
-CONFIGURE_ARGS=	--disable-jack --disable-adplug --disable-lirc \
---disable-alsa --disable-amidiplug --disable-arts --disable-wma
+USE_XLIB=	yes
 
-MAN1=		audacious.1
+MAN1=		audacious.1 audtool.1
 
 PORTDOCS=	README AUTHORS ChangeLog NEWS
 
-INPUT_PLUGINS=	cdaudio mpg123 wav tonegen wma console \
-		sexypsf aac timidity
-OUTPUT_PLUGINS=	OSS disk_writer
-VISUALIZATION_PLUGINS=	blur_scope
-
-OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
-		MODPLUG	"Enable modplug input" off \
-		FLAC	"Enable FLAC input" off \
-		SID	"Enable sid input" off \
-		MPC	"Enable mpc input" off \
-		ESOUND	"Enable Esound output"  off \
-		GNOME   "Build with gnomevfs/gconf support" off \
+OPTIONS=	GNOME	"Build with gconf support" off \
 		NLS	"Native Language Support" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN="Does not build"
-.endif
-
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-INPUT_PLUGINS+=	vorbis
-PLIST_SUB+=	VORBISPLUGIN=""
-.else
-CONFIGURE_ARGS+=	--disable-vorbis
-PLIST_SUB+=	VORBISPLUGIN="@comment "
-.endif
-
-.if !defined(WITHOUT_MODPLUG)
-INPUT_PLUGINS+=	modplug
-PLIST_SUB+=	MODPLUG=""
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
-.else
-PLIST_SUB+=	MODPLUG="@comment "
-CONFIGURE_ARGS+=	--disable-modplug
-.endif
-
-.if defined(WITH_FLAC)
-INPUT_PLUGINS+=	flac
-PLIST_SUB+=	FLACPLUGIN=""
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
-.else
-PLIST_SUB+=	FLACPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-flac
-.endif
-
-.if !defined(WITHOUT_SID)
-INPUT_PLUGINS+=	sid
-PLIST_SUB+=	SIDPLUGIN=""
-LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
-.else
-PLIST_SUB+=	SIDPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-sid
-.endif
-
-.if !defined(WITHOUT_MPC)
-INPUT_PLUGINS+=	musepack
-PLIST_SUB+=	MPCPLUGIN=""
-LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec \
-	tag.5:${PORTSDIR}/audio/taglib
-.else
-PLIST_SUB+=	MPCPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-musepack
-.endif
-
-.if defined(WITH_ESOUND)
-USE_GNOME+=	esound
-OUTPUT_PLUGINS+=	esd
-PLIST_SUB+=	ESDPLUGIN=""
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
-.else
-PKGNAMESUFFIX=	-esound
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-esd
-PLIST_SUB+=	ESDPLUGIN="@comment "
-.endif
-
 .if defined(WITH_GNOME)
-USE_GNOME+=	gnomevfs2
-CONFIGURE_ARGS+=	--enable-gnome-vfs --enable-gconf
+USE_GNOME+=	gconf
+CONFIGURE_ARGS+=--enable-gconf
 .endif
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=		NLS=""
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|intl \\|intl|; /-Wno-strict-aliasing/d' \
+		${WRKSRC}/audacious/widgets/Makefile
+.endif
 	@${REINPLACE_CMD} -e 's|(LIBDIR)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 .if defined(WITH_GNOME)
 	@${ECHO_MSG} ""
@@ -146,11 +66,6 @@ post-install:
 	@${ECHO_MSG} "ALL PRESETS will be stored in the gconf database."
 	@${ECHO_MSG} ""
 .endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	
 
 .include <bsd.port.post.mk>
