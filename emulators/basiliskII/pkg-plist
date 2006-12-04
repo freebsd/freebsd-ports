@@ -1,5 +1,0 @@
-bin/BasiliskII
-share/BasiliskII/fbdevices
-share/BasiliskII/keycodes
-share/BasiliskII/tunconfig
-@dirrm share/BasiliskII

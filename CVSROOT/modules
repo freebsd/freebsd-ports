@@ -346,7 +346,6 @@ allacrost	ports/games/allacrost
 allegro		ports/devel/allegro
 allegro-devel	ports/devel/allegro-devel
 allegrogl	ports/graphics/allegrogl
-alleyoop	ports/devel/alleyoop
 alliance	ports/cad/alliance
 alloywm		ports/x11-wm/alloywm
 alltraxclock	ports/x11-clocks/alltraxclock
@@ -693,7 +692,6 @@ base64		ports/converters/base64
 bash		ports/shells/bash
 bash-completion	ports/shells/bash-completion
 bash2		ports/shells/bash2
-basiliskII	ports/emulators/basiliskII
 basket		ports/deskutils/basket
 bass		ports/games/bass
 bastet		ports/games/bastet
@@ -1094,7 +1092,6 @@ cbrpager	ports/graphics/cbrpager
 cbview		ports/graphics/cbview
 cc65		ports/devel/cc65
 ccache		ports/devel/ccache
-ccard		ports/finance/ccard
 ccaudio		ports/audio/ccaudio
 cccc		ports/devel/cccc
 ccd2iso		ports/sysutils/ccd2iso
@@ -3231,7 +3228,6 @@ geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
 gedit		ports/editors/gedit
-gedit-autocomplete-plugin	ports/editors/gedit-autocomplete-plugin
 gedit-plugins	ports/editors/gedit-plugins
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
@@ -4322,7 +4318,6 @@ hs-alex		ports/devel/hs-alex
 hs-buddha	ports/devel/hs-buddha
 hs-c2hs		ports/devel/hs-c2hs
 hs-cpphs	ports/devel/hs-cpphs
-hs-crypto	ports/devel/hs-crypto
 hs-drift	ports/devel/hs-drift
 hs-fps		ports/devel/hs-fps
 hs-frantk	ports/x11-toolkits/hs-frantk
@@ -7013,7 +7008,6 @@ mgv		ports/print/mgv
 mhash		ports/security/mhash
 mhc		ports/deskutils/mhc
 mhc-emacs20	ports/deskutils/mhc-emacs20
-mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
 mi-aspell	ports/textproc/mi-aspell
@@ -14863,11 +14857,9 @@ vmw		ports/emulators/vmw
 vmware-guestd3	ports/emulators/vmware-guestd3
 vmware-guestd4	ports/emulators/vmware-guestd4
 vmware-guestd5	ports/emulators/vmware-guestd5
-vmware-tools2	ports/emulators/vmware-tools2
 vmware-tools3	ports/emulators/vmware-tools3
 vmware-tools4	ports/emulators/vmware-tools4
 vmware-tools5	ports/emulators/vmware-tools5
-vmware2		ports/emulators/vmware2
 vmware3		ports/emulators/vmware3
 vnc		ports/net/vnc
 vnc2swf		ports/net/vnc2swf
@@ -15674,7 +15666,6 @@ xmms-paranormal	ports/graphics/xmms-paranormal
 xmms-pipe	ports/audio/xmms-pipe
 xmms-plazma	ports/graphics/xmms-plazma
 xmms-quix3dn	ports/audio/xmms-quix3dn
-xmms-rateplug	ports/audio/xmms-rateplug
 xmms-real-random	ports/audio/xmms-real-random
 xmms-sapplug	ports/audio/xmms-sapplug
 xmms-scivi	ports/graphics/xmms-scivi
@@ -16125,7 +16116,6 @@ zh-gugod-clean	ports/chinese/gugod-clean
 zh-hanzim	ports/chinese/hanzim
 zh-hc		ports/chinese/hc
 zh-hztty	ports/chinese/hztty
-zh-iiimf-le-chewing	ports/chinese/iiimf-le-chewing
 zh-iiimf-le-newpy	ports/chinese/iiimf-le-newpy
 zh-iiimf-le-ude	ports/chinese/iiimf-le-ude
 zh-iiimf-le-xcin	ports/chinese/iiimf-le-xcin

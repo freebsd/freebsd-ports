@@ -53,7 +53,6 @@
     SUBDIR += hanzim
     SUBDIR += hc
     SUBDIR += hztty
-    SUBDIR += iiimf-le-chewing
     SUBDIR += iiimf-le-newpy
     SUBDIR += iiimf-le-ude
     SUBDIR += iiimf-le-xcin

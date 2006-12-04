@@ -36,7 +36,6 @@
     SUBDIR += alf
     SUBDIR += allegro
     SUBDIR += allegro-devel
-    SUBDIR += alleyoop
     SUBDIR += anjuta
     SUBDIR += antlr
     SUBDIR += apache-ant
@@ -409,7 +408,6 @@
     SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
     SUBDIR += hs-cpphs
-    SUBDIR += hs-crypto
     SUBDIR += hs-drift
     SUBDIR += hs-fps
     SUBDIR += hs-green-card
