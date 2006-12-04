@@ -245,7 +245,7 @@ CFLAGS+=	-fno-force-addr
 USE_XLIB=	yes
 #CFLAGS+=	-I${X11BASE}/include
 CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
-		--with-x11incdir=${X11BASE}/include
+		--with-extraincdir=${X11BASE}/include
 .else
 WITHOUT_GUI=	yes
 CONFIGURE_ARGS+=--disable-x11 \
