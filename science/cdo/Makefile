@@ -27,6 +27,8 @@ PLIST_FILES=	bin/cdo
 OPTIONS=	HDF5	"HDF5 support" off \
 		NETCDF	"NETCDF support" off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_HDF5)
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
@@ -37,4 +39,8 @@ CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
 LIB_DEPENDS+=		netcdf.1:${PORTSDIR}/science/netcdf
 .endif
 
-.include <bsd.port.mk>
+.if ${OSVERSION} >= 502102
+EXTRA_PATCHES+=	"${PATCHDIR}/extra-patch-freebsd5-pthread"
+.endif
+
+.include <bsd.port.post.mk>
