@@ -1,16 +1,10 @@
---- configure.in.orig	Wed Oct  1 13:17:13 2003
-+++ configure.in	Sat Nov 20 03:25:29 2004
-@@ -39,12 +39,12 @@
- 
- IRDA_CHECK
- BLUETOOTH_CHECK
+--- configure.in.orig	Wed Jun 14 11:24:13 2006
++++ configure.in	Sat Nov 25 21:56:52 2006
+@@ -22,6 +22,7 @@
+ AC_PATH_IRDA
+ AC_PATH_BLUEZ
+ AC_PATH_USB
 +FREEBSD_BLUETOOTH_CHECK
  
- dnl Configure debug facilities
- AC_ARG_WITH(debug,[  --with-debug=level      Debug level],
- 	debug_level="$withval", debug_level="")
+ AC_ARG_OPENOBEX
  
--CFLAGS="-O2"
- if test "$debug_level" != ""; then
- 	AC_DEFINE_UNQUOTED([OBEX_DEBUG],$debug_level, [debug level])
- 	CFLAGS="-g -O1"
