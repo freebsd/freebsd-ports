@@ -8,7 +8,7 @@
 PORTREVISION=	1
 
 APP=		audacious
-LIB_DEPENDS=	audacious.3:${PORTSDIR}/multimedia/audacious
+LIB_DEPENDS=	audacious.4:${PORTSDIR}/multimedia/audacious
 
 MASTERDIR=	${.CURDIR}/../xmms-crossfade
 
