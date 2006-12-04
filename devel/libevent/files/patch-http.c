@@ -1,11 +1,22 @@
---- http.c.orig	Sat Aug 12 11:41:36 2006
-+++ http.c	Tue Oct 31 04:12:27 2006
-@@ -207,7 +207,7 @@
- 	    evhttp_find_header(req->output_headers, "Content-Length") == NULL){
- 		char size[12];
- 		snprintf(size, sizeof(size), "%ld",
--		    EVBUFFER_LENGTH(req->output_buffer));
-+		    (long int)EVBUFFER_LENGTH(req->output_buffer));
- 		evhttp_add_header(req->output_headers, "Content-Length", size);
- 	}
- }
+#
+# Fix build with old gcc
+#
+--- http.c.orig	Sat Dec  2 19:30:04 2006
++++ http.c	Mon Dec  4 11:17:38 2006
+@@ -518,6 +518,7 @@
+ evhttp_connection_done(struct evhttp_connection *evcon)
+ {
+ 	struct evhttp_request *req = TAILQ_FIRST(&evcon->requests);
++	int need_close;
+ 
+ 	/*
+ 	 * if this is an incoming connection, we need to leave the request
+@@ -527,7 +528,7 @@
+ 		TAILQ_REMOVE(&evcon->requests, req, next);
+ 		req->evcon = NULL;
+ 
+-		int need_close = 
++		need_close = 
+ 		    evhttp_is_connection_close(req->input_headers) ||
+ 		    evhttp_is_connection_close(req->output_headers);
+ 
