@@ -1,6 +1,6 @@
---- net.cc.orig	1997/10/07 19:07:01
-+++ net.cc	1998/01/26 22:21:41
-@@ -163,46 +163,48 @@
+--- net.cc.orig	Thu Mar 21 03:49:18 1996
++++ net.cc	Sun Dec  3 19:04:01 2006
+@@ -163,46 +163,49 @@
  {
  	int cc = ::send(fd, (char*)buf, len, 0);
  	if (cc < 0) {
@@ -39,7 +39,8 @@
 +		 *	}
 +		 *
 +		 */
-+		int err, errlen = sizeof(err), savederrno;
++		int err, savederrno;
++		socklen_t errlen = sizeof(err);
 +
 +		savederrno = errno;
 +		getsockopt(fd, SOL_SOCKET, SO_ERROR, &err,
@@ -87,7 +88,7 @@
  			break;
  
  		case ENETUNREACH:
-@@ -217,7 +219,7 @@
+@@ -217,7 +220,7 @@
  			 * icmp unreachable, so we should be able to
  			 * send now.
  			 */
@@ -96,12 +97,13 @@
  			break;
  
  		default:
-@@ -264,12 +266,14 @@
+@@ -264,12 +267,15 @@
  	}
  	int cc = ::sendmsg(ssock_, (msghdr*)&mh, 0);
  	if (cc < 0) {
 -		switch (errno) {
-+		int err, errlen = sizeof(err), savederrno;
++		int err, savederrno;
++		socklen_t errlen = sizeof(err);
 +
 +		savederrno = errno;
 +		getsockopt(ssock_, SOL_SOCKET, SO_ERROR, &err,
@@ -115,3 +117,12 @@
  			break;
  
  		case ENETUNREACH:
+@@ -297,7 +303,7 @@
+ int Network::dorecv(u_char* buf, int len, u_int32_t& from, int fd)
+ {
+ 	sockaddr_in sfrom;
+-	int fromlen = sizeof(sfrom);
++	socklen_t fromlen = sizeof(sfrom);
+ 	int cc = ::recvfrom(fd, (char*)buf, len, 0,
+ 			    (sockaddr*)&sfrom, &fromlen);
+ 	if (cc < 0) {
