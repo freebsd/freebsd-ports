@@ -1,9 +1,10 @@
---- aclocal.m4.orig	Wed Jun 16 19:59:04 2004
-+++ aclocal.m4	Wed Jun 16 20:26:17 2004
-@@ -67,6 +67,36 @@
- 	BLUETOOTH_HOOK([],failure)
- ])
+--- aclocal.m4.orig	Wed Jun 14 15:58:25 2006
++++ aclocal.m4	Sat Nov 25 21:55:24 2006
+@@ -6914,6 +6914,37 @@
+ # AM_CONFIG_HEADER is obsolete.  It has been replaced by AC_CONFIG_HEADERS.
+ AU_DEFUN([AM_CONFIG_HEADER], [AC_CONFIG_HEADERS($@)])
  
++
 +dnl adding a check for FreeBSD blutooth netgraph support.
 +
 +AC_DEFUN([FREEBSD_BLUETOOTH_HOOK],[
@@ -34,6 +35,6 @@
 +	FREEBSD_BLUETOOTH_HOOK([],failure)
 +])
 +
- # Do all the work for Automake.  This macro actually does too much --
- # some checks are only needed if your package does certain things.
- # But this isn't really a big deal.
+ # Do all the work for Automake.                             -*- Autoconf -*-
+ 
+ # Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005
