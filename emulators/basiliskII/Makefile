@@ -9,16 +9,12 @@ PORTNAME=	basiliskII
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.gibix.net/projects/basilisk2/files/
+MASTER_SITES=	http://gwenole.beauchesne.info/projects/basilisk2/files/
 MASTER_SITE_SUBDIR=	basilisk
 DISTNAME=	BasiliskII_src_01052006
 
 MAINTAINER=	mmendez@energyhq.be
 COMMENT=	A free, portable, Open Source 68k Mac emulator
-
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
