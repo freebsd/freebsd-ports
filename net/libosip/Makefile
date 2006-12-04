@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	osip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
+DEPRECATED=	distfile disappeared and this software is obsoleted by net/libosip2
+EXPIRATION_DATE=	2007-01-04
+
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
