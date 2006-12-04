@@ -19,6 +19,7 @@ COMMENT=	Intel MPI Benchmark
 
 WRKSRC=		${WRKDIR}/IMB_3.0/src/
 USE_GMAKE=	yes
+USE_DOS2UNIX=	yes
 MAKEFILE=	make_mpich
 ALL_TARGET=	all
 # Intel hardcodes -O3 in make_mpich.  Replacing it with system defaults
