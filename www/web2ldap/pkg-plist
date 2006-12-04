@@ -260,7 +260,7 @@
 %%DATADIR%%/scgi/web2ldap.py
 %%DATADIR%%/scgi/web2ldap.pyc
 %%DATADIR%%/web2ldap.spec
-@unexec rmdir /var/log/web2ldap 2>/dev/null || true
+@dirrmtry /var/log/web2ldap
 @dirrm %%DATADIR%%/var/run
 @dirrm %%DATADIR%%/var/log
 @dirrm %%DATADIR%%/var
