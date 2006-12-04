@@ -248,6 +248,7 @@
     SUBDIR += libstree
     SUBDIR += libtext-charwidth-perl
     SUBDIR += libtext-wrapi18n-perl
+    SUBDIR += libtextcat
     SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libuninameslist
