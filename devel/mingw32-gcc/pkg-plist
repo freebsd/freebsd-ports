@@ -211,7 +211,6 @@ bin/%%GCC_TARG%%-jar
 %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/algorithm
 %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/bitmap_allocator.h
 %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/debug_allocator.h
-%%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/demangle.h
 %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/enc_filebuf.h
 %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/functional
 %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/hash_fun.h
@@ -2175,6 +2174,7 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/gcj/libgcj-config.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/iso646.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/libffi/ffitarget.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/limits.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/mm_malloc.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/mmintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/objc/encoding.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/objc/hash.h
@@ -2201,6 +2201,7 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/emmintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/float.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/iso646.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/limits.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/mm_malloc.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/mmintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/pmmintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/README
