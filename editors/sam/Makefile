@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.msg.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A unix version of Rob Pike's editor for plan9
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	| ${SH}
