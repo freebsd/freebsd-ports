@@ -8,15 +8,12 @@
 PORTNAME=	dump9660
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.morphisms.net/~wkj/Software/dump9660/
+MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTNAME=	dump9660
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create an ISO 9660 image, possibly incrementally
-
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2007-01-02
 
 MAN8=		mk9660.8
 MAN5=		proto.5
