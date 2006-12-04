@@ -28,6 +28,7 @@ share/autoconf%%BUILD_VERSION%%/autoconf/autoscan.m4
 share/autoconf%%BUILD_VERSION%%/autoconf/autotest.m4
 share/autoconf%%BUILD_VERSION%%/autoconf/autoupdate.m4
 share/autoconf%%BUILD_VERSION%%/autoconf/c.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/erlang.m4
 share/autoconf%%BUILD_VERSION%%/autoconf/fortran.m4
 share/autoconf%%BUILD_VERSION%%/autoconf/functions.m4
 share/autoconf%%BUILD_VERSION%%/autoconf/general.m4
@@ -55,7 +56,6 @@ share/autoconf%%BUILD_VERSION%%/m4sugar/m4sugar.m4f
 share/autoconf%%BUILD_VERSION%%/m4sugar/version.m4
 share/autoconf%%BUILD_VERSION%%/mdate-sh
 share/autoconf%%BUILD_VERSION%%/missing
-share/autoconf%%BUILD_VERSION%%/mkinstalldirs
 @dirrm share/autoconf%%BUILD_VERSION%%/m4sugar
 @dirrm share/autoconf%%BUILD_VERSION%%/autotest
 @dirrm share/autoconf%%BUILD_VERSION%%/autoscan

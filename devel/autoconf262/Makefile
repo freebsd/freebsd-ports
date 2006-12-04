@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	autoconf
-PORTVERSION=	2.59
-PORTREVISION=	2
+PORTVERSION=	2.61
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
 DISTNAME=	autoconf-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (2.59)
+COMMENT=	Automatically configure source code on many Un*x platforms (2.61)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-BUILD_VERSION=	259
+BUILD_VERSION=	261
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	autoconf${BUILD_VERSION}
 USE_BZIP2=	yes
@@ -31,11 +30,11 @@ INFO=		autoconf${BUILD_VERSION} standards${BUILD_VERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
 CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
-CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION} --without-lispdir
+CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION} --without-lispdir \
+		--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-GENERIC_TOOLS=	config.guess config.sub	elisp-comp install-sh mdate-sh \
-		missing	mkinstalldirs
+GENERIC_TOOLS=	config.guess config.sub	elisp-comp install-sh mdate-sh missing
 
 MAN1_PAGES=	autoconf autoheader autom4te autoreconf autoscan \
 		autoupdate config.guess config.sub ifnames
@@ -57,7 +56,7 @@ post-patch:
 
 post-install:
 .for FILE in ${GENERIC_TOOLS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf${BUILD_VERSION}
+	@${INSTALL_SCRIPT} ${WRKSRC}/build-aux/${FILE} ${PREFIX}/share/autoconf${BUILD_VERSION}
 .endfor
 	@-${RM} -fr ${PREFIX}/libexec/autoconf${BUILD_VERSION}
 	@${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}

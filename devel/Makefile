@@ -65,6 +65,7 @@
     SUBDIR += autoconf213
     SUBDIR += autoconf253
     SUBDIR += autoconf259
+    SUBDIR += autoconf26
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake14
