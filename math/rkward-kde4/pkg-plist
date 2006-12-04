@@ -103,6 +103,10 @@ share/apps/rkward/distributions/t_probabilities.php
 share/apps/rkward/distributions/t_probabilities.xml
 share/apps/rkward/distributions/t_quantiles.php
 share/apps/rkward/distributions/t_quantiles.xml
+share/apps/rkward/distributions/tukey_probabilities.php
+share/apps/rkward/distributions/tukey_probabilities.xml
+share/apps/rkward/distributions/tukey_quantiles.php
+share/apps/rkward/distributions/tukey_quantiles.xml
 share/apps/rkward/distributions/uniform_probabilities.php
 share/apps/rkward/distributions/uniform_probabilities.xml
 share/apps/rkward/distributions/uniform_quantiles.php
@@ -122,11 +126,15 @@ share/apps/rkward/phpfiles/common.php
 share/apps/rkward/plots.pluginmap
 share/apps/rkward/plots/box_plot.php
 share/apps/rkward/plots/box_plot.xml
+share/apps/rkward/plots/ecdf_plot.php
+share/apps/rkward/plots/ecdf_plot.xml
 share/apps/rkward/plots/histogram.php
 share/apps/rkward/plots/histogram.xml
 share/apps/rkward/plots/plot_options.php
 share/apps/rkward/plots/plot_options.xml
+share/apps/rkward/rkcatchedx11windowpart.rc
 share/apps/rkward/rkcommandeditorwindowpart.rc
+share/apps/rkward/rkcommandlogpart.rc
 share/apps/rkward/rkconsolepart.rc
 share/apps/rkward/rkeditordataframepart.rc
 share/apps/rkward/rkhelpwindow.rc
@@ -138,6 +146,9 @@ share/apps/rkward/uni1.2/code.php
 share/apps/rkward/uni1.2/description.xml
 share/apps/rkward/writetable/code.php
 share/apps/rkward/writetable/description.xml
+share/apps/rkward/x11device.pluginmap
+share/apps/rkward/x11device/export.php
+share/apps/rkward/x11device/export.xml
 %%PORTDOCS%%%%DOCSDIR%%/common
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
@@ -152,7 +163,9 @@ share/icons/crystalsvg/48x48/apps/rkward.png
 share/icons/crystalsvg/64x64/apps/rkward.png
 share/icons/locolor/16x16/apps/rkward.png
 share/icons/locolor/32x32/apps/rkward.png
+%%NLS%%share/locale/ca/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/el/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/es/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rkward.mo
@@ -162,6 +175,7 @@ share/icons/locolor/32x32/apps/rkward.png
 %%NLS%%@dirrmtry share/locale/pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/apps/rkward/writetable
+@dirrm share/apps/rkward/x11device
 @dirrm share/apps/rkward/uni1.2
 @dirrm share/apps/rkward/simple_anova
 @dirrm share/apps/rkward/plots
