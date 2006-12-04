@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	nwnclient
-PORTVERSION=	1.66
+PORTVERSION=	1.68
 CATEGORIES=	games linux
-MASTER_SITES=	http://content.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/ \
+MASTER_SITES=	http://bioware.vo.llnwd.net/o1/neverwinternights/updates/linux/${PORTVERSION:S/.//}/ \
 		http://nwdownloads.bioware.com/neverwinternights/linux/129/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	nwclient129.tar.gz \
 		English_linuxclient${PORTVERSION:S/.//}_orig.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sean-freebsd@farley.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata \
@@ -27,6 +27,7 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
+USE_XLIB=	yes
 USE_LINUX=	yes
 NWNDATADIR=	${LOCALBASE}/share/nwndata
 
