@@ -20,7 +20,7 @@ COMMENT=	A fully-featured blog product for Plone
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/OFS/__init__.py:${PORTSDIR}/www/plone
 
 USE_PYTHON=	yes
-USE_ZOPE=	yes
+USE_ZOPE=	2.9
 DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=COREBlog2
