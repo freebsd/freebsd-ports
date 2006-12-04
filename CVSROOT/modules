@@ -607,6 +607,7 @@ autoconf-archive	ports/devel/autoconf-archive
 autoconf213	ports/devel/autoconf213
 autoconf253	ports/devel/autoconf253
 autoconf259	ports/devel/autoconf259
+autoconf26	ports/devel/autoconf26
 autocutsel	ports/deskutils/autocutsel
 autodia		ports/devel/autodia
 autogen		ports/devel/autogen
