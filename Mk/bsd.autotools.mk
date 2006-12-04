@@ -51,7 +51,7 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #	- Extra arguments passed to automake during configure step
 #
 # ACLOCAL_ARGS=...
-#   - Arguments passed to aclocal during configure step
+#	- Arguments passed to aclocal during configure step
 #
 # AUTOCONF_ARGS=...
 #	- Extra arguments passed to autoconf during configure step
