@@ -28,10 +28,10 @@ OPTIONS=	MYSQL	"MySQL supports" off \
 		PGSQL	"PostgreSQL Supports" off \
 		SQLITE	"SQLite Supports" off
 
-.include <bsd.port.pre.mk>
-
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
+.include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/formencode/__init__.py:${PORTSDIR}/www/py-formencode
 
