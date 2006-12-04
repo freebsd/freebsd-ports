@@ -18,6 +18,9 @@ COMMENT=	X11 interface for editing BibTeX files
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-03
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN1=		bibcard.1
