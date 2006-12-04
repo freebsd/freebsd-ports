@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autoconf
-PORTVERSION=	2.59
+PORTVERSION=	2.61
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
@@ -31,7 +31,8 @@ NO_MTREE=	yes
 INFO=		autoconf standards
 CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
 CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
-CONFIGURE_ARGS=	--without-lispdir
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
+		--without-lispdir
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		autoconf.1 autoheader.1 autom4te.1 autoreconf.1 autoscan.1 \
