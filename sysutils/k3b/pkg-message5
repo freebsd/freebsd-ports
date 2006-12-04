@@ -12,7 +12,7 @@ Notes for FreeBSD 5.x users:
 3b. - For every user who should be able to use k3b and for every CD or DVD
       device add a directory in the users home directory. These directories
       must be owned by the corresponding user. For each such directory add a
-      line in /ect/fstab (see remark 2), like:
+      line in /etc/fstab (see remark 2), like:
         /dev/cd0c  /usr/home/XXX/cdrom  cd9660  ro,noauto,nodev,nosuid  0  0
       Furthermore allow user mounts as described in topic 9.22 of the FAQ:
       http://www.freebsd.org/doc/en_US.ISO8859-1/books/faq/disks.html#USER-FLOPPYMOUNT
