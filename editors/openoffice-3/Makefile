@@ -18,10 +18,10 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOV
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
 DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
 .if defined(WITH_GPC)
-DISTFILES+=     gpc231.tar.Z:gpc
+DISTFILES+=	gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
-DISTFILES+=     ${ANT_DISTFILE}:antbin
+DISTFILES+=	${ANT_DISTFILE}:antbin
 .endif
 EXTRACT_ONLY=	${OOOSRC}
 
@@ -39,7 +39,7 @@ USE_GNOME+=	libidl
 .endif
 
 .if defined(WITH_KDE)
-USE_KDELIBS_VER=        3
+USE_KDELIBS_VER=	3
 .endif
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -55,6 +55,7 @@ JAVA_VENDOR=	freebsd bsdjava
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
+
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -86,11 +87,13 @@ PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
 LOCALIZED_LANG?=	en-US
 # FIXME (Somehow INDEX build fails)
 .if defined(LANG_PKGNAME)
-PKGNAMEPREFIX=          ${LANG_PKGNAME}-
+PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .endif
 .if defined(LANG_SUFFIX)
-PKGNAMESUFFIX?=         -${LANG_SUFFIX}
+PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
+
+RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 .if defined(WITH_GNUGCJ)
 GCCVER=41
@@ -101,11 +104,11 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj
 .else
 .if ${ARCH} == amd64
 GCCVER=41
-BUILD_DEPENDS+= gcc41:${PORTSDIR}/lang/gcc41
+BUILD_DEPENDS+=	gcc41:${PORTSDIR}/lang/gcc41
 RUN_DEPENDS+=	gcc41:${PORTSDIR}/lang/gcc41
 .else
 GCCVER=34
-BUILD_DEPENDS+= gcc-ooo:${PORTSDIR}/lang/gcc-ooo
+BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
 .endif
 .endif
 
@@ -116,12 +119,12 @@ CCACHE_PREFIX=	ccache
 CCACHE_PREFIX=
 .endif
 .if (${GCCVER} == 41)
-CC=     gcc41
-CXX=    g++41
+CC=	gcc41
+CXX=	g++41
 .endif
 .if (${GCCVER} == 34)
-CC=     gcc-ooo
-CXX=    g++-ooo
+CC=	gcc-ooo
+CXX=	g++-ooo
 .endif
 CC:=	${CCACHE_PREFIX} ${CC}
 CXX:=	${CCACHE_PREFIX} ${CXX}
@@ -136,7 +139,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 .if defined(WITH_GNUGCJ)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-ANT_DISTFILE=   apache-ant-${ANT_VERSION}-bin.tar.bz2
+ANT_DISTFILE=	apache-ant-${ANT_VERSION}-bin.tar.bz2
 ANT_VERSION=	1.6.5
 .else
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
@@ -152,17 +155,20 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 .if defined(WITH_GNUGCJ)
-CONFIGURE_ENV+=      PATH="${LOCALBASE}/lib/jvm/java-gcj41/bin:${PATH}"
+CONFIGURE_ENV+=		PATH="${LOCALBASE}/lib/jvm/java-gcj41/bin:${PATH}"
 .endif
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --enable-crashdump=yes --enable-symbols=SMALL
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
+			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
+			--enable-crashdump=yes				\
+			--enable-symbols=SMALL
 
 .if ${ARCH} == amd64 || ${GCCVER} == 41
 WITHOUT_MOZILLA=	yes
 .endif
 .if (${GCCVER} == 41)
-LIB_DEPENDS+=   boost_regex:${PORTSDIR}/devel/boost
-CONFIGURE_ARGS+=       --with-system-boost=yes #i58343#
+LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
+CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .endif
 .if (${OSVERSION} <= 492000)
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
@@ -248,29 +254,30 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
-	@${PRINTF} "" > ${TMPPLIST}
-.if defined(WITH_MENU)
+	@${ECHO_CMD} "" > ${TMPPLIST}
 	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
+	@${RM} -f ${PREFIX}/share/applications/${EXECBASE}
+	@${MKDIR} ${PREFIX}/share/applications
 	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
 			${PREFIX}/share/applications/${EXECBASE}
-	@${PRINTF} "share/applications/${EXECBASE}\n" >> ${TMPPLIST}
+	@${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
 				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
 				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png ; \
-				${PRINTF} "share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png\n" >> ${TMPPLIST} ; \
+				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
 		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
 			${CP} ${ICONS}/hicolor/$${dir}/mimetypes/$${file} \
 			    ${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
-			${PRINTF} "share/icons/hicolor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
+			${ECHO_CMD} "share/icons/hicolor/$${dir}/mimetypes/$${file}" >> ${TMPPLIST} ; \
 		done ; \
 	done
-.endif
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
