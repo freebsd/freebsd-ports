@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded Routing Toolkit
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_AUTOTOOLS=	autoconf:213
