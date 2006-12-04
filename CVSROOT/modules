@@ -2696,6 +2696,7 @@ fix-mime-charset	ports/converters/fix-mime-charset
 fixesext	ports/x11/fixesext
 fixrtf		ports/textproc/fixrtf
 fkiss		ports/games/fkiss
+fl0p		ports/security/fl0p
 fl_editor	ports/x11-toolkits/fl_editor
 flac		ports/audio/flac
 flac123		ports/audio/flac123
