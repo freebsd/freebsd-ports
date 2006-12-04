@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.cemu.ru/pub/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP over UDP tunnel with encryption
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-04
+
 USE_OPENSSL=	YES
 
 MAN8=		tund.8
