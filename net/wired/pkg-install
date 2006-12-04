@@ -72,6 +72,9 @@ PRE-INSTALL)
 
 POST-INSTALL)
 	openssl req -batch -new -x509 -nodes -out ${PKG_PREFIX}/wired/etc/certificate.pem.sample -keyout ${PKG_PREFIX}/wired/etc/certificate.pem.sample;
+
+	# We have to do this here instead of @exec in pkg-plist, because @exec clause
+	# is executed before POST-INSTALL, which creates the certificate.pem.sample.
 	if [ ! -f ${PKG_PREFIX}/wired/etc/certificate.pem ]; then
 		cp -p ${PKG_PREFIX}/wired/etc/certificate.pem.sample ${PKG_PREFIX}/wired/etc/certificate.pem;
 	fi
