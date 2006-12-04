@@ -7,7 +7,6 @@
 
 PORTNAME=	win32-codecs
 PORTVERSION=	3.${CODEC_MPLAYER_VERSION:S/pre/.p/}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
@@ -18,10 +17,10 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp1.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/codecs/
-DISTFILES=	all-20060611.tar.bz2 \
+DISTFILES=	all-20061022.tar.bz2 \
 		${ADDITIONAL_CODECS_DISTFILES}
 DIST_SUBDIR=	win32
-EXTRACT_ONLY=	all-20060611.tar.bz2
+EXTRACT_ONLY=	all-20061022.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
@@ -72,7 +71,7 @@ PLIST_SUB+=	REALPLAYER="@comment "
 .endif
 
 post-extract:
-	@cd ${WRKDIR}/all-20060611 && \
+	@cd ${WRKDIR}/all-20061022 && \
 		${RM} ${REMOVE_CODECS_FILES}
 .for file in ${ADDITIONAL_CODECS_DISTFILES}
 	@cd ${WRKDIR} && ${TAR} xyf \
