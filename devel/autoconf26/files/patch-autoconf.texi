@@ -3,10 +3,10 @@
 @@ -3,5 +3,5 @@
  @comment %**start of header
 -@setfilename autoconf.info
-+@setfilename autoconf259.info
++@setfilename autoconf261.info
  @include version.texi
 -@settitle Autoconf
-+@settitle Autoconf259
++@settitle Autoconf261
  @setchapternewpage odd
 @@ -212,23 +212,3 @@
  @direntry
@@ -31,5 +31,5 @@
 -                                Automatic update of @file{configure.ac}
 -* config.status: (autoconf)config.status Invocation. Recreating configurations.
 -* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
-+* Autoconf259: (autoconf259).         Create source code configuration scripts.
++* Autoconf261: (autoconf261).         Create source code configuration scripts.
  @end direntry
