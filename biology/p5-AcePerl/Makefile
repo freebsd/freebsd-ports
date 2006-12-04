@@ -53,6 +53,10 @@ IGNORE=		requires Perl 5.6.0
 CFLAGS+=	-fPIC
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} < 600000
+BROKEN=		does not compile, GCC bug
+.endif
+
 post-patch:
 	@ ${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
 	  > ${WRKSRC}/acelib/wmake/FREEBSD_DEF
