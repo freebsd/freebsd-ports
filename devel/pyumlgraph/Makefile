@@ -15,6 +15,9 @@ DISTNAME=	PyUMLGraph-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Declarative Drawing of UML diagrams for Python
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
