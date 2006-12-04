@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m4
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	m4
@@ -16,7 +16,8 @@ COMMENT=	GNU m4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
+		--program-prefix=g
 
 .if defined(WITH_CHANGEWORD)
 CONFIGURE_ARGS+=	--enable-changeword

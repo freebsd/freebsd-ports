@@ -7,9 +7,14 @@ bin/gm4
 %%EXAMPLESDIR%%/exp.m4
 %%EXAMPLESDIR%%/file.m4
 %%EXAMPLESDIR%%/foreach.m4
+%%EXAMPLESDIR%%/foreach2.m4
+%%EXAMPLESDIR%%/foreachq.m4
+%%EXAMPLESDIR%%/foreachq2.m4
 %%EXAMPLESDIR%%/forloop.m4
+%%EXAMPLESDIR%%/forloop2.m4
 %%EXAMPLESDIR%%/fstab.m4
 %%EXAMPLESDIR%%/hanoi.m4
+%%EXAMPLESDIR%%/incl.m4
 %%EXAMPLESDIR%%/incl-test.m4
 %%EXAMPLESDIR%%/include.m4
 %%EXAMPLESDIR%%/indir.m4
@@ -17,6 +22,7 @@ bin/gm4
 %%EXAMPLESDIR%%/multiquotes.m4
 %%EXAMPLESDIR%%/patsubst.m4
 %%EXAMPLESDIR%%/pushpop.m4
+%%EXAMPLESDIR%%/quote.m4
 %%EXAMPLESDIR%%/regexp.m4
 %%EXAMPLESDIR%%/reverse.m4
 %%EXAMPLESDIR%%/sync-lines.m4
@@ -25,4 +31,5 @@ bin/gm4
 %%EXAMPLESDIR%%/translit.m4
 %%EXAMPLESDIR%%/undivert.m4
 %%EXAMPLESDIR%%/wrap.m4
+%%EXAMPLESDIR%%/wrapfifo.m4
 @dirrm %%EXAMPLESDIR%%
