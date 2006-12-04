@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	poppwd
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	mail
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/poppwd/	\
+		http://www.ugh.eclipse.co.uk/mirror/ftp.ugh.net.au/pub/unix/poppwd/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Implementation of the Eudora (compatible) password changing protocol
+MAINTAINER=	andrew@ugh.net.au
+COMMENT=	Implementation of the Eudora password changing protocol
 
 WRKSRC=		${WRKDIR}/poppwd
 
@@ -19,4 +20,10 @@ MAN8=		poppwd.8
 MANCOMPRESSED=	maybe
 PLIST_FILES=	libexec/poppwd
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+
+BROKEN=		Does not compile on 4.x
+.endif
+.include <bsd.port.post.mk>
