@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text editor which uses many of the shortcuts used in MSDOS EDIT
 
 BROKEN=		Does not fetch
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
 
 MAN1=		dte.1
 PORTDOCS=	dte.doc dte.hlp dte.rc
