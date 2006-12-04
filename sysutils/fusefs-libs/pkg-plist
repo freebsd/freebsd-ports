@@ -1,15 +1,21 @@
 include/fuse/fuse.h
 include/fuse/fuse_compat.h
 include/fuse/fuse_common.h
+include/fuse/fuse_common_compat.h
 include/fuse/fuse_lowlevel.h
 include/fuse/fuse_lowlevel_compat.h
 include/fuse/fuse_opt.h
 include/fuse/fuse_kernel.h
 include/fuse.h
+include/ulockmgr.h
 lib/libfuse.a
 lib/libfuse.la
 lib/libfuse.so
 lib/libfuse.so.2
+lib/libulockmgr.la
+lib/libulockmgr.a
+lib/libulockmgr.so
+lib/libulockmgr.so.1
 libdata/pkgconfig/fuse.pc
 @dirrm include/fuse
 %%PORTDOCS%%%%DOCSDIR%%/libs/how-fuse-works
