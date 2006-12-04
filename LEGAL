@@ -567,6 +567,8 @@ tkman-2.*		misc/tkman		Do not sell for profit
 tolkien-ttf-*		x11-fonts/tolkien-ttf	Shareware.  Commercial usage
 						or redistribution requires
 						license.
+tools-for-freebsd-*	emulators/vmware-tools2	Not sure if we can
+						redistribute this
 tracker-*.tgz		audio/tracker		Non-redistributable beta
 triangle-*/*		math/triangle		No commercial use without prior
 						arrangement with the author
