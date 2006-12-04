@@ -36,6 +36,7 @@ mingw32/include/ddk/d4iface.h
 mingw32/include/ddk/ddkmapi.h
 mingw32/include/ddk/hidclass.h
 mingw32/include/ddk/hidpi.h
+mingw32/include/ddk/hidsdi.h
 mingw32/include/ddk/hidusage.h
 mingw32/include/ddk/kbdmou.h
 mingw32/include/ddk/mcd.h
@@ -191,6 +192,7 @@ mingw32/include/oaidl.h
 mingw32/include/objbase.h
 mingw32/include/objfwd.h
 mingw32/include/objidl.h
+mingw32/include/objsafe.h
 mingw32/include/ocidl.h
 mingw32/include/odbcinst.h
 mingw32/include/ole.h
@@ -219,6 +221,7 @@ mingw32/include/ras.h
 mingw32/include/rasdlg.h
 mingw32/include/raserror.h
 mingw32/include/rassapi.h
+mingw32/include/reason.h
 mingw32/include/regstr.h
 mingw32/include/richedit.h
 mingw32/include/richole.h
@@ -253,8 +256,6 @@ mingw32/include/sqlext.h
 mingw32/include/sqltypes.h
 mingw32/include/sqlucode.h
 mingw32/include/sspi.h
-mingw32/include/stdarg.h
-mingw32/include/stddef.h
 mingw32/include/stdint.h
 mingw32/include/stdio.h
 mingw32/include/stdlib.h
@@ -416,6 +417,7 @@ mingw32/lib/libmswsock.a
 mingw32/lib/libnddeapi.a
 mingw32/lib/libndis.a
 mingw32/lib/libnetapi32.a
+mingw32/lib/libnewdev.a
 mingw32/lib/libntdll.a
 mingw32/lib/libntoskrnl.a
 mingw32/lib/libodbc32.a
