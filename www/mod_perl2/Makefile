@@ -7,13 +7,14 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	lars.eggert@gmx.net
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource
@@ -64,19 +65,6 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 PLIST_SUB=	THREADMUTEX=""
 .else
 PLIST_SUB=	THREADMUTEX="@comment "
-.endif
-
-pre-everything::
-.if ${APACHE_VERSION} >= 21
-	@${ECHO} "************************************************************"
-	@${ECHO} "You are building ${PORTNAME}-${PORTVERSION} for apache${APACHE_VERSION}."
-	@${ECHO} ""
-	@${ECHO} "Please note that the maintainer only tests ${PORTNAME}-${PORTVERSION}"
-	@${ECHO} "with apache20. If you encounter a problem, please roll back"
-	@${ECHO} "to that version and verify that the problem still exists,"
-	@${ECHO} "before submitting a problem report."
-	@${ECHO} "************************************************************"
-	@sleep 5
 .endif
 
 # it is time to require perl 5.8.x
