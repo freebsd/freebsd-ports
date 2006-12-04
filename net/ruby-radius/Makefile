@@ -17,6 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby module that provides an interface to the RADIUS protocol
 
+DEPRECATED=	distfile disappeared from homepage
+EXPIRATION_DATE=	2007-01-04
+
 USE_RUBY=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/examples/*
