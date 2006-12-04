@@ -47,3 +47,6 @@ SIZE (ispell-pl-20021127.tar.gz) = 1019831
 MD5 (ispell-bg-2.1.tar.gz) = 226ea86d1f10b0bffc816fa149548c4f
 SHA256 (ispell-bg-2.1.tar.gz) = 3f9916c2a4ac2a8429a951715d03d91bacf20cbcbd78bfd945243e1001e32d32
 SIZE (ispell-bg-2.1.tar.gz) = 233729
+SHA256 (ispell-sk-0.3.2.tar.gz) = 5b8a3e57e2a783c2e09984823e78ef758ff2954b7c165cea3ba4680e4dca657b
+MD5 (ispell-sk-0.3.2.tar.gz) = 39a7587f1334b0d707101e28e0c29070
+SIZE (ispell-sk-0.3.2.tar.gz) = 618244

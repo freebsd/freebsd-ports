@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	15
+PORTREVISION?=	16
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -37,7 +37,7 @@ MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 ISPELL=		${WRKSRC}/ispell
 
-.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL)) && !defined(ISPELL_BG)
+.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL) && !defined(ISPELL_BG) && !defined(ISPELL_SK))
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
@@ -57,6 +57,7 @@ pre-everything::
 	@${ECHO_MSG} '*  - German (new spelling)     ISPELL_DENEU=yes         *'
 	@${ECHO_MSG} '*  - Italian                   ISPELL_IT=yes            *'
 	@${ECHO_MSG} '*  - Polish                    ISPELL_PL=yes            *'
+	@${ECHO_MSG} '*  - Slovak                    ISPELL_SK=yes            *'
 	@${ECHO_MSG} '*  - Swedish                   ISPELL_SE=yes            *'
 	@${ECHO_MSG} '*  - Norwegian                 ISPELL_NO=yes            *'
 	@${ECHO_MSG} '* Example: "make ISPELL_FR=yes ISPELL_SE=yes install"   *'
@@ -155,6 +156,12 @@ BGDISTFILE=	ispell-bg-2.1.tar.gz
 MASKBITS?=	64
 EXTRA_DICT+=	${BGDISTFILE}:bg
 EXTRACT_ONLY+=	${BGDISTFILE}
+.endif
+.if defined(ISPELL_SK)
+SKDISTFILE=	ispell-sk-0.3.2.tar.gz
+MASTER_SITES+=	http://sk-spell.sk.cx/files/:sk
+EXTRA_DICT+=	${SKDISTFILE}:sk
+EXTRACT_ONLY+=	${SKDISTFILE}
 .endif
 .endif
 
@@ -290,6 +297,10 @@ post-build:
 		${CP} data/bulgarian.aff bulgarian.aff && \
 		${CP} data/bulgarian.hash bulgarian.hash
 .endif
+.if defined(ISPELL_SK)
+	@cd ${WRKDIR}/${SKDISTFILE:S=.tar.gz==} && \
+		${BUILDHASH} slovak.words slovak.aff slovak.hash
+.endif
 
 pre-su-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
@@ -348,6 +359,9 @@ post-install:
 .endif
 .if defined(ISPELL_PL)
 	@${CAT} ${MASTERDIR}/pkg-plist.pl >> ${TMPPLIST}
+.endif
+.if defined(ISPELL_SK)
+	@${CAT} ${MASTERDIR}/pkg-plist.sk >> ${TMPPLIST}
 .endif
 	@${ECHO_CMD} "@dirrm share/ispell" >> ${TMPPLIST}
 
