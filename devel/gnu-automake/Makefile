@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	automake
-PORTVERSION=	1.9.6
+PORTVERSION=	1.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -29,8 +29,10 @@ NO_MTREE=	yes
 CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/gnu-autotools/bin/autoconf \
 		AUTOHEADER=${LOCALBASE}/gnu-autotools/bin/autoheader \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--infodir=${PREFIX}/info
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
+
+PLIST_SUB=	VERSION=1.10
 
 post-patch:
 	@(cd ${WRKSRC}/doc && ${RM} -f *.info*)
