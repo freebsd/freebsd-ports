@@ -1,0 +1,20 @@
+--- plugins/ladspa_effect/caps/Makefile.am.orig	Mon Dec  4 15:22:22 2006
++++ plugins/ladspa_effect/caps/Makefile.am	Mon Dec  4 16:16:23 2006
+@@ -1,8 +1,6 @@
+ AUTOMAKE_OPTIONS = foreign 1.4
+ 
+ 
+-AM_CXXFLAGS := $(AM_CXXFLAGS) -O6 -ffast-math -funroll-loops -ftracer
+-
+ DEST = $(libdir)/$(PACKAGE)/ladspa
+ SOURCES = $(wildcard *.cc)
+ HDRS = $(wildcard *.h) $(wildcard dsp/*.h)
+@@ -23,7 +21,7 @@
+ 	-rm $(DEST)/caps.so
+ 
+ depend: $(SOURCES)
+-	$(CXX) -MM $(AM_CXXFLAGS) $(SOURCES) > depend
++	$(CXX) -MM $(CPPFLAGS) $(AM_CXXFLAGS) $(SOURCES) > depend
+ 
+ .cc.o:
+ 	$(CXX) $(CXXFLAGS) $(AM_CXXFLAGS) -c $<
