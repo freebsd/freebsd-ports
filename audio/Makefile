@@ -310,6 +310,7 @@
     SUBDIR += libgpod
     SUBDIR += libid3tag
     SUBDIR += libjackasyn
+    SUBDIR += liblo
     SUBDIR += libmad
     SUBDIR += libmikmod
     SUBDIR += libmodplug
