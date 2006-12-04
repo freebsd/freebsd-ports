@@ -19,7 +19,7 @@ MAN8=		syslog-ng.8
 USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
-
+NO_LATEST_LINK=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
