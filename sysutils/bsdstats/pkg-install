@@ -44,7 +44,7 @@ if [ ":$2" = ":POST-INSTALL" ]; then
                     echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
                 fi
                 if yesno "Would you like to run it now" y; then
-                   /usr/local/etc/periodic/monthly/300.statistics
+                   /usr/local/etc/periodic/monthly/300.statistics -nodelay
                 fi
             fi
         fi
@@ -58,7 +58,7 @@ if [ ":$2" = ":POST-INSTALL" ]; then
                 echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
             fi
             if yesno "Would you like to run it now" y; then
-               /usr/local/etc/periodic/monthly/300.statistics
+               /usr/local/etc/periodic/monthly/300.statistics -nodelay
             fi
         fi
     fi
