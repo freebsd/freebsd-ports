@@ -127,16 +127,16 @@ Use freely and get yourself a pademelon...
 -			fileByName++;
 -			if ((filePtr = fopen(Tcl_GetString(objv[2]),"rb")) == NULL) {
 +
-+		if (cmd[10] == 'X' && cmd[11] == 'P' && cmd[12] == 'M')
++		if (cmd[10] == 'X' && cmd[11] == 'P' && cmd[12] == 'M') {
 +#ifdef NOX11
 +			Tcl_SetResult(interp, "Support for XPM-files not "
-+			    "compiled in");
++			    "compiled in", TCL_STATIC);
 +			return TCL_ERROR;
 +#else
 +			/* gdImageCreateFromXpm() takes fileNAME */
 +			im = gdImageCreateFromXpm(arg2);
 +#endif
-+		else {
++		} else {
 +			if (Tcl_GetOpenFile(interp, arg2, 0, 1, &clientdata)
 +			    == TCL_OK) {
 +				filePtr = (FILE *)clientdata;
