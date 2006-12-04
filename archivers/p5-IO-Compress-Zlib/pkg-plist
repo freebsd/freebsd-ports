@@ -1,5 +1,13 @@
 %%SITE_PERL%%/IO/Compress/Zlib/Constants.pm
 %%SITE_PERL%%/IO/Compress/Zip/Constants.pm
+%%SITE_PERL%%/IO/Compress/Deflate.pm
+%%SITE_PERL%%/IO/Compress/Zip.pm
+%%SITE_PERL%%/IO/Compress/RawDeflate.pm
+%%SITE_PERL%%/IO/Compress/Gzip.pm
+%%SITE_PERL%%/IO/Compress/Adapter/Deflate.pm
+%%SITE_PERL%%/IO/Compress/Adapter/Identity.pm
+%%SITE_PERL%%/IO/Compress/Gzip/Constants.pm
+%%SITE_PERL%%/IO/Compress/Zlib/Extra.pm
 %%SITE_PERL%%/IO/Uncompress/RawInflate.pm
 %%SITE_PERL%%/IO/Uncompress/Inflate.pm
 %%SITE_PERL%%/IO/Uncompress/Unzip.pm
