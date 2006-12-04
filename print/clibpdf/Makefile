@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for creating PDF (Acrobat) files directly via C language programs
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-04
+
 WRKSRC=		${WRKDIR}/ClibPDF/source
 
 USE_LDCONFIG=	yes
