@@ -426,8 +426,23 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>ruby</name>
+        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+      </package>
+      <package>
+        <name>ruby+pthreads</name>
+        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+      </package>
+      <package>
+        <name>ruby+pthreads+oniguruma</name>
+        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+      </package>
+      <package>
+        <name>ruby+oniguruma</name>
+        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+      </package>
+      <package>
         <name>ruby_static</name>
-        <range><ge>1.8.*</ge><lt>1.8.5_4,1</lt></range>
+        <range><ge>1.8.*,1</ge></range>
       </package>
     </affects>
     <description>
