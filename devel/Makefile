@@ -1875,6 +1875,7 @@
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rtags
+    SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-tzinfo
