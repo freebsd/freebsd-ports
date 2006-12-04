@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-cp ${CURDIR}/files/Makefile ${WRKSRC}
