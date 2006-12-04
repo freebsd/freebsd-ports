@@ -6664,6 +6664,7 @@ lmarbles	ports/games/lmarbles
 lmbench		ports/benchmarks/lmbench
 lmclock		ports/x11-clocks/lmclock
 lmmon		ports/sysutils/lmmon
+lmms		ports/audio/lmms
 lmon		ports/sysutils/lmon
 lmpc		ports/games/lmpc
 lmtp2nntp	ports/mail/lmtp2nntp
