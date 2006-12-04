@@ -1,0 +1,91 @@
+--- Makefile.in.orig	Wed May 31 22:24:23 2006
++++ Makefile.in	Sun Dec  3 21:19:20 2006
+@@ -12,8 +12,8 @@
+ 
+ WT_VERSION		= @WT_VERSION@
+ WT_MAINTAINER	= @WT_MAINTAINER@
+-WT_USER			= @WT_USER@
+-WT_GROUP		= @WT_GROUP@
++WT_USER			= wired
++WT_GROUP		= wired
+ 
+ DISTFILES		= INSTALL LICENSE NEWS README Makefile Makefile.in \
+ 				  config.guess config.status config.h.in config.sub configure \
+@@ -74,7 +74,7 @@
+ 	$(LINK) $(TRACKERDOBJECTS) $(LIBS)
+ 
+ $(rundir)/trackerdctl: trackerd/trackerdctl.in
+-	sed -e 's,@trackerddir\@,$(fake_prefix)/$(trackerddir),g' $< > $@
++	sed -e 's,@trackerddir\@,$(fake_prefix)/$(trackerddir),g' -e 's,@prefix\@,$(prefix),g' $< > $@
+ 	chmod +x $@
+ 
+ $(rundir)/etc/trackerd.conf: trackerd/trackerd.conf.in
+@@ -97,61 +97,15 @@
+ 		touch .update; \
+ 	fi
+ 
+-	$(INSTALL) -m 755 -o $(WT_USER) -g $(WT_GROUP) -d $(installdir)/
+-	$(INSTALL) -m 755 -o $(WT_USER) -g $(WT_GROUP) -d $(installdir)/etc/
+-	$(INSTALL) -m 755 -o $(WT_USER) -g $(WT_GROUP) -d $(installdir)/tmp/
+-
+-	if [ ! -f $(installdir)/banlist ]; then \
+-		$(INSTALL) -m 644 -o $(WT_USER) -g $(WT_GROUP) run/banlist $(installdir)/; \
+-	fi
+-
+-	if [ ! -f $(installdir)/categories ]; then \
+-		$(INSTALL) -m 644 -o $(WT_USER) -g $(WT_GROUP) run/categories $(installdir)/; \
+-	fi
+-
+-	if [ ! -f $(installdir)/etc/trackerd.conf ]; then \
+-		$(INSTALL) -m 644 -o $(WT_USER) -g $(WT_GROUP) run/etc/trackerd.conf $(installdir)/etc/; \
+-	fi
+-	
+-	$(INSTALL) -m 755 -o $(WT_USER) -g $(WT_GROUP) run/trackerd $(installdir)/
+-	$(INSTALL) -m 755 -o $(WT_USER) -g $(WT_GROUP) run/trackerdctl $(installdir)/
+-
+-	if [ -f /etc/resolv.conf ]; then \
+-		$(INSTALL) -m 644 -o $(WT_USER) -g $(WT_GROUP) /etc/resolv.conf $(installdir)/etc/; \
+-	fi
+-
+-	@if [ -f .update ]; then \
+-		echo ""; \
+-		echo "Update complete!"; \
+-		echo ""; \
+-		echo "You should now run:"; \
+-		echo "    $(installdir)/trackerdctl restart"; \
+-		echo "to restart a running tracker."; \
+-	else \
+-		if [ ! -f $(installdir)/etc/certificate.pem ]; then \
+-			$(installdir)/trackerdctl certificate.pem; \
+-		fi; \
+-		\
+-		echo ""; \
+-		echo "Installation complete!"; \
+-		echo ""; \
+-		echo "Remember to edit $(installdir)/etc/trackerd.conf if you want to make any changes before starting the tracker."; \
+-		echo ""; \
+-		echo "When you are done, run:"; \
+-		echo "    $(installdir)/trackerdctl start"; \
+-		echo "to start the tracker."; \
+-	fi
+-	
+-	@rm -f .update
++	$(INSTALL) -m 644 -o $(WT_USER) -g $(WT_GROUP) run/categories $(installdir)/categories.sample
++	$(INSTALL) -m 644 -o $(WT_USER) -g $(WT_GROUP) run/etc/trackerd.conf $(installdir)/etc/trackerd.conf.sample
++	$(INSTALL) -m 755 -o 0 -g 0 run/trackerd $(prefix)/sbin
++	$(INSTALL) -m 755 -o 0 -g 0 run/trackerdctl $(prefix)/bin
+ 
+ install-man:
+-	$(INSTALL) -m 755 -o root -g bin -d $(mandir)/man1/
+-	$(INSTALL) -m 755 -o root -g bin -d $(mandir)/man5/
+-	$(INSTALL) -m 755 -o root -g bin -d $(mandir)/man8/
+-
+-	$(INSTALL) -m 644 -o root -g bin man/trackerdctl.1 $(mandir)/man1/
+-	$(INSTALL) -m 644 -o root -g bin man/trackerd.conf.5 $(mandir)/man5/
+-	$(INSTALL) -m 644 -o root -g bin man/trackerd.8 $(mandir)/man8/
++	$(INSTALL) -m 644 -o root -g wheel man/trackerdctl.1 $(mandir)/man1/
++	$(INSTALL) -m 644 -o root -g wheel man/trackerd.conf.5 $(mandir)/man5/
++	$(INSTALL) -m 644 -o root -g wheel man/trackerd.8 $(mandir)/man8/
+ 
+ dist:
+ 	rm -rf wired-tracker-$(WT_VERSION)

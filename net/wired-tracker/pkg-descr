@@ -1,0 +1,6 @@
+Wired Tracker is the Wired tracker server. Wired servers can register
+with the tracker with their name, URL and some other vitals, and
+clients connecting to the tracker will be able to retrieve a listing
+of all online servers.
+
+WWW:	http://www.zankasoftware.com/wired/tracker/
