@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libevent
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2a
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
