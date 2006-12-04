@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A programmer's text editor for GTK+ 2.0
 
+DEPRECATED=	distfile disappeared from homepage
+EXPIRATION_DATE=	2007-01-04
+
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
