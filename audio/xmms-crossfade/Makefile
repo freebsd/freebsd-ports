@@ -18,9 +18,11 @@ COMMENT=	A Crossfading/Gapless Plugin
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GCC=	3.4+
-USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 APP?=		xmms
+.if ${APP} != audacious
+USE_X_PREFIX=	yes
+.endif
 PLUGDIR?=	lib/${APP}/Output
 PORTDOCS=	README
 PLIST_FILES=	${PLUGDIR}/libcrossfade.so
