@@ -1,57 +1,81 @@
-@comment $FreeBSD$
 bin/bison
 bin/bison2
 share/aclocal/bison-i18n.m4
-%%DATADIR%%/c.m4
-%%DATADIR%%/c++.m4
-%%DATADIR%%/glr.c
-%%DATADIR%%/lalr1.cc
-%%DATADIR%%/m4sugar/m4sugar.m4
 %%DATADIR%%/README
+%%DATADIR%%/c++.m4
+%%DATADIR%%/c.m4
+%%DATADIR%%/glr.c
+%%DATADIR%%/glr.cc
+%%DATADIR%%/lalr1.cc
+%%DATADIR%%/location.cc
+%%DATADIR%%/m4sugar/m4sugar.m4
 %%DATADIR%%/yacc.c
-%%NLS%%share/locale/da/LC_MESSAGES/bison.mo
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++-driver.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++-driver.hh
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++-parser.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++-parser.hh
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++-parser.yy
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++-scanner.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++-scanner.ll
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/calc++.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/location.hh
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/position.hh
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc++/stack.hh
 %%NLS%%share/locale/da/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/de/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/da/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/es/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/de/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/et/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/es/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/et/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/et/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/ga/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/id/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/id/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/it/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/id/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/it/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bison-runtime.mo
-%%NLS%%share/locale/vi/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
-@dirrm %%DATADIR%%/m4sugar
-@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/calc++
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%/m4sugar
+@dirrmtry %%DATADIR%%

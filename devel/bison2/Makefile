@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bison
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.3
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +25,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		bison.1
 INFO=		bison
@@ -44,10 +43,25 @@ PLIST_SUB+=	NLS=""
 .error You have `USE_BISON' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
+
+#
+# Requires texinfo 4.8 or above
+#
+.if ${OSVERSION} < 601000
+	@${REINPLACE_CMD} "/^@headitem/d" ${WRKSRC}/doc/bison.texinfo
+.endif
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/bison ${PREFIX}/bin/bison2
 
-.include <bsd.port.mk>
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}/calc++
+	${INSTALL_DATA} ${WRKSRC}/examples/calc++/*.[chly]* \
+		${EXAMPLESDIR}/calc++
+.endif
+
+.include <bsd.port.post.mk>
