@@ -1,3 +1,3 @@
-MD5 (mingw/binutils-2.16.91-20050827-1-src.tar.gz) = d94983c962e2d77bb177a06e275eafc2
-SHA256 (mingw/binutils-2.16.91-20050827-1-src.tar.gz) = aa7a40a9210f5e257e82f0f4304a60ff5eb28962103201e90048461306a38882
-SIZE (mingw/binutils-2.16.91-20050827-1-src.tar.gz) = 15798012
+MD5 (mingw/binutils-2.16.91-20060119-1-src.tar.gz) = 42e3a665111121075480244cafc27ce7
+SHA256 (mingw/binutils-2.16.91-20060119-1-src.tar.gz) = d3cd48bd7bd99b83f90c4caaaf23fa94316e7d8ea91199dd3294e50e3ebbe6d5
+SIZE (mingw/binutils-2.16.91-20060119-1-src.tar.gz) = 16214443
