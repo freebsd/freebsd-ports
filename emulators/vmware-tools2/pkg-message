@@ -1,0 +1,5 @@
+XFree86 configulation file is in ${PREFIX}/etc/XF86Config_VMware.
+Copy this file to /etc/XF86Config before starting X.
+
+This package does not contain vmware-toolbox.  You need to install
+ports/emulators/linux-vmware-toolbox2 if you want it.
