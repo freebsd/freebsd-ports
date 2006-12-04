@@ -1,5 +1,4 @@
-Audacious is a fork of beep-media-player 0.9.7.1.
-The primary goals of this fork are keeping ideology of original BMP
-and merging miscellaneous plugins into Audacious
+Audacious Plugins are the input, output, visualization and effect plugins
+needed for Audacious
 
-WWW: http://audacious-media-player.org
+WWW: http://audacious-media-player.org/

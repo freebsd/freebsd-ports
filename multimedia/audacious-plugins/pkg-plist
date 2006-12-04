@@ -1,25 +1,16 @@
-bin/audacious
-bin/audtool
-include/audacious/beepctrl.h
-include/audacious/configdb.h
-include/audacious/configfile.h
-include/audacious/dirbrowser.h
-include/audacious/formatter.h
-include/audacious/plugin.h
-include/audacious/rcfile.h
-include/audacious/titlestring.h
-include/audacious/util.h
-include/audacious/vfs.h
-include/audacious/input.h
-include/audacious/output.h
-include/audacious/xml_document.h
-include/audacious/prefswin.h
+lib/audacious/Container/libm3u.so
+lib/audacious/Container/libpls.so
+lib/audacious/Container/libxspf.so
 lib/audacious/Effect/libaudiocompress.so
 lib/audacious/Effect/libladspa.so
+lib/audacious/Effect/libecho.so
 lib/audacious/Effect/libstereo.so
 lib/audacious/Effect/libvoice_removal.so
+lib/audacious/General/libalarm.so
 lib/audacious/General/libsong_change.so
 lib/audacious/General/libscrobbler.so
+lib/audacious/Input/libcuesheet.so
+lib/audacious/Input/libalac.so
 lib/audacious/Input/libcdaudio.so
 lib/audacious/Input/libconsole.so
 lib/audacious/Input/libmpg123.so
@@ -36,82 +27,16 @@ lib/audacious/Input/libwav.so
 lib/audacious/Output/libOSS.so
 %%ESDPLUGIN%%lib/audacious/Output/libESD.so
 lib/audacious/Output/libdisk_writer.so
+lib/audacious/Output/libnull.so
 lib/audacious/Visualization/libbscope.so
-lib/libaudacious.so
-lib/libaudacious.so.3
-lib/libaudacious.so.3.0.0
-libdata/pkgconfig/audacious.pc
-share/applications/audacious.desktop
-share/pixmaps/audacious.png
-%%DATADIR%%/Skins/Default/balance.png
-%%DATADIR%%/Skins/Default/cbuttons.png
-%%DATADIR%%/Skins/Default/eq_ex.png
-%%DATADIR%%/Skins/Default/eqmain.png
-%%DATADIR%%/Skins/Default/main.png
-%%DATADIR%%/Skins/Default/monoster.png
-%%DATADIR%%/Skins/Default/nums_ex.png
-%%DATADIR%%/Skins/Default/playpaus.png
-%%DATADIR%%/Skins/Default/pledit.png
-%%DATADIR%%/Skins/Default/pledit.txt
-%%DATADIR%%/Skins/Default/posbar.png
-%%DATADIR%%/Skins/Default/shufrep.png
-%%DATADIR%%/Skins/Default/skin.hints
-%%DATADIR%%/Skins/Default/text.png
-%%DATADIR%%/Skins/Default/titlebar.png
-%%DATADIR%%/Skins/Default/viscolor.txt
-%%DATADIR%%/Skins/Default/volume.png
-%%DATADIR%%/glade/addfiles.glade
-%%DATADIR%%/glade/prefswin.glade
-%%DATADIR%%/glade/fileinfo.glade
-%%DATADIR%%/glade/fileinfo_popup.glade
-%%DATADIR%%/images/about-logo.png
-%%DATADIR%%/images/appearance.png
-%%DATADIR%%/images/eq.png
-%%DATADIR%%/images/mouse.png
-%%DATADIR%%/images/playlist.png
-%%DATADIR%%/images/plugins.png
-%%DATADIR%%/images/audio.png
-%%DATADIR%%/images/audioscrobbler.png
-%%DATADIR%%/images/audioscrobbler_badge.png
-%%DATADIR%%/images/connectivity.png
-%%NLS%%share/locale/br/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/cy/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/de/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/el/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/es/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/hi/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/it/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ka/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/mk/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/Skins/Default
-@dirrm %%DATADIR%%/Skins
-@dirrm %%DATADIR%%
+lib/audacious/Visualization/libspectrum.so
+share/audacious/images/audioscrobbler.png
+share/audacious/images/audioscrobbler_badge.png
+@dirrm include/audacious-plugins
+@dirrm lib/audacious/Container
 @dirrm lib/audacious/Visualization
 @dirrm lib/audacious/Output
 @dirrm lib/audacious/Input
 @dirrm lib/audacious/General
 @dirrm lib/audacious/Effect
 @dirrm lib/audacious
-@dirrm include/audacious
-@dirrmtry share/applications
-%%NLS%%@dirrmtry share/locale/br/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/br

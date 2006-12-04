@@ -5,6 +5,7 @@
 
     SUBDIR += acidrip
     SUBDIR += audacious
+    SUBDIR += audacious-plugins
     SUBDIR += avidemux2
     SUBDIR += avifile
     SUBDIR += avinfo
