@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lush
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lush
@@ -19,6 +19,8 @@ USE_GL=		yes
 USE_SDL=	sdl image
 GNU_CONFIGURE=	yes
 
+WRKSRC=		${WRKDIR}/lush
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LIBS} ${PTHREAD_LIBS} -lintl -L${LOCALBASE}/lib"
 
@@ -29,7 +31,7 @@ MAN1=		lush.1
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 .if ${OSVERSION} < 500000
