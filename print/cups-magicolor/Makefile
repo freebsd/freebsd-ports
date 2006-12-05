@@ -6,24 +6,31 @@
 #
 
 PORTNAME=	cups-magicolor
-PORTVERSION=	1.1.0
+PORTVERSION=	1.5.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.minolta-qms.com/pub/crc/out_going/other/
+MASTER_SITES=	http://printer.konicaminolta.net/drivers/linux/
+DISTNAME=	2430DL_sc_linux
 
 MAINTAINER=	frank@exit.com
 COMMENT=	CUPS support for the Konica-Minolta Magicolor 2430DL
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/print/cups-base:configure
+#BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/print/cups-base:configure
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster
 
-DISTNAME=	magicolor2430DL-1.1.0
+WRKSRC=		${WRKDIR}/magicolor2430DL-${PORTVERSION}
+
+USE_AUTOTOOLS=	automake:19:env autoconf:259
 
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-do-configure:
-	${CP} ${WRKSRC}/../../../cups-base/work/cups-*/config.h ${WRKSRC}
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue May 31 15:46:41 2005
++++ configure.in	Tue Dec  5 09:28:21 2006
+@@ -35,7 +35,7 @@
+ 
+ #filterdir=/usr/lib/cups/filter
+ #AC_SUBST(filterdir)
+-KM_PPDDIR=/usr/share/cups/model/KONICA_MINOLTA
++KM_PPDDIR=$datadir/cups/model/KONICA_MINOLTA
+ AC_SUBST(KM_PPDDIR)
+                                                                                 
+ UNAME=`(uname) 2>/dev/null || echo unknown`
