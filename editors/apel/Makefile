@@ -8,12 +8,11 @@
 PORTNAME=	apel
 PORTVERSION=	${APEL_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/apel/ \
-		ftp://ftp.jpl.org/pub/elisp/apel/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/apel/
+MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/apel/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,elisp/jpl/elisp/apel,}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	A Portable Emacs Library for emacs21
 
 # distfile version
