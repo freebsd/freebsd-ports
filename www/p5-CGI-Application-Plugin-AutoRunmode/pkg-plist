@@ -1,0 +1,7 @@
+%%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode/FileDelegate.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/AutoRunmode/.packlist
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/AutoRunmode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/
