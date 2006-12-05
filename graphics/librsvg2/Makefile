@@ -47,7 +47,7 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" no
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey xulrunner firefox-devel
+USE_GECKO=	firefox mozilla seamonkey xulrunner firefox15
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 CONFIGURE_ENV+=	MOZILLA_CONFIG=no
 CONFIGURE_ARGS+=--enable-mozilla-plugin=yes

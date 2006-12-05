@@ -48,7 +48,7 @@ CONFLICTS?=	totem-gstreamer-[0-9]*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
+USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox15<->firefox
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 PLIST_SUB+=	MOZILLA=""
 CONFIGURE_ARGS+=--with-mozilla=${GECKO} \
