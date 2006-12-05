@@ -1868,6 +1868,7 @@
     SUBDIR += rubygem-event-loop
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-gem_plugin
+    SUBDIR += rubygem-hoe
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-rake
