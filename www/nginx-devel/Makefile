@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.4.14
+PORTVERSION=	0.5.0
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 .if defined(WITH_DEBUG)
-CFLAGS+=	-g
+CFLAGS+=	-g -DNGX_DEBUG_MALLOC
 CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
 .endif
