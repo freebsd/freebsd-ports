@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	searchmonkey
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
