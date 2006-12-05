@@ -1,5 +1,14 @@
---- platforms/unix/npsqueak/Makefile.org	Tue Jan 31 10:36:12 2006
-+++ platforms/unix/npsqueak/Makefile	Tue Jan 31 10:37:14 2006
+--- platforms/unix/npsqueak/Makefile.orig	Sat Aug 23 06:59:39 2003
++++ platforms/unix/npsqueak/Makefile	Fri Nov 24 18:55:48 2006
+@@ -3,7 +3,7 @@
+ 
+ ############ Customize flags here #######################
+ 
+-INC	= -I./include -I/usr/X11R6/include
++INC	= -I./include -I%%X11BASE%%/include
+ CC	= gcc
+ CFLAGS	= $(INC) -O2 -fPIC -Wall
+ LD	= gcc
 @@ -20,7 +20,7 @@
  ############ compile and link ###########################
  
