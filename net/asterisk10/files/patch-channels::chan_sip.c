@@ -1,6 +1,9 @@
---- channels/chan_sip.c.orig	Fri Nov 17 15:51:56 2006
-+++ channels/chan_sip.c	Fri Nov 17 15:53:30 2006
-@@ -340,7 +340,7 @@ static char global_vmexten[AST_MAX_EXTEN
+
+$FreeBSD$
+
+--- channels/chan_sip.c.orig
++++ channels/chan_sip.c
+@@ -340,7 +340,7 @@
  
  static char default_language[MAX_LANGUAGE] = "";
  
@@ -9,7 +12,7 @@
  static char default_callerid[AST_MAX_EXTENSION] = DEFAULT_CALLERID;
  
  static char default_fromdomain[AST_MAX_EXTENSION] = "";
-@@ -483,6 +483,7 @@ struct sip_invite_param {
+@@ -483,6 +483,7 @@
  
  struct sip_route {
  	struct sip_route *next;
@@ -17,7 +20,16 @@
  	char hop[0];
  };
  
-@@ -6222,6 +6223,7 @@ static void build_route(struct sip_pvt *
+@@ -2815,6 +2816,8 @@
+ 	ast_codec_pref_remove2(&tmp->nativeformats, ~i->usercapability);
+ 	fmt = ast_codec_pref_index_audio(&tmp->nativeformats, 0);
+ 
++	pbx_builtin_setvar_helper(tmp, "SIP_CODEC_USED", ast_getformatname(fmt));
++
+ 	if (title)
+ 		snprintf(tmp->name, sizeof(tmp->name), "SIP/%s-%08x", title, (int)(long) i);
+ 	else if (strchr(i->fromdomain,':'))
+@@ -6222,6 +6225,7 @@
  			/* Make a struct route */
  			thishop = malloc(sizeof(*thishop) + len);
  			if (thishop) {
@@ -25,7 +37,7 @@
  				ast_copy_string(thishop->hop, rr, len);
  				ast_log(LOG_DEBUG, "build_route: Record-Route hop: <%s>\n", thishop->hop);
  				/* Link in */
-@@ -6247,31 +6249,41 @@ static void build_route(struct sip_pvt *
+@@ -6247,31 +6251,41 @@
  
  	/* Only append the contact if we are dealing with a strict router */
  	if (!head || (!ast_strlen_zero(head->hop) && strstr(head->hop,";lr") == NULL) ) {
@@ -91,7 +103,7 @@
  			}
  		}
  	}
-@@ -9248,6 +9260,13 @@ static int build_reply_digest(struct sip
+@@ -9248,6 +9262,13 @@
   		secret =  p->peersecret;
   		md5secret = p->peermd5secret;
   	}
@@ -105,7 +117,7 @@
  	if (ast_strlen_zero(username))	/* We have no authentication */
  		return -1;
   
-@@ -10621,7 +10640,11 @@ static int handle_request_invite(struct 
+@@ -10621,7 +10642,11 @@
  		gotdest = get_destination(p, NULL);
  
  		get_rdnis(p, NULL);
@@ -118,7 +130,7 @@
  		build_contact(p);
  
  		if (gotdest) {
-@@ -10649,7 +10672,6 @@ static int handle_request_invite(struct 
+@@ -10649,7 +10674,6 @@
  			c = sip_new(p, AST_STATE_DOWN, ast_strlen_zero(p->username) ? NULL : p->username );
  			*recount = 1;
  			/* Save Record-Route for any later requests we make on this dialogue */
@@ -126,7 +138,7 @@
  			if (c) {
  				/* Pre-lock the call */
  				ast_mutex_lock(&c->lock);
-@@ -10735,7 +10757,12 @@ static int handle_request_invite(struct 
+@@ -10735,7 +10759,12 @@
  			transmit_response(p, "180 Ringing", req);
  			break;
  		case AST_STATE_UP:
