@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	tempura
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.2r3
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.imasy.or.jp/~hisa/ruby/tempura/files/
+MASTER_SITES=	http://www.fobj.com/tempura/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TEMPlate Utility for Ruby Application
-
-DEPRECATED=	distfile and homepag disappeared
-EXPIRATION_DATE=	2006-12-30
 
 USE_RUBY=	yes
 RUBY_FEATURES=	rexml
