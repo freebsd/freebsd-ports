@@ -8,3 +8,5 @@ FLIM, message representation or encoding emacs lisp library for emacs20.
     - mailcap parser and utility
 
 Ported by shige@FreeBSD.ORG
+
+WWW: http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/elisp/FLIM/ (in Japanese)
