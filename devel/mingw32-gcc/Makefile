@@ -8,6 +8,7 @@
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -53,6 +54,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}-${PATCHVERSION:S/./-/g}
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_ICONV=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-languages=c,c++,f77,objc,java \
 		--with-gcc --with-gnu-ld --with-gnu-as \
@@ -82,6 +84,15 @@ INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan grepjar jar
+
+.if exists(${LOCALBASE}/lib/libiconv.so.3)
+WITH_LIBICONV=	yes
+.endif
+
+.if defined(WITH_LIBICONV)
+USE_ICONV=	yes
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+.endif
 
 .include <bsd.port.pre.mk>
 
