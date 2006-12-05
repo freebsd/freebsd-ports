@@ -8,12 +8,10 @@
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/flim/flim-1.14/ \
-		http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.14/
+MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	FLIM, message representation or encoding elisp library for emacs21
 
 PORTCLASS?=	master
