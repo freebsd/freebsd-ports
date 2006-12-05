@@ -13,6 +13,8 @@ DISTFILES=
 MAINTAINER=	scrappy@freebsd.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
+RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
+
 NO_BUILD=	yes
 PLIST_FILES=	etc/periodic/monthly/300.statistics
 PLIST_DIRS=	etc/periodic/monthly \
