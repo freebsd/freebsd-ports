@@ -1,7 +1,7 @@
 /**
- * unix_io.c - Unix style disk io functions. Originated from the Linux-NTFS project.
+ * unix_io_raw.c - Unix style disk io functions. Originated from the Linux-NTFS project.
  *
- * Copyright (c) 2000-2006 Anton Altaparmakov
+ * Copyright (c) 2006 Max Khon
  *
  * This program/include file is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as published
