@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
 LIB_DEPENDS+=		netcdf.1:${PORTSDIR}/science/netcdf
 .endif
 
-.if ${OSVERSION} >= 502102
+.if ${OSVERSION} <= 600000 
 EXTRA_PATCHES+=	"${PATCHDIR}/extra-patch-freebsd5-pthread"
 .endif
 
