@@ -9,7 +9,7 @@ PORTNAME=	see
 PORTVERSION=	1.3.1
 PORTREVISION=	1
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/see/
+MASTER_SITES=	http://www.powerband.net.au/~david.leonard/
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
