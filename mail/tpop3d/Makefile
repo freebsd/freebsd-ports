@@ -28,7 +28,8 @@ OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 		PERLAUTH	"Use Perl authentication"			off \
 		FLATAUTH	"Enable /etc/passwd-style authentication"	off \
 		MAILDIR		"Compile Maildir support"			on \
-		DRAC		"Enable DRAC RFC for POP-before-SMTP relaying"	off
+		DRAC		"Enable DRAC RFC for POP-before-SMTP relaying"	off \
+		FIX_PERLAUTH	"Only try it if perl-auth coredumps"		off
 
 .include <bsd.port.pre.mk>
 
@@ -74,6 +75,10 @@ CONFIGURE_ARGS+=	--enable-mbox-maildir
 CONFIGURE_ARGS+=	--enable-drac
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 LDFLAGS+=		-L${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_FIX_PERLAUTH)
+EXTRA_PATCHES+=${PATCHDIR}/extra-patch-auth_perl.c
 .endif
 
 USE_RC_SUBR=	tpop3d.sh
