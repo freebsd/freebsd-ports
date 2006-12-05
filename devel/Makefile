@@ -38,6 +38,7 @@
     SUBDIR += allegro-devel
     SUBDIR += anjuta
     SUBDIR += antlr
+    SUBDIR += antlrworks
     SUBDIR += apache-ant
     SUBDIR += apr
     SUBDIR += apr-svn
