@@ -404,6 +404,7 @@ antipolix	ports/games/antipolix
 antivirus-milter	ports/mail/antivirus-milter
 antiword	ports/textproc/antiword
 antlr		ports/devel/antlr
+antlrworks	ports/devel/antlrworks
 anubis		ports/mail/anubis
 aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
