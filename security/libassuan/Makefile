@@ -6,15 +6,22 @@
 #
 
 PORTNAME=	libassuan
-PORTVERSION=	0.6.10
+PORTVERSION=	1.0.1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	alpha/${PORTNAME}
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	IPC library used by GnuPG and gpgme
 
+LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth
+
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INFO=		assuan
+
+CONFIGURE_ARGS+=--infodir=${PREFIX}/info
+
+CFLAGS+=	-I${LOCALBASE}/include/pth
 
 .include <bsd.port.mk>
