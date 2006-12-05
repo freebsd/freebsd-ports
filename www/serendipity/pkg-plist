@@ -1619,14 +1619,9 @@
 %%SERENDIPITY%%/templates/wp/trackbacks.tpl
 %%SERENDIPITY%%/templates/wp/wp-layout.css
 %%SERENDIPITY%%/templates_c/.empty
-%%SERENDIPITY%%/tests/gui/README
-%%SERENDIPITY%%/tests/gui/SerendipityTestSuite.php
-%%SERENDIPITY%%/tests/gui/TestConfiguration.php.dist
 %%SERENDIPITY%%/uploads/.empty
 %%SERENDIPITY%%/wfwcomment.php
 @dirrm %%SERENDIPITY%%/uploads
-@dirrm %%SERENDIPITY%%/tests/gui
-@dirrm %%SERENDIPITY%%/tests
 @dirrm %%SERENDIPITY%%/templates_c
 @dirrm %%SERENDIPITY%%/templates/wp
 @dirrm %%SERENDIPITY%%/templates/newspaper/img
