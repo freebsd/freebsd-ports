@@ -17,9 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	yasi@yasi.to
 COMMENT=	A fully-featured blog product for Plone
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/OFS/__init__.py:${PORTSDIR}/www/plone
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 USE_ZOPE=	2.9
 DIST_SUBDIR=	zope
 
