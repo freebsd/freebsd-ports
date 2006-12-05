@@ -333,15 +333,6 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/help/sv_SE/options.hlp
 %%SQUIRRELDIR%%/help/sv_SE/read_mail.hlp
 %%SQUIRRELDIR%%/help/sv_SE/search.hlp
-%%SQUIRRELDIR%%/help/th_TH/addresses.hlp
-%%SQUIRRELDIR%%/help/th_TH/basic.hlp
-%%SQUIRRELDIR%%/help/th_TH/compose.hlp
-%%SQUIRRELDIR%%/help/th_TH/FAQ.hlp
-%%SQUIRRELDIR%%/help/th_TH/folders.hlp
-%%SQUIRRELDIR%%/help/th_TH/main_folder.hlp
-%%SQUIRRELDIR%%/help/th_TH/options.hlp
-%%SQUIRRELDIR%%/help/th_TH/read_mail.hlp
-%%SQUIRRELDIR%%/help/th_TH/search.hlp
 %%SQUIRRELDIR%%/help/uk_UA/addresses.hlp
 %%SQUIRRELDIR%%/help/uk_UA/basic.hlp
 %%SQUIRRELDIR%%/help/uk_UA/compose.hlp
@@ -455,6 +446,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/calendar.po
 %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/change_sqlpass.mo
 %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/change_sqlpass.po
+%%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/compatibility.po
+%%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/compatibility.mo
 %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/empty_folders.mo
 %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/empty_folders.po
 %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/expire.mo
@@ -572,8 +565,12 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/askuserinfo.po
 %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/compatibility.mo
 %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/compatibility.po
+%%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/cookie_warning.po
+%%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/cookie_warning.mo
 %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/folder_sizes.mo
 %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/folder_sizes.po
+%%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/select_language.mo
+%%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/select_language.po
 %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/id_ID/setup.php
@@ -737,6 +734,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/nl_NL/setup.php
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/abook_import_export.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/abook_import_export.po
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/advanced_settings.mo
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/advanced_settings.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/archive_mail.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/archive_mail.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/askuserinfo.mo
@@ -777,6 +776,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/multilogin.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/naguser.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/naguser.po
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/newuser_wiz.mo
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/newuser_wiz.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/proon.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/proon.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/qmailadmin_login.mo
@@ -1027,7 +1028,6 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/plugins/mail_fetch/index.php
 %%SQUIRRELDIR%%/plugins/mail_fetch/options.php
 %%SQUIRRELDIR%%/plugins/mail_fetch/setup.php
-%%SQUIRRELDIR%%/plugins/make_archive.pl
 %%SQUIRRELDIR%%/plugins/message_details/index.php
 %%SQUIRRELDIR%%/plugins/message_details/message_details_bottom.php
 %%SQUIRRELDIR%%/plugins/message_details/message_details_main.php
@@ -1313,7 +1313,6 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/images
 @dirrm %%SQUIRRELDIR%%/help/zh_CN
 @dirrm %%SQUIRRELDIR%%/help/uk_UA
-@dirrm %%SQUIRRELDIR%%/help/th_TH
 @dirrm %%SQUIRRELDIR%%/help/sv_SE
 @dirrm %%SQUIRRELDIR%%/help/sr_YU
 @dirrm %%SQUIRRELDIR%%/help/sl_SI
