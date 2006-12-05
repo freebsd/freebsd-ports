@@ -107,8 +107,6 @@ post-patch:
 		${WRKSRC}/src/alac/stream.h ${WRKSRC}/src/alac/demux.c \
 		${WRKSRC}/src/alac/demux.h ${WRKSRC}/src/alac/stream.c \
 		${WRKSRC}/src/aac/mp4ff/mp4ff_int_types.h
-	@${REINPLACE_CMD} -e 's|	going = 1|int &|' \
-		${WRKSRC}/src/scrobbler/xmms_scrobbler.c
 .endif
 
 post-install:
