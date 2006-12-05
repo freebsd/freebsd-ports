@@ -32,6 +32,8 @@ OPTIONS=	ATLAS "Use optimized blas library" OFF
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s@malloc\.h@stdlib.h@"
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	${WRKSRC}/scipy_core/scipy_distutils/system_info.py
 
 .include <bsd.port.pre.mk>
 
