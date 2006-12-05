@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki-client-html-mason
-PORTVERSION=	0.9.546
+PORTVERSION=	0.9.630
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -28,5 +28,20 @@ MAN3=	OpenXPKI::Client::HTML::Mason.3 \
 USE_PERL5=	yes
 USE_GMAKE=	yes
 PERL_CONFIGURE=	yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}
+	@${CP} -R ${WRKSRC}/eg ${EXAMPLESDIR}/
+	@${MKDIR} ${DATADIR}
+	@${CP} -R ${WRKSRC}/bin ${DATADIR}/
+	@${CP} -R ${WRKSRC}/htdocs ${DATADIR}/
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "================================ Information ==================================="
+	@${ECHO_MSG} "===> Examples of simple Mason configuration via httpd.conf directives installed in ${EXAMPLESDIR}."
+	@${ECHO_MSG} "===> CGI scripts and htdocs for ${DISTNAME} installed in ${DATADIR}."
+	@${ECHO_MSG} "================================================================================"
+	@${ECHO_MSG} ""
+.endif
 
 .include <bsd.port.mk>
