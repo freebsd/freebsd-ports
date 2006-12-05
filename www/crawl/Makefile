@@ -7,18 +7,18 @@
 
 PORTNAME=	crawl
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, efficient web crawler with advanced features
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
+		event-1.2a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --program-transform-name=''
+CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-transform-name=''
 
 MAN1=	crawl.1
 

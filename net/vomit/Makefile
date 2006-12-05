@@ -7,15 +7,15 @@
 
 PORTNAME=	vomit
 PORTVERSION=	0.2c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	http://vomit.xtdnet.nl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice over misconfigured internet telephones
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
-		${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent \
+		dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

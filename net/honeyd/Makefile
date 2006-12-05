@@ -7,6 +7,7 @@
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5b
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -14,10 +15,10 @@ MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 MAINTAINER=	wxs@atarininja.org
 COMMENT=	Simulate virtual network hosts (honeypots)
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
-		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
-		${LOCALBASE}/lib/libdnsres.a:${PORTSDIR}/devel/libdnsres \
-		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent \
+		dnet.1:${PORTSDIR}/net/libdnet \
+		dnsres.0:${PORTSDIR}/devel/libdnsres
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
