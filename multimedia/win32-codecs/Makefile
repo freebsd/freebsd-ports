@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	win32-codecs
-PORTVERSION=	3.${CODEC_MPLAYER_VERSION:S/pre/.p/}
+DISTVERSION=	3.${CODEC_MPLAYER_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/w32codec-${CODEC_MPLAYER_VERSION:S/pre7//}
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 
-CODEC_MPLAYER_VERSION=	1.0pre8
+CODEC_MPLAYER_VERSION=	1.0rc1
 # Used by other ports to detect if this is installed
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
