@@ -62,39 +62,39 @@ MAINTAINER=	scott+ports@sabami.seaslug.org
 COMMENT=	A cleaned up MH mailer suite
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh
 .ifdef NMH_EDITOR
-CONFIGURE_ARGS+= --with-editor=${NMH_EDITOR}
+CONFIGURE_ARGS+=	--with-editor=${NMH_EDITOR}
 .endif
 .ifdef NMH_MASQUERADE
-CONFIGURE_ARGS+= --enable-masquerade="${NMH_MASQUERADE}"
+CONFIGURE_ARGS+=	--enable-masquerade="${NMH_MASQUERADE}"
 .endif
 .ifndef NMH_LOCKING
 NMH_LOCKING=FLOCK_LOCKING
 .endif
 .ifdef NMH_MTS
-CONFIGURE_ARGS+= --with-mts=${NMH_MTS}
+CONFIGURE_ARGS+=	--with-mts=${NMH_MTS}
 .endif
 .ifdef NMH_PAGER
-CONFIGURE_ARGS+= --with-pager=${NMH_PAGER}
+CONFIGURE_ARGS+=	--with-pager=${NMH_PAGER}
 .endif
 .ifdef NMH_POP
-CONFIGURE_ARGS+= --${NMH_POP}-pop
+CONFIGURE_ARGS+=	--${NMH_POP}-pop
 .else
-CONFIGURE_ARGS+= --enable-pop
+CONFIGURE_ARGS+=	--enable-pop
 .endif
 .ifdef NMH_SMTPSERVERS
-CONFIGURE_ARGS+= --with-smtpservers="${NMH_SMTPSERVERS}"
+CONFIGURE_ARGS+=	--with-smtpservers="${NMH_SMTPSERVERS}"
 .endif
 
 .ifdef NMH_EXTRA_CONFIGURE_ARGS
-CONFIGURE_ARGS+= ${NMH_EXTRA_CONFIGURE_ARGS}
+CONFIGURE_ARGS+=	${NMH_EXTRA_CONFIGURE_ARGS}
 .endif
 
-CFLAGS+= -D${NMH_LOCKING}
+CFLAGS+=	-D${NMH_LOCKING}
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 flists.1 \
 	folder.1 folders.1 forw.1 inc.1 install-mh.1 mark.1 \
