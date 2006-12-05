@@ -681,12 +681,11 @@ share/lush/packages/torch/matrix.lsh
 share/lush/packages/torch/torch-config.lsh
 share/lush/packages/torch/torch.hlp
 share/lush/packages/torch/torch.lsh
-share/lush/packages/video/libdc/dc1394_config.lsh
-share/lush/packages/video/libdc/dc1394_object.lsh
-share/lush/packages/video/libdc/dc_const.lsh
-share/lush/packages/video/libdc/demos/grab_gray.lsh
 share/lush/packages/video/libdc/libdc.hlp
 share/lush/packages/video/libdc/libdc.lsh
+share/lush/packages/video/libdc/libdc_config.lsh
+share/lush/packages/video/libdc/libdc_const.lsh
+share/lush/packages/video/libdc/demos/grab_multi.lsh
 share/lush/packages/video4linux/demos/effect-demo.lsh
 share/lush/packages/video4linux/demos/effect-sdl-demo.lsh
 share/lush/packages/video4linux/demos/jabba-320x240.jpg
