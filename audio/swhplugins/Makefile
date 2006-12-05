@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.14
-PORTREVISION=	1
+PORTVERSION=	0.4.15
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -24,16 +23,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-fPIC -DPIC
-
-.if defined(WITH_3DNOW)
-CONFIGURE_ARGS+=	--enable-3dnow
-.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -41,6 +36,20 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+LDFLAGS+=	-lintl
+.endif
+
+OPTIONS=	3DNOW "use 3DNow! instructions" off \
+		SSE "use SSE instructions" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_3DNOW)
+CONFIGURE_ARGS+=	--enable-3dnow
+.endif
+
+.if defined(WITH_SSE)
+CONFIGURE_ARGS+=	--enable-sse
 .endif
 
 post-patch:
@@ -49,4 +58,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<stdint\.h>|<inttypes.h>|g' ${WRKSRC}/ladspa-util.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
