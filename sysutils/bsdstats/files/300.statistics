@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.35 2006-12-04 01:44:24 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.36 2006-12-05 13:26:32 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -181,7 +181,7 @@ ${proxy_auth}Content-Type: application/x-www-form-urlencoded
 Content-Length: ${string_length}
 
 token=${TOKEN}&key=${KEY}${query_string}" | \
-		/usr/bin/nc $nc_host $nc_port  | \
+		nc $nc_host $nc_port  | \
 		grep STATUS= | {
           local IFS
           IFS='= 
