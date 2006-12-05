@@ -7,9 +7,9 @@
 
 PORTNAME=	AquaGatekeeper
 PORTVERSION=	1.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
+MASTER_SITES=	ftp://ftp.svzserv.kemerovo.su/pub/FreeBSD/distfiles.misc/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
@@ -51,7 +51,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
-BROKEN=		"Supported only on 4.x systems and later"
+BROKEN=		Supported only on 4.x systems and later
 .elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .elif ${OSVERSION} >= 600000 && ${ARCH} == "amd64"
@@ -61,7 +61,7 @@ LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 .if ${ARCH} == "amd64"
 DISTNAME=	AquaGatekeeper122FreeBSDamd64Build131
 .else
-DISTNAME=	AquaGatekeeper122FreeBSDBuild131
+DISTNAME=	AquaGatekeeper122FreeBSDBuild445
 .endif
 
 .include <bsd.port.post.mk>
