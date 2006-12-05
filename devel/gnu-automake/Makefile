@@ -28,13 +28,22 @@ GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/gnu-autotools/bin/autoconf \
 		AUTOHEADER=${LOCALBASE}/gnu-autotools/bin/autoheader \
-		MAKEINFO="makeinfo --no-split"
+		MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 
 PLIST_SUB=	VERSION=1.10
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+MAKEINFO=	${LOCALBASE}/bin/makeinfo
+BUILD_DEPENDS+=	${MAKEINFO}:${PORTSDIR}/print/texinfo
+.else
+MAKEINFO=	makeinfo
+.endif
+
 post-patch:
 	@(cd ${WRKSRC}/doc && ${RM} -f *.info*)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
