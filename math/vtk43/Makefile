@@ -18,6 +18,9 @@ COMMENT?=	The Visualization Toolkit shared libs
 
 LATEST_LINK=	vtk43${PKGNAMESUFFIX}
 
+DEPRECATED= Please use vtk 4.4 or 5.x.
+EXPIRATION_DATE= 2007-02-01
+
 LIBVER=		1
 CVSDATE=	20031006
 VTKSRCDIR=	${WRKDIR}/VTK
