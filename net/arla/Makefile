@@ -26,7 +26,7 @@ BROKEN=		"compiles but overwrites files from a dependency (security/heimdal)"
 .else
 BROKEN=		"does not compile"
 DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
+EXPIRATION_DATE=2007-01-01
 .endif
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
