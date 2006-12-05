@@ -1,8 +1,5 @@
 libexec/cups/filter/rastertokm2430dl
 share/cups/model/KONICA_MINOLTA/km2430dl.ppd.gz
-share/KONICA_MINOLTA/mc2430DL/Profiles/km_0.icm
-share/KONICA_MINOLTA/mc2430DL/Profiles/km_1.icm
-share/KONICA_MINOLTA/mc2430DL/Profiles/km_2.icm
 share/KONICA_MINOLTA/mc2430DL/Halftones/km_ht_00.bmp
 share/KONICA_MINOLTA/mc2430DL/Halftones/km_ht_01.bmp
 share/KONICA_MINOLTA/mc2430DL/Halftones/km_ht_02.bmp
@@ -15,10 +12,12 @@ share/KONICA_MINOLTA/mc2430DL/Halftones/km_ht_20.bmp
 share/KONICA_MINOLTA/mc2430DL/Halftones/km_ht_21.bmp
 share/KONICA_MINOLTA/mc2430DL/Halftones/km_ht_22.bmp
 share/KONICA_MINOLTA/mc2430DL/Halftones/km_ht_23.bmp
-share/KONICA_MINOLTA/mc2430DL/Installation
+share/KONICA_MINOLTA/mc2430DL/Profiles/km_0.icm
+share/KONICA_MINOLTA/mc2430DL/Profiles/km_1.icm
+share/KONICA_MINOLTA/mc2430DL/Profiles/km_2.icm
 share/KONICA_MINOLTA/mc2430DL/COPYING
 @dirrm share/KONICA_MINOLTA/mc2430DL/Profiles
 @dirrm share/KONICA_MINOLTA/mc2430DL/Halftones
-@dirrm share/cups/model/KONICA_MINOLTA
 @dirrm share/KONICA_MINOLTA/mc2430DL
 @dirrm share/KONICA_MINOLTA
+@dirrm share/cups/model/KONICA_MINOLTA
