@@ -221,6 +221,10 @@ mpeg2enc_DEPENDS=	multimedia/gstreamer-plugins-mpeg2enc
 
 mplex_DEPENDS=	multimedia/gstreamer-plugins-mplex
 
+# XXX: This is a quick solution for ports with USE_GSTREAMER=python
+#      but without USE_PYTHON.
+PYTHON_PKGNAMEPREFIX?=	py*-
+
 python_DEPENDS=	multimedia/py-gstreamer
 python_NAME=	gstreamer
 python_GST80_SUFX=      80
