@@ -13,6 +13,9 @@ COMMENT=	The Visualization Toolkit C++ headers, CMake includes, Doxygen
 
 MASTERDIR=	${.CURDIR}/../vtk43
 
+DEPRECATED= Please use vtk 4.4 or 5.x.
+EXPIRATION_DATE= 2007-02-01
+
 .include "${MASTERDIR}/Makefile"
 
 post-patch:
