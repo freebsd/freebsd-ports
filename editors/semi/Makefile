@@ -9,15 +9,11 @@ PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}
 PORTREVISION=	1
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/semi/semi-1.14-for-flim-1.14/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/semi/semi-1.14-for-flim-1.14/
+MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/comp/emacsen/lisp/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs21
-
-DEPRECATED=	distfile disappeared and has no homepage
-EXPIRATION_DATE=	2007-01-04
 
 PORTCLASS?=	master
 
