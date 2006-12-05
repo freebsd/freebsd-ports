@@ -29,8 +29,15 @@ MAN1=	gm4.1
 
 EXAMPLESDIR=	share/examples/gm4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
+.endif
+
 post-install:
 	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
