@@ -233,6 +233,7 @@
     SUBDIR += kiax
     SUBDIR += kissd
     SUBDIR += knemo
+    SUBDIR += kojoney
     SUBDIR += kphone
     SUBDIR += krdesktop
     SUBDIR += l2tpd
