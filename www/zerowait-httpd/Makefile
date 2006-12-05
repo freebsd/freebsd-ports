@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zerowait-httpd
-PORTVERSION=	0.7n
+PORTVERSION=	0.7p
 CATEGORIES=	www
 MASTER_SITES=	http://www.0w.ru/httpd/
 DISTNAME=	0W-httpd-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -17,6 +17,7 @@ COMMENT=	Lightweight and fast http server
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	0W-httpd
+ALL_TARGET=	# none
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" CPPFLAGS=-I..
 HAS_CONFIGURE=	yes
