@@ -1,7 +1,141 @@
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason.pm
+%%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/ApacheHandler.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Javascript.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason/.packlist
+%%EXAMPLESDIR%%/eg/openxpki-mason-cgi.conf
+%%EXAMPLESDIR%%/eg/openxpki-mason-mod_perl.conf
+%%DATADIR%%/bin/openxpki.cgi
+%%DATADIR%%/htdocs/authentication/auth_stack.mhtml
+%%DATADIR%%/htdocs/authentication/autohandler
+%%DATADIR%%/htdocs/authentication/close_form.mhtml
+%%DATADIR%%/htdocs/authentication/dhandler
+%%DATADIR%%/htdocs/authentication/open_form.mhtml
+%%DATADIR%%/htdocs/authentication/passwd.mhtml
+%%DATADIR%%/htdocs/authentication/pki_realm.mhtml
+%%DATADIR%%/htdocs/authentication/role.mhtml
+%%DATADIR%%/htdocs/authentication/session.mhtml
+%%DATADIR%%/htdocs/autohandler
+%%DATADIR%%/htdocs/binary/dhandler
+%%DATADIR%%/htdocs/binary/get_certificate.crt
+%%DATADIR%%/htdocs/binary/get_certificate.html
+%%DATADIR%%/htdocs/binary/get_chain.html
+%%DATADIR%%/htdocs/binary/get_crl.html
+%%DATADIR%%/htdocs/binary/get_workflow_instance_info.html
+%%DATADIR%%/htdocs/css/openxpki.css
+%%DATADIR%%/htdocs/images/openxpki_logo.png
+%%DATADIR%%/htdocs/index.html
+%%DATADIR%%/htdocs/lib/debug.mhtml
+%%DATADIR%%/htdocs/lib/field_to_i18n.mhtml
+%%DATADIR%%/htdocs/lib/get_deep_error.mhtml
+%%DATADIR%%/htdocs/lib/html/a.mhtml
+%%DATADIR%%/htdocs/lib/html/hidden.mhtml
+%%DATADIR%%/htdocs/lib/html/input.mhtml
+%%DATADIR%%/htdocs/lib/html/safe.mhtml
+%%DATADIR%%/htdocs/lib/html/select.mhtml
+%%DATADIR%%/htdocs/lib/javascript.mhtml
+%%DATADIR%%/htdocs/lib/language.mhtml
+%%DATADIR%%/htdocs/lib/menu.mhtml
+%%DATADIR%%/htdocs/lib/url.mhtml
+%%DATADIR%%/htdocs/service/api/ca_cert_info.html
+%%DATADIR%%/htdocs/service/api/cert_full_info.html
+%%DATADIR%%/htdocs/service/api/cert_info.html
+%%DATADIR%%/htdocs/service/api/cert_list.html
+%%DATADIR%%/htdocs/service/api/cert_search.html
+%%DATADIR%%/htdocs/service/api/chain_list.html
+%%DATADIR%%/htdocs/service/api/clear_secret.html
+%%DATADIR%%/htdocs/service/api/crl_list.html
+%%DATADIR%%/htdocs/service/api/dhandler
+%%DATADIR%%/htdocs/service/api/issuer_list.html
+%%DATADIR%%/htdocs/service/api/key_list.html
+%%DATADIR%%/htdocs/service/api/pki_realm_info.html
+%%DATADIR%%/htdocs/service/api/policy_list.html
+%%DATADIR%%/htdocs/service/api/set_secret.html
+%%DATADIR%%/htdocs/service/autohandler
+%%DATADIR%%/htdocs/service/close_form.mhtml
+%%DATADIR%%/htdocs/service/create_crr/get_certificate.mhtml
+%%DATADIR%%/htdocs/service/create_crr/get_compromise_time.mhtml
+%%DATADIR%%/htdocs/service/create_crr/get_reason.mhtml
+%%DATADIR%%/htdocs/service/create_crr/get_workflow_type.mhtml
+%%DATADIR%%/htdocs/service/create_crr/index.html
+%%DATADIR%%/htdocs/service/create_csr/create_workflow.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_ie_pkcs10.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_info.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_keygen.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_pkcs10.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_profile.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_role.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_spkac.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_subject.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_subject_alt_name.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_subject_style.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_workflow_type.mhtml
+%%DATADIR%%/htdocs/service/create_csr/index.html
+%%DATADIR%%/htdocs/service/create_csr/print_descriptions.mhtml
+%%DATADIR%%/htdocs/service/create_csr/print_errors.mhtml
+%%DATADIR%%/htdocs/service/create_csr/store_pkcs10.mhtml
+%%DATADIR%%/htdocs/service/dhandler
+%%DATADIR%%/htdocs/service/index.html
+%%DATADIR%%/htdocs/service/info/anonymous_menu.html
+%%DATADIR%%/htdocs/service/info/ca_info.html
+%%DATADIR%%/htdocs/service/info/ca_op_menu.html
+%%DATADIR%%/htdocs/service/info/dataexchange.html
+%%DATADIR%%/htdocs/service/info/dhandler
+%%DATADIR%%/htdocs/service/info/language.html
+%%DATADIR%%/htdocs/service/info/ra_op_menu.html
+%%DATADIR%%/htdocs/service/info/workflow.html
+%%DATADIR%%/htdocs/service/logout.html
+%%DATADIR%%/htdocs/service/open_form.mhtml
+%%DATADIR%%/htdocs/service/send_form.mhtml
+%%DATADIR%%/htdocs/service/smartcard_personalization/failure.mhtml
+%%DATADIR%%/htdocs/service/smartcard_personalization/get_certificate_request.mhtml
+%%DATADIR%%/htdocs/service/smartcard_personalization/index.html
+%%DATADIR%%/htdocs/service/smartcard_personalization/install_certificate.mhtml
+%%DATADIR%%/htdocs/service/smartcard_personalization/print_errors.mhtml
+%%DATADIR%%/htdocs/service/smartcard_personalization/success.mhtml
+%%DATADIR%%/htdocs/service/smartcard_personalization/waiting_for_approval.mhtml
+%%DATADIR%%/htdocs/service/smartcard_personalization/waiting_for_issuance.mhtml
+%%DATADIR%%/htdocs/service/workflow/activity/approve_csr.html
+%%DATADIR%%/htdocs/service/workflow/activity/cancel_csr_approval.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_csr_info.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_csr_profile.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_csr_role.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject_alt_name.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject_style.html
+%%DATADIR%%/htdocs/service/workflow/activity/dhandler
+%%DATADIR%%/htdocs/service/workflow/activity/execute_csr.html
+%%DATADIR%%/htdocs/service/workflow/activity/export_csr.html
+%%DATADIR%%/htdocs/service/workflow/activity/persist_csr.html
+%%DATADIR%%/htdocs/service/workflow/activity/persist_csrs.html
+%%DATADIR%%/htdocs/service/workflow/activity/reject_csr.html
+%%DATADIR%%/htdocs/service/workflow/create_instance.html
+%%DATADIR%%/htdocs/service/workflow/get_workflow_instance_info.html
+%%DATADIR%%/htdocs/service/workflow/list_instances.html
+%%DATADIR%%/htdocs/service/workflow/list_types.html
+%%DATADIR%%/htdocs/service/workflow/search_instances.html
+%%DATADIR%%/htdocs/service/workflow/show_instance.html
+%%DATADIR%%/htdocs/service/workflow/start_data_exchange_export.html
+%%DATADIR%%/htdocs/syshandler
+@dirrmtry %%DATADIR%%/htdocs/service/workflow/activity
+@dirrmtry %%DATADIR%%/htdocs/service/workflow
+@dirrmtry %%DATADIR%%/htdocs/service/smartcard_personalization
+@dirrmtry %%DATADIR%%/htdocs/service/info
+@dirrmtry %%DATADIR%%/htdocs/service/create_csr
+@dirrmtry %%DATADIR%%/htdocs/service/create_crr
+@dirrmtry %%DATADIR%%/htdocs/service/api
+@dirrmtry %%DATADIR%%/htdocs/service
+@dirrmtry %%DATADIR%%/htdocs/lib/html
+@dirrmtry %%DATADIR%%/htdocs/lib
+@dirrmtry %%DATADIR%%/htdocs/images
+@dirrmtry %%DATADIR%%/htdocs/css
+@dirrmtry %%DATADIR%%/htdocs/binary
+@dirrmtry %%DATADIR%%/htdocs/authentication
+@dirrmtry %%DATADIR%%/htdocs
+@dirrmtry %%DATADIR%%/bin
+@dirrmtry %%DATADIR%%
+@dirrmtry %%EXAMPLESDIR%%/eg
+@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
