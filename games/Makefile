@@ -343,6 +343,7 @@
     SUBDIR += ioquake3
     SUBDIR += ishido
     SUBDIR += ivan
+    SUBDIR += jaggedalliance2
     SUBDIR += jchessboard
     SUBDIR += jetpack
     SUBDIR += jfduke3d
