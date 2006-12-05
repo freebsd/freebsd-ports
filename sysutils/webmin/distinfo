@@ -1,3 +1,6 @@
 MD5 (webmin-1.310.tar.gz) = 9db69bf46206a5f970c0537a3e5592bd
 SHA256 (webmin-1.310.tar.gz) = acbc571336e4b0a1d96ab2125da492cc57c3a38bc5822a6656cea85f3b50366c
 SIZE (webmin-1.310.tar.gz) = 10785558
+MD5 (bind8-1.310-1.wbm.gz) = 36243ad3f9680ee4ca1b6dc9a7dd48f6
+SHA256 (bind8-1.310-1.wbm.gz) = 86b520d341729af5f673ad983a4814f25a1d05410caba7bc0cd7f3cb373644cd
+SIZE (bind8-1.310-1.wbm.gz) = 323537
