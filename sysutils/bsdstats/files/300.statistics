@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.37 2006-12-05 13:28:15 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.38 2006-12-05 13:49:45 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -80,7 +80,7 @@ check_dns () {
 send_devices () {
     case $(uname) in
 	FreeBSD )
-	    for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
+	    for line in `/usr/sbin/pciconf -l`
 	    do
 	      DRIVER=`echo $line | awk -F\@ '{print $1}'`
 	      DEV=`echo $line | awk '{print $4}' | cut -c8-15`
