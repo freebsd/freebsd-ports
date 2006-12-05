@@ -175,6 +175,9 @@ CONFIGURE_ARGS+=	--enable-optimized
 .endif
 .endif
 
+post-patch:
+	${REINPLACE_CMD} "s+/usr/X11R6+${X11BASE}+" ${WRKSRC}/configure
+
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
 	${REINPLACE_CMD} -e 's+%%BRLCAD_ROOT%%+${PREFIX}+g;'	\
