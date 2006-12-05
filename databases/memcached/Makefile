@@ -7,6 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/ \
 		${MASTER_SITE_GENTOO}
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
-LIB_DEPENDS=	event-1.2:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
 
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
@@ -24,7 +25,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		memcached.1
 
-PLIST_FILES=	bin/memcached
+PLIST_FILES=	bin/memcached \
+		bin/memcached-debug
 
 PORTDOCS=	memory_management.txt protocol.txt
 
