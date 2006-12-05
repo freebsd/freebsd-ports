@@ -41,6 +41,7 @@ CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
 post-patch:
 	@${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|"/usr/local/include"||' ${WRKSRC}/csc.scm
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
