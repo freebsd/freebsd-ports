@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 PORTVERSION=	0.1.2.3
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/ \
 		http://mirror.onionland.org/dist/
@@ -17,7 +18,7 @@ MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
-LIB_DEPENDS=	event-1.2:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

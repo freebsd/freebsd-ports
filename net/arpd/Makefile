@@ -7,17 +7,15 @@
 
 PORTNAME=	arpd
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 
 MAINTAINER=	yb@bashibuzuk.net
 COMMENT=	A daemon to service arp replies
 
-BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
-		${LOCALBASE}/include/event.h:${PORTSDIR}/devel/libevent
-RUN_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
-		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent \
+		dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}

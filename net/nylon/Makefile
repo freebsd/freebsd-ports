@@ -8,14 +8,14 @@
 
 PORTNAME=	nylon
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/nylon/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Unix SOCKS 4 and 5 proxy server
 
-LIB_DEPENDS=	event-1.2.1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
 
 USE_RC_SUBR=	nylon.sh
 
@@ -27,9 +27,6 @@ CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 MAN1=		nylon.1
 
 PLIST_FILES=	bin/nylon etc/nylon.conf.sample
-
-post-patch:
-	${REINPLACE_CMD} -e 's/-levent/-levent-1.2/' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/nylon.conf ${PREFIX}/etc/nylon.conf.sample

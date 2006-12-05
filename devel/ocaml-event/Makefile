@@ -7,7 +7,7 @@
 
 PORTNAME=	event
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -17,7 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An ocaml wrapper for the libevent API
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	${LIB_EVENT}:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
 
 ALL_TARGET=	all allopt
 USE_GMAKE=	yes
@@ -27,9 +27,6 @@ ALL_TARGET+=	doc
 
 PORTDOCS=	*
 .endif
-
-# libevent library
-LIB_EVENT=	event-1.2.1
 
 EXAMPLE_FILES=	\
 		Makefile \
@@ -61,7 +58,7 @@ PLIST_FILES+=	lib/ocaml/stublibs/${file}
 post-configure:
 # CFLAGS,PREFIX safeness
 	@${REINPLACE_CMD} -E -e \
-		's|^(EVENT_LIB=).*$$|\1-l${LIB_EVENT:R}|; \
+		's|^(EVENT_LIB=).*$$|\1-levent|; \
 		s|^(EVENT_LIBDIR=).$$|\1${LOCALBASE}/lib|;  \
 		s|^(EVENT_INCDIR=).$$|\1${LOCALBASE}/include|; \
 		s|^(CFLAGS).*$$|\1=${CFLAGS} -I\$$(EVENT_INCDIR)|' \
