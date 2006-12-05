@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	oolite
-PORTVERSION=	1.65
-PORTREVISION=	1
-CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/oolite-linux/ \
-		http://download2.berlios.de/oolite-linux/ \
-		ftp://ftp.alioth.net/oolite/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-data${EXTRACT_SUFX}
+PORTNAME=		oolite
+PORTVERSION=		1.65
+PORTREVISION=		1
+CATEGORIES=		games
+MASTER_SITES=		${MASTER_SITE_BERLIOS} \
+			ftp://ftp.alioth.net/%SUBDIR%/:alioth
+MASTER_SITE_SUBDIR=	oolite-linux oolite/:alioth
+DISTFILES=		${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}:DEFAULT,alioth \
+			${PORTNAME}-${PORTVERSION}-data${EXTRACT_SUFX}:DEFAULT,alioth
 
-MAINTAINER=	avg@icyb.net.ua
-COMMENT=	Trade and combat space simulator, clone of Elite
+MAINTAINER=		avg@icyb.net.ua
+COMMENT=		Trade and combat space simulator, clone of Elite
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 USE_SDL=		mixer image gfx
