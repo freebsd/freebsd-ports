@@ -12,7 +12,7 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/comp/emacsen/lisp/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs21
 
 PORTCLASS?=	master
