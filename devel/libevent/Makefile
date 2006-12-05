@@ -17,8 +17,6 @@ USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-
 MAN3=	event.3 \
 	evdns.3
 MLINKS=	event.3 event_init.3 \
