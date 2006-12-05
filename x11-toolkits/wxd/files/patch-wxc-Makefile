@@ -1,5 +1,14 @@
---- wxd/wxc/GNUmakefile	Fri Sep  8 11:46:33 2006
-+++ wxc/Makefile	Thu Nov 16 15:09:32 2006
+--- wxc/Makefile.orig	Fri Sep  8 17:46:33 2006
++++ wxc/Makefile	Sat Dec  2 21:57:10 2006
+@@ -174,7 +174,7 @@
+ OS=$(shell uname)
+ 
+ ifeq ("$(OS)","FreeBSD")
+-CXXFLAGS += -I/usr/X11R6/include
++CXXFLAGS += -I$(X11BASE)/include
+ endif
+ 
+ ifeq ("$(STC)","1")
 @@ -183,7 +183,7 @@
  
  WXFLAGS = `$(WX_CONFIG) --cxxflags`
