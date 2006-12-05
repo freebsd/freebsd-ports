@@ -14,15 +14,16 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
-COMMENT=	Pty (pseudo-terminal) bindings for Lua 5.0.x
+COMMENT=	Pty (pseudo-terminal) bindings for Lua 5
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
+USE_LUA?=	5.1
 
-USE_LUA=	5.0
-LUA_COMPS=	lua compat51
-
+.if ${USE_LUA} == 5.0
+LUA_COMPS=	compat51 lua
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
 COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
 MAKE_ENV=	COMPATDIR="${COMPAT_SRC}"
+.endif
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
 		%%LUA_MODLIBDIR%%/lpty.so
