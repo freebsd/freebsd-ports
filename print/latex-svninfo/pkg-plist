@@ -1,0 +1,5 @@
+%%CLASSDIR%%/svninfo.sty
+%%CLASSDIR%%/svninfo.cfg
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

@@ -145,6 +145,7 @@
     SUBDIR += latex-pict2e
     SUBDIR += latex-subfig
     SUBDIR += latex-subfloat
+    SUBDIR += latex-svninfo
     SUBDIR += latex-timing
     SUBDIR += latex-tipa
     SUBDIR += latex-ucs
