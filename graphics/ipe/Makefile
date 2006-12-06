@@ -8,7 +8,8 @@
 PORTNAME=	ipe
 PORTVERSION=	6.0.p23
 CATEGORIES=	graphics
-MASTER_SITES=	http://ipe.compgeom.org/
+MASTER_SITES=	http://ipe.compgeom.org/ \
+		http://tclab.kaist.ac.kr/~otfried/Ipe/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	-src.tar.gz
 
@@ -16,9 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible drawing editor
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2007-01-04
 
 USE_GHOSTSCRIPT_RUN=	yes
 
@@ -37,7 +35,7 @@ MAN1=		figtoipe.1 ipe.1 ipe5toxml.1 ipetoipe.1 ipetopng.1
 .if ${OSVERSION} < 500000
 # the problem is a little more subtle, really. It requires gcc 3
 USE_GCC=	3.4
-BROKEN=		"Does not compile on 4.x"
+BROKEN=		Does not compile on 4.x
 .endif
 
 QTDIR?=		${X11BASE}
@@ -51,7 +49,7 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
-.if !defined(WITH_TEXMF_PREFIX) 
+.if !defined(WITH_TEXMF_PREFIX)
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_TEXMF_PREFIX=somewhere"
 	@${ECHO} "      if your tetex type1 fonts are somewhere non-standard"
@@ -66,7 +64,7 @@ pre-fetch:
 .endif
 
 WITH_BROWSER?=mozilla
-WITH_TEXMF_PREFIX?= ${PREFIX}/share/texmf-dist
+WITH_TEXMF_PREFIX?=	${PREFIX}/share/texmf-dist
 
 # This is my feeble attempt at making qmake play nice with FreeBSD.
 # If you change a variable, you _must_ reconfigure.
