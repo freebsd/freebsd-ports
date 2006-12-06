@@ -517,6 +517,7 @@
     SUBDIR += p5-CGI-Application-Plugin-HTDot
     SUBDIR += p5-CGI-Application-Plugin-Redirect
     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
+    SUBDIR += p5-CGI-Application-Server
     SUBDIR += p5-CGI-ArgChecker
     SUBDIR += p5-CGI-Builder
     SUBDIR += p5-CGI-Builder-TT2
