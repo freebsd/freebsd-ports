@@ -1,5 +1,5 @@
---- source/unix/makefile.orig	Mon Nov 22 02:12:37 1999
-+++ source/unix/makefile	Wed Sep  1 12:40:10 2004
+--- source/unix/makefile.orig	Mon Nov 22 09:12:37 1999
++++ source/unix/makefile	Sat Dec  2 03:42:45 2006
 @@ -53,7 +53,7 @@
  #CFLAGS      = -O6 -finline-functions -ffast-math -c -ansi -m386 -DCPU=586 -DCOMPILER_VER=\".`uname`.$(CC)\" -DPOV_LIB_DIR=\"$(POVLIBDIR)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
  
@@ -19,6 +19,15 @@
  # The X11 variable should point to the top-level directory where the X11
  #   libraries and include files are located.  It should really be set in
  #   your system startup script (ie .cshrc or .profile) so that it can be
+@@ -78,7 +75,7 @@
+ # for some AIX systems:
+ #X11 = /usr/lpp/X11
+ 
+-X11 = /usr/X11R6
++X11 = $(X11BASE)
+ 
+ # You probably won't need to change these if you have the X11 variable
+ #   above set properly...
 @@ -90,10 +87,10 @@
  # Use libXXX.a if you want to force static linking of the libraries.
  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
