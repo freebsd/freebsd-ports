@@ -6,15 +6,23 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	dns
 MASTER_SITES=	http://daniel.haxx.se/projects/c-ares/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
 
+OPTIONS=	CONFIG_INFO	"Add the ares_config_info patch" ON
+
 CONFLICTS=	ares-1.*
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_CONFIG_INFO)
+EXTRA_PATCHES+=	${FILESDIR}/ares-config-info.patch
+PKGNAMESUFFIX=	-config
+.endif
 
 USE_LDCONFIG=	yes
 SHLIB_VER=	1
@@ -32,6 +40,7 @@ MAN3=	ares_cancel.3 \
 	ares_fds.3 \
 	ares_free_hostent.3 ares_free_string.3 \
 	ares_gethostbyaddr.3 ares_gethostbyname.3 ares_getnameinfo.3 \
+	ares_getsock.3 \
 	ares_init.3 ares_init_options.3 \
 	ares_mkquery.3 \
 	ares_parse_a_reply.3 ares_parse_aaaa_reply.3 ares_parse_ptr_reply.3 \
@@ -43,4 +52,4 @@ MAN3=	ares_cancel.3 \
 	ares_timeout.3 \
 	ares_version.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
