@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	www editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +36,8 @@ CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/gnome/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--without-gnome2_4-mime \
 		--without-gnome2_4-appreg \
-		--with-icon-path=${PREFIX}/share/gnome/pixmaps
+		--with-icon-path=${PREFIX}/share/gnome/pixmaps \
+		--mandir=${MANPREFIX}/man
 
 # Turns debugging output on
 .if defined(WITH_DEBUG)

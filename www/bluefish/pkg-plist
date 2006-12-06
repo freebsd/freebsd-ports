@@ -25,7 +25,7 @@ bin/bluefish
 share/gnome/applications/bluefish-project.desktop
 share/gnome/applications/bluefish.desktop
 share/gnome/pixmaps/bluefish-icon.png
-share/gnome/pixmaps/gnome-application-bluefish-project.png
+share/gnome/pixmaps/gnome-mime-application-bluefish-project.png
 share/locale/bg/LC_MESSAGES/bluefish.mo
 share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
