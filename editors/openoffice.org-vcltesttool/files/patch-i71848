@@ -1,0 +1,30 @@
+--- svx/source/msfilter/msdffimp.cxx	2006-11-22
+11:22:41.000000000 +0100
++++ svx/source/msfilter/msdffimp.cxx	2006-11-22
+11:52:34.000000000 +0100
+@@ -3516,7 +3516,7 @@
+ 		Scale( rPoly[ nPolyNum ] );
+ }
+ 
+-void SvxMSDffManager::ScaleEmu( long& rVal ) const
++void SvxMSDffManager::ScaleEmu( sal_Int32& rVal ) const
+ {
+ 	rVal = BigMulDiv( rVal, nEmuMul, nEmuDiv );
+ }
+
+
+--- svx/source/svdraw/svdtxhdl.cxx	2006-11-22
+11:22:43.000000000 +0100
++++ svx/source/svdraw/svdtxhdl.cxx	2006-11-22
+11:53:00.000000000 +0100
+@@ -183,7 +183,7 @@
+ 		rOutliner.Clear();
+ 		rOutliner.SetPaperSize(Size(LONG_MAX,LONG_MAX));
+ 		rOutliner.SetText(*pPara);
+-		sal_uInt32 nCnt(Min(aContourPolyPolygon.count(), rOutliner.GetParagraphCount()));
++		sal_uInt32 nCnt(Min(aContourPolyPolygon.count(), (sal_uInt32)rOutliner.GetParagraphCount()));
+ 
+ 		if ( nCnt == 1 )    bToLastPoint = TRUE;
+ 		else                bToLastPoint = FALSE;
+
+
