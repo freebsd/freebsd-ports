@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbutils
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://www.w4py.org/downloads/DBUtils/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
