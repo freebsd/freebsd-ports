@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	app
-PORTVERSION=	1.70
+PORTVERSION=	1.72
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/app/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
