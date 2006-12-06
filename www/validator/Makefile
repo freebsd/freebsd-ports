@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	validator
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -64,6 +64,7 @@ do-install:
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG-20010904
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG11-20030114
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
 	${MKDIR} ${PREFIX}/www/validator/htdocs/source
@@ -94,6 +95,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-SVG-20010904/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG-20010904
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-SVG11-20030114/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG11-20030114
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml-basic-20001219/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml-print-20060920/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml1-20020801/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml11-20010531/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
 	${INSTALL_DATA} ${WRKSRC}/htdocs/source/* ${PREFIX}/www/validator/htdocs/source
