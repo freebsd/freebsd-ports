@@ -8,8 +8,8 @@
 +
 +# for FreeBSD
 +CC		= cc
-+LIBFLAGS	= -L$(LIBDIR) -L/usr/X11R6/lib
-+IFLAGS		= -I$(INCDIR)/tk8.2 -I$(INCDIR)/tcl8.2 -I/usr/X11R6/include
++LIBFLAGS	= -L$(LIBDIR) -L$(X11BASE)/lib
++IFLAGS		= -I$(INCDIR)/tk8.2 -I$(INCDIR)/tcl8.2 -I$(X11BASE)/include
 +LIBS		= -ltk82 -ltcl82 -lm -lX11
 +
 +TCL_FILES = \
