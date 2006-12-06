@@ -452,6 +452,7 @@
     SUBDIR += moria
     SUBDIR += mt_dolphin_ia
     SUBDIR += mt_gtk_client
+    SUBDIR += mtaserver
     SUBDIR += mudmagic
     SUBDIR += mvdsv
     SUBDIR += mythserver
