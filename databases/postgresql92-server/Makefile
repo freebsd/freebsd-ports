@@ -6,28 +6,27 @@
 #
 
 PORTNAME?=	postgresql
-PKGNAMESUFFIX?=	-server
-PORTVERSION?=	8.1.4
-PORTREVISION?=	1
+PORTVERSION?=	8.2.0
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
+PKGNAMESUFFIX?=	-server
 DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-CONFLICTS?=	${PORTNAME}-client-7.[0-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]* \
-		${PORTNAME}-client-8.0.* \
-		${PORTNAME}${PKGNAMESUFFIX}-8.0.*
-BROKEN=		work in progress
+CONFLICTS?=	${PORTNAME}-client-7.* \
+		${PORTNAME}${PKGNAMESUFFIX}-7.* \
+		${PORTNAME}-client-8.[0-13-9]* \
+		${PORTNAME}${PKGNAMESUFFIX}-8.[0-13-9]*
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
-UNIQUENAME?=	${PORTNAME}81
+UNIQUENAME?=	${PORTNAME}82
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
@@ -47,14 +46,14 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_procs \
-		src/pl src/utils
+		src/pl config
+
 INSTALL_DIRS?=	${BUILD_DIRS}
-PKGMESSAGE=	${WRKDIR}/.pkg-message${PKGNAMESUFFIX}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
-USE_RC_SUBR=	yes
-RCSCRIPT=	${PREFIX}/etc/rc.d/010.pgsql.sh
+USE_RC_SUBR=	postgresql
+SUB_FILES+=	dot.cshrc dot.profile
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 .endif
@@ -76,7 +75,7 @@ CONFIGURE_ARGS+=--with-openssl
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Coredump during build on alpha 4.x"
+BROKEN=		Coredump during build on alpha 4.x
 .endif
 
 .if !defined(SLAVE_ONLY)
@@ -95,7 +94,7 @@ OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
+#OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
 # See http://gppl.moonbone.ru/ for more info
 #OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
@@ -104,21 +103,25 @@ OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
-.  if defined(SERVER_ONLY) && defined(WITH_HIER)
-#PATCH_SITES+=	http://gppl.moonbone.ru/:hier801054
-#PATCHFILES+=	hier-Pg8.0.1-0.5.4.diff.gz:hier801054
-#USE_BISON=	yes
-.  endif
+# .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
+# PATCH_SITES+=	http://gppl.moonbone.ru/:hier812055
+# PATCHFILES+=	hier-Pg8.1.2-0.5.5.diff.gz:hier812055
+# USE_BISON=	yes
+# .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_ICU)
-USE_AUTOTOOLS=	autoconf:259
-CONFIGURE_ARGS+=--with-icu
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
-PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-814-icu-xx-2006-09-25.diff.gz:icu
-.  endif
+# .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
+# USE_AUTOTOOLS=	autoconf:259
+# CONFIGURE_ARGS+=--with-icu
+# LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
+# PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
+# PATCHFILES+=	pg-814-icu-xx-2006-09-25.diff.gz:icu
+# .  endif
 
 PATCH_DIST_STRIP=-p1
+
+.  ifmake makesum
+DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
+.  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
@@ -173,12 +176,12 @@ CONFIGURE_ARGS+=--with-krb5
 # Postgresql apps will not link properly when libpq is linked with base heimdal in /usr,
 # so we always use the heimdal port. See
 # http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
-LIB_DEPENDS+=	krb5.20:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.21:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_TESTS)
+.  if (defined(SERVER_ONLY) && defined(WITH_TESTS)) || make(makesum)
 DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
 EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
 .  endif
@@ -221,13 +224,13 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		drop_aggregate.7 drop_cast.7 drop_conversion.7		      \
 		drop_database.7 drop_domain.7 drop_function.7		      \
 		drop_group.7 drop_index.7 drop_language.7		      \
-		drop_operator.7 drop_operator_class.7 drop_role.7	      \
-		drop_rule.7						      \
+		drop_operator.7 drop_operator_class.7 drop_owned.7	      \
+		drop_role.7 drop_rule.7					      \
 		drop_schema.7 drop_sequence.7 drop_table.7 drop_trigger.7     \
 		drop_type.7 drop_user.7 drop_view.7 end.7 execute.7	      \
 		explain.7 fetch.7 grant.7 insert.7 listen.7 load.7	      \
 		lock.7 move.7 notify.7 prepare.7 prepare_transaction.7	      \
-		reindex.7 reset.7					      \
+		reassign_owned.7 reindex.7 reset.7			      \
 		revoke.7 rollback.7 rollback_prepared.7 select.7	      \
 		select_into.7 set.7					      \
 		set_constraints.7 set_role.7 set_transaction.7 show.7	      \
@@ -236,7 +239,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		alter_operator.7 alter_tablespace.7 alter_type.7	      \
 		create_tablespace.7 drop_tablespace.7			      \
 		release_savepoint.7 rollback_to_savepoint.7		      \
-		savepoint.7
+		savepoint.7 values.7
 .endif
 
 .if defined(SERVER_ONLY)
@@ -260,11 +263,9 @@ do-build:
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE}; \
 	done
 
-.  if exists(${MASTERDIR}/pkg-message${PKGNAMESUFFIX})
-post-build:
-	@ ${SED} "s|/usr/local|${PREFIX}|g" \
-		< ${MASTERDIR}/pkg-message${PKGNAMESUFFIX} \
-		> ${PKGMESSAGE}
+.  if exists(${FILESDIR}/pkg-message${PKGNAMESUFFIX}.in)
+SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
+PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .endif
 
@@ -283,20 +284,13 @@ do-install:
 .  if defined(SERVER_ONLY)
 	@ ${MKDIR} ${PREFIX}/share/postgresql
 .    for i in profile cshrc
-	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
-		< ${FILESDIR}/dot.$i.in \
-		> ${PREFIX}/share/postgresql/dot.$i.dist; \
-	${CP} ${PREFIX}/share/postgresql/dot.$i.dist ~pgsql/; \
+	${INSTALL_DATA} ${WRKDIR}/dot.$i ${PREFIX}/share/postgresql/dot.$i.dist; \
+	${INSTALL_DATA} -o pgsql -g pgsql ${WRKDIR}/dot.$i ~pgsql/dot.$i.dist ; \
 	if [ ! -f ~pgsql/.$i ]; then \
-		${CP} ${PREFIX}/share/postgresql/dot.$i.dist ~pgsql/.$i; \
+		${CP} -p ~pgsql/dot.$i.dist ~pgsql/.$i; \
 	fi
 .    endfor
-	@ ${SED} -e "s|%%PREFIX%%|${PREFIX}|g; s|%%RC_SUBR%%|${RC_SUBR}|g" \
-		< ${FILESDIR}/pgsql.sh.tmpl \
-		> ${RCSCRIPT} ;\
-	${CHMOD} 555 ${RCSCRIPT} ;\
-	${CHOWN} root:pgsql ${RCSCRIPT} ;\
-	${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
+	@ ${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
