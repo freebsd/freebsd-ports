@@ -8,7 +8,7 @@
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
 CATEGORIES=	x11
-MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
+MASTER_SITES=	http://us.download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		http://download1.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download1.nvidia.com/freebsd/1.0-${NVVERSION}/
@@ -42,51 +42,33 @@ OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
 .endif
 .endif
 
-# Newer releases from NVidia do not play nicely with FreeBSD prior to 5.3.
-# While we support 4.x/5.2.1 releases, stick to version 6113 of driver for
-# that old versions of FreeBSD.  This can go away when we stop supporting
-# them.  For details, please refer to PR ports/79571.
-#
 # Starting with version 7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  One can, however, build the port with -DWITH_LEGACY_GPU_SUPPORT
-# to go with version 7174 of driver (this does not apply to older versions
-# of FreeBSD, since one has to use version 6113 of driver (if [s]he did not
-# yet upgraded to FreeBSD 5.3 or later) which has support for those GPUs).
+# to go with version 7184 of the driver.
 #
 # If you must use WITH_LEGACY_GPU_SUPPORT option, be sure to ``hold'' the
 # package by making appropriate entry in your pkgtools.conf, otherwise
 # portupgrade(1) will upgrade your port to latest NVidia release on the
 # next run, which is probably not what you want.
 #
-# 			ATTENTION!! ACHTUNG!! VNIMANIE!!
-#
-# This very Makefile is already overly complicated, thus support for
-# multiple versions of NVidia releases is going away once we stop caring for
-# ports on 4.x versions of FreeBSD.  This also applies to "legacy GPUs"
-# support.  Those poor souls^W^Wproud owners of RIVA's and Vanta's, frankly,
-# should consider buying a modern gfx card.
+# Please be aware that legacy GPUs support is probably going away in some
+# near future (once nVidia itself cancels support of those).  Those poor
+# souls^W^Wproud owners of RIVA's and Vanta's, frankly, should consider
+# buying a modern gfx card.
 #
 # XXX WITH_LEGACY_GPU_SUPPORT is not in OPTIONS because it has to be handled
 # _before_ including of <bsd.port.pre.mk>.  On the other hand, it is really
 # an UNSUPPORTED option anyway, so this is for good to hide it here XXX
 #
-.if ${OSVERSION} < 503000
-NVVERSION=	6113
-PORTREVISION=	4
-PLIST_SUB+=	DIFFS="" DRVSO="@comment "
-EXTRA_PATCHES+=	${FILESDIR}/${NVVERSION}-*
-.else
 .if defined(WITH_LEGACY_GPU_SUPPORT)
 NVVERSION=	7184
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
-NVVERSION=	8776
+NVVERSION=	9631
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
 .endif
 .if ${OSVERSION} >= 600033
 LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
-.endif
-PLIST_SUB+=	DIFFS="@comment " DRVSO=""
 .endif
 
 .include <bsd.port.pre.mk>
@@ -109,14 +91,8 @@ PLIST_SUB+=	LINUX=""
 PLIST_SUB+=	LINUX="@comment "
 .endif
 
-.if ${OSVERSION} < 490000 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502001
-IGNORE=		supports FreeBSD -STABLE (4.9 or later, 5.2.1 or later), or FreeBSD -CURRENT
-.endif
-
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	FREEBSD5="@comment " FREEBSD4=""
-.else
-PLIST_SUB+=	FREEBSD5="" FREEBSD4="@comment "
+.if ${OSVERSION} < 503000
+IGNORE=		supports FreeBSD-STABLE (5.3 or later), or FreeBSD-CURRENT
 .endif
 
 post-patch: .SILENT
@@ -154,16 +130,6 @@ post-install:
 	@${REINPLACE_CMD} '/README\.Linux/d' ${TMPPLIST}
 .endif
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
-.if ${OSVERSION} < 500000
-.for dev in 0 1 2 3
-	@${RM} -f /dev/nvidia${dev}
-	@mknod /dev/nvidia${dev} c 180 ${dev}
-	@${CHMOD} 0666 /dev/nvidia${dev}
-.endfor
-	@${RM} -f /dev/nvidiactl
-	@mknod /dev/nvidiactl c 180 255
-	@${CHMOD} 0666 /dev/nvidiactl
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
