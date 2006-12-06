@@ -12,8 +12,8 @@
 %%JFFNMSDIR%%/conf/jffnms.conf.defaults
 %%JFFNMSDIR%%/docs/apache-example
 %%JFFNMSDIR%%/docs/cisco-example
-%%JFFNMSDIR%%/docs/jffnms-0.8.2.mysql
-%%JFFNMSDIR%%/docs/jffnms-0.8.2.pgsql
+%%JFFNMSDIR%%/docs/jffnms-0.8.3.mysql
+%%JFFNMSDIR%%/docs/jffnms-0.8.3.pgsql
 %%JFFNMSDIR%%/docs/sla-creation-example.txt
 %%JFFNMSDIR%%/docs/unix/crontab
 %%JFFNMSDIR%%/docs/unix/msyslog-example
@@ -24,41 +24,23 @@
 %%JFFNMSDIR%%/docs/unix/syslog.conf
 %%JFFNMSDIR%%/docs/unix/tac_plus.cfg
 %%JFFNMSDIR%%/docs/unix/tftp
-%%JFFNMSDIR%%/docs/upgrade/jffnms-0.8.1-to-0.8.2.patch
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.alarmed_hosts
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.alteon
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.bgp
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.cisco_nat
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.cpq_far
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.iptables
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.isdn
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.pix
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.pix_syslog
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.rechable
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.sensors
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.system_mib
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.traps
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.ups_mib
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.win_security
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.windows_informant
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.x_fix_internal_ids
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.alarmed_hosts
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.alteon
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.bgp
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.cisco_nat
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.cpq_far
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.iptables
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.isdn
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.pix
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.pix_syslog
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.rechable
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.sensors
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.system_mib
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.traps
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.ups_mib
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.win_security
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.windows_informant
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.x_fix_internal_ids
+%%JFFNMSDIR%%/docs/upgrade/jffnms-0.8.2-to-0.8.3.patch
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.dell_om
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.field_sizes
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.os400
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.sla_cond
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.sla_state
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.sla_x_cpu_util
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.storage_verify
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.2-to-0.8.3.mysql.diff.x_fix_internal_ids
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.dell_om
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.field_sizes
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.os400
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.sla_cond
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.sla_state
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.sla_x_cpu_util
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.storage_verify
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.2-to-0.8.3.pgsql.diff.x_fix_internal_ids
 %%JFFNMSDIR%%/docs/utils/adjust_bw.php
 %%JFFNMSDIR%%/docs/utils/clean_auth.php
 %%JFFNMSDIR%%/docs/utils/exp_poller_test.php
@@ -146,6 +128,7 @@
 %%JFFNMSDIR%%/engine/discovery/tcp_ports.inc.php
 %%JFFNMSDIR%%/engine/discovery/ups.inc.php
 %%JFFNMSDIR%%/engine/discovery/ups_lines.inc.php
+%%JFFNMSDIR%%/engine/fonts/LucidaTypewriterRegular.ttf
 %%JFFNMSDIR%%/engine/graphs/acct_bytes.inc.php
 %%JFFNMSDIR%%/engine/graphs/acct_packets.inc.php
 %%JFFNMSDIR%%/engine/graphs/alteon_failures_sessions.inc.php
@@ -180,6 +163,7 @@
 %%JFFNMSDIR%%/engine/graphs/cisco_saagent_packetloss.inc.php
 %%JFFNMSDIR%%/engine/graphs/cisco_saagent_rtl.inc.php
 %%JFFNMSDIR%%/engine/graphs/cisco_serial.inc.php
+%%JFFNMSDIR%%/engine/graphs/cpu_os400.inc.php
 %%JFFNMSDIR%%/engine/graphs/cpu_util.inc.php
 %%JFFNMSDIR%%/engine/graphs/cpu_util_aggregation.inc.php
 %%JFFNMSDIR%%/engine/graphs/css_vip_hits.inc.php
@@ -289,6 +273,7 @@
 %%JFFNMSDIR%%/engine/pollers/ups_line.php
 %%JFFNMSDIR%%/engine/pollers/verify_interface_number.php
 %%JFFNMSDIR%%/engine/pollers/verify_smokeping_number.php
+%%JFFNMSDIR%%/engine/pollers/verify_storage_index.php
 %%JFFNMSDIR%%/engine/pollers/verify_tc_class_number.php
 %%JFFNMSDIR%%/engine/rrd_analizer.php
 %%JFFNMSDIR%%/engine/satellite/distribution.inc.php
@@ -298,6 +283,7 @@
 %%JFFNMSDIR%%/engine/shared/.check
 %%JFFNMSDIR%%/engine/shared/catos.inc.php
 %%JFFNMSDIR%%/engine/shared/percentile.inc.php
+%%JFFNMSDIR%%/engine/shared/storage.inc.php
 %%JFFNMSDIR%%/engine/shared/webos.inc.php
 %%JFFNMSDIR%%/engine/temp/.check
 %%JFFNMSDIR%%/engine/tftp_get_host_config.php
@@ -566,6 +552,7 @@
 @dirrm %%JFFNMSDIR%%/engine/pollers
 @dirrm %%JFFNMSDIR%%/engine/handlers
 @dirrm %%JFFNMSDIR%%/engine/graphs
+@dirrm %%JFFNMSDIR%%/engine/fonts
 @dirrm %%JFFNMSDIR%%/engine/discovery
 @dirrm %%JFFNMSDIR%%/engine/consolidate
 @dirrm %%JFFNMSDIR%%/engine/configs
