@@ -10,9 +10,9 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.2
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.0/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.1/downloads/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A High Performance Message Passing Library
@@ -36,6 +36,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} ${CONFIGURE_TARGET}
 
+USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib/openmpi
+
+MAN1=		mpiexec.1 mpirun.1 orterun.1
+MANPREFIX=	${TARGETDIR}/${MPIDIR}
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -48,6 +53,18 @@ BROKEN=		requires stdint.h
 .else
 IGNORE=		is not supported for FreeBSD < 5.3
 .endif
+.endif
+
+.if exists(${LOCALBASE}/lib/libtorque.so)
+WITH_TORQUE=	yes
+.endif
+
+.if defined(WITH_TORQUE)
+LIB_DEPENDS+=	torque.0:${PORTSDIR}/sysutils/torque
+CONFIGURE_ARGS+=	--with-tm=${LOCALBASE}
+PLIST_SUB+=	TORQUE=""
+.else
+PLIST_SUB+=	TORQUE="@comment "
 .endif
 
 post-install:
