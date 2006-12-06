@@ -3521,6 +3521,7 @@ gnoemoe		ports/net/gnoemoe
 gnofin		ports/finance/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
+gnomad2		ports/audio/gnomad2
 gnome-applets	ports/x11/gnome-applets
 gnome-art	ports/x11-themes/gnome-art
 gnome-audio	ports/audio/gnome-audio
