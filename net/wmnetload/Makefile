@@ -19,6 +19,7 @@ COMMENT=	Network load monitor dockapp
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_BZIP2=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 
 post-install:
