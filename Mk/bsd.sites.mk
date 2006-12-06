@@ -165,6 +165,17 @@ MASTER_SITE_DEBIAN_POOL+=	\
 	${MASTER_SITE_DEBIAN:C|(/%SUBDIR%/)|/pool/main/${PORTNAME:C/^(.).*$/\1/}/${PORTNAME}/|}
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_EASYSW)
+MASTER_SITE_EASYSW+=	\
+	http://ftp.easysw.com/pub/%SUBDIR%/ \
+	ftp://ftp.easysw.com/pub/%SUBDIR%/ \
+	ftp://ftp2.easysw.com/pub/%SUBDIR%/ \
+	ftp://ftp3.easysw.com/pub/%SUBDIR%/ \
+	http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
+	ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_ECLIPSE)
 MASTER_SITE_ECLIPSE+= \
 	http://download.eclipse.org/eclipse/downloads/drops/%SUBDIR%/ \
