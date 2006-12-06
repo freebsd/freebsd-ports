@@ -20,10 +20,17 @@ USE_X_PREFIX=	yes
 
 MANCOMPRESSED=	yes
 
+PLIST_FILES=	bin/xglurbules \
+		bin/xglurbules-noshm \
+		bin/xglurbules-test
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		does not compile on !i386
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
