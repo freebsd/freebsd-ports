@@ -7425,6 +7425,7 @@ mt-aspell	ports/textproc/mt-aspell
 mt-daapd	ports/audio/mt-daapd
 mt_dolphin_ia	ports/games/mt_dolphin_ia
 mt_gtk_client	ports/games/mt_gtk_client
+mtaserver	ports/games/mtaserver
 mtf		ports/archivers/mtf
 mtl		ports/math/mtl
 mtools		ports/emulators/mtools
