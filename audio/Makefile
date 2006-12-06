@@ -317,6 +317,7 @@
     SUBDIR += libmodplug
     SUBDIR += libmpcdec
     SUBDIR += libmpd
+    SUBDIR += libmtp
     SUBDIR += libmusicbrainz
     SUBDIR += libnjb
     SUBDIR += libnoise
