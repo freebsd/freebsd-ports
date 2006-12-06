@@ -1,4 +1,6 @@
 Versuch is a H323 voice & video proxy appropriated for border and zone 
-controlling (without RAS). Disigned for heavy load.
+controlling (without RAS). Designed for heavy load. It is compatible
+with many software/hardware H323 gateways, terminals and transit units.
+Also it supports transfer of calls through NAT and firewalls.
 
 WWW: http://versuch.sourceforge.net/

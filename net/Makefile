@@ -836,6 +836,7 @@
     SUBDIR += v6eval
     SUBDIR += vchat
     SUBDIR += vde
+    SUBDIR += versuch
     SUBDIR += vino
     SUBDIR += vls
     SUBDIR += vnc
