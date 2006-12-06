@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,4 +31,10 @@ MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}"
 MAN1=		rvm.1
 PLIST_FILES=	bin/rvm
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
