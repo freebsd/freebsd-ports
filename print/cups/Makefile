@@ -8,26 +8,21 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.7
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	asa@agava.com
-COMMENT=	The Common UNIX Printing System: Metaport to install complete system
+COMMENT=	Common UNIX Printing System: Metaport to install complete system
 
+RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
+		cupsd:${PORTSDIR}/print/cups-base
 .if make(package)
 DEPENDS_TARGET="package"
 .endif # make(package)
 
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
-RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
-
-NO_BUILD=	true
-
-do-build:
-
-do-install:
+NO_BUILD=	yes
+do-install:	# empty
 
 .include <bsd.port.mk>
