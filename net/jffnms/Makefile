@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	jffnms
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Very advanced network monitoring and control system
 
 RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
