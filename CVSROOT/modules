@@ -5898,6 +5898,7 @@ latex-pgf	ports/print/latex-pgf
 latex-pict2e	ports/print/latex-pict2e
 latex-subfig	ports/print/latex-subfig
 latex-subfloat	ports/print/latex-subfloat
+latex-svninfo	ports/print/latex-svninfo
 latex-timing	ports/print/latex-timing
 latex-tipa	ports/print/latex-tipa
 latex-ucs	ports/print/latex-ucs
