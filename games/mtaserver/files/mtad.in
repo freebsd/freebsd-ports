@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: mtad
+# REQUIRE: NETWORKING
+#
+# Add the following line to /etc/rc.conf[.local] to enable mtad
+#
+# mtad_enable (bool):		Set to "NO" by default.
+#                               Set it to "YES" to enable mtad.
+
+. %%RC_SUBR%%
+
+name="mtad"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${mtad_enable="NO"}
+: ${mtad_chdir="%%MTADIR%%"}
+
+command="%%MTADIR%%/mtaserver"
+command_args="-b 2>&1 > /dev/null &"
+required_files="%%MTADIR%%/mtaserver.conf"
+start_precmd="mtad_prestart"
+stop_precmd="mtad_prestop"
+
+mtad_prestart() {
+    if ! kldstat -v | grep -E 'linux(aout|elf)' > /dev/null; then
+	err 1 "Linux support required"
+    fi
+}
+
+mtad_prestop() {
+    rc_pid=`echo $rc_pid | awk '{print $1}'`
+}
+    		    
+run_rc_command "$1"
