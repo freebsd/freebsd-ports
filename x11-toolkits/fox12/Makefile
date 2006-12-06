@@ -7,7 +7,6 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -26,7 +25,7 @@ CONFLICTS=	fox-1.0.* fox-1.4.*
 LATEST_LINK=	fox12
 
 MAJORVER=	1.2
-SHVER=		16
+SHVER=		18
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GNOME=	lthack
@@ -34,7 +33,7 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-opengl --with-x --enable-threadsafe
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		shutterbug.1 reswrap.1
 
