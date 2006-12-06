@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgadmin3
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	pgadmin3/release/v${PORTVERSION}/src
@@ -30,10 +30,7 @@ WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},'\
-			-e 's,== yes,= yes,'\
-			-e 's,== no,= no,'\
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
