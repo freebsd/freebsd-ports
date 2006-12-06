@@ -174,17 +174,12 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/client-authentication-problems.html
 %%DATADIR%%/docs/en_US/pg/client-authentication.html
 %%DATADIR%%/docs/en_US/pg/client-interfaces.html
-%%DATADIR%%/docs/en_US/pg/clustering-for-load-balancing.html
-%%DATADIR%%/docs/en_US/pg/clustering-for-parallel-query-execution.html
-%%DATADIR%%/docs/en_US/pg/commercial-solutions.html
 %%DATADIR%%/docs/en_US/pg/connect-estab.html
 %%DATADIR%%/docs/en_US/pg/continuous-archiving.html
-%%DATADIR%%/docs/en_US/pg/continuously-running-replication-server.html
 %%DATADIR%%/docs/en_US/pg/creating-cluster.html
 %%DATADIR%%/docs/en_US/pg/cvs-tree.html
 %%DATADIR%%/docs/en_US/pg/cvs.html
 %%DATADIR%%/docs/en_US/pg/cvsup.html
-%%DATADIR%%/docs/en_US/pg/data-partitioning.html
 %%DATADIR%%/docs/en_US/pg/datatype-binary.html
 %%DATADIR%%/docs/en_US/pg/datatype-bit.html
 %%DATADIR%%/docs/en_US/pg/datatype-boolean.html
@@ -247,8 +242,8 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/extend-type-system.html
 %%DATADIR%%/docs/en_US/pg/extend.html
 %%DATADIR%%/docs/en_US/pg/external-extensions.html
+%%DATADIR%%/docs/en_US/pg/external-pl.html
 %%DATADIR%%/docs/en_US/pg/external-projects.html
-%%DATADIR%%/docs/en_US/pg/failover.html
 %%DATADIR%%/docs/en_US/pg/features.html
 %%DATADIR%%/docs/en_US/pg/functions-admin.html
 %%DATADIR%%/docs/en_US/pg/functions-aggregate.html
@@ -285,6 +280,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/gist-implementation.html
 %%DATADIR%%/docs/en_US/pg/gist-recovery.html
 %%DATADIR%%/docs/en_US/pg/gist.html
+%%DATADIR%%/docs/en_US/pg/high-availability.html
 %%DATADIR%%/docs/en_US/pg/history.html
 %%DATADIR%%/docs/en_US/pg/index-cost-estimation.html
 %%DATADIR%%/docs/en_US/pg/index-functions.html
@@ -455,7 +451,6 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/queries-union.html
 %%DATADIR%%/docs/en_US/pg/queries-values.html
 %%DATADIR%%/docs/en_US/pg/queries.html
-%%DATADIR%%/docs/en_US/pg/query-broadcast-load-balancing.html
 %%DATADIR%%/docs/en_US/pg/reference-client.html
 %%DATADIR%%/docs/en_US/pg/reference-server.html
 %%DATADIR%%/docs/en_US/pg/reference.html
@@ -800,7 +795,6 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/pg/wal-internals.html
 %%DATADIR%%/docs/en_US/pg/wal-intro.html
 %%DATADIR%%/docs/en_US/pg/wal.html
-%%DATADIR%%/docs/en_US/pg/warm-standby-using-point-in-time-recovery.html
 %%DATADIR%%/docs/en_US/pg/warm-standby.html
 %%DATADIR%%/docs/en_US/pg/xaggr.html
 %%DATADIR%%/docs/en_US/pg/xfunc-c.html
@@ -839,7 +833,7 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony.html
 %%DATADIR%%/docs/en_US/slony/addthings.html
 %%DATADIR%%/docs/en_US/slony/admconninfo.html
-%%DATADIR%%/docs/en_US/slony/altperl.html
+%%DATADIR%%/docs/en_US/slony/adminscripts.html
 %%DATADIR%%/docs/en_US/slony/cluster.html
 %%DATADIR%%/docs/en_US/slony/clustername.html
 %%DATADIR%%/docs/en_US/slony/cmds.html
@@ -1021,11 +1015,13 @@ bin/pgagent
 %%DATADIR%%/docs/en_US/slony/stmtsetdroptable.html
 %%DATADIR%%/docs/en_US/slony/stmtsetmovesequence.html
 %%DATADIR%%/docs/en_US/slony/stmtsetmovetable.html
+%%DATADIR%%/docs/en_US/slony/stmtsleep.html
 %%DATADIR%%/docs/en_US/slony/stmtstorelisten.html
 %%DATADIR%%/docs/en_US/slony/stmtstorenode.html
 %%DATADIR%%/docs/en_US/slony/stmtstorepath.html
 %%DATADIR%%/docs/en_US/slony/stmtstoretrigger.html
 %%DATADIR%%/docs/en_US/slony/stmtsubscribeset.html
+%%DATADIR%%/docs/en_US/slony/stmtsync.html
 %%DATADIR%%/docs/en_US/slony/stmttableaddkey.html
 %%DATADIR%%/docs/en_US/slony/stmtuninstallnode.html
 %%DATADIR%%/docs/en_US/slony/stmtunlockset.html
