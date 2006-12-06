@@ -5225,6 +5225,7 @@ jalview		ports/biology/jalview
 jam		ports/devel/jam
 jama		ports/math/jama
 jamboree	ports/audio/jamboree
+jamin		ports/audio/jamin
 jamlib		ports/mail/jamlib
 janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
