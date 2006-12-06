@@ -18,7 +18,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \
+		--with-x11-base=${X11BASE}
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 ALL_TARGET=	libs
@@ -103,8 +104,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|^(CC[[:blank:]]*=).*|\1 ${CC}|; \
 		 s|^(CCOPT =)|\1 ${CPPFLAGS} ${CFLAGS}|; \
-		 s|^(LDOPT =)|\1 ${LDFLAGS}|; \
-		 s|/usr/X11R6|${X11BASE}|' \
+		 s|^(LDOPT =)|\1 ${LDFLAGS}|;' \
 		${WRKSRC}/makedefs.grx
 	@${REINPLACE_CMD} -e 's/gcc/${CC}/' ${WRKSRC}/src/makefile.[lx]*
 
