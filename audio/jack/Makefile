@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	jackit
-PORTVERSION=	0.101.1
-PORTREVISION=	1
+PORTVERSION=	0.102.20
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jackit
@@ -16,7 +15,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A low-latency audio server
 
 LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
+		FLAC.7:${PORTSDIR}/audio/flac
 
 OPTIONS=	DOCS "Build HTML documentation. Requires doxygen/TeX." off
 
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
 
 MAN1=		jackd.1 jackstart.1
@@ -48,6 +48,10 @@ PLIST_SUB+=	DOCS="@comment "
 
 .if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
 BROKEN=		Does not compile
+.endif
+
+.if ${OSVERSION} < 500018 || exists(${LOCALBASE}/lib/libreadline.so.5)
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
 pre-everything::
@@ -72,5 +76,9 @@ post-patch:
 
 post-build:
 	@${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
 
 .include <bsd.port.post.mk>
