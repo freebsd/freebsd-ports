@@ -388,6 +388,8 @@
     SUBDIR += postgresql80-server
     SUBDIR += postgresql81-client
     SUBDIR += postgresql81-server
+    SUBDIR += postgresql82-client
+    SUBDIR += postgresql82-server
     SUBDIR += postgresql_autodoc
     SUBDIR += puredb
     SUBDIR += pxlib

@@ -12,6 +12,10 @@
 #  # optional
 #  postgresql_data="%%PREFIX%%/pgsql/data"
 #  postgresql_flags="-w -s -m fast"
+#  postgresql_initdb_flags="--encoding=utf-8 --lc_collate=C"
+#  postgresql_class="default"
+#
+# See %%PREFIX%%/share/doc/postgresql/README-server for more info
 #
 # This scripts takes one of the following commands:
 #
@@ -32,6 +36,7 @@ postgresql_flags=${postgresql_flags:-"-w -s -m fast"}
 postgresql_user=pgsql
 eval postgresql_data=${postgresql_data:-"~${postgresql_user}/data"}
 postgresql_class=${postgresql_class:-"default"}
+postgresql_initdb_flags=${postgresql_initdb_flags:-"--encoding=utf-8 --lc_collate=C"}
 
 name=postgresql
 rcvar=`set_rcvar`
