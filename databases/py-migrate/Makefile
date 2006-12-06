@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/m/migrate/ \
 		http://dose.se/distfiles/migrate/
