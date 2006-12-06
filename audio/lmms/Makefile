@@ -7,7 +7,7 @@
 
 PORTNAME=	lmms
 PORTVERSION=	20061204
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
@@ -48,5 +48,10 @@ post-patch:
 
 pre-configure:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE}
+
+post-install:
+	# make it setuid-root to be able to set realtime priority
+	# (root privileges are dropped in the main routine)
+	${CHMOD} u+s ${PREFIX}/bin/lmms
 
 .include <bsd.port.mk>
