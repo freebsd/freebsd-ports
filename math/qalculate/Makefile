@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
 
-MAINTAINER=	asa@agava.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very powerful GUI calculator for GNOME
 
 LIB_DEPENDS=	qalculate.2:${PORTSDIR}/math/libqalculate
