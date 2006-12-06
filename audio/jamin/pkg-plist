@@ -1,0 +1,28 @@
+bin/jamin
+bin/jamin-scene
+lib/ladspa/jamincont_1912.so
+lib/ladspa/jamincont_1912.la
+%%DATADIR%%/pixmaps/brushed-steel.png
+%%DATADIR%%/pixmaps/thai-gold-knobs.png
+%%DATADIR%%/pixmaps/thai-gold.png
+%%DATADIR%%/pixmaps/play1.png
+%%DATADIR%%/pixmaps/pause1.png
+%%DATADIR%%/pixmaps/JAMin_splash.jpg
+%%DATADIR%%/pixmaps/about_image.png
+%%DATADIR%%/pixmaps/marble.jpg
+%%DATADIR%%/pixmaps/JAMin_icon.xpm
+%%DATADIR%%/pixmaps/LED_green_on.xpm
+%%DATADIR%%/pixmaps/LED_green_off.xpm
+%%DATADIR%%/pixmaps/LED_yellow.xpm
+%%DATADIR%%/pixmaps/LED_red.xpm
+%%DATADIR%%/examples/RIAA_EQ.jam
+%%DATADIR%%/examples/default.jam
+%%DATADIR%%/examples/jamin_ui
+%%DATADIR%%/examples/marble_jamin_ui
+share/applications/jamin.desktop
+share/mime/packages/jamin.xml
+share/icons/jamin.svg
+@dirrmtry share/applications
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/examples
+@dirrmtry %%DATADIR%%

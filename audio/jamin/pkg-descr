@@ -1,0 +1,6 @@
+JAMin is the JACK Audio Connection Kit (JACK) Audio Mastering
+interface. JAMin is an open source application designed to perform
+professional audio mastering of stereo input streams. It uses LADSPA
+for digital signal processing (DSP).
+
+WWW:	http://jamin.sourceforge.net/en/about.html
