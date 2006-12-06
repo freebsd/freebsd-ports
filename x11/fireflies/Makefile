@@ -25,6 +25,10 @@ CONFIGURE_ARGS=	--with-bindir=${LOCALBASE}/bin/xscreensaver-hacks \
 		--with-confdir=${LOCALBASE}/share/xscreensaver/config
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+MAKE_ARGS=	CONFIGURE_ENV=${CONFIGURE_ENV:Q} \
+		CONFIGURE_SCRIPT=${CONFIGURE_SCRIPT:Q} \
+		CONFIGURE_ARGS=${CONFIGURE_ARGS:Q}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
