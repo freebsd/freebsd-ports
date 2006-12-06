@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	formencode
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/F/FormEncode/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
