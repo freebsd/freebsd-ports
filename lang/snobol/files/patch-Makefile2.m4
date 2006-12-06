@@ -1,5 +1,5 @@
---- Makefile2.m4.orig	Fri Oct 21 18:07:57 2005
-+++ Makefile2.m4	Fri Oct 21 18:08:39 2005
+--- Makefile2.m4.orig	Wed Aug  6 22:34:47 1997
++++ Makefile2.m4	Wed Dec  6 15:35:00 2006
 @@ -48,13 +48,13 @@
  SNOLIB_FILE=snolib.a
  
@@ -17,3 +17,12 @@
  
  ########
  # default lib source files
+@@ -555,8 +555,6 @@
+ # XXX make hard link from $(BINDEST) to $(BINDEST)-`./pv`??
+ 
+ install: TESTED doc/snobol4.1
+-	-rm -f $(BINDEST).old
+-	-mv -f $(BINDEST) $(BINDEST).old
+ 	cp xsnobol4 $(BINDEST); strip $(BINDEST); chmod 755 $(BINDEST)
+ 	cp doc/snobol4.1 $(MANDEST)
+ 	test -d $(SNOLIB_DIR) || mkdir $(SNOLIB_DIR)
