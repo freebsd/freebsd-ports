@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	asa@agava.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very advanced network monitoring and control system
 
 RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \

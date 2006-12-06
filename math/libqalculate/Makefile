@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qalculate
 
-MAINTAINER=	asa@agava.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very powerful GUI calculator for GNOME (backend library)
 
 LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln

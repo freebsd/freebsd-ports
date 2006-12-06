@@ -13,7 +13,7 @@ CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	asa@agava.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common UNIX Printing System: Metaport to install complete system
 
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
