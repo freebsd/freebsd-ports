@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JavaScript-RPC
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	JavaScript
@@ -17,7 +17,7 @@ COMMENT=	Remote procedure calls from JavaScript
 
 PERL_CONFIGURE=	yes
 
-MAN3=	JavaScript::RPC::Server::CGI.3
+MAN3=	JavaScript::RPC::Server::CGI.3 JavaScript::RPC.3
 
 .include <bsd.port.pre.mk>
 
