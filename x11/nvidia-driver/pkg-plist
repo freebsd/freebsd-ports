@@ -28,7 +28,7 @@ lib/libnvidia-tls.so.1
 @unexec rm -f %D/lib/libnvidia-tls.so
 lib/libXvMCNVIDIA.a
 lib/modules/drivers/nvidia_drv.o
-%%DRVSO%%lib/modules/drivers/nvidia_drv.so
+lib/modules/drivers/nvidia_drv.so
 lib/modules/extensions/libglx.so.1
 @exec ln -sf %D/lib/modules/extensions/libglx.so.1 %D/lib/modules/extensions/libglx.so
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix-a.html
@@ -80,34 +80,10 @@ lib/modules/extensions/libglx.so.1
 %%PORTDOCS%%%%DOCSDIR%%/glx.h
 %%PORTDOCS%%%%DOCSDIR%%/glext.h
 %%PORTDOCS%%%%DOCSDIR%%/glxtokens.h
-%%DIFFS%%%%PORTDOCS%%%%DOCSDIR%%/agp.ko-hints.diff
-%%DIFFS%%%%PORTDOCS%%%%DOCSDIR%%/machdep.c.diff
-%%DIFFS%%%%PORTDOCS%%%%DOCSDIR%%/vm_map.c_4.10.diff
-%%DIFFS%%%%PORTDOCS%%%%DOCSDIR%%/device_pager.c_4.10.diff
-%%DIFFS%%%%PORTDOCS%%%%DOCSDIR%%/vm_object.c_5.2.diff
-%%DIFFS%%%%PORTDOCS%%%%DOCSDIR%%/device_pager.c_5.2.diff
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%FREEBSD4%%@cwd /modules
-%%FREEBSD5%%@cwd /boot/modules
+@cwd /boot/modules
 nvidia.ko
-%%FREEBSD5%%@unexec kldxref %D
-%%FREEBSD4%%@cwd /dev
-%%FREEBSD4%%MAKEDEV.nvidia
-%%FREEBSD4%%@exec mknod /dev/nvidia0 c 180 0
-%%FREEBSD4%%@exec chmod 0666 /dev/nvidia0
-%%FREEBSD4%%@exec mknod /dev/nvidia1 c 180 1
-%%FREEBSD4%%@exec chmod 0666 /dev/nvidia1
-%%FREEBSD4%%@exec mknod /dev/nvidia2 c 180 2
-%%FREEBSD4%%@exec chmod 0666 /dev/nvidia2
-%%FREEBSD4%%@exec mknod /dev/nvidia3 c 180 3
-%%FREEBSD4%%@exec chmod 0666 /dev/nvidia3
-%%FREEBSD4%%@exec mknod /dev/nvidiactl c 180 255
-%%FREEBSD4%%@exec chmod 0666 /dev/nvidiactl
-%%FREEBSD4%%@unexec rm -f /dev/nvidia0
-%%FREEBSD4%%@unexec rm -f /dev/nvidia1
-%%FREEBSD4%%@unexec rm -f /dev/nvidia2
-%%FREEBSD4%%@unexec rm -f /dev/nvidia3
-%%FREEBSD4%%@unexec rm -f /dev/nvidiactl
+@unexec kldxref %D
 %%LINUX%%@cwd %%LINUXBASE%%
 %%LINUX%%usr/lib/libGL.so.1.0.%%NVVERSION%%
 %%LINUX%%usr/lib/libGLcore.so.1.0.%%NVVERSION%%
