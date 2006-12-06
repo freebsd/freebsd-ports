@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	wikipedia
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.[0-68-9].*
+CONFLICTS=	mediawiki-1.[0-79].*
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
