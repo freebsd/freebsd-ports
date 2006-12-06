@@ -19,6 +19,13 @@ USE_QT_VER=	3
 NO_BUILD=	yes
 TMAKE_BIN=	progen tmake
 
+REINPLACE_ARGS=	-i "" # no backup (for install)
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g; \
+		s,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/lib/freebsd-g++/tmake.conf
+
 do-install:
 	@${MKDIR} ${PREFIX}/share/tmake
 	@cd ${WRKSRC}/lib; tar cf - * | (cd ${PREFIX}/share/tmake && tar xf -)

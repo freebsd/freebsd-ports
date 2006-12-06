@@ -1,255 +1,255 @@
 bin/progen
 bin/tmake
-share/tmake/aix-g++/app.t
-share/tmake/aix-g++/lib.t
-share/tmake/aix-g++/subdirs.t
-share/tmake/aix-g++/tmake.conf
-share/tmake/aix-xlc/app.t
-share/tmake/aix-xlc/lib.t
-share/tmake/aix-xlc/subdirs.t
-share/tmake/aix-xlc/tmake.conf
-share/tmake/bsdi-g++/app.t
-share/tmake/bsdi-g++/lib.t
-share/tmake/bsdi-g++/subdirs.t
-share/tmake/bsdi-g++/tmake.conf
-share/tmake/dgux-g++/app.t
-share/tmake/dgux-g++/lib.t
-share/tmake/dgux-g++/subdirs.t
-share/tmake/dgux-g++/tmake.conf
-share/tmake/freebsd-g++/app.t
-share/tmake/freebsd-g++/lib.t
-share/tmake/freebsd-g++/subdirs.t
-share/tmake/freebsd-g++/tmake.conf
-share/tmake/freebsd-g++/tmake.conf.orig
-share/tmake/hpux-acc/app.t
-share/tmake/hpux-acc/lib.t
-share/tmake/hpux-acc/subdirs.t
-share/tmake/hpux-acc/tmake.conf
-share/tmake/hpux-cc/app.t
-share/tmake/hpux-cc/lib.t
-share/tmake/hpux-cc/subdirs.t
-share/tmake/hpux-cc/tmake.conf
-share/tmake/hpux-g++/app.t
-share/tmake/hpux-g++/lib.t
-share/tmake/hpux-g++/subdirs.t
-share/tmake/hpux-g++/tmake.conf
-share/tmake/hpux-n64/app.t
-share/tmake/hpux-n64/lib.t
-share/tmake/hpux-n64/subdirs.t
-share/tmake/hpux-n64/tmake.conf
-share/tmake/hpux-o64/app.t
-share/tmake/hpux-o64/lib.t
-share/tmake/hpux-o64/subdirs.t
-share/tmake/hpux-o64/tmake.conf
-share/tmake/hurd-g++/app.t
-share/tmake/hurd-g++/lib.t
-share/tmake/hurd-g++/subdirs.t
-share/tmake/hurd-g++/tmake.conf
-share/tmake/irix-64/app.t
-share/tmake/irix-64/lib.t
-share/tmake/irix-64/subdirs.t
-share/tmake/irix-64/tmake.conf
-share/tmake/irix-g++/app.t
-share/tmake/irix-g++/lib.t
-share/tmake/irix-g++/subdirs.t
-share/tmake/irix-g++/tmake.conf
-share/tmake/irix-n32/app.t
-share/tmake/irix-n32/lib.t
-share/tmake/irix-n32/subdirs.t
-share/tmake/irix-n32/tmake.conf
-share/tmake/irix-o32/app.t
-share/tmake/irix-o32/lib.t
-share/tmake/irix-o32/subdirs.t
-share/tmake/irix-o32/tmake.conf
-share/tmake/linux-cxx/app.t
-share/tmake/linux-cxx/lib.t
-share/tmake/linux-cxx/subdirs.t
-share/tmake/linux-cxx/tmake.conf
-share/tmake/linux-g++/app.t
-share/tmake/linux-g++/lib.t
-share/tmake/linux-g++/subdirs.t
-share/tmake/linux-g++/tmake.conf
-share/tmake/linux-kcc/app.t
-share/tmake/linux-kcc/lib.t
-share/tmake/linux-kcc/subdirs.t
-share/tmake/linux-kcc/tmake.conf
-share/tmake/netbsd-g++/app.t
-share/tmake/netbsd-g++/lib.t
-share/tmake/netbsd-g++/subdirs.t
-share/tmake/netbsd-g++/tmake.conf
-share/tmake/openbsd-g++/app.t
-share/tmake/openbsd-g++/lib.t
-share/tmake/openbsd-g++/subdirs.t
-share/tmake/openbsd-g++/tmake.conf
-share/tmake/osf1-cxx/app.t
-share/tmake/osf1-cxx/lib.t
-share/tmake/osf1-cxx/subdirs.t
-share/tmake/osf1-cxx/tmake.conf
-share/tmake/osf1-g++/app.t
-share/tmake/osf1-g++/lib.t
-share/tmake/osf1-g++/subdirs.t
-share/tmake/osf1-g++/tmake.conf
-share/tmake/qnx-rtp-g++/app.t
-share/tmake/qnx-rtp-g++/lib.t
-share/tmake/qnx-rtp-g++/subdirs.t
-share/tmake/qnx-rtp-g++/tmake.conf
-share/tmake/qws/linux-arm-g++/app.t
-share/tmake/qws/linux-arm-g++/lib.t
-share/tmake/qws/linux-arm-g++/subdirs.t
-share/tmake/qws/linux-arm-g++/tmake.conf
-share/tmake/qws/linux-cassiopeia-g++/app.t
-share/tmake/qws/linux-cassiopeia-g++/lib.t
-share/tmake/qws/linux-cassiopeia-g++/subdirs.t
-share/tmake/qws/linux-cassiopeia-g++/tmake.conf
-share/tmake/qws/linux-generic-g++/app.t
-share/tmake/qws/linux-generic-g++/lib.t
-share/tmake/qws/linux-generic-g++/subdirs.t
-share/tmake/qws/linux-generic-g++/tmake.conf
-share/tmake/qws/linux-ipaq-g++/app.t
-share/tmake/qws/linux-ipaq-g++/lib.t
-share/tmake/qws/linux-ipaq-g++/subdirs.t
-share/tmake/qws/linux-ipaq-g++/tmake.conf
-share/tmake/qws/linux-mips-g++/app.t
-share/tmake/qws/linux-mips-g++/lib.t
-share/tmake/qws/linux-mips-g++/subdirs.t
-share/tmake/qws/linux-mips-g++/tmake.conf
-share/tmake/qws/linux-x86-g++/app.t
-share/tmake/qws/linux-x86-g++/lib.t
-share/tmake/qws/linux-x86-g++/subdirs.t
-share/tmake/qws/linux-x86-g++/tmake.conf
-share/tmake/reliant-cds/app.t
-share/tmake/reliant-cds/lib.t
-share/tmake/reliant-cds/subdirs.t
-share/tmake/reliant-cds/tmake.conf
-share/tmake/sco-g++/app.t
-share/tmake/sco-g++/lib.t
-share/tmake/sco-g++/subdirs.t
-share/tmake/sco-g++/tmake.conf
-share/tmake/solaris-64/app.t
-share/tmake/solaris-64/lib.t
-share/tmake/solaris-64/subdirs.t
-share/tmake/solaris-64/tmake.conf
-share/tmake/solaris-cc-gcc/app.t
-share/tmake/solaris-cc-gcc/lib.t
-share/tmake/solaris-cc-gcc/subdirs.t
-share/tmake/solaris-cc-gcc/tmake.conf
-share/tmake/solaris-cc/app.t
-share/tmake/solaris-cc/lib.t
-share/tmake/solaris-cc/subdirs.t
-share/tmake/solaris-cc/tmake.conf
-share/tmake/solaris-g++/app.t
-share/tmake/solaris-g++/lib.t
-share/tmake/solaris-g++/subdirs.t
-share/tmake/solaris-g++/tmake.conf
-share/tmake/sunos-g++/app.t
-share/tmake/sunos-g++/lib.t
-share/tmake/sunos-g++/subdirs.t
-share/tmake/sunos-g++/tmake.conf
-share/tmake/ultrix-g++/app.t
-share/tmake/ultrix-g++/lib.t
-share/tmake/ultrix-g++/subdirs.t
-share/tmake/ultrix-g++/tmake.conf
-share/tmake/unix/app.t
-share/tmake/unix/generic.t
-share/tmake/unix/lib.t
-share/tmake/unix/subdirs.t
-share/tmake/unix/generic.t.orig
-share/tmake/unixware-g++/app.t
-share/tmake/unixware-g++/lib.t
-share/tmake/unixware-g++/subdirs.t
-share/tmake/unixware-g++/tmake.conf
-share/tmake/unixware7-cc/app.t
-share/tmake/unixware7-cc/lib.t
-share/tmake/unixware7-cc/subdirs.t
-share/tmake/unixware7-cc/tmake.conf
-share/tmake/unixware7-g++/app.t
-share/tmake/unixware7-g++/lib.t
-share/tmake/unixware7-g++/subdirs.t
-share/tmake/unixware7-g++/tmake.conf
-share/tmake/win32-borland/app.t
-share/tmake/win32-borland/generic.t
-share/tmake/win32-borland/lib.t
-share/tmake/win32-borland/subdirs.t
-share/tmake/win32-borland/tmake.conf
-share/tmake/win32-g++/app.t
-share/tmake/win32-g++/generic.t
-share/tmake/win32-g++/lib.t
-share/tmake/win32-g++/subdirs.t
-share/tmake/win32-g++/tmake.conf
-share/tmake/win32-msvc/app.t
-share/tmake/win32-msvc/generic.t
-share/tmake/win32-msvc/lib.t
-share/tmake/win32-msvc/subdirs.t
-share/tmake/win32-msvc/tmake.conf
-share/tmake/win32-msvc/vcapp.t
-share/tmake/win32-msvc/vcgeneric.t
-share/tmake/win32-msvc/vclib.t
-share/tmake/win32-msvc/win32app.dsp
-share/tmake/win32-msvc/win32dll.dsp
-share/tmake/win32-msvc/win32lib.dsp
-share/tmake/win32-symantec/app.t
-share/tmake/win32-symantec/generic.t
-share/tmake/win32-symantec/lib.t
-share/tmake/win32-symantec/subdirs.t
-share/tmake/win32-symantec/tmake.conf
-share/tmake/win32-visage/app.t
-share/tmake/win32-visage/generic.t
-share/tmake/win32-visage/lib.t
-share/tmake/win32-visage/subdirs.t
-share/tmake/win32-visage/tmake.conf
-share/tmake/win32-watcom/app.t
-share/tmake/win32-watcom/generic.t
-share/tmake/win32-watcom/lib.t
-share/tmake/win32-watcom/subdirs.t
-share/tmake/win32-watcom/tmake.conf
-share/tmake/win32/subdirs.t
-@dirrm share/tmake/aix-g++
-@dirrm share/tmake/aix-xlc
-@dirrm share/tmake/bsdi-g++
-@dirrm share/tmake/dgux-g++
-@dirrm share/tmake/freebsd-g++
-@dirrm share/tmake/hpux-acc
-@dirrm share/tmake/hpux-cc
-@dirrm share/tmake/hpux-g++
-@dirrm share/tmake/hpux-n64
-@dirrm share/tmake/hpux-o64
-@dirrm share/tmake/hurd-g++
-@dirrm share/tmake/irix-64
-@dirrm share/tmake/irix-g++
-@dirrm share/tmake/irix-n32
-@dirrm share/tmake/irix-o32
-@dirrm share/tmake/linux-cxx
-@dirrm share/tmake/linux-g++
-@dirrm share/tmake/linux-kcc
-@dirrm share/tmake/netbsd-g++
-@dirrm share/tmake/openbsd-g++
-@dirrm share/tmake/osf1-cxx
-@dirrm share/tmake/osf1-g++
-@dirrm share/tmake/qnx-rtp-g++
-@dirrm share/tmake/qws/linux-arm-g++
-@dirrm share/tmake/qws/linux-cassiopeia-g++
-@dirrm share/tmake/qws/linux-generic-g++
-@dirrm share/tmake/qws/linux-ipaq-g++
-@dirrm share/tmake/qws/linux-mips-g++
-@dirrm share/tmake/qws/linux-x86-g++
-@dirrm share/tmake/qws
-@dirrm share/tmake/reliant-cds
-@dirrm share/tmake/sco-g++
-@dirrm share/tmake/solaris-64
-@dirrm share/tmake/solaris-cc-gcc
-@dirrm share/tmake/solaris-cc
-@dirrm share/tmake/solaris-g++
-@dirrm share/tmake/sunos-g++
-@dirrm share/tmake/ultrix-g++
-@dirrm share/tmake/unix
-@dirrm share/tmake/unixware-g++
-@dirrm share/tmake/unixware7-cc
-@dirrm share/tmake/unixware7-g++
-@dirrm share/tmake/win32-borland
-@dirrm share/tmake/win32-g++
-@dirrm share/tmake/win32-msvc
-@dirrm share/tmake/win32-symantec
-@dirrm share/tmake/win32-visage
-@dirrm share/tmake/win32-watcom
-@dirrm share/tmake/win32
-@dirrm share/tmake
+%%DATADIR%%/aix-g++/app.t
+%%DATADIR%%/aix-g++/lib.t
+%%DATADIR%%/aix-g++/subdirs.t
+%%DATADIR%%/aix-g++/tmake.conf
+%%DATADIR%%/aix-xlc/app.t
+%%DATADIR%%/aix-xlc/lib.t
+%%DATADIR%%/aix-xlc/subdirs.t
+%%DATADIR%%/aix-xlc/tmake.conf
+%%DATADIR%%/bsdi-g++/app.t
+%%DATADIR%%/bsdi-g++/lib.t
+%%DATADIR%%/bsdi-g++/subdirs.t
+%%DATADIR%%/bsdi-g++/tmake.conf
+%%DATADIR%%/dgux-g++/app.t
+%%DATADIR%%/dgux-g++/lib.t
+%%DATADIR%%/dgux-g++/subdirs.t
+%%DATADIR%%/dgux-g++/tmake.conf
+%%DATADIR%%/freebsd-g++/app.t
+%%DATADIR%%/freebsd-g++/lib.t
+%%DATADIR%%/freebsd-g++/subdirs.t
+%%DATADIR%%/freebsd-g++/tmake.conf
+%%DATADIR%%/freebsd-g++/tmake.conf.orig
+%%DATADIR%%/hpux-acc/app.t
+%%DATADIR%%/hpux-acc/lib.t
+%%DATADIR%%/hpux-acc/subdirs.t
+%%DATADIR%%/hpux-acc/tmake.conf
+%%DATADIR%%/hpux-cc/app.t
+%%DATADIR%%/hpux-cc/lib.t
+%%DATADIR%%/hpux-cc/subdirs.t
+%%DATADIR%%/hpux-cc/tmake.conf
+%%DATADIR%%/hpux-g++/app.t
+%%DATADIR%%/hpux-g++/lib.t
+%%DATADIR%%/hpux-g++/subdirs.t
+%%DATADIR%%/hpux-g++/tmake.conf
+%%DATADIR%%/hpux-n64/app.t
+%%DATADIR%%/hpux-n64/lib.t
+%%DATADIR%%/hpux-n64/subdirs.t
+%%DATADIR%%/hpux-n64/tmake.conf
+%%DATADIR%%/hpux-o64/app.t
+%%DATADIR%%/hpux-o64/lib.t
+%%DATADIR%%/hpux-o64/subdirs.t
+%%DATADIR%%/hpux-o64/tmake.conf
+%%DATADIR%%/hurd-g++/app.t
+%%DATADIR%%/hurd-g++/lib.t
+%%DATADIR%%/hurd-g++/subdirs.t
+%%DATADIR%%/hurd-g++/tmake.conf
+%%DATADIR%%/irix-64/app.t
+%%DATADIR%%/irix-64/lib.t
+%%DATADIR%%/irix-64/subdirs.t
+%%DATADIR%%/irix-64/tmake.conf
+%%DATADIR%%/irix-g++/app.t
+%%DATADIR%%/irix-g++/lib.t
+%%DATADIR%%/irix-g++/subdirs.t
+%%DATADIR%%/irix-g++/tmake.conf
+%%DATADIR%%/irix-n32/app.t
+%%DATADIR%%/irix-n32/lib.t
+%%DATADIR%%/irix-n32/subdirs.t
+%%DATADIR%%/irix-n32/tmake.conf
+%%DATADIR%%/irix-o32/app.t
+%%DATADIR%%/irix-o32/lib.t
+%%DATADIR%%/irix-o32/subdirs.t
+%%DATADIR%%/irix-o32/tmake.conf
+%%DATADIR%%/linux-cxx/app.t
+%%DATADIR%%/linux-cxx/lib.t
+%%DATADIR%%/linux-cxx/subdirs.t
+%%DATADIR%%/linux-cxx/tmake.conf
+%%DATADIR%%/linux-g++/app.t
+%%DATADIR%%/linux-g++/lib.t
+%%DATADIR%%/linux-g++/subdirs.t
+%%DATADIR%%/linux-g++/tmake.conf
+%%DATADIR%%/linux-kcc/app.t
+%%DATADIR%%/linux-kcc/lib.t
+%%DATADIR%%/linux-kcc/subdirs.t
+%%DATADIR%%/linux-kcc/tmake.conf
+%%DATADIR%%/netbsd-g++/app.t
+%%DATADIR%%/netbsd-g++/lib.t
+%%DATADIR%%/netbsd-g++/subdirs.t
+%%DATADIR%%/netbsd-g++/tmake.conf
+%%DATADIR%%/openbsd-g++/app.t
+%%DATADIR%%/openbsd-g++/lib.t
+%%DATADIR%%/openbsd-g++/subdirs.t
+%%DATADIR%%/openbsd-g++/tmake.conf
+%%DATADIR%%/osf1-cxx/app.t
+%%DATADIR%%/osf1-cxx/lib.t
+%%DATADIR%%/osf1-cxx/subdirs.t
+%%DATADIR%%/osf1-cxx/tmake.conf
+%%DATADIR%%/osf1-g++/app.t
+%%DATADIR%%/osf1-g++/lib.t
+%%DATADIR%%/osf1-g++/subdirs.t
+%%DATADIR%%/osf1-g++/tmake.conf
+%%DATADIR%%/qnx-rtp-g++/app.t
+%%DATADIR%%/qnx-rtp-g++/lib.t
+%%DATADIR%%/qnx-rtp-g++/subdirs.t
+%%DATADIR%%/qnx-rtp-g++/tmake.conf
+%%DATADIR%%/qws/linux-arm-g++/app.t
+%%DATADIR%%/qws/linux-arm-g++/lib.t
+%%DATADIR%%/qws/linux-arm-g++/subdirs.t
+%%DATADIR%%/qws/linux-arm-g++/tmake.conf
+%%DATADIR%%/qws/linux-cassiopeia-g++/app.t
+%%DATADIR%%/qws/linux-cassiopeia-g++/lib.t
+%%DATADIR%%/qws/linux-cassiopeia-g++/subdirs.t
+%%DATADIR%%/qws/linux-cassiopeia-g++/tmake.conf
+%%DATADIR%%/qws/linux-generic-g++/app.t
+%%DATADIR%%/qws/linux-generic-g++/lib.t
+%%DATADIR%%/qws/linux-generic-g++/subdirs.t
+%%DATADIR%%/qws/linux-generic-g++/tmake.conf
+%%DATADIR%%/qws/linux-ipaq-g++/app.t
+%%DATADIR%%/qws/linux-ipaq-g++/lib.t
+%%DATADIR%%/qws/linux-ipaq-g++/subdirs.t
+%%DATADIR%%/qws/linux-ipaq-g++/tmake.conf
+%%DATADIR%%/qws/linux-mips-g++/app.t
+%%DATADIR%%/qws/linux-mips-g++/lib.t
+%%DATADIR%%/qws/linux-mips-g++/subdirs.t
+%%DATADIR%%/qws/linux-mips-g++/tmake.conf
+%%DATADIR%%/qws/linux-x86-g++/app.t
+%%DATADIR%%/qws/linux-x86-g++/lib.t
+%%DATADIR%%/qws/linux-x86-g++/subdirs.t
+%%DATADIR%%/qws/linux-x86-g++/tmake.conf
+%%DATADIR%%/reliant-cds/app.t
+%%DATADIR%%/reliant-cds/lib.t
+%%DATADIR%%/reliant-cds/subdirs.t
+%%DATADIR%%/reliant-cds/tmake.conf
+%%DATADIR%%/sco-g++/app.t
+%%DATADIR%%/sco-g++/lib.t
+%%DATADIR%%/sco-g++/subdirs.t
+%%DATADIR%%/sco-g++/tmake.conf
+%%DATADIR%%/solaris-64/app.t
+%%DATADIR%%/solaris-64/lib.t
+%%DATADIR%%/solaris-64/subdirs.t
+%%DATADIR%%/solaris-64/tmake.conf
+%%DATADIR%%/solaris-cc-gcc/app.t
+%%DATADIR%%/solaris-cc-gcc/lib.t
+%%DATADIR%%/solaris-cc-gcc/subdirs.t
+%%DATADIR%%/solaris-cc-gcc/tmake.conf
+%%DATADIR%%/solaris-cc/app.t
+%%DATADIR%%/solaris-cc/lib.t
+%%DATADIR%%/solaris-cc/subdirs.t
+%%DATADIR%%/solaris-cc/tmake.conf
+%%DATADIR%%/solaris-g++/app.t
+%%DATADIR%%/solaris-g++/lib.t
+%%DATADIR%%/solaris-g++/subdirs.t
+%%DATADIR%%/solaris-g++/tmake.conf
+%%DATADIR%%/sunos-g++/app.t
+%%DATADIR%%/sunos-g++/lib.t
+%%DATADIR%%/sunos-g++/subdirs.t
+%%DATADIR%%/sunos-g++/tmake.conf
+%%DATADIR%%/ultrix-g++/app.t
+%%DATADIR%%/ultrix-g++/lib.t
+%%DATADIR%%/ultrix-g++/subdirs.t
+%%DATADIR%%/ultrix-g++/tmake.conf
+%%DATADIR%%/unix/app.t
+%%DATADIR%%/unix/generic.t
+%%DATADIR%%/unix/lib.t
+%%DATADIR%%/unix/subdirs.t
+%%DATADIR%%/unix/generic.t.orig
+%%DATADIR%%/unixware-g++/app.t
+%%DATADIR%%/unixware-g++/lib.t
+%%DATADIR%%/unixware-g++/subdirs.t
+%%DATADIR%%/unixware-g++/tmake.conf
+%%DATADIR%%/unixware7-cc/app.t
+%%DATADIR%%/unixware7-cc/lib.t
+%%DATADIR%%/unixware7-cc/subdirs.t
+%%DATADIR%%/unixware7-cc/tmake.conf
+%%DATADIR%%/unixware7-g++/app.t
+%%DATADIR%%/unixware7-g++/lib.t
+%%DATADIR%%/unixware7-g++/subdirs.t
+%%DATADIR%%/unixware7-g++/tmake.conf
+%%DATADIR%%/win32-borland/app.t
+%%DATADIR%%/win32-borland/generic.t
+%%DATADIR%%/win32-borland/lib.t
+%%DATADIR%%/win32-borland/subdirs.t
+%%DATADIR%%/win32-borland/tmake.conf
+%%DATADIR%%/win32-g++/app.t
+%%DATADIR%%/win32-g++/generic.t
+%%DATADIR%%/win32-g++/lib.t
+%%DATADIR%%/win32-g++/subdirs.t
+%%DATADIR%%/win32-g++/tmake.conf
+%%DATADIR%%/win32-msvc/app.t
+%%DATADIR%%/win32-msvc/generic.t
+%%DATADIR%%/win32-msvc/lib.t
+%%DATADIR%%/win32-msvc/subdirs.t
+%%DATADIR%%/win32-msvc/tmake.conf
+%%DATADIR%%/win32-msvc/vcapp.t
+%%DATADIR%%/win32-msvc/vcgeneric.t
+%%DATADIR%%/win32-msvc/vclib.t
+%%DATADIR%%/win32-msvc/win32app.dsp
+%%DATADIR%%/win32-msvc/win32dll.dsp
+%%DATADIR%%/win32-msvc/win32lib.dsp
+%%DATADIR%%/win32-symantec/app.t
+%%DATADIR%%/win32-symantec/generic.t
+%%DATADIR%%/win32-symantec/lib.t
+%%DATADIR%%/win32-symantec/subdirs.t
+%%DATADIR%%/win32-symantec/tmake.conf
+%%DATADIR%%/win32-visage/app.t
+%%DATADIR%%/win32-visage/generic.t
+%%DATADIR%%/win32-visage/lib.t
+%%DATADIR%%/win32-visage/subdirs.t
+%%DATADIR%%/win32-visage/tmake.conf
+%%DATADIR%%/win32-watcom/app.t
+%%DATADIR%%/win32-watcom/generic.t
+%%DATADIR%%/win32-watcom/lib.t
+%%DATADIR%%/win32-watcom/subdirs.t
+%%DATADIR%%/win32-watcom/tmake.conf
+%%DATADIR%%/win32/subdirs.t
+@dirrm %%DATADIR%%/aix-g++
+@dirrm %%DATADIR%%/aix-xlc
+@dirrm %%DATADIR%%/bsdi-g++
+@dirrm %%DATADIR%%/dgux-g++
+@dirrm %%DATADIR%%/freebsd-g++
+@dirrm %%DATADIR%%/hpux-acc
+@dirrm %%DATADIR%%/hpux-cc
+@dirrm %%DATADIR%%/hpux-g++
+@dirrm %%DATADIR%%/hpux-n64
+@dirrm %%DATADIR%%/hpux-o64
+@dirrm %%DATADIR%%/hurd-g++
+@dirrm %%DATADIR%%/irix-64
+@dirrm %%DATADIR%%/irix-g++
+@dirrm %%DATADIR%%/irix-n32
+@dirrm %%DATADIR%%/irix-o32
+@dirrm %%DATADIR%%/linux-cxx
+@dirrm %%DATADIR%%/linux-g++
+@dirrm %%DATADIR%%/linux-kcc
+@dirrm %%DATADIR%%/netbsd-g++
+@dirrm %%DATADIR%%/openbsd-g++
+@dirrm %%DATADIR%%/osf1-cxx
+@dirrm %%DATADIR%%/osf1-g++
+@dirrm %%DATADIR%%/qnx-rtp-g++
+@dirrm %%DATADIR%%/qws/linux-arm-g++
+@dirrm %%DATADIR%%/qws/linux-cassiopeia-g++
+@dirrm %%DATADIR%%/qws/linux-generic-g++
+@dirrm %%DATADIR%%/qws/linux-ipaq-g++
+@dirrm %%DATADIR%%/qws/linux-mips-g++
+@dirrm %%DATADIR%%/qws/linux-x86-g++
+@dirrm %%DATADIR%%/qws
+@dirrm %%DATADIR%%/reliant-cds
+@dirrm %%DATADIR%%/sco-g++
+@dirrm %%DATADIR%%/solaris-64
+@dirrm %%DATADIR%%/solaris-cc-gcc
+@dirrm %%DATADIR%%/solaris-cc
+@dirrm %%DATADIR%%/solaris-g++
+@dirrm %%DATADIR%%/sunos-g++
+@dirrm %%DATADIR%%/ultrix-g++
+@dirrm %%DATADIR%%/unix
+@dirrm %%DATADIR%%/unixware-g++
+@dirrm %%DATADIR%%/unixware7-cc
+@dirrm %%DATADIR%%/unixware7-g++
+@dirrm %%DATADIR%%/win32-borland
+@dirrm %%DATADIR%%/win32-g++
+@dirrm %%DATADIR%%/win32-msvc
+@dirrm %%DATADIR%%/win32-symantec
+@dirrm %%DATADIR%%/win32-visage
+@dirrm %%DATADIR%%/win32-watcom
+@dirrm %%DATADIR%%/win32
+@dirrm %%DATADIR%%
