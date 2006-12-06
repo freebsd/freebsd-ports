@@ -719,6 +719,17 @@ MASTER_SITE_NETBSD+=	\
 	ftp://melanoma.cs.rmit.edu.au/pub/NetBSD/packages/distfiles/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_NVIDIA)
+MASTER_SITE_NVIDIA+=	\
+	http://jp.download.nvidia.com/%SUBDIR%/ \
+	http://us.download.nvidia.com/%SUBDIR%/ \
+	http://tw.download.nvidia.com/%SUBDIR%/ \
+	http://download.nvidia.com/%SUBDIR%/ \
+	http://download1.nvidia.com/%SUBDIR%/ \
+	ftp://download.nvidia.com/%SUBDIR%/ \
+	ftp://download1.nvidia.com/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_OSSP)
 MASTER_SITE_OSSP+= \
 	ftp://ftp.ossp.org/pkg/%SUBDIR%/ \
