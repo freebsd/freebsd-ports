@@ -72,7 +72,6 @@ www/validator/htdocs/images/arrow_left.gif
 www/validator/htdocs/images/arrow_right.gif
 www/validator/htdocs/images/bg1.gif
 www/validator/htdocs/images/bg2.gif
-www/validator/htdocs/images/debian.png
 www/validator/htdocs/images/ellipsis.gif
 www/validator/htdocs/images/footer.jpg
 www/validator/htdocs/images/footer.png
@@ -276,6 +275,8 @@ www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-special.ent
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-struct-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-symbol.ent
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-text-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920/xhtml-print10-model-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920/xhtml-print10.dtd
 www/validator/htdocs/sgml-lib/REC-xhtml1-20020801/xhtml-lat1.ent
 www/validator/htdocs/sgml-lib/REC-xhtml1-20020801/xhtml-special.ent
 www/validator/htdocs/sgml-lib/REC-xhtml1-20020801/xhtml-symbol.ent
@@ -326,6 +327,7 @@ www/validator/share/templates/en_US/opt_show_source.tmpl
 www/validator/share/templates/en_US/popup_charset.tmpl
 www/validator/share/templates/en_US/popup_doctype.tmpl
 www/validator/share/templates/en_US/result.tmpl
+www/validator/share/templates/en_US/soap_disabled.tmpl
 www/validator/share/templates/en_US/soap_fault.tmpl
 www/validator/share/templates/en_US/soap_output.tmpl
 www/validator/share/templates/en_US/soap_warnings.tmpl
@@ -345,6 +347,7 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
+@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
 @dirrm www/validator/htdocs/sgml-lib/REC-smil20-20050107
 @dirrm www/validator/htdocs/sgml-lib/REC-smil-19980615
 @dirrm www/validator/htdocs/sgml-lib/REC-html401-19991224
