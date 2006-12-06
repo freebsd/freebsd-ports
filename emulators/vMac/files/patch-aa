@@ -44,7 +44,7 @@ diff -ruN ../vMac-0.1.9.3.old/Makefile.in ./Makefile.in
  .SUFFIXES: .o .c .h .m .i .S
  
 -INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I.
-+INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I. -I/usr/X11R6/include/
++INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes $(X_CFLAGS) -I/usr/local/include -I.
  
  OBJS =	custom.o main.o prefs.o	debug.o	gemulator.o \
  	$(GFXOBJS)
@@ -142,7 +142,7 @@ diff -ruN ../vMac-0.1.9.3.old/freebsd.patch ./freebsd.patch
 + .SUFFIXES: .o .c .h .m .i .S
 + 
 +-INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I.
-++INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I. -I/usr/X11R6/include/
+++INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes $(X_CFLAGS) -I/usr/local/include -I.
 + 
 + OBJS =	custom.o main.o prefs.o	debug.o	gemulator.o \
 + 	$(GFXOBJS)
