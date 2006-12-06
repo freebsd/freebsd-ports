@@ -8,16 +8,13 @@
 PORTNAME=	csv
 PORTVERSION=	1.2.2
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://rrr.jin.gr.jp/download/
+MASTER_SITES=	http://dev.ctor.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby library to parse or generate data in CSV format
-
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2006-12-30
 
 USE_RUBY=	yes
 
