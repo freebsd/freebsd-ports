@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-3g-0.${PORTVERSION:S,.,-,}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	NTFS read-write driver for 32-bit, little-endian architectures
+COMMENT=	Mount NTFS partitions and disk images
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	fusefs-libs>=2.6.0:${PORTSDIR}/sysutils/fusefs-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-ONLY_FOR_ARCH=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 INSTALLS_SHLIB=	yes
 
 post-patch:
