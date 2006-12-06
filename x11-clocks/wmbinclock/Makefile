@@ -20,6 +20,8 @@ USE_XPM=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <values.h>||' ${WRKSRC}/wmBinClock.c
+	@${REINPLACE_CMD} -e 's|^CC.*=|CC ?=|' -e 's|^CFLAGS.*=|CFLAGS +=|' \
+		-e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmBinClock ${PREFIX}/bin
