@@ -1,0 +1,54 @@
+diff -urN -x .svn ../c-ares-stock-1.3.2/ares.h ./ares.h
+--- ../c-ares-stock-1.3.2/ares.h	Wed Dec  6 11:28:12 2006
++++ ./ares.h	Wed Dec  6 11:49:07 2006
+@@ -164,6 +164,14 @@
+   void *sock_state_cb_data;
+ };
+ 
++/** Public available config (readonly) interface for ares_get_config(). */
++struct ares_config_info {
++	int timeout;
++	int tries;
++	int numservers;
++	char **servers;
++};
++
+ struct hostent;
+ struct timeval;
+ struct sockaddr;
+@@ -216,7 +224,7 @@
+ void ares_free_string(void *str);
+ void ares_free_hostent(struct hostent *host);
+ const char *ares_strerror(int code);
+-
++int ares_get_config(struct ares_config_info *d, ares_channel c);
+ #ifdef  __cplusplus
+ }
+ #endif
+diff -urN -x .svn ../c-ares-stock-1.3.2/ares_init.c ./ares_init.c
+--- ../c-ares-stock-1.3.2/ares_init.c	Wed Dec  6 11:28:12 2006
++++ ./ares_init.c	Wed Dec  6 11:49:07 2006
+@@ -1079,3 +1079,23 @@
+     pat->mask.addr.addr4.s_addr = htonl(IN_CLASSC_NET);
+ }
+ #endif
++
++int ares_get_config(struct ares_config_info *d, ares_channel c)
++{
++int i;
++char *p;
++
++	memset(d, 0, sizeof(struct ares_config_info));
++	
++	d->timeout = c->timeout;
++	d->tries = c->tries;
++	d->numservers = c->nservers;
++	d->servers = calloc(sizeof(char *), c->nservers);
++	for (i = 0; i < c->nservers; i++)
++	{
++		p = inet_ntoa(c->servers[i].addr);
++		d->servers[i] = p ? strdup(p) : NULL;
++	}
++
++	return ARES_SUCCESS;
++}
