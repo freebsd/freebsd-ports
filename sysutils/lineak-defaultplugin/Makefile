@@ -19,6 +19,7 @@ LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_XLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--program-prefix=''
