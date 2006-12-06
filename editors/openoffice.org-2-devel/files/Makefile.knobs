@@ -133,11 +133,6 @@ pre-fetch:
 	@${ECHO} "You can compile OOo with evolution2 support by"
 	@${ECHO} "make -DWITH_EVOLUTION2"
 .endif
-.if !defined(WITH_MENU)
-	@${ECHO}
-	@${ECHO} "You can install OOo with menu items by"
-	@${ECHO} "make -DWITH_MENU"
-.endif
 	@${ECHO}
 	@${ECHO} "NOTICE:"
 	@${ECHO}
