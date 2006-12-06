@@ -1,12 +1,12 @@
 # New ports collection makefile for:	versuch
 # Date created:				1 October 2006
-# Whom:					warlock
+# Whom:					warlock <warlock@elcat.kg>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	versuch
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		http://warlock.elcat.kg/

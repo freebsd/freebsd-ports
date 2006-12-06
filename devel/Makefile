@@ -1998,7 +1998,6 @@
     SUBDIR += valgrind-snapshot
     SUBDIR += varconf
     SUBDIR += vb2c
-    SUBDIR += versuch
     SUBDIR += viewvc
     SUBDIR += vstr
     SUBDIR += vtcl
