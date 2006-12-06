@@ -1,5 +1,5 @@
---- pstoraster.in.orig	Wed Jun  8 09:11:26 2005
-+++ pstoraster.in	Wed Jun  8 09:13:19 2005
+--- pstoraster/pstoraster.in.orig	Wed Jun  8 09:11:26 2005
++++ pstoraster/pstoraster.in	Wed Jun  8 09:13:19 2005
 @@ -27,7 +27,7 @@
  bindir=@bindir@
  
