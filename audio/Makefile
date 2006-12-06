@@ -282,6 +282,7 @@
     SUBDIR += ifp-line
     SUBDIR += jack
     SUBDIR += jamboree
+    SUBDIR += jamin
     SUBDIR += java-xmms2
     SUBDIR += jid3lib
     SUBDIR += jmusic
