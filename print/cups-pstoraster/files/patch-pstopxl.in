@@ -1,5 +1,5 @@
---- pstopxl.in.orig	Mon Feb 21 18:13:47 2005
-+++ pstopxl.in	Wed Jun  8 09:11:00 2005
+--- pstoraster/pstopxl.in.orig	Mon Feb 21 18:13:47 2005
++++ pstoraster/pstopxl.in	Wed Jun  8 09:11:00 2005
 @@ -27,7 +27,7 @@
  bindir=@bindir@
  
