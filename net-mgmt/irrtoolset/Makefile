@@ -27,6 +27,7 @@ CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl8.3:${PREFIX}/include/tk
 		TCL_LIBRARY=${PREFIX}/lib/tcl8.3 \
 		TK_LIBRARY=${PREFIX}/lib/tk8.3 \
 		LD_TCL_TK_LIBS="-ltk83 -ltcl83"
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 MAN1=		CIDRAdvisor.1 Errors.1 RtConfig.1 aoe.1 peval.1 prpath.1 \
 		prtraceroute.1 roe.1 rpslcheck.1
