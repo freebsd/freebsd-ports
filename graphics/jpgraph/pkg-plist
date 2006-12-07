@@ -13,6 +13,7 @@
 %%DATADIR%%/jpgraph_antispam-digits.php
 %%DATADIR%%/jpgraph_antispam.php
 %%DATADIR%%/jpgraph_date.php
+%%DATADIR%%/jpgraph_errhandler.inc.php
 %%DATADIR%%/jpgraph_iconplot.php
 %%DATADIR%%/jpgraph_plotband.php
 %%DATADIR%%/jpgraph.php
