@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	4Suite-XML
-PORTVERSION=	1.0.b3
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foursuite
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	4Suite-XML-1.0b3
 
 MAINTAINER=	mike@skew.org
 COMMENT=	A collection of Python tools for XML processing
@@ -23,8 +21,13 @@ REINPLACE_ARGS=	-i "" -E
 USE_PYTHON=	2.2.1+
 USE_PYDISTUTILS=	yes
 
-WRKSRC=		${WRKDIR}/4Suite-1.0b3
 CONFLICTS=	py*-4suite-[01]*
+
+# xml.sax.make_parser() needs to return an Expat parser in order to
+# support generation of API docs in XML format. --with/without-docs
+# only affects whether the XML is rendered to other formats and
+# installed.  PyExpat is already installed in python-2.3.2_2 and up.
+BUILD_DEPENDS=	${PYEXPAT}
 
 .include <bsd.port.pre.mk>
 
@@ -62,12 +65,6 @@ PYDISTUTILS_INSTALLARGS=	--without-docs
 .else
 PYDISTUTILS_BUILDARGS=		--with-docs
 PYDISTUTILS_INSTALLARGS=	--with-docs
-BUILD_DEPENDS=	${PYEXPAT}
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
