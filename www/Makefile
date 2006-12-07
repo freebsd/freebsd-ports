@@ -514,6 +514,7 @@
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-Application-Plugin-AutoRunmode
     SUBDIR += p5-CGI-Application-Plugin-DBH
+    SUBDIR += p5-CGI-Application-Plugin-DevPopup
     SUBDIR += p5-CGI-Application-Plugin-HTDot
     SUBDIR += p5-CGI-Application-Plugin-Redirect
     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
