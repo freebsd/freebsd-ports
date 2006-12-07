@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.38
-PORTREVISION=	1
+PORTVERSION=	2.41
 CATEGORIES=	lang lisp
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME} \
+		GNU/${PORTNAME}/release/${PORTVERSION} \
+		ftp://sunsite.unc.edu/pub/Linux/devel/lang/lisp/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Common Lisp implementation
@@ -80,6 +80,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER}
 IGNORE=		selected different implementations of the same X11 module
 .endif
 .if defined(WITH_CLX_MIT) || defined(WITH_CLX_NEW)
+# Avoid USE_XLIB because of the additional CONFIGURE_ARGS.
 LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
 .endif
 .if defined(WITH_CLX_MIT)

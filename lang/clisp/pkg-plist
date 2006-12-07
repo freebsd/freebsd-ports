@@ -135,6 +135,13 @@ share/locale/nl/LC_MESSAGES/clisp.mo
 share/locale/nl/LC_MESSAGES/clisplow.mo
 share/locale/ru/LC_MESSAGES/clisp.mo
 share/locale/ru/LC_MESSAGES/clisplow.mo
+share/emacs/site-lisp/clhs.el
+share/emacs/site-lisp/clisp-coding.el
+share/emacs/site-lisp/clisp-indent.el
+share/emacs/site-lisp/clisp-indent.lisp
+share/emacs/site-lisp/clisp-ffi.el
+@dirrmtry share/emacs/site-lisp
+@dirrmtry share/emacs
 @dirrm %%DOCSDIR%%/doc
 @dirrm %%DOCSDIR%%
 @dirrm lib/clisp/linkkit
