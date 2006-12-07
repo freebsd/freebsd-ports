@@ -11434,6 +11434,7 @@ pinentry-gtk	ports/security/pinentry-gtk
 pinentry-gtk2	ports/security/pinentry-gtk2
 pinentry-qt	ports/security/pinentry-qt
 pinfo		ports/misc/pinfo
+pinot		ports/deskutils/pinot
 pinstall	ports/devel/pinstall
 pioneers	ports/games/pioneers
 pipe		ports/misc/pipe
