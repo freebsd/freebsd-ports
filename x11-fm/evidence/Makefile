@@ -100,7 +100,7 @@ PLIST_SUB+=	VORBIS:=""
 CONFIGURE_ARGS+=--disable-thumbnailer-xine
 PLIST_SUB+=	XINE:="@comment "
 .else
-LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-thumbnailer-xine
 PLIST_SUB+=	XINE:=""
 .endif

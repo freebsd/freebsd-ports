@@ -6,6 +6,7 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	kaffeine
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
-LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 
 USE_BZIP2=		yes

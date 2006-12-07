@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		xine.15:${PORTSDIR}/multimedia/libxine \
+		xine.16:${PORTSDIR}/multimedia/libxine \
 		exo-0.3.0:${PORTSDIR}/x11/libexo
 
 OPTIONS=	TAGLIB	"Enable metadata editing"	off \
