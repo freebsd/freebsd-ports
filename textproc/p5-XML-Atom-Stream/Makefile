@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Atom-Stream
-PORTVERSION=	0.03
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	A client interface for AtomStream
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/XML/Handler/Trees.pm:${PORTSDIR}/textproc/p5-XML-Handler-Trees \
-		${SITE_PERL}/XML/Atom.pm:${PORTSDIR}/textproc/p5-XML-Atom
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		p5-XML-SAX>=0.12:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-XML-Handler-Trees>=0.02:${PORTSDIR}/textproc/p5-XML-Handler-Trees \
+		p5-XML-Atom>=0.20:${PORTSDIR}/textproc/p5-XML-Atom \
+		p5-XML-LibXML>=1.59:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=	XML::Atom::Stream.3
 
