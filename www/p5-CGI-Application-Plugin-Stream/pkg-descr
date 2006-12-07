@@ -1,0 +1,17 @@
+This plugin provides a way to stream a file back to the user.
+
+This is useful if you are creating a PDF or Spreadsheet document
+dynamically to deliver to the user.
+
+The file is read and printed in small chunks to keep memory
+consumption down.
+
+This plugin is a consumer, as in your runmode shouldn't try to do any
+output or anything afterwards. This plugin affects the HTTP response
+headers, so anything you do afterwards will probably not work. If you
+pass along a filehandle, we'll make sure to close it for you.
+
+It's recommended that you increment $| (or set it to 1), which will
+autoflush the buffer as your application is streaming out the file.
+
+WWW: http://search.cpan.org/dist/CGI-Application-Plugin-Stream/

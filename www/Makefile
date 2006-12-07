@@ -521,6 +521,7 @@
     SUBDIR += p5-CGI-Application-Plugin-HTMLPrototype
     SUBDIR += p5-CGI-Application-Plugin-HtmlTidy
     SUBDIR += p5-CGI-Application-Plugin-Redirect
+    SUBDIR += p5-CGI-Application-Plugin-Stream
     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
     SUBDIR += p5-CGI-Application-Server
     SUBDIR += p5-CGI-ArgChecker
