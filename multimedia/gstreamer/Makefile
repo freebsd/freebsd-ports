@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.10
-PORTREVISION=	1
+PORTVERSION=	0.10.11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_LOCAL}
@@ -30,7 +29,8 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-docs-build \
-		--disable-failing-tests
+		--disable-failing-tests \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		ac_cv_func_register_printf_function="no"
