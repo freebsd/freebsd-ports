@@ -8427,6 +8427,7 @@ p5-CGI-Application-Plugin-DBH	ports/www/p5-CGI-Application-Plugin-DBH
 p5-CGI-Application-Plugin-DevPopup	ports/www/p5-CGI-Application-Plugin-DevPopup
 p5-CGI-Application-Plugin-Forward	ports/www/p5-CGI-Application-Plugin-Forward
 p5-CGI-Application-Plugin-HTDot	ports/www/p5-CGI-Application-Plugin-HTDot
+p5-CGI-Application-Plugin-HTMLPrototype	ports/www/p5-CGI-Application-Plugin-HTMLPrototype
 p5-CGI-Application-Plugin-Redirect	ports/www/p5-CGI-Application-Plugin-Redirect
 p5-CGI-Application-Plugin-ValidateRM	ports/www/p5-CGI-Application-Plugin-ValidateRM
 p5-CGI-Application-Server	ports/www/p5-CGI-Application-Server
