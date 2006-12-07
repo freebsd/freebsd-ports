@@ -23,11 +23,13 @@ include/gstreamer-%%VERSION%%/gst/interfaces/propertyprobe.h
 include/gstreamer-%%VERSION%%/gst/interfaces/tuner.h
 include/gstreamer-%%VERSION%%/gst/interfaces/tunerchannel.h
 include/gstreamer-%%VERSION%%/gst/interfaces/tunernorm.h
+include/gstreamer-%%VERSION%%/gst/interfaces/videoorientation.h
 include/gstreamer-%%VERSION%%/gst/interfaces/xoverlay.h
 include/gstreamer-%%VERSION%%/gst/netbuffer/gstnetbuffer.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-ids.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-media.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-read.h
+include/gstreamer-%%VERSION%%/gst/rtp/gstbasertpaudiopayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstbasertpdepayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstbasertppayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtpbuffer.h
@@ -53,6 +55,9 @@ lib/gstreamer-%%VERSION%%/libgstaudiotestsrc.so
 lib/gstreamer-%%VERSION%%/libgstdecodebin.a
 lib/gstreamer-%%VERSION%%/libgstdecodebin.la
 lib/gstreamer-%%VERSION%%/libgstdecodebin.so
+lib/gstreamer-%%VERSION%%/libgstdecodebin2.a
+lib/gstreamer-%%VERSION%%/libgstdecodebin2.la
+lib/gstreamer-%%VERSION%%/libgstdecodebin2.so
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.a
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.la
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.so
