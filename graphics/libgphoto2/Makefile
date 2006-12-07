@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -23,14 +22,12 @@ USE_GNOME=	gnometarget pkgconfig ltverhack
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 LIBTOOLFILES=	configure libgphoto2_port/configure
-INSTALLS_SHLIB=	yes
-PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.6.1
+USE_LDCONFIG=	yes
+PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.7.0
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
-
-#LIBUSB_CFLAGS=	-I${LOCALBASE}/include
-#LIBUSB_LIBS=	-L${LOCALBASE}/lib
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -44,14 +41,11 @@ post-patch:
 .for file in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
 		's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g ; \
-		 s|-g ||g' ${WRKSRC}/${file}
+		 s|-g -O2||g' ${WRKSRC}/${file}
 .endfor
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|: install-docDATA|:|g'
 	@${REINPLACE_CMD} -e 's|linux-hotplug ||' ${WRKSRC}/packaging/Makefile.in
-
-pre-build:
-	@cd ${WRKSRC} && ${GMAKE} all-local
+	@${REINPLACE_CMD} -e 's|$$(CPPFLAGS) $$(AM_CPPFLAGS)|$$(AM_CPPFLAGS) $$(CPPFLAGS)|' \
+		${WRKSRC}/camlibs/directory/Makefile.in ${WRKSRC}/camlibs/sierra/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
