@@ -29,6 +29,7 @@ etc/snort/unicode.map-sample
 @exec if [ ! -f %D/etc/snort/unicode.map ] ; then cp -p %D/%F %B/snort/unicode.map; fi
 @dirrmtry etc/snort/rules
 @dirrmtry etc/snort
+%%DYNAMIC%%src/snort_dynamicsrc/bitop.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_common.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_meta.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preprocessor.h
@@ -36,6 +37,8 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.c
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_packet.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_plugin_api.h
+%%DYNAMIC%%src/snort_dynamicsrc/sfghash.h
+%%DYNAMIC%%src/snort_dynamicsrc/sfhashfcn.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.c
 %%DYNAMIC%%src/snort_dynamicsrc/snort_packet_header.h
@@ -51,6 +54,10 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.la
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.a
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicengine
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.a
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so.0
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.la
@@ -63,6 +70,10 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so.0
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.a
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
 %%DYNAMIC%%@dirrmtry lib/snort
 %%EXAMPLESDIR%%/classification.config-sample
@@ -84,6 +95,7 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ARUBA
 %%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
 %%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP2
 %%PORTDOCS%%%%DOCSDIR%%/README.INLINE
@@ -96,6 +108,7 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.asn1
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/README.database
+%%PORTDOCS%%%%DOCSDIR%%/README.dcerpc
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
 %%PORTDOCS%%%%DOCSDIR%%/README.flow
@@ -105,6 +118,9 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.ftptelnet
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
 %%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
+%%PORTDOCS%%%%DOCSDIR%%/README.ssh
+%%PORTDOCS%%%%DOCSDIR%%/README.stream4
+%%PORTDOCS%%%%DOCSDIR%%/README.stream5
 %%PORTDOCS%%%%DOCSDIR%%/README.thresholding
 %%PORTDOCS%%%%DOCSDIR%%/README.wireless
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
