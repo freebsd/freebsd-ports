@@ -2,7 +2,7 @@ Cwdaemon is a small daemon which uses the pc parallel or serial port and a
 simple transistor switch to output morse code to a transmitter from a text
 message sent to it via the udp internet protocol. 
 
-WWW: http://pg4i.mattsnetwork.co.uk/linux/cwdaemon.html
+WWW: http://www.qsl.net/pg4i/
 
 - Diane (VA3DB)
 db@db.net

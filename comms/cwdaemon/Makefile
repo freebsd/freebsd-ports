@@ -8,7 +8,8 @@
 PORTNAME=	cwdaemon
 PORTVERSION=	0.9.2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/
+MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
+		http://www.qsl.net/pg4i/download/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	db@db.net
