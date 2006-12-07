@@ -1,0 +1,43 @@
+# New ports collection makefile for:	multiget
+# Date created:				2006-11-03
+# Whom:					alepulver
+#
+# $FreeBSD$
+#
+
+PORTNAME=	multiget
+PORTVERSION=	1.0
+CATEGORIES=	ftp www
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}${PORTVERSION}.src
+
+MAINTAINER=	alepulver@FreeBSD.org
+COMMENT=	An http/ftp downloader with a nice GUI
+
+USE_BZIP2=	yes
+USE_WX=		2.6
+MAKEFILE=	makefile
+ALL_TARGET=	MultiGet
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|g++|${CXX}|; \
+		 s|\(CFLAGS\) =|\1 +=|; \
+		 s|wx-config|${WX_CONFIG}|' \
+		 ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -Ee 's,(fopen|ftruncate)64,\1,' \
+		${WRKSRC}/mgfilemanager.cpp
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/MultiGet ${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not build
+.endif
+
+.include <bsd.port.post.mk>
