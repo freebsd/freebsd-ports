@@ -41,6 +41,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>gnupg</name>
 	<range><lt>1.4.6</lt></range>
       </package>
+      <package>
+	<name>gnupg-devel</name>
+	<range><le>1.9.22_1</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -87,6 +91,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <cvename>CVE-2006-6235</cvename>
       <url>http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000246.html</url>
+      <url>http://secunia.com/advisories/23245/</url>
     </references>
     <dates>
       <discovery>2006-12-04</discovery>
