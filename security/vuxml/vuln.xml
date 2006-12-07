@@ -41,10 +41,6 @@ Note:  Please add new entries to the beginning of this file.
 	<name>gnupg</name>
 	<range><lt>1.4.6</lt></range>
       </package>
-      <package>
-	<name>gnupg-devel</name>
-	<range><le>1.9.22_1</le></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
