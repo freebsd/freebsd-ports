@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.23c
-PORTREVISION?=		2
+PORTVERSION?=		3.0.23d
+PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -64,25 +64,25 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
 		ACL_SUPPORT	"With ACL support" off \
-		AIO_SUPPORT	"With experimental AIO support" off \
 		FAM_SUPPORT	"With File Alteration Monitor" off \
 		SYSLOG		"With Syslog support" off \
 		QUOTAS		"With Disk quota support" off \
 		UTMP		"With UTMP accounting support" on \
 		MSDFS		"With MSDFS support" off \
-		SMBSH		"With SMBSH wrapper for UNIX commands" off \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
+		CLUSTER		"With experimental cluster support" off \
 		EXP_MODULES	"With experimental modules" off \
-		POPT		"With system-wide POPT library" on
+		POPT		"With system-wide POPT library" on \
+		MAX_DEBUG	"With maximum debuging" off
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(SAMBA_SUBPORT)
 # Switch off all extra functionality
-CONFIGURE_ARGS+=	--disable-cups --without-winbind --without-syslog \
-			--without-quotas --without-utmp --without-pam \
-			--without-pam_smbpass --without-aio-support
+CONFIGURE_ARGS+=	--disable-cups --disable-fam --without-winbind \
+			--without-syslog --without-quotas --without-utmp \
+			--without-pam --without-pam_smbpass --without-aio-support
 
 # Dirty hack to work around usage of OPTIONS in slave ports
 .	if exists(${.CURDIR}/Makefile.inc)
@@ -111,6 +111,16 @@ SUB_LIST+=		CUPSD=""
 .else
 CONFIGURE_ARGS+=	--disable-cups
 SUB_LIST+=		CUPSD="@comment "
+.endif
+
+.if defined(WITH_MAX_DEBUG)
+LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--enable-debug --enable-developer --enable-krb5developer --enable-dmalloc --with-profiling-data
+.else
+CONFIGURE_ARGS+=	--disable-debug --disable-developer --disable-krb5developer --disable-dmalloc --without-profiling-data
 .endif
 
 .if defined(WITH_SYSLOG)
@@ -153,25 +163,20 @@ PLIST_SUB+=		WINBIND="@comment "
 SUB_LIST+=		WINBIND="@comment "
 .endif
 
-# Taken from bsd.port.mk
-.if exists(${LOCALBASE}/libexec/gam_server)
-WANT_FAM_SYSTEM=	gamin
-WITH_FAM_SUPPORT=	on
-.	undef		WITHOUT_FAM_SUPPORT
-.elif exists(${LOCALBASE}/bin/fam)
-WANT_FAM_SYSTEM=	fam
-WITH_FAM_SUPPORT=	on
-.	undef		WITHOUT_FAM_SUPPORT
-.endif
-
-.if defined(WITH_FAM_SUPPORT) || defined(WANT_FAM_SYSTEM)
+.if defined(WITH_FAM_SUPPORT)
 USE_FAM=		yes
+CONFIGURE_ARGS+=	--enable-fam
+.else
+CONFIGURE_ARGS+=	--disable-fam
 .endif
 
 .if defined(WITH_EXP_MODULES)
-.if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
-WANT_EXP_MODULES=	rpc_echo idmap_ad idmap_rid charset_weird
-.endif
+.	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
+WANT_EXP_MODULES=	idmap_ad idmap_rid charset_weird
+.		if !defined(WITH_MAX_DEBUG)
+WANT_EXP_MODULES+=	rpc_echo
+.		endif
+.	endif
 WANT_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
 CONFIGURE_ARGS+=	--with-shared-modules=${WANT_EXP_MODULES}
 .endif
@@ -186,7 +191,7 @@ PLIST_SUB+=		SMBPASS="@comment "
 
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
-BROKEN=			ACL support requires FreeBSD 5.x at least after 20010326
+BROKEN=			ACL support requires FreeBSD 5.x at least after 20010326. Disable ACL support
 .endif
 CONFIGURE_ARGS+=	--with-acl-support
 .else
@@ -194,7 +199,7 @@ CONFIGURE_ARGS+=	--without-acl-support
 .endif
 
 .if defined(WITH_SMBSH)
-IGNORE=			broken IPC and code
+IGNORE=			broken IPC and code. Disable SMBSH support
 CONFIGURE_ARGS+=	--with-smbwrapper
 PLIST_SUB+=		SMBSH=""
 .else
@@ -202,8 +207,14 @@ CONFIGURE_ARGS+=	--without-smbwrapper
 PLIST_SUB+=		SMBSH="@comment "
 .endif
 
+.if defined(WITH_CLUSTER)
+CONFIGURE_ARGS+=	--with-cluster-support
+.else
+CONFIGURE_ARGS+=	--without-cluster-support
+.endif
+
 .if defined(WITH_AIO_SUPPORT)
-IGNORE=			broken kernel API until now (7-CURRENT)
+IGNORE=			broken kernel API until now (7-CURRENT). Disable AIO support
 CONFIGURE_ARGS+=	--with-aio-support
 .else
 CONFIGURE_ARGS+=	--without-aio-support
@@ -240,11 +251,11 @@ CONFIGURE_ARGS+=	--without-ads
 .endif
 # Kerberos5 is necessary for ADS
 .if defined(SAMBA_WANT_KRB5)
-.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
+.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
-.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
+.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.so)
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
-.elif exists(${DESTDIR}/usr/lib/libkrb5.a) && exists(${DESTDIR}/usr/bin/krb5-config)
+.elif exists(${DESTDIR}/usr/lib/libkrb5.so) && exists(${DESTDIR}/usr/bin/krb5-config)
 CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
@@ -299,10 +310,6 @@ SUB_LIST+=	SAMBA_LOGDIR=${SAMBA_LOGDIR} \
 		SAMBA_PRIVATE=${SAMBA_PRIVATE}
 
 pre-everything::
-.if defined(WANT_FAM_SYSTEM)
-	@${ECHO_CMD} "===>  NOTICE: ${WANT_FAM_SYSTEM} detected, forcing FAM_SUPPORT"
-	@${ECHO_CMD} ""
-.endif
 	@${ECHO_CMD} "===>  NOTICE: This version of port has changed location of Samba password"
 	@${ECHO_CMD} "===>  NOTICE: (smbpasswd) directory. Files in '${SAMBA_PRIVATE}'"
 	@${ECHO_CMD} "===>  NOTICE: have moved to '${SAMBA_PRIVATEDIR}'."
@@ -340,16 +347,14 @@ post-install:
 	    @${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/${man} ${MAN${sect}PREFIX}/man/man${sect}
 .	endfor
 .endfor
+# Put examples in place
 	@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/* ${EXAMPLESDIR}
 .if defined(WITH_PAM_SMBPASS)
 	@${MKDIR} ${EXAMPLESDIR}/pam_smbpass
 	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* ${EXAMPLESDIR}/pam_smbpass
 .endif
-	${INSTALL_DATA} ${WRKDIR}/${SAMBA_CONFIG}.sample ${SAMBA_CONFDIR}
-	@if [ ! -f ${SAMBA_CONFDIR}/${SAMBA_CONFIG} ]; then \
-	    ${INSTALL_DATA} ${WRKDIR}/${SAMBA_CONFIG}.sample ${SAMBA_CONFDIR}/${SAMBA_CONFIG} ; \
-	fi
+	${CP} -p ${WRKDIR}/${SAMBA_CONFIG}.sample ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
 # Winbind
 .if !defined(WITHOUT_WINBIND)

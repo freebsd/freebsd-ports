@@ -1,14 +1,6 @@
---- configure.in.orig	Fri Jul 21 18:22:57 2006
-+++ configure.in	Thu Aug 24 01:30:57 2006
-@@ -242,7 +242,6 @@
- AC_SUBST(SHELL)
- AC_SUBST(LDSHFLAGS)
- AC_SUBST(SONAMEFLAG)
--AC_SUBST(NSSSONAMEVERSIONSUFFIX)
- AC_SUBST(SHLD)
- AC_SUBST(HOST_OS)
- AC_SUBST(PICFLAGS)
-@@ -1089,6 +1088,21 @@
+--- configure.in.orig	Tue Nov 14 15:42:15 2006
++++ configure.in	Sat Nov 18 03:19:57 2006
+@@ -1088,6 +1088,21 @@
     AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
  fi
  
@@ -30,69 +22,67 @@
  AC_CACHE_CHECK([for struct timespec type],samba_cv_struct_timespec, [
      AC_TRY_COMPILE([
  #include <sys/types.h>
-@@ -1639,7 +1653,6 @@
- HOST_OS="$host_os"
- LDSHFLAGS="-shared"
- SONAMEFLAG="#"
--NSSSONAMEVERSIONSUFFIX=""
- SHLD="\${CC} \${CFLAGS}"
- PICFLAGS=""
- PICSUFFIX="po"
-@@ -1664,7 +1677,6 @@
- 			DYNEXP="-Wl,--export-dynamic"
- 			PICFLAGS="-fPIC"
- 			SONAMEFLAG="-Wl,-soname="
--			NSSSONAMEVERSIONSUFFIX=".2"
- 			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
- 			;;
- 		*solaris*) AC_DEFINE(SUNOS5,1,[Whether the host os is solaris])
-@@ -1674,7 +1686,6 @@
- 			if test "${GCC}" = "yes"; then
- 				PICFLAGS="-fPIC"
- 				SONAMEFLAG="-Wl,-soname="
--				NSSSONAMEVERSIONSUFFIX=".1"
- 				if test "${ac_cv_prog_gnu_ld}" = "yes"; then
- 					DYNEXP="-Wl,-E"
- 				fi
-@@ -4882,6 +4893,7 @@
- 	AC_MSG_RESULT(yes)
- 	case "$host_os" in
- 	*)
-+		AIO_LIBS=$LIBS
- 		AC_CHECK_LIB(rt,aio_read,[AIO_LIBS="$LIBS -lrt"])
- 		AC_CHECK_LIB(aio,aio_read,[AIO_LIBS="$LIBS -laio"])
- 		AC_CACHE_CHECK([for asynchronous io support],samba_cv_HAVE_AIO,[
-@@ -5282,14 +5294,17 @@
- WINBIND_NSS="nsswitch/libnss_winbind.$SHLIBEXT"
- WINBIND_WINS_NSS="nsswitch/libnss_wins.$SHLIBEXT"
- WINBIND_NSS_LDSHFLAGS=$LDSHFLAGS
-+NSSSONAMEVERSIONSUFFIX=""
+@@ -2463,32 +2478,40 @@
+ # Check if FAM notifications are available. For FAM info, see
+ #	http://oss.sgi.com/projects/fam/
+ #	http://savannah.nongnu.org/projects/fam/
++AC_ARG_ENABLE(fam,
++[  --enable-fam            Turn on FAM support (default=auto)])
  
- case "$host_os" in
- 	*linux*)
-+		NSSSONAMEVERSIONSUFFIX=".2"
- 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_linux.o"
- 		;;
- 	*freebsd[[5-9]]*)
- 		# FreeBSD winbind client is implemented as a wrapper around
- 		# the Linux version.
-+		NSSSONAMEVERSIONSUFFIX=".1"
- 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
- 		    nsswitch/winbind_nss_linux.o"
- 		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
-@@ -5304,6 +5319,7 @@
- 	*solaris*)
- 		# Solaris winbind client is implemented as a wrapper around
- 		# the Linux version.
-+		NSSSONAMEVERSIONSUFFIX=".1"
- 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_solaris.o \
- 		    nsswitch/winbind_nss_linux.o"
- 		WINBIND_NSS_EXTRA_LIBS="-lsocket"
-@@ -5330,6 +5346,7 @@
- AC_SUBST(WINBIND_NSS_LDSHFLAGS)
- AC_SUBST(WINBIND_NSS_EXTRA_OBJS)
- AC_SUBST(WINBIND_NSS_EXTRA_LIBS)
-+AC_SUBST(NSSSONAMEVERSIONSUFFIX)
+-AC_CHECK_HEADERS(fam.h, [samba_cv_HAVE_FAM_H=yes], [samba_cv_HAVE_FAM_H=no])
+-if test x"$samba_cv_HAVE_FAM_H" = x"yes"; then
+-    # On IRIX, libfam requires libC, but other FAM implementations might not
+-    # need it.
+-    AC_CHECK_LIB(fam, FAMOpen2,
+-	    [samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam"],
+-	    [samba_cv_HAVE_LIBFAM=no])
+-
+-    if test x"$samba_cv_HAVE_LIBFAM" = x"no" ; then
+-	samba_fam_xtra=-lC
+-	AC_CHECK_LIB_EXT(fam, samba_fam_xtra, FAMOpen2,
+-		[samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam -lC"],
+-		[samba_cv_HAVE_LIBFAM=no])
+-	unset samba_fam_xtra
++if test x$enable_fam != xno; then
++    AC_CHECK_HEADERS(fam.h, [samba_cv_HAVE_FAM_H=yes], [samba_cv_HAVE_FAM_H=no])
++    if test x"$samba_cv_HAVE_FAM_H" = x"yes"; then
++        # On IRIX, libfam requires libC, but other FAM implementations
++	# might not need it.
++        AC_CHECK_LIB(fam, FAMOpen2,
++            [samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam"],
++            [samba_cv_HAVE_LIBFAM=no])
++
++        if test x"$samba_cv_HAVE_LIBFAM" = x"no" ; then
++            samba_fam_xtra=-lC
++            AC_CHECK_LIB_EXT(fam, samba_fam_xtra, FAMOpen2,
++                [samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam -lC"],
++                [samba_cv_HAVE_LIBFAM=no])
++            unset samba_fam_xtra
++        fi
+     fi
+-fi
  
- # Check the setting of --with-winbind
+-if test x"$samba_cv_HAVE_LIBFAM" = x"yes" ; then
+-    AC_DEFINE(HAVE_FAM_CHANGE_NOTIFY, 1,
+-	    [Whether FAM is file notifications are available])
+-    AC_TRY_COMPILE([#include <fam.h>],
+-		[FAMCodes code = FAMChanged;],
+-		AC_DEFINE(HAVE_FAM_H_FAMCODES_TYPEDEF, 1,
+-		    [Whether fam.h contains a typedef for enum FAMCodes]),
+-		[])
++    if test x"$samba_cv_HAVE_LIBFAM" = x"yes" ; then
++        AC_DEFINE(HAVE_FAM_CHANGE_NOTIFY, 1,
++                [Whether FAM file notifications are available])
++        AC_TRY_COMPILE([#include <fam.h>],
++                    [FAMCodes code = FAMChanged;],
++                    AC_DEFINE(HAVE_FAM_H_FAMCODES_TYPEDEF, 1,
++                        [Whether fam.h contains a typedef for enum FAMCodes]),
++                    [])
++    fi
++
++    if test x$enable_fam = xyes && test x"$samba_cv_HAVE_LIBFAM" != xyes ; then
++        AC_MSG_ERROR(FAM support requested but FAM library not available )
++    fi
+ fi
  
+ #################################################

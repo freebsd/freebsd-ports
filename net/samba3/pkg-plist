@@ -23,8 +23,6 @@ bin/tdbtool
 bin/testparm
 %%SMBSH%%bin/smbsh
 %%WINBIND%%bin/wbinfo
-@unexec if cmp -s %%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%% %%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%.sample; then rm -f %%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%; fi
-@unexec rm -f %%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%.sample
 sbin/smbd
 sbin/nmbd
 sbin/swat
@@ -112,6 +110,7 @@ sbin/swat
 %%EXAMPLESDIR%%/scripts/shares/python/smbparm.py
 %%EXAMPLESDIR%%/scripts/wins_hook/README
 %%EXAMPLESDIR%%/scripts/wins_hook/dns_update
+%%EXAMPLESDIR%%/%%SAMBA_CONFIG%%.sample
 %%EXAMPLESDIR%%/smb.conf.default
 %%EXAMPLESDIR%%/tridge/README
 %%EXAMPLESDIR%%/tridge/smb.conf
