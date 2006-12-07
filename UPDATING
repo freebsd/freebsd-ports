@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061207:
+   AFFECTS: users of net/samba3
+   AUTHOR: timur@gnu.org
+     
+   Version 3.0.23d of net/samba3 finally got ability to conditionaly
+   link smbd daemon against FAM libraries. If you don't need this
+   support make sure that it's not selected in the options menu -
+   run 'make config' to verify it. You can remove FAM package if it
+   was installed before as a part of Samba dependencies.
+
 20061201:
   AFFECTS: users of mail/assp
   AUTHOR: fbsd@opal.com
