@@ -48,7 +48,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000491.html">
 	  <p>
 	    GnuPG uses data structures called filters to process
-	    OpenPGP messages.  These filters ware used in a similar
+	    OpenPGP messages.  These filters are used in a similar
 	    way as a pipelines in the shell.  For communication
 	    between these filters context structures are used.  These
 	    are usually allocated on the stack and passed to the
@@ -86,7 +86,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-6235</cvename>
-      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000491.html</url>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000246.html</url>
     </references>
     <dates>
       <discovery>2006-12-04</discovery>
