@@ -5358,6 +5358,7 @@ jpeginfo	ports/graphics/jpeginfo
 jpegoptim	ports/graphics/jpegoptim
 jpegpixi	ports/graphics/jpegpixi
 jpgraph		ports/graphics/jpgraph
+jpgraph2	ports/graphics/jpgraph2
 jpgtn		ports/graphics/jpgtn
 jpilot		ports/palm/jpilot
 jpilot-db	ports/palm/jpilot-db
