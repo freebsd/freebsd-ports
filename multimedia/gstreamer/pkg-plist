@@ -29,6 +29,7 @@ include/gstreamer-%%VERSION%%/gst/gstchildproxy.h
 include/gstreamer-%%VERSION%%/gst/gstclock.h
 include/gstreamer-%%VERSION%%/gst/gstcompat.h
 include/gstreamer-%%VERSION%%/gst/gstconfig.h
+include/gstreamer-%%VERSION%%/gst/base/gstdataqueue.h
 include/gstreamer-%%VERSION%%/gst/gstelement.h
 include/gstreamer-%%VERSION%%/gst/gstelementfactory.h
 include/gstreamer-%%VERSION%%/gst/gstenumtypes.h
