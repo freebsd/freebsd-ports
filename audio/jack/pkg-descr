@@ -10,4 +10,3 @@ its design focuses on two key areas: synchronous execution of all
 clients, and low latency operation. 
 
 WWW:	http://jackit.sourceforge.net/
-Author:	Paul Davis

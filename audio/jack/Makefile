@@ -3,9 +3,11 @@
 # Whom:				arved
 #
 # $FreeBSD$
+#
 
 PORTNAME=	jackit
 PORTVERSION=	0.102.20
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jackit
@@ -73,6 +75,8 @@ post-patch:
 		${WRKSRC}/example-clients/Makefile.in
 	@${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in
+	@${REINPLACE_CMD} -e 's|md5sum|md5 -q|g' \
+		${WRKSRC}/jackd/Makefile.in
 
 post-build:
 	@${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
