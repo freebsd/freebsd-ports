@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	biology perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bio
@@ -15,15 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Phylogenetic analysis using perl
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Math/Random.pm:${PORTSDIR}/math/p5-Math-Random \
-		${SITE_PERL}/SVG.pm:${PORTSDIR}/textproc/p5-SVG \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Math-Random>=0.67:${PORTSDIR}/math/p5-Math-Random \
+		p5-IO-String>=1.05:${PORTSDIR}/devel/p5-IO-String \
+		p5-SVG>=1.07:${PORTSDIR}/textproc/p5-SVG
+
+MAN1=	dndtag.pl.1
 
 MAN3=	Bio::Phylo.3 \
+	Bio::Phylo::ConfigData.3 \
 	Bio::Phylo::Forest.3 \
 	Bio::Phylo::Forest::Node.3 \
 	Bio::Phylo::Forest::Tree.3 \
@@ -32,12 +32,8 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Listable.3 \
 	Bio::Phylo::Manual.3 \
 	Bio::Phylo::Matrices.3 \
-	Bio::Phylo::Matrices::Alignment.3 \
 	Bio::Phylo::Matrices::Datum.3 \
 	Bio::Phylo::Matrices::Matrix.3 \
-	Bio::Phylo::Matrices::Sequence.3 \
-	Bio::Phylo::Parsers::Fastnewick.3 \
-	Bio::Phylo::Parsers::Fastnexus.3 \
 	Bio::Phylo::Parsers::Newick.3 \
 	Bio::Phylo::Parsers::Nexus.3 \
 	Bio::Phylo::Parsers::Table.3 \
@@ -54,12 +50,12 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Util::Exceptions.3 \
 	Bio::Phylo::Util::IDPool.3
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires at least Perl 5.8 due to dependencies.  Please install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500702
+IGNORE=	requires at least Perl 5.7.2 due to dependencies.  Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
