@@ -496,6 +496,7 @@
     SUBDIR += py-xmms2
     SUBDIR += pysol-sound-server
     SUBDIR += q-audio
+    SUBDIR += qjackctl
     SUBDIR += quelcom
     SUBDIR += raproxy
     SUBDIR += rawrec
