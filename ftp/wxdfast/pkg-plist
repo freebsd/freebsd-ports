@@ -1,0 +1,87 @@
+bin/wxdfast
+share/applications/wxdfast.desktop
+share/locale/cs/LC_MESSAGES/wxDFast.mo
+share/locale/de/LC_MESSAGES/wxDFast.mo
+share/locale/es/LC_MESSAGES/wxDFast.mo
+share/locale/pt_BR/LC_MESSAGES/wxDFast.mo
+share/pixmaps/wxdfast.png
+%%DATADIR%%/RipStop/icon/png/download_add.png
+%%DATADIR%%/RipStop/icon/png/download_info.png
+%%DATADIR%%/RipStop/icon/png/download_move_down.png
+%%DATADIR%%/RipStop/icon/png/download_move_up.png
+%%DATADIR%%/RipStop/icon/png/download_new.png
+%%DATADIR%%/RipStop/icon/png/download_remove.png
+%%DATADIR%%/RipStop/icon/png/download_start.png
+%%DATADIR%%/RipStop/icon/png/download_start_all.png
+%%DATADIR%%/RipStop/icon/png/download_stop.png
+%%DATADIR%%/RipStop/icon/png/download_stop_all.png
+%%DATADIR%%/RipStop/icon/svg/download_add.svg
+%%DATADIR%%/RipStop/icon/svg/download_info.svg
+%%DATADIR%%/RipStop/icon/svg/download_move_down.svg
+%%DATADIR%%/RipStop/icon/svg/download_move_up.svg
+%%DATADIR%%/RipStop/icon/svg/download_new.svg
+%%DATADIR%%/RipStop/icon/svg/download_remove.svg
+%%DATADIR%%/RipStop/icon/svg/download_start.svg
+%%DATADIR%%/RipStop/icon/svg/download_start_all.svg
+%%DATADIR%%/RipStop/icon/svg/download_stop.svg
+%%DATADIR%%/RipStop/icon/svg/download_stop_all.svg
+%%DATADIR%%/RipStop/licence.txt
+%%DATADIR%%/RipStop/logo/logo.png
+%%DATADIR%%/RipStop/logo/logo.svg
+%%DATADIR%%/RipStop/logo/logo_3d.png
+%%DATADIR%%/RipStop/logo/logo_3d.svg
+%%DATADIR%%/RipStop/logo/wxdfast.ico
+%%DATADIR%%/RipStop/logo/wxdfast.png
+%%DATADIR%%/RipStop/logo/wxdfast.svg
+%%DATADIR%%/RipStop/readme.txt
+%%DATADIR%%/RipStop/ripstop.png
+%%DATADIR%%/RipStop/ripstop.svg
+%%DATADIR%%/boxabout.xrc
+%%DATADIR%%/boxnew.xrc
+%%DATADIR%%/boxoptions.xrc
+%%DATADIR%%/mainwindow.xrc
+%%DATADIR%%/menubar.xrc
+%%DATADIR%%/toolbar.xrc
+%%DATADIR%%/xpm/big/close.xpm
+%%DATADIR%%/xpm/big/down.xpm
+%%DATADIR%%/xpm/big/new.xpm
+%%DATADIR%%/xpm/big/properties.xpm
+%%DATADIR%%/xpm/big/remove.xpm
+%%DATADIR%%/xpm/big/schedule.xpm
+%%DATADIR%%/xpm/big/start.xpm
+%%DATADIR%%/xpm/big/startall.xpm
+%%DATADIR%%/xpm/big/stop.xpm
+%%DATADIR%%/xpm/big/stopall.xpm
+%%DATADIR%%/xpm/big/up.xpm
+%%DATADIR%%/xpm/small/error.xpm
+%%DATADIR%%/xpm/small/exit.xpm
+%%DATADIR%%/xpm/small/graph.xpm
+%%DATADIR%%/xpm/small/new.xpm
+%%DATADIR%%/xpm/small/noresume.xpm
+%%DATADIR%%/xpm/small/ok.xpm
+%%DATADIR%%/xpm/small/options.xpm
+%%DATADIR%%/xpm/small/paste.xpm
+%%DATADIR%%/xpm/small/progress.xpm
+%%DATADIR%%/xpm/small/properties.xpm
+%%DATADIR%%/xpm/small/queue.xpm
+%%DATADIR%%/xpm/small/remove.xpm
+%%DATADIR%%/xpm/small/resume.xpm
+%%DATADIR%%/xpm/small/schedule.xpm
+%%DATADIR%%/xpm/small/start.xpm
+%%DATADIR%%/xpm/small/startall.xpm
+%%DATADIR%%/xpm/small/stop.xpm
+%%DATADIR%%/xpm/small/stopall.xpm
+%%DATADIR%%/xpm/small/wxdfast.xpm
+%%DATADIR%%/xpm/wxdfast.ico
+%%DATADIR%%/xpm/wxdfast.xpm
+@dirrm %%DATADIR%%/xpm/small
+@dirrm %%DATADIR%%/xpm/big
+@dirrm %%DATADIR%%/xpm
+@dirrm %%DATADIR%%/RipStop/logo
+@dirrm %%DATADIR%%/RipStop/icon/svg
+@dirrm %%DATADIR%%/RipStop/icon/png
+@dirrm %%DATADIR%%/RipStop/icon
+@dirrm %%DATADIR%%/RipStop
+@dirrm %%DATADIR%%
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
