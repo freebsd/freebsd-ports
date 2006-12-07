@@ -519,6 +519,7 @@
     SUBDIR += p5-CGI-Application-Plugin-Forward
     SUBDIR += p5-CGI-Application-Plugin-HTDot
     SUBDIR += p5-CGI-Application-Plugin-HTMLPrototype
+    SUBDIR += p5-CGI-Application-Plugin-HtmlTidy
     SUBDIR += p5-CGI-Application-Plugin-Redirect
     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
     SUBDIR += p5-CGI-Application-Server
