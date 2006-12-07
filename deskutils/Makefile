@@ -143,6 +143,7 @@
     SUBDIR += phpgroupware
     SUBDIR += phpicalendar
     SUBDIR += phprojekt
+    SUBDIR += pinot
     SUBDIR += plan
     SUBDIR += planner
     SUBDIR += planner.el
