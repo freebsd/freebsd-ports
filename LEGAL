@@ -357,7 +357,8 @@ jdk1_2_2-src.tar.gz	java/jdk12		Redistribution of pre-compiled
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled
 						binaries is not permitted
 john-*			security/john		Crypto; export-controlled
-jpgraph-*		graphics/jpgraph	Not for commercial use
+jpgraph-1.*		graphics/jpgraph	Not for commercial use
+jpgraph-2.*		graphics/jpgraph2	Not for commercial use
 jre*i_ELF.*.tar.gz	java/jre		License does not allow distribution
 						with fee
 jre118_v3-glibc-*	java/linux-blackdown-jre11 License does not allow
