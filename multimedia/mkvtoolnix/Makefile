@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
-		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
+MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ CSME
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
@@ -58,11 +57,11 @@ IMAGES_DATA=	\
 PLIST_DIRS+=	\
 		%%DATADIR%%/images \
 		%%DATADIR%%
-.for file in ${FILES_DATA}
-PLIST_FILES+=	%%DATADIR%%/${file}
+.for _file in ${FILES_DATA}
+PLIST_FILES+=	%%DATADIR%%/${_file}
 .endfor
-.for file in ${IMAGES_DATA}
-PLIST_FILES+=	%%DATADIR%%/images/${file}
+.for _file in ${IMAGES_DATA}
+PLIST_FILES+=	%%DATADIR%%/images/${_file}
 .endfor
 
 .ifndef(WITHOUT_WXGTK)
