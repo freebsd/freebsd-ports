@@ -12511,6 +12511,7 @@ qident		ports/security/qident
 qinx		ports/x11-themes/qinx
 qiv		ports/graphics/qiv
 qix		ports/games/qix
+qjackctl	ports/audio/qjackctl
 qkmj		ports/games/qkmj
 qlas		ports/misc/qlas
 qlogtools	ports/sysutils/qlogtools
