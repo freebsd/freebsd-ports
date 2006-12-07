@@ -59,6 +59,7 @@
     SUBDIR += mirror
     SUBDIR += moftpd
     SUBDIR += muddleftpd
+    SUBDIR += multiget
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += ncftp3
