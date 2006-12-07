@@ -1,32 +1,32 @@
-# New ports collection makefile for:	automake19
-# Date created:		15 Feb 2003
-# Whom:			Udo Schweigert
+# New ports collection makefile for:	automake110
+# Date created:		5th December 2006
+# Whom:			Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	automake
-PORTVERSION=	1.9.6
+PORTVERSION=	1.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU Standards-compliant Makefile generator (1.9)
+COMMENT=	GNU Standards-compliant Makefile generator (1.10)
 
 RUN_DEPENDS=	${AUTOCONF_DEPENDS}
 
-USE_AUTOTOOLS=	autoconf:259:env
-BUILD_VERSION=	19
+USE_AUTOTOOLS=	autoconf:261:env
+BUILD_VERSION=	110
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 MAKEINFO=makeinfo
+#CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION} \
-		--infodir=${PREFIX}/info
+		--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INFO=		automake${BUILD_VERSION}
 

@@ -1,28 +1,19 @@
---- aclocal.in.orig	Sat Apr 10 10:15:32 2004
-+++ aclocal.in	Wed May 26 14:33:27 2004
-@@ -31,3 +31,3 @@
+--- aclocal.in.orig	Sun Oct 15 09:19:37 2006
++++ aclocal.in	Tue Dec  5 13:19:21 2006
+@@ -32,3 +32,3 @@
  {
 -  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
 +  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@@APIPVERSION@';
    unshift @INC, (split '@PATH_SEPARATOR@', $perllibdir);
-@@ -47,4 +47,5 @@
- # Note also that the versioned directory is handled later.
--$acdir = '@datadir@/aclocal';
-+$acdir = '@datadir@/aclocal@APIPVERSION@';
- $default_acdir = $acdir;
-+$acdir_x11 = '%%X11BASE%%/share/aclocal';
- # contains a list of directories, one per line, to be added
-@@ -411,3 +412,3 @@
+@@ -58,4 +58,4 @@
+ my @user_includes = ();
+-my @automake_includes = ("@datadir@/aclocal-$APIVERSION");
+-my @system_includes = ('@datadir@/aclocal');
++my @automake_includes = ("@datadir@/aclocal$APIPVERSION");
++my @system_includes = ('@datadir@/aclocal', '%%X11BASE%%/share/aclocal');
+ 
+@@ -650,3 +650,3 @@
  
 -  my $traces = ($ENV{AUTOM4TE} || 'autom4te');
 +  my $traces = ($ENV{AUTOM4TE} || 'autom4te259');
    $traces .= " --language Autoconf-without-aclocal-m4 ";
-@@ -622,7 +623,3 @@
- 
--  # Search the versioned directory near the end, and then the
--  # unversioned directory last.  Only do this if the user didn't
--  # override acdir.
--  push (@dirlist, "$acdir-$APIVERSION")
--    if $acdir eq $default_acdir;
-+  unshift @dirlist, $acdir_x11 if -d "$acdir_x11/.";
- 

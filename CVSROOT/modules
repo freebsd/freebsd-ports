@@ -614,6 +614,7 @@ autodia		ports/devel/autodia
 autogen		ports/devel/autogen
 autoindex	ports/www/autoindex
 autoindex2	ports/www/autoindex2
+automake110	ports/devel/automake110
 automake14	ports/devel/automake14
 automake15	ports/devel/automake15
 automake19	ports/devel/automake19
