@@ -470,6 +470,7 @@
     SUBDIR += p5-Image-Info
     SUBDIR += p5-Image-MetaData-GQview
     SUBDIR += p5-Image-MetaData-JPEG
+    SUBDIR += p5-Image-PBMlib
     SUBDIR += p5-Image-Size
     SUBDIR += p5-Imager
     SUBDIR += p5-Imager-Graph
