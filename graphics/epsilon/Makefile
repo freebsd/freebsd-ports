@@ -42,7 +42,7 @@ PLIST_SUB+=	EPEG="@comment "
 .endif
 
 .if defined(WITH_XINE)
-LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-thumbnailer-xine
 PLIST_SUB+=	XINE=""
 .else
