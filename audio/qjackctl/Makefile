@@ -24,7 +24,4 @@ CONFIGURE_ARGS+=	QTDIR="${X11BASE}" CXXFLAGS="${CFLAGS} -pthread"
 MAKE_ENV=	QTDIR="${X11BASE}" MAKE="${GMAKE}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
 
-PLIST_DIRS=	@dirrmtry share/icons
-PLIST_FILES=	bin/qjackctl share/icons/qjackctl.png
-
 .include <bsd.port.mk>
