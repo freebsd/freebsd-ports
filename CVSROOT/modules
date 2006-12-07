@@ -7460,6 +7460,7 @@ mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
 multi-aterm	ports/x11/multi-aterm
 multi-backgrounds-daemon	ports/deskutils/multi-backgrounds-daemon
 multi-gnome-terminal	ports/x11/multi-gnome-terminal
+multiget	ports/ftp/multiget
 multisuck	ports/news/multisuck
 multisync	ports/deskutils/multisync
 multisync-backup	ports/deskutils/multisync-backup
