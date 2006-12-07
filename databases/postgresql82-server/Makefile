@@ -181,9 +181,8 @@ CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
 
-.  if (defined(SERVER_ONLY) && defined(WITH_TESTS)) || make(makesum)
+.  if (defined(SERVER_ONLY) && defined(WITH_TESTS)) || defined(WITH_THREADSAFE) || make(makesum)
 DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
-EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
 .  endif
 
 .  if defined(WITH_THREADSAFE)
