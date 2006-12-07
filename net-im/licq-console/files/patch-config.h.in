@@ -1,0 +1,8 @@
+--- config.h.in.orig	Sun Oct 15 14:13:57 2006
++++ config.h.in	Thu Dec  7 07:15:07 2006
+@@ -1,4 +1,5 @@
+ /* config.h.in.  Generated from configure.in by autoheader.  */
++#include <sys/types.h>
+ 
+ /* Define to 1 if you have the <dirent.h> header file. */
+ #undef HAVE_DIRENT_H
