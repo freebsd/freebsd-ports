@@ -1,0 +1,15 @@
+CGI::Application::Plugin::AnyTemplate allows you to use any supported
+Perl templating system using a single consistent interface.
+
+Currently supported templating systems include HTML::Template,
+HTML::Template::Expr, HTML::Template::Pluggable, Template::Toolkit and
+Petal.
+
+You can access any of these templating systems using the same
+interface. In this way, you can use the same code and switch
+templating systems on the fly.
+
+This approach has many uses. For instance, it can be useful in
+migrating your application from one templating system to another.
+
+WWW: http://search.cpan.org/dist/CGI-Application-Plugin-AnyTemplate/
