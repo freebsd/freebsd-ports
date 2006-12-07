@@ -29,7 +29,7 @@ LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
-BASE_PORTVERSION=	0.10.10
+BASE_PORTVERSION=	0.10.11
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
 BAD_PORTVERSION=	0.10.3
@@ -53,6 +53,7 @@ USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack
 USE_AUTOTOOLS=	libtool:15
 GST_PLUGIN?=	base
 
+CONFIGURE_ARGS+=--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib ${EXTRA_LIBS} ${PTHREAD_LIBS}"
@@ -138,7 +139,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 	${XARGS} -n 10 ${REINPLACE_CMD} -e \
 	's|malloc\.h|stdlib.h|; \
-	 s|stdint\.h|inttypes.h|; \
+	 s|<stdint\.h|<inttypes.h|; \
 	 s|%%VERSION%%|${VERSION}|'
 	 @${FIND} ${WRKSRC}/ext -name Makefile.in | \
 	 ${XARGS} -n 10 ${REINPLACE_CMD} -e \
