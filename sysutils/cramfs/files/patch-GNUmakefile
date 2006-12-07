@@ -1,0 +1,10 @@
+--- GNUmakefile.orig	Wed Nov 29 12:51:59 2006
++++ GNUmakefile	Wed Nov 29 12:52:06 2006
+@@ -1,5 +1,5 @@
+-CC = gcc
+-CFLAGS = -W -Wall -O2 -g
++CC ?= gcc
++CFLAGS ?= -W -Wall -O2 -g
+ CPPFLAGS = -I.
+ LDLIBS = -lz
+ PROGS = mkcramfs cramfsck

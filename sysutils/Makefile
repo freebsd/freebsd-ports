@@ -100,6 +100,7 @@
     SUBDIR += cpdup
     SUBDIR += cpu
     SUBDIR += cpuburn
+    SUBDIR += cramfs
     SUBDIR += crashme
     SUBDIR += cromwell
     SUBDIR += cronolog
