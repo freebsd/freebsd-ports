@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	7.0r68
+PORTVERSION=	7.0r69
 PORTREVISION=	0
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/
@@ -25,7 +25,7 @@ RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/install_flash_player_7_linux
 LATEST_LINK=	flash7
-PORTDOCS=	Readme.txt Readme.htm
+PORTDOCS=	Readme.txt
 
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so flashplayer.xpt
