@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.20.4a
+PORTVERSION=	1.20.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.chello.se/jpgraph/jpgdownloads/
 
