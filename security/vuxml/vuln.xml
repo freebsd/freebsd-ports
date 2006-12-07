@@ -34,6 +34,66 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4db1669c-8589-11db-ac4f-02e081235dab">
+    <topic>gnupg -- remotely controllable function pointer</topic>
+    <affects>
+      <package>
+	<name>gnupg</name>
+	<range><lt>1.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner Koch reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000491.html">
+	  <p>
+	    GnuPG uses data structures called filters to process
+	    OpenPGP messages.  These filters ware used in a similar
+	    way as a pipelines in the shell.  For communication
+	    between these filters context structures are used.  These
+	    are usually allocated on the stack and passed to the
+	    filter functions.  At most places the OpenPGP data stream
+	    fed into these filters is closed before the context
+	    structure gets deallocated.  While decrypting encrypted
+	    packets, this may not happen in all cases and the filter
+	    may use a void contest structure filled with garbage.  An
+	    attacker may control this garbage.  The filter context
+	    includes another context used by the low-level decryption
+	    to access the decryption algorithm.  This is done using a
+	    function pointer.  By carefully crafting an OpenPGP
+	    message, an attacker may control this function pointer and
+	    call an arbitrary function of the process.  Obviously an
+	    exploit needs to prepared for a specific version,
+	    compiler, libc, etc to be successful - but it is
+	    definitely doable.
+	  </p>
+	  <p>
+	    Fixing this is obvious: We need to allocate the context on
+	    the heap and use a reference count to keep it valid as
+	    long as either the controlling code or the filter code
+	    needs it.
+	  </p>
+	  <p>
+	    We have checked all other usages of such a stack based
+	    filter contexts but fortunately found no other vulnerable
+	    places.  This allows to release a relatively small patch.
+	    However, for reasons of code cleanness and easier audits
+	    we will soon start to change all these stack based filter
+	    contexts to heap based ones.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-6235</cvename>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000491.html</url>
+    </references>
+    <dates>
+      <discovery>2006-12-04</discovery>
+      <entry>2006-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8674c14-83d7-11db-88d5-0012f06707f0">
     <topic>ruby -- cgi.rb library Denial of Service</topic>
     <affects>
