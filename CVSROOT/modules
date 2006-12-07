@@ -15258,6 +15258,7 @@ wwwstat		ports/www/wwwstat
 wxGlade		ports/devel/wxGlade
 wxMaxima	ports/math/wxMaxima
 wxd		ports/x11-toolkits/wxd
+wxdfast		ports/ftp/wxdfast
 wxgtk24		ports/x11-toolkits/wxgtk24
 wxgtk24-contrib	ports/x11-toolkits/wxgtk24-contrib
 wxgtk24-docs	ports/x11-toolkits/wxgtk24-docs
