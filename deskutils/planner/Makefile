@@ -8,6 +8,7 @@
 
 PORTNAME=	planner
 PORTVERSION=	0.14.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.14
@@ -20,7 +21,7 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui \
-		libgsf
+		libgsf desktopfileutils
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
@@ -50,5 +51,8 @@ PLIST_SUB+=	GDA="@comment "
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]datadir[)]/doc|(prefix)/share/doc|g'
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
