@@ -109,6 +109,7 @@
     SUBDIR += wput
     SUBDIR += wu-ftpd
     SUBDIR += wu-ftpd+ipv6
+    SUBDIR += wxdfast
     SUBDIR += wzdftpd
     SUBDIR += xrmftp
     SUBDIR += yafc
