@@ -33,7 +33,9 @@ share/aclocal%%BUILD_VERSION%%/regex.m4
 share/aclocal%%BUILD_VERSION%%/runlog.m4
 share/aclocal%%BUILD_VERSION%%/sanity.m4
 share/aclocal%%BUILD_VERSION%%/strip.m4
+share/aclocal%%BUILD_VERSION%%/substnot.m4
 share/aclocal%%BUILD_VERSION%%/tar.m4
+share/aclocal%%BUILD_VERSION%%/upc.m4
 share/automake%%BUILD_VERSION%%/Automake/ChannelDefs.pm
 share/automake%%BUILD_VERSION%%/Automake/Channels.pm
 share/automake%%BUILD_VERSION%%/Automake/Condition.pm
@@ -112,6 +114,8 @@ share/automake%%BUILD_VERSION%%/py-compile
 share/automake%%BUILD_VERSION%%/symlink-tree
 share/automake%%BUILD_VERSION%%/texinfo.tex
 share/automake%%BUILD_VERSION%%/ylwrap
+share/doc/automake/amhello-1.0.tar.gz
+@dirrm share/doc/automake
 @dirrm share/aclocal%%BUILD_VERSION%%
 @dirrm share/automake%%BUILD_VERSION%%/Automake
 @dirrm share/automake%%BUILD_VERSION%%/am
