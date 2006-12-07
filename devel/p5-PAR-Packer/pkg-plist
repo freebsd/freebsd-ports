@@ -1,0 +1,25 @@
+bin/parl
+bin/parldyn
+bin/pp
+bin/par.pl
+bin/tkpp
+%%SITE_PERL%%/pp.pm
+%%SITE_PERL%%/App/Packer/PAR.pm
+%%SITE_PERL%%/PAR/Filter.pm
+%%SITE_PERL%%/PAR/Filter/Bleach.pm
+%%SITE_PERL%%/PAR/Filter/Bytecode.pm
+%%SITE_PERL%%/PAR/Filter/Obfuscate.pm
+%%SITE_PERL%%/PAR/Filter/PatchContent.pm
+%%SITE_PERL%%/PAR/Filter/PodStrip.pm
+%%SITE_PERL%%/PAR/Packer.pm
+%%SITE_PERL%%/PAR/StrippedPARL
+%%SITE_PERL%%/PAR/StrippedPARL/Base.pm
+%%SITE_PERL%%/PAR/StrippedPARL/Dynamic.pm
+%%SITE_PERL%%/PAR/StrippedPARL/Static.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Packer/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Packer
+@dirrmtry %%SITE_PERL%%/App/Packer
+@dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/PAR/StrippedPARL
+@dirrmtry %%SITE_PERL%%/PAR/Filter
+@dirrmtry %%SITE_PERL%%/PAR
