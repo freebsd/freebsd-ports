@@ -1,20 +1,33 @@
---- configure.orig	Sun Jul 23 21:25:31 2006
-+++ configure	Sun Jul 23 21:25:31 2006
-@@ -28905,7 +28905,7 @@
-                  "ac_cv_lib_avcodec_pp_get_context" \
-                  "ac_cv_lib_postproc_pp_get_context" \
-                  "ac_cv_lib_avcodec_register_avcodec"; do
--          $as_unset $i || test "${$i+set}" != set || { $i=; export $i; }
-+          $as_unset $i
-         done
+--- configure.orig	Thu Dec  7 00:50:39 2006
++++ configure	Thu Dec  7 01:20:03 2006
+@@ -8768,6 +8768,12 @@
+       fi
+       ;;
  
-                 if test "${ac_cv_header_avcodec_h+set}" = set; then
-@@ -38707,6 +38707,8 @@
- 
++    freebsd* | kfreebsd*-gnu | dragonfly*)
++      archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_direct=no
++      hardcode_minus_L=yes
++      ;;
++
+     linux*)
+       if $LD --help 2>&1 | grep ': supported targets:.* elf' > /dev/null; then
+ 	tmp_addflag=
+@@ -21903,7 +21909,7 @@
+                     if test -z "$haveit"; then
+                       LIBICONV="${LIBICONV}${LIBICONV:+ }-L$found_dir"
+                     fi
+-                    if test "$hardcode_minus_L" != no; then
++                    if test "$hardcode_minus_L" = no; then
+                                                                                         LIBICONV="${LIBICONV}${LIBICONV:+ }$found_so"
+                     else
+                                                                                                                                                                                 LIBICONV="${LIBICONV}${LIBICONV:+ }-l$name"
+@@ -36572,6 +36578,8 @@
+ fi
         CFLAGS="$ac_save_CFLAGS"
         LIBS="$ac_save_LIBS"
 +else
 +no_theora=yes
    fi
  
-   if test "x$no_ogg" = x ; then
+   if test "x$no_libFLAC" = "x" ; then

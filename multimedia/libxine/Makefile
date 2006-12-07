@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.1.3
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,7 +31,6 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		theora.2:${PORTSDIR}/multimedia/libtheora \
 		mad.2:${PORTSDIR}/audio/libmad
 
-USE_BZIP2=	yes
 USE_GCC=	3.4+
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -44,6 +42,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
 USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -53,7 +52,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
 		--mandir=${PREFIX}/man --with-external-libmad \
 		--with-external-libdts
-INSTALLS_SHLIB=	yes
 
 MAN1=	xine-config.1
 MAN5=	xine.5
@@ -98,12 +96,12 @@ PLIST_SUB+=	WITH_GNOMEVFS2="@comment "
 CONFIGURE_ARGS+=	--disable-gnomevfs
 .endif
 
-.if !defined(WITHOUT_POLYPAUDIO) && (exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) || defined(WITH_POLYPAUDIO))
-LIB_DEPENDS+=	polyp-0.7.0:${PORTSDIR}/audio/polypaudio
-PLIST_SUB+=	WITH_POLYPAUDIO=""
+.if !defined(WITHOUT_PULSEAUDIO) && (exists(${LOCALBASE}/lib/libpulse.so.0) || defined(WITH_PULSEAUDIO))
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+PLIST_SUB+=	WITH_PULSEAUDIO=""
 .else
-PLIST_SUB+=	WITH_POLYPAUDIO="@comment "
-CONFIGURE_ARGS+=	--disable-polypaudio
+PLIST_SUB+=	WITH_PULSEAUDIO="@comment "
+CONFIGURE_ARGS+=	--disable-pulseaudio
 .endif
 
 .if !defined(WITHOUT_XVMC) && (exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || defined(WITH_XVMC))
@@ -146,6 +144,12 @@ PLIST_SUB+=	WITH_GTK2="@comment "
 CONFIGURE_ARGS+=	--disable-gdkpixbuf
 .endif
 
+.if ${CONFIGURE_ARGS:M*--disable-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
+PLIST_SUB+=	WITH_DMX_IMAGE=""
+.else
+PLIST_SUB+=	WITH_DMX_IMAGE="@comment "
+.endif
+
 .if ${ARCH} == "i386"
 PLIST_SUB+=	WITH_VIDIX=""
 .else
@@ -177,10 +181,10 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) && !defined(WITH_POLYPAUDIO) || defined(WITHOUT_POLYPAUDIO)
-	@${ECHO_MSG} "===> WITH_POLYPAUDIO (polypaudio support)"
+.if !exists(${LOCALBASE}/lib/libpulse.so.0) && !defined(WITH_PULSEAUDIO) || defined(WITHOUT_PULSEAUDIO)
+	@${ECHO_MSG} "===> WITH_PULSEAUDIO (pulseaudio support)"
 .else
-	@${ECHO_MSG} "===> WITH_POLYPAUDIO (polypaudio support, enabled)"
+	@${ECHO_MSG} "===> WITH_PULSEAUDIO (pulseaudio support, enabled)"
 .endif
 .if !exists(${LOCALBASE}/lib/libsmbclient.so.0) && !defined (WITH_SMB) || defined(WITHOUT_SMB)
 	@${ECHO_MSG} "===> WITH_SMB (SMB support)"
@@ -194,7 +198,7 @@ pre-everything::
 .endif
 	@${ECHO_MSG} "===>"
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e \
 		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
 		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \

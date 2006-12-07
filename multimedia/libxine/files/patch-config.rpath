@@ -1,0 +1,12 @@
+--- config.rpath.orig	Thu Dec  7 01:15:04 2006
++++ config.rpath	Thu Dec  7 01:16:03 2006
+@@ -162,6 +162,9 @@
+         ld_shlibs=no
+       fi
+       ;;
++    freebsd*)
++      hardcode_minus_L=yes
++      ;;
+     netbsd*)
+       ;;
+     solaris* | sysv5*)
