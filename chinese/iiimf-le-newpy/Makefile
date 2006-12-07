@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
 DISTNAME=	iiimf-src-${PORTVERSION}
 
-MAINTAINER=	ozawa@ongs.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IIIMF New PinYin input method engine
 
 RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server
