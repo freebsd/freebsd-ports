@@ -512,6 +512,7 @@
     SUBDIR += p5-Business-PayPal
     SUBDIR += p5-CGI-Ajax
     SUBDIR += p5-CGI-Application
+    SUBDIR += p5-CGI-Application-Plugin-AnyTemplate
     SUBDIR += p5-CGI-Application-Plugin-AutoRunmode
     SUBDIR += p5-CGI-Application-Plugin-DBH
     SUBDIR += p5-CGI-Application-Plugin-DevPopup

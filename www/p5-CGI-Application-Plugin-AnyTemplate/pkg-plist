@@ -1,0 +1,13 @@
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/Petal.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/ComponentHandler.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplatePluggable.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplate.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Base.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/TemplateToolkit.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplateExpr.pm
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/CGI/Application
+@dirrmtry %%SITE_PERL%%/CGI
