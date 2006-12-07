@@ -1,6 +1,6 @@
-# New ports collection makefile for:	autoconf
-# Date created:		7 October 1995
-# Whom:			torstenb@FreeBSD.org
+# New ports collection makefile for:	autoconf261
+# Date created:		7th December 2006
+# Whom:			ade@FreeBSD.org
 #
 # $FreeBSD$
 #
