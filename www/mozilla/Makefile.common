@@ -134,6 +134,7 @@ optimized_cflags_OPTION=	"Enable some additional optimizations" off
 .for option in ${USE_GECKO_OPTIONS:L}
 .if ${_USE_GECKO_OPTIONS_ALL:M${option}}!=""
 OPTIONS+=	${option:U} ${${option}_OPTION}
+_${option}=	${TRUE}
 .endif
 .endfor
 
@@ -208,7 +209,7 @@ MOZ_OPTIONS+=	--disable-debug				\
 		--enable-strip
 .endif
 
-.if defined(WITH_JAVA)
+.if defined(WITH_JAVA) && defined(_WITH_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION+=	1.4+
 JAVA_OS+=	native
