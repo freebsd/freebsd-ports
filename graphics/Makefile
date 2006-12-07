@@ -302,6 +302,7 @@
     SUBDIR += jpegoptim
     SUBDIR += jpegpixi
     SUBDIR += jpgraph
+    SUBDIR += jpgraph2
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += jumpgis

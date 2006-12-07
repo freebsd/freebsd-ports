@@ -1,0 +1,10 @@
+JpGraph is an OO class library for PHP.  JpGraph makes it easy to
+draw both "quick and dirty" graphs with a minimum of code and complex
+professional looking graphs which requires a very fine grain of control.
+The library assigns context sensitive default values for most parameters
+which helps minimize the learning curve.
+
+WWW: http://www.aditus.nu/jpgraph/
+
+- Alex Dupre
+ale@FreeBSD.org
