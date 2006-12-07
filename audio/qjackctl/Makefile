@@ -1,0 +1,30 @@
+# New ports collection makefile for:	qjackctl
+# Date created:		2006-12-06
+# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qjackctl
+PORTVERSION=	0.2.21
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	qjackctl
+
+MAINTAINER=	trasz@pin.if.uz.zgora.pl
+COMMENT=	Qt Interface for the JACK Audio Connection Kit
+
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_QT_VER=	3
+CONFIGURE_ARGS+=	QTDIR="${X11BASE}" CXXFLAGS="${CFLAGS} -pthread"
+MAKE_ENV=	QTDIR="${X11BASE}" MAKE="${GMAKE}" \
+		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
+
+PLIST_DIRS=	@dirrmtry share/icons
+PLIST_FILES=	bin/qjackctl share/icons/qjackctl.png
+
+.include <bsd.port.mk>
