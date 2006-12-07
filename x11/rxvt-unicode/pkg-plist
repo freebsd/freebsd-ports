@@ -6,6 +6,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/digital-clock
 %%PERL%%lib/urxvt/perl/example-refresh-hooks
 %%PERL%%lib/urxvt/perl/kuake
+%%PERL%%lib/urxvt/perl/macosx-clipboard
 %%PERL%%lib/urxvt/perl/matcher
 %%PERL%%lib/urxvt/perl/option-popup
 %%PERL%%lib/urxvt/perl/readline
