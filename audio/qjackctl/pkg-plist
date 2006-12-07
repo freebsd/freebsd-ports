@@ -1,0 +1,3 @@
+bin/qjackctl
+share/icons/qjackctl.png
+@dirrmtry share/icons
