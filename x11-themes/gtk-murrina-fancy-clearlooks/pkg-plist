@@ -1,0 +1,24 @@
+share/themes/MurrinaFancyClearlooksSky/gtk-2.0/panel_bg.png
+share/themes/MurrinaFancyClearlooksSky/gtk-2.0/gtkrc
+share/themes/MurrinaFancyClearlooksSea/gtk-2.0/panel_bg.png
+share/themes/MurrinaFancyClearlooksSea/gtk-2.0/gtkrc
+share/themes/MurrinaFancyClearlooksSand/gtk-2.0/panel_bg.png
+share/themes/MurrinaFancyClearlooksSand/gtk-2.0/gtkrc
+share/themes/MurrinaFancyClearlooksGrass/gtk-2.0/panel_bg.png
+share/themes/MurrinaFancyClearlooksGrass/gtk-2.0/gtkrc
+share/themes/MurrinaFancyClearlooksEarth/gtk-2.0/panel_bg.png
+share/themes/MurrinaFancyClearlooksEarth/gtk-2.0/gtkrc
+share/themes/MurrinaFancyClearlooksAncient/gtk-2.0/panel_bg.png
+share/themes/MurrinaFancyClearlooksAncient/gtk-2.0/gtkrc
+@dirrm share/themes/MurrinaFancyClearlooksSky/gtk-2.0
+@dirrm share/themes/MurrinaFancyClearlooksSky
+@dirrm share/themes/MurrinaFancyClearlooksSea/gtk-2.0
+@dirrm share/themes/MurrinaFancyClearlooksSea
+@dirrm share/themes/MurrinaFancyClearlooksSand/gtk-2.0
+@dirrm share/themes/MurrinaFancyClearlooksSand
+@dirrm share/themes/MurrinaFancyClearlooksGrass/gtk-2.0
+@dirrm share/themes/MurrinaFancyClearlooksGrass
+@dirrm share/themes/MurrinaFancyClearlooksEarth/gtk-2.0
+@dirrm share/themes/MurrinaFancyClearlooksEarth
+@dirrm share/themes/MurrinaFancyClearlooksAncient/gtk-2.0
+@dirrm share/themes/MurrinaFancyClearlooksAncient
