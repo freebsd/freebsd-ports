@@ -1,0 +1,32 @@
+--- aexcl/Makefile.in.orig	Fri Dec 16 23:17:00 2005
++++ aexcl/Makefile.in	Thu Jul  6 16:32:41 2006
+@@ -2,6 +2,7 @@
+ CC = @CC@
+ CXX = @CXX@
+ DEFS = @DEFS@
++LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -17,8 +18,8 @@
+ 
+ CXXFLAGS += -Wall -D_GNU_SOURCE -I../raop_play -I../rendezvous
+ GLIB = glib-2.0
+-CXXFLAGS += -I/usr/include/$(GLIB) -I/usr/lib/$(GLIB)/include
+-CFLAGS += -Wall -I/usr/include/$(GLIB) -I/usr/lib/$(GLIB)/include -I../raop_play
++CXXFLAGS += -I$(prefix)/include -I$(prefix)/include/$(GLIB) -I/usr/X11R6/include/
++CFLAGS += -Wall -I$(prefix)/include -I$(prefix)/include/$(GLIB) -I/usr/X11R6/include/ -I../raop_play
+ 
+ ifdef GLIB_SUBST
+   GLIB_SUBST_OBJ = ipod/glibsubst.o
+@@ -29,8 +30,8 @@
+ 
+ all: $(TARGET)
+ 
+-$(TARGET): aexcl_gui.o aexcl_play.o ipod_browser.o ../raop_play/aexcl_lib.o ipod/itunesdb.o $(GLIB_SUBST_OBJ)
+-	$(CXX) -o $@  $^ -lfltk $(GLIB_LINK)
++$(TARGET): aexcl_gui.o aexcl_play.o ipod_browser.o ../raop_play/aexcl_lib.o ipod/itunesdb.o ../rendezvous/getline.o $(GLIB_SUBST_OBJ)
++	$(CXX) $(LDFLAGS) -o $@  $^ -lfltk $(GLIB_LINK)
+ 
+ install:
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)/

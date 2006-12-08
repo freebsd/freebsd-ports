@@ -1,0 +1,10 @@
+raop_play is a music file player for Apple Airport Express,
+the main functionalities are as follows:
+
+* Discover Airport Express by Apple Rendezvous
+* Browse music files
+  (Supported music file format: m4a(alac or aac), wav, mp3, ogg, aac, pls)
+* Send selected files to the Airport Express
+* Play mp3 stream data (filename started with "http://")
+
+WWW: http://raop-play.sourceforge.net/

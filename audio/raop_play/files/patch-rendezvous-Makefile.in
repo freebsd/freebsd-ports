@@ -1,0 +1,30 @@
+--- rendezvous/Makefile.in.orig	Fri Dec 16 23:17:02 2005
++++ rendezvous/Makefile.in	Thu Jul  6 16:40:26 2006
+@@ -1,6 +1,7 @@
+ SHELL = @SHELL@
+ CC = @CC@
+ DEFS = @DEFS@
++LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -9,7 +10,7 @@
+ top_srcdir = @top_srcdir@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+-CFLAGS += -Wall -DNOT_HAVE_SA_LEN
++CFLAGS += -Wall
+ 
+ TARGET = mDNSClient
+ DESTDIR =
+@@ -17,8 +18,8 @@
+ all: $(TARGET)
+ 
+ 
+-mDNSClient: mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o
+-	$(CC) $(LFLAGS) $^ -o $@
++mDNSClient: mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o getline.o
++	$(CC) $(LDFLAGS) mDNSPosix.o mDNSUNP.o ExampleClientApp.o mDNS.o Client.o getline.o -o $@
+ 
+ install:
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)/
