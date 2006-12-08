@@ -126,9 +126,6 @@ JDK13DIR=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
 .elif exists(${LOCALBASE}/jdk${JDK_VERSION}/bin/javac)
 JDK13DIR=	${LOCALBASE}/jdk${JDK_VERSION}
-.elif exists(${LOCALBASE}/diablo-jdk${JDK_VERSION}/bin/javac)
-JDK13DIR=	${LOCALBASE}/diablo-jdk${JDK_VERSION}
-BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/diablo-jdk${JDK_VERSION}
 .else
 JDK13DIR=	${LOCALBASE}/jbootstrap
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
