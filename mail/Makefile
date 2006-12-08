@@ -39,6 +39,7 @@
     SUBDIR += cclient
     SUBDIR += chk4mail
     SUBDIR += clamfilter
+    SUBDIR += claws-mail
     SUBDIR += cmail
     SUBDIR += cone
     SUBDIR += contact-lookup-applet
