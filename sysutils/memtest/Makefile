@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	memtest
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/
+MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/old-versions/ \
+		http://mirrors.closedsrc.org/memtester/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
 
 MAINTAINER=	question+fbsdports@closedsrc.org
