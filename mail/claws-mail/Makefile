@@ -1,12 +1,12 @@
-# New ports collection makefile for:	sylpheed-claws
+# New ports collection makefile for:	claws-mail
 # Date created:		3 January 2002
 # Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sylpheed-claws
-PORTVERSION=	2.6.0
+PORTNAME=	claws-mail
+PORTVERSION=	2.6.1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -33,8 +33,9 @@ USE_GNOME=	gnomehack pkgconfig gtk20
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
 WANT_GNOME=	yes
+INSTALLS_ICONS=	yes
 
-MAN1=		sylpheed-claws.1
+MAN1=		claws-mail.1
 
 CONFIGURE_ARGS=	\
 		--with-libiconv-prefix=${LOCALBASE} \
@@ -176,11 +177,10 @@ post-patch:
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g ; s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/src/procmime.c
-	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@SYLPHEED_GNOME:#@SYLPHEED_GNOME:g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@CLAWS_GNOME2:#@CLAWS_GNOME2:g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s:-Wno-unused-function::" ${WRKSRC}/src/Makefile.in
 	@for f in `${FIND} ${WRKSRC}/tools -type f -print`; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
-#	@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
@@ -194,16 +194,16 @@ post-install:
 .endif
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/tools && \
-		${INSTALL_SCRIPT} OOo2sylpheed.pl acroread2sylpheed.pl \
+		${INSTALL_SCRIPT} OOo2claws-mail.pl acroread2claws-mail.pl \
 		calypso_convert.pl convert_mbox.pl eud2gc.py filter_conv.pl \
 		freshmeat_search.pl gif2xface.pl google_msgid.pl \
-		google_search.pl kmail2sylpheed.pl \
-		kmail2sylpheed_v2.pl maildir2sylpheed.pl multiwebsearch.conf \
-		multiwebsearch.pl nautilus2sylpheed.sh outlook2sylpheed.pl \
-		tb2sylpheed textviewer.sh update-po uudec vcard2xml.py \
+		google_search.pl kmail2claws-mail.pl kmail2claws-mail_v2.pl \
+		maildir2claws-mail.pl multiwebsearch.conf multiwebsearch.pl \
+		nautilus2claws-mail.sh outlook2claws-mail.pl tb2claws-mail \
+		textviewer.sh update-po uudec vcard2xml.py \
 		${DATADIR}
 	@${MKDIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed-claws.desktop ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${PREFIX}/share/applications/
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
 	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -mindepth 2 -print | \
@@ -215,6 +215,6 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
 	@${MKDIR} ${PREFIX}/share/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed-claws*.png ${PREFIX}/share/pixmaps/
+	@${INSTALL_DATA} ${WRKSRC}/claws-mail*.png ${PREFIX}/share/pixmaps/
 
 .include <bsd.port.post.mk>
