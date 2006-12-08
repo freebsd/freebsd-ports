@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phprojekt
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.2
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.phprojekt.com/download/
 DISTNAME=	${PORTNAME}
@@ -16,11 +16,11 @@ COMMENT=	An open source groupware suite
 
 USE_PHP=	yes
 DEFAULT_PHP_VER=4
-IGNORE_WITH_PHP=5
-WANT_PHP_MOD=	yes
+USE_PHP=	session imap mysql
+WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	@${CP} -r ${WRKSRC} ${PREFIX}/www/${PORTNAME}
