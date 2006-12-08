@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-send-pr
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="Send Problem Report" \
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gtk-send-pr ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/gtk-send-pr.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/ladybird64.xpm ${PREFIX}/share/pixmaps
+	@${INSTALL_MAN} ${WRKSRC}/common/gtk-send-pr.1 ${PREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/icon/ladybird64.xpm ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
