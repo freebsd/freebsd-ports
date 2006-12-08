@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Error
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(00[0-9])$/\1/}
 
-MAINTAINER=	pvh@wfeet.za.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to provide Error/exception support for perl: Error
 
 PERL_CONFIGURE=	YES
