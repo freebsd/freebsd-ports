@@ -99,6 +99,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYNUMERIC			- Dependency line for the numeric extension. Py-Numeric-17
 #					  is the last release that works with Python versions older
 #					  than 1.6.
+# PYNUMPY			- Dependency line for the new numeric extension.#				  py-numpy, Py-Numeric is deprecated.
 #
 # PYXML				- Dependency line for the XML extension. As of Python-2.0,
 #					  this extension is in the base distribution.
@@ -419,6 +420,7 @@ ZOPEPRODUCTDIR?=		Products
 # Python 3rd-party modules
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+PYNUMPY=		${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 .if defined(PYTHON_REL) && ${PYTHON_REL} < 232
