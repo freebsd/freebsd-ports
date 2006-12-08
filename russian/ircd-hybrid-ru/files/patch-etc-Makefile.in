@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	Thu May  5 16:21:59 2005
++++ etc/Makefile.in	Thu May  5 16:20:08 2005
+@@ -27,6 +27,8 @@
+ 		echo $(INSTALL_DATA) $$i $(sysconfdir); \
+ 		$(INSTALL_DATA) $$i $(sysconfdir); \
+ 	done
++	mkdir -p $(sysconfdir)/codepages
++	$(INSTALL_DATA) codepages/*.tab $(sysconfdir)/codepages
+ 
+ 	@echo "Note: more example configuration files can be found in this directory (etc/)."
+ 	
