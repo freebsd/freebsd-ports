@@ -8434,6 +8434,7 @@ p5-CGI-Application-Plugin-HTDot	ports/www/p5-CGI-Application-Plugin-HTDot
 p5-CGI-Application-Plugin-HTMLPrototype	ports/www/p5-CGI-Application-Plugin-HTMLPrototype
 p5-CGI-Application-Plugin-HtmlTidy	ports/www/p5-CGI-Application-Plugin-HtmlTidy
 p5-CGI-Application-Plugin-LinkIntegrity	ports/www/p5-CGI-Application-Plugin-LinkIntegrity
+p5-CGI-Application-Plugin-LogDispatch	ports/www/p5-CGI-Application-Plugin-LogDispatch
 p5-CGI-Application-Plugin-Redirect	ports/www/p5-CGI-Application-Plugin-Redirect
 p5-CGI-Application-Plugin-Stream	ports/www/p5-CGI-Application-Plugin-Stream
 p5-CGI-Application-Plugin-ValidateRM	ports/www/p5-CGI-Application-Plugin-ValidateRM
