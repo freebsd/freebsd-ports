@@ -7,7 +7,7 @@
 
 PORTNAME=	dnetc
 PORTVERSION=	${VERSION}
-PORTREVISION=	3
+PORTREVISION=	$(REVISION}
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
@@ -49,9 +49,15 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-VERSION=	2.9012.497
-.if ${OSVERSION} >= 503000
+VERSION=	2.9013.498
+REVISION=	0
+.if ${OSVERSION} >= 400017
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd4-${ARCH:S/i386/x86/}-elf
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd4-${ARCH:S/i386/x86/}-elf
+.endif
+.if ${OSVERSION} >= 503001
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
 .endif
 .if ${OSVERSION} >= 600034
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
@@ -60,7 +66,8 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
 .endif
 
 .if ${ARCH} == amd64
-.if ${OSVERSION} >= 503000
+REVISION=	3
+.if ${OSVERSION} >= 503001
 VERSION=	2.9011.496
 #DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
 .endif
@@ -72,6 +79,7 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
 .endif
 
 .if ${ARCH} == sparc64 || ${ARCH} == alpha
+REVISION=	3
 VERSION=	2.9003.481
 .endif
 
