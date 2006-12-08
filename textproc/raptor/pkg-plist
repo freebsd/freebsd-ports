@@ -6,13 +6,22 @@ lib/libraptor.la
 lib/libraptor.so
 lib/libraptor.so.2
 libdata/pkgconfig/raptor.pc
+@exec mkdir -p %D/share/gtk-doc/html/raptor
 share/gtk-doc/html/raptor/home.png
 share/gtk-doc/html/raptor/index.html
 share/gtk-doc/html/raptor/index.sgml
 share/gtk-doc/html/raptor/introduction.html
 share/gtk-doc/html/raptor/ix01.html
 share/gtk-doc/html/raptor/left.png
+share/gtk-doc/html/raptor/parser-grddl.html
+share/gtk-doc/html/raptor/parser-guess.html
+share/gtk-doc/html/raptor/parser-ntriples.html
+share/gtk-doc/html/raptor/parser-rdfxml.html
+share/gtk-doc/html/raptor/parser-rss-tag-soup.html
+share/gtk-doc/html/raptor/parser-turtle.html
+share/gtk-doc/html/raptor/raptor.devhelp
 share/gtk-doc/html/raptor/raptor.devhelp2
+share/gtk-doc/html/raptor/raptor-parsers.html
 share/gtk-doc/html/raptor/raptor-section-constants.html
 share/gtk-doc/html/raptor/raptor-section-feature.html
 share/gtk-doc/html/raptor/raptor-section-general.html
@@ -22,7 +31,7 @@ share/gtk-doc/html/raptor/raptor-section-memory.html
 share/gtk-doc/html/raptor/raptor-section-parser.html
 share/gtk-doc/html/raptor/raptor-section-sequence.html
 share/gtk-doc/html/raptor/raptor-section-serializer.html
-share/gtk-doc/html/raptor/raptor.devhelp
+share/gtk-doc/html/raptor/raptor-serializers.html
 share/gtk-doc/html/raptor/raptor-section-stringbuffer.html
 share/gtk-doc/html/raptor/raptor-section-triples.html
 share/gtk-doc/html/raptor/raptor-section-unicode.html
@@ -33,9 +42,17 @@ share/gtk-doc/html/raptor/raptor-section-xml-namespace.html
 share/gtk-doc/html/raptor/raptor-section-xml-qname.html
 share/gtk-doc/html/raptor/raptor-section-xml.html
 share/gtk-doc/html/raptor/reference-manual.html
+share/gtk-doc/html/raptor/restrict-parser-network-access.html
 share/gtk-doc/html/raptor/right.png
+share/gtk-doc/html/raptor/serializer-atom.html
+share/gtk-doc/html/raptor/serializer-ntriples.html
+share/gtk-doc/html/raptor/serializer-rdfxml-abbrev.html
+share/gtk-doc/html/raptor/serializer-rdfxml-xmp.html
+share/gtk-doc/html/raptor/serializer-rdfxml.html
+share/gtk-doc/html/raptor/serializer-rss-1-0.html
 share/gtk-doc/html/raptor/style.css
 share/gtk-doc/html/raptor/tutorial-initialising-finishing.html
+share/gtk-doc/html/raptor/tutorial-serializer-get-triples.html
 share/gtk-doc/html/raptor/tutorial.html
 share/gtk-doc/html/raptor/tutorial-parse-strictness.html
 share/gtk-doc/html/raptor/tutorial-parser-abort.html
@@ -64,5 +81,5 @@ share/gtk-doc/html/raptor/tutorial-serializer-to-destination.html
 share/gtk-doc/html/raptor/tutorial-serializing.html
 share/gtk-doc/html/raptor/up.png
 @dirrm share/gtk-doc/html/raptor
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
