@@ -20,6 +20,8 @@ COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
+DEPRECATED=	renamed to claws-mail
+
 THEMEVERSION=	20060615
 THEMEFILE=	sylpheed-claws-themes-${THEMEVERSION}.tar.gz
 
