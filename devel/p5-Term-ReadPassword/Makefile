@@ -10,6 +10,7 @@ PORTVERSION=	0.07
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/P/PH/PHOENIX
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for asking the user for a password
