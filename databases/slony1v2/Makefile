@@ -59,7 +59,7 @@ DEFAULT_PGSQL_VER?=80
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/postmaster)
 PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
-		${SED} -En 's/postmaster.*PostgreSQL[^0-9]*([0-9]+)\.([0-9]+)\..*/\1\2/p'
+		${SED} -En 's/.*PostgreSQL[^0-9]*([0-9]+)\.([0-9]+)\..*/\1\2/p'
 .elif exists(${LOCALBASE}/bin/pg_config)
 PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
 		${SED} -En 's/PostgreSQL[^0-9]*([0-9]*)\.([0-9]+)\..*/\1\2/p'
