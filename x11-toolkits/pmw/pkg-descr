@@ -19,3 +19,5 @@ combinations with higher level abstractions. This simplifies code,
 making it more readable and maintainable and more easily modifiable.
 The ability to extend Pmw megawidgets enables developers to create new
 megawidgets based on previous work.
+
+WWW: http://pmw.sourceforge.net/
