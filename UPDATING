@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061207:
+   AFFECTS: users of devel/p5-PAR
+   AUTHOR: rafan@FreeBSD.org
+     
+   As of version 0.97.0, all PAR::Packer logic, i.e. pp, parl and
+   all packaging tools are moved to another distribution. You can
+   install devel/p5-PAR-Packer to get them.
+
+20061207:
    AFFECTS: users of net/samba3
    AUTHOR: timur@gnu.org
      
