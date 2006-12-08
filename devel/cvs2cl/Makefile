@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.red-bean.com/cvs2cl/
 DISTFILES=	${PORTNAME}.pl
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
 USE_PERL5=	yes
