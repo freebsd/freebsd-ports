@@ -1,0 +1,22 @@
+--- modules/Makefile.in.orig	Tue Jun 20 16:59:06 2006
++++ modules/Makefile.in	Tue Oct 17 08:35:33 2006
+@@ -23,7 +23,7 @@
+ 
+ prefix          = $(DESTDIR)@prefix@
+ # Change this later! -- adrian
+-moduledir       = ${prefix}/modules
++moduledir       = ${prefix}/lib/ircd-hybrid-ru-modules
+ automoduledir   = ${moduledir}/autoload
+ 
+ INCLUDES	= -I../include -I../lib/pcre $(SSL_INCLUDES)
+@@ -111,7 +111,9 @@
+   m_who.c \
+   m_whois.c \
+   m_whowas.c \
+-  m_xline.c
++  m_xline.c \
++  m_force.c \
++  m_ojoin.c
+ 
+ ALL_SRCS = $(CORE_SRCS) $(SRCS) @SSL_SRCS_ENABLE@
+ 

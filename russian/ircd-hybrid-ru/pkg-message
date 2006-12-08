@@ -1,11 +1,6 @@
 
 ----------------------------------------------------
 
-If you updated this port to version 7.1_2, please
-don't forget to remove the old UID/GID - 6667
-
-This port uses now UID/GID - 555
-
 ircd-hybrid-ru has been installed.
 
 This port create user ircdru and group ircdru
