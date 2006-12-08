@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../deploy/make/common/Defs-bsd.gmk.orig	Fri Dec  8 11:55:05 2006
++++ ../../deploy/make/common/Defs-bsd.gmk	Fri Dec  8 11:55:28 2006
+@@ -14,7 +14,7 @@
+ JUMP_EXE       = $(PROTO_DIR)/javawsbin$(SUFFIX)
+ CLASSPATH_SEP  = $(CLASSPATH_SEPARATOR)
+ PATH_SEP       = /
+-X11DIR         = /usr/X11R6
++X11DIR         = $(X11BASE)
+ ifneq (,$(filter-out NetBSD DragonFly,$(TRUE_PLATFORM)))
+ LIBS           = -L$(X11DIR)/lib -lX11
+ else
