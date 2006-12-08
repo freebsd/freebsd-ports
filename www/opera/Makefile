@@ -39,7 +39,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${DISTNAME}-${OPERA_BUILD}
 
@@ -65,6 +64,13 @@ OPERA_TYPE=	4
 OPERA_TYPE=	3
 .else
 OPERA_TYPE=	1
+.endif
+
+.if ${OSVERSION} > 700000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-symhack
+PLIST_SUB+=	SYMHACK=""
+.else
+PLIST_SUB+=	SYMHACK="@comment "
 .endif
 
 .if !defined(WITHOUT_ASPELL)
@@ -104,14 +110,21 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
 			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
 			${WRKSRC}/config/opera6rc
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/install.sh
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
 
-.if defined(WITHOUT_SHARED) && ${OSVERSION} >= 500000
 post-install:
+.if ${OSVERSION} > 700000
+	@${CP} ${FILESDIR}/symhack.c ${WRKSRC}/
+	@(cd ${WRKSRC}/ && ${CC} -shared -o symhack.so symhack.c)
+	@${INSTALL_DATA} ${WRKSRC}/symhack.so ${DATADIR}/
+.endif
+
+.if defined(WITHOUT_SHARED) && ${OSVERSION} >= 500000
 	@${CAT} ${PKGMESSAGE}
 .endif
 

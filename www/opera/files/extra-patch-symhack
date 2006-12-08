@@ -1,0 +1,14 @@
+--- install.sh.orig	Thu Dec  7 02:20:36 2006
++++ install.sh	Thu Dec  7 02:21:19 2006
+@@ -842,6 +842,11 @@
+ 
+     wrapper_contain="#!/bin/sh
+ 
++#
++# A dirty to run opera under 7.x, where the __h_error isn't defined
++#
++LD_PRELOAD=${LD_PRELOAD}:%%DATADIR%%/symhack.so
++
+ # Required for Session Management
+ case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/\$0;; esac
+ export OPERA_SCRIPT_PATH

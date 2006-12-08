@@ -162,70 +162,70 @@
      debug_msg 1 "in gnome()"
  
 -    if test -d /opt/gnome/
-+    if test -d %%X11BASE%%/share/gnome/;
++    if test -d %%LOCALBASE%%/share/gnome/;
      then
 -	# /opt/gnome share
 -	if test -d /opt/gnome/share
 -	then
 -	    # /opt/gnome icon
 -	    if test ! -d /opt/gnome/share/pixmaps/
-+	    # %%X11BASE%%/share/gnome icon
-+	    if test ! -d %%X11BASE%%/share/gnome/pixmaps/;
++	    # %%LOCALBASE%%/share/gnome icon
++	    if test ! -d %%LOCALBASE%%/share/gnome/pixmaps/;
  	    then
 -		if test -w /opt/gnome/share
-+		if test -w %%X11BASE%%/share/gnome;
++		if test -w %%LOCALBASE%%/share/gnome;
  		then
 -		    mkdir $mkdirv $mkdirp /opt/gnome/share/pixmaps/
 -		    chmod $chmodv 755 /opt/gnome/share/pixmaps
 -		    cp $cpv $share_dir/images/opera.xpm /opt/gnome/share/pixmaps/opera.xpm
-+		    mkdir $mkdirv $mkdirp %%X11BASE%%/share/gnome/pixmaps/
-+		    chmod $chmodv 755 %%X11BASE%%/share/gnome/pixmaps
-+		    cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/opera.xpm
++		    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/gnome/pixmaps/
++		    chmod $chmodv 755 %%LOCALBASE%%/share/gnome/pixmaps
++		    cp $cpv $share_dir/images/opera.xpm %%LOCALBASE%%/share/gnome/pixmaps/opera.xpm
  		fi
 -	    elif test -w /opt/gnome/share/pixmaps
 -	    then cp $cpv $share_dir/images/opera.xpm /opt/gnome/share/pixmaps/opera.xpm
-+	    elif test -w %%X11BASE%%/share/gnome/pixmaps
-+	    then cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/opera.xpm
++	    elif test -w %%LOCALBASE%%/share/gnome/pixmaps
++	    then cp $cpv $share_dir/images/opera.xpm %%LOCALBASE%%/share/gnome/pixmaps/opera.xpm
  	    fi
 -	    # end /opt/gnome icon
-+	    # end %%X11BASE%%/share/gnome icon
++	    # end %%LOCALBASE%%/share/gnome icon
  
 -	    # /opt/gnome link
 -	    if test -d /opt/gnome/share/gnome/apps/
-+	    # %%X11BASE%%/share/gnome link
-+	    if test -d %%X11BASE%%/share/gnome/apps/
++	    # %%LOCALBASE%%/share/gnome link
++	    if test -d %%LOCALBASE%%/share/gnome/apps/
  	    then
 -		if test -d /opt/gnome/share/gnome/apps/Internet/
-+		if test -d %%X11BASE%%/share/gnome/apps/Internet/
++		if test -d %%LOCALBASE%%/share/gnome/apps/Internet/
  		then
 -		    if test -w /opt/gnome/share/gnome/apps/Internet
 -		    then generate_desktop /opt/gnome/share/gnome/apps/Internet
-+		    if test -w %%X11BASE%%/share/gnome/apps/Internet
-+		    then generate_desktop %%X11BASE%%/share/gnome/apps/Internet
++		    if test -w %%LOCALBASE%%/share/gnome/apps/Internet
++		    then generate_desktop %%LOCALBASE%%/share/gnome/apps/Internet
  		    fi
 -		elif test -d /opt/gnome/share/gnome/apps/Networking/WWW/
-+		elif test -d %%X11BASE%%/share/gnome/apps/Networking/WWW/
++		elif test -d %%LOCALBASE%%/share/gnome/apps/Networking/WWW/
  		then
 -		    if test -w /opt/gnome/share/gnome/apps/Networking/WWW
 -		    then generate_desktop /opt/gnome/share/gnome/apps/Networking/WWW
-+		    if test -w %%X11BASE%%/share/gnome/apps/Networking/WWW
-+		    then generate_desktop %%X11BASE%%/share/gnome/apps/Networking/WWW
++		    if test -w %%LOCALBASE%%/share/gnome/apps/Networking/WWW
++		    then generate_desktop %%LOCALBASE%%/share/gnome/apps/Networking/WWW
  		    fi
 -		elif test -w /opt/gnome/share/gnome/apps
-+		elif test -w %%X11BASE%%/share/gnome/apps
++		elif test -w %%LOCALBASE%%/share/gnome/apps
  		then
 -		    mkdir $mkdirv $mkdirp /opt/gnome/share/gnome/apps/Internet/
 -		    chmod $chmodv 755 /opt/gnome/share/gnome/apps/Internet
 -		    generate_desktop /opt/gnome/share/gnome/apps/Internet
-+		    mkdir $mkdirv $mkdirp %%X11BASE%%/share/gnome/apps/Internet/
-+		    chmod $chmodv 755 %%X11BASE%%/share/gnome/apps/Internet
-+		    generate_desktop %%X11BASE%%/share/gnome/apps/Internet
++		    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/gnome/apps/Internet/
++		    chmod $chmodv 755 %%LOCALBASE%%/share/gnome/apps/Internet
++		    generate_desktop %%LOCALBASE%%/share/gnome/apps/Internet
  		fi
  	    fi
 -	    # end /opt/gnome link
 -	fi
 -	# end /opt/gnome share
-+	    # end %%X11BASE%%/share/gnome link
++	    # end %%LOCALBASE%%/share/gnome link
  
      elif test -d /usr/share/gnome/
      then
