@@ -91,6 +91,7 @@
     SUBDIR += gtk-longhorninspirat-theme
     SUBDIR += gtk-milk-theme
     SUBDIR += gtk-murrina-aqua
+    SUBDIR += gtk-murrina-fancy-clearlooks
     SUBDIR += gtk-murrina-lightblue
     SUBDIR += gtk-murrine-engine
     SUBDIR += gtk-murrine-themes
