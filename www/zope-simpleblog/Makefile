@@ -18,11 +18,11 @@ DIST_SUBDIR=	zope
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SimpleBlog is an easy to use Plone based weblog application
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/OFS/__init__.py:${PORTSDIR}/www/plone
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone
 
 WRKSRC=${WRKDIR}
 USE_ZOPE=	2.9
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 MODULES=	SimpleBlog
 PLIST=		${WRKDIR}/pkg-plist
 
