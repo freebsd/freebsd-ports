@@ -1,6 +1,6 @@
 --- configure.ac.orig	Wed Feb 22 06:53:28 2006
-+++ configure.ac	Thu Sep 21 01:33:15 2006
-@@ -136,7 +136,7 @@
++++ configure.ac	Thu Dec  7 02:09:59 2006
+@@ -136,7 +136,7 @@ case "$target_cpu" in
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
  
@@ -9,7 +9,7 @@
  		   P_64BIT=1 ;
                     LIB64=1 ;
  		   ;;
-@@ -278,7 +278,7 @@
+@@ -278,7 +278,7 @@ fi
  
  AC_MSG_CHECKING(if linker accepts -Wreorder)
  AC_LANG_CONFTEST([[int main(int ac,char **av) { return 0; }]])
@@ -18,7 +18,7 @@
  if test $? = 0 ; then
    AC_MSG_RESULT(yes)
    STDCXXFLAGS="$STDCXXFLAGS -Wreorder"
-@@ -291,7 +291,7 @@
+@@ -291,7 +291,7 @@ fi
  # $CXX $CFLAGS -Woverloaded-virtual conftest.cc > /dev/null 2>&1
  # if test $? = 0 ; then
  #   AC_MSG_RESULT(yes)
@@ -27,7 +27,7 @@
  # else
  #   AC_MSG_RESULT(no)
  # fi
-@@ -320,7 +320,7 @@
+@@ -320,7 +320,7 @@ if test "$DEFAULT_RTTI" = "1" ; then
    AC_MSG_RESULT(yes)
  else
    AC_MSG_RESULT(no)
@@ -36,7 +36,7 @@
  fi
  
  GCSECTIONS=0
-@@ -341,7 +341,7 @@
+@@ -341,7 +341,7 @@ if test 0 = 1 ;  then
    $CXX $CFLAGS -ffunction-sections -c conftest.cc > /dev/null 2>&1
    if test $? = 0 ; then
      AC_MSG_RESULT(yes)
@@ -45,7 +45,7 @@
      GCSECTIONS=1
    else
      AC_MSG_RESULT(no)
-@@ -357,7 +357,7 @@
+@@ -357,7 +357,7 @@ if test 0 = 1 ;  then
    dnl $CXX $CFLAGS -fdata-sections -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -54,7 +54,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -370,7 +370,7 @@
+@@ -370,7 +370,7 @@ if test 0 = 1 ;  then
    dnl $CXX $CFLAGS -fvtable-gc -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -63,7 +63,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -689,18 +689,18 @@
+@@ -689,18 +689,18 @@ dnl check for pthreads library
  dnl MSWIN_DISPLAY semaphore,Semaphore Support
  dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
  
@@ -88,7 +88,16 @@
    fi
  fi
  
-@@ -1253,7 +1253,7 @@
+@@ -847,7 +847,7 @@ fi
+ AC_SUBST(HAS_PLUGINS)
+ 
+ if test "x$LIB64" != "x" ; then
+-  AC_DEFINE_UNQUOTED([P_DEFAULT_PLUGIN_DIR], ["${INSTALLPREFIX}/lib64/pwlib"], [Default plugin directory])
++  AC_DEFINE_UNQUOTED([P_DEFAULT_PLUGIN_DIR], ["${INSTALLPREFIX}/lib/pwlib"], [Default plugin directory])
+ else
+   AC_DEFINE_UNQUOTED([P_DEFAULT_PLUGIN_DIR], ["${INSTALLPREFIX}/lib/pwlib"], [Default plugin directory])
+ fi
+@@ -1253,7 +1253,7 @@ if test "$enable_expat" = "no" ; then
  else
    AC_CHECK_HEADERS(expat.h, HAS_EXPAT=1)
    if test "${HAS_EXPAT:-unset}" != "unset" ; then
@@ -97,7 +106,7 @@
    else
      AC_CHECK_FILE(/usr/local/include/expat.h, HAS_EXPAT=1)
      if test "${HAS_EXPAT:-unset}" != "unset" ; then
-@@ -1428,7 +1428,8 @@
+@@ -1428,7 +1428,8 @@ else
    if test $HAS_IPV6 = no ; then
      AC_MSG_RESULT(no)
    else
@@ -107,7 +116,7 @@
                       #include <netdb.h>],
                       [getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);], HAS_IPV6=yes, HAS_IPV6=no)
      if test $HAS_IPV6 = no ; then
-@@ -1485,7 +1486,7 @@
+@@ -1485,7 +1486,7 @@ fi
  HAS_SDL=
  if test "$enable_sdl" = "no" ; then
    AC_MSG_NOTICE(SDL disabled)
@@ -116,7 +125,7 @@
  else
    dnl SDL checks
    if test "${SDLLIB:-unset}" = "unset" ; then
-@@ -1501,11 +1502,11 @@
+@@ -1501,11 +1502,11 @@ else
      AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext)
    fi
  
@@ -131,7 +140,7 @@
      fi
    fi
  
-@@ -1527,7 +1528,7 @@
+@@ -1527,7 +1528,7 @@ AC_SUBST(HAS_SDL)
  dnl ########################################################################
  dnl check for video capture support.
  dnl videodev.h on linux
@@ -140,7 +149,7 @@
  dnl i386/ioctl_meteor on OpenBSD
  dnl dev/ic/bt8xx on NetBSD
  
-@@ -1553,9 +1554,10 @@
+@@ -1553,9 +1554,10 @@ else
      HAS_VIDEO_CAPTURE=1
    else
      AC_CHECK_HEADER(linux/videodev.h, HAS_VIDEO_CAPTURE=1)
@@ -154,7 +163,7 @@
      if test "${HAS_VIDEO_CAPTURE}z" = "z" ; then
        AC_MSG_NOTICE(No Video Capture support)
        AC_DEFINE([NO_VIDEO_CAPTURE], [], [No video capture])
-@@ -2046,6 +2048,9 @@
+@@ -2046,6 +2048,9 @@ if test "${enable_exceptions}z" = "yesz"
    AC_MSG_NOTICE(C++ exceptions enabled)
    STDCCFLAGS="$STDCCFLAGS -fno-exceptions"
  fi

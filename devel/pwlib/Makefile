@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pwlib
-PORTVERSION=	1.10.1
-PORTREVISION=	2
+PORTVERSION=	1.10.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -19,11 +18,12 @@ COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-WRKSRC=		${WRKDIR}/pwlib_Phobos_release2/
+WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
+USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
@@ -123,6 +123,16 @@ CFLAGS+=	-fPIC
 PLIST_SUB+=	BSDVIDEO=""
 .else
 PLIST_SUB+=	BSDVIDEO="@comment "
+.endif
+
+.if defined(WITH_V4L) || ( exists(${LOCALBASE}/include/linux/videodev.h) && \
+	!defined(WITHOUT_V4L) )
+CONFIGURE_ARGS+=--enable-v4l
+PLIST_SUB+=	V4L=""
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h
+.else
+CONFIGURE_ARGS+=--disable-v4l
+PLIST_SUB+=	V$L="@comment "
 .endif
 
 post-patch:

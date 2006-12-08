@@ -160,6 +160,7 @@ lib/pwlib/devices/sound/oss_pwplugin.so
 %%AVC1394%%lib/pwlib/devices/videoinput/avc_pwplugin.so
 %%BSDVIDEO%%lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
 %%DC1394%%lib/pwlib/devices/videoinput/dc_pwplugin.so
+%%V4L%%lib/pwlib/devices/videoinput/v4l_pwplugin.so
 @dirrm lib/pwlib/devices/sound
 @dirrm lib/pwlib/devices/videoinput
 @dirrm lib/pwlib/devices
