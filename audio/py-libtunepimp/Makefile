@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Python bindings for libtunepimp
 
-BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
+BUILD_DEPENDS=	${PYCTYPES}
+RUN_DEPENDS=	${PYCTYPES}
 LIB_DEPENDS=	tunepimp.5:${PORTSDIR}/audio/libtunepimp
 
 USE_PYTHON=	yes

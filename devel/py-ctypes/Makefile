@@ -19,4 +19,10 @@ USE_PYDISTUTILS=yes
 
 ONLY_FOR_ARCHS=	i386 amd64 alpha powerpc sparc64
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 250
+IGNORE=	ctypes ships with Python 2.5.x
+.endif
+
+.include <bsd.port.post.mk>
