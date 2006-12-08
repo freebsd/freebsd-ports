@@ -139,6 +139,7 @@ share/locale/az/LC_MESSAGES/ekiga.mo
 share/locale/be/LC_MESSAGES/ekiga.mo
 share/locale/bg/LC_MESSAGES/ekiga.mo
 share/locale/bn/LC_MESSAGES/ekiga.mo
+share/locale/bn_IN/LC_MESSAGES/ekiga.mo
 share/locale/bs/LC_MESSAGES/ekiga.mo
 share/locale/ca/LC_MESSAGES/ekiga.mo
 share/locale/cs/LC_MESSAGES/ekiga.mo
@@ -179,6 +180,7 @@ share/locale/ms/LC_MESSAGES/ekiga.mo
 share/locale/nb/LC_MESSAGES/ekiga.mo
 share/locale/ne/LC_MESSAGES/ekiga.mo
 share/locale/nl/LC_MESSAGES/ekiga.mo
+share/locale/or/LC_MESSAGES/ekiga.mo
 share/locale/pa/LC_MESSAGES/ekiga.mo
 share/locale/pl/LC_MESSAGES/ekiga.mo
 share/locale/pt/LC_MESSAGES/ekiga.mo
@@ -187,6 +189,7 @@ share/locale/ro/LC_MESSAGES/ekiga.mo
 share/locale/ru/LC_MESSAGES/ekiga.mo
 share/locale/rw/LC_MESSAGES/ekiga.mo
 share/locale/sk/LC_MESSAGES/ekiga.mo
+share/locale/sl/LC_MESSAGES/ekiga.mo
 share/locale/sq/LC_MESSAGES/ekiga.mo
 share/locale/sr/LC_MESSAGES/ekiga.mo
 share/locale/sr@Latn/LC_MESSAGES/ekiga.mo
@@ -229,6 +232,8 @@ share/locale/zh_TW/LC_MESSAGES/ekiga.mo
 @dirrmtry share/locale/uk
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
 @dirrmtry share/locale/sk/LC_MESSAGES
 @dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -259,5 +264,7 @@ share/locale/zh_TW/LC_MESSAGES/ekiga.mo
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
