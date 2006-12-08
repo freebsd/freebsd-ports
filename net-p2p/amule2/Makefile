@@ -7,6 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://download.berlios.de/amule/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -14,10 +15,6 @@ MASTER_SITE_SUBDIR=	amule
 
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	The all-platform eMule p2p client
-
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
-#		gd.4:${PORTSDIR}/graphics/gd
-#		png.5:${PORTSDIR}/graphics/png
 
 LATEST_LINK=	aMule2
 CONFLICTS=	aMule-1.* aMule-devel-[0-9]*
@@ -39,8 +36,6 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-curl-config=${CURL_CONFIG} \
 		--enable-embedded_crypto \
 		--enable-monolithic
-#		--with-gdlib-prefix=${LOCALBASE} \
-#		--with-libpng-prefix=${LOCALBASE}
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
