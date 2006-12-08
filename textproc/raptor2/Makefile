@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	1.4.9
-#PORTREVISION=	1
+PORTVERSION=	1.4.13
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://download.librdf.org/source/
@@ -25,8 +24,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
 		--with-pkg-config=${LOCALBASE}/bin/pkg-config \
-		--with-xml-parser=libxml --with-www=curl
-INSTALLS_SHLIB=	yes
+		--with-xml-parser=libxml --with-www=curl \
+		--mandir=${PREFIX}/man
+
+USE_LDCONFIG=	yes
 
 MAN1=		rapper.1 raptor-config.1
 MAN3=		libraptor.3
