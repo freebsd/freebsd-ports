@@ -1,0 +1,24 @@
+$FreeBSD$
+
+--- ../ext/plugin/build/solaris/GNUmakefile.orig	Fri Dec  8 10:52:26 2006
++++ ../ext/plugin/build/solaris/GNUmakefile	Fri Dec  8 10:54:44 2006
+@@ -139,7 +139,7 @@
+ 
+ ifeq ($(findstring BSD,$(OS)), BSD)
+ 
+-INTL_DIR ?= /usr/local
++INTL_DIR ?= $(LOCALBASE)
+ 
+ OSDIR=solaris
+ OS_INCLUDE_DIR=bsd
+@@ -148,8 +148,8 @@
+ 
+ SVR4_DEFINE=
+ 
+-X11_INCLUDE=/usr/X11R6/include
+-X11_LIB=/usr/X11R6/lib
++X11_INCLUDE=$(X11BASE)/include
++X11_LIB=$(X11BASE)/lib
+ MOTIF_INCLUDE = $(MOTIF_DIR)/include
+ MOTIF_LIB     = $(MOTIF_DIR)/lib
+ INTL_INCLUDE  = $(INTL_DIR)/include

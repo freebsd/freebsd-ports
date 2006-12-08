@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- common/Defs-bsd.gmk.orig	Thu Dec 18 22:33:22 2003
-+++ common/Defs-bsd.gmk	Thu Dec 18 22:36:46 2003
+--- common/Defs-bsd.gmk.orig	Fri Dec  8 09:17:41 2006
++++ common/Defs-bsd.gmk	Fri Dec  8 10:53:36 2006
 @@ -32,9 +32,10 @@
  AR             = $(USRBIN_PATH)ar
  AS             = $(USRBIN_PATH)as
@@ -37,3 +37,21 @@ $FreeBSD$
  CXXFLAGS_DBG	= -g3 $(POPT)
  
  CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -DSOLARIS2 $(VERSION_DEFINES) \
+@@ -372,7 +373,7 @@
+ override LIBTHREAD               =
+ override MOOT_PRIORITIES         = true
+ override NO_INTERRUPTIBLE_IO     = true
+-override OPENWINHOME             = /usr/X11R6
++override OPENWINHOME             = $(X11BASE)
+ override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
+ override PREPROCESS_BEFORE_AS    = true
+ override PRIVATIZE_JVM_SYMBOLS   = false
+@@ -416,7 +417,7 @@
+     CPPFLAGS_COMMON += -I$(MOTIF_DIR)/include
+     LDFLAGS_COMMON += -L$(MOTIF_DIR)/lib -L/usr/X11R6/lib # for libXp
+   else
+-    MOTIF_DIR=/usr/X11R6
++    MOTIF_DIR=$(X11BASE)
+   endif
+ endif
+ ifdef ALT_MOTIF_DIR

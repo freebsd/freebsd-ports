@@ -106,8 +106,17 @@ HOTSPOT_TARGETS=compiler1 compiler2
 PLIST_SUB+=	HOTSPOT:="@comment "
 .endif
 
-LD_LIBRARY_PATH_FILES=	../src/solaris/javavm/runtime/javai_md.c \
-			../../hotspot1.3.1/src/os/linux/vm/os_linux.cpp
+LOCAL_FILES=	../src/solaris/javavm/runtime/javai_md.c \
+		../../hotspot1.3.1/src/os/linux/vm/os_linux.cpp
+PTHREAD_FILES=	common/Defs.gmk \
+		common/Program.gmk \
+		java/hpi/native/Makefile \
+		sun/cmm/Makefile \
+		../ext/plugin/build/solaris/GNUmakefile \
+		../../hotspot1.3.1/build/linux/platform_i486 \
+		../../hotspot1.3.1/build/bsd/makefiles/gcc.make \
+		../../hotspot1.3.1/build/linux/makefiles/vm.make
+X11_FILES=	../src/solaris/native/sun/awt/font/fontpath.c
 
 .include <bsd.port.pre.mk>
 
@@ -126,14 +135,6 @@ BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
 .endif
 .endif
 
-PTHREAD_FILES=	common/Defs.gmk \
-	common/Program.gmk \
-	java/hpi/native/Makefile \
-	sun/cmm/Makefile \
-	../ext/plugin/build/solaris/GNUmakefile \
-	../../hotspot1.3.1/build/linux/platform_i486 \
-	../../hotspot1.3.1/build/bsd/makefiles/gcc.make \
-	../../hotspot1.3.1/build/linux/makefiles/vm.make
 
 .if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
@@ -198,7 +199,7 @@ pre-patch:
 
 post-patch:
 	@${FIND} -d ${WRKDIR} -name SCCS -exec ${RM} -rf {} \;
-	@for file in ${LD_LIBRARY_PATH_FILES}; do \
+	@for file in ${LOCAL_FILES}; do \
 		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
@@ -206,6 +207,10 @@ post-patch:
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
 			-e "s:-lc_r:${PTHREAD_LIBS}:g" \
 			-e "s:-lpthread:${PTHREAD_LIBS}:g" \
+			${WRKSRC}/$${file}; \
+	done
+	@for file in ${X11_FILES}; do \
+		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 
