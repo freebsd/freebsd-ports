@@ -462,6 +462,7 @@ archivemail	ports/mail/archivemail
 archivers_rvm	ports/archivers/rvm
 archmage	ports/textproc/archmage
 archmbox	ports/mail/archmbox
+ardour		ports/audio/ardour
 areca-cli	ports/sysutils/areca-cli
 arena		ports/lang/arena
 ares		ports/dns/ares
