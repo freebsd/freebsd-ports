@@ -193,6 +193,7 @@
     SUBDIR += qt33
     SUBDIR += qtpixmap
     SUBDIR += qwt
+    SUBDIR += qwt-devel
     SUBDIR += renaissance
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
