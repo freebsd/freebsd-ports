@@ -31,10 +31,10 @@ include/gammu/misc/coding/coding.h
 include/gammu/misc/coding/md5.h
 include/gammu/phone/pfunc.h
 include/gammu/phone/alcatel/alcatel.h
+include/gammu/phone/at/atfunc.h
 include/gammu/phone/at/atgen.h
 include/gammu/phone/at/samsung.h
 include/gammu/phone/at/siemens.h
-include/gammu/phone/at/sonyeric.h
 include/gammu/phone/nokia/ncommon.h
 include/gammu/phone/nokia/nfunc.h
 include/gammu/phone/nokia/nfuncold.h
@@ -51,6 +51,9 @@ include/gammu/phone/nokia/dct4s40/6510/6510file.h
 include/gammu/phone/nokia/dct4s40/6510/n6510.h
 include/gammu/phone/nokia/wd2/n3650.h
 include/gammu/phone/obex/obexgen.h
+include/gammu/phone/obex/obexfunc.h
+include/gammu/phone/sonyeric/sefunc.h
+include/gammu/phone/sonyeric/sonyeric.h
 include/gammu/phone/symbian/gnapgen.h
 include/gammu/protocol/protocol.h
 include/gammu/protocol/alcatel/alcabus.h
@@ -90,6 +93,7 @@ include/gammu/service/sms/gsmsms.h
 @dirrm include/gammu/protocol/alcatel
 @dirrm include/gammu/protocol
 @dirrm include/gammu/phone/symbian
+@dirrm include/gammu/phone/sonyeric
 @dirrm include/gammu/phone/obex
 @dirrm include/gammu/phone/nokia/dct3
 @dirrm include/gammu/phone/nokia/dct4s40/6510
