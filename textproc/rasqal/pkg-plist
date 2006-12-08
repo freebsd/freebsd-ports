@@ -46,6 +46,7 @@ share/gtk-doc/html/rasqal/rasqal-section-literal.html
 share/gtk-doc/html/rasqal/rasqal-section-prefix.html
 share/gtk-doc/html/rasqal/rasqal-section-query-results.html
 share/gtk-doc/html/rasqal/rasqal-section-query.html
+share/gtk-doc/html/rasqal/rasqal-section-query-results-formatter.html
 share/gtk-doc/html/rasqal/rasqal-section-triple.html
 share/gtk-doc/html/rasqal/rasqal.devhelp
 share/gtk-doc/html/rasqal/rasqal.devhelp2
@@ -96,3 +97,4 @@ share/gtk-doc/html/redland/up.png
 @dirrm share/gtk-doc/html/rasqal
 @exec mkdir -p %D/share/gtk-doc/html/redland
 @dirrm share/gtk-doc/html/redland
+@dirrmtry share/gtk-doc
