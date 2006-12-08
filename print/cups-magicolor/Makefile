@@ -33,4 +33,4 @@ GNU_CONFIGURE=	yes
 BROKEN=		Does not compile on 4.x
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
