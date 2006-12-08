@@ -7,6 +7,7 @@
 
 PORTNAME=	hexxagon
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nesqi.se/hexxagon/hexxagon/download/
 
@@ -17,11 +18,11 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:14
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
 
-MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
+DESKTOP_ENTRIES="Hexxagon" "Strategy Game" "" \
+		"hexxagon" "Application;Game;" false
 
 .include <bsd.port.pre.mk>
 
