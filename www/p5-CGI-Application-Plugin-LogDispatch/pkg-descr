@@ -1,0 +1,5 @@
+CGI::Application::Plugin::LogDispatch adds logging support to your
+CGI::Application modules by providing a Log::Dispatch dispatcher
+object that is accessible from anywhere in the application.
+
+WWW: http://search.cpan.org/dist/CGI-Application-Plugin-LogDispatch/
