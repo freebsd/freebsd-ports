@@ -1,12 +1,12 @@
---- rules_du_jour.orig	Mon Feb  6 20:56:55 2006
-+++ rules_du_jour	Mon Feb  6 20:58:42 2006
+--- rules_du_jour.orig	Fri Dec  8 16:36:00 2006
++++ rules_du_jour	Fri Dec  8 16:42:32 2006
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
- # Version 1.28 Added SARE_STOCKS
+ # Version 1.29b (1.29b: fixed SARE_STOCKS url) Changed ZMI_GERMAN url to its new location
+ # TODO: add auto-cleanup of old rulesets
  
- ##########################
-@@ -51,7 +51,7 @@
+@@ -52,7 +52,7 @@
  # Read configuration file (my_rules_du_jour wrapper script is no longer recommended)
  # /etc/rulesdujour/config is the recommended configuration file location but may
  # be read from one of the following locations, including the RDJ_CONFIGFILE env variable. 
@@ -15,10 +15,10 @@
      [ -f "$i" ] && source $i ;
  done;
  
-@@ -140,7 +140,7 @@
+@@ -143,7 +143,7 @@
  
  TRIPWIRE=0;
-               CF_URLS[0]="http://www.rulesemporium.com/rules/99_FVGT_Tripwire.cf";
+               CF_URLS[0]="${RULESEMPORIUM}/99_FVGT_Tripwire.cf";
 -             CF_FILES[0]="tripwire.cf";
 +             CF_FILES[0]="99_FVGT_Tripwire.cf";
               CF_NAMES[0]="TripWire";
