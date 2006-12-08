@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	db@db.net
 COMMENT=	Scientific tools for Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
+BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
