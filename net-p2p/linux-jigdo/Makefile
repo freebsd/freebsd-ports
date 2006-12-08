@@ -10,7 +10,7 @@ PORTNAME=	jigdo
 PORTVERSION=	0.7.3
 #PORTREVISION?=	0
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://www.atterer.net/jigdo/
+MASTER_SITES=	http://atterer.net/jigdo/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	jigdo-bin-${PORTVERSION}
 
