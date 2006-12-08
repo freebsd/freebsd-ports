@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-7/
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (binary port)
 
 IA32_BINARY_PORT=	YES

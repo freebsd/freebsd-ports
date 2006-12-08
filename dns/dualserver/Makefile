@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dhcp-dns-server
 DISTNAME=	${PORTNAME}V${PORTVERSION}
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Combined DHCP/DNS server for small LANs
 
 USE_DOS2UNIX=	yes

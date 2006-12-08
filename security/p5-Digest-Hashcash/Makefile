@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMBACK
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Perl extension for Hashcash hash algorithm
 
 PERL_CONFIGURE= yes

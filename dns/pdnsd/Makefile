@@ -12,7 +12,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Caching (permanently, writes to disk on exit) DNS proxy-server
 
 GNU_CONFIGURE=	yes

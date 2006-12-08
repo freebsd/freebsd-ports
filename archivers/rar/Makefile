@@ -13,7 +13,7 @@ MASTER_SITES=	http://files.rarlab.com/rar/ \
 		http://files2.rarlab.com/rar/
 DISTNAME=	rarbsd-3.6.0
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	File archiver (binary port)
 
 IA32_BINARY_PORT=	YES

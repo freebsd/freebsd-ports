@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	A program to extract Microsoft cabinet (.CAB) files
 
 USE_GETOPT_LONG=	yes
