@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.4.1
+PORTVERSION=	1.0.5.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://download.librdf.org/source/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://download.librdf.org/source/
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Language bindings for the Redland package
@@ -20,6 +21,8 @@ COMMENT=	Language bindings for the Redland package
 #		RUBY "Add Ruby bindings" off \
 #		TCL "Add TCL bindings" off
 LIB_DEPENDS=	rdf.0:${PORTSDIR}/textproc/redland
+
+USE_LDCONFIG=	yes
 
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
