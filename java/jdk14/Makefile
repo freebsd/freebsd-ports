@@ -54,19 +54,16 @@ LATEST_LINK=	jdk14
 SUN_LINUX_JDK_VERSION=  1.4.2
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2 \
-			${LOCALBASE}/jdk1.4.1
+NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2
 .endif
 
-LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_03 \
-			${LOCALBASE}/linux-sun-jdk1.4.2_02 \
-			${LOCALBASE}/linux-sun-jdk1.4.2_01 \
-			${LOCALBASE}/linux-sun-jdk1.4.2 \
-			${LOCALBASE}/linux-sun-jdk1.4.1_02 \
-			${LOCALBASE}/linux-sun-jdk1.4.1_01 \
-			${LOCALBASE}/linux-sun-jdk1.4.1
+LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_IPV6)
+CATEGORIES+=	ipv6
+.endif
 
 .if defined(WITH_POLICY)
 DISTFILES+=	${POLICYFILE}
@@ -147,6 +144,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/disable-ipv6.patch
 PKGNAMESUFFIX=	-minimal
 .endif
 
+LOCAL_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
 PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 		../../j2se/make/common/Defs.gmk	\
 		../../j2se/make/common/Program.gmk \
@@ -156,8 +154,7 @@ PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 		../../j2se/make/java/net/Makefile \
 		../../deploy/make/common/Defs-bsd.gmk \
 		../../deploy/make/plugin/common/config.gmk
-
-LD_LIBRARY_PATH_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
+X11_FILES=	../../j2se/src/solaris/native/sun/awt/fontpath.c
 
 # Check for JDK sources and patch file
 .if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
@@ -244,12 +241,16 @@ pre-patch:
 		${PATCH} -p0 < ${WRKDIR}/jdk14.patches
 
 post-patch:
-	@for file in ${LD_LIBRARY_PATH_FILES}; do \
+	@for file in ${LOCAL_FILES}; do \
 		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${PTHREAD_FILES}; do \
 		${REINPLACE_CMD} -e "s:-lkse:${PTHREAD_LIBS}:g" \
+			${WRKSRC}/$${file}; \
+	done
+	@for file in ${X11_FILES}; do \
+		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 
