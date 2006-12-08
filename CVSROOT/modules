@@ -12655,6 +12655,7 @@ qvplay		ports/graphics/qvplay
 qvwm		ports/x11-wm/qvwm
 qwdtools	ports/games/qwdtools
 qwt		ports/x11-toolkits/qwt
+qwt-devel	ports/x11-toolkits/qwt-devel
 qwtplot3d	ports/math/qwtplot3d
 r1q2		ports/games/r1q2
 rabl_client	ports/mail/rabl_client
