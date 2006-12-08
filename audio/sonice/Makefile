@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.t-hosting.hu/${PORTNAME}/
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Sonice eases reencoding of .ogg files
 
 RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \

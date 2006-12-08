@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Perl extension implementing one way hash chaining encryption using MD5
 
 PERL_CONFIGURE=	yes

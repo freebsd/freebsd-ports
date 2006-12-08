@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
 DISTNAME=	stage1-x86-${PORTVERSION}
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source

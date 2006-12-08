@@ -9,7 +9,7 @@ CATEGORIES=		audio multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	The real-time guitar processor
 
 USE_BZIP2=	yes

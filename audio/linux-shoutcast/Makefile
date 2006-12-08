@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-7/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	shoutcast-1-9-7-linux-glibc6
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (Linux binary port)
 
 CONFLICTS=	shoutcast-[0-9]*

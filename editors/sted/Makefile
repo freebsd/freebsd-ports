@@ -11,7 +11,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	editors
 MASTER_SITES=	http://freebsd.t-hosting.hu/sted/
 
-MAINTAINER=	gkovesdan@t-hosting.hu
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Simple/Small/Stupid Text Editor
 
 WRKSRC=		${WRKDIR}/sted
