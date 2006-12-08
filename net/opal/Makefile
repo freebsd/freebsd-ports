@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opal
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
@@ -17,12 +17,13 @@ COMMENT=	VoIP abstraction library
 
 LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_Phobos_release2
+WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 # In opal's Makefile the default make's target is optshared
 ALL_TARGET=	optshared
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
