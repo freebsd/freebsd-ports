@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -31,9 +31,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-rasqal=internal \
-		--with-threestore=no
+		--with-threestore=no \
+		--mandir=${PREFIX}/man
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		rasqal-config.1 rdfproc.1 redland-config.1 \
 		redland-db-upgrade.1 roqet.1
