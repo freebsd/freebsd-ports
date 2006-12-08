@@ -1,0 +1,98 @@
+--- SConstruct.orig	Thu Nov 30 18:48:18 2006
++++ SConstruct	Thu Dec  7 20:11:33 2006
+@@ -38,7 +38,7 @@
+     BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
+     BoolOption('LIBLO', 'Compile with support for liblo library', 1),
+     BoolOption('NLS', 'Set to turn on i18n support', 1),
+-    PathOption('PREFIX', 'Set the install "prefix"', '/usr/local'),
++    PathOption('PREFIX', 'Set the install "prefix"', '/usr/local', PathOption.PathIsDirCreate),
+     BoolOption('SURFACES', 'Build support for control surfaces', 0),
+     BoolOption('SYSLIBS', 'USE AT YOUR OWN RISK: CANCELS ALL SUPPORT FROM ARDOUR AUTHORS: Use existing system versions of various libraries instead of internal ones', 0),
+     BoolOption('VERSIONED', 'Add revision information to ardour/gtk executable name inside the build directory', 0),
+@@ -480,9 +480,6 @@
+ 
+ libraries['boost'] = LibraryInfo ()
+ conf = Configure (libraries['boost'])
+-if conf.CheckHeader ('boost/shared_ptr.hpp', language='CXX') == False:
+-        print "Boost header files do not appear to be installed."
+-        sys.exit (1)
+     
+ libraries['boost'] = conf.Finish ()
+ 
+@@ -493,9 +490,6 @@
+     libraries['lo'] = LibraryInfo ()
+     
+     conf = Configure (libraries['lo'])
+-    if conf.CheckLib ('lo', 'lo_server_new') == False:
+-        print "liblo does not appear to be installed."
+-        sys.exit (1)
+     
+     libraries['lo'] = conf.Finish ()
+ 
+@@ -526,7 +520,7 @@
+     libraries['sysmidi'] = LibraryInfo (LIBS='asound')
+     env['SYSMIDI'] = 'ALSA Sequencer'
+     subst_dict['%MIDITAG%'] = "seq"
+-    subst_dict['%MIDITYPE%'] = "alsa/sequencer"
++    subst_dict['%MIDITYPE%'] = "oss/sequencer"
+ elif conf.CheckCHeader('/System/Library/Frameworks/CoreMIDI.framework/Headers/CoreMIDI.h'):
+     # this line is needed because scons can't handle -framework in ParseConfig() yet.
+     libraries['sysmidi'] = LibraryInfo (LINKFLAGS= '-framework CoreMIDI -framework CoreFoundation -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox -bind_at_load')
+@@ -534,8 +528,10 @@
+     subst_dict['%MIDITAG%'] = "ardour"
+     subst_dict['%MIDITYPE%'] = "coremidi"
+ else:
+-    print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
+-    sys.exit (1)
++    libraries['sysmidi'] = LibraryInfo (LIBS='lo')
++    env['SYSMIDI'] = 'nie ma'
++    subst_dict['%MIDITAG%'] = "nie ma"
++    subst_dict['%MIDITYPE%'] = "nie ma"
+ 
+ env = conf.Finish()
+ 
+@@ -568,14 +564,17 @@
+ #    libraries['libglademm'].ParseConfig ('pkg-config --cflags --libs libglademm-2.4')
+ 
+ #    libraries['flowcanvas'] = LibraryInfo(LIBS='flowcanvas', LIBPATH='#/libs/flowcanvas', CPPPATH='#libs/flowcanvas')
+-    libraries['soundtouch'] = LibraryInfo()
+-    libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs soundtouch-1.0')
++    # We cannot use audio/soundtouch, because it doesn't install pkginfo file.
++    libraries['soundtouch'] = LibraryInfo(LIBS='soundtouch',
++                                          LIBPATH='#libs/soundtouch',
++                                          CPPPATH=['#libs', '#libs/soundtouch'])
+ 
+     libraries['appleutility'] = LibraryInfo(LIBS='libappleutility',
+                                             LIBPATH='#libs/appleutility',
+                                             CPPPATH='#libs/appleutility')
+     
+     coredirs = [
++        'libs/soundtouch',
+         'templates'
+     ]
+     
+@@ -858,12 +857,7 @@
+ # prepend boiler plate optimization flags
+ #
+ 
+-opt_flags[:0] = [
+-    "-O3",
+-    "-fomit-frame-pointer",
+-    "-ffast-math",
+-    "-fstrength-reduce"
+-    ]
++opt_flags[:0] = [ "%%CFLAGS%%" ];
+ 
+ if env['DEBUG'] == 1:
+     env.Append(CCFLAGS=" ".join (debug_flags))
+@@ -944,8 +938,8 @@
+     subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
+     subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
+ else:
+-    subst_dict['%JACK_INPUT%'] = "alsa_pcm:playback_"
+-    subst_dict['%JACK_OUTPUT%'] = "alsa_pcm:capture_"
++    subst_dict['%JACK_INPUT%'] = "oss:playback_"
++    subst_dict['%JACK_OUTPUT%'] = "oss:capture_"
+ 
+ # posix_memalign available
+ if not conf.CheckFunc('posix_memalign'):

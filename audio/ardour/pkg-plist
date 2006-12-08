@@ -1,0 +1,104 @@
+bin/ardour2
+lib/ardour2/libsoundtouch.so
+lib/ardour2/libsndfile-ardour.so
+lib/ardour2/libpbd.so
+lib/ardour2/libmidi++.so
+lib/ardour2/libardour.so
+lib/ardour2/libgtkmm2ext.so
+lib/ardour2/ardour.bin
+lib/ardour2/libardour_cp.so
+lib/ardour2/surfaces/libardour_genericmidi.so
+@dirrm lib/ardour2/surfaces
+@dirrm lib/ardour2
+etc/ardour2/ardour2_ui.rc
+etc/ardour2/ardour.menus
+etc/ardour2/ardour.bindings
+etc/ardour2/ardour.colors
+etc/ardour2/ardour_system.rc
+etc/ardour2/ardour.rc
+@dirrmtry etc/ardour2
+share/ardour2/splash.png
+share/ardour2/pixmaps/hslider00.xpm
+share/ardour2/pixmaps/vslider01.xpm
+share/ardour2/pixmaps/tool_audition.xpm
+share/ardour2/pixmaps/vslider02_slider.xpm
+share/ardour2/pixmaps/right_arrow.xpm
+share/ardour2/pixmaps/vslider_slider_16wide.xpm
+share/ardour2/pixmaps/lr.xpm
+share/ardour2/pixmaps/hiout.xpm
+share/ardour2/pixmaps/hiin.xpm
+share/ardour2/pixmaps/tool_range.xpm
+share/ardour2/pixmaps/zoom_full.xpm
+share/ardour2/pixmaps/regin.xpm
+share/ardour2/pixmaps/revdblarrow.xpm
+share/ardour2/pixmaps/tool_gain.xpm
+share/ardour2/pixmaps/left_arrow.xpm
+share/ardour2/pixmaps/toggle-button-00.xpm
+share/ardour2/pixmaps/tool_stretch.xpm
+share/ardour2/pixmaps/forwardblarrow.xpm
+share/ardour2/pixmaps/vslider02_rail.xpm
+share/ardour2/pixmaps/loin.xpm
+share/ardour2/pixmaps/linout.xpm
+share/ardour2/pixmaps/small_x.xpm
+share/ardour2/pixmaps/toggle-button-01.xpm
+share/ardour2/pixmaps/regin2.xpm
+share/ardour2/pixmaps/tool_zoom.xpm
+share/ardour2/pixmaps/regout.xpm
+share/ardour2/pixmaps/linin.xpm
+share/ardour2/pixmaps/regout2.xpm
+share/ardour2/pixmaps/zoom_out.xpm
+share/ardour2/pixmaps/loout.xpm
+share/ardour2/pixmaps/tool_object.xpm
+share/ardour2/pixmaps/set-next-button.xpm
+share/ardour2/pixmaps/loop.xpm
+share/ardour2/pixmaps/small-round-button-01.xpm
+share/ardour2/pixmaps/hslider01.xpm
+share/ardour2/pixmaps/vslider00.xpm
+share/ardour2/pixmaps/zoom_in.xpm
+@dirrm share/ardour2/pixmaps
+share/ardour2/icons/crossfade_out_dipped.png
+share/ardour2/icons/crossfade_in_transition.png
+share/ardour2/icons/tool_stretch.png
+share/ardour2/icons/crossfade_in_constant.png
+share/ardour2/icons/zoom_full.png
+share/ardour2/icons/crossfade_in_dipped.png
+share/ardour2/icons/tool_object.png
+share/ardour2/icons/transport_play.png
+share/ardour2/icons/fader_belt.png
+share/ardour2/icons/crossfade_in_fast-cut.png
+share/ardour2/icons/crossfade_out_fast-cut.png
+share/ardour2/icons/record_normal_red.png
+share/ardour2/icons/crossfade_out_transition.png
+share/ardour2/icons/crossfade_out_slow-cut.png
+share/ardour2/icons/crossfade_in_slow-cut.png
+share/ardour2/icons/transport_loop.png
+share/ardour2/icons/tool_audition.png
+share/ardour2/icons/fader_belt_negative.png
+share/ardour2/icons/transport_end.png
+share/ardour2/icons/record_tape_red.png
+share/ardour2/icons/hide.png
+share/ardour2/icons/tool_zoom.png
+share/ardour2/icons/transport_range.png
+share/ardour2/icons/zoom_out.png
+share/ardour2/icons/zoom_in.png
+share/ardour2/icons/gain_fader.png
+share/ardour2/icons/crossfade_out_constant.png
+share/ardour2/icons/fader_belt_positive.png
+share/ardour2/icons/tool_gain.png
+share/ardour2/icons/crossfade_in_slow-fade.png
+share/ardour2/icons/strip_width.png
+share/ardour2/icons/transport_start.png
+share/ardour2/icons/transport_stop.png
+share/ardour2/icons/nudge_left.png
+share/ardour2/icons/transport_record.png
+share/ardour2/icons/crossfade_out_slow-fade.png
+share/ardour2/icons/nudge_right.png
+@dirrm share/ardour2/icons
+@dirrm share/ardour2
+%%EXAMPLESDIR%%/templates/16 Tracks.template
+%%EXAMPLESDIR%%/templates/2 Track.template
+%%EXAMPLESDIR%%/templates/32 Tracks.template
+%%EXAMPLESDIR%%/templates/4 Tracks.template
+%%EXAMPLESDIR%%/templates/8 Tracks.template
+@dirrm %%EXAMPLESDIR%%/templates
+@dirrm %%EXAMPLESDIR%%
