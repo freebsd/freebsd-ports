@@ -1,3 +1,6 @@
 MD5 (swt-3.2.1-gtk-linux-x86.zip) = 9c653dbf73787b305a938170cd4335b1
 SHA256 (swt-3.2.1-gtk-linux-x86.zip) = 940a5dd90131fe2fa02bcf04374dc168a136100d058042732272ca8e61349e78
 SIZE (swt-3.2.1-gtk-linux-x86.zip) = 3118312
+MD5 (swt-3.2.1-gtk-linux-x86_64.zip) = 736b05cc0ea679cbdaf98d2245edd38c
+SHA256 (swt-3.2.1-gtk-linux-x86_64.zip) = f7cda0d51a0b01954b96821b1a1053f7b76760286f82756b87963caae2c93cb5
+SIZE (swt-3.2.1-gtk-linux-x86_64.zip) = 2997030
