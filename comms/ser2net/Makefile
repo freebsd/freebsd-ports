@@ -7,6 +7,7 @@
 
 PORTNAME=	ser2net
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	comms net
 MASTER_SITES=	SF
 
@@ -14,7 +15,6 @@ MAINTAINER=	devon.odell@coyotepoint.com
 COMMENT=	Allows to access serial ports over IP
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-uucp-locking
 MAN8=		${PORTNAME}.8
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
 USE_RC_SUBR=	${PORTNAME}
