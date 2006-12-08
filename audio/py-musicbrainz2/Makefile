@@ -15,8 +15,8 @@ DISTNAME=	python-musicbrainz2-${DISTVERSION}
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
+BUILD_DEPENDS=	${PYCTYPES}
+RUN_DEPENDS=	${PYCTYPES}
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
 USE_PYTHON=	yes
