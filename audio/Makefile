@@ -498,6 +498,7 @@
     SUBDIR += q-audio
     SUBDIR += qjackctl
     SUBDIR += quelcom
+    SUBDIR += raop_play
     SUBDIR += raproxy
     SUBDIR += rawrec
     SUBDIR += rbscrobbler
