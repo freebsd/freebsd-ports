@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Create runnable Perl files encrypted with OpenSSL libcrypto
 
-BUILD_DEPENDS=	${SITE_PERL}/PAR/Filter.pm:${PORTSDIR}/devel/p5-PAR
+BUILD_DEPENDS=	${SITE_PERL}/PAR/Filter.pm:${PORTSDIR}/devel/p5-PAR-Packer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
