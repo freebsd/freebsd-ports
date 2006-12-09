@@ -19,8 +19,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
+USE_XLIB=	yes
 
 do-build:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+		${WRKSRC}/display/setup.py
 	# Compile the statesaver extension module
 	cd ${WRKSRC}/bubbob; ${PYTHON_CMD} setup.py build_ext -i
 	# Compile the X-window client extension module
