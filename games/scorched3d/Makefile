@@ -51,6 +51,8 @@ post-patch:
 		${WRKSRC}/src/3dsparse/aseFile.tab.cpp \
 		${WRKSRC}/src/ode/config.h \
 		${WRKSRC}/src/zlib/zutil.h
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/configure.ac
 
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
