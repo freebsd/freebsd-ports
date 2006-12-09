@@ -1,0 +1,21 @@
+This module implements asynchronous I/O using whatever means your
+operating system supports.
+
+Asynchronous means that operations that can normally block your
+program (e.g. reading from disk) will be done asynchronously: the
+operation will still block, but you can do something else in the
+meantime. This is extremely useful for programs that need to stay
+interactive even when doing heavy I/O (GUI programs, high performance
+network servers etc.), but can also be used to easily do operations in
+parallel that are normally done sequentially, e.g. stat'ing many files,
+which is much faster on a RAID volume or over NFS when you do a number
+of stat operations concurrently.
+
+While most of this works on all types of file descriptors (for example
+sockets), using these functions on file descriptors that support
+nonblocking operation (again, sockets, pipes etc.) is very inefficient
+or might not work (aio_read fails on sockets/pipes/fifos). Use an
+event loop for that (such as the Event module): IO::AIO will naturally
+fit into such an event loop itself.
+
+WWW:	http://search.cpan.org/dist/IO-AIO/
