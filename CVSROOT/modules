@@ -1785,6 +1785,7 @@ detachtty	ports/misc/detachtty
 detex		ports/print/detex
 detox		ports/sysutils/detox
 deutex		ports/archivers/deutex
+devcpu		ports/sysutils/devcpu
 devel-replay	ports/devel/replay
 devel_atlas-devel	ports/devel/atlas-devel
 devel_git	ports/devel/git
