@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	pomap
-PORTVERSION=	2.9.7
+PORTVERSION=	2.9.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	OCaml library to maintain a list of partially ordered elements
 
 USE_BZIP2=	yes
