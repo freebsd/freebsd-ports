@@ -1,11 +1,12 @@
 bin/recoll
 bin/recollindex
 share/applications/recoll.desktop
-share/icons/recoll.png
+share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/doc/docbook.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/mimeconf
 %%DATADIR%%/examples/mimemap
+%%DATADIR%%/examples/rclmon.sh
 %%DATADIR%%/examples/recoll.conf
 %%DATADIR%%/filters/rcldjvu
 %%DATADIR%%/filters/rcldoc
