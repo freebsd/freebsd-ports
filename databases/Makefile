@@ -483,6 +483,7 @@
     SUBDIR += unixODBC
     SUBDIR += useracc
     SUBDIR += usogres
+    SUBDIR += virtuoso
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-core
