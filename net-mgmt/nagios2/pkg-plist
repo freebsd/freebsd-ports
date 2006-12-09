@@ -7,11 +7,9 @@
 bin/nagios
 bin/nagiostats
 %%EMBEDDED_PERL%%bin/p1.pl
-etc/nagios/bigger.cfg-sample
 etc/nagios/cgi.cfg-sample
-etc/nagios/checkcommands.cfg-sample
-etc/nagios/minimal.cfg-sample
-etc/nagios/misccommands.cfg-sample
+etc/nagios/commands.cfg-sample
+etc/nagios/localhost.cfg-sample
 etc/nagios/nagios.cfg-sample
 etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/cgi-bin/avail.cgi

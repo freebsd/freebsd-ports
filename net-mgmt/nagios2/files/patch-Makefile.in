@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Nov 26 17:35:35 2005
-+++ Makefile.in	Wed Dec 28 23:06:40 2005
-@@ -177,7 +177,7 @@
+--- Makefile.in.orig	Tue Nov 28 12:59:04 2006
++++ Makefile.in	Sat Dec  9 08:04:47 2006
+@@ -186,7 +186,7 @@
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/archives
  	if [ $(INSTALLPERLSTUFF) = yes ]; then \
@@ -9,7 +9,7 @@
  	fi;
  
  	@echo ""
-@@ -204,14 +204,14 @@
+@@ -213,12 +213,12 @@
  
  
  install-config:
@@ -17,18 +17,14 @@
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/nagios.cfg $(DESTDIR)$(CFGDIR)/nagios.cfg-sample
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg-sample
 -	$(INSTALL) -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg-sample
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/bigger.cfg $(DESTDIR)$(CFGDIR)/bigger.cfg-sample
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/minimal.cfg $(DESTDIR)$(CFGDIR)/minimal.cfg-sample
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/checkcommands.cfg $(DESTDIR)$(CFGDIR)/checkcommands.cfg-sample
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/misccommands.cfg $(DESTDIR)$(CFGDIR)/misccommands.cfg-sample
+-	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/localhost.cfg-sample
+-	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/commands.cfg-sample
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/nagios.cfg $(DESTDIR)$(CFGDIR)/nagios.cfg-sample
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg-sample
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg-sample
-+	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/template-object/bigger.cfg $(DESTDIR)$(CFGDIR)/bigger.cfg-sample
-+	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/template-object/minimal.cfg $(DESTDIR)$(CFGDIR)/minimal.cfg-sample
-+	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/template-object/checkcommands.cfg $(DESTDIR)$(CFGDIR)/checkcommands.cfg-sample
-+	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/template-object/misccommands.cfg $(DESTDIR)$(CFGDIR)/misccommands.cfg-sample
++	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/localhost.cfg-sample
++	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/commands.cfg-sample
  
  	@echo ""
  	@echo "*** Sample config file installed ***"
