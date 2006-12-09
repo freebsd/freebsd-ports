@@ -7,6 +7,7 @@
 
 PORTNAME=	ucarp
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ucarp.org/pub/ucarp/
 
@@ -17,6 +18,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-nls
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+USE_RC_SUBR=	ucarp
 
 PLIST_FILES=	sbin/ucarp
 
