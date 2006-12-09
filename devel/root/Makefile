@@ -258,6 +258,13 @@ post-patch:
 		's|auxcflags=\"PTHREAD-CFLAGS|auxcflags=\"${PTHREAD_CFLAGS}|;\
 		s|auxlibs=\"PTHREAD-LIBS|auxlibs=\"${PTHREAD_LIBS}|'         \
 		${WRKSRC}/config/root-config.in
+	@${REINPLACE_CMD} -e                                                 \
+		's|/usr/X11R6|${X11BASE}|g'                                   \
+		${WRKSRC}/configure \
+		${WRKSRC}/cint/lib/gl/setup \
+		${WRKSRC}/cint/lib/xlib/setup \
+		${WRKSRC}/config/Makefile.freebsd* \
+		${WRKSRC}/test/Makefile.arch
 
 .if defined(MAINTAINER_MODE)
 test:	install
