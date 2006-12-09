@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.4.5
+PORTVERSION=	4.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	sip-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
