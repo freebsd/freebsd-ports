@@ -35,7 +35,6 @@ Local/Library/Bundles/CodeEditorView.bundle/stamp.make
 @dirrm Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/Resources
 @dirrm Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle
 @dirrm Local/Library/ApplicationSupport/CodeEditorView
-@dirrm Local/Library/ApplicationSupport
 @dirrm Local/Applications/CodeEditor.app/Resources/Window.gorm
 @dirrm Local/Applications/CodeEditor.app/Resources/Scripts
 @dirrm Local/Applications/CodeEditor.app/Resources/Preference.gorm

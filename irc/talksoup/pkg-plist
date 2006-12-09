@@ -237,6 +237,5 @@ Local/Library/Libraries/libTalkSoupBundles.so.%%LIBVERSION%%
 @dirrm Local/Library/ApplicationSupport/TalkSoup/InFilters/DCCSupport
 @dirrm Local/Library/ApplicationSupport/TalkSoup/InFilters
 @dirrm Local/Library/ApplicationSupport/TalkSoup
-@dirrm Local/Library/ApplicationSupport
 @dirrm Local/Applications/TalkSoup.app/Resources
 @dirrm Local/Applications/TalkSoup.app
