@@ -14,6 +14,8 @@ DISTNAME=	blobAndConquer-${DISTVERSION}
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A somewhat violent 3D action game
 
+BROKEN=		Checksum mismatch
+
 FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 USE_X_PREFIX=	yes
