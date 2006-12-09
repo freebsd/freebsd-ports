@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -21,13 +20,16 @@ USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 .if ${MACHINE_CPU:Mi586}
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
 MAN1=		gpg.1 gpgv.1 gpg.ru.1
 MAN7=		gnupg.7
-INFO=		gpg gpgv
+INFO=		gnupg1
+DOCSDIR=	${PREFIX}/share/doc/gnupg1
+LATEST_LINK=	gnupg1
 
 PORTDOCS=	*
 

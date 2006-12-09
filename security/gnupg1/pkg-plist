@@ -7,9 +7,6 @@ libexec/gnupg/gpgkeys_curl
 libexec/gnupg/gpgkeys_finger
 libexec/gnupg/gpgkeys_hkp
 @dirrm libexec/gnupg
-%%DATADIR%%/FAQ
-%%DATADIR%%/faq.html
-%%DATADIR%%/options.skel
 %%NLS%%share/locale/be/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg.mo
@@ -39,7 +36,6 @@ libexec/gnupg/gpgkeys_hkp
 %%NLS%%share/locale/tr/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg.mo
-@dirrm %%DATADIR%%
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
 @dirrmtry share/locale/ca/LC_MESSAGES
