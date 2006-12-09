@@ -1,0 +1,10 @@
+This kernel module provides access to i386/amd64 CPUs MSR (Model Specific
+Register) registers and cpuid info through /dev/cpu%d devices, where %d
+corresponds to cpu number.
+
+It can be used with x86info to retrive information available from MSR registers.
+
+Additionally, this module can be used to update/replace microcode of cpus.
+
+Author:	Stanislav Sedov <stas@FreeBSD.org>
+WWW:	http://mbsd.msk.ru/stas/devcpu.html

@@ -119,6 +119,7 @@
     SUBDIR += desktopbsd-tools
     SUBDIR += detach
     SUBDIR += detox
+    SUBDIR += devcpu
     SUBDIR += di
     SUBDIR += dim
     SUBDIR += dircomp
