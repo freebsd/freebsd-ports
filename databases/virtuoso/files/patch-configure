@@ -1,0 +1,46 @@
+--- configure.orig	Sat Oct 28 01:47:57 2006
++++ configure	Fri Dec  8 00:21:26 2006
+@@ -2201,6 +2201,7 @@
+ #actually prefer /lib/cpp : it's to be run on Java
+ case $host in
+     *-darwin*) CPP=/usr/bin/cpp ;;
++    *-freebsd*) CPP=/usr/bin/cpp ;;
+     *) CPP=/lib/cpp ;;
+ esac
+ 
+@@ -31280,7 +31281,7 @@
+ 
+ 
+ 
+-for ac_header in krb5.h gssapi/gssapi.h gssapi/gssapi_generic.h gssapi/gssapi_krb5.h
++for ac_header in krb5.h gssapi/gssapi.h gssapi/gssapi_generic.h gssapi/gssapi_krb5.h gssapi.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -31756,8 +31757,8 @@
+ 	   openldap_LDFLAGS="-lldap -llber"
+ 	   LDFLAGS="$LDFLAGS $openldap_LDFLAGS" ;;
+ 	*)
+-	   openssl_CFLAGS="-I$with_ldap/include"
+-	   openssl_LDFLAGS="-L$with_ldap/lib -lldap -llber"
++	   openldap_CFLAGS="-I$with_ldap/include"
++	   openldap_LDFLAGS="-L$with_ldap/lib -lldap -llber"
+ 	   CPPFLAGS="$CPPFLAGS $openldap_CFLAGS"
+ 	   LDFLAGS="$LDFLAGS $openldap_LDFLAGS"
+ 	   LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$with_ldap/lib" ;;
+@@ -35797,13 +35798,13 @@
+ ##  various destination dirs                      			##
+ ##									##
+ ##########################################################################
+-virtdatadir=$datadir/virtuoso
++virtdatadir=$prefix/virtuoso
+ vaddir=$virtdatadir/vad
+ docdir=$virtdatadir/doc
+ htmldocdir=$docdir/html
+ pdfdocdir=$docdir/pdf
+ 
+-virtstatedir=$localstatedir/lib/virtuoso
++virtstatedir=$prefix/virtuoso
+ demodir=$virtstatedir/demo
+ dbdir=$virtstatedir/db
+ httprootdir=$virtstatedir/vsp

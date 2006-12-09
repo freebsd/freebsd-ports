@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: virtuoso
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable Virtuoso Universal Server:
+#
+#  virtuoso_enable="YES"
+#  # optional
+#  virtuoso_config="%%PREFIX%%/virtuoso/db/virtuoso.ini"
+#  virtuoso_flags=""
+#
+# This scripts takes one of the following commands:
+#
+#   start stop restart reload status
+#
+
+prefix=%%PREFIX%%
+command=${prefix}/bin/virtuoso
+
+. %%RC_SUBR%%
+
+load_rc_config virtuoso
+
+# set defaults
+virtuoso_enable=${virtuoso_enable:-"NO"}
+virtuoso_flags=${virtuoso_flags:-""}
+virtuoso_user=virtuoso
+eval virtuoso_config=${virtuoso_config:-"~${virtuoso_user}/db/virtuoso.ini"}
+virtuoso_class=${virtuoso_class:-"default"}
+
+name=virtuoso
+rcvar=`set_rcvar`
+command_args="-D ${virtuoso_data} ${virtuoso_flags}"
+extra_commands="reload"
+
+start_cmd="virtuoso_command start"
+stop_cmd="virtuoso_command stop"
+restart_cmd="virtuoso_command restart"
+reload_cmd="virtuoso_command reload"
+status_cmd="virtuoso_command status"
+
+initdb_cmd="virtuoso_initdb"
+
+virtuoso_command()
+{
+    su -l ${virtuoso_user} -c "exec ${command} ${command_args} ${rc_arg}"
+}
+    
+run_rc_command "$1"
