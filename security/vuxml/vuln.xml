@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="1b043693-8617-11db-93b2-000e35248ad7">
-    <topic> libxine -- multiple buffer overflow vulnerabilities</topic>
+    <topic>libxine -- multiple buffer overflow vulnerabilities</topic>
     <affects>
       <package>
 	<name>libxine</name>
@@ -44,38 +44,31 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Secunia reports:</p>
-	<blockquote cite="http://secunia.com/advisories/23218/">
-	  <p>
-	    Some vulnerabilities have been reported in xine-lib, which
-	    potentially can be exploited by malicious people to compromise
-	    a user's system.
-          </p>
-          <p>
-	    1) A vulnerability is caused due to a boundary error within the
-	    "real_parse_sdp()" function in src/input/libreal/real.c. This
-	    can be exploited to cause a buffer overflow by e.g. tricking a
-	    user into connecting to a malicious server.
-          </p>
-	  <p>
-	    2) A buffer overflow exists in the libmms library.
-	    For more information: <a href="http://secunia.com/SA20749/">SA20749</a>
-	  </p>
-	  <p>
-	    Successful exploitation may allow the execution of arbitrary code.
-	  </p>
-	</blockquote>
+	<p>The libxine development team reports that several
+	  vulnerabilities had been found in the libxine library. The
+	  first vulnerability is caused by improper checking of the
+	  src/input/libreal/real.c "real_parse_sdp()" function.
+	  A remote attacker could exploit this by tricking an user to
+	  connect to a preparated server potentially causing a buffer
+	  overflow.  Another buffer overflow had been found in the
+	  libmms library, potentially allowing a remote attacker to
+	  cause a denial of service vulnerability, and possible remote
+	  code execution through the following functions: send_command,
+	  string_utf16, get_data and get_media_packets.  Other functions
+	  might be affected as well.</p>
       </body>
     </description>
     <references>
-      <cvename>CVE-2006-2200</cvename>
-      <cvename>CVE-2006-6172</cvename>
       <bid>18608</bid>
       <bid>21435</bid>
+      <cvename>CVE-2006-2200</cvename>
+      <cvename>CVE-2006-6172</cvename>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=468432</url>
     </references>
     <dates>
       <discovery>2006-05-04</discovery>
       <entry>2006-12-07</entry>
+      <modified>2006-12-09</modified>
     </dates>
   </vuln>
 
