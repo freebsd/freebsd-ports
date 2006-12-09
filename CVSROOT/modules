@@ -12377,6 +12377,7 @@ py-tconfpy	ports/devel/py-tconfpy
 py-testgears	ports/devel/py-testgears
 py-testoob	ports/devel/py-testoob
 py-tkinter	ports/x11-toolkits/py-tkinter
+py-tktreectrl	x11-toolkits/py-tktreectrl
 py-tlslite	ports/security/py-tlslite
 py-tofu		ports/net/py-tofu
 py-trustedpickle	ports/security/py-trustedpickle
