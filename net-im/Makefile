@@ -34,6 +34,7 @@
     SUBDIR += gaim-rss-reader
     SUBDIR += gaim-slashexec
     SUBDIR += gajim
+    SUBDIR += gajim-devel
     SUBDIR += gale
     SUBDIR += gicq
     SUBDIR += ginsu
