@@ -154,6 +154,7 @@ System/share/config.site
 @dirrm System/Library
 @dirrm System/Applications
 @dirrm System
+@dirrm Local/Tools/Resources
 @dirrm Local/Tools
 @dirrm Local/Library/Preferences
 @dirrm Local/Library/Libraries
@@ -161,18 +162,20 @@ System/share/config.site
 @dirrm Local/Library/Frameworks
 @dirrm Local/Library/Documentation
 @dirrm Local/Library/Bundles
+@dirrm Local/Library/ApplicationSupport
 @dirrm Local/Library
 @dirrm Local/Applications
 @dirrm Local
 @unexec rmdir %D
 @exec mkdir -p %D/Local/Applications
+@exec mkdir -p %D/Local/Library/ApplicationSupport
 @exec mkdir -p %D/Local/Library/Bundles
 @exec mkdir -p %D/Local/Library/Documentation
 @exec mkdir -p %D/Local/Library/Frameworks
 @exec mkdir -p %D/Local/Library/Headers
 @exec mkdir -p %D/Local/Library/Libraries
 @exec mkdir -p %D/Local/Library/Preferences
-@exec mkdir -p %D/Local/Tools
+@exec mkdir -p %D/Local/Tools/Resources
 @exec mkdir -p %D/System/Applications
 @exec mkdir -p %D/System/Library/ApplicationSupport
 @exec mkdir -p %D/System/Library/Bundles
