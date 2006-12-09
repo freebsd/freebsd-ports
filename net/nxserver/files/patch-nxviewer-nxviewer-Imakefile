@@ -5,7 +5,7 @@
  
  
 -INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/include/X11 $(NX_INC)
-+INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/local/include -I/usr/X11R6/include/X11 $(NX_INC)
++INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/local/include -I$(X11BASE)/include/X11 $(NX_INC)
  VNCAUTH_LIB = ./libvncauth.a
  ZLIB_LIB = -L/usr/local/lib -lz
  JPEG_LIB = -L/usr/local/lib -ljpeg
