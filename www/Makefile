@@ -523,6 +523,7 @@
     SUBDIR += p5-CGI-Application-Plugin-LinkIntegrity
     SUBDIR += p5-CGI-Application-Plugin-LogDispatch
     SUBDIR += p5-CGI-Application-Plugin-Redirect
+    SUBDIR += p5-CGI-Application-Plugin-Session
     SUBDIR += p5-CGI-Application-Plugin-Stream
     SUBDIR += p5-CGI-Application-Plugin-TT
     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
