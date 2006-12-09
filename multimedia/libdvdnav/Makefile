@@ -24,12 +24,12 @@ INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15 autoconf:259
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
+	${REINPLACE_CMD} -e \
+		's|THREAD_LIBS="[^"]*"$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
 		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
 		 s|-L/usr/local/lib|-L${LOCALBASE}/lib|g ; \
 		 s|-I/usr/local/include|-I${LOCALBASE}/include|g' \
-		 ${WRKSRC}/configure ${WRKSRC}/missing \
-		 ${WRKSRC}/aclocal.m4 ${WRKSRC}/autogen.sh
+		 ${WRKSRC}/configure ${WRKSRC}/configure.ac \
+		 ${WRKSRC}/missing ${WRKSRC}/aclocal.m4 ${WRKSRC}/autogen.sh
 
 .include <bsd.port.mk>
