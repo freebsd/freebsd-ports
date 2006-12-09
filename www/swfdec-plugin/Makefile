@@ -28,6 +28,7 @@ USE_GNOME=	gnomehack gtk20 libartlgpl2
 USE_GSTREAMER=	yes
 USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
