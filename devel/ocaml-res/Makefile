@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	res
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Automatically Resizing Contiguous Memory for OCaml
 
 USE_BZIP2=	yes
