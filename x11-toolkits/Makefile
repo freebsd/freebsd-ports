@@ -182,6 +182,7 @@
     SUBDIR += py-kiwi
     SUBDIR += py-qt
     SUBDIR += py-tkinter
+    SUBDIR += py-tktreectrl
     SUBDIR += py-wax
     SUBDIR += py-wmgeneral
     SUBDIR += py-wxPython24

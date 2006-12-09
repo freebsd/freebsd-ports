@@ -1,0 +1,5 @@
+The TkTreectrl module wraps the treectrl tk extension for
+use with python/Tkinter.
+
+WWW: http://klappnase.zexxo.net/TkinterTreectrl/
+Author: Michael Lange <klappnase@8ung.at>
