@@ -24,7 +24,8 @@ USE_SDL=	sdl mixer image ttf gfx
 USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libphysfs=${PREFIX}
+CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
