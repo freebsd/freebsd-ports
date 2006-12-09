@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	cfg
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Library for manipulation of context-free grammars
 
 USE_BZIP2=	yes
