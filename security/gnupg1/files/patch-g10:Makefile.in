@@ -1,0 +1,11 @@
+--- g10/Makefile.in.orig	Mon Dec  4 09:50:35 2006
++++ g10/Makefile.in	Mon Dec  4 09:50:46 2006
+@@ -36,7 +36,7 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/doc/gnupg1
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ..
