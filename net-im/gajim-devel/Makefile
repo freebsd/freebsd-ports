@@ -1,41 +1,80 @@
-# New ports collection makefile for:	gajim
-# Date created:				27 April 2005
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
+# New ports collection makefile for:	gajim-devel
+# Date created:				Sun Nov 26 16:36:07 MSK 2006
+# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.10.1
+PORTVERSION=	20061129
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.gajim.org/downloads/
+MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-2006-11-29
 
-MAINTAINER=	stephan@spaceboyz.net
+MAINTAINER=	dsh@vlink.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
 
-USE_X_PREFIX=	yes
-USE_PYTHON=	2.3+
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	pygtk2
+USE_PYTHON=	2.4+
+USE_XLIB=	yes
 
-MAKE_ENV+=	PY_CFLAGS=-I${PYTHON_INCLUDEDIR} \
-		PY_PREFIX=${LOCALBASE} \
-		CC=${CC} LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" PYTHON=${PYTHON_CMD}
 
-MAN1=		gajim.1 \
-		gajim-remote.1
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.10.1.8
+
+MAN1=		gajim.1 gajim-remote.1
+
+EMOTICONS=	animated static
+ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
+		simplebulb stellar sun transports
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^PREFIX.*=.*||; s|^DESTDIR.*=.*||; s|share/man|man|' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e \
-		's|CFLAGS =|CFLAGS +=|; s|LDFLAGS =|LDFLAGS +=|; \
-		 s|-I/usr/include/python\$$(PYTHONVER)|$$(PY_CFLAGS)|' \
-		${WRKSRC}/src/Makefile ${WRKSRC}/src/common/Makefile
+.for i in gajim-remote.py gajim.py history_manager.py
+		${REINPLACE_CMD} -e '1,1s/python/${PYTHON_VERSION}/' \
+			${WRKSRC}/src/$i
+.endfor
 
-.include <bsd.port.mk>
+post-install:
+		${MKDIR} ${DATADIR}/data/emoticons
+		(cd ${WRKSRC}/data/emoticons && \
+		${CP} -R ${EMOTICONS} ${DATADIR}/data/emoticons)
+
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/emoticons
+		${FIND} ${DATADIR}/data/emoticons -type d -print0 | \
+			${XARGS} -0 ${CHMOD} 755
+		${FIND} ${DATADIR}/data/emoticons -type f -print0 | \
+			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+
+		${MKDIR} ${DATADIR}/data/iconsets
+		(cd ${WRKSRC}/data/iconsets && \
+		${CP} -R ${ICONSETS} ${DATADIR}/data/iconsets)
+
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/iconsets
+		${FIND} ${DATADIR}/data/iconsets -type d -print0 | \
+			${XARGS} -0 ${CHMOD} 755
+		${FIND} ${DATADIR}/data/iconsets -type f -print0 | \
+			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 250
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
+.endif
+
+.include <bsd.port.post.mk>
