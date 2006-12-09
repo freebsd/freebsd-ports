@@ -8,6 +8,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +21,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		dv.4:${PORTSDIR}/multimedia/libdv
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 WANT_GNOME=	yes
@@ -44,10 +45,11 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) || !exists(${LOCALBASE}/lib/libavformat.a)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+PLIST_SUB+=	FFMPEG=""
 .else
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+NO_FFMPEG=	${TRUE}
+PLIST_SUB+=	FFMPEG="@comment "
 .endif
-
 
 .if ${HAVE_GNOME:Mgtk20}!="" || defined(WITH_GTK2)
 USE_GNOME+=	gtk20
