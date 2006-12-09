@@ -3098,6 +3098,7 @@ gaim-rss-reader	ports/net-im/gaim-rss-reader
 gaim-slashexec	ports/net-im/gaim-slashexec
 gaim-xmms-remote	ports/multimedia/gaim-xmms-remote
 gajim		ports/net-im/gajim
+gajim-devel	ports/net-im/gajim-devel
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
 gal2-reference	ports/x11-toolkits/gal2-reference
