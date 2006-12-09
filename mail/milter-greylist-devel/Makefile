@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aragorn+ports@teaser.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use greylist milter for sendmail (development)
 
 MAN5=		greylist.conf.5
