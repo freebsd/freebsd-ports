@@ -9408,6 +9408,7 @@ p5-IPC-Run3	ports/devel/p5-IPC-Run3
 p5-IPC-ShareLite	ports/devel/p5-IPC-ShareLite
 p5-IPC-Shareable	ports/devel/p5-IPC-Shareable
 p5-IPC-SharedCache	ports/devel/p5-IPC-SharedCache
+p5-IPC-Signal	ports/devel/p5-IPC-Signal
 p5-IRC		ports/irc/p5-IRC
 p5-Ima-DBI	ports/databases/p5-Ima-DBI
 p5-Image-Caa	ports/graphics/p5-Image-Caa
