@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	5.11.1
+PORTVERSION=	5.11.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
@@ -15,45 +15,30 @@ DISTNAME=	pcre-ocaml-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
 
+USE_OCAML=	yes
+USE_OCAML_FINDLIB=	yes
+USE_OCAML_LDCONFIG=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV+=	LIBDIRS="${LOCALBASE}/lib"
+
 USE_GMAKE=	yes
-MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/pcre" \
-		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib" \
-		OCAMLFIND_DESTDIR="${PREFIX}/lib/ocaml/site-lib"
-.if !defined(WITH_CUSTOM)
-MAKE_ENV+=	NO_CUSTOM=y
-.endif
-ALL_TARGET=	all
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-.if defined(WITH_DOCS)
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
-USE_GHOSTSCRIPT_BUILD=	yes
-ALL_TARGET+=	doc
-PORTDOCS=	*
-
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-.endif
-
-PKGDEINSTALL=	${PKGINSTALL}
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/pcre -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/pcre" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove pcre 2>/dev/null || true" >> ${TMPPLIST}
-.if defined(WITH_DOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
+.include <bsd.port.post.mk>
