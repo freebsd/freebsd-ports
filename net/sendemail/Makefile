@@ -7,7 +7,7 @@
 # $Tecnik: ports/net/sendemail/Makefile,v 1.1 2005/12/17 01:22:24 itetcu Exp $
 
 PORTNAME=	sendEmail
-PORTVERSION=	1.52
+PORTVERSION=	1.54
 CATEGORIES=	net
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
@@ -22,6 +22,14 @@ USE_PERL5_RUN=	yes
 PLIST_FILES=	bin/sendEmail
 PORTDOCS=	CHANGELOG README TODO
 
+OPTIONS=	SSL "Enable SSL support" off
+
+.include <bsd.port.pre.mk>
+.if defined(WITH_SSL)
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" \
 		${WRKSRC}/${PORTNAME}
@@ -33,4 +41,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG README TODO ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
