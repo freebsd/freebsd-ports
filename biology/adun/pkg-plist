@@ -190,7 +190,6 @@ Local/Tools/AdunCore
 Local/Tools/AdunServer
 Local/Tools/Resources/AdunCore/reloadOptions.plist
 @dirrm Local/Tools/Resources/AdunCore
-@dirrm Local/Tools/Resources
 @dirrm Local/Library/Headers/XMLLib
 @dirrm Local/Library/Headers/ULFramework
 @dirrm Local/Library/Headers/MolTalk
