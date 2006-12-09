@@ -116,6 +116,7 @@ share/automake-%%VERSION%%/texinfo.tex
 share/automake-%%VERSION%%/ylwrap
 share/doc/automake/amhello-1.0.tar.gz
 @dirrm share/doc/automake
+@dirrm share/doc
 @dirrm share/automake-%%VERSION%%/am
 @dirrm share/automake-%%VERSION%%/Automake
 @dirrm share/automake-%%VERSION%%
