@@ -1,0 +1,13 @@
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/hierarchy.gif
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/ovr.gif
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/pers.gif
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/vsrc.gif
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/about.html
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.veditor_%%VER%%/veditor.jar
+@dirrm eclipse/plugins/net.sourceforge.veditor_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.veditor_%%VER%%
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse

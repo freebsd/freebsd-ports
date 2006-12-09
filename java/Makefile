@@ -148,6 +148,7 @@
     SUBDIR += sun-wtk
     SUBDIR += trove4j
     SUBDIR += tya
+    SUBDIR += veditor
     SUBDIR += westhawksnmp
     SUBDIR += xdoclet
 
