@@ -1,4 +1,8 @@
-@comment $FreeBSD$
+include/CLucene.h
+include/CLucene/CLBackwards.h
+include/CLucene/CLConfig.h
+include/CLucene/LuceneThreads.h
+include/CLucene/StdHeader.h
 include/CLucene/analysis/AnalysisHeader.h
 include/CLucene/analysis/Analyzers.h
 include/CLucene/analysis/standard/StandardAnalyzer.h
@@ -95,10 +99,6 @@ include/CLucene/search/TermQuery.h
 include/CLucene/search/TermScorer.h
 include/CLucene/search/WildcardQuery.h
 include/CLucene/search/WildcardTermEnum.h
-include/CLucene/CLBackwards.h
-include/CLucene/CLConfig.h
-include/CLucene/LuceneThreads.h
-include/CLucene/StdHeader.h
 include/CLucene/store/Directory.h
 include/CLucene/store/FSDirectory.h
 include/CLucene/store/IndexInput.h
@@ -110,7 +110,7 @@ include/CLucene/store/RAMDirectory.h
 include/CLucene/store/TransactionalRAMDirectory.h
 include/CLucene/util/Arrays.h
 include/CLucene/util/BitSet.h
-include/CLucene/util/BitVector.h
+include/CLucene/util/English.h
 include/CLucene/util/Equators.h
 include/CLucene/util/FastCharStream.h
 include/CLucene/util/MD5Digester.h
@@ -128,13 +128,11 @@ include/CLucene/util/inputstreambuffer.h
 include/CLucene/util/jstreamsconfig.h
 include/CLucene/util/streambase.h
 include/CLucene/util/stringreader.h
-include/CLucene/util/English.h
-include/CLucene.h
-lib/libclucene.so.0
-lib/libclucene.so
-lib/libclucene.la
-lib/libclucene.a
 lib/CLucene/clucene-config.h
+lib/libclucene.a
+lib/libclucene.la
+lib/libclucene.so
+lib/libclucene.so.0
 @dirrmtry lib/CLucene
 @dirrmtry include/CLucene/util
 @dirrmtry include/CLucene/store
