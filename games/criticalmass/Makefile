@@ -41,6 +41,7 @@ post-patch:
 		's|SDL/SDL|SDL|g'
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
 		 s|^CXXFLAGS|#CXXFLAGS|g ; \
+		 s|/usr/X11R6|${X11BASE}|g ; \
 		 s|-lSDL | |g ; \
 		 s|-lpng12|-lpng|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|and def|\&\& def|g' ${WRKSRC}/utils/OSName.hpp
