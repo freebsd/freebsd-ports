@@ -178,7 +178,6 @@ Local/Library/Services/example.service/example
 @dirrm Local/Library/ApplicationSupport/GSTest/Composite-test.bundle/Resources
 @dirrm Local/Library/ApplicationSupport/GSTest/Composite-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest
-@dirrm Local/Library/ApplicationSupport
 @dirrm Local/Applications/md5Digest.app/Resources
 @dirrm Local/Applications/md5Digest.app
 @dirrm Local/Applications/NSScreenTest.app/Resources
