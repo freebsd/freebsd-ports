@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	aifad
-PORTVERSION=	1.0.26
+PORTVERSION=	1.0.27
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Machine learning system
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
