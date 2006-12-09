@@ -56,8 +56,8 @@ STDINTFLAG=	true
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/ode-0.5/configurator.c
