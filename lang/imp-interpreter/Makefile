@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	IMP
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	lang
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Monadic interpreter of a simple imperative language
 
 USE_BZIP2=	yes
