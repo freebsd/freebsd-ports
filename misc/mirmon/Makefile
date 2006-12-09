@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mirmon
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cs.uu.nl/people/henkp/mirmon/src/
 
