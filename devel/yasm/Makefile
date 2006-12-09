@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		Does not build on ia64
+CFLAGS:=	${CFLAGS:C/-O[0-9]//g}
 .endif
 
 .if defined(WITHOUT_NLS)
