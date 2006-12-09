@@ -10,7 +10,7 @@ PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	mail
 MASTER_SITES=	http://www.farrokhi.net/roundcube/:unixified \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
-MASTER_SITE_SUBDIR=	flz/${PORTNAME}/:freebsd
+MASTER_SITE_SUBDIR=	ale/:freebsd
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}${EXTRACT_SUFX}:unixified
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -44,7 +44,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 .if defined(WITH_REPLACE_MAIL_URL) && !empty(WITH_REPLACE_MAIL_URL)
 MAIL=		${WITH_REPLACE_MAIL_URL}
-REINPLACE_ARGS=        -i ""
+REINPLACE_ARGS=	-i ""
 .else
 MAIL=		mail
 .endif

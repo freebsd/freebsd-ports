@@ -462,8 +462,8 @@
 %%RCUBEDIR%%/skins/default/images/buttons/ldap_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/logout.gif
 %%RCUBEDIR%%/skins/default/images/buttons/logout.png
-%%RCUBEDIR%%/skins/default/images/buttons/mail.gif
-%%RCUBEDIR%%/skins/default/images/buttons/mail.png
+%%RCUBEDIR%%/skins/default/images/buttons/%%MAIL%%.gif
+%%RCUBEDIR%%/skins/default/images/buttons/%%MAIL%%.png
 %%RCUBEDIR%%/skins/default/images/buttons/next_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/next_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/next_sel.png
@@ -544,7 +544,7 @@
 %%RCUBEDIR%%/skins/default/includes/settingstabs.html
 %%RCUBEDIR%%/skins/default/includes/taskbar.html
 %%RCUBEDIR%%/skins/default/ldapsearchform.css
-%%RCUBEDIR%%/skins/default/mail.css
+%%RCUBEDIR%%/skins/default/%%MAIL%%.css
 %%RCUBEDIR%%/skins/default/pngbehavior.htc
 %%RCUBEDIR%%/skins/default/print.css
 %%RCUBEDIR%%/skins/default/settings.css
@@ -558,7 +558,7 @@
 %%RCUBEDIR%%/skins/default/templates/identities.html
 %%RCUBEDIR%%/skins/default/templates/ldappublicsearch.html
 %%RCUBEDIR%%/skins/default/templates/login.html
-%%RCUBEDIR%%/skins/default/templates/mail.html
+%%RCUBEDIR%%/skins/default/templates/%%MAIL%%.html
 %%RCUBEDIR%%/skins/default/templates/managefolders.html
 %%RCUBEDIR%%/skins/default/templates/message.html
 %%RCUBEDIR%%/skins/default/templates/messagepart.html
