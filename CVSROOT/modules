@@ -9369,6 +9369,7 @@ p5-IMAP-Sieve	ports/mail/p5-IMAP-Sieve
 p5-IMDB-Film	ports/www/p5-IMDB-Film
 p5-IMDB-Movie	ports/www/p5-IMDB-Movie
 p5-IO		ports/devel/p5-IO
+p5-IO-AIO	ports/devel/p5-IO-AIO
 p5-IO-All	ports/devel/p5-IO-All
 p5-IO-CSVHeaderFile	ports/textproc/p5-IO-CSVHeaderFile
 p5-IO-Capture	ports/devel/p5-IO-Capture
