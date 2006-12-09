@@ -1,0 +1,10 @@
+CGI::Application::Plugin::TT adds support for the popular Template
+Toolkit engine to your CGI::Application modules by providing several
+helper methods that allow you to process template files from within
+your runmodes.
+
+It compliments the support for HTML::Template that is built into
+CGI::Application through the load_tmpl method.  It also provides a few
+extra features than just the ability to load a template.
+
+WWW: http://search.cpan.org/dist/CGI-Application-Plugin-TT/
