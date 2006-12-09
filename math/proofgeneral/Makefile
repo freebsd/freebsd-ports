@@ -21,6 +21,8 @@ BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	${LOCALBASE}/share/applications/.keep_me:${PORTSDIR}/misc/kdehier
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	Needs to be rewritten to not include bsd.emacs.mk
+EXPIRATION_DATE=2007-02-07
 
 .include <bsd.port.pre.mk>
 
