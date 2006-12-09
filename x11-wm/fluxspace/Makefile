@@ -17,12 +17,13 @@ COMMENT=	A window manager and workspace enhancer and integrator
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
 		swig:${PORTSDIR}/devel/swig13
 
-USE_PYTHON=		yes
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=		yes
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+USE_XLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
 
 .include <bsd.port.pre.mk>
 
