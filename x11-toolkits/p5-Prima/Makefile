@@ -28,6 +28,10 @@ USE_XPM=		1
 USE_XLIB=		1
 USE_PERL5=		yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/Makefile.PL
+
 post-configure:
 	@cd ${CONFIGURE_WRKSRC} && ${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
