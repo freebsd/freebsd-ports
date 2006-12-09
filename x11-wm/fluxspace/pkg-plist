@@ -40,13 +40,13 @@ bin/fluxspace
 bin/fluxspace-add-idesk-icon
 bin/fluxspace-sync-idesk-with-appdirs
 bin/rox-add-app
-share/fluxspace/examples/fluxspace.xml
-@dirrm share/fluxspace/examples
-share/fluxspace/AUTHORS
-share/fluxspace/BUGS
-share/fluxspace/ChangeLog
-share/fluxspace/COPYING
-share/fluxspace/NEWS
-share/fluxspace/README
-@dirrm share/fluxspace
+%%DATADIR%%/examples/fluxspace.xml
+@dirrm %%DATADIR%%/examples
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/BUGS
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/COPYING
+%%DATADIR%%/NEWS
+%%DATADIR%%/README
+@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/fluxlet
