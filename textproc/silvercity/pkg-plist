@@ -43,6 +43,12 @@ bin/cgi-styler-form.py
 %%PYTHON_SITELIBDIR%%/SilverCity/ScintillaConstants.py
 %%PYTHON_SITELIBDIR%%/SilverCity/ScintillaConstants.pyc
 %%PYTHON_SITELIBDIR%%/SilverCity/ScintillaConstants.pyo
+%%PYTHON_SITELIBDIR%%/SilverCity/Java.py
+%%PYTHON_SITELIBDIR%%/SilverCity/Verilog.py
+%%PYTHON_SITELIBDIR%%/SilverCity/Verilog.pyc
+%%PYTHON_SITELIBDIR%%/SilverCity/Verilog.pyo
+%%PYTHON_SITELIBDIR%%/SilverCity/Java.pyc
+%%PYTHON_SITELIBDIR%%/SilverCity/Java.pyo
 %%PYTHON_SITELIBDIR%%/SilverCity/Utils.py
 %%PYTHON_SITELIBDIR%%/SilverCity/Utils.pyc
 %%PYTHON_SITELIBDIR%%/SilverCity/Utils.pyo
