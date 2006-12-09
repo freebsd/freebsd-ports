@@ -1,40 +1,37 @@
 @comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event/Event.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event/Event.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/.packlist
+%%EXAMPLESDIR%%/attributes
+%%EXAMPLESDIR%%/bench
+%%EXAMPLESDIR%%/dns
+%%EXAMPLESDIR%%/event
+%%EXAMPLESDIR%%/lwp
+%%EXAMPLESDIR%%/myhttpd
+%%EXAMPLESDIR%%/prodcons1
+%%EXAMPLESDIR%%/prodcons2
+%%EXAMPLESDIR%%/prodcons3
+%%EXAMPLESDIR%%/readline
+%%PORTDOCS%%%%DOCSDIR%%/cede-vs-schedule
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/AIO.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Cont.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/State.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Channel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/CoroAPI.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/LWP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/MakeMaker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/RWLock.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Select.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Semaphore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/SemaphoreSet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/RWLock.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/CoroAPI.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Specific.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Timer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/MakeMaker.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Select.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Signal.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Handle.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Socket.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/attributes
-%%PORTDOCS%%%%EXAMPLESDIR%%/bench
-%%PORTDOCS%%%%EXAMPLESDIR%%/cont
-%%PORTDOCS%%%%EXAMPLESDIR%%/dns
-%%PORTDOCS%%%%EXAMPLESDIR%%/event
-%%PORTDOCS%%%%EXAMPLESDIR%%/lwp
-%%PORTDOCS%%%%EXAMPLESDIR%%/myhttpd
-%%PORTDOCS%%%%EXAMPLESDIR%%/prodcons1
-%%PORTDOCS%%%%EXAMPLESDIR%%/prodcons2
-%%PORTDOCS%%%%EXAMPLESDIR%%/prodcons3
-%%PORTDOCS%%%%EXAMPLESDIR%%/readline
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Coro
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Specific.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/State.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Coro
+@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
