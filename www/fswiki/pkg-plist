@@ -9,6 +9,7 @@
 %%DATADIR%%/data/Help%2FHiki.wiki
 %%DATADIR%%/data/Help%2FYukiWiki.wiki
 %%DATADIR%%/data/Help.wiki
+%%DATADIR%%/data/PluginHelp.wiki
 %%DATADIR%%/docs/API/Parser.pm.html
 %%DATADIR%%/docs/API/Util.pm.html
 %%DATADIR%%/docs/API/Wiki.pm.html
@@ -262,6 +263,7 @@
 %%DATADIR%%/plugin/format/FormatSelector.pm
 %%DATADIR%%/plugin/format/HikiFormat.pm
 %%DATADIR%%/plugin/format/Install.pm
+%%DATADIR%%/plugin/format/WalWikiFormat.pm
 %%DATADIR%%/plugin/format/YukiWikiFormat.pm
 %%DATADIR%%/plugin/google/Google.pm
 %%DATADIR%%/plugin/google/Install.pm
@@ -273,6 +275,9 @@
 %%DATADIR%%/plugin/info/PluginHelp.pm
 %%DATADIR%%/plugin/info/PluginHelpHandler.pm
 %%DATADIR%%/plugin/info/TodaysLink.pm
+%%DATADIR%%/plugin/loginstate/Install.pm
+%%DATADIR%%/plugin/loginstate/LoginName.pm
+%%DATADIR%%/plugin/loginstate/LoginState.pm
 %%DATADIR%%/plugin/pdf/Install.pm
 %%DATADIR%%/plugin/pdf/PDFDelete.pm
 %%DATADIR%%/plugin/pdf/PDFInitializer.pm
@@ -304,10 +309,21 @@
 %%DATADIR%%/setup.dat
 %%DATADIR%%/setup.sh
 %%DATADIR%%/theme/default/default.css
+%%DATADIR%%/theme/kati/go_back_1.gif
+%%DATADIR%%/theme/kati/go_back_2.gif
+%%DATADIR%%/theme/kati/go_back_3.gif
+%%DATADIR%%/theme/kati/himg2.jpg
+%%DATADIR%%/theme/kati/kati.css
+%%DATADIR%%/theme/kati/list_a.gif
+%%DATADIR%%/theme/kati/list_b.gif
+%%DATADIR%%/theme/kati/list_c.gif
+%%DATADIR%%/theme/kati/sid_men.jpg
+%%DATADIR%%/theme/kati/slc1.gif
 %%DATADIR%%/tmpl/admin_cache.tmpl
 %%DATADIR%%/tmpl/admin_config.tmpl
 %%DATADIR%%/tmpl/admin_spam.tmpl
 %%DATADIR%%/tmpl/admin_style.tmpl
+%%DATADIR%%/tmpl/admin_trackback.tmpl
 %%DATADIR%%/tmpl/bbs.tmpl
 %%DATADIR%%/tmpl/bugtrack.tmpl
 %%DATADIR%%/tmpl/comment.tmpl
@@ -321,6 +337,7 @@
 @dirrm %%DATADIR%%/tmpl/site/default
 @dirrm %%DATADIR%%/tmpl/site
 @dirrm %%DATADIR%%/tmpl
+@dirrm %%DATADIR%%/theme/kati
 @dirrm %%DATADIR%%/theme/default
 @dirrm %%DATADIR%%/theme
 @dirrm %%DATADIR%%/plugin/vote
@@ -330,6 +347,7 @@
 @dirrm %%DATADIR%%/plugin/rename
 @dirrm %%DATADIR%%/plugin/recent
 @dirrm %%DATADIR%%/plugin/pdf
+@dirrm %%DATADIR%%/plugin/loginstate
 @dirrm %%DATADIR%%/plugin/info
 @dirrm %%DATADIR%%/plugin/google
 @dirrm %%DATADIR%%/plugin/format
