@@ -14826,6 +14826,7 @@ vdrift		ports/games/vdrift
 vdrift-data	ports/games/vdrift-data
 vectoroids	ports/games/vectoroids
 ved		ports/editors/ved
+veditor		ports/java/veditor
 velocity	ports/x11-fm/velocity
 venice		ports/finance/venice
 ventrilo-server	ports/audio/ventrilo-server
