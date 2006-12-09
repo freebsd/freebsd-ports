@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Iterator/.packlist
+%%SITE_PERL%%/Image/Magick/Iterator.pm
+%%SITE_PERL%%/Image/Magick/Iterator/PPM.pm
+@dirrmtry %%SITE_PERL%%/Image/Magick/Iterator
+@dirrmtry %%SITE_PERL%%/Image/Magick
+@dirrmtry %%SITE_PERL%%/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Iterator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image

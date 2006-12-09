@@ -468,6 +468,7 @@
     SUBDIR += p5-Image-IPTCInfo
     SUBDIR += p5-Image-Imlib2
     SUBDIR += p5-Image-Info
+    SUBDIR += p5-Image-Magick-Iterator
     SUBDIR += p5-Image-MetaData-GQview
     SUBDIR += p5-Image-MetaData-JPEG
     SUBDIR += p5-Image-PBMlib
