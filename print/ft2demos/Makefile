@@ -28,6 +28,7 @@ USE_AUTOTOOLS=	libtool:15:env
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
+MAKE_ARGS=	X11_PATH="${X11BASE}"
 
 .include <bsd.port.pre.mk>
 
