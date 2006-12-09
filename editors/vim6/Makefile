@@ -140,7 +140,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e ' \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
 		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
-		s|/usr/local|${LOCALBASE}|g' \
+		s|/usr/local|${LOCALBASE}|g; s|/usr/X11R6|${X11BASE}|g '\
 		${WRKSRC}/auto/configure
 
 #	Clean up junk files to keep them from being installed.
