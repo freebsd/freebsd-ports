@@ -18,7 +18,7 @@ COMMENT=	GGI API for input sources
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		mhub.1 \
@@ -206,6 +206,9 @@ PLIST_SUB+=	VGL="@comment "
 .else
 PLIST_SUB+=	VGL=""
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libgii.conf ${PREFIX}/etc/ggi/libgii.conf.dist
