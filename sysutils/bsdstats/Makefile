@@ -7,20 +7,23 @@
 
 PORTNAME=	bsdstats
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTFILES=
 
 MAINTAINER=	scrappy@freebsd.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503102 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600010)
 RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
+.endif
 
 NO_BUILD=	yes
 PLIST_FILES=	etc/periodic/monthly/300.statistics
 PLIST_DIRS=	etc/periodic/monthly \
 		etc/periodic
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${MKDIR} ${LOCALBASE}/etc/periodic/monthly
