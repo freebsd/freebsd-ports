@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: apache
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown
 
 # Define these apache_* variables in one of these files:
