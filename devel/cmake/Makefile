@@ -23,4 +23,8 @@ CONFIGURE_ENV=	MAKE=make
 
 MAN1=		ccmake.1 cmake.1 ctest.1
 
+post-patch:
+	@${GREP} -rl '/usr/X11R6' ${WRKSRC}/Modules ${WRKSRC}/Tests | \
+		${XARGS} ${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g'
+
 .include <bsd.port.mk>
