@@ -363,6 +363,7 @@
     SUBDIR += kgeography
     SUBDIR += kiki
     SUBDIR += klondike
+    SUBDIR += kmastermind
     SUBDIR += kmquake2
     SUBDIR += knights
     SUBDIR += kobodeluxe
