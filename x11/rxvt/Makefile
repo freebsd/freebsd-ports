@@ -27,7 +27,9 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
-		--with-xpm --enable-xpm-background --enable-transparency
+		--with-xpm --enable-xpm-background --enable-transparency \
+		--with-xpm-includes=${X11BASE}/include/X11 \
+		--with-xpm-library=${X11BASE}/lib
 USE_BZIP2=	yes
 MAN1=		rxvt.1
 PLIST_FILES=	bin/rxvt
