@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.13.3
+PORTVERSION=	1.13.4
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/le/ \
-		ftp://ftp.yar.ru/pub/source/le/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Text editor
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
