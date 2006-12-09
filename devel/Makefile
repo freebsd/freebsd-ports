@@ -1168,6 +1168,7 @@
     SUBDIR += p5-IPC-ShareLite
     SUBDIR += p5-IPC-Shareable
     SUBDIR += p5-IPC-SharedCache
+    SUBDIR += p5-IPC-Signal
     SUBDIR += p5-Include
     SUBDIR += p5-Inline
     SUBDIR += p5-Inline-ASM
