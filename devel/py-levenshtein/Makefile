@@ -8,7 +8,9 @@
 PORTNAME=	levenshtein
 PORTVERSION=	0.10.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://trific.ath.cx/Ftp/python/levenshtein/
+MASTER_SITES=	http://trific.ath.cx/Ftp/python/levenshtein/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	perky
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-Levenshtein-${PORTVERSION}
 
