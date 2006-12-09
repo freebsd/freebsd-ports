@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tie-DxHash
-PORTVERSION=	0.93
+PORTVERSION=	1.01
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tie
@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Tie::DxHash.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
