@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lacaml
-PORTVERSION=	3.0.19
+PORTVERSION=	3.0.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
