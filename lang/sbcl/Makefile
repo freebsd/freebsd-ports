@@ -7,6 +7,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -23,7 +24,7 @@ USE_GMAKE=	yes
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 
-# Can currently only bootstrap using cmucl, which is i386-only
+# SBCL is a native code compiler: it must be ported per architecture.
 ONLY_FOR_ARCHS=	i386 amd64
 
 MAN1=		sbcl.1
@@ -54,10 +55,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib32/compat/libc.so.4:${PORTSDIR}/misc/compat4x
 
 .if defined(WITH_THREADS) && ${OSVERSION} < 500000
 BROKEN=		Does not compile on 4.x with threading
-.endif
-
-.if defined(WITH_THREADS) && ${ARCH} == amd64
-BROKEN=		Does not compile on AMD64 with threading
 .endif
 
 .if ${ARCH} == i386
@@ -93,11 +90,6 @@ test:	build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
 
 pre-everything::
-.if ${ARCH} == amd64
-	@${ECHO_MSG} "====>"
-	@${ECHO_MSG} "====> WARNING: AMD64 support is experimental."
-	@${ECHO_MSG} "====>"
-.else
 .if !defined(WITH_THREADS) && ${OSVERSION} >= 600000
 	@${ECHO_MSG} "====>"
 	@${ECHO_MSG} "====> To enable experimental threading support, define WITH_THREADS."
@@ -106,7 +98,6 @@ pre-everything::
 	@${ECHO_MSG} "====>"
 	@${ECHO_MSG} "====> WARNING: Current threading support is very unstable on FreeBSD 5.x."
 	@${ECHO_MSG} "====>"
-.endif
 .endif
 
 .include <bsd.port.post.mk>
