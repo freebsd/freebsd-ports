@@ -1,0 +1,12 @@
+Image::Magick::Iterator adds iteration support to Image::Magick. This
+means that if you have a stream of concatenated images, you can access
+each image in the stream as an independent Image::Magick object.
+
+Iteration functionality is not present in Image::Magick itself as of
+version 5.56. Passing a stream of concatenated images would result in
+essentially a "stack" of images which would all be manipulated in
+parallel by any Image::Magick calls. Calls to Write() either output an
+animated series of image (a la animated GIFs), or the first image in
+the series.
+
+WWW:	http://search.cpan.org/dist/Image-Magick-Iterator/
