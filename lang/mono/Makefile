@@ -67,6 +67,8 @@ post-patch:
 		${WRKSRC}/mono/metadata/assembly.c
 	@${REINPLACE_CMD} -e 's|.so.0|.so|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure ${WRKSRC}/libgc/configure
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/mcs/tools/mkbundle/mkbundle.cs
