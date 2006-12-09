@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	fam
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	0.2.0
+PORTREVISION=	0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ WANT_FAM_SYSTEM=fam
 
 INSTALL_TARGET=	site-install
 
-DOCS=		AUTHORS COPYING ChangeLog README doc event_codes.txt
+DOCS=		README doc event_codes.txt
 
 # XXX: exists untill it will be committed to bsd.port.mk
 COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
