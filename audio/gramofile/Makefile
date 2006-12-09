@@ -35,7 +35,7 @@ USE_PERL5=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		Doesn't work on 4.x: Missing SHM_LOCK
+IGNORE=		doesn't work on 4.x: Missing SHM_LOCK
 .endif
 
 .if ${PERL_LEVEL} < 500600
