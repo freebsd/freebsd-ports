@@ -7,7 +7,7 @@
 
 PORTNAME=	verlihub
 PORTVERSION=	0.9.8.c
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,39 +15,42 @@ MASTER_SITE_SUBDIR=	verlihub
 DISTNAME=	verlihub-0.9.8c-RC2
 
 MAINTAINER=	hurbold@yahoo.com
-COMMENT=	Verlihub Linux/Unix Direct Connect Hub Software
+COMMENT=	A Direct Connect protocol server (Hub)
 
+# XXX: Actually, bash isn't required for building,
+# but otherwise configure script would pick the wrong path
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP \
 		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/verlihub-0.9.8c
 
+USE_RC_SUBR=	verlihub
+
 USE_MYSQL=	yes
-USE_PERL5=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+USE_GCC=	3.4+
+USE_OPENSSL=	yes
 SUB_FILES+=	pkg-message
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PORTDOCS=	configuring.txt help.sql using.txt features.html help.html params.php verlihub.html
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4+
-.endif
+SUB_FILES=	pkg-message
+DOCS=	configuring.txt using.txt help.html verlihub.html
+MANUAL_DOCS=	verlihub.css verlihub_manual.html
+PORTDOCS=	${DOCS} ${MANUAL_DOCS}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
+.for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
+.endfor
+.for i in ${MANUAL_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/html_manual/${i} ${DOCSDIR}
 .endfor
 .endif
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
