@@ -193,6 +193,11 @@ CONFIGURE_ENV+=	RSHCOMMAND="${LOCALBASE}/bin/ssh"
 .endif
 .endif
 
+pre-configure:
+.for fic in mpe/configure mpe/src/Makefile.in
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/${fic}
+.endfor
+
 post-install:
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/mpich/bin ${PREFIX}/mpich/lib
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/mpich/doc ${PREFIX}/mpich/include	\
