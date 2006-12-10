@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		tkxmlive-0.1.5-1
 
-MAINTAINER=		nivit@users.sourceforge.net
+MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		Tcl/Tk XML Intelligence Visual Editor
 
 RUN_DEPENDS+=		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \

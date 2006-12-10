@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyProtocols-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module extending the PEP 246 adapt() function
 
 USE_PYTHON=	yes

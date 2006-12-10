@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.berlios.de/winefish/ \
 		http://nivi.interfree.it/distfiles/winefish/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A LaTeX editor based on BlueFish
 
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \

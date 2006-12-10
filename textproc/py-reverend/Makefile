@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Reverend-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A simple Bayesian classifier written in Python
 
 USE_PYTHON=	yes

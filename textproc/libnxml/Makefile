@@ -11,7 +11,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	http://www2.autistici.org/bakunin/libnxml/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A C library for writing XML 1.0/1.1 files or streams
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl

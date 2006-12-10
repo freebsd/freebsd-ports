@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://invisible-island.net/vttest/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A program to test "VT100-compatibility" of terminals
 
 GNU_CONFIGURE=	yes

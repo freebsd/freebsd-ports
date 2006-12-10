@@ -11,7 +11,7 @@ CATEGORIES=	textproc math www
 MASTER_SITES=	http://www.math.uio.no/~martingu/gladtex/dl/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A program to replace LaTeX formulas in HTML files with images
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \

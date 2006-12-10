@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://cam.ctan.org/tex-archive/macros/generic/diagrams/ \
 PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A LaTeX package for typesetting circuit diagrams
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \

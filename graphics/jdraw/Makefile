@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A pixel oriented graphics editor
 
 NO_BUILD=	yes

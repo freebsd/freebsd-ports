@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}a
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Web Based Desktop System
 
 NO_BUILD=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	graphics math
 MASTER_SITES=	http://www.informatik.uni-bremen.de/uDrawGraph/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PKGNUM}-${OPSYS:L}-${ARCH}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A graph drawing/visualization system
 
 NO_BUILD=	yes

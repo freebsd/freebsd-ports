@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.javaview.de/download/data/
 DISTFILES=	javaview.zip jv_models.zip jv_tutor.zip
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A 3D viewer and a mathematical visualization software
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

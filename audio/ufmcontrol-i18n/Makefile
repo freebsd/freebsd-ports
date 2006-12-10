@@ -10,7 +10,7 @@ CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:C/-i18n$//1}
 
-MAINTAINER=		nivit@users.sourceforge.net
+MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		USB radio control utility
 
 INSTALLS_SHLIB=		yes

@@ -15,7 +15,7 @@ MASTER_SITES=		${MASTER_SITE_APACHE} \
 MASTER_SITE_SUBDIR=	forrest
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		nivit@users.sourceforge.net
+MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		A tool for rapid development of small sites
 
 USE_JAVA=		yes

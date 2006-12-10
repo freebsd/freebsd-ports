@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://dev-1.borgforge.net/pyBMP/chrome/site/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module to control beep-media-player
 
 BUILD_DEPENDS=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player

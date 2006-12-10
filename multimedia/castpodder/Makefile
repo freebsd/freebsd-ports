@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/
 DISTNAME=	CastPodder-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A podcast receiver written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmms/__init__.py:${PORTSDIR}/audio/py-xmms \

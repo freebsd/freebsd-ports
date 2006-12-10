@@ -15,7 +15,7 @@ DISTNAME=	geogebra_setup
 EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A dynamic software that joins geometry, algebra and calculus
 
 USE_JAVA=	yes

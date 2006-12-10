@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A wxWidgets GUI for the computer algebra system maxima
 
 RUN_DEPENDS=	maxima:${PORTSDIR}/math/maxima

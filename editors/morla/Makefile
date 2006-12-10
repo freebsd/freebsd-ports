@@ -11,7 +11,7 @@ CATEGORIES=	editors textproc
 MASTER_SITES=	http://www2.autistici.org/bakunin/morla/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A RDF editor
 
 LIB_DEPENDS=	nxml.0:${PORTSDIR}/textproc/libnxml \

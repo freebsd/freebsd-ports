@@ -14,7 +14,7 @@ DISTNAME=	sfa
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nivit@users.sourceforge.net
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A NES RPG game for learning KANA and KANJI (linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL_image-1.2.so.0:${PORTSDIR}/graphics/linux-sdl_image

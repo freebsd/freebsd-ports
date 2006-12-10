@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/algebra/Kant/Kash_3/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 DISTNAME=	${PORTNAME:U}-${ELFTYPE}-${PORTVERSION:S|.|-|g}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A computer algebra system for computing in algebraic number fields
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl

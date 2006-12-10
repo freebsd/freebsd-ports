@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A JavaScript code obfuscator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

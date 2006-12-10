@@ -13,7 +13,7 @@ MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/ \
 DISTNAME=	PDFMerge
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A shell script (with simple UI) to merge PDF files
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

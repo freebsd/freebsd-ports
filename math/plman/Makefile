@@ -13,7 +13,7 @@ MASTER_SITES=	http://${PORTNAME}.sourceforge.net/dist/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\./_/g}
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Propositional Logic sentence shell/interpreter
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

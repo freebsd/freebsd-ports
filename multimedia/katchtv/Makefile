@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.digitalunleashed.com/downloads/${PORTNAME}/ \
 DISTNAME=	${PORTNAME}_latest_release
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	An Internet TV application (for KDE)
 
 RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde \

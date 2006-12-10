@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/${PORTNAME}/
 DISTNAME=	arab${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A TeX/LaTeX package to generate the arabic writing
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \

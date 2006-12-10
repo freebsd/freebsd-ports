@@ -13,7 +13,7 @@ MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module to run tests written as simple functions
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
