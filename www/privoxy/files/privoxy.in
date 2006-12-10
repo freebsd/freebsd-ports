@@ -34,6 +34,11 @@ load_rc_config ${name}
 : ${privoxy_user="privoxy"}
 : ${privoxy_pidfile="/var/run/privoxy/privoxy.pid"}
 
+start_precmd="if [ ! -e ${privoxy_config} ]; then\
+ echo ${privoxy_config} not found. Copying default configuration.;\
+ cp %%PREFIX%%/share/examples/privoxy/config ${privoxy_config};\
+ chown ${privoxy_user}:${privoxy_user} ${privoxy_config};\
+fi"
 
 command="%%PREFIX%%/sbin/privoxy"
 command_args="${privoxy_flags} --pidfile ${privoxy_pidfile} ${privoxy_config}"

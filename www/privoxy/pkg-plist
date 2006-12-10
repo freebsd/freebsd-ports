@@ -1,9 +1,7 @@
 sbin/privoxy
-etc/privoxy/config
 etc/privoxy/default.action
-etc/privoxy/standard.action
 etc/privoxy/default.filter
-etc/privoxy/trust
+etc/privoxy/standard.action
 etc/privoxy/templates/blocked
 etc/privoxy/templates/cgi-error-404
 etc/privoxy/templates/cgi-error-bad-param
@@ -57,6 +55,10 @@ etc/privoxy/templates/untrusted
 %%PORTDOCS%%share/doc/privoxy-manual/templates.html
 %%PORTDOCS%%share/doc/privoxy-manual/upgradersnote.html
 %%PORTDOCS%%share/doc/privoxy-manual/whatsnew.html
+share/examples/privoxy/config
+share/examples/privoxy/trust
+share/examples/privoxy/user.action
+@dirrm share/examples/privoxy
 %%PORTDOCS%%@dirrm share/doc/privoxy-manual
 @dirrm etc/privoxy/templates
 @dirrm etc/privoxy

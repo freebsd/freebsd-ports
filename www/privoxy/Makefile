@@ -7,6 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -78,25 +79,31 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/privoxy/templates
 	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${PREFIX}/etc/privoxy/templates
-.for file in config default.action standard.action default.filter trust
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc/privoxy
+.for defaultfile in default.action standard.action default.filter
+	@${INSTALL_DATA} ${WRKSRC}/${defaultfile} ${PREFIX}/etc/privoxy
+	@${CHOWN} privoxy:privoxy ${PREFIX}/etc/privoxy/${defaultfile}
+	@${CHMOD} 0640 ${PREFIX}/etc/privoxy/${defaultfile}
+.endfor
+	@${MKDIR} ${PREFIX}/share/examples/privoxy
+.for examplefile in config trust user.action
+	@${INSTALL_DATA} ${WRKSRC}/${examplefile} ${PREFIX}/share/examples/privoxy
+	@${CHOWN} privoxy:privoxy ${PREFIX}/share/examples/privoxy/${examplefile}
+	@${CHMOD} 0640 ${PREFIX}/share/examples/privoxy/${examplefile}
 .endfor
 	@${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${MANPREFIX}/man/man1
-#	@${MKDIR} ${PREFIX}/share/examples/privoxy
-#	@${INSTALL_DATA} ${WRKSRC}/user.action ${PREFIX}/share/examples/privoxy
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/privoxy-manual
-	${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${PREFIX}/share/doc/privoxy-manual
-	${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${PREFIX}/share/doc/privoxy-manual
+	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${PREFIX}/share/doc/privoxy-manual
+	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${PREFIX}/share/doc/privoxy-manual
 .endif
 
 post-install:
-	${MKDIR} /var/log/privoxy
-	${CHOWN} privoxy:privoxy /var/log/privoxy
-	${CHMOD} 0750 /var/log/privoxy
-	${MKDIR} /var/run/privoxy
-	${CHOWN} privoxy:privoxy /var/run/privoxy
-	${CHMOD} 0750 /var/run/privoxy
+	@${MKDIR} /var/log/privoxy
+	@${CHOWN} privoxy:privoxy /var/log/privoxy
+	@${CHMOD} 0750 /var/log/privoxy
+	@${MKDIR} /var/run/privoxy
+	@${CHOWN} privoxy:privoxy /var/run/privoxy
+	@${CHMOD} 0750 /var/run/privoxy
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
