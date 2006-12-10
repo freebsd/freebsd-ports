@@ -46,6 +46,7 @@ OPTIONS=	CLI "Build CLI version" on \
 		SUHOSIN "Enable Suhosin protection system" on \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
+		MAILHEAD "Enable mail header patch" off \
 		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
 		DISCARD "Enable discard-path support (CGI only)" off \
 		FASTCGI "Enable fastcgi support (CGI only)" on \
@@ -57,13 +58,19 @@ MAN1=		php-config.1 phpize.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SUHOSIN)
-PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.6.2.patch.gz
-PATCH_SITES=	http://www.hardened-php.net/suhosin/_media/
 PATCH_DIST_STRIP=	-p1
+
+.if !defined(WITHOUT_SUHOSIN)
+PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.6.2.patch.gz:suhosin
+PATCH_SITES+=	http://www.hardened-php.net/suhosin/_media/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
 PLIST_SUB+=	SUHOSIN="@comment "
+.endif
+
+.if defined(WITH_MAILHEAD)
+PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
+PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
 .if !defined(WITHOUT_CLI)

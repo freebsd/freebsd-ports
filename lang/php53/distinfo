@@ -4,3 +4,6 @@ SIZE (php-5.2.0.tar.bz2) = 6789838
 MD5 (suhosin-patch-5.2.0-0.9.6.2.patch.gz) = 621ec57f10345cc58b29b189d89aecce
 SHA256 (suhosin-patch-5.2.0-0.9.6.2.patch.gz) = a67ee0d4c69b01784aba23a74d12fb1182bdca2f85ed2f12325a302ebbe319e9
 SIZE (suhosin-patch-5.2.0-0.9.6.2.patch.gz) = 23115
+MD5 (php-5.2.0-mail-header.patch) = 36f876b692a9a407874c39b71c39ac83
+SHA256 (php-5.2.0-mail-header.patch) = 9955ec5fc79d2444ba507f4524acb1957bc65419be95b13e363a922a2021418a
+SIZE (php-5.2.0-mail-header.patch) = 3420
