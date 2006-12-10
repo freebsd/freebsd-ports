@@ -16,6 +16,8 @@ COMMENT=	Manages multiple Mongrel processes
 BUILD_DEPENDS=	rubygem-mongrel>=0.3.13.4:${PORTSDIR}/www/rubygem-mongrel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_RC_SUBR=	mongrel_cluster
 
 # This target is only meant to be used by the port maintainer.
