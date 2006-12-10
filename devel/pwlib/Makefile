@@ -132,7 +132,7 @@ PLIST_SUB+=	V4L=""
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h
 .else
 CONFIGURE_ARGS+=--disable-v4l
-PLIST_SUB+=	V$L="@comment "
+PLIST_SUB+=	V4L="@comment "
 .endif
 
 post-patch:
