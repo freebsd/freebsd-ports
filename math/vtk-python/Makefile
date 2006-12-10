@@ -16,6 +16,8 @@ LIB_DEPENDS=	vtkCommon.${LIBVER}:${PORTSDIR}/math/vtk \
 
 MASTERDIR=	${.CURDIR}/../vtk
 
+BROKEN=		Does not build
+
 WRAP=		Python
 BINARIES=	vtkWrapPython vtkpython
 EXTRA_LIBS=	RenderingPythonTkWidgets
