@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	uni2ascii
-PORTVERSION=	3.9
+PORTVERSION=	3.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
+EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert between UTF-8 Unicode and 7-bit ASCII equivalents
