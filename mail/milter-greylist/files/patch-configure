@@ -1,0 +1,11 @@
+--- configure.orig	Mon Nov 20 23:51:36 2006
++++ configure	Sun Dec 10 00:08:47 2006
+@@ -5518,7 +5518,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+-  LIBS="$LIBS -lpthread"
++true;#  LIBS="$LIBS -lpthread"
+ else
+   echo "$as_me:$LINENO: checking for pthread_create in -lc_r" >&5
+ echo $ECHO_N "checking for pthread_create in -lc_r... $ECHO_C" >&6

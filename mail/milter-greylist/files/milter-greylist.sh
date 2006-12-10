@@ -22,13 +22,13 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 miltergreylist_enable=${miltergreylist_enable-"NO"}
-miltergreylist_runas=${miltergreylist_runas-"smmsp"}
+miltergreylist_runas=${miltergreylist_runas-"mailnull"}
 miltergreylist_pidfile=${miltergreylist_pidfile-"/var/run/milter-greylist.pid"}
 miltergreylist_sockfile=${miltergreylist_sockfile-"/var/milter-greylist/milter-greylist.sock"}
 miltergreylist_cfgfile=${miltergreylist_cfgfile-"%%PREFIX%%/etc/mail/greylist.conf"}
 miltergreylist_flags=${miltergreylist_flags-"-P $miltergreylist_pidfile \
 -f $miltergreylist_cfgfile -p $miltergreylist_sockfile -u $miltergreylist_runas"}
 
-command="%%PREFIX%%/bin/milter-greylist"
+command="%%PREFIX%%/libexec/milter-greylist"
 
 run_rc_command "$1"

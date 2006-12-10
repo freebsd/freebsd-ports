@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-greylist
-PORTVERSION=	2.0.2
+PORTVERSION=	3.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${PORTVERSION}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use greylist milter for sendmail
 
 CONFLICTS=	milter-greylist-devel-[1-9]*.*
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
@@ -67,7 +68,10 @@ LIBS+=		${PTHREAD_LIBS}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-user=smmsp --with-libmilter=${MILTERBASE}
+CONFIGURE_ARGS+=	--with-user=mailnull --with-libmilter=${MILTERBASE}
+.if ${OSVERSION} >= 502102
+CONFIGURE_ARGS+=	--enable-dnsrbl
+.endif
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS} "
 
 ALL_TARGET=	milter-greylist
@@ -81,23 +85,25 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/mail
-	@${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${PREFIX}/libexec
 	@${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 ${PREFIX}/man/man5
 	@${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${PREFIX}/man/man8
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf \
 			${PREFIX}/etc/mail/greylist.conf.sample
 	@${INSTALL_SCRIPT} ${WRKSRC}/milter-greylist.sh ${PREFIX}/etc/rc.d/
+	@${SED} -e "s,%%DOCSDIR%%,${DOCSDIR},g" \
+		-e "s,%%PREFIX%%,${PREFIX},g" \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 	@${MKDIR} /var/milter-greylist
-	@${CHOWN} smmsp /var/milter-greylist
+	@${CHOWN} -R mailnull /var/milter-greylist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
 .endif
-
 	@${TEST} -f /var/db/milter-greylist/greylist.db && ( \
 		${ECHO} "************************************************************"; \
 		${ECHO} "************************************************************"; \
@@ -112,7 +118,6 @@ post-install:
 		${ECHO} "************************************************************"; \
 		${ECHO} "************************************************************"; \
 	) || ${TRUE}
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
