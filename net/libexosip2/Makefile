@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libeXosip2
-PORTVERSION=	2.2.3
+PORTVERSION=	3.0.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	exosip
@@ -14,24 +14,12 @@ MASTER_SITE_SUBDIR=	exosip
 MAINTAINER=	bd_subzero@yahoo.com
 COMMENT=	GPL library that extends the capability of the oSIP library
 
-LIB_DEPENDS=	osip2:${PORTSDIR}/net/libosip2
+LIB_DEPENDS=	osip2:${PORTSDIR}/net/libosip
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-tools
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS+=	--disable-tools --disable-debug --disable-trace
+USE_LDCONFIG=	yes
 
-OPTIONS=	UCL "Use uclmmbase IP multicast library " off
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_UCL)
-LIB_DEPENDS+=		uclmmbase:${PORTSDIR}/devel/uclmmbase
-CONFIGURE_ARGS+=	--enable-ucl
-CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include
-PLIST_SUB+=		JOSUA=""
-.else
-CONFIGURE_ARGS+=	--disable-josua
-PLIST_SUB+=		JOSUA="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
