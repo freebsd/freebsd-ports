@@ -13,6 +13,8 @@ COMMENT=	Ruby implementation of Markdown, a text-to-HTML conversion tool
 
 PLIST_SUB+=	DISTNAME="${DISTNAME}"
 
+BROKEN=		Incorrect pkg-plist
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
