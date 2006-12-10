@@ -14,7 +14,7 @@ CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	-base
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
