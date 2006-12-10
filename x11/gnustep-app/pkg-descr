@@ -11,7 +11,7 @@ RSSKit, EtoileExtensions, Encore, BDB, FortyTwo, ObjectiveLib
 
 System apps:	Gorm, GShisen, ProjectCenter, Preferences, GWorkspace,
 guile-gui, gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
-WrapperFactory, GRubik, AZDock
+WrapperFactory, GRubik, AZDock, Recycler, DBModeler, guile-gui
 
 Local apps:	Gomoku, GNUMail, EasyDiff, Calculator, CurrencyConverter,
 Finger, GFractal, GSTest, HostAddress, Ink, NSBrowserTest, NSImageTest,
@@ -23,6 +23,7 @@ ProjectManager, GMastermind2, GPuzzle2, Ticker, NoteBook, HelpViewer, Duncan,
 Jishyo, GMines, InnerSpace, FTP, DictionaryReader, batmon, Adun, RemoteDesk,
 DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer, Burn, GScheme,
 Mplayer, MyLibrary, NeXTGo, Grr, iTerm, Installer, Hardware, LookAndBehavior,
-Azalea, EtoileMenuServer, Position, Expense, FreeTar, CodeEditor, Localize
+Azalea, EtoileMenuServer, Position, Expense, FreeTar, CodeEditor, Localize,
+AddressManager
 
 Local tools:	zillion, adtool
