@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Error
-PORTVERSION=	0.17.007
+PORTVERSION=	0.17.008
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Error
@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(00[0-9])$/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to provide Error/exception support for perl: Error
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
