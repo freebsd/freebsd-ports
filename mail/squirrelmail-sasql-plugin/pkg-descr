@@ -1,0 +1,6 @@
+The SASql SquirrelMail plugin lets users change a pre-defined set of
+SpamAssassin settings when those settings are stored in a SQL DB rather than
+a config file. This is very useful in a virtual user setting when the users
+don't have home directories or access to them.
+
+WWW: http://www.squirrelmail.org
