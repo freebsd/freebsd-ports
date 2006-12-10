@@ -181,6 +181,7 @@
     SUBDIR += py-kde
     SUBDIR += py-kiwi
     SUBDIR += py-qt
+    SUBDIR += py-sexy
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-wax
