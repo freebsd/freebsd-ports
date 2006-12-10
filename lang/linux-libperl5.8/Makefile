@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION}-67091cl.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for embedding the perl interpreter (linux version)
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.delorie.com/pub/djgpp/contrib/ \
 		ftp://x2ftp.oulu.fi/pub/msdos/programming/convert/
 DISTNAME=	ta2asv${PORTVERSION:S/.//}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TASM to AT&T asm syntax converter (GNU AS)
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	converters devel
 MASTER_SITES=	http://www.devoresoftware.com/nomyso/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MASM/TASM files to NASM compatible sources
 
 USE_ZIP=	yes
