@@ -13890,6 +13890,7 @@ squirrelmail-password_forget-plugin	ports/mail/squirrelmail-password_forget-plug
 squirrelmail-pupdate-plugin	ports/mail/squirrelmail-pupdate-plugin
 squirrelmail-qmailadmin_login-plugin	ports/mail/squirrelmail-qmailadmin_login-plugin
 squirrelmail-quota_usage-plugin	ports/mail/squirrelmail-quota_usage-plugin
+squirrelmail-sasql-plugin	ports/mail/squirrelmail-sasql-plugin
 squirrelmail-secure_login-plugin	ports/mail/squirrelmail-secure_login-plugin
 squirrelmail-timeout_user-plugin	ports/mail/squirrelmail-timeout_user-plugin
 squirrelmail-tmda-plugin	ports/mail/squirrelmail-tmda-plugin
