@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gyve.org/pub/gtkDPS/	\
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	gtkDPS-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
 USE_GNOME=	gtk12
@@ -23,9 +23,6 @@ CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
-DEPRECATED=     Discontinued and depends on pswrap which will disappear soon
-EXPIRATION_DATE=2006-12-25
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
