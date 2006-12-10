@@ -13,7 +13,7 @@
 Local_Pre_Include=		bsd.local.mk
 
 #
-# here is where any code that needs to run at bsd.port.pre.mk inclusion
+# Here is where any code that needs to run at bsd.port.pre.mk inclusion
 # time should live.
 #
 
