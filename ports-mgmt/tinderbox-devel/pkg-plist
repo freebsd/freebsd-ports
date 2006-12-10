@@ -109,11 +109,11 @@ tinderbox/scripts/upgrade/mig_shlib.sh
 %%WEB%%tinderbox/scripts/www/showport.php
 %%WEB%%tinderbox/scripts/www/tinderstyle.css
 
-@dirrm tinderbox/scripts/www-exp/templates/default
-@dirrm tinderbox/scripts/www-exp/templates
-@dirrm tinderbox/scripts/www-exp/module
-@dirrm tinderbox/scripts/www-exp/core
-@dirrm tinderbox/scripts/www
+%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates/default
+%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates
+%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/module
+%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/core
+%%WEB%%@dirrm tinderbox/scripts/www
 @dirrm tinderbox/scripts/upgrade
 @dirrm tinderbox/scripts/man/man1
 @dirrm tinderbox/scripts/man

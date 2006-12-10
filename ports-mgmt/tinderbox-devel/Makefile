@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -103,20 +103,27 @@ post-patch:
 		${WRKSRC}/lib/setup-mysql.sh
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
 .endif
+.if ! (${OSVERSION} > 700014 || ( ${OSVERSION} >= 601101 && ${OSVERSION} < 700000 ))
+	${REINPLACE_CMD} -E -e 's!/usr/bin/csup!${PREFIX}/bin/csup!' \
+		${WRKSRC}/create
+	${REINPLACE_CMD} -E -e 's!/usr/bin/csup!${PREFIX}/bin/csup!' \
+		${WRKSRC}/tc
+	@${RM} ${WRKSRC}/create.bak
+	@${RM} ${WRKSRC}/tc.bak
+.endif
+
+pre-install:
+.if !defined(WITH_WEB)
+	${RM} -R ${WRKSRC}/www
+.endif
+.if defined(WITHOUT_WEB_EXP)
+        ${RM} -R ${WRKSRC}/www-exp
+.endif
+
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
-.if !defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP)
-	@${ECHO_CMD} "Removing web interface componenets ..."
-	@${RM} -R ${PREFIX}/tinderbox/scripts/www
-	@${ECHO_CMD} "Done."
-.endif
-.if defined(WITHOUT_WEB_EXP)
-	@${ECHO_CMD} "Removing web interface componenets ..."
-	@${RM} -R ${PREFIX}/tinderbox/scripts/www-exp
-	@${ECHO_CMD} "Done."
-.endif
 
 post-install:
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
