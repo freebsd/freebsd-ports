@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}-1
 
-MAINTAINER=	nivit@users.sourceforge.net
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A simple library to load images as SDL interfaces (linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12

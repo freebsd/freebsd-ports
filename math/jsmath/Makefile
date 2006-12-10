@@ -11,7 +11,7 @@ CATEGORIES=	math www
 MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Javascript tool for including mathematics in web pages
 
 USE_ZIP=	yes

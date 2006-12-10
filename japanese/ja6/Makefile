@@ -12,7 +12,7 @@ MASTER_SITES=	http://members.tripod.com/~so_o2/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 DISTVERSIONSUFFIX=	-bin
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Japanese Symbols Trainer
 
 NO_BUILD=	yes

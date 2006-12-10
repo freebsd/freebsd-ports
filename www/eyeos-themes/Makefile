@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	eyeOS-
 DISTFILES=	${EYETHEMES:S/$/.zip/}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A themes collection for eyeOS
 
 NO_BUILD=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://convey.sourceforge.net/downloads/ \
 		http://nivi.interfree.it/tmp/convey.sourceforge.net/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	An Instant Message (IM) program using the Jabber protocol
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

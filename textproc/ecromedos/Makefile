@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	textproc print www
 MASTER_SITES=	http://www.ecromedos.net/files/${PORTVERSION}/
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A document preparation system that allows concurrent publication
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \

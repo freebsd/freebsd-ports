@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.async.com.br/projects/${PORTNAME}/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A framework and a set of enhanced widgets based on PyGTK
 
 BUILD_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2

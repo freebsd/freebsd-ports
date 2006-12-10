@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A chryzode (http//www.chryzode.org) explorer
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro

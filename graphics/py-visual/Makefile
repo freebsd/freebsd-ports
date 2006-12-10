@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.vpython.org/download/ \
 MASTER_SITE_SUBDIR=	visualpython
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A python module that offers real 3D visual output
 
 BUILD_DEPENDS=	${PYNUMERIC} \

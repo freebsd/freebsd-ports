@@ -14,7 +14,7 @@ DISTNAME=	TruthTable
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Truth Tables generator (written in Java)
 
 USE_JAVA=	yes

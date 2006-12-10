@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A powerful script-based vector graphics language
 
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3

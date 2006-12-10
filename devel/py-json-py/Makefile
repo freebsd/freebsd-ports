@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A python implementation of a JSON (http//:json.org) reader/writer
 
 NO_WRKSUBDIR=	yes

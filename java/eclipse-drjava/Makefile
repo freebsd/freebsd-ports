@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	drjava
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	drjava-eclipse-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	DrJava plugin for Eclipse
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

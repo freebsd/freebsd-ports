@@ -11,7 +11,7 @@ CATEGORIES=	print textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Perl script which transforms "pseudo-LaTeX" into proper LaTeX
 
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz

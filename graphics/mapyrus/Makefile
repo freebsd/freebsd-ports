@@ -11,7 +11,7 @@ CATEGORIES=	graphics print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A software for creating plots of points, lines, etc
 
 NO_BUILD=	yes

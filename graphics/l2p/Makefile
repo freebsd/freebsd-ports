@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-latest
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Create PNG images from LaTeX math expressions
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \

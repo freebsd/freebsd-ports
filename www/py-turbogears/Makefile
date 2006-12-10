@@ -14,7 +14,7 @@ MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python-Based Framework for Rapid Web Development
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools

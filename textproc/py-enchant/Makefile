@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	py${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${MASTER_SITE_SUBDIR}-${PORTVERSION}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A spellchecking library for Python based on the Enchant library
 
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant

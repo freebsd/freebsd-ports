@@ -11,7 +11,7 @@ MASTER_SITES=		http://www.cs.man.ac.uk/~fellowsd/tcl/ \
 			http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 DISTNAME=		shape${PORTVERSION:S/.//g}
 
-MAINTAINER=		nivit@users.sourceforge.net
+MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		A Tk library to access to X Shaped Window Extension
 
 LIB_DEPENDS=		tk84.1:${PORTSDIR}/x11-toolkits/tk84
