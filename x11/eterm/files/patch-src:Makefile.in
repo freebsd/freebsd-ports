@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Fri Feb 14 00:23:27 2003
-+++ src/Makefile.in	Fri Feb 14 00:24:05 2003
-@@ -138,7 +138,7 @@
+--- src/Makefile.in.orig	Tue Aug 22 20:40:19 2006
++++ src/Makefile.in	Fri Dec  8 20:48:59 2006
+@@ -257,7 +257,7 @@
+                       defaultfont.h libscream.c scream.h screamcfg.h
  
- EXTRA_libEterm_la_SOURCES = $(MMX_SRCS)
- 
+ EXTRA_libEterm_la_SOURCES = $(MMX_SRCS) $(SSE2_SRCS)
 -libEterm_la_LDFLAGS = -release $(VERSION)
 +libEterm_la_LDFLAGS = -version-info 9:9:9
- @HAVE_MMX_TRUE@libEterm_la_DEPENDENCIES = @HAVE_MMX_TRUE@feature.h $(MMX_OBJS)
- @HAVE_MMX_FALSE@libEterm_la_DEPENDENCIES = @HAVE_MMX_FALSE@feature.h
- @HAVE_MMX_TRUE@libEterm_la_LIBADD = @HAVE_MMX_TRUE@$(MMX_OBJS)
+ @HAVE_MMX_FALSE@@HAVE_SSE2_FALSE@libEterm_la_DEPENDENCIES = feature.h
+ @HAVE_MMX_TRUE@@HAVE_SSE2_FALSE@libEterm_la_DEPENDENCIES = feature.h $(MMX_OBJS)
+ @HAVE_SSE2_TRUE@libEterm_la_DEPENDENCIES = feature.h $(SSE2_OBJS)

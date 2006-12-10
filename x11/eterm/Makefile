@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eterm
-PORTVERSION=	0.9.3
-PORTREVISION=	5
+PORTVERSION=	0.9.4
 CATEGORIES+=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,6 @@ BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		ast.2:${PORTSDIR}/devel/libast
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
@@ -30,6 +28,8 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 OPTIONS=	MMX	"With MMX instruction set" off
+USE_XLIB=	yes
+USE_ICONV=	yes
 
 MAN1=		Eterm.1
 
