@@ -5,9 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.5
+PORTVERSION=	4.5.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
