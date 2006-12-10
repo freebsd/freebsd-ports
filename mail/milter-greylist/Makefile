@@ -70,7 +70,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-user=mailnull --with-libmilter=${MILTERBASE}
 .if ${OSVERSION} >= 502102
-CONFIGURE_ARGS+=	--enable-dnsrbl
+CONFIGURE_ARGS+=	--enable-dnsrbl --with-thread-safe-resolver
 .endif
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS} "
 
