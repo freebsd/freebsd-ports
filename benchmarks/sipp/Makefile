@@ -22,12 +22,14 @@ MAKE_ENV+=	CPP="${CXX}" CPPFLAGS="${CXXFLAGS}" CCLINK="${CXX}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile - patch needed by someone who can test it
-.endif
-
 .if !defined(WITHOUT_DIGEST_AUTH)
 ALL_TARGET=ossl
+.endif
+
+post-patch:
+.if ${ARCH} == "ia64"
+	@${REINPLACE_CMD} -e 's/^\(MFLAGS_ia64=\)\+DD64$$/\1/' \
+	                  ${WRKSRC}/Makefile
 .endif
 
 do-install:
