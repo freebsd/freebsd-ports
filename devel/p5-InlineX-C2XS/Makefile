@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline \
     		${SITE_PERL}/Inline/CPP.pm:${PORTSDIR}/devel/p5-Inline-CPP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Inline::C2XS.3
