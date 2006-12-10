@@ -6,6 +6,7 @@
 
     Add following lines
 
+dnl j,{if_addr},{cert_subject},i,{auth_authen} are already enabled by default
 define(`confMILTER_MACROS_HELO', confMILTER_MACROS_HELO``, {verify}'')
 define(`confMILTER_MACROS_ENVRCPT', confMILTER_MACROS_ENVRCPT``, {greylist}'')
 INPUT_MAIL_FILTER(`greylist', `S=local:/var/milter-greylist/milter-greylist.sock, F=T, T=R:30s')
