@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to fit population models across sites
 
+DEPRECATED=	distfile disappeared from homepage
+EXPIRATION_DATE=	2007-01-07
+
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	${PORTNAME}
 
