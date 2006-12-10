@@ -1,4 +1,3 @@
-%%JOSUA%%bin/josua
 include/eXosip2/eX_call.h
 include/eXosip2/eX_message.h
 include/eXosip2/eX_options.h
@@ -8,14 +7,8 @@ include/eXosip2/eX_register.h
 include/eXosip2/eX_setup.h
 include/eXosip2/eX_subscribe.h
 include/eXosip2/eXosip.h
-include/josua/jmainconfig.h
 lib/libeXosip2.a
 lib/libeXosip2.la
 lib/libeXosip2.so
-lib/libeXosip2.so.5
-%%JOSUA%%lib/libjosua.a
-%%JOSUA%%lib/libjosua.la
-%%JOSUA%%lib/libjosua.so
-%%JOSUA%%lib/libjosua.so.0
+lib/libeXosip2.so.6
 @dirrm include/eXosip2
-@dirrm include/josua
