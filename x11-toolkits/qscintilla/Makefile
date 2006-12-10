@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla
-PORTVERSION=	1.6
-PORTREVISION=
+PORTVERSION=	1.7.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla1/ \
 		http://freebsd.ricin.com/ports/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}5-gpl-${PORTVERSION}
+DISTNAME=	QScintilla-1.71-gpl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT port of the Scintilla C++ editor class
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${X11BASE}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on \
 		DOCS "Install documentation" on \
@@ -109,9 +108,9 @@ post-build:
 do-install:
 	( cd ${WRKSRC} && \
 		${INSTALL_DATA} qt/qextscintilla*.h ${PREFIX}/include && \
-		${INSTALL_DATA} qt/libqscintilla.so.6.0.0 \
-			${PREFIX}/lib/libqscintilla.so.6 && \
-		${LN} -sf ${PREFIX}/lib/libqscintilla.so.6 \
+		${INSTALL_DATA} qt/libqscintilla.so.7.0.1 \
+			${PREFIX}/lib/libqscintilla.so.7 && \
+		${LN} -sf ${PREFIX}/lib/libqscintilla.so.7 \
 			${PREFIX}/lib/libqscintilla.so )
 .if !defined(WITHOUT_DESIGNER_PLUGIN)
 	( cd ${WRKSRC} && \
@@ -130,7 +129,7 @@ do-install:
 .endif
 .if !defined(WITHOUT_LANG_PTBR)
 	( cd ${WRKSRC} && \
-		${INSTALL_DATA} qt/qscintilla_ptbr.qm ${DATADIR}/translations )
+		${INSTALL_DATA} qt/qscintilla_pt_br.qm ${DATADIR}/translations )
 .endif
 .if !defined(WITHOUT_LANG_RU)
 	( cd ${WRKSRC} && \
