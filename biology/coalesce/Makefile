@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to fit population models
 
+DEPRECATED=	distfile disappeared from homepage
+EXPIRATION_DATE=	2007-01-07
+
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	${PORTNAME}
 
