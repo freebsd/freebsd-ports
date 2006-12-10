@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	libfec
-PORTVERSION=	2.1.1
-CATEGORIES=	comms astro hamradio
+PORTVERSION=	3.0
+CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/
 DISTNAME=	fec-${PORTVERSION}
 
@@ -19,7 +19,7 @@ MAN3=		simd-viterbi.3 rs.3 dsp.3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 post-patch:
