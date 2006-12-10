@@ -16,7 +16,7 @@ COMMENT=	Partition-selectable boot loader for IBM-PC/AT compatibles
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
