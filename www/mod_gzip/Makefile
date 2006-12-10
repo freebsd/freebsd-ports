@@ -19,6 +19,10 @@ USE_APACHE=	yes
 MAKE_ENV+=	"APXS=${APXS}"
 ALL_TARGET=	build
 
+post-patch:
+	@${REINPLACE_CMD} 's|-Wc,-Wall,-O3,-fomit-frame-pointer,-pipe||' \
+		${WRKSRC}/Makefile
+
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/mod_gzip.conf.sample ${EXAMPLESDIR}
