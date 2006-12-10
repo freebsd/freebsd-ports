@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+CONFIGURE_ARGS+=--disable-gui
+
 post-configure:
 	@${REINPLACE_CMD} -e \
 		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
