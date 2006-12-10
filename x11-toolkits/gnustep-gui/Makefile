@@ -19,7 +19,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 
-NOT_FOR_ARCHS=	ia64
+#NOT_FOR_ARCHS=	ia64
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
@@ -29,16 +29,16 @@ CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include
 CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/lib
-USE_XLIB=	yes
-EXTRA_PATCHES+=		${FILESDIR}/GNUmakefile.patch
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_BASE=	yes
-MAKEFILE=
+USE_GNUSTEP_LDCONFIG=	${SYSLIBDIR}
+USE_XLIB=	yes
+
+EXTRA_PATCHES+=		${FILESDIR}/GNUmakefile.patch
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 BREAKS_IF_PEDANTIC=	yes
 NO_FILTER_SHLIBS=	yes
