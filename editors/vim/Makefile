@@ -35,6 +35,10 @@ WITH_PYTHON=	yes
 WITH_CSCOPE=	yes
 .endif
 
+.if defined(WITH_TCL)
+BROKEN=		Does not compile
+.endif
+
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
