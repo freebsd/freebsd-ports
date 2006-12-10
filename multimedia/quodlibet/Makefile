@@ -65,8 +65,8 @@ USE_GSTREAMER+=	flac
 
 .if !defined(WITHOUT_MUSEPACK) || !defined(WITHOUT_WAVPACK) \
 		|| !defined(WITHOUT_AAC)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
+BUILD_DEPENDS+=	${PYCTYPES}
+RUN_DEPENDS+=	${PYCTYPES}
 .endif
 
 .if !defined(WITHOUT_MUSEPACK)
