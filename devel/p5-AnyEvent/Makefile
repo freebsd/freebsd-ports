@@ -25,4 +25,4 @@ MAN3=		AnyEvent.3
 IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
