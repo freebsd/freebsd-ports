@@ -1,6 +1,5 @@
 bin/lucidlife
 share/applications/lucidlife.desktop
-share/locale/en_GB/LC_MESSAGES/lucidlife.mo
 share/pixmaps/lucidlife.png
 %%DATADIR%%/graphics/logo.png
 %%DATADIR%%/icons/description.png
@@ -359,6 +358,7 @@ share/pixmaps/lucidlife.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/window.gif
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/patterns/lpa/synthesis
 @dirrm %%DATADIR%%/patterns/lpa/spaceships
 @dirrm %%DATADIR%%/patterns/lpa/space_fillers
