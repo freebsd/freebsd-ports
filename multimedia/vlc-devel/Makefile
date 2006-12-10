@@ -9,21 +9,22 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.0.20061020
-PORTREVISION=	1
+DISTVERSION=	0.8.6
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://nightlies.videolan.org/build/source/
-#		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
-#		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
-#		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
-#		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
+MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
+		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.9.0.//}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 OPTIONS+=	A52 "a52 audio support, many DVDs use this" On
@@ -33,7 +34,6 @@ OPTIONS+=	CACA "Libcaca Console Graphics Support" Off
 OPTIONS+=	ARTS "Enable arts sound support" Off
 OPTIONS+=	CORBA "Enable a Corba interface via orbit2" Off
 OPTIONS+=	DAAP "Connect to iTunes(R) music shares" On
-OPTIONS+=	DBUS "Dbus support" On
 OPTIONS+=	DEBUG "Enable debuging support" Off
 OPTIONS+=	DTS "DTS decoder support, many DVDs use this" On
 OPTIONS+=	ESOUND "Esound Support" Off
@@ -62,13 +62,11 @@ OPTIONS+=	VORBIS "Vorbis support" On
 OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
 OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 
-CONFLICTS=	vlc-[0-9]*
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.0-svn
+CONFLICTS=	vlc-*
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -83,12 +81,14 @@ PLIST=		${WRKDIR}/plist
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/ffmpeg ${PTHREAD_CFLAGS} -DHAVE_POSTPROC_POSTPROCESS_H" \
+		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} -lc" \
+		LIBS="-lc"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
 			--with-ffmpeg=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
+			--with-libintl-prefix=${LOCALBASE} \
 			--with-ffmpeg-zlib \
 			--disable-gnome \
 			--disable-gtk \
@@ -107,12 +107,6 @@ BROKEN=		Does not compile on ${ARCH}
 
 .if ${PERL_LEVEL} < 500800
 BROKEN=	Does not compile with perl ${PERL_VERSION}
-.endif
-
-.if exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) || !exists(${LOCALBASE}/lib/libavformat.a)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
-.else
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 # compatible knobs.
@@ -193,6 +187,7 @@ CONFIGURE_ARGS+=--disable-loader
 
 .if !defined(WITHOUT_WXGTK)
 USE_WX=		2.6
+WX_UNICODE=	yes
 CONFIGURE_ARGS+=--enable-wxwidgets
 .else
 CONFIGURE_ARGS+=--disable-wxwidgets
@@ -246,13 +241,6 @@ USE_GNOME+=	orbit2
 CONFIGURE_ARGS+=--enable-corba
 .else
 CONFIGURE_ARGS+=--disable-corba
-.endif
-
-.if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+=	--enable-dbus
-.else
-CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
 .if !defined(WITHOUT_DVBPSI)

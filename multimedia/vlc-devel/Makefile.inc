@@ -261,7 +261,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
 		${WRKSRC}/loader/module.c
 .endif
-	@${REINPLACE_CMD} -e 's|bindings/java/src/Makefile||' ${WRKSRC}/configure
+
+pre-configure:
+.if !exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) && exists(${LOCALBASE}/lib/libavformat.a)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "ERROR: ${PKGNAME} requires a newer version of FFMpeg"
+	@${ECHO_CMD} "please deinstall multimedia/ffmpeg before continuing"
+	@${ECHO_CMD} "the build."
+	@${ECHO_CMD} ""
+	@${FALSE}
+.endif
+
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
