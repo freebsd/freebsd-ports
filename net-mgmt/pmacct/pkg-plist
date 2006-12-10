@@ -15,12 +15,10 @@ sbin/sfacctd
 %%EXAMPLESDIR%%/mrtg.conf.example
 %%EXAMPLESDIR%%/networks.lst.example
 %%EXAMPLESDIR%%/nfacctd-print.conf.example
-%%EXAMPLESDIR%%/nfacctd-sql.conf.example
 %%EXAMPLESDIR%%/nfacctd-sql_v1.conf.example
 %%EXAMPLESDIR%%/nfacctd-sql_v2.conf.example
 %%EXAMPLESDIR%%/pmacctd-imt.conf.example
 %%EXAMPLESDIR%%/pmacctd-multiple-plugins.conf.example
-%%EXAMPLESDIR%%/pmacctd-sql.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v1.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v2.conf.example
 %%EXAMPLESDIR%%/pmacctd-sqlite3_v4.conf.example
