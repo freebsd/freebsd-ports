@@ -12,7 +12,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gstreamer based audio converter for KDE
 
 DEPENDS=	${PORTSDIR}/misc/kdehier
