@@ -1,11 +1,10 @@
---- dvd.c.orig	Wed Dec  7 21:31:56 2005
-+++ dvd.c	Wed Feb  1 22:23:15 2006
-@@ -692,28 +692,6 @@
- /* 	      fprintf(stderr,"debug: vob_size: %lli\n",buf.st_size); */
- 	    }
+--- dvd.c.orig	Tue Dec  5 00:06:52 2006
++++ dvd.c	Tue Dec  5 00:09:54 2006
+@@ -637,21 +637,6 @@
+    	   return ( off_t ) vob_size;
  	}
--      strcpy( stat_path, path_to_vobs3 );
--      strcat( stat_path, "_1.vob" );
+    
+-      sprintf( stat_path, "%s_1.vob", path_to_vobs3 );
 -      if( ( tmp_streamin1 = fopen( stat_path, "r" ) ) != NULL ) /*check if this path is correct */
 -	{
 -	  fclose ( tmp_streamin1 );
@@ -14,18 +13,12 @@
 -	    {
 -	      /* adjust path for next subvob */
 -	      subvob++;
--	      strcpy( stat_path, path_to_vobs3 );
--	      strcat( stat_path, "_" );
--	      sprintf( temp1, "%d", subvob );
--	      strcat( stat_path, temp1 );
--	      strcat( stat_path, ".vob" );
--	      
+-          sprintf( stat_path, "%s_%d.vob", path_to_vobs3, subvob );	      
 -	      vob_size += buf.st_size;
--/* 	      fprintf(stderr,"debug: vob_size: %lli\n",vob_size); */
--/* 	      fprintf(stderr,"debug: vob_size: %lli\n",buf.st_size); */
 -	    }
+-          return ( off_t ) vob_size; 
 -	}
 -
-       return ( off_t ) vob_size; /* think that (off_t) is not really needed here?
+       /*none of the above seemed to have caught it, so this is the error return */
+       return ( off_t ) 0; /* think that (off_t) is not really needed here?
  				  as it is defined as off_t and the function is
- 				  also defined as off_t */

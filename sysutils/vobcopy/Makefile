@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.5.16
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -52,8 +51,10 @@ post-patch:
 		-e 's|FreeBSD_Version|FreeBSD_version|' \
 		${WRKSRC}/dvd.c
 # no such flag under FreeBSD
+# fdatasync(2) -> fsync(2)
 	@${REINPLACE_CMD} -E \
 		-e 's|O_LARGEFILE|0|' \
+		-e 's|fdatasync|fsync|g' \
 		${WRKSRC}/vobcopy.c
 
 post-configure:

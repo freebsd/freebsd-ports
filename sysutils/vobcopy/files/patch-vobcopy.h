@@ -1,5 +1,5 @@
---- vobcopy.h.orig	Wed Dec  7 21:32:10 2005
-+++ vobcopy.h	Sun Jan  8 15:26:43 2006
+--- vobcopy.h.orig	Mon Nov 13 19:57:24 2006
++++ vobcopy.h	Mon Dec  4 23:57:12 2006
 @@ -19,7 +19,6 @@
  
  #if ( defined( __unix__ ) || defined( unix )) && !defined( USG )
@@ -8,7 +8,7 @@
  #endif
  
  #if defined( __GNUC__ ) && \
-@@ -32,6 +31,8 @@
+@@ -31,6 +30,8 @@
  /* by some bugreport:*/
  #if !( defined( BSD ) && ( BSD >= 199306 ) ) && !defined( sun )
  #include <stdint.h>
@@ -17,7 +17,7 @@
  #endif
  
  /*for/from play_title.c*/
-@@ -67,24 +68,23 @@
+@@ -66,24 +67,23 @@
  /* //////////  *BSD //////////  */
  #if ( defined( BSD ) && ( BSD >= 199306 ) )
  
@@ -50,3 +50,14 @@
  
  #include <sys/mount.h>
  #define USE_STATFS_FOR_DEV
+@@ -170,7 +170,10 @@
+ 
+ #include "dvd.h"
+ 
++/* BSD already have off_t definition */
++#if !(defined(BSD) && (BSD >= 199306))
+ #define off_t __off64_t
++#endif
+ 
+ void usage(char *);
+ int add_end_slash( char * );
