@@ -13888,6 +13888,7 @@ squirrelmail-notes-plugin	ports/mail/squirrelmail-notes-plugin
 squirrelmail-notify-plugin	ports/mail/squirrelmail-notify-plugin
 squirrelmail-password_forget-plugin	ports/mail/squirrelmail-password_forget-plugin
 squirrelmail-pupdate-plugin	ports/mail/squirrelmail-pupdate-plugin
+squirrelmail-qmailadmin_login-plugin	ports/mail/squirrelmail-qmailadmin_login-plugin
 squirrelmail-quota_usage-plugin	ports/mail/squirrelmail-quota_usage-plugin
 squirrelmail-secure_login-plugin	ports/mail/squirrelmail-secure_login-plugin
 squirrelmail-timeout_user-plugin	ports/mail/squirrelmail-timeout_user-plugin
