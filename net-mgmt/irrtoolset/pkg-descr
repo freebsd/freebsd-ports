@@ -7,17 +7,6 @@ RtConfig	routing policies analyzer and router configuration tool
 
 peval		a low-level policy evaluation tool
 
-roe		route object editor
-
-CIDRAdvisor	suggests safe cidr aggregates
-
-aoe		autonomous system object editor
-
-prpath		enumerates a list of patchs between ASes and destinations
-
-prtraceroute	prints route and policy information packets take to a
-		network	host
-
 rpslcheck	sytax checks the aut-num policy for an AS. 	
 
 WWW: http://www.isc.org/index.pl?/sw/IRRToolSet/
