@@ -6,15 +6,16 @@
 #
 
 PORTNAME=		Tree-Nary
-PORTVERSION=		1.21
+PORTVERSION=		1.30
 PORTEPOCH=		1
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tree
 PKGNAMEPREFIX=		p5-
+DISTNAME=		${PORTNAME}-1.3
 
 MAINTAINER=		perl@FreeBSD.org
-COMMENT=	Perl implementation of N-ary search trees
+COMMENT=		Perl implementation of N-ary search trees
 
 PERL_CONFIGURE=		yes
 
