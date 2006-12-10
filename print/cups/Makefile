@@ -13,16 +13,13 @@ CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System: Metaport to install complete system
 
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 		cupsd:${PORTSDIR}/print/cups-base
-.if make(package)
-DEPENDS_TARGET="package"
-.endif # make(package)
 
 NO_BUILD=	yes
-do-install:	# empty
+NO_INSTALL=	yes
 
 .include <bsd.port.mk>
