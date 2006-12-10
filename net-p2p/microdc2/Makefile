@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	microdc2
-PORTVERSION=	0.15.3
+PORTVERSION=	0.15.4
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://corsair626.no-ip.org/microdc/
+MASTER_SITES=	http://corsair626.no-ip.org/microdc/ \
+		http://corsair626.no-ip.org/microdc/archive/
 
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A command-line based Direct Connect client
