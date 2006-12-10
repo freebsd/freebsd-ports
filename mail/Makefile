@@ -546,6 +546,7 @@
     SUBDIR += squirrelmail-notify-plugin
     SUBDIR += squirrelmail-password_forget-plugin
     SUBDIR += squirrelmail-pupdate-plugin
+    SUBDIR += squirrelmail-qmailadmin_login-plugin
     SUBDIR += squirrelmail-quota_usage-plugin
     SUBDIR += squirrelmail-secure_login-plugin
     SUBDIR += squirrelmail-timeout_user-plugin
