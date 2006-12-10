@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	esdl
-PORTVERSION=	0.95.0630
-PORTREVISION=	2
+PORTVERSION=	0.96.0626
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +15,6 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A library for accessing SDL and OpenGL through Erlang
-
-BROKEN=		fails to install properly
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
