@@ -1,5 +1,3 @@
-bin/fwb_compile_all
-bin/fwb_install
 bin/fwb_ipf
 bin/fwb_ipfw
 bin/fwb_ipt
@@ -16,55 +14,38 @@ bin/fwbuilder
 %%DOCSDIR%%/README.ipfw
 %%DOCSDIR%%/README.ipt
 %%DOCSDIR%%/README.pf
-%%DOCSDIR%%/ReleaseNotes_2_0.html
-%%DOCSDIR%%/ReleaseNotes_2_0.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.1.html
-%%DOCSDIR%%/ReleaseNotes_2.0.1.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.2.html
-%%DOCSDIR%%/ReleaseNotes_2.0.2.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.3.html
-%%DOCSDIR%%/ReleaseNotes_2.0.3.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.4.html
-%%DOCSDIR%%/ReleaseNotes_2.0.4.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.5.html
-%%DOCSDIR%%/ReleaseNotes_2.0.5.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.6.html
-%%DOCSDIR%%/ReleaseNotes_2.0.6.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.7.html
-%%DOCSDIR%%/ReleaseNotes_2.0.7.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.8.html
-%%DOCSDIR%%/ReleaseNotes_2.0.8.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.9.html
-%%DOCSDIR%%/ReleaseNotes_2.0.9.txt
-%%DOCSDIR%%/ReleaseNotes_2.0.10.html
-%%DOCSDIR%%/ReleaseNotes_2.0.10.txt
+%%DOCSDIR%%/README.routing
+%%DOCSDIR%%/FWBuilder-Routing-LICENSE.txt
 %%DOCSDIR%%/PatchAcceptancePolicy.txt
-%%DATADIR%%/objects_init.xml
-%%DATADIR%%/templates.xml
-%%DATADIR%%/resources.xml
-%%DATADIR%%/platform/iptables.xml
-%%DATADIR%%/platform/ipf.xml
-%%DATADIR%%/platform/pf.xml
-%%DATADIR%%/platform/ipfw.xml
-%%DATADIR%%/platform/pix.xml
-%%DATADIR%%/platform/fwsm.xml
-%%DATADIR%%/platform/unknown.xml
-%%DATADIR%%/os/linux24.xml
-%%DATADIR%%/os/linksys.xml
-%%DATADIR%%/os/macosx.xml
-%%DATADIR%%/os/freebsd.xml
-%%DATADIR%%/os/openbsd.xml
-%%DATADIR%%/os/solaris.xml
-%%DATADIR%%/os/pix_os.xml
-%%DATADIR%%/os/fwsm_os.xml
-%%DATADIR%%/os/unknown_os.xml
-%%DATADIR%%/locale/fwbuilder_de.qm
-%%DATADIR%%/locale/fwbuilder_es.qm
-%%DATADIR%%/locale/fwbuilder_fr.qm
-%%DATADIR%%/locale/fwbuilder_ja.qm
-%%DATADIR%%/locale/fwbuilder_ru.qm
+%%DOCSDIR%%/ReleaseNotes_2.1.7.html
+%%DOCSDIR%%/ReleaseNotes_2.1.7.txt
+share/fwbuilder%%BUILD_VERSION%%/objects_init.xml
+share/fwbuilder%%BUILD_VERSION%%/templates.xml
+share/fwbuilder%%BUILD_VERSION%%/resources.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/iptables.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/ipf.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/pf.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/ipfw.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/fwsm.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/pix.xml
+share/fwbuilder%%BUILD_VERSION%%/platform/unknown.xml
+share/fwbuilder%%BUILD_VERSION%%/os/linux24.xml
+share/fwbuilder%%BUILD_VERSION%%/os/linksys.xml
+share/fwbuilder%%BUILD_VERSION%%/os/macosx.xml
+share/fwbuilder%%BUILD_VERSION%%/os/freebsd.xml
+share/fwbuilder%%BUILD_VERSION%%/os/openbsd.xml
+share/fwbuilder%%BUILD_VERSION%%/os/solaris.xml
+share/fwbuilder%%BUILD_VERSION%%/os/pix_os.xml
+share/fwbuilder%%BUILD_VERSION%%/os/fwsm_os.xml
+share/fwbuilder%%BUILD_VERSION%%/os/unknown_os.xml
+share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_de.qm
+share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_es.qm
+share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_fr.qm
+share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_ja.qm
+share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_ru.qm
+share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_sv.qm
 @dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/platform
-@dirrm %%DATADIR%%/os
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%
+@dirrm share/fwbuilder%%BUILD_VERSION%%/platform
+@dirrm share/fwbuilder%%BUILD_VERSION%%/os
+@dirrm share/fwbuilder%%BUILD_VERSION%%/locale
+@dirrm share/fwbuilder%%BUILD_VERSION%%
