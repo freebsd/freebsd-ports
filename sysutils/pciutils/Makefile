@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pciutils
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
