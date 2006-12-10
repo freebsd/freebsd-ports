@@ -17,8 +17,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-BROKEN=		Configure fails
-
 # Elmer avoids the new C++ headers because they cause problems
 # on older systems (Irix)
 CXXFLAGS+=	-Wno-deprecated
