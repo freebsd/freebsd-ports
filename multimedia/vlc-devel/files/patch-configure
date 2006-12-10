@@ -1,0 +1,42 @@
+--- configure.orig	Fri Dec  8 20:33:49 2006
++++ configure	Sun Dec 10 09:40:46 2006
+@@ -2412,8 +2412,7 @@
+ done
+ if test -z "$ac_aux_dir"; then
+   { { echo "$as_me:$LINENO: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&5
+-echo "$as_me: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&2;}
+-   { (exit 1); exit 1; }; }
++echo "$as_me: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&2;} }
+ fi
+ 
+ # These three variables are undocumented and unsupported,
+@@ -37873,8 +37872,7 @@
+         if test -n "${enable_dv}"
+         then
+           { { echo "$as_me:$LINENO: error: cannot find libraw1394 headers" >&5
+-echo "$as_me: error: cannot find libraw1394 headers" >&2;}
+-   { (exit 1); exit 1; }; }
++echo "$as_me: error: cannot find libraw1394 headers" >&2;} ;}
+         fi
+ 
+ fi
+@@ -37893,8 +37891,7 @@
+             { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }
+       { { echo "$as_me:$LINENO: error: cannot cd to ${real_dv_raw1394_tree}" >&5
+-echo "$as_me: error: cannot cd to ${real_dv_raw1394_tree}" >&2;}
+-   { (exit 1); exit 1; }; }
++echo "$as_me: error: cannot cd to ${real_dv_raw1394_tree}" >&2;} ;}
+     fi
+     if test -f "${real_dv_raw1394_tree}/src/.libs/libraw1394.a"
+     then
+@@ -38113,8 +38110,7 @@
+         if test -n "${enable_dv}"
+         then
+           { { echo "$as_me:$LINENO: error: cannot find libavc1394 headers" >&5
+-echo "$as_me: error: cannot find libavc1394 headers" >&2;}
+-   { (exit 1); exit 1; }; }
++echo "$as_me: error: cannot find libavc1394 headers" >&2;} ; }
+         fi
+ 
+ fi
