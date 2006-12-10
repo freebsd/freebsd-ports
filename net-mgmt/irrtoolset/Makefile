@@ -6,39 +6,42 @@
 #
 
 PORTNAME=	irrtoolset
-PORTVERSION=	4.7.3
-PORTREVISION=	1
-CATEGORIES=	net-mgmt tk82
-MASTER_SITES=	ftp://ftp.isc.org/isc/IRRToolSet/${DISTNAME}/ \
-		ftp://ftp.ripe.net/tools/IRRToolSet/${DISTNAME}/
+PORTVERSION=	4.8.4
+CATEGORIES=	net-mgmt
+MASTER_SITES=	${MASTER_SITE_ISC} \
+		ftp://ftp.ripe.net/tools/
+MASTER_SITE_SUBDIR=IRRToolSet/${DISTNAME}
 DISTNAME=	IRRToolSet-${PORTVERSION}
 
 MAINTAINER=	oberman@es.net
 COMMENT=	A suite of routing policy tools to interact with the IRR
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+PLIST_FILES=	bin/rpslcheck bin/peval bin/RtConfig
 
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_GCC=	2.95
 GNU_CONFIGURE=	Yes
-CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl8.3:${PREFIX}/include/tk8.3" \
-		TCL_TK_LIBRARY_DIR=${PREFIX}/lib \
-		TCL_LIBRARY=${PREFIX}/lib/tcl8.3 \
-		TK_LIBRARY=${PREFIX}/lib/tk8.3 \
-		LD_TCL_TK_LIBS="-ltk83 -ltcl83"
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
-MAN1=		CIDRAdvisor.1 Errors.1 RtConfig.1 aoe.1 peval.1 prpath.1 \
-		prtraceroute.1 roe.1 rpslcheck.1
+MAN1=		RtConfig.1 peval.1 rpslcheck.1 IRR-Errors.1
 MAN3=		librpsl.3
 
 .include <bsd.port.pre.mk>
 
+post-extract:
+	@${RM} ${WRKSRC}/man/man1/CIDRAdvisor.1 ${WRKSRC}/man/man1/prpath.1
+	@${RM} ${WRKSRC}/man/man1/prtraceroute.1 ${WRKSRC}/man/man1/?oe.1
+	@${MV} ${WRKSRC}/man/man1/Errors.1 ${WRKSRC}/man/man1/IRR-Errors.1
+
 post-patch:
 	@${SED} -i.orig -e 's|#include <malloc.h>|/* #include <malloc.h> */|' \
-		${WRKSRC}/src/irr/birdwhoisc.cc
+	${WRKSRC}/src/irr/birdwhoisc.cc
+	@${RM} ${WRKSRC}/man/man1/*.orig
 
-aLL_TARGET=	depend all
+ALL_TARGET=	depend all
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
 
 .include <bsd.port.post.mk>
