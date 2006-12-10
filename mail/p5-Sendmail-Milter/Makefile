@@ -12,15 +12,20 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sendmail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A module to write mail filters in Perl using sendmail's mail filter API
-
-IGNORE=		"Requires perl compiled manually with threads."
-DEPRECATED=	${IGNORE}
-EXPIRATION_DATE=2006-12-01
+MAINTAINER=	marc@pilgerer.org
+COMMENT=	Module to write mail filters in Perl using sendmail's mail filter API
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Sendmail::Milter.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${PERL5})
+PERLTHREADS!=	${PERL5} -V:usethreads | ${AWK} '/define/ { print "define"; exit }'
+.if ${PERLTHREADS} != "define"
+IGNORE=	requires perl to be built with -DWITH_THREADS
+.endif
+.endif
+
+.include <bsd.port.post.mk>
