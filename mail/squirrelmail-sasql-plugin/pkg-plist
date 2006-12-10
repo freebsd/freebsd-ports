@@ -1,0 +1,38 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin sasql; fi
+%%SQUIRRELDIR%%/plugins/sasql/contrib/README
+%%SQUIRRELDIR%%/plugins/sasql/contrib/adodb.patch
+%%SQUIRRELDIR%%/plugins/sasql/contrib/xgetpo
+%%SQUIRRELDIR%%/plugins/sasql/README
+%%SQUIRRELDIR%%/plugins/sasql/README.dspam
+%%SQUIRRELDIR%%/plugins/sasql/README.policyd
+%%SQUIRRELDIR%%/plugins/sasql/TODO
+%%SQUIRRELDIR%%/plugins/sasql/bayes_stats.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/divider.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/dspam.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/dspam_conf.php
+%%SQUIRRELDIR%%/plugins/sasql/dspam_primer.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/end_section.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/index.php
+%%SQUIRRELDIR%%/plugins/sasql/move_to.php
+%%SQUIRRELDIR%%/plugins/sasql/policyd.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/policyd_conf-dist.php
+%%SQUIRRELDIR%%/plugins/sasql/policyd_docs.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/process-spam.pl
+%%SQUIRRELDIR%%/plugins/sasql/purge.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/sa_abooksync.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/sa_opts-dist.php
+%%SQUIRRELDIR%%/plugins/sasql/sa_settings.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/sa_whitelist.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/sasql.pot
+%%SQUIRRELDIR%%/plugins/sasql/sasql_api.php
+%%SQUIRRELDIR%%/plugins/sasql/sasql_conf.php.dist
+%%SQUIRRELDIR%%/plugins/sasql/sasql_db.php
+%%SQUIRRELDIR%%/plugins/sasql/sasql_hooks.php
+%%SQUIRRELDIR%%/plugins/sasql/sasql_options.php
+%%SQUIRRELDIR%%/plugins/sasql/sasql_wblist.php
+%%SQUIRRELDIR%%/plugins/sasql/setup.php
+%%SQUIRRELDIR%%/plugins/sasql/start_section.inc.php
+%%SQUIRRELDIR%%/plugins/sasql/version
+@dirrm %%SQUIRRELDIR%%/plugins/sasql/contrib
+@dirrm %%SQUIRRELDIR%%/plugins/sasql/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin sasql; fi
