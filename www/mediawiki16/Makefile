@@ -16,11 +16,12 @@ COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.[0-57-9].*
 
+NO_LATEST_LINK=	yes
+
 NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib readline
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
-LATEST_LINK=	${PORTNAME}16
 
 OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL (not funtional)" off \
 		LDAP "Use LDAP authentication" off
@@ -31,7 +32,7 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL (not funtional)" off \
 USE_PHP+=	pgsql
 IGNORE=		the table definitions for PostgreSQL install are out of date.\
 		PostgreSQL support may return in later releases, pending appropriate patches.\
-		Use www/mediawiki15 for while
+		Use www/mediawiki17 from now on
 .else
 USE_PHP+=	mysql
 .endif
