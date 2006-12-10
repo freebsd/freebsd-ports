@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xastir
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xastir
@@ -34,6 +33,7 @@ OPTIONS=	SHAPELIB "Include Shapelib support" On \
 		DBFAWK "Include DBFAWK Support" On \
 		MAGICK "Include ImageMagick Support" On \
 		CURL "Include CURL Internet Image support" On \
+		GEOTIFF "Include GeoTIFF Support" Off \
 		GDAL "Include GDAL Support" Off \
 		GPSMAN "Include GPSMAN Support" Off \
 		FESTIVAL "Include Festival Voice Synthesis Support" Off \
@@ -46,20 +46,6 @@ OPTIONS=	SHAPELIB "Include Shapelib support" On \
 		OPTCFLAGS "Use optimized CFLAGS (-O2 -pipe)" Off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_FESTIVAL)
-RUN_DEPENDS+=	festival:${PORTSDIR}/audio/festival
-.else
-CONFIGURE_ARGS+=	--without-festival
-.endif
-
-.if defined(WITH_GPSMAN)
-RUN_DEPENDS+=	gpsmanshp:${PORTSDIR}/graphics/gpsmanshp
-WITH_SHAPELIB=	true
-.undef WITHOUT_SHAPELIB
-.else
-CONFIGURE_ARGS+=	--without-gpsman
-.endif
 
 .if defined(WITHOUT_SHAPELIB)
 CONFIGURE_ARGS+=	--without-shapelib
@@ -89,10 +75,28 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
+.if defined(WITH_GEOTIFF)
+LIB_DEPENDS+=	geotiff:${PORTSDIR}/graphics/libgeotiff
+.endif
+
 .if defined(WITH_GDAL)
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 .else
 CONFIGURE_ARGS+=	--without-gdal
+.endif
+
+.if defined(WITH_GPSMAN)
+BUILD_DEPENDS+=	${LOCALBASE}/share/doc/gpsmanshp/GPSManSHP.pdf:${PORTSDIR}/graphics/gpsmanshp
+WITH_SHAPELIB=	true
+.undef WITHOUT_SHAPELIB
+.else
+CONFIGURE_ARGS+=	--without-gpsman
+.endif
+
+.if defined(WITH_FESTIVAL)
+BUILD_DEPENDS+=	festival:${PORTSDIR}/audio/festival
+.else
+CONFIGURE_ARGS+=	--without-festival
 .endif
 
 .if defined(WITH_RTREE)
@@ -120,7 +124,7 @@ USE_BDB=	43
 .endif
 
 .if defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-CONFIGURE_ARGS+=        --with-bdb-incdir=${BDB_INCLUDE_DIR}
+CONFIGURE_ARGS+=	 --with-bdb-incdir=${BDB_INCLUDE_DIR}
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
