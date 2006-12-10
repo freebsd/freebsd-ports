@@ -1,15 +1,15 @@
---- Makefile.orig	Wed Sep 21 09:04:54 2005
-+++ Makefile	Wed Nov 23 00:11:07 2005
+--- Makefile.orig	Fri May  5 21:46:32 2006
++++ Makefile	Mon Nov 27 22:12:24 2006
 @@ -1,19 +1,16 @@
  # Makefile for The PCI Utilities
- # (c) 1998--2005 Martin Mares <mj@ucw.cz>
+ # (c) 1998--2006 Martin Mares <mj@ucw.cz>
  
 -OPT=-O2
 -CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes -Winline
 +CFLAGS+= -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes -Winline
  
- VERSION=2.2.0
- DATE=2005-09-21
+ VERSION=2.2.3
+ DATE=2006-05-05
  
 -PREFIX=/usr/local
  SBINDIR=$(PREFIX)/sbin
