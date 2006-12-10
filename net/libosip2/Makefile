@@ -16,10 +16,12 @@ MASTER_SITE_SUBDIR=	osip
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
+CONFLICTS=	libosip-3*
+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-trace
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
