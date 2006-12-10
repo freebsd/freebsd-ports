@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.16
+PORTVERSION=	3.17
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/
@@ -15,7 +15,7 @@ DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the Qt toolkit
 
-LIB_DEPENDS=	qscintilla.6:${PORTSDIR}/x11-toolkits/qscintilla
+LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla
 RUN_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		qmake:${PORTSDIR}/devel/qmake
