@@ -1,0 +1,16 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin qmailadmin_login; fi
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/COPYING
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/INSTALL
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/README
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/ReleaseNotes.txt
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/config_default.php
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/functions.php
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/index.php
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/qmailadmin_login.pot
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/qmlogin.php
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/qmlogin_iframe.php
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/setup.php
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/version
+%%SQUIRRELDIR%%/plugins/qmailadmin_login/xgetpot
+@dirrm %%SQUIRRELDIR%%/plugins/qmailadmin_login/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin qmailadmin_login; fi
