@@ -10,6 +10,7 @@ lib/libEterm.a
 lib/libEterm.la
 lib/libEterm.so
 lib/libEterm.so.9
+share/Eterm/gdb.scr
 share/Eterm/pix/bar_horizontal_1.png
 share/Eterm/pix/bar_horizontal_2.png
 share/Eterm/pix/bar_horizontal_3.png
