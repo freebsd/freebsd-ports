@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Sys-Syscall
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Sys
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Access system calls that Perl doesn\'t provide access to
 
 PERL_CONFIGURE=	yes
