@@ -7,6 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.13
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -34,6 +35,7 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		FAM		"Enable fam/gamin support" off \
 		GDBM		"Enable gdbm storage support" off \
 		IPV6		"Enable IPV6 support" on \
+		MAGNET		"Enable magnet support" off \
 		MEMCACHE	"Enable memcached storage support" off \
 		MYSQL		"Enable MYSQL support" off \
 		OPENLDAP	"Enable LDAP support" off \
@@ -76,6 +78,12 @@ CONFIGURE_ARGS+=	--with-gdbm
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITH_MAGNET)
+USE_LUA=		5.1+
+CONFIGURE_ARGS+=	--with-lua
+CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 .endif
 
 .if defined(WITH_MEMCACHE)
