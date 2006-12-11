@@ -527,6 +527,7 @@
     SUBDIR += p5-CGI-Application-Plugin-Stream
     SUBDIR += p5-CGI-Application-Plugin-TT
     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
+    SUBDIR += p5-CGI-Application-Plugin-ViewCode
     SUBDIR += p5-CGI-Application-Server
     SUBDIR += p5-CGI-ArgChecker
     SUBDIR += p5-CGI-Builder
