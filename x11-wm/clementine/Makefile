@@ -26,7 +26,8 @@ DOCS=		COPYING HISTORY LICENSE
 REINPLACE_ARGS=	-i'' -E
 
 post-patch:
-	${REINPLACE_CMD} 's:^CFLAGS:IGNORE:g ; s:^DEFINES:IGNORE:g' \
+	${REINPLACE_CMD} 's:^CFLAGS:IGNORE:g ; s:^DEFINES:IGNORE:g ;\
+		s:/usr/X11R6:${X11BASE}:g' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} 's:./clementine:${PREFIX}/bin/clementine:g' \
 		${WRKSRC}/windowmanager.cpp
