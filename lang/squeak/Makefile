@@ -59,7 +59,7 @@ DIST_SUBDIR=		squeak
 ONLY_FOR_ARCHS=		i386
 MAN1=			inisqueak.1 squeak.1
 USE_GMAKE=		yes
-HAS_CONFIGURE=		yes
+GNU_CONFIGURE=		yes
 
 # Plugin image must be writable, because of it copy to user's ~/.npsqueak/ and
 # be updated.
