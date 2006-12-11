@@ -1726,10 +1726,12 @@
 %%T%%/jre/lib/zi/America/Argentina/Ushuaia
 %%T%%/jre/lib/zi/America/Aruba
 %%T%%/jre/lib/zi/America/Asuncion
+%%T%%/jre/lib/zi/America/Atikokan
 %%T%%/jre/lib/zi/America/Bahia
 %%T%%/jre/lib/zi/America/Barbados
 %%T%%/jre/lib/zi/America/Belem
 %%T%%/jre/lib/zi/America/Belize
+%%T%%/jre/lib/zi/America/Blanc-Sablon
 %%T%%/jre/lib/zi/America/Boa_Vista
 %%T%%/jre/lib/zi/America/Bogota
 %%T%%/jre/lib/zi/America/Boise
@@ -1741,7 +1743,6 @@
 %%T%%/jre/lib/zi/America/Cayman
 %%T%%/jre/lib/zi/America/Chicago
 %%T%%/jre/lib/zi/America/Chihuahua
-%%T%%/jre/lib/zi/America/Coral_Harbour
 %%T%%/jre/lib/zi/America/Costa_Rica
 %%T%%/jre/lib/zi/America/Cuiaba
 %%T%%/jre/lib/zi/America/Curacao
@@ -1770,7 +1771,9 @@
 %%T%%/jre/lib/zi/America/Indiana/Indianapolis
 %%T%%/jre/lib/zi/America/Indiana/Knox
 %%T%%/jre/lib/zi/America/Indiana/Marengo
+%%T%%/jre/lib/zi/America/Indiana/Petersburg
 %%T%%/jre/lib/zi/America/Indiana/Vevay
+%%T%%/jre/lib/zi/America/Indiana/Vincennes
 %%T%%/jre/lib/zi/America/Inuvik
 %%T%%/jre/lib/zi/America/Iqaluit
 %%T%%/jre/lib/zi/America/Jamaica
@@ -1789,6 +1792,7 @@
 %%T%%/jre/lib/zi/America/Merida
 %%T%%/jre/lib/zi/America/Mexico_City
 %%T%%/jre/lib/zi/America/Miquelon
+%%T%%/jre/lib/zi/America/Moncton
 %%T%%/jre/lib/zi/America/Monterrey
 %%T%%/jre/lib/zi/America/Montevideo
 %%T%%/jre/lib/zi/America/Montreal
@@ -1799,6 +1803,7 @@
 %%T%%/jre/lib/zi/America/Nome
 %%T%%/jre/lib/zi/America/Noronha
 %%T%%/jre/lib/zi/America/North_Dakota/Center
+%%T%%/jre/lib/zi/America/North_Dakota/New_Salem
 %%T%%/jre/lib/zi/America/Panama
 %%T%%/jre/lib/zi/America/Pangnirtung
 %%T%%/jre/lib/zi/America/Paramaribo
@@ -1942,7 +1947,10 @@
 %%T%%/jre/lib/zi/Australia/Perth
 %%T%%/jre/lib/zi/Australia/Sydney
 %%T%%/jre/lib/zi/CET
+%%T%%/jre/lib/zi/CST6CDT
 %%T%%/jre/lib/zi/EET
+%%T%%/jre/lib/zi/EST
+%%T%%/jre/lib/zi/EST5EDT
 %%T%%/jre/lib/zi/Etc/GMT
 %%T%%/jre/lib/zi/Etc/GMT+1
 %%T%%/jre/lib/zi/Etc/GMT+10
@@ -2011,10 +2019,12 @@
 %%T%%/jre/lib/zi/Europe/Vaduz
 %%T%%/jre/lib/zi/Europe/Vienna
 %%T%%/jre/lib/zi/Europe/Vilnius
+%%T%%/jre/lib/zi/Europe/Volgograd
 %%T%%/jre/lib/zi/Europe/Warsaw
 %%T%%/jre/lib/zi/Europe/Zaporozhye
 %%T%%/jre/lib/zi/Europe/Zurich
 %%T%%/jre/lib/zi/GMT
+%%T%%/jre/lib/zi/HST
 %%T%%/jre/lib/zi/Indian/Antananarivo
 %%T%%/jre/lib/zi/Indian/Chagos
 %%T%%/jre/lib/zi/Indian/Christmas
@@ -2027,6 +2037,9 @@
 %%T%%/jre/lib/zi/Indian/Mayotte
 %%T%%/jre/lib/zi/Indian/Reunion
 %%T%%/jre/lib/zi/MET
+%%T%%/jre/lib/zi/MST
+%%T%%/jre/lib/zi/MST7MDT
+%%T%%/jre/lib/zi/PST8PDT
 %%T%%/jre/lib/zi/Pacific/Apia
 %%T%%/jre/lib/zi/Pacific/Auckland
 %%T%%/jre/lib/zi/Pacific/Chatham
@@ -2065,6 +2078,19 @@
 %%T%%/jre/lib/zi/Pacific/Truk
 %%T%%/jre/lib/zi/Pacific/Wake
 %%T%%/jre/lib/zi/Pacific/Wallis
+%%T%%/jre/lib/zi/SystemV/AST4
+%%T%%/jre/lib/zi/SystemV/AST4ADT
+%%T%%/jre/lib/zi/SystemV/CST6
+%%T%%/jre/lib/zi/SystemV/CST6CDT
+%%T%%/jre/lib/zi/SystemV/EST5
+%%T%%/jre/lib/zi/SystemV/EST5EDT
+%%T%%/jre/lib/zi/SystemV/HST10
+%%T%%/jre/lib/zi/SystemV/MST7
+%%T%%/jre/lib/zi/SystemV/MST7MDT
+%%T%%/jre/lib/zi/SystemV/PST8
+%%T%%/jre/lib/zi/SystemV/PST8PDT
+%%T%%/jre/lib/zi/SystemV/YST9
+%%T%%/jre/lib/zi/SystemV/YST9YDT
 %%T%%/jre/lib/zi/WET
 %%T%%/jre/lib/zi/ZoneInfoMappings
 %%T%%/jre/plugin/desktop/sun_java.desktop
@@ -2361,6 +2387,7 @@
 @dirrm %%T%%/jre/plugin/i386
 @dirrm %%T%%/jre/plugin/desktop
 @dirrm %%T%%/jre/plugin
+@dirrm %%T%%/jre/lib/zi/SystemV
 @dirrm %%T%%/jre/lib/zi/Pacific
 @dirrm %%T%%/jre/lib/zi/Indian
 @dirrm %%T%%/jre/lib/zi/Europe
