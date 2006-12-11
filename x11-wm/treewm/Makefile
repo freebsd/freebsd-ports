@@ -26,18 +26,18 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	AUTHORS ChangeLog INSTALL PROBLEMS README README.tiling TODO default.cfg sample.cfg
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile
 
 post-build:
 	@${SED} 's|%%D%%|${DOCSDIR}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/treewm
-	${MKDIR} ${PREFIX}/share/treewm/pixmaps
+	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}/pixmaps
 	${INSTALL_PROGRAM} ${WRKSRC}/src/treewm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xprop/xprop ${PREFIX}/bin/xprop-treewm
 	${INSTALL_PROGRAM} ${WRKSRC}/xkill/xkill ${PREFIX}/bin/xkill-treewm
-	${INSTALL_DATA} ${WRKSRC}/src/pixmaps/*.xpm ${PREFIX}/share/treewm/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/src/pixmaps/*.xpm ${DATADIR}/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}
