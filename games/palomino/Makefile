@@ -34,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's!(CC_FLAGS.*:=)!\1 $$(CFLAGS)!' ${WRKSRC}/gfx/GNUmakefile_common
 	@${REINPLACE_CMD} -Ee 's!(-O[0-9s]?|-funroll-loops|-fno-inline)!!g' ${WRKSRC}/gfx/tools/cc-config.sh
 	@${REINPLACE_CMD} -e 's|-march=$$ARCH||' ${WRKSRC}/gfx/tools/cc-config.sh
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/gfx/tools/cc-config.sh
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/gfx/tools/cc-config.sh ${WRKSRC}/gfx/tools/ld-config.sh
 
 do-install:
 	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/out/palomino ${PREFIX}/bin/
