@@ -94,7 +94,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/ReadBackwards.pm:${PORTSDIR}/devel/p5-File-ReadB
 .endif
 
 .if !defined(WITHOUT_ZLIB)
-RUN_DEPENDS+=	${SITE_PERL}/mach/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 .endif
 
 .if !defined(WITHOUT_CLAMAV)
