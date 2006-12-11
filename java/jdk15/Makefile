@@ -66,6 +66,10 @@ LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_IPV6)
+CATEGORIES+=	ipv6
+.endif
+
 .if defined(WITH_POLICY)
 DISTFILES+=	${POLICYFILE}
 EXTRACT_ONLY+=	${POLICYFILE}
@@ -147,6 +151,7 @@ HOTSPOTARCH=i586
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-debug-image
 
+LOCAL_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
 PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 		../../j2se/make/com/sun/java/pack/Makefile \
 		../../j2se/make/common/Defs.gmk \
@@ -158,8 +163,9 @@ PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 		../../j2se/make/jpda/transport/socket/Makefile \
 		../../j2se/make/sun/cmm/Makefile \
 		../../j2se/make/sun/xawt/Makefile
-
-LD_LIBRARY_PATH_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
+X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/GTKLookAndFeel.java \
+		../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
+		../../j2se/src/solaris/native/sun/awt/fontpath.c
 
 # Check for JDK sources and patch file
 .if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
@@ -231,12 +237,16 @@ pre-patch:
 		${PATCH} -p0 < ${WRKDIR}/jdk15.patches
 
 post-patch:
-	@for file in ${LD_LIBRARY_PATH_FILES}; do \
+	@for file in ${LOCAL_FILES}; do \
 		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${PTHREAD_FILES}; do \
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
+			${WRKSRC}/$${file}; \
+	done
+	@for file in ${X11_FILES}; do \
+		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
