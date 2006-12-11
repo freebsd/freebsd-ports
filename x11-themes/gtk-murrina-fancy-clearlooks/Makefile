@@ -8,7 +8,7 @@
 PORTNAME=	gtk-murrina-fancy-clearlooks
 PORTVERSION=	0.3
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://home.planet.nl/~bassa052/
+MASTER_SITES=	http://home.planet.nl/~bassa052/themes/
 DISTNAME=	MurrinaFancyClearlooks_v0.3
 
 MAINTAINER=	pneumann@gmail.com
