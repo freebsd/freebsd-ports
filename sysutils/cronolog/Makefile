@@ -7,7 +7,7 @@
 
 PORTNAME=	cronolog
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cronolog.org/download/
 
@@ -21,18 +21,20 @@ GNU_CONFIGURE=	yes
 
 OPTIONS=	SETUID_PATCH "Build with setuid functionality" On
 
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-src_cronoutils.c
+PATCH_STRIP=	-p1
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SETUID_PATCH)
-MASTER_SITES+=  http://cronolog.org/patches/:patches
+MASTER_SITES+=	http://cronolog.org/patches/:patches
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} cronolog-setugid-patch.txt:patches
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRA_PATCHES=	${WRKDIR}/cronolog-setugid-patch.txt
-PATCH_WRKSRC=	${WRKDIR}
+EXTRA_PATCHES+=	${WRKDIR}/cronolog-setugid-patch.txt
 USE_DOS2UNIX=	../cronolog-setugid-patch.txt
 
 post-extract:
-	${CP} ${DISTDIR}/cronolog-setugid-patch.txt ${WRKDIR}/
+	@${CP} ${DISTDIR}/cronolog-setugid-patch.txt ${WRKDIR}/
 .endif
 
 .include <bsd.port.post.mk>
