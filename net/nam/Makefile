@@ -20,6 +20,7 @@ LIB_DEPENDS=	otcl.1:${PORTSDIR}/lang/otcl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 MAKE_ARGS=	CCOPT="${CXXFLAGS}"
