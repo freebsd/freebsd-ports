@@ -15,7 +15,8 @@ MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A music file player for Apple Airport Express
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		id3tag.0:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		faad:${PORTSDIR}/audio/faad \
