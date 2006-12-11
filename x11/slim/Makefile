@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slim
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.6
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/slim/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -20,7 +20,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	${X11BASE}/bin/X:${X_SERVER_PORT}
 BUILD_DEPENDS=	${X11BASE}/include/X11/Xft/Xft.h:${PORTSDIR}/x11-fonts/libXft
 
-USE_X_PREFIX=	yes
 USE_XLIB=	yes
 USE_RC_SUBR=	slim.sh
 
@@ -29,22 +28,24 @@ MAN1=		slim.1
 MAKEFILE=	Makefile.freebsd
 
 pre-build:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+	@${REINPLACE_CMD} \
+			-e 's|%%X11BASE%%|${X11BASE}|g' \
+			-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${WRKSRC}/Makefile.freebsd \
 			${WRKSRC}/slim.conf
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${X11BASE}/bin
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${X11BASE}/etc/${PORTNAME}.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${X11BASE}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${LOCALBASE}/bin
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${LOCALBASE}/etc/${PORTNAME}.conf.sample
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${LOCALBASE}/man/man1
 	@${MKDIR} ${DATADIR}/themes/default
 	@${INSTALL_DATA} ${WRKSRC}/themes/default/${PORTNAME}.theme ${DATADIR}/themes/default
 	@${INSTALL_DATA} ${WRKSRC}/themes/default/panel.png ${DATADIR}/themes/default
 	@${INSTALL_DATA} ${WRKSRC}/themes/default/background.jpg ${DATADIR}/themes/default
 
 post-install:
-	@if [ ! -f ${X11BASE}/etc/slim.conf ]; then \
-		${CP} -p ${X11BASE}/etc/slim.conf.sample ${X11BASE}/etc/slim.conf ; \
+	@if [ ! -f ${LOCALBASE}/etc/slim.conf ]; then \
+		${CP} -p ${LOCALBASE}/etc/slim.conf.sample ${LOCALBASE}/etc/slim.conf ; \
 	fi
 
 .include <bsd.port.mk>

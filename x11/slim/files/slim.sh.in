@@ -18,7 +18,7 @@ load_rc_config $name
 
 : ${slim_enable="NO"}
 
-command=%%X11BASE%%/bin/slim
+command=%%LOCALBASE%%/bin/slim
 command_args="-d"
 pidfile=/var/run/slim.pid
 
