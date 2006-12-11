@@ -1,13 +1,22 @@
 $FreeBSD$
 
---- ../../j2se/make/common/Defs-bsd.gmk.orig	Thu Jan 13 02:03:20 2005
-+++ ../../j2se/make/common/Defs-bsd.gmk	Thu Jan 13 02:03:38 2005
+--- ../../j2se/make/common/Defs-bsd.gmk.orig	Sun Dec 10 11:49:52 2006
++++ ../../j2se/make/common/Defs-bsd.gmk	Sun Dec 10 21:48:51 2006
 @@ -180,7 +180,7 @@
  ifeq ($(TRUE_PLATFORM), NetBSD)
  DEVTOOLS_PATH = /usr/pkg/bin/
  else
 -DEVTOOLS_PATH = /usr/local/bin/
-+DEVTOOLS_PATH = ${LOCALBASE}/bin/
++DEVTOOLS_PATH = $(LOCALBASE)/bin/
  endif
  # Allow the user to override the default value...
  ifdef ALT_DEVTOOLS_PATH
+@@ -434,7 +434,7 @@
+ override LIBTHREAD               =
+ override MOOT_PRIORITIES         = true
+ override NO_INTERRUPTIBLE_IO     = false
+-override OPENWIN_HOME            = /usr/X11R6
++override OPENWIN_HOME            = $(X11BASE)
+ override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
+ override OTHER_M4FLAGS           = -DGNU_ASSEMBLER
+ override SUN_CMM_SUBDIR          =
