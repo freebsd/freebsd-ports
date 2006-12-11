@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Feb  6 19:11:34 2005
-+++ Makefile	Thu May 11 03:00:53 2006
+--- Makefile.orig	Mon Feb  7 03:11:34 2005
++++ Makefile	Mon Dec 11 16:30:57 2006
 @@ -8,19 +8,19 @@
  # after "=", this is parsed and rewritten by the configure script.
  #
@@ -59,6 +59,15 @@
  #				# what to do without make arguments
  DEFTARGET=linux
  #------------------------- end of configuration section ----------------------
+@@ -139,7 +143,7 @@
+ BSDIG_C	= -DBSD -DRABBITS -I/usr/X11/include -DFLOCK -DNOREGEX -Dbsdi -ansi 
+ NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
+ 	  -DNO_MOTIF
+-FBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
++FBSD_C	= -ansi -I$(X11BASE)/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
+ 	  -DSTDLIBMALLOC
+ OBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
+ 	  -DNO_MOTIF -DSTDLIBMALLOC
 @@ -219,10 +223,10 @@
  BSDIG_L2= -L/usr/X11/lib -lc
  NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
@@ -91,4 +100,17 @@
 +	$(CCLINE) -DCPP_PATH=\"$(CPP_PATH)\" -c -DLIB=\"$(DOCS)\" $<
  
  util.o: util.c $(MAKEFILE)
- 	$(CCLINE) -c -DPATH=\"$(LIB):$(DIR):$(EXAMPLESDIR)\" $<
+ 	$(CCLINE) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
+@@ -600,10 +604,10 @@
+ LIST	= README HISTORY holiday/* language/* misc/* src/resources.h.bigfonts web/*
+ SRC	= Makefile $(P_SRC) daemon.c $(N_SRC) $(S_SRC) $(INC) $(S_INC) configure
+ 
+-LDIR	= /usr/X11R6/lib
++LDIR	= $(X11BASE)/lib
+ BINDIR	= plan-$(VERSION)
+ gMYCC	= gcc
+-gCF	= -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
++gCF	= -I$(X11BASE)/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
+ gL1F	= -L$(LDIR) -lSM $(LDIR)/libXm.a -lXt -lX11 $(LDIR)/libXpm.a -lc -lXext -lSM -lICE -lXp -lX11
+ gL2F	= -lc
+ 
