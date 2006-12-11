@@ -1,5 +1,5 @@
---- h5/glide3/src/makefile.autoconf.am.orig	Sat Nov 18 08:00:26 2000
-+++ h5/glide3/src/makefile.autoconf.am	Fri May 10 20:10:23 2002
+--- h5/glide3/src/makefile.autoconf.am.orig	Sun Nov 19 00:00:26 2000
++++ h5/glide3/src/makefile.autoconf.am	Tue Dec  5 05:44:58 2006
 @@ -152,46 +152,40 @@
  #
  # Special rules for assembly files.
@@ -65,3 +65,12 @@
  else
  FX_GLIDE_CTRISETUP_SRC = xdraw2_def.s xdraw3_def.s
  endif
+@@ -214,7 +208,7 @@
+              $(top_builddir)/swlibs/newpci/pcilib/libfxpci.la \
+ 			 $(top_builddir)/swlibs/$(TEXTURE_UTILITIES_DIR)/lib/libtexus.la \
+              $(top_builddir)/@FX_GLIDE_HW@/minihwc/libminihwc.la
+-LINK_LIBS  = -L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm
++LINK_LIBS  = -L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm
+ 
+ CLEANFILES = fxinline.h fxgasm.h
+ 

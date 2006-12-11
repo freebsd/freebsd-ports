@@ -1,9 +1,11 @@
-diff -ru ../Glide3.orig/swlibs/include/make/3dfx.mak ./swlibs/include/make/3dfx.mak
---- ../Glide3.orig/swlibs/include/make/3dfx.mak	Sat Nov 18 08:00:37 2000
-+++ ./swlibs/include/make/3dfx.mak	Sun Jan 13 16:13:53 2002
-@@ -133,15 +133,11 @@
+--- swlibs/include/make/3dfx.mak.orig	Sun Nov 19 00:00:37 2000
++++ swlibs/include/make/3dfx.mak	Tue Dec  5 05:44:13 2006
+@@ -131,17 +131,13 @@
+ endif
+ 
  ifeq "$(OS)" "FreeBSD"
- GCINCS	       = -I. -I$(BUILD_ROOT_SWLIBS)/include -I$(BUILD_ROOT_HW)/include -I/usr/X11R6/include
+-GCINCS	       = -I. -I$(BUILD_ROOT_SWLIBS)/include -I$(BUILD_ROOT_HW)/include -I/usr/X11R6/include
++GCINCS	       = -I. -I$(BUILD_ROOT_SWLIBS)/include -I$(BUILD_ROOT_HW)/include -I$(X11BASE)/include
  GCOPTS	       = -Wall
 -# 
 -# BIG_OPT Indicates O3(?) or better is being used. It changes the

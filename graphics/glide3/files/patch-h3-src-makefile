@@ -1,5 +1,5 @@
---- h3/glide3/src/makefile.autoconf.am.orig	Fri Oct 27 04:20:00 2000
-+++ h3/glide3/src/makefile.autoconf.am	Fri May 10 19:53:18 2002
+--- h3/glide3/src/makefile.autoconf.am.orig	Fri Oct 27 19:20:00 2000
++++ h3/glide3/src/makefile.autoconf.am	Tue Dec  5 05:45:11 2006
 @@ -101,7 +101,7 @@
  endif
  
@@ -68,3 +68,12 @@
  	$(PREPROCESSOR) -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
  	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
  	$(CP) $*.o $*.lo
+@@ -212,7 +211,7 @@
+ WHOLE_LIBS = $(top_builddir)/swlibs/fxmisc/libfxmisc.la \
+              $(top_builddir)/swlibs/newpci/pcilib/libfxpci.la \
+              $(top_builddir)/@FX_GLIDE_HW@/minihwc/libminihwc.la
+-LINK_LIBS  = -L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm
++LINK_LIBS  = -L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm
+ 
+ CLEANFILES = fxinline.h fxgasm.h
+ 
