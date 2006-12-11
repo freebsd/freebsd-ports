@@ -120,3 +120,4 @@ include/cpu.h
 @dirrm %%DATADIR%%
 @cwd /
 %%KMODDIR%%/cpu.ko
+@unexec kldxref /%%KMODDIR%%

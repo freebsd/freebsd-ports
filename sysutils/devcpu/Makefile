@@ -7,6 +7,7 @@
 
 PORTNAME=	devcpu
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
@@ -19,6 +20,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_PACKAGE=	depends on kernel
 
 PLIST_SUB=	KMODDIR="${KMODDIR:C,^/,,}"
+KMODDIR=	/boot/modules
+MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
 MAN4=		cpu.4
 MAN8=		cpu_microcode_tool.8
