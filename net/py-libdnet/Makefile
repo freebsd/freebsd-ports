@@ -7,6 +7,8 @@
 
 COMMENT=	Python module for libdnet
 
+BROKEN=		Incomplete pkg-plist
+
 MASTERDIR=	${.CURDIR}/../libdnet
 
 BUILD_PYTHON_MODULE=	yes
