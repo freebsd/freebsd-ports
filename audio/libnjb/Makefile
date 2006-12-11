@@ -8,7 +8,8 @@
 PORTNAME=	libnjb
 PORTVERSION=	2.2.5
 CATEGORIES=	audio
-MASTER_SITES=	http://mesh.dl.sourceforge.net/sourceforge/libnjb/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	teksimian@gmail.com
 COMMENT=	C library, API for communicating with Creative and Dell audio players
