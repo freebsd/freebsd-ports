@@ -27,9 +27,7 @@ SLAVE_DIRS=	net/py-libdnet
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}/python
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dnet.so \
-		lib/libdnet.so \
-		lib/libdnet.so.1
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dnet.so
 PLIST_SUB+=	MASTER="@comment "
 .else
 CONFIGURE_ARGS+=	--without-python
