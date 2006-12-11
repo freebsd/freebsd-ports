@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Algorithm-SVMLight
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	science perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interface to SVMLight Machine-Learning Package
 
 BUILD_DEPENDS=	svmlight>=6.01_2:${PORTSDIR}/science/svmlight
