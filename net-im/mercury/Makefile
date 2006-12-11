@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1.9B08
+DISTVERSION=	1.9B10
 PORTEPOCH=	6
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}		\
@@ -38,8 +38,7 @@ INSTDIR=	${PREFIX}/${LINSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 SUB_DIRS=	lib resources
 DIR2PRUNE=	resources/AppData/Games		\
-		resources/AppData/Plugins	\
-		resources/AppData/Themes
+		resources/AppData/Plugins
 
 .if defined(WITH_VIDEO)	# Experimental
 VIDJAR=		VidConf-libs.jar
