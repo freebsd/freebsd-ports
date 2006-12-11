@@ -8447,6 +8447,7 @@ p5-CGI-Application-Plugin-Session	ports/www/p5-CGI-Application-Plugin-Session
 p5-CGI-Application-Plugin-Stream	ports/www/p5-CGI-Application-Plugin-Stream
 p5-CGI-Application-Plugin-TT	ports/www/p5-CGI-Application-Plugin-TT
 p5-CGI-Application-Plugin-ValidateRM	ports/www/p5-CGI-Application-Plugin-ValidateRM
+p5-CGI-Application-Plugin-ViewCode	ports/www/p5-CGI-Application-Plugin-ViewCode
 p5-CGI-Application-Server	ports/www/p5-CGI-Application-Server
 p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Builder	ports/www/p5-CGI-Builder
