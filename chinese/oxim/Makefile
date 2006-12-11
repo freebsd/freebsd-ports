@@ -29,7 +29,7 @@ OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 USE_GCC=	3.2+
 USE_ICONV=	yes
 USE_XLIB=	yes
-USE_GNOME=
+WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
