@@ -10275,6 +10275,7 @@ p5-Sub-Multi	ports/devel/p5-Sub-Multi
 p5-Sub-Name	ports/devel/p5-Sub-Name
 p5-Sub-Override	ports/devel/p5-Sub-Override
 p5-Sub-Uplevel	ports/devel/p5-Sub-Uplevel
+p5-Sub-WrapPackages	ports/devel/p5-Sub-WrapPackages
 p5-Subtitles	ports/multimedia/p5-Subtitles
 p5-Switch	ports/lang/p5-Switch
 p5-Syntax-Highlight-Engine-Kate	ports/textproc/p5-Syntax-Highlight-Engine-Kate
