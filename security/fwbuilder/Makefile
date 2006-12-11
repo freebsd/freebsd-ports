@@ -7,6 +7,7 @@
 
 PORTNAME=	fwbuilder
 PORTVERSION=	2.1.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/fwbuilder/
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -34,7 +35,7 @@ CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS+=	QTDIR="${QTDIR}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 MAN1=		fwbuilder.1 \
