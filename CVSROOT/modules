@@ -8442,6 +8442,7 @@ p5-CGI-Application-Plugin-HTMLPrototype	ports/www/p5-CGI-Application-Plugin-HTML
 p5-CGI-Application-Plugin-HtmlTidy	ports/www/p5-CGI-Application-Plugin-HtmlTidy
 p5-CGI-Application-Plugin-LinkIntegrity	ports/www/p5-CGI-Application-Plugin-LinkIntegrity
 p5-CGI-Application-Plugin-LogDispatch	ports/www/p5-CGI-Application-Plugin-LogDispatch
+p5-CGI-Application-Plugin-MessageStack	ports/www/p5-CGI-Application-Plugin-MessageStack
 p5-CGI-Application-Plugin-Redirect	ports/www/p5-CGI-Application-Plugin-Redirect
 p5-CGI-Application-Plugin-Session	ports/www/p5-CGI-Application-Plugin-Session
 p5-CGI-Application-Plugin-Stream	ports/www/p5-CGI-Application-Plugin-Stream
