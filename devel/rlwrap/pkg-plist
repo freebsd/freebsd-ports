@@ -1,4 +1,5 @@
 bin/rlwrap
 %%DATADIR%%/ftp
 %%DATADIR%%/testclient
+%%DATADIR%%/coqtop
 @dirrm %%DATADIR%%
