@@ -243,9 +243,6 @@ CFLAGS+=	-fno-force-addr
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-#CFLAGS+=	-I${X11BASE}/include
-CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
-		--with-extraincdir=${X11BASE}/include
 .else
 WITHOUT_GUI=	yes
 CONFIGURE_ARGS+=--disable-x11 \
@@ -617,7 +614,8 @@ post-patch:
 		${REINPLACE_CMD} -E \
 			-e 's|[[:space:]]gcc[-[:digit:]\.]+| ${CC}|' \
 			-e 's|[[:space:]]gcc| ${CC}|' \
-			-e 's|\$$\(CC\)|${CC}|'
+			-e 's|\$$\(CC\)|${CC}|' \
+			-e 's|/usr/X11R6|${X11BASE}|'
 	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
