@@ -27,5 +27,6 @@ PLIST_FILES=	bin/buici-clock
 post-patch:
 	@${REINPLACE_CMD} -e 's,_=,+=,' ${WRKSRC}/xo/Makefile.in
 	@${REINPLACE_CMD} -e 's|\./configure|./configure ${CONFIGURE_ARGS}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\./configure|./configure ${CONFIGURE_ARGS}|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
