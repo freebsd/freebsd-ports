@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Class-InsideOut
-PORTVERSION=	1.02
+PORTVERSION=	1.03.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-1.0301
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A safe, simple inside-out object construction kit
 
 PERL_CONFIGURE=	yes
