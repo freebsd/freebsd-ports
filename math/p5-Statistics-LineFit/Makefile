@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	Statistics-LineFit
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	math
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Statistics
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Least squares line fit, weighted or unweighted
 
 PERL_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		Statistics::LineFit.3
+
+post-extract:
+	${CHMOD} 755 ${WRKSRC}
 
 .include <bsd.port.mk>
