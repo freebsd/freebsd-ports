@@ -3,7 +3,7 @@ LIB=		tk${VERSION}
 TK_LIBRARY=	${PREFIX}/lib/tk${VERSION}
 CFLAGS+=	-I. -I./../generic -I../bitmaps \
 		-I${PREFIX}/include/tcl7.6jp \
-		-I/usr/X11R6/include \
+		-I$(X11BASE)/include \
 		-DKANJI -DKINPUT2 \
 		-DHAVE_UNISTD_H=1 -DHAVE_LIMITS_H=1 -DSTDC_HEADERS=1 \
 		-DTK_LIBRARY=\"${TK_LIBRARY}\" 		
