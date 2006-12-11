@@ -14,7 +14,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
 
 USE_LDCONFIG=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2
@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11=""
-CONFIGURE_ARGS+=--with-x --x-includes=${X11BASE} --x-libraries=${X11BASE}
 .else
 CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11="@comment "
