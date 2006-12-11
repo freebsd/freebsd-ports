@@ -19,11 +19,16 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 MAN1=		png2ico.1
 PLIST_FILES=	bin/png2ico
+PORTDOCS=	bmp.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/png2ico.1 ${PREFIX}/man/man1/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/bmp.txt ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
