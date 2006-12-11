@@ -1,14 +1,5 @@
 --- configure.orig	Tue Dec  5 16:15:01 2006
 +++ configure	Sat Dec  9 19:38:53 2006
-@@ -31317,7 +31317,7 @@
- 
- 
- 
--for ac_header in krb5.h gssapi/gssapi.h gssapi/gssapi_generic.h gssapi/gssapi_krb5.h
-+for ac_header in krb5.h gssapi/gssapi.h gssapi/gssapi_generic.h gssapi/gssapi_krb5.h gssapi.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
 @@ -31793,8 +31793,8 @@
  	   openldap_LDFLAGS="-lldap -llber"
  	   LDFLAGS="$LDFLAGS $openldap_LDFLAGS" ;;

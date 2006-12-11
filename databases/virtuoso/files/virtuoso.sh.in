@@ -43,8 +43,6 @@ restart_cmd="virtuoso_command restart"
 reload_cmd="virtuoso_command reload"
 status_cmd="virtuoso_command status"
 
-initdb_cmd="virtuoso_initdb"
-
 virtuoso_command()
 {
     su -l ${virtuoso_user} -c "exec ${command} ${command_args} ${rc_arg}"

@@ -7,6 +7,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	4.5.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,13 +20,14 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-readline\
 		--with-iodbc=${LOCALBASE}\
 		--enable-bpel-vad\
-		--enable-krb\
 		--disable-jdbc
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"\
 		LDFLAGS="-L${LOCALBASE}/lib"
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
+		KERBEROS "Kerberos extension" off\
 		OPENLDAP "OpenLDAP support" off
 #		JDBC "JDBC driver" off\
 #		PERL "Perl hosting" off
@@ -38,7 +40,6 @@ OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
 post-patch:
 	${REINPLACE_CMD}\
 		-e 's,-lpthreads,${PTHREAD_LIBS},g'\
-		-e 's,-lgssapi_krb5 -lk5crypto -lkrb5,-lasn1 -lroken -lcrypto -lcrypt,g'\
 		-e 's,-lruby,-lruby${RUBY_VER:S,.,,},g'\
 			${WRKSRC}/configure
 
@@ -63,6 +64,11 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 #JAVA_VERSION=	1.4+
 #JAVA_BUILD=	yes
 #.endif
+
+.if defined(WITH_KERBEROS)
+CONFIGURE_ARGS+=--enable-krb=${LOCALBASE}
+LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+.endif
 
 # XXX broken (does not build, requires gc.h)
 #.if defined(WITH_MONO)
