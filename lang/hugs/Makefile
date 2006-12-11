@@ -59,6 +59,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
 		/^install		:: install_guide/d' \
 		${WRKSRC}/src/MkInstal.in
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/packages/OpenGL/configure \
+		${WRKSRC}/packages/GLUT/configure \
+		${WRKSRC}/packages/X11/configure \
+		${WRKSRC}/packages/HGL/configure
 
 do-build:
 .	for dir in src libraries docs

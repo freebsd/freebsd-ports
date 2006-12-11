@@ -27,7 +27,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
 CONFIGURE_ARGS=	--with-cc=${CC} \
-		--with-cxx=${CXX}
+		--with-cxx=${CXX} \
+		--x-libraries=${X11BASE}/lib \
+		--x-includes=${X11BASE}/include
 
 .include <bsd.port.pre.mk>
 
