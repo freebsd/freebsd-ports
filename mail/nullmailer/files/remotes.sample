@@ -1,1 +1,1 @@
-localhost smtp --port=25 --auth=user,pass
+localhost smtp --port=25 --user=user --pass=pass
