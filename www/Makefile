@@ -522,6 +522,7 @@
     SUBDIR += p5-CGI-Application-Plugin-HtmlTidy
     SUBDIR += p5-CGI-Application-Plugin-LinkIntegrity
     SUBDIR += p5-CGI-Application-Plugin-LogDispatch
+    SUBDIR += p5-CGI-Application-Plugin-MessageStack
     SUBDIR += p5-CGI-Application-Plugin-Redirect
     SUBDIR += p5-CGI-Application-Plugin-Session
     SUBDIR += p5-CGI-Application-Plugin-Stream
