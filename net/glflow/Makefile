@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glFlow
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	glflow
 DISTNAME=	glFlow-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A NetFlow tool for detecting DoS attacks
 
 PLIST_FILES=	bin/glflow
