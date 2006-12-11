@@ -21,9 +21,11 @@ USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
 
-do-build:
+post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
 		${WRKSRC}/display/setup.py
+
+do-build:
 	# Compile the statesaver extension module
 	cd ${WRKSRC}/bubbob; ${PYTHON_CMD} setup.py build_ext -i
 	# Compile the X-window client extension module
@@ -31,7 +33,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}; tar --exclude build --exclude "*.orig" -cf - bubbob common display http2 java metaserver BubBob.py) | \
+	(cd ${WRKSRC}; tar --exclude build --exclude "*.orig" --exclude "*.bak" -cf - bubbob common display http2 java metaserver BubBob.py) | \
 		(cd ${DATADIR}; tar --unlink -xf -)
 	@${PRINTF} "#!/bin/sh\ncd ${DATADIR} && \
 		exec ${PYTHON_CMD} ${DATADIR}/BubBob.py\n" > ${WRKDIR}/bubbros.sh
