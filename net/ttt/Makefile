@@ -10,7 +10,7 @@ PORTVERSION=	1.8.2
 CATEGORIES=	net tk84 ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
-MAINTAINER=	kjc@csl.sony.co.jp
+MAINTAINER=	kjc@FreeBSD.org
 COMMENT=	Tele Traffic Tapper, a network traffic monitoring tool
 
 LIB_DEPENDS=	BLT24.3:${PORTSDIR}/x11-toolkits/blt
