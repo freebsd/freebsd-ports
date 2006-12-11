@@ -8,6 +8,7 @@
 
 PORTNAME=	mprof
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/misc/
 EXTRACT_SUFX=	.tar.Z
