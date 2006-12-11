@@ -8,7 +8,6 @@ fi
 	GROUP=${USER}
 	UID=73
 	GID=${UID}
-	HOME_DIR="/nonexist"
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
 	else
@@ -22,16 +21,16 @@ fi
 
 	if pw user show "${USER}" 2>/dev/null; then
 		echo "You already have a user \"${USER}\", so I will use it."
-		if pw usermod ${USER} -d ${HOME_DIR}
+		if pw usermod ${USER} -d ${NONEXISTENT}
 		then
-			echo "Changed home directory of \"${USER}\" to \"${HOME_DIR}\""
+			echo "Changed home directory of \"${USER}\" to \"${NONEXISTENT}\""
 		else
-			echo "Changing home directory of \"${USER}\" to \"${HOME_DIR}\" failed..."
+			echo "Changing home directory of \"${USER}\" to \"${NONEXISTENT}\" failed..."
 			exit 1
 		fi
 	else
 		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d ${HOME_DIR} -s /sbin/nologin -c "HybServ Daemon"
+			-d ${NONEXISTENT} -s /sbin/nologin -c "HybServ Daemon"
 		then
 			echo "Added user \"${USER}\"."
 		else
