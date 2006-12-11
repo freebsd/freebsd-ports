@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ngircd
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	irc
-MASTER_SITES=	http://download.berlios.de/ngircd/ \
-		ftp://ftp.berlios.de/pub/ngircd/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
