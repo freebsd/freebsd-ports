@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/21997
+MASTER_SITE_SUBDIR=	${PORTNAME}/22887
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -39,7 +39,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
 .if ${OSVERSION} < 500000
-BROKEN="Does not build"
+IGNORE=Does not build
 .endif
 
 # !!! gtk-webcore higly experimental right now and not very stable !!!
