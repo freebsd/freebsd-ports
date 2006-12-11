@@ -45,4 +45,7 @@ share/icons/hicolor/48x48/apps/recoll.png
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
 @dirrmtry share/icons
