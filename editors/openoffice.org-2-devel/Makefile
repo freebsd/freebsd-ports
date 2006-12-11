@@ -71,10 +71,10 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-MILESTONE?=		195
+MILESTONE?=		196
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20061124
+SNAPDATE=		20061207
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
