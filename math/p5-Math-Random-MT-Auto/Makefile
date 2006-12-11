@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Math-Random-MT-Auto
-PORTVERSION=	5.03
+PORTVERSION=	5.04
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Auto-seeded Mersenne Twister PRNGs
 
 RUN_DEPENDS=	${SITE_PERL}/Object/InsideOut.pm:${PORTSDIR}/devel/p5-Object-InsideOut \
