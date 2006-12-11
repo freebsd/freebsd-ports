@@ -13,4 +13,9 @@ mailq		%%PREFIX%%/libexec/nullmailer/mailq
 WARNING! It will cause problem in case delivering to local recipients.
 Also man nullmailer-send(8) for more details
 
+NOTE for the ones upgrading from 1.00:
+The smtp authentication option has been changed from
+--auth=joe,secret to --user=joe and --pass=secret, see nullmailer-send(8)
+for details.
+
 ==================================================================
