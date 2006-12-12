@@ -1,4 +1,4 @@
-# New ports collection makefile for:    py-miler
+# New ports collection makefile for:    py-milter
 # Date created:         26 april 2002
 # Whom:                 Vsevolod Lobko <seva@sevasoft.kiev.ua>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.6
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.bmsi.com/python/
@@ -21,7 +21,7 @@ LIB_DEPENDS=	milter.2:${PORTSDIR}/mail/sendmail
 .endif
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>
