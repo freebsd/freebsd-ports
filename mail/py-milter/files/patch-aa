@@ -1,9 +1,9 @@
---- setup.py   Tue Apr 20 00:15:07 2004
-+++ setup.py   Fri Apr 23 10:59:26 2004
-@@ -3,7 +3,7 @@
- from distutils.core import setup, Extension
- 
+--- setup.py.orig	Sat Mar 25 18:28:34 2006
++++ setup.py	Fri Dec  8 18:24:32 2006
+@@ -5,7 +5,7 @@
  # FIXME: on some versions of sendmail, smutil is renamed to sm
+ # on slackware and debian, leave it out entirely.  It depends
+ # on how libmilter was built by the sendmail package.
 -libs = ["milter", "smutil"]
 +libs = ["milter"]
  

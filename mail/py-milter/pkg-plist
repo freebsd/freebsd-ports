@@ -7,6 +7,12 @@
 %%PYTHON_SITELIBDIR%%/Milter/dynip.py
 %%PYTHON_SITELIBDIR%%/Milter/dynip.pyc
 %%PYTHON_SITELIBDIR%%/Milter/dynip.pyo
+%%PYTHON_SITELIBDIR%%/Milter/faildsn.py
+%%PYTHON_SITELIBDIR%%/Milter/faildsn.pyc
+%%PYTHON_SITELIBDIR%%/Milter/faildsn.pyo
+%%PYTHON_SITELIBDIR%%/Milter/unsign.py
+%%PYTHON_SITELIBDIR%%/Milter/unsign.pyc
+%%PYTHON_SITELIBDIR%%/Milter/unsign.pyo
 %%PYTHON_SITELIBDIR%%/milter.so
 %%PYTHON_SITELIBDIR%%/mime.py
 %%PYTHON_SITELIBDIR%%/mime.pyc
