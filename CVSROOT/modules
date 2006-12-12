@@ -12833,6 +12833,7 @@ rotorouter	ports/net-mgmt/rotorouter
 rottdc		ports/games/rottdc
 roundcube	ports/mail/roundcube
 roundup		ports/www/roundup
+routers2	ports/net-mgmt/routers2
 rox-archive	ports/archivers/rox-archive
 rox-edit	ports/editors/rox-edit
 rox-filer	ports/x11-fm/rox-filer
