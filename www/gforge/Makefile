@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gforge
-PORTVERSION=	4.5.6
+PORTVERSION=	4.5.11
 CATEGORIES=	www devel
-MASTER_SITES=	http://gforge.org/frs/download.php/205/
+MASTER_SITES=	http://gforge.org/frs/download.php/219/
 
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Open Source collaborative software development tool
