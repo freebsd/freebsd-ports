@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aspell
-DISTVERSION=	-pl-0.51-0
+DISTVERSION=	6-pl-6.0_20061121-0
 PORTEPOCH=	1
 CATEGORIES=	polish textproc
 
