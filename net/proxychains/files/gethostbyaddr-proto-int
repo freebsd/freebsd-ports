@@ -1,0 +1,12 @@
+--- proxychains/libproxychains.c	Wed Mar 15 18:16:59 2006
++++ proxychains/libproxychains.c	Thu Dec  7 15:34:57 2006
+@@ -308,8 +308,7 @@
+ 	PDEBUG("getnameinfo: %s %s\n", host, serv);
+ 	return ret;
+ }
+-struct hostent *gethostbyaddr (const void *addr, socklen_t len,
+-		                                      int type)
++struct hostent *gethostbyaddr (const void *addr, int len, int type)
+ {
+ 	PDEBUG("TODO: gethostbyaddr hook\n"); 
+ 	if(!init_l)

@@ -4,30 +4,29 @@
 # $FreeBSD$
 
 PORTNAME=	proxychains
-PORTVERSION=	2.1
+PORTVERSION=	3.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	proxychains
 
 MAINTAINER=	mycroft@virgaria.org
-COMMENT=	Multi-proxifier
+COMMENT=	Redirect connection through proxy servers
 
-USE_AUTOTOOLS=	automake:14 autoconf:213
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
-INSTALLS_SHLIB=	yes
+.include <bsd.port.pre.mk>
 
-post-extract:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/proxychains/Makefile.in
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 4.x and 5.x
+.endif
 
-pre-build:
-	${RM} ${WRKSRC}/config.h
+.if ${OSVERSION} < 700017
+EXTRA_PATCHES=	${PATCHDIR}/gethostbyaddr-proto-int
+.endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/proxychains/proxychains ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/proxychains/proxychains.conf \
-		${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/proxychains/.libs/libproxychains.so.2 \
-		${PREFIX}/lib
+post-configure:
+	@${ECHO_CMD} '#define PREFIX "${PREFIX}"' >> ${WRKSRC}/config.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

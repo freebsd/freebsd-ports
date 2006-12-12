@@ -1,3 +1,7 @@
 bin/proxychains
+bin/proxyresolv
 etc/proxychains.conf
-lib/libproxychains.so.2
+lib/libproxychains.so.3
+lib/libproxychains.so
+lib/libproxychains.la
+lib/libproxychains.a
