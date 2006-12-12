@@ -141,6 +141,20 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 USE_ICONV=	yes
 .endif
 
+.if defined(WITH_LANG)
+LANG_FILE=	${DISTNAME}-lang.tar.gz
+DISTFILES+=    	${LANG_FILE}:lang_file
+MASTER_SITES+=	${MASTER_SITE_VIM:S|unix/|extra/:lang_file|}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+USE_GETTEXT=   	yes
+.endif
+
+post-extract:
+.if defined(WITH_LANG)
+	@${ECHO_MSG} ">>>   extracting ${LANG_FILE} ..."
+	@${TAR} -C ${WRKDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LANG_FILE}
+.endif
+
 pre-configure:
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
 	@${REINPLACE_CMD} -e ' \
