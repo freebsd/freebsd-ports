@@ -1,9 +1,22 @@
 @comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF/.packlist
+%%SITE_PERL%%/CAM/PDF.pm
+%%SITE_PERL%%/CAM/PDF/Content.pm
+%%SITE_PERL%%/CAM/PDF/Decrypt.pm
+%%SITE_PERL%%/CAM/PDF/GS.pm
+%%SITE_PERL%%/CAM/PDF/GS/NoText.pm
+%%SITE_PERL%%/CAM/PDF/Node.pm
+%%SITE_PERL%%/CAM/PDF/PageText.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Dump.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Images.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Text.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/TextFB.pm
 bin/appendpdf.pl
 bin/asciify
 bin/changepagestring.pl
 bin/changepdfstring.pl
 bin/changerefkeys.pl
+bin/crunchjpg_tmpl.pdf
 bin/crunchjpgs.pl
 bin/deillustrate.pl
 bin/deletepdfpage.pl
@@ -27,21 +40,9 @@ bin/setpdfbackground.pl
 bin/setpdfpage.pl
 bin/stamppdf.pl
 bin/uninlinepdfimages.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF/.packlist
-%%SITE_PERL%%/CAM/PDF.pm
-%%SITE_PERL%%/CAM/PDF/Content.pm
-%%SITE_PERL%%/CAM/PDF/Decrypt.pm
-%%SITE_PERL%%/CAM/PDF/GS.pm
-%%SITE_PERL%%/CAM/PDF/GS/NoText.pm
-%%SITE_PERL%%/CAM/PDF/Node.pm
-%%SITE_PERL%%/CAM/PDF/PageText.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/Dump.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/Images.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/Text.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/TextFB.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM
-@dirrmtry %%SITE_PERL%%/CAM/PDF/GS
 @dirrmtry %%SITE_PERL%%/CAM/PDF/Renderer
+@dirrmtry %%SITE_PERL%%/CAM/PDF/GS
 @dirrmtry %%SITE_PERL%%/CAM/PDF
 @dirrmtry %%SITE_PERL%%/CAM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM
