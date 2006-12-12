@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 ERTS_VSN=	5.5.2
+TOOLS_VSN=	2.5.2
 OTP_LIBS=	appmon-2.1.6 \
 		asn1-1.4.4.11 \
 		compiler-4.4.2 \
