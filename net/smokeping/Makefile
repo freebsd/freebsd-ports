@@ -7,9 +7,10 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
-MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
+MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
+		http://smokeping.cs.pu.edu.tw/pub/
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Latency logging and graphing system
@@ -72,6 +73,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 NO_BUILD=	yes
 USE_PERL5=	yes
 
+USE_RC_SUBR=	smokeping
+
 MAN1=		smokeping.1 \
 		smokeping.cgi.1 \
 		tSmoke.1
@@ -124,7 +127,7 @@ SMOKEPING_UID=	117
 GROUP=		smokeping
 SMOKEPING_GID=	117
 
-FILES_SUB=	USER=${USER} UID=${SMOKEPING_UID} \
+SUB_LIST+=	USER=${USER} UID=${SMOKEPING_UID} \
 		GROUP=${GROUP} GID=${SMOKEPING_GID} \
 		PERL=${PERL} PREFIX=${PREFIX}
 
@@ -205,7 +208,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 pre-configure:
-	@${REINPLACE_CMD} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/lib/Smokeping.pm \
 		${WRKSRC}/lib/Smokeping/Examples.pm \
 		${WRKSRC}/bin/smokeping.dist \
@@ -214,11 +217,11 @@ pre-configure:
 		${WRKSRC}/etc/config.dist \
 		${WRKSRC}/lib/Smokeping/probes/*.pm
 	@${FIND} ${WRKSRC} -name \*.bak -delete
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-install > ${PKGINSTALL}
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${MV} ${WRKSRC}/bin/smokeping.dist ${WRKSRC}/bin/smokeping
 	@${MV} ${WRKSRC}/bin/tSmoke.dist ${WRKSRC}/bin/tSmoke
@@ -263,10 +266,6 @@ do-install:
 	@${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
 	@${MKDIR} ${PREFIX}/smokeping/htdocs/img
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs/img
-	@if [ ! -f ${PREFIX}/etc/rc.d/smokeping.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/smokeping.sh startup file."; \
-		${INSTALL_SCRIPT} ${FILESDIR}/smokeping.sh ${PREFIX}/etc/rc.d/smokeping.sh; \
-	fi
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

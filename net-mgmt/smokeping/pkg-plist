@@ -1,6 +1,5 @@
 bin/smokeping
 bin/tSmoke
-etc/rc.d/smokeping.sh
 @unexec if cmp -s %D/etc/smokeping/basepage.html %D/etc/smokeping/basepage.html.dist; then rm -f %D/etc/smokeping/basepage.html; fi
 etc/smokeping/basepage.html.dist
 @exec [ -f %B/basepage.html ] || cp %B/%f %B/basepage.html
