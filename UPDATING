@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061212:
+  AFFECTS: users of net/smokeping
+  AUTHOR: lth@FreeBSD.org
+
+  Smokeping now uses rcNG script to startup. Please remember to add
+  'smokeping_enable="YES"' to your rc.conf.
+
 20061207:
    AFFECTS: users of devel/p5-PAR
    AUTHOR: rafan@FreeBSD.org
