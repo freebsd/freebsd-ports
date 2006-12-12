@@ -21,8 +21,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spelling checker with better logic than ispell (linux version)
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
-		bzip2:${PORTSDIR}/archivers/bzip2
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 NO_BUILD=		yes
 ONLY_FOR_ARCHS=		i386 amd64
@@ -79,6 +78,10 @@ DICTVER_ZU=	0.50-0
 DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 500021) && (${OSVERSION} >= 500000 || ${OSVERSION} < 440000)
+BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+.endif
 
 .if defined(LANG)
 . for i in ${AVAIL_DICT} no
