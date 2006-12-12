@@ -1,4 +1,12 @@
 bin/bab
+include/baghirasidebar.h
+include/linkview.h
+include/listboxlink.h
+include/dndlistbox.h
+include/baghirasidebariface.h
+lib/kde3/konqsidebar_baghirasidebar.so
+lib/kde3/konqsidebar_baghirasidebar.la
+lib/kde3/konqsidebar_baghirasidebar.a
 lib/libbaghirastarter.a
 lib/libbaghirastarter.la
 lib/libbaghirastarter.so
@@ -22,9 +30,10 @@ lib/usermanager_panelapplet.la
 lib/usermanager_panelapplet.so
 share/apps/kdisplay/color-schemes/AquaBlue.kcsrc
 share/apps/kdisplay/color-schemes/AquaGraphite.kcsrc
-share/apps/kicker/applets/b_menuapplet.desktop
 share/apps/kicker/applets/starter.desktop
 share/apps/kicker/applets/usermanager.desktop
+share/apps/konqsidebartng/add/baghirasidebar_add.desktop
+share/apps/konqsidebartng/entries/baghirasidebar.desktop
 share/apps/kwin/baghira.desktop
 share/apps/kstyle/themes/baghira.themerc
 share/apps/baghira/poof.png
@@ -59,4 +68,11 @@ share/icons/crystalsvg/64x64/apps/baghira_grey.png
 share/icons/crystalsvg/64x64/apps/baghira_yellow.png
 share/icons/crystalsvg/32x32/apps/baghira_grey.png
 share/icons/crystalsvg/32x32/apps/baghira_yellow.png
+share/icons/crystalsvg/48x48/apps/baghira_white.png
+share/icons/crystalsvg/16x16/apps/baghira_white.png
+share/icons/crystalsvg/22x22/apps/baghira_white.png
+share/icons/crystalsvg/22x22/actions/bab_milk.png
+share/icons/crystalsvg/128x128/apps/baghira_white.png
+share/icons/crystalsvg/64x64/apps/baghira_white.png
+share/icons/crystalsvg/32x32/apps/baghira_white.png
 @dirrm share/apps/baghira
