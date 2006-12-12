@@ -46,7 +46,11 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=mail,calendar
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if ${OSVERSION} < 500000
-BROKEN=	does not build
+IGNORE=	does not build
+.endif
+
+.if ${ARCH}=="ia64"
+IGNORE=	does not build
 .endif
 
 .if ${PERL_LEVEL} < 500600
