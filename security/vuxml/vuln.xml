@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eb5124a4-8a20-11db-b033-00123ffe8333">
+    <topic>clamav -- Multipart Nestings Denial of Service</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.88.7</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><le>20061029</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/23347/">
+	  <p>Clam AntiVirus have a vulnerability, which can be exploited by
+	    malicious people to cause a DoS (Denial of Service).</p>
+	  <p>The vulnerability is caused due to a stack overflow when scanning
+	    messages with deeply nested multipart content. This can be
+	    exploited to crash the service by sending specially crafted emails
+	    to a vulnerable system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/23347/</url>
+      <url>http://www.quantenblog.net/security/virus-scanner-bypass</url>
+    </references>
+    <dates>
+      <discovery>2006-12-06</discovery>
+      <entry>2006-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1b043693-8617-11db-93b2-000e35248ad7">
     <topic>libxine -- multiple buffer overflow vulnerabilities</topic>
     <affects>
