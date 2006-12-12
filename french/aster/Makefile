@@ -7,6 +7,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	8.3.0-3
+PORTREVISION=	1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
@@ -43,7 +44,7 @@ LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
 		lapack.3:${PORTSDIR}/math/lapack				\
 		hdf5.0:${PORTSDIR}/science/hdf5					\
-		med.1:${PORTSDIR}/french/med
+		med.2:${PORTSDIR}/french/med
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
