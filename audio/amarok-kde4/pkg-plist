@@ -29,6 +29,9 @@ lib/kde3/libamarok_smb-device.a
 %%NJB%%lib/kde3/libamarok_njb-mediadevice.so
 %%NJB%%lib/kde3/libamarok_njb-mediadevice.la
 %%NJB%%lib/kde3/libamarok_njb-mediadevice.a
+%%MTP%%lib/kde3/libamarok_mtp-mediadevice.so
+%%MTP%%lib/kde3/libamarok_mtp-mediadevice.la
+%%MTP%%lib/kde3/libamarok_mtp-mediadevice.a
 lib/kde3/libamarok_generic-mediadevice.so
 lib/kde3/libamarok_generic-mediadevice.la
 lib/kde3/libamarok_generic-mediadevice.a
