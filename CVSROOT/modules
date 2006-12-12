@@ -2956,19 +2956,6 @@ frikqcc		ports/games/frikqcc
 frink		ports/devel/frink
 frodo		ports/emulators/frodo
 frontline	ports/graphics/frontline
-frontpage	ports/www/frontpage
-frontpage-ar	ports/www/frontpage-ar
-frontpage-de	ports/www/frontpage-de
-frontpage-es	ports/www/frontpage-es
-frontpage-fr	ports/www/frontpage-fr
-frontpage-he	ports/www/frontpage-he
-frontpage-it	ports/www/frontpage-it
-frontpage-ja	ports/www/frontpage-ja
-frontpage-ko	ports/www/frontpage-ko
-frontpage-nl	ports/www/frontpage-nl
-frontpage-sv	ports/www/frontpage-sv
-frontpage-th	ports/www/frontpage-th
-frontpage-zh	ports/www/frontpage-zh
 frost		ports/net-p2p/frost
 frotz		ports/games/frotz
 frox		ports/ftp/frox
@@ -7201,9 +7188,6 @@ mod_extract_forwarded2	ports/www/mod_extract_forwarded2
 mod_fastcgi	ports/www/mod_fastcgi
 mod_fcgid	ports/www/mod_fcgid
 mod_filter	ports/www/mod_filter
-mod_frontpage	ports/www/mod_frontpage
-mod_frontpage-rtr	ports/www/mod_frontpage-rtr
-mod_frontpage2-rtr	ports/www/mod_frontpage2-rtr
 mod_geoip	ports/www/mod_geoip
 mod_geoip2	ports/www/mod_geoip2
 mod_gzip	ports/www/mod_gzip
@@ -11952,7 +11936,6 @@ psutils-letter	ports/print/psutils-letter
 psvn		ports/devel/psvn
 psybnc		ports/irc/psybnc
 pt-aspell	ports/portuguese/aspell
-pt-frontpage-pt_BR	ports/portuguese/frontpage-pt_BR
 pt-ispell-pt_BR	ports/portuguese/ispell-pt_BR
 pt-kde3-i18n	ports/portuguese/kde3-i18n
 pt-kde3-i18n-pt	ports/portuguese/kde3-i18n
