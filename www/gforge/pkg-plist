@@ -324,6 +324,7 @@
 %%BACKEND_DIR%%/plugins/tinderbox/tinderbox2-local-conf.spec
 %%BACKEND_DIR%%/plugins/tinderbox/tinderbox2.spec
 %%BACKEND_DIR%%/plugins/tinderbox/ChangeLog
+%%BACKEND_DIR%%/plugins/scmsvn/www/styles.css
 %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs.php
 %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs_utils.php
 %%BACKEND_DIR%%/plugins/scmsvn/bin/svn-create.php
@@ -418,6 +419,9 @@
 %%BACKEND_DIR%%/plugins/cvstracker/AUTHORS
 %%BACKEND_DIR%%/plugins/cvstracker/COPYING
 %%BACKEND_DIR%%/plugins/cvstracker/Makefile
+%%BACKEND_DIR%%/plugins/cvssyncmail/bin/syncmail
+%%BACKEND_DIR%%/plugins/cvssyncmail/bin/syncmail-cvs-1.11
+%%BACKEND_DIR%%/plugins/cvssyncmail/bin/syncmail-cvs-1.12
 %%BACKEND_DIR%%/plugins/cvssyncmail/common/languages/Base.tab
 %%BACKEND_DIR%%/plugins/cvssyncmail/common/CVSSyncMailPlugin.class
 %%BACKEND_DIR%%/plugins/cvssyncmail/common/cvssyncmail-init.php
@@ -468,6 +472,7 @@
 %%DATADIR%%/db/gforge-pgsql7.3.sql
 %%DATADIR%%/db/README
 %%DATADIR%%/db/FTI.sql
+%%DATADIR%%/db/FTI-20060130.sql
 %%DATADIR%%/db/FTI-20050530.sql
 %%DATADIR%%/db/FTI-20050401.sql
 %%DATADIR%%/db/FTI-20050315.sql
@@ -586,6 +591,7 @@
 %%DATADIR%%/db/20001214.sql
 %%DATADIR%%/db/gforge2.6.sql
 %%DATADIR%%/db/20001209.sql
+%%DATADIR%%/db/nss-pgsql.sql
 %%WWW_ROOT%%/gforge/common/pm/import_utils.php
 %%WWW_ROOT%%/gforge/common/pm/ProjectTask.class
 %%WWW_ROOT%%/gforge/common/pm/ProjectGroup.class
@@ -651,6 +657,7 @@
 %%WWW_ROOT%%/gforge/common/include/system/LDAP.class
 %%WWW_ROOT%%/gforge/common/include/system/UNIX.class
 %%WWW_ROOT%%/gforge/common/include/system/pgsql.class
+%%WWW_ROOT%%/gforge/common/include/system/NSSPGSQL.class
 %%WWW_ROOT%%/gforge/common/include/Group.class
 %%WWW_ROOT%%/gforge/common/include/Jabber.class
 %%WWW_ROOT%%/gforge/common/include/Permission.class
@@ -1332,6 +1339,7 @@
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/etc/plugins
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/etc
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker
+@dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/bin
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/common/languages
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/common
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/db
