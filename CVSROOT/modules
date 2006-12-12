@@ -4706,6 +4706,7 @@ isnprober	ports/security/isnprober
 iso-codes	ports/misc/iso-codes
 iso12083	ports/textproc/iso12083
 iso8879		ports/textproc/iso8879
+isomaster	ports/sysutils/isomaster
 isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
 ispell-ukrainian	ports/ukrainian/ispell
