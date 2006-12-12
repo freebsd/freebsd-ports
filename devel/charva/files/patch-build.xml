@@ -1,0 +1,26 @@
+--- build.xml.orig	Sun Sep 10 22:10:16 2006
++++ build.xml	Tue Dec 12 08:37:44 2006
+@@ -90,6 +90,7 @@
+     <property name="src.home" value="${basedir}/java/src"/>
+     <property name="test.home" value="${basedir}/test"/>
+     <property name="c.home" value="${basedir}/c"/>
++    <property name="os.type" value="freebsd"/>
+ 
+ 
+     <!--  ==================== Compilation Control Options ==================== -->
+@@ -189,14 +190,8 @@
+             description="Compile the JNI shared library">
+ 
+         <mkdir dir="${c.home}/lib"/>
+-        <input
+-                message="Enter the operating system type: "
+-                validargs="aix,beos,freebsd,gcj,hpux,linux,mac_osx,solaris,win32"
+-                addproperty="os.type"
+-                />
+-
+         <echo>Compiling the shared library using "Makefile.${os.type}.txt"</echo>
+-        <exec executable="make"
++        <exec executable="gmake"
+               dir="${c.home}/src"
+               output="${c.home}/lib/make.out.txt"
+               failonerror="true">

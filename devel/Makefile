@@ -135,6 +135,7 @@
     SUBDIR += cgdb
     SUBDIR += cgilib
     SUBDIR += cgprof
+    SUBDIR += charva
     SUBDIR += chora
     SUBDIR += cil
     SUBDIR += cl-asdf
