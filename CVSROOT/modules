@@ -14941,7 +14941,6 @@ vym		ports/deskutils/vym
 vyqchat		ports/net/vyqchat
 w3		ports/www/w3
 w3-4		ports/www/w3-4
-w3c-httpd	ports/www/w3c-httpd
 w3m		ports/www/w3m
 w3m-img		ports/www/w3m-img
 w3m-m17n	ports/www/w3m-m17n
@@ -14955,7 +14954,6 @@ wahcade		ports/emulators/wahcade
 waiho		ports/ftp/waiho
 waimea		ports/x11-wm/waimea
 waimea-devel		ports/x11-wm/waimea-devel
-wais		ports/net/wais
 wait_on		ports/sysutils/wait_on
 wakeonlan	ports/net/wakeonlan
 walker		ports/dns/walker

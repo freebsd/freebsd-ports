@@ -845,7 +845,6 @@
     SUBDIR += vserver
     SUBDIR += vtun
     SUBDIR += vyqchat
-    SUBDIR += wais
     SUBDIR += wakeonlan
     SUBDIR += warppipe
     SUBDIR += whois
