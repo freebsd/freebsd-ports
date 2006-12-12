@@ -1,0 +1,7 @@
+bin/isomaster
+%%DATADIR%%/icons/add2-kearone.png
+%%DATADIR%%/icons/extract-kearone.png
+%%DATADIR%%/icons/folder-new-tango.png
+%%DATADIR%%/icons/isomaster.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
