@@ -13,6 +13,8 @@ hybserv/jupes.conf
 hybserv/glines.conf
 hybserv/motd.dcc
 hybserv/motd.global
+hybserv/showchans
+hybserv/shownicks
 hybserv/help/memoserv/reply
 hybserv/help/memoserv/del
 hybserv/help/memoserv/forward
