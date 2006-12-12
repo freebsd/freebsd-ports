@@ -3,6 +3,7 @@ bin/dgs-config
 bin/dpsexec
 bin/dpsnx.agent
 %%WITH_XFREE4%%bin/makepsres
+%%WITH_XORG%%bin/pswrap
 %%WITH_XFREE4%%bin/texteroids
 bin/xepsf
 %%WITH_XORG%%include/DPS/ColorSB.h
