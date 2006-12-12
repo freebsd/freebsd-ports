@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.53.2
+PORTVERSION=	0.53.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	yds@CoolRat.org
+MAINTAINER=	bsd@dino.sk
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
@@ -68,11 +68,7 @@ USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_SUBMAKE=	yes
 
-.if defined(WITH_RCORDER)
-USE_RCORDER=	courier.sh
-.else
 USE_RC_SUBR=	courier.sh
-.endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -218,7 +214,7 @@ CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/ispell
 .endif
 
 .if defined(WITH_ASPELL) && defined(WITH_ISPELL)
-BROKEN=	"ASpell and ISpell are mutually exclusive. Run 'make config' to (re)configure ${PKGNAME}"
+BROKEN=	ASpell and ISpell are mutually exclusive. Run 'make config' to (re)configure ${PKGNAME}
 .endif
 
 .if !defined(WITH_ASPELL) && !defined(WITH_ISPELL)
@@ -259,6 +255,12 @@ PLIST_SUB+=	WITHUUCP="@comment "
 CONFIGURE_ARGS+=--with-ipv6
 .else
 CONFIGURE_ARGS+=--without-ipv6
+.endif
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-maildir__maildirfilter.c \
+		${FILESDIR}/extrapatch-webmail__folder.c \
+		${FILESDIR}/extrapatch-webmail__newmsg.c
 .endif
 
 pre-everything::
