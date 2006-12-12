@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fdm
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	mail
 MASTER_SITES=	SFE
 
@@ -16,7 +16,7 @@ COMMENT=	Fetches and delivers mail
 PLIST_FILES=	bin/fdm etc/fdm.conf.sample %%EXAMPLESDIR%%/n-marriott.conf \
 		%%EXAMPLESDIR%%/w-maier.conf
 PLIST_DIRS=	%%EXAMPLESDIR%%
-PORTDOCS=	README
+PORTDOCS=	README MANUAL
 
 CFLAGS=	-I/usr/include/openssl
 
@@ -33,7 +33,7 @@ post-install:
 	@${LN} -sf ${EXAMPLESDIR}/n-marriott.conf ${PREFIX}/etc/fdm.conf.sample
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.pre.mk>
