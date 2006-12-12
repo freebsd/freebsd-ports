@@ -29,7 +29,7 @@ COMMENT?=	Vi "workalike", with many additional features
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-WITH_TCL=	yes
+#WITH_TCL=	yes
 WITH_PERL=	yes
 WITH_PYTHON=	yes
 WITH_CSCOPE=	yes
