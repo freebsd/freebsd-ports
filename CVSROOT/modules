@@ -7339,7 +7339,6 @@ mowitz		ports/x11-toolkits/mowitz
 mozart		ports/lang/mozart
 mozex		ports/www/mozex
 mozilla		ports/www/mozilla
-mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozplugger	ports/www/mozplugger
 moztraybiff	ports/mail/moztraybiff

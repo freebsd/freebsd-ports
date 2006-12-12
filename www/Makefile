@@ -413,7 +413,6 @@
     SUBDIR += moodle
     SUBDIR += mozex
     SUBDIR += mozilla
-    SUBDIR += mozilla-bonobo
     SUBDIR += mozplugger
     SUBDIR += mplayer-plugin
     SUBDIR += myfaces
