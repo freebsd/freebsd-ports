@@ -7,9 +7,9 @@ Installation tips:
 
 You can find an emacs mode for Erlang here:
 
-    ${LOCALBASE}/lib/erlang/lib/tools-2.5.2/emacs
+    %%LOCALBASE%%/lib/erlang/lib/tools-2.5.2/emacs
 
 You may wish to add the following line to /etc/manpath.config:
 
-OPTIONAL_MANPATH	/usr/local/lib/erlang/man
+OPTIONAL_MANPATH	%%LOCALBASE%%/lib/erlang/man
 ===========================================================================

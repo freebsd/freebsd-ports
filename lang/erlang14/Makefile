@@ -25,6 +25,8 @@ COMMENT=	A functional programming language from Ericsson
 
 CONFLICTS?=	erlang-lite-r[0-9]*
 
+SUB_FILES=	pkg-message
+
 # The Java applications that are part of the Erlang distribution are
 # not strictly necessary - it is included for completeness sake. A
 # problem with the Erlang build procedure is that it only checks if
@@ -87,7 +89,7 @@ NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-PLIST_SUB+=	ERTS_VSN=${ERTS_VSN}
+PLIST_SUB+=	ERTS_VSN=${ERTS_VSN} TOOLS_VSN=${TOOLS_VSN}
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
 # subdir. This is to avoid cluttering up the man page name space. Also the
