@@ -17,7 +17,7 @@ DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 MAINTAINER=	daniel@roe.ch
 COMMENT?=	Port scanning utility for large networks
 
-DISTVERSION=	4.11
+DISTVERSION=	4.20
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -81,4 +81,10 @@ INSTALL_TARGET=	install-nmapfe
 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
