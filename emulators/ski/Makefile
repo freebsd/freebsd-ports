@@ -18,8 +18,6 @@ COMMENT=	HP's Ski IA-64 simulator
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
-BROKEN=		Incomplete pkg-plist
-
 ONLY_FOR_ARCHS=	i386
 
 NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.hpl.hp.com/research/linux/ski/download.php) and put it in ${DISTDIR} first
@@ -44,8 +42,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/nue/usr/X11R6/lib/X11/app-defaults/XSki \
 		${X11BASE}/lib/X11/app-defaults
 	${INSTALL_MAN} ${WRKSRC}/usr/man/man1/ski.1 ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/examples/ski
-	${INSTALL_DATA} ${FILESDIR}/ia64.cmd ${PREFIX}/examples/ski
+	@${MKDIR} ${PREFIX}/share/examples/ski
+	${INSTALL_DATA} ${FILESDIR}/ia64.cmd ${PREFIX}/share/examples/ski
 	${INSTALL_DATA} ${WRKSRC}/nue/usr/X11R6/lib/X11/app-defaults/XSki \
 		${X11BASE}/lib/X11/app-defaults
 .if !defined(NOPORTDOCS)
