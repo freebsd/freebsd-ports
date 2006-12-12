@@ -1,31 +1,31 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac/.packlist
 %%SITE_PERL%%/Text/Trac.pm
-%%SITE_PERL%%/Text/Trac/AutoLinkHttpNode.pm
+%%SITE_PERL%%/Text/Trac/AutoLinkHttp.pm
 %%SITE_PERL%%/Text/Trac/BlockNode.pm
-%%SITE_PERL%%/Text/Trac/BlockquoteNode.pm
-%%SITE_PERL%%/Text/Trac/BoldItalicNode.pm
-%%SITE_PERL%%/Text/Trac/BoldNode.pm
-%%SITE_PERL%%/Text/Trac/BrNode.pm
+%%SITE_PERL%%/Text/Trac/Blockquote.pm
+%%SITE_PERL%%/Text/Trac/Bold.pm
+%%SITE_PERL%%/Text/Trac/BoldItalic.pm
+%%SITE_PERL%%/Text/Trac/Br.pm
 %%SITE_PERL%%/Text/Trac/Context.pm
-%%SITE_PERL%%/Text/Trac/DlNode.pm
-%%SITE_PERL%%/Text/Trac/HeadingNode.pm
-%%SITE_PERL%%/Text/Trac/HrNode.pm
+%%SITE_PERL%%/Text/Trac/Dl.pm
+%%SITE_PERL%%/Text/Trac/Heading.pm
+%%SITE_PERL%%/Text/Trac/Hr.pm
 %%SITE_PERL%%/Text/Trac/InlineNode.pm
-%%SITE_PERL%%/Text/Trac/ItalicNode.pm
-%%SITE_PERL%%/Text/Trac/MonospaceNode.pm
+%%SITE_PERL%%/Text/Trac/Italic.pm
+%%SITE_PERL%%/Text/Trac/Monospace.pm
 %%SITE_PERL%%/Text/Trac/Node.pm
-%%SITE_PERL%%/Text/Trac/OlNode.pm
-%%SITE_PERL%%/Text/Trac/PNode.pm
-%%SITE_PERL%%/Text/Trac/PreNode.pm
-%%SITE_PERL%%/Text/Trac/StrikeNode.pm
-%%SITE_PERL%%/Text/Trac/SubNode.pm
-%%SITE_PERL%%/Text/Trac/SupNode.pm
-%%SITE_PERL%%/Text/Trac/TableNode.pm
+%%SITE_PERL%%/Text/Trac/Ol.pm
+%%SITE_PERL%%/Text/Trac/P.pm
+%%SITE_PERL%%/Text/Trac/Pre.pm
+%%SITE_PERL%%/Text/Trac/Strike.pm
+%%SITE_PERL%%/Text/Trac/Sub.pm
+%%SITE_PERL%%/Text/Trac/Sup.pm
+%%SITE_PERL%%/Text/Trac/Table.pm
 %%SITE_PERL%%/Text/Trac/Text.pm
-%%SITE_PERL%%/Text/Trac/UlNode.pm
-%%SITE_PERL%%/Text/Trac/UnderlineNode.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+%%SITE_PERL%%/Text/Trac/Ul.pm
+%%SITE_PERL%%/Text/Trac/Underline.pm
 @dirrmtry %%SITE_PERL%%/Text/Trac
 @dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
