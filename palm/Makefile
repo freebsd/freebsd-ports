@@ -32,7 +32,6 @@
     SUBDIR += prc-tools
     SUBDIR += romeo
     SUBDIR += sitescooper
-    SUBDIR += syncal
     SUBDIR += synce-dccm
     SUBDIR += synce-gnomevfs
     SUBDIR += synce-kde

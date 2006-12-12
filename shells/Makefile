@@ -17,7 +17,6 @@
     SUBDIR += ibsh
     SUBDIR += ksh93
     SUBDIR += mksh
-    SUBDIR += mudsh
     SUBDIR += nologinmsg
     SUBDIR += osh
     SUBDIR += pash

@@ -162,7 +162,6 @@
     SUBDIR += frontpage-th
     SUBDIR += frontpage-zh
     SUBDIR += fswiki
-    SUBDIR += fxhtml
     SUBDIR += g-cows
     SUBDIR += g-gcl
     SUBDIR += galeon
@@ -218,7 +217,6 @@
     SUBDIR += ismail
     SUBDIR += iwebcal
     SUBDIR += jakarta-jmeter
-    SUBDIR += jakarta-tomcat3
     SUBDIR += jakarta-tomcat4
     SUBDIR += jakarta-tomcat41
     SUBDIR += jakarta-tomcat5
@@ -428,7 +426,6 @@
     SUBDIR += notftp
     SUBDIR += npc
     SUBDIR += nscache
-    SUBDIR += nspostgres
     SUBDIR += nvu
     SUBDIR += ocaml-net
     SUBDIR += ocaml-wdialog

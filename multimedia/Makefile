@@ -26,7 +26,6 @@
     SUBDIR += dvdauthor
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
-    SUBDIR += dvdwizard
     SUBDIR += dvts
     SUBDIR += eclair
     SUBDIR += emotion

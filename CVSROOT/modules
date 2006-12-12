@@ -2073,7 +2073,6 @@ dvdisaster	ports/sysutils/dvdisaster
 dvdrip		ports/multimedia/dvdrip
 dvdstyler	ports/multimedia/dvdstyler
 dvdtape		ports/sysutils/dvdtape
-dvdwizard	ports/multimedia/dvdwizard
 dvi2tty		ports/print/dvi2tty
 dvi2xx		ports/print/dvi2xx
 dvipdfmx	ports/print/dvipdfmx
@@ -3052,7 +3051,6 @@ fwipe		ports/security/fwipe
 fwlogwatch	ports/security/fwlogwatch
 fwp		ports/games/fwp
 fwtk		ports/security/fwtk
-fxhtml		ports/www/fxhtml
 fxscintilla	ports/x11-toolkits/fxscintilla
 fxscintilla-fox10	ports/x11-toolkits/fxscintilla-fox10
 fxscintilla-fox12	ports/x11-toolkits/fxscintilla-fox12
@@ -5224,7 +5222,6 @@ jakarta-oro	ports/java/jakarta-oro
 jakarta-poi	ports/textproc/jakarta-poi
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-struts	ports/java/jakarta-struts
-jakarta-tomcat3	ports/www/jakarta-tomcat3
 jakarta-tomcat4	ports/www/jakarta-tomcat4
 jakarta-tomcat41	ports/www/jakarta-tomcat41
 jakarta-tomcat5	ports/www/jakarta-tomcat5
@@ -7451,7 +7448,6 @@ mu-conference	ports/net-im/mu-conference
 muddleftpd	ports/ftp/muddleftpd
 mudix		ports/net/mudix
 mudmagic	ports/games/mudmagic
-mudsh		ports/shells/mudsh
 muggy		ports/editors/muggy
 muh		ports/irc/muh
 muine		ports/audio/muine
@@ -7851,7 +7847,6 @@ nsf		ports/misc/nsf
 nslint		ports/dns/nslint
 nsping		ports/dns/nsping
 nspmod		ports/audio/nspmod
-nspostgres	ports/www/nspostgres
 nspr		ports/devel/nspr
 nss		ports/security/nss
 nss_ldap	ports/net/nss_ldap
@@ -11775,7 +11770,6 @@ ports_tcpdump	ports/net/tcpdump
 ports_texinfo		ports/print/texinfo
 ports_textproc	ports/textproc
 ports_tinderbox	ports/misc/tinderbox
-ports_tn3270	ports/net/tn3270
 ports_traceroute	ports/net/traceroute
 ports_ukrainian	ports/ukrainian
 ports_units	ports/math/units
@@ -12146,7 +12140,6 @@ py-fox		ports/x11-toolkits/py-fox
 py-fpconst	ports/math/py-fpconst
 py-freebsd	ports/devel/py-freebsd
 py-freeimagepy	ports/graphics/py-freeimagepy
-py-freetype	ports/print/py-freetype
 py-fusefs	ports/devel/py-fusefs
 py-game		ports/devel/py-game
 py-gamin	ports/devel/py-gamin
@@ -14118,7 +14111,6 @@ sympa-elixus	ports/mail/sympa-elixus
 sympa5		ports/mail/sympa5
 synaesthesia	ports/graphics/synaesthesia
 synaptics	ports/x11-servers/synaptics
-syncal		ports/palm/syncal
 synce-dccm	ports/palm/synce-dccm
 synce-gnomevfs	ports/palm/synce-gnomevfs
 synce-kde	ports/palm/synce-kde

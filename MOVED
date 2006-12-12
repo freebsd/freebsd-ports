@@ -2566,3 +2566,11 @@ x11/XFree86-aoutlibs||2006-12-12|Has expired: Requires a.out ld.so and support l
 x11/linux-XFree86-libs||2006-12-12|Has expired: superseeded by linux-xorg-libs port
 www/mod_v2h||2006-12-12|Has expired: No longer available for download, the website is gone
 www/mod_injection||2006-12-12|Has expired: No longer available for download, the website is gone
+www/nspostgres||2006-12-12|Has expired: Use www/aolserver with WITH_NSPOSTGRES=1 instead.
+www/fxhtml||2006-12-12|Has expired: crusty old a.out binary, not useful any more
+www/jakarta-tomcat3||2006-12-12|Has expired: Please use www/tomcat55 instead
+shells/mudsh||2006-12-12|Has expired: Project disappeared from the internet
+print/py-freetype||2006-12-12|Has expired: Project has disappeared and is no longer fetchable
+palm/syncal||2006-12-12|Has expired: Does not build with new pilot-link
+net/tn3270||2006-12-12|Has expired: dumps core. Please use net/c3270 instead
+multimedia/dvdwizard||2006-12-12|Has expired: has an incomplete dependency list

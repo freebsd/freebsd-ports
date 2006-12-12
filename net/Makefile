@@ -801,7 +801,6 @@
     SUBDIR += tintin++-devel
     SUBDIR += tinyfugue
     SUBDIR += tinyldap
-    SUBDIR += tn3270
     SUBDIR += tn5250
     SUBDIR += tptest
     SUBDIR += traceroute
