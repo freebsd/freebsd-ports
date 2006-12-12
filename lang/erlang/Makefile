@@ -37,9 +37,9 @@ CONFLICTS?=	erlang-lite-r[0-9]*
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 # Make sure ${JAVA_HOME}/bin is in the path
-CONFIGURE_ENV+= PATH=${PATH}:${JAVA_HOME}/bin
-MAKE_ENV+=      PATH=${PATH}:${JAVA_HOME}/bin
-SCRIPT_ENV+=    PATH=${PATH}:${JAVA_HOME}/bin
+CONFIGURE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
+MAKE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
+SCRIPT_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
 .endif
 
 .if !defined(WITHOUT_X11)
@@ -57,15 +57,15 @@ WITHOUT_ODBC=	yes
 .endif
 
 .if !defined(WITHOUT_ODBC)
-DRIVER_MANAGER?=        iodbc
+DRIVER_MANAGER?=	iodbc
 .if ${DRIVER_MANAGER} == "unixodbc"
-LIB_DEPENDS+=           odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .else # assume we're using iodbc
-LIB_DEPENDS+=           iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=     otp_doc_man_R11B-2.tar.gz
+ERLANG_MAN=	otp_doc_man_R11B-2.tar.gz
 .if !defined(NOPORTDOCS)
 ERLANG_DOCS=	otp_doc_html_R11B-2.tar.gz
 .endif
@@ -84,9 +84,9 @@ CONFIGURE_ARGS+=	--enable-hipe
 .endif
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
-CFLAGS+=        -I${LOCALBASE}/include
-LDFLAGS+=       -L${LOCALBASE}/lib
-CONFIGURE_ENV=  CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 PLIST_SUB+=	ERTS_VSN=${ERTS_VSN}
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
