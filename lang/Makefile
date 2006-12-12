@@ -38,7 +38,6 @@
     SUBDIR += drscheme
     SUBDIR += dylan
     SUBDIR += ecl
-    SUBDIR += egcs
     SUBDIR += eiffel
     SUBDIR += elan
     SUBDIR += elisp-manual
@@ -75,7 +74,6 @@
     SUBDIR += gcc-ooo
     SUBDIR += gcc28
     SUBDIR += gcc295
-    SUBDIR += gcc30
     SUBDIR += gcc32
     SUBDIR += gcc33
     SUBDIR += gcc34

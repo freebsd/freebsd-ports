@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-%%CLASSDIR%%/xcolor.dtx
-%%CLASSDIR%%/xcolor.ins
-%%CLASSDIR%%/xcolor.sty
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
