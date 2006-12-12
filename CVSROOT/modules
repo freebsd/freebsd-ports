@@ -1185,6 +1185,7 @@ chaco		ports/math/chaco
 chameleon	ports/lang/chameleon
 chanta		ports/games/chanta
 charmap		ports/deskutils/charmap
+charva		ports/devel/charva
 chbg		ports/graphics/chbg
 check_snmp_pkgvuln	ports/net-mgmt/check_snmp_pkgvuln
 checkbot	ports/www/checkbot
