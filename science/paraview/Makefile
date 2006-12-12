@@ -34,8 +34,12 @@ MAKE_ENV=	CC="${CC}" \
 LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
 pre-patch:
-	${REINPLACE_CMD} -e 's|vtkpng|png|g' \
+	@${REINPLACE_CMD} -e 's|vtkpng|png|g' \
 		${WRKDIR}/paraview-${PORTVERSION}/GUI/Widgets/CMakeLists.txt
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKDIR}/paraview-${PORTVERSION}/Utilities/TclTk/tk*/unix/configure
 
 do-configure:
 	${MKDIR} ${WRKSRC}
