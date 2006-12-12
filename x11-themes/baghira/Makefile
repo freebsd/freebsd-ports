@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	baghira
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	0.8
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mmendez@gmail.com
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	An Aqua like window decoration and widget style for KDE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-release
+#WRKSRC=		${WRKDIR}/${PORTNAME}-release
 
 #EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
