@@ -106,7 +106,7 @@ apps/ROX-Session/xsettings.pyo
 apps/ROX-Session/xxmlrpc.py
 apps/ROX-Session/xxmlrpc.pyc
 apps/ROX-Session/xxmlrpc.pyo
-etc/dm/Sessions/rox.desktop
+%%GDM%%etc/dm/Sessions/rox.desktop
 sbin/rox-session
 @dirrm apps/ROX-Session/tests
 @dirrm apps/ROX-Session/images
