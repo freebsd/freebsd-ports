@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.548
+PORTVERSION=	0.9.633
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -89,10 +89,22 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Secret::Plain.3 \
 	OpenXPKI::Crypto::Secret::Split.3 \
 	OpenXPKI::Crypto::TokenManager.3 \
+	OpenXPKI::Crypto::Tool::PKCS7.3 \
+	OpenXPKI::Crypto::Tool::PKCS7::API.3 \
+	OpenXPKI::Crypto::Tool::PKCS7::CLI.3 \
+	OpenXPKI::Crypto::Tool::PKCS7::Command::get_subject.3 \
+	OpenXPKI::Crypto::Tool::PKCS7::Command::is_not_self_signed.3 \
+	OpenXPKI::Crypto::Tool::PKCS7::Command::verify.3 \
+	OpenXPKI::Crypto::Tool::PKCS7::Engine::OpenSSL.3 \
 	OpenXPKI::Crypto::Tool::SCEP.3 \
 	OpenXPKI::Crypto::Tool::SCEP::API.3 \
 	OpenXPKI::Crypto::Tool::SCEP::CLI.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Command::create_certificate_reply.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Command::create_error_reply.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Command::create_pending_reply.3 \
 	OpenXPKI::Crypto::Tool::SCEP::Command::get_message_type.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Command::get_pkcs10.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Command::get_signer_cert.3 \
 	OpenXPKI::Crypto::Tool::SCEP::Command::get_transaction_id.3 \
 	OpenXPKI::Crypto::Tool::SCEP::Engine::OpenSSL.3 \
 	OpenXPKI::Crypto::Toolkit.3 \
@@ -110,6 +122,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::API.3 \
 	OpenXPKI::Server::API::Default.3 \
 	OpenXPKI::Server::API::Object.3 \
+	OpenXPKI::Server::API::Secret.3 \
 	OpenXPKI::Server::API::Visualization.3 \
 	OpenXPKI::Server::API::Workflow.3 \
 	OpenXPKI::Server::Authentication.3 \
@@ -140,12 +153,13 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::GetCRLProfile.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::IssueCRL.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::PublishCRL.3 \
+	OpenXPKI::Server::Workflow::Activity::CRR::PersistRequest.3 \
+	OpenXPKI::Server::Workflow::Activity::CRR::RevokeCertificate.3 \
+	OpenXPKI::Server::Workflow::Activity::CSR::PersistRequest.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::GetCertProfile.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::ImportCertData.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::Issue.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::PersistCertificate.3 \
-	OpenXPKI::Server::Workflow::Activity::CertRequest::PersistRequest.3 \
-	OpenXPKI::Server::Workflow::Activity::CertRequest::SetSource.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::Cleanup.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::ExportLogs.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::ExportWorkflowInstances.3 \
@@ -161,31 +175,56 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::Profile::Create.3 \
 	OpenXPKI::Server::Workflow::Activity::Request::Certificate::DataOnly::Create.3 \
 	OpenXPKI::Server::Workflow::Activity::Request::Certificate::PKCS10::Create.3 \
+	OpenXPKI::Server::Workflow::Activity::SCEP::ExtractCSR.3 \
+	OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromCSR.3 \
+	OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromOriginalCert.3 \
 	OpenXPKI::Server::Workflow::Activity::Skeleton.3 \
+	OpenXPKI::Server::Workflow::Activity::SmartCard::CreateServerCSR.3 \
+	OpenXPKI::Server::Workflow::Activity::SmartCard::ForkWorkflowInstances.3 \
+	OpenXPKI::Server::Workflow::Activity::SmartCard::GetLDAPData.3 \
+	OpenXPKI::Server::Workflow::Activity::SmartCard::PersistCSRs.3 \
+	OpenXPKI::Server::Workflow::Activity::SmartCard::PublishCertificates.3 \
+	OpenXPKI::Server::Workflow::Activity::SmartCard::WriteCertificateToInstall.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Approve.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::CancelApprovals.3 \
+	OpenXPKI::Server::Workflow::Activity::Tools::ChangeBackSessionRole.3 \
+	OpenXPKI::Server::Workflow::Activity::Tools::ChangeSessionRole.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::CreateWorkflowInstance.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::DetermineIssuingCA.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Export.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::ForkWorkflowInstance.3 \
+	OpenXPKI::Server::Workflow::Activity::Tools::SetErrorCode.3 \
+	OpenXPKI::Server::Workflow::Activity::Tools::SetSource.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Sleep.3 \
 	OpenXPKI::Server::Workflow::Condition::ACL.3 \
+	OpenXPKI::Server::Workflow::Condition::AlwaysFalse.3 \
+	OpenXPKI::Server::Workflow::Condition::AlwaysTrue.3 \
+	OpenXPKI::Server::Workflow::Condition::ApprovalNeeded.3 \
 	OpenXPKI::Server::Workflow::Condition::Approved.3 \
 	OpenXPKI::Server::Workflow::Condition::CRLSigningCAsLeft.3 \
+	OpenXPKI::Server::Workflow::Condition::CheckCertTestResult.3 \
 	OpenXPKI::Server::Workflow::Condition::ContextParameterExistence.3 \
+	OpenXPKI::Server::Workflow::Condition::CorrectNumberOfValidCerts.3 \
+	OpenXPKI::Server::Workflow::Condition::CorrectTiming.3 \
+	OpenXPKI::Server::Workflow::Condition::InitialEnrollmentOrRenewal.3 \
+	OpenXPKI::Server::Workflow::Condition::IsCertificateIssuancePossible.3 \
+	OpenXPKI::Server::Workflow::Condition::IsValidSignatureWithRequestedDN.3 \
 	OpenXPKI::Server::Workflow::Condition::Key.3 \
+	OpenXPKI::Server::Workflow::Condition::MoreCSRsToCreate.3 \
+	OpenXPKI::Server::Workflow::Condition::MoreCertsToTest.3 \
 	OpenXPKI::Server::Workflow::Condition::Server.3 \
+	OpenXPKI::Server::Workflow::Condition::SignedUsingOriginalCertOrSelfSigned.3 \
 	OpenXPKI::Server::Workflow::Condition::WorkflowChildrenSuccessfullyFinished.3 \
-	OpenXPKI::Server::Workflow::Observer::Log.3 \
+	OpenXPKI::Server::Workflow::Observer::Debug.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI::SequenceId.3 \
 	OpenXPKI::Server::Workflow::Validator::CertProfile.3 \
 	OpenXPKI::Server::Workflow::Validator::CertRole.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubject.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubjectAltName.3 \
+	OpenXPKI::Server::Workflow::Validator::Creator.3 \
 	OpenXPKI::Server::Workflow::Validator::PKCS10.3 \
 	OpenXPKI::Server::Workflow::Validator::SPKAC.3 \
-	OpenXPKI::Server::Workflow::Validator::SetContextParameter.3 \
 	OpenXPKI::Service.3 \
 	OpenXPKI::Service::Default.3 \
 	OpenXPKI::Service::Default::Command.3 \
