@@ -1,6 +1,6 @@
---- bgpd/bgpd.c.orig	Thu Dec  9 06:46:46 2004
-+++ bgpd/bgpd.c	Sat Jan 29 11:29:26 2005
-@@ -59,6 +59,9 @@
+--- bgpd/bgpd.c.orig	Fri Dec  8 05:24:44 2006
++++ bgpd/bgpd.c	Tue Dec 12 15:34:44 2006
+@@ -60,6 +60,9 @@
  #ifdef HAVE_SNMP
  #include "bgpd/bgp_snmp.h"
  #endif /* HAVE_SNMP */
@@ -10,15 +10,15 @@
  
  /* BGP process wide configuration.  */
  static struct bgp_master bgp_master;
-@@ -707,6 +710,7 @@
+@@ -788,6 +791,7 @@
+   peer->status = Idle;
    peer->ostatus = Idle;
-   peer->version = BGP_VERSION_4;
    peer->weight = 0;
 +  peer->password[0] = '\0';
+   peer->bgp = bgp;
+   peer = peer_lock (peer); /* initial reference */
  
-   /* Set default flags.  */
-   for (afi = AFI_IP; afi < AFI_MAX; afi++)
-@@ -3270,6 +3274,55 @@
+@@ -3379,6 +3383,55 @@
    return 0;
  }
  
@@ -74,7 +74,7 @@
  /* Set distribute list to the peer. */
  int
  peer_distribute_set (struct peer *peer, afi_t afi, safi_t safi, int direct, 
-@@ -4279,6 +4332,13 @@
+@@ -4409,6 +4462,13 @@
        if (peer->desc)
  	vty_out (vty, " neighbor %s description %s%s", addr, peer->desc,
  		 VTY_NEWLINE);

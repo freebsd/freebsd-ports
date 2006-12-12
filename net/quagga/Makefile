@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.5
-PORTREVISION=	1
+PORTVERSION=	0.99.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -116,7 +115,7 @@ LIB_DEPENDS+=netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 .if ${OSVERSION} < 491000
 BROKEN=		This version of FreeBSD does not have TCP MD5 signature support
 .endif
-EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h
+EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h ${PATCHDIR}/extra-tcpmd5-patch-vtysh-extract.pl.in
 CFLAGS+=	-DQUAGGA_TCP_MD5SIG
 .endif
 
