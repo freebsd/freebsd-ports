@@ -6,7 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -31,6 +31,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	GPOD "iPod support" on \
 		NJB "Creative Nomad and Dell support" on \
+		MTP "MTP device support" on \
 		XMMS "XMMS visualizations" off \
 		OPENGL "OpenGL support" on \
 		AMAZON "Amazon cover fetching support" on \
@@ -63,6 +64,14 @@ PLIST_SUB+=	NJB="@comment "
 LIB_DEPENDS+=	njb.6:${PORTSDIR}/audio/libnjb
 CONFIGURE_ARGS+=--with-libnjb
 PLIST_SUB+=	NJB=""
+.endif
+
+.if !defined(WITH_MTP)
+PLIST_SUB+=	MTP="@comment "
+.else
+LIB_DEPENDS+=	mtp.3:${PORTSDIR}/audio/libmtp
+CONFIGURE_ARGS+=--with-libmtp
+PLIST_SUB+=	MTP=""
 .endif
 
 .if !defined(WITH_XMMS)
