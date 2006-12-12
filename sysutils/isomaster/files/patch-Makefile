@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Dec 12 12:08:11 2006
++++ Makefile	Tue Dec 12 12:08:20 2006
+@@ -24,7 +24,7 @@
+ GTKLIBS = `pkg-config --libs gtk+-2.0`
+ GTKFLAGS = `pkg-config --cflags gtk+-2.0`
+ # the _FILE_OFFSET_BITS=64 is to enable stat() for large files
+-GLOBALFLAGS = -D_FILE_OFFSET_BITS=64 -Wall
++GLOBALFLAGS = ${CFLAGS}
+ GLOBALDEPS = bk/bk.h Makefile
+ 
+ isomaster: lib iniparser translations isomaster.o window.o browser.o fsbrowser.o isobrowser.o error.o about.o settings.o boot.o $(GLOBALDEPS)

@@ -288,6 +288,7 @@
     SUBDIR += ipmi-kmod
     SUBDIR += ipmitool
     SUBDIR += ipsc
+    SUBDIR += isomaster
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jailer
