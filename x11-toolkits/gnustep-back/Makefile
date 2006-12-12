@@ -19,29 +19,27 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-USE_XLIB=		yes
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
-USE_GMAKE=		yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
+USE_XLIB=	yes
+
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
 BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 BREAKS_IF_PEDANTIC=	yes
 
 .if defined(WITH_GNUSTEP_XDPS)
 GNUSTEP_DGS_PORT?=	x11/dgs
-BUILD_DEPENDS+=		imake:${X_IMAKE_PORT}
 BUILD_DEPENDS+=		dgs:${PORTSDIR}/${GNUSTEP_DGS_PORT}
 LIB_DEPENDS+=		dpstk:${PORTSDIR}/${GNUSTEP_DGS_PORT}
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
@@ -81,13 +79,17 @@ CONFLICTS?=		gunstep-back-xdps-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
 TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
 
 ADDITIONAL_LDFLAGS+=	-L${TARGLIB}
-MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
 MAKE_FLAGS+=		messages=yes
 PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
 .if ${OSVERSION} < 500000
 ADDITIONAL_LDFLAGS+=	-L/usr/lib -lcipher
-MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
+.endif
+
+.if defined(WITH_GNUSTEP_XDPS)
+.if ${X_WINDOW_SYSTEM:L} == "xfree86-4"
+BUILD_DEPENDS+=		pswrap:${PORTSDIR}/devel/imake-4
+.endif
 .endif
 
 pre-configure:
