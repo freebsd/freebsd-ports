@@ -5,48 +5,36 @@
 # $FreeBSD$
 
 PORTNAME=	rox-session
-PORTVERSION=	0.1.21
-PORTREVISION=	5
+PORTVERSION=	0.29
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
-DISTNAME=	ROX-Session-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	rox-session-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A session manager for the ROX desktop
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
 
-WRKSRC=		${WRKDIR}/ROX-Session-${PORTVERSION}
+USE_BZIP2=	yes
+USE_PYTHON=	yes
 
-USE_GNOME=	gtk20 pkgconfig libxml2
-USE_AUTOTOOLS=	autoconf:213
-HAS_CONFIGURE=	yes
+SUB_FILES=	rox-session rox.desktop
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386")
-BINARIES=	FreeBSD-ix86
-.else
-BINARIES=	FreeBSD-${ARCH}
-.endif
-
-PLIST_SUB=	BINARIES="${BINARIES}"
-
-CONFIGURE_ARGS=		--enable-rox --with-platform=${BINARIES}
-CONFIGURE_WRKSRC=	${WRKSRC}/ROX-Session/src
-BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
-ALL_TARGET=
+post-patch:
+	@${FIND} ${WRKSRC} -name *.orig | ${XARGS} ${RM}
 
 do-build:
-	# Run the custom build procedure
-	@cd ${WRKSRC}/ROX-Session && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ./AppRun --compile
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps/ROX-Session
-	@cd ${WRKSRC}/ROX-Session && ${CP} -r .DirIcon AppInfo.xml AppRun ${BINARIES} Help Login MakeDefault.sh Messages Options.xml RunROX Setup SetupPanel Styles WindowMans images ${PREFIX}/apps/ROX-Session
-	@${CAT} ${FILESDIR}/rox-session | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox-session
-	@${CHMOD} 775 ${PREFIX}/bin/rox-session
+	@${MKDIR} ${PREFIX}/apps
+	@${CP} -r ${WRKSRC}/ROX-Session ${PREFIX}/apps/
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Session
+	@${INSTALL_SCRIPT} ${WRKDIR}/rox-session ${PREFIX}/sbin
+	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${PREFIX}/etc/dm/Sessions
 
 .include <bsd.port.post.mk>
