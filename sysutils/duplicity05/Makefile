@@ -19,20 +19,19 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 MAN1=		duplicity.1 rdiffdir.1
 
 DOCFILES=	CHANGELOG COPYING README
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/duplicity.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/rdiffdir.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
