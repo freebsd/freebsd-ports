@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmpqc.a:${PORTSDIR}/science/mpqc \
 LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \
 		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea \
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		ghemical:${PORTSDIR}/science/libghemical
+		ghemical:${PORTSDIR}/science/libghemical \
+		mopac7:${PORTSDIR}/biology/mopac
 
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libglade2 pkgconfig
