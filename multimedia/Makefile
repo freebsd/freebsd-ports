@@ -72,7 +72,6 @@
     SUBDIR += gstreamer-plugins-libfame80
     SUBDIR += gstreamer-plugins-mpeg2dec
     SUBDIR += gstreamer-plugins-mpeg2dec80
-    SUBDIR += gstreamer-plugins-mpeg2enc80
     SUBDIR += gstreamer-plugins-mplex80
     SUBDIR += gstreamer-plugins-theora
     SUBDIR += gstreamer-plugins-theora80
