@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
-PORTVERSION=	0.7.10
+PORTVERSION=	0.7.11
 CATEGORIES=	games gnome ipv6
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
 USE_GETTEXT=	yes
