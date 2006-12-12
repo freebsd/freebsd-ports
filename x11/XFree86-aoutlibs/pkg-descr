@@ -1,4 +1,0 @@
-This is a compatibility package for the XFree86 a.out format libraries.
-
-It is only needed for ports which use X and are compiled in a.out format,
-such as Netscape.  Long live Mozilla...

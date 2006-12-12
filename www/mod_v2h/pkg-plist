@@ -1,6 +1,0 @@
-@unexec %D/sbin/apxs -e -A -n layout %D/libexec/apache2/mod_v2h.so
-libexec/apache2/mod_v2h.so
-@exec %D/sbin/apxs -e -A -n layout %D/%f
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
