@@ -23,6 +23,17 @@ SUB_FILES=	rox-session rox.desktop
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/sbin/gdm)
+WITH_GDM=	yes
+.endif
+
+.if defined(WITH_GDM)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
+PLIST_SUB+=	GDM=""
+.else
+PLIST_SUB+=	GDM="@comment "
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name *.orig | ${XARGS} ${RM}
 
@@ -35,6 +46,8 @@ do-install:
 	@${CP} -r ${WRKSRC}/ROX-Session ${PREFIX}/apps/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Session
 	@${INSTALL_SCRIPT} ${WRKDIR}/rox-session ${PREFIX}/sbin
+.if defined(WITH_GDM)
 	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${PREFIX}/etc/dm/Sessions
+.endif
 
 .include <bsd.port.post.mk>
