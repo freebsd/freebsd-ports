@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/
+MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
+		${MASTER_SITE_GENTOO}/distfiles/
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	TWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-WWW_ROOT?=	${WWWOWN}
-TWIKIDIR?=	${PREFIX}/${WWW_ROOT}/twiki
+TWIKI?=		${WWWOWN}/twiki
+TWIKIDIR?=	${PREFIX}/${TWIKI}
 
-PLIST_SUB=	WWW_ROOT=${WWW_ROOT}
+PLIST_SUB=	TWIKI=${TWIKI}
 SUB_LIST=	WWWUSER=${WWWOWN} WWWGROUP=${WWWGRP} TWIKIDIR=${TWIKIDIR} \
 		REINPLACE_CMD="${REINPLACE_CMD}"
 SUB_FILES=	pkg-install
