@@ -182,6 +182,7 @@
     SUBDIR += rate
     SUBDIR += remarp
     SUBDIR += rotorouter
+    SUBDIR += routers2
     SUBDIR += rubygem-snmp
     SUBDIR += satellite
     SUBDIR += scdp
