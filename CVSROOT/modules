@@ -1311,7 +1311,6 @@ click		ports/net/click
 clig		ports/devel/clig
 clint		ports/devel/clint
 clip		ports/databases/clip
-clips		ports/lang/clips
 clisp		ports/lang/clisp
 clisp-hyperspec	ports/devel/clisp-hyperspec
 clit		ports/textproc/clit
@@ -2721,7 +2720,6 @@ flick		ports/devel/flick
 flightgear	ports/games/flightgear
 flightgear-aircrafts	ports/games/flightgear-aircrafts
 flightgear-atlas	ports/games/flightgear-atlas
-flightgear-l410	ports/games/flightgear-l410
 flightgear-mb339-pan	ports/games/flightgear-mb339-pan
 flim		ports/editors/flim
 flim-emacs20	ports/editors/flim-emacs20
@@ -3207,7 +3205,6 @@ gdesklets-irc	ports/irc/gdesklets-irc
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-tasklist	ports/x11/gdesklets-tasklist
-gdesklets-xmms	ports/audio/gdesklets-xmms
 gdict		ports/textproc/gdict
 gdis		ports/science/gdis
 gdk-pixbuf	ports/graphics/gdk-pixbuf

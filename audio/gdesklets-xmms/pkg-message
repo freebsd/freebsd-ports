@@ -1,5 +1,0 @@
-
-To add this desklet to your desktop:
-
-	gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/xmms.display
-
