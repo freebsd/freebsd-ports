@@ -14,7 +14,6 @@
     SUBDIR += XFree86-4-documents
     SUBDIR += XFree86-4-libraries
     SUBDIR += XFree86-4-manuals
-    SUBDIR += XFree86-aoutlibs
     SUBDIR += XFree86-contrib
     SUBDIR += accessx
     SUBDIR += alltray
@@ -166,7 +165,6 @@
     SUBDIR += libxfce4util
     SUBDIR += libxkbfile
     SUBDIR += libxklavier
-    SUBDIR += linux-XFree86-libs
     SUBDIR += linux-xorg-libs
     SUBDIR += lupe
     SUBDIR += mgapdesk

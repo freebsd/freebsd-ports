@@ -151,7 +151,6 @@ XFree86-4-fontEncodings			ports/x11-fonts/XFree86-4-fontEncodings
 XFree86-4-fontScalable			ports/x11-fonts/XFree86-4-fontScalable
 XFree86-4-libraries			ports/x11/XFree86-4-libraries
 XFree86-4-manuals			ports/x11/XFree86-4-manuals
-XFree86-aoutlibs	ports/x11/XFree86-aoutlibs
 XFree86-contrib	ports/x11/XFree86-contrib
 Xaw3d		ports/x11-toolkits/Xaw3d
 XawPlus		ports/x11-toolkits/XawPlus
@@ -6508,7 +6507,6 @@ linplasma	ports/graphics/linplasma
 linpopup	ports/net-im/linpopup
 linpsk		ports/comms/linpsk
 linrad		ports/comms/linrad
-linux-XFree86-libs	ports/x11/linux-XFree86-libs
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
 linux-adobesvg	ports/graphics/linux-adobesvg
@@ -7232,7 +7230,6 @@ mod_geoip2	ports/www/mod_geoip2
 mod_gzip	ports/www/mod_gzip
 mod_hosts_access	ports/www/mod_hosts_access
 mod_index_rss	ports/www/mod_index_rss
-mod_injection	ports/www/mod_injection
 mod_jail	ports/www/mod_jail
 mod_jk		ports/www/mod_jk
 mod_jk-apache2	ports/www/mod_jk-apache2
@@ -7284,7 +7281,6 @@ mod_transform	ports/www/mod_transform
 mod_trigger	ports/www/mod_trigger
 mod_tsunami	ports/www/mod_tsunami
 mod_uid		ports/www/mod_uid
-mod_v2h		ports/www/mod_v2h
 mod_vdbh	ports/www/mod_vdbh
 mod_vhost_ldap	ports/www/mod_vhost_ldap
 mod_vhs		ports/www/mod_vhs

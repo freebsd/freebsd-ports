@@ -348,7 +348,6 @@
     SUBDIR += mod_gzip
     SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss
-    SUBDIR += mod_injection
     SUBDIR += mod_jail
     SUBDIR += mod_jk
     SUBDIR += mod_jk-apache2
@@ -400,7 +399,6 @@
     SUBDIR += mod_trigger
     SUBDIR += mod_tsunami
     SUBDIR += mod_uid
-    SUBDIR += mod_v2h
     SUBDIR += mod_vdbh
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs

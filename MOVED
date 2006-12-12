@@ -2562,3 +2562,7 @@ devel/autoconf26|devel/autoconf261|2006-12-07|Move to correct location
 www/mozilla-bonobo||2006-12-12|Has expired: "Does not build with new Mozilla"
 www/p5-ldap-abook||2006-12-12|Has expired: Arbitrary command execution vulnerability in CGI script
 x11-wm/tpager||2006-12-12|Has expired: Unmaintained and disappears from MASTER_SITE on a regular basis
+x11/XFree86-aoutlibs||2006-12-12|Has expired: Requires a.out ld.so and support libraries
+x11/linux-XFree86-libs||2006-12-12|Has expired: superseeded by linux-xorg-libs port
+www/mod_v2h||2006-12-12|Has expired: No longer available for download, the website is gone
+www/mod_injection||2006-12-12|Has expired: No longer available for download, the website is gone
