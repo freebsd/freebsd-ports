@@ -60,7 +60,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		MCRYPT          "Encryption support" off \
 		MCVE            "MCVE support" off \
 		MHASH           "Crypto-hashing support" off \
-		MING            "ming shockwave flash support" off \
 		MNOGOSEARCH     "mnoGoSearch support" off \
 		MSSQL           "MS-SQL database support" off \
 		MYSQL           "MySQL database support" on \
@@ -69,7 +68,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		OPENSSL         "OpenSSL support" off \
 		ORACLE          "Oracle support" off \
 		OVERLOAD        "user-space object overloading support" on \
-		PANDA           "panda support" off \
 		PCNTL           "pcntl support (CLI only)" off \
 		PCRE            "Perl Compatible Regular Expression support" on \
 		PDF             "PDFlib support (implies GD)" off \
@@ -108,8 +106,8 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 ALL_OPTIONS=	BCMATH BZ2 CALENDAR CRACK CTYPE CURL DBA DBASE DBX DIO \
 		DOMXML EXIF FILEINFO FILEPRO FRIBIDI FTP GD GETTEXT \
 		GMP ICONV IMAP INTERBASE LDAP MBSTRING MCAL MCRYPT \
-		MCVE MHASH MIME_MAGIC MING MNOGOSEARCH MSSQL MYSQL NCURSES \
-		ODBC OPENSSL ORACLE OVERLOAD PANDA PCNTL PCRE PDF PFPRO \
+		MCVE MHASH MIME_MAGIC MNOGOSEARCH MSSQL MYSQL NCURSES \
+		ODBC OPENSSL ORACLE OVERLOAD PCNTL PCRE PDF PFPRO \
 		PGSQL POSIX PSPELL READLINE RECODE SESSION SHMOP SNMP SOCKETS \
 		SYBASE_CT SYSVMSG SYSVSEM SYSVSHM TOKENIZER \
 		WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
