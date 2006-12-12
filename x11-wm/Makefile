@@ -95,7 +95,6 @@
     SUBDIR += skippy-xd
     SUBDIR += swm
     SUBDIR += tinywm
-    SUBDIR += tpager
     SUBDIR += transset-df
     SUBDIR += treewm
     SUBDIR += tvtwm
