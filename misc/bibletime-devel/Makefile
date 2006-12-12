@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-static-clucene
 INSTALLS_ICONS=	yes
+
+DOCSDIR=	share/doc/HTML/en/bibletime
 
 .include <bsd.port.pre.mk>
 
