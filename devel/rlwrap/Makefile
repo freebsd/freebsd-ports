@@ -18,6 +18,7 @@ USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	ptyttylib_cv_ptys=BSD LDFLAGS=-lutil
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 MAN1=	rlwrap.1
 
