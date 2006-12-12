@@ -30,6 +30,7 @@ USE_GETTEXT=	yes
 #NLS is hardcoded to "yes" in source, so no WITHOUT_NLS
 USE_GMAKE=	yes
 USE_GNOME=	libxml2 intlhack
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -41,9 +42,9 @@ INSTALLS_ICONS=	yes
 
 .if defined(WITH_TAGLIB)
 LIB_DEPENDS+=	tag.5:${PORTSDIR}/audio/taglib
-CONFIGURE_ARGS=	--with-taglib
+CONFIGURE_ARGS+=	--with-taglib
 .else
-CONFIGURE_ARGS=	--without-taglib
+CONFIGURE_ARGS+=	--without-taglib
 .endif
 
 .if defined(WITH_DBUS)
