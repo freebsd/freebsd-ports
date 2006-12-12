@@ -79,7 +79,4 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16
 PLIST_SUB+=		Q=16
 .endif
 
-post-build test:
-	cd ${WRKSRC}/tests && ${MAKE} check
-
 .include <bsd.port.post.mk>
