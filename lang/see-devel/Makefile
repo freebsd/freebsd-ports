@@ -7,7 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	2.0.1131
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.powerband.net.au/~david.leonard/ \
 		http://freshmeat.net/redir/see/45974/url_tgz/
