@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	devcpu
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
