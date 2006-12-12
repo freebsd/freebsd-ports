@@ -16,16 +16,15 @@ DISTNAME=	Glide3-FreeBSD-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to support 3dfx Voodoo3/4/5/Banshee with the DRI
 
-USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/Glide3
-USE_XLIB=	yes
+USE_BZIP2=		yes
+WRKSRC=			${WRKDIR}/Glide3
+USE_X_PREFIX=		yes
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:253 libtool:15
-AUTOMAKE_ARGS=	-a
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-MAKEFILE=	makefile.autoconf
+AUTOMAKE_ARGS=		-a
+USE_GMAKE=		yes
+USE_BZIP2=	yes
+MAKEFILE=		makefile.autoconf
 
 # This Glide3 does not work on alpha, and I don't expect it to work right
 # on other non-i386 without patches.  Further development is going on in
