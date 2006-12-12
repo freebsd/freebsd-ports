@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Env-Path
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Env
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Advanced operations on path variables
 
 PERL_CONFIGURE=	yes
