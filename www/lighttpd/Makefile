@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-bzip2
 .if defined(WITH_CML)
 USE_LUA=		yes
 CONFIGURE_ARGS+=	--with-lua
-CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR}"
+CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 .endif
 
 .if defined(WITH_FAM)
