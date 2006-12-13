@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b9044cc2-8aa5-11db-bd0d-00123ffe8333">
+    <topic>wv2 -- Integer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>wv2</name>
+	<range><lt>0.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/20665/">
+	  <p>A vulnerability has been reported in wvWare wv2 Library, which
+	    potentially can be exploited by malicious people to compromise an
+	    application using the library.</p>
+	  <p>The vulnerability is caused due to an integer overflow error in
+	    "word_helper.h" when handling a Word document. This can be
+	    exploited to cause a buffer overflow and may allow arbitrary code
+	    execution via a specially crafted Word document.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2197</cvename>
+      <url>http://secunia.com/advisories/20665/</url>
+    </references>
+    <dates>
+      <discovery>2006-06-12</discovery>
+      <entry>2006-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e969e6cb-8911-11db-9d01-0016179b2dd5">
     <topic>tnftpd -- Remote root Exploit</topic>
     <affects>
