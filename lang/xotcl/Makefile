@@ -7,6 +7,7 @@
 
 PORTNAME=	xotcl
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	lang tcl83 tcl84
 MASTER_SITES=	http://media.wu-wien.ac.at/download/
 
@@ -17,12 +18,13 @@ GNU_CONFIGURE=	yes
 USE_TCL=	yes
 USE_TCL_BUILD=	yes
 ALL_TARGET=	all test-nohttp
-INSTALL_TARGET=	install-binaries install-libraries
+INSTALL_TARGET=	install
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-OPTIONS=	AOLSERVER	"AOL server module"		off \
+OPTIONS=	ACTIWEB		"Include actiweb"		on \
+		AOLSERVER	"AOL server module"		off \
 		THREADS		"Force threaded build"		off \
 		TUTORIAL	"Install XOTcl tutorial" 	off
 
@@ -34,11 +36,19 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_ACTIWEB)
+CONFIGURE_ARGS+=	--with-actiweb --with-gdbm=${LOCALBASE}/include,${LOCALBASE}/lib
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+PLIST_SUB+=	ACTIWEB=""
+.else
+PLIST_SUB+=	ACTIWEB="@comment "
+.endif
+
 .if defined(WITH_AOLSERVER)
 BUILD_DEPENDS+=		${LOCALBASE}/aolserver/bin/init.tcl:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=		${BUILD_DEPENDS}
 PLIST_SUB+=		AOLSERVER=""
-INSTALL_TARGET=		install-aol
+INSTALL_TARGET+=	install-aol
 .else
 PLIST_SUB+=		AOLSERVER="@comment "
 .endif

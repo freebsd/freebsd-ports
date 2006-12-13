@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Sep 27 16:21:56 2006
-+++ Makefile.in	Wed Sep 27 16:43:46 2006
-@@ -261,11 +261,11 @@
+--- Makefile.in.orig	Thu Sep 28 11:19:12 2006
++++ Makefile.in	Tue Dec 12 15:58:50 2006
+@@ -262,11 +262,11 @@
  #========================================================================
  # This rule installs platform-independent files, such as header files.
  #========================================================================
@@ -15,7 +15,7 @@
  	done;
  	@echo "Installing Libraries to $(DESTDIR)$(pkglibdir)/"
  	@for i in $(libdirs) ; do \
-@@ -283,7 +283,7 @@
+@@ -284,7 +284,7 @@
  	    $(INSTALL_DATA) $(src_lib_dir)/$$i $(DESTDIR)$(pkglibdir)/$$i ; \
  	done;
  	cat unix/pkgIndex.unix >> $(DESTDIR)$(pkglibdir)/pkgIndex.tcl
@@ -24,7 +24,23 @@
  	@echo "Installing Applications to $(DESTDIR)$(pkglibdir)/apps/"
  	@for i in $(appdirs) ; do \
  	    echo "    Installing $$i/" ; \
-@@ -534,7 +534,6 @@
+@@ -292,7 +292,15 @@
+ 	    mkdir -p $(DESTDIR)$(pkglibdir)/apps/$$i; \
+ 	    chmod 755 $(DESTDIR)$(pkglibdir)/apps/$$i; \
+ 	    for j in $(src_app_dir)/$$i/* ; do \
++		if test -d $$j; then \
++		    mkdir -p $(DESTDIR)$(pkglibdir)/$$j; \
++		    chmod 755 $(DESTDIR)$(pkglibdir)/$$j; \
++		    for k in $$j/* ; do \
++			$(INSTALL) $$k $(DESTDIR)$(pkglibdir)/$$j ; \
++		    done; \
++		else \
+ 		$(INSTALL) $$j $(DESTDIR)$(pkglibdir)/apps/$$i/; \
++		fi; \
+ 	    done; \
+ 	done;
+ 	@for i in $(appsrc) ; do \
+@@ -535,7 +543,6 @@
  	    else \
  		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
  		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
@@ -32,7 +48,7 @@
  	    fi; \
  	    ext=`echo $$p|sed -e "s/.*\.//"`; \
  	    if test "x$$ext" = "xdll"; then \
-@@ -591,12 +590,12 @@
+@@ -592,12 +599,12 @@
  	  rm -f $(DESTDIR)$(bindir)/$$p; \
  	done
  
