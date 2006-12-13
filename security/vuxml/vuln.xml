@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d29dc506-8aa6-11db-bd0d-00123ffe8333">
+    <topic>wv -- Multiple Integer Overflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wv</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/22595/">
+	  <p>Some vulnerabilities have been reported in wvWare, which can be
+	    exploited by malicious people to cause a DoS (Denial of Service)
+	    and potentially compromise an application using the library.</p>
+	  <p>The vulnerabilities are caused due to integer overflows within
+	    the "wvGetLFO_records()" and "wvGetLFO_PLF()" functions. These can
+	    be exploited to cause heap-based buffer overflows by e.g. tricking
+	    a user to open a specially crafted Microsoft Word document with an
+	    application using the library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4513</cvename>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=433</url>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=434</url>
+      <url>http://secunia.com/advisories/22595/</url>
+    </references>
+    <dates>
+      <discovery>2006-10-26</discovery>
+      <entry>2006-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b9044cc2-8aa5-11db-bd0d-00123ffe8333">
     <topic>wv2 -- Integer Overflow Vulnerability</topic>
     <affects>
