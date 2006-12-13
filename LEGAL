@@ -432,7 +432,8 @@ mypaedia-*		japanese/mypaedia-fpw	The original dictionary is not free
 mysqlman.tar.gz		databases/mysqlman	Not redistributable, license
 						agreement required
 ncftpd-*		ftp/ncftpd		30 day evaluation license
-netbeans-*		java/netbeans		Restrictive copyright
+netbeans3-*		java/netbeans3		Restrictive copyright
+netbeans4-*		java/netbeans4		Restrictive copyright
 NetComponents-*		java/netcomponents	No redistribution except as part
 						of a substantially different product
 netshow_linux.gz	multimedia/netshow	Commercial software
