@@ -25,6 +25,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/eb5124a4-8a20-11db-b033-00123ffe8333.html
+
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
