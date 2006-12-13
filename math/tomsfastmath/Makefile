@@ -25,7 +25,10 @@ ALL_TARGET=	default
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
-NOT_FOR_ARCHS=	ia64
-NOT_FOR_ARCHS_REASON_ia64=	fails to compile
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64 or sparc64
+.endif
+
+.include <bsd.port.post.mk>
