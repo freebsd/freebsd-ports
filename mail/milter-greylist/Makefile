@@ -58,7 +58,7 @@ MILTERBASE?=	${LOCALBASE}
 .if ${OSVERSION} < 502102
 IGNORE=		Using libspf2 requires a thread safe resolver
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf2.so:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=	spf2.2:${PORTSDIR}/mail/libspf2
 CONFIGURE_ARGS+=	--with-libspf2=${LOCALBASE}
 .endif
 .endif
