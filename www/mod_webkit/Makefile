@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A apache module for WebWare WebKit AppServer
 
 PATCH_DEPENDS=	${NONEXISTENT}:${WEBWARE_PORT}:extract

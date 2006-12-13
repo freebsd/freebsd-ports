@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.livinglogic.de/core/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility functions and classes used by the other LivingLogic packages
 
 USE_PYTHON=	2.4+

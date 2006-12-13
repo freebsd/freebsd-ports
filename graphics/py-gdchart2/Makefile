@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.nullcube.com/software/pygdchart2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygdchart2
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to GDChart2
 
 LIB_DEPENDS=	gdc.1:${PORTSDIR}/graphics/gdchart

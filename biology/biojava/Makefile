@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:source	\
 		bytecode.jar:bin
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source java tools for processing biological data
 
 BUILD_DEPENDS=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb \

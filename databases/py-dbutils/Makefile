@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.w4py.org/downloads/DBUtils/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	DBUtils-${PORTVERSION}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Providing solid, persistent and pooled connections to a database
 
 USE_PYTHON=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.webwareforpython.org/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}webware-
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webware servlet component extension
 
 RUN_DEPENDS=	${LOCALBASE}/share/webware/__init__.py:${PORTSDIR}/www/py-webware

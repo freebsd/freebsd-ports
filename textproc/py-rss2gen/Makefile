@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dalkescientific.com/Python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyRSS2Gen-${PORTVERSION}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python library for generating RSS 2.0 feeds
 
 USE_PYTHON=	yes
