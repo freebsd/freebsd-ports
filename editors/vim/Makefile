@@ -9,10 +9,11 @@
 PORTNAME?=	vim
 PATCHLEVEL=	168
 PORTVERSION=	7.0.${PATCHLEVEL}
+RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
-DISTNAME=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
+DISTFILES=	${RELEASE}${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
@@ -47,7 +48,7 @@ PATCH_DIST_ARGS= -d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST
 #PATCH_DIST_ARGS=	-t
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
-_DATADIR=	${DISTNAME:S/-//g:S/.//g}
+_DATADIR=	${RELEASE:S/-//g:S/.//g}
 DATADIR=	${PREFIX}/share/vim/${_DATADIR}
 PLIST_SUB=	VIM_VER=${_DATADIR}
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
@@ -142,10 +143,10 @@ USE_ICONV=	yes
 .endif
 
 .if defined(WITH_LANG)
-LANG_FILE=	${DISTNAME}-lang.tar.gz
+LANG_FILE=	${RELEASE}-lang.tar.gz
 DISTFILES+=    	${LANG_FILE}:lang_file
 MASTER_SITES+=	${MASTER_SITE_VIM:S|unix/|extra/:lang_file|}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${RELEASE}${EXTRACT_SUFX}
 USE_GETTEXT=   	yes
 .endif
 
