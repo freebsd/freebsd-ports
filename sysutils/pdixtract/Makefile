@@ -14,6 +14,7 @@ DISTNAME=	PDITOOL
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Extracts or converts .pdi file sets to .iso
 
+WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 
 PLIST_FILES=	bin/pdixtract
