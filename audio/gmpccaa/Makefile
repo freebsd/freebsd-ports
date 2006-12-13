@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpccaa
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/Plugins/
 
@@ -14,7 +15,7 @@ MAINTAINER=	redchrom@gmail.com
 COMMENT=	Amazon cover art provider for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.3:${PORTSDIR}/ftp/curl
+		curl.4:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${X11BASE}/include/gmpc/cover-art.h:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 

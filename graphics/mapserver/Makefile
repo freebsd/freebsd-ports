@@ -7,7 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		4.4.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics www
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
@@ -106,7 +106,7 @@ PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 

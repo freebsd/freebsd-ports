@@ -7,7 +7,7 @@
 
 PORTNAME=	gtorrentviewer
 PORTVERSION=	0.2b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ DISTNAME=	GTorrentViewer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 gnomehier intlhack
 USE_XLIB=	yes

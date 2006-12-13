@@ -7,6 +7,7 @@
 
 PORTNAME=	libofx
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++ \
 		osp.3:${PORTSDIR}/textproc/opensp
 

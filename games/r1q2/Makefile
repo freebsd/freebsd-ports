@@ -7,7 +7,7 @@
 
 PORTNAME=	r1q2
 PORTVERSION=	6557
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
@@ -93,7 +93,7 @@ PLIST_SUB+=	GLX="@comment "
 .endif
 
 .if !defined(WITHOUT_HTTP)
-LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 MAKE_ENV+=	WITH_HTTP_DOWNLOAD_SUPPORT=YES
 .endif
 

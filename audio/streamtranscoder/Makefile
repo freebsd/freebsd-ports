@@ -7,6 +7,7 @@
 
 PORTNAME=	streamtranscoder
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.oddsock.org/tools/streamTranscoder/
 

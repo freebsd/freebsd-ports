@@ -8,6 +8,7 @@
 
 PORTNAME=	evfs
 PORTVERSION=	20060926
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
@@ -38,8 +39,8 @@ PLIST_SUB+=	SAMBA="@comment "
 CONFIGURE_ARGS+=--disable-samba
 .endif
 
-.if !defined(WITHOUT_FTP) || exists(${LOCALBASE}/lib/libcurl.so.3)
-LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+.if !defined(WITHOUT_FTP) || exists(${LOCALBASE}/lib/libcurl.so.4)
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	FTP=""
 .else
 PLIST_SUB+=	FTP="@comment "

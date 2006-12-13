@@ -7,6 +7,7 @@
 
 PORTNAME=	gaia
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gaia-clean
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	gaia-clean
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Display geographic maps with optional GPS tracking support
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		SDL.11:${PORTSDIR}/devel/sdl12

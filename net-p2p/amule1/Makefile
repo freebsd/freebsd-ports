@@ -7,7 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	1.2.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://download.berlios.de/amule/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +18,7 @@ COMMENT=	The all-platform eMule p2p client
 
 DEPRECATED=	use net-p2p/amule2 if you are running OSVERSION > 500000
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 LATEST_LINK=	aMule1
 CONFLICTS=	aMule-2.* aMule-devel-[0-9]*

@@ -7,7 +7,7 @@
 
 PORTNAME=	ecore
 PORTVERSION=	20060926
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
@@ -55,7 +55,7 @@ PLIST_SUB+=		EVAS="@comment "
 
 .if !defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--enable-curl
-LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
 PLIST_SUB+=		CURL=""
 .else
 CONFIGURE_ARGS+=	--disable-curl

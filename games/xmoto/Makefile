@@ -7,7 +7,7 @@
 
 PORTNAME=	xmoto
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,7 +47,7 @@ MAN6=		xmoto.6 xmoto-edit.6
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_WWW)
-LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-enable-www=1
 .else
 CONFIGURE_ARGS+=	--with-enable-www=0

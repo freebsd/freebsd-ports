@@ -7,6 +7,7 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ilmarinen.us/unreal/ \
 		http://unrealircd.alert-net.com/ \
@@ -84,9 +85,10 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if defined(WITH_REMOTE)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libares.a:${PORTSDIR}/dns/ares
-LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	cares.1:${PORTSDIR}/dns/c-ares curl.4:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-libcurl=${LOCALBASE}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_PREFIXAQ)

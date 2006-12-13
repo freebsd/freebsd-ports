@@ -7,6 +7,7 @@
 
 PORTNAME=	jigdo
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.atterer.net/jigdo/
 

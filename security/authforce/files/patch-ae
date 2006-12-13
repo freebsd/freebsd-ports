@@ -1,0 +1,12 @@
+--- src/http.c.orig	Tue Dec  5 16:06:36 2006
++++ src/http.c	Tue Dec  5 16:06:24 2006
+@@ -68,7 +68,9 @@
+ 		curl_easy_setopt(curl, CURLOPT_FAILONERROR, 1);
+ 		curl_easy_setopt(curl, CURLOPT_USERPWD, authstring);
+ 		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
++#if LIBCURL_VERSION_NUM < 0x071000
+ 		curl_easy_setopt(curl, CURLOPT_MUTE, 1);
++#endif
+ 		curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1);
+ 		curl_easy_setopt(curl, CURLOPT_USERAGENT, user_agent);
+ 		if (strcmp(proxy, "undef"))

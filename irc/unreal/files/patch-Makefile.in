@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Dec  5 15:59:38 2006
++++ Makefile.in	Tue Dec  5 15:59:53 2006
+@@ -38,7 +38,7 @@
+ CRYPTOLIB=@CRYPTOLIB@
+ OPENSSLINCLUDES=
+ 
+-XCFLAGS=-I@TREINCDIR@ -I@CARESINCDIR@ @CARESLIBDIR@ @CFLAGS@
++XCFLAGS=-I@TREINCDIR@ @CFLAGS@
+ #
+ # use the following on MIPS:
+ #CFLAGS= -systype bsd43 -DSYSTYPE_BSD43 -I$(INCLUDEDIR)

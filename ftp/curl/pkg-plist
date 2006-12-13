@@ -45,6 +45,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/curl.1
 %%PORTDOCS%%%%DOCSDIR%%/curl.html
 %%PORTDOCS%%%%DOCSDIR%%/curl.pdf
+%%PORTDOCS%%%%DOCSDIR%%/examples/10-at-a-time.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile.am
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile.example
@@ -65,6 +66,8 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpuploadresume.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinfo.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinmemory.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/ghiper.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/hiperfifo.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/htmltidy.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/htmltitle.cc
 %%PORTDOCS%%%%DOCSDIR%%/examples/http-post.c

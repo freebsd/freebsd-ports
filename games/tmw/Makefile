@@ -7,6 +7,7 @@
 
 PORTNAME=	tmw
 PORTVERSION=	0.0.21.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	themanaworld
@@ -16,7 +17,7 @@ COMMENT=	A free open source 2D MMORPG in development
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		png.5:${PORTSDIR}/graphics/png \
-		curl.3:${PORTSDIR}/ftp/curl \
+		curl.4:${PORTSDIR}/ftp/curl \
 		physfs-1.0.1:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan
 RUN_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan

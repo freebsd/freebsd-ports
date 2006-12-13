@@ -18,7 +18,7 @@ COMMENT=	An X11 multimedia player
 
 LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine \
 		png.5:${PORTSDIR}/graphics/png \
-		curl.3:${PORTSDIR}/ftp/curl
+		curl.4:${PORTSDIR}/ftp/curl
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
