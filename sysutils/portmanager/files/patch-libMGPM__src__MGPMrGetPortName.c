@@ -1,5 +1,5 @@
---- libMGPM/src/MGPMrGetPortName.c.orig	Thu Feb 23 03:04:28 2006
-+++ libMGPM/src/MGPMrGetPortName.c	Thu Feb 23 03:06:22 2006
+--- ./libMGPM/src/MGPMrGetPortName.c.orig	Wed Dec 14 10:27:41 2005
++++ ./libMGPM/src/MGPMrGetPortName.c	Fri Dec  8 17:13:00 2006
 @@ -180,7 +180,8 @@
  			}
  			else

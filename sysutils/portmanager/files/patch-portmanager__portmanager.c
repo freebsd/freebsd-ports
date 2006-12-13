@@ -1,5 +1,5 @@
---- portmanager/portmanager.c.orig	Tue Dec 13 00:20:58 2005
-+++ portmanager/portmanager.c	Sat May 27 18:08:32 2006
+--- ./portmanager/portmanager.c.orig	Mon Dec 12 19:20:58 2005
++++ ./portmanager/portmanager.c	Fri Dec  8 17:13:00 2006
 @@ -34,7 +34,13 @@
  int	main( int argc, char** argv, char** argp)
  {
