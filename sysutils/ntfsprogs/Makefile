@@ -7,6 +7,7 @@
 
 PORTNAME=	ntfsprogs
 PORTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-ntfs
@@ -76,5 +77,6 @@ post-patch:
 		's|$$(libdir)/\(gnome-vfs-2.0/modules\)|${X11BASE}/lib/\1|; \
 		 s|$$(sysconfdir)/\(gnome-vfs-2.0/modules\)|${X11BASE}/etc/\1|' \
 		${WRKSRC}/libntfs/Makefile.in
+	@${CP} ${FILESDIR}/unix_io_raw.c ${WRKSRC}/libntfs
 
 .include <bsd.port.post.mk>
