@@ -25,6 +25,7 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
+USE_GNOME=	glib20
 
 pre-build:
 	${CP} ${FILESDIR}/getline.c ${FILESDIR}/getline.h ${WRKSRC}/rendezvous/
