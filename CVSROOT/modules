@@ -12134,6 +12134,7 @@ py-gtkextra	ports/x11-toolkits/py-gtkextra
 py-gtkglext	ports/x11-toolkits/py-gtkglext
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
 py-gui		ports/x11-toolkits/py-gui
+py-hashlib	ports/security/py-hashlib
 py-htmltestcase	ports/www/py-htmltestcase
 py-hyperestraier	ports/textproc/py-hyperestraier
 py-icalendar	ports/devel/py-icalendar
