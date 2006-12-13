@@ -10,7 +10,7 @@ upgrades.
   AFFECTS: users of net/smokeping
   AUTHOR: lth@FreeBSD.org
 
-  Smokeping now uses rcNG script to startup. Please remember to add
+  Smokeping now uses rc.d script to startup. Please remember to add
   'smokeping_enable="YES"' to your rc.conf.
 
 20061207:
