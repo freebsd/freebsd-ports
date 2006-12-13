@@ -13,10 +13,9 @@ to your php.ini to load it. xdebug is not compatible with the extension
 at least the lesser required extension disabled by commenting out it's
 loader line in your php.ini.
 
-Add following section to enable/disable whatever you need from xdebug:
+Add following section to enable profiling:
 
-	xdebug.auto_profile [1|On | 0|Off]
-	xdebug.auto_profile_mode [profile mode, integer]
-	xdebug.output_dir [string]
+xdebug.profiler_enable = 1
+xdebug.profiler_output_dir = /tmp/profiler
 
 *****************************************************************************
