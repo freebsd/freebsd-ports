@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd October 5, 2006
+.Dd December 13, 2006
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -46,6 +46,9 @@
 .Nm
 .Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op Fl p Ar port directory in /usr/ports
+.Nm
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op . [Use in /usr/ports/foo/bar to build that port]
 .Nm
 .Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Fl o Ar <new port dir in /usr/ports> <installed port>
@@ -147,6 +150,15 @@ once the new version of the port is successfully installed.
 If the installation fails for whatever reason,
 a helpful message will be printed, along with instructions
 on where to find the backup package.
+.Pp
+At the conclusion of a successful installation,
+whether of an individual port, a list of ports,
+or when using the
+.Fl a
+option, any
+.Pa pkg-message
+files that were installed during the installation
+will be displayed.
 .Sh OPTIONS
 The options are as follows:
 .Bl -tag -width F1
@@ -210,6 +222,12 @@ If the directory pointed to by the PKGREPOSITORY
 variable exists (by default
 .Pa /usr/ports/packages/All )
 then it will be used to store new and backup packages.
+.Pp
+The UPGRADE_TOOL variable is set to
+.Dq portmaster ,
+and the UPGRADE_PORT and UPGRADE_PORT_VER variables
+are set to the full package name string and version
+of the existing package being replaced, if any.
 .Sh FILES
 .Bl -tag -width ".Pa $HOME/.portmasterrc" -compact
 .It Pa /etc/portmaster.rc
