@@ -9,14 +9,11 @@
 PORTNAME=	docbook-xsd
 PORTVERSION=	1.0.b1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/committees/docbook/xmlschema/${PORTVERSION:S/.b/b/}/
+MASTER_SITES=	http://www.oasis-open.org/docbook/xmlschema/${PORTVERSION:S/.b/b/}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook W3C XML Schema
-
-DEPRECATED=	website disappeared and not used by other ports
-EXPIRATION_DATE=2006-12-01
 
 USE_ZIP=	yes
 NO_BUILD=	yes
