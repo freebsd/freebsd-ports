@@ -28,6 +28,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/sqlite3
 
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		DOCS		"Building docs (depends on TCL)"	on \
+		FTS1		"Enable FTS1 (Full Text Search) module"	off \
 		TCLWRAPPER	"TCL wrapper for SQLITE"		off \
 		THREADS		"Enable threads support"		off
 
@@ -46,6 +47,11 @@ CONFIGURE_ARGS+=	--enable-debug
 BUILD_DEPENDS+=		tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
 ALL_TARGET+=		all doc
 PORTDOCS=		*
+.endif
+
+.if defined(WITH_FTS1)
+CFLAGS+=		-DSQLITE_ENABLE_FTS1
+EXTRA_PATCHES=		${FILESDIR}/fts1_patch-Makefile.in
 .endif
 
 .if defined(WITH_TCLWRAPPER)
