@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.139
+# Local version: 1.140
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
@@ -1204,7 +1204,6 @@ dofetch () {
 	distfiles=`make $MAKE_ARGS -V ALLFILES`
 	for file in $distfiles; do
 		flag_file=f-${PARENT_PID}-${file}
-		echo "Debug> ${TMPDIR}/${flag_file}-"
 		if ! ls ${TMPDIR}/${flag_file}-* >/dev/null 2>&1; then
 			mktemp -t ${flag_file}-${portdir##*/} >/dev/null
 		else
