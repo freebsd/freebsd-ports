@@ -60,7 +60,6 @@
     SUBDIR += gstreamer-plugins-bz2
     SUBDIR += gstreamer-plugins-core
     SUBDIR += gstreamer-plugins-core80
-    SUBDIR += gstreamer-plugins-dirac80
     SUBDIR += gstreamer-plugins-dts
     SUBDIR += gstreamer-plugins-dts80
     SUBDIR += gstreamer-plugins-dv

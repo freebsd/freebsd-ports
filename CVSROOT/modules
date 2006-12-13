@@ -3888,7 +3888,6 @@ gstreamer-plugins-cdparanoia	ports/audio/gstreamer-plugins-cdparanoia
 gstreamer-plugins-cdparanoia80	ports/audio/gstreamer-plugins-cdparanoia80
 gstreamer-plugins-core		ports/multimedia/gstreamer-plugins-core
 gstreamer-plugins-core80	ports/multimedia/gstreamer-plugins-core80
-gstreamer-plugins-dirac80	ports/multimedia/gstreamer-plugins-dirac80
 gstreamer-plugins-dts		ports/multimedia/gstreamer-plugins-dts
 gstreamer-plugins-dts80		ports/multimedia/gstreamer-plugins-dts80
 gstreamer-plugins-dv		ports/multimedia/gstreamer-plugins-dv
