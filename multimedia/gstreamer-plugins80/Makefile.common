@@ -13,7 +13,6 @@ GST_ALL_PLUGINS= \
 		cdaudio \
 		cdio \
 		cdparanoia \
-		dirac \
 		directfb \
 		divx \
 		dts \
@@ -163,11 +162,6 @@ LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 # cdparanoia
 .if ${GST_PLUGIN}=="cdparanoia"
 LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
-.endif
-
-# dirac
-.if ${GST_PLUGIN}=="dirac"
-LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
 .endif
 
 # dts

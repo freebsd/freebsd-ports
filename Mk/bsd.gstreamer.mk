@@ -193,8 +193,6 @@ bad_DEPENDS=	multimedia/gstreamer-plugins-bad
 
 bz2_DEPENDS=	multimedia/gstreamer-plugins-bz2
 
-dirac_DEPENDS=	multimedia/gstreamer-plugins-dirac
-
 ffmpeg_DEPENDS=	multimedia/gstreamer-ffmpeg
 ffmpeg_GST80_SUFX=	80
 ffmpeg_GST80_PREFIX=	gstreamer-
