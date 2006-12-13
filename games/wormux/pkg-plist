@@ -16,6 +16,612 @@ share/locale/ro/LC_MESSAGES/wormux.mo
 share/locale/ru/LC_MESSAGES/wormux.mo
 share/locale/sk/LC_MESSAGES/wormux.mo
 share/locale/tr/LC_MESSAGES/wormux.mo
+share/wormux/authors.xml
+share/wormux/font/DejaVuSans.ttf
+share/wormux/game_mode/classic.xml
+share/wormux/game_mode/objects.xml
+share/wormux/game_mode/old.xml
+share/wormux/gfx/arrow.png
+share/wormux/gfx/pointer.png
+share/wormux/gfx/rectangle.png
+share/wormux/gfx/water.png
+share/wormux/gfx/water_bottom.png
+share/wormux/graphism.xml
+share/wormux/interface/Grey-Button.png
+share/wormux/interface/button1.png
+share/wormux/interface/button2.png
+share/wormux/interface/button3.png
+share/wormux/interface/button4.png
+share/wormux/interface/button5.png
+share/wormux/interface/compteur.png
+share/wormux/interface/game_menu.png
+share/wormux/interface/pause.png
+share/wormux/interface/pointer_aim.png
+share/wormux/interface/pointer_move.png
+share/wormux/interface/pointer_select.png
+share/wormux/interface/weapons_menu.png
+share/wormux/map/aquarium/background.png
+share/wormux/map/aquarium/config.xml
+share/wormux/map/aquarium/preview.jpg
+share/wormux/map/aquarium/sky.png
+share/wormux/map/araignee/abeille.png
+share/wormux/map/araignee/araignee.png
+share/wormux/map/araignee/config.xml
+share/wormux/map/araignee/fond.jpg
+share/wormux/map/araignee/preview.jpg
+share/wormux/map/arbre/arbre.png
+share/wormux/map/arbre/config.xml
+share/wormux/map/arbre/fond.jpg
+share/wormux/map/arbre/gland-anim.png
+share/wormux/map/arbre/preview.jpg
+share/wormux/map/banquise/background.jpg
+share/wormux/map/banquise/banquise.png
+share/wormux/map/banquise/config.xml
+share/wormux/map/banquise/flocon.png
+share/wormux/map/banquise/preview.jpg
+share/wormux/map/battlenight/battlenight-all.jpg
+share/wormux/map/battlenight/battlenight-bg.jpg
+share/wormux/map/battlenight/battlenight-fg.png
+share/wormux/map/battlenight/config.xml
+share/wormux/map/catacombes/background1.png
+share/wormux/map/catacombes/config.xml
+share/wormux/map/catacombes/preview.jpg
+share/wormux/map/catacombes/sky1.jpg
+share/wormux/map/champignon/background.png
+share/wormux/map/champignon/config.xml
+share/wormux/map/champignon/preview.jpg
+share/wormux/map/champignon/sky.png
+share/wormux/map/cheese/config.xml
+share/wormux/map/cheese/emmental.png
+share/wormux/map/cheese/minicheese.png
+share/wormux/map/cheese/preview.jpg
+share/wormux/map/cheese/sky.jpg
+share/wormux/map/cowland/config.xml
+share/wormux/map/cowland/cowland.png
+share/wormux/map/cowland/cowland_bg.jpg
+share/wormux/map/cowland/nuage.png
+share/wormux/map/cowland/preview.jpg
+share/wormux/map/desert/config.xml
+share/wormux/map/desert/desert.png
+share/wormux/map/desert/desert_bg.jpg
+share/wormux/map/desert/desert_preview.jpg
+share/wormux/map/electronik/background.png
+share/wormux/map/electronik/config.xml
+share/wormux/map/electronik/preview.jpg
+share/wormux/map/electronik/sky.jpg
+share/wormux/map/goodandevil/config.xml
+share/wormux/map/goodandevil/goodandevil.png
+share/wormux/map/goodandevil/preview.jpg
+share/wormux/map/goodandevil/sky.jpg
+share/wormux/map/grenouilles/config.xml
+share/wormux/map/grenouilles/grenouilles.png
+share/wormux/map/grenouilles/jungle.jpg
+share/wormux/map/grenouilles/nuage.png
+share/wormux/map/grenouilles/preview.jpg
+share/wormux/map/halloween/confetis.png
+share/wormux/map/halloween/config.xml
+share/wormux/map/halloween/halloween.png
+share/wormux/map/halloween/noir_lune.jpg
+share/wormux/map/halloween/preview.jpg
+share/wormux/map/hell/bones.png
+share/wormux/map/hell/config.xml
+share/wormux/map/hell/hell.png
+share/wormux/map/hell/hellsky.jpg
+share/wormux/map/hell/preview.jpg
+share/wormux/map/island/config.xml
+share/wormux/map/island/island.png
+share/wormux/map/island/preview.jpg
+share/wormux/map/island/sky.jpg
+share/wormux/map/leafs/back.jpg
+share/wormux/map/leafs/birds.png
+share/wormux/map/leafs/config.xml
+share/wormux/map/leafs/front.png
+share/wormux/map/leafs/preview.jpg
+share/wormux/map/libellule/config.xml
+share/wormux/map/libellule/libellule-bg.jpg
+share/wormux/map/libellule/libellule.png
+share/wormux/map/libellule/preview.jpg
+share/wormux/map/mer/config.xml
+share/wormux/map/mer/mer-ciel.jpg
+share/wormux/map/mer/mer.png
+share/wormux/map/mer/preview.jpg
+share/wormux/map/monkeybubbleworld/config.xml
+share/wormux/map/monkeybubbleworld/feuille.png
+share/wormux/map/monkeybubbleworld/monkeybubbleworld.png
+share/wormux/map/monkeybubbleworld/preview.jpg
+share/wormux/map/monkeybubbleworld/sky.jpg
+share/wormux/map/noel/bleu.jpg
+share/wormux/map/noel/config.xml
+share/wormux/map/noel/nege-anim.png
+share/wormux/map/noel/noel.png
+share/wormux/map/noel/preview.jpg
+share/wormux/map/paradis/config.xml
+share/wormux/map/paradis/decor_paradis.png
+share/wormux/map/paradis/decor_paradis_BG.jpg
+share/wormux/map/paradis/paradis_preview.jpg
+share/wormux/map/pirates/config.xml
+share/wormux/map/pirates/islands.jpg
+share/wormux/map/pirates/pirates.png
+share/wormux/map/pirates/preview.jpg
+share/wormux/map/prehistorik/config.xml
+share/wormux/map/prehistorik/fond.jpg
+share/wormux/map/prehistorik/prehistorik.png
+share/wormux/map/prehistorik/preview.jpg
+share/wormux/map/qingqong/config.xml
+share/wormux/map/qingqong/preview.jpg
+share/wormux/map/qingqong/qingqong.png
+share/wormux/map/qingqong/sky.jpg
+share/wormux/map/space/config.xml
+share/wormux/map/space/lune.jpg
+share/wormux/map/space/preview.jpg
+share/wormux/map/space/space.png
+share/wormux/map/vulcano/background.png
+share/wormux/map/vulcano/config.xml
+share/wormux/map/vulcano/preview.jpg
+share/wormux/map/vulcano/sky2.jpg
+share/wormux/map/wildwestdv/backgr.jpg
+share/wormux/map/wildwestdv/config.xml
+share/wormux/map/wildwestdv/preview.jpg
+share/wormux/map/wildwestdv/wildwestdv.png
+share/wormux/menu/img/arrow-left.png
+share/wormux/menu/img/arrow-right.png
+share/wormux/menu/img/background.png
+share/wormux/menu/img/background_options.png
+share/wormux/menu/img/background_play.png
+share/wormux/menu/img/button.png
+share/wormux/menu/img/cancel.png
+share/wormux/menu/img/check.png
+share/wormux/menu/img/down.png
+share/wormux/menu/img/ico_maps.png
+share/wormux/menu/img/ico_skins.png
+share/wormux/menu/img/ico_sounds.png
+share/wormux/menu/img/ico_weapons.png
+share/wormux/menu/img/loading.png
+share/wormux/menu/img/minus.png
+share/wormux/menu/img/plus.png
+share/wormux/menu/img/skin01.png
+share/wormux/menu/img/skin02.png
+share/wormux/menu/img/title.png
+share/wormux/menu/img/up.png
+share/wormux/menu/img/validate.png
+share/wormux/object/blue_star.png
+share/wormux/object/bonus_box.png
+share/wormux/object/fire.png
+share/wormux/object/pink_star.png
+share/wormux/object/smoke.png
+share/wormux/object/smoke2.png
+share/wormux/object/smoke3.png
+share/wormux/object/star.png
+share/wormux/object/yellow_star.png
+share/wormux/skin/alien/alien-anim.png
+share/wormux/skin/alien/alien-helmet.png
+share/wormux/skin/alien/alien-jet-fly-leftright.png
+share/wormux/skin/alien/alien-jet-fly-move.png
+share/wormux/skin/alien/alien-jet-fly.png
+share/wormux/skin/alien/alien-jet-walk.png
+share/wormux/skin/alien/alien-jump.png
+share/wormux/skin/alien/alien.png
+share/wormux/skin/alien/alien_mort.png
+share/wormux/skin/alien/config.xml
+share/wormux/skin/alien/noye.png
+share/wormux/skin/ecureuil/config.xml
+share/wormux/skin/ecureuil/ecu-mort.png
+share/wormux/skin/ecureuil/ecureuil-anim.png
+share/wormux/skin/ecureuil/ecureuil-helmet.png
+share/wormux/skin/ecureuil/ecureuil-jetpack-leftright.png
+share/wormux/skin/ecureuil/ecureuil-jetpack.png
+share/wormux/skin/ecureuil/ecureuil-jetpackup.png
+share/wormux/skin/ecureuil/ecureuil-jump.png
+share/wormux/skin/escargot/clope-anim.png
+share/wormux/skin/escargot/config.xml
+share/wormux/skin/escargot/escargot-fly.png
+share/wormux/skin/escargot/escargot-helmet.png
+share/wormux/skin/escargot/escargot-jetpack-lr.png
+share/wormux/skin/escargot/escargot-jetpack-up.png
+share/wormux/skin/escargot/escargot-jump.png
+share/wormux/skin/escargot/escargot-mort.png
+share/wormux/skin/escargot/escargot.png
+share/wormux/skin/firefoxteam/animation.png
+share/wormux/skin/firefoxteam/black.png
+share/wormux/skin/firefoxteam/config.xml
+share/wormux/skin/firefoxteam/dead.png
+share/wormux/skin/firefoxteam/drowned.png
+share/wormux/skin/firefoxteam/fall.png
+share/wormux/skin/firefoxteam/helmet.png
+share/wormux/skin/firefoxteam/jetpack-fly-move.png
+share/wormux/skin/firefoxteam/jetpack-fly.png
+share/wormux/skin/firefoxteam/jetpack-walk.png
+share/wormux/skin/firefoxteam/jump.png
+share/wormux/skin/firefoxteam/walking.png
+share/wormux/skin/flament_rose/config.xml
+share/wormux/skin/flament_rose/flament-anim-helmet.png
+share/wormux/skin/flament_rose/flament-anim.png
+share/wormux/skin/flament_rose/flament-jp-lr.png
+share/wormux/skin/flament_rose/flament-jp-up.png
+share/wormux/skin/flament_rose/flament-jp.png
+share/wormux/skin/flament_rose/flament-jump.png
+share/wormux/skin/flament_rose/flament-mort.png
+share/wormux/skin/flament_rose/flament-yeux.png
+share/wormux/skin/gnuteam/animation.png
+share/wormux/skin/gnuteam/black.png
+share/wormux/skin/gnuteam/config.xml
+share/wormux/skin/gnuteam/dead.png
+share/wormux/skin/gnuteam/drowned.png
+share/wormux/skin/gnuteam/fall.png
+share/wormux/skin/gnuteam/helmet.png
+share/wormux/skin/gnuteam/jetpack-fly-move.png
+share/wormux/skin/gnuteam/jetpack-fly.png
+share/wormux/skin/gnuteam/jetpack-walk.png
+share/wormux/skin/gnuteam/jump.png
+share/wormux/skin/gnuteam/walking.png
+share/wormux/skin/konqiteam/animation.png
+share/wormux/skin/konqiteam/black.png
+share/wormux/skin/konqiteam/config.xml
+share/wormux/skin/konqiteam/dead.png
+share/wormux/skin/konqiteam/drowned.png
+share/wormux/skin/konqiteam/fall.png
+share/wormux/skin/konqiteam/helmet.png
+share/wormux/skin/konqiteam/jetpack-fly-move.png
+share/wormux/skin/konqiteam/jetpack-fly.png
+share/wormux/skin/konqiteam/jetpack-walk.png
+share/wormux/skin/konqiteam/jump.png
+share/wormux/skin/konqiteam/walking.png
+share/wormux/skin/nupikteam/animation.png
+share/wormux/skin/nupikteam/black.png
+share/wormux/skin/nupikteam/config.xml
+share/wormux/skin/nupikteam/dead.png
+share/wormux/skin/nupikteam/drowned.png
+share/wormux/skin/nupikteam/fall.png
+share/wormux/skin/nupikteam/helmet.png
+share/wormux/skin/nupikteam/jetpack-fly-move.png
+share/wormux/skin/nupikteam/jetpack-fly.png
+share/wormux/skin/nupikteam/jetpack-walk.png
+share/wormux/skin/nupikteam/jump.png
+share/wormux/skin/nupikteam/walking.png
+share/wormux/skin/phpteam/animation.png
+share/wormux/skin/phpteam/black.png
+share/wormux/skin/phpteam/config.xml
+share/wormux/skin/phpteam/dead.png
+share/wormux/skin/phpteam/drowned.png
+share/wormux/skin/phpteam/fall.png
+share/wormux/skin/phpteam/helmet.png
+share/wormux/skin/phpteam/jetpack-fly-move.png
+share/wormux/skin/phpteam/jetpack-fly.png
+share/wormux/skin/phpteam/jetpack-walk.png
+share/wormux/skin/phpteam/jump.png
+share/wormux/skin/phpteam/walking.png
+share/wormux/skin/poulpe/breathe.png
+share/wormux/skin/poulpe/config.xml
+share/wormux/skin/poulpe/noye.png
+share/wormux/skin/poulpe/poulpe-anim.png
+share/wormux/skin/poulpe/poulpe-gratte-anim.png
+share/wormux/skin/poulpe/poulpe-helmet.png
+share/wormux/skin/poulpe/poulpe-jp-lr.png
+share/wormux/skin/poulpe/poulpe-jp-up.png
+share/wormux/skin/poulpe/poulpe-jp.png
+share/wormux/skin/poulpe/poulpe-jump.png
+share/wormux/skin/poulpe/poulpe-mort.png
+share/wormux/skin/snortteam/animation.png
+share/wormux/skin/snortteam/black.png
+share/wormux/skin/snortteam/config.xml
+share/wormux/skin/snortteam/dead.png
+share/wormux/skin/snortteam/drowned.png
+share/wormux/skin/snortteam/fall.png
+share/wormux/skin/snortteam/helmet.png
+share/wormux/skin/snortteam/jetpack-fly-move.png
+share/wormux/skin/snortteam/jetpack-fly.png
+share/wormux/skin/snortteam/jetpack-walk.png
+share/wormux/skin/snortteam/jump.png
+share/wormux/skin/snortteam/walking.png
+share/wormux/skin/thunderbirdteam/animation.png
+share/wormux/skin/thunderbirdteam/black.png
+share/wormux/skin/thunderbirdteam/config.xml
+share/wormux/skin/thunderbirdteam/dead.png
+share/wormux/skin/thunderbirdteam/drowned.png
+share/wormux/skin/thunderbirdteam/fall.png
+share/wormux/skin/thunderbirdteam/helmet.png
+share/wormux/skin/thunderbirdteam/jetpack-fly-move.png
+share/wormux/skin/thunderbirdteam/jetpack-fly.png
+share/wormux/skin/thunderbirdteam/jetpack-walk.png
+share/wormux/skin/thunderbirdteam/jump.png
+share/wormux/skin/thunderbirdteam/walking.png
+share/wormux/skin/tuxteam/animation.png
+share/wormux/skin/tuxteam/black.png
+share/wormux/skin/tuxteam/config.xml
+share/wormux/skin/tuxteam/dead.png
+share/wormux/skin/tuxteam/drowned.png
+share/wormux/skin/tuxteam/fall.png
+share/wormux/skin/tuxteam/helmet.png
+share/wormux/skin/tuxteam/jetpack-fly-move.png
+share/wormux/skin/tuxteam/jetpack-fly.png
+share/wormux/skin/tuxteam/jetpack-walk.png
+share/wormux/skin/tuxteam/jump.png
+share/wormux/skin/tuxteam/walking.png
+share/wormux/skin/ver/config.xml
+share/wormux/skin/ver/marche.png
+share/wormux/skin/ver/mort.png
+share/wormux/skin/ver/noye.png
+share/wormux/skin/ver/ver-mort-douce.png
+share/wormux/skin/ver/ver-mort-mechante.png
+share/wormux/skin/wilberteam/animation.png
+share/wormux/skin/wilberteam/black.png
+share/wormux/skin/wilberteam/config.xml
+share/wormux/skin/wilberteam/dead.png
+share/wormux/skin/wilberteam/drowned.png
+share/wormux/skin/wilberteam/fall.png
+share/wormux/skin/wilberteam/helmet.png
+share/wormux/skin/wilberteam/jetpack-fly-move.png
+share/wormux/skin/wilberteam/jetpack-fly.png
+share/wormux/skin/wilberteam/jetpack-walk.png
+share/wormux/skin/wilberteam/jump.png
+share/wormux/skin/wilberteam/walking.png
+share/wormux/skin/workraveteam/animation.png
+share/wormux/skin/workraveteam/black.png
+share/wormux/skin/workraveteam/config.xml
+share/wormux/skin/workraveteam/dead.png
+share/wormux/skin/workraveteam/drowned.png
+share/wormux/skin/workraveteam/fall.png
+share/wormux/skin/workraveteam/helmet.png
+share/wormux/skin/workraveteam/jetpack-fly-move.png
+share/wormux/skin/workraveteam/jetpack-fly.png
+share/wormux/skin/workraveteam/jetpack-walk.png
+share/wormux/skin/workraveteam/jump.png
+share/wormux/skin/workraveteam/walking.png
+share/wormux/sound/default/crazy_01.ogg
+share/wormux/sound/default/crazy_02.ogg
+share/wormux/sound/default/crazy_03.ogg
+share/wormux/sound/default/crazy_04.ogg
+share/wormux/sound/default/crazy_05.ogg
+share/wormux/sound/default/cuss_01.ogg
+share/wormux/sound/default/cuss_02.ogg
+share/wormux/sound/default/cuss_03.ogg
+share/wormux/sound/default/cuss_04.ogg
+share/wormux/sound/default/death_01.ogg
+share/wormux/sound/default/death_02.ogg
+share/wormux/sound/default/fire_01.ogg
+share/wormux/sound/default/fire_02.ogg
+share/wormux/sound/default/hehe.ogg
+share/wormux/sound/default/hop_01.ogg
+share/wormux/sound/default/out_01.ogg
+share/wormux/sound/default/profile.xml
+share/wormux/sound/default/sink.ogg
+share/wormux/sound/default/skip_turn.ogg
+share/wormux/sound/default/step_01.ogg
+share/wormux/sound/default/step_02.ogg
+share/wormux/sound/default/suicide_01.ogg
+share/wormux/sound/default/superjump_01.ogg
+share/wormux/sound/default/uuh_01.ogg
+share/wormux/sound/default/uuh_02.ogg
+share/wormux/sound/default/uuh_03.ogg
+share/wormux/sound/default/uuh_04.ogg
+share/wormux/sound/default/uuh_05.ogg
+share/wormux/sound/default/uuh_06.ogg
+share/wormux/sound/default/uuh_07.ogg
+share/wormux/sound/default/uuh_08.ogg
+share/wormux/sound/flying/flying.ogg
+share/wormux/sound/flying/profile.xml
+share/wormux/sound/francais/crazy.ogg
+share/wormux/sound/francais/fire_01.ogg
+share/wormux/sound/francais/fire_02.ogg
+share/wormux/sound/francais/profile.xml
+share/wormux/sound/share/end_turn.ogg
+share/wormux/sound/share/explosion.ogg
+share/wormux/sound/share/frog_music.ogg
+share/wormux/sound/share/laughing.ogg
+share/wormux/sound/share/menu/cancel.ogg
+share/wormux/sound/share/menu/clic.ogg
+share/wormux/sound/share/menu/ok.ogg
+share/wormux/sound/share/profile.xml
+share/wormux/sound/share/step.ogg
+share/wormux/sound/share/victory.ogg
+share/wormux/team/alien/flag.png
+share/wormux/team/alien/team.xml
+share/wormux/team/escargot/flag.png
+share/wormux/team/escargot/team.xml
+share/wormux/team/firefoxteam/flag.png
+share/wormux/team/firefoxteam/team.xml
+share/wormux/team/gnuteam/flag.png
+share/wormux/team/gnuteam/team.xml
+share/wormux/team/konquiteam/flag.png
+share/wormux/team/konquiteam/team.xml
+share/wormux/team/nupikteam/flag.png
+share/wormux/team/nupikteam/team.xml
+share/wormux/team/nuts/flag.png
+share/wormux/team/nuts/team.xml
+share/wormux/team/phpteam/flag.png
+share/wormux/team/phpteam/team.xml
+share/wormux/team/pink_floyd/flag.png
+share/wormux/team/pink_floyd/team.xml
+share/wormux/team/poulpe/flag.png
+share/wormux/team/poulpe/team.xml
+share/wormux/team/snortteam/flag.png
+share/wormux/team/snortteam/team.xml
+share/wormux/team/thunderbirdteam/flag.png
+share/wormux/team/thunderbirdteam/team.xml
+share/wormux/team/tuxteam/flag.png
+share/wormux/team/tuxteam/team.xml
+share/wormux/team/ver/flag.png
+share/wormux/team/ver/team.xml
+share/wormux/team/wilberteam/flag.png
+share/wormux/team/wilberteam/team.xml
+share/wormux/team/workraveteam/flag.png
+share/wormux/team/workraveteam/team.xml
+share/wormux/weapon/air_attack/air_attack.png
+share/wormux/weapon/air_attack/air_attack_ico.png
+share/wormux/weapon/air_attack/air_attack_plane.png
+share/wormux/weapon/air_attack/obus.png
+share/wormux/weapon/airhammer/airhammer.png
+share/wormux/weapon/airhammer/airhammer_ico.png
+share/wormux/weapon/airhammer/airhammer_impact.png
+share/wormux/weapon/baseball/baseball.png
+share/wormux/weapon/baseball/baseball_ico.png
+share/wormux/weapon/bazooka/baz_cible.png
+share/wormux/weapon/bazooka/bazooka.png
+share/wormux/weapon/bazooka/bazooka_auto_ico.png
+share/wormux/weapon/bazooka/bazooka_ico.png
+share/wormux/weapon/bazooka/missile.png
+share/wormux/weapon/bounce_ball/bounce_ball.png
+share/wormux/weapon/bounce_ball/bounce_ball_ico.png
+share/wormux/weapon/cluster_bomb/cluster.png
+share/wormux/weapon/cluster_bomb/clusterbomb.png
+share/wormux/weapon/cluster_bomb/clusterbomb_ico.png
+share/wormux/weapon/dynamite/dynamite.png
+share/wormux/weapon/dynamite/dynamite_ani.png
+share/wormux/weapon/dynamite/dynamite_ico.png
+share/wormux/weapon/dynamite/hole.png
+share/wormux/weapon/gnu/gnu.png
+share/wormux/weapon/gnu/gnu_ico.png
+share/wormux/weapon/gnu/gnulauncher.png
+share/wormux/weapon/grenade/grenade.png
+share/wormux/weapon/grenade/grenade_ico.png
+share/wormux/weapon/gun/gun.png
+share/wormux/weapon/gun/gun_bullet.png
+share/wormux/weapon/gun/gun_ico.png
+share/wormux/weapon/holly_grenade/holly_grenade.png
+share/wormux/weapon/holly_grenade/holly_grenade_ico.png
+share/wormux/weapon/jet_pack/jet_pack_ico.png
+share/wormux/weapon/lowgrav/lowgrav_ico.png
+share/wormux/weapon/mine/mine.png
+share/wormux/weapon/mine/mine_anim.png
+share/wormux/weapon/mine/mine_ico.png
+share/wormux/weapon/mine/mine_impact.png
+share/wormux/weapon/ninja_rope/ninjahook.png
+share/wormux/weapon/ninja_rope/ninjanode.png
+share/wormux/weapon/ninja_rope/ninjarope.png
+share/wormux/weapon/ninja_rope/ninjarope_ico.png
+share/wormux/weapon/parachute/parachute.png
+share/wormux/weapon/parachute/parachute_ico.png
+share/wormux/weapon/push_ico.png
+share/wormux/weapon/skip_turn/skipturn.png
+share/wormux/weapon/skip_turn/skipturn_ico.png
+share/wormux/weapon/sound/alleluia.ogg
+share/wormux/weapon/sound/baseball.ogg
+share/wormux/weapon/sound/commit_suicide.ogg
+share/wormux/weapon/sound/dynamite.ogg
+share/wormux/weapon/sound/dynamite_exp.ogg
+share/wormux/weapon/sound/dynamite_fuze.ogg
+share/wormux/weapon/sound/grenade_bounce.ogg
+share/wormux/weapon/sound/gun.ogg
+share/wormux/weapon/sound/holly_grenade_bounce.ogg
+share/wormux/weapon/sound/jetpack.ogg
+share/wormux/weapon/sound/load.ogg
+share/wormux/weapon/sound/mine_beep.ogg
+share/wormux/weapon/sound/pistolet.ogg
+share/wormux/weapon/sound/teleport_land.ogg
+share/wormux/weapon/sound/teleport_start.ogg
+share/wormux/weapon/sound/uzi.ogg
+share/wormux/weapon/suicide/suicide.png
+share/wormux/weapon/suicide/suicide_ico.png
+share/wormux/weapon/supertux/superman.png
+share/wormux/weapon/supertux/supertux.png
+share/wormux/weapon/supertux/supertux_ico.png
+share/wormux/weapon/teleportation/teleportation.png
+share/wormux/weapon/teleportation/teleportation_ico.png
+share/wormux/weapon/uzi/uzi.png
+share/wormux/weapon/uzi/uzi_ico.png
+share/wormux/weapons.xml
+share/wormux/wormux-128.xpm
+share/wormux/wormux-32.xpm
+@dirrm share/wormux/weapon/uzi
+@dirrm share/wormux/weapon/teleportation
+@dirrm share/wormux/weapon/supertux
+@dirrm share/wormux/weapon/suicide
+@dirrm share/wormux/weapon/sound
+@dirrm share/wormux/weapon/skip_turn
+@dirrm share/wormux/weapon/parachute
+@dirrm share/wormux/weapon/ninja_rope
+@dirrm share/wormux/weapon/mine
+@dirrm share/wormux/weapon/lowgrav
+@dirrm share/wormux/weapon/jet_pack
+@dirrm share/wormux/weapon/holly_grenade
+@dirrm share/wormux/weapon/gun
+@dirrm share/wormux/weapon/grenade
+@dirrm share/wormux/weapon/gnu
+@dirrm share/wormux/weapon/dynamite
+@dirrm share/wormux/weapon/cluster_bomb
+@dirrm share/wormux/weapon/bounce_ball
+@dirrm share/wormux/weapon/bazooka
+@dirrm share/wormux/weapon/baseball
+@dirrm share/wormux/weapon/airhammer
+@dirrm share/wormux/weapon/air_attack
+@dirrm share/wormux/weapon
+@dirrm share/wormux/team/workraveteam
+@dirrm share/wormux/team/wilberteam
+@dirrm share/wormux/team/ver
+@dirrm share/wormux/team/tuxteam
+@dirrm share/wormux/team/thunderbirdteam
+@dirrm share/wormux/team/snortteam
+@dirrm share/wormux/team/poulpe
+@dirrm share/wormux/team/pink_floyd
+@dirrm share/wormux/team/phpteam
+@dirrm share/wormux/team/nuts
+@dirrm share/wormux/team/nupikteam
+@dirrm share/wormux/team/konquiteam
+@dirrm share/wormux/team/gnuteam
+@dirrm share/wormux/team/firefoxteam
+@dirrm share/wormux/team/escargot
+@dirrm share/wormux/team/alien
+@dirrm share/wormux/team
+@dirrm share/wormux/sound/share/menu
+@dirrm share/wormux/sound/share
+@dirrm share/wormux/sound/francais
+@dirrm share/wormux/sound/flying
+@dirrm share/wormux/sound/default
+@dirrm share/wormux/sound
+@dirrm share/wormux/skin/workraveteam
+@dirrm share/wormux/skin/wilberteam
+@dirrm share/wormux/skin/ver
+@dirrm share/wormux/skin/tuxteam
+@dirrm share/wormux/skin/thunderbirdteam
+@dirrm share/wormux/skin/snortteam
+@dirrm share/wormux/skin/poulpe
+@dirrm share/wormux/skin/phpteam
+@dirrm share/wormux/skin/nupikteam
+@dirrm share/wormux/skin/konqiteam
+@dirrm share/wormux/skin/gnuteam
+@dirrm share/wormux/skin/flament_rose
+@dirrm share/wormux/skin/firefoxteam
+@dirrm share/wormux/skin/escargot
+@dirrm share/wormux/skin/ecureuil
+@dirrm share/wormux/skin/alien
+@dirrm share/wormux/skin
+@dirrm share/wormux/object
+@dirrm share/wormux/menu/img
+@dirrm share/wormux/menu
+@dirrm share/wormux/map/wildwestdv
+@dirrm share/wormux/map/vulcano
+@dirrm share/wormux/map/space
+@dirrm share/wormux/map/qingqong
+@dirrm share/wormux/map/prehistorik
+@dirrm share/wormux/map/pirates
+@dirrm share/wormux/map/paradis
+@dirrm share/wormux/map/noel
+@dirrm share/wormux/map/monkeybubbleworld
+@dirrm share/wormux/map/mer
+@dirrm share/wormux/map/libellule
+@dirrm share/wormux/map/leafs
+@dirrm share/wormux/map/island
+@dirrm share/wormux/map/hell
+@dirrm share/wormux/map/halloween
+@dirrm share/wormux/map/grenouilles
+@dirrm share/wormux/map/goodandevil
+@dirrm share/wormux/map/electronik
+@dirrm share/wormux/map/desert
+@dirrm share/wormux/map/cowland
+@dirrm share/wormux/map/cheese
+@dirrm share/wormux/map/champignon
+@dirrm share/wormux/map/catacombes
+@dirrm share/wormux/map/battlenight
+@dirrm share/wormux/map/banquise
+@dirrm share/wormux/map/arbre
+@dirrm share/wormux/map/araignee
+@dirrm share/wormux/map/aquarium
+@dirrm share/wormux/map
+@dirrm share/wormux/interface
+@dirrm share/wormux/gfx
+@dirrm share/wormux/game_mode
+@dirrm share/wormux/font
+@dirrm share/wormux
 @dirrmtry share/locale/sk/LC_MESSAGES
 @dirrmtry share/locale/sk
 @dirrmtry share/locale/ro/LC_MESSAGES
