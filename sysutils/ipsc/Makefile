@@ -17,15 +17,12 @@ COMMENT=	An IP Subnet Calculator
 
 BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build
 
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2007-01-02
-
 WRKSRC=		${WRKDIR}/ipsc/src
 
 WANT_GNOME=	yes
 PLIST_FILES=	bin/ipsc
 
-MAN8=	ipsc.8	
+MAN8=	ipsc.8
 
 .if defined(HAVE_GNOME)
 USE_X_PREFIX=	yes
@@ -46,5 +43,6 @@ do-install:
 .if defined(HAVE_GNOME)
 	${INSTALL_PROGRAM} ${WRKSRC}/gipsc ${PREFIX}/bin
 .endif
-	${INSTALL_MAN} files/ipsc.8 ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${FILESDIR}/ipsc.8 ${MANPREFIX}/man/man8
+
 .include <bsd.port.mk>
