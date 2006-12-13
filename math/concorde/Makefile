@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tsp.gatech.edu/concorde/downloads/codes/src/
 DISTNAME=	co031219
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dbader@ece.unm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combinatorial Optimization package
 
 WRKSRC=		${WRKDIR}/concorde

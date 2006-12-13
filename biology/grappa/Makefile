@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.cs.unm.edu/~moret/GRAPPA/
 DISTNAME=	GRAPPA20
 
-MAINTAINER=	dbader@ece.unm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Genome Rearrangements Analysis and Phylogeny Software
 
 USE_GMAKE=	yes

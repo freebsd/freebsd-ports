@@ -13,7 +13,7 @@ DIST_SUBDIR=	mpich
 #PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
 #PATCHFILES=	10039 10243 10246
 
-MAINTAINER=	dbader@ece.unm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message Passing Interface (MPI) Library
 
 USE_BZIP2=	yes
