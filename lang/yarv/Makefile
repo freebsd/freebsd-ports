@@ -29,6 +29,10 @@ OPTIONS=	DEBUG "Enable debugging information" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		does not build
+.endif
+
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=--enable-ipv6
 .if ${OSVERSION} < 500000
