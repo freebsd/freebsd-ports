@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wv2
-PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTVERSION=	0.2.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -23,7 +22,7 @@ USE_GNOME=	gnometarget libgsf
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} "s,-pedantic ,," ${WRKSRC}/configure
