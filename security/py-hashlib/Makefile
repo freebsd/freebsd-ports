@@ -23,6 +23,12 @@ USE_PYDISTUTILS=	yes
 IGNORE=	hashlib ships with Python 2.5.x
 .endif
 
+.if ${OSVERSION} >= 700019
+PLIST_SUB+=	OSSL="@comment "
+.else
+PLIST_SUB+=	OSSL=""
+.endif
+
 PYDISTUTIL_BUILDARGS=	--openssl-prefix=${OPENSSLDIR} --openssl-incdir=${OPENSSLINC} --openssl-libdir=${OPENSSLLIB}
 
 .include <bsd.port.post.mk>

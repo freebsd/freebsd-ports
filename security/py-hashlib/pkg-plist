@@ -5,5 +5,5 @@
 %%PYTHON_SITELIBDIR%%/test_hashlib.pyc
 %%PYTHON_SITELIBDIR%%/test_hashlib.pyo
 %%PYTHON_SITELIBDIR%%/_hashlib.so
-%%PYTHON_SITELIBDIR%%/_sha256.so
-%%PYTHON_SITELIBDIR%%/_sha512.so
+%%OSSL%%%%PYTHON_SITELIBDIR%%/_sha256.so
+%%OSSL%%%%PYTHON_SITELIBDIR%%/_sha512.so
