@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	dbader@ece.unm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Phylogeny Inference Package
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
