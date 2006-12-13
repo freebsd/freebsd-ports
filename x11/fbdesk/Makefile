@@ -14,7 +14,7 @@ MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 		http://dl.kel.wormulon.net/fbdesk/
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	hendrik@scholz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Fluxbox utility to create and manage icons on the desktop
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

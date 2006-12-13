@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
 
-MAINTAINER=	hendrik@scholz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

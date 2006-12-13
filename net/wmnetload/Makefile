@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://truffula.com/pub/ \
 				http://dl.fkb.wormulon.net/wmnetload/ \
 				http://dl.kel.wormulon.net/wmnetload/
 
-MAINTAINER=	hendrik@scholz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network load monitor dockapp
 
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp

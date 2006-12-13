@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
 DISTNAME=	OilWar-${PORTVERSION}
 
-MAINTAINER=	hendrik@scholz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evil army wants to steal your oil
 
 USE_SDL=	image mixer sdl
