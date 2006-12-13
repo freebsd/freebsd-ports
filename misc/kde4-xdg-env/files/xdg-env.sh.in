@@ -4,12 +4,24 @@
 #
 # Submit missing XDG-file locations to kde@freebsd.org!
 
-export XDG_CONFIG_DIRS=\
+XDG_CONFIG_DIRS=\
 ${XDG_CONFIG_DIRS}:/etc/xdg:%%LOCALBASE%%/etc/xdg:%%X11BASE%%/etc/xdg:\
-%%LOCALBASE%%/etc/xdg/xfce4:%%KDE_PREFIX%%/etc/xdg
+%%LOCALBASE%%/etc/xdg/xfce4
 
-export XDG_DATA_DIRS=\
-${XDG_DATA_DIRS}:/usr/share:%%LOCALBASE%%/share:\
-%%X11BASE%%/share:%%X11BASE%%/share/gnome:%%KDE_PREFIX%%/share
+if [ %%KDE_PREFIX%% != %%LOCALBASE%% ]; then
+    XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS}:%%KDE_PREFIX%%/etc/xdg
+fi
+
+export XDG_CONFIG_DIRS
+
+XDG_DATA_DIRS=\
+${XDG_DATA_DIRS}:/usr/share:%%LOCALBASE%%/share:%%LOCALBASE%%/share/gnome:\
+%%X11BASE%%/share:%%X11BASE%%/share/gnome
+
+if [ %%KDE_PREFIX%% != %%LOCALBASE%% ]; then
+    XDG_DATA_DIRS=${XDG_DATA_DIRS}:%%KDE_PREFIX%%/share
+fi
+
+export XDG_DATA_DIRS
 
 kbuildsycoca
