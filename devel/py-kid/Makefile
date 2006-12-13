@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.kid-templating.org/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple template language for XML based written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree

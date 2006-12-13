@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pyxlwriter
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyXLWriter-${PORTVERSION}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python library for generating Excel-compatible spreadsheets
 
 USE_PYTHON=	yes

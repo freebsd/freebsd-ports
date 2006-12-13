@@ -13,7 +13,7 @@ MASTER_SITES=	http://cheeseshop.python.org/packages/source/S/SQLObject/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python object for manipulation with SQL table row
 
 USE_PYTHON=	yes

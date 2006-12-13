@@ -10,7 +10,7 @@ PORTVERSION=	3.1.1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/980/
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
 
 USE_GMAKE=	yes

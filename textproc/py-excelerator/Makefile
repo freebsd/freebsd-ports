@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pyexcelerator
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyexcelerator-${PORTVERSION}
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python library for generating Excel 97/2000/XP/2003 files
 
 USE_PYTHON=	2.4+
