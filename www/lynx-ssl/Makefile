@@ -13,7 +13,9 @@ MASTERDIR=	${.CURDIR}/../lynx
 DESCR=		${.CURDIR}/pkg-descr
 
 CONFIGURE_ARGS+=	--with-ssl
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${OPENSSLINC}"
 
 CONFLICTS=	lynx-2* lynx-current*
+USE_OPENSSL=	yes
 
 .include "${MASTERDIR}/Makefile"

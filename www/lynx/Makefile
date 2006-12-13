@@ -50,6 +50,8 @@ L_HELP=		${PREFIX}/share/lynx_help
 
 post-patch:
 	@${RM} -f ${WRKSRC}/CHANGES.orig
+	@${REINPLACE_CMD} -e 's|-lssl -lcrypto|-L${OPENSSLLIB} &|g' \
+		${WRKSRC}/configure
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
