@@ -7,7 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux-ha.org/download/
 
@@ -15,7 +15,7 @@ MAINTAINER=	scott-ports@tummy.com
 COMMENT=	Subsystem for High-Availability Clustering
 
 BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	cogito
 PORTVERSION=	0.17.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/cogito/ \
 		http://www.uk.kernel.org/pub/software/scm/cogito/ \

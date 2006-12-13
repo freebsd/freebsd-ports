@@ -6,6 +6,7 @@
 
 PORTNAME=	wmget
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://amtrickey.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -13,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Dock app for Window Maker providing wget functionality
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

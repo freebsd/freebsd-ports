@@ -7,7 +7,7 @@
 
 PORTNAME=	rssyl
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	sylpheed-claws-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	A RSS/Atom plugin for sylheed-claws
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 

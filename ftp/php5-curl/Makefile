@@ -11,4 +11,6 @@ MASTERDIR=	${.CURDIR}/../../lang/php5
 
 PKGNAMESUFFIX=	-curl
 
+PORTREVISION=	1
+
 .include "${MASTERDIR}/Makefile"

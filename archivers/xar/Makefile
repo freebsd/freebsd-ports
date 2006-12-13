@@ -7,6 +7,7 @@
 
 PORTNAME=	xar
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.opendarwin.org/projects/xar/ \
 		http://distfiles-msn.opendarwin.org/ \

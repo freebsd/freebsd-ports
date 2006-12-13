@@ -7,6 +7,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.2.d.8
+PORTREVISION=	1
 DISTVERSION=	0.2DrHouse
 CATEGORIES?=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -77,7 +78,7 @@ EXCLUDE+=	python ruby java xmmsclient-ecore xmmsclient++ xmmsclient++-glib
 
 .if !defined(XMMS2_SLAVE)
 .if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 EXCLUDE+=	curl
@@ -91,7 +92,7 @@ LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	LASTFM=""
 .else
 EXCLUDE+=	lastfm lastfmeta
-PLIST_SUB+=	LASTMFM="@comment "
+PLIST_SUB+=	LASTFM="@comment "
 .endif
 
 .if defined(WITH_SID)
@@ -229,6 +230,9 @@ PLIST_SUB+=	AO="@comment "
 .endif
 
 .if defined(WITH_MDNS_AVAHI)
+.if defined(WITH_MDNS_APPLE)
+BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
+.endif
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
 PLIST_SUB+=	MDNS_AVAHI=""
 .else
@@ -237,6 +241,9 @@ PLIST_SUB+=	MDNS_AVAHI="@comment "
 .endif
 
 .if !defined (WITHOUT_MDNS_APPLE)
+.if defined(WITH_MDNS_AVAHI)
+BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
+.endif
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else

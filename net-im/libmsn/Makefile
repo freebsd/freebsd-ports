@@ -8,7 +8,7 @@
 
 PORTNAME=	libmsn
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://libmsn.bdash.net.nz/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for connecting to MSN Messenger service
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://warsow.aditsystems.com/ \
 		http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
@@ -49,7 +49,7 @@ PLIST_SUB+=	ARCHSUFFIX=${ARCHSUFFIX}
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 USE_SDL=	yes

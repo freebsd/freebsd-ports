@@ -7,6 +7,7 @@
 
 PORTNAME=	osslsigncode
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 .if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 .endif
 
 .include <bsd.port.mk>

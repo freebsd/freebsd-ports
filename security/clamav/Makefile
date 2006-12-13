@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.88.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -115,7 +116,7 @@ PLIST_SUB+=	CLAMAV-MILTER="@comment "
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libcurl
 .else
 CONFIGURE_ARGS+=	--without-libcurl

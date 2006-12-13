@@ -101,7 +101,8 @@ libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
 %%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
 %%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
-%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
+%%MDNS_AVAHI%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
+%%MDNS_APPLE%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 @dirrm %%DATADIR%%/scripts/startup.d
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
