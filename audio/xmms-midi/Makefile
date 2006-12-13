@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
 				http://dl.kel.wormulon.net/xmms-midi/
 
-MAINTAINER=	hendrik@scholz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play midi files
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

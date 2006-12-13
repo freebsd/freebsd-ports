@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.buici.com/pub/buici-clock/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	hendrik@scholz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xlib implementation of an attractive, configurable clock
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
