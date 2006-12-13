@@ -19,7 +19,7 @@ COMMENT=	Device independent view of the CDF data model
 
 MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu	\
 		FORTRAN=yes F77=${F77}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 VER=		${PORTVERSION:S/.//}
 
@@ -36,6 +36,10 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ${ARCH}
+.endif
+
+.if ${OSVERSION} >= 700000
+WITH_FORTRAN=	yes
 .endif
 
 pre-configure:

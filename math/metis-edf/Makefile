@@ -29,6 +29,12 @@ PROGS=		kmetis onmetis.exe pmetis
 
 MACHINEARCH=	${ARCH}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+WITH_FORTRAN=	yes
+.endif
+
 pre-configure:
 .if ${MACHINEARCH} != "i386"
 	@${FIND} ${WRKSRC} -type f -name "*.c" -o -name "*.h" | ${XARGS}	\
@@ -56,4 +62,4 @@ post-install:
 	@${ECHO_MSG} "===> Test file installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
