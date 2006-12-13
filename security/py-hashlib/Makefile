@@ -10,7 +10,7 @@ CATEGORIES=	security devel python
 MASTER_SITES=	http://code.krypto.org/python/hashlib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Backport of Python 2,5's haslib module
 
 USE_PYTHON=	yes
