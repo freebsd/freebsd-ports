@@ -9,7 +9,8 @@ PORTNAME=	rtpmon
 PORTVERSION=	1.0a7
 PORTREVISION=	2
 CATEGORIES=	mbone tk83
-MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	A program to montior loss in multicast sessions
