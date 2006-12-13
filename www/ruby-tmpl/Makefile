@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An online/offline templating system a la eRuby/ERb
 
 USE_RUBY=	yes

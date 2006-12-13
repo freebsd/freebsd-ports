@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gigavenue.com/mirrors/ruby/ \
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around libGeoIP
 
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP

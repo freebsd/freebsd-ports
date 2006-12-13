@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that provides the country code of the client's IP
 
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP

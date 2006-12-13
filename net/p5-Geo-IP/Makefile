@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gets country name by IP or hostname
 
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP

@@ -13,7 +13,7 @@ CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Independent Abstraction Layer for C
 
 GNU_CONFIGURE=	yes

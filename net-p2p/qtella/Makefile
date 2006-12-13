@@ -12,7 +12,7 @@ CATEGORIES=		net-p2p
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qtella
 
-MAINTAINER=		seanc@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A Gnutella client using Qt
 
 HAS_CONFIGURE=		yes

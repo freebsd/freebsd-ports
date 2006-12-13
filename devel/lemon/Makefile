@@ -10,7 +10,7 @@ PORTVERSION=	1.39
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/${PORTNAME}/
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An LALR(1) parser generator. Similar in function to yacc and bison
 
 USE_BZIP2=	yes

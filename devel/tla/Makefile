@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
 MASTER_SITE_SUBDIR=	gnu-arch
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
 
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \

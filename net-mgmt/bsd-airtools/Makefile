@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/bsd-airtools/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD Wireless Scanning Tools
 
 CONF_AIRTOOLS=	dstumbler

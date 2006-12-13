@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
 DISTNAME=	RubyInline-${PORTVERSION}
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
 
 GEM_NAME=	${DISTNAME}

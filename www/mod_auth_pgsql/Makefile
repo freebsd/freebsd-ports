@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}

@@ -11,7 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcshrc
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of configuration scripts for the TCSH shell
 
 INSTALL_TARGET=	systeminstall
