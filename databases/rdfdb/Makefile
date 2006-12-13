@@ -15,7 +15,8 @@ DISTNAME=	rdfdb_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight RDF database
 
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+USE_BDB=	3+
+INVALID_BDB_VER=2
 
 WRKSRC=	${WRKDIR}/rdfdb
 USE_GMAKE=	yes
@@ -30,6 +31,8 @@ PLIST_SUB=	RDFDB_DIR=${RDFDB_DIR}
 post-patch:
 	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS:S/"//g},g' \
+		-e 's,%%BDB_INCLUDE_DIR%%,${BDB_INCLUDE_DIR},g'\
+		-e 's,%%BDB_LIB_NAME%%,${BDB_LIB_NAME},g' \
 		< ${WRKSRC}/makefile > ${WRKSRC}/makefile.new
 	@${MV} ${WRKSRC}/makefile.new ${WRKSRC}/makefile
 
