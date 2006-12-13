@@ -1,3 +1,77 @@
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/Agent.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/AgentManagement.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/HtmlPlace.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/HttpPlace.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/Invoker.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/PlaceAccessControl.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/SecureHtmlPlace.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/SecureHttpPlace.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/SendStrategy.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/UserMgt.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/WebAgent.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/WebDocument.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/WebObject.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/pageTemplate.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/actiweb/pkgIndex.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/RDFCreator.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/RDFTriple.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/pkgIndex.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/rdfExample.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/rdfRecreatorVisitor.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/xoRDF.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/registry/Registry.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/registry/pkgIndex.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/JufGdbmStorage.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/MemStorage.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/MultiStorage.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/Persistence.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/Storage.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/TclGdbmStorage.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/TextFileStorage.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/persistenceExample.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/store/pkgIndex.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/pkgIndex.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/printVisitor.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/sgml.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xml.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xml.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xmlExample.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xmlRecreatorVisitor.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xoXML.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/ChainOfResponsibility.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/OnCalleeProxy.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/Singleton.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/SortedComposite.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/adapter.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/composite.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/link.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/manager.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/observer.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/pkgIndex.tcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/AgentClient.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/Counter.README
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/Counter.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/Counter2.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/Counter3.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/Counter4.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/FormsWithState.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/MC.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/Receiver.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/examples.README
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/securePlaceDemo.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/UNIVERSAL.css
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/UNIVERSAL.jpg
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/UNIVERSAL.rdf
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/UNIVERSAL.xotcl
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/server.key
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/server.pem
+%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/persistence/persistenceTest.xotcl
+%%ACTIWEB%%lib/xotclexpat0.9/libxotclexpat0.9.so
+%%ACTIWEB%%lib/xotclexpat0.9/pkgIndex.tcl
+%%ACTIWEB%%lib/xotclsdbm1.2/libxotclsdbm1.2.so
+%%ACTIWEB%%lib/xotclsdbm1.2/pkgIndex.tcl
+%%ACTIWEB%%lib/xotclgdbm1.2/libxotclgdbm1.2.so
+%%ACTIWEB%%lib/xotclgdbm1.2/pkgIndex.tcl
 %%AOLSERVER%%aolserver/modules/tcl/xotcl.tcl
 bin/xotclsh
 include/xotcl%%PORTVERSION%%/xotcl.h
@@ -161,6 +235,18 @@ lib/xotcl%%PORTVERSION%%/xotclConfig.sh
 %%TUTORIAL%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/announces
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/actiweb
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/rdf
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/registry
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/store
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/xml
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/patterns
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/apps/actiweb/univ
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/apps/actiweb
+%%ACTIWEB%%@dirrm lib/xotcl%%PORTVERSION%%/apps/persistence
+%%ACTIWEB%%@dirrm lib/xotclexpat0.9
+%%ACTIWEB%%@dirrm lib/xotclsdbm1.2
+%%ACTIWEB%%@dirrm lib/xotclgdbm1.2
 @dirrm include/xotcl%%PORTVERSION%%
 @dirrm lib/xotcl%%PORTVERSION%%/apps/comm
 @dirrm lib/xotcl%%PORTVERSION%%/apps/scripts
