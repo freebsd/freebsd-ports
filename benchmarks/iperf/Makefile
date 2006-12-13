@@ -7,6 +7,7 @@
 
 PORTNAME=	iperf
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
