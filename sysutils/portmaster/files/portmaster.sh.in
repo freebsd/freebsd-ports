@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.130
+# Local version: 1.139
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
@@ -11,7 +11,9 @@ trap trap_exit INT
 # Keep track of the parent process
 if [ -z "$PARENT_PID" ]; then
 	PARENT_PID=$$
-	export PARENT_PID
+	: ${TMPDIR:=/tmp}
+	UPGRADE_TOOL=portmaster
+	export PARENT_PID TMPDIR UPGRADE_TOOL
 fi
 
 # %%LOCALBASE%% and %%X11BASE%% are needed in path for make
@@ -37,6 +39,7 @@ usage () {
 	echo ''
 	echo "${0##*/} [Common flags] <glob pattern of directory in $pdb>"
 	echo "${0##*/} [Common flags] -p <port directory in $pd>"
+	echo "${0##*/} [Common flags] . [Use in $pd/foo/bar to build that port]"
 	echo ''
 	echo "${0##*/} [Common flags] -o <new port dir in $pd> <installed port>"
 	echo "${0##*/} [Common flags] -r <name/glob of port directory in $pdb>"
@@ -134,7 +137,7 @@ trap_exit () {
 	fi
 
 	if [ "$$" -eq "$PARENT_PID" ]; then
-		for file in ${TMPDIR:-/tmp}/fetchlog-${PARENT_PID}-*; do
+		for file in ${TMPDIR}/fetchlog-${PARENT_PID}-*; do
 			pid=`awk '/^MCS_CHILD_PID / {print $2}' $file 2>/dev/null`
 			test -n "$pid" || continue
 			echo -n "===>>> Child process $pid: "
@@ -172,11 +175,25 @@ safe_exit () {
 			*)	rm -f $MASTER_RB_LIST ;;
 			esac
 		fi
+		for file in ${TMPDIR}/f-${PARENT_PID}-*; do
+			test -f $file && unlink $file
+		done
+
+		if [ -n "$DISPLAY_LIST" ]; then
+			for f in $DISPLAY_LIST; do
+				echo "===>>> pkg-message for ${f%/+DISPLAY}"
+				cat $pdb/$f
+				echo ''
+			done
+
+			echo "===>>> Done displaying pkg-message files"
+		fi
 	else
 		# Save state for the parent process to read back in
 		echo "CURRENT_DEPS_O='$CURRENT_DEPS_O'" >> $IPC_SAVE
 		echo "CURRENT_DEPS_I='$CURRENT_DEPS_I'" >> $IPC_SAVE
 		echo "IGNOREME_YES='$IGNOREME_YES'" >> $IPC_SAVE
+		echo "DISPLAY_LIST='$DISPLAY_LIST'" >> $IPC_SAVE
 
 		if [ -n "$INTERACTIVE_UPDATE" ]; then
 			echo "INTERACTIVE_YES='$INTERACTIVE_YES'" >> $IPC_SAVE
@@ -412,30 +429,35 @@ check_for_updates () {
 
 find_moved_port () {
 	# newportdir and oldportdir are used globally
-	local m
+	local l m sf
 
-	newportdir=`sed -ne "s#^${1}|\([^|]*\)|.*#\1#p" $pd/MOVED`
-	if [ ! -n "$newportdir" ]; then
-		m=`sed -ne "s#^${1}||.*|\(.*\)#\1#p" $pd/MOVED`
-		if [ -n "$m" ]; then
-			fail "The $1 port has been deleted: $m"
-		else
-			echo ''
-			echo "===>>> No $pd/$1 exists, and no information"
-			echo "===>>> about $1 can be found in $pd/MOVED"
-			echo ''
-			return 1
-		fi
+	sf=$1
+
+	while read l; do
+		case "$l" in
+		${sf}\|\|*)	m=`echo $l | cut -f 4 -d\|`
+				fail "The $sf port has been deleted: $m"
+				;;
+		${sf}\|*)	newportdir=`echo $l | cut -f 2 -d\|`
+				m=`echo $l | cut -f 4 -d\|`
+				echo ''
+				echo "===>>> The $sf port moved to $newportdir"
+				echo "===>>> Reason: $m"
+				echo ''
+				sf=$newportdir
+				;;
+		esac
+	done < $pd/MOVED
+
+	if [ -z "$newportdir" ]; then
+		echo ''
+		echo "===>>> No $pd/$1 exists, and no information"
+		echo "===>>> about $1 can be found in $pd/MOVED"
+		echo ''
+		return 1
 	fi
 
-	m=`sed -ne "s#^${1}|.*|.*|\(.*\)#\1#p" $pd/MOVED`
 	oldportdir=$1
-	# Just in case there was more than one match, use the last one
-	newportdir=`echo $newportdir | sed 's/.* //'`
-	echo ''
-	echo "===>>> The $1 port has moved to $newportdir"
-	echo "===>>> Reason: $m"
-	echo ''
 
 	return 0
 }
@@ -531,7 +553,6 @@ dependency_check () {
 			op=`echo $op | sed 's/.* //'`
 
 			if [ -n "$op" ]; then
-				dep_port=$pd/$op
 				old_p=`iport_from_origin ${op}`
 				if [ -n "$old_p" ]; then
 					upd_args=$old_p
@@ -606,13 +627,8 @@ req_by_error () {
 	read DISCARD
 }
 
-find_distdir () {
-	distdir=`make $MAKE_ARGS -V DISTDIR`
-	dist_subdir=`make $MAKE_ARGS -V DIST_SUBDIR`
-	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
-}
-
 find_and_delete_distfiles () {
+	# old_distpattern is used for subsequent invocations of the function
 	local distpattern file DELORNOT
 
 	distpattern=${1%[_-]*}
@@ -628,8 +644,9 @@ find_and_delete_distfiles () {
 
 		case "$distfiles" in
 		*${file}*)
-			test -n "$VERBOSE" &&
-			    echo "===>>> Keeping new distfile: $file"
+			if [ -n "$VERBOSE" -a -z "$do_delete" ]; then
+				echo "===>>> Keeping new distfile: $file"
+			fi
 			continue	# Do not delete current version
 			;;
 		*)	[ ! -d "$file" ] || continue
@@ -650,21 +667,50 @@ find_and_delete_distfiles () {
 }
 
 delete_stale_distfiles () {
-	# distfiles is used below
-	local distfile file DELORNOT
+	# distfiles is used globally
+	local distdir dist_subdir file DELORNOT distfile
 
-	find_distdir
+	distdir=`make $MAKE_ARGS -V DISTDIR`
+	dist_subdir=`make $MAKE_ARGS -V DIST_SUBDIR`
+	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
 
-	distfiles=`make $MAKE_ARGS -V DISTFILES`
-	distfiles="$distfiles `make $MAKE_ARGS -V PATCHFILES`"
+	# Also used in find_and_delete_distfiles() to make sure
+	# we do not delete the current set of distfiles
+	distfiles=`make $MAKE_ARGS -V ALLFILES`
+
 	cd $distdir || fail "cd to $distdir failed!"
+
+	# If these two match, it means that the distfiles in the +CONTENTS
+	# file are the current set, so do not delete them.
+	if [ ! "$cont_distfiles" = "${distfiles% }" ]; then
+		for file in $cont_distfiles; do
+			[ -f $file ] || continue
+
+			if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
+				echo "===>>> Deleting stale distfile: $file"
+				rm -f $file
+				continue
+			fi
+
+			echo -n "===>>> Delete $file? [n] "
+			read DELORNOT
+			case "$DELORNOT" in
+			[yY])	rm -f $file ;;
+			esac
+		done
+	fi
+
+	# Eventually we will hide this behind an "aggressive distfile purge"
+	# flag, but until the DISTFILE stuff is well populated in +CONTENTS,
+	# keep doing it both ways.
 	for distfile in $distfiles; do
 		find_and_delete_distfiles $distfile
 	done
 }
 
 delete_all_distfiles () {
-	local do_delete DELORNOT
+	# do_delete is used globally
+	local DELORNOT
 
 	if ! cd $pd/$1; then
 		echo "===>>> No $pd/$1 to cd to in order to delete"
@@ -683,7 +729,6 @@ delete_all_distfiles () {
 		fi
 
 		if [ -n "$do_delete" ]; then
-			find_distdir
 			delete_stale_distfiles
 			rm -f $distfiles
 			find $pd/distfiles/ -type d -empty -delete
@@ -810,11 +855,32 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
 	exit 0
 fi
 
+find_contents_distfiles () {
+	[ -n "$DONT_SCRUB_DISTFILES" ] && return 0
+
+	# cont_distfiles is used globally
+	local file
+
+	for file in `grep DISTFILE $pdb/$1/+CONTENTS | cut -f2 -d:`; do
+		cont_distfiles="${cont_distfiles} ${file#*/}"
+	done
+
+	cont_distfiles=${cont_distfiles# }
+}
+
 if [ -n "$EXPUNGE" ]; then
 	if [ -d "$pdb/$EXPUNGE" ]; then
 		origin=`origin_from_pdb $pdb/$EXPUNGE`
+		deplist=`grep -l DEPORIGIN:$origin$ $pdb/*/+CONTENTS`
+		if [ -n "$deplist" ]; then
+		echo "===>>> Warning: ports with dependencies on ${EXPUNGE}:"
+			for dep in $deplist; do echo ${dep%/+CON*}; done
+			exit 1
+		fi
 
 		[ -n "$BACKUP" ] && backup_package $EXPUNGE
+
+		find_contents_distfiles $EXPUNGE
 
 		echo "===>>> Running pkg_delete -f $EXPUNGE"
 		pkg_delete -f $EXPUNGE
@@ -846,10 +912,10 @@ if [ -n "$CLEAN_STALE" ]; then
 		echo ''
 
 		origin=`origin_from_pdb $dir`
-		deplist=`grep DEPORIGIN:$origin$ $pdb/*/+CONTENTS`
+		deplist=`grep -l DEPORIGIN:$origin$ $pdb/*/+CONTENTS`
 		if [ -n "$deplist" ]; then
 		echo "===>>> Warning: unrecorded dependencies on ${iport}:"
-			echo $deplist
+			for dep in $deplist; do echo ${dep%/+CON*}; done
 			continue
 		fi
 
@@ -857,6 +923,8 @@ if [ -n "$CLEAN_STALE" ]; then
 		read YESNO
 		case "$YESNO" in
 		[yY])	[ -n "$BACKUP" ] && backup_package $iport
+
+			find_contents_distfiles $iport
 
 			echo "===>>> Running pkg_delete -f $iport"
 			pkg_delete -f ${iport}
@@ -892,8 +960,9 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 	CURRENT_DEPS_O=':'
 	CURRENT_DEPS_I=':'
 	IGNOREME_YES=':'
+	DISPLAY_LIST=''
 	IPC_SAVE=`mktemp -t ipc_save-$PARENT_PID`
-	export CURRENT_DEPS_O CURRENT_DEPS_I IGNOREME_YES IPC_SAVE
+	export CURRENT_DEPS_O CURRENT_DEPS_I IGNOREME_YES DISPLAY_LIST IPC_SAVE
 
 	if [ -n "$INTERACTIVE_UPDATE" ]; then
 		INTERACTIVE_YES=':'
@@ -1032,6 +1101,7 @@ case "$portdir" in
 	'')	test -z "$UPDATE_REQ_BYS" && usage ;;
 	${pd}/*)	portdir="${1#$pd/}" ;;
 	/*)	upg_port="${1##*/}" ;;
+	\.)	portdir="${PWD##*/ports/}" ;;
 	*)	upg_port=$1 ;;
 	esac
 esac
@@ -1115,18 +1185,35 @@ done
 
 # Do these things first time through, with or without 'make config'
 if [ -z "$BUILDING" ]; then
+dofetch () {
 	echo "===>>> Launching 'make checksum' for $portdir in background"
 	fetchlog=`mktemp -t fetchlog-${PARENT_PID}-${portdir##*/}`
 	(make $MAKE_ARGS checksum >> $fetchlog 2>&1 &&
-	    { rm -f $fetchlog; exit 0;}
-	    dists=`make $MAKE_ARGS -V DISTFILES`
-	    patches=`make $MAKE_ARGS -V PATCHFILES`
-	    make $MAKE_ARGS delete-distfiles \
-		RESTRICTED_FILES="${dists%:[0-9]} ${patches%:[0-9]}" \
+	    { rm -f $fetchlog; \
+	    rm -f ${TMPDIR}/f-${PARENT_PID}-*-${portdir##*/}.*; exit 0;}
+	    allfiles=`make $MAKE_ARGS -V ALLFILES`
+	    make $MAKE_ARGS delete-distfiles RESTRICTED_FILES="${allfiles}" \
 		>> $fetchlog 2>&1 &&
 	    echo "===>>> RE-STARTING FETCH <<<===" >> $fetchlog
-	    make $MAKE_ARGS checksum >> $fetchlog 2>&1 ; rm -f $fetchlog)&
+	    make $MAKE_ARGS checksum >> $fetchlog 2>&1; \
+	    rm -f ${TMPDIR}/f-${PARENT_PID}-*-${portdir##*/}.*; \
+	    rm -f $fetchlog)&
 	echo "MCS_CHILD_PID $!" >> $fetchlog
+}
+
+	distfiles=`make $MAKE_ARGS -V ALLFILES`
+	for file in $distfiles; do
+		flag_file=f-${PARENT_PID}-${file}
+		echo "Debug> ${TMPDIR}/${flag_file}-"
+		if ! ls ${TMPDIR}/${flag_file}-* >/dev/null 2>&1; then
+			mktemp -t ${flag_file}-${portdir##*/} >/dev/null
+		else
+			DONT_FETCH=yes
+			break
+		fi
+	done
+
+	test -z "$DONT_FETCH" && dofetch
 
 	TESTINT=`make -V IS_INTERACTIVE`
 	if [ -n "$TESTINT" ]; then
@@ -1224,7 +1311,7 @@ case "$DONT_PRE_CLEAN" in
 '')	make $MAKE_ARGS clean NOCLEANDEPENDS=yes || fail 'make clean failed' ;;
 esac
 
-fl_read=`echo ${TMPDIR:-/tmp}/fetchlog-${PARENT_PID}-${portdir##*/}.*`
+fl_read=`echo ${TMPDIR}/fetchlog-${PARENT_PID}-${portdir##*/}.*`
 while [ -f "$fl_read" ]; do
 	echo ''
 	echo "===>>> Waiting on fetch & checksum for $portdir <<<==="
@@ -1290,6 +1377,12 @@ fi
 
 # Ignore if no old port exists
 if [ -n "$upg_port" ]; then
+	find_contents_distfiles $upg_port
+
+	UPGRADE_PORT=$upg_port
+	UPGRADE_PORT_VER=`echo $UPGRADE_PORT | sed 's#.*-\(.*\)#\1#'`
+	export UPGRADE_PORT UPGRADE_PORT_VER
+
 	if [ -z "$NO_BACKUP" ]; then
 		backup_package $upg_port
 	fi
@@ -1303,23 +1396,32 @@ if [ -n "$upg_port" ]; then
 	fi
 fi
 
-aw=install
-fw=Installation
-if [ -n "$MAKE_PACKAGE" ]; then
-	aw=package
-	fw=Packaging
-	echo "===>>> Creating a package for new version $new_port"
-fi
-make $MAKE_ARGS $aw clean NOCLEANDEPENDS=yes || {
+make $MAKE_ARGS install clean NOCLEANDEPENDS=yes || {
     if [ -z "$NO_BACKUP" -a -n "$upg_port" ]; then
 	echo ''
 	echo "===>>> A backup package for $portdir should be located in $pkgrep"
     fi
-    fail "$fw of new port failed";}
+    fail "Installation of new port failed";}
 
-test -z "$BACKUP" && test -f "$pkgrep/$bu_pkg_name" && rm -f $pkgrep/$bu_pkg_name
+# Implement storage of distfile information in the +CONTENTS file in the
+# same way that it will (hopefully, soon?) be implemented in bsd.port.mk
+# See http://www.freebsd.org/cgi/query-pr.cgi?pr=106483
+if ! grep -q DISTFILE $pdb/$new_port/+CONTENTS; then
+	ds=`make $MAKE_ARGS -V DIST_SUBDIR`
+	test -n "$ds" && ds="${ds}/"
+
+	allfiles=`make $MAKE_ARGS -V ALLFILES`
+	for file in $allfiles; do
+		size=`grep "^SIZE (${ds}${file})" distinfo | cut -f4 -d' '`
+		sha256=`grep "^SHA256 (${ds}${file})" distinfo | cut -f4 -d' '`
+		md5=`grep "^MD5 (${ds}${file})" distinfo | cut -f4 -d' '`
+		echo "@comment DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $pdb/$new_port/+CONTENTS
+	done
+fi
 
 if [ -n "$MAKE_PACKAGE" ]; then
+	echo "===>>> Creating a package for new version $new_port"
+	make $MAKE_ARGS package || fail 'Package creation of new port failed'
 	[ -z "$pkgrep" ] &&
 	    pkgrep=`make $MAKE_ARGS -f $pd/Mk/bsd.port.mk -V PKGREPOSITORY`
 	if [ ! -d "$pkgrep" ]; then
@@ -1328,6 +1430,8 @@ if [ -n "$MAKE_PACKAGE" ]; then
 	fi
 	echo "	===>>> Package can be found in $pkgrep"
 fi
+
+test -z "$BACKUP" && test -f "$pkgrep/$bu_pkg_name" && rm -f $pkgrep/$bu_pkg_name
 
 # By now, if this file exists, it should be authoritative
 if [ -s "$req_deps" ]; then
@@ -1369,6 +1473,8 @@ test -z "$upg_port" && upg_port=$portdir
 echo "===>>> Upgrade for $upg_port to $new_port succeeded"
 
 test -n "$FORCE" && FORCE_DONE_LIST="${FORCE_DONE_LIST}${portdir}:"
+test -e "$pdb/$new_port/+DISPLAY" &&
+    DISPLAY_LIST="${DISPLAY_LIST}$new_port/+DISPLAY "
 
 if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 	if [ -z "$oldportdir" ]; then
