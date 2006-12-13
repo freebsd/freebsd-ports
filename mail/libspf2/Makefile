@@ -7,7 +7,7 @@
 
 PORTNAME=	libspf2
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	spf
@@ -17,7 +17,7 @@ COMMENT=	Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=	${PORTNAME}-1.0.*
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
