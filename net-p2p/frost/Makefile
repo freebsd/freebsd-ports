@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jtcfrost
 DISTNAME=	${PORTNAME}-20-Oct-2005-java${JAVA_VERSION:S/.//}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
 
 USE_JAVA=	yes

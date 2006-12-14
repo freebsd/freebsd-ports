@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 #DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
 DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure java napster client; also, supports OpenNap & giFT (FastTrack)
 
 USE_JAVA=	yes
