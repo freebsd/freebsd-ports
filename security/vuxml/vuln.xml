@@ -45,7 +45,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	  <p>A eRuby injection vulnerability has been discovered in tDiary.</p>
+	<p>A eRuby injection vulnerability has been discovered in tDiary.</p>
       </body>
     </description>
     <references>
@@ -134,8 +134,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	  <p>The tnftpd port suffer from a remote stack overrun,
-           which can lead to a root compromise.</p>
+	<p>The tnftpd port suffer from a remote stack overrun,
+	  which can lead to a root compromise.</p>
       </body>
     </description>
     <references>
@@ -312,7 +312,6 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Another vulnerability has been discovered in the CGI library
 	    (cgi.rb) that ships with Ruby which could be used by a malicious
 	    user to create a denial of service attack (DoS).</p>
-
 	  <p>A specific HTTP request for any web application using cgi.rb
 	    causes CPU consumption on the machine on which the web application
 	    is running. Many such requests result in a denial of service.</p>
@@ -327,6 +326,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2006-12-04</entry>
     </dates>
   </vuln>
+
   <vuln vid="ed124f8c-82a2-11db-b46b-0012f06707f0">
     <topic>libmusicbrainz -- multiple buffer overflow vulnerabilities</topic>
     <affects>
@@ -343,7 +343,6 @@ Note:  Please add new entries to the beginning of this file.
 	    vulnerabilities because the application fails to check the size of
 	    the data before copying it into a finite-sized internal memory
 	    buffer.</p>
-
 	  <p>An attacker can exploit these issues to execute arbitrary code
 	    within the context of the application or to cause a
 	    denial-of-service condition.</p>
@@ -401,7 +400,6 @@ Note:  Please add new entries to the beginning of this file.
             vulnerability because the application fails to properly
 	    bounds-check user-supplied input before copying it to an
 	    insufficiently sized memory buffer.</p>
-
 	  <p>Exploiting this issue allows attackers to execute arbitrary
 	    machine code in the context of applications that use the
 	    ImageMagick library.</p>
@@ -642,11 +640,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/22732/">
-
 	  <p>Some vulnerabilities have been reported in imlib2, which can be
-	    exploited by malicious people to cause a DoS (Denial of Service) or
-	    potentially compromise an application using the library.</p>
-
+	    exploited by malicious people to cause a DoS (Denial of Service)
+	    or potentially compromise an application using the library.</p>
 	  <p>The vulnerabilities are caused due to unspecified errors within
 	    the processing of JPG, ARGB, PNG, LBM, PNM, TIFF, and TGA images.
 	    This may be exploited to execute arbitrary code by e.g. tricking a
@@ -672,24 +668,24 @@ Note:  Please add new entries to the beginning of this file.
     <topic>ruby -- cgi.rb library Denial of Service</topic>
     <affects>
       <package>
-        <name>ruby</name>
-        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+	<name>ruby</name>
+	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
       </package>
       <package>
-        <name>ruby+pthreads</name>
-        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+	<name>ruby+pthreads</name>
+	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
       </package>
       <package>
-        <name>ruby+pthreads+oniguruma</name>
-        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+	<name>ruby+pthreads+oniguruma</name>
+	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
       </package>
       <package>
-        <name>ruby+oniguruma</name>
-        <range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
+	<name>ruby+oniguruma</name>
+	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
       </package>
       <package>
-        <name>ruby_static</name>
-        <range><ge>1.8.*,1</ge></range>
+	<name>ruby_static</name>
+	<range><ge>1.8.*,1</ge></range>
       </package>
     </affects>
     <description>
@@ -990,8 +986,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>drupal -- HTML attribute injection</topic>
     <affects>
       <package>
-        <name>drupal</name>
-        <range><lt>4.6.10</lt></range>
+	<name>drupal</name>
+	<range><lt>4.6.10</lt></range>
       </package>
     </affects>
     <description>
@@ -1021,8 +1017,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>drupal -- cross site request forgeries</topic>
     <affects>
       <package>
-        <name>drupal</name>
-        <range><lt>4.6.10</lt></range>
+	<name>drupal</name>
+	<range><lt>4.6.10</lt></range>
       </package>
     </affects>
     <description>
@@ -1059,8 +1055,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>drupal -- multiple XSS vulnerabilities</topic>
     <affects>
       <package>
-        <name>drupal</name>
-        <range><lt>4.6.10</lt></range>
+	<name>drupal</name>
+	<range><lt>4.6.10</lt></range>
       </package>
     </affects>
     <description>
@@ -1098,8 +1094,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>ingo -- local arbitrary shell command execution</topic>
     <affects>
       <package>
-        <name>ingo</name>
-        <range><lt>1.1.2</lt></range>
+	<name>ingo</name>
+	<range><lt>1.1.2</lt></range>
       </package>
     </affects>
     <description>
