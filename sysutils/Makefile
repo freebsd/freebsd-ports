@@ -301,7 +301,6 @@
     SUBDIR += k3b
     SUBDIR += kcpuload
     SUBDIR += kcube
-    SUBDIR += kdar
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
     SUBDIR += kkbswitch
