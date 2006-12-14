@@ -1,0 +1,9 @@
+nose provides an alternate test discovery and running process for
+unittest, one that is intended to mimic the behavior of py.test as
+much as is reasonably possible without resorting to magic. By default,
+nose will run tests in files or directories under the current working
+directory whose names include "test". nose also supports doctest tests
+and may optionally provide a test coverage report.
+
+Author:	Jason Pellerin <jpellerin+nose@gmail.com>
+WWW:	http://somethingaboutorange.com/mrl/projects/nose/
