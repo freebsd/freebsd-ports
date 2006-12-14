@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
 
-MAINTAINER=	bll@gentoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Information Utility
 
 USE_GETTEXT=	yes
