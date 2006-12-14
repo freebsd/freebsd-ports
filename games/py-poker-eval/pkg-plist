@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/_pokereval_2_5.a
+%%PYTHON_SITELIBDIR%%/_pokereval_2_5.so
+%%PYTHON_SITELIBDIR%%/_pokereval_2_5.so.1
+%%PYTHON_SITELIBDIR%%/pokereval.py
+%%PYTHON_SITELIBDIR%%/pokereval.pyc
+%%PYTHON_SITELIBDIR%%/pokereval.pyo
+libdata/pkgconfig/pypoker-eval.pc

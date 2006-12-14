@@ -1,0 +1,8 @@
+This package is python adaptor for the poker-eval toolkit for writing
+programs which simulate or analyze poker games as found at
+http://gna.org/projects/pokersource/. The python interface is
+somewhat simpler than the C API of poker-eval. It assumes that the
+caller is willing to have a higher level API and is not interested in
+a one to one mapping of the poker-eval API.
+
+WWW: http://www.pokersource.org/pypoker-eval.php
