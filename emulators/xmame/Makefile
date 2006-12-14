@@ -7,7 +7,7 @@
 
 PORTNAME?=	xmame
 PORTVERSION?=	0.106
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.franksworld.org/dist/xmame/:xmame \
 		http://x.mame.net/download/:xmame \
