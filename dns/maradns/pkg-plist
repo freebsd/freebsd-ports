@@ -10,6 +10,8 @@ etc/maradns/example_csv2
 @dirrmtry etc/maradns
 sbin/maradns
 sbin/zoneserver
+%%PORTDOCS%%%%DOCSDIR%%/en/QuickStart
+%%PORTDOCS%%%%DOCSDIR%%/en/README
 %%PORTDOCS%%%%DOCSDIR%%/en/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/en/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/credits.txt
@@ -17,18 +19,25 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/en/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/files.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/QuickStart
-%%PORTDOCS%%%%DOCSDIR%%/en/README
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/example_manpage.1
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/man.macros
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/man.macros.7
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/README
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/0README
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/RFC1035.compliance
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/advocacy/active.other
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/advocacy/bind9
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/advocacy/djbdns
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/advocacy/inactive
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/bind2csv2.design
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/cache.poison.protection
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/compression/decompress_api.abw
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/compression/decompress_api.html
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/compression/describing_dns_rrs.html
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/compression/handling.compression
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/csv2-1.4-ideas/csv2.brace.processing
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/csv2.regexmatch.functionlist
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/dns-record-types.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/how.maradns.stores.rrs
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/how.to.support.sql
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/README
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_alloc.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_append.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_atoi.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_buf_eof.3
@@ -42,8 +51,8 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_destroy_force.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_fgrep.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_fgrep_offset.3
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_getline_stdin.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_get_encode.3
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_getline_stdin.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_has_sanity.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_insert.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_issame.3
@@ -72,9 +81,10 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_unlock.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_val.3
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_write.3
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/js-manpages/js_alloc.3
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/rfc/rfc1035.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/how.to.support.sql
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/README
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/example_manpage.1
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/man.macros
+%%PORTDOCS%%%%DOCSDIR%%/en/misc/man_macros/man.macros.7
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/multiple.qdcount
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/private_rrs.abw
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/private_rrs.html
@@ -83,84 +93,64 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/recursive.algorithm
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/resolution.algorithm
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/rfc1034.notes.abw
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/RFC1035.compliance
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/setup.bind.djbdns.axfr.test
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/vim.cheatsheet
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/0README
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/year_2038_statement.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/cache.poison.protection
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/csv2.regexmatch.functionlist
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/dns-record-types.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/misc/how.maradns.stores.rrs
 %%PORTDOCS%%%%DOCSDIR%%/en/pdf/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/en/pdf/manpage_reference.pdf
 %%PORTDOCS%%%%DOCSDIR%%/en/pdf/README
+%%PORTDOCS%%%%DOCSDIR%%/en/pdf/manpage_reference.pdf
 %%PORTDOCS%%%%DOCSDIR%%/en/pdf/tmac.an.patch
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/dnsintro.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.csv2.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.mararc.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.maradns.html
+%%PORTDOCS%%%%DOCSDIR%%/en/text/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/en/text/authoritative.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/compile.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/convert.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/dangling.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/default_zonefile.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/dnsintro.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/dnsmaster.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/dnsslave.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/dnstcp.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/glossary.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.askmara.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.csv2.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.csv2_txt.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.duende.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.fetchzone.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.maradns.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.mararc.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/man.zoneserver.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/quick_start.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/recordtypes.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/recursive.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/update.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/text/win_service.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/authoritative.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/compile.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/convert.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/recursive.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/glossary.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/make.index
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/recordtypes.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/dangling.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/default_zonefile.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/dnstcp.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.duende.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/dnsintro.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/dnsmaster.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.csv2_txt.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/update.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/dnsslave.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/quick_start.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/dnstcp.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/make.index
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.askmara.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.csv2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.csv2_txt.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.duende.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.fetchzone.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.maradns.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.mararc.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/man.zoneserver.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/quick_start.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/recordtypes.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/recursive.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/en/text/dnsintro.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/compile.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/en/text/authoritative.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/convert.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/recursive.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/glossary.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/recordtypes.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/dangling.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/default_zonefile.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/dnstcp.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.duende.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/dnsmaster.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.csv2_txt.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.csv2.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/dnsslave.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/update.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.askmara.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.fetchzone.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.zoneserver.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.maradns.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/man.mararc.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/quick_start.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/text/tutorial.txt
-%%PORTDOCS%%%%DOCSDIR%%/fr/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/faq.txt
-%%PORTDOCS%%%%DOCSDIR%%/fr/QuickStart
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/compile.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/convert.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/glossary.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/man.askmara.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/man.csv1.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/man.getzone.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/man.maradns.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/man.mararc.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/man.zoneserver.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/recursive.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/tutorial/authoritative.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/update.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/win_service.html
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/example_authoritative_mararc.txt
 %%EXAMPLESDIR%%/example_csv1
@@ -170,21 +160,15 @@ sbin/zoneserver
 %%EXAMPLESDIR%%/example_full_mararc.orig
 %%EXAMPLESDIR%%/example_mararc
 %%EXAMPLESDIR%%/example_recursive_mararc.txt
-%%EXAMPLESDIR%%/fr/Makefile
-%%EXAMPLESDIR%%/fr/example_csv1
-%%EXAMPLESDIR%%/fr/example_mararc
-@dirrm %%EXAMPLESDIR%%/fr
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/text
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/man_macros
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/js-manpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/csv2-1.4-ideas
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/advocacy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/compression
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/csv2-1.4-ideas
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/js-manpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/man_macros
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/text
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/tutorial
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
