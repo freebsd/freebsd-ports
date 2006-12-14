@@ -9,7 +9,7 @@ PORTNAME=	netpbm
 .if defined(WITH_NETPBM_DEVEL)
 PORTVERSION= 	10.30
 .else
-PORTVERSION=	10.26.34
+PORTVERSION=	10.26.35
 .endif
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,7 +33,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		netpbm.1
 
