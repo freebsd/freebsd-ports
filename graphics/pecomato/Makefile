@@ -8,7 +8,7 @@
 PORTNAME=	pecomato
 PORTVERSION=	0.0.13
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.mollux.org/projects/pecomato/download/sources/ \
+MASTER_SITES=	http://wwp.free.fr/mollux.org/projects/pecomato/download/sources/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 
