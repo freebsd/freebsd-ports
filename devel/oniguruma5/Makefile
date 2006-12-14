@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	2.5.7
-CATEGORIES=	devel
+PORTVERSION=	2.5.8
+CATEGORIES=	devel textproc
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 DISTNAME=	onigd${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-#INSTALLS_SHLIB=	yes
 
 DOCS=		HISTORY README doc/*
 
