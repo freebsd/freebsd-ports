@@ -23,6 +23,9 @@ CONFIGURE_ARGS+=	--enable-ip-based-virtual --enable-virtual
 .elif defined(WITH_VIRTUAL)
 CONFIGURE_ARGS+=	--enable-virtual
 .endif
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
 
 MAN8=		vm-pop3d.8
 
@@ -34,6 +37,7 @@ pre-patch:
 	@${ECHO} ""
 	@${ECHO} "	WITH_VIRTUAL	enable virtual passwd files and spool directories."
 	@${ECHO} "	WITH_IPVIRTUAL	enable IP-based virtual passwd files and spool directories."
+	@${ECHO} "	WITH_DEBUG	enable debugging."
 	@${ECHO} ""
 
 post-patch:

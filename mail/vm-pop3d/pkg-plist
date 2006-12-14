@@ -1,9 +1,9 @@
 etc/rc.d/vm-pop3d.sh.sample
 sbin/vm-pop3d
-%%PORTDOCS%%share/doc/vm-pop3d/AUTHORS
-%%PORTDOCS%%share/doc/vm-pop3d/CHANGES
-%%PORTDOCS%%share/doc/vm-pop3d/COPYING
-%%PORTDOCS%%share/doc/vm-pop3d/FAQ
-%%PORTDOCS%%share/doc/vm-pop3d/INSTALL
-%%PORTDOCS%%share/doc/vm-pop3d/README
-%%PORTDOCS%%@dirrm share/doc/vm-pop3d
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
