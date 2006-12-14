@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger-plugins-hubbe
 PORTVERSION=	5.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www multimedia audio graphics print editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -23,7 +23,6 @@ RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		xanim:${PORTSDIR}/multimedia/xanim \
 		${LOCALBASE}/share/eawpats/acbass.pat:${PORTSDIR}/audio/eawpats \
-		alsaplayer:${PORTSDIR}/audio/alsaplayer \
 		xpdf:${PORTSDIR}/graphics/xpdf \
 		gqview:${PORTSDIR}/graphics/gqview \
 		plugger-controller:${PORTSDIR}/www/plugger \
