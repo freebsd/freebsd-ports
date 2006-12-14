@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5b47b70d-8ba9-11db-81d5-00123ffe8333">
+    <topic>dbus -- match_rule_equal() Weakness</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><lt>1.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/23373/">
+	  <p>D-Bus have a weakness, which can be exploited by malicious, local
+	    users to cause a DoS (Denial of Service).</p>
+	  <p>An error within the "match_rule_equal()" function can be
+	    exploited to disable the ability of other processes to receive
+	    messages by removing their matches from D-Bus.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-6107</cvename>
+      <url>http://www.freedesktop.org/wiki/Software/dbus</url>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=218055</url>
+      <url>http://secunia.com/advisories/23373/</url>
+    </references>
+    <dates>
+      <discovery>2006-12-12</discovery>
+      <entry>2006-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="779a2d55-8ba8-11db-81d5-00123ffe8333">
     <topic>evince -- Buffer Overflow Vulnerability</topic>
     <affects>
