@@ -1,0 +1,25 @@
+# New ports collection makefile for:    svgviewer
+# Date created:         14 Dec 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	svgviewer
+PORTVERSION=	0.2.0
+CATEGORIES=	graphics
+MASTER_SITES=	http://web.telia.com/~u42308495/alex/
+DISTNAME=	SVGViewer-${PORTVERSION}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	SVG Viewer for GNUstep
+
+LIB_DEPENDS+=	svg.1:${PORTSDIR}/graphics/libsvg
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+
+.include <bsd.port.mk>
