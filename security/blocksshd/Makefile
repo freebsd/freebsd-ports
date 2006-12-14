@@ -7,7 +7,7 @@
 
 PORTNAME=	blocksshd
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blocksshd
@@ -28,5 +28,6 @@ MAN1=		blocksshd.1
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/init
 	@${REINPLACE_CMD} -e 's|^MANCOMPRESS = .gz||g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/blocksshd.conf|${PREFIX}/etc/blocksshd.conf|g' ${WRKSRC}/blocksshd
 
 .include <bsd.port.mk>
