@@ -12236,6 +12236,7 @@ py-pexpect	ports/misc/py-pexpect
 py-plex		ports/devel/py-plex
 py-ply		ports/devel/py-ply
 py-pmock	ports/devel/py-pmock
+py-poker-eval	ports/games/py-poker-eval
 py-posix1e	ports/security/py-posix1e
 py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
