@@ -7,7 +7,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 PATCH_SITES=	http://www.tdiary.org/download/
-PATCHFILES=	tdiary.20061126.patch
+PATCHFILES=	tdiary.20061126.patch tdiary.20061210.patch
 
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
