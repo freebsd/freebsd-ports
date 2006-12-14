@@ -1,5 +1,9 @@
---- src/Makefile.in-orig	Mon Feb 17 22:57:18 2003
-+++ src/Makefile.in	Mon Feb 17 22:57:48 2003
+
+FreeBSD does have support for utmp/wtmp, so include relevant files into
+a build.
+
+--- src/Makefile.in.orig	Wed Dec 13 13:03:12 2006
++++ src/Makefile.in	Wed Dec 13 13:03:47 2006
 @@ -23,8 +23,7 @@
  INSTALL	= @INSTALL@
  
