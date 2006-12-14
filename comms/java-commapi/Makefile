@@ -10,12 +10,12 @@ PORTVERSION=	2.0.3
 PORTREVISION=	1
 CATEGORIES=	comms java
 MASTER_SITES=	#
-DISTNAME=	javax_comm-${PORTVERSION:S/./_/g}-solsparc
-EXTRACT_SUFX=	.tar.Z
+DISTNAME=	comm${PORTVERSION}
 
 MAINTAINER=	ari.suutari@syncrontech.com
 COMMENT=	Sun's Java Communications API
 
+USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 
@@ -23,7 +23,7 @@ NO_CDROM=	Sun has a funky license for this software
 RESTRICTED=	no commercial use
 NO_BUILD=	YES
 
-WRKSRC=		${WRKDIR}/commapi
+WRKSRC=		${WRKDIR}
 DISTDESCR=	"the Java Communications API ${PORTVERSION} for Solaris/SPARC"
 DOWNLOAD_URL=	"http://java.sun.com/products/javacomm/"
 PORTDESTDIR=	${JAVA_HOME}/jre/lib/ext
@@ -31,6 +31,7 @@ DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 DISTPATH=	${DISTDIR}/${DISTFILE}
 
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
+PLIST_FILES+=	%%JAVA_HOME%%/jre/lib/ext/comm.jar
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 IGNORE=		should be fetched manually
