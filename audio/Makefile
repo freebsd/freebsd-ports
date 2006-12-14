@@ -23,7 +23,6 @@
     SUBDIR += akode-plugins-xiph
     SUBDIR += alac
     SUBDIR += alienwah
-    SUBDIR += alsaplayer
     SUBDIR += amarok
     SUBDIR += amp
     SUBDIR += ample
