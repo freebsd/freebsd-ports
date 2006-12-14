@@ -1,0 +1,32 @@
+# New ports collection makefile for:   ushare
+# Date created:        11 December 2006
+# Whom:                Volker Theile <votdev@gmx.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ushare
+PORTVERSION=	0.9.8
+CATEGORIES=	net
+MASTER_SITES=	http://ushare.geexbox.org/releases/
+
+MAINTAINER=	votdev@gmx.de
+COMMENT=	A lightweight UPnP (TM) A/V Media Server
+
+LIB_DEPENDS=	upnp.2:${PORTSDIR}/devel/upnp
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config \
+		iconv:${PORTSDIR}/converters/libiconv
+
+PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
+MAN1=		${PORTNAME}.1
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib --mandir=${LOCALBASE}/man
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${MV} ${WRKSRC}/scripts/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>
