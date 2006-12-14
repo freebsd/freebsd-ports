@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.6.1.2006.10.12
+PORTVERSION=	2.6.2.2006.12.13
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://kalimero.be/mirror/
-DISTNAME=	${PORTNAME}-src-20061012-4408
+DISTNAME=	${PORTNAME}-src-20061213-4514
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -35,6 +35,11 @@ OPTIONS=	MCS51   "Intel mcs51 port" on \
 		PACKIHX "A tool to pack (compress) Intel hex files" on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MCS51) && !defined(WITHOUT_UCSIM) && ${OSVERSION} < 500019
+LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
+CONFIGURE_ARGS=	CPPFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib"
+.endif
 
 .if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
 CONFIGURE_ARGS+=	--disable-51
