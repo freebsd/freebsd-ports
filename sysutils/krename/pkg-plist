@@ -23,6 +23,7 @@ share/locale/pt_BR/LC_MESSAGES/krename.mo
 share/locale/ru/LC_MESSAGES/krename.mo
 share/locale/sl/LC_MESSAGES/krename.mo
 share/locale/sv/LC_MESSAGES/krename.mo
+share/locale/tr/LC_MESSAGES/krename.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/krename.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
 @dirrmtry share/locale/sl/LC_MESSAGES
