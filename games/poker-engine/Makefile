@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 
 MAINTAINER=	ijliao@FreeBSD.org
-COMMENT=	Development libraries for poker simulation
+COMMENT=	A python library that implements poker rules
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt \
