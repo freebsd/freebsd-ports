@@ -125,7 +125,6 @@
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += wildfire
-    SUBDIR += ymessenger
     SUBDIR += ysm
 
 .include <bsd.port.subdir.mk>
