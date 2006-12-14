@@ -540,6 +540,7 @@
     SUBDIR += plonx
     SUBDIR += pmars
     SUBDIR += pmars-sdl
+    SUBDIR += poker-eval
     SUBDIR += polypuzzle
     SUBDIR += pongix
     SUBDIR += pouetchess
