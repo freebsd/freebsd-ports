@@ -7,6 +7,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	1.39.30
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -76,6 +77,7 @@ OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
 
+OPTIONS+=	NLS "Native Language Support via gettext utilities" on
 OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
 
 # Prepare if gnome-console is selected this must be happen before
@@ -98,6 +100,13 @@ PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
 .endif
 
+.if defined(WITH_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+.else
+CONFIGURE_ARGS+=	--disable-nls   
+.endif
+
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
@@ -118,6 +127,7 @@ PLIST_SUB+=		GNOMECONS="@comment "
 .if defined(WITH_WXCONSOLE)
 USE_WX=			2.4
 CONFIGURE_ARGS+=	--enable-wx-console
+CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
 PLIST_SUB+=		WXCONS=""
 .else
 # We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
