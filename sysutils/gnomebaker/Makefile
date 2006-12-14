@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gnomebaker
-PORTVERSION=		0.5.1
-PORTREVISION=		1
+PORTVERSION=		0.6.1
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -19,14 +18,13 @@ OPTIONS=		DVD "Enable DVD support" off \
 			CJK "Use cdrtools-cjk instead of cdrtools" off
 
 USE_XLIB=		yes
-USE_BZIP2=		yes
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 INSTALLS_OMF=		yes
 USE_GCC=		3.4+
 USE_GETTEXT=		yes
-USE_GSTREAMER80=	vorbis mad flac
+USE_GSTREAMER=		vorbis mad flac
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

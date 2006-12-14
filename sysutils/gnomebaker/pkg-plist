@@ -44,6 +44,8 @@ share/gnome/help/gnomebaker/C/figures/gnomebaker_window.png
 share/gnome/help/gnomebaker/C/gnomebaker.xml
 share/gnome/help/gnomebaker/C/legal.xml
 share/gnome/omf/gnomebaker/gnomebaker-C.omf
+share/icons/hicolor/48x48/apps/gnomebaker-48.png
+share/icons/hicolor/icon-theme.cache
 share/locale/af/LC_MESSAGES/gnomebaker.mo
 share/locale/az/LC_MESSAGES/gnomebaker.mo
 share/locale/bg/LC_MESSAGES/gnomebaker.mo
@@ -107,24 +109,16 @@ share/locale/sl/LC_MESSAGES/gnomebaker.mo
 share/locale/sr/LC_MESSAGES/gnomebaker.mo
 share/locale/st/LC_MESSAGES/gnomebaker.mo
 share/locale/sv/LC_MESSAGES/gnomebaker.mo
-share/locale/sv_SE/LC_MESSAGES/gnomebaker.mo
 share/locale/te/LC_MESSAGES/gnomebaker.mo
 share/locale/tl/LC_MESSAGES/gnomebaker.mo
 share/locale/tr/LC_MESSAGES/gnomebaker.mo
 share/locale/uk/LC_MESSAGES/gnomebaker.mo
-share/locale/urd/LC_MESSAGES/gnomebaker.mo
+share/locale/ur/LC_MESSAGES/gnomebaker.mo
 share/locale/yi/LC_MESSAGES/gnomebaker.mo
 share/locale/zh/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_CN/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_HK/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_TW/LC_MESSAGES/gnomebaker.mo
-@dirrm share/gnome/omf/gnomebaker
-@dirrm share/gnome/help/gnomebaker/C/figures
-@dirrm share/gnome/help/gnomebaker/C
-@dirrm share/gnome/help/gnomebaker
-@dirrm share/gnome/gnomebaker
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -133,16 +127,14 @@ share/locale/zh_TW/LC_MESSAGES/gnomebaker.mo
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/yi/LC_MESSAGES
 @dirrmtry share/locale/yi
-@dirrmtry share/locale/urd/LC_MESSAGES
-@dirrmtry share/locale/urd
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
 @dirrmtry share/locale/st/LC_MESSAGES
 @dirrmtry share/locale/st
 @dirrmtry share/locale/sr/LC_MESSAGES
@@ -201,3 +193,14 @@ share/locale/zh_TW/LC_MESSAGES/gnomebaker.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bo/LC_MESSAGES
 @dirrmtry share/locale/bo
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/gnome/omf/gnomebaker
+@dirrm share/gnome/help/gnomebaker/C/figures
+@dirrm share/gnome/help/gnomebaker/C
+@dirrm share/gnome/help/gnomebaker
+@dirrm share/gnome/gnomebaker
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
