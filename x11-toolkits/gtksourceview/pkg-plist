@@ -35,6 +35,7 @@ share/gnome/gtksourceview-1.0/language-specs/ini.lang
 share/gnome/gtksourceview-1.0/language-specs/java.lang
 share/gnome/gtksourceview-1.0/language-specs/javascript.lang
 share/gnome/gtksourceview-1.0/language-specs/language.dtd
+share/gnome/gtksourceview-1.0/language-specs/language.rng
 share/gnome/gtksourceview-1.0/language-specs/latex.lang
 share/gnome/gtksourceview-1.0/language-specs/lua.lang
 share/gnome/gtksourceview-1.0/language-specs/makefile.lang
