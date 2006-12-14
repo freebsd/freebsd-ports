@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	vips
-PORTVERSION=	7.10.10
-PORTREVISION=	2
+PORTVERSION=	7.10.21
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.10/
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
@@ -162,6 +163,7 @@ MAN3=	IM_ARRAY.3 IM_IMAGE_ADDR.3 IM_IMAGE_N_ELEMENTS.3 \
 	im_writeline.3 im_zerox.3 im_zone.3 im_zoom.3
 
 post-patch:
+	@${RM} ${WRKSRC}/po/malkovich.po
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} '217D' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} '682,684s/^/#/' ${WRKSRC}/Makefile.in
