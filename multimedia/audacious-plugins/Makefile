@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/
 EXTRACT_SUFX=.tgz
@@ -16,7 +17,7 @@ COMMENT=	Plugins needed for audacious
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile  \
-		curl.3:${PORTSDIR}/ftp/curl \
+		curl.4:${PORTSDIR}/ftp/curl \
 		tag.5:${PORTSDIR}/audio/taglib
 
 USE_GNOME=	gtk20 libglade2
