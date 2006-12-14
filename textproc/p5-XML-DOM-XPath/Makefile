@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-DOM-XPath
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -16,7 +17,7 @@ MAINTAINER=	mauricio@arareko.net
 COMMENT=	Adds XPath support to XML::DOM, using XML::XPath engine
 
 RUN_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath
+		${SITE_PERL}/XML/XPathEngine.pm:${PORTSDIR}/textproc/p5-XML-XPathEngine
 
 PERL_CONFIGURE=	yes
 
