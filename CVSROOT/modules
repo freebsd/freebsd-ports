@@ -6283,6 +6283,7 @@ libpri-bristuff		ports/misc/libpri-bristuff
 libpst		ports/mail/libpst
 libqalculate	ports/math/libqalculate
 libqglviewer	ports/graphics/libqglviewer
+libqrencode	ports/graphics/libqrencode
 libquicktime	ports/multimedia/libquicktime
 libranlib	ports/math/libranlib
 libredblack	ports/devel/libredblack
