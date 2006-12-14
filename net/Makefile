@@ -831,6 +831,7 @@
     SUBDIR += uproxy
     SUBDIR += urelay
     SUBDIR += urlendec
+    SUBDIR += ushare
     SUBDIR += utftpd
     SUBDIR += v6eval
     SUBDIR += vchat

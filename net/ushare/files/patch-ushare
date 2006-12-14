@@ -1,0 +1,105 @@
+--- scripts/ushare.orig	Sat Dec  9 13:55:38 2006
++++ scripts/ushare	Thu Dec 14 09:24:40 2006
+@@ -1,74 +1,29 @@
+-#!/bin/sh -e
+-### BEGIN INIT INFO
+-# Required-Start: $local_fs $syslog
+-# Required-Stop:
+-# Default-Start:  2 3 4 5
+-# Default-Stop: 0 1 6
+-# Short-Description: start and stop ushare
+-# Description: 
+-### END INIT INFO
+-
+-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+-DAEMON=/usr/bin/ushare
+-NAME=ushare
+-DESC="uShare UPnP A/V Media Server"
+-PIDFILE=/var/run/ushare.pid
+-CONFIGFILE=/etc/ushare.conf
+-
+-# abort if no executable exists
+-[ -x $DAEMON ] || exit 0
+-
+-# Get lsb functions
+-. /lib/lsb/init-functions
+-. /etc/default/rcS
+-
+-[ -f /etc/default/ushare ] && . /etc/default/ushare
+-
+-checkpid() {
+-  [ -e $PIDFILE ] || touch $PIDFILE
+-}
+-
+-check_shares() {
+-  if [ -r "$CONFIGFILE" ]; then
+-    . $CONFIGFILE
+-    [ -n "$USHARE_DIR" ] && return 0
+-  fi
+-  return 1
+-}
+-
+-case "$1" in
+-  start)
+-    log_daemon_msg "Starting $DESC: $NAME"
+-    if ! $(check_shares); then
+-      log_warning_msg "No shares avalaible ..."
+-      log_end_msg 0
+-    else
+-      checkpid
+-      start-stop-daemon --start --quiet --background --oknodo \
+-        --make-pidfile --pidfile $PIDFILE \
+-        --exec $DAEMON -- $USHARE_OPTIONS
+-      log_end_msg $?
+-    fi
+-  ;;
+-  stop)
+-    log_daemon_msg "Stopping $DESC: $NAME"
+-    start-stop-daemon --stop --signal 2 --quiet --oknodo --pidfile $PIDFILE
+-    log_end_msg $?
+-  ;;
+-  reload|force-reload)
+-    log_daemon_msg "Reloading $DESC: $NAME"
+-    start-stop-daemon --stop --signal 1 --quiet --oknodo --pidfile $PIDFILE --exec $DAEMON
+-    log_end_msg $?
+-  ;;
+-  restart)
+-    $0 stop
+-    $1 start
+-  ;;
+-  *)
+-    N=/etc/init.d/$NAME
+-    log_success_msg "Usage: $N {start|stop|restart|reload|force-reload}"
+-    exit 1
+-  ;;
+-esac
++#!/bin/sh
++#
++# ushare.sh for rc.d usage (c) 2006 Volker Theile.
++#
++
++# PROVIDE: ushare
++# REQUIRE: DAEMON
++# BEFORE: LOGIN
++# KEYWORD: shutdown
++
++# Add the following line to /etc/rc.conf to enable `ushare':
++#
++#ushare_enable="YES"
++
++. "/etc/rc.subr"
++
++name=ushare
++rcvar=`set_rcvar`
++
++command="/usr/local/bin/$name"
++command_args="--daemon"
++required_files="/usr/local/etc/$name.conf"
++
++# read configuration and set defaults
++load_rc_config "$name"
++: ${ushare_enable="NO"}
++: ${ushare_flags=""}
+ 
+-exit 0
++run_rc_command "$1"
