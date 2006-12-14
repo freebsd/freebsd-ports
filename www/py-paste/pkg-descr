@@ -1,0 +1,11 @@
+Python Paste brings consistency to Python web development and web
+application installation, providing tools for both developers and
+system administrators.
+
+These provide several pieces of "middleware" (or filters) that can be
+nested to build web applications. Each piece of middleware uses the
+WSGI (PEP 333) interface, and should be compatible with other
+middleware based on those interfaces.
+
+Author:	Ian Bicking <ianb at colorstudy com>
+WWW:	http://pythonpaste.org
