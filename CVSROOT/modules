@@ -11577,6 +11577,7 @@ podcatcher	ports/multimedia/podcatcher
 poe		ports/multimedia/poe
 poedit		ports/editors/poedit
 poink		ports/net/poink
+poker-eval	ports/games/poker-eval
 policykit	ports/sysutils/policykit
 polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
