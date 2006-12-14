@@ -12843,6 +12843,7 @@ roundcube	ports/mail/roundcube
 roundup		ports/www/roundup
 routers2	ports/net-mgmt/routers2
 routers2-extensions	ports/net-mgmt/routers2-extensions
+routers2-extras	ports/net-mgmt/routers2-extras
 rox-archive	ports/archivers/rox-archive
 rox-edit	ports/editors/rox-edit
 rox-filer	ports/x11-fm/rox-filer
