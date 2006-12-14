@@ -14021,6 +14021,7 @@ svg2pdf		ports/graphics/svg2pdf
 svg2png		ports/graphics/svg2png
 svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
+svgviewer	ports/graphics/svgviewer
 svk		ports/devel/svk
 svmlight	ports/science/svmlight
 svndelta	ports/devel/svndelta
