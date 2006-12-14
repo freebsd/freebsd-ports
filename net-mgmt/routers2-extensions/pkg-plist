@@ -1,0 +1,21 @@
+www/routers2/extensions/ifrouter.cgi
+www/routers2/extensions/ifstatus.cgi
+www/routers2/extensions/ifswitch.cgi
+www/routers2/extensions/pdfreport.cgi
+www/routers2/extensions/routingtable.cgi
+www/routers2/extensions/showcfg.cgi
+www/routers2/extensions/tonagios.cgi
+www/routers2/extensions/trend.cgi
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/extension.cgi.pl
+%%PORTDOCS%%%%DOCSDIR%%/extension.txt
+%%PORTDOCS%%%%DOCSDIR%%/ifrouter.txt
+%%PORTDOCS%%%%DOCSDIR%%/ifstatus.txt
+%%PORTDOCS%%%%DOCSDIR%%/ifswitch.txt
+%%PORTDOCS%%%%DOCSDIR%%/pdfreport.txt
+%%PORTDOCS%%%%DOCSDIR%%/routingtable.txt
+%%PORTDOCS%%%%DOCSDIR%%/showcfg.txt
+%%PORTDOCS%%%%DOCSDIR%%/tonagios.txt
+%%PORTDOCS%%%%DOCSDIR%%/trend.txt
+@dirrm www/routers2/extensions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
