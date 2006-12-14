@@ -200,6 +200,12 @@ Local/Library/Bundles/MkIsoFs.bundle/Resources/German.lproj/Settings.gorm/object
 Local/Library/Bundles/MkIsoFs.bundle/Resources/Info-gnustep.plist
 Local/Library/Bundles/MkIsoFs.bundle/Resources/iconMkIsoFs.tiff
 Local/Library/Bundles/MkIsoFs.bundle/stamp.make
+Local/Library/Headers/Burn/Constants.h
+Local/Library/Headers/Burn/ExternalTools.h
+Local/Library/Headers/Burn/Functions.h
+Local/Library/Headers/Burn/PreferencesModule.h
+Local/Library/Headers/Burn/Track.h
+@dirrm Local/Library/Headers/Burn
 @dirrm Local/Library/Bundles/MkIsoFs.bundle/Resources/German.lproj/Settings.gorm
 @dirrm Local/Library/Bundles/MkIsoFs.bundle/Resources/German.lproj/Parameters.gorm
 @dirrm Local/Library/Bundles/MkIsoFs.bundle/Resources/German.lproj
