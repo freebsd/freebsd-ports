@@ -1,5 +1,5 @@
---- lib/os.c.orig	Mon Jan  6 22:09:06 1997
-+++ lib/os.c	Mon Jan  6 22:08:34 1997
+--- lib/os.c.orig	Thu Oct 22 22:01:10 1992
++++ lib/os.c	Thu Dec 14 13:02:56 2006
 @@ -26,6 +26,8 @@
  #include <sys/acct.h>
  #include <time.h>
@@ -9,7 +9,7 @@
  
  #ifdef HAVE_UTMPX_H
  #include <utmpx.h>
-@@ -70,8 +72,12 @@
+@@ -70,13 +72,18 @@
  
  /* Where the utmp file is located. */
  #ifndef HAVE_GETUTENT
@@ -22,7 +22,13 @@
  
  /* A non-null value is the address of the utmp entry which contains the
     information for the user using the console. */
-@@ -288,6 +294,21 @@
+ UTMP *console_user;
+ 
++long get_last_access(char *);
+ 
+ /* **************************************************************** */
+ /*                                                                  */
+@@ -288,6 +295,21 @@
      {
        idle = current_time - get_last_access (utmplist[i]->ut_line);
  
@@ -44,7 +50,7 @@
        if (idle < 0)
  	idle = 0;
  
-@@ -485,6 +506,7 @@
+@@ -485,6 +507,7 @@
  
    UTMP **result;
    int result_size = 0;
@@ -52,7 +58,7 @@
  
  #ifndef HAVE_GETUTENT
    file = open (UTMP_FILE, O_RDONLY);
-@@ -528,6 +550,26 @@
+@@ -528,6 +551,26 @@
        if (!UT (entry, ut_name)[0])
  	continue;
  #endif /* sun */
