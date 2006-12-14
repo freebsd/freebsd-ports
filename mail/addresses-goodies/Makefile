@@ -7,6 +7,7 @@
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
 		http://www.energyhq.es.eu.org/files/
@@ -32,6 +33,7 @@ GWORKSPACE_PORT?=	deskutils/gworkspace
 
 post-patch:
 	${REINPLACE_CMD} -e 's|LDAPAddressBook||' \
+		-e 's|VCFViewer||' \
 		${WRKSRC}/GNUmakefile
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
 		-e 's|GNUSTEP_INSTALLATION_DIR|GNUSTEP_SYSTEM_ROOT|' \
