@@ -126,6 +126,7 @@ share/texmf/fonts/afm/uhc/jamo/jmj10.afm
 share/texmf/fonts/afm/uhc/jamo/jsr10.afm
 share/texmf/fonts/afm/uhc/jamo/jnv10.afm
 @dirrm share/texmf/fonts/afm/uhc/jamo
+@dirrm share/texmf/fonts/afm/uhc
 share/texmf/fonts/ofm/uhc/graphic/ugrbc.ofm
 share/texmf/fonts/ofm/uhc/graphic/ugrbco.ofm
 share/texmf/fonts/ofm/uhc/graphic/ugrb.ofm
@@ -246,6 +247,7 @@ share/texmf/fonts/ofm/uhc/jamo/jnvx.ofm
 share/texmf/fonts/ofm/uhc/jamo/jnvu.ofm
 share/texmf/fonts/ofm/uhc/jamo/jnv.ofm
 @dirrm share/texmf/fonts/ofm/uhc/jamo
+@dirrm share/texmf/fonts/ofm/uhc
 share/texmf/fonts/ovf/uhc/graphic/ugrbco.ovf
 share/texmf/fonts/ovf/uhc/graphic/ugrbc.ovf
 share/texmf/fonts/ovf/uhc/graphic/ugrbo.ovf
@@ -366,6 +368,7 @@ share/texmf/fonts/ovf/uhc/jamo/jnvx.ovf
 share/texmf/fonts/ovf/uhc/jamo/jnvu.ovf
 share/texmf/fonts/ovf/uhc/jamo/jnv.ovf
 @dirrm share/texmf/fonts/ovf/uhc/jamo
+@dirrm share/texmf/fonts/ovf/uhc
 share/texmf/fonts/tfm/uhc/graphic/ugr02.tfm
 share/texmf/fonts/tfm/uhc/graphic/ugr05.tfm
 share/texmf/fonts/tfm/uhc/graphic/ugr10.tfm
@@ -3062,6 +3065,7 @@ share/texmf/fonts/tfm/uhc/jamo/wjnv8.tfm
 share/texmf/fonts/tfm/uhc/jamo/wjnv5.tfm
 share/texmf/fonts/tfm/uhc/jamo/wjnv2.tfm
 @dirrm share/texmf/fonts/tfm/uhc/jamo
+@dirrm share/texmf/fonts/tfm/uhc
 share/texmf/fonts/type1/uhc/graphic/ugr17.pfb
 share/texmf/fonts/type1/uhc/graphic/ugr18.pfb
 share/texmf/fonts/type1/uhc/graphic/ugr10.pfb
@@ -3190,6 +3194,7 @@ share/texmf/fonts/type1/uhc/jamo/jmj10.pfb
 share/texmf/fonts/type1/uhc/jamo/jsr10.pfb
 share/texmf/fonts/type1/uhc/jamo/jnv10.pfb
 @dirrm share/texmf/fonts/type1/uhc/jamo
+@dirrm share/texmf/fonts/type1/uhc
 share/texmf/fonts/vf/uhc/graphic/wgr0.vf
 share/texmf/fonts/vf/uhc/graphic/wgr1.vf
 share/texmf/fonts/vf/uhc/graphic/wgr2.vf
@@ -4926,5 +4931,6 @@ share/texmf/fonts/vf/uhc/jamo/wjnv8.vf
 share/texmf/fonts/vf/uhc/jamo/wjnv5.vf
 share/texmf/fonts/vf/uhc/jamo/wjnv2.vf
 @dirrm share/texmf/fonts/vf/uhc/jamo
+@dirrm share/texmf/fonts/vf/uhc
 @exec env PATH=%D/bin:$PATH %D/bin/texhash
 @unexec env PATH=%D/bin:$PATH %D/bin/texhash
