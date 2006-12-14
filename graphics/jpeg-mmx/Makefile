@@ -19,6 +19,9 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386
 
+DEPRECATED=	This port has outlived its usefulness
+EXPIRATION_DATE=2007-02-28
+
 WRKSRC=		${WRKDIR}/jpeg-mmx
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
