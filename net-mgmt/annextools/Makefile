@@ -5,21 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=       annextools
+PORTNAME=	annextools
 PORTVERSION=	10.0
 PORTREVISION=	0
-CATEGORIES=     net-mgmt
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://www142.nortelnetworks.com/pub/swcode/remacc/microannex_xl/
 DISTNAME=	R10.0B-R2.3
 EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	microannex_xl
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD tools for the MicroAnnex-XL Terminal Server
 
 WRKSRC=		${WRKDIR}/src
 
-EXTRACT_AFTER_ARGS= | ${TAR} -xf - src
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - src
 
 post-extract:
 	${FIND} ${WRKDIR}/src -type d -exec ${CHMOD} u+w \{\} \;
