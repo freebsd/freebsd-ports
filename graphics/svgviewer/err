@@ -1,0 +1,200 @@
+===>  Building for svgviewer-0.2.0
+gmake: Nothing to be done for `GNUmakefile'.
+Making all for app SVGViewer...
+ Compiling file Document.m ...
+Package libsvg was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libsvg.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libsvg' found
+Document.m:18:17: warning: svg.h: No such file or directory
+Document.m:26: error: expected specifier-qualifier-list before 'svg_paint_t'
+Document.m:29: error: expected specifier-qualifier-list before 'svg_color_t'
+Document.m:37: error: expected specifier-qualifier-list before 'svg_font_style_t'
+Document.m:40: error: expected specifier-qualifier-list before 'svg_text_anchor_t'
+Document.m: In function '-[SVGRenderState copyWithZone:]':
+Document.m:53: warning: initialization from distinct Objective-C type
+Document.m: At top level:
+Document.m:97: error: expected ')' before 'svg_length_t'
+Document.m:107: error: expected ')' before 'svg_status_t'
+Document.m:108: error: expected ')' before 'svg_status_t'
+Document.m:110: error: expected ')' before 'svg_status_t'
+Document.m:110: error: expected ')' before 'svg_length_t'
+Document.m:110: error: expected ')' before 'svg_length_t'
+Document.m:111: error: expected ')' before 'svg_status_t'
+Document.m:111: error: expected ')' before 'svg_view_box_t'
+Document.m:112: error: expected ')' before 'svg_length_t'
+Document.m:112: error: expected ')' before 'svg_length_t'
+Document.m:114: error: expected ')' before 'svg_status_t'
+Document.m:114: error: expected ')' before 'svg_length_t'
+Document.m:114: error: expected ')' before 'svg_length_t'
+Document.m:115: error: expected ')' before 'svg_length_t'
+Document.m:115: error: expected ')' before 'svg_length_t'
+Document.m:116: error: expected ')' before 'svg_length_t'
+Document.m:116: error: expected ')' before 'svg_length_t'
+Document.m:117: error: expected ')' before 'svg_status_t'
+Document.m:118: error: expected ')' before 'svg_status_t'
+Document.m:119: error: expected ')' before 'svg_status_t'
+Document.m:119: error: expected ')' before 'svg_length_t'
+Document.m:119: error: expected ')' before 'svg_length_t'
+Document.m:120: error: expected ')' before 'svg_length_t'
+Document.m:120: error: expected ')' before 'svg_length_t'
+Document.m:151: error: expected ')' before 'svg_length_t'
+Document.m: In function '-[SVGRenderContext lengthToPoints:]':
+Document.m:153: error: 'struct objc_object' has no member named 'unit'
+Document.m:155: error: 'SVG_LENGTH_UNIT_PT' undeclared (first use in this function)
+Document.m:155: error: (Each undeclared identifier is reported only once
+Document.m:155: error: for each function it appears in.)
+Document.m:156: error: 'struct objc_object' has no member named 'value'
+Document.m:158: error: 'SVG_LENGTH_UNIT_PX' undeclared (first use in this function)
+Document.m:159: error: 'struct objc_object' has no member named 'value'
+Document.m:161: error: 'SVG_LENGTH_UNIT_CM' undeclared (first use in this function)
+Document.m:162: error: 'struct objc_object' has no member named 'value'
+Document.m:164: error: 'SVG_LENGTH_UNIT_MM' undeclared (first use in this function)
+Document.m:165: error: 'struct objc_object' has no member named 'value'
+Document.m:167: error: 'SVG_LENGTH_UNIT_IN' undeclared (first use in this function)
+Document.m:168: error: 'struct objc_object' has no member named 'value'
+Document.m:170: error: 'SVG_LENGTH_UNIT_PC' undeclared (first use in this function)
+Document.m:171: error: 'struct objc_object' has no member named 'value'
+Document.m:173: error: 'SVG_LENGTH_UNIT_PCT' undeclared (first use in this function)
+Document.m:174: error: 'struct objc_object' has no member named 'orientation'
+Document.m:174: error: 'SVG_LENGTH_ORIENTATION_HORIZONTAL' undeclared (first use in this function)
+Document.m:175: error: 'struct objc_object' has no member named 'value'
+Document.m:176: error: 'struct objc_object' has no member named 'orientation'
+Document.m:176: error: 'SVG_LENGTH_ORIENTATION_VERTICAL' undeclared (first use in this function)
+Document.m:177: error: 'struct objc_object' has no member named 'value'
+Document.m:179: error: 'struct objc_object' has no member named 'value'
+Document.m:182: error: 'struct objc_object' has no member named 'unit'
+Document.m:183: error: 'struct objc_object' has no member named 'value'
+Document.m: At top level:
+Document.m:187: error: expected ')' before 'svg_color_t'
+Document.m: In function '-[SVGRenderContext setColor:]':
+Document.m:190: warning: implicit declaration of function 'svg_color_get_red'
+Document.m:191: warning: implicit declaration of function 'svg_color_get_green'
+Document.m:192: warning: implicit declaration of function 'svg_color_get_blue'
+Document.m: At top level:
+Document.m:372: error: expected ')' before 'svg_status_t'
+Document.m:372: error: expected ')' before 'svg_length_t'
+Document.m:372: error: expected ')' before 'svg_length_t'
+Document.m:373: error: expected ')' before 'svg_length_t'
+Document.m:373: error: expected ')' before 'svg_length_t'
+Document.m:374: error: expected ')' before 'svg_length_t'
+Document.m:374: error: expected ')' before 'svg_length_t'
+Document.m: In function '-[SVGRenderContext renderRect::::::]':
+Document.m:389: error: 'struct SVGRenderState' has no member named 'fill_paint'
+Document.m:391: error: 'SVG_PAINT_TYPE_COLOR' undeclared (first use in this function)
+Document.m:392: error: 'struct SVGRenderState' has no member named 'fill_paint'
+Document.m:433: error: 'SVG_PAINT_TYPE_NONE' undeclared (first use in this function)
+Document.m:437: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:440: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:455: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m: At top level:
+Document.m:458: error: expected ')' before 'svg_status_t'
+Document.m:458: error: expected ')' before 'svg_length_t'
+Document.m:458: error: expected ')' before 'svg_length_t'
+Document.m:459: error: expected ')' before 'svg_length_t'
+Document.m:459: error: expected ')' before 'svg_length_t'
+Document.m: In function '-[SVGRenderContext renderEllipse::::]':
+Document.m:476: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m: At top level:
+Document.m:484: error: expected ')' before 'svg_status_t'
+Document.m: In function '-[SVGRenderContext beginGroup:]':
+Document.m:491: error: 'SVG_STATUS_INVALID_CALL' undeclared (first use in this function)
+Document.m:525: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m: At top level:
+Document.m:528: error: expected ')' before 'svg_status_t'
+Document.m: In function '-[SVGRenderContext endGroup:]':
+Document.m:548: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m: At top level:
+Document.m:552: error: expected ')' before 'svg_status_t'
+Document.m:552: error: expected ')' before 'svg_length_t'
+Document.m:552: error: expected ')' before 'svg_length_t'
+Document.m: In function '-[SVGRenderContext setViewportDimension::]':
+Document.m:559: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m: At top level:
+Document.m:584: error: expected ')' before 'svg_status_t'
+Document.m:584: error: expected ')' before 'svg_view_box_t'
+Document.m:585: error: expected ')' before 'svg_length_t'
+Document.m:585: error: expected ')' before 'svg_length_t'
+Document.m: In function '-[SVGRenderContext applyViewbox:::]':
+Document.m:590: error: request for member 'box' in something not a structure or union
+Document.m:590: error: request for member 'box' in something not a structure or union
+Document.m:591: error: request for member 'box' in something not a structure or union
+Document.m:591: error: request for member 'box' in something not a structure or union
+Document.m:592: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m: At top level:
+Document.m:596: error: expected ')' before 'svg_status_t'
+Document.m: In function '-[SVGRenderContext renderPath]':
+Document.m:598: error: 'struct SVGRenderState' has no member named 'fill_paint'
+Document.m:600: error: 'SVG_PAINT_TYPE_COLOR' undeclared (first use in this function)
+Document.m:601: error: 'struct SVGRenderState' has no member named 'fill_paint'
+Document.m:603: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:603: error: 'SVG_PAINT_TYPE_NONE' undeclared (first use in this function)
+Document.m:609: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:630: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:633: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:648: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m: At top level:
+Document.m:652: error: expected ')' before 'svg_status_t'
+Document.m: In function '-[SVGRenderContext renderText:]':
+Document.m:662: error: 'SVG_STATUS_SUCCESS' undeclared (first use in this function)
+Document.m:710: error: 'struct SVGRenderState' has no member named 'font_style'
+Document.m:735: error: 'struct SVGRenderState' has no member named 'fill_paint'
+Document.m:737: error: 'SVG_PAINT_TYPE_COLOR' undeclared (first use in this function)
+Document.m:738: error: 'struct SVGRenderState' has no member named 'fill_paint'
+Document.m:740: warning: pointer targets in passing argument 2 of 'DPSshow' differ in signedness
+Document.m:749: error: 'SVG_PAINT_TYPE_NONE' undeclared (first use in this function)
+Document.m:753: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:756: error: 'struct SVGRenderState' has no member named 'stroke_paint'
+Document.m:758: warning: pointer targets in passing argument 2 of 'DPScharpath' differ in signedness
+Document.m: At top level:
+Document.m:791: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_begin_group'
+Document.m:800: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_begin_element'
+Document.m:814: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_end_element'
+Document.m:830: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_end_group'
+Document.m:840: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_move_to'
+Document.m:850: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_line_to'
+Document.m:860: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_curve_to'
+Document.m:882: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_quadratic_curve_to'
+Document.m:899: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_arc_to'
+Document.m:932: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_close_path'
+Document.m:940: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_color'
+Document.m:946: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_fill_opacity'
+Document.m:952: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_fill_paint'
+Document.m:958: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_fill_rule'
+Document.m:967: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_font_family'
+Document.m:973: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_font_size'
+Document.m:979: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_font_style'
+Document.m:985: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_font_weight'
+Document.m:991: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_opacity'
+Document.m:997: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_dash_array'
+Document.m:1025: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_dash_offset'
+Document.m:1037: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_line_cap'
+Document.m:1059: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_line_join'
+Document.m:1081: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_miter_limit'
+Document.m:1087: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_opacity'
+Document.m:1093: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_paint'
+Document.m:1099: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_stroke_width'
+Document.m:1107: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_text_anchor'
+Document.m:1114: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_transform'
+Document.m:1127: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_apply_viewbox'
+Document.m:1138: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_set_viewport_dimension'
+Document.m:1146: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_render_line'
+Document.m:1158: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_render_path'
+Document.m:1163: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_render_ellipse'
+Document.m:1175: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_render_rect'
+Document.m:1191: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_render_text'
+Document.m:1198: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'r_render_image'
+Document.m:1228: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'engine'
+Document.m: In function '-[Document reload:]':
+Document.m:1328: error: 'svg_t' undeclared (first use in this function)
+Document.m:1328: error: 'svg' undeclared (first use in this function)
+Document.m:1332: warning: implicit declaration of function 'svg_create'
+Document.m:1334: warning: implicit declaration of function 'svg_parse'
+Document.m:1339: warning: implicit declaration of function 'svg_render'
+Document.m:1339: error: 'engine' undeclared (first use in this function)
+Document.m:1348: warning: implicit declaration of function 'svg_destroy'
+gmake[1]: *** [shared_obj/Document.o] Error 1
+gmake: *** [SVGViewer.all.app.variables] Error 2
+*** Error code 2
+
+Stop in /usr/ports/current/NEU/svgviewer.
