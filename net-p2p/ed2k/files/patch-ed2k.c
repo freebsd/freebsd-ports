@@ -1,5 +1,5 @@
 --- ed2k.c.orig	Sun Jun 13 19:47:20 2004
-+++ ed2k.c	Sat Oct  7 20:04:07 2006
++++ ed2k.c	Thu Dec 14 10:40:21 2006
 @@ -32,7 +32,7 @@
  #include <sys/stat.h>
  
@@ -40,7 +40,7 @@
  
  static char *progname;
  
-@@ -86,7 +97,7 @@
+@@ -86,16 +97,16 @@
  }
  
  
@@ -49,12 +49,14 @@
      return ((q >= 10) ? 'W' : '0') + q;
  }
  
-@@ -95,7 +106,7 @@
+-char *digest_str(void *digest) {
++char *digest_str(unsigned char *digest) {
+     static char internal_str[sizeof(md4_t)*2 + 1];
      char *str   = internal_str;
      int   dsize = sizeof(md4_t);
      while (dsize--) {
 -	unsigned char d = *((unsigned char *)digest)++;
-+	unsigned char d = *(((unsigned char *)digest)++);
++	unsigned char d = *(digest++);
  	*(str++) = hdigit(d >> 4 );
  	*(str++) = hdigit(d & 0xf);
      }
