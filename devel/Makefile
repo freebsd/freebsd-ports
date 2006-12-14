@@ -1851,7 +1851,6 @@
     SUBDIR += ruby-mmap
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-p4
-    SUBDIR += ruby-pcsc-lite
     SUBDIR += ruby-poll
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
