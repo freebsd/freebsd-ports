@@ -4,6 +4,7 @@ etc/mfc.conf.sample
 bin/mtrace6
 bin/mcastread
 bin/mcastsend
+bin/pmsft
 sbin/mfc
 sbin/pim6dd
 sbin/pim6sd
