@@ -16,7 +16,7 @@ cvs diff -u -b -N -kk -rZ-icap-2_6_merge_HEAD -ricap-2_6
 See http://devel.squid-cache.org/icap/ for further information
 about the ICAP client project.
 
-Patch last updated: 2006-11-04
+Patch last updated: 2006-12-14
 
 Index: errors/Azerbaijani/ERR_ICAP_FAILURE
 ===================================================================
@@ -1163,12 +1163,12 @@ diff -N errors/Turkish/ERR_ICAP_FAILURE
 Index: include/util.h
 ===================================================================
 RCS file: /cvsroot/squid/squid/include/util.h,v
-retrieving revision 1.15
-retrieving revision 1.13.8.2
-diff -p -u -b -r1.15 -r1.13.8.2
---- include/util.h	18 Sep 2006 23:52:30 -0000	1.15
-+++ include/util.h	26 Sep 2006 22:47:30 -0000	1.13.8.2
-@@ -151,4 +151,12 @@ extern void WIN32_maperror(unsigned long
+retrieving revision 1.17
+retrieving revision 1.13.8.3
+diff -p -u -b -r1.17 -r1.13.8.3
+--- include/util.h	10 Dec 2006 13:56:25 -0000	1.17
++++ include/util.h	12 Dec 2006 22:49:41 -0000	1.13.8.3
+@@ -157,4 +157,12 @@ extern void WIN32_maperror(unsigned long
  extern int WIN32_Close_FD_Socket(int);
  #endif
  
@@ -1400,12 +1400,12 @@ diff -p -u -b -r1.11 -r1.9.10.4
 Index: src/cache_cf.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/cache_cf.c,v
-retrieving revision 1.85
-retrieving revision 1.61.4.11
-diff -p -u -b -r1.85 -r1.61.4.11
---- src/cache_cf.c	30 Sep 2006 21:52:27 -0000	1.85
-+++ src/cache_cf.c	3 Nov 2006 18:47:06 -0000	1.61.4.11
-@@ -2385,6 +2385,587 @@ check_null_body_size_t(dlink_list bodyli
+retrieving revision 1.86
+retrieving revision 1.61.4.12
+diff -p -u -b -r1.86 -r1.61.4.12
+--- src/cache_cf.c	10 Dec 2006 05:51:43 -0000	1.86
++++ src/cache_cf.c	12 Dec 2006 22:49:42 -0000	1.61.4.12
+@@ -2389,6 +2389,587 @@ check_null_body_size_t(dlink_list bodyli
      return bodylist.head == NULL;
  }
  
@@ -2015,12 +2015,12 @@ diff -p -u -b -r1.18 -r1.18.8.1
 Index: src/cf.data.pre
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/cf.data.pre,v
-retrieving revision 1.158
-retrieving revision 1.100.4.11
-diff -p -u -b -r1.158 -r1.100.4.11
---- src/cf.data.pre	12 Oct 2006 20:51:58 -0000	1.158
-+++ src/cf.data.pre	3 Nov 2006 18:47:06 -0000	1.100.4.11
-@@ -3184,7 +3184,6 @@ DOC_START
+retrieving revision 1.161
+retrieving revision 1.100.4.12
+diff -p -u -b -r1.161 -r1.100.4.12
+--- src/cf.data.pre	29 Nov 2006 00:52:57 -0000	1.161
++++ src/cf.data.pre	12 Dec 2006 22:49:42 -0000	1.100.4.12
+@@ -3189,7 +3189,6 @@ DOC_START
  	ensure correct results it is best to set server_persistent_connections
  	to off when using this directive in such configurations.
  DOC_END
@@ -2028,7 +2028,7 @@ diff -p -u -b -r1.158 -r1.100.4.11
  NAME: reply_header_max_size
  COMMENT: (KB)
  TYPE: b_size_t
-@@ -3453,6 +3452,187 @@ DOC_START
+@@ -3458,6 +3457,187 @@ DOC_START
  DOC_END
  
  COMMENT_START
@@ -2235,11 +2235,11 @@ diff -p -u -b -r1.7 -r1.6.8.2
 Index: src/client_side.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/client_side.c,v
-retrieving revision 1.147
-retrieving revision 1.89.4.13
-diff -p -u -b -r1.147 -r1.89.4.13
---- src/client_side.c	30 Sep 2006 21:52:27 -0000	1.147
-+++ src/client_side.c	3 Nov 2006 18:47:06 -0000	1.89.4.13
+retrieving revision 1.154
+retrieving revision 1.89.4.14
+diff -p -u -b -r1.154 -r1.89.4.14
+--- src/client_side.c	11 Dec 2006 00:53:11 -0000	1.154
++++ src/client_side.c	12 Dec 2006 22:49:44 -0000	1.89.4.14
 @@ -109,7 +109,7 @@ static const char *const crlf = "\r\n";
  static CWCB clientWriteComplete;
  static CWCB clientWriteBodyComplete;
@@ -2266,7 +2266,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  static DEFER httpAcceptDefer;
  static log_type clientProcessRequest2(clientHttpRequest * http);
  static int clientReplyBodyTooLarge(clientHttpRequest *, squid_off_t clen);
-@@ -157,14 +157,17 @@ static void clientAccessCheck(void *data
+@@ -157,15 +157,18 @@ static void clientAccessCheck(void *data
  static void clientAccessCheckDone(int answer, void *data);
  static void clientAccessCheck2(void *data);
  static void clientAccessCheckDone2(int answer, void *data);
@@ -2280,13 +2280,14 @@ diff -p -u -b -r1.147 -r1.89.4.13
  static int modifiedSince(StoreEntry *, request_t *);
 -static StoreEntry *clientCreateStoreEntry(clientHttpRequest *, method_t, request_flags);
 +StoreEntry *clientCreateStoreEntry(clientHttpRequest *, method_t, request_flags);
+ static inline int clientNatLookup(ConnStateData * conn);
 +#if HS_FEAT_ICAP
 +static int clientIcapReqMod(clientHttpRequest * http);
 +#endif
  
  #if USE_IDENT
  static void
-@@ -382,7 +385,7 @@ clientOnlyIfCached(clientHttpRequest * h
+@@ -383,7 +386,7 @@ clientOnlyIfCached(clientHttpRequest * h
  	EBIT_TEST(r->cache_control->mask, CC_ONLY_IF_CACHED);
  }
  
@@ -2306,9 +2307,9 @@ diff -p -u -b -r1.147 -r1.89.4.13
  #if HEADERS_LOG
      headersLog(0, 1, request->method, request);
  #endif
-@@ -1372,11 +1379,22 @@ httpRequestFree(void *data)
-     *H = http->next;
-     http->next = NULL;
+@@ -1352,11 +1359,22 @@ httpRequestFree(void *data)
+     /* Unlink us from the clients request list */
+     dlinkDelete(&http->node, &http->conn->reqs);
      dlinkDelete(&http->active, &ClientActiveRequests);
 +#if HS_FEAT_ICAP
 +    /*In the case that the upload of data breaks, we need this code here ....  */
@@ -2330,7 +2331,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  connStateFree(int fd, void *data)
  {
      ConnStateData *connState = data;
-@@ -1393,8 +1411,9 @@ connStateFree(int fd, void *data)
+@@ -1376,8 +1394,9 @@ connStateFree(int fd, void *data)
  	authenticateAuthUserRequestUnlock(connState->auth_user_request);
      connState->auth_user_request = NULL;
      authenticateOnCloseConnection(connState);
@@ -2341,7 +2342,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
      if (connState->pinning.fd >= 0)
  	comm_close(connState->pinning.fd);
      cbdataFree(connState);
-@@ -1592,7 +1611,7 @@ clientSetKeepaliveFlag(clientHttpRequest
+@@ -1575,7 +1594,7 @@ clientSetKeepaliveFlag(clientHttpRequest
      }
  }
  
@@ -2350,7 +2351,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  clientCheckContentLength(request_t * r)
  {
      switch (r->method) {
-@@ -1611,7 +1630,7 @@ clientCheckContentLength(request_t * r)
+@@ -1594,7 +1613,7 @@ clientCheckContentLength(request_t * r)
      /* NOT REACHED */
  }
  
@@ -2359,7 +2360,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  clientCachable(clientHttpRequest * http)
  {
      request_t *req = http->request;
-@@ -1637,7 +1656,7 @@ clientCachable(clientHttpRequest * http)
+@@ -1620,7 +1639,7 @@ clientCachable(clientHttpRequest * http)
  }
  
  /* Return true if we can query our neighbors for this object */
@@ -2368,7 +2369,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  clientHierarchical(clientHttpRequest * http)
  {
      const char *url = http->uri;
-@@ -3351,7 +3370,7 @@ clientProcessRequest2(clientHttpRequest 
+@@ -3307,7 +3326,7 @@ clientProcessRequest2(clientHttpRequest 
      return LOG_TCP_HIT;
  }
  
@@ -2377,7 +2378,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  clientProcessRequest(clientHttpRequest * http)
  {
      char *url = http->uri;
-@@ -3362,6 +3381,11 @@ clientProcessRequest(clientHttpRequest *
+@@ -3318,6 +3337,11 @@ clientProcessRequest(clientHttpRequest *
  	RequestMethodStr[r->method],
  	url);
      r->flags.collapsed = 0;
@@ -2389,7 +2390,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
      if (r->method == METHOD_CONNECT && !http->redirect.status) {
  	http->log_type = LOG_TCP_MISS;
  #if USE_SSL && SSL_CONNECT_INTERCEPT
-@@ -3828,6 +3852,20 @@ clientReadRequest(int fd, void *data)
+@@ -3812,6 +3836,20 @@ clientReadRequest(int fd, void *data)
  	    (long) conn->in.offset, (long) conn->in.size);
  	len = conn->in.size - conn->in.offset - 1;
      }
@@ -2410,24 +2411,17 @@ diff -p -u -b -r1.147 -r1.89.4.13
      statCounter.syscalls.sock.reads++;
      size = FD_READ_METHOD(fd, conn->in.buf + conn->in.offset, len);
      if (size > 0) {
-@@ -3931,7 +3969,15 @@ clientReadRequest(int fd, void *data)
+@@ -3916,7 +3954,8 @@ clientReadRequest(int fd, void *data)
  	    /* add to the client request queue */
- 	    for (H = &conn->chr; *H; H = &(*H)->next);
- 	    *H = http;
--	    conn->nrequests++;
+ 	    dlinkAddTail(http, &http->node, &conn->reqs);
+ 	    conn->nrequests++;
+-	    commSetTimeout(fd, Config.Timeout.lifetime, clientLifetimeTimeout, http);
 +	    F->pconn.uses++;
-+	    F->pconn.type = 0;
-+	    /*
-+	     * I wanted to lock 'http' here since its callback data for 
-+	     * clientLifetimeTimeout(), but there's no logical place to
-+	     * cbdataUnlock if the timeout never happens.  Maybe its safe
-+	     * enough to assume that if the FD is open, and the timeout
-+	     * triggers, that 'http' is valid.
-+	     */
- 	    commSetTimeout(fd, Config.Timeout.lifetime, clientLifetimeTimeout, http);
++            F->pconn.type = 0;
  	    if (parser_return_code < 0) {
  		debug(33, 1) ("clientReadRequest: FD %d (%s:%d) Invalid Request\n", fd, fd_table[fd].ipaddr, fd_table[fd].remote_port);
-@@ -4102,7 +4148,7 @@ clientReadRequest(int fd, void *data)
+ 		err = errorCon(ERR_INVALID_REQ, HTTP_BAD_REQUEST, NULL);
+@@ -4086,7 +4125,7 @@ clientReadRequest(int fd, void *data)
  }
  
  /* file_read like function, for reading body content */
@@ -2436,7 +2430,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  clientReadBody(request_t * request, char *buf, size_t size, CBCB * callback, void *cbdata)
  {
      ConnStateData *conn = request->body_reader_data;
-@@ -4231,7 +4277,7 @@ clientProcessBody(ConnStateData * conn)
+@@ -4215,7 +4254,7 @@ clientProcessBody(ConnStateData * conn)
  }
  
  /* Abort a body request */
@@ -2445,7 +2439,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  clientAbortBody(request_t * request)
  {
      ConnStateData *conn = request->body_reader_data;
-@@ -4273,7 +4319,7 @@ requestTimeout(int fd, void *data)
+@@ -4257,7 +4296,7 @@ requestTimeout(int fd, void *data)
  	 * Some data has been sent to the client, just close the FD
  	 */
  	comm_close(fd);
@@ -2454,7 +2448,7 @@ diff -p -u -b -r1.147 -r1.89.4.13
  	/*
  	 * assume its a persistent connection; just close it
  	 */
-@@ -5015,6 +5061,52 @@ varyEvaluateMatch(StoreEntry * entry, re
+@@ -4978,6 +5017,52 @@ varyEvaluateMatch(StoreEntry * entry, re
      }
  }
  
@@ -2652,11 +2646,11 @@ diff -p -u -b -r1.57 -r1.45.4.6
 Index: src/forward.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/forward.c,v
-retrieving revision 1.42
-retrieving revision 1.20.4.9
-diff -p -u -b -r1.42 -r1.20.4.9
---- src/forward.c	30 Sep 2006 21:52:28 -0000	1.42
-+++ src/forward.c	3 Nov 2006 18:47:13 -0000	1.20.4.9
+retrieving revision 1.43
+retrieving revision 1.20.4.10
+diff -p -u -b -r1.43 -r1.20.4.10
+--- src/forward.c	10 Dec 2006 05:51:43 -0000	1.43
++++ src/forward.c	12 Dec 2006 22:49:45 -0000	1.20.4.10
 @@ -358,8 +358,9 @@ fwdConnectDone(int server_fd, int status
      } else {
  	debug(17, 3) ("fwdConnectDone: FD %d: '%s'\n", server_fd, storeUrl(fwdState->entry));
@@ -2669,7 +2663,7 @@ diff -p -u -b -r1.42 -r1.20.4.9
  	    peerConnectSucceded(fs->peer);
  #if USE_SSL
  	if ((fs->peer && fs->peer->use_ssl) ||
-@@ -935,6 +936,8 @@ fwdCheckDeferRead(int fd, void *data)
+@@ -941,6 +942,8 @@ fwdCheckDeferRead(int fd, void *data)
  void
  fwdFail(FwdState * fwdState, ErrorState * errorState)
  {
@@ -2678,7 +2672,7 @@ diff -p -u -b -r1.42 -r1.20.4.9
      debug(17, 3) ("fwdFail: %s \"%s\"\n\t%s\n",
  	err_type_str[errorState->type],
  	httpStatusString(errorState->http_status),
-@@ -973,6 +976,8 @@ fwdPeerClosed(int fd, void *data)
+@@ -979,6 +982,8 @@ fwdPeerClosed(int fd, void *data)
  void
  fwdUnregister(int fd, FwdState * fwdState)
  {
@@ -2687,7 +2681,7 @@ diff -p -u -b -r1.42 -r1.20.4.9
      debug(17, 3) ("fwdUnregister: %s\n", storeUrl(fwdState->entry));
      assert(fd == fwdState->server_fd);
      assert(fd > -1);
-@@ -992,7 +997,10 @@ fwdUnregister(int fd, FwdState * fwdStat
+@@ -998,7 +1003,10 @@ fwdUnregister(int fd, FwdState * fwdStat
  void
  fwdComplete(FwdState * fwdState)
  {
@@ -4469,7 +4463,7 @@ Index: src/icap_reqmod.c
 RCS file: src/icap_reqmod.c
 diff -N src/icap_reqmod.c
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ src/icap_reqmod.c	26 Sep 2006 22:47:36 -0000	1.1.14.7
++++ src/icap_reqmod.c	12 Dec 2006 22:49:46 -0000	1.1.14.9
 @@ -0,0 +1,990 @@
 +
 +/*
@@ -4599,11 +4593,13 @@ diff -N src/icap_reqmod.c
 +    assert(http->conn->chr->next == NULL);
 +    {
 +	ConnStateData *dummyconn;
++        clientHttpRequest *H;
 +	dummyconn = cbdataAlloc(ConnStateData);
 +	dummyconn->fd = icap->reqmod.client_fd;
 +	dummyconn->pinning.fd = -1;
-+	dummyconn->chr = http->conn->chr;
-+	dummyconn->chr->conn = dummyconn;
++        H=DLINK_HEAD(conn->reqs);
++        dlinkAddTail(H, &H->node, &dummyconn->reqs);
++        H->conn = dummyconn;
 +	comm_add_close_handler(dummyconn->fd, connStateFree, dummyconn);
 +    }
 +    http->conn->chr = http;
@@ -4614,7 +4610,7 @@ diff -N src/icap_reqmod.c
 +    http->conn->in.size = 0;
 +    http->conn->in.buf = NULL;
 +    http->conn->log_addr = icap->reqmod.log_addr;
-+    http->conn->chr = http;
++    dlinkAddTail(http, &http->node, &http->conn->reqs); 
 +    comm_add_close_handler(http->conn->fd, connStateFree, http->conn);
 +#endif
 +    http->icap_reqmod = NULL;
@@ -4859,7 +4855,6 @@ diff -N src/icap_reqmod.c
 +    if (NULL == http)
 +	return;
 +    assert(icap->request);
-+
 +    http->entry = clientCreateStoreEntry(http,
 +	icap->request->method, icap->request->flags);
 +    icap->respmod.entry = http->entry;
@@ -5350,7 +5345,7 @@ diff -N src/icap_reqmod.c
 +	    icapParseChunkedBody(icap,
 +	    icapReqModMemBufAppend, &icap->reqmod.http_entity.buf);
 +    }
-+    if (icap->reqmod.http_entity.bytes_read >= icap->request->content_length)
++    if (icap->chunk_size < 0 )
 +	icap->flags.reqmod_http_entity_eof = 1;
 +
 +    if (!icap->flags.reqmod_http_entity_eof)
@@ -5362,7 +5357,7 @@ diff -N src/icap_reqmod.c
 +	icap->reqmod.http_entity.callback);
 +    debug(81, 3) ("%s:%d http_entity.buf.size=%d\n", __FILE__, __LINE__,
 +	icap->reqmod.http_entity.buf.size);
-+    if (icap->reqmod.http_entity.callback && icap->reqmod.http_entity.buf.size) {
++    if (icap->reqmod.http_entity.callback) {
 +	icapReqModPassHttpBody(icap,
 +	    icap->reqmod.http_entity.callback_buf,
 +	    icap->reqmod.http_entity.callback_bufsize,
@@ -5370,7 +5365,6 @@ diff -N src/icap_reqmod.c
 +	    icap->reqmod.http_entity.callback_data);
 +	icap->reqmod.http_entity.callback = NULL;
 +	cbdataUnlock(icap->reqmod.http_entity.callback_data);
-+
 +    }
 +}
 +
@@ -6826,11 +6820,11 @@ diff -p -u -b -r1.38 -r1.26.8.10
 Index: src/store.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/store.c,v
-retrieving revision 1.38
-retrieving revision 1.21.10.9
-diff -p -u -b -r1.38 -r1.21.10.9
---- src/store.c	9 Oct 2006 13:52:39 -0000	1.38
-+++ src/store.c	3 Nov 2006 18:47:14 -0000	1.21.10.9
+retrieving revision 1.39
+retrieving revision 1.21.10.10
+diff -p -u -b -r1.39 -r1.21.10.10
+--- src/store.c	10 Dec 2006 06:51:20 -0000	1.39
++++ src/store.c	12 Dec 2006 22:49:46 -0000	1.21.10.10
 @@ -1105,8 +1105,17 @@ storeAppend(StoreEntry * e, const char *
      MemObject *mem = e->mem_obj;
      assert(mem != NULL);
@@ -6853,11 +6847,11 @@ diff -p -u -b -r1.38 -r1.21.10.9
 Index: src/structs.h
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/structs.h,v
-retrieving revision 1.134
-retrieving revision 1.81.4.11
-diff -p -u -b -r1.134 -r1.81.4.11
---- src/structs.h	23 Oct 2006 11:52:56 -0000	1.134
-+++ src/structs.h	3 Nov 2006 18:47:14 -0000	1.81.4.11
+retrieving revision 1.136
+retrieving revision 1.81.4.12
+diff -p -u -b -r1.136 -r1.81.4.12
+--- src/structs.h	29 Nov 2006 16:52:51 -0000	1.136
++++ src/structs.h	12 Dec 2006 22:49:47 -0000	1.81.4.12
 @@ -423,6 +423,23 @@ struct _RemovalPolicySettings {
      wordlist *args;
  };
@@ -7058,17 +7052,17 @@ diff -p -u -b -r1.134 -r1.81.4.11
  	unsigned int hit:1;
      } flags;
      struct {
-@@ -1226,6 +1380,9 @@ struct _clientHttpRequest {
-     } redirect;
-     dlink_node active;
-     squid_off_t maxBodySize;
+@@ -1232,6 +1386,9 @@ struct _clientHttpRequest {
+      * zero.. [ahc]
+      */
+     char readbuf[CLIENT_SOCK_SZ];
 +#if HS_FEAT_ICAP
 +    IcapStateData *icap_reqmod;
 +#endif
  };
  
  struct _ConnStateData {
-@@ -1894,6 +2051,9 @@ struct _request_t {
+@@ -1900,6 +2057,9 @@ struct _request_t {
      unsigned int done_etag:1;	/* We have done clientProcessETag on this, don't attempt it again */
      char *urlgroup;		/* urlgroup, returned by redirectors */
      char *peer_domain;		/* Configured peer forceddomain */
@@ -7078,7 +7072,7 @@ diff -p -u -b -r1.134 -r1.81.4.11
      BODY_HANDLER *body_reader;
      void *body_reader_data;
      String extacl_log;		/* String to be used for access.log purposes */
-@@ -2001,7 +2161,11 @@ struct _StatCounters {
+@@ -2007,7 +2167,11 @@ struct _StatCounters {
  	    kb_t kbytes_in;
  	    kb_t kbytes_out;
  	} all , http, ftp, other;
