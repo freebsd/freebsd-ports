@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wyrd
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/wyrd/
 
