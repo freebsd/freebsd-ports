@@ -536,6 +536,7 @@
     SUBDIR += poppler-gtk
     SUBDIR += poppler-qt
     SUBDIR += poppler-utils
+    SUBDIR += popplerkit
     SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += potracegui
