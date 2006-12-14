@@ -1,0 +1,6 @@
+This is GSBench for GNUstep. It started as a simple conversion of NXBench for
+NEXTSTEP. I rewrote the entire application for version 0.5 in order to have an
+open architecture which allows the integration of other benchmarks by using
+bundles.
+
+WWW: http://www.nice.ch/~phip/softcorner.html
