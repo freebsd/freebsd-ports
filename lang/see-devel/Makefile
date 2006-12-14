@@ -7,7 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	2.0.1131
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.powerband.net.au/~david.leonard/ \
 		http://freshmeat.net/redir/see/45974/url_tgz/
@@ -17,7 +17,8 @@ MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
 
 OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
-		OPTIMIZED_CFLAGS "Enable some additional optimizations" off
+		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
+		SEE_DEBUG "Internal SEE library debugging" off
 
 CONFLICTS=	see-[0-9]*
 
@@ -36,6 +37,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if ${OSVERSION} < 500000
 BROKEN=	does not build on 4.x
+.endif
+
+.if !defined(WITH_SEE_DEBUG)
+CFLAGS+=	-DNDEBUG
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
