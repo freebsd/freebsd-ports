@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tnftpd
-PORTVERSION=	20040810
-PORTREVISION=	1
+PORTVERSION=	20061204
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
@@ -28,6 +27,12 @@ DOCS=		ChangeLog README THANKS COPYING
 
 MAN5=		ftpd.conf.5 ftpusers.5
 MAN8=		tnftpd.8
+PLIST_FILES=	libexec/tnftpd \
+		%%PORTDOCS%%%%DOCSDIR%%/ChangeLog \
+		%%PORTDOCS%%%%DOCSDIR%%/README \
+		%%PORTDOCS%%%%DOCSDIR%%/THANKS \
+		%%PORTDOCS%%%%DOCSDIR%%/COPYING
+PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
 FIXPREFIX=	ftpd.8 ftpd.conf.5 ftpusers.5
 
@@ -41,7 +46,6 @@ pre-patch:
 		s@^\.Sx /etc/@.Sx ${PREFIX}/etc/@g; \
 		s@^\.Bl -tag -width /etc/@.Bl -tag -width ${PREFIX}/etc/@g; \
 		s@${PREFIX}/etc/shells@/etc/shells@g; \
-		s@${PREFIX}/etc/motd@/etc/motd@g; \
 		s@${PREFIX}/etc/nologin@/etc/nologin@g; \
 		s@${PREFIX}/etc/pwd.db@/etc/pwd.db@g" \
 	${WRKSRC}/src/${f}
@@ -59,9 +63,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/ftpd.conf.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/src/ftpusers.5 ${PREFIX}/man/man5
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 

@@ -1,6 +1,10 @@
---- tnftpd.h-orig	Wed Dec 17 02:43:41 2003
-+++ tnftpd.h	Tue Feb  3 18:14:15 2004
-@@ -426,5 +426,9 @@
+
+FreeBSD does not have LOGIN_NAME_MAX, but it has MAXLOGNAME instead,
+so use it as much as possible.
+
+--- tnftpd.h.orig	Wed Dec 13 14:38:43 2006
++++ tnftpd.h	Wed Dec 13 14:39:24 2006
+@@ -479,7 +479,11 @@
  #define TM_YEAR_BASE	1900
  
  #if ! defined(LOGIN_NAME_MAX)
@@ -10,3 +14,5 @@
  # define LOGIN_NAME_MAX (9)
 +#endif
  #endif
+ 
+ #if ! defined(_POSIX_LOGIN_NAME_MAX)

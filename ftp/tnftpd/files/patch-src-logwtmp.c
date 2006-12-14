@@ -1,5 +1,11 @@
---- src/logwtmp.c-orig	Thu Jan 29 15:45:32 2004
-+++ src/logwtmp.c	Thu Jan 29 15:47:34 2004
+
+FreeBSD does not have header file util.h, fortunately it is not needed. Add
+header files sys/socket.h and netdb.h for getaddrinfo() and getnameinfo().
+If host name is longer than UT_HOSTSIZE (16 characters), log numeric
+address to utmp.
+
+--- src/logwtmp.c.orig	Wed Dec 13 13:26:40 2006
++++ src/logwtmp.c	Wed Dec 13 14:14:52 2006
 @@ -42,11 +42,13 @@
  
  #include <sys/types.h>
@@ -14,7 +20,7 @@
  #include <signal.h>
  #include <stdio.h>
  #include <string.h>
-@@ -56,7 +58,6 @@
+@@ -59,7 +61,6 @@
  #ifdef SUPPORT_UTMPX
  #include <utmpx.h>
  #endif
@@ -22,7 +28,7 @@
  
  #ifdef KERBEROS5
  #include <krb5/krb5.h>
-@@ -79,6 +80,26 @@
+@@ -88,6 +89,26 @@
  {
  	struct utmp ut;
  	struct stat buf;
@@ -47,5 +53,5 @@
 +		}
 +	}
  
- 	if (fd < 0 && (fd = open(_PATH_WTMP, O_WRONLY|O_APPEND, 0)) < 0)
+ 	if (fd < 0)
  		return;

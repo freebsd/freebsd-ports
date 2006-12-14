@@ -1,8 +1,11 @@
---- configure.orig	Mon May 17 14:46:54 2004
-+++ configure	Mon May 17 14:47:14 2004
-@@ -2434,6 +2434,7 @@
+
+Fix off_t size detection, so that determined off_t size is 8 instead of 0.
+
+--- configure.orig	Wed Dec 13 11:00:41 2006
++++ configure	Wed Dec 13 11:02:41 2006
+@@ -2455,6 +2455,7 @@
    cat > conftest.$ac_ext <<EOF
- #line 2425 "configure"
+ #line 2457 "configure"
  #include "confdefs.h"
 +#include <sys/types.h>
  #include <stdio.h>
