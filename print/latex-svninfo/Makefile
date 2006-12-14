@@ -7,7 +7,9 @@
 PORTNAME=	svninfo
 PORTVERSION=	0.6
 CATEGORIES=	print
-MASTER_SITES=	http://www.brucker.ch/projects/svninfo/download/
+MASTER_SITES=	http://www.brucker.ch/projects/svninfo/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	latex-
 
 MAINTAINER=	henrik@brixandersen.dk
