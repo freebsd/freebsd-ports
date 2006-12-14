@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.12.04
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.2/${PORTVERSION}/ \
 		http://kapranoff.ru/~kappa/files/
@@ -52,15 +52,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/csv1.5 ${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/csv2.5 ${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/csv2_txt.5 ${MANPREFIX}/man/man5
-#	@${MKDIR} ${MANPREFIX}/man/fr.ISO8859-1/man1
-#	@${MKDIR} ${MANPREFIX}/man/fr.ISO8859-1/man5
-#	@${MKDIR} ${MANPREFIX}/man/fr.ISO8859-1/man8
-#	${INSTALL_MAN} ${WRKSRC}/doc/fr/man/askmara.1 ${MANPREFIX}/man/fr.ISO8859-1/man1
-#	${INSTALL_MAN} ${WRKSRC}/doc/fr/man/getzone.1 ${MANPREFIX}/man/fr.ISO8859-1/man1
-#	${INSTALL_MAN} ${WRKSRC}/doc/fr/man/csv1.5 ${MANPREFIX}/man/fr.ISO8859-1/man5
-#	${INSTALL_MAN} ${WRKSRC}/doc/fr/man/mararc.5 ${MANPREFIX}/man/fr.ISO8859-1/man5
-#	${INSTALL_MAN} ${WRKSRC}/doc/fr/man/maradns.8 ${MANPREFIX}/man/fr.ISO8859-1/man8
-#	${INSTALL_MAN} ${WRKSRC}/doc/fr/man/zoneserver.8 ${MANPREFIX}/man/fr.ISO8859-1/man8
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_full_mararc \
  		${PREFIX}/etc/mararc.sample
 	${MKDIR} ${PREFIX}/etc/maradns
@@ -77,9 +68,6 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/* \
  		${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/fr
-	${INSTALL_DATA} ${WRKSRC}/doc/fr/examples/* \
- 		${EXAMPLESDIR}/fr
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/en
 	${INSTALL_DATA} ${WRKSRC}/doc/en/*.* \
@@ -92,12 +80,6 @@ do-install:
 	${CP} -R ${WRKSRC}/doc/en/pdf ${DOCSDIR}/en
 	${CP} -R ${WRKSRC}/doc/en/tutorial ${DOCSDIR}/en
 	${CP} -R ${WRKSRC}/doc/en/text ${DOCSDIR}/en
-	@${MKDIR} ${DOCSDIR}/fr
-	${INSTALL_DATA} ${WRKSRC}/doc/fr/*.* \
- 		${DOCSDIR}/fr
-	${INSTALL_DATA} ${WRKSRC}/doc/fr/QuickStart \
- 		${DOCSDIR}/fr
-	${CP} -R ${WRKSRC}/doc/fr/tutorial ${DOCSDIR}/fr
 .endif
 
 .include <bsd.port.mk>
