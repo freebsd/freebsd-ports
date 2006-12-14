@@ -28,7 +28,7 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-OOOVERSION=	2.0.4
+OOOVERSION=	2.1.0
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
@@ -44,6 +44,7 @@ USE_KDELIBS_VER=	3
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 .if !defined(WITH_GNUGCJ)
@@ -55,7 +56,6 @@ JAVA_VENDOR=	freebsd bsdjava
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
-
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -72,8 +72,9 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-OOOTAG?=		OOD680_m5
-OOOSRC?=		OOo_2.0.4_src.tar.gz
+MILESTONE?=		6
+OOOTAG?=		OOE680_m${MILESTONE}
+OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
@@ -257,6 +258,10 @@ post-install:
 	@${ECHO_CMD} "" > ${TMPPLIST}
 	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
+	@for app in base calc draw impress math printeradmin writer; do \
+		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
+			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
+	done
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${PREFIX}/share/applications/${EXECBASE}
 	@${MKDIR} ${PREFIX}/share/applications
@@ -268,8 +273,8 @@ post-install:
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
 				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
-				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png ; \
-				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png" >> ${TMPPLIST} ; \
+				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg-21-$${app}.png ; \
+				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/openofficeorg-21-$${app}.png" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
 		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
