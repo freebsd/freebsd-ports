@@ -13103,7 +13103,6 @@ ruby-panelapplet	ports/x11-toolkits/ruby-panelapplet
 ruby-pango	ports/x11-toolkits/ruby-pango
 ruby-password	ports/security/ruby-password
 ruby-pcap	ports/net/ruby-pcap
-ruby-pcsc-lite	ports/devel/ruby-pcsc-lite
 ruby-pdflib	ports/print/ruby-pdflib
 ruby-perl	ports/lang/ruby-perl
 ruby-pgplot	ports/graphics/ruby-pgplot
