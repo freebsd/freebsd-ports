@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	httpfs
-PORTVERSION=	2.06.07.10
+PORTVERSION=	2.06.08.26
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	fusefs-
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_with_static_binaries_${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fuse-based http filesystem
 
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 
 PLIST_FILES=	bin/httpfs
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}
 
 do-build:
