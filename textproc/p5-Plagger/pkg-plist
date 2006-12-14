@@ -71,6 +71,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Filter/GuessTimeZoneByDomain.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/HEADEnclosureMetadata.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/HTMLScrubber.pm
+%%SITE_PERL%%/Plagger/Plugin/Filter/HTMLTidy.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/HatenaBookmarkTag.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/HatenaBookmarkUsersCount.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/HatenaDiaryKeywordLink.pm
@@ -251,8 +252,8 @@ bin/plagger-ircbot
 %%PORTDOCS%%%%EXAMPLESDIR%%/xoxo-planet.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/xoxo2opml.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/yapcvideo.yaml
-%%DATADIR%%/assets/common/mail.tt
 %%DATADIR%%/assets/common/html.tt
+%%DATADIR%%/assets/common/mail.tt
 %%DATADIR%%/assets/plugins/CustomFeed-Script/domain-expire.pl
 %%DATADIR%%/assets/plugins/CustomFeed-Script/jsports-football.pl
 %%DATADIR%%/assets/plugins/CustomFeed-Script/slims_calendar.pl
@@ -280,6 +281,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/bounce.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/business-i.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/business_nikkeibp_co_jp.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/catalyst_advent.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/cdjournal.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/chugoku-np.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/chuspo_dragons.yaml
@@ -302,6 +304,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/gigazine_net.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/gyao_content.pl
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/hatena_diary.pl
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/hatena_serif.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/headlines_yahoo_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/hmv.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/impress.yaml
@@ -364,6 +367,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/sponichi.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/sportsnavi.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/stage6.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/talesweaver_news.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/technobahn_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/tencount.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/theinquirer.yaml

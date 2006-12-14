@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plagger
-PORTVERSION=	0.7.16
+PORTVERSION=	0.7.17
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -53,6 +53,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
 		GUESSLANG "Filter::GuessLanguage Support" off \
 		GUESSTZ "Filter::GuessTimeZoneByDomain Support" off \
+		HTMLTIDY "Filter::HTMLTidy Support" off \
 		PUBLISHMT "Publish::MT Support" off \
 		PUBSERLZR "Publish-Serializer Support" off \
 		PUBICAL "Publish::iCal Support" off \
@@ -164,6 +165,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Lingua/ZH/HanDetect.pm:${PORTSDIR}/chinese/p5-Lingu
 
 .if defined(WITH_GUESSTZ)
 BUILD_DEPENDS+=	${SITE_PERL}/IP/Country.pm:${PORTSDIR}/net/p5-IP-Country
+.endif
+
+.if defined(WITH_HTMLTIDY)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/Tidy.pm:${PORTSDIR}/textproc/p5-HTML-Tidy
 .endif
 
 .if defined(WITH_PUBLISHMT)
@@ -414,6 +419,7 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Filter::GuessTimeZoneByDomain.3 \
 		Plagger::Plugin::Filter::HEADEnclosureMetadata.3 \
 		Plagger::Plugin::Filter::HTMLScrubber.3 \
+		Plagger::Plugin::Filter::HTMLTidy.3 \
 		Plagger::Plugin::Filter::HatenaBookmarkTag.3 \
 		Plagger::Plugin::Filter::HatenaBookmarkUsersCount.3 \
 		Plagger::Plugin::Filter::HatenaDiaryKeywordLink.3 \
