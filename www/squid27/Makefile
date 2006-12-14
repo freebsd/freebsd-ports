@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
@@ -87,7 +87,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE5
+DISTNAME=	squid-2.6.STABLE6
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -100,7 +100,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
-PATCHFILES=	11086.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
