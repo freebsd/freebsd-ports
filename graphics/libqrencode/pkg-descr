@@ -1,0 +1,14 @@
+Libqrencode is a C library for encoding data in a QR Code symbol, a kind of
+2D symbology that can be scanned by handy terminals such as a mobile phone
+with CCD. The capacity of QR Code is up to 7000 digits or 4000 characters,
+and is highly robustness.
+
+Libqrencode supports QR Code model 2, described in JIS (Japanese Industrial
+Standards) X0510:2004 or ISO/IEC 18004. Currently the following features are
+not supported:
+    * ECI and FNC1 mode
+    * Structured Append Feature
+    * Micro QR Code
+    * QR Code model 1
+
+WWW: http://megaui.net/fukuchi/works/qrencode/index.en.html

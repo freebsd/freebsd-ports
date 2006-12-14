@@ -365,6 +365,7 @@
     SUBDIR += libpano12
     SUBDIR += libpcd
     SUBDIR += libqglviewer
+    SUBDIR += libqrencode
     SUBDIR += librsvg
     SUBDIR += librsvg2
     SUBDIR += libsvg
