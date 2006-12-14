@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	nip2
-PORTVERSION=	7.10.10
-PORTREVISION=	1
+PORTVERSION=	7.10.21
+PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.10/
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
 
-LIB_DEPENDS=	vips.14:${PORTSDIR}/graphics/vips \
+LIB_DEPENDS=	vips.18:${PORTSDIR}/graphics/vips \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
