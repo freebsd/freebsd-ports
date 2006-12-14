@@ -551,6 +551,7 @@
     SUBDIR += primateplunge
     SUBDIR += ptkei
     SUBDIR += pvpgn
+    SUBDIR += py-poker-eval
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += py-ski

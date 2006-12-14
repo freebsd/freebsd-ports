@@ -1,0 +1,33 @@
+# ex:ts=8
+# Ports collection Makefile for:	py-poker-eval
+# Date created:			Dec 14, 2006
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	poker-eval
+PORTVERSION=	0.133
+CATEGORIES=	games python
+MASTER_SITES=	http://download.gna.org/pokersource/sources/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py${PORTNAME}-${PORTVERSION:E}.0
+
+MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Python adaptor for the poker-eval toolkit
+
+LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
+
+USE_GNOME=	gnometarget pkgconfig
+USE_PYTHON=	2.3+
+GNU_CONFIGURE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|{libdir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
+
+test:
+	@cd ${WRKSRC} && ${MAKE} check
+
+.include <bsd.port.mk>
