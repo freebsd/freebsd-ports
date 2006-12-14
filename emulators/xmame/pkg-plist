@@ -1,6 +1,6 @@
 bin/%%MAMEMESS%%
 %%MAMEONLY%%bin/xml2info
-%%MAMEONLY%%bin/chdman
+bin/chdman
 %%MAMEONLY%%bin/romcmp
 %%MESSONLY%%bin/imgtool
 %%MESSONLY%%bin/dat2html
