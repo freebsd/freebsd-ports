@@ -13,9 +13,8 @@ MASTER_SITES=	http://kcachegrind.sourceforge.net/
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Valgrind skin for cache simulation and call tracing
 
-IGNORE=		Dumps core \(SIGBUS\). \(Also v. 0.9.10\!\)
-DEPRECATED=	${IGNORE}
-EXPIRATION_DATE=2006-12-01
+# see http://lists.freebsd.org/pipermail/cvs-ports/2006-December/112797.html
+#IGNORE=	Dumps core \(SIGBUS\). \(Also v. 0.9.10\!\)
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
