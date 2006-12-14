@@ -7,15 +7,13 @@
 
 PORTNAME=	xbattbar
 PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/suguru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Simple battery meter
-
-ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
 USE_X_PREFIX=	yes
