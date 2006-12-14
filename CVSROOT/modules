@@ -7322,6 +7322,7 @@ mp3rename	ports/audio/mp3rename
 mp3riot		ports/audio/mp3riot
 mp3splt		ports/audio/mp3splt
 mp3stat		ports/audio/mp3stat
+mp3towav-bundle	ports/audio/mp3towav-bundle
 mp3wrap		ports/audio/mp3wrap
 mpack		ports/converters/mpack
 mpage		ports/print/mpage
