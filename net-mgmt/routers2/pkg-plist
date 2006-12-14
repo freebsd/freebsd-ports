@@ -202,6 +202,7 @@ www/routers2/rrdicons/zoomout.gif
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%%%DOCSDIR%%/WINDOWS
 %%PORTDOCS%%%%DOCSDIR%%/WISHLIST
+@dirrm www/routers2/graphs
 @dirrm www/routers2/rrdicons
 @dirrm www/routers2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

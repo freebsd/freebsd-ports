@@ -24,8 +24,7 @@ RUN_DEPENDS=	${SITE_PERL}/Convert/ASN1/IO.pm:${PORTSDIR}/converters/p5-Convert-A
 		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg \
-		${LOCALBASE}/bin/mrtg-ping-probe:${PORTSDIR}/net/mrtg-ping-probe
+		${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
@@ -42,8 +41,10 @@ post-patch:
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/www/routers2
 		${MKDIR} -m 755 ${PREFIX}/www/routers2/rrdicons
+		${MKDIR} -m 755 ${PREFIX}/www/routers2/graphs
 		${MKDIR} -m 755 /var/db/rrdtool
 		${CHOWN} ${WWWOWN}:${WWWGRP} /var/db/rrdtool
+		${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/www/routers2/graphs
 
 .if !defined(NOPORTDOCS)
 		${MKDIR} -m 755 ${DOCSDIR}
