@@ -1,3 +1,3 @@
-MD5 (httpfs_2.06.07.10.tar.bz2) = f62e2f333651a7c21b610d0ec4f52f03
-SHA256 (httpfs_2.06.07.10.tar.bz2) = b6291852ae2810528585447b835aa9d507c6ee7d1a4e7889e183e0305f753223
-SIZE (httpfs_2.06.07.10.tar.bz2) = 13990
+MD5 (httpfs_with_static_binaries_2.06.08.26.tar.gz) = e2840f8586738384872eeaad7ae2d83a
+SHA256 (httpfs_with_static_binaries_2.06.08.26.tar.gz) = b34d23d9e67b3e7931b2c0dc53fd997dcaf3d6b2126f87a25b51dd00c25e4e65
+SIZE (httpfs_with_static_binaries_2.06.08.26.tar.gz) = 115384
