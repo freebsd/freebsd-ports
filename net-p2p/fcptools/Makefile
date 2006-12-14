@@ -12,7 +12,7 @@ MASTER_SITES=	http://freenetproject.org/snapshots/
 DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeNet client library and command-line tools for shell scripting
 
 USE_GMAKE=	yes

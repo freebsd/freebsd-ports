@@ -15,7 +15,7 @@ MASTER_SITES=	http://freenetproject.org/snapshots/ \
 DISTNAME=	${PORTNAME}-20051123
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
 
 USE_RC_SUBR=	yes
