@@ -209,6 +209,7 @@
     SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
+    SUBDIR += wispy-tools
     SUBDIR += yabm
     SUBDIR += zabbix
 
