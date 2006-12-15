@@ -55,7 +55,6 @@ pre-configure:
 	@${TOUCH} `${FIND} -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
 	@${TOUCH} ${WRKSRC}/configure.in ${WRKSRC}/configure
 
-
 # XXX due to gcc-3.4 (20040706) bug in preprocessing of inline functions,
 # this needs at least -O2 to compile. Fails with -O
 .if ${OSVERSION} >= 502126
