@@ -48,7 +48,7 @@ USE_WX=		2.6
 WX_CONF_ARGS=	absolute
 CPPFLAGS+=		-I${X11BASE}/include
 .else
-CONFIGURE_ARGS+=	--with-wx-config=false
+CONFIGURE_ARGS+=	--with-wx-config=false --without-x
 .endif
 
 .if !defined(WITHOUT_X11)
