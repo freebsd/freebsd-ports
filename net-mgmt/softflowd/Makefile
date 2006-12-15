@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	softflowd
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
 
@@ -14,6 +14,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Softflowd is flow-based network traffic analyser with export
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	"--mandir=${PREFIX}/man"
 USE_GMAKE=	yes
 PLIST_FILES=	sbin/softflowd sbin/softflowctl
 MAN8=		softflowd.8 softflowctl.8
