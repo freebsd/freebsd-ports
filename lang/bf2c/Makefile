@@ -16,6 +16,10 @@ COMMENT=	Optimizing BrainF*ck to C compiler
 
 USE_GMAKE=yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,^CC=.*$$,CC=${CXX} ${CXXFLAGS:C/-Werror//g},' \
+	                  ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bf2c ${PREFIX}/bin
 
