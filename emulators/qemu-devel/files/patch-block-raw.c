@@ -1,4 +1,14 @@
 Index: qemu/block-raw.c
+@@ -51,6 +51,9 @@
+ #include <linux/cdrom.h>
+ #include <linux/fd.h>
+ #endif
++#if defined(__FreeBSD__) && __FreeBSD__ > 4
++#include <sys/disk.h>
++#endif
+ 
+ //#define DEBUG_FLOPPY
+ 
 @@ -164,9 +164,20 @@
  static int aio_sig_num = SIGUSR2;
  static RawAIOCB *first_aio; /* AIO issued */
