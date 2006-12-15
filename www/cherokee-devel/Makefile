@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.5.5
-PORTREVISION=	2
+PORTVERSION=	0.5.6
+PORTREVISION=
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/ \
 		http://www.alaskaparadise.com/freebsd/

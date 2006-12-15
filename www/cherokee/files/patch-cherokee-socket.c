@@ -1,6 +1,6 @@
---- cherokee/socket.c.orig	Wed Sep 13 21:48:51 2006
-+++ cherokee/socket.c	Wed Sep 13 22:06:35 2006
-@@ -1122,13 +1122,17 @@
+--- cherokee/socket.c.orig	Thu Dec  7 09:46:29 2006
++++ cherokee/socket.c	Thu Dec 14 10:35:48 2006
+@@ -1153,13 +1153,17 @@
  cherokee_socket_init_client_tls (cherokee_socket_t *socket)
  {
  #ifdef HAVE_TLS
