@@ -25,7 +25,7 @@ MASTER_SITES=	ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER
 		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.${OPERA_TYPE}-${OPERA_LIB}-qt.i386.freebsd-en
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 OPERA_VER=	9.02
