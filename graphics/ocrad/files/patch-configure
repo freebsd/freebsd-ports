@@ -1,12 +1,14 @@
 --- configure.orig	Fri Jan 23 22:55:38 2004
 +++ configure	Mon Mar  1 11:34:35 2004
-@@ -19,13 +19,6 @@
+@@ -19,15 +19,6 @@
  progname=$0
  srctrigger=ocrad.png
  
 -# clear some things potentially inherited from environment.
 -srcdir=
 -prefix=/usr/local
+-exec_prefix='$(prefix)'
+-bindir='$(exec_prefix)/bin'
 -datadir='$(prefix)/share'
 -infodir='$(datadir)/info'
 -mandir='$(datadir)/man'
@@ -14,7 +16,7 @@
  # Loop over all args
  while [ x$1 != x ] ; do
  
-@@ -68,6 +62,11 @@
+@@ -78,6 +72,11 @@
  		exit 1 ;;
  	esac
  done

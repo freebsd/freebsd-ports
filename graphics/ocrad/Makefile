@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocrad
-PORTVERSION=	0.14
+PORTVERSION=	0.16
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-USE_GCC=	3.4
+USE_GCC=	3.4+
 post-patch:
 . for f in main.cc rational.cc
 	@${REINPLACE_CMD} 's/std::snprintf/snprintf/g' ${WRKSRC}/$f
