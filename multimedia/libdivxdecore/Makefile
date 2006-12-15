@@ -9,7 +9,7 @@ PORTNAME=	libdivxdecore
 PORTVERSION=	0.4.7
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	OpenDivX decoding engine from Project Mayo
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
-CONFLICTS=	${PORTNAME}-devel-*
+CONFLICTS=	${PORTNAME}-devel-[0-9]*
 
 LIB_VERSION=	0
 
