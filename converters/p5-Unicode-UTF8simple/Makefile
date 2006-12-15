@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conversions to/from UTF8 from/to charactersets
 
 PERL_CONFIGURE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/ \
 		http://indigo.ie/~mscott/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
 
 USE_ZIP=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	libdv-${PORTVERSION:C/\.(.)$/\1/}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
