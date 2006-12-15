@@ -9,7 +9,7 @@ PORTNAME=	libdivxdecore
 PORTVERSION=	0.4.0.50
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.projectmayo.com/dnload/divxcore/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	decore${PORTVERSION:E}src
 
