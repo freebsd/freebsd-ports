@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- bin/Tee/Make.host.orig
++++ bin/Tee/Make.host
+@@ -19,7 +19,7 @@
+ HOSTTYPE,`NEXT2',`cc',
+ HOSTTYPE,`IRIX5',`cc',
+ HOSTTYPE,`IRIX6',`cc',
+-`gcc -fwritable-strings')`
++`gcc')`
+ 
+ HDR=	machine.h
+ SRC=	
