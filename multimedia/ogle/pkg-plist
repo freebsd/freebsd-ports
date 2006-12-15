@@ -29,8 +29,8 @@ lib/ogle/ogle_nav
 lib/ogle/ogle_nav_debug
 lib/ogle/ogle_vout
 lib/ogle/ogle_vout_debug
-share/ogle/ogle_conf.dtd
-share/ogle/oglerc
+%%DATADIR%%/ogle_conf.dtd
+%%DATADIR%%/oglerc
 @dirrm share/ogle
 @dirrm lib/ogle
 @dirrm include/ogle
