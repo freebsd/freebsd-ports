@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	1.2.5
+PORTVERSION=	2.0.1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/ \
-		http://www.ewtoo.org/~astyanax/nano/dist/v1.2/
+MASTER_SITES=	http://www.nano-editor.org/dist/v2.0/ \
+		http://www.ewtoo.org/~astyanax/nano/dist/v2.0/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} --mandir=${PREFIX}/man \
+		--enable-all
+CONFIGURE_ARGS+=--disable-utf8	# requires wide character curses
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-all
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -28,15 +31,20 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 INFO=		nano
-MAN1=		nano.1
+MAN1=		nano.1 rnano.1
 MAN5=		nanorc.5
+MANLANG=	"" fr
 
 post-build:
-	${REINPLACE_CMD} 's:\$$SYSCONFDIR:${PREFIX}/etc:g' \
-		${WRKSRC}/${MAN1} ${WRKSRC}/${MAN5} ${WRKSRC}/${INFO:=.info}
+	cd ${WRKSRC}/doc/man; ${REINPLACE_CMD} \
+		-e 's:SYSCONFDIR:${PREFIX}/etc:g' \
+		-e 's:EXAMPLESDIR:${EXAMPLESDIR}:g' \
+		${MAN1} ${MAN5} ${WRKSRC}/doc/texinfo/${INFO:=.info}
+	${REINPLACE_CMD} -e 's/\\</[[:<:]]/g' -e 's/\\>/[[:>:]]/g' \
+		${WRKSRC}/doc/syntax/*.nanorc
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/nanorc.sample ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/nanorc.sample ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
