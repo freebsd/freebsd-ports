@@ -14,9 +14,8 @@ MASTER_SITE_SUBDIR=	lioux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBSD's pgrep and pkill: find or signal processes matching criteria
 
-MAKE_ENV=	DESTDIR=${PREFIX} \
-		BINDIR=/bin \
-		MANDIR=/man/man
+MAKE_ENV=	BINDIR=${PREFIX}/bin \
+		MANDIR=${PREFIX}/man/man
 
 MANCOMPRESSED=	yes
 MAN1=		pgrep.1 pkill.1
