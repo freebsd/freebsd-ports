@@ -7106,7 +7106,6 @@ mldonkey-devel	ports/net-p2p/mldonkey-devel
 mldonkey-gui	ports/net-p2p/mldonkey-gui
 mldonkey-gui-devel	ports/net-p2p/mldonkey-gui-devel
 mldonkey-perlreactor	ports/net-p2p/mldonkey-perlreactor
-mldonkey-sancho	ports/net-p2p/mldonkey-sancho
 mldonkey-serverspy	ports/net-p2p/mldonkey-serverspy
 mldonkey-urlslave	ports/net-p2p/mldonkey-urlslave
 mlmmj		ports/mail/mlmmj
