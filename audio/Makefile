@@ -545,6 +545,7 @@
     SUBDIR += sidplayer
     SUBDIR += simplemod
     SUBDIR += slimserver
+    SUBDIR += slimserver-dynamictransition
     SUBDIR += slimserver-lastfm
     SUBDIR += slimserver-slimscrobbler
     SUBDIR += snack
