@@ -7,7 +7,8 @@ EtoileMenus
 Local libs:	Pantomime, GToolKit, rigs, Addresses, SlideShow, netclasses,
 WizardKit, HighlighterKit, Performance, SQLClient, WebServer, StepTalk,
 MathArray, ObjcUnit, WildMenus, GSKrab, Cddb, UnitKit, XWindowServerKit,
-RSSKit, EtoileExtensions, Encore, BDB, FortyTwo, ObjectiveLib
+RSSKit, EtoileExtensions, Encore, BDB, FortyTwo, ObjectiveLib, PopplerKit,
+MP3ToWav
 
 System apps:	Gorm, GShisen, ProjectCenter, Preferences, GWorkspace,
 guile-gui, gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
@@ -24,6 +25,6 @@ Jishyo, GMines, InnerSpace, FTP, DictionaryReader, batmon, Adun, RemoteDesk,
 DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer, Burn, GScheme,
 Mplayer, MyLibrary, NeXTGo, Grr, iTerm, Installer, Hardware, LookAndBehavior,
 Azalea, EtoileMenuServer, Position, Expense, FreeTar, CodeEditor, Localize,
-AddressManager
+AddressManager, GSBench, SVGViewer
 
 Local tools:	zillion, adtool
