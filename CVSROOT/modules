@@ -13625,6 +13625,7 @@ slige		ports/games/slige
 slim		ports/x11/slim
 slime		ports/editors/slime
 slimserver	ports/audio/slimserver
+slimserver-dynamictransition	ports/audio/slimserver-dynamictransition
 slimserver-lastfm	ports/audio/slimserver-lastfm
 slimserver-slimscrobbler	ports/audio/slimserver-slimscrobbler
 slingshot	ports/x11-toolkits/slingshot
