@@ -21,6 +21,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Unreal - the next generation ircd
 
+LIB_DEPENDS=	cares.1:${PORTSDIR}/dns/c-ares
+
 WRKSRC=		${WRKDIR}/${PORTNAME}3.2
 
 MODULESDIR=	${PREFIX}/lib/${PORTNAME}
@@ -33,6 +35,8 @@ USE_RC_SUBR=	unrealircd.sh
 
 SUB_LIST+=	RUNDIR=${RUNDIR}
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-listen=5 \
 		--with-dpath=${CONFIGDIR} \
 		--with-spath=${PREFIX}/libexec/ircd \
@@ -42,6 +46,8 @@ CONFIGURE_ARGS=	--with-listen=5 \
 		--with-permissions=0600 \
 		--with-fd-setsize=1024 \
 		--enable-dynamic-linking
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		CFLAGS="${CPPFLAGS} ${CFLAGS}"
 
 OPTIONS=	HUB "Configure as a hub (otherwise configure as a leaf)" on \
 		NOSPOOF "Enable anti-spoof protection" off \
@@ -85,10 +91,8 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if defined(WITH_REMOTE)
-LIB_DEPENDS+=	cares.1:${PORTSDIR}/dns/c-ares curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-libcurl=${LOCALBASE}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_PREFIXAQ)
