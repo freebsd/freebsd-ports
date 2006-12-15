@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -62,12 +62,14 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	BDB:databases/fortytwo-bdb \
 	FT:graphics/fortytwo \
 	ObjectiveLib:devel/objectivelib \
+	PopplerKit:graphics/popplerkit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
 
 USE_GNUSTEP_LOCAL_BUNDLES+=	\
-	Cddb:audio/cddb-bundle
+	Cddb:audio/cddb-bundle	\
+	MP3ToWav:audio/mp3towav-bundle \
 
 USE_GNUSTEP_SYSTEM_THEMES+=	\
 	Camaelon:x11-themes/etoile-camaelon \
@@ -160,6 +162,8 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	FreeTar:archivers/freetar \
 	CodeEditor:editors/codeeditor \
 	Localize:textproc/localize \
+	GSBench:benchmarks/gsbench \
+	SVGViewer:graphics/svgviewer \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
