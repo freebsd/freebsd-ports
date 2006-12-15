@@ -7,7 +7,7 @@
 
 PORTNAME=	netpbm
 .if defined(WITH_NETPBM_DEVEL)
-PORTVERSION= 	10.30
+PORTVERSION= 	10.31
 .else
 PORTVERSION=	10.26.35
 .endif
