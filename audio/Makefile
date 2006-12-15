@@ -547,6 +547,7 @@
     SUBDIR += slimserver
     SUBDIR += slimserver-dynamictransition
     SUBDIR += slimserver-lastfm
+    SUBDIR += slimserver-lazysearch
     SUBDIR += slimserver-slimscrobbler
     SUBDIR += snack
     SUBDIR += snett
