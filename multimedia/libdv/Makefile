@@ -88,6 +88,10 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|(@REQUIRES_NOPKGCONFIG@)|-L${LOCALBASE}/include \1|' \
 		${WRKSRC}/libdv.pc.in
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/configure
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
