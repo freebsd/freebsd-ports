@@ -108,7 +108,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A eRuby injection vulnerability has been discovered in tDiary.</p>
+	<p>An undisclosed eRuby injection vulnerability had been discovered in tDiary.</p>
       </body>
     </description>
     <references>
@@ -117,6 +117,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-12-10</discovery>
       <entry>2006-12-13</entry>
+      <modified>2006-12-15</modified>
     </dates>
   </vuln>
 
@@ -295,8 +296,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Werner Koch reports:</p>
 	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000491.html">
-	  <p>
-	    GnuPG uses data structures called filters to process
+	  <p>GnuPG uses data structures called filters to process
 	    OpenPGP messages.  These filters are used in a similar
 	    way as a pipelines in the shell.  For communication
 	    between these filters context structures are used.  These
@@ -314,22 +314,17 @@ Note:  Please add new entries to the beginning of this file.
 	    call an arbitrary function of the process.  Obviously an
 	    exploit needs to prepared for a specific version,
 	    compiler, libc, etc to be successful - but it is
-	    definitely doable.
-	  </p>
-	  <p>
-	    Fixing this is obvious: We need to allocate the context on
+	    definitely doable.</p>
+	  <p>Fixing this is obvious: We need to allocate the context on
 	    the heap and use a reference count to keep it valid as
 	    long as either the controlling code or the filter code
-	    needs it.
-	  </p>
-	  <p>
-	    We have checked all other usages of such a stack based
+	    needs it.</p>
+	  <p>We have checked all other usages of such a stack based
 	    filter contexts but fortunately found no other vulnerable
 	    places.  This allows to release a relatively small patch.
 	    However, for reasons of code cleanness and easier audits
 	    we will soon start to change all these stack based filter
-	    contexts to heap based ones.
-	  </p>
+	    contexts to heap based ones.</p>
 	</blockquote>
       </body>
     </description>
@@ -341,6 +336,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-12-04</discovery>
       <entry>2006-12-07</entry>
+      <modified>2006-12-15</modified>
     </dates>
   </vuln>
 
@@ -349,17 +345,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>ruby</name>
-        <range><ge>1.8.*,1</ge><lt>1.8.5_5,1</lt></range>
-      </package>
-      <package>
         <name>ruby+pthreads</name>
-        <range><ge>1.8.*,1</ge><lt>1.8.5_5,1</lt></range>
-      </package>
-      <package>
         <name>ruby+pthreads+oniguruma</name>
-        <range><ge>1.8.*,1</ge><lt>1.8.5_5,1</lt></range>
-      </package>
-      <package>
         <name>ruby+oniguruma</name>
         <range><ge>1.8.*,1</ge><lt>1.8.5_5,1</lt></range>
       </package>
@@ -370,7 +357,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Official ruby site reports:</p>
+	<p>The official ruby site reports:</p>
 	<blockquote cite="http://www.ruby-lang.org/en/news/2006/12/04/another-dos-vulnerability-in-cgi-library/">
 	  <p>Another vulnerability has been discovered in the CGI library
 	    (cgi.rb) that ships with Ruby which could be used by a malicious
@@ -387,6 +374,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-12-04</discovery>
       <entry>2006-12-04</entry>
+      <modified>2006-12-15</modified>
     </dates>
   </vuln>
 
@@ -633,13 +621,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>11417</bid>
       <url>http://secunia.com/advisories/12857/</url>
       <url>http://securitytracker.com/alerts/2004/Oct/1011673.html</url>
-      <bid>11417</bid>
     </references>
     <dates>
       <discovery>2004-10-18</discovery>
       <entry>2006-11-14</entry>
+      <modified>2006-12-15</modified>
     </dates>
   </vuln>
 
@@ -715,11 +704,11 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>20903</bid>
       <cvename>CVE-2006-4806</cvename>
       <cvename>CVE-2006-4807</cvename>
       <cvename>CVE-2006-4808</cvename>
       <cvename>CVE-2006-4809</cvename>
-      <bid>20903</bid>
     </references>
     <dates>
       <discovery>2006-11-03</discovery>
@@ -732,17 +721,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>ruby</name>
-	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
-      </package>
-      <package>
 	<name>ruby+pthreads</name>
-	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
-      </package>
-      <package>
 	<name>ruby+pthreads+oniguruma</name>
-	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
-      </package>
-      <package>
 	<name>ruby+oniguruma</name>
 	<range><ge>1.8.*,1</ge><lt>1.8.5_4,1</lt></range>
       </package>
@@ -767,14 +747,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVE-2006-5467</cvename>
       <bid>20777</bid>
+      <cvename>CVE-2006-5467</cvename>
       <url>http://rubyforge.org/pipermail/mongrel-users/2006-October/001946.html</url>
     </references>
     <dates>
       <discovery>2006-10-25</discovery>
       <entry>2006-11-04</entry>
-      <modified>2006-12-05</modified>
+      <modified>2006-12-15</modified>
     </dates>
   </vuln>
 
