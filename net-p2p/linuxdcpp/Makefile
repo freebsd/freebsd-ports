@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	0.0.1.20061122	#0.0.1.YYYYMMDD
+PORTVERSION=	0.0.1.20061210	#0.0.1.YYYYMMDD
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~mezz/distfiles/
 MASTER_SITE_SUBDIR=mezz
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A port of the win32 DC++ direct connect client to POSIX-like systems
 
-USE_GCC=	3.4
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libglade2
 USE_SCONS=	yes
+USE_OPENSSL=	yes
 
 .if defined(WITH_DEBUG)
 SCONS_ARGS=	debug=1

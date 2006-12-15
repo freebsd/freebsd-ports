@@ -1,8 +1,8 @@
---- SConstruct.orig	Wed Nov 22 22:20:48 2006
-+++ SConstruct	Wed Nov 22 22:22:59 2006
+--- SConstruct.orig	Fri Dec  8 17:52:26 2006
++++ SConstruct	Fri Dec  8 17:54:43 2006
 @@ -23,21 +23,6 @@
-      context.Result(ret)
-      return ret
+ 	context.Result(ret)
+ 	return ret
  
 -def CheckCXXVersion(context, name, major, minor):
 -	context.Message('Checking for %s >= %d.%d...' % (name, major, minor))
@@ -71,21 +71,21 @@
 -	print 'Enabling ccache...'
 -
  if not conf.CheckPKGConfig():
-      print 'pkg-config not found.'
-      Exit(1)
+ 	print '\tpkg-config not found.'
+ 	Exit(1)
 @@ -137,11 +98,6 @@
- 	print 'Can\'t live without it, sorry'
+ 	print '\tHeader file unistd.h not found'
  	Exit(1)
  
 -if not conf.CheckLibWithHeader('pthread', 'pthread.h', 'c'):
--	print 'Did not find the pthread library, exiting!'
--	print 'Note: You might have the lib but not the headers'
+-	print '\tpthread library not found'
+-	print '\tNote: You might have the lib but not the headers'
 -	Exit(1)
 -
  if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
- 	print 'Did not find the z library (gzip/z compression)'
- 	print 'Can\'t live without it, exiting'
-@@ -165,11 +121,11 @@
+ 	print '\tz library (gzip/z compression) not found'
+ 	print '\tNote: You might have the lib but not the headers'
+@@ -168,11 +124,11 @@
  env.Append(LINKFLAGS = ['-Wl,--as-needed'])
  
  if env.has_key('debug') and env['debug']:
