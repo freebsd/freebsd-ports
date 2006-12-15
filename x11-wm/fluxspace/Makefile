@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.isomedia.com/homes/stevencooper/files/
 
-MAINTAINER=	eirikn@bluezone.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manager and workspace enhancer and integrator
 
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
