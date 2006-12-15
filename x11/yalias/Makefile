@@ -7,7 +7,7 @@
 
 PORTNAME=	yalias
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://offog.org/files/ \
 		ftp://ftp.i-scream.org/pub/offog.org/files/ \
@@ -19,12 +19,10 @@ COMMENT=	An enhanced execution box with regex pattern matching
 USE_GNOME=	gtk20
 USE_XLIB=	yes
 
-USE_X_PREFIX=	yes
-
 ALL_TARGET=	yalias
 MAKE_ARGS=	prefix=${PREFIX} YALIASDIR=${DATADIR}
 
-.if !defined(NOPORTDOCS)
+.ifndef(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
