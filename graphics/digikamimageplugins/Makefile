@@ -12,7 +12,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of image editor plugins for Digikam
 
 LIB_DEPENDS=	digikam.0:${PORTSDIR}/graphics/digikam

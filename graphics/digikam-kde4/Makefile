@@ -12,7 +12,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Photo album manager for KDE with gphoto2 backend
 
 LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \

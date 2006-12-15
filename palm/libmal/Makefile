@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://jasonday.home.att.net/code/libmal/
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library encapsulating malsync
 
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
