@@ -17,6 +17,7 @@ COMMENT=	CDE like desktop with GTK
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+USE_GCC=	4.1
 USE_XPM=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gdkpixbuf
@@ -55,6 +56,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${LOCALBASE}|g' ${WRKSRC}/other/xinitrc.in
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
 	@${REINPLACE_CMD} -e 's|/opt/kde3|${LOCALBASE}|g ; \
-		 s|/opt/gnome|${LOCALBASE}|g' ${WRKSRC}/xfmenu/xfmenu.c
+		s|/opt/gnome|${LOCALBASE}|g' ${WRKSRC}/xfmenu/xfmenu.c
+	@${REINPLACE_CMD} -e 's|static \(Atom _XA_WIN_STATE;\)|\1|; \
+		s|static \(Atom _XA_WIN_WORKSPACE;\)|\1|; \
+		s|static \(Atom _XA_WIN_WORKSPACE_COUNT;\)|\1|' \
+		${WRKSRC}/xfgnome/xfgnome.h
+	@${REINPLACE_CMD} -e 's|static \(nmb_history \*headH;\)|\1|' \
+		${WRKSRC}/xfsamba/xfsamba_mem.c
 
 .include <bsd.port.post.mk>
