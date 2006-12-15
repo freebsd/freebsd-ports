@@ -1,0 +1,37 @@
+diff -ur src/clist.gen_h src/clist.gen_h
+--- src/clist.gen_h	2005-11-29 19:02:52.000000000 +0000
++++ src/clist.gen_h	2005-11-29 19:03:43.000000000 +0000
+@@ -60,8 +60,8 @@
+ class Cell 
+   {
+     protected:
+-      friend class CList;
++      friend class Gtk::CList;
+       friend class Row;
+ 
+       GtkCList    *parent_;
+       GtkCListRow *row__;
+diff -ur src/radiobutton.gen_h src/radiobutton.gen_h
+--- src/radiobutton.gen_h	2005-11-29 19:02:52.000000000 +0000
++++ src/radiobutton.gen_h	2005-11-29 19:04:10.000000000 +0000
+@@ -36,7 +36,7 @@
+   //- It should not be called with new.
+   class Group
+     {
+-      friend class RadioButton;
++      friend class Gtk::RadioButton;
+       GSList *group_;
+       void* operator new(size_t);
+       void add(RadioButton& item);
+diff -ur src/radiomenuitem.gen_h src/radiomenuitem.gen_h
+--- src/radiomenuitem.gen_h	2005-11-29 19:02:52.000000000 +0000
++++ src/radiomenuitem.gen_h	2005-11-29 19:04:22.000000000 +0000
+@@ -34,7 +34,7 @@
+   //- It should not be called with new.
+   class Group 
+     {
+-      friend class RadioMenuItem;
++      friend class Gtk::RadioMenuItem;
+       GSList *group_;
+       void* operator new(size_t);
+       void add(RadioMenuItem& item);
