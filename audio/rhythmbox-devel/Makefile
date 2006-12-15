@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.9.6
-PORTREVISION=	4
+PORTVERSION=	0.9.6.90
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -47,7 +46,8 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		FAAD "Enable FAAD decoder support" off \
 		NOTIFY "Enable libnotify support" on \
 		VORBIS "Enable Ogg/Vorbis support" on \
-		GDA "Enable GDA database storage" off
+		GDA "Enable GDA database storage" off \
+		LIRC "Enable Infrared syncing support" off
 
 .include <bsd.port.pre.mk>
 
@@ -72,14 +72,25 @@ CONFIGURE_ARGS+=--with-database=libgda
 CONFIGURE_ARGS+=--with-database=tree
 .endif
 
+.if defined(WITH_LIRC)
+LIB_DEPENDS+=	lirc_client.so:${PORTSDIR}/comms/lirc
+PLIST_SUB+=	LIRC=""
+CONFIGURE_ARGS+=--enable-lirc
+.else
+CONFIGURE_ARGS+=--disable-lirc
+PLIST_SUB+=	LIRC="@comment "
+.endif
+
 .if defined(WITH_DAAP)
 CONFIGURE_ARGS+=	--enable-daap  --with-mdns=avahi
 LIB_DEPENDS+=		 avahi-client:${PORTSDIR}/net/avahi
+PLIST_SUB+=		DAAP=""
 .else
 .if exists(${LOCALBASE}/lib/libavahi-client.a)
 LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi
 .endif
 CONFIGURE_ARGS+=	--disable-daap
+PLIST_SUB+=		DAAP="@comment "
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
@@ -107,5 +118,9 @@ PLIST_SUB+=	IPOD=""
 CONFIGURE_ARGS+=--without-ipod
 PLIST_SUB+=	IPOD="@comment "
 .endif
+
+post-patch:
+	@${CP} ${FILESDIR}/audioscrobbler-ui.xml \
+	    	${WRKSRC}/plugins/audioscrobbler
 
 .include <bsd.port.post.mk>
