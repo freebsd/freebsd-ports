@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}hv36-0
+DISTNAME=	${PORTNAME}hv36-1
 
 MAINTAINER=	mmendez@energyhq.be
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
