@@ -3456,7 +3456,6 @@ gmap		ports/biology/gmap
 gmastermind	ports/games/gmastermind
 gmat		ports/textproc/gmat
 gmcal		ports/deskutils/gmcal
-gmdns		ports/net/gmdns
 gmencoder	ports/multimedia/gmencoder
 gmessage	ports/x11/gmessage
 gmetadom	ports/textproc/gmetadom
