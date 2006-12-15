@@ -2617,3 +2617,4 @@ devel/ruby-pcsc-lite||2006-12-14|Has expired: Does not compile with new pcsc-lit
 audio/alsaplayer||2006-12-14|Has expired: Remote code execution: http://vuxml.FreeBSD.org/9855ac8e-2aec-11db-a6e2-000e0c2e438a.html. Last version 0.99.76 is more than 3 years old.
 sysutils/kdar||2006-12-14|Has expired: Does not compile with dar-2.3.0
 net-im/ymessenger||2006-12-14|Has expired: is a dynamically linked binary linked to old version of gtkhtml no longer in ports
+audio/ac3dec||2006-12-14|Dead outside FreeBSD and replaced by liba52

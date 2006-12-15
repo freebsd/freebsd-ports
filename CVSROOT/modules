@@ -191,7 +191,6 @@ abridge		ports/games/abridge
 abs		ports/math/abs
 abuse		ports/games/abuse
 abuse_sdl	ports/games/abuse_sdl
-ac3dec		ports/audio/ac3dec
 accessx		ports/x11/accessx
 accrete		ports/astro/accrete
 ace		ports/devel/ace
