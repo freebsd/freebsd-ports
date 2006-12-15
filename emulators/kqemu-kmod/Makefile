@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://qemu.org/
 PKGNAMESUFFIX=	-kmod
@@ -19,6 +19,8 @@ COMMENT=	Kernel Acceralator for QEMU CPU Emulator (development version)
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_PACKAGE=	Depends on kernel, and module not redistributable
+
+USE_RC_SUBR=	kqemu
 
 .include <bsd.port.pre.mk>
 
