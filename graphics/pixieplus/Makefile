@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free, fast, and feature packed image browser and viewer for KDE
 
 LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
