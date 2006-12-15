@@ -672,6 +672,7 @@
     SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += vigra
+    SUBDIR += vindaloo
     SUBDIR += vips
     SUBDIR += visionegg
     SUBDIR += visprint
