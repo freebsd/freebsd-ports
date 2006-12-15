@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 MASTER_SITE_SUBDIR=	imagemagick
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Image processing tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
