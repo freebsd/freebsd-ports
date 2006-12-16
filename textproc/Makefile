@@ -913,6 +913,7 @@
     SUBDIR += unrtf
     SUBDIR += urlview
     SUBDIR += uz-aspell
+    SUBDIR += vbindiff
     SUBDIR += wa-aspell
     SUBDIR += wbxml2
     SUBDIR += wdiff
