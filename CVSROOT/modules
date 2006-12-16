@@ -436,6 +436,7 @@ apinger		ports/net/apinger
 apollon		ports/net-p2p/apollon
 apoolGL		ports/games/apoolGL
 apparix		ports/misc/apparix
+appwrapper	ports/deskutils/appwrapper
 apr		ports/devel/apr
 apr-svn		ports/devel/apr-svn
 apsfilter	ports/print/apsfilter
