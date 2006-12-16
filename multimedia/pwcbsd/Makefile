@@ -7,6 +7,7 @@
 
 PORTNAME=	pwcbsd
 PORTVERSION=	1.3.1
+PORTREVISION=   1
 CATEGORIES=	multimedia sysutils
 MASTER_SITES=	http://raaf.atspace.org/ \
 		${MASTER_SITE_LOCAL}
