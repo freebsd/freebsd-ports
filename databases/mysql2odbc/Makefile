@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql2odbc
 PORTVERSION=	0.99.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/mysql2odbc/
 
