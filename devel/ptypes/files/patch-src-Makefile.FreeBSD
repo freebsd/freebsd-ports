@@ -1,20 +1,22 @@
---- src/Makefile.FreeBSD.orig	Sat Mar 27 14:22:01 2004
-+++ src/Makefile.FreeBSD	Wed Mar 31 23:26:46 2004
-@@ -14,10 +14,10 @@
+--- src/Makefile.FreeBSD.orig	Mon May 17 13:37:27 2004
++++ src/Makefile.FreeBSD	Sat Dec 16 19:29:36 2006
+@@ -12,12 +12,10 @@
+ # Makefile for FreeBSD, called from ../Makefile
+ #
  
- CXX = g++
- 
--OS_CXXOPTS = -pthread -fPIC
--OS_LDLIBS = -lc_r
+-CXX = g++
 +OS_CXXOPTS = -fPIC $(PTHREAD_CFLAGS)
 +OS_LDLIBS = $(PTHREAD_LIBS)
  
+-OS_CXXOPTS = -pthread -fPIC
+-OS_LDLIBS = -lc_r
+-
 -LIBTOOL = $(CXX) -shared -pthread
 +LIBTOOL = $(CXX) -shared $(PTHREAD_LIBS)
  SOSTRIP = strip
  
  SOEXT = so
-@@ -25,7 +25,7 @@
+@@ -25,7 +23,7 @@
  SOINSTOPT = -h
  SOINSTNAME = $(SOREALNAME)
  
