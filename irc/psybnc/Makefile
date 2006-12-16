@@ -8,7 +8,7 @@
 PORTNAME=	psybnc
 PORTVERSION=	2.3.1
 PORTREVISION=	1
-CATEGORIES=	irc
+CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.psyBNC.at/download/final/ \
 		http://psyBNC.info/download/final/
 DISTNAME=	psyBNC${PORTVERSION}
