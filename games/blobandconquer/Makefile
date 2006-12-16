@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blobandconquer
-DISTVERSION=	0.6-1
+DISTVERSION=	0.7-2
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
 DISTNAME=	blobAndConquer-${DISTVERSION}
@@ -14,11 +14,8 @@ DISTNAME=	blobAndConquer-${DISTVERSION}
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A somewhat violent 3D action game
 
-BROKEN=		Checksum mismatch
-
 FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl mixer image ttf
 USE_GL=		yes
 USE_GMAKE=	yes
