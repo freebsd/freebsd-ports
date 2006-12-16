@@ -1,0 +1,10 @@
+--- configure.orig	Sat Dec 16 23:22:21 2006
++++ configure	Sat Dec 16 23:22:37 2006
+@@ -10496,7 +10496,6 @@
+ 
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define socklen_t int
+ _ACEOF
+ 
+ echo "$as_me:$LINENO: result: no" >&5
