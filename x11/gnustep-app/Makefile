@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -164,6 +164,10 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Localize:textproc/localize \
 	GSBench:benchmarks/gsbench \
 	SVGViewer:graphics/svgviewer \
+	Vindaloo:graphics/vindaloo \
+	Digibux:german/digibux \
+	AppWrapper:deskutils/appwrapper \
+	Pixen:graphics/pixen \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
