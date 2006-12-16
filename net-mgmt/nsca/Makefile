@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nsca
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Nagios Service Check Acceptor
 
 .if !defined(WITHOUT_SERVER)
