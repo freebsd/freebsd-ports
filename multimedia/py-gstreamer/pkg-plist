@@ -9,9 +9,18 @@
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/discoverer.py
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/discoverer.pyc
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/discoverer.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/jukebox.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/jukebox.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/jukebox.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/leveller.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/leveller.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/leveller.pyo
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/pygobject.py
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/pygobject.pyc
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/pygobject.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/sources.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/sources.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/sources.pyo
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/utils.py
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/utils.pyc
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/utils.pyo
@@ -31,16 +40,16 @@ share/gst-python/0.10/examples/audioconcat.py
 share/gst-python/0.10/examples/bps.py
 share/gst-python/0.10/examples/cp.py
 share/gst-python/0.10/examples/debugslider.py
+share/gst-python/0.10/examples/decodebin.py
 share/gst-python/0.10/examples/f2f.py
 share/gst-python/0.10/examples/filesrc.py
 share/gst-python/0.10/examples/fvumeter.py
-share/gst-python/0.10/examples/gst123
+share/gst-python/0.10/examples/gst-discover
 share/gst-python/0.10/examples/gstfile.py
 share/gst-python/0.10/examples/pipeline-tester
 share/gst-python/0.10/examples/play.py
 share/gst-python/0.10/examples/remuxer.py
 share/gst-python/0.10/examples/sinkelement.py
-share/gst-python/0.10/examples/vorbisplay.py
 share/gst-python/0.10/examples/vumeter.py
 @dirrm share/gst-python/0.10/examples
 @dirrm share/gst-python/0.10/defs

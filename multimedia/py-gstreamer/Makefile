@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.5
-PORTREVISION=	3
+PORTVERSION=	0.10.6
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|DLFCN|dl|g' ${WRKSRC}/gst/__init__.py
 
 post-install:
-	@cd ${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -OOOO -c 'import pygst' && \
+	@cd ${PYTHONPREFIX_SITELIBDIR} && ${PYTHON_CMD} -OOOO -c 'import pygst' && \
 		${PYTHON_CMD} -c 'import pygst'
 
 .include <bsd.port.mk>
