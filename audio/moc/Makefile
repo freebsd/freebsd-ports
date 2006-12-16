@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moc
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	2.4.1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -18,6 +17,7 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		mocp.1
