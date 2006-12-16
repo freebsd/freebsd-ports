@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -153,11 +153,13 @@ RUN_DEPENDS+=		${LOCALBASE}/bin/xcin2.5:${PORTSDIR}/chinese/xcin
 CONFIGURE_ARGS+=	--with-canna --with-wnn --with-wnn6=no
 LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
 			wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+PLIST_SUB+=		CANNA=""
 .elif defined(CANNA) && defined(WNN6)
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 CONFIGURE_ARGS+=	--with-canna --with-wnn6
 LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
 			wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
+PLIST_SUB+=		CANNA=""
 .elif defined(FREEWNN)
 CONFIGURE_ARGS+=	--with-wnn --with-canna=no --with-wnn6=no
 LIB_DEPENDS+=		wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
@@ -168,8 +170,10 @@ LIB_DEPENDS+=		wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(CANNA)
 CONFIGURE_ARGS+=	--with-canna --with-wnn=no --with-wnn6=no
 LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna
+PLIST_SUB+=		CANNA=""
 .else
 CONFIGURE_ARGS+=	--with-canna=no --with-wnn=no --with-wnn6=no
+PLIST_SUB+=		CANNA="@comment "
 .endif
 SITE_INCLUDES+=		${LOCALBASE}/include
 SITE_LIBRARIES+=	${LOCALBASE}/lib
