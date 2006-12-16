@@ -10,7 +10,9 @@ PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
-		http://www.tcbug.org/
+		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC5-ALPHA/ \
+		ftp://ftp.parodius.com/pub/epic/EPIC5-ALPHA/ \
+		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-ALPHA/
 
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
