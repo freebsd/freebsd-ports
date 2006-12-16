@@ -1078,6 +1078,7 @@ cantus_3	ports/audio/cantus_3
 cap		ports/net/cap
 cardpics	ports/games/cardpics
 carthage	ports/textproc/carthage
+cartotheque	ports/deskutils/cartotheque
 cascade		ports/cad/cascade
 castor		ports/java/castor
 castpodder	ports/multimedia/castpodder
