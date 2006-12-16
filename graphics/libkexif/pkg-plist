@@ -8,6 +8,7 @@ lib/libkexif.la
 lib/libkexif.so
 lib/libkexif.so.1
 libdata/pkgconfig/libkexif.pc
+share/locale/ar/LC_MESSAGES/libkexif.mo
 share/locale/bg/LC_MESSAGES/libkexif.mo
 share/locale/br/LC_MESSAGES/libkexif.mo
 share/locale/ca/LC_MESSAGES/libkexif.mo
@@ -21,8 +22,10 @@ share/locale/es/LC_MESSAGES/libkexif.mo
 share/locale/et/LC_MESSAGES/libkexif.mo
 share/locale/fr/LC_MESSAGES/libkexif.mo
 share/locale/ga/LC_MESSAGES/libkexif.mo
+share/locale/gl/LC_MESSAGES/libkexif.mo
 share/locale/is/LC_MESSAGES/libkexif.mo
 share/locale/it/LC_MESSAGES/libkexif.mo
+share/locale/ja/LC_MESSAGES/libkexif.mo
 share/locale/lt/LC_MESSAGES/libkexif.mo
 share/locale/mt/LC_MESSAGES/libkexif.mo
 share/locale/nb/LC_MESSAGES/libkexif.mo
@@ -34,10 +37,34 @@ share/locale/pt/LC_MESSAGES/libkexif.mo
 share/locale/pt_BR/LC_MESSAGES/libkexif.mo
 share/locale/ru/LC_MESSAGES/libkexif.mo
 share/locale/rw/LC_MESSAGES/libkexif.mo
+share/locale/sk/LC_MESSAGES/libkexif.mo
 share/locale/sr/LC_MESSAGES/libkexif.mo
 share/locale/sr@Latn/LC_MESSAGES/libkexif.mo
 share/locale/sv/LC_MESSAGES/libkexif.mo
 share/locale/ta/LC_MESSAGES/libkexif.mo
 share/locale/tr/LC_MESSAGES/libkexif.mo
+share/locale/uk/LC_MESSAGES/libkexif.mo
 share/locale/zh_CN/LC_MESSAGES/libkexif.mo
 @dirrm include/libkexif
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
