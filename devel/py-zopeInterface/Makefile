@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zopeInterface
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0c1
 CATEGORIES=	devel zope python
-MASTER_SITES=	http://www.zope.org/Products/ZopeInterface/3.0.1final/
+MASTER_SITES=	http://www.zope.org/Products/ZopeInterface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	ZopeInterface-${PORTVERSION}
+DISTNAME=	${PORTVERSION}/ZopeInterface-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	neal@nelson.name

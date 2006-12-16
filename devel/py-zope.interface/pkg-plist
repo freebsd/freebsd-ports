@@ -3,8 +3,31 @@
 %%S%%/zope/__init__.py
 %%S%%/zope/__init__.pyc
 %%S%%/zope/__init__.pyo
+%%S%%/zope/exceptions/DEPENDENCIES.cfg
+%%S%%/zope/exceptions/__init__.py
+%%S%%/zope/exceptions/__init__.pyc
+%%S%%/zope/exceptions/__init__.pyo
+%%S%%/zope/exceptions/_duplicate.py
+%%S%%/zope/exceptions/_duplicate.pyc
+%%S%%/zope/exceptions/_duplicate.pyo
+%%S%%/zope/exceptions/_notfounderror.py
+%%S%%/zope/exceptions/_notfounderror.pyc
+%%S%%/zope/exceptions/_notfounderror.pyo
+%%S%%/zope/exceptions/exceptionformatter.py
+%%S%%/zope/exceptions/exceptionformatter.pyc
+%%S%%/zope/exceptions/exceptionformatter.pyo
+%%S%%/zope/exceptions/interfaces.py
+%%S%%/zope/exceptions/interfaces.pyc
+%%S%%/zope/exceptions/interfaces.pyo
+%%S%%/zope/exceptions/tests/__init__.py
+%%S%%/zope/exceptions/tests/__init__.pyc
+%%S%%/zope/exceptions/tests/__init__.pyo
+%%S%%/zope/exceptions/tests/test_exceptionformatter.py
+%%S%%/zope/exceptions/tests/test_exceptionformatter.pyc
+%%S%%/zope/exceptions/tests/test_exceptionformatter.pyo
 %%S%%/zope/interface/DEPENDENCIES.cfg
 %%S%%/zope/interface/PUBLICATION.cfg
+%%S%%/zope/interface/README.ru.txt
 %%S%%/zope/interface/README.txt
 %%S%%/zope/interface/SETUP.cfg
 %%S%%/zope/interface/__init__.py
@@ -33,6 +56,9 @@
 %%S%%/zope/interface/common/mapping.py
 %%S%%/zope/interface/common/mapping.pyc
 %%S%%/zope/interface/common/mapping.pyo
+%%S%%/zope/interface/common/sequence.py
+%%S%%/zope/interface/common/sequence.pyc
+%%S%%/zope/interface/common/sequence.pyo
 %%S%%/zope/interface/common/tests/__init__.py
 %%S%%/zope/interface/common/tests/__init__.pyc
 %%S%%/zope/interface/common/tests/__init__.pyo
@@ -113,6 +139,7 @@
 %%S%%/zope/interface/verify.py
 %%S%%/zope/interface/verify.pyc
 %%S%%/zope/interface/verify.pyo
+%%S%%/zope/testing/DEPENDENCIES.cfg
 %%S%%/zope/testing/__init__.py
 %%S%%/zope/testing/__init__.pyc
 %%S%%/zope/testing/__init__.pyo
@@ -125,12 +152,19 @@
 %%S%%/zope/testing/doctestunit.py
 %%S%%/zope/testing/doctestunit.pyc
 %%S%%/zope/testing/doctestunit.pyo
+%%S%%/zope/testing/formparser.py
+%%S%%/zope/testing/formparser.pyc
+%%S%%/zope/testing/formparser.pyo
+%%S%%/zope/testing/formparser.txt
 %%S%%/zope/testing/loggingsupport.py
 %%S%%/zope/testing/loggingsupport.pyc
 %%S%%/zope/testing/loggingsupport.pyo
 %%S%%/zope/testing/loghandler.py
 %%S%%/zope/testing/loghandler.pyc
 %%S%%/zope/testing/loghandler.pyo
+%%S%%/zope/testing/module.py
+%%S%%/zope/testing/module.pyc
+%%S%%/zope/testing/module.pyo
 %%S%%/zope/testing/tests.py
 %%S%%/zope/testing/tests.pyc
 %%S%%/zope/testing/tests.pyo
@@ -139,4 +173,7 @@
 @dirrm %%S%%/zope/interface/common/tests
 @dirrm %%S%%/zope/interface/common
 @dirrm %%S%%/zope/interface
+@dirrm %%S%%/zope/exceptions/tests
+@dirrm %%S%%/zope/exceptions
 @dirrm %%S%%/zope
+
