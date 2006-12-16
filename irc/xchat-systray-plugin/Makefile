@@ -7,7 +7,7 @@
 
 PORTNAME=	xchat-systray-plugin
 PORTVERSION=	2.4.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xchat2-plugins
@@ -24,6 +24,8 @@ USE_GNOME=	gtk20
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Os|${CFLAGS} -fPIC|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    	${WRKSRC}/src/systray.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/systray.so ${PREFIX}/lib/xchat/plugins/
