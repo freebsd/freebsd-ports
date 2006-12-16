@@ -30,8 +30,4 @@ IGNORE=		it needs Bluetooth stack (FreeBSD 5.2 or newer)
 ONLY_FOR_ARCHS=	i386
 .endif
 
-.if ${OSVERSION} <= 700011
-EXTRA_PATCHES=	files/timet.patch
-.endif
-
 .include <bsd.port.post.mk>
