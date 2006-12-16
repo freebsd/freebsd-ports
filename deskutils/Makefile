@@ -21,6 +21,7 @@
     SUBDIR += buoh
     SUBDIR += cal
     SUBDIR += calcurse
+    SUBDIR += cartotheque
     SUBDIR += cdcat
     SUBDIR += charmap
     SUBDIR += checkrdf
