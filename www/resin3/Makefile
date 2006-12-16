@@ -7,6 +7,7 @@
 
 PORTNAME=		resin
 PORTVERSION=		3.0.21
+PORTREVISION=		1
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -113,6 +114,11 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%RUNASUSER%%|${RUNASUSER}|g" \
 			-e "s|%%WRKDIR%%|${WRKDIR}|g" \
 			-e "s|%%WRKSRC%%|${WRKSRC}|g"
+
+# Avoid build error on 64-bit architectures
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+CFLAGS+=	-fPIC
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${REINPLACE_FILES}
