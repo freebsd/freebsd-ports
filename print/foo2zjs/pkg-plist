@@ -1,18 +1,26 @@
 bin/arm2hpdl
 bin/foo2hp
 bin/foo2hp2600-wrapper
+bin/foo2lava
+bin/foo2lava-wrapper
 bin/foo2oak-wrapper
+bin/foo2xqx
+bin/foo2xqx-wrapper
 bin/foo2zjs
 bin/foo2zjs-icc2ps
 bin/foo2zjs-wrapper
 bin/getweb
+bin/lavadecode
 bin/msexpand
+bin/xqxdecode
 bin/zjsdecode
 share/cups/model/Generic-OAKT_Printer.ppd.gz
 share/cups/model/Generic-ZjStream_Printer.ppd.gz
+share/cups/model/KonicaMinolta-magicolor_2530_DL.ppd.gz
 share/cups/model/HP-Color_LaserJet_1500.ppd.gz
 share/cups/model/HP-Color_LaserJet_1600.ppd.gz
 share/cups/model/HP-Color_LaserJet_2600n.ppd.gz
+share/cups/model/HP-LaserJet_M1005_MFP.ppd.gz
 share/cups/model/HP-LaserJet_1000.ppd.gz
 share/cups/model/HP-LaserJet_1005.ppd.gz
 share/cups/model/HP-LaserJet_1018.ppd.gz
@@ -45,3 +53,6 @@ share/cups/model/Minolta-magicolor_2430_DL.ppd.gz
 @unexec rmdir %D/share/foo2oak 2>/dev/null || echo "Note: %D/share/foo2oak: icm directory not empty, remove it manually"
 @dirrmtry share/foo2hp/icm
 @unexec rmdir %D/share/foo2hp 2>/dev/null || echo "Note: %D/share/foo2hp: icm directory not empty, remove it manually"
+@dirrmtry share/foo2xqx
+@dirrmtry share/foo2lava/icm
+@unexec rmdir %D/share/foo2lava 2>/dev/null || echo "Note: %D/share/foo2lava: icm directory not empty, remove it manually"
