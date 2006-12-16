@@ -8,7 +8,7 @@
 PORTNAME=	Unreal
 PORTVERSION=	3.2.5
 PORTREVISION=	1
-CATEGORIES=	irc
+CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ilmarinen.us/unreal/ \
 		http://unrealircd.alert-net.com/ \
 		http://www1.dnwt.net/unreal/
