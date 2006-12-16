@@ -5,7 +5,7 @@
  	go_change=TRUE;
  	go_identify=TRUE;
 -	strcpy(imagepath,xchat_get_info(ph, "xchatdir"));
-+	strcpy(imagepath,"/usr/X11R6/lib/xchat/plugins");
++	strcpy(imagepath,"%%LOCALBASE%%/lib/xchat/plugins");
  
  }
  // events handling
@@ -27,7 +27,7 @@
  	{
  		if (imagepath) sprintf(temp,"%s/%s/%s", imagepath ,type,filename);
 -		else sprintf(temp,"%s/%s/%s", xchat_get_info(ph, "xchatdir"),type,filename);
-+		else sprintf(temp,"%s/%s/%s", "/usr/X11R6/lib/xchat/plugins",type,filename);
++		else sprintf(temp,"%s/%s/%s", "%%LOCALBASE%%/lib/xchat/plugins",type,filename);
  #ifdef _WIN32_			
  		tempbuffer= ((HICON)LoadImage( tray_inst, temp, IMAGE_ICON, 16, 16, LR_LOADFROMFILE ));
  #else	
