@@ -1,28 +1,6 @@
---- SConstruct.orig	Fri Dec  8 17:52:26 2006
-+++ SConstruct	Fri Dec  8 17:54:43 2006
-@@ -23,21 +23,6 @@
- 	context.Result(ret)
- 	return ret
- 
--def CheckCXXVersion(context, name, major, minor):
--	context.Message('Checking for %s >= %d.%d...' % (name, major, minor))
--	ret = commands.getoutput('%s -dumpversion' % name)
--
--	retval = 0
--	try:
--		if ((string.atoi(ret[0]) == major and string.atoi(ret[2]) >= minor)
--		or (string.atoi(ret[0]) > major)):
--			retval = 1
--	except ValueError:
--		print "No C++ compiler found!"
--
--	context.Result(retval)
--	return retval
--
- 
- # ----------------------------------------------------------------------
- # Command-line options
-@@ -62,24 +47,17 @@
+--- SConstruct.orig	Sat Dec 16 11:52:44 2006
++++ SConstruct	Sat Dec 16 11:54:05 2006
+@@ -62,7 +62,7 @@
  # Initialization
  # ----------------------------------------------------------------------
  
@@ -31,36 +9,10 @@
  
  conf = Configure(env,
  	custom_tests =
- 	{
- 		'CheckPKGConfig' : CheckPKGConfig,
--		'CheckPKG' : CheckPKG,
--		'CheckCXXVersion' : CheckCXXVersion
-+		'CheckPKG' : CheckPKG
- 	},
- 	conf_dir = 'build/sconf',
- 	log_file = 'build/sconf/config.log')
+@@ -97,15 +97,6 @@
+ 	print 'Compiler version check failed. g++ 3.4 or later is needed'
+ 	Exit(1)
  
--if os.environ.has_key('CXX'):
--	env['CXX'] = os.environ['CXX']
--
--if os.environ.has_key('CXXFLAGS'):
--	env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
--
- env.SConsignFile('build/sconf/.sconsign')
- opts.Save('build/sconf/scache.conf', env)
- Help(opts.GenerateHelpText(env))
-@@ -89,23 +67,6 @@
- # Dependencies
- # ----------------------------------------------------------------------
- 
--if not (env.has_key('CXX') and env['CXX']):
--	print 'CXX env variable is not set, attempting to use g++'
--	env['CXX'] = 'g++'
--
--if not conf.CheckCXXVersion(env['CXX'], 3, 4):
--	print 'Compiler version check failed. g++ 3.4 or later is needed'
--	Exit(1)
--
 -# Add support for compiler caches to speed-up compilation.
 -if conf.TryAction(Action('distcc'))[0]:
 -	env.Prepend(CXX = 'distcc ')
@@ -73,7 +25,7 @@
  if not conf.CheckPKGConfig():
  	print '\tpkg-config not found.'
  	Exit(1)
-@@ -137,11 +98,6 @@
+@@ -137,11 +128,6 @@
  	print '\tHeader file unistd.h not found'
  	Exit(1)
  
@@ -85,7 +37,7 @@
  if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
  	print '\tz library (gzip/z compression) not found'
  	print '\tNote: You might have the lib but not the headers'
-@@ -168,11 +124,11 @@
+@@ -168,11 +154,11 @@
  env.Append(LINKFLAGS = ['-Wl,--as-needed'])
  
  if env.has_key('debug') and env['debug']:
