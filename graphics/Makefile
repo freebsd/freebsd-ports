@@ -517,6 +517,7 @@
     SUBDIR += picturebook
     SUBDIR += piddle
     SUBDIR += pixelize
+    SUBDIR += pixen
     SUBDIR += pixie
     SUBDIR += pixieplus
     SUBDIR += pixmap
