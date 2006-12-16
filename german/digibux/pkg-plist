@@ -1,0 +1,32 @@
+Local/Applications/Digibux.app/Digibux
+Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/data.classes
+Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/data.info
+Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/objects.gorm
+Local/Applications/Digibux.app/Resources/COVER1.BMP
+Local/Applications/Digibux.app/Resources/COVER1B.BMP
+Local/Applications/Digibux.app/Resources/Digibux.desktop
+Local/Applications/Digibux.app/Resources/Digibux_app.tiff
+Local/Applications/Digibux.app/Resources/ImageLocator.plist
+Local/Applications/Digibux.app/Resources/ImageViewer.gorm/data.classes
+Local/Applications/Digibux.app/Resources/ImageViewer.gorm/objects.gorm
+Local/Applications/Digibux.app/Resources/Info-gnustep.plist
+Local/Applications/Digibux.app/Resources/StartWindow.gorm/data.classes
+Local/Applications/Digibux.app/Resources/StartWindow.gorm/objects.gorm
+Local/Applications/Digibux.app/Resources/digibiball.plist
+Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-blau.tiff
+Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-gelb.tiff
+Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-gruen.tiff
+Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-rot.tiff
+Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-temp.tiff
+Local/Applications/Digibux.app/Resources/ldp.gorm/data.classes
+Local/Applications/Digibux.app/Resources/ldp.gorm/data.info
+Local/Applications/Digibux.app/Resources/ldp.gorm/objects.gorm
+Local/Applications/Digibux.app/Resources/unicode.plist
+Local/Applications/Digibux.app/library_paths.openapp
+Local/Applications/Digibux.app/stamp.make
+@dirrm Local/Applications/Digibux.app/Resources/ldp.gorm
+@dirrm Local/Applications/Digibux.app/Resources/StartWindow.gorm
+@dirrm Local/Applications/Digibux.app/Resources/ImageViewer.gorm
+@dirrm Local/Applications/Digibux.app/Resources/AutorenNIB.gorm
+@dirrm Local/Applications/Digibux.app/Resources
+@dirrm Local/Applications/Digibux.app
