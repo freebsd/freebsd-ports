@@ -8,7 +8,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${versionstring}
@@ -48,7 +48,7 @@ LATEST_LINK=	${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-gcc_snapshot=	20060901
+gcc_snapshot=	20061201
 versionstring=	${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
 srcdir=			${WRKDIR}/gcc-${versionstring}
 gcc_suffix=		41
@@ -79,29 +79,22 @@ PLIST_SUB=		GCC_VER=${PORTVERSION} \
 USE_LDCONFIG=	${targlib}
 
 # We need an existing GNAT compiler to bootstrap this one.
-have_gnat!=	if ${WHICH} gnatmake > /dev/null 2>&1; then \
-				${ECHO_CMD} "t"; \
-			else \
-				${ECHO_CMD} ""; \
-			fi
-.if empty(have_gnat)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gcc34/gcc34:${PORTSDIR}/lang/gnat-gcc34
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc34:${PATH} CC=${LOCALBASE}/bin/gcc34/gcc34
 MAKE_ENV+=		PATH=${LOCALBASE}/bin/gcc34:${PATH} CC=${LOCALBASE}/bin/gcc34/gcc34
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} target=${CONFIGURE_TARGET}"
 
 # Append ' [FreeBSD]' to gcc version string.
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
+	${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 	    ${srcdir}/gcc/version.c
 
 pre-configure:
 	cd ${srcdir} ; contrib/gcc_update --touch
-	@${RM} -f ${srcdir}/gcc/*/*.info*
-	@${MKDIR} ${CONFIGURE_WRKSRC}
+	${RM} -f ${srcdir}/gcc/*/*.info*
+	${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-build:
 	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
@@ -114,33 +107,35 @@ check: build
 post-install:
 	${LN} -s ${PREFIX}/bin/gcc${gcc_suffix}/gcc${gcc_suffix} \
 		${PREFIX}/bin/gcc${gcc_suffix}/gcc
-	# Man pages can only be generated if Perl >= 5.6 is installed; fake them otherwise.
+	@# Man pages can only be generated if Perl >= 5.6 is installed; fake them otherwise.
 	for mp in ${_MANPAGES}; do \
 		${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
-	# Version FSF funding and licensing manuals.
+	@# Version FSF funding and licensing manuals.
 	for mp in ${fsf_mans}; do \
 		${MV} -f ${PREFIX}/man/man7/$${mp}.7 \
 			${PREFIX}/man/man7/$${mp}${fsf_suffix}.7; \
 	done
-	# Save the runaway header.
+	@# Save the runaway header.
 	${MV} -f ${PREFIX}/include/mf-runtime.h \
 	         ${targlib}/gcc/${CONFIGURE_TARGET}/${PORTVERSION}/include
-	# Remove libtool library files.
+	@# Remove libtool library files.
 	${RM} -f ${targlib}/*.la
-	# Add target libraries and include files to packaging list.
+	@# Prepare a temporary list of installed libraries and include files.
 	${RM} -f ${WRKDIR}/PLIST.lib
 	for d in ${targlib:S/^${PREFIX}\///} ${targlib:S/^${PREFIX}\///:S/lib/libexec/}; do \
-		cd ${PREFIX} ; \
+		cd ${PREFIX}; \
 		if [ -d $${d} ]; then \
-			${FIND} $${d} -type f -o -type l >>${WRKDIR}/PLIST.lib ; \
-			${FIND} $${d} -type d | ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ; \
-		fi ; \
+			${FIND} $${d} -type f -o -type l >>${WRKDIR}/PLIST.lib; \
+			${FIND} $${d} -type d | ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib; \
+		fi; \
 	done
+	@# Following directories should be removed on deinstal if empty. Add them to the temporary list.
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
-	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
+	@# Insert the temporary list in the packing list.
+	cd ${WRKDIR}; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
 
 .include <bsd.port.post.mk>
