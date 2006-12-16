@@ -130,6 +130,7 @@
     SUBDIR += multisync
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
+    SUBDIR += mywiki
     SUBDIR += nag
     SUBDIR += narval
     SUBDIR += nautilus-actions
