@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SRU
-PORTVERSION=	0.93
+PORTVERSION=	0.95
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRICAS
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/CQL/Parser.pm:${PORTSDIR}/textproc/p5-CQL-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAN3=	Catalyst::Plugin::SRU.3 \
+MAN3=	Catalyst::Controller::SRU.3 \
 	SRU.3 \
 	SRU::Request.3 \
 	SRU::Request::Explain.3 \

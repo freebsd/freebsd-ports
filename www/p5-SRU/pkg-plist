@@ -1,4 +1,4 @@
-%%SITE_PERL%%/Catalyst/Plugin/SRU.pm
+%%SITE_PERL%%/Catalyst/Controller/SRU.pm
 %%SITE_PERL%%/SRU.pm
 %%SITE_PERL%%/SRU/Request.pm
 %%SITE_PERL%%/SRU/Request/Explain.pm
@@ -21,5 +21,5 @@
 @dirrm %%SITE_PERL%%/SRU/Response
 @dirrm %%SITE_PERL%%/SRU/Request
 @dirrmtry %%SITE_PERL%%/SRU
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller
 @dirrmtry %%SITE_PERL%%/Catalyst
