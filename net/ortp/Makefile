@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ortp
-PORTVERSION=	0.9.1
+PORTVERSION=	0.12.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.linphone.org/ortp/sources/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	linphone/ortp/sources
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A Real-time Transport Protocol (RTP) stack

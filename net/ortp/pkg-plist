@@ -1,3 +1,4 @@
+include/ortp/event.h
 include/ortp/ortp.h
 include/ortp/payloadtype.h
 include/ortp/port.h
@@ -7,17 +8,25 @@ include/ortp/rtpsession.h
 include/ortp/rtpsignaltable.h
 include/ortp/sessionset.h
 include/ortp/str_utils.h
+include/ortp/stun.h
+include/ortp/stun_udp.h
 include/ortp/telephonyevents.h
 lib/libortp.a
 lib/libortp.so
-lib/libortp.so.4
+lib/libortp.so.5
 libdata/pkgconfig/ortp.pc
 %%DOCSDIR%%/book1.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
 %%DOCSDIR%%/ortp-library-management-functions.html
 %%DOCSDIR%%/ortp-multiplexing-sessions---in-a-one-thread-design.html
 %%DOCSDIR%%/ortp-rtp-payloads-and-profiles.html
 %%DOCSDIR%%/ortp-rtpsession-api.html
 %%DOCSDIR%%/ortp-telephone-events---rfc2833-.html
 %%DOCSDIR%%/ortpapi.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 @dirrm %%DOCSDIR%%
 @dirrm include/ortp
