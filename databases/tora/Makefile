@@ -7,6 +7,7 @@
 
 PORTNAME=	tora
 PORTVERSION=	1.3.21
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Toolkit for Oracle
 
 BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
-LIB_DEPENDS=	qscintilla.6:${PORTSDIR}/x11-toolkits/qscintilla
+LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla
 RUN_DEPENDS=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/oracle8-client
 
 .if !defined(WITHOUT_MYSQL)
