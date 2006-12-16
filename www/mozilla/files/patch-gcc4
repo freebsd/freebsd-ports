@@ -1,0 +1,79 @@
+Index: gfx/src/freetype/nsFreeType.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/gfx/src/freetype/nsFreeType.cpp,v
+retrieving revision 1.24
+diff -u -r1.24 nsFreeType.cpp
+--- gfx/src/freetype/nsFreeType.cpp	7 Feb 2004 15:22:30 -0000	1.24
++++ gfx/src/freetype/nsFreeType.cpp	4 Mar 2005 19:59:53 -0000
+@@ -96,7 +96,7 @@
+ // Define the FreeType2 functions we resolve at run time.
+ // see the comment near nsFreeType2::DoneFace() for more info
+ //
+-#define NS_FT2_OFFSET(f) (int)&((nsFreeType2*)0)->f
++#define NS_FT2_OFFSET(f) (NS_PTR_TO_INT32(&((nsFreeType2*)0)->f))
+ FtFuncList nsFreeType2::FtFuncs [] = {
+   {"FT_Done_Face",            NS_FT2_OFFSET(nsFT_Done_Face),            PR_TRUE},
+   {"FT_Done_FreeType",        NS_FT2_OFFSET(nsFT_Done_FreeType),        PR_TRUE},
+Index: widget/src/gtk2/nsDragService.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/widget/src/gtk2/nsDragService.cpp,v
+retrieving revision 1.5
+diff -u -r1.5 nsDragService.cpp
+--- widget/src/gtk2/nsDragService.cpp	30 Oct 2003 01:48:41 -0000	1.5
++++ widget/src/gtk2/nsDragService.cpp	4 Mar 2005 20:00:01 -0000
+@@ -838,7 +838,7 @@
+             (GtkTargetEntry *)g_malloc(sizeof(GtkTargetEntry));
+         listTarget->target = g_strdup(gMimeListType);
+         listTarget->flags = 0;
+-        listTarget->info = (guint)listAtom;
++        listTarget->info = (guint)(NS_PTR_TO_INT32(listAtom));
+         PR_LOG(sDragLm, PR_LOG_DEBUG,
+                ("automatically adding target %s with id %ld\n",
+                listTarget->target, listAtom));
+@@ -877,7 +877,7 @@
+                              (GtkTargetEntry *)g_malloc(sizeof(GtkTargetEntry));
+                             listTarget->target = g_strdup(gTextUriListType);
+                             listTarget->flags = 0;
+-                            listTarget->info = (guint)listAtom;
++                            listTarget->info = (guint)NS_PTR_TO_INT32(listAtom);
+                             PR_LOG(sDragLm, PR_LOG_DEBUG,
+                                    ("automatically adding target %s with \
+                                    id %ld\n", listTarget->target, listAtom));
+@@ -914,7 +914,7 @@
+                           (GtkTargetEntry *)g_malloc(sizeof(GtkTargetEntry));
+                         target->target = g_strdup(flavorStr);
+                         target->flags = 0;
+-                        target->info = (guint)atom;
++                        target->info = (guint)NS_PTR_TO_INT32(atom);
+                         PR_LOG(sDragLm, PR_LOG_DEBUG,
+                                ("adding target %s with id %ld\n",
+                                target->target, atom));
+@@ -931,7 +931,7 @@
+                              (GtkTargetEntry *)g_malloc(sizeof(GtkTargetEntry));
+                             plainTarget->target = g_strdup(kTextMime);
+                             plainTarget->flags = 0;
+-                            plainTarget->info = (guint)plainAtom;
++                            plainTarget->info = (guint)NS_PTR_TO_INT32(plainAtom);
+                             PR_LOG(sDragLm, PR_LOG_DEBUG,
+                                    ("automatically adding target %s with \
+                                    id %ld\n", plainTarget->target, plainAtom));
+@@ -948,7 +948,7 @@
+                              (GtkTargetEntry *)g_malloc(sizeof(GtkTargetEntry));
+                             urlTarget->target = g_strdup(gMozUrlType);
+                             urlTarget->flags = 0;
+-                            urlTarget->info = (guint)urlAtom;
++                            urlTarget->info = (guint)NS_PTR_TO_INT32(urlAtom);
+                             PR_LOG(sDragLm, PR_LOG_DEBUG,
+                                    ("automatically adding target %s with \
+                                    id %ld\n", urlTarget->target, urlAtom));
+--- mailnews/mime/src/mimeeobj.h.orig	Sat Dec 16 14:01:13 2006
++++ mailnews/mime/src/mimeeobj.h	Sat Dec 16 14:01:28 2006
+@@ -54,7 +54,7 @@ struct MimeExternalObjectClass {
+   MimeLeafClass leaf;
+ };
+ 
+-extern MimeExternalObjectClass mimeExternalObjectClass;
++extern "C" MimeExternalObjectClass mimeExternalObjectClass;
+ 
+ struct MimeExternalObject {
+   MimeLeaf leaf;
