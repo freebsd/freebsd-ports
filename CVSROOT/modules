@@ -14782,6 +14782,7 @@ vavoom		ports/games/vavoom
 vb2c		ports/devel/vb2c
 vba		ports/emulators/vba
 vbidecode	ports/misc/vbidecode
+vbindiff	ports/textproc/vbindiff
 vbsfilter	ports/mail/vbsfilter
 vcdgear		ports/multimedia/vcdgear
 vcdimager	ports/multimedia/vcdimager
