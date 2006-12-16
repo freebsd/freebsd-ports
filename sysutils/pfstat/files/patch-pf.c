@@ -1,6 +1,19 @@
 --- pf.c.orig	Thu May 11 23:41:07 2006
-+++ pf.c	Fri Jul  7 21:49:20 2006
-@@ -144,23 +144,24 @@
++++ pf.c	Mon Dec 11 21:08:31 2006
+@@ -67,10 +67,8 @@
+ 
+ 	/* first, find out how many queues there are */
+ 	memset(&pa, 0, sizeof(pa));
+-	if (ioctl(fd, DIOCGETALTQS, &pa)) {
+-		fprintf(stderr, "ioctl: DIOCGETALTQS: %s\n", strerror(errno));
+-		return (1);
+-	}
++	if (ioctl(fd, DIOCGETALTQS, &pa))
++		return (0);
+ 	mnr = pa.nr;
+ 
+ 	/* fetch each of those queues */
+@@ -144,23 +142,24 @@
  query_ifaces(int fd, void (*cb)(int, const char *, int, double))
  {
  	struct pfioc_iface io;
