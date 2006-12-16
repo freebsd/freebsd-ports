@@ -1,0 +1,18 @@
+diff -urNbB src/reconfig.orig src/reconfig
+--- reconfig.orig	Sat Dec 16 01:01:06 2006
++++ reconfig	Sat Dec 16 02:57:44 2006
+@@ -36,10 +36,10 @@
+ 
+ $clean_only && exit
+ 
+-do_cmd aclocal -I m4
+-do_cmd autoheader
+-do_cmd automake --add-missing --copy
+-do_cmd autoconf
++do_cmd aclocal19 -I m4
++do_cmd autoheader259
++do_cmd automake19 --add-missing --copy
++do_cmd autoconf259
+ 
+ 
+ 

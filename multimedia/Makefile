@@ -195,6 +195,7 @@
     SUBDIR += rox-videothumbnail
     SUBDIR += ruby-gst
     SUBDIR += sabbu
+    SUBDIR += shell-fm
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
     SUBDIR += snd-music-duplicates
