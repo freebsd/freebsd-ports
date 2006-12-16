@@ -73,7 +73,7 @@ OPTIONS=	X11				"X11 support" on \
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
 PLIST_SUB+=		WITH_PERL=''
 MAN3=			Image::Magick.3
-MAN3PREFIX=		${TARGETDIR}/lib/perl5/${PERL_VER}
+MAN3PREFIX=		${TARGETDIR}/lib/perl5/${PERL_VERSION}
 .else
 CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		WITH_PERL='@comment '
