@@ -7,11 +7,11 @@
 
 PORTNAME=		resin
 PORTVERSION=		2.1.17
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
-MAINTAINER=		jb.quenot@caraldi.com
+MAINTAINER=		jbq@caraldi.com
 COMMENT=		Resin, a Java-based Application Server, 2.x branch
 
 USE_JAVA=		yes
@@ -48,6 +48,7 @@ REPLACE_FILES=		${FILESDIR}/pkg-install \
 			${FILESDIR}/pkg-deinstall \
 			${FILESDIR}/install.sh \
 			${FILESDIR}/pkg-message.in \
+			${FILESDIR}/pkg-message-advanced.in \
 			${WRKSRC}/conf/resin.conf \
 			${FILESDIR}/resinctl \
 			${FILESDIR}/resin.sh.in
@@ -101,6 +102,7 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%GROUP%%|${GROUP}|g" \
 			-e "s|%%JAVA%%|${JAVA}|g" \
 			-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
+			-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 			-e "s|%%LOG_FILE%%|${LOG_FILE}|g" \
 			-e "s|%%PID_FILE%%|${PID_FILE}|g" \
 			-e "s|%%PORT%%|${PORT}|g" \
@@ -112,12 +114,18 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%WRKDIR%%|${WRKDIR}|g" \
 			-e "s|%%WRKSRC%%|${WRKSRC}|g"
 
+# Avoid build error on 64-bit architectures
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+CFLAGS+=        -fPIC
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${REINPLACE_FILES}
 	@for FILE in ${REPLACE_FILES} ; do \
 	    ${SED} ${SUBSTITUTIONS} $${FILE} > ${WRKDIR}/`basename $${FILE}` ; \
 	    done
 	@${FMT} -w 80 < ${WRKDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${CAT} < ${WRKDIR}/pkg-message-advanced.in >> ${PKGMESSAGE}
 .if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES) || \
 defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	@${ECHO_CMD} >> ${PKGMESSAGE}

@@ -4,6 +4,8 @@
 #
 
 # PROVIDE: %%APP_NAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable %%APP_NAME%%:
@@ -16,10 +18,9 @@
 name=%%APP_NAME%%
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/%%APP_NAME%%ctl
-command_args="$1"
+command="%%PREFIX%%/sbin/%%APP_NAME%%ctl"
+command_args="start"
 pidfile=%%PID_FILE%%
-procname=%%JAVA%%
 
 # set defaults
 
@@ -28,4 +29,15 @@ procname=%%JAVA%%
 %%APP_NAME%%_group=${%%APP_NAME%%_group:-"www"}
 
 load_rc_config ${name}
+
+if test -n "${%%APP_NAME%%_java_version}" ; then
+    JAVA_HOME=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    procname=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+else
+    JAVA_HOME=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    procname=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+fi
+
+export JAVA_HOME
+
 run_rc_command "$1"
