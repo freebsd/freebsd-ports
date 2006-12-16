@@ -8,7 +8,8 @@
 PORTNAME=	lucidlife
 PORTVERSION=	0.9.1
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/~jcspray/LucidLife/ \
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+	    	http://offload1.icculus.org/~jcspray/LucidLife/ \
 		http://icculus.org/~jcspray/LucidLife/
 
 MAINTAINER=	mwisnicki+freebsd@gmail.com
