@@ -21,7 +21,6 @@ MAN8=		mpd.8
 MANCOMPRESSED=	maybe
 
 USE_OPENSSL=	yes
-USE_RC_SUBR=    yes
 MAKE_ENV=	COPTS="${COPTS} -I${OPENSSLINC}" LDADD="${LDADD} -L${OPENSSLLIB}"
 
 .include <bsd.port.pre.mk>
