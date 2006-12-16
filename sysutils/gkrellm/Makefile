@@ -26,8 +26,6 @@ USE_GNOME=	imlib
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 
-MAKE_ENV+=	CC="${CC}"
-
 INCLUDES=	gkrellm.h gkrellm_public_proto.h
 MAN1=		gkrellm.1
 
@@ -54,7 +52,7 @@ BINMODE=	4511
 BINMODE=	2511
 .endif
 
-MAKE_ENV+=	LOCALEDIR=${PREFIX}/share/locale
+MAKE_ENV+=	CC="${CC}" LOCALEDIR=${PREFIX}/share/locale
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm/plugins\"'
 
