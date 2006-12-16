@@ -1,25 +1,25 @@
 bin/mpeg_musicin
 bin/mpeg_musicout
-share/mpegaudio/tables/1cb0
-share/mpegaudio/tables/1cb1
-share/mpegaudio/tables/1cb2
-share/mpegaudio/tables/1th0
-share/mpegaudio/tables/1th1
-share/mpegaudio/tables/1th2
-share/mpegaudio/tables/2cb0
-share/mpegaudio/tables/2cb1
-share/mpegaudio/tables/2cb2
-share/mpegaudio/tables/2th0
-share/mpegaudio/tables/2th1
-share/mpegaudio/tables/2th2
-share/mpegaudio/tables/absthr_0
-share/mpegaudio/tables/absthr_1
-share/mpegaudio/tables/absthr_2
-share/mpegaudio/tables/alloc_0
-share/mpegaudio/tables/alloc_1
-share/mpegaudio/tables/alloc_2
-share/mpegaudio/tables/alloc_3
-share/mpegaudio/tables/dewindow
-share/mpegaudio/tables/enwindow
-@dirrm share/mpegaudio/tables
-@dirrm share/mpegaudio
+%%DATADIR%%/tables/1cb0
+%%DATADIR%%/tables/1cb1
+%%DATADIR%%/tables/1cb2
+%%DATADIR%%/tables/1th0
+%%DATADIR%%/tables/1th1
+%%DATADIR%%/tables/1th2
+%%DATADIR%%/tables/2cb0
+%%DATADIR%%/tables/2cb1
+%%DATADIR%%/tables/2cb2
+%%DATADIR%%/tables/2th0
+%%DATADIR%%/tables/2th1
+%%DATADIR%%/tables/2th2
+%%DATADIR%%/tables/absthr_0
+%%DATADIR%%/tables/absthr_1
+%%DATADIR%%/tables/absthr_2
+%%DATADIR%%/tables/alloc_0
+%%DATADIR%%/tables/alloc_1
+%%DATADIR%%/tables/alloc_2
+%%DATADIR%%/tables/alloc_3
+%%DATADIR%%/tables/dewindow
+%%DATADIR%%/tables/enwindow
+@dirrm %%DATADIR%%/tables
+@dirrm %%DATADIR%%

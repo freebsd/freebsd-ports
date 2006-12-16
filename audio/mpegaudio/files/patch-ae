@@ -1,5 +1,5 @@
---- musicout.c.orig	Wed Jan  5 13:39:27 1994
-+++ musicout.c	Tue Aug 22 02:37:30 2000
+--- musicout.c.orig	Wed Jan  5 05:39:27 1994
++++ musicout.c	Fri Dec 15 02:04:31 2006
 @@ -58,6 +58,8 @@
  #include        "common.h"
  #include        "decoder.h"
@@ -45,3 +45,12 @@
         if (*t == 'y' || *t == 'Y') exit(0);
      }
      else {        /* interpret CL Args */
+@@ -429,7 +431,7 @@
+     exit( 0 );
+ }
+ 
+-static void usage()  /* print syntax & exit */
++void usage()  /* print syntax & exit */
+ {
+    fprintf(stderr,
+       "usage: %s                         queries for all arguments, or\n",
