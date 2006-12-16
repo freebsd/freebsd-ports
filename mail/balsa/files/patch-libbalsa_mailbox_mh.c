@@ -1,5 +1,5 @@
---- libbalsa/mailbox_mh.c.orig	Tue Dec 27 04:44:41 2005
-+++ libbalsa/mailbox_mh.c	Thu Dec 29 01:55:40 2005
+--- libbalsa/mailbox_mh.c.orig	Sat Sep 16 03:27:23 2006
++++ libbalsa/mailbox_mh.c	Sat Dec 16 01:40:22 2006
 @@ -27,6 +27,8 @@
  /* to compile this on BSD/Darwin */
  #undef _POSIX_SOURCE
@@ -45,7 +45,7 @@
  
  	if (filename[0] == ',') {
  	    filename++;
-@@ -366,24 +368,24 @@ lbm_mh_parse_mailbox(LibBalsaMailboxMh *
+@@ -366,22 +368,22 @@ lbm_mh_parse_mailbox(LibBalsaMailboxMh *
  	if (lbm_mh_check_filename(filename) == FALSE)
  	    continue;
  
@@ -69,14 +69,12 @@
 -				    GINT_TO_POINTER(fileno), msg_info);
 +				    GINT_TO_POINTER(mh_fileno), msg_info);
  		g_ptr_array_add(mh->msgno_2_msg_info, msg_info);
-                 /* dummy entry in mindex for now */
-                 g_ptr_array_add(LIBBALSA_MAILBOX(mh)->mindex, NULL);
 -		msg_info->fileno = fileno;
 +		msg_info->mi_fileno = mh_fileno;
  	    }
  	    msg_info->orig_flags = delete_flag;
  	}
-@@ -401,17 +403,17 @@ static const gchar *LibBalsaMailboxMhRep
+@@ -399,17 +401,17 @@ static const gchar *LibBalsaMailboxMhRep
  static const gchar *LibBalsaMailboxMhRecent = "recent:";
  
  static void
@@ -98,7 +96,7 @@
  	return;
      }
  
-@@ -440,7 +442,7 @@ lbm_mh_handle_seq_line(LibBalsaMailboxMh
+@@ -438,7 +440,7 @@ lbm_mh_handle_seq_line(LibBalsaMailboxMh
  
      for (seq = sequences; *seq; seq++) {
  	guint end = 0;
@@ -107,7 +105,7 @@
  
  	if (!**seq)
  	    continue;
-@@ -451,11 +453,11 @@ lbm_mh_handle_seq_line(LibBalsaMailboxMh
+@@ -449,11 +451,11 @@ lbm_mh_handle_seq_line(LibBalsaMailboxMh
  	    if (sscanf(line, "%d", &end) != 1)
                  break; /* FIXME report error? */
  	}
@@ -122,7 +120,7 @@
      }
  
      g_strfreev(sequences);
-@@ -587,7 +589,7 @@ lbm_mh_check(LibBalsaMailboxMh * mh, con
+@@ -585,7 +587,7 @@ lbm_mh_check(LibBalsaMailboxMh * mh, con
  	    sequences = g_strsplit(p, " ", 0);
  	    for (seq = sequences; *seq; seq++) {
  		guint end = 0;
@@ -131,7 +129,7 @@
  
  		if (!**seq)
  		    continue;
-@@ -598,15 +600,15 @@ lbm_mh_check(LibBalsaMailboxMh * mh, con
+@@ -596,15 +598,15 @@ lbm_mh_check(LibBalsaMailboxMh * mh, con
  		    if (sscanf(p, "%d", &end) != 1)
                          break; /* FIXME report error? */
  		}
@@ -150,7 +148,7 @@
  	    }
  	    g_strfreev(sequences);
  	    break;
-@@ -693,7 +695,7 @@ libbalsa_mailbox_mh_check(LibBalsaMailbo
+@@ -691,7 +693,7 @@ libbalsa_mailbox_mh_check(LibBalsaMailbo
  	else {
  	    g_ptr_array_remove(mh->msgno_2_msg_info, msg_info);
  	    g_hash_table_remove(mh->messages_info, 
@@ -159,7 +157,7 @@
  	    libbalsa_mailbox_local_msgno_removed(mailbox, msgno);
  	    if (renumber > msgno)
  		/* First message that needs renumbering. */
-@@ -773,11 +775,11 @@ lbm_mh_flag_line(struct message_info *ms
+@@ -768,11 +770,11 @@ lbm_mh_flag_line(struct message_info *ms
      if (!(msg_info->flags & flag))
  	return;
  
@@ -174,7 +172,7 @@
  }
  
  static gboolean
-@@ -858,7 +860,7 @@ libbalsa_mailbox_mh_sync(LibBalsaMailbox
+@@ -853,7 +855,7 @@ libbalsa_mailbox_mh_sync(LibBalsaMailbox
  	    /* free old information */
  	    g_ptr_array_remove(mh->msgno_2_msg_info, msg_info);
  	    g_hash_table_remove(mh->messages_info, 
@@ -183,7 +181,7 @@
  	    libbalsa_mailbox_local_msgno_removed(mailbox, msgno);
  	} else {
  	    lbm_mh_flag_line(msg_info, LIBBALSA_MESSAGE_FLAG_NEW, &unseen);
-@@ -1092,7 +1094,7 @@ libbalsa_mailbox_mh_fetch_message_struct
+@@ -1084,7 +1086,7 @@ libbalsa_mailbox_mh_fetch_message_struct
   * we'll just add new lines and let the next sync merge them with any
   * existing lines. */
  static void
@@ -192,7 +190,7 @@
  			LibBalsaMessageFlag flags)
  {
      FILE *fp;
-@@ -1103,13 +1105,13 @@ lbm_mh_update_sequences(LibBalsaMailboxM
+@@ -1095,13 +1097,13 @@ lbm_mh_update_sequences(LibBalsaMailboxM
  	return;
  
      if (flags & LIBBALSA_MESSAGE_FLAG_NEW)
@@ -210,7 +208,7 @@
      fclose(fp);
  }
  
-@@ -1126,7 +1128,7 @@ libbalsa_mailbox_mh_add_message(LibBalsa
+@@ -1118,7 +1120,7 @@ libbalsa_mailbox_mh_add_message(LibBalsa
      int fd;
      GMimeStream *out_stream;
      GMimeFilter *crlffilter;
@@ -219,7 +217,7 @@
      int retries;
      GMimeStream *in_stream;
  
-@@ -1169,14 +1171,14 @@ libbalsa_mailbox_mh_add_message(LibBalsa
+@@ -1161,14 +1163,14 @@ libbalsa_mailbox_mh_add_message(LibBalsa
      libbalsa_mime_stream_shared_unlock(stream);
      g_object_unref(in_stream);
  
@@ -236,7 +234,7 @@
  	rename_status = libbalsa_safe_rename(tmp, new_filename);
  	g_free(new_filename);
  	if (rename_status != -1)
-@@ -1199,9 +1201,9 @@ libbalsa_mailbox_mh_add_message(LibBalsa
+@@ -1191,9 +1193,9 @@ libbalsa_mailbox_mh_add_message(LibBalsa
                      "Too high activity?");
  	return FALSE;
      }
