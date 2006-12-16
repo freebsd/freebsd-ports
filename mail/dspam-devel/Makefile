@@ -12,7 +12,8 @@
 # Else the port will be broken. Thanks.
 
 PORTNAME=	dspam-devel
-PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}_1
+PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
 
