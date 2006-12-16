@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
@@ -27,7 +28,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	YES
 USE_GCC=	3.2+
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
-USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
+USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh dbmail-timsieved.sh
 USE_GNOME=	glib20 pkgconfig
 USE_OPENSSL=	YES
 
@@ -108,6 +109,15 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
 				${WRKSRC}/dbmail.h
+
+# remove leftovers which are not removed by some revisions of port
+# fixes the `Shared object "libpgsqldbmail.so.0" not found, required by "libdbmail.so.0"' error.
+pre-install:
+	@for f in 'a' 'la' 'so' 'so.0'; do \
+	  if [ -f ${PREFIX}/lib/libdbmail.$$f ] ; then \
+	    ${RM} ${PREFIX}/lib/libdbmail.$$f; \
+	  fi; \
+	done
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
