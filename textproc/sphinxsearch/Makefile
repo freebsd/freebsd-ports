@@ -8,7 +8,7 @@
 # this port at the moment.  Maybe later.
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	0.9.7.r1
+PORTVERSION=	0.9.7.r2
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
 DISTNAME=	sphinx-${PORTVERSION:C@\.r([0-9]+)$@-rc\1@}
