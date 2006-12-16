@@ -35,6 +35,9 @@
 %%CDARCHIVING:%%share/apps/kipi/data/autorun/cdalbums.ico
 %%CDARCHIVING:%%share/apps/kipi/data/image_broken.png
 %%CDARCHIVING:%%share/apps/kipi/data/index.htm
+%%CDARCHIVING:%%share/apps/kipi/gohome.png
+%%CDARCHIVING:%%share/apps/kipi/up.png
+%%CDARCHIVING:%%share/apps/kipi/valid-html401.png
 %%CDARCHIVING:%%share/services/kipiplugin_cdarchiving.desktop
 %%CDARCHIVING:%%@dirrm share/apps/kipi/data/autorun
 
@@ -59,13 +62,30 @@
 %%GALLERYEXPORT:%%lib/kde3/kipiplugin_galleryexport.la
 %%GALLERYEXPORT:%%share/services/kipiplugin_galleryexport.desktop
 
-%%IMAGESGALLERY:%%lib/kde3/kipiplugin_imagesgallery.a
-%%IMAGESGALLERY:%%lib/kde3/kipiplugin_imagesgallery.la
-%%IMAGESGALLERY:%%lib/kde3/kipiplugin_imagesgallery.so
-%%IMAGESGALLERY:%%share/apps/kipi/gohome.png
-%%IMAGESGALLERY:%%share/apps/kipi/up.png
-%%IMAGESGALLERY:%%share/apps/kipi/valid-html401.png
-%%IMAGESGALLERY:%%share/services/kipiplugin_imagesgallery.desktop
+%%HTMLEXPORT:%%lib/kde3/kipiplugin_htmlexport.a
+%%HTMLEXPORT:%%lib/kde3/kipiplugin_htmlexport.la
+%%HTMLEXPORT:%%lib/kde3/kipiplugin_htmlexport.so
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/matrix/bg.png
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/matrix/matrix.desktop
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/matrix/style.css
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/matrix/template.xsl
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/simple/simple.desktop
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/simple/style.css
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/simple/template.xsl
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/snow/next.png
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/snow/next_disabled.png
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/snow/previous.png
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/snow/previous_disabled.png
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/snow/snow.desktop
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/snow/style.css
+%%HTMLEXPORT:%%share/apps/kipiplugin_htmlexport/themes/snow/template.xsl
+%%HTMLEXPORT:%%share/config.kcfg/htmlexportconfig.kcfg
+%%HTMLEXPORT:%%share/services/kipiplugin_htmlexport.desktop
+%%HTMLEXPORT:%%@dirrm share/apps/kipiplugin_htmlexport/themes/matrix
+%%HTMLEXPORT:%%@dirrm share/apps/kipiplugin_htmlexport/themes/simple
+%%HTMLEXPORT:%%@dirrm share/apps/kipiplugin_htmlexport/themes/snow
+%%HTMLEXPORT:%%@dirrm share/apps/kipiplugin_htmlexport/themes
+%%HTMLEXPORT:%%@dirrm share/apps/kipiplugin_htmlexport
 
 %%JPEGLOSSLESS:%%lib/kde3/kipiplugin_jpeglossless.a
 %%JPEGLOSSLESS:%%lib/kde3/kipiplugin_jpeglossless.la
@@ -113,6 +133,16 @@
 %%SENDIMAGES:%%lib/kde3/kipiplugin_sendimages.so
 %%SENDIMAGES:%%share/services/kipiplugin_sendimages.desktop
 
+%%SIMPLEVIEWEREXPORT:%%lib/kde3/kipiplugin_simpleviewer.a
+%%SIMPLEVIEWEREXPORT:%%lib/kde3/kipiplugin_simpleviewer.la
+%%SIMPLEVIEWEREXPORT:%%lib/kde3/kipiplugin_simpleviewer.so
+%%SIMPLEVIEWEREXPORT:%%share/apps/kipiplugin_simpleviewerexport/index.template
+%%SIMPLEVIEWEREXPORT:%%share/apps/kipiplugin_simpleviewerexport/simpleviewer_html/space.png
+%%SIMPLEVIEWEREXPORT:%%share/apps/kipiplugin_simpleviewerexport/simpleviewer_html/upgrade.html
+%%SIMPLEVIEWEREXPORT:%%share/services/kipiplugin_simpleviewer.desktop
+%%SIMPLEVIEWEREXPORT:%%@dirrm share/apps/kipiplugin_simpleviewerexport/simpleviewer_html
+%%SIMPLEVIEWEREXPORT:%%@dirrm share/apps/kipiplugin_simpleviewerexport
+
 %%SLIDESHOW:%%lib/kde3/kipiplugin_slideshow.a
 %%SLIDESHOW:%%lib/kde3/kipiplugin_slideshow.la
 %%SLIDESHOW:%%lib/kde3/kipiplugin_slideshow.so
@@ -135,6 +165,7 @@
 %%WALLPAPER:%%share/services/kipiplugin_wallpaper.desktop
 
 share/apps/kipi/tips
+
 share/doc/HTML/da/kipi-plugins/acquireimages.docbook
 share/doc/HTML/da/kipi-plugins/borderimages.docbook
 share/doc/HTML/da/kipi-plugins/calendar.docbook
@@ -145,12 +176,14 @@ share/doc/HTML/da/kipi-plugins/convertimages.docbook
 share/doc/HTML/da/kipi-plugins/effectimages.docbook
 share/doc/HTML/da/kipi-plugins/filterimages.docbook
 share/doc/HTML/da/kipi-plugins/findduplicateimages.docbook
+share/doc/HTML/da/kipi-plugins/flickrexport.docbook
 share/doc/HTML/da/kipi-plugins/galleryexport.docbook
 share/doc/HTML/da/kipi-plugins/imagesgallery.docbook
 share/doc/HTML/da/kipi-plugins/index.cache.bz2
 share/doc/HTML/da/kipi-plugins/index.docbook
 share/doc/HTML/da/kipi-plugins/jpeglossless.docbook
 share/doc/HTML/da/kipi-plugins/kameraklient.docbook
+share/doc/HTML/da/kipi-plugins/mpeg_encode_dialog.png
 share/doc/HTML/da/kipi-plugins/mpegencoder.docbook
 share/doc/HTML/da/kipi-plugins/printwizard.docbook
 share/doc/HTML/da/kipi-plugins/rawconverter.docbook
@@ -161,6 +194,54 @@ share/doc/HTML/da/kipi-plugins/sendimages.docbook
 share/doc/HTML/da/kipi-plugins/slideshow.docbook
 share/doc/HTML/da/kipi-plugins/timeadjust.docbook
 share/doc/HTML/da/kipi-plugins/wallpaper.docbook
+share/doc/HTML/de/kipi-plugins/acquire-savetargetpreview.png
+share/doc/HTML/de/kipi-plugins/acquire-screenshotpreview.png
+share/doc/HTML/de/kipi-plugins/acquireimages.docbook
+share/doc/HTML/de/kipi-plugins/borderimages.docbook
+share/doc/HTML/de/kipi-plugins/calendar.docbook
+share/doc/HTML/de/kipi-plugins/cdarchiving.docbook
+share/doc/HTML/de/kipi-plugins/colorimages.docbook
+share/doc/HTML/de/kipi-plugins/common
+share/doc/HTML/de/kipi-plugins/convertimages.docbook
+share/doc/HTML/de/kipi-plugins/effectimages.docbook
+share/doc/HTML/de/kipi-plugins/filterimages.docbook
+share/doc/HTML/de/kipi-plugins/findduplicateimages.docbook
+share/doc/HTML/de/kipi-plugins/flickrexport.docbook
+share/doc/HTML/de/kipi-plugins/flickrexportauthenticated.png
+share/doc/HTML/de/kipi-plugins/flickrexportcontinue.png
+share/doc/HTML/de/kipi-plugins/flickrexportsignup.png
+share/doc/HTML/de/kipi-plugins/flickrexportuploaddialog.png
+share/doc/HTML/de/kipi-plugins/flickrexportuploading.png
+share/doc/HTML/de/kipi-plugins/galleryexport.docbook
+share/doc/HTML/de/kipi-plugins/imagegallery_albumsettings.png
+share/doc/HTML/de/kipi-plugins/imagegallery_collectionselection.png
+share/doc/HTML/de/kipi-plugins/imagegallery_looksettings.png
+share/doc/HTML/de/kipi-plugins/imagegallery_preview.png
+share/doc/HTML/de/kipi-plugins/imagegallery_progress.png
+share/doc/HTML/de/kipi-plugins/imagegallery_thumbsettings.png
+share/doc/HTML/de/kipi-plugins/imagesgallery.docbook
+share/doc/HTML/de/kipi-plugins/index.cache.bz2
+share/doc/HTML/de/kipi-plugins/index.docbook
+share/doc/HTML/de/kipi-plugins/jpeglossless.docbook
+share/doc/HTML/de/kipi-plugins/kameraklient.docbook
+share/doc/HTML/de/kipi-plugins/mpeg_encode_dialog.png
+share/doc/HTML/de/kipi-plugins/mpegencoder.docbook
+share/doc/HTML/de/kipi-plugins/printwizard.docbook
+share/doc/HTML/de/kipi-plugins/raw_converter_batch.png
+share/doc/HTML/de/kipi-plugins/raw_converter_single.png
+share/doc/HTML/de/kipi-plugins/rawconverter.docbook
+share/doc/HTML/de/kipi-plugins/recompressimages.docbook
+share/doc/HTML/de/kipi-plugins/renameimages.docbook
+share/doc/HTML/de/kipi-plugins/resizeimages.docbook
+share/doc/HTML/de/kipi-plugins/sendimages.docbook
+share/doc/HTML/de/kipi-plugins/sendimages_imageselection.png
+share/doc/HTML/de/kipi-plugins/sendimages_mail.png
+share/doc/HTML/de/kipi-plugins/sendimages_progress.png
+share/doc/HTML/de/kipi-plugins/slideshow.docbook
+share/doc/HTML/de/kipi-plugins/slideshow.png
+share/doc/HTML/de/kipi-plugins/slideshow_dialog.png
+share/doc/HTML/de/kipi-plugins/timeadjust.docbook
+share/doc/HTML/de/kipi-plugins/wallpaper.docbook
 share/doc/HTML/en/kipi-plugins/README
 share/doc/HTML/en/kipi-plugins/acquire-savetargetpreview.png
 share/doc/HTML/en/kipi-plugins/acquire-screenshotpreview.png
@@ -210,6 +291,54 @@ share/doc/HTML/en/kipi-plugins/slideshow.png
 share/doc/HTML/en/kipi-plugins/slideshow_dialog.png
 share/doc/HTML/en/kipi-plugins/timeadjust.docbook
 share/doc/HTML/en/kipi-plugins/wallpaper.docbook
+share/doc/HTML/es/kipi-plugins/acquire-savetargetpreview.png
+share/doc/HTML/es/kipi-plugins/acquire-screenshotpreview.png
+share/doc/HTML/es/kipi-plugins/acquireimages.docbook
+share/doc/HTML/es/kipi-plugins/borderimages.docbook
+share/doc/HTML/es/kipi-plugins/calendar.docbook
+share/doc/HTML/es/kipi-plugins/cdarchiving.docbook
+share/doc/HTML/es/kipi-plugins/colorimages.docbook
+share/doc/HTML/es/kipi-plugins/common
+share/doc/HTML/es/kipi-plugins/convertimages.docbook
+share/doc/HTML/es/kipi-plugins/effectimages.docbook
+share/doc/HTML/es/kipi-plugins/filterimages.docbook
+share/doc/HTML/es/kipi-plugins/findduplicateimages.docbook
+share/doc/HTML/es/kipi-plugins/flickrexport.docbook
+share/doc/HTML/es/kipi-plugins/flickrexportauthenticated.png
+share/doc/HTML/es/kipi-plugins/flickrexportcontinue.png
+share/doc/HTML/es/kipi-plugins/flickrexportsignup.png
+share/doc/HTML/es/kipi-plugins/flickrexportuploaddialog.png
+share/doc/HTML/es/kipi-plugins/flickrexportuploading.png
+share/doc/HTML/es/kipi-plugins/galleryexport.docbook
+share/doc/HTML/es/kipi-plugins/imagegallery_albumsettings.png
+share/doc/HTML/es/kipi-plugins/imagegallery_collectionselection.png
+share/doc/HTML/es/kipi-plugins/imagegallery_looksettings.png
+share/doc/HTML/es/kipi-plugins/imagegallery_preview.png
+share/doc/HTML/es/kipi-plugins/imagegallery_progress.png
+share/doc/HTML/es/kipi-plugins/imagegallery_thumbsettings.png
+share/doc/HTML/es/kipi-plugins/imagesgallery.docbook
+share/doc/HTML/es/kipi-plugins/index.cache.bz2
+share/doc/HTML/es/kipi-plugins/index.docbook
+share/doc/HTML/es/kipi-plugins/jpeglossless.docbook
+share/doc/HTML/es/kipi-plugins/kameraklient.docbook
+share/doc/HTML/es/kipi-plugins/mpeg_encode_dialog.png
+share/doc/HTML/es/kipi-plugins/mpegencoder.docbook
+share/doc/HTML/es/kipi-plugins/printwizard.docbook
+share/doc/HTML/es/kipi-plugins/raw_converter_batch.png
+share/doc/HTML/es/kipi-plugins/raw_converter_single.png
+share/doc/HTML/es/kipi-plugins/rawconverter.docbook
+share/doc/HTML/es/kipi-plugins/recompressimages.docbook
+share/doc/HTML/es/kipi-plugins/renameimages.docbook
+share/doc/HTML/es/kipi-plugins/resizeimages.docbook
+share/doc/HTML/es/kipi-plugins/sendimages.docbook
+share/doc/HTML/es/kipi-plugins/sendimages_imageselection.png
+share/doc/HTML/es/kipi-plugins/sendimages_mail.png
+share/doc/HTML/es/kipi-plugins/sendimages_progress.png
+share/doc/HTML/es/kipi-plugins/slideshow.docbook
+share/doc/HTML/es/kipi-plugins/slideshow.png
+share/doc/HTML/es/kipi-plugins/slideshow_dialog.png
+share/doc/HTML/es/kipi-plugins/timeadjust.docbook
+share/doc/HTML/es/kipi-plugins/wallpaper.docbook
 share/doc/HTML/et/kipi-plugins/acquireimages.docbook
 share/doc/HTML/et/kipi-plugins/borderimages.docbook
 share/doc/HTML/et/kipi-plugins/calendar.docbook
@@ -246,6 +375,7 @@ share/doc/HTML/it/kipi-plugins/convertimages.docbook
 share/doc/HTML/it/kipi-plugins/effectimages.docbook
 share/doc/HTML/it/kipi-plugins/filterimages.docbook
 share/doc/HTML/it/kipi-plugins/findduplicateimages.docbook
+share/doc/HTML/it/kipi-plugins/flickrexport.docbook
 share/doc/HTML/it/kipi-plugins/galleryexport.docbook
 share/doc/HTML/it/kipi-plugins/imagesgallery.docbook
 share/doc/HTML/it/kipi-plugins/index.cache.bz2
@@ -307,6 +437,7 @@ share/doc/HTML/pt/kipi-plugins/diroperations.docbook
 share/doc/HTML/pt/kipi-plugins/effectimages.docbook
 share/doc/HTML/pt/kipi-plugins/filterimages.docbook
 share/doc/HTML/pt/kipi-plugins/findduplicateimages.docbook
+share/doc/HTML/pt/kipi-plugins/flickrexport.docbook
 share/doc/HTML/pt/kipi-plugins/galleryexport.docbook
 share/doc/HTML/pt/kipi-plugins/gammacalibration.docbook
 share/doc/HTML/pt/kipi-plugins/imagesgallery.docbook
@@ -363,7 +494,20 @@ share/doc/HTML/sv/kipi-plugins/convertimages.docbook
 share/doc/HTML/sv/kipi-plugins/effectimages.docbook
 share/doc/HTML/sv/kipi-plugins/filterimages.docbook
 share/doc/HTML/sv/kipi-plugins/findduplicateimages.docbook
+share/doc/HTML/sv/kipi-plugins/acquire-savetargetpreview.png
+share/doc/HTML/sv/kipi-plugins/acquire-screenshotpreview.png
+share/doc/HTML/sv/kipi-plugins/flickrexport.docbook
+share/doc/HTML/sv/kipi-plugins/flickrexportcontinue.png
+share/doc/HTML/sv/kipi-plugins/flickrexportsignup.png
+share/doc/HTML/sv/kipi-plugins/flickrexportuploaddialog.png
+share/doc/HTML/sv/kipi-plugins/flickrexportuploading.png
 share/doc/HTML/sv/kipi-plugins/galleryexport.docbook
+share/doc/HTML/sv/kipi-plugins/imagegallery_albumsettings.png
+share/doc/HTML/sv/kipi-plugins/imagegallery_collectionselection.png
+share/doc/HTML/sv/kipi-plugins/imagegallery_looksettings.png
+share/doc/HTML/sv/kipi-plugins/imagegallery_preview.png
+share/doc/HTML/sv/kipi-plugins/imagegallery_progress.png
+share/doc/HTML/sv/kipi-plugins/imagegallery_thumbsettings.png
 share/doc/HTML/sv/kipi-plugins/imagesgallery.docbook
 share/doc/HTML/sv/kipi-plugins/index.cache.bz2
 share/doc/HTML/sv/kipi-plugins/index.docbook
@@ -386,12 +530,18 @@ share/doc/HTML/sv/kipi-plugins/slideshow.docbook
 share/doc/HTML/sv/kipi-plugins/slideshow_dialog.png
 share/doc/HTML/sv/kipi-plugins/timeadjust.docbook
 share/doc/HTML/sv/kipi-plugins/wallpaper.docbook
+
 share/locale/br/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/br/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/br/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/br/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/br/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/br/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/br/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/br/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/br/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/br/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/br/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/br/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/br/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/br/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -399,9 +549,12 @@ share/locale/br/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/br/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/br/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/br/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/br/LC_MESSAGES/kipiplugins.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/ca/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/ca/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -412,12 +565,18 @@ share/locale/ca/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/ca/LC_MESSAGES/kipiplugins.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/cs/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/cs/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/cs/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/cs/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/cs/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -425,9 +584,13 @@ share/locale/cs/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/cs/LC_MESSAGES/kipiplugins.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/cy/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/cy/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/cy/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -438,12 +601,18 @@ share/locale/cy/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/cy/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/cy/LC_MESSAGES/kipiplugins.mo
 share/locale/da/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/da/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/da/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/da/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/da/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/da/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/da/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/da/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/da/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/da/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/da/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/da/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/da/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/da/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -451,12 +620,18 @@ share/locale/da/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/da/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/da/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/da/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/da/LC_MESSAGES/kipiplugins.mo
 share/locale/de/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/de/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/de/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/de/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/de/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/de/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/de/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/de/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/de/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/de/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/de/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/de/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/de/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/de/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -464,12 +639,18 @@ share/locale/de/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/de/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/de/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/de/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/de/LC_MESSAGES/kipiplugins.mo
 share/locale/el/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/el/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/el/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/el/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/el/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/el/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/el/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/el/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/el/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/el/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/el/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/el/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/el/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/el/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -477,9 +658,12 @@ share/locale/el/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/el/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/el/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/el/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/el/LC_MESSAGES/kipiplugins.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/en_GB/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/en_GB/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -490,12 +674,18 @@ share/locale/en_GB/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/en_GB/LC_MESSAGES/kipiplugins.mo
 share/locale/es/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/es/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/es/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/es/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/es/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/es/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/es/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/es/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/es/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/es/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/es/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/es/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -503,12 +693,18 @@ share/locale/es/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/es/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/es/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/es/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/es/LC_MESSAGES/kipiplugins.mo
 share/locale/et/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/et/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/et/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/et/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/et/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/et/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/et/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/et/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/et/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/et/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/et/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/et/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/et/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/et/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -516,15 +712,21 @@ share/locale/et/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/et/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/et/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/et/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/et/LC_MESSAGES/kipiplugins.mo
+share/locale/fi/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/fr/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/fr/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/fr/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/fr/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -532,12 +734,18 @@ share/locale/fr/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/fr/LC_MESSAGES/kipiplugins.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/ga/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/ga/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/ga/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/ga/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/ga/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -545,9 +753,31 @@ share/locale/ga/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/ga/LC_MESSAGES/kipiplugins.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_batchprocessimages.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_calendar.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_flickrexport.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_htmlexport.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_imagesgallery.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_kameraklient.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_mpegencoder.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_printwizard.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_rawconverter.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_slideshow.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_timeadjust.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/gl/LC_MESSAGES/kipiplugins.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/hu/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/hu/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_mpegencoder.mo
@@ -556,8 +786,10 @@ share/locale/hu/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/is/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/is/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/is/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/is/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/is/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/is/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/is/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/is/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -568,12 +800,18 @@ share/locale/is/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/is/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/is/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/is/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/is/LC_MESSAGES/kipiplugins.mo
 share/locale/it/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/it/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/it/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/it/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/it/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/it/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/it/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/it/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/it/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/it/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/it/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/it/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/it/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/it/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -581,9 +819,32 @@ share/locale/it/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/it/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/it/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/it/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/it/LC_MESSAGES/kipiplugins.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_batchprocessimages.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_calendar.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_flickrexport.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_htmlexport.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_imagesgallery.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_kameraklient.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_mpegencoder.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_printwizard.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_rawconverter.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_slideshow.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_timeadjust.mo
+share/locale/ja/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/ja/LC_MESSAGES/kipiplugins.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/lt/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/lt/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/lt/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -594,9 +855,12 @@ share/locale/lt/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/lt/LC_MESSAGES/kipiplugins.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/mt/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/mt/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -607,9 +871,11 @@ share/locale/mt/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/mt/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/mt/LC_MESSAGES/kipiplugins.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/nb/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_printwizard.mo
@@ -618,12 +884,18 @@ share/locale/nb/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/nb/LC_MESSAGES/kipiplugins.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/nl/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/nl/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/nl/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/nl/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/nl/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -631,23 +903,31 @@ share/locale/nl/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/nl/LC_MESSAGES/kipiplugins.mo
 share/locale/nn/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/nn/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/nn/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_calendar.mo
+share/locale/pa/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/pa/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/pa/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pa/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/pa/LC_MESSAGES/kipiplugins.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/pl/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/pl/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/pl/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -658,12 +938,18 @@ share/locale/pl/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/pl/LC_MESSAGES/kipiplugins.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/pt/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/pt/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/pt/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/pt/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/pt/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -671,9 +957,12 @@ share/locale/pt/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/pt/LC_MESSAGES/kipiplugins.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/pt_BR/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/pt_BR/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -684,9 +973,13 @@ share/locale/pt_BR/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/pt_BR/LC_MESSAGES/kipiplugins.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/rw/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/rw/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/rw/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -697,12 +990,17 @@ share/locale/rw/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/rw/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/rw/LC_MESSAGES/kipiplugins.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/sr/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/sr/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/sr/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/sr/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -710,12 +1008,17 @@ share/locale/sr/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sr/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/sr/LC_MESSAGES/kipiplugins.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/sr@Latn/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/sr@Latn/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/sr@Latn/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/sr@Latn/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -723,12 +1026,18 @@ share/locale/sr@Latn/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sr@Latn/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/sr@Latn/LC_MESSAGES/kipiplugins.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/sv/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/sv/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/sv/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/sv/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/sv/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -736,9 +1045,12 @@ share/locale/sv/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/sv/LC_MESSAGES/kipiplugins.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/ta/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/ta/LC_MESSAGES/kipiplugin_findimages.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -749,12 +1061,18 @@ share/locale/ta/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ta/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/ta/LC_MESSAGES/kipiplugins.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/tr/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_cdarchiving.mo
+share/locale/tr/LC_MESSAGES/kipiplugin_findimages.mo
+share/locale/tr/LC_MESSAGES/kipiplugin_flickrexport.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_galleryexport.mo
+share/locale/tr/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_imagesgallery.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/tr/LC_MESSAGES/kipiplugin_kameraklient.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_mpegencoder.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_printwizard.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_rawconverter.mo
@@ -762,6 +1080,13 @@ share/locale/tr/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/tr/LC_MESSAGES/kipiplugins.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_calendar.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_htmlexport.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_rawconverter.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_slideshow.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_timeadjust.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_imagesgallery.mo
@@ -770,6 +1095,7 @@ share/locale/zh_CN/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_slideshow.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_wallpaper.mo
+share/locale/zh_CN/LC_MESSAGES/kipiplugins.mo
 
 @dirrm share/doc/HTML/sv/kipi-plugins
 @dirrm share/doc/HTML/ru/kipi-plugins
@@ -778,6 +1104,32 @@ share/locale/zh_CN/LC_MESSAGES/kipiplugin_wallpaper.mo
 @dirrm share/doc/HTML/nl/kipi-plugins
 @dirrm share/doc/HTML/it/kipi-plugins
 @dirrm share/doc/HTML/et/kipi-plugins
+@dirrm share/doc/HTML/es/kipi-plugins
 @dirrm share/doc/HTML/en/kipi-plugins
+@dirrm share/doc/HTML/de/kipi-plugins
 @dirrm share/doc/HTML/da/kipi-plugins
 
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
