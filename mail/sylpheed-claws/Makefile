@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -21,6 +22,7 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 DEPRECATED=	renamed to claws-mail
+CONFLICTS=	claws-mail
 
 THEMEVERSION=	20060615
 THEMEFILE=	sylpheed-claws-themes-${THEMEVERSION}.tar.gz

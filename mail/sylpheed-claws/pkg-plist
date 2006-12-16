@@ -2534,6 +2534,7 @@ share/pixmaps/sylpheed-claws.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/pixmaps
 @dirrmtry share/applications
 @dirrmtry lib/sylpheed-claws/plugins
 @dirrmtry lib/sylpheed-claws
