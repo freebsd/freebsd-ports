@@ -11,7 +11,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library for manipulating EXIF information embedded in images
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
