@@ -3,13 +3,14 @@
 # Whom:					Nicolas Jombart <ecu@ipv42.net>
 #
 # $FreeBSD$
-#
+# ex:ts=8
 
 PORTNAME=	ccze
 PORTVERSION=	0.2.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://bonehunter.rulez.org/pub/ccze/stable/
+MASTER_SITES=	ftp://bonehunter.rulez.org/pub/ccze/stable/ \
+				http://ipv42.net/distfiles/ccze/
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Fast log colorizer
@@ -18,7 +19,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		ccze.1 ccze-cssdump.1
 MAN7=		ccze-plugin.7
