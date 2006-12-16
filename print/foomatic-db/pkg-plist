@@ -1599,8 +1599,6 @@ share/foomatic/db/source/driver/bjc800j.xml
 share/foomatic/db/source/driver/bjc880j.xml
 share/foomatic/db/source/driver/c2050.xml
 share/foomatic/db/source/driver/c2070.xml
-share/foomatic/db/source/driver/cZ11.xml
-share/foomatic/db/source/driver/cZ11somsom.xml
 share/foomatic/db/source/driver/capt.xml
 share/foomatic/db/source/driver/cdj1600.xml
 share/foomatic/db/source/driver/cdj500.xml
@@ -1642,11 +1640,9 @@ share/foomatic/db/source/driver/foo2kyo.xml
 share/foomatic/db/source/driver/foo2oak.xml
 share/foomatic/db/source/driver/foo2zjs.xml
 share/foomatic/db/source/driver/gdi.xml
-share/foomatic/db/source/driver/gimp-print.xml
 share/foomatic/db/source/driver/gutenprint.xml
 share/foomatic/db/source/driver/hl1250.xml
 share/foomatic/db/source/driver/hl7x0.xml
-share/foomatic/db/source/driver/hpdj.xml
 share/foomatic/db/source/driver/ibmpro.xml
 share/foomatic/db/source/driver/imagen.xml
 share/foomatic/db/source/driver/iwhi.xml
@@ -1690,10 +1686,6 @@ share/foomatic/db/source/driver/lpstyl.xml
 share/foomatic/db/source/driver/lq850.xml
 share/foomatic/db/source/driver/lx5000.xml
 share/foomatic/db/source/driver/lxm3200-tweaked.xml
-share/foomatic/db/source/driver/lxm3200.xml
-share/foomatic/db/source/driver/lxm3200c.xml
-share/foomatic/db/source/driver/lxm3200m.xml
-share/foomatic/db/source/driver/lxm3200p.xml
 share/foomatic/db/source/driver/lxm5700m.xml
 share/foomatic/db/source/driver/lxx74.xml
 share/foomatic/db/source/driver/lz11-V2.xml
@@ -1719,7 +1711,6 @@ share/foomatic/db/source/driver/npdl.xml
 share/foomatic/db/source/driver/nwp533.xml
 share/foomatic/db/source/driver/oce9050.xml
 share/foomatic/db/source/driver/oki182.xml
-share/foomatic/db/source/driver/oki4drv.xml
 share/foomatic/db/source/driver/oki4w.xml
 share/foomatic/db/source/driver/okiibm.xml
 share/foomatic/db/source/driver/omni.xml
@@ -2126,6 +2117,12 @@ share/foomatic/db/source/opt/gdi-PageTimeout.xml
 share/foomatic/db/source/opt/gdi-PowerSaveTime.xml
 share/foomatic/db/source/opt/gdi-PowerSaving.xml
 share/foomatic/db/source/opt/gdi-RET.xml
+share/foomatic/db/source/opt/hl7x0-Duplex.xml
+share/foomatic/db/source/opt/hl7x0-EconomyMode.xml
+share/foomatic/db/source/opt/hl7x0-InputSlot.xml
+share/foomatic/db/source/opt/hl7x0-MediaType.xml
+share/foomatic/db/source/opt/hl7x0-PIN.xml
+share/foomatic/db/source/opt/hl7x0-Resolution.xml
 share/foomatic/db/source/opt/jap-PageSize.xml
 share/foomatic/db/source/opt/jap-Resolution.xml
 share/foomatic/db/source/opt/largeformat-PageSize.xml
@@ -4016,7 +4013,10 @@ share/foomatic/db/source/printer/Ricoh-RPDL_III_Laser_Printer.xml
 share/foomatic/db/source/printer/Ricoh-RPDL_II_Laser_Printer.xml
 share/foomatic/db/source/printer/Ricoh-RPDL_IV_Laser_Printer.xml
 share/foomatic/db/source/printer/Ricoh-RPDL_I_Laser_Printer.xml
+share/foomatic/db/source/printer/Samsung-CLP-300.xml
 share/foomatic/db/source/printer/Samsung-CLP-500.xml
+share/foomatic/db/source/printer/Samsung-CLP-510.xml
+share/foomatic/db/source/printer/Samsung-CLP-600.xml
 share/foomatic/db/source/printer/Samsung-ML-1000.xml
 share/foomatic/db/source/printer/Samsung-ML-1010.xml
 share/foomatic/db/source/printer/Samsung-ML-1020.xml
@@ -4251,6 +4251,9 @@ share/foomatic/db/source/printer/Xerox-WorkCentre_XD120f.xml
 share/foomatic/db/source/printer/Xerox-WorkCentre_XE80.xml
 share/foomatic/db/source/printer/Xerox-WorkCentre_XE90fx.xml
 share/foomatic/db/source/printer/Xerox-WorkCentre_XK35c.xml
+@dirrm share/foomatic/db/source/printer
+@dirrm share/foomatic/db/source/driver
+@dirrm share/foomatic/db/source/opt
 @dirrm share/foomatic/db/source/PPD/Brother
 @dirrm share/foomatic/db/source/PPD/Epson
 @dirrm share/foomatic/db/source/PPD/Gestetner/PS
@@ -4336,9 +4339,6 @@ share/foomatic/db/source/printer/Xerox-WorkCentre_XK35c.xml
 @dirrm share/foomatic/db/source/PPD/Sharp
 @dirrm share/foomatic/db/source/PPD/Toshiba
 @dirrm share/foomatic/db/source/PPD
-@dirrm share/foomatic/db/source/driver
-@dirrm share/foomatic/db/source/opt
-@dirrm share/foomatic/db/source/printer
 @dirrm share/foomatic/db/source
 @dirrm share/foomatic/db
 @dirrm share/foomatic
