@@ -6,21 +6,16 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	0.1.0.r1
-PORTREVISION=	5
+PORTVERSION=	0.1.2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	digikam
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
+MASTER_SITE_SUBDIR=	kipi
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface plugins
 
-LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
-		kipi.1:${PORTSDIR}/graphics/libkipi \
-		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi
 
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \
@@ -28,14 +23,15 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		CDARCHIVING "create album CDs" on \
 		FINDIMAGES "find duplicate images in albums" on \
 		FLICKREXPORT "export images to flickr account" on \
-		GALLERYEXPORT "album to remote Gallery server export" on \
-		IMAGESGALLERY "album to HTML gallery export" on \
-		JPEGLOSSLESS "batch processing without losing meta info" on \
+		GALLERYEXPORT "export images to remote Gallery server" on \
+		HTMLEXPORT "export images collections into HTML page" on \
+		JPEGLOSSLESS "batch processing without losing metainfo" on \
 		KAMERAKLIENT "GPhoto2 interface (import from cameras)" on \
 		MPEGENCODER "tool to build a video from images" on \
 		PRINTWIZARD "a print wizard" on \
 		RAWCONVERTER "convert RAW images from digital cameras" on \
-		SENDIMAGES "an email images plugin" on \
+		SENDIMAGES "send images by email" on \
+		SIMPLEVIEWEREXPORT "export images to SimpleViewer" on \
 		SLIDESHOW "create a slideshow" on \
 		TIMEADJUST "adjust image file time and date" on \
 		WALLPAPER "set your image as wallpaper" on
@@ -44,7 +40,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-CONFIGURE_ARGS+=--program-prefix=''
+USE_GETTEXT=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +51,7 @@ CONFIGURE_ARGS+=--enable-final
 .if !defined(WITHOUT_ACQUIREIMAGES)
 PLIST_SUB+=	ACQUIREIMAGES:=""
 SUBDIRS+=	acquireimages
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .else
 PLIST_SUB+=	ACQUIREIMAGES:="@comment "
 .endif
@@ -62,6 +59,7 @@ PLIST_SUB+=	ACQUIREIMAGES:="@comment "
 .if !defined(WITHOUT_BATCHPROCESSIMAGES)
 PLIST_SUB+=	BATCHPROCESSIMAGES:=""
 SUBDIRS+=	batchprocessimages
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 PLIST_SUB+=	BATCHPROCESSIMAGES:="@comment "
 .endif
@@ -102,16 +100,19 @@ SUBDIRS+=	galleryexport
 PLIST_SUB+=	GALLERYEXPORT:="@comment "
 .endif
 
-.if !defined(WITHOUT_IMAGESGALLERY)
-PLIST_SUB+=	IMAGESGALLERY:=""
-SUBDIRS+=	imagesgallery
+.if !defined(WITHOUT_HTMLEXPORT)
+PLIST_SUB+=	HTMLEXPORT:=""
+SUBDIRS+=	htmlexport
+LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
-PLIST_SUB+=	IMAGESGALLERY:="@comment "
+PLIST_SUB+=	HTMLEXPORT:="@comment "
 .endif
 
 .if !defined(WITHOUT_JPEGLOSSLESS)
 PLIST_SUB+=	JPEGLOSSLESS:=""
 SUBDIRS+=	jpeglossless
+LIB_DEPENDS+=	kexif.1:${PORTSDIR}/graphics/libkexif \
+		Magick++.10:${PORTSDIR}/graphics/ImageMagick
 .else
 PLIST_SUB+=	JPEGLOSSLESS:="@comment "
 .endif
@@ -143,6 +144,7 @@ PLIST_SUB+=	PRINTWIZARD:="@comment "
 
 .if !defined(WITHOUT_RAWCONVERTER)
 PLIST_SUB+=	RAWCONVERTER:=""
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 MAN1+=		kipidcrawclient.1
 SUBDIRS+=	rawconverter
@@ -157,9 +159,17 @@ SUBDIRS+=	sendimages
 PLIST_SUB+=	SENDIMAGES:="@comment "
 .endif
 
+.if !defined(WITHOUT_SIMPLEVIEWEREXPORT)
+PLIST_SUB+=	SIMPLEVIEWEREXPORT:=""
+SUBDIRS+=	simpleviewerexport
+.else
+PLIST_SUB+=	SIMPLEVIEWEREXPORT:="@comment "
+.endif
+
 .if !defined(WITHOUT_SLIDESHOW)
 PLIST_SUB+=	SLIDESHOW:=""
 SUBDIRS+=	slideshow
+LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 .else
 PLIST_SUB+=	SLIDESHOW:="@comment "
 .endif
@@ -167,6 +177,7 @@ PLIST_SUB+=	SLIDESHOW:="@comment "
 .if !defined(WITHOUT_TIMEADJUST)
 PLIST_SUB+=	TIMEADJUST:=""
 SUBDIRS+=	timeadjust
+LIB_DEPENDS+=	kexif.1:${PORTSDIR}/graphics/libkexif
 .else
 PLIST_SUB+=	TIMEADJUST:="@comment "
 .endif
@@ -179,6 +190,8 @@ PLIST_SUB+=	WALLPAPER:="@comment "
 .endif
 
 post-patch::
+	@${REINPLACE_CMD} -e 's|-O2||g;s|-fno-schedule-insns -fno-inline||g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's@%%SUBDIRS%%@${SUBDIRS}@g' ${WRKSRC}/kipi-plugins/Makefile.in
 	@${REINPLACE_CMD} -e 's@\/usr\/bin\/k3b@${PREFIX}\/bin\/k3b@g' \
