@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gocr
-PORTVERSION=	0.40
-PORTREVISION=	1
+PORTVERSION=	0.43
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jocr
@@ -15,12 +14,11 @@ MASTER_SITE_SUBDIR=	jocr
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	GOCR/JOCR is an OCR (Optical Character Recognition) program
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-netpbm=${LOCALBASE}
+CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
