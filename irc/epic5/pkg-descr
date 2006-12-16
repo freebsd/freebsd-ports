@@ -1,1 +1,16 @@
-This is the port of epic5, a beta release of a popular textmode IRC client.
+EPIC5 is the 5th generation of the Enhanced Programmable ircII Client.
+No longer is EPIC 100% backwards compatable with ircII, but instead those
+things where compatibility is undesirable have been found and fixed.  No 
+gratuitous incompatibilities have been added, but lots of new code has been
+added to make EPIC one of the best ircII clients available.
+
+EPIC no longer shares any file names with ircII, so they should happily
+co-exist.
+
+EPIC5 is currently under development and end-users are encouraged to use
+EPIC4 which is finished and production-quality.
+
+Due to it's minimalist approach it is highly recommended you use a script
+with EPIC.
+
+WWW: http://www.epicsol.org
