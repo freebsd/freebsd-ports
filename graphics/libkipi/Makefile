@@ -11,7 +11,7 @@ CATEGORIES=	graphics kde devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface
 
 USE_BZIP2=	yes

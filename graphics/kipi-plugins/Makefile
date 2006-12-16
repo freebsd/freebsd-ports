@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface plugins
 
 LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
