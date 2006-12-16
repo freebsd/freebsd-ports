@@ -1,7 +1,11 @@
 bin/isomaster
+share/applications/isomaster.desktop
 %%DATADIR%%/icons/add2-kearone.png
 %%DATADIR%%/icons/extract-kearone.png
 %%DATADIR%%/icons/folder-new-tango.png
 %%DATADIR%%/icons/isomaster.png
+share/pixmaps/isomaster.png
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
