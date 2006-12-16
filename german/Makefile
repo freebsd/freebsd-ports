@@ -10,6 +10,7 @@
     SUBDIR += bsdforen-firefox-searchplugin
     SUBDIR += citrix_ica
     SUBDIR += dict
+    SUBDIR += digibux
     SUBDIR += ding
     SUBDIR += geonext
     SUBDIR += ispell
