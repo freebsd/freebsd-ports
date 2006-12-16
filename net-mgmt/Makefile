@@ -180,6 +180,7 @@
     SUBDIR += py-yapsnmp
     SUBDIR += rancid
     SUBDIR += rate
+    SUBDIR += rcpd
     SUBDIR += remarp
     SUBDIR += rotorouter
     SUBDIR += routers2

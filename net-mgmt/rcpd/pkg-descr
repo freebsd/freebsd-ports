@@ -1,0 +1,11 @@
+rcpd is a RCP server intended specifically for router
+or network device clients. It is used to transfer
+configurations, boot images, and kernels images
+(eg: IOS) to the devices.
+
+These files are often tranfered with TFTP, but TFTP
+has reliability and speed issues and file size
+limitations due to it's protocol specification and
+underlying transport; while RCP is not affected.
+
+WWW:	http://www.shrubbery.net/rcpd/
