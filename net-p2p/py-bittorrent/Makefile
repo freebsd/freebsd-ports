@@ -155,7 +155,7 @@ PLIST_FILES+=	\
 		share/pixmaps/BitTorrent/themes/default/torrentstate/seeding.png \
 		share/pixmaps/BitTorrent/themes/default/torrentstate/starting.png \
 		share/pixmaps/BitTorrent/themes/default/torrentstate/stopped.png \
-		share/pixmaps/BitTorrent/themes/default/torrentstate/unknown.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/unknown.png
 
 PLIST_SUB+=	\
 		GUI=""
