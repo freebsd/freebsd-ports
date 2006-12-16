@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pvpgn
-PORTVERSION=	1.7.9
+PORTVERSION=	1.8.0
 CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/pvpgn/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	pvpgn
 DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.0.tar.gz
 DIST_SUBDIR=	pvpgn
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -22,11 +23,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
 
-USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
-SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
+SED_SCRIPT+=	-e 's|%%RC_DIR%%|${RC_DIR}|g' \
 		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
 
 PLIST_SUB+=	RC_SUFX=${RC_SUFX}
@@ -35,7 +34,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/pvpgn \
-		--localstatedir=${DATADIR}
+		--localstatedir=${DATADIR} --with-libraries=${LOCALBASE}/lib
+
+USE_RC_SUBR=	bnetd.sh
 
 MAN1=		bnbot.1 bnchat.1 bnetd.1 bnftp.1 bni2tga.1 bnibuild.1 \
 		bniextract.1 bnilist.1 bnpass.1 bnstat.1 bntrackd.1 tgainfo.1
@@ -59,7 +60,7 @@ CONFIGURE_ARGS+=--with-pgsql
 .endif
 
 .if defined(WITH_SQLITE3)
-USE_SQLITE=	yes
+USE_SQLITE=	3
 CONFIGURE_ARGS+=--with-sqlite3
 .endif
 
@@ -80,12 +81,10 @@ post-extract:
 	@${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SUPPORT_FILES}${SUPPORT_SUFFX}
 
 post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/bnetd.sh > ${WRKSRC}/bnetd.sh
 	@${SED} "s|%%PVPGN_DIR%%|${DATADIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
 	@${SED} "s|%%PVPGN_DIR%%|${DATADIR}|g" ${PKGDIR}/pkg-deinstall > ${WRKDIR}/pkg-deinstall
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bnetd.sh ${PREFIX}/etc/rc.d/bnetd${RC_SUFX}
 	@${ECHO_MSG} ">>>   installing support files ..."
 .for i in IX86ver1.mpq PMACver1.mpq WAR3IX86.mpq XMACver1.mpq \
 		bnserver-D2DV.ini bnserver-D2XP.ini bnserver-WAR3.ini bnserver.ini \

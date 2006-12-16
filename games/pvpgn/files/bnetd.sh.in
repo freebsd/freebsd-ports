@@ -11,7 +11,7 @@
 #
 # Add the following lines to /etc/rc.conf to enable bnetd:
 #
-#bnetd_enable="YES"
+# bnetd_enable="YES"
 #
 # See bnetd(1) for flags
 #

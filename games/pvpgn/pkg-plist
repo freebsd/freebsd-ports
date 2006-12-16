@@ -1,3 +1,4 @@
+@unexec %D/etc/rc.d/bnetd.sh stop > /dev/null 2>&1 || true
 bin/bnbot
 bin/bncdb
 bin/bnchat
@@ -42,7 +43,6 @@ etc/pvpgn/supportfile.conf-sample
 etc/pvpgn/topics.conf-sample
 etc/pvpgn/tournament.conf-sample
 etc/pvpgn/versioncheck.conf-sample
-etc/rc.d/bnetd%%RC_SUFX%%
 sbin/bnetd
 sbin/bntrackd
 %%WITH_D2%%sbin/d2cs
