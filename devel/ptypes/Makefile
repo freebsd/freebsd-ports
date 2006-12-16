@@ -27,7 +27,7 @@ OPTIONS=	DEBUG "Build debug version" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
-DEBUG_FLAGS=	-DDEBUG -g
+DEBUG_FLAGS=	"-DDEBUG -g"
 .endif
 .if defined(WITH_OPTIMIZED)
 PTHREAD_CFLAGS+=-O2
@@ -38,6 +38,7 @@ MAKE_ARGS+=	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 
 do-install:
 	${MKDIR} ${PREFIX}/include/ptypes
+	${RM} -f ${WRKSRC}/include/*.orig
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/ptypes
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/so/libptypes.so.${SHLIB_VER} \
