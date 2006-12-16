@@ -15,6 +15,9 @@ share/gnome/grhino-%%VERSION%%/theme/small/black.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/black_last.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/bottom.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/empty.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/highlight_black.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/highlight_empty.xpm
+share/gnome/grhino-%%VERSION%%/theme/small/highlight_white.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/hint_black.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/hint_white.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/left.xpm
@@ -23,7 +26,6 @@ share/gnome/grhino-%%VERSION%%/theme/small/top.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/white.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/white_last.xpm
 share/gnome/help/grhino/C/grhino.xml
-share/gnome/help/grhino/C/grhino-C.omf
 share/gnome/help/grhino/C/legal.xml
 share/gnome/help/grhino/C/figures/gamelist.png
 share/gnome/help/grhino/C/figures/history.png
@@ -32,7 +34,11 @@ share/gnome/help/grhino/C/figures/pattern.png
 share/gnome/help/grhino/C/figures/prefs-ai.png
 share/gnome/help/grhino/C/figures/prefs-board.png
 share/gnome/help/grhino/C/figures/prefs-theme.png
+share/gnome/help/grhino/C/figures/toolbar-edit.png
+share/gnome/omf/grhino/grhino-C.omf
+share/gnome/pixmaps/grhino.png
 share/locale/en_GB/LC_MESSAGES/grhino.mo
+@dirrm share/gnome/omf/grhino
 @dirrm share/gnome/help/grhino/C/figures
 @dirrm share/gnome/help/grhino/C
 @dirrm share/gnome/help/grhino
