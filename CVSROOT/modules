@@ -1722,6 +1722,7 @@ de-aspell	ports/german/aspell
 de-bsdforen-firefox-searchplugin	ports/german/bsdforen-firefox-searchplugin
 de-citrix_ica	ports/german/citrix_ica
 de-dict		ports/german/dict
+de-digibux	ports/german/digibux
 de-ding		ports/german/ding
 de-geonext	ports/german/geonext
 de-ispell	ports/german/ispell
