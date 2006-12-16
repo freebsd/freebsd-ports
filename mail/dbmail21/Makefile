@@ -7,14 +7,14 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.1/
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
-CONFLICTS=	dbmail-*-2.0.*
+CONFLICTS=	dbmail-*-2.0.* dbmail-2.2.*
 
 OPTIONS=	MYSQL		"Build with MySQL support" on \
 		POSTGRESQL	"Build with PostgreSQL support"	off \
@@ -28,14 +28,14 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
 USE_GCC=	3.2+
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
-USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
+USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh dbmail-timsieved.sh
 
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 USE_GNOME=	glib20
 USE_OPENSSL=	YES
 
-CFLAGS+=	-fPIC -I${LOCALBASE}/include -L${LOCALBASE}/lib
-LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
 
 PORTDOCS=	AUTHORS BUGS COPYING INSTALL NEWS README \
