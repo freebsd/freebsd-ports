@@ -7,13 +7,13 @@
 
 PORTNAME=	pfstat
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mlaier@freebsd.org
-COMMENT=	Utility to render grafical statistics for pf
+MAINTAINER=	mlaier@FreeBSD.org
+COMMENT=	Utility to render graphical statistics for pf
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
