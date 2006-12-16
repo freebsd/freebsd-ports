@@ -1,5 +1,5 @@
---- src/bkpupsd.c.orig	Sun Aug  3 13:11:23 1997
-+++ src/bkpupsd.c	Thu Feb 26 17:17:09 2004
+--- src/bkpupsd.c.orig	Sun Aug  3 20:11:23 1997
++++ src/bkpupsd.c	Fri Dec 15 00:53:52 2006
 @@ -27,14 +27,17 @@
   */
  
@@ -19,11 +19,12 @@
  
  #define POWER_TIMEOUT		5*60
  #define DEFAULT_PORT		"/dev/cuaa1"
-@@ -44,16 +47,16 @@
+@@ -44,16 +47,17 @@
  #define SH_RESTORED		"/usr/local/libexec/bkpupsd/bkpups.restored"
  #define SH_BATTLOW		"/usr/local/libexec/bkpupsd/bkpups.battlow"
  
 +int makepid(char *s);
++void execomand();
 +
  int main(argc, argv)
  int argc;
@@ -38,6 +39,14 @@
  	int pfail = 0;
  	int pfcount = 0;
  	int prcount = 0;
+@@ -63,7 +67,6 @@
+ 	char *sh_restored = SH_RESTORED;
+ 	char *sh_battlow  = SH_BATTLOW;
+ 	char *ups_port	  = DEFAULT_PORT;
+-	static void execomand();
+ 
+ 		/* open ups port */
+ 	if(argc > 2) {
 @@ -179,7 +182,7 @@
  	pid = getpid();
  	if((fp =  fopen(s, "w")) == NULL)
