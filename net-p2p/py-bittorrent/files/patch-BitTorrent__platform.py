@@ -1,11 +1,11 @@
---- BitTorrent/platform.py.orig	Mon Aug 15 20:06:05 2005
-+++ BitTorrent/platform.py	Wed Aug 24 00:12:59 2005
-@@ -41,7 +41,7 @@
-     del wh, wv
+--- BitTorrent/platform.py.orig	Tue Oct 10 19:23:41 2006
++++ BitTorrent/platform.py	Sat Dec 16 08:32:18 2006
+@@ -281,7 +281,7 @@
+             osx = True
  
  def calc_unix_dirs():
--    appdir = '%s-%s'%(app_name, version)
-+    appdir = '%s'%(app_name)
-     ip = os.path.join('share', 'pixmaps', appdir)
-     dp = os.path.join('share', 'doc'    , appdir)
-     lp = os.path.join('share', 'locale')
+-    appdir = '%s-%s' % (app_name, version)
++    appdir = '%s' % (app_name)
+     ip = os.path.join(efs2(u'share'), efs2(u'pixmaps'), appdir)
+     dp = os.path.join(efs2(u'share'), efs2(u'doc'), appdir)
+     lp = os.path.join(efs2(u'share'), efs2(u'locale'))

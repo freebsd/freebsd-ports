@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.20.2
-PORTREVISION=	1
+PORTVERSION=	4.26.0
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://download.bittorrent.com/dl/
@@ -23,7 +22,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_TWISTED_RUN=	yes
+USE_TWISTED_RUN=	web
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
@@ -156,7 +155,7 @@ PLIST_FILES+=	\
 		share/pixmaps/BitTorrent/themes/default/torrentstate/seeding.png \
 		share/pixmaps/BitTorrent/themes/default/torrentstate/starting.png \
 		share/pixmaps/BitTorrent/themes/default/torrentstate/stopped.png \
-		share/pixmaps/BitTorrent/themes/default/torrentstate/unknown.png
+		share/pixmaps/BitTorrent/themes/default/torrentstate/unknown.png \
 
 PLIST_SUB+=	\
 		GUI=""
@@ -207,7 +206,7 @@ post-patch:
 # public.key will be located under ${DATADIR} not ${DOCSDIR}
 	@${REINPLACE_CMD} -E \
 		-e "s|%%DATADIR%%|'${DATADIR}/'|" \
-		${WRKSRC}/BitTorrent/NewVersion.py
+		${WRKSRC}/BitTorrent/AutoUpdateButler.py
 
 post-install:
 # set proper permissions
