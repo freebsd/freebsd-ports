@@ -62,9 +62,6 @@ share/servicetypes/kipiplugin.desktop
 @dirrmtry share/apps/kipi/data
 @dirrmtry share/apps/kipi
 @dirrm include/libkipi
-@dirrm share/doc/HTML/en/libkipi-0.1.5-apidocs/libkipi/html
-@dirrm share/doc/HTML/en/libkipi-0.1.5-apidocs/libkipi
-@dirrm share/doc/HTML/en/libkipi-0.1.5-apidocs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/cs/LC_MESSAGES

@@ -25,6 +25,8 @@ INSTALLS_ICONS=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g;s|-fno-schedule-insns -fno-inline||g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} 's/install-data-local: install-apidox/install-data-local:/' \
+		${WRKSRC}/libkipi/Makefile.in
 	@${TOUCH} ${WRKSRC}/libkipi/libkipi/*
 
 .include <bsd.port.mk>
