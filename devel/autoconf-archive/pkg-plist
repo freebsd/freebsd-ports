@@ -313,8 +313,10 @@
 %%DATADIR%%/ax_boost_unit_test_framework.m4
 %%DATADIR%%/ax_boost_wserialization.m4
 %%DATADIR%%/ax_c___attribute__.m4
+%%DATADIR%%/ax_c_arithmetic_rshift.m4
 %%DATADIR%%/ax_c_declare_block.m4
 %%DATADIR%%/ax_c_float_words_bigendian.m4
+%%DATADIR%%/ax_c_referenceable_passed_va_list.m4
 %%DATADIR%%/ax_cc_maxopt.m4
 %%DATADIR%%/ax_cflags_aix_option.m4
 %%DATADIR%%/ax_cflags_gcc_option.m4
@@ -396,6 +398,7 @@
 %%DATADIR%%/ax_upload.m4
 %%DATADIR%%/ax_warning_default_aclocaldir.m4
 %%DATADIR%%/ax_warning_default_pkgconfig.m4
+%%DATADIR%%/ax_wint_t.m4
 %%DATADIR%%/ax_with_apxs.m4
 %%DATADIR%%/ax_with_dmalloc.m4
 %%DATADIR%%/ax_with_python.m4
@@ -768,8 +771,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_unit_test_framework.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_wserialization.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c___attribute__.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_c_arithmetic_rshift.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c_declare_block.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c_float_words_bigendian.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_c_referenceable_passed_va_list.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cc_maxopt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_aix_option.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_cflags_gcc_option.html
@@ -851,6 +856,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_upload.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_warning_default_aclocaldir.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_warning_default_pkgconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_wint_t.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_with_apxs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_with_dmalloc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_with_python.html
