@@ -2,8 +2,6 @@ Dbmail is the name of a group of programs that enable the possiblilty
 of storing and retrieving mail messages from a database (currently
 MySQL, PostgreSQL or SQLite).
 
-What are the advantages?
-
     * Scalability.
       Dbmail is as scalable as the database that is used for the
       mail storage.
