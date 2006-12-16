@@ -1,5 +1,5 @@
---- musicin.c.orig	Wed Jan  5 10:13:44 1994
-+++ musicin.c	Tue Aug 22 02:40:40 2000
+--- musicin.c.orig	Wed Jan  5 02:13:44 1994
++++ musicin.c	Fri Dec 15 02:03:30 2006
 @@ -101,6 +101,8 @@
  #include "common.h"
  #include "encoder.h"
@@ -123,3 +123,12 @@
      if (*t == 'y' || *t == 'Y') exit(0);
  }
  
+@@ -919,7 +921,7 @@
+ /*
+ /************************************************************************/
+ 
+-static void usage()  /* print syntax & exit */
++void usage()  /* print syntax & exit */
+ {
+     fprintf(stderr,
+     "usage: %s                         queries for all arguments, or\n",
