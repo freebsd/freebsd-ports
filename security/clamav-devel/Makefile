@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20061029
+PORTVERSION=	20061217
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -24,8 +24,6 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unzoo:${PORTSDIR}/archivers/unzoo \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
-
-FORBIDDEN=	http://www.vuxml.org/freebsd/eb5124a4-8a20-11db-b033-00123ffe8333.html
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
