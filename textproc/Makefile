@@ -862,6 +862,7 @@
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
     SUBDIR += source-highlight
+    SUBDIR += sowing
     SUBDIR += sp
     SUBDIR += spellutils
     SUBDIR += sphinxsearch

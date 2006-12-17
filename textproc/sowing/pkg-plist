@@ -1,0 +1,32 @@
+bin/bfort
+bin/bib2html
+bin/doc2lt
+bin/doctext
+bin/mapnames
+bin/pstogif
+bin/pstoxbm
+bin/tohtml
+%%DATADIR%%/basedefs.txt
+%%DATADIR%%/blueball.gif
+%%DATADIR%%/doctext/html.def
+%%DATADIR%%/doctext/htmlargtbl.def
+%%DATADIR%%/doctext/htmltabl.def
+%%DATADIR%%/doctext/htmlcolor.def
+%%DATADIR%%/doctext/latex.def
+%%DATADIR%%/doctext/latexargtbl.def
+%%DATADIR%%/doctext/nroff.def
+%%DATADIR%%/greenball.gif
+%%DATADIR%%/html.def
+%%DATADIR%%/latex.def
+%%DATADIR%%/next.xbm
+%%DATADIR%%/nroff.def
+%%DATADIR%%/previous.xbm
+%%DATADIR%%/pstoppm.ps
+%%DATADIR%%/purpleball.gif
+%%DATADIR%%/redball.gif
+%%DATADIR%%/refman.def
+%%DATADIR%%/refman.sty
+%%DATADIR%%/up.xbm
+%%DATADIR%%/yellowball.gif
+@dirrm %%DATADIR%%/doctext
+@dirrm %%DATADIR%%
