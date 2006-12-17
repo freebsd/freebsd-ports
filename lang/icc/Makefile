@@ -7,11 +7,14 @@
 
 PORTNAME=	icc
 PORTVERSION=	8.1.038
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
 
-MAINTAINER=	netchild@FreeBSD.org
+# netchild@FreeBSD.org is willing to review patches and to provide background
+# infos regarding this port
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
 PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
@@ -36,7 +39,7 @@ PATCH_WRKSRC=	${WRKSRC}/opt/${COMPILERDIR}
 
 MAN1=		icc.1
 MLINKS=		icc.1 icpc.1
-MANPREFIX=	${TARGETDIR}/${COMPILERDIR}/
+MANPREFIX=	${TARGETDIR}/${COMPILERDIR}
 
 ICC_SITE=	http://www.intel.com/software/products/compilers/
 
@@ -234,7 +237,7 @@ do-install:
 post-install:
 	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to put your license into your \$${INTEL_FLEXLM_LICENSE} (default: ${PREFIX}/${COMPILERDIR}/licenses) directory and add ${PREFIX}/${COMPILERDIR}/bin to your PATH." | fmt
 	@${ECHO}
-	@${ECHO} "On FreeBSD 5 with __FreeBSD_version >= 502108 icpc is set up to use the GNU libstdc++ from the base as STL by default. Alternatively you can use the \"-cxxlib-icc\" option with icpc to use devel/stlport-icc as STL instead. In order to be able to compile C++ source with icpc on FreeBSD 4 or FreeBSD 5 with __FreeBSD_version < 502108 you have to install devel/stlport-icc. No further options to icpc to use devel/stlport-icc are required there." | fmt
+	@${ECHO} "On FreeBSD 5 with __FreeBSD_version >= 502108 icpc is set up to use the GNU libstdc++ from the base as STL by default." | fmt
 	@${ECHO}
 	@${ECHO} "If you use icc on a Pentium 4 you may have to use 'options CPU_ENABLE_SSE' (depending on the OS version, if in doubt try if it works) in your kernel config (have a look at http://www.FreeBSD.org/handbook/ if you do not know how to do this), else icc will hang forever or crashes with an 'Illegal instruction'." | fmt
 	@${ECHO}
