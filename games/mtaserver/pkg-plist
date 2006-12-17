@@ -1,8 +1,6 @@
-@unexec if cmp -s %D/%%MTADIR%%/mtaserver.conf %D/%%MTADIR%%/mtaserver.conf.dist; then rm -f %D/%%MTADIR%%/mtaserver.conf; fi
-%%MTADIR%%/CHANGELOG
-%%MTADIR%%/LICENSE
+@unexec if cmp -s %D/etc/%%MTADIRE%%/mtaserver.conf %D/etc/%%MTADIRE%%/mtaserver.conf.dist; then rm -f %D/etc/%%MTADIRE%%/mtaserver.conf; fi
 %%MTADIR%%/mtaserver
-%%MTADIR%%/README
-%%MTADIR%%/banned.lst
-%%MTADIR%%/mtaserver.conf.dist
+etc/%%MTADIRE%%/mtaserver.conf.dist
+@exec [ -f %B/mtaserver.conf ] || cp %B/%f %B/mtaserver.conf
 @dirrmtry %%MTADIR%%
+@dirrmtry etc/%%MTADIRE%%

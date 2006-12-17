@@ -19,10 +19,12 @@ load_rc_config $name
 
 : ${mtad_enable="NO"}
 : ${mtad_chdir="%%MTADIR%%"}
+: ${mtad_config="%%PREFIX%%/etc/%%MTADIRE%%/mtaserver.conf"}
+: ${mtad_logfile="/var/log/mtaserver.log"}
 
 command="%%MTADIR%%/mtaserver"
-command_args="-b 2>&1 > /dev/null &"
-required_files="%%MTADIR%%/mtaserver.conf"
+command_args="-b -c ${mtad_config} -l ${mtad_logfile} 2>&1 > /dev/null &"
+required_files=${mtad_config}
 start_precmd="mtad_prestart"
 stop_precmd="mtad_prestop"
 
