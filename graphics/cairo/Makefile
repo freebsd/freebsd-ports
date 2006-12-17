@@ -8,7 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.2.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
@@ -58,6 +58,8 @@ post-patch:
 		${WRKSRC}/src/*.* \
 		${WRKSRC}/pixman/src/*.*
 .endif
+	@${REINPLACE_CMD} -e 's|-lcairo|-lcairo ${PTHREAD_LIBS}|' \
+		${WRKSRC}/src/*.pc.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/test/Makefile.in
 	@${REINPLACE_CMD} -e 's|src test doc|src doc|; \
