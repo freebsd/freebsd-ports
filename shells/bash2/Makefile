@@ -49,7 +49,7 @@ MAN1=		bash.1 bashbug.1
 INFO=		bash
 
 post-patch:
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -e "s,.FN /bin/bash,.FN ${PREFIX}/bin/bash," \
 		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/doc/bash.1
 	@${RM} -rf ${WRKSRC}/lib/readline/*.[ch] \
