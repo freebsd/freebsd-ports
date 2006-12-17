@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	digikam
-PORTVERSION=	0.8.1
-PORTREVISION=	4
+DISTVERSION=	0.9.0-rc2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,23 +14,29 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Photo album manager for KDE with gphoto2 backend
 
-LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		kipi.1:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
+		exiv2.0:${PORTSDIR}/graphics/exiv2 \
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		png.5:${PORTSDIR}/graphics/png \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	dcraw:${PORTSDIR}/graphics/dcraw
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
-CONFIGURE_ARGS+=--program-prefix=''
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
+
+MAN1=		digitaglinktree.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g;s|-fno-schedule-insns -fno-inline||g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} 's/install-data-local: install-apidox/install-data-local:/' \
+		${WRKSRC}/digikam/Makefile.in ${WRKSRC}/digikam/digikam/Makefile.in
 
 .include <bsd.port.mk>
