@@ -12188,6 +12188,7 @@ py-m2crypto	ports/security/py-m2crypto
 py-mad		ports/audio/py-mad
 py-magic	ports/devel/py-magic
 py-mantissa	ports/net/py-mantissa
+py-markdown	ports/textproc/py-markdown
 py-matplotlib	ports/math/py-matplotlib
 py-mcrypt	ports/security/py-mcrypt
 py-mechanize	ports/www/py-mechanize
