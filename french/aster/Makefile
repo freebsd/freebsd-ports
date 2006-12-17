@@ -74,12 +74,8 @@ FLAGARCH=	TRU64		# 64 bits
 .if ${OSVERSION} < 600022
 BROKEN=	Does not compile on this version, and cannot be patched easily.
 .endif
-.if ${ARCH} == "amd64"
+.if ${ARCH} != "i386"
 BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
 .endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
