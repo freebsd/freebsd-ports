@@ -854,6 +854,7 @@
     SUBDIR += sgrep2
     SUBDIR += silvercity
     SUBDIR += sk-aspell
+    SUBDIR += sk-ispell
     SUBDIR += skim
     SUBDIR += skribe
     SUBDIR += sl-aspell
