@@ -738,6 +738,7 @@
     SUBDIR += py-libxslt
     SUBDIR += py-ltxml
     SUBDIR += py-lucene
+    SUBDIR += py-markdown
     SUBDIR += py-pyx12
     SUBDIR += py-rdflib
     SUBDIR += py-reverend

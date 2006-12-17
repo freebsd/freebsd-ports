@@ -1,0 +1,7 @@
+Markdown is two things: (1) a plain text formatting syntax; and (2) a
+software tool that converts the plain text formatting to (X)HTML. The
+formatting syntax is designed to be easy and intuitive for web authors
+and resembles typical email formatting conventions. The resultant
+(X)HTML is structurally valid.
+
+WWW: http://www.freewisdom.org/projects/python-markdown
