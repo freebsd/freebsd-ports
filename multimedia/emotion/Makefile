@@ -32,7 +32,7 @@ OPTIONS=	XINE "Build Xine module" on \
 IGNORE=	is useless without playback library. Please run 'make config' and choose one of XINE and GST
 .endif
 
-.if defined(WITH_XINE)
+.if !defined(WITHOUT_XINE)
 LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-xine
 PLIST_SUB+=	XINE=""
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--disable-xine
 PLIST_SUB+=	XINE="@comment "
 .endif
 
-.if defined(WITH_GST)
+.if !defined(WITHOUT_GST)
 USE_GSTREAMER=	ffmpeg good
 CONFIGURE_ARGS+=--enable-gstreamer
 PLIST_SUB+=	GST=""
