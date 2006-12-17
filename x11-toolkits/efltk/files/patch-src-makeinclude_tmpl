@@ -1,0 +1,11 @@
+--- src/makeinclude_tmpl.orig	Sun Dec 17 11:50:17 2006
++++ src/makeinclude_tmpl	Sun Dec 17 11:51:09 2006
+@@ -72,7 +72,7 @@
+ 	@$(LIBCOMMAND) $@ $(STATIC_OBJECTS)
+ 	@$(RANLIB) $@
+ 
+-$(DSO).so.$(FL_API_VERSION) $(DSO).sl.$(FL_API_VERSION): $(SHARED_OBJECTS)
++$(DSO).so.2 $(DSO).sl.$(FL_API_VERSION): $(SHARED_OBJECTS)
+ 	@rm -f $@
+ 	@echo $(DSOCOMMAND) $(DSONAME) ...
+ 	@$(DSOCOMMAND) $(DSONAME) $(SHARED_OBJECTS) $(DSOLIBS)
