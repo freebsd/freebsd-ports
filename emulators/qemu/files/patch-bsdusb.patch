@@ -59,7 +59,7 @@ Index: qemu/usb-stub.c
 +    return NULL;
 +}
 Index: qemu/usb-bsd.c
-@@ -0,0 +1,603 @@
+@@ -0,0 +1,600 @@
 +/*
 + * BSD host USB redirector
 + *
@@ -264,23 +264,20 @@ Index: qemu/usb-bsd.c
 +    }
 +}
 +
-+static int usb_host_handle_data(USBDevice *dev, int pid,
-+                                uint8_t devep,
-+                                uint8_t *data, int len)
++static int usb_host_handle_data(USBDevice *dev, USBPacket *p)
 +{
 +    USBHostDevice *s = (USBHostDevice *)dev;
 +    int ret, fd, mode;
 +    int one = 1, shortpacket = 0, timeout = 50;
 +    sigset_t new_mask, old_mask;
++    uint8_t devep = p->devep;
 +
 +    /* protect data transfers from SIGALRM signal */
 +    sigemptyset(&new_mask);
 +    sigaddset(&new_mask, SIGALRM);
 +    sigprocmask(SIG_BLOCK, &new_mask, &old_mask);
 +
-+    /* XXX: optimize and handle all data types by looking at the
-+       config descriptor */
-+    if (pid == USB_TOKEN_IN) {
++    if (p->pid == USB_TOKEN_IN) {
 +        devep |= 0x80;
 +        mode = O_RDONLY;
 +        shortpacket = 1;
@@ -311,10 +308,10 @@ Index: qemu/usb-bsd.c
 +        }
 +    }
 +
-+    if (pid == USB_TOKEN_IN)
-+        ret = read(fd, data, len);
++    if (p->pid == USB_TOKEN_IN)
++        ret = read(fd, p->data, p->len);
 +    else
-+        ret = write(fd, data, len);
++        ret = write(fd, p->data, p->len);
 +
 +    sigprocmask(SIG_SETMASK, &old_mask, NULL);
 +
