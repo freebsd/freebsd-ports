@@ -14,6 +14,9 @@ DISTNAME=	nwnusers-v1.4
 MAINTAINER=	ah@linux-hq.de
 COMMENT=	A tool for monitoring Neverwinter Nights Server with mrtg
 
+DEPRECATED=	Does not make any sense any more. (NWN 2 is out there)
+EXPIRATION_DATE=	2007-01-16
+
 PLIST_FILES=	bin/nwnusers
 
 do-build:
