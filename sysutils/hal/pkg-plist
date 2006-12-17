@@ -1,3 +1,4 @@
+@unexec %D/etc/rc.d/hald stop > /dev/null 2>&1 || true
 %%MEDIA%%@exec mkdir -p /media
 bin/hal-device
 bin/hal-find-by-capability
