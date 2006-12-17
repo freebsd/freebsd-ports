@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	kports
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hannes.hauswedell@gmail.com
 COMMENT=	Powerful KDE-Frontend to the Ports
-
-BROKEN=		Does not compile
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -36,9 +34,5 @@ IGNORE=		doesn't compile properly on 4.x systems
 .if !defined(WITHOUT_PORTAUDIT)
 RUN_DEPENDS+=	${PREFIX}/sbin/portaudit:${PORTSDIR}/security/portaudit
 .endif
-
-post-install:
-#	@${CAT} ${PKGDIR}/pkg-message
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
