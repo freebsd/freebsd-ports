@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Sun Dec 17 11:54:39 2006
++++ src/Makefile	Sun Dec 17 11:54:46 2006
+@@ -86,7 +86,7 @@
+ 	@$(LIBCOMMAND) $@ $(STATIC_OBJECTS)
+ 	@$(RANLIB) $@
+ 
+-$(DSO).so.$(FL_API_VERSION) $(DSO).sl.2:
++$(DSO).so.2 $(DSO).sl.2:
+ 	@rm -f $@
+ 	@echo $(DSOCOMMAND) $(DSONAME) ...
+ 	@$(DSOCOMMAND) $(DSONAME) $(SHARED_OBJECTS) $(DSOLIBS)
