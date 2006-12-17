@@ -117,7 +117,7 @@ pre-install:
 	${RM} -R ${WRKSRC}/www
 .endif
 .if defined(WITHOUT_WEB_EXP)
-        ${RM} -R ${WRKSRC}/www-exp
+	${RM} -R ${WRKSRC}/www-exp
 .endif
 
 
