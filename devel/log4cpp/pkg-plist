@@ -1,4 +1,5 @@
 bin/log4cpp-config
+include/log4cpp/AbortAppender.hh
 include/log4cpp/Appender.hh
 include/log4cpp/AppenderSkeleton.hh
 include/log4cpp/BasicConfigurator.hh
@@ -15,6 +16,7 @@ include/log4cpp/IdsaAppender.hh
 include/log4cpp/Layout.hh
 include/log4cpp/LayoutAppender.hh
 include/log4cpp/LoggingEvent.hh
+include/log4cpp/Manipulator.hh
 include/log4cpp/NDC.hh
 include/log4cpp/NTEventLogAppender.hh
 include/log4cpp/OstreamAppender.hh
@@ -40,8 +42,10 @@ include/log4cpp/threading/OmniThreads.hh
 include/log4cpp/threading/PThreads.hh
 include/log4cpp/threading/Threading.hh
 lib/liblog4cpp.a
+lib/liblog4cpp.la
 lib/liblog4cpp.so
 lib/liblog4cpp.so.4
+libdata/pkgconfig/log4cpp.pc
 share/aclocal/log4cpp.m4
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/default.css
