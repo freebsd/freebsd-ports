@@ -13,7 +13,7 @@ MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
