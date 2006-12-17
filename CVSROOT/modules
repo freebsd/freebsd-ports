@@ -13760,6 +13760,7 @@ soundtracker	ports/audio/soundtracker
 soup		ports/devel/soup
 source-highlight	ports/textproc/source-highlight
 sourcenav	ports/devel/sourcenav
+sowing		ports/textproc/sowing
 sox		ports/audio/sox
 sp		ports/textproc/sp
 spacearyarya	ports/games/spacearyarya
