@@ -38,6 +38,10 @@ INFO=		grx
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000
+USE_GCC=	3.4
+.endif
+
 .if defined(WITH_BGI)
 CONFIGURE_ARGS+=--enable-bgi
 PLIST_SUB+=	BGI=""
