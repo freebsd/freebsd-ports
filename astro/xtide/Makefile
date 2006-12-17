@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	astro
-MASTER_SITES=	ftp://bel-marduk.unh.edu/xtide/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics-dwf-2005-06-05-v2.tcd.gz
+MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics-dwf-20060708.tcd.bz2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,23 +17,19 @@ COMMENT=	Harmonic tide clock and tide predictor
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_BZIP2=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	extracxxflags="${CPPFLAGS}" extraldflags="${LDFLAGS}"
 
 MAN1=		tide.1 xtide.1
 MAN8=		xttpd.8
 PLIST_FILES=	bin/tide bin/xtide bin/xttpd %%DATADIR%%/harmonics.tcd
 PLIST_DIRS=	%%DATADIR%%
 
-CPPFLAGS=	`pkg-config --cflags-only-I libpng12` -I${LOCALBASE}/include
-LDFLAGS=	`pkg-config --libs-only-L libpng12` -L${LOCALBASE}/lib
-
 post-extract:
-	@${GZCAT} ${DISTDIR}/harmonics-dwf-2005-06-05-v2.tcd.gz \
+	@${BZCAT} ${DISTDIR}/harmonics-dwf-20060708.tcd.bz2 \
 		> ${WRKSRC}/harmonics.tcd
 
 post-patch:
