@@ -13597,6 +13597,7 @@ sjeng		ports/games/sjeng
 sjitter		ports/net-mgmt/sjitter
 sjog		ports/sysutils/sjog
 sk-aspell	ports/textproc/sk-aspell
+sk-ispell	ports/textproc/sk-ispell
 skadns		ports/dns/skadns
 skalibs		ports/devel/skalibs
 skencil		ports/graphics/skencil
