@@ -17,6 +17,9 @@ COMMENT=	A virtual machine that emulates a Sharp X68000
 
 LIB_DEPENDS=	vm68k.4:${PORTSDIR}/emulators/libvm68k
 
+DEPRECATED=	distfile disappeared from homepage
+EXPIRATION_DATE=	2007-01-16
+
 USE_GETTEXT=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12

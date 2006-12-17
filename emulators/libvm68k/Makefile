@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.hypercore.co.jp/vx68k/${PORTNAME}-${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	M68000 virtual machine library
 
+DEPRECATED=	distfile disappeared from homepage
+EXPIRATION_DATE=	2007-01-16
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

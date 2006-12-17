@@ -17,6 +17,9 @@ COMMENT=	Automatically check for and download most recent versions of software
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-16
+
 PERL_CONFIGURE=	yes
 
 MAN1=	vcheck.1
