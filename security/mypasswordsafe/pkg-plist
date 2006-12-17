@@ -1,0 +1,15 @@
+bin/MyPasswordSafe
+%%DATADIR%%/locale/mypasswordsafe_c.qm
+%%DATADIR%%/locale/mypasswordsafe_en.qm
+%%DATADIR%%/locale/mypasswordsafe_fr.qm
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/sshots/editdialog.fr.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sshots/editdialog.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sshots/mainwindow.fr.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sshots/mainwindow.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sshots/prefsdialog.fr.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sshots/prefsdialog.jpg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sshots
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%
