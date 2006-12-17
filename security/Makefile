@@ -261,6 +261,7 @@
     SUBDIR += mindterm-binary
     SUBDIR += mosref
     SUBDIR += mussh
+    SUBDIR += mypasswordsafe
     SUBDIR += nbaudit
     SUBDIR += ncrypt
     SUBDIR += nessus

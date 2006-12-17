@@ -1,0 +1,16 @@
+MyPasswordSafe is a straight-forward, easy-to-use password manager that
+maintains compatibility with Password Safe files. MyPasswordSafe has the
+following features:
+
+* Safes are encrypted when they are stored to disk.
+* Passwords never have to be seen, because they are copied to the clipboard.
+* Random passwords can be generated.
+* Window size, position, and column widths are remembered.
+* Passwords remain encrypted until they need to be decrypted at the dialog and
+  file levels.
+* A safe can be made active so it will always be opened when MyPasswordSafe
+  starts.
+* Supports Unicode in the safes.
+* Languages supported: English and French.
+
+WWW: http://www.semanticgap.com/myps/
