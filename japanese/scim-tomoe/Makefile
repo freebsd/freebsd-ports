@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	scim-tomoe
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.4.0
+#PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=scim-imengine/17173
+MASTER_SITE_SUBDIR=scim-imengine/22896
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Tomoe
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
-		tomoe-gtk.0:${PORTSDIR}/japanese/libtomoe-gtk
+		tomoe-gtk.1:${PORTSDIR}/japanese/libtomoe-gtk
 
 USE_GNOME=	lthack
 USE_X_LIB=	yes
