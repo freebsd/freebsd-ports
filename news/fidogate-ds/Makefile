@@ -67,6 +67,9 @@ CONFIGURE_ARGS+=	--disable-af-avail
 .if defined(WITHOUT_BEST_AKA)
 CONFIGURE_ARGS+=	--disable-best-aka
 .endif
+.if defined(WITH_NFS_LOCK)
+CONFIGURE_ARGS+=	--enable-nfs-safe-lock
+.endif
 CONFIGURE_ARGS+=	--libexec=${PREFIX}/libexec/fidogate \
 			--sysconfdir=${PREFIX}/etc/fido/gate \
 			--libdir=${PREFIX}/lib/fidogate \
