@@ -6,24 +6,19 @@
 #
 
 PORTNAME=	tomoe
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.4.0
+#PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=tomoe/16048
+MASTER_SITE_SUBDIR=tomoe/22893
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Tegaki Online MOji-ninshiki Engine
 
 USE_GNOME=	lthack gnomehack
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-PLIST_DIRS=	include/tomoe share/tomoe
-PLIST_FILES=	bin/tomoe bin/tomoe1 include/tomoe/tomoe.h \
-		lib/libtomoe.a lib/libtomoe.la \
-		lib/libtomoe.so lib/libtomoe.so.1 \
-		libdata/pkgconfig/tomoe.pc \
-		share/tomoe/all.tdic share/tomoe/hiragana.tdic
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

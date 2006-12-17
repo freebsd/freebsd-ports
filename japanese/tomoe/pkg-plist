@@ -1,0 +1,61 @@
+etc/tomoe/config
+@dirrm etc/tomoe
+include/tomoe/tomoe-candidate.h
+include/tomoe/tomoe-char.h
+include/tomoe/tomoe-config.h
+include/tomoe/tomoe-context.h
+include/tomoe/tomoe-dict.h
+include/tomoe/tomoe-enum-types.h
+include/tomoe/tomoe-module-impl.h
+include/tomoe/tomoe-module.h
+include/tomoe/tomoe-query.h
+include/tomoe/tomoe-reading.h
+include/tomoe/tomoe-recognizer.h
+include/tomoe/tomoe-shelf.h
+include/tomoe/tomoe-writing.h
+include/tomoe/tomoe.h
+@dirrmtry include/tomoe
+lib/libtomoe.a
+lib/libtomoe.la
+lib/libtomoe.so
+lib/libtomoe.so.1
+lib/tomoe/dict/libxml.a
+lib/tomoe/dict/libxml.la
+lib/tomoe/dict/libxml.so
+lib/tomoe/dict/libxml.so.1
+@dirrm lib/tomoe/dict
+lib/tomoe/recognizer/libsimple.a
+lib/tomoe/recognizer/libsimple.la
+lib/tomoe/recognizer/libsimple.so
+lib/tomoe/recognizer/libsimple.so.1
+@dirrm lib/tomoe/recognizer
+@dirrm lib/tomoe
+libdata/pkgconfig/tomoe.pc
+share/gtk-doc/html/tomoe/TomoeCandidate.html
+share/gtk-doc/html/tomoe/TomoeChar.html
+share/gtk-doc/html/tomoe/TomoeConfig.html
+share/gtk-doc/html/tomoe/TomoeContext.html
+share/gtk-doc/html/tomoe/TomoeDict.html
+share/gtk-doc/html/tomoe/TomoeQuery.html
+share/gtk-doc/html/tomoe/TomoeReading.html
+share/gtk-doc/html/tomoe/TomoeShelf.html
+share/gtk-doc/html/tomoe/TomoeWriting.html
+share/gtk-doc/html/tomoe/home.png
+share/gtk-doc/html/tomoe/index.html
+share/gtk-doc/html/tomoe/index.sgml
+share/gtk-doc/html/tomoe/ix01.html
+share/gtk-doc/html/tomoe/left.png
+share/gtk-doc/html/tomoe/right.png
+share/gtk-doc/html/tomoe/style.css
+share/gtk-doc/html/tomoe/tomoe-tomoe.html
+share/gtk-doc/html/tomoe/tomoe.devhelp
+share/gtk-doc/html/tomoe/tomoe.devhelp2
+share/gtk-doc/html/tomoe/tomoe.html
+share/gtk-doc/html/tomoe/up.png
+@dirrm share/gtk-doc/html/tomoe
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+share/tomoe/all.xml
+share/tomoe/kanjidic2.xml
+share/tomoe/tomoe-dict.dtd
+@dirrm share/tomoe
