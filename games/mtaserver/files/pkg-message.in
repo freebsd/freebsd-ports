@@ -1,6 +1,4 @@
 ***********************************************************************
-# cp %%MTADIR%%/mtaserver.conf.dist \
-	%%MTADIR%%/mtaserver.conf
-
-Read %%MTADIR%%/README for details
+Edit %%PREFIX%%/etc/%%MTADIRE%%/mtaserver.conf before using
+%%NOTEWORK%%
 ***********************************************************************
