@@ -65,6 +65,7 @@ NVVERSION=	7184
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
 NVVERSION=	9631
+PORTREVISION=	1
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
 .endif
 .if ${OSVERSION} >= 600033
@@ -127,7 +128,7 @@ post-install:
 .if ${NVVERSION} < 8174
 	@${REINPLACE_CMD} '/libnvidia-cfg/d ; /html/d' ${TMPPLIST}
 .else
-	@${REINPLACE_CMD} '/README\.Linux/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/README\.Linux/d ; /nvidia_drv\.o/d' ${TMPPLIST}
 .endif
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 	@${CAT} ${PKGMESSAGE}
