@@ -8,7 +8,7 @@ Digikam also uses the very flexible Kipi plugin architecture. Install the
 graphics/kipi-plugins and graphics/digikamimageplugins ports to extend 
 Digikam's features.
 
-WWW: http://digikam.sourceforge.net/
+WWW: http://www.digikam.org/
 
-- Arjan
-avleeuwen@piwebs.com
+- Alex Dupre
+ale@FreeBSD.org

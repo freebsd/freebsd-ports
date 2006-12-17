@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	digikamimageplugins
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.9.0-rc2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Collection of image editor plugins for Digikam
 
 LIB_DEPENDS=	digikam.0:${PORTSDIR}/graphics/digikam
@@ -22,9 +21,11 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
-CONFIGURE_ARGS+=--program-prefix=''
+INSTALLS_ICONS=	yes
 
-pre-configure::
-	${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g;s|-fno-schedule-insns -fno-inline||g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
