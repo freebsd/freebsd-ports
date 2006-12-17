@@ -21,6 +21,9 @@ COMMENT=	Chinese input method server under X
 LIB_DEPENDS=	tabe.3:${PORTSDIR}/chinese/libtabe
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-16
+
 WRKSRC=		${WRKDIR}/xcin
 USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2

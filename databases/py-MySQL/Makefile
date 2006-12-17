@@ -8,8 +8,7 @@
 PORTNAME=	py-MySQL
 PORTVERSION=	1.4
 CATEGORIES=	databases python
-MASTER_SITES=	http://mysql.orst.edu/Downloads/Contrib/ \
-		http://mysql.netvisao.pt/Downloads/Contrib/
+MASTER_SITES=	http://mysql.osuosl.org/Downloads/Contrib/Old-Versions/
 DISTNAME=	MySQLmodule-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
