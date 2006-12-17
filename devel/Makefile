@@ -1830,6 +1830,7 @@
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-ecore
     SUBDIR += ruby-eet
+    SUBDIR += ruby-event-loop
     SUBDIR += ruby-fam
     SUBDIR += ruby-filelock
     SUBDIR += ruby-filemagic
