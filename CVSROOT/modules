@@ -7485,6 +7485,7 @@ myfaces		ports/www/myfaces
 myghty		ports/www/myghty
 mylibrary	ports/databases/mylibrary
 mymoon		ports/astro/mymoon
+mypasswordsafe	ports/security/mypasswordsafe
 myphpmoney	ports/finance/myphpmoney
 mysar		ports/www/mysar
 mysql++		ports/databases/mysql++
