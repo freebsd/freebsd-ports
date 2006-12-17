@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	log4cpp
-PORTVERSION=	0.3.4b
+DISTVERSION=	0.3.5rc3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
@@ -27,7 +28,7 @@ USE_LDCONFIG=	yes
 .if exists (${LOCALBASE}/bin/doxygen) || !defined (NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
-MAN3=	log4cpp.3 log4cpp::Appender.3 log4cpp::AppenderSkeleton.3\
+MAN3=	log4cpp.3 log4cpp::AbortAppender.3 log4cpp::Appender.3 log4cpp::AppenderSkeleton.3\
 	log4cpp::BasicConfigurator.3 log4cpp::BasicLayout.3 log4cpp::Category.3\
 	log4cpp::CategoryNameComponent.3 log4cpp::CategoryStream.3\
 	log4cpp::ConfigureFailure.3 log4cpp::FileAppender.3 log4cpp::Filter.3\
@@ -46,8 +47,8 @@ MAN3=	log4cpp.3 log4cpp::Appender.3 log4cpp::AppenderSkeleton.3\
 	log4cpp::SimpleLayout.3 log4cpp::StringLiteralComponent.3\
 	log4cpp::StringQueueAppender.3 log4cpp::StringUtil.3\
 	log4cpp::SyslogAppender.3 log4cpp::ThreadNameComponent.3\
-	log4cpp::TimeStamp.3 log4cpp::TimeStampComponent.3\
-	log4cpp::Win32DebugAppender.3 log4cpp::threading.3\
+	log4cpp::TimeStamp.3 log4cpp::TimeStampComponent.3 log4cpp::width.3\
+	log4cpp::Win32DebugAppender.3 log4cpp::tab.3 log4cpp::threading.3\
 	log4cpp::threading::MSMutex.3 log4cpp::threading::MSScopedLock.3\
 	log4cpp::threading::Mutex.3 log4cpp::threading::ScopedLock.3\
 	log4cpp::threading::ThreadLocalDataHolder.3
@@ -68,5 +69,6 @@ this build by hitting CTRL+C and re-run the installation with -DNOPORTDOCS | ${F
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

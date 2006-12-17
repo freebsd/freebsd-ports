@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Tue Nov 29 17:28:32 2005
-+++ doc/Makefile.in	Tue Nov 29 17:33:03 2005
-@@ -96,7 +96,7 @@
+--- doc/Makefile.in.orig	Fri Jul 29 14:25:28 2005
++++ doc/Makefile.in	Sat Dec  9 00:03:10 2006
+@@ -182,7 +182,7 @@
+ target_alias = @target_alias@
  SUBDIRS = html
- 
  man3dir = $(mandir)/man3
 -docdir = $(prefix)/doc/@PACKAGE_TARNAME@-@PACKAGE_VERSION@
 +docdir = $(prefix)/share/doc/@PACKAGE_TARNAME@
- 
  EXTRA_DIST = \
  	mainPage.txt
+ 
