@@ -29,8 +29,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xdms ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xdms
-	${INSTALL_DATA} ${WRKSRC}/xdms.txt ${PREFIX}/share/doc/xdms
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/xdms.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
