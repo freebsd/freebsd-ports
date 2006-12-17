@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.brockman.se/software/ruby-event-loop/
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Event loop for ruby applications
 
+DEPRECATED=	replaced by devel/ruby-event-loop which gets around issues caused by the rubygems system
+EXPIRATION_DATE=	2007-01-17
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
