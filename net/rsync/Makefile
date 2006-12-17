@@ -65,7 +65,7 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 CONFIGURE_ARGS+=--enable-acl-support
 .endif
 
-.if defined(WITH_FLAGS)
+.if defined(WITH_FLAGSP)
 IGNORE=		can't be built: Flags and ACLs patches can't be both enabled at the same time. Please rerun 'make config' and disable one of them
 .endif
 .endif
