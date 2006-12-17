@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/S/SQLAlchemy/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	sqlalchemy
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	dryice@dryice.name
@@ -35,11 +36,14 @@ OPTIONS+=	SQLITE "support Sqlite" on
 PORTDOCS=	adv_datamapping.html alphaapi.html \
 		alphaimplementation.html datamapping.html \
 		dbengine.html docs.css docstrings.html \
-		index.html metadata.html \
+		documentation.html index.html metadata.html \
 		plugins.html pooling.html scripts.js \
 		sqlconstruction.html style.css syntaxhighlight.css \
 		tutorial.html types.html unitofwork.html
 .endif
+
+PORTEXAMPLES= adjacencytree association backref collections graphs \
+		pickle polymorph vertical
 
 .include <bsd.port.pre.mk>
 
@@ -72,7 +76,7 @@ post-install:
 .endif
 
 	${MKDIR} ${EXAMPLESDIR}
-.for i in adjacencytree backref polymorph vertical
+.for i in ${PORTEXAMPLES}
 	${CP} -r ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
 .endfor
 
