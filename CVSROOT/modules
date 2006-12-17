@@ -13002,6 +13002,7 @@ ruby-erbscan	ports/textproc/ruby-erbscan
 ruby-esmart	ports/graphics/ruby-esmart
 ruby-esound	ports/audio/ruby-esound
 ruby-evas	ports/graphics/ruby-evas
+ruby-event-loop	ports/devel/ruby-event-loop
 ruby-exmars	ports/games/ruby-exmars
 ruby-fam	ports/devel/ruby-fam
 ruby-fcgi	ports/www/ruby-fcgi
