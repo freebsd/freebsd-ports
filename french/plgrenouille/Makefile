@@ -9,7 +9,7 @@ PORTNAME=	plgrenouille
 PORTVERSION=	0.70.6
 PORTREVISION=	2
 CATEGORIES=	french net
-MASTER_SITES=	http://concept.free.free.fr/plgrenouille/debian/
+MASTER_SITES=	http://concept.free.free.fr/plgrenouille/beta/
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -32,7 +32,7 @@ IS_INTERACTIVE=	yes
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	plgrenouille.sh
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 PKGDEINSTALL=	${PKGINSTALL}
@@ -43,7 +43,7 @@ REINPLACE_SUB=	PREFIX=${PREFIX} PERL=${PERL} \
 		LBIN_DIR=${LBIN_DIR} CONF_DIR=${CONF_DIR} \
 		RUN_DIR=${RUN_DIR} LOG_DIR=${LOG_DIR} \
 		SPOOL_DIR=${SPOOL_DIR} SPOOL_USER=${SPOOL_USER}
-SUB_FILES=	pkg-message plgrenouille.sh
+SUB_FILES=	pkg-message
 SUB_LIST=	LBIN_DIR=${LBIN_DIR} RUN_DIR=${RUN_DIR} LOG_DIR=${LOG_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -58,35 +58,20 @@ LOG_DIR=	/var/log
 SPOOL_DIR=	/var/spool/${PORTNAME}
 SPOOL_USER=	daemon
 
-post-patch: patch-script patch-lib
-
-patch-script:
+post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/plgrenouille.pl ${WRKSRC}/Grenouille/Vars.pm
-
-patch-lib:
 	@${REINPLACE_CMD} 's!swap_privileges!Grenouille::System::&!g' \
 		${WRKSRC}/Grenouille/Log.pm ${WRKSRC}/Grenouille/Preferences.pm
 
-do-install: install-script install-lib install-man \
-		install-data install-doc install-rc
-
-install-script:
+do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/plgrenouille.pl \
 		${LBIN_DIR}/plgrenouille
-
-install-lib:
 	@${MKDIR} ${SITE_PERL}/Grenouille
 	@${INSTALL_SCRIPT} ${WRKSRC}/Grenouille/*.pm \
 		${SITE_PERL}/Grenouille
-
-install-man:
 	@${INSTALL_MAN} ${WRKSRC}/plgrenouille.1 ${MAN_DIR}
-
-install-data:
 	@${INSTALL_DATA} ${WRKSRC}/grenouillerc.sample ${CONF_DIR}
-
-install-doc:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
@@ -94,17 +79,10 @@ install-doc:
 .endfor
 .endif
 
-install-rc:
-	@${INSTALL_SCRIPT} ${WRKDIR}/plgrenouille.sh ${RC_DIR}
-
-post-install: display-message configure-package
-
-display-message:
+post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
-
-configure-package:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
