@@ -14458,6 +14458,7 @@ tomcat55	ports/www/tomcat55
 tome		ports/games/tome
 tomsfastmath	ports/math/tomsfastmath
 toolame		ports/audio/toolame
+toolbox		ports/deskutils/toolbox
 toolboxkit	ports/deskutils/toolboxkit
 topaz		ports/math/topaz
 topless		ports/sysutils/topless
