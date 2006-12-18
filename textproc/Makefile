@@ -717,6 +717,7 @@
     SUBDIR += po4a
     SUBDIR += pocketreader
     SUBDIR += popup
+    SUBDIR += popup-stacks
     SUBDIR += ppower4
     SUBDIR += print-n-times
     SUBDIR += prosper
