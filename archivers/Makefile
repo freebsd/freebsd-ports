@@ -82,6 +82,7 @@
     SUBDIR += p5-POE-Filter-LZW
     SUBDIR += p5-POE-Filter-Zlib
     SUBDIR += p5-PerlIO-gzip
+    SUBDIR += p5-PerlIO-via-Bzip2
     SUBDIR += p7zip
     SUBDIR += par2cmdline
     SUBDIR += parchive
