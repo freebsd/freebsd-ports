@@ -16,8 +16,8 @@ DISTFILES=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System: Metaport to install complete system
 
-RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
-		cupsd:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS=	espgs:${PORTSDIR}/${PKGCATEGORY}/cups-pstoraster \
+		cupsd:${PORTSDIR}/${PKGCATEGORY}/cups-base
 
 NO_BUILD=	yes
 NO_INSTALL=	yes
