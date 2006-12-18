@@ -18,7 +18,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		wv-1.2.3:${PORTSDIR}/textproc/wv \
-		gmime-2.0.4:${PORTSDIR}/mail/gmime
+		gmime-2.0.4:${PORTSDIR}/mail/gmime2
 
 USE_FAM=	yes
 WANT_FAM_SYSTEM=	gamin
