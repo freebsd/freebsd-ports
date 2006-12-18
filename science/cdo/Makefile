@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.6
 CATEGORIES=	science
 MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 		http://sunpoet.net/distfiles/
@@ -20,14 +20,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_ENV=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 PLIST_FILES=	bin/cdo
 
 OPTIONS=	HDF5	"HDF5 support" off \
 		NETCDF	"NETCDF support" off
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_HDF5)
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
@@ -39,8 +38,4 @@ CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
 LIB_DEPENDS+=		netcdf.1:${PORTSDIR}/science/netcdf
 .endif
 
-.if ${OSVERSION} <= 600000 
-EXTRA_PATCHES+=	"${PATCHDIR}/extra-patch-freebsd5-pthread"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
