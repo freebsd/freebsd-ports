@@ -68,6 +68,7 @@ sfs:*:171:171:Self-Certifying File System:/nonexistent:/sbin/nologin
 agk:*:172:172:AquaGateKeeper:/nonexistent:/nonexistent
 polipo:*:173:173:polipo web cache:/nonexistent:/sbin/nologin
 moinmoin:*:192:192:MoinMoin User:/nonexistent:/sbin/nologin
+cups:*193:193:Cups Owner:/nonexistent:/sbin/nologin
 sympa:*:200:200:Sympa Owner:/nonexistent:/sbin/nologin
 privoxy:*:201:201:Privoxy proxy user:/nonexistent:/sbin/nologin
 dspam:*:202:202:Dspam:/nonexistent:/sbin/nologin
