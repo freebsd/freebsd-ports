@@ -9999,6 +9999,7 @@ p5-Perl6-Subs	ports/lang/p5-Perl6-Subs
 p5-PerlCryptLib	ports/security/p5-PerlCryptLib
 p5-PerlIO-eol	ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip	ports/archivers/p5-PerlIO-gzip
+p5-PerlIO-via-Bzip2	ports/archivers/p5-PerlIO-via-Bzip2
 p5-PerlIO-via-MD5	ports/devel/p5-PerlIO-via-MD5
 p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
 p5-PerlIO-via-symlink	ports/devel/p5-PerlIO-via-symlink
