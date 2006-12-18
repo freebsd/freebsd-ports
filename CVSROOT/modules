@@ -6736,6 +6736,7 @@ luma		ports/sysutils/luma
 luna		ports/astro/luna
 luola		ports/games/luola
 lupe		ports/x11/lupe
+lusernet	ports/news/lusernet
 lush		ports/lang/lush
 lv		ports/misc/lv
 lv-aspell	ports/textproc/lv-aspell
