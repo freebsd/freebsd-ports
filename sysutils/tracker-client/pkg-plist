@@ -1,0 +1,79 @@
+bin/htmless
+bin/o3totxt
+bin/tracker-extract
+bin/tracker-files
+bin/tracker-meta-folder
+bin/tracker-query
+bin/tracker-search
+bin/tracker-search-tool
+bin/tracker-stats
+bin/tracker-tag
+bin/trackerd
+include/tracker-client.h
+include/tracker.h
+lib/libtracker.so
+lib/libtracker.so.0
+lib/libtrackerclient.a
+lib/libtrackerclient.la
+lib/libtrackerclient.so
+lib/libtrackerclient.so.0
+libdata/pkgconfig/tracker.pc
+share/dbus-1/services/tracker.service
+share/gnome/applications/tracker-search-tool.desktop
+share/gnome/pixmaps/tracker/thumbnail_frame.png
+share/gnome/pixmaps/tracker/tracker.png
+share/gnome/tracker/filters/application/msword_filter
+share/gnome/tracker/filters/application/pdf_filter
+share/gnome/tracker/filters/application/vnd.oasis.opendocument.presentation-template_filter
+share/gnome/tracker/filters/application/vnd.oasis.opendocument.presentation_filter
+share/gnome/tracker/filters/application/vnd.oasis.opendocument.spreadsheet-template_filter
+share/gnome/tracker/filters/application/vnd.oasis.opendocument.spreadsheet_filter
+share/gnome/tracker/filters/application/vnd.oasis.opendocument.text-template_filter
+share/gnome/tracker/filters/application/vnd.oasis.opendocument.text_filter
+share/gnome/tracker/filters/application/vnd.stardivision.writer_filter
+share/gnome/tracker/filters/application/vnd.sun.xml.calc.template_filter
+share/gnome/tracker/filters/application/vnd.sun.xml.calc_filter
+share/gnome/tracker/filters/application/vnd.sun.xml.impress.template_filter
+share/gnome/tracker/filters/application/vnd.sun.xml.impress_filter
+share/gnome/tracker/filters/application/vnd.sun.xml.writer.template_filter
+share/gnome/tracker/filters/application/vnd.sun.xml.writer_filter
+share/gnome/tracker/filters/application/x-abiword_filter
+share/gnome/tracker/filters/text/html_filter
+share/gnome/tracker/filters/text/xml_filter
+share/gnome/tracker/languages/stopwords.da
+share/gnome/tracker/languages/stopwords.de
+share/gnome/tracker/languages/stopwords.en
+share/gnome/tracker/languages/stopwords.es
+share/gnome/tracker/languages/stopwords.fi
+share/gnome/tracker/languages/stopwords.fr
+share/gnome/tracker/languages/stopwords.it
+share/gnome/tracker/languages/stopwords.nb
+share/gnome/tracker/languages/stopwords.nl
+share/gnome/tracker/languages/stopwords.pt
+share/gnome/tracker/languages/stopwords.ru
+share/gnome/tracker/languages/stopwords.sv
+share/gnome/tracker/mysql-stored-procs.sql
+share/gnome/tracker/mysql-system.sql
+share/gnome/tracker/mysql-tracker.sql
+share/gnome/tracker/sqlite-stored-procs.sql
+share/gnome/tracker/sqlite-tracker.sql
+share/gnome/tracker/thumbnailers/application/pdf_thumbnailer
+share/gnome/tracker/thumbnailers/application/vnd.oasis.opendocument.graphics_thumbnailer
+share/gnome/tracker/thumbnailers/application/vnd.oasis.opendocument.presentation_thumbnailer
+share/gnome/tracker/thumbnailers/application/vnd.oasis.opendocument.spreadsheet_thumbnailer
+share/gnome/tracker/thumbnailers/application/vnd.oasis.opendocument.text_thumbnailer
+share/gnome/tracker/thumbnailers/image/jpeg_thumbnailer
+share/gnome/tracker/thumbnailers/image/png_thumbnailer
+share/gnome/tracker/tracker-introspect.xml
+share/locale/de/LC_MESSAGES/tracker.mo
+share/locale/fr/LC_MESSAGES/tracker.mo
+share/locale/it/LC_MESSAGES/tracker.mo
+@dirrm share/gnome/tracker/thumbnailers/image
+@dirrm share/gnome/tracker/thumbnailers/application
+@dirrm share/gnome/tracker/thumbnailers
+@dirrm share/gnome/tracker/languages
+@dirrm share/gnome/tracker/filters/text
+@dirrm share/gnome/tracker/filters/application
+@dirrm share/gnome/tracker/filters
+@dirrm share/gnome/tracker
+@dirrm share/gnome/pixmaps/tracker
