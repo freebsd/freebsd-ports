@@ -50,6 +50,8 @@ post-patch:
 		 /WARN.*:=/d'
 	@${REINPLACE_CMD} -e 's|/tools/qt-3.0.4|$${X11BASE}|' \
 		${WRKSRC}/directories.inc
+	@${REINPLACE_CMD} -e 's|\(VariableComplexNode::\(evaluate\)\)|\2|' \
+		${WRKSRC}/lib/fractal/VariableComplexNode.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../fractorama.exe ${PREFIX}/bin/fractorama
