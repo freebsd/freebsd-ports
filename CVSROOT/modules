@@ -11622,6 +11622,7 @@ popt		ports/devel/popt
 poptop		ports/net/poptop
 popular		ports/mail/popular
 popup		ports/textproc/popup
+popup-stacks	ports/textproc/popup-stacks
 pork		ports/net-im/pork
 pornview	ports/graphics/pornview
 port-authoring-tools	ports/sysutils/port-authoring-tools
