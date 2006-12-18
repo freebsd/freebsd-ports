@@ -1,0 +1,80 @@
+diff -ru ../sourcenav-5.1.4/itcl/itcl/unix/configure ../sourcenav-5.1.4.new/itcl/itcl/unix/configure
+--- ../sourcenav-5.1.4/itcl/itcl/unix/configure	2000-02-06 16:19:46.000000000 -0800
++++ ../sourcenav-5.1.4.new/itcl/itcl/unix/configure	2006-07-19 18:39:26.000000000 -0700
+@@ -1113,7 +1113,7 @@
+ fi
+ # CYGNUS LOCAL - use -fwritable-strings with gcc, needed for Tcl8.1
+ if test "$itcl_cv_prog_gcc" = "yes" ; then
+-    CFLAGS="$CFLAGS -fwritable-strings -Wshadow -Wtraditional -Wall"
++    CFLAGS="$CFLAGS -Wshadow -Wtraditional -Wall"
+ fi
+ 
+ echo $ac_n "checking default compiler flags""... $ac_c" 1>&6
+diff -ru ../sourcenav-5.1.4/itcl/itk/unix/configure ../sourcenav-5.1.4.new/itcl/itk/unix/configure
+--- ../sourcenav-5.1.4/itcl/itk/unix/configure	2000-02-06 16:19:46.000000000 -0800
++++ ../sourcenav-5.1.4.new/itcl/itk/unix/configure	2006-07-19 18:39:41.000000000 -0700
+@@ -1173,7 +1173,7 @@
+     # that they obscure everything else.
+     # CYGNUS LOCAL - add -fwritable-strings to CFLAGS for gcc.  Needed 
+     # with Tcl8.1
+-    CFLAGS="$CFLAGS -fwritable-strings -Wshadow -Wtraditional -Wall -Wno-implicit-int"
++    CFLAGS="$CFLAGS -Wshadow -Wtraditional -Wall -Wno-implicit-int"
+ fi
+ 
+ echo $ac_n "checking default compiler flags""... $ac_c" 1>&6
+diff -ru ../sourcenav-5.1.4/libgui/configure ../sourcenav-5.1.4.new/libgui/configure
+--- ../sourcenav-5.1.4/libgui/configure	2001-10-28 08:22:24.000000000 -0800
++++ ../sourcenav-5.1.4.new/libgui/configure	2006-07-19 18:41:08.000000000 -0700
+@@ -1921,11 +1921,11 @@
+ 
+ # Tcl8.1 requires writable strings for gcc
+ 
+-if test "$GCC" = "yes"; then
+-   LIBGUI_CFLAGS=-fwritable-strings
+-else
+-   LIBGUI_CFLAGS=
+-fi
++#if test "$GCC" = "yes"; then
++#   LIBGUI_CFLAGS=-fwritable-strings
++#else
++LIBGUI_CFLAGS=
++#fi
+ 
+ echo $ac_n "checking for cygwin32""... $ac_c" 1>&6
+ echo "configure:1932: checking for cygwin32" >&5
+diff -ru ../sourcenav-5.1.4/snavigator/configure ../sourcenav-5.1.4.new/snavigator/configure
+--- ../sourcenav-5.1.4/snavigator/configure	2003-06-26 13:01:11.000000000 -0700
++++ ../sourcenav-5.1.4.new/snavigator/configure	2006-07-19 18:41:51.000000000 -0700
+@@ -1369,7 +1369,7 @@
+ 
+ if test x$ide_cv_os_cygwin32 = xyes ||
+        test x$sn_cv_os_mingw32 = xyes ; then
+-   HYPER_CFLAGS="-Wall -fwritable-strings"
++   HYPER_CFLAGS="-Wall"
+ fi
+  
+ 
+diff -ru ../sourcenav-5.1.4/tix/unix/tk8.1/Makefile.in ../sourcenav-5.1.4.new/tix/unix/tk8.1/Makefile.in
+--- ../sourcenav-5.1.4/tix/unix/tk8.1/Makefile.in	2001-09-08 16:25:55.000000000 -0700
++++ ../sourcenav-5.1.4.new/tix/unix/tk8.1/Makefile.in	2006-07-19 18:42:37.000000000 -0700
+@@ -46,7 +46,7 @@
+ # To change the compiler switches, for example to change from -O
+ # to -g, change the following line:
+ CFLAGS = -O
+-TIX_CFLAGS = $(CFLAGS) -fwritable-strings
++TIX_CFLAGS = $(CFLAGS)
+ 
+ # To disable ANSI-C procedure prototypes reverse the comment characters
+ # on the following lines:
+diff -ru ../sourcenav-5.1.4/tix/unix/tk8.3/Makefile.in ../sourcenav-5.1.4.new/tix/unix/tk8.3/Makefile.in
+--- ../sourcenav-5.1.4/tix/unix/tk8.3/Makefile.in	2006-07-19 18:43:48.000000000 -0700
++++ ../sourcenav-5.1.4.new/tix/unix/tk8.3/Makefile.in	2006-07-19 18:42:55.000000000 -0700
+@@ -46,7 +46,7 @@
+ # To change the compiler switches, for example to change from -O
+ # to -g, change the following line:
+ CFLAGS = -O
+-TIX_CFLAGS = $(CFLAGS) -fwritable-strings
++TIX_CFLAGS = $(CFLAGS)
+ 
+ # To disable ANSI-C procedure prototypes reverse the comment characters
+ # on the following lines:
