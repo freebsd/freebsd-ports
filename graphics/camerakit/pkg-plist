@@ -1,0 +1,20 @@
+Local/Library/Frameworks/CameraKit.framework/Headers
+Local/Library/Frameworks/CameraKit.framework/Resources
+Local/Library/Frameworks/CameraKit.framework/Versions/A/CameraKit
+Local/Library/Frameworks/CameraKit.framework/Versions/A/Headers/GSCamera.h
+Local/Library/Frameworks/CameraKit.framework/Versions/A/Headers/GSGPhoto2.h
+Local/Library/Frameworks/CameraKit.framework/Versions/A/Resources/Info-gnustep.plist
+Local/Library/Frameworks/CameraKit.framework/Versions/A/libCameraKit.so
+Local/Library/Frameworks/CameraKit.framework/Versions/A/libCameraKit.so.%%MAJORVERSION%%
+Local/Library/Frameworks/CameraKit.framework/Versions/A/libCameraKit.so.%%VERSION%%
+Local/Library/Frameworks/CameraKit.framework/Versions/Current
+Local/Library/Headers/CameraKit
+Local/Library/Libraries/libCameraKit.so
+Local/Library/Libraries/libCameraKit.so.%%MAJORVERSION%%
+Local/Library/Libraries/libCameraKit.so.%%VERSION%%
+@dirrm Local/Library/Frameworks/CameraKit.framework/Versions/A/Resources
+@dirrm Local/Library/Frameworks/CameraKit.framework/Versions/A/Headers
+@dirrm Local/Library/Frameworks/CameraKit.framework/Versions/A
+@dirrm Local/Library/Frameworks/CameraKit.framework/Versions
+@dirrm Local/Library/Frameworks/CameraKit.framework
+@dirrm Local/Library/Frameworks
