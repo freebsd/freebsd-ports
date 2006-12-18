@@ -16,6 +16,7 @@ COMMENT=	MOD player
 
 RESTRICTED=	"Non-redistributable beta"
 
+LATEST_LINK=	tracker-player
 WRKSRC=		${WRKDIR}/tracker
 INSTALL_TARGET=	install install.info
 MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" \
