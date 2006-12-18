@@ -1,3 +1,4 @@
+bin/graph-easy
 %%SITE_PERL%%/Graph/Easy.pm
 %%SITE_PERL%%/Graph/Easy/As_ascii.pm
 %%SITE_PERL%%/Graph/Easy/As_graphviz.pm
