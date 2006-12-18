@@ -15,6 +15,9 @@ COMMENT=	KDE card game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-17
+
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_AUTOTOOLS=		libtool:15

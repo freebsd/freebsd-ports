@@ -15,6 +15,9 @@ COMMENT=	A Tcl/Tk interface to the XPilot meta server(s)
 
 RUN_DEPENDS=		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+DEPRECATED=		distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-17
+
 ALL_TARGET=		xpilotmon
 MAN6=			xpilotmon.6
 PLIST_FILES=		bin/xpilotmon

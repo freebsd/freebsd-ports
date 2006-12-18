@@ -18,6 +18,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game of breaking blocks
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-17
+
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 

@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xeyes-like game except with 3 eyes
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-17
+
 USE_IMAKE=	yes
 MAN1=		x3eyes.1
 PLIST_FILES=	bin/x3eyes

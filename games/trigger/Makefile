@@ -21,6 +21,9 @@ LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal \
 		physfs:${PORTSDIR}/devel/physfs \
 		alut.1:${PORTSDIR}/audio/freealut
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-17
+
 USE_X_PREFIX=	yes
 USE_SDL=	sdl image
 USE_GL=		yes

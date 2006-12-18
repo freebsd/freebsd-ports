@@ -18,6 +18,9 @@ COMMENT=	A bloody, violent sidescrolling shoot-em-up
 LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi \
 		mikmod:${PORTSDIR}/audio/libmikmod
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-17
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGG_NEED_OLD_INTTYPES" LDFLAGS="-L${LOCALBASE}/lib"

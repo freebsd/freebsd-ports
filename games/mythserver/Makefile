@@ -15,6 +15,9 @@ DISTNAME=	metaserver2open
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bungie.net MythII Metaserver Open Source
 
+DEPRECATED=	distfile disappeared
+EXPIRATION_DATE=	2007-01-17
+
 USE_ZIP=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/metaserver2open/spaghetti
