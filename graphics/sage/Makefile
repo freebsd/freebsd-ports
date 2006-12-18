@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sage
-PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
@@ -15,19 +14,18 @@ MASTER_SITE_SUBDIR=	worldforge
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	OpenGL extension library
 
-USE_SDL=	sdl
-USE_GL=		yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--program-transform-name=
+GNU_CONFIGURE=	yes
+USE_GL=		yes
+USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
+USE_SDL=	sdl
+
 MAN3=		sage.3 sage_init.3
 
-CFLAGS+=	-I${X11BASE}/include
-CONFIGURE_ENV=	"CFLAGS=${CFLAGS}"
+CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${X11BASE}/include"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g; \
-		s|-DSAGE_COMPILE||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
