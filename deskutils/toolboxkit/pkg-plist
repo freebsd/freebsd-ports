@@ -1,0 +1,7 @@
+Local/Library/Headers/Toolbox/BundleLoader.h
+Local/Library/Headers/Toolbox/ToolboxBundleProtocol.h
+Local/Library/Headers/Toolbox/Utilities.h
+Local/Library/Libraries/libToolbox.so
+Local/Library/Libraries/libToolbox.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libToolbox.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/Toolbox

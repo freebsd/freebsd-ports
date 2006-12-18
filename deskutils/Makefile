@@ -179,6 +179,7 @@
     SUBDIR += timer-applet
     SUBDIR += todo
     SUBDIR += tomboy
+    SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline
     SUBDIR += tuxcards
