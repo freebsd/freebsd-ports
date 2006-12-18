@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	netrik
-PORTVERSION=	1.15.4
+PORTVERSION=	1.15.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,14 +24,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
+PLIST_FILES=	bin/netrik
+
 MAN1=		netrik.1
 MAN5=		netrikrc.5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
+PORTDOCS=	*
 
 .if defined(NOPORTDOCS)
 post-patch:
@@ -41,4 +39,4 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
