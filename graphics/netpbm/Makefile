@@ -7,9 +7,9 @@
 
 PORTNAME=	netpbm
 .if defined(WITH_NETPBM_DEVEL)
-PORTVERSION= 	10.31
+PORTVERSION=	${DEVEL_PORTVERSION}
 .else
-PORTVERSION=	10.26.35
+PORTVERSION=	10.26.36
 .endif
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,6 +18,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
 .endif
 EXTRACT_SUFX=	.tgz
+.if make(makesum)
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${DEVEL_PORTVERSION}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A toolkit for conversion of images between different formats
@@ -36,6 +40,8 @@ INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
 
 MAN1=		netpbm.1
+
+DEVEL_PORTVERSION=	10.31
 
 .include <bsd.port.pre.mk>
 
