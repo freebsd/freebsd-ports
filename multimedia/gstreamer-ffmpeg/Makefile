@@ -19,6 +19,7 @@ COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
@@ -34,10 +35,6 @@ PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 GST_VERSION=${PORTVERSION:C/..$//}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gst-libs_ext_ffmpeg_libavformat_nut.c
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
