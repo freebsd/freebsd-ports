@@ -14,6 +14,9 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic Sokoban game for X11
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-17
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN6=		xsok.6

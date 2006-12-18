@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod The Opera full server package for Linux
 
+DEPRECATED=	distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-17
+
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
 slaveport-post-extract:

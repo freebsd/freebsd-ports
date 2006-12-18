@@ -17,6 +17,9 @@ COMMENT=		The sounds for use with URBAN
 
 RUN_DEPENDS=		urban:${PORTSDIR}/games/urban
 
+DEPRECATED=		distfile and homepage disappeared
+EXPIRATION_DATE=	2007-01-17
+
 USE_X_PREFIX=		yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes

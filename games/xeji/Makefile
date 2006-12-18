@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An old man watching your mouse cursor
 
+DEPRECATED=	distfile disappeared and has no homepage
+EXPIRATION_DATE=	2007-01-17
+
 PLIST_FILES=	bin/xeji
 USE_IMAKE=	yes
 USE_XPM=	yes
