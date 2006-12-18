@@ -28,7 +28,7 @@ NO_MTREE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 600000
-EXTRA_PATCHES+=     ${FILESDIR}/FreeBSD6-cdefs.h
+EXTRA_PATCHES+=	${FILESDIR}/FreeBSD6-cdefs.h
 .endif
 
 .include <bsd.port.post.mk>
