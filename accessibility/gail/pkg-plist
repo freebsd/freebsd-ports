@@ -1,3 +1,4 @@
+include/gail-1.0/gail/gailwidget.h
 include/gail-1.0/libgail-util/gail-util.h
 include/gail-1.0/libgail-util/gailmisc.h
 include/gail-1.0/libgail-util/gailtextutil.h
@@ -81,6 +82,7 @@ share/locale/xh/LC_MESSAGES/gail.mo
 share/locale/zh_CN/LC_MESSAGES/gail.mo
 share/locale/zh_HK/LC_MESSAGES/gail.mo
 share/locale/zh_TW/LC_MESSAGES/gail.mo
+@dirrm include/gail-1.0/gail
 @dirrm include/gail-1.0/libgail-util
 @dirrm include/gail-1.0
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
