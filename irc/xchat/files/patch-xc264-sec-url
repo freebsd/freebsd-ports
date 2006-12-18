@@ -1,0 +1,12 @@
+--- src/common/util.c	2006-10-14 15:47:44.000000000 +1000
++++ src/common/util.c	2006-12-17 13:22:01.000000000 +1100
+@@ -1178,7 +1178,8 @@
+ 		if (*src != quote) *buf++ = '\\';
+ 	    }
+ 	    *buf++ = *src;
+-	} else if (isspace((unsigned char) *src)) {
++	/*} else if (isspace((unsigned char) *src)) {*/
++	} else if (*src == ' ') {
+ 	    if (*argv[argc]) {
+ 		buf++, argc++;
+ 		if (argc == argvAlloced) {
