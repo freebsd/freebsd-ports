@@ -1,0 +1,18 @@
+Local/Applications/LuserNET.app/LuserNET
+Local/Applications/LuserNET.app/Resources/English.lproj/Localizable.strings
+Local/Applications/LuserNET.app/Resources/French.lproj/Localizable.strings
+Local/Applications/LuserNET.app/Resources/German.lproj/Localizable.strings
+Local/Applications/LuserNET.app/Resources/Info-gnustep.plist
+Local/Applications/LuserNET.app/Resources/LuserNET.desktop
+Local/Applications/LuserNET.app/Resources/News.app.tiff
+Local/Applications/LuserNET.app/Resources/Spanish.lproj/Localizable.strings
+Local/Applications/LuserNET.app/Resources/Swedish.lproj/Localizable.strings
+Local/Applications/LuserNET.app/library_paths.openapp
+Local/Applications/LuserNET.app/stamp.make
+@dirrm Local/Applications/LuserNET.app/Resources/Swedish.lproj
+@dirrm Local/Applications/LuserNET.app/Resources/Spanish.lproj
+@dirrm Local/Applications/LuserNET.app/Resources/German.lproj
+@dirrm Local/Applications/LuserNET.app/Resources/French.lproj
+@dirrm Local/Applications/LuserNET.app/Resources/English.lproj
+@dirrm Local/Applications/LuserNET.app/Resources
+@dirrm Local/Applications/LuserNET.app
