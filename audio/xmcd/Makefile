@@ -28,6 +28,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if (${OSVERSION} < 600000 && ${ARCH} == "sparc64")
+BROKEN=		Does not compile on FreeBSD 5.x sparc64
+.endif
+
 LIBBINDIR=	${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R:R}-${ARCH}
 
 post-extract:
