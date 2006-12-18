@@ -1,0 +1,11 @@
+--- src/config.h.in.orig	Wed Dec 13 21:30:19 2006
++++ src/config.h.in	Mon Dec 18 10:41:13 2006
+@@ -1,5 +1,8 @@
+ /* src/config.h.in.  Generated from configure.ac by autoheader.  */
+ 
++#include <unistd.h>
++#include <sys/param.h>
++
+ /* Compiler */
+ #undef COMPILER
+ 
