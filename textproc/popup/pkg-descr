@@ -1,0 +1,14 @@
+Popup is an interactive learning aid for pairs of words. It behaves much like
+a stack of flashcards, but handles one-to-many and many-to-one word
+relationships better, and includes an integrated scheduler for efficient use
+of your 'cards'. Popup was written by Bjorn Ghola and Rob Burns.
+Features:
+
+* An editor for cardstack files with support for copying and pasting groups
+  of words, as well as drag and drop.
+* Three quiz styles: multiple choice, spelling, and flashcard.
+* Supports quizes and practice
+* Graduated time interval scheduler.
+* Localized for Thai and German.
+
+WWW: http://popup.sourceforge.net/
