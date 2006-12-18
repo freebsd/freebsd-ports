@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ustl
-PORTVERSION=	0.7.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ COMMENT=	Codespace-frugal STL implementation
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
@@ -25,18 +26,17 @@ MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		LIBDIR="${PREFIX}/lib"
 ALL_TARGET=	# empty
 
-PLIST_FILES=	lib/libustl.a
+PLIST_FILES=	lib/libustl.so lib/libustl.so.1 lib/libustl.so.1.0.0
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,/bin/sh," ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|SIZE_MAX|UINT_MAX|" ${WRKSRC}/memblock.h
-	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKSRC}/Common.mk.in
 
 post-install:
 	@${FIND} ${PREFIX}/include/ustl* ! -type d | \
