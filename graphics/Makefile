@@ -46,6 +46,7 @@
     SUBDIR += cal3d-devel
     SUBDIR += camediaplay
     SUBDIR += camera
+    SUBDIR += camerakit
     SUBDIR += cbrpager
     SUBDIR += cbview
     SUBDIR += cegui
