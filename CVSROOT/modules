@@ -11744,6 +11744,7 @@ ports_texinfo		ports/print/texinfo
 ports_textproc	ports/textproc
 ports_tinderbox	ports/misc/tinderbox
 ports_traceroute	ports/net/traceroute
+ports_tracker		ports/audio/tracker
 ports_ukrainian	ports/ukrainian
 ports_units	ports/math/units
 ports_vietnamese	ports/vietnamese
@@ -14494,7 +14495,7 @@ trac-accountmanager	ports/www/trac-accountmanager
 trac-gantt	ports/www/trac-gantt
 trac-webadmin	ports/www/trac-webadmin
 trackballs	ports/games/trackballs
-tracker		ports/audio/tracker
+tracker		ports/sysutils/tracker
 trackerbt	ports/net-p2p/trackerbt
 tractorgen	ports/games/tractorgen
 trafd		ports/net-mgmt/trafd
