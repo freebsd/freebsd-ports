@@ -9,7 +9,7 @@ PORTNAME=	pngrewrite
 PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
-		http://dragon.roe.ch/mirrors/distfiles/pngrewrite/
+		http://mirror.roe.ch/dist/pngrewrite/
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A PNG palette optimizer
