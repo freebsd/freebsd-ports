@@ -1031,6 +1031,7 @@ share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
 %%GPOD%%share/services/amarok_ipod-mediadevice.desktop
 %%NJB%%share/services/amarok_njb-mediadevice.desktop
+%%MTP%%share/services/amarok_mtp-mediadevice.desktop
 share/services/amarokitpc.protocol
 share/services/amaroklastfm.protocol
 share/services/amarokpcast.protocol
