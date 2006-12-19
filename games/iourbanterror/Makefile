@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ioquake3
-DISTVERSION=	1.34-rc2
+DISTVERSION=	1.34-rc3
 CATEGORIES=	games
 MASTER_SITES=	http://ioquake3.org/files/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -34,7 +34,6 @@ MAKE_ENV+=	DEFAULT_BASEDIR="${Q3DIR}" LIBDIR="${LIBDIR}" \
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-SVN_REV=	797
 VM_ARCHS=	amd64 i386 powerpc
 
 .include <bsd.port.pre.mk>
@@ -141,15 +140,6 @@ post-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
-
-maint-gen-distfile:
-	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-		${ECHO_CMD} "ERROR: the distfile already exists."; \
-		${FALSE}; \
-	fi
-	svn export -r${SVN_REV} svn://svn.icculus.org/quake3/trunk quake3
-	${TAR} jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} quake3
-	${RM} -rf quake3
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 .include <bsd.port.post.mk>
