@@ -1,0 +1,11 @@
+--- configure.orig	Tue Aug 29 01:48:08 2006
++++ configure	Sun Nov 12 13:25:22 2006
+@@ -712,7 +712,7 @@
+ ;;
+ FreeBSD)
+ joystick_menu="no"
+-v4l2="no"
++v4l2="yes"
+ bktr="yes"
+ audio_oss="yes"
+ dv1394="no"
