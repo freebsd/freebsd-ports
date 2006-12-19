@@ -480,6 +480,7 @@
 %%EYEDIR%%/apps/eyeHome.eyeapp/img/bar/messages.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/img/bar/private.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/img/bar/public.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/img/bar/trash.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/img/bar/upload.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/img/bar.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/img/box/menu_dow.png
@@ -544,11 +545,8 @@
 %%EYEDIR%%/apps/eyeRSS.eyeapp/lang.php
 %%EYEDIR%%/apps/eyeRSS.eyeapp/propietats.xml
 %%EYEDIR%%/apps/eyeRSS.eyeapp/styleweb.css
-%%EYEDIR%%/apps/eyeTrash.eyeapp/aplic.php
 %%EYEDIR%%/apps/eyeTrash.eyeapp/empty.png
 %%EYEDIR%%/apps/eyeTrash.eyeapp/full.png
-%%EYEDIR%%/apps/eyeTrash.eyeapp/lang.php
-%%EYEDIR%%/apps/eyeTrash.eyeapp/propietats.xml
 %%EYEDIR%%/apps/eyeViewer.app
 %%EYEDIR%%/apps/eyeWelcome.eyeapp/aplic.php
 %%EYEDIR%%/apps/eyeWelcome.eyeapp/img/1.png
