@@ -47,7 +47,7 @@ OPTIONS=	ESD "Enable esound support" off \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-.if (${OSVERSION} < 500000 ) || (${OSVERSION} > 502102 )
+.if ${OSVERSION} > 502102
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .endif
 .endif
