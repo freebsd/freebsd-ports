@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="11a84092-8f9f-11db-ab33-000e0c2e438a">
+    <topic>gzip -- multiple vulnerabilities</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.1</gt><lt>6.1_7</lt></range>
+	<range><gt>6.0</gt><lt>6.0_12</lt></range>
+	<range><gt>5.5</gt><lt>5.5_5</lt></range>
+	<range><gt>5.4</gt><lt>5.4_19</lt></range>
+	<range><gt>5.3</gt><lt>5.3_34</lt></range>
+	<range><lt>4.11_22</lt></range>
+      </system>
+      <package>
+	<name>gzip</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>Multiple programming errors have been found in gzip which
+	  can be triggered when gzip is decompressing files.  These
+	  errors include insufficient bounds checks in buffer use, a
+	  NULL pointer dereference, and a potential infinite loop.</p>
+	<h1>Impact</h1>
+	<p>The insufficient bounds checks in buffer use can cause gzip
+	  to crash, and may permit the execution of arbitrary code.
+	  The NULL pointer deference can cause gzip to crash.  The
+	  infinite loop can cause a Denial-of-Service situation where
+	  gzip uses all available CPU time.</p>
+	<h1>Workaround</h1>
+	<p>No workaround is available.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4334</cvename>
+      <cvename>CVE-2006-4335</cvename>
+      <cvename>CVE-2006-4336</cvename>
+      <cvename>CVE-2006-4337</cvename>
+      <cvename>CVE-2006-4338</cvename>
+      <freebsdsa>SA-06:21.gzip</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-09-19</discovery>
+      <entry>2006-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef3306fc-8f9b-11db-ab33-000e0c2e438a">
     <topic>bind9 -- Denial of Service in named(8)</topic>
     <affects>
