@@ -89,6 +89,7 @@ lib/libpspell.so.16
 %%DATADIR%%/texinfo.amf
 %%DATADIR%%/url.amf
 %%NLS%%share/locale/be/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/da/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/de/LC_MESSAGES/aspell.mo
@@ -105,6 +106,7 @@ lib/libpspell.so.16
 %%NLS%%share/locale/rw/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/tg/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/aspell.mo
@@ -112,6 +114,8 @@ lib/libpspell.so.16
 @dirrm include/pspell
 %%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
 %%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/cs
 %%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
