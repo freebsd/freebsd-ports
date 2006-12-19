@@ -1,0 +1,6 @@
+include/google/gflags.h
+lib/libgflags.a
+lib/libgflags.la
+lib/libgflags.so
+lib/libgflags.so.0
+@dirrm include/google
