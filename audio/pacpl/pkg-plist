@@ -1,0 +1,8 @@
+@dirrm    share/apps/amarok/scripts/transcoding_pacx
+@dirrmtry share/apps/amarok/scripts
+@dirrmtry share/apps/amarok
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
+@dirrmtry share/apps
+@dirrmtry share/mimelnk/audio
+@dirrmtry share/mimelnk
