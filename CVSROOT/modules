@@ -3270,6 +3270,7 @@ gexpr		ports/math/gexpr
 gfax		ports/comms/gfax
 gfe		ports/x11-fonts/gfe
 gff2ps		ports/biology/gff2ps
+gflags		ports/devel/gflags
 gfont		ports/graphics/gfont
 gfontview	ports/print/gfontview
 gforge		ports/www/gforge
