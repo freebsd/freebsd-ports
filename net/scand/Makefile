@@ -20,7 +20,8 @@ MAN8=		scand.8 scandctl.8
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -E -e "s|(install:.*)installscript(.*)|\1\2|" \
+	@${REINPLACE_CMD} -E -e "s|(install:.*)installscript(.*)|\1\2|; \
+		s|-Werror||g" \
 		${WRKSRC}/Makefile
 
 post-install:
