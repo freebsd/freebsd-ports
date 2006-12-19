@@ -23,6 +23,12 @@ MAKE_ARGS+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAN1=		qe.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+IGNORE=		crashes on startup
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,HOST_CC,CC,g' ${WRKSRC}/Makefile
 
@@ -32,4 +38,4 @@ do-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} kmaps ligatures ${DATADIR:S/qemacs/qe/}
 	${INSTALL_MAN} ${WRKSRC}/qe.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
