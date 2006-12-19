@@ -8,13 +8,7 @@
 PORTNAME=	fltk
 PORTVERSION=	2.0.${SNAPSHOT}
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.easysw.com/pub/%SUBDIR%/ \
-		ftp://ftp2.easysw.com/pub/%SUBDIR%/ \
-		ftp://ftp3.easysw.com/pub/%SUBDIR%/ \
-		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
-		ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/ \
-		http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
 DISTNAME=	fltk-2.0.x-${SNAPSHOT}
 
@@ -25,7 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r5528
+SNAPSHOT=	r5556
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off
