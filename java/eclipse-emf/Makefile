@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	emf
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.1
 PORTREVISION=	0
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/emf/downloads/drops/${PORTVERSION}/R200509281310/
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/tools/emf/downloads/drops/,}
+MASTER_SITE_SUBDIR=${PORTVERSION}/R200609210005
+
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	emf-sdo-xsd-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
