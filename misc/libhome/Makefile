@@ -16,8 +16,7 @@ COMMENT=	Library providing a getpwname() emulation
 
 OPTIONS+=	LDAP "Support for LDAP queries" on
 OPTIONS+=	MYSQL "Support for MySQL queries" on
-OPTIONS+=	DB3 "Support for DB3" on
-OPTIONS+=	DB4 "Support for DB4" off
+OPTIONS+=	BDB "Support for Berkeley DB" on
 OPTIONS+=	PAM "Support for PAM (Experimental)" off
 OPTIONS+=	PGSQL "Support for PostgreSQL (Experimental)" off
 
@@ -25,11 +24,11 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DB3) && defined(WITH_DB4)
-.error You cannot use DB3 and DB4 in the same time.
+.if defined(LIBHOME_WITH_BDB_VER)
+WITH_BDB_VER=	${LIBHOME_WITH_BDB_VER}
 .endif
+
+.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-proxy --with-nss
 
@@ -47,20 +46,23 @@ CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}/include/mysql
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if !defined(WITHOUT_DB3)
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}/include/db3 --with-db-libdir=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--without-db4
-.else
-CONFIGURE_ARGS+=	--without-db3
+.if defined(WITH_DB3) || defined(WITH_DB4)
+WITH_BDB=		yes
+OBSOLETE_BDB_VAR=	WITH_DB3 WITH_DB4
+IGNORE=	Use 'make config' to select Berkeley DB.
 .endif
 
-.if defined(WITH_DB4)
-LIB_DEPENDS+=	db4:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=	--with-db4=${LOCALBASE}/include/db4 --with-db-libdir=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--without-db3
+.if defined(WITH_BDB)
+USE_BDB=		yes
+INVALID_BDB_VER=	2
+. if defined(WITH_BDB_VER) && ${WITH_BDB_VER} == 3
+CONFIGURE_ARGS+=	--with-db3=${BDB_INCLUDE_DIR} --without-db4
+. else
+CONFIGURE_ARGS+=	--without-db3 --with-db4=${BDB_INCLUDE_DIR}
+. endif
+CONFIGURE_ARGS+=	--with-db-libdir=${BDB_LIB_DIR}
 .else
-CONFIGURE_ARGS+=	--without-db4
+CONFIGURE_ARGS+=	--without-db3 --without-db4
 .endif
 
 .if defined(WITH_PAM)
@@ -83,6 +85,12 @@ MAN8=		home_proxy.8
 PLIST_SUB=	NSS="@comment "
 .else
 PLIST_SUB=	NSS=""
+.endif
+
+post-patch:
+.if defined(WITH_BDB)
+	@${REINPLACE_CMD} -e 's;db-4.3 db-4.2;${BDB_LIB_NAME};g' \
+		${WRKSRC}/configure
 .endif
 
 post-install:
