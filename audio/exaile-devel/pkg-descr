@@ -1,0 +1,9 @@
+Exaile is a media player aiming to be similar to KDE's AmaroK, but for
+GTK+. It incorporates many of the cool things from AmaroK (and other
+media players) like automatic fetching of album art, handling of large
+libraries, lyrics fetching, artist/album information via the wikipedia,
+last.fm support, optional iPod support (assuming you have python-gpod
+installed).
+
+WWW: http://www.exaile.org/
+Author: Adam Olsen <arolsen@gmail.com>

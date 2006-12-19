@@ -1,0 +1,78 @@
+%%DATADIR%%/exaile.glade
+%%DATADIR%%/exaile.py
+%%DATADIR%%/images/artist.png
+%%DATADIR%%/images/close.png
+%%DATADIR%%/images/default_theme/add.png
+%%DATADIR%%/images/default_theme/clear.png
+%%DATADIR%%/images/default_theme/gnome-dev-cdrom-audio.png
+%%DATADIR%%/images/default_theme/gnome-dev-ipod.png
+%%DATADIR%%/images/default_theme/gnome-fs-directory-accept.png
+%%DATADIR%%/images/default_theme/gnome-fs-directory.png
+%%DATADIR%%/images/default_theme/gnome-globe.png
+%%DATADIR%%/images/default_theme/go-back.png
+%%DATADIR%%/images/default_theme/go-forward.png
+%%DATADIR%%/images/default_theme/go-up.png
+%%DATADIR%%/images/default_theme/media-next.png
+%%DATADIR%%/images/default_theme/media-pause.png
+%%DATADIR%%/images/default_theme/media-play.png
+%%DATADIR%%/images/default_theme/media-previous.png
+%%DATADIR%%/images/default_theme/refresh.png
+%%DATADIR%%/images/default_theme/remove.png
+%%DATADIR%%/images/default_theme/stock_volume.png
+%%DATADIR%%/images/exailelogo-sml.png
+%%DATADIR%%/images/exailelogo.png
+%%DATADIR%%/images/genre.png
+%%DATADIR%%/images/icon.png
+%%DATADIR%%/images/ipod.png
+%%DATADIR%%/images/largeicon.png
+%%DATADIR%%/images/media-audiofile.png
+%%DATADIR%%/images/nocover.png
+%%DATADIR%%/images/playlist.png
+%%DATADIR%%/images/splash.png
+%%DATADIR%%/images/track.png
+%%DATADIR%%/images/trayicon.png
+%%DATADIR%%/mmkeys.so
+%%DATADIR%%/plugins/__init__.py
+%%DATADIR%%/plugins/alarmclock.py
+%%DATADIR%%/plugins/desktopcover.py
+%%DATADIR%%/plugins/exailenotify.py
+%%DATADIR%%/plugins/gui.py
+%%DATADIR%%/plugins/manager.py
+%%DATADIR%%/plugins/minimode.py
+%%DATADIR%%/plugins/plugins.glade
+%%DATADIR%%/plugins/serp.py
+%%DATADIR%%/plugins/streamripper.py
+%%DATADIR%%/po/ca.po
+%%DATADIR%%/po/de_DE.po
+%%DATADIR%%/po/en_GB.po
+%%DATADIR%%/po/es_ES.po
+%%DATADIR%%/po/pl.po
+%%DATADIR%%/po/ru.po
+%%DATADIR%%/po/sv.po
+%%DATADIR%%/po/zh_CN.po
+%%DATADIR%%/sql/db.sql
+%%DATADIR%%/xl/__init__.py
+%%DATADIR%%/xl/audioscrobbler.py
+%%DATADIR%%/xl/common.py
+%%DATADIR%%/xl/config.py
+%%DATADIR%%/xl/covers.py
+%%DATADIR%%/xl/db.py
+%%DATADIR%%/xl/dbusinterface.py
+%%DATADIR%%/xl/filtergui.py
+%%DATADIR%%/xl/media.py
+%%DATADIR%%/xl/panels.py
+%%DATADIR%%/xl/prefs.py
+%%DATADIR%%/xl/shoutcast.py
+%%DATADIR%%/xl/track.py
+%%DATADIR%%/xl/tracks.py
+%%DATADIR%%/xl/trackslist.py
+%%DATADIR%%/xl/xlmisc.py
+@dirrm %%DATADIR%%/images/default_theme
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%/xl
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/pixmaps
