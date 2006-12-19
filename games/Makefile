@@ -200,6 +200,7 @@
     SUBDIR += fmars
     SUBDIR += foobillard
     SUBDIR += formido
+    SUBDIR += fortunate
     SUBDIR += fotaq
     SUBDIR += frabs
     SUBDIR += freebsd-games

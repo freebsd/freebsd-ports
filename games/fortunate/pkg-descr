@@ -1,0 +1,5 @@
+Fortunate displays a quotation in a window. Fortunate is a Cocoa/Objective-C
+graphical front-end to the command-line BSD fortune which, since the dawn of
+time, has been providing countless seconds of fun each time a user logs in.
+
+WWW: http://www.orange-carb.org/~csaldanh/software.html

@@ -1,0 +1,14 @@
+Local/Applications/Fortunate.app/Fortunate
+Local/Applications/Fortunate.app/Resources/English.lproj/Fortunate.gorm/data.classes
+Local/Applications/Fortunate.app/Resources/English.lproj/Fortunate.gorm/data.info
+Local/Applications/Fortunate.app/Resources/English.lproj/Fortunate.gorm/objects.gorm
+Local/Applications/Fortunate.app/Resources/Fortunate.desktop
+Local/Applications/Fortunate.app/Resources/Fortunate.tiff
+Local/Applications/Fortunate.app/Resources/FortunateInfo.plist
+Local/Applications/Fortunate.app/Resources/Info-gnustep.plist
+Local/Applications/Fortunate.app/library_paths.openapp
+Local/Applications/Fortunate.app/stamp.make
+@dirrm Local/Applications/Fortunate.app/Resources/English.lproj/Fortunate.gorm
+@dirrm Local/Applications/Fortunate.app/Resources/English.lproj
+@dirrm Local/Applications/Fortunate.app/Resources
+@dirrm Local/Applications/Fortunate.app
