@@ -1,6 +1,6 @@
 diff -urN kioslave/media/Makefile.in kioslave/media/Makefile.in
---- kioslave/media/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/Makefile.in	Mon Mar 20 14:05:50 2006
+--- kioslave/media/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/Makefile.in	Fri May 26 09:54:31 2006
 @@ -122,8 +122,7 @@
  DATA = $(kde_services_DATA)
  ETAGS = etags
@@ -41,8 +41,8 @@ diff -urN kioslave/media/Makefile.in kioslave/media/Makefile.in
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
 diff -urN kioslave/media/kcmodule/Makefile.in kioslave/media/kcmodule/Makefile.in
---- kioslave/media/kcmodule/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/kcmodule/Makefile.in	Mon Mar 20 14:05:50 2006
+--- kioslave/media/kcmodule/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/kcmodule/Makefile.in	Fri May 26 09:54:31 2006
 @@ -253,6 +253,7 @@
  LIBTOOL = @LIBTOOL@
  LIBUCB = @LIBUCB@
@@ -73,25 +73,26 @@ diff -urN kioslave/media/kcmodule/managermodule.cpp kioslave/media/kcmodule/mana
  	load();
  }
 diff -urN kioslave/media/kcmodule/media.desktop kioslave/media/kcmodule/media.desktop
---- kioslave/media/kcmodule/media.desktop	Sat Jul 22 10:15:43 2006
-+++ kioslave/media/kcmodule/media.desktop	Fri Mar 17 11:17:33 2006
-@@ -14,7 +14,6 @@
- Name[af]=Stoor Media
- Name[bg]=Съхраняващи устройства
- Name[bn]=স্টোরেজ মিডিয়া
--Name[bs]=Uređaji za smještaj podataka
- Name[ca]=Suports d'emmagatzematge
- Name[cs]=Úložná zařízení
- Name[da]=Opbevaringsmedie
-@@ -31,7 +30,6 @@
- Name[gl]=Medios de armacenaxe
+--- kioslave/media/kcmodule/media.desktop	Sun Oct  1 19:31:53 2006
++++ kioslave/media/kcmodule/media.desktop	Mon May 22 20:12:42 2006
+@@ -24,7 +24,6 @@
+ Name[es]=Dispositivos de almacenamiento
+ Name[et]=Andmekandjad
+ Name[eu]=Biltegiratze-euskarria
+-Name[fa]=رسانه ذخیره‌گاه
+ Name[fi]=Tallennusmedia
+ Name[fr]=Support de stockage
+ Name[fy]=Opslachapparaten
+@@ -33,7 +32,7 @@
  Name[he]=התקנים
  Name[hi]=भंडार मीडिया
--Name[hr]=Mediji za pohranjivanje
- Name[hu]=Tárolóeszköz
+ Name[hr]=Mediji za pohranjivanje
+-Name[hu]=Tárolóeszközök
++Name[hu]=Tárolóeszköz
  Name[is]=Geymslumiðlar
  Name[it]=Dispositivi di archiviazione
-@@ -42,7 +40,7 @@
+ Name[ja]=記憶メディア
+@@ -43,7 +42,7 @@
  Name[mk]=Медиуми за податоци
  Name[ms]=Media Storan
  Name[nb]=Lagringsenheter
@@ -100,7 +101,7 @@ diff -urN kioslave/media/kcmodule/media.desktop kioslave/media/kcmodule/media.de
  Name[nl]=Opslagapparaten
  Name[nn]=Lagringsmedium
  Name[pa]=ਸਟੋਰੇਜ਼ ਮੀਡਿਆ
-@@ -53,7 +51,6 @@
+@@ -54,7 +53,6 @@
  Name[ru]=Устройства хранения данных
  Name[rw]=Uburyo bwo Kubika
  Name[se]=Vurkenmedia
@@ -108,33 +109,21 @@ diff -urN kioslave/media/kcmodule/media.desktop kioslave/media/kcmodule/media.de
  Name[sl]=Nosilci za shranjevanje
  Name[sr]=Складишни медијуми
  Name[sr@Latn]=Skladišni medijumi
-@@ -64,7 +61,6 @@
- Name[tt]=Saqlawlı Media
- Name[uk]=Пристрої зберігання інформації
- Name[uz]=Сақлаш ускуналари
--Name[vi]=Ổ chứa Dữ liệu
- Name[zh_CN]=存储介质
- Name[zh_TW]=儲存媒體
- 
-@@ -72,7 +68,6 @@
- Comment[af]=Stel Stoor Media op
- Comment[bg]=Конфигуриране на устройствата за съхранение на информация
- Comment[bn]=স্টোরেজ মিডিয়া কনফিগার করুন
--Comment[bs]=Podesite prikaz uređaja
- Comment[ca]=Configura els suports d'emmagatzematge
- Comment[cs]=Nastavení úložných médií
- Comment[da]=Opsætning af opbevarelsesmedie
-@@ -86,16 +81,15 @@
+@@ -82,13 +80,11 @@
+ Comment[es]=Configuración de las medios de almacenamiento
+ Comment[et]=Salvestusandmekandjate seadistused
+ Comment[eu]=Konfiguratu biltegiratze-euskarria
+-Comment[fa]=پیکربندی رسانه ذخیره‌گاه
+ Comment[fi]=Aseta tallennusmedia
+ Comment[fr]=Configurer le média de stockage
  Comment[fy]=Opslachmedia ynstelle
  Comment[ga]=Cumraigh Meáin Stórála
  Comment[gl]=Configurar Medios de Armacenaxe
--Comment[hr]=Konfiguriranje medija za pohranu
+-Comment[he]=שינוי הגדרות מדיות אחסון
+ Comment[hr]=Konfiguriranje medija za pohranu
  Comment[hu]=A tárolóeszközök beállítása
  Comment[is]=Stillingar geymslumiðla
- Comment[it]=Configura dispositivi di archiviazione
--Comment[ja]=記憶メディアの設定
-+Comment[ja]=ストレージメディアの設定
- Comment[km]=កំណត់​រចនាសម្ព័ន្ធ​ឧបករណ៍​ផ្ទុក
+@@ -98,16 +94,15 @@
  Comment[lt]=Konfigūruoti saugojimo įrenginius
  Comment[mk]=Конфигурирајте ги медиумите за податоци
  Comment[nb]=Sett opp lagringsmedier
@@ -143,7 +132,9 @@ diff -urN kioslave/media/kcmodule/media.desktop kioslave/media/kcmodule/media.de
  Comment[nl]=Opslagmedia instellen
  Comment[nn]=Set opp lagringsmedium
  Comment[pa]=ਸਟੋਰੇਜ਼ ਮੀਡਿਆ ਸੰਰਚਨਾ
-@@ -104,7 +98,6 @@
+ Comment[pl]=Konfiguracja nośników danych
+-Comment[pt]=Configurar os Suportes de Armazenamento
++Comment[pt]=Configurar os Meios de Armazenamento
  Comment[pt_BR]=Configura as mídias de armazenamento
  Comment[ru]=Настройка подключаемых устройств хранения
  Comment[se]=Heivet vurkenmediaid
@@ -151,45 +142,32 @@ diff -urN kioslave/media/kcmodule/media.desktop kioslave/media/kcmodule/media.de
  Comment[sl]=Nastavitve nosilcev za shranjevanje
  Comment[sr]=Подешавање медијума за складиштење
  Comment[sr@Latn]=Podešavanje medijuma za skladištenje
-@@ -114,13 +107,11 @@
- Comment[tt]=Saqlaw Cıhazların Caylaw
- Comment[uk]=Налаштування пристроїв зберігання інформації
- Comment[uz]=Сақлаш ускуналарни мослаш
--Comment[vi]=Cấu hình Ổ lưu trữ Dữ liệu
- Comment[zh_CN]=配置存储介质
- Comment[zh_TW]=設定儲存媒體
- 
- Keywords=storage,media,usb,cdrom,device
- Keywords[bg]=съхранение, информация, компактдиск, устройство, данни, storage, media, usb, cdrom, device
--Keywords[bs]=storage,media,usb,cdrom,device,uređaji,mediji
- Keywords[ca]=emmagatzematge,suport,usb,cdrom,dispositiu
- Keywords[cs]=úložiště,média,USB,CDROM,zařízení
- Keywords[da]=opbevaring,medie,usb,cdrom,enhed
-@@ -134,12 +125,10 @@
+@@ -132,13 +127,11 @@
+ Keywords[es]=almacenamiento,medios,usb,cdrom,dispositivo
+ Keywords[et]=salvestamine,andmekandja,usb,cd,seade
+ Keywords[eu]=biltegiratzea,euskarriak,usb,cdrom,gailua
+-Keywords[fa]=ذخیره گاه، رسانه، گذرگاه سریال جهانی، دیسک فشرده، دستگاه
+ Keywords[fi]=varasto,media,usb,cdrom,laite
+ Keywords[fr]=stockage,media,medium,usb,cdrom,périphérique
  Keywords[fy]=storage,opslach,media,usb,cd-rom,kompakt-skiif,device,apparaat,mp3-speler,usb-stick,geheugenkaart
  Keywords[ga]=stóráil,stóras,meáin,meán,usb,cdrom,dlúthdhiosca,gléas
  Keywords[gl]=armacenaxe,medios,usb,cdrom,dispositivo
 -Keywords[he]=storage,media,usb,cdrom,device,מדיה,התקן,סידירום,תקליטור
--Keywords[hr]=storage,media,usb,cdrom,device,pohrana,snimanje,mediji,uređaj
+ Keywords[hr]=storage,media,usb,cdrom,device,pohrana,snimanje,mediji,uređaj
  Keywords[hu]=tároló,adathordozó,USB,CD-ROM,eszköz
  Keywords[is]=geymsla,miðill,usb,cdrom,tæki
- Keywords[it]=storage,media,usb,cdrom,dispositivi,dvd,penna usb,memory stick,stick
--Keywords[ja]=記憶,メディア,usb,cdrom,デバイス
-+Keywords[ja]=ストレージ,メディア,usb,cdrom,デバイス
- Keywords[km]=ឧបករណ៍​ផ្ទុក, usb,ស៊ីឌីរ៉ូម,ឧបករណ៍
- Keywords[lt]=storage,media,usb,cdrom,device,saugojimas,media,įrenginiai,usb
- Keywords[mk]=storage,media,usb,cdrom,device,медиуми,усб,цдром,уред
-@@ -161,7 +150,6 @@
- Keywords[tr]=depolama,ortam,usb,cdrom,device
- Keywords[uk]=зберігання,носій,медіа,usb,cdrom,пристрій
- Keywords[uz]=сақлаш ускунаси,usb,cdrom,компакт-диск
--Keywords[vi]=lưu trữ,ổ,usb,cdrom,thiết bị
- Keywords[zh_CN]=storage,media,usb,cdrom,device,存储,介质,设备
- Keywords[zh_TW]=storage,media,usb,cdrom,device,儲存,媒體,光碟機,裝置
- 
+@@ -153,7 +146,7 @@
+ Keywords[nn]=lagring,media,usb,CD-spiller,CD-ROM,einingar,minnepinnar,harddiskar,HD,eksterne harddiskar,zip-diskar
+ Keywords[pa]=ਸਟੋਰੇਜ਼,ਮੀਡਿਆ,ਜੰਤਰ,usb,cdrom
+ Keywords[pl]=dane,przechowywanie danych,nośnik danych,nośniki danych,usb,cdrom,urządzenie
+-Keywords[pt]=armazenamento,meio,suporte,usb,cdrom,dispositivo
++Keywords[pt]=armazenamento,meio,usb,cdrom,dispositivo
+ Keywords[pt_BR]=armazenamento,mídia,usb,cd-rom,device,dispositivo
+ Keywords[ru]=storage,media,usb,cdrom,device,устройство хранения
+ Keywords[sl]=shranjevanje,nosilec,usb,cdrom,naprava
 diff -urN kioslave/media/kcmodule/notifiermodule.cpp kioslave/media/kcmodule/notifiermodule.cpp
 --- kioslave/media/kcmodule/notifiermodule.cpp	Sat Jul 22 10:15:43 2006
-+++ kioslave/media/kcmodule/notifiermodule.cpp	Mon Oct 10 17:04:00 2005
++++ kioslave/media/kcmodule/notifiermodule.cpp	Mon May 22 20:12:42 2006
 @@ -174,8 +174,8 @@
  	ActionListBoxItem *action_item
  		= static_cast<ActionListBoxItem*>(m_view->actionsList->selectedItem());
@@ -197,7 +175,7 @@ diff -urN kioslave/media/kcmodule/notifiermodule.cpp kioslave/media/kcmodule/not
 -	NotifierServiceAction * action = dynamic_cast<NotifierServiceAction*>( action_item->action() );
 -	if ( action )
 +	NotifierServiceAction * action;
-+	if ( action = dynamic_cast<NotifierServiceAction*>( action_item->action() ) )
++	if ( (action = dynamic_cast<NotifierServiceAction*>( action_item->action() ) ) )
  	{
  		ServiceConfigDialog dialog(action, m_settings.supportedMimetypes(), this);
  		
@@ -207,13 +185,13 @@ diff -urN kioslave/media/kcmodule/notifiermodule.cpp kioslave/media/kcmodule/not
  	NotifierServiceAction *action;
 -        action = dynamic_cast<NotifierServiceAction*>( action_item->action() );
 -	if ( action )
-+	if ( action = dynamic_cast<NotifierServiceAction*>( action_item->action() ) )
++	if ( (action = dynamic_cast<NotifierServiceAction*>( action_item->action() )) )
  	{
  		m_settings.deleteAction( action );
  		updateListBox();
 diff -urN kioslave/media/kfile-plugin/Makefile.in kioslave/media/kfile-plugin/Makefile.in
---- kioslave/media/kfile-plugin/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/kfile-plugin/Makefile.in	Mon Mar 20 14:05:51 2006
+--- kioslave/media/kfile-plugin/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/kfile-plugin/Makefile.in	Fri May 26 09:54:31 2006
 @@ -248,6 +248,7 @@
  LIBTOOL = @LIBTOOL@
  LIBUCB = @LIBUCB@
@@ -223,30 +201,17 @@ diff -urN kioslave/media/kfile-plugin/Makefile.in kioslave/media/kfile-plugin/Ma
  LIBXDMCP = @LIBXDMCP@
  LIBXFT_LIB = @LIBXFT_LIB@
 diff -urN kioslave/media/kfile-plugin/kfile_media.desktop kioslave/media/kfile-plugin/kfile_media.desktop
---- kioslave/media/kfile-plugin/kfile_media.desktop	Sat Jul 22 10:15:42 2006
-+++ kioslave/media/kfile-plugin/kfile_media.desktop	Fri Mar 17 11:17:33 2006
-@@ -6,11 +6,10 @@
- Name[az]=Mediyum Mə'lumatı
- Name[bg]=Информация за устройствата
- Name[bn]=মিডিয়া তথ্য
--Name[bs]=Informacije o mediju
- Name[ca]=Informació de suports
- Name[cs]=Informace o médiu
- Name[da]=Medieinformation
--Name[de]=Medium-Information
-+Name[de]=Medien-Information
- Name[el]=Πληροφορίες μέσου
- Name[eo]=Konservejaj informoj
+--- kioslave/media/kfile-plugin/kfile_media.desktop	Sun Oct  1 19:31:53 2006
++++ kioslave/media/kfile-plugin/kfile_media.desktop	Mon May 22 20:12:42 2006
+@@ -16,7 +16,6 @@
  Name[es]=Información de recursos
-@@ -23,7 +22,6 @@
- Name[gl]=Informazón do Meio
- Name[he]=מידע אודות המדיה
- Name[hi]=माध्यम जानकारी
--Name[hr]=Podaci o mediju
- Name[hu]=Adathordozó-jellemzők
- Name[is]=Upplýsingar um miðil
- Name[it]=Informazioni supporto
-@@ -46,7 +44,6 @@
+ Name[et]=Andmekandja info
+ Name[eu]=Media informazioa
+-Name[fa]=اطلاعات رسانه
+ Name[fi]=Tallenteiden tiedot
+ Name[fr]=Informations sur le média
+ Name[fy]=Mediumynformaasje
+@@ -47,7 +46,6 @@
  Name[ru]=Сведения о носителе
  Name[rw]=Amakuru y'igitangazamakuru
  Name[se]=Mediumdieđut
@@ -254,19 +219,11 @@ diff -urN kioslave/media/kfile-plugin/kfile_media.desktop kioslave/media/kfile-p
  Name[sl]=Informacije o mediju
  Name[sr]=Информације о медијуму
  Name[sr@Latn]=Informacije o medijumu
-@@ -55,11 +52,10 @@
- Name[th]=ข้อมูลของสื่อ
- Name[tr]=Ortam Bilgisi
- Name[tt]=Media Turında
--Name[uk]=Інформація про носій
-+Name[uk]=Інформація про носій інформації
- Name[uz]=Сақлаш ускуна ҳақида маълумот
--Name[vi]=Thông tin về Ổ lưu trữ
- Name[zh_CN]=介质信息
+@@ -63,4 +61,4 @@
  Name[zh_TW]=媒體資訊
  ServiceTypes=KFilePlugin
  X-KDE-Library=kfile_media
--MimeType=media/audiocd;media/hdd_mounted;media/blankcd;media/hdd_unmounted;media/blankdvd;media/cdrom_mounted;media/cdrom_unmounted;media/cdwriter_mounted;media/nfs_mounted;media/cdwriter_unmounted;media/nfs_unmounted;media/removable_mounted;media/dvd_mounted;media/removable_unmounted;media/dvd_unmounted;media/smb_mounted;media/dvdvideo;media/smb_unmounted;media/floppy5_mounted;media/svcd;media/floppy5_unmounted;media/vcd;media/floppy_mounted;media/zip_mounted;media/floppy_unmounted;media/zip_unmounted;media/gphoto2camera,media/camera_mounted,media/camera_unmounted
+-MimeType=media/audiocd;media/hdd_mounted;media/blankcd;media/hdd_unmounted;media/blankdvd;media/cdrom_mounted;media/cdrom_unmounted;media/cdwriter_mounted;media/nfs_mounted;media/cdwriter_unmounted;media/nfs_unmounted;media/removable_mounted;media/dvd_mounted;media/removable_unmounted;media/dvd_unmounted;media/smb_mounted;media/dvdvideo;media/smb_unmounted;media/floppy5_mounted;media/svcd;media/floppy5_unmounted;media/vcd;media/floppy_mounted;media/zip_mounted;media/floppy_unmounted;media/zip_unmounted;media/gphoto2camera;media/camera_mounted;media/camera_unmounted
 +MimeType=media/audiocd;media/hdd_mounted;media/blankcd;media/hdd_unmounted;media/blankdvd;media/cdrom_mounted;media/cdrom_unmounted;media/cdwriter_mounted;media/nfs_mounted;media/cdwriter_unmounted;media/nfs_unmounted;media/removable_mounted;media/dvd_mounted;media/removable_unmounted;media/dvd_unmounted;media/smb_mounted;media/dvdvideo;media/smb_unmounted;media/floppy5_mounted;media/svcd;media/floppy5_unmounted;media/vcd;media/floppy_mounted;media/zip_mounted;media/floppy_unmounted;media/zip_unmounted;media/gphoto2camera
 diff -urN kioslave/media/kfile-plugin/kfilemediaplugin.cpp kioslave/media/kfile-plugin/kfilemediaplugin.cpp
 --- kioslave/media/kfile-plugin/kfilemediaplugin.cpp	Sat Jul 22 10:15:42 2006
@@ -300,8 +257,8 @@ diff -urN kioslave/media/kfile-plugin/kfilemediaplugin.cpp kioslave/media/kfile-
  	if ( !reply.isValid() )
  	{
 diff -urN kioslave/media/libmediacommon/Makefile.in kioslave/media/libmediacommon/Makefile.in
---- kioslave/media/libmediacommon/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/libmediacommon/Makefile.in	Mon Mar 20 14:05:51 2006
+--- kioslave/media/libmediacommon/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/libmediacommon/Makefile.in	Fri May 26 09:54:31 2006
 @@ -250,6 +250,7 @@
  LIBTOOL = @LIBTOOL@
  LIBUCB = @LIBUCB@
@@ -443,8 +400,8 @@ diff -urN kioslave/media/mediaimpl.cpp kioslave/media/mediaimpl.cpp
  		mp_mounting = 0L;
  		
 diff -urN kioslave/media/mediamanager/Makefile.in kioslave/media/mediamanager/Makefile.in
---- kioslave/media/mediamanager/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/mediamanager/Makefile.in	Mon Mar 20 14:05:53 2006
+--- kioslave/media/mediamanager/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/mediamanager/Makefile.in	Fri May 26 09:54:31 2006
 @@ -284,6 +284,7 @@
  LIBTOOL = @LIBTOOL@
  LIBUCB = @LIBUCB@
@@ -454,9 +411,46 @@ diff -urN kioslave/media/mediamanager/Makefile.in kioslave/media/mediamanager/Ma
  LIBXDMCP = @LIBXDMCP@
  LIBXFT_LIB = @LIBXFT_LIB@
 diff -urN kioslave/media/mediamanager/fstabbackend.cpp kioslave/media/mediamanager/fstabbackend.cpp
---- kioslave/media/mediamanager/fstabbackend.cpp	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mediamanager/fstabbackend.cpp	Fri Mar 17 11:17:33 2006
-@@ -111,7 +111,6 @@
+--- kioslave/media/mediamanager/fstabbackend.cpp	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mediamanager/fstabbackend.cpp	Mon May 22 20:12:42 2006
+@@ -37,9 +37,6 @@
+ #endif
+ 
+ #include <klocale.h>
+-#include <kio/job.h>
+-#include <kio/netaccess.h>
+-#include <kdebug.h>
+ #include <kdirwatch.h>
+ #include <kurl.h>
+ #include <kmountpoint.h>
+@@ -97,26 +94,6 @@
+         KDirWatch::self()->removeFile(MTAB);
+ }
+ 
+-QString FstabBackend::mount( const QString &_udi )
+-{
+-    const Medium* medium = m_mediaList.findById(_udi);
+-    if (!medium)
+-        return i18n("No such medium: %1").arg(_udi);
+-    KIO::Job* job = KIO::mount( false, 0, medium->deviceNode(), medium->mountPoint());
+-    KIO::NetAccess::synchronousRun( job, 0 );
+-    return QString::null;
+-}
+-
+-QString FstabBackend::unmount( const QString &_udi )
+-{
+-    const Medium* medium = m_mediaList.findById(_udi);
+-    if (!medium)
+-        return i18n("No such medium: %1").arg(_udi);
+-    KIO::Job* job = KIO::unmount( medium->mountPoint(),  false);
+-    KIO::NetAccess::synchronousRun( job, 0 );
+-    return QString::null;
+-}
+-
+ void FstabBackend::slotDirty(const QString &path)
+ {
+ 	if (path==MTAB)
+@@ -134,7 +111,6 @@
  	if ( mount->mountType() == "swap"
  	  || mount->mountType() == "tmpfs"
  	  || mount->mountType() == "sysfs"
@@ -464,19 +458,35 @@ diff -urN kioslave/media/mediamanager/fstabbackend.cpp kioslave/media/mediamanag
  	  || mount->mountType() == "kernfs"
  	  || mount->mountType() == "usbfs"
  	  || mount->mountType().contains( "proc" )
-@@ -159,23 +158,14 @@
+@@ -147,7 +123,6 @@
+ 	  || mount->mountPoint() == "/dev/swap"
+ 	  || mount->mountPoint() == "/dev/pts"
+ 	  || mount->mountPoint().find("/proc") == 0
+-	  || mount->mountPoint().find("/sys") == 0
  
- 		if ( ::inExclusionPattern(*it, m_networkSharesOnly) ) continue;
+ 	  // We might want to display only network shares
+ 	  // since HAL doesn't handle them
+@@ -169,7 +144,7 @@
  
--		/* Did we know this already before ? If yes, then
--		   nothing has changed, do not stat the mount point. Avoids
--		   hang if network shares are stalling */
--		QString mtabEntry = dev + "*" + mp + "*" + fs;
+ void FstabBackend::handleMtabChange(bool allowNotification)
+ {
+-	QStringList new_mtabIds;
++	QStringList new_mtabIds, new_mtabEntries;
+ 	KMountPoint::List mtab = KMountPoint::currentMountPoints();
+ 
+ 	KMountPoint::List::iterator it = mtab.begin();
+@@ -187,19 +162,18 @@
+ 		   nothing has changed, do not stat the mount point. Avoids
+ 		   hang if network shares are stalling */
+ 		QString mtabEntry = dev + "*" + mp + "*" + fs;
 -		if(m_mtabEntries.contains(mtabEntry)) {
 -		        new_mtabIds += m_mtabEntries[mtabEntry];
 -			continue;
 -		}
--
++		bool isOldEntry = m_mtabEntries.contains(mtabEntry);
++		new_mtabEntries+=mtabEntry;
++		if (isOldEntry) continue;
+ 
  		QString id = generateId(dev, mp);
  		new_mtabIds+=id;
 -		m_mtabEntries[mtabEntry] = id;
@@ -489,20 +499,28 @@ diff -urN kioslave/media/mediamanager/fstabbackend.cpp kioslave/media/mediamanag
  			m_mediaList.changeMediumState(id, true, false,
  			                              mime, icon, label);
  		}
-@@ -212,10 +202,6 @@
- 			QString dev = medium->deviceNode();
+@@ -237,10 +211,6 @@
  			QString mp = medium->mountPoint();
  			QString fs = medium->fsType();
--
+ 
 -
 -			QString mtabEntry = dev + "*" + mp + "*" + fs;
 -			m_mtabEntries.remove(mtabEntry);
- 
+-
  			QString mime, icon, label;
  			guess(dev, mp, fs, false, mime, icon, label);
+ 
+@@ -256,6 +226,7 @@
+ 	}
+ 
+ 	m_mtabIds = new_mtabIds;
++        m_mtabEntries = new_mtabEntries;
+ }
+ 
+ void FstabBackend::handleFstabChange(bool allowNotification)
 diff -urN kioslave/media/mediamanager/fstabbackend.h kioslave/media/mediamanager/fstabbackend.h
---- kioslave/media/mediamanager/fstabbackend.h	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mediamanager/fstabbackend.h	Mon Oct 10 17:04:01 2005
+--- kioslave/media/mediamanager/fstabbackend.h	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mediamanager/fstabbackend.h	Mon May 22 20:12:42 2006
 @@ -23,7 +23,6 @@
  
  #include <qobject.h>
@@ -511,16 +529,28 @@ diff -urN kioslave/media/mediamanager/fstabbackend.h kioslave/media/mediamanager
  
  #ifdef Q_OS_FREEBSD
  #include <qtimer.h>
-@@ -54,7 +53,6 @@
+@@ -41,10 +40,6 @@
+                           const QString &fsType, bool mounted,
+                           QString &mimeType, QString &iconName,
+ 	                  QString &label);
+-
+-	QString mount(const QString &id);
+-	QString unmount(const QString &id);
+-
+ private slots:
+ 	void slotDirty(const QString &path);
+ 	void handleFstabChange(bool allowNotification = true);
+@@ -58,7 +53,7 @@
  
  	bool m_networkSharesOnly;
  	QStringList m_mtabIds;
 -        QMap<QString, QString> m_mtabEntries;
++        QStringList m_mtabEntries;
  	QStringList m_fstabIds;
  #ifdef Q_OS_FREEBSD
  	QTimer m_mtabTimer;
 diff -urN kioslave/media/mediamanager/halbackend.cpp kioslave/media/mediamanager/halbackend.cpp
---- kioslave/media/mediamanager/halbackend.cpp	Sat Jul 22 10:15:45 2006
+--- kioslave/media/mediamanager/halbackend.cpp	Sun Oct  1 19:31:54 2006
 +++ kioslave/media/mediamanager/halbackend.cpp	Thu Jan 19 18:00:58 2006
 @@ -21,16 +21,9 @@
  
@@ -539,7 +569,7 @@ diff -urN kioslave/media/mediamanager/halbackend.cpp kioslave/media/mediamanager
  
  #define MOUNT_SUFFIX	(libhal_volume_is_mounted(halVolume) ? QString("_mounted") : QString("_unmounted"))
  #define MOUNT_ICON_SUFFIX	(libhal_volume_is_mounted(halVolume) ? QString("_mount") : QString("_unmount"))
-@@ -39,1169 +32,615 @@
+@@ -39,1177 +32,615 @@
  static HALBackend* s_HALBackend;
  
  /* A macro function to convert HAL string properties to QString */
@@ -654,6 +684,14 @@ diff -urN kioslave/media/mediamanager/halbackend.cpp kioslave/media/mediamanager
 -    DBusError error;
 -    dbus_error_init(&error);
 -    dbus_connection = dbus_connection_open_private(DBUS_SYSTEM_BUS, &error);
+-
+-    if (!dbus_connection || dbus_error_is_set(&error)) {
+-        dbus_error_free(&error);
+-        libhal_ctx_free(m_halContext);
+-        m_halContext = NULL;
+-        return false;
+-    }
+-
 -    dbus_bus_register(dbus_connection, &error);
 -
 -    if (dbus_error_is_set(&error)) {
@@ -2365,10 +2403,80 @@ diff -urN kioslave/media/mediamanager/halbackend.h kioslave/media/mediamanager/h
  };
  
  #endif /* _HALBACKEND_H_ */
+diff -urN kioslave/media/mediamanager/linuxcdpolling.cpp kioslave/media/mediamanager/linuxcdpolling.cpp
+--- kioslave/media/mediamanager/linuxcdpolling.cpp	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mediamanager/linuxcdpolling.cpp	Mon Oct 10 17:04:01 2005
+@@ -23,6 +23,7 @@
+ 
+ #include <qthread.h>
+ #include <qmutex.h>
++#include <qtimer.h>
+ #include <qfile.h>
+ 
+ #include <kdebug.h>
+@@ -188,7 +189,9 @@
+ 	                                               const QString &, bool, bool)),
+ 	        this, SLOT(slotMediumStateChanged(const QString &)) );
+ 
+-	connect(&m_timer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
++	QTimer *timer = new QTimer(this);
++	connect(timer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
++	timer->start(500);
+ }
+ 
+ LinuxCDPolling::~LinuxCDPolling()
+@@ -226,7 +229,6 @@
+ 		PollingThread *thread = new PollingThread(dev);
+ 		m_threads[id] = thread;
+ 		thread->start();
+-		m_timer.start(500);
+ 	}
+ }
+ 
+@@ -266,7 +268,6 @@
+ 		PollingThread *thread = new PollingThread(dev);
+ 		m_threads[id] = thread;
+ 		thread->start();
+-		m_timer.start(500);
+ 	}
+ 	else if (m_threads.contains(id) && medium->isMounted())
+ 	{
+@@ -281,12 +282,6 @@
+ void LinuxCDPolling::slotTimeout()
+ {
+ 	//kdDebug(1219) << "LinuxCDPolling::slotTimeout()" << endl;
+-
+-	if (m_threads.isEmpty())
+-	{
+-		m_timer.stop();
+-		return;
+-	}
+ 
+ 	QMap<QString, PollingThread*>::iterator it = m_threads.begin();
+ 	QMap<QString, PollingThread*>::iterator end = m_threads.end();
+diff -urN kioslave/media/mediamanager/linuxcdpolling.h kioslave/media/mediamanager/linuxcdpolling.h
+--- kioslave/media/mediamanager/linuxcdpolling.h	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mediamanager/linuxcdpolling.h	Mon Oct 10 17:04:01 2005
+@@ -24,7 +24,6 @@
+ #include <qobject.h>
+ #include <qcstring.h>
+ #include <qmap.h>
+-#include <qtimer.h>
+ 
+ class DiscType
+ {
+@@ -80,7 +79,6 @@
+ 
+ 	QMap<QString, PollingThread*> m_threads;
+ 	QStringList m_excludeNotification;
+-	QTimer m_timer;
+ };
+ 
+ #endif
 diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanager/mediamanager.cpp
---- kioslave/media/mediamanager/mediamanager.cpp	Sat Jul 22 10:15:45 2006
+--- kioslave/media/mediamanager/mediamanager.cpp	Sun Oct  1 19:31:54 2006
 +++ kioslave/media/mediamanager/mediamanager.cpp	Mon Oct 10 17:04:01 2005
-@@ -43,280 +43,201 @@
+@@ -43,287 +43,201 @@
  MediaManager::MediaManager(const QCString &obj)
      : KDEDModule(obj), m_dirNotify(m_mediaList)
  {
@@ -2417,15 +2525,17 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
 -        m_backends.remove( b );
 -        delete b;
 -    }
+-
+-    mp_removableBackend = 0L;
+-    m_halbackend = 0L;
+-    m_fstabbackend = 0L;
 +	while ( !m_backends.isEmpty() )
 +	{
 +		BackendBase *b = m_backends.first();
 +		m_backends.remove( b );
 +		delete b;
 +	}
- 
--    mp_removableBackend = 0L;
--    m_halbackend = 0L;
++
 +	mp_removableBackend = 0L;
  
  #ifdef COMPILE_HALBACKEND
@@ -2435,7 +2545,8 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
 -        if (m_halbackend->InitHal())
 -        {
 -            m_backends.append( m_halbackend );
--            m_backends.append( new FstabBackend(m_mediaList, true) );
+-            m_fstabbackend = new FstabBackend(m_mediaList, true);
+-            m_backends.append( m_fstabbackend );
 -            // No need to load something else...
 -            m_mediaList.blockSignals(false);
 -            return;
@@ -2480,7 +2591,8 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
 +	}
  #endif //COMPILE_LINUXCDPOLLING
  
--    m_backends.append( new FstabBackend(m_mediaList) );
+-    m_fstabbackend = new FstabBackend(m_mediaList);
+-    m_backends.append( m_fstabbackend );
 -    m_mediaList.blockSignals(false);
 +	m_backends.append( new FstabBackend(m_mediaList) );
 +        m_mediaList.blockSignals(false);
@@ -2517,8 +2629,7 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
  QStringList MediaManager::properties(const QString &name)
  {
 -    const Medium *m = m_mediaList.findByName(name);
-+	const Medium *m = m_mediaList.findByName(name);
- 
+-
 -    if (!m)
 -    {
 -        KURL u(name);
@@ -2561,7 +2672,8 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
 -    else
 -        return QStringList();
 -}
--
++	const Medium *m = m_mediaList.findByName(name);
+ 
 -QStringList MediaManager::mountoptions(const QString &name)
 -{
 -#ifdef COMPILE_HALBACKEND
@@ -2591,7 +2703,9 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
 -        return i18n("Feature only available with HAL");
 -    return m_halbackend->mount(name);
 -#else
--    return i18n("Feature only available with HAL");
+-    if ( !m_fstabbackend ) // lying :)
+-        return i18n("Feature only available with HAL");
+-    return m_fstabbackend->mount( name );
 -#endif
 -}
 -
@@ -2602,7 +2716,9 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
 -        return i18n("Feature only available with HAL");
 -    return m_halbackend->unmount(name);
 -#else
--    return i18n("Feature only available with HAL");
+-    if ( !m_fstabbackend ) // lying :)
+-        return i18n("Feature only available with HAL");
+-    return m_fstabbackend->unmount( name );
 -#endif
 +	if (m!=0L)
 +	{
@@ -2764,36 +2880,23 @@ diff -urN kioslave/media/mediamanager/mediamanager.cpp kioslave/media/mediamanag
  
  
 diff -urN kioslave/media/mediamanager/mediamanager.desktop kioslave/media/mediamanager/mediamanager.desktop
---- kioslave/media/mediamanager/mediamanager.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mediamanager/mediamanager.desktop	Fri Mar 17 11:17:33 2006
-@@ -6,11 +6,10 @@
- Name[az]=KDED Mediya İdarəcisi
- Name[bg]=Управление на устройствата KDED
- Name[bn]=কে.ডি.ই.ডি. মিডিয়া ম্যানেজার
--Name[bs]=KDED upravitelj medijima
- Name[ca]=Gestor de suports KDED
- Name[cs]=KDED správce médií
- Name[da]=KDED Mediehåndtering
--Name[de]=KDED-Medienverwaltung
-+Name[de]=KDED Medienverwaltung
- Name[el]=Διαχειριστής μέσων KDED
- Name[eo]=Konserveja administrilo
+--- kioslave/media/mediamanager/mediamanager.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mediamanager/mediamanager.desktop	Tue May 23 13:33:34 2006
+@@ -16,13 +16,11 @@
  Name[es]=Administrador de recursos KDED
-@@ -18,12 +17,10 @@
+ Name[et]=KDED andmekandjate haldur
  Name[eu]=KDED media kudeatzailea
+-Name[fa]=مدیر رسانه KDED
  Name[fi]=KDED-tallennusmedianhallinta
  Name[fr]=Gestionnaire de médias KDED
--Name[fy]=KDEDED-mediabehearder
-+Name[fy]=KDEDED-mediabeheerder
+ Name[fy]=KDEDED-mediabehearder
  Name[ga]=Bainisteoir Meán KDED
  Name[gl]=Xestor de Meios de KDED
 -Name[he]=מנהל המדיה של KDED
  Name[hi]=केडीईडी मीडिया प्रबंधक
--Name[hr]=KDED upravitelj medija
+ Name[hr]=KDED upravitelj medija
  Name[hu]=KDED médiakezelő
- Name[is]=KDED miðilstjóri
- Name[it]=Gestore dei supporti KDED
-@@ -44,7 +41,6 @@
+@@ -45,7 +43,6 @@
  Name[ru]=Управление подключаемыми устройствами
  Name[rw]=Mugenga Igihuza KDED
  Name[se]=KDED-mediagieđahalli
@@ -2801,28 +2904,18 @@ diff -urN kioslave/media/mediamanager/mediamanager.desktop kioslave/media/mediam
  Name[sl]=Upravitelj medijev KDED
  Name[sr]=Менаџер медијума, KDED
  Name[sr@Latn]=Menadžer medijuma, KDED
-@@ -55,14 +51,12 @@
- Name[tt]=KDED Media İdäräçe
- Name[uk]=Менеджер носіїв інформації для KDED
- Name[uz]=KDED сақлаш ускуналарни бошқарувчи
--Name[vi]=Trình quản lí Ổ lưu trữ KDED
- Name[zh_CN]=KDED 介质管理器
- Name[zh_TW]=KDED 媒體管理程式
- Comment=Keep track of media activities and allow to (un)mount (media:/)
- Comment[af]=Hou tred van media aktiwiteite en laat die (ont)koppel van 'media:/' toe
- Comment[bg]=Наблюдение на устройствата и разрешаване на монтиране/демонтиране на (media:/)
- Comment[bn]=কোথায় কী মিডিয়া ব্যবহার করা হচ্ছে খেয়াল রাখুন এবং (আন)মাউন্ট করুন (media:/)
--Comment[bs]=Prati aktivnosti montiranja uređaja za smještaj podataka (media:/)
- Comment[ca]=Fa el seguiment de les activitats dels suports i permet muntar i desmuntar (media:/)
- Comment[cs]=Udržuje přehled o připojených zařízeních
- Comment[da]=Hold styr på medieaktiviteter og tillad at (af)montere (media:/)
-@@ -76,17 +70,15 @@
+@@ -73,18 +70,16 @@
+ Comment[es]=Monitoriza las actividades de los recursos y permite (des)montarlos (media:/)
+ Comment[et]=Hoiab silma peal andmekandjate aktiivsusel ja võimaldab neid ühendada/lahutada (media:/)
+ Comment[eu]=Montatzeak begiztatzen ditu (media:/) eta desmontatzen uzten du
+-Comment[fa]=حفظ رد فعالیتهای رسانه و اجازه سو ار(پیاده) کردن (media:/)
+ Comment[fi]=Pidä kirjaa tallennustapahtumista ja salli tallennusvälineen liittäminen/irrotus (devices:/)
  Comment[fr]=Gardez une trace des montages et permettre le (dé)montage (media:/)
  Comment[fy]=Hâld de media-aktiviteiten by en stien ta om media oan- en ôf te keppelje (media:/)
  Comment[gl]=Seguimento das actividades dos meios e permite-lle (des)montar (media:/)
 -Comment[he]=מנטר אחר פעילויות מדיה, ומאפשר לחבר או לנתק התקנים (media:/)
  Comment[hi]=मीडिया क्रियाओं की जानकारी रखे तथा (अन)माउन्ट करने दे (मीडिया:/)
--Comment[hr]=Praćenje aktivnosti medija i omogućavanje pristupanja i napuštanja
+ Comment[hr]=Praćenje aktivnosti medija i omogućavanje pristupanja i napuštanja
  Comment[hu]=Az adathordozók követése, csatlakoztatása és leválasztása (media:/)
  Comment[is]=Fylgjast með breytingum á tækjum og bjóða upp á (af)tengingu (media:/)
  Comment[it]=Tiene traccia delle attività dei supporti e permette di montarli o smontarli (device:/)
@@ -2831,12 +2924,7 @@ diff -urN kioslave/media/mediamanager/mediamanager.desktop kioslave/media/mediam
  Comment[km]=តាមដាន​សកម្មភាព​ព័ត៌មាន និង​អនុញ្ញាត​ឲ្យ​រៀបចំ (មិន​រៀបចំ) (media:/)
  Comment[lt]=Stebi laikmenose vykdomus veiksmus ir leidžia (iš)montuoti (media:/)
  Comment[lv]=Seko datu nesēju aktivitātēm un ļauj montēt/nomontēt tos (media:/)
--Comment[mk]=Води сметка за активностите на носачите и дозволува (од)монтирање (media:/)
-+Comment[mk]=Води сметка за активностите на носачите и дозволува (де)монтирање (media:/)
- Comment[ms]=Ikuti perkembangan aktiviti media dan benarkan untuk (nyah)lekap (media:/)
- Comment[mt]=Żomm kont ta' attivitajiet ta' mmuntar u ippermetti (un)mount (media:/)
- Comment[nb]=Holder styr på monteringsaktiviteter og lar deg (av)montere (media:/)
-@@ -101,7 +93,6 @@
+@@ -103,7 +98,6 @@
  Comment[ru]=Автоматическое подключение устройств (media:/)
  Comment[rw]=Kugumana inzira y'ibikorwa by'ibitangazamakuru no kwemerera gushyiramo(gukuramo) (ibitangazamakuru:/) 
  Comment[se]=Gozit mii dáhpáhuvvá median ja diktá du gálgat ja čadnat daid (media:/)
@@ -2844,31 +2932,24 @@ diff -urN kioslave/media/mediamanager/mediamanager.desktop kioslave/media/mediam
  Comment[sl]=Nadzoruj dejanja medija in dovilo priklop/odklop (media:/)
  Comment[sr]=Прати активност медијума и омогућава (де)монтирање (media:/)
  Comment[sr@Latn]=Prati aktivnost medijuma i omogućava (de)montiranje (media:/)
-@@ -111,7 +102,6 @@
- Comment[tr]=Ortam işlemlerini takip et ve bağlanma işlemlerine izin ver(media:/)
- Comment[tt]=Cıhazlarnıñ totaşuın/ayırıluın sizüçe närsä (media:/)
- Comment[uk]=Спостерігає за змінами серед носіїв інформації та дозволяє (роз)монтування (media:/)
--Comment[vi]=Theo dõi các hoạt động của ổ lưu trữ và cho phép lắp đặt hay gỡ bỏ chúng ở thư mục "media:/"
- Comment[zh_CN]=跟踪介质活动并允许挂载或卸载(media:/)
- Comment[zh_TW]=持續追蹤媒體活動並允許(解除)掛載 (media:/)
- ServiceTypes=KDEDModule
-@@ -120,4 +110,3 @@
+@@ -122,4 +116,3 @@
  X-KDE-FactoryName=mediamanager
  X-KDE-Kded-autoload=true
  X-KDE-Kded-load-on-demand=true
 -X-KDE-Kded-phase=1
 diff -urN kioslave/media/mediamanager/mediamanager.h kioslave/media/mediamanager/mediamanager.h
---- kioslave/media/mediamanager/mediamanager.h	Sat Jul 22 10:15:45 2006
+--- kioslave/media/mediamanager/mediamanager.h	Sun Oct  1 19:31:54 2006
 +++ kioslave/media/mediamanager/mediamanager.h	Mon Oct 10 17:04:01 2005
-@@ -28,7 +28,6 @@
+@@ -28,8 +28,6 @@
  #include "removablebackend.h"
  #include "mediadirnotify.h"
  
 -class HALBackend;
+-class FstabBackend;
  
  class MediaManager : public KDEDModule
  {
-@@ -41,12 +40,6 @@
+@@ -42,12 +40,6 @@
  k_dcop:
  	QStringList fullList();
  	QStringList properties(const QString &name);
@@ -2881,17 +2962,19 @@ diff -urN kioslave/media/mediamanager/mediamanager.h kioslave/media/mediamanager
  	QString nameForLabel(const QString &label);
  	ASYNC setUserLabel(const QString &name, const QString &label);
  
-@@ -81,7 +74,6 @@
+@@ -82,9 +74,7 @@
  	MediaList m_mediaList;
  	QValueList<BackendBase*> m_backends;
  	RemovableBackend *mp_removableBackend;
 -	HALBackend *m_halbackend;
  	MediaDirNotify m_dirNotify;
+-	FstabBackend *m_fstabbackend;
  };
  
+ #endif
 diff -urN kioslave/media/medianotifier/Makefile.in kioslave/media/medianotifier/Makefile.in
---- kioslave/media/medianotifier/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/medianotifier/Makefile.in	Mon Mar 20 14:05:54 2006
+--- kioslave/media/medianotifier/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/medianotifier/Makefile.in	Fri May 26 09:54:31 2006
 @@ -254,6 +254,7 @@
  LIBTOOL = @LIBTOOL@
  LIBUCB = @LIBUCB@
@@ -2901,9 +2984,20 @@ diff -urN kioslave/media/medianotifier/Makefile.in kioslave/media/medianotifier/
  LIBXDMCP = @LIBXDMCP@
  LIBXFT_LIB = @LIBXFT_LIB@
 diff -urN kioslave/media/medianotifier/medianotifier.cpp kioslave/media/medianotifier/medianotifier.cpp
---- kioslave/media/medianotifier/medianotifier.cpp	Sat Jul 22 10:15:42 2006
+--- kioslave/media/medianotifier/medianotifier.cpp	Sun Oct  1 19:31:53 2006
 +++ kioslave/media/medianotifier/medianotifier.cpp	Fri Mar 17 11:17:33 2006
-@@ -54,10 +54,7 @@
+@@ -48,21 +48,13 @@
+ 
+ MediaNotifier::~MediaNotifier()
+ {
+-	disconnectDCOPSignal( "kded", "mediamanager", "mediumAdded(QString, bool)",
+-	                      "onMediumChange(QString, bool)" );
+-	
+-	disconnectDCOPSignal( "kded", "mediamanager", "mediumChanged(QString, bool)",
+-	                      "onMediumChange(QString, bool)" );
+ }
+ 
+ void MediaNotifier::onMediumChange( const QString &name, bool allowNotification )
  {
  	kdDebug() << "MediaNotifier::onMediumChange( " << name << ", "
  	          << allowNotification << ")" << endl;
@@ -2915,7 +3009,7 @@ diff -urN kioslave/media/medianotifier/medianotifier.cpp kioslave/media/medianot
  // Update user activity timestamp, otherwise the notification dialog will be shown
  // in the background due to focus stealing prevention. Entering a new media can
  // be seen as a kind of user activity after all. It'd be better to update the timestamp
-@@ -98,11 +95,11 @@
+@@ -103,11 +95,11 @@
  {
  	QString mimetype = medium.mimetype();
  
@@ -2930,31 +3024,27 @@ diff -urN kioslave/media/medianotifier/medianotifier.cpp kioslave/media/medianot
  	{
  		return false;
 diff -urN kioslave/media/medianotifier/medianotifier.desktop kioslave/media/medianotifier/medianotifier.desktop
---- kioslave/media/medianotifier/medianotifier.desktop	Sat Jul 22 10:15:42 2006
-+++ kioslave/media/medianotifier/medianotifier.desktop	Fri Mar 17 11:17:33 2006
-@@ -9,7 +9,6 @@
- X-KDE-Kded-load-on-demand=false
- Name=Media Notifier Daemon
- Name[af]=Media Inkennistelling Bediener
--Name[bs]=Daemon za obavještenja o novim medijima
- Name[ca]=Dimoni notificador de suports
- Name[cs]=Démon upozorňování na média
- Name[da]=Mediebekendtgørelsesdæmon
-@@ -21,12 +20,10 @@
+--- kioslave/media/medianotifier/medianotifier.desktop	Sun Oct  1 19:31:53 2006
++++ kioslave/media/medianotifier/medianotifier.desktop	Mon May 22 20:12:42 2006
+@@ -18,12 +18,10 @@
+ Name[es]=Demonio de notificaciones de medios
+ Name[et]=Andmekandjate märguannete deemon
+ Name[eu]=Euskarrien jakinarazpen daemon-a
+-Name[fa]=شبح اخطاردهنده رسانه
  Name[fi]=Mediahuomautin
  Name[fr]=Démon de notifications des média
  Name[fy]=Medianotifikaasje-daemon
--Name[gl]=Daemon Notificador de Medios
--Name[hr]=Demon obavijesti o medijima
+ Name[gl]=Daemon Notificador de Medios
+-Name[he]=שירות הודעות מערכת
+ Name[hr]=Demon obavijesti o medijima
  Name[hu]=Lemezfigyelő szolgáltatás
  Name[is]=Miðils tilkynningarpúki
- Name[it]=Demone notifiche dispositivi
--Name[ja]=メディア 通知 デーモン
-+Name[ja]=メディア通知デーモン
- Name[km]=ដេមិន​របស់​ឧបករណ៍​ប្រាប់​ដំណឹង​មេឌៀ
- Name[lt]=Media pranešimų tarnyba
+@@ -34,12 +32,10 @@
  Name[nb]=Medievarslingsnisse
-@@ -36,20 +33,16 @@
+ Name[nds]=Medien-Narichtendämoon
+ Name[nl]=Medianotificatie-daemon
+-Name[nn]=Mediepåminningsnisse
+ Name[pl]=Usługa powiadamiania o nośnikach
  Name[pt]=Servidor de Notificação de Dispositivos
  Name[pt_BR]=Servidor de Notificação de Dispositivos
  Name[ru]=Демон уведомлений от подключаемых устройств
@@ -2962,33 +3052,32 @@ diff -urN kioslave/media/medianotifier/medianotifier.desktop kioslave/media/medi
  Name[sl]=Demon za obveščanje o nosilcih
  Name[sr]=Демон за обавештења о медијумима
  Name[sr@Latn]=Demon za obaveštenja o medijumima
- Name[sv]=Demon för mediaunderrättelser
+@@ -47,7 +43,6 @@
  Name[uk]=Даемон сповіщення про носії інформації
--Name[vi]=Trình nền Thông báo Ổ lưu trữ
+ Name[vi]=Trình nền Thông báo Ổ lưu trữ
  Name[zh_CN]=介质通知守护程序
 -Name[zh_TW]=媒體通知伺服程式
  Comment=A media plugged notifier
  Comment[af]='n Inpropbare media inkennissteller
  Comment[bg]=Мултимедиен демон за уведомяване при поставяне/включване на ново мултимедийно устройство
- Comment[bn]=নতুন মিডিয়া প্রবেশ করলে তা জানায়
--Comment[bs]=Obavještenje da je novi uređaj priključen
- Comment[ca]=Un notificador de què s'ha introduït un suport
- Comment[cs]=Upozorňování na připojená média
- Comment[da]=En opdager af at medier sættes ind
-@@ -62,11 +55,10 @@
+@@ -61,7 +56,6 @@
+ Comment[es]=Un notificador de medios empotrable
+ Comment[et]=Andmekandja ühendamisest märkuandev deemon
+ Comment[eu]=Euskarri konektatze jakinarazlea
+-Comment[fa]=یک اخطاردهنده وصل‌شده رسانه
+ Comment[fi]=Liitetyn median huomautin
  Comment[fr]=Notification de connexion de média
  Comment[fy]=Meidieling fan oankeppele media
- Comment[gl]=Un notificador de meios disponíbeis
--Comment[hr]=Priključeno obavještavanje o medijima
+@@ -70,7 +64,7 @@
  Comment[hu]=Lemezérzékelő
  Comment[is]=Tilkynnari um tengda miðla
  Comment[it]=Notifiche dei dispositivi attaccati
 -Comment[ja]=メディアの接続を通知します
-+Comment[ja]=メディア接続 notifier
++Comment[ja]=メディアの接続を通知する
  Comment[lt]=Perspėjimo apie media prijungimą priedas
  Comment[mk]=Известување за приклучен медиум
  Comment[nb]=En medievarsler som programtillegg
-@@ -78,7 +70,6 @@
+@@ -82,7 +76,6 @@
  Comment[pt]=Um notificador ligado aos dispositivos
  Comment[pt_BR]=um notificador para mídia que é espetada (plug)
  Comment[ru]=Система обработки уведомлений от подключаемых устройств
@@ -2996,16 +3085,29 @@ diff -urN kioslave/media/medianotifier/medianotifier.desktop kioslave/media/medi
  Comment[sl]=Obveščanje o vstavljenih/priklopljenih nosilcih
  Comment[sr]=Обавештавач о укљученим медијима
  Comment[sr@Latn]=Obaveštavač o uključenim medijima
-@@ -88,6 +79,5 @@
- Comment[tt]=Cıhaz totaşılğan buluı turında beldergeç
- Comment[uk]=Сповіщення про приєднання носіїв інформації
- Comment[uz]=Сақлаш ускуналар уланганида хабар берувчи
--Comment[vi]=Trình thông báo về các ổ lưu trữ đã kết nối
- Comment[zh_CN]=介质插入通知器
- Comment[zh_TW]=媒體插入通知程式
+diff -urN kioslave/media/medianotifier/notificationdialog.cpp kioslave/media/medianotifier/notificationdialog.cpp
+--- kioslave/media/medianotifier/notificationdialog.cpp	Sat Oct  7 16:23:12 2006
++++ kioslave/media/medianotifier/notificationdialog.cpp	Mon Oct 10 17:04:00 2005
+@@ -26,7 +26,6 @@
+ #include <klistbox.h>
+ #include <qlabel.h>
+ #include <qcheckbox.h>
+-#include <qpushbutton.h>
+ 
+ #include "actionlistboxitem.h"
+ #include "notificationdialogview.h"
+@@ -71,8 +70,6 @@
+ 	         this, SLOT( delayedDestruct() ) );
+ 
+ 	m_actionWatcher->startScan();
+-	QPushButton * btn = actionButton( Ok );
+-	btn->setFocus();
+ }
+ 
+ NotificationDialog::~NotificationDialog()
 diff -urN kioslave/media/mimetypes/Makefile.in kioslave/media/mimetypes/Makefile.in
---- kioslave/media/mimetypes/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/mimetypes/Makefile.in	Mon Mar 20 14:05:54 2006
+--- kioslave/media/mimetypes/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/mimetypes/Makefile.in	Fri May 26 09:54:31 2006
 @@ -211,6 +211,7 @@
  LIBTOOL = @LIBTOOL@
  LIBUCB = @LIBUCB@
@@ -3015,15 +3117,17 @@ diff -urN kioslave/media/mimetypes/Makefile.in kioslave/media/mimetypes/Makefile
  LIBXDMCP = @LIBXDMCP@
  LIBXFT_LIB = @LIBXFT_LIB@
 diff -urN kioslave/media/mimetypes/audiocd.desktop kioslave/media/mimetypes/audiocd.desktop
---- kioslave/media/mimetypes/audiocd.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/audiocd.desktop	Fri Mar 17 11:17:34 2006
-@@ -18,13 +18,11 @@
- Comment[gl]=CD de audio
- Comment[he]=תקליטורי שמע
- Comment[hi]=ऑडियो सीडी
--Comment[hr]=Glazbeni CD
- Comment[hu]=Hang-CD
- Comment[is]=Hljóðdiskur
+--- kioslave/media/mimetypes/audiocd.desktop	Mon Oct  2 12:44:33 2006
++++ kioslave/media/mimetypes/audiocd.desktop	Mon May 22 20:12:42 2006
+@@ -11,7 +11,6 @@
+ Comment[cs]=Zvukové CD
+ Comment[da]=Lyd-cd
+ Comment[el]=CD ήχου
+-Comment[fa]=دیسک فشرده صوتی
+ Comment[fi]=CD-äänilevy
+ Comment[fr]=CD audio
+ Comment[fy]=Audio-Kompaktskiif
+@@ -25,7 +24,6 @@
  Comment[it]=CD audio
  Comment[ja]=オーディオ CD
  Comment[km]=ស៊ីឌី​អូឌីយ៉ូ
@@ -3031,34 +3135,27 @@ diff -urN kioslave/media/mimetypes/audiocd.desktop kioslave/media/mimetypes/audi
  Comment[ms]=CD Audio
  Comment[nb]=Lyd-CD
  Comment[nds]=Audio-CD
-@@ -47,7 +45,6 @@
- Comment[tt]=Tawış CD
- Comment[uk]=Аудіо КД
- Comment[uz]=Аудио компакт-диск
--Comment[vi]=CD Nhạc
- Comment[zh_CN]=音频 CD
- Comment[zh_TW]=音樂 CD
- Icon=cdaudio_unmount
+@@ -33,7 +31,7 @@
+ Comment[nn]=Lyd-CD
+ Comment[pa]=ਆਡੀਓ CD
+ Comment[pl]=Płyta CD Audio
+-Comment[pt]=CD de áudio
++Comment[pt]=CD áudio
+ Comment[pt_BR]=CD de Áudio
+ Comment[ro]=CD Audio
+ Comment[ru]=Аудио CD
 diff -urN kioslave/media/mimetypes/blankcd.desktop kioslave/media/mimetypes/blankcd.desktop
---- kioslave/media/mimetypes/blankcd.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/blankcd.desktop	Fri Mar 17 11:17:34 2006
-@@ -7,7 +7,6 @@
- Comment[bg]=Празен диск
- Comment[bn]=ফাঁকা সিডি
- Comment[br]=Goullonderiñ ur CD
--Comment[bs]=Prazan CD
- Comment[ca]=CD en blanc
- Comment[cs]=Prázdné CD
- Comment[da]=Blank cd
-@@ -23,7 +22,6 @@
- Comment[gl]=CD valeiro
- Comment[he]=תקליטור ריק
- Comment[hi]=खाली सीडी
--Comment[hr]=Prazan CD
- Comment[hu]=Üres CD
- Comment[is]=Tómur CD
- Comment[it]=CD vergine
-@@ -31,7 +29,6 @@
+--- kioslave/media/mimetypes/blankcd.desktop	Mon Oct  2 12:44:33 2006
++++ kioslave/media/mimetypes/blankcd.desktop	Mon May 22 20:12:43 2006
+@@ -16,7 +16,6 @@
+ Comment[es]=CD vacío
+ Comment[et]=Tühi CD
+ Comment[eu]=CD hutsik
+-Comment[fa]=دیسک فشرده خام
+ Comment[fi]=Tyhjä CD
+ Comment[fr]=CD vierge
+ Comment[fy]=Blanke Kompaktskiif
+@@ -32,7 +31,6 @@
  Comment[km]=ស៊ីឌី​ទទេ
  Comment[lt]=Tuščias CD
  Comment[lv]=Tukšs CD
@@ -3066,7 +3163,7 @@ diff -urN kioslave/media/mimetypes/blankcd.desktop kioslave/media/mimetypes/blan
  Comment[ms]=CD Kosong
  Comment[nb]=Tom CD
  Comment[nds]=Leddige CD
-@@ -45,7 +42,6 @@
+@@ -46,7 +44,6 @@
  Comment[ru]=Чистый CD
  Comment[rw]=CD Itanditseho
  Comment[se]=Guorus CD
@@ -3074,34 +3171,18 @@ diff -urN kioslave/media/mimetypes/blankcd.desktop kioslave/media/mimetypes/blan
  Comment[sl]=Prazen CD
  Comment[sr]=Празан CD
  Comment[sr@Latn]=Prazan CD
-@@ -56,7 +52,6 @@
- Comment[tt]=Buş CD
- Comment[uk]=Чистий КД
- Comment[uz]=Бўш компакт-диск
--Comment[vi]=CD trống
- Comment[zh_CN]=空 CD
- Comment[zh_TW]=空白 CD
- Icon=cdwriter_unmount
 diff -urN kioslave/media/mimetypes/blankdvd.desktop kioslave/media/mimetypes/blankdvd.desktop
---- kioslave/media/mimetypes/blankdvd.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/blankdvd.desktop	Fri Mar 17 11:17:34 2006
-@@ -7,7 +7,6 @@
- Comment[bg]=Празен диск DVD
- Comment[bn]=ফাঁকা ডিভিডি
- Comment[br]=Goullonderiñ un DVD
--Comment[bs]=Prazan DVD
- Comment[ca]=DVD en blanc
- Comment[cs]=Prázdné DVD
- Comment[da]=Blank dvd
-@@ -23,7 +22,6 @@
- Comment[gl]=DVD valeiro
- Comment[he]=תקליטור DVD ריק
- Comment[hi]=खाली डीवीडी
--Comment[hr]=Prazan DVD
- Comment[hu]=Üres DVD
- Comment[is]=Tómur DVD
- Comment[it]=DVD vergine
-@@ -31,7 +29,6 @@
+--- kioslave/media/mimetypes/blankdvd.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/blankdvd.desktop	Mon May 22 20:12:42 2006
+@@ -16,7 +16,6 @@
+ Comment[es]=DVD vacío
+ Comment[et]=Tühi DVD
+ Comment[eu]=DVD hutsik
+-Comment[fa]=DVD خام
+ Comment[fi]=Tyhjä DVD-levy
+ Comment[fr]=DVD vierge
+ Comment[fy]=Blanke Dûbelskiif
+@@ -32,7 +31,6 @@
  Comment[km]=ឌីវីឌី​ទទេ
  Comment[lt]=Tuščias DVD
  Comment[lv]=Tukšs DVD
@@ -3109,7 +3190,7 @@ diff -urN kioslave/media/mimetypes/blankdvd.desktop kioslave/media/mimetypes/bla
  Comment[ms]=DVD Kosong
  Comment[nb]=Tom DVD
  Comment[nds]=Leddige DVD
-@@ -45,7 +42,6 @@
+@@ -46,7 +44,6 @@
  Comment[ru]=Чистый DVD
  Comment[rw]=DVD Itanditseho
  Comment[se]=Guorus DVD
@@ -3117,35 +3198,18 @@ diff -urN kioslave/media/mimetypes/blankdvd.desktop kioslave/media/mimetypes/bla
  Comment[sl]=Prazen DVD
  Comment[sr]=Празан DVD
  Comment[sr@Latn]=Prazan DVD
-@@ -56,7 +52,6 @@
- Comment[tt]=Buş DVD
- Comment[uk]=Чистий DVD
- Comment[uz]=Бўш DVD
--Comment[vi]=DVD trống
- Comment[zh_CN]=空 DVD
- Comment[zh_TW]=空白 DVD
- Icon=cdwriter_unmount
 diff -urN kioslave/media/mimetypes/camera_mounted.desktop kioslave/media/mimetypes/camera_mounted.desktop
---- kioslave/media/mimetypes/camera_mounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/camera_mounted.desktop	Thu Jan 19 18:00:58 2006
-@@ -7,7 +7,6 @@
- Comment[bg]=Монтиран фотоапарат
- Comment[bn]=মাউন্ট করা ক্যামেরা
- Comment[br]=Kamera marc'het
--Comment[bs]=Priključena kamera
- Comment[ca]=Càmara muntada
- Comment[cs]=Připojená kamera
- Comment[da]=Monteret kamera
-@@ -21,8 +20,6 @@
+--- kioslave/media/mimetypes/camera_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/camera_mounted.desktop	Mon May 22 20:12:42 2006
+@@ -16,7 +16,6 @@
+ Comment[es]=Cámara montada
+ Comment[et]=Ühendatud kaamera
+ Comment[eu]=Kamara muntatuta
+-Comment[fa]=دوربین سوارشده
+ Comment[fi]=Liitetty kamera
+ Comment[fr]=Appareil photo monté
  Comment[fy]=Oankeppele kamera
- Comment[ga]=Ceamara Feistithe
- Comment[gl]=Cámara Montada
--Comment[he]=מצלמה מחוברת
--Comment[hr]=Pristupljena kamera
- Comment[hu]=Csatlakoztatott fényképezőgép
- Comment[is]=Tengd myndavél
- Comment[it]=Macchina fotografica montata
-@@ -40,7 +37,6 @@
+@@ -41,7 +40,6 @@
  Comment[pt_BR]=Câmera montada
  Comment[ru]=Подключённая камера
  Comment[se]=Čatnon govvenapperáhtta
@@ -3153,35 +3217,18 @@ diff -urN kioslave/media/mimetypes/camera_mounted.desktop kioslave/media/mimetyp
  Comment[sl]=Priklopljen fotoaparat
  Comment[sr]=Монтирана камера
  Comment[sr@Latn]=Montirana kamera
-@@ -49,7 +45,6 @@
- Comment[tr]=Bağlı Kamera
- Comment[uk]=Приєднана камера
- Comment[uz]=Уланган фотоапарат
--Comment[vi]=Máy chụp ảnh số đã kết nối
- Comment[zh_CN]=挂载的相机
- Comment[zh_TW]=掛載的照相機
- Icon=camera_mount
 diff -urN kioslave/media/mimetypes/camera_unmounted.desktop kioslave/media/mimetypes/camera_unmounted.desktop
---- kioslave/media/mimetypes/camera_unmounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/camera_unmounted.desktop	Thu Jan 19 18:00:58 2006
-@@ -7,7 +7,6 @@
- Comment[bg]=Демонтиран фотоапарат
- Comment[bn]=আনমাউন্ট করা ক্যামেরা
- Comment[br]=DVD-ROM divarc'het
--Comment[bs]=Otkopčana kamera
- Comment[ca]=Càmera desmuntada
- Comment[cs]=Odpojená kamera
- Comment[da]=Afmonteret kamera
-@@ -21,8 +20,6 @@
+--- kioslave/media/mimetypes/camera_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/camera_unmounted.desktop	Mon May 22 20:12:42 2006
+@@ -16,7 +16,6 @@
+ Comment[es]=Cámara desmontada
+ Comment[et]=Lahutatud kaamera
+ Comment[eu]=Kamara desmuntatua
+-Comment[fa]=دوربین پیاده‌شده
+ Comment[fi]=Irrotettu kamera
+ Comment[fr]=Appareil photo non monté
  Comment[fy]=Ofkeppele kamera
- Comment[ga]=Ceamara Neamhfheistithe
- Comment[gl]=Cámara non Montada
--Comment[he]=מצלמה מנותקת
--Comment[hr]=Nepristupljena kamera
- Comment[hu]=Leválasztott fényképezőgép
- Comment[is]=Aftengd myndavél
- Comment[it]=Macchina fotografica non montata
-@@ -40,7 +37,6 @@
+@@ -41,7 +40,6 @@
  Comment[pt_BR]=Câmera desmontada
  Comment[ru]=Неподключённая камера
  Comment[se]=Gálgajuvvon govvenapperáhtta
@@ -3189,168 +3236,90 @@ diff -urN kioslave/media/mimetypes/camera_unmounted.desktop kioslave/media/mimet
  Comment[sl]=Odklopljen fotoaparat
  Comment[sr]=Демонтирана камера
  Comment[sr@Latn]=Demontirana kamera
-@@ -49,7 +45,6 @@
- Comment[tr]=Ayrılmış Kamera
- Comment[uk]=Роз'єднана камера
- Comment[uz]=Уланмаган фотоапарат
--Comment[vi]=Máy chụp ảnh số đã gỡ ra
- Comment[zh_CN]=未挂载的相机
- Comment[zh_TW]=未掛載的照相機
- Icon=camera_unmount
 diff -urN kioslave/media/mimetypes/cdrom_mounted.desktop kioslave/media/mimetypes/cdrom_mounted.desktop
---- kioslave/media/mimetypes/cdrom_mounted.desktop	Mon May 22 20:12:43 2006
-+++ kioslave/media/mimetypes/cdrom_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=CD-ROM Montado
- Comment[he]=תקליטור מחובר
- Comment[hi]=माउन्टेड सीडी-रोम
--Comment[hr]=Pristupljeni CD-ROM
-+Comment[hr]=Montirani CDROM
- Comment[hu]=Csatlakoztatott CD-ROM
- Comment[is]=Tengt geisladrif
- Comment[it]=CD-ROM montato
-@@ -68,7 +68,6 @@
- Comment[uk]=Змонтований КД
- Comment[uz]=Уланган компакт-диск
- Comment[ven]=CD-ROM yo gonyiswaho
--Comment[vi]=Ổ CD ROM đã kết nối
- Comment[wa]=Plake lazer montêye
- Comment[xh]=CD-ROM Enyusiweyo
- Comment[zh_CN]=挂载的 CD-ROM
+--- kioslave/media/mimetypes/cdrom_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/cdrom_mounted.desktop	Mon May 22 20:12:43 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=CD-ROM montado
+ Comment[et]=Ühendatud CD-ROM
+ Comment[eu]=CD-ROM muntatua
+-Comment[fa]=CD-ROM سوارشده
++Comment[fa]=CD سوار شده
+ Comment[fi]=Liitetty CD-ROM
+ Comment[fr]=CD-ROM monté
+ Comment[fy]=Oankeppele Kompaktskiif
 diff -urN kioslave/media/mimetypes/cdrom_unmounted.desktop kioslave/media/mimetypes/cdrom_unmounted.desktop
---- kioslave/media/mimetypes/cdrom_unmounted.desktop	Mon May 22 20:12:43 2006
-+++ kioslave/media/mimetypes/cdrom_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=CD-ROM Non Montado
- Comment[he]=תקליטור מנותק
- Comment[hi]=अनमाउन्टेड सीडी-रोम
--Comment[hr]=Nepristupljeni CD-ROM
-+Comment[hr]=Nemontirani CDROM
- Comment[hsb]=Njemontowany CDnik
- Comment[hu]=Leválasztott CD-ROM
- Comment[is]=Aftengt geisladrif
-@@ -69,7 +69,7 @@
- Comment[uk]=Демонтований КД
- Comment[uz]=Уланмаган компакт-диск
- Comment[ven]=CD-ROM i songo gonyiswaho
--Comment[vi]=Ổ CD-ROM đã gỡ ra
-+Comment[vi]=CD-ROM được gỡ
- Comment[wa]=Plake lazer dismontêye
- Comment[xh]=CD-ROM Enganyuswanga
- Comment[zh_CN]=未挂载的 CD-ROM
+--- kioslave/media/mimetypes/cdrom_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/cdrom_unmounted.desktop	Mon May 22 20:12:43 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=CD-ROM desmontado
+ Comment[et]=Lahutatud CD-ROM
+ Comment[eu]=CD-ROM desmuntatua
+-Comment[fa]=CD-ROM پیاده‌شده
++Comment[fa]= CD پیاده شده
+ Comment[fi]=Irrotettu CD-ROM
+ Comment[fr]=CD-ROM non monté
+ Comment[fy]=Ofkeppele Kompaktskiif
 diff -urN kioslave/media/mimetypes/cdwriter_mounted.desktop kioslave/media/mimetypes/cdwriter_mounted.desktop
---- kioslave/media/mimetypes/cdwriter_mounted.desktop	Mon May 22 20:12:42 2006
-+++ kioslave/media/mimetypes/cdwriter_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Grabadora de CD Montada
- Comment[he]=צורב מחובר
- Comment[hi]=माउन्टेड सीडी-राइटर
--Comment[hr]=Pristupljeni CD snimač
-+Comment[hr]=Montirani CD-pisač
- Comment[hsb]=Montowany CD-palak
- Comment[hu]=Csatlakoztatott CD-író
- Comment[is]=Tengdur geislaskrifari
-@@ -69,7 +69,7 @@
- Comment[uk]=Змонтований гравер КД
- Comment[uz]=Уланган компакт-диск ёзувчи
- Comment[ven]=Tshinwali tsha CD tsho gonyiswaho
--Comment[vi]=Ổ ghi CD đã kết nối
-+Comment[vi]=Ổ ghi CD được gắn kết
- Comment[wa]=Plake lazer sol broûleu montêye
- Comment[xh]=CD Writer Enyusiweyo
- Comment[zh_CN]=挂载的刻录机
+--- kioslave/media/mimetypes/cdwriter_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/cdwriter_mounted.desktop	Mon May 22 20:12:42 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Escritor de CDs montado
+ Comment[et]=Ühendatud CD kirjutaja
+ Comment[eu]=CD erretzaile muntatua
+-Comment[fa]=CD Writer سوارشده
++Comment[fa]=CD Writer سوار شده
+ Comment[fi]=Liitetty CD-kirjoitin
+ Comment[fr]=Graveur de CD monté
+ Comment[fy]=Oankeppele Kompaktskiif
 diff -urN kioslave/media/mimetypes/cdwriter_unmounted.desktop kioslave/media/mimetypes/cdwriter_unmounted.desktop
---- kioslave/media/mimetypes/cdwriter_unmounted.desktop	Mon May 22 20:12:42 2006
-+++ kioslave/media/mimetypes/cdwriter_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Grabadora de CD Non Montada
- Comment[he]=צורב מנותק
- Comment[hi]=अनमाउन्टेड सीडी-राइटर
--Comment[hr]=Nepristupljeni CD snimač
-+Comment[hr]=Nemontirani CD-pisač
- Comment[hsb]=Njemontowany CD-palak
- Comment[hu]=Leválasztott CD-író
- Comment[is]=Aftengdur geislaskrifari
-@@ -69,7 +69,7 @@
- Comment[uk]=Демонтований гравер КД
- Comment[uz]=Уланмаган компакт-диск ёзувчи
- Comment[ven]=Tshinwali tsha CD tshi songo gonyiswaho
--Comment[vi]=Ổ ghi CD đã gỡ ra
-+Comment[vi]=Ổ ghi CD được gỡ
- Comment[wa]=Plake lazer sol broûleu dismontêye
- Comment[xh]=CD Writer Enganyuswanga
- Comment[zh_CN]=未挂载的刻录机
+--- kioslave/media/mimetypes/cdwriter_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/cdwriter_unmounted.desktop	Mon May 22 20:12:42 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Escritor de CDs desmontado
+ Comment[et]=Lahutatud CD kirjutaja
+ Comment[eu]=CD erretzaile desmuntatua
+-Comment[fa]=CD Writer پیاده‌شده
++Comment[fa]=CD Writer پیاده شده
+ Comment[fi]=Irrotettu CD-kirjoitin
+ Comment[fr]=Graveur de CD non monté
+ Comment[fy]=Ofkeppele Kompaktskiif
 diff -urN kioslave/media/mimetypes/dvd_mounted.desktop kioslave/media/mimetypes/dvd_mounted.desktop
---- kioslave/media/mimetypes/dvd_mounted.desktop	Mon May 22 20:12:42 2006
-+++ kioslave/media/mimetypes/dvd_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=DVD Montado
- Comment[he]=כונן DVD מחובר
- Comment[hi]=माउन्टेड डीवीडी
--Comment[hr]=Pristupljeni DVD
-+Comment[hr]=Montirani DVD
- Comment[hu]=Csatlakoztatott DVD
- Comment[is]=Tengt DVD
- Comment[it]=DVD montato
-@@ -66,7 +66,7 @@
- Comment[tt]=Totaşqan DVD
- Comment[uk]=Змонтований DVD
- Comment[uz]=Уланган DVD
--Comment[vi]=DVD đã kết nối
-+Comment[vi]=DVD được gắn kết
- Comment[wa]=Plake lazer DVD montêye
- Comment[zh_CN]=挂载的 DVD
- Comment[zh_TW]=已掛載的 DVD-ROM
+--- kioslave/media/mimetypes/dvd_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/dvd_mounted.desktop	Mon May 22 20:12:42 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=DVD montado
+ Comment[et]=Ühendatud DVD
+ Comment[eu]=DVD muntatua
+-Comment[fa]=DVD سوارشده
++Comment[fa]=DVD سوار شده
+ Comment[fi]=Liitetty DVD-levy
+ Comment[fr]=DVD-ROM monté(s)
+ Comment[fy]=Oankeppele Dûbelskiif
 diff -urN kioslave/media/mimetypes/dvd_unmounted.desktop kioslave/media/mimetypes/dvd_unmounted.desktop
---- kioslave/media/mimetypes/dvd_unmounted.desktop	Tue May 23 13:33:34 2006
-+++ kioslave/media/mimetypes/dvd_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=DVD non Montado
- Comment[he]=כונן DVD מנותק
- Comment[hi]=अनमाउन्टेड डीवीडी
--Comment[hr]=Nepristupljeni DVD
-+Comment[hr]=Nemontirani DVD
- Comment[hu]=Leválasztott DVD
- Comment[is]=Aftengt DVD
- Comment[it]=DVD smontato
-@@ -38,7 +38,7 @@
- Comment[lo]=ຫັງກາລີ
- Comment[lt]=Išmontuotas DVD
- Comment[lv]=Nomontēts DVD
--Comment[mk]=Одмонтиран DVD
-+Comment[mk]=Демонтиран DVD
- Comment[mn]=Салгаатай DVD
- Comment[ms]=DVD Nyahlekap
- Comment[mt]=DVD mhux immontat
-@@ -66,7 +66,7 @@
- Comment[tt]=Totaşmağan DVD
- Comment[uk]=Демонтований DVD
- Comment[uz]=Уланмаган DVD
--Comment[vi]=DVD đã gỡ ra
-+Comment[vi]=DVD được gỡ
- Comment[wa]=Plake lazer DVD dismontêye
- Comment[zh_CN]=未挂载的 DVD
- Comment[zh_TW]=未掛載的 DVD-ROM
+--- kioslave/media/mimetypes/dvd_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/dvd_unmounted.desktop	Tue May 23 13:33:34 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=DVD desmontado
+ Comment[et]=Lahutatud DVD
+ Comment[eu]=DVD desmuntatua
+-Comment[fa]=DVD پیاده‌شده
++Comment[fa]=DVD پیاده شده
+ Comment[fi]=Irrotettu DVD-levy
+ Comment[fr]=DVD-ROM non monté(s)
+ Comment[fy]=Ofkeppele Dûbelskiif
 diff -urN kioslave/media/mimetypes/dvdvideo.desktop kioslave/media/mimetypes/dvdvideo.desktop
---- kioslave/media/mimetypes/dvdvideo.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/dvdvideo.desktop	Fri Mar 17 11:17:34 2006
-@@ -7,7 +7,6 @@
- Comment[bg]=Видео диск DVD
- Comment[bn]=ডিভিডি ভিডিও ডিস্ক
- Comment[br]=Pladenn DVD Video
--Comment[bs]=DVD video disk
- Comment[ca]=Vídeo disc DVD
- Comment[cs]=DVD video
- Comment[da]=Dvd video-disk
-@@ -23,7 +22,6 @@
- Comment[gl]=DVD de vídeo
- Comment[he]=תקליטור וידאו של DVD
- Comment[hi]=डीवीडी वीडियो डिस्क
--Comment[hr]=DVD video disk
- Comment[hu]=DVD-videolemez
- Comment[is]=DVD vídeódiskur
- Comment[it]=Disco video DVD
-@@ -31,7 +29,6 @@
+--- kioslave/media/mimetypes/dvdvideo.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/dvdvideo.desktop	Mon May 22 20:12:43 2006
+@@ -16,7 +16,6 @@
+ Comment[es]=Disco de video DVD
+ Comment[et]=DVD videoplaat
+ Comment[eu]=DVD bideo diska
+-Comment[fa]=دیسک ویدئویی DVD
+ Comment[fi]=DVD-videolevy
+ Comment[fr]=DVD vidéo
+ Comment[fy]=Dûbelskiif Fideoskiif
+@@ -32,7 +31,6 @@
  Comment[km]=ថាស​វីដេអូ ឌីវីឌី
  Comment[lt]=DVD video diskas
  Comment[lv]=DVD Video Disks
@@ -3358,7 +3327,14 @@ diff -urN kioslave/media/mimetypes/dvdvideo.desktop kioslave/media/mimetypes/dvd
  Comment[ms]=Cakera Video DVD
  Comment[nb]=DVD-videoplate
  Comment[nds]=DVD-Videodisk
-@@ -45,7 +42,6 @@
+@@ -40,13 +38,12 @@
+ Comment[nn]=DVD-videoplate
+ Comment[pa]=DVD ਵੀਡਿਓ ਡਿਸਕ
+ Comment[pl]=Płyta DVD Video
+-Comment[pt]=Disco DVD de Vídeo
++Comment[pt]=Disco DVD Vídeo
+ Comment[pt_BR]=DVD de vídeo
+ Comment[ro]=Disc video DVD
  Comment[ru]=DVD с видео
  Comment[rw]=Disiki Videwo DVD 
  Comment[se]=DVD-videoskearru
@@ -3366,140 +3342,73 @@ diff -urN kioslave/media/mimetypes/dvdvideo.desktop kioslave/media/mimetypes/dvd
  Comment[sl]=DVD Video disk
  Comment[sr]=DVD видео диск
  Comment[sr@Latn]=DVD video disk
-@@ -56,9 +52,7 @@
- Comment[tr]=DVD Vidyo Diski
- Comment[uk]=Виідео диск DVD
- Comment[uz]=DVD видео-диск
--Comment[vi]=Đĩa Video DVD
- Comment[zh_CN]=DVD 影碟
- Comment[zh_TW]=DVD 視訊光碟
- Icon=dvd_unmount
- 
--X-KDE-IsAlso=inode/directory
 diff -urN kioslave/media/mimetypes/floppy5_mounted.desktop kioslave/media/mimetypes/floppy5_mounted.desktop
---- kioslave/media/mimetypes/floppy5_mounted.desktop	Mon May 22 20:12:42 2006
-+++ kioslave/media/mimetypes/floppy5_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Disquete 5¼" Montado
- Comment[he]=תקליטון "¼5 מחובר
- Comment[hi]=माउन्टेड 5¼" फ़्लॉपी
--Comment[hr]=Pristupljena 5¼" disketa
-+Comment[hr]=Montirana 5¼" disketa
- Comment[hu]=Csatlakoztatott 5¼"-es floppy
- Comment[is]=Tengdur 5¼" disklingur
- Comment[it]=Dischetto da 5¼" montato
-@@ -68,7 +68,7 @@
- Comment[uk]=Змонтований флопі 5¼"
- Comment[uz]=Уланган 5¼"дискет
- Comment[ven]=5¼" Floppy yo gonyiswaho
--Comment[vi]=Đĩa mềm 5¼" đã kết nối
-+Comment[vi]=Đĩa mềm 5¼"được gỡ
- Comment[wa]=Plakete 5" ¼ montêye
- Comment[xh]=Elayishiweyo 5¼" Floppy
- Comment[zh_CN]=挂载的 5.25 英寸软驱
+--- kioslave/media/mimetypes/floppy5_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/floppy5_mounted.desktop	Mon May 22 20:12:42 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Disquete 5¼" montado
+ Comment[et]=Ühendatud 5¼" flopi
+ Comment[eu]=5¼"ko diskete muntatua
+-Comment[fa]=فلاپی 5¼" سوارشده
++Comment[fa]=فلاپی 5¼"سوار شده
+ Comment[fi]=Liitetty 5¼"-levyke
+ Comment[fr]=Disquette 5¼" montée
+ Comment[fy]=Oankeppele 5¼" Skiif
 diff -urN kioslave/media/mimetypes/floppy5_unmounted.desktop kioslave/media/mimetypes/floppy5_unmounted.desktop
---- kioslave/media/mimetypes/floppy5_unmounted.desktop	Tue May 23 13:33:35 2006
-+++ kioslave/media/mimetypes/floppy5_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Disquete 5¼" Non Montado
- Comment[he]=תקליטון "¼5 מנותק
- Comment[hi]=अनमाउन्टेड 5¼" फ़्लॉपी
--Comment[hr]=Nepristupljena 5¼" disketa
-+Comment[hr]=Nemontirana 5¼" disketa
- Comment[hu]=Leválasztott 5¼"-es floppy
- Comment[is]=Aftengdur 5¼" disklingur
- Comment[it]=Dischetto da 5¼" non montato
-@@ -38,7 +38,7 @@
- Comment[lo]=ຫັງກາລີ
- Comment[lt]=Išmontuotas 5¼" lankstus diskelis
- Comment[lv]=Nomontēta 5¼" diskete
--Comment[mk]=Одмонтирана 5¼" дискета
-+Comment[mk]=Демонтирана 5¼" дискета
- Comment[mn]=Салгагдсан 5¼"-Уян диск
- Comment[ms]=Liut 5¼" Terlekap
- Comment[mt]=Flopi 5¼" mhux immontat
-@@ -68,7 +68,7 @@
- Comment[uk]=Демонтований флопі 5¼"
- Comment[uz]=Уланмаган 5¼"дискет
- Comment[ven]=5¼" Floppy i songo gonyiswaho
--Comment[vi]=Đĩa mềm 5¼" đã gỡ ra
-+Comment[vi]=Đĩa mềm 5¼" được gỡ
- Comment[wa]=Plakete 5" ¼ dismontêye
- Comment[xh]=Enganyuswanga 5¼" Floppy
- Comment[zh_CN]=未挂载的 5.25 英寸软驱
+--- kioslave/media/mimetypes/floppy5_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/floppy5_unmounted.desktop	Tue May 23 13:33:35 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Disquete 5¼" desmontado
+ Comment[et]=Lahutatud 5¼" flopi
+ Comment[eu]=5¼"ko diskete desmuntatua
+-Comment[fa]=فلاپی 5¼" پیاده‌شده
++Comment[fa]=فلاپی 5¼" پیاده شده
+ Comment[fi]=Irrotettu 5¼"-levyke
+ Comment[fr]=Disquette 5¼" non montée
+ Comment[fy]=Ofkeppele 5¼" Skiif
 diff -urN kioslave/media/mimetypes/floppy_mounted.desktop kioslave/media/mimetypes/floppy_mounted.desktop
---- kioslave/media/mimetypes/floppy_mounted.desktop	Mon May 22 20:12:43 2006
-+++ kioslave/media/mimetypes/floppy_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Disquete Montado
- Comment[he]=תקליטון מחובר
- Comment[hi]=माउन्टेड फ़्लॉपी
--Comment[hr]=Pristupljena disketa
-+Comment[hr]=Montirana disketa
- Comment[hu]=Csatlakoztatott floppy
- Comment[is]=Tengdur disklingur
- Comment[it]=Dischetto montato
-@@ -68,7 +68,7 @@
- Comment[uk]=Змонтований флопі
- Comment[uz]=Уланган дискет
- Comment[ven]=Floppy yo gonyiswaho
--Comment[vi]=Đĩa mềm đã kết nối
-+Comment[vi]=Đĩa mềm được gắn kết
- Comment[wa]=Plakete montêye
- Comment[xh]=Floppy Enyusiweyo
- Comment[zh_CN]=挂载的软驱
+--- kioslave/media/mimetypes/floppy_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/floppy_mounted.desktop	Mon May 22 20:12:43 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Disquete montado
+ Comment[et]=Ühendatud flopi
+ Comment[eu]=Diskete muntatua
+-Comment[fa]=فلاپی سوارشده
++Comment[fa]=فلاپی سوار شده
+ Comment[fi]=Liitetty levyke
+ Comment[fr]=Disquette montée
+ Comment[fy]=Oankeppele Skiif
 diff -urN kioslave/media/mimetypes/floppy_unmounted.desktop kioslave/media/mimetypes/floppy_unmounted.desktop
---- kioslave/media/mimetypes/floppy_unmounted.desktop	Tue May 23 13:33:34 2006
-+++ kioslave/media/mimetypes/floppy_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Disquete non Montado
- Comment[he]=תקליטון מנותק
- Comment[hi]=अनमाउन्टेड फ़्लॉपी
--Comment[hr]=Nepristupljena disketa
-+Comment[hr]=Nemontirana disketa
- Comment[hu]=Leválasztott floppy
- Comment[is]=Aftengdur disklingur
- Comment[it]=Dischetto non montato
-@@ -38,7 +38,7 @@
- Comment[lo]=ຫັງກາລີ
- Comment[lt]=Išmontuotas lankstus diskelis
- Comment[lv]=Nomontēta diskete
--Comment[mk]=Одмонтирана дискета
-+Comment[mk]=Демонтирана дискета
- Comment[mn]=Салгагдсан уян дискүүд
- Comment[ms]=Liut Nyahlekap
- Comment[mt]=Flopi mhux immontat
-@@ -68,7 +68,7 @@
- Comment[uk]=Демонтований флопі
- Comment[uz]=Уланмаган дискет
- Comment[ven]=Floppy i songo gonyiswaho
--Comment[vi]=Đĩa mềm đã gỡ ra
-+Comment[vi]=Đĩa mềm được gỡ
- Comment[wa]=Plakete dismontêye
- Comment[xh]=Floppy Enganyuswanga
- Comment[zh_CN]=未挂载的软驱
+--- kioslave/media/mimetypes/floppy_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/floppy_unmounted.desktop	Tue May 23 13:33:34 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Disquete desmontado
+ Comment[et]=Lahutatud flopi
+ Comment[eu]=Diskete desmuntatua
+-Comment[fa]=فلاپی پیاده‌شده
++Comment[fa]=فلاپی پیاده شده
+ Comment[fi]=Irrotettu levyke
+ Comment[fr]=Disquette non montée
+ Comment[fy]=Ofkeppele Skiif
 diff -urN kioslave/media/mimetypes/gphoto2camera.desktop kioslave/media/mimetypes/gphoto2camera.desktop
---- kioslave/media/mimetypes/gphoto2camera.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/gphoto2camera.desktop	Thu Jan 19 18:00:58 2006
-@@ -8,7 +8,6 @@
- Comment[bg]=Фотоапарат
- Comment[bn]=ক্যামেরা
- Comment[br]=Kamera
--Comment[bs]=Kamera
- Comment[ca]=Càmara
- Comment[cs]=Kamera
- Comment[da]=Kamera
-@@ -25,8 +24,7 @@
- Comment[gl]=Cámara
- Comment[he]=מצלמה
- Comment[hi]=कैमरा
--Comment[hr]=Kamera
--Comment[hu]=Fényképezőgép
-+Comment[hu]=Kamera
- Comment[is]=Myndavél
- Comment[it]=Macchina fotografica
- Comment[ja]=カメラ
-@@ -46,7 +44,6 @@
+--- kioslave/media/mimetypes/gphoto2camera.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/gphoto2camera.desktop	Mon May 22 20:12:43 2006
+@@ -18,7 +18,6 @@
+ Comment[es]=Cámara
+ Comment[et]=Kaamera
+ Comment[eu]=Kamara
+-Comment[fa]=دوربین
+ Comment[fi]=Kamera
+ Comment[fr]=Nouvel appareil photo
+ Comment[fy]=Kamera
+@@ -41,13 +40,12 @@
+ Comment[nn]=Kamera
+ Comment[pa]=ਕੈਮਰਾ
+ Comment[pl]=Aparat fotograficzny
+-Comment[pt]=Máquina fotográfica
++Comment[pt]=Máquina Fotográfica
+ Comment[pt_BR]=Câmera
+ Comment[ro]=Aparat foto
  Comment[ru]=Камера
  Comment[rw]=Kamera
  Comment[se]=Govvanaperáhtta
@@ -3507,34 +3416,25 @@ diff -urN kioslave/media/mimetypes/gphoto2camera.desktop kioslave/media/mimetype
  Comment[sl]=Fotoaparat
  Comment[sr]=Камера
  Comment[sr@Latn]=Kamera
-@@ -58,7 +55,6 @@
- Comment[tt]=Kamera
- Comment[uk]=Камера
- Comment[uz]=Фотоапарат
--Comment[vi]=Máy chụp ảnh số
- Comment[zh_CN]=相机
- Comment[zh_TW]=相機
- Icon=camera_unmount
 diff -urN kioslave/media/mimetypes/hdd_mounted.desktop kioslave/media/mimetypes/hdd_mounted.desktop
---- kioslave/media/mimetypes/hdd_mounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/hdd_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -9,7 +9,6 @@
- Comment[bg]=Монтиран дял на твърд диск
- Comment[bn]=মাউন্ট করা হার্ড ডিস্ক ভলিউম
- Comment[br]=Pladenn marc'het
--Comment[bs]=Montirana hard disk particija
- Comment[ca]=Disc dur muntat
- Comment[cs]=Připojený oddíl pevného disku
- Comment[da]=Monteret harddisk-volumen
-@@ -26,7 +25,6 @@
- Comment[gl]=Partizón do Disco Duro Montada
- Comment[he]=מחיצת כונן קשיח מחוברת
- Comment[hi]=माउन्टेड हार्ड डिस्क वॉल्यूम
--Comment[hr]=Pristupljeni volumen tvrdog diska
- Comment[hu]=Csatlakoztatott merevlemezes partíció
- Comment[is]=Tengd disksneið
- Comment[it]=Volume disco rigido montato
-@@ -49,7 +47,6 @@
+--- kioslave/media/mimetypes/hdd_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/hdd_mounted.desktop	Mon May 22 20:12:43 2006
+@@ -19,7 +19,6 @@
+ Comment[es]=Volumen de disco duro montado
+ Comment[et]=Ühendatud kõvaketta partitsioon
+ Comment[eu]=Diska gogorraren zatiketa muntatua
+-Comment[fa]=حجم دیسک سخت سوارشده
+ Comment[fi]=Liitetty kiintoleyosio
+ Comment[fr]=Partition de disque dur montée
+ Comment[fy]=Oankeppele Fêsteskiif folume
+@@ -44,13 +43,12 @@
+ Comment[nn]=Montert harddiskvolum
+ Comment[pa]=ਮਾਊਟ ਕੀਤਾ ਹਾਰਡ ਡਿਸਕ ਭਾਗ
+ Comment[pl]=Zamontowana partycja dysku twardego
+-Comment[pt]=Volume de disco rígido montado
++Comment[pt]=Volume de Disco Rígido Montado
+ Comment[pt_BR]=Volume do HD Montado
+ Comment[ro]=Volum de hard disc montat
  Comment[ru]=Смонтированный раздел жёсткого диска
  Comment[rw]=Ububiko Disiki Bwashyizwemo
  Comment[se]=Čatnon garraskearrooassi
@@ -3542,34 +3442,25 @@ diff -urN kioslave/media/mimetypes/hdd_mounted.desktop kioslave/media/mimetypes/
  Comment[sl]=Priklopljen pogon trdega diska
  Comment[sr]=Монтирана партиција хард диска
  Comment[sr@Latn]=Montirana particija hard diska
-@@ -60,7 +57,6 @@
- Comment[tt]=Totaşqan Qatı Disk Töpläme
- Comment[uk]=Змонтований розділ жорсткого диску
- Comment[uz]=Қаттиқ дискнинг уланган қисми
--Comment[vi]=Các Phân vùng Ổ cứng đã kết nối
- Comment[zh_CN]=挂载的硬盘卷
- Comment[zh_TW]=已掛載的硬碟分割區
- Patterns=
 diff -urN kioslave/media/mimetypes/hdd_unmounted.desktop kioslave/media/mimetypes/hdd_unmounted.desktop
---- kioslave/media/mimetypes/hdd_unmounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/hdd_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -9,7 +9,6 @@
- Comment[bg]=Демонтиран дял на твърд диск
- Comment[bn]=আনমাউন্ট করা হার্ড ডিস্ক ভলিউম
- Comment[br]=Pladenn divarc'het
--Comment[bs]=Demontirana hard disk particija
- Comment[ca]=Disc dur desmuntat
- Comment[cs]=Odpojený oddíl pevného disku
- Comment[da]=Afmonteret harddisk-volumen
-@@ -26,7 +25,6 @@
- Comment[gl]=Partizón do Disco Duro Non Montada
- Comment[he]=מחיצת כונן קשיח מנותקת
- Comment[hi]=अनमाउन्टेड हार्ड डिस्क वॉल्यूम
--Comment[hr]=Nepristupljeni volumen tvrdog diska
- Comment[hu]=Leválasztott merevlemezes partíció
- Comment[is]=Aftengd disksneið
- Comment[it]=Volume disco rigido non montato
-@@ -49,7 +47,6 @@
+--- kioslave/media/mimetypes/hdd_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/hdd_unmounted.desktop	Mon May 22 20:12:43 2006
+@@ -19,7 +19,6 @@
+ Comment[es]=Volumen de disco duro desmontado
+ Comment[et]=Lahutatud kõvaketta partitsioon
+ Comment[eu]=Diska gogorraren zatiketa desmuntatua
+-Comment[fa]=حجم دیسک سخت پیاده شده
+ Comment[fi]=Irrotettu kiintolevyosio
+ Comment[fr]=Partition de disque dur non montée
+ Comment[fy]=Ofkeppele Fêsteskiif folume
+@@ -44,13 +43,12 @@
+ Comment[nn]=Umontert harddiskvolum
+ Comment[pa]=ਅਨਮਾਊਟ ਕੀਤੀ ਹਾਰਡ ਡਿਸਕ ਭਾਗ
+ Comment[pl]=Odmontowana partycja dysku twardego
+-Comment[pt]=Volume de disco rígido desmontado
++Comment[pt]=Volume de Disco Rígido Desmontado
+ Comment[pt_BR]=Volume do HD Desmontado
+ Comment[ro]=Volum de hard disc nemontat
  Comment[ru]=Отмонтированный раздел жёсткого диска
  Comment[rw]=Ububiko Disiki Bwakuwemo 
  Comment[se]=Gálgajuvvon garraskearrooassi
@@ -3577,48 +3468,25 @@ diff -urN kioslave/media/mimetypes/hdd_unmounted.desktop kioslave/media/mimetype
  Comment[sl]=Odklopljen pogon trdega diska
  Comment[sr]=Демонтирана партиција хард диска
  Comment[sr@Latn]=Demontirana particija hard diska
-@@ -60,7 +57,6 @@
- Comment[tt]=Totaşmağan Qatı Disk Töpläme
- Comment[uk]=Демонтований розділ жорсткого диску
- Comment[uz]=Қаттиқ дискнинг уланмаган қисми
--Comment[vi]=Các Phân vùng Ổ cứng đã gỡ ra
- Comment[zh_CN]=未挂载的硬盘卷
- Comment[zh_TW]=未掛載的硬碟分割區
- Patterns=
 diff -urN kioslave/media/mimetypes/nfs_mounted.desktop kioslave/media/mimetypes/nfs_mounted.desktop
---- kioslave/media/mimetypes/nfs_mounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/nfs_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -9,7 +9,6 @@
- Comment[bg]=Монтиран ресурс NFS
- Comment[bn]=মাউন্ট করা এন-এফ-এস শেয়ার
- Comment[br]=Rennad NFS marc'het
--Comment[bs]=Montiran NFS resurs
- Comment[ca]=Recurs NFS muntat
- Comment[cs]=Připojený zdroj NFS
- Comment[da]=Monteret NFS-share
-@@ -26,7 +25,6 @@
- Comment[gl]=Compartizón NFS Montada
- Comment[he]=משאב NFS מחובר
- Comment[hi]=माउन्टेड एनएफ़एस साझा
--Comment[hr]=Pristupljeno NFS dijeljenje
- Comment[hu]=Csatlakoztatott NFS-megosztás
- Comment[is]=Tengd NFS auðlind
- Comment[it]=Risorsa NFS montata
-@@ -34,11 +32,11 @@
- Comment[km]=NFS Share បាន​រៀបចំ
- Comment[lt]=Sumontuotas NFS bendro naudojimo resursas
- Comment[lv]=Piemontēta NFS šāre
--Comment[mk]=Монтиран NFS-ресурс
-+Comment[mk]=Монтиран NFS ресурс
- Comment[ms]=Perkongsian NFS Terlekap
- Comment[mt]=Riżors NFS immuntat
- Comment[nb]=Montert NFS-ressurs
--Comment[nds]=Inhangt NFS-Freegaav
-+Comment[nds]=Inhangt NFS-Ressource
- Comment[nl]=Aangekoppelde NFS-gegevensbron
+--- kioslave/media/mimetypes/nfs_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/nfs_mounted.desktop	Tue May 23 13:33:34 2006
+@@ -19,7 +19,6 @@
+ Comment[es]=Recurso NFS montado
+ Comment[et]=Ühendatud NFS ressurss
+ Comment[eu]=NFS baliabide muntatua
+-Comment[fa]=مشترک NFS سوارشده
+ Comment[fi]=Liitetty NFS-jako
+ Comment[fr]=Ressource NFS montée
+ Comment[fy]=Oankeppele NFS-boarne
+@@ -44,13 +43,12 @@
  Comment[nn]=Montert delt NFS-ressurs
  Comment[pa]=ਮਾਊਟ ਕੀਤੀ NFS ਸਾਂਝ
-@@ -49,7 +47,6 @@
+ Comment[pl]=Zamontowany system plików NFS
+-Comment[pt]=Partilha de NFS montada
++Comment[pt]=Partilha de NFS Montada
+ Comment[pt_BR]=Volume NFS Montado
+ Comment[ro]=Partajare NFS montată
  Comment[ru]=Смонтированный ресурс NFS
  Comment[rw]=Umugabane NFS Washyizwemo
  Comment[se]=Čatnon NFS-resursa
@@ -3626,48 +3494,25 @@ diff -urN kioslave/media/mimetypes/nfs_mounted.desktop kioslave/media/mimetypes/
  Comment[sl]=Priklopljen vir NFS
  Comment[sr]=Монтирано NFS дељење
  Comment[sr@Latn]=Montirano NFS deljenje
-@@ -60,7 +57,6 @@
- Comment[tt]=Totaşqan NFS Urtağı
- Comment[uk]=Змонтований ресурс NFS
- Comment[uz]=Уланган NFS манба
--Comment[vi]=Chia sẻ NFS đã kết nối
- Comment[zh_CN]=挂载的 NFS 共享
- Comment[zh_TW]=已掛載的 NFS 資源
- Patterns=
 diff -urN kioslave/media/mimetypes/nfs_unmounted.desktop kioslave/media/mimetypes/nfs_unmounted.desktop
---- kioslave/media/mimetypes/nfs_unmounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/nfs_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -9,7 +9,6 @@
- Comment[bg]=Демонтиран ресурс NFS
- Comment[bn]=আনমাউন্ট করা এন-এফ-এস শেয়ার
- Comment[br]=Rennad NFS divarc'het
--Comment[bs]=Demontiran NFS resurs
- Comment[ca]=Recurs NFS desmuntat
- Comment[cs]=Odpojený zdroj NFS
- Comment[da]=Afmonteret NFS-share
-@@ -26,7 +25,6 @@
- Comment[gl]=Compartizón NFS non Montada
- Comment[he]=משאב NFS מנותק
- Comment[hi]=अनमाउन्टेड एनएफ़एस साझा
--Comment[hr]=Nepristupljeno NFS dijeljenje
- Comment[hu]=Leválasztott NFS-megosztás
- Comment[is]=Aftengd NFS auðlind
- Comment[it]=Risorsa NFS non montata
-@@ -34,11 +32,11 @@
- Comment[km]=NFS Share មិន​បាន​រៀបចំ
- Comment[lt]=Išmontuotas NFS bendro naudojimo resursas
- Comment[lv]=Nomontēta NFS šāre
--Comment[mk]=Одмонтиран NFS-ресурс
-+Comment[mk]=Одмонтиран NFS ресурс
- Comment[ms]=Perkongsian NFS Nyahlekap
- Comment[mt]=Riżors NFS mhux immuntat
- Comment[nb]=Avmontert NFS-ressurs
--Comment[nds]=Afhangt NFS-Freegaav
-+Comment[nds]=Afhangt NFS-Ressource
- Comment[nl]=Afgekoppelde NFS-gegevensbron
+--- kioslave/media/mimetypes/nfs_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/nfs_unmounted.desktop	Tue May 23 13:33:35 2006
+@@ -19,7 +19,6 @@
+ Comment[es]=Recurso NFS desmontado
+ Comment[et]=Lahutatud NFS ressurss
+ Comment[eu]=NFS baliabide desmuntatua
+-Comment[fa]=مشترک NFS پیاده شده
+ Comment[fi]=Irrotettu NFS-jako
+ Comment[fr]=Ressource NFS non montée
+ Comment[fy]=Oankeppele NFS-boarne
+@@ -44,13 +43,12 @@
  Comment[nn]=Umontert delt NFS-ressurs
  Comment[pa]=ਅਨਮਾਊਟ ਕੀਤੀ NFS ਸਾਂਝ
-@@ -49,7 +47,6 @@
+ Comment[pl]=Odmontowany system plików NFS
+-Comment[pt]=Partilha de NFS desmontada
++Comment[pt]=Partilha de NFS Desmontada
+ Comment[pt_BR]=Volume NFS Desmontado
+ Comment[ro]=Partajare NFS nemontată
  Comment[ru]=Отмонтированный ресурс NFS
  Comment[rw]=Umugabane NFS Wakuwemo
  Comment[se]=Gálgajuvvon NFS-resursa
@@ -3675,34 +3520,25 @@ diff -urN kioslave/media/mimetypes/nfs_unmounted.desktop kioslave/media/mimetype
  Comment[sl]=Odklopljen vir NFS
  Comment[sr]=Демонтирано NFS дељење
  Comment[sr@Latn]=Demontirano NFS deljenje
-@@ -60,7 +57,6 @@
- Comment[tt]=Totaşmağan NFS Urtağı
- Comment[uk]=Демонтований ресурс NFS
- Comment[uz]=Уланмаган NFS манба
--Comment[vi]=Chia sẻ NFS đã gỡ ra
- Comment[zh_CN]=未挂载的 NFS 共享
- Comment[zh_TW]=未掛載的 NFS 資源
- Patterns=
 diff -urN kioslave/media/mimetypes/removable_mounted.desktop kioslave/media/mimetypes/removable_mounted.desktop
---- kioslave/media/mimetypes/removable_mounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/removable_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -9,7 +9,6 @@
- Comment[bg]=Монтиран преносим носител
- Comment[bn]=মাউন্ট করা অপসারণযোগ্য মিডিয়াম
- Comment[br]=Medium lem-laka marc'het
--Comment[bs]=Montiran izmjenjivi uređaj
- Comment[ca]=Suport extraible muntat
- Comment[cs]=Připojené výměnné médium
- Comment[da]=Monteret medie der kan fjernes
-@@ -26,7 +25,6 @@
- Comment[gl]=Dispositivo Extraíbel Montado
- Comment[he]=מדיה חיצונית מחוברת
- Comment[hi]=माउन्टेड रीमूवेबल माध्यम
--Comment[hr]=Pristupljen izmjenjiv medij
- Comment[hu]=Csatlakoztatott adathordozó
- Comment[is]=Tengdur útskiptanlegur miðill
- Comment[it]=Supporto rimovibile montato
-@@ -49,7 +47,6 @@
+--- kioslave/media/mimetypes/removable_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/removable_mounted.desktop	Mon May 22 20:12:42 2006
+@@ -19,7 +19,6 @@
+ Comment[es]=Recurso extraíble montado
+ Comment[et]=Ühendatud eemaldatav andmekandja
+ Comment[eu]=Euskarri aldagarria muntatua
+-Comment[fa]=رسانه برداشتنی سوارشده
+ Comment[fi]=Liitetty irrotettava resurssi
+ Comment[fr]=Média amovible monté
+ Comment[fy]=Oankeppele ferwiderber medium
+@@ -44,13 +43,12 @@
+ Comment[nn]=Montert flyttbart medium
+ Comment[pa]=ਮਾਊਟ ਕੀਤੇ ਹਟਾਉਣਯੋਗ ਮਾਧਿਅਮ
+ Comment[pl]=Zamontowany nośnik wymienny
+-Comment[pt]=Dispositivo amovível montado
++Comment[pt]=Dispositivo Amovível Montado
+ Comment[pt_BR]=Mídia Removível Montada
+ Comment[ro]=Mediu amovibil montat
  Comment[ru]=Смонтированный внешний диск
  Comment[rw]=Igitangazamakuru Kivanwamo Cyashyizwemo
  Comment[se]=Čátnon sirdehahtti medium
@@ -3710,34 +3546,25 @@ diff -urN kioslave/media/mimetypes/removable_mounted.desktop kioslave/media/mime
  Comment[sl]=Priklopljen odstranljiv medij
  Comment[sr]=Монтиран уклоњиви медијум
  Comment[sr@Latn]=Montiran uklonjivi medijum
-@@ -60,7 +57,6 @@
- Comment[tt]=Totaşqan Çığarulı Media
- Comment[uk]=Змонтований переносний носій
- Comment[uz]=Уланган сақлаш ускунаси
--Comment[vi]=Ổ lưu trữ Di động đã kết nối
- Comment[zh_CN]=挂载的可移动介质
- Comment[zh_TW]=已掛載的可攜式媒體
- Patterns=
 diff -urN kioslave/media/mimetypes/removable_unmounted.desktop kioslave/media/mimetypes/removable_unmounted.desktop
---- kioslave/media/mimetypes/removable_unmounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/removable_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -9,7 +9,6 @@
- Comment[bg]=Демонтиран преносим носител
- Comment[bn]=আনমাউন্ট করা অপসারণযোগ্য মিডিয়াম
- Comment[br]=Medium ar skoroù lem/laka divarc'het
--Comment[bs]=Demontiran izmjenjivi uređaj
- Comment[ca]=Suport extraible desmuntat
- Comment[cs]=Odpojené výměnné médium
- Comment[da]=Afmonteret medie der kan fjernes
-@@ -26,7 +25,6 @@
- Comment[gl]=Dispositivo Extraíbel Non Montado
- Comment[he]=מדייה חיצונית מנותקת
- Comment[hi]=अनमाउन्टेड रीमूवेबल माध्यम
--Comment[hr]=Nepristupljen izmjenjiv medij
- Comment[hu]=Leválasztott adathordozó
- Comment[is]=Aftengdur útskiptanlegur miðill
- Comment[it]=Supporto rimovibile non montato
-@@ -49,7 +47,6 @@
+--- kioslave/media/mimetypes/removable_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/removable_unmounted.desktop	Mon May 22 20:12:42 2006
+@@ -19,7 +19,6 @@
+ Comment[es]=Recurso extraíble desmontado
+ Comment[et]=Lahutatud eemaldatav andmekandja
+ Comment[eu]=Euskarri aldagarria desmuntatua
+-Comment[fa]=رسانه برداشتنی پیاده شده
+ Comment[fi]=Irrotettu irrotettava resurssi
+ Comment[fr]=Média amovible non monté
+ Comment[fy]=Ofkeppele ferwiderber medium
+@@ -44,13 +43,12 @@
+ Comment[nn]=Umontert flyttbart medium
+ Comment[pa]=ਅਨਮਾਊਟ ਕੀਤੀ ਹਟਾਉਣਯੋਗ ਮਾਧਿਅਮ
+ Comment[pl]=Odmontowany nośnik wymienny
+-Comment[pt]=Dispositivo amovível desmontado
++Comment[pt]=Dispositivo Amovível Desmontado
+ Comment[pt_BR]=Mídia Removível Desmontada
+ Comment[ro]=Mediu amovibil nemontat
  Comment[ru]=Отмонтированный внешний диск
  Comment[rw]=Igitangazamakuru Kivanwamo Cyavanwemo
  Comment[se]=Gálgaduvvon sirdehahtti medium
@@ -3745,78 +3572,42 @@ diff -urN kioslave/media/mimetypes/removable_unmounted.desktop kioslave/media/mi
  Comment[sl]=Odklopljen odstranljiv medij
  Comment[sr]=Демонтиран уклоњиви медијум
  Comment[sr@Latn]=Demontiran uklonjivi medijum
-@@ -60,7 +57,6 @@
- Comment[tt]=Totaşmağan Çığarulı Medium
- Comment[uk]=Демонтований переносний носій
- Comment[uz]=Уланмаган сақлаш ускунаси
--Comment[vi]=Ổ lưu trữ Di động đã gỡ ra
- Comment[zh_CN]=未挂载的可移动介质
- Comment[zh_TW]=未掛載的可攜式媒體
- Patterns=
 diff -urN kioslave/media/mimetypes/smb_mounted.desktop kioslave/media/mimetypes/smb_mounted.desktop
---- kioslave/media/mimetypes/smb_mounted.desktop	Tue May 23 13:33:34 2006
-+++ kioslave/media/mimetypes/smb_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Compartizón Samba Montada (Rede de Microsoft)
- Comment[he]=שיתוף Microsoft Network) Samba) מחובר
- Comment[hi]=माउन्टेड साम्बा (माइक्रोसाफ्ट नेटवर्क) साझेदारी
--Comment[hr]=Pristupljeno Samba dijeljenje (Microsoft mreža)
-+Comment[hr]=Montirano djeljenje Sambom (Microsoft mreža)
- Comment[hsb]=Montowany Samba-(Microsoft syć)-zapisk
- Comment[hu]=Csatlakoztatott Samba-megosztás
- Comment[is]=Tengd Samba (Microsoft Network) sameign
-@@ -43,7 +43,7 @@
- Comment[ms]=Perkongsian Samba Terlekap (Rangkaian Microsoft)
- Comment[mt]=Riżors Samba (Microsoft Network) immuntat
- Comment[nb]=Montert Samba-katalog (Microsoft nettverk)
--Comment[nds]=Inhangt Samba-Freegaav (Microsoft-Nettwark)
-+Comment[nds]=Inhangt Samba-Ressource (Microsoft-Nettwark)
- Comment[nl]=Aangekoppelde Samba-netwerkbron (Microsoft-netwerken)
- Comment[nn]=Montert Samba-ressurs (Microsoft-nettverk)
- Comment[nso]=Kabagano yeo e Nameleditswego ya Samba (Kgokagano ya Microsoft)
-@@ -67,7 +67,7 @@
- Comment[tt]=Totaşqan Samba (Microsoft Çeltäre) Urtağı
- Comment[uk]=Змонтований спільний ресурс Samba (мережа Microsoft)
- Comment[ven]=Samba yo gonyaho (Vhukwamani ha Microsoft) U kovhekana
--Comment[vi]=Chia sẻ SAMBA (mạng của Microsoft) đã kết nối
-+Comment[vi]=Vùng chia sẻ SAMBA (mạng của Microsoft) được gắn kết
- Comment[xh]=Samba Enyusiweyo (Umsebenzi womnatha we Microsoft) Ulwahlulo
- Comment[zh_CN]=挂载的 Samba (Microsoft 网络)共享
- Comment[zh_TW]=已掛載的 Samba (Microsoft 網路) 分享
+--- kioslave/media/mimetypes/smb_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/smb_mounted.desktop	Tue May 23 13:33:34 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Recurso de Samba montado (Red de Microsoft)
+ Comment[et]=Ühendatud Samba (Microsoft Network) ressurss
+ Comment[eu]=Samba (Microsoft sarea) partekaketa muntatua
+-Comment[fa]=مشترک Samba (Microsoft Network) سوار شده
++Comment[fa]=اشتراک سامبای ویندوز سوار شده
+ Comment[fi]=Liitetty Samba-jako (Microsoft-verkko)
+ Comment[fr]=Partage Samba (réseau Microsoft) monté
+ Comment[fy]=Oankeppele Samba-netwurkboarne (Microsoft-netwurken)
 diff -urN kioslave/media/mimetypes/smb_unmounted.desktop kioslave/media/mimetypes/smb_unmounted.desktop
---- kioslave/media/mimetypes/smb_unmounted.desktop	Tue May 23 13:33:34 2006
-+++ kioslave/media/mimetypes/smb_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Compartizón Samba Non Montada (Rede de Microsoft)
- Comment[he]=שיתוף Microsoft Network) Samba) מנותק
- Comment[hi]=अनमाउन्टेड साम्बा (माइक्रोसाफ्ट नेटवर्क) साझेदारी
--Comment[hr]=Nepristupljeno Samba dijeljenje (Microsoft mreža)
-+Comment[hr]=Neontirano djeljenje Sambom (Microsoft mreža)
- Comment[hsb]=Njemontowany Samba-(Microsoft syć)-zapisk
- Comment[hu]=Leválasztott Samba-megosztás
- Comment[is]=Aftengd Samba (Microsoft Network) sameign
-@@ -44,7 +44,7 @@
- Comment[ms]=Perkongsian Samba Nyahlekap (Rangkaian Microsoft)
- Comment[mt]=Riżors Samba (Microsoft Network) mhux immuntat
- Comment[nb]=Avmontert Samba-katalog (Microsoft nettverk)
--Comment[nds]=Afhangt Samba-Freegaav (Microsoft-Nettwark)
-+Comment[nds]=Afhangt Samba-Ressource (Microsoft-Nettwark)
- Comment[nl]=Afgekoppelde Samba-netwerkbron (Microsoft-netwerkbron)
- Comment[nn]=Avmontert Samba-ressurs (Microsoft-nettverk)
- Comment[nso]=Kabagano yeo e Theositswego ya Samba (Kgokagano ya Microsoft)
-@@ -68,7 +68,7 @@
- Comment[tt]=Totaşmağan Samba (Microsoft Çeltäre) Urtağı
- Comment[uk]=Демонтований спільний ресурс Samba (мережа Microsoft)
- Comment[ven]=Samba i songo gonyaho (Vhukamani ha Microsoft) U kovhekana
--Comment[vi]=Chia sẻ SAMBA (mạng của Microsoft) đã gỡ ra
-+Comment[vi]=Vùng chia sẻ SAMBA (Mạng của Microsoft) được gỡ
- Comment[xh]=Samba Enganyuswanga (Umsebenzi womnatha we Microsoft) Ulwahlulo
- Comment[zh_CN]=未挂载的 Samba (Microsoft 网络)共享
- Comment[zh_TW]=未掛載的 Samba (Microsoft 網路) 分享
+--- kioslave/media/mimetypes/smb_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/smb_unmounted.desktop	Tue May 23 13:33:34 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Recurso de Samba desmontado (Red de Microsoft)
+ Comment[et]=Lahutatud Samba (Microsoft Network) ressurss
+ Comment[eu]=Samba (Microsoft sarea) partekaketa desmuntatua
+-Comment[fa]=مشترک Samba (Microsoft Network) پیاده شده
++Comment[fa]=اشتراک سامبای ویندوز پیاده شده
+ Comment[fi]=Irrotettu Samba-jako (Microsoft-verkko)
+ Comment[fr]=Partage Samba (réseau Microsoft) non monté
+ Comment[fy]=Ofkeppele Samba-netwurkboarne (Microsoft-netwurken)
 diff -urN kioslave/media/mimetypes/svcd.desktop kioslave/media/mimetypes/svcd.desktop
---- kioslave/media/mimetypes/svcd.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/svcd.desktop	Thu Jan 19 18:00:58 2006
-@@ -16,7 +16,6 @@
+--- kioslave/media/mimetypes/svcd.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/svcd.desktop	Mon May 22 20:12:43 2006
+@@ -7,7 +7,6 @@
+ Comment[bn]=সুপার ভিডিও সিডি
+ Comment[ca]=CD Súper Vídeo
+ Comment[da]=Super Video-cd
+-Comment[fa]=دیسک فشرده ابرویدئو
+ Comment[fr]=Super CD vidéo
+ Comment[fy]=Super Fideo-kompaktskiif
+ Comment[gl]=Super Vídeo CD
+@@ -17,7 +16,6 @@
  Comment[it]=Super video CD
  Comment[ja]=スーパービデオ CD
  Comment[km]=ស៊ីឌី​វីដេអូ​គុណភាព​ខ្ពស់
@@ -3824,18 +3615,18 @@ diff -urN kioslave/media/mimetypes/svcd.desktop kioslave/media/mimetypes/svcd.de
  Comment[ms]=CD Supervideo
  Comment[nb]=Super video CD
  Comment[nds]=Super-Video-CD
-@@ -37,7 +36,6 @@
- Comment[tr]=Süper Vidyo CD
- Comment[uk]=Супер відео КД
- Comment[uz]=Супер-видео компакт-диск
--Comment[vi]=Đĩa siêu video CD
- Comment[zh_CN]=超级 VCD
- Comment[zh_TW]=超級視訊 CD
- Icon=cdrom_unmount
 diff -urN kioslave/media/mimetypes/vcd.desktop kioslave/media/mimetypes/vcd.desktop
---- kioslave/media/mimetypes/vcd.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/vcd.desktop	Fri Mar 17 11:17:34 2006
-@@ -18,7 +18,6 @@
+--- kioslave/media/mimetypes/vcd.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/vcd.desktop	Mon May 22 20:12:42 2006
+@@ -9,7 +9,6 @@
+ Comment[ca]=CD Vídeo
+ Comment[da]=Video-cd
+ Comment[el]=Βίντεο CD
+-Comment[fa]=دیسک فشرده ویدئویی
+ Comment[fr]=CD vidéo
+ Comment[fy]=Fideo-kompaktskiif
+ Comment[ga]=Dlúthdhiosca Físe
+@@ -19,7 +18,6 @@
  Comment[is]=Vídeó CD
  Comment[ja]=ビデオ CD
  Comment[km]=ស៊ីឌី​វីដេអូ
@@ -3843,51 +3634,31 @@ diff -urN kioslave/media/mimetypes/vcd.desktop kioslave/media/mimetypes/vcd.desk
  Comment[ms]=CD Video
  Comment[nds]=Video-CD
  Comment[nl]=Video-cd
-@@ -37,7 +36,6 @@
- Comment[tr]=Vidyo CD
- Comment[uk]=Видео КД
- Comment[uz]=Видео компакт-диск
--Comment[vi]=Đĩa video CD
- Comment[zh_CN]=VCD
- Comment[zh_TW]=視訊 CD
- Icon=cdrom_unmount
 diff -urN kioslave/media/mimetypes/zip_mounted.desktop kioslave/media/mimetypes/zip_mounted.desktop
---- kioslave/media/mimetypes/zip_mounted.desktop	Tue May 23 13:33:35 2006
-+++ kioslave/media/mimetypes/zip_mounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,7 +29,7 @@
- Comment[gl]=Disco Zip Montado
- Comment[he]=תקליטון Zip מחובר
- Comment[hi]=माउन्टेड जिप डिस्क
--Comment[hr]=Pristupljeni Zip disk
-+Comment[hr]=Montirani Zip disk
- Comment[hu]=Csatlakoztatott Zip-lemez
- Comment[is]=Tengdur Zip diskur
- Comment[it]=Disco Zip montato
-@@ -38,7 +38,6 @@
- Comment[lo]=ຈໍພາບ
- Comment[lt]=Sumontuotas Zip diskas
- Comment[lv]=Piemontēts Zip disks
--Comment[mk]=Монтиран Зип-диск
- Comment[mn]=Залгагдсан Zip-Диск
- Comment[ms]=Cakera Zip Terlekap
- Comment[mt]=Diska Zip immuntata
-@@ -68,7 +67,6 @@
- Comment[uk]=Змонтований диск Zip
- Comment[uz]=Уланган ZIP-диск
- Comment[ven]=Disk ya Zip yo gonyiswaho
--Comment[vi]=Đĩa ZIP đã kết nối
- Comment[wa]=Plakete ZIP montêye
- Comment[xh]=Diski Yoqokelelo ndawonye Kwediski
- Comment[zh_CN]=挂载的 Zip 磁盘
+--- kioslave/media/mimetypes/zip_mounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/zip_mounted.desktop	Tue May 23 13:33:35 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Disco Zip montado
+ Comment[et]=Ühendatud Zip-ketas
+ Comment[eu]=Zip diska muntatua
+-Comment[fa]=دیسک فشرده سوارشده
++Comment[fa]=دیسک زیپ سوار شده
+ Comment[fi]=Liitetty Zip-levy
+ Comment[fr]=Disque Zip monté
+ Comment[fy]=Oankeppelee Zip-skiif
 diff -urN kioslave/media/mimetypes/zip_unmounted.desktop kioslave/media/mimetypes/zip_unmounted.desktop
---- kioslave/media/mimetypes/zip_unmounted.desktop	Sat Jul 22 10:15:45 2006
-+++ kioslave/media/mimetypes/zip_unmounted.desktop	Fri Mar 17 11:17:34 2006
-@@ -29,16 +29,16 @@
- Comment[gl]=Disco Zip non Montado
- Comment[he]=תקליטון Zip מנותק
- Comment[hi]=अनमाउन्टेड जिप डिस्क
--Comment[hr]=Nepristupljeni Zip disk
-+Comment[hr]=Nemontirani Zip disk
+--- kioslave/media/mimetypes/zip_unmounted.desktop	Sun Oct  1 19:31:54 2006
++++ kioslave/media/mimetypes/zip_unmounted.desktop	Tue May 23 13:33:35 2006
+@@ -21,7 +21,7 @@
+ Comment[es]=Disco Zip desmontado
+ Comment[et]=Lahutatud Zip-ketas
+ Comment[eu]=Zip diska desmuntatua
+-Comment[fa]=دیسک فشرده پیاده شده
++Comment[fa]= دیسک زیپ پیاده شده
+ Comment[fi]=Irrotettu Zip-levy
+ Comment[fr]=Disque Zip non monté
+ Comment[fy]=Ofkeppele Zip-skiif
+@@ -33,7 +33,7 @@
  Comment[hu]=Leválasztott Zip-lemez
  Comment[is]=Aftengdur Zip diskur
  Comment[it]=Disco Zip non montato
@@ -3896,23 +3667,9 @@ diff -urN kioslave/media/mimetypes/zip_unmounted.desktop kioslave/media/mimetype
  Comment[km]=ថាស Zip មិន​បាន​រៀបចំ
  Comment[lo]= ຫັງກາລີ
  Comment[lt]=Išmontuotas Zip diskas
- Comment[lv]=Nomontēts Zip disks
--Comment[mk]=Одмонтиран Зип-диск
-+Comment[mk]=Одмонтиран Зип диск
- Comment[mn]=Салгагдсан Zip-Диск
- Comment[ms]=Cakera Zip Nyahlekap
- Comment[mt]=Diska Zip mhux immuntata
-@@ -68,7 +68,6 @@
- Comment[uk]=Демонтований диск Zip
- Comment[uz]=Уланмаган ZIP-диск
- Comment[ven]=Disk ya Zip i songo gonyiswaho
--Comment[vi]=Đĩa ZIP đã gỡ ra
- Comment[wa]=Plakete ZIP dismontêye
- Comment[xh]=Diski Yoqokelelo ndawone Enganyuswanga
- Comment[zh_CN]=挂载的 Zip 磁盘
 diff -urN kioslave/media/mounthelper/Makefile.in kioslave/media/mounthelper/Makefile.in
---- kioslave/media/mounthelper/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/mounthelper/Makefile.in	Mon Mar 20 14:05:55 2006
+--- kioslave/media/mounthelper/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/mounthelper/Makefile.in	Fri May 26 09:54:31 2006
 @@ -57,8 +57,8 @@
  #>+ 1
  kio_media_mounthelper_OBJECTS = kio_media_mounthelper.$(OBJEXT)
@@ -4027,7 +3784,7 @@ diff -urN kioslave/media/mounthelper/kio_media_mounthelper.cpp kioslave/media/mo
   
  #include "kio_media_mounthelper.moc"
 diff -urN kioslave/media/propsdlgplugin/Makefile.in kioslave/media/propsdlgplugin/Makefile.in
---- kioslave/media/propsdlgplugin/Makefile.in	Mon Jul 24 17:56:31 2006
+--- kioslave/media/propsdlgplugin/Makefile.in	Sat Oct  7 16:42:32 2006
 +++ kioslave/media/propsdlgplugin/Makefile.in	Thu Jan  1 01:00:00 1970
 @@ -1,1063 +0,0 @@
 -# Makefile.in generated by automake 1.9.6 from Makefile.am.
@@ -5094,9 +4851,9 @@ diff -urN kioslave/media/propsdlgplugin/Makefile.in kioslave/media/propsdlgplugi
 -propertiespagegui.moc: propertiespagegui.h
 -	$(MOC) propertiespagegui.h -o propertiespagegui.moc
 diff -urN kioslave/media/propsdlgplugin/media_propsdlgplugin.desktop kioslave/media/propsdlgplugin/media_propsdlgplugin.desktop
---- kioslave/media/propsdlgplugin/media_propsdlgplugin.desktop	Sat Jul 22 10:15:43 2006
+--- kioslave/media/propsdlgplugin/media_propsdlgplugin.desktop	Sun Oct  1 19:31:53 2006
 +++ kioslave/media/propsdlgplugin/media_propsdlgplugin.desktop	Thu Jan  1 01:00:00 1970
-@@ -1,57 +0,0 @@
+@@ -1,73 +0,0 @@
 -[Desktop Entry]
 -Encoding=UTF-8
 -Type=Service
@@ -5108,16 +4865,24 @@ diff -urN kioslave/media/propsdlgplugin/media_propsdlgplugin.desktop kioslave/me
 -Name[el]=Σελίδα ιδιοτήτων μέσων
 -Name[es]=Página de propiedades de medios
 -Name[et]=Andmekandjate omadused
+-Name[fa]=صفحۀ ویژگیهای رسانه
 -Name[fi]=Mediaominaisuudet
 -Name[fr]=Page de propriétés du média
+-Name[he]=דף מאפייני מדיה
+-Name[hr]=Stranica svojstva medija
 -Name[hu]=Médiajellemzők lap
 -Name[is]=Eiginleikar miðils
+-Name[it]=Pagina delle proprietà dei dispositivi di archiviazione
 -Name[ja]=メディア属性ページ
 -Name[km]=ទំព័រ​លក្ខណៈសម្បត្តិ​មេឌៀ
+-Name[nb]=Side for medievarsling
 -Name[nds]=Medienegenschappen-Siet
 -Name[nl]=Pagina met media-eigenschappen
+-Name[nn]=Side for medieeigenskapar
+-Name[pl]=Strona właściwości nośnika
 -Name[pt]=Página de Propriedades de Suportes Físicos
 -Name[pt_BR]=Página de Propriedades de Suportes Físicos
+-Name[ru]=Свойства носителя
 -Name[sk]=Strana vlastností média
 -Name[sl]=Stran z lastnostmi nosilca
 -Name[sr]=Страна са својствима медијума
@@ -5134,16 +4899,24 @@ diff -urN kioslave/media/propsdlgplugin/media_propsdlgplugin.desktop kioslave/me
 -Comment[el]=Πρόσθετο διαλόγου ιδιοτήτων του Konqueror για τη ρύθμιση της συμπεριφοράς προσάρτησης
 -Comment[es]=Plugin de diálogo de propiedades de Konqueror para configurar el comportamiento del montaje
 -Comment[et]=Konquerori seadistustedialoogi plugin andmekandjate ühendamise seadistamiseks
+-Comment[fa]=وصلۀ محاورۀ ویژگیهای Konqueror برای پیکربندی رفتار سوار کردن
 -Comment[fi]=Konquerorin ominaisuussovelma, joka tarkkailee liitospisteitä
 -Comment[fr]=Module de Konqueror pour configurer le comportement du montage
+-Comment[he]=תוסף חלון מאפיינים של Konqueror לקביעת אפשרויות חיבור
+-Comment[hr]=Konqueror dodatak dijaloga svojstava za konfiguriranje načina pristupanja
 -Comment[hu]=Konqueror beállítómodul a csatlakoztatási mód megadásához
 -Comment[is]=Konqueror eiginleikagluggi til að stilla tengihegðun
+-Comment[it]=Plugin della configurazione di Konqueror per configurare il montaggio
 -Comment[ja]=mountの挙動を設定する、Konqueror属性ダイアログ プラグイン
 -Comment[km]=កម្មវិធី​ជំនួយ​ឲ្យ​មាន​ប្រអប់​លក្ខណៈសម្បត្តិ Konqueror ដើម្បី​កំណត់​រចនាសម្ព័ន្ធ​ឥរិយាបថ​ម៉ោន
+-Comment[nb]=Et programtillegg for å sette opp montering av enheter i Konqueror
 -Comment[nds]=Egenschappendialoog-Plugin för Konqueror för't Instellen vun't Inhangbedregen
 -Comment[nl]=Dialoogvenster voor Konqueror om het aankoppelgedrag in te stellen
+-Comment[nn]=Programtillegg for oppsett av montering i Konqueror
+-Comment[pl]=Wtyczka okna właściwości Konquerora do konfiguracji zachowania montowania
 -Comment[pt]='Plugin' da janela de propriedades do Konqueror, para configurar o comportamento da montagem
 -Comment[pt_BR]='Plugin' da janela de propriedades do Konqueror, para configurar o comportamento da montagem
+-Comment[ru]=Модуль свойств для Konqueror, отвечающий за поведение при подключении файловых систем
 -Comment[sk]=Modul Konqueror dialógu vlastností pre konfiguráciu správania pripojenia
 -Comment[sl]=Vstavek za Konqueror s katerim se nastavlja obnašanje priklopa medijev
 -Comment[sr]=Прикључак са својствима Konqueror-а за подешавање понашања при монтирању
@@ -5995,8 +5768,8 @@ diff -urN kioslave/media/propsdlgplugin/propsdlgshareplugin.h kioslave/media/pro
 -
 -
 diff -urN kioslave/media/services/Makefile.in kioslave/media/services/Makefile.in
---- kioslave/media/services/Makefile.in	Mon Jul 24 17:56:31 2006
-+++ kioslave/media/services/Makefile.in	Mon Mar 20 14:05:55 2006
+--- kioslave/media/services/Makefile.in	Sat Oct  7 16:42:32 2006
++++ kioslave/media/services/Makefile.in	Fri May 26 09:54:31 2006
 @@ -211,6 +211,7 @@
  LIBTOOL = @LIBTOOL@
  LIBUCB = @LIBUCB@
@@ -6006,71 +5779,32 @@ diff -urN kioslave/media/services/Makefile.in kioslave/media/services/Makefile.i
  LIBXDMCP = @LIBXDMCP@
  LIBXFT_LIB = @LIBXFT_LIB@
 diff -urN kioslave/media/services/media_eject.desktop kioslave/media/services/media_eject.desktop
---- kioslave/media/services/media_eject.desktop	Mon May 22 20:12:42 2006
-+++ kioslave/media/services/media_eject.desktop	Fri Mar 17 11:17:33 2006
-@@ -74,7 +74,7 @@
- Name[uk]=Виштовхнути
- Name[uz]=Чиқариш
- Name[ven]=Bvisa
--Name[vi]=Đẩy đĩa ra
-+Name[vi]=Đẩy ra
- Name[wa]=Fé rexhe
- Name[xh]=Khuphela ngaphandle
- Name[zh_CN]=弹出
-diff -urN kioslave/media/services/media_mount.desktop kioslave/media/services/media_mount.desktop
---- kioslave/media/services/media_mount.desktop	Mon May 22 20:12:42 2006
-+++ kioslave/media/services/media_mount.desktop	Fri Mar 17 11:17:33 2006
-@@ -31,7 +31,7 @@
- Name[gl]=Montar
- Name[he]=חבר
- Name[hi]=माउन्ट
--Name[hr]=Pristupi
-+Name[hr]=Montiraj
- Name[hsb]=montować
- Name[hu]=Csatlakoztatás
- Name[is]=Tengja
-@@ -71,7 +71,7 @@
- Name[uk]=Змонтувати
- Name[uz]=Улаш
- Name[ven]=Gonya
--Name[vi]=Kết nối
-+Name[vi]=Gắn kết
- Name[wa]=Monter
- Name[xh]=Layisha
- Name[zh_CN]=挂载
+--- kioslave/media/services/media_eject.desktop	Sun Oct  1 19:31:53 2006
++++ kioslave/media/services/media_eject.desktop	Mon May 22 20:12:42 2006
+@@ -24,7 +24,7 @@
+ Name[es]=Expulsar
+ Name[et]=Väljastamine
+ Name[eu]=Egotzi
+-Name[fa]=پس زدن
++Name[fa]=اخراج
+ Name[fi]=Poista
+ Name[fr]=Éjecter
+ Name[fy]=Utsmytknop
 diff -urN kioslave/media/services/media_safelyremove.desktop kioslave/media/services/media_safelyremove.desktop
---- kioslave/media/services/media_safelyremove.desktop	Sat Jul 22 10:15:42 2006
-+++ kioslave/media/services/media_safelyremove.desktop	Fri Mar 17 11:17:33 2006
-@@ -9,7 +9,6 @@
- Name[af]=Verwyder veilig
- Name[bg]=Безопасно изваждане
- Name[bn]=নিরাপদভাবে সরাও
--Name[bs]=Sigurno ukloni
- Name[ca]=Extreu amb seguretat
- Name[cs]=Bezpečně odstranit
- Name[da]=Fjern sikkert
-@@ -20,18 +19,17 @@
+--- kioslave/media/services/media_safelyremove.desktop	Sun Oct  1 19:31:53 2006
++++ kioslave/media/services/media_safelyremove.desktop	Tue May 23 13:33:34 2006
+@@ -18,10 +18,8 @@
+ Name[es]=Extracción segura
+ Name[et]=Eemalda turvaliselt
  Name[eu]=Atera arriskurik gabe
+-Name[fa]=حذف امن
  Name[fi]=Poista turvallisesti
  Name[fr]=Enlever en toute sécurité
 -Name[fy]=Feilich verwiderje
-+Name[fy]=Feilich ferwiderje
  Name[ga]=Bain Amach go Sábháilte
  Name[gl]=Eliminar de Maneira Segura
  Name[he]=שליפה בבטחה
--Name[hr]=Slobodno uklonite
- Name[hu]=Biztonságos leválasztás
- Name[is]=Fjarlægja öruggt
- Name[it]=Rimozione sicura
- Name[ja]=安全に取り除く
- Name[km]=យកចេញ​ដោយ​សុវត្ថិភាព
- Name[lt]=Saugiai pašalinti
--Name[mk]=Безбедно отстрани
-+Name[mk]=Отстрани безбедно
- Name[ms]=Buang Dengan Selamat
- Name[nb]=Sikker fjerning
- Name[nds]=Seker rutnehmen
-@@ -45,7 +43,6 @@
+@@ -46,7 +44,6 @@
  Name[ru]=Безопасно извлечь
  Name[rw]=Gukuramo Neza
  Name[se]=Dorvvošlaš eretváldin
@@ -6078,41 +5812,3 @@ diff -urN kioslave/media/services/media_safelyremove.desktop kioslave/media/serv
  Name[sl]=Varno odstrani
  Name[sr]=Безбедно уклони
  Name[sr@Latn]=Bezbedno ukloni
-@@ -56,7 +53,6 @@
- Name[tt]=İmin Çığaru
- Name[uk]=Безпечно вилучити
- Name[uz]=Эҳтиётлик билан узиш
--Name[vi]=Gỡ ra An toàn
- Name[zh_CN]=安全删除
- Name[zh_TW]=安全的移除
- Exec=kio_media_mounthelper -s %u
-diff -urN kioslave/media/services/media_unmount.desktop kioslave/media/services/media_unmount.desktop
---- kioslave/media/services/media_unmount.desktop	Tue May 23 13:33:34 2006
-+++ kioslave/media/services/media_unmount.desktop	Fri Mar 17 11:17:33 2006
-@@ -31,7 +31,7 @@
- Name[gl]=Desmontar
- Name[he]=נתק
- Name[hi]=अनमाउन्ट
--Name[hr]=Napusti
-+Name[hr]=Demontiraj
- Name[hsb]=Wotmontować
- Name[hu]=Leválasztás
- Name[is]=Aftengja
-@@ -41,7 +41,7 @@
- Name[lo]=ຫັງກາລີ
- Name[lt]=Išmontuoti
- Name[lv]=Nomontēt
--Name[mk]=Одмонтирај
-+Name[mk]=Демонтирај
- Name[mn]=Салгах
- Name[ms]=Nyahlekap
- Name[mt]=Żmonta
-@@ -71,7 +71,7 @@
- Name[uk]=Демонтувати
- Name[uz]=Узиш
- Name[ven]=Usa gonya
--Name[vi]=Gỡ ra
-+Name[vi]=Gỡ
- Name[wa]=Dismonter
- Name[xh]=Sukuyilayisha
- Name[zh_CN]=卸载

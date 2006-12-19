@@ -8,7 +8,6 @@
 
 PORTNAME=	kdeartwork
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -33,13 +32,13 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/xscreensaver)
+.if exists(${X11BASE}/bin/xscreensaver)
 WITH_XS=	yes
-.endif # exists(${LOCALBASE}/bin/xscreensaver)
+.endif # exists(${X11BASE}/bin/xscreensaver)
 
-.if exists(${LOCALBASE}/share/gnome/control-center-2.0/capplets/screensaver-properties.desktop)
+.if exists(${X11BASE}/share/gnome/control-center-2.0/capplets/screensaver-properties.desktop)
 WITH_XSGNOME=	yes
-.endif # exists(${LOCALBASE}/bin/screensaver-properties-capplet)
+.endif # exists(${X11BASE}/bin/screensaver-properties-capplet)
 
 .if defined(WITH_XS) && !defined(WITH_XSGNOME)
 RUN_DEPENDS+=	kxsconfig:${PORTSDIR}/x11/xscreensaver-kde

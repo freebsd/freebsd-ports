@@ -21,12 +21,6 @@ include/rss/image.h
 include/rss/librss.h
 include/rss/loader.h
 include/rss/textinput.h
-lib/kde3/fileshare_propsdlgplugin.a
-lib/kde3/fileshare_propsdlgplugin.la
-lib/kde3/fileshare_propsdlgplugin.so
-lib/kde3/kcm_fileshare.a
-lib/kde3/kcm_fileshare.la
-lib/kde3/kcm_fileshare.so
 lib/kde3/kcm_krfb.a
 lib/kde3/kcm_krfb.la
 lib/kde3/kcm_krfb.so
@@ -66,9 +60,6 @@ lib/kde3/kpfpropertiesdialog.so
 lib/kde3/ksirc.a
 lib/kde3/ksirc.la
 lib/kde3/ksirc.so
-lib/kde3/libkcm_kcmsambaconf.a
-lib/kde3/libkcm_kcmsambaconf.la
-lib/kde3/libkcm_kcmsambaconf.so
 lib/kde3/libkntsrcfilepropsdlg.a
 lib/kde3/libkntsrcfilepropsdlg.la
 lib/kde3/libkntsrcfilepropsdlg.so
@@ -83,10 +74,8 @@ lib/librss.la
 lib/librss.so
 lib/librss.so.1
 share/applications/kde/Kppp.desktop
-share/applications/kde/fileshare.desktop
 share/applications/kde/kcmkrfb.desktop
 share/applications/kde/kcmktalkd.desktop
-share/applications/kde/kcmsambaconf.desktop
 share/applications/kde/kdict.desktop
 share/applications/kde/kget.desktop
 share/applications/kde/knewsticker-standalone.desktop
@@ -786,6 +775,7 @@ share/doc/HTML/en/knewsticker/newarticle-icon.png
 share/doc/HTML/en/knewsticker/newssite-icon.png
 share/doc/HTML/en/knewsticker/oldarticle-icon.png
 share/doc/HTML/en/knewsticker/preferences-icon.png
+share/doc/HTML/en/kopete/chatstyle.docbook
 share/doc/HTML/en/kopete/common
 share/doc/HTML/en/kopete/index.cache.bz2
 share/doc/HTML/en/kopete/index.docbook
@@ -901,7 +891,6 @@ share/icons/crystalsvg/48x48/apps/ktalkd.png
 share/icons/crystalsvg/48x48/mimetypes/kget_list.png
 share/icons/hicolor/128x128/apps/kdict.png
 share/icons/hicolor/128x128/apps/kppp.png
-share/icons/hicolor/16x16/apps/kcmsambaconf.png
 share/icons/hicolor/16x16/apps/kdict.png
 share/icons/hicolor/16x16/apps/knewsticker.png
 share/icons/hicolor/16x16/apps/kppp.png
@@ -923,7 +912,6 @@ share/icons/hicolor/scalable/apps/kdict.svgz
 share/icons/locolor/16x16/apps/krfb.png
 share/icons/locolor/32x32/apps/krfb.png
 share/mimelnk/application/x-kgetlist.desktop
-share/services/fileshare_propsdlgplugin.desktop
 share/services/invitation.protocol
 share/services/kded/dnssdwatcher.desktop
 share/services/kded/kinetd.desktop

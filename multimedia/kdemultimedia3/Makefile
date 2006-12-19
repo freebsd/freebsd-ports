@@ -8,7 +8,6 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -49,12 +48,12 @@ OPTIONS=	AKODE "Use akode for audio playback" on \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500035
+#.if ${OSVERSION} > 500035
 LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=	THEORA=""
-.else
-PLIST_SUB+=	THEORA="@comment "
-.endif
+#.else
+#PLIST_SUB+=	THEORA="@comment "
+#.endif
 
 .if !defined(WITHOUT_AKODE)
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode.so:${PORTSDIR}/audio/akode

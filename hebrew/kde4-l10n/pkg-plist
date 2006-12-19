@@ -1,3 +1,56 @@
+share/apps/klettres/he/alpha/a-01.ogg
+share/apps/klettres/he/alpha/a-02.ogg
+share/apps/klettres/he/alpha/a-03.ogg
+share/apps/klettres/he/alpha/a-04.ogg
+share/apps/klettres/he/alpha/a-05.ogg
+share/apps/klettres/he/alpha/a-06.ogg
+share/apps/klettres/he/alpha/a-07.ogg
+share/apps/klettres/he/alpha/a-08.ogg
+share/apps/klettres/he/alpha/a-09.ogg
+share/apps/klettres/he/alpha/a-10.ogg
+share/apps/klettres/he/alpha/a-11.ogg
+share/apps/klettres/he/alpha/a-12.ogg
+share/apps/klettres/he/alpha/a-13.ogg
+share/apps/klettres/he/alpha/a-14.ogg
+share/apps/klettres/he/alpha/a-15.ogg
+share/apps/klettres/he/alpha/a-16.ogg
+share/apps/klettres/he/alpha/a-17.ogg
+share/apps/klettres/he/alpha/a-18.ogg
+share/apps/klettres/he/alpha/a-19.ogg
+share/apps/klettres/he/alpha/a-20.ogg
+share/apps/klettres/he/alpha/a-21.ogg
+share/apps/klettres/he/alpha/a-22.ogg
+share/apps/klettres/he/alpha/a-23.ogg
+share/apps/klettres/he/alpha/a-24.ogg
+share/apps/klettres/he/alpha/a-25.ogg
+share/apps/klettres/he/alpha/a-26.ogg
+share/apps/klettres/he/alpha/a-27.ogg
+share/apps/klettres/he/sounds.xml
+share/apps/klettres/he/syllab/ad-01.ogg
+share/apps/klettres/he/syllab/ad-02.ogg
+share/apps/klettres/he/syllab/ad-03.ogg
+share/apps/klettres/he/syllab/ad-04.ogg
+share/apps/klettres/he/syllab/ad-05.ogg
+share/apps/klettres/he/syllab/ad-07.ogg
+share/apps/klettres/he/syllab/ad-08.ogg
+share/apps/klettres/he/syllab/ad-09.ogg
+share/apps/klettres/he/syllab/ad-10.ogg
+share/apps/klettres/he/syllab/ad-11.ogg
+share/apps/klettres/he/syllab/ad-12.ogg
+share/apps/klettres/he/syllab/ad-13.ogg
+share/apps/klettres/he/syllab/ad-14.ogg
+share/apps/klettres/he/syllab/ad-15.ogg
+share/apps/klettres/he/syllab/ad-16.ogg
+share/apps/klettres/he/syllab/ad-17.ogg
+share/apps/klettres/he/syllab/ad-18.ogg
+share/apps/klettres/he/syllab/ad-19.ogg
+share/apps/klettres/he/syllab/ad-20.ogg
+share/apps/klettres/he/syllab/ad-21.ogg
+share/apps/klettres/he/syllab/ad-22.ogg
+share/apps/klettres/he/syllab/ad-23.ogg
+share/apps/klettres/he/syllab/ad-24.ogg
+share/apps/klettres/he/syllab/ad-25.ogg
+share/apps/klettres/he/syllab/ad-26.ogg
 share/doc/HTML/he/docs/common/fdl-translated.html
 share/doc/HTML/he/docs/common/gpl-translated.html
 share/doc/HTML/he/docs/common/kde-localised.css
@@ -413,6 +466,7 @@ share/locale/he/LC_MESSAGES/ktimer.mo
 share/locale/he/LC_MESSAGES/ktip.mo
 share/locale/he/LC_MESSAGES/ktouch.mo
 share/locale/he/LC_MESSAGES/ktron.mo
+share/locale/he/LC_MESSAGES/kttsd.mo
 share/locale/he/LC_MESSAGES/ktuberling.mo
 share/locale/he/LC_MESSAGES/kturtle.mo
 share/locale/he/LC_MESSAGES/ktux.mo
@@ -498,3 +552,7 @@ share/locale/he/flag.png
 @dirrm share/doc/HTML/he/khelpcenter
 @dirrm share/doc/HTML/he/docs/common
 @dirrm share/doc/HTML/he/docs
+@dirrm share/apps/klettres/he/syllab
+@dirrm share/apps/klettres/he/alpha
+@dirrm share/apps/klettres/he
+@dirrm share/apps/klettres

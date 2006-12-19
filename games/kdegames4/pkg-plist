@@ -844,6 +844,8 @@ share/apps/carddecks/decks/deck8.desktop
 share/apps/carddecks/decks/deck8.png
 share/apps/carddecks/decks/deck9.desktop
 share/apps/carddecks/decks/deck9.png
+%%FREEBSD_DECK%%share/apps/carddecks/decks/deck_freebsd.desktop
+%%FREEBSD_DECK%%share/apps/carddecks/decks/deck_freebsd.png
 share/apps/kasteroids/kasteroidsui.rc
 share/apps/kasteroids/sounds/Explosion.wav
 share/apps/kasteroids/sprites/bg.png

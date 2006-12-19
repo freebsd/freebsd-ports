@@ -710,6 +710,9 @@ lib/kde3/lockout_panelapplet.so
 lib/kde3/media_panelapplet.a
 lib/kde3/media_panelapplet.la
 lib/kde3/media_panelapplet.so
+%%MEDIA%%lib/kde3/media_propsdlgplugin.a
+%%MEDIA%%lib/kde3/media_propsdlgplugin.la
+%%MEDIA%%lib/kde3/media_propsdlgplugin.so
 lib/kde3/menu_panelapplet.a
 lib/kde3/menu_panelapplet.la
 lib/kde3/menu_panelapplet.so
@@ -1933,6 +1936,7 @@ share/apps/konsole/vim.schema
 share/apps/konsole/vt100.keytab
 share/apps/konsole/vt420pc.keytab
 share/apps/konsole/wallpapers/Blkmarble.jpg
+share/apps/konsole/wallpapers/Metric-Monospace-14.png
 share/apps/konsole/wallpapers/Paper01.jpg
 share/apps/konsole/wallpapers/gray02.jpg
 share/apps/konsole/x11r5.keytab
@@ -4117,6 +4121,7 @@ share/services/localdomainurifilter.desktop
 share/services/mac.protocol
 share/services/man.protocol
 share/services/media.protocol
+%%MEDIA%%share/services/media_propsdlgplugin.desktop
 share/services/nfs.protocol
 share/services/nntp.protocol
 share/services/nntps.protocol

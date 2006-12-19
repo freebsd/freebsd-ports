@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.1
 CATEGORIES?=	portuguese kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n

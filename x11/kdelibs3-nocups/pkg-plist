@@ -56,6 +56,7 @@ bin/make_driver_db_lpr
 bin/makekdewidgets
 bin/meinproc
 bin/preparetips
+bin/start_kdeinit
 etc/rc.d/kdelibs.sh
 etc/xdg/menus/kde-applications.menu
 include/arts/artskde.h

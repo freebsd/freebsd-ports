@@ -64,6 +64,9 @@ share/doc/HTML/ru/kalzium/index.docbook
 share/doc/HTML/ru/kamera/common
 share/doc/HTML/ru/kamera/index.cache.bz2
 share/doc/HTML/ru/kamera/index.docbook
+share/doc/HTML/ru/kanagram/common
+share/doc/HTML/ru/kanagram/index.cache.bz2
+share/doc/HTML/ru/kanagram/index.docbook
 share/doc/HTML/ru/kandy/common
 share/doc/HTML/ru/kandy/index.cache.bz2
 share/doc/HTML/ru/kandy/index.docbook
@@ -120,6 +123,9 @@ share/doc/HTML/ru/kbabel/using.docbook
 share/doc/HTML/ru/kbattleship/common
 share/doc/HTML/ru/kbattleship/index.cache.bz2
 share/doc/HTML/ru/kbattleship/index.docbook
+share/doc/HTML/ru/kblackbox/common
+share/doc/HTML/ru/kblackbox/index.cache.bz2
+share/doc/HTML/ru/kblackbox/index.docbook
 share/doc/HTML/ru/kbounce/common
 share/doc/HTML/ru/kbounce/index.cache.bz2
 share/doc/HTML/ru/kbounce/index.docbook
@@ -437,6 +443,9 @@ share/doc/HTML/ru/kfloppy/index.docbook
 share/doc/HTML/ru/kgamma/common
 share/doc/HTML/ru/kgamma/index.cache.bz2
 share/doc/HTML/ru/kgamma/index.docbook
+share/doc/HTML/ru/kgeography/common
+share/doc/HTML/ru/kgeography/index.cache.bz2
+share/doc/HTML/ru/kgeography/index.docbook
 share/doc/HTML/ru/kget/common
 share/doc/HTML/ru/kget/index.cache.bz2
 share/doc/HTML/ru/kget/index.docbook
@@ -1931,6 +1940,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kgpg
 @dirrm share/doc/HTML/ru/kghostview
 @dirrm share/doc/HTML/ru/kget
+@dirrm share/doc/HTML/ru/kgeography
 @dirrm share/doc/HTML/ru/kgamma
 @dirrm share/doc/HTML/ru/kfloppy
 @dirrm share/doc/HTML/ru/kfind
@@ -2015,6 +2025,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kbugbuster
 @dirrm share/doc/HTML/ru/kbruch
 @dirrm share/doc/HTML/ru/kbounce
+@dirrm share/doc/HTML/ru/kblackbox
 @dirrm share/doc/HTML/ru/kbattleship
 @dirrm share/doc/HTML/ru/kbabel
 @dirrm share/doc/HTML/ru/katomic
@@ -2024,6 +2035,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/karm
 @dirrm share/doc/HTML/ru/kappfinder
 @dirrm share/doc/HTML/ru/kandy
+@dirrm share/doc/HTML/ru/kanagram
 @dirrm share/doc/HTML/ru/kamera
 @dirrm share/doc/HTML/ru/kalzium
 @dirrm share/doc/HTML/ru/kaddressbook

@@ -2,7 +2,10 @@ share/locale/tr/LC_MESSAGES/desktop_koffice.mo
 share/locale/tr/LC_MESSAGES/example.mo
 share/locale/tr/LC_MESSAGES/karbon.mo
 share/locale/tr/LC_MESSAGES/kchart.mo
+share/locale/tr/LC_MESSAGES/kdgantt.mo
 share/locale/tr/LC_MESSAGES/kexi.mo
+share/locale/tr/LC_MESSAGES/kfile_abiword.mo
+share/locale/tr/LC_MESSAGES/kfile_gnumeric.mo
 share/locale/tr/LC_MESSAGES/kfile_koffice.mo
 share/locale/tr/LC_MESSAGES/kfile_ooo.mo
 share/locale/tr/LC_MESSAGES/kformdesigner.mo
@@ -11,8 +14,10 @@ share/locale/tr/LC_MESSAGES/kivio.mo
 share/locale/tr/LC_MESSAGES/koconverter.mo
 share/locale/tr/LC_MESSAGES/koffice.mo
 share/locale/tr/LC_MESSAGES/kofficefilters.mo
+share/locale/tr/LC_MESSAGES/koproperty.mo
 share/locale/tr/LC_MESSAGES/koshell.mo
 share/locale/tr/LC_MESSAGES/kounavail.mo
+share/locale/tr/LC_MESSAGES/kplato.mo
 share/locale/tr/LC_MESSAGES/kpresenter.mo
 share/locale/tr/LC_MESSAGES/krita.mo
 share/locale/tr/LC_MESSAGES/kscan_plugin.mo

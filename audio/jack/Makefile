@@ -81,8 +81,8 @@ post-patch:
 post-build:
 	@${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
+#.if ${OSVERSION} < 500000
+#BROKEN=		Does not compile on 4.x
+#.endif
 
 .include <bsd.port.post.mk>
