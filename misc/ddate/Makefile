@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ddate
-PORTVERSION=	2.12q
+PORTVERSION=	2.12r
 CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/ \
 		http://critical.ch/distfiles/ \
@@ -46,24 +46,25 @@ pre-everything::
 
 post-patch:
 .if defined(US_FORMAT)
-	${SED} -e 's/^\/\*\ \(#define\ US_FORMAT\)\ \*\//\1/' ${WRKSRC}/misc-utils/ddate.c > ${WRKSRC}/misc-utils/ddate.c.new
-	${MV} ${WRKSRC}/misc-utils/ddate.c.new ${WRKSRC}/misc-utils/ddate.c
+	@${REINPLACE_CMD} -e 's/^\/\*\ \(#define\ US_FORMAT\)\ \*\//\1/' \
+		${WRKSRC}/misc-utils/ddate.c
 .endif
 .if defined(PRAISE_BOB)
-	${SED} -e 's/^\/\*\(#define\ PRAISE_BOB\ 13013\)\*\//\1/' ${WRKSRC}/misc-utils/ddate.c > ${WRKSRC}/misc-utils/ddate.c.new
-	${MV} ${WRKSRC}/misc-utils/ddate.c.new ${WRKSRC}/misc-utils/ddate.c
+	@${REINPLACE_CMD} -e 's/^\/\*\(#define\ PRAISE_BOB\ 13013\)\*\//\1/' \
+		${WRKSRC}/misc-utils/ddate.c
 .endif
 .if defined(KILL_BOB)
-	${SED} -e 's/^\(#define\ KILL_BOB\ 13013\)/\/* \1 *\//' ${WRKSRC}/misc-utils/ddate.c > ${WRKSRC}/misc-utils/ddate.c.new
-	${MV} ${WRKSRC}/misc-utils/ddate.c.new ${WRKSRC}/misc-utils/ddate.c
+	@${REINPLACE_CMD} -e 's/^\(#define\ KILL_BOB\ 13013\)/\/* \1 *\//' \
+		${WRKSRC}/misc-utils/ddate.c
 .endif
 .if !defined(OLD_FORMAT)
-	${SED} -e 's/^\(#define\ OLD_IMMEDIATE_FMT\)/\/* \1 *\//' ${WRKSRC}/misc-utils/ddate.c > ${WRKSRC}/misc-utils/ddate.c.new
-	${MV} ${WRKSRC}/misc-utils/ddate.c.new ${WRKSRC}/misc-utils/ddate.c
+	@${REINPLACE_CMD} -e 's/^\(#define\ OLD_IMMEDIATE_FMT\)/\/* \1 *\//' \
+		${WRKSRC}/misc-utils/ddate.c
 .endif
 
 do-build:
-	${CC} ${WRKSRC}/misc-utils/ddate.c ${CFLAGS} -o ${WRKSRC}/misc-utils/${PORTNAME}
+	${CC} ${WRKSRC}/misc-utils/ddate.c ${CFLAGS} \
+		-o ${WRKSRC}/misc-utils/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} -m 0555 ${WRKSRC}/misc-utils/${PORTNAME} ${PREFIX}/bin
