@@ -16,12 +16,12 @@ MASTER_SITES=	http://ftp.teledanmark.no/pub/www/proxy/squidGuard/ \
 MAINTAINER=	ports@tyfon.net
 COMMENT=	A fast redirector for squid
 
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
+USE_BDB=	3+
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db3 \
-		--with-db-lib=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
+		--with-db-lib=${BDB_LIB_DIR} \
 		--with-sg-config=${PREFIX}/etc/squid/${PORTNAME}.conf \
 		--with-sg-dbhome=${DATADIR} \
 		--with-sg-logdir=${LOGDIR} \
@@ -43,6 +43,14 @@ pre-fetch:
 		${ECHO_MSG} "===>  SQUID_UID is set to \"${SQUID_UID}\" and SQUID_GID is set to \"${SQUID_GID}\"." ; \
 		${ECHO_MSG} "      To change this specify them with your make arguments, e.g." ; \
 		${ECHO_MSG} "      make SQUID_UID=squid SQUID_GID=squid" ; \
+	fi
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,-ldb,-l${BDB_LIB_NAME},' ${WRKSRC}/configure
+	@if [ "${BDB_LIB_NAME}" = "db-4.2" ] ; then \
+		${REINPLACE_CMD} -E -e 's,(db_version),\1_4002,g' \
+			${WRKSRC}/configure ; \
 	fi
 
 pre-install:
