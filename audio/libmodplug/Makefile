@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmodplug
-PORTVERSION=	0.8
+PORTVERSION=	0.8.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	modplug-xmms
@@ -14,12 +14,17 @@ MASTER_SITE_SUBDIR=	modplug-xmms
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
 
+USE_GCC=	3.2+
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 
+MAKE_ENV+=	CXX="${CXX}"
+
 post-patch:
+	@${REINPLACE_CMD} -e '/^CXXFLAGS=/d' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
