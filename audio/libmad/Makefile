@@ -18,7 +18,7 @@ COMMENT=	Libmad library (part of MAD project)
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debugging \
 		--enable-sso
 .if defined(WITH_SPEED)
