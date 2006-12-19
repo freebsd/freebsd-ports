@@ -24,6 +24,7 @@
     SUBDIR += chicken
     SUBDIR += cim
     SUBDIR += cli
+    SUBDIR += clips
     SUBDIR += clisp
     SUBDIR += cmucl
     SUBDIR += cmucl-extra

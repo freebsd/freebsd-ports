@@ -1312,6 +1312,7 @@ click		ports/net/click
 clig		ports/devel/clig
 clint		ports/devel/clint
 clip		ports/databases/clip
+clips		ports/lang/clips
 clisp		ports/lang/clisp
 clisp-hyperspec	ports/devel/clisp-hyperspec
 clit		ports/textproc/clit
