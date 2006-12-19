@@ -5,7 +5,5 @@ data together in a single file. A mar file may be suitable in situations where
 a full-scale database is not. Both the mar library and the accompanying utility
 are written in C with the intention of porting to many platforms.
 
-WWW: http://freshmeat.net/projects/mar/
-
 - ehaupt
 ehaupt@critical.ch
