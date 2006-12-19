@@ -8,7 +8,9 @@
 PORTNAME=	ftp-tls
 PORTVERSION=	20051021
 CATEGORIES=	ftp security
-MASTER_SITES=	http://www.ford-hutchinson.com/~fh-1-pfh/
+MASTER_SITES=	http://www.ford-hutchinson.com/~fh-1-pfh/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	marius
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Ftp client supporting FTP AUTH TLS
@@ -24,7 +26,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
-BROKEN=		"Not supported on systems prior to FreeBSD 4.0 (missing getaddrinfo())"
+BROKEN=		Not supported on systems prior to FreeBSD 4.0 (missing getaddrinfo())
 .endif
 
 do-install:
