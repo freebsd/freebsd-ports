@@ -1,5 +1,22 @@
 --- metamail/mailto.c.orig	Wed Feb  9 21:30:26 1994
 +++ metamail/mailto.c	Mon Dec 18 11:46:21 2006
+@@ -37,6 +37,8 @@
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <config.h>
+ #include <pwd.h>
+@@ -60,7 +62,6 @@
+ #include <unistd.h>
+ #endif
+ 
+-extern char *malloc(), *realloc(), *index(), *getmyname();
+ struct mailpart *CreateNewPart();
+ 
+ /* The main data structure for the multiple parts of the mail */
 @@ -570,6 +571,7 @@
          if (isupper(*sdum)) *sdum = tolower(*sdum);
      }

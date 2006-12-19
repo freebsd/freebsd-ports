@@ -1,5 +1,14 @@
 --- metamail/metamail.c.orig	Thu Feb 17 02:57:19 1994
 +++ metamail/metamail.c	Mon Dec 18 11:46:22 2006
+@@ -20,6 +20,8 @@
+ 
+  ******************************************************* */
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
 @@ -83,7 +85,7 @@
  #define MAX_FILE_NAME_SIZE 256
  #define WRITE_BINARY	"w"
@@ -9,6 +18,28 @@
  #define CATCOMMAND  "cat"
  #define CATTEMPLATE "cat %s"
  #define METAMAIL    "metamail"
+@@ -100,6 +102,7 @@
+ #define CMDSIZE 1200 /* Maximum size of command to execute */
+ 
+ #define LINE_BUF_SIZE       2000
++#if 0
+ #ifndef MICROSOFT
+ extern char *malloc();
+ extern char *realloc();
+@@ -107,10 +110,12 @@
+ extern char *getenv();
+ extern char *index();
+ extern char *rindex();
++extern FILE *popen();
++#endif
++
+ char fileToDelete[MAX_FILE_NAME_SIZE];
+ 
+ char *FindParam();
+-extern FILE *popen();
+ static char *nomem = "Out of memory!";
+ static char *mmversion = MM_VERSTRING;
+ static char *NoAskDefault = "text,text/plain,text/richtext";
 @@ -540,6 +545,7 @@
                      ans = 2;
                  } else {
