@@ -469,6 +469,7 @@
     SUBDIR += sqlclient
     SUBDIR += sqlite2
     SUBDIR += sqlite3
+    SUBDIR += sqlitemanager
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
