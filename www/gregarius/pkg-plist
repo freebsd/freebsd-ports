@@ -1,0 +1,250 @@
+@comment $FreeBSD$
+www/gregarius/.DS_Store
+www/gregarius/.htaccess
+www/gregarius/COPYING
+www/gregarius/INSTALL
+www/gregarius/admin/channels.php
+www/gregarius/admin/config.php
+www/gregarius/admin/dashboard.php
+www/gregarius/admin/ds.php
+www/gregarius/admin/folders.php
+www/gregarius/admin/index.php
+www/gregarius/admin/items.php
+www/gregarius/admin/markallasread.php
+www/gregarius/admin/opml.php
+www/gregarius/admin/plugins.php
+www/gregarius/admin/themes.php
+www/gregarius/admin/users.php
+www/gregarius/ajax.php
+www/gregarius/api.php
+www/gregarius/author.php
+www/gregarius/cls/alltags.php
+www/gregarius/cls/categories.php
+www/gregarius/cls/channels.php
+www/gregarius/cls/config.php
+www/gregarius/cls/db/ParsingQuery.class.php
+www/gregarius/cls/db/db.mysql.php
+www/gregarius/cls/db/db.php
+www/gregarius/cls/db/db.sqlite.php
+www/gregarius/cls/debugfeed.php
+www/gregarius/cls/errorhandler.php
+www/gregarius/cls/header.php
+www/gregarius/cls/items.php
+www/gregarius/cls/nav.php
+www/gregarius/cls/profiler.php
+www/gregarius/cls/rdf.php
+www/gregarius/cls/rss.php
+www/gregarius/cls/search.php
+www/gregarius/cls/sidemenu.php
+www/gregarius/cls/taglist.php
+www/gregarius/cls/update.php
+www/gregarius/cls/user.php
+www/gregarius/cls/wrappers/config.php
+www/gregarius/cls/wrappers/errors.php
+www/gregarius/cls/wrappers/feed.php
+www/gregarius/cls/wrappers/feeds.php
+www/gregarius/cls/wrappers/header.php
+www/gregarius/cls/wrappers/item.php
+www/gregarius/cls/wrappers/itemlist.php
+www/gregarius/cls/wrappers/misc.php
+www/gregarius/cls/wrappers/nav.php
+www/gregarius/cls/wrappers/searchform.php
+www/gregarius/cls/wrappers/user.php
+www/gregarius/constants.php
+www/gregarius/core.php
+www/gregarius/css/opml.xsl
+www/gregarius/css/print.css
+www/gregarius/db.php
+www/gregarius/dbinit.php.sample
+www/gregarius/extlib/README.MagpieRSS
+www/gregarius/extlib/README.kses
+www/gregarius/extlib/Sajax.php
+www/gregarius/extlib/Snoopy.class.inc
+www/gregarius/extlib/browser.php
+www/gregarius/extlib/favicon.php
+www/gregarius/extlib/fcollapse.js
+www/gregarius/extlib/kses.php
+www/gregarius/extlib/md5.js
+www/gregarius/extlib/rss_cache.inc
+www/gregarius/extlib/rss_dbcache.inc
+www/gregarius/extlib/rss_fetch.inc
+www/gregarius/extlib/rss_parse.inc
+www/gregarius/extlib/rss_utils.inc
+www/gregarius/feed.php
+www/gregarius/index.php
+www/gregarius/init.php
+www/gregarius/install.php
+www/gregarius/intl/.DS_Store
+www/gregarius/intl/cn_s.php
+www/gregarius/intl/cn_t.php
+www/gregarius/intl/de.php
+www/gregarius/intl/dk.php
+www/gregarius/intl/en.php
+www/gregarius/intl/es.php
+www/gregarius/intl/fr.php
+www/gregarius/intl/he.php
+www/gregarius/intl/it.php
+www/gregarius/intl/pt_BR.php
+www/gregarius/intl/ru.php
+www/gregarius/intl/sv.php
+www/gregarius/opml.php
+www/gregarius/plugins.php
+www/gregarius/plugins/dblclicktoread.php
+www/gregarius/plugins/delicious.php
+www/gregarius/plugins/extrabutton.php
+www/gregarius/plugins/markallread.php
+www/gregarius/plugins/newwindow.php
+www/gregarius/plugins/roundedcorners.php
+www/gregarius/plugins/rssview.php
+www/gregarius/plugins/sanitizer.php
+www/gregarius/plugins/stickyflag/flag_blue.png
+www/gregarius/plugins/stickyflag/flag_green.png
+www/gregarius/plugins/stickyflag/flag_orange.png
+www/gregarius/plugins/stickyflag/flag_red.png
+www/gregarius/plugins/stickyflag/flag_white.png
+www/gregarius/plugins/stickyflag/noflag.png
+www/gregarius/plugins/stickyflag/nosticky.png
+www/gregarius/plugins/stickyflag/sticky.png
+www/gregarius/plugins/stickyflag/stickyflag.php
+www/gregarius/plugins/tidy.php
+www/gregarius/plugins/urlfilter.php
+www/gregarius/robots.txt
+www/gregarius/schema.php
+www/gregarius/search.php
+www/gregarius/state.php
+www/gregarius/tags.php
+www/gregarius/themes.php
+www/gregarius/themes/default/.themeinfo
+www/gregarius/themes/default/config.php
+www/gregarius/themes/default/media/busy.gif
+www/gregarius/themes/default/media/edit.gif
+www/gregarius/themes/default/media/folder.gif
+www/gregarius/themes/default/media/installer/codename.jpg
+www/gregarius/themes/default/media/minus.gif
+www/gregarius/themes/default/media/noicon.png
+www/gregarius/themes/default/media/noscreenshot.png
+www/gregarius/themes/default/media/pl.gif
+www/gregarius/themes/default/media/plus.gif
+www/gregarius/themes/default/mobile/error.php
+www/gregarius/themes/default/mobile/feed.php
+www/gregarius/themes/default/mobile/feeds.php
+www/gregarius/themes/default/mobile/feedsfeed.php
+www/gregarius/themes/default/mobile/footer.php
+www/gregarius/themes/default/mobile/header.php
+www/gregarius/themes/default/mobile/index.php
+www/gregarius/themes/default/mobile/item.php
+www/gregarius/themes/default/mobile/itemlist.php
+www/gregarius/themes/default/mobile/media/folder.gif
+www/gregarius/themes/default/mobile/mobileconstants.php
+www/gregarius/themes/default/mobile/nav.php
+www/gregarius/themes/default/mobile/navitem.php
+www/gregarius/themes/default/mobile/overrides.php
+www/gregarius/themes/default/mobile/plugins.php
+www/gregarius/themes/default/mobile/searchform.php
+www/gregarius/themes/default/mobile/style.css
+www/gregarius/themes/default/rss/.themeinfo
+www/gregarius/themes/default/rss/feed.php
+www/gregarius/themes/default/rss/index.php
+www/gregarius/themes/default/rss/item.php
+www/gregarius/themes/default/rss/itemlist.php
+www/gregarius/themes/default/rss/searchform.php
+www/gregarius/themes/default/shot.png
+www/gregarius/themes/default/web/catfolder.php
+www/gregarius/themes/default/web/css/layout.css
+www/gregarius/themes/default/web/css/look.css
+www/gregarius/themes/default/web/css/media/arrows.gif
+www/gregarius/themes/default/web/css/media/bg.gif
+www/gregarius/themes/default/web/error.php
+www/gregarius/themes/default/web/feed.php
+www/gregarius/themes/default/web/feeds.php
+www/gregarius/themes/default/web/feedsfeed.php
+www/gregarius/themes/default/web/feedsfolder.php
+www/gregarius/themes/default/web/footer.php
+www/gregarius/themes/default/web/header.php
+www/gregarius/themes/default/web/index.php
+www/gregarius/themes/default/web/item.php
+www/gregarius/themes/default/web/itemlist.php
+www/gregarius/themes/default/web/media/busy.gif
+www/gregarius/themes/default/web/media/edit.gif
+www/gregarius/themes/default/web/media/folder.gif
+www/gregarius/themes/default/web/media/installer/codename.jpg
+www/gregarius/themes/default/web/media/minus.gif
+www/gregarius/themes/default/web/media/noicon.png
+www/gregarius/themes/default/web/media/noscreenshot.png
+www/gregarius/themes/default/web/media/pl.gif
+www/gregarius/themes/default/web/media/plus.gif
+www/gregarius/themes/default/web/media/sr0.png
+www/gregarius/themes/default/web/media/sr1.png
+www/gregarius/themes/default/web/nav.php
+www/gregarius/themes/default/web/navitem.php
+www/gregarius/themes/default/web/pagination.php
+www/gregarius/themes/default/web/searchform.php
+www/gregarius/themes/lilina/.themeinfo
+www/gregarius/themes/lilina/config.php
+www/gregarius/themes/lilina/intl/cn_s.php
+www/gregarius/themes/lilina/intl/cn_t.php
+www/gregarius/themes/lilina/intl/de.php
+www/gregarius/themes/lilina/intl/dk.php
+www/gregarius/themes/lilina/intl/en.php
+www/gregarius/themes/lilina/intl/es.php
+www/gregarius/themes/lilina/intl/fr.php
+www/gregarius/themes/lilina/intl/he.php
+www/gregarius/themes/lilina/intl/it.php
+www/gregarius/themes/lilina/intl/pt_BR.php
+www/gregarius/themes/lilina/intl/ru.php
+www/gregarius/themes/lilina/intl/sv.php
+www/gregarius/themes/lilina/shot.png
+www/gregarius/themes/lilina/web/css/layout.css
+www/gregarius/themes/lilina/web/css/look.css
+www/gregarius/themes/lilina/web/css/media/arrows.gif
+www/gregarius/themes/lilina/web/css/media/bg.gif
+www/gregarius/themes/lilina/web/css/media/sr.gif
+www/gregarius/themes/lilina/web/feed.php
+www/gregarius/themes/lilina/web/index.php
+www/gregarius/themes/lilina/web/item.php
+www/gregarius/themes/lilina/web/js/lilina.js
+www/gregarius/themes/lilina/web/media/edit.gif
+www/gregarius/themes/lilina/web/media/folder.gif
+www/gregarius/themes/lilina/web/media/mark_off.gif
+www/gregarius/themes/lilina/web/media/mark_on.gif
+www/gregarius/themes/lilina/web/media/minus.gif
+www/gregarius/themes/lilina/web/media/noicon.png
+www/gregarius/themes/lilina/web/media/pl.gif
+www/gregarius/themes/lilina/web/media/plus.gif
+www/gregarius/themes/lilina/web/overrides.php
+www/gregarius/themes/lilina/web/schemes/lowcontrast/.themeinfo
+www/gregarius/themes/lilina/web/schemes/lowcontrast/diff.css
+www/gregarius/update.php
+www/gregarius/util.php
+@dirrmtry www/gregarius/themes/lilina/web/schemes/lowcontrast
+@dirrmtry www/gregarius/themes/lilina/web/schemes
+@dirrmtry www/gregarius/themes/lilina/web/media
+@dirrmtry www/gregarius/themes/lilina/web/js
+@dirrmtry www/gregarius/themes/lilina/web/css/media
+@dirrmtry www/gregarius/themes/lilina/web/css
+@dirrmtry www/gregarius/themes/lilina/web
+@dirrmtry www/gregarius/themes/lilina/intl
+@dirrmtry www/gregarius/themes/lilina
+@dirrmtry www/gregarius/themes/default/web/media/installer
+@dirrmtry www/gregarius/themes/default/web/media
+@dirrmtry www/gregarius/themes/default/web/css/media
+@dirrmtry www/gregarius/themes/default/web/css
+@dirrmtry www/gregarius/themes/default/web
+@dirrmtry www/gregarius/themes/default/rss
+@dirrmtry www/gregarius/themes/default/mobile/media
+@dirrmtry www/gregarius/themes/default/mobile
+@dirrmtry www/gregarius/themes/default/media/installer
+@dirrmtry www/gregarius/themes/default/media
+@dirrmtry www/gregarius/themes/default
+@dirrmtry www/gregarius/themes
+@dirrmtry www/gregarius/plugins/stickyflag
+@dirrmtry www/gregarius/plugins/extlib
+@dirrmtry www/gregarius/plugins
+@dirrmtry www/gregarius/intl
+@dirrmtry www/gregarius/extlib
+@dirrmtry www/gregarius/css
+@dirrmtry www/gregarius/cls/wrappers
+@dirrmtry www/gregarius/cls/db
+@dirrmtry www/gregarius/cls
+@dirrmtry www/gregarius/admin
+@dirrmtry www/gregarius
