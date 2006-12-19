@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_WX=	2.6
-USE_COMPS=	python_run
+WX_COMPS=	python:run
 
 OPTIONS=	ADULT	"non-censored TV listings" off \
 		XINE	"use xine instead of mplayer" off

@@ -9,8 +9,6 @@ etc/tunapie.config.default
 %%DATADIR%%/RecordQueue.pyc
 %%DATADIR%%/RecordTime.py
 %%DATADIR%%/RecordTime.pyc
-%%DATADIR%%/Splash.py
-%%DATADIR%%/Splash.pyc
 %%DATADIR%%/Tunapie.py
 %%DATADIR%%/Tunapie.pyc
 %%DATADIR%%/TunerFrame1.py
@@ -19,8 +17,6 @@ etc/tunapie.config.default
 %%DATADIR%%/TunerInfoDialog.pyc
 %%DATADIR%%/TunerPrefs.py
 %%DATADIR%%/TunerPrefs.pyc
-%%DATADIR%%/pygame.ico
-%%DATADIR%%/tplogo.ico
 %%DATADIR%%/tuner.py
 %%DATADIR%%/tuner.pyc
 %%DESKTOPDIR%%/tunapie.desktop
