@@ -1,14 +1,5 @@
---- makefile.in.orig	Sat Sep 10 17:17:51 2005
-+++ makefile.in	Sat Nov 12 19:41:57 2005
-@@ -20,7 +20,7 @@
- mandir = @mandir@
- libdir = @libdir@
- modulebasedir = $(libdir)/allegro
--moduledir = $(modulebasedir)/$(shared_major_minor)
-+moduledir = $(modulebasedir)/$(shared_version)
- 
- EXE =
- OBJ = .o
+--- makefile.in.orig	Sat Apr  8 14:07:28 2006
++++ makefile.in	Mon Dec 18 12:35:59 2006
 @@ -29,12 +29,13 @@
  INFO_DIR = $(infodir)/dir
  DESTDIR =
