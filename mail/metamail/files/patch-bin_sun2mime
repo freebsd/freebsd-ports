@@ -1,0 +1,11 @@
+--- bin/sun2mime.orig	Sat Nov 13 15:54:05 1993
++++ bin/sun2mime	Mon Dec 18 11:50:06 2006
+@@ -11,7 +11,7 @@
+ fi
+ TMPFILE=${METAMAIL_TMPDIR}/suntomime.$$
+ 
+-/bin/nawk '
++/usr/bin/awk '
+   BEGIN { printf("Content-type: multipart/mixed; boundary=--------\n\n")
+           RS=""; FS="\n"; mode="HEADER" }
+   mode == "HEADER" {

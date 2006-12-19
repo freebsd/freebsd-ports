@@ -1,0 +1,49 @@
+--- bin/showexternal.orig	Tue Feb  8 17:39:05 1994
++++ bin/showexternal	Mon Dec 18 11:50:24 2006
+@@ -15,9 +15,45 @@
+ # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+ # 
+ 
++# Check argument integrity. Don't trust mail headers
++switch ("$1$2$3$4$5$6$7")
++case "*[\t ]*":
++  echo "Illegal white space in arguments\!"
++  echo "Command was:"
++  echo "'$0' '$1' '$2' '$3' '$4' '$5' '$6' '$7'"
++  exit 2
++endsw
++
+ onintr cleanup
++# Set a sensible value for the temporary directory, if its not
++# already set.  If TMPDIR is set previously, then we will
++# assume it is adequately protected.
+ if (! $?METAMAIL_TMPDIR) then
+-    set METAMAIL_TMPDIR=/tmp
++    if ($?TMPDIR) then
++        set METAMAIL_TMPDIR="$TMPDIR"
++    else
++        set METAMAIL_TMPDIR=~/metamail_tmp
++    endif
++endif
++
++# Set a sensible umask value
++umask 077
++
++# Make sure that the temporary directory is available
++if (! -d "$METAMAIL_TMPDIR") then
++
++    if (! -e "$METAMAIL_TMPDIR") then
++        mkdir "$METAMAIL_TMPDIR"
++    else
++        echo "$METAMAIL_TMPDIR exists, but is not a directory"
++        exit 2
++    endif
++
++    if ( $status != 0 || ! -d "$METAMAIL_TMPDIR" ) then
++        echo "Error creating $METAMAIL_TMPDIR"
++        exit 2
++    endif
++
+ endif
+ if (! $?FTP) then
+     set FTP=ftp
