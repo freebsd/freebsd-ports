@@ -8,15 +8,13 @@ PORTNAME=	kpicframer
 PORTVERSION=	0.5
 PORTREVISION=	6
 CATEGORIES=	games kde
-MASTER_SITES=	http://www.norbs.de/kpicframer/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	KDE card game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
-
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2007-01-17
 
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
