@@ -169,6 +169,7 @@
     SUBDIR += gnustep-ticker
     SUBDIR += google-sitemapgen
     SUBDIR += goose
+    SUBDIR += gregarius
     SUBDIR += gstreamer-plugins-neon
     SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
