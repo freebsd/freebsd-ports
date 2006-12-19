@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gtkam
-PORTVERSION=	0.1.13
-PORTREVISION=	2
+PORTVERSION=	0.1.14
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 
 LIB_DEPENDS=	exif-gtk.5:${PORTSDIR}/graphics/libexif-gtk \
@@ -22,6 +21,7 @@ USE_XLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
