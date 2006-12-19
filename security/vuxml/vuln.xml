@@ -34,6 +34,61 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ef3306fc-8f9b-11db-ab33-000e0c2e438a">
+    <topic>bind9 -- Denial of Service in named(8)</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.1</gt><lt>6.1_6</lt></range>
+	<range><gt>6.0</gt><lt>6.0_11</lt></range>
+	<range><gt>5.5</gt><lt>5.5_4</lt></range>
+	<range><gt>5.4</gt><lt>5.4_18</lt></range>
+	<range><gt>5.0</gt><lt>5.3_33</lt></range>
+      </system>
+      <package>
+	<name>bind9</name>
+	<range><gt>9.0</gt><lt>9.3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>For a recursive DNS server, a remote attacker sending enough
+	  recursive queries for the replies to arrive after all the
+	  interested clients have left the recursion queue will trigger
+	  an INSIST failure in the named(8) daemon.  Also for a
+	  recursive DNS server, an assertion failure can occur when
+	  processing a query whose reply will contain more than one
+	  SIG(covered) RRset.</p>
+	<p>For an authoritative DNS server serving a RFC 2535 DNSSEC
+	  zone which is queried for the SIG records where there are
+	  multiple SIG(covered) RRsets (e.g. a zone apex), named(8)
+	  will trigger an assertion failure when it tries to construct
+	  the response.</p>
+	<h1>Impact</h1>
+	<p>An attacker who can perform recursive lookups on a DNS server
+	  and is able to send a sufficiently large number of recursive
+	  queries, or is able to get the DNS server to return more than
+	  one SIG(covered) RRsets can stop the functionality of the DNS
+	  service.</p>
+	<p>An attacker querying an authoritative DNS server serving a
+	  RFC 2535 DNSSEC zone may be able to crash the DNS server.</p>
+	<h1>Workaround</h1>
+	<p>A possible workaround is to only allow trusted clients to
+	  perform recursive queries.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4095</cvename>
+      <cvename>CVE-2006-4096</cvename>
+      <freebsdsa>SA-06:20.bind</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-09-06</discovery>
+      <entry>2006-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="077c2dca-8f9a-11db-ab33-000e0c2e438a">
     <topic>openssl -- Incorrect PKCS#1 v1.5 padding validation in
       crypto(3)</topic>
