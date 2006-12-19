@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -67,6 +67,10 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	ObjectiveLib:devel/objectivelib \
 	PopplerKit:graphics/popplerkit \
 	CameraKit:graphics/camerakit \
+	Tryst:net/tryst \
+
+#	OgreKit:textproc/etoile-ogrekit \
+#	LuceneKit:textproc/etoile-lucenekit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -177,6 +181,11 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	LuserNET:news/lusernet \
 	Popup:textproc/popup \
 	Toolbox:deskutils/toolbox \
+	Fortunate:games/fortunate \
+	TBrowser:net/tryst-examples \
+
+#	CameraTransfer:graphics/cameratransfer \
+#	Typewriter:editors/etoile-typewriter \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
