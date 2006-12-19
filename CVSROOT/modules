@@ -14559,6 +14559,7 @@ trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
 trustedqsl	ports/comms/trustedqsl
 truthtable	ports/math/truthtable
+tryst		ports/net/tryst
 tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
 tshark		ports/net/tshark
