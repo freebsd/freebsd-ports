@@ -1,5 +1,23 @@
 --- metamail/splitmail.c.orig	Mon Jan 31 23:23:14 1994
 +++ metamail/splitmail.c	Mon Dec 18 11:46:22 2006
+@@ -21,6 +21,8 @@
+  ******************************************************* */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <config.h>
+@@ -28,7 +30,7 @@
+ #include <time.h>
+ 
+ #define MINCHUNKSIZE 20000 /* Better be enough to hold the headers, or we die! */
+-extern char *malloc(), *index(), *getmyname();
++extern char *getmyname();
+ 
+ #ifdef AMIGA
+ #define Prototype   extern
 @@ -41,8 +43,8 @@
  #define VERBOSEDELIVERYCMD VerboseDeliveryCmd
  #else
