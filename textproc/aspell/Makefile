@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aspell
-PORTVERSION=	0.60.4
-PORTREVISION=	4
+PORTVERSION=	0.60.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
@@ -24,7 +23,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-docdir=${DOCSDIR}	\
-			--enable-static
+			--enable-static			\
+			--mandir=${MANPREFIX}/man	\
+			--infodir=${PREFIX}/${INFO_PATH}
 PTHREAD_CFLAGS=		# Disable threading
 PTHREAD_LIBS=		# libaspell may be used by unthreaded apps.
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
@@ -108,8 +109,8 @@ post-install:	${DICT_TARGET}
 .if defined(WITH_ISPELL)
 	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/scripts/|} ${PREFIX}/bin
 .endif
-	@${ECHO_CMD} "@dirrm share/aspell" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/aspell-${VERINST}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry share/aspell" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry lib/aspell-${VERINST}" >> ${TMPPLIST}
 
 inst-dicten:
 # Install en-aspell by default
