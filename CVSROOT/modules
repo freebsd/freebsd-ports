@@ -13843,6 +13843,7 @@ sqldjbdns	ports/dns/sqldjbdns
 sqlgrey		ports/mail/sqlgrey
 sqlite2		ports/databases/sqlite2
 sqlite3		ports/databases/sqlite3
+sqlitemanager	ports/databases/sqlitemanager
 sqlrelay	ports/databases/sqlrelay
 sqsh		ports/databases/sqsh
 sqstat		ports/www/sqstat
