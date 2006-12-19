@@ -109,7 +109,7 @@ sql-ledger/doc/UPGRADE-2.4.0-2.4.2
 sql-ledger/doc/UPGRADE-2.4.16-2.6.0
 sql-ledger/doc/UPGRADE-2.4.2-2.4.3
 sql-ledger/doc/UPGRADE-2.4.3-2.4.16
-sql-ledger/doc/UPGRADE-2.6.0-2.6.19
+sql-ledger/doc/UPGRADE-2.6.0-2.6.22
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -1481,6 +1481,10 @@ sql-ledger/locale/se/ps
 sql-ledger/locale/se/pw
 sql-ledger/locale/se/rc
 sql-ledger/locale/se/rp
+sql-ledger/locale/sk/COPYING
+sql-ledger/locale/sk/LANGUAGE
+sql-ledger/locale/sk/all
+sql-ledger/locale/sk/locales.pl
 sql-ledger/locale/sv/COPYING
 sql-ledger/locale/sv/LANGUAGE
 sql-ledger/locale/sv/Num2text
@@ -2257,6 +2261,41 @@ sql-ledger/templates/Service-timecard.html
 sql-ledger/templates/Service-timecard.tex
 sql-ledger/templates/Service-work_order.html
 sql-ledger/templates/Service-work_order.tex
+sql-ledger/templates/Slovak-ap_transaction.html
+sql-ledger/templates/Slovak-ap_transaction.tex
+sql-ledger/templates/Slovak-ar_transaction.html
+sql-ledger/templates/Slovak-ar_transaction.tex
+sql-ledger/templates/Slovak-balance_sheet.html
+sql-ledger/templates/Slovak-bin_list.html
+sql-ledger/templates/Slovak-bin_list.tex
+sql-ledger/templates/Slovak-check.tex
+sql-ledger/templates/Slovak-income_statement.html
+sql-ledger/templates/Slovak-invoice.html
+sql-ledger/templates/Slovak-invoice.tex
+sql-ledger/templates/Slovak-letterhead.html
+sql-ledger/templates/Slovak-letterhead.tex
+sql-ledger/templates/Slovak-logo.eps
+sql-ledger/templates/Slovak-logo.png
+sql-ledger/templates/Slovak-packing_list.html
+sql-ledger/templates/Slovak-packing_list.tex
+sql-ledger/templates/Slovak-pick_list.html
+sql-ledger/templates/Slovak-pick_list.tex
+sql-ledger/templates/Slovak-pos_invoice.txt
+sql-ledger/templates/Slovak-purchase_order.html
+sql-ledger/templates/Slovak-purchase_order.tex
+sql-ledger/templates/Slovak-receipt.tex
+sql-ledger/templates/Slovak-request_quotation.html
+sql-ledger/templates/Slovak-request_quotation.tex
+sql-ledger/templates/Slovak-sales_order.html
+sql-ledger/templates/Slovak-sales_order.tex
+sql-ledger/templates/Slovak-sales_quotation.html
+sql-ledger/templates/Slovak-sales_quotation.tex
+sql-ledger/templates/Slovak-statement.html
+sql-ledger/templates/Slovak-statement.tex
+sql-ledger/templates/Slovak-timecard.html
+sql-ledger/templates/Slovak-timecard.tex
+sql-ledger/templates/Slovak-work_order.html
+sql-ledger/templates/Slovak-work_order.tex
 sql-ledger/templates/Spanish_A4-ap_transaction.html
 sql-ledger/templates/Spanish_A4-ap_transaction.tex
 sql-ledger/templates/Spanish_A4-ar_transaction.html
@@ -2440,6 +2479,7 @@ etc/sql-ledger-httpd.conf
 @dirrm sql-ledger/locale/tw_big5
 @dirrm sql-ledger/locale/tr
 @dirrm sql-ledger/locale/sv
+@dirrm sql-ledger/locale/sk
 @dirrm sql-ledger/locale/se
 @dirrm sql-ledger/locale/ru_utf
 @dirrm sql-ledger/locale/ru
