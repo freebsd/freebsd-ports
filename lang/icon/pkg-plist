@@ -4,6 +4,8 @@
 lib/icon/bin/icont
 @exec ln -sf %B/%f %D/bin/%f
 @unexec rm -f %D/bin/%f
+@exec ln -sf %B/%f %D/bin/icon
+@unexec rm -f %D/bin/icon
 lib/icon/bin/iconx
 @exec ln -sf %B/%f %D/bin/%f
 @unexec rm -f %D/bin/%f

@@ -7,6 +7,7 @@
 
 PORTNAME=	icon
 PORTVERSION=	9.4.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/packages/unix/
 DISTNAME=	${PORTNAME}.v${PORTVERSION:S/.//g}src
@@ -17,7 +18,7 @@ COMMENT=	The Icon programming language
 
 ALL_TARGET=	All
 
-MAN1=		icont.1
+MAN1=		icon.1 icont.1
 
 ARCH_NAME=	bsd
 ICONDIR=	${PREFIX}/lib/${PORTNAME}
@@ -51,6 +52,7 @@ do-configure:
 		${MAKEFILE} ${MAKE_ARGS} ${CONFIG_CMD} name=${ARCH_NAME})
 
 do-install:
+	${INSTALL_MAN} ${WRKSRC}/man/man1/icon.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${ICONDIR}/bin
 .for file in ${BINS}
@@ -59,6 +61,7 @@ do-install:
 .for file in icont iconx
 	@${LN} -sf ${ICONDIR}/bin/${file} ${PREFIX}/bin/${file}
 .endfor
+	@${LN} -sf ${ICONDIR}/bin/icont ${PREFIX}/bin/icon
 	@${MKDIR} ${ICONDIR}/lib
 	cd ${WRKSRC}/lib; ${INSTALL_DATA} *.* ${ICONDIR}/lib
 .if !defined(WITHOUT_X11)
