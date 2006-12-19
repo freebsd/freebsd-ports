@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.0.27
+PORTVERSION=	1.2.0
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -25,21 +25,38 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		liferea.1
 GCONF_SCHEMAS=	liferea.schemas
+INSTALLS_ICONS=	yes
 
-OPTIONS=	DBUS "Enable dbus support" on \
+OPTIONS=	LIBNOTIFY "Enable libnotify support" on \
+		DBUS "Enable dbus support" on \
+		GNUTLS "Enable SSL/HTTPS support" on \
 		XPI "Firefox extension to subscribe feeds (req. dbus)" off \
 		MOZILLA "Use Mozilla for rendering" off \
 		XULRUNNER "Use Xulrunner for rendering" off
 
 .include <bsd.port.pre.mk>
 
+.ifdef WITHOUT_LIBNOTIFY
+CONFIGURE_ARGS+=--disable-libnotify
+PLIST_SUB+=	NOTIFY="@comment "
+.else
+LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+PLIST_SUB+=	NOTIFY=""
+.endif
+
+.ifdef WITHOUT_GNUTLS
+CONFIGURE_ARGS+=--disable-gnutls
+.else
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
+.endif
+
 .ifdef WITH_MOZILLA
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 CONFIGURE_ARGS+=--enable-gecko=${GECKO}
-PLIST_SUB=	MOZ=""
+PLIST_SUB+=	MOZ=""
 .else
 CONFIGURE_ARGS+=--disable-gecko
-PLIST_SUB=	MOZ="@comment "
+PLIST_SUB+=	MOZ="@comment "
 .endif
 
 .ifdef WITH_XPI
