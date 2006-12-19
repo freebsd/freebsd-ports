@@ -3806,6 +3806,7 @@ grc		ports/misc/grc
 grdesktop	ports/net/grdesktop
 greed		ports/ftp/greed
 greed_game	ports/games/greed
+gregarius	ports/www/gregarius
 gregexp		ports/misc/gregexp
 grepcidr	ports/net-mgmt/grepcidr
 grepip		ports/net-mgmt/grepip
