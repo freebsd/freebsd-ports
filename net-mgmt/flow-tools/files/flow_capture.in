@@ -11,7 +11,7 @@
 # Add the following line to /etc/rc.conf to enable flow-capture:
 # flow_capture_enable (bool):	Set it to "YES" to enable flow-capture daemon.
 #				Set to "NO" by default.
-# flow_tools_datadir (str):	Base flow data directory.
+# flow_capture_datadir (str):	Base flow data directory.
 #				Default is "/var/db/flows"
 # flow_capture_localip (str):	IP address to bind to
 #				Default to "0.0.0.0"
