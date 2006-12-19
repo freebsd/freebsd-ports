@@ -121,6 +121,7 @@
     SUBDIR += espeak
     SUBDIR += etktab
     SUBDIR += euphoria
+    SUBDIR += exaile
     SUBDIR += extace
     SUBDIR += ezstream
     SUBDIR += faac
