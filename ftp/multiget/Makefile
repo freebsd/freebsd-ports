@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	multiget
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	ftp www
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An http/ftp downloader with a nice GUI
 
-USE_BZIP2=	yes
 USE_WX=		2.6
 MAKEFILE=	makefile
 ALL_TARGET=	MultiGet
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -28,8 +26,8 @@ post-patch:
 		 s|\(CFLAGS\) =|\1 +=|; \
 		 s|wx-config|${WX_CONFIG}|' \
 		 ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -Ee 's,(fopen|ftruncate)64,\1,' \
-		${WRKSRC}/mgfilemanager.cpp
+#	@${REINPLACE_CMD} -Ee 's,(fopen|ftruncate)64,\1,' \
+#		${WRKSRC}/mgfilemanager.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/MultiGet ${PREFIX}/bin/${PORTNAME}
