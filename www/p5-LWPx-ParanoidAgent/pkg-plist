@@ -1,0 +1,8 @@
+%%SITE_PERL%%/LWPx/ParanoidAgent.pm
+%%SITE_PERL%%/LWPx/Protocol/http_paranoid.pm
+%%SITE_PERL%%/LWPx/Protocol/https_paranoid.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWPx/ParanoidAgent/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWPx/ParanoidAgent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWPx
+@dirrmtry %%SITE_PERL%%/LWPx/Protocol
+@dirrmtry %%SITE_PERL%%/LWPx
