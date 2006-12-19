@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -63,6 +63,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	FT:graphics/fortytwo \
 	ObjectiveLib:devel/objectivelib \
 	PopplerKit:graphics/popplerkit \
+	CameraKit:graphics/camerakit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -168,6 +169,11 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Digibux:german/digibux \
 	AppWrapper:deskutils/appwrapper \
 	Pixen:graphics/pixen \
+	MyWiki:deskutils/mywiki \
+	Cartotheque:deskutils/cartotheque \
+	LuserNET:news/lusernet \
+	Popup:textproc/popup \
+	Toolbox:deskutils/toolbox \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
