@@ -15,6 +15,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	AmaroK replacement for GTK+
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 
 USE_GNOME=	pygtk2
