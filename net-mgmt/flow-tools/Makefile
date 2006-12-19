@@ -16,7 +16,7 @@ COMMENT=	Suite of tools and library to work with netflow data
 
 USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--localstatedir=${PREFIX}
+CONFIGURE_ARGS+=--localstatedir="${PREFIX}"
 
 MAN1=	flow-capture.1 flow-cat.1 flow-dscan.1 flow-expire.1	\
 	flow-export.1 flow-fanout.1 flow-filter.1 flow-gen.1	\
@@ -40,13 +40,17 @@ FLOW_CAPTURE_GROUP=	flowtools
 FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
 .if defined(WITH_PGSQL)
-CONFIGURE_ARGS+=--with-pgsql=${PREFIX}
+CONFIGURE_ARGS+=--with-pgsql="${PREFIX}"
 USE_PGSQL=	yes
 .endif
 
 .if defined(WITH_MYSQL)
-CONFIGURE_ARGS+=--with-mysql=${PREFIX}
+CONFIGURE_ARGS+=--with-mysql="${PREFIX}"
 USE_MYSQL=	yes
+.endif
+
+.if defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=--with-openssl="${OPENSSLBASE}"
 .endif
 
 post-patch:
