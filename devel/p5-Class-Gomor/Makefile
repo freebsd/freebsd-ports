@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=		Class-Gomor
-PORTVERSION=		1.00
-CATEGORIES=		devel perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Class
-PKGNAMEPREFIX=		p5-
+PORTNAME=	Class-Gomor
+PORTVERSION=	1.01
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		boumenot@gmail.com
-COMMENT=		Class and object builder
+MAINTAINER=	boumenot@gmail.com
+COMMENT=	Class and object builder
 
 PERL_CONFIGURE=	yes
 
