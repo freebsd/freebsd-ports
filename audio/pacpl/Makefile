@@ -88,6 +88,6 @@ do-install:
 		${PREFIX}/${KONQ_SVCM_DIR}/
 	@${CHMOD} a+x ${PREFIX}/${AMAROK_SCR_DIR}/*pl
 	@${ECHO_CMD} "name = Pacx" > ${PREFIX}/${AMAROK_SCR_DIR}/transcoding_pacx.spec
-	@${ECHO_CMD} "type = transcoding" >> ${PREFIX}/${AMAROK_SCR_DIR}/transcoding_pacx.spec
+	@${ECHO_CMD} "type = transcode" >> ${PREFIX}/${AMAROK_SCR_DIR}/transcoding_pacx.spec
 
 .include <bsd.port.mk>
