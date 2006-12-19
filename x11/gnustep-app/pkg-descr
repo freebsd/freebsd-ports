@@ -8,7 +8,7 @@ Local libs:	Pantomime, GToolKit, rigs, Addresses, SlideShow, netclasses,
 WizardKit, HighlighterKit, Performance, SQLClient, WebServer, StepTalk,
 MathArray, ObjcUnit, WildMenus, GSKrab, Cddb, UnitKit, XWindowServerKit,
 RSSKit, EtoileExtensions, Encore, BDB, FortyTwo, ObjectiveLib, PopplerKit,
-MP3ToWav, CameraKit
+MP3ToWav, CameraKit, Tryst
 
 System apps:	Gorm, GShisen, ProjectCenter, Preferences, GWorkspace,
 guile-gui, gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
@@ -26,6 +26,6 @@ DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer, Burn, GScheme,
 Mplayer, MyLibrary, NeXTGo, Grr, iTerm, Installer, Hardware, LookAndBehavior,
 Azalea, EtoileMenuServer, Position, Expense, FreeTar, CodeEditor, Localize,
 AddressManager, GSBench, SVGViewer, Vindaloo, Digibux, AppWrapper, Pixen,
-MyWiki, Cartotheque, LuserNET, Popup, Toolbox
+MyWiki, Cartotheque, LuserNET, Popup, Toolbox, Fortunate, TBrowser, TChat
 
 Local tools:	zillion, adtool
