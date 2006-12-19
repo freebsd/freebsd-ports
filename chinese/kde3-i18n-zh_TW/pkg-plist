@@ -4,6 +4,29 @@ share/doc/HTML/zh_TW/docs/common/kde-localised.css
 share/doc/HTML/zh_TW/docs/common/lgpl-translated.html
 share/doc/HTML/zh_TW/docs/common/logotp3.png
 share/doc/HTML/zh_TW/khelpcenter/contact.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/about.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/common
+share/doc/HTML/zh_TW/khelpcenter/faq/configkde.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/contrib.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/desktop.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/filemng.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/getkde.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/index.cache.bz2
+share/doc/HTML/zh_TW/khelpcenter/faq/index.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/install.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/intro.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/kdeapps.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/misc.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/moreinfo.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/nonkdeapps.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/notrelated.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/panel.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/qt.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/questions.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/sound.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/tips.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/webbrowse.docbook
+share/doc/HTML/zh_TW/khelpcenter/faq/winmng.docbook
 share/doc/HTML/zh_TW/khelpcenter/help.docbook
 share/doc/HTML/zh_TW/khelpcenter/links.docbook
 share/doc/HTML/zh_TW/khelpcenter/support.docbook
@@ -190,6 +213,8 @@ share/locale/zh_TW/LC_MESSAGES/kdesktop.mo
 share/locale/zh_TW/LC_MESSAGES/kdessh.mo
 share/locale/zh_TW/LC_MESSAGES/kdesu.mo
 share/locale/zh_TW/LC_MESSAGES/kdesud.mo
+share/locale/zh_TW/LC_MESSAGES/kdevdesigner.mo
+share/locale/zh_TW/LC_MESSAGES/kdevelop.mo
 share/locale/zh_TW/LC_MESSAGES/kdevtipofday.mo
 share/locale/zh_TW/LC_MESSAGES/kdf.mo
 share/locale/zh_TW/LC_MESSAGES/kdgantt.mo
@@ -255,6 +280,7 @@ share/locale/zh_TW/LC_MESSAGES/kfile_wav.mo
 share/locale/zh_TW/LC_MESSAGES/kfile_xbm.mo
 share/locale/zh_TW/LC_MESSAGES/kfile_xpm.mo
 share/locale/zh_TW/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/zh_TW/LC_MESSAGES/kfilereplace.mo
 share/locale/zh_TW/LC_MESSAGES/kfileshare.mo
 share/locale/zh_TW/LC_MESSAGES/kfindpart.mo
 share/locale/zh_TW/LC_MESSAGES/kfloppy.mo
@@ -279,6 +305,7 @@ share/locale/zh_TW/LC_MESSAGES/khtmlkttsd.mo
 share/locale/zh_TW/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kicker.mo
 share/locale/zh_TW/LC_MESSAGES/kiconedit.mo
+share/locale/zh_TW/LC_MESSAGES/kimagemapeditor.mo
 share/locale/zh_TW/LC_MESSAGES/kinetd.mo
 share/locale/zh_TW/LC_MESSAGES/kio.mo
 share/locale/zh_TW/LC_MESSAGES/kio_audiocd.mo
@@ -323,6 +350,7 @@ share/locale/zh_TW/LC_MESSAGES/kleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/klettres.mo
 share/locale/zh_TW/LC_MESSAGES/klickety.mo
 share/locale/zh_TW/LC_MESSAGES/klines.mo
+share/locale/zh_TW/LC_MESSAGES/klinkstatus.mo
 share/locale/zh_TW/LC_MESSAGES/klipper.mo
 share/locale/zh_TW/LC_MESSAGES/klock.mo
 share/locale/zh_TW/LC_MESSAGES/kmag.mo
@@ -361,6 +389,7 @@ share/locale/zh_TW/LC_MESSAGES/kodo.mo
 share/locale/zh_TW/LC_MESSAGES/kolf.mo
 share/locale/zh_TW/LC_MESSAGES/kolourpaint.mo
 share/locale/zh_TW/LC_MESSAGES/kolourpicker.mo
+share/locale/zh_TW/LC_MESSAGES/kommander.mo
 share/locale/zh_TW/LC_MESSAGES/kompare.mo
 share/locale/zh_TW/LC_MESSAGES/konnector_dummy.mo
 share/locale/zh_TW/LC_MESSAGES/konnector_kabc.mo
@@ -391,6 +420,7 @@ share/locale/zh_TW/LC_MESSAGES/kpersonalizer.mo
 share/locale/zh_TW/LC_MESSAGES/kpf.mo
 share/locale/zh_TW/LC_MESSAGES/kpilot.mo
 share/locale/zh_TW/LC_MESSAGES/kpoker.mo
+share/locale/zh_TW/LC_MESSAGES/kpovmodeler.mo
 share/locale/zh_TW/LC_MESSAGES/kppp.mo
 share/locale/zh_TW/LC_MESSAGES/kppplogview.mo
 share/locale/zh_TW/LC_MESSAGES/kprinter.mo
@@ -489,6 +519,7 @@ share/locale/zh_TW/LC_MESSAGES/kworldclock.mo
 share/locale/zh_TW/LC_MESSAGES/kwriteconfig.mo
 share/locale/zh_TW/LC_MESSAGES/kxkb.mo
 share/locale/zh_TW/LC_MESSAGES/kxsconfig.mo
+share/locale/zh_TW/LC_MESSAGES/kxsldbg.mo
 share/locale/zh_TW/LC_MESSAGES/libKTTSD.mo
 share/locale/zh_TW/LC_MESSAGES/libdmctl.mo
 share/locale/zh_TW/LC_MESSAGES/libkaddrbk_geo_xxport.mo
@@ -549,6 +580,7 @@ share/locale/zh_TW/LC_MESSAGES/tippecanoe.mo
 share/locale/zh_TW/LC_MESSAGES/trashapplet.mo
 share/locale/zh_TW/LC_MESSAGES/tyler.mo
 share/locale/zh_TW/LC_MESSAGES/uachangerplugin.mo
+share/locale/zh_TW/LC_MESSAGES/umbrello.mo
 share/locale/zh_TW/LC_MESSAGES/useraccount.mo
 share/locale/zh_TW/LC_MESSAGES/validatorsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/wakeup.mo
@@ -557,6 +589,7 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 share/locale/zh_TW/charset
 share/locale/zh_TW/entry.desktop
 share/locale/zh_TW/flag.png
+@dirrm share/doc/HTML/zh_TW/khelpcenter/faq
 @dirrm share/doc/HTML/zh_TW/khelpcenter
 @dirrm share/doc/HTML/zh_TW/docs/common
 @dirrm share/doc/HTML/zh_TW/docs

@@ -31,7 +31,7 @@ USE_OPENSSL=	yes
 USE_AUTOTOOLS=  libtool:15
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
-DO_NOT_COMPILE+=kopete lanbrowsing
+DO_NOT_COMPILE+=kopete lanbrowsing filesharing
 
 CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}
 
@@ -46,6 +46,10 @@ pre-configure:
 	@${REINPLACE_CMD} \
 	-E -e '/^SUBDIRS/s/lisa//g' \
 		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} \
+	-e 's|/etc/security/|${LOCALBASE}/etc/|g' \
+		${WRKSRC}/filesharing/advanced/kcm_sambaconf/kcmsambaconf.cpp \
+		${WRKSRC}/filesharing/simple/fileshare.cpp
 
 ##
 # OPTIONS handling

@@ -34,6 +34,7 @@ share/locale/sk/LC_MESSAGES/desktop_koffice.mo
 share/locale/sk/LC_MESSAGES/example.mo
 share/locale/sk/LC_MESSAGES/karbon.mo
 share/locale/sk/LC_MESSAGES/kchart.mo
+share/locale/sk/LC_MESSAGES/kdgantt.mo
 share/locale/sk/LC_MESSAGES/kexi.mo
 share/locale/sk/LC_MESSAGES/kfile_abiword.mo
 share/locale/sk/LC_MESSAGES/kfile_gnumeric.mo
@@ -44,6 +45,7 @@ share/locale/sk/LC_MESSAGES/kformula.mo
 share/locale/sk/LC_MESSAGES/kivio.mo
 share/locale/sk/LC_MESSAGES/koconverter.mo
 share/locale/sk/LC_MESSAGES/koffice.mo
+share/locale/sk/LC_MESSAGES/kofficefilters.mo
 share/locale/sk/LC_MESSAGES/koproperty.mo
 share/locale/sk/LC_MESSAGES/koshell.mo
 share/locale/sk/LC_MESSAGES/kounavail.mo

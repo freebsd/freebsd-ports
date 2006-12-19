@@ -1,4 +1,7 @@
 share/apps/koffice/autocorrect/de.xml
+share/doc/HTML/de/karbon/common
+share/doc/HTML/de/karbon/index.cache.bz2
+share/doc/HTML/de/karbon/index.docbook
 share/doc/HTML/de/kchart/common
 share/doc/HTML/de/kchart/index.cache.bz2
 share/doc/HTML/de/kchart/index.docbook
@@ -29,6 +32,7 @@ share/doc/HTML/de/kchart/kchart-wizard3.png
 share/doc/HTML/de/kchart/kchart-wizard4.png
 share/doc/HTML/de/kchart/shortcut.png
 share/doc/HTML/de/kchart/toolbars.png
+share/doc/HTML/de/kexi/credits.docbook
 share/doc/HTML/de/kformula/ambiguous-string.png
 share/doc/HTML/de/kformula/common
 share/doc/HTML/de/kformula/green1.png
@@ -71,6 +75,10 @@ share/doc/HTML/de/kpresenter/menus.docbook
 share/doc/HTML/de/kpresenter/options.docbook
 share/doc/HTML/de/kpresenter/screen.docbook
 share/doc/HTML/de/kpresenter/tutorial.docbook
+share/doc/HTML/de/krita/commands.docbook
+share/doc/HTML/de/krita/credits.docbook
+share/doc/HTML/de/krita/developers.docbook
+share/doc/HTML/de/krita/installation.docbook
 share/doc/HTML/de/kspread/a11y.docbook
 share/doc/HTML/de/kspread/advanced.docbook
 share/doc/HTML/de/kspread/basics.docbook
@@ -243,6 +251,7 @@ share/locale/de/LC_MESSAGES/desktop_koffice.mo
 share/locale/de/LC_MESSAGES/example.mo
 share/locale/de/LC_MESSAGES/karbon.mo
 share/locale/de/LC_MESSAGES/kchart.mo
+share/locale/de/LC_MESSAGES/kdgantt.mo
 share/locale/de/LC_MESSAGES/kexi.mo
 share/locale/de/LC_MESSAGES/kfile_abiword.mo
 share/locale/de/LC_MESSAGES/kfile_gnumeric.mo
@@ -273,11 +282,14 @@ share/locale/de/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/de/kword
 @dirrm share/doc/HTML/de/kugar
 @dirrm share/doc/HTML/de/kspread
+@dirrm share/doc/HTML/de/krita
 @dirrm share/doc/HTML/de/kpresenter
 @dirrm share/doc/HTML/de/koshell
 @dirrm share/doc/HTML/de/koffice
 @dirrm share/doc/HTML/de/kivio
 @dirrm share/doc/HTML/de/kformula
+@dirrm share/doc/HTML/de/kexi
 @dirrm share/doc/HTML/de/kchart
+@dirrm share/doc/HTML/de/karbon
 @dirrm share/apps/koffice/autocorrect
 @dirrm share/apps/koffice

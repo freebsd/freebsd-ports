@@ -706,6 +706,9 @@ share/doc/HTML/da/kig/man-kig.1.docbook
 share/doc/HTML/da/kinfocenter/blockdevices/common
 share/doc/HTML/da/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/da/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/da/kinfocenter/cdinfo/common
+share/doc/HTML/da/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/da/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/da/kinfocenter/common
 share/doc/HTML/da/kinfocenter/devices/common
 share/doc/HTML/da/kinfocenter/devices/index.cache.bz2
@@ -2186,6 +2189,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kinfocenter/interrupts
 @dirrm share/doc/HTML/da/kinfocenter/dma
 @dirrm share/doc/HTML/da/kinfocenter/devices
+@dirrm share/doc/HTML/da/kinfocenter/cdinfo
 @dirrm share/doc/HTML/da/kinfocenter/blockdevices
 @dirrm share/doc/HTML/da/kinfocenter
 @dirrm share/doc/HTML/da/kig

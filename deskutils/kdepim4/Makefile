@@ -7,7 +7,6 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,7 +15,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal Information Management tools for KDE
 
-LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme \
+LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		mal:${PORTSDIR}/palm/libmal \
 		pisock:${PORTSDIR}/palm/pilot-link \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2

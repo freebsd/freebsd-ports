@@ -385,6 +385,10 @@ share/doc/HTML/fr/kdebugdialog/index.cache.bz2
 share/doc/HTML/fr/kdebugdialog/index.docbook
 share/doc/HTML/fr/kdelibs/man-artsmessage.1.docbook
 share/doc/HTML/fr/kdelibs/man-checkXML.1.docbook
+share/doc/HTML/fr/kdelibs/man-dcop.1.docbook
+share/doc/HTML/fr/kdelibs/man-kbuildsycoca.8.docbook
+share/doc/HTML/fr/kdelibs/man-kdeoptions.7.docbook
+share/doc/HTML/fr/kdelibs/man-qtoptions.7.docbook
 share/doc/HTML/fr/kdelirc/irkick/common
 share/doc/HTML/fr/kdelirc/irkick/index.cache.bz2
 share/doc/HTML/fr/kdelirc/irkick/index.docbook
@@ -443,9 +447,6 @@ share/doc/HTML/fr/kdf/kdf_config.png
 share/doc/HTML/fr/kdict/common
 share/doc/HTML/fr/kdict/index.cache.bz2
 share/doc/HTML/fr/kdict/index.docbook
-share/doc/HTML/fr/kdm/common
-share/doc/HTML/fr/kdm/index.cache.bz2
-share/doc/HTML/fr/kdm/index.docbook
 share/doc/HTML/fr/kdm/kdmrc-ref.docbook
 share/doc/HTML/fr/kdvi/common
 share/doc/HTML/fr/kdvi/index.cache.bz2
@@ -793,10 +794,7 @@ share/doc/HTML/fr/kjots/index.docbook
 share/doc/HTML/fr/kjumpingcube/common
 share/doc/HTML/fr/kjumpingcube/index.cache.bz2
 share/doc/HTML/fr/kjumpingcube/index.docbook
-share/doc/HTML/fr/kleopatra/common
 share/doc/HTML/fr/kleopatra/entities.docbook
-share/doc/HTML/fr/kleopatra/index.cache.bz2
-share/doc/HTML/fr/kleopatra/index.docbook
 share/doc/HTML/fr/klettres/common
 share/doc/HTML/fr/klettres/index.cache.bz2
 share/doc/HTML/fr/klettres/index.docbook
@@ -897,6 +895,9 @@ share/doc/HTML/fr/kmplot/menu.docbook
 share/doc/HTML/fr/kmplot/reference.docbook
 share/doc/HTML/fr/kmplot/settingsdlg.png
 share/doc/HTML/fr/kmplot/using.docbook
+share/doc/HTML/fr/knetworkconf/common
+share/doc/HTML/fr/knetworkconf/index.cache.bz2
+share/doc/HTML/fr/knetworkconf/index.docbook
 share/doc/HTML/fr/knewsticker/common
 share/doc/HTML/fr/knewsticker/contextmenu.png
 share/doc/HTML/fr/knewsticker/index.cache.bz2
@@ -2211,6 +2212,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/knotes
 @dirrm share/doc/HTML/fr/knode
 @dirrm share/doc/HTML/fr/knewsticker
+@dirrm share/doc/HTML/fr/knetworkconf
 @dirrm share/doc/HTML/fr/kmplot
 @dirrm share/doc/HTML/fr/kmouth
 @dirrm share/doc/HTML/fr/kmousetool

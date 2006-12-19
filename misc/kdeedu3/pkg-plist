@@ -586,6 +586,7 @@ share/apps/kgeography/flags/mecklenburg_western_pomerania.png
 share/apps/kgeography/flags/mexico.png
 share/apps/kgeography/flags/moldova.png
 share/apps/kgeography/flags/mongolia.png
+share/apps/kgeography/flags/montenegro.png
 share/apps/kgeography/flags/morocco.png
 share/apps/kgeography/flags/mozambique.png
 share/apps/kgeography/flags/myanmar.png
@@ -628,7 +629,7 @@ share/apps/kgeography/flags/saxony.png
 share/apps/kgeography/flags/saxony_anhalt.png
 share/apps/kgeography/flags/schleswig_holstein.png
 share/apps/kgeography/flags/senegal.png
-share/apps/kgeography/flags/serbiamontenegro_3x2.png
+share/apps/kgeography/flags/serbia.png
 share/apps/kgeography/flags/sierra_leone.png
 share/apps/kgeography/flags/singapore.png
 share/apps/kgeography/flags/skorea.png
@@ -1707,6 +1708,7 @@ share/apps/ktouch/german.neo.ktouch.xml
 share/apps/ktouch/german.number.ktouch.xml
 share/apps/ktouch/german2.ktouch.xml
 share/apps/ktouch/german3.ktouch.xml
+share/apps/ktouch/hu.keyboard
 share/apps/ktouch/hungarian.ktouch.xml
 share/apps/ktouch/hungarian_expert.ktouch.xml
 share/apps/ktouch/italian.ktouch.xml
@@ -1722,6 +1724,7 @@ share/apps/ktouch/russian_long.ktouch.xml
 share/apps/ktouch/slovenian.ktouch.xml
 share/apps/ktouch/spanish.ktouch.xml
 share/apps/ktouch/splash.png
+share/apps/ktouch/typewriter.wav
 share/apps/ktouch/up.wav
 share/apps/kturtle/data/logokeywords.en_US.xml
 share/apps/kturtle/examples/en_US/ad.logo

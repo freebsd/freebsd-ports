@@ -1,4 +1,7 @@
 share/apps/koffice/autocorrect/fr.xml
+share/doc/HTML/fr/karbon/common
+share/doc/HTML/fr/karbon/index.cache.bz2
+share/doc/HTML/fr/karbon/index.docbook
 share/doc/HTML/fr/kchart/common
 share/doc/HTML/fr/kchart/file-toolbar.png
 share/doc/HTML/fr/kchart/file-toolbar2.png
@@ -395,6 +398,7 @@ share/locale/fr/LC_MESSAGES/desktop_koffice.mo
 share/locale/fr/LC_MESSAGES/example.mo
 share/locale/fr/LC_MESSAGES/karbon.mo
 share/locale/fr/LC_MESSAGES/kchart.mo
+share/locale/fr/LC_MESSAGES/kdgantt.mo
 share/locale/fr/LC_MESSAGES/kexi.mo
 share/locale/fr/LC_MESSAGES/kfile_abiword.mo
 share/locale/fr/LC_MESSAGES/kfile_gnumeric.mo
@@ -433,5 +437,6 @@ share/locale/fr/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/fr/kivio
 @dirrm share/doc/HTML/fr/kformula
 @dirrm share/doc/HTML/fr/kchart
+@dirrm share/doc/HTML/fr/karbon
 @dirrm share/apps/koffice/autocorrect
 @dirrm share/apps/koffice

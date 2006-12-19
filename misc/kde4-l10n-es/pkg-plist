@@ -330,6 +330,9 @@ share/doc/HTML/es/blinken/blinken_helpbutton.png
 share/doc/HTML/es/blinken/blinken_highscoresbutton.png
 share/doc/HTML/es/blinken/blinken_nickprompt.png
 share/doc/HTML/es/blinken/blinken_quitbutton.png
+share/doc/HTML/es/blinken/common
+share/doc/HTML/es/blinken/index.cache.bz2
+share/doc/HTML/es/blinken/index.docbook
 share/doc/HTML/es/cervisia/annotate.png
 share/doc/HTML/es/cervisia/checkout.png
 share/doc/HTML/es/cervisia/commit.png
@@ -583,6 +586,7 @@ share/doc/HTML/es/kbruch/factorize.png
 share/doc/HTML/es/kbruch/gui_main.png
 share/doc/HTML/es/kbruch/index.cache.bz2
 share/doc/HTML/es/kbruch/index.docbook
+share/doc/HTML/es/kbruch/man-kbruch.1.docbook
 share/doc/HTML/es/kbruch/reduced.png
 share/doc/HTML/es/kbruch/settings.png
 share/doc/HTML/es/kbugbuster/common
@@ -968,6 +972,7 @@ share/doc/HTML/es/keduca/common
 share/doc/HTML/es/keduca/index.cache.bz2
 share/doc/HTML/es/keduca/index.docbook
 share/doc/HTML/es/keduca/man-keduca.1.docbook
+share/doc/HTML/es/keduca/man-keducabuilder.1.docbook
 share/doc/HTML/es/keduca/screenshot.png
 share/doc/HTML/es/kenolaba/common
 share/doc/HTML/es/kenolaba/index.cache.bz2
@@ -1072,6 +1077,7 @@ share/doc/HTML/es/khangman/index.cache.bz2
 share/doc/HTML/es/khangman/index.docbook
 share/doc/HTML/es/khangman/khangman1.png
 share/doc/HTML/es/khangman/khangman2.png
+share/doc/HTML/es/khangman/man-khangman.6.docbook
 share/doc/HTML/es/khangman/settings1.png
 share/doc/HTML/es/khangman/settings2.png
 share/doc/HTML/es/khangman/settings3.png
@@ -1286,6 +1292,9 @@ share/doc/HTML/es/kig/text_label_wizard__select_property.png
 share/doc/HTML/es/kinfocenter/blockdevices/common
 share/doc/HTML/es/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/es/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/es/kinfocenter/cdinfo/common
+share/doc/HTML/es/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/es/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/es/kinfocenter/common
 share/doc/HTML/es/kinfocenter/devices/common
 share/doc/HTML/es/kinfocenter/devices/index.cache.bz2
@@ -1845,6 +1854,7 @@ share/doc/HTML/es/kooka/shortcut1.png
 share/doc/HTML/es/kooka/toolbar.png
 share/doc/HTML/es/kooka/toolbar1.png
 share/doc/HTML/es/kooka/toolbar2.png
+share/doc/HTML/es/kopete/chatstyle.docbook
 share/doc/HTML/es/kopete/common
 share/doc/HTML/es/kopete/index.cache.bz2
 share/doc/HTML/es/kopete/index.docbook
@@ -2466,6 +2476,9 @@ share/doc/HTML/es/kwifimanager/index.docbook
 share/doc/HTML/es/kwin4/common
 share/doc/HTML/es/kwin4/index.cache.bz2
 share/doc/HTML/es/kwin4/index.docbook
+share/doc/HTML/es/kwordquiz/common
+share/doc/HTML/es/kwordquiz/index.cache.bz2
+share/doc/HTML/es/kwordquiz/index.docbook
 share/doc/HTML/es/kwordquiz/kwq-dlg-characters.png
 share/doc/HTML/es/kwordquiz/kwq-dlg-configure-appearance.png
 share/doc/HTML/es/kwordquiz/kwq-dlg-configure-characters.png
@@ -3400,6 +3413,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kinfocenter/interrupts
 @dirrm share/doc/HTML/es/kinfocenter/dma
 @dirrm share/doc/HTML/es/kinfocenter/devices
+@dirrm share/doc/HTML/es/kinfocenter/cdinfo
 @dirrm share/doc/HTML/es/kinfocenter/blockdevices
 @dirrm share/doc/HTML/es/kinfocenter
 @dirrm share/doc/HTML/es/kig/scripting-api

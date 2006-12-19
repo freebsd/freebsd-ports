@@ -41,6 +41,8 @@ bin/networkstatustestservice
 bin/sloxwizard
 include/KNotesAppIface.h
 include/KNotesIface.h
+include/akregator/akregator_export.h
+include/akregator/articleinterceptor.h
 include/akregator/feedstorage.h
 include/akregator/plugin.h
 include/akregator/storage.h
@@ -992,6 +994,29 @@ share/apps/kconf_update/kpgp.upd
 share/apps/kconf_update/kpilot.upd
 share/apps/kconf_update/upgrade-signature.pl
 share/apps/kconf_update/upgrade-transport.pl
+share/apps/kdepim/icons/crystalsvg/16x16/actions/appointment.png
+share/apps/kdepim/icons/crystalsvg/16x16/actions/bell.png
+share/apps/kdepim/icons/crystalsvg/16x16/actions/inverse_recur.png
+share/apps/kdepim/icons/crystalsvg/16x16/actions/journal.png
+share/apps/kdepim/icons/crystalsvg/16x16/actions/newappointment.png
+share/apps/kdepim/icons/crystalsvg/16x16/actions/readonlyevent.png
+share/apps/kdepim/icons/crystalsvg/16x16/actions/recur.png
+share/apps/kdepim/icons/crystalsvg/16x16/actions/todo.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/appointment.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/checkedbox.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/checkedbox_mask.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/checkedclipboard.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/checkmark.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/journal.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/newappointment.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/newjournal.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/newrecurevent.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/newtodo.png
+share/apps/kdepim/icons/crystalsvg/22x22/actions/todo.png
+share/apps/kdepim/icons/crystalsvg/32x32/actions/appointment.png
+share/apps/kdepim/icons/crystalsvg/32x32/actions/journal.png
+share/apps/kdepim/icons/crystalsvg/32x32/actions/newappointment.png
+share/apps/kdepim/icons/crystalsvg/32x32/actions/todo.png
 share/apps/kdepimwidgets/pics/addresseelineedit.png
 share/apps/kdepimwidgets/pics/clicklineedit.png
 share/apps/kdepimwidgets/pics/kdateedit.png
@@ -1154,27 +1179,20 @@ share/apps/korgac/icons/crystalsvg/22x22/actions/korgac_disabled.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/1day.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/5days.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/7days.png
-share/apps/korganizer/icons/crystalsvg/16x16/actions/appointment.png
-share/apps/korganizer/icons/crystalsvg/16x16/actions/bell.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/dayview.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/downindicator.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/findf.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/groupevent.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/groupeventtentative.png
-share/apps/korganizer/icons/crystalsvg/16x16/actions/inverse_recur.png
-share/apps/korganizer/icons/crystalsvg/16x16/actions/journal.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/list.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/mailappt.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/month.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/nomailappt.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/organizer.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/playsound.png
-share/apps/korganizer/icons/crystalsvg/16x16/actions/readonlyevent.png
-share/apps/korganizer/icons/crystalsvg/16x16/actions/recur.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/runprog.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/smallcal.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/smallclock.png
-share/apps/korganizer/icons/crystalsvg/16x16/actions/todo.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/upindicator.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/webexport.png
 share/apps/korganizer/icons/crystalsvg/16x16/actions/whatsnext.png
@@ -1182,34 +1200,21 @@ share/apps/korganizer/icons/crystalsvg/22x22/actions/1day.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/5days.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/7days.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/agenda.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/appointment.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/checkedbox.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/checkedbox_mask.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/checkedclipboard.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/checkmark.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/delete.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/emptybox.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/emptybox/mask.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/journal.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/list.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/month.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/newjournal.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/newrecurevent.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/newtodo.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/search.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/send.png
-share/apps/korganizer/icons/crystalsvg/22x22/actions/todo.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/webexport.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/whatsnext.png
 share/apps/korganizer/icons/crystalsvg/22x22/actions/xdays.png
 share/apps/korganizer/icons/crystalsvg/32x32/actions/1day.png
 share/apps/korganizer/icons/crystalsvg/32x32/actions/5days.png
 share/apps/korganizer/icons/crystalsvg/32x32/actions/7days.png
-share/apps/korganizer/icons/crystalsvg/32x32/actions/appointment.png
-share/apps/korganizer/icons/crystalsvg/32x32/actions/journal.png
 share/apps/korganizer/icons/crystalsvg/32x32/actions/list.png
 share/apps/korganizer/icons/crystalsvg/32x32/actions/month.png
-share/apps/korganizer/icons/crystalsvg/32x32/actions/todo.png
 share/apps/korganizer/icons/crystalsvg/32x32/actions/xdays.png
 share/apps/korganizer/korganizer_part.rc
 share/apps/korganizer/korganizerui.rc
@@ -1433,6 +1438,7 @@ share/apps/libical/zoneinfo/America/Tegucigalpa.ics
 share/apps/libical/zoneinfo/America/Thule.ics
 share/apps/libical/zoneinfo/America/Thunder_Bay.ics
 share/apps/libical/zoneinfo/America/Tijuana.ics
+share/apps/libical/zoneinfo/America/Toronto.ics
 share/apps/libical/zoneinfo/America/Tortola.ics
 share/apps/libical/zoneinfo/America/Vancouver.ics
 share/apps/libical/zoneinfo/America/Whitehorse.ics
@@ -1492,6 +1498,7 @@ share/apps/libical/zoneinfo/Asia/Kuala_Lumpur.ics
 share/apps/libical/zoneinfo/Asia/Kuching.ics
 share/apps/libical/zoneinfo/Asia/Kuwait.ics
 share/apps/libical/zoneinfo/Asia/Macao.ics
+share/apps/libical/zoneinfo/Asia/Macau.ics
 share/apps/libical/zoneinfo/Asia/Magadan.ics
 share/apps/libical/zoneinfo/Asia/Manila.ics
 share/apps/libical/zoneinfo/Asia/Muscat.ics
@@ -1675,6 +1682,7 @@ share/apps/libkholidays/holiday_at
 share/apps/libkholidays/holiday_au
 share/apps/libkholidays/holiday_bavarian
 share/apps/libkholidays/holiday_be
+share/apps/libkholidays/holiday_br
 share/apps/libkholidays/holiday_ca
 share/apps/libkholidays/holiday_catalan
 share/apps/libkholidays/holiday_ch
@@ -1705,6 +1713,7 @@ share/apps/libkholidays/holiday_pt
 share/apps/libkholidays/holiday_py
 share/apps/libkholidays/holiday_quebec
 share/apps/libkholidays/holiday_ro
+share/apps/libkholidays/holiday_ru
 share/apps/libkholidays/holiday_se
 share/apps/libkholidays/holiday_si
 share/apps/libkholidays/holiday_th
@@ -2646,6 +2655,15 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kgantt
 @dirrm share/apps/kdepimwidgets/pics
 @dirrm share/apps/kdepimwidgets
+@dirrm share/apps/kdepim/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kdepim/icons/crystalsvg/32x32
+@dirrm share/apps/kdepim/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kdepim/icons/crystalsvg/22x22
+@dirrm share/apps/kdepim/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kdepim/icons/crystalsvg/16x16
+@dirrm share/apps/kdepim/icons/crystalsvg
+@dirrm share/apps/kdepim/icons
+@dirrm share/apps/kdepim
 @dirrm share/apps/karmpart
 @dirrm share/apps/karm/pics
 @dirrm share/apps/karm

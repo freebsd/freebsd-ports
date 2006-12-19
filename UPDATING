@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061219:
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@FreeBSD.org
+
+  If you choose to enable the HAL backend for the media kioslave,
+  you should enable dbus, hal and policy kit during system startup.
+  To do this, add the following lines to /etc/rc.conf:
+
+  dbus_enable="YES"
+  polkitd_enable="YES"
+  hald_enable="YES"
+
 20061212:
   AFFECTS: users of net/smokeping
   AUTHOR: lth@FreeBSD.org

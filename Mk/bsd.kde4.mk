@@ -50,6 +50,10 @@ USE_KDELIBS_VER=3
 
 CONFIGURE_ENV+= PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+## Every KDE application is inherently IPv6-capable
+
+CATEGORIES+=ipv6
+
 ##  XXX - This really belongs into bsd.port.mk
 .if !defined(_NO_KDE_CONFTARGET_HACK)
 CONFIGURE_TARGET=
@@ -97,7 +101,7 @@ CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGL
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff. Arts does NOT use it anymore.
-KDE_VERSION=		3.5.4
+KDE_VERSION=		3.5.5
 KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 
@@ -125,7 +129,8 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 				--with-qt-libraries=${QT_PREFIX}/lib \
 				--with-extra-libs=${LOCALBASE}/lib \
 				--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
+CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
+				QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 .endif # !defined(QT_NONSTANDARD)
 .else
 IGNORE=			cannot install: unsupported value of USE_QT_VER

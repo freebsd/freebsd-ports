@@ -252,6 +252,7 @@ share/doc/HTML/de/kbabel/catman.docbook
 share/doc/HTML/de/kbabel/faq.docbook
 share/doc/HTML/de/kbabel/glossary.docbook
 share/doc/HTML/de/kbabel/kbabeldict.docbook
+share/doc/HTML/de/kbabel/man-catalogmanager.1.docbook
 share/doc/HTML/de/kbabel/menu.docbook
 share/doc/HTML/de/kbabel/preferences.docbook
 share/doc/HTML/de/kbabel/using.docbook
@@ -537,9 +538,35 @@ share/doc/HTML/de/kenolaba/common
 share/doc/HTML/de/kenolaba/index.cache.bz2
 share/doc/HTML/de/kenolaba/index.docbook
 share/doc/HTML/de/kenolaba/man-kenolaba.6.docbook
+share/doc/HTML/de/kfilereplace/addstringsdialog_window.png
+share/doc/HTML/de/kfilereplace/backup_option.png
+share/doc/HTML/de/kfilereplace/casesensitive_option.png
+share/doc/HTML/de/kfilereplace/command_option.png
 share/doc/HTML/de/kfilereplace/common
+share/doc/HTML/de/kfilereplace/edit.png
+share/doc/HTML/de/kfilereplace/edit_add.png
+share/doc/HTML/de/kfilereplace/edit_remove.png
+share/doc/HTML/de/kfilereplace/eraser.png
+share/doc/HTML/de/kfilereplace/filereplace.png
+share/doc/HTML/de/kfilereplace/filesearch.png
+share/doc/HTML/de/kfilereplace/filesimulate.png
 share/doc/HTML/de/kfilereplace/index.cache.bz2
 share/doc/HTML/de/kfilereplace/index.docbook
+share/doc/HTML/de/kfilereplace/invert.png
+share/doc/HTML/de/kfilereplace/kfr_standalone_main_window_1.png
+share/doc/HTML/de/kfilereplace/optionsdialog_main_window_1.png
+share/doc/HTML/de/kfilereplace/optionsdialog_main_window_2.png
+share/doc/HTML/de/kfilereplace/project.png
+share/doc/HTML/de/kfilereplace/projectdialog_main_window_1.png
+share/doc/HTML/de/kfilereplace/projectdialog_main_window_2.png
+share/doc/HTML/de/kfilereplace/recursive_option.png
+share/doc/HTML/de/kfilereplace/regularexpression_option.png
+share/doc/HTML/de/kfilereplace/report_example.png
+share/doc/HTML/de/kfilereplace/results_view.png
+share/doc/HTML/de/kfilereplace/stop.png
+share/doc/HTML/de/kfilereplace/strings_view.png
+share/doc/HTML/de/kfilereplace/toolbar.png
+share/doc/HTML/de/kfilereplace/unsortedList.png
 share/doc/HTML/de/kfind/common
 share/doc/HTML/de/kfind/index.cache.bz2
 share/doc/HTML/de/kfind/index.docbook
@@ -867,6 +894,7 @@ share/doc/HTML/de/klines/index.docbook
 share/doc/HTML/de/klinkstatus/common
 share/doc/HTML/de/klinkstatus/index.cache.bz2
 share/doc/HTML/de/klinkstatus/index.docbook
+share/doc/HTML/de/klinkstatus/screenshot.png
 share/doc/HTML/de/klipper/common
 share/doc/HTML/de/klipper/index.cache.bz2
 share/doc/HTML/de/klipper/index.docbook
@@ -955,6 +983,20 @@ share/doc/HTML/de/kmplot/using.docbook
 share/doc/HTML/de/knetattach/common
 share/doc/HTML/de/knetattach/index.cache.bz2
 share/doc/HTML/de/knetattach/index.docbook
+share/doc/HTML/de/knetworkconf/01.png
+share/doc/HTML/de/knetworkconf/02.png
+share/doc/HTML/de/knetworkconf/03.png
+share/doc/HTML/de/knetworkconf/04.png
+share/doc/HTML/de/knetworkconf/05.png
+share/doc/HTML/de/knetworkconf/06.png
+share/doc/HTML/de/knetworkconf/07.png
+share/doc/HTML/de/knetworkconf/08.png
+share/doc/HTML/de/knetworkconf/09.png
+share/doc/HTML/de/knetworkconf/11.png
+share/doc/HTML/de/knetworkconf/about1.png
+share/doc/HTML/de/knetworkconf/common
+share/doc/HTML/de/knetworkconf/index.cache.bz2
+share/doc/HTML/de/knetworkconf/index.docbook
 share/doc/HTML/de/knewsticker/common
 share/doc/HTML/de/knewsticker/contextmenu.png
 share/doc/HTML/de/knewsticker/index.cache.bz2
@@ -2355,6 +2397,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/knotes
 @dirrm share/doc/HTML/de/knode
 @dirrm share/doc/HTML/de/knewsticker
+@dirrm share/doc/HTML/de/knetworkconf
 @dirrm share/doc/HTML/de/knetattach
 @dirrm share/doc/HTML/de/kmplot
 @dirrm share/doc/HTML/de/kmouth

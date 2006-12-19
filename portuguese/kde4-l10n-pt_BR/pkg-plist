@@ -109,6 +109,7 @@ share/doc/HTML/pt_BR/kate/fundamentals.docbook
 share/doc/HTML/pt_BR/kate/highlighting.docbook
 share/doc/HTML/pt_BR/kate/index.cache.bz2
 share/doc/HTML/pt_BR/kate/index.docbook
+share/doc/HTML/pt_BR/kate/man-kate.1.docbook
 share/doc/HTML/pt_BR/kate/mdi.docbook
 share/doc/HTML/pt_BR/kate/menus.docbook
 share/doc/HTML/pt_BR/kate/part.docbook
@@ -159,6 +160,9 @@ share/doc/HTML/pt_BR/kcharselect/index.docbook
 share/doc/HTML/pt_BR/kcoloredit/common
 share/doc/HTML/pt_BR/kcoloredit/index.cache.bz2
 share/doc/HTML/pt_BR/kcoloredit/index.docbook
+share/doc/HTML/pt_BR/kcontrol/arts/common
+share/doc/HTML/pt_BR/kcontrol/arts/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/arts/index.docbook
 share/doc/HTML/pt_BR/kcontrol/arts/midi.docbook
 share/doc/HTML/pt_BR/kcontrol/background/common
 share/doc/HTML/pt_BR/kcontrol/background/index.cache.bz2
@@ -293,6 +297,9 @@ share/doc/HTML/pt_BR/kcontrol/panelappearance/index.docbook
 share/doc/HTML/pt_BR/kcontrol/passwords/common
 share/doc/HTML/pt_BR/kcontrol/passwords/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/passwords/index.docbook
+share/doc/HTML/pt_BR/kcontrol/performance/common
+share/doc/HTML/pt_BR/kcontrol/performance/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/performance/index.docbook
 share/doc/HTML/pt_BR/kcontrol/powerctrl/common
 share/doc/HTML/pt_BR/kcontrol/powerctrl/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/powerctrl/index.docbook
@@ -359,6 +366,10 @@ share/doc/HTML/pt_BR/kdeprint/theory.docbook
 share/doc/HTML/pt_BR/kdesu/common
 share/doc/HTML/pt_BR/kdesu/index.cache.bz2
 share/doc/HTML/pt_BR/kdesu/index.docbook
+share/doc/HTML/pt_BR/kdesu/man-kdesu.1.docbook
+share/doc/HTML/pt_BR/kdesvn-build/common
+share/doc/HTML/pt_BR/kdesvn-build/index.cache.bz2
+share/doc/HTML/pt_BR/kdesvn-build/index.docbook
 share/doc/HTML/pt_BR/kdf/common
 share/doc/HTML/pt_BR/kdf/index.cache.bz2
 share/doc/HTML/pt_BR/kdf/index.docbook
@@ -392,6 +403,7 @@ share/doc/HTML/pt_BR/kfilereplace/index.docbook
 share/doc/HTML/pt_BR/kfind/common
 share/doc/HTML/pt_BR/kfind/index.cache.bz2
 share/doc/HTML/pt_BR/kfind/index.docbook
+share/doc/HTML/pt_BR/kfind/man-kfind.1.docbook
 share/doc/HTML/pt_BR/kfloppy/common
 share/doc/HTML/pt_BR/kfloppy/index.cache.bz2
 share/doc/HTML/pt_BR/kfloppy/index.docbook
@@ -451,6 +463,7 @@ share/doc/HTML/pt_BR/khelpcenter/faq/moreinfo.docbook
 share/doc/HTML/pt_BR/khelpcenter/faq/nonkdeapps.docbook
 share/doc/HTML/pt_BR/khelpcenter/faq/notrelated.docbook
 share/doc/HTML/pt_BR/khelpcenter/faq/panel.docbook
+share/doc/HTML/pt_BR/khelpcenter/faq/qt.docbook
 share/doc/HTML/pt_BR/khelpcenter/faq/questions.docbook
 share/doc/HTML/pt_BR/khelpcenter/faq/sound.docbook
 share/doc/HTML/pt_BR/khelpcenter/faq/tips.docbook
@@ -476,6 +489,7 @@ share/doc/HTML/pt_BR/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/credits-and-license.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/email.docbook
+share/doc/HTML/pt_BR/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/file-sharing.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/font-installation.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/getting-help.docbook
@@ -490,6 +504,7 @@ share/doc/HTML/pt_BR/khelpcenter/userguide/kde-for-admins.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/kde-office.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/konsole-intro.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/pt_BR/khelpcenter/userguide/migrator-applications.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/migrator-dictionary.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/net-connection-setup.docbook
 share/doc/HTML/pt_BR/khelpcenter/userguide/networking-with-windows.docbook
@@ -545,6 +560,8 @@ share/doc/HTML/pt_BR/kicker-applets/ktimemon.docbook
 share/doc/HTML/pt_BR/kicker/common
 share/doc/HTML/pt_BR/kicker/index.cache.bz2
 share/doc/HTML/pt_BR/kicker/index.docbook
+share/doc/HTML/pt_BR/kicker/man-appletproxy.1.docbook
+share/doc/HTML/pt_BR/kicker/man-kicker.1.docbook
 share/doc/HTML/pt_BR/kiconedit/common
 share/doc/HTML/pt_BR/kiconedit/index.cache.bz2
 share/doc/HTML/pt_BR/kiconedit/index.docbook
@@ -555,6 +572,9 @@ share/doc/HTML/pt_BR/kig/scripting-api/Doxyfile.scripting-api.in
 share/doc/HTML/pt_BR/kinfocenter/blockdevices/common
 share/doc/HTML/pt_BR/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/pt_BR/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/pt_BR/kinfocenter/cdinfo/common
+share/doc/HTML/pt_BR/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/pt_BR/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/pt_BR/kinfocenter/common
 share/doc/HTML/pt_BR/kinfocenter/devices/common
 share/doc/HTML/pt_BR/kinfocenter/devices/index.cache.bz2
@@ -758,6 +778,9 @@ share/doc/HTML/pt_BR/kmplot/introduction.docbook
 share/doc/HTML/pt_BR/kmplot/menu.docbook
 share/doc/HTML/pt_BR/kmplot/reference.docbook
 share/doc/HTML/pt_BR/kmplot/using.docbook
+share/doc/HTML/pt_BR/knetattach/common
+share/doc/HTML/pt_BR/knetattach/index.cache.bz2
+share/doc/HTML/pt_BR/knetattach/index.docbook
 share/doc/HTML/pt_BR/knewsticker/common
 share/doc/HTML/pt_BR/knewsticker/index.cache.bz2
 share/doc/HTML/pt_BR/knewsticker/index.docbook
@@ -805,6 +828,9 @@ share/doc/HTML/pt_BR/kommander/widgets.docbook
 share/doc/HTML/pt_BR/kompare/common
 share/doc/HTML/pt_BR/kompare/index.cache.bz2
 share/doc/HTML/pt_BR/kompare/index.docbook
+share/doc/HTML/pt_BR/kompmgr/common
+share/doc/HTML/pt_BR/kompmgr/index.cache.bz2
+share/doc/HTML/pt_BR/kompmgr/index.docbook
 share/doc/HTML/pt_BR/konq-plugins/babel/common
 share/doc/HTML/pt_BR/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/pt_BR/konq-plugins/babel/index.docbook
@@ -1654,6 +1680,7 @@ share/locale/pt_BR/LC_MESSAGES/kmathapplet.mo
 share/locale/pt_BR/LC_MESSAGES/kmcop.mo
 share/locale/pt_BR/LC_MESSAGES/kmenuapplet.mo
 share/locale/pt_BR/LC_MESSAGES/kmenuedit.mo
+share/locale/pt_BR/LC_MESSAGES/kmessedwords.mo
 share/locale/pt_BR/LC_MESSAGES/kmid.mo
 share/locale/pt_BR/LC_MESSAGES/kmilo_delli8k.mo
 share/locale/pt_BR/LC_MESSAGES/kmilo_generic.mo
@@ -1965,6 +1992,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/konq-plugins/crashes
 @dirrm share/doc/HTML/pt_BR/konq-plugins/babel
 @dirrm share/doc/HTML/pt_BR/konq-plugins
+@dirrm share/doc/HTML/pt_BR/kompmgr
 @dirrm share/doc/HTML/pt_BR/kompare
 @dirrm share/doc/HTML/pt_BR/kommander
 @dirrm share/doc/HTML/pt_BR/kolourpaint
@@ -1973,6 +2001,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/knotes
 @dirrm share/doc/HTML/pt_BR/knode
 @dirrm share/doc/HTML/pt_BR/knewsticker
+@dirrm share/doc/HTML/pt_BR/knetattach
 @dirrm share/doc/HTML/pt_BR/kmplot
 @dirrm share/doc/HTML/pt_BR/kmouth
 @dirrm share/doc/HTML/pt_BR/kmousetool
@@ -2015,6 +2044,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/kinfocenter/interrupts
 @dirrm share/doc/HTML/pt_BR/kinfocenter/dma
 @dirrm share/doc/HTML/pt_BR/kinfocenter/devices
+@dirrm share/doc/HTML/pt_BR/kinfocenter/cdinfo
 @dirrm share/doc/HTML/pt_BR/kinfocenter/blockdevices
 @dirrm share/doc/HTML/pt_BR/kinfocenter
 @dirrm share/doc/HTML/pt_BR/kig/scripting-api
@@ -2046,6 +2076,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/kdm
 @dirrm share/doc/HTML/pt_BR/kdict
 @dirrm share/doc/HTML/pt_BR/kdf
+@dirrm share/doc/HTML/pt_BR/kdesvn-build
 @dirrm share/doc/HTML/pt_BR/kdesu
 @dirrm share/doc/HTML/pt_BR/kdeprint
 @dirrm share/doc/HTML/pt_BR/kdelirc/kcmlirc
@@ -2063,6 +2094,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/kcontrol/screensaver
 @dirrm share/doc/HTML/pt_BR/kcontrol/proxy
 @dirrm share/doc/HTML/pt_BR/kcontrol/powerctrl
+@dirrm share/doc/HTML/pt_BR/kcontrol/performance
 @dirrm share/doc/HTML/pt_BR/kcontrol/passwords
 @dirrm share/doc/HTML/pt_BR/kcontrol/panelappearance
 @dirrm share/doc/HTML/pt_BR/kcontrol/panel

@@ -531,6 +531,7 @@ share/locale/ro/LC_MESSAGES/ksplashthemes.mo
 share/locale/ro/LC_MESSAGES/kstars.mo
 share/locale/ro/LC_MESSAGES/kstart.mo
 share/locale/ro/LC_MESSAGES/kstartperf.mo
+share/locale/ro/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/ro/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ro/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/ro/LC_MESSAGES/ksvgplugin.mo

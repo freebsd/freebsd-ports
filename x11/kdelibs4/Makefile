@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION?=	4
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -67,6 +66,7 @@ CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--with-libthai=yes \
+		--with-lua=no \
 		--with-ssl-dir=${OPENSSLBASE}
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
 
@@ -88,6 +88,11 @@ pre-configure:
 	${REINPLACE_CMD} -e "s,applications.menu,kde-applications.menu,g" \
 		${WRKSRC}/kded/Makefile.in ${WRKSRC}/kded/kbuildsycoca.cpp
 	${REINPLACE_CMD} -e "s,hicolor,,g" ${WRKSRC}/pics/Makefile.in
+	${REINPLACE_CMD} -e "s,/etc/exports,/nonexistent,g" \
+			-e "s,/etc/samba/,${LOCALBASE}/etc/,g"  \
+			-e "s,/etc/security/,${LOCALBASE}/etc/,g" \
+			-e "s,'fileshare','network',g" \
+		${WRKSRC}/kio/misc/fileshareset
 	${MV} ${WRKSRC}/kded/applications.menu ${WRKSRC}/kded/kde-applications.menu
 
 post-configure:

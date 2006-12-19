@@ -133,6 +133,7 @@ share/locale/hr/LC_MESSAGES/kcmperformance.mo
 share/locale/hr/LC_MESSAGES/kcmprintmgr.mo
 share/locale/hr/LC_MESSAGES/kcmsamba.mo
 share/locale/hr/LC_MESSAGES/kcmscreensaver.mo
+share/locale/hr/LC_MESSAGES/kcmshell.mo
 share/locale/hr/LC_MESSAGES/kcmsmartcard.mo
 share/locale/hr/LC_MESSAGES/kcmsmserver.mo
 share/locale/hr/LC_MESSAGES/kcmspellchecking.mo
@@ -207,6 +208,7 @@ share/locale/hr/LC_MESSAGES/kgamma.mo
 share/locale/hr/LC_MESSAGES/kgantt.mo
 share/locale/hr/LC_MESSAGES/kget.mo
 share/locale/hr/LC_MESSAGES/kghostview.mo
+share/locale/hr/LC_MESSAGES/kgoldrunner.mo
 share/locale/hr/LC_MESSAGES/kgpg.mo
 share/locale/hr/LC_MESSAGES/kgreet_classic.mo
 share/locale/hr/LC_MESSAGES/kgreet_winbind.mo
@@ -266,6 +268,7 @@ share/locale/hr/LC_MESSAGES/kmobile.mo
 share/locale/hr/LC_MESSAGES/kmoon.mo
 share/locale/hr/LC_MESSAGES/kmplot.mo
 share/locale/hr/LC_MESSAGES/kmrml.mo
+share/locale/hr/LC_MESSAGES/knetwalk.mo
 share/locale/hr/LC_MESSAGES/knewsticker.mo
 share/locale/hr/LC_MESSAGES/knode.mo
 share/locale/hr/LC_MESSAGES/knotes.mo
@@ -363,6 +366,7 @@ share/locale/hr/LC_MESSAGES/kworldclock.mo
 share/locale/hr/LC_MESSAGES/kwriteconfig.mo
 share/locale/hr/LC_MESSAGES/kxkb.mo
 share/locale/hr/LC_MESSAGES/kxsconfig.mo
+share/locale/hr/LC_MESSAGES/libdmctl.mo
 share/locale/hr/LC_MESSAGES/libkcal.mo
 share/locale/hr/LC_MESSAGES/libkdegames.mo
 share/locale/hr/LC_MESSAGES/libkdepim.mo
@@ -371,6 +375,9 @@ share/locale/hr/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/hr/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/hr/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/hr/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/hr/LC_MESSAGES/libkickermenu_remotemenu.mo
+share/locale/hr/LC_MESSAGES/libkickermenu_systemmenu.mo
+share/locale/hr/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/hr/LC_MESSAGES/libkonq.mo
 share/locale/hr/LC_MESSAGES/libkpimexchange.mo
 share/locale/hr/LC_MESSAGES/libkscan.mo
@@ -381,18 +388,23 @@ share/locale/hr/LC_MESSAGES/libtaskbar.mo
 share/locale/hr/LC_MESSAGES/libtaskmanager.mo
 share/locale/hr/LC_MESSAGES/lockout.mo
 share/locale/hr/LC_MESSAGES/lskat.mo
+share/locale/hr/LC_MESSAGES/mediaapplet.mo
 share/locale/hr/LC_MESSAGES/naughtyapplet.mo
 share/locale/hr/LC_MESSAGES/noatun.mo
 share/locale/hr/LC_MESSAGES/nsplugin.mo
 share/locale/hr/LC_MESSAGES/ppdtranslations.mo
+share/locale/hr/LC_MESSAGES/privacy.mo
 share/locale/hr/LC_MESSAGES/qeditor.mo
 share/locale/hr/LC_MESSAGES/quanta.mo
 share/locale/hr/LC_MESSAGES/quicklauncher.mo
 share/locale/hr/LC_MESSAGES/secpolicy.mo
 share/locale/hr/LC_MESSAGES/spy.mo
 share/locale/hr/LC_MESSAGES/timezones.mo
+share/locale/hr/LC_MESSAGES/trashapplet.mo
+share/locale/hr/LC_MESSAGES/tyler.mo
 share/locale/hr/LC_MESSAGES/uachangerplugin.mo
 share/locale/hr/LC_MESSAGES/umbrello.mo
+share/locale/hr/LC_MESSAGES/useraccount.mo
 share/locale/hr/LC_MESSAGES/validatorsplugin.mo
 share/locale/hr/LC_MESSAGES/webarchiver.mo
 share/locale/hr/charset

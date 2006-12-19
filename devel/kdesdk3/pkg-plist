@@ -74,6 +74,7 @@ bin/svnrevertlast
 bin/svnversions
 bin/swappo
 bin/transxx
+bin/umbodoc
 bin/umbrello
 bin/xml2pot
 bin/zonetab2pot.py
@@ -554,6 +555,8 @@ share/apps/konqueror/servicemenus/subversion_toplevel.desktop
 share/apps/kstyle/themes/scheck.themerc
 share/apps/kuiviewer/kuiviewerui.rc
 share/apps/kuiviewerpart/kuiviewer_part.rc
+share/apps/umbrello/common.ent
+share/apps/umbrello/docbook2xhtml.xsl
 share/apps/umbrello/headings/heading.adb
 share/apps/umbrello/headings/heading.ads
 share/apps/umbrello/headings/heading.as
@@ -677,6 +680,8 @@ share/apps/umbrello/pics/uniassociation.png
 share/apps/umbrello/pics/usecase.png
 share/apps/umbrello/tips
 share/apps/umbrello/umbrelloui.rc
+share/apps/umbrello/xmi.css
+share/apps/umbrello/xmi2docbook.xsl
 share/config.kcfg/cervisiapart.kcfg
 share/config.kcfg/kbabel.kcfg
 share/config.kcfg/kbprojectsettings.kcfg

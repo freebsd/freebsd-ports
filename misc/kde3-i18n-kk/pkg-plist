@@ -138,6 +138,7 @@ share/locale/kk/LC_MESSAGES/kdesu.mo
 share/locale/kk/LC_MESSAGES/kdesud.mo
 share/locale/kk/LC_MESSAGES/kdf.mo
 share/locale/kk/LC_MESSAGES/kdialog.mo
+share/locale/kk/LC_MESSAGES/kdict.mo
 share/locale/kk/LC_MESSAGES/kdictapplet.mo
 share/locale/kk/LC_MESSAGES/kdmconfig.mo
 share/locale/kk/LC_MESSAGES/kdmgreet.mo
@@ -153,6 +154,7 @@ share/locale/kk/LC_MESSAGES/kfile_rpm.mo
 share/locale/kk/LC_MESSAGES/kfile_torrent.mo
 share/locale/kk/LC_MESSAGES/kfile_txt.mo
 share/locale/kk/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/kk/LC_MESSAGES/kfileshare.mo
 share/locale/kk/LC_MESSAGES/kfindpart.mo
 share/locale/kk/LC_MESSAGES/kfloppy.mo
 share/locale/kk/LC_MESSAGES/kfmclient.mo
@@ -209,9 +211,11 @@ share/locale/kk/LC_MESSAGES/kmilo_kvaio.mo
 share/locale/kk/LC_MESSAGES/kmilo_powerbook.mo
 share/locale/kk/LC_MESSAGES/kmilo_thinkpad.mo
 share/locale/kk/LC_MESSAGES/kmilod.mo
+share/locale/kk/LC_MESSAGES/kmines.mo
 share/locale/kk/LC_MESSAGES/kminipagerapplet.mo
 share/locale/kk/LC_MESSAGES/knetattach.mo
 share/locale/kk/LC_MESSAGES/knetworkconf.mo
+share/locale/kk/LC_MESSAGES/knewsticker.mo
 share/locale/kk/LC_MESSAGES/knotify.mo
 share/locale/kk/LC_MESSAGES/kolourpicker.mo
 share/locale/kk/LC_MESSAGES/konqsidebar_delicious.mo
@@ -220,15 +224,18 @@ share/locale/kk/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/kk/LC_MESSAGES/konqsidebar_news.mo
 share/locale/kk/LC_MESSAGES/konqueror.mo
 share/locale/kk/LC_MESSAGES/konsole.mo
+share/locale/kk/LC_MESSAGES/kopete.mo
 share/locale/kk/LC_MESSAGES/kpackage.mo
 share/locale/kk/LC_MESSAGES/kpager.mo
 share/locale/kk/LC_MESSAGES/kpersonalizer.mo
 share/locale/kk/LC_MESSAGES/kppp.mo
+share/locale/kk/LC_MESSAGES/kppplogview.mo
 share/locale/kk/LC_MESSAGES/kprinter.mo
 share/locale/kk/LC_MESSAGES/krandr.mo
 share/locale/kk/LC_MESSAGES/krdb.mo
 share/locale/kk/LC_MESSAGES/kreadconfig.mo
 share/locale/kk/LC_MESSAGES/kregexpeditor.mo
+share/locale/kk/LC_MESSAGES/krfb.mo
 share/locale/kk/LC_MESSAGES/krunapplet.mo
 share/locale/kk/LC_MESSAGES/kscreensaver.mo
 share/locale/kk/LC_MESSAGES/ksig.mo

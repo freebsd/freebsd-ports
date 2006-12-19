@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.1
 PORTEPOCH=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -16,15 +16,16 @@ DIST_SUBDIR=	KDE/koffice
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Office Suite for KDE3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx \
-		Magick-config:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
+LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick \
+		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		aspell:${PORTSDIR}/textproc/aspell \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		lcms:${PORTSDIR}/graphics/lcms \
 		paper:${PORTSDIR}/print/libpaper \
+		poppler-qt:${PORTSDIR}/graphics/poppler-qt \
 		wpd-0.8:${PORTSDIR}/textproc/libwpd \
 		wv2:${PORTSDIR}/textproc/wv2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
@@ -46,7 +47,9 @@ USE_PGSQL=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
-		--with-pgsqllibdir=${LOCALBASE}/lib
+		--with-pgsqllibdir=${LOCALBASE}/lib \
+		--with-pqxx-includes=${LOCALBASE}/include \
+		--with-pqxx-libraries=${LOCALBASE}/lib
 
 .if ${OSVERSION} < 500035
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
@@ -63,6 +66,14 @@ post-configure:
 		${WRKSRC}/kchart/kdchart/Makefile \
 		${WRKSRC}/kexi/kexidb/drivers/pqxx/Makefile \
 		${WRKSRC}/kexi/migration/pqxx/Makefile
+	${REINPLACE_CMD} -e 's|round(|rint(|g' \
+		${WRKSRC}/krita/plugins/filters/levelfilter/kgradientslider.cc
+	${REINPLACE_CMD} -e 's|-O[s23]||g' -e 's|-O|-O0|g' \
+		${WRKSRC}/krita/plugins/filters/cimg/Makefile
+	${REINPLACE_CMD} -e 's|xor|^|g' \
+		${WRKSRC}/kspread/kspread_style.cc
+	${REINPLACE_CMD} -e 's|trunc(|rint(|g' \
+		${WRKSRC}/kchart/kdchart/KDChartAxesPainter.cpp
 .endif
 
 .include <bsd.port.post.mk>

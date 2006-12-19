@@ -51,6 +51,7 @@ share/applnk/.hidden/kmdr-executor.desktop
 share/apps/kafkapart/entities
 share/apps/kafkapart/pics/comment.png
 share/apps/kafkapart/pics/php.png
+share/apps/katepart/syntax/kommander.xml
 share/apps/kfilereplace/kfilereplaceui.rc
 share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/back.png
 share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/backup_option.png

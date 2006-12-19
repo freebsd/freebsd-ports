@@ -5,7 +5,6 @@
 # $FreeBSD$
 
 PORTNAME?=		kdelibs3
-PORTREVISION=		5
 PKGNAMESUFFIX?=		-nocups
 
 MAINTAINER=		kde@FreeBSD.org

@@ -23,6 +23,31 @@ share/doc/HTML/ca/docs/common/gpl-translated.html
 share/doc/HTML/ca/docs/common/kde-localised.css
 share/doc/HTML/ca/docs/common/lgpl-translated.html
 share/doc/HTML/ca/docs/common/logotp3.png
+share/doc/HTML/ca/kalzium/common
+share/doc/HTML/ca/kalzium/gradient.png
+share/doc/HTML/ca/kalzium/index.cache.bz2
+share/doc/HTML/ca/kalzium/index.docbook
+share/doc/HTML/ca/kalzium/infodialog_bohr.png
+share/doc/HTML/ca/kalzium/infodialog_chemicaldata.png
+share/doc/HTML/ca/kalzium/infodialog_energies.png
+share/doc/HTML/ca/kalzium/infodialog_misc.png
+share/doc/HTML/ca/kalzium/infodialog_overview.png
+share/doc/HTML/ca/kalzium/infodialog_picture.png
+share/doc/HTML/ca/kalzium/infodialog_spectrum.png
+share/doc/HTML/ca/kalzium/man-kalzium.1.docbook
+share/doc/HTML/ca/kalzium/plottingdialog.png
+share/doc/HTML/ca/kalzium/quick-1.png
+share/doc/HTML/ca/kalzium/screenshot1.png
+share/doc/HTML/ca/kalzium/screenshot2.png
+share/doc/HTML/ca/kalzium/screenshot7.png
+share/doc/HTML/ca/kalzium/screenshoteqsolver.png
+share/doc/HTML/ca/kalzium/settings1.png
+share/doc/HTML/ca/kalzium/settings2.png
+share/doc/HTML/ca/kalzium/settings3.png
+share/doc/HTML/ca/kalzium/sidebar1.png
+share/doc/HTML/ca/kalzium/sidebar2.png
+share/doc/HTML/ca/kalzium/sidebar3.png
+share/doc/HTML/ca/kalzium/timeline.png
 share/doc/HTML/ca/kappfinder/man-kappfinder.1.docbook
 share/doc/HTML/ca/kapptemplate/man-kapptemplate.1.docbook
 share/doc/HTML/ca/kate-plugins/common
@@ -37,11 +62,14 @@ share/doc/HTML/ca/kate-plugins/xmlcheck.docbook
 share/doc/HTML/ca/kate-plugins/xmltools.docbook
 share/doc/HTML/ca/kate/advanced.docbook
 share/doc/HTML/ca/kate/common
+share/doc/HTML/ca/kate/configdialog01.png
+share/doc/HTML/ca/kate/configdialog02.png
 share/doc/HTML/ca/kate/configuring.docbook
 share/doc/HTML/ca/kate/fundamentals.docbook
 share/doc/HTML/ca/kate/highlighting.docbook
 share/doc/HTML/ca/kate/index.cache.bz2
 share/doc/HTML/ca/kate/index.docbook
+share/doc/HTML/ca/kate/kate.png
 share/doc/HTML/ca/kate/man-kate.1.docbook
 share/doc/HTML/ca/kate/mdi.docbook
 share/doc/HTML/ca/kate/menus.docbook
@@ -328,6 +356,7 @@ share/doc/HTML/ca/khelpcenter/quickstart/index.cache.bz2
 share/doc/HTML/ca/khelpcenter/quickstart/index.docbook
 share/doc/HTML/ca/khelpcenter/support.docbook
 share/doc/HTML/ca/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/ca/khelpcenter/userguide/amarok.png
 share/doc/HTML/ca/khelpcenter/userguide/base-kde-applications.docbook
 share/doc/HTML/ca/khelpcenter/userguide/browser-fine-tuning.docbook
 share/doc/HTML/ca/khelpcenter/userguide/burning-cds.docbook
@@ -345,10 +374,21 @@ share/doc/HTML/ca/khelpcenter/userguide/groupware-kontact.docbook
 share/doc/HTML/ca/khelpcenter/userguide/index.cache.bz2
 share/doc/HTML/ca/khelpcenter/userguide/index.docbook
 share/doc/HTML/ca/khelpcenter/userguide/internet-shortcuts.docbook
+share/doc/HTML/ca/khelpcenter/userguide/kcontrol.png
 share/doc/HTML/ca/khelpcenter/userguide/kde-as-root.docbook
 share/doc/HTML/ca/khelpcenter/userguide/kde-edutainment.docbook
 share/doc/HTML/ca/khelpcenter/userguide/kde-for-admins.docbook
 share/doc/HTML/ca/khelpcenter/userguide/kde-office.docbook
+share/doc/HTML/ca/khelpcenter/userguide/kmag.png
+share/doc/HTML/ca/khelpcenter/userguide/kmousetool.png
+share/doc/HTML/ca/khelpcenter/userguide/kmouth.png
+share/doc/HTML/ca/khelpcenter/userguide/kmouth2.png
+share/doc/HTML/ca/khelpcenter/userguide/kmouth3.png
+share/doc/HTML/ca/khelpcenter/userguide/knode-identity.png
+share/doc/HTML/ca/khelpcenter/userguide/knode-mail-account.png
+share/doc/HTML/ca/khelpcenter/userguide/knode-news-account.png
+share/doc/HTML/ca/khelpcenter/userguide/knode-start.png
+share/doc/HTML/ca/khelpcenter/userguide/konq-sidebar.png
 share/doc/HTML/ca/khelpcenter/userguide/konsole-intro.docbook
 share/doc/HTML/ca/khelpcenter/userguide/messaging-intro.docbook
 share/doc/HTML/ca/khelpcenter/userguide/migrator-applications.docbook
@@ -366,10 +406,12 @@ share/doc/HTML/ca/khelpcenter/userguide/programs-and-documents.docbook
 share/doc/HTML/ca/khelpcenter/userguide/programs-controlling.docbook
 share/doc/HTML/ca/khelpcenter/userguide/removable-disks.docbook
 share/doc/HTML/ca/khelpcenter/userguide/screen-captures.docbook
+share/doc/HTML/ca/khelpcenter/userguide/services.png
 share/doc/HTML/ca/khelpcenter/userguide/shared-sessions.docbook
 share/doc/HTML/ca/khelpcenter/userguide/standard-menu-entries.docbook
 share/doc/HTML/ca/khelpcenter/userguide/switching-sessions.docbook
 share/doc/HTML/ca/khelpcenter/userguide/the-filemanager.docbook
+share/doc/HTML/ca/khelpcenter/userguide/titlebar-menu.png
 share/doc/HTML/ca/khelpcenter/userguide/troubleshooting-network-x.docbook
 share/doc/HTML/ca/khelpcenter/userguide/troubleshooting-no-open.docbook
 share/doc/HTML/ca/khelpcenter/userguide/under-the-hood.docbook
@@ -523,8 +565,14 @@ share/doc/HTML/ca/kmail/intro.docbook
 share/doc/HTML/ca/kmail/menus.docbook
 share/doc/HTML/ca/kmail/using-kmail.docbook
 share/doc/HTML/ca/kmenuedit/common
+share/doc/HTML/ca/kmenuedit/done.png
 share/doc/HTML/ca/kmenuedit/index.cache.bz2
 share/doc/HTML/ca/kmenuedit/index.docbook
+share/doc/HTML/ca/kmenuedit/itemname.png
+share/doc/HTML/ca/kmenuedit/kmenueditmain.png
+share/doc/HTML/ca/kmenuedit/new.png
+share/doc/HTML/ca/kmenuedit/selecticon.png
+share/doc/HTML/ca/kmenuedit/selectinternet.png
 share/doc/HTML/ca/kmessedwords/common
 share/doc/HTML/ca/kmessedwords/index.cache.bz2
 share/doc/HTML/ca/kmessedwords/index.docbook
@@ -542,6 +590,8 @@ share/doc/HTML/ca/kmouth/man-kmouth.1.docbook
 share/doc/HTML/ca/knetattach/common
 share/doc/HTML/ca/knetattach/index.cache.bz2
 share/doc/HTML/ca/knetattach/index.docbook
+share/doc/HTML/ca/knetattach/screenshot.png
+share/doc/HTML/ca/knetattach/screenshot2.png
 share/doc/HTML/ca/knetworkconf/common
 share/doc/HTML/ca/knetworkconf/index.cache.bz2
 share/doc/HTML/ca/knetworkconf/index.docbook
@@ -599,10 +649,13 @@ share/doc/HTML/ca/konq-plugins/webarchiver/index.docbook
 share/doc/HTML/ca/konqueror/basics.docbook
 share/doc/HTML/ca/konqueror/bookmarks.docbook
 share/doc/HTML/ca/konqueror/browser.docbook
+share/doc/HTML/ca/konqueror/cmndline.png
 share/doc/HTML/ca/konqueror/commands.docbook
 share/doc/HTML/ca/konqueror/common
 share/doc/HTML/ca/konqueror/config.docbook
 share/doc/HTML/ca/konqueror/credits.docbook
+share/doc/HTML/ca/konqueror/dirtree.png
+share/doc/HTML/ca/konqueror/dragdrop.png
 share/doc/HTML/ca/konqueror/faq.docbook
 share/doc/HTML/ca/konqueror/filemanager.docbook
 share/doc/HTML/ca/konqueror/index.cache.bz2
@@ -612,10 +665,14 @@ share/doc/HTML/ca/konqueror/man-kbookmarkmerger.1.docbook
 share/doc/HTML/ca/konqueror/path-complete.docbook
 share/doc/HTML/ca/konqueror/plugins.docbook
 share/doc/HTML/ca/konqueror/save-settings.docbook
+share/doc/HTML/ca/konqueror/shortcut1.png
+share/doc/HTML/ca/konqueror/shortcut2.png
 share/doc/HTML/ca/konqueror/sidebar.docbook
 share/doc/HTML/ca/konsole/common
 share/doc/HTML/ca/konsole/index.cache.bz2
 share/doc/HTML/ca/konsole/index.docbook
+share/doc/HTML/ca/konsole/konsole.png
+share/doc/HTML/ca/konsole/tabbar.png
 share/doc/HTML/ca/kontact/common
 share/doc/HTML/ca/kontact/index.cache.bz2
 share/doc/HTML/ca/kontact/index.docbook
@@ -625,6 +682,8 @@ share/doc/HTML/ca/kpackage/index.docbook
 share/doc/HTML/ca/kpager/common
 share/doc/HTML/ca/kpager/index.cache.bz2
 share/doc/HTML/ca/kpager/index.docbook
+share/doc/HTML/ca/kpager/screenshot.png
+share/doc/HTML/ca/kpager/settings.png
 share/doc/HTML/ca/kpercentage/commands.docbook
 share/doc/HTML/ca/kpercentage/common
 share/doc/HTML/ca/kpercentage/credits.docbook
@@ -744,6 +803,9 @@ share/doc/HTML/ca/kuser/index.docbook
 share/doc/HTML/ca/kwallet/common
 share/doc/HTML/ca/kwallet/index.cache.bz2
 share/doc/HTML/ca/kwallet/index.docbook
+share/doc/HTML/ca/kwatchgnupg/common
+share/doc/HTML/ca/kwatchgnupg/index.cache.bz2
+share/doc/HTML/ca/kwatchgnupg/index.docbook
 share/doc/HTML/ca/kweather/common
 share/doc/HTML/ca/kweather/index.cache.bz2
 share/doc/HTML/ca/kweather/index.docbook
@@ -763,6 +825,7 @@ share/doc/HTML/ca/kwrite/index.docbook
 share/doc/HTML/ca/kxkb/common
 share/doc/HTML/ca/kxkb/index.cache.bz2
 share/doc/HTML/ca/kxkb/index.docbook
+share/doc/HTML/ca/kxkb/switching.png
 share/doc/HTML/ca/lilo-config/common
 share/doc/HTML/ca/lilo-config/index.cache.bz2
 share/doc/HTML/ca/lilo-config/index.docbook
@@ -1379,6 +1442,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kwordquiz
 @dirrm share/doc/HTML/ca/kwifimanager
 @dirrm share/doc/HTML/ca/kweather
+@dirrm share/doc/HTML/ca/kwatchgnupg
 @dirrm share/doc/HTML/ca/kwallet
 @dirrm share/doc/HTML/ca/kuser
 @dirrm share/doc/HTML/ca/kturtle
@@ -1539,6 +1603,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kate
 @dirrm share/doc/HTML/ca/kapptemplate
 @dirrm share/doc/HTML/ca/kappfinder
+@dirrm share/doc/HTML/ca/kalzium
 @dirrm share/doc/HTML/ca/docs/common
 @dirrm share/doc/HTML/ca/docs
 @dirrm share/doc/HTML/ca/amor

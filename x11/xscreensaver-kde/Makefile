@@ -7,7 +7,6 @@
 
 PORTNAME=	xscreensaver-kde
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -34,9 +33,9 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/share/gnome/applications/gnome-screensaver-properties.desktop)
+.if exists(${X11BASE}/share/gnome/applications/gnome-screensaver-properties.desktop)
 WITH_XSGNOME=	yes
-.elif exists(${LOCALBASE}/bin/screensaver)
+.elif exists(${X11BASE}/bin/screensaver)
 WITH_XSGNOME=	yes
 .else
 WITH_XS=	yes
@@ -48,8 +47,8 @@ RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif # defined(WITH_XS)
 
 .if defined(WITH_XSGNOME)
-BUILD_DEPENDS+=	${LOCALBASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
-RUN_DEPENDS+=	${LOCALBASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+BUILD_DEPENDS+=	${X11BASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+RUN_DEPENDS+=	${X11BASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
 .endif # defined(WITH_XSGNOME)
 
 pre-configure:
