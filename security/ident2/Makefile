@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ident2
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	security net
 MASTER_SITES=	http://michael.bacarella.com/projects/ident2/
 DISTNAME=	ident2-v${PORTVERSION}_FINAL
@@ -16,8 +15,13 @@ MAINTAINER=	scorpio@drkshdw.org
 COMMENT=	An RFC1413 identification server which also supports random replies
 
 USE_BZIP2=	yes
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 MAN8=		ident2.8
 PLIST_FILES=	sbin/ident2
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ident2 ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8/
 
 .include <bsd.port.mk>
