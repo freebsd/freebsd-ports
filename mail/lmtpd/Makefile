@@ -1,4 +1,4 @@
-# New ports collection makefile for:	libhome
+# New ports collection makefile for:	lmtpd
 # Date created:				Fri Aug 14 2003
 # Whom:					Xavier Beaudouin <kiwi@oav.net>
 #
@@ -20,16 +20,23 @@ USE_ICONV=	yes
 
 OPTIONS=	PCRE "Support for PCRE" on
 OPTIONS+=	MYSQL "Support for MySQL Queries and Logs" on
-OPTIONS+=	DB3 "Support for DB3" on
-OPTIONS+=	DB4 "Support for DB4" off
+OPTIONS+=	BDB "Support for Berkeley DB" on
 OPTIONS+=	TRE "Support for TRE regexp (Approx regexp)" on
 OPTIONS+=	SIEVE "Support for SIEVE regexp (Approx regexp)" on
 
+.if defined(LMTPD_WITH_BDB_VER)
+WITH_BDB_VER=	${LMTPD_WITH_BDB_VER}
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DB3) && defined(WITH_DB4)
-.error You cannot use DB3 and DB4 in the same time.
+.for num in 3 4
+.if defined(WITH_DB${num})
+WITH_BDB=	yes
+IGNORE=	Use 'make config' to select Berkeley DB.
+OBSOLETE_BDB_VAR+=	WITH_DB${num}
 .endif
+.endfor
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
@@ -58,27 +65,39 @@ CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}/include/mysql --with-mysqllog
 CONFIGURE_ARGS+=	--without-mysql --without-mysqllog
 .endif
 
-.if defined(WITH_DB3)
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}/include/db3 --without-db4
-.else
-CONFIGURE_ARGS+=	--without-db3
-.endif
+.if defined(WITH_BDB)
+USE_BDB=		yes
+WITH_BDB_VER?=		4
+INVALID_BDB_VER=	2
 
-.if defined(WITH_DB4)
-LIB_DEPENDS+=	db4:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=	--with-db4=${LOCALBASE}/include/db4 --without-db3
+.if ${WITH_BDB_VER} == 3
+CONFIGURE_ARGS+=	--with-db3=${BDB_INCLUDE_DIR} \
+			--without-db4
 .else
-CONFIGURE_ARGS+=	--without-db4
+CONFIGURE_ARGS+=	--with-db4=${BDB_INCLUDE_DIR} \
+			--without-db3
+.endif
+LDFLAGS+=		-L${BDB_LIB_DIR}
+CONFIGURE_ARGS+=	--with-db-lib=${BDB_LIB_DIR}
+.else
+CONFIGURE_ARGS+=	--without-db3 --without-db4
 .endif
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--without-perl
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		lmtpd.8
 DOCS=		NEWS README TODO
+
+post-patch:
+.if defined(WITH_BDB)
+	@if [ ! "${BDB_LIB_NAME}" = "db3" ] ; then \
+		${REINPLACE_CMD}-e 's;in db4;in ${BDB_LIB_NAME};g' \
+			${WRKSRC}/configure ; \
+	fi
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/lmtpd.conf \
