@@ -1,0 +1,93 @@
+--- ces/ucs-2-internal.c	26 Nov 2003 01:51:45 -0000	1.3
++++ ces/ucs-2-internal.c	14 Dec 2006 22:46:01 -0000
+@@ -39,7 +39,7 @@
+ 		return -1;	/* No corresponding character in UCS-2 */
+ 	if (*outbytesleft < sizeof(ucs2_t))
+ 		return 0;	/* No space in the output buffer */
+-	*((ucs2_t *)(*outbuf))++ = in;
++	*(*(ucs2_t **)outbuf)++ = in;
+ 	(*outbytesleft) -= sizeof(ucs2_t);
+ 	return 1;
+ }
+@@ -51,7 +51,7 @@
+ 	if (*inbytesleft < sizeof(ucs2_t))
+ 		return UCS_CHAR_NONE;	/* Not enough bytes in the input buffer */
+ 	(*inbytesleft) -= sizeof(ucs2_t);
+-	return *((const ucs2_t *)(*inbuf))++;
++	return *(*(const ucs2_t **)inbuf)++;
+ }
+ 
+ ICONV_CES_STATELESS_MODULE_DECL(ucs_2_internal);
+--- ces/ucs-4-internal.c	26 Nov 2003 01:51:45 -0000	1.3
++++ ces/ucs-4-internal.c	14 Dec 2006 22:46:30 -0000
+@@ -37,7 +37,7 @@
+ 		return 1;	/* No state reinitialization for table charsets */
+ 	if (*outbytesleft < sizeof(ucs4_t))
+ 		return 0;	/* No space in the output buffer */
+-	*((ucs4_t *)(*outbuf))++ = in;
++	*(*(ucs4_t **)outbuf)++ = in;
+ 	(*outbytesleft) -= sizeof(ucs4_t);
+ 	return 1;
+ }
+@@ -49,7 +49,7 @@
+ 	if (*inbytesleft < sizeof(ucs4_t))
+ 		return UCS_CHAR_NONE;	/* Not enough bytes in the input buffer */
+ 	(*inbytesleft) -= sizeof(ucs4_t);
+-	return *((const ucs4_t *)(*inbuf))++;
++	return *(*(const ucs4_t **)inbuf)++;
+ }
+ 
+ ICONV_CES_STATELESS_MODULE_DECL(ucs_4_internal);
+--- lib/ces_euc.c	26 Nov 2003 01:51:46 -0000	1.3
++++ lib/ces_euc.c	16 Dec 2006 18:41:08 -0000
+@@ -61,7 +61,7 @@
+ 		}
+ 	}
+ 	state->nccs = num;
+-	(iconv_ces_euc_state *)*data = state;
++	*(iconv_ces_euc_state **)data = state;
+ 	return 0;
+ }
+ 
+--- lib/ces_iso2022.c	11 Mar 2004 01:23:22 -0000	1.5
++++ lib/ces_iso2022.c	16 Dec 2006 18:41:36 -0000
+@@ -90,7 +90,7 @@
+ 	}
+ 	state->nccs = num;
+ 	iconv_iso2022_reset(state);
+-	(iconv_ces_iso2022_state *)*data = state;
++	*(iconv_ces_iso2022_state **)data = state;
+ 	return 0;
+ }
+ 
+--- lib/ces_table.c	26 Nov 2003 01:51:46 -0000	1.3
++++ lib/ces_table.c	16 Dec 2006 18:42:00 -0000
+@@ -43,7 +43,7 @@
+ 	if (res)
+ 		free(ccs);
+ 	else
+-		(struct iconv_ccs *)(*data) = ccs;
++		*(struct iconv_ccs **)data = ccs;
+ 	return res;
+ }
+ 
+--- util/iconv_stream.c.orig	Fri Dec 15 08:13:58 2006
++++ util/iconv_stream.c	Fri Dec 15 08:32:50 2006
+@@ -114,7 +114,7 @@
+             if (left > size)
+                 left = size;
+             memcpy(stream->buf_ptr, buf, left);
+-            (const char *)buf += left;
++            buf = (const char *)buf + left;
+             size -= left;
+             stream->buf_ptr += left;
+             res = iconv_write(handle, stream->buffer,
+@@ -141,7 +141,7 @@
+                 return -1;
+             res = 0;
+         }
+-        (const char *)buf += res;
++        buf = (const char *)buf + res;
+         size -= res;
+     } while (size && res);
+     if (!size)
