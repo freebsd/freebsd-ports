@@ -2590,7 +2590,6 @@ lang/gcc30||2006-12-12|Has expired: "This port is no longer in use by anything i
 lang/egcs||2006-12-12|Has expired: "This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release of gcc instead"
 graphics/php4-ming||2006-12-12|Has expired: doesn't work with new version of ming library
 graphics/dvipng||2006-12-12|Has expired: is already included in the teTeX distribution
-lang/clips||2006-12-12|Has expired: Unfetchable
 audio/gdesklets-xmms||2006-12-12|Has expired: Disappeared from the internet
 games/flightgear-l410||2006-12-12|Has expired: is incompatible with the latest FlightGear release
 www/frontpage||2006-12-12|Has expired: Microsoft Frontpage Extensions have reached their End-of-Life
