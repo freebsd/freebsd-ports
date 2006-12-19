@@ -812,6 +812,7 @@
     SUBDIR += trickle
     SUBDIR += tridiavnc
     SUBDIR += tryst
+    SUBDIR += tryst-examples
     SUBDIR += tsclient
     SUBDIR += tshark
     SUBDIR += tshark-lite
