@@ -727,6 +727,7 @@
     SUBDIR += p5-Kwiki-VimMode
     SUBDIR += p5-Kwiki-plugins
     SUBDIR += p5-LWP-Authen-Wsse
+    SUBDIR += p5-LWPx-ParanoidAgent
     SUBDIR += p5-MasonX-Interp-WithCallbacks
     SUBDIR += p5-MasonX-Profiler
     SUBDIR += p5-MasonX-Request-WithApacheSession
