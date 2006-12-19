@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="077c2dca-8f9a-11db-ab33-000e0c2e438a">
+    <topic>openssl -- Incorrect PKCS#1 v1.5 padding validation in
+      crypto(3)</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.1</gt><lt>6.1_6</lt></range>
+	<range><gt>6.0</gt><lt>6.0_11</lt></range>
+	<range><gt>5.5</gt><lt>5.5_4</lt></range>
+	<range><gt>5.4</gt><lt>5.4_18</lt></range>
+	<range><gt>5.3</gt><lt>5.3_33</lt></range>
+	<range><lt>4.11_21</lt></range>
+      </system>
+      <package>
+	<name>openssl</name>
+	<range><gt>0.9.8</gt><lt>0.9.8c_9</lt></range>
+	<range><lt>0.9.7k_0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>When verifying a PKCS#1 v1.5 signature, OpenSSL ignores any
+	  bytes which follow the cryptographic hash being signed.  In
+	  a valid signature there will be no such bytes.</p>
+	<h1>Impact</h1>
+	<p>OpenSSL will incorrectly report some invalid signatures as
+	  valid.  When an RSA public exponent of 3 is used, or more
+	  generally when a small public exponent is used with a
+	  relatively large modulus (e.g., a public exponent of 17 with
+	  a 4096-bit modulus), an attacker can construct a signature
+	  which OpenSSL will accept as a valid PKCS#1 v1.5 signature.</p>
+	<h1>Workaround</h1>
+	<p>No workaround is available.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4339</cvename>
+      <freebsdsa>SA-06:19.openssl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-09-06</discovery>
+      <entry>2006-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0679deeb-8eaf-11db-abc9-0003476f14d3">
     <topic>sql-ledger -- multiple vulnerabilities</topic>
     <affects>
