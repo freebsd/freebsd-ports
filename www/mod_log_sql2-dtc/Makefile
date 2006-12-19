@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.100
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	-dtc
@@ -17,6 +18,7 @@ LATEST_LINK=	mod_log_sql2
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_APACHE=	2.2+
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 SSL_PLIST=	""
 PLIST_SUB+=	SSL=${SSL_PLIST}
