@@ -1,13 +1,15 @@
---- ./src/env/Makefile.in.orig	Wed Nov 23 19:45:48 2005
-+++ ./src/env/Makefile.in	Mon Jul 17 10:06:09 2006
-@@ -52,13 +52,13 @@
+--- ./src/env/Makefile.in.orig	Wed Dec 13 21:09:28 2006
++++ ./src/env/Makefile.in	Sat Dec 16 15:33:30 2006
+@@ -52,14 +52,14 @@
  	if [ ! -d ${DESTDIR}${exec_prefix} ] ; then $(MKDIR_P) ${DESTDIR}${exec_prefix} ; fi
  	if [ ! -d ${DESTDIR}${prefix} ] ; then $(MKDIR_P) ${DESTDIR}${prefix} ; fi
  	if [ ! -d ${DESTDIR}${bindir} ] ; then $(MKDIR_P) ${DESTDIR}${bindir} ; fi
 -	$(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) mpicc ${DESTDIR}${bindir}/mpicc
 -	$(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) mpich2version ${DESTDIR}${bindir}/mpich2version
+-	$(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) parkill ${DESTDIR}${bindir}/parkill
 +	$(BSD_INSTALL_SCRIPT) mpicc ${DESTDIR}${bindir}/mpicc
 +	$(BSD_INSTALL_SCRIPT) mpich2version ${DESTDIR}${bindir}/mpich2version
++	$(BSD_INSTALL_SCRIPT) parkill ${DESTDIR}${bindir}/parkill
  	if [ ! -d ${DESTDIR}${sysconfdir} ] ; then $(MKDIR_P) ${DESTDIR}${sysconfdir} ; fi
  	$(INSTALL_DATA) mpicc.conf ${DESTDIR}${sysconfdir}/mpicc.conf
 -	if [ -s mpicxx ] ; then $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) mpicxx ${DESTDIR}${bindir}/mpicxx ; fi
