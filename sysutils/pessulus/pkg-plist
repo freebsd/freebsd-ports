@@ -48,6 +48,7 @@ bin/pessulus
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/applications/pessulus.desktop
 share/gnome/pessulus/glade/pessulus.glade
+share/locale/ar/LC_MESSAGES/pessulus.mo
 share/locale/bg/LC_MESSAGES/pessulus.mo
 share/locale/bn/LC_MESSAGES/pessulus.mo
 share/locale/bn_IN/LC_MESSAGES/pessulus.mo
