@@ -1,15 +1,3 @@
 bin/gnuitar
-share/doc/gnuitar/docs/faq.html
-share/doc/gnuitar/docs/index.html
-share/doc/gnuitar/docs/install.html
-share/doc/gnuitar/docs/readme.html
-share/doc/gnuitar/COPYING
-share/doc/gnuitar/AUTHORS
-share/doc/gnuitar/FAQ
-share/doc/gnuitar/INSTALL
-share/doc/gnuitar/NEWS
-share/doc/gnuitar/README
-share/doc/gnuitar/TODO
-share/doc/gnuitar/ChangeLog
-@dirrm share/doc/gnuitar/docs
-@dirrm share/doc/gnuitar
+share/pixmaps/gnuitar.xpm
+@dirrmtry share/pixmaps
