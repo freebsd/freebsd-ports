@@ -349,6 +349,7 @@
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += getxml
+    SUBDIR += gflags
     SUBDIR += gindent
     SUBDIR += git
     SUBDIR += glade2
