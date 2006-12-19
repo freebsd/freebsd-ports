@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0679deeb-8eaf-11db-abc9-0003476f14d3">
+    <topic>sql-ledger -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>sql-ledger</name>
+	<range><lt>2.6.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Debian security Team reports:</p>
+	<blockquote cite="http://www.us.debian.org/security/2006/dsa-1239">
+	  <p>Several remote vulnerabilities have been discovered in SQL
+	    Ledger, a web based double-entry accounting program, which may
+	    lead to the execution of arbitrary code. The Common
+	    Vulnerabilities and Exposures project identifies the following
+	    problems:</p>
+	  <p>Chris Travers discovered that the session management can be
+	    tricked into hijacking existing sessions.</p>
+	  <p>Chris Travers discovered that directory traversal
+	    vulnerabilities can be exploited to execute arbitrary Perl
+	    code.</p>
+	  <p>It was discovered that missing input sanitising allows
+	    execution of arbitrary Perl code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4244</cvename>
+      <cvename>CVE-2006-4731</cvename>
+      <cvename>CVE-2006-5872</cvename>
+      <url>http://www.us.debian.org/security/2006/dsa-1239</url>
+    </references>
+    <dates>
+      <discovery>2006-12-17</discovery>
+      <entry>2006-12-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b47b70d-8ba9-11db-81d5-00123ffe8333">
     <topic>dbus -- match_rule_equal() Weakness</topic>
     <affects>
