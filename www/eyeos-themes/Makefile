@@ -7,7 +7,7 @@
 
 PORTNAME=	themes
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.eyelook.org/themes/ CSME/myports/${DIST_SUBDIR}
 PKGNAMEPREFIX=	eyeOS-
@@ -36,6 +36,7 @@ OPTIONS+=	WaterSide_THEME "inspired in countryside of Saskatchewan" On
 OPTIONS+=	fromX_THEME "based on Tango Icons" On
 OPTIONS+=	eyeOSVista_THEME "based on the new Vista style" On
 OPTIONS+=	animus_THEME "created by AnimusMedia.com" On
+OPTIONS+=	minimal_THEME "based on minimalist art" On
 
 .include <bsd.port.pre.mk>
 
