@@ -16,9 +16,12 @@ COMMENT=	AmaroK replacement for GTK+
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
+		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
+		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen \
+		${PYTHON_SITELIBDIR}/gtk-2.0/sexy.so:${PORTSDIR}/x11-toolkits/py-sexy \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 
-USE_GNOME=	pygtk2
+USE_GNOME=	pygtk2 pygnomeextras
 USE_GSTREAMER=	python
 USE_PYTHON=	yes
 PLIST_FILES=	share/applications/${PORTNAME}.desktop share/pixmaps/${PORTNAME}.png bin/${PORTNAME}
