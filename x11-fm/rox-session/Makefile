@@ -14,7 +14,8 @@ DISTNAME=	rox-session-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A session manager for the ROX desktop
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
+RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
+		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
