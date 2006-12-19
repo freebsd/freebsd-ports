@@ -1,0 +1,9 @@
+Using Tryst, applications can discover what services are available on the
+network, along with all necessary access information such as name, IP
+address, and port number for a given service. 
+
+Bonjour allows you to register a network service, such as a printer or file
+server, so that it can be found by name or browsed for by service type and
+domain.
+
+WWW: http://gnustep.dyndns.org/
