@@ -6892,6 +6892,7 @@ mboxstats	ports/mail/mboxstats
 mbrola		ports/audio/mbrola
 mbrolavox	ports/audio/mbrolavox
 mbrowse		ports/net-mgmt/mbrowse
+mbuffer		ports/misc/mbuffer
 mbx2mbox	ports/mail/mbx2mbox
 mc		ports/misc/mc
 mc-light	ports/misc/mc-light
