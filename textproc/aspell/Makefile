@@ -109,8 +109,8 @@ post-install:	${DICT_TARGET}
 .if defined(WITH_ISPELL)
 	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/scripts/|} ${PREFIX}/bin
 .endif
-	@${ECHO_CMD} "@dirrmtry share/aspell" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry lib/aspell-${VERINST}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/aspell" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/aspell-${VERINST}" >> ${TMPPLIST}
 
 inst-dicten:
 # Install en-aspell by default
