@@ -5,7 +5,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Defaults.pm
 %%SITE_PERL%%/Perl/Critic/Document.pm
 %%SITE_PERL%%/Perl/Critic/Policy.pm
-%%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitLvalueSubstr.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitReverseSortBlock.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitSleepViaSelect.pm
@@ -22,7 +21,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ClassHierarchies/ProhibitAutoloading.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ClassHierarchies/ProhibitExplicitISA.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ClassHierarchies/ProhibitOneArgBless.pm
-%%SITE_PERL%%/Perl/Critic/Policy/CodeLayout
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitHardTabs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitParensWithBuiltins.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitQuotedWordLists.pm
@@ -32,6 +30,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitCStyleForLoops.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitCascadingIfElse.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitDeepNests.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitMutatingListFunctions.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitPostfixControls.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnlessBlocks.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnreachableCode.pm
@@ -71,13 +70,12 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProhibitSubroutinePrototypes.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProtectPrivateSubs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/RequireFinalReturn.pm
-%%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/ProhibitNoStrict.pm
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/ProhibitNoWarnings.pm
+%%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/ProhibitProlongedStrictureOverride.pm
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/RequireTestLabels.pm
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/RequireUseStrict.pm
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/RequireUseWarnings.pm
-%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitConstantPragma.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEmptyQuotes.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEscapedCharacters.pm
@@ -101,7 +99,9 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireLexicalLoopIterators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireNegativeIndices.pm
 %%SITE_PERL%%/Perl/Critic/PolicyFactory.pm
+%%SITE_PERL%%/Perl/Critic/PolicyListing.pm
 %%SITE_PERL%%/Perl/Critic/PolicySummary.pod
+%%SITE_PERL%%/Perl/Critic/ProfilePrototype.pm
 %%SITE_PERL%%/Perl/Critic/TestUtils.pm
 %%SITE_PERL%%/Perl/Critic/Theme.pm
 %%SITE_PERL%%/Perl/Critic/UserProfile.pm
