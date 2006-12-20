@@ -344,7 +344,7 @@
     SUBDIR += mod_log_spread
     SUBDIR += mod_log_sql
     SUBDIR += mod_log_sql2
-    SUBDIR += mod_log_sql2-dtc
+#    SUBDIR += mod_log_sql2-dtc
     SUBDIR += mod_macro
     SUBDIR += mod_macro2
     SUBDIR += mod_mp3
