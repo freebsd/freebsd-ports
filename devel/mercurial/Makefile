@@ -42,7 +42,7 @@ CONTRIB_FILES=	bash_completion \
 		vim/patchreview.txt \
 		vim/patchreview.vim
 
-PORTDOCS=	CONTRIBUTORS COPYING README *.txt doc/*.txt
+PORTDOCS=	CONTRIBUTORS COPYING README doc/*.txt doc/*.html
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
