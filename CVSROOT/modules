@@ -11368,6 +11368,7 @@ phpldapadmin098	ports/net/phpldapadmin098
 phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
 phpmyfaq	ports/www/phpmyfaq
+phpmyid		ports/security/phpmyid
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
 phprojekt	ports/deskutils/phprojekt
