@@ -13249,6 +13249,7 @@ rubygem-mp3info	ports/audio/rubygem-mp3info
 rubygem-needle	ports/devel/rubygem-needle
 rubygem-net-sftp	ports/security/rubygem-net-sftp
 rubygem-net-ssh	ports/security/rubygem-net-ssh
+rubygem-openid	ports/net/rubygem-openid
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rake	ports/devel/rubygem-rake
