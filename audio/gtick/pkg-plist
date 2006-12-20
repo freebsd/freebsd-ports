@@ -18,6 +18,7 @@ share/locale/ru/LC_MESSAGES/gtick.mo
 share/locale/sv/LC_MESSAGES/gtick.mo
 share/locale/uk/LC_MESSAGES/gtick.mo
 share/locale/vi/LC_MESSAGES/gtick.mo
+share/locale/zh_CN/LC_MESSAGES/gtick.mo
 @dirrmtry share/locale/en@quot/LC_MESSAGES
 @dirrmtry share/locale/en@quot
 @dirrmtry share/locale/en@boldquot/LC_MESSAGES
