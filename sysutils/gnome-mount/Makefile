@@ -13,7 +13,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://people.freedesktop.org/~david/dist/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A font-end to mount, umount, and eject using HAL
+COMMENT=	A front-end to mount, umount, and eject using HAL
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
 
