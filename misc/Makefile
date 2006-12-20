@@ -315,6 +315,7 @@
     SUBDIR += magicpoint
     SUBDIR += man.el
     SUBDIR += mango
+    SUBDIR += mbuffer
     SUBDIR += mc
     SUBDIR += mc-light
     SUBDIR += menushki
