@@ -537,6 +537,7 @@
     SUBDIR += php5-mcrypt
     SUBDIR += php5-mhash
     SUBDIR += php5-openssl
+    SUBDIR += phpmyid
     SUBDIR += pidentd
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
