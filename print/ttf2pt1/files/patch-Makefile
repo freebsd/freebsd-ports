@@ -1,0 +1,10 @@
+--- Makefile.orig	Sun Oct 22 23:19:32 2006
++++ Makefile	Sun Oct 22 23:19:36 2006
+@@ -243,7 +243,6 @@
+ 	chgrp -R $(GROUP) $(SHAREDIR)
+ 	chmod -R go-w $(SHAREDIR)
+ 	scripts/inst_file ttf2pt1 $(BINDIR)/ttf2pt1 $(OWNER) $(GROUP) 0755
+-	[ -f $(BINDIR)/t1asm ] || scripts/inst_file t1asm $(LIBXDIR)/t1asm $(OWNER) $(GROUP) 0755
+ 	sed 's|^TTF2PT1_BINDIR=$$|TTF2PT1_BINDIR=$(BINDIR)|;\
+ 		s|^TTF2PT1_LIBXDIR=$$|TTF2PT1_LIBXDIR=$(LIBXDIR)|;\
+ 		s|^TTF2PT1_SHAREDIR=$$|TTF2PT1_SHAREDIR=$(SHAREDIR)|;' <scripts/convert >cvt.tmp

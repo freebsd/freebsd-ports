@@ -8,6 +8,7 @@
 
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.4
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	True Type Font to Postscript Type 1 Converter
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 
 USE_PERL5=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
