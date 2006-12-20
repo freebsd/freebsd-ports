@@ -25,6 +25,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	AFIO	"Enable afio support" Off \
 		BUFFER	"Enable buffer support" Off \
+		MBUFFER	"Enable mbuffer support" Off \
 		STAR	"Enable star support" Off \
 		ZIP	"Eanble zip support" Off
 
@@ -47,6 +48,10 @@ RUN_DEPENDS+=	afio:${PORTSDIR}/sysutils/afio
 
 .if defined(WITH_BUFFER)
 RUN_DEPENDS+=	buffer:${PORTSDIR}/misc/buffer
+.endif
+
+.if defined(WITH_MBUFFER)
+RUN_DEPENDS+=	mbuffer:${PORTSDIR}/misc/mbuffer
 .endif
 
 .if defined(WITH_STAR)
