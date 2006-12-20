@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyester
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.notmart.org/files/ \
 		${MASTER_SITE_LOCAL}
@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	kde-style-
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	KDE style and window decoration
 
+USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
