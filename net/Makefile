@@ -700,6 +700,7 @@
     SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
+    SUBDIR += rubygem-yadis
     SUBDIR += rude
     SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
