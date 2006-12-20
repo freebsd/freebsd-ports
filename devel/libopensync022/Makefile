@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	ahze
 EXTRACT_SUFX=	.tar.gz\?rev=\&format=raw
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freedesktop synchronization framework
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
