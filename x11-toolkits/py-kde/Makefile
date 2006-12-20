@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	3.15.2
+PORTVERSION=	3.16.0
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python kde
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \
-		http://freebsd.ricin.com/ports/distfiles/
+		http://freebsd.ricin.com/ports/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-snapshot20060422
+DISTNAME=	PyKDE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Bindings for KDE3
