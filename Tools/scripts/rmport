@@ -178,8 +178,8 @@ check_dep()
 	done
 }
 
-# query GNATS, format and return the result
-get_PRs()
+# query GNATS via query-pr-summary.cgi, format and return the result
+get_PRs_www()
 {
 	catport=${1}
 	synopsis=${2}
@@ -201,6 +201,26 @@ get_PRs()
 	printf "%s" "${raw}" \
 	|sed -nE "s|.*>(${date_re})<.*>(${prnum_re})<.*>(${synopsis_re})</td.*|\1 \2 \3|p" \
 	|sort
+}
+
+# query GNATS via query-pr on freefall and return the result
+get_PRs_freefall()
+{
+	catport=${1}
+	synopsis=${2}
+
+	log "${catport}: getting PRs having ${synopsis} in the synopsis"
+
+	ssh freefall.freebsd.org "query-pr -qx -y '${synopsis}' || :"
+}
+
+# query GNATS and return the result
+get_PRs()
+{
+	catport=${1}
+	synopsis=${2}
+
+	get_PRs_freefall ${catport} ${synopsis}
 }
 
 # check if any PRs exist that are related to the port
