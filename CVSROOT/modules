@@ -13255,6 +13255,7 @@ rubygem-stream	ports/devel/rubygem-stream
 rubygem-syntax	ports/textproc/rubygem-syntax
 rubygem-transactionsimple	ports/devel/rubygem-transactionsimple
 rubygem-tzinfo	ports/devel/rubygem-tzinfo
+rubygem-yadis	ports/net/rubygem-yadis
 rubyphoto	ports/graphics/rubyphoto
 rude		ports/net/rude
 rudiments	ports/devel/rudiments
