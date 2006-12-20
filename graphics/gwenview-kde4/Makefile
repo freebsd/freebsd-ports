@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwenview
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,16 +15,15 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	An image viewer and browser for the KDE environment
 
 LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi \
-		exif.12:${PORTSDIR}/graphics/libexif
+		exiv2.0:${PORTSDIR}/graphics/exiv2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include/libexif" \
-		CFLAGS="-I${LOCALBASE}/include/libexif"
-CONFIGURE_ARGS+=	--enable-kipi
+CONFIGURE_ARGS+=--enable-kipi \
+		--mandir=${MANPREFIX}/man
 
 MAN1=	gwenview.1
 
