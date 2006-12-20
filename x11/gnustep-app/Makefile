@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -77,10 +77,11 @@ USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 
 USE_GNUSTEP_LOCAL_BUNDLES+=	\
 	Cddb:audio/cddb-bundle	\
-	MP3ToWav:audio/mp3towav-bundle \
 
 USE_GNUSTEP_SYSTEM_THEMES+=	\
 	Camaelon:x11-themes/etoile-camaelon \
+
+#	MP3ToWav:audio/mp3towav-bundle \
 
 USE_GNUSTEP_LOCAL_THEMES+=	\
 	WildMenus:x11-themes/etoile-wildmenus
@@ -100,6 +101,7 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	WrapperFactory:deskutils/gnustep-wrapper \
 	GRubik:games/grubik \
 	AZDock:x11-wm/etoile-azdock \
+	Position:astro/position \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
@@ -165,7 +167,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	LookAndBehavior:deskutils/etoile-lookandbehavior \
 	Azalea:x11-wm/etoile-azalea \
 	EtoileMenuServer:deskutils/etoile-menuserver \
-	Position:astro/position \
 	Expense:finance/expense \
 	FreeTar:archivers/freetar \
 	CodeEditor:editors/codeeditor \
