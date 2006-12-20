@@ -18,6 +18,29 @@ upgrades.
   polkitd_enable="YES"
   hald_enable="YES"
 
+  Notes / known problems about mounting devices in media:/ with HAL enabled: 
+  
+  - Removable media drives (such as CD-ROM drives) *MUST NOT* be listed in
+    /etc/fstab in order to be mountable.
+
+  - If you mount a volume by double-clicking it, it may appear empty. Refresh
+    the fileview in konqueror to see the files.
+
+  - Mounting floppies is currently not supported. 
+
+    You can still mount them in KDE if ...
+
+    - You have an fstab entry for your floppy pointing to a mountpoint
+      owned by your user (i.e. somewhere in your homedir)
+    - The vfs.usermount sysctl is set to 1
+
+     ... by creating a floppy device icon on your KDE desktop and selecting
+	 the above-mentioned fstab entry in the device dropdown list on the
+         device tab.
+
+  - Mounting volumes from fixed drives is prohibited for non-superusers
+    by default.
+
 20061212:
   AFFECTS: users of net/smokeping
   AUTHOR: lth@FreeBSD.org
