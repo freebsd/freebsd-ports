@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	intltool
-PORTVERSION=	0.35.1
+PORTVERSION=	0.35.2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.35
@@ -24,7 +24,7 @@ USE_ICONV=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir="${PREFIX}/libdata"
+CONFIGURE_ARGS=	--libdir="${PREFIX}/libdata" --mandir="${PREFIX}/man"
 
 MAN8=		intltool-extract.8 intltool-merge.8 intltool-prepare.8 \
 		intltool-update.8 intltoolize.8
