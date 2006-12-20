@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cutecom
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.1
 CATEGORIES=	comms
 MASTER_SITES=	http://cutecom.sourceforge.net/
 
@@ -16,6 +16,8 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	lsz:${PORTSDIR}/comms/lrzsz
 
 USE_QT_VER=	3
+USE_GMAKE=	yes
+
 MAKE_ENV+=	QTDIR="${X11BASE}"
 
 do-configure:
