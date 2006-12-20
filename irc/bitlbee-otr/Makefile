@@ -7,6 +7,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
@@ -26,7 +27,8 @@ USE_GETOPT_LONG=yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	MSN "Enable MSN protocol support" On \
-		LDAP "Enable LDAP authentication support" Off
+		LDAP "Enable LDAP authentication support" Off \
+		RECODE "Enable oscar_recode_charset" Off
 
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 
@@ -46,6 +48,12 @@ CONFIGURE_ARGS+=--msn=0 --ssl=bogus
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--ldap=${LOCALBASE}
+.endif
+
+.if defined(WITH_RECODE)
+post-patch::
+	@cd ${WRKDIR} && \
+		${PATCH} ${PATCH_ARGS} < ${FILESDIR}/oscar-recode-patch
 .endif
 
 pre-install:
