@@ -11,9 +11,8 @@ lib/kde3/plugins/styles/polyester.a
 lib/kde3/plugins/styles/polyester.la
 lib/kde3/plugins/styles/polyester.so
 share/apps/kdisplay/color-schemes/PolyesterBlue.kcsrc
-share/apps/kdisplay/color-schemes/PolyesterBlueInverse.kcsrc
 share/apps/kdisplay/color-schemes/PolyesterEmerald.kcsrc
-share/apps/kdisplay/color-schemes/PolyesterEmeraldInverse.kcsrc
+share/apps/kdisplay/color-schemes/PolyesterOrangeJuice.kcsrc
 share/apps/kstyle/themes/polyester.themerc
 share/apps/kwin/polyester.desktop
 @dirrmtry share/apps/kstyle/themes
