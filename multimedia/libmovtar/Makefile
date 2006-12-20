@@ -24,23 +24,9 @@ CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 
-.if exists(${LOCALBASE}/lib/libjpeg-mmx.a)
-OPTIONS+=	JPEGMMX "Enable Jpeg-mmx support by defining" OFF
-.else
-OPTIONS+=	JPEGMMX "Enable Jpeg-mmx support by defining" ON
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JPEGMMX) && (${ARCH} == "i386")
-LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
-
-CONFIGURE_ARGS+=	--with-jpeg-mmx=${LOCALBASE}
-.else
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
-
-CONFIGURE_ARGS+=	--without-jpeg-mmx
-.endif
 
 post-patch:
 # Add library patch when using -ljpeg
