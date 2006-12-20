@@ -268,8 +268,7 @@ IGNORE=		sysutils/lire requires are least Perl 5.6.1, while Perl 5.8.2 is recomm
 .endif
 
 .ifdef(WITH_CHARTS)
-RUN_DEPENDS+=	ploticus:${PORTSDIR}/math/ploticus-nox11 \
-		dia:${PORTSDIR}/graphics/dia
+RUN_DEPENDS+=	ploticus:${PORTSDIR}/math/ploticus-nox11
 BUILD_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 .endif
 .ifdef(WITH_HTML)
