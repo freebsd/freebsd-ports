@@ -18,6 +18,7 @@ lib/libkdeinit_gwenview.so
 share/applications/kde/gwenview.desktop
 share/apps/gvdirpart/gvdirpart.rc
 share/apps/gvimagepart/gvimagepart.rc
+share/apps/gvimagepart/gvimagepartpopup.rc
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/gwenviewui.rc
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd1.png
