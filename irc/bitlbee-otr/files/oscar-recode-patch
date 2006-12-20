@@ -1,0 +1,196 @@
+--- irc.c.orig	2006-06-24 17:00:43.000000000 +0300
++++ irc.c	2006-11-15 13:56:12.000000000 +0200
+@@ -116,6 +116,7 @@
+ 	set_add( irc, "buddy_sendbuffer", "false", set_eval_bool );
+ 	set_add( irc, "buddy_sendbuffer_delay", "200", set_eval_int );
+ 	set_add( irc, "charset", "iso8859-1", set_eval_charset );
++	set_add( irc, "oscar_recode_charset", "iso8859-1", set_eval_oscar_recode_charset );
+ 	set_add( irc, "debug", "false", set_eval_bool );
+ 	set_add( irc, "default_target", "root", NULL );
+ 	set_add( irc, "display_namechanges", "false", set_eval_bool );
+--- protocols/oscar/oscar.c.orig	2006-06-24 17:00:44.000000000 +0300
++++ protocols/oscar/oscar.c	2006-11-16 13:47:10.000000000 +0200
+@@ -1029,7 +1029,10 @@
+ 	return 1;
+ }
+ 
++extern GSList *irc_connection_list;
++
+ static int incomingim_chan1(aim_session_t *sess, aim_conn_t *conn, aim_userinfo_t *userinfo, struct aim_incomingim_ch1_args *args) {
++	char *src="";
+ 	char *tmp = g_malloc(BUF_LONG + 1);
+ 	struct gaim_connection *gc = sess->aux_data;
+ 	int flags = 0;
+@@ -1038,15 +1041,22 @@
+ 		flags |= IM_FLAG_AWAY;
+ 	
+ 	if ((args->icbmflags & AIM_IMFLAGS_UNICODE) || (args->icbmflags & AIM_IMFLAGS_ISO_8859_1)) {
+-		char *src;
+ 		
+ 		if (args->icbmflags & AIM_IMFLAGS_UNICODE)
+ 			src = "UNICODEBIG";
+ 		else
+-			src = "ISO8859-1";
++		{
++			char *cs;
++			irc_t *irc = (irc_t*)irc_connection_list->data;
++			if( ( cs = set_getstr( irc, "oscar_recode_charset" ) ) && ( g_strcasecmp( cs, "utf-8" ) != 0 ) )
++				src = cs;
++			else
++				src = "iso88590-1";
++		}
+ 		
+ 		/* Try to use iconv first to convert the message to UTF8 - which is what BitlBee expects */
+ 		if (do_iconv(src, "UTF-8", args->msg, tmp, args->msglen, BUF_LONG) >= 0) {
++			//fprintf (stderr, "bitlbee: converted from %s to utf8!\n", src);
+ 			// Successfully converted!
+ 		} else if (args->icbmflags & AIM_IMFLAGS_UNICODE) {
+ 			int i;
+@@ -1062,12 +1072,32 @@
+ 					g_snprintf(tmp+strlen(tmp), BUF_LONG-strlen(tmp), "&#%04x;", uni);
+ 				}
+ 			}
++			//fprintf (stderr, "bitlbee: AIM_IMFLAGS_UNICODE, got %s!\n", tmp);
+ 		} else {
+-			g_snprintf(tmp, BUF_LONG, "%s", args->msg);
++			char *cs;
++			irc_t *irc = (irc_t*)irc_connection_list->data;
++			if( ( cs = set_getstr( irc, "oscar_recode_charset" ) ) && ( g_strcasecmp( cs, "utf-8" ) != 0 ) )
++				src = cs;
++			else
++				src = "iso88590-1";
++			if (do_iconv(src, "UTF-8", args->msg, tmp, args->msglen, BUF_LONG) < 0) {
++				g_snprintf(tmp, BUF_LONG, "[1%s]%s", src, args->msg);
++			}
++			//fprintf (stderr, "bitlbee: not utf8, nor unicode, got %s!\n", tmp);
+ 		}
+-	} else
+-		g_snprintf(tmp, BUF_LONG, "%s", args->msg);
+-	
++	} else {
++		char *cs;
++		irc_t *irc = (irc_t*)irc_connection_list->data;
++		if( ( cs = set_getstr( irc, "oscar_recode_charset" ) ) && ( g_strcasecmp( cs, "utf-8" ) != 0 ) )
++			src = cs;
++		else
++			src = "iso88590-1";
++		if (do_iconv(src, "UTF-8", args->msg, tmp, args->msglen, BUF_LONG) < 0) {
++			g_snprintf(tmp, BUF_LONG, "[2%s]%s", src, args->msg);
++		}
++		//fprintf (stderr, "bitlbee: unknown charset, got %s!\n", tmp);
++	}
++
+ 	strip_linefeed(tmp);
+ 	serv_got_im(gc, userinfo->sn, tmp, flags, time(NULL), -1);
+ 	g_free(tmp);
+@@ -1163,12 +1193,23 @@
+ 	switch (args->type) {
+ 		case 0x0001: { /* An almost-normal instant message.  Mac ICQ sends this.  It's peculiar. */
+ 			char *uin, *message;
++			char *src = "";
++			char *cs;
++			char *tmp = g_malloc(BUF_LONG + 1);
++			irc_t *irc = (irc_t*)irc_connection_list->data;
++			if( ( cs = set_getstr( irc, "oscar_recode_charset" ) ) && ( g_strcasecmp( cs, "utf-8" ) != 0 ) )
++				src = cs;
++			else
++				src = "iso88590-1";
+ 			uin = g_strdup_printf("%u", args->uin);
+ 			message = g_strdup(args->msg);
+ 			strip_linefeed(message);
+-			serv_got_im(gc, uin, message, 0, time(NULL), -1);
++			if (do_iconv(src, "UTF-8", message, tmp, strlen (message), BUF_LONG) < 0)
++				tmp = message;
++			serv_got_im(gc, uin, tmp, 0, time(NULL), -1);
+ 			g_free(uin);
+ 			g_free(message);
++			g_free (tmp);
+ 		} break;
+ 
+ 		case 0x0004: { /* Someone sent you a URL */
+@@ -1768,9 +1809,22 @@
+ 			char sender[32];
+ 			char *dialog_msg = g_strdup(msg->msg);
+ 			time_t t = get_time(msg->year, msg->month, msg->day, msg->hour, msg->minute, 0);
++			char *tmp = g_malloc(BUF_LONG + 1);
++			char *src = "";
++			char *cs;
++			irc_t *irc = (irc_t*)irc_connection_list->data;
++			if( ( cs = set_getstr( irc, "oscar_recode_charset" ) ) && ( g_strcasecmp( cs, "utf-8" ) != 0 ) )
++				src = cs;
++			else
++				src = "iso88590-1";
+ 			g_snprintf(sender, sizeof(sender), "%u", msg->sender);
+ 			strip_linefeed(dialog_msg);
+-			serv_got_im(gc, sender, dialog_msg, 0, t, -1);
++			if (do_iconv(src, "UTF-8", dialog_msg, tmp, strlen (msg->msg), BUF_LONG) < 0)
++				tmp = dialog_msg;
++			fprintf (stderr, "bitlbee: offlinemsg, got %s\n", tmp);
++			serv_got_im(gc, sender, tmp, 0, t, -1);
++			if (dialog_msg != tmp)
++				g_free (tmp);
+ 			g_free(dialog_msg);
+ 		} break;
+ 
+@@ -1838,6 +1892,14 @@
+ 	} else {
+ 		struct aim_sendimext_args args;
+ 		char *s;
++		char *cs;
++		char *src="";
++		irc_t *irc = (irc_t*)irc_connection_list->data;
++		if( ( cs = set_getstr( irc, "oscar_recode_charset" ) ) && ( g_strcasecmp( cs, "utf-8" ) != 0 ) )
++			src = cs;
++		else
++			src = "iso88590-1";
++
+ 		
+ 		args.flags = AIM_IMFLAGS_ACK;
+ 		if (odata->icq)
+@@ -1851,7 +1913,7 @@
+ 			s = g_malloc(BUF_LONG);
+ 			/* Try if we can put it in an ISO8859-1 string first.
+ 			   If we can't, fall back to UTF16. */
+-			if ((ret = do_iconv("UTF-8", "ISO8859-1", message, s, len, BUF_LONG)) >= 0) {
++			if ((ret = do_iconv("UTF-8", src, message, s, len, BUF_LONG)) >= 0) {
+ 				args.flags |= AIM_IMFLAGS_ISO_8859_1;
+ 				len = ret;
+ 			} else if ((ret = do_iconv("UTF-8", "UNICODEBIG", message, s, len, BUF_LONG)) >= 0) {
+@@ -1863,6 +1925,7 @@
+ 				s = message;
+ 			}
+ 		} else {
++			fprintf (stderr, "outgoing message is ascii!\n");
+ 			s = message;
+ 		}
+ 		
+--- util.c.orig	2006-06-24 17:01:00.000000000 +0300
++++ util.c	2006-11-15 13:56:12.000000000 +0200
+@@ -453,3 +453,18 @@
+ 	iconv_close( cd );
+ 	return( value );
+ }
++
++char *set_eval_oscar_recode_charset( irc_t *irc, set_t *set, char *value )
++{
++	iconv_t cd;
++
++	if ( g_strncasecmp( value, "none", 4 ) == 0 )
++		return( value );
++
++	cd = iconv_open( "UTF-8", value );
++	if( cd == (iconv_t) -1 )
++		return( NULL );
++
++	iconv_close( cd );
++	return( value );
++}
+--- util.h.orig	2006-06-24 17:01:00.000000000 +0300
++++ util.h	2006-11-15 13:56:12.000000000 +0200
+@@ -46,5 +46,6 @@
+ 
+ G_MODULE_EXPORT signed int do_iconv( char *from_cs, char *to_cs, char *src, char *dst, size_t size, size_t maxbuf );
+ char *set_eval_charset( irc_t *irc, set_t *set, char *value );
++char *set_eval_oscar_recode_charset( irc_t *irc, set_t *set, char *value );
+ 
+ #endif
