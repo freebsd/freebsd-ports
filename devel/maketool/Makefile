@@ -26,6 +26,9 @@ USE_GETTEXT=	yes
 USE_GNOME=	atk glib20 gtk20 pango
 USE_X_PREFIX=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e "s,-Wpointer-arithmetic,," ${WRKSRC}/configure
+
 pre-install:
 	${ECHO_CMD} bin/maketool > ${PLIST}
 .for ii in make maketool_client
