@@ -12412,6 +12412,7 @@ py-xmms2	ports/audio/py-xmms2
 py-xmpppy	ports/net-im/py-xmpppy
 py-xmpppy-irc	ports/net-im/py-xmpppy-irc
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
+py-yadis	ports/net/py-yadis
 py-yaml		ports/devel/py-yaml
 py-yapsnmp	ports/net-mgmt/py-yapsnmp
 py-yenc		ports/news/py-yenc
