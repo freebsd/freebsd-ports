@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	allegrogl
-DISTVERSION=	0.4.0_rc4
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-DISTNAME=	alleggl-${DISTVERSION}
+DISTNAME=	alleggl-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	OpenGL inteface for Allegro library
@@ -17,7 +17,7 @@ COMMENT=	OpenGL inteface for Allegro library
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
@@ -29,13 +29,19 @@ WRKSRC=		${WRKDIR}/alleggl
 SHLIB_VER=	4
 PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
 
+post-extract:
+	@${RM} ${WRKSRC}/gpl.txt
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^[[:blank:]]make |${GMAKE} |; \
 		 s|\.so|&.${SHLIB_VER}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -Ee 's|(@INSTALL@) -D|\1|; s|(CFLAGS) =|\1 +=|' \
-		${WRKSRC}/make/makefile.unx
+	@${REINPLACE_CMD} -Ee \
+		's|@INSTALL@ ||; \
+		 s|(@INSTALL_(DATA\|PROGRAM)@) -D|\1|; \
+		 s|(CFLAGS) =|\1 +=|' \
+		 ${WRKSRC}/make/makefile.unx
 
 post-install:
 	cd ${PREFIX}/lib && ${LN} -sf libagl.so.${SHLIB_VER} libagl.so
