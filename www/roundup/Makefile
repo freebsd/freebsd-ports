@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/r/roundup/ \
 		http://dryice.name/computer/FreeBSD/distfiles/

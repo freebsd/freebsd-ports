@@ -250,6 +250,7 @@ share/locale/de/LC_MESSAGES/roundup.mo
 share/locale/en/LC_MESSAGES/roundup.mo
 share/locale/es/LC_MESSAGES/roundup.mo
 share/locale/fr/LC_MESSAGES/roundup.mo
+share/locale/hu/LC_MESSAGES/roundup.mo
 share/locale/lt/LC_MESSAGES/roundup.mo
 share/locale/ru/LC_MESSAGES/roundup.mo
 share/locale/zh_CN/LC_MESSAGES/roundup.mo
@@ -333,5 +334,17 @@ share/locale/zh_TW/LC_MESSAGES/roundup.mo
 @dirrm %%PYTHON_SITELIBDIR%%/roundup/cgi
 @dirrm %%PYTHON_SITELIBDIR%%/roundup/backends
 @dirrm %%PYTHON_SITELIBDIR%%/roundup
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
