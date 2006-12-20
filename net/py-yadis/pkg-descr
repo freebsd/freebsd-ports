@@ -1,0 +1,16 @@
+Python YADIS
+------------
+
+This code implements relying party support for the Yadis service discovery
+protocol.  The protocol was developed for use by decentralized URL-based
+identity systems, but is useful for advertising services provided by or on
+behalf of a certain URL.
+
+To learn more about Yadis, see http://www.openidenabled.com/yadis
+
+The module yadis.xrires also provides a method of resolving XRI.
+
+The JanRain Python OpenID library uses this library for discovery of OpenID
+service endpoints.  See that library for an example of library usage.
+
+WWW: http://www.openidenabled.com/yadis/libraries/python/

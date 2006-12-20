@@ -650,6 +650,7 @@
     SUBDIR += py-twistedPair
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
+    SUBDIR += py-yadis
     SUBDIR += py-zsi
     SUBDIR += py-zsi-devel
     SUBDIR += pygopherd
