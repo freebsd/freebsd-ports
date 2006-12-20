@@ -13982,7 +13982,6 @@ stl2pov		ports/graphics/stl2pov
 stldoc		ports/lang/stldoc
 stlfilt		ports/devel/stlfilt
 stlport		ports/devel/stlport
-stlport-icc	ports/devel/stlport-icc
 stmpclean	ports/sysutils/stmpclean
 stone		ports/net/stone
 stonx		ports/emulators/stonx

@@ -1944,7 +1944,6 @@
     SUBDIR += st
     SUBDIR += stlfilt
     SUBDIR += stlport
-    SUBDIR += stlport-icc
     SUBDIR += str
     SUBDIR += strace
     SUBDIR += styx
