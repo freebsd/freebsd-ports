@@ -8,7 +8,7 @@
 
 PORTNAME=	tex2im
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 
@@ -17,7 +17,7 @@ COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		latex:${PORTSDIR}/print/teTeX \
-		bash:${PORTSDIR}/shells/bash2
+		bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 
