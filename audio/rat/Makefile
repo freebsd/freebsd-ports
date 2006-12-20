@@ -38,12 +38,16 @@ ENABLE_IPv6=	--enable-ipv6
 .endif
 
 .if ${OSVERSION} >= 700011
-EXTRA_PATCHES=  ${FILESDIR}/timet.patch
+EXTRA_PATCHES=	${FILESDIR}/timet.patch
 .endif
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/common/configure.in \
+		${WRKSRC}/rat/configure.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/${RAT} ${PREFIX}/bin/${RAT}
