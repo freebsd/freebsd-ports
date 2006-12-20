@@ -1,6 +1,15 @@
---- configure.orig	Wed Jul 19 13:34:04 2006
-+++ configure	Wed Jul 19 17:38:40 2006
-@@ -9814,17 +9814,17 @@
+--- configure.orig	Sat Dec  9 04:44:25 2006
++++ configure	Tue Dec 12 05:05:24 2006
+@@ -10272,7 +10272,7 @@
+ 
+ # *** pkg-config
+ # unfortunately, we need pkg-config for the detection of certain libs:
+-# - certain version of fontconfig (without fontconfig-config
++# - certain version of fontconfig (without pkg-config
+ 
+ # Check whether --with-pkgconfig-prefix was given.
+ if test "${with_pkgconfig_prefix+set}" = set; then
+@@ -11489,17 +11489,17 @@
  if test x$fc_config_exec_prefix != x ; then
    fc_config_args="$fc_config_args --exec-prefix=$fc_config_exec_prefix"
    if test x${FC_CONFIG+set} != xset ; then
@@ -19,10 +28,10 @@
 -set dummy fontconfig-config; ac_word=$2
 +# Extract the first word of "pkg-config", so it can be a program name with args.
 +set dummy pkg-config; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
- echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ { echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
  if test "${ac_cv_path_FC_CONFIG+set}" = set; then
-@@ -9888,13 +9888,13 @@
+@@ -11564,13 +11564,13 @@
      no_fc=yes
    fi
  else
@@ -41,7 +50,7 @@
           sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\3/'`
    fc_min_major_version=`echo $min_fc_version | \
           sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\1/'`
-@@ -10962,7 +10962,7 @@
+@@ -12738,7 +12738,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -50,7 +59,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -11288,7 +11288,7 @@
+@@ -13102,7 +13102,7 @@
  #define HAVE_PNG 1
  _ACEOF
  
@@ -59,7 +68,7 @@
    problem_png=""
  else
    with_png=no
-@@ -14349,150 +14349,6 @@
+@@ -16475,162 +16475,6 @@
  
    found_gettext=yes
  
@@ -70,17 +79,17 @@
 -    $UNSET ac_cv_func_dgettext
 -  #bind_textdomain_codeset
 -  if test "${ac_cv_header_libintl_h+set}" = set; then
--  echo "$as_me:$LINENO: checking for libintl.h" >&5
--echo $ECHO_N "checking for libintl.h... $ECHO_C" >&6
+-  { echo "$as_me:$LINENO: checking for libintl.h" >&5
+-echo $ECHO_N "checking for libintl.h... $ECHO_C" >&6; }
 -if test "${ac_cv_header_libintl_h+set}" = set; then
 -  echo $ECHO_N "(cached) $ECHO_C" >&6
 -fi
--echo "$as_me:$LINENO: result: $ac_cv_header_libintl_h" >&5
--echo "${ECHO_T}$ac_cv_header_libintl_h" >&6
+-{ echo "$as_me:$LINENO: result: $ac_cv_header_libintl_h" >&5
+-echo "${ECHO_T}$ac_cv_header_libintl_h" >&6; }
 -else
 -  # Is the header compilable?
--echo "$as_me:$LINENO: checking libintl.h usability" >&5
--echo $ECHO_N "checking libintl.h usability... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking libintl.h usability" >&5
+-echo $ECHO_N "checking libintl.h usability... $ECHO_C" >&6; }
 -cat >conftest.$ac_ext <<_ACEOF
 -/* confdefs.h.  */
 -_ACEOF
@@ -91,24 +100,36 @@
 -#include <libintl.h>
 -_ACEOF
 -rm -f conftest.$ac_objext
--if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
--  (eval $ac_compile) 2>conftest.er1
+-if { (ac_try="$ac_compile"
+-case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+-  (eval "$ac_compile") 2>conftest.er1
 -  ac_status=$?
 -  grep -v '^ *+' conftest.er1 >conftest.err
 -  rm -f conftest.er1
 -  cat conftest.err >&5
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); } &&
--	 { ac_try='test -z "$ac_c_werror_flag"
--			 || test ! -s conftest.err'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
+-	 { ac_try='test -z "$ac_c_werror_flag" || test ! -s conftest.err'
+-  { (case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+-  (eval "$ac_try") 2>&5
 -  ac_status=$?
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); }; } &&
 -	 { ac_try='test -s conftest.$ac_objext'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
+-  { (case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+-  (eval "$ac_try") 2>&5
 -  ac_status=$?
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); }; }; then
@@ -117,15 +138,16 @@
 -  echo "$as_me: failed program was:" >&5
 -sed 's/^/| /' conftest.$ac_ext >&5
 -
--ac_header_compiler=no
+-	ac_header_compiler=no
 -fi
--rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
--echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
--echo "${ECHO_T}$ac_header_compiler" >&6
+-
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-{ echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
+-echo "${ECHO_T}$ac_header_compiler" >&6; }
 -
 -# Is the header present?
--echo "$as_me:$LINENO: checking libintl.h presence" >&5
--echo $ECHO_N "checking libintl.h presence... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking libintl.h presence" >&5
+-echo $ECHO_N "checking libintl.h presence... $ECHO_C" >&6; }
 -cat >conftest.$ac_ext <<_ACEOF
 -/* confdefs.h.  */
 -_ACEOF
@@ -134,8 +156,13 @@
 -/* end confdefs.h.  */
 -#include <libintl.h>
 -_ACEOF
--if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
--  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+-if { (ac_try="$ac_cpp conftest.$ac_ext"
+-case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+-  (eval "$ac_cpp conftest.$ac_ext") 2>conftest.er1
 -  ac_status=$?
 -  grep -v '^ *+' conftest.er1 >conftest.err
 -  rm -f conftest.er1
@@ -159,9 +186,10 @@
 -
 -  ac_header_preproc=no
 -fi
+-
 -rm -f conftest.err conftest.$ac_ext
--echo "$as_me:$LINENO: result: $ac_header_preproc" >&5
--echo "${ECHO_T}$ac_header_preproc" >&6
+-{ echo "$as_me:$LINENO: result: $ac_header_preproc" >&5
+-echo "${ECHO_T}$ac_header_preproc" >&6; }
 -
 -# So?  What about this header?
 -case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
@@ -185,41 +213,34 @@
 -echo "$as_me: WARNING: libintl.h: proceeding with the preprocessor's result" >&2;}
 -    { echo "$as_me:$LINENO: WARNING: libintl.h: in the future, the compiler will take precedence" >&5
 -echo "$as_me: WARNING: libintl.h: in the future, the compiler will take precedence" >&2;}
--    (
--      cat <<\_ASBOX
--## ------------------------------------------ ##
--## Report this to the AC_PACKAGE_NAME lists.  ##
--## ------------------------------------------ ##
--_ASBOX
--    ) |
--      sed "s/^/$as_me: WARNING:     /" >&2
+-
 -    ;;
 -esac
--echo "$as_me:$LINENO: checking for libintl.h" >&5
--echo $ECHO_N "checking for libintl.h... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking for libintl.h" >&5
+-echo $ECHO_N "checking for libintl.h... $ECHO_C" >&6; }
 -if test "${ac_cv_header_libintl_h+set}" = set; then
 -  echo $ECHO_N "(cached) $ECHO_C" >&6
 -else
 -  ac_cv_header_libintl_h=$ac_header_preproc
 -fi
--echo "$as_me:$LINENO: result: $ac_cv_header_libintl_h" >&5
--echo "${ECHO_T}$ac_cv_header_libintl_h" >&6
+-{ echo "$as_me:$LINENO: result: $ac_cv_header_libintl_h" >&5
+-echo "${ECHO_T}$ac_cv_header_libintl_h" >&6; }
 -
 -fi
 -if test $ac_cv_header_libintl_h = yes; then
  
  
  
-@@ -15132,7 +14988,7 @@
+@@ -17344,7 +17188,7 @@
  fi
  
          if test "$no_dgettext" != "yes"; then
 -          CFLAGS="$CFLAGS $intl_LIBS $iconv_LIBS"
 +          CFLAGS="$CFLAGS $intl_CFLAGS $iconv_CFLAGS"
            LIBS="$LIBS $intl_LIBS $iconv_LIBS"
-           echo "$as_me:$LINENO: checking if a simple gettext program link" >&5
- echo $ECHO_N "checking if a simple gettext program link... $ECHO_C" >&6
-@@ -15210,10 +15066,8 @@
+           { echo "$as_me:$LINENO: checking if a simple gettext program link" >&5
+ echo $ECHO_N "checking if a simple gettext program link... $ECHO_C" >&6; }
+@@ -17435,10 +17279,8 @@
    else
      with_gettext="no"
      problem_gettext=": Failed to detected GNU gettext"
