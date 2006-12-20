@@ -1,5 +1,5 @@
 --- src/manager.c.orig	Mon Jul 31 16:37:36 2006
-+++ src/manager.c	Fri Sep 15 01:32:32 2006
++++ src/manager.c	Wed Dec 20 14:59:45 2006
 @@ -23,9 +23,12 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -31,7 +31,7 @@
  	setutent ();
  	
  	while (!local && (utmp = getutent ())) {
-@@ -3103,7 +3113,28 @@ gvm_local_user (void)
+@@ -3103,7 +3113,31 @@ gvm_local_user (void)
  	}
  	
  	endutent ();
@@ -53,6 +53,9 @@
 +			if (!utmp->ut_name[0] || strncmp (utmp->ut_name, user, ulen) != 0)
 +				continue;
 +			local = utmp->ut_line[0] == ':' && utmp->ut_line[1] >= '0' && utmp->ut_line[1] <= '9';
++			if (!local)
++				/* Handle vty logins */
++				local = strlen(utmp->ut_line) > 4 && strncmp(utmp->ut_line, "ttyv", 4) == 0 && utmp->ut_line[4] >= '0' && utmp->ut_line[4] <= '9';
 +		}
 +	}
 +
