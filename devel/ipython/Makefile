@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		http://dryice.name/computer/FreeBSD/distfiles/

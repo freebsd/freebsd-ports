@@ -52,9 +52,24 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_signals.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_signals.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_signals.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_stock_completers.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_stock_completers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_stock_completers.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_system_conf.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_system_conf.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_system_conf.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/jobctrl.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/jobctrl.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/jobctrl.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ledit.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ledit.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ledit.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/numeric_formats.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/numeric_formats.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/numeric_formats.pyo
@@ -136,6 +151,12 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/excolors.py
 %%PYTHON_SITELIBDIR%%/IPython/excolors.pyc
 %%PYTHON_SITELIBDIR%%/IPython/excolors.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.py
+%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyo
 %%PYTHON_SITELIBDIR%%/IPython/genutils.py
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyc
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyo
@@ -178,6 +199,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/rlineimpl.py
 %%PYTHON_SITELIBDIR%%/IPython/rlineimpl.pyc
 %%PYTHON_SITELIBDIR%%/IPython/rlineimpl.pyo
+%%PYTHON_SITELIBDIR%%/IPython/strdispatch.py
+%%PYTHON_SITELIBDIR%%/IPython/strdispatch.pyc
+%%PYTHON_SITELIBDIR%%/IPython/strdispatch.pyo
 %%PYTHON_SITELIBDIR%%/IPython/ultraTB.py
 %%PYTHON_SITELIBDIR%%/IPython/ultraTB.pyc
 %%PYTHON_SITELIBDIR%%/IPython/ultraTB.pyo
@@ -195,4 +219,5 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/winconsole.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/UserConfig
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/Extensions
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/external
 @dirrm %%PYTHON_SITELIBDIR%%/IPython
