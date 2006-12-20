@@ -575,6 +575,7 @@
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
+    SUBDIR += py-openid
     SUBDIR += py-openssl
     SUBDIR += py-paramiko
     SUBDIR += py-posix1e
