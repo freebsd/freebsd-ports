@@ -7,6 +7,7 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/ \
 		${MASTER_SITE_LOCAL}
@@ -16,13 +17,14 @@ DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 MAINTAINER=	kazakov@gmail.com
 COMMENT=	RFC 2307 NSS module
 
-USE_OPENLDAP=	yes
-
 NSS_LDAP_VERSION=251
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_OPENLDAP=	yes
+
+PLIST_FILES=	etc/nss_ldap.conf.sample lib/nss_ldap.so.1
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib"
@@ -44,13 +46,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${PREFIX}/etc/nss_ldap.conf.sample
 	@${REINPLACE_CMD} 's,/etc/ldap.,${PREFIX}/etc/nss_ldap.,g' \
 		${WRKSRC}/${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
 	${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500112
-IGNORE=		NSS modules only supported on FreeBSD 5.1 or later
+IGNORE=		this NSS modules only supported on FreeBSD 5.1 or later
 .endif
 
 .include <bsd.port.post.mk>

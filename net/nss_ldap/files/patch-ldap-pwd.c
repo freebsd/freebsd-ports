@@ -21,7 +21,7 @@
 + *   {
 + */
        /* don't include password for shadowAccount */
-+  if (getuid() != 0) 
++  if (geteuid() != 0) 
 +  {
 +	  /* don't include password for non-root users */
        if (buflen < 3)
