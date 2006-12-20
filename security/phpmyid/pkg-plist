@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+www/phpMyID/CHANGELOG
+www/phpMyID/LICENSE
+www/phpMyID/MyID.php
+www/phpMyID/README
+@dirrmtry www/phpMyID

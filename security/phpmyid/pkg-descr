@@ -1,0 +1,8 @@
+phpMyID is a single user (though, if you were so inclined, you could
+easily turn it into a multi-user setup) IdP, or "Identity Provider"
+for the OpenID framework. It's a single PHP script with minimal
+dependancies. You don't need a database, you don't need to make your
+filesystem writable, you don't need to download any libraries, and you
+don't need to recompile PHP.
+
+WWW:	http://siege.org/projects/phpMyID/
