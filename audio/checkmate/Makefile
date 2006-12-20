@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	checkmate
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.linuxonly.nl/ \
 		http://critical.ch/distfiles/ \
@@ -18,6 +17,7 @@ COMMENT=	A command-line utility for checking mp3 files for errors
 
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		mpck.1
