@@ -72,7 +72,7 @@ CFLAGS+=	-O2 -funroll-loops -ffast-math
 .endif
 
 .if !defined(WITHOUT_GPAC)
-BUILD_DEPENDS+=		gpac-libgpac>=0.4.0.r2,1:${PORTSDIR}/multimedia/gpac-libgpac
+BUILD_DEPENDS+=		gpac-libgpac>=0.4.2.r2,1:${PORTSDIR}/multimedia/gpac-libgpac
 LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
 CONFIGURE_ARGS+=	--enable-mp4-output
 .endif
