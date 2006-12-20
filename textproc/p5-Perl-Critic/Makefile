@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -59,6 +59,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitCStyleForLoops.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitCascadingIfElse.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitDeepNests.3 \
+	Perl::Critic::Policy::ControlStructures::ProhibitMutatingListFunctions.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3 \
@@ -100,6 +101,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Subroutines::RequireFinalReturn.3 \
 	Perl::Critic::Policy::TestingAndDebugging::ProhibitNoStrict.3 \
 	Perl::Critic::Policy::TestingAndDebugging::ProhibitNoWarnings.3 \
+	Perl::Critic::Policy::TestingAndDebugging::ProhibitProlongedStrictureOverride.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireTestLabels.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireUseStrict.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireUseWarnings.3 \
@@ -126,7 +128,9 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::RequireLexicalLoopIterators.3 \
 	Perl::Critic::Policy::Variables::RequireNegativeIndices.3 \
 	Perl::Critic::PolicyFactory.3 \
+	Perl::Critic::PolicyListing.3 \
 	Perl::Critic::PolicySummary.3 \
+	Perl::Critic::ProfilePrototype.3 \
 	Perl::Critic::TestUtils.3 \
 	Perl::Critic::Theme.3 \
 	Perl::Critic::UserProfile.3 \
