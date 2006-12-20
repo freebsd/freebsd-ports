@@ -1,0 +1,12 @@
+mbuffer is a tool for buffering data streams. It is also a raplacement
+for buffer with additional functionality:
+
+- display of i/o speed
+- optional use of memory mapped i/o for huge buffer files
+- multithreaded instead of sharedmemory ipc
+- multi-volume support
+- auto-loader support
+- network support
+- buffer compatible command-line options
+
+WWW:	http://www.maier-komor.de/mbuffer.html
