@@ -57,6 +57,7 @@
     SUBDIR += libvm68k
     SUBDIR += linux-ePSXe
     SUBDIR += linux-geepee32
+    SUBDIR += linux-libaio
     SUBDIR += linux-padjoy
     SUBDIR += linux-peops-softgpu
     SUBDIR += linux-peops-spu
