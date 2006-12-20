@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	1.5.0.8
-PORTREVISION=	1
+DISTVERSION=	1.5.0.9
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -43,7 +42,6 @@ MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 OPTIONS=
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
 
 .if ( ${ARCH} == "alpha" && ${OSVERSION} < 500035 )
 IGNORE=	core dumps at runtime
@@ -73,22 +71,14 @@ post-patch:
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 
-pre-install:
+port-pre-install:
 	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/defaults
 	${CP} -RL ${WRKSRC}/dist/bin/defaults/isp \
 		${FAKEDIR}/lib/${PORTNAME}/defaults
-	@cd ${FAKEDIR}/lib/${PORTNAME}/defaults/isp && \
-		${FIND} -s * -type f -o -type l | \
-		${SED} -e 's|^|lib/${PORTNAME}/defaults/isp/|' >> ${PLIST} && \
-		${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm lib/${PORTNAME}/defaults/isp/|' \
-		>> ${PLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/defaults/isp 2>/dev/null || ${TRUE}" >> ${PLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/defaults 2>/dev/null || ${TRUE}" >> ${PLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/ 2>/dev/null || ${TRUE}" >> ${PLIST}
+
+pre-install:
 	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
-	@${ECHO_CMD} '${PORTNAME_ICON:S|${PREFIX}/||}' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry share/applications' >> ${PLIST}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
@@ -96,4 +86,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/${PORTNAME}/default.xpm \
 		${PORTNAME_ICON}
 
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>
