@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.4.19
+PORTVERSION=	2.4.20
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -27,8 +27,10 @@ CONFLICTS?=	fvwm-1.* fvwm-2.5.*
 # Other ports reference this port's Makefile
 .if defined(PKGNAMESUFFIX)
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-imlib
 .else
 LATEST_LINK=	${PORTNAME}2
+PKGNAMESUFFIX=	-imlib
 .endif
 USE_GMAKE=	yes
 USE_XPM=	yes
@@ -39,6 +41,7 @@ WANT_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 .if defined(WITH_STROKE)
 CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
@@ -59,23 +62,6 @@ CONFIGURE_ARGS+=	--enable-multibyte
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
-.if ${HAVE_GNOME:Mimlib}!=""
-USE_GNOME=	imlib
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-imlib
-.else
-PKGNAMESUFFIX=	-imlib
-.endif
-CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
-			--enable-gtktest --enable-imlibtest
-PLIST_SUB+=	GTK=""
-.else
-CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
-			--disable-gtktest --disable-imlibtest \
-			--with-gtk-prefix=/no/dir --with-imlib-prefix=/no/dir
-PLIST_SUB+=	GTK="@comment not installed: "
-.endif
-
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmCommand.1 FvwmConsole.1 FvwmConsoleC.pl.1 FvwmCpp.1 FvwmDebug.1 \
 	FvwmDragWell.1 FvwmEvent.1 FvwmForm.1 FvwmIconBox.1 \
@@ -85,6 +71,19 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	fvwm-menu-directory.1 fvwm-menu-headlines.1 fvwm-menu-xlock.1 \
 	fvwm2.1 fvwm24_convert.1 fvwmbug.1 fvwmrc_convert.1 xpmroot.1 \
 	fvwm-config.1
+
+.if ${HAVE_GNOME:Mimlib}!=""
+USE_GNOME=	imlib
+CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
+			--enable-gtktest --enable-imlibtest
+PLIST_SUB+=	GTK=""
+MAN1+=	FvwmGtk.1
+.else
+CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
+			--disable-gtktest --disable-imlibtest \
+			--with-gtk-prefix=/no/dir --with-imlib-prefix=/no/dir
+PLIST_SUB+=	GTK="@comment not installed: "
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
