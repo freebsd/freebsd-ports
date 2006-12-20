@@ -12243,6 +12243,7 @@ py-omniorb	ports/devel/py-omniorb
 py-oops		ports/databases/py-oops
 py-openal	ports/audio/py-openal
 py-opengl	ports/graphics/py-opengl
+py-openid	ports/security/py-openid
 py-openssl	ports/security/py-openssl
 py-openssl-proxy	ports/www/py-openssl-proxy
 py-optik	ports/devel/py-optik
