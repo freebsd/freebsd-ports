@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	1.62000
+PORTVERSION=	1.62001
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Interface to Gnome libxml2 library
@@ -28,7 +27,7 @@ CONFIGURE_ENV=	XMLPREFIX=${LOCALBASE}
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/00.$//}
 
 MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
@@ -49,7 +48,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${FILESDIR}/500503-*
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
