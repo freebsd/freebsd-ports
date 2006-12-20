@@ -1815,6 +1815,7 @@ share/TeXmacs/misc/pixmaps/tm_vect.xpm
 share/TeXmacs/misc/pixmaps/tm_verbatim.xpm
 share/TeXmacs/misc/pixmaps/unknown.ps
 share/TeXmacs/misc/sounds/phone.wav
+share/TeXmacs/packages/customize/cite-author-year.ts
 share/TeXmacs/packages/customize/number-europe.ts
 share/TeXmacs/packages/customize/number-long-article.ts
 share/TeXmacs/packages/customize/number-us.ts
@@ -1928,8 +1929,10 @@ share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.6.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.0.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.1.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.2.lisp
+share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.10.0.lisp
 share/TeXmacs/plugins/maxima/packages/session/maxima.ts
 share/TeXmacs/plugins/maxima/progs/init-maxima.scm
+share/TeXmacs/plugins/maxima/progs/maxima-kbd.scm
 share/TeXmacs/plugins/maxima/progs/maxima-input.scm
 share/TeXmacs/plugins/maxima/progs/maxima-menus.scm
 share/TeXmacs/plugins/mupad/packages/session/mupad.ts
@@ -2015,6 +2018,7 @@ share/TeXmacs/progs/convert/latex/latex-tools.scm
 share/TeXmacs/progs/convert/latex/texout.scm
 share/TeXmacs/progs/convert/latex/textest.scm
 share/TeXmacs/progs/convert/latex/textm.scm
+share/TeXmacs/progs/convert/latex/tmtex-elsevier.scm
 share/TeXmacs/progs/convert/latex/tmtex-test.scm
 share/TeXmacs/progs/convert/latex/tmtex.scm
 share/TeXmacs/progs/convert/mathml/mathml-drd.scm
@@ -2165,6 +2169,7 @@ share/TeXmacs/progs/text/format-text-menu.scm
 share/TeXmacs/progs/text/std-text-drd.scm
 share/TeXmacs/progs/text/std-text-edit.scm
 share/TeXmacs/progs/text/std-text-kbd.scm
+share/TeXmacs/progs/text/std-text-natbib.scm
 share/TeXmacs/progs/text/text-kbd.scm
 share/TeXmacs/progs/text/text-menu.scm
 share/TeXmacs/progs/text/tm-structure.scm
