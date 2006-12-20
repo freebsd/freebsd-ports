@@ -1,0 +1,6 @@
+usr/lib/libaio.so.1
+usr/lib/libaio.so.1.0.0
+usr/lib/libaio.so.1.0.1
+usr/share/doc/libaio-0.3.104/COPYING
+usr/share/doc/libaio-0.3.104/TODO
+@dirrm usr/share/doc/libaio-0.3.104
