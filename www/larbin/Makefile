@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful HTTP crawler with an easy interface
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		makedepend:${X_IMAKE_PORT}
 
 USE_GMAKE=	yes
