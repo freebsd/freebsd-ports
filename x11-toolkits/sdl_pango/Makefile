@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl_pango
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sdlpango
@@ -20,7 +21,7 @@ COMMENT=	SDL_Pango is the SDL API to the Pango text rendering engine of GNOME 2.
 
 USE_SDL=	sdl
 USE_GNOME=	pango
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
