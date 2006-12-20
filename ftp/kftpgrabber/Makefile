@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	kftpgrabber
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.8.0.b.2
 CATEGORIES=	ftp kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.kftp.org/uploads/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b.2/-beta2/}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical FTP client for KDE
@@ -20,15 +19,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool:15
 
-OPTIONS=	QSA  "QSA scripting support" on
-
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_QSA)
-LIB_DEPENDS+=	qsa.1:${PORTSDIR}/devel/qsa
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
