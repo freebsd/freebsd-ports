@@ -933,6 +933,7 @@
     SUBDIR += py-turbogears
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
+    SUBDIR += py-urljr
     SUBDIR += py-webware
     SUBDIR += py-webware-component
     SUBDIR += pyblosxom

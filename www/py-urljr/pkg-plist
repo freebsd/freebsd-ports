@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/urljr/__init__.py
+%%PYTHON_SITELIBDIR%%/urljr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/urljr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/urljr/fetchers.py
+%%PYTHON_SITELIBDIR%%/urljr/fetchers.pyc
+%%PYTHON_SITELIBDIR%%/urljr/fetchers.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/urljr
