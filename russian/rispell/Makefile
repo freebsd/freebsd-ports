@@ -15,6 +15,9 @@ DISTNAME=	rispell
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian (KOI8-R) dictionary for ISPELL
 
+DEPRECATED=     does not work with current textproc/ispell, use rus-ispell port istead
+EXPIRATION_DATE=        2007-01-20
+
 # Very dirty implementation, use rus-ispell port instead
 NO_LATEST_LINK=	yes
 
