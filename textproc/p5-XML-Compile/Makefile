@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -30,7 +30,6 @@ MAN3=	XML::Compile.3 XML::Compile::Schema.3 \
 	XML::Compile::Schema::Template.3 \
 	XML::Compile::Schema::Translate.3 \
 	XML::Compile::Schema::XmlReader.3 \
-	XML::Compile::Schema::XmlTemplate.3 \
 	XML::Compile::Schema::XmlWriter.3
 
 .include <bsd.port.mk>
