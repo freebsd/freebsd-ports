@@ -1,13 +1,14 @@
---- bindings/perl/Prelude.c.orig	Tue Jun  6 10:46:03 2006
-+++ bindings/perl/Prelude.c	Tue Jun  6 10:46:46 2006
-@@ -14,6 +14,10 @@
+--- bindings/perl/Prelude.c.orig	Sat Dec 16 10:04:05 2006
++++ bindings/perl/Prelude.c	Thu Dec 21 11:02:42 2006
+@@ -15,6 +15,11 @@
   *  declarations/attributes, and other compiler dependent labels.
-  *
-  ************************************************************************/
+  * ----------------------------------------------------------------------------- */
+ 
 +/* workaround to build with perl-5.005 */
 +#ifndef INT2PTR
 +#  define INT2PTR(type, pointer) (type)(pointer)
 +#endif
- 
++
  /* template workaround for compilers that cannot correctly implement the C++ standard */
  #ifndef SWIGTEMPLATEDISAMBIGUATOR
+ # if defined(__SUNPRO_CC)
