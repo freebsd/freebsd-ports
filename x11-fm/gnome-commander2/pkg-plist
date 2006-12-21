@@ -136,6 +136,7 @@ share/gnome/pixmaps/gnome-commander/smb-network.xpm
 share/gnome/pixmaps/gnome-commander/toggle_horizontal.xpm
 share/gnome/pixmaps/gnome-commander/toggle_vertical.xpm
 share/gnome/pixmaps/gnome-commander.png
+share/locale/ar/LC_MESSAGES/gnome-commander.mo
 share/locale/ca/LC_MESSAGES/gnome-commander.mo
 share/locale/cs/LC_MESSAGES/gnome-commander.mo
 share/locale/de/LC_MESSAGES/gnome-commander.mo
