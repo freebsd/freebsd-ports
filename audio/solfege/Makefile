@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.6.3
+PORTVERSION=	3.6.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,18 +16,15 @@ PKGNAMESUFFIX=	-nosound
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		swig:${PORTSDIR}/devel/swig13 \
-		${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl
 
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix pygnomeextras
+USE_GNOME=	gnomehack gnomeprefix libxslt pygtk2
+WANT_GNOME=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4 \
-		ac_cv_path_XML2PO=""
+CONFIGURE_ENV=	ac_cv_path_XML2PO=""
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
 		--disable-oss-sound \
 		--enable-docbook-stylesheet=${STYLESHEET}
@@ -36,6 +33,12 @@ MAKE_ARGS=	skipmanual=yes
 MAN1=		lessonfile_editor.1 solfege.1
 
 STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mpygnomeextras}!=""
+USE_GNOME+=	pygnomeextras
+.endif
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
@@ -58,4 +61,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(datadir)/locale|(prefix)/share/locale|g' \
 		${WRKSRC}/po/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
