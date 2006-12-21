@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.65
+PORTVERSION=	1.66
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/yaws-${PORTVERSION}
 
 MAN1=		yaws.1
-MAN5=		yaws.conf.5 yaws_api.5
+MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
 
 APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
