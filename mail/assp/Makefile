@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.2.5.2
+PORTVERSION=	1.2.6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME:U}_1.2.5-Install${EXTRACT_SUFX} \
-		${PORTNAME:U}_1.2.5_Rev.2-Update${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Anti-Spam SMTP Proxy
@@ -60,7 +59,8 @@ OPTIONS=	EMVALID	"RFC822 recipient address validator" on \
 		FBACKW	"File Reading Backwards" on \
 		ZLIB	"HTTP Header Compression on Admin Interface" on \
 		CLAMAV	"ClamAV virus scanner" on \
-		DNSBL	"DNS block list checking" on
+		DNSBL	"DNS block list checking" on \
+		MYSQL	"Use MySQL db to store white/red/delaylists" off
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U}
 
@@ -108,12 +108,11 @@ PLIST_SUB+=	ASSP_CLAMAV="@comment "
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
-EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
+.if !defined(WITHOUT_MYSQL)
+RUN_DEPENDS+=	${SITE_PERL}/Tie/RDBM.pm:${PORTSDIR}/databases/p5-Tie-DBI
+.endif
 
-do-extract:
-	${MKDIR} ${WRKSRC}
-	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION};		${UNZIP_CMD} -q  ${DISTDIR}/${PORTNAME:U}_1.2.5-Install${EXTRACT_SUFX}
-	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U};	${UNZIP_CMD} -oq ${DISTDIR}/${PORTNAME:U}_1.2.5_Rev.2-Update${EXTRACT_SUFX}
+EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
