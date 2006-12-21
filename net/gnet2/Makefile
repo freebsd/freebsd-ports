@@ -8,7 +8,7 @@
 PORTNAME=	gnet
 PORTVERSION=	2.0.7
 PORTREVISION=	2
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 PKGNAMESUFFIX=	2
 
