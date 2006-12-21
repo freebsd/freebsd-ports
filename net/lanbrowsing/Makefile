@@ -7,6 +7,7 @@
 
 PORTNAME=	lanbrowsing
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -42,10 +43,12 @@ pre-configure:
 	${REINPLACE_CMD} \
 	's|^SUBDIRS =.*lisa.*$$|SUBDIRS =\. lisa|g' \
 		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
+	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/lanbrowsing/kcmlisa/main.cpp \
 		${WRKSRC}/lanbrowsing/kcmlisa/kcmlisa.cpp \
 		${WRKSRC}/lanbrowsing/kcmlisa/setupwizard.cpp
+	${REINPLACE_CMD} -e 's|nmblookup \\|${LOCALBASE}/bin/nmblookup \\|g' \
+		${WRKSRC}/lanbrowsing/lisa/netscanner.cpp
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/rc.d
