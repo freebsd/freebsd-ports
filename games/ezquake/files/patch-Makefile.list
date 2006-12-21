@@ -1,0 +1,10 @@
+--- Makefile.list.orig	Sat Nov 25 15:28:35 2006
++++ Makefile.list	Tue Dec 19 20:02:43 2006
+@@ -156,7 +156,6 @@
+ 	cd_linux \
+ 	keymap_x11 \
+ 	localtime_linux \
+-	snd_alsa \
+ 	snd_linux \
+ 	snd_oss \
+ 	sys_linux
