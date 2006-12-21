@@ -7,6 +7,7 @@
 
 PORTNAME=	uproxy
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/8155/uproxy/
 DISTNAME=	${PORTNAME}
