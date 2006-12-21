@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mulberry
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mulberrymail.com/downloads/Mulberry/%SUBDIR%/
 MASTER_SITE_SUBDIR=v${PORTVERSION:S/./_/g}
