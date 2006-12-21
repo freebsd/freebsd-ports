@@ -21,6 +21,10 @@ etc/elogd.cfg.sample
 %%DATADIR%%/resources/eloghelp_zh_CN-UTF8.html
 %%DATADIR%%/resources/eloglang.brazilian
 %%DATADIR%%/resources/eloglang.bulgarian
+%%DATADIR%%/resources/eloghelp_czech.html
+%%DATADIR%%/resources/eloghelp_swedish.html
+%%DATADIR%%/resources/eloglang.czech
+%%DATADIR%%/resources/eloglang.swedish
 %%DATADIR%%/resources/eloglang.danish
 %%DATADIR%%/resources/eloglang.dutch
 %%DATADIR%%/resources/eloglang.french
