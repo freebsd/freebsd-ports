@@ -7,6 +7,7 @@
 
 PORTNAME=	rules_du_jour
 PORTVERSION=	1.29b
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 PKGNAMEPREFIX=	spamass-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	spamass-
 MAINTAINER=	mranner@inode.at
 COMMENT=	Automatic updates of custom rulesets for SpamAssassin
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 				spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 OPTIONS=	ANTIDRUG "Already included in SA 3.0" off \
