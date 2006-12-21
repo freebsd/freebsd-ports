@@ -13781,6 +13781,7 @@ soqt		ports/x11-toolkits/soqt
 sortmail	ports/mail/sortmail
 sound-juicer	ports/audio/sound-juicer
 soundgrab	ports/audio/soundgrab
+soundmodem	ports/comms/soundmodem
 soundtouch	ports/audio/soundtouch
 soundtracker	ports/audio/soundtracker
 soup		ports/devel/soup
