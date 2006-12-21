@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME}-5.0rc3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Common UNIX Printing System:  MS Windows client drivers
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		tardy:${PORTSDIR}/archivers/tardy \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base \
 		smbspool:${PORTSDIR}/net/samba3
