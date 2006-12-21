@@ -7,7 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.9.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/gnupg
@@ -21,7 +21,7 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth \
 		usb-0.1:${PORTSDIR}/devel/libusb
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
 		dirmngr:${PORTSDIR}/security/dirmngr
 
 USE_BZIP2=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	enigmail
 PORTVERSION?=	0.93.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	mail security
 MASTER_SITES=	\
 		http://mozdev.secsup.org/enigmail/src/ \
@@ -30,7 +30,7 @@ BUILD_DEPENDS?=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS?=	nspr4:${PORTSDIR}/devel/nspr
 RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
 
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
 
 IPCVERSION?=	1.1.3
 

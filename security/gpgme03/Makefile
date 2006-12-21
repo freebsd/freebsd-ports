@@ -7,7 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	0.3.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gpgme
 MAINTAINER=	markun@onohara.to
 COMMENT=	A library to make access to GnuPG easier
 
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
 LATEST_LINK=	gpgme03

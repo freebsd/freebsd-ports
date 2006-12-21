@@ -7,6 +7,7 @@
 
 PORTNAME=	hdup
 PORTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.miek.nl/projects/hdup2/ \
 		http://www.miek.nl/projects/hdup2/previous/
@@ -20,7 +21,7 @@ OPTIONS=	GNUTAR_PORT "Build with the newest GNU tar from ports" no
 
 BUILD_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt
 RUN_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
-		gpg:${PORTSDIR}/security/gnupg \
+		gpg:${PORTSDIR}/security/gnupg1 \
 		lzop:${PORTSDIR}/archivers/lzop
 
 USE_BZIP2=	yes

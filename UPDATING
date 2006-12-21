@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061221:
+   AFFECTS: users of security/gnupg
+   AUTHOR: kuriyama@FreeBSD.org
+
+   The security/gnupg port was upgraded to 2.0.1 (with securty fix)
+   and good-old gnupg-1.4.6 was repocopied to security/gnupg1.
+
+   Both of security/gnupg (2.x) and security/gnupg1 (1.4.x) are
+   designed not to conflict with each other.  So you can use
+   security/gnupg1 for gpg(1), and use security/gnupg for gpg2(1)
+   commands.
+
+   All directly dependents are $PORTREVISION bumped, so portupgrade -R
+   gnupg will works fine.  After portupgrade, you will have both of
+   gnupg-2.0.1 and gnupg-1.4.6.
+
 20061219:
   AFFECTS: users of x11/kdebase3
   AUTHOR: kde@FreeBSD.org

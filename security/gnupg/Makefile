@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.4.6
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -17,95 +16,76 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
+LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
+		gpg-error:${PORTSDIR}/security/libgpg-error \
+		ksba.17:${PORTSDIR}/security/libksba \
+		pth.20:${PORTSDIR}/devel/pth
+RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
+
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
-.if ${MACHINE_CPU:Mi586}
-MACHINE_ARCH=	i586
-.endif
-CFLAGS:=	${CFLAGS:S/-pipe//g}
-MAN1=		gpg.1 gpgv.1 gpg.ru.1
-MAN7=		gnupg.7
-INFO=		gnupg1
-
-PORTDOCS=	*
+USE_ICONV=	YES
+USE_LDCONFIG=	YES
+CONFIGURE_TARGET=# empty
+CONFIGURE_ARGS+=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
+	--with-libpth-prefix=${LOCALBASE}/lib/pth
+MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
+		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
+		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
+MAN8=		addgnupghome.8
+INFO=		gnupg
 
 OPTIONS=	LDAP "LDAP keyserver interface" off \
-		LIBICONV "use libiconv" off \
-		LIBUSB "use libusb" off \
-		SUID_GPG "install GPG with suid" off \
 		NLS "Native Language Support" on \
-		CURL "use libcurl for the keyserver interface" on
+		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
+		CURL "Use the real curl library (worked around if no)" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LIBICONV)
-USE_ICONV=	yes
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .else
-CONFIGURE_ARGS+=	--without-libiconv-prefix
-.endif
-
-.if defined(WITH_LIBUSB)
-CONFIGURE_ARGS+=	--with-libusb=${LOCALBASE}
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.else
-CONFIGURE_ARGS+=	--without-libusb
+USE_GETTEXT=	YES
+PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_LDAP)
-USE_OPENLDAP=	yes
-PLIST_SUB+=	WITH_LDAP=""
-CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
-#CONFIGURE_ENV+=	LDFLAGS="-L/usr/lib"
+USE_OPENLDAP=	YES
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
+PLIST_SUB+=	LDAP=""
 .else
-PLIST_SUB+=	WITH_LDAP="@comment "
-CONFIGURE_ARGS+=	--disable-ldap
+CONFIGURE_ARGS+=--disable-ldap
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	YES
-PLIST_SUB+=	NLS=""
+.if defined(WITH_SCDAEMON)
+CONFIGURE_ARGS+=--enable-scdaemon
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+PLIST_SUB+=	SCDAEMON=""
 .else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=--disable-scdaemon
+PLIST_SUB+=	SCDAEMON="@comment "
 .endif
 
-.if !defined(WITHOUT_CURL)
+.if defined(WITHOUT_CURL)
+CONFIGURE_ARGS+=--without-libcurl
+.else
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
-# Work around a GnuPG configure buglet
-CONFIGURE_ENV+=	_libcurl_config=${LOCALBASE}/bin/curl-config
-.else
-CONFIGURE_ARGS+=--without-libcurl
 .endif
+
+verify:	checksum
+	gpg2 --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
+
+pre-configure:
+	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
+		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in DETAILS FAQ HACKING OpenPGP
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
-.endfor
-.for i in ABOUT-NLS AUTHORS BUGS COPYING INSTALL NEWS PROJECTS \
-	README THANKS TODO VERSION
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
-.if defined(WITH_SUID_GPG)
-	${CHMOD} u+s ${PREFIX}/bin/gpg
-.endif
-.if ${OSVERSION} < 500019
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-.else
-PKGMESSAGE=	/nonexistent
-.endif
-
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=	--without-readline
-.endif
-
-check:
-	(cd ${WRKSRC}; ${MAKE} check)
 
 .include <bsd.port.post.mk>
