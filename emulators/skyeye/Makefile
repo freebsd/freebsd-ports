@@ -6,7 +6,9 @@
 #
 
 PORTNAME=	skyeye
-DISTVERSION=	1.2-RC8
+PORTVERSION=	1.2
+DISTVERSIONPREFIX=v
+DISTVERSIONSUFFIX=_Rel
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gro.clinux.org/skyeye/
 
