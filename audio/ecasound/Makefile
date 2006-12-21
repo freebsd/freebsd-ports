@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.4.4
-PORTREVISION=	2
+PORTVERSION=	2.4.5
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -16,6 +15,7 @@ COMMENT=	Multitrack audio processing software
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
+USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound --disable-rubyecasound --with-largefile \
