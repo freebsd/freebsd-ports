@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.6.1
+PORTVERSION=	0.9.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
-LIB_DEPENDS+=	prelude.10:${PORTSDIR}/security/libprelude \
+LIB_DEPENDS+=	prelude.11:${PORTSDIR}/security/libprelude \
 		gnutls.13:${PORTSDIR}/security/gnutls
 
 USE_GPG=	yes
@@ -25,6 +25,8 @@ USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_XML)
 PLIST_SUB+=	WITH_XML="@comment "
@@ -41,4 +43,10 @@ LIB_DEPENDS+=	preludedb.4:${PORTSDIR}/security/libpreludedb
 PLIST_SUB+=	WITH_DB=""
 .endif
 
-.include <bsd.port.mk>
+post-install:
+	@if [ -f ${PREFIX}/etc/prelude-manager/prelude-manager.conf ]; then \
+	   ${CP} -p ${PREFIX}/etc/prelude-manager/prelude-manager.conf-dist \
+	      ${PREFIX}/etc/prelude-manager/prelude-manager.conf ; \
+	fi
+
+.include <bsd.port.post.mk>

@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/prelude-manager
+@unexec if cmp -s %D/etc/prelude-manager/prelude-manager.conf %D/etc/prelude-manager/prelude-manager.conf-dist; then rm -f %D/etc/prelude-manager/prelude-manager.conf; fi
 etc/prelude-manager/prelude-manager.conf-dist
+@exec if [ ! -f %D/etc/prelude-manager/prelude-manager.conf ] ; then cp -p %D/%F %B/prelude-manager.conf; fi
 include/prelude-manager/prelude-manager.h
 lib/prelude-manager/filters/idmef-criteria.la
 lib/prelude-manager/filters/idmef-criteria.so
