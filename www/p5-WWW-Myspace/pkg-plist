@@ -1,9 +1,6 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Myspace/.packlist
 %%SITE_PERL%%/WWW/Myspace.pm
-%%SITE_PERL%%/WWW/Myspace/._Data.pm
-%%SITE_PERL%%/WWW/Myspace/._FriendChanges.pm
-%%SITE_PERL%%/WWW/Myspace/._MyBase.pm
 %%SITE_PERL%%/WWW/Myspace/Comment.pm
 %%SITE_PERL%%/WWW/Myspace/Data.pm
 %%SITE_PERL%%/WWW/Myspace/FriendAdder.pm
