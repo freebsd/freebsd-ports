@@ -48,6 +48,11 @@ CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
 PLIST_SUB+=	DOCS="@comment "
 .endif
 
+.if ${OSVERSION} < 500000
+CONFIGURE_ENV+=	ac_cv_func_clock_gettime=no
+CFLAGS+=	-Duintmax_t=uintptr_t
+.endif
+
 .if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
 BROKEN=		Does not compile
 .endif
@@ -80,9 +85,5 @@ post-patch:
 
 post-build:
 	@${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
 
 .include <bsd.port.post.mk>
