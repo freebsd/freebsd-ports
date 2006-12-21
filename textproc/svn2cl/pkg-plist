@@ -1,0 +1,6 @@
+bin/svn2cl
+%%DATADIR%%/authors.xml
+%%DATADIR%%/svn2cl.xsl
+%%DATADIR%%/svn2html.css
+%%DATADIR%%/svn2html.xsl
+@dirrmtry share/svn2cl
