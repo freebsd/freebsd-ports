@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.1.1
+PORTVERSION=		2.2.1
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -68,6 +68,8 @@ post-install:
 .for FILE in ${ERRORFILES}
 	@${INSTALL_DATA} ${WRKSRC}/var/ziproxy/error/${FILE} ${DATADIR}/error/${FILE}
 .endfor
+
+	@${INSTALL_SCRIPT} ${WRKSRC}/src/tools/ziproxy_genhtml_stats.sh ${TARGETDIR}/bin
 
 	@${CAT} ${PKGMESSAGE}
 

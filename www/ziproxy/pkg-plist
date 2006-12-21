@@ -1,4 +1,6 @@
 bin/ziproxy
+bin/ziproxylogtool
+bin/ziproxy_genhtml_stats.sh
 @unexec if cmp -s %D/etc/ziproxy.conf.sample %D/etc/ziproxy.conf; then rm -f %D/etc/ziproxy.conf; fi
 @exec if [ ! -f %D/etc/ziproxy.conf ] ; then cp -p %D/%F %B/ziproxy.conf; fi
 etc/ziproxy.conf.sample
