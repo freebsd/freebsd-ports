@@ -8,7 +8,7 @@
 PORTNAME=	RTx-Statistics
 PORTVERSION=	0.1.8
 CATEGORIES=	www perl5
-MASTER_SITES=	ftp://anonftp.mqsoftware.com/kfh/RT/
+MASTER_SITES=	http://opensvn.csie.org/RTx_Statistics/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
