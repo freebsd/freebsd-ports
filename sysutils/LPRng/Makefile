@@ -42,7 +42,8 @@ CONFIGURE_ARGS=	\
 		--with-lpd_perms_path=${SYSCONFDIR}/lpd.perms \
 		--with-printcap_path=/etc/printcap \
 		--with-ld_library_path="${PREFIX}/lib:/lib:/usr/lib:/${LOCALBASE}/lib" \
-		--enable-gdbm=${LOCALBASE}
+		--enable-gdbm=${LOCALBASE} \
+		--disable-werror
 
 .if defined(PORT_REPLACES_BASE_LPR)
 PREFIX=		/usr
