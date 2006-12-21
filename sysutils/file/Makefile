@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	4.18
+PORTVERSION=	4.19
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -17,6 +17,7 @@ COMMENT=	Utility to determine file type
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GCC=	3.4+
 
 CONFIGURE_ARGS=	--enable-fsect-man5
 
