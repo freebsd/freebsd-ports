@@ -7,7 +7,7 @@
 
 PORTNAME=	mkxvcd
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kvcd4nix
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes high quality X/K/S/VCD movies from many formats
 
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
-		bash:${PORTSDIR}/shells/bash2 \
+		bash:${PORTSDIR}/shells/bash \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		transcode:${PORTSDIR}/multimedia/transcode
 
