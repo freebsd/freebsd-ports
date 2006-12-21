@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-DT
-PORTVERSION=	0.45
+PORTVERSION=	0.47
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		mkdtskel.1 mkdtdskel.1
+MAN1=		mkdtskel.1 mkdtdskel.1 mkxmltype.1
 MAN3=		XML::DT.3
 
 .include <bsd.port.pre.mk>
