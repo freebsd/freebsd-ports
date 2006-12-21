@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpg
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -19,8 +19,7 @@ USE_PYDISTUTILS=	yes
 
 NO_BUILD=	yes
 
-DOCS=		ChangeLog README THANKS doc/*.html doc/tpg.css \
-		doc/*.png doc/tpg.pdf
+DOCS=		ChangeLog README THANKS doc/tpg.pdf
 EXAMPLES=	examples/*
 
 post-install:
