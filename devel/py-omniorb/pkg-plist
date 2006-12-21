@@ -14,22 +14,23 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/PortableServer__POA.pyc
 %%PYTHON_SITELIBDIR%%/__init__.py
 %%PYTHON_SITELIBDIR%%/__init__.pyc
+%%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so
+%%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.3
+%%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.3.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so
-%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2
-%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.3
+%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.3.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so
-%%PYTHON_SITELIBDIR%%/_omnipymodule.so.2
-%%PYTHON_SITELIBDIR%%/_omnipymodule.so.2.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omnipymodule.so.3
+%%PYTHON_SITELIBDIR%%/_omnipymodule.so.3.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so
-%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2
-%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.3
+%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.3.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/omniORB.pth
 %%PYTHON_SITELIBDIR%%/omniORB/BiDirPolicy.py
 %%PYTHON_SITELIBDIR%%/omniORB/BiDirPolicy.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/CORBA.py
 %%PYTHON_SITELIBDIR%%/omniORB/CORBA.pyc
-%%PYTHON_SITELIBDIR%%/omniORB/COS/__init__.py
-%%PYTHON_SITELIBDIR%%/omniORB/COS/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection/__init__.py
 %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection__POA/__init__.py
@@ -288,6 +289,8 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/COS/TimeBase__POA/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/COS/TimeBase_idl.py
 %%PYTHON_SITELIBDIR%%/omniORB/COS/TimeBase_idl.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/COS/__init__.py
+%%PYTHON_SITELIBDIR%%/omniORB/COS/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/COS/omniORB.pth
 %%PYTHON_SITELIBDIR%%/omniORB/PortableServer.py
 %%PYTHON_SITELIBDIR%%/omniORB/PortableServer.pyc
@@ -299,14 +302,20 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/any.py
 %%PYTHON_SITELIBDIR%%/omniORB/any.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/boxes_idl.py
+%%PYTHON_SITELIBDIR%%/omniORB/boxes_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/codesets.py
 %%PYTHON_SITELIBDIR%%/omniORB/codesets.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/corbaidl_idl.py
+%%PYTHON_SITELIBDIR%%/omniORB/corbaidl_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/interceptors.py
 %%PYTHON_SITELIBDIR%%/omniORB/interceptors.pyc
-%%PYTHON_SITELIBDIR%%/omniORB/minorCodes.py
-%%PYTHON_SITELIBDIR%%/omniORB/minorCodes.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/ir_idl.py
 %%PYTHON_SITELIBDIR%%/omniORB/ir_idl.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/minorCodes.py
+%%PYTHON_SITELIBDIR%%/omniORB/minorCodes.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/omniConnectionMgmt.py
+%%PYTHON_SITELIBDIR%%/omniORB/omniConnectionMgmt.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/sslTP.py
 %%PYTHON_SITELIBDIR%%/omniORB/sslTP.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/tcInternal.py
@@ -316,6 +325,8 @@ include/omniORBpy.h
 %%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy.css
+%%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy001.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy002.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy003.html
@@ -325,6 +336,8 @@ include/omniORBpy.h
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy007.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy008.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy009.html
+%%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy010.html
+%%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy011.html
 %%PORTDOCS%%%%DOCSDIR%%/html/previous_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/omniORBpy.pdf
 %%PORTDOCS%%%%DOCSDIR%%/omniORBpy.ps
@@ -366,12 +379,22 @@ include/omniORBpy.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/tictactoe/gameClient.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/tictactoe/gameServer.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/tictactoe/tictactoe.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/simple/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/simple/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/simple/value.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/value1.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/value2.idl
 %%PORTDOCS%%%%EXAMPLESDIR%%/weather/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/weather/gauge.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/weather/weather.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/weather/weatherInfo.idl
 %%PORTDOCS%%%%EXAMPLESDIR%%/weather/wserver.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/weather
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/valuetype/tests
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/valuetype/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/valuetype
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tictactoe
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tests
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/random
