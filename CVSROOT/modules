@@ -14454,6 +14454,7 @@ tlf		ports/comms/tlf
 tlswrap		ports/security/tlswrap
 tmake		ports/devel/tmake
 tmda		ports/mail/tmda
+tme		ports/emulators/tme
 tmetric		ports/benchmarks/tmetric
 tmpreaper	ports/sysutils/tmpreaper
 tmpwatch	ports/sysutils/tmpwatch
