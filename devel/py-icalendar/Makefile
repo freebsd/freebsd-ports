@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icalendar
-PORTVERSION=	0.11
+PORTVERSION=	1.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/icalendar/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,6 @@ COMMENT=	Parser and generator of iCalender files for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-WRKSRC=		${WRKDIR}/iCalendar
 
 post-install:
 .if !defined(NOPORTDOCS)
