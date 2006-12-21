@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.9.12
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,16 +27,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/games|share|g' ${WRKSRC}/setup.py
 
 post-build:
-.for lang in de es fr it tr
-	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt ${lang}.po -o ${lang}.mo
-.endfor
+	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \
+		cd ${WRKSRC}/po ; \
+		${LOCALBASE}/bin/msgfmt $$lang.po -o $$lang.mo ; \
+	done)
 
 post-install:
-.for lang in de es fr it tr
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
-		${PREFIX}/share/locale/${lang}/LC_MESSAGES/glchess.mo
-.endfor
+	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \
+		${MKDIR} ${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
+		${INSTALL_DATA} ${WRKSRC}/po/$$lang.mo \
+		${PREFIX}/share/locale/$$lang/LC_MESSAGES/glchess.mo ; \
+	done)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ChangeLog README TODO
