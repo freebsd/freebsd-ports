@@ -14060,6 +14060,7 @@ svgalib		ports/graphics/svgalib
 svgviewer	ports/graphics/svgviewer
 svk		ports/devel/svk
 svmlight	ports/science/svmlight
+svn2cl		ports/textproc/svn2cl
 svndelta	ports/devel/svndelta
 svnmailer	ports/mail/svnmailer
 svr4_base	ports/emulators/svr4_base
