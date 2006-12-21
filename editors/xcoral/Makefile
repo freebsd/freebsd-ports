@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcoral
-PORTVERSION=	3.45
+PORTVERSION=	3.46
 CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
@@ -22,9 +22,9 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 502010
-GNU_REGEX_H=    gnu/regex.h
+GNU_REGEX_H=	gnu/regex.h
 .else
-GNU_REGEX_H=    gnuregex.h
+GNU_REGEX_H=	gnuregex.h
 .endif
 
 post-patch:
