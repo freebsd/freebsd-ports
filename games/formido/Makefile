@@ -1,6 +1,6 @@
 # New ports collection makefile for:	formido
 # Date created:				19 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	formido
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://koti.mbnet.fi/lsoft/formido/
+MASTER_SITES=	http://koti.mbnet.fi/lsoft/formido/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	2D kill-em all with 3D rendered graphics
 
 USE_BZIP2=	yes

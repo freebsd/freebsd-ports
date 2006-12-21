@@ -8,9 +8,10 @@
 PORTNAME=	metromap
 PORTVERSION=	0.1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://metromap.antex.ru/
+MASTER_SITES=	http://metromap.antex.ru/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A simple application for finding paths in different subways maps
 
 USE_PYTHON=	yes

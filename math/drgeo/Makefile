@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ofset
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A GTK interactive geometry sofware
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile

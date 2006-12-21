@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cgoban1
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Internet Go Server client and game editor
 
 USE_X_PREFIX=	yes

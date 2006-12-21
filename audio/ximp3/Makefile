@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players/mp3
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A simple console MP3 player
 
 GNU_CONFIGURE=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	qpxtool
 # Date created:		23 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A GUI for testing CD/DVD quality and transfer rate
 
 USE_BZIP2=	yes

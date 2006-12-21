@@ -1,6 +1,6 @@
 # New ports collection makefile for:	REminiscence
 # Date created:		11 Feb 2005
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	REminiscence
 PORTVERSION=	0.1.8
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://membres.lycos.fr/cyxdown/reminiscence/
+MASTER_SITES=	http://membres.lycos.fr/cyxdown/reminiscence/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A rewritten engine for Flashback
 
 USE_BZIP2=	yes

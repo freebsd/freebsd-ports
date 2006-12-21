@@ -1,6 +1,6 @@
 # New ports collection makefile for:	luola
 # Date created:		20 Jan 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,13 +9,14 @@ PORTNAME=	luola
 PORTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.luolamies.org/software/luola/
+MASTER_SITES=	http://www.luolamies.org/software/luola/ \
+		http://www.amdmi3.ru/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		stdlevels-5.2${EXTRACT_SUFX} \
 		nostalgia-1.1${EXTRACT_SUFX}
 DIST_SUBDIR=	luola
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Multiplayer Cave-flying game
 
 GNU_CONFIGURE=	yes

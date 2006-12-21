@@ -1,6 +1,6 @@
 # New ports collection makefile for:	allacrost
 # Date created:		03 Oct 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	allacrost_demo_source_${PORTVERSION}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A single player 2D role-playing game
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

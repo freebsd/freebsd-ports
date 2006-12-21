@@ -1,6 +1,6 @@
 # New ports collection makefile for:	blobandconquer
 # Date created:		02 Apr 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,11 @@
 PORTNAME=	blobandconquer
 DISTVERSION=	0.7-2
 CATEGORIES=	games
-MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
+MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file= \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	blobAndConquer-${DISTVERSION}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A somewhat violent 3D action game
 
 FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}

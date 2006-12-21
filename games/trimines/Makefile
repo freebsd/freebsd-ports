@@ -1,6 +1,6 @@
 # New ports collection makefile for:	trimines
 # Date created:		02 May 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	trimines
 PORTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.freewebs.com/trimines/
-
-MAINTAINER=	amdmi3@mail.ru
+MASTER_SITES=	http://www.freewebs.com/trimines/ \
+		http://www.amdmi3.ru/distfiles/
+ 
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Mine sweeper game that uses triangles instead of squares
 
 USE_SDL=	sdl

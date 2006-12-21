@@ -1,6 +1,6 @@
 # New ports collection makefile for:	glpuzzle
 # Date created:				09 Jan 2006
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,10 +9,11 @@ PORTNAME=	glpuzzle
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/glpuzzle/
+MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/glpuzzle/ \
+		http://www.amdmi3.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	An OpenGL jigsaw puzzle game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

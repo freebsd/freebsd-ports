@@ -1,6 +1,6 @@
 # New ports collection makefile for:	untahris
 # Date created:		08 Sep 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Play several classic fun, simple arcade games in multiplayer mode
 
 USE_SDL=	sdl net ttf

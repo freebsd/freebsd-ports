@@ -1,6 +1,6 @@
 # New ports collection makefile for:	dangen
 # Date created:		25 Aug 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	dangen
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.interq.or.jp/libra/oohara/dangen/
+MASTER_SITES=	http://www.interq.or.jp/libra/oohara/dangen/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Shoot'em up game where accurate shooting matters
 
 GNU_CONFIGURE=	yes

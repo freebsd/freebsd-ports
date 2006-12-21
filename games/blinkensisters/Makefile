@@ -1,6 +1,6 @@
 # New ports collection makefile for:	blinkensisters
 # Date created:		26 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	LostPixels_${PORTVERSION}_src
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Parallax-style 2D scrolling platform game
 
 USE_BZIP2=	yes

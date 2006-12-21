@@ -1,6 +1,6 @@
 # New ports collection makefile for:    fillets-ng
 # Date created:         11 Oct 2005
-# Whom:                 Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:                 Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	fillets-ng
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A wonderful puzzle game
 
 USE_SDL=	sdl mixer image ttf

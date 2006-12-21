@@ -1,6 +1,6 @@
 # New ports collection makefile for:	makehuman
 # Date created:		06 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Application for parametrical modeling of 3D humanoid characters
 
 LIB_DEPENDS=	glpng:${PORTSDIR}/graphics/glpng \

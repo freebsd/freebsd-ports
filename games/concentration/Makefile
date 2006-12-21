@@ -1,6 +1,6 @@
 # New ports collection makefile for:	concentration
 # Date created:				10 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	concentration
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.shiftygames.com/concentration/
+MASTER_SITES=	http://www.shiftygames.com/concentration/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Find all matching pairs of icons as fast as possible
 
 GNU_CONFIGURE=	yes

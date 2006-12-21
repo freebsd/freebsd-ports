@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=pool/main/m/moon-lander
 DISTNAME=	moon-lander_1.0.orig
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Land a spacecraft on the moon
 
 USE_SDL=	mixer image sdl

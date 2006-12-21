@@ -1,6 +1,6 @@
 # New ports collection makefile for:	interlogic
 # Date created:		01 Oct 2005
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	interlogic
 DISTNAME=	interLOGIC-src-${PORTVERSION}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Move colored balls through the maze connecting it with each other
 
 USE_SDL=	image sdl

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	goonies
 # Date created:		07 Sep 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -8,11 +8,12 @@
 PORTNAME=	goonies
 PORTVERSION=	1.0.1
 CATEGORIES=	games
-MASTER_SITES=	http://goonies.jorito.net/download/
+MASTER_SITES=	http://goonies.jorito.net/download/ \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_r${PORTVERSION:C/\./-/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Remake of the 8 bit classic game 'The Goonies'
 
 USE_GMAKE=	yes

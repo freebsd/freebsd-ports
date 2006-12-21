@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}5${EXTRACT_SUFX} \
 		${PORTNAME}-linux-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Tomato-smashing, Q-Bert style
 
 WRKSRC=		${WRKDIR}/tomatoes-${PORTVERSION}5
