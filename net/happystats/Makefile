@@ -26,6 +26,9 @@ MAN1=		happystats.1
 MANCOMPRESSED=	yes
 DOCS=		AUTHORS INSTALL TODO
 
+DEPRECATED=	Disappeared from the internet
+EXPIRATION_DATE=2007-02-01
+
 .include <bsd.port.pre.mk>
 
 do-configure:
