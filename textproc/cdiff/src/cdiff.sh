@@ -3,7 +3,11 @@ if [ "$1" = "-m" ]; then
 	shift;
 	CODES="4:7:1:1"
 else
-	CODES="1:34:31:35"
+	if [ "$CDIFFCOLORS" != "" ]; then
+		CODES=$CDIFFCOLORS
+	else
+		CODES="1:34:31:35"
+	fi
 fi
 (if [ "$1" != "" ]; then
     while [ "$1" != "" ]; do
