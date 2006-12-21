@@ -876,6 +876,7 @@
     SUBDIR += stardict2-quick
     SUBDIR += stardict2-rptts
     SUBDIR += sv-aspell
+    SUBDIR += svn2cl
     SUBDIR += sw-aspell
     SUBDIR += syck
     SUBDIR += ta-aspell
