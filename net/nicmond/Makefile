@@ -18,6 +18,9 @@ PATCHFILES=	nicmond-doc-en-1.1.diff
 MAINTAINER=	daniel+nicmond@pelleg.org
 COMMENT=	Network interface monitor
 
+DEPRECATED=	Disappeared from the internet
+EXPIRATION_DATE=2007-02-01
+
 MANLANG=	ja
 MANCOMPRESSED=	yes
 MAN5=		nicmond.conf.5
