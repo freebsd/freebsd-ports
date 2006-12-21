@@ -1,0 +1,17 @@
+--- configure.orig	Thu Dec 14 19:15:07 2006
++++ configure	Thu Dec 14 19:16:25 2006
+@@ -4969,14 +4969,6 @@
+ fi
+ 
+ 
+-  if test $cs_cv_pthread = yes; then
+-    cat >>confdefs.h <<\_ACEOF
+-#define HAVE_PTHREADS 1
+-_ACEOF
+-
+-    EXTRA_UTL_SRC="$EXTRA_UTL_SRC skiplist.c dict.c"
+-  fi
+-
+ fi
+ 
+ 

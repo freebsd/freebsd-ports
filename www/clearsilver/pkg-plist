@@ -7,7 +7,7 @@ include/ClearSilver/cgi/date.h
 include/ClearSilver/cgi/html.h
 include/ClearSilver/cs/cs.h
 include/ClearSilver/cs_config.h
-include/ClearSilver/util/dict.h
+%%PTHREAD%%include/ClearSilver/util/dict.h
 include/ClearSilver/util/filter.h
 include/ClearSilver/util/neo_date.h
 include/ClearSilver/util/neo_err.h
@@ -20,7 +20,7 @@ include/ClearSilver/util/neo_rand.h
 include/ClearSilver/util/neo_server.h
 include/ClearSilver/util/neo_str.h
 include/ClearSilver/util/rcfs.h
-include/ClearSilver/util/skiplist.h
+%%PTHREAD%%include/ClearSilver/util/skiplist.h
 include/ClearSilver/util/ulist.h
 include/ClearSilver/util/ulocks.h
 include/ClearSilver/util/wildmat.h
