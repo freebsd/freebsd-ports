@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -12,15 +12,15 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	prelude.10:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	prelude.11:${PORTSDIR}/security/libprelude
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib \
 			%%PREFIX%%/lib/libpreludedb/plugins/formats
+USE_LDCONFIG=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=		PERL "Include Perl bindings" off \
@@ -28,6 +28,8 @@ OPTIONS=		PERL "Include Perl bindings" off \
 			MYSQL "Use MySQL backend" on \
 			PGSQL "Use PostgreSQL backend" off \
 			SQLITE "Use SQLite backend" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
@@ -39,7 +41,8 @@ PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=		yes
+USE_PYTHON=		2.3+
+# Need to manually include bsd.python.mk, because USE_PYTHON is defined
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON=""
@@ -87,4 +90,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
