@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	omniorb
-PORTVERSION=	2.7
+PORTVERSION=	3.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -16,7 +16,7 @@ DISTNAME=	omniORBpy-${PORTVERSION}
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
-LIB_DEPENDS=	omniORB4.0:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS=	omniORB4.1:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # parts of omniORB4 source tree is required to build omniORBpy;
 # see also the "post-extract" target below.
