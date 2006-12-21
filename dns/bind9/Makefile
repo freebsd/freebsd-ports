@@ -116,6 +116,14 @@ post-patch:
 		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
+	@${MV} ${WRKSRC}/bin/nsupdate/nsupdate.8 \
+	    ${WRKSRC}/bin/nsupdate/nsupdate.8.patched
+	@${SED} -e "s@^\.HP [0-9]* @@" \
+	    ${WRKSRC}/bin/nsupdate/nsupdate.8.patched \
+	    > ${WRKSRC}/bin/nsupdate/nsupdate.8
+	@${MV} ${WRKSRC}/bin/dig/nslookup.1 ${WRKSRC}/bin/dig/nslookup.1.Dist
+	@${SED} -e "s@^host \[server\]@\\\fBhost\\\fR \\\fI[server]\\\fR@" \
+	    ${WRKSRC}/bin/dig/nslookup.1.Dist > ${WRKSRC}/bin/dig/nslookup.1
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
