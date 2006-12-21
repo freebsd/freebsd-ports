@@ -99,6 +99,7 @@
     SUBDIR += nat
     SUBDIR += nav
     SUBDIR += nbtscan
+    SUBDIR += ndpmon
     SUBDIR += nefu
     SUBDIR += net-snmp
     SUBDIR += net-snmp-tkmib

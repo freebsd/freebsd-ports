@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- config_ndpmon.xml.orig
++++ config_ndpmon.xml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="ISO-8859-1"?>
+-<!DOCTYPE config_ndpmon SYSTEM "config_ndpmon.dtd">
++<!DOCTYPE config_ndpmon SYSTEM "%%PREFIX%%/share/ndpmon/config_ndpmon.dtd">
+ <config_ndpmon>
+ 	<ignor_autoconf>1</ignor_autoconf>
+ 	<syslog_facility>LOG_LOCAL1</syslog_facility>
