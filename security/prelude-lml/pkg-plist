@@ -1,17 +1,24 @@
 @comment $FreeBSD$
 bin/prelude-lml
+@unexec if cmp -s %D/etc/prelude-lml/plugins.rules %D/etc/prelude-lml/plugins.rules-dist; then rm -f %D/etc/prelude-lml/plugins.rules; fi
 etc/prelude-lml/plugins.rules-dist
+@exec if [ ! -f %D/etc/prelude-lml/plugins.rules ] ; then cp -p %D/%F %B/plugins.rules; fi
+@unexec if cmp -s %D/etc/prelude-lml/prelude-lml.conf %D/etc/prelude-lml/prelude-lml.conf-dist; then rm -f %D/etc/prelude-lml/prelude-lml.conf; fi
 etc/prelude-lml/prelude-lml.conf-dist
+@exec if [ ! -f %D/etc/prelude-lml/prelude-lml.conf ] ; then cp -p %D/%F %B/prelude-lml.conf; fi
 etc/prelude-lml/ruleset/apc-emu.rules
 etc/prelude-lml/ruleset/arbor.rules
 etc/prelude-lml/ruleset/arpwatch.rules
+etc/prelude-lml/ruleset/cacti-thold.rules
 etc/prelude-lml/ruleset/checkpoint.rules
 etc/prelude-lml/ruleset/cisco-asa.rules
 etc/prelude-lml/ruleset/cisco-css.rules
+etc/prelude-lml/ruleset/cisco-ips.rules
 etc/prelude-lml/ruleset/cisco-router.rules
 etc/prelude-lml/ruleset/cisco-vpn.rules
 etc/prelude-lml/ruleset/clamav.rules
 etc/prelude-lml/ruleset/dell-om.rules
+etc/prelude-lml/ruleset/exim.rules
 etc/prelude-lml/ruleset/f5-bigip.rules
 etc/prelude-lml/ruleset/grsecurity.rules
 etc/prelude-lml/ruleset/honeyd.rules
@@ -21,6 +28,7 @@ etc/prelude-lml/ruleset/ipfw.rules
 etc/prelude-lml/ruleset/ipso.rules
 etc/prelude-lml/ruleset/linksys-wap11.rules
 etc/prelude-lml/ruleset/modsecurity.rules
+etc/prelude-lml/ruleset/ms-cluster.rules
 etc/prelude-lml/ruleset/ms-sql.rules
 etc/prelude-lml/ruleset/nagios.rules
 etc/prelude-lml/ruleset/navce.rules
