@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gatekeeper
-#PORTVERSION=	2.2.3
-DISTVERSION=	2.2.3-2
-PORTREVISION=	1
+#PORTVERSION=	2.2.4
+DISTVERSION=	2.2.4
+#PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= openh323gk
+MASTER_SITE_SUBDIR=	openh323gk
 DISTNAME=	gnugk-${DISTVERSION}
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
@@ -19,12 +19,13 @@ COMMENT=	GnuGK is GPL Gate Keeper for OhPhone, GnomeMeeting, NetMeeting and H323
 
 LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
-WRKSRC=		${WRKDIR}/${MASTER_SITE_SUBDIR}-${DISTVERSION:C/-[0-9]$//}
+#WRKSRC=		${WRKDIR}/${MASTER_SITE_SUBDIR}-${DISTVERSION:C/-[0-9]$//}
 
 USE_RC_SUBR=	gnugk.sh
 
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--disable-firebird
 
 USE_GMAKE=	yes
 ALL_TARGET=	optshared addpasswd
@@ -43,7 +44,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 .if ${OSVERSION} < 500000
 BROKEN=		does not build
 .elif ${ARCH} == sparc64 && ${OSVERSION} <= 700003
-BROKEN= does not link due to missing symbol in default thread library
+BROKEN=	does not link due to missing symbol in default thread library
 .endif
 
 .if defined(WITH_FDSET)
