@@ -8,9 +8,10 @@
 PORTNAME=	scrot
 PORTVERSION=	0.8
 CATEGORIES=	graphics
-MASTER_SITES=	http://linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A screen capture utility that utilizes Imlib2
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib

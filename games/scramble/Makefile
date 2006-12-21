@@ -1,6 +1,6 @@
 # New ports collection makefile for:	scramble
 # Date created:				10 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	scramble
 PORTVERSION=	0.9.5
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.shiftygames.com/scramble/
+MASTER_SITES=	http://www.shiftygames.com/scramble/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	From 6 letters you are to create as many words as you can
 
 GNU_CONFIGURE=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	construo
 # Date created:				24 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	construo
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A fun construction toy
 
 GNU_CONFIGURE=	yes

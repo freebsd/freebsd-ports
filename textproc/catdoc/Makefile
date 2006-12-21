@@ -8,10 +8,11 @@
 PORTNAME=	catdoc
 PORTVERSION=	0.94.2
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/
+MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/ \
+		http://www.amdmi3.ru/distfiles/
 #		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
 
 GNU_CONFIGURE=	yes

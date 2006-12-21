@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sturmbahnfahrer
 # Date created:		07 Sep 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	sturmbahnfahrer
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.stolk.org/sturmbahnfahrer/download/
+MASTER_SITES=	http://www.stolk.org/sturmbahnfahrer/download/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Simulated obstacle course for automobiles
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

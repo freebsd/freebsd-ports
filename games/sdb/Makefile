@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sdb
 # Date created:				08 Sep 2005
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	sdb
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://sdb.gamecreation.org/
+MASTER_SITES=	http://sdb.gamecreation.org/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Futuristic overhead shooter
 
 USE_X_PREFIX=	yes

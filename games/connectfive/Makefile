@@ -1,6 +1,6 @@
 # New ports collection makefile for:	connectfive
 # Date created:			20 Sep 2005
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	connectfive
 DISTNAME=	connectFive
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Place five pieces in a row on a 3d board
 
 MAKEFILE=	Makefile.linux

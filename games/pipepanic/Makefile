@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pipepanic
 # Date created:		20 May 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -10,11 +10,12 @@ PORTVERSION=	0.1.3
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.users.waitrose.com/~thunor/pipepanic/dload/ \
-		${MASTER_SITE_LOCAL}
+		${MASTER_SITE_LOCAL} \
+		http://www.amdmi3.ru/distfiles/
 MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A pipe connecting game using libSDL
 
 USE_SDL=	sdl

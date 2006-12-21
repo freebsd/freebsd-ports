@@ -1,6 +1,6 @@
 # New ports collection makefile for:	diameter
 # Date created:		15 Jun 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gamediameter
 DISTNAME=	${PORTNAME}-${DISTVERSION}src
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Arcade-style game with elements of economy and adventure
 
 BUILD_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan

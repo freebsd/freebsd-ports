@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pengupop
 # Date created:		14 Jun 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -8,9 +8,10 @@
 PORTNAME=	pengupop
 PORTVERSION=	2.1.9
 CATEGORIES=	games
-MASTER_SITES=	http://www.junoplay.com/files/
+MASTER_SITES=	http://www.junoplay.com/files/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Online multiplayer clone of Bust a Move
 
 GNU_CONFIGURE=	yes

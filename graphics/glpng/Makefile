@@ -1,6 +1,6 @@
 # New ports collection makefile for:	glpng
 # Date created:		06 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,11 @@
 PORTNAME=	glpng
 PORTVERSION=	1.45
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.wyatt100.freeserve.co.uk/
+MASTER_SITES=	http://www.wyatt100.freeserve.co.uk/ \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	glpng
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Library to easily load PNG files as an OpenGL textures
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

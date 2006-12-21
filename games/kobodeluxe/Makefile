@@ -8,10 +8,11 @@
 PORTNAME=	kobodeluxe
 DISTVERSION=	0.4pre10
 CATEGORIES=	games
-MASTER_SITES=	http://olofson.net/kobodl/download/
+MASTER_SITES=	http://olofson.net/kobodl/download/ \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	KoboDeluxe-${DISTVERSION}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	An SDL port of the scrolling game XKobo
 
 USE_SDL=	image sdl

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	blokish
 # Date created:				18 Jan 2006
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_src_v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Clone of the strategy board game 'Blokus'
 
 GNU_CONFIGURE=	yes

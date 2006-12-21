@@ -1,6 +1,6 @@
 # New ports collection makefile for:	agame
 # Date created:		30 Jul 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	http://zevv.nl/code/game/ \
 DISTNAME=	game-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A simple tetris-like game
 
 USE_SDL=	sdl image mixer

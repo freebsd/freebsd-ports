@@ -8,10 +8,11 @@
 PORTNAME=	chexedit
 PORTVERSION=	0.9.7
 CATEGORIES=	editors
-MASTER_SITES=	http://www.rogoyski.com/adam/programs/hexedit/
+MASTER_SITES=	http://www.rogoyski.com/adam/programs/hexedit/ \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	hexedit-${PORTVERSION}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Full screen text mode Hex editor using the [n]curses library
 
 GNU_CONFIGURE=	yes

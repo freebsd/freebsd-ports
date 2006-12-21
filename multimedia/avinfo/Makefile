@@ -9,10 +9,11 @@
 PORTNAME=	avinfo
 PORTVERSION=	0.7.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://shounen.ru/soft/avinfo/
+MASTER_SITES=	http://shounen.ru/soft/avinfo/ \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A utility for displaying AVI header information
 
 WRKSRC=		${WRKDIR}/src

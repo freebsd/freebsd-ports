@@ -1,6 +1,6 @@
 # New ports collection makefile for:	shootingstar
 # Date created:				20 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	shootingstar
 PORTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.2ndpoint.fi/projektit.xml/shootingstar/files/
+MASTER_SITES=	http://www.2ndpoint.fi/projektit.xml/shootingstar/files/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	SDL/OpenGL top-down shooter
 
 GNU_CONFIGURE=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	GNUDoku
 # Date created:				12 Jan 2006
-# Whom:					Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/~jcspray/GNUDoku/ \
 		http://icculus.org/~jcspray/GNUDoku/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A free program for creating and solving Su Doku puzzles
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bruteblock
 # Date created:		30 Jul 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -8,9 +8,10 @@
 PORTNAME=	bruteblock
 PORTVERSION=	0.0.5
 CATEGORIES=	security
-MASTER_SITES=	http://samm.kiev.ua/bruteblock/
+MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Software for blocking bruteforce attacks with ipfw
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

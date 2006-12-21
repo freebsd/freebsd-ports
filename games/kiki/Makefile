@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kiki
 # Date created:		24 Oct 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Kiki the nanobot is a 3-D puzzle game
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

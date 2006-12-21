@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-WeakRef
 # Date created:		14 Jun 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LU/LUKKA/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	An API to the Perl weak references
 
 PERL_CONFIGURE=	yes

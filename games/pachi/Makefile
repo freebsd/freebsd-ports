@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pachi
 # Date created:		18 Sep 2005
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	dragontech
 DISTNAME=	pachi_source
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A platforms game similar to Manic Miner
 
 USE_SDL=	mixer sdl

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	torrent
 # Date created:		10 Nov 2005
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	torrent
 PORTVERSION=	0.8.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.shiftygames.com/torrent/
+MASTER_SITES=	http://www.shiftygames.com/torrent/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Score points without letting the tiles touch the top of the board
 
 GNU_CONFIGURE=	yes

@@ -10,9 +10,10 @@ PORTNAME=	xbill
 PORTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.xbill.org/download/
+MASTER_SITES=	http://www.xbill.org/download/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Save your computers from the evil clutches of Bill
 
 SCORES_DIR?=	${DATADIR}/scores

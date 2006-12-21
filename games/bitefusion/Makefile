@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bitefusion
 # Date created:		14 Jun 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -8,9 +8,10 @@
 PORTNAME=	bitefusion
 PORTVERSION=	1.0.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.junoplay.com/files/
+MASTER_SITES=	http://www.junoplay.com/files/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A snake game with 8 levels
 
 GNU_CONFIGURE=	yes

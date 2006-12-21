@@ -1,6 +1,6 @@
 # New ports collection makefile for:	volleyball
 # Date created:		09 Oct 2005
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,11 +9,12 @@ PORTNAME=	volleyball
 PORTVERSION=	0.8.5
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/
+MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/ \
+		http://www.amdmi3.ru/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A game similar to GNU Arcade Volleyball
 
 USE_SDL=	sdl image

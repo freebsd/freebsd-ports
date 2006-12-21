@@ -1,6 +1,6 @@
 # New ports collection makefile for:	flobopuyo
 # Date created:		24 Feb 2006
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,10 +9,11 @@ PORTNAME=	flobopuyo
 PORTVERSION=	0.20
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.ios-software.com/flobopuyo/
+MASTER_SITES=	http://www.ios-software.com/flobopuyo/ \
+		http://www.amdmi3.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Clone of the famous PuyoPuyo
 
 USE_BISON=	yes

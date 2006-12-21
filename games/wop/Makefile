@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wop
 # Date created:		26 Dec 2005
-# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
 # $FreeBSD$
 #
@@ -9,11 +9,12 @@ PORTNAME=	wop
 PORTVERSION=	0.4.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://wormsofprey.org/download/
+MASTER_SITES=	http://wormsofprey.org/download/ \
+		http://www.amdmi3.ru/distfiles/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME}data-${DATAVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@mail.ru
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Free real-time Worms game
 
 BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
