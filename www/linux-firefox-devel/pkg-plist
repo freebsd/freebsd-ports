@@ -23,6 +23,8 @@ lib/%%APP_NAME%%/components/FeedWriter.js
 lib/%%APP_NAME%%/components/WebContentConverter.js
 lib/%%APP_NAME%%/components/browser.xpt
 lib/%%APP_NAME%%/components/jsconsole-clhandler.js
+lib/%%APP_NAME%%/components/libbrowsercomps.so
+lib/%%APP_NAME%%/components/libbrowserdirprovider.so
 lib/%%APP_NAME%%/components/libjar50.so
 lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/libmozgnome.so
@@ -53,6 +55,7 @@ lib/%%APP_NAME%%/components/nsUrlClassifierListManager.js
 lib/%%APP_NAME%%/components/nsUrlClassifierTable.js
 lib/%%APP_NAME%%/components/nsXmlRpcClient.js
 lib/%%APP_NAME%%/components/pluginGlue.js
+lib/%%APP_NAME%%/components/txEXSLTRegExFunctions.js
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js

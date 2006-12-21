@@ -281,6 +281,7 @@ lib/%%APP_NAME%%/components/talkback/master.ini
 lib/%%APP_NAME%%/components/talkback/talkback
 lib/%%APP_NAME%%/components/talkback/talkback.so
 lib/%%APP_NAME%%/components/toolkitremote.xpt
+lib/%%APP_NAME%%/components/txEXSLTRegExFunctions.js
 lib/%%APP_NAME%%/components/txmgr.xpt
 lib/%%APP_NAME%%/components/txtsvc.xpt
 lib/%%APP_NAME%%/components/uconv.xpt

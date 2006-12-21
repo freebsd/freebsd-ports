@@ -22,7 +22,7 @@ DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-SNAPDATE=	2006-11-10
+SNAPDATE=	2006-12-21
 USE_BZIP2=	yes
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
