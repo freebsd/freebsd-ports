@@ -52,6 +52,9 @@ bin/opera
 %%DATADIR%%/styles/images/bar.png
 %%DATADIR%%/styles/images/center.png
 %%DATADIR%%/styles/images/opera.png
+%%DATADIR%%/styles/images/red_center.png
+%%DATADIR%%/styles/images/red_left.png
+%%DATADIR%%/styles/images/red_right.png
 %%DATADIR%%/styles/images/root.png
 %%DATADIR%%/styles/images/top.png
 %%DATADIR%%/styles/info.css
@@ -67,6 +70,7 @@ bin/opera
 %%DATADIR%%/styles/user/nostalgia.css
 %%DATADIR%%/styles/user/showstructure.css
 %%DATADIR%%/styles/user/textonly.css
+%%DATADIR%%/styles/warning.css
 %%DATADIR%%/styles/wml.css
 %%DATADIR%%/svg-sebd.dat
 %%DATADIR%%/svg-se.dat
