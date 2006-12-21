@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		tcptrack
-PORTVERSION=		1.1.5
+PORTVERSION=		1.2.0
 CATEGORIES=		net-mgmt
-MASTER_SITES=		http://www.rhythm.cx/~steve/devel/tcptrack/
-MASTER_SITE_SUBDIR=	release/${PORTVERSION}/source/
+MASTER_SITES=		http://www.rhythm.cx/~steve/devel/tcptrack/%SUBDIR%/
+MASTER_SITE_SUBDIR=	release/${PORTVERSION}/source
 
 MAINTAINER=	squat@squat.no
 COMMENT=	Packet sniffer which displays TCP information like top(1)
