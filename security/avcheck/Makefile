@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avcheck
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/ftp/avcheck/
 
