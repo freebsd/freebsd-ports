@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tw_cli
-PORTVERSION=	9.3.0.4
+PORTVERSION=	9.4.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://3ware.com/download/Escalade9550SX-Series/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-freebsd_5.4-${DIST_ARCH}-${PORTVERSION}
+MASTER_SITES=	http://3ware.com/download/Escalade9650SE-Series/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-freebsd-${DIST_ARCH}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	frolov@riss-telecom.ru
@@ -42,13 +42,13 @@ do-configure:
 	${REINPLACE_CMD} 's!/usr/bin/perl!${PERL}!g' ${WRKSRC}/tw_sched
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tw_cli ${PREFIX}/sbin/
-	${INSTALL_SCRIPT} ${WRKSRC}/tw_sched ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tw_cli ${DESTDIR}${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/tw_sched ${DESTDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/tw_cli.8.nroff ${MANPREFIX}/man/man8/tw_cli.8
 	${INSTALL_MAN} ${WRKSRC}/tw_sched.8.nroff ${MANPREFIX}/man/man8/tw_sched.8
-	@${MKDIR} ${PREFIX}/etc/periodic/daily
+	@${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/407.status-3ware-raid \
-		${PREFIX}/etc/periodic/daily/
+		${DESTDIR}${PREFIX}/etc/periodic/daily/
 
 post-install:
 .if !defined(NOPORTDOCS)
