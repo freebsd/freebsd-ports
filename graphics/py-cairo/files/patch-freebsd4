@@ -1,0 +1,97 @@
+--- cairo/pycairo-font.c.orig	Sat Apr 29 05:04:31 2006
++++ cairo/pycairo-font.c	Thu Dec 21 16:09:09 2006
+@@ -197,6 +197,7 @@
+     PycairoFontFace *ff;
+     PycairoFontOptions *fo;
+     PycairoMatrix *mx1, *mx2;
++    PyObject *o;
+ 
+     if (!PyArg_ParseTuple(args, "O!O!O!O!:ScaledFont.__new__",
+ 			  &PycairoFontFace_Type, &ff,
+@@ -205,7 +206,7 @@
+ 			  &PycairoFontOptions_Type, &fo))
+ 	return NULL;
+ 
+-    PyObject *o = type->tp_alloc(type, 0);
++    o = type->tp_alloc(type, 0);
+     if (o != NULL) {
+ 	cairo_scaled_font_t *scaled_font = cairo_scaled_font_create
+ 	    (ff->font_face, &mx1->matrix, &mx2->matrix, fo->font_options);
+--- cairo/pycairo-surface.c.orig	Sun Jul  2 21:58:14 2006
++++ cairo/pycairo-surface.c	Thu Dec 21 16:09:34 2006
+@@ -34,7 +34,6 @@
+ #  include <config.h>
+ #endif
+ 
+-#include <stdint.h>
+ #include "pycairo-private.h"
+ 
+ 
+@@ -519,6 +518,7 @@
+ static PyObject *
+ image_surface_create_from_png (PyTypeObject *type, PyObject *file)
+ {
++    PyObject* reader;
+     if (PyObject_TypeCheck (file, &PyBaseString_Type)) {
+ 	return PycairoSurface_FromSurface (
+             cairo_image_surface_create_from_png (PyString_AsString(file)),
+@@ -526,7 +526,7 @@
+     }
+ 
+     /* file or file-like object argument */
+-    PyObject* reader = PyObject_GetAttrString (file, "read");
++    reader = PyObject_GetAttrString (file, "read");
+     if (reader == NULL || !PyCallable_Check (reader)) {
+ 	Py_XDECREF(reader);
+ 	PyErr_SetString(PyExc_TypeError,
+@@ -700,6 +700,7 @@
+ {
+     double width_in_points, height_in_points;
+     PyObject *file;
++    PyObject* writer;
+ 
+     if (!PyArg_ParseTuple(args, "Odd:PDFSurface.__new__",
+ 			  &file, &width_in_points, &height_in_points))
+@@ -713,7 +714,7 @@
+ 	       NULL);
+     }
+     /* file or file-like object argument */
+-    PyObject* writer = PyObject_GetAttrString (file, "write");
++    writer = PyObject_GetAttrString (file, "write");
+     if (writer == NULL || !PyCallable_Check (writer)) {
+ 	Py_XDECREF(writer);
+ 	PyErr_SetString(PyExc_TypeError,
+@@ -803,6 +804,7 @@
+ {
+     double width_in_points, height_in_points;
+     PyObject *file;
++    PyObject* writer;
+ 
+     if (!PyArg_ParseTuple(args, "Odd:PSSurface.__new__",
+ 			  &file, &width_in_points, &height_in_points))
+@@ -817,7 +819,7 @@
+ 
+     }
+     /* else: file or file-like object argument */
+-    PyObject* writer = PyObject_GetAttrString (file, "write");
++    writer = PyObject_GetAttrString (file, "write");
+     if (writer == NULL || !PyCallable_Check (writer)) {
+ 	Py_XDECREF(writer);
+ 	PyErr_SetString(PyExc_TypeError,
+@@ -942,6 +944,7 @@
+ {
+     double width_in_points, height_in_points;
+     PyObject *file;
++    PyObject* writer;
+ 
+     if (!PyArg_ParseTuple(args, "Odd:SVGSurface.__new__",
+ 			  &file, &width_in_points, &height_in_points))
+@@ -955,7 +958,7 @@
+ 	       NULL);
+     }
+     /* else: file or file-like object argument */
+-    PyObject* writer = PyObject_GetAttrString (file, "write");
++    writer = PyObject_GetAttrString (file, "write");
+     if (writer == NULL || !PyCallable_Check (writer)) {
+ 	Py_XDECREF(writer);
+ 	PyErr_SetString(PyExc_TypeError,
