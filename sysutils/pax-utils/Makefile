@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pax-utils
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.14
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://dev.gentoo.org/~solar/pax/ \
@@ -19,7 +19,24 @@ COMMENT=	Various ELF related utils for ELF32, ELF64 binaries
 USE_BZIP2=	true
 USE_GMAKE=	true
 USE_GETOPT_LONG=true
+USE_GCC=	3.4+
+
+PLIST_FILES=	bin/dumpelf bin/pspax bin/scanelf
+
+DOCS=		BUGS README TODO
 
 MAN1=		dumpelf.1 pspax.1 scanelf.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/dumpelf ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/pspax ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scanelf ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/* ${PREFIX}/man/man1
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
