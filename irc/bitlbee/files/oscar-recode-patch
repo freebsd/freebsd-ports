@@ -125,7 +125,7 @@
 -			serv_got_im(gc, sender, dialog_msg, 0, t, -1);
 +			if (do_iconv(src, "UTF-8", dialog_msg, tmp, strlen (msg->msg), BUF_LONG) < 0)
 +				tmp = dialog_msg;
-+			fprintf (stderr, "bitlbee: offlinemsg, got %s\n", tmp);
++			//fprintf (stderr, "bitlbee: offlinemsg, got %s\n", tmp);
 +			serv_got_im(gc, sender, tmp, 0, t, -1);
 +			if (dialog_msg != tmp)
 +				g_free (tmp);
@@ -160,7 +160,7 @@
  				s = message;
  			}
  		} else {
-+			fprintf (stderr, "outgoing message is ascii!\n");
++			//fprintf (stderr, "outgoing message is ascii!\n");
  			s = message;
  		}
  		
