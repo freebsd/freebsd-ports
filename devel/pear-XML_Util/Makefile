@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Util
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	thomas@goodking.ca
