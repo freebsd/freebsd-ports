@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.0
-PORTREVISION=	5
+DISTVERSION=	1.3.1rc1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -26,12 +25,13 @@ MAN8=	proftpd.8 ftpshut.8 ftpdctl.8
 
 PORTDOCSdoc=	Configuration.html faq.html
 PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
-		mod_tls.html mod_wrap.html ftpasswd.html
+		mod_tls.html mod_wrap2.html mod_wrap2_file.html mod_wrap2_sql.html \
+		mod_ban.html mod_quotatab_radius.html ftpasswd.html
 PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+GNU_CONFIGURE=yes
 
 USE_RC_SUBR=	proftpd.sh
 
@@ -49,9 +49,16 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		IFSESSION "Include mod_ifsession" on \
 		README "Include mod_readme" on \
 		RATIO "Include mod_ratio" on \
+		CTRLS "include controls" off \
 		REWRITE "Include mod_rewrite" on \
-		WRAP "Include mod_wrap" on \
-		RADIUS "Include mod_radius" off
+		WRAP "Include mod_wrap2" on \
+		WRAP_FILE "include mod_wrap2_file" off \
+		WRAP_SQL "include mod_wrap2_sql" off \
+		LANG "include mod_lang" off \
+		RADIUS "Include mod_radius" off \
+		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
+		BAN "include mod_ban (Requires CTRLS)" off \
+		NLS "Use nls" off
 
 MODULES?=
 
@@ -59,7 +66,6 @@ MODULES?=
 
 .if ${OSVERSION} < 500000
 CONFIGURE_ARGS+=	--without-getopt
-EXTRA_PATCHES=	${FILESDIR}/extra_patch-configure.in
 USE_AUTOTOOLS=	autoconf:259
 .endif
 
@@ -76,11 +82,37 @@ MODULES:=${MODULES}:mod_rewrite
 .endif
 
 .if !defined(WITHOUT_WRAP)
-MODULES:=${MODULES}:mod_wrap
+MODULES:=${MODULES}:mod_wrap2
+INCLUDEDIRS:=${INCLUDEDIRS}:${WORKDIR}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_WRAP_FILE)
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+MODULES:=${MODULES}:mod_wrap2_file
+.endif
+
+.if defined(WITH_WRAP_SQL)
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+MODULES:=${MODULES}:mod_wrap2_sql
 .endif
 
 .if defined(WITH_RADIUS)
 MODULES:=${MODULES}:mod_radius
+.endif
+
+.if defined(WITH_QUOTATAB_RADIUS)
+MODULES:=${MODULES}:mod_quotatab_radius
+.endif
+
+.if defined(WITH_LANG)
+MODULES:=${MODULES}:mod_lang
+.endif
+
+.if defined(WITH_BAN)
+MODULES:=${MODULES}:mod_ban
 .endif
 
 .if defined(WITH_SETPASSENT)
@@ -97,6 +129,12 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 .if !defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITH_NLS)
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--enable-nls
 .endif
 
 #allow user to override
@@ -208,6 +246,10 @@ post-install:
 .if defined(WITH_CTRLS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/ftpdctl
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${PREFIX}/man/man8/ftpdctl.8
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
 .endif
 
 .include <bsd.port.post.mk>

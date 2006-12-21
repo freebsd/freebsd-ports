@@ -2,11 +2,62 @@ bin/ftpcount
 bin/ftpdctl
 bin/ftptop
 bin/ftpwho
-@unexec if cmp -s %D/etc/proftpd.conf %D/%%EXAMPLESDIR%%/etc/proftpd.conf; then rm -f %D/etc/proftpd.conf; fi
-%%EXAMPLESDIR%%/etc/proftpd.conf
-@exec if [ ! -f %D/etc/proftpd.conf ] ; then cp -p %D/%F %B/proftpd.conf; fi
+etc/proftpd.conf
+include/proftpd/auth.h
+include/proftpd/bindings.h
+include/proftpd/buildstamp.h
+include/proftpd/child.h
+include/proftpd/class.h
+include/proftpd/compat.h
+include/proftpd/conf.h
+include/proftpd/config.h
+include/proftpd/ctrls.h
+include/proftpd/data.h
+include/proftpd/default_paths.h
+include/proftpd/dirtree.h
+include/proftpd/display.h
+include/proftpd/event.h
+include/proftpd/feat.h
+include/proftpd/fsio.h
+include/proftpd/ftp.h
+include/proftpd/glibc-glob.h
+include/proftpd/help.h
+include/proftpd/ident.h
+include/proftpd/inet.h
+include/proftpd/lastlog.h
+include/proftpd/libsupp.h
+include/proftpd/log.h
+include/proftpd/mkhome.h
+include/proftpd/mod_ctrls.h
+include/proftpd/mod_wrap2.h
+include/proftpd/modules.h
+include/proftpd/netacl.h
+include/proftpd/netaddr.h
+include/proftpd/netio.h
+include/proftpd/options.h
+include/proftpd/parser.h
+include/proftpd/pool.h
+include/proftpd/pr-syslog.h
+include/proftpd/privs.h
+include/proftpd/proftpd.h
+include/proftpd/regexp.h
+include/proftpd/response.h
+include/proftpd/scoreboard.h
+include/proftpd/sets.h
+include/proftpd/support.h
+include/proftpd/table.h
+include/proftpd/timers.h
+include/proftpd/trace.h
+include/proftpd/utf8.h
+include/proftpd/var.h
+include/proftpd/version.h
+include/proftpd/xferlog.h
 sbin/ftpshut
 sbin/in.proftpd
 sbin/proftpd
+@unexec if cmp -s %D/etc/proftpd.conf %D/%%EXAMPLESDIR%%/etc/proftpd.conf; then rm -f %D/etc/proftpd.conf; fi
+%%EXAMPLESDIR%%/etc/proftpd.conf
+@exec if [ ! -f %D/etc/proftpd.conf ] ; then cp -p %D/%F %B/proftpd.conf; fi
 @dirrm %%EXAMPLESDIR%%/etc
 @dirrm %%EXAMPLESDIR%%
+@dirrm include/proftpd
