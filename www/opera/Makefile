@@ -28,11 +28,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.${OPERA_TYPE}-${OPERA_LIB}-qt.i
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	9.02
-OPERA_MINVER=	
+OPERA_VER=	9.10
+OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20060919
-OPERA_BUILD=	434
+OPERA_DATE=	20061214
+OPERA_BUILD=	521
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
@@ -48,7 +48,7 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
 OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on \
-		SHARED	"Use a shared Qt library (instead of static)"	${QT_PRESENT}
+		SHARED	"Use a shared Qt library (instead of static)"	on
 
 .if exists(${X11BASE}/lib/libqt-mt.prl)
 QT_PRESENT=	on
@@ -124,8 +124,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/symhack.so ${DATADIR}/
 .endif
 
-.if defined(WITHOUT_SHARED) && ${OSVERSION} >= 500000
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
 ###########################################################################
 
-Warning: Plugin support on FreeBSD 5.x or higher is only available if you 
-use a version of Opera that uses shared Qt.
+To use Linux plugins such as Adobe Flash and Acrobat Reader, install the
+www/opera-linuxplugins port.
 
 ###########################################################################
