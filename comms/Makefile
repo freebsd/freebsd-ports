@@ -101,6 +101,7 @@
     SUBDIR += sms_client
     SUBDIR += smstools
     SUBDIR += snooper
+    SUBDIR += soundmodem
     SUBDIR += spandsp
     SUBDIR += splat
     SUBDIR += sredird

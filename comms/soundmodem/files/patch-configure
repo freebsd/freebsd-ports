@@ -1,0 +1,22 @@
+--- configure.orig	Tue Sep 12 14:52:56 2006
++++ configure	Tue Sep 12 16:48:30 2006
+@@ -7912,7 +7912,8 @@
+ int
+ main ()
+ {
+-
++#include <stdio.h>
++printf("RUNNING a conftest!\n");
+ /* ensure backward compatibility */
+ #if !defined(SND_LIB_MAJOR) && defined(SOUNDLIB_VERSION_MAJOR)
+ #define SND_LIB_MAJOR SOUNDLIB_VERSION_MAJOR
+@@ -7979,9 +7980,6 @@
+ 
+ echo "$as_me:$LINENO: result: not present." >&5
+ echo "${ECHO_T}not present." >&6
+-   { { echo "$as_me:$LINENO: error: Sufficiently new version of libasound not found." >&5
+-echo "$as_me: error: Sufficiently new version of libasound not found." >&2;}
+-   { (exit 1); exit 1; }; }
+    alsa_found=no
+ 
+ fi
