@@ -284,6 +284,7 @@
     SUBDIR += py-gato
     SUBDIR += py-gnuplot
     SUBDIR += py-gsl
+    SUBDIR += py-igraph
     SUBDIR += py-matplotlib
     SUBDIR += py-mpz
     SUBDIR += py-numarray
