@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.0
 CATEGORIES=	devel www pear
 MASTER_SITES+=	http://www.goodking.ca/pub/files/PEAR/
 
@@ -21,9 +21,12 @@ CATEGORY=	Date
 FILES=		Holidays.php \
 		Holidays/Driver/Christian.php \
 		Holidays/Driver/Composite.php \
+		Holidays/Driver/Denmark.php \
+		Holidays/Driver/Discordian.php \
 		Holidays/Driver/Germany.php \
 		Holidays/Driver/Jewish.php \
 		Holidays/Driver/PHPdotNet.php \
+		Holidays/Driver/Slovenia.php \
 		Holidays/Driver/Sweden.php \
 		Holidays/Driver/UNO.php \
 		Holidays/Driver/USA.php \
@@ -54,16 +57,21 @@ EXAMPLES=	addingTranslations.php languagefile-with-properties.xml \
 		creating_drivers.php usingCompositeDriver.php \
 		fetchingInstalledDrivers.php usingStandaloneDriver.php
 TESTS=		AllTests.php \
+		AllTestsUndeployed.php \
 		Date_Holidays_Driver_Christian_TestSuite.php \
 		Date_Holidays_Driver_Germany_TestSuite.php \
 		Date_Holidays_Driver_Jewish_TestSuite.php \
 		Date_Holidays_Driver_PHPdotNet_TestSuite.php \
 		Date_Holidays_Driver_Sweden_TestSuite.php \
 		Date_Holidays_Driver_TestSuite.php \
+		Date_Holidays_Driver_TestSuite.xml \
 		Date_Holidays_Driver_UNO_TestSuite.php \
+		Example.php \
 		Date_Holidays_Driver_USA_TestSuite.php \
 		Date_Holidays_TestSuite.php \
-		Example.php
+		testHolidays2005stampsAndSavingsDay.php \
+		test_getHolidays.php \
+		test_missingLocale.php
 
 LATEST_LINK=	pear-Date_Holidays
 OPTIONS=	PEAR_CONSOLE_GETARGS "devel/pear-Console_Getargs" off
