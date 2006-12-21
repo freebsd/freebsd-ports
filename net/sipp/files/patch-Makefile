@@ -1,8 +1,17 @@
 $FreeBSD$
 
---- Makefile.orig	Tue Aug 29 11:03:34 2006
-+++ Makefile	Thu Sep  7 22:35:57 2006
-@@ -67,7 +67,7 @@
+--- Makefile.orig
++++ Makefile
+@@ -18,8 +18,6 @@
+ #           From Hewlett Packard Company.
+ #
+ 
+--include local.mk
+-
+ # Output binary to be built
+ OUTPUT=sipp
+ 
+@@ -69,7 +67,7 @@
  CC_SunOS=gcc
  CC_Cygwin=cc  
  CC_Darwin=cc  
@@ -11,7 +20,7 @@ $FreeBSD$
  
  # C++ compiler mapping
  CPP_hpux=aCC  
-@@ -77,7 +77,7 @@
+@@ -79,7 +77,7 @@
  CPP_SunOS=g++
  CPP_Cygwin=g++  
  CPP_Darwin=g++  
@@ -20,25 +29,25 @@ $FreeBSD$
  
  #Model specific flags
  MFLAGS_ia64=+DD64
-@@ -99,7 +99,7 @@
- CFLAGS_SunOS=-g
+@@ -102,7 +100,7 @@
+ CFLAGS_SunOS=-g -D__SUNOS
  CFLAGS_Cygwin=-D__CYGWIN -Dsocklen_t=int
  CFLAGS_Darwin=-D__DARWIN
--CFLAGS=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
+-CFLAGS=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY) $(EXTRACFLAGS)
 +CFLAGS+=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
  
  #C++ Compiler Flags
  CPPFLAGS_hpux=-AA -mt -D__HPUX +W829 
-@@ -109,7 +109,7 @@
- CPPFLAGS_SunOS=-g
+@@ -112,7 +110,7 @@
+ CPPFLAGS_SunOS=-g -D__SUNOS
  CPPFLAGS_Cygwin=-D__CYGWIN -Dsocklen_t=int
  CPPFLAGS_Darwin=-D__DARWIN
--CPPFLAGS=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
+-CPPFLAGS=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY) $(EXTRACPPFLAGS)
 +CPPFLAGS+=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
  
  #Linker mapping
  CCLINK_hpux=aCC
-@@ -119,7 +119,7 @@
+@@ -122,7 +120,7 @@
  CCLINK_SunOS=gcc
  CCLINK_Cygwin=g++
  CCLINK_Darwin=g++
@@ -47,3 +56,12 @@ $FreeBSD$
  
  #Linker Flags
  LFLAGS_hpux=-AA -mt
+@@ -153,8 +151,6 @@
+ INCDIR_Cygwin=-I. -I/usr/include/openssl -I/usr/include -I/usr/lib/WpdPack/Include
+ INCDIR_Darwin=-I. -I/usr/local/ssl/include
+ INCDIR=$(INCDIR_$(SYSTEM)) 
+-
+--include local.mk
+ 
+ # Building without TLS and authentication (no openssl pre-requisite)
+ all:
