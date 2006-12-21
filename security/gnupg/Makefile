@@ -23,6 +23,8 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
 
+CONFLICTS=	gnupg-devel-[0-9]*
+
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES

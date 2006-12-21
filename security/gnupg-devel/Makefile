@@ -24,6 +24,8 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
 		dirmngr:${PORTSDIR}/security/dirmngr
 
+CONFLICTS=	gnupg-2.*
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=# empty
