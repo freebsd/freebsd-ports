@@ -47,6 +47,7 @@
     SUBDIR += kallers
     SUBDIR += kermit
     SUBDIR += klog
+    SUBDIR += kmobiletools
     SUBDIR += kpsk
     SUBDIR += ktrack
     SUBDIR += libfec
