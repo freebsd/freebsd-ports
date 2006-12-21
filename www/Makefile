@@ -421,6 +421,7 @@
     SUBDIR += openvrml
     SUBDIR += openxmldir
     SUBDIR += opera
+    SUBDIR += opera-linuxplugins
     SUBDIR += osb-browser
     SUBDIR += osb-nrcit
     SUBDIR += osb-nrcore
