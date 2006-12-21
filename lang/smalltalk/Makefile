@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	2.2
+PORTVERSION=	2.3.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,9 +26,14 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_prog_EMACS=no
-CONFIGURE_ARGS=	--enable-generational-gc=no --enable-gtk=no \
-		--with-emacs=no --with-gmp=no
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--infodir=${PREFIX}/${INFO_PATH} \
+		--enable-generational-gc=no \
+		--enable-gtk=no \
+		--with-emacs=no \
+		--with-gmp=no
 USE_LDCONFIG=	yes
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		gst.1
 INFO=		gst gst-base gst-libs
@@ -56,13 +61,15 @@ CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 PLIST_SUB+=	TCLTK=""
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-release $$(VERSION)|-avoid-version|g'
-	@${REINPLACE_CMD} -e 's|typedef .*intptr_t;||g ; \
-		 s|typedef .*intmax_t;||g' ${WRKSRC}/configure
+post-build:
+	@${SED} -e 's|@bindir@|${PREFIX}/bin|g' \
+		${WRKSRC}/gst-mode.el.in > ${WRKSRC}/gst-mode.el
+	@${SED} -e 's|@lispdir@|${PREFIX}/share/emacs/site-lisp|g' \
+		${WRKSRC}/smalltalk-mode.el.in > ${WRKSRC}/smalltalk-mode.el
 
 post-install:
+	@${MKDIR} ${DATADIR}/gtk
+	@${TOUCH} ${DATADIR}/gtk/.keep_me
 	${INSTALL_DATA} ${WRKSRC}/*.el ${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.post.mk>
