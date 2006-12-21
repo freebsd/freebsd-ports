@@ -2,7 +2,7 @@
 # Ports collection makefile for:        mythtv
 # Date created:                         05 February 2005
 # Whom:                                 Stacey Son <mythdev@son.org>
-#                                       Ari Maniatis <ari@ish.com.au>   
+#                                       Ari Maniatis <ari@ish.com.au>
 #
 # $FreeBSD$
 
@@ -22,18 +22,17 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
-		wget:${PORTSDIR}/ftp/wget \
-		mysql:${PORTSDIR}/databases/mysql51-server
+		wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-USE_MYSQL=	40
+USE_MYSQL=	51
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${LOCALBASE}" \
 		QMAKESPEC="${QMAKESPEC}" \
 		CFLAGS="${CFLAGS}"
 MAKE_ENV=	QTDIR="${X11BASE}" QMAKESPEC="${QMAKESPEC}"
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	mythbackend
 
 CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE}
 # CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -41,6 +40,7 @@ CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE}
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 OPTIONS=	LIRC	"Native LIRC Support" 	Off
+OPTIONS+=       MYSQL_LOCAL "RUN_DEPEND on selected MySQL server" off
 
 .include <bsd.port.pre.mk>
 
@@ -49,9 +49,11 @@ LIB_DEPENDS+=  lirc_client.0:${PORTSDIR}/comms/lirc
 # EXTRA_PATCHES= ${FILESDIR}/patchsettings-lirc
 .endif
 
+.if defined(WITH_MYSQL_LOCAL)
+RUN_DEPENDS+=  mysqld:${PORTSDIR}/databases/${MYSQL_VER}-server
+.endif
+
 post-extract:
-		@${SED} "s|%%RC_SUBR%%|${RC_SUBR}|g;s|%%PREFIX%%|${PREFIX}|g" \
-		${FILESDIR}/mythbackend.sh > ${WRKSRC}/mythbackend.sh
 		echo 'const char *myth_source_version = "FreeBSD Ports Collection' \
 			`pwd`, MythTV version ${PORTVERSION} "`date`\";" \
 			> ${WRKSRC}/programs/mythfrontend/version.cpp
@@ -67,7 +69,6 @@ do-configure:
 			-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ mythtv.pro
 
 post-install:
-		${INSTALL_SCRIPT} ${WRKSRC}/mythbackend.sh ${PREFIX}/etc/rc.d/mythbackend.sh
 		${MKDIR} ${PREFIX}/share/mythtv/database
 		${CP} ${WRKSRC}/database/mc.sql ${PREFIX}/share/mythtv/database
 		${CP} ${WRKSRC}/programs/mythtv-setup/mythtv-setup ${PREFIX}/bin/mythtv-setup
