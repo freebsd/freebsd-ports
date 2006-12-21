@@ -36,6 +36,9 @@ upgrades.
 
   Notes / known problems about mounting devices in media:/ with HAL enabled: 
   
+  - Your user must be in group operator in order to be able to mount removable
+    media.
+
   - Removable media drives (such as CD-ROM drives) *MUST NOT* be listed in
     /etc/fstab in order to be mountable.
 
