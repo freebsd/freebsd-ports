@@ -6,14 +6,13 @@
 #
 
 PORTNAME=		efax-gtk
-PORTVERSION=		3.0.11
-PORTREVISION=		1
+PORTVERSION=		3.0.12
 CATEGORIES=		comms
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=		.src.tgz
 
-MAINTAINER=		jb.quenot@caraldi.com
+MAINTAINER=		jbq@caraldi.com
 COMMENT=		GUI front end for the efax fax program
 
 LIB_DEPENDS=		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
@@ -23,6 +22,7 @@ RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv \
 USE_GNOME=		gtk20
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--mandir=${X11BASE}/man
 MAN1=			efax.1 efix.1 efax-gtk.1
 
 post-install:
