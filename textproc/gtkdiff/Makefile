@@ -9,13 +9,13 @@ PORTNAME=	gtkdiff
 PORTVERSION=	1.8.0
 PORTREVISION=	2
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/gtkdiff/
+MASTER_SITES=	http:www.alaskaparadise.com/freebsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A frontend program for diff(1) written for GNOME
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomelibs
+USE_GNOME=		gnomehack gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
