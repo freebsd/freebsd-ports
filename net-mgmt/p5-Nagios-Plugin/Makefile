@@ -6,16 +6,20 @@
 #
 
 PORTNAME=		Nagios-Plugin
-PORTVERSION=		0.14
+PORTVERSION=		0.15
 CATEGORIES=		net-mgmt perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/T/TO/TONVOON
+MASTER_SITE_SUBDIR=	../../authors/id/G/GA/GAVINC
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		gerrit.beine@gmx.de
-COMMENT=		Object oriented helper routines for Nagios plugin
+COMMENT=		Modules to streamline writing Nagios plugins
 
 PERL_CONFIGURE=		yes
+
+BUILD_DEPENDS=		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+			${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 MAN3=			Nagios::Plugin.3 \
 			Nagios::Plugin::ExitResult.3 \
