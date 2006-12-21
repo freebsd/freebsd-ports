@@ -7,13 +7,14 @@
 
 PORTNAME=	biabam
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://mmj.dk/biabam/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line attachment mailer
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/biabam
