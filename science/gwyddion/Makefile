@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCHFILES=	${PORTNAME}-2.1-bigendian-build.patch
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 
@@ -52,16 +50,19 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-# Inhibit installation of .la files.  Theoretically USE_AUTOTOOLS=libtool:15
-# prevents that but in practice it doesn't work well and in addition the Ports
-# libtool causes installation of static version of modules that are more work
-# to get rid of than this.
+# Fix shared library versioning and inhibit installation of .la files manually.
+# Ports libtool + ltverhack fixes versions but it installs static versions of
+# modules, so one would have to hack it too.
 #
 # Inhibit installation of excessive API documentation.  Option
 # --disable-gtk-doc disables only building, not installation of documentation
 # present in the source tarball.
 post-patch:
-	@${REINPLACE_CMD} -e '/# Install the pseudo-library/,/^$$/d' ${WRKSRC}/ltmain.sh
+	${REINPLACE_CMD} -e \
+		'/freebsd-elf)/,/;;/ s|major="\.$$current"|major=.`expr $$current - $$age`|; \
+		 /freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|; \
+		 /# Install the pseudo-library/,/^$$/d' \
+		${WRKSRC}/ltmain.sh
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/,/[^\]$$/d' ${WRKSRC}/devel-docs/Makefile.in
 
 .include <bsd.port.pre.mk>
