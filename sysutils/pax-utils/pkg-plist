@@ -1,7 +1,0 @@
-bin/dumpelf
-bin/pspax
-bin/scanelf
-share/doc/pax-utils/BUGS
-share/doc/pax-utils/README
-share/doc/pax-utils/TODO
-@dirrm share/doc/pax-utils
