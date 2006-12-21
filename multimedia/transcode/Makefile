@@ -14,7 +14,7 @@ MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://kraymer.de/mirroring/ \
 		http://www.jakemsr.com/transcode/
 
-MAINTAINER=	ports@FreeBSD.or
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text-console utility for video stream processing
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
