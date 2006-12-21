@@ -693,6 +693,7 @@
     SUBDIR += tenebrae
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
+    SUBDIR += tetrons
     SUBDIR += textmaze
     SUBDIR += thevalley
     SUBDIR += thudboard
