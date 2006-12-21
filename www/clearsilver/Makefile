@@ -62,8 +62,11 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
+.if ${OSVERSION} >= 500000
+PATCHDIR=	dont-patch
+PLIST_SUB+=	PTHREAD=""
+.else
+PLIST_SUB+=	PTHREAD="@comment "
 .endif
 
 post-patch:
