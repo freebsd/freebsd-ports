@@ -1,193 +1,97 @@
---- Makefile.orig	Fri Apr  7 13:48:24 2006
-+++ Makefile	Fri Nov 24 15:51:36 2006
-@@ -5,54 +5,26 @@
- 
+--- Makefile.orig	Sat Nov 25 15:28:35 2006
++++ Makefile	Tue Dec 19 20:41:59 2006
+@@ -6,7 +6,7 @@
  
  # compilation tool and detection of targets/achitecture
--CC			=gcc
- CC_BASEVERSION		=$(shell $(CC) -dumpversion | sed -e 's/\..*//g')
- MACHINE			=$(shell $(CC) -dumpmachine)
- ARCH			=$(shell echo $(MACHINE) | sed -e 's/.*mingw32.*/mingw32/g' -e 's/\-.*//g' -e 's/i.86/x86/g')
- STRIP			=strip --strip-unneeded --remove-section=.comment
+ _E = @
+-CC = gcc
++CC ?= gcc
+ CC_BASEVERSION = $(shell $(CC) -dumpversion | sed -e 's/\..*//g')
  
--# Mac OSX Tiger : powerpc -> ppc
--ifeq ($(MACHINE),powerpc-apple-darwin8) # MacOS-10.4/ppc
--	ARCH		= ppc
--endif
--
--# Mac OSX Tiger : i686 -> macx86
--ifeq ($(MACHINE),i686-apple-darwin8) # MacOS-10.4/x86
--	ARCH		= macx86
--	STRIP		= strip
--endif
--
+ # TYPE = release debug
+@@ -16,25 +16,18 @@
+ 
+ # ARCH = x86 ppc
+ # OS = linux darwin
+-ARCH = $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
++ARCH ?= $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
+ OS = $(shell uname -s | tr A-Z a-z)
+ 
 -# add special architecture based flags
--ifeq ($(ARCH),x86)	# Linux/x86
--	DEST_ARCH	=x86
--	ARCH_CFLAGS	=-march=$(shell echo $(MACHINE) | sed -e 's/\-.*//g')
+-ifeq ($(ARCH),x86_64)
+-	ARCH_CFLAGS = -march=k8 -D__LITTLE_ENDIAN__Q__
 -endif
--ifeq ($(ARCH),mingw32)  # Win32/x86 in MingW environment
--	DEST_ARCH       =x86
--	ARCH_CFLAGS     =-mwin32 -mno-cygwin
+-ifeq ($(ARCH),x86)
+-	ARCH_CFLAGS = -march=i686 -D__LITTLE_ENDIAN__Q__ -Did386
 -endif
--ifeq ($(ARCH),ppc)	# MacOS-X/ppc
--	DEST_ARCH	=ppc
--	ARCH_CFLAGS	=-arch ppc -faltivec -maltivec -mcpu=7450 -mtune=7450 -mpowerpc -mpowerpc-gfxopt
--	ifeq ($(CC_BASEVERSION),4)	# auto vectorize if we're using gcc4.0+
--	    ARCH_CFLAGS	+= -ftree-vectorize
--	endif
+-ifeq ($(ARCH),ppc)
+-	ARCH_CFLAGS = -arch ppc -faltivec -maltivec -mcpu=7450 -mtune=7450 -mpowerpc -mpowerpc-gfxopt -D__BIG_ENDIAN__Q__
 -endif
 -
--
- #======================================================================
- # Output Directories
- #======================================================================
- # location of source relative to Makefile
- SOURCE_DIR			=.
+ # TODO: LIB_PREFIX must be $(OS)-$(ARCH)
+ ifeq ($(OS),linux)
+ 	DEFAULT_TARGET = glx
+ 	OS_GL_CFLAGS = -DWITH_DGA -DWITH_EVDEV -DWITH_VMODE
+ endif
++ifeq ($(OS),freebsd)
++	DEFAULT_TARGET = glx
++	OS_GL_CFLAGS = -DWITH_DGA -DWITH_VMODE -I$(X11BASE)/include
++endif
+ ifeq ($(OS),darwin)
+ 	DEFAULT_TARGET = mac
+ 	OS_GL_CFLAGS = -I/opt/local/include/ -I/Developer/Headers/FlatCarbon -I/sw/include -FOpenGL -FAGL
+@@ -50,19 +43,19 @@
+ # Directories for object files #
+ ################################
  
--BUILD_DEBUG_DIR			=debug-$(ARCH)
--BUILD_RELEASE_DIR		=release-$(ARCH)
-+BUILD_DEBUG_DIR			=debug
-+BUILD_RELEASE_DIR		=release
+-GLX_DIR	= $(TYPE)-$(ARCH)/glx
+-X11_DIR	= $(TYPE)-$(ARCH)/x11
+-SVGA_DIR = $(TYPE)-$(ARCH)/svga
+-MAC_DIR	= $(TYPE)-$(ARCH)/mac
++GLX_DIR	= $(TYPE)/glx
++X11_DIR	= $(TYPE)/x11
++SVGA_DIR = $(TYPE)/svga
++MAC_DIR	= $(TYPE)/mac
+ 
+ ################
+ # Binary files #
+ ################
+ 
+-GLX_TARGET = $(TYPE)-$(ARCH)/ezquake-gl.glx
+-X11_TARGET = $(TYPE)-$(ARCH)/ezquake.x11
+-SVGA_TARGET = $(TYPE)-$(ARCH)/ezquake.svga
+-MAC_TARGET = $(TYPE)-$(ARCH)/ezquake-gl.mac
++GLX_TARGET = $(TYPE)/ezquake-gl.glx
++X11_TARGET = $(TYPE)/ezquake.x11
++SVGA_TARGET = $(TYPE)/ezquake.svga
++MAC_TARGET = $(TYPE)/ezquake-gl.mac
+ 
+ ################
+ 
+@@ -78,9 +71,12 @@
  
  # compiler flags
- PRJ_CFLAGS			=-DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DUSE_TCL_STUBS
--XMMS_CFLAGS			=-DWITH_XMMS `glib-config --cflags`
--BASE_CFLAGS			=-Wall $(PRJ_CFLAGS) $(ARCH_CFLAGS)
-+XMMS_CFLAGS			=-DWITH_XMMS `xmms-config --cflags` `glib-config --cflags`
-+BASE_CFLAGS			=$(CFLAGS) -I$(LOCALBASE)/include `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -DDATADIR='\"$(Q1DIR)\"' -Wall $(PRJ_CFLAGS) $(XMMS_CFLAGS)
-+
+ PRJ_CFLAGS = -DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DJSS_CAM
+-BASE_CFLAGS = -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) -I ./libs
++XMMS_CFLAGS= -DWITH_XMMS `xmms-config --cflags` `glib-config --cflags`
++BASE_CFLAGS := $(CFLAGS) -I$(LOCALBASE)/include `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -DDATADIR='"$(Q1DIR)"' -Wall -funsigned-char $(PRJ_CFLAGS) $(XMMS_CFLAGS)
+ 
 +ifeq ($(USE_OPTIMIZED_CFLAGS),YES)
- BASE_RELEASE_CFLAGS		=-ffast-math -fomit-frame-pointer -fexpensive-optimizations
- ifneq ($(CC_BASEVERSION),4) # if we're not auto-vectorizing then we can unroll the loops (mdfour ahoy)
- 	BASE_RELEASE_CFLAGS  += -funroll-loops
-@@ -69,99 +41,47 @@
- 	BASE_RELEASE_CFLAGS	+= -falign-loops=2 -falign-jumps=2 -falign-functions=2
- endif
- endif
+ RELEASE_CFLAGS = -pipe -O2 -fno-strict-aliasing -ffast-math -fomit-frame-pointer -fexpensive-optimizations -funroll-loops
 +endif
-+
- BASE_DEBUG_CFLAGS		=-g -D_DEBUG
- 
--ifeq ($(ARCH),x86)		# Linux/x86
--	BASE_CFLAGS		+= -Did386 $(XMMS_CFLAGS)
--	CL_DLFLAGS		+= -ldl
--endif
--ifeq ($(ARCH),mingw32)		# Win32/x86 in MingW environment
--	# use define for special assembly routines:
--	BASE_CFLAGS		+= -Did386 -DMINGW32
--endif
--ifeq ($(ARCH),ppc)		# MacOS-X/ppc
--	BASE_CFLAGS		+= -D__BIG_ENDIAN__ -Ddarwin
--endif
--ifeq ($(ARCH),macx86)		# MacOS-X/x86
--	BASE_CFLAGS		+= -Ddarwin
--endif
--ifeq ($(ARCH),powerpc)		# Linux/PPC
--	BASE_CFLAGS		+= -D__BIG_ENDIAN__
--	CL_DLFLAGS		+= -ldl
-+ifeq ($(ARCH),i386)
-+  ifeq ($(USE_X86_ASM),YES)
-+	BASE_CFLAGS		+= -Did386
-+  endif
- endif
- 
- BASE_CFLAGS			+= -funsigned-char -pipe -fno-strict-aliasing
- RELEASE_CFLAGS			=$(BASE_CFLAGS) $(BASE_RELEASE_CFLAGS) -DNDEBUG
- DEBUG_CFLAGS			=$(BASE_CFLAGS) $(BASE_DEBUG_CFLAGS) -Wimplicit
- 
--
- # software and console (svga) builds
- DO_CC				=$(CC) -DWITH_VMODE $(CFLAGS) -o $@ -c $<
--ifeq ($(ARCH),mingw32)		# Win32/x86 in MingW environment
--	DO_CC			+= -D_WINDOWS -mwindows
--endif
- DO_O_CC				=$(CC) -O $(CFLAGS) -o $@ -c $<
- DO_AS				=$(CC) $(CFLAGS) -x assembler-with-cpp
--ifeq ($(ARCH),x86)		# Linux/x86
--	DO_AS			+= -DELF
--endif
-+DO_AS				+= -DELF
- DO_AS				+= -o $@ -c $<
+ DEBUG_CFLAGS = -ggdb
  
  # opengl builds
--BASE_GLCFLAGS			=-DWITH_JPEG -DGLQUAKE
--ifeq ($(ARCH),x86)		# Linux/x86
--	ARCH_GLCFLAGS		=-I/usr/include -DWITH_VMODE -DWITH_DGA -DWITH_EVDEV
--endif
--ifeq ($(ARCH),mingw32)		# Win32/x86 in MingW environment
--	ARCH_GLCFLAGS		=-mwindows -I/opt/xmingw/include/ -I./pcre/ -I./libexpat/
--endif
--ifeq ($(ARCH),ppc)		# MacOS-X/ppc
--	ARCH_GLCFLAGS		= -I/opt/local/include/ -I/Developer/Headers/FlatCarbon -I/sw/include -FOpenGL -FAGL
--endif
--ifeq ($(ARCH),macx86)		# MacOS-X/x86
--	ARCH_GLCFLAGS		= -I/opt/local/include/ -I/Developer/Headers/FlatCarbon -I/sw/include -FOpenGL -FAGL `pcre-config --cflags` -I./libs
--endif
-+BASE_GLCFLAGS			=-DWITH_JPEG -DGLQUAKE -I$(X11BASE)/include
-+ARCH_GLCFLAGS			=-DWITH_VMODE -DWITH_DGA
+@@ -92,9 +88,9 @@
+ CFLAGS = $(BASE_CFLAGS) $(DEBUG_CFLAGS) -D_DEBUG
+ endif
  
- GLCFLAGS			=$(ARCH_GLCFLAGS) $(BASE_GLCFLAGS)
+-LDFLAGS = -lm -lpthread
+-COMMON_LIBS = libs/$(LIB_PREFIX)/libpng.a libs/$(LIB_PREFIX)/libz.a libs/$(LIB_PREFIX)/libpcre.a libs/$(LIB_PREFIX)/libexpat.a libs/$(LIB_PREFIX)/libtcl8.4.a
+-GL_LIBS = libs/$(LIB_PREFIX)/libjpeg.a
++LDFLAGS = -L$(LOCALBASE)/lib -L$(X11BASE)/lib
++COMMON_LIBS = -lm -lpng -lz `pcre-config --libs` `glib-config --libs` -lexpat -ltcl$(TCL_SUFX) $(PTHREAD_LIBS)
++GL_LIBS = -ljpeg
  
- DO_GL_CC			=$(CC) $(CFLAGS) $(GLCFLAGS) -o $@ -c $<
- DO_GL_AS			=$(CC) $(CFLAGS) $(GLCFLAGS) -x assembler-with-cpp
--ifeq ($(ARCH),x86)		# Linux/x86
--	DO_GL_AS		+= -DELF
--endif
-+DO_GL_AS			+= -DELF
- DO_GL_AS			+= -o $@ -c $<
+ include Makefile.list
  
--
- # linker flags
--LDFLAGS				=-lm `glib-config --libs` -lpthread -lexpat `pcre-config --libs` -ltclstub $(CL_DLFLAGS)
-+LDFLAGS				=-L$(LOCALBASE)/lib -lm `glib-config --libs` $(PTHREAD_LIBS) -lexpat `pcre-config --libs` -ltclstub$(TCL_SUFX) $(CL_DLFLAGS)
- SVGALDFLAGS			=-lvga
--X11_LDFLAGS			=-L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm
--ifeq ($(ARCH),mingw32)		# Win32/x86 in MingW environment
--	LDFLAGS			+= -lws2_32 -luser32 -lwinmm
--endif
--ifeq ($(ARCH),ppc)		# MacOS-X/ppc
--	LDFLAGS			=`pcre-config --libs` -lexpat -framework OpenGL -framework AGL -framework DrawSprocket -framework Carbon -framework ApplicationServices -framework IOKit
--endif
--ifeq ($(ARCH),macx86)		# MacOS-X/x86
--	LDFLAGS			=`pcre-config --libs` -lexpat -framework OpenGL -framework AGL -framework DrawSprocket -framework Carbon -framework ApplicationServices -framework IOKit
--endif
-+X11_LDFLAGS			=-L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm
- 
- # opengl build
--BASE_GL_LDFLAGS			=-L/usr/X11R6/lib -lGL -lm -lX11 -lXext
-+BASE_GL_LDFLAGS			=-L$(X11BASE)/lib -lGL -lm -lX11 -lXext
- ARCH_GL_LDFLAGS			=
--ifeq ($(ARCH),x86)		# Linux/x86
--	ARCH_GL_LDFLAGS		=-lXxf86dga -lXxf86vm
--endif
--ifeq ($(ARCH),mingw32)  # Win32/x86 in MingW environment
--	BASE_GL_LDFLAGS          =
--	ARCH_GL_LDFLAGS          =-mwindows -lopengl32 -ldxguid -lgdi32
--endif
--ifeq ($(ARCH),ppc)		# MacOS-X/ppc
--	BASE_GL_LDFLAGS		=
--endif
--ifeq ($(ARCH),macx86)		# MacOS-X/x86
--	BASE_GL_LDFLAGS		=
--endif
-+ARCH_GL_LDFLAGS			=-lXxf86dga -lXxf86vm
- GL_LDFLAGS			=$(ARCH_GL_LDFLAGS) $(BASE_GL_LDFLAGS)
- 
- 
-@@ -234,7 +154,6 @@
-     $(BUILDDIR)/build/snd_mix.o \
-     $(BUILDDIR)/build/snd_linux.o \
-     $(BUILDDIR)/build/snd_oss.o \
--    $(BUILDDIR)/build/snd_alsa.o \
- \
-     $(BUILDDIR)/build/cl_input.o \
-     $(BUILDDIR)/build/keys.o \
-@@ -855,7 +774,6 @@
-     $(BUILDDIR)/build-gl/snd_mix.o \
-     $(BUILDDIR)/build-gl/snd_linux.o \
-     $(BUILDDIR)/build-gl/snd_oss.o \
--    $(BUILDDIR)/build-gl/snd_alsa.o \
- \
-     $(BUILDDIR)/build-gl/cl_input.o \
-     $(BUILDDIR)/build-gl/keys.o \

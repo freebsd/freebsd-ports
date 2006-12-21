@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezquake
-PORTVERSION=	1517
+PORTVERSION=	1754
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
@@ -20,12 +20,12 @@ COMMENT=	Modern QuakeWorld client
 
 EXTRACT_DEPENDS=p7zip:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		png.5:${PORTSDIR}/graphics/png \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_GCC=	3.2+
+USE_DOS2UNIX=	*.[ch] Makefile*
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_TCL=	yes
 USE_TCL_BUILD=	yes
@@ -37,8 +37,7 @@ NO_WRKSUBDIR=	yes
 
 OPTIONS=	GLX "Build GLX client" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		X11 "Build X11 client" on \
-		X86_ASM "Enable x86 assembly code" on
+		X11 "Build X11 client" on
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
@@ -49,8 +48,9 @@ IGNORE=		needs at least one interface (GLX or X11)
 .endif
 
 .if !defined(WITHOUT_GLX)
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
-ALL_TARGET+=	glx_release
+ALL_TARGET+=	glx
 PLIST_SUB+=	GLX=""
 .else
 PLIST_SUB+=	GLX="@comment "
@@ -58,19 +58,17 @@ PLIST_SUB+=	GLX="@comment "
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-ALL_TARGET+=	x11_release
+ALL_TARGET+=	x11
 PLIST_SUB+=	X11=""
 .else
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.for f in OPTIMIZED_CFLAGS X86_ASM
-.   if !defined(WITHOUT_${f})
-MAKE_ENV+=	USE_${f}=YES
-.   else
-MAKE_ENV+=	USE_${f}=NO
-.   endif
-.endfor
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=YES
+.else
+MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=NO
+.endif
 
 post-extract:
 	@cd ${WRKDIR} && 7z x -y ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.7z \
