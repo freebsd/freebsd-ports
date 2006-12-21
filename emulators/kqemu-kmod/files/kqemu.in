@@ -12,8 +12,12 @@
 . /etc/rc.subr
 
 name="kqemu"
+rcvar=${name}_enable
+
 load_rc_config $name
-rcvar=`set_rcvar`
+
+: ${kqemu_enable="NO"}
+
 start_cmd=kqemu_start
 stop_cmd=kqemu_stop
 
