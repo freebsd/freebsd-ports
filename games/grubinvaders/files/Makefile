@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-CFLAGS+=-fno-builtin -nostdinc -I. -Wall -Werror
+CFLAGS+=-fno-builtin -nostdinc -I. -Wall
 LDFLAGS+=-nostdlib -Wl,-N -Wl,-Ttext -Wl,100000
 
 PROG=	invaders
