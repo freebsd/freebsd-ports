@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.16
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook for the GNOME 2 desktop
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
-USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gconf-source=${GCONF_CONFIG_SOURCE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
