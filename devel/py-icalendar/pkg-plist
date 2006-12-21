@@ -30,4 +30,5 @@
 %%PYTHON_SITELIBDIR%%/icalendar/util.pyc
 %%PYTHON_SITELIBDIR%%/icalendar/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/icalendar
+@dirrmtry %%PYTHON_SITELIBDIR%%/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
