@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3f851b22-89fb-11db-a937-003048116330">
+    <topic>proftpd -- remote code execution vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>proftpd</name>
+	<name>proftpd-mysql</name>
+	<range><lt>1.3.0_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The proftpd development team reports that several
+	  remote buffer overflows had been found in the
+	  proftpd server.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5815</cvename>
+      <cvename>CVE-2006-6170</cvename>
+    </references>
+    <dates>
+      <discovery>2006-11-10</discovery>
+      <entry>2006-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="11a84092-8f9f-11db-ab33-000e0c2e438a">
     <topic>gzip -- multiple vulnerabilities</topic>
     <affects>
