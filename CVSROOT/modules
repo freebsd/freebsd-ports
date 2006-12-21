@@ -3664,7 +3664,6 @@ gnumeric	ports/math/gnumeric
 gnump3d		ports/audio/gnump3d
 gnunet		ports/net-p2p/gnunet
 gnupg		ports/security/gnupg
-gnupg-devel	ports/security/gnupg-devel
 gnupg-idea	ports/security/gnupg-idea
 gnuplot		ports/math/gnuplot
 gnuplot+	ports/math/gnuplot+
