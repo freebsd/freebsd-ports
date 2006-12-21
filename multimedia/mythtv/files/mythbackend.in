@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: mythbackend
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+# Define mythbackend_enable in one of these places:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+mythbackend_enable=${mythbackend_enable-"NO"}
+PATH=${PATH}:%%PREFIX%%/bin
+
+. %%RC_SUBR%%
+
+name="mythbackend"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/mythbackend &"
+
+load_rc_config $name
+
+start_cmd="echo \"Starting ${name}.\"; ${command}"
+
+run_rc_command "$1"
