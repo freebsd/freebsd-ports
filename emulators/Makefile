@@ -119,6 +119,7 @@
     SUBDIR += tiemu2
     SUBDIR += tilem
     SUBDIR += tkhfs
+    SUBDIR += tme
     SUBDIR += tuxnes
     SUBDIR += twin
     SUBDIR += uae
