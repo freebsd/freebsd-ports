@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	e93
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.4
 CATEGORIES=	editors tcl82 tk82
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	editors
-DISTNAME=	${PORTNAME}-1.3r2X
+MASTER_SITES=	ftp://ftp.e93.org/pub/
+DISTNAME=	${PORTNAME}-1.3r4X
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,40 +19,15 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/e93 ${PREFIX}/lib/e93lib/images \
-		${PREFIX}/lib/e93lib/highlightschemes \
-		${PREFIX}/lib/e93lib/modules \
-		${PREFIX}/lib/e93lib/syntaxmaps
-	(cd ${WRKSRC}; \
-	 ${INSTALL_PROGRAM} e93 ${PREFIX}/bin; \
-	 ${INSTALL_SCRIPT} e93r ${PREFIX}/bin; \
-	 ${INSTALL_DATA} LICENSE.TXT ${PREFIX}/share/doc/e93; \
-	 ${INSTALL_DATA} README.e93 ${PREFIX}/share/doc/e93; \
-	 ${INSTALL_DATA} README.regex ${PREFIX}/share/doc/e93; \
-	 ${INSTALL_DATA} README.syntaxmaps ${PREFIX}/share/doc/e93; \
-	)
-	(cd ${WRKSRC}/e93lib; \
-	 ${INSTALL_DATA} e93rc.tcl ${PREFIX}/lib/e93lib; \
-	 ${INSTALL_DATA} images/about.ppm ${PREFIX}/lib/e93lib/images; \
-	 ${INSTALL_DATA} highlightschemes/schemes.tcl ${PREFIX}/lib/e93lib/highlightschemes; \
-	 ${INSTALL_DATA} modules/c.tcl ${PREFIX}/lib/e93lib/modules; \
-	 ${INSTALL_DATA} syntaxmaps/unknown.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	 ${INSTALL_DATA} syntaxmaps/asm.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	 ${INSTALL_DATA} syntaxmaps/html.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	 ${INSTALL_DATA} syntaxmaps/java.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	 ${INSTALL_DATA} syntaxmaps/tcl.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	 ${INSTALL_DATA} syntaxmaps/vhdl.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	 ${INSTALL_DATA} syntaxmaps/text.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	 ${INSTALL_DATA} syntaxmaps/c.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
-	)
+	${INSTALL_PROGRAM} ${WRKSRC}/e93 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/e93r ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/lib/e93lib
+	${CP} -R ${WRKSRC}/e93lib/* ${PREFIX}/lib/e93lib
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
