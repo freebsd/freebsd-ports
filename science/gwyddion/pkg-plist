@@ -16,17 +16,20 @@ lib/gwyddion/modules/file/asciiexport.so
 lib/gwyddion/modules/file/bcrfile.so
 lib/gwyddion/modules/file/burleigh.so
 lib/gwyddion/modules/file/createc.so
+lib/gwyddion/modules/file/dmefile.so
 lib/gwyddion/modules/file/ezdfile.so
 lib/gwyddion/modules/file/ecsfile.so
 lib/gwyddion/modules/file/gwyfile.so
 lib/gwyddion/modules/file/hdf4file.so
 lib/gwyddion/modules/file/hitachi-afm.so
+lib/gwyddion/modules/file/jeol.so
 lib/gwyddion/modules/file/jpkscan.so
 lib/gwyddion/modules/file/metropro.so
 lib/gwyddion/modules/file/mifile.so
 lib/gwyddion/modules/file/nanoscope.so
 lib/gwyddion/modules/file/nanonis.so
 lib/gwyddion/modules/file/nanotop.so
+lib/gwyddion/modules/file/netcdf.so
 lib/gwyddion/modules/file/nt-mdt.so
 lib/gwyddion/modules/file/omicron.so
 lib/gwyddion/modules/file/pixmap.so
@@ -61,8 +64,10 @@ lib/gwyddion/modules/process/angle_dist.so
 lib/gwyddion/modules/process/arithmetic.so
 lib/gwyddion/modules/process/basicops.so
 lib/gwyddion/modules/process/calibrate.so
+lib/gwyddion/modules/process/convolution_filter.so
 lib/gwyddion/modules/process/crosscor.so
 lib/gwyddion/modules/process/cwt.so
+lib/gwyddion/modules/process/drift.so
 lib/gwyddion/modules/process/dwt.so
 lib/gwyddion/modules/process/dwtanisotropy.so
 lib/gwyddion/modules/process/edge.so
@@ -108,6 +113,7 @@ lib/gwyddion/modules/tool/filter.so
 lib/gwyddion/modules/tool/grainremover.so
 lib/gwyddion/modules/tool/icolorange.so
 lib/gwyddion/modules/tool/level3.so
+lib/gwyddion/modules/tool/linestats.so
 lib/gwyddion/modules/tool/maskedit.so
 lib/gwyddion/modules/tool/polynom.so
 lib/gwyddion/modules/tool/profile.so
@@ -214,7 +220,7 @@ include/gwyddion/libgwydgets/gwyruler.h
 include/gwyddion/libgwydgets/gwyradiobuttons.h
 include/gwyddion/libgwydgets/gwyscitext.h
 include/gwyddion/libgwydgets/gwyselectiongraph1darea.h
-include/gwyddion/libgwydgets/gwyselectiongrapharea.h  
+include/gwyddion/libgwydgets/gwyselectiongrapharea.h
 include/gwyddion/libgwydgets/gwyselectiongraphline.h
 include/gwyddion/libgwydgets/gwyselectiongraphpoint.h
 include/gwyddion/libgwydgets/gwyselectiongraphzoom.h
@@ -299,6 +305,7 @@ share/pixmaps/gwyddion.png
 %%DATADIR%%/pixmaps/gwy_graph_halfgauss-24.png
 %%DATADIR%%/pixmaps/gwy_graph_measure-24.png
 %%DATADIR%%/pixmaps/gwy_graph_palette-24.png
+%%DATADIR%%/pixmaps/gwy_graph_vertical-24.png
 %%DATADIR%%/pixmaps/gwy_gwyddion-32.png
 %%DATADIR%%/pixmaps/gwy_graph_pointer-24.png
 %%DATADIR%%/pixmaps/gwy_graph_ruler-24.png
