@@ -5634,6 +5634,7 @@ kmerlin		ports/net-im/kmerlin
 kmess		ports/net-im/kmess
 kmilo		ports/sysutils/kmilo
 kmldonkey	ports/net-p2p/kmldonkey
+kmobiletools	ports/comms/kmobiletools
 kmovisto	ports/science/kmovisto
 kmp		ports/audio/kmp
 kmplayer	ports/multimedia/kmplayer
