@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -102,6 +102,9 @@ pre-configure:
 		${WRKSRC}/khelpcenter/searchhandlers/khc_htdig.pl.in \
 		${WRKSRC}/khelpcenter/searchhandlers/khc_docbookdig.pl.in \
 		${WRKSRC}/khelpcenter/searchhandlers/khc_htsearch.pl
+	${REINPLACE_CMD} \
+		-e 's|-s|-u|g' \
+		${WRKSRC}/kioslave/media/services/media_safelyremove.desktop
 		
 
 post-configure:
