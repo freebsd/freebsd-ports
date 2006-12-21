@@ -1,0 +1,9 @@
+Papi, the Python Accessibility Programming Interface, is a Python
+wrapper around the GNOME ATK toolkit.
+It allows a developer to make python objects and applications
+easily accessibility aware without the need to install PyGTK and
+the GNOME accessibility components. Instead it only depends on ATK
+and - on the developers behalf - the ATK/AT-SPI bridge shipped with
+AT-SPI.
+
+WWW: http://ocemp.sourceforge.net/papi.html
