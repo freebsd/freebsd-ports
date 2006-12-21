@@ -8085,6 +8085,7 @@ openwince-include	ports/devel/openwince-include
 openxmldir	ports/www/openxmldir
 openzz		ports/devel/openzz
 opera		ports/www/opera
+opera-linuxplugins	ports/www/opera-linuxplugins
 ophoto		ports/graphics/ophoto
 opieprint	ports/security/opieprint
 opmixer		ports/audio/opmixer
