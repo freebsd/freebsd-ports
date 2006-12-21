@@ -1,11 +1,11 @@
---- contrib/mod_sql_mysql.c.orig	Sun Nov  2 00:30:13 2003
-+++ contrib/mod_sql_mysql.c	Sun Nov  2 00:30:23 2003
-@@ -134,7 +134,7 @@
- 
- #define _MYSQL_PORT "3306"
- 
--#include <mysql.h>
-+#include <mysql/mysql.h>
+--- contrib/mod_sql_mysql.c.orig	Tue Dec 12 19:52:15 2006
++++ contrib/mod_sql_mysql.c	Tue Dec 12 20:02:56 2006
+@@ -135,7 +135,7 @@
  #include "conf.h"
  #include "../contrib/mod_sql.h"
  
+-#include <mysql.h>
++#include <mysql/mysql.h>
+ 
+ /* 
+  * timer-handling code adds the need for a couple of forward declarations
