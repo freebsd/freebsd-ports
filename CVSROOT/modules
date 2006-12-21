@@ -7606,6 +7606,7 @@ nd		ports/www/nd
 ndiff		ports/math/ndiff
 ndir		ports/sysutils/ndir
 ndisc6		ports/net/ndisc6
+ndpmon		ports/net-mgmt/ndpmon
 nds-aspell	ports/textproc/nds-aspell
 ne		ports/editors/ne
 neXtaw		ports/x11-toolkits/neXtaw
