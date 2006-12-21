@@ -31,6 +31,9 @@ MAN1=		fileschanged.1
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README fileschanged.lsm
 PLIST_FILES=	bin/fileschanged
 
+post-patch:
+	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/src/Makefile.in
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
