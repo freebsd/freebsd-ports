@@ -12166,6 +12166,7 @@ py-ice		ports/devel/py-ice
 py-iconv	ports/converters/py-iconv
 py-iconvcodec	ports/converters/py-iconvcodec
 py-id3		ports/audio/py-id3
+py-igraph	ports/math/py-igraph
 py-imaging	ports/graphics/py-imaging
 py-imdbpy	ports/www/py-imdbpy
 py-impacket	ports/net/py-impacket
