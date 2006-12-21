@@ -7,7 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gpgme
 MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	A library to make access to GnuPG easier
 
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
 		gpgsm:${PORTSDIR}/security/gnupg-devel
 LIB_DEPENDS=	gpg-error.3:${PORTSDIR}/security/libgpg-error
 

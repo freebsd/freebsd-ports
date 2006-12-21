@@ -8,14 +8,14 @@
 
 PORTNAME=	nofgpg
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	http://www.cgabriel.org/download/nofgpg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	No One Fears GPG
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
 		${PYTHON_SITELIBDIR}/gtk-1.2/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome
 
 USE_PYTHON=	yes

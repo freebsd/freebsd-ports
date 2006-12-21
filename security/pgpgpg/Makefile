@@ -7,7 +7,7 @@
 
 PORTNAME=	pgpgpg
 PORTVERSION=	0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		ftp://ftp.gnupg.org/gcrypt/historic/ \
@@ -21,8 +21,8 @@ COMMENT=	Wrapper for GnuPG to simulate PGP 2.6.x
 # if it can't find gpg.  RUN_DEPENDS is necessary to make the package
 # dependency register correctly.  Hence the apparent redundancy.
 
-BUILD_DEPENDS=	${PREFIX}/bin/gpg:${PORTSDIR}/security/gnupg
-RUN_DEPENDS=	${PREFIX}/bin/gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	${PREFIX}/bin/gpg:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS=	${PREFIX}/bin/gpg:${PORTSDIR}/security/gnupg1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gpg-path=${PREFIX}/bin/gpg

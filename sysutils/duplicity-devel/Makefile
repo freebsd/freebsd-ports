@@ -7,6 +7,7 @@
 
 PORTNAME=	duplicity
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Untrusted backup using rsync algorithm
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	pwman
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Console password management application based on gpg(me)
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
 
 GNU_CONFIGURE=	yes
 

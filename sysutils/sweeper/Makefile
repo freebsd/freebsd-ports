@@ -7,6 +7,7 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -17,7 +18,7 @@ COMMENT=	Utilities for the KDE integrated X11 desktop
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
 
 CONFLICTS=	kgpg-[0-9]* superkaramba-[0-9]*
 
