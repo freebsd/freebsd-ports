@@ -7,7 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	0.3.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -35,7 +35,7 @@ WITH_GPGSM=	yes
 .endif
 
 .if defined(WITH_GPGSM)
-BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/gnupg-devel
+BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/gnupg
 .else
 CONFIGURE_ARGS+=	--without-gpgsm
 .endif

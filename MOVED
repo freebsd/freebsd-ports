@@ -2620,3 +2620,4 @@ audio/ac3dec||2006-12-14|Dead outside FreeBSD and replaced by liba52
 net-p2p/mldonkey-sancho||2006-12-14|Removed due to developer's request
 net/gmdns||2006-12-14|Dead, unmaintain and nothing use it
 devel/stlport-icc||2006-12-20|Has expired: does not work with stlport 4.6.2
+security/gnupg-devel|security/gnupg|2006-12-21|gnupg-devel has been released as Gnupg 2.0
