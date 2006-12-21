@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.13
+lib/libmunger.so.14
 %%DKNS_BIN%%
 %%DATADIR%%/echo.munger
 %%DATADIR%%/msh.munger
@@ -32,4 +32,5 @@ lib/libmunger.so.13
 %%DATADIR%%/tk.munger
 %%DATADIR%%/expander.fcgi
 %%DATADIR%%/cal.munger
+%%DATADIR%%/xml2buffer.munger
 @dirrm %%DATADIR%%
