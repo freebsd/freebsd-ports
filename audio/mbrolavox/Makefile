@@ -14,8 +14,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
 
-BROKEN=		Size mismatch
-
 USE_ZIP=	yes
 NO_BUILD=	yes
 RESTRICTED=	No commercial nor military use, no sale
@@ -37,7 +35,8 @@ ALLOPTIONS!=	${CUT} -f 1 -d '|' < ${VOICESCONF}
 .for ii in ${ALLOPTIONS}
 FILE_${ii}!=	${AWK} -F'|' '$$1 == "${ii}" { print $$2 }' < ${VOICESCONF}
 .   if defined(WITH_${ii})
-MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/:${ii} \
+MASTER_SITES+=	http://www.tcts.fpms.ac.be/synthesis/mbrola/dba/${ii}/:${ii} \
+		http://www.festvox.org/mbrola/dba/${ii}/:${ii} \
 		http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/:${ii} \
 		ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/:${ii} \
 		ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/:${ii}
