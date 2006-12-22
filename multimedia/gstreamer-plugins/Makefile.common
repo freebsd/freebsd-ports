@@ -12,8 +12,10 @@ BASE_GST_ALL_PLUGINS= \
 		vorbis
 # bad
 BAD_GST_ALL_PLUGINS+= \
+		alsaspdif \
 		amrwb \
 		bz2 \
+		cdaudio \
 		directfb \
 		divx \
 		dts \
@@ -21,15 +23,18 @@ BAD_GST_ALL_PLUGINS+= \
 		faad \
 		gsm \
 		ivorbis \
+		jack \
 		libmms \
+		mpeg2enc \
 		musepack \
 		musicbrainz \
 		neon \
 		sdl \
 		soundtouch \
+		spc \
 		swfdec \
-		xvid \
-		wavpack
+		wavpack \
+		xvid
 #		throra
 
 # good
