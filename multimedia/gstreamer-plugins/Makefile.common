@@ -215,6 +215,9 @@ gst_hal_LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 gst_hal_PLIST_FILES=	${GST_LIB_DIR}/libgsthalelements.a \
 		${GST_LIB_DIR}/libgsthalelements.la \
 		${GST_LIB_DIR}/libgsthalelements.so
+# jack
+gst_jack_LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+gst_jack_DIST=	bad
 
 # jpeg
 gst_jpeg_LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
