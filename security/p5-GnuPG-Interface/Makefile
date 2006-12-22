@@ -7,7 +7,7 @@
 
 PORTNAME=	GnuPG-Interface
 PORTVERSION=	0.34
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnupg-interface
@@ -18,7 +18,7 @@ COMMENT=	Perl module for interfacing with GnuPG
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 
 PERL_CONFIGURE=	yes
 

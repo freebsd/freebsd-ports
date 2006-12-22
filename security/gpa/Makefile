@@ -7,7 +7,7 @@
 
 PORTNAME=	gpa
 PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/241/
 
@@ -15,8 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical frontend for the GNU Privacy Guard
 
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
+BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

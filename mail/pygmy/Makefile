@@ -7,7 +7,7 @@
 
 PORTNAME=	pygmy
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail python gnome
 MASTER_SITES=	http://pygmy.sourceforge.net/
 
@@ -16,7 +16,7 @@ COMMENT=	A tiny GNOME mail client written in the Python programming language
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
-		gpg:${PORTSDIR}/security/gnupg1
+		gpgv:${PORTSDIR}/security/gnupg1
 
 USE_PYTHON=	yes
 

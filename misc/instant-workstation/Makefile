@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-workstation
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	acroread7:${PORTSDIR}/print/acroread7 \
 		grip:${PORTSDIR}/audio/grip \
 		gimp:${PORTSDIR}/graphics/gimp1 \
 		gv:${PORTSDIR}/print/gv \
-		gpg:${PORTSDIR}/security/gnupg1 \
+		gpgv:${PORTSDIR}/security/gnupg1 \
 		ispell:${PORTSDIR}/textproc/ispell \
 		startkde:${PORTSDIR}/x11/kde3 \
 		mutt:${PORTSDIR}/mail/mutt \
