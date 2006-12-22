@@ -99,7 +99,8 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYNUMERIC			- Dependency line for the numeric extension. Py-Numeric-17
 #					  is the last release that works with Python versions older
 #					  than 1.6.
-# PYNUMPY			- Dependency line for the new numeric extension.#				  py-numpy, Py-Numeric is deprecated.
+# PYNUMPY			- Dependency line for the new numeric extension.
+#                     py-numpy, Py-Numeric is deprecated.
 #
 # PYXML				- Dependency line for the XML extension. As of Python-2.0,
 #					  this extension is in the base distribution.
@@ -111,6 +112,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  this module is in the base distribution.
 #
 # PYHASHLIB			- Dependency line for the hashlib package. As of Python-2.5,
+#					  this module is in the base distribution.
+#
+# PYWSGIREF			- Dependency line for the wsgiref package. As of Python-2.5,
 #					  this module is in the base distribution.
 #
 # USE_PYTHON_PREFIX	- Says that the port installs in ${PYTHONBASE}.
@@ -448,6 +452,12 @@ PYCTYPES=		${PYTHON_LIBDIR}/ctypes/__init__py:${PYTHON_PORTSDIR}
 PYHASHLIB=		${PYTHON_SITELIBDIR}/hashlib.py:${PORTSDIR}/security/py-hashlib
 .else
 PYHASHLIB=		${PYTHON_LIBDIR}/hashlib.py:${PYTHON_PORTSDIR}
+.endif
+
+.if defined(PYTHON_REL) && ${PYTHON_REL} < 250
+PYWSGIREF=		${PYTHON_SITELIBDIR}/wsgiref/__init__.py:${PORTSDIR}/www/py-wsgiref
+.else
+PYWSGIREF=		${PYTHON_LIBDIR}/wsgiref/__init__.py:${PYTHON_PORTSIDR}
 .endif
 
 # dependencies
