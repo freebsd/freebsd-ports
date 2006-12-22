@@ -11022,6 +11022,7 @@ pear-Net_CDDB	ports/net/pear-Net_CDDB
 pear-Net_CheckIP	ports/net/pear-Net_CheckIP
 pear-Net_Cyrus	ports/mail/pear-Net_Cyrus
 pear-Net_DIME	ports/net/pear-Net_DIME
+pear-Net_DNS	ports/dns/pear-Net_DNS
 pear-Net_DNSBL	ports/net/pear-Net_DNSBL
 pear-Net_Dict	ports/net/pear-Net_Dict
 pear-Net_FTP	ports/ftp/pear-Net_FTP
