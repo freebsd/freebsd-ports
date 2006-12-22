@@ -1,0 +1,21 @@
+linSmith is a Smith Charting program, mainly designed for educational use.
+As such, there is an emphasis on capabilities that improve the 'showing the
+effect of'-style of operation.
+
+It's main features are:
+   * Definition of multiple load impedances (at different frequencies)
+   * Addition of discrete (L, C, parallel and series LC, and transformer) and
+     line components (open and closed stubs, line segments)
+   * Connection in series and parallel
+   * Easy experimentation with values using scrollbars
+   * A 'virtual' component switches from impedance to admittance to help
+     explaining (or understanding) parallel components
+   * The chart works in real impedances (not normalized ones)
+   * Direct view of the result on the screen
+   * Ability to generate publication quality Postscript output
+   * A 'log' file with textual results at each intermediate step
+   * Load and circuit configuration is stored separately, permitting several
+     solutions without re-defining the other (this may actually change to
+     single files - I'm not quite convinced here) 
+
+WWW: http://linsmith.sourceforge.net/

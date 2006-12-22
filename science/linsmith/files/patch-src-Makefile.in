@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Nov  7 03:27:23 2006
++++ src/Makefile.in	Fri Dec 22 11:33:11 2006
+@@ -52,7 +52,7 @@
+ 	element.$(OBJEXT) remote.$(OBJEXT) load.$(OBJEXT) \
+ 	load_rx.$(OBJEXT) load_nb.$(OBJEXT) log.$(OBJEXT) \
+ 	support.$(OBJEXT) printer.$(OBJEXT) interface.$(OBJEXT) \
+-	callbacks.$(OBJEXT)
++	callbacks.$(OBJEXT) carg.$(OBJEXT)
+ linsmith_OBJECTS = $(am_linsmith_OBJECTS)
+ am__DEPENDENCIES_1 =
+ linsmith_DEPENDENCIES = $(am__DEPENDENCIES_1)

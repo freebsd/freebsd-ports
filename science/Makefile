@@ -59,6 +59,7 @@
     SUBDIR += libghemical
     SUBDIR += libsvm
     SUBDIR += libsvm-python
+    SUBDIR += linsmith
     SUBDIR += mayavi
     SUBDIR += mbdyn
     SUBDIR += mcstas
