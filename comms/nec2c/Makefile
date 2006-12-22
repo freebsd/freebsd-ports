@@ -3,13 +3,16 @@
 # Whom:			db
 #
 # $FreeBSD$
-
+# http://5b4az.chronos.org.uk/pkg/nec2/nec2c/nec2c-0.6.tar.gz
+# http://ftp-mirror.internap.com/pub/FreeBSD/distfiles/nec2c/nec2c.tar.gz
+# http://ftp.cerias.purdue.edu/pub/os/FreeBSD/distfiles/nec2c/nec2c.tar.gz
+#
 PORTNAME=	nec2c
 PORTVERSION=	.9
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.si-list.org/NEC_Archives/
+MASTER_SITES=	http://ftp-mirror.internap.com/pub/FreeBSD/distfiles/nec2c/ \
+		http://ftp.cerias.purdue.edu/pub/os/FreeBSD/distfiles/nec2c/
 DISTNAME=	nec2c
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	db@db.net
 COMMENT=	Used to calculate antenna patterns useful to ham radio
