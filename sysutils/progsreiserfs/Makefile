@@ -19,7 +19,7 @@ USE_GETOPT_LONG=yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug --disable-Werror
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
