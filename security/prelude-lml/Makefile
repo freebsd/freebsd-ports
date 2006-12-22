@@ -6,6 +6,7 @@
 
 PORTNAME=	prelude-lml
 PORTVERSION=	0.9.8.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -34,11 +35,11 @@ CONFIGURE_ARGS+=	--disable-fam
 .endif
 
 post-install:
-	@if [ -f ${PREFIX}/etc/prelude-lml/prelude-lml.conf ]; then \
+	@if [ ! -f ${PREFIX}/etc/prelude-lml/prelude-lml.conf ]; then \
 	   ${CP} -p ${PREFIX}/etc/prelude-lml/prelude-lml.conf-dist \
 	      ${PREFIX}/etc/prelude-lml/prelude-lml.conf ; \
 	fi
-	@if [ -f ${PREFIX}/etc/prelude-lml/plugins.rules ]; then \
+	@if [ ! -f ${PREFIX}/etc/prelude-lml/plugins.rules ]; then \
 	   ${CP} -p ${PREFIX}/etc/prelude-lml/plugins.rules-dist \
 	      ${PREFIX}/etc/prelude-lml/plugins.rules ; \
 	fi
