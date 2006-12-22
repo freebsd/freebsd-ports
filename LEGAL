@@ -560,6 +560,7 @@ svm_light.tar.gz	science/svmlight	The software must not be further
 swing1_1_1*		java/jfc		Do not distribute without
 						value-added application
 systemc-2*.tgz		cad/systemc		License agreement required.
+scv-1.0p2-sysc*		cad/scv		License agreement required.
 tcetest_*		games/linux-enemyterritory-tce Redistribution limited
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed
 						with any commercial product
