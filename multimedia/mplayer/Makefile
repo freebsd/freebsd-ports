@@ -187,6 +187,7 @@ TOOLFILES=	calcbpp.pl countquant.pl dvd2divxscript.pl \
 USE_GCC=	3.4+
 CFLAGS+=	-Duint_fast64_t=uint64_t
 CFLAGS+=	-Droundf=rintf
+CFLAGS+=	-Dllrint=rint
 .if ${ARCH} == "i386"
 CFLAGS+=	-DPRId64=\\\"lld\\\"
 CFLAGS+=	-DPRIu64=\\\"llu\\\"
