@@ -13418,6 +13418,7 @@ scsh-install-lib	ports/devel/scsh-install-lib
 scud		ports/comms/scud
 scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
+scv		ports/cad/scv
 scwm-icons	ports/graphics/scwm-icons
 scx		ports/x11-toolkits/scx
 sdb		ports/games/sdb
