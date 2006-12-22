@@ -8,7 +8,7 @@
 
 PORTNAME=	axelq
 PORTVERSION=	0.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://zephilia.dyndns.org/tsuki_yomi/axelq/releases/
 
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A queue manager for the download accelerator axel
 
 RUN_DEPENDS=	axel:${PORTSDIR}/ftp/axel \
-		bash:${PORTSDIR}/shells/bash2
+		bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 
