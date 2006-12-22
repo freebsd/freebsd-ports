@@ -7,6 +7,7 @@
 
 PORTNAME=	etoile
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -43,9 +44,8 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	RSSKit:www/etoile-rsskit \
 	EtoileExtensions:deskutils/etoile-etoileextensionskit \
 	PopplerKit:graphics/popplerkit \
-
-#	OgreKit:textproc/etoile-ogrekit \
-#	LuceneKit:textproc/etoile-lucenekit \
+	OgreKit:textproc/etoile-ogrekit \
+	LuceneKit:textproc/etoile-lucenekit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -69,7 +69,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Azalea:x11-wm/etoile-azalea \
 	EtoileMenuServer:deskutils/etoile-menuserver \
 	Vindaloo:graphics/vindaloo \
-
-#	Typewriter:editors/etoile-typewriter \
+	Typewriter:editors/etoile-typewriter \
 
 .include <bsd.port.mk>
