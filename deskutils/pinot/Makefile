@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	0.64
-PORTREVISION=	1
+PORTVERSION=	0.65
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #		http://www.chez.com/colinf/pinot/	\
@@ -25,21 +24,19 @@ LIB_DEPENDS=	xapian.13:${PORTSDIR}/databases/xapian-core	\
 		boost_thread.3:${PORTSDIR}/devel/boost		\
 		gmime-2.0:${PORTSDIR}/mail/gmime2		\
 		tag.5:${PORTSDIR}/audio/taglib			\
-		curl.3:${PORTSDIR}/ftp/curl
+		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		antiword:${PORTSDIR}/textproc/antiword			\
 		pdftotext:${PORTSDIR}/graphics/xpdf			\
 		unzip:${PORTSDIR}/archivers/unzip			\
 		unrtf:${PORTSDIR}/textproc/unrtf
 
-# pinot-0.64 is not ready for gsoap_2.7.8c
 .if !defined(WITHOUT_SOAP)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libgsoap.a:${PORTSDIR}/devel/gsoap
 CONFIGURE_ARGS+=	--with-soap=yes
 .endif
 
 GNU_CONFIGURE=	yes
-#USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-http=curl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
@@ -53,6 +50,8 @@ INSTALLS_ICONS=	yes
 
 MAN1=		pinot-collect.1 pinot-dbus-daemon.1 pinot-index.1	\
 		pinot-search.1 pinot.1
+
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
 LM2FIX=		textcat_conf.txt textcat3_conf.txt
 SHR2FIX=	Search/pinot-search.1 README
@@ -72,5 +71,9 @@ post-install:
 		${PREFIX}/lib/deskbar-applet/handlers
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py	\
 		${PREFIX}/lib/deskbar-applet/handlers
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
