@@ -1,0 +1,19 @@
+Digital modem program.
+Supports the following digital modes: 
+ 
+CW,
+DominoEX 4  DominoEX 5  DominoEX 8  DominoEX 11  DominoEX 16  DominoEX 22,
+Feld-Hell  FSK-Hell  FSK-Hell 105,
+MFSK-8  MFSK-16  MFSK-16 pix ,
+PSK-31  QPSK-31  PSK-63  QPSK-63  PSK-125  QPSK-125,
+OLIVIA  various tones and bandwidth,
+RTTY  various Baud Rates, Shifts, Nbr of data bits, etc.,
+Throb-1  Throb-2  Throb-4  ThrobX-1  ThrobX-2  ThrobX-4,
+WWV  Receive only - calibrate your sound card to WWV and
+Freq Analysis  Receive only - be ready for the (next)
+ARRL FMT (freq meas test).
+
+WWW: http://www.w1hkj.com/Fldigi.html
+
+- Diane VA3DB
+db@db.net

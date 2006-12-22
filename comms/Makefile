@@ -22,6 +22,7 @@
     SUBDIR += ecu
     SUBDIR += efax
     SUBDIR += efax-gtk
+    SUBDIR += fldigi
     SUBDIR += gammu
     SUBDIR += garmin-utils
     SUBDIR += gfax

@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# fldigi install shell script
+# loosely based on original script by Dave Freese, W1HKJ
+#
+# $FreeBSD$
+#
+
+installdir=$HOME/.fldigi
+macrofile=%%DATADIR%%/macros.mdf
+
+if [ ! -d $installdir ]; then
+	mkdir $installdir
+	cp $macrofile $installdir
+	echo "You should edit $HOME/.flidi/macros.mdf"
+fi
+cd $installdir
+fldigi.bin
