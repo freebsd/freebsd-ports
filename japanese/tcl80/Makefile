@@ -9,13 +9,14 @@ PORTNAME=	tcl
 PORTVERSION=	8.0.5
 PORTREVISION=	1
 CATEGORIES=	japanese lang tcl80
-MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/tcl${VERSION:S/./_/}/
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=tcl8_0
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${PORTVERSION}jp1.7.patch.gz
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	taguchi@iij.ad.jp
 COMMENT=	Japanized Tool Command Language, version 8.0
 
 VERSION=	${PORTVERSION:R}
