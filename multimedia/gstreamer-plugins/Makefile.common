@@ -312,6 +312,10 @@ gst_sidplay_PLIST_FILES=	${GST_LIB_DIR}/libgstsid.so \
 		${GST_LIB_DIR}/libgstsid.la
 gst_sidplay_DIST=	ugly
 
+# spc
+gst_spc_LIB_DEPENDS+=	OpenSPC.3:${PORTSDIR}/audio/openspc
+gst_spc_DIST=		bad
+
 # speex
 gst_speex_LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 
