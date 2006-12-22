@@ -3665,6 +3665,7 @@ gnump3d		ports/audio/gnump3d
 gnunet		ports/net-p2p/gnunet
 gnupg		ports/security/gnupg
 gnupg-idea	ports/security/gnupg-idea
+gnupg1		ports/security/gnupg1
 gnuplot		ports/math/gnuplot
 gnuplot+	ports/math/gnuplot+
 gnupod		ports/audio/gnupod
