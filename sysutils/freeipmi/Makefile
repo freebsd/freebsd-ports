@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
-
-PATCH_SITES=	ftp://ftp.riss-telecom.ru/pub/patches/
-PATCHFILES=	${DISTNAME}-fbsd2.diff
 
 MAINTAINER=	frolov@riss-telecom.ru
 COMMENT=	Library and tools to support IPMI-capable hardware
@@ -19,9 +16,6 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOTOOLS=	autoconf:259 libtool:15 aclocal:19 automake:19
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${CONFIGURE_WRKSRC} \
-	-I ${LOCALBASE}/share/aclocal
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
