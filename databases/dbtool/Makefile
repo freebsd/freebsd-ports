@@ -8,7 +8,7 @@
 
 PORTNAME=	dbtool
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/dbtool/
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-berkeley
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .endif
 .if !defined(NOPORTDOCS)
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 
 GNU_CONFIGURE=	yes
