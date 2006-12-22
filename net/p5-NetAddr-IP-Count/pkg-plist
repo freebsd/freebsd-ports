@@ -3,3 +3,4 @@
 %%SITE_PERL%%/NetAddr/IP/Count.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Count
 @dirrmtry %%SITE_PERL%%/NetAddr/IP
+@dirrmtry %%SITE_PERL%%/NetAddr
