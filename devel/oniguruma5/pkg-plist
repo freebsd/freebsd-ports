@@ -3,12 +3,21 @@ include/oniggnu.h
 include/onigposix.h
 include/oniguruma.h
 lib/libonig.a
+lib/libonig.la
+lib/libonig.so
+lib/libonig.so.1
 %%PORTDOCS%%%%DOCSDIR%%/API
+%%PORTDOCS%%%%DOCSDIR%%/API.ja
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.ja
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/RE
 %%PORTDOCS%%%%DOCSDIR%%/RE.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.in
 %%PORTDOCS%%%%EXAMPLESDIR%%/encode.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/listcap.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/names.c
