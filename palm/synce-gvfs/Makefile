@@ -26,8 +26,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH}==amd64
-BROKEN=		does not compile on ${ARCH}
-.endif
+post-patch:
+	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
