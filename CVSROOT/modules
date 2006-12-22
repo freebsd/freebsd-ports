@@ -3893,6 +3893,7 @@ gstreamer-plugins-bad	ports/multimedia/gstreamer-plugins-bad
 gstreamer-plugins-bz2		ports/multimedia/gstreamer-plugins-bz2
 gstreamer-plugins-cairo		ports/graphics/gstreamer-plugins-cairo
 gstreamer-plugins-cairo80	ports/graphics/gstreamer-plugins-cairo80
+gstreamer-plugins-cdaudio	ports/audio/gstreamer-plugins-cdaudio
 gstreamer-plugins-cdaudio80	ports/audio/gstreamer-plugins-cdaudio80
 gstreamer-plugins-cdio80	ports/sysutils/gstreamer-plugins-cdio80
 gstreamer-plugins-cdparanoia	ports/audio/gstreamer-plugins-cdparanoia
