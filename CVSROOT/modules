@@ -9953,6 +9953,7 @@ p5-POE-Component-JobQueue	ports/devel/p5-POE-Component-JobQueue
 p5-POE-Component-LaDBI	ports/databases/p5-POE-Component-LaDBI
 p5-POE-Component-Logger	ports/devel/p5-POE-Component-Logger
 p5-POE-Component-Pcap	ports/net/p5-POE-Component-Pcap
+p5-POE-Component-Pluggable	ports/devel/p5-POE-Component-Pluggable
 p5-POE-Component-RRDTool	ports/net/p5-POE-Component-RRDTool
 p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
 p5-POE-Component-RSSAggregator	ports/devel/p5-POE-Component-RSSAggregator
