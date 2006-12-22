@@ -9,6 +9,7 @@ To complete the installation of this port, please follow these steps:
 3. Restart Apache.
 4. Do remember to *CHANGE* the root's password for the web interface.
    The default is "password" (without the quotes.)
-5. Configure RT per the instructions at http://www.fsck.com/rtfm/.
+5. Configure RT per the instructions at
+   http://www.bestpractical.com/rt/docs.html
 
 =====================================================================
