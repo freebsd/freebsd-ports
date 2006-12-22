@@ -7,7 +7,7 @@
 
 PORTNAME=	enigmail
 PORTVERSION=	0.94.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/downloads/src/
 PKGNAMEPREFIX?=	thunderbird-
@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		nss3:${PORTSDIR}/security/nss \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
-		gpg:${PORTSDIR}/security/gnupg1
+		gpgv:${PORTSDIR}/security/gnupg1
 
 GECKO=		${PKGNAMEPREFIX:S/-//}
 .if ${GECKO} == "thunderbird"

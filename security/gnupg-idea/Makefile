@@ -7,7 +7,7 @@
 
 PORTNAME=	gnupg-idea
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
@@ -22,7 +22,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IDEA extension module for gnupg (and RSA for demonstration)
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
 
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/idea.c
 RESTRICTED=	IDEA is Patented in the USA and many European countries

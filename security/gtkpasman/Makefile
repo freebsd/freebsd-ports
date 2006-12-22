@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkpasman
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	phil@teaser.fr
 COMMENT=	A GTK+ passwords manager for system and network administrators
 
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS+=	gpgv:${PORTSDIR}/security/gnupg1
 BUILD_DEPENDS+=	gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	nocatauth-gateway
 PORTVERSION=	0.82
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://nocat.net/download/NoCatAuth/
 DISTNAME=	NoCatAuth-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open 802.11 Authentication Gateway
 
 RUN_DEPENDS= \
-	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg1
+	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
 
 CONFLICTS=	nocatauth-server-*
 

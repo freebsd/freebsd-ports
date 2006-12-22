@@ -6,7 +6,7 @@
 
 PORTNAME=	c-nocem
 PORTVERSION=	3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news security
 MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -16,7 +16,7 @@ COMMENT=	NoCeM for C News and INN
 
 BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${PORTSDIR}/${CNEWS_PORT}:configure
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT} \
-		gpg:${PORTSDIR}/security/gnupg1
+		gpgv:${PORTSDIR}/security/gnupg1
 
 WRKSRC=		${WRKDIR}/c-nocem
 CNEWS_PORT?=	news/cnews

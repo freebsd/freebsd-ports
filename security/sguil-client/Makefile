@@ -7,7 +7,7 @@
 
 PORTNAME=	sguil-client
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sguil
@@ -16,7 +16,7 @@ MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Sguil is a network security monitoring program
 
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
-		gpg:${PORTSDIR}/security/gnupg1 \
+		gpgv:${PORTSDIR}/security/gnupg1 \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX \
 		${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 
