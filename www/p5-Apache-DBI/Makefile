@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-DBI
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	www databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -18,16 +19,17 @@ COMMENT=	DBI persistent connection, authentication and authorization
 MAN3=		Apache::DBI.3 Apache::AuthDBI.3
 
 PERL_CONFIGURE=	yes
-USE_APACHE=	yes
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_MODPERL2)
+USE_APACHE=	2.0+
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 .endif
-BUILD_DEPENDS=	${RUN_DEPENDS}
+
+.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
