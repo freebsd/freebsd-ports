@@ -2230,7 +2230,6 @@ security/nessus-devel||2006-04-17|Has expired: Development version of nessus is 
 security/nessus-libnasl-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
 security/nessus-libraries-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
 security/nessus-plugins-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
-audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-polyp80|2006-04-21|The port name has been changed to match its correct name
 devel/cvspadm||2006-04-24|Development ceased, please use devel/cvsdadm
 editors/jed-devel||2006-04-24|No more development version for a while, please, use editors/jed
 sysutils/gdesklets-multitail||2006-04-24|Project is too long dead
@@ -2247,14 +2246,14 @@ graphics/gstreamer-plugins-libmng|graphics/gstreamer-plugins-libmng80|2006-04-29
 audio/gstreamer-plugins-mikmod|audio/gstreamer-plugins-mikmod80|2006-04-29|Not part of gstreamer 0.10 yet
 multimedia/gstreamer-plugins-mplex|multimedia/gstreamer-plugins-mplex80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-nas|audio/gstreamer-plugins-nas80|2006-04-29|Not part of gstreamer 0.10 yet
-audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-polypaudio80|2006-04-29|Not part of gstreamer 0.10 yet
-audio/gstreamer-plugins-shout|audio/gstreamer-plugins-shout80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-pulse|2006-04-29|Project renamed
+audio/gstreamer-plugins-shout|audio/gstreamer-plugins-shout2|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-smoothwave|audio/gstreamer-plugins-smoothwave80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-sndfile|audio/gstreamer-plugins-sndfile80|2006-04-29|Not part of gstreamer 0.10 yet
 graphics/gstreamer-plugins-swfdec|graphics/gstreamer-plugins-swfdec80|2006-04-29|Not part of gstreamer 0.10 yet
 multimedia/gstreamer-plugins-x264|multimedia/gstreamer-plugins-x26480|2006-04-29|Not part of gstreamer 0.10 yet
 graphics/gstreamer-plugins-jpeg-mmx|graphics/gstreamer-plugins-jpeg-mmx80|2006-04-29|Not part of gstreamer 0.10 yet
-audio/gstreamer-plugins-polyp|audio/gstreamer-plugins-polyp80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-polyp|audio/gstreamer-plugins-pulse|2006-04-29|Project renamed
 www/evolution-caldav||2006-04-29|Now included in evolution-data-server and evolution
 graphics/mrsidviewer||2006-04-30|Removed (distribution no longer available from vendor)
 graphics/kimdaba|graphics/kphotoalbum|2006-04-30|renamed
