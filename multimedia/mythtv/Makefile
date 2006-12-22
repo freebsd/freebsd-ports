@@ -12,8 +12,9 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mythtv.org/mc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	myth4fbsd@son.org
+MAINTAINER=	grog
 COMMENT=	MythTV is a homebrew PVR project
+ONLY_FOR_ARCHS= i386
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
