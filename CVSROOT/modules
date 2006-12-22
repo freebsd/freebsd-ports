@@ -2426,6 +2426,7 @@ etoile-installer	ports/sysutils/etoile-installer
 etoile-iterm	ports/x11/etoile-iterm
 etoile-lookandbehavior	ports/deskutils/etoile-lookandbehavior
 etoile-menuserver	ports/deskutils/etoile-menuserver
+etoile-ogrekit	ports/textproc/etoile-ogrekit
 etoile-preferenceskit	ports/deskutils/etoile-preferenceskit
 etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
