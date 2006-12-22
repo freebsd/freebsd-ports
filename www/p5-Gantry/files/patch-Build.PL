@@ -1,6 +1,6 @@
---- Build.PL.orig	Thu Nov  9 07:59:16 2006
-+++ Build.PL	Thu Nov  9 08:01:28 2006
-@@ -91,135 +91,6 @@
+--- Build.PL.orig	Tue Dec 19 15:47:23 2006
++++ Build.PL	Tue Dec 19 15:47:48 2006
+@@ -132,101 +132,6 @@
  
      }
  
@@ -10,49 +10,12 @@
 -        my $p = $self->{properties};        
 -        
 -        my $initf = "$p->{install_sets}{site}{lib}/$p->{dist_name}/Init.pm";
--        if ( -e $initf ) {
--            require "$initf";
--            $p->{install_web_directories}{default} = Gantry::Init::base_root();
--        }
 -                
 -        $self->SUPER::ACTION_install();
--        
--        my $DEF_TMPL_DIR = $p->{install_web_directory};
--        my $prompt;
--        my $count = 0;
--        my ( %dir_hash, @choices );
 -
--        print "\n\nGantry comes with a set of default templates that\n"
--            . "need to be written to disk. A typical location for these\n"
--            . "templates is your web server document root.\n\n"
--            . "Enter a directory [$p->{install_web_directories}{default}]\n";
--
--        my $choice = $self->prompt(
--            " ",
--            $p->{install_web_directories}{default},
--        );
--        
--        my $tmpl_dir;
--        if ( $choice =~ /\// ) {
--            $tmpl_dir = $choice;
--        }
--        elsif ( ! defined $p->{install_web_directories}{$choice} ) {
--            $tmpl_dir = '__skip__';
--        }
--        else {
--            $tmpl_dir = $p->{install_web_directories}{$choice}
--        }
--        
--        $tmpl_dir =~ s/\/$//g;
+-        my $tmpl_dir = $self->notes( 'install_web_directory' );
 -            
 -        if( $tmpl_dir && $tmpl_dir ne '__skip__' ) {
--
--            print "\n\nDirectory doesn't exist. Create $tmpl_dir? [y]\n";
--            
--            if ( ! -d $tmpl_dir ) {
--                my $create = $self->y_n(  " ", 'y' );
--                exit unless $create;
--            }
 -
 -            # write Init.pm file with install options
 -
@@ -98,7 +61,10 @@
 -            close INIT_FILE;
 -            
 -            eval {  
--                File::Path::mkpath( $tmpl_dir );
+-                # this should have been done during perl Build.PL
+-                if ( not -d $tmpl_dir ) {
+-                    File::Path::mkpath( $tmpl_dir );
+-                }
 -            };
 -            if ( $@ ) {
 -                print "Error: unable to create directory $tmpl_dir\n";
