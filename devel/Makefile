@@ -1280,6 +1280,7 @@
     SUBDIR += p5-POE-Component-IKC
     SUBDIR += p5-POE-Component-JobQueue
     SUBDIR += p5-POE-Component-Logger
+    SUBDIR += p5-POE-Component-Pluggable
     SUBDIR += p5-POE-Component-RSS
     SUBDIR += p5-POE-Component-RSSAggregator
     SUBDIR += p5-POE-Component-Server-XMLRPC
