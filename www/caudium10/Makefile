@@ -19,6 +19,9 @@ COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70/
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron/
 
+DEPRECATED=	Please use www/caudium12
+EXPIRATION_DATE=2007-02-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/
 
 GNU_CONFIGURE=	yes
