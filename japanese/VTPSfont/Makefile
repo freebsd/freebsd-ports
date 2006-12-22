@@ -7,6 +7,7 @@
 
 PORTNAME=	VTPSfont
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	# none
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create Virtual PostScript fonts produced by VFlib (Truetype fonts)
 
 PLIST_FILES=	bin/VTPSfont
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
