@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		glademm-2.0.1:${PORTSDIR}/devel/libglademm \
 		ogg.5:${PORTSDIR}/audio/libogg \
