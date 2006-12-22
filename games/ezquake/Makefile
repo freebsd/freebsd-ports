@@ -7,6 +7,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1754
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
@@ -82,9 +83,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${Q1DIR}/${PORTNAME}
-.for f in cfg help keymaps manual pak0.pak sb textures ../qw/*
-	${CP} -R ${WRKSRC}/ezquake/${f} ${Q1DIR}/${PORTNAME}
-.endfor
+	${CP} -R ${WRKSRC}/ezquake/* ${WRKSRC}/qw/* ${Q1DIR}/${PORTNAME}
 .if !defined(WITHOUT_GLX)
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake-gl.glx \
 		${PREFIX}/bin/ezquake-glx
@@ -93,10 +92,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake.x11 \
 		${PREFIX}/bin/ezquake-x11
 .endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>

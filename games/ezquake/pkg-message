@@ -1,9 +1,0 @@
-==============================================================================
-
-ezQuake has been installed.
-
-If you have mouse problems you can try running it with the "-nomdga"
-parameter (this will make the mouse work fine when the DGA X11 extension is
-disabled).
-
-==============================================================================

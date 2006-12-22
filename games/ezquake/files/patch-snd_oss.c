@@ -1,5 +1,5 @@
---- snd_oss.c.orig	Wed Nov 15 16:21:49 2006
-+++ snd_oss.c	Tue Dec 19 19:26:57 2006
+--- snd_oss.c.orig	Fri Dec 22 01:11:27 2006
++++ snd_oss.c	Fri Dec 22 01:14:20 2006
 @@ -27,7 +27,11 @@
  #include <sys/mman.h>
  #include <sys/shm.h>
