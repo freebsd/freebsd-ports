@@ -3974,6 +3974,7 @@ gstreamer-plugins-sidplay	ports/audio/gstreamer-plugins-sidplay
 gstreamer-plugins-sidplay80	ports/audio/gstreamer-plugins-sidplay80
 gstreamer-plugins-smoothwave80	ports/audio/gstreamer-plugins-smoothwave80
 gstreamer-plugins-sndfile80	ports/audio/gstreamer-plugins-sndfile80
+gstreamer-plugins-spc	ports/audio/gstreamer-plugins-spc
 gstreamer-plugins-speex		ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-speex80	ports/audio/gstreamer-plugins-speex80
 gstreamer-plugins-swfdec80	ports/graphics/gstreamer-plugins-swfdec80
