@@ -2238,7 +2238,6 @@ java/diablo-jdk13||2006-04-24|Removed due to security problems and no longer bei
 java/diablo-jre13||2006-04-24|Removed due to security problems and no longer being distributed
 audio/gstreamer-plugins-artsd|audio/gstreamer-plugins-artsd80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-audiofile|audio/gstreamer-plugins-audiofile80|2006-04-29|Not part of gstreamer 0.10 yet
-audio/gstreamer-plugins-cdaudio|audio/gstreamer-plugins-cdaudio80|2006-04-29|Not part of gstreamer 0.10 yet
 sysutils/gstreamer-plugins-cdio|sysutils/gstreamer-plugins-cdio80|2006-04-29|Not part of gstreamer 0.10 yet
 multimedia/gstreamer-plugins-dirac|multimedia/gstreamer-plugins-dirac80|2006-04-29|Not part of gstreamer 0.10 yet
 graphics/gstreamer-plugins-gdkpixbuf|graphics/gstreamer-plugins-gdkpixbuf80|2006-04-29|Not part of gstreamer 0.10 yet
