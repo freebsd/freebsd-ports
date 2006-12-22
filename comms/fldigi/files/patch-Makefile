@@ -1,0 +1,53 @@
+--- Makefile.orig	Wed Dec 20 03:31:04 2006
++++ Makefile	Fri Dec 22 00:56:54 2006
+@@ -3,23 +3,19 @@
+ ## Copyright (c) 2005 by Parinya Thipchart
+ #################################################################
+ 
+-ifneq (,$(findstring Release, $(CFG)))
+-  override CFG = Release
+-else
+-  override CFG = Debug
+-endif
++CFG = Release
+ 
+ PROJECT = fldigi
+-CC = "/usr/bin/g++"
++CXX ?= c++
++CC = ${CXX}
+ 
+ ifeq ($(CFG),Debug)
+   OBJ_DIR = Debug
+   OUTPUT_DIR = Debug
+   TARGET = fldigi
+-  C_INCLUDE_DIRS = -I"src" -I"src/include" 
+   C_PREPROC = 
+-  CFLAGS = -pipe `fltk-config --cxxflags` -Wno-deprecated -ffast-math -Wall -ggdb2 -O0 -fno-rtti -fexceptions 
+-  LIB_DIRS = -L"src/lib /usr/local/lib" -L"../../../../../usr/local/lib" 
++  CFLAGS = -pipe -I"src" -I"src/include" `fltk-config --cxxflags` -Wno-deprecated -ffast-math -Wall -ggdb2 -O0 -fno-rtti -fexceptions 
++  LIB_DIRS = -L"src/lib $(PREFIX)/lib" -L"$(PREFIX)/lib" 
+   LIBS = -lhamlib -lfltk_images -ljpeg -lpng 
+   LDFLAGS = -pipe `fltk-config --ldflags --use-images`
+ endif
+@@ -28,10 +24,9 @@
+   OBJ_DIR = Release
+   OUTPUT_DIR = Release
+   TARGET = fldigi
+-  C_INCLUDE_DIRS = -I"src" -I"src/include" 
+   C_PREPROC = 
+-  CFLAGS = -pipe `fltk-config --cxxflags` -Wno-deprecated -ffast-math -Wall -g0 -O2 -fno-rtti -fexceptions 
+-  LIB_DIRS = -L"src/lib" -L"../../../../../usr/local/lib" 
++  CFLAGS += -I"src" -I"src/include" `fltk-config --cxxflags` -Wno-deprecated -ffast-math -Wall -g0 -fno-rtti -fexceptions 
++  LIB_DIRS = -L"src/lib" -L"$(PREFIX)/lib" 
+   LIBS = -lhamlib -lfltk_images -ljpeg -lpng -lz 
+   LDFLAGS = -pipe -s `fltk-config --ldflags --use-images`
+ endif
+@@ -105,7 +100,7 @@
+ 
+ define compile_source
+ @echo Compiling $<
+-@$(CC) $(CFLAGS) $(C_PREPROC) $(C_INCLUDE_DIRS) -c "$<" -o "$@"
++@$(CC) $(CFLAGS) $(C_PREPROC) -c "$<" -o "$@"
+ endef
+ 
+ .PHONY: print_header directories
