@@ -147,8 +147,8 @@
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnu-crypto
     SUBDIR += gnupg
-    SUBDIR += gnupg-devel
     SUBDIR += gnupg-idea
+    SUBDIR += gnupg1
     SUBDIR += gnutls
     SUBDIR += gnutls-devel
     SUBDIR += gorilla
