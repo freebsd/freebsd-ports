@@ -1,0 +1,7 @@
+POE::Component::Pluggable is a base class for creating plugin enabled POE
+Components. It is a generic port of POE::Component::IRCs plugin system.
+
+If your component dispatches events to registered POE sessions then
+POE::Component::Pluggable may be a good fit for you.
+
+WWW: http://search.cpan.org/dist/POE-Component-Pluggable/
