@@ -14,7 +14,7 @@ MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://kraymer.de/mirroring/ \
 		http://www.jakemsr.com/transcode/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A text-console utility for video stream processing
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
@@ -27,7 +27,7 @@ USE_GETOPT_LONG=yes
 USE_XLIB=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WANT_SDL=	yes
 USE_AUTOTOOLS=	libtool:15
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
