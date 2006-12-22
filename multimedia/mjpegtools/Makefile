@@ -7,7 +7,7 @@
 
 PORTNAME=	mjpegtools
 DISTVERSION=	1.8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -144,8 +144,9 @@ post-patch:
 		${WRKSRC}/configure
 .endif
 
-.if !defined(NOPORTDOCS)
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/mpeg2enc/mpeg2syntaxcodes.h ${PREFIX}/include/mjpegtools/mpeg2enc
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

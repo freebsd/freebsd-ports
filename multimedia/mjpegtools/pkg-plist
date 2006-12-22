@@ -68,6 +68,7 @@ include/mjpegtools/mpeg2enc/mpeg2coder.hh
 include/mjpegtools/mpeg2enc/mpeg2encoder.hh
 include/mjpegtools/mpeg2enc/mpeg2encoptions.hh
 include/mjpegtools/mpeg2enc/mpeg2encparams.h
+include/mjpegtools/mpeg2enc/mpeg2syntaxcodes.h
 include/mjpegtools/mpeg2enc/picture.hh
 include/mjpegtools/mpeg2enc/picturereader.hh
 include/mjpegtools/mpeg2enc/predict_ref.h
