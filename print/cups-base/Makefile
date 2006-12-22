@@ -1,5 +1,3 @@
-# ex:ts=8	-*-mode: makefile-*-
-#
 # New ports collection makefile for:	cups
 # Date created:		2003-01-22
 # Whom:			Alan Eldridge <alane@geeksrus.net>
@@ -10,9 +8,10 @@
 PORTNAME=	cups
 PORTVERSION=	1.2.7
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
-PKGNAMESUFFIX=	-base
+PKGNAMESUFFIX=	-base${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System
@@ -29,6 +28,7 @@ USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	cupsd
+CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib
@@ -94,41 +94,41 @@ MAN7EXT=	7
 MAN8EXT=	8
 
 MAN1=	cancel.${MAN1EXT} \
-	cups-config.$(MAN1EXT) \
-	cupstestdsc.$(MAN1EXT) \
-	cupstestppd.$(MAN1EXT) \
-	lp.$(MAN1EXT) \
-	lpoptions.$(MAN1EXT) \
-	lppasswd.$(MAN1EXT) \
-	lpq.$(MAN1EXT) \
-	lprm.$(MAN1EXT) \
-	lpr.$(MAN1EXT) \
-	lpstat.$(MAN1EXT)
-MAN5=	classes.conf.$(MAN5EXT) \
-	client.conf.$(MAN5EXT) \
-	cups-snmp.conf.$(MAN5EXT) \
-	cupsd.conf.$(MAN5EXT) \
-	mailto.conf.$(MAN5EXT) \
-	mime.convs.$(MAN5EXT) \
-	mime.types.$(MAN5EXT) \
-	printers.conf.$(MAN5EXT) \
-	subscriptions.conf.$(MAN5EXT)
-MAN7=	backend.$(MAN7EXT) \
-	filter.$(MAN7EXT)
-MAN8=	accept.$(MAN8EXT) \
-	cupsaddsmb.$(MAN8EXT) \
-	cups-deviced.$(MAN8EXT) \
-	cups-driverd.$(MAN8EXT) \
-	cups-lpd.$(MAN8EXT) \
-	cups-polld.$(MAN8EXT) \
-	cupsd.$(MAN8EXT) \
-	cupsenable.$(MAN8EXT) \
-	lpadmin.$(MAN8EXT) \
-	lpinfo.$(MAN8EXT) \
-	lpmove.$(MAN8EXT) \
-	lpc.$(MAN8EXT)
-MLINKS=	accept.$(MAN8EXT) reject.$(MAN8EXT) \
-	cupsenable.$(MAN8EXT) cupsdisable.$(MAN8EXT)
+	cups-config.${MAN1EXT} \
+	cupstestdsc.${MAN1EXT} \
+	cupstestppd.${MAN1EXT} \
+	lp.${MAN1EXT} \
+	lpoptions.${MAN1EXT} \
+	lppasswd.${MAN1EXT} \
+	lpq.${MAN1EXT} \
+	lprm.${MAN1EXT} \
+	lpr.${MAN1EXT} \
+	lpstat.${MAN1EXT}
+MAN5=	classes.conf.${MAN5EXT} \
+	client.conf.${MAN5EXT} \
+	cups-snmp.conf.${MAN5EXT} \
+	cupsd.conf.${MAN5EXT} \
+	mailto.conf.${MAN5EXT} \
+	mime.convs.${MAN5EXT} \
+	mime.types.${MAN5EXT} \
+	printers.conf.${MAN5EXT} \
+	subscriptions.conf.${MAN5EXT}
+MAN7=	backend.${MAN7EXT} \
+	filter.${MAN7EXT}
+MAN8=	accept.${MAN8EXT} \
+	cupsaddsmb.${MAN8EXT} \
+	cups-deviced.${MAN8EXT} \
+	cups-driverd.${MAN8EXT} \
+	cups-lpd.${MAN8EXT} \
+	cups-polld.${MAN8EXT} \
+	cupsd.${MAN8EXT} \
+	cupsenable.${MAN8EXT} \
+	lpadmin.${MAN8EXT} \
+	lpinfo.${MAN8EXT} \
+	lpmove.${MAN8EXT} \
+	lpc.${MAN8EXT}
+MLINKS=	accept.${MAN8EXT} reject.${MAN8EXT} \
+	cupsenable.${MAN8EXT} cupsdisable.${MAN8EXT}
 
 pre-configure::
 	@${ECHO_MSG} Configuring CUPS with options:
@@ -138,7 +138,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
 	@${REINPLACE_CMD} -e '/share/s|/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' ${WRKSRC}/man/*.man*
-	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-install:
 	@${ECHO_MSG} "===>" Stopping cupsd ...
