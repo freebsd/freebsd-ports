@@ -16,6 +16,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	FLIM, message representation or encoding emacs lisp library for emacs21
 
+DEPRECATED=	distfile disappeared
+EXPIRATION_DATE=	2007-01-21
+
 PORTCLASS?=	master
 
 NO_LATEST_LINK=	yes

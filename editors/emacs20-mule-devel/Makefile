@@ -27,6 +27,9 @@ COMMENT=	GNU editing macros with dl module function and mule 4.1(binary only)
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 
+DEPRECATED=	homepage and patchfiles disappeared
+EXPIRATION_DATE=	2007-01-21
+
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
 USE_AUTOTOOLS=	autoconf:213

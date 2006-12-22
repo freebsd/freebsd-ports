@@ -26,6 +26,9 @@ COMMENT=	GNU editing macros with dynamic loading module function (binary only)
 
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 
+DEPRECATED=	homepage and patchfile disappeared
+EXPIRATION_DATE=	2007-01-21
+
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
 USE_AUTOTOOLS=	autoconf:213
