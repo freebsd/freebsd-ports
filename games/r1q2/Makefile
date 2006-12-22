@@ -6,16 +6,10 @@
 #
 
 PORTNAME=	r1q2
-PORTVERSION=	6557
-PORTREVISION=	4
+PORTVERSION=	6908
 CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	alepulver
-PATCHFILES=	r1q2_diff.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhaced Quake II client/server focusing on stability
@@ -23,23 +17,19 @@ COMMENT=	Enhaced Quake II client/server focusing on stability
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_ZIP=	yes
-USE_GCC=	3.2+
+USE_DOS2UNIX=	yes
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=	${WRKSRC}/binaries
+ALL_TARGET=	#
 
-OPTIONS=	CLIENT "Build OpenGL client" on \
+OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \
 		GAME "Build a main game .so file" off \
-		GLX "Build OpenGL renderer" on \
-		HTTP "Enable HTTP download support" on \
-		OPENAL "Enable OpenAL support" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL client" on \
-		SDLGL "Build SDL OpenGL renderer" on
+		REF_GL "Build renderer (required by CLIENT)" on
 
-ALL_TARGET=	release
-
-MAKE_ENV=	LIBDIR="${LIBDIR}"
+MAKE_ENV=	LIBDIR="${LIBDIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
@@ -48,100 +38,71 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_GLX)
-USE_GL=		yes
-.endif
-
-.if !defined(WITHOUT_SDL) && !defined(WITHOUT_SDLGL)
-USE_SDL=	sdl
-.endif
-
-.if !defined(WITHOUT_GLX) || !defined(WITHOUT_SDLGL)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
+IGNORE=		needs at least one executable (CLIENT and DEDICATED)
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-MAKE_ENV+=	BUILD_CLIENT=YES
+ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
-R1Q2_BIN+=	r1q2
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 .if !defined(WITHOUT_DEDICATED)
-MAKE_ENV+=	BUILD_DEDICATED=YES
+ALL_TARGET+=	r1q2ded
 PLIST_SUB+=	DEDICATED=""
-R1Q2_BIN+=	r1q2ded
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
 .if defined(WITH_GAME)
-MAKE_ENV+=	BUILD_GAME=YES
+ALL_TARGET+=	game
 PLIST_SUB+=	GAME=""
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
 
-.if !defined(WITHOUT_GLX)
-MAKE_ENV+=	BUILD_GLX=YES
-PLIST_SUB+=	GLX=""
-R1Q2_REF+=	r1gl
+.if !defined(WITHOUT_REF_GL)
+USE_GL=		yes
+USE_SDL=	sdl
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
+ALL_TARGET+=	ref_gl
+PLIST_SUB+=	REF_GL=""
 .else
-PLIST_SUB+=	GLX="@comment "
+PLIST_SUB+=	REF_GL="@comment "
 .endif
 
-.if !defined(WITHOUT_HTTP)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
-MAKE_ENV+=	WITH_HTTP_DOWNLOAD_SUPPORT=YES
-.endif
-
-.if !defined(WITHOUT_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-MAKE_ENV+=	WITH_OPENAL_SUPPORT=YES
-.endif
-
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
-.endif
-
-.if !defined(WITHOUT_SDL)
-MAKE_ENV+=	BUILD_SDL=YES
-PLIST_SUB+=	SDL=""
-R1Q2_BIN+=	r1q2-sdl
-.else
-PLIST_SUB+=	SDL="@comment "
-.endif
-
-.if !defined(WITHOUT_SDLGL)
-MAKE_ENV+=	BUILD_SDLGL=YES
-PLIST_SUB+=	SDLGL=""
-R1Q2_REF+=	r1sdl
-.else
-PLIST_SUB+=	SDLGL="@comment "
-.endif
-
-.if ${OSVERSION} < 500000
 post-patch:
+	@${REINPLACE_CMD} -e 's|game$$(ARCH)|game|g' \
+		${BUILD_WRKSRC}/game/Makefile
+.if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
 		${WRKSRC}/game/q_shared.h
 .endif
 
+pre-build:
+	@${FIND} ${BUILD_WRKSRC} -type d -depth 1 -exec ${MKDIR} {}/.depends \;
+
 do-install:
-.for f in ${R1Q2_BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${f} ${PREFIX}/bin
-.endfor
+.if !defined(WITHOUT_CLIENT)
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/client/quake2 \
+		${PREFIX}/bin/${PORTNAME}
+.endif
+.if !defined(WITHOUT_DEDICATED)
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/r1q2ded/r1q2ded ${PREFIX}/bin
+.endif
 	${MKDIR} ${LIBDIR}/baseq2
-.for f in ${R1Q2_REF}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ref_${f}.so ${LIBDIR}
-.endfor
 .if defined(WITH_GAME)
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/game/game.so ${LIBDIR}/baseq2
+.endif
+.if !defined(WITHOUT_REF_GL)
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ref_gl/ref_gl.so ${LIBDIR}
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${WRKSRC}/r1q2.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/r1q2.txt ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

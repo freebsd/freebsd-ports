@@ -1,0 +1,11 @@
+--- ./binaries/ref_gl/Makefile.orig	Mon Oct 30 15:26:12 2006
++++ ./binaries/ref_gl/Makefile	Sat Dec 16 17:41:23 2006
+@@ -17,7 +17,7 @@
+ 
+ include ../make.inc
+ 
+-LDFLAGS+=$(shell sdl-config --libs) -lm -lGL -ljpeg -lpng12
++LDFLAGS+=$(shell sdl-config --libs) -lm -lGL -ljpeg -lpng
+ 
+ ref_gl.so: $(ref_gl_OBJ)
+ 	$(CC) -shared -g -o $@ $^ $(LDFLAGS)

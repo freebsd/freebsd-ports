@@ -1,21 +1,14 @@
---- qcommon/files.c.orig	Sat May 20 09:53:45 2006
-+++ qcommon/files.c	Sat May 20 09:59:37 2006
-@@ -1232,11 +1232,6 @@
+--- ./qcommon/files.c.orig	Fri Sep 29 02:06:34 2006
++++ ./qcommon/files.c	Sat Dec 16 17:28:37 2006
+@@ -1382,6 +1382,24 @@
  
- 	Q_strncpy (fs_gamedir, dir, sizeof(fs_gamedir)-1);
- 
--#if defined (__unix__)
--	// Create directory if it does not exist
--	Sys_Mkdir(fs_gamedir);
--#endif
--
- 	Com_DPrintf ("FS_AddGameDirectory: Added '%s'\n", dir);
- 
- 	//
-@@ -1391,6 +1386,17 @@
- 		FS_AddGameDirectory (va("%s/%s", fs_basedir->string, dir) );
- }
- 
+ /*
+ ================
++FS_AddHomeAsGameDirectory
++
++Adds ~/.r1q2/<dir> as a game directory.
++================
++*/
 +void FS_AddHomeAsGameDirectory(char *dir)
 +{
 +	char	gdir[MAX_OSPATH];	/* Game directory. */
@@ -27,10 +20,12 @@
 +	}
 +}
 +
- /*
- ================
++/*
++================
  FS_SetGamedir
-@@ -1449,7 +1455,10 @@
+ 
+ Sets the gamedir and path to a different directory.
+@@ -1438,7 +1456,10 @@
  	{
  		Com_sprintf (fs_gamedir, sizeof(fs_gamedir), "%s/%s", fs_basedir->string, dir);
  		Cvar_FullSet ("gamedir", dir, CVAR_SERVERINFO|CVAR_NOSET);
@@ -41,7 +36,7 @@
  	}
  }
  
-@@ -1707,7 +1716,10 @@
+@@ -1696,7 +1717,10 @@
  	//
  	// start up with baseq2 by default
  	//
@@ -52,7 +47,7 @@
  
  	// any set gamedirs will be freed up to here
  	fs_base_searchpaths = fs_searchpaths;
-@@ -1716,4 +1728,8 @@
+@@ -1705,4 +1729,8 @@
  	fs_gamedirvar = Cvar_Get ("game", "", CVAR_LATCH|CVAR_SERVERINFO);
  	if (fs_gamedirvar->string[0])
  		FS_SetGamedir (fs_gamedirvar->string);
