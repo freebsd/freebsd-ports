@@ -2432,6 +2432,7 @@ etoile-preferenceskit	ports/deskutils/etoile-preferenceskit
 etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
 etoile-trackerkit	ports/deskutils/etoile-trackerkit
+etoile-typewriter	ports/editors/etoile-typewriter
 etoile-unitkit	ports/devel/etoile-unitkit
 etoile-wildmenus	ports/x11-themes/etoile-wildmenus
 etoile-workspaceswitcher	ports/deskutils/etoile-workspaceswitcher
