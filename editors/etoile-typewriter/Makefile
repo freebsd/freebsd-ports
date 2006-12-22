@@ -8,7 +8,7 @@
 PORTNAME=	typewriter
 PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	editors
-MASTER_SITES=	http://florida.ethz.ch/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP_CH}
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
 
