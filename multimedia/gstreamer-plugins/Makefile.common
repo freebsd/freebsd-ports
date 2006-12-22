@@ -134,6 +134,10 @@ gst_bz2_DIST=		bad
 # cairo
 gst_cairo_LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 
+# cdaudio
+gst_cdaudio_LIB_DEPENDS+=cdaudio.1:${PORTSDIR}/audio/libcdaudio
+gst_cdaudio_DIST=	bad
+
 # cdparanoia
 gst_cdparanoia_LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
 gst_cdparanoia_EXTRA_LIBS+=	-lgstcdda-${VERSION}

@@ -211,6 +211,7 @@
     SUBDIR += gstreamer-plugins-a52dec80
     SUBDIR += gstreamer-plugins-artsd80
     SUBDIR += gstreamer-plugins-audiofile80
+    SUBDIR += gstreamer-plugins-cdaudio
     SUBDIR += gstreamer-plugins-cdaudio80
     SUBDIR += gstreamer-plugins-cdparanoia
     SUBDIR += gstreamer-plugins-cdparanoia80
