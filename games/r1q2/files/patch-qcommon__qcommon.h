@@ -1,10 +1,12 @@
---- ./qcommon/qcommon.h.orig	Wed Mar 15 17:18:50 2006
-+++ ./qcommon/qcommon.h	Wed May 17 22:31:34 2006
-@@ -88,6 +88,7 @@
+--- ./qcommon/qcommon.h.orig	Sat Sep 16 16:16:40 2006
++++ ./qcommon/qcommon.h	Sat Dec 16 17:28:37 2006
+@@ -86,7 +86,8 @@
  
- #define BUILDSTRING "FreeBSD"
+ #elif defined __FreeBSD__
  
+-#define BUILDSTRING "FreeBSD"
++	#define BUILDSTRING "FreeBSD"
 +	#define __cdecl
+ 
  	#ifdef __i386__
  		#define CPUSTRING "i386"
- 	#elif defined __x86_64__

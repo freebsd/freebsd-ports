@@ -1,0 +1,11 @@
+--- binaries/client/Makefile.orig	Thu Dec 21 14:55:31 2006
++++ binaries/client/Makefile	Fri Dec 22 00:38:19 2006
+@@ -24,7 +24,7 @@
+ 
+ include ../make.inc
+ 
+-LDFLAGS+=-lm -lz
++LDFLAGS+=-lm -lz $(PTHREAD_LIBS)
+ 
+ ifeq ($(shell uname),Linux)
+ LDFLAGS+=-ldl

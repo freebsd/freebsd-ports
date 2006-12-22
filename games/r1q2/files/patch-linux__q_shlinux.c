@@ -1,5 +1,5 @@
---- linux/q_shlinux.c.orig	Sat Feb 19 22:17:58 2005
-+++ linux/q_shlinux.c	Fri May 19 20:26:48 2006
+--- ./linux/q_shlinux.c.orig	Mon Oct 30 15:11:00 2006
++++ ./linux/q_shlinux.c	Sat Dec 16 17:28:37 2006
 @@ -12,25 +12,23 @@
  
  #include "../qcommon/qcommon.h"

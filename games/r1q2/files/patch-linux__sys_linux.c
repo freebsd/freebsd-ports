@@ -1,25 +1,48 @@
---- linux/sys_linux.c.orig	Fri Sep 15 15:50:28 2006
-+++ linux/sys_linux.c	Fri Sep 15 15:51:43 2006
-@@ -230,7 +230,7 @@
+--- ./linux/sys_linux.c.orig	Mon Oct 30 15:26:12 2006
++++ ./linux/sys_linux.c	Sat Dec 16 17:28:37 2006
+@@ -177,7 +177,7 @@
+ /* Obtain a backtrace and print it to stderr. 
+  * Adapted from http://www.delorie.com/gnu/docs/glibc/libc_665.html
+  */
+-#ifdef __x86_64__
++#ifndef __i386__
+ void Sys_Backtrace (int sig)
+ #else
+ void Sys_Backtrace (int sig, siginfo_t *siginfo, void *secret)
+@@ -188,7 +188,7 @@
+ 	size_t		size;
+ 	size_t		i;
+ 	char		**strings;
+-#ifndef __x86_64__
++#ifdef __i386__
+ 	ucontext_t 	*uc = (ucontext_t *)secret;
+ #endif
+ 
+@@ -214,9 +214,13 @@
  
  	size = backtrace (array, sizeof(array)/sizeof(void*));
  
 -#ifndef __x86_64__
-+#if !defined(__x86_64__) && !defined(__FreeBSD__)
++#ifdef __i386__
++#ifdef __FreeBSD__
++	array[1] = (void *) uc->uc_mcontext.mc_eip;
++#else	/* __linux__ */
  	array[1] = (void *) uc->uc_mcontext.gregs[REG_EIP];
  #endif
- 	
-@@ -309,7 +309,9 @@
- 
- void Sys_DebugBreak (void)
- {
-+#ifdef __i386__
- 	__asm ("int $3");
 +#endif
- }
+ 	
+ 	strings = backtrace_symbols (array, size);
  
- void Sys_Warn (char *warning, ...)
-@@ -414,29 +416,17 @@
+@@ -246,7 +250,7 @@
+ //	Sys_SetFPCW();
+ #endif
+   /* Install our signal handler */
+-#ifndef __x86_64__
++#ifdef __i386__
+ 	struct sigaction sa;
+ 
+ 	if (sizeof(uint32) != 4)
+@@ -393,29 +397,17 @@
  	void	*(*GetGameAPI) (void *);
  
  	char	name[MAX_OSPATH];
@@ -49,9 +72,9 @@
 -		Com_sprintf (name, sizeof(name), "%s/%s/%s", curpath, BASEDIRNAME, gamename);
 +		Com_sprintf (name, sizeof(name), "%s/%s", BASEDIRNAME, gamename);
  		game_library = dlopen (name, RTLD_NOW );
- 	}
- 	else
-@@ -448,7 +438,7 @@
+ 
+ 		if (game_library == NULL) {
+@@ -433,7 +425,7 @@
  			path = FS_NextPath (path);
  			if (!path)
  				return NULL;		// couldn't find one anywhere
