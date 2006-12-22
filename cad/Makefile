@@ -63,6 +63,7 @@
     SUBDIR += qucs
     SUBDIR += sceptre
     SUBDIR += scotch
+    SUBDIR += scv
     SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += systemc
