@@ -937,6 +937,7 @@
     SUBDIR += py-urljr
     SUBDIR += py-webware
     SUBDIR += py-webware-component
+    SUBDIR += py-wsgiref
     SUBDIR += pyblosxom
     SUBDIR += pyweblib
     SUBDIR += qdecoder
