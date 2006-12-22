@@ -252,6 +252,7 @@
     SUBDIR += gstreamer-plugins-sidplay80
     SUBDIR += gstreamer-plugins-smoothwave80
     SUBDIR += gstreamer-plugins-sndfile80
+    SUBDIR += gstreamer-plugins-spc
     SUBDIR += gstreamer-plugins-speex
     SUBDIR += gstreamer-plugins-speex80
     SUBDIR += gstreamer-plugins-vorbis
