@@ -67,6 +67,7 @@
     SUBDIR += enterminus
     SUBDIR += erun
     SUBDIR += eterm
+    SUBDIR += etoile
     SUBDIR += etoile-iterm
     SUBDIR += etoile-xwindowserverkit
     SUBDIR += examine
