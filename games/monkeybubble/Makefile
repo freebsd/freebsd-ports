@@ -29,4 +29,10 @@ GCONF_SCHEMAS=	monkey-bubble.schemas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/src/net/Makefile.in \
+		${WRKSRC}/src/ui/Makefile.in
+
+.include <bsd.port.post.mk>
