@@ -2717,6 +2717,7 @@ flat-frog	ports/www/flat-frog
 flatzebra	ports/devel/flatzebra
 flawfinder	ports/security/flawfinder
 fldiff		ports/textproc/fldiff
+fldigi		ports/comms/fldigi
 flex		ports/textproc/flex
 flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
