@@ -227,6 +227,7 @@
     SUBDIR += gstreamer-plugins-gsm80
     SUBDIR += gstreamer-plugins-ivorbis
     SUBDIR += gstreamer-plugins-ivorbis80
+    SUBDIR += gstreamer-plugins-jack
     SUBDIR += gstreamer-plugins-jack80
     SUBDIR += gstreamer-plugins-ladspa
     SUBDIR += gstreamer-plugins-ladspa80
