@@ -188,6 +188,7 @@ bin/testoob
 %%PYTHON_SITELIBDIR%%/testoob/utils.py
 %%PYTHON_SITELIBDIR%%/testoob/utils.pyc
 %%PYTHON_SITELIBDIR%%/testoob/utils.pyo
+%%PYTHON_CURRENT%%%%PYTHON_SITELIBDIR%%/%%EGG_INFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/testoob/running
 @dirrm %%PYTHON_SITELIBDIR%%/testoob/reporting
 @dirrm %%PYTHON_SITELIBDIR%%/testoob/compatibility

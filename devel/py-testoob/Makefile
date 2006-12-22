@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	testoob
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,8 +34,11 @@ USE_TWISTED=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/__init__.py:${PORTSDIR}/textproc/py-4suite-xml
 .endif
 
-post-install:
-	${RM} ${PREFIX}/${PORTNAME}/setcolor.exe
-	${RMDIR} ${PREFIX}/${PORTNAME}
+.if ${PYTHON_REL} < 250
+PLIST_SUB+=	PYTHON_CURRENT="@comment "
+.else
+EGG_INFO=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VERSION:S,^python,,}.egg-info
+PLIST_SUB+=	PYTHON_CURRENT="" EGG_INFO=${EGG_INFO}
+.endif
 
 .include <bsd.port.post.mk>
