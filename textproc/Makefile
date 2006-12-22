@@ -127,6 +127,7 @@
     SUBDIR += es-aspell
     SUBDIR += estraier
     SUBDIR += et-aspell
+    SUBDIR += etoile-lucenekit
     SUBDIR += etoile-ogrekit
     SUBDIR += exml
     SUBDIR += expat2
