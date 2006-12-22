@@ -8,6 +8,7 @@
 
 PORTNAME=	gstreamer-plugins-all
 PORTVERSION=	1.3.${GST_VERSION}.${GST_SHLIB_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	# empty
 DISTFILES=	# empty
