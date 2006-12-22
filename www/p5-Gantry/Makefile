@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.42
+PORTVERSION=	3.45
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Gantry
@@ -24,6 +24,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_MODBUILD=	yes
 
@@ -63,12 +65,13 @@ MAN3=		Gantry.3 Gantry::Conf.3 Gantry::Conf::FAQ.3 \
 		Gantry::Control::Model::auth_users_cdbi.3 \
 		Gantry::Docs::About.3 Gantry::Docs::DBConn.3 \
 		Gantry::Docs::FAQ.3 Gantry::Docs::QuickStart.3 \
-		Gantry::Docs::TOC.3 Gantry::Docs::Tutorial.3 \
+		Gantry::Docs.3 Gantry::Docs::Tutorial.3 \
 		Gantry::Docs::Why.3 Gantry::Engine::CGI.3 \
 		Gantry::Engine::MP13.3 Gantry::Engine::MP20.3 \
 		Gantry::Init.3 Gantry::Plugins::AutoCRUD.3 \
 		Gantry::Plugins::AutoCRUDHelper::CDBI.3 \
 		Gantry::Plugins::AutoCRUDHelper::DBIxClass.3 \
+		Gantry::Plugins::AuthCookie.3 \
 		Gantry::Plugins::CRUD.3 Gantry::Plugins::Calendar.3 \
 		Gantry::Plugins::DBIxClassConn.3 Gantry::Plugins::Static.3 \
 		Gantry::Plugins::Validate.3 Gantry::Server.3 Gantry::Stash.3 \
@@ -81,11 +84,12 @@ MAN3=		Gantry.3 Gantry::Conf.3 Gantry::Conf::FAQ.3 \
 		Gantry::Utils::DBConnHelper::MP13.3 \
 		Gantry::Utils::DBConnHelper::MP20.3 \
 		Gantry::Utils::DBConnHelper::Script.3 \
-		Gantry::Utils::DBIxClass.3 Gantry::Utils::HTML.3 \
+		Gantry::Utils::DBIxClass.3 Gantry::Utils::FormErrors.3 Gantry::Utils::HTML.3 \
 		Gantry::Utils::Model.3 Gantry::Utils::Model::Auth.3 \
 		Gantry::Utils::Model::Regular.3 Gantry::Utils::ModelHelper.3 \
 		Gantry::Utils::PODViewer.3 Gantry::Utils::PerlbalFixup.3 \
-		Gantry::Utils::SQL.3 Gantry::Utils::Validate.3
+		Gantry::Utils::SQL.3 Gantry::Utils::Validate.3 \
+		Template::Plugin::GantryAuthCookie.3
 
 .include <bsd.port.pre.mk>
 

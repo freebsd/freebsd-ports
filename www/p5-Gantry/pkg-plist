@@ -37,17 +37,18 @@
 %%SITE_PERL%%/Gantry/Control/Model/auth_pages_cdbi.pm
 %%SITE_PERL%%/Gantry/Control/Model/auth_users.pm
 %%SITE_PERL%%/Gantry/Control/Model/auth_users_cdbi.pm
-%%SITE_PERL%%/Gantry/Docs/About.pm
-%%SITE_PERL%%/Gantry/Docs/DBConn.pm
-%%SITE_PERL%%/Gantry/Docs/FAQ.pm
-%%SITE_PERL%%/Gantry/Docs/QuickStart.pm
-%%SITE_PERL%%/Gantry/Docs/TOC.pm
-%%SITE_PERL%%/Gantry/Docs/Tutorial.pm
-%%SITE_PERL%%/Gantry/Docs/Why.pm
+%%SITE_PERL%%/Gantry/Docs.pod
+%%SITE_PERL%%/Gantry/Docs/About.pod
+%%SITE_PERL%%/Gantry/Docs/DBConn.pod
+%%SITE_PERL%%/Gantry/Docs/FAQ.pod
+%%SITE_PERL%%/Gantry/Docs/QuickStart.pod
+%%SITE_PERL%%/Gantry/Docs/Tutorial.pod
+%%SITE_PERL%%/Gantry/Docs/Why.pod
 %%SITE_PERL%%/Gantry/Engine/CGI.pm
 %%SITE_PERL%%/Gantry/Engine/MP13.pm
 %%SITE_PERL%%/Gantry/Engine/MP20.pm
 %%SITE_PERL%%/Gantry/Init.pm
+%%SITE_PERL%%/Gantry/Plugins/AuthCookie.pm
 %%SITE_PERL%%/Gantry/Plugins/AutoCRUD.pm
 %%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper/CDBI.pm
 %%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper/DBIxClass.pm
@@ -73,6 +74,7 @@
 %%SITE_PERL%%/Gantry/Utils/DBConnHelper/MP20.pm
 %%SITE_PERL%%/Gantry/Utils/DBConnHelper/Script.pm
 %%SITE_PERL%%/Gantry/Utils/DBIxClass.pm
+%%SITE_PERL%%/Gantry/Utils/FormErrors.pm
 %%SITE_PERL%%/Gantry/Utils/HTML.pm
 %%SITE_PERL%%/Gantry/Utils/Model.pm
 %%SITE_PERL%%/Gantry/Utils/Model/Auth.pm
@@ -82,6 +84,9 @@
 %%SITE_PERL%%/Gantry/Utils/PerlbalFixup.pm
 %%SITE_PERL%%/Gantry/Utils/SQL.pm
 %%SITE_PERL%%/Gantry/Utils/Validate.pm
+%%SITE_PERL%%/Template/Plugin/GantryAuthCookie.pm
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
 @dirrmtry %%SITE_PERL%%/Gantry/Utils/Model
 @dirrmtry %%SITE_PERL%%/Gantry/Utils/DBConnHelper
 @dirrmtry %%SITE_PERL%%/Gantry/Utils
