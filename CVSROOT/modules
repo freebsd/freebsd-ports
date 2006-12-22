@@ -7983,6 +7983,7 @@ oneko		ports/games/oneko
 oneko-sakura	ports/games/oneko-sakura
 onenetd		ports/net/onenetd
 oniguruma	ports/devel/oniguruma
+oniguruma4	ports/devel/oniguruma4
 onion-fec	ports/net/onion-fec
 onis		ports/irc/onis
 ontv		ports/deskutils/ontv
