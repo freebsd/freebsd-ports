@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	Net_DNSBL
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR DNSBL Checker
 
 BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite \
 		${PEARDIR}/Net/CheckIP.php:${PORTSDIR}/net/pear-Net_CheckIP \
+		${PEARDIR}/Net/DNS/RR/A.php:${PORTSDIR}/dns/pear-Net_DNS \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
 
 CATEGORY=	Net
-FILES=		DNSBL.php DNSBL/SURBL.php
-TESTS=		testNetDNSBL.php testNetDNSBLSURBL.php
+FILES=		Net/DNSBL.php Net/DNSBL/SURBL.php
+TESTS=		AllTests.php testNetDNSBL.php testNetDNSBLSURBL.php
 
 .include <bsd.port.pre.mk>
 
