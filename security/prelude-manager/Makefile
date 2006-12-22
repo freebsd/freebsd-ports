@@ -6,6 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -44,7 +45,7 @@ PLIST_SUB+=	WITH_DB=""
 .endif
 
 post-install:
-	@if [ -f ${PREFIX}/etc/prelude-manager/prelude-manager.conf ]; then \
+	@if [ ! -f ${PREFIX}/etc/prelude-manager/prelude-manager.conf ]; then \
 	   ${CP} -p ${PREFIX}/etc/prelude-manager/prelude-manager.conf-dist \
 	      ${PREFIX}/etc/prelude-manager/prelude-manager.conf ; \
 	fi
