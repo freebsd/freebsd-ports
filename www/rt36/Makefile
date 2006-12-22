@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.6.1
-PORTREVISION=	1
+PORTVERSION?=	3.6.3
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	vivek@khera.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
-BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
+PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
@@ -59,9 +59,11 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 	        ${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 	        ${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
 	        ${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
+		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	${PERL_MODULES}
+RUN_DEPENDS+=	${PERL_MODULES}
 
 LATEST_LINK=	rt36
 HAS_CONFIGURE=	yes
@@ -146,10 +148,9 @@ UPGRADES=	3.1.0 3.1.15 3.1.17
 .if defined(UPGRADE_RT30) || defined(UPGRADE_RT32)
 UPGRADES+=	3.3.0 3.3.11
 .endif
-.if defined(UPGRADE_RT34)
+.if defined(UPGRADE_RT30) || defined(UPGRADE_RT32) || defined(UPGRADE_RT34)
 UPGRADES+=	3.5.1
 .endif
-
 
 .include <bsd.port.pre.mk>
 

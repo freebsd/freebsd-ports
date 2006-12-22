@@ -197,6 +197,7 @@
 %%RTPLIST%%/lib/t/data/8859-15-message-series/msg6
 %%RTPLIST%%/lib/t/data/8859-15-message-series/msg7
 %%RTPLIST%%/lib/t/data/crashes-file-based-parser
+%%RTPLIST%%/lib/t/data/lorem-ipsum
 %%RTPLIST%%/lib/t/data/multipart-alternative-with-umlaut
 %%RTPLIST%%/lib/t/data/multipart-report
 %%RTPLIST%%/lib/t/data/nested-mime-sample
@@ -206,14 +207,18 @@
 %%RTPLIST%%/lib/t/data/notes-uuencoded
 %%RTPLIST%%/lib/t/data/rt-send-cc
 %%RTPLIST%%/lib/t/data/russian-subject-no-content-type
+%%RTPLIST%%/lib/t/data/subject-with-folding-ws
 %%RTPLIST%%/lib/t/data/text-html-in-russian
 %%RTPLIST%%/lib/t/data/text-html-with-umlaut
+%%RTPLIST%%/lib/t/data/very-long-subject
+%%RTPLIST%%/lib/t/regression/00-mason-syntax.t
 %%RTPLIST%%/lib/t/regression/01ticket_link_searching.t
 %%RTPLIST%%/lib/t/regression/02basic_web.t
 %%RTPLIST%%/lib/t/regression/03web_compiliation_errors.t
 %%RTPLIST%%/lib/t/regression/04send_email.t
 %%RTPLIST%%/lib/t/regression/05cronsupport.t
 %%RTPLIST%%/lib/t/regression/06mailgateway.t
+%%RTPLIST%%/lib/t/regression/06-mime_decoding.t
 %%RTPLIST%%/lib/t/regression/07acl.t
 %%RTPLIST%%/lib/t/regression/07rights.t
 %%RTPLIST%%/lib/t/regression/08web_cf_access.t
@@ -259,6 +264,7 @@
 %%RTPLIST%%/share/html/Admin/CustomFields/index.html
 %%RTPLIST%%/share/html/Admin/Elements/AddCustomFieldValue
 %%RTPLIST%%/share/html/Admin/Elements/CreateUserCalled
+%%RTPLIST%%/share/html/Admin/Elements/ConfigureMyRT
 %%RTPLIST%%/share/html/Admin/Elements/CustomFieldTabs
 %%RTPLIST%%/share/html/Admin/Elements/EditCustomField
 %%RTPLIST%%/share/html/Admin/Elements/EditCustomFieldValues
@@ -304,6 +310,7 @@
 %%RTPLIST%%/share/html/Admin/Global/CustomFields/Users.html
 %%RTPLIST%%/share/html/Admin/Global/CustomFields/index.html
 %%RTPLIST%%/share/html/Admin/Global/GroupRights.html
+%%RTPLIST%%/share/html/Admin/Global/MyRT.html
 %%RTPLIST%%/share/html/Admin/Global/Scrip.html
 %%RTPLIST%%/share/html/Admin/Global/Scrips.html
 %%RTPLIST%%/share/html/Admin/Global/Template.html
@@ -334,6 +341,7 @@
 %%RTPLIST%%/share/html/Admin/Users/History.html
 %%RTPLIST%%/share/html/Admin/Users/Memberships.html
 %%RTPLIST%%/share/html/Admin/Users/Modify.html
+%%RTPLIST%%/share/html/Admin/Users/MyRT.html
 %%RTPLIST%%/share/html/Admin/Users/index.html
 %%RTPLIST%%/share/html/Admin/autohandler
 %%RTPLIST%%/share/html/Admin/index.html
@@ -617,6 +625,7 @@
 %%RTPLIST%%/share/html/User/Groups/index.html
 %%RTPLIST%%/share/html/User/Prefs.html
 %%RTPLIST%%/share/html/Widgets/ComboBox
+%%RTPLIST%%/share/html/Widgets/SavedSearch
 %%RTPLIST%%/share/html/Widgets/SelectionBox
 %%RTPLIST%%/share/html/Widgets/TitleBox
 %%RTPLIST%%/share/html/Widgets/TitleBoxEnd
@@ -707,6 +716,6 @@
 @dirrm %%RTPLIST%%/lib/RT/Action
 @dirrm %%RTPLIST%%/lib/RT
 @dirrm %%RTPLIST%%/lib
-@unexec rmdir %%RT_PATH%%/etc 2> /dev/null || true
+@dirrmtry %%RTPLIST%%/etc
 @dirrm %%RTPLIST%%/bin
 @dirrm %%RTPLIST%%
