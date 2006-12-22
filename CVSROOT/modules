@@ -3927,6 +3927,7 @@ gstreamer-plugins-hal		ports/sysutils/gstreamer-plugins-hal
 gstreamer-plugins-hermes80	ports/graphics/gstreamer-plugins-hermes80
 gstreamer-plugins-ivorbis	ports/audio/gstreamer-plugins-ivorbis
 gstreamer-plugins-ivorbis80	ports/audio/gstreamer-plugins-ivorbis80
+gstreamer-plugins-jack		ports/audio/gstreamer-plugins-jack
 gstreamer-plugins-jack80	ports/audio/gstreamer-plugins-jack80
 gstreamer-plugins-jpeg		ports/graphics/gstreamer-plugins-jpeg
 gstreamer-plugins-jpeg-mmx80	ports/graphics/gstreamer-plugins-jpeg-mmx80
