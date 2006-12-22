@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	Apache-Clean
-PORTVERSION=	0.05
+PORTVERSION=	2.00
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache/GEOFF
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION}_7
 
 MAINTAINER=	martin@matuska.org
 COMMENT=	A mod_perl interface into HTML::Clean
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/HTML/Clean.pm:${PORTSDIR}/www/p5-HTML-Clean
+BUILD_DEPENDS=	mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+		p5-HTML-Clean>=0.8:${PORTSDIR}/www/p5-HTML-Clean
 
 PERL_CONFIGURE=	yes
 
