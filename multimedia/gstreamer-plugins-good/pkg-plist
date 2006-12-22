@@ -10,6 +10,9 @@ lib/gstreamer-%%VERSION%%/libgstalphacolor.so
 lib/gstreamer-%%VERSION%%/libgstapetag.a
 lib/gstreamer-%%VERSION%%/libgstapetag.la
 lib/gstreamer-%%VERSION%%/libgstapetag.so
+lib/gstreamer-%%VERSION%%/libgstaudiofx.a
+lib/gstreamer-%%VERSION%%/libgstaudiofx.la
+lib/gstreamer-%%VERSION%%/libgstaudiofx.so
 lib/gstreamer-%%VERSION%%/libgstauparse.a
 lib/gstreamer-%%VERSION%%/libgstauparse.la
 lib/gstreamer-%%VERSION%%/libgstauparse.so
