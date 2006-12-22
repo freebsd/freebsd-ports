@@ -5,6 +5,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	0.9.12
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -52,6 +53,27 @@ CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
+
+	@if [ ! -f ${PREFIX}/etc/prelude/default/client.conf ]; then \
+	   ${CP} -p ${PREFIX}/etc/prelude/default/client.conf-dist \
+	      ${PREFIX}/etc/prelude/default/client.conf ; \
+	fi
+
+	@if [ ! -f ${PREFIX}/etc/prelude/default/global.conf ]; then \
+	   ${CP} -p ${PREFIX}/etc/prelude/default/global.conf-dist \
+	      ${PREFIX}/etc/prelude/default/global.conf ; \
+	fi
+
+	@if [ ! -f ${PREFIX}/etc/prelude/default/idmef-client.conf ]; then \
+	   ${CP} -p ${PREFIX}/etc/prelude/default/idmef-client.conf-dist \
+	      ${PREFIX}/etc/prelude/default/idmef-client.conf ; \
+	fi
+
+	@if [ ! -f ${PREFIX}/etc/prelude/default/tls.conf ]; then \
+	   ${CP} -p ${PREFIX}/etc/prelude/default/tls.conf-dist \
+	      ${PREFIX}/etc/prelude/default/tls.conf ; \
+	fi
+
 .endif
 
 .include <bsd.port.post.mk>
