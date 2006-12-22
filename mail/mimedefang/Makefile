@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.57
+PORTVERSION=	2.58
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
