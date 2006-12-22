@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Variable dataformat binary editor
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 # Cannot guarantee rxvt will have menubar enabled on bento.
 .if defined(PACKAGE_BUILDING)
