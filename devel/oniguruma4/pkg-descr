@@ -9,7 +9,7 @@ This library is multilingualized by design and can have one encoding
 for each regex object.  Currently supported character encodings are
 ASCII, UTF-8, EUC-JP and Shift_JIS.
 
-2.x supports Ruby1.6/1.8
+4.x supports Ruby1.9.
 
 Author:	K.Kosako <kosako@sofnec.co.jp>
 WWW:	http://www.geocities.jp/kosako3/oniguruma/
