@@ -2245,7 +2245,6 @@ graphics/gstreamer-plugins-hermes|graphics/gstreamer-plugins-hermes80|2006-04-29
 multimedia/gstreamer-plugins-libfame|multimedia/gstreamer-plugins-libfame80|2006-04-29|Not part of gstreamer 0.10 yet
 graphics/gstreamer-plugins-libmng|graphics/gstreamer-plugins-libmng80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-mikmod|audio/gstreamer-plugins-mikmod80|2006-04-29|Not part of gstreamer 0.10 yet
-multimedia/gstreamer-plugins-mpeg2enc|multimedia/gstreamer-plugins-mpeg2enc80|2006-04-29|Not part of gstreamer 0.10 yet
 multimedia/gstreamer-plugins-mplex|multimedia/gstreamer-plugins-mplex80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-nas|audio/gstreamer-plugins-nas80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-polypaudio80|2006-04-29|Not part of gstreamer 0.10 yet

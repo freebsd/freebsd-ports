@@ -69,6 +69,7 @@
     SUBDIR += gstreamer-plugins-gnonlin
     SUBDIR += gstreamer-plugins-good
     SUBDIR += gstreamer-plugins-libfame80
+    SUBDIR += gstreamer-plugins-mpeg2enc
     SUBDIR += gstreamer-plugins-mpeg2dec
     SUBDIR += gstreamer-plugins-mpeg2dec80
     SUBDIR += gstreamer-plugins-mplex80

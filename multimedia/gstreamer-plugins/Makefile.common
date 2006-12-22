@@ -258,6 +258,10 @@ gst_mad_LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 gst_mad_DIST=	ugly
 
+# mpeg2enc
+gst_mpeg2enc_LIB_DEPENDS+=	mjpegutils-1.8.0:${PORTSDIR}/multimedia/mjpegtools
+gst_mpeg2enc_DIST=	bad
+
 # mpeg2dec
 gst_mpeg2dec_LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 gst_mpeg2dec_DIST=	ugly
