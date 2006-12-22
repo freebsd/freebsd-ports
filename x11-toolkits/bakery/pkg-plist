@@ -30,6 +30,8 @@ lib/libbakery-%%VERSION%%.la
 lib/libbakery-%%VERSION%%.so
 lib/libbakery-%%VERSION%%.so.1
 libdata/pkgconfig/bakery-%%API_VERSION%%.pc
+share/locale/ar/LC_MESSAGES/bakery.mo
+share/locale/bg/LC_MESSAGES/bakery.mo
 share/locale/ca/LC_MESSAGES/bakery.mo
 share/locale/de/LC_MESSAGES/bakery.mo
 share/locale/el/LC_MESSAGES/bakery.mo
@@ -39,9 +41,13 @@ share/locale/es/LC_MESSAGES/bakery.mo
 share/locale/fi/LC_MESSAGES/bakery.mo
 share/locale/fr/LC_MESSAGES/bakery.mo
 share/locale/hu/LC_MESSAGES/bakery.mo
+share/locale/ja/LC_MESSAGES/bakery.mo
+share/locale/mk/LC_MESSAGES/bakery.mo
+share/locale/nb/LC_MESSAGES/bakery.mo
 share/locale/ne/LC_MESSAGES/bakery.mo
 share/locale/nl/LC_MESSAGES/bakery.mo
 share/locale/pt_BR/LC_MESSAGES/bakery.mo
+share/locale/ru/LC_MESSAGES/bakery.mo
 share/locale/rw/LC_MESSAGES/bakery.mo
 share/locale/sk/LC_MESSAGES/bakery.mo
 share/locale/sv/LC_MESSAGES/bakery.mo
