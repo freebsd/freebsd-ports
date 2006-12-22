@@ -1,0 +1,22 @@
+bin/linsmith
+share/locale/de/LC_MESSAGES/linsmith.mo
+share/locale/es/LC_MESSAGES/linsmith.mo
+share/locale/hu/LC_MESSAGES/linsmith.mo
+share/locale/it/LC_MESSAGES/linsmith.mo
+share/locale/sv/LC_MESSAGES/linsmith.mo
+share/locale/zh/LC_MESSAGES/linsmith.mo
+share/pixmaps/linsmith/Makefile.am~
+share/pixmaps/linsmith/smith4.png
+share/pixmaps/linsmith/smithent.png
+@dirrm share/pixmaps/linsmith
+%%DATADIR%%/6-1.circ
+%%DATADIR%%/6-1.load
+%%DATADIR%%/6-4.circ
+%%DATADIR%%/6-4.load
+%%DATADIR%%/6-5.circ
+%%DATADIR%%/6-5.load
+%%DATADIR%%/6-6.circ
+%%DATADIR%%/6-6.load
+%%DATADIR%%/conv0809
+%%DATADIR%%/nb_40.load
+@dirrm %%DATADIR%%

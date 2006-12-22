@@ -1,0 +1,29 @@
+# ex:ts=8
+# Ports collection Makefile for:	linsmith
+# Date created:			Dec 22, 2006
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	linsmith
+PORTVERSION=	0.99.3
+CATEGORIES=	science
+MASTER_SITES=	SF
+
+MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Smith charting program
+
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+
+USE_GNOME=	pkgconfig libgnomeprint libgnomeui libxml2
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${CP} ${FILESDIR}/carg.c  ${WRKSRC}/src
+
+.include <bsd.port.mk>
