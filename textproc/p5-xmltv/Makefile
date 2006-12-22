@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of programs to process TV (tvguide) listings in XML format
 
 BUILD_DEPENDS=	\
