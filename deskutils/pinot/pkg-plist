@@ -3,18 +3,38 @@ bin/pinot-collect
 bin/pinot-dbus-daemon
 bin/pinot-index
 bin/pinot-search
+etc/pinot/globalconfig.xml
+etc/pinot/textcat3_conf.txt
+etc/pinot/textcat_conf.txt
 etc/xdg/autostart/pinot-dbus-daemon.desktop
 lib/deskbar-applet/handlers/pinot-live.py
 lib/deskbar-applet/handlers/pinot-live.pyc
 lib/deskbar-applet/handlers/pinot-live.pyo
+lib/pinot/tokenizers/libopendocumenttokenizer.so
+lib/pinot/tokenizers/libopendocumenttokenizer.so.0
+lib/pinot/tokenizers/libpdftokenizer.so
+lib/pinot/tokenizers/libpdftokenizer.so.0
+lib/pinot/tokenizers/librtftokenizer.so
+lib/pinot/tokenizers/librtftokenizer.so.0
+lib/pinot/tokenizers/libtaglibtokenizer.so
+lib/pinot/tokenizers/libtaglibtokenizer.so.0
+lib/pinot/tokenizers/libwordtokenizer.so
+lib/pinot/tokenizers/libwordtokenizer.so.0
 share/applications/pinot.desktop
 share/dbus-1/services/de.berlios.Pinot.service
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/icons/hicolor/48x48/apps/pinot.png
 share/locale/es/LC_MESSAGES/pinot.mo
 share/locale/fr/LC_MESSAGES/pinot.mo
 share/locale/nl/LC_MESSAGES/pinot.mo
 share/locale/sv/LC_MESSAGES/pinot.mo
 %%DATADIR%%/AmazonAPI.src
+%%DATADIR%%/engines
 %%DATADIR%%/engines/A9.src
 %%DATADIR%%/engines/Accoona.src
 %%DATADIR%%/engines/Ask.src
@@ -35,24 +55,11 @@ share/locale/sv/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/WiseNut.src
 %%DATADIR%%/engines/Yahoo.src
 %%DATADIR%%/engines/YahooAPI.src
-%%DATADIR%%/globalconfig.xml
 %%DATADIR%%/metase-gtk2.glade
 %%DATADIR%%/metase-gtk2.gladep
 %%DATADIR%%/pinot-dbus-daemon.xml
-%%DATADIR%%/textcat3_conf.txt
-%%DATADIR%%/textcat_conf.txt
-%%DATADIR%%/tokenizers/libopendocumenttokenizer.so
-%%DATADIR%%/tokenizers/libopendocumenttokenizer.so.0
-%%DATADIR%%/tokenizers/libpdftokenizer.so
-%%DATADIR%%/tokenizers/libpdftokenizer.so.0
-%%DATADIR%%/tokenizers/librtftokenizer.so
-%%DATADIR%%/tokenizers/librtftokenizer.so.0
-%%DATADIR%%/tokenizers/libtaglibtokenizer.so
-%%DATADIR%%/tokenizers/libtaglibtokenizer.so.0
-%%DATADIR%%/tokenizers/libwordtokenizer.so
-%%DATADIR%%/tokenizers/libwordtokenizer.so.0
 %%DATADIR%%/xapian-powered.png
-@dirrm %%DATADIR%%/tokenizers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/engines
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/48x48/apps
@@ -60,7 +67,10 @@ share/locale/sv/LC_MESSAGES/pinot.mo
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
+@dirrm lib/pinot/tokenizers
+@dirrm lib/pinot
 @dirrmtry lib/deskbar-applet/handlers
 @dirrmtry lib/deskbar-applet
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
+@dirrm etc/pinot
