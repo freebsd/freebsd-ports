@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	torrus
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -60,7 +60,8 @@ MAN1=		torrus.1 torrus_acledit.1 torrus_cleanup.1 torrus_clearcache.1 \
 		torrus_genlist.1 torrus_monitor.1 torrus_schedulerinfo.1 \
 		torrus_ttproclist.1 torrus_rrddir2xml.1
 
-MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7
+MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7 \
+		torrus_action_notify.7
 
 .include <bsd.port.pre.mk>
 
@@ -90,11 +91,12 @@ pre-install:
 	@if ! pw usershow ${TORRUS_USER}; then \
 		pw useradd ${TORRUS_USER} -g ${TORRUS_USER} \
 			-h - -d ${PREFIX}/torrus -c "torrus daemon"; \
-		pw usermod ${TORRUS_USER} -G www; \
+		pw usermod www -G ${TORRUS_USER}; \
 	fi
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/init.d/torrus ${PREFIX}/etc/rc.d/torrus.sh
-	@${MKDIR} ${PREFIX}/${TORRUS_RRDDIR}
+	@${MKDIR} -m 2775 -p ${PREFIX}/${TORRUS_RRDDIR}
+	@${CHOWN} ${TORRUS_USER}:${TORRUS_USER} ${PREFIX}/${TORRUS_RRDDIR}
 
 .include <bsd.port.post.mk>

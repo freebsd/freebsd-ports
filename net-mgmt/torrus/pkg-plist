@@ -2,11 +2,13 @@ bin/torrus
 etc/rc.d/torrus.sh
 etc/torrus/conf/devdiscover-siteconfig.pl.sample
 etc/torrus/conf/email-siteconfig.pl.sample
+etc/torrus/conf/notify-siteconfig.pl.sample
 etc/torrus/conf/snmptrap-siteconfig.pl.sample
 etc/torrus/conf/torrus-siteconfig.pl.sample
 etc/torrus/discovery/README
 etc/torrus/xmlconfig/site-global.xml.sample
 torrus/bin/acledit
+torrus/bin/action_notify
 torrus/bin/action_printemail
 torrus/bin/action_snmptrap
 torrus/bin/action_snmpv1trap
@@ -19,6 +21,7 @@ torrus/bin/configsnapshot
 torrus/bin/devdiscover
 torrus/bin/genddx
 torrus/bin/genlist
+torrus/bin/genreport
 torrus/bin/install_plugin
 torrus/bin/monitor
 torrus/bin/rrddir2xml
@@ -41,6 +44,7 @@ torrus/doc/devdoc/wd.messaging.pod
 torrus/doc/devdoc/wd.monitor-escalation.pod
 torrus/doc/devdoc/wd.uptime-mon.pod
 torrus/doc/install.txt
+torrus/doc/reporting_setup.txt
 torrus/doc/rpnexpr.txt
 torrus/doc/rrfw_torrus_migration.txt
 torrus/doc/scalability.txt
@@ -63,6 +67,8 @@ torrus/perllib/Torrus/ACL/Import.pm
 torrus/perllib/Torrus/Apache2Handler.pm
 torrus/perllib/Torrus/ApacheHandler.pm
 torrus/perllib/Torrus/Collector.pm
+torrus/perllib/Torrus/Collector/ExtDBI.pm
+torrus/perllib/Torrus/Collector/ExternalStorage.pm
 torrus/perllib/Torrus/Collector/RRDStorage.pm
 torrus/perllib/Torrus/Collector/SNMP.pm
 torrus/perllib/Torrus/Collector/SNMP_Params.pm
@@ -75,6 +81,7 @@ torrus/perllib/Torrus/DB.pm
 torrus/perllib/Torrus/DataAccess.pm
 torrus/perllib/Torrus/DevDiscover.pm
 torrus/perllib/Torrus/DevDiscover/ATMEL.pm
+torrus/perllib/Torrus/DevDiscover/AlliedTelesyn_PBC18.pm
 torrus/perllib/Torrus/DevDiscover/AscendMax.pm
 torrus/perllib/Torrus/DevDiscover/AxxessIT.pm
 torrus/perllib/Torrus/DevDiscover/BetterNetworks.pm
@@ -85,6 +92,7 @@ torrus/perllib/Torrus/DevDiscover/CiscoIOS.pm
 torrus/perllib/Torrus/DevDiscover/CiscoIOS_Docsis.pm
 torrus/perllib/Torrus/DevDiscover/CiscoIOS_MacAccounting.pm
 torrus/perllib/Torrus/DevDiscover/CiscoIOS_SAA.pm
+torrus/perllib/Torrus/DevDiscover/CiscoVDSL.pm
 torrus/perllib/Torrus/DevDiscover/CompaqCIM.pm
 torrus/perllib/Torrus/DevDiscover/EmpireSystemedge.pm
 torrus/perllib/Torrus/DevDiscover/F5BigIp.pm
@@ -111,9 +119,17 @@ torrus/perllib/Torrus/Renderer/AdmInfo.pm
 torrus/perllib/Torrus/Renderer/Frontpage.pm
 torrus/perllib/Torrus/Renderer/HTML.pm
 torrus/perllib/Torrus/Renderer/RRDtool.pm
+torrus/perllib/Torrus/ReportGenerator/MonthlySrvUsage.pm
+torrus/perllib/Torrus/ReportGenerator.pm
+torrus/perllib/Torrus/ReportOutput/HTML.pm
+torrus/perllib/Torrus/ReportOutput.pm
+torrus/perllib/Torrus/ServiceID.pm
 torrus/perllib/Torrus/Scheduler.pm
 torrus/perllib/Torrus/SchedulerInfo.pm
 torrus/perllib/Torrus/SiteConfig.pm
+torrus/perllib/Torrus/SQL/Reports.pm
+torrus/perllib/Torrus/SQL/SrvExport.pm
+torrus/perllib/Torrus/SQL.pm
 torrus/perllib/Torrus/TimeStamp.pm
 torrus/scripts/rrdup_notify.sh
 torrus/scripts/xml/extract-skeleton.xsl
@@ -126,6 +142,7 @@ torrus/sup/styling/rainbow-schema.pl
 torrus/sup/styling/torrus-schema.pl
 torrus/sup/webplain/explain-rrdgraph.html
 torrus/sup/webplain/torrus-printer.css
+torrus/sup/webplain/torrus-report.css
 torrus/sup/webplain/torrus.css
 torrus/templates/aclexport.xml
 torrus/templates/adminfo.html
@@ -140,6 +157,10 @@ torrus/templates/email-alarm.txt
 torrus/templates/expanded-dir.html
 torrus/templates/html-incblocks.txt
 torrus/templates/overview-subleaves.html
+torrus/templates/report-index.html
+torrus/templates/report-monthly.html
+torrus/templates/report-serviceid.html
+torrus/templates/report-yearly.html
 torrus/templates/tset-list.html
 torrus/xmlconfig/defaults.xml
 torrus/xmlconfig/examples/apc-ups.xml
@@ -177,6 +198,7 @@ torrus/xmlconfig/vendor/cisco.generic.xml
 torrus/xmlconfig/vendor/cisco.ios.docsis.xml
 torrus/xmlconfig/vendor/cisco.ios.mac-accounting.xml
 torrus/xmlconfig/vendor/cisco.ios.xml
+torrus/xmlconfig/vendor/cisco.vdsl-line.xml
 torrus/xmlconfig/vendor/compaq.cim.xml
 torrus/xmlconfig/vendor/empire.systemedge.ntregperf.xml
 torrus/xmlconfig/vendor/empire.systemedge.xml
@@ -191,6 +213,7 @@ torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 @exec mkdir %D/var/torrus 2>/dev/null || true
 @exec mkdir %D/var/torrus/cache 2>/dev/null || true
 @exec mkdir %D/var/torrus/db 2>/dev/null || true
+@exec mkdir %D/var/torrus/reports 2>/dev/null || true
 @exec mkdir %D/var/torrus/session_data 2>/dev/null || true
 @exec mkdir %D/var/torrus/session_data/lock 2>/dev/null || true
 @exec mkdir %D/var/torrus/session_data/store 2>/dev/null || true
@@ -203,10 +226,12 @@ torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 @dirrm var/torrus/session_data/store
 @dirrm var/torrus/session_data/lock
 @dirrm var/torrus/session_data
+@dirrm var/torrus/reports
 @dirrm var/torrus/db
 @dirrm var/torrus/collector_rrd
 @dirrm var/torrus/cache
 @dirrm var/torrus
+@dirrm var
 @dirrm torrus/xmlconfig/vendor
 @dirrm torrus/xmlconfig/old
 @dirrm torrus/xmlconfig/generic
@@ -225,6 +250,9 @@ torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 @dirrm torrus/plugins/torrus-config
 @dirrm torrus/plugins/devdiscover-config
 @dirrm torrus/plugins
+@dirrm torrus/perllib/Torrus/SQL
+@dirrm torrus/perllib/Torrus/ReportOutput
+@dirrm torrus/perllib/Torrus/ReportGenerator
 @dirrm torrus/perllib/Torrus/Renderer
 @dirrm torrus/perllib/Torrus/DevDiscover
 @dirrm torrus/perllib/Torrus/ConfigTree
