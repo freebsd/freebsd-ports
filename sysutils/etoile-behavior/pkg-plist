@@ -1,0 +1,5 @@
+System/Library/Bundles/EtoileBehavior.bundle/EtoileBehavior
+System/Library/Bundles/EtoileBehavior.bundle/Resources/Info-gnustep.plist
+System/Library/Bundles/EtoileBehavior.bundle/stamp.make
+@dirrm System/Library/Bundles/EtoileBehavior.bundle/Resources
+@dirrm System/Library/Bundles/EtoileBehavior.bundle
