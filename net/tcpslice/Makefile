@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpslice
-PORTVERSION=	2006.12.04
+PORTVERSION=	2006.12.18
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/weekly/
 
