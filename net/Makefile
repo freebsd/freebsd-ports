@@ -576,6 +576,7 @@
     SUBDIR += pear-Net_URL
     SUBDIR += pear-Net_UserAgent_Detect
     SUBDIR += pear-Net_UserAgent_Mobile
+    SUBDIR += pear-Net_Whois
     SUBDIR += pear-SOAP
     SUBDIR += pecl-cvsclient
     SUBDIR += pecl-radius
