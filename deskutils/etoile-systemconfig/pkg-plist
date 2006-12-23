@@ -1,0 +1,8 @@
+Local/Library/Headers/libSystemConfig/SCKeyboard.h
+Local/Library/Headers/libSystemConfig/SCMonitor.h
+Local/Library/Headers/libSystemConfig/SCMouse.h
+Local/Library/Headers/libSystemConfig/SCSound.h
+Local/Library/Libraries/libSystemConfig.so
+Local/Library/Libraries/libSystemConfig.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libSystemConfig.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/libSystemConfig

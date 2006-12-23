@@ -48,6 +48,7 @@
     SUBDIR += etoile-panekit
     SUBDIR += etoile-preferenceskit
     SUBDIR += etoile-servicesbarkit
+    SUBDIR += etoile-systemconfig
     SUBDIR += etoile-trackerkit
     SUBDIR += etoile-ui
     SUBDIR += etoile-workspaceswitcher
