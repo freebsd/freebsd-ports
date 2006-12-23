@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ctris
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	games
-MASTER_SITES=	http://www.liquidx.org/distfiles/ \
+MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
+		http://www.liquidx.org/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 
