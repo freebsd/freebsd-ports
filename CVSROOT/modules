@@ -3986,6 +3986,7 @@ gstreamer-plugins-sndfile80	ports/audio/gstreamer-plugins-sndfile80
 gstreamer-plugins-spc	ports/audio/gstreamer-plugins-spc
 gstreamer-plugins-speex		ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-speex80	ports/audio/gstreamer-plugins-speex80
+gstreamer-plugins-swfdec	ports/graphics/gstreamer-plugins-swfdec
 gstreamer-plugins-swfdec80	ports/graphics/gstreamer-plugins-swfdec80
 gstreamer-plugins-theora	ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-theora80	ports/multimedia/gstreamer-plugins-theora80
