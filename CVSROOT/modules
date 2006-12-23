@@ -11030,6 +11030,7 @@ pear-Net_DNSBL	ports/net/pear-Net_DNSBL
 pear-Net_Dict	ports/net/pear-Net_Dict
 pear-Net_FTP	ports/ftp/pear-Net_FTP
 pear-Net_Finger	ports/net/pear-Net_Finger
+pear-Net_Geo	ports/net/pear-Net_Geo
 pear-Net_IMAP	ports/mail/pear-Net_IMAP
 pear-Net_IPv6	ports/net/pear-Net_IPv6
 pear-Net_Ident	ports/net/pear-Net_Ident
