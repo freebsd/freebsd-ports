@@ -245,6 +245,7 @@
     SUBDIR += gstreamer-plugins-libpng80
     SUBDIR += gstreamer-plugins-libvisual
     SUBDIR += gstreamer-plugins-libvisual80
+    SUBDIR += gstreamer-plugins-swfdec
     SUBDIR += gstreamer-plugins-swfdec80
     SUBDIR += gthumb
     SUBDIR += gtkam

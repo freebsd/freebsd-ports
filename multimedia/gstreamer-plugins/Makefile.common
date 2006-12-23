@@ -319,6 +319,9 @@ gst_spc_DIST=		bad
 # speex
 gst_speex_LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 
+# swfdec
+gst_swfdec_LIB_DEPENDS+=swfdec-0.3.0:${PORTSDIR}/graphics/swfdec
+gst_swfdec_DIST=	bad
 # theora
 gst_theora_LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 gst_theora_DIST=	base
