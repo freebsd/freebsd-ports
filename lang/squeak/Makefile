@@ -7,7 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.6
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
@@ -33,6 +33,7 @@ COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
 BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=		audio.2:${PORTSDIR}/audio/nas
 
 ##################################################
 VMVERSION=		3.6-3
