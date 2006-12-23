@@ -1,0 +1,11 @@
+--- SConstruct.orig	Sat Dec 23 14:21:33 2006
++++ SConstruct	Sat Dec 23 14:21:46 2006
+@@ -128,7 +128,7 @@
+ ########### end of helper builders
+ 
+ env['CPPPATH'] = '#/include'
+-env['LIBPATH'] =  ['#/lib'] + env['LIBPATH']
++env['LIBPATH'] =  ['#/lib'] + env['LIBPATH'].split(" ")
+ 
+ if env['no_cygwin']:
+ 
