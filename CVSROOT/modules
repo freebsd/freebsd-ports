@@ -2418,6 +2418,7 @@ etoile-azdock	ports/x11-wm/etoile-azdock
 etoile-behavior	ports/sysutils/etoile-behavior
 etoile-bookmarkkit	ports/www/etoile-bookmarkkit
 etoile-camaelon	ports/x11-themes/etoile-camaelon
+etoile-collectionkit	ports/devel/etoile-collectionkit
 etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
 etoile-etoilemenus	ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
