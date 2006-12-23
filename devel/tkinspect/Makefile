@@ -11,7 +11,7 @@ CATEGORIES=	devel tcl84 tk84
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tkcon
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	A Tk program browser
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84

@@ -11,7 +11,7 @@ CATEGORIES=	print perl5
 MASTER_SITES=	http://www.aczoom.com/pub/tools/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Generate postscript for frontcards and traycards for CDs
 
 MAN1=		cdlabelgen.1

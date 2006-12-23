@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	File archiver with high compression ratio
 
 USE_BZIP2=	yes

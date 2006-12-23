@@ -14,7 +14,7 @@ DISTNAME=	ProjectX_Source_${PORTVERSION}
 DISTFILES=	ProjectX_Source_eng_${PORTVERSION}${EXTRACT_SUFX} \
 		ProjectX_LanguagePack_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	DVB (mpeg) cutting/demux tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
