@@ -14,7 +14,7 @@ $FreeBSD$
 @@ -1046,7 +1047,7 @@
      size = st.st_size;
      buffer = g_malloc(size);
-     
+ 
 -    FILE *fd = fopen(filename, "rb");
 +    fd = fopen(filename, "rb");
      if (!fd)
