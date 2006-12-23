@@ -9890,6 +9890,7 @@ p5-News-Article	ports/news/p5-News-Article
 p5-News-Article-NoCeM	ports/news/p5-News-Article-NoCeM
 p5-News-Newsrc	ports/news/p5-News-Newsrc
 p5-NewsLib	ports/news/p5-NewsLib
+p5-Newsletter	ports/www/p5-Newsletter
 p5-Nmap-Parser	ports/security/p5-Nmap-Parser
 p5-Nmap-Scanner	ports/security/p5-Nmap-Scanner
 p5-Norge	ports/misc/p5-Norge
