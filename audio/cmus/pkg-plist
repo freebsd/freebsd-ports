@@ -4,8 +4,11 @@ lib/cmus/ip/wav.so
 %%FLAC%%lib/cmus/ip/flac.so
 %%MAD%%lib/cmus/ip/mad.so
 %%MODPLUG%%lib/cmus/ip/modplug.so
+%%MIKMOD%%lib/cmus/ip/mikmod.so
 %%MPC%%lib/cmus/ip/mpc.so
 %%VORBIS%%lib/cmus/ip/vorbis.so
+%%MP4%%lib/cmus/ip/mp4.so
+%%AAC%%lib/cmus/ip/aac.so
 lib/cmus/op/oss.so
 %%AO%%lib/cmus/op/ao.so
 %%ARTS%%lib/cmus/op/arts.so
