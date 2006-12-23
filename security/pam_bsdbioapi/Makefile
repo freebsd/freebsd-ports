@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_bsdbioapi
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://shapeshifter.se/pub/pam_bsdbioapi/
 
@@ -15,7 +16,7 @@ COMMENT=	PAM module for BioAPI
 
 LIB_DEPENDS=	bioapi100.0:${PORTSDIR}/security/bioapi
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 MAN8=		pam_bsdbioapi.8
 MAN3=		libbirdb.3
