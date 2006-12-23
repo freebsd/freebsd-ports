@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FFmpeg-Command
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIZZY
@@ -14,6 +14,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A wrapper class for ffmpeg command line utility
+
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
