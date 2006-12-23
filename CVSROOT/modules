@@ -2433,6 +2433,7 @@ etoile-lucenekit	ports/textproc/etoile-lucenekit
 etoile-menuserver	ports/deskutils/etoile-menuserver
 etoile-multimediakit	ports/multimedia/etoile-multimediakit
 etoile-ogrekit	ports/textproc/etoile-ogrekit
+etoile-panekit	ports/deskutils/etoile-panekit
 etoile-preferenceskit	ports/deskutils/etoile-preferenceskit
 etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
