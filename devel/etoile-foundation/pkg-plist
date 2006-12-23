@@ -1,0 +1,14 @@
+Local/Library/Headers/EtoileFoundation/Cocoa.h
+Local/Library/Headers/EtoileFoundation/EtoileCompatibility.h
+Local/Library/Headers/EtoileFoundation/NSFileManager+NameForTempFile.h
+Local/Library/Headers/EtoileFoundation/UKFileWatcher.h
+Local/Library/Headers/EtoileFoundation/UKKQueue.h
+Local/Library/Headers/EtoileFoundation/UKMainThreadProxy.h
+Local/Library/Headers/EtoileFoundation/UKNibOwner.h
+Local/Library/Headers/EtoileFoundation/UKPluginsRegistry.h
+Local/Library/Headers/EtoileFoundation/UKPushbackMessenger.h
+Local/Library/Headers/EtoileFoundation/UKThreadMessenger.h
+Local/Library/Libraries/libEtoileFoundation.so
+Local/Library/Libraries/libEtoileFoundation.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libEtoileFoundation.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/EtoileFoundation
