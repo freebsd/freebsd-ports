@@ -5,7 +5,7 @@ different locale configuration to input Big5/GB words at the different
 sessions. This port is current version of xcin, code rewritten by 
 Tung-Han Hsieh <thhsieh@linux.org.tw>.
 
-WWW: http://xcin.linux.org.tw/
+WWW: http://cle.linux.org.tw/xcin/
 
 Porting to FreeBSD by Yung-Jen Hung <winard@ms11.url.com.tw>
 & Keith Jang <jtjang@gcn.net.tw>.
