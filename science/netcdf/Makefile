@@ -8,7 +8,8 @@
 PORTNAME=	netcdf
 PORTVERSION=	3.6.1
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/%SUBDIR%/ \
+		http://sunpoet.net/distfiles/
 MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	sunpoet@sunpoet.net
@@ -18,10 +19,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 CONFLICTS=	hdf-4.*
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-fPIC -DPIC -Df2cFortran"
-INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	ncdump.1 ncgen.1
 MAN3=	netcdf.3 netcdf.3f
