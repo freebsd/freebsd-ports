@@ -35,9 +35,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	Renaissance:x11-toolkits/renaissance \
 	PreferencePanes:deskutils/preferencepanes \
 	TrackerKit:deskutils/etoile-trackerkit \
-	PreferencesKit:deskutils/etoile-preferenceskit \
 	ExtendedWorkspace:deskutils/etoile-extendedworkspacekit \
-	BookmarkKit:www/etoile-bookmarkkit \
 	ServicesBarKit:deskutils/etoile-servicesbarkit \
 	IconKit:x11-themes/etoile-iconkit \
 
@@ -58,15 +56,14 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	ObjcUnit:devel/objcunit \
 	GSKrab:x11/gskrab \
 	UnitKit:devel/etoile-unitkit \
-	XWindowServerKit:x11/etoile-xwindowserverkit \
 	RSSKit:www/etoile-rsskit \
-	EtoileExtensions:deskutils/etoile-etoileextensionskit \
 	Encore:devel/fortytwo-encore \
 	BDB:databases/fortytwo-bdb \
 	FT:graphics/fortytwo \
 	ObjectiveLib:devel/objectivelib \
 	PopplerKit:graphics/popplerkit \
 	CameraKit:graphics/camerakit \
+	Toolbox:deskutils/toolboxkit \
 	Tryst:net/tryst \
 	OgreKit:textproc/etoile-ogrekit \
 	LuceneKit:textproc/etoile-lucenekit \
@@ -159,7 +156,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Mplayer:multimedia/gnustep-mplayer \
 	MyLibrary:databases/mylibrary \
 	NeXTGo:games/nextgo \
-	Grr:www/etoile-grr \
 	iTerm:x11/etoile-iterm \
 	Installer:sysutils/etoile-installer \
 	Hardware:deskutils/etoile-hardware \
