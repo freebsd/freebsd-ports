@@ -453,7 +453,6 @@
     SUBDIR += jakelib2
     SUBDIR += jam
     SUBDIR += java-util-concurrent
-    SUBDIR += javasvn
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
     SUBDIR += jep
