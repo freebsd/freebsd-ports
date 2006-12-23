@@ -9194,6 +9194,7 @@ p5-Games-Bingo-Bot	ports/games/p5-Games-Bingo-Bot
 p5-Games-Bingo-Print	ports/games/p5-Games-Bingo-Print
 p5-Games-Dice	ports/games/p5-Games-Dice
 p5-Games-Dissociate	ports/textproc/p5-Games-Dissociate
+p5-Games-GuessWord	ports/games/p5-Games-GuessWord
 p5-Games-Tournament-RoundRobin	ports/games/p5-Games-Tournament-RoundRobin
 p5-Gantry	ports/www/p5-Gantry
 p5-Gateway	ports/news/p5-Gateway
