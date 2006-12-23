@@ -164,6 +164,7 @@
     SUBDIR += etcmerge
     SUBDIR += etoile-behavior
     SUBDIR += etoile-installer
+    SUBDIR += etoile-system
     SUBDIR += eventlog
     SUBDIR += eventwatcher
     SUBDIR += evtviewer
