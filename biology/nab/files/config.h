@@ -1,4 +1,4 @@
-#  NAB configuration file, created with: ./configure 
+#  NAB configuration file, created with: ./configure -p4 -static gcc
 
 ###############################################################################
 
@@ -19,14 +19,14 @@ INCDIR=$(NABHOME)/include
 #      NAB programs simply by including them on the command line; libraries
 #      included in FLIBS are always searched.)
 
-FLIBS= $(LIBDIR)/libsym.a $(LIBDIR)/lapack.a $(LIBDIR)/blas.a  -lg2c
+FLIBS= $(LIBDIR)/libsym.a $(LIBDIR)/lapack.a $(LIBDIR)/blas.a $(LIBDIR)/f2c.a -static   
 
 ###############################################################################
 
 #  (3)  Modify any of the following if you need to change, e.g. to use gcc
 #        rather than cc, etc.
 
-SHELL=		/bin/sh
+SHELL=/bin/sh
 
 #  Set the C compiler, etc. 
 
@@ -37,32 +37,36 @@ SHELL=		/bin/sh
 #          so LEX=flex is necessary.  In general, gcc seems to need
 #          flex.
 
-CC?=		cc
-CFLAGS?= 
-OCFLAGS=${CFLAGS}
-NABFLAGS?= 
+NABFLAGS=
 
 LEX=    flex
 YACC=   yacc
-AR=	ar
-RANLIB=	ranlib
+AR=     ar
+RANLIB= ranlib
 
 #  Set the C-preprocessor.  Code for a small preprocessor is in
 #    uccp-1.3;  it gets installed as $(NABHOME)/bin/ucpp;
-#    this should generally *not* be changed.
+#    this can generally be used (maybe not on 64-bit machines like altix).
 
-CPP=    ucpp -l
+CPP=    /usr/local/bin/ucpp -l
 
-#  If you are going to use the Fortran lapack and blas libraries, you need
+#  If you are going to link in Fortran routines, you need
 #  to set the compiler information here.  (Also, add the appropriate entries
 #  to the FLIBS variable, above.)
-
-FC?=f77
-FFLAGS?=
-FOPTFLAGS=${FFLAGS}
+#
+#FC=f77
+#FFLAGS?=$(FFLAGS)
+#FOPTFLAGS?=$(FFLAGS)
 FREEFORMAT_FLAG=-ffree-form
+
+#  These variables control whether we will use compiled versions of BLAS
+#  and LAPACK (which are generally slower), or whether those libraries are
+#  already available (presumably in an optimized form).
+
 LAPACK=install
 BLAS=install
+F2C=install
+UCPP=
 
 #  For Windows/cygwin, set SFX to ".exe"; for Unix/Linux leave it empty:
 
