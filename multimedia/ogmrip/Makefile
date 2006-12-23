@@ -28,9 +28,8 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		gocr:${PORTSDIR}/graphics/gocr
 LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		dvdread:${PORTSDIR}/multimedia/libdvdread \
+		theora:${PORTSDIR}/multimedia/libtheora \
 		enchant:${PORTSDIR}/textproc/enchant
-
-BROKEN=		Incorrect pkg-plist
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
