@@ -14086,6 +14086,7 @@ svmlight	ports/science/svmlight
 svn2cl		ports/textproc/svn2cl
 svndelta	ports/devel/svndelta
 svnmailer	ports/mail/svnmailer
+svnkit		ports/devel/svnkit
 svr4_base	ports/emulators/svr4_base
 sw-aspell	ports/textproc/sw-aspell
 swaks		ports/mail/swaks

@@ -1957,6 +1957,7 @@
     SUBDIR += sunterlib
     SUBDIR += svk
     SUBDIR += svndelta
+    SUBDIR += svnkit
     SUBDIR += swig11
     SUBDIR += swig13
     SUBDIR += swigruby
