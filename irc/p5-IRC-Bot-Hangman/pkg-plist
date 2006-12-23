@@ -1,0 +1,18 @@
+bin/hangman.pl
+%%SITE_PERL%%/IRC/Bot/Hangman.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/Command.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/Command/Default.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/Command/Eliza.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/Command/Profanity.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/Response.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/Response/Default.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/Response/Profanity.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/WordList.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/WordList/Default.pm
+%%SITE_PERL%%/IRC/Bot/Hangman/WordList/TooEasy.pm
+@dirrm %%SITE_PERL%%/IRC/Bot/Hangman/WordList
+@dirrm %%SITE_PERL%%/IRC/Bot/Hangman/Response
+@dirrm %%SITE_PERL%%/IRC/Bot/Hangman/Command
+@dirrm %%SITE_PERL%%/IRC/Bot/Hangman
+@dirrmtry %%SITE_PERL%%/IRC/Bot
+@dirrmtry %%SITE_PERL%%/IRC
