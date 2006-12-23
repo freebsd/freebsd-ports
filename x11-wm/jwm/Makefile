@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwm
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://joewing.net/programs/

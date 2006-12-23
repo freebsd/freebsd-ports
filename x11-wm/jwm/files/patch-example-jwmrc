@@ -1,12 +1,12 @@
---- example.jwmrc.orig	Wed Dec 28 16:16:26 2005
-+++ example.jwmrc	Wed Dec 28 16:19:07 2005
-@@ -113,6 +113,9 @@
+--- example.jwmrc.orig	Sat Dec 23 10:17:22 2006
++++ example.jwmrc	Sat Dec 23 12:31:26 2006
+@@ -112,6 +112,9 @@
+ 	</PopupStyle>
  
- 	<Icons>
- 		<IconPath>$HOME/.icons</IconPath>
-+		<IconPath>%%PREFIX%%/share/icons</IconPath>
-+		<IconPath>%%PREFIX%%/share/pixmaps</IconPath>
-+		<IconPath>%%PREFIX%%/lib/X11/icons</IconPath>
- 	</Icons>
+ 	<IconPath>$HOME/.icons</IconPath>
++	<IconPath>%%PREFIX%%/share/icons</IconPath>
++	<IconPath>%%PREFIX%%/share/pixmaps</IconPath>
++	<IconPath>%%PREFIX%%/lib/X11/icons</IconPath>
  
  	<StartupCommand>
+ 		xli -onroot /export0/images/formulae.jpg
