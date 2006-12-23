@@ -31,6 +31,7 @@
     SUBDIR += emotion
     SUBDIR += emovix
     SUBDIR += enjoympeg
+    SUBDIR += etoile-multimediakit
     SUBDIR += exportvideo
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg-devel

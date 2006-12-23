@@ -1,0 +1,12 @@
+Local/Library/Headers/MultimediaKit/MMPlayer.h
+Local/Library/Headers/MultimediaKit/MPlayer.h
+Local/Library/Headers/MultimediaKit/MPlayerInterface.h
+Local/Library/Headers/MultimediaKit/Mixer.h
+Local/Library/Headers/MultimediaKit/MixerChannel.h
+Local/Library/Headers/MultimediaKit/MixerChannelView.h
+Local/Library/Headers/MultimediaKit/MixerView.h
+Local/Library/Headers/MultimediaKit/MultimediaKit.h
+Local/Library/Libraries/libMultimediaKit.so
+Local/Library/Libraries/libMultimediaKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libMultimediaKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/MultimediaKit
