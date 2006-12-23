@@ -9878,6 +9878,7 @@ p5-Net-XWhois	ports/net/p5-Net-XWhois
 p5-Net-Yadis	ports/net/p5-Net-Yadis
 p5-Net-Z3950	ports/net/p5-Net-Z3950
 p5-Net-Z3950-SimpleServer	ports/net/p5-Net-Z3950-SimpleServer
+p5-Net-Z3950-ZOOM	ports/net/p5-Net-Z3950-ZOOM
 p5-Net-eBay	ports/www/p5-Net-eBay
 p5-Net-ext	ports/net/p5-Net-ext
 p5-Net-vCard	ports/misc/p5-Net-vCard
