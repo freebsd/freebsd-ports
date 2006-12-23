@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.3.0.b7
-PORTREVISION=	1
+PORTVERSION=	2.3.0.rc
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v2.3beta/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.rc/rc/}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
+		${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 
 #IGNORE=	"is out-of-dated, use mail/sylpheed2 instead of this, until the next development starts."
 
@@ -112,6 +113,8 @@ post-patch:
 		s|-lresolv||g; s|-lpisock\"|-liconv &|g; ' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
 		${WRKSRC}/libsylph/procmime.c
+	@${REINPLACE_CMD} -e 's|/etc/ssl/certs|${LOCALBASE}/share/certs|g' \
+		${WRKSRC}/libsylph/ssl.c
 
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac libsylph src po manual faq$$|SUBDIRS = ac libsylph src po|g' \
