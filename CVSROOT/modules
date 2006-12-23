@@ -2437,6 +2437,7 @@ etoile-panekit	ports/deskutils/etoile-panekit
 etoile-preferenceskit	ports/deskutils/etoile-preferenceskit
 etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
+etoile-system	ports/sysutils/etoile-system
 etoile-systemconfig	ports/deskutils/etoile-systemconfig
 etoile-trackerkit	ports/deskutils/etoile-trackerkit
 etoile-typewriter	ports/editors/etoile-typewriter
