@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libmatheval
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel math
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	demon@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO="/usr/bin/makeinfo --no-split"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 INFO=		libmatheval
