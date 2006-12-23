@@ -1,0 +1,8 @@
+Local/Library/Headers/EtoileUI/Cocoa.h
+Local/Library/Headers/EtoileUI/EtoileCompatibility.h
+Local/Library/Headers/EtoileUI/NSBezierPathCappedBoxes.h
+Local/Library/Headers/EtoileUI/NSImage+NiceScaling.h
+Local/Library/Libraries/libEtoileUI.so
+Local/Library/Libraries/libEtoileUI.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libEtoileUI.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/EtoileUI

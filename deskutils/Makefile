@@ -49,6 +49,7 @@
     SUBDIR += etoile-preferenceskit
     SUBDIR += etoile-servicesbarkit
     SUBDIR += etoile-trackerkit
+    SUBDIR += etoile-ui
     SUBDIR += etoile-workspaceswitcher
     SUBDIR += everygui
     SUBDIR += evolution-jescs
