@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--without-java			\
 		--with-ssl-dir=${OPENSSLBASE}
 
 OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
-		HAL "Use HAL backend for media:/ (FreeBSD 5 and newer only)" off \
+		HAL "Use HAL backend for media:/ (FreeBSD 5+ only)" off \
 		HTDIG "Depend on htdig, used to build manual indices" off
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
