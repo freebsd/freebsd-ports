@@ -16,7 +16,7 @@ PATCH_SITE_SUBDIR=	pool/main/g/${PORTNAME}
 PATCHFILES=	${PORTNAME}_1.6-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig11

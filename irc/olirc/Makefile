@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://olirc.sourceforge.net/
 DISTNAME=	olirc-0.0.38-alpha-3.2
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	A small irc client using GTK+
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82

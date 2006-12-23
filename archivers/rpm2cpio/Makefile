@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Convert .rpm files for extraction with /usr/bin/cpio, needs just perl
 
 NO_WRKSUBDIR=	yes
