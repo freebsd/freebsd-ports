@@ -12,7 +12,7 @@ CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A Xine-based video player for the Gnome 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
