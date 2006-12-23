@@ -561,6 +561,7 @@
     SUBDIR += pear-Net_DNSBL
     SUBDIR += pear-Net_Dict
     SUBDIR += pear-Net_Finger
+    SUBDIR += pear-Net_Geo
     SUBDIR += pear-Net_IPv6
     SUBDIR += pear-Net_Ident
     SUBDIR += pear-Net_LDAP
