@@ -1068,6 +1068,7 @@ callgen323	ports/net/callgen323
 callgrind	ports/devel/callgrind
 callid		ports/misc/callid
 cam		ports/audio/cam
+camaelon-nesedah	ports/x11-themes/camaelon-nesedah
 camediaplay	ports/graphics/camediaplay
 camera		ports/graphics/camera
 camerakit	ports/graphics/camerakit
