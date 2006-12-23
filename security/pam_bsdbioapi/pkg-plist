@@ -5,5 +5,5 @@ lib/libbirdb.a
 lib/libbirdb.so
 lib/pam_bsdbioapi.so
 @dirrm share/birdb
-share/pam_bsdbioapi/upek_touchchip.cmsg
+%%DATADIR%%/upek_touchchip.cmsg
 @dirrm share/pam_bsdbioapi
