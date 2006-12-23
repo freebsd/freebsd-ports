@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sys-Utmp
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sys
@@ -17,6 +17,9 @@ COMMENT=	Perl5 module which provides Object(ish) Interface to UTMP files
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Sys::Utmp.3
+MAN3=		Sys::Utmp.3 Sys::Utmp::Utent.3
+
+post-patch:
+	@${REINPLACE_CMD} -e '254 s,strcpy,strncpy,' ${WRKSRC}/Utmp.xs
 
 .include <bsd.port.mk>
