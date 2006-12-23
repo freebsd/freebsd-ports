@@ -27,10 +27,12 @@ MAN3=		Net::Z3950::ResultSet.3 Net::Z3950::Manager.3 \
 		Net::Z3950::Connection.3 Net::Z3950::APDU.3 Net::Z3950.3 \
 		Net::Z3950::ScanSet.3
 
+CONFLICTS=	p5-Net-Z3950-ZOOM-[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Requires perl version 5.6.0 or above
+IGNORE=		requires perl version 5.6.0 or above
 .endif
 
 .include <bsd.port.post.mk>
