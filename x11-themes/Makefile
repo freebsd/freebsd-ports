@@ -8,6 +8,7 @@
     SUBDIR += beastie
     SUBDIR += bluecurve-themes
     SUBDIR += buffy
+    SUBDIR += camaelon-nesedah
     SUBDIR += clean-theme-gtk
     SUBDIR += clearlooks
     SUBDIR += clearlooks-metacity
