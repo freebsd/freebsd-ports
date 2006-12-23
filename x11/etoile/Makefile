@@ -35,6 +35,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	BookmarkKit:www/etoile-bookmarkkit \
 	ServicesBarKit:deskutils/etoile-servicesbarkit \
 	IconKit:x11-themes/etoile-iconkit \
+	ExtendedWorkspace:deskutils/etoile-extendedworkspacekit \
 
 USE_GNUSTEP_LOCAL_LIBS+=	\
 	Addresses:mail/addresses \
