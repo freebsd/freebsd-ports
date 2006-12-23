@@ -4,6 +4,7 @@ bin/yaz-config
 bin/yaz-iconv
 bin/yaz-marcdump
 bin/yaz-ztest
+bin/ziffy
 bin/zoomsh
 include/yaz/backend.h
 include/yaz/ccl.h
@@ -20,8 +21,6 @@ include/yaz/libxml2_error.h
 include/yaz/log.h
 include/yaz/logrpn.h
 include/yaz/marcdisp.h
-include/yaz/nfa.h
-include/yaz/nfaxml.h
 include/yaz/nmem.h
 include/yaz/nmem_xml.h
 include/yaz/odr.h
@@ -46,6 +45,7 @@ include/yaz/unix.h
 include/yaz/wrbuf.h
 include/yaz/xmalloc.h
 include/yaz/xmlquery.h
+include/yaz/xmltypes.h
 include/yaz/yaz-ccl.h
 include/yaz/yaz-iconv.h
 include/yaz/yaz-util.h
@@ -86,10 +86,6 @@ lib/libyaz.a
 lib/libyaz.la
 lib/libyaz.so
 lib/libyaz.so.2
-lib/libyazthread.a
-lib/libyazthread.la
-lib/libyazthread.so
-lib/libyazthread.so.2
 share/aclocal/yaz.m4
 %%DOCSDIR%%/apilayer.png
 %%DOCSDIR%%/asn.external.html
@@ -143,6 +139,8 @@ share/aclocal/yaz.m4
 %%DOCSDIR%%/tools.log.html
 %%DOCSDIR%%/tools.nmem.html
 %%DOCSDIR%%/tools.oid.html
+%%DOCSDIR%%/ziffy.html
+%%DOCSDIR%%/ziffy.using.html
 %%DOCSDIR%%/zoom.events.html
 %%DOCSDIR%%/zoom.extendedservices.html
 %%DOCSDIR%%/zoom.html
