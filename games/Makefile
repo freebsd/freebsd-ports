@@ -514,6 +514,7 @@
     SUBDIR += p5-Games-Bingo-Bot
     SUBDIR += p5-Games-Bingo-Print
     SUBDIR += p5-Games-Dice
+    SUBDIR += p5-Games-GuessWord
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
     SUBDIR += palomino
