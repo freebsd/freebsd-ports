@@ -8,6 +8,7 @@ etc/bfilter/urls
 etc/bfilter/urls.local
 %%GUI%%share/applications/bfilter.desktop
 %%GUI%%share/pixmaps/bfilter.png
+%%GUI%%@dirrmtry share/pixmaps
 %%GUI%%@dirrmtry share/applications
 @dirrm etc/bfilter/filters
 @dirrm etc/bfilter
