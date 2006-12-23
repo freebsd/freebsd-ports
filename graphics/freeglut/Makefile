@@ -20,7 +20,8 @@ USE_LDCONFIG=	yes
 USE_XLIB=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
-			--x-libraries=${X11BASE}/lib
+			--x-libraries=${X11BASE}/lib \
+			--disable-warnings
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-lusbhid"
 
 REINPLACE_ARGS=		-i ""
