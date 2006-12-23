@@ -162,6 +162,7 @@
     SUBDIR += est
     SUBDIR += estctrl
     SUBDIR += etcmerge
+    SUBDIR += etoile-behavior
     SUBDIR += etoile-installer
     SUBDIR += eventlog
     SUBDIR += eventwatcher
