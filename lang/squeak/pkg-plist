@@ -9,7 +9,7 @@ bin/squeak
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/B3DAcceleratorPlugin
 %%DATADIR%%/%%VMVERSION%%/UnixOSProcessPlugin
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/XDisplayControlPlugin
-%%PLIST_XIM%%share/squeak/%%VMVERSION%%/ImmX11Plugin
+%%PLIST_XIM%%%%DATADIR%%/%%VMVERSION%%/ImmX11Plugin
 %%PLIST_FFI%%%%DATADIR%%/%%VMVERSION%%/SqueakFFIPrims
 %%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueak.image
 %%PLIST_NPSQUEAK%%%%DATADIR%%/%%VMVERSION%%/npsqueak.so
