@@ -2,7 +2,9 @@ To use XMMS2Scrobbler write your username and password to the config file
 like this:
 
         printf "user: foo\npassword: bar" > \
-                ~/.xmms2/clients/xmms2-scrobbler/config
+                ~/.config/xmms2/clients/xmms2-scrobbler/config
+
+~/.config is actually $XDG_CONFIG_HOME whose default value is ~/.config.
 
 If you wish for XMMS2Scrobbler to start when you start xmms2d, make a
 symbolic link from %%PREFIX%%/bin/xmms2-scrobbler to ~/.xmms2/startup.d/
