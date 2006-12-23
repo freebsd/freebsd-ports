@@ -1,0 +1,11 @@
+bin/zselect
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/ZOOM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/ZOOM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/ZOOM.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/ZOOM.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/ZOOM.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950
