@@ -1,0 +1,14 @@
+Local/Library/Headers/CollectionKit/CKCollection.h
+Local/Library/Headers/CollectionKit/CKCollectionView.h
+Local/Library/Headers/CollectionKit/CKGlobals.h
+Local/Library/Headers/CollectionKit/CKGroup.h
+Local/Library/Headers/CollectionKit/CKItem.h
+Local/Library/Headers/CollectionKit/CKMultiValue.h
+Local/Library/Headers/CollectionKit/CKRecord.h
+Local/Library/Headers/CollectionKit/CKSearchElement.h
+Local/Library/Headers/CollectionKit/CKTypedefs.h
+Local/Library/Headers/CollectionKit/CollectionKit.h
+Local/Library/Libraries/libCollectionKit.so
+Local/Library/Libraries/libCollectionKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libCollectionKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/CollectionKit
