@@ -1,22 +1,13 @@
---- doc/Makefile	Sun Nov  5 09:02:52 2006
-+++ doc/Makefile.port	Sat Nov 25 11:57:33 2006
-@@ -2,7 +2,7 @@
- ASYFILES = $(wildcard *.asy) latexusage.asy
- FIGURES = version.texi 
- ASY = ../asy -dir ../base
--DOCFILES = asymptote.pdf,CAD.pdf
-+DOCFILES = asymptote.pdf CAD.pdf
- 
- doc:	asymptote.dvi asymptote.info html man
- 
-@@ -62,9 +62,10 @@
+--- doc/Makefile	Wed Dec 13 03:06:11 2006
++++ doc/Makefile.port	Wed Dec 13 13:44:57 2006
+@@ -72,9 +72,10 @@
  	rm -rf asymptote
  
  install: man faq
 +	mkdir $(prefix)/share/doc/asymptote
  	cd FAQ; $(MAKE) install
  	${INSTALL} -d -m 755 $(docdir) $(mandir)/man1
--	${INSTALL} -p -m 644 {$(DOCFILES)} $(docdir)
+-	${INSTALL} -p -m 644 $(DOCFILES) $(docdir)
 +	${INSTALL} -p -m 644 $(DOCFILES) $(prefix)/share/doc/asymptote
  	${INSTALL} -p -m 644 $(MANFILES) $(mandir)/man1
  

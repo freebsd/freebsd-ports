@@ -13,6 +13,7 @@ bin/xasy
 %%DATADIR%%/contour.asy
 %%DATADIR%%/drawtree.asy
 %%DATADIR%%/embed.asy
+%%DATADIR%%/external.asy
 %%DATADIR%%/featpost3D.asy
 %%DATADIR%%/feynman.asy
 %%DATADIR%%/flowchart.asy
@@ -27,6 +28,7 @@ bin/xasy
 %%DATADIR%%/metapost.asy
 %%DATADIR%%/palette.asy
 %%DATADIR%%/patterns.asy
+%%DATADIR%%/pdfanim.asy
 %%DATADIR%%/plain.asy
 %%DATADIR%%/plain_Label.asy
 %%DATADIR%%/plain_arcs.asy
@@ -49,6 +51,7 @@ bin/xasy
 %%DATADIR%%/slopefield.asy
 %%DATADIR%%/solids.asy
 %%DATADIR%%/stats.asy
+%%DATADIR%%/surface.asy
 %%DATADIR%%/texcolors.asy
 %%DATADIR%%/three.asy
 %%DATADIR%%/tree.asy
@@ -56,6 +59,7 @@ bin/xasy
 %%DATADIR%%/version.asy
 %%DATADIR%%/x11colors.asy
 %%PORTDOCS%%%%DOCSDIR%%/CAD.pdf
+%%PORTDOCS%%%%DOCSDIR%%/PDFAnim_temp_Guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.ascii
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section1.html
@@ -68,9 +72,12 @@ bin/xasy
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section8.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
+%%EXAMPLESDIR%%/BezierSurface.asy
 %%EXAMPLESDIR%%/Bode.asy
 %%EXAMPLESDIR%%/CAD1.asy
 %%EXAMPLESDIR%%/CDlabel.asy
+%%EXAMPLESDIR%%/Coons.asy
+%%EXAMPLESDIR%%/GaussianSurface.asy
 %%EXAMPLESDIR%%/Gouraud.asy
 %%EXAMPLESDIR%%/Gouraudcontour.asy
 %%EXAMPLESDIR%%/Pythagoras.asy
@@ -79,6 +86,10 @@ bin/xasy
 %%EXAMPLESDIR%%/advection.asy
 %%EXAMPLESDIR%%/animations/cube.asy
 %%EXAMPLESDIR%%/animations/embeddedmovie.asy
+%%EXAMPLESDIR%%/animations/embeddedu3d.asy
+%%EXAMPLESDIR%%/animations/externalmovie.asy
+%%EXAMPLESDIR%%/animations/pdfmovie.asy
+%%EXAMPLESDIR%%/animations/wavepacket.asy
 %%EXAMPLESDIR%%/animations/wheel.asy
 %%EXAMPLESDIR%%/annotation.asy
 %%EXAMPLESDIR%%/axis3.asy
@@ -123,6 +134,7 @@ bin/xasy
 %%EXAMPLESDIR%%/fjortoft.asy
 %%EXAMPLESDIR%%/flow.asy
 %%EXAMPLESDIR%%/flowchartdemo.asy
+%%EXAMPLESDIR%%/fractaltree.asy
 %%EXAMPLESDIR%%/generalaxis.asy
 %%EXAMPLESDIR%%/generalaxis3.asy
 %%EXAMPLESDIR%%/grid.asy
@@ -197,6 +209,8 @@ bin/xasy
 %%EXAMPLESDIR%%/sinc.asy
 %%EXAMPLESDIR%%/sinxlex.asy
 %%EXAMPLESDIR%%/slidedemo.asy
+%%EXAMPLESDIR%%/slidemovies.asy
+%%EXAMPLESDIR%%/slopefield1.asy
 %%EXAMPLESDIR%%/sphere.asy
 %%EXAMPLESDIR%%/spiral.asy
 %%EXAMPLESDIR%%/spring.asy
@@ -208,8 +222,8 @@ bin/xasy
 %%EXAMPLESDIR%%/star.asy
 %%EXAMPLESDIR%%/subpictures.asy
 %%EXAMPLESDIR%%/superpath.asy
-%%EXAMPLESDIR%%/surface.asy
 %%EXAMPLESDIR%%/tanh.asy
+%%EXAMPLESDIR%%/tensor.asy
 %%EXAMPLESDIR%%/thermodynamics.asy
 %%EXAMPLESDIR%%/tile.asy
 %%EXAMPLESDIR%%/torus.asy
@@ -239,6 +253,7 @@ bin/xasy
 @dirrm %%EXAMPLESDIR%%
 share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
+share/texmf-local/tex/latex/asymptote/pdfanim_temp.sty
 @dirrm share/texmf-local/tex/latex/asymptote
 @unexec %%MKTEXLSR%%
 @exec %%MKTEXLSR%%
