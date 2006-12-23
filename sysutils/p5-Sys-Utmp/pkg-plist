@@ -1,7 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Utmp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Utmp/Utent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp/Utmp.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp/Utmp.bs
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Utmp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys
