@@ -743,6 +743,7 @@
     SUBDIR += p5-Net-Flickr-Backup
     SUBDIR += p5-Net-Flickr-RDF
     SUBDIR += p5-Net-eBay
+    SUBDIR += p5-Newsletter
     SUBDIR += p5-PHP-Session
     SUBDIR += p5-PLP
     SUBDIR += p5-POE-Component-Client-HTTP
