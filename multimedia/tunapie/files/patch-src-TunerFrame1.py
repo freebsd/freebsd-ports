@@ -1,7 +1,15 @@
-$FreeBSD$
---- src/TunerFrame1.py	Sun Jul  2 20:16:55 2006
-+++ src/TunerFrame1.py.port	Tue Jul  4 15:07:01 2006
-@@ -422,10 +422,10 @@
+--- src/TunerFrame1.py	Thu Dec 21 00:40:08 2006
++++ src/TunerFrame1.py.port	Fri Dec 22 23:05:45 2006
+@@ -129,7 +129,7 @@
+         self.SetBackgroundColour(wx.Colour(246, 246, 246))
+         self.SetBackgroundStyle(wx.BG_STYLE_SYSTEM)
+         self.SetThemeEnabled(True)
+-        self.SetIcon(wx.Icon('pixmaps/tplogo.xpm',wx.BITMAP_TYPE_XPM))
++        self.SetIcon(wx.Icon('%%DATADIR%%/pixmaps/tplogo.xpm',wx.BITMAP_TYPE_XPM))
+         self.SetFont(wx.Font(10, wx.SWISS, wx.NORMAL, wx.NORMAL, False,u'Sans'))
+         self.SetAutoLayout(True)
+         self.SetMinSize(wx.Size(770, 410))
+@@ -564,10 +564,10 @@
          for name in self.favname:
              self.favorites.Append(name)
          self.name=[]

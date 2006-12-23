@@ -17,8 +17,10 @@ etc/tunapie.config.default
 %%DATADIR%%/TunerInfoDialog.pyc
 %%DATADIR%%/TunerPrefs.py
 %%DATADIR%%/TunerPrefs.pyc
+%%DATADIR%%/pixmaps/tplogo.xpm
 %%DATADIR%%/tuner.py
 %%DATADIR%%/tuner.pyc
 %%DESKTOPDIR%%/tunapie.desktop
+@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry %%DESKTOPDIR%%
