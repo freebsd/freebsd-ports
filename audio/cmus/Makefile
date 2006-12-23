@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
@@ -26,9 +26,12 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		MAD "MPEG Audio Decoder (libmad) support" On \
 		MODPLUG "libmodplug (mod, x3m, ...) support" Off \
+		MIKMOD "libmikmod (mod, x3m, ...) support" Off \
 		MUSEPACK "libmpcdec (Musepack .mpc) support" Off \
 		VORBIS "Ogg/Vorbis support" On \
 		TREMOR "Use Tremor as Ogg/Vorbis input plugin" Off \
+		MP4 "MPEG-4 AAC support" Off \
+		AAC "AAC support" Off \
 		LIBAO "Libao cross-platform audio library" Off \
 		ARTS "ARTS support" Off
 
@@ -65,6 +68,14 @@ CONFIGURE_ARGS+=CONFIG_MODPLUG=n
 PLIST_SUB+=	MODPLUG="@comment "
 .endif
 
+.if defined(WITH_MIKMOD)
+LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
+CONFIGURE_ARGS+=CONFIG_MIKMOD=y
+PLIST_SUB+=	MIKMOD=""
+.else
+PLIST_SUB+=	MIKMOD="@comment "
+.endif
+
 .if defined(WITH_MUSEPACK)
 LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/libmpcdec
 CONFIGURE_ARGS+=CONFIG_MPC=y
@@ -83,6 +94,30 @@ CONFIGURE_ARGS+=CONFIG_VORBIS=n
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
+.if defined(WITH_TREMOR)
+LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
+CONFIGURE_ARGS+=CONFIG_TREMOR=y
+.endif
+
+.if defined(WITH_MP4)
+LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+CONFIGURE_ARGS+=CONFIG_MP4=y
+PLIST_SUB+=	MP4=""
+.else
+CONFIGURE_ARGS+=CONFIG_MP4=n
+PLIST_SUB+=	MP4="@comment "
+.endif
+
+.if defined(WITH_AAC)
+LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+CONFIGURE_ARGS+=CONFIG_AAC=y
+PLIST_SUB+=	AAC=""
+.else
+CONFIGURE_ARGS+=CONFIG_AAC=n
+PLIST_SUB+=	AAC="@comment "
+.endif
+
 .if defined(WITH_LIBAO)
 LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=CONFIG_AO=y
@@ -99,11 +134,6 @@ PLIST_SUB+=	ARTS=""
 .else
 CONFIGURE_ARGS+=CONFIG_ARTS=n
 PLIST_SUB+=	ARTS="@comment "
-.endif
-
-.if defined(WITH_TREMOR)
-LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
-CONFIGURE_ARGS+=CONFIG_TREMOR=y
 .endif
 
 MAN1=	cmus.1 cmus-remote.1
