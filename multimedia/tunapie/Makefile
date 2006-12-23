@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	1.3.1.1
+PORTVERSION=	1.3.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,7 +44,7 @@ post-patch:
 		-e 's|%%X11BASE%%|${X11BASE}|g' {} ";"
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR} ${DATADIR}/pixmaps
 	${MKDIR} ${DESKTOPDIR}
 	cd ${WRKSRC} && ./install.sh ${ADULT_TVLIST}
 
