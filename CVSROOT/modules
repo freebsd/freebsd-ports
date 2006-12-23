@@ -11048,6 +11048,7 @@ pear-Net_Socket	ports/net/pear-Net_Socket
 pear-Net_URL	ports/net/pear-Net_URL
 pear-Net_UserAgent_Detect	ports/net/pear-Net_UserAgent_Detect
 pear-Net_UserAgent_Mobile	ports/net/pear-Net_UserAgent_Mobile
+pear-Net_Whois	ports/net/pear-Net_Whois
 pear-Numbers_Roman	ports/textproc/pear-Numbers_Roman
 pear-Numbers_Words	ports/textproc/pear-Numbers_Words
 pear-OLE	ports/devel/pear-OLE
