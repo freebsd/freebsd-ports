@@ -1,0 +1,14 @@
+Local/Library/Headers/PaneKit/CocoaCompatibility.h
+Local/Library/Headers/PaneKit/NSPreferencePane.h
+Local/Library/Headers/PaneKit/PKPane.h
+Local/Library/Headers/PaneKit/PKPaneRegistry.h
+Local/Library/Headers/PaneKit/PKPanesController.h
+Local/Library/Headers/PaneKit/PKPreferencePane.h
+Local/Library/Headers/PaneKit/PKPreferencePaneRegistry.h
+Local/Library/Headers/PaneKit/PKPreferencesController.h
+Local/Library/Headers/PaneKit/PKPresentationBuilder.h
+Local/Library/Headers/PaneKit/PaneKit.h
+Local/Library/Libraries/libPaneKit.so
+Local/Library/Libraries/libPaneKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libPaneKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/PaneKit
