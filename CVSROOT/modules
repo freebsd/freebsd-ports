@@ -3024,6 +3024,7 @@ funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
 fusefs-curlftpfs	ports/sysutils/fusefs-curlftpfs
 fusefs-funionfs	ports/sysutils/fusefs-funionfs
+fusefs-gnome-vfs	ports/sysutils/fusefs-gnome-vfs
 fusefs-gphotofs	ports/graphics/fusefs-gphotofs
 fusefs-httpfs	ports/sysutils/fusefs-httpfs
 fusefs-kmod	ports/sysutils/fusefs-kmod
