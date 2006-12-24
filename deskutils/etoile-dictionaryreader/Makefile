@@ -1,29 +1,31 @@
-# New ports collection makefile for:    etoile
+# New ports collection makefile for:    etoile-dictionaryreader
 # Date created:         4 Sep 2006
 # Whom:                 gurkan@linuks.mine.nu
 #
 # $FreeBSD$
 #
 
-PORTNAME=	etoile
+PORTNAME=	dictionaryreader
 PORTVERSION=	0.1.${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://io.debian.net/~tar/ports/distfiles/
-DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~%%SUBDIR%%/distfiles/
+MASTER_SITE_SUBDIR=	dinoex
+PKGNAMEPREFIX=	etoile-
+DISTNAME=	Etoile-${SNAPSHOT}
 
 MAINTAINER=	gurkan@linuks.mine.nu
-COMMENT=	Etoile Project software for GNUstep
+COMMENT=	Dict client for GNUstep
 
-SNAPSHOT=	20060917
-WRKSRC=	${WRKDIR}/etoile-0+${SNAPSHOT}+dfsg/Etoile/
-USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+SNAPSHOT=	20061221
+WRKSRC=	${WRKDIR}/Etoile/
 USE_GNUSTEP_MAKE_DIRS+=	Services/User/DictionaryReader
 
 .include <bsd.port.mk>
