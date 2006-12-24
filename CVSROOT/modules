@@ -3065,6 +3065,7 @@ g-gcl		ports/www/g-gcl
 g-wrap		ports/devel/g-wrap
 g2		ports/graphics/g2
 g2c		ports/devel/g2c
+g2ipmsg		ports/net/g2ipmsg
 g3data		ports/science/g3data
 g3dviewer	ports/graphics/g3dviewer
 ga-aspell	ports/textproc/ga-aspell
