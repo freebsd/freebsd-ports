@@ -7,7 +7,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
 
@@ -24,7 +24,7 @@ USE_FAM=	yes
 WANT_FAM_SYSTEM=	gamin
 USE_GSTREAMER=	core
 USE_GNOME=	gnomedesktop gnomeprefix libgsf
-CONFIGURE_ARGS=	--enable-gstreamer --disable-inotify
+CONFIGURE_ARGS=	--enable-gstreamer --disable-inotify --mandir=${PREFIX}/man
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
