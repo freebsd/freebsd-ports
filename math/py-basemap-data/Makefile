@@ -1,0 +1,44 @@
+# ex:ts=8
+# Ports collection makefile for:	py-basemap-data
+# Date created:			April 21, 2006
+# Whom:				mainland@apeiron.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	basemap-data
+PORTVERSION=	0.9
+CATEGORIES=	math python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	matplotlib
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	mainland@apeiron.net
+COMMENT=	Map data for py-basemap
+
+USE_PYTHON=	2.2+
+USE_PYDISTUTILS=	yes
+
+DATADIR=	${PREFIX}/share/py-${PORTNAME}
+
+MAKE_ENV=	BASEMAP_DATA_PATH=${DATADIR}
+
+PLISTDIR=	${DATADIR}/*_[hi].txt
+
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 250
+PLISTDIR+=	${PYTHON_SITELIBDIR}/basemap_data-0.9-py2.5.egg-info
+.endif
+
+post-install:
+.for dir in ${PLISTDIR}
+	@${FIND} ${dir} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${dir} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.endfor
+	@${ECHO} "@dirrm ${DATADIR:S,${PREFIX}/,,}" >> ${TMPPLIST}
+
+.include <bsd.port.post.mk>
