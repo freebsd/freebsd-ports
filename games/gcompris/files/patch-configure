@@ -1,15 +1,6 @@
---- configure.orig	Sat Sep 24 19:05:39 2005
-+++ configure	Sat Sep 24 19:07:01 2005
-@@ -23331,7 +23331,7 @@
-   USE_XRANDR="yes"
- fi;
- found_randr=no
--if test "x$USE_XRANDR" == "xyes" ; then
-+if test "x$USE_XRANDR" = "xyes" ; then
-   RANDR_LIBS=
-   echo "$as_me:$LINENO: checking for XRRSetScreenConfigAndRate in -lXrandr" >&5
- echo $ECHO_N "checking for XRRSetScreenConfigAndRate in -lXrandr... $ECHO_C" >&6
-@@ -25072,7 +25072,7 @@
+--- configure.orig	Sun Dec 24 11:48:17 2006
++++ configure	Sun Dec 24 11:50:32 2006
+@@ -26586,7 +26586,7 @@
  else
    USE_DEBUG="no"
  fi;
@@ -18,44 +9,12 @@
  
  cat >>confdefs.h <<_ACEOF
  #define DEBUG 1
-@@ -25176,7 +25176,7 @@
+@@ -26693,7 +26693,7 @@
  
  
  cat >>confdefs.h <<_ACEOF
--#define PACKAGE_SOUNDS_DIR "${myprefix}/${DATADIRNAME}/${PACKAGE}/sounds"
-+#define PACKAGE_SOUNDS_DIR "${myprefix}/${DATADIRNAME}/gnome/${PACKAGE}/sounds"
- _ACEOF
- 
- 
-@@ -25184,7 +25184,7 @@
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/${PACKAGE}/boards"
-+#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/gnome/${PACKAGE}/boards"
- _ACEOF
- 
- 
-@@ -25215,7 +25215,7 @@
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define GNOME_ICONDIR "${myprefix}/${DATADIRNAME}/pixmaps"
-+#define GNOME_ICONDIR "${myprefix}/${DATADIRNAME}/gnome/pixmaps"
- _ACEOF
- 
- 
-@@ -26331,11 +26331,11 @@
- 
- 
- 
--ASSETML_DIR=assetml
-+ASSETML_DIR=gnome/assetml
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define ASSETML_DIR "${myprefix}/${DATADIRNAME}/${ASSETML_DIR}"
-+#define ASSETML_DIR "${myprefix}/${DATADIRNAME}/gnome/${ASSETML_DIR}"
+-#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}"
++#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/gnome"
  _ACEOF
  
  

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris
-PORTVERSION=	7.4
-PORTREVISION=	1
+PORTVERSION=	8.2.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -37,6 +36,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS} -lm"
 
+MAN6=		gcompris.6
 INFO=		gcompris
 
 .include <bsd.port.pre.mk>
