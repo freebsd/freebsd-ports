@@ -9245,6 +9245,7 @@ p5-GraphViz-Traverse	ports/graphics/p5-GraphViz-Traverse
 p5-Graphics-ColorNames	ports/graphics/p5-Graphics-ColorNames
 p5-Gtk		ports/x11-toolkits/p5-Gtk
 p5-Gtk2		ports/x11-toolkits/p5-Gtk2
+p5-Gtk2-Ex-FormFactory	ports/x11-toolkits/p5-Gtk2-Ex-FormFactory
 p5-Gtk2-Ex-PodViewer	ports/x11-toolkits/p5-Gtk2-Ex-PodViewer
 p5-Gtk2-Ex-Simple-List	ports/x11-toolkits/p5-Gtk2-Ex-Simple-List
 p5-Gtk2-Html2	ports/x11-toolkits/p5-Gtk2-Html2
