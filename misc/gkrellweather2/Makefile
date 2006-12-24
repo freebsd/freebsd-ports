@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=	gkrellweather.so
 
-MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC}
 
 .include <bsd.port.pre.mk>
 
