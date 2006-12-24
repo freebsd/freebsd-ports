@@ -1890,7 +1890,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>phpbb</name>
 	<name>zh-phpbb-tw</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.0.22</lt></range>
       </package>
     </affects>
     <description>
@@ -1921,7 +1921,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-12</discovery>
       <entry>2006-10-04</entry>
-      <modified>2006-10-15</modified>
+      <modified>2006-12-24</modified>
     </dates>
   </vuln>
 
