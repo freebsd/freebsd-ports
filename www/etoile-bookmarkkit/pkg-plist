@@ -1,8 +1,12 @@
-System/Library/Headers/BookmarkKit/BKBookmark.h
-System/Library/Headers/BookmarkKit/BKBookmarkQuery.h
-System/Library/Headers/BookmarkKit/BKBookmarkSearchResult.h
-System/Library/Headers/BookmarkKit/BKBookmarkStore.h
-System/Library/Libraries/libBookmarkKit.so
-System/Library/Libraries/libBookmarkKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libBookmarkKit.so.%%MAJORLIBVERSION%%.1
-@dirrm System/Library/Headers/BookmarkKit
+Local/Library/Headers/BookmarkKit/BKBookmark.h
+Local/Library/Headers/BookmarkKit/BKBookmarkQuery.h
+Local/Library/Headers/BookmarkKit/BKBookmarkSearchResult.h
+Local/Library/Headers/BookmarkKit/BKBookmarkStore.h
+Local/Library/Headers/BookmarkKit/BKBookmarkView.h
+Local/Library/Headers/BookmarkKit/BKGlobals.h
+Local/Library/Headers/BookmarkKit/BKGroup.h
+Local/Library/Headers/BookmarkKit/BookmarkKit.h
+Local/Library/Libraries/libBookmarkKit.so
+Local/Library/Libraries/libBookmarkKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libBookmarkKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/BookmarkKit

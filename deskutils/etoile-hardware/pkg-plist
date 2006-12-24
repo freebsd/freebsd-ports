@@ -1,47 +1,4 @@
 Local/Applications/Hardware.app/Hardware
-Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/EnergyPrefPane
-Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/Resources/Energy.gorm/data.classes
-Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/Resources/Energy.gorm/data.info
-Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/Resources/Energy.gorm/objects.gorm
-Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/Resources/EnergyPrefPaneInfo.plist
-Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/stamp.make
-Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/KeyboardPrefPane
-Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/Resources/Keyboard.gorm/data.classes
-Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/Resources/Keyboard.gorm/data.info
-Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/Resources/Keyboard.gorm/objects.gorm
-Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/Resources/KeyboardPrefPaneInfo.plist
-Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/stamp.make
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/MonitorPrefPane
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources/Monitor.gorm/data.classes
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources/Monitor.gorm/data.info
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources/Monitor.gorm/objects.gorm
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources/Monitor.png
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources/MonitorPrefPaneInfo.plist
-Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/stamp.make
-Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/MousePrefPane
-Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/Resources/Mouse.gorm/data.classes
-Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/Resources/Mouse.gorm/data.info
-Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/Resources/Mouse.gorm/objects.gorm
-Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/Resources/MousePrefPaneInfo.plist
-Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/stamp.make
-Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/Resources/Sound.gorm/data.classes
-Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/Resources/Sound.gorm/data.info
-Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/Resources/Sound.gorm/objects.gorm
-Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/Resources/SoundPrefPaneInfo.plist
-Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/SoundPrefPane
-Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/stamp.make
-Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/Resources/Startup.gorm/data.classes
-Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/Resources/Startup.gorm/data.info
-Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/Resources/Startup.gorm/objects.gorm
-Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/Resources/StartupPrefPaneInfo.plist
-Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/StartupPrefPane
-Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/stamp.make
 Local/Applications/Hardware.app/Resources/Hardware.desktop
 Local/Applications/Hardware.app/Resources/HardwareInfo.plist
 Local/Applications/Hardware.app/Resources/Info-gnustep.plist
@@ -52,23 +9,4 @@ Local/Applications/Hardware.app/library_paths.openapp
 Local/Applications/Hardware.app/stamp.make
 @dirrm Local/Applications/Hardware.app/Resources/MainMenu.gorm
 @dirrm Local/Applications/Hardware.app/Resources
-@dirrm Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/Resources/Startup.gorm
-@dirrm Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane/Resources
-@dirrm Local/Applications/Hardware.app/PlugIns/StartupPrefPane.prefPane
-@dirrm Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/Resources/Sound.gorm
-@dirrm Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane/Resources
-@dirrm Local/Applications/Hardware.app/PlugIns/SoundPrefPane.prefPane
-@dirrm Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/Resources/Mouse.gorm
-@dirrm Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane/Resources
-@dirrm Local/Applications/Hardware.app/PlugIns/MousePrefPane.prefPane
-@dirrm Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources/Monitor.gorm
-@dirrm Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane/Resources
-@dirrm Local/Applications/Hardware.app/PlugIns/MonitorPrefPane.prefPane
-@dirrm Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/Resources/Keyboard.gorm
-@dirrm Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane/Resources
-@dirrm Local/Applications/Hardware.app/PlugIns/KeyboardPrefPane.prefPane
-@dirrm Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/Resources/Energy.gorm
-@dirrm Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane/Resources
-@dirrm Local/Applications/Hardware.app/PlugIns/EnergyPrefPane.prefPane
-@dirrm Local/Applications/Hardware.app/PlugIns
 @dirrm Local/Applications/Hardware.app

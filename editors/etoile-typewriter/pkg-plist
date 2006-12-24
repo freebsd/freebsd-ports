@@ -1,3 +1,6 @@
+Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.classes
+Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.info
+Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/objects.gorm
 Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/data.classes
 Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/data.info
 Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/objects.gorm
@@ -11,6 +14,7 @@ Local/Applications/Typewriter.app/library_paths.openapp
 Local/Applications/Typewriter.app/stamp.make
 @dirrm Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm
 @dirrm Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm
+@dirrm Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm
 @dirrm Local/Applications/Typewriter.app/Resources/English.lproj
 @dirrm Local/Applications/Typewriter.app/Resources
 @dirrm Local/Applications/Typewriter.app

@@ -8,26 +8,31 @@
 PORTNAME=	azdock
 PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://io.debian.net/~tar/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~%%SUBDIR%%/distfiles/
+MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-
-DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
+DISTNAME=	Etoile-${SNAPSHOT}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project AZDock is a wm-dock
 
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LOCAL_LIBS+=	XWindowServerKit:${XWINDOWSERVERKIT_PORT}
+USE_GNUSTEP_SYSTEM_LIBS+=	XWindowServerKit:${XWINDOWSERVERKIT_PORT}
+USE_GNUSTEP_LOCAL_LIBS+=	BookmarkKit:${BOOKMARKKIT_PORT}
 
-SNAPSHOT=	20060917
-WRKSRC=	${WRKDIR}/etoile-0+${SNAPSHOT}+dfsg/Etoile/
+SNAPSHOT=	20061221
+WRKSRC=	${WRKDIR}/Etoile/
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/AZDock
-
-XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit
 ADDITIONAL_OBJCFLAGS+=	-I${X11BASE}/include
 ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
+
+XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit
+BOOKMARKKIT_PORT?=	www/etoile-bookmarkkit
 
 .include <bsd.port.mk>

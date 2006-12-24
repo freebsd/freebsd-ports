@@ -1,8 +1,8 @@
-Local/Library/Headers/XWindowServerKit/XFunctions.h
-Local/Library/Headers/XWindowServerKit/XScreen.h
-Local/Library/Headers/XWindowServerKit/XWindow.h
-Local/Library/Headers/XWindowServerKit/gnustep.h
-Local/Library/Libraries/libXWindowServerKit.so
-Local/Library/Libraries/libXWindowServerKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libXWindowServerKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/XWindowServerKit
+System/Library/Headers/XWindowServerKit/XFunctions.h
+System/Library/Headers/XWindowServerKit/XScreen.h
+System/Library/Headers/XWindowServerKit/XWindow.h
+System/Library/Headers/XWindowServerKit/gnustep.h
+System/Library/Libraries/libXWindowServerKit.so
+System/Library/Libraries/libXWindowServerKit.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libXWindowServerKit.so.%%LIBVERSION%%
+@dirrm System/Library/Headers/XWindowServerKit

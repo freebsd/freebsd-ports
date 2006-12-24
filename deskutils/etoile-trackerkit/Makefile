@@ -8,25 +8,26 @@
 PORTNAME=	trackerkit
 PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	deskutils
-MASTER_SITES=	http://io.debian.net/~tar/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~%%SUBDIR%%/distfiles/
+MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-
-DISTNAME=	etoile_0+${SNAPSHOT}+dfsg.orig
+DISTNAME=	Etoile-${SNAPSHOT}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project TrackerKit framework
 
-SNAPSHOT=	20060917
-WRKSRC=	${WRKDIR}/etoile-0+${SNAPSHOT}+dfsg/Etoile/
-USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
-LDCONFIG_DIRS=	${LOCALLIBDIR}
-INSTALLS_SHLIB=	yes
-NO_FILTER_SHLIBS=	yes
+DEFAULT_LIBVERSION=	0.1
+USE_GNUSTEP_LDCONFIG=	${SYSLIBDIR}
+
+SNAPSHOT=	20061221
+WRKSRC=	${WRKDIR}/Etoile/
 USE_GNUSTEP_MAKE_DIRS+=	Frameworks/TrackerKit
 
 HEADERS=	TKCollection.h TKKeyValuePredicate.h TKObject.h \
