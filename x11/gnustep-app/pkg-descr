@@ -7,7 +7,8 @@ Local libs:	Pantomime, GToolKit, rigs, Addresses, SlideShow, netclasses,
 WizardKit, HighlighterKit, Performance, SQLClient, WebServer, StepTalk,
 MathArray, ObjcUnit, WildMenus, GSKrab, Cddb, UnitKit, XWindowServerKit,
 RSSKit, EtoileExtensions, Encore, BDB, FortyTwo, ObjectiveLib, PopplerKit,
-MP3ToWav, CameraKit, Tryst
+MP3ToWav, CameraKit, Tryst, CollectionKit, EtoileFoundation, PaneKit,
+WorkspaceCommKit, SystemConfig, MultimediaKit, EtoileUI, EtoileBehavior
 
 System apps:	Gorm, GShisen, ProjectCenter, Preferences, GWorkspace,
 guile-gui, gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
@@ -22,9 +23,9 @@ GTAMSAnalyzer, Paje, AClock, PhotoClip, LapisPuzzle, Waiho, Affiche,
 ProjectManager, GMastermind2, GPuzzle2, Ticker, NoteBook, HelpViewer, Duncan,
 Jishyo, GMines, InnerSpace, FTP, DictionaryReader, batmon, Adun, RemoteDesk,
 DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer, Burn, GScheme,
-Mplayer, MyLibrary, NeXTGo, Grr, iTerm, Installer, Hardware, LookAndBehavior,
+Mplayer, MyLibrary, NeXTGo, iTerm, Installer, Hardware, LookAndBehavior,
 Azalea, EtoileMenuServer, Expense, FreeTar, CodeEditor, Localize,
 AddressManager, GSBench, SVGViewer, Vindaloo, Digibux, AppWrapper, Pixen,
 MyWiki, Cartotheque, LuserNET, Popup, Toolbox, Fortunate, TBrowser, TChat
 
-Local tools:	zillion, adtool
+Local tools:	zillion, adtool, etoile_system
