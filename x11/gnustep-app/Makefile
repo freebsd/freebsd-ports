@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -38,6 +38,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	ExtendedWorkspace:deskutils/etoile-extendedworkspacekit \
 	ServicesBarKit:deskutils/etoile-servicesbarkit \
 	IconKit:x11-themes/etoile-iconkit \
+	XWindowServerKit:x11/etoile-xwindowserverkit \
 
 USE_GNUSTEP_LOCAL_LIBS+=	\
 	Pantomime:mail/pantomime \
@@ -56,6 +57,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	ObjcUnit:devel/objcunit \
 	GSKrab:x11/gskrab \
 	UnitKit:devel/etoile-unitkit \
+	BookmarkKit:www/etoile-bookmarkkit \
 	RSSKit:www/etoile-rsskit \
 	Encore:devel/fortytwo-encore \
 	BDB:databases/fortytwo-bdb \
@@ -67,9 +69,17 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	Tryst:net/tryst \
 	OgreKit:textproc/etoile-ogrekit \
 	LuceneKit:textproc/etoile-lucenekit \
+	CollectionKit:devel/etoile-collectionkit \
+	EtoileFoundation:devel/etoile-foundation \
+	PaneKit:deskutils/etoile-panekit \
+	WorkspaceCommKit:sysutils/etoile-system \
+	SystemConfig:deskutils/etoile-systemconfig \
+	MultimediaKit:multimedia/etoile-multimediakit \
+	EtoileUI:deskutils/etoile-ui \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
+	EtoileBehavior:sysutils/etoile-behavior \
 
 USE_GNUSTEP_LOCAL_BUNDLES+=	\
 	Cddb:audio/cddb-bundle	\
@@ -141,7 +151,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	GMines:games/gmines \
 	InnerSpace:x11/innerspace \
 	FTP:ftp/gnustep-ftp \
-	DictionaryReader:deskutils/etoile \
+	DictionaryReader:deskutils/etoile-dictionaryreader \
 	batmon:sysutils/batmon \
 	UL:biology/adun \
 	RemoteDesk:net/remotedesk \
