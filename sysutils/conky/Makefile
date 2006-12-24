@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 
 MAN1=		conky.1
 
-PORTDOCS=	README AUTHORS ChangeLog TODO \
+PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 		docs.html variables.html config_settings.html
 
 .if defined(WITH_AUDACIOUS)
@@ -96,7 +96,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README AUTHORS ChangeLog TODO
+.for i in README AUTHORS ChangeLog TODO NEWS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .for i in docs.html variables.html config_settings.html
