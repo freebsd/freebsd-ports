@@ -1,0 +1,14 @@
+bin/g2ipmsg
+bin/g2ipmsg_applet
+libdata/bonobo/servers/g2ipmsg.server
+share/gnome/applications/g2ipmsg.desktop
+share/gnome/gnome-2.0/ui/g2ipmsg.xml
+share/gnome/pixmaps/ipmsg.png
+share/gnome/pixmaps/g2ipmsg/ipmsg.xpm
+share/gnome/pixmaps/g2ipmsg/ipmsgrev.xpm
+share/gnome/sounds/g2ipmsg/g2ipmsg.ogg
+share/locale/ja/LC_MESSAGES/g2ipmsg.mo
+@exec   %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm share/gnome/sounds/g2ipmsg
+@dirrm share/gnome/pixmaps/g2ipmsg

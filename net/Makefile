@@ -134,6 +134,7 @@
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
+    SUBDIR += g2ipmsg
     SUBDIR += gacxtool
     SUBDIR += gastman
     SUBDIR += gatekeeper
