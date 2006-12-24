@@ -12715,63 +12715,15 @@ libdata/pkgconfig/gutenprintui2.pc
 %%CUPS%%share/cups/model/gutenprint/5.0/zh_TW/stp-xerox-dp_p12.5.0.ppd.gz
 %%CUPS%%share/cups/model/gutenprint/5.0/zh_TW/stp-xerox-dp_p1202.5.0.ppd.gz
 %%CUPS%%share/cups/model/gutenprint/5.0/zh_TW/stp-xerox-dp_p8e.5.0.ppd.gz
-%%DATADIR%%/5.0.0-rc3/xml/dither-matrix-1x1.xml
-%%DATADIR%%/5.0.0-rc3/xml/dither-matrix-2x1.xml
-%%DATADIR%%/5.0.0-rc3/xml/dither-matrix-4x1.xml
-%%DATADIR%%/5.0.0-rc3/xml/papers.xml
-%%DATADIR%%/5.0.0-rc3/xml/printers.xml
+%%DATADIR%%/5.0.0/xml/dither-matrix-1x1.xml
+%%DATADIR%%/5.0.0/xml/dither-matrix-2x1.xml
+%%DATADIR%%/5.0.0/xml/dither-matrix-4x1.xml
+%%DATADIR%%/5.0.0/xml/papers.xml
+%%DATADIR%%/5.0.0/xml/printers.xml
+%%DATADIR%%/doc/FAQ.html
+%%DATADIR%%/doc/gutenprint-users-manual.odt
+%%DATADIR%%/doc/gutenprint-users-manual.pdf
 %%DATADIR%%/doc/gutenprint.pdf
-%%DATADIR%%/doc/html/book1.html
-%%DATADIR%%/doc/html/c29.html
-%%DATADIR%%/doc/html/c443.html
-%%DATADIR%%/doc/html/c568.html
-%%DATADIR%%/doc/html/ch-gimp-and-gimp-print.html
-%%DATADIR%%/doc/html/docbook.css
-%%DATADIR%%/doc/html/figures/cups_admin.png
-%%DATADIR%%/doc/html/figures/cups_admin_device.png
-%%DATADIR%%/doc/html/figures/cups_admin_make.png
-%%DATADIR%%/doc/html/figures/cups_admin_model.png
-%%DATADIR%%/doc/html/figures/cups_admin_success.png
-%%DATADIR%%/doc/html/figures/cups_config_printer.png
-%%DATADIR%%/doc/html/figures/cups_my_printer.png
-%%DATADIR%%/doc/html/figures/cups_printers.png
-%%DATADIR%%/doc/html/figures/cups_startup.png
-%%DATADIR%%/doc/html/figures/gimp-print-gui-1.png
-%%DATADIR%%/doc/html/figures/gimp-print-gui.png
-%%DATADIR%%/doc/html/figures/gimp-print-new-printer.png
-%%DATADIR%%/doc/html/figures/gimp-print-print-color-adjust.png
-%%DATADIR%%/doc/html/figures/gimp-print-setup.png
-%%DATADIR%%/doc/html/figures/gimp_image.png
-%%DATADIR%%/doc/html/figures/gimp_startup.png
-%%DATADIR%%/doc/html/gfdl.html
-%%DATADIR%%/doc/html/ln12.html
-%%DATADIR%%/doc/html/stylesheet-images/caution.gif
-%%DATADIR%%/doc/html/stylesheet-images/home.gif
-%%DATADIR%%/doc/html/stylesheet-images/important.gif
-%%DATADIR%%/doc/html/stylesheet-images/next.gif
-%%DATADIR%%/doc/html/stylesheet-images/note.gif
-%%DATADIR%%/doc/html/stylesheet-images/prev.gif
-%%DATADIR%%/doc/html/stylesheet-images/tip.gif
-%%DATADIR%%/doc/html/stylesheet-images/toc-blank.gif
-%%DATADIR%%/doc/html/stylesheet-images/toc-minus.gif
-%%DATADIR%%/doc/html/stylesheet-images/toc-plus.gif
-%%DATADIR%%/doc/html/stylesheet-images/up.gif
-%%DATADIR%%/doc/html/stylesheet-images/warning.gif
-%%DATADIR%%/doc/html/x452.html
-%%DATADIR%%/doc/html/x544.html
-%%DATADIR%%/doc/html/x559.html
-%%DATADIR%%/doc/html/x640.html
-%%DATADIR%%/doc/html/x650.html
-%%DATADIR%%/doc/html/x654.html
-%%DATADIR%%/doc/html/x660.html
-%%DATADIR%%/doc/html/x696.html
-%%DATADIR%%/doc/html/x701.html
-%%DATADIR%%/doc/html/x705.html
-%%DATADIR%%/doc/html/x709.html
-%%DATADIR%%/doc/html/x712.html
-%%DATADIR%%/doc/html/x715.html
-%%DATADIR%%/doc/html/x720.html
-%%DATADIR%%/doc/html/x85.html
 %%DATADIR%%/doc/reference-html/book1.html
 %%DATADIR%%/doc/reference-html/c1717.html
 %%DATADIR%%/doc/reference-html/c194.html
@@ -12791,7 +12743,6 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/doc/reference-html/x67.html
 %%DATADIR%%/doc/reference-html/x79.html
 %%DATADIR%%/doc/reference-html/x955.html
-%%DATADIR%%/doc/users-guide.pdf
 %%DATADIR%%/samples/colorbars4.png
 %%DATADIR%%/samples/colorsweep.png
 %%DATADIR%%/samples/extended.sample
@@ -12813,30 +12764,46 @@ share/locale/pt/LC_MESSAGES/gutenprint.mo
 share/locale/sk/LC_MESSAGES/gutenprint.mo
 share/locale/sv/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/doc/reference-html
-@dirrm %%DATADIR%%/doc/html/stylesheet-images
-@dirrm %%DATADIR%%/doc/html/figures
-@dirrm %%DATADIR%%/doc/html
 @dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/5.0.0-rc3/xml
-@dirrm %%DATADIR%%/5.0.0-rc3
-@dirrm share/gutenprint
-%%CUPS%%@dirrm %%CUPS%%share/cups/model/gutenprint/5.0/zh_TW
-%%CUPS%%@dirrm %%CUPS%%share/cups/model/gutenprint/5.0/sv
-%%CUPS%%@dirrm %%CUPS%%share/cups/model/gutenprint/5.0/sk
-%%CUPS%%@dirrm %%CUPS%%share/cups/model/gutenprint/5.0/pt
+@dirrm %%DATADIR%%/5.0.0/xml
+@dirrm %%DATADIR%%/5.0.0
+@dirrm %%DATADIR%%
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/zh_TW
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/sv
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/sk
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/pt
 %%CUPS%%@dirrm share/cups/model/gutenprint/5.0/pl
 %%CUPS%%@dirrm share/cups/model/gutenprint/5.0/nl
 %%CUPS%%@dirrm share/cups/model/gutenprint/5.0/nb
 %%CUPS%%@dirrm share/cups/model/gutenprint/5.0/ja
 %%CUPS%%@dirrm share/cups/model/gutenprint/5.0/hu
-@dirrm lib/gutenprint/5.0.0-rc3/modules
-@dirrm lib/gutenprint/5.0.0-rc3
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/fr
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/es
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/en_GB
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/el
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/de
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/da
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/cs
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0/C
+%%CUPS%%@dirrm share/cups/model/gutenprint/5.0
+%%CUPS%%@dirrm share/cups/model/gutenprint
+@dirrm lib/gutenprint/5.0.0/modules
+@dirrm lib/gutenprint/5.0.0
 @dirrm lib/gutenprint
-@dirrmtry lib/gimp/1.2/plug-ins
-@dirrmtry lib/gimp/1.2
-@dirrmtry lib/gimp
 @dirrm include/gutenprintui2
 @dirrm include/gutenprintui
 @dirrm include/gutenprint
