@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.16.2
-PORTREVISION?=	2
+PORTVERSION=	2.16.4
+PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	A Xine-based video player for the Gnome 2 Desktop
+COMMENT?=	A Xine-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
