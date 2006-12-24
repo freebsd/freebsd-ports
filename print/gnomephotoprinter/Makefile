@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomephotoprinter
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.6
 CATEGORIES=	print gnome
 MASTER_SITES=	http://www.fogman.de/gpp/
 DISTNAME=	gpp-${PORTVERSION}
