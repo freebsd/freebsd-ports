@@ -17,12 +17,15 @@ EXTRACT_ONLY=
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	QKMJ - QK Ma2Jong4 client
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
+IA32_BINARY_PORT=	yes
+
+PLIST_FILES=	libexec/qkmj95p5-freebsd bin/qkmj
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+RUN_DEPENDS+=	compat4x-i386>=0:${PORTSDIR}/misc/compat4x
 .endif
 
 NO_WRKSUBDIR=	yes
