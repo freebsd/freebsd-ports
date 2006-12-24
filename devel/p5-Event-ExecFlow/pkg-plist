@@ -1,0 +1,19 @@
+bin/execflow
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow/.packlist
+%%SITE_PERL%%/Event/ExecFlow.pm
+%%SITE_PERL%%/Event/ExecFlow/Frontend.pm
+%%SITE_PERL%%/Event/ExecFlow/Scheduler.pm
+%%SITE_PERL%%/Event/ExecFlow/Job.pm
+%%SITE_PERL%%/Event/ExecFlow/Callbacks.pm
+%%SITE_PERL%%/Event/ExecFlow/Job/Code.pm
+%%SITE_PERL%%/Event/ExecFlow/Job/Group.pm
+%%SITE_PERL%%/Event/ExecFlow/Job/Command.pm
+%%SITE_PERL%%/Event/ExecFlow/Scheduler/SimpleMax.pm
+%%SITE_PERL%%/Event/ExecFlow/Frontend/Term.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event
+@dirrmtry %%SITE_PERL%%/Event/ExecFlow/Scheduler
+@dirrmtry %%SITE_PERL%%/Event/ExecFlow/Job
+@dirrmtry %%SITE_PERL%%/Event/ExecFlow/Frontend
+@dirrmtry %%SITE_PERL%%/Event/ExecFlow
+@dirrmtry %%SITE_PERL%%/Event
