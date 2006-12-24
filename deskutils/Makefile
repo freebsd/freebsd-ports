@@ -39,7 +39,7 @@
     SUBDIR += egroupware
     SUBDIR += estickies
     SUBDIR += etask
-    SUBDIR += etoile
+    SUBDIR += etoile-dictionaryreader
     SUBDIR += etoile-etoileextensionskit
     SUBDIR += etoile-extendedworkspacekit
     SUBDIR += etoile-hardware
