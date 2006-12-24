@@ -6,8 +6,7 @@
 #    $MCom: ports/sysutils/tracker/Makefile,v 1.2 2006/12/10 17:33:17 ahze Exp $
 
 PORTNAME=	tracker
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
 
