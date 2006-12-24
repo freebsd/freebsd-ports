@@ -164,8 +164,8 @@
 %%XPI_XPIDIR%%/chrome/skin/unplug-tool-sm.png
 %%XPI_XPIDIR%%/chrome/skin/unplug.css
 %%XPI_XPIDIR%%/chrome/skin/unplug.png
+%%XPI_XPIDIR%%/chrome/skin/unplug100.png
 %%XPI_XPIDIR%%/chrome/skin/unplug_large.css
-%%XPI_XPIDIR%%/chrome/skin/unplug_new.png
 %%XPI_XPIDIR%%/chrome/skin/unplug_song.png
 %%XPI_XPIDIR%%/chrome/skin/unplug_song_hi.png
 %%XPI_XPIDIR%%/chrome/skin/unstar_data.png
