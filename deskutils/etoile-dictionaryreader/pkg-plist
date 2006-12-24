@@ -6,12 +6,28 @@ Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader
 Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/data.info
 Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/magnifyingGlass.tiff
 Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/objects.gorm
+Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/classes.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/info.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/keyedobjects.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/data.classes
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/data.info
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/Preferences.nib/classes.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/Preferences.nib/info.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/Preferences.nib/keyedobjects.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/classes.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/info.nib
+Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/keyedobjects.nib
 Local/Applications/DictionaryReader.app/Resources/Info-gnustep.plist
 Local/Applications/DictionaryReader.app/Resources/dict.png
 Local/Applications/DictionaryReader.app/Resources/jargon.dict
 Local/Applications/DictionaryReader.app/Resources/jargon.index
 Local/Applications/DictionaryReader.app/library_paths.openapp
 Local/Applications/DictionaryReader.app/stamp.make
+@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/Preferences.nib
+@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib
+@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm
+@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib
 @dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm
 @dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj
 @dirrm Local/Applications/DictionaryReader.app/Resources
