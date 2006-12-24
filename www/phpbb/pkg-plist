@@ -327,5 +327,5 @@
 @dirrmtry %%PHPBBDIR%%/templates/subSilver/images
 @dirrmtry %%PHPBBDIR%%/templates/subSilver
 @dirrmtry %%PHPBBDIR%%/templates
-@unexec rmdir %D/%%PHPBBDIR%% 2>/dev/null || echo "Note: %D/%%PHPBBDIR%% not empty -- not deleted!"
+@dirrmtry %%PHPBBDIR%%
 @dirrmtry www/data
