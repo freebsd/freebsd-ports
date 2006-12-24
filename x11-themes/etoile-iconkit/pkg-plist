@@ -1,3 +1,14 @@
+System/Library/Headers/IconKit/IKApplicationIconProvider.h
+System/Library/Headers/IconKit/IKCompositor.h
+System/Library/Headers/IconKit/IKCompositorOperation.h
+System/Library/Headers/IconKit/IKIcon.h
+System/Library/Headers/IconKit/IKIconIdentifier.h
+System/Library/Headers/IconKit/IKIconPositions.h
+System/Library/Headers/IconKit/IKIconProvider.h
+System/Library/Headers/IconKit/IKThumbnailProvider.h
+System/Library/Headers/IconKit/IKWorkspaceAdditions.h
+System/Library/Headers/IconKit/IconKit.h
 System/Library/Libraries/libIconKit.so
 System/Library/Libraries/libIconKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libIconKit.so.%%MAJORLIBVERSION%%.1
+System/Library/Libraries/libIconKit.so.%%LIBVERSION%%
+@dirrm System/Library/Headers/IconKit

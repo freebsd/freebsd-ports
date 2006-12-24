@@ -7,11 +7,17 @@ Local/Library/Headers/RSSKit/FeedParser.h
 Local/Library/Headers/RSSKit/NewRSSArticleListener.h
 Local/Library/Headers/RSSKit/RSS1%%MAJORVERSION%%Parser.h
 Local/Library/Headers/RSSKit/RSS2%%MAJORVERSION%%Parser.h
+Local/Library/Headers/RSSKit/RSSArticle+Storage.h
 Local/Library/Headers/RSSKit/RSSArticle.h
 Local/Library/Headers/RSSKit/RSSArticleCreationListener.h
+Local/Library/Headers/RSSKit/RSSArticleProtocol.h
+Local/Library/Headers/RSSKit/RSSFactory.h
 Local/Library/Headers/RSSKit/RSSFeed+Fetching.h
+Local/Library/Headers/RSSKit/RSSFeed+Storage.h
 Local/Library/Headers/RSSKit/RSSFeed.h
+Local/Library/Headers/RSSKit/RSSFeedProtocol.h
 Local/Library/Headers/RSSKit/RSSKit.h
+Local/Library/Headers/RSSKit/RSSLinks.h
 Local/Library/Libraries/libRSSKit.so
 Local/Library/Libraries/libRSSKit.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libRSSKit.so.%%LIBVERSION%%

@@ -5,5 +5,5 @@ System/Library/Headers/TrackerKit/TKQuery.h
 System/Library/Headers/TrackerKit/TKTracker.h
 System/Library/Libraries/libTrackerKit.so
 System/Library/Libraries/libTrackerKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libTrackerKit.so.%%MAJORLIBVERSION%%.1
+System/Library/Libraries/libTrackerKit.so.%%LIBVERSION%%
 @dirrm System/Library/Headers/TrackerKit

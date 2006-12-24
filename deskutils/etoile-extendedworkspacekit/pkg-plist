@@ -19,5 +19,5 @@ System/Library/Headers/ExtendedWorkspaceKit/ExtendedWorkspaceKit.h
 System/Library/Headers/ExtendedWorkspaceKit/NSURL+ExtendedWorkspace.h
 System/Library/Libraries/libExtendedWorkspace.so
 System/Library/Libraries/libExtendedWorkspace.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libExtendedWorkspace.so.%%MAJORLIBVERSION%%.1
+System/Library/Libraries/libExtendedWorkspace.so.%%LIBVERSION%%
 @dirrm System/Library/Headers/ExtendedWorkspaceKit
