@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
 MASTER_SITE_SUBDIR=	wesnoth
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
-
-LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++
 
 USE_GCC=	3.4
 USE_SDL=	image mixer net
@@ -30,13 +27,14 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-freetype-prefix=${LOCALBASE} \
-		--with-localedir=${PREFIX}/share/locale
+		--with-localedir=${PREFIX}/share/locale \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS} -ftemplate-depth-45" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6
-MANLANG=	"" de hu sv
+MANLANG=	"" cs de en_GB fr ja nl pt_BR sk sv
 
 .if defined(WITH_CAMPAIGN) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-campaign-server
@@ -47,6 +45,11 @@ PLIST_SUB+=		CAMPAIGN:="@comment "
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITH_ZIPIOS)
+CONFIGURE_ARGS+=	--with-zipios
+LIB_DEPENDS+=	zipios.0:${PORTSDIR}/archivers/zipios++
 .endif
 
 .if defined(WITH_EDITOR) || defined(PACKAGE_BUILDING)
@@ -109,9 +112,9 @@ pre-everything::
 	@${ECHO_MSG} "WITH_TOOLS=yes to enable compilation of tools for translators and artists."
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${LOCALBASE}/share/gnome/applications|g ; \
-		s|[$$][(]datadir[)]/icons|${LOCALBASE}/share/gnome/pixmaps|g' \
-			${WRKSRC}/icons/Makefile.in
+post-configure:
+	@${REINPLACE_CMD} -e 's|[$$][{]datarootdir[}]/applications|${LOCALBASE}/share/gnome/applications|; \
+		s|[$$][{]datarootdir[}]/icons|${LOCALBASE}/share/gnome/pixmaps|' \
+			${WRKSRC}/icons/Makefile
 
 .include <bsd.port.post.mk>
