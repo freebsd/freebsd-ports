@@ -4,9 +4,10 @@
 #
 # $FreeBSD$
 #    $MCom: ports/print/gutenprint/Makefile,v 1.3 2006/02/25 00:13:44 marcus Exp $
+#
 
 PORTNAME=	gutenprint
-DISTVERSION=	5.0.0-rc3
+PORTVERSION=	5.0.0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gimp-print
@@ -65,5 +66,9 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_CUPS=yes		build with CUPS driver"
 	@${ECHO_MSG} "	WITHOUT_IJS=yes 	build without IJS-based Ghostscript driver"
 	@${ECHO_MSG}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$libdir/gimp/1.2/plug-ins||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
