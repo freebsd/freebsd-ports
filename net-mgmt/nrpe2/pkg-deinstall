@@ -1,0 +1,19 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/usr/sbin
+TMPFILE=/tmp/services-$RANDOM-$$
+
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+case "$2" in
+"DEINSTALL")
+	# Note how to delete UID/GID
+	USER=nagios
+	GROUP=nagios
+	if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	    echo "To delete nagios user  permanently, use 'pw userdel  ${USER}'"
+	    echo "To delete nagios group permanently, use 'pw groupdel ${GROUP}'"
+	fi
+	;;
+esac
