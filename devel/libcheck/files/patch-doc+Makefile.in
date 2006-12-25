@@ -1,0 +1,21 @@
+--- doc/Makefile.in.orig	Tue Nov 21 18:19:14 2006
++++ doc/Makefile.in	Fri Dec  1 21:57:52 2006
+@@ -220,14 +220,14 @@
+              $(example_src_docs) \
+              $(example_tests_docs)
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)
++docdir = $(prefix)/share/examples/${PACKAGE}-${VERSION}
+ 
+ # install money example
+-exampledir = $(docdir)/example
++exampledir = $(docdir)
+ example_DATA = $(example_docs)
+-examplesrcdir = $(docdir)/example/src
++examplesrcdir = $(docdir)/src
+ examplesrc_DATA = $(example_src_docs)
+-exampletestsdir = $(docdir)/example/tests
++exampletestsdir = $(docdir)/tests
+ exampletests_DATA = $(example_tests_docs)
+ all: all-am
+ 
