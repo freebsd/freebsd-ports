@@ -1,12 +1,12 @@
---- src/exif_view.c.orig        Tue Feb  1 13:20:55 2005
-+++ src/exif_view.c     Tue Feb  1 13:20:16 2005
+--- src/exif_view.c.orig	Wed Sep 22 17:37:11 2004
++++ src/exif_view.c	Mon Dec 25 20:48:08 2006
 @@ -87,6 +87,7 @@
                                   ExifContent *content)
  {
     const gchar *text[2];
 +   gchar value[1024];
-    gint i;
-
+    guint i;
+ 
     g_return_if_fail (clist);
 @@ -104,7 +105,7 @@
     for (i = 0; i < content->count; i++) {

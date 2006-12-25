@@ -32,8 +32,6 @@ lib/gimageview/thumbnail/libgimv_nautilus_thumb.so
 lib/gimageview/thumbnail/libgimv_thumb.so
 lib/gimageview/thumbnail/libgimv_xvpics_thumb.so
 lib/gimageview/thumbnail_view/libgimv_thumbview_detail.so
-lib/gimageview/thumbnail_view/libgimv_thumbview_list.so
-lib/gimageview/thumbnail_view/libgimv_thumbview_table.so
 share/doc/gimageview/html/ja/01.html
 share/doc/gimageview/html/ja/02.html
 share/doc/gimageview/html/ja/03.html
