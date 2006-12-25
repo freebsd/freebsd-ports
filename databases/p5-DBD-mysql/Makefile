@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	DBD-mysql
-PORTVERSION=	3.0008
+PORTVERSION=	4.0000
 PORTREVISION?=	0
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/00$//}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	MySQL driver for the Perl5 Database Interface (DBI)
@@ -22,7 +23,7 @@ USE_MYSQL=	yes
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Bundle::DBD::mysql.3 DBD::mysql.3 DBD::mysql::INSTALL.3 Mysql.3
+MAN3=	Bundle::DBD::mysql.3 DBD::mysql.3 DBD::mysql::INSTALL.3
 
 .include <bsd.port.pre.mk>
 
