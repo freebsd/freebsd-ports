@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-NNTP
-PORTVERSION=	1.04
+PORTVERSION=	2.01
 CATEGORIES=	news perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -15,11 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	POE component for non-blocking NNTP access
 
-RUN_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
+		${SITE_PERL}/POE/Component/Pluggable.pm:${PORTSDIR}/devel/p5-POE-Component-Pluggable
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		POE::Component::Client::NNTP.3
+MAN3=		POE::Component::Client::NNTP.3 \
+		POE::Component::Client::NNTP::Constants.3
 
 .include <bsd.port.pre.mk>
 
