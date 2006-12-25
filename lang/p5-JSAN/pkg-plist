@@ -1,0 +1,9 @@
+bin/jsan
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSAN/.packlist
+%%SITE_PERL%%/JSAN.pm
+%%SITE_PERL%%/JSAN/Shell.pm
+%%SITE_PERL%%/JSAN/Indexer.pm
+%%SITE_PERL%%/JSAN/Indexer/Creator.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSAN
+@dirrmtry %%SITE_PERL%%/JSAN/Indexer
+@dirrmtry %%SITE_PERL%%/JSAN
