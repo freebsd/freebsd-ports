@@ -22,8 +22,7 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.53:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		gpgv:${PORTSDIR}/security/gnupg1
+		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
@@ -36,6 +35,7 @@ CONTACT_ADDRESS?=	The administrator of that system
 OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		DOMAINKEYS "DomainKeys support" off \
 		SSL "Build with SSL support for spamd/spamc" on \
+		GNUPG "Install GnuPG (for sa-update)" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
 		RAZOR "Add Vipul's Razor support" on \
@@ -58,6 +58,10 @@ LDFLAGS+=	-L${OPENSSLLIB}
 CONFIGURE_ARGS+=	ENABLE_SSL=yes
 .else
 CONFIGURE_ARGS+=	ENABLE_SSL=no
+.endif
+
+.if !defined(WITHOUT_GNUPG)
+RUN_DEPENDS+=	gpgv:${PORTSDIR}/security/gnupg1
 .endif
 
 .if defined(WITH_MYSQL)
