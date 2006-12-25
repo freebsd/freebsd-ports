@@ -1,15 +1,41 @@
-%%EXAMPLESDIR%%/money.h
-%%EXAMPLESDIR%%/money.c
-%%EXAMPLESDIR%%/check_money.c
-%%EXAMPLESDIR%%/configure.in.money
-%%EXAMPLESDIR%%/Makefile.am.money
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.sgml
+include/check.h
+info/check.info
+info/dir
+lib/libcheck.so.0
+lib/libcheck.so
+lib/libcheck.la
+lib/libcheck.a
+lib/pkgconfig/check.pc
+share/aclocal/check.m4
+%%EXAMPLESDIR%%/Makefile.am
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/configure.ac
+%%EXAMPLESDIR%%/src/Makefile.am
+%%EXAMPLESDIR%%/src/main.c
+%%EXAMPLESDIR%%/src/money.c
+%%EXAMPLESDIR%%/src/money.h
+%%EXAMPLESDIR%%/src/money.1.h
+%%EXAMPLESDIR%%/src/money.2.h
+%%EXAMPLESDIR%%/src/money.1.c
+%%EXAMPLESDIR%%/src/money.3.c
+%%EXAMPLESDIR%%/src/money.4.c
+%%EXAMPLESDIR%%/src/money.5.c
+%%EXAMPLESDIR%%/src/money.6.c
+@dirrm %%EXAMPLESDIR%%/src
+%%EXAMPLESDIR%%/tests/Makefile.am
+%%EXAMPLESDIR%%/tests/check_money.c
+%%EXAMPLESDIR%%/tests/check_money.1.c
+%%EXAMPLESDIR%%/tests/check_money.2.c
+%%EXAMPLESDIR%%/tests/check_money.3.c
+%%EXAMPLESDIR%%/tests/check_money.6.c
+%%EXAMPLESDIR%%/tests/check_money.7.c
+@dirrm %%EXAMPLESDIR%%/tests
+%%PORTDOCS%%%%DOCSDIR%%/SVNChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLogOld
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-share/aclocal/check.m4
-include/check.h
-lib/libcheck.a
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 @dirrm %%EXAMPLESDIR%%

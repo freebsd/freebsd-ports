@@ -1,20 +1,24 @@
---- Makefile.in.orig	Sun Jul  2 20:15:13 2006
-+++ Makefile.in	Sun Jul  2 20:15:30 2006
-@@ -77,7 +77,7 @@
- @PLAIN_DOCDIR_FALSE@DOCROOTDIR = $(prefix)/share/doc/${PACKAGE}-${VERSION}
- docdir = $(DOCROOTDIR)
+--- Makefile.in.orig	Tue Nov 21 18:19:11 2006
++++ Makefile.in	Fri Dec  1 21:41:18 2006
+@@ -38,8 +38,8 @@
+ host_triplet = @host@
+ DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/check.pc.in \
+-	$(srcdir)/config.h.in $(top_srcdir)/configure AUTHORS COPYING \
+-	COPYING.LESSER ChangeLog INSTALL NEWS THANKS TODO \
++	$(srcdir)/config.h.in $(top_srcdir)/configure AUTHORS \
++	ChangeLog INSTALL NEWS THANKS TODO \
+ 	build-aux/compile build-aux/config.guess build-aux/config.sub \
+ 	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
+ 	build-aux/mdate-sh build-aux/missing build-aux/texinfo.tex
+@@ -203,8 +203,8 @@
+ 	ChangeLog.bak
  
--doc_DATA = ChangeLog ChangeLogOld NEWS README COPYING
-+doc_DATA = ChangeLog ChangeLogOld NEWS README
- 
- SUBDIRS = src tests doc rpm debian
- 
-@@ -94,7 +94,7 @@
- CONFIG_CLEAN_FILES = 
- DATA =  $(doc_DATA) $(m4data_DATA)
- 
--DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING ChangeLog INSTALL \
-+DIST_COMMON =  README ./stamp-h.in AUTHORS ChangeLog INSTALL \
- Makefile.am Makefile.in NEWS acinclude.m4 aclocal.m4 config.guess \
- config.h.in config.sub configure configure.in install-sh missing \
- mkinstalldirs
+ EXTRA_DIST = SVNChangeLog ChangeLogOld check.pc.in $(m4data_DATA)
+-docdir = $(datadir)/doc/$(PACKAGE)
+-doc_DATA = SVNChangeLog ChangeLog ChangeLogOld NEWS README COPYING.LESSER
++docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++doc_DATA = SVNChangeLog ChangeLog ChangeLogOld NEWS README
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = check.m4
+ pcdatadir = $(libdir)/pkgconfig
