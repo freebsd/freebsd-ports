@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Number-WithError
-PORTVERSION=	0.06
+PORTVERSION=	0.08
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Number
@@ -17,7 +17,7 @@ COMMENT=	Numbers with error propagation and scientific rounding
 
 BUILD_DEPENDS=	${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork \
-		${SITE_PERL}/Math/SymbolicX/Inline.pm:${PORTSDIR}/math/p5-Math-SymbolicX-Inline
+		${SITE_PERL}/Math/BigFloat.pm:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Number::WithError.3
