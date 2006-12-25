@@ -1,0 +1,9 @@
+If this is the first time you use Pantera, and the first time you install
+MySQL server, then this shell script can take care of the database installation
+for you:
+%%SCRIPTDIR%%/pantera-install.sh
+otherwise, read the script carefully to see what manual steps should be done.
+Too, please note for the time being Pantera is not upgrade-safe:
+New versions on the port will surely destroy your configuration file 
+(panteracfg.xml) and likely will not have easy migration path to data already
+stored in the database.

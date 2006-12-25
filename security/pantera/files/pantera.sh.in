@@ -1,0 +1,5 @@
+#!/bin/sh
+DIR=`pwd`
+cd %%DATADIR%%
+python pantera.py
+cd $DIR

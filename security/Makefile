@@ -498,6 +498,7 @@
     SUBDIR += pam_smb
     SUBDIR += pamsfs
     SUBDIR += pamtester
+    SUBDIR += pantera
     SUBDIR += parano
     SUBDIR += pbnj
     SUBDIR += pear-Auth

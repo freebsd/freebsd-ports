@@ -1,0 +1,9 @@
+Overview:
+Pantera uses an improved version of SpikeProxy to provide a powerful web
+application analysis engine.
+
+Goals:
+The primary goal of Pantera is to combine automated capabilities with complete
+manual testing to get the best penetration testing results. 
+
+WWW: http://www.owasp.org/index.php/Category:OWASP_Pantera_Web_Assessment_Studio_Project
