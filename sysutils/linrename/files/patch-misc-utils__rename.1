@@ -1,0 +1,37 @@
+--- ./misc-utils/rename.1.orig	Sun Aug 22 17:14:45 2004
++++ ./misc-utils/rename.1	Mon Dec 25 14:54:11 2006
+@@ -3,11 +3,11 @@
+ .\"
+ .TH RENAME 1 "1 January 2000" "" "Linux Programmer's Manual"
+ .SH NAME
+-rename \- Rename files
++linrename \- Rename files
+ .SH SYNOPSIS
+-.BI rename " from to file..."
++.BI linrename " from to file..."
+ .SH DESCRIPTION
+-.B rename
++.B linrename
+ will rename the specified files by replacing the first occurrence of
+ .I from
+ in their name by
+@@ -19,8 +19,8 @@
+ 
+ .RS
+ .nf
+-rename foo foo0 foo?
+-rename foo foo0 foo??
++linrename foo foo0 foo?
++linrename foo foo0 foo??
+ .fi
+ .RE
+ 
+@@ -30,7 +30,7 @@
+ And
+ .RS
+ .nf
+-rename .htm .html *.htm
++linrename .htm .html *.htm
+ .fi
+ .RE
+ 
