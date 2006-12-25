@@ -1,0 +1,17 @@
+Frei0r is a minimalistic plugin API for video sources and filters. The
+behaviour of the effects can be controlled from the host by simple
+parameters. The intent is to solve the recurring reimplementation or
+adaptation issue of standard effects.
+
+It is not meant as a generic API for all kinds of video applications.
+
+There is no support for the requirements of special application areas
+like non linear editors, hardware accelerated shader effects, and high
+precision video processing. These advanced issues are not even solved
+satisfactory for non cross application plugin apis and are still an
+evolving field.
+
+The frei0r API is not meant to be a competing standard to more
+ambitious efforts.
+
+WWW: http://www.piksel.org/frei0r
