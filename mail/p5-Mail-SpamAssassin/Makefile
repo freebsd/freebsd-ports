@@ -34,6 +34,7 @@ CONTACT_ADDRESS?=	The administrator of that system
 
 OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		DOMAINKEYS "DomainKeys support" off \
+		DKIM "DomainKeys Identified Mail" off \
 		SSL "Build with SSL support for spamd/spamc" on \
 		GNUPG "Install GnuPG (for sa-update)" on \
 		MYSQL "Add MySQL support" off \
@@ -76,7 +77,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 RUN_DEPENDS+=	razor-agents>=2.81:${PORTSDIR}/mail/razor-agents
 .endif
 
-.if defined(WITH_DOMAINKEYS)
+.if defined(WITH_DKIM)
+RUN_DEPENDS+=	${SITE_PERL}/Mail/DKIM.pm:${PORTSDIR}/mail/p5-Mail-DKIM
+.endif
+
+.if defined(WITH_DOMAINKEYS) || defined(WITH_DKIM)
 RUN_DEPENDS+=	p5-Mail-DomainKeys>=0.80:${PORTSDIR}/mail/p5-Mail-DomainKeys
 .endif
 
