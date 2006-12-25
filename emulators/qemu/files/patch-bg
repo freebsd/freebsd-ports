@@ -4,22 +4,21 @@ Index: qemu/Makefile.target
  #########################################################
  
 -DEFINES+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
-+DEFINES+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DSMBD=\"${LOCALBASE}/sbin/smbd\"
++DEFINES+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\"
  LIBS+=-lm
  ifndef CONFIG_USER_ONLY
  LIBS+=-lz
 Index: qemu/vl.c
-@@ -1560,8 +1560,13 @@
-     fclose(f);
-     atexit(smb_exit);
+@@ -89,10 +89,12 @@
+ #include "exec-all.h"
  
-+#ifdef __FreeBSD__
-+    snprintf(smb_cmdline, sizeof(smb_cmdline), SMBD " -s %s",
-+             smb_conf);
-+#else
-     snprintf(smb_cmdline, sizeof(smb_cmdline), "/usr/sbin/smbd -s %s",
-              smb_conf);
+ #define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
++#ifndef SMBD_COMMAND
+ #ifdef __sun__
+ #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
+ #else
+ #define SMBD_COMMAND "/usr/sbin/smbd"
 +#endif
-     
-     slirp_add_exec(0, smb_cmdline, 4, 139);
- }
+ #endif
+ 
+ //#define DEBUG_UNUSED_IOPORT

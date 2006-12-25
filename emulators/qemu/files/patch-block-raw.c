@@ -1,15 +1,14 @@
 Index: qemu/block-raw.c
-@@ -51,6 +51,9 @@
+@@ -51,7 +51,7 @@
  #include <linux/cdrom.h>
  #include <linux/fd.h>
  #endif
+-#ifdef __FreeBSD__
 +#if defined(__FreeBSD__) && __FreeBSD__ > 4
-+#include <sys/disk.h>
-+#endif
+ #include <sys/disk.h>
+ #endif
  
- //#define DEBUG_FLOPPY
- 
-@@ -164,9 +164,20 @@
+@@ -167,9 +167,20 @@
  static int aio_sig_num = SIGUSR2;
  static RawAIOCB *first_aio; /* AIO issued */
  static int aio_initialized = 0;
@@ -30,7 +29,7 @@ Index: qemu/block-raw.c
  #ifndef QEMU_TOOL
      CPUState *env = cpu_single_env;
      if (env) {
-@@ -281,9 +292,17 @@
+@@ -284,9 +295,17 @@
      if (qemu_bh_poll())
          return;
  #endif
