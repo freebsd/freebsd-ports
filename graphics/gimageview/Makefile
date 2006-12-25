@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimageview
-PORTVERSION=	0.2.25
-PORTREVISION=	6
+PORTVERSION=	0.2.27
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -16,7 +15,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Yet another GTK+ based image viewer
 
 USE_GMAKE=	yes
-USE_GNOME=	gdkpixbuf gnomehier
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -24,12 +22,21 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
+CONFIGURE_ARGS=	--with-gtk2
+CFLAGS+=	-DUSE_GTK2
+.else
+USE_GNOME=	gdkpixbuf gnomehier
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mimlib}!=""
 USE_GNOME+=	imlib
 PKGNAMESUFFIX=	-imlib
 WITH_IMLIB=	yes
+CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 
 .if exists(${LOCALBASE}/lib/libexif.so.12)
