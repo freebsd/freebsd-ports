@@ -16,11 +16,11 @@ DISTNAME=	${PORTNAME}-3.17.3-1.07
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perl extension for the Spread group communication system
 
-BROKEN=		fails to deinstall cleanly
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
+
+BROKEN=		fails to deinstall cleanly due to conflict with builtin Spread Perl libraries
+DEPRECATED=	Spread comes with its own Perl library
+EXPIRATION_DATE=2006-12-01
 
 MAN3=	Spread.3
 
