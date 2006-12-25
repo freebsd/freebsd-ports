@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dphys-config
-PORTVERSION=	20061013
+PORTVERSION=	20061020
 CATEGORIES=	misc
-MASTER_SITES=	http://www.phys.ethz.ch/~franklin/Projects/ \
-		http://florida.ethz.ch/ports/distfiles/ \
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Tool to distribute config files
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 
 MAN1=		dphys-config.1
 
-BROKEN=		not fetchable
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${PORTNAME}
