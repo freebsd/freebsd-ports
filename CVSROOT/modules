@@ -2964,6 +2964,7 @@ freevo		ports/multimedia/freevo
 freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
+frei0r		ports/graphics/frei0r
 freqsdwn	ports/sysutils/freqsdwn
 freshmeat-submit	ports/misc/freshmeat-submit
 fressh		ports/security/fressh
