@@ -254,6 +254,7 @@
     SUBDIR += p5-Statistics-Descriptive
     SUBDIR += p5-Statistics-Descriptive-Discrete
     SUBDIR += p5-Statistics-Distributions
+    SUBDIR += p5-Statistics-Forecast
     SUBDIR += p5-Statistics-LTU
     SUBDIR += p5-Statistics-LineFit
     SUBDIR += p5-Statistics-Lite
