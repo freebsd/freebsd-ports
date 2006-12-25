@@ -6501,6 +6501,7 @@ linplasma	ports/graphics/linplasma
 linpopup	ports/net-im/linpopup
 linpsk		ports/comms/linpsk
 linrad		ports/comms/linrad
+linrename	ports/sysutils/linrename
 linsmith	ports/science/linsmith
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
