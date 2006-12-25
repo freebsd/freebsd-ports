@@ -10846,6 +10846,7 @@ paicc		ports/sysutils/paicc
 paintlib	ports/graphics/paintlib
 paje		ports/science/paje
 pal		ports/deskutils/pal
+palm-db-tools	ports/palm/palm-db-tools
 palmos-sdk	ports/palm/palmos-sdk
 palmpower	ports/palm/palmpower
 palomino	ports/games/palomino
