@@ -5,7 +5,7 @@ Index: qemu/vl.c
  
 -#if defined(__linux__)
 +#if defined(__linux__) || defined(__FreeBSD__)
- CharDriverState *qemu_chr_open_pty(void)
+ static CharDriverState *qemu_chr_open_pty(void)
  {
      struct termios tty;
 @@ -1665,6 +1665,7 @@
