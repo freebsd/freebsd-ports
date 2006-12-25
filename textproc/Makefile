@@ -335,6 +335,7 @@
     SUBDIR += p5-CSS-Squish
     SUBDIR += p5-CSS-Tiny
     SUBDIR += p5-Chess-PGN-Parse
+    SUBDIR += p5-Class-CSV
     SUBDIR += p5-Data-FormValidator
     SUBDIR += p5-Data-Report
     SUBDIR += p5-DelimMatch
