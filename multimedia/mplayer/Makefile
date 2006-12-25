@@ -84,6 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -116,9 +117,10 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--enable-png \
 		--enable-menu \
 		--disable-libfame \
-		--disable-external-faad \
-		--disable-external-vidix \
-		--disable-tv-v4l
+		--disable-faad-external \
+		--disable-vidix-external \
+		--disable-tv-v4l1 \
+		--disable-tv-v4l2
 
 OPTIONS=	DEBUG "Include debug symbols in mplayer's binary files" off
 
@@ -140,6 +142,7 @@ OPTIONS+=	ARTS "Enable KDE sound system support" off
 OPTIONS+=	ESOUND "Enable GNOME esound support" off
 OPTIONS+=	JACK "Enable JackIt audio server support" off
 OPTIONS+=	POLYP "Enable polyp sound server support" off
+OPTIONS+=	NAS "Enable NAS sound server support" off
 OPTIONS+=	OPENAL "Enable OpenAL sound support" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
 OPTIONS+=	AALIB "Enable aalib support" off
@@ -208,11 +211,11 @@ CFLAGS+=	-DPRIX64=\\\"lX\\\"
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mplayer/vidix
 PLIST_SUB+=	VIDIX=""
 .else
-CONFIGURE_ARGS+=--disable-internal-vidix
+CONFIGURE_ARGS+=--disable-vidix-internal
 PLIST_SUB+=	VIDIX="@comment "
 .endif
 .else
-CONFIGURE_ARGS+=--disable-internal-vidix
+CONFIGURE_ARGS+=--disable-vidix-internal
 PLIST_SUB+=	VIDIX="@comment "
 .endif
 
@@ -266,6 +269,7 @@ CATEGORIES+=	ipv6
 
 .if !defined(WITHOUT_GUI)
 PLIST_SUB+=	GMPLAYER=""
+DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "" "gmplayer" "" false
 .if !defined(WITHOUT_SKINS)
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/skins:${PORTSDIR}/multimedia/mplayer-skins
 .endif
@@ -426,6 +430,13 @@ LIB_DEPENDS+=		polyp-0.7.0:${PORTSDIR}/audio/polypaudio
 CONFIGURE_ARGS+=	--disable-polyp
 .endif
 
+.if defined(WITH_NAS)
+CONFIGURE_ARGS+=	--enable-nas
+LIB_DEPENDS+=		audio.2:${PORTSDIR}/audio/nas
+.else
+CONFIGURE_ARGS+=	--disable-nas
+.endif
+
 .if defined(WITH_OPENAL)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
 .else
@@ -433,7 +444,7 @@ CONFIGURE_ARGS+=	--disable-openal
 .endif
 
 .if !defined(WITH_TREMOR)
-CONFIGURE_ARGS+=	--disable-internal-tremor
+CONFIGURE_ARGS+=	--disable-tremor-internal
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
