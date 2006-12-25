@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Class/CSV.pm
+@dirrmtry %%SITE_PERL%%/Class
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/CSV/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/CSV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
