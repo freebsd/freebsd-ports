@@ -1,21 +1,13 @@
---- vamps/Makefile.orig	Wed Nov 16 18:20:08 2005
-+++ vamps/Makefile	Fri Dec 16 02:52:02 2005
-@@ -12,9 +12,6 @@
- # along with this program; if not, write to the Free Software
- # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307, USA.
+--- vamps/Makefile.orig	Mon Dec 25 04:18:43 2006
++++ vamps/Makefile	Mon Dec 25 04:19:02 2006
+@@ -17,9 +17,7 @@
  
--CC      = gcc
--CFLAGS  = -pipe -Wall -O3 -fomit-frame-pointer -funroll-loops \
--	  -DHAVE_BUILTIN_EXPECT
- STATIC  =
- #STATIC  = -static
- STRIP   = strip
-@@ -25,7 +22,7 @@
- all:		vamps
+ PREFIX    ?= /usr/local
  
- vamps:		vamps.o requant.o
--		$(CC) -o $@ $(STATIC) vamps.o requant.o -lm -lpthread
-+		$(CC) $(LDFLAGS) -o $@ vamps.o requant.o -lm
- 		$(STRIP) $@
- 
- requant.o:	requant.h putvlc.h getvlc.h qTable.h
+-CC         = gcc
+-CFLAGS    ?= -pipe -O3 -fomit-frame-pointer -funroll-loops \
+-	       -DHAVE_BUILTIN_EXPECT
++CFLAGS    += -DHAVE_BUILTIN_EXPECT
+ CFLAGS    += -Wall
+ LDFLAGS   += -s
+ #LDFLAGS  += -static

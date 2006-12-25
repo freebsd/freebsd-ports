@@ -1,21 +1,13 @@
---- play_cell/Makefile.orig	Wed Nov 16 18:20:08 2005
-+++ play_cell/Makefile	Fri Dec 16 02:52:11 2005
-@@ -12,8 +12,6 @@
- # along with this program; if not, write to the Free Software
- # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307, USA.
+--- play_cell/Makefile.orig	Mon Dec 25 04:16:47 2006
++++ play_cell/Makefile	Mon Dec 25 04:17:12 2006
+@@ -16,10 +16,7 @@
  
--CC      = gcc
--CFLAGS  = -pipe -O2 -fomit-frame-pointer -Wall
- STATIC  =
- #STATIC  = -static
- STRIP   = strip
-@@ -24,8 +22,7 @@
- all:		play_cell
+ PREFIX    ?= /usr/local
  
- play_cell:	play_cell.o
--		$(CC) -o $@ $(STATIC) play_cell.o -ldvdread
--		$(STRIP) $@
-+		$(CC) $(LDFLAGS) -o $@ play_cell.o -ldvdread
+-CC         = gcc
+-CFLAGS    ?= -pipe -O2 -fomit-frame-pointer
+ CFLAGS    += -Wall -W
+-LDFLAGS   += -s
+ #LDFLAGS  += -static
+ LOADLIBES += -ldvdread
  
- install:	all
- 		$(INSTALL) -m 755 play_cell $(PREFIX)/bin
