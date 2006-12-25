@@ -5,36 +5,29 @@
 # $FreeBSD$
 #
 
-# WARNING: when updating this port check if the ports that use libvisual
-# can work with it. Backwards compatiblity is known to be broken in the past.
-
 PORTNAME=	libvisual
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+PKGNAMESUFFIX=	04
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
 USE_XLIBS=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500001
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libvisual_lv_cpu.c
-.endif
+PLIST_SUB=	VER=-0.4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g' \
-		-e 's|-O3|${CFLAGS}|g' \
+	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g;s|-O3|${CFLAGS}|g' \
 		${WRKSRC}/libvisual/Makefile.in
+	@${REINPLACE_CMD} -e 's|sys/sched.h||g' -e '/test.*==/s|==|=|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's|$$<|$${.ALLSRC}|g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
