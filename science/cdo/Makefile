@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CC="${CC}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_FILES=	bin/cdo
+PLIST_FILES=	bin/cdo bin/cdotest
 
 OPTIONS=	HDF5	"HDF5 support" off \
 		NETCDF	"NETCDF support" off
