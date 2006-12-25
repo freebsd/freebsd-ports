@@ -10,6 +10,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/access
 %%DATADIR%%/text.skel/bounce-probe
 %%DATADIR%%/text.skel/digest
+%%DATADIR%%/text.skel/listfaq
 %%DATADIR%%/text.skel/listhelp
 %%DATADIR%%/text.skel/listsubs
 %%DATADIR%%/text.skel/moderation
@@ -23,6 +24,8 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/sub-confirm
 %%DATADIR%%/text.skel/sub-confirm-digest
 %%DATADIR%%/text.skel/sub-confirm-nomail
+%%DATADIR%%/text.skel/sub-deny-digest
+%%DATADIR%%/text.skel/sub-deny-nomail
 %%DATADIR%%/text.skel/sub-ok
 %%DATADIR%%/text.skel/sub-ok-digest
 %%DATADIR%%/text.skel/sub-ok-nomail
