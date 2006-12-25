@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-RandomOrg
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Retrieve random numbers and data from random.org
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Math::RandomOrg.3
