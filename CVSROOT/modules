@@ -10883,6 +10883,7 @@ pangoxsl	ports/x11-toolkits/pangoxsl
 panoptis	ports/net/panoptis
 panorama	ports/graphics/panorama
 panoramixext	ports/x11/panoramixext
+pantera		ports/security/pantera
 pantomime	ports/mail/pantomime
 papercut	ports/news/papercut
 par		ports/textproc/par
