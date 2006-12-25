@@ -1,15 +1,16 @@
---- lib/Net/XWhois.pm.orig	Sun Oct  6 09:37:55 2002
-+++ lib/Net/XWhois.pm	Mon Sep 26 04:18:34 2005
-@@ -16,6 +16,8 @@
+--- lib/Net/XWhois.pm.orig	Sun Oct  6 10:37:55 2002
++++ lib/Net/XWhois.pm	Sun Jul 16 18:11:50 2006
+@@ -16,6 +16,9 @@
  # 
  # Changes:
  #
++#  07/16/2006  koma2       Update whois server for JAPAN
 +#  09/26/2005  lioux       Update parser for BRNIC
 +#  03/08/2003  jmiller     Added new .org PIR registy and parser
  #  08/05/2002  rwoodard    Merged in changes from XWhois discussion forum on
  #                          sourceforge.net; made additional changes as needed
  #                          to implement reverse lookups of IP addresses
-@@ -122,11 +124,18 @@
+@@ -122,11 +125,18 @@
     status          => 'status:\s+([^\n]*)\n',
     contact_admin   => '(?:admin|owner)-c:\s+([^\n]*)\n',
     contact_tech    => 'tech-c:\s+([^\n]*)\n',
@@ -29,7 +30,7 @@
   },
   
   KRNIC => { #added by rwoodard 08/06/2002
-@@ -157,6 +166,26 @@
+@@ -157,6 +167,26 @@
     net_handle           => '\((NETBLK\S+)\)',
     country              => '\n\s+(\S+)\n\n',
   },
@@ -56,7 +57,7 @@
   
   INTERNIC => {
    name            => '[\n\r\f]+\s*[Dd]omain [Nn]ame[:\.]*\s+(\S+)', 
-@@ -241,6 +270,22 @@
+@@ -241,6 +271,22 @@
    nameservers     => 'Name servers:[\s\n]+(\S+)[\s\n]+(\S+)',
   },
  
@@ -79,7 +80,7 @@
   NOMINET => { 
    name                => 'omain Name:\s+(\S+)',
    registrant          => 'egistered For:\s*(.*?)\n',
-@@ -276,7 +321,7 @@
+@@ -276,7 +322,7 @@
  
   DENIC => { 
    name            => 'domain:\s+(\S+)\n',
@@ -88,7 +89,7 @@
    contact_admin   => 'admin-c:\s+(.*?)\s*\n',
    contact_tech    => 'tech-c:\s+(.*?)\s*\n',
    contact_zone    => 'zone-c:\s+(.*?)\s*\n',
-@@ -339,7 +384,9 @@
+@@ -339,9 +385,11 @@
  );
  
  my %WHOIS_PARSER = (
@@ -96,9 +97,21 @@
      'whois.ripe.net'            => 'RPSL',
 +    'whois.ripn.net'            => 'RIPN',
      'whois.nic.mil'             => 'INTERNIC',
-     'whois.nic.ad.jp'           => 'JAPAN',
+-    'whois.nic.ad.jp'           => 'JAPAN',
++    'whois.jp'           	=> 'JAPAN',
      'whois.domainz.net.nz'      => 'GENERIC',
-@@ -397,12 +444,12 @@
+     'whois.nic.gov'             => 'INTERNIC',
+     'whois.nic.ch'              => 'RIPE_CH',
+@@ -388,7 +436,7 @@
+     'hr'  => 'whois.ripe.net',      'hu'  => 'whois.ripe.net',
+     'ie'  => 'whois.ripe.net',      'il'  => 'whois.ripe.net',
+     'is'  => 'whois.ripe.net',      'it'  => 'whois.ripe.net',
+-    'jp'  => 'whois.nic.ad.jp',
++    'jp'  => 'whois.jp',
+     'kr'  => 'whois.krnic.net',
+     'li'  => 'whois.ripe.net',      'lt'  => 'whois.ripe.net',
+     'lu'  => 'whois.ripe.net',      'lv'  => 'whois.ripe.net',
+@@ -397,12 +445,12 @@
      'mt'  => 'whois.ripe.net',      'mx'  => 'whois.nic.mx',
      'net' => 'whois.internic.net',  'nl'  => 'whois.ripe.net',
      'no'  => 'whois.norid.no',      'nz'  => 'whois.domainz.net.nz',
@@ -114,7 +127,16 @@
      'tn'  => 'whois.ripe.net',      'tr'  => 'whois.ripe.net',
      'tw'  => 'whois.twnic.net',
      'ua'  => 'whois.ripe.net',      
-@@ -557,6 +604,7 @@
+@@ -423,7 +471,7 @@
+ );
+ 
+ my %ARGS = (
+-    'whois.nic.ad.jp'            => { 'S' => '/e' },
++    'whois.jp'            => { 'S' => '/e' },
+     'whois.internic.net'         => { 'P' => '=' },
+     'whois.networksolutions.com' => { 'P' => '=' },
+ );
+@@ -557,6 +605,7 @@
      $self->{ Domain }=~s/^www\.//; #trim leading www. if present; internic doesn't like it
      print "looking up ", $self->{ Domain }, " on ", $self->{ Server }, "\n" if ($self->{ Verbose });
      
@@ -122,3 +144,12 @@
      #see if we already have a response in the cache, unless told not to
      unless ( $self->{ Nocache } ) {
        READCACHE: {
+@@ -872,7 +921,7 @@
+     my %WHOIS_PARSER = (
+     'whois.ripe.net'       => 'RPSL',
+     'whois.nic.mil'        => 'INTERNIC',
+-    'whois.nic.ad.jp'      => 'JAPAN',
++    'whois.jp'             => 'JAPAN',
+     'whois.domainz.net.nz' => 'GENERIC',
+     'whois.nic.gov'        => 'INTERNIC',
+     'whois.nic.ch'         => 'RIPE_CH',
