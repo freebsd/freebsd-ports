@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	W3C-LinkChecker
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/SC/SCOP
@@ -30,4 +30,10 @@ MANCOMPRESSED=	no
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires at least Perl 5.8.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
