@@ -19,6 +19,7 @@
     SUBDIR += mdbconv
     SUBDIR += p5-Palm
     SUBDIR += p5-Palm-PalmDoc
+    SUBDIR += palm-db-tools
     SUBDIR += palmos-sdk
     SUBDIR += palmpower
     SUBDIR += pdbar
