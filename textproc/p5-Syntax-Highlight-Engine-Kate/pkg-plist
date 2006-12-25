@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/AWK.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Ada.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Alerts.pm
+%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/All.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Asm6502.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/BaseTest.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/BaseTestchild.pm
@@ -119,6 +120,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/hlansi.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/hlhtml.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/katebench.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine
