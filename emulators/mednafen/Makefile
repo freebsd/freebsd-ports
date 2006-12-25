@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mednafen
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	emulators games
-MASTER_SITES=	http://mednafen.com/releases/files/
+MASTER_SITES=	SF
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
