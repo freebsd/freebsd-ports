@@ -6416,6 +6416,7 @@ libvanessa_socket	ports/devel/libvanessa_socket
 libvc		ports/devel/libvc
 libvisual	ports/graphics/libvisual
 libvisual-plugins	ports/graphics/libvisual-plugins
+libvisual04	ports/graphics/libvisual04
 libvm68k	ports/emulators/libvm68k
 libvmime	ports/mail/libvmime
 libvncserver	ports/net/libvncserver
