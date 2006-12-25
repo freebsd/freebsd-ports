@@ -334,6 +334,7 @@
     SUBDIR += lineak-kdeplugins
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
+    SUBDIR += linrename
     SUBDIR += linux-acu
     SUBDIR += linux-afaapps
     SUBDIR += linux-megacli
