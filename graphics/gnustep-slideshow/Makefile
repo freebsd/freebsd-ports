@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slideshow
-PORTVERSION=	0.3
+PORTVERSION=	0.3.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
@@ -16,14 +16,12 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SlideShow Viewer
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LOCAL_LIBS+=	SlideShow:${SLIDESHOWKIT_PORT}
-MAKEFILE=
 
 SLIDESHOWKIT_PORT?=	graphics/gnustep-slideshowkit
 
