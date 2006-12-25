@@ -10254,6 +10254,7 @@ p5-Statistics-Contingency	ports/math/p5-Statistics-Contingency
 p5-Statistics-Descriptive	ports/math/p5-Statistics-Descriptive
 p5-Statistics-Descriptive-Discrete	ports/math/p5-Statistics-Descriptive-Discrete
 p5-Statistics-Distributions	ports/math/p5-Statistics-Distributions
+p5-Statistics-Forecast	ports/math/p5-Statistics-Forecast
 p5-Statistics-LTU	ports/math/p5-Statistics-LTU
 p5-Statistics-LineFit	ports/math/p5-Statistics-LineFit
 p5-Statistics-Lite	ports/math/p5-Statistics-Lite
