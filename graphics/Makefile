@@ -148,6 +148,7 @@
     SUBDIR += fraqtive
     SUBDIR += freeglut
     SUBDIR += freeimage
+    SUBDIR += frei0r
     SUBDIR += frontline
     SUBDIR += ftgl
     SUBDIR += fujiplay
