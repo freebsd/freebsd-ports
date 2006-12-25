@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ipa-system.sourceforge.net/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
@@ -31,6 +31,8 @@ OPTIONS=	AUTORULES "Enable dynamic rules support" on \
 		MAN_KOI8_R "Install Russian manual pages" off
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
 .if defined(WITHOUT_AUTORULES)
 CONFIGURE_ARGS+=	--disable-autorules
