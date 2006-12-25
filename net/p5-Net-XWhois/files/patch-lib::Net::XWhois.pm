@@ -1,5 +1,5 @@
---- lib/Net/XWhois.pm.orig	Sun Oct  6 10:37:55 2002
-+++ lib/Net/XWhois.pm	Sun Jul 16 18:11:50 2006
+--- lib/Net/XWhois.pm.orig	Sun Oct  6 01:37:55 2002
++++ lib/Net/XWhois.pm	Mon Dec 25 15:32:36 2006
 @@ -16,6 +16,9 @@
  # 
  # Changes:
@@ -127,7 +127,7 @@
      'tn'  => 'whois.ripe.net',      'tr'  => 'whois.ripe.net',
      'tw'  => 'whois.twnic.net',
      'ua'  => 'whois.ripe.net',      
-@@ -423,7 +471,7 @@
+@@ -423,9 +471,10 @@
  );
  
  my %ARGS = (
@@ -135,8 +135,22 @@
 +    'whois.jp'            => { 'S' => '/e' },
      'whois.internic.net'         => { 'P' => '=' },
      'whois.networksolutions.com' => { 'P' => '=' },
++    'whois.denic.de'             => { 'P' => '-T dn ' },
  );
-@@ -557,6 +605,7 @@
+ 
+ sub register_parser {
+@@ -532,8 +581,8 @@
+     }
+ 
+     #if there is already a Parser defined for this server, use it
+-    if ( $self->{ _PARSERS }->{ $self->{ Server }}) {
+-        $self->{ Parser } = $self->{ _PARSERS }->{ $self->{ Server }};
++    if ( $self->{ _PARSERS }->{ $self->{ _WHOIS_PARSER }->{ $self->{ Server } }  }) {
++        $self->{ Parser } = $self->{ _PARSERS }->{ $self->{ _WHOIS_PARSER }->{ $self->{ Server } }  };
+     }
+ 
+     #if we still don't have a Parser to use, guess based on the Domain (or IP)
+@@ -557,6 +606,7 @@
      $self->{ Domain }=~s/^www\.//; #trim leading www. if present; internic doesn't like it
      print "looking up ", $self->{ Domain }, " on ", $self->{ Server }, "\n" if ($self->{ Verbose });
      
@@ -144,7 +158,16 @@
      #see if we already have a response in the cache, unless told not to
      unless ( $self->{ Nocache } ) {
        READCACHE: {
-@@ -872,7 +921,7 @@
+@@ -608,7 +658,7 @@
+           $fw="whois.twnic.net" if ($self->{ Response }=~/Allocated to TWNIC/misg );
+        }
+        else { #original code
+-          @fwa = $self->{ Response } =~ m/\s+$self->{ Domain }\n.*?\n*?\s*?.*?Whois Server: (.*?)(?=\n)/isg;
++          @fwa = $self->{ Response } =~ m/$self->forwardwhois/isg;
+           $fw = shift @fwa;
+           return undef unless (defined($fw) && length($fw) > 0); # pattern not found
+        }
+@@ -872,7 +922,7 @@
      my %WHOIS_PARSER = (
      'whois.ripe.net'       => 'RPSL',
      'whois.nic.mil'        => 'INTERNIC',
