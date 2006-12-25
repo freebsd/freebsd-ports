@@ -71,10 +71,10 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-MILESTONE?=		196
+MILESTONE?=		197
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20061207
+SNAPDATE=		20061216
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -258,6 +258,10 @@ post-install:
 	@${ECHO_CMD} "" > ${TMPPLIST}
 	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
+	@for app in base calc draw impress math printeradmin writer; do \
+		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
+		${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
+	done
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${PREFIX}/share/applications/${EXECBASE}
 	@${MKDIR} ${PREFIX}/share/applications
