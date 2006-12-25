@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Symbolic-Custom-Contains
-PORTVERSION=	0.10
+PORTVERSION=	1.00
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Math::Symbolic::Custom::Contains.3
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 .include <bsd.port.pre.mk>
 
