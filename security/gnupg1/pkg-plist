@@ -58,3 +58,4 @@ libexec/gnupg/gpgkeys_hkp
 @dirrmtry share/locale/sk
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@unexec [ -r %D/bin/gpg2 ] && ln -s gpg2 %D/bin/gpg || true
