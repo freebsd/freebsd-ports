@@ -47,9 +47,9 @@ BROKEN=	Does not build.
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
 .if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
+DEFAULT_DVD_DEVICE=/dev/cd0c
 .else
-DEFAULT_DVD_DEVICE=/dev/acd0
+DEFAULT_DVD_DEVICE=/dev/cd0
 .endif
 .endif
 
