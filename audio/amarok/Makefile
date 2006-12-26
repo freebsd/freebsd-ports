@@ -111,7 +111,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
 post-install:
-.if defined(WITH_LIBVISUAL)
+.if defined(WITH_MTP) || defined(WITH_NJB) || defined(WITH_GPOD)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
