@@ -375,6 +375,7 @@
     SUBDIR += pear-Contact_Vcard_Parse
     SUBDIR += pear-MIME_Type
     SUBDIR += pear-Mail
+    SUBDIR += pear-Mail_Mbox
     SUBDIR += pear-Mail_Mime
     SUBDIR += pear-Mail_Queue
     SUBDIR += pear-Net_Cyrus
