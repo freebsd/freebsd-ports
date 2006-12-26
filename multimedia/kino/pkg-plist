@@ -7,11 +7,19 @@ include/kino/image_create.h
 include/kino/image_filters.h
 include/kino/image_transitions.h
 include/kino/kino_extra.h
+include/kino/kino_plugin_types.h
+include/kino/kino_plugin_utility.h
 include/kino/playlist.h
+include/kino/smiltime.h
+include/kino/time_map.h
 lib/kino-gtk2/libdvtitler.a
 lib/kino-gtk2/libdvtitler.la
 lib/kino-gtk2/libdvtitler.so
 lib/kino-gtk2/libdvtitler.so.0
+lib/kino-gtk2/libkinoplus.a
+lib/kino-gtk2/libkinoplus.la
+lib/kino-gtk2/libkinoplus.so
+lib/kino-gtk2/libkinoplus.so.0
 lib/kino-gtk2/libtimfx.a
 lib/kino-gtk2/libtimfx.la
 lib/kino-gtk2/libtimfx.so
@@ -30,6 +38,7 @@ share/gnome/kino/insert_before.png
 share/gnome/kino/join.xpm
 share/gnome/kino/kino.glade
 share/gnome/kino/kino.png
+share/gnome/kino/kinoplus.glade
 share/gnome/kino/link.xpm
 share/gnome/kino/link_off.xpm
 share/gnome/kino/magick.glade
@@ -58,19 +67,76 @@ share/gnome/kino/timfx.glade
 share/gnome/kino/trim.png
 share/gnome/kino/trim_in.xpm
 share/gnome/kino/trim_out.xpm
-share/gnome/kino/help/commands.html
-share/gnome/kino/help/edit.html
-share/gnome/kino/help/export.html
-share/gnome/kino/help/fx.html
-share/gnome/kino/help/index.html
-share/gnome/kino/help/intro.html
-share/gnome/kino/help/kino_ui.png
-share/gnome/kino/help/prefs.html
-share/gnome/kino/help/publish.html
-share/gnome/kino/help/terms.html
-share/gnome/kino/help/time.html
-share/gnome/kino/help/trim.html
-share/gnome/kino/help/ui.html
+share/gnome/kino/help/en/AutoSplit.html
+share/gnome/kino/help/en/FX.html
+share/gnome/kino/help/en/GNU-FDL.html
+share/gnome/kino/help/en/appendix.html
+share/gnome/kino/help/en/aspectratio.html
+share/gnome/kino/help/en/capture.html
+share/gnome/kino/help/en/developers.html
+share/gnome/kino/help/en/docbook.css
+share/gnome/kino/help/en/dropframe.html
+share/gnome/kino/help/en/droppedframes.html
+share/gnome/kino/help/en/edit.html
+share/gnome/kino/help/en/export.html
+share/gnome/kino/help/en/export_audio.html
+share/gnome/kino/help/en/export_dv.html
+share/gnome/kino/help/en/export_export.html
+share/gnome/kino/help/en/export_ieee1394.html
+share/gnome/kino/help/en/export_other.html
+share/gnome/kino/help/en/export_selection.html
+share/gnome/kino/help/en/framedropping.html
+share/gnome/kino/help/en/fx_audio.html
+share/gnome/kino/help/en/fx_selection.html
+share/gnome/kino/help/en/fx_video.html
+share/gnome/kino/help/en/index.html
+share/gnome/kino/help/en/interfieldmotion.html
+share/gnome/kino/help/en/interlace.html
+share/gnome/kino/help/en/intro.html
+share/gnome/kino/help/en/jogshuttle.html
+share/gnome/kino/help/en/keyboard.html
+share/gnome/kino/help/en/kino.xml
+share/gnome/kino/help/en/links.html
+share/gnome/kino/help/en/locked.html
+share/gnome/kino/help/en/media/ui/kinoui.png
+share/gnome/kino/help/en/metadata.html
+share/gnome/kino/help/en/metadata_example.html
+share/gnome/kino/help/en/metanames.html
+share/gnome/kino/help/en/metavalues.html
+share/gnome/kino/help/en/mode.html
+share/gnome/kino/help/en/movie.html
+share/gnome/kino/help/en/mpeg.html
+share/gnome/kino/help/en/newprojecturi.html
+share/gnome/kino/help/en/newprojectxpath.html
+share/gnome/kino/help/en/overwrite_insert.html
+share/gnome/kino/help/en/pointclick.html
+share/gnome/kino/help/en/prefs.html
+share/gnome/kino/help/en/prefs0.html
+share/gnome/kino/help/en/prefs1.html
+share/gnome/kino/help/en/prefs2.html
+share/gnome/kino/help/en/prefs3.html
+share/gnome/kino/help/en/prefs4.html
+share/gnome/kino/help/en/prefs5.html
+share/gnome/kino/help/en/prefs7.html
+share/gnome/kino/help/en/preview.html
+share/gnome/kino/help/en/publish.html
+share/gnome/kino/help/en/render.html
+share/gnome/kino/help/en/scene.html
+share/gnome/kino/help/en/scrubbar.html
+share/gnome/kino/help/en/shuttle.html
+share/gnome/kino/help/en/stills.html
+share/gnome/kino/help/en/terms.html
+share/gnome/kino/help/en/time.html
+share/gnome/kino/help/en/timecode.html
+share/gnome/kino/help/en/timeentry.html
+share/gnome/kino/help/en/timeformats.html
+share/gnome/kino/help/en/transport.html
+share/gnome/kino/help/en/trim.html
+share/gnome/kino/help/en/trim_conclusion.html
+share/gnome/kino/help/en/trim_storyboard.html
+share/gnome/kino/help/en/trimloader.html
+share/gnome/kino/help/en/ui.html
+share/gnome/kino/help/en/vi.html
 share/gnome/kino/scripts/help.sh
 share/gnome/kino/scripts/dvdauthor/dvdauthor-k3b.sh
 share/gnome/kino/scripts/dvdauthor/dvdauthor.sh
@@ -97,6 +163,7 @@ share/gnome/kino/scripts/exports/ffmpeg_xvid_dual.sh
 share/gnome/kino/scripts/exports/mencoder.sh
 share/gnome/kino/scripts/exports/mencoder_dual.sh
 share/gnome/kino/scripts/exports/rawplay.sh
+share/gnome/kino/scripts/import/audio.sh
 share/gnome/kino/scripts/import/media.sh
 share/gnome/kino/scripts/publish/frame.sh
 share/gnome/kino/scripts/publish/project.sh
@@ -133,7 +200,10 @@ share/gnome/kino/lumas/iris_circle.png
 share/gnome/kino/lumas/iris_rectangle.png
 share/gnome/kino/lumas/left_to_right.png
 share/gnome/kino/lumas/matrix_snake_toplefthorizontal.png
+share/gnome/kino/lumas/none.png
 share/gnome/kino/lumas/symmetric_clock.png
+share/gnome/pixmaps/gqview.png
+share/gnome/pixmaps/svg-viewer.svg
 share/gnome/pixmaps/kino.png
 share/locale/cs/LC_MESSAGES/kino.mo
 share/locale/da/LC_MESSAGES/kino.mo
@@ -150,6 +220,9 @@ share/locale/sv/LC_MESSAGES/kino.mo
 share/mime/packages/kino.xml
 @dirrm include/kino
 @dirrm lib/kino-gtk2
+@dirrm share/gnome/kino/help/en/media/ui
+@dirrm share/gnome/kino/help/en/media
+@dirrm share/gnome/kino/help/en
 @dirrm share/gnome/kino/help
 @dirrm share/gnome/kino/lumas
 @dirrm share/gnome/kino/scripts/dvdauthor
