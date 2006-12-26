@@ -36,7 +36,7 @@ USE_RUBY=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=/usr/bin/printf
 IGNORE=\n \
 Due to licensing restrictions you have to accept the Metasploit Framework\n \
