@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Email-MIME-Attachment-Stripper
-PORTVERSION=	1.31.1
+PORTVERSION=	1.31.3
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-1.311
+DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.([0-9])$|\1|}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Strip the attachments from a mail
