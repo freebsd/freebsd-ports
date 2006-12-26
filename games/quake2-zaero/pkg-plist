@@ -1,0 +1,15 @@
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%Q2DIR%%/zaero/game.so
+%%DEMO%%%%Q2DIR%%/zaero/pak0.pak
+%%Q2DIR%%/zaero/pak1.pak
+%%DM%%%%Q2DIR%%/zaero/pak2.pak
+%%DEMO%%%%Q2DIR%%/zaero/sprites/plasma1.sp2
+%%DEMO%%%%Q2DIR%%/zaero/sprites/plasma1_0.pcx
+%%DEMO%%%%Q2DIR%%/zaero/sprites/plasma1_1.pcx
+%%DEMO%%%%Q2DIR%%/zaero/sprites/plasma1_2.pcx
+%%DEMO%%%%Q2DIR%%/zaero/sprites/plasma1_3.pcx
+%%DEMO%%%%Q2DIR%%/zaero/sprites/plasmashield.sp2
+%%DEMO%%%%Q2DIR%%/zaero/sprites/plasmashield_0.pcx
+%%DEMO%%@dirrm %%Q2DIR%%/zaero/sprites
+@dirrm %%Q2DIR%%/zaero
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
