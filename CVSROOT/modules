@@ -10331,6 +10331,7 @@ p5-Template-Plugin-Class	ports/www/p5-Template-Plugin-Class
 p5-Template-Plugin-Clickable	ports/www/p5-Template-Plugin-Clickable
 p5-Template-Plugin-Clickable-Email	ports/www/p5-Template-Plugin-Clickable-Email
 p5-Template-Plugin-Comma	ports/www/p5-Template-Plugin-Comma
+p5-Template-Plugin-JSON	ports/www/p5-Template-Plugin-JSON
 p5-Template-Plugin-JavaScript	ports/www/p5-Template-Plugin-JavaScript
 p5-Template-Plugin-MP3	ports/www/p5-Template-Plugin-MP3
 p5-Template-Plugin-Markdown	ports/www/p5-Template-Plugin-Markdown
