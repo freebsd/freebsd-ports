@@ -1,0 +1,16 @@
+%%PORTDOCS%%%%DOCSDIR%%/Main.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/macguide.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/sights.jpg
+%%PORTDOCS%%%%DOCSDIR%%/top.jpg
+%%Q2DIR%%/matrix/game.so
+%%Q2DIR%%/matrix/matrix.cfg
+%%Q2DIR%%/matrix/motd.ini
+%%Q2DIR%%/matrix/pak0.pak
+%%Q2DIR%%/matrix/pak1.pak
+%%Q2DIR%%/matrix/pak2.pak
+%%Q2DIR%%/matrix/pak3.pak
+%%Q2DIR%%/matrix/server.cfg
+@dirrm %%Q2DIR%%/matrix
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
