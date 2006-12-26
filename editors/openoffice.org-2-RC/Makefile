@@ -28,6 +28,8 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
+BROKEN=		Please use editors/openoffice.org-2
+
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
@@ -258,6 +260,10 @@ post-install:
 	@${ECHO_CMD} "" > ${TMPPLIST}
 	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
+	@for app in base calc draw impress math printeradmin writer; do \
+		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
+		${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
+	done
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${PREFIX}/share/applications/${EXECBASE}
 	@${MKDIR} ${PREFIX}/share/applications
