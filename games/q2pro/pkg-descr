@@ -1,0 +1,15 @@
+Q2PRO is a Quake2 engine modification. Client and server sides are both
+compatible with original Quake2 v3.20 network architecture, as well as with
+modern R1Q2 network architecture. Q2PRO is designed to be secure, fast and
+doesn't provide any graphical enhancements that are contrary to the classic
+Quake2 look and feel. It provides some features yet unique to Quake2, notably
+server side Multi View Demos. Q2PRO has it's own software and OpenGL refresh
+libraries and runs under Win32 and GNU/Linux natively.
+
+Q2PRO supports the following network protocols:
+- 34, original Quake2 protocol.
+- 35, enhanced R1Q2 protocol.
+- 36, enhanced Q2PRO protocol, extension of R1Q2 protocol.
+- 37, special broadband MVD protocol.
+
+WWW: http://q2pro.sourceforge.net/
