@@ -1,27 +1,26 @@
-# New ports collection makefile for:	Inline::C2XS
+# New ports collection makefile for:	InlineX::C2XS
 # Date created:		3 Oct 2006
 # Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Inline-C2XS
-PORTVERSION=	0.08
+PORTNAME=	InlineX-C2XS
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Inline
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/S/SI/SISYPHUS/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module to create an XS file from an Inline C file
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline \
-    		${SITE_PERL}/Inline/CPP.pm:${PORTSDIR}/devel/p5-Inline-CPP
+BUILD_DEPENDS=	${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Inline::C2XS.3
+MAN3=		InlineX::C2XS.3
 
 .include <bsd.port.pre.mk>
 

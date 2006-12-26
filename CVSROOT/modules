@@ -9440,13 +9440,13 @@ p5-Imlib2	ports/graphics/p5-Imlib2
 p5-Include	ports/devel/p5-Include
 p5-Inline	ports/devel/p5-Inline
 p5-Inline-ASM	ports/devel/p5-Inline-ASM
-p5-Inline-C2XS	ports/devel/p5-Inline-C2XS
 p5-Inline-CPP	ports/devel/p5-Inline-CPP
 p5-Inline-Files	ports/devel/p5-Inline-Files
 p5-Inline-Filters	ports/devel/p5-Inline-Filters
 p5-Inline-Java	ports/devel/p5-Inline-Java
 p5-Inline-TT	ports/devel/p5-Inline-TT
 p5-Inline-Tcl	ports/devel/p5-Inline-Tcl
+p5-InlineX-C2XS	ports/devel/p5-InlineX-C2XS
 p5-Interpolation	ports/lang/p5-Interpolation
 p5-Ioctl	ports/devel/p5-Ioctl
 p5-Iterator	ports/devel/p5-Iterator
