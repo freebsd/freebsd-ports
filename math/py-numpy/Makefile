@@ -16,7 +16,7 @@ DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpy.pdf:doc
 EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	db@db.net
 COMMENT=	The New Numeric Extension to Python
 
 CONFLICTS=	f2py-*
