@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-DISTVERSION=	1.3.3-1
+DISTVERSION=	1.5.0-1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -44,7 +44,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}
-S_SCRIPTS=	bin/as_exec bin/as_run bin/as_serv bin/tool_stanley lib/sub_script
+S_SCRIPTS=	bin/as_exec bin/as_run bin/as_serv bin/as_exec_special lib/sub_script
 S_PYLIBS=	alamain.py as_timer.py
 C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${aster_dir}/outils
@@ -74,7 +74,7 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	8.3.0
+ASTER_VER=	9.0.0
 vaster=		STA${ASTER_VER:R}
 
 GIBI=		gibi2003
@@ -159,7 +159,8 @@ do-configure:
 		-e 's#?MAXCMDLEN?#16384#' ${WRKSRC}/bin/as_run
 . for scripts in ${S_SCRIPTS}
 	@${REINPLACE_CMD} -e "s#?SHELL_EXECUTION?#${SHELL_INSTALL_ASTER}#"	\
-	-e "s#?HOME_ASTK?#${inst_dir}#" ${WRKSRC}/${scripts}
+	-e "s#?ASTER_ROOT?#${PREFIX}/aster#;s#?HOME_ASTK?#${inst_dir}#"		\
+		${WRKSRC}/${scripts}
 . endfor
 	@${REINPLACE_CMD} -e "s#?IFDEF?#${v_ifdef}#g"				\
 	-e "s#?ASTER_ROOT?#${LOCALBASE}/aster#g"				\
@@ -188,8 +189,7 @@ do-configure:
 	-e "s#?HOME_ASTK?#${inst_dir}#"						\
 	-e "s#?WISH_EXE?#wish${TK_VER}#" ${WRKSRC}/${scripts}
 . endfor
-	@${REINPLACE_CMD} -e "s#?HOME_ASTK?#${inst_dir}#"			\
-		-e "s#GIBI#${GIBI}#"						\
+	@${REINPLACE_CMD} -e "s#GIBI#${GIBI}#"					\
 		-e "s#?vaster?#${vaster}#"					\
 		-e "s#?TOOLS_DIR?#${tools_dir}#" ${conf_dir}/outils
 	@${REINPLACE_CMD} -e "s#?HOME_ASTK?#${inst_dir}#"			\
@@ -206,6 +206,7 @@ do-configure:
 		${WRKSRC}/share/tkselecteur.tcl
 	@${REINPLACE_CMD} -e "s#%%unamesm%%#${unamesm}#"			\
 		${WRKSRC}/lib/ASTK/init.tcl
+	@${REINPLACE_CMD} -e 's|?ASTER_ROOT?|${PREFIX}/aster|' ${WRKSRC}/bin/astk
 .endif
 
 do-install:

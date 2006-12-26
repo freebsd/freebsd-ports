@@ -1,9 +1,9 @@
---- lib/as_config.py.orig	Mon Feb 14 09:23:49 2005
-+++ lib/as_config.py	Thu Mar 24 10:08:09 2005
-@@ -66,8 +66,8 @@
-          'SRCMAT'          : ['materiau'],
+--- lib/as_config.py.orig	Tue Dec 19 14:31:52 2006
++++ lib/as_config.py	Sat Dec 23 22:07:31 2006
+@@ -75,8 +75,8 @@
           'SRCHIST'         : ['histor'],
           # name of "binaries" (as results of a make)
+          'MAKE'            : ['debug nodebug'],
 -         'BIN_NODBG'       : ['asteru.exe'],
 -         'BIN_DBG'         : ['asterd.exe'],
 +         'BIN_NODBG'       : ['asteru'],
