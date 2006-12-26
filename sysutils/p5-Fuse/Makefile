@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	Fuse
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DP/DPAVLIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write filesystems in Perl using FUSE
 
+BUILD_DEPENDS=	mount_fusefs:${PORTSDIR}/sysutils/fusefs-kmod
 RUN_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
