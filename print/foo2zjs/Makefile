@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foo2zjs
-PORTVERSION=	20061212
+PORTVERSION=	20061224
 CATEGORIES=	print
 MASTER_SITES=	http://foo2zjs.rkkda.com/
 DISTNAME=	${PORTNAME}
@@ -25,8 +25,6 @@ SUB_FILES=	pkg-message
 
 MAN1=	foo2hp.1 foo2oak-wrapper.1 foo2zjs-wrapper.1 oakdecode.1 foo2hp2600-wrapper.1 foo2oak.1 foo2zjs.1 zjsdecode.1
 EXTRAFILES=	msexpand getweb
-
-BROKEN=		fails to fetch
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS|CFLAGS?|g' -e 's|^PREFIX|PREFIX?|g' ${WRKSRC}/icc2ps/Makefile
