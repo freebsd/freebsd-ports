@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	aster
-DISTVERSION=	8.3.0-3
-PORTREVISION=	1
+DISTVERSION=	9.0.0-1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
+DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}.noarch
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
@@ -49,8 +48,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-USE_PYTHON=	yes
 USE_BISON=	yes
+USE_PYTHON=	yes
+WITH_FORTRAN=	yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
@@ -66,17 +66,17 @@ PKGMESSIN=	pkg-message.in
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-FLAGARCH=	P_LINUX		# 32 bits
+FLAGARCH=	-DP_LINUX -DLINUX	# 32 bits
 .else
-FLAGARCH=	TRU64		# 64 bits
+FLAGARCH=	-DLINUX64		# 64 bits
 .endif
 
 .if ${OSVERSION} < 600022
 BROKEN=	Does not compile on this version, and cannot be patched easily.
 .endif
-.if ${ARCH} != "i386"
-BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
-.endif
+#.if ${ARCH} != "i386"
+#BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
+#.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -274,19 +274,21 @@ pre-configure:
 	${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "FFLAGS_DBG='-c -g -O -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} ${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "FFLAGS_DBG='-c -g -O ${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-configure:
-	(cd ${CONFIGURE_WRKSRC} && ${PYTHON_CMD} setup.py test		\
+	(cd ${CONFIGURE_WRKSRC} && ${PYTHON_CMD} setup.pyo test		\
 		| tee ${CONFIGURE_LOG})
 
 pre-build:
@@ -302,7 +304,7 @@ pre-build:
 		${WRKSRC}/instdir/ASTK/ASTK_SERV
 
 do-build:
-	(cd ${BUILD_WRKSRC} && ${PYTHON_CMD} setup.py install		\
+	(cd ${BUILD_WRKSRC} && ${PYTHON_CMD} setup.pyo install		\
 		| tee ${BUILD_WRKSRC}/build.log)
 
 pre-install:
@@ -312,6 +314,8 @@ do-install:
 	${MKDIR} ${tools_dir} ${inst_dir}
 	${INSTALL_PROGRAM} ${WRKSRC}/instdir/${vaster}/asteru ${inst_dir}
 	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd ${inst_dir} # Don't strip!
+	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/profile.sh ${inst_dir}
+	${ECHO_CMD} "HDF5_DISABLE_VERSION_CHECK=1" >> ${inst_dir}/profile.sh
 .for FILE in ${DAT2FIX}
 	${SED} -e 's|${WRKSRC}/instdir/${vaster}|${inst_dir}|g'		\
 		-e 's|${WRKSRC}/instdir|${inst_dir}|g'			\
