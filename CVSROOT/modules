@@ -10337,6 +10337,7 @@ p5-Template-Plugin-Markdown	ports/www/p5-Template-Plugin-Markdown
 p5-Template-Plugin-Monta	ports/www/p5-Template-Plugin-Monta
 p5-Template-Plugin-Number-Format	ports/www/p5-Template-Plugin-Number-Format
 p5-Template-Plugin-Subst	ports/www/p5-Template-Plugin-Subst
+p5-Template-Plugin-VMethods	ports/www/p5-Template-Plugin-VMethods
 p5-Template-Provider-Encoding	ports/www/p5-Template-Provider-Encoding
 p5-Template-Timer	ports/www/p5-Template-Timer
 p5-Template-Toolkit	ports/www/p5-Template-Toolkit
