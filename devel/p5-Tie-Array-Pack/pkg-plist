@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array/Pack/.packlist
+%%SITE_PERL%%/Tie/Array/Pack.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array/Pack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
+@dirrmtry %%SITE_PERL%%/Tie/Array/Pack
+@dirrmtry %%SITE_PERL%%/Tie/Array
+@dirrmtry %%SITE_PERL%%/Tie
