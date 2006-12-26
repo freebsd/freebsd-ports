@@ -1,7 +1,7 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
 --- src/Makefile.orig	Wed Oct 25 08:42:42 2006
-+++ src/Makefile	Fri Oct 27 12:44:24 2006
++++ src/Makefile	Tue Dec 26 10:46:38 2006
 @@ -39,17 +39,19 @@
  endif
  
@@ -25,14 +25,14 @@ diff -u src/Makefile.orig src/Makefile
  else
      EXTRAOBJS ?= md5c.o
  endif
-@@ -68,8 +70,16 @@
+@@ -68,9 +70,17 @@
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
 -FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
 +FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
  FLAGS+= $(PTHREAD_INC)
-+
+ 
 +ifeq ($(HAVE_GNUTLS),1)
 +    FLAGS+= -I$(GNUTLSINC)
 +else
@@ -40,6 +40,16 @@ diff -u src/Makefile.orig src/Makefile
 +    FLAGS+= -I$(OPENSSLINC)
 +endif
 +endif
- 
++
  LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS)
  
+ ifeq ($(debug),1)
+@@ -96,7 +106,7 @@
+ endif
+ 
+ 
+-override CC += -Wall $(FLAGS)
++CFLAGS += -Wall $(FLAGS)
+ 
+ OBJS =	main.o alerts.o battery.o base64.o clock.o cpu.o disk.o fs.o \
+ 	hostname.o inet.o mail.o mem.o net.o proc.o sensors.o uptime.o \
