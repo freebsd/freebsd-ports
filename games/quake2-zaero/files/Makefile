@@ -1,0 +1,109 @@
+# $FreeBSD$
+
+SHLIB=		game
+SHLIB_NAME=	game.so
+
+SRCS=		g_ai.c \
+		g_cmds.c \
+		g_combat.c \
+		g_func.c \
+		g_items.c \
+		g_local.h \
+		g_main.c \
+		g_misc.c \
+		g_monster.c \
+		g_phys.c \
+		g_save.c \
+		g_spawn.c \
+		g_svcmds.c \
+		g_target.c \
+		g_trigger.c \
+		g_turret.c \
+		g_utils.c \
+		g_weapon.c \
+		game.h \
+		m_actor.c \
+		m_actor.h \
+		m_berserk.c \
+		m_berserk.h \
+		m_boss2.c \
+		m_boss2.h \
+		m_boss3.c \
+		m_boss31.c \
+		m_boss31.h \
+		m_boss32.c \
+		m_boss32.h \
+		m_brain.c \
+		m_brain.h \
+		m_chick.c \
+		m_chick.h \
+		m_flash.c \
+		m_flipper.c \
+		m_flipper.h \
+		m_float.c \
+		m_float.h \
+		m_flyer.c \
+		m_flyer.h \
+		m_gladiator.c \
+		m_gladiator.h \
+		m_gunner.c \
+		m_gunner.h \
+		m_hover.c \
+		m_hover.h \
+		m_infantry.c \
+		m_infantry.h \
+		m_insane.c \
+		m_insane.h \
+		m_medic.c \
+		m_medic.h \
+		m_move.c \
+		m_mutant.c \
+		m_mutant.h \
+		m_parasite.c \
+		m_parasite.h \
+		m_player.h \
+		m_rider.h \
+		m_soldier.c \
+		m_soldier.h \
+		m_supertank.c \
+		m_supertank.h \
+		m_tank.c \
+		m_tank.h \
+		p_client.c \
+		p_hud.c \
+		p_trail.c \
+		p_view.c \
+		p_weapon.c \
+		q_shared.c \
+		q_shared.h \
+		z_acannon.c \
+		z_ai.c \
+		z_anim.c \
+		z_anim.h \
+		z_boss.c \
+		z_boss.h \
+		z_camera.c \
+		z_debug.c \
+		z_debug.h \
+		z_frames.c \
+		z_frames.h \
+		z_handler.c \
+		z_handler.h \
+		z_hound.c \
+		z_hound.h \
+		z_item.c \
+		z_list.c \
+		z_list.h \
+		z_mtest.c \
+		z_sentien.c \
+		z_sentien.h \
+		z_spawn.c \
+		z_trigger.c \
+		z_weapon.c
+
+CFLAGS+=	-Dstricmp=strcasecmp -ffast-math -funroll-loops \
+		-fomit-frame-pointer -fexpensive-optimizations
+
+LDFLAGS+=	-L/lib -L/usr/lib -lm
+
+.include <bsd.lib.mk>
