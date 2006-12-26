@@ -1,0 +1,20 @@
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%Q2DIR%%/lights/autoexec.cfg
+%%Q2DIR%%/lights/demos/lights.dm2
+%%Q2DIR%%/lights/game.so
+%%Q2DIR%%/lights/pak99.pak
+%%Q2DIR%%/lights/pics/scanner/dot.pcx
+%%Q2DIR%%/lights/pics/scanner/down.pcx
+%%Q2DIR%%/lights/pics/scanner/invdot.pcx
+%%Q2DIR%%/lights/pics/scanner/quaddot.pcx
+%%Q2DIR%%/lights/pics/scanner/scanner.pcx
+%%Q2DIR%%/lights/pics/scanner/up.pcx
+%%Q2DIR%%/lights/sprites/null/null.sp2
+%%Q2DIR%%/lights/sprites/null/skin.pcx
+@dirrm %%Q2DIR%%/lights/sprites/null
+@dirrm %%Q2DIR%%/lights/sprites
+@dirrm %%Q2DIR%%/lights/pics/scanner
+@dirrm %%Q2DIR%%/lights/pics
+@dirrm %%Q2DIR%%/lights/demos
+@dirrm %%Q2DIR%%/lights
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
