@@ -11052,6 +11052,7 @@ pear-MDB2	ports/databases/pear-MDB2
 pear-MDB_QueryTool	ports/databases/pear-MDB_QueryTool
 pear-MIME_Type	ports/mail/pear-MIME_Type
 pear-Mail	ports/mail/pear-Mail
+pear-Mail_Mbox	ports/mail/pear-Mail_Mbox
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
 pear-Mail_Queue	ports/mail/pear-Mail_Queue
 pear-Net_CDDB	ports/net/pear-Net_CDDB
