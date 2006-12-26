@@ -12,7 +12,7 @@ MASTER_SITES=	http://public.research.att.com/~stat/xgobi/
 DISTNAME=	xgobi
 EXTRACT_SUFX=	.sh.gz
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical data visualisation tool
 
 NO_CDROM=	"Restrictive copyright (do not sell for profit)"

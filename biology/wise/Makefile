@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/unix/wise2/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent algorithms for DNA searches
 
 WRKTOP=		${WRKDIR}/${DISTNAME}

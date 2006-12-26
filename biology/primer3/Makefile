@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://frodo.wi.mit.edu/primer3/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Primer3 helps to choose primers for PCR reactions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

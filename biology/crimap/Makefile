@@ -12,7 +12,7 @@ MASTER_SITES=	http://compgen.rutgers.edu/multimap/crimap/
 DISTNAME=	${PORTNAME}.source
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creation of multilocus linkage maps
 
 NO_WRKSUBDIR=	true

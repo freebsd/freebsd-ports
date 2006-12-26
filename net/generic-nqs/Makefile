@@ -14,7 +14,7 @@ CATEGORIES=			net
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
-MAINTAINER=		tonymaher@optusnet.com.au
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Generic Network Queuing System
 
 USE_BZIP2=		yes
