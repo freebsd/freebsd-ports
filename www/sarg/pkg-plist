@@ -4,6 +4,7 @@ bin/sarg
 etc/sarg/sarg.conf.default
 etc/sarg/css.tpl
 etc/sarg/exclude_codes
+etc/sarg/fonts/DejaVuSans.ttf
 etc/sarg/fonts/FreeSans.ttf
 etc/sarg/fonts/README
 etc/sarg/fonts/license
