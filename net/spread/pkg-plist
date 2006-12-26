@@ -2,10 +2,12 @@ bin/spflooder
 bin/spmonitor
 bin/sptuser
 bin/spuser
-etc/spread.access_ip
+@unexec if cmp -s %D/etc/spread.access_ip.sample %D/etc/spread.access_ip; then rm -f %D/etc/spread.access_ip; fi
 etc/spread.access_ip.sample
-etc/spread.conf
+@exec if [ ! -f %D/etc/spread.access_ip ] ; then cp -p %D/%F %B/spread.access_ip; fi
+@unexec if cmp -s %D/etc/spread.conf.sample %D/etc/spread.conf; then rm -f %D/etc/spread.conf; fi
 etc/spread.conf.sample
+@exec if [ ! -f %D/etc/spread.conf ] ; then cp -p %D/%F %B/spread.conf; fi
 include/sp.h
 include/sp_events.h
 include/sp_func.h
