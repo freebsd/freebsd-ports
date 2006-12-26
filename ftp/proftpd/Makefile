@@ -61,6 +61,8 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		NLS "Use nls" off
 
 MODULES?=
+LIBDIRS?=
+INCLUDEDIRS?=
 
 .include <bsd.port.pre.mk>
 
@@ -246,10 +248,6 @@ post-install:
 .if defined(WITH_CTRLS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/ftpdctl
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${PREFIX}/man/man8/ftpdctl.8
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
 .endif
 
 .include <bsd.port.post.mk>
