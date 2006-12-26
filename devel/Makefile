@@ -1179,13 +1179,13 @@
     SUBDIR += p5-Include
     SUBDIR += p5-Inline
     SUBDIR += p5-Inline-ASM
-    SUBDIR += p5-Inline-C2XS
     SUBDIR += p5-Inline-CPP
     SUBDIR += p5-Inline-Files
     SUBDIR += p5-Inline-Filters
     SUBDIR += p5-Inline-Java
     SUBDIR += p5-Inline-TT
     SUBDIR += p5-Inline-Tcl
+    SUBDIR += p5-InlineX-C2XS
     SUBDIR += p5-Ioctl
     SUBDIR += p5-Iterator
     SUBDIR += p5-Iterator-IO
