@@ -15,10 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	paul@aps.org
 COMMENT=	Convert Pod to LaTeX
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 PERL_CONFIGURE=	yes
 
 MAN1=		pod2latex.1
@@ -30,5 +26,8 @@ MAN3=		Pod::LaTeX.3
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/pod2latex.PL ${PREFIX}/bin/pod2latex
 
 .include <bsd.port.post.mk>
