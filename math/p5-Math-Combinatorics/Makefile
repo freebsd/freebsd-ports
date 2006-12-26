@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Combinatorics
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -22,7 +22,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Perl 5.6 or greater required. Install lang/perl5 or lang/perl5.8
+IGNORE=		requires Perl 5.6 or greater.  Please install lang/perl58 and try again
 .endif
 
 .include <bsd.port.post.mk>
