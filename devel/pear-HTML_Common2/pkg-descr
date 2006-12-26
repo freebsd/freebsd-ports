@@ -1,0 +1,7 @@
+TheHTML_Common2 package provides methods for HTML code display and
+attributes handling.
+* Provides methods to set, remove, merge HTML attributes.
+* Handles global document options (charset, linebreak and more).
+* Provides methods to handle indentation and HTML comments.
+
+WWW: http://pear.php.net/package/HTML_Common2/
