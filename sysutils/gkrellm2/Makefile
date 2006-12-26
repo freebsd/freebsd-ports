@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.2.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -84,7 +84,7 @@ MAN1PREFIX=	${X11BASE}
 ALL_TARGET=	freebsd
 INSTALL_TARGET=	install_freebsd
 
-MAKE_ENV+=	INSTALLROOT=${X11BASE} INSTALLDIR=${X11BASE}/bin \
+MAKE_ENV+=	CC="${CC}" INSTALLROOT=${X11BASE} INSTALLDIR=${X11BASE}/bin \
 		PKGCONFIGDIR=${X11BASE}/libdata/pkgconfig \
 		SINSTALLROOT=${PREFIX} SINSTALLDIR=${PREFIX}/sbin \
 		SPKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
