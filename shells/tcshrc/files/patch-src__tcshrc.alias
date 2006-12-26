@@ -1,0 +1,31 @@
+--- ./src/tcshrc.alias.orig	Fri Aug 13 19:04:01 2004
++++ ./src/tcshrc.alias	Tue Dec 26 14:12:03 2006
+@@ -21,7 +21,7 @@
+ 
+ ## Standard aliases - convenience
+ # Color syntax
+-alias ls 	'ls --color'
++alias ls 	'ls -G'
+ # Typicaly "more" does not allow you to use the arrow keys/etc for navigation.
+ # Thus, we try to use "less", if it exists. Some distros do not put the
+ # fileutils package and it is annoying if the alias exists without the app.
+@@ -73,7 +73,7 @@
+ alias maek  'make'
+ alias alais 'alias'
+ alias csl   'clear'
+-alias sl    'ls --color'
++alias sl    'ls -G'
+ 
+ ## Aliases specific to TCSH
+ # What is the help command? Type "ls" and hit F1. Will show a help line.
+@@ -127,3 +127,9 @@
+ #alias clean 'rm -f  *~'
+ # This is useful to translators checking .po files.
+ alias msgcheck 'msgfmt -o /dev/null --statistics --strict --verbose'
++
++#Install  `most` from he ports or package for coloured manpages
++
++if ( -e `where most`) then
++	alias man 	'man -P most'
++endif
+\ No newline at end of file

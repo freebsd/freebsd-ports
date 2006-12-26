@@ -1,0 +1,31 @@
+--- ./tcshrc_config.orig	Fri Aug 13 19:21:42 2004
++++ ./tcshrc_config	Tue Dec 26 14:13:16 2006
+@@ -36,7 +36,7 @@
+ 	SYSTEM=y
+ 	;;
+     -v|--verbose)
+-	VERBOSE=--verbose
++	VERBOSE=-v
+ 	;;
+     -*)
+ 	usage
+@@ -62,7 +62,18 @@
+ 	/bin/cp -f ${VERBOSE} ${SOURCE}/tcshrc.set 	${HOME}/.tcshrc.set
+ 	/bin/cp -f ${VERBOSE} ${SOURCE}/tcshrc.alias 	${HOME}/.tcshrc.alias
+ 	/bin/cp -f ${VERBOSE} ${SOURCE}/tcshrc.hosts 	${HOME}/.tcshrc.hosts
+-	/bin/cp -u ${VERBOSE} ${SOURCE}/tcshrc.local 	${HOME}/.tcshrc.local
++	
++	if [ "`uname`" != "Linux" ] ; then
++	    if [ -e "${HOME}/.tcshrc.local" ] ; then
++		/bin/cp -f ${VERBOSE} ${HOME}/.tcshrc.local ${HOME}/.tcshrc.local.old
++		/bin/cp -f ${VERBOSE} ${SOURCE}/tcshrc.local 	${HOME}/.tcshrc.local		
++	
++	    else /bin/cp -f ${VERBOSE} ${SOURCE}/tcshrc.local 	${HOME}/.tcshrc.local
++		fi
++	    else /bin/cp -u ${VERBOSE} ${SOURCE}/tcshrc.local 	${HOME}/.tcshrc.local
++		
++	fi
++
+ 	echo " done." >&2
+ 	exit 0
+ fi
