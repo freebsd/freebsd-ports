@@ -14,7 +14,7 @@
 #   using symbolic links.
 
 PORTNAME=	gnat
-PORTVERSION=	2005
+PORTVERSION=	2006
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}:boot
 MASTER_SITE_SUBDIR=	deischen/gcc/:boot
@@ -31,14 +31,14 @@ USE_PERL5_RUN=	yes
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/gcc-34
-GNATNAME=	gnat-gpl-2005-src
+GNATNAME=	gnat-gpl-2006-src
 GNUHOST=	${ARCH}-portbld-freebsd${OSREL}
-GCC_VERSION=	3.4.5
+GCC_VERSION=	3.4.6
 
 # http://libre.adacore.com/:gcc
 # http://libre.adacore.com/:gnat
-GCC_SRCFILE=	gcc-3.4.5-20050524-src.tgz
-GNAT_SRCFILE=	gnat-gpl-2005-src.tgz
+GCC_SRCFILE=	gcc-3.4.6-src.tgz
+GNAT_SRCFILE=	gnat-gpl-2006-src.tgz
 
 PLIST_SUB=	GNUHOST=${GNUHOST} GCC_VERSION=${GCC_VERSION} \
 		LIBRARY_VERSION=${LIBRARY_VERSION}
@@ -115,7 +115,7 @@ CONFIGURE_ENV=	${COMPILE_DATA} PATH=${have_boot}
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
-LIBRARY_VERSION=	GPL2005
+LIBRARY_VERSION=	2006
 PLIST_SUB+=		SHAREDLIB=""
 .else
 CONFIGURE_ARGS+=	--disable-shared
@@ -162,7 +162,8 @@ pre-configure:
 # Can't get this to work with default bsd.port.mk do-configure target.
 #
 do-configure:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+	@(cd ${WRKSRC} && \
+	    ${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
 #
 # We intentionally override CFLAGS because the build procedure is explicitly
@@ -172,21 +173,25 @@ do-configure:
 do-build:
 	(cd ${WRKSRC}; \
 	    PATH=${have_boot} \
-	    ${COMPILEDATA} ${GMAKE} CC=${CC} )
+	    ${SETENV} ${COMPILEDATA} ${GMAKE} CC=${CC} )
 	(cd ${WRKSRC}; \
+	    ${SETENV} ${MAKE_ENV} \
 	    ${GMAKE} PTHREAD_LIBS=${PTHREAD_LIBS} bootstrap )
 	(cd ${WRKSRC}; \
+	    ${SETENV} ${MAKE_ENV} \
 	    ${GMAKE} -C gcc PTHREAD_LIBS=${PTHREAD_LIBS} gnatlib )
 .if defined(WANT_SHAREDLIBS)
 	(cd ${WRKSRC}; \
+	    ${SETENV} ${MAKE_ENV} \
 	    ${GMAKE} -C gcc PTHREAD_LIBS=${PTHREAD_LIBS} gnatlib-shared )
 .endif
 	(cd ${WRKSRC}; \
+	    ${SETENV} ${MAKE_ENV} \
 	    ${GMAKE} -C gcc PTHREAD_LIBS=${PTHREAD_LIBS} gnattools )
 
 do-install:
 	(cd ${WRKSRC}; \
-	    ${GMAKE} ${INSTALL_TARGET} )
+	    ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET} )
 	${INSTALL_SCRIPT} ${WRKSRC}/gcc/ada/gnathtml.pl ${PREFIX}/bin
 
 post-install:
