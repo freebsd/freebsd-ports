@@ -5,6 +5,7 @@ bin/config_data
 %%SITE_PERL%%/Module/Build/Authoring.pod
 %%SITE_PERL%%/Module/Build/Base.pm
 %%SITE_PERL%%/Module/Build/Compat.pm
+%%SITE_PERL%%/Module/Build/Config.pm
 %%SITE_PERL%%/Module/Build/ConfigData.pm
 %%SITE_PERL%%/Module/Build/Cookbook.pm
 %%SITE_PERL%%/Module/Build/ModuleInfo.pm
