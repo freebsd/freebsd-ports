@@ -11014,6 +11014,7 @@ pear-HTML_AJAX	ports/www/pear-HTML_AJAX
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
 pear-HTML_CSS	ports/devel/pear-HTML_CSS
 pear-HTML_Common	ports/devel/pear-HTML_Common
+pear-HTML_Common2	ports/devel/pear-HTML_Common2
 pear-HTML_Form	ports/devel/pear-HTML_Form
 pear-HTML_Javascript	ports/devel/pear-HTML_Javascript
 pear-HTML_Page2	ports/devel/pear-HTML_Page2
