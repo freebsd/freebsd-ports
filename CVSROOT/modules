@@ -12659,6 +12659,7 @@ quake2-ctf	ports/games/quake2-ctf
 quake2-data	ports/games/quake2-data
 quake2-extras	ports/games/quake2-extras
 quake2-lights	ports/games/quake2-lights
+quake2-matrix	ports/games/quake2-matrix
 quake2-relay	ports/games/quake2-relay
 quake2-rogue	ports/games/quake2-rogue
 quake2-source	ports/games/quake2-source
