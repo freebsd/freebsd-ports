@@ -10,7 +10,7 @@ PORTVERSION=	20040704
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daemonology.net/makefs/
 
-MAINTAINER=	cperciva@daemonology.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Builds FFS images
 
 MAN8=		makefs.8
