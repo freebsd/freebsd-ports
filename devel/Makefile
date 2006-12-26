@@ -1569,6 +1569,7 @@
     SUBDIR += pear-HTML_BBCodeParser
     SUBDIR += pear-HTML_CSS
     SUBDIR += pear-HTML_Common
+    SUBDIR += pear-HTML_Common2
     SUBDIR += pear-HTML_Form
     SUBDIR += pear-HTML_Javascript
     SUBDIR += pear-HTML_Page2
