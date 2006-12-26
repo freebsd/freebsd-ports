@@ -17,8 +17,8 @@ COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=	yes
-INSTALLS_SHLIB=	yes
+USE_RC_SUBR=	spread.sh
+USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
@@ -52,15 +52,11 @@ post-build:
 	@cd ${WRKSRC}/perl/Spread && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 	@cd ${WRKSRC}/perl/Spread && ${MAKE}
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}.sh
 
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
-		${PREFIX}/etc/rc.d/${PORTNAME}.sh
 .for f in ${HEADERFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/include
 .endfor
