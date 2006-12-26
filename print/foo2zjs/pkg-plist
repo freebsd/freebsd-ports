@@ -16,6 +16,7 @@ bin/xqxdecode
 bin/zjsdecode
 share/cups/model/Generic-OAKT_Printer.ppd.gz
 share/cups/model/Generic-ZjStream_Printer.ppd.gz
+share/cups/model/KonicaMinolta-magicolor_2490_MF.ppd.gz
 share/cups/model/KonicaMinolta-magicolor_2530_DL.ppd.gz
 share/cups/model/HP-Color_LaserJet_1500.ppd.gz
 share/cups/model/HP-Color_LaserJet_1600.ppd.gz
