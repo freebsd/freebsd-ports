@@ -480,6 +480,7 @@ lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
 lib/wine/ddeml.dll16
 lib/wine/ddraw.dll.so
+lib/wine/ddrawex.dll.so
 lib/wine/devenum.dll.so
 lib/wine/dinput.dll.so
 lib/wine/dinput8.dll.so
@@ -508,7 +509,6 @@ lib/wine/explorer.exe.so
 lib/wine/gdi.exe16
 lib/wine/gdi32.dll.so
 lib/wine/glu32.dll.so
-lib/wine/glut32.dll.so
 lib/wine/gphoto2.ds.so
 lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
@@ -564,7 +564,6 @@ lib/wine/libdinput8.def
 lib/wine/libdmusic32.def
 lib/wine/libdnsapi.def
 lib/wine/libdpnet.def
-lib/wine/libglut32.def
 lib/wine/libdplay.def
 lib/wine/libdplayx.def
 lib/wine/libdsound.def
