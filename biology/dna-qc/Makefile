@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.tigr.org/pub/software/qc/
 DISTNAME=	qc
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quality control algorithm for DNA sequencing projects
 
 NO_WRKSUBDIR=	true
