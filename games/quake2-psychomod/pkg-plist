@@ -1,0 +1,7 @@
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%Q2DIR%%/psychomod/game.so
+%%Q2DIR%%/psychomod/pak0.pak
+%%Q2DIR%%/psychomod/server_dm.cfg
+%%Q2DIR%%/psychomod/uservars.cfg
+@dirrm %%Q2DIR%%/psychomod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
