@@ -10976,6 +10976,7 @@ pear-Benchmark	ports/benchmarks/pear-Benchmark
 pear-Cache	ports/sysutils/pear-Cache
 pear-Cache_Lite	ports/sysutils/pear-Cache_Lite
 pear-Config	ports/devel/pear-Config
+pear-Console_Color	ports/devel/pear-Console_Color
 pear-Console_Getargs	ports/devel/pear-Console_Getargs
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Console_Table	ports/devel/pear-Console_Table
