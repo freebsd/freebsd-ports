@@ -1,5 +1,5 @@
---- gcc/ada/gnatchop.adb.orig	Fri Jul 29 09:03:44 2005
-+++ gcc/ada/gnatchop.adb	Wed Nov 23 23:40:15 2005
+--- gcc/ada/gnatchop.adb.orig	Mon May 22 02:06:11 2006
++++ gcc/ada/gnatchop.adb	Mon Dec 25 11:14:06 2006
 @@ -45,7 +45,7 @@
     Config_File_Name : constant String_Access := new String'("gnat.adc");
     --  The name of the file holding the GNAT configuration pragmas

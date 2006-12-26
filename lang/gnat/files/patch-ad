@@ -1,6 +1,6 @@
---- gcc/ada/make.adb.orig	Fri Jul 29 09:03:47 2005
-+++ gcc/ada/make.adb	Wed Nov 23 23:36:44 2005
-@@ -579,7 +579,7 @@
+--- gcc/ada/make.adb.orig	Mon May 22 02:06:12 2006
++++ gcc/ada/make.adb	Mon Dec 25 11:11:53 2006
+@@ -601,7 +601,7 @@
     -- Compiler, Binder & Linker Data and Subprograms --
     ----------------------------------------------------
  

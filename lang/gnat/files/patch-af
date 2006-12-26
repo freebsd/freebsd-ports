@@ -1,6 +1,6 @@
---- gcc/ada/gnatlink.adb.orig	Fri Jul 29 09:03:45 2005
-+++ gcc/ada/gnatlink.adb	Wed Nov 23 23:38:40 2005
-@@ -123,7 +123,7 @@
+--- gcc/ada/gnatlink.adb.orig	Mon May 22 02:06:11 2006
++++ gcc/ada/gnatlink.adb	Mon Dec 25 11:13:08 2006
+@@ -136,7 +136,7 @@
     --  This table collects the arguments to be passed to compile the binder
     --  generated file.
  
