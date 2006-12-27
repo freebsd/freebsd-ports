@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f4ff7434-9505-11db-9ddc-0011098b2f36">
+    <topic>plone -- user can masquerade as a group</topic>
+    <affects>
+      <package>
+	<name>plone</name>
+	<range><gt>2.5</gt><lt>2.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Plone.org reports:</p>
+	<blockquote cite="http://plone.org/products/plone-hotfix/releases/20061031">
+	  <p>PlonePAS-using Plone releases (Plone 2.5 and Plone 2.5.1) has a
+	    potential vulnerability that allows a user to masquerade as a group.
+	    Please update your sites.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>21460</bid>
+      <cvename>CVE-2006-4249</cvename>
+      <url>http://plone.org/products/plone-hotfix/releases/20061031</url>
+    </references>
+    <dates>
+      <discovery>2006-11-02</discovery>
+      <entry>2006-12-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f851b22-89fb-11db-a937-003048116330">
     <topic>proftpd -- remote code execution vulnerabilities</topic>
     <affects>
