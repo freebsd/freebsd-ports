@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: atslogd
+# REQUIRE: mysql
+# KEYWORD: shutdown 
+
+#
+# Add the following line to /etc/rc.conf[.local] to enable atslogd
+#
+# atslogd_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable atslogd.
+
+. %%RC_SUBR%%
+
+name="atslogd"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${atslogd_enable="NO"}
+
+command="%%PREFIX%%/bin/atslogmaster"
+required_files="%%PREFIX%%/etc/atslog.conf"
+extra_commands="reload writedb rotate alltodb cleardb"
+start_cmd="atslogd_command start"
+stop_cmd="atslogd_command stop"
+reload_cmd="atslogd_command reload"
+writedb_cmd="atslogd_command writedb"
+rotate_cmd="atslogd_command rotate"
+alltodb_cmd="atslogd_command alltodb"
+cleardb_cmd="atslogd_command cleardb"
+
+atslogd_command()
+{
+    ${command} ${command_args} ${rc_arg}
+}
+    
+run_rc_command "$1"
