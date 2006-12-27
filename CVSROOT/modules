@@ -7557,6 +7557,7 @@ mysqlreport	ports/databases/mysqlreport
 mysqlsla	ports/databases/mysqlsla
 mysqltcl	ports/databases/mysqltcl
 mythserver	ports/games/mythserver
+mythtv		ports/multimedia/mythtv
 mytop		ports/databases/mytop
 mywiki		ports/deskutils/mywiki
 nInvaders	ports/games/nInvaders
