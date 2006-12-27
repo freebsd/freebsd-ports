@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	8.1.407
+PORTVERSION=	8.2.504
 DISTVERSIONSUFFIX=.src
 PORTREVISION=	0
 CATEGORIES=	databases java
@@ -32,13 +32,6 @@ do-install:
 	  ${MKDIR} -m 0755 ${DOCSDIR} ;\
 	  ${INSTALL_DATA} ${WRKSRC}/README \
 			  ${DOCSDIR}/README-jdbc
-.if !defined(NOPORTDOCS)
-	@- ${MKDIR} -m 0755 ${EXAMPLESDIR}/jdbc ;\
-	  ${INSTALL_DATA} ${WRKSRC}/jars/postgresql-examples.jar \
-			  ${EXAMPLESDIR}/jdbc/postgresql-examples.jar ;\
-	  cd ${WRKSRC}/example ;\
-	  ${PAX} -rw . ${EXAMPLESDIR}/jdbc
-.endif
 
 post-install:
 	@ ${SED} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
