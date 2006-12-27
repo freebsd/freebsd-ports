@@ -17,6 +17,7 @@ bin/squeak
 %%DATADIR%%/%%VMVERSION%%/squeak
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/vm-display-X11
 %%DATADIR%%/%%VMVERSION%%/vm-display-null
+%%DATADIR%%/%%VMVERSION%%/vm-sound-NAS
 %%DATADIR%%/%%VMVERSION%%/vm-sound-OSS
 %%DATADIR%%/%%VMVERSION%%/vm-sound-null
 %%DATADIR%%/ReadMe.txt
