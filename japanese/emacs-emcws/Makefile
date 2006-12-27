@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -20,7 +20,6 @@ PATCH_DIST_STRIP=	-p1
 .if defined(WITH_MENUBAR_FONTSET)
 PATCH_SITES+=		http://www.nijino.com/ari/emacs/
 PATCHFILES+=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
-PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	nakaji@jp.freebsd.org
@@ -28,6 +27,11 @@ COMMENT=	Emacs + Canna + Wnn + Sj3
 
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
+
+CONFLICTS=	emacs-19.* emacs-20.* \
+		ja-emcws-20.* \
+		xemacs-[0-9]* xemacs-devel-[0-9]* \
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
@@ -152,7 +156,7 @@ EMACS_BASE=${LOCALBASE}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Segfault during build on ia64"
+BROKEN=		Segfault during build on ia64
 CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 .endif
