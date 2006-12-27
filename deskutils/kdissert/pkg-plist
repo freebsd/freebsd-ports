@@ -9,6 +9,8 @@ lib/kde3/libkdissasciidoc.la
 lib/kde3/libkdissasciidoc.so
 lib/kde3/libkdissbeamerslides.la
 lib/kde3/libkdissbeamerslides.so
+lib/kde3/libkdissdocbook.la
+lib/kde3/libkdissdocbook.so
 lib/kde3/libkdisshtmldoc.la
 lib/kde3/libkdisshtmldoc.so
 lib/kde3/libkdisspdflatexarticle.la
@@ -28,6 +30,7 @@ share/apps/kdissert/templatedata/kdissOOOimpress.tar.gz
 share/apps/kdissert/templatedata/kdissapplet.tar.gz
 share/apps/kdissert/templatedata/kdissasciidoc.tar.gz
 share/apps/kdissert/templatedata/kdissbeamerslides.tar.gz
+share/apps/kdissert/templatedata/kdissdocbook.tar.gz
 share/apps/kdissert/templatedata/kdisshtmldoc.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexarticle.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexbook.tar.gz
@@ -36,11 +39,6 @@ share/apps/kdissert/templatedata/kdissstx.tar.gz
 share/apps/kdissert/tips
 share/apps/kdissertpart/kdissertpart.rc
 share/config.kcfg/kdissert.kcfg
-share/doc/HTML/en/kdissert/index.cache.bz2
-share/doc/HTML/en/kdissert/index.docbook
-share/doc/HTML/en/kdissert/screenshot.jpg
-share/doc/HTML/fr/kdissert/index.cache.bz2
-share/doc/HTML/fr/kdissert/index.docbook
 share/icons/hicolor/128x128/actions/kdissert_sort.png
 share/icons/hicolor/128x128/apps/kdissert.png
 share/icons/hicolor/16x16/actions/kdissert_link.png
@@ -74,23 +72,12 @@ share/locale/pl/LC_MESSAGES/kdissert.mo
 share/locale/pt/LC_MESSAGES/kdissert.mo
 share/locale/pt_BR/LC_MESSAGES/kdissert.mo
 share/locale/ru/LC_MESSAGES/kdissert.mo
+share/locale/sk/LC_MESSAGES/kdissert.mo
 share/locale/sv/LC_MESSAGES/kdissert.mo
 share/locale/tr/LC_MESSAGES/kdissert.mo
 share/mimelnk/application/x-kdissert.desktop
 share/services/kdissertpart.desktop
-@dirrm share/doc/HTML/fr/kdissert
-@dirrm share/doc/HTML/en/kdissert
 @dirrm share/apps/kdissertpart
 @dirrm share/apps/kdissert/templatedata
 @dirrm share/apps/kdissert/pics
 @dirrm share/apps/kdissert
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
