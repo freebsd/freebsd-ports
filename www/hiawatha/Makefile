@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 CATEGORIES=	www
 MASTER_SITES=	http://hiawatha.leisink.org/files/
 
@@ -20,17 +20,17 @@ USE_RC_SUBR=	hiawatha
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --enable-cache webrootdir=${PREFIX}/www/hiawatha
+CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${PREFIX}/www/hiawatha
 
-OPTIONS=	SSL "Compile with SSL support?" On \
-		PHP "Include the CGI version of PHP?" On
+OPTIONS=	SSL "Compile with SSL support?" On
+OPTIONS+=	PHP "Include the CGI version of PHP?" On
 
 CONFIG_FILES=	httpd.conf mimetype.conf throttle.conf cgi_wrapper.conf
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--enable-ssl
+.if defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=--disable-ssl
 .endif
 
 .if !defined(WITHOUT_PHP)
@@ -38,6 +38,8 @@ WANT_PHP_CGI=	yes
 .endif
 
 post-install:
+	${CP} -f ${WRKSRC}/extra/fcgi-server ${PREFIX}/sbin
+	${CP} -f ${WRKSRC}/extra/newroot ${PREFIX}/sbin
 	@for _file in ${CONFIG_FILES} ; do \
 		${CP} -f ${WRKSRC}/etc/hiawatha/$${_file} ${PREFIX}/etc/hiawatha/$${_file}.sample ; \
 	done

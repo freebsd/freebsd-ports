@@ -1,6 +1,8 @@
 sbin/hiawatha
 sbin/cgi_wrapper
 sbin/wigwam
+sbin/fcgi-server
+sbin/newroot
 @unexec if cmp -s %D/etc/hiawatha/httpd.conf %D/etc/hiawatha/httpd.conf.sample; then rm -f %D/etc/hiawatha/httpd.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/mimetype.conf %D/etc/hiawatha/mimetype.conf.sample; then rm -f %D/etc/hiawatha/mimetype.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/throttle.conf %D/etc/hiawatha/throttle.conf.sample; then rm -f %D/etc/hiawatha/throttle.conf; fi
