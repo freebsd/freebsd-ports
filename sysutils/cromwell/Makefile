@@ -20,6 +20,7 @@ MAINTAINER=	rink@FreeBSD.org
 COMMENT=	Linux (and FreeBSD :-) BIOS images for the Microsoft Xbox
 
 USE_PERL5_BUILD=	yes
+USE_GCC=		3.4
 
 SUB_FILES=	pkg-message
 
