@@ -176,11 +176,13 @@ MAN8=bacula.8
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
+.if ${OSVERSION} < 490101 || (${OSVERSION} >= 500000 && ${OSVERSION} < 502101)
 	@${ECHO_MSG} "=======> ATTENTION <======="
 	@${ECHO_MSG} "===> Note that there is a pthreads problem, which leads to the loss of 500kB"
 	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in newer versions of FreeBSD"
 	@${ECHO_MSG} "===> READ ${WRKSRC}/platforms/freebsd/pthreads-fix.txt"
 	@${ECHO_MSG} ""
+.endif
 	@${ECHO_MSG} "You may use the following build options (or make config):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
