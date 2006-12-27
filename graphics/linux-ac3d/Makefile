@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ac3d
-PORTVERSION=	6.030
+PORTVERSION=	6.1
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://www.ac3d.org/ac3d/download/release6/
+MASTER_SITES=	http://www.ac3d.org/ac3d/download/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}lx${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
@@ -57,7 +58,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/*.tcl ${DATADIR}/lib/tk8.4
 	${MKDIR} ${DATADIR}/tcl
 
-.for i in tcl xbm
+.for i in tcl
 	${INSTALL_DATA} ${WRKSRC}/tcl/*.${i} ${DATADIR}/tcl
 .endfor
 
@@ -84,11 +85,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/IMPORTANT ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/manual
-	${INSTALL_DATA} ${WRKSRC}/manual/*.htm[l] ${DOCSDIR}/manual
-	${MKDIR} ${DOCSDIR}/manual/man_files
+	${INSTALL_DATA} ${WRKSRC}/manual/*.htm ${DOCSDIR}/manual
+	${MKDIR} ${DOCSDIR}/manual/main_files
 .for i in gif jpg
-	${INSTALL_DATA} ${WRKSRC}/manual/man_files/*.${i} \
-		${DOCSDIR}/manual/man_files
+	${INSTALL_DATA} ${WRKSRC}/manual/main_files/*.${i} \
+		${DOCSDIR}/manual/main_files
 .endfor
 	${MKDIR} ${DOCSDIR}/manual/top_files
 	${INSTALL_DATA} ${WRKSRC}/manual/top_files/*.gif \
