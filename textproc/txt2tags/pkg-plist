@@ -2,8 +2,6 @@
 bin/txt2tags
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README-FIRST
-%%PORTDOCS%%%%DOCSDIR%%/TEAM
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/userguide.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -15,6 +13,7 @@ bin/txt2tags
 %%EXAMPLESDIR%%/css/tech.html
 %%EXAMPLESDIR%%/extras/README
 %%EXAMPLESDIR%%/extras/css-reference.txt
+%%EXAMPLESDIR%%/extras/ctags
 %%EXAMPLESDIR%%/extras/gvim-menu.vim
 %%EXAMPLESDIR%%/extras/html-update.sh
 %%EXAMPLESDIR%%/extras/nanorc
@@ -26,6 +25,7 @@ bin/txt2tags
 %%EXAMPLESDIR%%/extras/txt2tags-mode.el
 %%EXAMPLESDIR%%/extras/txt2tags.php
 %%EXAMPLESDIR%%/extras/txt2tags.vim
+%%EXAMPLESDIR%%/extras/txt2tagsrc
 %%EXAMPLESDIR%%/extras/unhtml.vim
 %%EXAMPLESDIR%%/img/madeinbr.png
 %%EXAMPLESDIR%%/img/old-poweredby-1.png
@@ -33,6 +33,8 @@ bin/txt2tags
 %%EXAMPLESDIR%%/img/photo.jpg
 %%EXAMPLESDIR%%/img/t2tbutton.png
 %%EXAMPLESDIR%%/img/t2tpowered.png
+%%EXAMPLESDIR%%/img/t2tpowered-black.png
+%%EXAMPLESDIR%%/img/t2tpowered-white.png
 %%EXAMPLESDIR%%/img/valid-css.png
 %%EXAMPLESDIR%%/img/valid-html.png
 %%EXAMPLESDIR%%/img/valid-xhtml.png

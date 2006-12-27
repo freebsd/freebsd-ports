@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	txt2tags
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	textproc
-MASTER_SITES=	http://txt2tags.sourceforge.net/src/
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-DOCS=		ChangeLog README README-FIRST TEAM TODO doc/userguide.pdf
+DOCS=		ChangeLog README TODO doc/userguide.pdf
 SAMPLE_DIRS=	css img module
 
 do-install:
