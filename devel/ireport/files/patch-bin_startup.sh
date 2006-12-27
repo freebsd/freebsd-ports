@@ -1,10 +1,8 @@
---- bin/startup.sh.orig	Wed Apr 26 07:35:37 2006
-+++ bin/startup.sh	Sat Apr 29 00:04:02 2006
-@@ -1,30 +1,12 @@
+--- bin/startup.sh.orig	Thu Nov 16 02:59:28 2006
++++ bin/startup.sh	Thu Nov 16 21:15:54 2006
+@@ -1,33 +1,13 @@
  #! /bin/sh
  
-+IREPORT_CLASSPATH="%%CLSSPTH%%:%%DATADIR%%/fonts"
-+IREPORT_HOME="$HOME/ireport"
  
 -# add the libraries to the IREPORT_CLASSPATH.
 -# EXEDIR is the directory where this executable is.
@@ -18,7 +16,9 @@
 -    IREPORT_CLASSPATH="$i":$IREPORT_CLASSPATH
 -  fi
 -done
--
++IREPORT_CLASSPATH="%%CLSSPTH%%:%%DATADIR%%/fonts"
++IREPORT_HOME="$HOME/ireport"
+ 
 -DIRLIBS=${EXEDIR}/../lib/*.zip
 -for i in ${DIRLIBS}
 -do
@@ -30,12 +30,16 @@
 -done
 -
 -IREPORT_CLASSPATH="${EXEDIR}/../classes":"${EXEDIR}/../fonts":$IREPORT_CLASSPATH
--IREPORT_HOME="${EXEDIR}/.."
+-cd ..
+-IREPORT_HOME=$(pwd)
+-cd bin
+-#echo $IREPORT_HOME
 -
+-java -classpath "$IREPORT_CLASSPATH:$CLASSPATH" -Direport.home=$IREPORT_HOME -Djava.security.policy=$IREPORT_HOME/policy.all it.businesslogic.ireport.gui.MainFrame "$@"
 +# Since iReport-1.2.2, $IREPORT_HOME must be writable
 +/bin/mkdir -p $IREPORT_HOME/lib
 +/bin/rm $IREPORT_HOME/plugins $IREPORT_HOME/templates 2>/dev/null || /usr/bin/true
 +/bin/ln -sf %%DATADIR%%/plugins $IREPORT_HOME/plugins
 +/bin/ln -sf %%DATADIR%%/templates $IREPORT_HOME/templates
 +cd $IREPORT_HOME
- java -classpath "$IREPORT_CLASSPATH:$CLASSPATH" -Direport.home=$IREPORT_HOME it.businesslogic.ireport.gui.MainFrame "$@"
++java -classpath "$IREPORT_CLASSPATH:$CLASSPATH" -Direport.home=$IREPORT_HOME it.businesslogic.ireport.gui.MainFrame "$@"
