@@ -7,7 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.6
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
@@ -83,7 +83,8 @@ INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../platforms/unix/config/configure
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/share \
 			--without-quartz \
-			LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 # don't pass "-s" to install to avoid trying to strip a shell script
 CONFIGURE_ENV=
