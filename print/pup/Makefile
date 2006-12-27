@@ -9,7 +9,9 @@ PORTNAME=	pup
 PORTVERSION=	1.1
 PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	http://download.sourceforge.net/pup/
+#MASTER_SITES=	http://download.sourceforge.net/pup/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	klaus.goger@reflex.at
