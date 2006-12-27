@@ -1,0 +1,41 @@
+--- configure.orig	Wed Dec 27 12:37:13 2006
++++ configure	Wed Dec 27 12:41:54 2006
+@@ -1047,9 +1047,9 @@
+                           include additional configurations [automatic]
+   --with-gconf-source=sourceaddress      Config database for installing schema files.
+   --with-gconf-schema-file-dir=dir        Directory for installing schema files.
+-  --with-mozilla[=mozilla|firefox|thunderbird]
+-                          Whether to use mozilla, firefox or thunderbird
+-                          gtkmozembed (default: mozilla)
++  --with-mozilla[=mozilla|firefox|seamonkey|thunderbird]
++                          Whether to use mozilla, firefox, seamonkey
++                          or thunderbird gtkmozembed (default: mozilla)
+   --with-zlib=DIR       use libz in DIR
+ 
+ Some influential environment variables:
+@@ -20253,6 +20253,8 @@
+     MOZILLA=mozilla
+   elif pkg-config --exists firefox-gtkmozembed; then
+     MOZILLA=firefox
++  elif pkg-config --exists seamonkey-gtkmozembed; then
++    MOZILLA=seamonkey
+   elif pkg-config --exists thunderbird-gtkmozembed; then
+     MOZILLA=thunderbird
+   else
+@@ -20260,7 +20262,7 @@
+ echo "$as_me: error: no mozilla installation found" >&2;}
+    { (exit 1); exit 1; }; }
+   fi
+-elif test "x$with_mozilla" != "xmozilla" -a "x$with_mozilla" != "xfirefox" -a "x$with_mozilla" != "xthunderbird"; then
++elif test "x$with_mozilla" != "xmozilla" -a "x$with_mozilla" != "xfirefox" -a "x$with_mozilla" != "xseamonkey" -a "x$with_mozilla" != "xthunderbird"; then
+   { { echo "$as_me:$LINENO: error: unknown mozilla name ($MOZILLA)" >&5
+ echo "$as_me: error: unknown mozilla name ($MOZILLA)" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -20274,6 +20276,7 @@
+ case "$MOZILLA" in
+ mozilla) min_version=1.7 flavour=mozilla ;;
+ firefox) min_version=0.10 flavour=toolkit ;;
++seamonkey) min_version=1.0 flavour=toolkit ;;
+ thunderbird) min_version=0.8 flavour=toolkit ;;
+ esac
+ 

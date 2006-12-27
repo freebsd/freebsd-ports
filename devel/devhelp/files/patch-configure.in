@@ -1,0 +1,13 @@
+--- configure.in.orig	Wed Dec 27 12:40:09 2006
++++ configure.in	Wed Dec 27 12:42:54 2006
+@@ -44,8 +44,8 @@
+ 
+ MOZILLA=
+ AC_ARG_WITH([mozilla],
+-	AC_HELP_STRING([--with-mozilla@<:@=mozilla|firefox|thunderbird@:>@],
+-		       [Whether to use mozilla, firefox or thunderbird gtkmozembed (default: mozilla)]),
++	AC_HELP_STRING([--with-mozilla@<:@=mozilla|firefox|seamonkey|thunderbird@:>@],
++		       [Whether to use mozilla, firefox, seamonkey or thunderbird gtkmozembed (default: mozilla)]),
+ 	[MOZILLA="$withval"])
+ 
+ dnl try to autodetect: if mozilla exists, use it, else try firefox, then thunderbird
