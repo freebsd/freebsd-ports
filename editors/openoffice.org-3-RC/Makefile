@@ -28,7 +28,7 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-BROKEN=		Please use editors/openoffice.org-2
+IGNORE=		Please use editors/openoffice.org-2
 
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
