@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://www.kde-apps.org/content/files/
-DISTNAME=	12725-${PORTNAME}-${PORTVERSION}-waf-b
+MASTER_SITES=	http://freehackers.org/~tnagy/kdissert/ \
+		http://bsdguru.org/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alex@BSDGuru.org
 COMMENT=	KDE mindmapping tool
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/^12725-//}
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_KDELIBS_VER=	3
 USE_PYTHON_BUILD=	yes
@@ -29,8 +28,9 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 CXXFLAGS+=	-fpermissive
 .endif
 
-post-extract:
-	@cd ${WRKSRC} && ${TAR} yxf miniwaf.tar.bz2
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -39,13 +39,13 @@ post-patch:
 			${WRKSRC}/src/kdissert/wscript_build
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf.py configure
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf configure
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf.py
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf.py install
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install
 	@${STRIP_CMD} ${PREFIX}/bin/kdissert
 
 .include <bsd.port.post.mk>
