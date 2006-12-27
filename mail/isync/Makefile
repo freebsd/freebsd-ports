@@ -1,24 +1,27 @@
-# New ports collection makefile for:   isync
-# Date created:		2000-12-23
-# Whom:			eivind
+# New ports collection makefile for:	isync
+# Date created:				2000-12-23
+# Whom:					eivind
 #
 # $FreeBSD$
+#
 
 PORTNAME=	isync
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
-USE_BDB=	42+
-USE_GETOPT_LONG=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
+USE_OPENSSL=	yes
+USE_BDB=	42+
+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 MAN1=		isync.1 mbsync.1 mdconvert.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
