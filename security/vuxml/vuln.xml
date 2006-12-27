@@ -2557,7 +2557,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>zope</name>
-	<range><ge>0</ge></range>
+	<range><ge>2.7.0</ge><lt>2.7.9_1</lt></range>
+	<range><ge>2.8.0</ge><lt>2.8.8_1</lt></range>
       </package>
     </affects>
     <description>
@@ -2583,7 +2584,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-08-21</discovery>
       <entry>2006-09-22</entry>
-      <modified>2006-10-15</modified>
+      <modified>2006-12-27</modified>
     </dates>
   </vuln>
 
