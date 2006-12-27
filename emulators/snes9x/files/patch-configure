@@ -1,31 +1,16 @@
---- configure.orig	Thu Dec  4 18:03:08 2003
-+++ configure	Sat Apr 29 23:35:05 2006
-@@ -646,6 +646,7 @@
+--- configure.orig	Tue Dec 26 23:42:54 2006
++++ configure	Tue Dec 26 23:52:49 2006
+@@ -1268,6 +1268,7 @@
+   --with(out)-opengl        Use OpenGL for output (default: without)
    --with(out)-aido          Use a shared memory area for output (default: without)
-   --with(out)-joystick      Enable joystick support if available (default: with)
-   --with(out)-assembler     Use assembler cores if available (default: with)
-+  --with(out)-mmx           Use mmx assembly code (default: with)
-   --with(out)-sdd1-decomp Use SDD1 decompression (default: with)
-   --with(out)-screenshot	   Screenshot support through libpng if available (default: with)
-   --with-x                use the X Window System
-@@ -1992,6 +1993,14 @@
-   with_assembler=yes
- fi;
- 
-+# Check whether --with-mmx or --without-mmx was given.
-+if test "${with_mmx+set}" = set -a yes = "$with_assembler"; then
-+  withval="$with_mmx"
-+
-+else
-+  with_mmx=no
-+fi;
-+
- # Check whether --with-sdd1-decomp or --without-sdd1-decomp was given.
- if test "${with_sdd1_decomp+set}" = set; then
-   withval="$with_sdd1_decomp"
-@@ -3866,6 +3875,59 @@
- echo "$as_me:3866: result: $snes9x_cv_hpux_os" >&5
- echo "${ECHO_T}$snes9x_cv_hpux_os" >&6
+   --with(out)-assembler   Use assembler cores if available (default: with)
++  --with(out)-mmx	Use assembler cores if available (default: with)
+   --with(out)-zsnesc4     Use ZSNES C4 core if available (default: same as --with-assembler)
+   --with(out)-zsnesfx     Use ZSNES SuperFX core if available (default: same as --with-assembler)
+   --with(out)-correct-vram-reads Use Correct VRAM read logic (default: with)
+@@ -7182,6 +7183,59 @@
+ { echo "$as_me:$LINENO: result: $snes9x_cv_hpux_os" >&5
+ echo "${ECHO_T}$snes9x_cv_hpux_os" >&6; }
  
 +echo "$as_me:$LINENO: checking if the OS is FreeBSD" >&5
 +echo $ECHO_N "checking if the OS is FreeBSD... $ECHO_C" >&6
@@ -80,43 +65,106 @@
 +echo "$as_me:$LINENO: result: $snes9x_cv_freebsd_os" >&5
 +echo "${ECHO_T}$snes9x_cv_freebsd_os" >&6
 +
- echo "$as_me:3869: checking if the OS is MS Windows" >&5
- echo $ECHO_N "checking if the OS is MS Windows... $ECHO_C" >&6
+ { echo "$as_me:$LINENO: checking if the OS is MS Windows" >&5
+ echo $ECHO_N "checking if the OS is MS Windows... $ECHO_C" >&6; }
  if test "${snes9x_cv_win32_os+set}" = set; then
-@@ -3970,7 +4032,9 @@
-   ZSNESFX='ZSNESFX=1'
-   ZSNESC4='ZSNESC4=1'
-   ASMCPU='ASMCPU=1'
-+if test yes = "$with_mmx"; then
-   ASMKREED='ASMKREED=1'
-+fi
- #  SPC700ASM='SPC700ASM=1'
-   I386SPC='i386/SPC.O'
-   CPUINC='-Ii386'
-@@ -3985,6 +4049,9 @@
- 
- if test yes = "$snes9x_cv_linux_os" -a yes = "$with_joystick"; then
-    JOYDEFINES=' -DJOYSTICK_SUPPORT'
+@@ -7437,6 +7491,9 @@
+ # Check whether --with-joystick was given.
+ if test "${with_joystick+set}" = set; then
+   withval=$with_joystick;
 +elif test yes = "$snes9x_cv_freebsd_os" -a yes = "$with_joystick"; then
 +   JOYDEFINES=' -DJOYSTICK_SUPPORT'
 +   SYSLIBS="$SYSLIBS"' -lusbhid'
  else
-    with_joystick="no"
+   with_joystick=yes
  fi
-@@ -5141,7 +5208,7 @@
- #line 5141 "configure"
- #include "confdefs.h"
+@@ -7473,6 +7530,13 @@
+    CPUINC='-Ish'
+ fi
+ 
++# Check whether --with-mmx or --without-mmx was given.
++if test "${with_mmx+set}" = set -a yes = "$with_assembler"; then
++  withval="$with_mmx"
++
++else
++  with_mmx=no
++fi;
+ 
+ # Check whether --with-sdd1-decomp was given.
+ if test "${with_sdd1_decomp+set}" = set; then
+@@ -11190,6 +11254,58 @@
+ echo "${ECHO_T}Defining _XOPEN_SOURCE_EXTENDED since HP-UX needs it." >&6; }
+ fi
+ 
++echo "$as_me:$LINENO: checking if the OS is FreeBSD" >&5
++echo $ECHO_N "checking if the OS is FreeBSD... $ECHO_C" >&6
++if test "${snes9x_cv_freebsd_os+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++
++  cat >conftest.$ac_ext <<_ACEOF
++#line 3885 "configure"
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++#ifdef __FreeBSD__
++/* */
++#else
++#error Not FreeBSD.
++#endif
++
++int
++main ()
++{
++
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext
++if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
++  (eval $ac_compile) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest.$ac_objext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  snes9x_cv_freebsd_os=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++snes9x_cv_freebsd_os=no
++fi
++rm -f conftest.$ac_objext conftest.$ac_ext
++fi
++
++echo "$as_me:$LINENO: result: $snes9x_cv_freebsd_os" >&5
++echo "${ECHO_T}$snes9x_cv_freebsd_os" >&6
+ 
+ THREAD_SOUND='#THREAD_SOUND=1'
+ if test "${ac_cv_header_pthread_h+set}" = set; then
+@@ -11372,7 +11488,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  
 -#if defined(__linux) || defined(__sun) || defined(__sgi)
 +#if defined(__linux) || defined(__sun) || defined(__sgi) || defined(__FreeBSD__)
  /* */
  #else
  #error No sound for this platform
-@@ -5320,6 +5387,7 @@
- display system.... $snes9x_info_display
- joystick support.. $with_joystick
- using asm cores... $with_assembler
-+using mmx code.... $with_mmx
- SDD1 decompession. $with_sdd1_decomp
- debugger.......... $with_debugger
- 
+@@ -11665,6 +11781,7 @@
+ sound support....... $snes9x_cv_sound
+ display system...... $snes9x_info_display
+ joystick support.... $with_joystick
++using mmx code....   $with_mmx
+ SDD1 decompression.. $with_sdd1_decomp
+ JMA decompression... $with_jma_decomp
+ debugger............ $with_debugger
