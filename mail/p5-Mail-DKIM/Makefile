@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://jason.long.name/dkimproxy/
 PKGNAMEPREFIX=	p5-
