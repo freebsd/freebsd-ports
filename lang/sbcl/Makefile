@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${DISTNAME}-documentation-html${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	sa2c@sa2c.net
 COMMENT=	A Common Lisp development system derived from the CMU CL system
@@ -38,9 +34,9 @@ INFODIR=	${PREFIX}/${INFO_PATH}
 .if defined(WITH_SBCL)
 LISP_CMD=	""
 .else
-BOOT_VERSION=	0.9.16
+BOOT_VERSION=	${PORTVERSION}
 BOOT_ARCH=	x86
-BOOT_OS=	${OPSYS:L}
+BOOT_OS=	freebsd4
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH}-${BOOT_OS}
 DISTFILES+=	${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
 LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
@@ -82,9 +78,7 @@ do-install:
 	(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
 		MAN_DIR=${PREFIX}/man DOC_DIR=${DOCSDIR} \
 		INFO_DIR=${INFODIR}  ${SH} install.sh)
-.if defined(NOPORTDOCS)
 	@${RMDIR} ${DOCSDIR}/html
-.endif
 
 test:	build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
