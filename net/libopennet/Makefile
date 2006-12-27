@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libopennet
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/ \
 		http://www.cs.nctu.edu.tw/~gslin/files/
