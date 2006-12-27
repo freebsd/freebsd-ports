@@ -1,7 +1,8 @@
 bin/xmoto
-bin/xmoto-edit
 %%NLS%%share/locale/de/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xmoto.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xmoto.mo
 %%DATADIR%%/credits.rpl
 %%DATADIR%%/editor.dat
 %%DATADIR%%/fonts.dat
@@ -11,4 +12,8 @@ bin/xmoto-edit
 %%NLS%%@dirrmtry share/locale/de
 %%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
 @dirrm %%DATADIR%%

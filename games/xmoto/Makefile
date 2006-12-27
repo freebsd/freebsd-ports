@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.2.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,6 +26,7 @@ USE_GL=		yes
 USE_LUA=	5.1
 USE_SDL=	sdl mixer
 USE_DOS2UNIX=	src/*.cpp src/*.h
+USE_GCC=	3.4+
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -42,7 +42,7 @@ PORTDOCS=	README ChangeLog
 OPTIONS=	WWW	"Online high-scores and new levels download support"	on \
 		ZOOM	"Enable zooming"	off
 
-MAN6=		xmoto.6 xmoto-edit.6
+MAN6=		xmoto.6
 
 .include <bsd.port.pre.mk>
 
