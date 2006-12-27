@@ -12181,6 +12181,7 @@ py-fox		ports/x11-toolkits/py-fox
 py-fpconst	ports/math/py-fpconst
 py-freebsd	ports/devel/py-freebsd
 py-freeimagepy	ports/graphics/py-freeimagepy
+py-ftputil	ports/ftp/py-ftputil
 py-fusefs	ports/devel/py-fusefs
 py-game		ports/devel/py-game
 py-gamin	ports/devel/py-gamin
