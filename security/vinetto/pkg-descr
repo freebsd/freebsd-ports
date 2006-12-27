@@ -1,0 +1,16 @@
+Vinetto extracts the thumbnails and associated metadata from the Thumbs.db 
+files.
+
+The Windows systems (98, ME, 2000, XP and 2003 Server) can store thumbnails
+and metadata of the picture files contained in the directories of its FAT32
+or NTFS filesystems.
+
+The thumbnails and associated metadata are stored in Thumbs.db files.
+The Thumbs.db files are undocumented OLE structured files.
+
+Once a picture file has been deleted from the filesystem, the related thumbnail
+and associated metada remain stored in the Thumbs.db file. So, the data
+contained in those Thumbs.db files are an helpful source of information
+for the forensics investigator.
+
+WWW:	http://vinetto.sourceforge.net/
