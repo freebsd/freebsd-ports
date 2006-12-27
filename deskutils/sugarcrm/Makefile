@@ -6,6 +6,7 @@
 
 PORTNAME=	sugarcrm
 PORTVERSION=	3.5.1
+PORTREVISON=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${SCRM_DISPATCHER}/sugarcrm/SugarOSArchive/SugarSuiteDownloadArchive/:src \
 		${SCRM_DISPATCHER}/sugardocs/Manuals/v3.5Manuals/:userdoc \
@@ -19,7 +20,10 @@ EXTRACT_ONLY=	${SRCNAME}${EXTRACT_SUFX}
 MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
-USE_PHP=	gd mysql session pcre xml
+DEFAULT_PHP_VER=4
+IGNORE_WITH_PHP=5
+DEFAULT_MYSQL_VER=	41
+IGNORE_WITH_MYSQL=	50 51
 USE_PHP=	gd mysql session pcre xml
 USE_ZIP=	yes
 NO_BUILD=	yes
