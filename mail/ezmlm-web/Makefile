@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://rucus.ru.ac.za/pub/mail/ezmlm/
 
-MAINTAINER=	guy-ezmlm@rucus.ru.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI script that lets you manage ezmlm-idx mailing lists through the web
 
 RUN_DEPENDS=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \

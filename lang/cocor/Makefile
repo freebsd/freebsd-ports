@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.scifac.ru.ac.za/coco/
 DISTNAME=	cocorc17
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	guy-ezmlm@rucus.ru.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A compiler generator that combines the functionality of lex and yacc
 
 WRKSRC=		${WRKDIR}
