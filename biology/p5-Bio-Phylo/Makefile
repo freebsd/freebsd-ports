@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	biology perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bio
@@ -15,13 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Phylogenetic analysis using perl
 
-RUN_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
+BUILD_DEPENDS=	p5-Exception-Class>1.22:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Math-Random>=0.67:${PORTSDIR}/math/p5-Math-Random \
 		p5-IO-String>=1.05:${PORTSDIR}/devel/p5-IO-String \
+		p5-bioperl>=0:${PORTSDIR}/biology/p5-bioperl \
 		p5-SVG>=1.07:${PORTSDIR}/textproc/p5-SVG
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN1=	dndtag.pl.1
-
 MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::ConfigData.3 \
 	Bio::Phylo::Forest.3 \
@@ -48,7 +49,7 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Unparsers::Pagel.3 \
 	Bio::Phylo::Util::CONSTANT.3 \
 	Bio::Phylo::Util::Exceptions.3 \
-	Bio::Phylo::Util::IDPool.3
+	Bio::Phylo::Util::IDPool.3 \
 
 PERL_MODBUILD=	yes
 
