@@ -711,6 +711,10 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/testExternalMethod.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -3100,6 +3104,7 @@ etc/rc.d/zeo.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/Extensions
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests
