@@ -13,6 +13,7 @@
 %%RCUBEDIR%%/index.php
 %%RCUBEDIR%%/logs/.htaccess
 %%RCUBEDIR%%/program/blank.gif
+%%RCUBEDIR%%/program/blocked.gif
 %%RCUBEDIR%%/program/include/bugs.inc
 %%RCUBEDIR%%/program/include/cache.inc
 %%RCUBEDIR%%/program/include/main.inc
@@ -278,6 +279,12 @@
 %%RCUBEDIR%%/program/lib/encoding/CP1257.map
 %%RCUBEDIR%%/program/lib/encoding/CP1258.map
 %%RCUBEDIR%%/program/lib/encoding/ISO-8859-1.map
+%%RCUBEDIR%%/program/lib/encoding/ISO-8859-10.map
+%%RCUBEDIR%%/program/lib/encoding/ISO-8859-11.map
+%%RCUBEDIR%%/program/lib/encoding/ISO-8859-13.map
+%%RCUBEDIR%%/program/lib/encoding/ISO-8859-14.map
+%%RCUBEDIR%%/program/lib/encoding/ISO-8859-15.map
+%%RCUBEDIR%%/program/lib/encoding/ISO-8859-16.map
 %%RCUBEDIR%%/program/lib/encoding/ISO-8859-2.map
 %%RCUBEDIR%%/program/lib/encoding/ISO-8859-3.map
 %%RCUBEDIR%%/program/lib/encoding/ISO-8859-4.map
@@ -390,6 +397,7 @@
 %%RCUBEDIR%%/program/steps/mail/list.inc
 %%RCUBEDIR%%/program/steps/mail/mark.inc
 %%RCUBEDIR%%/program/steps/mail/move_del.inc
+%%RCUBEDIR%%/program/steps/mail/quotadisplay.inc
 %%RCUBEDIR%%/program/steps/mail/quotaimg.inc
 %%RCUBEDIR%%/program/steps/mail/rss.inc
 %%RCUBEDIR%%/program/steps/mail/search.inc
@@ -493,6 +501,7 @@
 %%RCUBEDIR%%/skins/default/images/buttons/spellcheck_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/up_arrow.png
 %%RCUBEDIR%%/skins/default/images/cleardot.png
+%%RCUBEDIR%%/skins/default/images/dimple.png
 %%RCUBEDIR%%/skins/default/images/display/confirm.png
 %%RCUBEDIR%%/skins/default/images/display/info.png
 %%RCUBEDIR%%/skins/default/images/display/loading.gif
@@ -548,6 +557,7 @@
 %%RCUBEDIR%%/skins/default/pngbehavior.htc
 %%RCUBEDIR%%/skins/default/print.css
 %%RCUBEDIR%%/skins/default/settings.css
+%%RCUBEDIR%%/skins/default/splitter.js
 %%RCUBEDIR%%/skins/default/templates/addcontact.html
 %%RCUBEDIR%%/skins/default/templates/addidentity.html
 %%RCUBEDIR%%/skins/default/templates/addressbook.html
