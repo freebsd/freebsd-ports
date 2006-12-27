@@ -6,6 +6,7 @@
     SUBDIR += acfax
     SUBDIR += aldo
     SUBDIR += asmodem
+    SUBDIR += atslog
     SUBDIR += bfhist
     SUBDIR += bforce
     SUBDIR += bforce-kst
