@@ -8,9 +8,7 @@
 PORTNAME=	homard
 DISTVERSION=	8.5-1
 CATEGORIES=	french cad linux python
-MASTER_SITES=	${MASTER_SITE_LOCAL}		\
-		http://www.code-aster.org/FICHIERS/
-MASTER_SITE_SUBDIR=	thierry
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${DISTVERSION}.${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
