@@ -178,16 +178,16 @@ libdata/pkgconfig/mathview-frontend-custom-reader.pc
 libdata/pkgconfig/mathview-frontend-gmetadom.pc
 libdata/pkgconfig/mathview-frontend-libxml2-reader.pc
 libdata/pkgconfig/mathview-frontend-libxml2.pc
-share/gtkmathview/dictionary-combining.xml
-share/gtkmathview/dictionary-local.xml
-share/gtkmathview/dictionary.dtd
-share/gtkmathview/dictionary.xml
-share/gtkmathview/entities-table.dtd
-share/gtkmathview/entities-table.xml
-share/gtkmathview/gtkmathview.conf.dtd
-share/gtkmathview/mathml-entities.dtd
-@dirrm share/gtkmathview
-@dirrm include/gtkmathview/MathView
+%%DATADIR%%/dictionary-combining.xml
+%%DATADIR%%/dictionary-local.xml
+%%DATADIR%%/dictionary.dtd
+%%DATADIR%%/dictionary.xml
+%%DATADIR%%/entities-table.dtd
+%%DATADIR%%/entities-table.xml
+%%DATADIR%%/gtkmathview.conf.dtd
+%%DATADIR%%/mathml-entities.dtd
+@dirrm %%DATADIR%%
 @dirrm include/gtkmathview/gtk
+@dirrm include/gtkmathview/MathView
 @dirrm include/gtkmathview
 @dirrm etc/gtkmathview

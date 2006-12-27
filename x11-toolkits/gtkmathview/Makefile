@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gtkmathview
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
@@ -29,14 +29,14 @@ CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	mathmlviewer.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
-IGNORE= is unsupported on versions prior to FreeBSD 6.0
+IGNORE=	is unsupported on versions prior to FreeBSD 6.0
 .endif
 
 .include <bsd.port.post.mk>
