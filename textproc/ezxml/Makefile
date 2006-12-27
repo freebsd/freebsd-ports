@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezxml
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yazzy.org/ports/ezxml/
