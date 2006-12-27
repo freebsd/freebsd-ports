@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udfclient
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/ \
 		${MASTER_SITE_NETBSD}
@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Tools for UDF filesystem
+
+WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	with_pthread_cflags="${PTHREAD_CFLAGS}" \
