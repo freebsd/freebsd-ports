@@ -702,6 +702,7 @@
     SUBDIR += tthsum
     SUBDIR += unicornscan
     SUBDIR += vida
+    SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vlog
     SUBDIR += vnccrack

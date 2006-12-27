@@ -1,0 +1,12 @@
+bin/vinetto
+lib/%%PYTHON_VERSION%%/site-packages/vinreport.py
+lib/%%PYTHON_VERSION%%/site-packages/vinreport.pyc
+lib/%%PYTHON_VERSION%%/site-packages/vinreport.pyo
+lib/%%PYTHON_VERSION%%/site-packages/vinutils.py
+lib/%%PYTHON_VERSION%%/site-packages/vinutils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/vinutils.pyo
+%%DATADIR%%/HtRepTemplate.html
+%%DATADIR%%/header
+%%DATADIR%%/huffman
+%%DATADIR%%/quantization
+@dirrm %%DATADIR%%
