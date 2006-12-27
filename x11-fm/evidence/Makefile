@@ -24,8 +24,6 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		eet.9:${PORTSDIR}/devel/eet \
 		pcre.0:${PORTSDIR}/devel/pcre
 
-BROKEN=		Incomplete pkg-plist
-
 USE_FAM=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
