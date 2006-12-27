@@ -659,6 +659,7 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/sort.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/sparse.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/spchol.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/spdet.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/spfind.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/spkron.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/splu.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/spparms.oct
@@ -1079,6 +1080,7 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/not.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/orderfields.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/pack.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/paren.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/parseparams.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/popen2.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/semicolon.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/setfield.m
@@ -1107,6 +1109,7 @@ share/octave/%%OCTAVE_VERSION%%/m/pkg/pkg.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__axis_label__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errcomm__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errplot__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__make_using_clause__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plot_globals__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plr1__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plr2__.m
