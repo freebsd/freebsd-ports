@@ -1,0 +1,21 @@
+#!/bin/sh
+# $Id$
+
+# PROVIDE: expiretable
+# KEYWORD: shutdown
+
+# /etc/rc.conf tunables. 
+# - expiretable_enable	set to "YES" to enable expiretable startup
+# - expiretable_flags	specify your own flags to expiretable
+
+. /etc/rc.subr
+
+name="expiretable"
+rcvar=`set_rcvar`
+command="/usr/local/sbin/expiretable"
+load_rc_config "$name"
+
+expiretable_enable=${expiretable_enable-"NO"}
+expiretable_flags=${expiretable_flags-""}
+
+run_rc_command "$1"
