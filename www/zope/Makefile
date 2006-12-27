@@ -7,17 +7,21 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.7.9
+PORTREVISION=	1
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/Zope-${PORTVERSION}/
-DISTNAME=	Zope-${PORTVERSION}-final
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.zope.org/Products/Zope/Zope-${PORTVERSION}/:src \
+		http://www.zope.org/Products/Zope/Hotfix-2006-08-21/Hotfix-20060821/:hotfix
+DISTFILES=	Zope-${PORTVERSION}-final.tgz:src \
+		${HOTFIX}.tar.gz:hotfix
 
 MAINTAINER=	estartu@augusta.de
 COMMENT=	An object-based web application platform
 
+WRKSRC=		${WRKDIR}/Zope-${PORTVERSION}-final
 USE_PYTHON=	2.3
 USE_RC_SUBR=	yes
 DIST_SUBDIR=	zope
+HOTFIX=		Hotfix_20060821
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -65,7 +69,11 @@ post-patch:
 		-e 's,^\(EXENAMES="\).*"$$,\1${PYTHON_VERSION}",g' \
 		${WRKSRC}/configure
 
+post-build:
+	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/${HOTFIX}
+
 post-install:
+	@${CP} -R ${WRKDIR}/${HOTFIX} ${ZOPEBASEDIR}/lib/python/Products/
 	@${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in ${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} < ${FILESDIR}/pkg-message.in \
 		> ${PKGMESSAGE}
