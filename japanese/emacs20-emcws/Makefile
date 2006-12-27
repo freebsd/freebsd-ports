@@ -8,7 +8,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	20.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -24,6 +24,11 @@ COMMENT=	Emacs + Canna + Wnn + Sj3
 
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
+
+CONFLICTS=	emacs-19.* emacs-21.* \
+		ja-emcws-21.* \
+		xemacs-[0-9]* xemacs-devel-[0-9]* \
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
