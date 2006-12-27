@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	CPANPLUS
-PORTVERSION=	0.0720
+PORTVERSION=	0.0760
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/K/KA/KANE
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.072
+DISTNAME=	${PORTNAME}-0.076
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
@@ -65,6 +65,7 @@ MAN3=	CPANPLUS.3 \
 	CPANPLUS::Backend::RV.3 \
 	CPANPLUS::Configure.3 \
 	CPANPLUS::Dist.3 \
+	CPANPLUS::Dist::Base.3 \
 	CPANPLUS::Dist::MM.3 \
 	CPANPLUS::Dist::Sample.3 \
 	CPANPLUS::Error.3 \
@@ -73,6 +74,7 @@ MAN3=	CPANPLUS.3 \
 	CPANPLUS::Internals.3 \
 	CPANPLUS::Internals::Extract.3 \
 	CPANPLUS::Internals::Fetch.3 \
+	CPANPLUS::Internals::Report.3 \
 	CPANPLUS::Internals::Search.3 \
 	CPANPLUS::Internals::Source.3 \
 	CPANPLUS::Internals::Utils.3 \

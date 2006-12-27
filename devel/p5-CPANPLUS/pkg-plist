@@ -1,6 +1,7 @@
 bin/cpan2dist
 bin/cpanp
 bin/cpanp-boxed
+bin/cpanp-run-perl
 %%SITE_PERL%%/CPANPLUS.pm
 %%SITE_PERL%%/CPANPLUS/Backend.pm
 %%SITE_PERL%%/CPANPLUS/Backend/RV.pm
@@ -8,6 +9,7 @@ bin/cpanp-boxed
 %%SITE_PERL%%/CPANPLUS/Configure.pm
 %%SITE_PERL%%/CPANPLUS/Configure/Setup.pm
 %%SITE_PERL%%/CPANPLUS/Dist.pm
+%%SITE_PERL%%/CPANPLUS/Dist/Base.pm
 %%SITE_PERL%%/CPANPLUS/Dist/MM.pm
 %%SITE_PERL%%/CPANPLUS/Dist/Sample.pm
 %%SITE_PERL%%/CPANPLUS/Error.pm
