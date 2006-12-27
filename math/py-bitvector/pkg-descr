@@ -1,0 +1,6 @@
+The BitVector class for a memory-efficient packed representation of bit arrays
+and for logical operations on such arrays. The core idea used in this Python
+script for bin packing is based on an internet posting by Josiah Carlson to
+the Pyrex mailing list.
+
+WWW:	http://rvl4.ecn.purdue.edu/~kak/dist/BitVector-1.3.html

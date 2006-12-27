@@ -282,6 +282,7 @@
     SUBDIR += pspp
     SUBDIR += py-basemap
     SUBDIR += py-basemap-data
+    SUBDIR += py-bitvector
     SUBDIR += py-fpconst
     SUBDIR += py-gato
     SUBDIR += py-gnuplot
