@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabause
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -28,7 +28,9 @@ SUB_FILES=	pkg-message
 PLIST_DIRS=	share/yabause
 PLIST_FILES=	bin/gen68k \
 		bin/yabause \
-		share/yabause/c68k_ini.inc
+		share/yabause/c68k_ini.inc \
+		share/applications/yabause.desktop \
+		share/pixmaps/yabause.png
 MAN1=	yabause.1
 
 post-install:
