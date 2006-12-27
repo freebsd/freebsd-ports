@@ -1,13 +1,18 @@
---- Makefile.in.orig	Wed Jul 27 14:02:36 2005
-+++ Makefile.in	Wed Jul 27 14:04:08 2005
-@@ -483,8 +483,8 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -522,9 +522,9 @@
  		$(LIBTOOL) --mode=install $(INSTALL) pcregrep@EXEEXT@ $(DESTDIR)$(BINDIR)/pcregrep@EXEEXT@
  		$(LIBTOOL) --mode=install $(INSTALL) pcretest@EXEEXT@ $(DESTDIR)$(BINDIR)/pcretest@EXEEXT@
  		$(INSTALL) pcre-config $(DESTDIR)$(BINDIR)/pcre-config
 -		$(mkinstalldirs) $(DESTDIR)$(LIBDIR)/pkgconfig
 -		$(INSTALL_DATA) libpcre.pc $(DESTDIR)$(LIBDIR)/pkgconfig/libpcre.pc
+-		$(INSTALL_DATA) libpcrecpp.pc $(DESTDIR)$(LIBDIR)/pkgconfig/libpcrecpp.pc
 +		$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/pkgconfig
 +		$(INSTALL_DATA) libpcre.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/libpcre.pc
++		$(INSTALL_DATA) libpcrecpp.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/libpcrecpp.pc
  
  # The uninstall target removes all the files that were installed.
  

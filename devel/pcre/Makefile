@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	6.7
+PORTVERSION=	7.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -21,6 +21,8 @@ CONFLICTS?=	pcre-utf8-[0-9]*
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -36,8 +38,6 @@ CONFIGURE_ARGS+=--enable-utf8 \
 .if defined(WITH_LINK_SIZE)
 CONFIGURE_ARGS+=--with-link-size=${WITH_LINK_SIZE}
 .endif
-
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pcregrep.1 pcretest.1
 MAN3=		pcre.3 pcre_compile.3 pcre_compile2.3 pcre_config.3 \
