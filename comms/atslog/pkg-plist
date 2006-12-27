@@ -1,11 +1,13 @@
+@unexec if cmp -s %D/etc/atslog.conf %D/etc/atslog.conf.default; then rm -f %D/etc/atslog.conf; fi
+%%WWW%%@unexec if cmp -s %D/www/atslog/include/set/conf.inc.php %D/www/atslog/include/set/conf.inc.default.php; then rm -f %D/www/atslog/include/set/conf.inc.php; fi
 bin/atslogcleardb.pl
 bin/atslogd
 bin/atslogdaily
 bin/atslogdb.pl
 bin/atslogmaster
 bin/atslogrotate
-etc/atslog.conf
 etc/atslog.conf.default
+@exec [ -f %B/atslog.conf ] || cp %B/%f %B/atslog.conf
 etc/atslog.conf.default.rus
 libexec/atslog/4200e.lib
 libexec/atslog/gd-320.lib
@@ -32,14 +34,6 @@ libexec/atslog/skp-816.lib
 %%DATADIR%%/sql/createuser.pgsql.sql
 %%DATADIR%%/sql/data.sql
 %%DATADIR%%/sql/install-sql.pl
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/DEINSTALL
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UPDATING
-%%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%EXAMPLESDIR%%/textlogs/Alcatel 4200.txt
 %%EXAMPLESDIR%%/textlogs/Definity.txt
 %%EXAMPLESDIR%%/textlogs/Ericsson BP 250.txt
@@ -95,241 +89,240 @@ libexec/atslog/skp-816.lib
 %%EXAMPLESDIR%%/textlogs/Siemens Hicom-250.txt
 %%EXAMPLESDIR%%/textlogs/Siemens Hicom-350H.txt
 %%EXAMPLESDIR%%/textlogs/Telrad.txt
-www/atslog/calls/index.html
-www/atslog/calls/index.php
-www/atslog/calls/query/.htaccess
-www/atslog/calls/query/AllCalls.php
-www/atslog/calls/query/CoAll.php
-www/atslog/calls/query/CoDetail.php
-www/atslog/calls/query/CoIntDetail.php
-www/atslog/calls/query/CoNum.php
-www/atslog/calls/query/CoNumDetail.php
-www/atslog/calls/query/IntAll.php
-www/atslog/calls/query/IntCoDetail.php
-www/atslog/calls/query/IntDetail.php
-www/atslog/calls/query/IntNum.php
-www/atslog/calls/query/IntNumDetail.php
-www/atslog/calls/query/NumAll.php
-www/atslog/calls/query/NumDetail.php
-www/atslog/calls/query/diagram.php
-www/atslog/diagram/diagram_bars.php
-www/atslog/diagram/diagram_bars_dur.php
-www/atslog/diagram/diagram_pie.php
-www/atslog/diagram/index.html
-www/atslog/diagram/index.php
-www/atslog/include/adodb/.htaccess
-www/atslog/include/adodb/adodb-csvlib.inc.php
-www/atslog/include/adodb/adodb-datadict.inc.php
-www/atslog/include/adodb/adodb-error.inc.php
-www/atslog/include/adodb/adodb-errorhandler.inc.php
-www/atslog/include/adodb/adodb-errorpear.inc.php
-www/atslog/include/adodb/adodb-exceptions.inc.php
-www/atslog/include/adodb/adodb-iterator.inc.php
-www/atslog/include/adodb/adodb-lib.inc.php
-www/atslog/include/adodb/adodb-pager.inc.php
-www/atslog/include/adodb/adodb-pear.inc.php
-www/atslog/include/adodb/adodb-perf.inc.php
-www/atslog/include/adodb/adodb-php4.inc.php
-www/atslog/include/adodb/adodb-time.inc.php
-www/atslog/include/adodb/adodb-xmlschema.inc.php
-www/atslog/include/adodb/adodb.inc.php
-www/atslog/include/adodb/datadict/datadict-access.inc.php
-www/atslog/include/adodb/datadict/datadict-db2.inc.php
-www/atslog/include/adodb/datadict/datadict-firebird.inc.php
-www/atslog/include/adodb/datadict/datadict-generic.inc.php
-www/atslog/include/adodb/datadict/datadict-ibase.inc.php
-www/atslog/include/adodb/datadict/datadict-informix.inc.php
-www/atslog/include/adodb/datadict/datadict-mssql.inc.php
-www/atslog/include/adodb/datadict/datadict-mysql.inc.php
-www/atslog/include/adodb/datadict/datadict-oci8.inc.php
-www/atslog/include/adodb/datadict/datadict-postgres.inc.php
-www/atslog/include/adodb/datadict/datadict-sapdb.inc.php
-www/atslog/include/adodb/datadict/datadict-sybase.inc.php
-www/atslog/include/adodb/drivers/adodb-mysql.inc.php
-www/atslog/include/adodb/drivers/adodb-mysqli.inc.php
-www/atslog/include/adodb/drivers/adodb-mysqlt.inc.php
-www/atslog/include/adodb/drivers/adodb-pdo_mysql.inc.php
-www/atslog/include/adodb/drivers/adodb-postgres.inc.php
-www/atslog/include/adodb/drivers/adodb-postgres64.inc.php
-www/atslog/include/adodb/drivers/adodb-postgres7.inc.php
-www/atslog/include/adodb/drivers/adodb-postgres8.inc.php
-www/atslog/include/adodb/lang/adodb-ar.inc.php
-www/atslog/include/adodb/lang/adodb-bg.inc.php
-www/atslog/include/adodb/lang/adodb-bgutf8.inc.php
-www/atslog/include/adodb/lang/adodb-ca.inc.php
-www/atslog/include/adodb/lang/adodb-cn.inc.php
-www/atslog/include/adodb/lang/adodb-cz.inc.php
-www/atslog/include/adodb/lang/adodb-da.inc.php
-www/atslog/include/adodb/lang/adodb-de.inc.php
-www/atslog/include/adodb/lang/adodb-en.inc.php
-www/atslog/include/adodb/lang/adodb-es.inc.php
-www/atslog/include/adodb/lang/adodb-esperanto.inc.php
-www/atslog/include/adodb/lang/adodb-fr.inc.php
-www/atslog/include/adodb/lang/adodb-hu.inc.php
-www/atslog/include/adodb/lang/adodb-it.inc.php
-www/atslog/include/adodb/lang/adodb-nl.inc.php
-www/atslog/include/adodb/lang/adodb-pl.inc.php
-www/atslog/include/adodb/lang/adodb-pt-br.inc.php
-www/atslog/include/adodb/lang/adodb-ro.inc.php
-www/atslog/include/adodb/lang/adodb-ru1251.inc.php
-www/atslog/include/adodb/lang/adodb-sv.inc.php
-www/atslog/include/adodb/lang/adodb-uk1251.inc.php
-www/atslog/include/adodb/perf/perf-mysql.inc.php
-www/atslog/include/adodb/perf/perf-postgres.inc.php
-www/atslog/include/adodb/pivottable.inc.php
-www/atslog/include/adodb/rsfilter.inc.php
-www/atslog/include/adodb/server.php
-www/atslog/include/adodb/session/adodb-compress-bzip2.php
-www/atslog/include/adodb/session/adodb-compress-gzip.php
-www/atslog/include/adodb/session/adodb-cryptsession.php
-www/atslog/include/adodb/session/adodb-cryptsession2.php
-www/atslog/include/adodb/session/adodb-encrypt-mcrypt.php
-www/atslog/include/adodb/session/adodb-encrypt-md5.php
-www/atslog/include/adodb/session/adodb-encrypt-secret.php
-www/atslog/include/adodb/session/adodb-encrypt-sha1.php
-www/atslog/include/adodb/session/adodb-sess.txt
-www/atslog/include/adodb/session/adodb-session-clob.php
-www/atslog/include/adodb/session/adodb-session-clob2.php
-www/atslog/include/adodb/session/adodb-session.php
-www/atslog/include/adodb/session/adodb-session2.php
-www/atslog/include/adodb/session/adodb-sessions.mysql.sql
-www/atslog/include/adodb/session/adodb-sessions.oracle.clob.sql
-www/atslog/include/adodb/session/adodb-sessions.oracle.sql
-www/atslog/include/adodb/session/crypt.inc.php
-www/atslog/include/adodb/session/old/adodb-cryptsession.php
-www/atslog/include/adodb/session/old/adodb-session-clob.php
-www/atslog/include/adodb/session/old/adodb-session.php
-www/atslog/include/adodb/session/old/crypt.inc.php
-www/atslog/include/adodb/toexport.inc.php
-www/atslog/include/adodb/tohtml.inc.php
-www/atslog/include/adodb/xmlschema.dtd
-www/atslog/include/adodb/xsl/convert-0.1-0.2.xsl
-www/atslog/include/adodb/xsl/convert-0.1-0.3.xsl
-www/atslog/include/adodb/xsl/convert-0.2-0.1.xsl
-www/atslog/include/adodb/xsl/convert-0.2-0.3.xsl
-www/atslog/include/adodb/xsl/remove-0.2.xsl
-www/atslog/include/adodb/xsl/remove-0.3.xsl
-www/atslog/include/colors/.htaccess
-www/atslog/include/colors/classic.php
-www/atslog/include/colors/standart.php
-www/atslog/include/colors/whitewood.php
-www/atslog/include/export/.htaccess
-www/atslog/include/export/2excel.php
-www/atslog/include/img/arrow.0.gif
-www/atslog/include/img/arrow.x.gif
-www/atslog/include/img/arrow.y.gif
-www/atslog/include/img/arrowAsc.gif
-www/atslog/include/img/arrowDesc.gif
-www/atslog/include/img/button_drop.png
-www/atslog/include/img/button_edit.png
-www/atslog/include/img/cancel.gif
-www/atslog/include/img/colors/classic/arrows/end_left.gif
-www/atslog/include/img/colors/classic/arrows/end_right.gif
-www/atslog/include/img/colors/classic/arrows/next_left.gif
-www/atslog/include/img/colors/classic/arrows/next_right.gif
-www/atslog/include/img/colors/classic/arrows/pages_left.gif
-www/atslog/include/img/colors/classic/arrows/pages_right.gif
-www/atslog/include/img/colors/standart/arrows/end_left.gif
-www/atslog/include/img/colors/standart/arrows/end_right.gif
-www/atslog/include/img/colors/standart/arrows/next_left.gif
-www/atslog/include/img/colors/standart/arrows/next_right.gif
-www/atslog/include/img/colors/standart/arrows/pages_left.gif
-www/atslog/include/img/colors/standart/arrows/pages_right.gif
-www/atslog/include/img/colors/whitewood/arrows/end_left.gif
-www/atslog/include/img/colors/whitewood/arrows/end_right.gif
-www/atslog/include/img/colors/whitewood/arrows/next_left.gif
-www/atslog/include/img/colors/whitewood/arrows/next_right.gif
-www/atslog/include/img/colors/whitewood/arrows/pages_left.gif
-www/atslog/include/img/colors/whitewood/arrows/pages_right.gif
-www/atslog/include/img/delete.gif
-www/atslog/include/img/dot.colorblack.gif
-www/atslog/include/img/dot.colorone.gif
-www/atslog/include/img/dot.colorthree.gif
-www/atslog/include/img/dot.colortwo.gif
-www/atslog/include/img/dot.free.gif
-www/atslog/include/img/heart_w_01.gif
-www/atslog/include/img/heart_w_02.gif
-www/atslog/include/img/heart_w_03.gif
-www/atslog/include/img/home.gif
-www/atslog/include/img/icon.print.gif
-www/atslog/include/img/key.gif
-www/atslog/include/img/new.gif
-www/atslog/include/img/ok.gif
-www/atslog/include/img/open.gif
-www/atslog/include/img/row.gif
-www/atslog/include/img/rownew.gif
-www/atslog/include/img/rowselected.gif
-www/atslog/include/img/save.gif
-www/atslog/include/img/undo.gif
-www/atslog/include/index.html
-www/atslog/include/index.php
-www/atslog/include/lang/.htaccess
-www/atslog/include/lang/en_US.php
-www/atslog/include/lang/ru_1251.php
-www/atslog/include/lang/ru_KOI8-R.php
-www/atslog/include/phplot/.htaccess
-www/atslog/include/phplot/LICENSE.GPL
-www/atslog/include/phplot/LICENSE.PHP_3_0
-www/atslog/include/phplot/phplot.php
-www/atslog/include/phplot/phplot_data.php
-www/atslog/include/phplot/rgb.inc.php
-www/atslog/include/set/.htaccess
-www/atslog/include/set/commonData.php
-www/atslog/include/set/conf.inc.default.php
-www/atslog/include/set/conf.inc.php
-www/atslog/include/set/footer.html
-www/atslog/include/set/functions.js
-www/atslog/include/set/functions.php
-www/atslog/include/set/header.html
-www/atslog/include/set/menuTable.html
-www/atslog/include/set/printfooter.html
-www/atslog/index.html
-www/atslog/index.php
-www/atslog/intern/index.html
-www/atslog/intern/index.php
-www/atslog/lines/index.html
-www/atslog/lines/index.php
-www/atslog/phonebook/index.html
-www/atslog/phonebook/index.php
-www/atslog/settings/index.html
-www/atslog/settings/index.php
-www/atslog/users/index.html
-www/atslog/users/index.php
-@dirrm www/atslog/users
-@dirrm www/atslog/settings
-@dirrm www/atslog/phonebook
-@dirrm www/atslog/lines
-@dirrm www/atslog/intern
-@dirrm www/atslog/include/set
-@dirrm www/atslog/include/phplot
-@dirrm www/atslog/include/lang
-@dirrm www/atslog/include/img/colors/whitewood/arrows
-@dirrm www/atslog/include/img/colors/whitewood
-@dirrm www/atslog/include/img/colors/standart/arrows
-@dirrm www/atslog/include/img/colors/standart
-@dirrm www/atslog/include/img/colors/classic/arrows
-@dirrm www/atslog/include/img/colors/classic
-@dirrm www/atslog/include/img/colors
-@dirrm www/atslog/include/img
-@dirrm www/atslog/include/export
-@dirrm www/atslog/include/colors
-@dirrm www/atslog/include/adodb/xsl
-@dirrm www/atslog/include/adodb/session/old
-@dirrm www/atslog/include/adodb/session
-@dirrm www/atslog/include/adodb/perf
-@dirrm www/atslog/include/adodb/lang
-@dirrm www/atslog/include/adodb/drivers
-@dirrm www/atslog/include/adodb/datadict
-@dirrm www/atslog/include/adodb
-@dirrm www/atslog/include
-@dirrm www/atslog/diagram
-@dirrm www/atslog/calls/query
-@dirrm www/atslog/calls
-@dirrm www/atslog
-@dirrm %%EXAMPLESDIR%%/textlogs
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/sql
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%
-@dirrm libexec/atslog
+%%WWW%%www/atslog/phonebook/index.html
+%%WWW%%www/atslog/phonebook/index.php
+%%WWW%%www/atslog/intern/index.html
+%%WWW%%www/atslog/intern/index.php
+%%WWW%%www/atslog/settings/index.html
+%%WWW%%www/atslog/settings/index.php
+%%WWW%%www/atslog/users/index.html
+%%WWW%%www/atslog/users/index.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-uk1251.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-pl.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-it.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-hu.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-cz.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-ro.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-ca.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-da.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-pt-br.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-de.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-bg.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-sv.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-bgutf8.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-ru1251.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-esperanto.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-cn.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-en.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-ar.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-fr.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-es.inc.php
+%%WWW%%www/atslog/include/adodb/lang/adodb-nl.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-firebird.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-postgres.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-sybase.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-db2.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-sapdb.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-informix.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-generic.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-mssql.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-access.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-oci8.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-ibase.inc.php
+%%WWW%%www/atslog/include/adodb/datadict/datadict-mysql.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres64.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres7.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-mysqli.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres8.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-mysql.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-pdo_mysql.inc.php
+%%WWW%%www/atslog/include/adodb/drivers/adodb-mysqlt.inc.php
+%%WWW%%www/atslog/include/adodb/xsl/convert-0.1-0.3.xsl
+%%WWW%%www/atslog/include/adodb/xsl/remove-0.2.xsl
+%%WWW%%www/atslog/include/adodb/xsl/remove-0.3.xsl
+%%WWW%%www/atslog/include/adodb/xsl/convert-0.1-0.2.xsl
+%%WWW%%www/atslog/include/adodb/xsl/convert-0.2-0.1.xsl
+%%WWW%%www/atslog/include/adodb/xsl/convert-0.2-0.3.xsl
+%%WWW%%www/atslog/include/adodb/session/old/adodb-cryptsession.php
+%%WWW%%www/atslog/include/adodb/session/old/adodb-session.php
+%%WWW%%www/atslog/include/adodb/session/old/crypt.inc.php
+%%WWW%%www/atslog/include/adodb/session/old/adodb-session-clob.php
+%%WWW%%www/atslog/include/adodb/session/adodb-sessions.oracle.sql
+%%WWW%%www/atslog/include/adodb/session/adodb-sessions.mysql.sql
+%%WWW%%www/atslog/include/adodb/session/adodb-session-clob2.php
+%%WWW%%www/atslog/include/adodb/session/adodb-session.php
+%%WWW%%www/atslog/include/adodb/session/adodb-cryptsession2.php
+%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-mcrypt.php
+%%WWW%%www/atslog/include/adodb/session/adodb-session-clob.php
+%%WWW%%www/atslog/include/adodb/session/adodb-compress-gzip.php
+%%WWW%%www/atslog/include/adodb/session/crypt.inc.php
+%%WWW%%www/atslog/include/adodb/session/adodb-session2.php
+%%WWW%%www/atslog/include/adodb/session/adodb-sess.txt
+%%WWW%%www/atslog/include/adodb/session/adodb-cryptsession.php
+%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-secret.php
+%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-md5.php
+%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-sha1.php
+%%WWW%%www/atslog/include/adodb/session/adodb-compress-bzip2.php
+%%WWW%%www/atslog/include/adodb/session/adodb-sessions.oracle.clob.sql
+%%WWW%%www/atslog/include/adodb/perf/perf-postgres.inc.php
+%%WWW%%www/atslog/include/adodb/perf/perf-mysql.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-csvlib.inc.php
+%%WWW%%www/atslog/include/adodb/rsfilter.inc.php
+%%WWW%%www/atslog/include/adodb/xmlschema.dtd
+%%WWW%%www/atslog/include/adodb/adodb-pear.inc.php
+%%WWW%%www/atslog/include/adodb/server.php
+%%WWW%%www/atslog/include/adodb/tohtml.inc.php
+%%WWW%%www/atslog/include/adodb/.htaccess
+%%WWW%%www/atslog/include/adodb/adodb-iterator.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-errorpear.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-error.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-perf.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-time.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-pager.inc.php
+%%WWW%%www/atslog/include/adodb/adodb.inc.php
+%%WWW%%www/atslog/include/adodb/pivottable.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-lib.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-exceptions.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-datadict.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-php4.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-xmlschema.inc.php
+%%WWW%%www/atslog/include/adodb/toexport.inc.php
+%%WWW%%www/atslog/include/adodb/adodb-errorhandler.inc.php
+%%WWW%%www/atslog/include/colors/whitewood.php
+%%WWW%%www/atslog/include/colors/standart.php
+%%WWW%%www/atslog/include/colors/classic.php
+%%WWW%%www/atslog/include/colors/.htaccess
+%%WWW%%www/atslog/include/export/2excel.php
+%%WWW%%www/atslog/include/export/.htaccess
+%%WWW%%www/atslog/include/lang/ru_KOI8-R.php
+%%WWW%%www/atslog/include/lang/en_US.php
+%%WWW%%www/atslog/include/lang/ru_1251.php
+%%WWW%%www/atslog/include/lang/.htaccess
+%%WWW%%www/atslog/include/phplot/phplot_data.php
+%%WWW%%www/atslog/include/phplot/LICENSE.GPL
+%%WWW%%www/atslog/include/phplot/rgb.inc.php
+%%WWW%%www/atslog/include/phplot/.htaccess
+%%WWW%%www/atslog/include/phplot/phplot.php
+%%WWW%%www/atslog/include/phplot/LICENSE.PHP_3_0
+%%WWW%%www/atslog/include/set/printfooter.html
+%%WWW%%www/atslog/include/set/menuTable.html
+%%WWW%%www/atslog/include/set/footer.html
+%%WWW%%www/atslog/include/set/conf.inc.default.php
+%%WWW%%@exec [ -f %B/conf.inc.php ] || cp %B/%f %B/conf.inc.php
+%%WWW%%www/atslog/include/set/functions.js
+%%WWW%%www/atslog/include/set/commonData.php
+%%WWW%%www/atslog/include/set/.htaccess
+%%WWW%%www/atslog/include/set/header.html
+%%WWW%%www/atslog/include/set/functions.php
+%%WWW%%www/atslog/include/img/colors/standart/arrows/next_right.gif
+%%WWW%%www/atslog/include/img/colors/standart/arrows/pages_right.gif
+%%WWW%%www/atslog/include/img/colors/standart/arrows/end_right.gif
+%%WWW%%www/atslog/include/img/colors/standart/arrows/next_left.gif
+%%WWW%%www/atslog/include/img/colors/standart/arrows/pages_left.gif
+%%WWW%%www/atslog/include/img/colors/standart/arrows/end_left.gif
+%%WWW%%www/atslog/include/img/colors/classic/arrows/next_right.gif
+%%WWW%%www/atslog/include/img/colors/classic/arrows/pages_right.gif
+%%WWW%%www/atslog/include/img/colors/classic/arrows/end_right.gif
+%%WWW%%www/atslog/include/img/colors/classic/arrows/next_left.gif
+%%WWW%%www/atslog/include/img/colors/classic/arrows/pages_left.gif
+%%WWW%%www/atslog/include/img/colors/classic/arrows/end_left.gif
+%%WWW%%www/atslog/include/img/colors/whitewood/arrows/next_right.gif
+%%WWW%%www/atslog/include/img/colors/whitewood/arrows/pages_right.gif
+%%WWW%%www/atslog/include/img/colors/whitewood/arrows/end_right.gif
+%%WWW%%www/atslog/include/img/colors/whitewood/arrows/next_left.gif
+%%WWW%%www/atslog/include/img/colors/whitewood/arrows/pages_left.gif
+%%WWW%%www/atslog/include/img/colors/whitewood/arrows/end_left.gif
+%%WWW%%www/atslog/include/img/dot.colorthree.gif
+%%WWW%%www/atslog/include/img/button_drop.png
+%%WWW%%www/atslog/include/img/rowselected.gif
+%%WWW%%www/atslog/include/img/arrowAsc.gif
+%%WWW%%www/atslog/include/img/rownew.gif
+%%WWW%%www/atslog/include/img/icon.print.gif
+%%WWW%%www/atslog/include/img/cancel.gif
+%%WWW%%www/atslog/include/img/arrow.0.gif
+%%WWW%%www/atslog/include/img/home.gif
+%%WWW%%www/atslog/include/img/key.gif
+%%WWW%%www/atslog/include/img/heart_w_01.gif
+%%WWW%%www/atslog/include/img/arrowDesc.gif
+%%WWW%%www/atslog/include/img/new.gif
+%%WWW%%www/atslog/include/img/heart_w_02.gif
+%%WWW%%www/atslog/include/img/dot.colortwo.gif
+%%WWW%%www/atslog/include/img/heart_w_03.gif
+%%WWW%%www/atslog/include/img/button_edit.png
+%%WWW%%www/atslog/include/img/save.gif
+%%WWW%%www/atslog/include/img/dot.free.gif
+%%WWW%%www/atslog/include/img/arrow.x.gif
+%%WWW%%www/atslog/include/img/arrow.y.gif
+%%WWW%%www/atslog/include/img/open.gif
+%%WWW%%www/atslog/include/img/delete.gif
+%%WWW%%www/atslog/include/img/undo.gif
+%%WWW%%www/atslog/include/img/row.gif
+%%WWW%%www/atslog/include/img/ok.gif
+%%WWW%%www/atslog/include/img/dot.colorone.gif
+%%WWW%%www/atslog/include/img/dot.colorblack.gif
+%%WWW%%www/atslog/include/index.html
+%%WWW%%www/atslog/include/index.php
+%%WWW%%www/atslog/diagram/diagram_bars_dur.php
+%%WWW%%www/atslog/diagram/diagram_bars.php
+%%WWW%%www/atslog/diagram/diagram_pie.php
+%%WWW%%www/atslog/diagram/index.html
+%%WWW%%www/atslog/diagram/index.php
+%%WWW%%www/atslog/lines/index.html
+%%WWW%%www/atslog/lines/index.php
+%%WWW%%www/atslog/calls/query/IntNumDetail.php
+%%WWW%%www/atslog/calls/query/IntCoDetail.php
+%%WWW%%www/atslog/calls/query/CoAll.php
+%%WWW%%www/atslog/calls/query/CoIntDetail.php
+%%WWW%%www/atslog/calls/query/diagram.php
+%%WWW%%www/atslog/calls/query/CoNumDetail.php
+%%WWW%%www/atslog/calls/query/IntNum.php
+%%WWW%%www/atslog/calls/query/IntDetail.php
+%%WWW%%www/atslog/calls/query/CoNum.php
+%%WWW%%www/atslog/calls/query/NumDetail.php
+%%WWW%%www/atslog/calls/query/IntAll.php
+%%WWW%%www/atslog/calls/query/CoDetail.php
+%%WWW%%www/atslog/calls/query/.htaccess
+%%WWW%%www/atslog/calls/query/AllCalls.php
+%%WWW%%www/atslog/calls/query/NumAll.php
+%%WWW%%www/atslog/calls/index.html
+%%WWW%%www/atslog/calls/index.php
+%%WWW%%www/atslog/index.html
+%%WWW%%www/atslog/index.php
+%%WWW%%@dirrmtry www/atslog/users
+%%WWW%%@dirrmtry www/atslog/settings
+%%WWW%%@dirrmtry www/atslog/phonebook
+%%WWW%%@dirrmtry www/atslog/lines
+%%WWW%%@dirrmtry www/atslog/intern
+%%WWW%%@dirrmtry www/atslog/include/set
+%%WWW%%@dirrmtry www/atslog/include/phplot
+%%WWW%%@dirrmtry www/atslog/include/lang
+%%WWW%%@dirrmtry www/atslog/include/img/colors/whitewood/arrows
+%%WWW%%@dirrmtry www/atslog/include/img/colors/whitewood
+%%WWW%%@dirrmtry www/atslog/include/img/colors/standart/arrows
+%%WWW%%@dirrmtry www/atslog/include/img/colors/standart
+%%WWW%%@dirrmtry www/atslog/include/img/colors/classic/arrows
+%%WWW%%@dirrmtry www/atslog/include/img/colors/classic
+%%WWW%%@dirrmtry www/atslog/include/img/colors
+%%WWW%%@dirrmtry www/atslog/include/img
+%%WWW%%@dirrmtry www/atslog/include/export
+%%WWW%%@dirrmtry www/atslog/include/colors
+%%WWW%%@dirrmtry www/atslog/include/adodb/xsl
+%%WWW%%@dirrmtry www/atslog/include/adodb/session/old
+%%WWW%%@dirrmtry www/atslog/include/adodb/session
+%%WWW%%@dirrmtry www/atslog/include/adodb/perf
+%%WWW%%@dirrmtry www/atslog/include/adodb/lang
+%%WWW%%@dirrmtry www/atslog/include/adodb/drivers
+%%WWW%%@dirrmtry www/atslog/include/adodb/datadict
+%%WWW%%@dirrmtry www/atslog/include/adodb
+%%WWW%%@dirrmtry www/atslog/include
+%%WWW%%@dirrmtry www/atslog/diagram
+%%WWW%%@dirrmtry www/atslog/calls/query
+%%WWW%%@dirrmtry www/atslog/calls
+%%WWW%%@dirrmtry www/atslog
+@dirrmtry libexec/atslog
+@dirrmtry %%DATADIR%%/lang
+@dirrmtry %%DATADIR%%/sql
+@dirrmtry %%DATADIR%%
+@dirrmtry %%EXAMPLESDIR%%/textlogs
+@dirrmtry %%EXAMPLESDIR%%

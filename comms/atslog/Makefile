@@ -7,6 +7,7 @@
 
 PORTNAME=	atslog
 PORTVERSION=	2.0.0.p4
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -54,6 +55,9 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|createsqltables.mysql.sql|${DATADIR}/sql/createsqltables.mysql.sql|' \
 	    -e 's|data.sql|${DATADIR}/sql/data.sql|' ${WRKSRC}/data/sql/install-sql.pl
+.for i in ${CONFIGS}
+	@${REINPLACE_CMD} -e 's|/log|/log/atslog|' ${WRKSRC}/include/${i}.in
+.endfor
 	@${MV} ${WRKSRC}/www/include/set/conf.inc.php ${WRKSRC}/www/include/set/conf.inc.default.php
 
 do-install:
