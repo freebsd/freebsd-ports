@@ -9,6 +9,7 @@ PORTNAME=	screen
 PORTVERSION=	4.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
+		http://komquats.com/distfiles/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	screen
 
