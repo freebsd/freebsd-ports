@@ -12107,6 +12107,7 @@ py-bittorrent	ports/net-p2p/py-bittorrent
 py-bittorrent-core	ports/net-p2p/py-bittorrent-core
 py-bittorrent-core-devel	ports/net-p2p/py-bittorrent-core-devel
 py-bittorrent-devel	ports/net-p2p/py-bittorrent-devel
+py-bitvector	ports/math/py-bitvector
 py-bsddb	ports/databases/py-bsddb
 py-bsddb3	ports/databases/py-bsddb3
 py-bulksms	ports/comms/py-bulksms
