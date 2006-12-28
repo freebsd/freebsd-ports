@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
@@ -32,6 +31,10 @@ MAN1=		kst.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	does not build
+.endif
+
 .if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
@@ -53,13 +56,13 @@ PLIST_SUB+=	CDF="@comment "
 .endif
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/kst/kst/ksttimers.h.in
+#	@${TOUCH} ${WRKSRC}/kst/kst/ksttimers.h.in
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .if !defined(WITH_NETCDF)
-	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/kst/datasources/Makefile.in
+	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
 .endif
 .if !defined(WITH_CDF)
-	@${REINPLACE_CMD} -e 's| cdf||g' ${WRKSRC}/kst/kst/datasources/Makefile.in
+	@${REINPLACE_CMD} -e 's| cdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
