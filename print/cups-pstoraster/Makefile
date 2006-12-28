@@ -7,17 +7,14 @@
 
 PORTNAME=	cups-pstoraster
 PORTVERSION=	8.15.3
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	\
-	ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/ \
-	ftp://ftp2.easysw.com/pub/%SUBDIR%/ \
-	ftp://ftp3.easysw.com/pub/%SUBDIR%/ \
-	http://ftp.easysw.com/pub/%SUBDIR%/ \
-	http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	ghostscript/${PORTVERSION}
+DISTNAME=	espgs-${ESPGS_VER}-source
 DIST_SUBDIR=	ghostscript
 
-MAINTAINER=	frank@exit.com
+MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Postscript interpreter for CUPS printing to non-PS printers
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
@@ -25,28 +22,22 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 ESPGS_VER=	${PORTVERSION}
 GS_VERSION=	8.15
 
-DISTNAME=	espgs-${ESPGS_VER}-source
 WRKSRC=		${WRKDIR}/espgs-${PORTVERSION}
 
-DATADIR=	${TARGETDIR}/share/ghostscript
+DATADIR=	${TARGETDIR}/share/espgs
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+# We just need the ghostscript fonts, nothing more
+USE_GHOSTSCRIPT_RUN=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-x --with-gs=espgs
 MAKE_ARGS=	CFLAGS_STANDARD="${CFLAGS} -DUPD_SIGNAL=0" \
 		DEVICE_DEVS="\$$(DD)cups.dev \$$(DD)pxlcolor.dev \$$(DD)pxlmono.dev"
 PLIST_SUB=	GS_VERSION="${GS_VERSION}"
-PLIST_FILES=	bin/espgs etc/cups/pstoraster.convs \
-		libexec/cups/filter/pstopxl libexec/cups/filter/pstoraster \
-		share/cups/model/pxlcolor.ppd share/cups/model/pxlmono.ppd
-
-.ifdef(WITH_GHOSTSCRIPT_AFPL)
-IGNORE=		doesn't build with AFPL version of Ghostscript; please use gnu ghostscript instead
-.endif
 
 pre-configure:
 	${RM} -f ${WRKSRC}/ijs/config.guess ${WRKSRC}/ijs/missing ${WRKSRC}/ijs/config.sub ${WRKSRC}/ijs/install-sh ${WRKSRC}/ijs/ltmain.sh
@@ -56,15 +47,19 @@ post-patch:
 	${LN} -sf ${WRKSRC}/pstoraster/gdevcups.c ${WRKSRC}/src
 	${CAT} ${FILESDIR}/cups.contrib.mak >> ${WRKSRC}/src/contrib.mak
 .for file in pstopxl pstoraster
-	${SED} -e 's:@prefix@:${PREFIX}:g ; \
+	${REINPLACE_CMD} -e 's:@prefix@:${PREFIX}:g ; \
 		 s:@exec_prefix@:${PREFIX}:g ; \
 		 s:@bindir@:${PREFIX}/bin:g ; \
-		 s:@GS@:espgs:g' \
-		${WRKSRC}/pstoraster/${file}.in > ${WRKSRC}/pstoraster/${file}
+		 s:@GS@:espgs:g ; \
+		 s|^GS_LIB="|GS_LIB="${PREFIX}/share/ghostscript/fonts:|' \
+		 ${WRKSRC}/pstoraster/${file}.in
 .endfor
 	${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS=@CPPFLAGS@ |g ; \
 		 s|^LDFLAGS=|LDFLAGS=@LDFLAGS@ |g ; \
-		 s|^DEVICE_DEVS|#DEVICE_DEVS|g' ${WRKSRC}/Makefile.in
+		 s|^DEVICE_DEVS|#DEVICE_DEVS|g ; \
+		 s|^gssharedir = @libdir@/ghostscript|gssharedir = @libdir@/espgs| ; \
+		 s|^gsdir = @datadir@/ghostscript|gsdir = @datadir@/espgs|' \
+		 ${WRKSRC}/Makefile.in
 
 pre-build:
 	${MKDIR} ${WRKSRC}/bin
