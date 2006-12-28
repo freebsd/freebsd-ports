@@ -722,6 +722,7 @@ bin/bouml
 %%DATADIR%%/java_reverse
 %%DATADIR%%/plug_out_upgrade
 %%DATADIR%%/projectControl
+%%DATADIR%%/projectSynchro
 %%DATADIR%%/rose/1024.bodies
 %%DATADIR%%/rose/1152.bodies
 %%DATADIR%%/rose/1280.bodies
