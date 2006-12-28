@@ -28,6 +28,10 @@ MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 ALL_TARGET=	World
 SUB_FILES=	pkg-message
 
+X11BASE2FIX=	clients/olwm/screen.c clients/olwmslave/help_file.c		\
+		lib/libxview/help/help_file.c lib/libxview/misc/gettext.h	\
+		lib/libxview/textsw/txt_e_menu.c
+
 MAN1=		xview.1
 
 .include <bsd.port.pre.mk>
@@ -51,6 +55,8 @@ pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	's|^#endif.*$$|#endif|;s|^#else.*$$|#else|;\
 	s|^/\*\*/#*|XCOMM |'
+	${REINPLACE_CMD} -e 's+/usr/X11R6+${X11BASE}+'	\
+		${X11BASE2FIX:C|^|${WRKSRC}/|}
 
 post-install:
 .if !defined{NOPORTDOCS}
