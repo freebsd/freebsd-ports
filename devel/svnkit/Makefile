@@ -14,13 +14,12 @@ DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The only pure Java Subversion client library in the world
 
-#RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 NO_BUILD=	yes
 USE_ZIP=	yes
-#USE_JAVA=	yes
-#JAVA_VERSION=	1.3+
-JAVASHAREDIR?=  ${PREFIX}/share/java
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
