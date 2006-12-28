@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sms
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.0.4rc2
 CATEGORIES=	polish
 MASTER_SITES=	http://ceti.pl/~miki/komputery/download/sms/ \
 		http://radioemiter.pl/~mjd/slackware/sms2/ \
