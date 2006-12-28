@@ -211,6 +211,7 @@ lib/libgphoto2_port.a
 lib/libgphoto2_port.la
 lib/libgphoto2_port.so
 lib/libgphoto2_port.so.0
+lib/udev/check-ptp-camera
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -298,6 +299,7 @@ libdata/pkgconfig/libgphoto2_port.pc
 %%PORTDOCS%%@dirrm share/doc/libgphoto2_port
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/camlibs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/udev
 @dirrm lib/libgphoto2_port/%%VERSION_PORT%%
 @dirrm lib/libgphoto2_port
 @dirrm lib/libgphoto2/%%VERSION%%
