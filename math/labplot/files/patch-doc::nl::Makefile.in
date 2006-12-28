@@ -1,0 +1,11 @@
+--- doc/nl/Makefile.in.orig	Wed Aug 23 10:33:58 2006
++++ doc/nl/Makefile.in	Wed Aug 23 10:34:15 2006
+@@ -489,7 +489,7 @@
+ 	fi
+ 	$(INSTALL_DATA) index.docbook $(DESTDIR)/$(kde_htmldir)/nl/LabPlot/index.docbook
+ 	rm -f $(DESTDIR)/$(kde_htmldir)/nl/LabPlot/small_pics
+-	ln -fs $(kde_htmldir)/en/LabPlot/small_pics/ $(DESTDIR)/$(kde_htmldir)/nl/LabPlot/
++	ln -fs $(kde_htmldir)/en/LabPlot/small_pics $(DESTDIR)/$(kde_htmldir)/nl/LabPlot/
+ 
+ uninstall-local:
+ #>- 	rm -f $(kde_htmldir)/nl/LabPlot/small_pics
