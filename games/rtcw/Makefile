@@ -26,6 +26,9 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 PROGS=		wolf wolfded wolfsp
 
+# Ignore older version which seems to be newer.
+PORTSCOUT=	skipv:1.41-3
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && tail +376 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \

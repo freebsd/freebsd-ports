@@ -42,6 +42,9 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 Q2MAX_DATA=	${PORTNAME}.${PORTVERSION:S/.//}.rar
 
+# The data is not available and compiled executables do not work for 0.45.
+PORTSCOUT=	skipv:0.45
+
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
