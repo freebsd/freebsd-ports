@@ -19,6 +19,7 @@ COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-extensions
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
