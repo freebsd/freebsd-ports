@@ -43,6 +43,9 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 SHLIB_VER=	42
 DEMO=		demo.c demo.dat demo.h music.txt ../readme.txt
 
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
