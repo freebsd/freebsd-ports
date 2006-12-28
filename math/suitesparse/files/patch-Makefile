@@ -1,11 +1,11 @@
---- Makefile~	Fri Jul 28 04:49:43 2006
-+++ Makefile	Sun Sep 17 22:33:10 2006
-@@ -19,7 +19,7 @@
- 	( cd CSparse ; $(MAKE) )
- 	( cd CXSparse ; $(MAKE) )
- #	( cd LPDASA ; $(MAKE) )
+--- Makefile	Sat Dec  2 07:31:29 2006
++++ Makefile	Thu Dec 28 09:02:28 2006
+@@ -7,7 +7,7 @@
+ # Compile the default rules for each package
+ default:
+ 	( cd UFconfig/xerbla ; $(MAKE) )
 -	( cd metis-4.0 ; $(MAKE) )
 +#	( cd metis-4.0 ; $(MAKE) )
- #	( cd PARAKLETE ; $(MAKE) )
- 
- library: default
+ 	( cd AMD ; $(MAKE) )
+ 	( cd CAMD ; $(MAKE) )
+ 	( cd COLAMD ; $(MAKE) )
