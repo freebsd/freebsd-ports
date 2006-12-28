@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	suitesparse
-PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTVERSION=	2.3.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/current/
-DISTNAME=	SuiteSparse
+MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
+DISTNAME=	SuiteSparse-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
@@ -42,7 +41,7 @@ CONFLICTS=	umfpack-*
 
 USE_LDCONFIG=   yes
 USE_GMAKE=	yes
-
+WRKSRC=${WRKDIR}/SuiteSparse
 WRKSRC_SHARED=${WRKSRC}_shared
 CFLAGS_SHARED=${CFLAGS} ${FPIC}
 FFLAGS_SHARED=${CFLAGS} ${FPIC}
