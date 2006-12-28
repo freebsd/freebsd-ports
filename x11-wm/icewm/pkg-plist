@@ -81,7 +81,7 @@ bin/icewmtray
 %%DATADIR%%/taskbar/collapse.xpm
 %%DATADIR%%/taskbar/desktop.xpm
 %%DATADIR%%/taskbar/expand.xpm
-%%DATADIR%%/taskbar/icewm.xpm
+%%DATADIR%%/taskbar/icewm-logo.xpm
 %%DATADIR%%/taskbar/start.xpm
 %%DATADIR%%/taskbar/windows.xpm
 %%DATADIR%%/themes/Infadel2/Ergonomic.theme
@@ -126,7 +126,7 @@ bin/icewmtray
 %%DATADIR%%/themes/Infadel2/rollupA.xpm
 %%DATADIR%%/themes/Infadel2/rollupI.xpm
 %%DATADIR%%/themes/Infadel2/snap.pcf
-%%DATADIR%%/themes/Infadel2/taskbar/icewm.xpm
+%%DATADIR%%/themes/Infadel2/taskbar/icewm-logo.xpm
 %%DATADIR%%/themes/Infadel2/taskbar/start.xpm
 %%DATADIR%%/themes/Infadel2/taskbar/windows.xpm
 %%DATADIR%%/themes/Infadel2/titleAB.xpm

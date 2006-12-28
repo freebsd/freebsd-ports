@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.29
+PORTVERSION=	1.2.30
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
@@ -80,9 +79,9 @@ CONFIGURE_ARGS+=	--disable-x86-asm
 .endif
 
 .if defined(WITH_BEASTIE)
-STARTUP_PIXMAP=		${DATADIR}/lib/taskbar/bsd-daemon.xpm
+STARTUP_PIXMAP=		${DATADIR}/taskbar/bsd-daemon.xpm
 .else
-STARTUP_PIXMAP=		icewm.xpm
+STARTUP_PIXMAP=		icewm-logo.xpm
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -94,9 +93,9 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-extract:
-	@cd ${WRKSRC}/lib/taskbar && ${MV} start.xpm icewm.xpm
+	@cd ${WRKSRC}/lib/taskbar && ${MV} start.xpm icewm-logo.xpm
 .for dir in Infadel2
-	@cd ${WRKSRC}/lib/themes/${dir}/taskbar && ${MV} start.xpm icewm.xpm
+	@cd ${WRKSRC}/lib/themes/${dir}/taskbar && ${MV} start.xpm icewm-logo.xpm
 .endfor
 	@${CP} -f ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/taskbar
 
