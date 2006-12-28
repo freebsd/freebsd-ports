@@ -10,27 +10,21 @@ bin/tkabber
 %%DATADIR%%/datagathering.tcl
 %%DATADIR%%/default.tcl
 %%DATADIR%%/disco.tcl
-%%DATADIR%%/emoticons-tkabber/FaceIronic.gif
-%%DATADIR%%/emoticons-tkabber/FaceStartled.gif
-%%DATADIR%%/emoticons-tkabber/FaceStraight.gif
-%%DATADIR%%/emoticons-tkabber/beer.gif
-%%DATADIR%%/emoticons-tkabber/facegrinning.gif
-%%DATADIR%%/emoticons-tkabber/facehappy.gif
-%%DATADIR%%/emoticons-tkabber/facesad.gif
-%%DATADIR%%/emoticons-tkabber/facewinking.gif
-%%DATADIR%%/emoticons-tkabber/faceyukky.gif
-%%DATADIR%%/emoticons-tkabber/icondef.xml
-%%DATADIR%%/emoticons.tcl
+%%DATADIR%%/emoticons/default/FaceIronic.gif
+%%DATADIR%%/emoticons/default/FaceStartled.gif
+%%DATADIR%%/emoticons/default/FaceStraight.gif
+%%DATADIR%%/emoticons/default/beer.gif
+%%DATADIR%%/emoticons/default/facegrinning.gif
+%%DATADIR%%/emoticons/default/facehappy.gif
+%%DATADIR%%/emoticons/default/facesad.gif
+%%DATADIR%%/emoticons/default/facewinking.gif
+%%DATADIR%%/emoticons/default/faceyukky.gif
+%%DATADIR%%/emoticons/default/icondef.xml
 %%DATADIR%%/filetransfer.tcl
 %%DATADIR%%/filters.tcl
 %%DATADIR%%/gpgme.tcl
 %%DATADIR%%/hooks.tcl
 %%DATADIR%%/iface.tcl
-%%DATADIR%%/ifaceck/default.xrdb
-%%DATADIR%%/ifaceck/iface.tcl
-%%DATADIR%%/ifaceck/ilogin.tcl
-%%DATADIR%%/ifaceck/iroster.tcl
-%%DATADIR%%/ifaceck/widgets.tcl
 %%DATADIR%%/ifacetk/bwidget_workarounds.tcl
 %%DATADIR%%/ifacetk/default.xrdb
 %%DATADIR%%/ifacetk/idefault.tcl
@@ -481,7 +475,6 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/empty_body.tcl
 %%DATADIR%%/plugins/chat/events.tcl
 %%DATADIR%%/plugins/chat/exec_command.tcl
-%%DATADIR%%/plugins/chat/highlight.tcl
 %%DATADIR%%/plugins/chat/history.tcl
 %%DATADIR%%/plugins/chat/info_commands.tcl
 %%DATADIR%%/plugins/chat/insert_nick.tcl
@@ -507,6 +500,7 @@ bin/tkabber
 %%DATADIR%%/plugins/general/offline.tcl
 %%DATADIR%%/plugins/general/rawxml.tcl
 %%DATADIR%%/plugins/general/remote.tcl
+%%DATADIR%%/plugins/general/session.tcl
 %%DATADIR%%/plugins/general/sound.tcl
 %%DATADIR%%/plugins/general/stats.tcl
 %%DATADIR%%/plugins/general/subscribe_gateway.tcl
@@ -520,10 +514,16 @@ bin/tkabber
 %%DATADIR%%/plugins/iq/version.tcl
 %%DATADIR%%/plugins/jidlink/dtcp.tcl
 %%DATADIR%%/plugins/jidlink/ibb.tcl
+%%DATADIR%%/plugins/richtext/chatlog.tcl
+%%DATADIR%%/plugins/richtext/emoticons.tcl
+%%DATADIR%%/plugins/richtext/highlight.tcl
+%%DATADIR%%/plugins/richtext/stylecodes.tcl
+%%DATADIR%%/plugins/richtext/urls.tcl
 %%DATADIR%%/plugins/roster/annotations.tcl
 %%DATADIR%%/plugins/roster/cache_categories.tcl
 %%DATADIR%%/plugins/roster/conferenceinfo.tcl
 %%DATADIR%%/plugins/roster/conferences.tcl
+%%DATADIR%%/plugins/roster/fetch_nicknames.tcl
 %%DATADIR%%/plugins/roster/roster_delimiter.tcl
 %%DATADIR%%/plugins/roster/rosterx.tcl
 %%DATADIR%%/plugins/search/browser.tcl
@@ -548,6 +548,7 @@ bin/tkabber
 %%DATADIR%%/privacy.tcl
 %%DATADIR%%/pubsub.tcl
 %%DATADIR%%/register.tcl
+%%DATADIR%%/richtext.tcl
 %%DATADIR%%/roster.tcl
 %%DATADIR%%/search.tcl
 %%DATADIR%%/si.tcl
@@ -570,6 +571,7 @@ bin/tkabber
 %%DATADIR%%/trans.tcl
 %%DATADIR%%/trans/pl.msg
 %%DATADIR%%/trans/ru.msg
+%%DATADIR%%/trans/uk.msg
 %%DATADIR%%/userinfo.tcl
 %%DATADIR%%/utils.tcl
 %%DATADIR%%/version
@@ -606,8 +608,8 @@ bin/tkabber
 %%PORTDOCS%%%%DOCSDIR%%/tkabber.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/aniemoteicons
-@dirrm %%DATADIR%%/emoticons-tkabber
-@dirrm %%DATADIR%%/ifaceck
+@dirrm %%DATADIR%%/emoticons/default
+@dirrm %%DATADIR%%/emoticons
 @dirrm %%DATADIR%%/ifacetk
 @dirrm %%DATADIR%%/jabberlib-tclxml/tclxml
 @dirrm %%DATADIR%%/jabberlib-tclxml
@@ -659,6 +661,7 @@ bin/tkabber
 @dirrm %%DATADIR%%/plugins/jidlink
 @dirrm %%DATADIR%%/plugins/search
 @dirrm %%DATADIR%%/plugins/chat
+@dirrm %%DATADIR%%/plugins/richtext
 @dirrm %%DATADIR%%/plugins/windows
 @dirrm %%DATADIR%%/plugins/si
 @dirrm %%DATADIR%%/plugins/general
