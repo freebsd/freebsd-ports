@@ -7,25 +7,22 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
-
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 USE_PYTHON=	2.4+
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GSTREAMER=	yes
-USE_GSTREAMER+=	gconf
+USE_GSTREAMER=	gconf good python
 
 MAN1=		exfalso.1 quodlibet.1
 
@@ -96,8 +93,7 @@ USE_GSTREAMER+=	gnomevfs
 .endif
 
 .if defined(WITH_EXTENSIONS)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
+USE_GNOME+=	pygnomeextras
 PLIST_SUB+=	EXTENSIONS=""
 .else
 PLIST_SUB+=	EXTENSIONS="@comment "
