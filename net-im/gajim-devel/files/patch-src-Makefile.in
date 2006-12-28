@@ -1,0 +1,25 @@
+--- src/Makefile.in.orig	Wed Dec 27 03:01:21 2006
++++ src/Makefile.in	Wed Dec 27 12:47:12 2006
+@@ -324,18 +324,18 @@
+ 
+ @BUILD_TRAYICON_TRUE@trayicon_la_CFLAGS = $(PYGTK_CFLAGS)
+ gajimsrcdir = $(pkgdatadir)/src
+-gajimsrc_DATA = $(srcdir)/*.py 
++gajimsrc_DATA = $(srcdir)/*.py $(srcdir)/*.pyc
+ gajimsrc1dir = $(pkgdatadir)/src/common
+ gajimsrc1_DATA = \
+-				$(srcdir)/common/*.py 
++				$(srcdir)/common/*.py $(srcdir)/common/*.pyc
+ 
+ gajimsrc2dir = $(pkgdatadir)/src/common/xmpp
+ gajimsrc2_DATA = \
+-				$(srcdir)/common/xmpp/*.py 
++				$(srcdir)/common/xmpp/*.py $(srcdir)/common/xmpp/*.pyc
+ 
+ gajimsrc3dir = $(pkgdatadir)/src/common/zeroconf
+ gajimsrc3_DATA = \
+-				$(srcdir)/common/zeroconf/*.py 
++				$(srcdir)/common/zeroconf/*.py $(srcdir)/common/zeroconf/*.pyc
+ 
+ DISTCLEANFILES = 
+ EXTRA_DIST = $(gajimsrc_DATA) \
