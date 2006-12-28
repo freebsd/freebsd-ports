@@ -1,7 +1,10 @@
 ###############################################################################
 
 1) Run mednafen [OPTION] [FILE]
-2) See complete documentation on %%DOCSDIR%%/mednafen.html
+2) See complete documentation at:
+
+   %%DOCSDIR%%/mednafen.html
+
 3) Enjoy it ;)
 
 ###############################################################################
