@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
+DEPRECATED=	Archaic port
+EXPIRATION_DATE=	2007-03-28
+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
