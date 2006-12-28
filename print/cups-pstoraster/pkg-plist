@@ -63,8 +63,6 @@ bin/espgs
 %%DATADIR%%/%%GS_VERSION%%/lib/wftopfa.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/wrfont.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/zeroline.ps
-%%DATADIR%%/%%GS_VERSION%%/lib/pdf2dsc.ps
-%%DATADIR%%/%%GS_VERSION%%/lib/pdfopt.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_agl.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_btokn.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_ccfnt.ps
@@ -470,14 +468,13 @@ libexec/cups/filter/pstopxl
 etc/cups/pstoraster.convs
 share/cups/model/pxlcolor.ppd
 share/cups/model/pxlmono.ppd
-@dirrm %%DATADIR%%/%%GS_VERSION%%/lib/cjkv/
-@dirrm %%DATADIR%%/%%GS_VERSION%%/lib/
+@dirrm %%DATADIR%%/%%GS_VERSION%%/lib/cjkv
 @dirrm %%DATADIR%%/%%GS_VERSION%%/lib
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CMap
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource
-@dirrmtry %%DATADIR%%/%%GS_VERSION%%
+@dirrm %%DATADIR%%/%%GS_VERSION%%
 @dirrmtry %%DATADIR%%
 @dirrmtry libexec/cups/filter
 @dirrmtry libexec/cups
