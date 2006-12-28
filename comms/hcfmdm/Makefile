@@ -22,7 +22,7 @@ DISTFILES=	hcfmdm-0.99.1.tar.gz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	hcfmdm-0.99.1.tar.gz hcfpcimodem-0.99lnxtbeta03042700.tar.gz
 
-MAINTAINER=	FreeBSD@FreeBSD.org
+MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	Driver for the Conexant HCF PCI winmodem chipset (Acorp PIM/PIM2)
 
 MODULES_WITH_WORLD?=	yes
