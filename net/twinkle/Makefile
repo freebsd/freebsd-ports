@@ -7,6 +7,7 @@
 
 PORTNAME=	twinkle
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -22,18 +23,17 @@ LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp \
 		ilbc.0:${PORTSDIR}/net/ilbc \
 		zrtpcpp-0.9.0:${PORTSDIR}/devel/libzrtpcpp
 
-USE_X_PREFIX=	yes
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 
-CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE} QTDIR=${LOCALBASE}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	QTDIR="${LOCALBASE}" \
-		QMAKESPEC="${QMAKESPEC}" \
+CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
 		CFLAGS="${CFLAGS}"
 MAKE_ENV=	QTDIR=${X11BASE}
 
