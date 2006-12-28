@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tktreectrl
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	SF
 
@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
+		--mandir=${MANPREFIX}/man \
 		--exec-prefix=${PREFIX} --enable-shared
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${TCL_INCLUDES} ${TK_INCLUDES}"
 TCL_INCLUDES=	-I${LOCALBASE}/include/tcl${TK_VER} -I${LOCALBASE}/include/tcl${TK_VER}/generic
