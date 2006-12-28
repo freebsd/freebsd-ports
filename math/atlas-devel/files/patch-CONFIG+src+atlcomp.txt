@@ -1,0 +1,38 @@
+--- CONFIG/src/atlcomp.txt.org	Wed Dec 27 12:33:29 2006
++++ CONFIG/src/atlcomp.txt	Wed Dec 27 12:34:12 2006
+@@ -40,18 +40,18 @@
+ #
+ # Core2Solo and Core2Duo
+ MACH=14,15 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc,icc
+-   'gcc' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
++   '%%CC%%' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
+ # PPRO,PII,PIII,P4,P4E,K7,HAMMER
+ MACH=8,9,10,16,17,19,20 OS=0 LVL=2000 COMPS=smc,dmc,skc,dkc
+-   'gcc32' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
++   '%%CC%%' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
+ # PPRO,PII,PIII,P4,P4E,K7,HAMMER
+ MACH=8,9,10,16,17,19,20 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc
+-   'gcc' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
++   '%%CC%%' '-fomit-frame-pointer -mfpmath=387 -O2 -falign-loops=4'
+ MACH=8,9,10,16,17,19,20 OS=0 LVL=1000 COMPS=icc
+-   'gcc' '-fomit-frame-pointer -mfpmath=387 -O'
++   '%%CC%%' '-fomit-frame-pointer -mfpmath=387 -O'
+ # CoreSolo,CoreDuo
+ MACH=12,13 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc,icc
+-   'gcc' '-fomit-frame-pointer -O3 -mfpmath=387'
++   '%%CC%%' '-fomit-frame-pointer -O3 -mfpmath=387'
+ # UltraSPARC III & IV
+ MACH=26,27 OS=0 LVL=1000 COMPS=smc,dmc,skc,dkc
+    'gcc' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O3 -funroll-all-loops'
+@@ -82,9 +82,9 @@
+ # Generic defaults
+ #
+ MACH=0 OS=0 LVL=0 COMPS=icc,smc,dmc,skc,dkc,xcc
+-   'gcc' '-O -fomit-frame-pointer'
++   '%%CC%%' '-O -fomit-frame-pointer'
+ MACH=0 OS=0 LVL=2 COMPS=f77
+-   'gfortran' '-O'
++   '%%FC%%' '-O'
+ MACH=0 OS=0 LVL=1 COMPS=f77
+    'g77' '-O'
+ MACH=0 OS=0 LVL=0 COMPS=f77
