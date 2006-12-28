@@ -26,12 +26,6 @@ lib/libf77blas.so
 %%WITH_STATICLIB%%lib/libf77blas_r.a
 lib/libf77blas_r.so.1
 lib/libf77blas_r.so
-%%WITH_STATICLIB%%lib/libptcblas.a
-lib/libptcblas.so.1
-lib/libptcblas.so
-%%WITH_STATICLIB%%lib/libptf77blas.a
-lib/libptf77blas.so.1
-lib/libptf77blas.so
 %%WITH_STATICLIB%%lib/libtstatlas.a
 lib/libtstatlas.so.1
 lib/libtstatlas.so
