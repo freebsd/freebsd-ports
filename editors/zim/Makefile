@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://zoidberg.student.utwente.nl/downloads/Zim/ \
 		ftp://zoidberg.student.utwente.nl/Zim/
@@ -26,7 +26,6 @@ USE_GNOME=	gtk20
 PERL_MODBUILD=	yes
 MAN1=		zim.1
 MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
-		Gtk2::Ex::FormManager.3 \
 		Gtk2::Ex::HyperTextBuffer.3 \
 		Gtk2::Ex::HyperTextView.3 \
 		Gtk2::Ex::PathBar.3 \
@@ -34,8 +33,11 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Zim::GUI::Spell.3 \
 		Zim::Selection.3 \
 		Zim::GUI::Calendar.3 \
+		Zim::GUI::Component.3 \
 		Zim::GUI::ExportDialog.3 \
 		Zim::GUI::FindReplaceDialog.3 \
+		Zim::GUI::PreferencesDialog.3 \
+		Zim::GUI::PropertiesDialog.3 \
 		Zim::GUI::SearchDialog.3 \
 		Zim::GUI.3 \
 		Zim::GUI::PageView.3 \
@@ -43,17 +45,15 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Zim::GUI::TreeView.3 \
 		Zim::GUI::PathBar.3 \
 		Zim::Formats::Html.3 \
-		Zim::Formats::Pod.3 \
 		Zim::Formats::Wiki.3 \
-		Zim::Formats::XML.3 \
 		Zim::History.3 \
 		Zim::Page.3 \
 		Zim::Page::Text.3 \
 		Zim::Repository.3 \
 		Zim::Repository::Base.3 \
-		Zim::Repository::DBI.3 \
 		Zim::Repository::Files.3 \
 		Zim::Repository::Man.3 \
+		Zim::Template.3 \
 		Zim::Win32.3
 
 OPTIONS=	TRAYICON	"Support trayicon"	on \
@@ -62,7 +62,7 @@ OPTIONS=	TRAYICON	"Support trayicon"	on \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	Perl 5.8.0 or newer required. Install lang/perl5.8 and try again.
+IGNORE=	Perl 5.8.0 or newer required, please install lang/perl5.8 and try again.
 .endif
 
 .if !defined(WITHOUT_TRAYICON)

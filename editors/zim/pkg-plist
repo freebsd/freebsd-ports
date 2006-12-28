@@ -1,20 +1,20 @@
 bin/zim
 %%SITE_PERL%%/Gtk2/Ex/DesktopEntryMenu.pm
-%%SITE_PERL%%/Gtk2/Ex/FormManager.pm
 %%SITE_PERL%%/Gtk2/Ex/HyperTextBuffer.pm
 %%SITE_PERL%%/Gtk2/Ex/HyperTextView.pm
 %%SITE_PERL%%/Gtk2/Ex/PathBar.pm
 %%SITE_PERL%%/Zim/File.pm
 %%SITE_PERL%%/Zim/Formats/Html.pm
-%%SITE_PERL%%/Zim/Formats/Pod.pm
 %%SITE_PERL%%/Zim/Formats/Wiki.pm
-%%SITE_PERL%%/Zim/Formats/XML.pm
 %%SITE_PERL%%/Zim/GUI.pm
 %%SITE_PERL%%/Zim/GUI/Calendar.pm
+%%SITE_PERL%%/Zim/GUI/Component.pm
 %%SITE_PERL%%/Zim/GUI/ExportDialog.pm
 %%SITE_PERL%%/Zim/GUI/FindReplaceDialog.pm
 %%SITE_PERL%%/Zim/GUI/PageView.pm
 %%SITE_PERL%%/Zim/GUI/PathBar.pm
+%%SITE_PERL%%/Zim/GUI/PreferencesDialog.pm
+%%SITE_PERL%%/Zim/GUI/PropertiesDialog.pm
 %%SITE_PERL%%/Zim/GUI/SearchDialog.pm
 %%SITE_PERL%%/Zim/GUI/Spell.pm
 %%SITE_PERL%%/Zim/GUI/TrayIcon.pm
@@ -24,27 +24,20 @@ bin/zim
 %%SITE_PERL%%/Zim/Page/Text.pm
 %%SITE_PERL%%/Zim/Repository.pm
 %%SITE_PERL%%/Zim/Repository/Base.pm
-%%SITE_PERL%%/Zim/Repository/DBI.pm
 %%SITE_PERL%%/Zim/Repository/Files.pm
 %%SITE_PERL%%/Zim/Repository/Man.pm
-lib/perl5/site_perl/5.8.8/Zim/Selection.pm
+%%SITE_PERL%%/Zim/Selection.pm
+%%SITE_PERL%%/Zim/Template.pm
 %%SITE_PERL%%/Zim/Win32.pm
 share/applications/zim.desktop
 share/pixmaps/zim.png
 %%DATADIR%%/entities.list
 %%DATADIR%%/doc/.zim.config
+%%DATADIR%%/doc/invade_your_desktop.png
 %%DATADIR%%/doc/Help.txt
-%%DATADIR%%/doc/zim.png
 %%DATADIR%%/doc/zim/about.txt
 %%DATADIR%%/doc/zim/bugs.txt
 %%DATADIR%%/doc/zim/changelog.txt
-%%DATADIR%%/doc/zim/development/class_diagram.txt
-%%DATADIR%%/doc/zim/development/database.txt
-%%DATADIR%%/doc/zim/development/formats.txt
-%%DATADIR%%/doc/zim/development/page.txt
-%%DATADIR%%/doc/zim/development/plugins.txt
-%%DATADIR%%/doc/zim/development/repository.txt
-%%DATADIR%%/doc/zim/development/todo.txt
 %%DATADIR%%/doc/zim/faq.txt
 %%DATADIR%%/doc/zim/features.txt
 %%DATADIR%%/doc/zim/usage.txt
@@ -57,6 +50,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/doc/zim/usage/linking.txt
 %%DATADIR%%/doc/zim/usage/plugins.txt
 %%DATADIR%%/doc/zim/usage/preferences.txt
+%%DATADIR%%/doc/zim/usage/properties.txt
 %%DATADIR%%/doc/zim/usage/repositories.txt
 %%DATADIR%%/doc/zim/usage/searching.txt
 %%DATADIR%%/doc/zim/usage/strategies.txt
@@ -66,6 +60,8 @@ share/pixmaps/zim.png
 %%DATADIR%%/plugins/TrayIcon.pl
 %%DATADIR%%/templates/Default.html
 %%DATADIR%%/templates/Presentation.html
+%%DATADIR%%/templates/Print.html
+%%DATADIR%%/templates/SlideShow_(S5).html
 %%DATADIR%%/urls.list
 %%DATADIR%%/zim.svg
 @dirrmtry %%SITE_PERL%%/Gtk2/Ex
@@ -77,7 +73,6 @@ share/pixmaps/zim.png
 @dirrm %%SITE_PERL%%/Zim
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/doc/zim/usage
-@dirrm %%DATADIR%%/doc/zim/development
 @dirrm %%DATADIR%%/doc/zim
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/templates
