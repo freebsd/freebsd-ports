@@ -1,0 +1,24 @@
+==============================================================================
+
+3ZB2 has been installed.
+
+Due to the game library (i.e. game.so file) being unable to read the
+filesystem paths (i.e. %%Q2DIR%% in the client
+(i.e. quake2 executable), it will look for and write node files in the current
+directory. So you have to do the following (only once) in the directory where
+you want to run it from (you could use ~/.quake2 for example):
+
+$ mkdir -p ~/.quake2/3zb2
+$ cd %%Q2DIR%%/3zb2
+$ cp -r 3ZBConfig.cfg 3ZBMaps.lst chctf chdtm ~/.quake2/3zb2
+
+Then run it from the recently created directory.
+
+$ cd ~/.quake2
+$ quake2 +set game 3zb2
+
+See the docs in %%DOCSDIR%% for help on using it.
+
+Check the website for additional DM and CTF maps (respective routes section).
+
+==============================================================================
