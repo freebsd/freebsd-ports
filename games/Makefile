@@ -595,6 +595,7 @@
     SUBDIR += quake-extras
     SUBDIR += quake-reaper
     SUBDIR += quake-source
+    SUBDIR += quake2-3zb2
     SUBDIR += quake2-ctf
     SUBDIR += quake2-data
     SUBDIR += quake2-extras
