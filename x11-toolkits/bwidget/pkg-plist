@@ -45,6 +45,7 @@ lib/bwidget/init.tcl
 lib/bwidget/label.tcl
 lib/bwidget/labelentry.tcl
 lib/bwidget/labelframe.tcl
+lib/bwidget/lang/da.rc
 lib/bwidget/lang/de.rc
 lib/bwidget/lang/en.rc
 lib/bwidget/lang/es.rc
@@ -55,6 +56,7 @@ lib/bwidget/messagedlg.tcl
 lib/bwidget/notebook.tcl
 lib/bwidget/pagesmgr.tcl
 lib/bwidget/panedw.tcl
+lib/bwidget/panelframe.tcl
 lib/bwidget/passwddlg.tcl
 lib/bwidget/pkgIndex.tcl
 lib/bwidget/progressbar.tcl
@@ -64,6 +66,7 @@ lib/bwidget/scrollview.tcl
 lib/bwidget/scrollw.tcl
 lib/bwidget/separator.tcl
 lib/bwidget/spinbox.tcl
+lib/bwidget/statusbar.tcl
 lib/bwidget/titleframe.tcl
 lib/bwidget/tree.tcl
 lib/bwidget/utils.tcl
@@ -89,6 +92,7 @@ lib/bwidget/xpm2image.tcl
 %%PORTDOCS%%%%DOCSDIR%%/NoteBook.html
 %%PORTDOCS%%%%DOCSDIR%%/PagesManager.html
 %%PORTDOCS%%%%DOCSDIR%%/PanedWindow.html
+%%PORTDOCS%%%%DOCSDIR%%/PanelFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/PasswdDlg.html
 %%PORTDOCS%%%%DOCSDIR%%/ProgressBar.html
 %%PORTDOCS%%%%DOCSDIR%%/ProgressDlg.html
@@ -99,6 +103,7 @@ lib/bwidget/xpm2image.tcl
 %%PORTDOCS%%%%DOCSDIR%%/SelectFont.html
 %%PORTDOCS%%%%DOCSDIR%%/Separator.html
 %%PORTDOCS%%%%DOCSDIR%%/SpinBox.html
+%%PORTDOCS%%%%DOCSDIR%%/StatusBar.html
 %%PORTDOCS%%%%DOCSDIR%%/TitleFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/Tree.html
 %%PORTDOCS%%%%DOCSDIR%%/Widget.html
