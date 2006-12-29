@@ -1,0 +1,17 @@
+include/libderiv/libderiv.h
+include/libint/hrr_header.h
+include/libint/libint.h
+include/libint/vrr_header.h
+include/libr12/libr12.h
+@dirrm include/libderiv
+@dirrm include/libint
+@dirrm include/libr12
+lib/libderiv.a
+lib/libderiv.la
+lib/libderiv.so.1
+lib/libint.a
+lib/libint.la
+lib/libint.so.1
+lib/libr12.a
+lib/libr12.la
+lib/libr12.so.1

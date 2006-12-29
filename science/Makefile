@@ -57,6 +57,7 @@
     SUBDIR += lamprop
     SUBDIR += libctl
     SUBDIR += libghemical
+    SUBDIR += libint
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += linsmith
