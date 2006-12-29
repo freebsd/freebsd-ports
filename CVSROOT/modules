@@ -8283,6 +8283,7 @@ p5-ApacheDBILogConfig	ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger	ports/databases/p5-ApacheDBILogger
 p5-App-CLI	ports/devel/p5-App-CLI
 p5-App-Cache	ports/devel/p5-App-Cache
+p5-App-Control	ports/devel/p5-App-Control
 p5-App-Info	ports/devel/p5-App-Info
 p5-App-Options	ports/devel/p5-App-Options
 p5-App-Trace	ports/devel/p5-App-Trace
