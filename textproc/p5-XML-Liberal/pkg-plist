@@ -4,6 +4,7 @@
 %%SITE_PERL%%/XML/Liberal/LibXML.pm
 %%SITE_PERL%%/XML/Liberal/Remedy.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/ControlCode.pm
+%%SITE_PERL%%/XML/Liberal/Remedy/Declaration.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/EntityRef.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/HTMLEntity.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/InvalidEncoding.pm
