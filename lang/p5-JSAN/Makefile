@@ -7,6 +7,7 @@
 
 PORTNAME=	JSAN
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CW/CWEST
@@ -41,5 +42,9 @@ MAN3=	JSAN::Shell.3 JSAN.3 JSAN::Indexer::Creator.3 JSAN::Indexer.3
 .if ${PERL_LEVEL} < 500601
 IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "40 s,new,new(\'jsan\')," ${WRKSRC}/lib/JSAN.pm
+	${FIND} ${WRKSRC}/lib -name "*.bak" -delete
 
 .include <bsd.port.post.mk>
