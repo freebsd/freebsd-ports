@@ -6209,6 +6209,7 @@ libidn		ports/dns/libidn
 libieee1284	ports/sysutils/libieee1284
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
+libint		ports/science/libint
 libiodbc	ports/databases/libiodbc
 libiptcdata	ports/graphics/libiptcdata
 libirman	ports/comms/libirman
