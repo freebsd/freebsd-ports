@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsbench
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.nice.ch/~phip/
 DISTNAME=	GSBench-${PORTVERSION}
