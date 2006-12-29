@@ -9,7 +9,7 @@
 
 PORTNAME=	festvox-hvs
 PORTVERSION=	2.0
-CATEGORIES=	audio accessibility
+CATEGORIES=	audio accessibility spanish
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_hvs_di-2.0
 DIST_SUBDIR=	festival
