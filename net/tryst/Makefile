@@ -8,7 +8,9 @@
 PORTNAME=	tryst
 PORTVERSION=	1.0.8
 CATEGORIES=	net
-MASTER_SITES=	http://gnustep.dyndns.org/Downloads/
+#MASTER_SITES=	http://gnustep.dyndns.org/Downloads/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	tryst-108pl4
 EXTRACT_SUFX=	.tgz
 
