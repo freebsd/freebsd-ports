@@ -2430,6 +2430,7 @@ etoile-grr	ports/www/etoile-grr
 etoile-hardware	ports/deskutils/etoile-hardware
 etoile-iconkit	ports/x11-themes/etoile-iconkit
 etoile-installer	ports/sysutils/etoile-installer
+etoile-io	ports/lang/etoile-io
 etoile-iterm	ports/x11/etoile-iterm
 etoile-lookandbehavior	ports/deskutils/etoile-lookandbehavior
 etoile-lucenekit	ports/textproc/etoile-lucenekit
