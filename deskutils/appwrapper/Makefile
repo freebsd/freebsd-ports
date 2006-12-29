@@ -20,14 +20,11 @@ USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-#USE_GNUSTEP_LDCONFIG=	${LOCALLIBDIR}
-#USE_GNUSTEP_LOCAL_LIBS+=	XWindowServerKit:${XWINDOWSERVERKIT_PORT}
 
 WRKSRC=		${WRKDIR}/AppWrapper
-#USE_GNUSTEP_MAKE_DIRS+=	Services/Private/AZDock
-#ADDITIONAL_OBJCFLAGS+=	-I${X11BASE}/include
-#ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
 
-#XWINDOWSERVERKIT_PORT?=	x11/etoile-xwindowserverkit
+post-patch:
+	${RMDIR} ${WRKSRC}/AppWrapper.app/ix86/linux-gnu
+	${RMDIR} ${WRKSRC}/AppWrapper.app/ix86
 
 .include <bsd.port.mk>
