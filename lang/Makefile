@@ -48,6 +48,7 @@
     SUBDIR += erlang
     SUBDIR += erlang-doc
     SUBDIR += erlang-lite
+    SUBDIR += etoile-io
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += ezm3
