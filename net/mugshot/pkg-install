@@ -1,0 +1,13 @@
+#!/bin/sh
+
+FFUPDATE=${PKG_PREFIX}/share/mugshot/firefox-update.sh
+
+case $2 in
+POST-INSTALL)
+	${FFUPDATE} install
+	;;
+PRE-DEINSTALL)
+	killall mugshot
+	${FFUPDATE} remove
+	;;
+esac

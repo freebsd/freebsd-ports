@@ -1,0 +1,49 @@
+@unexec killall mugshot 2>/dev/null >/dev/null || exit 0
+bin/mugshot
+bin/mugshot-uri-handler
+lib/mugshot/firefox/components/hippoIExtension.xpt
+lib/mugshot/firefox/components/hippoIControl.xpt
+lib/mugshot/firefox/components/hippoIControlListener.xpt
+lib/mugshot/firefox/components/libhippofirefox.so
+lib/mugshot/firefox/components/libhippofirefox.la
+lib/mugshot/firefox/components/libhippofirefox.a
+lib/mugshot/firefox/chrome/content/overlay.js
+lib/mugshot/firefox/chrome/content/overlay.xul
+lib/mugshot/firefox/chrome/locale/en-US/overlay.dtd
+lib/mugshot/firefox/chrome/skin/linkswarm16x16.png
+lib/mugshot/firefox/chrome/skin/linkswarm24x24.png
+lib/mugshot/firefox/chrome/skin/mugshot32x32.png
+lib/mugshot/firefox/chrome/skin/toolbar.css
+lib/mugshot/firefox/chrome.manifest
+lib/mugshot/firefox/install.rdf
+lib/mugshot/firefox/defaults/preferences/prefs.js
+share/autostart/mugshot.desktop
+@unexec %%PREFIX%%/share/mugshot/firefox-update.sh remove
+%%DATADIR%%/firefox-update.sh
+%%DATADIR%%/version
+share/icons/hicolor/128x128/apps/mugshot.png
+share/icons/hicolor/32x32/apps/mugshot.gif
+share/icons/hicolor/48x48/apps/mugshot.gif
+share/icons/hicolor/16x16/apps/mugshot.png
+share/icons/hicolor/16x16/apps/mugshot_note_on.png
+share/icons/hicolor/16x16/apps/mugshot_note_off.png
+share/icons/hicolor/22x22/apps/mugshot_notification.png
+share/icons/hicolor/22x22/apps/mugshot_notification_disabled.png
+share/icons/hicolor/22x22/apps/mugshot_swarm_1.png
+share/icons/hicolor/22x22/apps/mugshot_swarm_2.png
+share/icons/hicolor/22x22/apps/mugshot_swarm_3.png
+share/icons/hicolor/22x22/apps/mugshot_swarm_4.png
+share/icons/hicolor/22x22/apps/mugshot_swarm_5.png
+share/icons/hicolor/24x24/apps/mugshot.gif
+@dirrm lib/mugshot/firefox/components
+@dirrm lib/mugshot/firefox/chrome/content
+@dirrm lib/mugshot/firefox/chrome/locale/en-US
+@dirrm lib/mugshot/firefox/chrome/locale
+@dirrm lib/mugshot/firefox/chrome/skin
+@dirrm lib/mugshot/firefox/chrome
+@dirrm lib/mugshot/firefox/defaults/preferences
+@dirrm lib/mugshot/firefox/defaults
+@dirrm lib/mugshot/firefox
+@dirrm lib/mugshot
+@dirrm share/autostart
+@dirrm share/mugshot
