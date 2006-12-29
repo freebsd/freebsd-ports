@@ -11,7 +11,7 @@ CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.divineinvasion.net/musicextras/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically retrieving extra information for songs
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/mp3info.rb:${PORTSDIR}/audio/ruby-mp3info \
