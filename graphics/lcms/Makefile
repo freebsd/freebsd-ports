@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.15
-PORTREVISION=	1
+PORTVERSION=	1.16
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -32,6 +32,7 @@ OPTIONS=	TIFFICC "Build color profile applier for tiff" off \
 .if defined(WITH_TIFFICC)
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 PLIST_SUB+=	TIFFICC=""
+MAN1+=		tifficc.1
 .else
 CONFIGURE_ARGS=	--without-tiff
 PLIST_SUB+=	TIFFICC="@comment "
@@ -40,6 +41,7 @@ PLIST_SUB+=	TIFFICC="@comment "
 .if defined(WITH_JPEGICC)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEGICC=""
+MAN1+=		jpegicc.1
 .else
 CONFIGURE_ARGS=	--without-jpeg
 PLIST_SUB+=	JPEGICC="@comment "
