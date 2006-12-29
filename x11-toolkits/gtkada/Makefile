@@ -19,7 +19,7 @@ COMMENT=	Gtk2 binding for Ada
 
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
-CONFLICTS=	gtkada-devel-[0-9]*
+CONFLICTS=	gtkada-devel-[0-9]* gtkada-gcc-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 libglade2
