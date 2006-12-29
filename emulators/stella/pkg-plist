@@ -6,6 +6,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/console.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_remap.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_virtualdevs.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/jr_pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_rom.png
