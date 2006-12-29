@@ -7,7 +7,7 @@
 
 PORTNAME=	quakeforge
 PORTVERSION=	0.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
 MASTER_SITE_SUBDIR=	quake/:sf
@@ -19,13 +19,15 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Cleaned up copy of the GPLd Quake 1 source code
 
 NOT_FOR_ARCHS=	sparc64
-GNU_CONFIGURE=	yes
+NOT_FOR_ARCHS_REASON=	generated Quake C compiler (qfcc) does not work
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${DATADIR} \
 		--disable-optimize
@@ -35,13 +37,11 @@ OPTIONS=	CLIENTS "Build clients" on \
 		SDL "Build SDL client" off \
 		SERVERS "Build dedicated servers" on \
 		SKYBOXES "Install skyboxes pak" off \
-		STATIC_PLUGINS "Build plugins into executable" off \
 		VORBIS "Enable Ogg Vorbis support in clients" off \
 		XMMS "Enable XMMS support in clients" off
 
 MAN1=		pak.1 qfcc.1 qflight.1 qfvis.1 wad.1
 SUB_FILES=	pkg-message
-INSTALLS_SHLIB=	yes
 
 DATADIR=	${Q1DIR}
 
@@ -106,13 +106,6 @@ DISTFILES+=	skyboxes.pak:qf
 PLIST_SUB+=	SKYBOXES=""
 .else
 PLIST_SUB+=	SKYBOXES="@comment "
-.endif
-
-.if defined(WITH_STATIC_PLUGINS)
-CONFIGURE_ARGS+=--with-static-plugins
-PLIST_SUB+=	PLUGINS="@comment "
-.else
-PLIST_SUB+=	PLUGINS=""
 .endif
 
 post-install:
