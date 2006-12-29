@@ -126,6 +126,7 @@
     SUBDIR += erwn
     SUBDIR += etoile-bookmarkkit
     SUBDIR += etoile-grr
+    SUBDIR += etoile-mollusk
     SUBDIR += etoile-rsskit
     SUBDIR += eventum
     SUBDIR += evolution-webcal
