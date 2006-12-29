@@ -984,6 +984,7 @@
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-redcloth
     SUBDIR += sahana2
+    SUBDIR += sams
     SUBDIR += sarg
     SUBDIR += sbox-dtc
     SUBDIR += scout
