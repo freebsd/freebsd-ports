@@ -2437,6 +2437,7 @@ etoile-iterm	ports/x11/etoile-iterm
 etoile-lookandbehavior	ports/deskutils/etoile-lookandbehavior
 etoile-lucenekit	ports/textproc/etoile-lucenekit
 etoile-menuserver	ports/deskutils/etoile-menuserver
+etoile-mollusk	ports/www/etoile-mollusk
 etoile-multimediakit	ports/multimedia/etoile-multimediakit
 etoile-ogrekit	ports/textproc/etoile-ogrekit
 etoile-panekit	ports/deskutils/etoile-panekit
