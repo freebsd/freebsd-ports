@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A plugin for QT to connect to MySQL-Databases
 
 DB=		mysql
