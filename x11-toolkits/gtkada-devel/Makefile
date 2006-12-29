@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	20060615
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://sitola.fi.muni.cz/~hopet/gtkada/
 PKGNAMESUFFIX=	-devel
@@ -18,7 +19,7 @@ COMMENT=	Gtk2 binding for Ada
 
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
-CONFLICTS=	gtkada-[0-9]*
+CONFLICTS=	gtkada-[0-9]* gtkada-gcc-[0-9]*
 
 WRKSRC=		${WRKDIR}/GtkAda
 
