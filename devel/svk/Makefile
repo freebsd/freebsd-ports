@@ -6,40 +6,48 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	1.08
+PORTVERSION=	2.0.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
-DISTNAME=	SVK-${PORTVERSION}
+DISTNAME=	SVK-v${PORTVERSION}
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A Distributed Version Control System
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl \
-		${SITE_PERL}/SVN/Mirror.pm:${PORTSDIR}/devel/p5-SVN-Mirror \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
+		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl \
+		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Algorithm/Annotate.pm:${PORTSDIR}/devel/p5-Algorithm-Annotate \
-		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		p5-Class-Autouse>=1.15:${PORTSDIR}/devel/p5-Class-Autouse \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
+		${SITE_PERL}/App/CLI.pm:${PORTSDIR}/devel/p5-App-CLI \
+		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		p5-Data-Hierarchy>=0.21:${PORTSDIR}/devel/p5-Data-Hierarchy \
-		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/File/Type.pm:${PORTSDIR}/devel/p5-File-Type \
 		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${SITE_PERL}/IO/Digest.pm:${PORTSDIR}/devel/p5-IO-Digest \
 		${SITE_PERL}/IO/Pager.pm:${PORTSDIR}/devel/p5-IO-Pager \
-		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
-		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
+		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes \
+		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
+		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
+		${SITE_PERL}/SVN/Mirror.pm:${PORTSDIR}/devel/p5-SVN-Mirror \
+		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		p5-Class-Autouse>=1.15:${PORTSDIR}/devel/p5-Class-Autouse \
+		p5-File-Temp>=0.17:${PORTSDIR}/devel/p5-File-Temp \
+		p5-Data-Hierarchy>=0.30:${PORTSDIR}/devel/p5-Data-Hierarchy \
+		p5-Locale-Maketext-Lexicon>=0.62:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+		p5-Locale-Maketext-Simple>=0.16:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
 		p5-PathTools>=3.18:${PORTSDIR}/devel/p5-PathTools \
 		p5-PerlIO-eol>=0.13:${PORTSDIR}/devel/p5-PerlIO-eol \
 		p5-PerlIO-via-dynamic>=0.11:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
 		p5-PerlIO-via-symlink>=0.02:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
-		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
-		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
 		p5-SVN-Simple>=0.27:${PORTSDIR}/devel/p5-SVN-Simple \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		p5-YAML>=0.38:${PORTSDIR}/textproc/p5-YAML
+		p5-SVN-Mirror>=0.71:${PORTSDIR}/devel/p5-SVN-Mirror \
+		p5-YAML-Syck>=0.60:${PORTSDIR}/textproc/p5-YAML-Syck \
+		p5-version>=0.68:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -61,6 +69,7 @@ MAN3=		SVK.3 \
 		SVK::Command::Describe.3 \
 		SVK::Command::Diff.3 \
 		SVK::Command::Help.3 \
+		SVK::Command::Ignore.3 \
 		SVK::Command::Import.3 \
 		SVK::Command::Info.3 \
 		SVK::Command::List.3 \
@@ -85,23 +94,56 @@ MAN3=		SVK.3 \
 		SVK::Command::Sync.3 \
 		SVK::Command::Update.3 \
 		SVK::Command::Verify.3 \
+		SVK::Depot.3 \
+		SVK::Editor::Checkout.3 \
 		SVK::Editor::Combine.3 \
+		SVK::Editor::Combiner.3 \
+		SVK::Editor::Composite.3 \
+		SVK::Editor::Copy.3 \
+		SVK::Editor::CopyHandler.3 \
 		SVK::Editor::Diff.3 \
 		SVK::Editor::Merge.3 \
 		SVK::Editor::Patch.3 \
 		SVK::Editor::Rename.3 \
+		SVK::Editor::SubTree.3 \
 		SVK::Editor::Translate.3 \
+		SVK::Editor::TxnCleanup.3 \
 		SVK::Editor::XD.3 \
 		SVK::Help::Environment.3 \
 		SVK::Help::Index.3 \
 		SVK::Help::Intro.3 \
+		SVK::Help::View.3 \
 		SVK::Help::zh_cn::Index.3 \
 		SVK::Help::zh_tw::Index.3 \
+		SVK::Inspector.3 \
+		SVK::Log::ChangedPath.3 \
+		SVK::Log::ChangedPaths.3 \
+		SVK::Log::Filter.3 \
+		SVK::Log::Filter::Author.3 \
+		SVK::Log::Filter::Grep.3 \
+		SVK::Log::Filter::Head.3 \
+		SVK::Log::Filter::Output.3 \
+		SVK::Log::Filter::Selection.3 \
+		SVK::Log::Filter::Std.3 \
+		SVK::Log::Filter::XML.3 \
+		SVK::Log::FilterPipeline.3 \
+		SVK::Logger.3 \
 		SVK::Merge.3 \
+		SVK::MimeDetect.3 \
+		SVK::MimeDetect::FileLibMagic.3 \
+		SVK::MimeDetect::FileMMagic.3 \
+		SVK::MimeDetect::FileType.3 \
+		SVK::MimeDetect::Internal.3 \
+		SVK::Mirror.3 \
+		SVK::Mirror::Backend::SVNRa.3 \
+		SVK::Mirror::Backend::SVNRaPipe.3 \
+		SVK::MirrorCatalog.3 \
 		SVK::Notify.3 \
 		SVK::Patch.3 \
+		SVK::Patchset.3 \
+		SVK::Path.3 \
+		SVK::Path::Checkout.3 \
 		SVK::Resolve.3 \
-		SVK::Target.3 \
 		SVK::Target::Universal.3 \
 		SVK::Util.3 \
 		SVK::Version.3 \
@@ -109,13 +151,25 @@ MAN3=		SVK.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		this program only support perl 5.8.0 or above
+.if ${PERL_LEVEL} < 500801
+IGNORE=		this program only support perl 5.8.1 or above
 .endif
 
 .if ${PERL_LEVEL} < 500807
 BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
 RUN_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
+.endif
+
+.if ${PERL_LEVEL} < 500808
+BUILD_DEPENDS+=	p5-Getopt-Long>=2.35:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS+=	p5-Getopt-Long>=2.35:${PORTSDIR}/devel/p5-Getopt-Long
+.endif
+
+.if ${PERL_LEVEL} < 500903
+BUILD_DEPENDS+=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
+		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes
+RUN_DEPENDS+=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
+		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes
 .endif
 
 pre-everything::

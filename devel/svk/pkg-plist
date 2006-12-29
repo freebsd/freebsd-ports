@@ -1,5 +1,6 @@
 bin/svk
 %%SITE_PERL%%/SVK.pm
+%%SITE_PERL%%/SVK/Accessor.pm
 %%SITE_PERL%%/SVK/Command.pm
 %%SITE_PERL%%/SVK/Command/Add.pm
 %%SITE_PERL%%/SVK/Command/Admin.pm
@@ -15,6 +16,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Describe.pm
 %%SITE_PERL%%/SVK/Command/Diff.pm
 %%SITE_PERL%%/SVK/Command/Help.pm
+%%SITE_PERL%%/SVK/Command/Ignore.pm
 %%SITE_PERL%%/SVK/Command/Import.pm
 %%SITE_PERL%%/SVK/Command/Info.pm
 %%SITE_PERL%%/SVK/Command/List.pm
@@ -39,28 +41,76 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Sync.pm
 %%SITE_PERL%%/SVK/Command/Update.pm
 %%SITE_PERL%%/SVK/Command/Verify.pm
+%%SITE_PERL%%/SVK/Config.pm
+%%SITE_PERL%%/SVK/Depot.pm
+%%SITE_PERL%%/SVK/Editor.pm
+%%SITE_PERL%%/SVK/Editor/ByPass.pm
+%%SITE_PERL%%/SVK/Editor/Checkout.pm
 %%SITE_PERL%%/SVK/Editor/Combine.pm
+%%SITE_PERL%%/SVK/Editor/Combiner.pm
+%%SITE_PERL%%/SVK/Editor/Composite.pm
+%%SITE_PERL%%/SVK/Editor/Copy.pm
+%%SITE_PERL%%/SVK/Editor/CopyHandler.pm
 %%SITE_PERL%%/SVK/Editor/Delay.pm
 %%SITE_PERL%%/SVK/Editor/Diff.pm
+%%SITE_PERL%%/SVK/Editor/Dynamic.pm
+%%SITE_PERL%%/SVK/Editor/InteractiveCommitter.pm
+%%SITE_PERL%%/SVK/Editor/InteractiveStatus.pm
+%%SITE_PERL%%/SVK/Editor/MapRev.pm
 %%SITE_PERL%%/SVK/Editor/Merge.pm
 %%SITE_PERL%%/SVK/Editor/Patch.pm
 %%SITE_PERL%%/SVK/Editor/Rename.pm
+%%SITE_PERL%%/SVK/Editor/Serialize.pm
 %%SITE_PERL%%/SVK/Editor/Sign.pm
 %%SITE_PERL%%/SVK/Editor/Status.pm
+%%SITE_PERL%%/SVK/Editor/SubTree.pm
 %%SITE_PERL%%/SVK/Editor/Translate.pm
+%%SITE_PERL%%/SVK/Editor/TxnCleanup.pm
+%%SITE_PERL%%/SVK/Editor/View.pm
 %%SITE_PERL%%/SVK/Editor/XD.pm
 %%SITE_PERL%%/SVK/Help/Environment.pod
 %%SITE_PERL%%/SVK/Help/Index.pod
 %%SITE_PERL%%/SVK/Help/Intro.pod
+%%SITE_PERL%%/SVK/Help/View.pod
 %%SITE_PERL%%/SVK/Help/zh_cn/Index.pod
 %%SITE_PERL%%/SVK/Help/zh_tw/Index.pod
 %%SITE_PERL%%/SVK/I18N.pm
 %%SITE_PERL%%/SVK/I18N/i_default.po
 %%SITE_PERL%%/SVK/I18N/zh_cn.po
 %%SITE_PERL%%/SVK/I18N/zh_tw.po
+%%SITE_PERL%%/SVK/Inspector.pm
+%%SITE_PERL%%/SVK/Inspector/Compat.pm
+%%SITE_PERL%%/SVK/Inspector/Root.pm
+%%SITE_PERL%%/SVK/Log/ChangedPath.pm
+%%SITE_PERL%%/SVK/Log/ChangedPaths.pm
+%%SITE_PERL%%/SVK/Log/Filter.pm
+%%SITE_PERL%%/SVK/Log/Filter/Author.pm
+%%SITE_PERL%%/SVK/Log/Filter/Grep.pm
+%%SITE_PERL%%/SVK/Log/Filter/Head.pm
+%%SITE_PERL%%/SVK/Log/Filter/Output.pm
+%%SITE_PERL%%/SVK/Log/Filter/Selection.pm
+%%SITE_PERL%%/SVK/Log/Filter/Std.pm
+%%SITE_PERL%%/SVK/Log/Filter/XML.pm
+%%SITE_PERL%%/SVK/Log/FilterPipeline.pm
+%%SITE_PERL%%/SVK/Logger.pm
 %%SITE_PERL%%/SVK/Merge.pm
+%%SITE_PERL%%/SVK/MimeDetect.pm
+%%SITE_PERL%%/SVK/MimeDetect/FileLibMagic.pm
+%%SITE_PERL%%/SVK/MimeDetect/FileMMagic.pm
+%%SITE_PERL%%/SVK/MimeDetect/FileType.pm
+%%SITE_PERL%%/SVK/MimeDetect/Internal.pm
+%%SITE_PERL%%/SVK/Mirror.pm
+%%SITE_PERL%%/SVK/Mirror/Backend/SVNRa.pm
+%%SITE_PERL%%/SVK/Mirror/Backend/SVNRaPipe.pm
+%%SITE_PERL%%/SVK/Mirror/Backend/SVNSync.pm
+%%SITE_PERL%%/SVK/MirrorCatalog.pm
 %%SITE_PERL%%/SVK/Notify.pm
 %%SITE_PERL%%/SVK/Patch.pm
+%%SITE_PERL%%/SVK/Patchset.pm
+%%SITE_PERL%%/SVK/Path.pm
+%%SITE_PERL%%/SVK/Path/Checkout.pm
+%%SITE_PERL%%/SVK/Path/Txn.pm
+%%SITE_PERL%%/SVK/Path/View.pm
 %%SITE_PERL%%/SVK/Resolve.pm
 %%SITE_PERL%%/SVK/Resolve/AraxisMerge.pm
 %%SITE_PERL%%/SVK/Resolve/Emacs.pm
@@ -75,19 +125,31 @@ bin/svk
 %%SITE_PERL%%/SVK/Resolve/TortoiseMerge.pm
 %%SITE_PERL%%/SVK/Resolve/Vim.pm
 %%SITE_PERL%%/SVK/Resolve/XXDiff.pm
-%%SITE_PERL%%/SVK/Target.pm
+%%SITE_PERL%%/SVK/Root.pm
+%%SITE_PERL%%/SVK/Root/Checkout.pm
+%%SITE_PERL%%/SVK/Root/View.pm
 %%SITE_PERL%%/SVK/Target/Universal.pm
+%%SITE_PERL%%/SVK/Test.pm
 %%SITE_PERL%%/SVK/Util.pm
 %%SITE_PERL%%/SVK/Version.pm
+%%SITE_PERL%%/SVK/View.pm
 %%SITE_PERL%%/SVK/XD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK/.packlist
+@dirrm %%SITE_PERL%%/SVK/Target
+@dirrm %%SITE_PERL%%/SVK/Root
 @dirrm %%SITE_PERL%%/SVK/Resolve
+@dirrm %%SITE_PERL%%/SVK/Path
+@dirrm %%SITE_PERL%%/SVK/Mirror/Backend
+@dirrm %%SITE_PERL%%/SVK/Mirror
+@dirrm %%SITE_PERL%%/SVK/MimeDetect
+@dirrm %%SITE_PERL%%/SVK/Log/Filter
+@dirrm %%SITE_PERL%%/SVK/Log
+@dirrm %%SITE_PERL%%/SVK/Inspector
 @dirrm %%SITE_PERL%%/SVK/I18N
-@dirrm %%SITE_PERL%%/SVK/Help/zh_cn
 @dirrm %%SITE_PERL%%/SVK/Help/zh_tw
+@dirrm %%SITE_PERL%%/SVK/Help/zh_cn
 @dirrm %%SITE_PERL%%/SVK/Help
 @dirrm %%SITE_PERL%%/SVK/Editor
 @dirrm %%SITE_PERL%%/SVK/Command
-@dirrm %%SITE_PERL%%/SVK/Target
 @dirrm %%SITE_PERL%%/SVK
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK
