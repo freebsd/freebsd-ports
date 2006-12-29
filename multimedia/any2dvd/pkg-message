@@ -1,0 +1,25 @@
+------------------------------------------------------------
+Installation summary:
+
+Scripts:
+
+  any2dvd, any2vob.
+
+Man pages:
+
+  any2dvd.1, any2vob.1.
+
+Other documentation:
+
+  'any2dvd -h' and 'any2vob -h' both output a help summary.  Bring a
+   wide xterm.
+
+  There is currently no useful documentation at the web site
+  (http://any2dvd.sf.net).
+
+Problems:
+
+  These scripts use dozens of other programs, but there's no
+  documentation saying what.  There's a good chance that you'll you
+  run into a missing dependency.  If you do, please report it.
+------------------------------------------------------------
