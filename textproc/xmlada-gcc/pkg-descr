@@ -1,0 +1,16 @@
+XML/Ada is a set of modules that provide a simple manipulation of XML
+streams. It supports the whole XML 1.0 specifications, and can parse
+any file that follows this standard (including the contents of the
+DTD).
+
+It also provides support for a number of other standard associated
+with XML, like SAX and DOM.
+
+In addition, It includes a module to manipulate Unicode streams, since
+this is required by the XML standard.
+
+This version of GtkAda is designed to be used with lang/gnat-gcc41.
+
+WWW: https://libre2.adacore.com/xmlada/
+WWW: http://gnuada.sourceforge.net/
+Author: Petr Holub <hopet@ics.muni.cz>

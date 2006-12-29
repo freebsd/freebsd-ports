@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Dec 24 23:38:00 2006
++++ Makefile.in	Sun Dec 24 23:38:17 2006
+@@ -30,7 +30,7 @@
+ 
+ .PHONY: all obj clean install install_dirs
+ 
+-all: obj
++all: obj docs
+ 
+ obj: force
+ 	${GNATMAKE} -Punicode/unicode.gpr -XMODE=${MODE} -XLIBRARY_TYPE=${LIBRARY_TYPE}
