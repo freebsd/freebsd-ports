@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pthreads
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/${PORTNAME}-win32/
 PKGNAMEPREFIX=	mingw32-
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 USE_GMAKE=	yes
 
 do-build:
-	@${GMAKE} -C ${WRKSRC} MAKE=${GMAKE} CROSS=${PKGNAMEPREFIX} GC
+	@${GMAKE} -C ${WRKSRC} CROSS=${PKGNAMEPREFIX} GC
 
 do-install:
 .for f in pthread.h sched.h semaphore.h
