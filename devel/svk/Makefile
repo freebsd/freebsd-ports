@@ -178,9 +178,4 @@ pre-everything::
 	@${ECHO} "ports tree and upgrade it with 'portupgrade -R svk'."
 	@${ECHO} ""
 
-post-install:
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-
 .include <bsd.port.post.mk>
