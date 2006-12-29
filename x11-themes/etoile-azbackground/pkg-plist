@@ -1,0 +1,7 @@
+System/Applications/AZBackground.app/AZBackground
+System/Applications/AZBackground.app/Resources/AZBackground.desktop
+System/Applications/AZBackground.app/Resources/Info-gnustep.plist
+System/Applications/AZBackground.app/library_paths.openapp
+System/Applications/AZBackground.app/stamp.make
+@dirrm System/Applications/AZBackground.app/Resources
+@dirrm System/Applications/AZBackground.app

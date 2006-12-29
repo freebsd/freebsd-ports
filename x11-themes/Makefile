@@ -35,6 +35,7 @@
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
     SUBDIR += enlightenment-theme-Ganymede
     SUBDIR += enlightenment-theme-ShinyMetal
+    SUBDIR += etoile-azbackground
     SUBDIR += etoile-camaelon
     SUBDIR += etoile-etoilemenus
     SUBDIR += etoile-iconkit
