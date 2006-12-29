@@ -2620,3 +2620,4 @@ devel/javasvn|devel/svnkit|2006-12-23|JavaSVN has been renamed to SVNKit
 deskutils/etoile|deskutils/etoile-dictionaryreader|2006-12-25|renamed to etoile-dictionaryreader
 devel/javasvn|devel/svnkit|2006-12-23|JavaSVN has been renamed to SVNKit
 devel/p5-Inline-C2XS|devel/p5-InlineX-C2XS|2006-12-26|Project rename the module into the InlineX namespace
+www/etoile-grr|www/etoile-mollusk|2006-12-29|Project moved
