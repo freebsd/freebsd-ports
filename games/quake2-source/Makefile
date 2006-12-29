@@ -8,7 +8,7 @@
 PORTNAME=	source
 PORTVERSION=	3.21
 CATEGORIES=	games
-MASTER_SITES=	http://www.icculus.org/quake2/files/:icc \
+MASTER_SITES=	http://offload1.icculus.org/quake2/files/:icc \
 		${MASTER_SITE_IDSOFTWARE:S|$|quake2/source/:id|}
 PKGNAMEPREFIX=	quake2-
 DISTNAME=	quake2-r0.16.2
