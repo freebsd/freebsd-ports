@@ -1,0 +1,34 @@
+--- configure.orig	Mon Apr 10 20:59:48 2006
++++ configure	Thu Dec 21 16:33:07 2006
+@@ -6701,21 +6701,29 @@
+   $ac_cs_success || { (exit 1); exit 1; }
+ fi
+ 
+-
++CASHE_DIR=./tmp
++CASHE=${CASHE_DIR}/config.cashe
++[ -d ./tmp ] || mkdir ${CASHE_DIR}
++[ -f ./tmp/config.cashe ] && truncate ${CASHE}
++exec 7>> ${CASHE}
+ echo "$as_me:$LINENO: result: " >&5
+ echo "${ECHO_T}" >&6
+ echo "$as_me:$LINENO: result: ***** Options and locations *****" >&5
+ echo "${ECHO_T}***** Options and locations *****" >&6
+ echo "$as_me:$LINENO: result: system:                                 $OS" >&5
+ echo "${ECHO_T}system:                                 $OS" >&6
++echo "OS=$OS" >&7
+ echo "$as_me:$LINENO: result: default path:                           $prefix" >&5
+-echo "${ECHO_T}default path:                           $prefix" >&6
++echo "PREFIX=$prefix" >&7
+ echo "$as_me:$LINENO: result: default runtime config file:            $CONFIG_FILE" >&5
+ echo "${ECHO_T}default runtime config file:            $CONFIG_FILE" >&6
++echo "CONFIG_FILE=$CONFIG_FILE" >&7
+ echo "$as_me:$LINENO: result: location the SAMS startup script:       $DST_RCD_LOC" >&5
+ echo "${ECHO_T}location the SAMS startup script:       $DST_RCD_LOC" >&6
++echo "RC_FILE=$DST_RCD_LOC" >&7
+ echo "$as_me:$LINENO: result: location HTTP server root directory:    $DST_HTTPD_LOC" >&5
+ echo "${ECHO_T}location HTTP server root directory:    $DST_HTTPD_LOC" >&6
++echo "DOCUMENT_ROOT=$DST_HTTPD_LOC" >&7
+ echo "$as_me:$LINENO: result: location mysql includes:                $DST_MYSQL_INC" >&5
+ echo "${ECHO_T}location mysql includes:                $DST_MYSQL_INC" >&6
+ echo "$as_me:$LINENO: result: location mysql libraries:               $DST_MYSQL_LIBS" >&5

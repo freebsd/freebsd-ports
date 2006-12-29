@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Mon Dec 25 11:22:30 2006
++++ Makefile.in	Mon Dec 25 11:23:23 2006
+@@ -201,12 +201,11 @@
+ 		echo "move old sams.conf to sams.conf.old"; \
+ 		mv /etc/sams.conf /etc/sams.conf.old; \
+ 	fi
+-	cp ./etc/sams.conf $(sysconfdir);
++	cp ./etc/sams.conf $(sysconfdir).sample;
+ 	cp ./sams $(bindir);
+ 	cp ./samsf $(bindir);
+ 	cp ./samsredir $(bindir);
+ 	cp ./samsdaemon $(bindir);
+-	cp ./etc/samsd $(RCDPATH);
+ 	cp ./mysql/recover_admin_passwd $(bindir);
+ 	-@if test ! -d $(datadir); then \
+ 		echo "creating $(datadir)"; \
+@@ -235,10 +234,6 @@
+ 	chmod 777 $(datadir)/sams/data; 
+ 	rm -f $(datadir)/sams/data/*;
+ 	cp -R doc $(datadir)/sams/;
+-	-@if test ! -d $(HTTPDPATH)/sams; then \
+-		echo "creating symlink to sams directory"; \
+-		ln -s $(datadir)/sams $(HTTPDPATH)/sams; \
+-	fi
+ 
+ uninstall-binPROGRAMS:
+ 	rm $(bindir)/sams;
