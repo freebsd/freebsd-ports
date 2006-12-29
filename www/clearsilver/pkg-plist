@@ -1,5 +1,6 @@
+bin/cs
 bin/cstest
-bin/static.cgi
+bin/cs_static.cgi
 include/ClearSilver/ClearSilver.h
 include/ClearSilver/cgi/cgi.h
 include/ClearSilver/cgi/cgiwrap.h
