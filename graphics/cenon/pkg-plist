@@ -155,7 +155,6 @@ Local/Applications/Cenon.app/Resources/cursorMagnify.tiff
 Local/Applications/Cenon.app/Resources/cursorRotate.tiff
 Local/Applications/Cenon.app/Resources/eye.tiff
 Local/Applications/Cenon.app/Resources/eyeclosed.tiff
-Local/Applications/Cenon.app/Resources/info.tiff
 Local/Applications/Cenon.app/Resources/infoTitle.tiff
 Local/Applications/Cenon.app/Resources/ipArc.tiff
 Local/Applications/Cenon.app/Resources/ipCrosshairs.tiff
@@ -201,6 +200,11 @@ Local/Applications/Cenon.app/Resources/toolSinking.tiff
 Local/Applications/Cenon.app/Resources/toolText.tiff
 Local/Applications/Cenon.app/Resources/toolThread.tiff
 Local/Applications/Cenon.app/Resources/toolWeb.tiff
+Local/Applications/Cenon.app/Resources/tpAlign.tiff
+Local/Applications/Cenon.app/Resources/tpMix.tiff
+Local/Applications/Cenon.app/Resources/tpMove.tiff
+Local/Applications/Cenon.app/Resources/tpRotate.tiff
+Local/Applications/Cenon.app/Resources/tpScale.tiff
 Local/Applications/Cenon.app/Resources/typeAI.tiff
 Local/Applications/Cenon.app/Resources/typeAI_128x128.tiff
 Local/Applications/Cenon.app/Resources/typeAI_48x48.tiff

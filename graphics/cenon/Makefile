@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cenon
-PORTVERSION=	3.81
+PORTVERSION=	3.82
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vhf-group.com/vhfInterservice/download/source/
 DISTNAME=	Cenon-${PORTVERSION}
@@ -25,13 +25,13 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Cenon
-FULLVERSION=	3.80
+FULLVERSION=	3.82
 
 OPTIONS=	FULL_LIBRARY	"Install complete Cenon Library" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FULL_LIBRARY) || target(makesum)
+.if defined(WITH_FULL_LIBRARY) || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	CenonLibrary-${FULLVERSION}-1${EXTRACT_SUFX}
 PLIST_SUB+=	FULL=""
 .else
