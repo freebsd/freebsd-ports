@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Text/Password/Pronounceable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Password/Pronounceable/.packlist
+@dirrmtry %%SITE_PERL%%/Text/Password
+@dirrmtry %%SITE_PERL%%/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Password/Pronounceable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Password
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
