@@ -26,6 +26,7 @@ DisplayCalibrator, GNUWash, Poe, MPDCon, PlopFolio, CDPlayer, Burn, GScheme,
 Mplayer, MyLibrary, NeXTGo, iTerm, Installer, Hardware, LookAndBehavior,
 Azalea, EtoileMenuServer, Expense, FreeTar, CodeEditor, Localize,
 AddressManager, GSBench, SVGViewer, Vindaloo, Digibux, AppWrapper, Pixen,
-MyWiki, Cartotheque, LuserNET, Popup, Toolbox, Fortunate, TBrowser, TChat
+MyWiki, Cartotheque, LuserNET, Popup, Toolbox, Fortunate, TBrowser, TChat,
+AZBackground, Babbler, Mollusk
 
-Local tools:	zillion, adtool, etoile_system
+Local tools:	zillion, adtool, etoile_system, ioobjc
