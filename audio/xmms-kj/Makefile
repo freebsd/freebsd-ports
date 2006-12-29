@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.csse.monash.edu.au/~timf/
 DISTNAME=	kint_xmms-${PORTVERSION}
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This is a plugin that adds K-Joefol-Skinsupport to xmms
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

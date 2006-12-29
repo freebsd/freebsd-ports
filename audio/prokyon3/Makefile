@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prokyon3 is a multithreaded MP3 manager and tag editor
 
 BUILD_DEPENDS=	${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
