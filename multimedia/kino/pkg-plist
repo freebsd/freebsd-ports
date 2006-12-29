@@ -202,8 +202,6 @@ share/gnome/kino/lumas/left_to_right.png
 share/gnome/kino/lumas/matrix_snake_toplefthorizontal.png
 share/gnome/kino/lumas/none.png
 share/gnome/kino/lumas/symmetric_clock.png
-share/gnome/pixmaps/gqview.png
-share/gnome/pixmaps/svg-viewer.svg
 share/gnome/pixmaps/kino.png
 share/locale/cs/LC_MESSAGES/kino.mo
 share/locale/da/LC_MESSAGES/kino.mo
