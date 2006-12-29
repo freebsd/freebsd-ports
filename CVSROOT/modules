@@ -2428,7 +2428,6 @@ etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
 etoile-etoilemenus	ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
 etoile-foundation	ports/devel/etoile-foundation
-etoile-grr	ports/www/etoile-grr
 etoile-hardware	ports/deskutils/etoile-hardware
 etoile-iconkit	ports/x11-themes/etoile-iconkit
 etoile-installer	ports/sysutils/etoile-installer
