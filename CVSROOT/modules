@@ -2424,7 +2424,6 @@ etoile-bookmarkkit	ports/www/etoile-bookmarkkit
 etoile-camaelon	ports/x11-themes/etoile-camaelon
 etoile-collectionkit	ports/devel/etoile-collectionkit
 etoile-dictionaryreader	ports/deskutils/etoile-dictionaryreader
-etoile-etoileextensionskit	ports/deskutils/etoile-etoileextensionskit
 etoile-etoilemenus	ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
 etoile-foundation	ports/devel/etoile-foundation
@@ -2440,7 +2439,6 @@ etoile-mollusk	ports/www/etoile-mollusk
 etoile-multimediakit	ports/multimedia/etoile-multimediakit
 etoile-ogrekit	ports/textproc/etoile-ogrekit
 etoile-panekit	ports/deskutils/etoile-panekit
-etoile-preferenceskit	ports/deskutils/etoile-preferenceskit
 etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
 etoile-system	ports/sysutils/etoile-system
@@ -2450,7 +2448,6 @@ etoile-typewriter	ports/editors/etoile-typewriter
 etoile-ui	ports/deskutils/etoile-ui
 etoile-unitkit	ports/devel/etoile-unitkit
 etoile-wildmenus	ports/x11-themes/etoile-wildmenus
-etoile-workspaceswitcher	ports/deskutils/etoile-workspaceswitcher
 etoile-xwindowserverkit	ports/x11/etoile-xwindowserverkit
 etrace		ports/net/etrace
 ettercap	ports/net-mgmt/ettercap
