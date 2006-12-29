@@ -15732,6 +15732,7 @@ xml-lite.el	ports/textproc/xml-lite.el
 xml-parse.el	ports/textproc/xml-parse.el
 xml2rfc		ports/textproc/xml2rfc
 xml2rfc-xxe	ports/editors/xml2rfc-xxe
+xmlada-gcc	ports/textproc/xmlada-gcc
 xmlcatmgr	ports/textproc/xmlcatmgr
 xmlcharent	ports/textproc/xmlcharent
 xmldiff		ports/textproc/xmldiff
