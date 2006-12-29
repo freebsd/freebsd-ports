@@ -1,0 +1,24 @@
+Local/Applications/Babbler.app/Babbler
+Local/Applications/Babbler.app/Resources/Babbler.desktop
+Local/Applications/Babbler.app/Resources/English.lproj/MainMenu.gorm/data.classes
+Local/Applications/Babbler.app/Resources/English.lproj/MainMenu.gorm/data.info
+Local/Applications/Babbler.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+Local/Applications/Babbler.app/Resources/English.lproj/Player.gorm/data.classes
+Local/Applications/Babbler.app/Resources/English.lproj/Player.gorm/data.info
+Local/Applications/Babbler.app/Resources/English.lproj/Player.gorm/objects.gorm
+Local/Applications/Babbler.app/Resources/English.lproj/StreamPanel.gorm/data.classes
+Local/Applications/Babbler.app/Resources/English.lproj/StreamPanel.gorm/data.info
+Local/Applications/Babbler.app/Resources/English.lproj/StreamPanel.gorm/objects.gorm
+Local/Applications/Babbler.app/Resources/Info-gnustep.plist
+Local/Applications/Babbler.app/Resources/pause.tiff
+Local/Applications/Babbler.app/Resources/play.tiff
+Local/Applications/Babbler.app/Resources/seek_back.tiff
+Local/Applications/Babbler.app/Resources/seek_fwd.tiff
+Local/Applications/Babbler.app/library_paths.openapp
+Local/Applications/Babbler.app/stamp.make
+@dirrm Local/Applications/Babbler.app/Resources/English.lproj/StreamPanel.gorm
+@dirrm Local/Applications/Babbler.app/Resources/English.lproj/Player.gorm
+@dirrm Local/Applications/Babbler.app/Resources/English.lproj/MainMenu.gorm
+@dirrm Local/Applications/Babbler.app/Resources/English.lproj
+@dirrm Local/Applications/Babbler.app/Resources
+@dirrm Local/Applications/Babbler.app
