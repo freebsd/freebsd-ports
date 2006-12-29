@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20060912
-PORTREVISION=	1
+PORTVERSION=	20061204
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_2006_09_12_water_edition_linux
+DISTNAME=	${PORTNAME}_2006_12_04_gui_edition_linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
@@ -21,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ACLOCAL=true AUTOCONF=true AUTOMAKE=true
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
+MAKE_ENV+=	CXX="${CXX}"
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet
@@ -76,7 +76,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && \
 		${FIND} -E ${SAUDATDIR} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} -E ${SAUDATDIR} -type f -iregex ".*\.(png|cfg|cgz|jpg|ogg|ogz|txt|md2|md3|ms3d|qc|wav)" \
+		${FIND} -E ${SAUDATDIR} -type f -iregex ".*\.(png|cfg|cgz|jpg|ogg|ogz|txt|mid|md2|md3|ms3d|qc|wav)" \
 			-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
