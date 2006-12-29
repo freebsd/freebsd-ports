@@ -2416,6 +2416,7 @@ etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 etoile		ports/x11/etoile
 etoile-azalea	ports/x11-wm/etoile-azalea
+etoile-azbackground	ports/x11-themes/etoile-azbackground
 etoile-azdock	ports/x11-wm/etoile-azdock
 etoile-behavior	ports/sysutils/etoile-behavior
 etoile-bookmarkkit	ports/www/etoile-bookmarkkit
