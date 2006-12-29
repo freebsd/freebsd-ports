@@ -9,7 +9,7 @@
 
 PORTNAME=	festogi-spanish
 PORTVERSION=	2.0.1
-CATEGORIES=	audio accessibility
+CATEGORIES=	audio accessibility spanish
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	OGIspanish-${PORTVERSION}
 DIST_SUBDIR=	festival
