@@ -7,7 +7,7 @@
 
 PORTNAME=	etoile
 PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -53,9 +53,13 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	MultimediaKit:multimedia/etoile-multimediakit \
 	EtoileUI:deskutils/etoile-ui \
 
+#	DistributedView:deskutils/etoile-distributedview \
+
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
 	EtoileBehavior:sysutils/etoile-behavior \
+
+USE_GNUSTEP_LOCAL_BUNDLES+=	\
 
 USE_GNUSTEP_SYSTEM_THEMES+=	\
 	Camaelon:x11-themes/etoile-camaelon \
@@ -76,5 +80,13 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	EtoileMenuServer:deskutils/etoile-menuserver \
 	Vindaloo:graphics/vindaloo \
 	Typewriter:editors/etoile-typewriter \
+	AZBackground:x11-themes/etoile-azbackground \
+	Babbler:multimedia/etoile-babbler \
+	Mollusk:www/etoile-mollusk \
+
+#	Mantella:www/etoile-mantella \
+
+USE_GNUSTEP_LOCAL_TOOLS+=	\
+	ioobjc:lang/etoile-io \
 
 .include <bsd.port.mk>

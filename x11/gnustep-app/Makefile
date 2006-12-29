@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -109,6 +109,8 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	AZDock:x11-wm/etoile-azdock \
 	Position:astro/position \
 
+#	DistributedView:deskutils/etoile-distributedview \
+
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
 	GNUMail:mail/gnumail \
@@ -190,11 +192,16 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Fortunate:games/fortunate \
 	TBrowser:net/tryst-examples \
 	Typewriter:editors/etoile-typewriter \
+	AZBackground:x11-themes/etoile-azbackground \
+	Babbler:multimedia/etoile-babbler \
+	Mollusk:www/etoile-mollusk \
 
 #	CameraTransfer:graphics/cameratransfer \
+#	Mantella:www/etoile-mantella \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
 	adtool:mail/addresses-goodies \
+	ioobjc:lang/etoile-io \
 
 .include <bsd.port.mk>
