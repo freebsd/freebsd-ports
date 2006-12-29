@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qdvdauthor
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.1.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	oz@nixil.net
 COMMENT=	QT graphical frontend for dvdauthor
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
+		dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow \
+		qmake:${PORTSDIR}/devel/qmake
+
 RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
-		dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow
+		dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow \
+		bash:${PORTSDIR}/shells/bash
 
 PLIST_FILES=	bin/qdvdauthor \
 		bin/qslideshow \
