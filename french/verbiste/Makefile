@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.14
-PORTREVISION=	1
+PORTVERSION=	0.1.15
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	French verb conjugator/deconjugator
+COMMENT=	French verb conjugator/deconjugator
 
 USE_GETTEXT=	yes
 USE_GNOME+=	gnomehack ltverhack libxml2
@@ -28,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GETOPT_LONG=yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_GCC=	3.4+
 
 MAN1=		french-conjugator.1 french-deconjugator.1
 MAN3=		verbiste.3
