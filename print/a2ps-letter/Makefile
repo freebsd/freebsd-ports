@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${PAPERSIZE}${PKGNAMESUFFIX2}
+.if defined(WITH_I18N) || make(makesum) || defined(FETCH_ALL)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ascii file for printing on a postscript printer
@@ -23,6 +26,7 @@ INSTALLS_SHLIB=	yes
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1 texi2dvi4a2ps.1
 INFO=		a2ps ogonkify regex
 WRKSRC=		${WRKDIR}/${PORTNAME}-4.13
+I18N_PACKAGE=	i18n-fonts-0.1
 
 PAPERSIZE?=	letter
 PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
@@ -53,6 +57,25 @@ CONFLICTS?=	a2ps-a4-4.* a2ps-letter-4.*
 PLIST_SUB+=	WITHEMACS=""
 .else
 PLIST_SUB+=	WITHEMACS="@comment "
+.endif
+
+.if defined(WITH_I18N)
+PLIST_SUB+=	WITHI18N=""
+
+pre-configure:
+	@cd ${WRKDIR}/${I18N_PACKAGE}/afm && ${ECHO} *.afm > afms.lst && \
+	${MV} *.afm ${WRKSRC}/afm && cd ../fonts && \
+	${MV} *.pfb ${WRKSRC}/fonts
+
+post-configure:
+	@cd ${WRKSRC}/fonts && { ${ECHO} ''; \
+	${ECHO} "pfb_fonts =" *.pfb; } >> Makefile && \
+	${REINPLACE_CMD} 's,^\(fonts_DATA = .*\),\1 $$(pfb_fonts),' Makefile
+	@cd ${WRKSRC}/afm && { ${ECHO} ''; \
+	${ECHO} "i18n_afms =" `cat ${WRKDIR}/${I18N_PACKAGE}/afm/afms.lst`; } >> Makefile && \
+	${REINPLACE_CMD} 's,^\(all_afms = .*\),\1 $$(i18n_afms),' Makefile
+.else
+PLIST_SUB+=	WITHI18N="@comment "
 .endif
 
 post-install:
