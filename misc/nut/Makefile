@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	12.0
+PORTVERSION=	12.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ CSME
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 MAN1=		${PORTNAME}.1
