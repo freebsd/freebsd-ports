@@ -58,7 +58,7 @@ USE_SDL=	sdl
 CONFIGURE_ARGS+=--with-sdl=${LOCALBASE}
 PLIST_SUB+=	SDL=""
 .else
-CONFIGURE_ARGS+=--without-sdl
+CONFIGURE_ARGS+=--disable-sdl
 PLIST_SUB+=	SDL="@comment "
 .endif
 
@@ -67,7 +67,7 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} --with-vorbis=${LOCALBASE}
 PLIST_SUB+=	VORBIS=""
 .else
-CONFIGURE_ARGS+=--without-ogg --without-vorbis
+CONFIGURE_ARGS+=--disable-ogg --disable-vorbis
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
@@ -76,12 +76,12 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--with-xmms-prefix=${X11BASE}
 PLIST_SUB+=	XMMS=""
 .else
-CONFIGURE_ARGS+=--without-xmms
+CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
 .else
-CONFIGURE_ARGS+=--without-clients
+CONFIGURE_ARGS+=--with-clients=""
 PLIST_SUB+=	CLIENTS="@comment "
 .endif	# WITH_CLIENTS
 
@@ -96,7 +96,7 @@ CFLAGS+=	-ffast-math
 .if !defined(WITHOUT_SERVERS)
 PLIST_SUB+=	SERVERS=""
 .else
-CONFIGURE_ARGS+=--without-servers
+CONFIGURE_ARGS+=--with-servers=""
 PLIST_SUB+=	SERVERS="@comment "
 .endif
 
