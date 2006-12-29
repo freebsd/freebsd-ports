@@ -1,0 +1,8 @@
+RunApp streamlines the process for configuring applications that
+requires one or more web servers and/or other daemons, during
+development or deployment.
+
+It builds the config files required by the services from the $config
+hash, such as apache's httpd.conf.
+
+WWW: http://search.cpan.org/dist/RunApp/
