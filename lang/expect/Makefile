@@ -13,6 +13,8 @@ MASTER_SITES=	http://expect.nist.gov/src/
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
+PORTSCOUT=	skipv:5.44.0,5.44.1	# These were recalled by NIST
+
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS?=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .else
@@ -23,7 +25,7 @@ EXPECT_VER=	5.43
 LIBEXPECT_VER=	543
 
 WRKSRC=		${WRKDIR}/expect-${EXPECT_VER}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	EXPECT_VER="${EXPECT_VER}"
