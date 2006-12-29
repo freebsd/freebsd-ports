@@ -14,8 +14,12 @@ MASTER_SITE_SUBDIR=	any2dvd
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	A script to ease the pain of burning multimedia DVDs
+BROKEN=		Too many dependencies still missing.  Use at your own peril.
 
-RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode
+RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode	\
+		seq2:${PORTSDIR}/misc/seq2			\
+		soundstretch:${PORTSDIR}/audio/soundtouch	\
+		ecasound:${PORTSDIR}/audio/ecasound
 LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 
 MAN1=	any2vob.1 any2dvd.1
