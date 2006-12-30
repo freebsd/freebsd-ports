@@ -9,7 +9,7 @@ PORTNAME=	bazaar
 PORTVERSION=	1.4.2
 PORTREVISION?=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://bazaar.canonical.com/releases/src/
+MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}
 
 MAINTAINER=	lulf@kerneled.org
