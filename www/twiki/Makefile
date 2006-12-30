@@ -38,9 +38,14 @@ pre-everything::
 	@${ECHO} "****************************************************************"
 	@sleep 10
 
-post-extract:
-	@# move config to sample
-	@${MV} ${WRKSRC}/lib/TWiki.cfg ${WRKSRC}/lib/TWiki.cfg.sample
+post-patch:
+	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
+	${WRKSRC}/twiki_httpd_conf.txt
+	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
+	${WRKSRC}/lib/LocalSite.cfg.txt
+	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
+	${WRKSRC}/lib/TWiki.cfg
+	@${CP} ${WRKSRC}/lib/TWiki.cfg ${WRKSRC}/lib/TWiki.cfg.sample
 
 do-install:
 	${INSTALL} -d -m 0755 ${TWIKIDIR}

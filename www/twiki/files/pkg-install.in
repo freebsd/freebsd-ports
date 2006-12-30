@@ -29,10 +29,7 @@ case $2 in
 		done
 		find ${TWIKIDIR}/data -type f -name \*.bak | xargs rm
 
-		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/data -type f`
-		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/data -type d`
-		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/pub -type f`
-		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/pub -type d`
+		chown -R ${WWWUSER}:${WWWGROUP} ${TWIKIDIR}
 
 		chmod 755 ${TWIKIDIR}/bin/*
 		chmod 664 `find ${TWIKIDIR}/data -type f`
