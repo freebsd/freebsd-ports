@@ -11,13 +11,4 @@ lib/libhz.so.0
 %%DATADIR%%/TODO
 %%DATADIR%%/Thanks
 %%DATADIR%%/Version
-%%DATADIR%%/hz.txt
-%%DATADIR%%/procmailrc.example
-%%DATADIR%%/shed.big5
-%%DATADIR%%/shed.gb
-%%DATADIR%%/shed.uni
-%%DATADIR%%/shed.utf7
-%%DATADIR%%/shed.utf8
-%%DATADIR%%/xchat-autob5.so
-%%DATADIR%%/xchat-autogb.so
 @dirrm %%DATADIR%%

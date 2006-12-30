@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	autoconvert
-PORTVERSION=	0.3.14
+PORTVERSION=	0.3.16
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/
+MASTER_SITES=	http://people.debian.org/~ygh/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Intelligent Chinese encoding converter
 
-DATADIR=	${TARGETDIR}/share/${PKGNAMEPREFIX}${PORTNAME}
 MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
 USE_GETOPT_LONG=	yes
 USE_LDCONFIG=	yes
@@ -24,7 +23,7 @@ post-patch:
 
 pre-install:
 	@${MKDIR} ${DATADIR}
-.for i in ChangeLog LICENSE Readme TODO Thanks Version hz.txt procmailrc.example shed.big5 shed.gb shed.uni shed.utf7 shed.utf8
+.for i in ChangeLog LICENSE Readme TODO Thanks Version
 	@${INSTALL_DATA} ${WRKSRC}/$i ${DATADIR}
 .endfor
 
