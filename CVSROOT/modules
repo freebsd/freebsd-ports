@@ -5194,6 +5194,7 @@ jabberd		ports/net-im/jabberd
 jabref		ports/print/jabref
 jacal		ports/math/jacal
 jack		ports/audio/jack
+jack-rack	ports/audio/jack-rack
 jad		ports/java/jad
 jade		ports/textproc/jade
 jadetex		ports/print/jadetex
