@@ -7128,6 +7128,7 @@ mkbold-mkitalic	ports/x11-fonts/mkbold-mkitalic
 mkcatalog	ports/textproc/mkcatalog
 mkcmd		ports/devel/mkcmd
 mkfile		ports/sysutils/mkfile
+mkhexgrid	ports/games/mkhexgrid
 mkitalic	ports/x11-fonts/mkitalic
 mkmf		ports/devel/mkmf
 mknbi		ports/net/mknbi
