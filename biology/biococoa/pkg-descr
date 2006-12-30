@@ -1,0 +1,7 @@
+The BioCocoa framework provides developers with the opportunity to add
+support for reading and writing BEAST, Clustal, EMBL, Fasta, GCG-MSF, GDE,
+Hennig86, NCBI, NEXUS, NONA, PDB, Phylip, PIR, Plain/Raw, Swiss-Prot and
+TNT files by writing only three lines of code.
+The framework is written in Cocoa (Objective-C).
+
+WWW: http://bioinformatics.org/biococoa/

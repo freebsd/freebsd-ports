@@ -10,6 +10,7 @@
     SUBDIR += avida
     SUBDIR += babel
     SUBDIR += belvu
+    SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blast
     SUBDIR += boinc-simap
