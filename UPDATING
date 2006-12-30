@@ -10,7 +10,7 @@ upgrades.
    AFFECTS: users of security/gnupg
    AUTHOR: kuriyama@FreeBSD.org
 
-   The security/gnupg port was upgraded to 2.0.1 (with securty fix)
+   The security/gnupg port was upgraded to 2.0.1 (with security fix)
    and good-old gnupg-1.4.6 was repocopied to security/gnupg1.
 
    Both of security/gnupg (2.x) and security/gnupg1 (1.4.x) are
