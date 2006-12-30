@@ -7,6 +7,7 @@
 
 PORTNAME=	3zb2
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.angelfire.com/mt2/quakebots/:prog \
 		http://ponpoko.tri6.net/3zb2/routes/:nodes
@@ -59,8 +60,12 @@ post-extract:
 do-install:
 	${MKDIR} ${Q2DIR}/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${Q2DIR}/${PORTNAME}
-	cd ${WRKSRC}/3zb2 && ${CP} -R *.cfg 3ZBMaps.lst chctf chdtm pak6.pak \
-		${Q2DIR}/${PORTNAME}
+	cd ${WRKSRC}/3zb2 && \
+		${INSTALL_DATA} *.cfg 3ZBMaps.lst pak6.pak ${Q2DIR}/${PORTNAME}
+.for f in chctf chdtm
+	${MKDIR} ${Q2DIR}/${PORTNAME}/${f}
+	${INSTALL_DATA} ${WRKSRC}/3zb2/${f}/* ${Q2DIR}/${PORTNAME}/${f}
+.endfor
 .if defined(WITH_NODES)
 	${INSTALL_DATA} ${WRKSRC}/*.chn ${Q2DIR}/${PORTNAME}/chdtm
 	${INSTALL_DATA} ${WRKSRC}/*.chf ${Q2DIR}/${PORTNAME}/chctf
