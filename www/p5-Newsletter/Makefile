@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	Newsletter
-PORTVERSION=	0.03
+PORTVERSION=	0.03.3
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	 ../by-authors/id/K/KA/KALELE
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A Simple website based Newsletter interface
 
-BUILD_DEPENDS=	p5-MIME-Explode>0:${PORTSDIR}/mail/p5-MIME-Explode
+BUILD_DEPENDS=	p5-MIME-Explode>0:${PORTSDIR}/mail/p5-MIME-Explode \
+		p5-MIME-Lite>0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-File-Type>0:${PORTSDIR}/devel/p5-File-Type
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
