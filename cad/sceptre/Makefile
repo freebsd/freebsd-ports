@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	SCEPTRE is a general purpose circuit analysis program
 
-BUILD_DEPENDS=	f77:${PORTSDIR}/lang/f77
+WITH_FORTRAN=	yes
 
 NO_WRKSUBDIR=	YES
 
