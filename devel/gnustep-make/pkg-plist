@@ -156,6 +156,7 @@ System/share/config.site
 @dirrm System
 @dirrm Local/Tools/Resources
 @dirrm Local/Tools
+@dirrm Local/Library/Services
 @dirrm Local/Library/Preferences
 @dirrm Local/Library/Libraries
 @dirrm Local/Library/Headers
@@ -175,6 +176,7 @@ System/share/config.site
 @exec mkdir -p %D/Local/Library/Headers
 @exec mkdir -p %D/Local/Library/Libraries
 @exec mkdir -p %D/Local/Library/Preferences
+@exec mkdir -p %D/Local/Library/Services
 @exec mkdir -p %D/Local/Tools/Resources
 @exec mkdir -p %D/System/Applications
 @exec mkdir -p %D/System/Library/ApplicationSupport
