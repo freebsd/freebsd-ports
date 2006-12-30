@@ -1,12 +1,16 @@
-lib/libIrrlicht.so
-lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 include/irrlicht/EDriverTypes.h
 include/irrlicht/EGUIElementTypes.h
+include/irrlicht/ESceneNodeAnimatorTypes.h
+include/irrlicht/ESceneNodeTypes.h
+include/irrlicht/ETerrainElements.h
 include/irrlicht/IAnimatedMesh.h
+include/irrlicht/IAnimatedMeshB3d.h
 include/irrlicht/IAnimatedMeshMD2.h
 include/irrlicht/IAnimatedMeshMS3D.h
 include/irrlicht/IAnimatedMeshSceneNode.h
 include/irrlicht/IAnimatedMeshX.h
+include/irrlicht/IAttributeExchangingObject.h
+include/irrlicht/IAttributes.h
 include/irrlicht/IBillboardSceneNode.h
 include/irrlicht/ICameraSceneNode.h
 include/irrlicht/ICursorControl.h
@@ -16,9 +20,10 @@ include/irrlicht/IFileList.h
 include/irrlicht/IFileSystem.h
 include/irrlicht/IGPUProgrammingServices.h
 include/irrlicht/IGUIButton.h
-include/irrlicht/IGUICheckBox.h
+include/irrlicht/IGUIColorSelectDialog.h
 include/irrlicht/IGUIComboBox.h
 include/irrlicht/IGUIContextMenu.h
+include/irrlicht/IGUICheckBox.h
 include/irrlicht/IGUIEditBox.h
 include/irrlicht/IGUIElement.h
 include/irrlicht/IGUIEnvironment.h
@@ -36,14 +41,17 @@ include/irrlicht/IGUIToolbar.h
 include/irrlicht/IGUIWindow.h
 include/irrlicht/IImage.h
 include/irrlicht/IImageLoader.h
+include/irrlicht/IImageWriter.h
 include/irrlicht/ILightSceneNode.h
 include/irrlicht/ILogger.h
 include/irrlicht/IMaterialRenderer.h
+include/irrlicht/IMaterialRendererServices.h
 include/irrlicht/IMesh.h
 include/irrlicht/IMeshBuffer.h
 include/irrlicht/IMeshCache.h
 include/irrlicht/IMeshLoader.h
 include/irrlicht/IMeshManipulator.h
+include/irrlicht/IMeshSceneNode.h
 include/irrlicht/IMetaTriangleSelector.h
 include/irrlicht/IOSOperator.h
 include/irrlicht/IParticleAffector.h
@@ -56,9 +64,11 @@ include/irrlicht/ISceneManager.h
 include/irrlicht/ISceneNode.h
 include/irrlicht/ISceneNodeAnimator.h
 include/irrlicht/ISceneNodeAnimatorCollisionResponse.h
+include/irrlicht/ISceneNodeAnimatorFactory.h
+include/irrlicht/ISceneNodeFactory.h
+include/irrlicht/ISceneUserDataSerializer.h
 include/irrlicht/IShaderConstantSetCallBack.h
 include/irrlicht/IShadowVolumeSceneNode.h
-include/irrlicht/IStringParameters.h
 include/irrlicht/ITerrainSceneNode.h
 include/irrlicht/ITextSceneNode.h
 include/irrlicht/ITexture.h
@@ -87,9 +97,11 @@ include/irrlicht/SMeshBufferLightMap.h
 include/irrlicht/SMeshBufferTangents.h
 include/irrlicht/SParticle.h
 include/irrlicht/SViewFrustrum.h
+include/irrlicht/SceneParameters.h
 include/irrlicht/aabbox3d.h
 include/irrlicht/dimension2d.h
 include/irrlicht/heapsort.h
+include/irrlicht/irrAllocator.h
 include/irrlicht/irrArray.h
 include/irrlicht/irrList.h
 include/irrlicht/irrMath.h
@@ -107,4 +119,159 @@ include/irrlicht/rect.h
 include/irrlicht/triangle3d.h
 include/irrlicht/vector2d.h
 include/irrlicht/vector3d.h
+lib/libIrrlicht.a
+lib/libIrrlicht.so
+lib/libIrrlicht.so.%%SHARED_LIB_VER%%
+%%EXAMPLES%%%%EXAMPLESDIR%%/01.HelloWorld/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/01.HelloWorld/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/02.Quake3Map/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/02.Quake3Map/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/03.CustomSceneNode/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/03.CustomSceneNode/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/04.Movement/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/04.Movement/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/05.UserInterface/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/05.UserInterface/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/06.2DGraphics/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/06.2DGraphics/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/07.Collision/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/07.Collision/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/08.SpecialFX/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/08.SpecialFX/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/09.Meshviewer/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/09.Meshviewer/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/09.Meshviewer/resource.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/10.Shaders/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/10.Shaders/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/11.PerPixelLighting/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/11.PerPixelLighting/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/12.TerrainRendering/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/12.TerrainRendering/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/13.RenderToTexture/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/13.RenderToTexture/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/15.LoadIrrFile/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/15.LoadIrrFile/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/Demo/CDemo.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/Demo/CDemo.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/Demo/CMainMenu.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/Demo/CMainMenu.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/Demo/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/Demo/main.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/Demo/resource.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/001shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/002shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/003shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/004shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/005shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/006shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/007shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/008shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/009shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/010shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/011shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/012shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/013shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/014shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/015shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/2ddemo.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/Faerie5.BMP
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/IrrlichtTheme.ogg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/Particle.tga
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/axe.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/ball.wav
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/burning avatar.gif
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/burninglogo.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/config.xml
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d8.psh
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d8.vsh
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.hlsl
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.psh
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.vsh
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/demoback.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/detailmap3.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/dotnetback.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/dwarf-Read-Me.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/dwarf.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/dwarf.x
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/earth.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/earth.x
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/earthbump.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/enano.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/example.irr
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/faerie.md2
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/faerie2.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/fire.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/fireball.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/fontcourier.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/fonthaettenschweiler.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/fontlucida.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/help.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/impact.wav
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irr.ico
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht.dat
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht2_bk.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht2_dn.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht2_ft.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht2_lf.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht2_rt.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht2_up.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogo.BMP
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogo.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoaligned.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoalpha.tga
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoalpha2.tga
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/map-20kdm2.pk3
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/map-20kdm2.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/open.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.frag
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.psh
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.vert
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.vsh
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/particle.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/particlered.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/particlewhite.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/portal1.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/portal2.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/portal3.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/portal4.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/portal5.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/portal6.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/portal7.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/rockwall.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/rockwall_height.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/room.3ds
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/rsptnback.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/smoke.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/sphere.3ds
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/spheremap.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/stones.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/sydney.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/sydney.md2
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/t351sml.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/terrain-heightmap.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/terrain-texture.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/tools.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/vc6include.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/vc6optionsdir.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/vcnetinclude.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/wall.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/wall.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/water.jpg
 @dirrm include/irrlicht
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/01.HelloWorld
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/02.Quake3Map
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/03.CustomSceneNode
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/04.Movement
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/05.UserInterface
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/06.2DGraphics
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/07.Collision
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/08.SpecialFX
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/09.Meshviewer
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/10.Shaders
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/11.PerPixelLighting
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/12.TerrainRendering
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/13.RenderToTexture
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/15.LoadIrrFile
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Demo
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/media
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
