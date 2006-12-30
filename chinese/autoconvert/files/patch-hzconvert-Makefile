@@ -1,9 +1,10 @@
---- hzconvert/Makefile.orig	Mon Jan  8 11:03:21 2001
-+++ hzconvert/Makefile	Mon Mar 22 09:39:15 2004
+--- hzconvert/Makefile.orig	Mon Jan  8 18:03:21 2001
++++ hzconvert/Makefile	Thu Dec 28 10:30:43 2006
 @@ -1,18 +1,18 @@
- CC=gcc -I../include
+-CC=gcc -I../include
 -CFLAGS=-O2 -Wall -g
-+CFLAGS+=-fPIC -Wall -g
++CC=gcc
++CFLAGS+=-fPIC -Wall -g -I../include
  SHARED_LIB=libhz.so
  SHARED_LIB_MAJOR=$(SHARED_LIB).0
  SHARED_LIB_MINOR=$(SHARED_LIB_MAJOR).0

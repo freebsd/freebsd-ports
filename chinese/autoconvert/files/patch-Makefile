@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Apr 28 09:45:46 2001
-+++ Makefile	Thu May 15 13:52:33 2003
++++ Makefile	Thu Dec 28 15:12:13 2006
 @@ -1,7 +1,7 @@
  
  CC=gcc
@@ -27,7 +27,7 @@
 +	${BSD_INSTALL_PROGRAM} lib/libhz.so.0.0 $(PREFIX)/lib/libhz.so.0
 +	cd $(PREFIX)/lib;ln -s  libhz.so.0 libhz.so
 +	${BSD_INSTALL_PROGRAM} lib/libhz.a $(PREFIX)/lib
-+	${BSD_INSTALL_PROGRAM} contrib/xchat-plugins/xchat-autogb.so $(PREFIX)/share/zh-autoconvert
-+	${BSD_INSTALL_PROGRAM} contrib/xchat-plugins/xchat-autob5.so $(PREFIX)/share/zh-autoconvert
++	#${BSD_INSTALL_PROGRAM} contrib/xchat-plugins/xchat-autogb.so $(PREFIX)/share/autoconvert
++	#${BSD_INSTALL_PROGRAM} contrib/xchat-plugins/xchat-autob5.so $(PREFIX)/share/autoconvert
 +	${BSD_INSTALL_DATA} include/*.h  $(PREFIX)/include
 +	ln -s autogb $(PREFIX)/bin/autob5
