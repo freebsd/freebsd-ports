@@ -444,6 +444,7 @@
     SUBDIR += mindguard
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += mkhexgrid
     SUBDIR += monkeybubble
     SUBDIR += monopd
     SUBDIR += monster-masher
