@@ -7227,6 +7227,7 @@ mod_domaintree	ports/www/mod_domaintree
 mod_dosevasive20	ports/www/mod_dosevasive20
 mod_dtcl	ports/www/mod_dtcl
 mod_encoding	ports/www/mod_encoding
+mod_evasive20	ports/www/mod_evasive20
 mod_extract_forwarded	ports/www/mod_extract_forwarded
 mod_extract_forwarded2	ports/www/mod_extract_forwarded2
 mod_fastcgi	ports/www/mod_fastcgi

@@ -322,6 +322,7 @@
     SUBDIR += mod_dosevasive20
     SUBDIR += mod_dtcl
     SUBDIR += mod_encoding
+    SUBDIR += mod_evasive20
     SUBDIR += mod_extract_forwarded
     SUBDIR += mod_extract_forwarded2
     SUBDIR += mod_fastcgi
