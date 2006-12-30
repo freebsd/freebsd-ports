@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.3.17
+PORTVERSION=	0.3.18
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python ipv6
 MASTER_SITES=	http://download.bittornado.com/download/ \
@@ -27,7 +27,7 @@ DOC_FILES1=	BUILD.windows.txt FAQ.txt IMPORTANT-multitracker-readme.txt \
 		INSTALL.unix.txt credits.txt multitracker-spec.txt \
 		README-Psyco.txt webseed-spec.txt
 DOC_FILES2=	LICENSE.txt README.txt
-EXTRA_DOC_FILES=	multitracker/README.txt
+EXTRA_DOC_FILES=	test/multitracker/README.txt
 MAN1=		bittorrent-downloader.bittornado.1 \
 		bittorrent-multi-downloader.bittornado.1 \
 		btcompletedir.bittornado.1 btcompletedirgui.bittornado.1 \

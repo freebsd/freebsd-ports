@@ -80,6 +80,9 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/track.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/track.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/track.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/BTcrypto.py
+%%PYTHON_SITELIBDIR%%/BitTornado/BTcrypto.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/BTcrypto.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/ConfigDir.py
 %%PYTHON_SITELIBDIR%%/BitTornado/ConfigDir.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/ConfigDir.pyo
@@ -185,7 +188,7 @@ bin/bttrack.py
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/credits.txt
 %%PORTDOCS%%%%DOCSDIR%%/multitracker-spec.txt
-%%PORTDOCS%%%%DOCSDIR%%/multitracker_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/test_multitracker_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/webseed-spec.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/bittornado.sh.sample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
