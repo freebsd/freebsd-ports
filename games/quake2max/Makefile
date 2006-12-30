@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quake2max
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.45
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Quake2MaX/:src \
 		${MASTER_SITE_LOCAL:S/$/:data/}
@@ -24,9 +23,9 @@ EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.2+
+USE_GCC=	3.4+
 ALL_TARGET=	release
-WRKSRC=		${WRKDIR}/Quake2maX-44-src_unix
+WRKSRC=		${WRKDIR}/${DISTNAME:S/quake2max/Quake2maX/}
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \
@@ -40,10 +39,7 @@ MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-Q2MAX_DATA=	${PORTNAME}.${PORTVERSION:S/.//}.rar
-
-# The data is not available and compiled executables do not work for 0.45.
-PORTSCOUT=	skipv:0.45
+Q2MAX_DATA=	${PORTNAME}.044.rar
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
