@@ -7,18 +7,19 @@
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc russian
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
-DISTNAME=	ircd-RU-${PORTVERSION}-02-stable
+MASTER_SITES=	http://muhnet.org.ru/ \
+		ftp://repoman.wenet.ru/pub/ircd-RU/
+DISTNAME=	ircd-RU-${PORTVERSION}-03-rc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	An irc daemon with translation schemes and other useful features
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	ircd.sh
+USE_RC_SUBR=	ircd
 
 VARDIR=		/var
 PLIST_SUB=	VARDIR=${VARDIR}
@@ -75,10 +76,6 @@ CONFIGURE_ARGS+=--enable-dnsbl
 CONFIGURE_ARGS+=--enable-select
 .endif
 
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile on amd64
-.endif
-
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -Ee '/(dir_HPATH)|opers.txt/d' ${WRKSRC}/tools/install_ircd.in
@@ -96,5 +93,9 @@ pre-install:
 post-install:
 	@${CHOWN} -R ircd:ircd ${VARDIR}/log/ircd-ru
 	@${CAT} ${PKGMESSAGE}
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
 
 .include <bsd.port.post.mk>

@@ -26,5 +26,6 @@ etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -m 755 %%VARDIR%%/log/ircd-ru
 @exec chown ircd:ircd %%VARDIR%%/log/ircd-ru
-@unexec rm -R %%VARDIR%%/log/ircd-ru 2>&1 >/dev/null || true
+@unexec rmdir %%VARDIR%%/log/ircd-ru
+@unexec rmdir %%VARDIR%%/run/ircd-ru
 @unexec (rmdir %D/etc/ircd-ru && pw user del ircd) || echo 'To completely remove this port delete user ircd, group ircd and remove etc/ircd-ru'
