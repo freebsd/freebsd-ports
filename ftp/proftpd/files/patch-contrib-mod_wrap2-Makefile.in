@@ -1,0 +1,11 @@
+--- contrib/mod_wrap2/Makefile.in.orig	Wed Sep  6 15:11:47 2006
++++ contrib/mod_wrap2/Makefile.in	Thu Dec 28 11:41:24 2006
+@@ -13,7 +13,7 @@
+ MODULE_NAME=mod_wrap2
+ 
+ # Necessary redefinitions
+-INCLUDES=-I. -I../.. -I../../include
++INCLUDES=-I. -I../.. -I../../include -I/usr/local/include
+ CPPFLAGS= -DHAVE_CONFIG_H $(DEFAULT_PATHS) $(PLATFORM) $(INCLUDES)
+ LDFLAGS=-L../../lib
+ 
