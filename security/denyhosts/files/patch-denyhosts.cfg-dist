@@ -1,5 +1,8 @@
---- denyhosts.cfg-dist.orig	Sun Apr  9 14:37:46 2006
-+++ denyhosts.cfg-dist	Fri May  5 11:37:13 2006
+
+$FreeBSD$
+
+--- denyhosts.cfg-dist.orig
++++ denyhosts.cfg-dist
 @@ -9,10 +9,10 @@
  # argument
  #
@@ -13,15 +16,6 @@
  #
  # SuSE:
  #SECURE_LOG = /var/log/messages
-@@ -22,7 +22,7 @@
- #SECURE_LOG = /private/var/log/asl.log
- #
- # Mac OS X (v10.3 or earlier):
--SECURE_LOG=/private/var/log/system.log
-+#SECURE_LOG=/private/var/log/system.log
- #
- ########################################################################
- 
 @@ -31,7 +31,7 @@
  # HOSTS_DENY: the file which contains restricted host access information
  #
