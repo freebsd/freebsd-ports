@@ -262,6 +262,7 @@ keypad.3x
 killchar.3x
 killwchar.3x
 leaveok.3x
+legacy_coding.3x
 link_field.3x
 link_fieldtype.3x
 longname.3x
@@ -406,6 +407,7 @@ nl.3x
 nocbreak.3x
 nodelay.3x
 noecho.3x
+nofilter.3x
 nonl.3x
 noqiflush.3x
 noraw.3x
@@ -561,6 +563,7 @@ update_panels.3x
 use_default_colors.3x
 use_env.3x
 use_extended_names.3x
+use_legacy_coding.3x
 vid_attr.3x
 vid_puts.3x
 vidattr.3x
