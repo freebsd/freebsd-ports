@@ -1,5 +1,5 @@
---- build/unix/config_proginfo_host.orig	Thu Jan 19 22:13:38 2006
-+++ build/unix/config_proginfo_host	Tue Sep 12 19:12:07 2006
+--- sc2/build/unix/config_proginfo_host.orig	Tue Dec 26 21:07:45 2006
++++ sc2/build/unix/config_proginfo_host	Tue Dec 26 21:09:26 2006
 @@ -55,9 +55,9 @@
  LIB_SDL_NAME="Simple DirectMedia Layer"
  case "$HOST_SYSTEM" in
