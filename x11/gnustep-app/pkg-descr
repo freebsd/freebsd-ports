@@ -8,11 +8,13 @@ WizardKit, HighlighterKit, Performance, SQLClient, WebServer, StepTalk,
 MathArray, ObjcUnit, WildMenus, GSKrab, Cddb, UnitKit, XWindowServerKit,
 RSSKit, EtoileExtensions, Encore, BDB, FortyTwo, ObjectiveLib, PopplerKit,
 MP3ToWav, CameraKit, Tryst, CollectionKit, EtoileFoundation, PaneKit,
-WorkspaceCommKit, SystemConfig, MultimediaKit, EtoileUI, EtoileBehavior
+WorkspaceCommKit, SystemConfig, MultimediaKit, EtoileUI, EtoileBehavior,
+SQLite
 
 System apps:	Gorm, GShisen, ProjectCenter, Preferences, GWorkspace,
 guile-gui, gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
-WrapperFactory, GRubik, AZDock, Recycler, DBModeler, guile-gui, Position
+WrapperFactory, GRubik, AZDock, Recycler, DBModeler, guile-gui, Position,
+ClipBook, GMDSClient
 
 Local apps:	Gomoku, GNUMail, EasyDiff, Calculator, CurrencyConverter,
 Finger, GFractal, GSTest, HostAddress, Ink, NSBrowserTest, NSImageTest,
@@ -27,6 +29,6 @@ Mplayer, MyLibrary, NeXTGo, iTerm, Installer, Hardware, LookAndBehavior,
 Azalea, EtoileMenuServer, Expense, FreeTar, CodeEditor, Localize,
 AddressManager, GSBench, SVGViewer, Vindaloo, Digibux, AppWrapper, Pixen,
 MyWiki, Cartotheque, LuserNET, Popup, Toolbox, Fortunate, TBrowser, TChat,
-AZBackground, Babbler, Mollusk
+AZBackground, Babbler, Mollusk, BioCocoa
 
-Local tools:	zillion, adtool, etoile_system, ioobjc
+Local tools:	zillion, adtool, etoile_system, ioobjc, mdextractor

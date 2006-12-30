@@ -108,6 +108,8 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	GRubik:games/grubik \
 	AZDock:x11-wm/etoile-azdock \
 	Position:astro/position \
+	ClipBook:deskutils/gworkspace-clipbook \
+	GMDSClient:deskutils/gworkspace-gwmetadata \
 
 #	DistributedView:deskutils/etoile-distributedview \
 
@@ -195,6 +197,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	AZBackground:x11-themes/etoile-azbackground \
 	Babbler:multimedia/etoile-babbler \
 	Mollusk:www/etoile-mollusk \
+	BioCocoa:biology/biococoa \
 
 #	CameraTransfer:graphics/cameratransfer \
 #	Mantella:www/etoile-mantella \
@@ -203,5 +206,7 @@ USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
 	adtool:mail/addresses-goodies \
 	ioobjc:lang/etoile-io \
+
+#	open:deskutils/openapp \
 
 .include <bsd.port.mk>
