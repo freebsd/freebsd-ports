@@ -1,0 +1,11 @@
+--- ./include/atslogmaster.in.orig	Sat Dec 30 06:04:56 2006
++++ ./include/atslogmaster.in	Sat Dec 30 06:05:08 2006
+@@ -45,6 +45,8 @@
+     ;;
+ esac
+ 
++mkdir -p $logdir
++
+ # Проверим, используется tcp порт, или порт в /dev/
+ TCPPORT=$(expr $port : ".*tcp:.*\$")
+ if [ $TCPPORT = 0 ];then
