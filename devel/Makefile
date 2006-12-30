@@ -920,6 +920,7 @@
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-IniHash
     SUBDIR += p5-Config-Objective
+    SUBDIR += p5-Config-Properties
     SUBDIR += p5-Config-Record
     SUBDIR += p5-Config-Setting
     SUBDIR += p5-Config-Simple
