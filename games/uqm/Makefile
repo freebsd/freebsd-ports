@@ -13,25 +13,23 @@
 #
 
 PORTNAME=	uqm
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sc2
-DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tar.gz ${PORTNAME}-${PORTVERSION}-content.uqm
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-source.tar.gz
+DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tgz ${PORTNAME}-${PORTVERSION}-content.uqm
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-source.tgz
 
 MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	A port of the original Star Control 2 for 3DO consoles
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
+		mikmod.2:${PORTSDIR}/audio/libmikmod
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	image sdl
 NO_INSTALL_MANPAGES=	yes
-
-ONLY_FOR_ARCHS=	i386
 
 OPTIONS=	VOICE "Voice add-on (110MB)" Off \
 		MUSIC "Music add-on (18MB)" Off \
@@ -62,44 +60,54 @@ BROKEN=		does not compile
 .endif
 
 post-extract:
-	${MKDIR} ${WRKSRC}/content/packages
-	${RM} -rf ${WRKSRC}/content/CVS # seems to have erroneously slipped into release tarball
-	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-content.uqm ${WRKSRC}/content/packages/
+	${MKDIR} ${WRKSRC}/sc2/content/packages
+	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-content.uqm ${WRKSRC}/sc2/content/packages/
 .ifdef(WITH_VOICE)
-	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-voice.uqm ${WRKSRC}/content/packages/
+	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-voice.uqm ${WRKSRC}/sc2/content/packages/
 .endif
 .ifdef(WITH_MUSIC)
-	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-3domusic.uqm ${WRKSRC}/content/packages/
+	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-3domusic.uqm ${WRKSRC}/sc2/content/packages/
 .endif
 
 do-configure:
-	@${ECHO_MSG} CHOICE_debug_VALUE=\'nodebug\' >  ${WRKSRC}/config.state
-	@${ECHO_MSG} CHOICE_graphics_VALUE=\'opengl\' >> ${WRKSRC}/config.state
+	@${ECHO_MSG} CHOICE_debug_VALUE=\'nodebug\' >  ${WRKSRC}/sc2/config.state
+	@${ECHO_MSG} CHOICE_graphics_VALUE=\'opengl\' >> ${WRKSRC}/sc2/config.state
 .ifdef(WITH_OPENAL)
-	@${ECHO_MSG} CHOICE_sound_VALUE=\'openal\' >> ${WRKSRC}/config.state
+	@${ECHO_MSG} CHOICE_sound_VALUE=\'openal\' >> ${WRKSRC}/sc2/config.state
 .else
-	@${ECHO_MSG} CHOICE_sound_VALUE=\'mixsdl\' >> ${WRKSRC}/config.state
+	@${ECHO_MSG} CHOICE_sound_VALUE=\'mixsdl\' >> ${WRKSRC}/sc2/config.state
 .endif
-	@${ECHO_MSG} CHOICE_ovcodec_VALUE=\'standard\' >> ${WRKSRC}/config.state
-	@${ECHO_MSG} CHOICE_ioformat_VALUE=\'stdio_zip\' >> ${WRKSRC}/config.state
-	@${ECHO_MSG} CHOICE_accel_VALUE=\'asm\' >> ${WRKSRC}/config.state
-	@${ECHO_MSG} INPUT_install_prefix_VALUE=\'${PREFIX}\' >> ${WRKSRC}/config.state
-	@${ECHO_MSG} INPUT_install_bindir_VALUE=\''$$prefix/bin'\' >> ${WRKSRC}/config.state
-	@${ECHO_MSG} INPUT_install_libdir_VALUE=\''$$prefix/lib'\' >> ${WRKSRC}/config.state
-	@${ECHO_MSG} INPUT_install_sharedir_VALUE=\''$$prefix/share'\' >> ${WRKSRC}/config.state
-	cd ${WRKSRC} && ${SETENV} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} PREFIX=${PREFIX} ./build.sh uqm config
+	@${ECHO_MSG} CHOICE_mikmod_VALUE=\'external\' >> ${WRKSRC}/sc2/config.state
+	@${ECHO_MSG} CHOICE_ovcodec_VALUE=\'standard\' >> ${WRKSRC}/sc2/config.state
+.ifdef(NO_INET6)
+	@${ECHO_MSG} CHOICE_netplay_VALUE=\'full\' >> ${WRKSRC}/sc2/config.state
+.else
+	@${ECHO_MSG} CHOICE_netplay_VALUE=\'ipv4\' >> ${WRKSRC}/sc2/config.state
+.endif
+	@${ECHO_MSG} CHOICE_joystick_VALUE=\'enabled\' >> ${WRKSRC}/sc2/config.state
+	@${ECHO_MSG} CHOICE_ioformat_VALUE=\'stdio_zip\' >> ${WRKSRC}/sc2/config.state
+.if ${ARCH} == "i386"
+	@${ECHO_MSG} CHOICE_accel_VALUE=\'asm\' >> ${WRKSRC}/sc2/config.state
+.else
+	@${ECHO_MSG} CHOICE_accel_VALUE=\'plainc\' >> ${WRKSRC}/sc2/config.state
+.endif
+	@${ECHO_MSG} INPUT_install_prefix_VALUE=\'${PREFIX}\' >> ${WRKSRC}/sc2/config.state
+	@${ECHO_MSG} INPUT_install_bindir_VALUE=\''$$prefix/bin'\' >> ${WRKSRC}/sc2/config.state
+	@${ECHO_MSG} INPUT_install_libdir_VALUE=\''$$prefix/lib'\' >> ${WRKSRC}/sc2/config.state
+	@${ECHO_MSG} INPUT_install_sharedir_VALUE=\''$$prefix/share'\' >> ${WRKSRC}/sc2/config.state
+	cd ${WRKSRC}/sc2 && ${SETENV} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} PREFIX=${PREFIX} ./build.sh uqm config
 
 do-build:
-	cd ${WRKSRC} && ./build.sh uqm
+	cd ${WRKSRC}/sc2 && ./build.sh uqm
 
 do-install:
-	cd ${WRKSRC} && ./build.sh uqm install
+	cd ${WRKSRC}/sc2 && ./build.sh uqm install
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/lib/uqm/uqm
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/users/manual.txt ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/sc2/doc/users/manual.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
---- build/unix/build_functions.orig	Tue Feb  7 03:43:34 2006
-+++ build/unix/build_functions	Tue Feb  7 03:44:25 2006
-@@ -55,7 +55,7 @@
+--- sc2/build/unix/build_functions.orig	Tue Dec 26 21:05:30 2006
++++ sc2/build/unix/build_functions	Tue Dec 26 21:05:38 2006
+@@ -56,7 +56,7 @@
  	eval "${TARGET}_requirements"
  	eval "${TARGET}_prepare_config"
  	eval "${TARGET}_load_config"
