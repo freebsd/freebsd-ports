@@ -8,7 +8,8 @@
 PORTNAME=	tkrat
 PORTVERSION=	2.1.5
 CATEGORIES=	mail tk84
-MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/
+MASTER_SITES=	http://tkrat.org/downloads/stable/ \
+		ftp://ftp.tkrat.org/pub/tkrat/
 
 MAINTAINER=	sjr@comcast.net
 COMMENT=	A mail user agent for X with a Tcl/Tk user interface
