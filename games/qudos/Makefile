@@ -7,7 +7,7 @@
 
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
@@ -19,7 +19,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhaced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
+USE_GCC=	3.4+
 USE_GL=		yes
 USE_GMAKE=	yes
 
@@ -46,7 +46,7 @@ OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" on \
 		XATRIX "Build The Reckoning (Xatrix) mission pack" off \
 		ZAERO "Build Zaero modification" off
 
-MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES WITH_XMMS=NO\
+MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES WITH_XMMS=NO \
 		DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" VER="${PORTVERSION}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
