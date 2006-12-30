@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pyaim
-PORTVERSION=	0.7d
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/${PORTNAME}-t/
 PKGNAMEPREFIX=	jabber-
