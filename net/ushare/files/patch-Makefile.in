@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sun Dec 10 18:39:08 2006
++++ src/Makefile.in	Sat Dec 23 13:32:07 2006
+@@ -59,7 +59,7 @@
+ 	http.$(OBJEXT) presentation.$(OBJEXT) metadata.$(OBJEXT) \
+ 	mime.$(OBJEXT) services.$(OBJEXT) buffer.$(OBJEXT) \
+ 	util_iconv.$(OBJEXT) content.$(OBJEXT) cfgparser.$(OBJEXT) \
+-	trace.$(OBJEXT) ushare.$(OBJEXT)
++	trace.$(OBJEXT) ushare.$(OBJEXT) getline.$(OBJEXT) strndup.$(OBJEXT)
+ ushare_OBJECTS = $(am_ushare_OBJECTS)
+ ushare_LDADD = $(LDADD)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+@@ -182,6 +182,8 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ ushare_SOURCES = \
++	strndup.h strndup.c \
++	getline.h getline.c \
+ 	cds.h cds.c \
+ 	cms.h cms.c \
+ 	msr.h msr.c \
