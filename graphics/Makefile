@@ -284,7 +284,6 @@
     SUBDIR += inventor
     SUBDIR += ipe
     SUBDIR += irit
-    SUBDIR += irrlicht
     SUBDIR += isreal
     SUBDIR += ivtools
     SUBDIR += jalbum
