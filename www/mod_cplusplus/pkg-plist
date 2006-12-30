@@ -1,0 +1,11 @@
+%%APACHEINCLUDEDIR%%/apache_filters.h
+%%APACHEINCLUDEDIR%%/apache_handler.h
+%%APACHEINCLUDEDIR%%/apache_output_buffer.h
+%%APACHEINCLUDEDIR%%/apache_protocol.h
+%%APACHEINCLUDEDIR%%/cpp_request.h
+%%APACHEINCLUDEDIR%%/cpp_server.h
+%%APACHEINCLUDEDIR%%/env_hash.h
+%%APACHEINCLUDEDIR%%/env_value.h
+%%APACHEINCLUDEDIR%%/mod_cplusplus.h
+%%APACHEINCLUDEDIR%%/request_env.h
+%%APACHEMODDIR%%/mod_cplusplus.so

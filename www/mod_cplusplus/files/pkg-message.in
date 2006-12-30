@@ -1,0 +1,7 @@
+************************************************************
+To enable this module, add the following to your server
+configuration file:
+
+  LoadModule cplusplus_module %%APACHEMODDIR%%/mod_cplusplus.so
+
+************************************************************

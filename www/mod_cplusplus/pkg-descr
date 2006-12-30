@@ -1,0 +1,7 @@
+mod_cplusplus is a proper apache module which allows you to load cpp objects
+as handlers for Apache-2.0.  It differs from other modules i've seen in that
+it manages the loading and calling of separate shared objects containing your
+handler classes.  This allows you to easily and cleanly run an entire site
+with c++ handlers.
+
+WWW: http://modcplusplus.sourceforge.net/

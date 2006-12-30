@@ -1,0 +1,46 @@
+*** configure.in.orig	Sat Dec 30 10:47:15 2006
+--- configure.in	Sat Dec 30 10:56:16 2006
+***************
+*** 9,15 ****
+  dnl hack to get shlib extension
+  AC_MSG_CHECKING(what the shared library extension is)
+  eval SHLIB_EXT=\"$shrext\"
+! if test "$SHLIB_EXT" == "" ; then
+          AC_MSG_RESULT(could not determine shared library extension.  Defaulting to .so)
+  	SHLIB_EXT=".so"
+  fi
+--- 9,15 ----
+  dnl hack to get shlib extension
+  AC_MSG_CHECKING(what the shared library extension is)
+  eval SHLIB_EXT=\"$shrext\"
+! if test "x$SHLIB_EXT" = "x" ; then
+          AC_MSG_RESULT(could not determine shared library extension.  Defaulting to .so)
+  	SHLIB_EXT=".so"
+  fi
+***************
+*** 58,69 ****
+          fi
+  ],)
+  
+! if test "$INCLUDES" == "" ; then
+  	AC_MSG_ERROR(could not generate includes with apxs set to "$APXS" - you must specify a valid path to apxs using the --with-apxs flag)
+  fi
+  
+  AC_CHECK_LIB(stdc++, __gxx_personality_v0, LIB_STDCPP="-lstdc++")
+!     if test "$LIB_STDCPP" == "" ; then
+  	CPPFLAGS="$CPPFLAGS -DNO_STDCPP"
+      fi 
+  CPLUSPLUS_BUILDDIR=`pwd`
+--- 58,69 ----
+          fi
+  ],)
+  
+! if test "x$INCLUDES" = "x" ; then
+  	AC_MSG_ERROR(could not generate includes with apxs set to "$APXS" - you must specify a valid path to apxs using the --with-apxs flag)
+  fi
+  
+  AC_CHECK_LIB(stdc++, __gxx_personality_v0, LIB_STDCPP="-lstdc++")
+!     if test "x$LIB_STDCPP" = "x" ; then
+  	CPPFLAGS="$CPPFLAGS -DNO_STDCPP"
+      fi 
+  CPLUSPLUS_BUILDDIR=`pwd`
