@@ -236,6 +236,7 @@
     SUBDIR += l2a
     SUBDIR += la-aspell
     SUBDIR += lacheck
+    SUBDIR += latex-service
     SUBDIR += latex2html
     SUBDIR += latte
     SUBDIR += lemmatizer

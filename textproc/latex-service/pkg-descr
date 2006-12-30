@@ -1,0 +1,6 @@
+This is a small service which converts a LaTeX text into an image.
+Just select the text, click on the service item menu, choose
+"Return the LaTeX rendering" and voila! Your text is replaced by
+its LaTeX rendering.
+
+WWW: http://www.roard.com/latexservice/
