@@ -9,7 +9,7 @@ PORTNAME=	omnetpp
 PORTVERSION=	2.3p1
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	http://www.omnest.biz/download/release/
+MASTER_SITES=	http://www.omnetpp.org/download/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
