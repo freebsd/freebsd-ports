@@ -1,0 +1,30 @@
+System/Applications/ClipBook.app/ClipBook
+System/Applications/ClipBook.app/Resources/ClipBook.desktop
+System/Applications/ClipBook.app/Resources/ClipBook.tiff
+System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm/data.classes
+System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm/objects.gorm
+System/Applications/ClipBook.app/Resources/English.lproj/Localizable.strings
+System/Applications/ClipBook.app/Resources/Info-gnustep.plist
+System/Applications/ClipBook.app/Resources/Pboard.tiff
+System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm/data.classes
+System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm/objects.gorm
+System/Applications/ClipBook.app/Resources/Resources/English.lproj/Localizable.strings
+System/Applications/ClipBook.app/Resources/colorPboard.tiff
+System/Applications/ClipBook.app/Resources/common_ArrowLeftH.tiff
+System/Applications/ClipBook.app/Resources/common_ArrowRightH.tiff
+System/Applications/ClipBook.app/Resources/filecontsPboard.tiff
+System/Applications/ClipBook.app/Resources/fwdbckw.tiff
+System/Applications/ClipBook.app/Resources/gormPboard.tiff
+System/Applications/ClipBook.app/Resources/rtfPboard.tiff
+System/Applications/ClipBook.app/Resources/rtfdPboard.tiff
+System/Applications/ClipBook.app/Resources/stringPboard.tiff
+System/Applications/ClipBook.app/Resources/tiffPboard.tiff
+System/Applications/ClipBook.app/library_paths.openapp
+System/Applications/ClipBook.app/stamp.make
+@dirrm System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm
+@dirrm System/Applications/ClipBook.app/Resources/Resources/English.lproj
+@dirrm System/Applications/ClipBook.app/Resources/Resources
+@dirrm System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm
+@dirrm System/Applications/ClipBook.app/Resources/English.lproj
+@dirrm System/Applications/ClipBook.app/Resources
+@dirrm System/Applications/ClipBook.app

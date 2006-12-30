@@ -1,0 +1,25 @@
+# New ports collection makefile for:    gworkspace-clipbook
+# Date created:         30 Dec 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gworkspace
+PORTVERSION=	0.8.3
+CATEGORIES=	deskutils
+MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
+PKGNAMESUFFIX=	-clipbook${PKGNAMESUFFIX2}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	ClipBook for GNUstep workspace manager
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+
+WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}/ClipBook
+
+.include <bsd.port.mk>
