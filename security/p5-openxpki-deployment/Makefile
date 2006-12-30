@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki-deployment
-PORTVERSION=	0.9.543
+PORTVERSION=	0.9.659
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -29,6 +29,7 @@ MAN1=	openxpki-configure.1 \
 	openxpkictl.1
 USE_PERL5=	yes
 USE_GMAKE=	yes
+USE_RC_SUBR=	openxpki.sh
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 

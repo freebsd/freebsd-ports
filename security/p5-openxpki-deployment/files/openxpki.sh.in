@@ -1,0 +1,30 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: openxpki
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these openxpki_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+openxpki_enable="${openxpki_enable-NO}"
+openxpki_flags=""
+command_args="$1"
+openxpki_pidfile="%%PREFIX%%/var/openxpki/openxpki.pid"
+
+. %%RC_SUBR%%
+
+name="openxpki"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/openxpkictl"
+
+load_rc_config $name
+
+pidfile="${openxpki_pidfile}"
+
+run_rc_command "$1"
