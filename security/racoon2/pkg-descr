@@ -12,9 +12,7 @@ Currently the system supports the following specification:
 	PF_KEY Key Management API, Version 2
 	RFC2367
 	
-The following protocols will be supported soon.
-
 	The Internet Key Exchange (IKE)
 	RFC2409
 
-WWW: http://www.kame.net/
+WWW: http://www.racoon2.wide.ad.jp/
