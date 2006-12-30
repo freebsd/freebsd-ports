@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -54,11 +55,10 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		WRAP "Include mod_wrap2" on \
 		WRAP_FILE "include mod_wrap2_file" off \
 		WRAP_SQL "include mod_wrap2_sql" off \
-		LANG "include mod_lang" off \
 		RADIUS "Include mod_radius" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
 		BAN "include mod_ban (Requires CTRLS)" off \
-		NLS "Use nls" off
+		NLS "Use nls-builds mod_lang" off
 
 MODULES?=
 LIBDIRS?=
@@ -109,10 +109,6 @@ MODULES:=${MODULES}:mod_radius
 MODULES:=${MODULES}:mod_quotatab_radius
 .endif
 
-.if defined(WITH_LANG)
-MODULES:=${MODULES}:mod_lang
-.endif
-
 .if defined(WITH_BAN)
 MODULES:=${MODULES}:mod_ban
 .endif
@@ -137,10 +133,13 @@ CONFIGURE_ARGS+=	--disable-ipv6
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-nls
+USE_GETTEXT=yes
+PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nls-Makefile.in
 .endif
 
 #allow user to override
-MODULES?=	mod_ratio:mod_readme:mod_rewrite:mod_wrap:mod_ifsession
+MODULES?=	mod_ratio:mod_readme:mod_rewrite:mod_wrap2:mod_ifsession
 
 INCLUDEDIRS?=
 LIBDIRS?=

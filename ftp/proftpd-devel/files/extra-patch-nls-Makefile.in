@@ -1,0 +1,15 @@
+--- Makefile.in	Fri Dec 29 09:19:12 2006
++++ Makefile.in.new	Fri Dec 29 09:19:22 2006
+@@ -63,10 +63,10 @@
+ 	$(CC) $(LDFLAGS) -o $@ $(BUILD_FTPSHUT_OBJS)
+ 
+ ftptop$(EXEEXT): lib utils
+-	$(CC) $(LDFLAGS) -o $@ $(BUILD_FTPTOP_OBJS) $(CURSES_LIBS) -lsupp
++	$(CC) $(LDFLAGS) -o $@ $(BUILD_FTPTOP_OBJS) $(CURSES_LIBS) -lsupp -lintl
+ 
+ ftpwho$(EXEEXT): lib utils
+-	$(CC) $(LDFLAGS) -o $@ $(BUILD_FTPWHO_OBJS) -lsupp
++	$(CC) $(LDFLAGS) -o $@ $(BUILD_FTPWHO_OBJS) -lsupp -lintl
+ 
+ 
+ # BSD install -d doesn't work, so ...
