@@ -14600,6 +14600,7 @@ tr-ircd		ports/irc/tr-ircd
 tr2latex	ports/print/tr2latex
 trac		ports/www/trac
 trac-accountmanager	ports/www/trac-accountmanager
+trac-ctxtnavadd	ports/www/trac-ctxtnavadd
 trac-gantt	ports/www/trac-gantt
 trac-webadmin	ports/www/trac-webadmin
 trackballs	ports/games/trackballs
