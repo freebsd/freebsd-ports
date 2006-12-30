@@ -1049,6 +1049,7 @@
     SUBDIR += tinyproxy
     SUBDIR += trac
     SUBDIR += trac-accountmanager
+    SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-gantt
     SUBDIR += trac-webadmin
     SUBDIR += transproxy
