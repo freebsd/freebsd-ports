@@ -10204,6 +10204,7 @@ p5-Schedule-At	ports/sysutils/p5-Schedule-At
 p5-Schedule-Cron	ports/sysutils/p5-Schedule-Cron
 p5-Schedule-Load	ports/sysutils/p5-Schedule-Load
 p5-Schedule-Match	ports/sysutils/p5-Schedule-Match
+p5-Scope-Guard	ports/devel/p5-Scope-Guard
 p5-Search-Binary	ports/devel/p5-Search-Binary
 p5-Search-Estraier	ports/textproc/p5-Search-Estraier
 p5-Search-InvertedIndex	ports/databases/p5-Search-InvertedIndex
