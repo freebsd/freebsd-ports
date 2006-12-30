@@ -809,6 +809,7 @@ bins		ports/www/bins
 binup		ports/sysutils/binup
 bioapi		ports/security/bioapi
 bioapitool	ports/security/bioapitool
+biococoa	ports/biology/biococoa
 biojava		ports/biology/biojava
 biology-blast	ports/biology/blast
 biorythm	ports/games/biorythm
