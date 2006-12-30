@@ -1,16 +1,16 @@
---- ./qcommon/files.c.orig	Wed Jan  4 07:14:49 2006
-+++ ./qcommon/files.c	Fri Jul 28 13:30:29 2006
-@@ -778,6 +778,9 @@
- 		Cvar_FullSet ("gamedir", dir, CVAR_SERVERINFO|CVAR_NOSET);
+--- qcommon/files.c.orig	Wed Jan  4 07:33:05 2006
++++ qcommon/files.c	Sat Dec 30 02:02:16 2006
+@@ -775,6 +775,9 @@
  		if (fs_cddir->string[0])
- 			FS_AddGameDirectory (va("%s/%s", fs_cddir->string, dir) );
+ 		
+ 		FS_AddGameDirectory (va("%s/%s", fs_cddir->string, dir) );
 +#ifdef DATADIR
 +		FS_AddGameDirectory(va("%s/%s", DATADIR, dir));
 +#endif
  #ifdef LIBDIR
  		FS_AddGameDirectory(va("%s/%s", LIBDIR, dir));
  #endif
-@@ -1002,16 +1005,7 @@
+@@ -999,16 +1002,7 @@
  	// basedir <path>
  	// allows the game to run from outside the data tree
  	//
@@ -27,7 +27,7 @@
  
  	sv_defaultpaks = Cvar_Get ("sv_defaultpaks", "0", CVAR_ARCHIVE);
  
-@@ -1027,8 +1021,11 @@
+@@ -1024,8 +1018,11 @@
  	//
  	// start up with baseq2 by default
  	//
