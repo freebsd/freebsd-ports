@@ -24,16 +24,16 @@ OPTIONS+=	BDB "Support for Berkeley DB" on
 OPTIONS+=	TRE "Support for TRE regexp (Approx regexp)" on
 OPTIONS+=	SIEVE "Support for SIEVE regexp (Approx regexp)" on
 
+.include <bsd.port.pre.mk>
+
 .if defined(LMTPD_WITH_BDB_VER)
 WITH_BDB_VER=	${LMTPD_WITH_BDB_VER}
 .endif
 
-.include <bsd.port.pre.mk>
-
 .for num in 3 4
 .if defined(WITH_DB${num})
 WITH_BDB=	yes
-IGNORE=	Use 'make config' to select Berkeley DB.
+IGNORE=	use 'make config' to select Berkeley DB
 OBSOLETE_BDB_VAR+=	WITH_DB${num}
 .endif
 .endfor
@@ -111,11 +111,11 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*8859*' ! -name fr_FR.ISO_8859-1 -exec basename {} \; | ${XARGS} -n1 -I % echo share/nls/%/filtercheck.cat >> ${TMPPLIST}
-	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*.UTF-8' ! -name fr_FR.UTF-8 -exec basename {} \; | ${XARGS} -n1 -I % echo share/nls/%/filtercheck.cat >> ${TMPPLIST}
-	${FIND} ${PREFIX}/share/nls -type d -name 'en_*' -exec basename {} \; | ${XARGS} -n1 -I % echo share/nls/%/filtercheck.cat >> ${TMPPLIST}
-	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*8859*' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 echo "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
-	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*.UTF-8' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 echo "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*8859*' ! -name fr_FR.ISO_8859-1 -exec basename {} \; | ${XARGS} -n1 -I % ${ECHO_MSG} share/nls/%/filtercheck.cat >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*.UTF-8' ! -name fr_FR.UTF-8 -exec basename {} \; | ${XARGS} -n1 -I % ${ECHO_MSG} share/nls/%/filtercheck.cat >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'en_*' -exec basename {} \; | ${XARGS} -n1 -I % ${ECHO_MSG} share/nls/%/filtercheck.cat >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*8859*' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 ${ECHO_MSG} "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
+	${FIND} ${PREFIX}/share/nls -type d -name 'fr_*.UTF-8' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 ${ECHO_MSG} "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
 	${FIND} ${PREFIX}/share/nls -type d -name 'en*' -exec basename {} \; | ${XARGS} -n1 -I _ -R 2 echo "@unexec if ! grep -q _ ${MTREE_FILE} ; then rmdir %D/share/nls/_ >/dev/null || true ; fi" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
