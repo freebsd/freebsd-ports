@@ -13,20 +13,27 @@ share/openxpki/templates/default/token.xml
 share/openxpki/templates/default/workflow.xml
 share/openxpki/templates/default/workflow_activity.xml
 share/openxpki/templates/default/workflow_activity_certificate_issuance.xml
+share/openxpki/templates/default/workflow_activity_certificate_revocation_request.xml
 share/openxpki/templates/default/workflow_activity_certificate_signing_request.xml
 share/openxpki/templates/default/workflow_activity_crl_issuance.xml
 share/openxpki/templates/default/workflow_activity_dataexchange.xml
 share/openxpki/templates/default/workflow_activity_null.xml
+share/openxpki/templates/default/workflow_activity_scep_request.xml
+share/openxpki/templates/default/workflow_activity_smartcard_personalization.xml
 share/openxpki/templates/default/workflow_condition.xml
 share/openxpki/templates/default/workflow_def_certificate_issuance.xml
+share/openxpki/templates/default/workflow_def_certificate_revocation_request.xml
+share/openxpki/templates/default/workflow_def_certificate_revocation_request_offline_ca.xml
 share/openxpki/templates/default/workflow_def_certificate_signing_request.xml
 share/openxpki/templates/default/workflow_def_certificate_signing_request_dataonly.xml
-share/openxpki/templates/default/workflow_def_certificate_signing_request_offline.xml
-share/openxpki/templates/default/workflow_def_certificate_signing_request_online.xml
+share/openxpki/templates/default/workflow_def_certificate_signing_request_offline_ca.xml
 share/openxpki/templates/default/workflow_def_crl_issuance.xml
 share/openxpki/templates/default/workflow_def_dataexchange_export.xml
 share/openxpki/templates/default/workflow_def_dataexchange_import.xml
+share/openxpki/templates/default/workflow_def_scep_request.xml
+share/openxpki/templates/default/workflow_def_smartcard_personalization.xml
+share/openxpki/templates/default/workflow_validator_certificate_revocation_request.xml
 share/openxpki/templates/default/workflow_validator_certificate_signing_request.xml
-@dirrm share/openxpki/templates/default
-@dirrm share/openxpki/templates
-@dirrm share/openxpki
+@dirrmtry share/openxpki/templates/default
+@dirrmtry share/openxpki/templates
+@dirrmtry share/openxpki
