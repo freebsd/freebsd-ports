@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.0r1
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
@@ -34,6 +35,9 @@ WRKSRC=	${WRKDIR}/${DISTNAME:S/r/rc/}
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+.if !exists(${LOCALBASE}/lib/libalapack.a)
+IGNORE=	atlas needs to be built with WITH_STATICLIB for numpy to function properly
+.endif
 .else
 LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack \
 		blas.1:${PORTSDIR}/math/blas
