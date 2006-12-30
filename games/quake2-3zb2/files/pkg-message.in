@@ -11,6 +11,7 @@ you want to run it from (you could use ~/.quake2 for example):
 $ mkdir -p ~/.quake2/3zb2
 $ cd %%Q2DIR%%/3zb2
 $ cp -r 3ZBConfig.cfg 3ZBMaps.lst chctf chdtm ~/.quake2/3zb2
+$ chmod -r u+w ~/.quake2/3zb2
 
 Then run it from the recently created directory.
 
