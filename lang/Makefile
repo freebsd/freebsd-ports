@@ -138,6 +138,7 @@
     SUBDIR += libjit
     SUBDIR += librep
     SUBDIR += libutils
+    SUBDIR += linux-hla
     SUBDIR += linux-j
     SUBDIR += linux-libg2c
     SUBDIR += linux-libperl5.8
