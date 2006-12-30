@@ -1,5 +1,4 @@
+@unexec if cmp -s %D/etc/aiccu.conf %D/etc/aiccu.conf.sample; then rm -f %D/etc/aiccu.conf; fi
 etc/aiccu.conf.sample
-etc/rc.d/sixxs-aiccu.sh
+@exec [ -f %B/aiccu.conf ] || cp %B/%f %B/aiccu.conf
 sbin/sixxs-aiccu
-%%EXAMPLESDIR%%/aiccu.conf
-@dirrm %%EXAMPLESDIR%%
