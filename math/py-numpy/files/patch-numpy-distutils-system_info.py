@@ -1,6 +1,6 @@
---- numpy/distutils/system_info.py.orig	Sun Jul 30 11:08:48 2006
-+++ numpy/distutils/system_info.py	Fri Sep 29 12:22:29 2006
-@@ -855,6 +855,8 @@
+--- numpy/distutils/system_info.py.orig	Tue Oct  3 00:35:22 2006
++++ numpy/distutils/system_info.py	Sat Dec  9 22:51:47 2006
+@@ -860,6 +860,8 @@
          atlas_1 = None
          for d in lib_dirs:
              atlas = self.check_libs2(d,atlas_libs,[])

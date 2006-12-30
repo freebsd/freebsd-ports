@@ -79,6 +79,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/setup.pyc
 %%PYTHON_SITELIBDIR%%/numpy/core/setup.pyo
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_defmatrix.py
+%%PYTHON_SITELIBDIR%%/numpy/core/tests/test_errstate.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_ma.orig
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_ma.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_multiarray.py
@@ -87,6 +88,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_numerictypes.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_records.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_regression.py
+%%PYTHON_SITELIBDIR%%/numpy/core/tests/test_reshape.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_scalarmath.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_umath.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_unicode.py
@@ -381,6 +383,97 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/docs/usersguide/string_session.dat
 %%PYTHON_SITELIBDIR%%/numpy/f2py/docs/usersguide/var.pyf
 %%PYTHON_SITELIBDIR%%/numpy/f2py/docs/usersguide/var_session.dat
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/__init__.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/api.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/api.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/api.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/base_classes.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/base_classes.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/base_classes.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/block_statements.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/block_statements.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/block_statements.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/doc.txt
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/expressions.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/expressions.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/expressions.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/parsefortran.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/parsefortran.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/parsefortran.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/pattern_tools.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/pattern_tools.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/pattern_tools.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/readfortran.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/readfortran.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/readfortran.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/sourceinfo.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/sourceinfo.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/sourceinfo.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/splitline.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/splitline.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/splitline.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/statements.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/statements.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/statements.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/test_expressions.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/test_expressions.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/test_expressions.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/test_parser.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/test_parser.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/test_parser.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/typedecl_statements.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/typedecl_statements.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/typedecl_statements.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/utils.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/utils.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser/utils.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/src/F_FUNC.cpp
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/src/pyobj_to_string_len.c
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/DEV_README.txt
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/README.txt
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/THANKS.txt
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/__init__.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/api.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/api.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/api.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/main.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/main.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/main.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap_subprogram.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap_subprogram.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap_subprogram.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap_type.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap_type.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/py_wrap_type.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/setup.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/setup.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/setup.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_derived_scalar.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_derived_scalar.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_derived_scalar.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_module_module.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_module_module.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_module_module.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_module_scalar.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_module_scalar.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_module_scalar.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_scalar_function_in.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_scalar_function_in.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_scalar_function_in.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_scalar_in_out.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_scalar_in_out.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/test_scalar_in_out.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/wrapper_base.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/wrapper_base.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/wrapper_base.pyo
 %%PYTHON_SITELIBDIR%%/numpy/f2py/f2py2e.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/f2py2e.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/f2py2e.pyo
@@ -677,6 +770,9 @@ bin/f2py
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/linalg
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/lib/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/lib
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/src
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/lib
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/fft/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/fft
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/src

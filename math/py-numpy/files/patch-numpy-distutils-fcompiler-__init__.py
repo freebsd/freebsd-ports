@@ -1,6 +1,6 @@
---- numpy/distutils/fcompiler/__init__.py.orig	Tue Oct  3 20:39:58 2006
-+++ numpy/distutils/fcompiler/__init__.py	Tue Oct  3 22:43:18 2006
-@@ -268,11 +268,7 @@
+--- numpy/distutils/fcompiler/__init__.py.orig	Wed Oct 11 22:28:42 2006
++++ numpy/distutils/fcompiler/__init__.py	Sat Dec  9 22:51:47 2006
+@@ -273,11 +273,7 @@
          f90 = self.__get_cmd('compiler_f90','F90',(conf,'f90exec'))
          # Temporarily setting f77,f90 compilers so that
          # version_cmd can use their executables.
