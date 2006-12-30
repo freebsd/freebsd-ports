@@ -1,10 +1,10 @@
---- src/ushare_orig.c	Sun Nov 12 13:40:35 2006
-+++ src/ushare.c	Mon Dec 11 09:59:04 2006
+--- src/ushare.c.orig	Sun Nov 12 13:40:35 2006
++++ src/ushare.c	Sat Dec 23 02:11:43 2006
 @@ -33,6 +33,11 @@
  #include <unistd.h>
  #include <errno.h>
  #include <getopt.h>
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#if defined(__FreeBSD__)
 +#include <sys/socket.h>
 +#include <sys/sysctl.h>
 +#include <net/if_dl.h>
@@ -16,7 +16,7 @@
  static char *
  create_udn (char *interface)
  {
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#if defined(__FreeBSD__)
 +  int mib[6], len;
 +  char *buf;
 +  unsigned char *ptr;
