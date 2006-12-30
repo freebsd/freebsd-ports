@@ -1,0 +1,73 @@
+System/Applications/GMDSClient.app/GMDSClient
+System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm/data.classes
+System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm/data.info
+System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm/objects.gorm
+System/Applications/GMDSClient.app/Resources/GMDSClient.desktop
+System/Applications/GMDSClient.app/Resources/Info-gnustep.plist
+System/Applications/GMDSClient.app/Resources/Magnify.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-%%MAJORVERSION%%.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-1.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-2.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-3.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-4.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-5.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-6.tiff
+System/Applications/GMDSClient.app/Resources/anim-logo-7.tiff
+System/Applications/GMDSClient.app/library_paths.openapp
+System/Applications/GMDSClient.app/stamp.make
+System/Library/Bundles/AbiwordExtractor.extr/AbiwordExtractor
+System/Library/Bundles/AbiwordExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/AbiwordExtractor.extr/stamp.make
+System/Library/Bundles/HtmlExtractor.extr/HtmlExtractor
+System/Library/Bundles/HtmlExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/HtmlExtractor.extr/stamp.make
+System/Library/Bundles/JpegExtractor.extr/JpegExtractor
+System/Library/Bundles/JpegExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/JpegExtractor.extr/stamp.make
+System/Library/Bundles/MDIndexing.prefPane/MDIndexing
+System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.classes
+System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.info
+System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/objects.gorm
+System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/data.classes
+System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+System/Library/Bundles/MDIndexing.prefPane/Resources/Info-gnustep.plist
+System/Library/Bundles/MDIndexing.prefPane/Resources/Info.plist
+System/Library/Bundles/MDIndexing.prefPane/Resources/MDIndexing.tiff
+System/Library/Bundles/MDIndexing.prefPane/stamp.make
+System/Library/Bundles/OpenOfficeExtractor.extr/OpenOfficeExtractor
+System/Library/Bundles/OpenOfficeExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/OpenOfficeExtractor.extr/stamp.make
+System/Library/Bundles/TextExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/TextExtractor.extr/TextExtractor
+System/Library/Bundles/TextExtractor.extr/stamp.make
+System/Library/Bundles/XmlExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/XmlExtractor.extr/XmlExtractor
+System/Library/Bundles/XmlExtractor.extr/stamp.make
+System/Library/Headers/SQLite/SQLite.h
+System/Library/Libraries/libSQLite.so
+System/Library/Libraries/libSQLite.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libSQLite.so.%%LIBVERSION%%
+System/Tools/gmds
+System/Tools/mdextractor
+@dirrm System/Library/Headers/SQLite
+@dirrm System/Library/Bundles/XmlExtractor.extr/Resources
+@dirrm System/Library/Bundles/XmlExtractor.extr
+@dirrm System/Library/Bundles/TextExtractor.extr/Resources
+@dirrm System/Library/Bundles/TextExtractor.extr
+@dirrm System/Library/Bundles/OpenOfficeExtractor.extr/Resources
+@dirrm System/Library/Bundles/OpenOfficeExtractor.extr
+@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm
+@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm
+@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj
+@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources
+@dirrm System/Library/Bundles/MDIndexing.prefPane
+@dirrm System/Library/Bundles/JpegExtractor.extr/Resources
+@dirrm System/Library/Bundles/JpegExtractor.extr
+@dirrm System/Library/Bundles/HtmlExtractor.extr/Resources
+@dirrm System/Library/Bundles/HtmlExtractor.extr
+@dirrm System/Library/Bundles/AbiwordExtractor.extr/Resources
+@dirrm System/Library/Bundles/AbiwordExtractor.extr
+@dirrm System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm
+@dirrm System/Applications/GMDSClient.app/Resources/English.lproj
+@dirrm System/Applications/GMDSClient.app/Resources
+@dirrm System/Applications/GMDSClient.app

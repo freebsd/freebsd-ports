@@ -86,6 +86,7 @@
     SUBDIR += gucharmap
     SUBDIR += gworkspace
     SUBDIR += gworkspace-clipbook
+    SUBDIR += gworkspace-gwmetadata
     SUBDIR += gxmessage
     SUBDIR += helpviewer
     SUBDIR += hot-babe
