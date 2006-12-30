@@ -8,7 +8,8 @@
 PORTNAME=	xwelltris
 PORTVERSION=	1.0.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.xnc.dubna.su/xwelltris/src/
+MASTER_SITES=	http://www.xnc.dubna.su/xwelltris/src/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	lev@FreeBSD.org
