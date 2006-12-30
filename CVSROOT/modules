@@ -8683,6 +8683,7 @@ p5-Clone-PP	ports/devel/p5-Clone-PP
 p5-Code-Perl	ports/devel/p5-Code-Perl
 p5-Color-Rgb	ports/graphics/p5-Color-Rgb
 p5-Commands-Guarded	ports/devel/p5-Commands-Guarded
+p5-CommitBit	ports/devel/p5-CommitBit
 p5-Compress-Bzip2	ports/archivers/p5-Compress-Bzip2
 p5-Compress-LZF	ports/archivers/p5-Compress-LZF
 p5-Compress-LZO	ports/archivers/p5-Compress-LZO
