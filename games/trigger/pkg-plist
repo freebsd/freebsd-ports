@@ -36,6 +36,7 @@ bin/trigger
 %%DATADIR%%/sounds/wind.wav
 %%DATADIR%%/textures/arrow.png
 %%DATADIR%%/textures/consolefont.png
+%%DATADIR%%/textures/cursor.png
 %%DATADIR%%/textures/detail.jpg
 %%DATADIR%%/textures/dial_gear.png
 %%DATADIR%%/textures/dial_rev.png
@@ -74,26 +75,26 @@ bin/trigger
 %%DATADIR%%/vehicles/seat/seat_wheel.ase
 %%PORTDOCS%%%%DOCSDIR%%/README-stereo.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-@dirrm %%DATADIR%%/events/triggercup/bigjump
-@dirrm %%DATADIR%%/events/triggercup/monkeybusiness
-@dirrm %%DATADIR%%/events/triggercup/oldmacdonald
-@dirrm %%DATADIR%%/events/triggercup/warmup
-@dirrm %%DATADIR%%/events/triggercup
-@dirrm %%DATADIR%%/events
-@dirrm %%DATADIR%%/maps/desertstorm
-@dirrm %%DATADIR%%/maps/lunar
-@dirrm %%DATADIR%%/maps/saharatea
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/vehicles/seat
+@dirrm %%DATADIR%%/vehicles/focus
+@dirrm %%DATADIR%%/vehicles/evo
+@dirrm %%DATADIR%%/vehicles
+@dirrm %%DATADIR%%/textures/veg
+@dirrm %%DATADIR%%/textures/splash
+@dirrm %%DATADIR%%/textures/sky
+@dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/sounds/evo_sound
 @dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/textures/sky
-@dirrm %%DATADIR%%/textures/splash
-@dirrm %%DATADIR%%/textures/veg
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/vehicles/evo
-@dirrm %%DATADIR%%/vehicles/focus
-@dirrm %%DATADIR%%/vehicles/seat
-@dirrm %%DATADIR%%/vehicles
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/maps/saharatea
+@dirrm %%DATADIR%%/maps/lunar
+@dirrm %%DATADIR%%/maps/desertstorm
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/events/triggercup/warmup
+@dirrm %%DATADIR%%/events/triggercup/oldmacdonald
+@dirrm %%DATADIR%%/events/triggercup/monkeybusiness
+@dirrm %%DATADIR%%/events/triggercup/bigjump
+@dirrm %%DATADIR%%/events/triggercup
+@dirrm %%DATADIR%%/events
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	trigger
-PORTVERSION=	0.5.1c
-PORTREVISION=	3
+PORTVERSION=	0.5.2.1
 CATEGORIES=	games
-MASTER_SITES=	http://0day.icculus.org/mirrors/trigger/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}-rally
 DISTFILES=	trigger-${PORTVERSION}-src${EXTRACT_SUFX} \
-		trigger-${PORTVERSION}-data${EXTRACT_SUFX}
+		trigger-${DATAVERSION}-data${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	A rally car racing game
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
@@ -21,10 +21,7 @@ LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal \
 		physfs:${PORTSDIR}/devel/physfs \
 		alut.1:${PORTSDIR}/audio/freealut
 
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2007-01-17
-
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_SDL=	sdl image
 USE_GL=		yes
 USE_BZIP2=	yes
@@ -33,9 +30,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/trigger-${PORTVERSION}-src
-DATASRC=	${WRKDIR}/trigger-${PORTVERSION}-data
+DATASRC=	${WRKDIR}/trigger-${DATAVERSION}-data
+
+DESKTOP_ENTRIES="Trigger" "Car racing game" "" \
+		"trigger" "" false
 
 .include <bsd.port.pre.mk>
+DATAVERSION=	0.5.2
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
