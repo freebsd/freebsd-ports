@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope/Guard/.packlist
+%%SITE_PERL%%/Scope/Guard.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope/Guard
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope
+@dirrmtry %%SITE_PERL%%/Scope
