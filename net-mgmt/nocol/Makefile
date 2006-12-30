@@ -31,8 +31,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 601104
-BROKEN=		Does not compile on FreeBSD >= 6.x
+.if ${OSVERSION} >= 601104 && ${OSVERSION} < 602101
+BROKEN=		Does not compile on some FreeBSD 6.x versions, please update to 6.2R or later
 .endif
 
 .include <bsd.port.post.mk>
