@@ -1,0 +1,16 @@
+bin/jack-rack
+share/applications/jack-rack.desktop
+share/dtds/jack_rack_1.0.dtd
+share/dtds/jack_rack_1.1.dtd
+share/dtds/jack_rack_1.2.dtd
+share/jack-rack/gnome-mixer-small.png
+share/jack-rack/jack-rack-logo.png
+share/jack-rack/jr-cross.png
+share/jack-rack/jr-down-arrow.png
+share/jack-rack/jr-up-arrow.png
+share/locale/ru/LC_MESSAGES/jack-rack.mo
+share/pixmaps/jack-rack-icon.png
+@dirrmtry share/applications
+@dirrmtry share/dtds
+@dirrm share/jack-rack
+@dirrmtry share/pixmaps

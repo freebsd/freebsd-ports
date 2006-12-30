@@ -284,6 +284,7 @@
     SUBDIR += id3v2
     SUBDIR += ifp-line
     SUBDIR += jack
+    SUBDIR += jack-rack
     SUBDIR += jamboree
     SUBDIR += jamin
     SUBDIR += java-xmms2
