@@ -8702,6 +8702,7 @@ p5-Config-INI-Simple	ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles	ports/devel/p5-Config-IniFiles
 p5-Config-IniHash	ports/devel/p5-Config-IniHash
 p5-Config-Objective	ports/devel/p5-Config-Objective
+p5-Config-Properties	ports/devel/p5-Config-Properties
 p5-Config-Record	ports/devel/p5-Config-Record
 p5-Config-Setting	ports/devel/p5-Config-Setting
 p5-Config-Simple	ports/devel/p5-Config-Simple
