@@ -1,0 +1,259 @@
+--- any2dvd.orig	Wed Sep 13 20:44:06 2006
++++ any2dvd	Sat Dec 30 13:31:43 2006
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ 
+ # Any2Dvd-0.32
+ # A script to automate the creation of PAL/NTSC DVDs from any PC or streaming multimedia file(s), complete with DVD menus
+@@ -41,6 +41,14 @@
+ #
+ ################################################################################################
+ 
++# Modifications for FreeBSD.
++if [ "`uname -s`" = "FreeBSD" ]; then
++# We have a different seq implementation
++  SEQ=seq2
++else
++  SEQ=seq
++fi
++
+ VAR_DATAFILE="/tmp/any2vob_srcvar.dat"
+ NICE=12
+ rm $VAR_DATAFILE 2> /dev/null
+@@ -131,21 +139,21 @@
+ 
+ warn () {
+ echo ""
+-echo -e "\e[33;01m $1\e[m\c"	# Amber
++echo -e "$1\c"	# Amber
+ shift; echo " $*"
+ echo ""
+ return 0
+ }
+ good () {
+ echo ""
+-echo -e "\e[32;01m $1\e[m\c"	# Green
++echo -e "$1\c"	# Green
+ shift; echo " $*"
+ echo ""
+ return 0
+ }
+ errmsg () {
+ echo ""
+-echo -e "\e[31;01m $1\e[m\c"	# Red
++echo -e "$1\c"	# Red
+ shift; echo " $*"
+ echo ""
+ }
+@@ -245,7 +253,7 @@
+ 			--workdir=*) WORKDIR=`echo "$1" | sed 's/--workdir=/ /' | sed 's/^[ \t]*//'`
+ 					LOGFILE=""$WORKDIR"/any2dvd.log"
+ 					if [ ! -d "$WORKDIR" ]; then
+-						errmsg Error: Directory \""$WORKDIR"\" does not exist!
++						errmsg Error: Directory \""$WORKDIR"\" or $1 does not exist!
+ 						exit
+ 					fi
+ 					shift ;;
+@@ -380,7 +388,7 @@
+ }
+ 
+ subfont_list () {
+-	echo -e "\e[32;01m List of detected & valid fonts to use for subtitles...\e[m"
++	echo -e "List of detected & valid fonts to use for subtitles..."
+ 	echo
+ 	if [ -d "/usr/share/fonts" ]; then
+ 		find /usr/share/fonts -name "*.ttf" | tee -a "$WORKDIR"/subfonts.dat
+@@ -411,20 +419,20 @@
+ 		fi
+ 		if [ "$VO" = "fbdev2" ] && [ -z "$FB_CHECK" ]; then
+ 			echo
+-			echo -e "\e[33;01m Warning: Preview has been selected, but no working kernel framebuffer can be found\e[m"
+-			echo -e "\e[33;01m	    Preview disabled !!\e[m"
++			echo -e "Warning: Preview has been selected, but no working kernel framebuffer can be found"
++			echo -e "	    Preview disabled"
+ 			echo
+ 			PREVIEW="no"
+ 		elif [ "$VO" = "fbdev2" ] && [ -z "$VO_CHECK" ]; then
+ 			echo
+-			echo -e "\e[33;01m Warning: Preview has been selected, but MPlayer has not been compiled with framebuffer support (--enable-fbdev)\e[m"
+-			echo -e "\e[33;01m	    Disabling preview !!\e[m"
++			echo -e "Warning: Preview has been selected, but MPlayer has not been compiled with framebuffer support (--enable-fbdev)"
++			echo -e "	    Disabling preview"
+ 			echo
+ 			PREVIEW="no"
+ 		elif [ "$VO" = "sdl" ] && [ -z "$VO_CHECK" ]; then
+ 			echo
+-			echo -e "\e[33;01m Warning: Preview has been selected, but MPlayer has not been compiled with SDL support (--enable-sdl)\e[m"
+-			echo -e "\e[33;01m	    Disabling preview !!\e[m"
++			echo -e "Warning: Preview has been selected, but MPlayer has not been compiled with SDL support (--enable-sdl)"
++			echo -e "	    Disabling preview"
+ 			echo
+ 			PREVIEW="no"
+ 		else
+@@ -643,7 +651,7 @@
+ 		IFS=$REAL_IFS
+ 		PROC="ffmpeg"
+ 		echo
+-		echo -e -n "\e[33;01m Creating VMGM Main Menu audio \e[m..."
++		echo -e -n "Creating VMGM Main Menu audio ..."
+ 		spinner
+ 		cat "$WORKDIR"/tmp.log >> "$LOGFILE"
+ 		echo > "$WORKDIR"/pids.dat
+@@ -659,7 +667,7 @@
+ 		IFS=$REAL_IFS
+ 		PROC="ffmpeg"
+ 		echo
+-		echo -e -n "\e[33;01m Creating silent Audio-Track for VMGM Main Menu \e[m..."
++		echo -e -n "Creating silent Audio-Track for VMGM Main Menu ..."
+ 		spinner
+ 		cat "$WORKDIR"/tmp.log >> "$LOGFILE"
+ 		echo > "$WORKDIR"/pids.dat
+@@ -676,7 +684,7 @@
+ 		IFS=$REAL_IFS
+ 		PROC="ffmpeg"
+ 		echo
+-		echo -e -n "\e[33;01m Creating VTSM Chapter Menu audio \e[m..."
++		echo -e -n "Creating VTSM Chapter Menu audio ..."
+ 		spinner
+ 		cat "$WORKDIR"/tmp.log >> "$LOGFILE"
+ 		echo > "$WORKDIR"/pids.dat
+@@ -692,7 +700,7 @@
+ 		IFS=$REAL_IFS
+ 		PROC="ffmpeg"
+ 		echo
+-		echo -e -n "\e[33;01m Creating silent Audio-Track for VTSM Chapter Menu \e[m..."
++		echo -e -n "Creating silent Audio-Track for VTSM Chapter Menu ..."
+ 		spinner
+ 		cat "$WORKDIR"/tmp.log >> "$LOGFILE"
+ 		echo > "$WORKDIR"/pids.dat
+@@ -6524,9 +6532,9 @@
+ 	if [ ! -z "`grep "ENCODING ERROR" $VAR_DATAFILE`" ]; then
+ 		exit
+ 	fi
+-	echo && echo -e "\e[33;01m<<<< DVD Menu Creation started at `date` >>>>\e[m"
++	echo && echo -e "<<<< DVD Menu Creation started at `date` >>>>"
+ 	if [ "`cat "$VAR_DATAFILE" | grep -iE ".MPG|.VOB" | wc -l`" -gt 6 ]; then
+-		errmsg WARNING: "Number of Titles exceeds six(6), excess input_file(s) will be ignored!!"
++		errmsg WARNING: "Number of Titles exceeds six(6), excess input_file(s) will be ignored"
+ 		cat "$VAR_DATAFILE" | head -n6 > "$WORKDIR"/tmp_srcvar.dat && mv "$WORKDIR"/tmp_srcvar.dat "$VAR_DATAFILE"
+ 	fi
+ 	IFS="
+@@ -6549,7 +6557,7 @@
+ 	done
+ 	IFS=$REAL_IFS
+ 
+-	for i in $(seq 1 $vts); do
++	for i in $(SEQ2 1 $vts); do
+ 		eval bgpic=\"\$VTSPIC_$i\"
+ 	done
+ 
+@@ -6567,7 +6575,7 @@
+ # Create Thumbnail-Tiles for every VTS
+ 	IFS="
+ 	"
+-	for i in $(seq 1 $vts); do
++	for i in $(${SEQ} 1 $vts); do
+ 		eval vtspic=\"\$VTSPIC_$i\"
+ 		mk_vts_tile $i
+ 	done
+@@ -6639,7 +6647,7 @@
+ 			eval convert -size ${panelX}x${panelY} xc:none "${menupanel[s]}"
+ 		fi
+ 
+-		for i in $(seq 1 $vts); do
++		for i in $(${SEQ} 1 $vts); do
+ 			let indx=$i-1
+ 			tile=\"\${VTSTILE_$i[s]}\"
+ 			eval composite -compose copy -gravity ${grav[indx]} -geometry ${offset[indx]} "$tile" "${menupanel[s]}" "${menupanel[s]}"
+@@ -6770,12 +6778,12 @@
+ 		target=( 'jump title $title' 'jump titleset $title menu entry audio' 'jump titleset $title menu entry subtitle' 'jump titleset $title menu entry angle' )
+ 	fi
+ 	bi=0
+-	for row in $(seq 1 $rows); do
++	for row in $(${SEQ} 1 $rows); do
+ 		let "begvts=($row-1)*cols+1"
+ 		let endvts=$begvts+cols-1
+ 		[ $endvts -gt $vts ] && endvts=$vts
+ 		for button in 0 1 2 3; do		# Play, Chapter, Audio, Subtitle
+-			for title in $(seq $begvts $endvts); do
++			for title in $(${SEQ} $begvts $endvts); do
+ 				ok=1
+ 				[ "$button" -eq 2 ] && eval ok=\$VTSAUDIO_$title
+ 				[ "$button" -eq 3 ] && eval ok=\$VTSSUBS_$title
+@@ -6802,9 +6810,9 @@
+ 	if [ ! -z "`grep "ENCODING ERROR" $VAR_DATAFILE`" ]; then
+ 		exit
+ 	fi
+-	echo && echo -e "\e[33;01m<<<< DVD Menu Creation started at `date` >>>>\e[m"
++	echo && echo -e "<<<< DVD Menu Creation started at `date` >>>>"
+ 	if [ "`cat "$VAR_DATAFILE" | grep -iE ".MPG|.VOB" | wc -l`" -gt 6 ]; then
+-		errmsg WARNING: "Number of Titles exceeds six(6), excess input_file(s) will be ignored!!"
++		errmsg WARNING: "Number of Titles exceeds six(6), excess input_file(s) will be ignored"
+ 		cat "$VAR_DATAFILE" | head -n6 > "$WORKDIR"/tmp_srcvar.dat && mv "$WORKDIR"/tmp_srcvar.dat "$VAR_DATAFILE"
+ 	fi
+ 	VTS=0
+@@ -6927,7 +6935,7 @@
+ #
+ # Solution	- Find VTS-x with the most PNGs, use that as the $frame count reference, if the number of PNGs falls short of reference count, re-use the last PNG
+ 			framecount=0
+-			for i in $(seq 1 $VTS); do
++			for i in $(${SEQ} 1 $VTS); do
+ 				framecount_init=`ls -lah "$WORKDIR"/VTS-$i/animate/tiles/bars_overlay/ | wc -l`
+ 				if [ "$framecount_init" -gt "$framecount" ]; then
+ 					framecount=$framecount_init
+@@ -6953,7 +6961,7 @@
+ 					CMD="convert -size ${panel_sizeX}x${panel_sizeY} xc:'rgba(255,255,255,0)' "${menupanel[s]}""	# Create a blank menupanel
+ 				fi
+ 				eval $CMD
+-				for i in $(seq 1 $VTS); do	# For each Title, 
++				for i in $(${SEQ} 1 $VTS); do	# For each Title, 
+ 					let indx=$i-1
+ 					tile=\""$WORKDIR"/VTS-$i/animate/tiles/bars_overlay/"$frame"\"
+ 					if [ ! -s ""$WORKDIR"/VTS-$i/animate/tiles/bars_overlay/"$frame"" ]; then
+@@ -6999,7 +7007,7 @@
+ 			IFS="
+ 			"
+ 			eval convert -size ${panel_sizeX}x${panel_sizeY} xc:none "${menupanel[s]}"	# Create blank menu mask panel
+-			for i in $(seq 1 $VTS); do
++			for i in $(${SEQ} 1 $VTS); do
+ 				let indx=$i-1
+ 				tile=\""$WORKDIR/VMGM/tmp_tile_${state[s]}_$i.png"\"
+ 				eval composite -compose copy -gravity ${grav[indx]} -geometry ${offset[indx]} "$tile" "${menupanel[s]}" "${menupanel[s]}"
+@@ -7129,12 +7137,12 @@
+ 	bi=0
+ 	IFS="
+ 	"
+-	for row in $(seq 1 $rows); do
++	for row in $(${SEQ} 1 $rows); do
+ 		let begvts="($row-1)*cols+1"
+ 		let endvts=$begvts+cols-1
+ 		[ $endvts -gt $VTS ] && endvts=$VTS
+ 		for button in 0 1 2 3; do		# Play, Chapter, Audio, Subtitle
+-			for title in $(seq $begvts $endvts); do
++			for title in $(${SEQ} $begvts $endvts); do
+ 				ok=1
+ 				[ "$button" -eq 2 ] && eval ok=\$VTSAUDIO_$title
+ 				[ "$button" -eq 3 ] && eval ok=\$VTSSUBS_$title
+@@ -8076,8 +8084,8 @@
+ 				cd "$DESTDIR"
+ 				FULL_PATH=`pwd`
+ 				cd "$CURR_DIR"
+-				echo -e "\e[32;01m Test with the following command:\e[m	xine dvd:`echo "$FULL_PATH" | sed 's/ /\\\ /g'`/"
+-				echo -e "\e[32;01m Burn with the following command:\e[m	growisofs -Z /dev/dvd -dvd-video `echo "$DESTDIR" | sed 's/ /\\\ /g'`/"
++				echo -e "Test with the following command:	xine dvd:`echo "$FULL_PATH" | sed 's/ /\\\ /g'`/"
++				echo -e "Burn with the following command:	growisofs -Z /dev/dvd -dvd-video `echo "$DESTDIR" | sed 's/ /\\\ /g'`/"
+ 				echo
+ 			fi
+ 		else
+@@ -8126,8 +8134,8 @@
+ 			if [ ! -z "$BURN_END" ]; then
+ 				echo && echo
+ 				echo " 100.00% done, at `date`" && echo
+-				good Success!!
+-				echo -e "\e[32;01m Test with the following command:\e[m	xine dvd://"
++				good Success
++				echo -e "Test with the following command:	xine dvd://"
+ 				echo
+ 				break
+ 			fi

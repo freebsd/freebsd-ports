@@ -1,0 +1,20 @@
+--- ../../work-sort-of-orig/any2dvd-0.32/any2dvd.1	Mon May 15 22:25:31 2006
++++ any2dvd.1	Sat Dec 30 13:41:12 2006
+@@ -105,11 +105,15 @@
+ .TP
+ \fB--iso=\fI[filename.iso]\fB\fR
+ Create DVD ISO image for later use.
+-Default is no, only the DVD file structure will be created in /workdir/DVD
++Default is no: only the DVD file structure will be created in
++$WORKDIR/DVD.  By default, WORKDIR is tmp_any2dvd under the current
++directory, but it can be changed with the
++.Fl workdir
++option.
+ .TP
+ \fB--burn=\fI[yes|no]\fB\fR
+ Choose whether or not to burn DVD.
+-Default is no, only the DVD file structure will be created in /workdir/DVD
++Default is no, only the DVD file structure will be created in $WORKDIR/DVD
+ .TP
+ \fB--palette=\fI[file.rgb]\fB\fR
+ Name of palette file to use for subtitle colours.
