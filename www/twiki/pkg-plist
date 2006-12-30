@@ -2262,7 +2262,7 @@
 @dirrm %%TWIKI%%/lib/CPAN/lib/Algorithm
 @dirrm %%TWIKI%%/lib/CPAN/lib
 @dirrm %%TWIKI%%/lib/CPAN
-@dirrm %%TWIKI%%/lib
+@dirrmtry %%TWIKI%%/lib
 @dirrm %%TWIKI%%/data/_empty
 @dirrm %%TWIKI%%/data/_default
 @dirrm %%TWIKI%%/data/Trash
@@ -2272,4 +2272,4 @@
 @dirrm %%TWIKI%%/data
 @dirrm %%TWIKI%%/bin/logos
 @dirrm %%TWIKI%%/bin
-@dirrm %%TWIKI%%
+@dirrmtry %%TWIKI%%
