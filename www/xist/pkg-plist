@@ -124,6 +124,9 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.py
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/__init__.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/scripts/doc2txt.py
 %%PYTHON_SITELIBDIR%%/ll/xist/scripts/doc2txt.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/scripts/doc2txt.pyo
@@ -136,6 +139,7 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/scripts/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/scripts/xml2xsc.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/scripts/xml2xsc.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/sgmlop.so
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.py
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.pyo
