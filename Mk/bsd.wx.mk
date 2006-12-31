@@ -136,6 +136,14 @@ _WX_VERS_ALL=			2.4 2.6 2.8
 _WX_VERS_UC_ALL=		2.6 2.8
 _WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
+# _WX_ILLEGAL_VERS_PYTHON	- List of versions where wxPython is not available
+# _WX_ILLEGAL_VERS_MOZILLA	- List of versions where wxmozilla is not available
+# _WX_ILLEGAL_VERS_SVG		- List of versions where wxsvg is not available
+
+_WX_ILLEGAL_VERS_PYTHON=	2.8
+_WX_ILLEGAL_VERS_MOZILLA=	2.6 2.8
+_WX_ILLEGAL_VERS_SVG=		2.4 2.8
+
 #
 # Variables used to determine what is needed:
 # _WX_PORT_comp_ver		- Port directory.
@@ -416,6 +424,27 @@ _WX_UC=					#
 _WX_UCL=				#
 _WX_PYSUFX=				-ansi
 .endif
+
+# Limit range of possible versions for python, svg and mozila
+
+.for comp in ${WX_COMPS}
+_WX_COMP=	${comp}
+.  if ${_WX_COMP} == "python"
+.    for excl in ${_WX_ILLEGAL_VERS_PYTHON}
+_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
+.    endfor
+.  endif
+.  if ${_WX_COMP} == "mozilla"
+.    for excl in ${_WX_ILLEGAL_VERS_MOZILLA}
+_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
+.    endfor
+.  endif
+.  if ${_WX_COMP} == "svg"
+.    for excl in ${_WX_ILLEGAL_VERS_SVG}
+_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
+.    endfor
+.  endif
+.endfor
 
 # Remove unusable installed versions.
 
