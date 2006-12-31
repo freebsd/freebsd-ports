@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.14.7
+PORTVERSION=	2.15.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
-		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
-		${MASTER_SITE_RINGSERVER} \
+		ftp://ftp.idilis.ro/mirrors/mrtg/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
-		ftp://ftp.po.opole.pl/pub/unix/net/tools/mrtg/ \
-		ftp://ftp.ujf-grenoble.fr/mirror/networking/mrtg/
-MASTER_SITE_SUBDIR=	net/mrtg
+		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
