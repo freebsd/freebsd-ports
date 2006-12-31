@@ -577,7 +577,6 @@
     SUBDIR += svnmailer
     SUBDIR += swaks
     SUBDIR += sylpheed
-    SUBDIR += sylpheed-claws
     SUBDIR += sylpheed2
     SUBDIR += sylpheed2-devel
     SUBDIR += sympa
