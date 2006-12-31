@@ -33,10 +33,12 @@
 #				  type.
 #				  The available components are:
 #				  lua			- The Lua library.
-#				  tolua			- The tolua library (vers 4.0-5.0).
-#				  ruby			- The Ruby bindings for Lua (vers 4.0-5.0).
-#				  app, compat51, dfui, filename, gettext, posix, pty and
-#				  socket		- Modules for Lua 5.0.
+#				  tolua			- The tolua library (for 4.0-5.0).
+#				  ruby			- The Ruby bindings for Lua (for 4.0-5.0).
+#				  Other components (modules):
+#				  5.0			- app, compat51, dfui, filename, gettext,
+#								  posix, pty, socket.
+#				  5.1			- filename, gettext, posix, pty.
 #				  The available dependency types are:
 #				  build			- Requires component for building.
 #				  lib			- Requires component for building and running.
@@ -128,7 +130,7 @@ _LUA_VERS_ALL=			4.0 5.0 5.1
 _LUA_PLIST_ALL=			LUA_VER LUA_VER_SH LUA_VER_STR LUA_PREFIX LUA_SUBDIR
 _LUA_PLIST_DIR_ALL=		LUA_BINDIR LUA_INCDIR LUA_LIBDIR \
 						LUA_MODLIBDIR LUA_MODSHAREDIR
-_LUA_VERS_LISTS=		WANT_LUA_VER WITH_LUA_VER
+_LUA_VERS_LISTS=		WANT_LUA_VER WITH_LUA_VER _LUA_VER_INSTALLED
 
 #
 # Variables used to determine what is needed.
@@ -167,48 +169,69 @@ _LUA_PORT_gettext_5.1=  devel/lua-gettext
 _LUA_PORT_posix_5.1=    devel/lua-posix
 _LUA_PORT_pty_5.1=		devel/lua-pty
 
-.for comp in ${_LUA_COMPS_ALL}
+.	for comp in ${_LUA_COMPS_ALL}
 _LUA_COMP=				${comp}
-.	for ver in ${_LUA_VERS_ALL}
-.		if ${_LUA_COMP} == "lua"
+.		for ver in ${_LUA_VERS_ALL}
+.			if ${_LUA_COMP} == "lua"
 _LUA_LIB_${comp}_${ver}=	lua-${LUA_VER}.${LUA_VER_SH}
 _LUA_SHVER_${comp}_${ver}=	${LUA_VER_SH}
 _LUA_FILE_${comp}_${ver}=	${LUA_LIBDIR}/liblua.a
-.		elif ${_LUA_COMP} == "tolua"
+.			elif ${_LUA_COMP} == "tolua"
 _LUA_FILE_${comp}_${ver}=	${LUA_LIBDIR}/libtolua.a
 _LUA_DEPTYPE_${comp}_${ver}=build
-.		elif ${_LUA_COMP} == "ruby"
+.			elif ${_LUA_COMP} == "ruby"
 _LUA_FILE_${comp}_${ver}=	${RUBY_SITEARCHLIBDIR}/lua-${LUA_VER}.so
 _LUA_DEPTYPE_${comp}_${ver}=lib
-.		else
-.			if !defined(_LUA_FILE_${comp}_${ver})
+.			else
+.				if !defined(_LUA_FILE_${comp}_${ver})
 _LUA_FILE_${comp}_${ver}=	${LUA_MODSHAREDIR}/${comp}.lua
-.			endif
+.				endif
 _LUA_DEPTYPE_${comp}_${ver}=run
-.		endif
+.			endif
+.		endfor
 .	endfor
-.endfor
+.endif
 
+#
+# Check if we are going to determine the version.
+#
+
+.if !defined(_LUA_Version_Done) && (defined(_POSTMKINCLUDED) || \
+    (defined(LUA_PREMK) && defined(BEFOREPORTMK) && \
+    (defined(USE_LUA) || defined(USE_LUA_NOT))))
+_LUA_Need_Version=			yes
 .endif
 
 #
 # Check for present components.
 #
 
+# Requested by the user.
+
 .if defined(WANT_LUA) && defined(BEFOREPORTMK)
-.	for __WANT_LUA in ${WANT_LUA}
-# Check if WANT_LUA contains more than one word.
-.		if defined(HAVE_LUA)
-IGNORE?=				selected multiple values for WANT_LUA: ${WANT_LUA}
+_WANT_LUA=				${WANT_LUA}
+.endif
+
+# Used for autodetection of installed versions.
+
+.if defined(_LUA_Need_Version)
+_WANT_LUA=				yes
+.endif
+
+.if defined(_WANT_LUA)
+.	for __WANT_LUA in ${_WANT_LUA}
+# Check if _WANT_LUA contains more than one word.
+.		if defined(_HAVE_LUA)
+IGNORE?=				selected multiple values for WANT_LUA: ${_WANT_LUA}
 .		endif
-HAVE_LUA=				#
+_HAVE_LUA=				#
 # Check for all versions.
-.		if ${WANT_LUA:L} == "yes"
+.		if ${_WANT_LUA:L} == "yes"
 .			for comp in ${_LUA_COMPS_ALL}
 .				for ver in ${_LUA_VERS_ALL}
 _LUA_COMP=				_LUA_FILE_${comp}_${ver}
 .					if defined(${_LUA_COMP}) && exists(${${_LUA_COMP}})
-HAVE_LUA+=				${comp}-${ver}
+_HAVE_LUA+=				${comp}-${ver}
 .					endif
 .				endfor
 .			endfor
@@ -216,22 +239,32 @@ HAVE_LUA+=				${comp}-${ver}
 .		elif ${_LUA_VERS_ALL:M${__WANT_LUA}} != ""
 .			for comp in ${_LUA_COMPS_ALL}
 .				if exists(${_LUA_FILE_${comp}_${__WANT_LUA}})
-HAVE_LUA+=				${comp}
+_HAVE_LUA+=				${comp}
 .				endif
 .			endfor
 .		else
 IGNORE?=				selected an invalid value for WANT_LUA: ${__WANT_LUA}
 .		endif
 .	endfor
-.endif		# WANT_LUA && BEFOREPORTMK
+.endif		# _WANT_LUA
+
+# Requested by the user.
+
+.if defined(WANT_LUA) && defined(BEFOREPORTMK)
+HAVE_LUA:=				${_HAVE_LUA}
+.endif
+
+# Used for autodetection of installed versions.
+
+.if defined(_WX_Need_Version)
+_LUA_VER_INSTALLED:=	${_HAVE_LUA}
+.endif
 
 #
 # Select Lua version.
 #
 
-.if !defined(_LUA_Version_Done) && (defined(_POSTMKINCLUDED) || \
-    (defined(LUA_PREMK) && defined(BEFOREPORTMK) && \
-    (defined(USE_LUA) || defined(USE_LUA_NOT))))
+.if defined(_LUA_Need_Version)
 _LUA_Version_Done=		yes
 
 # Set defaults (if one isn't present).
@@ -289,6 +322,14 @@ _LUA_VER_FINAL+=		${ver}
 .	endif
 .endfor
 
+# Remove unusable installed versions.
+
+.for ver in ${_LUA_VER_INSTALLED}
+.	if ${_LUA_VER_FINAL:M${ver}} == ""
+_LUA_VER_INSTALLED:=	${_LUA_VER_INSTALLED:N${ver}}
+.	endif
+.endfor
+
 # Check for a null version.
 
 .if empty(_LUA_VER_FINAL)
@@ -303,7 +344,8 @@ IGNORE?=				selected a null or invalid Lua version
 # Check for the following (in order):
 # 1) WITH_LUA_VER		- User preference.
 # 2) WANT_LUA_VER		- Port preference.
-# 3) _LUA_VER_FINAL		- Available versions.
+# 3) _LUA_VER_INSTALLED	- Installed versions.
+# 4) _LUA_VER_FINAL		- Available versions.
 #
 
 .for list in _LUA_VER_FINAL ${_LUA_LISTS_ORDER}
@@ -342,8 +384,7 @@ LUA_CMD?=				${LUA_PREFIX}/bin/lua-${LUA_VER}
 LUAC_CMD?=				${LUA_PREFIX}/bin/luac-${LUA_VER}
 TOLUA_CMD?=				${LUA_PREFIX}/bin/tolua-${LUA_VER}
 
-.endif		# !_LUA_Version_Done && (_POSTMKINCLUDED || \
-#			(LUA_PREMK && BEFOREPORTMK && (USE_LUA || USE_LUA_NOT)))
+.endif		# _LUA_Need_Version
 
 #
 # Process components list and add dependencies, variables, etc.
