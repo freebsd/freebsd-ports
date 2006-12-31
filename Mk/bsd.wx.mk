@@ -34,9 +34,9 @@
 #				  The available components are:
 #				  wx			- The WxWidgets library.
 #				  contrib		- The WxWidgets contributed libraries.
-#				  python		- The WxWidgets API for Python (WxPython).
-#				  mozilla		- WxMozilla (only for 2.4).
-#				  svg			- WxSVG (only for 2.6).
+#				  python		- The WxWidgets API for Python (for 2.4-2.6).
+#				  mozilla		- WxMozilla (for 2.4).
+#				  svg			- WxSVG (for 2.6).
 #				  The available dependency types are:
 #				  build			- Requires component for building.
 #				  lib			- Requires component for building and running.
@@ -134,15 +134,7 @@ _WX_COMPS_ALL=			wx contrib python mozilla svg
 _WX_DEP_TYPES_ALL=		build lib run
 _WX_VERS_ALL=			2.4 2.6 2.8
 _WX_VERS_UC_ALL=		2.6 2.8
-_WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER
-
-# _WX_ILLEGAL_VERS_PYTHON	- List of versions where wxPython is not available
-# _WX_ILLEGAL_VERS_MOZILLA	- List of versions where wxmozilla is not available
-# _WX_ILLEGAL_VERS_SVG		- List of versions where wxsvg is not available
-
-_WX_ILLEGAL_VERS_PYTHON=	2.8
-_WX_ILLEGAL_VERS_MOZILLA=	2.6 2.8
-_WX_ILLEGAL_VERS_SVG=		2.4 2.8
+_WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
 #
 # Variables used to determine what is needed:
@@ -189,21 +181,20 @@ _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropiately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".
 
-.for comp in ${_WX_COMPS_ALL}
+.	for comp in ${_WX_COMPS_ALL}
 _WX_COMP=				${comp}
-.	for ver in ${_WX_VERS_ALL}
-.		if defined(_WX_LIB_${comp}_${ver})
+.		for ver in ${_WX_VERS_ALL}
+.			if defined(_WX_LIB_${comp}_${ver})
 _WX_SHVER_${comp}_${ver}=	0
 _WX_FILE_${comp}_${ver}=	${X11BASE}/lib/lib${_WX_LIB_${comp}_${ver}}.so.${_WX_SHVER_${comp}_${ver}}
-.		endif
-.		if ${_WX_COMP} == "python"
+.			endif
+.			if ${_WX_COMP} == "python"
 _WX_DEPTYPE_${comp}_${ver}=	run
-.		else
+.			else
 _WX_DEPTYPE_${comp}_${ver}=	lib
-.		endif
+.			endif
+.		endfor
 .	endfor
-.endfor
-
 .endif		# !_WX_Defined_Done
 
 #
@@ -214,20 +205,42 @@ _WX_DEPTYPE_${comp}_${ver}=	lib
     (defined(WITH_UNICODE) || defined(WANT_UNICODE)))
 _WX_UC_AVAILABLE=			yes
 .else
-.undef _WX_UC_AVAILABLE
+.	undef _WX_UC_AVAILABLE
+.endif
+
+#
+# Check if we are going to determine the version.
+#
+
+.if !defined(_WX_Version_Done) && (defined(_POSTMKINCLUDED) || \
+    (defined(WX_PREMK) && defined(BEFOREPORTMK) && \
+    (defined(USE_WX) || defined(USE_WX_NOT))))
+_WX_Need_Version=			yes
 .endif
 
 #
 # Check for present components.
 #
 
+# Requested by the user.
+
 .if defined(WANT_WX) && defined(BEFOREPORTMK)
+_WANT_WX=				${WANT_WX}
+.endif
+
+# Used for autodetection of installed versions.
+
+.if defined(_WX_Need_Version)
+_WANT_WX=				yes
+.endif
+
+.if defined(_WANT_WX)
 
 # Check if Unicode will be used.
 
-.	for __WANT_WX in ${WANT_WX}
+.	for __WANT_WX in ${_WANT_WX}
 .		if defined(_WX_UC_AVAILABLE) && \
-		   (${_WX_VERS_UC_ALL:M${__WANT_WX}} != "" || ${WANT_WX:L} == "yes")
+		   (${_WX_VERS_UC_ALL:M${__WANT_WX}} != "" || ${_WANT_WX:L} == "yes")
 _WX_WANT_UNICODE=		yes
 .		endif
 .	endfor
@@ -246,21 +259,21 @@ _WX_UCL=				#
 _WX_PYSUFX=				-ansi
 .	endif
 
-# Fill HAVE_WX with the installed components.
+# Fill _HAVE_WX with the installed components.
 
-.	for __WANT_WX in ${WANT_WX}
-# Check if WANT_WX contains more than one word.
-.		if defined(HAVE_WX)
-IGNORE?=				selected multiple values for WANT_WX: ${WANT_WX}
+.	for __WANT_WX in ${_WANT_WX}
+# Check if _WANT_WX contains more than one word.
+.		if defined(_HAVE_WX)
+IGNORE?=				selected multiple values for WANT_WX: ${_WANT_WX}
 .		endif
-HAVE_WX=				#
+_HAVE_WX=				#
 # Check for all versions.
-.		if ${WANT_WX:L} == "yes"
+.		if ${_WANT_WX:L} == "yes"
 .			for comp in ${_WX_COMPS_ALL}
 .				for ver in ${_WX_VER_FINAL}
 _WX_COMP=				_WX_FILE_${comp}_${ver}
 .					if defined(${_WX_COMP}) && exists(${${_WX_COMP}})
-HAVE_WX+=				${comp}-${ver}
+_HAVE_WX+=				${comp}-${ver}
 .					endif
 .				endfor
 .			endfor
@@ -268,22 +281,32 @@ HAVE_WX+=				${comp}-${ver}
 .		elif ${_WX_VERS_ALL:M${__WANT_WX}}
 .			for comp in ${_WX_COMPS_ALL}
 .				if exists(${_WX_FILE_${comp}_${__WANT_WX}})
-HAVE_WX+=				${comp}
+_HAVE_WX+=				${comp}
 .				endif
 .			endfor
 .		else
 IGNORE?=				selected an invalid value for WANT_WX: ${__WANT_WX}
 .		endif
 .	endfor
-.endif		# WANT_WX && BEFOREPORTMK
+.endif		# _WANT_WX
+
+# Requested by the user.
+
+.if defined(WANT_WX) && defined(BEFOREPORTMK)
+HAVE_WX:=				${_HAVE_WX}
+.endif
+
+# Used for autodetection of installed versions.
+
+.if defined(_WX_Need_Version)
+_WX_VER_INSTALLED:=		${_HAVE_WX}
+.endif
 
 #
 # Select WxWidgets version.
 #
 
-.if !defined(_WX_Version_Done) && (defined(_POSTMKINCLUDED) || \
-    (defined(WX_PREMK) && defined(BEFOREPORTMK) && \
-    (defined(USE_WX) || defined(USE_WX_NOT))))
+.if defined(_WX_Need_Version)
 _WX_Version_Done=		yes
 
 # Set defaults (if one isn't present).
@@ -394,27 +417,13 @@ _WX_UCL=				#
 _WX_PYSUFX=				-ansi
 .endif
 
-# Limit range of possible versions for python, svg and mozila
+# Remove unusable installed versions.
 
-.for comp in ${WX_COMPS}
-_WX_COMP=	${comp}
-.  if ${_WX_COMP} == "python"
-.    for excl in ${_WX_ILLEGAL_VERS_PYTHON}
-_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
-.    endfor
-.  endif
-.  if ${_WX_COMP} == "mozilla"
-.    for excl in ${_WX_ILLEGAL_VERS_MOZILLA}
-_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
-.    endfor
-.  endif
-.  if ${_WX_COMP} == "svg"
-.    for excl in ${_WX_ILLEGAL_VERS_SVG}
-_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
-.    endfor
-.  endif
+.for ver in ${_WX_VER_INSTALLED}
+.	if ${_WX_VER_FINAL:M${ver}} == ""
+_WX_VER_INSTALLED:=		${_WX_VER_INSTALLED:N${ver}}
+.	endif
 .endfor
-
 
 #
 # Choose final version.
@@ -424,7 +433,8 @@ _WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
 # Check for the following (in order):
 # 1) WITH_WX_VER		- User preference.
 # 2) WANT_WX_VER		- Port preference.
-# 3) _WX_VER_FINAL		- Available versions.
+# 3) _WX_VER_INSTALLED	- Installed versions.
+# 4) _WX_VER_FINAL		- Available versions.
 #
 
 .for list in _WX_VER_FINAL ${_WX_VERS_LISTS}
@@ -445,8 +455,7 @@ WX_CONFIG?=				${X11BASE}/bin/wxgtk2${_WX_UC}-${_WX_VER}-config
 WXRC_CMD?=				${X11BASE}/bin/wxrc-gtk2${_WX_UC}-${_WX_VER}
 WX_VERSION?=			${_WX_VER}
 
-.endif		# !_WX_Version_Done && (_POSTMKINCLUDED || \
-#			(WX_PREMK && BEFOREPORTMK && (USE_WX || USE_WX_NOT)))
+.endif		# _WX_Need_Version
 
 #
 # Process components list and add dependencies, variables, etc.
