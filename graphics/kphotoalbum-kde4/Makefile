@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=		kphotoalbum
-PORTVERSION=		2.2
-PORTREVISION=		1
+PORTVERSION=		3.0
 CATEGORIES=		graphics kde
-MASTER_SITES=		http://www.kphotoalbum.org/download/
+MASTER_SITES=		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/ \
+			http://www.kphotoalbum.org/download/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
