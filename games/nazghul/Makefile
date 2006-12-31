@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nazghul
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.5.5
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -21,8 +20,13 @@ USE_SDL=	sdl image
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+LDFLAGS+=	-lpng
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	${REINPLACE_CMD} -i "" 's|malloc.h|stdlib.h|g' ${WRKSRC}/src/scheme.c
+
+post-configure:
+	${REINPLACE_CMD} -i "" -e 's|^LDFLAGS =*|LDFLAGS =-lpng|g' ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
