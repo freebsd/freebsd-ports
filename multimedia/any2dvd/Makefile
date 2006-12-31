@@ -12,7 +12,6 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	any2dvd
 
-MAINTAINER=	grog@FreeBSD.org
 COMMENT=	A script to ease the pain of burning multimedia DVDs
 # IGNORE=		More problems than you can shake a stick at.  Shall we delete it?
 
