@@ -2624,3 +2624,19 @@ www/etoile-grr|www/etoile-mollusk|2006-12-29|Project moved
 deskutils/etoile-etoileextensionskit|www/etoile-ui|2006-12-29|Project splitted in new modules
 deskutils/etoile-preferenceskit|www/etoile-panekit|2006-12-29|Project splitted in new modules
 deskutils/etoile-workspaceswitcher||2006-12-29|Project dopped
+mail/sylpheed-claws-att_remover|mail/claws-mail-att_remover|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-cachesaver|mail/claws-mail-cachesaver|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-etpan_privacy|mail/claws-mail-etpan_privacy|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-fetchinfo|mail/claws-mail-fetchinfo|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-gtkhtml2_viewer|mail/claws-mail-gtkhtml2_viewer|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-maildir|mail/claws-mail-maildir|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-mailmbox|mail/claws-mail-mailmbox|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-newmail|mail/claws-mail-newmail|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-notification|mail/claws-mail-notification|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-perl|mail/claws-mail-perl|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-rssyl|mail/claws-mail-rssyl|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-smime|mail/claws-mail-smime|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-synce|mail/claws-mail-synce|2006-12-31|Project renamed upstream
+mail/sylpheed-claws-vcalendar|mail/claws-mail-vcalendar|2006-12-31|Project renamed upstream
+
+
