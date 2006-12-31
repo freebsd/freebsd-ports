@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061231:
+  AFFECTS: users of mail/sylpheed-claws*
+  AUTHOR: itetcu@FreeBSD.org
+
+  Sypheed-Claws has been renamed to Claws-Mail upstream. The port and the ports
+  for the plug-ins have beeen renamed. If you didn't installed claws-mail
+  aready you need to:
+	portupgrade -o mail/claws-mail sylpheed-claws-2.6\*
+
 20061221:
    AFFECTS: users of security/gnupg
    AUTHOR: kuriyama@FreeBSD.org
