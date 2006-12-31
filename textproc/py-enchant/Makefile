@@ -22,7 +22,7 @@ BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_WX=	2.6
-WX_COMPS=	python_run
+WX_COMPS=	python:run
 
 PYDISTUTILS_INSTALL_TARGET=	install_lib
 PYDISTUTILS_INSTALLARGS=
