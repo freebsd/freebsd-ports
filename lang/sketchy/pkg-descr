@@ -1,7 +1,6 @@
 SketchyLISP is an embeddable interpreter for a purely applicative
 dialect of Scheme. It may be considered an implementation of pure
-LISP plus global definitions, first-class continuations and
-input/output functions.
+LISP plus global definitions and some input/output functions.
 
 This package contains the SketchyLISP interpreter and library,
 the manual, and example programs.

@@ -4,7 +4,7 @@ bin/skpp
 include/sketchy.h
 lib/libsketchy.a
 lib/libsketchy.so
-lib/libsketchy.so.27
+lib/libsketchy.so.28
 %%DATADIR%%/LICENSE
 %%DATADIR%%/ext/assp.scm
 %%DATADIR%%/ext/count.scm
@@ -13,7 +13,7 @@ lib/libsketchy.so.27
 %%DATADIR%%/ext/explode.scm
 %%DATADIR%%/ext/factorial.scm
 %%DATADIR%%/ext/filter.scm
-%%DATADIR%%/ext/forall.scm
+%%DATADIR%%/ext/for-all.scm
 %%DATADIR%%/ext/headp.scm
 %%DATADIR%%/ext/id.scm
 %%DATADIR%%/ext/implode.scm
@@ -220,7 +220,7 @@ lib/libsketchy.so.27
 %%DOCSDIR%%/library/filter.html
 %%DOCSDIR%%/library/fold-left.html
 %%DOCSDIR%%/library/fold-right.html
-%%DOCSDIR%%/library/forall.html
+%%DOCSDIR%%/library/for-all.html
 %%DOCSDIR%%/library/gcd.html
 %%DOCSDIR%%/library/greater.html
 %%DOCSDIR%%/library/gteq.html
