@@ -33,6 +33,7 @@
 %%SITE_PERL%%/Text/Hatena/DlNode.pm
 %%SITE_PERL%%/Text/Hatena/FootnoteNode.pm
 %%SITE_PERL%%/Text/Hatena/H3Node.pm
+%%SITE_PERL%%/Text/Hatena/H3anchorNode.pm
 %%SITE_PERL%%/Text/Hatena/H4Node.pm
 %%SITE_PERL%%/Text/Hatena/H5Node.pm
 %%SITE_PERL%%/Text/Hatena/HTMLFilter.pm
