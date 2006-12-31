@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	smime
-PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTVERSION=	0.5.7
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
-PKGNAMEPREFIX=	sylpheed-claws-
+MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
+PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	c0rn@o2.pl
-COMMENT=	S/MIME plugin for sylpheed-claws
+COMMENT=	S/MIME plugin for claws-mail
 
 LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
-BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259
 
-PLIST_FILES=lib/sylpheed-claws/plugins/smime.a \
-	lib/sylpheed-claws/plugins/smime.la \
-	lib/sylpheed-claws/plugins/smime.so \
-	lib/sylpheed-claws/plugins/smime.deps
+PLIST_FILES=lib/claws-mail/plugins/smime.a \
+	lib/claws-mail/plugins/smime.la \
+	lib/claws-mail/plugins/smime.so \
+	lib/claws-mail/plugins/smime.deps
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 include/ical.h
-lib/sylpheed-claws/plugins/vcalendar.so
-lib/sylpheed-claws/plugins/vcalendar.la
-lib/sylpheed-claws/plugins/vcalendar.a
+lib/claws-mail/plugins/vcalendar.so
+lib/claws-mail/plugins/vcalendar.la
+lib/claws-mail/plugins/vcalendar.a
 share/locale/de/LC_MESSAGES/vcalendar.mo
 share/locale/es/LC_MESSAGES/vcalendar.mo
 share/locale/fi/LC_MESSAGES/vcalendar.mo

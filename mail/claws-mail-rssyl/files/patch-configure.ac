@@ -1,8 +1,0 @@
---- configure.ac.orig	Sun Oct  1 11:05:00 2006
-+++ configure.ac	Sun Oct  1 11:05:19 2006
-@@ -1,4 +1,4 @@
--AC_PREREQ(2.60)
-+AC_PREREQ(2.59)
- AC_INIT(src/plugin.c)
- AC_CONFIG_AUX_DIR(config)
- AM_MAINTAINER_MODE

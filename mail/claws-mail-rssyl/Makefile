@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	rssyl
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	0.8
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
-PKGNAMEPREFIX=	sylpheed-claws-
+MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
+PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	c0rn@o2.pl
-COMMENT=	A RSS/Atom plugin for sylheed-claws
+COMMENT=	A RSS/Atom plugin for claws-mail
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
 USE_XLIB=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 
