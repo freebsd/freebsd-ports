@@ -14,7 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scipy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SciPy_complete-${PORTVERSION}
-LATEST_LINK=	py-${PORTNAME}03
 
 MAINTAINER=	db@db.net
 COMMENT=	Scientific tools for Python
@@ -28,6 +27,10 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 OPTIONS=	ATLAS "Use optimized blas library" OFF
+LATEST_LINK=	py-${PORTNAME}03
+
+DEPRECATED=	Replaced by py-scipy
+EXPIRATION_DATE=2007-04-01
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
@@ -44,7 +47,7 @@ IGNORE=	Atlas needs to be built with WITH_STATICLIB for scipy to function proper
 .endif
 .else
 LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack \
-		blas.1:${PORTSDIR}/math/blas	
+		blas.1:${PORTSDIR}/math/blas
 .endif
 
 post-install:
