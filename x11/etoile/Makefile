@@ -7,7 +7,7 @@
 
 PORTNAME=	etoile
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -35,6 +35,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	IconKit:x11-themes/etoile-iconkit \
 	ExtendedWorkspace:deskutils/etoile-extendedworkspacekit \
 	XWindowServerKit:x11/etoile-xwindowserverkit \
+	WorkspaceCommKit:sysutils/etoile-system \
 
 USE_GNUSTEP_LOCAL_LIBS+=	\
 	Addresses:mail/addresses \
@@ -48,7 +49,6 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	CollectionKit:devel/etoile-collectionkit \
 	EtoileFoundation:devel/etoile-foundation \
 	PaneKit:deskutils/etoile-panekit \
-	WorkspaceCommKit:sysutils/etoile-system \
 	SystemConfig:deskutils/etoile-systemconfig \
 	MultimediaKit:multimedia/etoile-multimediakit \
 	EtoileUI:deskutils/etoile-ui \
@@ -69,6 +69,7 @@ USE_GNUSTEP_LOCAL_THEMES+=	\
 
 USE_GNUSTEP_SYSTEM_APPS+=	\
 	AZDock:x11-wm/etoile-azdock \
+	AZBackground:x11-themes/etoile-azbackground \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	DictionaryReader:deskutils/etoile-dictionaryreader \
@@ -80,7 +81,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	EtoileMenuServer:deskutils/etoile-menuserver \
 	Vindaloo:graphics/vindaloo \
 	Typewriter:editors/etoile-typewriter \
-	AZBackground:x11-themes/etoile-azbackground \
 	Babbler:multimedia/etoile-babbler \
 	Mollusk:www/etoile-mollusk \
 
