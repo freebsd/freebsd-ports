@@ -27,6 +27,7 @@ share/icons/hicolor/22x22/apps/kftpgrabber.png
 share/icons/hicolor/32x32/apps/kftpgrabber.png
 share/icons/hicolor/48x48/apps/kftpgrabber.png
 share/icons/hicolor/64x64/apps/kftpgrabber.png
+share/locale/ar/LC_MESSAGES/kftpgrabber.mo
 share/locale/bg/LC_MESSAGES/kftpgrabber.mo
 share/locale/br/LC_MESSAGES/kftpgrabber.mo
 share/locale/cs/LC_MESSAGES/kftpgrabber.mo

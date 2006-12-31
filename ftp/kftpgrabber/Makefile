@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	kftpgrabber
-PORTVERSION=	0.8.0.b.2
+PORTVERSION=	0.8.0
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://www.kftp.org/uploads/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b.2/-beta2/}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical FTP client for KDE
