@@ -57,6 +57,7 @@
     SUBDIR += gtk20-reference
     SUBDIR += gtkada
     SUBDIR += gtkada-devel
+    SUBDIR += gtkada-gcc
     SUBDIR += gtkdatabox
     SUBDIR += gtkdatabox2
     SUBDIR += gtkextra
