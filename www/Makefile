@@ -1054,6 +1054,7 @@
     SUBDIR += trac-addcomment
     SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-gantt
+    SUBDIR += trac-tags
     SUBDIR += trac-webadmin
     SUBDIR += transproxy
     SUBDIR += twhttpd
