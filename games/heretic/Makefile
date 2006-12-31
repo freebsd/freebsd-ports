@@ -7,15 +7,11 @@
 
 PORTNAME=	heretic
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/:source \
 		http://heretic.linuxgames.com/wad/:wad
 DISTNAME=	gl${PORTNAME}-${PORTVERSION}
-.if !defined(WITHOUT_WAD)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source heretic_share.wad.gz:wad
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Unix source-port of the famous Heretic game by id Software
@@ -24,8 +20,22 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
+OPTIONS=	X11	"Use X11"		on \
+		FASTX11	"Use FastX11"		off \
+		SDL	"Use SDL"		off \
+		WAD	"With shareware WAD"	on
+
+.include <bsd.port.pre.mk>
+
+.if (defined(WITH_X11) && (defined(WITH_FASTX11) || defined(WITH_SDL))) || \
+    (defined(WITH_FASTX11) && (defined(WITH_X11) || defined(WITH_SDL)))
+IGNORE=		you must only define X11, xor FASTX11, xor SDL
+.endif
+
+.if defined(WITH_X11)
 ALL_TARGET=	x11
 BINARY=		xheretic
+.endif
 
 .if defined(WITH_FASTX11)
 ALL_TARGET=	fastx11
@@ -39,20 +49,13 @@ BINARY=		sdlheretic
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 .endif
 
-.if defined(WITHOUT_WAD)
-PLIST_SUB=	WAD:="@comment "
-.else
+.if defined(WITH_WAD)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source heretic_share.wad.gz:wad
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PLIST_SUB=	WAD:=""
+.else
+PLIST_SUB=	WAD:="@comment "
 .endif
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_FASTX11=yes  Use FastX11 support"
-	@${ECHO} "      WITH_SDL=yes      Use SDL."
-	@${ECHO} "      WITHOUT_WAD=yes   Don't install the wad file."
-	@${ECHO} ""
 
 post-extract:
 .if !defined(WITHOUT_WAD)
@@ -73,4 +76,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/heretic
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
