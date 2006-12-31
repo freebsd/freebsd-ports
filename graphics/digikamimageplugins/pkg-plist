@@ -704,6 +704,7 @@ share/locale/fi/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/fi/LC_MESSAGES/digikamimageplugin_freerotation.mo
 share/locale/fi/LC_MESSAGES/digikamimageplugin_infrared.mo
 share/locale/fi/LC_MESSAGES/digikamimageplugin_raindrop.mo
+share/locale/fi/LC_MESSAGES/digikamimageplugin_restoration.mo
 share/locale/fi/LC_MESSAGES/digikamimageplugin_whitebalance.mo
 share/locale/fi/LC_MESSAGES/digikamimageplugins.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
@@ -1482,8 +1483,12 @@ share/services/digikamimageplugin_unsharp.desktop
 share/services/digikamimageplugin_whitebalance.desktop
 @dirrm share/apps/digikamimageplugins/data
 @dirrm share/apps/digikamimageplugins
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
 @dirrmtry share/locale/sk/LC_MESSAGES
 @dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -1504,3 +1509,20 @@ share/services/digikamimageplugin_whitebalance.desktop
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrmtry share/apps/digikam/icons/hicolor/scalable/actions
+@dirrmtry share/apps/digikam/icons/hicolor/scalable
+@dirrmtry share/apps/digikam/icons/hicolor/64x64/actions
+@dirrmtry share/apps/digikam/icons/hicolor/64x64
+@dirrmtry share/apps/digikam/icons/hicolor/48x48/actions
+@dirrmtry share/apps/digikam/icons/hicolor/48x48
+@dirrmtry share/apps/digikam/icons/hicolor/32x32/actions
+@dirrmtry share/apps/digikam/icons/hicolor/32x32
+@dirrmtry share/apps/digikam/icons/hicolor/22x22/actions
+@dirrmtry share/apps/digikam/icons/hicolor/22x22
+@dirrmtry share/apps/digikam/icons/hicolor/16x16/actions
+@dirrmtry share/apps/digikam/icons/hicolor/16x16
+@dirrmtry share/apps/digikam/icons/hicolor/128x128/actions
+@dirrmtry share/apps/digikam/icons/hicolor/128x128
+@dirrmtry share/apps/digikam/icons/hicolor
+@dirrmtry share/apps/digikam/icons
+@dirrmtry share/apps/digikam
