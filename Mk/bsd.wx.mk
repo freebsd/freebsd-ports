@@ -307,7 +307,7 @@ HAVE_WX:=				${_HAVE_WX}
 # Used for autodetection of installed versions.
 
 .if defined(_WX_Need_Version)
-_WX_VER_INSTALLED:=		${_HAVE_WX}
+_WX_VER_INSTALLED:=		${_HAVE_WX:Mwx-*:S/wx-//}
 .endif
 
 #
