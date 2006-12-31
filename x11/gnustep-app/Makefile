@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	19
+PORTREVISION=	21
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -39,6 +39,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	ServicesBarKit:deskutils/etoile-servicesbarkit \
 	IconKit:x11-themes/etoile-iconkit \
 	XWindowServerKit:x11/etoile-xwindowserverkit \
+	WorkspaceCommKit:sysutils/etoile-system \
 
 USE_GNUSTEP_LOCAL_LIBS+=	\
 	Pantomime:mail/pantomime \
@@ -72,10 +73,11 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	CollectionKit:devel/etoile-collectionkit \
 	EtoileFoundation:devel/etoile-foundation \
 	PaneKit:deskutils/etoile-panekit \
-	WorkspaceCommKit:sysutils/etoile-system \
 	SystemConfig:deskutils/etoile-systemconfig \
 	MultimediaKit:multimedia/etoile-multimediakit \
 	EtoileUI:deskutils/etoile-ui \
+
+#	DistributedView:deskutils/etoile-distributedview \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -110,8 +112,7 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	Position:astro/position \
 	ClipBook:deskutils/gworkspace-clipbook \
 	GMDSClient:deskutils/gworkspace-gwmetadata \
-
-#	DistributedView:deskutils/etoile-distributedview \
+	AZBackground:x11-themes/etoile-azbackground \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
@@ -194,7 +195,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Fortunate:games/fortunate \
 	TBrowser:net/tryst-examples \
 	Typewriter:editors/etoile-typewriter \
-	AZBackground:x11-themes/etoile-azbackground \
 	Babbler:multimedia/etoile-babbler \
 	Mollusk:www/etoile-mollusk \
 	BioCocoa:biology/biococoa \
