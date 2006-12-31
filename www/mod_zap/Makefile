@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_zap
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.7
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zap/
 DISTNAME=	zap-${PORTVERSION}
