@@ -1790,6 +1790,7 @@
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
     SUBDIR += py-unit
+    SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-utils
     SUBDIR += py-vmaps
