@@ -14609,6 +14609,7 @@ trac-accountmanager	ports/www/trac-accountmanager
 trac-addcomment	ports/www/trac-addcomment
 trac-ctxtnavadd	ports/www/trac-ctxtnavadd
 trac-gantt	ports/www/trac-gantt
+trac-tags	ports/www/trac-tags
 trac-webadmin	ports/www/trac-webadmin
 trackballs	ports/games/trackballs
 tracker		ports/sysutils/tracker
