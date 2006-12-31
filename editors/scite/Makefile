@@ -7,7 +7,7 @@
 
 PORTNAME=	scite
 PORTVERSION=	1.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -22,7 +22,6 @@ LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 MAKEFILE=	makefile
