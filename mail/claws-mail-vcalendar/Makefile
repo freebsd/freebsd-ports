@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVESION} < 500000
+.if ${OSVERSION} < 500000
 IGNORE=	doens't buid
 .endif
 
