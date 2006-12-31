@@ -19,7 +19,7 @@ COMMENT=	Python karaoke application (Plays CD+G, MP3+G, OGG+G files)
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 
-USE_WX=	2.4-2.6
+USE_WX=	2.4+
 WX_COMPS=	python
 USE_ZIP=	yes
 
