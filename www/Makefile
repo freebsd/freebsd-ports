@@ -1056,6 +1056,7 @@
     SUBDIR += trac-gantt
     SUBDIR += trac-tags
     SUBDIR += trac-webadmin
+    SUBDIR += trac-wikinotification
     SUBDIR += transproxy
     SUBDIR += twhttpd
     SUBDIR += twig

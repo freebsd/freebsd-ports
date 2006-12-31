@@ -1,0 +1,25 @@
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/templates/notification.cs
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/templates/notification_email.cs
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/__init__.py
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/__init__.pyc
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/__init__.pyo
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/listener.py
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/listener.pyc
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/listener.pyo
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/notification.py
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/notification.pyc
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/notification.pyo
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/web_ui.py
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/web_ui.pyc
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/web_ui.pyo
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/top_level.txt
+@dirrm %%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification/templates
+@dirrm %%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/WikiNotification
+@dirrm %%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/TracWikiNotification-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
