@@ -1,3 +1,0 @@
-This plugin is intended to extend the filtering possibilities of
-Sylpheed-Claws. It provides a Perl interface to Sylpheed-Claws' filtering
-mechanism, allowing the use of full Perl power in email filters.
