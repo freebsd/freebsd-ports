@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.13.0
-PORTREVISION=	21
+PORTREVISION=	20
 CATEGORIES=	x11
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -77,8 +77,6 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	MultimediaKit:multimedia/etoile-multimediakit \
 	EtoileUI:deskutils/etoile-ui \
 
-#	DistributedView:deskutils/etoile-distributedview \
-
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
 	EtoileBehavior:sysutils/etoile-behavior \
@@ -110,9 +108,11 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	GRubik:games/grubik \
 	AZDock:x11-wm/etoile-azdock \
 	Position:astro/position \
+	AZBackground:x11-themes/etoile-azbackground \
 	ClipBook:deskutils/gworkspace-clipbook \
 	GMDSClient:deskutils/gworkspace-gwmetadata \
-	AZBackground:x11-themes/etoile-azbackground \
+
+#	DistributedView:deskutils/etoile-distributedview \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
@@ -208,5 +208,8 @@ USE_GNUSTEP_LOCAL_TOOLS+=	\
 	ioobjc:lang/etoile-io \
 
 #	open:deskutils/openapp \
+
+USE_GNUSTEP_LOCAL_SERVICES+=	\
+	LaTeX:textproc/latex-service \
 
 .include <bsd.port.mk>
