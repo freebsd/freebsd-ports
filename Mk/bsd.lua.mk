@@ -257,7 +257,7 @@ HAVE_LUA:=				${_HAVE_LUA}
 # Used for autodetection of installed versions.
 
 .if defined(_WX_Need_Version)
-_LUA_VER_INSTALLED:=	${_HAVE_LUA}
+_LUA_VER_INSTALLED:=	${_HAVE_LUA:Mlua-*:S/lua-//}
 .endif
 
 #
