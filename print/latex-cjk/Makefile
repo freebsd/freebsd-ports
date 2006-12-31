@@ -64,11 +64,14 @@ PLIST_SUB+=	UTF8ARPHIC=""
 PLIST_SUB+=	UTF8ARPHIC="@comment "
 .endif
 
-pre-patch:
+post-extract:
 	@${RM} -f ${WRKSRC}/Makefile
 
 post-patch:
-	@${FIND} ${WRKSRC}/texinput -name \*.orig -delete
+	# be compatible with Debian
+	@${CP} -p ${WRKSRC}/texinput/Bg5/c00kai.fd ${WRKSRC}/texinput/Bg5/c00bkai.fd
+	@${REINPLACE_CMD} -e 's,c00kai.fd,c00bkai.fd,; s,{kai},{bkai},' ${WRKSRC}/texinput/Bg5/c00bkai.fd
+	@${FIND} -E ${WRKSRC} -regex '.*.(orig|bak)' -delete
 
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
