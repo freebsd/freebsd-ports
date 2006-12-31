@@ -14611,6 +14611,7 @@ trac-ctxtnavadd	ports/www/trac-ctxtnavadd
 trac-gantt	ports/www/trac-gantt
 trac-tags	ports/www/trac-tags
 trac-webadmin	ports/www/trac-webadmin
+trac-wikinotification	ports/www/trac-wikinotification
 trackballs	ports/games/trackballs
 tracker		ports/sysutils/tracker
 trackerbt	ports/net-p2p/trackerbt
