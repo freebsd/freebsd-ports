@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	any2dvd
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	A script to ease the pain of burning multimedia DVDs
-BROKEN=		Too many dependencies still missing.  Use at your own peril.
+# IGNORE=		More problems than you can shake a stick at.  Shall we delete it?
 
 RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode	\
 		seq2:${PORTSDIR}/misc/seq2			\
