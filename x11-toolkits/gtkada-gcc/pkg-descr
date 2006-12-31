@@ -1,0 +1,7 @@
+GtkAda is an Ada95 graphical toolkit based on Gtk+, providing the complete set
+of Gtk+ widgets using the Object-Oriented features of this language.
+
+This version of GtkAda is designed to be used with lang/gnat-gcc41.
+
+WWW: https://libre2.adacore.com/GtkAda/
+WWW: http://gnuada.sourceforge.net/
