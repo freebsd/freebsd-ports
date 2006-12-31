@@ -2,12 +2,12 @@
 +++ makefile		Sat Jun 24 09:06:54 2006
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
- 
+
  .SUFFIXES: .cxx .o .h .a .c
 -CC = g++
 +CC ?= g++
  AR = ar
- 
+
  # If explicit setting of GTK1 or GTK2 then use that else look for
 @@ -28,10 +28,10 @@
  CONFIGTHREADS=
@@ -23,19 +23,9 @@
  endif
  ifndef prefix
  ifdef gnomeprefix
-@@ -51,17 +51,17 @@
- 
- all: $(PROG)
- 
--vpath %.h ../src ../../scintilla/include
-+vpath %.h ../src $(X11BASE)/include/scintilla
- vpath %.cxx ../src
- 
- #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings
--INCLUDEDIRS=-I ../../scintilla/include -I ../src
-+INCLUDEDIRS=-I $(X11BASE)/include/scintilla -I ../src
+@@ -59,9 +59,9 @@
  CXXBASEFLAGS=-W -Wall -pedantic -Os -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
- 
+
  ifdef DEBUG
 -CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
 +CXXTFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
@@ -43,10 +33,10 @@
 -CXXTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
 +CXXTFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
  endif
- 
+
  ifndef NO_LUA
 @@ -102,9 +102,9 @@
- 
+
  $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
  MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
 -	$(COMPLIB) $(LUA_OBJS)
@@ -57,4 +47,4 @@
 +	`$(CONFIGTHREADS)` -DGTK $^ -o $@
  # Automatically generate header dependencies with "make deps"
  include deps.mak
- 
+
