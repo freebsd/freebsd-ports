@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Jun 15 07:53:42 2006
-+++ Makefile.in	Thu Jun 15 07:53:56 2006
-@@ -389,14 +389,7 @@
+--- Makefile.in.orig	Wed Dec  6 18:07:33 2006
++++ Makefile.in	Sun Dec 31 12:03:09 2006
+@@ -395,14 +395,7 @@
  EXTRA_DIST = INSTALL-SOURCE INSTALL-WIN-SOURCE \
  			README COPYING EXCEPTIONS-CLIENT CMakeLists.txt
  
@@ -10,7 +10,7 @@
 -			@sql_union_dirs@ unittest storage plugin \
 -			@sql_server@ scripts @man_dirs@ tests \
 -			netware @libmysqld_dirs@ \
--			mysql-test support-files @tools_dirs@ \
+-			mysql-test support-files sql-bench @tools_dirs@ \
 -			win
 +SUBDIRS =
  
