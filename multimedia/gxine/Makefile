@@ -68,14 +68,11 @@ PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 USE_GECKO=	firefox mozilla xulrunner firefox15
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
+CONFIGURE_ENV+=	NSPR_CFLAGS="-I${LOCALBASE}/include/nspr" \
+		NSPR_LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--disable-libjs
-CFLAGS+=	-I${LOCALBASE}/include/nspr
 PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|firefox/nspr/||g" \
-			${WRKSRC}/configure
 
 post-install:
 .if !defined(WITHOUT_MOZILLA_PLUGIN)
