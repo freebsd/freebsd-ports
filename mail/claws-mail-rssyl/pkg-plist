@@ -1,6 +1,6 @@
-lib/sylpheed-claws/plugins/rssyl.a
-lib/sylpheed-claws/plugins/rssyl.la
-lib/sylpheed-claws/plugins/rssyl.so
+lib/claws-mail/plugins/rssyl.a
+lib/claws-mail/plugins/rssyl.la
+lib/claws-mail/plugins/rssyl.so
 share/locale/de/LC_MESSAGES/rssyl.mo
 share/locale/es/LC_MESSAGES/rssyl.mo
 share/locale/fi/LC_MESSAGES/rssyl.mo

@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	perl
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
-PKGNAMEPREFIX=	sylpheed-claws-
+MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
+PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	perl_plugin-${PORTVERSION}
 
 MAINTAINER=	c0rn@o2.pl
-COMMENT=	Perl filtering plugin for sylpheed-claws
+COMMENT=	Perl filtering plugin for claws-mail
 
-BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259
 USE_PERL5=	yes
 
-PLIST_FILES=	lib/sylpheed-claws/plugins/perl_plugin.a \
-		lib/sylpheed-claws/plugins/perl_plugin.la \
-		lib/sylpheed-claws/plugins/perl_plugin.so \
-		share/sylpheed-claws/matcherrc2perlfilter.pl
+PLIST_FILES=	lib/claws-mail/plugins/perl_plugin.a \
+		lib/claws-mail/plugins/perl_plugin.la \
+		lib/claws-mail/plugins/perl_plugin.so \
+		share/claws-mail/matcherrc2perlfilter.pl
 
 .include <bsd.port.pre.mk>
 
@@ -36,8 +35,8 @@ IGNORE=		requires newer Perl, but you can use databases/p5-DBI-137 instead
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/sylpheed-claws
+	@${MKDIR} ${PREFIX}/share/claws-mail
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/matcherrc2perlfilter.pl \
-		${PREFIX}/share/sylpheed-claws/
+		${PREFIX}/share/claws-mail/
 
 .include <bsd.port.post.mk>

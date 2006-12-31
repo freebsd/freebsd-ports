@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	notification
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
-PKGNAMEPREFIX=	sylpheed-claws-
+MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
+PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	notification_plugin-${PORTVERSION}
 
 MAINTAINER=	c0rn@o2.pl
-COMMENT=	New/unread mail notification plugin for sylpheed-claws
+COMMENT=	New/unread mail notification plugin for claws-mail
 
-BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259
 
-PLIST_FILES=lib/sylpheed-claws/plugins/notification_plugin.a \
-	lib/sylpheed-claws/plugins/notification_plugin.la \
-	lib/sylpheed-claws/plugins/notification_plugin.so
+PLIST_FILES=lib/claws-mail/plugins/notification_plugin.a \
+	lib/claws-mail/plugins/notification_plugin.la \
+	lib/claws-mail/plugins/notification_plugin.so
 
 .include <bsd.port.mk>

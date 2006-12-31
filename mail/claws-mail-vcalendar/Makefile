@@ -6,28 +6,33 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	1.89.1
-PORTREVISION=	3
+PORTVERSION=	1.91
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/ \
+MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
-PKGNAMEPREFIX=	sylpheed-claws-
+PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	c0rn@o2.pl
-COMMENT=	vCalendar plugin for sylpheed-claws
+COMMENT=	vCalendar plugin for claws-mail
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_XLIB=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 	--with-libintl-prefix=${LOCALBASE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVESION} < 500000
+IGNORE=	doens't buid
+.endif
+
+.include <bsd.port.post.mk>

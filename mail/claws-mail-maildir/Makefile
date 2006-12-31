@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	maildir
-PORTVERSION=	0.24.2
-PORTREVISION=	1
+PORTVERSION=	0.24.3
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
-PKGNAMEPREFIX=	sylpheed-claws-
+MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
+PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	c0rn@o2.pl
-COMMENT=	Maildir++ plugin for sylpheed-claws
+COMMENT=	Maildir++ plugin for claws-mail
 
-BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
@@ -26,8 +25,8 @@ USE_BDB=	yes
 CONFIGURE_ENV=	CFLAGS="-I${BDB_INCLUDE_DIR}" \
 	LDFLAGS="-l${BDB_LIB_NAME} -L${BDB_LIB_DIR}"
 
-PLIST_FILES=	lib/sylpheed-claws/plugins/maildir.a \
-	lib/sylpheed-claws/plugins/maildir.la \
-	lib/sylpheed-claws/plugins/maildir.so
+PLIST_FILES=	lib/claws-mail/plugins/maildir.a \
+	lib/claws-mail/plugins/maildir.la \
+	lib/claws-mail/plugins/maildir.so
 
 .include <bsd.port.mk>
