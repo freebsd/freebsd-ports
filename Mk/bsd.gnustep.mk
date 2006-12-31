@@ -73,28 +73,37 @@
 #	depends on a shared lib in System directrory
 #
 # USE_GNUSTEP_SYSTEM_BUNDLES+=	EtoileMenus:x11-themes/etoile-etoilemenus
-#	depends on Bundles installed in System directrory at build and runtime
+#	depends on Bundles installed in System directrory
 #
 # USE_GNUSTEP_SYSTEM_THEMES+=	Camaelon:x11-themes/etoile-camaelon
-#	depends on Themes installed in System directrory at build and runtime
+#	depends on Themes installed in System directrory
 #
 # USE_GNUSTEP_LOCAL_LIBS+=	pantomime:mail/pantomime
 #	depends on a shared lib in Local directrory
 #
 # USE_GNUSTEP_LOCAL_BUNDLES+=	Cddb:audio/cddb-bundle
-#	depends on Bundles installed in Local directrory at build and runtime
+#	depends on Bundles installed in Local directrory
 #
 # USE_GNUSTEP_LOCAL_THEMES+=	WildMenus:x11-themes/etoile-wildmenus
-#	depends on Themes installed in Local directrory at build and runtime
+#	depends on Themes installed in Local directrory
 #
 # USE_GNUSTEP_SYSTEM_APPS+=	ProjectCenter:devel/projectcenter.app
-#	depends on Application installed in System directrory at runtime
+#	depends on Application installed in System directrory
 #
 # USE_GNUSTEP_LOCAL_APPS+=	Ink:misc/gnustep-examples
-#	depends on Application installed in Local directrory at runtime
+#	depends on Application installed in Local directrory
+#
+# USE_GNUSTEP_SYSTEM_TOOLS+=	resizer:deskutils/gworkspace
+#	depends on Tool installed in System directrory
 #
 # USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
-#	depends on Tool installed in Local directrory at runtime
+#	depends on Tool installed in Local directrory
+#
+# USE_GNUSTEP_SYSTEM_SERVICES+=	thumbnailer:deskutils/gworkspace
+#	depends on Services installed in System directrory
+#
+# USE_GNUSTEP_LOCAL_SERVICES+=	LaTeX:textproc/latex-service
+#	depends on Services installed in Local directrory
 #
 # ---------------------------------------------------------------------------
 .if !defined(_POSTMKINCLUDED)
@@ -107,16 +116,16 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
 RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
 .else
-BUILD_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
-RUN_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
 .endif
 .endif
 
 .if defined(USE_GNUSTEP_BUILD) || defined(USE_GNUSTEP_MAKE)
-BUILD_DEPENDS+=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_MAKEFILES}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
 .endif
 .if defined(USE_GNUSTEP_INSTALL) || defined(USE_GNUSTEP_MAKE)
-RUN_DEPENDS+=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
+RUN_DEPENDS+=	${GNUSTEP_MAKEFILES}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
 .endif
 
 GNUSTEP_MAKE_PORT?=	devel/gnustep-make
@@ -169,13 +178,26 @@ PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 .endif
 
-SYSTEMDIR=	${GNUSTEP_PREFIX}/System
-SYSMAKEDIR=	${SYSTEMDIR}/Library/Makefiles
-SYSBUNDLEDIR=	${SYSTEMDIR}/Library/Bundles
-SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries
-COMBOLIBDIR=	${SYSTEMDIR}/Library/Libraries
-LOCALLIBDIR=	${GNUSTEP_PREFIX}/Local/Library/Libraries
-LOCALBUNDLEDIR=	${GNUSTEP_PREFIX}/Local/Library/Bundles
+GNUSTEP_SYSTEM_ROOT=	${GNUSTEP_PREFIX}/System
+GNUSTEP_MAKEFILES=		${GNUSTEP_SYSTEM_ROOT}/Library/Makefiles
+GNUSTEP_SYSTEM_BUNDLES=		${GNUSTEP_SYSTEM_ROOT}/Library/Bundles
+GNUSTEP_SYSTEM_LIBRARIES=	${GNUSTEP_SYSTEM_ROOT}/Library/Libraries
+GNUSTEP_SYSTEM_APPS=		${GNUSTEP_SYSTEM_ROOT}/Applications
+GNUSTEP_SYSTEM_TOOLS=		${GNUSTEP_SYSTEM_ROOT}/Tools
+GNUSTEP_SYSTEM_SERVICES=	${GNUSTEP_SYSTEM_ROOT}/Services
+
+GNUSTEP_LOCAL_ROOT=	${GNUSTEP_PREFIX}/Local
+GNUSTEP_LOCAL_BUNDLES=		${GNUSTEP_LOCAL_ROOT}/Library/Bundles
+GNUSTEP_LOCAL_LIBRARIES=	${GNUSTEP_LOCAL_ROOT}/Library/Libraries
+GNUSTEP_LOCAL_APPS=		${GNUSTEP_LOCAL_ROOT}/Applications
+GNUSTEP_LOCAL_TOOLS=		${GNUSTEP_LOCAL_ROOT}/Tools
+GNUSTEP_LOCAL_SERVICES=		${GNUSTEP_LOCAL_ROOT}/Services
+
+# Obsolete, for compatibility only
+SYSTEMDIR=	${GNUSTEP_SYSTEM_ROOT}
+SYSMAKEDIR=	${GNUSTEP_MAKEFILES}
+SYSLIBDIR=	${GNUSTEP_SYSTEM_LIBRARIES}
+LOCALLIBDIR=	${GNUSTEP_LOCAL_LIBRARIES}
 
 .if defined(WITH_GNUSTEP_DEVEL)
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
@@ -227,16 +249,16 @@ GNUSTEP_GCC_PORT?=	lang/gcc${GCCSUFFIX}
 # using base
 #
 .if defined(USE_GNUSTEP_BASE)
-BUILD_DEPENDS+=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
-RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
 .endif
 
 # ---------------------------------------------------------------------------
 # using gui
 #
 .if defined(USE_GNUSTEP_GUI)
-BUILD_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT}
-RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT}
 .endif
 
 # ---------------------------------------------------------------------------
@@ -262,8 +284,8 @@ USE_GNUSTEP_XLIB=yes
 # Backend using xlib
 #
 .if defined(USE_GNUSTEP_XLIB)
-BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
-RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
 
 BACKXLIB=	libgnustep-back${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=back
@@ -273,8 +295,8 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=back
 # Backend using xdps
 #
 .if defined(USE_GNUSTEP_XDPS)
-BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
-RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
 
 BACKXDPS=	libgnustep-xdps${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=xdps
@@ -284,8 +306,8 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=xdps
 # Backend using libart
 #
 .if defined(USE_GNUSTEP_LIBART)
-BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
-RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
 
 BACKART=	libgnustep-art${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=art
@@ -295,8 +317,8 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=art
 # Backend using cairo
 #
 .if defined(USE_GNUSTEP_CAIRO)
-BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
-RUN_DEPENDS+=	${SYSBUNDLEDIR}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
 
 BACKCAIRO=	libgnustep-cairo${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=cairo
@@ -307,8 +329,8 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=cairo
 #
 .if defined(USE_GNUSTEP_SYSTEM_LIBS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_LIBS}
-BUILD_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -317,8 +339,8 @@ RUN_DEPENDS+=	${COMBOLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTE
 #
 .if defined(USE_GNUSTEP_SYSTEM_BUNDLES)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_BUNDLES}
-BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -327,8 +349,8 @@ RUN_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.
 #
 .if defined(USE_GNUSTEP_SYSTEM_THEMES)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_THEMES}
-BUILD_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -337,8 +359,8 @@ RUN_DEPENDS+=	${SYSBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP
 #
 .if defined(USE_GNUSTEP_LOCAL_LIBS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_LIBS}
-BUILD_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_LIBRARIES}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_LIBRARIES}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -347,8 +369,8 @@ RUN_DEPENDS+=	${LOCALLIBDIR}/lib${_GNUSTEP_DEP:C/:.*//}.so:${PORTSDIR}/${_GNUSTE
 #
 .if defined(USE_GNUSTEP_LOCAL_BUNDLES)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_BUNDLES}
-BUILD_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -357,8 +379,8 @@ RUN_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/
 #
 .if defined(USE_GNUSTEP_LOCAL_THEMES)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_THEMES}
-BUILD_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -367,8 +389,8 @@ RUN_DEPENDS+=	${LOCALBUNDLEDIR}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GNUSTEP_D
 #
 .if defined(USE_GNUSTEP_SYSTEM_APPS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_APPS}
-BUILD_DEPENDS+=	${SYSTEMDIR}/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${SYSTEMDIR}/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_APPS}/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_APPS}/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -377,8 +399,18 @@ RUN_DEPENDS+=	${SYSTEMDIR}/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_D
 #
 .if defined(USE_GNUSTEP_LOCAL_APPS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_APPS}
-BUILD_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Applications/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_APPS}/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_APPS}/${_GNUSTEP_DEP:C/:.*//}.app/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source system tools
+#
+.if defined(USE_GNUSTEP_SYSTEM_TOOLS)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_TOOLS}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_TOOLS}/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_TOOLS}/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -387,8 +419,28 @@ RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Applications/${_GNUSTEP_DEP:C/:.*//}.app/$
 #
 .if defined(USE_GNUSTEP_LOCAL_TOOLS)
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_TOOLS}
-BUILD_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Tools/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
-RUN_DEPENDS+=	${GNUSTEP_PREFIX}/Local/Tools/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_TOOLS}/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_TOOLS}/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source system services
+#
+.if defined(USE_GNUSTEP_SYSTEM_SERVICES)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_SYSTEM_SERVICES}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_SERVICES}/${_GNUSTEP_DEP:C/:.*//}.service/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_SERVICES}/${_GNUSTEP_DEP:C/:.*//}.service/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source local services
+#
+.if defined(USE_GNUSTEP_LOCAL_SERVICES)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_SERVICES}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_SERVICES}/${_GNUSTEP_DEP:C/:.*//}.service/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_SERVICES}/${_GNUSTEP_DEP:C/:.*//}.service/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
@@ -400,7 +452,7 @@ run-autotools::
 	@${DO_NADA}
 
 do-configure:
-	@(cd ${CONFIGURE_WRKSRC}; . ${SYSMAKEDIR}/GNUstep.sh; \
+	@(cd ${CONFIGURE_WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -422,11 +474,11 @@ do-configure:
 do-build:
 .if defined(USE_GNUSTEP_MAKE_DIRS)
 .for i in ${USE_GNUSTEP_MAKE_DIRS}
-	@(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+	@(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 .endfor
 .else
-	@(cd ${WRKSRC}; . ${SYSMAKEDIR}/GNUstep.sh; \
+	@(cd ${WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 .endif
 
@@ -439,11 +491,11 @@ do-build:
 do-install:
 .if defined(USE_GNUSTEP_MAKE_DIRS)
 .for i in ${USE_GNUSTEP_MAKE_DIRS}
-	@(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+	@(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
 .else
-	@(cd ${WRKSRC}; . ${SYSMAKEDIR}/GNUstep.sh; \
+	@(cd ${WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endif
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH) || defined(CLEAN_ROOT)
