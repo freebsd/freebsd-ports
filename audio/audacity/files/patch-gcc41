@@ -1,0 +1,11 @@
+--- lib-src/soundtouch/include/SoundTouch.h.orig        Sun Nov 27 08:47:29 2005
++++ lib-src/soundtouch/include/SoundTouch.h     Sun Dec 17 22:52:47 2006
+@@ -146,7 +146,7 @@
+     static const char *getVersionString();
+
+     /// Get SoundTouch library version Id
+-    static uint SoundTouch::getVersionId();
++    static uint getVersionId();
+
+     /// Sets new rate control value. Normal rate = 1.0, smaller values
+     /// represent slower rate, larger faster rates.
