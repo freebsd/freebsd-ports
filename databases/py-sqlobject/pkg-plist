@@ -1,119 +1,136 @@
 bin/sqlobject-admin
-%%PYTHON_SITELIBDIR%%/sqlobject/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/boundattributes.py
-%%PYTHON_SITELIBDIR%%/sqlobject/boundattributes.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/boundattributes.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/cache.py
-%%PYTHON_SITELIBDIR%%/sqlobject/cache.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/cache.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/classregistry.py
-%%PYTHON_SITELIBDIR%%/sqlobject/classregistry.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/classregistry.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/col.py
-%%PYTHON_SITELIBDIR%%/sqlobject/col.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/col.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/conftest.py
-%%PYTHON_SITELIBDIR%%/sqlobject/conftest.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/conftest.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/constraints.py
-%%PYTHON_SITELIBDIR%%/sqlobject/constraints.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/constraints.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/converters.py
-%%PYTHON_SITELIBDIR%%/sqlobject/converters.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/converters.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/declarative.py
-%%PYTHON_SITELIBDIR%%/sqlobject/declarative.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/declarative.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/firebird/firebirdconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/firebird/firebirdconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/firebird/firebirdconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/index.py
-%%PYTHON_SITELIBDIR%%/sqlobject/index.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/index.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/iteration.py
-%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/iteration.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/iteration.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/joins.py
-%%PYTHON_SITELIBDIR%%/sqlobject/joins.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/joins.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/main.py
-%%PYTHON_SITELIBDIR%%/sqlobject/main.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/main.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/manager/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/manager/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/manager/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/manager/command.py
-%%PYTHON_SITELIBDIR%%/sqlobject/manager/command.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/manager/command.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/maxdb/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/maxdb/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/maxdb/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/maxdb/maxdbconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/maxdb/maxdbconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/maxdb/maxdbconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/mysql/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/mysql/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/mysql/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/mysql/mysqlconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/mysql/mysqlconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/mysql/mysqlconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/postgres/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/postgres/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/postgres/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/postgres/pgconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/postgres/pgconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/postgres/pgconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlbuilder.py
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlbuilder.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlbuilder.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlite/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlite/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlite/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlite/sqliteconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlite/sqliteconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/sqlite/sqliteconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/sresults.py
-%%PYTHON_SITELIBDIR%%/sqlobject/sresults.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/sresults.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/styles.py
-%%PYTHON_SITELIBDIR%%/sqlobject/styles.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/styles.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/sybase/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/sybase/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/sybase/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.py
-%%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/util/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/util/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/util/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/util/backports.py
-%%PYTHON_SITELIBDIR%%/sqlobject/util/backports.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/util/backports.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/util/moduleloader.py
-%%PYTHON_SITELIBDIR%%/sqlobject/util/moduleloader.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/util/moduleloader.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.py
-%%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/util
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sybase
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sqlite
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/postgres
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/mysql
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/maxdb
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/manager
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/inheritance
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/firebird
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/scripts/sqlobject-admin
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/boundattributes.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/boundattributes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/boundattributes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/cache.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/classregistry.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/classregistry.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/classregistry.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/col.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/col.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/col.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/conftest.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/conftest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/conftest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/constraints.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/constraints.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/constraints.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/converters.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/converters.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/converters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/dbconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/dbconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/dbconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/declarative.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/declarative.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/declarative.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/firebirdconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/firebirdconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/firebirdconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/index.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/index.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/index.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/iteration.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/iteration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/iteration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/joins.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/joins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/joins.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/main.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/main.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/manager/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/manager/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/manager/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/manager/command.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/manager/command.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/manager/command.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/maxdb/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/maxdb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/maxdb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/maxdb/maxdbconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/maxdb/maxdbconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/maxdb/maxdbconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mssql/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mssql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mssql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mssql/mssqlconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mssql/mssqlconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mssql/mssqlconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mysql/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mysql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mysql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mysql/mysqlconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mysql/mysqlconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mysql/mysqlconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/postgres/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/postgres/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/postgres/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/postgres/pgconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/postgres/pgconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/postgres/pgconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlbuilder.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlbuilder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlbuilder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite/sqliteconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite/sqliteconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite/sqliteconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sresults.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sresults.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sresults.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/styles.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/styles.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/styles.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase/sybaseconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase/sybaseconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase/sybaseconnection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/moduleloader.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/moduleloader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/moduleloader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/postgres
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mysql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/maxdb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/mssql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/manager
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%
