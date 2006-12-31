@@ -22,6 +22,9 @@ BUILD_WRKSRC=	${WRKSRC}/src
 MAN1=		geod.1 nad2nad.1 proj.1
 MAN3=		pj_init.3
 
+post-configure:
+	${REINPLACE_CMD} -e 's|make|gmake|' ${WRKSRC}/install
+
 do-install:
 	cd ${WRKSRC} && ${SH} install
 
