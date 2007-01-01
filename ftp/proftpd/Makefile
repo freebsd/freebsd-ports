@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -228,7 +228,7 @@ post-configure:
 
 post-install:
 	[ -f ${PREFIX}/etc/proftpd.conf ] || \
-		${CP} ${EXAMPLESDIR}/etc/proftpd.conf ${PREFIX}/etc/proftpd.conf
+		${CP} ${EXAMPLESDIR}/etc/proftpd.conf ${PREFIX}/etc/proftpd.conf.sample
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/proftpd

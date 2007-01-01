@@ -2,7 +2,7 @@ bin/ftpcount
 bin/ftpdctl
 bin/ftptop
 bin/ftpwho
-etc/proftpd.conf
+etc/proftpd.conf.sample
 include/proftpd/auth.h
 include/proftpd/bindings.h
 include/proftpd/buildstamp.h
