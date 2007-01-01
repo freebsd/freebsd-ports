@@ -865,6 +865,14 @@ lib/libfxt.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/sort/symbolify-out.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/sort/unique-demo.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/sort/unique-out.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/bits/hilbert-texpic-demo.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/bits/hilbert-texpic-out.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/comb/schroeder-tree-out.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/comb/schroeder-tree-demo.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/comb/stirling1-out.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/comb/stirling1-demo.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/topics.txt
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sort
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/perm
