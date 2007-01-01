@@ -6,8 +6,7 @@
 #    $MCom: ports/graphics/gimp-help/Makefile,v 1.1 2006/07/18 13:04:28 ahze Exp $
 
 PORTNAME=	gimp-help
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
@@ -16,14 +15,13 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gimp/help/testing
+MASTER_SITE_SUBDIR=	gimp/help/
 DISTNAME=	${PORTNAME}-2-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GIMP user's manual
 
-BUILD_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp
-RUN_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp
+LIB_DEPENDS=	gimp-2.0.0:${PORTSDIR}/graphics/gimp
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
