@@ -1565,7 +1565,6 @@
     SUBDIR += pear-Config
     SUBDIR += pear-Console_Color
     SUBDIR += pear-Console_Getargs
-    SUBDIR += pear-Console_Getopt
     SUBDIR += pear-Console_Table
     SUBDIR += pear-Date
     SUBDIR += pear-Date_Holidays

@@ -1,4 +1,0 @@
-This is a PHP implementation of "getopt" supporting both
-short and long options.
-
-WWW: http://pear.php.net/package/Console_Getopt
