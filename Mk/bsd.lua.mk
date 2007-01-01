@@ -267,6 +267,31 @@ _LUA_VER_INSTALLED:=	${_HAVE_LUA:Mlua-*:S/lua-//}
 .if defined(_LUA_Need_Version)
 _LUA_Version_Done=		yes
 
+#
+# Basic component parsing (ignores dependency types).
+#
+# The variables used are:
+# _LUA_COMP				- Component part.
+# _LUA_COMPS_FINAL		- Final list of components.
+#
+
+# Detect duplicated components.
+
+_LUA_COMPS_FINAL=		#
+.for comp in ${LUA_COMPS}
+_LUA_COMP=				${comp:C/:([[:alpha:]]+)$//}
+.	for __LUA_COMP in ${_LUA_COMP}
+.		if ${_LUA_COMPS_ALL:M${__LUA_COMP}} == ""
+IGNORE?=				selected an invalid Lua component: ${__LUA_COMP}
+.		endif
+.	endfor
+.	for newcomp in ${_LUA_COMP}
+.		if ${_LUA_COMPS_FINAL:M${newcomp}} == ""
+_LUA_COMPS_FINAL+=		${newcomp}
+.		endif
+.	endfor
+.endfor
+
 # Set defaults (if one isn't present).
 
 USE_LUA?=				${_LUA_VERS_ALL}
@@ -334,6 +359,22 @@ _LUA_VER_INSTALLED:=	${_LUA_VER_INSTALLED:N${ver}}
 
 .if empty(_LUA_VER_FINAL)
 IGNORE?=				selected a null or invalid Lua version
+.endif
+
+# Avoid versions which have unavailable components.
+
+.for ver in ${_LUA_VER_FINAL}
+.	for comp in ${_LUA_COMPS_FINAL}
+.		if !defined(_LUA_PORT_${comp}_${ver})
+_LUA_WRONG_COMPS+=		${comp}
+_LUA_WRONG_VERS+=		${ver}
+_LUA_VER_FINAL:=		${_LUA_VER_FINAL:N${ver}}
+.		endif
+.	endfor
+.endfor
+
+.if empty(_LUA_VER_FINAL)
+IGNORE?=				selected Lua versions (${_LUA_WRONG_VERS}) which do not have the selected components (${_LUA_WRONG_COMPS})
 .endif
 
 #
@@ -431,7 +472,7 @@ IGNORE?=				selected an invalid Lua dependency type: ${__LUA_DEP_TYPE}
 IGNORE?=				selected a Lua component (${_LUA_COMP}) which is not available for the selected version (${_LUA_VER})
 .	endif
 .	for newcomp in ${_LUA_COMP_NEW}
-.		if ${_LUA_COMPS_FINAL:M${newcomp}} == ""
+.		if ${_LUA_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
 _LUA_COMPS_FINAL+=		${newcomp}
 .		endif
 .	endfor
