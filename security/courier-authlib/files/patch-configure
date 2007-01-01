@@ -1,6 +1,6 @@
---- configure.orig	Tue Mar  1 03:22:02 2005
-+++ configure	Fri Apr 22 19:13:43 2005
-@@ -21084,8 +21084,12 @@
+--- configure.orig	Sat Dec 30 06:27:58 2006
++++ configure	Mon Jan  1 22:27:57 2007
+@@ -20585,8 +20585,12 @@
  
  if test "$doauthuserdb" = "no"
  then
@@ -13,8 +13,8 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -22778,7 +22782,21 @@
- 
+@@ -22351,7 +22355,21 @@
+ fi
  
  
 +if test "${with_base+set}" = set; then
@@ -34,8 +34,8 @@
 +  
  
  
- # Check whether --with-authpwd or --without-authpwd was given.
-@@ -24111,9 +24129,9 @@
+ if test "$HAVE_LDAP" = 1; then
+@@ -23711,9 +23729,9 @@
  if test "$doauthmysql" = ""
  then
  	LIBS="$MYSQL_LIBS $LIBS"
@@ -48,7 +48,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    cat >conftest.$ac_ext <<_ACEOF
-@@ -24122,12 +24140,12 @@
+@@ -23722,12 +23740,12 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -64,7 +64,7 @@
      Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
      <limits.h> exists even on freestanding compilers.  */
  
-@@ -24137,7 +24155,7 @@
+@@ -23737,7 +23755,7 @@
  # include <assert.h>
  #endif
  
@@ -73,7 +73,7 @@
  
  /* Override any gcc2 internal prototype to avoid an error.  */
  #ifdef __cplusplus
-@@ -24146,14 +24164,14 @@
+@@ -23746,14 +23764,14 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -91,7 +91,7 @@
  #endif
  #ifdef __cplusplus
  }
-@@ -24162,7 +24180,7 @@
+@@ -23762,7 +23780,7 @@
  int
  main ()
  {
@@ -100,7 +100,7 @@
    ;
    return 0;
  }
-@@ -24189,19 +24207,19 @@
+@@ -23789,19 +23807,19 @@
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -125,7 +125,7 @@
    doauthmysql="yes"
  
  fi
-@@ -24311,9 +24329,9 @@
+@@ -23911,9 +23929,9 @@
  else
  	saveLIBS="$LIBS"
  	LIBS="$MYSQL_LIBS $LIBS"
@@ -138,7 +138,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    cat >conftest.$ac_ext <<_ACEOF
-@@ -24322,12 +24340,12 @@
+@@ -23922,12 +23940,12 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -154,7 +154,7 @@
      Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
      <limits.h> exists even on freestanding compilers.  */
  
-@@ -24337,7 +24355,7 @@
+@@ -23937,7 +23955,7 @@
  # include <assert.h>
  #endif
  
@@ -163,7 +163,7 @@
  
  /* Override any gcc2 internal prototype to avoid an error.  */
  #ifdef __cplusplus
-@@ -24346,14 +24364,14 @@
+@@ -23946,14 +23964,14 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -181,7 +181,7 @@
  #endif
  #ifdef __cplusplus
  }
-@@ -24362,7 +24380,7 @@
+@@ -23962,7 +23980,7 @@
  int
  main ()
  {
@@ -190,7 +190,7 @@
    ;
    return 0;
  }
-@@ -24389,19 +24407,19 @@
+@@ -23989,19 +24007,19 @@
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -215,7 +215,7 @@
    LIBAUTHMYSQL="libauthmysql.la"
  		HAVE_AUTHMYSQL=1
  else
-@@ -26671,6 +26689,10 @@
+@@ -26433,6 +26451,10 @@
  s,@subdirs@,$subdirs,;t t
  s,@LIBOBJS@,$LIBOBJS,;t t
  s,@LTLIBOBJS@,$LTLIBOBJS,;t t
