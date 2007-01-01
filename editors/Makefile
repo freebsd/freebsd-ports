@@ -143,6 +143,7 @@
     SUBDIR += semi113-emacs20
     SUBDIR += setedit
     SUBDIR += slime
+    SUBDIR += softmaker-office
     SUBDIR += spe
     SUBDIR += speedbar
     SUBDIR += speedbar-emacs20
