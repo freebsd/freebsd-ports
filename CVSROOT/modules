@@ -15250,6 +15250,7 @@ wmctrl		ports/x11/wmctrl
 wmcube		ports/sysutils/wmcube
 wmcube-gdk	ports/sysutils/wmcube-gdk
 wmdate		ports/x11-clocks/wmdate
+wmdiskmon	ports/sysutils/wmdiskmon
 wmdrawer	ports/x11/wmdrawer
 wmeyes		ports/games/wmeyes
 wmfire		ports/sysutils/wmfire
