@@ -94,6 +94,7 @@
     SUBDIR += hayes
     SUBDIR += helixplayer
     SUBDIR += iriverter
+    SUBDIR += iso2mkv
     SUBDIR += istanbul
     SUBDIR += jahshaka
     SUBDIR += k9copy
