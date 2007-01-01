@@ -24,6 +24,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::OICQ.3
 
+DEPRECATED=	Does not work with newer OICQ protocol
+EXPIRATION_DATE=	2007-02-01
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800 # inherits from security/p5-Crypt-OICQ
