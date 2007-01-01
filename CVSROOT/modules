@@ -12325,6 +12325,7 @@ py-ncurses	ports/devel/py-ncurses
 py-netstring	ports/net/py-netstring
 py-nevow	ports/www/py-nevow
 py-nose		ports/devel/py-nose
+py-notifier	ports/devel/py-notifier
 py-notify	ports/devel/py-notify
 py-numarray	ports/math/py-numarray
 py-numeric	ports/math/py-numeric
