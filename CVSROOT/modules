@@ -14496,6 +14496,7 @@ tircproxy	ports/irc/tircproxy
 titano		ports/devel/titano
 titlefix	ports/sysutils/titlefix
 tits		ports/comms/tits
+tivodecode	ports/multimedia/tivodecode
 tix		ports/x11-toolkits/tix
 tk80		ports/x11-toolkits/tk80
 tk82		ports/x11-toolkits/tk82
