@@ -8,6 +8,7 @@ share/jack-rack/jack-rack-logo.png
 share/jack-rack/jr-cross.png
 share/jack-rack/jr-down-arrow.png
 share/jack-rack/jr-up-arrow.png
+share/locale/fr/LC_MESSAGES/jack-rack.mo
 share/locale/ru/LC_MESSAGES/jack-rack.mo
 share/pixmaps/jack-rack-icon.png
 @dirrmtry share/applications

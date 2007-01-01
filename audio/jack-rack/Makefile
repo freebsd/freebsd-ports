@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jack-rack
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jack-rack
@@ -24,7 +24,7 @@ USE_GNOME=	libgnomeui libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--disable-ladcca
+CONFIGURE_ARGS=	--disable-ladcca --disable-lash
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^jr_desktop_install/ s|/usr/share|${PREFIX}/share|' \
