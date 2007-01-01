@@ -20,7 +20,7 @@ PORTREVISION=	1
 DISTFILES?=	frontline${PORTVERSION:S/.//}_full-linux${EXTRACT_SUFX}
 .endif
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	pat@FreeBSD.org
 COMMENT?=	Half-Life mod Frontline Force full server package for Linux
 
 RUN_DEPENDS=	${PREFIX}${HLDSDIR}${HL_PROGRAM}:${HALFLIFESERVER_PORT}
