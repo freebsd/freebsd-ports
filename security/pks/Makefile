@@ -15,13 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gtodd@bellanet.org
 COMMENT=	PGP Public Key Server
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
+USE_BDB=	yes
+WANT_BDB_VER=	2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
 		--sysconfdir=${EXAMPLESDIR} \
 		--libdir=${LOCALBASE}/lib --with-libwrap
-CFLAGS+=	-I${LOCALBASE}/include/db2
+CFLAGS+=	-I${BDB_INCLUDE_DIR}
 MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib SUBDIRS=
 
 USE_RC_SUBR=	pksd.sh
@@ -34,8 +35,8 @@ SUB_FILES=	pkg-message pkg-deinstall
 post-patch:
 	${RM} -rf ${WRKSRC}/db2-sleepycat
 	${REINPLACE_CMD} 's|SUBDIRS =.*|SUBDIRS =|; \
-			  s|LIBDB =.*|LIBDB = -L${LOCALBASE}/lib -ldb2|; \
-			  s|DBDIR =.*|DBDIR = ${LOCALBASE}/include/db2|' \
+			  s|LIBDB =.*|LIBDB = -L${LOCALBASE}/lib -l${BDB_LIB_NAME}|; \
+			  s|DBDIR =.*|DBDIR = ${BDB_INCLUDE_DIR}|' \
 			  ${WRKSRC}/Makefile.in
 
 post-install:
