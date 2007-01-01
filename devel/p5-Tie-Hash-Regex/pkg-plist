@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Tie/Hash/Regex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Regex/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Regex
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
+@dirrmtry %%SITE_PERL%%/Tie/Hash
+@dirrmtry %%SITE_PERL%%/Tie
