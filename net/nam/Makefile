@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nam
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	nam-src-${PORTVERSION}
