@@ -14,14 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
 
-LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
+USE_BDB=	3+
+INVALID_BDB_VER=2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-default-8bit --enable-cdb
-CPPFLAGS=	-I${LOCALBASE}/include/db4
-LDFLAGS=	-L${LOCALBASE}/lib -ldb4
+CPPFLAGS=	-I${BDB_INCLUDE_DIR}
+LDFLAGS=	-L${LOCALBASE}/lib -l${BDB_LIB_NAME}
 
 MAN1=		spamprobe.1
 PLIST_FILES=	bin/spamprobe
