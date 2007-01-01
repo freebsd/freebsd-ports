@@ -1,0 +1,10 @@
+bin/tilda
+share/applications/tilda.desktop
+share/pixmaps/tilda.png
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tilda
-PORTVERSION=	0.09.3
+PORTVERSION=	0.9.4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,12 +17,11 @@ COMMENT=	Drop down x11 terminal with transparency support
 LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	glib20 vte
+USE_GNOME=	gtk20 vte
 USE_GCC=	3.4+
+USE_XLIB=	yes
 
-PLIST_FILES=	bin/tilda
-PORTDOCS=	AUTHORS ChangeLog README TODO
+DOCS=		AUTHORS ChangeLog README TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ps -C tilda -o pid=|pgrep tilda|' \
@@ -31,7 +30,7 @@ post-patch:
 post-install:
 .if !defined (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
+.for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
