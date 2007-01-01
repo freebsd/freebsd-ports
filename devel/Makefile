@@ -1748,6 +1748,7 @@
     SUBDIR += py-mx-experimental
     SUBDIR += py-ncurses
     SUBDIR += py-nose
+    SUBDIR += py-notifier
     SUBDIR += py-notify
     SUBDIR += py-ocempgui
     SUBDIR += py-omniorb
