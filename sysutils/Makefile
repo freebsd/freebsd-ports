@@ -686,6 +686,7 @@
     SUBDIR += wmcpuload
     SUBDIR += wmcube
     SUBDIR += wmcube-gdk
+    SUBDIR += wmdiskmon
     SUBDIR += wmfire
     SUBDIR += wmflame
     SUBDIR += wmfsm
