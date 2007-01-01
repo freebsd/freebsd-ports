@@ -136,14 +136,6 @@ _WX_VERS_ALL=			2.4 2.6 2.8
 _WX_VERS_UC_ALL=		2.6 2.8
 _WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
-# _WX_ILLEGAL_VERS_PYTHON	- List of versions where wxPython is not available
-# _WX_ILLEGAL_VERS_MOZILLA	- List of versions where wxmozilla is not available
-# _WX_ILLEGAL_VERS_SVG		- List of versions where wxsvg is not available
-
-_WX_ILLEGAL_VERS_PYTHON=	2.8
-_WX_ILLEGAL_VERS_MOZILLA=	2.6 2.8
-_WX_ILLEGAL_VERS_SVG=		2.4 2.8
-
 #
 # Variables used to determine what is needed:
 # _WX_PORT_comp_ver		- Port directory.
@@ -317,6 +309,31 @@ _WX_VER_INSTALLED:=		${_HAVE_WX:Mwx-*:S/wx-//}
 .if defined(_WX_Need_Version)
 _WX_Version_Done=		yes
 
+#
+# Basic component parsing (ignores dependency types).
+#
+# The variables used are:
+# _WX_COMP				- Component part.
+# _WX_COMPS_FINAL		- Final list of components.
+#
+
+# Detect duplicated components.
+
+_WX_COMPS_FINAL=		#
+.for comp in ${WX_COMPS}
+_WX_COMP=				${comp:C/:([[:alpha:]]+)$//}
+.	for __WX_COMP in ${_WX_COMP}
+.		if ${_WX_COMPS_ALL:M${__WX_COMP}} == ""
+IGNORE?=				selected an invalid WxWidgets component: ${__WX_COMP}
+.		endif
+.	endfor
+.	for newcomp in ${_WX_COMP}
+.		if ${_WX_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
+_WX_COMPS_FINAL+=		${newcomp}
+.		endif
+.	endfor
+.endfor
+
 # Set defaults (if one isn't present).
 
 USE_WX?=				${_WX_VERS_ALL}
@@ -378,6 +395,22 @@ _WX_VER_MERGED+=		${ver}
 IGNORE?=				selected a null or invalid WxWidgets version
 .endif
 
+# Avoid versions which have unavailable components.
+
+.for ver in ${_WX_VER_MERGED}
+.	for comp in ${_WX_COMPS_FINAL}
+.		if !defined(_WX_PORT_${comp}_${ver})
+_WX_WRONG_COMPS+=		${comp}
+_WX_WRONG_VERS+=		${ver}
+_WX_VER_MERGED:=		${_WX_VER_MERGED:N${ver}}
+.		endif
+.	endfor
+.endfor
+
+.if empty(_WX_VER_MERGED)
+IGNORE?=				selected WxWidgets versions (${_WX_WRONG_VERS}) which do not have the selected components (${_WX_WRONG_COMPS})
+.endif
+
 #
 # Unicode support.
 #
@@ -424,27 +457,6 @@ _WX_UC=					#
 _WX_UCL=				#
 _WX_PYSUFX=				-ansi
 .endif
-
-# Limit range of possible versions for python, svg and mozila
-
-.for comp in ${WX_COMPS}
-_WX_COMP=	${comp}
-.  if ${_WX_COMP} == "python"
-.    for excl in ${_WX_ILLEGAL_VERS_PYTHON}
-_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
-.    endfor
-.  endif
-.  if ${_WX_COMP} == "mozilla"
-.    for excl in ${_WX_ILLEGAL_VERS_MOZILLA}
-_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
-.    endfor
-.  endif
-.  if ${_WX_COMP} == "svg"
-.    for excl in ${_WX_ILLEGAL_VERS_SVG}
-_WX_VER_FINAL:=	${_WX_VER_FINAL:S/${excl}//}
-.    endfor
-.  endif
-.endfor
 
 # Remove unusable installed versions.
 
@@ -531,7 +543,7 @@ IGNORE?=				selected an invalid WxWidgets dependency type: ${__WX_DEP_TYPE}
 IGNORE?=				selected a WxWidgets component (${_WX_COMP}) which is not available for the selected version (${_WX_VER})
 .	endif
 .	for newcomp in ${_WX_COMP_NEW}
-.		if ${_WX_COMPS_FINAL:M${newcomp}} == ""
+.		if ${_WX_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
 _WX_COMPS_FINAL+=		${newcomp}
 .		endif
 .	endfor
