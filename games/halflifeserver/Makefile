@@ -17,7 +17,7 @@ CATEGORIES=	games linux
 DISTNAME=	hlds_l_1120_full
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pat@FreeBSD.org
 COMMENT?=	Steam Enabled Half-Life Dedicated Server with CS and DOD
 
 BROKEN=		Incomplete fetch instructions
