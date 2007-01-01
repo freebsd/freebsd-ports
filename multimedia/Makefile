@@ -211,6 +211,7 @@
     SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += tcmplex-panteltje
+    SUBDIR += tivodecode
     SUBDIR += tkxanim
     SUBDIR += tosvcd
     SUBDIR += totem
