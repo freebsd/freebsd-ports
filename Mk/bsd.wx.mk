@@ -3,38 +3,38 @@
 #
 # $FreeBSD$
 #
-# bsd.wx.mk - Support for WxWidgets based ports.
+# bsd.wx.mk - Support for wxWidgets based ports.
 #
 # Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # Please view me with 4 column tabs!
 #
-# The following variables can be defined in a port that uses the WxWidgets
-# library, contributed libraries, WxPython and/or more WxWidgets related
+# The following variables can be defined in a port that uses the wxWidgets
+# library, contributed libraries, WxPython and/or more wxWidgets related
 # components (with run and/or build dependencies). It can be used after and/or
 # before bsd.port.pre.mk, but Python components will only work if Python
 # variables (e.g. USE_PYTHON) are defined before it (this is a bsd.python.mk
 # limitation), at least it is manually included.
-# USE_WX		- Set to the list of WxWidgets versions that can be used by
+# USE_WX		- Set to the list of wxWidgets versions that can be used by
 #				  the port. The syntax allows the following elements:
 #				  - Single version (e.g. "2.4").
 #				  - Range of versions (e.g. "2.4-2.6"). Must be ascending.
 #				  - Partial range: single version and upper (e.g. "2.4+").
 #				  - Partial range: single version and lower (e.g. "-2.6").
 #				  Multiple elements can be specified separated by spaces.
-# USE_WX_NOT	- Set to the list of WxWidgets versions that can't be used by
+# USE_WX_NOT	- Set to the list of wxWidgets versions that can't be used by
 #				  the port. In other words, it removes some versions from
 #				  USE_WX. If the latter is not defined, it will have the value
 #				  of all the possible versions. The syntax is like USE_WX.
-# WX_COMPS		- Set to the list of WxWidgets components the port uses.
+# WX_COMPS		- Set to the list of wxWidgets components the port uses.
 #				  Several components can be specified separated by spaces. By
 #				  default it will have the value of "wx". Suffixes in the form
 #				  ":xxx" may be added to the components to determine the
 #				  dependency type.
 #				  The available components are:
-#				  wx			- The WxWidgets library.
-#				  contrib		- The WxWidgets contributed libraries.
-#				  python		- The WxWidgets API for Python (for 2.4-2.6).
+#				  wx			- The wxWidgets library.
+#				  contrib		- The wxWidgets contributed libraries.
+#				  python		- The wxWidgets API for Python (for 2.4-2.6).
 #				  mozilla		- WxMozilla (for 2.4).
 #				  svg			- WxSVG (for 2.6).
 #				  The available dependency types are:
@@ -54,18 +54,18 @@
 #				  after <bsd.port.pre.mk> (in case the port needs to manually run
 #				  the script).
 # WX_UNICODE	- Define if the port needs the Unicode version of the
-#				  WxWidgets library and/or contributed libraries.
+#				  wxWidgets library and/or contributed libraries.
 #				  NOTE: this should NOT be used for ports that can be compiled
 #				  with Unicode or not, but for the ones that require it.
 # WANT_UNICODE	- Define if the port prefers Unicode, but doesn't require it.
 # WANT_WX		- Set to "yes" or a valid single version (no ranges, etc).
-#				  In both cases it will detect the installed WxWidgets
+#				  In both cases it will detect the installed wxWidgets
 #				  components and add them to the variable HAVE_WX. If a
 #				  version is selected, HAVE_WX will contain a list of
 #				  components in the other case it will contain a list of
 #				  "component-version" pairs (e.g. wx-2.6, contrib-2.4, etc).
 #				  It has to be used before bsd.port.pre.mk.
-# WANT_WX_VER	- Set to the prefered WxWidgets version for the port. It must
+# WANT_WX_VER	- Set to the prefered wxWidgets version for the port. It must
 #				  be present in USE_WX or missing in USE_WX_NOT. This is
 #				  overriden by the user variable WITH_WX_VER if set. It can
 #				  contain multiple versions in order of preference (last ones
@@ -82,17 +82,17 @@
 # The following variables are defined by this file, to be read from the port.
 # WX_CONFIG		- The path to the wx-config program (with different name).
 # WXRC_CMD		- The path to the wxrc program (with different name).
-# WX_VERSION	- The WxWidgets version that is going to be used.
+# WX_VERSION	- The wxWidgets version that is going to be used.
 # WX_UNICODE	- If this variable is not defined by the port (which means it
-#				  requires the Unicode version of WxWidgets), it will be
+#				  requires the Unicode version of wxWidgets), it will be
 #				  defined in the case the Unicode version is used (enabled by
 #				  WITH_UNICODE or WANT_UNICODE).
-# HAVE_WX		- The list of WxWidgets components installed, if WANT_WX was
+# HAVE_WX		- The list of wxWidgets components installed, if WANT_WX was
 #				  defined. The components will have version suffix if it was
 #				  set to "yes".
 #
 # Examples:
-# - A port that needs WxWidgets 2.6 and contributed libraries with Unicode.
+# - A port that needs wxWidgets 2.6 and contributed libraries with Unicode.
 #	USE_WX=		2.6
 #	WX_COMPS=	wx contrib
 #	WX_UNICODE=	yes
@@ -104,11 +104,11 @@
 #	USE_PYTHON=	yes
 #	USE_WX=		2.4 2.6
 #	WX_COMPS=	python:build
-# - A port that needs WxWidgets version 2.4 or higher and contributed
+# - A port that needs wxWidgets version 2.4 or higher and contributed
 #	libraries.
 #	USE_WX=		2.4+
 #	WX_COMPS=	wx contrib
-# - A port that needs WxWidgets of any version other than 2.4.
+# - A port that needs wxWidgets of any version other than 2.4.
 #	USE_WX_NOT=	2.4
 #
 
@@ -303,7 +303,7 @@ _WX_VER_INSTALLED:=		${_HAVE_WX:Mwx-*:S/wx-//}
 .endif
 
 #
-# Select WxWidgets version.
+# Select wxWidgets version.
 #
 
 .if defined(_WX_Need_Version)
@@ -324,7 +324,7 @@ _WX_COMPS_FINAL=		#
 _WX_COMP=				${comp:C/:([[:alpha:]]+)$//}
 .	for __WX_COMP in ${_WX_COMP}
 .		if ${_WX_COMPS_ALL:M${__WX_COMP}} == ""
-IGNORE?=				selected an invalid WxWidgets component: ${__WX_COMP}
+IGNORE?=				selected an invalid wxWidgets component: ${__WX_COMP}
 .		endif
 .	endfor
 .	for newcomp in ${_WX_COMP}
@@ -392,7 +392,7 @@ _WX_VER_MERGED+=		${ver}
 # Check for a null version.
 
 .if empty(_WX_VER_MERGED)
-IGNORE?=				selected a null or invalid WxWidgets version
+IGNORE?=				selected a null or invalid wxWidgets version
 .endif
 
 # Avoid versions which have unavailable components.
@@ -408,7 +408,7 @@ _WX_VER_MERGED:=		${_WX_VER_MERGED:N${ver}}
 .endfor
 
 .if empty(_WX_VER_MERGED)
-IGNORE?=				selected WxWidgets versions (${_WX_WRONG_VERS}) which do not have the selected components (${_WX_WRONG_COMPS})
+IGNORE?=				selected wxWidgets versions (${_WX_WRONG_VERS}) which do not have the selected components (${_WX_WRONG_COMPS})
 .endif
 
 #
@@ -440,7 +440,7 @@ WX_UNICODE=				yes
 .	if ${OSVERSION} < 500000
 IGNORE?=				requires FreeBSD versions >= 5.X (because of Unicode)
 .	elif empty(_WX_VER_UC)
-IGNORE?=				selected a WxWidgets version which does not support Unicode: ${_WX_VER_MERGED}
+IGNORE?=				selected a wxWidgets version which does not support Unicode: ${_WX_VER_MERGED}
 .	endif
 .endif
 
@@ -531,16 +531,16 @@ _WX_DEP_TYPE=			${comp:C/.+:([[:alpha:]]+)$/\1/}
 _WX_COMP_NEW=			${_WX_COMP}_${_WX_DEP_TYPE}
 .	for __WX_COMP in ${_WX_COMP}
 .		if ${_WX_COMPS_ALL:M${__WX_COMP}} == ""
-IGNORE?=				selected an invalid WxWidgets component: ${__WX_COMP}
+IGNORE?=				selected an invalid wxWidgets component: ${__WX_COMP}
 .		endif
 .	endfor
 .	for __WX_DEP_TYPE in ${_WX_DEP_TYPE}
 .		if ${_WX_DEP_TYPES_ALL:M${__WX_DEP_TYPE}} == ""
-IGNORE?=				selected an invalid WxWidgets dependency type: ${__WX_DEP_TYPE}
+IGNORE?=				selected an invalid wxWidgets dependency type: ${__WX_DEP_TYPE}
 .		endif
 .	endfor
 .	if !defined(_WX_PORT_${_WX_COMP}_${_WX_VER})
-IGNORE?=				selected a WxWidgets component (${_WX_COMP}) which is not available for the selected version (${_WX_VER})
+IGNORE?=				selected a wxWidgets component (${_WX_COMP}) which is not available for the selected version (${_WX_VER})
 .	endif
 .	for newcomp in ${_WX_COMP_NEW}
 .		if ${_WX_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
@@ -587,7 +587,7 @@ CONFIGURE_ARGS+=		--with-wx-config=${WX_CONFIG}
 CONFIGURE_ARGS+=		--with-wx=${X11BASE} \
 						--with-wx-config=${WX_CONFIG:T}
 .	else
-IGNORE?=				selected an invalid WxWidgets configure argument type: ${WX_CONF_ARGS}
+IGNORE?=				selected an invalid wxWidgets configure argument type: ${WX_CONF_ARGS}
 .	endif
 .endif
 
