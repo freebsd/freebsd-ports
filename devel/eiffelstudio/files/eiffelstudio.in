@@ -1,0 +1,20 @@
+#!/bin/sh
+
+export ISE_EIFFEL="%%DATADIR%%"
+export ISE_PLATFORM="%%EIFFEL_HOST%%"
+
+if [ -z "$PATH" ]
+then
+	export PATH="$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin"
+else
+	export PATH="$PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin"
+fi
+
+if [ -z "$LD_LIBRARY_PATH" ]
+then
+	export LD_LIBRARY_PATH="$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/lib"
+else
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/lib"
+fi
+
+exec estudio "$@"

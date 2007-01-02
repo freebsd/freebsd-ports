@@ -1,0 +1,21 @@
+While Eiffel is widely regarded as the best language for creating fast,
+robust, scalable applications, EiffelStudioTM is the only tool for realizing
+the full power of the Eiffel Development FrameworkTM. It is available under a
+Dual Licensing model. Users can use either commercial or Open Source
+licensing.
+
+EiffelStudio is more than just an IDE.
+
+Imagine being able to model your system as you think - capturing your
+requirements and your thought processes in Eiffel. Then, when you are ready to
+Design, you build upon the model you just created, still in Eiffel. And then
+you implement, in Eiffel. You never need to throw anything out and start over.
+You don't need extra tools to be able to go back and make changes in
+architecture safely. Roundtrip engineering? It's built in by design. Testing,
+metrics and productivity tools? They're built in.
+
+And debugging? Eiffel's native Design by ContractTM prevents 90% of the bugs
+from ever occurring in the first place - and what bugs remain are easily
+traced and repaired, typically within ten minutes.
+
+WWW: http://www.eiffel.com/products/studio/
