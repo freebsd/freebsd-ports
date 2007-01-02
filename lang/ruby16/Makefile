@@ -23,6 +23,9 @@ PATCHFILES=	${RUBY_PATCHFILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented interpreted scripting language
 
+DEPRECATED=	vulnerable, unmaintained and nothing uses it
+EXPIRATION_DATE=2007-02-02
+
 .if defined(WITH_ONIGURUMA)
 PKGNAMESUFFIX=	+oniguruma
 BUILD_DEPENDS+=	${NONEXISTENT}:${ONIGURUMA_PORTDIR}:patch

@@ -15,6 +15,9 @@ DISTFILES=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binary with some modules compiled in (in case of emergency)
 
+DEPRECATED=	vulnerable, unmaintained and nothing uses it
+EXPIRATION_DATE=2007-02-02
+
 EXTRACT_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../../${RUBY_PORT}:patch
 
 USE_RUBY=	yes
