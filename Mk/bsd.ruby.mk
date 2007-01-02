@@ -15,28 +15,41 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 # [variables that a user may define]
 #
 # RUBY_VER		- (See below)
-# RUBY_DEFAULT_VER	- Set to (e.g.) "1.8" if you want to refer to "ruby18" just as "ruby".
+# RUBY_DEFAULT_VER	- Set to (e.g.) "1.8" if you want to refer to "ruby18"
+#			  just as "ruby".
 # RUBY_ARCH		- (See below)
 # RUBY_RD_HTML		- Define if you want HTML files generated from RD files.
 #
+#
 # [variables that each port can define]
 #
-# RUBY			- Set to full path of ruby.  If you set this, the values of the following variables are automatically obtained from the ruby executable: RUBY_VER, RUBY_VERSION, RUBY_NAME, RUBY_ARCH, RUBY_LIBDIR, RUBY_ARCHLIBDIR, RUBY_SITELIBDIR, and RUBY_SITEARCHLIBDIR.
-# RUBY_VER		- Set to the alternative short version of ruby in the form of `x.y' (see below for current value).
+# RUBY			- Set to full path of ruby.  If you set this, the values
+#			  of the following variables are automatically obtained
+#			  from the ruby executable: RUBY_VER, RUBY_VERSION,
+#			  RUBY_NAME, RUBY_ARCH, RUBY_LIBDIR, RUBY_ARCHLIBDIR,
+#			  RUBY_SITELIBDIR, and RUBY_SITEARCHLIBDIR.
+# RUBY_VER		- Set to the alternative short version of ruby in the
+#			  form of `x.y' (see below for current value).
 # USE_RUBY		- Says that the port uses ruby for building and running.
 # RUBY_NO_BUILD_DEPENDS	- Says that the port should not build-depend on ruby.
 # RUBY_NO_RUN_DEPENDS	- Says that the port should not run-depend on ruby.
 # USE_LIBRUBY		- Says that the port uses libruby.
-# USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.  Implies USE_RUBY.
-# RUBY_EXTCONF		- Set to the alternative name of extconf.rb (default: extconf.rb).
-# RUBY_EXTCONF_SUBDIRS	- Set to list of subdirectories, if multiple modules are included.
-# USE_RUBY_SETUP	- Says that the port uses setup.rb to configure and build.
-# RUBY_SETUP		- Set to the alternative name of setup.rb (default: setup.rb).
-# USE_RUBY_AMSTD	- Says that the port uses amstd for building and running.
+# USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.
+#			  Implies USE_RUBY.
+# RUBY_EXTCONF		- Set to the alternative name of extconf.rb
+#			  (default: extconf.rb).
+# RUBY_EXTCONF_SUBDIRS	- Set to list of subdirectories, if multiple modules
+#			  are included.
+# USE_RUBY_SETUP	- Says that the port uses setup.rb to configure and
+#			  build.
+# RUBY_SETUP		- Set to the alternative name of setup.rb
+#			  (default: setup.rb).
+# USE_RUBY_AMSTD	- Says that the port uses amstd for building and
+#			  running.
 # USE_RUBY_RDTOOL	- Says that the port uses rdtool to generate documents.
 # USE_RUBY_RDOC		- Says that the port uses rdoc to generate documents.
-# USE_RUBY_FEATURES	- Says that the port requires some of the following features
-#			  for building and/or running (default: none):
+# USE_RUBY_FEATURES	- Says that the port requires some of the following
+#			  features for building and/or running (default: none):
 #				benchmark	bigdecimal	devel-logger
 #				dl		drb		erb
 #				fileutils	gserver		iconv
@@ -47,29 +60,49 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 #				stringio	strscan		testunit
 #				tsort		webrick		xmlrpc
 #				yaml		zlib
-#			    benchmark dl fileutil optparse pp racc-runtime
-#			    rexml ruby18 set stringio strscan tsort yaml
-# RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building the port.  The constant "Ruby" is set to the integer version number of ruby, and the result of the expression will be set to RUBY_PROVIDED, which is left undefined if the result is nil, false or a zero-length string.  Implies USE_RUBY.
+#				benchmark	dl		fileutil
+#				optparse	pp		racc-runtime
+#				rexml		ruby18		set
+#				stringio	strscan		tsort
+#				yaml
+#
+# RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building
+#			  the port.  The constant "Ruby" is set to the integer
+#			  version number of ruby, and the result of the
+#			  expression will be set to RUBY_PROVIDED, which is
+#			  left undefined if the result is nil, false or a
+#			  zero-length string.  Implies USE_RUBY.
 # RUBY_SHEBANG_FILES	- Specify the files which shebang lines you want to fix.
-# RUBY_RD_FILES		- Specify the RD files which you want to generate HTML documents from.
-#			  If this is defined and not empty, USE_RUBY_RDTOOL is implied and
-#			  RUBY_RD_HTML_FILES is defined.
+# RUBY_RD_FILES		- Specify the RD files which you want to generate HTML
+#			  documents from. If this is defined and not empty,
+#			  USE_RUBY_RDTOOL is implied and RUBY_RD_HTML_FILES is
+#			  defined.
+#
 #
 # [variables that each port should not (re)define]
 #
-# RUBY_PKGNAMEPREFIX	- Common PKGNAMEPREFIX for ruby ports (default: ruby${RUBY_SUFFIX}-)
-# RUBY_VERSION		- Full version of ruby without preview/beta suffix in the form of `x.y.z' (see below for current value).
-# RUBY_VERSION_CODE	- Full integer version of ruby without preview/beta suffix in the form of `xyz'.
-# RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby, ruby-gdbm, etc.).
-# RUBY_DISTNAME		- DISTNAME for the standard ruby ports, i.e. the basename of the ruby distribution tarball.
+# RUBY_PKGNAMEPREFIX	- Common PKGNAMEPREFIX for ruby ports
+#			  (default: ruby${RUBY_SUFFIX}-)
+# RUBY_VERSION		- Full version of ruby without preview/beta suffix in
+#			  the form of `x.y.z' (see below for current value).
+# RUBY_VERSION_CODE	- Full integer version of ruby without preview/beta
+#			  suffix in the form of `xyz'.
+# RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby,
+#			  ruby-gdbm, etc.).
+# RUBY_DISTNAME		- DISTNAME for the standard ruby ports, i.e. the
+#			  basename of the ruby distribution tarball.
 # RUBY_DISTVERSION	- The version number part of RUBY_DISTNAME.
-# RUBY_PATCHFILES	- PATCHFILES for the standard ruby ports, i.e. the basename of the ruby distribution tarball.
+# RUBY_PATCHFILES	- PATCHFILES for the standard ruby ports, i.e. the
+#			  basename of the ruby distribution tarball.
 # RUBY_WRKSRC		- WRKSRC for the ruby port.
 # MASTER_SITE_SUBDIR_RUBY	- MASTER_SITE_SUBDIR for the ruby distfiles.
 #
-# RUBY_SHLIBVER		- Major version of libruby (see below for current value).
-# RUBY_ARCH		- Set to target architecture name. (e.g. i386-freebsdelf4.3)
-# RUBY_SUFFIX		- Suffix for ruby binaries and directories (${RUBY_VER:S/.//}).
+# RUBY_SHLIBVER		- Major version of libruby (see below for current
+#			  value).
+# RUBY_ARCH		- Set to target architecture name.
+#			  (e.g. i386-freebsd7)
+# RUBY_SUFFIX		- Suffix for ruby binaries and directories
+#			  (${RUBY_VER:S/.//}).
 # RUBY_WITHOUT_SUFFIX	- Always ${LOCALBASE}/bin/ruby.
 # RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${RUBY_SUFFIX}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
@@ -79,7 +112,8 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 # RUBY_RD2		- Full path of rd2 executable.
 # RUBY_RDOC		- Full path of rdoc executable.
 #
-# RUBY_BASE_PORT	- Port path of base ruby without PORTSDIR, without suffix except version.
+# RUBY_BASE_PORT	- Port path of base ruby without PORTSDIR, without
+#			  suffix except version.
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
 # RUBY_SHIM18_PORT	- Port path of ruby16-shim-ruby18 without PORTSDIR.
 # RUBY_AMSTD_PORT	- Port path of ruby-amstd without PORTSDIR.
@@ -89,20 +123,27 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 #
 # DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
-# DEPEND_RUBY_SHIM18	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby16-shim-ruby18.
+# DEPEND_RUBY_SHIM18	- BUILD_DEPENDS/RUN_DEPENDS entry for
+#			  ruby16-shim-ruby18.
 # DEPEND_RUBY_AMSTD	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-amstd.
 # DEPEND_RUBY_RDTOOL	- BUILD_DEPENDS entry for rdtool.
 # DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
 # DEPEND_RUBY_ICONV	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-iconv.
 #
-# RUBY_LIBDIR		- Installation path for architecture independent libraries.
-# RUBY_ARCHLIBDIR	- Installation path for architecture dependent libraries.
-# RUBY_SITELIBDIR	- Installation path for site architecture independent libraries.
-# RUBY_SITEARCHLIBDIR	- Installation path for site architecture dependent libraries.
+# RUBY_LIBDIR		- Installation path for architecture independent
+#			  libraries.
+# RUBY_ARCHLIBDIR	- Installation path for architecture dependent
+#			  libraries.
+# RUBY_SITELIBDIR	- Installation path for site architecture independent
+#			  libraries.
+# RUBY_SITEARCHLIBDIR	- Installation path for site architecture dependent
+#			  libraries.
 # RUBY_DOCDIR		- Installation path for documents.
 # RUBY_EXAMPLESDIR	- Installation path for examples.
-# RUBY_RIDIR		- Installation path for site architecture independentri documents.
-# RUBY_SITERIDIR	- Installation path for site architecture dependent ri documents.
+# RUBY_RIDIR		- Installation path for site architecture independent ri
+#			  documents.
+# RUBY_SITERIDIR	- Installation path for site architecture dependent ri
+#			  documents.
 # RUBY_MODDOCDIR	- Installation path for the module's documents.
 # RUBY_MODEXAMPLESDIR	- Installation path for the module's examples.
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
