@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
+MASTER_SITES=	http://g-rave.nl/projects/herrie/distfiles/ \
+		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
 
 MAINTAINER=	ed@fxq.nl
@@ -22,12 +22,12 @@ USE_GNOME=	glib20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 OPTIONS=	MAD "MAD MP3 support" on \
 		VORBIS "Ogg Vorbis support" on \
 		SNDFILE "libsndfile support" on \
-		LIBAO "LibAO support (breaks chroot)" off
+		LIBAO "LibAO support (breaks chroot)" off \
+		XCURSES "Build XCurses version" off
 
 PLIST_FILES=	bin/herrie \
 		share/locale/nl/LC_MESSAGES/herrie.mo
@@ -54,6 +54,10 @@ MAKE_ENV+=	NO_SNDFILE=yes
 .if !defined(WITHOUT_LIBAO)
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 MAKE_ARGS+=	AUDIO_OUTPUT=ao
+.endif
+.if !defined(WITHOUT_XCURSES)
+LIB_DEPENDS=	XCurses.2:${PORTSDIR}/devel/pdcurses
+MAKE_ARGS+=	XCURSES=yes
 .endif
 
 .include <bsd.port.post.mk>
