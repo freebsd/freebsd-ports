@@ -25,7 +25,7 @@
     BINDIR = [ FDirName $(PREFIX) bin ] ;
     LIBDIR = [ FDirName $(PREFIX) lib ] ;
 -   INCDIR = [ FDirName $(PREFIX) include ] ;
-+   INCDIR = [ FDirName $(PREFIX) include/gpstk ] ;
++   INCDIR = [ FDirName $(PREFIX) include gpstk ] ;
  }
  
  # debug - edit this as needed.
