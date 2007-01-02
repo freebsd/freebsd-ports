@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-Flickr-Backup
-PORTVERSION=	2.9.3
+PORTVERSION=	2.9.6
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-2.93
+DISTNAME=	${PORTNAME}-2.96
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	OOP for backing up your Flickr photos locally
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Sys/Hostname/FQDN.pm:${PORTSDIR}/sysutils
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/Text/Unidecode.pm:${PORTSDIR}/converters/p5-Text-Unidecode \
 		p5-Image-MetaData-JPEG>=0.15:${PORTSDIR}/graphics/p5-Image-MetaData-JPEG \
-		p5-Net-Flickr-RDF>=1.9.2:${PORTSDIR}/www/p5-Net-Flickr-RDF \
+		p5-Net-Flickr-RDF>=1.9.6:${PORTSDIR}/www/p5-Net-Flickr-RDF \
 		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate \
 		p5-libwww>=5.76:${PORTSDIR}/www/libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
