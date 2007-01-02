@@ -5,12 +5,14 @@ lib/libopencdk.a
 lib/libopencdk.la
 lib/libopencdk.so
 lib/libopencdk.so.8
+libdata/pkgconfig/opencdk.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/opencdk-api.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/basic.c
 %%EXAMPLESDIR%%/minpg.c
 %%EXAMPLESDIR%%/pub.gpg
 %%EXAMPLESDIR%%/sec-with-pwd.gpg

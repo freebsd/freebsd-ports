@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opencdk
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.11
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/ \
@@ -22,11 +22,16 @@ COMMENT=	Open Crypto Development Kit
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_GNOME=	pkgconfig
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
