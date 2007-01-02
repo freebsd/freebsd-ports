@@ -245,6 +245,7 @@
     SUBDIR += libextractor
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
+    SUBDIR += libmrss
     SUBDIR += libnxml
     SUBDIR += libparsifal
     SUBDIR += libpathan

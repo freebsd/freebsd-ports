@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+include/mrss.h
+lib/libmrss.a
+lib/libmrss.la
+lib/libmrss.so
+lib/libmrss.so.0
+libdata/pkgconfig/mrss.pc
