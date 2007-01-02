@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Compress-Base
-PORTVERSION=	2.001
+PORTVERSION=	2.002
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -23,7 +23,7 @@ MAN3=		IO::Uncompress::AnyUncompress.3 IO::Uncompress::Base.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This module only support perl 5.6.1 or above
+IGNORE=		this module only support perl 5.6.1 or above
 .endif
 
 .include <bsd.port.post.mk>
