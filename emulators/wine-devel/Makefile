@@ -21,7 +21,8 @@ COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdraw.1:${PORTSDIR}/print/fontforge \
-		glut.4:${PORTSDIR}/graphics/libglut
+		glut.4:${PORTSDIR}/graphics/libglut \
+		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
