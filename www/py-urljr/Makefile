@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	urljr
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.openidenabled.com/resources/downloads/python-openid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

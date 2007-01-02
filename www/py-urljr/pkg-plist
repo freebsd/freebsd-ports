@@ -4,4 +4,7 @@
 %%PYTHON_SITELIBDIR%%/urljr/fetchers.py
 %%PYTHON_SITELIBDIR%%/urljr/fetchers.pyc
 %%PYTHON_SITELIBDIR%%/urljr/fetchers.pyo
+%%PYTHON_SITELIBDIR%%/urljr/urinorm.py
+%%PYTHON_SITELIBDIR%%/urljr/urinorm.pyc
+%%PYTHON_SITELIBDIR%%/urljr/urinorm.pyo
 @dirrmtry %%PYTHON_SITELIBDIR%%/urljr
