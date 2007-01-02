@@ -1,0 +1,11 @@
+--- ./nethackify.dir/makefile.orig	Wed Jan 25 05:54:47 2006
++++ ./nethackify.dir/makefile	Tue Jan  2 18:06:34 2007
+@@ -1,5 +1,7 @@
++CFLAGS+=	-trigraphs
++
+ ../nethackify:
+-	gcc nethackify.c -o ../nethackify
++	$(CC) $(CFLAGS) nethackify.c -o ../nethackify
+ 
+ test:
+ 	@../nethackify The kitten bites.--More--

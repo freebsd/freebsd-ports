@@ -8,16 +8,15 @@ bin/jethro
 bin/jibberish
 bin/jive
 bin/ken
+bin/kenny
 bin/kraut
 bin/ky00te
+bin/nethackify
 bin/newspeak
 bin/nyc
+bin/pirate
 bin/rasterman
 bin/spammer
 bin/studly
 bin/uniencode
 bin/upside-down
-%%EXAMPLESDIR%%/SAMPLES
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

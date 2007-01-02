@@ -1,0 +1,20 @@
+--- ./Makefile.orig	Mon Feb 20 22:30:52 2006
++++ ./Makefile	Tue Jan  2 18:06:34 2007
+@@ -2,7 +2,7 @@
+ BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify
+ OTHER	= eleet b1ff chef jibberish upside-down rasterman studly fudd \
+ 	  censor spammer uniencode pirate kenny
+-CFLAGS	= -O2 -lfl
++LDFLAGS+=	-lfl
+ INSTALL_PROGRAM = install
+ 
+ # DEB_BUILD_OPTIONS suport, to control binary stripping.
+@@ -41,7 +41,7 @@
+ .l:
+ 	$(RM) $*.c
+ 	$(LEX) -t $< > $*.c
+-	$(CC) -o $@ $*.c $(CFLAGS)
++	$(CC) -o $@ $*.c $(CFLAGS) $(LDFLAGS)
+ 	$(RM) $*.c
+ 
+ .SUFFIXES: .dir
