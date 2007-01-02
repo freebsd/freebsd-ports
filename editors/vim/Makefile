@@ -10,7 +10,7 @@ PORTNAME?=	vim
 PATCHLEVEL=	178
 PORTVERSION=	7.0.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -46,6 +46,7 @@ WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
 PATCH_DIST_ARGS= -d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
+REINPLACE_ARGS=		-i ""
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
 _DATADIR=	${RELEASE:S/-//g:S/.//g}
@@ -155,6 +156,11 @@ post-extract:
 	@${ECHO_MSG} ">>>   extracting ${LANG_FILE} ..."
 	@${TAR} -C ${WRKDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LANG_FILE}
 .endif
+
+post-patch:
+	@(${FIND} ${WRKSRC}/../runtime/ -name menu\*.vim -print0 | ${XARGS} -0\
+		${REINPLACE_CMD} \
+		-e 's,ctags -R \.,${FIND} . -type f|${XARGS} ctags,g')
 
 pre-configure:
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
