@@ -7,6 +7,7 @@
 
 PORTNAME=	net6
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://releases.0x539.de/net6/
 
@@ -14,7 +15,7 @@ MAINTAINER=	wxs@atarininja.org
 COMMENT=	Network access framework for IPv4/IPv6
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		gnutls.13:${PORTSDIR}/security/gnutls
+		gnutls.15:${PORTSDIR}/security/gnutls
 
 USE_GCC=	3.4+
 USE_LDCONFIG=	yes

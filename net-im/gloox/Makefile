@@ -7,6 +7,7 @@
 
 PORTNAME=	gloox
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -15,7 +16,7 @@ COMMENT=	Jabber/XMPP client library
 
 LIB_DEPENDS=	iksemel.3:${PORTSDIR}/textproc/iksemel \
 		idn.16:${PORTSDIR}/dns/libidn \
-		gnutls.13:${PORTSDIR}/security/gnutls
+		gnutls.15:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack

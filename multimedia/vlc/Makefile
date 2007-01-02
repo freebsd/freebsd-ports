@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -431,7 +431,7 @@ RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
 .if !defined(WITHOUT_HTTPD) && (defined(WITH_SSL) || exists(${LOCALBASE}/lib/libgnutls.a))
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 .else
 CONFIGURE_ARGS+=--disable-gnutls

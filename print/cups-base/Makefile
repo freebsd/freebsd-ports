@@ -8,7 +8,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.2.7
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	-base${PKGNAMESUFFIX2}
@@ -62,7 +62,7 @@ CUPSSYSGRP=	wheel
 
 .if !defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
-LIB_DEPENDS+=		gnutls-openssl.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls-openssl.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -25,7 +25,7 @@ USE_RC_SUBR=	gkrellmd.sh
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 
 .if defined(WITH_GNUTLS) && defined(WITH_OPENSSL)
-BROKEN=		"GnuTLS and OpenSSL is mutually exclusive."
+BROKEN=		GnuTLS and OpenSSL is mutually exclusive.
 .endif
 
 .if !defined(WITH_OPENSSL) && !defined(WITH_GNUTLS) && !defined(WITHOUT_GNUTLS)
@@ -45,7 +45,7 @@ USE_GETTEXT=	yes
 .endif
 USE_XLIB=	yes
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls-openssl.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls-openssl.15:${PORTSDIR}/security/gnutls
 MAKE_ENV+=	GNUTLSINC=${LOCALBASE}/include GNUTLSLIB=${LOCALBASE}/lib \
 		without-ssl=1
 .elif defined(WITH_OPENSSL)
