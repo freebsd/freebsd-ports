@@ -36,6 +36,7 @@ _RUBY_SYSLIBDIR=	${PREFIX}/lib
 
 OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
 		ONIGURUMA "Build with oniguruma regular expressions lib" off \
+		GCPATCH "Build with GC performance statistics collector" off \
 		IPV6 "Enable IPv6 support" on \
 		RDOC "Build and install Rdoc indexes" off \
 		DEBUG "Compile-in debug info" off
@@ -79,6 +80,12 @@ CONFIGURE_ARGS+=	--disable-install-doc
 
 .if ${OSVERSION} < 502102
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
+.endif
+
+# This patch can be used for GC performance analysis and tweaking
+# svn://rubyforge.org/var/svn/railsbench/trunk/railsbench/ruby185gc.patch
+.if defined(WITH_GCPATCH)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-gc
 .endif
 
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
