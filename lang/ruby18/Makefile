@@ -7,11 +7,12 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	5
+PORTREVISION=	${RUBY_PORTREVISION}
 PORTEPOCH=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
+DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	stas@FreeBSD.org
@@ -25,6 +26,8 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${RUBY_DISTVERSION}
+
 RUBY_VER=		1.8
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
@@ -34,7 +37,7 @@ _RUBY_SYSLIBDIR=	${PREFIX}/lib
 OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
 		ONIGURUMA "Build with oniguruma regular expressions lib" off \
 		IPV6 "Enable IPv6 support" on \
-		RDOC "Build and install Rdoc indexes" on \
+		RDOC "Build and install Rdoc indexes" off \
 		DEBUG "Compile-in debug info" off
 
 .include <bsd.port.pre.mk>
@@ -68,12 +71,10 @@ STRIP=		# none
 #
 # Disable doc generation if requested or docs disabled at all
 #
-.if !defined(WITHOUT_RDOC) && !defined(NOPORTDOCS)
+.if defined(WITH_RDOC) && !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--enable-install-doc
-PLIST_SUB+=		RDOC=""
 .else
 CONFIGURE_ARGS+=	--disable-install-doc
-PLIST_SUB+=		RDOC="@comment "
 .endif
 
 .if ${OSVERSION} < 502102
@@ -94,8 +95,6 @@ PLIST_SUB+=	IF_DEFAULT=""
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-OBSOLETED_MODULES!=	${CAT} ${FILESDIR}/obsoleted
-
 INSTALLED_SCRIPTS=	irb erb h2rb rdoc ri ruby testrb
 
 EXTSAMPLES=	bigdecimal/sample/*.rb	\
@@ -107,6 +106,7 @@ EXTSAMPLES=	bigdecimal/sample/*.rb	\
 		pty/expect_sample.rb	\
 		pty/script.rb		\
 		pty/shl.rb
+
 EXTDOCS=	bigdecimal/bigdecimal_*.html	\
 		digest/digest.txt*		\
 		dl/doc/dl.txt			\
@@ -224,17 +224,17 @@ post-install:
 			${WRKSRC}/README*	\
 			${RUBY_DOCDIR}/
 .endif
-	@${ECHO} "Deinstalling obsoleted packages that are now part of ruby..."
-	@cd ${PKG_DBDIR}; for portname in ${OBSOLETED_MODULES}; do \
-		for pkg in ${RUBY_PKGNAMEPREFIX}$$portname-*; do \
-			if [ -d $$pkg ]; then \
-				${ECHO} "---> $$pkg"; \
-				${PKG_DELETE} -f $$pkg; \
-			fi; \
-		done; \
-	done
-	@${ECHO_CMD} "@exec ${ECHO_CMD} \"Deinstalling obsoleted packages that are now part of ruby...\"" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec cd ${PKG_DBDIR} && for portname in ${OBSOLETED_MODULES}; do for pkg in ${RUBY_PKGNAMEPREFIX}\$$portname-*; do if [ -d \$$pkg ]; then ${ECHO_CMD} \"---> \$$pkg\"; ${PKG_DELETE} -f \$$pkg; fi; done; done" >> ${TMPPLIST}
+
+	@${FIND} -ds ${RUBY_RIDIR}/ ! -type d ! -name created.rid | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} -ds ${RUBY_RIDIR}/ -type d -mindepth 1 | \
+		${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+
+	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_SITERIDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_RIDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/ri/${RUBY_VER} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/ri 2>/dev/null || true" >> ${TMPPLIST}
+
 	@${CAT} ${PKGMESSAGE}
 
 plist::
@@ -247,18 +247,18 @@ plist::
 	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so" >> pkg-plist
 	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%" >> pkg-plist
 
-	@${FIND} ${RUBY_DOCDIR}/ ! -type d ! -name .keep_me | \
+	@${FIND} -ds ${RUBY_DOCDIR}/ ! -type d ! -name .keep_me | \
 		${SED} 's,^${RUBY_DOCDIR},%%PORTDOCS%%%%RUBY_DOCDIR%%,' \
 		 >> pkg-plist
-	@${FIND} ${RUBY_DOCDIR}/ -type d -mindepth 1 | ${SORT} -r | \
+	@${FIND} -ds ${RUBY_DOCDIR}/ -type d -mindepth 1 | ${SORT} -r | \
 		${SED} -E -e \
 		's,^${RUBY_DOCDIR}(.*),%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%\1,' \
 		>> pkg-plist
 
-	@${FIND} ${RUBY_EXAMPLESDIR}/ ! -type d ! -name .keep_me | \
+	@${FIND} -ds ${RUBY_EXAMPLESDIR}/ ! -type d ! -name .keep_me | \
 		${SED} 's,^${RUBY_EXAMPLESDIR},%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%,' \
 		 >> pkg-plist
-	@${FIND} ${RUBY_EXAMPLESDIR}/ -type d -mindepth 1 | ${SORT} -r | \
+	@${FIND} -ds ${RUBY_EXAMPLESDIR}/ -type d -mindepth 1 | ${SORT} -r | \
 		${SED} -E -e \
 		's,^${RUBY_EXAMPLESDIR}(.*),%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%\1,' \
 		>> pkg-plist
@@ -272,29 +272,19 @@ plist::
 	@${ECHO_CMD} "%%RUBY_ELISPDIR%%/.keep_me.%%RUBY_NAME%%" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry %%RUBY_ELISPDIR%%" >> pkg-plist
 
-	@${FIND} ${RUBY_RIDIR}/ ! -type d ! -name created.rid | \
-		${SED} 's,^${RUBY_RIDIR},%%RDOC%%%%RUBY_RIDIR%%,' >> pkg-plist
-	@${FIND} ${RUBY_RIDIR}/ -type d -mindepth 1| ${SORT} -r | \
-		${SED} -E -e 's,^${RUBY_RIDIR}(.*),%%RDOC%%@dirrm %%RUBY_RIDIR%%\1,' \
-		>> pkg-plist
-
 	@${ECHO_CMD} "@exec /bin/mkdir -p %D/%%RUBY_RIDIR%%" >> pkg-plist
 	@${ECHO_CMD} "@exec env LC_TIME=C /bin/date > %D/%%RUBY_RIDIR%%/created.rid" >> pkg-plist
-	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_RIDIR%%/created.rid" >> pkg-plist
+	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_RIDIR%%/created.rid" \
+		>> pkg-plist
 
 	@${ECHO_CMD} "@exec /bin/mkdir -p %D/%%RUBY_SITERIDIR%%" >> pkg-plist
 	@${ECHO_CMD} "@exec env LC_TIME=C /bin/date > %D/%%RUBY_SITERIDIR%%/created.rid"  >> pkg-plist
 	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_SITERIDIR%%/created.rid" \
 		>> pkg-plist
 
-	@${ECHO_CMD} "@dirrmtry %%RUBY_SITERIDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_RIDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry share/ri/%%RUBY_VER%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry share/ri" >> pkg-plist
-
-	@${FIND} ${RUBY_LIBDIR}/ ! -type d | \
+	@${FIND} -ds ${RUBY_LIBDIR}/ ! -type d | \
 		${SED} 's,^${RUBY_LIBDIR},%%RUBY_LIBDIR%%,' >> pkg-plist
-	@${FIND} ${RUBY_LIBDIR}/ -type d | ${SORT} -r | \
+	@${FIND} -ds ${RUBY_LIBDIR}/ -type d | ${SORT} -r | \
 		${SED} -E -e 's,^${RUBY_LIBDIR}(.*),@dirrm %%RUBY_LIBDIR%%\1,' >> pkg-plist
 
 	@${ECHO_CMD} "%%RUBY_SITEARCHLIBDIR%%/.keep_me" >> pkg-plist
