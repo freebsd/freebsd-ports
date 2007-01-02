@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	g2ipmsg
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~nork/distfiles/
