@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9347d82d-9a66-11db-b271-000e35248ad7">
+    <topic>w3m -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>w3m</name>
+	<name>w3m-img</name>
+	<name>w3m-m17n</name>
+	<name>w3m-m17n-img</name>
+	<name>ja-w3m</name>
+	<name>ja-w3m-img</name>
+	<range><lt>0.5.1_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An anonymous person reports:</p>
+	<blockquote cite="http://sourceforge.net/tracker/index.php?func=detail&aid=1612792&group_id=39518&atid=425439">
+	  <p>w3m-0.5.1 crashes when using the -dump or -backend options to
+	    open a HTTPS URL with a SSL certificate where the CN contains
+	    "%n%n%n%n%n%n".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>21735</bid>
+      <cvename>CVE-2006-6772</cvename>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&aid=1612792&group_id=39518&atid=425439</url>
+      <url>http://secunia.com/advisories/23492/</url>
+    </references>
+    <dates>
+      <discovery>2006-12-10</discovery>
+      <entry>2007-01-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4ff7434-9505-11db-9ddc-0011098b2f36">
     <topic>plone -- user can masquerade as a group</topic>
     <affects>
