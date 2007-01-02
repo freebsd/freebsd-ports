@@ -31,9 +31,9 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/lib/|${X11BASE}/libdata/|g ; \
-		s|/usr/libexec/|${X11BASE}/libexec/|g' \
+post-patch: general-patch
+	@${REINPLACE_CMD} -e 's|/usr/lib/|${LOCALBASE}/libdata/|g ; \
+		s|/usr/libexec/|${LOCALBASE}/libexec/|g' \
 			${WRKSRC}/sample/README ${WRKSRC}/sample/*.server
 	@${REINPLACE_CMD} -e 's|bin/ruby|bin/env ruby|g' \
 		${WRKSRC}/sample/hello-applet.rb

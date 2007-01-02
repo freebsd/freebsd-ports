@@ -34,7 +34,7 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
-post-patch:
+post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/usr/share|${X11BASE}/share|g' \
 		${WRKSRC}/sample/gtk-demo/common.rb
 	@${REINPLACE_CMD} -e 's|local/bin/ruby|bin/env ruby|g' \

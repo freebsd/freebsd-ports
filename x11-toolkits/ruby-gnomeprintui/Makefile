@@ -32,6 +32,8 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
+post-patch: general-patch
+
 # Have to do that to generate ruby-gnomeprint's rblibgnomeprintversion.h or
 # it will not build.
 pre-configure:
