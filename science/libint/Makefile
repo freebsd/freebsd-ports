@@ -7,7 +7,7 @@
 
 PORTNAME=	libint
 PORTVERSION=	1.1.2
-PORTREVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.ccmst.gatech.edu/evaleev/libint/src/
 
@@ -23,5 +23,10 @@ ALL_TARGET=	# empty
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared
+
+post-install:
+	@${LN} -sf ${PREFIX}/lib/libderiv-stable.so.1 ${PREFIX}/lib/libderiv.so.1
+	@${LN} -sf ${PREFIX}/lib/libint-stable.so.1 ${PREFIX}/lib/libint.so.1
+	@${LN} -sf ${PREFIX}/lib/libr12-stable.so.1 ${PREFIX}/lib/libr12.so.1
 
 .include <bsd.port.post.mk>
