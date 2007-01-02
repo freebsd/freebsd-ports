@@ -260,6 +260,7 @@
     SUBDIR += eet
     SUBDIR += eieio
     SUBDIR += eieio-emacs20
+    SUBDIR += eiffelstudio
     SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elfsh
