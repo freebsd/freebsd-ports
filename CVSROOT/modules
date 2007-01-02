@@ -2242,6 +2242,7 @@ eieio		ports/devel/eieio
 eieio-emacs20	ports/devel/eieio-emacs20
 eif		ports/games/eif
 eiffel		ports/lang/eiffel
+eiffelstudio	ports/devel/eiffelstudio
 eights		ports/games/eights
 einstein	ports/games/einstein
 eispack		ports/math/eispack
