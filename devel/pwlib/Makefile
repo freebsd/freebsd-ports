@@ -28,7 +28,7 @@ WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
 NO_FILTER_SHLIBS=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -129,7 +129,7 @@ PLIST_SUB+=	BSDVIDEO="@comment "
 	!defined(WITHOUT_V4L) )
 CONFIGURE_ARGS+=--enable-v4l
 PLIST_SUB+=	V4L=""
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 .else
 CONFIGURE_ARGS+=--disable-v4l
 PLIST_SUB+=	V4L="@comment "
