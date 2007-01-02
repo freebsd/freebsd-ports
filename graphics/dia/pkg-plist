@@ -454,10 +454,10 @@ share/gnome/dia/shapes/Cisco/content_service_module.png
 share/gnome/dia/shapes/Cisco/content_service_module.shape
 share/gnome/dia/shapes/Cisco/content_switch.png
 share/gnome/dia/shapes/Cisco/content_switch.shape
-share/gnome/dia/shapes/Cisco/css1100.png
-share/gnome/dia/shapes/Cisco/css1100.shape
 share/gnome/dia/shapes/Cisco/csm-s.png
 share/gnome/dia/shapes/Cisco/csm-s.shape
+share/gnome/dia/shapes/Cisco/css1100.png
+share/gnome/dia/shapes/Cisco/css1100.shape
 share/gnome/dia/shapes/Cisco/csu_dsu.png
 share/gnome/dia/shapes/Cisco/csu_dsu.shape
 share/gnome/dia/shapes/Cisco/cte.png
@@ -1666,8 +1666,42 @@ share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
 share/locale/zh_CN/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrm share/gnome/omf/dia
 @dirrm share/gnome/help/dia/pl/graphics
 @dirrm share/gnome/help/dia/pl
@@ -1709,3 +1743,5 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 %%PYTHON:%%@dirrm share/gnome/dia/python
 @dirrm share/gnome/dia
 @dirrm lib/dia
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
