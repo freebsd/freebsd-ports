@@ -3,8 +3,6 @@ bin/bash
 bin/bashbug
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/bash.mo
-@comment gettext owns share/locale/en@boldquot/LC_MESSAGES
-@comment gettext owns share/locale/en@quot/LC_MESSAGES
 %%HELP%%%%DATADIR%%/alias
 %%HELP%%%%DATADIR%%/arith
 %%HELP%%%%DATADIR%%/arith_for
@@ -78,3 +76,7 @@ bin/bashbug
 %%HELP%%%%DATADIR%%/wait
 %%HELP%%%%DATADIR%%/while
 %%HELP%%@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
