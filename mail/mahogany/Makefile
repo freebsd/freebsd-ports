@@ -5,37 +5,44 @@
 # $FreeBSD$
 #
 
-PORTNAME=		mahogany
-PORTVERSION=		0.65
-PORTREVISION=		6
-CATEGORIES=		mail
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mahogany
+PORTNAME=	mahogany
+PORTVERSION=	0.67
+CATEGORIES=	mail
+MASTER_SITES=	SF
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		An X11 mail and news client
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X11 mail and news client
 
-USE_X_PREFIX=		yes
-USE_WX=		2.4
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-ALL_TARGET=		all locales
-INSTALL_TARGET=		install_bin install_locale
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-dspam --with-python=none
+ALL_TARGET=	all locales
+INSTALL_TARGET=	install_bin install_locale
 
-MAN1=			M.1 mahogany.1
+OPTIONS=	NLS "Enable Native Language Support" on
 
-CONFIGURE_ARGS=		--with-python=none
-CONFIGURE_ENV=		OSTYPE=${OPSYS} CFLAGS="${CFLAGS}"
+MAN1=		M.1 mahogany.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=			"Does not compile on !i386"
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-DOPENSSL_NO_KRB5||' -e 's|-O2|${CFLAGS}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(DATADIR)/locale|$$(DESTDIR)/share/locale|' ${WRKSRC}/locale/Makefile
+	@${REINPLACE_CMD} -e \
+		's|-DOPENSSL_NO_KRB5||; \
+		 s|-O2|${CFLAGS}|; \
+		 s|-Wno-pointer-sign||' \
+		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|$$(DATADIR)/locale|$$(DESTDIR)/share/locale|' \
+		${WRKSRC}/locale/Makefile
 
 .include <bsd.port.post.mk>
