@@ -1,6 +1,6 @@
---- plugins/examples/Makefile.orig	Thu Apr 17 07:52:05 2003
-+++ plugins/examples/Makefile	Fri Mar 26 09:44:31 2004
-@@ -30,12 +30,12 @@
+--- plugins/examples/Makefile.orig	Mon Mar  1 07:11:28 2004
++++ plugins/examples/Makefile	Tue Jan  2 10:51:04 2007
+@@ -35,12 +35,12 @@
  BIN2BYTE= ../../utils/bin2byte
  PLUGINCFLAGSALL=-DPLUGINSRC=1
  ifeq ($(CONFIG_DEBUG),n)
@@ -17,178 +17,16 @@
  
  else
  PLUGINCFLAGS= $(CFLAGS) $(OPTS) -g $(PLUGINCFLAGSALL)
-@@ -150,41 +150,41 @@
- ##define callname(name,proc)  int (Editor::*for_procedures_h_##proc##_prodefname)(void)=&Editor::proc;char name_part_##proc##_end[]=name;
- #../../src/inlink.h: $(INLINKIN)  $(CONFIGFILE) 
- #	sed  '{s/^[ 	]*call([ 	]*\([^),; 	.*/\\]*\)[ 	]*)/prodef(\1)/p; s/^[ 	]*callname([ 	]*\([^),; 	.*/\\]*\)[ 	]*)/prodefname(\1)/p; s/^.*//p; }' $(INLINKSRC) >  $@
--#	$(GCC) $(PLUGINCFLAGS) -DPLUGIN -x c   -E -P -D"call(x)=uniekvoorinlinkhprodef(x)" -D"callname(name,x)=uniekvoorinlinkhprodefname(name,x)"   $(INLINKSRC)> tussengegs
-+#	$(CC) $(PLUGINCFLAGS) -DPLUGIN -x c   -E -P -D"call(x)=uniekvoorinlinkhprodef(x)" -D"callname(name,x)=uniekvoorinlinkhprodefname(name,x)"   $(INLINKSRC)> tussengegs
- 
- bitfields.plug: bitfields.o bitcpy.o
- 	echo hello
--	$(GCC) $(PLUGINLDFLAGS) -shared  $^ -o $@ 
-+	$(CXX) $(PLUGINLDFLAGS) -shared  $^ -o $@ 
- 	chmod a-x $@
- bitfields.o: bitfields.cc
--	$(GCC) -DNOEDITOR -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
-+	$(CXX) -DNOEDITOR -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
- 
- bitcontains.plug: bitcontains.o bitcpy.o bitfields.o
--	$(GCC) $(PLUGINLDFLAGS) -shared  $^ -o $@ 
-+	$(CXX) $(PLUGINLDFLAGS) -shared  $^ -o $@ 
- 	chmod a-x $@
- 
- 
- %.plug: %.o
--	$(GCC) $(PLUGINLDFLAGS) -shared $< -o $@
-+	$(CC) $(PLUGINLDFLAGS) -shared $< -o $@
- 	chmod a-x $@
- 	rm $<
- 
- %.o: %.cpp  $(GENERAL) $(HEADERS) absolute 
--	$(GCC) $(PLUGINCFLAGS) -DPLUGIN=1 -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
-+	$(CXX) $(PLUGINCFLAGS) -DPLUGIN=1 -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
- 
- %.o: %.cc $(HEADERS) absolute 
--	$(GCC) -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
-+	$(CXX) -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
- 
- ifneq ($(CYGWIN),yes)
- XINCL=$(X_CFLAGS)
+@@ -49,7 +49,7 @@
  endif
- switchsize.o: switchsize.cc $(HEADERS) absolute
--	$(GCC) $(XINCL) -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
-+	$(CXX) $(XINCL) -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
- %.i: %.cc $(HEADERS) absolute
--	$(GCC)  -DGLOBAL -DUNDER -DPLUGIN $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E -P $< -o $@
-+	$(CXX)  -DGLOBAL -DUNDER -DPLUGIN $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E -P $< -o $@
- 
- %.oo: %.cc  $(HEADERS) absolute 
--	$(GCC)  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
-+	$(CXX)  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
- 
- #bitcontains.oo: bitcontains.oo bitcpy.oo bitfields.oo
- #	ld -o $@ $^   $(LDRELOC)
-@@ -194,29 +194,29 @@
- 
- 
- %.ooo: %.cc  $(HEADERS) absolute 
--	$(GCC) -DFAKE_DYNAMIC=1  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
-+	$(CXX) -DFAKE_DYNAMIC=1  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@
- %.ooo: %.cpp  $(GENERAL) $(HEADERS) absolute
--	$(GCC) -DFAKE_DYNAMIC $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
-+	$(CXX) -DFAKE_DYNAMIC $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
- %.oo: %.cpp  $(GENERAL) $(HEADERS) absolute
--	$(GCC) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
-+	$(CXX) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
- 
- %.iii: %.cc  $(HEADERS) absolute $(CONFIGFILE)
--	$(GCC) -P  -DFAKE_DYNAMIC  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
-+	$(CXX) -P  -DFAKE_DYNAMIC  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
- %.iii: %.cpp  $(GENERAL) $(HEADERS) absolute
- 	echo hallo
--	$(GCC) -P -DFAKE_DYNAMIC $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $(GENERAL) -o $@
--	$(GCC) -DFAKE_DYNAMIC $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $*.ooo
-+	$(CXX) -P -DFAKE_DYNAMIC $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $(GENERAL) -o $@
-+	$(CXX) -DFAKE_DYNAMIC $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $*.ooo
- 
- 
- %.ii: %.cc  $(HEADERS) absolute $(CONFIGFILE)
--	$(GCC)  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
--#	$(GCC) '-Dwill_be_used_to_get_prodefname_in_inlink_h(x,y)=prodefname(x,y)' '-Uwill_be_used_to_get_prodef_in_inlink_h(x)=prodef(x)' -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
--#	$(GCC) '-Uwill_be_used_to_get_prodefname_in_inlink_h' '-Uwill_be_used_to_get_prodef_in_inlink_h' -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
-+	$(CXX)  -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
-+#	$(CXX) '-Dwill_be_used_to_get_prodefname_in_inlink_h(x,y)=prodefname(x,y)' '-Uwill_be_used_to_get_prodef_in_inlink_h(x)=prodef(x)' -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
-+#	$(CXX) '-Uwill_be_used_to_get_prodefname_in_inlink_h' '-Uwill_be_used_to_get_prodef_in_inlink_h' -DGLOBAL -DUNDER $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $< -o $@
- 
- %.ii: %.cpp  $(GENERAL) $(HEADERS) absolute
--	$(GCC)  -P $(PLUGINCFLAGS)  -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $(GENERAL) -o $@
-+	$(CXX)  -P $(PLUGINCFLAGS)  -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E $(GENERAL) -o $@
- %.s: %.cpp  $(GENERAL) $(HEADERS) absolute
--	$(GCC)  $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -S $(GENERAL) -o $@
-+	$(CXX)  $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -S $(GENERAL) -o $@
- disass-use: disass-use.c absolute
- 	$(CC) -g disass-use.c -o disass-use
- absolute: 
-@@ -232,7 +232,7 @@
- #	$(MAKE) -C  $(EXAMPLEDIR) disass.plug
- 
- %.i: %.cpp  $(GENERAL) $(HEADERS) absolute
--	$(GCC) -DPLUGIN $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E -P $(GENERAL) -o $@
-+	$(CXX) -DPLUGIN $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -E -P $(GENERAL) -o $@
- 
- clean:
- 	-rm *.plug *.o *.oo *.ooo disass-use$(EXEEXT) absolute core ingive *.ii *.i *.iii
-@@ -247,24 +247,24 @@
  endif
- 
- switchsize.plug: switchsize.o
--	$(GCC) $(PLUGINLDFLAGS) -shared $< -o $@ $(X_LIBS) -lX11 $(X_EXTRA_LIBS)
-+	$(CXX) $(PLUGINLDFLAGS) -shared $< -o $@ $(X_LIBS) -lX11 $(X_EXTRA_LIBS)
- 	chmod a-x $@
- putselect.plug: putselect.o
--	$(GCC) $(PLUGINLDFLAGS) -shared $< -o $@  $(X_LIBS) -lX11 $(X_EXTRA_LIBS)
-+	$(CXX) $(PLUGINLDFLAGS) -shared $< -o $@  $(X_LIBS) -lX11 $(X_EXTRA_LIBS)
- 	chmod a-x $@
- switchsize: switchsize.cc
- 	echo $(CYGWIN)
- ifneq ($(CYGWIN),yes)
--	$(GCC) -g -DTEST  $< -o $@ $(X_LIBS) -lX11 $(X_EXTRA_LIBS)
-+	$(CXX) -g -DTEST  $< -o $@ $(X_LIBS) -lX11 $(X_EXTRA_LIBS)
- else
--	$(GCC) -D_WIN32 -g -DTEST  $< -o $@ 
-+	$(CC) -D_WIN32 -g -DTEST  $< -o $@ 
- endif
- 
- disass.plug: disass.o disass-use
--	$(GCC) $(PLUGINLDFLAGS) -shared $< -o $@
-+	$(CC) $(PLUGINLDFLAGS) -shared $< -o $@
- 	chmod a-x $@
- time: time.cpp
--	$(GCC) -g -DTEST -DGLOBAL $< -o $@  $(X_LIBS)  -lX11  $(X_EXTRA_LIBS)
-+	$(CXX) -g -DTEST -DGLOBAL $< -o $@  $(X_LIBS)  -lX11  $(X_EXTRA_LIBS)
- 
- 
- chars.bin: chars.c
-@@ -292,20 +292,20 @@
- MACRODATA=12345678BeginMacroKeyStrokes
- MACROFLAGS=-DMACROFUNCTION=\"$(MACROFUNCTION)\" -DMACRODATA=\"$(MACRODATA)\"
- #macrotemplate.plug: macrotemplate.cpp Makefile ./fsize $(CONFIGFILE)
--#	$(GCC) $(PLUGINLDFLAGS) -DPLUGIN -shared $(MACROFLAGS) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\"  $(GENERAL) -o $@
-+#	$(CC) $(PLUGINLDFLAGS) -DPLUGIN -shared $(MACROFLAGS) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\"  $(GENERAL) -o $@
- 
- #macrotemplate.o: macrotemplate.cc Makefile ./fsize $(CONFIGFILE)
--#	$(GCC)  -DGLOBAL -DUNDER $(MACROFLAGS) $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@ 
-+#	$(CC)  -DGLOBAL -DUNDER $(MACROFLAGS) $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $< -o $@ 
- #macrotemplate.plug: macrotemplate.o
- #	ld -shared  $< -o $@
- macrotemplate.plug: macrotemplate.cc Makefile ./fsize $(CONFIGFILE)
--	$(GCC) -shared -DGLOBAL -DUNDER $(MACROFLAGS) $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\"  $< -o $@
-+	$(CC) -shared -DGLOBAL -DUNDER $(MACROFLAGS) $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\"  $< -o $@
-  
--#	$(GCC) $(PLUGINLDFLAGS) -DPLUGIN -shared $(MACROFLAGS) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" $< -o $@
-+#	$(CC) $(PLUGINLDFLAGS) -DPLUGIN -shared $(MACROFLAGS) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" $< -o $@
- 
- 
- macrotemplate.i: macrotemplate.cpp Makefile 
--	$(GCC) $(PLUGINLDFLAGS)  -DPLUGIN -E -shared $(MACROFLAGS) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\"  $(GENERAL) -o $@
-+	$(CXX) $(PLUGINLDFLAGS)  -DPLUGIN -E -shared $(MACROFLAGS) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\"  $(GENERAL) -o $@
- 
- places.h: macrotemplate.plug pos
- 	echo -n "int macrofunctionpos=" > places.h
-@@ -317,9 +317,9 @@
- 
- 
- macroplug.o: macroplug.cpp  $(GENERAL) $(HEADERS) absolute places.h $(CONFIGFILE)
--	$(GCC) $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
-+	$(CXX) $(PLUGINCFLAGS) -DPLUGIN -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
- macroplug.oo: macroplug.cpp  $(GENERAL) $(HEADERS) absolute places.h $(CONFIGFILE)
--	$(GCC) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
-+	$(CXX) $(PLUGINCFLAGS) -DEXAMPLEDIR=\"`cat absolute`\" -DSOURCEFILENAME=\"examples/$<\" -c $(GENERAL) -o $@
- 
- ../mainprocedures.h:
- 	$(MAKE) -C .. mainprocedures.h
-@@ -327,14 +327,14 @@
+ #BEDSRCDIR=\"../../src\"
+-PLUGINCFLAGS := -I../ -I../../src/ -I../../src/empty  $(X_CFLAGS)   $(PLUGINCFLAGS) -DNEWTERM     -DBEDSRCDIR=$(BEDSRCDIR)
++PLUGINCFLAGS := -I../ -I../../src/ -I../../src/empty  $(X_CFLAGS)   $(PLUGINCFLAGS) -DNEWTERM     -DBEDSRCDIR=$(BEDSRCDIR) -fPIC
+ #PLUGINCFLAGS=-g
+ #PLUGINLDFLAGS=-s -O6
+ #PLUGINLDFLAGS= -O6
+@@ -339,14 +339,14 @@
  plughelp: mkhelp 
  	./mkhelp > plughelp
  mkhelp: mkhelp.h mkhelp.c

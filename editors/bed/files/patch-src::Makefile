@@ -1,97 +1,11 @@
---- src/Makefile.orig	Mon Apr 21 11:40:57 2003
-+++ src/Makefile	Fri Mar 26 09:30:26 2004
-@@ -27,8 +27,8 @@
+--- src/Makefile.orig	Tue Mar  2 07:22:24 2004
++++ src/Makefile	Tue Jan  2 00:34:54 2007
+@@ -5,7 +5,7 @@
+ LIBS+= $(CURSESLIB) $(EXTRALIBS) $(OTHERLIBS)# -L/mnt/chicken/lib -L/mnt/chicken/usr/lib
+ CFLAGS+=  -D_GNU_SOURCE -DNEWTERM #-DUSE_NEW # -DMEMORY_TRACE	#-DREAD0x2x4DATATYPE #-DSEARCHTIME #-DUSE_NEW #-DMEMORY_TRACE	
  
- #-DENDOFLINEBUG
- 
--CFLAGS:=$(OPTS) $(CFLAGS) 
--LDFLAGS:=$(OPTS) $(LDFLAGS)
-+CFLAGS:=$(CFLAGS) 
-+LDFLAGS:=$(LDFLAGS)
- CPPFLAGS=$(CFLAGS)
- # *** NORMALLY NOTHING HAS TO BE CHANGED BELOW THIS LINE
- OBJ := repeat.o rbtree.o memory.o editor.o   getfile.o glob.o expandfilename.o readcolors.o  getfree.o getlabel.o  screenpart.o  marks.o digitstring.o   parts.o main.o  strtoint.o  keyproc.o marken.o procview.o menus.o inout.o move.o window.o edit.o file.o select.o undo.o screen.o search.o onlykey.o  editup.o  cursesinit.o input.o contain.o withcontain.o filter.o  ascii.o  multidigit.o macros.o editmacros.o typelist.o $(OBJ) keyinput.o  hassub.o savedatatype.o menufuncs.o support.o desturbe.o gethelp.o disk.o
-@@ -86,7 +86,7 @@
- 
- dep: $(PRESRC) ../config Makefile extrakeys.h dataprocer.h dataproc.h procedures.h mainprocedures.h readhelp.cpp  
- 	$(MAKE) -C ../plugins/examples makeinlinklist
--	$(GCC) -MM -MG $(CPPFLAGS) $(CFILE) $(CPPFILES) readhelp.cpp > depend
-+	$(CXX) -MM -MG $(CPPFLAGS) $(CFILE) $(CPPFILES) readhelp.cpp > depend
- 
- empty:
- 	@echo done
-@@ -103,16 +103,16 @@
- 	$(PROGCC)  $(LDFLAGS) -o $(PROGRAM)  version.o $(OBJ) $(OBJECTS) $(LIBPATH) $(LIBS)
- 
- quick:  $(OBJ)  sourcenumber
--	$(GCC) $(LDFLAGS) -o $(PROGRAM)  version.o $(OBJ)  $(OBJECTS) $(LIBPATH) $(LIBS)
-+	$(CXX) $(LDFLAGS) -o $(PROGRAM)  version.o $(OBJ)  $(OBJECTS) $(LIBPATH) $(LIBS)
- sourcenumber: $(SRC)  $(BIN2BYTE)
- 	bash ./mkversion $(ALLEXCEPTVERSION)
- md5file: $(SRC)  $(BIN2BYTE)
- 	bash ./mkversion $(ALLEXCEPTVERSION)
- 
- link:  dataprocer.h menufuncs.o procview.o menus.o  $(INLINKLIST) $(ININLINKLIB)
--	$(GCC) $(LDFLAGS) -o $(PROGRAM)  version.o $(OBJ)  $(OBJECTS) $(LIBPATH) $(LIBS)
-+	$(CXX) $(LDFLAGS) -o $(PROGRAM)  version.o $(OBJ)  $(OBJECTS) $(LIBPATH) $(LIBS)
- linkonly:   
--	$(GCC)  $(LDFLAGS) -o $(PROGRAM)  version.o $(OBJ)  $(OBJECTS) $(LIBPATH)  $(LIBS)
-+	$(CXX)  $(LDFLAGS) -o $(PROGRAM)  version.o $(OBJ)  $(OBJECTS) $(LIBPATH)  $(LIBS)
- 
- lines: 
- 	-rm screenpart.o editup.o editor.o
-@@ -179,16 +179,16 @@
- 	-rm depend
- 
- version.o: version.cpp sourcenumber md5sums.cpp copy.h help.h  date.c  ../config config.h
--	$(GCC) $(CFLAGS) -c $<
-+	$(CXX) $(CFLAGS) -c $<
- 
- digitstring: digitstring.cpp
- 	$(GCC) -g digitstring.cpp -DTEST -o digitstring 
- 
- 
- %.i:%.cpp
--	$(GCC) -E -P $(CPPFLAGS) $< -o $@
-+	$(CXX) -E -P $(CPPFLAGS) $< -o $@
- %.s:%.cpp
--	$(GCC) -S  $(CPPFLAGS) $< -o $@
-+	$(CXX) -S  $(CPPFLAGS) $< -o $@
- %.i:%.c
- 	$(GCC) -E $(CPPFLAGS) $< -o $@
- 
-@@ -242,9 +242,9 @@
- 	echo '/*WARNING automatically generated  from bedrcproc.cpp */' > bedrcproc.h
- 	grep '^initword' bedrcproc.cpp|sed -e 's/^initword\([^{]*\).*/initword\1/'|$(SORT) -b -t '(' -k 2 >> bedrcproc.h
- extramenunr$(EXEEXT):menus.cpp editor.h menu.h
--	$(CC) -DPRINTMAXSHOWMENUS=1 $(CFLAGS) menus.cpp -o extramenunr
-+	$(CXX) -DPRINTMAXSHOWMENUS=1 $(CFLAGS) menus.cpp -o extramenunr
- extramenunr.i:menus.cpp editor.h menu.h
--	$(CC) -E -P -DPRINTMAXSHOWMENUS=1 $(CFLAGS) menus.cpp -o extramenunr.i
-+	$(CXX) -E -P -DPRINTMAXSHOWMENUS=1 $(CFLAGS) menus.cpp -o extramenunr.i
- mkmenus.h: extramenunr$(EXEEXT)
- #	extramenus=`./extramenunr`; for ((i=0;$$i<$$extramenus;i=$$[$$i+1])); do echo  "mkmenunum($$i)";done >mkmenus.h
- 	extramenus=`./extramenunr`;i=0; while test $$i -lt $$extramenus; do echo  "mkmenunum($$i)";i=$$[$$i+1];done >mkmenus.h
-@@ -255,11 +255,11 @@
- 	echo $(EXEPROGRAMS)
- 
- Bed:   
--	$(GCC) $(LDFLAGS) -o Bed  version.o $(OBJ)  $(OBJECTS)  $(ININLINKLIB) $(LIBPATH) /home/jka/self/projects/c/bedall/libs/libc.so.6 /home/jka/self/projects/c/bedall/libs/libpthread.so.0 /home/jka/self/projects/c/bedall/libs/libdl.so.2  /home/jka/self/projects/c/bedall/libs/libm.so.6  /home/jka/self/projects/c/bedall/libs/libncurses.so.4   /home/jka/self/projects/c/bedall/libs/ld-linux.so.2
-+	$(CXX) $(LDFLAGS) -o Bed  version.o $(OBJ)  $(OBJECTS)  $(ININLINKLIB) $(LIBPATH) /home/jka/self/projects/c/bedall/libs/libc.so.6 /home/jka/self/projects/c/bedall/libs/libpthread.so.0 /home/jka/self/projects/c/bedall/libs/libdl.so.2  /home/jka/self/projects/c/bedall/libs/libm.so.6  /home/jka/self/projects/c/bedall/libs/libncurses.so.4   /home/jka/self/projects/c/bedall/libs/ld-linux.so.2
- 
- 
- beds:   
--	$(GCC) $(LDFLAGS) -o $(PROGRAM)s  version.o $(OBJ) $(OBJECTS) $(LIBPATH) $(LIBS) -L/usr/X11R6/lib -lX11
-+	$(CXX) $(LDFLAGS) -o $(PROGRAM)s  version.o $(OBJ) $(OBJECTS) $(LIBPATH) $(LIBS) -L/usr/X11R6/lib -lX11
- 
- readhelp.o: readhelp.cpp procedures.h
- 
-@@ -281,7 +281,7 @@
- chhelp: addmenu
- 	./addmenu > chhelp
- addmenu: addmenu.cpp menu.h
--	$(GCC) addmenu.cpp -o addmenu
-+	$(CXX) addmenu.cpp -o addmenu
- showopts:
- 	echo OPTS: $(OPTS)
- 	echo CFLAGS: $(CFLAGS)
+-OPTS:= $(OPTS) 
++OPTS:=
+ LIBPATH=-L. 
+ INLINKLISTER= ../plugins/examples/inlinklist
+ INLINKLIST= compileinlink
