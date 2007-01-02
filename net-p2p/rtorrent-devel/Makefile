@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	rtorrent-devel
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.1
 PORTREVISION=	0
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
-LIB_DEPENDS=	torrent.9:${PORTSDIR}/net-p2p/libtorrent-devel
+# Libtorrent 0.11.{0,1} are both libtorrent.10, explicitely depend on 0.11.1+.
+BUILD_DEPENDS=	libtorrent-devel>=0.11.1:${PORTSDIR}/net-p2p/libtorrent-devel
+RUN_DEPENDS=	libtorrent-devel>=0.11.1:${PORTSDIR}/net-p2p/libtorrent-devel
+LIB_DEPENDS=	# empty
 
 MASTERDIR=	${.CURDIR}/../rtorrent
 MD5_FILE=	${.CURDIR}/distinfo
