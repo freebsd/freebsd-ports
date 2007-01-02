@@ -819,6 +819,7 @@
     SUBDIR += p5-WWW-Mechanize-Pluggable
     SUBDIR += p5-WWW-Mechanize-Plugin-phpBB
     SUBDIR += p5-WWW-Mechanize-Shell
+    SUBDIR += p5-WWW-Mediawiki-Client
     SUBDIR += p5-WWW-Mixi
     SUBDIR += p5-WWW-Myspace
     SUBDIR += p5-WWW-OpenSVN
