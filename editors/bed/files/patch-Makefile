@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- Makefile.orig	Fri Apr 18 14:45:51 2003
-+++ Makefile	Thu Jan 22 10:21:03 2004
-@@ -57,7 +57,7 @@
+--- Makefile.orig	Fri Jul  9 08:01:08 2004
++++ Makefile	Tue Jan  2 00:25:53 2007
+@@ -50,7 +50,7 @@
  	-mv  $(ROOTDIR)$(CONFDIRLINK) $(CONFDIRLINK).bak
  	-$(MKDIR) $(ROOTDIR)$(CONFDIR)
  ifneq ($(CYGWIN),yes)
@@ -11,34 +9,20 @@ $FreeBSD$
  	-mv  $(ROOTDIR)$(CONFDIR)/$(CONFFILE) $(ROOTDIR)$(CONFDIR)/~$(CONFFILE)
  endif
  	$(CP) $(CONFFILE) $(ROOTDIR)$(CONFDIR)
-@@ -102,17 +102,17 @@
+@@ -95,10 +95,10 @@
  	cp public.key $(ROOTDIR)$(CONFDIR)
  ifeq ($(HAS_FILE),y)
  	$(CP) testmarks.bedm bedmagic addmagic.sh $(ROOTDIR)$(CONFDIR)
 -	@bash ./addmagic.sh
 +#	@bash ./addmagic.sh
  endif
--	 mkdir -p $(ROOTDIR)$(KDEMENU)/$(XBEDMENU);
--	cp progman/x$(XMENUNAME).kdelnk $(ROOTDIR)$(KDEMENU)/$(XBEDMENU)/$(XMENUNAME).kdelnk;
--	mkdir -p $(ROOTDIR)$(KDEMENU)/$(BEDMENU);
--	cp progman/c$(MENUNAME).kdelnk $(ROOTDIR)$(KDEMENU)/$(BEDMENU)/$(MENUNAME).kdelnk; 
-+#	 mkdir -p $(ROOTDIR)$(KDEMENU)/$(XBEDMENU);
-+#	cp progman/x$(XMENUNAME).kdelnk $(ROOTDIR)$(KDEMENU)/$(XBEDMENU)/$(XMENUNAME).kdelnk;
-+#	mkdir -p $(ROOTDIR)$(KDEMENU)/$(BEDMENU);
-+#	cp progman/c$(MENUNAME).kdelnk $(ROOTDIR)$(KDEMENU)/$(BEDMENU)/$(MENUNAME).kdelnk; 
- 
--	mkdir -p $(ROOTDIR)$(GNOMEMENU)/$(XBEDMENU);
--	cp progman/x$(XMENUNAME).desktop $(ROOTDIR)$(GNOMEMENU)/$(XBEDMENU)/$(XMENUNAME).desktop ; 
--	mkdir -p $(ROOTDIR)$(GNOMEMENU)/$(BEDMENU);
--	cp progman/c$(MENUNAME).desktop $(ROOTDIR)$(GNOMEMENU)/$(BEDMENU)/$(MENUNAME).desktop ;
-+#	mkdir -p $(ROOTDIR)$(GNOMEMENU)/$(XBEDMENU);
-+#	cp progman/x$(XMENUNAME).desktop $(ROOTDIR)$(GNOMEMENU)/$(XBEDMENU)/$(XMENUNAME).desktop ; 
-+#	mkdir -p $(ROOTDIR)$(GNOMEMENU)/$(BEDMENU);
-+#	cp progman/c$(MENUNAME).desktop $(ROOTDIR)$(GNOMEMENU)/$(BEDMENU)/$(MENUNAME).desktop ;
+ ifneq ($(HAS_APPLICATIONS),)
+-	cp progman/bed-binary-editor.desktop $(ROOTDIR)$(HAS_APPLICATIONS)/bed-binary-editor.desktop 
++#	cp progman/bed-binary-editor.desktop $(ROOTDIR)$(HAS_APPLICATIONS)/bed-binary-editor.desktop 
+ endif
  ifeq ($(CONFIG_PROGMAN),y)
  #	cp bed.xpm $(ROOTDIR)$(ICONPATH)
- #	cp bedsmall.xpm $(ROOTDIR)$(ICONPATH)/mini/bed.xpm
-@@ -127,7 +127,7 @@
+@@ -114,7 +114,7 @@
  ifeq ($(ROOTDIR),)
  	@cp uninstallhead $(ROOTDIR)$(CONFDIR)/uninstallbed.sh
  	@FILES=`for afile in $(ROOTDIR)$(BINDIST); do  test -e $$afile&&echo $$afile ;done`; find  $$FILES ! -type d -print |xargs echo $(REMOVE) ' ' >> $(ROOTDIR)$(CONFDIR)/uninstallbed.sh ;find  $$FILES -type d  -a  -print |$(SORT) -r|xargs echo $(RMDIR) ' ' >> $(ROOTDIR)$(CONFDIR)/uninstallbed.sh
