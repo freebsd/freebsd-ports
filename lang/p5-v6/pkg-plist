@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Pugs/Compiler/Perl6.pm
 %%SITE_PERL%%/Pugs/Emitter/Perl6/Perl5.pm
+%%SITE_PERL%%/Pugs/Emitter/YAML.pm
 %%SITE_PERL%%/Pugs/Grammar/BaseCategory.pm
 %%SITE_PERL%%/Pugs/Grammar/Circumfix.pm
 %%SITE_PERL%%/Pugs/Grammar/Expression.pm
@@ -11,16 +12,18 @@
 %%SITE_PERL%%/Pugs/Grammar/Postcircumfix.pm
 %%SITE_PERL%%/Pugs/Grammar/Postfix.pm
 %%SITE_PERL%%/Pugs/Grammar/Prefix.pm
+%%SITE_PERL%%/Pugs/Grammar/Quote.pm
 %%SITE_PERL%%/Pugs/Grammar/StatementControl.pm
 %%SITE_PERL%%/Pugs/Grammar/StatementModifier.pm
 %%SITE_PERL%%/Pugs/Grammar/Term.pm
 %%SITE_PERL%%/Pugs/Grammar/Ternary.pm
-%%SITE_PERL%%/Pugs/Grammar/Quote.pm
+%%SITE_PERL%%/Pugs/Grammar/YAML.pm
+%%SITE_PERL%%/Pugs/Runtime/Perl5Container.pm
 %%SITE_PERL%%/Pugs/Runtime/Perl6.pm
-%%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pm
-%%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pmc
 %%SITE_PERL%%/Pugs/Runtime/Perl6AST.pm
 %%SITE_PERL%%/Pugs/Runtime/Perl6AST.pmc
+%%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pm
+%%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pmc
 %%SITE_PERL%%/v6.pm
 %%SITE_PERL%%/v6/hello_world.pl
 @dirrmtry %%SITE_PERL%%/Pugs/Runtime
