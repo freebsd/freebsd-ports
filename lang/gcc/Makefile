@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.0
-PORTREVISION=	20061202
+PORTREVISION=	20061230
 CATEGORIES=	lang java
 VERSIONSTRING=	4.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -82,16 +82,17 @@ USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
-		gfortran${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
-		gcov${SUFFIX}.1
+		gcov${SUFFIX}.1 \
+		gfortran${SUFFIX}.1
 INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/cppinternals \
-		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
-		gcc${SUFFIX}/gccint
+		gcc${SUFFIX}/gccint \
+		gcc${SUFFIX}/gfortran \
+		gcc${SUFFIX}/libgomp 
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
