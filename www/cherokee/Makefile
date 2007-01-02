@@ -7,7 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.5.6
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/ \
 		http://www.alaskaparadise.com/freebsd/
@@ -44,7 +44,7 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-tls=gnutls
 .endif
 

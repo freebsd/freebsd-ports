@@ -7,6 +7,7 @@
 
 PORTNAME=	loudmouth
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -28,7 +29,7 @@ OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	1.5.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_GNOME=	yes
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
@@ -54,7 +54,7 @@ PLIST_SUB+=	EVO="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif

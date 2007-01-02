@@ -7,7 +7,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	Modular FTP server configurable online using SITE commands
 USE_RC_SUBR=	wzdftpd.sh
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour --mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="${CPPLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif

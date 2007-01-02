@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -26,7 +27,7 @@ USE_OPENSSL=	yes
 OPENSSL_CFLAGS+=-DXMLSEC_OPENSSL_097=1 -DXMLSEC_CRYPTO_OPENSSL=1
 USE_GNOME=	gnomehack lthack libxslt gnometarget
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_FILES=	bin/xmlsec1 bin/xmlsec1-config etc/xmlsec1Conf.sh
 
 MAN1=	xmlsec1.1 xmlsec1-config.1

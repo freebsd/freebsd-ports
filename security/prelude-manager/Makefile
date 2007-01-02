@@ -6,7 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -15,7 +15,7 @@ MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
 LIB_DEPENDS+=	prelude.11:${PORTSDIR}/security/libprelude \
-		gnutls.13:${PORTSDIR}/security/gnutls
+		gnutls.15:${PORTSDIR}/security/gnutls
 
 USE_GPG=	yes
 SIG_SUFFIX=	.sig

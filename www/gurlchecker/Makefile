@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	423
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	423
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gnome program to check a page/website for broken links
 
-LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 USE_X_PREFIX=	yes
