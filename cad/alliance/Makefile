@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	alliance
-PORTVERSION=	5.0.20050217
+PORTVERSION=	5.0.20060509
 CATEGORIES=	cad
 MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
-DISTNAME=	${PORTNAME}-5.0-20050217
+DISTNAME=	${PORTNAME}-5.0-20060509
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A complete set of CAD tools and libraries for VLSI design
