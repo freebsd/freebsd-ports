@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	AnyEvent
-PORTVERSION=	2.1
+PORTVERSION=	2.5.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-2.51
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide framework for multiple event loops
 
 PERL_CONFIGURE=	yes
