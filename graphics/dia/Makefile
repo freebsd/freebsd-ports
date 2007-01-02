@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dia
-PORTVERSION=	0.95
+DISTVERSION=	0.95-1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -20,9 +20,10 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/t
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2 intlhack
+USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2 intlhack \
+		desktopfileutils
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -62,5 +63,6 @@ pre-configure:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dia.xpm ${PREFIX}/share/gnome/dia/
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
