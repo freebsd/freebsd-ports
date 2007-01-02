@@ -31,7 +31,7 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
-post-patch:
+post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/bin/ruby -w|/bin/env ruby|g' \
 		${WRKSRC}/tests/*.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete

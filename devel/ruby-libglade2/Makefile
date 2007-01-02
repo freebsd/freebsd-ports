@@ -33,6 +33,8 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/bin/ruby-glade-create-template
 
 DOCS=		COPYING.LIB ChangeLog README
 
+post-patch: general-patch
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/po/ja

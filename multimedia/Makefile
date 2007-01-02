@@ -198,7 +198,6 @@
     SUBDIR += recmpeg
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
-    SUBDIR += ruby-gst
     SUBDIR += sabbu
     SUBDIR += shell-fm
     SUBDIR += smpeg

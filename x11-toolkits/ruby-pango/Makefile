@@ -33,7 +33,7 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
-post-patch:
+post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|local/bin/|bin/env |g' \
 		${WRKSRC}/sample/layout.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete

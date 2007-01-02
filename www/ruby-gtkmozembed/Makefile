@@ -8,7 +8,6 @@
 
 PORTNAME=	gtkmozembed
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -23,7 +22,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
 USE_GECKO=	firefox mozilla xulrunner firefox15
-USE_DOS2UNIX=	../glib/src/lib/mkmf-gnome2.rb
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
@@ -36,7 +34,7 @@ DOCS=		COPYING.LIB ChangeLog README
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
-post-patch:
+post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|xulrunner-|${GECKO}-|g ; \
 		s|%%GECKO_PATH%%|${LOCALBASE}/lib/${GECKO}|g' \
 			${WRKSRC}/extconf.rb
