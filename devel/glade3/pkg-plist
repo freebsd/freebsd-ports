@@ -46,6 +46,43 @@ lib/libgladeui-1.so
 lib/libgladeui-1.so.4
 libdata/pkgconfig/glade-3.pc
 libdata/pkgconfig/libgladeui-1.0.pc
+%%DOCSDIR%%/GladeApp.html
+%%DOCSDIR%%/GladeClipboard.html
+%%DOCSDIR%%/GladeClipboardView.html
+%%DOCSDIR%%/GladeEditor.html
+%%DOCSDIR%%/GladeEditorProperty.html
+%%DOCSDIR%%/GladeFixed.html
+%%DOCSDIR%%/GladePalette.html
+%%DOCSDIR%%/GladePlaceholder.html
+%%DOCSDIR%%/GladeProject.html
+%%DOCSDIR%%/GladeProjectView.html
+%%DOCSDIR%%/GladeProperty.html
+%%DOCSDIR%%/GladeWidget.html
+%%DOCSDIR%%/catalog.html
+%%DOCSDIR%%/catalogintro.html
+%%DOCSDIR%%/children.html
+%%DOCSDIR%%/core.html
+%%DOCSDIR%%/dockables.html
+%%DOCSDIR%%/gladeui-GladeCommand.html
+%%DOCSDIR%%/gladeui-GladePropertyClass.html
+%%DOCSDIR%%/gladeui-GladeWidgetClass.html
+%%DOCSDIR%%/gladeui-glade-base-editor.html
+%%DOCSDIR%%/gladeui-glade-parameter.html
+%%DOCSDIR%%/gladeui-glade-signal-editor.html
+%%DOCSDIR%%/gladeui-glade-utils.html
+%%DOCSDIR%%/gladeui.devhelp
+%%DOCSDIR%%/gladeui.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/ix01.html
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/misc.html
+%%DOCSDIR%%/properties.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/widgetclasses.html
 share/gnome/applications/glade-3.desktop
 %%GNOME:%%share/gnome/glade3/catalogs/bonobo.xml
 %%GNOME:%%share/gnome/glade3/catalogs/bonobo.xml.in
@@ -269,12 +306,14 @@ share/gnome/glade3/pixmaps/devhelp.png
 share/gnome/glade3/pixmaps/plus.png
 share/gnome/glade3/pixmaps/selector.png
 share/icons/hicolor/48x48/apps/glade-3.png
+share/locale/ar/LC_MESSAGES/glade3.mo
 share/locale/az/LC_MESSAGES/glade3.mo
 share/locale/da/LC_MESSAGES/glade3.mo
 share/locale/en_CA/LC_MESSAGES/glade3.mo
 share/locale/en_GB/LC_MESSAGES/glade3.mo
 share/locale/es/LC_MESSAGES/glade3.mo
 share/locale/fr/LC_MESSAGES/glade3.mo
+share/locale/gl/LC_MESSAGES/glade3.mo
 share/locale/ja/LC_MESSAGES/glade3.mo
 share/locale/ko/LC_MESSAGES/glade3.mo
 share/locale/ms/LC_MESSAGES/glade3.mo
@@ -291,17 +330,24 @@ share/locale/tr/LC_MESSAGES/glade3.mo
 share/locale/uk/LC_MESSAGES/glade3.mo
 share/locale/vi/LC_MESSAGES/glade3.mo
 share/locale/zh_CN/LC_MESSAGES/glade3.mo
+share/locale/zh_HK/LC_MESSAGES/glade3.mo
+share/locale/zh_TW/LC_MESSAGES/glade3.mo
 @dirrm share/gnome/glade3/pixmaps/22x22
 @dirrm share/gnome/glade3/pixmaps/16x16
 @dirrm share/gnome/glade3/pixmaps
 @dirrm share/gnome/glade3/catalogs
 @dirrm share/gnome/glade3
+@dirrm %%DOCSDIR%%
 @dirrm lib/glade3/modules
 @dirrm lib/glade3
 @dirrm include/libgladeui-1.0/libgladeui
 @dirrm include/libgladeui-1.0
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/uk/LC_MESSAGES
@@ -316,3 +362,5 @@ share/locale/zh_CN/LC_MESSAGES/glade3.mo
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
