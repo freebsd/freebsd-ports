@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	glade3
-PORTVERSION=	3.0.2
-PORTREVISION=	3
+PORTVERSION=	3.0.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -24,10 +23,12 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 libxml2 gnomeprefix gnomehack
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-USE_LDCONFIG=	yes
+
+DOCSDIR=	share/doc/gladeui
 
 .include <bsd.port.pre.mk>
 
