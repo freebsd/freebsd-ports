@@ -1533,6 +1533,7 @@
     SUBDIR += p5-VCP-autrijus
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS
+    SUBDIR += p5-VCS-Lite
     SUBDIR += p5-Want
     SUBDIR += p5-WeakRef
     SUBDIR += p5-Workflow
