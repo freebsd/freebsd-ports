@@ -7,6 +7,7 @@
 
 PORTNAME=	kde
 PORTVERSION=	3.16.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python kde
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \
@@ -22,7 +23,7 @@ COMMENT=	Python Bindings for KDE3
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USE_KDELIBS_VER=3
+USE_KDEBASE_VER=3
 USE_PYTHON=	yes
 NO_FILTER_SHLIBS=	yes
 
