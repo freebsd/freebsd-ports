@@ -1,5 +1,5 @@
---- file.c.orig	Sun Feb 19 01:37:44 2006
-+++ file.c	Sun Feb 19 01:39:59 2006
+--- file.c.orig	Tue Jan  2 22:11:50 2007
++++ file.c	Tue Jan  2 22:14:11 2007
 @@ -262,7 +262,8 @@
  {
      return (type == NULL || type[0] == '\0' ||
@@ -10,6 +10,15 @@
  }
  
  static int
+@@ -7799,7 +7800,7 @@
+ 	ans = inputChar(prompt);
+     }
+     else {
+-	printf(prompt);
++	printf("%s", prompt);
+ 	fflush(stdout);
+ 	ans = Strfgets(stdin)->ptr;
+     }
 @@ -7891,7 +7892,7 @@
  	    uf->scheme = SCM_LOCAL;
      }
