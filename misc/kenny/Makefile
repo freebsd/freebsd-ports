@@ -19,6 +19,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate text both to and from KennySpeak
 
+CONFLICTS=	filters-*
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
