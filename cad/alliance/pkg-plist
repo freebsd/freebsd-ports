@@ -1235,6 +1235,34 @@ alliance/cells/sxlib/ts_x8.vhd
 alliance/cells/sxlib/xr2_x1.vhd
 alliance/cells/sxlib/xr2_x4.vhd
 alliance/cells/sxlib/zero_x0.vhd
+alliance/cells/pxlib/CATAL
+alliance/cells/pxlib/padreal.ap
+alliance/cells/pxlib/pck_px.ap
+alliance/cells/pxlib/pck_px.vbe
+alliance/cells/pxlib/pi_px.ap
+alliance/cells/pxlib/pi_px.vbe
+alliance/cells/pxlib/piot_px.ap
+alliance/cells/pxlib/piot_px.vbe
+alliance/cells/pxlib/po_px.ap
+alliance/cells/pxlib/po_px.vbe
+alliance/cells/pxlib/pot_px.ap
+alliance/cells/pxlib/pot_px.vbe
+alliance/cells/pxlib/pvdde_px.ap
+alliance/cells/pxlib/pvdde_px.vbe
+alliance/cells/pxlib/pvddeck_px.ap
+alliance/cells/pxlib/pvddeck_px.vbe
+alliance/cells/pxlib/pvddi_px.ap
+alliance/cells/pxlib/pvddi_px.vbe
+alliance/cells/pxlib/pvddick_px.ap
+alliance/cells/pxlib/pvddick_px.vbe
+alliance/cells/pxlib/pvsse_px.ap
+alliance/cells/pxlib/pvsse_px.vbe
+alliance/cells/pxlib/pvsseck_px.ap
+alliance/cells/pxlib/pvsseck_px.vbe
+alliance/cells/pxlib/pvssi_px.ap
+alliance/cells/pxlib/pvssi_px.vbe
+alliance/cells/pxlib/pvssick_px.ap
+alliance/cells/pxlib/pvssick_px.vbe
 alliance/tutorials/place_and_route/src/amd2901/Makefile
 alliance/tutorials/place_and_route/src/amd2901/amd2901_chip.c
 alliance/tutorials/place_and_route/src/amd2901/amd2901_chip.rin
@@ -1726,6 +1754,7 @@ alliance/examples/alliance-examples/tuner/tuner_io.c
 @dirrm alliance/cells/ramlib
 @dirrm alliance/cells/romlib
 @dirrm alliance/cells/sxlib
+@dirrm alliance/cells/pxlib
 @dirrm alliance/cells
 @dirrm alliance/tutorials/place_and_route/src/amd2901
 @dirrm alliance/tutorials/place_and_route/src/buffer
