@@ -12,8 +12,6 @@ RUBY_GNOME_MASTER_SITE_SUBDIR=	ruby-gnome2
 RUBY_GNOME_DISTNAME=		ruby-gnome2-all-${RUBY_GNOME_VERSION:S/r/rev/}
 
 CONFIGURE_ARGS+=		--ruby=${RUBY}
-RUBY_DOCDIR=			${PREFIX}/share/doc/${RUBY_NAME}
-RUBY_EXAMPLESDIR=		${PREFIX}/share/examples/${RUBY_NAME}
 
 .if defined(RUBY_GNOME_SNAPSHOTDATE)
 RUBY_GNOME_WRKSRC=	${WRKDIR}/ruby-gnome2-snapshot-${RUBY_GNOME_SNAPSHOTDATE}
@@ -26,4 +24,4 @@ MD5_FILE=		${RUBY_GNOME_PORTDIR}/distinfo
 
 general-patch:
 	@${FIND} ${WRKDIR} -name mkmf-gnome2.rb | ${XARGS} ${REINPLACE_CMD} -e \
-		's|CFLAGS}|CFLAGS} -I${RUBY_SITEARCHLIBDIR}|g'
+		's|CFLAGS}|CFLAGS} -I${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}|g'
