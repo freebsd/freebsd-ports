@@ -1946,7 +1946,6 @@ share/moin/server/mointwisted
 share/moin/server/mointwisted.cmd
 share/moin/server/mointwisted.py
 share/moin/server/moinwsgi.py
-share/moin/underlay/meta
 share/moin/underlay/pages/AbandonedPages/current
 share/moin/underlay/pages/AbandonedPages/revisions/00000001
 share/moin/underlay/pages/AutoAdminGroup/current
@@ -2239,6 +2238,7 @@ share/moin/underlay/pages/SystemPagesSetup/attachments/Swedish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/TraditionalChinese.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Turkish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/all_languages.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/extra.zip
 share/moin/underlay/pages/SystemPagesSetup/current
 share/moin/underlay/pages/SystemPagesSetup/revisions/00000001
 share/moin/underlay/pages/TitleIndex/current
