@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filters
-PORTVERSION=	2.34
+PORTVERSION=	2.39
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 		http://critical.ch/distfiles/ \
@@ -16,52 +16,58 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A collection of filters, including B1FF and the Swedish Chef
 
-CONFLICTS=	talkfilters-* jive-* chef-*
+CONFLICTS=	talkfilters-* jive-* chef-* kenny-*
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
 
-ALL_TARGET+=	samples
-CFLAGS+=	-lfl
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PERLFILTERS=	b1ff censor chef eleet fudd jibberish rasterman \
+
+MAKE_ENV+=	CC="${CC}"
+
+PERLFILTERS=	b1ff censor chef eleet fudd jibberish kenny pirate rasterman \
 		spammer studly uniencode upside-down
-CFILTERS=	jethro kraut cockney jive nyc ken ky00te newspeak
-MAN6=		filters.6
+CFILTERS=	jethro kraut cockney jive nyc ken ky00te newspeak nethackify
 
-.include <bsd.port.pre.mk>
+MAN1=		filters.1
+MLINKS=		filters.1 b1ff.1 \
+		filters.1 censor.1 \
+		filters.1 chef.1 \
+		filters.1 eleet.1 \
+		filters.1 fudd.1 \
+		filters.1 jibberish.1 \
+		filters.1 kenny.1 \
+		filters.1 pirate.1 \
+		filters.1 rasterman.1 \
+		filters.1 spammer.1 \
+		filters.1 studly.1 \
+		filters.1 uniencode.1 \
+		filters.1 upside-down.1 \
+		filters.1 jethro.1 \
+		filters.1 kraut.1 \
+		filters.1 cockney.1 \
+		filters.1 jive.1 \
+		filters.1 nyc.1 \
+		filters.1 ken.1 \
+		filters.1 ky00te.1 \
+		filters.1 newspeak.1 \
+		filters.1 nethackify.1
 
-EXTRACFLAGS!=	${ECHO} ${CFLAGS} | ${SED} -e 's|\-lfl||'
+post-extract:
+	@${MV} ${WRKSRC}/${PORTNAME}.6 ${WRKSRC}/${MAN1}
 
 post-patch:
-.for f in ${FILTERS}
-	@${REINPLACE_CMD} -e 's|/usr/local/bin/perl|${PERL}|' \
-		${WRKSRC}/${f}
+.for f in ${PERLFILTERS}
+	@${REINPLACE_CMD} -e '1s|.*perl|#!${PERL}|' ${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} -e 's|^\(CFLAGS\).*=|\1?=|' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/share/doc/filters|${EXAMPLESDIR}|' \
-		${WRKSRC}/${MAN6}
-	@${REINPLACE_CMD} \
-		-e 's|\([[:space:]]\)cc\ |\1${CC}\ |' \
-		-e 's|..CFLAGS.\(\ -o\ \.\{2\}\)|${EXTRACFLAGS}\1|' \
-			${WRKSRC}/ky00te.dir/makefile
 
 do-install:
-.for f in ${PERLFILTERS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
-.endfor
 .for f in ${CFILTERS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MANPREFIX}/man/man6
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/SAMPLES ${EXAMPLESDIR}
+.for f in ${PERLFILTERS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
