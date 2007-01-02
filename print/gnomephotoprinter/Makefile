@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomephotoprinter
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	print gnome
 MASTER_SITES=	http://www.fogman.de/gpp/
 DISTNAME=	gpp-${PORTVERSION}
@@ -15,12 +15,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome Photo Printer is intended for printing photos in an easy way
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui libglade2 libgnomeprintui gnomevfs2
+USE_GNOME=	gnomehack gnomeprefix libgnomeui libglade2 libgnomeprintui \
+		gnomevfs2
 GNU_CONFIGURE=	yes
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/gnomephotoprinter.desktop ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${FILESDIR}/gnomephotoprinter.desktop \
+		${PREFIX}/share/gnome/applications
 
 .include <bsd.port.mk>
