@@ -4,6 +4,7 @@ include/ctpp/ctpp/ctpp.hpp
 include/ctpp/ctpp/ctpp_c.h
 include/ctpp/ctpp/param_data.hpp
 include/ctpp/ctpp/udf_fn.hpp
+include/ctpp/functions/istrue.hpp
 include/ctpp/functions/form_param.hpp
 include/ctpp/functions/href_param.hpp
 include/ctpp/functions/htmlescape.hpp
