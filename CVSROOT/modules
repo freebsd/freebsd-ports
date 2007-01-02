@@ -10670,6 +10670,7 @@ p5-WWW-Mechanize-FormFiller	ports/www/p5-WWW-Mechanize-FormFiller
 p5-WWW-Mechanize-Pluggable	ports/www/p5-WWW-Mechanize-Pluggable
 p5-WWW-Mechanize-Plugin-phpBB	ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-WWW-Mechanize-Shell	ports/www/p5-WWW-Mechanize-Shell
+p5-WWW-Mediawiki-Client	ports/www/p5-WWW-Mediawiki-Client
 p5-WWW-Mixi	ports/www/p5-WWW-Mixi
 p5-WWW-Myspace	ports/www/p5-WWW-Myspace
 p5-WWW-OpenSVN	ports/www/p5-WWW-OpenSVN
