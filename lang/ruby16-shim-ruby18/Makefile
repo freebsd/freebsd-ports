@@ -17,6 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of Ruby modules to provide Ruby 1.8 functionalities
 
+DEPRECATED=	depends on deprecated port
+EXPIRATION_DATE=2007-02-02
+
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 
