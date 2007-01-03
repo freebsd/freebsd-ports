@@ -50,7 +50,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>An anonymous person reports:</p>
-	<blockquote cite="http://sourceforge.net/tracker/index.php?func=detail&aid=1612792&group_id=39518&atid=425439">
+	<blockquote cite="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1612792&amp;group_id=39518&amp;atid=425439">
 	  <p>w3m-0.5.1 crashes when using the -dump or -backend options to
 	    open a HTTPS URL with a SSL certificate where the CN contains
 	    "%n%n%n%n%n%n".</p>
@@ -60,12 +60,12 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>21735</bid>
       <cvename>CVE-2006-6772</cvename>
-      <url>http://sourceforge.net/tracker/index.php?func=detail&aid=1612792&group_id=39518&atid=425439</url>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1612792&amp;group_id=39518&amp;atid=425439</url>
       <url>http://secunia.com/advisories/23492/</url>
     </references>
     <dates>
       <discovery>2006-12-10</discovery>
-      <entry>2007-01-02</entry>
+      <entry>2007-01-03</entry>
     </dates>
   </vuln>
 
