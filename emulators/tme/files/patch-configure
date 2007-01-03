@@ -1,0 +1,11 @@
+--- configure.orig	Wed Jan  3 19:05:49 2007
++++ configure	Wed Jan  3 19:06:10 2007
+@@ -25853,7 +25853,7 @@
+   enable_warnings=yes
+ fi;
+ if test "x$enable_warnings" = "xyes" -a "x$GCC" = "xyes"; then
+-  CFLAGS="${CFLAGS-} -Wundef -Wall -Werror"
++  CFLAGS="${CFLAGS-} -Wundef -Wall"
+   CXXFLAGS="${CXXFLAGS-} -W"
+ fi
+ 
