@@ -68,9 +68,9 @@
 -		echo "    *** Mozilla embedding support will not be compiled."
 +if [ ${MAKE_MOZILLA} != "" ]; then
 +	if [ -z "${GECKO_INCLUDES}" -a -z "${GECKO_LIBS}" ]; then
-+		if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
-+			GECKO_INCLUDES=`pkg-config --cflags mozilla-xpcom`
-+			GECKO_LIBS=`pkg-config --libs mozilla-xpcom`
++		if [ x`pkg-config --exists %%GECKO%%-xpcom && echo YES` = "xYES" ]; then
++			GECKO_INCLUDES=`pkg-config --cflags %%GECKO%%-xpcom`
++			GECKO_LIBS=`pkg-config --libs %%GECKO%%-xpcom`
 +			export GECKO_INCLUDES
 +			export GECKO_LIBS
 +			MAKE_MOZILLA=make_mozilla
