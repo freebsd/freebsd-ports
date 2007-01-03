@@ -1,30 +1,100 @@
 @comment $FreeBSD$
+@cwd %%LOCALBASE%%
+%%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_5500.ppd
+%%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_4600.ppd
+%%DATADIR%%/ppd/Makefile.in
+%%DATADIR%%/ppd/Makefile.am
+%%DATADIR%%/opvp/Makefile.in
+%%DATADIR%%/opvp/Makefile.am
+%%DATADIR%%/opvp/HPPageColor.c
+%%DATADIR%%/opfc-ModuleHP.spec
+%%DATADIR%%/mkinstalldirs
+%%DATADIR%%/missing
+%%DATADIR%%/ltmain.sh
+%%DATADIR%%/libopvp/pdapi.h
+%%DATADIR%%/libopvp/opvp_rpc_server.h
+%%DATADIR%%/libopvp/opvp_rpc_server.c
+%%DATADIR%%/libopvp/opvp_rpc_reqno.h
+%%DATADIR%%/libopvp/opvp_rpc_core.h
+%%DATADIR%%/libopvp/opvp_rpc_core.c
+%%DATADIR%%/libopvp/opvp_driver.h
+%%DATADIR%%/libopvp/opvp_common.h
+%%DATADIR%%/libopvp/doc/rpc040223.pdf
+%%DATADIR%%/libopvp/doc/Makefile.in
+%%DATADIR%%/libopvp/doc/Makefile.am
+%%DATADIR%%/libopvp/README.jp
+%%DATADIR%%/libopvp/Makefile.in
+%%DATADIR%%/libopvp/Makefile.am
+%%DATADIR%%/libopvp/COPYING
+%%DATADIR%%/install-sh
+%%DATADIR%%/fonts/ipamp.ttf
+%%DATADIR%%/fonts/ipam.ttf
+%%DATADIR%%/fonts/ipagui.ttf
+%%DATADIR%%/fonts/ipagp.ttf
+%%DATADIR%%/fonts/ipag.ttf
+%%DATADIR%%/fonts/Makefile.in
+%%DATADIR%%/fonts/Makefile.am
+%%DATADIR%%/fonts/M+2VM+IPAG-circle.ttf
+%%DATADIR%%/fonts/M+2P+IPAG.ttf
+%%DATADIR%%/fonts/M+2P+IPAG-circle.ttf
+%%DATADIR%%/fonts/M+1VM+IPAG-circle.ttf
+%%DATADIR%%/fonts/M+1P+IPAG.ttf
+%%DATADIR%%/fonts/M+1P+IPAG-circle.ttf
+%%DATADIR%%/fonts/COPYING.font.ja
+%%DATADIR%%/doc/ProjectOverview.pdf
+%%DATADIR%%/doc/Makefile.in
+%%DATADIR%%/doc/Makefile.am
+%%DATADIR%%/depcomp
+%%DATADIR%%/configure.in
+%%DATADIR%%/configure
+%%DATADIR%%/config.sub
+%%DATADIR%%/config.h.in
+%%DATADIR%%/config.guess
+%%DATADIR%%/compile
+%%DATADIR%%/aclocal.m4
+%%DATADIR%%/VERSION
+%%DATADIR%%/README.jp
+%%DATADIR%%/README
+%%DATADIR%%/NEWS
+%%DATADIR%%/Makefile.in
+%%DATADIR%%/Makefile.am
+%%DATADIR%%/INSTALL
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/COPYING
+%%DATADIR%%/AUTHORS
+@dirrm %%DATADIR%%/ppd
+@dirrm %%DATADIR%%/opvp
+@dirrm %%DATADIR%%/libopvp/doc
+@dirrm %%DATADIR%%/libopvp
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/doc
+%%LOCAL_FONTSDIR%%/ipag.ttf
+%%LOCAL_FONTSDIR%%/ipagp.ttf
+%%LOCAL_FONTSDIR%%/ipagui.ttf
+%%LOCAL_FONTSDIR%%/ipam.ttf
+%%LOCAL_FONTSDIR%%/ipamp.ttf
+%%LOCAL_FONTSDIR%%/M+2VM+IPAG-circle.ttf
+%%LOCAL_FONTSDIR%%/M+2P+IPAG.ttf
+%%LOCAL_FONTSDIR%%/M+2P+IPAG-circle.ttf
+%%LOCAL_FONTSDIR%%/M+1VM+IPAG-circle.ttf
+%%LOCAL_FONTSDIR%%/M+1P+IPAG.ttf
+%%LOCAL_FONTSDIR%%/M+1P+IPAG-circle.ttf
+@dirrmtry %%LOCAL_FONTSDIR%%
+@cwd %%X11BASE%%
 etc/fonts/conf.d/2.ipa-ttfonts.conf
-@exec mkdir -p %%LOCAL_FONTSDIR%%/TrueType
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipag.ttf   %%LOCAL_FONTSDIR%%/TrueType/ipag.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipagp.ttf  %%LOCAL_FONTSDIR%%/TrueType/ipagp.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipagui.ttf %%LOCAL_FONTSDIR%%/TrueType/ipagui.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipam.ttf   %%LOCAL_FONTSDIR%%/TrueType/ipam.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipamp.ttf  %%LOCAL_FONTSDIR%%/TrueType/ipamp.ttf
-@exec mkdir -p %%X_FONTSDIR%%
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipag.ttf   %%X_FONTSDIR%%/ipag.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipagp.ttf  %%X_FONTSDIR%%/ipagp.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipagui.ttf %%X_FONTSDIR%%/ipagui.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipam.ttf   %%X_FONTSDIR%%/ipam.ttf
-@exec ln -s -f %%GRASS_FONTSDIR%%/ipamp.ttf  %%X_FONTSDIR%%/ipamp.ttf
-@exec %%X11BASE%%/bin/fc-cache -f -v %%X_FONTSDIR%% || true
-@unexec rm -f %%LOCAL_FONTSDIR%%/TrueType/ipag.ttf
-@unexec rm -f %%LOCAL_FONTSDIR%%/TrueType/ipagp.ttf
-@unexec rm -f %%LOCAL_FONTSDIR%%/TrueType/ipagui.ttf
-@unexec rm -f %%LOCAL_FONTSDIR%%/TrueType/ipam.ttf
-@unexec rm -f %%LOCAL_FONTSDIR%%/TrueType/ipamp.ttf
-@unexec rmdir %%LOCAL_FONTSDIR%%/TrueType 2> /dev/null || true
-@unexec rmdir %%LOCAL_FONTSDIR%% 2> /dev/null || true
-@unexec rm -f %%X_FONTSDIR%%/ipag.ttf
-@unexec rm -f %%X_FONTSDIR%%/ipagp.ttf
-@unexec rm -f %%X_FONTSDIR%%/ipagui.ttf
-@unexec rm -f %%X_FONTSDIR%%/ipam.ttf
-@unexec rm -f %%X_FONTSDIR%%/ipamp.ttf
-@unexec %%X11BASE%%/bin/fc-cache -f -v %%X_FONTSDIR%% || true
-@unexec if [ -s %%X_FONTSDIR%%/fonts.cache-1 ]; then rm -f %%X_FONTSDIR%%/fonts.cache-1; fi
-@unexec rmdir %%X_FONTSDIR%% 2> /dev/null || true
+%%X_FONTSDIR%%/ipag.ttf
+%%X_FONTSDIR%%/ipagp.ttf
+%%X_FONTSDIR%%/ipagui.ttf
+%%X_FONTSDIR%%/ipam.ttf
+%%X_FONTSDIR%%/ipamp.ttf
+%%X_FONTSDIR%%/M+2VM+IPAG-circle.ttf
+%%X_FONTSDIR%%/M+2P+IPAG.ttf
+%%X_FONTSDIR%%/M+2P+IPAG-circle.ttf
+%%X_FONTSDIR%%/M+1VM+IPAG-circle.ttf
+%%X_FONTSDIR%%/M+1P+IPAG.ttf
+%%X_FONTSDIR%%/M+1P+IPAG-circle.ttf
+@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%% || true
+@unexec %%X11BASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%% || true
+@unexec rm -f %D/%%X_FONTSDIR%%/fonts.cache-1
+@dirrmtry %%X_FONTSDIR%%
+@unexec if [ -d %D/%%X_FONTSDIR%% ]; then %%X11BASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%% || true; fi
