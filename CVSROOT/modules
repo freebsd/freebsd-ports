@@ -5225,6 +5225,7 @@ jailadmin	ports/sysutils/jailadmin
 jailaudit	ports/security/jailaudit
 jailctl		ports/sysutils/jailctl
 jailer		ports/sysutils/jailer
+jailme		ports/sysutils/jailme
 jailuser	ports/sysutils/jailuser
 jailutils	ports/sysutils/jailutils
 jakarta-bcel	ports/java/jakarta-bcel
