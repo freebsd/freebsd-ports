@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.1.6
+DISTVERSION=	1.2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/download/
 
@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
 INSTALL_TARGET=	install
-USE_LDCONFIG=	no
 
 OPTIONS=	GEOS "Include GEOS - the OpenGIS 'Simple Features for SQL'" off \
 		UTF8 "UTF-8 support for shp2pgsql. (needs libiconv)" off
@@ -32,6 +31,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgis \
 		--bindir=${PREFIX}/bin \
 		--libdir=${PREFIX}/lib \
+		--mandir=${PREFIX}/man \
 		--with-proj
 
 .include <bsd.port.pre.mk>
