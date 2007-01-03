@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	wavpack
-PORTVERSION=	4.32
+PORTVERSION=	4.40.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Compress (and restore) both 16 and 24-bit audio files in .wav format
 
-GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_ICONV=	yes
+USE_DOS2UNIX=	cli/*.[ch] include/*.h src/*.[ch]
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GNOME=	gnomehack gnometarget
-INSTALLS_SHLIB=	yes
-FILES=	wavpack.h unpack3.c words.c md5.c
+
+FILES=		include/wavpack.h src/unpack3.c src/words.c cli/md5.c
 
 post-patch:
 .for i in ${FILES}
