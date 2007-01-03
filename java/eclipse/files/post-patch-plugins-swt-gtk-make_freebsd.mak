@@ -1,5 +1,5 @@
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak.orig	Mon Oct  9 16:06:20 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	Mon Oct  9 16:27:59 2006
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak.orig	Thu Dec 14 18:01:12 2006
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	Thu Dec 14 18:03:00 2006
 @@ -48,7 +48,7 @@
  
  # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
@@ -22,9 +22,9 @@
  	-I. \
  	-I$(JAVA_HOME)/include \
  	-I$(JAVA_HOME)/include/freebsd \
-+	-I$(LOCALBASE)/include/mozilla \
-+	-I$(LOCALBASE)/include/mozilla/profdirserviceprovider \
-+	-I$(LOCALBASE)/include/mozilla/string \
++	-I$(LOCALBASE)/include/%%GECKO%% \
++	-I$(LOCALBASE)/include/%%GECKO%%/profdirserviceprovider \
++	-I$(LOCALBASE)/include/%%GECKO%%/string \
 +	-I$(LOCALBASE)/include/nspr \
  	${SWT_PTR_CFLAGS}
  MOZILLALIBS = -shared -s -Wl,--version-script=mozilla_exports -Bsymbolic
@@ -48,3 +48,41 @@
  
  #
  # SWT libs
+@@ -202,7 +207,7 @@
+ #
+ # Mozilla lib
+ #
+-make_mozilla:$(MOZILLA_LIB) $(PROFILE14_LIB) $(PROFILE17_LIB) $(PROFILE18_LIB)
++make_mozilla:$(MOZILLA_LIB)
+ 
+ $(MOZILLA_LIB): $(MOZILLA_OBJECTS)
+ 	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALIBS) ${GECKO_LIBS}
+@@ -220,22 +225,22 @@
+ 	$(CXX) $(MOZILLACFLAGS) ${GECKO_INCLUDES} -c xpcom_stats.cpp	
+ 
+ $(PROFILE14_OBJECTS): xpcom_profile.cpp
+-	$(CXX) -o $(PROFILE14_OBJECTS) $(MOZILLACFLAGS) ${PROFILE14_INCLUDES} -c xpcom_profile.cpp	
++	$(CXX) -o $(PROFILE14_OBJECTS) $(MOZILLACFLAGS) ${PROFILE14_INCLUDES} ${GECKO_INCLUDES} -c xpcom_profile.cpp	
+ 
+ $(PROFILE17_OBJECTS): xpcom_profile.cpp
+-	$(CXX) -o $(PROFILE17_OBJECTS) $(MOZILLACFLAGS) ${PROFILE17_INCLUDES} -c xpcom_profile.cpp	
++	$(CXX) -o $(PROFILE17_OBJECTS) $(MOZILLACFLAGS) ${PROFILE17_INCLUDES} ${GECKO_INCLUDES} -c xpcom_profile.cpp	
+ 
+ $(PROFILE18_OBJECTS): xpcom_profile.cpp
+-	$(CXX) -o $(PROFILE18_OBJECTS) $(MOZILLACFLAGS) ${PROFILE18_INCLUDES} -c xpcom_profile.cpp	
++	$(CXX) -o $(PROFILE18_OBJECTS) $(MOZILLACFLAGS) ${PROFILE18_INCLUDES} ${GECKO_INCLUDES} -c xpcom_profile.cpp	
+ 
+ $(PROFILE14_LIB): $(PROFILE14_OBJECTS)
+-	$(CXX) -o $(PROFILE14_LIB) $(PROFILE14_OBJECTS) $(MOZILLALIBS) ${PROFILE14_LIBS}
++	$(CXX) -o $(PROFILE14_LIB) $(PROFILE14_OBJECTS) $(MOZILLALIBS) ${PROFILE14_LIBS} ${GECKO_LIBS}
+ 
+ $(PROFILE17_LIB): $(PROFILE17_OBJECTS)
+-	$(CXX) -o $(PROFILE17_LIB) $(PROFILE17_OBJECTS) $(MOZILLALIBS) ${PROFILE17_LIBS}
++	$(CXX) -o $(PROFILE17_LIB) $(PROFILE17_OBJECTS) $(MOZILLALIBS) ${PROFILE17_LIBS} ${GECKO_LIBS}
+ 
+ $(PROFILE18_LIB): $(PROFILE18_OBJECTS)
+-	$(CXX) -o $(PROFILE18_LIB) $(PROFILE18_OBJECTS) $(MOZILLALIBS) ${PROFILE18_LIBS}
++	$(CXX) -o $(PROFILE18_LIB) $(PROFILE18_OBJECTS) $(MOZILLALIBS) ${PROFILE18_LIBS} ${GECKO_LIBS}
+ 
+ #
+ # GLX lib
