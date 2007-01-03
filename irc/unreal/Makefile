@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTVERSION=	3.2.6
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ilmarinen.us/unreal/ \
 		http://unrealircd.alert-net.com/ \
@@ -135,19 +134,20 @@ post-patch:
 do-install:
 	${INSTALL} -m 0700 ${WRKSRC}/src/ircd ${PREFIX}/libexec/ircd
 	${MKDIR} ${MODULESDIR}
-	${MKDIR} ${CONFIGDIR}
-	${MKDIR} ${CONFIGDIR}/aliases
+	${MKDIR} ${CONFIGDIR} || true
+	${MKDIR} ${CONFIGDIR}/aliases || true
+	${MKDIR} ${EXAMPLESDIR}/aliases
 	${MKDIR} ${DATADIR}/networks
 	${MKDIR} ${RUNDIR}/tmp
 	${MKDIR} ${LOGDIR}
 	${TOUCH} ${CONFIGDIR}/ircd.motd
 	${TOUCH} ${CONFIGDIR}/ircd.rules
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/badwords.*.conf ${CONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/help.conf ${CONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/spamfilter.conf ${CONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${CONFIGDIR}/unrealircd.conf
-	${INSTALL_DATA} ${WRKSRC}/aliases/*.conf ${CONFIGDIR}/aliases
+	${INSTALL_DATA} ${WRKSRC}/badwords.*.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/help.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/spamfilter.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${EXAMPLESDIR}/unrealircd.conf
+	${INSTALL_DATA} ${WRKSRC}/aliases/*.conf ${EXAMPLESDIR}/aliases
 	${INSTALL_DATA} ${WRKSRC}/networks/*.network ${DATADIR}/networks
 	${INSTALL_DATA} ${WRKSRC}/networks/networks.ndx ${DATADIR}/networks
 	${INSTALL_SCRIPT} ${WRKSRC}/networks/makenet ${DATADIR}/networks
@@ -160,6 +160,21 @@ do-install:
 .endif
 
 post-install:
+	@[ -f ${CONFIGDIR}/aliases/aliases.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/aliases.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/anope.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/anope.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/auspice.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/auspice.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/cygnus.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/cygnus.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/epona.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/epona.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/generic.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/generic.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/genericstats.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/genericstats.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/ircservices.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/ircservices.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/aliases/operstats.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/operstats.conf ${CONFIGDIR}/aliases
+	@[ -f ${CONFIGDIR}/badwords.channel.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/badwords.channel.conf ${CONFIGDIR}
+	@[ -f ${CONFIGDIR}/badworks.message.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/badwords.message.conf ${CONFIGDIR}
+	@[ -f ${CONFIGDIR}/badwords.quit.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/badwords.quit.conf ${CONFIGDIR}
+	@[ -f ${CONFIGDIR}/help.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/help.conf ${CONFIGDIR}
+	@[ -f ${CONFIGDIR}/spamfilter.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/spamfilter.conf ${CONFIGDIR}
+	@[ -f ${CONFIGDIR}/unrealircd.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/unrealircd.conf ${CONFIGDIR}
 .if defined(WITH_SQLMOD)
 	@${CP} ${WRKSRC}/SQLMod/sample.conf ${CONFIGDIR}/m_sqlmod.conf
 	@${CP} ${WRKSRC}/SQLMod/Changes ${DOCSDIR}/Changes.sqlmod
