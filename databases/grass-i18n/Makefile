@@ -6,6 +6,7 @@
 
 PORTNAME=	grass-i18n
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.grass-japan.org/FOSS4G/GRASS/:grass \
 		http://www.grass-japan.org/FOSS4G/ipafonts/:ipafonts
@@ -98,6 +99,10 @@ post-extract:
 	${MKDIR} ${WRKDIR}/tcltkgrass-i18n
 	cd ${WRKDIR}/tcltkgrass-i18n && ${TAR} xzf \
 		${DISTDIR}/${FILES_TKI18N}
+	if [ `${ID} -u` = 0 ]; then \
+		${CHMOD} -R ug-s ${WRKDIR}/tcltkgrass-i18n; \
+		${CHOWN} -R 0:0 ${WRKDIR}/tcltkgrass-i18n; \
+	fi
 	${RM} -rf `${FIND} ${WRKDIR}/tcltkgrass-i18n -type d -a -name cvs`
 .for D in docs main module script
 	${MV} ${WRKSRC}/src/tcltkgrass/${D} ${WRKSRC}/src/tcltkgrass/${D}.orig
