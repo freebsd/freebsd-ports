@@ -498,6 +498,7 @@
     SUBDIR += p5-Net-VNC
     SUBDIR += p5-Net-Wake
     SUBDIR += p5-Net-Whois
+    SUBDIR += p5-Net-Whois-ARIN
     SUBDIR += p5-Net-Whois-IP
     SUBDIR += p5-Net-Whois-RIPE
     SUBDIR += p5-Net-Whois-Raw
