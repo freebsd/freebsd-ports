@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	math cad parallel
-MASTER_SITES=	http://scilabsoft.inria.fr/download/${PORTVERSION}/
+MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	js@jeannot.org
