@@ -4,7 +4,6 @@ bin/asc_makegfx
 bin/asc_mapedit
 bin/asc_mount
 bin/asc_weaponguide
-share/games/asc/asc.gfx
 share/games/asc/asc_dlg.zip
 share/games/asc/buildings.con
 share/games/asc/main.con
