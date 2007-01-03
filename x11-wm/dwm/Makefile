@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://suckless.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
