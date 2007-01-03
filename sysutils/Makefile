@@ -295,6 +295,7 @@
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jailer
+    SUBDIR += jailme
     SUBDIR += jailuser
     SUBDIR += jailutils
     SUBDIR += jdiskreport
