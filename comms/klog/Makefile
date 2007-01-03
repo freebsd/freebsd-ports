@@ -6,6 +6,7 @@
 
 PORTNAME=	klog
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	klog
@@ -16,8 +17,11 @@ COMMENT=	ADIF compatible logging application
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
 
 USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
+
+DOCSDIR=share/doc/HTML
 
 post-install:
 	@${INSTALL_DATA}	${WRKSRC}/src/klog.desktop \
