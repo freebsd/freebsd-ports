@@ -9,7 +9,8 @@
 PORTNAME=	cairo
 PORTVERSION=	1.2.6
 CATEGORIES=	graphics python
-MASTER_SITES=	http://cairographics.org/releases/
+MASTER_SITES=	http://cairographics.org/releases/ \
+		http://zeqadious.homelinux.net/zenwalk/buildscripts/official/pycairo/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
