@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	1.8a
+PORTVERSION=	1.9
 CATEGORIES=	devel lang
-MASTER_SITES=	http://llvm.org/releases/${PORTVERSION:S/a//}/
+MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
@@ -18,11 +18,10 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GCC=	3.3+
-MAKE_ENV=	ENABLE_OPTIMIZED=1 # strips binaries
 
-WRKSRC=		${WRKDIR}/llvm
+CONFIGURE_FLAGS+=	--enable-optimized
 
-MAN1=		analyze.1 bugpoint.1 gccas.1 gccld.1 llc.1 lli.1 llvm-ar.1 \
+MAN1=		bugpoint.1 gccas.1 gccld.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvm2cpp.1 llvmc.1 llvmgcc.1 \
@@ -35,11 +34,8 @@ BROKEN=		does not compile with perl ${PERL_VERSION}
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,\(OPTIONAL_DIRS.*\)examples,\1,g' \
-		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,\(PROJ_docsdir.*:=\).*$$,\1${DOCSDIR},g' \
 		${WRKSRC}/Makefile.config.in
-	${RM} -rf ${WRKSRC}/projects/sample
 
 post-install:
 	${RM} -f ${PREFIX}/bin/.dir ${PREFIX}/lib/.dir
