@@ -9,10 +9,9 @@ PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/quake2/files/:icc \
-		http://www.icculus.org/quake2/files/:icc
+MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:icc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -74,7 +73,7 @@ PLIST_SUB+=	GLX="@comment "
 .endif
 
 .if defined(WITH_EYECANDY)
-DISTFILES+=	maxpak.pak:icc
+DISTFILES+=	maxpak.pak
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	BUILD_QMAX=YES
 PLIST_SUB+=	QMAX=""
@@ -82,7 +81,7 @@ PLIST_SUB+=	QMAX=""
 PLIST_SUB+=	QMAX="@comment "
 .endif
 
-.if defined(WITH_SDL) || ${HAVE_SDL:Msdl} != ""
+.if defined(WITH_SDL)
 USE_SDL=	sdl
 MAKE_ARGS+=	BUILD_SDL=YES
 REF_TARGETS+=	softsdl
@@ -91,7 +90,7 @@ PLIST_SUB+=	SDL=""
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_SDLGL) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
+.if defined(WITH_SDLGL) && defined(WITH_SDL)
 MAKE_ARGS+=	BUILD_SDLGL=YES
 REF_TARGETS+=	sdlgl
 PLIST_SUB+=	SDLGL=""
@@ -99,7 +98,7 @@ PLIST_SUB+=	SDLGL=""
 PLIST_SUB+=	SDLGL="@comment "
 .endif
 
-.if defined(WITH_SDLCLIENT) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
+.if defined(WITH_SDLCLIENT) && defined(WITH_SDL)
 MAKE_ARGS+=	BUILD_SDLQUAKE2=YES
 EXE_TARGETS+=	quake2-sdl
 PLIST_SUB+=	SDLCLIENT=""
@@ -107,7 +106,7 @@ PLIST_SUB+=	SDLCLIENT=""
 PLIST_SUB+=	SDLCLIENT="@comment "
 .endif
 
-.if ${ARCH} == "i386" && (defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1))
+.if ${ARCH} == "i386" && defined(WITH_SVGA)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 MAKE_ARGS+=	BUILD_SVGA=YES
 REF_TARGETS+=	soft
@@ -116,7 +115,7 @@ PLIST_SUB+=	SVGA=""
 PLIST_SUB+=	SVGA="@comment "
 .endif
 
-.if defined(WITH_AA) || exists(${LOCALBASE}/lib/libaa.so.1)
+.if defined(WITH_AA)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 MAKE_ARGS+=	BUILD_AA=YES
 REF_TARGETS+=	softaa
@@ -165,7 +164,7 @@ PLIST_SUB+=	CTF="@comment "
 
 .if defined(WITH_RETEXTURE)
 MAKE_ARGS+=	BUILD_RETEXTURE=YES
-RUN_DEPENDS+=	${Q2DIR}/baseq2/pak10.pak:${PORTSDIR}/games/quake2-retexture
+RUN_DEPENDS+=	${Q2DIR}/baseq2/pak10.pak:${PORTSDIR}/games/quake2-extras
 .endif
 
 .if defined(WITH_JOYSTICK)
@@ -180,7 +179,7 @@ MAKE_ARGS+=	BUILD_REDBLUE=YES
 MAKE_ARGS+=	HAVE_IPV6=YES
 .endif
 
-.if defined(WITH_ARTS) || exists (${LOCALBASE}/lib/libartsc.so.0)
+.if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 MAKE_ARGS+=	BUILD_ARTS=YES
 .endif
