@@ -2,20 +2,15 @@ bin/klog
 share/applnk/Applications/klog.desktop
 share/applnk/Utilities/klog.desktop
 share/apps/klog/klogui.rc
-share/doc/HTML/en/klog/common
-share/doc/HTML/en/klog/index.cache.bz2
-share/doc/HTML/en/klog/index.docbook
+%%DOCSDIR%%/en/klog/common
+%%DOCSDIR%%/en/klog/index.cache.bz2
+%%DOCSDIR%%/en/klog/index.docbook
 share/icons/hicolor/16x16/apps/klog.png
 share/icons/hicolor/32x32/apps/klog.png
 share/icons/locolor/16x16/apps/klog.png
 share/icons/locolor/32x32/apps/klog.png
 @dirrm share/apps/klog
-@dirrm share/doc/HTML/en/klog
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
+@dirrm %%DOCSDIR%%/en/klog
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
 @dirrmtry share/icons/locolor/16x16/apps
