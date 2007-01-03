@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,10 +30,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-firewire --with-x
 CFLAGS+=	-fPIC
-MAN1=	lqtplay.1
+MAN1=		lqtplay.1
 
 OPTIONS=	LAME "Enable Lame mp3 encoding support" Off \
-		GTK2 "Enable Gtk+2 Frontend" Off
+		GTK2 "Enable Gtk+2 Frontend" Off \
+		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
 
 PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 		qt4l_codecs.html qt4l_firewire.html qt4l_index.html \
@@ -42,6 +42,10 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 		qt4l_reading.html qt4l_util.html qt4l_writing.html
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+CONFIGURE_ARGS+=--without-cpuflags
+.endif
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) || !exists(${LOCALBASE}/lib/libavformat.a)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
@@ -71,10 +75,17 @@ CONFIGURE_ARGS+=	--enable-mmx
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
 		${WRKSRC}/plugins/audiocodec/* \
 		${WRKSRC}/plugins/videocodec/*
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${REINPLACE_CMD} -e 's|-O3 -funroll-all-loops -fomit-frame-pointer|${CFLAGS}|' \
+		${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS} -O3|' \
+		${WRKSRC}/configure
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
