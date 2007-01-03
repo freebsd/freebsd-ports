@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	squirrel
-PORTVERSION=	2.3.2
+PORTVERSION=	2.4
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 PKGNAMESUFFIX=	-sql
-DISTNAME=	squirrel-sql-2.3.2-standard
+DISTNAME=	squirrel-sql-2.4-standard
 
 MAINTAINER=	roy.boerner@bsd-crew.de
 COMMENT=	A universal SQL Client
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 WRKSRC=		${WRKDIR}/SQuirreL SQL Client
 DSTDIR=		${JAVASHAREDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
 SUB_FILES=	squirrel-sql
 
-DESKTOP_ENTRIES="Squirrel-SQL" \
+DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"${COMMENT}" \
 		"${DSTDIR}/icons/acorn.png" \
 		"squirrel-sql" \
