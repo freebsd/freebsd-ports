@@ -1,11 +1,11 @@
---- lwgeom/Makefile	Sun Jun 25 20:59:32 2006
-+++ lwgeom/Makefile	Wed Jul  5 16:29:07 2006
+--- lwgeom/Makefile	Tue Dec  5 17:07:00 2006
++++ lwgeom/Makefile	Wed Jan  3 14:45:49 2007
 @@ -129,7 +129,7 @@
  	$(PERL) ../utils/postgis_proc_upgrade.pl ../lwpostgis.sql > ../lwpostgis_upgrade.sql
  
- ../lwpostgis.sql: lwpostgis.sql.in long_xact.sql
+ ../lwpostgis.sql: lwpostgis.sql.in long_xact.sql.in sqlmm.sql.in sqldefines.h 
 -	cpp -P -traditional-cpp -DUSE_VERSION=$(USE_VERSION) $< | sed -e 's:@MODULE_FILENAME@:$(MODULE_FILENAME):g;s:@POSTGIS_VERSION@:$(POSTGIS_VERSION):g;s:@POSTGIS_SCRIPTS_VERSION@:$(SCRIPTS_VERSION):g;s/@POSTGIS_BUILD_DATE@/$(POSTGIS_BUILD_DATE)/g' | grep -v '^#' > $@
 +	cpp -P -traditional-cpp -DUSE_VERSION=$(USE_VERSION) $< | sed -e 's:@MODULE_FILENAME@:$$libdir/liblwgeom.so.1:g;s:@POSTGIS_VERSION@:$(POSTGIS_VERSION):g;s:@POSTGIS_SCRIPTS_VERSION@:$(SCRIPTS_VERSION):g;s/@POSTGIS_BUILD_DATE@/$(POSTGIS_BUILD_DATE)/g' | grep -v '^#' > $@
  
- ../regress/lwpostgis.sql: lwpostgis.sql.in long_xact.sql
+ ../regress/lwpostgis.sql: lwpostgis.sql.in long_xact.sql.in sqlmm.sql.in sqldefines.h
  	cpp -P -traditional-cpp -DUSE_VERSION=$(USE_VERSION) $< | sed -e 's#@MODULE_FILENAME@#$(REGRESS_MODULE_FILENAME)#g;s#@POSTGIS_VERSION@#$(POSTGIS_VERSION)#g;s#@POSTGIS_SCRIPTS_VERSION@#$(SCRIPTS_VERSION)#g;s/@POSTGIS_BUILD_DATE@/$(POSTGIS_BUILD_DATE)/g' | grep -v '^#' > $@
