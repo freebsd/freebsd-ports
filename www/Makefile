@@ -1055,6 +1055,7 @@
     SUBDIR += trac-addcomment
     SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-gantt
+    SUBDIR += trac-pagetopdf
     SUBDIR += trac-tags
     SUBDIR += trac-webadmin
     SUBDIR += trac-wikinotification
