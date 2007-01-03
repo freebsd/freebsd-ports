@@ -96,7 +96,7 @@ PLIST_SUB+=	ESDPLUGIN="@comment "
 .endif
 
 .if defined(WITH_GNOME)
-USE_GNOME+=	gnomevfs2
+USE_GNOME+=	gnomevfs2 gconf2
 CONFIGURE_ARGS+=	--enable-gnome-vfs --enable-gconf
 .endif
 
