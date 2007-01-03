@@ -511,6 +511,7 @@
     SUBDIR += portsearch
     SUBDIR += portsman
     SUBDIR += portsnap
+    SUBDIR += portsopt
     SUBDIR += portupgrade
     SUBDIR += portupgrade-devel
     SUBDIR += powerman
