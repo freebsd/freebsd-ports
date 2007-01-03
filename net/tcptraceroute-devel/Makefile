@@ -9,7 +9,8 @@ PORTNAME=	tcptraceroute
 PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/
+MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
+		http://sunpoet.net/distfiles/
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A traceroute implementation using TCP packets
