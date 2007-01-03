@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gavl
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.2.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gmerlin
@@ -18,12 +17,12 @@ COMMENT=	A library for handling uncompressed video and audio data
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
 USE_GNOME=	pkgconfig gnometarget gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-cpuflags
 
 PORTDOCS=	README
 
@@ -48,10 +47,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|llrintf|rintf|g' \
 		${WRKSRC}/gavl/c/*.*
 .endif
+	@${REINPLACE_CMD} -e 's|CFLAGS="-Wall|CFLAGS="${CFLAGS} -Wall|g' \
+		${WRKSRC}/configure
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e \
-	's|-fomit-frame-pointer -funroll-all-loops -falign-functions=2 -falign-loops=2 -falign-jumps=2||; \
-	 s|-O3||' ${WRKSRC}/configure
+	's|-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math||g' \
+		${WRKSRC}/configure
 .endif
 
 post-install:
