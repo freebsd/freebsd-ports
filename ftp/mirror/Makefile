@@ -11,8 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://sunsite.org.uk/old-sunsite/mirror/ \
 		ftp://src.doc.ic.ac.uk/old-sunsite/mirror/ \
-		ftp://ftp.cs.columbia.edu/archives/perl/mirror/ \
-		ftp://SunSITE.tus.ac.jp/pub/archives/packages/mirror/
+		ftp://ftp.cs.columbia.edu/archives/perl/mirror/
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ftp.pl_wupatch
