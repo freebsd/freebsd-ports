@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Symbolic-Custom-Transformation
-PORTVERSION=	1.01
+PORTVERSION=	1.24
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Transform Math::Symbolic trees
 
-BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
-		${SITE_PERL}/Math/Symbolic/Custom/Pattern.pm:${PORTSDIR}/math/p5-Math-Symbolic-Custom-Pattern
+BUILD_DEPENDS=	p5-Math-Symbolic>=0.163:${PORTSDIR}/math/p5-Math-Symbolic \
+		p5-Math-Symbolic-Custom-Pattern>=1.21:${PORTSDIR}/math/p5-Math-Symbolic-Custom-Pattern
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAN3=	Math::Symbolic::Custom::Transformation.3
+MAN3=	Math::Symbolic::Custom::Transformation.3 \
+	Math::Symbolic::Custom::Transformation::Group.3
 
 PERL_CONFIGURE=	yes
 
