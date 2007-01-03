@@ -1,0 +1,13 @@
+--- config/main.inc.php.dist.orig	Sat Dec  9 19:55:13 2006
++++ config/main.inc.php.dist	Sat Dec  9 19:57:58 2006
+@@ -160,8 +160,8 @@
+ // Make use of the built-in spell checker. It is based on GoogieSpell.
+ $rcmail_config['enable_spellcheck'] = TRUE;
+ 
+-// For a locally installed Nox Spell Server, please specify the URI to call it.
+-// Get Nox Spell Server from http://orangoo.com/labs/?page_id=72
++// For a locally installed spellcheker, specify the URI to call it, for example:
++// 'http://' . $_SERVER['HTTP_HOST'] . '/spellchecker.php?lang='
+ // Leave empty to use the Google spell checking service, what means
+ // that the message content will be sent to Google in order to check spelling
+ $rcmail_config['spellcheck_uri'] = '';
