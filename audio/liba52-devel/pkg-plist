@@ -6,5 +6,4 @@ lib/liba52-devel.a
 lib/liba52-devel.la
 lib/liba52-devel.so
 lib/liba52-devel.so.%%LIB_VERSION%%
-lib/liba52-devel_p.a
 @dirrm include/a52dec-devel
