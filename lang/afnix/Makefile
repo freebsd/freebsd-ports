@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
@@ -25,7 +25,6 @@ CONFIGURE_SCRIPT=	cnf/bin/afnix-setup
 CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --compiler freebsd
 MAKE_ENV=	CXX="${CXX}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
