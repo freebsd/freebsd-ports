@@ -1,0 +1,7 @@
+To connect to your favorite database you can install one of the following JDBC
+drivers.
+
+* databases/mysql-connector-java
+* databases/postgresql-jdbc
+
+After that you have to configure the driver via the GUI (see Help).
