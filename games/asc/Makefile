@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.16.3.0
-PORTREVISION=	1
+PORTVERSION=	1.16.4.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
@@ -26,12 +25,15 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
+USE_GCC=	3.4+
 USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		CXXFLAGS="-D_UNICODE_BROKEN_" \
 		LIBS="`${SDL_CONFIG} --libs` -lm"
 
-CONFIGURE_ARGS=	--disable-paraguitest
+CONFIGURE_ARGS=	--disable-paraguitest	\
+		--prefix=${TARGETDIR}	\
+		--mandir=${MANPREFIX}/man
 
 OPTIONS=	MUSIC "Install extra music files" off
 
@@ -62,5 +64,9 @@ pre-build:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
 
 .include <bsd.port.post.mk>
