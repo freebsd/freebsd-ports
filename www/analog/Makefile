@@ -17,7 +17,6 @@ MASTER_SITES=	http://www.analog.cx/ \
 		http://analog.mirrors.ecodigit.com.br/ \
 		http://analog.org/loganalysis/ \
 		http://analog.techsell.ru/ \
-		http://sunsite.sut.ac.jp/pub/archives/WWW/analog/ \
 		ftp://ftp.polytechnic.edu.na/pub/analog/ \
 		http://analog.netsoc.ucd.ie/ \
 		http://analog.tzone.it/

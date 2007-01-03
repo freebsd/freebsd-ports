@@ -8,9 +8,7 @@
 PORTNAME=	xkeywrap
 PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
-		http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
-		http://www.people.or.jp/~hsakai/myfreesoft/
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
