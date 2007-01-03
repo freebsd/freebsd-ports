@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twolame
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.ecs.soton.ac.uk/~njh/twolame/
@@ -17,15 +17,16 @@ COMMENT=	MPEG Audio Layer 2 encoder
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnometarget
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+
 MAN1=		twolame.1
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's| -O3||g' \
+		${WRKSRC}/configure
 
-.if ${OSVERSION} < 500000
-BROKEN=	Incorrect plist
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
