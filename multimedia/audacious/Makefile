@@ -31,7 +31,7 @@ OPTIONS=	GNOME	"Build with gconf support" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOME)
-USE_GNOME+=	gconf
+USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=--enable-gconf
 .endif
 
