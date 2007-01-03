@@ -6,28 +6,36 @@
 #
 
 PORTNAME=	ldapscripts
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net
-MASTER_SITES=	http://contribs.martymac.com/ldapscripts/
+MASTER_SITES=	http://contribs.martymac.com/ldapscripts/ \
+				${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Scripts to manage posix accounts in an OpenLDAP directory
 
-RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap23-client \
-		ldapsearch:${PORTSDIR}/net/openldap23-client \
-		ldapdelete:${PORTSDIR}/net/openldap23-client \
-		ldapmodify:${PORTSDIR}/net/openldap23-client \
-		ldapmodrdn:${PORTSDIR}/net/openldap23-client \
-		ldappasswd:${PORTSDIR}/net/openldap23-client
+NO_BUILD=	yes
+
+WANT_OPENLDAP_VER?=	23
+.if (${WANT_OPENLDAP_VER} != 21) && (${WANT_OPENLDAP_VER} != 22) && (${WANT_OPENLDAP_VER} != 23) && (${WANT_OPENLDAP_VER} != 24)
+BROKEN=	Incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
+.endif
+
+RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
+		ldapsearch:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
+		ldapdelete:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
+		ldapmodify:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
+		ldapmodrdn:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
+		ldappasswd:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
 
 MANLANG=	""
 MANCOMPRESSED=	no
-MAN1=		ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \
+MAN1=	ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \
 		ldapdeletegroup.1 ldapdeleteuser.1 ldapdeleteuserfromgroup.1 \
 		ldaprenameuser.1 ldapsetprimarygroup.1 _lsldap.1 _ldaprenamemachine.1 \
-		_ldaprenamegroup.1 _ldapinit.1 _ldapdeletemachine.1
-MAN5=		ldapscripts.5
+		_ldaprenamegroup.1 _ldapinit.1 _ldapdeletemachine.1 _ldappasswd.1
+MAN5=	ldapscripts.5
 
 # Change /etc to ${LOCALBASE}/etc
 post-patch:
@@ -40,9 +48,6 @@ post-patch:
 	${REINPLACE_CMD} -E -e "s|^LDAPMODIFYBIN=.*|LDAPMODIFYBIN=\"${LOCALBASE}/bin/ldapmodify\"|g" ${WRKSRC}/etc/ldapscripts.conf
 	${REINPLACE_CMD} -E -e "s|^LDAPMODRDNBIN=.*|LDAPMODRDNBIN=\"${LOCALBASE}/bin/ldapmodrdn\"|g" ${WRKSRC}/etc/ldapscripts.conf
 	${REINPLACE_CMD} -E -e "s|^LDAPPASSWDBIN=.*|LDAPPASSWDBIN=\"${LOCALBASE}/bin/ldappasswd\"|g" ${WRKSRC}/etc/ldapscripts.conf
-
-# We do not use any Makefile
-do-build:
 
 # Just copy the scripts
 do-install:
@@ -60,6 +65,7 @@ do-install:
 	${CP} ${WRKSRC}/bin/ldaprenameuser ${PREFIX}/bin
 	${CP} ${WRKSRC}/bin/_ldaprenamegroup ${PREFIX}/bin
 	${CP} ${WRKSRC}/bin/_ldaprenamemachine ${PREFIX}/bin
+	${CP} ${WRKSRC}/bin/_ldappasswd ${PREFIX}/bin
 
 	${MKDIR} ${LOCALBASE}/etc/ldapscripts
 	if [ -f ${LOCALBASE}/etc/ldapscripts/ldapscripts.conf ]; then \

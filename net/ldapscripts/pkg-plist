@@ -20,3 +20,4 @@ bin/ldapsetprimarygroup
 bin/ldaprenameuser
 bin/_ldaprenamemachine
 bin/_ldaprenamegroup
+bin/_ldappasswd
