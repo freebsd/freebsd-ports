@@ -54,6 +54,7 @@ lib/scilab/config/Makefile.hpux
 lib/scilab/config/Makefile.hpux11
 lib/scilab/config/Makefile.hpux9
 lib/scilab/config/Makefile.linux
+lib/scilab/config/Makefile.linux64
 lib/scilab/config/Makefile.mak
 lib/scilab/config/Makefile.mingwin32
 lib/scilab/config/Makefile.netbsd
@@ -500,13 +501,7 @@ lib/scilab/examples/Makesubdirs.bat
 lib/scilab/examples/README
 lib/scilab/examples/callsci/.scicos_pal
 lib/scilab/examples/callsci/Makefile
-lib/scilab/examples/callsci/callsciBC++/LibScilab.def
-lib/scilab/examples/callsci/callsciBC++/LibScilab.lib
 lib/scilab/examples/callsci/callsciBC++/Readme.txt
-lib/scilab/examples/callsci/callsciBC++/myprog.c
-lib/scilab/examples/callsci/callsciBC++/scilab.bpf
-lib/scilab/examples/callsci/callsciBC++/scilab.bpr
-lib/scilab/examples/callsci/callsciBC++/scilab.res
 lib/scilab/examples/callsci/callsciC++/.scicos_pal
 lib/scilab/examples/callsci/callsciC++/Makefile
 lib/scilab/examples/callsci/callsciC++/Makefile.mak
@@ -538,11 +533,13 @@ lib/scilab/examples/callsci/callsciC/myprog.c
 lib/scilab/examples/callsci/callsciC/myprog.sh
 lib/scilab/examples/callsci/callsciFortran/Makefile
 lib/scilab/examples/callsci/callsciFortran/README
+lib/scilab/examples/callsci/callsciFortran/Readme_Windows.txt
 lib/scilab/examples/callsci/callsciFortran/callsci.f
 lib/scilab/examples/callsci/callsciFortran/config/Init
 lib/scilab/examples/callsci/callsciFortran/config/Makefile.all
 lib/scilab/examples/callsci/callsciFortran/config/Makefile.incl
 lib/scilab/examples/callsci/callsciFortran/config/callsci.sh
+lib/scilab/examples/callsci/callsciFortran/makefile.mak
 lib/scilab/examples/callsci/callsciJava/ihm/MaFenetre.java
 lib/scilab/examples/callsci/callsciJava/ihm/Make.bat
 lib/scilab/examples/callsci/callsciJava/ihm/MonEcouteurPourBouton.java
@@ -556,11 +553,15 @@ lib/scilab/examples/callsci/callsciJava/ihm/WCloser.java
 lib/scilab/examples/callsci/callsciJava/ihm/builder.sce
 lib/scilab/examples/callsci/callsciJava/ihm/clean.bat
 lib/scilab/examples/callsci/callsciJava/others/Exemple1.java
+lib/scilab/examples/callsci/callsciJava/others/Exemple10.java
 lib/scilab/examples/callsci/callsciJava/others/Exemple2.java
 lib/scilab/examples/callsci/callsciJava/others/Exemple3.java
 lib/scilab/examples/callsci/callsciJava/others/Exemple4.java
 lib/scilab/examples/callsci/callsciJava/others/Exemple5.java
 lib/scilab/examples/callsci/callsciJava/others/Exemple6.java
+lib/scilab/examples/callsci/callsciJava/others/Exemple7A.java
+lib/scilab/examples/callsci/callsciJava/others/Exemple7B.java
+lib/scilab/examples/callsci/callsciJava/others/Exemple9.java
 lib/scilab/examples/callsci/callsciJava/others/ExempleEvent.java
 lib/scilab/examples/callsci/callsciJava/others/ExempleEvent2.bat
 lib/scilab/examples/callsci/callsciJava/others/ExempleEvent2.java
@@ -1091,15 +1092,8 @@ lib/scilab/examples/man-examples/helpdir2/example3.man
 lib/scilab/examples/man-examples/loader.sce
 lib/scilab/examples/mex-examples/Makefile
 lib/scilab/examples/mex-examples/cmex/Makefile
-lib/scilab/examples/mex-examples/cmex/Makefile.mak
 lib/scilab/examples/mex-examples/cmex/README
-lib/scilab/examples/mex-examples/cmex/builder.sce
-lib/scilab/examples/mex-examples/cmex/libmex.c.ref
-lib/scilab/examples/mex-examples/cmex/libmex.dia.ref
-lib/scilab/examples/mex-examples/cmex/libmex.tst
-lib/scilab/examples/mex-examples/cmex/loader.sce
-lib/scilab/examples/mex-examples/cmex/make.bat
-lib/scilab/examples/mex-examples/cmex/mexfunction15.c
+lib/scilab/examples/mex-examples/cmex/cmex.sce
 lib/scilab/examples/mex-examples/cppmex/Makefile
 lib/scilab/examples/mex-examples/cppmex/Makefile.mak
 lib/scilab/examples/mex-examples/cppmex/README
@@ -1565,8 +1559,6 @@ lib/scilab/macros/auto/rowregul.bin
 lib/scilab/macros/auto/rowregul.sci
 lib/scilab/macros/auto/scicos.bin
 lib/scilab/macros/auto/scicos.sci
-lib/scilab/macros/auto/scicos_new.bin
-lib/scilab/macros/auto/scicos_new.sci
 lib/scilab/macros/auto/scicos_simulate.bin
 lib/scilab/macros/auto/scicos_simulate.sci
 lib/scilab/macros/auto/sm2des.bin
@@ -1696,6 +1688,8 @@ lib/scilab/macros/elem/cell2mat.bin
 lib/scilab/macros/elem/cell2mat.sci
 lib/scilab/macros/elem/cellstr.bin
 lib/scilab/macros/elem/cellstr.sci
+lib/scilab/macros/elem/complex.bin
+lib/scilab/macros/elem/complex.sci
 lib/scilab/macros/elem/convertindex.bin
 lib/scilab/macros/elem/convertindex.sci
 lib/scilab/macros/elem/cosh.bin
@@ -1716,6 +1710,10 @@ lib/scilab/macros/elem/erfc.bin
 lib/scilab/macros/elem/erfc.sci
 lib/scilab/macros/elem/erfcx.bin
 lib/scilab/macros/elem/erfcx.sci
+lib/scilab/macros/elem/factor.bin
+lib/scilab/macros/elem/factor.sci
+lib/scilab/macros/elem/factorial.bin
+lib/scilab/macros/elem/factorial.sci
 lib/scilab/macros/elem/fix.bin
 lib/scilab/macros/elem/fix.sci
 lib/scilab/macros/elem/ind2sub.bin
@@ -1766,12 +1764,16 @@ lib/scilab/macros/elem/null.bin
 lib/scilab/macros/elem/null.sci
 lib/scilab/macros/elem/num2cell.bin
 lib/scilab/macros/elem/num2cell.sci
+lib/scilab/macros/elem/perms.bin
+lib/scilab/macros/elem/perms.sci
 lib/scilab/macros/elem/permute.bin
 lib/scilab/macros/elem/permute.sci
 lib/scilab/macros/elem/pertrans.bin
 lib/scilab/macros/elem/pertrans.sci
 lib/scilab/macros/elem/pmodulo.bin
 lib/scilab/macros/elem/pmodulo.sci
+lib/scilab/macros/elem/primes.bin
+lib/scilab/macros/elem/primes.sci
 lib/scilab/macros/elem/setdiff.bin
 lib/scilab/macros/elem/setdiff.sci
 lib/scilab/macros/elem/signm.bin
@@ -2290,6 +2292,8 @@ lib/scilab/macros/m2sci/sci_files/sci_cot.bin
 lib/scilab/macros/m2sci/sci_files/sci_cot.sci
 lib/scilab/macros/m2sci/sci_files/sci_coth.bin
 lib/scilab/macros/m2sci/sci_files/sci_coth.sci
+lib/scilab/macros/m2sci/sci_files/sci_cov.bin
+lib/scilab/macros/m2sci/sci_files/sci_cov.sci
 lib/scilab/macros/m2sci/sci_files/sci_cputime.bin
 lib/scilab/macros/m2sci/sci_files/sci_cputime.sci
 lib/scilab/macros/m2sci/sci_files/sci_csc.bin
@@ -2356,6 +2360,10 @@ lib/scilab/macros/m2sci/sci_files/sci_expm.bin
 lib/scilab/macros/m2sci/sci_files/sci_expm.sci
 lib/scilab/macros/m2sci/sci_files/sci_eye.bin
 lib/scilab/macros/m2sci/sci_files/sci_eye.sci
+lib/scilab/macros/m2sci/sci_files/sci_factor.bin
+lib/scilab/macros/m2sci/sci_files/sci_factor.sci
+lib/scilab/macros/m2sci/sci_files/sci_factorial.bin
+lib/scilab/macros/m2sci/sci_files/sci_factorial.sci
 lib/scilab/macros/m2sci/sci_files/sci_false.bin
 lib/scilab/macros/m2sci/sci_files/sci_false.sci
 lib/scilab/macros/m2sci/sci_files/sci_fclose.bin
@@ -2568,12 +2576,16 @@ lib/scilab/macros/m2sci/sci_files/sci_ones.bin
 lib/scilab/macros/m2sci/sci_files/sci_ones.sci
 lib/scilab/macros/m2sci/sci_files/sci_pause.bin
 lib/scilab/macros/m2sci/sci_files/sci_pause.sci
+lib/scilab/macros/m2sci/sci_files/sci_perms.bin
+lib/scilab/macros/m2sci/sci_files/sci_perms.sci
 lib/scilab/macros/m2sci/sci_files/sci_pie.bin
 lib/scilab/macros/m2sci/sci_files/sci_pie.sci
 lib/scilab/macros/m2sci/sci_files/sci_plot.bin
 lib/scilab/macros/m2sci/sci_files/sci_plot.sci
 lib/scilab/macros/m2sci/sci_files/sci_pow2.bin
 lib/scilab/macros/m2sci/sci_files/sci_pow2.sci
+lib/scilab/macros/m2sci/sci_files/sci_primes.bin
+lib/scilab/macros/m2sci/sci_files/sci_primes.sci
 lib/scilab/macros/m2sci/sci_files/sci_prod.bin
 lib/scilab/macros/m2sci/sci_files/sci_prod.sci
 lib/scilab/macros/m2sci/sci_files/sci_qr.bin
@@ -2618,10 +2630,14 @@ lib/scilab/macros/m2sci/sci_files/sci_size.bin
 lib/scilab/macros/m2sci/sci_files/sci_size.sci
 lib/scilab/macros/m2sci/sci_files/sci_sort.bin
 lib/scilab/macros/m2sci/sci_files/sci_sort.sci
+lib/scilab/macros/m2sci/sci_files/sci_sortrows.bin
+lib/scilab/macros/m2sci/sci_files/sci_sortrows.sci
 lib/scilab/macros/m2sci/sci_files/sci_sparse.bin
 lib/scilab/macros/m2sci/sci_files/sci_sparse.sci
 lib/scilab/macros/m2sci/sci_files/sci_sqrt.bin
 lib/scilab/macros/m2sci/sci_files/sci_sqrt.sci
+lib/scilab/macros/m2sci/sci_files/sci_str2num.bin
+lib/scilab/macros/m2sci/sci_files/sci_str2num.sci
 lib/scilab/macros/m2sci/sci_files/sci_strcmp.bin
 lib/scilab/macros/m2sci/sci_files/sci_strcmp.sci
 lib/scilab/macros/m2sci/sci_files/sci_strcmpi.bin
@@ -2644,6 +2660,8 @@ lib/scilab/macros/m2sci/sci_files/sci_tanh.bin
 lib/scilab/macros/m2sci/sci_files/sci_tanh.sci
 lib/scilab/macros/m2sci/sci_files/sci_tic.bin
 lib/scilab/macros/m2sci/sci_files/sci_tic.sci
+lib/scilab/macros/m2sci/sci_files/sci_title.bin
+lib/scilab/macros/m2sci/sci_files/sci_title.sci
 lib/scilab/macros/m2sci/sci_files/sci_toc.bin
 lib/scilab/macros/m2sci/sci_files/sci_toc.sci
 lib/scilab/macros/m2sci/sci_files/sci_toeplitz.bin
@@ -2680,8 +2698,14 @@ lib/scilab/macros/m2sci/sci_files/sci_whos.bin
 lib/scilab/macros/m2sci/sci_files/sci_whos.sci
 lib/scilab/macros/m2sci/sci_files/sci_winqueryreg.bin
 lib/scilab/macros/m2sci/sci_files/sci_winqueryreg.sci
+lib/scilab/macros/m2sci/sci_files/sci_xlabel.bin
+lib/scilab/macros/m2sci/sci_files/sci_xlabel.sci
+lib/scilab/macros/m2sci/sci_files/sci_ylabel.bin
+lib/scilab/macros/m2sci/sci_files/sci_ylabel.sci
 lib/scilab/macros/m2sci/sci_files/sci_zeros.bin
 lib/scilab/macros/m2sci/sci_files/sci_zeros.sci
+lib/scilab/macros/m2sci/sci_files/sci_zlabel.bin
+lib/scilab/macros/m2sci/sci_files/sci_zlabel.sci
 lib/scilab/macros/metanet/add_edge.bin
 lib/scilab/macros/metanet/add_edge.sci
 lib/scilab/macros/metanet/add_node.bin
@@ -2995,6 +3019,8 @@ lib/scilab/macros/metanet/supernode.bin
 lib/scilab/macros/metanet/supernode.sci
 lib/scilab/macros/metanet/trans_closure.bin
 lib/scilab/macros/metanet/trans_closure.sci
+lib/scilab/macros/mtlb/%b_a_b.bin
+lib/scilab/macros/mtlb/%b_a_b.sci
 lib/scilab/macros/mtlb/%b_a_s.bin
 lib/scilab/macros/mtlb/%b_a_s.sci
 lib/scilab/macros/mtlb/%b_c_s.bin
@@ -3011,20 +3037,30 @@ lib/scilab/macros/mtlb/%b_i_ce.bin
 lib/scilab/macros/mtlb/%b_i_ce.sci
 lib/scilab/macros/mtlb/%b_i_st.bin
 lib/scilab/macros/mtlb/%b_i_st.sci
+lib/scilab/macros/mtlb/%b_l_b.bin
+lib/scilab/macros/mtlb/%b_l_b.sci
 lib/scilab/macros/mtlb/%b_l_s.bin
 lib/scilab/macros/mtlb/%b_l_s.sci
+lib/scilab/macros/mtlb/%b_m_b.bin
+lib/scilab/macros/mtlb/%b_m_b.sci
 lib/scilab/macros/mtlb/%b_m_s.bin
 lib/scilab/macros/mtlb/%b_m_s.sci
 lib/scilab/macros/mtlb/%b_p_s.bin
 lib/scilab/macros/mtlb/%b_p_s.sci
 lib/scilab/macros/mtlb/%b_prod.bin
 lib/scilab/macros/mtlb/%b_prod.sci
+lib/scilab/macros/mtlb/%b_r_b.bin
+lib/scilab/macros/mtlb/%b_r_b.sci
 lib/scilab/macros/mtlb/%b_r_s.bin
 lib/scilab/macros/mtlb/%b_r_s.sci
+lib/scilab/macros/mtlb/%b_s_b.bin
+lib/scilab/macros/mtlb/%b_s_b.sci
 lib/scilab/macros/mtlb/%b_s_s.bin
 lib/scilab/macros/mtlb/%b_s_s.sci
 lib/scilab/macros/mtlb/%b_sum.bin
 lib/scilab/macros/mtlb/%b_sum.sci
+lib/scilab/macros/mtlb/%b_x_b.bin
+lib/scilab/macros/mtlb/%b_x_b.sci
 lib/scilab/macros/mtlb/%b_x_s.bin
 lib/scilab/macros/mtlb/%b_x_s.sci
 lib/scilab/macros/mtlb/%c_i_ce.bin
@@ -3240,6 +3276,8 @@ lib/scilab/macros/mtlb/mtlb_cond.bin
 lib/scilab/macros/mtlb/mtlb_cond.sci
 lib/scilab/macros/mtlb/mtlb_conv.bin
 lib/scilab/macros/mtlb/mtlb_conv.sci
+lib/scilab/macros/mtlb/mtlb_cov.bin
+lib/scilab/macros/mtlb/mtlb_cov.sci
 lib/scilab/macros/mtlb/mtlb_cumprod.bin
 lib/scilab/macros/mtlb/mtlb_cumprod.sci
 lib/scilab/macros/mtlb/mtlb_cumsum.bin
@@ -3398,6 +3436,8 @@ lib/scilab/macros/mtlb/mtlb_size.bin
 lib/scilab/macros/mtlb/mtlb_size.sci
 lib/scilab/macros/mtlb/mtlb_sort.bin
 lib/scilab/macros/mtlb/mtlb_sort.sci
+lib/scilab/macros/mtlb/mtlb_sortrows.bin
+lib/scilab/macros/mtlb/mtlb_sortrows.sci
 lib/scilab/macros/mtlb/mtlb_sprintf.bin
 lib/scilab/macros/mtlb/mtlb_sprintf.sci
 lib/scilab/macros/mtlb/mtlb_sscanf.bin
@@ -4264,6 +4304,8 @@ lib/scilab/macros/percent/%s_a_sp.bin
 lib/scilab/macros/percent/%s_a_sp.sci
 lib/scilab/macros/percent/%s_and.bin
 lib/scilab/macros/percent/%s_and.sci
+lib/scilab/macros/percent/%s_b_i.bin
+lib/scilab/macros/percent/%s_b_i.sci
 lib/scilab/macros/percent/%s_c_cblock.bin
 lib/scilab/macros/percent/%s_c_cblock.sci
 lib/scilab/macros/percent/%s_c_lss.bin
@@ -4860,6 +4902,8 @@ lib/scilab/macros/scicos/Compile_.bin
 lib/scilab/macros/scicos/Compile_.sci
 lib/scilab/macros/scicos/Context_.bin
 lib/scilab/macros/scicos/Context_.sci
+lib/scilab/macros/scicos/CopyRegion_.bin
+lib/scilab/macros/scicos/CopyRegion_.sci
 lib/scilab/macros/scicos/Copy_.bin
 lib/scilab/macros/scicos/Copy_.sci
 lib/scilab/macros/scicos/Cut_.bin
@@ -5402,8 +5446,6 @@ lib/scilab/macros/scicos_blocks/Branching/ESELECT_f.bin
 lib/scilab/macros/scicos_blocks/Branching/ESELECT_f.sci
 lib/scilab/macros/scicos_blocks/Branching/EXTRACTOR.bin
 lib/scilab/macros/scicos_blocks/Branching/EXTRACTOR.sci
-lib/scilab/macros/scicos_blocks/Branching/IFTHEL_f.bin
-lib/scilab/macros/scicos_blocks/Branching/IFTHEL_f.sci
 lib/scilab/macros/scicos_blocks/Branching/ISELECT_f.bin
 lib/scilab/macros/scicos_blocks/Branching/ISELECT_f.sci
 lib/scilab/macros/scicos_blocks/Branching/MUX.bin
@@ -5490,8 +5532,6 @@ lib/scilab/macros/scicos_blocks/Events/CLKSOM_f.bin
 lib/scilab/macros/scicos_blocks/Events/CLKSOM_f.sci
 lib/scilab/macros/scicos_blocks/Events/CLKSPLIT_f.bin
 lib/scilab/macros/scicos_blocks/Events/CLKSPLIT_f.sci
-lib/scilab/macros/scicos_blocks/Events/CLOCK_f.bin
-lib/scilab/macros/scicos_blocks/Events/CLOCK_f.sci
 lib/scilab/macros/scicos_blocks/Events/EVTDLY_f.bin
 lib/scilab/macros/scicos_blocks/Events/EVTDLY_f.sci
 lib/scilab/macros/scicos_blocks/Events/EVTGEN_f.bin
@@ -5506,8 +5546,6 @@ lib/scilab/macros/scicos_blocks/Events/MCLOCK_f.bin
 lib/scilab/macros/scicos_blocks/Events/MCLOCK_f.sci
 lib/scilab/macros/scicos_blocks/Events/MFCLCK_f.bin
 lib/scilab/macros/scicos_blocks/Events/MFCLCK_f.sci
-lib/scilab/macros/scicos_blocks/Events/TRASH_f.bin
-lib/scilab/macros/scicos_blocks/Events/TRASH_f.sci
 lib/scilab/macros/scicos_blocks/Events/buildmacros.sce
 lib/scilab/macros/scicos_blocks/Events/freq_div.bin
 lib/scilab/macros/scicos_blocks/Events/freq_div.sci
@@ -5746,6 +5784,8 @@ lib/scilab/macros/scicos_blocks/PDE/arbre_decision.bin
 lib/scilab/macros/scicos_blocks/PDE/arbre_decision.sci
 lib/scilab/macros/scicos_blocks/PDE/assemb.bin
 lib/scilab/macros/scicos_blocks/PDE/assemb.sci
+lib/scilab/macros/scicos_blocks/PDE/assemblage_FE1D.bin
+lib/scilab/macros/scicos_blocks/PDE/assemblage_FE1D.sci
 lib/scilab/macros/scicos_blocks/PDE/buildmacros.sce
 lib/scilab/macros/scicos_blocks/PDE/cformatlinedp.bin
 lib/scilab/macros/scicos_blocks/PDE/cformatlinedp.sci
@@ -6540,6 +6580,8 @@ lib/scilab/macros/util/oct2dec.bin
 lib/scilab/macros/util/oct2dec.sci
 lib/scilab/macros/util/odeoptions.bin
 lib/scilab/macros/util/odeoptions.sci
+lib/scilab/macros/util/old2newinstr.bin
+lib/scilab/macros/util/old2newinstr.sci
 lib/scilab/macros/util/pathconvert.bin
 lib/scilab/macros/util/pathconvert.sci
 lib/scilab/macros/util/perl.bin
@@ -6685,6 +6727,8 @@ lib/scilab/macros/xdess/Sfgrayplot.bin
 lib/scilab/macros/xdess/Sfgrayplot.sci
 lib/scilab/macros/xdess/Sgrayplot.bin
 lib/scilab/macros/xdess/Sgrayplot.sci
+lib/scilab/macros/xdess/TitleLabel.bin
+lib/scilab/macros/xdess/TitleLabel.sci
 lib/scilab/macros/xdess/addcolor.bin
 lib/scilab/macros/xdess/addcolor.sci
 lib/scilab/macros/xdess/bar.bin
@@ -6772,6 +6816,8 @@ lib/scilab/macros/xdess/getPlotPropertyName.bin
 lib/scilab/macros/xdess/getPlotPropertyName.sci
 lib/scilab/macros/xdess/getSurfPropertyName.bin
 lib/scilab/macros/xdess/getSurfPropertyName.sci
+lib/scilab/macros/xdess/getTitleLabelPropertyNam.bin
+lib/scilab/macros/xdess/getTitleLabelPropertyNam.sci
 lib/scilab/macros/xdess/getcolor.bin
 lib/scilab/macros/xdess/getcolor.sci
 lib/scilab/macros/xdess/getfont.bin
@@ -6877,6 +6923,8 @@ lib/scilab/macros/xdess/setPlotProperty.bin
 lib/scilab/macros/xdess/setPlotProperty.sci
 lib/scilab/macros/xdess/setSurfProperty.bin
 lib/scilab/macros/xdess/setSurfProperty.sci
+lib/scilab/macros/xdess/setTitleLabelProperty.bin
+lib/scilab/macros/xdess/setTitleLabelProperty.sci
 lib/scilab/macros/xdess/sgrid.bin
 lib/scilab/macros/xdess/sgrid.sci
 lib/scilab/macros/xdess/show_pixmap.bin
@@ -6889,6 +6937,8 @@ lib/scilab/macros/xdess/subplot.bin
 lib/scilab/macros/xdess/subplot.sci
 lib/scilab/macros/xdess/surf.bin
 lib/scilab/macros/xdess/surf.sci
+lib/scilab/macros/xdess/title.bin
+lib/scilab/macros/xdess/title.sci
 lib/scilab/macros/xdess/titlepage.bin
 lib/scilab/macros/xdess/titlepage.sci
 lib/scilab/macros/xdess/twinkle.bin
@@ -6903,14 +6953,20 @@ lib/scilab/macros/xdess/xclear.bin
 lib/scilab/macros/xdess/xclear.sci
 lib/scilab/macros/xdess/xclip.bin
 lib/scilab/macros/xdess/xclip.sci
+lib/scilab/macros/xdess/xlabel.bin
+lib/scilab/macros/xdess/xlabel.sci
 lib/scilab/macros/xdess/xnumb.bin
 lib/scilab/macros/xdess/xnumb.sci
 lib/scilab/macros/xdess/xrpoly.bin
 lib/scilab/macros/xdess/xrpoly.sci
 lib/scilab/macros/xdess/xsetm.bin
 lib/scilab/macros/xdess/xsetm.sci
+lib/scilab/macros/xdess/ylabel.bin
+lib/scilab/macros/xdess/ylabel.sci
 lib/scilab/macros/xdess/zgrid.bin
 lib/scilab/macros/xdess/zgrid.sci
+lib/scilab/macros/xdess/zlabel.bin
+lib/scilab/macros/xdess/zlabel.sci
 lib/scilab/man/BuildChm/BuildChm.vcproj
 lib/scilab/man/BuildChm/makefile.mak
 lib/scilab/man/BuildHelp.vcproj
@@ -6928,7 +6984,6 @@ lib/scilab/man/eng/arma/armax1.htm
 lib/scilab/man/eng/arma/arsimul.htm
 lib/scilab/man/eng/arma/narsimul.htm
 lib/scilab/man/eng/arma/noisegen.htm
-lib/scilab/man/eng/arma/odedi.htm
 lib/scilab/man/eng/arma/prbs_a.htm
 lib/scilab/man/eng/arma/reglin.htm
 lib/scilab/man/eng/arma/whatis.htm
@@ -6993,7 +7048,6 @@ lib/scilab/man/eng/control/ppol.htm
 lib/scilab/man/eng/control/projsl.htm
 lib/scilab/man/eng/control/repfreq.htm
 lib/scilab/man/eng/control/ricc.htm
-lib/scilab/man/eng/control/riccsl.htm
 lib/scilab/man/eng/control/rowregul.htm
 lib/scilab/man/eng/control/rtitr.htm
 lib/scilab/man/eng/control/sm2des.htm
@@ -7080,6 +7134,7 @@ lib/scilab/man/eng/elementary/erfcx.htm
 lib/scilab/man/eng/elementary/eval.htm
 lib/scilab/man/eng/elementary/eval_cshep2d.htm
 lib/scilab/man/eng/elementary/eye.htm
+lib/scilab/man/eng/elementary/factorial.htm
 lib/scilab/man/eng/elementary/fix.htm
 lib/scilab/man/eng/elementary/floor.htm
 lib/scilab/man/eng/elementary/frexp.htm
@@ -7101,6 +7156,7 @@ lib/scilab/man/eng/elementary/interpln.htm
 lib/scilab/man/eng/elementary/intersect.htm
 lib/scilab/man/eng/elementary/intsplin.htm
 lib/scilab/man/eng/elementary/inttrap.htm
+lib/scilab/man/eng/elementary/iscellstr.htm
 lib/scilab/man/eng/elementary/isdef.htm
 lib/scilab/man/eng/elementary/isempty.htm
 lib/scilab/man/eng/elementary/isequal.htm
@@ -7143,6 +7199,7 @@ lib/scilab/man/eng/elementary/oldbessel.htm
 lib/scilab/man/eng/elementary/ones.htm
 lib/scilab/man/eng/elementary/or.htm
 lib/scilab/man/eng/elementary/pen2ea.htm
+lib/scilab/man/eng/elementary/perms.htm
 lib/scilab/man/eng/elementary/permute.htm
 lib/scilab/man/eng/elementary/pertrans.htm
 lib/scilab/man/eng/elementary/prod.htm
@@ -7447,6 +7504,7 @@ lib/scilab/man/eng/graphics/subplot.htm
 lib/scilab/man/eng/graphics/surf.htm
 lib/scilab/man/eng/graphics/surface_properties.htm
 lib/scilab/man/eng/graphics/text_properties.htm
+lib/scilab/man/eng/graphics/title.htm
 lib/scilab/man/eng/graphics/titlepage.htm
 lib/scilab/man/eng/graphics/twinkle.htm
 lib/scilab/man/eng/graphics/unglue.htm
@@ -7535,6 +7593,7 @@ lib/scilab/man/eng/gui/x_matrix.htm
 lib/scilab/man/eng/gui/x_mdialog.htm
 lib/scilab/man/eng/gui/x_message.htm
 lib/scilab/man/eng/gui/x_message_modeless.htm
+lib/scilab/man/eng/html-bin.xsl
 lib/scilab/man/eng/html-jpc-dos.xsl
 lib/scilab/man/eng/html-jpc-rev.xsl
 lib/scilab/man/eng/html-jpc.xsl
@@ -7551,6 +7610,8 @@ lib/scilab/man/eng/identification/sident.htm
 lib/scilab/man/eng/identification/sorder.htm
 lib/scilab/man/eng/identification/whatis.htm
 lib/scilab/man/eng/index.htm
+lib/scilab/man/eng/java/SciComplex.htm
+lib/scilab/man/eng/java/SciComplexArray.htm
 lib/scilab/man/eng/java/SciDouble.htm
 lib/scilab/man/eng/java/SciDoubleArray.htm
 lib/scilab/man/eng/java/SciString.htm
@@ -7721,11 +7782,13 @@ lib/scilab/man/eng/mtlb/cell.htm
 lib/scilab/man/eng/mtlb/firstnonsingleton.htm
 lib/scilab/man/eng/mtlb/get_contents_infer.htm
 lib/scilab/man/eng/mtlb/m2scideclare.htm
+lib/scilab/man/eng/mtlb/makecell.htm
 lib/scilab/man/eng/mtlb/mstr2sci.htm
 lib/scilab/man/eng/mtlb/mtlb_0.htm
 lib/scilab/man/eng/mtlb/mtlb_a.htm
 lib/scilab/man/eng/mtlb/mtlb_all.htm
 lib/scilab/man/eng/mtlb/mtlb_any.htm
+lib/scilab/man/eng/mtlb/mtlb_axis.htm
 lib/scilab/man/eng/mtlb/mtlb_beta.htm
 lib/scilab/man/eng/mtlb/mtlb_box.htm
 lib/scilab/man/eng/mtlb/mtlb_close.htm
@@ -7772,6 +7835,7 @@ lib/scilab/man/eng/mtlb/mtlb_isfield.htm
 lib/scilab/man/eng/mtlb/mtlb_isletter.htm
 lib/scilab/man/eng/mtlb/mtlb_isspace.htm
 lib/scilab/man/eng/mtlb/mtlb_l.htm
+lib/scilab/man/eng/mtlb/mtlb_legendre.htm
 lib/scilab/man/eng/mtlb/mtlb_linspace.htm
 lib/scilab/man/eng/mtlb/mtlb_load.htm
 lib/scilab/man/eng/mtlb/mtlb_logic.htm
@@ -7794,6 +7858,7 @@ lib/scilab/man/eng/mtlb/mtlb_s.htm
 lib/scilab/man/eng/mtlb/mtlb_save.htm
 lib/scilab/man/eng/mtlb/mtlb_setstr.htm
 lib/scilab/man/eng/mtlb/mtlb_size.htm
+lib/scilab/man/eng/mtlb/mtlb_sort.htm
 lib/scilab/man/eng/mtlb/mtlb_strcmp.htm
 lib/scilab/man/eng/mtlb/mtlb_strcmpi.htm
 lib/scilab/man/eng/mtlb/mtlb_strfind.htm
@@ -7810,6 +7875,7 @@ lib/scilab/man/eng/mtlb/mtlb_uint8.htm
 lib/scilab/man/eng/mtlb/mtlb_upper.htm
 lib/scilab/man/eng/mtlb/mtlb_zeros.htm
 lib/scilab/man/eng/mtlb/sci_files.htm
+lib/scilab/man/eng/mtlb/struct.htm
 lib/scilab/man/eng/mtlb/whatis.htm
 lib/scilab/man/eng/nonlinear/NDcost.htm
 lib/scilab/man/eng/nonlinear/bvode.htm
@@ -7895,6 +7961,7 @@ lib/scilab/man/eng/programming/clearglobal.htm
 lib/scilab/man/eng/programming/colon.htm
 lib/scilab/man/eng/programming/comma.htm
 lib/scilab/man/eng/programming/comments.htm
+lib/scilab/man/eng/programming/comparison.htm
 lib/scilab/man/eng/programming/continue.htm
 lib/scilab/man/eng/programming/date.htm
 lib/scilab/man/eng/programming/debug.htm
@@ -8083,25 +8150,51 @@ lib/scilab/man/eng/scicos/ANDBLK.htm
 lib/scilab/man/eng/scicos/ANDLOG_f.htm
 lib/scilab/man/eng/scicos/ANIMXY_f.htm
 lib/scilab/man/eng/scicos/BACKLASH.htm
+lib/scilab/man/eng/scicos/Bache.htm
+lib/scilab/man/eng/scicos/Bache_img1.gif
+lib/scilab/man/eng/scicos/Bache_img2.gif
 lib/scilab/man/eng/scicos/CBLOCK.htm
 lib/scilab/man/eng/scicos/CLINDUMMY_f.htm
 lib/scilab/man/eng/scicos/CLKINV_f.htm
 lib/scilab/man/eng/scicos/CLKOUTV_f.htm
 lib/scilab/man/eng/scicos/CLKSOMV_f.htm
 lib/scilab/man/eng/scicos/CLOCK_f.htm
+lib/scilab/man/eng/scicos/CLR.htm
 lib/scilab/man/eng/scicos/CLR_f.htm
+lib/scilab/man/eng/scicos/CLSS.htm
 lib/scilab/man/eng/scicos/CLSS_f.htm
 lib/scilab/man/eng/scicos/CMSCOPE.htm
 lib/scilab/man/eng/scicos/CONSTRAINT_f.htm
 lib/scilab/man/eng/scicos/CONST_f.htm
 lib/scilab/man/eng/scicos/CSCOPE.htm
 lib/scilab/man/eng/scicos/CURV_f.htm
+lib/scilab/man/eng/scicos/Capacitor.htm
+lib/scilab/man/eng/scicos/Capacitor_img1.gif
+lib/scilab/man/eng/scicos/Capacitor_img2.gif
+lib/scilab/man/eng/scicos/Capacitor_img3.gif
+lib/scilab/man/eng/scicos/Capacitor_img4.gif
+lib/scilab/man/eng/scicos/Capacitor_img5.gif
+lib/scilab/man/eng/scicos/ConstantVoltage.htm
+lib/scilab/man/eng/scicos/ConstantVoltage_img1.gif
+lib/scilab/man/eng/scicos/CurrentSensor.htm
+lib/scilab/man/eng/scicos/CurrentSensor_img1.gif
 lib/scilab/man/eng/scicos/DEADBAND.htm
 lib/scilab/man/eng/scicos/DEMUX.htm
 lib/scilab/man/eng/scicos/DERIV.htm
+lib/scilab/man/eng/scicos/DLR.htm
 lib/scilab/man/eng/scicos/DLR_f.htm
+lib/scilab/man/eng/scicos/DLSS.htm
 lib/scilab/man/eng/scicos/DLSS_f.htm
+lib/scilab/man/eng/scicos/DOLLAR.htm
 lib/scilab/man/eng/scicos/DOLLAR_f.htm
+lib/scilab/man/eng/scicos/Diode.htm
+lib/scilab/man/eng/scicos/Diode_img1.gif
+lib/scilab/man/eng/scicos/Diode_img2.gif
+lib/scilab/man/eng/scicos/Diode_img3.gif
+lib/scilab/man/eng/scicos/Diode_img4.gif
+lib/scilab/man/eng/scicos/Diode_img5.gif
+lib/scilab/man/eng/scicos/Diode_img6.gif
+lib/scilab/man/eng/scicos/Diode_img7.gif
 lib/scilab/man/eng/scicos/ESELECT_f.htm
 lib/scilab/man/eng/scicos/EVENTSCOPE_f.htm
 lib/scilab/man/eng/scicos/EVTDLY_f.htm
@@ -8114,6 +8207,8 @@ lib/scilab/man/eng/scicos/FSCOPE_f.htm
 lib/scilab/man/eng/scicos/GAINBLK.htm
 lib/scilab/man/eng/scicos/GENSIN_f.htm
 lib/scilab/man/eng/scicos/GENSQR_f.htm
+lib/scilab/man/eng/scicos/Ground.htm
+lib/scilab/man/eng/scicos/Ground_img1.gif
 lib/scilab/man/eng/scicos/HALT_f.htm
 lib/scilab/man/eng/scicos/HYSTHERESIS.htm
 lib/scilab/man/eng/scicos/IFTHEL_f.htm
@@ -8121,9 +8216,16 @@ lib/scilab/man/eng/scicos/INIMPL_f.htm
 lib/scilab/man/eng/scicos/INTEGRAL.htm
 lib/scilab/man/eng/scicos/INTRP2BLK_f.htm
 lib/scilab/man/eng/scicos/INTRPLBLK_f.htm
+lib/scilab/man/eng/scicos/INVBLK.htm
 lib/scilab/man/eng/scicos/INVBLK_f.htm
 lib/scilab/man/eng/scicos/IN_f.htm
 lib/scilab/man/eng/scicos/ISELECT_f.htm
+lib/scilab/man/eng/scicos/Inductor.htm
+lib/scilab/man/eng/scicos/Inductor_img1.gif
+lib/scilab/man/eng/scicos/Inductor_img2.gif
+lib/scilab/man/eng/scicos/Inductor_img3.gif
+lib/scilab/man/eng/scicos/Inductor_img4.gif
+lib/scilab/man/eng/scicos/Inductor_img5.gif
 lib/scilab/man/eng/scicos/LOGBLK_f.htm
 lib/scilab/man/eng/scicos/LOGICAL_OP.htm
 lib/scilab/man/eng/scicos/LOOKUP_f.htm
@@ -8140,16 +8242,32 @@ lib/scilab/man/eng/scicos/POSTONEG_f.htm
 lib/scilab/man/eng/scicos/POWBLK_f.htm
 lib/scilab/man/eng/scicos/PRODUCT.htm
 lib/scilab/man/eng/scicos/PROD_f.htm
+lib/scilab/man/eng/scicos/PerteDP.htm
+lib/scilab/man/eng/scicos/PerteDP_img1.gif
+lib/scilab/man/eng/scicos/PerteDP_img2.gif
+lib/scilab/man/eng/scicos/PerteDP_img3.gif
+lib/scilab/man/eng/scicos/PotentialSensor.htm
+lib/scilab/man/eng/scicos/PotentialSensor_img1.gif
+lib/scilab/man/eng/scicos/PuitsP.htm
+lib/scilab/man/eng/scicos/PuitsP_img1.gif
 lib/scilab/man/eng/scicos/QUANT_f.htm
 lib/scilab/man/eng/scicos/RAMP.htm
 lib/scilab/man/eng/scicos/RAND_f.htm
 lib/scilab/man/eng/scicos/RATELIMITER.htm
 lib/scilab/man/eng/scicos/READAU_f.htm
 lib/scilab/man/eng/scicos/READC_f.htm
+lib/scilab/man/eng/scicos/REGISTER.htm
 lib/scilab/man/eng/scicos/REGISTER_f.htm
 lib/scilab/man/eng/scicos/RELATIONALOP.htm
 lib/scilab/man/eng/scicos/RELAY_f.htm
 lib/scilab/man/eng/scicos/RFILE_f.htm
+lib/scilab/man/eng/scicos/Resistor.htm
+lib/scilab/man/eng/scicos/Resistor_img1.gif
+lib/scilab/man/eng/scicos/Resistor_img2.gif
+lib/scilab/man/eng/scicos/Resistor_img3.gif
+lib/scilab/man/eng/scicos/Resistor_img4.gif
+lib/scilab/man/eng/scicos/Resistor_img5.gif
+lib/scilab/man/eng/scicos/SAMPLEHOLD.htm
 lib/scilab/man/eng/scicos/SAMPLEHOLD_f.htm
 lib/scilab/man/eng/scicos/SATURATION.htm
 lib/scilab/man/eng/scicos/SAWTOOTH_f.htm
@@ -8163,12 +8281,33 @@ lib/scilab/man/eng/scicos/SUM_f.htm
 lib/scilab/man/eng/scicos/SUPER_f.htm
 lib/scilab/man/eng/scicos/SWITCH2.htm
 lib/scilab/man/eng/scicos/SWITCH_f.htm
+lib/scilab/man/eng/scicos/SourceP.htm
+lib/scilab/man/eng/scicos/SourceP_img1.gif
+lib/scilab/man/eng/scicos/TCLSS.htm
 lib/scilab/man/eng/scicos/TCLSS_f.htm
 lib/scilab/man/eng/scicos/TEXT_f.htm
 lib/scilab/man/eng/scicos/TIME_DELAY.htm
 lib/scilab/man/eng/scicos/TIME_f.htm
 lib/scilab/man/eng/scicos/TrigFun.htm
 lib/scilab/man/eng/scicos/VARIABLE_DELAY.htm
+lib/scilab/man/eng/scicos/VVsourceAC.htm
+lib/scilab/man/eng/scicos/VVsourceAC_img1.gif
+lib/scilab/man/eng/scicos/VanneReglante.htm
+lib/scilab/man/eng/scicos/VanneReglante_img1.gif
+lib/scilab/man/eng/scicos/VanneReglante_img2.gif
+lib/scilab/man/eng/scicos/VanneReglante_img3.gif
+lib/scilab/man/eng/scicos/VanneReglante_img4.gif
+lib/scilab/man/eng/scicos/VanneReglante_img5.gif
+lib/scilab/man/eng/scicos/VanneReglante_img6.gif
+lib/scilab/man/eng/scicos/VariableResistor.htm
+lib/scilab/man/eng/scicos/VariableResistor_img1.gif
+lib/scilab/man/eng/scicos/VariableResistor_img2.gif
+lib/scilab/man/eng/scicos/VariableResistor_img3.gif
+lib/scilab/man/eng/scicos/VoltageSensor.htm
+lib/scilab/man/eng/scicos/VoltageSensor_img1.gif
+lib/scilab/man/eng/scicos/VoltageSensor_img2.gif
+lib/scilab/man/eng/scicos/VsourceAC.htm
+lib/scilab/man/eng/scicos/VsourceAC_img1.gif
 lib/scilab/man/eng/scicos/WFILE_f.htm
 lib/scilab/man/eng/scicos/WRITEAU_f.htm
 lib/scilab/man/eng/scicos/WRITEC_f.htm
@@ -8517,6 +8656,8 @@ lib/scilab/man/eng/sound/soundsec.htm
 lib/scilab/man/eng/sound/wavread.htm
 lib/scilab/man/eng/sound/wavwrite.htm
 lib/scilab/man/eng/sound/whatis.htm
+lib/scilab/man/eng/sparse/dnaupd.htm
+lib/scilab/man/eng/sparse/dsaupd.htm
 lib/scilab/man/eng/sparse/gmres.htm
 lib/scilab/man/eng/sparse/pcg.htm
 lib/scilab/man/eng/sparse/qmr.htm
@@ -8728,7 +8869,6 @@ lib/scilab/man/fr/arma/armax1.htm
 lib/scilab/man/fr/arma/arsimul.htm
 lib/scilab/man/fr/arma/narsimul.htm
 lib/scilab/man/fr/arma/noisegen.htm
-lib/scilab/man/fr/arma/odedi.htm
 lib/scilab/man/fr/arma/prbs_a.htm
 lib/scilab/man/fr/arma/reglin.htm
 lib/scilab/man/fr/arma/whatis.htm
@@ -8793,7 +8933,6 @@ lib/scilab/man/fr/control/ppol.htm
 lib/scilab/man/fr/control/projsl.htm
 lib/scilab/man/fr/control/repfreq.htm
 lib/scilab/man/fr/control/ricc.htm
-lib/scilab/man/fr/control/riccsl.htm
 lib/scilab/man/fr/control/rowregul.htm
 lib/scilab/man/fr/control/rtitr.htm
 lib/scilab/man/fr/control/sm2des.htm
@@ -8827,7 +8966,6 @@ lib/scilab/man/fr/dcd/cdfpoi.htm
 lib/scilab/man/fr/dcd/cdft.htm
 lib/scilab/man/fr/dcd/grand.htm
 lib/scilab/man/fr/dcd/whatis.htm
-lib/scilab/man/fr/differences
 lib/scilab/man/fr/elementary/abs.htm
 lib/scilab/man/fr/elementary/acos.htm
 lib/scilab/man/fr/elementary/acosh.htm
@@ -8881,6 +9019,7 @@ lib/scilab/man/fr/elementary/erfcx.htm
 lib/scilab/man/fr/elementary/eval.htm
 lib/scilab/man/fr/elementary/eval_cshep2d.htm
 lib/scilab/man/fr/elementary/eye.htm
+lib/scilab/man/fr/elementary/factorial.htm
 lib/scilab/man/fr/elementary/fix.htm
 lib/scilab/man/fr/elementary/floor.htm
 lib/scilab/man/fr/elementary/frexp.htm
@@ -8902,6 +9041,7 @@ lib/scilab/man/fr/elementary/interpln.htm
 lib/scilab/man/fr/elementary/intersect.htm
 lib/scilab/man/fr/elementary/intsplin.htm
 lib/scilab/man/fr/elementary/inttrap.htm
+lib/scilab/man/fr/elementary/iscellstr.htm
 lib/scilab/man/fr/elementary/isdef.htm
 lib/scilab/man/fr/elementary/isempty.htm
 lib/scilab/man/fr/elementary/isequal.htm
@@ -8944,6 +9084,7 @@ lib/scilab/man/fr/elementary/oldbessel.htm
 lib/scilab/man/fr/elementary/ones.htm
 lib/scilab/man/fr/elementary/or.htm
 lib/scilab/man/fr/elementary/pen2ea.htm
+lib/scilab/man/fr/elementary/perms.htm
 lib/scilab/man/fr/elementary/permute.htm
 lib/scilab/man/fr/elementary/pertrans.htm
 lib/scilab/man/fr/elementary/prod.htm
@@ -9248,6 +9389,7 @@ lib/scilab/man/fr/graphics/subplot.htm
 lib/scilab/man/fr/graphics/surf.htm
 lib/scilab/man/fr/graphics/surface_properties.htm
 lib/scilab/man/fr/graphics/text_properties.htm
+lib/scilab/man/fr/graphics/title.htm
 lib/scilab/man/fr/graphics/titlepage.htm
 lib/scilab/man/fr/graphics/twinkle.htm
 lib/scilab/man/fr/graphics/unglue.htm
@@ -9336,6 +9478,7 @@ lib/scilab/man/fr/gui/x_matrix.htm
 lib/scilab/man/fr/gui/x_mdialog.htm
 lib/scilab/man/fr/gui/x_message.htm
 lib/scilab/man/fr/gui/x_message_modeless.htm
+lib/scilab/man/fr/html-bin.xsl
 lib/scilab/man/fr/html-jpc.xsl
 lib/scilab/man/fr/html-rev.xsl
 lib/scilab/man/fr/html.xsl
@@ -9350,6 +9493,8 @@ lib/scilab/man/fr/identification/sident.htm
 lib/scilab/man/fr/identification/sorder.htm
 lib/scilab/man/fr/identification/whatis.htm
 lib/scilab/man/fr/index.htm
+lib/scilab/man/fr/java/SciComplex.htm
+lib/scilab/man/fr/java/SciComplexArray.htm
 lib/scilab/man/fr/java/SciDouble.htm
 lib/scilab/man/fr/java/SciDoubleArray.htm
 lib/scilab/man/fr/java/SciString.htm
@@ -9520,11 +9665,13 @@ lib/scilab/man/fr/mtlb/cell.htm
 lib/scilab/man/fr/mtlb/firstnonsingleton.htm
 lib/scilab/man/fr/mtlb/get_contents_infer.htm
 lib/scilab/man/fr/mtlb/m2scideclare.htm
+lib/scilab/man/fr/mtlb/makecell.htm
 lib/scilab/man/fr/mtlb/mstr2sci.htm
 lib/scilab/man/fr/mtlb/mtlb_0.htm
 lib/scilab/man/fr/mtlb/mtlb_a.htm
 lib/scilab/man/fr/mtlb/mtlb_all.htm
 lib/scilab/man/fr/mtlb/mtlb_any.htm
+lib/scilab/man/fr/mtlb/mtlb_axis.htm
 lib/scilab/man/fr/mtlb/mtlb_beta.htm
 lib/scilab/man/fr/mtlb/mtlb_box.htm
 lib/scilab/man/fr/mtlb/mtlb_close.htm
@@ -9571,6 +9718,7 @@ lib/scilab/man/fr/mtlb/mtlb_isfield.htm
 lib/scilab/man/fr/mtlb/mtlb_isletter.htm
 lib/scilab/man/fr/mtlb/mtlb_isspace.htm
 lib/scilab/man/fr/mtlb/mtlb_l.htm
+lib/scilab/man/fr/mtlb/mtlb_legendre.htm
 lib/scilab/man/fr/mtlb/mtlb_linspace.htm
 lib/scilab/man/fr/mtlb/mtlb_load.htm
 lib/scilab/man/fr/mtlb/mtlb_logic.htm
@@ -9593,6 +9741,7 @@ lib/scilab/man/fr/mtlb/mtlb_s.htm
 lib/scilab/man/fr/mtlb/mtlb_save.htm
 lib/scilab/man/fr/mtlb/mtlb_setstr.htm
 lib/scilab/man/fr/mtlb/mtlb_size.htm
+lib/scilab/man/fr/mtlb/mtlb_sort.htm
 lib/scilab/man/fr/mtlb/mtlb_strcmp.htm
 lib/scilab/man/fr/mtlb/mtlb_strcmpi.htm
 lib/scilab/man/fr/mtlb/mtlb_strfind.htm
@@ -9609,6 +9758,7 @@ lib/scilab/man/fr/mtlb/mtlb_uint8.htm
 lib/scilab/man/fr/mtlb/mtlb_upper.htm
 lib/scilab/man/fr/mtlb/mtlb_zeros.htm
 lib/scilab/man/fr/mtlb/sci_files.htm
+lib/scilab/man/fr/mtlb/struct.htm
 lib/scilab/man/fr/mtlb/whatis.htm
 lib/scilab/man/fr/nonlinear/NDcost.htm
 lib/scilab/man/fr/nonlinear/bvode.htm
@@ -9694,6 +9844,7 @@ lib/scilab/man/fr/programming/clearglobal.htm
 lib/scilab/man/fr/programming/colon.htm
 lib/scilab/man/fr/programming/comma.htm
 lib/scilab/man/fr/programming/comments.htm
+lib/scilab/man/fr/programming/comparison.htm
 lib/scilab/man/fr/programming/continue.htm
 lib/scilab/man/fr/programming/date.htm
 lib/scilab/man/fr/programming/debug.htm
@@ -9882,25 +10033,52 @@ lib/scilab/man/fr/scicos/ANDBLK.htm
 lib/scilab/man/fr/scicos/ANDLOG_f.htm
 lib/scilab/man/fr/scicos/ANIMXY_f.htm
 lib/scilab/man/fr/scicos/BACKLASH.htm
+lib/scilab/man/fr/scicos/Bache.htm
+lib/scilab/man/fr/scicos/Bache_img1.gif
+lib/scilab/man/fr/scicos/Bache_img2.gif
 lib/scilab/man/fr/scicos/CBLOCK.htm
 lib/scilab/man/fr/scicos/CLINDUMMY_f.htm
 lib/scilab/man/fr/scicos/CLKINV_f.htm
 lib/scilab/man/fr/scicos/CLKOUTV_f.htm
 lib/scilab/man/fr/scicos/CLKSOMV_f.htm
 lib/scilab/man/fr/scicos/CLOCK_f.htm
+lib/scilab/man/fr/scicos/CLR.htm
 lib/scilab/man/fr/scicos/CLR_f.htm
+lib/scilab/man/fr/scicos/CLSS.htm
 lib/scilab/man/fr/scicos/CLSS_f.htm
 lib/scilab/man/fr/scicos/CMSCOPE.htm
 lib/scilab/man/fr/scicos/CONSTRAINT_f.htm
 lib/scilab/man/fr/scicos/CONST_f.htm
 lib/scilab/man/fr/scicos/CSCOPE.htm
 lib/scilab/man/fr/scicos/CURV_f.htm
+lib/scilab/man/fr/scicos/Capacitor.htm
+lib/scilab/man/fr/scicos/Capacitor_img1.gif
+lib/scilab/man/fr/scicos/Capacitor_img2.gif
+lib/scilab/man/fr/scicos/Capacitor_img3.gif
+lib/scilab/man/fr/scicos/Capacitor_img4.gif
+lib/scilab/man/fr/scicos/Capacitor_img5.gif
+lib/scilab/man/fr/scicos/Capacitor_img6.gif
+lib/scilab/man/fr/scicos/ConstantVoltage.htm
+lib/scilab/man/fr/scicos/ConstantVoltage_img1.gif
+lib/scilab/man/fr/scicos/CurrentSensor.htm
+lib/scilab/man/fr/scicos/CurrentSensor_img1.gif
 lib/scilab/man/fr/scicos/DEADBAND.htm
 lib/scilab/man/fr/scicos/DEMUX.htm
 lib/scilab/man/fr/scicos/DERIV.htm
+lib/scilab/man/fr/scicos/DLR.htm
 lib/scilab/man/fr/scicos/DLR_f.htm
+lib/scilab/man/fr/scicos/DLSS.htm
 lib/scilab/man/fr/scicos/DLSS_f.htm
+lib/scilab/man/fr/scicos/DOLLAR.htm
 lib/scilab/man/fr/scicos/DOLLAR_f.htm
+lib/scilab/man/fr/scicos/Diode.htm
+lib/scilab/man/fr/scicos/Diode_img1.gif
+lib/scilab/man/fr/scicos/Diode_img2.gif
+lib/scilab/man/fr/scicos/Diode_img3.gif
+lib/scilab/man/fr/scicos/Diode_img4.gif
+lib/scilab/man/fr/scicos/Diode_img5.gif
+lib/scilab/man/fr/scicos/Diode_img6.gif
+lib/scilab/man/fr/scicos/Diode_img7.gif
 lib/scilab/man/fr/scicos/ESELECT_f.htm
 lib/scilab/man/fr/scicos/EVENTSCOPE_f.htm
 lib/scilab/man/fr/scicos/EVTDLY_f.htm
@@ -9913,6 +10091,8 @@ lib/scilab/man/fr/scicos/FSCOPE_f.htm
 lib/scilab/man/fr/scicos/GAINBLK.htm
 lib/scilab/man/fr/scicos/GENSIN_f.htm
 lib/scilab/man/fr/scicos/GENSQR_f.htm
+lib/scilab/man/fr/scicos/Ground.htm
+lib/scilab/man/fr/scicos/Ground_img1.gif
 lib/scilab/man/fr/scicos/HALT_f.htm
 lib/scilab/man/fr/scicos/HYSTHERESIS.htm
 lib/scilab/man/fr/scicos/IFTHEL_f.htm
@@ -9920,9 +10100,16 @@ lib/scilab/man/fr/scicos/INIMPL_f.htm
 lib/scilab/man/fr/scicos/INTEGRAL.htm
 lib/scilab/man/fr/scicos/INTRP2BLK_f.htm
 lib/scilab/man/fr/scicos/INTRPLBLK_f.htm
+lib/scilab/man/fr/scicos/INVBLK.htm
 lib/scilab/man/fr/scicos/INVBLK_f.htm
 lib/scilab/man/fr/scicos/IN_f.htm
 lib/scilab/man/fr/scicos/ISELECT_f.htm
+lib/scilab/man/fr/scicos/Inductor.htm
+lib/scilab/man/fr/scicos/Inductor_img1.gif
+lib/scilab/man/fr/scicos/Inductor_img2.gif
+lib/scilab/man/fr/scicos/Inductor_img3.gif
+lib/scilab/man/fr/scicos/Inductor_img4.gif
+lib/scilab/man/fr/scicos/Inductor_img5.gif
 lib/scilab/man/fr/scicos/LOGBLK_f.htm
 lib/scilab/man/fr/scicos/LOGICAL_OP.htm
 lib/scilab/man/fr/scicos/LOOKUP_f.htm
@@ -9939,16 +10126,31 @@ lib/scilab/man/fr/scicos/POSTONEG_f.htm
 lib/scilab/man/fr/scicos/POWBLK_f.htm
 lib/scilab/man/fr/scicos/PRODUCT.htm
 lib/scilab/man/fr/scicos/PROD_f.htm
+lib/scilab/man/fr/scicos/PerteDP.htm
+lib/scilab/man/fr/scicos/PerteDP_img1.gif
+lib/scilab/man/fr/scicos/PerteDP_img2.gif
+lib/scilab/man/fr/scicos/PotentialSensor.htm
+lib/scilab/man/fr/scicos/PotentialSensor_img1.gif
+lib/scilab/man/fr/scicos/PuitsP.htm
+lib/scilab/man/fr/scicos/PuitsP_img1.gif
 lib/scilab/man/fr/scicos/QUANT_f.htm
 lib/scilab/man/fr/scicos/RAMP.htm
 lib/scilab/man/fr/scicos/RAND_f.htm
 lib/scilab/man/fr/scicos/RATELIMITER.htm
 lib/scilab/man/fr/scicos/READAU_f.htm
 lib/scilab/man/fr/scicos/READC_f.htm
+lib/scilab/man/fr/scicos/REGISTER.htm
 lib/scilab/man/fr/scicos/REGISTER_f.htm
 lib/scilab/man/fr/scicos/RELATIONALOP.htm
 lib/scilab/man/fr/scicos/RELAY_f.htm
 lib/scilab/man/fr/scicos/RFILE_f.htm
+lib/scilab/man/fr/scicos/Resistor.htm
+lib/scilab/man/fr/scicos/Resistor_img1.gif
+lib/scilab/man/fr/scicos/Resistor_img2.gif
+lib/scilab/man/fr/scicos/Resistor_img3.gif
+lib/scilab/man/fr/scicos/Resistor_img4.gif
+lib/scilab/man/fr/scicos/Resistor_img5.gif
+lib/scilab/man/fr/scicos/SAMPLEHOLD.htm
 lib/scilab/man/fr/scicos/SAMPLEHOLD_f.htm
 lib/scilab/man/fr/scicos/SATURATION.htm
 lib/scilab/man/fr/scicos/SAWTOOTH_f.htm
@@ -9962,12 +10164,31 @@ lib/scilab/man/fr/scicos/SUM_f.htm
 lib/scilab/man/fr/scicos/SUPER_f.htm
 lib/scilab/man/fr/scicos/SWITCH2.htm
 lib/scilab/man/fr/scicos/SWITCH_f.htm
+lib/scilab/man/fr/scicos/SourceP.htm
+lib/scilab/man/fr/scicos/SourceP_img1.gif
+lib/scilab/man/fr/scicos/TCLSS.htm
 lib/scilab/man/fr/scicos/TCLSS_f.htm
 lib/scilab/man/fr/scicos/TEXT_f.htm
 lib/scilab/man/fr/scicos/TIME_DELAY.htm
 lib/scilab/man/fr/scicos/TIME_f.htm
 lib/scilab/man/fr/scicos/TrigFun.htm
 lib/scilab/man/fr/scicos/VARIABLE_DELAY.htm
+lib/scilab/man/fr/scicos/VVsourceAC.htm
+lib/scilab/man/fr/scicos/VVsourceAC_img1.gif
+lib/scilab/man/fr/scicos/VanneReglante.htm
+lib/scilab/man/fr/scicos/VanneReglante_img1.gif
+lib/scilab/man/fr/scicos/VanneReglante_img2.gif
+lib/scilab/man/fr/scicos/VanneReglante_img3.gif
+lib/scilab/man/fr/scicos/VanneReglante_img4.gif
+lib/scilab/man/fr/scicos/VanneReglante_img5.gif
+lib/scilab/man/fr/scicos/VanneReglante_img6.gif
+lib/scilab/man/fr/scicos/VariableResistor.htm
+lib/scilab/man/fr/scicos/VariableResistor_img1.gif
+lib/scilab/man/fr/scicos/VariableResistor_img2.gif
+lib/scilab/man/fr/scicos/VoltageSensor.htm
+lib/scilab/man/fr/scicos/VoltageSensor_img1.gif
+lib/scilab/man/fr/scicos/VsourceAC.htm
+lib/scilab/man/fr/scicos/VsourceAC_img1.gif
 lib/scilab/man/fr/scicos/WFILE_f.htm
 lib/scilab/man/fr/scicos/WRITEAU_f.htm
 lib/scilab/man/fr/scicos/WRITEC_f.htm
@@ -10316,6 +10537,8 @@ lib/scilab/man/fr/sound/soundsec.htm
 lib/scilab/man/fr/sound/wavread.htm
 lib/scilab/man/fr/sound/wavwrite.htm
 lib/scilab/man/fr/sound/whatis.htm
+lib/scilab/man/fr/sparse/dnaupd.htm
+lib/scilab/man/fr/sparse/dsaupd.htm
 lib/scilab/man/fr/sparse/gmres.htm
 lib/scilab/man/fr/sparse/pcg.htm
 lib/scilab/man/fr/sparse/qmr.htm
@@ -10518,6 +10741,8 @@ lib/scilab/man/fr/utilities/xmltohtml.htm
 lib/scilab/man/images/graphics/notebook.gif
 lib/scilab/man/images/graphics/surf_01.gif
 lib/scilab/man/images/graphics/tree.gif
+lib/scilab/man/images/java/SciComplexArrayClass.gif
+lib/scilab/man/images/java/SciComplexClass.gif
 lib/scilab/man/images/java/SciDoubleArrayClass.gif
 lib/scilab/man/images/java/SciDoubleClass.gif
 lib/scilab/man/images/java/SciStringArrayClass.gif
@@ -10884,8 +11109,12 @@ lib/scilab/tcl/scipadsources/CHANGELOG
 lib/scilab/tcl/scipadsources/FormatStringsForDebugWatch.sci
 lib/scilab/tcl/scipadsources/FormatWhereForDebugWatch.sci
 lib/scilab/tcl/scipadsources/bindings.tcl
+lib/scilab/tcl/scipadsources/bindings/emacs.tcl
+lib/scilab/tcl/scipadsources/bindings/issues.txt
+lib/scilab/tcl/scipadsources/bindings/mac-pc.tcl
 lib/scilab/tcl/scipadsources/buffernavigation.tcl
 lib/scilab/tcl/scipadsources/colorize.tcl
+lib/scilab/tcl/scipadsources/commonbindings.tcl
 lib/scilab/tcl/scipadsources/completion.tcl
 lib/scilab/tcl/scipadsources/cutcopypaste.tcl
 lib/scilab/tcl/scipadsources/db_actbptmanagement.tcl
@@ -10987,216 +11216,215 @@ lib/scilab/util/testexamples.sci
 @dirrm lib/scilab/bin
 @dirrm lib/scilab/config
 @dirrm lib/scilab/contrib
-@dirrm lib/scilab/demos/basic/intro
-@dirrm lib/scilab/demos/basic
-@dirrm lib/scilab/demos/control/flat
+@dirrm lib/scilab/demos/random
+@dirrm lib/scilab/demos/control/tracking
 @dirrm lib/scilab/demos/control/lqg
+@dirrm lib/scilab/demos/control/flat
 @dirrm lib/scilab/demos/control/pendulum
 @dirrm lib/scilab/demos/control/robust
-@dirrm lib/scilab/demos/control/tracking
 @dirrm lib/scilab/demos/control
+@dirrm lib/scilab/demos/basic/intro
+@dirrm lib/scilab/demos/basic
+@dirrm lib/scilab/demos/velpic
+@dirrm lib/scilab/demos/scicos/CodeGen
+@dirrm lib/scilab/demos/scicos
+@dirrm lib/scilab/demos/sciGUI
+@dirrm lib/scilab/demos/simulation/npend/TeX
+@dirrm lib/scilab/demos/simulation/npend/Maple
+@dirrm lib/scilab/demos/simulation/npend
+@dirrm lib/scilab/demos/simulation/wheel2/Maple
+@dirrm lib/scilab/demos/simulation/wheel2
+@dirrm lib/scilab/demos/simulation/ode
+@dirrm lib/scilab/demos/simulation/dae
+@dirrm lib/scilab/demos/simulation/bike/macros
+@dirrm lib/scilab/demos/simulation/bike/data
+@dirrm lib/scilab/demos/simulation/bike
+@dirrm lib/scilab/demos/simulation
+@dirrm lib/scilab/demos/optimization/lmitool
+@dirrm lib/scilab/demos/optimization/multiflow
+@dirrm lib/scilab/demos/optimization/icse
+@dirrm lib/scilab/demos/optimization/datafit
+@dirrm lib/scilab/demos/optimization
+@dirrm lib/scilab/demos/metanet
 @dirrm lib/scilab/demos/dialog
-@dirrm lib/scilab/demos/excel
 @dirrm lib/scilab/demos/graphics/anim
-@dirrm lib/scilab/demos/graphics/bar
-@dirrm lib/scilab/demos/graphics/cmplxfunc
-@dirrm lib/scilab/demos/graphics/fec
-@dirrm lib/scilab/demos/graphics/misc
 @dirrm lib/scilab/demos/graphics/surface
+@dirrm lib/scilab/demos/graphics/misc
+@dirrm lib/scilab/demos/graphics/fec
+@dirrm lib/scilab/demos/graphics/cmplxfunc
+@dirrm lib/scilab/demos/graphics/bar
 @dirrm lib/scilab/demos/graphics
+@dirrm lib/scilab/demos/excel
 @dirrm lib/scilab/demos/interp
+@dirrm lib/scilab/demos/pvm
+@dirrm lib/scilab/demos/sci2for
+@dirrm lib/scilab/demos/loop_demo/npend/TeX
+@dirrm lib/scilab/demos/loop_demo/npend/Maple
+@dirrm lib/scilab/demos/loop_demo/npend
 @dirrm lib/scilab/demos/loop_demo/Bounce
 @dirrm lib/scilab/demos/loop_demo/dialogs
 @dirrm lib/scilab/demos/loop_demo/cmplxfunc
-@dirrm lib/scilab/demos/loop_demo/npend/Maple
-@dirrm lib/scilab/demos/loop_demo/npend/TeX
-@dirrm lib/scilab/demos/loop_demo/npend
 @dirrm lib/scilab/demos/loop_demo
-@dirrm lib/scilab/demos/metanet
-@dirrm lib/scilab/demos/optimization/datafit
-@dirrm lib/scilab/demos/optimization/icse
-@dirrm lib/scilab/demos/optimization/lmitool
-@dirrm lib/scilab/demos/optimization/multiflow
-@dirrm lib/scilab/demos/optimization
-@dirrm lib/scilab/demos/pvm
-@dirrm lib/scilab/demos/random
-@dirrm lib/scilab/demos/sci2for
-@dirrm lib/scilab/demos/sciGUI
-@dirrm lib/scilab/demos/scicos/CodeGen
-@dirrm lib/scilab/demos/scicos
 @dirrm lib/scilab/demos/signal/arma
 @dirrm lib/scilab/demos/signal/sound
 @dirrm lib/scilab/demos/signal
-@dirrm lib/scilab/demos/simulation/bike/data
-@dirrm lib/scilab/demos/simulation/bike/macros
-@dirrm lib/scilab/demos/simulation/bike
-@dirrm lib/scilab/demos/simulation/dae
-@dirrm lib/scilab/demos/simulation/npend/Maple
-@dirrm lib/scilab/demos/simulation/npend/TeX
-@dirrm lib/scilab/demos/simulation/npend
-@dirrm lib/scilab/demos/simulation/ode
-@dirrm lib/scilab/demos/simulation/wheel2/Maple
-@dirrm lib/scilab/demos/simulation/wheel2
-@dirrm lib/scilab/demos/simulation
 @dirrm lib/scilab/demos/tk
-@dirrm lib/scilab/demos/velpic
 @dirrm lib/scilab/demos
+@dirrm lib/scilab/examples/interface-tutorial-so
+@dirrm lib/scilab/examples/man-examples-xml/helpdir1
+@dirrm lib/scilab/examples/man-examples-xml/helpdir2
+@dirrm lib/scilab/examples/man-examples-xml
+@dirrm lib/scilab/examples/interface-tour
+@dirrm lib/scilab/examples/man-examples/helpdir1
+@dirrm lib/scilab/examples/man-examples/helpdir2
+@dirrm lib/scilab/examples/man-examples
+@dirrm lib/scilab/examples/link-examples-so
+@dirrm lib/scilab/examples/interface-lapack
+@dirrm lib/scilab/examples/intersci-examples
+@dirrm lib/scilab/examples/mex-examples/fmex
+@dirrm lib/scilab/examples/mex-examples/mexglx
+@dirrm lib/scilab/examples/mex-examples/mexdll
+@dirrm lib/scilab/examples/mex-examples/cmex
+@dirrm lib/scilab/examples/mex-examples/cppmex
+@dirrm lib/scilab/examples/mex-examples
+@dirrm lib/scilab/examples/macros-examples
+@dirrm lib/scilab/examples/interface-tutorial
+@dirrm lib/scilab/examples/interface-tour-so
+@dirrm lib/scilab/examples/interface-multi-so/lib
+@dirrm lib/scilab/examples/interface-multi-so
+@dirrm lib/scilab/examples/misc-examples
+@dirrm lib/scilab/examples/link-examples
+@dirrm lib/scilab/examples/callsci/callsciC++/config
+@dirrm lib/scilab/examples/callsci/callsciC++
 @dirrm lib/scilab/examples/callsci/callsciBC++
+@dirrm lib/scilab/examples/callsci/callsciFortran/config
+@dirrm lib/scilab/examples/callsci/callsciFortran
+@dirrm lib/scilab/examples/callsci/callsciJava/others
+@dirrm lib/scilab/examples/callsci/callsciJava/ihm
+@dirrm lib/scilab/examples/callsci/callsciJava
 @dirrm lib/scilab/examples/callsci/callsciC/CallSciVC/CallSciVC
 @dirrm lib/scilab/examples/callsci/callsciC/CallSciVC
 @dirrm lib/scilab/examples/callsci/callsciC/config
 @dirrm lib/scilab/examples/callsci/callsciC
-@dirrm lib/scilab/examples/callsci/callsciC++/config
-@dirrm lib/scilab/examples/callsci/callsciC++
-@dirrm lib/scilab/examples/callsci/callsciFortran/config
-@dirrm lib/scilab/examples/callsci/callsciFortran
-@dirrm lib/scilab/examples/callsci/callsciJava/ihm
-@dirrm lib/scilab/examples/callsci/callsciJava/others
-@dirrm lib/scilab/examples/callsci/callsciJava
 @dirrm lib/scilab/examples/callsci
+@dirrm lib/scilab/examples/intersci-examples-so
 @dirrm lib/scilab/examples/interface-general/lib
 @dirrm lib/scilab/examples/interface-general
-@dirrm lib/scilab/examples/interface-lapack
-@dirrm lib/scilab/examples/interface-multi-so/lib
-@dirrm lib/scilab/examples/interface-multi-so
-@dirrm lib/scilab/examples/interface-tour
-@dirrm lib/scilab/examples/interface-tour-so
-@dirrm lib/scilab/examples/interface-tutorial
-@dirrm lib/scilab/examples/interface-tutorial-so
-@dirrm lib/scilab/examples/intersci-examples
-@dirrm lib/scilab/examples/intersci-examples-so
-@dirrm lib/scilab/examples/link-examples
-@dirrm lib/scilab/examples/link-examples-so
-@dirrm lib/scilab/examples/macros-examples
-@dirrm lib/scilab/examples/man-examples/helpdir1
-@dirrm lib/scilab/examples/man-examples/helpdir2
-@dirrm lib/scilab/examples/man-examples
-@dirrm lib/scilab/examples/man-examples-xml/helpdir1
-@dirrm lib/scilab/examples/man-examples-xml/helpdir2
-@dirrm lib/scilab/examples/man-examples-xml
-@dirrm lib/scilab/examples/mex-examples/cmex
-@dirrm lib/scilab/examples/mex-examples/fmex
-@dirrm lib/scilab/examples/mex-examples/cppmex
-@dirrm lib/scilab/examples/mex-examples/mexdll
-@dirrm lib/scilab/examples/mex-examples/mexglx
-@dirrm lib/scilab/examples/mex-examples
-@dirrm lib/scilab/examples/misc-examples
 @dirrm lib/scilab/examples
-@dirrm lib/scilab/imp/giffonts/100dpi
 @dirrm lib/scilab/imp/giffonts/75dpi
+@dirrm lib/scilab/imp/giffonts/100dpi
 @dirrm lib/scilab/imp/giffonts
 @dirrm lib/scilab/imp
-@dirrm lib/scilab/macros/Proj_Forwin
-@dirrm lib/scilab/macros/Proj_Gengatsce
-@dirrm lib/scilab/macros/Proj_Gensomex
-@dirrm lib/scilab/macros/Proj_Gensosce
-@dirrm lib/scilab/macros/Proj_Lib
-@dirrm lib/scilab/macros/Proj_Name
-@dirrm lib/scilab/macros/Proj_Tomake
-@dirrm lib/scilab/macros/algebre
-@dirrm lib/scilab/macros/arma
-@dirrm lib/scilab/macros/auto
-@dirrm lib/scilab/macros/calpol
-@dirrm lib/scilab/macros/elem
-@dirrm lib/scilab/macros/gui
+@dirrm lib/scilab/macros/scicos_blocks/Sources
+@dirrm lib/scilab/macros/scicos_blocks/Events
+@dirrm lib/scilab/macros/scicos_blocks/NonLinear
+@dirrm lib/scilab/macros/scicos_blocks/Electrical
+@dirrm lib/scilab/macros/scicos_blocks/Hydraulics
+@dirrm lib/scilab/macros/scicos_blocks/Sinks
+@dirrm lib/scilab/macros/scicos_blocks/PDE
+@dirrm lib/scilab/macros/scicos_blocks/Linear
+@dirrm lib/scilab/macros/scicos_blocks/Branching
+@dirrm lib/scilab/macros/scicos_blocks/Misc
+@dirrm lib/scilab/macros/scicos_blocks/Threshold
+@dirrm lib/scilab/macros/scicos_blocks
+@dirrm lib/scilab/macros/xdess
+@dirrm lib/scilab/macros/optim
+@dirrm lib/scilab/macros/sound
 @dirrm lib/scilab/macros/int
+@dirrm lib/scilab/macros/tdcs
+@dirrm lib/scilab/macros/statistics
+@dirrm lib/scilab/macros/metanet
+@dirrm lib/scilab/macros/mtlb
+@dirrm lib/scilab/macros/Proj_Forwin
+@dirrm lib/scilab/macros/Proj_Gensosce
+@dirrm lib/scilab/macros/texmacs
+@dirrm lib/scilab/macros/auto
+@dirrm lib/scilab/macros/Proj_Tomake
+@dirrm lib/scilab/macros/Proj_Name
+@dirrm lib/scilab/macros/signal
+@dirrm lib/scilab/macros/arma
+@dirrm lib/scilab/macros/tksci
+@dirrm lib/scilab/macros/Proj_Gensomex
+@dirrm lib/scilab/macros/elem
+@dirrm lib/scilab/macros/scicos
+@dirrm lib/scilab/macros/gui
+@dirrm lib/scilab/macros/Proj_Gengatsce
+@dirrm lib/scilab/macros/sparse
+@dirrm lib/scilab/macros/Proj_Lib
+@dirrm lib/scilab/macros/percent
+@dirrm lib/scilab/macros/algebre
+@dirrm lib/scilab/macros/sci2for
+@dirrm lib/scilab/macros/calpol
 @dirrm lib/scilab/macros/m2sci/kernel
 @dirrm lib/scilab/macros/m2sci/percent
 @dirrm lib/scilab/macros/m2sci/sci_files
 @dirrm lib/scilab/macros/m2sci
-@dirrm lib/scilab/macros/metanet
-@dirrm lib/scilab/macros/mtlb
-@dirrm lib/scilab/macros/optim
-@dirrm lib/scilab/macros/percent
-@dirrm lib/scilab/macros/robust
-@dirrm lib/scilab/macros/sci2for
-@dirrm lib/scilab/macros/scicos
-@dirrm lib/scilab/macros/scicos_blocks/Branching
-@dirrm lib/scilab/macros/scicos_blocks/Electrical
-@dirrm lib/scilab/macros/scicos_blocks/Events
-@dirrm lib/scilab/macros/scicos_blocks/Hydraulics
-@dirrm lib/scilab/macros/scicos_blocks/Linear
-@dirrm lib/scilab/macros/scicos_blocks/Misc
-@dirrm lib/scilab/macros/scicos_blocks/NonLinear
-@dirrm lib/scilab/macros/scicos_blocks/PDE
-@dirrm lib/scilab/macros/scicos_blocks/Sinks
-@dirrm lib/scilab/macros/scicos_blocks/Sources
-@dirrm lib/scilab/macros/scicos_blocks/Threshold
-@dirrm lib/scilab/macros/scicos_blocks
-@dirrmtry lib/scilab/macros/scicos_new
-@dirrm lib/scilab/macros/signal
-@dirrm lib/scilab/macros/sound
-@dirrm lib/scilab/macros/sparse
-@dirrm lib/scilab/macros/statistics
-@dirrm lib/scilab/macros/tdcs
-@dirrm lib/scilab/macros/texmacs
-@dirrm lib/scilab/macros/tksci
 @dirrm lib/scilab/macros/util
-@dirrm lib/scilab/macros/xdess
+@dirrm lib/scilab/macros/robust
 @dirrm lib/scilab/macros
-@dirrm lib/scilab/man/BuildChm
-@dirrm lib/scilab/man/CheckHelp
-@dirrm lib/scilab/man/eng/arma
-@dirrm lib/scilab/man/eng/dcd
-@dirrm lib/scilab/man/eng/control
-@dirrm lib/scilab/man/eng/elementary
-@dirrm lib/scilab/man/eng/fileio
-@dirrm lib/scilab/man/eng/functions
-@dirrm lib/scilab/man/eng/graphics
-@dirrm lib/scilab/man/eng/gui
-@dirrm lib/scilab/man/eng/identification
-@dirrm lib/scilab/man/eng/java
-@dirrm lib/scilab/man/eng/linear
-@dirrm lib/scilab/man/eng/metanet
-@dirrm lib/scilab/man/eng/mtlb
-@dirrm lib/scilab/man/eng/nonlinear
-@dirrm lib/scilab/man/eng/polynomials
-@dirrm lib/scilab/man/eng/programming
-@dirrm lib/scilab/man/eng/pvm
-@dirrm lib/scilab/man/eng/robust
-@dirrm lib/scilab/man/eng/scicos
-@dirrm lib/scilab/man/eng/signal
-@dirrm lib/scilab/man/eng/sound
-@dirrm lib/scilab/man/eng/sparse
-@dirrm lib/scilab/man/eng/statistics
-@dirrm lib/scilab/man/eng/strings
-@dirrm lib/scilab/man/eng/tdcs
-@dirrm lib/scilab/man/eng/tksci
-@dirrm lib/scilab/man/eng/translation
-@dirrm lib/scilab/man/eng/utilities
-@dirrm lib/scilab/man/eng
-@dirrm lib/scilab/man/fr/arma
-@dirrm lib/scilab/man/fr/dcd
-@dirrm lib/scilab/man/fr/control
-@dirrm lib/scilab/man/fr/elementary
-@dirrm lib/scilab/man/fr/fileio
-@dirrm lib/scilab/man/fr/functions
-@dirrm lib/scilab/man/fr/graphics
-@dirrm lib/scilab/man/fr/gui
-@dirrm lib/scilab/man/fr/identification
-@dirrm lib/scilab/man/fr/java
-@dirrm lib/scilab/man/fr/linear
-@dirrm lib/scilab/man/fr/metanet
-@dirrm lib/scilab/man/fr/mtlb
-@dirrm lib/scilab/man/fr/nonlinear
-@dirrm lib/scilab/man/fr/polynomials
-@dirrm lib/scilab/man/fr/programming
-@dirrm lib/scilab/man/fr/pvm
-@dirrm lib/scilab/man/fr/robust
-@dirrm lib/scilab/man/fr/scicos
-@dirrm lib/scilab/man/fr/signal
-@dirrm lib/scilab/man/fr/sound
-@dirrm lib/scilab/man/fr/sparse
-@dirrm lib/scilab/man/fr/statistics
-@dirrm lib/scilab/man/fr/strings
-@dirrm lib/scilab/man/fr/tdcs
-@dirrm lib/scilab/man/fr/tksci
-@dirrm lib/scilab/man/fr/translation
-@dirrm lib/scilab/man/fr/utilities
-@dirrm lib/scilab/man/fr
 @dirrm lib/scilab/man/images/graphics
 @dirrm lib/scilab/man/images/java
 @dirrm lib/scilab/man/images
+@dirrm lib/scilab/man/CheckHelp
+@dirrm lib/scilab/man/BuildChm
+@dirrm lib/scilab/man/fr/control
+@dirrm lib/scilab/man/fr/programming
+@dirrm lib/scilab/man/fr/nonlinear
+@dirrm lib/scilab/man/fr/sound
+@dirrm lib/scilab/man/fr/identification
+@dirrm lib/scilab/man/fr/strings
+@dirrm lib/scilab/man/fr/dcd
+@dirrm lib/scilab/man/fr/statistics
+@dirrm lib/scilab/man/fr/metanet
+@dirrm lib/scilab/man/fr/tdcs
+@dirrm lib/scilab/man/fr/mtlb
+@dirrm lib/scilab/man/fr/translation
+@dirrm lib/scilab/man/fr/pvm
+@dirrm lib/scilab/man/fr/elementary
+@dirrm lib/scilab/man/fr/fileio
+@dirrm lib/scilab/man/fr/linear
+@dirrm lib/scilab/man/fr/signal
+@dirrm lib/scilab/man/fr/tksci
+@dirrm lib/scilab/man/fr/arma
+@dirrm lib/scilab/man/fr/java
+@dirrm lib/scilab/man/fr/scicos
+@dirrm lib/scilab/man/fr/gui
+@dirrm lib/scilab/man/fr/sparse
+@dirrm lib/scilab/man/fr/graphics
+@dirrm lib/scilab/man/fr/polynomials
+@dirrm lib/scilab/man/fr/functions
+@dirrm lib/scilab/man/fr/utilities
+@dirrm lib/scilab/man/fr/robust
+@dirrm lib/scilab/man/fr
+@dirrm lib/scilab/man/eng/control
+@dirrm lib/scilab/man/eng/programming
+@dirrm lib/scilab/man/eng/nonlinear
+@dirrm lib/scilab/man/eng/sound
+@dirrm lib/scilab/man/eng/identification
+@dirrm lib/scilab/man/eng/strings
+@dirrm lib/scilab/man/eng/dcd
+@dirrm lib/scilab/man/eng/statistics
+@dirrm lib/scilab/man/eng/metanet
+@dirrm lib/scilab/man/eng/tdcs
+@dirrm lib/scilab/man/eng/mtlb
+@dirrm lib/scilab/man/eng/translation
+@dirrm lib/scilab/man/eng/pvm
+@dirrm lib/scilab/man/eng/elementary
+@dirrm lib/scilab/man/eng/fileio
+@dirrm lib/scilab/man/eng/linear
+@dirrm lib/scilab/man/eng/signal
+@dirrm lib/scilab/man/eng/tksci
+@dirrm lib/scilab/man/eng/arma
+@dirrm lib/scilab/man/eng/java
+@dirrm lib/scilab/man/eng/scicos
+@dirrm lib/scilab/man/eng/gui
+@dirrm lib/scilab/man/eng/sparse
+@dirrm lib/scilab/man/eng/graphics
+@dirrm lib/scilab/man/eng/polynomials
+@dirrm lib/scilab/man/eng/functions
+@dirrm lib/scilab/man/eng/utilities
+@dirrm lib/scilab/man/eng/robust
+@dirrm lib/scilab/man/eng
 @dirrm lib/scilab/man
 @dirrm lib/scilab/maple
 @dirrm lib/scilab/routines/default
@@ -11209,24 +11437,25 @@ lib/scilab/util/testexamples.sci
 @dirrm lib/scilab/routines/xsci
 @dirrm lib/scilab/routines
 @dirrm lib/scilab/scripts
-@dirrm lib/scilab/tcl/BWidget-1.7.0/BWman
-@dirrm lib/scilab/tcl/BWidget-1.7.0/demo
-@dirrm lib/scilab/tcl/BWidget-1.7.0/images
-@dirrm lib/scilab/tcl/BWidget-1.7.0/lang
-@dirrm lib/scilab/tcl/BWidget-1.7.0/tests
-@dirrm lib/scilab/tcl/BWidget-1.7.0
-@dirrm lib/scilab/tcl/browsehelp
-@dirrm lib/scilab/tcl/ged/images
-@dirrm lib/scilab/tcl/ged
 @dirrm lib/scilab/tcl/sciGUI/data
-@dirrm lib/scilab/tcl/sciGUI/local_extra/HelpSystem-1.5
 @dirrm lib/scilab/tcl/sciGUI/local_extra/combobox-2.3
+@dirrm lib/scilab/tcl/sciGUI/local_extra/HelpSystem-1.5
 @dirrm lib/scilab/tcl/sciGUI/local_extra
 @dirrm lib/scilab/tcl/sciGUI
-@dirrm lib/scilab/tcl/scipadsources/icons
-@dirrm lib/scilab/tcl/scipadsources/msg_files
-@dirrm lib/scilab/tcl/scipadsources
+@dirrm lib/scilab/tcl/BWidget-1.7.0/demo
+@dirrm lib/scilab/tcl/BWidget-1.7.0/tests
+@dirrm lib/scilab/tcl/BWidget-1.7.0/lang
+@dirrm lib/scilab/tcl/BWidget-1.7.0/BWman
+@dirrm lib/scilab/tcl/BWidget-1.7.0/images
+@dirrm lib/scilab/tcl/BWidget-1.7.0
+@dirrm lib/scilab/tcl/ged/images
+@dirrm lib/scilab/tcl/ged
 @dirrm lib/scilab/tcl/utils
+@dirrm lib/scilab/tcl/scipadsources/bindings
+@dirrm lib/scilab/tcl/scipadsources/msg_files
+@dirrm lib/scilab/tcl/scipadsources/icons
+@dirrm lib/scilab/tcl/scipadsources
+@dirrm lib/scilab/tcl/browsehelp
 @dirrm lib/scilab/tcl
 @dirrm lib/scilab/util
 @dirrm lib/scilab
