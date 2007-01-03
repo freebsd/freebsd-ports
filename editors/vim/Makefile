@@ -10,7 +10,7 @@ PORTNAME?=	vim
 PATCHLEVEL=	178
 PORTVERSION=	7.0.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -34,6 +34,7 @@ SLAVEDIRS=	editors/vim-lite
 WITH_PERL=	yes
 WITH_PYTHON=	yes
 WITH_CSCOPE=	yes
+WITH_EXUBERANT_CTAGS=yes
 .endif
 
 .if defined(WITH_TCL)
@@ -86,6 +87,10 @@ WITHOUT_X11=	yes
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 MAKE_ARGS+=	CONF_OPT_CSCOPE="--enable-cscope"
+.endif
+
+.if defined(WITH_EXUBERANT_CTAGS)
+RUN_DEPENDS+=	exctags:${PORTSDIR}/devel/ctags
 .endif
 
 .if defined(WITH_PERL)
@@ -157,10 +162,15 @@ post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LANG_FILE}
 .endif
 
+.if defined(WITH_EXUBERANT_CTAGS)
+CTAGS_CMD=	exctags -R .
+.else
+CTAGS_CMD=	${FIND} . -type f|${XARGS} ctags
+.endif
+
 post-patch:
-	@(${FIND} ${WRKSRC}/../runtime/ -name menu\*.vim -print0 | ${XARGS} -0\
-		${REINPLACE_CMD} \
-		-e 's,ctags -R \.,${FIND} . -type f|${XARGS} ctags,g')
+	@(${FIND} ${WRKSRC}/../runtime/ -name menu\*.vim -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's,ctags -R \.,${CTAGS_CMD},g')
 
 pre-configure:
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
