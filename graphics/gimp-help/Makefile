@@ -21,7 +21,7 @@ DISTNAME=	${PORTNAME}-2-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GIMP user's manual
 
-LIB_DEPENDS=	gimp-2.0.0:${PORTSDIR}/graphics/gimp
+LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
