@@ -1,9 +1,34 @@
---- Build.PL.orig	Tue Dec 19 15:47:23 2006
-+++ Build.PL	Tue Dec 19 15:47:48 2006
-@@ -132,101 +132,6 @@
+--- Build.PL.orig	Tue Dec 12 00:12:23 2006
++++ Build.PL	Wed Jan  3 11:37:09 2007
+@@ -36,10 +36,10 @@
+     web_files => \@web_dirs,
+     build_web_directory => 'root',
+     install_web_directories =>  { 
+-        'default' => '/home/httpd/html/gantry',
+-        'prod'    => '/home/httpd/html/gantry',
+-        'dev'     => '/home/httpd/html/gantry',
+-        'tim'     => '/home/tkeefer/httpd/html/gantry' 
++        'default' => '/usr/local/www/data/gantry',
++        'prod'    => '/usr/local/www/data/gantry',
++        'dev'     => '/usr/local/www/data/gantry',
++        'tim'     => '/usr/local/www/data/gantry'
+     },
+     create_makefile_pl => 'passthrough',
+     license            => 'perl',
+@@ -98,7 +98,7 @@
+ if ( not -d $template_path ) {
+     my $make_path = $build->y_n(
+         "$template_path does not exist, should I make it?",
+-        'y'
++        'n'
+     );
+ 
+     if ( $make_path ) {
+@@ -131,101 +131,6 @@
+         $self->process_web_files( 'web' );
  
      }
- 
+-
 -    sub ACTION_install {
 -        my $self = shift;
 -        
@@ -98,7 +123,6 @@
 -        print "\n";
 -
 -    } # end ACTION_install
--
+ 
      sub process_web_files {
          my $self = shift;
-         my $files = $self->find_web_files;
