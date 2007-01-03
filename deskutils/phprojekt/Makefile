@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phprojekt
-PORTVERSION=	5.1.2
+PORTVERSION=	5.2
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.phprojekt.com/download/
 DISTNAME=	${PORTNAME}
@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	An open source groupware suite
 
-USE_PHP=	yes
-DEFAULT_PHP_VER=4
 USE_PHP=	session imap mysql
 WANT_PHP_WEB=	yes
 
