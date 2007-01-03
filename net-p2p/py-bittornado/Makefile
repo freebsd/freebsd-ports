@@ -7,6 +7,7 @@
 
 PORTNAME=	BitTornado
 PORTVERSION=	0.3.18
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python ipv6
 MASTER_SITES=	http://download.bittornado.com/download/ \
@@ -17,7 +18,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT?=	An extended BitTorrent peer-to-peer tool for distributing files
 
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+
 CONFLICTS=	py??-*[Bb]it[Tt]ornado-core-[0-9]* py??-*[Bb]it[Tt]orrent*-[0-9]* btqueue-[0-9]*
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
