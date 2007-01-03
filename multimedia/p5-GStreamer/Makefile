@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GStreamer
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk2-perl
@@ -69,9 +69,5 @@ PERL_THREADED!=	${PERL} -V | ${GREP} -- -Dusethreads=y || ${TRUE}
 IGNORE=		must be built with a threaded Perl, reinstall Perl with WITH_THREADS=yes
 .  endif
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|strndup|g_strndup|g' \
-		${WRKSRC}/xs/GstBuffer.xs
 
 .include <bsd.port.post.mk>
