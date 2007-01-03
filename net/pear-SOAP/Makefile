@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SOAP
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.4
 CATEGORIES=	net www pear
 
 MAINTAINER=	ports@FreeBSD.org
