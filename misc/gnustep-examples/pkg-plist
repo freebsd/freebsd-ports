@@ -140,7 +140,6 @@ Local/Library/Services/example.service/Resources/Info-gnustep.plist
 Local/Library/Services/example.service/example
 @dirrm Local/Library/Services/example.service/Resources
 @dirrm Local/Library/Services/example.service
-@dirrm Local/Library/Services
 @dirrm Local/Library/ApplicationSupport/GSTest/StringDrawing-test.bundle/Resources
 @dirrm Local/Library/ApplicationSupport/GSTest/StringDrawing-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/Resources
