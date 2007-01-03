@@ -11872,6 +11872,7 @@ portsearch	ports/sysutils/portsearch
 portsentry	ports/security/portsentry
 portsman	ports/sysutils/portsman
 portsnap	ports/sysutils/portsnap
+portsopt	ports/sysutils/portsopt
 porttools	ports/devel/porttools
 portupgrade	ports/sysutils/portupgrade
 portupgrade-devel	ports/sysutils/portupgrade-devel
