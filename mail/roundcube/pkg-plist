@@ -577,6 +577,7 @@
 %%RCUBEDIR%%/skins/default/templates/settings.html
 %%RCUBEDIR%%/skins/default/templates/showcontact.html
 %%RCUBEDIR%%/skins/default/watermark.html
+%%SPELLCHECK%%%%RCUBEDIR%%/spellchecker.php
 %%RCUBEDIR%%/temp/.htaccess
 @dirrm %%RCUBEDIR%%/skins/default/templates
 @dirrm %%RCUBEDIR%%/skins/default/includes

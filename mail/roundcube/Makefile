@@ -57,10 +57,11 @@ LOCALBASE?=	/usr/local
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off
-
 .if defined(PHP_VER) && ${PHP_VER} == 5
 OPTIONS+=	SQLITE "Use SQLite backend" off
 .endif
+OPTIONS+=	SPELLCHECK "Enable spellchecking" off \
+		LOCALCHECK "Install internal spellchecker" off
 
 .include <bsd.port.pre.mk>
 
@@ -80,10 +81,27 @@ USE_PHP+=	pgsql
 USE_PHP+=	sqlite
 .endif
 
+.if defined(WITH_SPELLCHECK)
+USE_PHP+=	openssl sockets
+.endif
+
+.if defined(WITH_LOCALCHECK)
+RCUBECOMP+=	spellchecker.php
+USE_PHP+=	pspell simplexml
+PLIST_SUB+=	SPELLCHECK=""
+.else
+PLIST_SUB+=	SPELLCHECK="@comment "
+.endif
+
 # Avoid INDEX breakage when WITHOUT_MYSQL is defined.
 USE_PHP?=	yes
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
+
+.if defined(WITH_LOCALCHECK)
+post-extract:
+	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
+.endif
 
 .if defined(WITH_REPLACE_MAIL_URL)
 post-patch:
