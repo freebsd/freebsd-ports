@@ -45,7 +45,7 @@ etc/asterisk/codecs.conf-dist
 @exec [ -f %B/codecs.conf ] || cp %B/%f %B/codecs.conf
 @unexec if cmp -s %D/etc/asterisk/dnsmgr.conf %D/etc/asterisk/dnsmgr.conf-dist; then rm -f %D/etc/asterisk/dnsmgr.conf; fi
 etc/asterisk/dnsmgr.conf-dist
-@exec [ -f %B/dnsmgr.conf ] || cp %B/%f %B/dmsmgr.conf
+@exec [ -f %B/dnsmgr.conf ] || cp %B/%f %B/dnsmgr.conf
 @unexec if cmp -s %D/etc/asterisk/dundi.conf %D/etc/asterisk/dundi.conf-dist; then rm -f %D/etc/asterisk/dundi.conf; fi
 etc/asterisk/dundi.conf-dist
 @exec [ -f %B/dundi.conf ] || cp %B/%f %B/dundi.conf
@@ -734,6 +734,7 @@ sbin/streamplayer
 %%DATADIR%%/sounds/vm-unknown-caller.gsm
 %%DATADIR%%/sounds/vm-whichbox.gsm
 %%DATADIR%%/sounds/vm-youhave.gsm
+@exec mkdir -p %%DATADIR%%/sounds/priv-callerintros
 @dirrm %%DATADIR%%/sounds/priv-callerintros
 @dirrm %%DATADIR%%/sounds/phonetic
 @dirrm %%DATADIR%%/sounds/letters
@@ -755,7 +756,13 @@ sbin/streamplayer
 spool/asterisk/voicemail/default/1234/busy.gsm
 spool/asterisk/voicemail/default/1234/unavail.gsm
 @exec mkdir -p %D/log/asterisk/cdr-csv
+@exec mkdir -p %D/log/asterisk/cdr-custom
 @exec mkdir -p %D/spool/asterisk/voicemail/default/1234/INBOX
+@exec mkdir -p %D/spool/asterisk/dictate
+@exec mkdir -p %D/spool/asterisk/meetme
+@exec mkdir -p %D/spool/asterisk/monitor
+@exec mkdir -p %D/spool/asterisk/system
+@exec mkdir -p %D/spool/asterisk/tmp
 @dirrm spool/asterisk/dictate
 @dirrm spool/asterisk/meetme
 @dirrm spool/asterisk/monitor
