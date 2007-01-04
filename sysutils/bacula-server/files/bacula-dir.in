@@ -19,9 +19,10 @@
 name="bacula_dir"
 rcvar=${name}_enable
 command=%%PREFIX%%/sbin/bacula-dir
-pidfile="${bacula_dir_pidfile}"
 
 load_rc_config $name
+
+pidfile="${bacula_dir_pidfile}"
 
 : ${bacula_dir_enable="NO"}
 : ${bacula_dir_flags=" -u bacula -g bacula -v -c %%PREFIX%%/etc/bacula-dir.conf"}
