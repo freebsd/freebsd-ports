@@ -7,6 +7,7 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.5.0.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,10 +20,9 @@ BUILD_DEPENDS=	\
 		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
-		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
-		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -41,10 +41,14 @@ USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
 		org/gudy/azureus2/ui/swt/shells/MessageSlideShell.java \
 		org/gudy/azureus2/ui/swt/views/TableView.java \
 		org/gudy/azureus2/ui/swt/Utils.java \
-		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java
+		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
+		com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java
+
 NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
+
+OPTIONS=	SWTDEVEL "Use SWT Development port" off
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -60,7 +64,7 @@ do-configure:
 		-e "s|%%JAVA_VERSION%%|${JAVA_VERSION}|" \
 		-e "s|%%JAVA_OS%%|${JAVA_OS}|" \
 		-e "s|%%JARFILE%%|${JARFILE}|" \
-		-e "s|%%SWTJAR%%|${JAVALIBDIR}/swt.jar|" \
+		-e "s|%%SWTJAR%%|${JAVALIBDIR}/${SWT_JAR}|" \
 		${FILESDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}
 
 do-install:
@@ -73,6 +77,20 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SWTDEVEL)
+BUILD_DEPENDS+=	\
+		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+RUN_DEPENDS+=	\
+		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+SWT_JAR=	swt-devel.jar
+.else
+BUILD_DEPENDS+=	\
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+RUN_DEPENDS+=	\
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+SWT_JAR=	swt.jar
+.endif
 
 CLASSPATH=.
 .for jar in ${CLASSPATH_JARS}
