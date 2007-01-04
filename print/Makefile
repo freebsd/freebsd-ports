@@ -125,6 +125,7 @@
     SUBDIR += latex
     SUBDIR += latex-arydshln
     SUBDIR += latex-auto-greek
+    SUBDIR += latex-beamer
     SUBDIR += latex-biblist
     SUBDIR += latex-bytefield
     SUBDIR += latex-caption
@@ -134,6 +135,7 @@
     SUBDIR += latex-logpap
     SUBDIR += latex-mathabx
     SUBDIR += latex-msc
+    SUBDIR += latex-pgf
     SUBDIR += latex-subfloat
     SUBDIR += latex-svninfo
     SUBDIR += latex-timing

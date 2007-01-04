@@ -2568,13 +2568,11 @@ print/py-freetype||2006-12-12|Has expired: Project has disappeared and is no lon
 palm/syncal||2006-12-12|Has expired: Does not build with new pilot-link
 net/tn3270||2006-12-12|Has expired: dumps core. Please use net/c3270 instead
 multimedia/dvdwizard||2006-12-12|Has expired: has an incomplete dependency list
-print/latex-beamer||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-bibtopic||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-bibunits||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-booktabs||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-index||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-layouts||2006-12-12|Has expired: is already included in the teTeX distribution
-print/latex-pgf||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-subfig||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-xcolor||2006-12-12|Has expired: is already included in the teTeX distribution
 print/latex-lineno||2006-12-12|Has expired: is already included in the teTeX distribution

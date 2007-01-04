@@ -1,0 +1,8 @@
+pgf stands for `portable graphics format'. It is a TeX macro package
+that allows you to create graphics in your TeX documents using a special
+pgfpicture environment and special macros for drawing lines, curves,
+rectangles, and many other kind of graphic objects.
+Its usage closely resembles the pstricks package or the normal picture
+environment of LaTeX.
+
+WWW: http://latex-beamer.sourceforge.net/
