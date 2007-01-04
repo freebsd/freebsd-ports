@@ -670,6 +670,7 @@ babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
 bacula-client	ports/sysutils/bacula-client
 bacula-client-devel	ports/sysutils/bacula-client-devel
+bacula-docs	ports/sysutils/bacula-docs
 bacula-server	ports/sysutils/bacula-server
 bacula-server-devel	ports/sysutils/bacula-server-devel
 bacula-web	ports/www/bacula-web
