@@ -1,0 +1,24 @@
+make deinstall clean package ; mv himenobench-2004.08.16.tbz  himenobench-2004.08.16-gcc42.tbz 
+make -DWITH_OPTIMIZED_FLAGS deinstall clean package ; mv himenobench-2004.08.16.tbz  himenobench-2004.08.16-gcc42-opt.tbz 
+make USE_GCC=3.2+ deinstall clean package ; mv himenobench-2004.08.16.tbz  himenobench-2004.08.16-gcc34.tbz 
+make USE_GCC=3.2+ -DWITH_OPTIMIZED_FLAGS deinstall clean package ; mv himenobench-2004.08.16.tbz  himenobench-2004.08.16-gcc34-opt.tbz 
+pkg_delete himenobench-2004.08.16 ; pkg_add himenobench-2004.08.16-gcc34-opt.tbz 
+echo g77-34opt
+himenobmtxp_m
+echo gcc34opt
+himenobmtxps_m
+pkg_delete himenobench-2004.08.16 ; pkg_add himenobench-2004.08.16-gcc34.tbz
+echo g77-34
+himenobmtxp_m 
+echo gcc34
+himenobmtxps_m
+pkg_delete himenobench-2004.08.16 ; pkg_add himenobench-2004.08.16-gcc42-opt.tbz
+echo gfortran42opt
+himenobmtxp_m 
+echo gcc42opt
+himenobmtxps_m
+pkg_delete himenobench-2004.08.16 ; pkg_add himenobench-2004.08.16-gcc42.tbz
+echo gfortran42
+himenobmtxp_m 
+echo gcc42
+himenobmtxps_m
