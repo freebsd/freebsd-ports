@@ -25,10 +25,15 @@ MAN1=		audacious.1 audtool.1
 
 PORTDOCS=	README AUTHORS ChangeLog NEWS
 
-OPTIONS=	GNOME	"Build with gconf support" off \
+OPTIONS=	CHARSET	"Build with automatic charset detection" off \
+		GNOME	"Build with gconf support" off \
 		NLS	"Native Language Support" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_CHARSET_DETECTION)
+CONFIGURE_ARGS+=--enable-chardet
+.endif
 
 .if defined(WITH_GNOME)
 USE_GNOME+=	gconf2
