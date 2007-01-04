@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.8
-PORTREVISION=	2
+PORTVERSION=	0.5.9
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
@@ -65,7 +64,7 @@ LIB_DEPENDS+=	js.1:${PORTSDIR}/lang/spidermonkey
 CONFIGURE_ARGS+=--without-browser-plugin
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
-USE_GECKO=	firefox mozilla xulrunner firefox15
+USE_GECKO=	firefox mozilla seamonkey xulrunner firefox15
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
 CONFIGURE_ENV+=	NSPR_CFLAGS="-I${LOCALBASE}/include/nspr" \
@@ -73,6 +72,12 @@ CONFIGURE_ENV+=	NSPR_CFLAGS="-I${LOCALBASE}/include/nspr" \
 CONFIGURE_ARGS+=--disable-libjs
 PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:/bin/sh @install_sh@ -d:" \
+		${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:/bin/sh @install_sh@ -d:" \
+		${WRKSRC}/misc/po/Makefile.in.in
 
 post-install:
 .if !defined(WITHOUT_MOZILLA_PLUGIN)
