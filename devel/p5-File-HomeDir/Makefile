@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-HomeDir
-PORTVERSION=	0.58
+PORTVERSION=	0.62
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		File::HomeDir.3
+MAN3=		File::HomeDir.3 File::HomeDir::Darwin.3 File::HomeDir::Unix.3 \
+		File::HomeDir::Windows.3
 
 .include <bsd.port.pre.mk>
 
