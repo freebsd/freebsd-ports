@@ -1766,6 +1766,7 @@
     SUBDIR += py-pmock
     SUBDIR += py-pqueue
     SUBDIR += py-protocols
+    SUBDIR += py-protocols-devel
     SUBDIR += py-psyco
     SUBDIR += py-px
     SUBDIR += py-pydasm
