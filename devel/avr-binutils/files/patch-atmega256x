@@ -1738,7 +1738,7 @@ diff -Nur gas/config/tc-avr.c gas/config/tc-avr.c
 +		      break;
 +
 +		    default:
-+		      as_warn (_("expression dangerous with linker stubs"));
++		      break; /* as_warn (_("expression dangerous with linker stubs")); *//* Bjoern agreed. :) */
 +		    }
 +		}
 +	      return reloc_to_return;
