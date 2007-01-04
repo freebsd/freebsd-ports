@@ -261,6 +261,7 @@ _WX_PYSUFX=				-ansi
 
 # Fill _HAVE_WX with the installed components.
 
+.	undef _HAVE_WX
 .	for __WANT_WX in ${_WANT_WX}
 # Check if _WANT_WX contains more than one word.
 .		if defined(_HAVE_WX)
