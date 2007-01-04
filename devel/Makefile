@@ -1777,6 +1777,7 @@
     SUBDIR += py-rlcompleter2
     SUBDIR += py-ro
     SUBDIR += py-roxlib
+    SUBDIR += py-ruledispatch
     SUBDIR += py-sendfile
     SUBDIR += py-setuptools
     SUBDIR += py-simplejson
