@@ -7,13 +7,13 @@
 
 PORTNAME=	poppassd
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 DISTNAME=	pwserve-4
 EXTRACT_SUFX=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tedm@ipinc.net
 COMMENT=	A server to allow users to change their password from within Eudora
 
 EXTRACT_CMD=	${CAT}
