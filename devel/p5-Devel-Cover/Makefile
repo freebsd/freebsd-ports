@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -39,6 +39,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::DB::Structure.3 \
 		Devel::Cover::Op.3 \
 		Devel::Cover::Pod.3 \
+		Devel::Cover::Report::Compilation.3 \
 		Devel::Cover::Report::Html.3 \
 		Devel::Cover::Report::Html_basic.3 \
 		Devel::Cover::Report::Html_minimal.3 \
