@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.13
+PORTVERSION=	2.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -31,6 +31,7 @@ MAN3=	Log::Dispatch.3 \
 	Log::Dispatch::File.3 \
 	Log::Dispatch::File::Locked.3 \
 	Log::Dispatch::Handle.3 \
+    	Log::Dispatch::Null.3 \
 	Log::Dispatch::Output.3 \
 	Log::Dispatch::Screen.3 \
 	Log::Dispatch::Syslog.3

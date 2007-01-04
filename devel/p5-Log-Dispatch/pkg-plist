@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Log/Dispatch/File.pm
 %%SITE_PERL%%/Log/Dispatch/File/Locked.pm
 %%SITE_PERL%%/Log/Dispatch/Handle.pm
+%%SITE_PERL%%/Log/Dispatch/Null.pm
 %%SITE_PERL%%/Log/Dispatch/Output.pm
 %%SITE_PERL%%/Log/Dispatch/Screen.pm
 %%SITE_PERL%%/Log/Dispatch/Syslog.pm
