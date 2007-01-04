@@ -5914,6 +5914,7 @@ latd		ports/net/latd
 latex		ports/print/latex
 latex-arydshln	ports/print/latex-arydshln
 latex-auto-greek	ports/print/latex-auto-greek
+latex-beamer	ports/print/latex-beamer
 latex-biblist	ports/print/latex-biblist
 latex-bytefield	ports/print/latex-bytefield
 latex-caption	ports/print/latex-caption
@@ -5924,6 +5925,7 @@ latex-logpap	ports/print/latex-logpap
 latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
 latex-msc	ports/print/latex-msc
+latex-pgf	ports/print/latex-pgf
 latex-service	ports/textproc/latex-service
 latex-subfloat	ports/print/latex-subfloat
 latex-svninfo	ports/print/latex-svninfo
