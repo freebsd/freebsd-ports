@@ -25,6 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 #use gfortran
+WANT_FORTRAN=	yes #dummy knob
 USE_GCC?=4.2+
 GCCVER:=      ${USE_GCC:S/+//}
 
