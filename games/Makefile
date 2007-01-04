@@ -505,6 +505,7 @@
     SUBDIR += openglad
     SUBDIR += openmortal
     SUBDIR += openttd
+    SUBDIR += openyahtzee
     SUBDIR += orbital_eunuchs_sniper
     SUBDIR += p5-Algorithm-Pair-Best
     SUBDIR += p5-Algorithm-Pair-Swiss
