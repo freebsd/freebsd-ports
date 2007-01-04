@@ -11,8 +11,6 @@ www/data/geeklog/language/bulgarian.php
 www/data/geeklog/language/bulgarian_utf-8.php
 www/data/geeklog/language/catalan.php
 www/data/geeklog/language/catalan_utf-8.php
-www/data/geeklog/language/chinese_big5.php
-www/data/geeklog/language/chinese_gb2312.php
 www/data/geeklog/language/chinese_simplified_utf-8.php
 www/data/geeklog/language/chinese_traditional_utf-8.php
 www/data/geeklog/language/croatian.php
@@ -25,6 +23,8 @@ www/data/geeklog/language/dutch.php
 www/data/geeklog/language/dutch_utf-8.php
 www/data/geeklog/language/english.php
 www/data/geeklog/language/english_utf-8.php
+www/data/geeklog/language/estonian.php
+www/data/geeklog/language/estonian_utf-8.php
 www/data/geeklog/language/farsi_utf-8.php
 www/data/geeklog/language/finnish.php
 www/data/geeklog/language/finnish_utf-8.php
@@ -36,7 +36,7 @@ www/data/geeklog/language/german.php
 www/data/geeklog/language/german_formal.php
 www/data/geeklog/language/german_formal_utf-8.php
 www/data/geeklog/language/german_utf-8.php
-www/data/geeklog/language/hebrew.php
+www/data/geeklog/language/hebrew_utf-8.php
 www/data/geeklog/language/hellenic.php
 www/data/geeklog/language/hellenic_utf-8.php
 www/data/geeklog/language/indonesian.php
@@ -75,6 +75,48 @@ www/data/geeklog/language/ukrainian_utf-8.php
 www/data/geeklog/logs/access.log
 www/data/geeklog/logs/error.log
 www/data/geeklog/logs/spamx.log
+www/data/geeklog/plugins/calendar/config.php
+www/data/geeklog/plugins/calendar/functions.inc
+www/data/geeklog/plugins/calendar/language/README
+www/data/geeklog/plugins/calendar/language/english.php
+www/data/geeklog/plugins/calendar/language/english_utf-8.php
+www/data/geeklog/plugins/calendar/language/estonian.php
+www/data/geeklog/plugins/calendar/language/estonian_utf-8.php
+www/data/geeklog/plugins/calendar/language/german.php
+www/data/geeklog/plugins/calendar/language/german_formal.php
+www/data/geeklog/plugins/calendar/language/german_formal_utf-8.php
+www/data/geeklog/plugins/calendar/language/german_utf-8.php
+www/data/geeklog/plugins/calendar/language/japanese.php
+www/data/geeklog/plugins/calendar/language/japanese_utf-8.php
+www/data/geeklog/plugins/calendar/language/russian.php
+www/data/geeklog/plugins/calendar/language/russian_utf-8.php
+www/data/geeklog/plugins/calendar/language/slovenian.php
+www/data/geeklog/plugins/calendar/language/slovenian_utf-8.php
+www/data/geeklog/plugins/calendar/language/ukrainian.php
+www/data/geeklog/plugins/calendar/language/ukrainian_koi8-u.php
+www/data/geeklog/plugins/calendar/language/ukrainian_utf-8.php
+www/data/geeklog/plugins/calendar/sql/mssql_install.php
+www/data/geeklog/plugins/calendar/sql/mysql_install.php
+www/data/geeklog/plugins/calendar/templates/addevent.thtml
+www/data/geeklog/plugins/calendar/templates/addeventoption.thtml
+www/data/geeklog/plugins/calendar/templates/addremoveevent.thtml
+www/data/geeklog/plugins/calendar/templates/admin/eventeditor.thtml
+www/data/geeklog/plugins/calendar/templates/calendar.thtml
+www/data/geeklog/plugins/calendar/templates/calendarday.thtml
+www/data/geeklog/plugins/calendar/templates/calendarevent.thtml
+www/data/geeklog/plugins/calendar/templates/calendarweek.thtml
+www/data/geeklog/plugins/calendar/templates/dayview/column.thtml
+www/data/geeklog/plugins/calendar/templates/dayview/dayview.thtml
+www/data/geeklog/plugins/calendar/templates/dayview/quickaddform.thtml
+www/data/geeklog/plugins/calendar/templates/dayview/singleevent.thtml
+www/data/geeklog/plugins/calendar/templates/editpersonalevent.thtml
+www/data/geeklog/plugins/calendar/templates/eventdetails.thtml
+www/data/geeklog/plugins/calendar/templates/events.thtml
+www/data/geeklog/plugins/calendar/templates/mastercalendaroption.thtml
+www/data/geeklog/plugins/calendar/templates/personalcalendaroption.thtml
+www/data/geeklog/plugins/calendar/templates/submitevent.thtml
+www/data/geeklog/plugins/calendar/templates/weekview/events.thtml
+www/data/geeklog/plugins/calendar/templates/weekview/weekview.thtml
 www/data/geeklog/plugins/developer.README
 www/data/geeklog/plugins/links/config.php
 www/data/geeklog/plugins/links/functions.inc
@@ -84,6 +126,8 @@ www/data/geeklog/plugins/links/language/chinese_traditional_utf-8.php
 www/data/geeklog/plugins/links/language/dutch.php
 www/data/geeklog/plugins/links/language/english.php
 www/data/geeklog/plugins/links/language/english_utf-8.php
+www/data/geeklog/plugins/links/language/estonian.php
+www/data/geeklog/plugins/links/language/estonian_utf-8.php
 www/data/geeklog/plugins/links/language/german.php
 www/data/geeklog/plugins/links/language/german_formal.php
 www/data/geeklog/plugins/links/language/german_formal_utf-8.php
@@ -92,8 +136,13 @@ www/data/geeklog/plugins/links/language/japanese.php
 www/data/geeklog/plugins/links/language/japanese_utf-8.php
 www/data/geeklog/plugins/links/language/polish.php
 www/data/geeklog/plugins/links/language/russian.php
+www/data/geeklog/plugins/links/language/slovenian.php
+www/data/geeklog/plugins/links/language/slovenian_utf-8.php
 www/data/geeklog/plugins/links/language/ukrainian.php
-www/data/geeklog/plugins/links/sql/install.php
+www/data/geeklog/plugins/links/language/ukrainian_koi8-u.php
+www/data/geeklog/plugins/links/language/ukrainian_utf-8.php
+www/data/geeklog/plugins/links/sql/mssql_install.php
+www/data/geeklog/plugins/links/sql/mysql_install.php
 www/data/geeklog/plugins/links/templates/admin/linkeditor.thtml
 www/data/geeklog/plugins/links/templates/categoryactivecol.thtml
 www/data/geeklog/plugins/links/templates/categorycol.thtml
@@ -113,6 +162,8 @@ www/data/geeklog/plugins/polls/language/chinese_traditional_utf-8.php
 www/data/geeklog/plugins/polls/language/dutch.php
 www/data/geeklog/plugins/polls/language/english.php
 www/data/geeklog/plugins/polls/language/english_utf-8.php
+www/data/geeklog/plugins/polls/language/estonian.php
+www/data/geeklog/plugins/polls/language/estonian_utf-8.php
 www/data/geeklog/plugins/polls/language/german.php
 www/data/geeklog/plugins/polls/language/german_formal.php
 www/data/geeklog/plugins/polls/language/german_formal_utf-8.php
@@ -120,8 +171,13 @@ www/data/geeklog/plugins/polls/language/german_utf-8.php
 www/data/geeklog/plugins/polls/language/japanese.php
 www/data/geeklog/plugins/polls/language/japanese_utf-8.php
 www/data/geeklog/plugins/polls/language/russian.php
+www/data/geeklog/plugins/polls/language/slovenian.php
+www/data/geeklog/plugins/polls/language/slovenian_utf-8.php
 www/data/geeklog/plugins/polls/language/ukrainian.php
-www/data/geeklog/plugins/polls/sql/install.php
+www/data/geeklog/plugins/polls/language/ukrainian_koi8-u.php
+www/data/geeklog/plugins/polls/language/ukrainian_utf-8.php
+www/data/geeklog/plugins/polls/sql/mssql_install.php
+www/data/geeklog/plugins/polls/sql/mysql_install.php
 www/data/geeklog/plugins/polls/templates/admin/pollansweroption.thtml
 www/data/geeklog/plugins/polls/templates/admin/polleditor.thtml
 www/data/geeklog/plugins/polls/templates/pollanswer.thtml
@@ -143,12 +199,14 @@ www/data/geeklog/plugins/spamx/EditIPofURL.Admin.class.php
 www/data/geeklog/plugins/spamx/Header.Examine.class.php
 www/data/geeklog/plugins/spamx/IP.Examine.class.php
 www/data/geeklog/plugins/spamx/IPofUrl.Examine.class.php
-www/data/geeklog/plugins/spamx/Import.Admin.class.php
 www/data/geeklog/plugins/spamx/LogView.Admin.class.php
-www/data/geeklog/plugins/spamx/MTBlackList.Examine.class.php
 www/data/geeklog/plugins/spamx/MailAdmin.Action.class.php
 www/data/geeklog/plugins/spamx/MassDelTrackback.Admin.class.php
 www/data/geeklog/plugins/spamx/MassDelete.Admin.class.php
+www/data/geeklog/plugins/spamx/SLV.Examine.class.php
+www/data/geeklog/plugins/spamx/SLVbase.class.php
+www/data/geeklog/plugins/spamx/SLVreport.Action.class.php
+www/data/geeklog/plugins/spamx/SLVwhitelist.Admin.class.php
 www/data/geeklog/plugins/spamx/config.php
 www/data/geeklog/plugins/spamx/functions.inc
 www/data/geeklog/plugins/spamx/language/english.php
@@ -157,16 +215,19 @@ www/data/geeklog/plugins/spamx/language/farsi_utf-8.php
 www/data/geeklog/plugins/spamx/language/french_canada.php
 www/data/geeklog/plugins/spamx/language/french_france.php
 www/data/geeklog/plugins/spamx/language/italian.php
+www/data/geeklog/plugins/spamx/language/japanese.php
+www/data/geeklog/plugins/spamx/language/japanese_utf-8.php
+www/data/geeklog/plugins/spamx/language/russian.php
+www/data/geeklog/plugins/spamx/language/russian_utf-8.php
+www/data/geeklog/plugins/spamx/language/slovenian.php
+www/data/geeklog/plugins/spamx/language/slovenian_utf-8.php
 www/data/geeklog/plugins/spamx/language/spanish.php
 www/data/geeklog/plugins/spamx/language/ukrainian.php
 www/data/geeklog/plugins/spamx/language/ukrainian_koi8-u.php
 www/data/geeklog/plugins/spamx/language/ukrainian_utf-8.php
-www/data/geeklog/plugins/spamx/magpierss/extlib/Snoopy.class.inc
-www/data/geeklog/plugins/spamx/magpierss/rss_cache.inc
-www/data/geeklog/plugins/spamx/magpierss/rss_fetch.inc
-www/data/geeklog/plugins/spamx/magpierss/rss_parse.inc
-www/data/geeklog/plugins/spamx/magpierss/rss_utils.inc
 www/data/geeklog/plugins/spamx/rss.inc.php
+www/data/geeklog/plugins/spamx/sql/mssql_install.php
+www/data/geeklog/plugins/spamx/sql/mysql_install.php
 www/data/geeklog/plugins/spamx/templates/admin.thtml
 www/data/geeklog/plugins/spamx/templates/install.thtml
 www/data/geeklog/plugins/staticpages/config.php
@@ -179,6 +240,8 @@ www/data/geeklog/plugins/staticpages/language/danish.php
 www/data/geeklog/plugins/staticpages/language/dutch.php
 www/data/geeklog/plugins/staticpages/language/english.php
 www/data/geeklog/plugins/staticpages/language/english_utf-8.php
+www/data/geeklog/plugins/staticpages/language/estonian.php
+www/data/geeklog/plugins/staticpages/language/estonian_utf-8.php
 www/data/geeklog/plugins/staticpages/language/farsi_utf-8.php
 www/data/geeklog/plugins/staticpages/language/french_canada.php
 www/data/geeklog/plugins/staticpages/language/german.php
@@ -190,13 +253,16 @@ www/data/geeklog/plugins/staticpages/language/japanese.php
 www/data/geeklog/plugins/staticpages/language/japanese_utf-8.php
 www/data/geeklog/plugins/staticpages/language/polish.php
 www/data/geeklog/plugins/staticpages/language/portuguese_brazil.php
+www/data/geeklog/plugins/staticpages/language/slovenian.php
+www/data/geeklog/plugins/staticpages/language/slovenian_utf-8.php
 www/data/geeklog/plugins/staticpages/language/spanish.php
 www/data/geeklog/plugins/staticpages/language/swedish.php
 www/data/geeklog/plugins/staticpages/language/turkish.php
 www/data/geeklog/plugins/staticpages/language/ukrainian.php
 www/data/geeklog/plugins/staticpages/language/ukrainian_koi8-u.php
 www/data/geeklog/plugins/staticpages/language/ukrainian_utf-8.php
-www/data/geeklog/plugins/staticpages/sql/install.php
+www/data/geeklog/plugins/staticpages/sql/mssql_install.php
+www/data/geeklog/plugins/staticpages/sql/mysql_install.php
 www/data/geeklog/plugins/staticpages/templates/admin/editor.thtml
 www/data/geeklog/plugins/staticpages/templates/admin/editor_advanced.thtml
 www/data/geeklog/plugins/staticpages/templates/printable.thtml
@@ -204,7 +270,6 @@ www/data/geeklog/public_html/404.php
 www/data/geeklog/public_html/admin/auth.inc.php
 www/data/geeklog/public_html/admin/block.php
 www/data/geeklog/public_html/admin/database.php
-www/data/geeklog/public_html/admin/event.php
 www/data/geeklog/public_html/admin/group.php
 www/data/geeklog/public_html/admin/index.php
 www/data/geeklog/public_html/admin/install/addindex.php
@@ -217,6 +282,8 @@ www/data/geeklog/public_html/admin/install/toinnodb.php
 www/data/geeklog/public_html/admin/mail.php
 www/data/geeklog/public_html/admin/moderation.php
 www/data/geeklog/public_html/admin/plugins.php
+www/data/geeklog/public_html/admin/plugins/calendar/index.php
+www/data/geeklog/public_html/admin/plugins/calendar/install.php
 www/data/geeklog/public_html/admin/plugins/links/index.php
 www/data/geeklog/public_html/admin/plugins/links/install.php
 www/data/geeklog/public_html/admin/plugins/polls/index.php
@@ -226,6 +293,7 @@ www/data/geeklog/public_html/admin/plugins/spamx/index.php
 www/data/geeklog/public_html/admin/plugins/spamx/install.php
 www/data/geeklog/public_html/admin/plugins/staticpages/index.php
 www/data/geeklog/public_html/admin/plugins/staticpages/install.php
+www/data/geeklog/public_html/admin/sectest.php
 www/data/geeklog/public_html/admin/story.php
 www/data/geeklog/public_html/admin/syndication.php
 www/data/geeklog/public_html/admin/topic.php
@@ -233,10 +301,15 @@ www/data/geeklog/public_html/admin/trackback.php
 www/data/geeklog/public_html/admin/user.php
 www/data/geeklog/public_html/article.php
 www/data/geeklog/public_html/backend/geeklog.rss
-www/data/geeklog/public_html/calendar.php
-www/data/geeklog/public_html/calendar_event.php
+www/data/geeklog/public_html/calendar/event.php
+www/data/geeklog/public_html/calendar/images/calendar.png
+www/data/geeklog/public_html/calendar/images/delete_event.gif
+www/data/geeklog/public_html/calendar/images/delete_event.png
+www/data/geeklog/public_html/calendar/index.php
+www/data/geeklog/public_html/calendar/style.css
 www/data/geeklog/public_html/comment.php
 www/data/geeklog/public_html/directory.php
+www/data/geeklog/public_html/docs/calendar.html
 www/data/geeklog/public_html/docs/changed-files
 www/data/geeklog/public_html/docs/changes.html
 www/data/geeklog/public_html/docs/config.html
@@ -249,6 +322,7 @@ www/data/geeklog/public_html/docs/images/pl.png
 www/data/geeklog/public_html/docs/index.html
 www/data/geeklog/public_html/docs/install.html
 www/data/geeklog/public_html/docs/license
+www/data/geeklog/public_html/docs/links.html
 www/data/geeklog/public_html/docs/plugin.html
 www/data/geeklog/public_html/docs/polls.html
 www/data/geeklog/public_html/docs/spamx.html
@@ -259,12 +333,15 @@ www/data/geeklog/public_html/docs/themevars.html
 www/data/geeklog/public_html/docs/trackback.html
 www/data/geeklog/public_html/fckeditor/_documentation.html
 www/data/geeklog/public_html/fckeditor/_whatsnew.html
-www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckcontextmenugroup.js
-www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckcontextmenuitem.js
-www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckcontextmenuseparator.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckcontextmenu.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckeditingarea.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckevents.js
-www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckpanel_gecko.js
-www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckpanel_ie.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckicon.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckiecleanup.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckmenublock.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckmenublockpanel.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckmenuitem.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckpanel.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckplugin.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckspecialcombo.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckstyledef.js
@@ -275,6 +352,7 @@ www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbar.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarbreak_gecko.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarbreak_ie.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarbutton.js
+www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarbuttonui.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarfontformatcombo.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarfontscombo.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarfontsizecombo.js
@@ -284,6 +362,7 @@ www/data/geeklog/public_html/fckeditor/editor/_source/classes/fcktoolbarstylecom
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckxml_gecko.js
 www/data/geeklog/public_html/fckeditor/editor/_source/classes/fckxml_ie.js
 www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fck_othercommands.js
+www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fckfitwindow.js
 www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fcknamedcommand.js
 www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fckpasteplaintextcommand.js
 www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fckpastewordcommand.js
@@ -292,8 +371,9 @@ www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fckspellche
 www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fckstylecommand.js
 www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fcktablecommand.js
 www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses/fcktextcolorcommand.js
-www/data/geeklog/public_html/fckeditor/editor/_source/globals/fck_constants.js
-www/data/geeklog/public_html/fckeditor/editor/_source/globals/fckeditorapi.js
+www/data/geeklog/public_html/fckeditor/editor/_source/fckconstants.js
+www/data/geeklog/public_html/fckeditor/editor/_source/fckeditorapi.js
+www/data/geeklog/public_html/fckeditor/editor/_source/fckjscoreextensions.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_1.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_1_gecko.js
@@ -301,25 +381,19 @@ www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_1_ie.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_2.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_2_gecko.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_2_ie.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_last.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_onload.js
+www/data/geeklog/public_html/fckeditor/editor/_source/internals/fck_contextmenu.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckbrowserinfo.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckcodeformatter.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckcommands.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckconfig.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckcontextmenu.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckcontextmenu_gecko.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckcontextmenu_ie.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckcoreextensions.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdebug.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdialog.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdialog_gecko.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdialog_ie.js
+www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdocumentprocessor.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fcklanguagemanager.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fcknamespace.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckplugins.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckregexlib.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckscriptloader.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckselection.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckselection_gecko.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckselection_ie.js
@@ -338,17 +412,15 @@ www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckxhtml.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckxhtml_gecko.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckxhtml_ie.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckxhtmlentities.js
-www/data/geeklog/public_html/fckeditor/editor/css/behaviors/anchor.gif
-www/data/geeklog/public_html/fckeditor/editor/css/behaviors/anchors.htc
 www/data/geeklog/public_html/fckeditor/editor/css/behaviors/disablehandles.htc
 www/data/geeklog/public_html/fckeditor/editor/css/behaviors/hiddenfield.gif
 www/data/geeklog/public_html/fckeditor/editor/css/behaviors/hiddenfield.htc
-www/data/geeklog/public_html/fckeditor/editor/css/behaviors/moz-bindings.xml
 www/data/geeklog/public_html/fckeditor/editor/css/behaviors/showtableborders.htc
 www/data/geeklog/public_html/fckeditor/editor/css/fck_editorarea.css
 www/data/geeklog/public_html/fckeditor/editor/css/fck_internal.css
 www/data/geeklog/public_html/fckeditor/editor/css/fck_showtableborders_gecko.css
 www/data/geeklog/public_html/fckeditor/editor/css/images/fck_anchor.gif
+www/data/geeklog/public_html/fckeditor/editor/css/images/fck_flashlogo.gif
 www/data/geeklog/public_html/fckeditor/editor/css/images/fck_pagebreak.gif
 www/data/geeklog/public_html/fckeditor/editor/dialog/common/fck_dialog_common.css
 www/data/geeklog/public_html/fckeditor/editor/dialog/common/fck_dialog_common.js
@@ -370,10 +442,12 @@ www/data/geeklog/public_html/fckeditor/editor/dialog/fck_docprops/fck_document_p
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_find.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_flash.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_flash/fck_flash.js
+www/data/geeklog/public_html/fckeditor/editor/dialog/fck_flash/fck_flash_preview.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_form.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_hiddenfield.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_image.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_image/fck_image.js
+www/data/geeklog/public_html/fckeditor/editor/dialog/fck_image/fck_image_preview.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_link.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_link/fck_link.js
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_listprop.html
@@ -399,8 +473,6 @@ www/data/geeklog/public_html/fckeditor/editor/dialog/fck_spellerpages/spellerpag
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_table.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_tablecell.html
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template.html
-www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template/fck_template_moz-bindings.xml
-www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template/fck_templateitem.htc
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template/images/template1.gif
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template/images/template2.gif
 www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template/images/template3.gif
@@ -419,7 +491,88 @@ www/data/geeklog/public_html/fckeditor/editor/fckdebug.html
 www/data/geeklog/public_html/fckeditor/editor/fckdialog.html
 www/data/geeklog/public_html/fckeditor/editor/fckeditor.html
 www/data/geeklog/public_html/fckeditor/editor/fckeditor.original.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/browser.css
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/browser.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors/php/basexml.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors/php/commands.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors/php/config.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors/php/connector.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors/php/io.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors/php/util.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/frmactualfolder.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/frmcreatefolder.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/frmfolders.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/frmresourceslist.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/frmresourcetype.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/frmupload.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/ButtonArrow.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/Folder.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/Folder32.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/FolderOpened.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/FolderOpened32.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/FolderUp.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/ai.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/avi.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/bmp.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/cs.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/default.icon.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/dll.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/doc.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/exe.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/fla.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/gif.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/htm.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/html.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/jpg.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/js.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/mdb.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/mp3.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/pdf.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/ppt.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/rdp.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/swf.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/swt.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/txt.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/vsd.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/xls.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/xml.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32/zip.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/ai.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/avi.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/bmp.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/cs.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/default.icon.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/dll.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/doc.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/exe.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/fla.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/gif.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/htm.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/html.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/jpg.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/js.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/mdb.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/mp3.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/pdf.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/ppt.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/rdp.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/swf.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/swt.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/txt.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/vsd.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/xls.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/xml.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/zip.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/spacer.gif
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/js/common.js
+www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/js/fckxml.js
+www/data/geeklog/public_html/fckeditor/editor/filemanager/upload/php/config.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/upload/php/upload.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/upload/php/util.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/upload/test.html
 www/data/geeklog/public_html/fckeditor/editor/images/anchor.gif
+www/data/geeklog/public_html/fckeditor/editor/images/arrow_ltr.gif
+www/data/geeklog/public_html/fckeditor/editor/images/arrow_rtl.gif
 www/data/geeklog/public_html/fckeditor/editor/images/smiley/fun/aiua.gif
 www/data/geeklog/public_html/fckeditor/editor/images/smiley/fun/ak.gif
 www/data/geeklog/public_html/fckeditor/editor/images/smiley/fun/alien.gif
@@ -530,14 +683,13 @@ www/data/geeklog/public_html/fckeditor/editor/images/smiley/msn/tounge_smile.gif
 www/data/geeklog/public_html/fckeditor/editor/images/smiley/msn/whatchutalkingabout_smile.gif
 www/data/geeklog/public_html/fckeditor/editor/images/smiley/msn/wink_smile.gif
 www/data/geeklog/public_html/fckeditor/editor/images/spacer.gif
-www/data/geeklog/public_html/fckeditor/editor/js/fck_startup.js
-www/data/geeklog/public_html/fckeditor/editor/js/fckeditorcode_gecko_1.js
-www/data/geeklog/public_html/fckeditor/editor/js/fckeditorcode_gecko_2.js
-www/data/geeklog/public_html/fckeditor/editor/js/fckeditorcode_ie_1.js
-www/data/geeklog/public_html/fckeditor/editor/js/fckeditorcode_ie_2.js
+www/data/geeklog/public_html/fckeditor/editor/js/fckeditorcode_gecko.js
+www/data/geeklog/public_html/fckeditor/editor/js/fckeditorcode_ie.js
+www/data/geeklog/public_html/fckeditor/editor/lang/_getfontformat.html
 www/data/geeklog/public_html/fckeditor/editor/lang/_translationstatus.txt
 www/data/geeklog/public_html/fckeditor/editor/lang/ar.js
 www/data/geeklog/public_html/fckeditor/editor/lang/bg.js
+www/data/geeklog/public_html/fckeditor/editor/lang/bn.js
 www/data/geeklog/public_html/fckeditor/editor/lang/bs.js
 www/data/geeklog/public_html/fckeditor/editor/lang/ca.js
 www/data/geeklog/public_html/fckeditor/editor/lang/cs.js
@@ -545,6 +697,7 @@ www/data/geeklog/public_html/fckeditor/editor/lang/da.js
 www/data/geeklog/public_html/fckeditor/editor/lang/de.js
 www/data/geeklog/public_html/fckeditor/editor/lang/el.js
 www/data/geeklog/public_html/fckeditor/editor/lang/en-au.js
+www/data/geeklog/public_html/fckeditor/editor/lang/en-ca.js
 www/data/geeklog/public_html/fckeditor/editor/lang/en-uk.js
 www/data/geeklog/public_html/fckeditor/editor/lang/en.js
 www/data/geeklog/public_html/fckeditor/editor/lang/eo.js
@@ -552,18 +705,20 @@ www/data/geeklog/public_html/fckeditor/editor/lang/es.js
 www/data/geeklog/public_html/fckeditor/editor/lang/et.js
 www/data/geeklog/public_html/fckeditor/editor/lang/eu.js
 www/data/geeklog/public_html/fckeditor/editor/lang/fa.js
-www/data/geeklog/public_html/fckeditor/editor/lang/fcklanguagemanager.js
 www/data/geeklog/public_html/fckeditor/editor/lang/fi.js
 www/data/geeklog/public_html/fckeditor/editor/lang/fo.js
 www/data/geeklog/public_html/fckeditor/editor/lang/fr.js
 www/data/geeklog/public_html/fckeditor/editor/lang/gl.js
 www/data/geeklog/public_html/fckeditor/editor/lang/he.js
+www/data/geeklog/public_html/fckeditor/editor/lang/hi.js
 www/data/geeklog/public_html/fckeditor/editor/lang/hr.js
 www/data/geeklog/public_html/fckeditor/editor/lang/hu.js
 www/data/geeklog/public_html/fckeditor/editor/lang/it.js
 www/data/geeklog/public_html/fckeditor/editor/lang/ja.js
+www/data/geeklog/public_html/fckeditor/editor/lang/km.js
 www/data/geeklog/public_html/fckeditor/editor/lang/ko.js
 www/data/geeklog/public_html/fckeditor/editor/lang/lt.js
+www/data/geeklog/public_html/fckeditor/editor/lang/lv.js
 www/data/geeklog/public_html/fckeditor/editor/lang/mn.js
 www/data/geeklog/public_html/fckeditor/editor/lang/ms.js
 www/data/geeklog/public_html/fckeditor/editor/lang/nl.js
@@ -584,29 +739,21 @@ www/data/geeklog/public_html/fckeditor/editor/lang/uk.js
 www/data/geeklog/public_html/fckeditor/editor/lang/vi.js
 www/data/geeklog/public_html/fckeditor/editor/lang/zh-cn.js
 www/data/geeklog/public_html/fckeditor/editor/lang/zh.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/CloseWindow/closewindow.gif
-www/data/geeklog/public_html/fckeditor/editor/plugins/CloseWindow/fckplugin.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/CloseWindow/lang/cs.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/CloseWindow/lang/en.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/CloseWindow/lang/nl.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/fckplugin.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/fckplugin.txt
-www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/fullwindow.gif
-www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/fullwindow.html
-www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/lang/cs.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/lang/en.js
-www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/lang/nl.js
+www/data/geeklog/public_html/fckeditor/editor/plugins/autogrow/fckplugin.js
 www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/fck_placeholder.html
 www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/fckplugin.js
 www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/lang/de.js
 www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/lang/en.js
 www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/lang/fr.js
 www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/lang/it.js
+www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/lang/pl.js
 www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/placeholder.gif
+www/data/geeklog/public_html/fckeditor/editor/plugins/simplecommands/fckplugin.js
 www/data/geeklog/public_html/fckeditor/editor/plugins/tablecommands/fckplugin.js
-www/data/geeklog/public_html/fckeditor/editor/skins/default/fck_contextmenu.css
+www/data/geeklog/public_html/fckeditor/editor/skins/_fckviewstrips.html
 www/data/geeklog/public_html/fckeditor/editor/skins/default/fck_dialog.css
 www/data/geeklog/public_html/fckeditor/editor/skins/default/fck_editor.css
+www/data/geeklog/public_html/fckeditor/editor/skins/default/fck_strip.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/default/images/toolbar.arrowright.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/default/images/toolbar.buttonarrow.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/default/images/toolbar.collapse.gif
@@ -614,79 +761,9 @@ www/data/geeklog/public_html/fckeditor/editor/skins/default/images/toolbar.end.g
 www/data/geeklog/public_html/fckeditor/editor/skins/default/images/toolbar.expand.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/default/images/toolbar.separator.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/default/images/toolbar.start.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/about.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/anchor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/bgcolor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/bold.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/bulletedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/button.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/checkbox.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/copy.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/cut.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/docprops.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/find.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/flash.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/form.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/hiddenfield.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/image.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/imagebutton.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/indent.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/inserthorizontalrule.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/insertorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/insertunorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/italic.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/justifycenter.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/justifyfull.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/justifyleft.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/justifyright.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/link.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/newpage.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/numberedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/outdent.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/pagebreak.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/paste.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/pastetext.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/pasteword.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/preview.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/print.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/radio.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/redo.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/removeformat.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/replace.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/save.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/select.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/selectall.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/showdetails.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/showtableborders.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/smiley.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/source.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/specialchar.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/spellcheck.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/strikethrough.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/subscript.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/superscript.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/table.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tablecell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tabledeletecells.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tabledeletecolumns.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tabledeleterows.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tableinsertcell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tableinsertcolumn.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tableinsertrow.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tablemergecells.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/tablesplitcell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/templates.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/textarea.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/textcolor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/textfield.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/underline.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/undo.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/universalkey.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/unlink.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar/unorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/fck_contextmenu.css
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/fck_dialog.css
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/fck_editor.css
+www/data/geeklog/public_html/fckeditor/editor/skins/office2003/fck_strip.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images/toolbar.arrowright.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images/toolbar.bg.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images/toolbar.buttonarrow.gif
@@ -695,85 +772,9 @@ www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images/toolbar.en
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images/toolbar.expand.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images/toolbar.separator.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images/toolbar.start.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/about.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/anchor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/bgcolor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/bold.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/bulletedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/button.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/checkbox.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/copy.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/cut.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/docprops.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/find.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/flash.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/fontstyleadv.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/form.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/hidden.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/hiddenfield.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/image.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/imagebutton.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/indent.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/input.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/inserthorizontalrule.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/insertorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/insertunorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/italic.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/justifycenter.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/justifyfull.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/justifyleft.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/justifyright.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/link.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/mail.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/new.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/newpage.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/numberedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/open.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/outdent.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/pagebreak.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/paste.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/pastetext.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/pasteword.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/preview.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/print.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/radio.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/redo.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/removeformat.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/replace.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/save.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/select.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/selectall.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/showdetails.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/showtableborders.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/smiley.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/source.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/specialchar.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/spellcheck.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/strikethrough.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/subscript.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/superscript.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/table.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tablecell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tabledeletecells.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tabledeletecolumns.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tabledeleterows.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tableinsertcell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tableinsertcolumn.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tableinsertrow.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tablemergecells.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/tablesplitcell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/templates.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/textarea.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/textcolor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/textfield.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/underline.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/undo.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/universalkey.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/unlink.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar/unorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/fck_contextmenu.css
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/fck_dialog.css
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/fck_editor.css
+www/data/geeklog/public_html/fckeditor/editor/skins/silver/fck_strip.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/images/toolbar.arrowright.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/images/toolbar.buttonarrow.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/images/toolbar.buttonbg.gif
@@ -782,82 +783,14 @@ www/data/geeklog/public_html/fckeditor/editor/skins/silver/images/toolbar.end.gi
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/images/toolbar.expand.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/images/toolbar.separator.gif
 www/data/geeklog/public_html/fckeditor/editor/skins/silver/images/toolbar.start.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/about.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/anchor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/bgcolor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/bold.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/bulletedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/button.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/checkbox.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/copy.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/cut.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/docprops.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/find.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/flash.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/form.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/hiddenfield.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/image.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/imagebutton.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/indent.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/inserthorizontalrule.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/insertorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/insertunorderedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/italic.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/justifycenter.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/justifyfull.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/justifyleft.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/justifyright.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/link.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/newpage.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/numberedlist.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/outdent.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/pagebreak.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/paste.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/pastetext.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/pasteword.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/preview.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/print.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/radio.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/redo.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/removeformat.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/replace.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/save.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/select.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/selectall.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/showdetails.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/showtableborders.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/smiley.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/source.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/specialchar.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/spellcheck.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/strikethrough.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/subscript.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/superscript.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/table.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tablecell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tabledeletecells.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tabledeletecolumns.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tabledeleterows.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tableinsertcell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tableinsertcolumn.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tableinsertrow.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tablemergecells.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/tablesplitcell.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/templates.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/textarea.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/textcolor.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/textfield.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/underline.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/undo.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/universalkey.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/unlink.gif
-www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar/unorderedlist.gif
 www/data/geeklog/public_html/fckeditor/fckconfig.js
 www/data/geeklog/public_html/fckeditor/fckeditor.js
 www/data/geeklog/public_html/fckeditor/fckeditor.php
 www/data/geeklog/public_html/fckeditor/fckstyles.xml
 www/data/geeklog/public_html/fckeditor/fcktemplates.xml
+www/data/geeklog/public_html/fckeditor/htaccess.txt
 www/data/geeklog/public_html/fckeditor/license.txt
+www/data/geeklog/public_html/fckeditor/myconfig.js
 www/data/geeklog/public_html/getimage.php
 www/data/geeklog/public_html/help/advancedsearch.html
 www/data/geeklog/public_html/help/cceventsubmission.html
@@ -881,8 +814,11 @@ www/data/geeklog/public_html/images/button_help.gif
 www/data/geeklog/public_html/images/buttons/cms-geeklog.png
 www/data/geeklog/public_html/images/buttons/geeklog-badge.gif
 www/data/geeklog/public_html/images/buttons/geekpower2.gif
+www/data/geeklog/public_html/images/buttons/index.html
 www/data/geeklog/public_html/images/buttons/mysql.gif
 www/data/geeklog/public_html/images/buttons/php.gif
+www/data/geeklog/public_html/images/buttons/valid-css.png
+www/data/geeklog/public_html/images/buttons/valid-html.png
 www/data/geeklog/public_html/images/icons/block.gif
 www/data/geeklog/public_html/images/icons/event.gif
 www/data/geeklog/public_html/images/icons/feed.gif
@@ -939,7 +875,9 @@ www/data/geeklog/public_html/images/topics/topic_news.gif
 www/data/geeklog/public_html/images/userphotos/index.html
 www/data/geeklog/public_html/index.php
 www/data/geeklog/public_html/javascript/advanced_editor.js
+www/data/geeklog/public_html/javascript/common.js
 www/data/geeklog/public_html/javascript/moveusers.js
+www/data/geeklog/public_html/javascript/profile_editor.js
 www/data/geeklog/public_html/javascript/staticpages_fckeditor.js
 www/data/geeklog/public_html/javascript/storyeditor_fckeditor.js
 www/data/geeklog/public_html/javascript/submitcomment_fckeditor.js
@@ -948,8 +886,7 @@ www/data/geeklog/public_html/layout/professional/README
 www/data/geeklog/public_html/layout/professional/admin/block/blockeditor.thtml
 www/data/geeklog/public_html/layout/professional/admin/block/defaultblockeditor.thtml
 www/data/geeklog/public_html/layout/professional/admin/block/index.html
-www/data/geeklog/public_html/layout/professional/admin/event/eventeditor.thtml
-www/data/geeklog/public_html/layout/professional/admin/event/index.html
+www/data/geeklog/public_html/layout/professional/admin/common/edit_permissions.thtml
 www/data/geeklog/public_html/layout/professional/admin/group/groupeditor.thtml
 www/data/geeklog/public_html/layout/professional/admin/group/groupmembers.thtml
 www/data/geeklog/public_html/layout/professional/admin/group/index.html
@@ -992,6 +929,8 @@ www/data/geeklog/public_html/layout/professional/admin/trackback/pingitem.thtml
 www/data/geeklog/public_html/layout/professional/admin/trackback/pinglist.thtml
 www/data/geeklog/public_html/layout/professional/admin/trackback/serviceeditor.thtml
 www/data/geeklog/public_html/layout/professional/admin/trackback/trackbackeditor.thtml
+www/data/geeklog/public_html/layout/professional/admin/user/batchdelete.thtml
+www/data/geeklog/public_html/layout/professional/admin/user/batchdelete_options.thtml
 www/data/geeklog/public_html/layout/professional/admin/user/edituser.thtml
 www/data/geeklog/public_html/layout/professional/admin/user/groupedit.thtml
 www/data/geeklog/public_html/layout/professional/admin/user/index.html
@@ -1014,27 +953,6 @@ www/data/geeklog/public_html/layout/professional/blockheader-related.thtml
 www/data/geeklog/public_html/layout/professional/blockheader-right.thtml
 www/data/geeklog/public_html/layout/professional/blockheader.thtml
 www/data/geeklog/public_html/layout/professional/blockservices.thtml
-www/data/geeklog/public_html/layout/professional/calendar/addevent.thtml
-www/data/geeklog/public_html/layout/professional/calendar/addeventoption.thtml
-www/data/geeklog/public_html/layout/professional/calendar/addremoveevent.thtml
-www/data/geeklog/public_html/layout/professional/calendar/calendar.thtml
-www/data/geeklog/public_html/layout/professional/calendar/calendarday.thtml
-www/data/geeklog/public_html/layout/professional/calendar/calendarevent.thtml
-www/data/geeklog/public_html/layout/professional/calendar/calendarweek.thtml
-www/data/geeklog/public_html/layout/professional/calendar/dayview/column.thtml
-www/data/geeklog/public_html/layout/professional/calendar/dayview/dayview.thtml
-www/data/geeklog/public_html/layout/professional/calendar/dayview/index.html
-www/data/geeklog/public_html/layout/professional/calendar/dayview/quickaddform.thtml
-www/data/geeklog/public_html/layout/professional/calendar/dayview/singleevent.thtml
-www/data/geeklog/public_html/layout/professional/calendar/editpersonalevent.thtml
-www/data/geeklog/public_html/layout/professional/calendar/eventdetails.thtml
-www/data/geeklog/public_html/layout/professional/calendar/events.thtml
-www/data/geeklog/public_html/layout/professional/calendar/index.html
-www/data/geeklog/public_html/layout/professional/calendar/mastercalendaroption.thtml
-www/data/geeklog/public_html/layout/professional/calendar/personalcalendaroption.thtml
-www/data/geeklog/public_html/layout/professional/calendar/weekview/events.thtml
-www/data/geeklog/public_html/layout/professional/calendar/weekview/index.html
-www/data/geeklog/public_html/layout/professional/calendar/weekview/weekview.thtml
 www/data/geeklog/public_html/layout/professional/comment/comment.thtml
 www/data/geeklog/public_html/layout/professional/comment/commentbar.thtml
 www/data/geeklog/public_html/layout/professional/comment/commentform.thtml
@@ -1043,8 +961,6 @@ www/data/geeklog/public_html/layout/professional/comment/index.html
 www/data/geeklog/public_html/layout/professional/comment/reportcomment.thtml
 www/data/geeklog/public_html/layout/professional/comment/startcomment.thtml
 www/data/geeklog/public_html/layout/professional/comment/thread.thtml
-www/data/geeklog/public_html/layout/professional/customlogin-footer.thtml
-www/data/geeklog/public_html/layout/professional/customlogin-header.thtml
 www/data/geeklog/public_html/layout/professional/featuredstorybodytext.thtml
 www/data/geeklog/public_html/layout/professional/featuredstorytext.thtml
 www/data/geeklog/public_html/layout/professional/footer.thtml
@@ -1053,22 +969,17 @@ www/data/geeklog/public_html/layout/professional/header.thtml
 www/data/geeklog/public_html/layout/professional/images/admin/block-left.png
 www/data/geeklog/public_html/layout/professional/images/admin/block-right.png
 www/data/geeklog/public_html/layout/professional/images/admin/index.html
-www/data/geeklog/public_html/layout/professional/images/admin/plugins.gif
 www/data/geeklog/public_html/layout/professional/images/bar.gif
 www/data/geeklog/public_html/layout/professional/images/bararrowdown.png
 www/data/geeklog/public_html/layout/professional/images/bararrowup.png
 www/data/geeklog/public_html/layout/professional/images/button_help.png
-www/data/geeklog/public_html/layout/professional/images/buttons/geekpower2.gif
-www/data/geeklog/public_html/layout/professional/images/buttons/index.html
-www/data/geeklog/public_html/layout/professional/images/buttons/mysql.gif
-www/data/geeklog/public_html/layout/professional/images/buttons/php.gif
-www/data/geeklog/public_html/layout/professional/images/buttons/valid-css.png
-www/data/geeklog/public_html/layout/professional/images/buttons/valid-html.png
-www/data/geeklog/public_html/layout/professional/images/collapse.gif
+www/data/geeklog/public_html/layout/professional/images/collapse.png
 www/data/geeklog/public_html/layout/professional/images/copy.png
+www/data/geeklog/public_html/layout/professional/images/deleteitem.png
 www/data/geeklog/public_html/layout/professional/images/edit.png
-www/data/geeklog/public_html/layout/professional/images/expand.gif
+www/data/geeklog/public_html/layout/professional/images/expand.png
 www/data/geeklog/public_html/layout/professional/images/header-bg.png
+www/data/geeklog/public_html/layout/professional/images/icon_info.png
 www/data/geeklog/public_html/layout/professional/images/icons/block.png
 www/data/geeklog/public_html/layout/professional/images/icons/database.png
 www/data/geeklog/public_html/layout/professional/images/icons/delete_event.png
@@ -1087,33 +998,29 @@ www/data/geeklog/public_html/layout/professional/images/icons/user.png
 www/data/geeklog/public_html/layout/professional/images/icons/versioncheck.png
 www/data/geeklog/public_html/layout/professional/images/index.html
 www/data/geeklog/public_html/layout/professional/images/list.png
-www/data/geeklog/public_html/layout/professional/images/logo-bg.gif
 www/data/geeklog/public_html/layout/professional/images/logo.png
 www/data/geeklog/public_html/layout/professional/images/mail.png
-www/data/geeklog/public_html/layout/professional/images/pdf.gif
-www/data/geeklog/public_html/layout/professional/images/person.gif
+www/data/geeklog/public_html/layout/professional/images/pdf.png
+www/data/geeklog/public_html/layout/professional/images/person.png
 www/data/geeklog/public_html/layout/professional/images/print.png
 www/data/geeklog/public_html/layout/professional/images/sendping.png
 www/data/geeklog/public_html/layout/professional/images/smallcamera.png
 www/data/geeklog/public_html/layout/professional/images/sysmessage.png
 www/data/geeklog/public_html/layout/professional/leftblocks.thtml
-www/data/geeklog/public_html/layout/professional/links/categoryactivecol.thtml
-www/data/geeklog/public_html/layout/professional/links/categorycol.thtml
-www/data/geeklog/public_html/layout/professional/links/categorylinks.thtml
-www/data/geeklog/public_html/layout/professional/links/categorynavigation.thtml
-www/data/geeklog/public_html/layout/professional/links/categoryrow.thtml
-www/data/geeklog/public_html/layout/professional/links/index.html
-www/data/geeklog/public_html/layout/professional/links/linkdetails.thtml
-www/data/geeklog/public_html/layout/professional/links/links.thtml
-www/data/geeklog/public_html/layout/professional/links/pagenavigation.thtml
 www/data/geeklog/public_html/layout/professional/list.thtml
 www/data/geeklog/public_html/layout/professional/listitem.thtml
 www/data/geeklog/public_html/layout/professional/loginform.thtml
 www/data/geeklog/public_html/layout/professional/menuitem.thtml
 www/data/geeklog/public_html/layout/professional/menuitem_last.thtml
 www/data/geeklog/public_html/layout/professional/menuitem_none.thtml
+www/data/geeklog/public_html/layout/professional/navbar/breadcrumb_link.thtml
+www/data/geeklog/public_html/layout/professional/navbar/breadcrumbs.thtml
 www/data/geeklog/public_html/layout/professional/navbar/images/button.gif
 www/data/geeklog/public_html/layout/professional/navbar/images/button_over.gif
+www/data/geeklog/public_html/layout/professional/navbar/images/tableftI.gif
+www/data/geeklog/public_html/layout/professional/navbar/images/tableftJ.gif
+www/data/geeklog/public_html/layout/professional/navbar/images/tabrightI.gif
+www/data/geeklog/public_html/layout/professional/navbar/images/tabrightJ.gif
 www/data/geeklog/public_html/layout/professional/navbar/menuitem.thtml
 www/data/geeklog/public_html/layout/professional/navbar/navbar.thtml
 www/data/geeklog/public_html/layout/professional/preferences/boxesblock.thtml
@@ -1158,7 +1065,6 @@ www/data/geeklog/public_html/layout/professional/storybodytext.thtml
 www/data/geeklog/public_html/layout/professional/storytext.thtml
 www/data/geeklog/public_html/layout/professional/style.css
 www/data/geeklog/public_html/layout/professional/submit/index.html
-www/data/geeklog/public_html/layout/professional/submit/submitevent.thtml
 www/data/geeklog/public_html/layout/professional/submit/submitloginrequired.thtml
 www/data/geeklog/public_html/layout/professional/submit/submitstory.thtml
 www/data/geeklog/public_html/layout/professional/submit/submitstory_advanced.thtml
@@ -1187,7 +1093,6 @@ www/data/geeklog/public_html/links/portal.php
 www/data/geeklog/public_html/pingback.php
 www/data/geeklog/public_html/polls/images/polls.png
 www/data/geeklog/public_html/polls/index.php
-www/data/geeklog/public_html/portal.php
 www/data/geeklog/public_html/profiles.php
 www/data/geeklog/public_html/robots.txt
 www/data/geeklog/public_html/search.php
@@ -1195,10 +1100,12 @@ www/data/geeklog/public_html/staticpages/images/staticpages.png
 www/data/geeklog/public_html/staticpages/index.php
 www/data/geeklog/public_html/stats.php
 www/data/geeklog/public_html/submit.php
+www/data/geeklog/public_html/switchlang.php
 www/data/geeklog/public_html/trackback.php
 www/data/geeklog/public_html/users.php
 www/data/geeklog/public_html/usersettings.php
 www/data/geeklog/readme
+www/data/geeklog/sql/mssql_tableanddata.php
 www/data/geeklog/sql/mysql_tableanddata.php
 www/data/geeklog/sql/updates/0.1_to_0.2.sql
 www/data/geeklog/sql/updates/0.2_to_0.3.sql
@@ -1222,6 +1129,7 @@ www/data/geeklog/sql/updates/mysql_1.3.7_to_1.3.8.php
 www/data/geeklog/sql/updates/mysql_1.3.8_to_1.3.9.php
 www/data/geeklog/sql/updates/mysql_1.3.9_to_1.3.10.php
 www/data/geeklog/sql/updates/mysql_1.3_to_1.3.1.php
+www/data/geeklog/sql/updates/mysql_1.4.0_to_1.4.1.php
 www/data/geeklog/system/classes/authentication/Blogger.auth.class.php
 www/data/geeklog/system/classes/authentication/LiveJournal.auth.class.php
 www/data/geeklog/system/classes/calendar.class.php
@@ -1241,12 +1149,14 @@ www/data/geeklog/system/classes/template.class.php
 www/data/geeklog/system/classes/timer.class.php
 www/data/geeklog/system/classes/upload.class.php
 www/data/geeklog/system/classes/url.class.php
+www/data/geeklog/system/databases/mssql.class.php
 www/data/geeklog/system/databases/mysql.class.php
 www/data/geeklog/system/install_templates/databasesettings.tpl
 www/data/geeklog/system/lib-admin.php
 www/data/geeklog/system/lib-comment.php
 www/data/geeklog/system/lib-custom.php
 www/data/geeklog/system/lib-database.php
+www/data/geeklog/system/lib-mbyte.php
 www/data/geeklog/system/lib-pingback.php
 www/data/geeklog/system/lib-plugins.php
 www/data/geeklog/system/lib-security.php
@@ -1510,15 +1420,10 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/public_html/layout/professional/preferences
 @dirrm www/data/geeklog/public_html/layout/professional/navbar/images
 @dirrm www/data/geeklog/public_html/layout/professional/navbar
-@dirrm www/data/geeklog/public_html/layout/professional/links
 @dirrm www/data/geeklog/public_html/layout/professional/images/icons
-@dirrm www/data/geeklog/public_html/layout/professional/images/buttons
 @dirrm www/data/geeklog/public_html/layout/professional/images/admin
 @dirrm www/data/geeklog/public_html/layout/professional/images
 @dirrm www/data/geeklog/public_html/layout/professional/comment
-@dirrm www/data/geeklog/public_html/layout/professional/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/professional/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/professional/calendar
 @dirrm www/data/geeklog/public_html/layout/professional/article
 @dirrm www/data/geeklog/public_html/layout/professional/admin/user
 @dirrm www/data/geeklog/public_html/layout/professional/admin/trackback
@@ -1530,7 +1435,7 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/public_html/layout/professional/admin/mail
 @dirrm www/data/geeklog/public_html/layout/professional/admin/lists
 @dirrm www/data/geeklog/public_html/layout/professional/admin/group
-@dirrm www/data/geeklog/public_html/layout/professional/admin/event
+@dirrm www/data/geeklog/public_html/layout/professional/admin/common
 @dirrm www/data/geeklog/public_html/layout/professional/admin/block
 @dirrm www/data/geeklog/public_html/layout/professional/admin
 @dirrm www/data/geeklog/public_html/layout/professional
@@ -1550,23 +1455,18 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/public_html/images/admin
 @dirrm www/data/geeklog/public_html/images
 @dirrm www/data/geeklog/public_html/help
-@dirrm www/data/geeklog/public_html/fckeditor/editor/skins/silver/toolbar
 @dirrm www/data/geeklog/public_html/fckeditor/editor/skins/silver/images
 @dirrm www/data/geeklog/public_html/fckeditor/editor/skins/silver
-@dirrm www/data/geeklog/public_html/fckeditor/editor/skins/office2003/toolbar
 @dirrm www/data/geeklog/public_html/fckeditor/editor/skins/office2003/images
 @dirrm www/data/geeklog/public_html/fckeditor/editor/skins/office2003
-@dirrm www/data/geeklog/public_html/fckeditor/editor/skins/default/toolbar
 @dirrm www/data/geeklog/public_html/fckeditor/editor/skins/default/images
 @dirrm www/data/geeklog/public_html/fckeditor/editor/skins/default
 @dirrm www/data/geeklog/public_html/fckeditor/editor/skins
 @dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/tablecommands
+@dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/simplecommands
 @dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder/lang
 @dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/placeholder
-@dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow/lang
-@dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/FullWindow
-@dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/CloseWindow/lang
-@dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/CloseWindow
+@dirrm www/data/geeklog/public_html/fckeditor/editor/plugins/autogrow
 @dirrm www/data/geeklog/public_html/fckeditor/editor/plugins
 @dirrm www/data/geeklog/public_html/fckeditor/editor/lang
 @dirrm www/data/geeklog/public_html/fckeditor/editor/js
@@ -1574,6 +1474,17 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/public_html/fckeditor/editor/images/smiley/fun
 @dirrm www/data/geeklog/public_html/fckeditor/editor/images/smiley
 @dirrm www/data/geeklog/public_html/fckeditor/editor/images
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/upload/php
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/upload
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/js
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors/php
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/connectors
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser
+@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager
 @dirrm www/data/geeklog/public_html/fckeditor/editor/dialog/fck_universalkey
 @dirrm www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template/images
 @dirrm www/data/geeklog/public_html/fckeditor/editor/dialog/fck_template
@@ -1593,7 +1504,6 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/public_html/fckeditor/editor/css/behaviors
 @dirrm www/data/geeklog/public_html/fckeditor/editor/css
 @dirrm www/data/geeklog/public_html/fckeditor/editor/_source/internals
-@dirrm www/data/geeklog/public_html/fckeditor/editor/_source/globals
 @dirrm www/data/geeklog/public_html/fckeditor/editor/_source/commandclasses
 @dirrm www/data/geeklog/public_html/fckeditor/editor/_source/classes
 @dirrm www/data/geeklog/public_html/fckeditor/editor/_source
@@ -1601,12 +1511,15 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/public_html/fckeditor
 @dirrm www/data/geeklog/public_html/docs/images
 @dirrm www/data/geeklog/public_html/docs
+@dirrm www/data/geeklog/public_html/calendar/images
+@dirrm www/data/geeklog/public_html/calendar
 @dirrm www/data/geeklog/public_html/backend
 @dirrm www/data/geeklog/public_html/admin/plugins/staticpages
 @dirrm www/data/geeklog/public_html/admin/plugins/spamx/images
 @dirrm www/data/geeklog/public_html/admin/plugins/spamx
 @dirrm www/data/geeklog/public_html/admin/plugins/polls
 @dirrm www/data/geeklog/public_html/admin/plugins/links
+@dirrm www/data/geeklog/public_html/admin/plugins/calendar
 @dirrm www/data/geeklog/public_html/admin/plugins
 @dirrm www/data/geeklog/public_html/admin/install
 @dirrm www/data/geeklog/public_html/admin
@@ -1617,8 +1530,7 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/plugins/staticpages/language
 @dirrm www/data/geeklog/plugins/staticpages
 @dirrm www/data/geeklog/plugins/spamx/templates
-@dirrm www/data/geeklog/plugins/spamx/magpierss/extlib
-@dirrm www/data/geeklog/plugins/spamx/magpierss
+@dirrm www/data/geeklog/plugins/spamx/sql
 @dirrm www/data/geeklog/plugins/spamx/language
 @dirrm www/data/geeklog/plugins/spamx
 @dirrm www/data/geeklog/plugins/polls/templates/admin
@@ -1631,6 +1543,13 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/plugins/links/sql
 @dirrm www/data/geeklog/plugins/links/language
 @dirrm www/data/geeklog/plugins/links
+@dirrm www/data/geeklog/plugins/calendar/templates/weekview
+@dirrm www/data/geeklog/plugins/calendar/templates/dayview
+@dirrm www/data/geeklog/plugins/calendar/templates/admin
+@dirrm www/data/geeklog/plugins/calendar/templates
+@dirrm www/data/geeklog/plugins/calendar/sql
+@dirrm www/data/geeklog/plugins/calendar/language
+@dirrm www/data/geeklog/plugins/calendar
 @dirrm www/data/geeklog/plugins
 @dirrm www/data/geeklog/logs
 @dirrm www/data/geeklog/language
