@@ -3,6 +3,7 @@ bin/gcin-gb-toggle
 bin/gcin-message
 bin/gcin-setup
 bin/gcin2tab
+bin/gtab-merge
 bin/juyin-learn
 bin/phoa2d
 bin/phod2a
@@ -19,6 +20,7 @@ lib/libgcin-im-client.so
 lib/libgcin-im-client.so.1.0.1
 lib/libgcin-im-client.so.1
 %%DATADIR%%/script/gcin-user-setup
+%%DATADIR%%/script/gtab.append_prepare
 %%DATADIR%%/script/noseeing-inst
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab

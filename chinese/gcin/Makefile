@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
+		http://ftp.twaren.net/local-distfiles/gcin/:main \
 		http://yilan.twbbs.org/chinsan/gcin/:main \
 		LOCAL/chinsan:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
@@ -44,21 +44,23 @@ post-extract:
 .endif
 
 pre-patch:
+	${MV} ${WRKSRC}/icons/3/pingin.png ${WRKSRC}/icons/3/pinyin.png
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,bash,sh,; \
 		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
-		s,/usr/share,$$prefix/share,; 161 s,/gcin,,; \
+		s,/usr/share,$$prefix/share,; 164 s,/gcin,,; \
 		133,134 s,control-center-2\.0,gnome\/control-center-2\.0,g; \
 		s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
-	    	${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
+		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib,g; \
 		s,/usr/include,${X11BASE}/include,g; s,Xft2/X11/Xft,X11/Xft,' \
 		${WRKSRC}/qt-im/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' ${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${X11BASE},;' \
-		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup
+		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup \
+		${WRKSRC}/scripts/gtab.append_prepare
 	@${REINPLACE_CMD} -e 's,wget,fetch,' ${WRKSRC}/scripts/noseeing-inst
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,' \
 		${WRKSRC}/gtk-im/gtkimcontextgcin.c
@@ -67,8 +69,6 @@ pre-patch:
 		${WRKSRC}/IMdkit/Xi18n_sample/Makefile ${WRKSRC}/Makefile \
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
 		${WRKSRC}/scripts/utf8-edit
-	@${REINPLACE_CMD} -e 's,BIG_ENDIAN\(.*\)1,BIG_ENDIAN\1\0,' \
-		${WRKSRC}/gtab.h
 
 .if defined(WITH_BOSHIAMY)
 post-patch:
