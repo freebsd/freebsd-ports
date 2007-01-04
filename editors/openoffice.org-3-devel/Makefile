@@ -263,10 +263,10 @@ post-install:
 		${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
 	done
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
-	@${RM} -f ${PREFIX}/share/applications/${EXECBASE}
-	@${MKDIR} ${PREFIX}/share/applications
+	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
+	@${MKDIR} ${DESKTOPDIR}
 	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
-			${PREFIX}/share/applications/${EXECBASE}
+			${DESKTOPDIR}/${EXECBASE}
 	@${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
