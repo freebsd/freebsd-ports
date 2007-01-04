@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	1.0rc2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -31,6 +31,7 @@ GNU_CONFIGURE=	yes
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \
 		startfluxbox.1
+DOCSVERSION=	20060629
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -39,17 +40,19 @@ STRIP=
 .endif
 
 .if defined(WITH_DOCHTML)
-MASTER_SITES+=		http://fluxbox.org/docbook/en/tarballs/:html
-DISTFILES+=		fb-doc-mfhtml.tgz:html
-EXTRACT_ONLY+=		fb-doc-mfhtml.tgz
+MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:html \
+			http://people.freebsd.org/~mezz/distfiles/:html
+DISTFILES+=		fb-doc-mfhtml-${DOCSVERSION}.tgz:html
+EXTRACT_ONLY+=		fb-doc-mfhtml-${DOCSVERSION}.tgz
 PLIST_SUB+=		DOCHTML:=""
 .else
 PLIST_SUB+=		DOCHTML:="@comment "
 .endif
 
 .if defined(WITH_DOCPDF)
-MASTER_SITES+=		http://fluxbox.org/docbook/en/pdf/:pdf
-DISTFILES+=		fluxbook.pdf:pdf
+MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:pdf \
+			http://people.freebsd.org/~mezz/distfiles/:pdf
+DISTFILES+=		fluxbook-${DOCSVERSION}.pdf:pdf
 PLIST_SUB+=		DOCPDF:=""
 .else
 PLIST_SUB+=		DOCPDF:="@comment "
