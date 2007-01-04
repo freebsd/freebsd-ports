@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Locale
-PORTVERSION=	0.22
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -20,8 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-P
 
 PERL_MODBUILD=	yes
 
-MAN3=		DateTime::Locale.3 DateTime::Locale::Alias::ISO639_2.3 \
-		DateTime::Locale::Base.3 DateTime::LocaleCatalog.3
+MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes
