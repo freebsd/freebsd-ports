@@ -1,5 +1,3 @@
-%%DATADIR%%/query.sql
-sbin/chio-bacula
 sbin/bacula-dir
 sbin/bacula-sd
 sbin/bcopy
@@ -7,31 +5,38 @@ sbin/bextract
 sbin/bls
 sbin/bregex
 sbin/bscan
-sbin/btape
-sbin/bwild
-%%WXCONS%%sbin/wx-console
-%%GNOMECONS%%sbin/gnome-console
-sbin/dbcheck
 sbin/bsmtp
-@unexec if cmp -s %D/share/bacula/mtx-changer.old %D/share/bacula/mtx-changer; then rm -f %D/share/bacula/mtx-changer.old; fi
-@unexec if cmp -s %D/share/bacula/disk-changer.old %D/share/bacula/disk-changer; then rm -f %D/share/bacula/disk-changer.old; fi
-%%DATADIR%%/mtx-changer
+sbin/btape
+sbin/btraceback
+sbin/bwild
+sbin/chio-bacula
+sbin/dbcheck
+%%DATADIR%%/bacula
+%%DATADIR%%/bacula-ctl-dir
+%%DATADIR%%/bacula-ctl-fd
+%%DATADIR%%/bacula-ctl-sd
+%%DATADIR%%/bconsole
+%%DATADIR%%/btraceback.gdb
+%%DATADIR%%/btraceback.dbx
 %%DATADIR%%/create_bacula_database
 %%DATADIR%%/create_%%DBTYPE%%_database
+%%DATADIR%%/delete_catalog_backup
+%%DATADIR%%/disk-changer
 %%DATADIR%%/drop_bacula_database
-%%DATADIR%%/drop_%%DBTYPE%%_database
 %%DATADIR%%/drop_bacula_tables
+%%DATADIR%%/drop_%%DBTYPE%%_database
 %%DATADIR%%/drop_%%DBTYPE%%_tables
+%%DATADIR%%/dvd-handler
+%%DATADIR%%/gconsole
 %%DATADIR%%/grant_bacula_privileges
 %%DATADIR%%/grant_%%DBTYPE%%_privileges
 %%DATADIR%%/make_bacula_tables
+%%DATADIR%%/make_catalog_backup
 %%DATADIR%%/make_%%DBTYPE%%_tables
+%%DATADIR%%/mtx-changer
+%%DATADIR%%/query.sql
 %%DATADIR%%/update_bacula_tables
 %%DATADIR%%/update_%%DBTYPE%%_tables
-%%DATADIR%%/delete_catalog_backup
-%%DATADIR%%/make_catalog_backup
-%%DATADIR%%/dvd-handler
-%%DATADIR%%/disk-changer
 
 @dirrm %%DATADIR%%
 @unexec /usr/bin/killall bacula-sd  > /dev/null 2>&1 || true

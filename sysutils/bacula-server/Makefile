@@ -6,29 +6,36 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	1.38.11
-PORTREVISION=	3
+DISTVERSION=	2.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
-PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	dan@langille.org
 COMMENT?=	The network backup solution (server)
 
-CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]*
+PKGNAMESUFFIX?=	-server
+
+CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]* bacula-docs-devel-[0-9]*
 
 UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
+
 USE_RC_SUBR?=	bacula-dir bacula-sd
 
-SUB_FILES+=	pkg-message
+.if defined(WITH_CLIENT_ONLY)
+SUB_FILES+=	pkg-message.client
+.else
+SUB_FILES+=	pkg-message.server
+.endif
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
 #
 BACULA_DIR?=/var/db/bacula
 #
+MANCOMPRESSED=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
@@ -53,8 +60,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE SQLITE3 MYSQL POSTGRESQL MTX OPENSSL DOCS
-
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
 BATCH=	yes
@@ -68,7 +73,6 @@ IS_INTERACTIVE=	yes
 .if defined(WITH_CLIENT_ONLY)
 OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
-OPTIONS+=	DOCS "Install documention" off
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
@@ -88,24 +92,13 @@ USE_GNOME=	libgnome
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
-MAN8=		bacula.8
-
 .include <bsd.port.pre.mk>
-
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
-.if defined(WITH_DOCS)
-DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}-1.tar.gz
-.endif
-
-.if defined(WITH_DOCS)
-PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
-.endif
 
 .if defined(WITH_NLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 .else
-CONFIGURE_ARGS+=	--disable-nls   
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 # Client only or full server version
@@ -171,8 +164,13 @@ CONFIGURE_ARGS+=	--with-openssl
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-MAN8=bacula.8
+MAN8=bacula-fd.8 bconsole.8
+.else
+MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
+MAN1=bsmtp.1 bacula-console-gnome.1 bacula-tray-monitor.1 bacula-wxconsole.1
 .endif
+MAKE_ARGS+=	-E MAN8 -E MAN1
+MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
@@ -196,7 +194,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is SQLite-2!"
 .endif
-	@${ECHO_MSG} "  WITH_DOCS=yes  		if you want the documentation installed."
 	@${ECHO_MSG} "  WITH_OPENSSL=yes  	Enable OpenSSL for encrypted communication."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
@@ -212,10 +209,10 @@ post-patch:
 # 	In client port only install startup script out of script dir (see below post-install)
 # 	Dont mkdir ${PREFIX}/share/bacula cause it's empty
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|\(.*$$(MKDIR) $$(DESTDIR)$$(scriptdir)\)|#\1|g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
 #	In server port don't install filed
-	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' ${WRKSRC}/Makefile.in
 .endif
 
 pre-install:
@@ -226,11 +223,9 @@ pre-install:
 		${ECHO_CMD} "${BACULA_DIR} already exists"; \
 	fi
 
-.if !defined(WITH_CLIENT_ONLY)
 # 	Extend /etc/services and install UID/GID
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-.endif
 
 post-install:
 .if defined(WITH_CLIENT_ONLY)
@@ -240,8 +235,10 @@ post-install:
 # 	Console stuff
 	if [ -f ${PREFIX}/etc/bconsole.conf.new ]; then \
 		${ECHO_CMD} "etc/bconsole.conf.new" >> ${TMPPLIST}; \
+		${CHGRP} bacula ${PREFIX}/etc/bconsole.conf.new; \
 	elif [ -f ${PREFIX}/etc/bconsole.conf ]; then \
 		${MV} ${PREFIX}/etc/bconsole.conf ${PREFIX}/etc/bconsole.conf.sample; \
+		${CHGRP} bacula ${PREFIX}/etc/bconsole.conf.sample; \
 		${ECHO_CMD} "etc/bconsole.conf.sample" >> ${TMPPLIST}; \
 	fi
 .if defined(WITH_WXCONSOLE)
@@ -261,23 +258,8 @@ post-install:
 	fi
 .endif
 
-.if defined(WITH_CLIENT_ONLY)
-	${INSTALL_MAN} ${WRKSRC}/scripts/bacula.man ${PREFIX}/man/man8/bacula.8
-.endif
-
-# Documentation is only installed in -client port
-.if defined(WITH_DOCS)
-	for na in manual bacula-web; do \
-		${MKDIR} ${DOCSDIR}/$$na ;\
-		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}-1 && ${FIND} $$na | \
-			${CPIO} -pdm -L -R root:wheel ${DOCSDIR}; \
-	done
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ReleaseNotes ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}-1/manual/bacula.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}-1/developers/developers.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/kernstodo ${DOCSDIR}
-.endif
-
+#	ensure that users in the bacula group can run bconsole
+	${CHGRP} bacula ${PREFIX}/sbin/bconsole
 .else
 # 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
@@ -291,6 +273,7 @@ post-install:
 # 	chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
+
 .endif
 # 	Install leaves existing conf files untouched. Respect this here!
 	for na in ${CONFFILES}; do \
@@ -302,64 +285,6 @@ post-install:
 		fi; \
 	done
 
-# Inform user after install about important things ....
-	@${ECHO_MSG} "*********************************************************************"
-	@${ECHO_MSG} "NOTE:"
-	@${ECHO_MSG} "Sample files are installed in ${PREFIX}/etc:"
-	@${ECHO_MSG} "  bconsole.conf.sample, bacula-barcodes.sample, bacula-fd.conf.sample"
-.if !defined(WITH_CLIENT_ONLY)
-	@${ECHO_MSG} "  bacula-sd.conf.sample, bacula-dir.conf.sample"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "An auto-changer manipulation script based on FreeBSDs"
-	@${ECHO_MSG} "chio command is included and installed at"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  ${PREFIX}/sbin/chio-bacula"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Please have a look at it if you want to use an"
-	@${ECHO_MSG} "autochanger. You have to configure the usage in"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  ${PREFIX}/etc/bacula-dir.conf"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take care of correct permissions for changer and"
-	@${ECHO_MSG} "tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e."
-	@${ECHO_MSG} "they must be accessible by user bacula."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Due to lack of some features in the FreeBSD tape driver"
-	@${ECHO_MSG} "implementation you MUST add some OS dependent options to"
-	@${ECHO_MSG} "the bacula-sd.conf file:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  Hardware End of Medium = no;"
-	@${ECHO_MSG} "  Backward Space Record = no;"
-	@${ECHO_MSG} "  Backward Space File = no;"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "With 2 filemarks at EOT (see man mt):"
-	@${ECHO_MSG} "  Fast Forward Space File = no;"
-	@${ECHO_MSG} "  BSF at EOM = yes;"
-	@${ECHO_MSG} "  TWO EOF = yes;"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "With 1 filemarks at EOT (see man mt):"
-	@${ECHO_MSG} "  Fast Forward Space File = yes;"
-	@${ECHO_MSG} "  BSF at EOM = no;"
-	@${ECHO_MSG} "  TWO EOF = no;"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "NOTE: YOU CAN SWITCH EOT model ONLY when starting"
-	@${ECHO_MSG} "      from scratch with EMPTY tapes!!!!"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "It is also important that all the scripts accessed"
-	@${ECHO_MSG} "by RunBeforeJob and RunAfterJob can be executed by"
-	@${ECHO_MSG} "the user bacula."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "For USB support read the bacula manual!! It could be necessary"
-	@${ECHO_MSG} "to configure/compile a new kernel!"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Look at ${PREFIX}/share/bacula/update_bacula_tables for"
-	@${ECHO_MSG} "database update procedure. Details can be found in the"
-	@${ECHO_MSG} "ReleaseNotes"
-.endif
-	@${ECHO_MSG} "*********************************************************************"
-
-.if defined(WITH_DOCS)
-	${CAT} ${PKGMESSAGE}
-.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
