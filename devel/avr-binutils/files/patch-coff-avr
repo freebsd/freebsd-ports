@@ -2811,7 +2811,7 @@
 +      shash->emitted = FALSE;
 +    }
 +  else
-+    coff_struct_hash_lookup (&info->structs, name,
++    (void)coff_struct_hash_lookup (&info->structs, name,
 +			     TRUE, tst->u.ts_struct.tagismalloced);
 +
 +  return TRUE;
