@@ -10702,6 +10702,7 @@ p5-WeakRef	ports/devel/p5-WeakRef
 p5-Weather-Underground	ports/astro/p5-Weather-Underground
 p5-WebService-Basecamp	ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
+p5-WebService-ISBNDB	ports/www/p5-WebService-ISBNDB
 p5-WebService-NoPaste	ports/www/p5-WebService-NoPaste
 p5-WebService-Technorati	ports/www/p5-WebService-Technorati
 p5-What		ports/net/p5-What
