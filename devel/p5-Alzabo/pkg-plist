@@ -51,6 +51,7 @@
 %%SITE_PERL%%/Alzabo/SQLMaker/PostgreSQL.pm
 %%SITE_PERL%%/Alzabo/Schema.pm
 %%SITE_PERL%%/Alzabo/Table.pm
+%%SITE_PERL%%/Alzabo/Utils.pm
 @dirrm %%SITE_PERL%%/Alzabo/SQLMaker
 @dirrm %%SITE_PERL%%/Alzabo/Runtime/RowState
 @dirrm %%SITE_PERL%%/Alzabo/Runtime

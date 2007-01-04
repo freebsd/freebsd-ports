@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Alzabo
-PORTVERSION=	0.89.01
+PORTVERSION=	0.89.04
 CATEGORIES=	devel databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Alzabo
@@ -77,7 +77,8 @@ MAN3=		\
 		Alzabo::SQLMaker::MySQL.3 \
 		Alzabo::SQLMaker::PostgreSQL.3 \
 		Alzabo::Schema.3 \
-		Alzabo::Table.3
+		Alzabo::Table.3 \
+		Alzabo::Utils.3
 
 .if !defined(NOPORTDOCS)
 EXAMPLES=	eg/alzabo_grep eg/alzabo_to_ascii eg/convert.pl eg/reverse_cardinality.pl
