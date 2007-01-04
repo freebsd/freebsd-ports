@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	HTML_CSS
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for generating CSS declarations
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
