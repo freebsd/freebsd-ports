@@ -844,6 +844,7 @@
     SUBDIR += p5-WWW-Wikipedia
     SUBDIR += p5-WebService-Basecamp
     SUBDIR += p5-WebService-Bloglines
+    SUBDIR += p5-WebService-ISBNDB
     SUBDIR += p5-WebService-NoPaste
     SUBDIR += p5-WebService-Technorati
     SUBDIR += p5-Xango
