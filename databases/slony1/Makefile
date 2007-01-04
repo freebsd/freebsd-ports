@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	databases
-MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/ \
-		http://freebsd.unixfreunde.de/sources/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1202/:main \
+		http://pgfoundry.org/frs/download.php/1203/:docs
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main \
+		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}:docs
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	PostgreSQL master to multiple replicas replication system

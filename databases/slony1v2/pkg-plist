@@ -5,15 +5,11 @@ lib/postgresql/xxid.so
 etc/slon.conf-sample
 sbin/slon-mkservice
 share/postgresql/slony1_base.sql
-share/postgresql/slony1_base.v73.sql
 share/postgresql/slony1_base.v74.sql
 share/postgresql/slony1_base.v80.sql
 share/postgresql/slony1_funcs.sql
-share/postgresql/slony1_funcs.v73.sql
 share/postgresql/slony1_funcs.v74.sql
 share/postgresql/slony1_funcs.v80.sql
-share/postgresql/xxid.v73.sql
-share/postgresql/xxid.v74.sql
 share/postgresql/xxid.v80.sql
 %%PERLTOOLS%%sbin/show_configuration
 %%PERLTOOLS%%sbin/slon_kill
@@ -49,7 +45,6 @@ share/postgresql/xxid.v80.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/addthings.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/admconninfo.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/adminscripts.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/bookindex.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/cluster.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/clustername.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/cmds.html
@@ -179,6 +174,7 @@ share/postgresql/xxid.v80.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.upgradeschema-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/hdrcmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/help.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11211.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/listenpaths.html
