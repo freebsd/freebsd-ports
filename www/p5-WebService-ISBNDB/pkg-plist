@@ -1,0 +1,14 @@
+%%SITE_PERL%%/WebService/ISBNDB.pm
+%%SITE_PERL%%/WebService/ISBNDB/API.pm
+%%SITE_PERL%%/WebService/ISBNDB/API/Authors.pm
+%%SITE_PERL%%/WebService/ISBNDB/API/Books.pm
+%%SITE_PERL%%/WebService/ISBNDB/API/Categories.pm
+%%SITE_PERL%%/WebService/ISBNDB/API/Publishers.pm
+%%SITE_PERL%%/WebService/ISBNDB/API/Subjects.pm
+%%SITE_PERL%%/WebService/ISBNDB/Agent.pm
+%%SITE_PERL%%/WebService/ISBNDB/Agent/REST.pm
+%%SITE_PERL%%/WebService/ISBNDB/Iterator.pm
+@dirrm %%SITE_PERL%%/WebService/ISBNDB/API
+@dirrm %%SITE_PERL%%/WebService/ISBNDB/Agent
+@dirrm %%SITE_PERL%%/WebService/ISBNDB
+@dirrmtry %%SITE_PERL%%/WebService
