@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-SimpleLinkExtor
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -23,11 +23,6 @@ PERL_CONFIGURE=	yes
 
 MAN1=		linktractor.1
 MAN3=		HTML::SimpleLinkExtor.3
-
-post-patch:
-	${PERL} -i -pe \
-	  's|INST_MAN3DIR\)/linktractor|INST_MAN1DIR)/linktractor|' \
-	  ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
