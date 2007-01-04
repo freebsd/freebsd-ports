@@ -1,5 +1,5 @@
---- poppassd.c.orig	Thu Aug 26 23:51:33 2004
-+++ poppassd.c	Thu Aug 26 23:53:03 2004
+--- poppassd.c.orig	Thu Jan  4 23:19:36 2007
++++ poppassd.c	Thu Jan  4 23:24:26 2007
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -36,6 +36,15 @@
   * back to the client in the final 500 response, and a new version of the
   * code to find the next free pty, is by Norstad.
   *        
+@@ -112,7 +112,7 @@
+ 
+ #define SUCCESS 1
+ #define FAILURE 0
+-#define BUFSIZE 512
++#define BUFSIZE 768
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
 @@ -125,12 +125,23 @@
  #include <ctype.h>
  #include <strings.h>
@@ -61,7 +70,7 @@
  
  /* Prompt strings expected from the "passwd" command. If you want
   * to port this program to yet another flavor of UNIX, you may need to add
-@@ -145,8 +156,11 @@
+@@ -145,19 +156,24 @@
  static char *P1[] =
     {"Old password:",
      "Changing password for *.\nOld password:",
@@ -73,7 +82,20 @@
      "Changing password for *\n*'s Old password:",
      ""};
  
-@@ -165,13 +179,14 @@
+ static char *P2[] =
+    {"\nNew password:",
++    "\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\nEnter new password: ",
+     "\n*'s New password:",
+     ""};
+ 
+ static char *P3[] =
+    {"\nRe-enter new password:",
+     "\nRetype new password:",
++    "\nRe-type new password: ",
+     "\nEnter the new password again:",
+     "\n*Re-enter *'s new password:",
+     "\nVerify:",
+@@ -165,13 +181,14 @@
      
  static char *P4[] =
     {"\n",
@@ -91,7 +113,7 @@
  {
       char line[BUFSIZE];
       char user[BUFSIZE];
-@@ -180,17 +195,14 @@
+@@ -180,17 +197,14 @@
       char emess[BUFSIZE];
       char *slavedev;
       struct passwd *pw, *getpwnam();
@@ -111,7 +133,7 @@
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -212,12 +224,16 @@
+@@ -212,12 +226,16 @@
       
       if ((pw = getpwnam (user)) == NULL)
       {
@@ -129,7 +151,7 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -232,215 +248,118 @@
+@@ -232,215 +250,118 @@
  	  WriteToClient ("500 New password required.");
  	  exit(1);
       }
@@ -231,7 +253,7 @@
 +		{
 +			syslog (LOG_ERR, "failed attempt by %s", user);
 +			if (*emess == '\0') {
-+				WriteToClient ("500 Unable to change password." );
++                                WriteToClient ("500 Password change unsuccessful, try a different password." );
 +			} else {
 +				WriteToClient ("500 %s", emess);
 +			}
@@ -432,7 +454,7 @@
  {
       int l;
  
-@@ -458,9 +377,7 @@
+@@ -458,9 +379,7 @@
   * FAILURE if any errors are encountered (in which case, it can be assumed
   * that the password wasn't changed).
   */
@@ -443,7 +465,7 @@
  {
       char buf[BUFSIZE];
       char pswd[BUFSIZE+1];
-@@ -485,9 +402,11 @@
+@@ -485,9 +404,11 @@
       }
  
       writestring(master, pswd);
@@ -456,7 +478,7 @@
       return SUCCESS;
  }
  
-@@ -507,9 +426,7 @@
+@@ -507,9 +428,7 @@
   *		  the pattern.
   *		2 if the string matches the full pattern.
   */
@@ -467,7 +489,7 @@
  {
     int result;
     
-@@ -542,10 +459,7 @@
+@@ -542,10 +461,7 @@
   * is not an initial segment of or exact match for at least one of 
   * the expected strings, the function returns FAILURE.
   */
@@ -479,7 +501,7 @@
  {
       int n, m;
       char **s;
-@@ -596,10 +510,7 @@
+@@ -596,10 +512,7 @@
   * returning just the error message text. Newlines in the error message
   * text are replaced by spaces.
   */
@@ -491,7 +513,7 @@
  {
     int n, m;
     char **s;
-@@ -630,21 +541,18 @@
+@@ -630,21 +543,18 @@
     }
  }
  
@@ -516,7 +538,7 @@
  {
  	char *sp;
  	int i;
-@@ -659,10 +567,7 @@
+@@ -659,10 +569,7 @@
  	for (sp = line; isalpha(*sp); sp++) *sp = tolower(*sp);
  }
  
