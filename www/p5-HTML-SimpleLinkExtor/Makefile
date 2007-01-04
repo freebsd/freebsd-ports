@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-SimpleLinkExtor
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -21,6 +21,18 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		linktractor.1
 MAN3=		HTML::SimpleLinkExtor.3
 
-.include <bsd.port.mk>
+post-patch:
+	${PERL} -i -pe \
+	  's|INST_MAN3DIR\)/linktractor|INST_MAN1DIR)/linktractor|' \
+	  ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
