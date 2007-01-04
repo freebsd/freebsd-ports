@@ -24,7 +24,7 @@ RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
 		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
-		${PYTHON_SITELIBDIR}/formencode/__init__.py:${PORTSDIR}/www/py-formencode \
+		${PYTHON_SITELIBDIR}/${PYFORMENCODE_EGG}/formencode/__init__.py:${PORTSDIR}/www/py-formencode \
 		${PYTHON_SITELIBDIR}/json.py:${PORTSDIR}/devel/py-json-py \
 		${PYTHON_SITELIBDIR}/TestGears-0.2-py2.4.egg:${PORTSDIR}/devel/py-testgears
 
@@ -55,5 +55,7 @@ post-install:
 .if defined(WITH_CHEETAH)
 RUN_DEPENDS+=	cheetah:${PORTSDIR}/devel/py-cheetah
 .endif
+
+PYFORMENCODE_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-formencode/Makefile -V PYFORMENCODE_EGG
 
 .include <bsd.port.post.mk>
