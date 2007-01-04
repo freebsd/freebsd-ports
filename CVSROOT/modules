@@ -8144,6 +8144,7 @@ openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openwince-include	ports/devel/openwince-include
 openxmldir	ports/www/openxmldir
+openyahtzee	ports/games/openyahtzee
 openzz		ports/devel/openzz
 opera		ports/www/opera
 opera-linuxplugins	ports/www/opera-linuxplugins
