@@ -7432,6 +7432,7 @@ mpqc		ports/science/mpqc
 mpqc-mpich	ports/science/mpqc-mpich
 mprime		ports/math/mprime
 mprof		ports/devel/mprof
+mq4cpp		ports/devel/mq4cpp
 mr-aspell	ports/textproc/mr-aspell
 mreport		ports/mail/mreport
 mrt		ports/net/mrt
