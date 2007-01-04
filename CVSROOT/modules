@@ -12376,6 +12376,7 @@ py-prewikka	ports/www/py-prewikka
 py-probstat	ports/math/py-probstat
 py-prolog	ports/lang/py-prolog
 py-protocols	ports/devel/py-protocols
+py-protocols-devel	ports/devel/py-protocols-devel
 py-psyco	ports/devel/py-psyco
 py-psycopg	ports/databases/py-psycopg
 py-psycopg2	ports/databases/py-psycopg2
