@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gstreamer based audio converter for KDE
 
-DEPENDS=	${PORTSDIR}/misc/kdehier
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
