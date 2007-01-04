@@ -37,6 +37,7 @@
     SUBDIR += autopsy
     SUBDIR += bacula-client
     SUBDIR += bacula-client-devel
+    SUBDIR += bacula-docs
     SUBDIR += bacula-server
     SUBDIR += bacula-server-devel
     SUBDIR += barry
