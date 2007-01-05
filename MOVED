@@ -2657,3 +2657,5 @@ www/linux-beonex||2007-01-05|Has expired: Security issues. From http://www.beone
 misc/instant-workstation||2007-01-05|Has expired: Incomplete pkg-plist
 lang/yap||2007-01-05|Has expired: Does not compile
 lang/tensile||2007-01-05|Has expired: "Coredump during build on FreeBSD >= 6.x"
+japanese/gauche-kakasi||2007-01-05|Has expired: deinstalls file not installed by this port
+japanese/migemo-xemacs21-mule||2007-01-05|Has expired: Incomplete pkg-plist
