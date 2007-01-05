@@ -514,6 +514,7 @@
     SUBDIR += rioutil
     SUBDIR += ripenc
     SUBDIR += ripit
+    SUBDIR += ripperx
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth

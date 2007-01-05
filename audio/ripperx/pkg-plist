@@ -1,0 +1,13 @@
+bin/ripperX
+bin/ripperX_plugin-cdparanoia
+bin/ripperX_plugin-8hz-mp3
+bin/ripperX_plugin-encode
+bin/ripperX_plugin-lame
+bin/ripperX_plugin-gogo
+bin/ripperX_plugin-bladeenc
+bin/ripperX_plugin-xingmp3enc
+bin/ripperX_plugin-l3enc
+bin/ripperX_plugin-mp3enc
+bin/ripperX_plugin-oggenc
+bin/ripperX_plugin-flac
+bin/ripperX_plugin-toolame
