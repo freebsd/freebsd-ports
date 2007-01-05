@@ -827,7 +827,6 @@
     SUBDIR += tspc2
     SUBDIR += ttlscan
     SUBDIR += ttt
-    SUBDIR += tund
     SUBDIR += tvark
     SUBDIR += twinkle
     SUBDIR += ucarp
@@ -881,7 +880,6 @@
     SUBDIR += wping
     SUBDIR += x11vnc
     SUBDIR += xarchie
-    SUBDIR += xbms
     SUBDIR += xbone
     SUBDIR += xbone-gui
     SUBDIR += xboxproxy

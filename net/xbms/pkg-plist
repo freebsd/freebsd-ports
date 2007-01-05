@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/xbms
-@unexec if cmp -s %D/etc/xbms.conf %D/etc/xbms.conf.sample; then rm -f %D/etc/xbms.conf; fi
-etc/xbms.conf.sample

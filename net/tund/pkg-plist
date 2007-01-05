@@ -1,6 +1,0 @@
-etc/tund.conf
-etc/tund.hosts.key
-etc/tund.rsa.key
-etc/tund.seed.rng
-sbin/pkey_gen
-sbin/tund
