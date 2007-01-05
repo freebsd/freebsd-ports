@@ -34,6 +34,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Inline.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Matrix2d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Regops.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transform.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transformations.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Tutorial.pod

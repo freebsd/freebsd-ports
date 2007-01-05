@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,8 +33,8 @@ CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
