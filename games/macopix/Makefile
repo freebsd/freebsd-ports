@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	macopix
-PORTVERSION=	1.3.2
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
 .if defined(WITH_GTK1)
@@ -23,7 +22,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 RESTRICTED=	'contains commercial character data'
-RESTRICTED_FILES= \
+
+RESTRICTED_FILES=	\
 		macopix-mascot-comic_party-ja-1.00.tar.gz \
 		macopix-mascot-cosmos-ja-1.00.tar.gz \
 		macopix-mascot-kanon-ja-1.00.tar.gz \
@@ -33,7 +33,7 @@ RESTRICTED_FILES= \
 		macopix-mascot-triangle_heart-ja-1.00.tar.gz \
 		macopix-mascot-tsukihime-ja-1.00.tar.gz \
 		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
-		macopix-mascot-HxB-euc-ja-0.10.tar.gz 
+		macopix-mascot-HxB-euc-ja-0.10.tar.gz
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes

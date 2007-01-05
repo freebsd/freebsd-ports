@@ -1861,7 +1861,7 @@ share/locale/ja/LC_MESSAGES/macopix.mo
 %%DATADIR%%/README.HxB.jp
 @dirrm %%DATADIR%%/pixmap
 @dirrm %%DATADIR%%
-%%PORTDOCS%%share/doc/macopix/README
-%%PORTDOCS%%share/doc/macopix/README.jp
-%%PORTDOCS%%share/doc/macopix/NKR.README.jp
-%%PORTDOCS%%@dirrm share/doc/macopix
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%%%DOCSDIR%%/NKR.README.jp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
