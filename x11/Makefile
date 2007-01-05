@@ -129,6 +129,7 @@
     SUBDIR += kdelibs3
     SUBDIR += kdelibs3-nocups
     SUBDIR += keylaunch
+    SUBDIR += kxgenerator
     SUBDIR += libGL
     SUBDIR += libICE
     SUBDIR += libSM
