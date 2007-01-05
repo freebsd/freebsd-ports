@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.9
-PORTREVISION=	0
+PORTVERSION=	0.9.10
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 EXTRACT_SUFX=	.tgz
