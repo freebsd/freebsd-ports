@@ -12920,6 +12920,7 @@ rkhunter	ports/security/rkhunter
 rkive		ports/news/rkive
 rkward		ports/math/rkward
 rl		ports/textproc/rl
+rlog		ports/devel/rlog
 rlpr		ports/print/rlpr
 rlwrap		ports/devel/rlwrap
 rlytest		ports/mail/rlytest
