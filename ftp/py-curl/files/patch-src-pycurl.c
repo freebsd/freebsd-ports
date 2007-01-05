@@ -1,6 +1,6 @@
---- src/pycurl.c.orig	Tue Dec  5 17:11:38 2006
-+++ src/pycurl.c	Tue Dec  5 17:13:03 2006
-@@ -1109,9 +1109,11 @@
+--- src/pycurl.c.orig	Fri Aug 11 10:37:19 2006
++++ src/pycurl.c	Wed Dec 20 16:11:36 2006
+@@ -1475,9 +1475,11 @@
          case CURLOPT_URL:
          case CURLOPT_USERAGENT:
          case CURLOPT_USERPWD:
@@ -9,10 +9,10 @@
          case CURLOPT_SOURCE_USERPWD:
          case CURLOPT_SOURCE_PATH:
 +#endif
+         case CURLOPT_FTP_ALTERNATIVE_TO_USER:
  /* FIXME: check if more of these options allow binary data */
              str = PyString_AsString_NoNUL(obj);
-             if (str == NULL)
-@@ -1279,12 +1281,14 @@
+@@ -1646,12 +1648,14 @@
          case CURLOPT_PREQUOTE:
              old_slist = &self->prequote;
              break;
@@ -27,7 +27,7 @@
          case CURLOPT_HTTPPOST:
              break;
          default:
-@@ -2689,14 +2693,18 @@
+@@ -3180,14 +3184,18 @@
      insint_c(d, "FTP_SSL", CURLOPT_FTP_SSL);
      insint_c(d, "POSTFIELDSIZE_LARGE", CURLOPT_POSTFIELDSIZE_LARGE);
      insint_c(d, "TCP_NODELAY", CURLOPT_TCP_NODELAY);

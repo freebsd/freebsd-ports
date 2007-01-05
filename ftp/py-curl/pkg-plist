@@ -2,35 +2,6 @@
 %%PYTHON_SITELIBDIR%%/curl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/curl/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pycurl.so
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/html/callbacks.html
-%%DOCSDIR%%/html/curlmultiobject.html
-%%DOCSDIR%%/html/curlobject.html
-%%DOCSDIR%%/html/pycurl.html
-%%DOCSDIR%%/tests/test.py
-%%DOCSDIR%%/tests/test_cb.py
-%%DOCSDIR%%/tests/test_debug.py
-%%DOCSDIR%%/tests/test_getinfo.py
-%%DOCSDIR%%/tests/test_gtk.py
-%%DOCSDIR%%/tests/test_internals.py
-%%DOCSDIR%%/tests/test_memleak.py
-%%DOCSDIR%%/tests/test_multi.py
-%%DOCSDIR%%/tests/test_multi2.py
-%%DOCSDIR%%/tests/test_multi3.py
-%%DOCSDIR%%/tests/test_multi4.py
-%%DOCSDIR%%/tests/test_multi5.py
-%%DOCSDIR%%/tests/test_multi6.py
-%%DOCSDIR%%/tests/test_multi_vs_thread.py
-%%DOCSDIR%%/tests/test_post.py
-%%DOCSDIR%%/tests/test_post2.py
-%%DOCSDIR%%/tests/test_post3.py
-%%DOCSDIR%%/tests/test_stringio.py
-%%DOCSDIR%%/tests/test_xmlrpc.py
-%%DOCSDIR%%/tests/util.py
 %%EXAMPLESDIR%%/basicfirst.py
 %%EXAMPLESDIR%%/file_upload.py
 %%EXAMPLESDIR%%/linksys.py
@@ -38,8 +9,40 @@
 %%EXAMPLESDIR%%/retriever.py
 %%EXAMPLESDIR%%/sfquery.py
 %%EXAMPLESDIR%%/xmlrpc_curl.py
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/tests
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/html/callbacks.html
+%%PORTDOCS%%%%DOCSDIR%%/html/curlmultiobject.html
+%%PORTDOCS%%%%DOCSDIR%%/html/curlobject.html
+%%PORTDOCS%%%%DOCSDIR%%/html/curlshareobject.html
+%%PORTDOCS%%%%DOCSDIR%%/html/pycurl.html
+%%PORTDOCS%%%%DOCSDIR%%/tests/test.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_cb.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_debug.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_ftp.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_getinfo.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_gtk.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_internals.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_memleak.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi2.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi3.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi4.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi5.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi6.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi_vs_thread.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_post.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_post2.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_post3.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_share.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_stringio.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_xmlrpc.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/util.py
 @dirrm %%PYTHON_SITELIBDIR%%/curl
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tests
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

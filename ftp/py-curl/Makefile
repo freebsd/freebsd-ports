@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.15.2
-PORTREVISION=	1
+PORTVERSION=	7.15.5.1
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/download/ \
 		http://pycurl.sourceforge.net/download/00-OLD-VERSIONS/
@@ -27,11 +26,16 @@ DOCSDIR=	${PREFIX}/share/doc/py-curl
 EXAMPLESDIR=	${PREFIX}/share/examples/py-curl
 
 post-patch:
-	${REINPLACE_CMD} -e 's@\(curl-config --\)@${LOCALBASE}/bin/\1@g' \
+	${REINPLACE_CMD} \
 		-e 's@^\(include_dirs = \).*@\1["${LOCALBASE}/include"]@' \
 		-e 's@^\(PACKAGE = \).*@\1"py-curl"@' \
 		-e 's@\(os.path.join(\)datadir, "examples")@\1"share/examples/py-curl")@' \
 		-e 's@name=PACKAGE@name="pycurl"@' \
 		${WRKSRC}/setup.py
+
+pre-install:
+.if defined(NOPORTDOCS)
+	${RM} -fr ${WRKSRC}/doc
+.endif
 
 .include <bsd.port.mk>
