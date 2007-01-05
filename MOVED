@@ -2663,3 +2663,8 @@ www/rt3-elixus||2007-01-05|Has expired: Broken due the new mod_perl2 API
 comms/vpb-driver||2007-01-05|Has expired: leaves files behind on deinstall
 irc/xchat-ecl-plugin||2007-01-05|Has expired: Does not build
 french/gnome-verbiste||2007-01-05|Has expired: does not install
+devel/kasm||2007-01-05|Has expired: Buggy and unmaintained, use devel/hptools instead
+devel/py-getargs||2007-01-05|Has expired: distfile and homepage disappeared
+devel/pyumlgraph||2007-01-05|Has expired: distfile and homepage disappeared
+editors/beaver||2007-01-05|Has expired: distfile disappeared from homepage
+editors/dte||2007-01-05|Has expired: distfile and homepage disappeared

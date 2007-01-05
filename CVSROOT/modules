@@ -747,7 +747,6 @@ beast		ports/audio/beast
 beastie		ports/x11-themes/beastie
 beautifyphp	ports/devel/beautifyphp
 beav		ports/editors/beav
-beaver		ports/editors/beaver
 bebocd		ports/audio/bebocd
 bed		ports/editors/bed
 bedic-data	ports/textproc/bedic-data
@@ -2058,7 +2057,6 @@ dtd-catalogs	ports/textproc/dtd-catalogs
 dtd2relax	ports/textproc/dtd2relax
 dtdinst		ports/textproc/dtdinst
 dtdparse	ports/textproc/dtdparse
-dte		ports/editors/dte
 dtmfdial	ports/audio/dtmfdial
 dtse		ports/www/dtse
 dtv		ports/multimedia/dtv
@@ -5455,7 +5453,6 @@ karamba		ports/deskutils/karamba
 kasablanca	ports/ftp/kasablanca
 kash3		ports/math/kash3
 kaskade		ports/math/kaskade
-kasm		ports/devel/kasm
 kaspaliste	ports/print/kaspaliste
 katalog		ports/misc/katalog
 katapult	ports/deskutils/katapult
@@ -12230,7 +12227,6 @@ py-gdbm		ports/databases/py-gdbm
 py-gdchart	ports/graphics/py-gdchart
 py-gdchart2	ports/graphics/py-gdchart2
 py-generate	ports/devel/py-generate
-py-getargs	ports/devel/py-getargs
 py-glewpy	ports/graphics/py-glewpy
 py-gnome	ports/x11-toolkits/py-gnome
 py-gnome-desktop	ports/x11-toolkits/py-gnome-desktop
@@ -12583,7 +12579,6 @@ python25	ports/lang/python25
 pythoncad	ports/cad/pythoncad
 pythonchess	ports/games/pythonchess
 pythondirector	ports/net/pythondirector
-pyumlgraph	ports/devel/pyumlgraph
 pyweather	ports/astro/pyweather
 pyweblib	ports/www/pyweblib
 pyxmame		ports/emulators/pyxmame

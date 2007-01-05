@@ -468,7 +468,6 @@
     SUBDIR += jude-community
     SUBDIR += judy
     SUBDIR += kaptain
-    SUBDIR += kasm
     SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdesdk3
@@ -1733,7 +1732,6 @@
     SUBDIR += py-game
     SUBDIR += py-gamin
     SUBDIR += py-generate
-    SUBDIR += py-getargs
     SUBDIR += py-gobject
     SUBDIR += py-grouch
     SUBDIR += py-icalendar
@@ -1815,7 +1813,6 @@
     SUBDIR += pymacs
     SUBDIR += pypersrc
     SUBDIR += pyrex
-    SUBDIR += pyumlgraph
     SUBDIR += qca
     SUBDIR += qextmdi
     SUBDIR += qmake
