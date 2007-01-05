@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	adabooch-doc
-PORTVERSION=	20020602
+PORTVERSION=	20030309
 CATEGORIES=	devel
 MASTER_SITES=	http://www.adapower.net/booch/download/
 DISTNAME=	bc-html-${PORTVERSION}
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Manual for adabooch
 
 USE_ZIP=	yes
