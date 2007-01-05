@@ -61,7 +61,6 @@
     SUBDIR += dviselect
     SUBDIR += dvisvg
     SUBDIR += easylatex
-    SUBDIR += ec-fonts-mftraced
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
@@ -305,6 +304,5 @@
     SUBDIR += yatex
     SUBDIR += yatex-mule
     SUBDIR += yatex-xemacs
-    SUBDIR += yatex-xemacs-mule
 
 .include <bsd.port.subdir.mk>

@@ -36,7 +36,6 @@
     SUBDIR += gkrellm-gift
     SUBDIR += gkremldk
     SUBDIR += gnewtellium
-    SUBDIR += gnome-btdownload
     SUBDIR += gnunet
     SUBDIR += gtkhx
     SUBDIR += gtk-gnutella
