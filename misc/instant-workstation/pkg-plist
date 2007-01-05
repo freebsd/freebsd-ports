@@ -1,8 +1,0 @@
-share/abbreviations
-share/dot.bashrc
-share/dot.muttrc
-share/dot.bash_profile
-etc/mailcap
-etc/instant-workstation/ntp.conf
-etc/instant-workstation/rc.conf
-@dirrm etc/instant-workstation
