@@ -3630,7 +3630,6 @@ gnome-translate	ports/textproc/gnome-translate
 gnome-user-docs	ports/misc/gnome-user-docs
 gnome-user-share	ports/www/gnome-user-share
 gnome-utils	ports/deskutils/gnome-utils
-gnome-verbiste	ports/french/gnome-verbiste
 gnome-vfs	ports/devel/gnome-vfs
 gnome-vfs-monikers	ports/devel/gnome-vfs-monikers
 gnome-vfs-reference	ports/devel/gnome-vfs-reference
@@ -15051,7 +15050,6 @@ vor		ports/games/vor
 vorbis-tools	ports/audio/vorbis-tools
 vorbisgain	ports/audio/vorbisgain
 vp		ports/graphics/vp
-vpb-driver	ports/comms/vpb-driver
 vpce		ports/emulators/vpce
 vpnc		ports/security/vpnc
 vpnd		ports/security/vpnd
@@ -15503,7 +15501,6 @@ xcdroast	ports/sysutils/xcdroast
 xcept		ports/comms/xcept
 xchadance	ports/games/xchadance
 xchat		ports/irc/xchat
-xchat-ecl-plugin	ports/irc/xchat-ecl-plugin
 xchat-fish	ports/irc/xchat-fish
 xchat-gnome	ports/irc/xchat-gnome
 xchat-mircryption	ports/irc/xchat-mircryption

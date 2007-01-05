@@ -14,7 +14,6 @@
     SUBDIR += geonext
     SUBDIR += gfaim
     SUBDIR += gibi
-    SUBDIR += gnome-verbiste
     SUBDIR += homard
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun

@@ -1,9 +1,0 @@
---- FreeBSD/Makefile.orig	Mon Apr 10 09:28:04 2006
-+++ FreeBSD/Makefile	Mon Apr 10 09:40:04 2006
-@@ -0,0 +1,6 @@
-+SRCS=vpb.c
-+SRCS+=bus_if.h device_if.h pci_if.h
-+KMOD=vpb
-+WERROR=
-+
-+.include <bsd.kmod.mk>
