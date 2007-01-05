@@ -219,6 +219,7 @@ _WANT_LUA=				yes
 .endif
 
 .if defined(_WANT_LUA)
+.	undef _HAVE_LUA
 .	for __WANT_LUA in ${_WANT_LUA}
 # Check if _WANT_LUA contains more than one word.
 .		if defined(_HAVE_LUA)
