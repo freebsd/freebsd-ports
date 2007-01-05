@@ -7,4 +7,7 @@ www/p5-Catalyst-Engine-Apache if you need Apache/mod_perl support.
 The parts necessary to do development with Catalyst have been moved to
 a seperate package: Please install www/p5-Catalyst-Devel, if you need
 to develop Catalyst-apps, as opposed to simply running them.
+
+The majority of the documentation has been moved to a seperate package as
+well: Install www/p5-Catalyst-Manual for the tutorially goodness.
 ------------------------------------------------------------------------

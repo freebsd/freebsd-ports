@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.7003
+PORTVERSION=	5.7006
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-File-Modified>=0:${PORTSDIR}/devel/p5-File-Modified \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Body>=0.5:${PORTSDIR}/www/p5-HTTP-Body \
+		p5-HTTP-Body>=0.6:${PORTSDIR}/www/p5-HTTP-Body \
 		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Request-AsCGI>=0.5:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable \
@@ -65,26 +65,8 @@ MAN3=	Catalyst.3 \
 	Catalyst::Exception.3 \
 	Catalyst::Log.3 \
 	Catalyst::Manual.3 \
-	Catalyst::Manual::About.3 \
-	Catalyst::Manual::Actions.3 \
-	Catalyst::Manual::Cookbook.3 \
-	Catalyst::Manual::DevelopmentProcess.3 \
 	Catalyst::Manual::Installation.3 \
 	Catalyst::Manual::Installation::CentOS4.3 \
-	Catalyst::Manual::Internals.3 \
-	Catalyst::Manual::Intro.3 \
-	Catalyst::Manual::Plugins.3 \
-	Catalyst::Manual::Tutorial.3 \
-	Catalyst::Manual::Tutorial::AdvancedCRUD.3 \
-	Catalyst::Manual::Tutorial::Appendices.3 \
-	Catalyst::Manual::Tutorial::Authentication.3 \
-	Catalyst::Manual::Tutorial::Authorization.3 \
-	Catalyst::Manual::Tutorial::BasicCRUD.3 \
-	Catalyst::Manual::Tutorial::CatalystBasics.3 \
-	Catalyst::Manual::Tutorial::Debugging.3 \
-	Catalyst::Manual::Tutorial::Intro.3 \
-	Catalyst::Manual::Tutorial::Testing.3 \
-	Catalyst::Manual::WritingPlugins.3 \
 	Catalyst::Model.3 \
 	Catalyst::Request.3 \
 	Catalyst::Request::Upload.3 \
