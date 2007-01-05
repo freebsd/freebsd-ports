@@ -2203,7 +2203,6 @@ ecm		ports/archivers/ecm
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
 ecromedos	ports/textproc/ecromedos
-ecu		ports/comms/ecu
 ed2k		ports/net-p2p/ed2k
 edb		ports/databases/edb
 ede		ports/x11-wm/ede
