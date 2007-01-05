@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1.9B10
+DISTVERSION=	1.9RC1
 PORTEPOCH=	6
 CATEGORIES=	net-im java
-MASTER_SITES=	${MASTER_SITE_LOCAL}		\
+MASTER_SITES=	${MASTER_SITE_LOCAL}			\
 		http://dknapp.ca/mirror/mercury/beta/	\
 		http://download.mercury.to/
 MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
@@ -37,8 +37,10 @@ LINSTDIR?=	share/Mercury
 INSTDIR=	${PREFIX}/${LINSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 SUB_DIRS=	lib resources
-DIR2PRUNE=	resources/AppData/Games		\
+DIR2PRUNE=	resources/AppData/Backgrounds	\
+		resources/AppData/Games		\
 		resources/AppData/Plugins
+BADOSLIBS=	linuxtray.jar wintray.jar
 
 .if defined(WITH_VIDEO)	# Experimental
 VIDJAR=		VidConf-libs.jar
@@ -47,6 +49,10 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${VIDJAR}
 PLIST_SUB+=	VID="" VIDJAR="${VIDJAR}"
 .else
 PLIST_SUB+=	VID="@comment " VIDJAR=""
+.endif
+
+.if !defined(WITHOUT_TRAY)
+LIB_DEPENDS+=	tray.0:${PORTSDIR}/x11-toolkits/jdic
 .endif
 
 do-install:
@@ -60,6 +66,7 @@ do-install:
 .for ed in ${DIR2PRUNE}
 	${TOUCH} ${INSTDIR}/${ed}/.keep_me
 .endfor
+	${RM} ${BADOSLIBS:S|^|${INSTDIR}/lib/|}
 .if defined(WITH_VIDEO)
 	${INSTALL_DATA} ${_DISTDIR}/${VIDJAR} ${INSTDIR}/lib
 .endif
