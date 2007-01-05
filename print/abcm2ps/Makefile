@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	4.12.27
+PORTVERSION=	5.2.3
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
 GNU_CONFIGURE=	yes
