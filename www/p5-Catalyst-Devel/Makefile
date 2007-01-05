@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Devel
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -17,6 +17,7 @@ COMMENT=	Catalyst Development Tools
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Action-RenderView>=0.04:${PORTSDIR}/www/p5-Catalyst-Action-RenderView \
+		p5-Catalyst-Manual>=5.7000:${PORTSDIR}/www/p5-Catalyst-Manual \
 		p5-Catalyst-Plugin-ConfigLoader>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
 		p5-Catalyst-Plugin-Static-Simple>=0.14:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
