@@ -2168,7 +2168,6 @@ ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
 eboxy		ports/devel/eboxy
 ebuttons	ports/x11/ebuttons
-ec-fonts-mftraced	ports/print/ec-fonts-mftraced
 ecartis		ports/mail/ecartis
 ecasound	ports/audio/ecasound
 ecawave	ports/audio/ecawave
@@ -3552,7 +3551,6 @@ gnome-audio	ports/audio/gnome-audio
 gnome-backgrounds	ports/x11-themes/gnome-backgrounds
 gnome-blog	ports/deskutils/gnome-blog
 gnome-bluecurve-theme	ports/x11-themes/gnome-bluecurve-theme
-gnome-btdownload	ports/net-p2p/gnome-btdownload
 gnome-build	ports/devel/gnome-build
 gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
 gnome-colorscheme	ports/graphics/gnome-colorscheme
@@ -3674,7 +3672,6 @@ gnotime		ports/deskutils/gnotime
 gnowavcut	ports/audio/gnowavcut
 gnu-autoconf	ports/devel/gnu-autoconf
 gnu-automake	ports/devel/gnu-automake
-gnu-crypto	ports/security/gnu-crypto
 gnu-finger	ports/net/gnu-finger
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
@@ -6543,7 +6540,6 @@ linux-americasarmy	ports/games/linux-americasarmy
 linux-arts	ports/audio/linux-arts
 linux-aspell	ports/textproc/linux-aspell
 linux-atk	ports/accessibility/linux-atk
-linux-beonex	ports/www/linux-beonex
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
 linux-blackdown-jdk14	ports/java/linux-blackdown-jdk14
@@ -16208,7 +16204,6 @@ yasql		ports/databases/yasql
 yatex		ports/print/yatex
 yatex-mule	ports/print/yatex-mule
 yatex-xemacs	ports/print/yatex-xemacs
-yatex-xemacs-mule	ports/print/yatex-xemacs-mule
 yaunc		ports/misc/yaunc
 yawho		ports/sysutils/yawho
 yawm		ports/x11-wm/yawm

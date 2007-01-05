@@ -235,7 +235,6 @@
     SUBDIR += linklint
     SUBDIR += links
     SUBDIR += links1
-    SUBDIR += linux-beonex
     SUBDIR += linux-firefox
     SUBDIR += linux-firefox-devel
     SUBDIR += linux-flashplugin7

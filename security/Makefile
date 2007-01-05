@@ -145,7 +145,6 @@
     SUBDIR += gnome-keyring-manager
     SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass
-    SUBDIR += gnu-crypto
     SUBDIR += gnupg
     SUBDIR += gnupg-idea
     SUBDIR += gnupg1
