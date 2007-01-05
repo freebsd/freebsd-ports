@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070104:
+  AFFECTS: users of sysutils/hal
+  AUTHOR: gnome@FreeBSD.org
+
+  If atapicam is enabled in the kernel, hald will use the CAM device nodes
+  instead of ATAPI device nodes to access disc devices (e.g. CD-ROMS,
+  DVD drives, etc.).  Previously, hald would use ATAPI device nodes even
+  if atapicam was enabled.  The previous behavior can be restored by
+  following the instructions in /usr/local/share/doc/hal/README.freebsd.
+
 20070102:
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
