@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	jcommon
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.8
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jfreechart
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport
 
 USE_JAVA=	yes
