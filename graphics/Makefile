@@ -432,7 +432,6 @@
     SUBDIR += opencv
     SUBDIR += opendis
     SUBDIR += opendx
-    SUBDIR += opendx-samples
     SUBDIR += opengl-man
     SUBDIR += openproducer
     SUBDIR += openrm
@@ -494,7 +493,6 @@
     SUBDIR += p5-chart
     SUBDIR += p5-ming
     SUBDIR += paintlib
-    SUBDIR += panorama
     SUBDIR += passepartout
     SUBDIR += pear-Image_Barcode
     SUBDIR += pear-Image_Canvas
@@ -584,7 +582,6 @@
     SUBDIR += qglviewer
     SUBDIR += qiv
     SUBDIR += qslim
-    SUBDIR += qtutils
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quesa
