@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	2.25
+PORTVERSION=	3.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Object
@@ -16,7 +16,8 @@ MAINTAINER=	geraud@gcu.info
 COMMENT=	Object::InsideOut - Comprehensive inside-out object support module
 
 RUN_DEPENDS=	p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Want>=0.12:${PORTSDIR}/devel/p5-Want
+		p5-Want>=0.12:${PORTSDIR}/devel/p5-Want \
+		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
