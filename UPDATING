@@ -14,7 +14,7 @@ upgrades.
   instead of ATAPI device nodes to access disc devices (e.g. CD-ROMS,
   DVD drives, etc.).  Previously, hald would use ATAPI device nodes even
   if atapicam was enabled.  The previous behavior can be restored by
-  following the instructions in /usr/local/share/doc/hal/README.freebsd.
+  following the instructions in /usr/local/share/doc/hal-0.5.8/README.freebsd.
 
 20070102:
   AFFECTS: users of security/gnutls and any port that depends on it
