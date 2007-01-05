@@ -1706,6 +1706,7 @@
     SUBDIR += publib
     SUBDIR += pwlib
     SUBDIR += py-anonfunc
+    SUBDIR += py-argparse
     SUBDIR += py-asn1
     SUBDIR += py-astng
     SUBDIR += py-bison

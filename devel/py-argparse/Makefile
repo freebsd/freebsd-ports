@@ -1,0 +1,26 @@
+# New ports collection makefile for:	py-argparse
+# Date created:		Jan. 05, 2007
+# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	argparse
+PORTVERSION=	0.4.0
+CATEGORIES=	devel python
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/a/argparse/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	lwhsu@lwhsu.org
+COMMENT=	An optparse-inspired command-line parsing library
+
+USE_ZIP=	yes
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/argparse.py \
+		%%PYTHON_SITELIBDIR%%/argparse.pyc \
+		%%PYTHON_SITELIBDIR%%/argparse.pyo
+
+.include <bsd.port.mk>
