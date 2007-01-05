@@ -59,6 +59,7 @@
     SUBDIR += p5-JSON
     SUBDIR += p5-MIME-Base32
     SUBDIR += p5-MIME-Base64
+    SUBDIR += p5-Number-Nary
     SUBDIR += p5-String-Multibyte
     SUBDIR += p5-Text-Iconv
     SUBDIR += p5-Text-Unidecode

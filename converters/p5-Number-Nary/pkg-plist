@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Number/Nary.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Nary/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Nary
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
+@dirrmtry %%SITE_PERL%%/Number
