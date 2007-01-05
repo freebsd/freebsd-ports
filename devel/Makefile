@@ -1736,6 +1736,7 @@
     SUBDIR += py-grouch
     SUBDIR += py-icalendar
     SUBDIR += py-ice
+    SUBDIR += py-instant
     SUBDIR += py-istring
     SUBDIR += py-json-py
     SUBDIR += py-kid
