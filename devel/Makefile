@@ -1297,6 +1297,7 @@
     SUBDIR += p5-POE-Session-MultiDispatch
     SUBDIR += p5-POE-Stage
     SUBDIR += p5-POE-XS-Queue-Array
+    SUBDIR += p5-POSIX-strptime
     SUBDIR += p5-PPerl
     SUBDIR += p5-PV
     SUBDIR += p5-Package-Constants
