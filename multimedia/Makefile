@@ -13,7 +13,6 @@
     SUBDIR += beep-media-player
     SUBDIR += bmp-extra-plugins
     SUBDIR += bmpx
-    SUBDIR += bsdav
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += castpodder
@@ -180,7 +179,6 @@
     SUBDIR += p5-Subtitles
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
-    SUBDIR += pitivi
     SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
