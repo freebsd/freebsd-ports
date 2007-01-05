@@ -4,13 +4,13 @@
 #
 # $FreeBSD$
 #    $MCom: ports-stable/irc/xchat/Makefile,v 1.1 2006/10/26 08:33:06 marcus Exp $
+#
 
 PORTNAME=	xchat
-PORTVERSION=	2.6.8
-PORTREVISION=	2
+PORTVERSION=	2.8.0
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://xchat.org/files/source/2.6/
+		http://xchat.org/files/source/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 MASTER_SITE_SUBDIR=	${PORTNAME:S|2||}
 DISTNAME=	xchat-${PORTVERSION}
 
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--enable-nls \
 		--enable-ipv6
 
-CONFLICTS=	xchat-1*
+CONFLICTS=	xchat-1* xchat-systray-plugin*
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
