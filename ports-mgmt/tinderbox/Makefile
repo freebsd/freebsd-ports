@@ -31,7 +31,7 @@ MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_PGSQL) && defined(WITHOUT_MYSQL)
+.if !defined(WITH_PGSQL) && defined(WITHOUT_MYSQL)
 IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
 
