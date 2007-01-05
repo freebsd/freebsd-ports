@@ -61,7 +61,6 @@
     SUBDIR += callgen323
     SUBDIR += cap
     SUBDIR += ccxstream
-    SUBDIR += citadel
     SUBDIR += citrix_ica
     SUBDIR += click
     SUBDIR += clusterit
