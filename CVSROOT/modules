@@ -7452,6 +7452,7 @@ msend		ports/net/msend
 mserver		ports/comms/mserver
 msgconvert	ports/mail/msgconvert
 mshell		ports/misc/mshell
+msieve		ports/math/msieve
 msmtp		ports/mail/msmtp
 msmtpqueue	ports/mail/msmtpqueue
 msntp		ports/net/msntp
