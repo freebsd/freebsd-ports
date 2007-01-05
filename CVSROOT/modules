@@ -8079,7 +8079,6 @@ opendchub	ports/net-p2p/opendchub
 opendd		ports/dns/opendd
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
-opendx-samples	ports/graphics/opendx-samples
 openfoam	ports/science/openfoam
 openfts		ports/textproc/openfts
 opengl-man	ports/graphics/opengl-man
@@ -10933,7 +10932,6 @@ pango		ports/x11-toolkits/pango
 pango-reference	ports/x11-toolkits/pango-reference
 pangoxsl	ports/x11-toolkits/pangoxsl
 panoptis	ports/net/panoptis
-panorama	ports/graphics/panorama
 panoramixext	ports/x11/panoramixext
 pantera		ports/security/pantera
 pantomime	ports/mail/pantomime
@@ -12707,7 +12705,6 @@ qtorrent	ports/net-p2p/qtorrent
 qtpixmap	ports/x11-toolkits/qtpixmap
 qtpkg		ports/sysutils/qtpkg
 qtstalker	ports/finance/qtstalker
-qtutils		ports/graphics/qtutils
 qu-aspell	ports/textproc/qu-aspell
 quack		ports/lang/quack
 quagga		ports/net/quagga
