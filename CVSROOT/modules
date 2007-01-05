@@ -971,7 +971,6 @@ bruteforceblocker	ports/security/bruteforceblocker
 bsd-airtools	ports/net-mgmt/bsd-airtools
 bsd-splash-changer	ports/sysutils/bsd-splash-changer
 bsdadminscripts	ports/sysutils/bsdadminscripts
-bsdav		ports/multimedia/bsdav
 bsdbktr_tvtune	ports/multimedia/bsdbktr_tvtune
 bsdftpd-ssl	ports/ftp/bsdftpd-ssl
 bsdiff		ports/misc/bsdiff
@@ -3666,7 +3665,6 @@ gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepm		ports/finance/gnomepm
 gnomermind	ports/games/gnomermind
 gnomesudoku	ports/games/gnomesudoku
-gnomesword	ports/misc/gnomesword
 gnometelnet	ports/net/gnometelnet
 gnomoradio	ports/audio/gnomoradio
 gnopernicus	ports/accessibility/gnopernicus
@@ -11579,7 +11577,6 @@ pipsv700	ports/print/pipsv700
 pipsv700-cups	ports/print/pipsv700-cups
 pircbot		ports/irc/pircbot
 pisg		ports/irc/pisg
-pitivi		ports/multimedia/pitivi
 pivot-weblog	ports/www/pivot-weblog
 pixelize	ports/graphics/pixelize
 pixen		ports/graphics/pixen

@@ -2643,3 +2643,6 @@ audio/autools||2007-01-05|Has expired: is unfetchable and the project homepage d
 www/mediawiki13||2007-01-05|Removed: No longer supported, please upgrade your wiki installation
 www/mediawiki15||2007-01-05|Removed: No longer supported, please upgrade your wiki installation
 ftp/gwget||2007-01-05|Has expired: fails to install
+multimedia/bsdav||2007-01-05|Has expired: does not work. We need to import bktv patches from OpenBSD to make it work
+multimedia/pitivi||2007-01-05|Has expired: Installs files during "make all"
+misc/gnomesword||2007-01-05|Has expired: Configure fails
