@@ -478,7 +478,6 @@ ariadne		ports/biology/ariadne
 arirang		ports/security/arirang
 arj		ports/archivers/arj
 arkpandora	ports/x11-fonts/arkpandora
-arla		ports/net/arla
 arm-elf-binutils	ports/devel/arm-elf-binutils
 arm-elf-gcc295	ports/devel/arm-elf-gcc295
 arm-rtems-binutils	ports/devel/arm-rtems-binutils
@@ -4521,7 +4520,6 @@ ifc		ports/lang/ifc
 ifc7		ports/lang/ifc7
 ifd-devkit	ports/security/ifd-devkit
 ifd-gempc410	ports/security/ifd-gempc410
-ifd-gpr400	ports/security/ifd-gpr400
 ifd-slb_rf60	ports/security/ifd-slb_rf60
 ifd-test	ports/devel/ifd-test
 ifdepd		ports/net/ifdepd
@@ -6754,7 +6752,6 @@ lsdb		ports/databases/lsdb
 lsdb-emacs20	ports/databases/lsdb-emacs20
 lsdvd		ports/multimedia/lsdvd
 lsh		ports/security/lsh
-lsmlib		ports/sysutils/lsmlib
 lsof		ports/sysutils/lsof
 lsysexp		ports/biology/lsysexp
 lt-aspell	ports/textproc/lt-aspell
@@ -7178,7 +7175,6 @@ mmpython	ports/multimedia/mmpython
 mmr		ports/mail/mmr
 mmsclient	ports/multimedia/mmsclient
 mmsrip		ports/multimedia/mmsrip
-mmtk		ports/science/mmtk
 mmucl		ports/net/mmucl
 mmv		ports/misc/mmv
 mn-aspell	ports/textproc/mn-aspell
@@ -7423,7 +7419,6 @@ mprof		ports/devel/mprof
 mq4cpp		ports/devel/mq4cpp
 mr-aspell	ports/textproc/mr-aspell
 mreport		ports/mail/mreport
-mrt		ports/net/mrt
 mrtg		ports/net-mgmt/mrtg
 mrtg-mysql-load	ports/databases/mrtg-mysql-load
 mrtg-ping-probe	ports/net/mrtg-ping-probe
@@ -14353,7 +14348,6 @@ teapot		ports/deskutils/teapot
 tecnoballz	ports/games/tecnoballz
 teco		ports/editors/teco
 ted		ports/editors/ted
-teddy		ports/graphics/teddy
 teg		ports/games/teg
 tei-guidelines-p3	ports/textproc/tei-guidelines-p3
 tei-guidelines-p4	ports/textproc/tei-guidelines-p4
@@ -16091,7 +16085,6 @@ xtail		ports/misc/xtail
 xtar		ports/misc/xtar
 xtattr		ports/x11/xtattr
 xteddy		ports/games/xteddy
-xtem		ports/print/xtem
 xterm		ports/x11/xterm
 xtermcontrol	ports/x11/xtermcontrol
 xtermset	ports/x11/xtermset
