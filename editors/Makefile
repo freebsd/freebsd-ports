@@ -14,7 +14,6 @@
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
-    SUBDIR += beaver
     SUBDIR += bed
     SUBDIR += biew
     SUBDIR += bitedit
@@ -35,7 +34,6 @@
     SUBDIR += dedit
     SUBDIR += doxymacs
     SUBDIR += drjava
-    SUBDIR += dte
     SUBDIR += e3
     SUBDIR += e93
     SUBDIR += edith
