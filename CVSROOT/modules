@@ -12249,6 +12249,7 @@ py-igraph	ports/math/py-igraph
 py-imaging	ports/graphics/py-imaging
 py-imdbpy	ports/www/py-imdbpy
 py-impacket	ports/net/py-impacket
+py-instant	ports/devel/py-instant
 py-ipy		ports/net-mgmt/py-ipy
 py-irclib	ports/irc/py-irclib
 py-istring	ports/devel/py-istring
