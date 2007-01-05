@@ -9331,6 +9331,7 @@ p5-HTML-TreeBuilder-XPath	ports/www/p5-HTML-TreeBuilder-XPath
 p5-HTML-Truncate	ports/textproc/p5-HTML-Truncate
 p5-HTML-Webmake	ports/www/p5-HTML-Webmake
 p5-HTML-Widget	ports/www/p5-HTML-Widget
+p5-HTML-Widget-DBIC	ports/www/p5-HTML-Widget-DBIC
 p5-HTML-Widgets-SelectLayers	ports/www/p5-HTML-Widgets-SelectLayers
 p5-HTML-WikiConverter	ports/www/p5-HTML-WikiConverter
 p5-HTML-WikiConverter-DokuWiki	ports/www/p5-HTML-WikiConverter-DokuWiki
