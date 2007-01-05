@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A graphical program for editing sound files
 
 USE_BZIP2=	yes
