@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	beepcore
-PORTVERSION=	0.9.07
-PORTREVISION=	1
+PORTVERSION=	0.9.08
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-java
 PKGNAMEPREFIX=	java-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	An implementation of BEEP core and BEEP mapping for TCP in Java
 
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
