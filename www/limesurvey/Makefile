@@ -7,6 +7,7 @@
 
 PORTNAME=	phpsurveyor
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +21,7 @@ WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 
 #User-configurable variables
-WWWDOCROOT?=	www/data
+WWWDOCROOT?=	www/
 PHPSURVEYORURL?=	phpsurveyor
 WWWOWN?=	www
 WWWGRP?=	www
