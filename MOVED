@@ -2654,3 +2654,6 @@ print/ec-fonts-mftraced||2007-01-05|Has expired: Installs files before 'make ins
 print/yatex-xemacs-mule||2007-01-05|Has expired: hangs during build
 security/gnu-crypto||2007-01-05|Has expired: Does not compile
 www/linux-beonex||2007-01-05|Has expired: Security issues. From http://www.beonex.com/ 'The currently available Beonex Communicator 0.8 builds have several known security bugs'
+misc/instant-workstation||2007-01-05|Has expired: Incomplete pkg-plist
+lang/yap||2007-01-05|Has expired: Does not compile
+lang/tensile||2007-01-05|Has expired: "Coredump during build on FreeBSD >= 6.x"

@@ -318,7 +318,6 @@
     SUBDIR += tcl84-thread
     SUBDIR += tclX
     SUBDIR += tcltutor
-    SUBDIR += tensile
     SUBDIR += tinycobol
     SUBDIR += tolua
     SUBDIR += tolua++
@@ -332,7 +331,6 @@
     SUBDIR += xotcl
     SUBDIR += xsb
     SUBDIR += yabasic
-    SUBDIR += yap
     SUBDIR += yarv
     SUBDIR += yorick
     SUBDIR += yorick-doc
