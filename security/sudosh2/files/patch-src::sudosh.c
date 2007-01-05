@@ -44,7 +44,7 @@
 +#endif
  	  perror ("Cannot open cloning master pty");
  	  return -1;
-+#ifdef __FreeBSD
++#ifndef __FreeBSD__
  	}
 +#endif
      }
@@ -54,7 +54,7 @@
    (void) grantpt (p->mfd);
 +#endif
  
-+#ifndef __FreeBSD
++#ifndef __FreeBSD__
    sname = (char *) ptsname (p->mfd);
 +#endif
  
