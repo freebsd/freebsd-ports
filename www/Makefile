@@ -544,6 +544,7 @@
     SUBDIR += p5-Catalyst-Example-InstantCRUD
     SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
     SUBDIR += p5-Catalyst-Log-Log4perl
+    SUBDIR += p5-Catalyst-Manual
     SUBDIR += p5-Catalyst-Model-CDBI
     SUBDIR += p5-Catalyst-Model-CDBI-Plain
     SUBDIR += p5-Catalyst-Model-CDBI-Sweet

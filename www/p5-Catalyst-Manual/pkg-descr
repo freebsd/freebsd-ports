@@ -1,0 +1,9 @@
+This is just the Catalyst manual.  If you want to develop Catalyst
+apps, please install Catalyst::Devel.  If you'd like a tutorial and a
+full example Catalyst application, please intall
+Task::Catalyst::Tutorial.
+
+If you just want to run Catalyst applications, you probably don't need
+this manual, but you do need Catalyst::Runtime.
+
+WWW: http://search.cpan.org/dist/Catalyst-Manual/
