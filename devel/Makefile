@@ -298,6 +298,7 @@
     SUBDIR += flatzebra
     SUBDIR += flick
     SUBDIR += florist
+    SUBDIR += florist-gpl
     SUBDIR += flowdesigner
     SUBDIR += flyspray
     SUBDIR += fnccheck
