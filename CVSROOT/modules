@@ -5293,6 +5293,7 @@ jdbc-oracle8i	ports/databases/jdbc-oracle8i
 jdbc-oracle9i	ports/databases/jdbc-oracle9i
 jdbcpool	ports/java/jdbcpool
 jde		ports/java/jde
+jdic		ports/x11-toolkits/jdic
 jdictionary	ports/textproc/jdictionary
 jdictionary-int-eng	ports/textproc/jdictionary-int-eng
 jdiskreport	ports/sysutils/jdiskreport
