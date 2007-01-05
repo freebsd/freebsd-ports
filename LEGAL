@@ -377,7 +377,6 @@ lgrind/*		print/lgrind		Contains non-free code written by
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 libidea-*		security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
-libSDLx11.so.tar.gz	multimedia/mtv		No redistribution
 LimeWireOther.zip	net-p2p/limewire	No redistribution allowed
 Linux-ACU-Driver-v*	sysutils/linux-acu	Redistribution not allowed
 Linux_MegaCli_*		sysutils/linux-megacli	Redistribution not allowed
@@ -426,7 +425,6 @@ moviedb/*		misc/moviedb		No commercial use
 MPlayer*		multimedia/mplayer	Restricted binary distribution
 msql-*			databases/msql		Not free for commercial organizations
 MT-*			www/MT			No redistribution
-mtv-*.tar.gz		multimedia/mtv		No redistribution
 mupad/*			math/mupad		Unsure of selling for profit
 mypaedia-*		japanese/mypaedia-fpw	The original dictionary is not free
 mysqlman.tar.gz		databases/mysqlman	Not redistributable, license
