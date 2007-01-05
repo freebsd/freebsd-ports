@@ -39,7 +39,6 @@
     SUBDIR += gnustep-ftp
     SUBDIR += gollem
     SUBDIR += greed
-    SUBDIR += gwget
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw
