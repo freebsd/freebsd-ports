@@ -2308,7 +2308,6 @@ emma		ports/databases/emma
 emms		ports/audio/emms
 emotion		ports/multimedia/emotion
 emovix		ports/multimedia/emovix
-emp		ports/www/emp
 emphasis	ports/audio/emphasis
 empire		ports/games/empire
 empower		ports/sysutils/empower
@@ -7749,7 +7748,6 @@ newvox		ports/games/newvox
 nexfontsel	ports/x11-fonts/nexfontsel
 nextgo		ports/games/nextgo
 nexuiz		ports/games/nexuiz
-nfbtrans	ports/textproc/nfbtrans
 nfdump		ports/net-mgmt/nfdump
 nfsen		ports/net-mgmt/nfsen
 nfsshell	ports/net/nfsshell

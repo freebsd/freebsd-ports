@@ -304,7 +304,6 @@
     SUBDIR += muse
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
-    SUBDIR += nfbtrans
     SUBDIR += nicetext
     SUBDIR += nl-aspell
     SUBDIR += nl-ispell
