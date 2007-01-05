@@ -7,6 +7,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	5.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,12 +18,12 @@ COMMENT=	Library for terminal-independent, full-screen output
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${TARGETDIR}/share/misc --disable-overwrite \
-		--enable-termcap --disable-database --enable-getcap \
-		--enable-colorfgbg --enable-bsdpad --disable-home-terminfo \
+		--enable-termcap --enable-bsdpad --enable-getcap \
+		--enable-colorfgbg --disable-home-terminfo \
 		--includedir=${TARGETDIR}/include/ncurses \
-		--with-profile --with-shared --without-debug \
+		--with-shared \
 		--without-curses-h --with-termlib --program-prefix= \
-		--enable-safe-sprintf --disable-root-environ \
+		--enable-rpath --disable-root-environ \
 		--with-manpage-format=gzip --srcdir=../
 
 # needed by devel/py-ncurses port
@@ -30,11 +31,7 @@ CONFIGURE_ARGS=	--datadir=${TARGETDIR}/share/misc --disable-overwrite \
 CONFIGURE_ARGS+=	--with-trace
 .endif
 
-LDFLAGS+=	-rpath ${TARGETDIR}/lib
-
-CONFIGURE_ENV=	gnat_exists="no" \
-		ac_cv_path_LDCONFIG="${LDCONFIG} -m ${TARGETDIR}/lib" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
 NO_FILTER_SHLIBS=yes
@@ -81,21 +78,51 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 
 MAN3!=	${CAT} ${FILESDIR}/man3
 
-.if ${OSVERSION} >= 400000
-MANUAL_PACKAGE_BUILD=	conflicts with system ncurses
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
 .endif
 
 .if ${OSVERSION} < 503000
 WITHOUT_WIDEC=	yes
-PLIST_SUB+=	WIDEC="@comment "
+.endif
+
+.if !defined(WITHOUT_PROFILE) && !defined(NO_PROFILE) && !defined(NOPROFILE)
+CONFIGURE_ARGS+=--with-profile
+PLIST_SUB+=	PROFILE=""
 .else
+CONFIGURE_ARGS+=--without-profile
+PLIST_SUB+=	PROFILE="@comment "
+.endif
+
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--without-debug
+PLIST_SUB+=	DEBUG="@comment "
+.else
+CONFIGURE_ARGS+=--with-debug
+PLIST_SUB+=	DEBUG=""
+.endif
+
+.if !defined(WITHOUT_TERMINFO)
+CONFIGURE_ARGS+=--with-hashed-db
+PLIST_SUB+=	TERMINFO=""
+.else # termcap only, easier for updating ncurses in base
+CONFIGURE_ARGS+=--disable-database
+PLIST_SUB+=	TERMINFO="@comment "
+.endif
+
+.if !defined(WITHOUT_WIDEC)
 PLIST_SUB+=	WIDEC=""
 EXAMPLES_TARGETS+=	WIDEC
+.else
+PLIST_SUB+=	WIDEC="@comment "
 .endif
 
 post-extract:
 	@${MKDIR} ${WIDEC_WRKSRC}
 	@${MKDIR} ${NOWIDEC_WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
 
 post-configure:
 .if !defined(WITHOUT_WIDEC)
@@ -120,9 +147,6 @@ post-install:
 	${MAKE} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
 .endif
 
-	${INSTALL_DATA} ${WRKSRC}/misc/terminfo.src \
-		${TARGETDIR}/share/misc/terminfo
-
 .for i in ${EXAMPLES_TARGETS}
 	${MKDIR} ${${i}_EXAMPLESDIR}/c++
 .for f in ${EXAMPLES}
@@ -133,6 +157,11 @@ post-install:
 	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++
 .endfor
 .endfor
+
+.if !defined(WITHOUT_TERMINFO)
+	${FIND} ${PREFIX}/share/misc -name "*.terminfo" -print0	|	\
+		${XARGS} -0 ${PREFIX}/bin/tic
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
