@@ -1,0 +1,28 @@
+--- ./jdic/src/unix/native/jni/Makefile.orig	Fri Oct 14 10:42:22 2005
++++ ./jdic/src/unix/native/jni/Makefile	Tue Dec 26 22:11:34 2006
+@@ -44,11 +44,12 @@
+   endif
+   ifeq ($(UNAME), FreeBSD)
+     PLATFORM = freebsd
+-    CXX = g++
+-    CXXFLAGS = -c -I/usr/local/include -I/usr/X11R6/include
+-    LDFLAGS = -shared -fPIC -L/usr/local/lib -L/usr/X11R6/lib
++    #CXX = g++
++    CXXFLAGS += -c -I/usr/local/include -I/usr/X11R6/include
++    CFLAGS += -I/usr/X11R6/include
++    LDFLAGS += -shared -fPIC -L/usr/local/lib -L/usr/X11R6/lib
+   endif
+-  CC = gcc
++  #CC = gcc
+   ifeq ($(ARCH), x86_64)
+     X11LIB=/usr/X11R6/lib64
+   else
+@@ -124,7 +125,7 @@
+ tray: $(TRAY_SO_NAME)
+ 
+ $(TRAY_SO_NAME): $(TRAY_CSRC)
+-	$(CC) $(INCLUDES) $(LDFLAGS) -ldl -L$(X11LIB) -lXt -lX11 $(TRAY_CSRC) -o $@
++	$(CC) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -L$(X11LIB) -lXt -lX11 $(TRAY_CSRC) -o $@
+ 
+ clean:
+ 	rm -f *.so

@@ -89,6 +89,7 @@
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
+    SUBDIR += jdic
     SUBDIR += lesstif
     SUBDIR += libXaw
     SUBDIR += libXmu
