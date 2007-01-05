@@ -1,8 +1,0 @@
-The program 'jmirror' is designed to mirror an entire FTP site
-or directory.  This is REALLY useful for people who use an ftp
-client that cannot download recursively.  This requires both
-PERL 5 (/usr/ports/lang/perl5/), and the CPAN module Net:FTP 
-(http://www.perl.org/CPAN/).
-
-- Justin Robinson
-jmrobins@jmirror.ruin.org

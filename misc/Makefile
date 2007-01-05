@@ -6,9 +6,6 @@
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += acron
-    SUBDIR += afbackup
-    SUBDIR += afbackup-client
-    SUBDIR += afbackup-server
     SUBDIR += airoflash
     SUBDIR += alevt
     SUBDIR += amanda-client

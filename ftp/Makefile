@@ -42,7 +42,6 @@
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw
-    SUBDIR += jmirror
     SUBDIR += junglemonkey
     SUBDIR += kasablanca
     SUBDIR += kbear

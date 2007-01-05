@@ -59,7 +59,6 @@
     SUBDIR += ferite
     SUBDIR += fesi
     SUBDIR += ficl-devel
-    SUBDIR += forth
     SUBDIR += fpc
     SUBDIR += fpc-base
     SUBDIR += fpc-devel
