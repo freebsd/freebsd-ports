@@ -13015,7 +13015,6 @@ rsynth		ports/audio/rsynth
 rt2		ports/www/rt2
 rt2-demo	ports/games/rt2-demo
 rt3		ports/www/rt3
-rt3-elixus	ports/www/rt3-elixus
 rt32		ports/www/rt32
 rt34		ports/www/rt34
 rt36		ports/www/rt36

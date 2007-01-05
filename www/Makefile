@@ -961,7 +961,6 @@
     SUBDIR += rssowl
     SUBDIR += rt2
     SUBDIR += rt3
-    SUBDIR += rt3-elixus
     SUBDIR += rt32
     SUBDIR += rt34
     SUBDIR += rt36
