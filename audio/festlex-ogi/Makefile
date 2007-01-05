@@ -8,17 +8,17 @@
 #
 
 PORTNAME=	festlex-ogi
-PORTVERSION=	2.0
+PORTVERSION=	2.2
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
-DISTNAME=	OGIlexicon-2.0
+DISTNAME=	OGIlexicon-2.2
 DIST_SUBDIR=	festival
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Composite pronunciation dictionary from ogi.edu for Festival
 
-RUN_DEPENDS=	festival:${.CURDIR}/../festival \
-		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex
+RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
+		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex
 
 RESTRICTED=	no-commercial-use
 
