@@ -9,14 +9,13 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.6
-PORTREVISION=	1
+DISTVERSION=	0.8.6a
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
-		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
-		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
+		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	multimedia@FreeBSD.org
