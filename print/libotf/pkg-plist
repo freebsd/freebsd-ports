@@ -8,3 +8,4 @@ lib/libotf.a
 lib/libotf.la
 lib/libotf.so
 lib/libotf.so.0
+libdata/pkgconfig/libotf.pc
