@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lft
-PORTVERSION=	2.5
+PORTVERSION=	3.0b
 CATEGORIES=	net
 MASTER_SITES=	GENTOO/distfiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Layer 4 Traceroute program
 
 GNU_CONFIGURE=	yes
