@@ -1,0 +1,33 @@
+# New ports collection makefile for:	www/p5-HTML-Widget-DBIC
+# Date created:				Jan 5 2007
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	HTML-Widget-DBIC
+PORTVERSION=	0.01
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	HTML
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	lbr@FreeBSD.org
+COMMENT=	Subclass of HTML::Widget for dealing with DBIx::Class
+
+RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-HTML-Widget>=0:${PORTSDIR}/www/p5-HTML-Widget
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	HTML::Widget::DBIC.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500801
+IGNORE=	requires Perl 5.8.1. Install lang/perl5.8, and try again
+.endif
+.include <bsd.port.post.mk>
