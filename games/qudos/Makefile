@@ -200,7 +200,7 @@ do-install:
 .for snd in ${Q2SND}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/snd_${snd}.so ${LIBDIR}
 .endfor
-.if !defined(WITHOUT_GAME)
+.if defined(WITH_GAME)
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
 .endif
 .for mod in ${MOD_LIST:L}
