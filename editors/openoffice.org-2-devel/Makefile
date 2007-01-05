@@ -171,6 +171,9 @@ WITHOUT_MOZILLA=	yes
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .endif
+.if (${OSVERSION} <= 700021)
+EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
+.endif
 .if (${OSVERSION} <= 492000)
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif

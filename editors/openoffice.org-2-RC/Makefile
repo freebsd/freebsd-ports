@@ -28,7 +28,7 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-IGNORE=		Please use editors/openoffice.org-2
+#IGNORE=		Please use editors/openoffice.org-2
 
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
@@ -172,6 +172,9 @@ WITHOUT_MOZILLA=	yes
 .if (${GCCVER} == 41)
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
+.endif
+.if (${OSVERSION} <= 700021)
+EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
 .endif
 .if (${OSVERSION} <= 492000)
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
