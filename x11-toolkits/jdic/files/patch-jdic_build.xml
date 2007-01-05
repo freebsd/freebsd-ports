@@ -1,0 +1,36 @@
+--- ./jdic/build.xml.orig	Tue Oct 31 17:33:06 2006
++++ ./jdic/build.xml	Tue Dec 26 22:07:34 2006
+@@ -543,6 +543,10 @@
+   <target name="buildtray" depends="clean"
+           description="build a distribution for the current platform.">
+     <!-- Set the platform-dependent buildall target -->
++    <condition property="platform.target" value="buildfreebsd_tray">
++      <os name="freebsd"/>
++    </condition>
++
+     <condition property="platform.target" value="buildwin32_tray">
+       <os family="windows" />      
+     </condition> 
+@@ -563,6 +567,13 @@
+   </target>
+ 
+   <!--
++    - FreeBSD DISTRIBUTION
++    -->
++  <target name="buildfreebsd_tray" depends="buildunixjar_tray, buildunixjni_tray"
++          description="build java and native source code for FreeBSD platform" >
++  </target>
++
++  <!--
+     - WIN32 DISTRIBUTION
+     -->
+   <target name="buildwin32_tray" depends="buildwin32jar_tray, buildwin32jni_tray"
+@@ -644,7 +655,7 @@
+   <!-- *** Build Unix native JNI code *** -->
+   <target name="buildunixjni_tray" depends="init"
+           description="build native jni libraries." >
+-    <exec dir="${unix.native.jni.dir}" executable="make" failonerror="yes" >
++    <exec dir="${unix.native.jni.dir}" executable="gmake" failonerror="yes" >
+       <arg line="tray"/>
+     </exec>
+ 

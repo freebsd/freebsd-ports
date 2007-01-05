@@ -1,0 +1,44 @@
+--- ./jdic/src/unix/native/mozilla/Makefile.orig	Wed Mar  8 17:33:18 2006
++++ ./jdic/src/unix/native/mozilla/Makefile	Tue Dec 26 22:14:05 2006
+@@ -47,8 +47,8 @@
+ # For Gecko SDK 1.6 or ealier, enable USING_GECKO_SDK_1_4. Or else, enable 
+ # USING_GECKO_SDK_1_7.
+ #
+-USING_GECKO_SDK_1_4 = 1
+-#USING_GECKO_SDK_1_7 = 1
++#USING_GECKO_SDK_1_4 = 1
++USING_GECKO_SDK_1_7 = 1
+ 
+ # set gtk version
+ #
+@@ -56,8 +56,8 @@
+ # (1.2 or 2) Gecko SDK and the Mozilla binary used. The GTK version building
+ # Gecko SDK and the Mozilla binary must be same.
+ #
+-#MOZ_ENABLE_GTK = 1
+-MOZ_ENABLE_GTK2 = 1
++MOZ_ENABLE_GTK = 1
++#MOZ_ENABLE_GTK2 = 1
+ 
+ MODULE_NAME_PART= mozembed
+ 
+@@ -74,8 +74,8 @@
+ MODULE_NAME_PART = mozembed-solaris-gtk
+ endif
+ ifeq ($(OS_ARCH), FreeBSD)
+-CXX = g++
+-LDFLAGS = -shared -fPIC -Wl,--version-script=gnu-ld-script
++#CXX = g++
++LDFLAGS += -shared -fPIC -Wl,--version-script=gnu-ld-script
+ MODULE_NAME_PART = mozembed-freebsd-gtk
+ endif
+ 
+@@ -102,7 +102,7 @@
+ LIBRARY = lib$(MODULE_NAME).so
+ 
+ #CXXFLAGS = -g -fPIC
+-CXXFLAGS = -O2 -fPIC
++CXXFLAGS += -fPIC
+ 
+ # link against the version of gtkembedmoz included with a
+ # mozilla distribution
