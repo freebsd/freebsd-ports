@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Example-InstantCRUD
-DISTVERSION=	v0.0.17
+DISTVERSION=	v0.0.18
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/Z/ZB/ZBY
@@ -35,7 +35,8 @@ p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authe
 	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-	p5-HTML-Widget>=0:${PORTSDIR}/www/p5-HTML-Widget \
+	p5-HTML-Widget>=1.10:${PORTSDIR}/www/p5-HTML-Widget \
+	p5-HTML-Widget-DBIC>=0:${PORTSDIR}/www/p5-HTML-Widget-DBIC \
 	p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser \
 	p5-Template-Plugin-Class>=0:${PORTSDIR}/www/p5-Template-Plugin-Class \
 	p5-URI>=0:${PORTSDIR}/net/p5-URI \
@@ -52,7 +53,6 @@ MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
 	Catalyst::Helper::Model::InstantCRUD.3 \
 	Catalyst::Helper::View::InstantCRUD.3 \
 	Catalyst::Plugin::Auth::Utils.3 \
-	HTML::Widget::DBIC.3 \
 	HTML::Widget::Element::DoubleSelect.3
 
 .include <bsd.port.pre.mk>
