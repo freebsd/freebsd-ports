@@ -387,12 +387,14 @@
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-oci805.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-oci8po.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-odbc.inc.php
+%%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-odbc_db2.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-odbc_mssql.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-odbc_oracle.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-odbtp.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-odbtp_unicode.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-oracle.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-pdo.inc.php
+%%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-pdo_mssql.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-pdo_mysql.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-pdo_oci.inc.php
 %%NUKEDIR%%/html/includes/classes/adodb/drivers/adodb-pdo_pgsql.inc.php
@@ -452,6 +454,7 @@
 %%NUKEDIR%%/html/includes/classes/adodb/session/adodb-encrypt-mcrypt.php
 %%NUKEDIR%%/html/includes/classes/adodb/session/adodb-encrypt-md5.php
 %%NUKEDIR%%/html/includes/classes/adodb/session/adodb-encrypt-secret.php
+%%NUKEDIR%%/html/includes/classes/adodb/session/adodb-encrypt-sha1.php
 %%NUKEDIR%%/html/includes/classes/adodb/session/adodb-sess.txt
 %%NUKEDIR%%/html/includes/classes/adodb/session/adodb-session-clob.php
 %%NUKEDIR%%/html/includes/classes/adodb/session/adodb-session.php
@@ -1997,12 +2000,16 @@
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/applescript.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/asm.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/asp.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/autoit.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/bash.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/blitzbasic.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/bnf.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/c.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/c_mac.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/caddcl.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/cadlisp.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/cfdg.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/cfm.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/cpp.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/csharp.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/css-gen.cfg
@@ -2013,17 +2020,24 @@
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/div.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/dos.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/eiffel.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/fortran.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/freebasic.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/gml.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/groovy.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/html4strict.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/htmlmail.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/idl.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/ini.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/inno.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/io.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/java.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/java5.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/javascript.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/latex.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/lisp.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/lua.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/matlab.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/mirc.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/mpasm.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/mysql.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/nsis.php
@@ -2038,15 +2052,24 @@
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/php.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/python.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/qbasic.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/reg.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/robots.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/ruby.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/sas.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/scheme.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/sdlbasic.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/smalltalk.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/smarty.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/sql.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/tcl.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/text.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/thinbasic.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/tsql.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/vb.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/vbnet.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/vhdl.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/visualfoxpro.php
+%%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/winbatch.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnincludes/geshi/xml.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pninit.php
 %%NUKEDIR%%/html/modules/pn_bbcode/pnjavascript/bbcode_common.js
@@ -2177,7 +2200,6 @@
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/heul.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/heul2.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/heybaby.gif
-%%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/hmm.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/idee.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/ie_fox.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/index.html
@@ -2219,7 +2241,6 @@
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/pray.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/prost.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/rambo.gif
-%%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/redface.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/remybussi.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/robinhood.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/robot.gif
@@ -2243,7 +2264,6 @@
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/silenced.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/sing.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/sleep.gif
-%%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/smile.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/smoke.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/sniper.gif
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto/snooty.gif
@@ -2292,6 +2312,8 @@
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnlang/eng/user.php
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnlang/eng/userapi.php
 %%NUKEDIR%%/html/modules/pn_bbsmile/pnlang/index.html
+%%NUKEDIR%%/html/modules/pn_bbsmile/pnstyle/index.html
+%%NUKEDIR%%/html/modules/pn_bbsmile/pnstyle/style.css
 %%NUKEDIR%%/html/modules/pn_bbsmile/pntemplates/config/index.html
 %%NUKEDIR%%/html/modules/pn_bbsmile/pntemplates/index.html
 %%NUKEDIR%%/html/modules/pn_bbsmile/pntemplates/plugins/function.pnbbsmile_smilie_list.php
@@ -2484,12 +2506,11 @@
 %%NUKEDIR%%/html/modules/typetool/pntemplates/typetool_admin_modifyconfig.htm
 %%NUKEDIR%%/html/modules/typetool/pnversion.php
 %%NUKEDIR%%/html/pnTemp/.htaccess
-%%NUKEDIR%%/html/pnTemp/Xanthia_Config/fortesting.config.php
 %%NUKEDIR%%/html/pnTemp/Xanthia_Config/index.html
-%%NUKEDIR%%/html/pnTemp/Xanthia_Temp/index.html
 %%NUKEDIR%%/html/pnTemp/Xanthia_cache/index.html
 %%NUKEDIR%%/html/pnTemp/Xanthia_compiled/index.html
 %%NUKEDIR%%/html/pnTemp/adodb/index.html
+%%NUKEDIR%%/html/pnTemp/error_logs/index.html
 %%NUKEDIR%%/html/pnTemp/index.html
 %%NUKEDIR%%/html/pnTemp/pnRender_cache/index.html
 %%NUKEDIR%%/html/pnTemp/pnRender_cache/readme.txt
@@ -2550,6 +2571,7 @@
 %%NUKEDIR%%/html/themes/PiterpanV2/index.html
 %%NUKEDIR%%/html/themes/PiterpanV2/lang/eng/global.php
 %%NUKEDIR%%/html/themes/PiterpanV2/lang/eng/index.html
+%%NUKEDIR%%/html/themes/PiterpanV2/lang/eng/xaninfo.php
 %%NUKEDIR%%/html/themes/PiterpanV2/lang/eng/xaninit.php
 %%NUKEDIR%%/html/themes/PiterpanV2/lang/index.html
 %%NUKEDIR%%/html/themes/PiterpanV2/scripts/imgswap.js
@@ -2931,7 +2953,7 @@
 %%NUKEDIR%%/html/themes/pnDefault/xaninit.php
 %%NUKEDIR%%/html/upgrade.php
 %%NUKEDIR%%/html/user.php
-%%NUKEDIR%%/phoenix-sql/Phoenix-0.7.6.2.sql
+%%NUKEDIR%%/phoenix-sql/Phoenix.sql
 @dirrm %%NUKEDIR%%/phoenix-sql
 @dirrm %%NUKEDIR%%/html/themes/pnDefault/templates/modules/Blocks
 @dirrm %%NUKEDIR%%/html/themes/pnDefault/templates/modules
@@ -3009,6 +3031,7 @@
 @dirrm %%NUKEDIR%%/html/pnTemp/rss
 @dirrm %%NUKEDIR%%/html/pnTemp/pnRender_compiled
 @dirrm %%NUKEDIR%%/html/pnTemp/pnRender_cache
+@dirrm %%NUKEDIR%%/html/pnTemp/error_logs
 @dirrm %%NUKEDIR%%/html/pnTemp/adodb
 @dirrm %%NUKEDIR%%/html/pnTemp/Xanthia_compiled
 @dirrm %%NUKEDIR%%/html/pnTemp/Xanthia_cache
@@ -3035,6 +3058,7 @@
 @dirrm %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies_auto
 @dirrm %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages/smilies
 @dirrm %%NUKEDIR%%/html/modules/pn_bbsmile/pnimages
+@dirrm %%NUKEDIR%%/html/modules/pn_bbsmile/pnstyle
 @dirrm %%NUKEDIR%%/html/modules/pn_bbsmile/pndocs
 @dirrm %%NUKEDIR%%/html/modules/pn_bbsmile
 @dirrm %%NUKEDIR%%/html/modules/pn_bbcode/pntemplates/plugins

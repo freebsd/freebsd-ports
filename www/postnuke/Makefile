@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	postnuke
-PORTVERSION=	0.762
+PORTVERSION=	0.764
 CATEGORIES=	www
-MASTER_SITES=	http://noc.postnuke.com/frs/download.php/987/
-DISTNAME=	PostNuke-0.762
+MASTER_SITES=	http://noc.postnuke.com/frs/download.php/1340/
+DISTNAME=	PostNuke-0.764
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	An automated website package to distribute and manage content
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
