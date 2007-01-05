@@ -4,6 +4,9 @@
 %%SITE_PERL%%/Class/MOP/Class/Immutable.pm
 %%SITE_PERL%%/Class/MOP/Instance.pm
 %%SITE_PERL%%/Class/MOP/Method.pm
+%%SITE_PERL%%/Class/MOP/Method/Accessor.pm
+%%SITE_PERL%%/Class/MOP/Method/Constructor.pm
+%%SITE_PERL%%/Class/MOP/Method/Wrapped.pm
 %%SITE_PERL%%/Class/MOP/Module.pm
 %%SITE_PERL%%/Class/MOP/Object.pm
 %%SITE_PERL%%/Class/MOP/Package.pm
@@ -17,6 +20,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/LazyClass.pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/Perl6Attribute.pod
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/Class/MOP/Method
 @dirrmtry %%SITE_PERL%%/Class/MOP/Class
 @dirrmtry %%SITE_PERL%%/Class/MOP
 @dirrmtry %%SITE_PERL%%/Class
