@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20061022
+PORTVERSION=	0.0.20061227
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,16 +26,16 @@ USE_AUTOTOOLS=	libltdl:15
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=--enable-ltdl-install=no
+CONFIGURE_ARGS=--enable-ltdl-install=no --mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		GL_LIBS="-L${X11BASE}/lib"
 
 MAN1=	gldb.1
 MAN3=	bugle.3
-MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7 \
-	bugle-frontbuffer.7 bugle-log.7 bugle-logstats.7 		\
-	bugle-screenshot.7 bugle-showerror.7 bugle-showextensions.7 	\
+MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7		\
+	bugle-frontbuffer.7 bugle-log.7 bugle-logstats.7		\
+	bugle-screenshot.7 bugle-showerror.7 bugle-showextensions.7	\
 	bugle-showstats.7 bugle-stats_basic.7 bugle-stats_fragments.7	\
 	bugle-stats_nv.7 bugle-stats_primitives.7 bugle-trace.7		\
 	bugle-unwindstack.7 bugle-wireframe.7
