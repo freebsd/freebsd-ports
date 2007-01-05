@@ -7,6 +7,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	8.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -119,6 +120,16 @@ CONFIGURE_ARGS+=	--disable-smart-resize
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
+.if defined(WITHOUT_TERMINFO)
+CONFIGURE_ARGS+=	--without-terminfo
+PLIST_SUB+=		TERMINFO="@comment "
+.else
+BUILD_DEPENDS+=	tic:${PORTSDIR}/devel/ncurses
+CONFIGURE_ARGS+=	--with-terminfo=${LOCALBASE}share/misc/terminfo.db
+RUN_DEPENDS+=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
+PLIST_SUB+=		TERMINFO=""
+.endif
+
 CONFIGURE_ENV+=		LIBS="-lutil"
 
 .include <bsd.port.pre.mk>
@@ -169,6 +180,7 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_MOUSEWHEEL	disable support for scrolling via mouse wheel"
 	@${ECHO_MSG} "WITHOUT_SMART_RESIZE	disable smart growth/shrink behaviour"
 	@${ECHO_MSG} "WITHOUT_IMLOCALE_FIX	disable imlocale encoding conversion fix"
+	@${ECHO_MSG} "WITHOUT_TERMINFO		don't register urxvt in the terminfo database"
 	@${ECHO_MSG}
 .ifndef(WITH_ENCODING)
 	@${ECHO_MSG} "==> You can compile in support for additional codeset groups by setting the WITH_ENCODING variable"
@@ -195,6 +207,10 @@ pre-configure:
 
 post-install:
 	${CHMOD} 4711 ${PREFIX}/bin/urxvt ${PREFIX}/bin/urxvtd
+.if !defined(WITHOUT_TERMINFO)
+	${INSTALL_DATA} ${WRKSRC}/doc/etc/rxvt-unicode.terminfo	\
+		${LOCALBASE}/share/misc/
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc

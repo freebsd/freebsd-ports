@@ -22,3 +22,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/urxvt.pm
 %%PERL%%@dirrm lib/urxvt/perl
 %%PERL%%@dirrm lib/urxvt
+%%TERMINFO%%@cwd %%LOCALBASE%%
+%%TERMINFO%%share/misc/rxvt-unicode.terminfo
+%%TERMINFO%%@exec tic %%LOCALBASE%%/share/misc/rxvt-unicode.terminfo
+@comment No unexec tic available
