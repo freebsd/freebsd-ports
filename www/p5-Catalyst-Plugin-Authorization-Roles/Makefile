@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authorization-Roles
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-UNIVERSAL-isa>=0.05:${PORTSDIR}/devel/p5-UNIVERSAL-isa
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Authorization::Roles.3
 
