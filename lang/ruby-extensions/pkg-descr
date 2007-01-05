@@ -1,0 +1,7 @@
+This project defines various useful extensions to Ruby's standard classes,
+including many of those captured at on the Wiki at StandardClassExtensions.
+They are thoroughly documented and tested. See the project homepage for API
+documentation.
+
+Author:	Gavin Sinclair <gsinclair@soyabean.com.au>
+WWW:	http://extensions.rubyforge.net

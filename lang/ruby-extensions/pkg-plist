@@ -1,0 +1,64 @@
+bin/rbxtm
+%%RUBY_SITELIBDIR%%/extensions/_base.rb
+%%RUBY_SITELIBDIR%%/extensions/_template.rb
+%%RUBY_SITELIBDIR%%/extensions/all.rb
+%%RUBY_SITELIBDIR%%/extensions/array.rb
+%%RUBY_SITELIBDIR%%/extensions/binding.rb
+%%RUBY_SITELIBDIR%%/extensions/class.rb
+%%RUBY_SITELIBDIR%%/extensions/continuation.rb
+%%RUBY_SITELIBDIR%%/extensions/enumerable.rb
+%%RUBY_SITELIBDIR%%/extensions/hash.rb
+%%RUBY_SITELIBDIR%%/extensions/io.rb
+%%RUBY_SITELIBDIR%%/extensions/kernel.rb
+%%RUBY_SITELIBDIR%%/extensions/module.rb
+%%RUBY_SITELIBDIR%%/extensions/numeric.rb
+%%RUBY_SITELIBDIR%%/extensions/object.rb
+%%RUBY_SITELIBDIR%%/extensions/ostruct.rb
+%%RUBY_SITELIBDIR%%/extensions/string.rb
+%%RUBY_SITELIBDIR%%/extensions/symbol.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.1st
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/_template_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/array_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/binding_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/class_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/continuation_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/enumerable_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/hash_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/io_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/kernel_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/module_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/numeric_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/object_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/ostruct_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/string_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/symbol_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/_base_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions/all_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/README.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Enumerable.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Symbol.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Array.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Module.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Continuation.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Numeric.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/IO.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Class.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/OpenStruct.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Object.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Binding.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/String.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Kernel.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Integer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+@dirrm %%RUBY_SITELIBDIR%%/extensions
+@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/extensions
+@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib
+@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%/files
+@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes
+@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%
