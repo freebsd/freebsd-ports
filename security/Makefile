@@ -179,7 +179,6 @@
     SUBDIR += identify
     SUBDIR += ifd-devkit
     SUBDIR += ifd-gempc410
-    SUBDIR += ifd-gpr400
     SUBDIR += ifd-slb_rf60
     SUBDIR += ike-scan
     SUBDIR += integrit

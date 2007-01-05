@@ -19,7 +19,6 @@
     SUBDIR += apache-soap
     SUBDIR += apinger
     SUBDIR += archie
-    SUBDIR += arla
     SUBDIR += arp-sk
     SUBDIR += arpd
     SUBDIR += arpdig
@@ -308,7 +307,6 @@
     SUBDIR += mpich2
     SUBDIR += mping
     SUBDIR += mrouted
-    SUBDIR += mrt
     SUBDIR += mrtg-ping-probe
     SUBDIR += msend
     SUBDIR += msntp

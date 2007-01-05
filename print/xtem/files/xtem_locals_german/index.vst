@@ -1,8 +1,0 @@
- @
-makeindex                                              @ makeindex  @ \
-
-makeindex:  Datei "makeindex-style" wird geladen       @ makeindex  @ -s makeindex-style \
-
-
-*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
-
