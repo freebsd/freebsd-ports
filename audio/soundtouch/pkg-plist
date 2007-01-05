@@ -4,12 +4,14 @@ include/soundtouch/FIFOSampleBuffer.h
 include/soundtouch/FIFOSamplePipe.h
 include/soundtouch/STTypes.h
 include/soundtouch/SoundTouch.h
+include/soundtouch/soundtouch_config.h
 @dirrm include/soundtouch
 lib/libBPM.a
 lib/libBPM.la
 lib/libSoundTouch.a
 lib/libSoundTouch.la
 share/aclocal/soundtouch.m4
+libdata/pkgconfig/soundtouch-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.TXT
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
