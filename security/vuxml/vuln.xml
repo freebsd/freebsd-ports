@@ -34,6 +34,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="78ad2525-9d0c-11db-a5f6-000c6ec775d9">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>9.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense reports:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=457">
+	  <p>The vulnerability specifically exists due to Opera
+	    improperly processing a JPEG DHT marker. The DHT marker is
+	    used to define a Huffman Table which is used for decoding
+	    the image data. An invalid number of index bytes in the
+	    DHT marker will trigger a heap overflow with partially
+	    user controlled data.</p>
+	  <p>Exploitation of this vulnerability would allow an
+	    attacker to execute arbitrary code on the affected
+	    host. The attacker would first need to construct a website
+	    containing the malicious image and trick the vulnerable
+	    user into visiting the site. This would trigger the
+	    vulnerability and allow the code to execute with the
+	    privileges of the local user.</p>
+	</blockquote>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=458">
+	  <p>A flaw exists within Opera's Javascript SVG
+	    implementation. When processing a
+	    createSVGTransformFromMatrix request Opera does not
+	    properly validate the type of object passed to the
+	    function. Passing an incorrect object to this function can
+	    result in it using a pointer that is user controlled when
+	    it attempts to make the virtual function call.</p>
+	  <p>Exploitation of this vulnerability would allow an
+	    attacker to execute arbitrary code on the affected
+	    host. The attacker would first need to construct a website
+	    containing the malicious JavaScript and trick the
+	    vulnerable user into visiting the site. This would trigger
+	    the vulnerability and allow the code to execute with the
+	    privileges of the local user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=457</url>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=458</url>
+      <url>http://www.opera.com/support/search/supsearch.dml?index=851</url>
+      <url>http://www.opera.com/support/search/supsearch.dml?index=852</url>
+    </references>
+    <dates>
+      <discovery>2007-01-05</discovery>
+      <entry>2007-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d8d3548-9d02-11db-a541-000ae42e9b93">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
