@@ -1,15 +1,12 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
-%%INSTDIR%%/lib/JFlash.jar
-%%INSTDIR%%/lib/Skins.jar
 %%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
-%%INSTDIR%%/lib/commons-jxpath-1.1.jar
 %%INSTDIR%%/lib/dMSN.jar
-%%INSTDIR%%/lib/dllStuff.jar
+%%INSTDIR%%/lib/idle.jar
 %%INSTDIR%%/lib/jdom1_0.jar
-%%INSTDIR%%/lib/sbbi-upnplib-1.0.2.jar
+%%INSTDIR%%/lib/winflash.jar
 %%INSTDIR%%/lib/xmlpull.jar
-%%INSTDIR%%/resources/AppData/Backgrounds/Default.png
+%%INSTDIR%%/resources/AppData/Backgrounds/.keep_me
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN7.zip
 %%INSTDIR%%/resources/AppData/Games/.keep_me
 %%INSTDIR%%/resources/AppData/Images/Default.zip
@@ -31,7 +28,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
 %%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
 %%INSTDIR%%/resources/AppData/SplashWindow/Mercury.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_Danny.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_Dave.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_MSN 16b.zip
@@ -56,7 +52,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList.zip
 %%INSTDIR%%/resources/AppData/Views/MSN/Default_Participants.zip
 %%INSTDIR%%/resources/AppData/Views/MSN/RobsDroneV3.zip
-%%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact.zip
 %%INSTDIR%%/resources/AppData/Winks/BouncyBall.zip
 %%INSTDIR%%/resources/AppData/Winks/Crying.zip
 %%INSTDIR%%/resources/AppData/Winks/Dancer.zip
@@ -72,15 +67,11 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Winks/Sunflower.zip
 %%INSTDIR%%/resources/AppData/Winks/Ufo.zip
 %%INSTDIR%%/resources/AppData/Winks/WaterBalloon.zip
-%%INSTDIR%%/resources/UI/dialogs/Jabber_ContactSubscribed.xml
-%%INSTDIR%%/resources/UI/dialogs/Jabber_JoinMUC.xml
-%%INSTDIR%%/resources/UI/panels/ConferencePanel.xml
 %%INSTDIR%%/resources/lang/en.xml
 %%INSTDIR%%/resources/menu/FirstTab.xml
 %%INSTDIR%%/resources/menu/MSN.xml
 %%INSTDIR%%/resources/menu/RSS.xml
 %%INSTDIR%%/resources/menu/Tray.xml
-%%INSTDIR%%/resources/menu/XMPP.xml
 %%INSTDIR%%/resources/settings/Default_Account.xml
 %%INSTDIR%%/resources/settings/Default_Global.xml
 %%INSTDIR%%/resources/settings/Window_Advanced_Account.xml
@@ -91,7 +82,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Wizard_FirstTime_Account.xml
 %%INSTDIR%%/resources/text/EventExampleLog.xml
 %%INSTDIR%%/resources/text/EventLog.xsl
-%%INSTDIR%%/resources/text/JabberServers.xml
 %%INSTDIR%%/resources/text/Locations.xml
 %%INSTDIR%%/resources/text/MessageLog.xsl
 %%INSTDIR%%/resources/text/RSSFeeds.xml
@@ -99,11 +89,7 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/settings
 @dirrm %%INSTDIR%%/resources/menu
 @dirrm %%INSTDIR%%/resources/lang
-@dirrm %%INSTDIR%%/resources/UI/panels
-@dirrm %%INSTDIR%%/resources/UI/dialogs
-@dirrm %%INSTDIR%%/resources/UI
 @dirrm %%INSTDIR%%/resources/AppData/Winks
-@dirrm %%INSTDIR%%/resources/AppData/Views/XMPP
 @dirrm %%INSTDIR%%/resources/AppData/Views/MSN
 @dirrm %%INSTDIR%%/resources/AppData/Views/Global
 @dirrm %%INSTDIR%%/resources/AppData/Views
