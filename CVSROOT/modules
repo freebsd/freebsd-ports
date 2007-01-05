@@ -618,7 +618,6 @@ automake110	ports/devel/automake110
 automake14	ports/devel/automake14
 automake15	ports/devel/automake15
 automake19	ports/devel/automake19
-autools		ports/audio/autools
 autopano-sift	ports/graphics/autopano-sift
 autopsy		ports/sysutils/autopsy
 autorespond	ports/mail/autorespond

@@ -41,7 +41,6 @@
     SUBDIR += aumix
     SUBDIR += aureal-kmod
     SUBDIR += autocd
-    SUBDIR += autools
     SUBDIR += autozen
     SUBDIR += aylet
     SUBDIR += azrael
