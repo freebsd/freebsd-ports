@@ -2771,6 +2771,7 @@ flog		ports/sysutils/flog
 flood		ports/www/flood
 flops		ports/benchmarks/flops
 florist		ports/devel/florist
+florist-gpl	ports/devel/florist-gpl
 flounder	ports/science/flounder
 flow-extract	ports/net-mgmt/flow-extract
 flow-tools	ports/net-mgmt/flow-tools
