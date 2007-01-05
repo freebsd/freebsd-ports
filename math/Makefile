@@ -145,6 +145,7 @@
     SUBDIR += mpexpr
     SUBDIR += mpfr
     SUBDIR += mprime
+    SUBDIR += msieve
     SUBDIR += mtl
     SUBDIR += mtrxmath
     SUBDIR += mumps

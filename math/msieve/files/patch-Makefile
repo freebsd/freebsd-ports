@@ -1,0 +1,46 @@
+--- Makefile.orig	Sun Dec 31 21:10:39 2006
++++ Makefile	Wed Jan  3 01:34:16 2007
+@@ -22,21 +22,21 @@
+ # WARN_FLAGS = -Wall -W -Wconversion
+ 
+ # gcc for x86 and x86-64
+-CC = gcc
+-OPT_FLAGS = -O3 -fomit-frame-pointer
++#CC = gcc
++#OPT_FLAGS = -O3 -fomit-frame-pointer
+ # MACHINE_FLAGS = -march=pentium4 -DHAVE_CMOV
+ # MACHINE_FLAGS = -march=k8 -DHAVE_CMOV
+-MACHINE_FLAGS = -march=athlon -DHAVE_CMOV
++#MACHINE_FLAGS = -march=athlon -DHAVE_CMOV
+ # MACHINE_FLAGS = -march=pentium-m -DHAVE_CMOV
+ WARN_FLAGS = -Wall -W -Wconversion
+ 
+ # note that if GSL was built as a shared library you may need
+ # to append -lgslcblas to LIB_GSL, or even build a static version
+ 
+-LIB_THREAD = -lpthread
+-LIB_GSL = -lgsl
++LIB_THREAD = $(PTHREAD_LIBS)
++LIB_GSL = -lgsl -lgslcblas
+ 
+-CFLAGS = $(OPT_FLAGS) $(MACHINE_FLAGS) $(WARN_FLAGS) -Iinclude
++CFLAGS += $(OPT_FLAGS) $(WARN_FLAGS) -DHAVE_CMOV -Iinclude $(CPPFLAGS)
+ 
+ COMMON_HDR = \
+ 	include/ap.h \
+@@ -100,13 +100,13 @@
+ 	rm -f libmsieve.a
+ 	ar r libmsieve.a $(OBJS)
+ 	ranlib libmsieve.a
+-	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
++	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
+ 
+ nfs: $(NFS_OBJS)
+ 	rm -f libmsieve.a
+ 	ar r libmsieve.a $(NFS_OBJS)
+ 	ranlib libmsieve.a
+-	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a \
++	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a \
+ 			$(LIB_THREAD) $(LIB_GSL)
+ 
+ %.o: %.c $(COMMON_HDR)
