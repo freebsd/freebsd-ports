@@ -31,13 +31,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on FreeBSD 4.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|SUBDIRS = cairo examples test|SUBDIRS = cairo examples|' \
 		${WRKSRC}/Makefile.in
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|-std=c99||' \
-		${WRKSRC}/configure
-.endif
 
 .include <bsd.port.post.mk>
