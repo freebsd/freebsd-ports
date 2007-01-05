@@ -34,6 +34,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3d8d3548-9d02-11db-a541-000ae42e9b93">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal</name>
+	<range><gt>4.7</gt><lt>4.7.5</lt></range>
+	<range><lt>4.6.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal security team reports:</p>
+	<blockquote cite="http://drupal.org/files/sa-2007-001/advisory.txt">
+	  <p>A few arguments passed via URLs are not properly sanitized
+            before display.  When an attacker is able to entice an
+            administrator to follow a specially crafted link, arbitrary
+            HTML and script code can be injected and executed in the
+            victim's session. Such an attack may lead to administrator
+            access if certain conditions are met.</p>
+	</blockquote>
+	<blockquote cite="http://drupal.org/files/sa-2007-002/advisory.txt">
+	  <p>The way page caching was implemented allows a denial of
+            service attack. An attacker has to have the ability to post
+            content on the site. He or she would then be able to poison
+            the page cache, so that it returns cached 404 page not found
+            errors for existing pages.</p>
+	  <p>If the page cache is not enabled, your site is not vulnerable.
+	    The vulnerability only affects sites running on top of MySQL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/files/sa-2007-001/advisory.txt</url>
+      <url>http://drupal.org/files/sa-2007-002/advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-01-05</discovery>
+      <entry>2007-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9347d82d-9a66-11db-b271-000e35248ad7">
     <topic>w3m -- format string vulnerability</topic>
     <affects>
