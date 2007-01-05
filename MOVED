@@ -2678,3 +2678,8 @@ net/mrt||2007-01-05|Has expired: distfile and homepage disappeared
 net/tund||2007-01-05|Has expired: distfile disappeared and has no homepage
 net/xbms||2007-01-05|Has expired: distfile and homepage disappeared
 print/bibcard||2007-01-05|Has expired: distfile and homepage disappeared
+misc/afbackup||2007-01-05|Has expired: Uses unregistered uid that conflicts with other ports
+misc/afbackup-client||2007-01-05|Has expired: Uses unregistered uid that conflicts with other ports
+misc/afbackup-server||2007-01-05|Has expired: Uses unregistered uid that conflicts with other ports
+lang/forth||2007-01-05|Has expired: obsoleted by lang/pfe; use of this port is pretty much senseless
+ftp/jmirror||2007-01-05|Has expired: distfile disappeared and has no homepage

@@ -267,9 +267,6 @@ aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
 af-aspell	ports/textproc/af-aspell
 afay		ports/devel/afay
-afbackup	ports/misc/afbackup
-afbackup-client	ports/misc/afbackup-client
-afbackup-server	ports/misc/afbackup-server
 afbinit		ports/sysutils/afbinit
 affenspiel	ports/games/affenspiel
 affiche		ports/deskutils/affiche
@@ -2824,7 +2821,6 @@ forg		ports/net/forg
 forkbomb	ports/benchmarks/forkbomb
 formication	ports/www/formication
 formido		ports/games/formido
-forth		ports/lang/forth
 fortran-utils	ports/devel/fortran-utils
 fortunate	ports/games/fortunate
 fortune-mod-bible	ports/misc/fortune-mod-bible
@@ -5354,7 +5350,6 @@ jlex		ports/java/jlex
 jlint		ports/java/jlint
 jlj		ports/deskutils/jlj
 jmf		ports/java/jmf
-jmirror		ports/ftp/jmirror
 jmk-x11-fonts	ports/x11-fonts/jmk-x11-fonts
 jmp		ports/java/jmp
 jmusic		ports/audio/jmusic
