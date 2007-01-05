@@ -20,7 +20,6 @@
     SUBDIR += cutecom
     SUBDIR += cwdaemon
     SUBDIR += echolinux
-    SUBDIR += ecu
     SUBDIR += efax
     SUBDIR += efax-gtk
     SUBDIR += fldigi
