@@ -255,6 +255,7 @@
     SUBDIR += rexx-regina
     SUBDIR += rexx-wrapper
     SUBDIR += rscheme
+    SUBDIR += ruby-extensions
     SUBDIR += ruby-js
     SUBDIR += ruby-lua
     SUBDIR += ruby-lua4
