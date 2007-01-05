@@ -20,7 +20,6 @@ COMMENT=	Enhaced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
 USE_GCC=	3.4+
-USE_GL=		yes
 USE_GMAKE=	yes
 
 OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" on \
@@ -77,10 +76,6 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_SDL=	sdl
 .endif
 
-.if !defined(WITHOUT_CLIENT)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-.endif
-
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 MAKE_ENV+=	BUILD_ARTS_SND=YES
@@ -92,6 +87,7 @@ PLIST_SUB+=	ARTS="@comment "
 .endif
 
 .if !defined(WITHOUT_CLIENT)
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	BUILD_QUAKE2=YES
 PLIST_SUB+=	CLIENT=""
 Q2BIN+=		${PORTNAME}
@@ -109,7 +105,7 @@ MAKE_ENV+=	BUILD_DEDICATED=NO
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if !defined(WITHOUT_GAME)
+.if defined(WITH_GAME)
 MAKE_ENV+=	BUILD_GAME=YES
 PLIST_SUB+=	GAME=""
 .else
