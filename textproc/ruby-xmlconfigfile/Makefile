@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xmlconfigfile
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	textproc devel ruby
 MASTER_SITES=	http://www.cs.ualberta.ca/~schofiel/xml-configfile/downloads/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	xml-configfile-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A Ruby module for easy handling of XML configuration files
 
 USE_RUBY=	yes
