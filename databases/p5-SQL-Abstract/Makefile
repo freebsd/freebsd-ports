@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	SQL-Abstract
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Perl extension to generate SQL from Perl data structures
