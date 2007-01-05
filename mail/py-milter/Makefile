@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.bmsi.com/python/
