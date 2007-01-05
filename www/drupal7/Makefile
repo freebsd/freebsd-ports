@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.6.10
+PORTVERSION=	4.7.5
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
-DIST_SUBDIR=	drupal
+MASTER_SITES=   http://ftp.osuosl.org/pub/drupal/files/projects/
+DIST_SUBDIR=    drupal
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	brooks@freebsd.org
 COMMENT=	CMS that supports pgsql and mysql
 
 DRUPAL_PORT=	yes
@@ -24,11 +22,9 @@ WANT_PHP_WEB=	yes
 OPTIONS+=	MYSQL "MySQL database support" on \
 		PGSQL "PostgreSQL database support" off
 
-WWWOWN?=	www
-WWWGRP?=	www
-
 NO_BUILD=	yes
-DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt
+DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt \
+		UPGRADE.txt INSTALL.mysql.txt INSTALL.pgsql.txt
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -48,7 +44,6 @@ do-install:
 	${CP} ${WRKSRC}/.htaccess ${DRUPAL_DIR}
 	${CP} ${WRKSRC}/cron.php ${DRUPAL_DIR}
 	${CP} -R ${WRKSRC}/database ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/favicon.ico ${DRUPAL_DIR}
 	${CP} -R ${WRKSRC}/includes ${DRUPAL_DIR}
 	${CP} ${WRKSRC}/index.php ${DRUPAL_DIR}
 	${CP} -R ${WRKSRC}/misc ${DRUPAL_DIR}
