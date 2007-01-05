@@ -6,18 +6,24 @@
 #
 
 PORTNAME=	soundtouch
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	audio
-MASTER_SITES=	http://users.tkk.fi/~oparviai/
-DISTNAME=	${PORTNAME}_v${PORTVERSION}
+MASTER_SITES=	http://www.surina.net/soundtouch/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
 GNU_CONFIGURE=	yes
-USE_ZIP=	yes
+USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/SoundTouch-${PORTVERSION}
+# For some reason this library contains config/ directory with
+# lots of broken symlinks.  Remove them here and add new one using
+# files/patch-config.  Files were taken from... Audacity, which is
+# distributed with it's own version of SoundTouch ;-)
+pre-patch:
+	${RM} -rf ${WRKSRC}/config/*
+	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|; s|$$(prefix)/doc|$$(datadir)/doc|' \
@@ -27,9 +33,16 @@ post-patch: .SILENT
 		${WRKSRC}/include/Makefile.in ${WRKSRC}/Makefile.in
 	# Fix for GCC 4.x
 	${REINPLACE_CMD} -e 's|SoundTouch::||' ${WRKSRC}/include/SoundTouch.h
+	${CHMOD} +rx ${WRKSRC}/config/install-sh
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/ install-pkgdocDATA$$//' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
