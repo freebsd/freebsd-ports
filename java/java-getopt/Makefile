@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	getopt
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.13
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.urbanophile.com/pub/arenn/software/sources/
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Java version of GNU getopt family functions
 
 USE_JAVA=	yes
