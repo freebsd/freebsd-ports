@@ -5876,6 +5876,7 @@ kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwirc		ports/irc/kwirc
+kxgenerator	ports/x11/kxgenerator
 kxl		ports/devel/kxl
 kxmleditor	ports/editors/kxmleditor
 kyra		ports/devel/kyra
