@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Devel-Symdump
-PORTVERSION=	2.0604
+PORTVERSION=	2.0700
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-2.07
 
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A perl5 module that dumps symbol names or the symbol table
