@@ -10020,6 +10020,7 @@ p5-POE-Session-MultiDispatch	ports/devel/p5-POE-Session-MultiDispatch
 p5-POE-Stage	ports/devel/p5-POE-Stage
 p5-POE-XS-Queue-Array	ports/devel/p5-POE-XS-Queue-Array
 p5-POSIX-Regex	ports/textproc/p5-POSIX-Regex
+p5-POSIX-strptime	ports/devel/p5-POSIX-strptime
 p5-PPI		ports/textproc/p5-PPI
 p5-PPI-HTML	ports/textproc/p5-PPI-HTML
 p5-PPerl	ports/devel/p5-PPerl
