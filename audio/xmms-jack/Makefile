@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	jack
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-jack
@@ -17,7 +16,8 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	XMMS plugin for jack
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		jack.0:${PORTSDIR}/audio/jack
+		jack.0:${PORTSDIR}/audio/jack \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 WRKSRC=		${WRKDIR}/xmms-jack
 
@@ -25,6 +25,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/xmms/Output/libjackout.a \
 		lib/xmms/Output/libjackout.la \
