@@ -8,13 +8,13 @@
 #
 
 PORTNAME=	festvox-abc
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	audio accessibility spanish
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
-DISTNAME=	voice_abc_di-2.0
+DISTNAME=	voice_abc_di-${PORTVERSION}
 DIST_SUBDIR=	festival
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Mexican Spanish male voice for Festival speech synthesis system
 
 RUN_DEPENDS=	\
