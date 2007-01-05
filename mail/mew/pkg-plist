@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/incm
 bin/mewcat
 bin/mewdecode
@@ -28,45 +29,45 @@ bin/mewl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/mew-nmz-fixer.el
 %%PORTDOCS%%%%DOCSDIR%%/contrib/mew-refile-view.el
 %%PORTDOCS%%%%DOCSDIR%%/contrib/mew-toolbar-frame.el
-%%EMACS_SITE_LISPDIR%%/mew/etc/Mew.img
-%%EMACS_SITE_LISPDIR%%/mew/etc/Mew.png
-%%EMACS_SITE_LISPDIR%%/mew/etc/Mew.xbm
-%%EMACS_SITE_LISPDIR%%/mew/etc/Mew.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/COLOR
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-Plain.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-curr.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-folder.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-inc2.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-kill.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Audio.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Blank.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-External.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Folder.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Image.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Octet-Stream.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Postscript.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Rfc822.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Text.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Unknown.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-Video.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-attach.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-cite.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-forward.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-inc.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-lock.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-next.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-pgp-enc.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-pgp-sigenc.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-pgp-sign.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-prev.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-queue.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-refile.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-reply.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-send.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-sep.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-show.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-write.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/mew-yank.xpm
+%%EMACS_LIBDIR%%/etc/mew/Mew.img
+%%EMACS_LIBDIR%%/etc/mew/Mew.png
+%%EMACS_LIBDIR%%/etc/mew/Mew.xbm
+%%EMACS_LIBDIR%%/etc/mew/Mew.xpm
+%%EMACS_LIBDIR%%/etc/mew/etc/COLOR
+%%EMACS_LIBDIR%%/etc/mew/etc/mew-Plain.xpm
+%%EMACS_LIBDIR%%/etc/mew/etc/mew-curr.xpm
+%%EMACS_LIBDIR%%/etc/mew/etc/mew-folder.xpm
+%%EMACS_LIBDIR%%/etc/mew/etc/mew-inc2.xpm
+%%EMACS_LIBDIR%%/etc/mew/etc/mew-kill.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Audio.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Blank.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-External.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Folder.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Image.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Octet-Stream.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Postscript.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Rfc822.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Text.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Unknown.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-Video.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-attach.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-cite.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-forward.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-inc.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-lock.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-next.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-pgp-enc.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-pgp-sigenc.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-pgp-sign.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-prev.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-queue.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-refile.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-reply.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-send.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-sep.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-show.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-write.xpm
+%%EMACS_LIBDIR%%/etc/mew/mew-yank.xpm
 %%EMACS_SITE_LISPDIR%%/mew/mew-addrbook.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-addrbook.elc
 %%EMACS_SITE_LISPDIR%%/mew/mew-attach.el
@@ -207,8 +208,9 @@ bin/mewl
 %%EMACS_SITE_LISPDIR%%/mew/mew-xemacs.elc
 %%EMACS_SITE_LISPDIR%%/mew/mew.el
 %%EMACS_SITE_LISPDIR%%/mew/mew.elc
-@dirrm %%EMACS_SITE_LISPDIR%%/mew/etc/etc
-@dirrm %%EMACS_SITE_LISPDIR%%/mew/etc
+@dirrm %%EMACS_LIBDIR%%/etc/mew/etc
+@dirrm %%EMACS_LIBDIR%%/etc/mew
+@dirrmtry %%EMACS_LIBDIR%%/etc
 @dirrm %%EMACS_SITE_LISPDIR%%/mew
 @dirrmtry %%EMACS_SITE_LISPDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
