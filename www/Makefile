@@ -260,8 +260,6 @@
     SUBDIR += mapedit
     SUBDIR += mathopd
     SUBDIR += mediawiki
-    SUBDIR += mediawiki13
-    SUBDIR += mediawiki15
     SUBDIR += mediawiki16
     SUBDIR += mediawiki17
     SUBDIR += mergelog

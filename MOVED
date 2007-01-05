@@ -2640,3 +2640,5 @@ devel/pear-Console_Getopt||2007-01-01|Obsoleted by devel/pear port
 databases/ruby-libgda||2007-01-01|No longer include in the tarball
 multimedia/ruby-gst||2007-01-01|No longer include in the tarball
 audio/autools||2007-01-05|Has expired: is unfetchable and the project homepage disappeared
+www/mediawiki13||2007-01-05|Removed: No longer supported, please upgrade your wiki installation
+www/mediawiki15||2007-01-05|Removed: No longer supported, please upgrade your wiki installation
