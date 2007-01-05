@@ -24,26 +24,8 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Exception.pm
 %%SITE_PERL%%/Catalyst/Log.pm
 %%SITE_PERL%%/Catalyst/Manual.pod
-%%SITE_PERL%%/Catalyst/Manual/About.pod
-%%SITE_PERL%%/Catalyst/Manual/Actions.pod
-%%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
-%%SITE_PERL%%/Catalyst/Manual/DevelopmentProcess.pod
 %%SITE_PERL%%/Catalyst/Manual/Installation.pod
 %%SITE_PERL%%/Catalyst/Manual/Installation/CentOS4.pod
-%%SITE_PERL%%/Catalyst/Manual/Internals.pod
-%%SITE_PERL%%/Catalyst/Manual/Intro.pod
-%%SITE_PERL%%/Catalyst/Manual/Plugins.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Appendices.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Authentication.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Authorization.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/BasicCRUD.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/CatalystBasics.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Debugging.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Intro.pod
-%%SITE_PERL%%/Catalyst/Manual/Tutorial/Testing.pod
-%%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
 %%SITE_PERL%%/Catalyst/Model.pm
 %%SITE_PERL%%/Catalyst/Request.pm
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
@@ -56,7 +38,6 @@ bin/catalyst.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Runtime
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Request
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual/Installation
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter
