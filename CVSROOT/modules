@@ -1890,7 +1890,6 @@ distcache-devel	ports/security/distcache-devel
 distcc		ports/devel/distcc
 distel		ports/devel/distel
 distribfold	ports/biology/distribfold
-distribute	ports/mail/distribute
 dits		ports/devel/dits
 diveintopython	ports/lang/diveintopython
 divxcalc	ports/graphics/divxcalc
@@ -3105,7 +3104,6 @@ gaim-irchelper	ports/irc/gaim-irchelper
 gaim-latex	ports/net-im/gaim-latex
 gaim-openq	ports/net-im/gaim-openq
 gaim-otr	ports/security/gaim-otr
-gaim-rss-reader	ports/net-im/gaim-rss-reader
 gaim-slashexec	ports/net-im/gaim-slashexec
 gaim-xmms-remote	ports/multimedia/gaim-xmms-remote
 gajim		ports/net-im/gajim
@@ -6117,7 +6115,6 @@ libfame		ports/multimedia/libfame
 libfec		ports/comms/libfec
 libffi		ports/devel/libffi
 libflash	ports/graphics/libflash
-libformat	ports/devel/libformat
 libfov		ports/games/libfov
 libfpx		ports/graphics/libfpx
 libfreenet	ports/net-p2p/libfreenet
@@ -8027,7 +8024,6 @@ oof		ports/science/oof
 oolite		ports/games/oolite
 oonsoo		ports/games/oonsoo
 ooo-build	ports/editors/ooo-build
-ooodict-all	ports/editors/ooodict-all
 oooqs		ports/x11/oooqs
 oops		ports/www/oops
 oorexx		ports/lang/oorexx
@@ -13739,7 +13735,6 @@ sl2tps		ports/net/sl2tps
 slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
 slate		ports/net-mgmt/slate
-slay		ports/sysutils/slay
 slbd		ports/net/slbd
 sleuth		ports/dns/sleuth
 sleuthkit	ports/sysutils/sleuthkit

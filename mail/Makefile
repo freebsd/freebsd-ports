@@ -77,7 +77,6 @@
     SUBDIR += dcc-dccd
     SUBDIR += delatt
     SUBDIR += demime
-    SUBDIR += distribute
     SUBDIR += dk-milter
     SUBDIR += dkfilter
     SUBDIR += dkim-milter

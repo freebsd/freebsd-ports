@@ -31,7 +31,6 @@
     SUBDIR += gaim-ignorance
     SUBDIR += gaim-latex
     SUBDIR += gaim-openq
-    SUBDIR += gaim-rss-reader
     SUBDIR += gaim-slashexec
     SUBDIR += gajim
     SUBDIR += gajim-devel
