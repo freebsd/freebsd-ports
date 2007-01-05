@@ -1,5 +1,5 @@
 --- src/sudosh.c.orig	Sun Jun 12 19:35:07 2005
-+++ src/sudosh.c	Thu Jan  4 08:29:43 2007
++++ src/sudosh.c	Fri Jan  5 14:14:05 2007
 @@ -28,6 +28,13 @@
  
  #define WRITE(a, b, c) do_write(a, b, c, __FILE__, __LINE__)
@@ -14,7 +14,7 @@
  static struct termios termorig;
  static struct winsize winorig;
  
-@@ -545,19 +552,45 @@
+@@ -545,19 +552,43 @@
  {
    char *sname;
  
@@ -52,15 +52,13 @@
 +#if !defined(__FreeBSD_version) || (defined(__FreeBSD_version) && __FreeBSD_version >= 500000)
    (void) unlockpt (p->mfd);
    (void) grantpt (p->mfd);
-+#endif
  
-+#ifndef __FreeBSD__
    sname = (char *) ptsname (p->mfd);
 +#endif
  
    if ((p->sfd = open (sname, O_RDWR)) == -1)
      {
-@@ -619,9 +652,14 @@
+@@ -619,9 +650,14 @@
    for (i = 3; i < 100; ++i)
      close (i);
  
@@ -75,7 +73,7 @@
    (void) ioctl (0, TIOCSWINSZ, &winorig);
  
    setuid (getuid ());
-@@ -663,6 +701,13 @@
+@@ -663,6 +699,13 @@
  {
    static struct termios termnew;
  
@@ -89,7 +87,7 @@
  #ifdef TCGETS
    if (ioctl (ttyfd, TCGETS, &termorig) == -1)
      {
-@@ -670,6 +715,7 @@
+@@ -670,6 +713,7 @@
        exit (EXIT_FAILURE);
      }
  #endif
@@ -97,7 +95,7 @@
  
    if (ioctl (ttyfd, TIOCGWINSZ, &winorig) == -1)
      {
-@@ -677,6 +723,11 @@
+@@ -677,6 +721,11 @@
        exit (EXIT_FAILURE);
      }
  
@@ -109,7 +107,7 @@
    termnew.c_cc[VEOF] = 1;
    termnew.c_iflag = BRKINT | ISTRIP | IXON | IXANY;
    termnew.c_oflag = 0;
-@@ -686,13 +737,19 @@
+@@ -686,13 +735,19 @@
  #ifdef TCSETS
    (void) ioctl (ttyfd, TCSETS, &termnew);
  #endif
