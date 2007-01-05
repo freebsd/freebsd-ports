@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dar
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -16,7 +16,7 @@ COMMENT=	A full featured command-line backup tool, aimed for disks
 
 USE_AUTOTOOLS=	libtool:15
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --disable-build-html --datadir=${DATADIR}
 
