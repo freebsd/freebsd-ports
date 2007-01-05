@@ -1,14 +1,22 @@
---- Makefile.in.orig	Sun Dec 23 16:53:53 2001
-+++ Makefile.in	Fri Feb  8 12:44:30 2002
-@@ -151,3 +151,3 @@
+--- Makefile.in.orig	Thu Jan  4 20:31:47 2007
++++ Makefile.in	Thu Jan  4 20:33:38 2007
+@@ -238,7 +238,7 @@ target_alias = @target_alias@
  
--SUBDIRS = . m4macros glib gobject gmodule gthread tests build po docs
-+SUBDIRS = . m4macros glib gobject gmodule gthread build po docs
+ AUTOMAKE_OPTIONS = 1.7
  
-@@ -192,4 +192,4 @@
+-SUBDIRS = . m4macros glib gobject gmodule gthread tests po docs
++SUBDIRS = . m4macros glib gobject gmodule gthread po docs
+ 
+ bin_SCRIPTS = glib-gettextize
+ 
+@@ -286,8 +286,8 @@ BUILT_EXTRA_DIST = \
+ 	config.h.win32		\
+ 	gtk-doc.make
  
 -
 -configexecincludedir = $(libdir)/glib-2.0/include
 +glibincludedir = $(includedir)/glib-2.0
 +configexecincludedir = $(glibincludedir)
+ 
+ CONFIGURE_DEPENDENCIES = acglib.m4
  
