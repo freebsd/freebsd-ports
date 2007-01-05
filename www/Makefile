@@ -660,6 +660,7 @@
     SUBDIR += p5-HTML-TreeBuilder-XPath
     SUBDIR += p5-HTML-Webmake
     SUBDIR += p5-HTML-Widget
+    SUBDIR += p5-HTML-Widget-DBIC
     SUBDIR += p5-HTML-Widgets-SelectLayers
     SUBDIR += p5-HTML-WikiConverter
     SUBDIR += p5-HTML-WikiConverter-DokuWiki
