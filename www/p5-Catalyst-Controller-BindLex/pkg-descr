@@ -1,0 +1,8 @@
+This plugin lets you put your lexicals on the stash and elsewhere very easily.
+
+If you use the same name for two variables with the same storage binding
+attribute they will be aliased to each other, so you can use this for reading
+as well as writing values across controller subs. This is almost like sharing
+your lexical scope.
+
+WWW: http://search.cpan.org/~nuffin/Catalyst-Controller-BindLex/
