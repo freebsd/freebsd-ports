@@ -1832,6 +1832,7 @@
     SUBDIR += replay
     SUBDIR += rhtvision
     SUBDIR += rinfo
+    SUBDIR += rlog
     SUBDIR += rlwrap
     SUBDIR += robodoc
     SUBDIR += root
