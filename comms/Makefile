@@ -121,7 +121,6 @@
     SUBDIR += uird
     SUBDIR += uticom
     SUBDIR += viewfax
-    SUBDIR += vpb-driver
     SUBDIR += vrflash
     SUBDIR += wsjt
     SUBDIR += wwl

@@ -1,8 +1,0 @@
-etc/vpb/vlcmain.out
-etc/vpb/vpbmain_isa.out
-etc/vpb/vpbmain_pci.out
-include/vpbapi.h
-lib/libvpb.a
-@dirrm etc/vpb
-@cwd /
-%%KMODDIR%%/vpb.ko
