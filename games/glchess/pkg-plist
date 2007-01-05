@@ -11,6 +11,9 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/cecp.py
 %%PYTHON_SITELIBDIR%%/glchess/cecp.pyc
 %%PYTHON_SITELIBDIR%%/glchess/cecp.pyo
+%%PYTHON_SITELIBDIR%%/glchess/config.py
+%%PYTHON_SITELIBDIR%%/glchess/config.pyc
+%%PYTHON_SITELIBDIR%%/glchess/config.pyo
 %%PYTHON_SITELIBDIR%%/glchess/chess/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyo
@@ -102,6 +105,7 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyc
 %%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyo
 share/applications/glchess.desktop
+share/gconf/schemas/glchess.schemas
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -112,7 +116,6 @@ share/applications/glchess.desktop
 %%DATADIR%%/gui/glchess.glade
 %%DATADIR%%/gui/glchess.svg
 %%DATADIR%%/gui/load_game.glade
-%%DATADIR%%/gui/network_game.glade
 %%DATADIR%%/gui/new_game.glade
 %%DATADIR%%/gui/save_game.glade
 %%DATADIR%%/textures/board.png
@@ -195,6 +198,8 @@ share/pixmaps/glchess.svg
 @dirrm %%DATADIR%%/gui
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/gconf/schemas
+@dirrmtry share/gconf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl
