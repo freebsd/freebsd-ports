@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/_exceptions.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/_exceptions.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/_exceptions.pyo
+%%PYTHON_SITELIBDIR%%/logilab/astng/astutils.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/astutils.pyc
+%%PYTHON_SITELIBDIR%%/logilab/astng/astutils.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/builder.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/builder.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/builder.pyo
@@ -49,6 +52,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/appl/myConnection.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/appl/myConnection.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/appl/myConnection.pyo
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/data/format.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/data/format.pyc
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/data/format.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/module.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/module.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/module.pyo
@@ -117,3 +123,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/data
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng
+@dirrm %%PYTHON_SITELIBDIR%%/logilab
