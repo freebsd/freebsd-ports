@@ -5,9 +5,10 @@ include/tomoe/gtk/tomoe-edit-char.h
 include/tomoe/gtk/tomoe-edit-meta.h
 include/tomoe/gtk/tomoe-edit-strokes.h
 include/tomoe/gtk/tomoe-gtk.h
+include/tomoe/gtk/tomoe-gucharmap.h
+include/tomoe/gtk/tomoe-handwriting.h
 include/tomoe/gtk/tomoe-reading-search.h
 include/tomoe/gtk/tomoe-scrollable.h
-include/tomoe/gtk/tomoe-stroke-search.h
 include/tomoe/gtk/tomoe-window.h
 @dirrm include/tomoe/gtk
 @dirrmtry include/tomoe
@@ -18,6 +19,26 @@ lib/libtomoe-gtk.so.1
 libdata/pkgconfig/libtomoe-gtk.pc
 share/libtomoe-gtk/tomoe-data-view.png
 share/libtomoe-gtk/tomoe-dictionary.png
+share/libtomoe-gtk/tomoe-gucharmap.png
 share/libtomoe-gtk/tomoe-handwriting.png
 share/libtomoe-gtk/tomoe-search.png
 @dirrm share/libtomoe-gtk
+share/gtk-doc/html/libtomoe-gtk/TomoeCanvas.html
+share/gtk-doc/html/libtomoe-gtk/TomoeCharTable.html
+share/gtk-doc/html/libtomoe-gtk/TomoeHandwriting.html
+share/gtk-doc/html/libtomoe-gtk/TomoeWindow.html
+share/gtk-doc/html/libtomoe-gtk/home.png
+share/gtk-doc/html/libtomoe-gtk/index.html
+share/gtk-doc/html/libtomoe-gtk/index.sgml
+share/gtk-doc/html/libtomoe-gtk/ix01.html
+share/gtk-doc/html/libtomoe-gtk/left.png
+share/gtk-doc/html/libtomoe-gtk/libtomoe-gtk-tomoe-scrollable.html
+share/gtk-doc/html/libtomoe-gtk/libtomoe-gtk.devhelp
+share/gtk-doc/html/libtomoe-gtk/libtomoe-gtk.devhelp2
+share/gtk-doc/html/libtomoe-gtk/libtomoe-gtk.html
+share/gtk-doc/html/libtomoe-gtk/right.png
+share/gtk-doc/html/libtomoe-gtk/style.css
+share/gtk-doc/html/libtomoe-gtk/up.png
+@dirrm share/gtk-doc/html/libtomoe-gtk
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
