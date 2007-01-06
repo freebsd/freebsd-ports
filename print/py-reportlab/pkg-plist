@@ -6,6 +6,7 @@
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/changes
+%%PYTHON_SITELIBDIR%%/reportlab/demos/colors/colortest.py
 %%PYTHON_SITELIBDIR%%/reportlab/demos/gadflypaper/00readme.txt
 %%PYTHON_SITELIBDIR%%/reportlab/demos/gadflypaper/gfe.py
 %%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey/00readme.txt
@@ -283,6 +284,7 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/yaml.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/yaml.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/yaml.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/license.txt
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/__init__.pyo
@@ -373,6 +375,12 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/doctest.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/doctest.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/doctest.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/linecache_copy.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/linecache_copy.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/linecache_copy.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/pythonpowered.gif
 %%PYTHON_SITELIBDIR%%/reportlab/test/runAll.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/runAll.pyc
@@ -479,6 +487,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_leftright.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_leftright.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_leftright.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.pyo
@@ -512,6 +523,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_utils.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_utils.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_widgetbase_tpc.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_widgetbase_tpc.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_widgetbase_tpc.pyo
@@ -650,5 +664,14 @@
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/rlzope
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/gadflypaper
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/colors
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab
+%%PORTDOCS%%%%DOCSDIR%%/RML_UserGuide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/RML_UserGuide_1_0.pdf
+%%PORTDOCS%%%%DOCSDIR%%/diagradoc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/graphguide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/graphics_reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/userguide.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
