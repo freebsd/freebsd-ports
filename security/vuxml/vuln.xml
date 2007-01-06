@@ -34,6 +34,81 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="37e30313-9d8c-11db-858b-0060084a00e5">
+    <topic>fetchmail -- crashes when refusing a message bound for an MDA</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><ge>6.3.5</ge><lt>6.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2006-03.txt">
+	  <p>When delivering messages to a message delivery agent by means
+	    of the &quot;mda&quot; option, fetchmail can crash (by passing
+	    a NULL pointer to ferror() and fflush()) when refusing a message.
+	    SMTP and LMTP delivery modes aren't affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5974</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2006-03.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-01-04</discovery>
+      <entry>2007-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5238ac45-9d8c-11db-858b-0060084a00e5">
+    <topic>fetchmail -- TLS enforcement problem/MITM attack/password exposure</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2006-02.txt">
+	  <p>Fetchmail has had several longstanding password disclosure
+	    vulnerabilities.</p>
+	  <ul>
+	    <li>sslcertck/sslfingerprint options should have implied
+	      &quot;sslproto tls1&quot; in order to enforce TLS negotiation,
+	      but did not.</li>
+	    <li>Even with &quot;sslproto tls1&quot; in the config, fetches
+	      would go ahead in plain text if STLS/STARTTLS wasn't available
+	      (not advertised, or advertised but rejected).</li>
+	    <li>POP3 fetches could completely ignore all TLS options
+	      whether available or not because it didn't reliably issue
+	      CAPA before checking for STLS support - but CAPA is a
+	      requisite for STLS. Whether or not CAPAbilities were probed,
+	      depended on the &quot;auth&quot; option. (Fetchmail only
+	      tried CAPA if the auth option was not set at all, was set
+	      to gssapi, kerberos, kerberos_v4, otp, or cram-md5.)</li>
+	    <li>POP3 could fall back to using plain text passwords, even
+	      if strong authentication had been configured.</li>
+	    <li>POP2 would not complain if strong authentication or TLS
+	      had been requested.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5867</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2006-02.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-01-04</discovery>
+      <entry>2007-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78ad2525-9d0c-11db-a5f6-000c6ec775d9">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
