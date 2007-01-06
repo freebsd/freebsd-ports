@@ -24,6 +24,7 @@ share/gnome/games/pioneers/default.game
 share/gnome/games/pioneers/four-islands.game
 share/gnome/games/pioneers/henjes.game
 share/gnome/games/pioneers/iles.game
+share/gnome/games/pioneers/lobby.game
 share/gnome/games/pioneers/lorindol.game
 share/gnome/games/pioneers/pond.game
 share/gnome/games/pioneers/seafarers-gold.game
@@ -74,7 +75,6 @@ share/gnome/games/pioneers/themes/Wesnoth-like/pasture.png
 share/gnome/games/pioneers/themes/Wesnoth-like/sea.png
 share/gnome/games/pioneers/themes/Wesnoth-like/theme.cfg
 share/gnome/games/pioneers/themes/board.png
-share/gnome/games/pioneers/themes/cross.png
 share/gnome/games/pioneers/themes/desert.png
 share/gnome/games/pioneers/themes/field.png
 share/gnome/games/pioneers/themes/forest.png
@@ -84,7 +84,6 @@ share/gnome/games/pioneers/themes/mountain.png
 share/gnome/games/pioneers/themes/pasture.png
 share/gnome/games/pioneers/themes/plain.png
 share/gnome/games/pioneers/themes/sea.png
-share/gnome/games/pioneers/themes/tick.png
 share/gnome/games/pioneers/x.game
 share/gnome/help/pioneers/C/images/actions.png
 share/gnome/help/pioneers/C/images/chat.png
