@@ -1,77 +1,15 @@
---- SConstruct.orig	Thu Nov 30 18:48:18 2006
-+++ SConstruct	Thu Dec  7 20:11:33 2006
+--- SConstruct.orig	Wed Jan  3 20:17:56 2007
++++ SConstruct	Thu Jan  4 22:26:17 2007
 @@ -38,7 +38,7 @@
      BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
      BoolOption('LIBLO', 'Compile with support for liblo library', 1),
      BoolOption('NLS', 'Set to turn on i18n support', 1),
 -    PathOption('PREFIX', 'Set the install "prefix"', '/usr/local'),
 +    PathOption('PREFIX', 'Set the install "prefix"', '/usr/local', PathOption.PathIsDirCreate),
-     BoolOption('SURFACES', 'Build support for control surfaces', 0),
+     BoolOption('SURFACES', 'Build support for control surfaces', 1),
      BoolOption('SYSLIBS', 'USE AT YOUR OWN RISK: CANCELS ALL SUPPORT FROM ARDOUR AUTHORS: Use existing system versions of various libraries instead of internal ones', 0),
      BoolOption('VERSIONED', 'Add revision information to ardour/gtk executable name inside the build directory', 0),
-@@ -480,9 +480,6 @@
- 
- libraries['boost'] = LibraryInfo ()
- conf = Configure (libraries['boost'])
--if conf.CheckHeader ('boost/shared_ptr.hpp', language='CXX') == False:
--        print "Boost header files do not appear to be installed."
--        sys.exit (1)
-     
- libraries['boost'] = conf.Finish ()
- 
-@@ -493,9 +490,6 @@
-     libraries['lo'] = LibraryInfo ()
-     
-     conf = Configure (libraries['lo'])
--    if conf.CheckLib ('lo', 'lo_server_new') == False:
--        print "liblo does not appear to be installed."
--        sys.exit (1)
-     
-     libraries['lo'] = conf.Finish ()
- 
-@@ -526,7 +520,7 @@
-     libraries['sysmidi'] = LibraryInfo (LIBS='asound')
-     env['SYSMIDI'] = 'ALSA Sequencer'
-     subst_dict['%MIDITAG%'] = "seq"
--    subst_dict['%MIDITYPE%'] = "alsa/sequencer"
-+    subst_dict['%MIDITYPE%'] = "oss/sequencer"
- elif conf.CheckCHeader('/System/Library/Frameworks/CoreMIDI.framework/Headers/CoreMIDI.h'):
-     # this line is needed because scons can't handle -framework in ParseConfig() yet.
-     libraries['sysmidi'] = LibraryInfo (LINKFLAGS= '-framework CoreMIDI -framework CoreFoundation -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox -bind_at_load')
-@@ -534,8 +528,10 @@
-     subst_dict['%MIDITAG%'] = "ardour"
-     subst_dict['%MIDITYPE%'] = "coremidi"
- else:
--    print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
--    sys.exit (1)
-+    libraries['sysmidi'] = LibraryInfo (LIBS='lo')
-+    env['SYSMIDI'] = 'nie ma'
-+    subst_dict['%MIDITAG%'] = "nie ma"
-+    subst_dict['%MIDITYPE%'] = "nie ma"
- 
- env = conf.Finish()
- 
-@@ -568,14 +564,17 @@
- #    libraries['libglademm'].ParseConfig ('pkg-config --cflags --libs libglademm-2.4')
- 
- #    libraries['flowcanvas'] = LibraryInfo(LIBS='flowcanvas', LIBPATH='#/libs/flowcanvas', CPPPATH='#libs/flowcanvas')
--    libraries['soundtouch'] = LibraryInfo()
--    libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs soundtouch-1.0')
-+    # We cannot use audio/soundtouch, because it doesn't install pkginfo file.
-+    libraries['soundtouch'] = LibraryInfo(LIBS='soundtouch',
-+                                          LIBPATH='#libs/soundtouch',
-+                                          CPPPATH=['#libs', '#libs/soundtouch'])
- 
-     libraries['appleutility'] = LibraryInfo(LIBS='libappleutility',
-                                             LIBPATH='#libs/appleutility',
-                                             CPPPATH='#libs/appleutility')
-     
-     coredirs = [
-+        'libs/soundtouch',
-         'templates'
-     ]
-     
-@@ -858,12 +857,7 @@
+@@ -655,12 +655,7 @@
  # prepend boiler plate optimization flags
  #
  
@@ -85,7 +23,94 @@
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -944,8 +938,8 @@
+@@ -741,9 +736,9 @@
+     prep_libcheck(env, libraries['lo'])
+ 
+     conf = Configure (libraries['lo'])
+-    if conf.CheckLib ('lo', 'lo_server_new') == False:
+-        print "liblo does not appear to be installed."
+-        sys.exit (1)
++#    if conf.CheckLib ('lo', 'lo_server_new') == False:
++#        print "liblo does not appear to be installed."
++#        sys.exit (1)
+     
+     libraries['lo'] = conf.Finish ()
+ 
+@@ -783,8 +778,10 @@
+     subst_dict['%MIDITAG%'] = "ardour"
+     subst_dict['%MIDITYPE%'] = "coremidi"
+ else:
+-    print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
+-    sys.exit (1)
++    libraries['sysmidi'] = LibraryInfo (LIBS='lo')
++    env['SYSMIDI'] = 'none'
++    subst_dict['%MIDITAG%'] = "none"
++    subst_dict['%MIDITYPE%'] = "none"
+ 
+ env = conf.Finish()
+ 
+@@ -1003,33 +1000,33 @@
+ # i18n support
+ #
+ 
+-conf = Configure (env)
+-if env['NLS']:
+-    nls_error = 'This system is not configured for internationalized applications.  An english-only version will be built:'
+-    print 'Checking for internationalization support ...'
+-    have_gettext = conf.TryAction(Action('xgettext --version'))
+-    if have_gettext[0] != 1:
+-        nls_error += ' No xgettext command.'
+-        env['NLS'] = 0
+-    else:
+-        print "Found xgettext"
+-    
+-    have_msgmerge = conf.TryAction(Action('msgmerge --version'))
+-    if have_msgmerge[0] != 1:
+-        nls_error += ' No msgmerge command.'
+-        env['NLS'] = 0
+-    else:
+-        print "Found msgmerge"
+-    
+-    if not conf.CheckCHeader('libintl.h'):
+-        nls_error += ' No libintl.h.'
+-        env['NLS'] = 0
+-        
+-    if env['NLS'] == 0:
+-        print nls_error
+-    else:
+-        print "International version will be built."
+-env = conf.Finish()
++#conf = Configure (env)
++#if env['NLS']:
++#    nls_error = 'This system is not configured for internationalized applications.  An english-only version will be built:'
++#    print 'Checking for internationalization support ...'
++#    have_gettext = conf.TryAction(Action('xgettext --version'))
++#    if have_gettext[0] != 1:
++#        nls_error += ' No xgettext command.'
++#        env['NLS'] = 0
++#    else:
++#        print "Found xgettext"
++#    
++#    have_msgmerge = conf.TryAction(Action('msgmerge --version'))
++#    if have_msgmerge[0] != 1:
++#        nls_error += ' No msgmerge command.'
++#        env['NLS'] = 0
++#    else:
++#        print "Found msgmerge"
++#    
++#    if not conf.CheckCHeader('libintl.h'):
++#        nls_error += ' No libintl.h.'
++#        env['NLS'] = 0
++#        
++#    if env['NLS'] == 0:
++#        print nls_error
++#    else:
++#        print "International version will be built."
++#env = conf.Finish()
+ 
+ if env['NLS'] == 1:
+     env.Append(CCFLAGS="-DENABLE_NLS")
+@@ -1046,8 +1043,8 @@
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:
