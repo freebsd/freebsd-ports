@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ardour
-DISTVERSION=	2.0beta9
+DISTVERSION=	2.0beta10
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 
@@ -22,12 +22,15 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		lo.6:${PORTSDIR}/audio/liblo
+BUILD_DEPENDS=	${LOCALBASE}/lib/libSoundTouch.a:${PORTSDIR}/audio/soundtouch
 
 USE_SCONS=	yes
-SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX}
+SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
 USE_BZIP2=	yes
-USE_GNOME=	gtk20 libxslt libgnomecanvas
+USE_GNOME=	gtk20 libxslt libgnomecanvas intltool
+USE_GETTEXT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ardour2 ${PREFIX}/lib/ardour2/surfaces
+TEMPLATESDIR=	${PREFIX}/share/ardour2/templates
 
 .include <bsd.port.pre.mk>
 
@@ -42,7 +45,7 @@ BROKEN=		Does not compile on 4.x and 5.x
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|" ${WRKSRC}/SConstruct
-	${REINPLACE_CMD} -e "s|alsa_pcm|oss|g" ${WRKSRC}/templates/*
+	${REINPLACE_CMD} -e "s|alsa_pcm|oss|g" ${WRKSRC}/templates/*.template
 
 post-install:
 	${CHOWN} -R 0:0 ${PREFIX}/lib/ardour2/
@@ -51,8 +54,7 @@ post-install:
 	${CHMOD} -R a+rX ${PREFIX}/etc/ardour2/
 	${CHOWN} -R 0:0 ${PREFIX}/share/ardour2/
 	${CHMOD} -R a+rX ${PREFIX}/share/ardour2/
-	${MKDIR} ${EXAMPLESDIR}
-	${MKDIR} ${EXAMPLESDIR}/templates
-	${INSTALL_DATA} ${WRKSRC}/templates/*.template ${EXAMPLESDIR}/templates/
+	${MKDIR} ${TEMPLATESDIR}
+	${INSTALL_DATA} ${WRKSRC}/templates/*.template ${TEMPLATESDIR}/
 
 .include <bsd.port.post.mk>

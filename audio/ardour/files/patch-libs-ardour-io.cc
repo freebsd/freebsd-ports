@@ -1,12 +1,11 @@
---- libs/ardour/io.cc.orig	Thu Dec  7 12:58:12 2006
-+++ libs/ardour/io.cc	Thu Dec  7 13:02:49 2006
-@@ -2485,7 +2485,8 @@
+--- libs/ardour/io.cc.orig	Thu Jan  4 22:40:34 2007
++++ libs/ardour/io.cc	Thu Jan  4 22:41:09 2007
+@@ -2498,7 +2498,7 @@
  		} else {
- 			// do falloff
- 			new_peak = _visible_peak_power[n] - Config->get_meter_falloff();
+ 			// do falloff, the config value is in dB/sec, we get updated at 100/sec currently (should be a var somewhere)
+ 			new_peak = _visible_peak_power[n] - (Config->get_meter_falloff() * 0.01f);
 -			_visible_peak_power[n] = max (new_peak, -INFINITY);
-+			// libs/ardour/io.cc:2488: error: no matching function for call to `max(float&, double)'
-+			_visible_peak_power[n] = max (new_peak, (float)-INFINITY);
++			_visible_peak_power[n] = max ((double)new_peak, -INFINITY);
  		}
  	}
  }

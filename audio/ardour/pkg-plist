@@ -1,5 +1,4 @@
 bin/ardour2
-lib/ardour2/libsoundtouch.so
 lib/ardour2/libsndfile-ardour.so
 lib/ardour2/libpbd.so
 lib/ardour2/libmidi++.so
@@ -9,6 +8,8 @@ lib/ardour2/ardour.bin
 lib/ardour2/libardour_cp.so
 lib/ardour2/surfaces/libardour_genericmidi.so
 @dirrm lib/ardour2/surfaces
+lib/ardour2/engines/libclearlooks.so
+@dirrm lib/ardour2/engines
 @dirrm lib/ardour2
 etc/ardour2/ardour2_ui.rc
 etc/ardour2/ardour.menus
@@ -93,12 +94,50 @@ share/ardour2/icons/nudge_left.png
 share/ardour2/icons/transport_record.png
 share/ardour2/icons/crossfade_out_slow-fade.png
 share/ardour2/icons/nudge_right.png
+share/ardour2/icons/ardour_icon_22px.png
+share/ardour2/icons/zoom_smaller_out.png
+share/ardour2/icons/zoom_small_out.png
+share/ardour2/icons/ardour_icon_48px.png
+share/ardour2/icons/zoom_smaller_in.png
+share/ardour2/icons/ardour_icon_32px.png
+share/ardour2/icons/zoom_small_full.png
+share/ardour2/icons/zoom_small_in.png
+share/ardour2/icons/zoom_smaller_full.png
+share/ardour2/icons/ardour_icon_16px.png
 @dirrm share/ardour2/icons
+share/ardour2/templates/16 Tracks.template
+share/ardour2/templates/2 Track.template
+share/ardour2/templates/32 Tracks.template
+share/ardour2/templates/4 Tracks.template
+share/ardour2/templates/8 Tracks.template
+@dirrm share/ardour2/templates
 @dirrm share/ardour2
-%%EXAMPLESDIR%%/templates/16 Tracks.template
-%%EXAMPLESDIR%%/templates/2 Track.template
-%%EXAMPLESDIR%%/templates/32 Tracks.template
-%%EXAMPLESDIR%%/templates/4 Tracks.template
-%%EXAMPLESDIR%%/templates/8 Tracks.template
-@dirrm %%EXAMPLESDIR%%/templates
-@dirrm %%EXAMPLESDIR%%
+share/locale/it_IT/LC_MESSAGES/libardour.mo
+share/locale/sv_SE/LC_MESSAGES/libardour.mo
+share/locale/el_GR/LC_MESSAGES/libardour.mo
+share/locale/ru_RU/LC_MESSAGES/libardour.mo
+share/locale/el_GR/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/ru_RU/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/pt_BR/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/es_ES/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/it_IT/LC_MESSAGES/gtk_ardour.mo
+share/locale/sv_SE/LC_MESSAGES/gtk_ardour.mo
+share/locale/el_GR/LC_MESSAGES/gtk_ardour.mo
+share/locale/fr_FR/LC_MESSAGES/gtk_ardour.mo
+share/locale/ru_RU/LC_MESSAGES/gtk_ardour.mo
+share/locale/pt_BR/LC_MESSAGES/gtk_ardour.mo
+share/locale/es_ES/LC_MESSAGES/gtk_ardour.mo
+share/locale/de_DE/LC_MESSAGES/gtk_ardour.mo
+share/locale/pt_PT/LC_MESSAGES/gtk_ardour.mo
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/el_GR/LC_MESSAGES
+@dirrmtry share/locale/el_GR
+@dirrmtry share/locale/ru_RU/LC_MESSAGES
+@dirrmtry share/locale/ru_RU
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
