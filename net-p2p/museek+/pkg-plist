@@ -80,6 +80,70 @@ bin/musetup-gtk
 %%MUSEEQ%%%%DATADIR%%/museeq/default/transfer.png
 %%MUSEEQ%%%%DATADIR%%/museeq/default/userinfo-small.png
 %%MUSEEQ%%%%DATADIR%%/museeq/default/userinfo.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/alert.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/away-banned.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/away-buddied.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/away-ignored.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/away-trusted.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/away.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/browser-small.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/browser.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/chatroom-small.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/chatroom.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/colors.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/comments.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/connect.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/disconnect.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/exit.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/help.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/icon.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/ip.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/logo.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/offline-banned.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/offline-buddied.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/offline-ignored.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/offline-trusted.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/offline.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/online-banned.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/online-buddied.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/online-ignored.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/online-trusted.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/online.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/privatechat-small.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/privatechat.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/privileges.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/protocol.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/refresh.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/search-small.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/search.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/settings.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/tab_remove.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/transfer-small.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/transfer.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/userinfo-small.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-silk/userinfo.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/away-banned.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/away-buddied.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/away-ignored.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/away-trusted.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/away.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/browser.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/chatroom.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/offline-banned.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/offline-buddied.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/offline-ignored.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/offline-trusted.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/offline.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/online-banned.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/online-buddied.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/online-ignored.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/online-trusted.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/online.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/privatechat.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/search.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/tab_remove.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/transfer.png
+%%MUSEEQ%%%%DATADIR%%/museeq/mikelabo-tri/userinfo.png
 %%MUSEEQ%%%%DATADIR%%/museeq/translations/museeq_de.qm
 %%MUSEEQ%%%%DATADIR%%/museeq/translations/museeq_es.qm
 %%MUSEEQ%%%%DATADIR%%/museeq/translations/museeq_fr.qm
@@ -93,6 +157,8 @@ bin/musetup-gtk
 @dirrm %%DATADIR%%/museekd
 %%MUSEEQ%%@dirrm %%DATADIR%%/museeq/bluebox
 %%MUSEEQ%%@dirrm %%DATADIR%%/museeq/default
+%%MUSEEQ%%@dirrm %%DATADIR%%/museeq/mikelabo-silk
+%%MUSEEQ%%@dirrm %%DATADIR%%/museeq/mikelabo-tri
 %%MUSEEQ%%@dirrm %%DATADIR%%/museeq/translations
 %%MUSEEQ%%@dirrm %%DATADIR%%/museeq
 @dirrm %%DATADIR%%
