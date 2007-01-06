@@ -8,67 +8,13 @@ bin/dvdrip-splash
 bin/dvdrip-splitpipe
 bin/dvdrip-subpng
 bin/dvdrip-thumb
-bin/execflow
-%%SITE_PERL%%/AnyEvent.pm
-%%SITE_PERL%%/AnyEvent/Impl/Coro.pm
-%%SITE_PERL%%/AnyEvent/Impl/Event.pm
-%%SITE_PERL%%/AnyEvent/Impl/Glib.pm
-%%SITE_PERL%%/AnyEvent/Impl/Tk.pm
-%%SITE_PERL%%/Event/ExecFlow.pm
-%%SITE_PERL%%/Event/ExecFlow/Callbacks.pm
-%%SITE_PERL%%/Event/ExecFlow/Frontend.pm
-%%SITE_PERL%%/Event/ExecFlow/Frontend/Term.pm
-%%SITE_PERL%%/Event/ExecFlow/Job.pm
-%%SITE_PERL%%/Event/ExecFlow/Job/Code.pm
-%%SITE_PERL%%/Event/ExecFlow/Job/Command.pm
-%%SITE_PERL%%/Event/ExecFlow/Job/Group.pm
-%%SITE_PERL%%/Event/ExecFlow/Scheduler.pm
-%%SITE_PERL%%/Event/ExecFlow/Scheduler/SimpleMax.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Button.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/CheckButton.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/CheckButtonGroup.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Combo.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Container.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Context.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/DialogButtons.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Entry.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/ExecFlow.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Expander.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Form.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/GtkWidget.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/HBox.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/HSeparator.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Image.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Intro.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Label.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Layout.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/List.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Loader.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Menu.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Notebook.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Popup.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/ProgressBar.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Proxy.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/ProxyBuffered.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/RadioButton.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Rules.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Table.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/TextView.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Timestamp.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/ToggleButton.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/VBox.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/VPaned.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/VSeparator.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Widget.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/Window.pm
-%%SITE_PERL%%/Gtk2/Ex/FormFactory/YesNo.pm
 %%SITE_PERL%%/LocaleData/cs/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/de/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/es/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/fr/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/it/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/sr/LC_MESSAGES/video.dvdrip.mo
+%%SITE_PERL%%/LocaleData/sr@Latn/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/Video/DVDRip.pm
 %%SITE_PERL%%/Video/DVDRip/Audio.pm
 %%SITE_PERL%%/Video/DVDRip/Base.pm
@@ -140,6 +86,9 @@ bin/execflow
 %%SITE_PERL%%/Video/DVDRip/splash.de.png
 %%SITE_PERL%%/Video/DVDRip/splash.en.png
 %%SITE_PERL%%/Video/DVDRip/splash.es.png
+%%SITE_PERL%%/Video/DVDRip/splash.it.png
+%%SITE_PERL%%/Video/DVDRip/splash.sr@Latn.png
+%%SITE_PERL%%/Video/DVDRip/splash.sr.png
 %%SITE_PERL%%/Video/DVDRip/translators.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip
@@ -154,6 +103,8 @@ bin/execflow
 @dirrm %%SITE_PERL%%/Video/DVDRip/CPAN
 @dirrm %%SITE_PERL%%/Video/DVDRip
 @dirrmtry %%SITE_PERL%%/Video
+@dirrmtry %%SITE_PERL%%/LocaleData/sr@Latn/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/sr@Latn
 @dirrmtry %%SITE_PERL%%/LocaleData/sr/LC_MESSAGES
 @dirrmtry %%SITE_PERL%%/LocaleData/sr
 @dirrmtry %%SITE_PERL%%/LocaleData/it/LC_MESSAGES
@@ -167,12 +118,3 @@ bin/execflow
 @dirrmtry %%SITE_PERL%%/LocaleData/cs/LC_MESSAGES
 @dirrmtry %%SITE_PERL%%/LocaleData/cs
 @dirrmtry %%SITE_PERL%%/LocaleData
-@dirrm %%SITE_PERL%%/Gtk2/Ex/FormFactory
-@dirrm %%SITE_PERL%%/Gtk2/Ex
-@dirrmtry %%SITE_PERL%%/Gtk2
-@dirrm %%SITE_PERL%%/Event/ExecFlow/Scheduler
-@dirrm %%SITE_PERL%%/Event/ExecFlow/Job
-@dirrm %%SITE_PERL%%/Event/ExecFlow/Frontend
-@dirrm %%SITE_PERL%%/Event/ExecFlow
-@dirrm %%SITE_PERL%%/AnyEvent/Impl
-@dirrm %%SITE_PERL%%/AnyEvent
