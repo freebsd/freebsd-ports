@@ -613,6 +613,7 @@
     SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
+    SUBDIR += rubygem-gruff
     SUBDIR += rubyphoto
     SUBDIR += s10sh
     SUBDIR += s3switch

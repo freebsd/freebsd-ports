@@ -1,0 +1,453 @@
+%%GEM_SPEC%%
+%%GEM_CACHE%%
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/MIT-LICENSE
+%%GEM_LIB_DIR%%/Manifest.txt
+%%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/assets/city_scene/background/0000.png
+%%GEM_LIB_DIR%%/assets/city_scene/background/0600.png
+%%GEM_LIB_DIR%%/assets/city_scene/background/2000.png
+%%GEM_LIB_DIR%%/assets/city_scene/clouds/cloudy.png
+%%GEM_LIB_DIR%%/assets/city_scene/clouds/partly_cloudy.png
+%%GEM_LIB_DIR%%/assets/city_scene/clouds/stormy.png
+%%GEM_LIB_DIR%%/assets/city_scene/grass/default.png
+%%GEM_LIB_DIR%%/assets/city_scene/haze/true.png
+%%GEM_LIB_DIR%%/assets/city_scene/number_sample/1.png
+%%GEM_LIB_DIR%%/assets/city_scene/number_sample/2.png
+%%GEM_LIB_DIR%%/assets/city_scene/number_sample/default.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/0000.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/0200.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/0400.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/0600.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/0800.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/1000.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/1200.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/1400.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/1500.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/1700.png
+%%GEM_LIB_DIR%%/assets/city_scene/sky/2000.png
+%%GEM_LIB_DIR%%/assets/pc306715.jpg
+%%GEM_LIB_DIR%%/lib/gruff.rb
+%%GEM_LIB_DIR%%/lib/gruff/accumulator_bar.rb
+%%GEM_LIB_DIR%%/lib/gruff/area.rb
+%%GEM_LIB_DIR%%/lib/gruff/bar.rb
+%%GEM_LIB_DIR%%/lib/gruff/bar_conversion.rb
+%%GEM_LIB_DIR%%/lib/gruff/base.rb
+%%GEM_LIB_DIR%%/lib/gruff/deprecated.rb
+%%GEM_LIB_DIR%%/lib/gruff/line.rb
+%%GEM_LIB_DIR%%/lib/gruff/mini/bar.rb
+%%GEM_LIB_DIR%%/lib/gruff/mini/legend.rb
+%%GEM_LIB_DIR%%/lib/gruff/mini/pie.rb
+%%GEM_LIB_DIR%%/lib/gruff/mini/side_bar.rb
+%%GEM_LIB_DIR%%/lib/gruff/net.rb
+%%GEM_LIB_DIR%%/lib/gruff/photo_bar.rb
+%%GEM_LIB_DIR%%/lib/gruff/pie.rb
+%%GEM_LIB_DIR%%/lib/gruff/scene.rb
+%%GEM_LIB_DIR%%/lib/gruff/side_bar.rb
+%%GEM_LIB_DIR%%/lib/gruff/side_stacked_bar.rb
+%%GEM_LIB_DIR%%/lib/gruff/spider.rb
+%%GEM_LIB_DIR%%/lib/gruff/stacked_bar.rb
+%%GEM_LIB_DIR%%/test/gruff_test_case.rb
+%%GEM_LIB_DIR%%/test/test_accumulator_bar.rb
+%%GEM_LIB_DIR%%/test/test_area.rb
+%%GEM_LIB_DIR%%/test/test_bar.rb
+%%GEM_LIB_DIR%%/test/test_base.rb
+%%GEM_LIB_DIR%%/test/test_legend.rb
+%%GEM_LIB_DIR%%/test/test_line.rb
+%%GEM_LIB_DIR%%/test/test_mini_bar.rb
+%%GEM_LIB_DIR%%/test/test_mini_pie.rb
+%%GEM_LIB_DIR%%/test/test_mini_side_bar.rb
+%%GEM_LIB_DIR%%/test/test_net.rb
+%%GEM_LIB_DIR%%/test/test_photo.rb
+%%GEM_LIB_DIR%%/test/test_pie.rb
+%%GEM_LIB_DIR%%/test/test_scene.rb
+%%GEM_LIB_DIR%%/test/test_side_bar.rb
+%%GEM_LIB_DIR%%/test/test_sidestacked_bar.rb
+%%GEM_LIB_DIR%%/test/test_spider.rb
+%%GEM_LIB_DIR%%/test/test_stacked_bar.rb
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/gruff/mini
+@dirrm %%GEM_LIB_DIR%%/lib/gruff
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/assets/city_scene/sky
+@dirrm %%GEM_LIB_DIR%%/assets/city_scene/number_sample
+@dirrm %%GEM_LIB_DIR%%/assets/city_scene/haze
+@dirrm %%GEM_LIB_DIR%%/assets/city_scene/grass
+@dirrm %%GEM_LIB_DIR%%/assets/city_scene/clouds
+@dirrm %%GEM_LIB_DIR%%/assets/city_scene/background
+@dirrm %%GEM_LIB_DIR%%/assets/city_scene
+@dirrm %%GEM_LIB_DIR%%/assets
+@dirrm %%GEM_LIB_DIR%%
+%%GEM_DOC_DIR%%/rdoc/classes/Float.html
+%%GEM_DOC_DIR%%/rdoc/classes/Float.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/AccumulatorBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/AccumulatorBar.src/M000160.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Area.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Area.src/M000161.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.src/M000223.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.src/M000224.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/BarConversion.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/BarConversion.src/M000228.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000173.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000174.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000175.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000176.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000177.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000178.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000179.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000180.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000181.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000182.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000183.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000184.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000185.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000186.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000187.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000188.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000189.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000190.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000191.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000192.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000193.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000194.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000195.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000196.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000197.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000198.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000199.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000200.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000201.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000202.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000203.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000204.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000205.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000206.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000207.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000208.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000209.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000210.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000211.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000212.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000213.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000214.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000145.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000146.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000147.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000148.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000149.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000150.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Group.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Group.src/M000158.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Group.src/M000159.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/IncorrectNumberOfDatasetsException.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src/M000169.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src/M000170.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src/M000171.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src/M000172.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000225.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000226.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000227.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Bar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Bar.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Legend.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Legend.src/M000138.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Legend.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Legend.src/M000140.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Pie.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Pie.src/M000141.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Pie.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/SideBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/SideBar.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000220.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000221.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000222.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.src/M000167.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.src/M000168.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Pie.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Pie.src/M000156.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Pie.src/M000157.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.src/M000152.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.src/M000153.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.src/M000154.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.src/M000155.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000229.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000230.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000231.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000215.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000216.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000217.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000218.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000219.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000162.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000163.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000164.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000165.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedBar.src/M000151.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/LayerStub.html
+%%GEM_DOC_DIR%%/rdoc/classes/Magick.html
+%%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.html
+%%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.src/M000232.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffAccumulatorBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffAccumulatorBar.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffAccumulatorBar.src/M000127.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffAccumulatorBar.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000135.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src/M000136.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000113.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000118.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffBase.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLegend.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLegend.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPhotoBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideBar.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffStackedBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffStackedBar.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffStackedBar.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestGruffStackedBar.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestMiniBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestMiniBar.src/M000137.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestMiniPie.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestMiniPie.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestMiniSideBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestMiniSideBar.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestMiniSideBar.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/accumulator_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/area_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/bar_conversion_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/deprecated_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/line_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/mini/bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/mini/legend_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/mini/pie_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/mini/side_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/net_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/photo_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/pie_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/scene_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/side_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/side_stacked_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/spider_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/stacked_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/gruff_test_case_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_accumulator_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_area_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_legend_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_line_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_mini_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_mini_pie_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_mini_side_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_net_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_photo_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_pie_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_scene_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_side_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_sidestacked_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_spider_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_stacked_bar_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/test
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/mini
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/gruff
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestMiniSideBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestMiniPie.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestMiniBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffStackedBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffSpider.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideStackedBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffSideBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffScene.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffPie.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffNet.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffLine.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffLegend.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffArea.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestGruffAccumulatorBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Magick
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/GruffTestCase.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Pie.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/SideBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Pie.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Legend.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Bar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Group.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/BarConversion.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Area.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/AccumulatorBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Float.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
