@@ -58,6 +58,9 @@ pre-install:
 	${MKDIR} ${KMODDIR}
 
 post-install:
+.if ${OSVERSION} < 500104
+	-mknod /dev/rtc c ${CDEV_MAJOR} 0
+.endif
 	${INSTALL_DATA} ${WRKSRC}/rtc.h ${PREFIX}/include/
 	${MKDIR} ${PREFIX}/share/examples/rtc
 	${INSTALL_DATA} ${WRKSRC}/test.c ${PREFIX}/share/examples/rtc/
