@@ -13332,6 +13332,7 @@ rubygem-event-loop	ports/devel/rubygem-event-loop
 rubygem-fastercsv	ports/devel/rubygem-fastercsv
 rubygem-ferret	ports/textproc/rubygem-ferret
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
+rubygem-gruff	ports/graphics/rubygem-gruff
 rubygem-hoe		ports/devel/rubygem-hoe
 rubygem-inline	ports/devel/rubygem-inline
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
