@@ -133,10 +133,11 @@ _USE_GCC:=${_GCC_FOUND}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
 # If Fortran support is requested, regardless of the value of USE_GCC
-# we need to use lang/gfortran, which is based on lang/gcc41 right now.
+# we use lang/gcc42 which is the first release which features the new
+# Fortran frontend and has Fortran enabled by default.
 .   if defined(WITH_FORTRAN)
-V:=			41
-_GCC_BUILD_DEPENDS:=	gfortran
+V:=			42
+_GCC_BUILD_DEPENDS:=	gcc42
 _GCC_PORT_DEPENDS:=	gfortran${V}
 .else
 V:=			${_GCCVERSION_${v}_V:S/.//}
