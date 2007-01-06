@@ -10,6 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.7.24
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -19,19 +20,31 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Development version of math/atlas
 
-NO_PACKAGE=	"Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override"
+NO_PACKAGE=	Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override
 
 CONFLICTS=	elmer-mathlibs-1*
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
 NOT_FOR_ARCHS=	alpha
-#GCC4 produces slower code...
-USE_GCC=	3.2+
+
+#to compile the ATLAS kernel we use gcc3. See ATLAS/INSTALL.txt for details.
+WANT_FORTRAN=	yes
+USE_GCC=4.2+
+.if ${OSVERSION} > 700000
+BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+CCOMPILER=	gcc34
+.else
+CCOMPILER:=	cc
+.endif
+.if defined(WITH_TESTS)
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+.endif
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
@@ -47,11 +60,15 @@ FFLAGS+=	-mtune=${CPUTYPE} -pipe -O2 -ffast-math -fomit-frame-pointer
 FFLAGS+=	-pipe -O2 -ffast-math -fomit-frame-pointer
 .endif
 .endif
-
 .if defined(WITH_STATICLIB)
-PLIST_SUB=      WITH_STATICLIB=""
+PLIST_SUB+=      WITH_STATICLIB=""
 .else
-PLIST_SUB=      WITH_STATICLIB="@comment "
+PLIST_SUB+=      WITH_STATICLIB="@comment "
+.endif
+.if defined(WITH_TESTS)
+PLIST_SUB+=	WITH_TESTS=""
+.else
+PLIST_SUB+=	WITH_TESTS="@comment "
 .endif
 
 post-extract:
@@ -62,9 +79,11 @@ post-extract:
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e "s|%%CC%%|${CC}|g" \
+	@${REINPLACE_CMD} -e "s|%%CC%%|${CCOMPILER}|g" \
 		-e "s|%%FC%%|${FC}|g"  ${WRKSRC}/CONFIG/src/atlcomp.txt
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
+			  -e "s|%%PTHREAD_LIBS%%|${PTHREAD_CFLAGS}|g" \
+			  -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/CONFIG/src/SpewMakeInc.c
 
 do-configure:
@@ -72,10 +91,11 @@ do-configure:
 		../configure -t 0
 	${MKDIR} ${WRKSRC}/THREADED ; cd ${WRKSRC}/THREADED ; \
 		../configure -t 0  -Fa al '${PTHREAD_CFLAGS} '
+	cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch
 	${MKDIR} ${WRKSRC}/NON_THREADED_PIC ; cd ${WRKSRC}/NON_THREADED_PIC ; \
-		../configure -t -1 -Fa al '${PICFLAG} -DPIC'
+		../configure -Fa al '${PICFLAG} -DPIC'
 	${MKDIR} ${WRKSRC}/THREADED_PIC ; cd ${WRKSRC}/THREADED_PIC ; \
-		../configure -t -1 -Fa al '${PTHREAD_CFLAGS} ${PICFLAG} -DPIC'
+		../configure -Fa al '${PTHREAD_CFLAGS} ${PICFLAG} -DPIC'
 
 do-build:
 # make lapack
@@ -95,8 +115,12 @@ do-build:
 .endif
 	(cd ${WRKSRC}/NON_THREADED_PIC ; ${MAKE})
 	(cd ${WRKSRC}/THREADED_PIC ; ${MAKE})
+.if defined(WITH_TESTS)
+	@${MAKE} test
+.endif
 
-ATLAS_LIBS=libalapack libatlas libcblas libf77blas libtstatlas
+ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
+ATLAS_LIBS2=libptcblas libptf77blas
 
 post-build:
 .if defined(WITH_STATICLIB)
@@ -141,32 +165,43 @@ post-build:
 		ranlib ../THREADED_PIC/lib/libalapack.a )
 
 # make atlas shared library
-.for i in ${ATLAS_LIBS}
+.for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/NON_THREADED_PIC/lib ; \
 		ld -Bshareable -o ${i}.so.1 -x -soname ${i}.so.1 ${i}.a )
 .endfor
 
 # make atlas shared (thread safe) library
-.for i in ${ATLAS_LIBS}
+.for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/THREADED_PIC/lib ; \
 		ld -Bshareable -o ${i}_r.so.1 -x -soname ${i}_r.so.1 ${i}.a )
 .endfor
-
+.for i in ${ATLAS_LIBS2}
+	( cd ${WRKSRC}/THREADED_PIC/lib ; \
+		ld -Bshareable -o ${i}.so.1 -x -soname ${i}.so.1 ${i}.a )
+.endfor
 do-install:
-.for i in ${ATLAS_LIBS}
+.for i in ${ATLAS_LIBS1}
 .if defined(WITH_STATICLIB)
 	@${INSTALL_DATA} ${WRKSRC}/NON_THREADED/lib/${i}.a       ${PREFIX}/lib
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/NON_THREADED_PIC/lib/${i}.so.1    ${PREFIX}/lib
 	@${LN} -sf ${i}.so.1 ${PREFIX}/lib/${i}.so
 .endfor
-.for i in ${ATLAS_LIBS}
+.for i in ${ATLAS_LIBS1}
 .if defined(WITH_STATICLIB)
 	@${INSTALL_DATA} ${WRKSRC}/THREADED/lib/${i}.a       ${PREFIX}/lib/${i}_r.a
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/THREADED_PIC/lib/${i}_r.so.1    ${PREFIX}/lib/${i}_r.so.1
 	@${LN} -sf ${i}_r.so.1 ${PREFIX}/lib/${i}_r.so
 .endfor
+.for i in ${ATLAS_LIBS2}
+.if defined(WITH_STATICLIB)
+	@${INSTALL_DATA} ${WRKSRC}/THREADED/lib/${i}.a       ${PREFIX}/lib
+.endif
+	@${INSTALL_DATA} ${WRKSRC}/THREADED_PIC/lib/${i}.so.1    ${PREFIX}/lib
+	@${LN} -sf ${i}.so.1 ${PREFIX}/lib/${i}.so
+.endfor
+
 	@${INSTALL_DATA} ${WRKSRC}/include/cblas.h   ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/include/clapack.h ${PREFIX}/include
 	@${INSTALL_DATA} ${FILESDIR}/blas.h    ${PREFIX}/include
@@ -175,5 +210,15 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
+.if defined(WITH_TESTS)
+	${MKDIR} ${EXAMPLESDIR}
+	@for i in ${ALLTESTS} ; do \
+	cd ${WRKDIR}/ATLAS/NON_THREADED_PIC/bin ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
+	done
+	@for i in ${ALLTESTS_PT} ; do \
+	cd ${WRKDIR}/ATLAS/THREADED_PIC/bin ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
+	done
+.endif
 
+.include <${FILESDIR}/Makefile.test>
 .include <bsd.port.post.mk>
