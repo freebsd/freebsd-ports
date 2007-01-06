@@ -4,17 +4,19 @@
 etc/smartd.conf.sample
 sbin/smartctl
 sbin/smartd
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/WARNINGS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/Example1
-%%EXAMPLESDIR%%/Example2
-%%EXAMPLESDIR%%/Example3
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/smartd.conf
-@dirrm %%EXAMPLESDIR%%
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/CHANGELOG
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/WARNINGS
+%%DOCSDIR%%/examplescripts/Example1
+%%DOCSDIR%%/examplescripts/Example2
+%%DOCSDIR%%/examplescripts/Example3
+%%DOCSDIR%%/examplescripts/Example4
+%%DOCSDIR%%/examplescripts/README
+%%DOCSDIR%%/smartd.conf
+@dirrm %%DOCSDIR%%/examplescripts
+@dirrm %%DOCSDIR%%
