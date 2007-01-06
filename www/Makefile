@@ -109,6 +109,7 @@
     SUBDIR += dpsearch
     SUBDIR += drraw
     SUBDIR += drupal
+    SUBDIR += drupal-attachment
     SUBDIR += drupal-filemanager
     SUBDIR += drupal-pubcookie
     SUBDIR += drupal-textile
