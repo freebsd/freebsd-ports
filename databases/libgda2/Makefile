@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda2
 PORTVERSION=	1.2.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -26,6 +26,8 @@ USE_BZIP2=	yes
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+
+CONFLICTS=	libgda-0*
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt referencehack
@@ -170,6 +172,9 @@ pre-everything::
 .endif
 .if !defined(WITH_LDAP)
 	@${ECHO_MSG} "You can enable support for LDAP databases by defining WITH_LDAP."
+.endif
+.if !defined(WITH_FIREBIRD)
+	@${ECHO_MSG} "You can enable support for FireBird databases by defining WITH_FIREBIRD."
 .endif
 .if !defined(WITH_FREETDS)
 	@${ECHO_MSG} "You can enable support for TDS databases by defining WITH_FREETDS."
