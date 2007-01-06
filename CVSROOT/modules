@@ -2028,6 +2028,7 @@ drupal		ports/www/drupal
 drupal-attachment	ports/www/drupal-attachment
 drupal-filemanager	ports/www/drupal-filemanager
 drupal-ldap_integration	ports/security/drupal-ldap_integration
+drupal-nice_menus	ports/www/drupal-nice_menus
 drupal-pubcookie	ports/www/drupal-pubcookie
 drupal-textile	ports/www/drupal-textile
 drweb		ports/security/drweb
