@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	adns
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	dns python
-MASTER_SITES=	http://dustman.net/andy/python/adns-python/${PORTVERSION}/
+MASTER_SITES=	http://adns-python.googlecode.com/files/ \
+		http://dustman.net/andy/python/adns-python/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	adns-python-${PORTVERSION}
 
@@ -25,7 +25,6 @@ PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(include_dirs = \).*$$|\1\["${LOCALBASE}/include"\]|g' \
 		-e 's|^\(library_dirs = \).*$$|\1\["${LOCALBASE}/lib"\]|g' \
-		-e 's|\(extra_objects=.*\)$$|\1define_macros=[("adns__rrt_typemask","adns_rrt_typemask")],|g' \
 		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
