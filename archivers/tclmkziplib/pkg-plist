@@ -1,0 +1,5 @@
+lib/mkZiplib/pkgIndex.tcl
+lib/mkZiplib/mkZiplib%%VERSION%%.so
+%%PORTDOCS%%%%DOCSDIR%%/mkZiplib10.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/mkZiplib

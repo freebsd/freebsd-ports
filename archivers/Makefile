@@ -118,6 +118,7 @@
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += tardy
+    SUBDIR += tclmkziplib
     SUBDIR += torrentzip
     SUBDIR += ucl
     SUBDIR += unace
