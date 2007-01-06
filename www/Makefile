@@ -111,6 +111,7 @@
     SUBDIR += drupal
     SUBDIR += drupal-attachment
     SUBDIR += drupal-filemanager
+    SUBDIR += drupal-nice_menus
     SUBDIR += drupal-pubcookie
     SUBDIR += drupal-textile
     SUBDIR += dtse
