@@ -22,19 +22,27 @@ EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
-.if !defined(WITH_BLAS)
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+.else
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
 .endif
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-.if defined(WITH_BLAS)
-BLAS_LIB=	-L${LOCALBASE}/lib -lblas
-LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
-.else
+.if defined(WITH_ATLAS)
 BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas -latlas
 LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
+.else
+BLAS_LIB=	-L${LOCALBASE}/lib -lblas
+LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 .endif
 
 #BLAS_LIB=	-L${LOCALBASE}/lib -lptf77blas -latlas_r ${PTHREAD_LIBS}
@@ -53,4 +61,4 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapackppman1_1.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
