@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -18,6 +17,17 @@ COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 230
+RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/optparse.py:${PORTSDIR}/devel/py-optik
+.endif
+
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You may want to install x11-toolkits/py-tkinter to make pylint-gui work."
+	@${ECHO_CMD} ""
+
+.include <bsd.port.post.mk>
