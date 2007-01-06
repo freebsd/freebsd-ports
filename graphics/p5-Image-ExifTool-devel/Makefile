@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	6.59
+PORTVERSION=	6.66
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -32,7 +32,7 @@ MANTAGS=	AFCP AIFF APE APP12 ASF BMP BuildTagLookup Canon 	\
 		Writer XMP
 
 MAN3=		File::RandomAccess.3	\
-		Image::ExifTool.3	\
+		Image::ExifTool.3 Image::ExifTool::MIEUnits.3 \
 		${MANTAGS:S/^/Image::ExifTool::/:S/$/.3/}
 
 MAN1=		exiftool.1
