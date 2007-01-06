@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.8
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,10 @@ BUILD_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 LIB_DEPENDS=	gcu.6:${PORTSDIR}/science/gchemutils
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
+INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	gchempaint-arrows.schemas
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeprintui libgnomeui
 USE_GMAKE=	yes
