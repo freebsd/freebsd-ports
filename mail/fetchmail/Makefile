@@ -10,17 +10,12 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.5
+PORTVERSION=	6.3.6
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS}/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
 		http://home.leo.org/~barner/freebsd/distfiles/
 MASTER_SITE_SUBDIR=	fetchmail
-DISTNAME=	${PORTNAME}-${PORTVERSION}
-
-PATCH_SITES=	${MASTER_SITE_BERLIOS}/fetchmail/ \
-		http://home.leo.org/~barner/freebsd/distfiles/
-PATCHFILES=	fm635-daemon-logfile.patch
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
@@ -36,7 +31,8 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
-		--with-hesiod=no --enable-fallback=no
+		--with-hesiod=no --enable-fallback=no \
+		--mandir=${PREFIX}/man
 # bsd.openssl.mk will add the LDFLAGS to CONFIGURE_ENV:
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
