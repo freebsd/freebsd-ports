@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda
 PORTVERSION=	0.2.96
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
@@ -18,6 +18,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides uniform access to different kinds of data sources
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+
+CONFLICTS=	libgda2*-[0-9]*
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
