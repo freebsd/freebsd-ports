@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-tomoe
 PORTVERSION=	0.5.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=scim-imengine/23343
@@ -28,7 +28,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-PLIST_FILES=	lib/scim-1.0/1.4.0/Helper/tomoe.a \
+PLIST_FILES=	bin/scim-tomoe \
+		lib/scim-1.0/1.4.0/Helper/tomoe.a \
 		lib/scim-1.0/1.4.0/Helper/tomoe.la \
 		lib/scim-1.0/1.4.0/Helper/tomoe.so \
 		share/locale/ja/LC_MESSAGES/scim-tomoe.mo \
