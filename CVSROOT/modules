@@ -2025,6 +2025,7 @@ drraw		ports/www/drraw
 drscheme	ports/lang/drscheme
 drumpiler	ports/audio/drumpiler
 drupal		ports/www/drupal
+drupal-filemanager	ports/www/drupal-filemanager
 drupal-ldap_integration	ports/security/drupal-ldap_integration
 drupal-pubcookie	ports/www/drupal-pubcookie
 drupal-textile	ports/www/drupal-textile
