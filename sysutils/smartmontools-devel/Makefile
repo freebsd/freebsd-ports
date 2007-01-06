@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smartmontools
-PORTVERSION=	5.36
+PORTVERSION=	5.37
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,30 +16,17 @@ COMMENT=	S.M.A.R.T. disk monitoring tools
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-initscriptdir=${PREFIX}/etc/rc.d \
-		--with-docdir=${DOCSDIR} --enable-sample
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --mandir=${PREFIX}/man --enable-sample
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	smartd
 
-PROGRAMS=	smartctl smartd
 MAN5=		smartd.conf.5
 MAN8=		smartd.8 smartctl.8
-DOCS=		AUTHORS CHANGELOG INSTALL NEWS README TODO WARNINGS
-EXAMPLES=	smartd.conf examplescripts/README examplescripts/Example?
 
-do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/sbin
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN8} ${MANPREFIX}/man/man8
-	${INSTALL_DATA} ${WRKSRC}/smartd.conf.sample ${PREFIX}/etc
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's| install-initdDATA | |' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
