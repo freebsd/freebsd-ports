@@ -3032,6 +3032,7 @@ funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
 fusefs-curlftpfs	ports/sysutils/fusefs-curlftpfs
+fusefs-encfs	ports/sysutils/fusefs-encfs
 fusefs-funionfs	ports/sysutils/fusefs-funionfs
 fusefs-gnome-vfs	ports/sysutils/fusefs-gnome-vfs
 fusefs-gphotofs	ports/graphics/fusefs-gphotofs
