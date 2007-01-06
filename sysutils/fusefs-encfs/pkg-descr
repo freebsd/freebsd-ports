@@ -1,0 +1,7 @@
+EncFS is an encrypted pass-through filesystem which runs in userspace,
+using the FUSE kernel module.  Similar in design to CFS and other
+pass-through filesystems, all data is encrypted and stored in the
+underlying filesystem.  Unlike loopback filesystems, there is no
+predetermined or pre-allocated filesystem size.
+
+WWW:	http://freshmeat.net/projects/encfs/
