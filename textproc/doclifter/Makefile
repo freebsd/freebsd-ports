@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	doclifter
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Translates documents written in troff macros to DocBook
 
 USE_PYTHON=	yes
