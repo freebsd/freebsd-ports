@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	0.0.3
+PORTVERSION=	0.3.0
 CATEGORIES=	archivers python
 MASTER_SITES=	http://www.joachim-bauch.de/projects/python/pylzma/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,5 @@ COMMENT=	Python binding for the LZMA compression library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-
-post-patch:
-	${FIND} ${WRKSRC} -name '*.cpp' -or -name '*.c' -or \
-		-name '*.h' | ${XARGS} -n1 ${REINPLACE_CMD} 's///g'
 
 .include <bsd.port.mk>
