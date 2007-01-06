@@ -26,7 +26,7 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
->WITH_ATLAS=	yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
