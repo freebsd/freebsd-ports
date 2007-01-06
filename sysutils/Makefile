@@ -207,6 +207,7 @@
     SUBDIR += fsbackup
     SUBDIR += ftrace
     SUBDIR += fusefs-curlftpfs
+    SUBDIR += fusefs-encfs
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-gnome-vfs
     SUBDIR += fusefs-httpfs
