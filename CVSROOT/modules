@@ -14279,6 +14279,7 @@ tclgetopts	ports/devel/tclgetopts
 tclhttpd	ports/www/tclhttpd
 tcllib		ports/devel/tcllib
 tclmidi		ports/audio/tclmidi
+tclmkziplib	ports/archivers/tclmkziplib
 tclmore		ports/devel/tclmore
 tclock		ports/x11-clocks/tclock
 tclreadline	ports/devel/tclreadline
