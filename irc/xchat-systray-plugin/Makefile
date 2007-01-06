@@ -18,6 +18,9 @@ COMMENT=	Systray icon plugin for X-Chat
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
+DEPRECATED=	Functionality is now included in xchat
+EXPIRATION_DATE=2006-02-06
+
 WRKSRC=		${WRKDIR}/xchat-systray-integration-${PORTVERSION}
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
