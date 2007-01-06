@@ -38,6 +38,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/KyoceraRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Leaf.pm
 %%SITE_PERL%%/Image/ExifTool/MIE.pm
+%%SITE_PERL%%/Image/ExifTool/MIEUnits.pod
 %%SITE_PERL%%/Image/ExifTool/MIFF.pm
 %%SITE_PERL%%/Image/ExifTool/MNG.pm
 %%SITE_PERL%%/Image/ExifTool/MPC.pm
