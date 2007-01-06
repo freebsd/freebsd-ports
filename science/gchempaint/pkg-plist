@@ -143,6 +143,7 @@ share/gnome/help/gchempaint/C/figures/templates.png
 share/gnome/help/gchempaint/C/figures/templates-tools.png
 share/gnome/help/gchempaint/C/figures/text.png
 share/gnome/help/gchempaint/C/figures/texttools-bar.png
+share/gnome/mimelnk/application/x-gchempaint.desktop
 share/gnome/omf/gchempaint/gchempaint-C.omf
 share/icons/hicolor/32x32/apps/gchempaint.png
 share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gchempaint.png
@@ -169,6 +170,8 @@ share/mime/chemical/x-cml.xml
 @dirrm share/gnome/help/gchempaint/C/figures
 @dirrm share/gnome/help/gchempaint/C
 @dirrm share/gnome/help/gchempaint
+@dirrmtry share/gnome/mimelnk/application
+@dirrmtry share/gnome/mimelnk
 @dirrm share/gnome/omf/gchempaint
 @dirrm lib/gchempaint/plugins
 @dirrm lib/gchempaint
