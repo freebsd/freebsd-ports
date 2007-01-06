@@ -165,3 +165,18 @@
        if (OS == OSAIX) fprintf(fpout, " -DIBM_PT_ERROR");
        if (OS == OSIRIX) fprintf(fpout, " -D_POSIX_C_SOURCE=199506L");
     }
+--- config.c.orig	Sat Jan  6 21:07:32 2007
++++ config.c	Sun Jan  7 06:06:08 2007
+@@ -4177,9 +4177,9 @@
+    fprintf(fpout, "#  ------------------------------------\n");
+    fprintf(fpout, "#  Reference and system libraries\n");
+    fprintf(fpout, "#  ------------------------------------\n");
+-   fprintf(fpout, "   BLASlib = %s\n", BLASlib);
+-   fprintf(fpout, "   FBLASlib = \n");
+-   fprintf(fpout, "   FLAPACKlib = \n");
++   fprintf(fpout, "   BLASlib = -L%%LOCALBASE%%/lib -lblas\n");
++   fprintf(fpout, "   FBLASlib = -L%%LOCALBASE%%/lib -lblas\n");
++   fprintf(fpout, "   FLAPACKlib = -L%%LOCALBASE%%/lib -llapack\n");
+    fprintf(fpout, "   LIBS = %s\n\n", LIBS);
+ 
+    fprintf(fpout,

@@ -10,6 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,18 +20,31 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
 
-NO_PACKAGE=	"Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override"
+NO_PACKAGE=	Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override
 
 CONFLICTS=	elmer-mathlibs-1*
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 501000 && ${ARCH} == "alpha"
-USE_GCC=3.4
+#to compile the ATLAS kernel we use gcc3. See ATLAS/INSTALL.txt for details.
+WANT_FORTRAN=	yes
+USE_GCC=4.2+
+.if ${OSVERSION} > 700000
+BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+CCOMPILER=	gcc34
+.elif ${OSVERSION} < 501000 && ${ARCH} == "alpha"
+BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+CCOMPILER=	gcc34
+.else
+CCOMPILER:=	cc
+.endif
+.if defined(WITH_TESTS)
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
 .endif
 
 # only affects for lapack sub project
@@ -48,6 +62,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' \
 			  -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g' \
+			  -e 's+%%LOCALBASE%%+${LOCALBASE}+g' \
 		${WRKSRC}/config.c
 .if defined(PORTS_ARCH)
 	@${REINPLACE_CMD} -e 's+%%PORTS_ARCH%%+${PORTS_ARCH}+g' \
@@ -56,11 +71,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's+%%PORTS_ARCH%%+0+g' \
 			-e 's+%%HAVE_ARCH%%+0+g' ${WRKSRC}/config.c
 .endif
-.if (${MACHINE_ARCH} == "alpha")
+.if (${ARCH} == "alpha")
 EXTRA_PATCHES+=	${FILESDIR}/alpha-patch
 .endif
 
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
@@ -69,7 +84,7 @@ PICFLAG?=	-fpic
 ANSWER_i386?=	${PRINTF} "\n\n\n\n\n\n\n\n\n\n"
 ANSWER_ia64?=	${PRINTF} "\n\n\n2\n\n\n\n\nf77\n-O2 -static\n\n"
 
-.if defined(PACKAGE_BUILDING) && (${MACHINE_ARCH} == "i386")
+.if defined(PACKAGE_BUILDING) && (${ARCH} == "i386")
 PORTS_ARCH=IntP5
 .endif
 
@@ -84,9 +99,14 @@ EXTRA_PATCHES+=	${FILESDIR}/timing_tolerance-patch
 .endif
 
 .if defined(WITH_STATICLIB)
-PLIST_SUB=      WITH_STATICLIB=""
+PLIST_SUB+=      WITH_STATICLIB=""
 .else
-PLIST_SUB=      WITH_STATICLIB="@comment "
+PLIST_SUB+=      WITH_STATICLIB="@comment "
+.endif
+.if defined(WITH_TESTS)
+PLIST_SUB+=	WITH_TESTS=""
+.else
+PLIST_SUB+=	WITH_TESTS="@comment "
 .endif
 
 pre-configure:
@@ -122,12 +142,12 @@ pre-configure:
 
 do-configure:
 	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig && \
-		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a NON_THREADED && \
-		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a NON_THREADED_PIC -C '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC -O' )
+		${ANSWER} | ./xconfig -N 1 -c ${CCOMPILER} -f ${FC} -m ${CCOMPILER} -g ${CCOMPILER} -x ${CCOMPILER} -a NON_THREADED && \
+		${ANSWER} | ./xconfig -N 1 -c ${CCOMPILER} -f ${FC} -m ${CCOMPILER} -g ${CCOMPILER} -x ${CCOMPILER} -a NON_THREADED_PIC -C '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC -O' )
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch && \
 		${MAKE_ENV} ${MAKE} xconfig && \
-		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a THREADED && \
-		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a THREADED_PIC -C '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC -O' )
+		${ANSWER} | ./xconfig -c ${CCOMPILER} -f ${FC} -m ${CCOMPILER} -g ${CCOMPILER} -x ${CCOMPILER} -a THREADED && \
+		${ANSWER} | ./xconfig -c ${CCOMPILER} -f ${FC} -m ${CCOMPILER} -g ${CCOMPILER} -x ${CCOMPILER} -a THREADED_PIC -C '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC -O' )
 
 ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
@@ -149,6 +169,9 @@ do-build:
 .if defined(WITH_STATICLIB)
 	@(cd ${WRKSRC}; ${MAKE} ${.MAKEFLAGS} "ARCH=NON_THREADED" install arch=NON_THREADED)
 	@(cd ${WRKSRC}; ${MAKE} ${.MAKEFLAGS} "ARCH=THREADED" install arch=THREADED)
+.endif
+.if defined(WITH_TESTS)
+	@${MAKE} test
 .endif
 
 post-build:
@@ -239,5 +262,14 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
-
+.if defined(WITH_TESTS)
+	${MKDIR} ${EXAMPLESDIR}
+	@for i in ${ALLTESTS} ; do \
+	cd ${WRKDIR}/ATLAS/bin/NON_THREADED_PIC ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
+	done
+	@for i in ${ALLTESTS_PT} ; do \
+	cd ${WRKDIR}/ATLAS/bin/THREADED_PIC ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
+	done
+.endif
+.include <${FILESDIR}/Makefile.test>
 .include <bsd.port.post.mk>
