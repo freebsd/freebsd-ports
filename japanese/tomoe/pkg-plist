@@ -19,16 +19,25 @@ lib/libtomoe.a
 lib/libtomoe.la
 lib/libtomoe.so
 lib/libtomoe.so.1
-lib/tomoe/dict/libxml.a
-lib/tomoe/dict/libxml.la
-lib/tomoe/dict/libxml.so
-lib/tomoe/dict/libxml.so.1
-@dirrm lib/tomoe/dict
-lib/tomoe/recognizer/libsimple.a
-lib/tomoe/recognizer/libsimple.la
-lib/tomoe/recognizer/libsimple.so
-lib/tomoe/recognizer/libsimple.so.1
-@dirrm lib/tomoe/recognizer
+lib/tomoe/module/dict/libest.a
+lib/tomoe/module/dict/libest.la
+lib/tomoe/module/dict/libest.so
+lib/tomoe/module/dict/libest.so.1
+lib/tomoe/module/dict/libunihan.a
+lib/tomoe/module/dict/libunihan.la
+lib/tomoe/module/dict/libunihan.so
+lib/tomoe/module/dict/libunihan.so.1
+lib/tomoe/module/dict/libxml.a
+lib/tomoe/module/dict/libxml.la
+lib/tomoe/module/dict/libxml.so
+lib/tomoe/module/dict/libxml.so.1
+@dirrm lib/tomoe/module/dict
+lib/tomoe/module/recognizer/libsimple.a
+lib/tomoe/module/recognizer/libsimple.la
+lib/tomoe/module/recognizer/libsimple.so
+lib/tomoe/module/recognizer/libsimple.so.1
+@dirrm lib/tomoe/module/recognizer
+@dirrm lib/tomoe/module
 @dirrm lib/tomoe
 libdata/pkgconfig/tomoe.pc
 share/gtk-doc/html/tomoe/TomoeCandidate.html
@@ -38,6 +47,7 @@ share/gtk-doc/html/tomoe/TomoeContext.html
 share/gtk-doc/html/tomoe/TomoeDict.html
 share/gtk-doc/html/tomoe/TomoeQuery.html
 share/gtk-doc/html/tomoe/TomoeReading.html
+share/gtk-doc/html/tomoe/TomoeRecognizer.html
 share/gtk-doc/html/tomoe/TomoeShelf.html
 share/gtk-doc/html/tomoe/TomoeWriting.html
 share/gtk-doc/html/tomoe/home.png
@@ -55,7 +65,15 @@ share/gtk-doc/html/tomoe/up.png
 @dirrm share/gtk-doc/html/tomoe
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-share/tomoe/all.xml
-share/tomoe/kanjidic2.xml
-share/tomoe/tomoe-dict.dtd
+@dirrm share/tomoe/dict
+share/tomoe/dict.dtd
+share/tomoe/recognizer/handwriting.xml
+@dirrm share/tomoe/recognizer
+share/tomoe/xml2est.rb
 @dirrm share/tomoe
+%%RUBY_SITEARCHLIBDIR%%/rbtomoe.h
+%%RUBY_SITEARCHLIBDIR%%/tomoe.a
+%%RUBY_SITEARCHLIBDIR%%/tomoe.la
+%%RUBY_SITEARCHLIBDIR%%/tomoe.so
+%%RUBY_SITEARCHLIBDIR%%/tomoe.so.1
+%%RUBY_SITELIBDIR%%/tomoe.rb
