@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.8.2
+PORTVERSION=	0.11.8.2.1
 CATEGORIES=	net-im irc
-MASTER_SITES=	http://shell.n.ml.org/n/naim/
+MASTER_SITES=	http://naim.googlecode.com/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	j@scre.ws
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
 GNU_CONFIGURE=	yes
@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=	--with-pkgdocdir=${DOCSDIR}
 .else
 CONFIGURE_ARGS+=	--without-pkgdocdir
 .endif
+
 .if defined(WITH_DETACH)
 RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 CONFIGURE_ARGS+=	--enable-detach
