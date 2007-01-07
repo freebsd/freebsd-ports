@@ -1,0 +1,6 @@
+This module provides a round roubin object implementation. It is similar
+to an iterator, only the internal counter is reset to the begining
+whenever it reaches the end. It might also be considered as a circular
+iterator.
+
+WWW:	http://search.cpan.org/dist/Data-RoundRobin/
