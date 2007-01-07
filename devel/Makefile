@@ -1907,6 +1907,7 @@
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-rake
+    SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rtags
