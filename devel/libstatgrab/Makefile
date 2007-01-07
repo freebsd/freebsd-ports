@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -34,7 +34,7 @@ MAN3=		sg_get_cpu_percents.3 sg_get_cpu_stats.3 \
 		sg_get_process_stats.3 sg_get_swap_stats.3 \
 		sg_get_user_stats.3 statgrab.3
 
-CONFIGURE_ARGS+=	--disable-examples
+CONFIGURE_ARGS+=	--disable-examples --mandir=${PREFIX}/man
 
 .ifdef(WITHOUT_STATGRAB)
 CONFIGURE_ARGS+=	--disable-statgrab
