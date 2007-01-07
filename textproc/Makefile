@@ -317,6 +317,7 @@
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxi
     SUBDIR += ocaml-yaxpo
+    SUBDIR += odt2txt
     SUBDIR += openfts
     SUBDIR += openjade
     SUBDIR += opensched

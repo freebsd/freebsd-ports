@@ -1,0 +1,13 @@
+A simple (and stupid) converter from OpenDocument Text to plain text
+
+ * small (size of binary is 25 KB on Linux/i386)
+ * fast (no xml parser involved)
+ * supports multiple output encodings, adopts to your locale
+ * can substitute common characters which the output charset does not
+   contain with ascii look-alikes
+ * portable (runs on Linux, *BSD, Solaris, Windows, Cygwin)
+ * mostly self-contained (only requirements are a POSIX-compatible regex
+   library and an iconv implementation)
+ * license: GPL, version 2
+
+WWW: http://stosberg.net/odt2txt/
