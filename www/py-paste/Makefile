@@ -29,6 +29,6 @@ SUB_FILES+=	pkg-deinstall pkg-install
 SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
 		EGG="${PORTNAME}==${PORTVERSION}"
 
-PYPASTE_EGG=	${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/^python//}.egg
+PYPASTE_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VERSION:S/^python//}.egg
 
 .include <bsd.port.mk>
