@@ -13325,6 +13325,7 @@ rubygem-actionwebservice	ports/www/rubygem-actionwebservice
 rubygem-activerecord	ports/databases/rubygem-activerecord
 rubygem-activesupport	ports/devel/rubygem-activesupport
 rubygem-bluecloth	ports/www/rubygem-bluecloth
+rubygem-builder	ports/devel/rubygem-builder
 rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-daemons	ports/devel/rubygem-daemons
