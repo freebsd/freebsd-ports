@@ -1,4 +1,21 @@
-bin/dec32
+lib/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
+lib/erlang/lib/distel-%%VERSION%%/src/distel.erl
+lib/erlang/lib/distel-%%VERSION%%/src/distel_ie.erl
+lib/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/INSTALL.WIN32
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.ie-session
+%%DOCSDIR%%/distel-3.1.pdf
+%%DOCSDIR%%/distel-euc.pdf
+%%DOCSDIR%%/distel-euc.ps.gz
+%%DOCSDIR%%/distel-user-3.3.pdf
+%%DOCSDIR%%/distel-user-3.3.ps.gz
 %%EMACS_SITE_LISPDIR%%/distel/derl.el
 %%EMACS_SITE_LISPDIR%%/distel/distel-ie.el
 %%EMACS_SITE_LISPDIR%%/distel/distel.el
@@ -9,36 +26,9 @@ bin/dec32
 %%EMACS_SITE_LISPDIR%%/distel/erl-test.el
 %%EMACS_SITE_LISPDIR%%/distel/erl.el
 %%EMACS_SITE_LISPDIR%%/distel/erlext.el
-%%EMACS_SITE_LISPDIR%%/distel/erlext.elc
 %%EMACS_SITE_LISPDIR%%/distel/ewoc.el
 %%EMACS_SITE_LISPDIR%%/distel/md5.el
 %%EMACS_SITE_LISPDIR%%/distel/net-fsm.el
 %%EMACS_SITE_LISPDIR%%/distel/patmatch.el
-lib/erlang/lib/distel-%%VERSION%%/ebin/dilber.beam
-lib/erlang/lib/distel-%%VERSION%%/ebin/dilber_servant.beam
-lib/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
-lib/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
-lib/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
-lib/erlang/lib/distel-%%VERSION%%/src/dilber.erl
-lib/erlang/lib/distel-%%VERSION%%/src/dilber_servant.erl
-lib/erlang/lib/distel-%%VERSION%%/src/distel.erl
-lib/erlang/lib/distel-%%VERSION%%/src/distel_ie.erl
-lib/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.ie-session
-%%DOCSDIR%%/distel-3.1.pdf
-%%DOCSDIR%%/distel-euc.pdf
-%%DOCSDIR%%/distel-euc.ps.gz
-%%DOCSDIR%%/distel-user-3.3.pdf
-%%DOCSDIR%%/distel-user-3.3.ps.gz
-%%DOCSDIR%%/emacs-init-snippet.el
-@dirrm %%EMACS_SITE_LISPDIR%%/distel
-@dirrm %%DOCSDIR%%
-@dirrm lib/erlang/lib/distel-%%VERSION%%/src
-@dirrm lib/erlang/lib/distel-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/distel-%%VERSION%%
 @exec ln -sf distel-%%VERSION%% %D/lib/erlang/lib/distel
 @unexec rm -f %D/lib/erlang/lib/distel

@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	distel
-PORTVERSION=	3.3
-PORTREVISION=	5
+PORTVERSION=	2006.10.04
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.bluetail.com/%7Eluke/distel/:doc \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	distel/:sf
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${DISTEL_MANUALS:S/$/:doc/}
+		${MASTER_SITE_LOCAL:S/$/:msl/}
+MASTER_SITE_SUBDIR=	olgeni/:msl
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:msl ${DISTEL_MANUALS:S/$/:doc/}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -23,24 +22,21 @@ BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-ALL_TARGET=	base
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 DISTEL_MANUALS=	distel-euc.pdf distel-euc.ps.gz \
 		distel-user-3.3.pdf distel-user-3.3.ps.gz \
 		distel-3.1.pdf
-DISTEL_DOCS=	config/emacs-init-snippet.el AUTHORS ChangeLog NEWS README README.ie-session
+DISTEL_DOCS=	AUTHORS ChangeLog INSTALL INSTALL.WIN32 NEWS README README.ie-session
 DISTEL_ROOT=	${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
+do-build:
+	@cd ${WRKSRC} && erlc -W0 -o ebin/ +debug_info src/*.erl
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/c/dec32 ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${DISTEL_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
@@ -51,7 +47,7 @@ do-install:
 	@${MKDIR} ${DISTEL_ROOT}
 	@${MKDIR} ${DISTEL_ROOT}/src
 	@${MKDIR} ${DISTEL_ROOT}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/erl/*.erl ${DISTEL_ROOT}/src
+	@${INSTALL_DATA} ${WRKSRC}/src/*.erl ${DISTEL_ROOT}/src
 	@${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${DISTEL_ROOT}/ebin
 	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
