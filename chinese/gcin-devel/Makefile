@@ -19,6 +19,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
 USE_BZIP2=	YES
+GZIP_CMD?=	/usr/bin/gzip
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
@@ -34,11 +35,11 @@ MAN1=		gcin.1 gcin2tab.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BOSHIAMY)
-MASTER_SITES+=	http://edt1023.sayya.org/misc/:boshiamy
-DISTFILES+=	noseeing-6.tar.gz:boshiamy
+MASTER_SITES+=	http://edt1023.sayya.org/gcin/:boshiamy
+DISTFILES+=	noseeing-7.cin.gz:boshiamy
 post-extract:
-	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/noseeing-6.tar.gz \
-		noseeing.cin
+	cd ${WRKSRC}/data && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/noseeing-7.cin.gz \
+		> noseeing.cin
 	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
 		${WRKSRC}/data/Makefile
 .endif
