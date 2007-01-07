@@ -7,7 +7,7 @@
 PORTNAME=	mediaproxy
 PORTVERSION=	1.7.2
 CATEGORIES=	net
-MASTER_SITES=	http://mediaproxy.ag-projects.com/
+MASTER_SITES=	http://mediaproxy.ag-projects.com/old/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	steve@energistic.com
