@@ -6,15 +6,16 @@
 #
 
 PORTNAME=		squeak
-PORTVERSION=		3.6
-PORTREVISION=		7
+PORTVERSION=		3.7
 CATEGORIES=		lang
 ##################################################
-MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
-			ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/unix-linux/ \
-			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/ \
-			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/unix-linux/ \
-			http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \
+MASTER_SITES=		http://www.squeakvm.org/unix/release/ \
+			http://ftp.squeak.org/${PORTVERSION}/ \
+			http://ftp.squeak.org/${PORTVERSION}/unix-linux/ \
+			ftp://st.cs.uiuc.edu/Smalltalk/Squeak/${PORTVERSION}/ \
+			ftp://st.cs.uiuc.edu/Smalltalk/Squeak/${PORTVERSION}/unix-linux/ \
+			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/${PORTVERSION}/ \
+			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/${PORTVERSION}/unix-linux/ \
 			http://www.squeakland.org/installers/ \
 			http://www.squeakland.jp/plugin/installers/ \
 			http://squeak.610t.org/patches/
@@ -33,12 +34,12 @@ COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
 BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=		audio.2:${PORTSDIR}/audio/nas
+LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas
 
 ##################################################
-VMVERSION=		3.6-3
-IMAGEVERSION=		3.6
-PATCHNUMBER=		5429
+VMVERSION=		3.7-7
+IMAGEVERSION=		3.7
+PATCHNUMBER=		5989
 
 ##################################################
 OPTIONS+=		MPG_MMX		"MMX support (MPG plugin)" off
@@ -51,7 +52,7 @@ OPTIONS+=		XIM		"XIM support (Implies X)" off
 .include <bsd.port.pre.mk>
 
 ##################################################
-XIM_PATCH=		SqueakImmX11Plugin2c.tar.gz
+XIM_PATCH=		SqueakImmX11Plugin3a.tar.gz
 PLUGIN_IMAGE=		SqueakPlugin.zip
 JAPANESE_PLUGIN_IMAGE=		SqueakPlugin2005J.zip
 
@@ -101,6 +102,8 @@ PLIST_NPSQUEAK=		"@comment feature not wanted - "
 .else
 WITH_NPSQUEAK=		yes
 PLIST_NPSQUEAK=
+FILES_TO_GZIP+=		SqueakPlugin.image
+RUN_DEPENDS+=		bash:${PORTSDIR}/shells/bash
 .endif
 
 .if defined(WITHOUT_X)
@@ -143,9 +146,8 @@ MAKE_ARGS+=		CC="${CC}"
 MAKE_ARGS+=		CCFLAGS="${CFLAGS}"
 .endif
 
-PKGMESSAGE=		${WRKDIR}/pkg-message
-PKGMESSAGE_SUB=		PREFIX=${PREFIX} \
-			VMVERSION=${VMVERSION}
+SUB_FILES=		pkg-message
+SUB_LIST=		VMVERSION=${VMVERSION}
 
 PLIST_SUB=		IMAGEVERSION=${IMAGEVERSION}\
 			PATCHNUMBER=${PATCHNUMBER}\
@@ -161,15 +163,17 @@ post-patch:
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		-e "s,%%X11BASE%%,${X11BASE},g" \
 		${WRKSRC}/platforms/unix/npsqueak/npsqueakregister.in \
+		${WRKSRC}/platforms/unix/npsqueak/npsqueakrun.in \
 		${WRKSRC}/platforms/unix/npsqueak/Makefile
 .if defined(WITH_XIM)
 	@cd ${WRKSRC} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${XIM_PATCH} ${EXTRACT_AFTER_ARGS}
+# Skip first patch for plugins.ext because patch place has changed.
 	@cd ${WRKSRC} && \
-		${PATCH} -p0 < ImmX11.patch
+		${PATCH} -S + -p0 < ImmX11.patch
 .endif
 # Fix external plugins
-	@${ECHO_MSG} "EXTERNAL_PLUGINS = B3DAcceleratorPlugin UnixOSProcessPlugin XDisplayControlPlugin ${EXT_PLUGINS}" > ${WRKSRC}/src/plugins.ext
+	@${ECHO_MSG} "EXTERNAL_PLUGINS = B3DAcceleratorPlugin Squeak3D XDisplayControlPlugin ${EXT_PLUGINS}" > ${WRKSRC}/platforms/unix/src/plugins.ext
 
 ##################################################
 pre-configure:
@@ -189,21 +193,14 @@ post-install:
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip -d ${WRKDIR})
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip -d ${WRKDIR})
 	(cd ${WRKDIR} && ${INSTALL_DATA} ReadMe.txt ${PREFIX}/share/squeak/)
+.if defined(WITH_NPSQUEAK)
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u ${PLUGIN_IMAGE} -d ${WRKDIR})
+.endif
 .for file in ${FILES_TO_GZIP}
 	(cd ${WRKDIR} && ${GZIP_CMD} ${file} && ${INSTALL_DATA} ${file}.gz ${PREFIX}/share/squeak/)
 .endfor
-.if defined(WITH_NPSQUEAK)
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u ${PLUGIN_IMAGE} -d ${WRKDIR})
-	(cd ${WRKDIR} && ${INSTALL_DATA} SqueakPlugin.image ${PREFIX}/share/squeak/npsqueak.image)
-.endif
-	${SED}	-e 's|VERSION=3.5-5180|VERSION=${IMAGEVERSION}-${PATCHNUMBER}|' \
-		-e 's|IMAGE=Squeak3.5-5180|IMAGE=Squeak${IMAGEVERSION}-${PATCHNUMBER}|' \
-		-e 's|CHANGES=Squeak3.5-5180|CHANGES=Squeak${IMAGEVERSION}-${PATCHNUMBER}|' \
-		${WRKSRC}/build/inisqueak > ${WRKSRC}/build/inisqueak.tmp
-	${INSTALL_SCRIPT} ${WRKSRC}/build/inisqueak.tmp ${PREFIX}/bin/inisqueak
+	${INSTALL_SCRIPT} ${WRKSRC}/build/inisqueak ${PREFIX}/bin/inisqueak
 	${CHMOD} 755 ${PREFIX}/bin/inisqueak
-	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

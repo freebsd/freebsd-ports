@@ -1,0 +1,38 @@
+--- platforms/unix/npsqueak/npsqueakrun.in.orig	Sun Mar 20 05:38:26 2005
++++ platforms/unix/npsqueak/npsqueakrun.in	Sun Jan  7 16:30:12 2007
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! %%LOCALBASE%%/bin/bash
+ 
+ # File:        npsqueakrun
+ # Author:      Bert Freudenberg
+@@ -60,12 +60,24 @@
+ ensurefile()
+ {
+     if [ ! -e "${1}" ] ; then
+-	if cp "${2}" "${1}" ; then
+-	    pdebug "Created ${1}"
++	if [ -e "${2}" ] ;then
++	    if cp "${2}" "${1}" ; then
++		pdebug "Created ${1}"
++	    else
++		perror "Could not create ${1}"
++		if [ ! -r "${2}" ] ; then
++		    perror "because ${2} is missing"
++		fi
++	    fi
+ 	else
+-	    perror "Could not create ${1}"
+-	    if [ ! -r "${2}" ] ; then
+-		perror "because ${2} is missing"
++	    if [ -e "${2}.gz" ] ; then
++		gunzip -c "${2}.gz" > "${1}"
++		pdebug "Created ${1} from ${2}.gz"
++	    else
++		perror "Could not create ${1}"
++		if [ ! -r "${2}" ] ; then
++		    perror "because ${2} is missing"
++		fi
+ 	    fi
+ 	fi
+     fi
