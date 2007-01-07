@@ -10,7 +10,7 @@ PORTVERSION=	0.2.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.frob.nl/projects/scribble/
 
-MAINTAINER=	redchrom@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mpd last.fm client
 
 LIB_DEPENDS=	soup:${PORTSDIR}/devel/libsoup
