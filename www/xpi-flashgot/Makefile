@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashgot
-PORTVERSION=	0.5.97.02
+PORTVERSION=	0.5.97.03
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm+tb
 CATEGORIES=	www
 
