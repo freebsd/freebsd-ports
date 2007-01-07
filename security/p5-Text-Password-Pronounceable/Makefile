@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Password-Pronounceable
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	security textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
