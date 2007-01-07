@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	linkification
-PORTVERSION=	1.3.0
-DISTVERSIONSUFFIX=	-fx
+PORTVERSION=	1.3.1
 CATEGORIES=	www
+MASTER_SITES=	CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Converts text links into genuine, clickable links
