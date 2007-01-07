@@ -51,7 +51,6 @@ lib/libcdf.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.cdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/example2.cdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/example2.f
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/geocpi0.cdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/geocpi0.skt
 %%PORTDOCS%%%%EXAMPLESDIR%%/ij01r39.cdf

@@ -1,17 +1,14 @@
---- Makefile.orig	Wed Feb  1 22:23:42 2006
-+++ Makefile	Sun Feb 12 10:29:44 2006
-@@ -403,16 +403,16 @@
- LDOPTIONSidl_freebsd=-shared
- AROPTIONS_freebsd=rc
- RANLIB_freebsd=yes
--FC_freebsd=f77
-+FC_freebsd=$(F77)
+--- Makefile.orig	Mon Nov 13 22:59:25 2006
++++ Makefile	Sun Jan  7 14:20:10 2007
+@@ -568,14 +568,14 @@
+ FC_freebsd=f77
  
  CURSES_freebsd_gnu=yes
--CC_freebsd_gnu=cc
--LD_freebsd_gnu=ld
+-CC_freebsd_gnu=gcc
+-LD_freebsd_gnu=gcc
 +CC_freebsd_gnu=$(CC)
-+LD_freebsd_gnu=$(LD)
++LD_freebsd_gnu=$(CC)
+ LDOPTIONS_freebsd_gnu=-shared
  PIC_freebsd_gnu=-fPIC
 -COPTIONS_freebsd_gnu=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DMALLOC_CHECK_=0
 -COPTIONSld_freebsd_gnu=
