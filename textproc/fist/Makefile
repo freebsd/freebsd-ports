@@ -8,7 +8,7 @@
 PORTNAME=	fist
 PORTVERSION=	4.0
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.fourmilab.ch/fist/
+MASTER_SITES=	ftp://ftp.fourmilab.ch/pub/fist/
 
 MAINTAINER=	steve@stevenwills.com
 COMMENT=	An emphatic message generator
