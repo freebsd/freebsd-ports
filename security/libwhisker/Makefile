@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	libwhisker
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	security perl5
 MASTER_SITES=	http://www.wiretrip.net/rfp/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Perl module to create HTTP test scripts
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
 
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-PLIST_FILES=	${SITE_PERL_REL}/LW.pm
+PLIST_FILES=	${SITE_PERL_REL}/LW.pm \
+		${SITE_PERL_REL}/LW2.pm
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -30,13 +30,14 @@ do-configure:
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.pl ${INSTALL_TARGET}
+	@${INSTALL_DATA} ${WRKSRC}/compat/LW.pm ${SITE_PERL}
+	@${CHMOD} 444 ${SITE_PERL}/LW2.pm
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/docs ${DOCSDIR}/imgs ${DOCSDIR}/scripts
+	@${MKDIR} ${DOCSDIR}/docs ${DOCSDIR}/scripts
 	cd ${WRKSRC} && ${INSTALL_DATA} README CHANGES KNOWNBUGS ${DOCSDIR}
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} * ${DOCSDIR}/docs
-	cd ${WRKSRC}/imgs/ && ${INSTALL_DATA} * ${DOCSDIR}/imgs
 	cd ${WRKSRC}/scripts/ && ${INSTALL_SCRIPT} * ${DOCSDIR}/scripts
 .endif
 

@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070106:
+  AFFECTS: users of security/libwhisker
+  AUTHOR: araujo@bsdmail.org
+
+  Libwhisker 2.0 is *not* backwards-compatible with Libwhisker 1.x.
+  Changing 'use LW' to 'use LW2' in your programs is not enough--you may
+  need to make code changes to your program.
+
+  However, there is a 'bridge' LW.pm module in which will use LW2
+  (libwhisker 2.x) functions to emulate the LW (libwhisker 1.x)
+  functionality.
+
+  See http://www.wiretrip.net/rfp/libwhisker/README2 for more details.
+
 20070104:
   AFFECTS: users of www/phpsurveyor
   AUTHOR: miwi@FreeBSD.org
