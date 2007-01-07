@@ -1,5 +1,0 @@
-#!%%PYTHON_CMD%%
-import sys
-import kid.run
-
-sys.exit(kid.run.main())
