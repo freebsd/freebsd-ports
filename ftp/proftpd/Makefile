@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -58,7 +58,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		RADIUS "Include mod_radius" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
 		BAN "include mod_ban (Requires CTRLS)" off \
-		NLS "Use nls-builds mod_lang" off
+		NLS "Use nls (builds mod_lang)" off
 
 MODULES?=
 LIBDIRS?=
@@ -156,6 +156,9 @@ USE_MYSQL=	yes
 MODULES:=${MODULES}:mod_sql:mod_sql_mysql
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib/mysql
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_POSTGRESQL)
@@ -227,8 +230,9 @@ post-configure:
 		${WRKSRC}/utils/ftpcount.1
 
 post-install:
-	[ -f ${PREFIX}/etc/proftpd.conf ] || \
-		${CP} ${EXAMPLESDIR}/etc/proftpd.conf ${PREFIX}/etc/proftpd.conf.sample
+	@if [ ! -f ${PREFIX}/etc/proftpd.conf ]; then \
+	${CP} -p ${EXAMPLESDIR}/etc/proftpd.conf ${PREFIX}/etc/proftpd.conf ; \
+    fi
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/proftpd
