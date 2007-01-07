@@ -6,6 +6,39 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070105:
+  AFFECTS: users of mail/spamprobe
+  AUTHOR: stefan@FreeBSD.org
+
+  With the update to version 1.4d, the SpamProbe port doesn't use the OPTIONS
+  framework any more to allow part of the changes below. That means that options
+  selected for this port won't be saved/used automatically any more and you have
+  to set the appropriate variables in /etc/make.conf or on the command line to
+  change the port's behaviour; the variables are documented at the top of the
+  port's Makefile. Before updating, it might be a good idea to remove
+  /var/db/ports/spamprobe.
+  
+  The port now has support for the PBL database backend; unless built with
+  WITHOUT_PBL set, SpamProbe will use PBL as the default even if you have an
+  existing BerkleyDB or hash database; in that case, use the parameter "-d" to
+  specify the type of the existing database on the command line, e.g.
+
+    spamprobe -d bdb:$HOME/.spamprobe receive
+
+  or
+
+    spamprobe -d hash:$HOME/.spamprobe receive
+
+  Using PBL instead of BerkleyDB might be a good idea, though, as the former
+  seems to perform better. You can convert your existing database to PBL using
+  the following commands (assuming you didn't disable PBL support):
+
+    cd ~
+    mkdir spamprobe.new
+    spamprobe -d bdb:.spamprobe export | spamprobe -d spamprobe.new import
+    mv .spamprobe spamprobe.old
+    mv spamprobe.new .spamprobe
+
 20070106:
   AFFECTS: users of security/libwhisker
   AUTHOR: araujo@bsdmail.org
