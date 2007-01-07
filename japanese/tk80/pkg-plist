@@ -175,12 +175,6 @@ lib/tk8.0jp/images/pwrdLogo150.gif
 lib/tk8.0jp/images/pwrdLogo175.gif
 lib/tk8.0jp/images/pwrdLogo200.gif
 lib/tk8.0jp/images/pwrdLogo75.gif
-share/doc/tk8.0jp/README
-share/doc/tk8.0jp/changes
-share/doc/tk8.0jp/README.JP
-share/doc/tk8.0jp/changes.JP
-share/doc/tk8.0jp/Incompat80jp
-share/doc/tk8.0jp/README.FreeBSD.JP
 @dirrm include/tk8.0jp/generic
 @dirrm include/tk8.0jp/unix
 @dirrm include/tk8.0jp
