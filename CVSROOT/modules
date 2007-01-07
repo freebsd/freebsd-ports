@@ -6411,6 +6411,7 @@ libukcprog	ports/devel/libukcprog
 libungif	ports/graphics/libungif
 libunicode	ports/devel/libunicode
 libuninameslist	ports/textproc/libuninameslist
+libuninum	ports/devel/libuninum
 libunp		ports/net/libunp
 libunpipc	ports/net/libunpipc
 libunrar	ports/archivers/libunrar
