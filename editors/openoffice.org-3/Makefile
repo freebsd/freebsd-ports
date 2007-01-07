@@ -283,7 +283,7 @@ post-install:
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@for app in base calc draw impress math printeradmin writer; do \
 		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
-			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
+		${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
 	done
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
