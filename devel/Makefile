@@ -1795,6 +1795,7 @@
     SUBDIR += py-tconfpy
     SUBDIR += py-testoob
     SUBDIR += py-turbojson
+    SUBDIR += py-turbokid
     SUBDIR += py-twisted
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
