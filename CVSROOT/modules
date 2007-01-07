@@ -1487,6 +1487,7 @@ crashmail	ports/news/crashmail
 crashme		ports/sysutils/crashme
 crawl		ports/www/crawl
 cream		ports/editors/cream
+createtorrent	ports/net-p2p/createtorrent
 crescendo	ports/net/crescendo
 crf++		ports/science/crf++
 cricket		ports/net-mgmt/cricket
