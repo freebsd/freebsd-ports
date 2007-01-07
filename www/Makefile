@@ -935,6 +935,7 @@
     SUBDIR += py-nevow
     SUBDIR += py-openssl-proxy
     SUBDIR += py-paste
+    SUBDIR += py-pastedeploy
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
     SUBDIR += py-qp
