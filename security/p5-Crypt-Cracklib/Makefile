@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-Cracklib
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -26,4 +26,10 @@ MAN3=		Crypt::Cracklib.3
 post-patch:
 	${REINPLACE_CMD} -e 's/crack.h/packer.h/' ${WRKSRC}/Cracklib.*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
