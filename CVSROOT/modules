@@ -7981,6 +7981,7 @@ ode-devel	ports/devel/ode-devel
 ods2		ports/sysutils/ods2
 ods2reader	ports/emulators/ods2reader
 odsclient	ports/dns/odsclient
+odt2txt		ports/textproc/odt2txt
 ofc		ports/lang/ofc
 offlineimap	ports/mail/offlineimap
 oftpd		ports/ftp/oftpd
