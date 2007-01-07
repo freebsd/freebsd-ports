@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	edict-utf-8
-PORTVERSION=	20061125
+PORTVERSION=	20070106
 CATEGORIES=	japanese
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/${PORTNAME}/
 DISTFILES=	${DICTFILES}
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -20,7 +20,7 @@ USE_ICONV=	yes
 ICONV?=		iconv
 CONVERT_CMD=	${ICONV} -c -f EUC-JP -t UTF-8
 
-DIST_SUBDIR=	edict-utf8
+DIST_SUBDIR=	${PORTNAME}
 
 DICTFILES=	edict.gz edicth compdic.gz jddict.v02.gz \
 		j_places.gz ediclsd3.zip kanjidic.gz kanjd212.gz \
