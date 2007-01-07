@@ -7,15 +7,16 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-toolkits tk80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=	tcl8_0
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${PORTVERSION}jp1.7.patch.gz
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	taguchi@iij.ad.jp
 COMMENT=	Graphical toolkit for Japanized TCL, version 8.0
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
@@ -23,6 +24,9 @@ LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 VERSION=	${PORTVERSION:R}
 TOPDIR=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${TOPDIR}/unix
+DOCSDIR=	${PREFIX}/share/doc/tk${VERSION}jp
+PORTDOCS=	README changes README.FreeBSD.JP README.JP changes.JP \
+		Incompat80jp
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
 .else
@@ -31,9 +35,10 @@ PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 USE_AUTOTOOLS=	autoconf:213
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp \
-	--enable-xlibHack --enable-onTheSpot
+	--enable-xlibHack --enable-onTheSpot \
+	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 RANLIB=		ranlib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -49,11 +54,11 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tk${VERSION}jp
+	@${MKDIR} ${DOCSDIR}
 	@(cd ${TOPDIR}; \
 	  ${INSTALL_DATA} README changes README.FreeBSD.JP \
 		README.JP changes.JP \
-		Incompat80jp ${PREFIX}/share/doc/tk${VERSION}jp; \
+		Incompat80jp ${DOCSDIR}; \
 	 )
 .endif
 .if ${PORTOBJFORMAT} == "aout"
