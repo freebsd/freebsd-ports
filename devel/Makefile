@@ -1794,6 +1794,7 @@
     SUBDIR += py-testgears
     SUBDIR += py-tconfpy
     SUBDIR += py-testoob
+    SUBDIR += py-turbojson
     SUBDIR += py-twisted
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
