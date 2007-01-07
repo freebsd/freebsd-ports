@@ -59,7 +59,8 @@ create_account() {
 			&& echo "ERROR: groupname '${group}' already in use by gid '${pw_group_gid}'"
 		[ -n "${pw_gid_group}" -a "${group}" != "${pw_gid_group}" ] \
 			&& echo "ERROR: gid '${gid}' already in use by group '${pw_gid_group}'"
-		echo "Please resolve these issues and try again."
+		echo "Please resolve these issues and try again:"
+		echo "Either remove the conflicting group or if you wish to continue using a legacy group override DOVECOT_GID."
 		exit 1
 	fi
 
@@ -75,7 +76,8 @@ create_account() {
 			&& echo "ERROR: username '${user}' already in use by uid '${pw_user_uid}'"
 		[ -n "${pw_uid_user}" -a "${user}" != "${pw_uid_user}" ] \
 			&& echo "ERROR: uid '${uid}' already in use by user '${pw_uid_user}'"
-		echo "Please resolve these issues and try again."
+		echo "Please resolve these issues and try again:"
+		echo "Either remove the conflicting user or if you wish to continue using a legacy user override DOVECOT_UID."
 		exit 1
 	fi
 }
@@ -83,7 +85,7 @@ create_account() {
 case $2 in
 
 PRE-INSTALL)
-	create_account Dovecot dovecot:143 dovecot:143 "Dovecot User" /var/empty /sbin/nologin
+	create_account Dovecot dovecot:${DOVECOT_UID:-143} dovecot:${DOVECOT_GID:-143} "Dovecot User" /var/empty /sbin/nologin
 	;;
 
 POST-INSTALL)

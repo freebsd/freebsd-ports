@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.rc15
+DISTVERSION=	1.0.rc17
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -35,6 +35,11 @@ PORTDOCS=	USE-WIKI-INSTEAD \
 .else
 CONFIGURE_ARGS+=	--without-docs
 .endif
+
+DOVECOT_UID?=	143
+DOVECOT_GID?=	143
+SCRIPT_ENV+=	DOVECOT_UID=${DOVECOT_UID} \
+		DOVECOT_GID=${DOVECOT_GID}
 
 OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		SSL		"SSL support"		on  \
