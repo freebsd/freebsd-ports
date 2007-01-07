@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	digitizer
-PORTVERSION=	3.0
+PORTVERSION=	4.0
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Engauge Digitizer - Digitizing software to convert graphs into numbers
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -27,12 +28,12 @@ MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
 DESKTOP_ENTRIES=	"Engauge Digitizer" \
 			"Digitizing software to convert graphs into numbers" \
 			"${DATADIR}/lo16-app-digitizer.png" \
-			"${PORTNAME}" \
+			"engauge" \
 			"Education;Math;" \
 			true
 
 .if !defined(NOPORTDOCS)
-DOCS=		README REGRESSION_TESTS
+DOCS=		README
 .endif
 
 .include <bsd.port.pre.mk>
@@ -52,7 +53,7 @@ pre-build:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} qmake -unix digitizer.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/engauge ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/img/lo16-app-digitizer.png	\
 		${DATADIR}
