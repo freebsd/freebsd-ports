@@ -27,6 +27,9 @@ lib/libnvidia-tls.so.1
 @exec ln -sf %D/lib/libnvidia-tls.so.1 %D/lib/libnvidia-tls.so
 @unexec rm -f %D/lib/libnvidia-tls.so
 lib/libXvMCNVIDIA.a
+lib/modules/libnvidia-wfb.so.1
+@exec ln -sf %D/lib/modules/libnvidia-wfb.so.1 %D/lib/modules/libwfb.so
+@unexec rm -f %D/lib/modules/libwfb.so
 lib/modules/drivers/nvidia_drv.o
 lib/modules/drivers/nvidia_drv.so
 lib/modules/extensions/libglx.so.1
@@ -65,6 +68,7 @@ lib/modules/extensions/libglx.so.1
 %%PORTDOCS%%%%DOCSDIR%%/html/chapter-07.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chapter-08.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chapter-09.html
+%%PORTDOCS%%%%DOCSDIR%%/html/chapter-10.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/part-01.html
 %%PORTDOCS%%%%DOCSDIR%%/html/part-02.html

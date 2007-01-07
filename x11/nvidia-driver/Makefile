@@ -64,8 +64,7 @@ OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
 NVVERSION=	7184
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
-NVVERSION=	9631
-PORTREVISION=	1
+NVVERSION=	9746
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
 .endif
 .if ${OSVERSION} >= 600033
@@ -90,6 +89,8 @@ USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
 .else
 PLIST_SUB+=	LINUX="@comment "
+# Propagate WITHOUT_LINUX variable down to inner Makefiles
+MAKE_ENV+=	WITHOUT_LINUX=yes
 .endif
 
 .if ${OSVERSION} < 503000
@@ -120,7 +121,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-	${REINPLACE_CMD} -E 's/(extension).*/\1/ ; /bin/d ; /man/d' \
+	${REINPLACE_CMD} -E 's/(lib).*/\1/ ; /bin/d ; /man/d' \
 		${WRKSRC}/x11/Makefile
 
 post-install:
@@ -129,6 +130,9 @@ post-install:
 	@${REINPLACE_CMD} '/libnvidia-cfg/d ; /html/d' ${TMPPLIST}
 .else
 	@${REINPLACE_CMD} '/README\.Linux/d ; /nvidia_drv\.o/d' ${TMPPLIST}
+.endif
+.if ${NVVERSION} < 9746
+	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
 .endif
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 	@${CAT} ${PKGMESSAGE}
