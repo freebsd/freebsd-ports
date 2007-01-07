@@ -343,5 +343,6 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 ################################################################
 .if ${LOCALIZED_LANG} == "all"
 ALL_LOCALIZED_LANGS=yes
+PKGNAMESUFFIX=	-alllangs
 .endif
 .endif
