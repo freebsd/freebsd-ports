@@ -12459,6 +12459,7 @@ py-tlslite	ports/security/py-tlslite
 py-tofu		ports/net/py-tofu
 py-trustedpickle	ports/security/py-trustedpickle
 py-turbogears	ports/www/py-turbogears
+py-turbojson	ports/devel/py-turbojson
 py-tvgrab	ports/textproc/py-tvgrab
 py-twisted	ports/devel/py-twisted
 py-twistedConch	ports/security/py-twistedConch
