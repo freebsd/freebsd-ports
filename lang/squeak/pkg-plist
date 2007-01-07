@@ -7,13 +7,12 @@ bin/squeak
 %%DOCSDIR%%/README.Keyboard.gz
 %%DOCSDIR%%/README.Sound.gz
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/B3DAcceleratorPlugin
-%%DATADIR%%/%%VMVERSION%%/UnixOSProcessPlugin
+%%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/Squeak3D
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/XDisplayControlPlugin
 %%PLIST_XIM%%%%DATADIR%%/%%VMVERSION%%/ImmX11Plugin
 %%PLIST_FFI%%%%DATADIR%%/%%VMVERSION%%/SqueakFFIPrims
-%%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueak.image
 %%PLIST_NPSQUEAK%%%%DATADIR%%/%%VMVERSION%%/npsqueak.so
-%%PLIST_NPSQUEAK%%%%DATADIR%%/%%VMVERSION%%/npsqueakrun
+%%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueakrun
 %%DATADIR%%/%%VMVERSION%%/squeak
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/vm-display-X11
 %%DATADIR%%/%%VMVERSION%%/vm-display-null
@@ -25,6 +24,7 @@ bin/squeak
 %%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-basic.image.gz
 %%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.changes.gz
 %%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.image.gz
+%%DATADIR%%/SqueakPlugin.image.gz
 %%DATADIR%%/SqueakV3.sources
 %%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueakregister
 @dirrm %%DATADIR%%/%%VMVERSION%%

@@ -1,0 +1,23 @@
+--- platforms/unix/config/inisqueak.in.org	Mon Feb  6 15:10:05 2006
++++ platforms/unix/config/inisqueak.in	Mon Feb  6 15:10:58 2006
+@@ -99,7 +99,7 @@
+   exit 1
+ }
+ 
+-if ${test} \( -f squeak.image \) -a \( -f squeak.changes \) -a \( -e ${SOURCES} \)
++if ${test} \( -f squeak.image \) -a \( -e ${SOURCES} \)
+ then
+   if ${startup}; then
+     if test ! -x ${SQUEAK}; then
+@@ -200,7 +200,10 @@
+ 
+ install "ln -s"      "${imgdir}/${SOURCES}" " " "${SOURCES}"
+ install "gunzip -dc" "${imgdir}/${IMAGE}"   ">" "squeak.image"
+-install "gunzip -dc" "${imgdir}/${CHANGES}" ">" "squeak.changes"
++# For SqueakPlugin.image which don't have changes file.
++if test -e "${imgdir}/${CHANGES}"; then
++  install "gunzip -dc" "${imgdir}/${CHANGES}" ">" "squeak.changes"
++fi
+ 
+ if ${startup}; then
+   if test ! -x ${SQUEAK}; then
