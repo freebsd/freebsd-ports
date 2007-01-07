@@ -8,6 +8,8 @@ bin/gnubiff
 %%NLS%%share/locale/hu/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnubiff.mo
