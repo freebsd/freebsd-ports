@@ -52,7 +52,7 @@ DEINSTALL)
 		fi
 	fi
 
-	delete_account Dovecot dovecot:143 dovecot:143
+	delete_account Dovecot dovecot:${DOVECOT_UID:-143} dovecot:${DOVECOT_GID:-143}
 
 	base=/var/run/dovecot
 	DIRLIST="${base}/login ${base}"

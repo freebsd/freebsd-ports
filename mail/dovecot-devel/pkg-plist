@@ -3,36 +3,41 @@
 etc/dovecot-example.conf
 @exec if [ ! -f %D/etc/dovecot.conf ] ; then cp -p %D/%F %B/dovecot.conf; fi
 lib/dovecot/imap/lib01_acl_plugin.so
-lib/dovecot/imap/lib01_convert_plugin.so
-lib/dovecot/imap/lib01_quota_plugin.so
-lib/dovecot/imap/lib01_zlib_plugin.a
-lib/dovecot/imap/lib01_zlib_plugin.la
-lib/dovecot/imap/lib01_zlib_plugin.so
-lib/dovecot/imap/lib02_imap_quota_plugin.a
-lib/dovecot/imap/lib02_imap_quota_plugin.la
-lib/dovecot/imap/lib02_imap_quota_plugin.so
-lib/dovecot/imap/lib02_trash_plugin.so
+lib/dovecot/imap/lib02_lazy_expunge_plugin.so
+lib/dovecot/imap/lib10_quota_plugin.so
+lib/dovecot/imap/lib11_imap_quota_plugin.a
+lib/dovecot/imap/lib11_imap_quota_plugin.la
+lib/dovecot/imap/lib11_imap_quota_plugin.so
+lib/dovecot/imap/lib11_trash_plugin.so
+lib/dovecot/imap/lib20_convert_plugin.so
+lib/dovecot/imap/lib20_zlib_plugin.a
+lib/dovecot/imap/lib20_zlib_plugin.la
+lib/dovecot/imap/lib20_zlib_plugin.so
 @dirrm lib/dovecot/imap
-lib/dovecot/pop3/lib01_convert_plugin.so
-lib/dovecot/pop3/lib01_quota_plugin.so
-@dirrm lib/dovecot/pop3
 lib/dovecot/lda/lib01_acl_plugin.so
-lib/dovecot/lda/lib01_convert_plugin.so
-lib/dovecot/lda/lib01_quota_plugin.so
-lib/dovecot/lda/lib02_trash_plugin.so
+lib/dovecot/lda/lib10_quota_plugin.so
+lib/dovecot/lda/lib11_trash_plugin.so
+lib/dovecot/lda/lib20_convert_plugin.so
 @dirrm lib/dovecot/lda
+lib/dovecot/pop3/lib02_lazy_expunge_plugin.so
+lib/dovecot/pop3/lib10_quota_plugin.so
+lib/dovecot/pop3/lib20_convert_plugin.so
+@dirrm lib/dovecot/pop3
 lib/dovecot/lib01_acl_plugin.a
 lib/dovecot/lib01_acl_plugin.la
 lib/dovecot/lib01_acl_plugin.so
-lib/dovecot/lib01_convert_plugin.a
-lib/dovecot/lib01_convert_plugin.la
-lib/dovecot/lib01_convert_plugin.so
-lib/dovecot/lib01_quota_plugin.a
-lib/dovecot/lib01_quota_plugin.la
-lib/dovecot/lib01_quota_plugin.so
-lib/dovecot/lib02_trash_plugin.a
-lib/dovecot/lib02_trash_plugin.la
-lib/dovecot/lib02_trash_plugin.so
+lib/dovecot/lib02_lazy_expunge_plugin.a
+lib/dovecot/lib02_lazy_expunge_plugin.la
+lib/dovecot/lib02_lazy_expunge_plugin.so
+lib/dovecot/lib10_quota_plugin.a
+lib/dovecot/lib10_quota_plugin.la
+lib/dovecot/lib10_quota_plugin.so
+lib/dovecot/lib11_trash_plugin.a
+lib/dovecot/lib11_trash_plugin.la
+lib/dovecot/lib11_trash_plugin.so
+lib/dovecot/lib20_convert_plugin.a
+lib/dovecot/lib20_convert_plugin.la
+lib/dovecot/lib20_convert_plugin.so
 @dirrm lib/dovecot
 libexec/dovecot/checkpassword-reply
 %%LDA%%libexec/dovecot/deliver
