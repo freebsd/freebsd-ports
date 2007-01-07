@@ -604,6 +604,7 @@
     SUBDIR += libtool15
     SUBDIR += libukcprog
     SUBDIR += libunicode
+    SUBDIR += libuninum
     SUBDIR += libusb
     SUBDIR += libvanessa_adt
     SUBDIR += libvanessa_logger
