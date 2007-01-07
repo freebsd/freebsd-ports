@@ -1,9 +1,10 @@
-bin/digitizer
+bin/engauge
 %%DATADIR%%/lo16-app-digitizer.png
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/REGRESSION_TESTS
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/README
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/animation.bmp
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/animation.gif
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/animation.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/answerdiscretizing.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/answergridremoval.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/answerlinegraph.html
@@ -14,6 +15,7 @@ bin/digitizer
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/answerother.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/answerout.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/answerpointgraph.html
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/answerselectmode.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/commandlineoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/contextmenukonqueror.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/contextmenuwindows.html
@@ -61,6 +63,8 @@ bin/digitizer
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/gridremoveafter.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/gridremovebefore.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/pointmatchrequirements.html
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/pointmatchrequirements.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutorautolinegraph.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutorautolinegraph1.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutorautolinegraph10.png
@@ -104,6 +108,7 @@ bin/digitizer
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutormanmap5.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutormanmap6.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutormanmap7.png
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/tutormanmap8.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutormanpointgraph.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutormanpointgraph1.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/tutormanpointgraph2.png
@@ -116,9 +121,11 @@ bin/digitizer
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/windowscontexta.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/windowscontextb.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/windowscontextc.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/corners.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/gridlines.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/gridlines_log.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/gridlines_log.src
 %%PORTDOCS%%%%EXAMPLESDIR%%/inverse.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/inverse.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/linlog.jpg
@@ -127,6 +134,7 @@ bin/digitizer
 %%PORTDOCS%%%%EXAMPLESDIR%%/loglog.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/normdist.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/normdist.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pointmatch.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/pointplot.bmp
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarcircles.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarplot.jpg
