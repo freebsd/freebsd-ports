@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.0.48
+PORTVERSION=	1.0.53
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.cfdrc.com/pub/FOX/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	araujo@bsdmail.org
 COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
