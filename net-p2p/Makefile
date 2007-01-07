@@ -11,6 +11,7 @@
     SUBDIR += btpeer
     SUBDIR += btqueue
     SUBDIR += cdonkey
+    SUBDIR += createtorrent
     SUBDIR += ctorrent
     SUBDIR += dcd
     SUBDIR += dclib
