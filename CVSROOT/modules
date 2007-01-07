@@ -13352,6 +13352,7 @@ rubygem-rgl	ports/devel/rubygem-rgl
 rubygem-rscm	ports/devel/rubygem-rscm
 rubygem-rtags	ports/devel/rubygem-rtags
 rubygem-rubyforge	ports/devel/rubygem-rubyforge
+rubygem-scruffy	ports/graphics/rubygem-scruffy
 rubygem-snmp	ports/net-mgmt/rubygem-snmp
 rubygem-stream	ports/devel/rubygem-stream
 rubygem-syntax	ports/textproc/rubygem-syntax
