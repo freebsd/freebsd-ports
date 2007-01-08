@@ -570,6 +570,7 @@
     SUBDIR += squirrelmail-vlogin-plugin
     SUBDIR += squirrelmail-websearch-plugin
     SUBDIR += squirrelmail-wetteronline-plugin
+    SUBDIR += squirreloutlook
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
     SUBDIR += surblhost

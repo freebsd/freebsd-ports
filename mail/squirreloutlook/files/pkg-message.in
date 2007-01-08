@@ -1,0 +1,18 @@
+
+You now need to add an alias to apache's httpd.conf pointing to
+%%SQUIRRELDIR%% in order to access SquirrelOutlook from
+your web browser, or create a VirtualHost with DocumentRoot set
+to that directory.
+
+For SquirrelOutlook to work properly you will need to make sure the
+following option is set in your php.ini file:
+file_uploads = On
+
+If you have problems with SquirrelOutlook saying "you must login" after
+you just have, the following php.ini option may help:
+session.auto_start = 1
+
+In order to do your administrative configuration you need to 
+cd %%SQUIRRELDIR%% && ./configure
+SquirrelOutlook will not work until this has been done.
+
