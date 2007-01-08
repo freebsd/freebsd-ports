@@ -14120,6 +14120,7 @@ su2		ports/sysutils/su2
 subcalc		ports/net-mgmt/subcalc
 subclipse	ports/devel/subclipse
 subconv		ports/multimedia/subconv
+subtitleeditor	ports/multimedia/subtitleeditor
 subtitleripper	ports/multimedia/subtitleripper
 subtools	ports/multimedia/subtools
 subversion	ports/devel/subversion
