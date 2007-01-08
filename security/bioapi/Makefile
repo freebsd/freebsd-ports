@@ -7,7 +7,7 @@
 
 PORTNAME=	bioapi
 PORTVERSION=	1.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.qrivy.net/~michael/blua/bioapi/ \
 		http://shapeshifter.se/pub/bioapi/
@@ -17,6 +17,8 @@ COMMENT=	BioAPI library implementation
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+# Problems reported with higher optimization levels
+CONFIGURE_ENV=CFLAGS="${CFLAGS} -O"
 CONFIGURE_ARGS=	--localstatedir=/var/db/ --with-Qt-dir=no
 
 INSTALLS_SHLIB=	yes
