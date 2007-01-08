@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	date2
-PORTVERSION=	3.9
+PORTVERSION=	4.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	An alternative date class for Ruby
 
 USE_RUBY=	yes
