@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	0
+
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit (Unicode)
 

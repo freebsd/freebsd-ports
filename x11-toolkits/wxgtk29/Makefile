@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wx
-PORTVERSION=	2.8.0rc1
+PORTVERSION=	2.8.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
@@ -22,11 +22,12 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
 		expat.6:${PORTSDIR}/textproc/expat2\
 		mspack.1:${PORTSDIR}/archivers/libmspack
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gconf2
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
