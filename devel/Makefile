@@ -1915,6 +1915,7 @@
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rscm
+    SUBDIR += rubygem-rspec
     SUBDIR += rubygem-rtags
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-stream
