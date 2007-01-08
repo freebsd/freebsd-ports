@@ -446,7 +446,6 @@
     SUBDIR += proxsmtp
     SUBDIR += py-cyruslib
     SUBDIR += py-email
-    SUBDIR += py-email2
     SUBDIR += py-libgmail
     SUBDIR += py-milter
     SUBDIR += py-spambayes

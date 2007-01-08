@@ -700,7 +700,6 @@
     SUBDIR += ruby-net-geoip
     SUBDIR += ruby-nis
     SUBDIR += ruby-pcap
-    SUBDIR += ruby-radius
     SUBDIR += ruby-romp
     SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe

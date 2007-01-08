@@ -2693,3 +2693,5 @@ textproc/nfbtrans||2007-01-05|Has expired: Unfetchable
 comms/ecu||2007-01-05|Has expired: is unfetchable and project homepage disappeared
 net/citadel||2007-01-05|Has expired: http://www.FreeBSD.org/ports/portaudit/4c005a5e-2541-4d95-80a0-00c76919aa66.html
 multimedia/mtv||2007-01-05|Has expired: No new releases in the past 5 years
+mail/py-email2||2007-01-08|Has expired: Only usable python versions schedualed to expire
+net/ruby-radius||2007-01-08|Has expired: distfile disappeared from homepage
