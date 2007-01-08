@@ -233,7 +233,7 @@ PLIST_SUB+=	AO="@comment "
 .if defined(WITH_MDNS_APPLE)
 BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
 .endif
-EXCLUDE+=	dns_sd
+EXCLUDE+=	dnssd
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
 PLIST_SUB+=	MDNS_AVAHI=""
 .else
@@ -249,7 +249,7 @@ EXCLUDE+=	avahi
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else
-EXCLUDE+=	dns_sd
+EXCLUDE+=	dnssd
 PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
 .endif
