@@ -14012,6 +14012,7 @@ squirrelmail-tmda-plugin	ports/mail/squirrelmail-tmda-plugin
 squirrelmail-vlogin-plugin	ports/mail/squirrelmail-vlogin-plugin
 squirrelmail-websearch-plugin	ports/mail/squirrelmail-websearch-plugin
 squirrelmail-wetteronline-plugin	ports/mail/squirrelmail-wetteronline-plugin
+squirreloutlook	ports/mail/squirreloutlook
 squishdot	ports/www/squishdot
 squsq		ports/archivers/squsq
 sqwebmail	ports/mail/sqwebmail
