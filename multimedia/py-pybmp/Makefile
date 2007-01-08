@@ -8,7 +8,8 @@
 PORTNAME=	pyBMP
 PORTVERSION=	1.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://dev-1.borgforge.net/pyBMP/chrome/site/downloads/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
+		LOCAL/nivit/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
