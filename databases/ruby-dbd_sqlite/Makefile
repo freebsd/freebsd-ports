@@ -7,6 +7,7 @@
 
 PORTNAME=	dbd_sqlite
 PORTVERSION=	${RUBY_DBI_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	${RUBY_DBI_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_DBI_MASTER_SITE_SUBDIR}
@@ -34,7 +35,7 @@ DOCS_EN=	ext/${PORTNAME}/README
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
 
 post-patch:
-	${RUBY} -i- -pe 'gsub "/usr/local", "${LOCALBASE}"' \
+	${RUBY} -i- -pe "gsub 'dir_config \'sqlite\'', 'dir_config \'sqlite\', \'${LOCALBASE}\''" \
 		${WRKSRC}/ext/${PORTNAME}/extconf.rb
 
 post-install:
