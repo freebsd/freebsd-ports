@@ -11,6 +11,9 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
 		http://www.centralmiss.com/~matt/distfiles/
 
+PATCH_SITES=	http://tigerdyr.wheel.dk/ctwm-archive/att-1656/
+PATCHFILES=	01-diff
+
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	An extension to twm, with support for multiple virtual screens, etc
 
