@@ -7,8 +7,9 @@
 
 PORTNAME=	algotutor
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
+MASTER_SITES=	http://saturn.stu.edu.tw/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kevlo@FreeBSD.org
@@ -28,6 +29,7 @@ LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 		utilalgo
 
 post-patch:
+	${REINPLACE_CMD}  -e 's,#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/algotutor
 	${PERL} -pi -e "s'!!PREFIX!!'${PREFIX}'g" ${WRKSRC}/algotutor
 
 do-install:
