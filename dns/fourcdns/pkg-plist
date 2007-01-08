@@ -1,0 +1,20 @@
+bin/fourcdnsmgr6
+lib/libwx_base-2.6.so.0
+lib/libwx_base_net-2.6.so.0
+lib/libwx_base_xml-2.6.so.0
+lib/libwx_x11univ_adv-2.6.so.0
+lib/libwx_x11univ_core-2.6.so.0
+lib/libwx_x11univ_html-2.6.so.0
+lib/libwx_x11univ_media-2.6.so.0
+lib/libwx_x11univ_qa-2.6.so.0
+lib/libwx_x11univ_xrc-2.6.so.0
+%%PORTDOCS%%%%DOCSDIR%%/fourcdns.pdf
+zerocaloriedns/fourcdns
+zerocaloriedns/fourcdnsmgr6
+zerocaloriedns/index.htm
+zerocaloriedns/license.txt
+zerocaloriedns/wxWidgetsLicense.txt
+zerocaloriedns/wxWidgetsNotes.txt
+zerocaloriedns/zerocaloriedns.set
+@dirrm zerocaloriedns
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

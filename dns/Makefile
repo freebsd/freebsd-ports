@@ -41,6 +41,7 @@
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
     SUBDIR += firedns
+    SUBDIR += fourcdns
     SUBDIR += fpdns
     SUBDIR += geta
     SUBDIR += ghtool

@@ -1,0 +1,5 @@
+The Four Calorie DNS Server is a very simple dns server that can power a
+single one-ip-address domain.  It can handle SOA, NS, MX, A, and PTR
+requests.  The 1.1.0 version includes a nice X windows GUI for management.
+
+WWW: http://www.fourcalorieservers.com/
