@@ -1,0 +1,32 @@
+bin/subtitleeditor
+%%DESKTOPDIR%%/subtitleeditor.desktop
+%%DATADIR%%/dialog-change-fps.glade
+%%DATADIR%%/dialog-encodings-chooser.glade
+%%DATADIR%%/dialog-find-and-replace.glade
+%%DATADIR%%/dialog-move-subtitles.glade
+%%DATADIR%%/dialog-preferences.glade
+%%DATADIR%%/dialog-scale.glade
+%%DATADIR%%/dialog-script-properties.glade
+%%DATADIR%%/dialog-spell-checking.glade
+%%DATADIR%%/dialog-split.glade
+%%DATADIR%%/dialog-style-editor.glade
+%%DATADIR%%/menubar.xml
+%%DATADIR%%/subtitleeditor-icon.png
+%%DATADIR%%/subtitleeditor.glade
+%%DATADIR%%/subtitleeditor.png
+share/locale/ca/LC_MESSAGES/subtitleeditor.mo
+share/locale/cs/LC_MESSAGES/subtitleeditor.mo
+share/locale/es/LC_MESSAGES/subtitleeditor.mo
+share/locale/fr/LC_MESSAGES/subtitleeditor.mo
+share/locale/hu/LC_MESSAGES/subtitleeditor.mo
+share/locale/pl/LC_MESSAGES/subtitleeditor.mo
+share/locale/pt_BR/LC_MESSAGES/subtitleeditor.mo
+share/locale/pt_PT/LC_MESSAGES/subtitleeditor.mo
+@dirrmtry %%DESKTOPDIR%%
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrm %%DATADIR%%
