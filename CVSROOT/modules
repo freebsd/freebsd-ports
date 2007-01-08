@@ -12187,7 +12187,6 @@ py-durus	ports/devel/py-durus
 py-editobj	ports/graphics/py-editobj
 py-elementtree	ports/devel/py-elementtree
 py-email	ports/mail/py-email
-py-email2	ports/mail/py-email2
 py-empy		ports/textproc/py-empy
 py-enchant	ports/textproc/py-enchant
 py-epsilon	ports/devel/py-epsilon
@@ -13252,7 +13251,6 @@ ruby-qdbm	ports/databases/ruby-qdbm
 ruby-quixml	ports/textproc/ruby-quixml
 ruby-quota	ports/sysutils/ruby-quota
 ruby-racc	ports/devel/ruby-racc
-ruby-radius	ports/net/ruby-radius
 ruby-raspell	ports/textproc/ruby-raspell
 ruby-rbbr	ports/devel/ruby-rbbr
 ruby-rbison	ports/devel/ruby-rbison
