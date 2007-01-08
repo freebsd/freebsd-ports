@@ -59,6 +59,7 @@
     SUBDIR += flowscan
     SUBDIR += flowviewer
     SUBDIR += fprobe
+    SUBDIR += fruity
     SUBDIR += gps
     SUBDIR += grepcidr
     SUBDIR += grepip
