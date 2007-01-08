@@ -20,12 +20,6 @@ CONFLICTS+=	skype-devel-[0-9]*
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
-.ifdef WITH_NVIDIA_GL
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
-.endif
-
 USE_BZIP2=	yes
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
@@ -33,7 +27,15 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 RESTRICTED=	Redistribution not allowed yet.
 
+OPTIONS=	WITH_NVIDIA_GL "Enable Nvidia Support" off
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
