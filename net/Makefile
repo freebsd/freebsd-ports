@@ -247,6 +247,7 @@
     SUBDIR += ldapsdk
     SUBDIR += ldapsh
     SUBDIR += lft
+    SUBDIR += libbgpdump
     SUBDIR += libconnect
     SUBDIR += libdnet
     SUBDIR += libexosip2

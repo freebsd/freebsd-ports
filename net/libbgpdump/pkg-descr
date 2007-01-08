@@ -1,0 +1,15 @@
+This is libbgpdump - a C library designed to help with analyzing dump
+files produced by Zebra/Quagga or MRT.
+
+File formats:
+    - MRT RIB dump
+    - Zebra/Quagga format
+    - These may be gzipped and/or passed in through stdin
+
+Entry formats:
+    - MRT routing table dump entries
+    - Zebra/Quagga BGP records:
+          - BGP messages (OPEN, UPDATE, NOTIFY, KEEPALIVE)
+          - BGP state changes
+
+WWW: http://libdnet.sourceforge.net/
