@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -39,6 +39,10 @@ IGNORE=	is useless without a database. Please (re)run 'make config' and choose o
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
+MASTER_SITES+=	http://miwibox.org/:FAVICON
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		favicon.ico:FAVICON
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 .if defined(WITH_WEB)
@@ -115,11 +119,14 @@ post-patch:
 pre-install:
 .if !defined(WITH_WEB)
 	${RM} -R ${WRKSRC}/www
+.else
+	${CP} ${DISTDIR}/favicon.ico ${WRKSRC}/www
 .endif
 .if defined(WITHOUT_WEB_EXP)
 	${RM} -R ${WRKSRC}/www-exp
+.else
+	${CP} ${DISTDIR}/favicon.ico ${WRKSRC}/www-exp
 .endif
-
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
