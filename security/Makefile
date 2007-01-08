@@ -546,6 +546,7 @@
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt
     SUBDIR += pkcrack
+    SUBDIR += pkcs11-helper
     SUBDIR += pks
     SUBDIR += pktsuckers
     SUBDIR += poc

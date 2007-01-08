@@ -1,0 +1,16 @@
+include/pkcs11-helper-1.0/pkcs11.h
+include/pkcs11-helper-1.0/pkcs11h-certificate.h
+include/pkcs11-helper-1.0/pkcs11h-core.h
+include/pkcs11-helper-1.0/pkcs11h-data.h
+include/pkcs11-helper-1.0/pkcs11h-def.h
+include/pkcs11-helper-1.0/pkcs11h-engines.h
+include/pkcs11-helper-1.0/pkcs11h-openssl.h
+include/pkcs11-helper-1.0/pkcs11h-token.h
+include/pkcs11-helper-1.0/pkcs11h-version.h
+lib/libpkcs11-helper.a
+lib/libpkcs11-helper.la
+lib/libpkcs11-helper.so
+lib/libpkcs11-helper.so.1
+libdata/pkgconfig/libpkcs11-helper-1.pc
+share/aclocal/pkcs11-helper-1.m4
+@dirrm include/pkcs11-helper-1.0
