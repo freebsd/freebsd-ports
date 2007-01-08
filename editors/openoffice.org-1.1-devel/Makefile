@@ -91,8 +91,8 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 
 CODELINE=		645
 RELEASE_NR=		1.1.5
-MILESTONE=		60
-SNAPDATE=		20060114
+MILESTONE=		64
+SNAPDATE=		20061219
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
@@ -128,7 +128,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/SRX645_m${MILESTONE}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
