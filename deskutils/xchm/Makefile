@@ -17,7 +17,7 @@ COMMENT=	Windows HTML Help (.chm) viewer for UNIX
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib
 
 GNU_CONFIGURE=	yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
