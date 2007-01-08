@@ -1,0 +1,17 @@
+Bacula-web is a php based web program that provides you a summarized output
+of jobs that have already run. It obtains its information from your catalog
+database. Aside from a nice graphical display, it provides summaries of your
+jobs, as well as graphs of job usage. This is a fairly high level bacula
+management tool. Here are a few points that one user made concerning this
+important tool:
+
+- It is web-based so can be accessed from anywhere.
+- It is "read only" users can examine the state of the backups but not write
+to anything and therefore do no damage
+- It packs a phenomenal amount of information into a single web-page - that I
+credit as being very good design!
+
+The documentation for bacula-web can be found in a separate bacula-web
+document in the bacula-docs release.
+
+WWW: http://www.bacula.org/
