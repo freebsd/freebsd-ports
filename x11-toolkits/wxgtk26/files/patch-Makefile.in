@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Mar 21 11:39:27 2006
-+++ Makefile.in	Tue Mar 21 11:54:48 2006
+--- Makefile.in.orig	Wed Mar 22 05:42:05 2006
++++ Makefile.in	Tue Jan  9 00:08:38 2007
 @@ -24,6 +24,7 @@
  SONAME_FLAG = @SONAME_FLAG@
  STRIP = @STRIP@
@@ -17,11 +17,12 @@
 +	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)/$(TOOLCHAIN_FULLNAME)/wx
 +	(cd ./ ; $(INSTALL_DATA)  lib/wx/include/$(TOOLCHAIN_FULLNAME)/wx/setup.h $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)/$(TOOLCHAIN_FULLNAME)/wx)
 +
-+install-common: locale_install locale_msw_install
++install-common: locale_install
  	$(INSTALL_DIR) $(DESTDIR)$(datadir)/aclocal
- 	(cd $(srcdir) ; $(INSTALL_DATA)  wxwin.m4 $(DESTDIR)$(datadir)/aclocal)
+-	(cd $(srcdir) ; $(INSTALL_DATA)  wxwin.m4 $(DESTDIR)$(datadir)/aclocal)
++	(cd $(srcdir) ; $(INSTALL_DATA)  wxwin.m4 $(DESTDIR)$(datadir)/aclocal/wxwin$(WX_RELEASE_NODOT).m4)
  	$(INSTALL_DIR) $(DESTDIR)$(datadir)/bakefile/presets
- 	(cd $(srcdir)/build/bakefiles/wxpresets/presets/ ; $(INSTALL_DATA)  wx.bkl wx_unix.bkl wx_win32.bkl $(DESTDIR)$(datadir)/bakefile/presets)
+-	(cd $(srcdir)/build/bakefiles/wxpresets/presets/ ; $(INSTALL_DATA)  wx.bkl wx_unix.bkl wx_win32.bkl $(DESTDIR)$(datadir)/bakefile/presets)
 -	$(INSTALL_DIR) $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx
 -	for f in setup.h $(RCDEFS_H); do \
 -	if test ! -d $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx/`dirname $$f` ; then \
@@ -29,6 +30,7 @@
 -	fi; \
 -	$(INSTALL_DATA) ./lib/wx/include/$(TOOLCHAIN_FULLNAME)/wx//$$f $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx/$$f; \
 -	done
++	(cd $(srcdir)/build/bakefiles/wxpresets/presets/ ; for i in wx.bkl wx_unix.bkl wx_win32.bkl; do $(INSTALL_DATA) $$i $(DESTDIR)$(datadir)/bakefile/presets/wx$(WX_RELEASE_NODOT)$${i##wx}; done)
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)
  	for f in $(ALL_HEADERS); do \
  	if test ! -d $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/`dirname $$f` ; then \
@@ -43,3 +45,12 @@
  
  locale_install: 
  	$(INSTALL_DIR) $(DESTDIR)$(datadir)/locale
+@@ -9941,7 +9937,7 @@
+ 	$(INSTALL_DIR) $(DESTDIR)$(datadir)/locale/$$l ; \
+ 	$(INSTALL_DIR) $(DESTDIR)$(datadir)/locale/$$l/LC_MESSAGES ; \
+ 	if test -f $(srcdir)/locale/$$l.mo ; then \
+-	$(INSTALL_DATA) $(srcdir)/locale/$$l.mo $(DESTDIR)$(datadir)/locale/$$l/LC_MESSAGES/wxstd.mo ; \
++	$(INSTALL_DATA) $(srcdir)/locale/$$l.mo $(DESTDIR)$(datadir)/locale/$$l/LC_MESSAGES/wxstd$(WX_RELEASE_NODOT).mo ; \
+ 	fi ; \
+ 	done
+ 

@@ -52,7 +52,7 @@ PLIST=		${.CURDIR}/pkg-plist
 WXGTK_FLAVOR?=	gtk2
 
 .if ${WXGTK_FLAVOR} == "gtk2"
-PORTREVISION=	1
+PORTREVISION=	2
 CONFLICTS=	wxgtk2-contrib-devel-2.5.2*
 .endif
 

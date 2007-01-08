@@ -455,34 +455,33 @@ include/wx-2.6/wx/xtistrm.h
 include/wx-2.6/wx/xtixml.h
 include/wx-2.6/wx/zipstrm.h
 include/wx-2.6/wx/zstream.h
-share/aclocal/wxwin.m4
-share/bakefile/presets/wx.bkl
-share/bakefile/presets/wx_unix.bkl
-share/bakefile/presets/wx_win32.bkl
-share/locale/ca/LC_MESSAGES/wxstd.mo
-share/locale/cs/LC_MESSAGES/wxstd.mo
-share/locale/da/LC_MESSAGES/wxstd.mo
-share/locale/de/LC_MESSAGES/wxstd.mo
-share/locale/el/LC_MESSAGES/wxstd.mo
-share/locale/es/LC_MESSAGES/wxstd.mo
-share/locale/fi/LC_MESSAGES/wxstd.mo
-share/locale/fr/LC_MESSAGES/wxstd.mo
-share/locale/hu/LC_MESSAGES/wxstd.mo
-share/locale/id/LC_MESSAGES/wxstd.mo
-share/locale/it/LC_MESSAGES/wxmsw.mo
-share/locale/it/LC_MESSAGES/wxstd.mo
-share/locale/ja/LC_MESSAGES/wxstd.mo
-share/locale/nl/LC_MESSAGES/wxstd.mo
-share/locale/pl/LC_MESSAGES/wxstd.mo
-share/locale/ru/LC_MESSAGES/wxstd.mo
-share/locale/sl/LC_MESSAGES/wxstd.mo
-share/locale/sv/LC_MESSAGES/wxstd.mo
-share/locale/tr/LC_MESSAGES/wxstd.mo
-share/locale/uk/LC_MESSAGES/wxstd.mo
-share/locale/zh_CN/LC_MESSAGES/wxstd.mo
-share/locale/zh_TW/LC_MESSAGES/wxstd.mo
-@dirrm share/bakefile/presets
-@dirrm share/bakefile
+share/aclocal/wxwin26.m4
+share/bakefile/presets/wx26.bkl
+share/bakefile/presets/wx26_unix.bkl
+share/bakefile/presets/wx26_win32.bkl
+share/locale/ca/LC_MESSAGES/wxstd26.mo
+share/locale/cs/LC_MESSAGES/wxstd26.mo
+share/locale/da/LC_MESSAGES/wxstd26.mo
+share/locale/de/LC_MESSAGES/wxstd26.mo
+share/locale/el/LC_MESSAGES/wxstd26.mo
+share/locale/es/LC_MESSAGES/wxstd26.mo
+share/locale/fi/LC_MESSAGES/wxstd26.mo
+share/locale/fr/LC_MESSAGES/wxstd26.mo
+share/locale/hu/LC_MESSAGES/wxstd26.mo
+share/locale/id/LC_MESSAGES/wxstd26.mo
+share/locale/it/LC_MESSAGES/wxstd26.mo
+share/locale/ja/LC_MESSAGES/wxstd26.mo
+share/locale/nl/LC_MESSAGES/wxstd26.mo
+share/locale/pl/LC_MESSAGES/wxstd26.mo
+share/locale/ru/LC_MESSAGES/wxstd26.mo
+share/locale/sl/LC_MESSAGES/wxstd26.mo
+share/locale/sv/LC_MESSAGES/wxstd26.mo
+share/locale/tr/LC_MESSAGES/wxstd26.mo
+share/locale/uk/LC_MESSAGES/wxstd26.mo
+share/locale/zh_CN/LC_MESSAGES/wxstd26.mo
+share/locale/zh_TW/LC_MESSAGES/wxstd26.mo
+@dirrmtry share/bakefile/presets
+@dirrmtry share/bakefile
 @dirrm include/wx-2.6/wx/xrc
 @dirrm include/wx-2.6/wx/xml
 @dirrm include/wx-2.6/wx/unix
