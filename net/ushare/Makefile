@@ -7,7 +7,7 @@
 
 PORTNAME=	ushare
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	upnp.2:${PORTSDIR}/devel/upnp
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config \
 		iconv:${PORTSDIR}/converters/libiconv
 
-PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
+PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample etc/rc.d/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
 USE_BZIP2=	yes
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib --with-libintl-prefix=${
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${CP} ${WRKSRC}/scripts/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${PORTNAME} ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
