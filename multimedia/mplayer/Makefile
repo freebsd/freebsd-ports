@@ -84,7 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -100,6 +100,9 @@ DISTNAME=	MPlayer-1.0rc1
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
+
+PATCH_SITES=	http://www.mplayerhq.hu/MPlayer/patches/
+PATCHFILES+=	asmrules_fix_20061231.diff
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
@@ -165,6 +168,7 @@ OPTIONS+=	XANIM "Enable xanim DLL support" off
 OPTIONS+=	XVID "Enable XVID video codec support" on
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
+OPTIONS+=	SMB "Enable Samba input support" off
 OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
 OPTIONS+=	LIRC "Enable lirc support" off
 OPTIONS+=	LIBCDIO "Enable libcdio support" off
@@ -469,6 +473,13 @@ RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMe
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 .else
 CONFIGURE_ARGS+=	--disable-live
+.endif
+
+.if defined(WITH_SMB)
+CONFIGURE_ARGS+=	--enable-smb
+LIB_DEPENDS+=		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+.else
+CONFIGURE_ARGS+=	--disable-smb
 .endif
 
 .if !defined(WITHOUT_XVID)
