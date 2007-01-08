@@ -69,6 +69,7 @@ tinderbox/scripts/upgrade/mig_shlib.sh
 %%WEB_EXP%%tinderbox/scripts/www-exp/inc_ds.php.dist
 %%WEB_EXP%%tinderbox/scripts/www-exp/inc_tinderbox.php.dist
 %%WEB_EXP%%tinderbox/scripts/www-exp/index.php
+%%WEB_EXP%%tinderbox/scripts/www-exp/favicon.ico
 %%WEB_EXP%%tinderbox/scripts/www-exp/module/module.php
 %%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleBuildPorts.php
 %%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleBuilds.php
@@ -104,6 +105,7 @@ tinderbox/scripts/upgrade/mig_shlib.sh
 %%WEB%%tinderbox/scripts/www/inc_ds.php.dist
 %%WEB%%tinderbox/scripts/www/inc_tinderbox.php.dist
 %%WEB%%tinderbox/scripts/www/index.php
+%%WEB%%tinderbox/scripts/www/favicon.ico
 %%WEB%%tinderbox/scripts/www/lastbuilds.php
 %%WEB%%tinderbox/scripts/www/showbuild.php
 %%WEB%%tinderbox/scripts/www/showport.php
