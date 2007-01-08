@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libuninum
-PORTVERSION=	1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://billposer.org/Software/Downloads/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -22,6 +23,7 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|uninum/||' ${WRKSRC}/uninum.c ${WRKSRC}/numconv.c
