@@ -1497,7 +1497,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
+.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK) || defined(USE_TK_BUILD)
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 
@@ -2011,7 +2011,7 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
+.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK) || defined(USE_TK_BUILD)
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 

@@ -13,13 +13,15 @@ Tcl_Include_MAINTAINER=	ports@FreeBSD.org
 #				  different TCL versions the version can be specified directly.
 #				  If version is not specified (USE_TCL=yes) then the latest
 #				  version is used (8.4 currently).
-#				  Available values are: 84, 83, 82, 81 and 80.
+#				  Available values are: 84, 84-thread, 83, 82, 81 and 80.
+# USE_TCL_BUILD	- Build time dependency on tcl. Same semantics as USE_TCL.
 #
 # USE_TK		- Depend on tk to run. In case of incompatible APIs of different
 #				  TK versions the version can be specified directly. If version
 #				  is not specified (USE_TK=yes) then the latest version is
 #				  used (8.4 currently).
 #				  Available values are: 84, 83, 82, 81 and 80.
+# USE_TK_BUILD	- Build time dependency on tk. Same semantics as USE_TK.
 ##
 # TCL_LIBDIR	- Path where tcl libraries can be found
 #
@@ -46,7 +48,11 @@ Tcl_Include_MAINTAINER=	ports@FreeBSD.org
 
 .if defined(USE_TCL) || defined(USE_TCL_BUILD)
 
-_TCL_VERSIONS=	84 83 82 81 80
+_TCL_VERSIONS=	84 84-thread 83 82 81 80
+
+.if defined(USE_TCL)
+_RUN=		yes
+.endif
 
 .if defined(USE_TCL_BUILD)
 USE_TCL=	${USE_TCL_BUILD}
@@ -57,7 +63,7 @@ _BUILD=		yes
 USE_TCL=	84
 .endif
 
-TCL_VER:=	${USE_TCL:S/8/8./}
+TCL_VER:=	${USE_TCL:S/8/8./:S/-thread//}
 
 # Special case
 .if ${USE_TCL} == "81"
@@ -66,11 +72,12 @@ USE_TCL=	tcl81-thread
 
 _FOUND=		no
 .for ver in ${_TCL_VERSIONS}
-. if ${USE_TCL} == ${ver}
+. if ${USE_TCL} == "${ver}"
 _FOUND=		yes
 .  if defined(_BUILD)
 BUILD_DEPENDS+=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${USE_TCL}
-.  else
+.  endif
+.  if defined(_RUN)
 RUN_DEPENDS+=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${USE_TCL}
 .  endif
 TCL_INCLUDEDIR=	${LOCALBASE}/include/tcl${TCL_VER}
@@ -82,11 +89,20 @@ TCLSH=			${LOCALBASE}/bin/tclsh${TCL_VER}
 .if ${_FOUND} == "no"
 IGNORE=		Unknown TCL version specified: ${USE_TCL}
 .endif
-.endif # defined(USE_TCL)
+.endif # defined(USE_TCL) || defined(USE_TCL_BUILD)
 
-.if defined(USE_TK)
+.if defined(USE_TK) || defined(USE_TK_BUILD)
 
 _TK_VERSIONS=	84 83 82 81 80
+
+.if defined(USE_TK)
+_TK_RUN=	yes
+.endif
+
+.if defined(USE_TK_BUILD)
+USE_TK=		${USE_TK_BUILD}
+_TK_BUILD=	yes
+.endif
 
 .if ${USE_TK} == "yes"
 USE_TK=		84
@@ -102,7 +118,12 @@ _FOUND=		no
 .for ver in ${_TK_VERSIONS}
 . if ${USE_TK} == ${ver}
 _FOUND=		yes
+.  if defined(_TK_BUILD)
+BUILD_DEPENDS+=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${USE_TK}
+.endif
+.  if defined(_TK_RUN)
 RUN_DEPENDS+=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${USE_TK}
+.endif
 TCL_INCLUDEDIR=	${LOCALBASE}/include/tcl${TK_VER}
 TCL_LIBDIR=		${LOCALBASE}/lib/tcl${TK_VER}
 TK_INCLUDEDIR=	${LOCALBASE}/include/tk${TK_VER}
@@ -115,7 +136,7 @@ WISH=			${LOCALBASE}/bin/wish${TK_VER}
 .if ${_FOUND} == "no"
 IGNORE=		Unknown TK version specified: ${USE_TK}
 .endif
-.endif # defined(USE_TK)
+.endif # defined(USE_TK) || defined(USE_TK_BUILD)
 
 .endif # !defined(_POSTMKINCLUDED) && !defined(Tcl_Pre_Include)
 
