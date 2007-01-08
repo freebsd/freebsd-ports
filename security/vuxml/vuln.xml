@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2ff68b2-9f29-11db-a4e4-0211d87675b7">
+    <topic>mplayer -- buffer overflow in the code for RealMedia RTSP streams.</topic>
+    <affects>
+      <package>
+        <name>mplayer</name>
+        <name>mplayer-esound</name>
+        <name>mplayer-gtk</name>
+        <name>mplayer-gtk2</name>
+        <name>mplayer-gtk-esound</name>
+        <name>mplayer-gtk2-esound</name>
+        <range><lt>0.99.10_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.mplayerhq.hu/design7/news.html">
+	<p>A potential buffer overflow was found in the code used to handle
+	RealMedia RTSP streams. When checking for matching asm rules, the code
+	stores the results in a fixed-size array, but no boundary checks are
+	performed. This may lead to a buffer overflow if the user is tricked
+	into connecting to a malicious server. Since the attacker can not write
+	arbitrary data into the buffer, creating an exploit is very hard; but a
+	DoS attack is easily made.
+	A fix for this problem was committed to SVN on Sun Dec 31 13:27:53 2006
+	UTC as r21799. The fix involves three files: stream/realrtsp/asmrp.c,
+	stream/realrtsp/asmrp.h and stream/realrtsp/real.c.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/107217</freebsdpr>
+      <cvename>CVE-2006-6172</cvename>
+      <url>http://www.mplayerhq.hu/design7/news.html</url>
+    </references>
+    <dates>
+      <discovery>2006-12-31</discovery>
+      <entry>2007-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="37e30313-9d8c-11db-858b-0060084a00e5">
     <topic>fetchmail -- crashes when refusing a message bound for an MDA</topic>
     <affects>
