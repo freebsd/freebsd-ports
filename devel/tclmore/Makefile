@@ -14,13 +14,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	More TCL commands
 
-# USE_TCL only provides run depend. hack around
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_TCL=	yes
+USE_TCL_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}
 
 INFO=		${PORTNAME}

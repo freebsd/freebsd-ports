@@ -16,13 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
-BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${USE_TCL} \
-		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${USE_TK}
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_TCL=	84
+USE_TCL_BUILD=	84
 USE_TK=		84
+USE_TK_BUILD=	84
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

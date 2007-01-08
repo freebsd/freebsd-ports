@@ -15,12 +15,11 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	A Tcl interface to the Cyrus SASLv2 library
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-# USE_TCL hack
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 USE_TCL=	yes
-INSTALLS_SHLIB=	yes
+USE_TCL_BUILD=	yes
 
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
