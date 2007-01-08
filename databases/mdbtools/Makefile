@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk	# To build man-pages
+# To build man-pages
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 USE_BISON=	yes
 USE_GNOME=	glib20
