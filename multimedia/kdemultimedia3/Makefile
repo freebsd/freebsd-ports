@@ -19,7 +19,6 @@ COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 CONFLICTS=	juk-1*
 
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
-		akode:${PORTSDIR}/audio/akode \
 		FLAC:${PORTSDIR}/audio/flac \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		ogg:${PORTSDIR}/audio/libogg \
@@ -56,7 +55,10 @@ PLIST_SUB+=	THEORA=""
 #.endif
 
 .if !defined(WITHOUT_AKODE)
+LIB_DEPENDS+=	akode:${PORTSDIR}/audio/akode
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode.so:${PORTSDIR}/audio/akode
+.else
+DO_NOT_COMPILE+=akode_artsplugin
 .endif
 
 .if defined(WITH_XINE)
