@@ -10,7 +10,7 @@ PORTNAME?=	vim
 PATCHLEVEL=	178
 PORTVERSION=	7.0.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -165,7 +165,7 @@ post-extract:
 .if defined(WITH_EXUBERANT_CTAGS)
 CTAGS_CMD=	exctags -R .
 .else
-CTAGS_CMD=	${FIND} . -type f|${XARGS} ctags
+CTAGS_CMD=	${FIND} . -type f \\|${XARGS} ctags
 .endif
 
 post-patch:
