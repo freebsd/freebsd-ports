@@ -8,9 +8,8 @@
 PORTNAME=	xlreader
 PORTVERSION=	0.9.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.giffin.org/download/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
