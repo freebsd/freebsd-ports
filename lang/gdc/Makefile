@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.19
-PORTREVISION=	2
+PORTVERSION=	0.21
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
@@ -51,7 +50,7 @@ TARGET_GCC=	3.4	# default
 
 .if ${TARGET_GCC} == 4.0
 GCC_VERSION=	4.0.4
-GCC_REVISION=	20060720
+GCC_REVISION=	20061228
 GCC_VERSIONSTRING=	4.0-${GCC_REVISION}
 GCC_MASTER_SITE_SUBDIR=	snapshots/${GCC_VERSIONSTRING}
 .else
@@ -118,6 +117,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gcc/gdc ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/gcc/cc1d ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${GCCDIR}/d/dmd-script ${PREFIX}/bin/gdmd
+.ifndef NOPORTDOCS
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${GCCDIR}/d/GDC.html ${DOCSDIR}
+	${INSTALL_DATA} ${GCCDIR}/d/README ${DOCSDIR}/README.gdc
+.endif
 	${INSTALL_MAN} ${GCCDIR}/d/gdc.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${GCCDIR}/d/dmd-script.1 ${PREFIX}/man/man1/gdmd.1
 	@(cd ${WRKSRC} && ${GMAKE} install-target-libphobos)
