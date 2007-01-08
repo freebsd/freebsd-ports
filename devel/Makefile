@@ -1900,6 +1900,7 @@
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
+    SUBDIR += ruby-wirble
     SUBDIR += ruby-zoom
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-builder
