@@ -14963,6 +14963,7 @@ vi-aspell	ports/vietnamese/aspell
 vi-kde3-i18n	ports/vietnamese/kde3-i18n
 vi-libviet	ports/vietnamese/libviet
 vi-unicode-uhoai	ports/vietnamese/unicode-uhoai
+vi-vietunicode-hannom	ports/vietnamese/vietunicode-hannom
 vi-vietunicode-web1	ports/vietnamese/vietunicode-web1
 vi-vis2u	ports/vietnamese/vis2u
 vi-vn7to8	ports/vietnamese/vn7to8
