@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://free.top.bg/tcl/eggcreator/ \
 		http://www.oook.cz/bsd/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Eggdrop.conf creator
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
