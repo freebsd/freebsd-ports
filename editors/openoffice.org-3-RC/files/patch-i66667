@@ -129,7 +129,7 @@
          buf.append( 'E' );
          
          OString symName( buf.makeStringAndClear() );
-+#if __FreeBSD_version < 700022
++#if __FreeBSD_version < 700022  /* #i22253# */
          rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
 +#else
 +        rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
