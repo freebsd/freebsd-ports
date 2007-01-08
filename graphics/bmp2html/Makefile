@@ -10,8 +10,7 @@ PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/ \
-		http://www.dasfisk.dk/bmp2html/
+		http://energy.critical.ch/distfiles/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org
