@@ -1,0 +1,15 @@
+100% Viet Unicode & Viet Phan/Pali-Sanskrit compatible
+
+PURPOSE
+-------
+Provide a base for displaying Vietnamese on the Internet and documentations.
+
+FEATURES
+--------
+* 134 Vietnamese Glyphs per Unicode
+* 38 Pali-Sanskrit Glyphs per Unicode
+* float marks
+* euro & VN currency symbol
+* Buddhist wheels (EE80 & EE81)
+
+WWW: http://vietunicode.sourceforge.net/
