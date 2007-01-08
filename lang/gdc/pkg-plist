@@ -5,13 +5,10 @@ include/d/%%GCC_VER%%/etc/gamma.d
 include/d/%%GCC_VER%%/etc/c/zlib.d
 include/d/%%GCC_VER%%/etc/c/zlib/crc32.h
 include/d/%%GCC_VER%%/etc/c/zlib/deflate.h
-include/d/%%GCC_VER%%/etc/c/zlib/infblock.h
-include/d/%%GCC_VER%%/etc/c/zlib/infcodes.h
 include/d/%%GCC_VER%%/etc/c/zlib/inffast.h
 include/d/%%GCC_VER%%/etc/c/zlib/inffixed.h
 include/d/%%GCC_VER%%/etc/c/zlib/inflate.h
 include/d/%%GCC_VER%%/etc/c/zlib/inftrees.h
-include/d/%%GCC_VER%%/etc/c/zlib/infutil.h
 include/d/%%GCC_VER%%/etc/c/zlib/trees.h
 include/d/%%GCC_VER%%/etc/c/zlib/zconf.h
 include/d/%%GCC_VER%%/etc/c/zlib/zconf.in.h
@@ -28,11 +25,13 @@ include/d/%%GCC_VER%%/gcc/unwind.d
 include/d/%%GCC_VER%%/std/array.d
 include/d/%%GCC_VER%%/std/asserterror.d
 include/d/%%GCC_VER%%/std/base64.d
+include/d/%%GCC_VER%%/std/bind.d
 include/d/%%GCC_VER%%/std/bitarray.d
 include/d/%%GCC_VER%%/std/boxer.d
 include/d/%%GCC_VER%%/std/compiler.d
 include/d/%%GCC_VER%%/std/conv.d
 include/d/%%GCC_VER%%/std/cover.d
+include/d/%%GCC_VER%%/std/cpuid.d
 include/d/%%GCC_VER%%/std/cstream.d
 include/d/%%GCC_VER%%/std/ctype.d
 include/d/%%GCC_VER%%/std/date.d
@@ -56,6 +55,7 @@ include/d/%%GCC_VER%%/std/perf.d
 include/d/%%GCC_VER%%/std/process.d
 include/d/%%GCC_VER%%/std/random.d
 include/d/%%GCC_VER%%/std/regexp.d
+include/d/%%GCC_VER%%/std/signals.d
 include/d/%%GCC_VER%%/std/socket.d
 include/d/%%GCC_VER%%/std/socketstream.d
 include/d/%%GCC_VER%%/std/stdarg.d
@@ -67,6 +67,8 @@ include/d/%%GCC_VER%%/std/switcherr.d
 include/d/%%GCC_VER%%/std/syserror.d
 include/d/%%GCC_VER%%/std/system.d
 include/d/%%GCC_VER%%/std/thread.d
+include/d/%%GCC_VER%%/std/traits.d
+include/d/%%GCC_VER%%/std/typetuple.d
 include/d/%%GCC_VER%%/std/uni.d
 include/d/%%GCC_VER%%/std/uri.d
 include/d/%%GCC_VER%%/std/utf.d
@@ -74,6 +76,7 @@ include/d/%%GCC_VER%%/std/zip.d
 include/d/%%GCC_VER%%/std/zlib.d
 include/d/%%GCC_VER%%/std/c/dirent.d
 include/d/%%GCC_VER%%/std/c/fenv.d
+include/d/%%GCC_VER%%/std/c/locale.d
 include/d/%%GCC_VER%%/std/c/math.d
 include/d/%%GCC_VER%%/std/c/process.d
 include/d/%%GCC_VER%%/std/c/stdarg.d
@@ -94,6 +97,7 @@ include/d/%%GCC_VER%%/std/c/skyos/compat.d
 include/d/%%GCC_VER%%/std/c/skyos/skyos.d
 include/d/%%GCC_VER%%/std/c/unix/unix.d
 include/d/%%GCC_VER%%/std/c/windows/com.d
+include/d/%%GCC_VER%%/std/c/windows/stat.d
 include/d/%%GCC_VER%%/std/c/windows/windows.d
 include/d/%%GCC_VER%%/std/c/windows/winsock.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_AC.d
@@ -152,6 +156,8 @@ include/d/%%GCC_VER%%/%%CONF_TARGET%%/gcc/configunix.d
 include/d/%%GCC_VER%%/%%CONF_TARGET%%/phobos-ver-syms
 lib/libgphobos.a
 lib/libgphobos.spec
+%%PORTDOCS%%%%DOCSDIR%%/GDC.html
+%%PORTDOCS%%%%DOCSDIR%%/README.gdc
 @dirrm include/d/%%GCC_VER%%/etc/c/zlib
 @dirrm include/d/%%GCC_VER%%/etc/c
 @dirrm include/d/%%GCC_VER%%/etc
@@ -170,3 +176,4 @@ lib/libgphobos.spec
 @dirrm include/d/%%GCC_VER%%/%%CONF_TARGET%%
 @dirrm include/d/%%GCC_VER%%
 @dirrm include/d
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
