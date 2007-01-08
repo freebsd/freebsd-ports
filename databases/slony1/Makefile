@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.5
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1202/:main \
-		http://pgfoundry.org/frs/download.php/1203/:docs
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1211/:main \
+		http://pgfoundry.org/frs/download.php/1212/:docs
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main \
 		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}:docs
 
