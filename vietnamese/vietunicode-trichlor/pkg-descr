@@ -1,0 +1,20 @@
+100% Viet Unicode compatible
+
+FEATURES
+--------
+* 134 Vietnamese Glyphs per Unicode
+* 38 Pali-Sanskrit Glyphs per Unicode
+* float marks
+* euro & VN currency symbol
+* Buddhist wheels (EE80 & EE81)
+
+Font:
+ * VU Anh Minh  (normal, bold, italic, bolditalic)
+ * VU Heo May   (normal, bold, italic, bolditalic)
+ * VU Hoang Yen   (normal, bold, italic, bolditalic)
+ * VU Minh Quan   (normal, bold, italic, bolditalic)
+ * VU Phuong Thao   (normal, bold, italic, bolditalic)
+ * VU Tha Huong   (normal, bold, italic, bolditalic)
+ * VU U Hoai   (normal, bold, italic, bolditalic)
+
+WWW: http://vietunicode.sourceforge.net/
