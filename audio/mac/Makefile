@@ -1,28 +1,24 @@
-# New ports collection makefile for:   mac
-# Date created:        8 Aug 2004
-# Whom:                dieringe
+# New ports collection makefile for:	mac
+# Date created:		8 Aug 2004
+# Whom:			dieringe
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mac
-PORTVERSION=	3.99.4.4
-PORTREVISION=	1
+PORTVERSION=	3.99.4.5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mac-port
-DISTNAME=	${PORTNAME}-3.99-u4-b4
+MASTER_SITES=	SF/mac-port
+DISTNAME=	${PORTNAME}-3.99-u4-b5
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Monkey's Audio lossless audio (de)compressor
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Monkey's Audio lossless codec
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
-USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-backward
-
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--disable-static
 
 .include <bsd.port.pre.mk>
 
@@ -31,6 +27,9 @@ IGNORE=		does not compile on 4.x due to missing multibyte string functions in li
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-s -O3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
+#	@${REINPLACE_CMD} -e '/GetInfo/s|intptr_t|long|g' ${WRKSRC}/src/MACLib/*.*
+#	@${REINPLACE_CMD} -e 's|wcsnicmp|wcsncmp|g;s|wcsicmp|wcscmp|g;s|_wcsicmp|wcscmp|g;s|\.__pos||g' \
+#		${WRKSRC}/src/MACLib/*.* ${WRKSRC}/src/Shared/*.*
 
 .include <bsd.port.post.mk>
