@@ -22,7 +22,7 @@ MAN3=		${PORTNAME:S/-/::/g}.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	requires perl from ports
+IGNORE=	requires at least Perl 5.8.  Please install lang/perl58 and try again
 .endif
 
 .include <bsd.port.post.mk>
