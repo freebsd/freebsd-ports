@@ -2988,6 +2988,7 @@ frost		ports/net-p2p/frost
 frotz		ports/games/frotz
 frox		ports/ftp/frox
 frozenbubble	ports/games/frozenbubble
+fruity		ports/net-mgmt/fruity
 fsbackup	ports/sysutils/fsbackup
 fsh		ports/security/fsh
 fsmgenerator	ports/devel/fsmgenerator
