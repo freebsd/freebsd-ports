@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynagen
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dyna-gen
@@ -19,6 +19,7 @@ RUN_DEPENDS=	dynamips:${PORTSDIR}/emulators/dynamips
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 ALL_TARGET=	# empty
+USE_GCC=	3.4+
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dynagen ${PREFIX}/bin

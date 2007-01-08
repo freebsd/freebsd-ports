@@ -3,7 +3,7 @@
 @@ -32,7 +32,7 @@
  
  # Constants
- VERSION = '0.8.2.112806'
+ VERSION = '0.8.3.123106'
 -CONFIGSPECPATH = [ "/usr/share/dynagen", "/usr/local/share" ]
 +CONFIGSPECPATH = [ "/usr/local/share/dynagen", "/usr/share/dynagen", "/usr/local/share" ]
  CONFIGSPEC = 'configspec'
