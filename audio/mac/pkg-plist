@@ -1,13 +1,4 @@
 bin/mac
-include/mac/config.h
-include/mac/All.h
-include/mac/GlobalFunctions.h
-include/mac/ID3Genres.h
-include/mac/IO.h
-include/mac/SmartPtr.h
-include/mac/StdLibFileIO.h
-include/mac/NoWindows.h
-include/mac/CharacterHelper.h
 include/mac/APECompress.h
 include/mac/APECompressCore.h
 include/mac/APECompressCreate.h
@@ -16,11 +7,20 @@ include/mac/APEHeader.h
 include/mac/APEInfo.h
 include/mac/APELink.h
 include/mac/APETag.h
+include/mac/All.h
+include/mac/CharacterHelper.h
+include/mac/CircleBuffer.h
+include/mac/GlobalFunctions.h
+include/mac/ID3Genres.h
+include/mac/IO.h
 include/mac/MACLib.h
 include/mac/MACProgressHelper.h
 include/mac/MACUtils.h
-@dirrm include/mac
-lib/libmac.a
+include/mac/NoWindows.h
+include/mac/SmartPtr.h
+include/mac/StdLibFileIO.h
+include/mac/config.h
 lib/libmac.la
 lib/libmac.so
 lib/libmac.so.2
+@dirrm include/mac
