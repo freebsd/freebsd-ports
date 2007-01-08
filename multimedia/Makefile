@@ -204,6 +204,7 @@
     SUBDIR += streamanalyze
     SUBDIR += streamdvd
     SUBDIR += subconv
+    SUBDIR += subtitleeditor
     SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += tcmplex-panteltje
