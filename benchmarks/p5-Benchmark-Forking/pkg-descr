@@ -1,0 +1,14 @@
+The Benchmark::Forking module changes the behavior of the standard
+Benchmark module, running each piece of code to be timed in a separate
+forked process. Because each child exits after running its timing loop,
+the computations it performs can't propogate back to affect subsequent
+test cases.
+
+This can make benchmark comparisons more accurate, because the
+separate test cases are mostly isolated from side-effects caused by
+the others. Benchmark scripts typically don't depend on those
+side-effects, so in most cases you can simply use or require this
+module at the top of your existing code without having to change
+anything else.
+
+WWW:	http://search.cpan.org/dist/Benchmark-Forking/
