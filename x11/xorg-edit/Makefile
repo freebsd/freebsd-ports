@@ -24,7 +24,7 @@ post-extract:
 	@${CHMOD} 644 ${BUILD_WRKSRC}/*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/wx-config/wxgtk2u-2.6-config/g' ${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's,wx-config,${WX_CONFIG},g' ${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
 	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
