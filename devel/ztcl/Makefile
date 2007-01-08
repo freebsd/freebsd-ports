@@ -15,13 +15,12 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	A zlib extension library for the Tcl
 
 LIB_DEPENDS=	tclmore0.7:${PORTSDIR}/devel/tclmore
-# USE_TCL only gives run dependency
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_TCL=	yes
+USE_TCL_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}
 
 INFO=		${PORTNAME} ${PORTNAME}-zlib

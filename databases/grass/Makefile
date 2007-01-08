@@ -26,8 +26,7 @@ MAINTAINER=	lrntct@gmail.com
 COMMENT=	An open source Geographical Information System (GIS)
 
 BUILD_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		gdal-config:${PORTSDIR}/graphics/gdal \
-		wish8.4:${PORTSDIR}/x11-toolkits/tk84
+		gdal-config:${PORTSDIR}/graphics/gdal
 RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		gdal-config:${PORTSDIR}/graphics/gdal
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
@@ -42,9 +41,10 @@ USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_XLIB=	yes
 USE_FREETYPE=	yes
-USE_TCL_BUILD=	yes
 USE_TCL=	yes
+USE_TCL_BUILD=	yes
 USE_TK=		yes
+USE_TK_BUILD=	yes
 PATCH_TCL_SCRIPTS=lib/init/init.sh
 PATCH_TK_SCRIPTS=lib/init/init.sh
 

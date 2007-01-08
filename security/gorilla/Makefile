@@ -14,12 +14,12 @@ MASTER_SITES=	http://www.fpx.de/fp/Software/Gorilla/download/
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Password Gorilla is cross-platform Password Manager
 
-BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${USE_TK}
 LIB_DEPENDS=	itcl.3:${PORTSDIR}/lang/itcl
 RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
 USE_TCL=	yes
 USE_TK=		yes
+USE_TK_BUILD=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
