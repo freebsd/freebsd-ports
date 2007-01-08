@@ -2834,6 +2834,7 @@ fortytwo	ports/graphics/fortytwo
 fortytwo-bdb	ports/databases/fortytwo-bdb
 fortytwo-encore	ports/devel/fortytwo-encore
 fotaq		ports/games/fotaq
+fourcdns	ports/dns/fourcdns
 fox10		ports/x11-toolkits/fox10
 fox12		ports/x11-toolkits/fox12
 fox14		ports/x11-toolkits/fox14
