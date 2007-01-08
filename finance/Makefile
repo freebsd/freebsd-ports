@@ -46,6 +46,7 @@
     SUBDIR += p5-Business-OnlinePayment-eSec
     SUBDIR += p5-Business-OnlinePayment-iAuthorizer
     SUBDIR += p5-Business-WorldPay-Junior
+    SUBDIR += p5-Finance-Amortization
     SUBDIR += p5-Finance-Currency-Convert
     SUBDIR += p5-Finance-Currency-Convert-WebserviceX
     SUBDIR += p5-Finance-Currency-Convert-XE

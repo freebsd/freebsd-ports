@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Finance/Amortization.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Amortization/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Amortization
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
+@dirrmtry %%SITE_PERL%%/Finance
