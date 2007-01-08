@@ -13365,6 +13365,7 @@ rubygem-rapt	ports/devel/rubygem-rapt
 rubygem-redcloth	ports/www/rubygem-redcloth
 rubygem-rgl	ports/devel/rubygem-rgl
 rubygem-rscm	ports/devel/rubygem-rscm
+rubygem-rspec	ports/devel/rubygem-rspec
 rubygem-rtags	ports/devel/rubygem-rtags
 rubygem-rubyforge	ports/devel/rubygem-rubyforge
 rubygem-scruffy	ports/graphics/rubygem-scruffy
