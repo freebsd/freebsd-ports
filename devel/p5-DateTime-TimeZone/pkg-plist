@@ -4,7 +4,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Accra.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Addis_Ababa.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Algiers.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Asmera.pm
+%%SITE_PERL%%/DateTime/TimeZone/Africa/Asmara.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Bamako.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Bangui.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Banjul.pm
@@ -268,7 +268,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Bermuda.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Canary.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Cape_Verde.pm
-%%SITE_PERL%%/DateTime/TimeZone/Atlantic/Faeroe.pm
+%%SITE_PERL%%/DateTime/TimeZone/Atlantic/Faroe.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Madeira.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Reykjavik.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/South_Georgia.pm
@@ -279,6 +279,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Broken_Hill.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Currie.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Darwin.pm
+%%SITE_PERL%%/DateTime/TimeZone/Australia/Eucla.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Hobart.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Lindeman.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Lord_Howe.pm
