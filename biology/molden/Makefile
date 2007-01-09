@@ -24,13 +24,10 @@ USE_XLIB=	yes
 
 RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 MAKEFILE=	${WRKSRC}/makefile
-MAKE_ENV=	FC=${F77}
+WANT_FORTRAN=	yes #dummy
+USE_GCC=	4.2+
 
 .include <bsd.port.pre.mk>
-
-.if !${OSVERSION} < 500039
-F77?=		f77
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/xwin.c

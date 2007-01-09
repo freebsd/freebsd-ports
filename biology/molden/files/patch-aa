@@ -22,7 +22,7 @@
 +.if ${OSVERSION} < 400005
 +FFLAGS += -Nn802 -Nx400
 +.else
-+FFLAGS += -Wno-globals -fno-globals
++FFLAGS += #-Wno-globals -fno-globals
 +.endif
 +LIBS =  -L${X11BASE}/lib -lX11 -lm
 +LDR = ${FC}
