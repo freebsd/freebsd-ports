@@ -253,6 +253,7 @@ share/applications/claws-mail.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manual/pl/claws-mail-manual.ps
 %%PORTDOCS%%%%DOCSDIR%%/manual/pl/claws-mail-manual.txt
+share/icons/hicolor/48x48/apps/claws-mail.png
 share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo

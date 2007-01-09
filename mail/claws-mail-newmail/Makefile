@@ -7,6 +7,7 @@
 
 PORTNAME=	newmail
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
