@@ -1995,6 +1995,7 @@ dotfile		ports/misc/dotfile
 dotproject	ports/www/dotproject
 dotter		ports/biology/dotter
 dovecot		ports/mail/dovecot
+dovecot-sieve	ports/mail/dovecot-sieve
 downloader	ports/ftp/downloader
 downtime	ports/sysutils/downtime
 doxygen		ports/devel/doxygen
