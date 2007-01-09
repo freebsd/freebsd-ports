@@ -20,18 +20,31 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	An electronic structure programs for high-accuracy computations
 
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack
+.else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
+.endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
-
+WANT_FORTRAN=	yes
+USE_GCC=	4.2+
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-fc=${FC} \
-		--with-lapack="-lalapack -lcblas" \
-		--with-blas="-lf77blas -latlas" \
+		--with-lapack="${LAPACK}" \
+		--with-blas="${BLAS}" \
 		--datadir=${PREFIX}/share/psi3 \
 		--with-libdirs="-L${LOCALBASE}/lib" \
 		--with-libs="-lcompat"
@@ -39,7 +52,7 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+BROKEN=		Does not compile on FreeBSD 4.x
 .endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)
