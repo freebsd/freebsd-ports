@@ -1,6 +1,6 @@
 # New ports collection makefile for:	squirrelmailoutlook
 # Date created: 			28 December 2006
-# Whom: 				Dennis Cabooter <freebsd at rootxs.org>
+# Whom: 				Dennis Cabooter <freebsd@rootxs.org>
 #
 # $FreeBSD$
 #
@@ -39,6 +39,8 @@ SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR}
 
 PORTDOCS=	*
+
+CONFLICTS=	squirrelmail-[0-9]*
 
 pre-everything::
 	@${ECHO_CMD} "Use WITH_LDAP to ensure PHP LDAP support is installed"
