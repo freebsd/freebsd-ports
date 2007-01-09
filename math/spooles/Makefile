@@ -7,7 +7,7 @@
 
 PORTNAME=	spooles
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.netlib.org/linalg/spooles/
 .ifdef WITH_MPI
@@ -31,16 +31,12 @@ BUILD_DEPENDS=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
 .endif
 
 USE_GMAKE=	yes	#BSD make gives problems here
-NO_WRKSUBDIR=	yes
-MAKEFILE=	makefile
-ALL_TARGET=	global
 
 .if defined(WITH_MPI)
 PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MT="@comment "
 CONFLICTS=	spooles-2*
 .else
-CFLAGS+=	${PTHREAD_CFLAGS}
 PLIST_SUB+=	MT=""
 PLIST_SUB+=	MPI="@comment "
 CONFLICTS=	spooles-mpich-2*
@@ -48,8 +44,10 @@ CONFLICTS=	spooles-mpich-2*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-CFLAGS+=        -fPIC
+.if ${ARCH} == "sparc64"
+PICFLAG?=	-fPIC
+.else
+PICFLAG?=	-fpic
 .endif
 
 .SILENT:
@@ -59,23 +57,36 @@ pre-everything::
 	${ECHO_MSG} "make WITH_MPI=yes for mpich version"
 .endif
 
-post-patch:
-.if defined(WITH_MPI)
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/Make.inc
-.else
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/Make.inc
-.endif
+do-extract:
+	${MKDIR} ${WRKSRC} ; cd ${WRKSRC} ; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
-post-build:
+post-patch:
+	${MKDIR} ${WRKSRC}_SHARED ; ${CP} -r ${WRKSRC}/* ${WRKSRC}_SHARED
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' -e 's+%%CFLAGS%%+${PTHREAD_CFLAGS} ${CFLAGS}+g;' -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' -e 's+%%CC%%+${CC}+g;' ${WRKSRC}/Make.inc
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' -e 's+%%CFLAGS%%+${CFLAGS} ${PTHREAD_CFLAGS} ${PICFLAG}+g;' -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' -e 's+%%CC%%+${CC}+g;' ${WRKSRC}_SHARED/Make.inc
+
+do-build:
 .if defined(WITH_MPI)
-	@(cd ${WRKSRC}/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
+	@(cd ${WRKSRC}/MPI; ${SETENV} ${MAKE_ENV} ${GMAKE} global -f makefile)
+	@(cd ${WRKSRC}/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} )
+	@(cd ${WRKSRC}_SHARED/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} global -f makefile)
+	@(cd ${WRKSRC}_SHARED/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
+	@(cd ${WRKSRC}_SHARED ; ld -Bshareable -o libspooles.so.1 -x -soname libspooles.so.1 --whole-archive spooles.a )
+
 .else
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} global -f makefile)
 	@(cd ${WRKSRC}/MT/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
+	@(cd ${WRKSRC}_SHARED; ${SETENV} ${MAKE_ENV} ${GMAKE} global -f makefile)
+	@(cd ${WRKSRC}_SHARED/MT/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
+	@(cd ${WRKSRC}_SHARED ; ld -Bshareable -o libspooles.so.1 -x -soname libspooles.so.1 --whole-archive spooles.a )
 .endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/spooles
-	${INSTALL} ${WRKSRC}/spooles.a ${PREFIX}/lib/libspooles.a
+	${INSTALL_DATA} ${WRKSRC}/spooles.a ${PREFIX}/lib/libspooles.a
+	${INSTALL_DATA} ${WRKSRC}_SHARED/libspooles.so.1 ${PREFIX}/lib
+	${LN} -sf libspooles.so.1 ${PREFIX}/lib/libspooles.so
+
 .if defined(WITH_MPI)
 	${MKDIR} ${PREFIX}/include/spooles/MPI
 	${INSTALL_DATA} ${WRKSRC}/MPI/*.h ${PREFIX}/include/spooles/MPI

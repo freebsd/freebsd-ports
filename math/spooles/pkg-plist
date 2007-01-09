@@ -99,6 +99,8 @@ include/spooles/misc.h
 include/spooles/misc/misc.h
 include/spooles/timings.h
 lib/libspooles.a
+lib/libspooles.so
+lib/libspooles.so.1
 %%MPI%%include/spooles/MPI/spoolesMPI.h
 %%MPI%%@dirrm include/spooles/MPI
 %%MT%%include/spooles/MT/spoolesMT.h
