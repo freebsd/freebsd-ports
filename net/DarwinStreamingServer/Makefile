@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	5.5.3
-PORTREVISION=	2
+PORTVERSION=	5.5.4
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
-#		DarwinStreamingSrvr5.5.3-Source.tar.
+#		DarwinStreamingSrvr5.5.4-Source.tar.
 DISTNAME=	DarwinStreamingSrvr${PORTVERSION}-Source
 EXTRACT_SUFX=	.tar
 
@@ -101,6 +101,7 @@ post-patch:
 		${WRKSRC}/qtpasswd.tproj/Makefile.POSIX					\
 		${WRKSRC}/MP3Broadcaster/Makefile.POSIX					\
 		${WRKSRC}/HTTPUtilitiesLib/Makefile.POSIX				\
+		${WRKSRC}/StreamingLoadTool/Makefile.POSIX				\
 		${WRKSRC}/CommonUtilitiesLib/Makefile.POSIX				\
 		${WRKSRC}/StreamingProxy.tproj/Makefile.POSIX				\
 		${WRKSRC}/StreamingServer.xcode/project.pbxproj				\

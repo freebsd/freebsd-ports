@@ -1,6 +1,7 @@
 bin/qtpasswd
 bin/MP3Broadcaster
 bin/PlaylistBroadcaster
+bin/StreamingLoadTool
 sbin/DarwinStreamingServer
 sbin/streamingadminserver.pl
 libexec/StreamingServerModules/QTSSRefMovieModule
@@ -147,9 +148,9 @@ etc/streaming/relayconfig.xml-dist
 @unexec if cmp -s %D/etc/streaming/streamingserver.xml %D/etc/streaming/streamingserver.xml-dist; then rm -f %D/etc/streaming/streamingserver.xml; fi
 etc/streaming/streamingserver.xml-dist
 @exec [ ! -f %B/streamingserver.xml ] && cp %B/%f %B/streamingserver.xml
-@comment @unexec if cmp -s %D/etc/streaming/streamingloadtool.conf %D/etc/streaming/streamingloadtool.conf-dist; then rm -f %D/etc/streaming/streamingloadtool.conf; fi
-@comment etc/streaming/streamingloadtool.conf-dist
-@comment @exec [ ! -f %B/streamingloadtool.conf ] && cp %B/%f %B/streamingloadtool.conf
+@unexec if cmp -s %D/etc/streaming/streamingloadtool.conf %D/etc/streaming/streamingloadtool.conf-dist; then rm -f %D/etc/streaming/streamingloadtool.conf; fi
+etc/streaming/streamingloadtool.conf-dist
+@exec [ ! -f %B/streamingloadtool.conf ] && cp %B/%f %B/streamingloadtool.conf
 @dirrm %%DATADIR%%/AdminHtml/includes
 @dirrm %%DATADIR%%/AdminHtml/images
 @dirrm %%DATADIR%%/AdminHtml/html_en
@@ -161,5 +162,6 @@ etc/streaming/streamingserver.xml-dist
 @dirrmtry etc/streaming
 @unexec rmdir /var/spool/streaming.playlists    2>/dev/null || true
 @exec   mkdir /var/spool/streaming.playlists    2>/dev/null || true
+@exec   chown -Rh qtss:qtss /var/spool/streaming.playlists
 @unexec rmdir /var/log/streaming                2>/dev/null || true
 @exec   mkdir /var/log/streaming                2>/dev/null || true
