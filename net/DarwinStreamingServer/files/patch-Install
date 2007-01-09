@@ -1,5 +1,5 @@
 --- Install.orig	Fri May 27 18:55:01 2005
-+++ Install	Sun Jul 10 20:10:31 2005
++++ Install	Wed Jan 10 01:05:07 2007
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -137,7 +137,12 @@
  	
  	if [ ! -d /var/streaming/logs ]; then
  		echo creating "/var/streaming/logs" directory
-@@ -294,66 +305,69 @@
+@@ -290,70 +301,72 @@
+ 		echo creating "/var/streaming/playlists" directory
+ 		mkdir -p /var/streaming/playlists
+ 	fi
++	chown -Rh qtss:qtss /var/streaming/playlists
+ 	chmod 770 /var/streaming/playlists
  	chmod 775 /usr/local/movies
  	
      echo copying "sample_100kbit.mov" into "/usr/local/movies/sample_100kbit.mov"
@@ -176,7 +181,6 @@
 -    cp -f sample_h264_1mbit.mp4 /usr/local/movies/
 +    ${BSD_INSTALL_DATA} sample_h264_1mbit.mp4 /usr/local/movies/
  
-+if false; then
  if [ -e StreamingLoadTool ]; then
  	echo copying "StreamingLoadTool" to "/usr/local/bin/StreamingLoadTool"
 -	cp -f StreamingLoadTool /usr/local/bin/
@@ -186,7 +190,6 @@
 -	cp -f streamingloadtool.conf /etc/streaming/
 +	echo copying "streamingloadtool.conf" to "/etc/streaming/streamingloadtool.conf-dist"
 +	${BSD_INSTALL_DATA} streamingloadtool.conf /etc/streaming/streamingloadtool.conf-dist
-+fi
  fi
  	
  	#WebAdmin install
@@ -224,7 +227,7 @@
  	# Setup for DSS
  	# Prompts for a username and password
  	# that can be used to administer the server
-@@ -416,6 +430,7 @@
+@@ -416,6 +429,7 @@
  	chown -R -f qtss /etc/streaming/
  	
  	echo Setup Complete!
