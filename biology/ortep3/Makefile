@@ -21,6 +21,9 @@ COMMENT=	The Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 .endif
 
+WANT_FORTRAN=yes
+USE_GCC=4.2+
+
 WRKSRC=		${WRKDIR}/ortep/src
 
 MAKE_ARGS=	FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
