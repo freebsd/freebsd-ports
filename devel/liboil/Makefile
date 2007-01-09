@@ -7,6 +7,7 @@
 
 PORTNAME=	liboil
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/ \
 		${MASTER_SITE_LOCAL}
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	pkgconfig gnomehack gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
