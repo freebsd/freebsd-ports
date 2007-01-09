@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qemu-launcher
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gna.org/qemulaunch/1.7.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
