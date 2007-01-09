@@ -11,7 +11,7 @@ PORTREVISION=	20060511
 CATEGORIES=	www textproc
 MASTER_SITE_SUBDIR=	brooks
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	nick@foobar.org
 COMMENT=	Textile markup module for Drupal
 
 DRUPAL_MODULE=	yes
