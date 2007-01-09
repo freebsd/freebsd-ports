@@ -38,6 +38,12 @@
 %%PYTHON_SITELIBDIR%%/FreeImagePy/FreeImage.dll
 %%PYTHON_SITELIBDIR%%/FreeImagePy/README_TEST.txt
 %%PYTHON_SITELIBDIR%%/FreeImagePy/ChangeLog.txt
+%%PYTHON_SITELIBDIR%%/FreeImagePy/buffer.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/library.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/buffer.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/library.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/buffer.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/library.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy/tools
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy/test
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy
