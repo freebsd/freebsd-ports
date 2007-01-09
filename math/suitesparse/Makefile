@@ -22,14 +22,14 @@ BUILD_DEPENDS=  metis:${PORTSDIR}/math/metis
 WITH_ATLAS=     yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
-BLAS=	-L${LOCALBASE}/lib -lf77blas -latlas
-LAPACK=	-L${LOCALBASE}/lib -lalapack
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-L${LOCALBASE}/lib -lf77blas -latlas
+LAPACK=		-L${LOCALBASE}/lib -lalapack
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-BLAS=	-L${LOCALBASE}/lib -lblas
-LAPACK=	-L${LOCALBASE}/lib -llapack
+BLAS=		-L${LOCALBASE}/lib -lblas
+LAPACK=		-L${LOCALBASE}/lib -llapack
 .endif
 
 CONFLICTS=	elmer-umfpack-4*
