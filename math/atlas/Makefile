@@ -10,7 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -43,8 +43,8 @@ CCOMPILER=	gcc34
 CCOMPILER:=	cc
 .endif
 .if defined(WITH_TESTS)
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 .endif
 
 # only affects for lapack sub project
@@ -219,17 +219,17 @@ post-build:
 # make atlas shared library
 .for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/lib/NON_THREADED_PIC/ ; \
-		ld -Bshareable -o ${i}.so.1 -x -soname ${i}.so.1 --whole-archive ${i}.a )
+		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
 .endfor
 
 # make atlas shared (thread safe) library
 .for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/lib/THREADED_PIC/ ; \
-		ld -Bshareable -o ${i}_r.so.1 -x -soname ${i}_r.so.1 --whole-archive ${i}.a )
+		ld -Bshareable -o ${i}_r.so.2 -x -soname ${i}_r.so.2 --whole-archive ${i}.a )
 .endfor
 .for i in ${ATLAS_LIBS2}
 	( cd ${WRKSRC}/lib/THREADED_PIC/ ; \
-		ld -Bshareable -o ${i}.so.1 -x -soname ${i}.so.1 --whole-archive ${i}.a )
+		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
 .endfor
 
 do-install:
@@ -237,22 +237,22 @@ do-install:
 .if defined(WITH_STATICLIB)
 	@${INSTALL_DATA} ${WRKSRC}/lib/NON_THREADED/${i}.a       ${PREFIX}/lib
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/lib/NON_THREADED_PIC/${i}.so.1    ${PREFIX}/lib
-	@${LN} -sf ${i}.so.1 ${PREFIX}/lib/${i}.so
+	@${INSTALL_DATA} ${WRKSRC}/lib/NON_THREADED_PIC/${i}.so.2    ${PREFIX}/lib
+	@${LN} -sf ${i}.so.2 ${PREFIX}/lib/${i}.so
 .endfor
 .for i in ${ATLAS_LIBS1}
 .if defined(WITH_STATICLIB)
 	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED/${i}.a       ${PREFIX}/lib/${i}_r.a
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED_PIC/${i}_r.so.1    ${PREFIX}/lib/${i}_r.so.1
-	@${LN} -sf ${i}_r.so.1 ${PREFIX}/lib/${i}_r.so
+	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED_PIC/${i}_r.so.2    ${PREFIX}/lib/${i}_r.so.2
+	@${LN} -sf ${i}_r.so.2 ${PREFIX}/lib/${i}_r.so
 .endfor
 .for i in ${ATLAS_LIBS2}
 .if defined(WITH_STATICLIB)
 	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED/${i}.a       ${PREFIX}/lib
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED_PIC/${i}.so.1    ${PREFIX}/lib
-	@${LN} -sf ${i}.so.1 ${PREFIX}/lib/${i}.so
+	@${INSTALL_DATA} ${WRKSRC}/lib/THREADED_PIC/${i}.so.2    ${PREFIX}/lib
+	@${LN} -sf ${i}.so.2 ${PREFIX}/lib/${i}.so
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/include/cblas.h   ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/include/clapack.h ${PREFIX}/include
