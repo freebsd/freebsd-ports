@@ -8,9 +8,9 @@
 PORTNAME=	ifstated
 PORTVERSION=	20050505
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.secureworks.net/pub/ifstated/
+MASTER_SITES=	http://skreuzer.f2o.org/mirror/ifstated/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@f2o.org
 COMMENT=	Interface State daemon
 
 INSTALL_TARGET=	install install-man
