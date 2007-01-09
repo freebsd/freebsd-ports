@@ -28,13 +28,22 @@ EXTRACT_ONLY+=	${DIST_EXAMPLES}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
-		${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack	\
-		${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles	\
-		${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis	\
-		${LOCALBASE}/lib/libtaucs.a:${PORTSDIR}/math/taucs
-LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
+		arpack:${PORTSDIR}/math/arpack	\
+		spooles:${PORTSDIR}/math/spooles \
+		metis:${PORTSDIR}/math/metis	\
+		taucs:${PORTSDIR}/math/taucs
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=             yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=		atlas.1:${PORTSDIR}/math/atlas
+BLAS_LIBS?=		-lf77blas -latlas
+.else
+LIB_DEPENDS+=		blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=		lapack.3:${PORTSDIR}/math/lapack
+BLAS_LIBS=		-lblas
+.endif
 
 USE_BZIP2=	yes
 
@@ -50,20 +59,21 @@ DIST_EXAMPLES=	ccx_${PORTVERSION}.test${EXTRACT_SUFX}	\
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 USE_GL=	yes
-BLAS_LIBS?=	-lf77blas -latlas
 
 BROWSER?=	mozilla
 PSVIEWER?=	gv
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
+WANT_FORTRAN=yes
+USE_GCC=4.2+
 
-.if ${ARCH} == "amd64"
-FFLAGS+=	-fPIC
+.if ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC
+FFLAGS+=	-fPIC
+.else
+CFLAGS+=	-fpic
+FFLAGS+=	-fpic
 .endif
 
 .if !defined(WITH_EXAMPLES)
