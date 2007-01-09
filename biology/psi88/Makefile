@@ -15,9 +15,20 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 
+.include <bsd.port.pre.mk>
+
+WANT_FORTRAN=	yes #dummy
+#currently not buildable with gfortran.
+#assume FreeBSD7 won't ship with f77 nor gfortran.
+.if ${OSVERSION} >= 700000
+USE_GCC=	3.4
+.endif
+
 pre-patch:
 	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
 
+post-patch:
+	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g' -e 's+%%FFLAGS%%+${FFLAGS}+g' -e 's+%%LOCALBASE%%+${LOCALBASE}+g' ${WRKSRC}/src/Makefile
 pre-build:
 	${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
 
@@ -35,4 +46,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/doc/psi88/examples
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
