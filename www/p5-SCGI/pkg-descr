@@ -1,0 +1,4 @@
+This Perl module is for implementing the SCGI interface for an application
+server.  Essentially, it is a 'next generation' FastCGI type protocol.
+
+WWW: http://python.ca/nas/scgi/protocol.txt
