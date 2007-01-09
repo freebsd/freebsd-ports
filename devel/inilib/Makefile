@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	inilib
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7b3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A C++ lib which provides a method of saving the "state" of a program
 
 GNU_CONFIGURE=	yes
