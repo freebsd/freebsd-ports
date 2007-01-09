@@ -34,7 +34,6 @@ PKGNAMESUFFIX=	-imlib
 .endif
 USE_GMAKE=	yes
 USE_XPM=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 
