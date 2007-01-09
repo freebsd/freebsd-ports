@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	msieve
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	math
 MASTER_SITES=	http://www.boo.net/~jasonp/ \
 		http://mirror.roe.ch/dist/msieve/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	daniel@roe.ch
-COMMENT=	Fast factorization of big integers using MPQS and NFS
+COMMENT=	Fast factorization of big integers using MPQS and GNFS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
@@ -27,7 +27,7 @@ PLIST_DIRS=	include/msieve
 PORTDOCS=	Changes Readme Readme.nfs Readme.qs
 
 OPTIONS=	OCFLAGS "Enable optimized CFLAGS" On \
-		NFS "Enable Number Field Sieve (EXPERIMENTAL)" Off
+		GNFS "General Number Field Sieve support" On
 
 .include <bsd.port.pre.mk>
 
@@ -35,7 +35,7 @@ OPTIONS=	OCFLAGS "Enable optimized CFLAGS" On \
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if defined(WITH_NFS)
+.if !defined(WITHOUT_GNFS)
 LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
 ALL_TARGET=	nfs
 .endif
