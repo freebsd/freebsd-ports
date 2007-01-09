@@ -7,7 +7,7 @@
 
 PORTNAME=	arpack
 PORTVERSION=	96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
@@ -29,10 +29,10 @@ USE_GCC=	4.2+
 WITH_ATLAS=		yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=		atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
 BLAS_LIBS?=		"-L${LOCALBASE}/lib -lf77blas -latlas"
 .else
-LIB_DEPENDS+=		blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
 BLAS_LIBS?=		"-L${LOCALBASE}/lib -lblas"
 .endif
 
