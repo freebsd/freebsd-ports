@@ -6,22 +6,37 @@
 #
 
 PORTNAME=	ripe-whois
-PORTVERSION=	3.1.1v6
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.ripe.net/tools/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	whois
+DISTNAME=	whois3-${PORTVERSION}
 
 MAINTAINER=	lerik@nolink.net
 COMMENT=	The RIPE whois client version 3
 
 USE_PERL5_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/whois-${PORTVERSION}
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		whois3.1
 PLIST_FILES=	bin/whois3
+
+post-patch::
+	${REINPLACE_CMD} -E \
+		-e '/^bin_PROGRAMS =/ s/whois\$$\(EXEEXT\)/whois3$$(EXEEXT)/' \
+		${WRKSRC}/Makefile.in
+
+.if !defined(NOPORTDOCS)
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
+DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
+PORTDOCS=	HELP.txt FLAGS.txt
+.else
+post-patch::
+	${REINPLACE_CMD} -E \
+		-e '/^install-data-am:/ s/install-whoisdataDATA//' \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 .include <bsd.port.mk>
