@@ -9,12 +9,3 @@
  fi
  
  # If nothing works, we continue, but configurator will abort
-@@ -46,7 +46,7 @@
- # If we find exceptions that cannot be fixed in a 
- # generic way, we should use OSTYPE to fix the problems.
- 
--make -f configurator/makefile.unix
-+${MAKE} -f configurator/makefile.unix
- 
- # Third phase: try to run configurator with whatever
- # arguments were passed to the script. If it fails, perhaps
