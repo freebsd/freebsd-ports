@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xabacus
-PORTVERSION=	7.2.5
+PORTVERSION=	7.2.6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.tux.org/pub/tux/bagleyd/xabacus/
+		http://www.tux.org/pub/tux/bagleyd/xabacus/
 MASTER_SITE_SUBDIR=	apps/math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +21,8 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-nas
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--without-nas
 
 MAN6=		xabacus.6
 
