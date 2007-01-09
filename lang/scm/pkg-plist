@@ -57,6 +57,7 @@ lib/scm/slib/dbutil.scm
 lib/scm/slib/debug.scm
 lib/scm/slib/defmacex.scm
 lib/scm/slib/determ.scm
+lib/scm/slib/dft.scm
 lib/scm/slib/differ.scm
 lib/scm/slib/dirs.scm
 lib/scm/slib/dwindtst.scm
@@ -64,7 +65,6 @@ lib/scm/slib/dynamic.scm
 lib/scm/slib/dynwind.scm
 lib/scm/slib/eval.scm
 lib/scm/slib/factor.scm
-lib/scm/slib/fft.scm
 lib/scm/slib/fluidlet.scm
 lib/scm/slib/format.scm
 lib/scm/slib/formatst.scm
@@ -78,12 +78,16 @@ lib/scm/slib/hashtab.scm
 lib/scm/slib/html4each.scm
 lib/scm/slib/htmlform.scm
 lib/scm/slib/http-cgi.scm
+lib/scm/slib/limit.scm
 lib/scm/slib/lineio.scm
+lib/scm/slib/linterp.scm
 lib/scm/slib/logical.scm
 lib/scm/slib/macrotst.scm
 lib/scm/slib/macwork.scm
 lib/scm/slib/manifest.scm
 lib/scm/slib/matfile.scm
+lib/scm/slib/math-integer.scm
+lib/scm/slib/math-real.scm
 lib/scm/slib/mbe.scm
 lib/scm/slib/minimize.scm
 lib/scm/slib/mkclrnam.scm
@@ -101,7 +105,6 @@ lib/scm/slib/object.scm
 lib/scm/slib/paramlst.scm
 lib/scm/slib/peanosfc.scm
 lib/scm/slib/phil-spc.scm
-lib/scm/slib/plottest.scm
 lib/scm/slib/pnm.scm
 lib/scm/slib/pp.scm
 lib/scm/slib/ppfile.scm
@@ -149,6 +152,8 @@ lib/scm/slib/sort.scm
 lib/scm/slib/soundex.scm
 lib/scm/slib/srfi-1.scm
 lib/scm/slib/srfi-2.scm
+lib/scm/slib/srfi-23.scm
+lib/scm/slib/srfi-61.scm
 lib/scm/slib/srfi-8.scm
 lib/scm/slib/srfi-9.scm
 lib/scm/slib/srfi.scm
