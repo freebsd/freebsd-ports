@@ -7,6 +7,7 @@
 
 PORTNAME=	suitesparse
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
@@ -15,16 +16,20 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
+BUILD_DEPENDS=  metis:${PORTSDIR}/math/metis
 
-.if defined(WITH_BLAS)
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+BLAS=	-L${LOCALBASE}/lib -lf77blas -latlas
+LAPACK=	-L${LOCALBASE}/lib -lalapack
+.else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=	-L${LOCALBASE}/lib -lblas
 LAPACK=	-L${LOCALBASE}/lib -llapack
-.else
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
-BLAS=	-L${LOCALBASE}/lib -lf77blas -latlas -lg2c
-LAPACK=	-L${LOCALBASE}/lib -lalapack -lcblas
 .endif
 
 CONFLICTS=	elmer-umfpack-4*
@@ -41,6 +46,8 @@ CONFLICTS=	umfpack-*
 
 USE_LDCONFIG=   yes
 USE_GMAKE=	yes
+USE_GCC=	4.2+
+WANT_FORTRAN=	yes
 WRKSRC=${WRKDIR}/SuiteSparse
 WRKSRC_SHARED=${WRKSRC}_shared
 CFLAGS_SHARED=${CFLAGS} ${FPIC}
@@ -51,7 +58,8 @@ post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
 			  -e 's,%%CFLAGS%%,${CFLAGS},g' \
-			  -e 's,%%F77%%,${FC},g' \
+			  -e 's,%%F77%%,${F77},g' \
+			  -e 's,%%FC%%,${FC},g' \
 			  -e 's,%%FFLAGS%%,${FFLAGS},g' \
 			  -e 's,%%BLAS%%,${BLAS},g' \
 			  -e 's,%%LAPACK%%,${LAPACK},g' \
@@ -64,7 +72,8 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
 			  -e 's,%%CFLAGS%%,${CFLAGS_SHARED},g' \
-			  -e 's,%%F77%%,${FC},g' \
+			  -e 's,%%F77%%,${F77},g' \
+			  -e 's,%%FC%%,${FC},g' \
 			  -e 's,%%FFLAGS%%,${FFLAGS_SHARED},g' \
 			  -e 's,%%BLAS%%,${BLAS},g' \
 			  -e 's,%%LAPACK%%,${LAPACK},g' \
