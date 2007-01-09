@@ -1,0 +1,11 @@
+--- src/bin/initdb/Makefile.orig	Tue Jan  9 11:31:36 2007
++++ src/bin/initdb/Makefile	Tue Jan  9 11:32:07 2007
+@@ -13,7 +13,7 @@
+ top_builddir = ../../..
+ include $(top_builddir)/src/Makefile.global
+ 
+-all: initdb
++all: submake-libpq submake-libpgport initdb
+ 
+ initdb: initdb.sh $(top_builddir)/src/Makefile.global
+ 	sed -e 's/@VERSION@/$(VERSION)/g' \

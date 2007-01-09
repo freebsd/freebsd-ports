@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.1.5
+PORTVERSION?=	8.1.6
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -46,7 +46,9 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_procs \
-		src/pl src/utils
+		src/bin/initdb src/bin/ipcclean src/bin/pg_ctl src/bin/pg_controldata \
+		src/bin/pg_resetxlog src/pl
+
 INSTALL_DIRS?=	${BUILD_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)

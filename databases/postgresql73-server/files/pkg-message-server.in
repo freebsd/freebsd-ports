@@ -1,8 +1,6 @@
 
 For procedural languages and postgresql functions, please note that
-you might have to update them when updating the server. For example,
-the "elog" method disappeared in postgresql-7.4, so postgresql-contrib
-must be updated along with the server.
+you might have to update them when updating the server.
 
 If you have many tables and many clients running, consider raising
 kern.maxfiles using sysctl(8), or reconfigure your kernel
@@ -29,13 +27,19 @@ If you plan to access your PostgreSQL server using ODBC, please
 consider running the SQL script %%PREFIX%%/share/postgresql/odbc.sql
 to get the functions required for ODBC compliance.
 
-If you need to store any characters besides strict ASCII in your
-database, you will want to set a character set, and possibly a
-collation locale, before initializing the database. Add something
-similar to this to /etc/login.conf:
+Please note that if you use the rc script,
+%%PREFIX%%/etc/rc.conf/postgresql, to initialize the database, unicode
+(UTF-8) will be used to store character data by default.  Set
+postgresql_initdb_flags or use login.conf settings described below to
+alter this behaviour. See the start rc script for more info.
+
+To set limits, environment stuff like locale and collation and other
+things, you can set up a class in /etc/login.conf before initializing
+the database. Add something similar to this to /etc/login.conf:
 ---
 postgres:\
-	:setenv=LC_ALL=en_US.UTF-8,LC_COLLATE=C:\
+	:lang=en_US.UTF-8:\
+	:setenv=LC_COLLATE=C:\
 	:tc=default:
 ---
 and run `cap_mkdb /etc/login.conf'.
@@ -45,15 +49,15 @@ Then add 'postgresql_class="postgres"' to /etc/rc.conf.
 
 To initialize the database, run
 
-  %%PREFIX%%/etc/rc.d/010.pgsql.sh initdb
+  %%PREFIX%%/etc/rc.d/postgresql initdb
 
 You can then start PostgreSQL by running:
 
-  %%PREFIX%%/etc/rc.d/010.pgsql.sh start
+  %%PREFIX%%/etc/rc.d/postgresql start
 
 For postmaster settings, see ~pgsql/data/postgresql.conf
 
-NB. FreeBSD's PostgreSQL port now by default logs to syslog
+NB. FreeBSD's PostgreSQL port logs to syslog by default
     See ~pgsql/data/postgresql.conf for more info
 
 ======================================================================
