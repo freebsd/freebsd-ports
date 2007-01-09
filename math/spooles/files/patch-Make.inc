@@ -1,5 +1,5 @@
---- Make.inc.orig	Mon Jan 18 16:48:55 1999
-+++ Make.inc	Sun May 11 14:32:36 2003
+--- Make.inc.orig	Tue Jan 19 06:48:55 1999
++++ Make.inc	Tue Jan  9 12:57:18 2007
 @@ -12,7 +12,7 @@
  # for solaris
  #
@@ -9,7 +9,16 @@
  #
  # for sgi
  #
-@@ -28,14 +28,14 @@
+@@ -22,20 +22,23 @@
+ #
+ # CC = /opt/mpi/bin/mpicc
+ #
++# for FreeBSD
++CC = %%CC%%
++#
+ #----------------------------------------
+ #
+ #  set the compiler flags
  # 
  # OPTLEVEL = 
  # OPTLEVEL = -g -v
@@ -18,7 +27,8 @@
  # OPTLEVEL = -xO5 -v
  # OPTLEVEL = -O3
  # OPTLEVEL = -O4
- # CFLAGS = -Wall -g
+-# CFLAGS = -Wall -g
++CFLAGS = %%CFLAGS%%
  # CFLAGS = -Wall -pg
  # CFLAGS = $(OPTLEVEL) -D_POSIX_C_SOURCE=199506L
 -  CFLAGS = $(OPTLEVEL)
@@ -26,7 +36,7 @@
  # CFLAGS = -Wall $(OPTLEVEL)
  #
  #----------------------------------------
-@@ -50,8 +50,8 @@
+@@ -50,8 +53,8 @@
  #  set any thread libraries
  #
  # THREAD_LIBS =
@@ -37,7 +47,7 @@
  # THREAD_LIBS = -lpthread
  #
  #---------------------------------------------------------------------
-@@ -79,15 +79,15 @@
+@@ -79,15 +82,15 @@
  #  set the ranlib environment
  #  (if ranlib is not needed, we echo the library name)
  #
@@ -57,7 +67,7 @@
  #
  #---------------------------------------------------------------------
  #
-@@ -103,7 +103,7 @@
+@@ -103,7 +106,7 @@
  #  MPI install library
  #
  # MPI_INSTALL_DIR = 
@@ -66,7 +76,7 @@
  #
  #---------------------------------------------------------------------
  #
-@@ -115,7 +115,7 @@
+@@ -115,7 +118,7 @@
  #
  # for solaris
  #
