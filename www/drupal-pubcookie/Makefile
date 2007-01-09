@@ -11,7 +11,7 @@ PORTREVISION=	20060907
 CATEGORIES=	www security
 MASTER_SITE_SUBDIR=	brooks
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pubcookie user authentication for the Drupal CMS
 
 RUN_DEPENDS=	${LOCALBASE}/pubcookie/keyclient:${PORTSDIR}/www/mod_pubcookie
@@ -21,6 +21,9 @@ USE_PHP=	ldap
 DRUPAL_MODULE=	yes
 MODULE_FILES=	pubcookie.module
 DOC_FILES=	LICENSE.txt README.txt
+
+DEPRECATED=	No maintainer
+EXPIRATION_DATE=	2007-02-01
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/drupal/bsd.drupal.mk"
