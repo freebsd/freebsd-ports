@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	gmetadom
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A Collection of DOM Implementations
@@ -19,13 +20,14 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	glib20 gnomehack libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	OCAML "OCAML language support" off
 
