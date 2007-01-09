@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.2.7
+DISTVERSION=	0.2.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ CSME
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -25,7 +25,6 @@ USE_GNOME=	pygtk2 pygnomeextras
 USE_GSTREAMER=	python
 USE_PYTHON=	yes
 PLIST_FILES=	share/applications/${PORTNAME}.desktop share/pixmaps/${PORTNAME}.png bin/${PORTNAME}
-WRKSRC=		${WRKDIR}/${DISTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PREFIX/d' ${WRKSRC}/Makefile
