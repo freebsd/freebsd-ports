@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	security
-MASTER_SITES=	http://libtomcrypt.com/files/
+MASTER_SITES=	http://libtom.org/files/ \
+		http://www.atarininja.org/~wxs/distfiles/
 DISTNAME=	crypt-${PORTVERSION}
 
 MAINTAINER=	wxs@atarininja.org
