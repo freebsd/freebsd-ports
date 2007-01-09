@@ -1,4 +1,4 @@
 lib/liblapack.a
 lib/liblapack.so
-lib/liblapack.so.3
+lib/liblapack.so.4
 lib/liblapack_p.a
