@@ -6,9 +6,6 @@
 %%SITE_PERL%%/Spreadsheet/ParseExcel/FmtUnicode.pm
 %%SITE_PERL%%/Spreadsheet/ParseExcel/SaveParser.pm
 %%SITE_PERL%%/Spreadsheet/ParseExcel/Utility.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet
 @dirrm %%SITE_PERL%%/Spreadsheet/ParseExcel
 @dirrmtry %%SITE_PERL%%/Spreadsheet
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/AuthorK.xls
@@ -21,6 +18,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test95J.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test97.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test97J.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/gives-warnings.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/oem.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Ilya.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
@@ -35,7 +33,9 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/dmpEx_2xml.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/iftest.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/iftestj.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/parse.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/res_fmt
+%%PORTDOCS%%%%EXAMPLESDIR%%/res_iftest.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/res_info
 %%PORTDOCS%%%%EXAMPLESDIR%%/res_oem
 %%PORTDOCS%%%%EXAMPLESDIR%%/res_rich
@@ -45,6 +45,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/sampleOEM.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sample_j.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/smpFile.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/warning.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/xls2csv.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Excel
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
