@@ -25,7 +25,7 @@ BLAS=	-lf77blas -latlas
 LAPACK=	-llapack
 .else
 LIB_DEPENDS+=	lapack.1:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS=	-lblas
 LAPACK=	-llapack
 .endif
