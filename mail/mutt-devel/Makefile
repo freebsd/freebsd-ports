@@ -104,6 +104,9 @@
 # If you want to enable the assumed_charset option define:
 #  WITH_MUTT_ASSUMED_CHARSET_PATCH
 #
+# If you want to enable the `greeting' option define:
+#  WITH_MUTT_GREETING_PATCH
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.13
@@ -201,6 +204,11 @@ IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not c
 .if defined(WITH_MUTT_ASSUMED_CHARSET_PATCH)
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_ASSUMED_CHARSET_PATCH and WITH_MUTT_NNTP are not compatible
+.endif
+.endif
+.if defined(WITH_MUTT_GREETING_PATCH)
+.if defined(WITH_MUTT_NNTP)
+IGNORE=	cannot install: the WITH_MUTT_GREETING_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
 .endif
 
@@ -337,6 +345,11 @@ post-patch::
 .if defined(WITH_MUTT_REVERSE_REPLY_PATCH)
 post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-reverse_reply
+.endif
+
+.if defined(WITH_MUTT_GREETING_PATCH)
+post-patch::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-greeting
 .endif
 
 .if defined(WITHOUT_MUTT_FLOCK)
