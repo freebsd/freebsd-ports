@@ -1,0 +1,14 @@
+Qpsmtpd started as a replacement daemon for the SMTP receiver (qmail-smtpd)
+from the qmail mail transport agent (MTA). qmail-smtpd has a number of
+shortcomings (e.g. being unable to check the validity of a recipient mail
+address) and is written in C which makes it burdensome to modify and extend.
+Qpsmtpd, on the other hand, is written in pure perl and can be customized
+easily. It consists of a core that implements a complete SMTP server, and a
+number of plugins/modules which control the operations. Such plugins
+include plugins to check the recipient and sender as well as plugins for
+virus scanning, spam checking, blocking lists (dns and rhs), AUTH and TLS.
+Qpsmtpd can not only be used with qmail but also with e.g. postfix and
+exim. It can also write messages to a Maildir or forward it to a remote
+host without buffering.
+ 
+WWW: http://smtpd.develooper.com/

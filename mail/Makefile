@@ -382,6 +382,7 @@
     SUBDIR += p5-URI-imaps
     SUBDIR += p5-WWW-GMail
     SUBDIR += p5-WWW-Hotmail
+    SUBDIR += p5-qpsmtpd
     SUBDIR += p5-vpopmail
     SUBDIR += pantomime
     SUBDIR += pathalias
