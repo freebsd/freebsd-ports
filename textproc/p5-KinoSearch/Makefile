@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	KinoSearch
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://www.rectangular.com/downloads/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../by-authors/id/C/CR/CREAMYG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
