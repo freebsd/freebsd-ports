@@ -7,6 +7,7 @@
 
 PORTNAME=	arpack
 PORTVERSION=	96
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
@@ -21,27 +22,57 @@ PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
+WANT_FORTRAN=	yes
+USE_GCC=	4.2+
 
-CONFLICTS=	elmer-mathlibs-1*
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=		yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=		atlas.1:${PORTSDIR}/math/atlas
+BLAS_LIBS?=		"-L${LOCALBASE}/lib -lf77blas -latlas"
+.else
+LIB_DEPENDS+=		blas.1:${PORTSDIR}/math/blas
+BLAS_LIBS?=		"-L${LOCALBASE}/lib -lblas"
+.endif
+
+ALL_TARGET=	lib
+USE_LDCONFIG=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+PICFLAG?=       -fPIC
+.else
+PICFLAG?=       -fpic
+.endif
 
 WRKSRC=		${WRKDIR}/ARPACK
-ALL_TARGET=	lib
-
-BLAS_LIBS?=	${LOCALBASE}/lib/libblas.a
-
+WRKSRC_SHARED=	${WRKDIR}/ARPACK_SHARED
+FFLAGS_SHARED=	${FFLAGS} ${PICFLAG}
+CONFLICTS=	elmer-mathlibs-1*
 USE_LDCONFIG=	yes
 
 pre-patch:
 	@(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/patch.tar.gz)
 
 pre-build:
+	${CP} -R ${WRKSRC} ${WRKSRC_SHARED}
 	@${REINPLACE_CMD} -e 's+%FC%+${FC}+g ; s+%FFLAGS%+${FFLAGS}+g ; \
-	s+%%WRKDIR%%+${WRKDIR}+ ; \
+	s+%%WRKSRC%%+${WRKSRC}+ ; \
 	s+%%BLAS_LIBS%%+${BLAS_LIBS}+' ${WRKSRC}/ARmake.inc
+	@${REINPLACE_CMD} -e 's+%FC%+${FC}+g ; s+%FFLAGS%+${FFLAGS_SHARED}+g ; \
+	s+%%WRKSRC%%+${WRKSRC_SHARED}+ ; \
+	s+%%BLAS_LIBS%%+${BLAS_LIBS}+' ${WRKSRC_SHARED}/ARmake.inc
+
+do-build:
+	cd ${WRKSRC} ; ${MAKE} ${ALL_TARGET}
+	cd ${WRKSRC_SHARED} ; ${MAKE} ${ALL_TARGET} ; ld -Bshareable -o libarpack.so.1 -x -soname libarpack.so.1 --whole-archive libarpack.a
 
 do-install:
-	${INSTALL} ${WRKSRC}/libarpack.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/libarpack.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC_SHARED}/libarpack.so.1 ${PREFIX}/lib
+	@${LN} -sf libarpack.so.1 ${PREFIX}/lib/libarpack.so
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -52,4 +83,4 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ug.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

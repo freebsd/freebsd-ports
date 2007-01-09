@@ -5,7 +5,7 @@
  # %--------------------------------------%
  #
 -home = $(HOME)/ARPACK
-+home = %%WRKDIR%%/ARPACK
++home = %%WRKSRC%%
  #
  #  %--------------------------------------%
  #  | The platform identifier to suffix to |
