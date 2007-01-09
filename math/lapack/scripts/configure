@@ -3,7 +3,7 @@ mv Makefile Makefile.old
 
 cat >Makefile <<END
 LIB=	lapack
-SHLIB_MAJOR=	3
+SHLIB_MAJOR=	4
 SHLIB_MINOR=	0
 
 END
