@@ -29,10 +29,7 @@ ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
 
 DOCSDIR=	${PREFIX}/share/doc/slang
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -44,6 +41,8 @@ IGNORE=	UTF8 support doesn't work on FreeBSD < 5.x
 PATCH_SITES+=	http://www.emaillab.org/mutt/tools/
 PATCHFILES+=	slang-1.4.8-utf8.diff.gz
 PATCH_DIST_STRIP+=	-p1
+
+EXTRA_PATCHES=	${FILESDIR}/extra-utf8-acs.patch
 
 post-patch:
 	@${REINPLACE_CMD} 's,slang-utf8,slang,' ${WRKSRC}/src/Makefile.in
