@@ -1,6 +1,22 @@
---- Makefile.orig	Sat Jan 18 08:19:53 2003
-+++ Makefile	Thu Jul 24 17:40:01 2003
-@@ -55,8 +55,9 @@
+--- Makefile.orig	Tue May 17 02:15:36 2005
++++ Makefile	Tue Jan  9 17:36:22 2007
+@@ -45,21 +45,22 @@
+ # of grid and orbital parameters according to expected range of input
+ # data 
+ 
+-#MEMALLOC = main-static.inc
++# MEMALLOC = main-static.inc
+ 
+ # For a Sun workstation with f77 or a PC with g77 compiler 
+-MEMALLOC = main-dynamic-f77.inc
++# MEMALLOC = main-dynamic-f77.inc
+ 
+ # For a DEC workstation and f77 compiler 
+ # MEMALLOC = main-dynamic-f77-dec.inc
+ 
+ # For f90 compiler 
+-# MEMALLOC = main-dynamic-f90.inc
++MEMALLOC = main-dynamic-f90.inc
  
  # set system type/compiler
  # available keywords are: cray, dec, ibm, lahey, linux, sgi, solaris
@@ -8,15 +24,13 @@
  
 -SYSTEM = linux
 +SYSTEM = freebsd
+ #SYSTEM = intel
  
  # if BLAS library is available set the BLAS variable to yes
- BLAS = no
-@@ -145,6 +146,21 @@
- 
- 	CC = gcc
- 	CFLAGS =
-+endif	
-+
+@@ -189,6 +190,20 @@
+ 	CC = cc
+ 	CFLAGS = 
+ endif
 +# FreeBSD 
 +ifeq ($(SYSTEM),freebsd)
 +	FC = %%FC%%
@@ -30,6 +44,7 @@
 +
 +	CC = %%CC%%
 +	CFLAGS = %%CFLAGS%%
- endif	
++ endif	
  
- # SGI
+ 
+ # nothing to be set below this line
