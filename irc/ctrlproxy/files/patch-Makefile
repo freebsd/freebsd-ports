@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Jan  5 06:33:03 2007
++++ Makefile	Fri Jan  5 23:44:47 2007
+@@ -96,17 +96,14 @@
+ 	$(INSTALL) -d $(DESTDIR)$(bindir)
+ 	$(INSTALL) -d $(DESTDIR)$(destincludedir)
+ 	$(INSTALL) -d $(DESTDIR)$(modulesdir)
+-	$(INSTALL) -d $(DESTDIR)$(docdir)
+ 	$(INSTALL) -d $(DESTDIR)$(cdatadir)
+-	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
++	$(INSTALL) -d $(DESTDIR)$(prefix)/libdata/pkgconfig
+ 
+ install-bin:
+ 	$(INSTALL) ctrlproxy$(EXEEXT) $(DESTDIR)$(bindir)
+ 
+ install-doc: doc
+ 	$(INSTALL) -m 0644 $(headers) $(DESTDIR)$(destincludedir)
+-	$(INSTALL) -m 0644 UPGRADING $(DESTDIR)$(docdir)
+-	$(MAKE) -C doc install PACKAGE_VERSION=$(PACKAGE_VERSION)
+ 
+ install-data:
+ 	$(INSTALL) -m 0644 motd $(DESTDIR)$(cdatadir)
