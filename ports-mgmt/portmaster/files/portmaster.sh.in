@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Local version: 1.140
+# Local version: 1.147
 # $FreeBSD$
 
-# Copyright (c) 2005-2006 Douglas Barton, All rights reserved
+# Copyright (c) 2005-2007 Douglas Barton, All rights reserved
 # Please see detailed copyright below
 
 trap trap_exit INT
@@ -28,11 +28,10 @@ export PATH
 umask 022
 
 usage () {
-	VERSION_NUMBER=`grep "[$]FreeBSD:" $0 | cut -d ' ' -f 4`
-	echo "portmaster version $VERSION_NUMBER"
+	echo "portmaster version `grep "[$]FreeBSD:" $0 | cut -d ' ' -f 4`"
 	echo ''
 	echo 'Usage:'
-	echo "Common flags: [-CGgnv B|b uf|i D|d] [-m <arguments for make>]"
+	echo "Common flags: [-CGgntv B|b uf|i D|d] [-m <arguments for make>]"
 	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
 	echo "${0##*/} [Common flags] <full path to $pd/foo/bar>"
 	echo "${0##*/} [Common flags] Multiple full names/paths from $pdb|$pd"
@@ -59,6 +58,7 @@ usage () {
 	echo '-b create and keep a backup package of an installed port'
 	echo '-g create a package of the new port'
 	echo '-n do not actually make or install any ports'
+	echo '-t recurse dependencies thoroughly, using all-depends-list'
 	echo '-v verbose output'
 	echo "-u unattended mode -- accept defaults for all but 'make config'"
 	echo '-f always rebuild ports (overrides -i)'
@@ -131,6 +131,7 @@ trap_exit () {
 	local pid
 
 	if [ -n "$portdir" ]; then
+		echo ''
 		echo "===>>> Upgrade for $portdir exiting due to signal"
 	else
 		echo "===>>> Exiting due to signal"
@@ -484,13 +485,15 @@ ports_by_category () {
 
 dependency_check () {
 	# Re-use dep_port_list for efficiency
-	local dep_port ign_p cur_p upd_args p op old_p conflicts glob conflict_port
+	local dl_type dep_port ign_p cur_p upd_args p op old_p conflicts glob conflict_port
 
 	# Print a message here because sometimes list generation takes
 	# a long time to return.
 	if [ -z "$dep_port_check_done" ]; then
+		dl_type='build-depends-list run-depends-list'
+		[ -n "$RECURSE_THOROUGH" ] && dl_type=all-depends-list
 		echo "===>>> Gathering dependency list for $portdir from ports"
-		dep_port_list=`make $MAKE_ARGS build-depends-list run-depends-list | sort -u`
+		dep_port_list=`make $MAKE_ARGS $dl_type | sort -u`
 		dep_port_check_done=yes
 	fi
 
@@ -645,7 +648,7 @@ find_and_delete_distfiles () {
 		case "$distfiles" in
 		*${file}*)
 			if [ -n "$VERBOSE" -a -z "$do_delete" ]; then
-				echo "===>>> Keeping new distfile: $file"
+				echo "===>>> Keeping current distfile: $file"
 			fi
 			continue	# Do not delete current version
 			;;
@@ -678,7 +681,15 @@ delete_stale_distfiles () {
 	# we do not delete the current set of distfiles
 	distfiles=`make $MAKE_ARGS -V ALLFILES`
 
-	cd $distdir || fail "cd to $distdir failed!"
+	if [ -d "$distdir" ]; then
+		cd $distdir || fail "cd to $distdir failed!"
+	else
+		echo '' ; echo ''
+		echo "===>>> $distdir does not exist, therefore we"
+		echo "       will assume that all relevant distfiles are gone."
+		echo ''
+		return 0
+	fi
 
 	# If these two match, it means that the distfiles in the +CONTENTS
 	# file are the current set, so do not delete them.
@@ -713,6 +724,7 @@ delete_all_distfiles () {
 	local DELORNOT
 
 	if ! cd $pd/$1; then
+		echo ''
 		echo "===>>> No $pd/$1 to cd to in order to delete"
 		echo "       old distfiles, remove by hand if desired"
 	else
@@ -737,16 +749,37 @@ delete_all_distfiles () {
 }
 
 backup_package () {
+	# pkgrep and bu_pkg_name are used globally
+
 	echo "===>>> Creating a backup package for old version $1"
-	pkg_create -b $1 || fail "Backup package creation failed for $1"
-	[ -z "$pkgrep" ] &&
-	    pkgrep=`make $MAKE_ARGS -f $pd/Mk/bsd.port.mk -V PKGREPOSITORY`
-	if [ ! -d "$pkgrep" ]; then
-		pkgrep=$HOME
+	if pkg_create -b $1; then
+		[ -z "$pkgrep" ] &&
+		 pkgrep=`make $MAKE_ARGS -f $pd/Mk/bsd.port.mk -V PKGREPOSITORY`
+		if [ ! -d "$pkgrep" ]; then
+			pkgrep=$HOME
+		fi
+		bu_pkg_name=`echo ${1}.*`
+		mv $bu_pkg_name $pkgrep/ &&
+		    echo "	===>>> Package can be found in $pkgrep"
+	else
+		local PROCEED
+
+		if [ -z "$UNATTENDED" ]; then
+			echo ''
+			echo "===>>> Backup package creation failed for ${1}!"
+			echo ''
+			echo "===>>> Ignore this error	[i]"
+			echo "===>>> Abort update		[a]"
+			echo ''
+			echo -n "===>>> How would you like to proceed? [i] "
+			read PROCEED
+			case "$PROCEED" in
+			a)	fail "Backup package creation failed for $1" ;;
+			esac
+		else
+			fail "Backup package creation failed for $1"
+		fi
 	fi
-	bu_pkg_name=`echo ${1}.*`
-	mv $bu_pkg_name $pkgrep/ &&
-	    echo "	===>>> Package can be found in $pkgrep"
 }
 
 pd=`make $MAKE_ARGS -f/dev/null -V PORTSDIR 2>/dev/null`
@@ -767,7 +800,7 @@ fi
 : ${pdb:=/var/db/pkg}
 
 # Save switches for potential child processes
-while getopts 'BCDGLabde:fghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
+while getopts 'BCDGLabde:fghilm:nop:r:stuv' COMMAND_LINE_ARGUMENT ; do
 	case "${COMMAND_LINE_ARGUMENT}" in
 	B)	NO_BACKUP=yes; ARGS="-B $ARGS" ;;
 	C)	DONT_PRE_CLEAN=yes; ARGS="-C $ARGS" ;;
@@ -795,6 +828,7 @@ while getopts 'BCDGLabde:fghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
 	p)	portdir="${OPTARG#$pd/}" ;;
 	r)	UPDATE_REQ_BYS=yes; upg_port=$OPTARG ;;
 	s)	CLEAN_STALE=yes ;;
+	t)	RECURSE_THOROUGH=yes; ARGS="-t $ARGS" ;;
 	u)	UNATTENDED=yes; ARGS="-u $ARGS" ;;
 	v)	VERBOSE=yes; ARGS="-v $ARGS" ;;
 	*)	usage ;;
@@ -1172,11 +1206,11 @@ fi
 
 cd $pd/$portdir || usage
 
-for state in FORBIDDEN IGNORE BROKEN; do
+for state in FORBIDDEN BROKEN IGNORE; do
 	state_set=`make -V $state`
 	if [ -n "$state_set" ]; then
 		echo "===>>> This port is marked $state:"
-		echo "===>>> $portdir $state_set"
+		echo "===>>> $state_set"
 		echo "===>>> If you are sure you can build it, remove the"
 		echo "       $state line in the Makefile and try again."
 		safe_exit 1
@@ -1331,11 +1365,12 @@ short_port="${prefix}${portname}${suffix}"
 # Check for dependencies here in case +REQUIRED_BY is not up to date or missing
 grep_deps=`mktemp -t grep-deps-${short_port}`
 
+upg_origin=$portdir
 if [ -n "$upg_port" ]; then
 	upg_origin=`origin_from_pdb $pdb/$upg_port`
-	grep -l DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS | cut -f 5 -d '/' |
-	    sort -u > $grep_deps
 fi
+grep -l DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS | cut -f 5 -d '/' |
+    sort -u > $grep_deps
 
 if [ -s "$pdb/$upg_port/+REQUIRED_BY" ]; then
 	req_deps=`mktemp -t req-deps-${short_port}`
@@ -1410,10 +1445,11 @@ if ! grep -q DISTFILE $pdb/$new_port/+CONTENTS; then
 	test -n "$ds" && ds="${ds}/"
 
 	allfiles=`make $MAKE_ARGS -V ALLFILES`
+	distinfo=`make $MAKE_ARGS -V MD5_FILE`
 	for file in $allfiles; do
-		size=`grep "^SIZE (${ds}${file})" distinfo | cut -f4 -d' '`
-		sha256=`grep "^SHA256 (${ds}${file})" distinfo | cut -f4 -d' '`
-		md5=`grep "^MD5 (${ds}${file})" distinfo | cut -f4 -d' '`
+		size=`grep "^SIZE (${ds}${file})" $distinfo | cut -f4 -d' '`
+		sha256=`grep "^SHA256 (${ds}${file})" $distinfo | cut -f4 -d' '`
+		md5=`grep "^MD5 (${ds}${file})" $distinfo | cut -f4 -d' '`
 		echo "@comment DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $pdb/$new_port/+CONTENTS
 	done
 fi
@@ -1526,7 +1562,7 @@ safe_exit
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#  Copyright (c) 2005-2006 Douglas Barton
+#  Copyright (c) 2005-2007 Douglas Barton
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
