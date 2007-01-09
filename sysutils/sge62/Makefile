@@ -7,12 +7,11 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/51/
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/78/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
-DISTNAME=	sge-V60u7_1_TAG-src
+DISTNAME=	sge-V60u8_TAG-src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
@@ -24,7 +23,7 @@ FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 DISABLE_SIZE=	yes
 FETCH_CMD=	wget -c
 
-OPTIONS=	BDB "Use DB based spooler (currently broken)" off \
+OPTIONS=	BDB "Use DB based spooler" on \
 		DRMAA "Support the Java DRMAA API (requires native Java)" on \
 		QMON "Qmon support (requires X and Motif)" on
 
@@ -52,8 +51,8 @@ FETCH_CMD=	wget -c
 SGE_BASE?=	sge
 SGE_ROOT=	${TARGETDIR}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
-SGE_VERSION=	6.0.7.1
-SGE_RELEASE=	6.0u7_1
+SGE_VERSION=	6.0.8
+SGE_RELEASE=	6.0u8
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -122,7 +121,6 @@ JAVA_VERSION=	1.4+
 JAVA_OS=	native
 JAVA_BUILD=	jdk
 JAVA_RUN=	jre
-.include "${PORTSDIR}/Mk/bsd.java.mk"
 ANT?=		${LOCALBASE}/bin/ant
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 PLIST_SUB+=	DRMAA=
@@ -167,9 +165,9 @@ post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' < \
 	    ${FILESDIR}/aimk.private > ${WRKSRC}/aimk.private
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' \
-	    ${WRKSRC}/scripts/distinst.site
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' < \
+	    ${FILESDIR}/distinst.private > ${WRKSRC}/distinst.private
 
 do-build:
 	cd ${WRKSRC} && ${AIMK_CMD} -only-depend
@@ -222,6 +220,8 @@ build-plist: build
 	    ${SED} -e 's|^${TMP_SGE_ROOT}|%%SGE_BASE%%|' \
 		-e 's|${SGE_ARCH}|%%SGE_ARCH%%|' \
 		-e 's|\(.*libspool[bc].so\)|%%BDB_SPOOL%%\1|' \
+		-e 's|\(.*libdb-4.2.so\)|%%BDB_SPOOL%%\1|' \
+		-e 's|\(.*utilbin.*db_.*\)|%%BDB_SPOOL%%\1|' \
 		-e 's|\(.*libXltree.so\)|%%QMON%%\1|' \
 		-e 's|\(.*qmon.*\)|%%QMON%%\1|' \
 	    > ${PLIST}
