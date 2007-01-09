@@ -1,9 +1,9 @@
---- Makefile.orig	Sun Dec 31 21:10:39 2006
-+++ Makefile	Wed Jan  3 01:34:16 2007
-@@ -22,21 +22,21 @@
- # WARN_FLAGS = -Wall -W -Wconversion
+--- Makefile.orig	Fri Jan  5 07:22:21 2007
++++ Makefile	Fri Jan  5 16:30:18 2007
+@@ -23,21 +23,21 @@
  
- # gcc for x86 and x86-64
+ # gcc for x86 and x86-64; use the k8 flag below if running
+ # a 64-bit operating system on a 64-bit processor
 -CC = gcc
 -OPT_FLAGS = -O3 -fomit-frame-pointer
 +#CC = gcc
@@ -28,7 +28,7 @@
  
  COMMON_HDR = \
  	include/ap.h \
-@@ -100,13 +100,13 @@
+@@ -101,13 +101,13 @@
  	rm -f libmsieve.a
  	ar r libmsieve.a $(OBJS)
  	ranlib libmsieve.a
