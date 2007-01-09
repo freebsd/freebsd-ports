@@ -16,8 +16,6 @@ COMMENT=	Manages multiple Mongrel processes
 BUILD_DEPENDS=	rubygem-mongrel>=0.3.13.4:${PORTSDIR}/www/rubygem-mongrel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Incomplete pkg-plist
-
 USE_RC_SUBR=	mongrel_cluster
 
 # This target is only meant to be used by the port maintainer.
@@ -33,6 +31,9 @@ x-generate-plist:
 		;s,^${GEMS_BASE_DIR}/(.+)$$,\1,g \
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
+
+post-install:
+	${RMDIR} ${PREFIX}/${GEM_DOC_DIR}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
