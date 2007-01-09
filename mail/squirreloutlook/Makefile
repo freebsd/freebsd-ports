@@ -1,6 +1,6 @@
 # New ports collection makefile for:	squirrelmailoutlook
 # Date created: 			28 December 2006
-# Whom: 				Simon Dick <simond@irrelevant.org>
+# Whom: 				Dennis Cabooter <freebsd at rootxs.org>
 #
 # $FreeBSD$
 #
