@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=		portsopt
-PORTVERSION=	1.1
-CATEGORIES=		sysutils
+PORTNAME=	portsopt
+PORTVERSION=	1.2
+CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
-MAINTAINER=		beat@chruetertee.ch
-COMMENT=		Shows WITH(OUT)-knobs of a port makefile
+MAINTAINER=	beat@chruetertee.ch
+COMMENT=	Shows WITH(OUT)-knobs of a port makefile
 
-NO_BUILD=		yes
+NO_BUILD=	yes
 
 PLIST_FILES=	sbin/portsopt
 
