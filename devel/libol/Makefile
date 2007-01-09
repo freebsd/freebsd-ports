@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	libol
-PORTVERSION=	0.3.16
+PORTVERSION=	0.3.17
 CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Library needed by syslog-ng
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GCC=	3.3+
 
 .include <bsd.port.mk>
