@@ -7,7 +7,7 @@
 
 PORTNAME=	lapack
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/
 DISTNAME=	LAPACK
@@ -16,7 +16,9 @@ DISTFILES=	lapack.tgz manpages.tgz
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
 
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
+WANT_FORTRAN=	yes
+USE_GCC=	4.2+
 
 CONFLICTS=	elmer-mathlibs-1*
 
@@ -236,9 +238,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack_p.a ${PREFIX}/lib
 .endif
 .if ${PORTOBJFORMAT} == "elf"
-	${LN} -sf liblapack.so.3 ${PREFIX}/lib/liblapack.so
+	${LN} -sf liblapack.so.4 ${PREFIX}/lib/liblapack.so
 .else
-	${LN} -sf liblapack.so.3.0 ${PREFIX}/lib/liblapack.so
+	${LN} -sf liblapack.so.4.0 ${PREFIX}/lib/liblapack.so
 .endif
 	${INSTALL_MAN} ${WRKDIR}/blas/man/manl/*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/[a-c]*.l ${PREFIX}/man/manl
