@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libtommath
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	math
-MASTER_SITES=	http://math.libtomcrypt.com/files/
+MASTER_SITES=	http://libtom.org/files/ \
+		http://www.atarininja.org/~wxs/distfiles/
 DISTNAME=	ltm-${PORTVERSION}
 
 MAINTAINER=	wxs@atarininja.org
