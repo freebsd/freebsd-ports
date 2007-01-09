@@ -7,7 +7,7 @@
 
 PORTNAME=	taucs
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -20,16 +20,16 @@ COMMENT=	C library of sparse linear solvers
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
-BLAS=	-lf77blas -latlas
-LAPACK=	-llapack
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-llapack
 .else
-LIB_DEPENDS+=	lapack.1:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-BLAS=	-lblas
-LAPACK=	-llapack
+BLAS=		-lblas
+LAPACK=		-llapack
 .endif
-LIB_DEPENDS=	metis:${PORTSDIR}/math/metis
+LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis
 
 WANT_FORTRAN=yes
 USE_GCC=4.2+
