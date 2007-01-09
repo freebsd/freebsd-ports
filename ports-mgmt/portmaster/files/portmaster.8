@@ -1,4 +1,4 @@
-.\" Copyright (c) 2006 Doug Barton dougb@FreeBSD.org
+.\" Copyright (c) 2006-2007 Doug Barton dougb@FreeBSD.org
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd December 13, 2006
+.Dd January 9, 2007
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -32,31 +32,31 @@
 .Nd manage your ports without external databases or languages
 .Sh SYNOPSIS
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op Ar full name of port directory in /var/db/pkg
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op Ar full path to /usr/ports/foo/bar
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op Ar Multiple full names/paths from either of the above
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op Ar glob pattern from /var/db/pkg
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op Fl p Ar port directory in /usr/ports
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op . [Use in /usr/ports/foo/bar to build that port]
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Fl o Ar <new port dir in /usr/ports> <installed port>
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Fl r Ar name/glob of port in /var/db/pkg
 .Nm
-.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Fl a
 .Nm
 .Fl [l|L]
@@ -174,6 +174,8 @@ create and keep a backup package of an installed port
 create a package of the new port
 .It Fl n
 do not actually perform any updates
+.It Fl t
+recurse dependencies thoroughly, using all-depends-list
 .It Fl v
 verbose output
 .It Fl u
@@ -267,4 +269,4 @@ Print only the ports that have available updates.
 .Sh AUTHORS
 This
 manual page was written by
-.An Doug Barton <dougb@Freebsd.org> .
+.An Doug Barton <dougb@FreeBSD.org> .
