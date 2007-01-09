@@ -8,6 +8,8 @@ bin/partdmesh
 bin/partnmesh
 bin/pmetis
 lib/libmetis.a
+lib/libmetis.so
+lib/libmetis.so.1
 include/metis/defs.h
 include/metis/macros.h
 include/metis/metis.h
