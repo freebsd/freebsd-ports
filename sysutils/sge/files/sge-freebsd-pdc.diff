@@ -236,8 +236,8 @@
  
     #ifdef COMPILE_DC
  
--   #  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
-+   #  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+-#  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++#  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
  
        {
           lList *rlp = NULL;
