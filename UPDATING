@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070109:
+  AFFECTS: users of databases/postgresql*
+  AUTHOR: girgen@FreeBSD.org
+
+  The server-side utilities of postgresql (initdb, initlocation,
+  ipcclean, pg_controldata, pg_ctl, pg_id and pg_resetxlog) are now
+  installed by the respective postgresql*-server port (previously
+  they where installed with the client). If you update the client, you
+  should also update the server to make sure you are not left without
+  the server-side tools. Do something like:
+
+    portupgrade postgresql-client postgresql-server
+
 20070105:
   AFFECTS: users of mail/spamprobe
   AUTHOR: stefan@FreeBSD.org

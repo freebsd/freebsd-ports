@@ -15,7 +15,9 @@ COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql82-server
 
-BUILD_DIRS=	config src/include src/interfaces src/bin doc src/makefiles
+BUILD_DIRS=	config src/include src/interfaces \
+		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
+		doc src/makefiles
 CLIENT_ONLY=	yes
 INSTALLS_SHLIB=	yes
 

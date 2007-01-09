@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.14
+PORTVERSION?=	7.4.15
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -44,7 +44,11 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
-BUILD_DIRS?=	src/backend src/backend/utils/mb/conversion_procs src/pl
+BUILD_DIRS?=	src/backend src/backend/utils/mb/conversion_procs \
+		src/bin/initdb src/bin/initlocation src/bin/ipcclean \
+		src/bin/pg_controldata src/bin/pg_ctl src/bin/pg_resetxlog \
+		src/bin/postgres src/bin/postmaster src/pl
+
 INSTALL_DIRS?=	${BUILD_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
@@ -157,6 +161,8 @@ EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
 .  ifmake makesum
 DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 .  endif
+
+PATCH_DIST_STRIP=-p1
 
 .  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
 CFLAGS+=	${PTHREAD_CFLAGS}

@@ -1,5 +1,10 @@
-bin/postmaster
+bin/initdb
+bin/ipcclean
+bin/pg_controldata
+bin/pg_ctl
+bin/pg_resetxlog
 bin/postgres
+bin/postmaster
 etc/periodic/daily/502.pgsql
 lib/libpgport.a
 lib/postgresql/ascii_and_mic.so
@@ -42,38 +47,104 @@ share/postgresql/recovery.conf.sample
 share/postgresql/sql_features.txt
 share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/af/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/fa/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/hr/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/hu/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/hu/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/ro/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/sk/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/sk/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/sk/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/sk/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sk/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sl/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/postgres.mo
-%%GETTEXT%%@dirrmtry share/locale/cs/LC_MESSAGES
 %%GETTEXT%%@dirrmtry share/locale/cs
-%%GETTEXT%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/cs/LC_MESSAGES
 %%GETTEXT%%@dirrmtry share/locale/ko
-%%GETTEXT%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/sk
-%%GETTEXT%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/ko/LC_MESSAGES
 %%GETTEXT%%@dirrmtry share/locale/ro
-%%GETTEXT%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/sk
+%%GETTEXT%%@dirrmtry share/locale/sk/LC_MESSAGES
 %%GETTEXT%%@dirrmtry share/locale/sl
-%%GETTEXT%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/sl/LC_MESSAGES
 %%GETTEXT%%@dirrmtry share/locale/zh_CN
-%%GETTEXT%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
 %%GETTEXT%%@dirrmtry share/locale/zh_TW
+%%GETTEXT%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 share/postgresql/timezone/Africa/Algiers
 share/postgresql/timezone/Africa/Luanda
 share/postgresql/timezone/Africa/Porto-Novo
@@ -307,6 +378,11 @@ share/postgresql/timezone/Pacific/Honolulu
 share/postgresql/timezone/Pacific/Easter
 share/postgresql/timezone/Pacific/Galapagos
 share/postgresql/timezone/Pacific/Samoa
+share/postgresql/timezone/Europe/Guernsey
+share/postgresql/timezone/Europe/Isle_of_Man
+share/postgresql/timezone/Europe/Podgorica
+share/postgresql/timezone/Europe/Jersey
+share/postgresql/timezone/Europe/Volgograd
 share/postgresql/timezone/Europe/London
 share/postgresql/timezone/Europe/Belfast
 share/postgresql/timezone/Europe/Dublin
@@ -364,6 +440,9 @@ share/postgresql/timezone/WET
 share/postgresql/timezone/CET
 share/postgresql/timezone/MET
 share/postgresql/timezone/EET
+share/postgresql/timezone/America/Atikokan
+share/postgresql/timezone/America/Blanc-Sablon
+share/postgresql/timezone/America/Moncton
 share/postgresql/timezone/America/Coral_Harbour
 share/postgresql/timezone/America/Danmarkshavn
 share/postgresql/timezone/America/Scoresbysund
@@ -372,6 +451,7 @@ share/postgresql/timezone/America/Thule
 share/postgresql/timezone/America/New_York
 share/postgresql/timezone/America/Chicago
 share/postgresql/timezone/America/North_Dakota/Center
+share/postgresql/timezone/America/North_Dakota/New_Salem
 share/postgresql/timezone/America/Denver
 share/postgresql/timezone/America/Los_Angeles
 share/postgresql/timezone/America/Juneau
@@ -383,6 +463,8 @@ share/postgresql/timezone/America/Phoenix
 share/postgresql/timezone/America/Boise
 share/postgresql/timezone/America/Indianapolis
 share/postgresql/timezone/America/Indiana/Marengo
+share/postgresql/timezone/America/Indiana/Petersburg
+share/postgresql/timezone/America/Indiana/Vincennes
 share/postgresql/timezone/America/Indiana/Knox
 share/postgresql/timezone/America/Indiana/Vevay
 share/postgresql/timezone/America/Indiana/Indianapolis
@@ -612,19 +694,6 @@ share/postgresql/timezone/UTC
 share/postgresql/timezone/Universal
 share/postgresql/timezone/W-SU
 share/postgresql/timezone/Zulu
-share/postgresql/timezone/SystemV/AST4ADT
-share/postgresql/timezone/SystemV/EST5EDT
-share/postgresql/timezone/SystemV/CST6CDT
-share/postgresql/timezone/SystemV/MST7MDT
-share/postgresql/timezone/SystemV/PST8PDT
-share/postgresql/timezone/SystemV/YST9YDT
-share/postgresql/timezone/SystemV/AST4
-share/postgresql/timezone/SystemV/EST5
-share/postgresql/timezone/SystemV/CST6
-share/postgresql/timezone/SystemV/MST7
-share/postgresql/timezone/SystemV/PST8
-share/postgresql/timezone/SystemV/YST9
-share/postgresql/timezone/SystemV/HST10
 share/postgresql/timezone/Mideast/Riyadh87
 share/postgresql/timezone/Mideast/Riyadh88
 share/postgresql/timezone/Mideast/Riyadh89
@@ -648,7 +717,6 @@ share/postgresql/timezone/Mideast/Riyadh89
 @dirrm share/postgresql/timezone/Mexico
 @dirrm share/postgresql/timezone/Mideast
 @dirrm share/postgresql/timezone/Pacific
-@dirrm share/postgresql/timezone/SystemV
 @dirrm share/postgresql/timezone/US
 @dirrm share/postgresql/timezone
 @unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
