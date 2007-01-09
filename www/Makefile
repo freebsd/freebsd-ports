@@ -760,6 +760,7 @@
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-RTx-Statistics
+    SUBDIR += p5-SCGI
     SUBDIR += p5-SRU
     SUBDIR += p5-SWF-Chart
     SUBDIR += p5-Sledge
