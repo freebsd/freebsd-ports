@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# PROVIDE: qpsmtpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: securelevel
+
+#variables
+#qpsmtpd_user = the user to run qpsmtpd-forkserver under
+#qpsmtpd_group = the group the pid dir will be chowned to
+#qpsmtpd_port = the port it should listen on
+#qpsmtpd_max_per_ip = max connections per IP
+#qpsmtpd_max_connections = maximum total connections
+#qpsmtpd_listen_on = IP to listen on
+
+. "/etc/rc.subr"
+
+name="qpsmtpd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/qpsmtpd-forkserver"
+pidfile="/var/run/qpsmtpd/qpsmtpd.pid"
+
+start_precmd="start_precmd"
+start_cmd="start_cmd"
+stop_cmd="stop_cmd"
+
+start_precmd()
+{
+    #exits if no user is specified
+    if [ -z $qpsmtpd_user ]; then
+	echo "qpsmtpd_user not set"
+	exit 1
+    fi
+
+    #exits if no group is specified
+    if [ -z $qpsmtpd_group ]; then
+	echo "qpsmtpd_group not set"
+	exit 1
+    fi
+
+    #sets it to the default if the port is not specified
+    if [ -z $qpsmtpd_port ]; then
+	qpsmtpd_port="2525"
+    fi
+    
+    #set it to the default max per ip
+    if [ -z $qpsmtpd_max_per_ip ]; then
+	qpsmtpd_max_per_ip="5"
+    fi
+    
+    #set it do the max number of connections total
+    if [ -z $qpsmtpd_max_connections ]; then
+	qpsmtpd_max_connections="15"
+    fi
+    
+    #set the default listen on to everything
+    if [ -z $qpsmtpd_listen_on ]; then
+	qpsmtpd_listen_on="0.0.0.0"
+    fi
+
+    if [ ! -d /var/run/qpsmtpd/ ] ; then
+	mkdir /var/run/qpsmtpd
+    fi
+    
+    chown $qpsmtpd_user:$qpsmtpd_group /var/run/qpsmtpd    
+}
+
+start_cmd()
+{
+    eval $command -p $qpsmtpd_port -c $qpsmtpd_max_connections -u $qpsmtpd_users -m $qpsmtpd_max_per_ip -l $qpsmtpd_listen_on --pid-file $pidfile
+}
+
+stop_cmd()
+{
+    kill `cat $pidfile`
+}
+
+run_rc_command "$1"

@@ -1,0 +1,92 @@
+bin/qpsmtpd-forkserver
+bin/qpsmtpd
+%%SITE_PERL%%/Qpsmtpd.pm
+%%SITE_PERL%%/Qpsmtpd/SelectServer.pm
+%%SITE_PERL%%/Qpsmtpd/Utils.pm
+%%SITE_PERL%%/Qpsmtpd/TcpServer.pm
+%%SITE_PERL%%/Qpsmtpd/Constants.pm
+%%SITE_PERL%%/Qpsmtpd/Auth.pm
+%%SITE_PERL%%/Qpsmtpd/DSN.pm
+%%SITE_PERL%%/Qpsmtpd/Transaction.pm
+%%SITE_PERL%%/Qpsmtpd/Address.pm
+%%SITE_PERL%%/Qpsmtpd/Plugin.pm
+%%SITE_PERL%%/Qpsmtpd/SMTP.pm
+%%SITE_PERL%%/Qpsmtpd/Postfix.pm
+%%SITE_PERL%%/Qpsmtpd/Connection.pm
+%%SITE_PERL%%/Apache/Qpsmtpd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd
+@dirrm %%SITE_PERL%%/Qpsmtpd/
+@dirrm %%SITE_PERL%%/Apache/
+%%EXAMPLESDIR%%/IP
+%%EXAMPLESDIR%%/badhelo
+%%EXAMPLESDIR%%/badrcptto_patterns
+%%EXAMPLESDIR%%/dnsbl_zones
+%%EXAMPLESDIR%%/invalid_resolvable_fromhost
+%%EXAMPLESDIR%%/logging
+%%EXAMPLESDIR%%/loglevel
+%%EXAMPLESDIR%%/plugins
+%%EXAMPLESDIR%%/relayclients
+%%EXAMPLESDIR%%/require_resolvable_fromhost
+%%EXAMPLESDIR%%/rhsbl_zones
+%%EXAMPLESDIR%%/size_threshold
+@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/plugins/ident/geoip
+%%DATADIR%%/plugins/ident/p0f
+@dirrm %%DATADIR%%/plugins/ident
+%%DATADIR%%/plugins/auth/auth_cvm_unix_local
+%%DATADIR%%/plugins/auth/auth_flat_file
+%%DATADIR%%/plugins/auth/auth_ldap_bind
+%%DATADIR%%/plugins/auth/auth_vpopmail_sql
+%%DATADIR%%/plugins/auth/authdeny
+%%DATADIR%%/plugins/auth/authnull
+@dirrm %%DATADIR%%/plugins/auth
+%%DATADIR%%/plugins/queue/exim-bsmtp
+%%DATADIR%%/plugins/queue/maildir
+%%DATADIR%%/plugins/queue/postfix-queue
+%%DATADIR%%/plugins/queue/qmail-queue
+%%DATADIR%%/plugins/queue/smtp-forward
+@dirrm %%DATADIR%%/plugins/queue
+%%DATADIR%%/plugins/logging/adaptive
+%%DATADIR%%/plugins/logging/devnull
+%%DATADIR%%/plugins/logging/file
+%%DATADIR%%/plugins/logging/syslog
+%%DATADIR%%/plugins/logging/warn
+@dirrm %%DATADIR%%/plugins/logging
+%%DATADIR%%/plugins/virus/uvscan
+%%DATADIR%%/plugins/virus/bitdefender
+%%DATADIR%%/plugins/virus/check_for_hi_virus
+%%DATADIR%%/plugins/virus/clamav
+%%DATADIR%%/plugins/virus/hbedv
+%%DATADIR%%/plugins/virus/kavscanner
+%%DATADIR%%/plugins/virus/klez_filter
+%%DATADIR%%/plugins/virus/sophie
+%%DATADIR%%/plugins/virus/aveclient
+@dirrm %%DATADIR%%/plugins/virus
+%%DATADIR%%/plugins/check_earlytalker
+%%DATADIR%%/plugins/check_loop
+%%DATADIR%%/plugins/check_norelay
+%%DATADIR%%/plugins/check_relay
+%%DATADIR%%/plugins/check_spamhelo
+%%DATADIR%%/plugins/content_log
+%%DATADIR%%/plugins/count_unrecognized_commands
+%%DATADIR%%/plugins/dns_whitelist_soft
+%%DATADIR%%/plugins/dnsbl
+%%DATADIR%%/plugins/greylisting
+%%DATADIR%%/plugins/hosts_allow
+%%DATADIR%%/plugins/http_config
+%%DATADIR%%/plugins/check_badrcptto_patterns
+%%DATADIR%%/plugins/check_badrcptto
+%%DATADIR%%/plugins/check_badmailfromto
+%%DATADIR%%/plugins/quit_fortune
+%%DATADIR%%/plugins/rcpt_ok
+%%DATADIR%%/plugins/require_resolvable_fromhost
+%%DATADIR%%/plugins/rhsbl
+%%DATADIR%%/plugins/sender_permitted_from
+%%DATADIR%%/plugins/spamassassin
+%%DATADIR%%/plugins/tls
+%%DATADIR%%/plugins/tls_cert
+%%DATADIR%%/plugins/check_basicheaders
+%%DATADIR%%/plugins/check_badmailfrom
+@dirrm %%DATADIR%%/plugins/
+@dirrm %%DATADIR%%
