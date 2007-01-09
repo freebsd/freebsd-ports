@@ -14,6 +14,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A tool to cache applications written in PHP
 
+BROKEN=		is a dead project and the distfile disappeared
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2007-01-15
+
 WRKSRC=		${WRKDIR}/bware_cache-${PORTVERSION}
 
 USE_PHP=	yes
