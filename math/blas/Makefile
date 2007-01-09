@@ -7,6 +7,7 @@
 
 PORTNAME=	blas
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/blas/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/blas/ \
@@ -21,10 +22,10 @@ CONFLICTS=	elmer-mathlibs-1*
 
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
-USE_GCC=	2.7+
-WITH_FORTRAN=	yes
+WANT_FORTRAN=	yes
+USE_GCC=	4.2+
 
-PLIST_FILES=	lib/libblas.a lib/libblas.so lib/libblas.so.1
+PLIST_FILES=	lib/libblas.a lib/libblas.so lib/libblas.so.2
 
 do-configure:
 	@${INSTALL_DATA} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
