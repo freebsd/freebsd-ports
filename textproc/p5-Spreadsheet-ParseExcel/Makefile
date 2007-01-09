@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Spreadsheet-ParseExcel
-PORTVERSION=	0.2603
+PORTVERSION=	0.2800
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Get information from Excel file
@@ -18,8 +19,8 @@ COMMENT=	Get information from Excel file
 BUILD_DEPENDS=	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
-PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
+PERL_MODBUILD=	yes
+#PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MAN3=		Spreadsheet::ParseExcel.3 \
 		Spreadsheet::ParseExcel::SaveParser.3 \
@@ -36,4 +37,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sample/Excel/* ${EXAMPLESDIR}/Excel
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
+.endif
+
+.include <bsd.port.post.mk>
