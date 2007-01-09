@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl.patch.gz
 PATCH_SITES=	http://www.egghelp.org/files/patches/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
@@ -25,22 +25,21 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl84.so \
 		--with-tclinc=${LOCALBASE}/include/tcl8.4/tcl.h
 
+OPTIONS=	SSL "Use SSL" off
+
 MAN1=		eggdrop.1
 
 SUB_FILES=	pkg-message
 
-.if defined(WITH_SSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-ssl
-.else
-CONFIGURE_ARGS+=	--without-ssl
-.endif
-
 .include <bsd.port.pre.mk>
 
-pre-everything::
+.if defined(WITH_SSL)
+CFLAGS+=	-DHAVE_OPENSSL
+CONFIGURE_ARGS+=	--with-ssl
+.endif
+
 .if !defined(WITH_SSL)
-	@${ECHO_MSG} 'Define WITH_SSL to enable SSL support'
+CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 post-patch:
