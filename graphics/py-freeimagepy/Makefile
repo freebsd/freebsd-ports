@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	freeimagepy
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FreeImagePy_w_dll_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A FreeImage library python wrapper
 
 LIB_DEPENDS=	freeimage:${PORTSDIR}/graphics/freeimage
