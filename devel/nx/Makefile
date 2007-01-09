@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	nx
-PORTVERSION=	0.24
-PORTREVISION=	1
+PORTVERSION=	0.33
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	networkx
 DISTNAME=	networkx-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Python package for studying network structure, dynamics, and function
 
 BUILD_DEPENDS=	${PYNUMERIC} \
