@@ -1,0 +1,10 @@
+--- IVL/src/makeGlobalLib~	Fri Sep 18 04:25:30 1998
++++ IVL/src/makeGlobalLib	Tue Jan  9 16:26:55 2007
+@@ -9,6 +9,7 @@
+       init.c \
+       instance.c \
+       listmanip.c \
++      subIVL.c \
+       misc.c \
+       util.c
+ 
