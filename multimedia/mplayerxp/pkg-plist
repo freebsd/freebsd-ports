@@ -1,40 +1,21 @@
 %%DVD%%bin/fibmap_mplayerxp
 bin/mplayerxp
 etc/mplayerxp/codecs.conf
-include/vidix/fourcc.h
-include/vidix/vidix.h
-include/vidix/vidixlib.h
-lib/libdha-0.2.so
-lib/libdha.so
-lib/libvidix.so
+etc/mplayerxp/eqbands
 lib/mplayerxp/codecs/libMP3.so
 lib/mplayerxp/codecs/liba52.so
-lib/mplayerxp/codecs/libac3-iec958.so
-lib/mplayerxp/codecs/libadpcm.so
-lib/mplayerxp/codecs/libcinepak.so
-lib/mplayerxp/codecs/libcyuv.so
-lib/mplayerxp/codecs/libfli.so
+lib/mplayerxp/codecs/libavcodec.so
+lib/mplayerxp/codecs/libavformat.so
+lib/mplayerxp/codecs/libavutil.so
+lib/mplayerxp/codecs/libdca.so
+lib/mplayerxp/codecs/libfaad2.so
 lib/mplayerxp/codecs/libmpeg2.so
-lib/mplayerxp/codecs/libmsvidc.so
 lib/mplayerxp/codecs/libnuppelvideo.so
-lib/mplayerxp/codecs/libqtrle.so
-lib/mplayerxp/codecs/libqtrpza.so
-lib/mplayerxp/codecs/libqtsmc.so
-lib/mplayerxp/codecs/libroqav.so
+lib/mplayerxp/codecs/libpostproc.so
+lib/mplayerxp/wine/DMO_Filter.so
 lib/mplayerxp/wine/DS_Filter.so
 lib/mplayerxp/wine/libloader.so
-lib/vidix/genfb_vid.so
-lib/vidix/mach64_vid.so
-lib/vidix/mga_crtc2_vid.so
-lib/vidix/mga_vid.so
-lib/vidix/nvidia_vid.so
-lib/vidix/pm2_vid.so
-lib/vidix/pm3_vid.so
-lib/vidix/radeon_vid.so
-lib/vidix/rage128_vid.so
-@dirrm lib/vidix
 @dirrm lib/mplayerxp/wine
 @dirrm lib/mplayerxp/codecs
 @dirrm lib/mplayerxp
-@dirrm include/vidix
 @dirrm etc/mplayerxp
