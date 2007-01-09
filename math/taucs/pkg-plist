@@ -1,6 +1,8 @@
 bin/direct
 bin/iter
 lib/libtaucs.a
+lib/libtaucs.so
+lib/libtaucs.so.1
 include/taucs.h
 include/taucs_config_build.h
 include/taucs_config_tests.h
