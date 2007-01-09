@@ -83,6 +83,7 @@
     SUBDIR += dkimap4
     SUBDIR += dkimproxy
     SUBDIR += dovecot
+    SUBDIR += dovecot-sieve
     SUBDIR += drac
     SUBDIR += drbl
     SUBDIR += dsbl-testers

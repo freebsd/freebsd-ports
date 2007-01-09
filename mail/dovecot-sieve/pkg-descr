@@ -1,0 +1,9 @@
+From the Dovecot wiki on LDA (WWW: http://wiki.dovecot.org/LDA/Sieve)
+
+Sieve language support by a plugin for the deliver LDA
+
+    * Mail filtering
+    * Mail forwarding
+    * Vacation auto-reply
+
+WWW:	http://www.dovecot.org

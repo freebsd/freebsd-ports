@@ -1,0 +1,16 @@
+---------------------------------------------------------------------
+ 
+ This port assumes you are known with Dovecot and have it installed
+ and running on the system you have installed this plugin on.
+
+ You can enable the plugin with this directive in your dovecot.conf:
+
+     protocol lda {
+  	mail_plugins = cmusieve
+     }
+
+ Further information on configuration can be found at:
+ 
+  http://wiki.dovecot.org/
+
+---------------------------------------------------------------------
