@@ -7,6 +7,7 @@
 
 PORTNAME=	CalculiX
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -29,19 +30,19 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
-		arpack:${PORTSDIR}/math/arpack	\
-		spooles:${PORTSDIR}/math/spooles \
-		metis:${PORTSDIR}/math/metis	\
-		taucs:${PORTSDIR}/math/taucs
+		arpack.1:${PORTSDIR}/math/arpack	\
+		spooles.1:${PORTSDIR}/math/spooles \
+		metis.1:${PORTSDIR}/math/metis	\
+		taucs.1:${PORTSDIR}/math/taucs
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=             yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=		atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
 BLAS_LIBS?=		-lf77blas -latlas
 .else
 LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=		lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=		lapack.4:${PORTSDIR}/math/lapack
 BLAS_LIBS=		-lblas
 .endif
 
