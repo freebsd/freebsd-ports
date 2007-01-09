@@ -19,12 +19,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+WANT_FORTRAN=	yes #dummy
+USE_GCC=4.2+
+LIB_DEPENDS+=	f2c.2:${PORTSDIR}/lang/f2c
 ALL_TARGET=	shared
 
 post-patch:
+	${ECHO_CMD} ${FC}
 	@${GREP} -lR "<malloc.\h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e 's|="\.so"|=".so.0"|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%FC%%|${FC}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%FC%%|${FC}|g' ${WRKSRC}/configure.in
 
 do-install:
 .for file in drvrsmem.h fitsio.h fitsio2.h longnam.h
