@@ -7,29 +7,28 @@
 #
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to launch shell commands under X with your keyboard
 
+OPTIONS=	GUILE "Guile support" off \
+		TCLTK "Tcl/Tk support" off
+
 USE_XLIB=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		xbindkeys.1
+PLIST_FILES=	bin/xbindkeys %%EXAMPLESDIR%%/xbindkeysrc
+PLIST_DIRS=	%%EXAMPLESDIR%%
 
 WISH=		${LOCALBASE}/bin/wish8.4
-
-OPTIONS=	GUILE "Guile support" off \
-		TCLTK "Tcl/Tk support" off
-
-PEXAMPLESDIR=	${EXAMPLESDIR:S,^${PREFIX}/,,}
-PLIST_FILES=	bin/xbindkeys ${PEXAMPLESDIR}/xbindkeysrc
-PLIST_DIRS=	${PEXAMPLESDIR}
 
 .include <bsd.port.pre.mk>
 
