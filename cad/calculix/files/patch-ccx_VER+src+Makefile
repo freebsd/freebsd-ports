@@ -10,8 +10,8 @@
  
 -CC=cc
 -FC=g77
-+CC?=%%CC%%
-+FC?=%%FC%%
++CC=%%CC%%
++FC=%%FC%%
  
  .c.o :
  	$(CC) $(CFLAGS) -c $<
