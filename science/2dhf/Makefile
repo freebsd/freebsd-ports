@@ -28,7 +28,7 @@ WITH_ATLAS=	yes
 LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
 .else
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 .endif
