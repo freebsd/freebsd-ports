@@ -10174,6 +10174,7 @@ p5-Rose-DateTime	ports/devel/p5-Rose-DateTime
 p5-Rose-Object	ports/devel/p5-Rose-Object
 p5-RunApp	ports/devel/p5-RunApp
 p5-SAVI-Perl	ports/security/p5-SAVI-Perl
+p5-SCGI		ports/www/p5-SCGI
 p5-SDL		ports/devel/p5-SDL
 p5-SGML-DTDParse	ports/textproc/p5-SGML-DTDParse
 p5-SGMLSpm	ports/textproc/p5-SGMLSpm
