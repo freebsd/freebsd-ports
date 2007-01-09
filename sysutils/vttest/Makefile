@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vttest
-PORTVERSION=	2005.10.20
+PORTVERSION=	2007.01.07
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://invisible-island.net/vttest/
 DISTNAME=	${PORTNAME}
