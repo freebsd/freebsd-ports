@@ -144,8 +144,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/||g' ${WRKSRC}/source/s_sdl.cpp
 	@${REINPLACE_CMD} -e 's|\.$$host_cpu||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e '/animated\.lmp/d' \
-		${WRKSRC}/basev/doom/basepak.ls.in
 	@cd ${WRKSRC} && ${SH} fixunix.sh
 
 post-install:
