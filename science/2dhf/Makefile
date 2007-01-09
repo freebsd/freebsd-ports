@@ -7,6 +7,7 @@
 
 PORTNAME=	2dhf
 PORTVERSION=	2005.05
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.fizyka.umk.pl/~jkob/2dhf/
 DISTNAME=	${PORTNAME}-05.05
@@ -25,11 +26,11 @@ BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 .endif
 
