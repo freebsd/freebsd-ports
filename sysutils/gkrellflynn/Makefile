@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	gkrellflynn
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://horus.comlab.uni-rostock.de/flynn/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Flynn is a tiny system load meter for gkrellm
+COMMENT=	A tiny system load meter for gkrellm
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-PLIST_FILES=	libexec/gkrellm/plugins/gkrellflynn.so
-USE_GNOME=	imlib
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellflynn.so
+USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c"
 ALL_TARGET=	${PORTNAME}.so
 
+CFLAGS+=	`pkg-config --cflags gtk+-2.0 gthread-2.0` \
+		-I${LOCALBASE}/include -I${X11BASE}/include -DGKRELLM2
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/gkrellflynn.so \
-		${PREFIX}/libexec/gkrellm/plugins
+	${INSTALL_PROGRAM} ${WRKSRC}/gkrellflynn.so \
+		${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>
