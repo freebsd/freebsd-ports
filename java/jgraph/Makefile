@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	jgraph
-PORTVERSION=	5.9.2.1
-CATEGORIES=	java
+PORTVERSION=	5.10.0.1
+CATEGORIES=	java graphics
 MASTER_SITES=	SF \
 		http://www.jgraph.com/pub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-lgpl-src
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	The Java Graph Diagram Component
 
 USE_ZIP=	yes
