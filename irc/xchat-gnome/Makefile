@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xchat
-PORTVERSION=	0.13
-PORTREVISION=	3
+PORTVERSION=	0.15
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://releases.navi.cx/xchat-gnome/
 PKGNAMESUFFIX=	-gnome
@@ -32,11 +31,13 @@ GCONF_SCHEMAS=	apps_xchat.schemas notification.schemas urlscraper.schemas
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
+MAN1=		xchat-gnome.1
+
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
 USE_GNOME+=	gconf2
-GCONF_SCHEMAS+=	xchat_gnome_url_handler.schemas
+GCONF_SCHEMAS+=	url_handler.schemas
 PLIST_SUB+=	DBUS=""
 .else
 CONFIGURE_ARGS+=--disable-dbus
@@ -111,6 +112,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
+		-e 's|tcl-8.4/lib|lib/tcl8.3|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
