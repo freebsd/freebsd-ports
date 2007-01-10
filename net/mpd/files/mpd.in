@@ -1,17 +1,19 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/net/mpd/files/Attic/mpd.in,v 1.1 2007-01-10 06:47:24 vd Exp $
 #
 # PROVIDE: mpd
 # REQUIRE: NETWORKING syslogd
 #
-# Add the following line to /etc/rc.conf to enable mpd:
+# Add the following line to /etc/rc.conf[.local] to enable mpd:
 #
 # mpd_enable="YES"
 #
+# You can also set mpd_flags to any flags you want. The default is "-b".
+#
 
 mpd_flags="${mpd_flags:--b}"
-mpd_enable="${mpd_enable-NO}"
+mpd_enable="${mpd_enable:-NO}"
 
 . %%RC_SUBR%%
 

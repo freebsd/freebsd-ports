@@ -2,7 +2,6 @@ etc/mpd/mpd.conf.sample
 etc/mpd/mpd.links.sample
 etc/mpd/mpd.secret.sample
 etc/mpd/mpd.script.sample
-etc/rc.d/mpd.sh
 sbin/mpd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/mpd.ps
