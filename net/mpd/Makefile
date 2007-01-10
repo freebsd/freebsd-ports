@@ -7,7 +7,7 @@
 
 PORTNAME=	mpd
 PORTVERSION=	3.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
@@ -23,17 +23,11 @@ MANCOMPRESSED=	maybe
 USE_OPENSSL=	yes
 MAKE_ENV=	COPTS="${COPTS} -I${OPENSSLINC}" LDADD="${LDADD} -L${OPENSSLLIB}"
 
-.include <bsd.port.pre.mk>
+USE_RC_SUBR=	mpd
 
 pre-build:
 	@${ECHO}
 	@${ECHO} "Use WITH_OPENSSL_PORT=yes if you use OPENSSL from ports"
 	@${ECHO}
 
-post-install:
-	@${SED} -e "s=%%RC_SUBR%%=${RC_SUBR}=" \
-		-e "s=%%PREFIX%%=${PREFIX}=" \
-		< ${FILESDIR}/mpd.sh > ${WRKSRC}/mpd.sh
-	@${INSTALL_SCRIPT} ${WRKSRC}/mpd.sh ${PREFIX}/etc/rc.d/mpd.sh
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
