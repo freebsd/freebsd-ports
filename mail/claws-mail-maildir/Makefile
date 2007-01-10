@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Maildir++ plugin for claws-mail
 
+BROKEN=	doesn't compile
+
 BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
