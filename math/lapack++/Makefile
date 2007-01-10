@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lapack++
-PORTVERSION=	2.4.9
+PORTVERSION=	2.5.0
 CATEGORIES=	math
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} \
 		http://math.nist.gov/lapack++/:doc
@@ -16,30 +16,30 @@ DISTNAME=	lapackpp-${PORTVERSION}
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} lapack++.ps.gz:doc lapackpp1_1.ps.gz:doc \
 		lapackppman1_1.ps.gz:doc lapack++_install.ps.gz:doc
 .endif
-DIST_SUBDIR=	lapack++
+DIST_SUBDIR=	lapackpp
 EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
-.include <bsd.port.pre.mk>
+WANT_FORTRAN=	yes
+USE_GCC=	4.2+
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 .endif
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
 .if defined(WITH_ATLAS)
 BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas -latlas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack
 .else
 BLAS_LIB=	-L${LOCALBASE}/lib -lblas
 LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
@@ -61,4 +61,4 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapackppman1_1.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
