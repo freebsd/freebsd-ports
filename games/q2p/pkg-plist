@@ -1,0 +1,16 @@
+%%CLIENT%%bin/q2p
+%%DEDICATED%%bin/q2p-ded
+%%LIBDIR%%/baseq2/autoexec.cfg
+%%GAME%%%%LIBDIR%%/baseq2/game.so
+%%LIBDIR%%/baseq2/q2p.q2z
+%%CTF%%%%LIBDIR%%/ctf/game.so
+%%OSS%%%%LIBDIR%%/snd_oss.so
+%%SDL%%%%LIBDIR%%/snd_sdl.so
+%%GLX%%%%LIBDIR%%/vid_gl.so
+%%SDLGL%%%%LIBDIR%%/vid_sdl.so
+%%PORTDOCS%%%%DOCSDIR%%/Ogg_readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/Q2P_readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%LIBDIR%%/baseq2
+%%CTF%%@dirrm %%LIBDIR%%/ctf
+@dirrm %%LIBDIR%%

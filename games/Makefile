@@ -571,6 +571,7 @@
     SUBDIR += pysycache-themes
     SUBDIR += pythonchess
     SUBDIR += q15
+    SUBDIR += q2p
     SUBDIR += q2pro
     SUBDIR += q3base
     SUBDIR += q3cellshading

@@ -1,0 +1,241 @@
+--- ./Makefile.orig	Sun Dec 31 14:01:34 2006
++++ ./Makefile	Fri Jan  5 15:51:35 2007
+@@ -9,7 +9,7 @@
+ 
+ # Check OS type.
+ OSTYPE=    $(shell uname -s | tr A-Z a-z)
+-ARCH=      $(shell uname -m | sed -e s/i.86/i386/)
++ARCH?=     $(shell uname -m | sed -e s/i.86/i386/)
+ MARCH=     $(shell uname -m)
+ OP_SYSTEM= $(shell uname -sr)
+ 
+@@ -27,75 +27,75 @@
+ # verbose compilation       #
+ # process.                  #
+ #===========================#
+-VERBOSE=NO
++VERBOSE=YES
+ 
+ #===========================#
+ # Q2P Client                #
+ #===========================#
+-BUILD_Q2P=YES
++BUILD_Q2P?=NO
+ 
+ #===========================#
+ # Enable Optimizations.     #
+ # Release build only.       #
+ #===========================#
+-OPTIMIZE=NO
++OPTIMIZE?=NO
+ 
+ #===========================#
+ # Remove symbols from       #
+ # binaries, reduce size.    #
+ # Release build only.       #
+ #===========================#
+-STRIP=YES
++STRIP?=YES
+ 
+ #===========================#
+ # Sound Drivers             #
+ #===========================#
+ ifeq ($(OSTYPE),linux)
+-BUILD_ALSA_SND=YES
++BUILD_ALSA_SND?=NO
+ endif
+-BUILD_OSS_SND=YES
+-BUILD_SDL_SND=YES
++BUILD_OSS_SND?=NO
++BUILD_SDL_SND?=NO
+ 
+ #===========================#
+ # Quake 2 dedicated server. #
+ #===========================#
+-BUILD_DEDICATED=YES
++BUILD_DEDICATED?=NO
+ 
+ #===========================#
+ # GLX, SDL-GLX              #
+ # render.                   #
+ #===========================#
+-BUILD_GLX=YES
+-BUILD_SDLGL=YES
++BUILD_GLX?=NO
++BUILD_SDLGL?=NO
+ 
+ #===========================#
+ # Linked To GLU library.    #
+ #===========================#
+-WITH_GLULIB=YES
++WITH_GLULIB?=YES
+ 
+ #===========================#
+ # Built in DGA mouse        #
+ # support.                  #
+ #===========================#
+-WITH_XF86_DGA=NO
++WITH_XF86_DGA?=YES
+ 
+ #===========================#
+ # Read from $(DATADIR) and  #
+ # write to "~/.quake2"      #
+ #===========================#
+-WITH_DATADIR=NO
++WITH_DATADIR?=YES
+ 
+ #===========================#
+ # Load renderers            #
+ # from $(LIBDIR)            #
+ #===========================#
+-WITH_LIBDIR=NO
++WITH_LIBDIR?=YES
+ 
+ #===========================#
+ # Built in CD Audio         #
+ # support.                  #
+ #===========================#
+-WITH_CDAUDIO=NO
++WITH_CDAUDIO?=YES
+ ifeq ($(OSTYPE),freebsd)
+ CD_API=cd_freebsd.c
+ endif
+@@ -107,22 +107,19 @@
+ # Enable XMMS/Audacious     #
+ # support. Only one of them #
+ # at same time.             #
+-# No yet for FreeBSD :(     #
+ #===========================#
+-ifeq ($(OSTYPE),linux)
+-WITH_AUDACIOUS=YES
+-WITH_XMMS=NO
+-endif
++WITH_AUDACIOUS?=NO
++WITH_XMMS?=NO
+ 
+ #===========================#
+ # Quake 2 game library.     #
+ #===========================#
+-BUILD_GAME=YES
++BUILD_GAME?=NO
+ 
+ #===========================#
+ # CTF Library.              #
+ #===========================#
+-BUILD_CTF=YES
++BUILD_CTF?=NO
+ 
+ 
+ CLIENT_DIR=$(MOUNT_DIR)/client
+@@ -133,24 +130,24 @@
+ GAME_DIR=$(MOUNT_DIR)/game
+ CTF_DIR=$(MOUNT_DIR)/ctf
+ 
+-CC=gcc
++CC?=gcc
+ CC_VERSION=$(shell $(CC) -dumpversion)
+ 
+-X11BASE= /usr/X11R6
+-LOCALBASE= /usr/local
+-GAMEBASE= /usr/local
+-SYSBINDIR=$(LOCALBASE)/bin
++X11BASE?=   /usr/X11R6
++LOCALBASE?= /usr/local
++GAMEBASE?=  $(PREFIX)
++SYSBINDIR?= $(PREFIX)/bin
+ 
+ ifeq ($(OSTYPE),freebsd)
+- DATADIR= $(GAMEBASE)/share/quake2
+- LIBDIR= $(GAMEBASE)/lib/quake2
++ DATADIR?= $(GAMEBASE)/share/quake2
++ LIBDIR?=  $(GAMEBASE)/lib/quake2
+ else
+- DATADIR= $(GAMEBASE)/games/quake2
+- LIBDIR= $(GAMEBASE)/games/quake2
++ DATADIR?= $(GAMEBASE)/games/quake2
++ LIBDIR?=  $(GAMEBASE)/games/quake2
+ endif
+ 
+ SHLIB_EXT=so
+-GAME_NAME=game$(ARCH).$(SHLIB_EXT)
++GAME_NAME=game.$(SHLIB_EXT)
+ 
+ BASE_CFLAGS+=-I$(LOCALBASE)/include \
+             -I$(X11BASE)/include \
+@@ -168,15 +165,14 @@
+ 
+ ifeq ($(strip $(OPTIMIZE)),YES)
+  RELEASE_CFLAGS+=-O3 \
+-                 -march=$(MARCH) \
+                  -funroll-loops \
+                  -fstrength-reduce \
+-                 -fexpensive-optimizations \
+-                 -falign-loops=2 \
++                 -fexpensive-optimizations -fomit-frame-pointer -ffast-math
++ifeq ($(ARCH),i386)
++ RELEASE_CFLAGS+=-falign-loops=2 \
+                  -falign-jumps=2 \
+                  -falign-functions=2
+-else
+- RELEASE_CFLAGS+=-O2
++endif
+ endif
+ 
+ ifeq ($(strip $(STRIP)),YES)
+@@ -263,7 +259,7 @@
+ endif
+ 
+ ifeq ($(strip $(BUILD_DEDICATED)),YES)
+- TARGETS += $(BINDIR)/q2p-dedicated
++ TARGETS += $(BINDIR)/q2p-ded
+  DED_CFLAGS += -DDEDICATED_ONLY
+ endif
+ 
+@@ -292,11 +288,11 @@
+ endif
+ 	
+ ifeq ($(strip $(BUILD_GAME)),YES)
+- TARGETS+=$(BINDIR)/baseq2/game$(ARCH).$(SHLIB_EXT)
++ TARGETS+=$(BINDIR)/baseq2/game.$(SHLIB_EXT)
+ endif
+ 	
+ ifeq ($(strip $(BUILD_CTF)),YES)
+- TARGETS+=$(BINDIR)/ctf/game$(ARCH).$(SHLIB_EXT)
++ TARGETS+=$(BINDIR)/ctf/game.$(SHLIB_EXT)
+ endif
+ 
+ all:
+@@ -585,7 +581,7 @@
+ $(BUILDDIR)/ded/q_shared.o $(BUILDDIR)/ded/pmove.o \
+ $(BUILDDIR)/ded/cl_null.o  $(BUILDDIR)/ded/cd_null.o
+ 
+-$(BINDIR)/q2p-dedicated : $(Q2PDED_OBJS)
++$(BINDIR)/q2p-ded : $(Q2PDED_OBJS)
+ 	@echo
+ 	@echo "**Built Q2P dedicated client with cflags:"
+ 	@echo "$(CC) $(CC_VERSION)";
+@@ -709,7 +705,7 @@
+ $(BUILDDIR)/game/m_tank.o     $(BUILDDIR)/game/p_hud.o       $(BUILDDIR)/game/p_trail.o \
+ $(BUILDDIR)/game/p_view.o     $(BUILDDIR)/game/p_weapon.o    $(BUILDDIR)/game/m_flash.o
+ 
+-$(BINDIR)/baseq2/game$(ARCH).$(SHLIB_EXT) : $(GAME_OBJS)
++$(BINDIR)/baseq2/game.$(SHLIB_EXT) : $(GAME_OBJS)
+ 	@echo
+ 	@echo "**Built $@ with cflags:"
+ 	@echo "$(CC) $(CC_VERSION) $(CFLAGS)";
+@@ -784,7 +780,7 @@
+ $(BUILDDIR)/ctf/p_menu.o    $(BUILDDIR)/ctf/p_trail.o  $(BUILDDIR)/ctf/p_view.o \
+ $(BUILDDIR)/ctf/p_weapon.o  $(BUILDDIR)/ctf/q_shared.o
+ 
+-$(BINDIR)/ctf/game$(ARCH).$(SHLIB_EXT) : $(CTF_OBJS)
++$(BINDIR)/ctf/game.$(SHLIB_EXT) : $(CTF_OBJS)
+ 	@echo
+ 	@echo "**Built $@ with cflags:"
+ 	@echo "$(CC) $(CC_VERSION) $(CFLAGS)";
+@@ -935,4 +931,4 @@
+ 	@tar cjvf $(Q2P_VERSION_BZ2)-$(OSTYPE)-$(DATE).tar.bz2 $(BINDIR)
+ 	@printf ".... Done.\n"
+ 	
+-	
+\ No newline at end of file
++	
