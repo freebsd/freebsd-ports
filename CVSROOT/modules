@@ -10937,6 +10937,7 @@ paraview	ports/science/paraview
 parchive	ports/archivers/parchive
 pardiff		ports/textproc/pardiff
 pari		ports/math/pari
+paris-traceroute	ports/net/paris-traceroute
 parmetis	ports/math/parmetis
 party		ports/irc/party
 pas2dox		ports/devel/pas2dox
