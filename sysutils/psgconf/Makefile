@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Obje
 	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
 	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
 
+BROKEN=		Leaves behind files on deinstall
+
 PERL_CONFIGURE=	YES
 
 MAN1=		psgconf.1
