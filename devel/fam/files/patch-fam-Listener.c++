@@ -1,6 +1,6 @@
---- fam/Listener.c++~	Tue Jul 16 02:14:41 2002
-+++ fam/Listener.c++	Tue Sep  3 19:53:27 2002
-@@ -35,6 +35,10 @@
+--- fam/Listener.c++.orig	Tue Apr 15 13:52:40 2003
++++ fam/Listener.c++	Thu Jan 11 05:28:45 2007
+@@ -36,6 +36,10 @@
  #include <sys/stat.h>
  #include <sys/un.h>
  #include <unistd.h>
@@ -11,3 +11,12 @@
  
  #include <errno.h>
  
+@@ -203,7 +207,7 @@
+     //  requested user and pass the name back to the client.
+ 
+     //  Unset TMPDIR to ensure that tempnam() works as desired
+-    putenv("TMPDIR=");
++    unsetenv("TMPDIR");
+ 
+     char *tmpfile = tempnam("/tmp", ".fam");
+ #if defined(__FreeBSD__)
