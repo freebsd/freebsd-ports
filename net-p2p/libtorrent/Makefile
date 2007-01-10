@@ -9,7 +9,9 @@ PORTNAME?=	libtorrent
 PORTVERSION?=	0.11.1
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
+MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	flz/libtorrent
 
 MAINTAINER?=	flz@FreeBSD.org
 COMMENT?=	BitTorrent Library written in C++
