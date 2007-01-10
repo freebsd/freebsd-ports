@@ -7,6 +7,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -18,7 +19,10 @@ USE_GMAKE=	yes
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-pyecasound --disable-rubyecasound --with-largefile \
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--disable-pyecasound \
+		--disable-rubyecasound \
+		--with-largefile \
 		--enable-sys-readline
 USE_LDCONFIG=	yes
 
