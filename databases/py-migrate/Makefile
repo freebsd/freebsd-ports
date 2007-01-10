@@ -7,6 +7,7 @@
 
 PORTNAME=	migrate
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/m/migrate/ \
 		http://dose.se/distfiles/migrate/
@@ -22,6 +23,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 USE_PYDISTUTILS=	yes
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/SQLAlchemy-0.3.1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/databases/py-sqlalchemy
+RUN_DEPENDS+=	py-sqlalchemy>=0.3.0:${PORTSDIR}/databases/py-sqlalchemy
 
 .include <bsd.port.mk>
