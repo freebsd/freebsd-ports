@@ -7,7 +7,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/blacs/
 DISTNAME=	BLACS
@@ -41,14 +41,11 @@ RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
 .endif
 
-pre-fetch:
-	@${ECHO} "If you want to use compiler other than f77,"
-	@${ECHO} "plase set NO_GNUF77=yes"
-
-F77?=	f77
-.if !defined(NO_GNUF77)
-F77EXTRAFLAGS=	-w -fno-globals -fugly-complex
-.endif
+WANT_FORTRAN=yes
+USE_GCC=4.2+
+MAKE_ENV= "FC=${FC}" "F77=${F77}"
+USE_GMAKE=yes
+F77EXTRAFLAGS=	#-w -fno-globals -fugly-complex
 DEBUG_LEVEL=	0
 
 .if defined(WITH_OPTIMIZED_FLAGS)

@@ -62,3 +62,14 @@
  #  --------------------------------------------------------------------------
  #  The archiver and the flag(s) to use when building an archive (library).
  #  Also the ranlib routine.  If your system has no ranlib, set RANLIB = echo.
+--- Bmake.inc~	Wed Jan 10 16:11:00 2007
++++ Bmake.inc	Wed Jan 10 16:18:08 2007
+@@ -93,7 +93,7 @@
+ #  setting for your platform, compile and run BLACS/INSTALL/xintface.
+ #  Choices are: Add_, NoChange, UpCase, or f77IsF2C.
+ #  ---------------------------------------------------------------------------
+-   INTFACE = -Df77IsF2C
++   INTFACE = -DAdd_
+ 
+ #  ------------------------------------------------------------------------
+ #  Allows the user to vary the topologies that the BLACS default topologies
