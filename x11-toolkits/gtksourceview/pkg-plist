@@ -26,6 +26,7 @@ share/gnome/gtksourceview-1.0/language-specs/css.lang
 share/gnome/gtksourceview-1.0/language-specs/d.lang
 share/gnome/gtksourceview-1.0/language-specs/desktop.lang
 share/gnome/gtksourceview-1.0/language-specs/diff.lang
+share/gnome/gtksourceview-1.0/language-specs/docbook.lang
 share/gnome/gtksourceview-1.0/language-specs/fortran.lang
 share/gnome/gtksourceview-1.0/language-specs/gtkrc.lang
 share/gnome/gtksourceview-1.0/language-specs/haskell.lang
@@ -41,6 +42,7 @@ share/gnome/gtksourceview-1.0/language-specs/lua.lang
 share/gnome/gtksourceview-1.0/language-specs/makefile.lang
 share/gnome/gtksourceview-1.0/language-specs/msil.lang
 share/gnome/gtksourceview-1.0/language-specs/nemerle.lang
+share/gnome/gtksourceview-1.0/language-specs/ocaml.lang
 share/gnome/gtksourceview-1.0/language-specs/octave.lang
 share/gnome/gtksourceview-1.0/language-specs/pascal.lang
 share/gnome/gtksourceview-1.0/language-specs/perl.lang
