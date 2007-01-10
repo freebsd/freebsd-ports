@@ -7,7 +7,7 @@
 
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/BlockSolve95/	\
 		ftp://ftp.irisa.fr/pub/mirrors/BlockSolve95/
@@ -32,7 +32,9 @@ MPIDIR=		${LOCALBASE}/mpich2
 PETSC_ARCH=	freebsd
 BOPT?=		O
 
-FFLAGS?=	-O2
+WANT_FORTRAN=	yes
+USE_GCC=4.2+
+FFLAGS+=	-O2
 
 INCLUDES=	BMmsg.h BSdepend.h BSlog.h BSmy_blas.h BSprivate.h BSsparse.h
 PORTDOCS=	manual.ps
@@ -43,11 +45,12 @@ PORTDOCS=	manual.ps
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
-BLAS_LIB=	"-lf77blas -lcblas -latlas -lg2c -lm"
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS_LIB=	"-lf77blas -latlas -lm"
 LAPACK_LIB=	"-L${LOCALBASE}/lib -lalapack"
 .else
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS_LIB=	"-lblas -lm"
 LAPACK_LIB=	"-L${LOCALBASE}/lib -llapack"
 .endif
