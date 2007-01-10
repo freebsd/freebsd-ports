@@ -20,6 +20,9 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.4
+
+OPTIONS=	STATIC	"Enable Full STATIC" off
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -33,10 +36,16 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR+=	pdns-recursor
 
-.if defined(BUILD_STATIC) && ${BUILD_STATIC} == "semi"
-MAKE_ENV+=STATIC=semi
-.elif defined(BUILD_STATIC)
+.if defined(WITH_STATIC)
 MAKE_ENV+=STATIC=full
+PLIST_SUB+=	STATIC="@comment "
+.else
+MAKE_ENV+=STATIC=semi
+PLIST_SUB+=	STATIC=""
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
 .endif
 
 .if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
