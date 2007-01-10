@@ -5,12 +5,12 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	20061115.BETA
+PORTVERSION=	0.20070102.BETA
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ntfs-3g.org/
 MASTER_SITE_SUBDIR=	fuse
 PKGNAMEPREFIX=	fusefs-
-DISTNAME=	${PORTNAME}-3g-0.${PORTVERSION:S,.,-,}
+DISTNAME=	${PORTNAME}-3g-${PORTVERSION:S,.BETA,-BETA,}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fjoe@FreeBSD.org
@@ -23,7 +23,8 @@ BUILD_DEPENDS=	fusefs-libs>=2.6.0:${PORTSDIR}/sysutils/fusefs-libs
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ONLY_FOR_ARCHS=	i386 amd64
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+MAN8=		ntfs-3g.8
 
 post-patch:
 	@${CP} ${FILESDIR}/unix_io_raw.c ${WRKSRC}/libntfs-3g
