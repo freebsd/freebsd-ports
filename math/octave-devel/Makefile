@@ -7,6 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	2.9.9
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/\
@@ -18,11 +19,11 @@ COMMENT=	Developer's version of math/octave
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk \
-		${LOCALBASE}/lib/libcxsparse.a:${PORTSDIR}/math/suitesparse
+		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		hdf5:${PORTSDIR}/science/hdf5
+		hdf5:${PORTSDIR}/science/hdf5 \
+		umfpack.1:${PORTSDIR}/math/suitesparse
 
 LATEST_LINK=    octave-devel
 
@@ -41,15 +42,22 @@ MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas  -lcblas -latlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
 LAPACK=		-lalapack
 .else
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
+
+WANT_FORTRAN=	yes
+#workaround optimization bug in gcc42, not gfortran42
+#USE_GCC=4.2+
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
