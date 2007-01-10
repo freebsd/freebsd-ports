@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.0.5
-PORTEPOCH=	1
+PORTVERSION=	1.0.5p1
+PORTEPOCH=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
 		http://www-unix.mcs.anl.gov/mpi/mpich/downloads/
@@ -25,7 +25,6 @@ COMMENT=	A portable implementation of MPI-1 and MPI-2
 #
 # - WITHOUT_JAVA	don't build MPE Jumpshot-4
 # - WITHOUT_X11		disable MPE graphics routines
-# - WITHOUT_F90		disable gfortran support
 # - WITH_SMPD		use SMPD instead of MPD for OS-mixed cluster
 #-----------------------------------------------------------------------
 
@@ -40,6 +39,11 @@ FFLAGS?=	-O2
 NOCCACHE=	yes
 MAKE_ENV=	CCACHE_DISABLE=yes
 
+WANT_FORTRAN=	yes
+USE_GCC=4.2+
+F90FLAGS+=	${FFLAGS}
+CONFIGURE_ENV+= F90=${FC} F90FLAGS=${F90FLAGS} F77=${FC}
+
 NO_MTREE=	yes
 USE_LDCONFIG=	yes
 
@@ -53,7 +57,6 @@ PLIST_SUB+=	X11="@comment "
 USE_XLIB=	yes
 PLIST_SUB+=	X11=""
 .endif
-
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+=	--without-java
 PLIST_SUB+=	JAVA="@comment "
@@ -63,17 +66,6 @@ JAVA_VERSION=	1.4+
 BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""
-.endif
-
-.if defined(WITHOUT_F90)
-CONFIGURE_ARGS+=	--disable-f90
-PLIST_SUB+=	F90="@comment "
-.else
-F90=		gfortran41
-BUILD_DEPENDS+=	${F90}:${PORTSDIR}/lang/gfortran
-F90FLAGS+=	-ff2c
-CONFIGURE_ENV+=	F90=${F90} F90FLAGS=${F90FLAGS}
-PLIST_SUB+=	F90=""
 .endif
 
 .if defined(WITH_SMPD)
@@ -107,6 +99,10 @@ WITHOUT_JAVA=	yo	# No package for Java ATM
 USE_GMAKE=	yes
 .endif
 
+.if !defined(NOPORTDOCS)
+.include "${FILESDIR}/manpages"
+.endif
+
 PREFIX:=	${PREFIX}/${PORTNAME}
 
 pre-everything::
@@ -117,9 +113,6 @@ pre-everything::
 .endif
 .if !defined(WITHOUT_X11)
 	@${ECHO_MSG} "- WITHOUT_X11	disable MPE graphics routines"
-.endif
-.if !defined(WITHOUT_F90)
-	@${ECHO_MSG} "- WITHOUT_F90	disable gfortran support"
 .endif
 .if !defined(WITH_SMPD)
 	@${ECHO_MSG} "- WITH_SMPD	use SMPD instead of MPD, to work with SMPD under MS Windows"
