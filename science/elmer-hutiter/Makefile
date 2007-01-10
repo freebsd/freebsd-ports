@@ -14,21 +14,31 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/elmer-mathlibs	 \
-		${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/elmer-mathlibs	 \
-		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/elmer-mathlibs
+WANT_FORTRAN=	yes
+USE_GCC=	4.2+
 
-USE_GCC=	4.1+
+.include <bsd.port.pre.mk>
 
-F77=	${FC}
-WITH_FORTRAN=	yes
-CONFIGURE_ENV+=	FC=${FC} F77=${FC}
+LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack
+.else
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+BLAS=		-lblas
+LAPACK=		-llapack
+.endif
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	FC=${FC} F77=${FC}
 ALL_TARGET=
 
 PLIST_FILES=	include/huti_defs.h include/huti_fdefs.h lib/libhuti.a
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
