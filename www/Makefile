@@ -581,6 +581,7 @@
     SUBDIR += p5-Catalyst-Plugin-Session-State-Cookie
     SUBDIR += p5-Catalyst-Plugin-Session-State-URI
     SUBDIR += p5-Catalyst-Plugin-Session-Store-DBI
+    SUBDIR += p5-Catalyst-Plugin-Session-Store-Delegate
     SUBDIR += p5-Catalyst-Plugin-Session-Store-FastMmap
     SUBDIR += p5-Catalyst-Plugin-Session-Store-File
     SUBDIR += p5-Catalyst-Plugin-Session-Store-Memcached
