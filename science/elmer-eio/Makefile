@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELMER FEM Package Data base Interface
 
-USE_GCC=	4.1+
-WITH_FORTRAN=	yes
+WANT_FORTRAN=  yes
+USE_GCC=       4.2+
 F77=	${FC}
 CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS=${FCFLAGS}
 
