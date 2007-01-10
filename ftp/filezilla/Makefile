@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filezilla
-DISTVERSION=	3.0.0-beta2
+DISTVERSION=	3.0.0-beta4
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 DISTNAME=	FileZilla_${DISTVERSION}_src
@@ -14,12 +14,13 @@ DISTNAME=	FileZilla_${DISTVERSION}_src
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Fast FTP and SFTP client with a lot of features
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \
+		idn.16:${PORTSDIR}/dns/libidn
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_WX=		2.6
+USE_WX=		2.8
 WX_CONF_ARGS=	relative
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
