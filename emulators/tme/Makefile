@@ -7,6 +7,7 @@
 
 PORTNAME=	tme
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://theory.lcs.mit.edu/~fredette/tme/
 
