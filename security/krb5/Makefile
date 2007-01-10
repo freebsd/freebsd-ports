@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.5.1
-PORTREVISION=		1
+PORTVERSION=		1.6
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -65,8 +64,11 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 WANT_HTML?=		YES
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc
-HTML_DOCS=		admin.html user-guide.html install.html
-HTML_OUTDIRS=		krb5-admin krb5-install
+HTML_DOCS=		ftp.html kdestroy.html kinit.html klist.html \
+			kpasswd.html krb425.html krb5-admin.html \
+			krb5-install.html krb5-user.html ksu.html \
+			rcp.html rlogin.html rsh.html telnet.html
+
 
 .include <bsd.port.pre.mk>
 
@@ -93,12 +95,8 @@ pre-build:
 .endif
 
 post-build:
-	@(cd ${WRKSRC}/../doc && \
-	${MAKE} ${INFO:S/$/.info/})
-.if defined(WANT_HTML) && ${WANT_HTML} == "YES"
-	@(cd ${WRKSRC}/../doc && \
-	${MAKE} ${HTML_DOCS})
-.endif
+	@cd ${WRKSRC}/../doc && \
+	${MAKE} all
 
 post-install:
 # html documentation
@@ -108,14 +106,6 @@ post-install:
 		${INSTALL_MAN} $${html} ${PREFIX}/share/doc/krb5; \
 		${ECHO_CMD} share/doc/krb5/`${BASENAME} $${html}` >> ${TMPPLIST}; \
 	done
-.for htmldir in ${HTML_OUTDIRS}
-	@${MKDIR} ${PREFIX}/share/doc/krb5/${htmldir}
-	for html in ${HTML_DOC_DIR}/${htmldir}/*; do \
-		${INSTALL_MAN} $${html} ${PREFIX}/share/doc/krb5/${htmldir}; \
-		${ECHO_CMD} share/doc/krb5/${htmldir}/`${BASENAME} $${html}` >> ${TMPPLIST}; \
-	done
-	${ECHO_CMD} @dirrm share/doc/krb5/${htmldir} >> ${TMPPLIST}
-.endfor
 .endif
 	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
 # handle info files
