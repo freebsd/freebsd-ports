@@ -1,6 +1,6 @@
 bin/filezilla
 bin/fzsftp
-%%DATADIR%%/locales/ar_EG/filezilla.mo
+%%DATADIR%%/locales/ar/filezilla.mo
 %%DATADIR%%/locales/bg/filezilla.mo
 %%DATADIR%%/locales/ca_ES/filezilla.mo
 %%DATADIR%%/locales/cs/filezilla.mo
@@ -21,6 +21,7 @@ bin/fzsftp
 %%DATADIR%%/locales/lt/filezilla.mo
 %%DATADIR%%/locales/mk/filezilla.mo
 %%DATADIR%%/locales/nb_NO/filezilla.mo
+%%DATADIR%%/locales/ne/filezilla.mo
 %%DATADIR%%/locales/nl/filezilla.mo
 %%DATADIR%%/locales/pl_PL/filezilla.mo
 %%DATADIR%%/locales/pt_BR/filezilla.mo
@@ -111,6 +112,7 @@ bin/fzsftp
 @dirrm %%DATADIR%%/locales/pt_BR
 @dirrm %%DATADIR%%/locales/pl_PL
 @dirrm %%DATADIR%%/locales/nl
+@dirrm %%DATADIR%%/locales/ne
 @dirrm %%DATADIR%%/locales/nb_NO
 @dirrm %%DATADIR%%/locales/mk
 @dirrm %%DATADIR%%/locales/lt
@@ -131,6 +133,6 @@ bin/fzsftp
 @dirrm %%DATADIR%%/locales/cs
 @dirrm %%DATADIR%%/locales/ca_ES
 @dirrm %%DATADIR%%/locales/bg
-@dirrm %%DATADIR%%/locales/ar_EG
+@dirrm %%DATADIR%%/locales/ar
 @dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%
