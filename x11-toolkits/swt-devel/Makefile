@@ -1,4 +1,4 @@
-# New ports collection makefile for:	swt32
+# New ports collection makefile for:	swt-devel
 # Date created:				2006-11-16
 # Whom:					Robert C. Noland III <rnoland@2hip.net>
 #
@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	swt-devel
-PORTVERSION=	3.3M3
+PORTVERSION=	3.3M4
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	S-${PORTVERSION}-200611021715
+MASTER_SITE_SUBDIR=	S-${PORTVERSION}-200612141445
 DISTNAME=	swt-${PORTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@2hip.net
@@ -17,7 +17,7 @@ COMMENT=	Standard Widget Toolkit for Java
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-SWT_VERSION=	3314
+SWT_VERSION=	3320
 OUTPUT_JAR=	swt-devel.jar
 
 USE_ZIP=	yes
@@ -38,7 +38,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${OUTPUT_JAR} \
 		lib/libswt-glx-gtk-%%BUILD%%.so \
 		lib/libswt-pi-gtk-%%BUILD%%.so
 
-WRKSRC=		${WRKDIR}/swt-I20061102-1715-${DIST_EXT}
+WRKSRC=		${WRKDIR}/swt-I20061214-1445-${DIST_EXT}
 
 OPTIONS=	CAIRO "Cairo Support" on \
 		GNOMEVFS "Gnome VFS Support" on \

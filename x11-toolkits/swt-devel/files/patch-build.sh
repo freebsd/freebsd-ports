@@ -1,5 +1,5 @@
 --- build.sh.orig	Mon Nov 21 23:48:16 2005
-+++ build.sh	Fri Dec  1 16:34:03 2006
++++ build.sh	Wed Jan 10 14:36:04 2007
 @@ -31,6 +31,10 @@
  		SWT_OS=solaris
  		MAKEFILE=make_solaris.mak
@@ -48,18 +48,11 @@
  if [ -z "${GECKO_INCLUDES}" -a -z "${GECKO_LIBS}" ]; then
  	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
  		GECKO_INCLUDES=`pkg-config --cflags mozilla-xpcom`
-@@ -98,6 +107,7 @@
+@@ -97,6 +106,7 @@
+ 		echo "Mozilla/XPCOM libraries not found:"
  		echo "    *** Mozilla embedding support will not be compiled."
  	fi
- fi
 +fi
+ fi
  
  # Find AWT if available
- if [ -z "${AWT_LIB_PATH}" ]; then
-@@ -126,5 +136,5 @@
- if [ "x${1}" = "xclean" ]; then
- 	make -f $MAKEFILE clean
- else
--	make -f $MAKEFILE all $MAKE_GNOME $MAKE_CAIRO $MAKE_AWT $MAKE_MOZILLA ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
-+	make -f $MAKEFILE all ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
- fi
