@@ -1,7 +1,6 @@
 bin/SciTE
 share/applications/SciTE.desktop
 share/pixmaps/Sci48M.png
-share/pixmaps
 %%DATADIR%%/Embedded.properties
 %%DATADIR%%/PrintHi.png
 %%DATADIR%%/SciBreak2.jpg
@@ -78,4 +77,5 @@ share/pixmaps
 %%DATADIR%%/vhdl.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
+@dirrmtry share/pixmaps
 @dirrmtry share/applications
