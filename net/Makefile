@@ -550,6 +550,7 @@
     SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
     SUBDIR += panoptis
+    SUBDIR += paris-traceroute
     SUBDIR += passlogd
     SUBDIR += pathchar
     SUBDIR += pathneck
