@@ -7,7 +7,7 @@
 
 PORTNAME=	arpack++
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.ime.unicamp.br/%7echico/arpack++/
 DISTNAME=	${PORTNAME}
@@ -16,15 +16,30 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack \
-		${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas \
-		${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack \
-		${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
-		${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack \
-		gmake:${PORTSDIR}/devel/gmake
+RUN_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
+LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack \
+		umfpack.1:${PORTSDIR}/math/suitesparse
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack
+.else
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+BLAS=		-lblas
+LAPACK=		-llapack
+.endif
+
+WANT_FORTRAN=yes
+USE_GCC=4.2+
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
+USE_GMAKE=	yes
 
 DOCS=		README doc/arpackpp.ps.gz doc/bugs.txt doc/structure.txt
 
