@@ -39,6 +39,12 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile with gcc 2.95
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREADS_LIBS:S/"//g}|g ; \
 		 s|-g -Wall||g' ${WRKSRC}/configure
@@ -51,4 +57,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
