@@ -18,6 +18,7 @@ bin/telnet
 bin/uuclient
 %%KRB4%%bin/v4rcp
 include/com_err.h
+include/gssapi.h
 include/gssapi/gssapi.h
 include/gssapi/gssapi_generic.h
 include/gssapi/gssapi_krb5.h
@@ -106,5 +107,5 @@ share/gnats/mit
 @dirrm include/kerberosIV
 @dirrm include/krb5
 @dirrm share/et
-@dirrm share/gnats
+@dirrmtry share/gnats
 @dirrm share/examples/krb5
