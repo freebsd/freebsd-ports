@@ -1,6 +1,6 @@
 bin/vldiff
 bin/vlmerge
-bin/vlpatc
+bin/vlpatch
 %%SITE_PERL%%/VCS/Lite.pm
 %%SITE_PERL%%/VCS/Lite/Delta.pm
 @dirrm %%SITE_PERL%%/VCS/Lite
