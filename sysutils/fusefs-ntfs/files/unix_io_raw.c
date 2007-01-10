@@ -60,6 +60,7 @@
 #include "debug.h"
 #include "device.h"
 #include "logging.h"
+#include "misc.h"
 
 typedef struct {
 	int fd;
@@ -149,7 +150,8 @@ raw_io_pwrite(struct ntfs_device *dev, const char *buf, size_t count, s64 offset
  *
  * Returns:
  */
-static int ntfs_device_unix_raw_io_open(struct ntfs_device *dev, int flags)
+static int
+ntfs_device_unix_raw_io_open(struct ntfs_device *dev, int flags)
 {
 #if 0
 	struct flock flk;
@@ -168,7 +170,7 @@ static int ntfs_device_unix_raw_io_open(struct ntfs_device *dev, int flags)
 	if (S_ISBLK(sbuf.st_mode) || S_ISCHR(sbuf.st_mode))
 		NDevSetBlock(dev);
 
-	dev->d_private = malloc(sizeof(unix_raw_fd));
+	dev->d_private = ntfs_malloc(sizeof(unix_raw_fd));
 	if (!dev->d_private)
 		return -1;
 	DEV_FD(dev)->fd = -1;
@@ -232,7 +234,8 @@ err_out:
  *
  * Returns:
  */
-static int ntfs_device_unix_raw_io_close(struct ntfs_device *dev)
+static int
+ntfs_device_unix_raw_io_close(struct ntfs_device *dev)
 {
 #if 0
 	struct flock flk;
@@ -275,8 +278,8 @@ static int ntfs_device_unix_raw_io_close(struct ntfs_device *dev)
  *
  * Returns:
  */
-static s64 ntfs_device_unix_raw_io_seek(struct ntfs_device *dev, s64 offset,
-		int whence)
+static s64
+ntfs_device_unix_raw_io_seek(struct ntfs_device *dev, s64 offset, int whence)
 {
 	s64 abs_pos;
 
@@ -310,17 +313,18 @@ static s64 ntfs_device_unix_raw_io_seek(struct ntfs_device *dev, s64 offset,
 }
 
 /**
- * ntfs_device_unix_raw_io_read - Read from the device, from the current location
+ * ntfs_device_unix_raw_io_pread - Perform a positioned read from the device
  * @dev:
  * @buf:
  * @count:
+ * @offset:
  *
  * Description...
  *
  * Returns:
  */
-static s64 ntfs_device_unix_raw_io_read(struct ntfs_device *dev, void *buf,
-		s64 count)
+static s64
+ntfs_device_unix_raw_io_pread(struct ntfs_device *dev, void *buf, s64 count, s64 offset)
 {
 	s64 start, start_aligned;
 	s64 end, end_aligned;
@@ -329,17 +333,11 @@ static s64 ntfs_device_unix_raw_io_read(struct ntfs_device *dev, void *buf,
 	ssize_t nr;
 
 	/* short-circuit for regular files */
-	start = DEV_FD(dev)->pos;
+	start = offset;
 	if (count > RAW_IO_MAX_SIZE)
 		count = RAW_IO_MAX_SIZE;
-	if (RAW_IO_ALIGNED(dev, start, count)) {
-		nr = raw_io_pread(dev, buf, count, start);
-		if (nr <= 0)
-			return nr;
-
-		DEV_FD(dev)->pos += nr;
-		return nr;
-	}
+	if (RAW_IO_ALIGNED(dev, start, count))
+		return raw_io_pread(dev, buf, count, start);
 
 	/*
 	 * +- start_aligned                 +- end_aligned
@@ -363,9 +361,9 @@ static s64 ntfs_device_unix_raw_io_read(struct ntfs_device *dev, void *buf,
 	    start, start_aligned, end, end_aligned);
 
 	/* allocate buffer */
-	buf_aligned = malloc(count_aligned);
+	buf_aligned = ntfs_malloc(count_aligned);
 	if (buf_aligned == NULL) {
-		ntfs_log_trace("malloc(%d) failed\n", count_aligned);
+		ntfs_log_trace("ntfs_malloc(%d) failed\n", count_aligned);
 		return -1;
 	}
 
@@ -385,22 +383,22 @@ static s64 ntfs_device_unix_raw_io_read(struct ntfs_device *dev, void *buf,
 	nr -= start - start_aligned;
 	if (nr > count)
 		nr = count;
-	DEV_FD(dev)->pos += nr;
 	return nr;
 }
 
 /**
- * ntfs_device_unix_raw_io_write - Write to the device, at the current location
+ * ntfs_device_unix_raw_io_pwrite - Perform a positioned write to the device
  * @dev:
  * @buf:
  * @count:
+ * @offset:
  *
  * Description...
  *
  * Returns:
  */
-static s64 ntfs_device_unix_raw_io_write(struct ntfs_device *dev, const void *buf,
-		s64 count)
+static s64
+ntfs_device_unix_raw_io_pwrite(struct ntfs_device *dev, const void *buf, s64 count, s64 offset)
 {
 	s64 start, start_aligned;
 	s64 end, end_aligned;
@@ -415,17 +413,11 @@ static s64 ntfs_device_unix_raw_io_write(struct ntfs_device *dev, const void *bu
 	NDevSetDirty(dev);
 
 	/* short-circuit for regular files */
-	start = DEV_FD(dev)->pos;
+	start = offset;
 	if (count > RAW_IO_MAX_SIZE)
 		count = RAW_IO_MAX_SIZE;
-	if (RAW_IO_ALIGNED(dev, start, count)) {
-		nw = raw_io_pwrite(dev, buf, count, start);
-		if (nw <= 0)
-			return nw;
-
-		DEV_FD(dev)->pos += nw;
-		return nw;
-	}
+	if (RAW_IO_ALIGNED(dev, start, count))
+		return raw_io_pwrite(dev, buf, count, start);
 
 	/*
 	 * +- start_aligned                 +- end_aligned
@@ -449,9 +441,9 @@ static s64 ntfs_device_unix_raw_io_write(struct ntfs_device *dev, const void *bu
 	    start, start_aligned, end, end_aligned);
 
 	/* allocate buffer */
-	buf_aligned = malloc(count_aligned);
+	buf_aligned = ntfs_malloc(count_aligned);
 	if (buf_aligned == NULL) {
-		ntfs_log_trace("malloc(%d) failed\n", count_aligned);
+		ntfs_log_trace("ntfs_malloc(%d) failed\n", count_aligned);
 		return -1;
 	}
 
@@ -483,48 +475,48 @@ static s64 ntfs_device_unix_raw_io_write(struct ntfs_device *dev, const void *bu
 	nw -= start - start_aligned;
 	if (nw > count)
 		nw = count;
-	DEV_FD(dev)->pos += nw;
 	return nw;
 }
 
 /**
- * ntfs_device_unix_raw_io_pread - Perform a positioned read from the device
+ * ntfs_device_unix_raw_io_read - Read from the device, from the current location
  * @dev:
  * @buf:
  * @count:
- * @offset:
  *
  * Description...
  *
  * Returns:
  */
-static s64 ntfs_device_unix_raw_io_pread(struct ntfs_device *dev, void *buf,
-		s64 count, s64 offset)
+static s64
+ntfs_device_unix_raw_io_read(struct ntfs_device *dev, void *buf, s64 count)
 {
-	return ntfs_pread(dev, offset, count, buf);
+	s64 nr = ntfs_device_unix_raw_io_pread(
+	    dev, buf, count, DEV_FD(dev)->pos);
+	if (nr > 0)
+		DEV_FD(dev)->pos += nr;
+	return nr;
 }
 
 /**
- * ntfs_device_unix_raw_io_pwrite - Perform a positioned write to the device
+ * ntfs_device_unix_raw_io_write - Write to the device, at the current location
  * @dev:
  * @buf:
  * @count:
- * @offset:
  *
  * Description...
  *
  * Returns:
  */
-static s64 ntfs_device_unix_raw_io_pwrite(struct ntfs_device *dev, const void *buf,
-		s64 count, s64 offset)
+static s64
+ntfs_device_unix_raw_io_write(struct ntfs_device *dev, const void *buf,
+		s64 count)
 {
-	if (NDevReadOnly(dev)) {
-		errno = EROFS;
-		return -1;
-	}
-	NDevSetDirty(dev);
-
-	return ntfs_pwrite(dev, offset, count, buf);
+	s64 nw = ntfs_device_unix_raw_io_pwrite(
+	    dev, buf, count, DEV_FD(dev)->pos);
+	if (nw > 0)
+		DEV_FD(dev)->pos += nw;
+	return nw;
 }
 
 /**
@@ -535,7 +527,8 @@ static s64 ntfs_device_unix_raw_io_pwrite(struct ntfs_device *dev, const void *b
  *
  * Returns:
  */
-static int ntfs_device_unix_raw_io_sync(struct ntfs_device *dev)
+static int
+ntfs_device_unix_raw_io_sync(struct ntfs_device *dev)
 {
 	if (!NDevReadOnly(dev)) {
 		int res = fsync(DEV_FD(dev)->fd);
@@ -555,7 +548,8 @@ static int ntfs_device_unix_raw_io_sync(struct ntfs_device *dev)
  *
  * Returns:
  */
-static int ntfs_device_unix_raw_io_stat(struct ntfs_device *dev, struct stat *buf)
+static int
+ntfs_device_unix_raw_io_stat(struct ntfs_device *dev, struct stat *buf)
 {
 	return fstat(DEV_FD(dev)->fd, buf);
 }
@@ -570,8 +564,8 @@ static int ntfs_device_unix_raw_io_stat(struct ntfs_device *dev, struct stat *bu
  *
  * Returns:
  */
-static int ntfs_device_unix_raw_io_ioctl(struct ntfs_device *dev, int request,
-		void *argp)
+static int
+ntfs_device_unix_raw_io_ioctl(struct ntfs_device *dev, int request, void *argp)
 {
 	return ioctl(DEV_FD(dev)->fd, request, argp);
 }
