@@ -17,9 +17,32 @@ include/gnet/url.h
 lib/libgnet.a
 lib/libgnet.la
 lib/libgnet.so
-lib/libgnet.so.1
+lib/libgnet.so.7
 libdata/pkgconfig/gnet.pc
 share/aclocal/gnet.m4
+%%PORTDOCS%%%%DOCSDIR%%/book1.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-conn.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-developers-tips.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-developers.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-examples.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-gnet.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-inetaddr.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-iochannel.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-mcast.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-md5.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-overview.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-pack.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-server.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-sha.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-socks.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-tcp.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-udp.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-unix.html
+%%PORTDOCS%%%%DOCSDIR%%/gnet-url.html
+%%PORTDOCS%%%%DOCSDIR%%/hfetch.html
+%%PORTDOCS%%%%DOCSDIR%%/libgnet-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/sdr.html
+%%PORTDOCS%%%%DOCSDIR%%/tests.html
 share/doc/libgnet1.1-dev/html/book1.html
 share/doc/libgnet1.1-dev/html/gnet-conn.html
 share/doc/libgnet1.1-dev/html/gnet-developers-tips.html
@@ -47,4 +70,5 @@ share/doc/libgnet1.1-dev/html/sdr.html
 share/doc/libgnet1.1-dev/html/tests.html
 @dirrm share/doc/libgnet1.1-dev/html
 @dirrm share/doc/libgnet1.1-dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/gnet
