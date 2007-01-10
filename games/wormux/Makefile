@@ -26,7 +26,7 @@ MAN6=	wormux.6
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-weapon-ninja_rope.cpp
+BROKEN=		Does not compile on 4.x
 .endif
 
 .if !defined(WITHOUT_NLS)
