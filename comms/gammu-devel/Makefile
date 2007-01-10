@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259:env
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
@@ -27,6 +27,10 @@ CONFIGURE_ARGS=	--disable-bluerfsearch
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile with gcc 2.95
+.endif
 
 post-patch:
 .if ${OSVERSION} < 500000
