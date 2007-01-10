@@ -7,6 +7,7 @@
 
 PORTNAME=	eio
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
@@ -15,8 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELMER FEM Package Data base Interface
 
 WANT_FORTRAN=  yes
-USE_GCC=       4.2+
-F77=	${FC}
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42 #gcc42 incompatibility?
+F77=	gfortran42
+FC=	gfortran42
 CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS=${FCFLAGS}
 
 GNU_CONFIGURE=	yes
