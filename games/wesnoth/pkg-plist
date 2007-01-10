@@ -5868,8 +5868,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrmtry man/en_GB
 @dirrmtry man/fr/man6
 @dirrmtry man/fr
-@dirrmtry man/ja/man6
-@dirrmtry man/ja
 @dirrmtry man/nl/man6
 @dirrmtry man/nl
 @dirrmtry man/pt_BR/man6
@@ -5885,5 +5883,13 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%KDE:%%share/applnk/Games/TacticStrategy/wesnoth.desktop
 %%KDE:%%share/icons/wesnoth-icon.png
 %%SERVER:%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
+@dirrmtry share/locale/ca_ES@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca_ES@valencia
+@dirrmtry share/locale/gl_ES/LC_MESSAGES
+@dirrmtry share/locale/gl_ES
 @dirrmtry share/locale/la/LC_MESSAGES
 @dirrmtry share/locale/la
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
