@@ -1,25 +1,22 @@
---- Makefile.PL.orig	Wed Oct 12 11:21:00 2005
-+++ Makefile.PL	Wed Oct 12 11:21:16 2005
-@@ -16,22 +16,6 @@
- 	'HTTP::Response'		=>	0,
- };
+--- ./Makefile.PL.orig	Sun Jan  7 11:18:22 2007
++++ ./Makefile.PL	Wed Jan 10 20:07:51 2007
+@@ -17,19 +17,4 @@
+ requires	'HTTP::Request'			=>	0;
+ requires	'HTTP::Response'		=>	0;
  
 -# Ask users if they want SSL support
--my $value = prompt( 'Do you want SSL support ( requires POE::Component::SSLify ) [Y/n]?', 'Y' );
+-my $value = prompt( 'Do you want SSL support ( requires POE::Component::SSLify ) [Y/n]?', 'N' );
 -
 -# Add to the prereqs PoCo::SSLify?
 -if ( $value =~ /^Y$/i ) {
--	$prereqs->{ 'POE::Component::SSLify' } = '0.04';
+-	requires 'POE::Component::SSLify' => '0.04';
 -}
 -
 -# Ask users if they want PreFork support
--$value = prompt( 'Do you want PreFork support ( requires IPC::Shareable ) [Y/n]?', 'Y' );
+-$value = prompt( 'Do you want PreFork support ( requires IPC::Shareable ) [Y/n]?', 'N' );
 -
 -# Add to the prereqs IPC::Shareable?
 -if ( $value =~ /^Y$/i ) {
--	$prereqs->{ 'IPC::Shareable' } = '0';
+-	requires 'IPC::Shareable' => '0';
 -}
--
- # See lib/ExtUtils/MakeMaker.pm for details of how to influence
- # the contents of the Makefile that is written.
- WriteMakefile(
+ WriteAll();

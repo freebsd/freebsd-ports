@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-SimpleHTTP
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perl extension to serve HTTP requests in POE
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Storable>0:${PORTSDIR}/devel/p5-Storable \
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
+		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -32,11 +32,11 @@ OPTIONS=	SSL "SSL support (POE::Component::SSLify)" on \
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_SSL)
-BUILD_DEPENDS+=	${SITE_PERL}/POE/Component/SSLify.pm:${PORTSDIR}/security/p5-POE-Component-SSLify
+BUILD_DEPENDS+=	p5-POE-Component-SSLify>=0.04:${PORTSDIR}/security/p5-POE-Component-SSLify
 .endif
 
 .ifdef(WITH_PREFORK)
-BUILD_DEPENDS+=	${SITE_PERL}/IPC/Shareable.pm:${PORTSDIR}/devel/p5-IPC-Shareable
+BUILD_DEPENDS+=	p5-IPC-Shareable>0:${PORTSDIR}/devel/p5-IPC-Shareable
 .endif
 
 .if ${PERL_LEVEL} < 500600  # inherited from www/p5-libwww
