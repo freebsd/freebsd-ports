@@ -7,7 +7,6 @@ bin/linux-alienarena-ded
 %%LIBDIR%%/arena/motd.txt
 %%LIBDIR%%/arena/pics
 %%LIBDIR%%/arena/server.cfg
-%%LIBDIR%%/arena/video
 %%LIBDIR%%/botinfo
 %%LIBDIR%%/crded
 %%LIBDIR%%/crx.sdl

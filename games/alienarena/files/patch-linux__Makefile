@@ -1,5 +1,5 @@
---- linux/Makefile.orig	Fri Sep  1 16:23:43 2006
-+++ linux/Makefile	Fri Sep  1 16:24:20 2006
+--- linux/Makefile.orig	Tue Jan  9 17:59:39 2007
++++ linux/Makefile	Tue Jan  9 18:02:46 2007
 @@ -11,25 +11,14 @@
  GLIBC=
  endif
@@ -42,9 +42,9 @@
 -else
 -_LIB := lib
 -endif
-+BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp -D_stricmp=strcasecmp
++BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp -D_stricmp=strcasecmp -I$(X11BASE)/include
  
--BASE_CFLAGS=-Dstricmp=strcasecmp -D_stricmp=strcasecmp -D__linux__
+-BASE_CFLAGS=-Dstricmp=strcasecmp -D_stricmp=strcasecmp -D__unix__
 +RELEASE_CFLAGS=$(BASE_CFLAGS)
  
 -ifeq ($(ARCH),axp)
@@ -83,7 +83,7 @@
 +SVGALDFLAGS=-lvga -lm
  
 -ARENA_CFLAGS=-DARENA
-+GLCFLAGS=-I$(X11BASE)/include
++GLCFLAGS=
  
 -DEBUG_CFLAGS=$(BASE_CFLAGS) -g
 -LDFLAGS=-ldl -lm
@@ -129,7 +129,7 @@
  endif
  
  ifeq ($(strip $(SDLSOUND)),1)
-@@ -599,7 +572,7 @@
+@@ -597,7 +570,7 @@
  
  
  
@@ -138,7 +138,7 @@
  	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS)
  
  
-@@ -763,7 +736,7 @@
+@@ -753,7 +726,7 @@
  	$(BUILDDIR)/arena/p_weapon.o \
  	$(BUILDDIR)/arena/vehicles.o
  

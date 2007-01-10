@@ -9,7 +9,6 @@
 %%DATADIR%%/arena/pics/m_banner_video.tga
 %%DATADIR%%/arena/pics/m_main.tga
 %%DATADIR%%/arena/server.cfg
-%%DATADIR%%/arena/video/intro.cin
 %%DATADIR%%/botinfo/Astral.cfg
 %%DATADIR%%/botinfo/Beavis.cfg
 %%DATADIR%%/botinfo/Butthead.cfg
@@ -50,6 +49,7 @@
 %%DATADIR%%/botinfo/dm-gauntlet.tmp
 %%DATADIR%%/botinfo/dm-inferno.tmp
 %%DATADIR%%/botinfo/dm-obsidian.tmp
+%%DATADIR%%/botinfo/dm-obsidian2.tmp
 %%DATADIR%%/botinfo/dm-probe.tmp
 %%DATADIR%%/botinfo/dm-redred.tmp
 %%DATADIR%%/botinfo/dm-titan.tmp
@@ -87,6 +87,7 @@
 %%DATADIR%%/botinfo/nav/dm-gauntlet.nod
 %%DATADIR%%/botinfo/nav/dm-inferno.nod
 %%DATADIR%%/botinfo/nav/dm-obsidian.nod
+%%DATADIR%%/botinfo/nav/dm-obsidian2.nod
 %%DATADIR%%/botinfo/nav/dm-probe.nod
 %%DATADIR%%/botinfo/nav/dm-redred.nod
 %%DATADIR%%/botinfo/nav/dm-titan.nod
@@ -138,11 +139,14 @@
 %%DATADIR%%/data1/gfx/aaglow.tga
 %%DATADIR%%/data1/gfx/adrenalbase.tga
 %%DATADIR%%/data1/gfx/adrenalmask.tga
+%%DATADIR%%/data1/gfx/alienarena2gl.tga
 %%DATADIR%%/data1/gfx/armorbase.tga
 %%DATADIR%%/data1/gfx/armorfx.tga
 %%DATADIR%%/data1/gfx/armormask.tga
 %%DATADIR%%/data1/gfx/armormask2.tga
 %%DATADIR%%/data1/gfx/bannerfx.tga
+%%DATADIR%%/data1/gfx/bconsole.tga
+%%DATADIR%%/data1/gfx/bconsole2.tga
 %%DATADIR%%/data1/gfx/beamfx.tga
 %%DATADIR%%/data1/gfx/beammask.tga
 %%DATADIR%%/data1/gfx/blasterfx.tga
@@ -162,6 +166,7 @@
 %%DATADIR%%/data1/gfx/electrics3.tga
 %%DATADIR%%/data1/gfx/electrics3a.tga
 %%DATADIR%%/data1/gfx/electrics3b.tga
+%%DATADIR%%/data1/gfx/electrics3d.tga
 %%DATADIR%%/data1/gfx/flares/flare0.tga
 %%DATADIR%%/data1/gfx/flash.tga
 %%DATADIR%%/data1/gfx/gamarafx.tga
@@ -171,6 +176,9 @@
 %%DATADIR%%/data1/gfx/greenline.tga
 %%DATADIR%%/data1/gfx/hastebase.tga
 %%DATADIR%%/data1/gfx/hastemask.tga
+%%DATADIR%%/data1/gfx/hconsole.tga
+%%DATADIR%%/data1/gfx/hconsole2.tga
+%%DATADIR%%/data1/gfx/hconsole3.tga
 %%DATADIR%%/data1/gfx/hoverfx.tga
 %%DATADIR%%/data1/gfx/lightning.tga
 %%DATADIR%%/data1/gfx/m_banner_main_mask.tga
@@ -181,15 +189,19 @@
 %%DATADIR%%/data1/gfx/marsmask.tga
 %%DATADIR%%/data1/gfx/metal3glow.tga
 %%DATADIR%%/data1/gfx/napalmfx.tga
+%%DATADIR%%/data1/gfx/noise.tga
 %%DATADIR%%/data1/gfx/orange.tga
 %%DATADIR%%/data1/gfx/plate5fx.tga
 %%DATADIR%%/data1/gfx/purple.tga
+%%DATADIR%%/data1/gfx/purpleline.tga
 %%DATADIR%%/data1/gfx/quadbase.tga
 %%DATADIR%%/data1/gfx/quadmask.tga
+%%DATADIR%%/data1/gfx/r_lightning.tga
 %%DATADIR%%/data1/gfx/red.tga
 %%DATADIR%%/data1/gfx/redlightning.tga
 %%DATADIR%%/data1/gfx/reflect.tga
 %%DATADIR%%/data1/gfx/rocketfx.tga
+%%DATADIR%%/data1/gfx/sconsole.tga
 %%DATADIR%%/data1/gfx/shardmask.tga
 %%DATADIR%%/data1/gfx/shellsfx.tga
 %%DATADIR%%/data1/gfx/skullglow.tga
@@ -224,8 +236,6 @@
 %%DATADIR%%/data1/levelshots/ctf1.txt
 %%DATADIR%%/data1/levelshots/ctf2.tga
 %%DATADIR%%/data1/levelshots/ctf2.txt
-%%DATADIR%%/data1/levelshots/ctf3.tga
-%%DATADIR%%/data1/levelshots/ctf3.txt
 %%DATADIR%%/data1/levelshots/db-egyptian.tga
 %%DATADIR%%/data1/levelshots/db-egyptian.txt
 %%DATADIR%%/data1/levelshots/db-electro.tga
@@ -258,19 +268,14 @@
 %%DATADIR%%/data1/levelshots/dm-inferno.txt
 %%DATADIR%%/data1/levelshots/dm-obsidian.tga
 %%DATADIR%%/data1/levelshots/dm-obsidian.txt
+%%DATADIR%%/data1/levelshots/dm-obsidian2.tga
+%%DATADIR%%/data1/levelshots/dm-obsidian2.txt
 %%DATADIR%%/data1/levelshots/dm-probe.tga
 %%DATADIR%%/data1/levelshots/dm-probe.txt
 %%DATADIR%%/data1/levelshots/dm-redred.tga
 %%DATADIR%%/data1/levelshots/dm-redred.txt
 %%DATADIR%%/data1/levelshots/dm-titan.tga
 %%DATADIR%%/data1/levelshots/dm-titan.txt
-%%DATADIR%%/data1/levelshots/dm14.tga
-%%DATADIR%%/data1/levelshots/dm7.tga
-%%DATADIR%%/data1/levelshots/dm7.txt
-%%DATADIR%%/data1/levelshots/dm8.tga
-%%DATADIR%%/data1/levelshots/dm8.txt
-%%DATADIR%%/data1/levelshots/dmintro.tga
-%%DATADIR%%/data1/levelshots/dmintro.txt
 %%DATADIR%%/data1/levelshots/tca-europa.tga
 %%DATADIR%%/data1/levelshots/tca-europa.txt
 %%DATADIR%%/data1/levelshots/tca-frost.tga
@@ -311,11 +316,10 @@
 %%DATADIR%%/data1/maps/dm-furious.bsp
 %%DATADIR%%/data1/maps/dm-gauntlet.bsp
 %%DATADIR%%/data1/maps/dm-inferno.bsp
-%%DATADIR%%/data1/maps/dm-obsidian.bsp
+%%DATADIR%%/data1/maps/dm-obsidian2.bsp
 %%DATADIR%%/data1/maps/dm-probe.bsp
 %%DATADIR%%/data1/maps/dm-redred.bsp
 %%DATADIR%%/data1/maps/dm-titan.bsp
-%%DATADIR%%/data1/maps/dm14.bsp
 %%DATADIR%%/data1/maps/scripts/aoa-frost.mus
 %%DATADIR%%/data1/maps/scripts/aoa1.mus
 %%DATADIR%%/data1/maps/scripts/aoa2.fog
@@ -348,6 +352,7 @@
 %%DATADIR%%/data1/maps/scripts/dm-gauntlet.mus
 %%DATADIR%%/data1/maps/scripts/dm-inferno.mus
 %%DATADIR%%/data1/maps/scripts/dm-obsidian.mus
+%%DATADIR%%/data1/maps/scripts/dm-obsidian2.mus
 %%DATADIR%%/data1/maps/scripts/dm-probe.mus
 %%DATADIR%%/data1/maps/scripts/dm-redred.mus
 %%DATADIR%%/data1/maps/scripts/dm-titan.mus
@@ -613,7 +618,7 @@
 %%DATADIR%%/data1/pics/ch3.tga
 %%DATADIR%%/data1/pics/colormap.pcx
 %%DATADIR%%/data1/pics/conback.pcx
-%%DATADIR%%/data1/pics/conchars.pcx
+%%DATADIR%%/data1/pics/conchars.tga
 %%DATADIR%%/data1/pics/field_3.pcx
 %%DATADIR%%/data1/pics/help.tga
 %%DATADIR%%/data1/pics/i_bodyarmor.tga
@@ -648,9 +653,6 @@
 %%DATADIR%%/data1/pics/m_main_video.tga
 %%DATADIR%%/data1/pics/m_main_video_sel.tga
 %%DATADIR%%/data1/pics/m_mouse_cursor.tga
-%%DATADIR%%/data1/pics/mars.tga
-%%DATADIR%%/data1/pics/master.tga
-%%DATADIR%%/data1/pics/net.tga
 %%DATADIR%%/data1/pics/num_0.tga
 %%DATADIR%%/data1/pics/num_1.tga
 %%DATADIR%%/data1/pics/num_2.tga
@@ -1137,6 +1139,7 @@
 %%DATADIR%%/data1/players/war/weapon.tga
 %%DATADIR%%/data1/scripts/caustics.rscript
 %%DATADIR%%/data1/scripts/chrome.rscript
+%%DATADIR%%/data1/scripts/consoles.rscript
 %%DATADIR%%/data1/scripts/electrics.rscript
 %%DATADIR%%/data1/scripts/electrics2.rscript
 %%DATADIR%%/data1/scripts/electrics3.rscript
@@ -1166,6 +1169,7 @@
 %%DATADIR%%/data1/scripts/maps/dm-gauntlet.rscript
 %%DATADIR%%/data1/scripts/maps/dm-inferno.rscript
 %%DATADIR%%/data1/scripts/maps/dm-obsidian.rscript
+%%DATADIR%%/data1/scripts/maps/dm-obsidian2.rscript
 %%DATADIR%%/data1/scripts/maps/dm-probe.rscript
 %%DATADIR%%/data1/scripts/maps/dm-redred.rscript
 %%DATADIR%%/data1/scripts/maps/dm-titan.rscript
@@ -1206,6 +1210,9 @@
 %%DATADIR%%/data1/sound/items/respawn1.wav
 %%DATADIR%%/data1/sound/items/s_health.wav
 %%DATADIR%%/data1/sound/items/sproing.wav
+%%DATADIR%%/data1/sound/misc/1frags.wav
+%%DATADIR%%/data1/sound/misc/2frags.wav
+%%DATADIR%%/data1/sound/misc/3frags.wav
 %%DATADIR%%/data1/sound/misc/am_pkup.wav
 %%DATADIR%%/data1/sound/misc/ar1_pkup.wav
 %%DATADIR%%/data1/sound/misc/ar2_pkup.wav
@@ -1221,13 +1228,17 @@
 %%DATADIR%%/data1/sound/misc/bluevulnerable.wav
 %%DATADIR%%/data1/sound/misc/db_pickup.wav
 %%DATADIR%%/data1/sound/misc/db_score.wav
+%%DATADIR%%/data1/sound/misc/fight.wav
+%%DATADIR%%/data1/sound/misc/godlike.wav
 %%DATADIR%%/data1/sound/misc/hit.wav
 %%DATADIR%%/data1/sound/misc/lasfly.wav
 %%DATADIR%%/data1/sound/misc/menu1.wav
 %%DATADIR%%/data1/sound/misc/menu2.wav
 %%DATADIR%%/data1/sound/misc/menu3.wav
 %%DATADIR%%/data1/sound/misc/menumusic.wav
+%%DATADIR%%/data1/sound/misc/one.wav
 %%DATADIR%%/data1/sound/misc/pc_up.wav
+%%DATADIR%%/data1/sound/misc/rampage.wav
 %%DATADIR%%/data1/sound/misc/red_picked.wav
 %%DATADIR%%/data1/sound/misc/red_returned.wav
 %%DATADIR%%/data1/sound/misc/red_scores.wav
@@ -1242,6 +1253,8 @@
 %%DATADIR%%/data1/sound/misc/talk1.wav
 %%DATADIR%%/data1/sound/misc/tele1.wav
 %%DATADIR%%/data1/sound/misc/tele_up.wav
+%%DATADIR%%/data1/sound/misc/three.wav
+%%DATADIR%%/data1/sound/misc/two.wav
 %%DATADIR%%/data1/sound/misc/w_pkup.wav
 %%DATADIR%%/data1/sound/music/aat0.wav
 %%DATADIR%%/data1/sound/music/aat1.wav
@@ -1691,6 +1704,8 @@
 %%DATADIR%%/data1/textures/arena5/trim.wal
 %%DATADIR%%/data1/textures/arena6/alienarena.tga
 %%DATADIR%%/data1/textures/arena6/alienarena.wal
+%%DATADIR%%/data1/textures/arena6/alienarena2.tga
+%%DATADIR%%/data1/textures/arena6/alienarena2.wal
 %%DATADIR%%/data1/textures/arena6/bricks1.tga
 %%DATADIR%%/data1/textures/arena6/bricks1.wal
 %%DATADIR%%/data1/textures/arena6/city20.tga
@@ -1699,6 +1714,10 @@
 %%DATADIR%%/data1/textures/arena6/ctfwinblue.wal
 %%DATADIR%%/data1/textures/arena6/ctfwinred.tga
 %%DATADIR%%/data1/textures/arena6/ctfwinred.wal
+%%DATADIR%%/data1/textures/arena6/flamejet.tga
+%%DATADIR%%/data1/textures/arena6/flamejet.wal
+%%DATADIR%%/data1/textures/arena6/flare.tga
+%%DATADIR%%/data1/textures/arena6/flare.wal
 %%DATADIR%%/data1/textures/arena6/fodblue.tga
 %%DATADIR%%/data1/textures/arena6/fodblue.wal
 %%DATADIR%%/data1/textures/arena6/girder1.tga
@@ -1729,8 +1748,12 @@
 %%DATADIR%%/data1/textures/arena6/rings.wal
 %%DATADIR%%/data1/textures/arena6/skull.tga
 %%DATADIR%%/data1/textures/arena6/skull.wal
+%%DATADIR%%/data1/textures/arena6/skullite.tga
+%%DATADIR%%/data1/textures/arena6/skullite.wal
 %%DATADIR%%/data1/textures/arena6/snow.tga
 %%DATADIR%%/data1/textures/arena6/snow.wal
+%%DATADIR%%/data1/textures/arena6/tech1.tga
+%%DATADIR%%/data1/textures/arena6/tech1.wal
 %%DATADIR%%/data1/textures/arena6/wires1.tga
 %%DATADIR%%/data1/textures/arena6/wires1.wal
 %%DATADIR%%/data1/textures/clockwork/clock2.tga
@@ -2260,8 +2283,6 @@ share/pixmaps/alienarena.xpm
 @dirrm %%DATADIR%%/data1
 @dirrm %%DATADIR%%/botinfo/nav
 @dirrm %%DATADIR%%/botinfo
-@dirrm %%DATADIR%%/arena/video
 @dirrm %%DATADIR%%/arena/pics
 @dirrm %%DATADIR%%/arena
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps

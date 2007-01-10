@@ -1,5 +1,5 @@
---- ./linux/snd_linux.c.orig	Tue May 16 15:20:09 2006
-+++ ./linux/snd_linux.c	Tue May 16 15:20:10 2006
+--- linux/snd_linux.c.orig	Tue Jan  9 17:56:35 2007
++++ linux/snd_linux.c	Tue Jan  9 17:58:43 2007
 @@ -25,13 +25,17 @@
  #include <sys/mman.h>
  #include <sys/shm.h>
@@ -19,39 +19,17 @@
  int snd_inited;
  
  cvar_t *sndbits;
-@@ -39,24 +43,26 @@
- cvar_t *sndchannels;
- cvar_t *snddevice;
- 
--static int tryrates[] = { 11025, 22051, 44100, 8000 };
-+static int tryrates[] = { 11025, 22051, 44100, 48000, 8000 };
- 
- qboolean SNDDMA_Init(void)
- {
- 
- 	int rc;
--    int fmt;
-+	int fmt;
- 	int tmp;
--    int i;
--    char *s;
-+	int i;
- 	struct audio_buf_info info;
- 	int caps;
+@@ -54,7 +58,9 @@
  	extern uid_t saved_euid;
  
  	if (snd_inited)
 -		return;
 +		return 1;
- 
--	if (!snddevice) {
++
 +	snd_inited = 0;
-+	
-+	if (!snddevice)
-+	{
+ 
+ 	if (!snddevice) {
  		sndbits = Cvar_Get("sndbits", "16", CVAR_ARCHIVE);
- 		sndspeed = Cvar_Get("sndspeed", "0", CVAR_ARCHIVE);
- 		sndchannels = Cvar_Get("sndchannels", "2", CVAR_ARCHIVE);
 @@ -65,165 +71,182 @@
  
  // open /dev/dsp, confirm capability to mmap, and get size of dma buffer
