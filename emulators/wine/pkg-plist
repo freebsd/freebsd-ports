@@ -320,6 +320,7 @@ include/wine/windows/regstr.h
 include/wine/windows/richedit.h
 include/wine/windows/richole.h
 include/wine/windows/richole.idl
+include/wine/windows/rmxfguid.h
 include/wine/windows/rpc.h
 include/wine/windows/rpcdce.h
 include/wine/windows/rpcdcep.h
@@ -527,7 +528,6 @@ lib/wine/infosoft.dll.so
 lib/wine/inseng.dll.so
 lib/wine/iphlpapi.dll.so
 lib/wine/itss.dll.so
-lib/wine/joystick.drv.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16
 lib/wine/krnl386.exe16
@@ -811,6 +811,7 @@ lib/wine/winedos.dll.so
 lib/wine/wineesd.drv.so
 lib/wine/winefile.exe.so
 lib/wine/winejack.drv.so
+lib/wine/winejoystick.drv.so
 lib/wine/winemine.exe.so
 lib/wine/winemp3.acm.so
 lib/wine/wineoss.drv.so
