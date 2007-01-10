@@ -16,10 +16,17 @@ COMMENT=	Library for manipulating IPTC metadata stored in image files
 
 USE_GNOME=	pkgconfig
 USE_ICONV=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile (UINT32_MAX not defined)
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/libiptcdata/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
