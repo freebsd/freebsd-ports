@@ -24,6 +24,10 @@ MAN1=		${PORTNAME}.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		needs pthread library
+.endif
+
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 CFLAGS+=	-m64
 .endif
