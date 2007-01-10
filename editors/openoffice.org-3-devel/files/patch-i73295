@@ -1,0 +1,22 @@
+? basctl/unxfbsdx.pro
+Index: basctl/source/inc/localizationmgr.hxx
+===================================================================
+RCS file: /cvs/script/basctl/source/inc/localizationmgr.hxx,v
+retrieving revision 1.2
+diff -u -r1.2 localizationmgr.hxx
+--- basctl/source/inc/localizationmgr.hxx	2 Jan 2007 15:52:27 -0000	1.2
++++ basctl/source/inc/localizationmgr.hxx	10 Jan 2007 05:14:09 -0000
+@@ -70,11 +70,11 @@
+ 			::com::sun::star::uno::Reference< ::com::sun::star::resource::XStringResourceManager >
+ 			xStringResourceManager, HandleResourceMode eMode );
+ 
+-	void LocalizationMgr::enableResourceForAllLibraryDialogs( void )
++	void enableResourceForAllLibraryDialogs( void )
+ 	{
+ 		implEnableDisableResourceForAllLibraryDialogs( SET_IDS );
+ 	}
+-	void LocalizationMgr::disableResourceForAllLibraryDialogs( void )
++	void disableResourceForAllLibraryDialogs( void )
+ 	{
+ 		implEnableDisableResourceForAllLibraryDialogs( RESET_IDS );
+ 	}

@@ -1,0 +1,16 @@
+Index: toolkit/inc/toolkit/awt/xthrobber.hxx
+===================================================================
+RCS file: /cvs/gsl/toolkit/inc/toolkit/awt/xthrobber.hxx,v
+retrieving revision 1.2
+diff -u -r1.2 xthrobber.hxx
+--- toolkit/inc/toolkit/awt/xthrobber.hxx	20 Dec 2006 13:51:06 -0000	1.2
++++ toolkit/inc/toolkit/awt/xthrobber.hxx	23 Dec 2006 01:36:26 -0000
+@@ -68,7 +68,7 @@
+ 	{
+     private:
+         Throbber_Impl   *mpThrobber;
+-        void SAL_CALL XThrobber::InitImageList() throw(::com::sun::star::uno::RuntimeException);
++        void SAL_CALL InitImageList() throw(::com::sun::star::uno::RuntimeException);
+ 
+     public:
+         XThrobber();
