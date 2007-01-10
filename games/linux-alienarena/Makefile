@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007
-PORTREVISION=	1
+PORTVERSION=	2007.602
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.alienarena.org/downloads/ \
-		http://www.forsakenweb.com/gamepage/loaders/games/
+MASTER_SITES=	http://forsakenweb.com/alienarena/download/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-x86
-EXTRACT_SUFX=	.run
+DISTNAME=	${PORTNAME}2007-linux
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
+USE_ZIP=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-linux//}
 
 SUB_FILES=	linux-alienarena linux-alienarena-ded
 SUB_LIST=	LIBDIR="${LIBDIR}"
@@ -48,22 +46,16 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && \
-		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
-		${TAR} zxf -
-
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
-	cd ${WRKSRC}/engine/x86 && \
+	cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} arena/gamei386.so ${LIBDIR}/arena && \
 		${INSTALL_PROGRAM} data1/gamei386.so ${LIBDIR}/data1
 	${LN} -sf ${DATADIR}/arena/* ${LIBDIR}/arena
 	${LN} -sf ${DATADIR}/botinfo ${LIBDIR}
 	${LN} -sf ${DATADIR}/data1/* ${LIBDIR}/data1
 .for f in crx.sdl crded
-	${INSTALL_PROGRAM} ${WRKSRC}/engine/x86/${f} ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${LIBDIR}
 .endfor
 .for f in linux-alienarena linux-alienarena-ded
 	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin

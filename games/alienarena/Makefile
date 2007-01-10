@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007
-PORTREVISION=	1
+PORTVERSION=	2007.602
 CATEGORIES=	games
-MASTER_SITES=	http://www.alienarena.org/downloads/ \
-		http://www.forsakenweb.com/gamepage/loaders/games/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-x86
-EXTRACT_SUFX=	.run
+MASTER_SITES=	http://forsakenweb.com/alienarena/download/
+DISTNAME=	${PORTNAME}2007-linux
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (native version)
 
 RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
+USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GCC=	3.2+
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/source
-BUILD_WRKSRC=	${WRKDIR}/source/linux
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-linux//}/source
+BUILD_WRKSRC=	${WRKSRC}/linux
 ALL_TARGET=	build_release
 
 OPTIONS=	CLIENT "Build client" on \
@@ -84,18 +82,13 @@ PLIST_SUB+=	SDL=""
 PLIST_SUB+=	SDL="@comment "
 .endif
 
+post-extract:
+	@${FIND} ${WRKSRC} | ${XARGS} ${CHMOD} u+w
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${GREP} -Ev \
 		'(game/g_main|linux/(gl_glx|(q_sh|snd_)linux))\.c' | \
 		${XARGS} ${REINPLACE_CMD} -e 's/__linux__/__unix__/g'
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && \
-		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
-		${TAR} zxf -
-	@${TAR} zxf ${WRKDIR}/${PORTNAME}${PORTVERSION}-src.tar.gz \
-		-C ${WRKDIR}
 
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1

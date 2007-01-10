@@ -8,7 +8,6 @@
 %%LIBDIR%%/arena/motd.txt
 %%LIBDIR%%/arena/pics
 %%LIBDIR%%/arena/server.cfg
-%%LIBDIR%%/arena/video
 %%LIBDIR%%/botinfo
 %%DEDICATED%%%%LIBDIR%%/crded
 %%CLIENT%%%%LIBDIR%%/crx

@@ -6,37 +6,30 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007
+PORTVERSION=	2007.602
 CATEGORIES=	games
-MASTER_SITES=	http://www.alienarena.org/downloads/ \
-		http://www.forsakenweb.com/gamepage/loaders/games/
+MASTER_SITES=	http://forsakenweb.com/alienarena/download/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}-${PORTVERSION}-x86
-EXTRACT_SUFX=	.run
+DISTNAME=	${PORTNAME}2007-linux
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
 
+USE_ZIP=	yes
 NO_BUILD=	yes
-NO_PACKAGE=	Package will be 163MB, set FORCE_PACKAGE if you want it
-NO_WRKSUBDIR=	yes
+NO_PACKAGE=	Package will be 185MB, set FORCE_PACKAGE if you want it
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-linux//}
 
 .include <bsd.port.pre.mk>
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && \
-		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
-		${TAR} zxf -
-	@${TAR} jxf ${WRKDIR}/${PORTNAME}${PORTVERSION}-data.tar.bz2 \
-		-C ${WRKDIR}
+post-extract:
+	@${RM} ${WRKSRC}/arena/gamei386.so ${WRKSRC}/data1/gamei386.so
 
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${CP} -R arena botinfo data1 ${DATADIR}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/alienarena.xpm ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
