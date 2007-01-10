@@ -20,21 +20,26 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of routines for performing sparse factorization
 
-.ifdef WITH_ATLAS
-LIB_DEPENDS=    atlas:${PORTSDIR}/math/atlas
-.else
-LIB_DEPENDS= 	blas.1:${PORTSDIR}/math/blas
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
 .endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack
+.else
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+BLAS=		-lblas
+LAPACK=		-llapack
+.endif
+
+WANT_FORTRAN=yes
+USE_GCC=4.2+
 
 P_VERSION=	3.0
 WRKSRC=		${WRKDIR}/SuperLU_${P_VERSION}
 ALL_TARGET=	superlulib
-
-.ifdef WITH_ATLAS
-BLAS_LIBS=	-lf77blas -latlas
-.else
-BLAS_LIBS?=	-lblas
-.endif
 
 ARCH2FIX=	SRC/Makefile TESTING/MATGEN/Makefile CBLAS/Makefile make.inc	\
 		MAKE_INC/make.alpha MAKE_INC/make.inc
