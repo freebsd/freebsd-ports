@@ -10,7 +10,7 @@ PORTNAME=	fxt
 PORTVERSION=	2006.12.17
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/stas/}
+		http://freebsd.unixfreunde.de/sources/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
