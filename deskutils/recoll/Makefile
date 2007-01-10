@@ -34,4 +34,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's/^CXXFLAGS =/CXXFLAGS ?=/' \
 		${WRKSRC}/mk/localdefs.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	doesn't build
+.endif
+
+.include <bsd.port.post.mk>
