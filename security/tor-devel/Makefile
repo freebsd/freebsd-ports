@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.2.4
+PORTVERSION=	0.1.2.6
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/ \
 		http://mirror.onionland.org/dist/
@@ -31,10 +31,6 @@ MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/contrib/tor-tsocks.conf \
