@@ -11,5 +11,3 @@ Entry formats:
     - Zebra/Quagga BGP records:
           - BGP messages (OPEN, UPDATE, NOTIFY, KEEPALIVE)
           - BGP state changes
-
-WWW: http://libdnet.sourceforge.net/
