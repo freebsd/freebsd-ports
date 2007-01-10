@@ -6,6 +6,7 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/mimeconf
 %%DATADIR%%/examples/mimemap
+%%DATADIR%%/examples/mimeview
 %%DATADIR%%/examples/rclmon.sh
 %%DATADIR%%/examples/recoll.conf
 %%DATADIR%%/filters/rcldjvu
@@ -22,6 +23,7 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/filters/rclxls
 %%DATADIR%%/images/document.png
 %%DATADIR%%/images/drawing.png
+%%DATADIR%%/images/folder.png
 %%DATADIR%%/images/html.png
 %%DATADIR%%/images/image.png
 %%DATADIR%%/images/message.png
