@@ -519,6 +519,7 @@
     SUBDIR += p5-CGI-Cache
     SUBDIR += p5-CGI-Cookie-Splitter
     SUBDIR += p5-CGI-Ex
+    SUBDIR += p5-CGI-Expand
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-FormBuilder
     SUBDIR += p5-CGI-Framework

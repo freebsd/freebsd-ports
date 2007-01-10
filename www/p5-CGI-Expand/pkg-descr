@@ -1,0 +1,10 @@
+Converts a CGI query into structured data using a dotted name convention
+similar to TT2.
+
+expand_cgi works with CGI.pm, Apache::Request or anything with an appropriate
+"param" method. Or you can use expand_hash directly.
+
+If you prefer to use a different flattening convention then CGI::Expand can
+be subclassed.
+
+WWW: http://search.cpan.org/dist/CGI-Expand
