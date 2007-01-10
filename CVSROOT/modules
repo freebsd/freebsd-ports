@@ -12596,6 +12596,7 @@ q		ports/lang/q
 q-audio		ports/audio/q-audio
 q-graph		ports/graphics/q-graph
 q15		ports/games/q15
+q2p		ports/games/q2p
 q2pro		ports/games/q2pro
 q3base		ports/games/q3base
 q3cellshading	ports/games/q3cellshading
