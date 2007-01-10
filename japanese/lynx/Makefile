@@ -19,6 +19,8 @@ PATCH_SITES=	http://lynx.isc.org/current/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification
 
+BROKEN=		Leaves behind config file on deinstall
+
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
 
 VERSION=	2.8.4

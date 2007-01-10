@@ -14,6 +14,8 @@ MASTER_SITES=	http://usogres.good-day.net/download/
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Real-time backup utility for PostgreSQL
 
+BROKEN=		Leaves behind config file on deinstall
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
