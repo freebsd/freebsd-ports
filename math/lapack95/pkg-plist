@@ -1,4 +1,6 @@
 lib/liblapack95.a
+lib/liblapack95.so
+lib/liblapack95.so.1
 %%EXAMPLESDIR%%/make.inc
 %%EXAMPLESDIR%%/EXAMPLES1/gbsv.ma
 %%EXAMPLESDIR%%/EXAMPLES1/la_gesv_example.f90
