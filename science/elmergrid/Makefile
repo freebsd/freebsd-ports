@@ -7,13 +7,14 @@
 
 PORTNAME=	elmergrid
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package
 
-USE_GCC=	4.1+
+USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
