@@ -1,0 +1,32 @@
+# New ports collection makefile for:	www/p5-Catalyst-Plugin-Session-Store-Delegate
+# Date created:				28 Dec 2006
+# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Catalyst-Plugin-Session-Store-Delegate
+PORTVERSION=	0.02
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Catalyst
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	fernan@iib.unsam.edu.ar
+COMMENT=	Delegate session storage to an application model object
+
+BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.12:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Catalyst::Plugin::Session::Store::Delegate.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500801
+IGNORE=	requires Perl 5.8.1. Install lang/perl5.8, and try again
+.endif
+
+.include <bsd.port.post.mk>
