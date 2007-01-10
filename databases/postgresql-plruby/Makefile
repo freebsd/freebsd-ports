@@ -1,4 +1,4 @@
-# New ports collection makefile for:	PL/Ruby
+ftp://moulon.inra.fr/pub/ruby/# New ports collection makefile for:	PL/Ruby
 # Date created:		28 June 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
@@ -8,7 +8,8 @@
 PORTNAME=	plruby
 PORTVERSION=	0.5.0
 CATEGORIES=	databases ruby
-MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
+MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	ruby
 
