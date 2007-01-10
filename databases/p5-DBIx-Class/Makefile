@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.07003
+PORTVERSION=	0.07004
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -89,6 +89,9 @@ MAN3=	DBIx::Class.3 \
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^\s*build_requires/ .. /},$$/' ${WRKSRC}/Build.PL
+	@${PERL} -i.bak -ne 'print unless /\.orig$$/' ${WRKSRC}/MANIFEST
+	@${RM} -f ${WRKSRC}/lib/DBIx/Class/Schema.pm.orig
+	@${RM} -f ${WRKSRC}/lib/DBIx/Class/Storage/DBI.pm.orig
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
