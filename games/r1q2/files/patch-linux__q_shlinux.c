@@ -1,5 +1,5 @@
---- ./linux/q_shlinux.c.orig	Mon Oct 30 15:11:00 2006
-+++ ./linux/q_shlinux.c	Sat Dec 16 17:28:37 2006
+--- linux/q_shlinux.c.orig	Wed Jan 10 19:46:44 2007
++++ linux/q_shlinux.c	Wed Jan 10 19:47:36 2007
 @@ -12,25 +12,23 @@
  
  #include "../qcommon/qcommon.h"
@@ -63,3 +63,13 @@
  	
  	return curhunksize;
  }
+@@ -107,7 +120,9 @@
+ 
+ void Sys_DebugBreak (void)
+ {
++#ifdef __i386__
+         __asm ("int $3");
++#endif
+ }
+ 
+ void Sys_Mkdir (char *path)
