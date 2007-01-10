@@ -1,0 +1,17 @@
+$FreeBSD$
+
+--- ../../deploy/make/common/Sanity.gmk	18 Dec 2006 21:49:45 -0000	1.8
++++ ../../deploy/make/common/Sanity.gmk	10 Jan 2007 17:22:34 -0000
+@@ -50,10 +50,10 @@
+   ifeq ($(TRUE_PLATFORM), FreeBSD)
+     ifeq ($(ARCH_DATA_MODEL), 32)
+       REQUIRED_BSD_VERSION = 4.1[01]|5.[345]|6.*
+-      REQUIRED_GCC_VERSION = 2.95.4|3.*
++      REQUIRED_GCC_VERSION = 2.95.4|3.*|4.*
+     else
+       REQUIRED_BSD_VERSION = 5.[345]|6.*
+-      REQUIRED_GCC_VERSION = 3.*
++      REQUIRED_GCC_VERSION = 3.*|4.*
+     endif
+   endif
+ endif
