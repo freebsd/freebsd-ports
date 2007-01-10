@@ -38,6 +38,10 @@ QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 BROKEN=does not compile
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=	broken on ia64
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/X3DAbstractNodeForward.h ${WRKSRC}/include/X3DTK/private/X3DAbstractNodeForward.h
 
