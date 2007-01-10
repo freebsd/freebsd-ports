@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	freedroid
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
-BUILD_DEPENDS=	automake19:${PORTSDIR}/devel/automake19
-
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_SDL=	mixer image net sdl
@@ -59,11 +57,5 @@ CONFIGURE_ARGS+=--enable-opengl
 .else
 CONFIGURE_ARGS+=--disable-opengl
 .endif
-
-post-extract:
-# These files are symlinks to /usr/share/automake-1.9, so change them.
-.for f in config.guess config.sub depcomp install-sh missing
-	@${LN} -sf ${LOCALBASE}/share/automake19/${f} ${WRKSRC}
-.endfor
 
 .include <bsd.port.post.mk>
