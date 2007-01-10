@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gnet
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A simple network library built upon Glib
 
 USE_GNOME=	gnomehack glib12
@@ -39,5 +38,10 @@ post-patch:
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/gnet-config ${PREFIX}/bin
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
