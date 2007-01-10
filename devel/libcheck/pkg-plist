@@ -1,11 +1,11 @@
 include/check.h
 info/check.info
-info/dir
 lib/libcheck.so.0
 lib/libcheck.so
 lib/libcheck.la
 lib/libcheck.a
 lib/pkgconfig/check.pc
+@dirrm lib/pkgconfig
 share/aclocal/check.m4
 %%EXAMPLESDIR%%/Makefile.am
 %%EXAMPLESDIR%%/README
