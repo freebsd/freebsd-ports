@@ -22,7 +22,8 @@ CONFIGURE_WRKSRC=	${WRKSRC}/scripts/
 
 CFLAGS+=	-I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib
-CONFIGURE_ENV+=	PIC_CFLAGS="-fpic" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	PIC_CFLAGS="-fpic" LDFLAGS="${LDFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 OPTIONS=	SCHEME	"Enable built-in Scheme interpreter" on \
 		TCL	"Enable built-in  Tcl interpreter" off

@@ -1,5 +1,5 @@
 --- scripts/configure.orig	Tue Oct 24 21:09:50 2006
-+++ scripts/configure	Sun Dec  3 02:20:09 2006
++++ scripts/configure	Wed Jan 10 21:17:08 2007
 @@ -8180,8 +8180,9 @@
  fi
  
@@ -11,6 +11,15 @@
        TCL_LIB_NAME="tcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}"
        TK_LIB_NAME="tk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}"
        ;;
+@@ -8421,7 +8422,7 @@
+ #define HAVE_PTHREADS 1
+ _ACEOF
+ 
+-    gr_libs="$gr_libs -lpthread"
++    gr_libs="$gr_libs $PTHREAD_LIBS"
+     gr_srcs="$gr_srcs thread.c"
+     gr_hsrcs=""
+     gr_hprog=""
 @@ -10258,9 +10259,8 @@
  
      *-freebsd*)
