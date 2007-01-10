@@ -22,7 +22,7 @@ WITH_ATLAS=	yes
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
-LAPACK=		-llapack
+LAPACK=		-lalapack
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
