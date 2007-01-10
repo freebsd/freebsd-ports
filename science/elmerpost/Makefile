@@ -7,6 +7,7 @@
 
 PORTNAME=	elmerpost
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 
@@ -26,10 +27,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=
 
-USE_GCC=	4.1+
-WITH_FORTRAN=	yes
-F77=	${FC}
-CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS=${FCFLAGS}
+USE_GCC=	4.1 #4.2 has bugs
+WANT_FORTRAN=	yes
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+CONFIGURE_ENV+=	FC=gfortran42 F77=gfortran42 FCFLAGS=${FCFLAGS}
 
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
