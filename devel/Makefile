@@ -1706,6 +1706,7 @@
     SUBDIR += ptmalloc
     SUBDIR += ptypes
     SUBDIR += publib
+    SUBDIR += pushmi
     SUBDIR += pwlib
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse

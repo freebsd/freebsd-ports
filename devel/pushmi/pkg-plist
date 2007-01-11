@@ -1,0 +1,21 @@
+bin/pushmi
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pushmi/.packlist
+%%SITE_PERL%%/Pushmi.pm
+%%SITE_PERL%%/Pushmi/Command.pm
+%%SITE_PERL%%/Pushmi/Config.pm
+%%SITE_PERL%%/Pushmi/Mirror.pm
+%%SITE_PERL%%/Pushmi/Test.pm
+%%SITE_PERL%%/Pushmi/Apache/AuthCache.pm
+%%SITE_PERL%%/Pushmi/Apache/AuthCommit.pm
+%%SITE_PERL%%/Pushmi/Command/Help.pm
+%%SITE_PERL%%/Pushmi/Command/Mirror.pm
+%%SITE_PERL%%/Pushmi/Command/Runhook.pm
+%%SITE_PERL%%/Pushmi/Command/Sync.pm
+%%SITE_PERL%%/Pushmi/Command/Tryauth.pm
+%%SITE_PERL%%/Pushmi/Command/Unlock.pm
+%%SITE_PERL%%/Pushmi/Editor/Locker.pm
+@dirrm %%SITE_PERL%%/Pushmi/Editor
+@dirrm %%SITE_PERL%%/Pushmi/Command
+@dirrm %%SITE_PERL%%/Pushmi/Apache
+@dirrm %%SITE_PERL%%/Pushmi
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pushmi
