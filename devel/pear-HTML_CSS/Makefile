@@ -38,11 +38,11 @@ DOCS=		TDG/img/admons/caution.png \
 		TDG/ch05s05.html TDG/ch06.html TDG/ch06s02.html \
 		TDG/ch06s03.html TDG/ch06s04.html TDG/ch06s05.html \
 		TDG/ch06s06.html TDG/ch07.html TDG/ch07s02.html \
-		TDG/ch07s03.html TDG/ch08.html TDG/ch08s02.html \
-		TDG/ch08s03.html TDG/ch08s04.html TDG/ch08s05.html \
-		TDG/ch08s05.html TDG/ch09.html TDG/ch09s02.html \
-		TDG/ch09s03.html TDG/ch09s04.html TDG/ch09s05.html \
-		TDG/ch10.html TDG/ch10s02.html \
+		TDG/ch07s03.html TDG/ch08.html \
+		TDG/ch08s02.html TDG/ch08s03.html TDG/ch08s04.html \
+		TDG/ch08s05.html TDG/ch08s05.html TDG/ch09.html \
+		TDG/ch09s02.html TDG/ch09s03.html TDG/ch09s04.html \
+		TDG/ch09s05.html TDG/ch10.html TDG/ch10s02.html \
 		TDG/index.html TDG/pr01.html TDG/pr01s02.html \
 		TDG/pt01.html TDG/pt02.html TDG/pt03.html \
 		TDG/pt04.html TDG/re01.html TDG/re02.html TDG/re03.html \
