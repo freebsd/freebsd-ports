@@ -1,5 +1,5 @@
---- src/nes/km6502/km6502ot.h.orig	Sun Jan  7 05:18:05 2001
-+++ src/nes/km6502/km6502ot.h	Thu Aug 18 16:47:59 2005
+--- ./src/nes/km6502/km6502ot.h.orig	Sun Jan  7 05:18:05 2001
++++ ./src/nes/km6502/km6502ot.h	Wed Jan 10 20:10:34 2007
 @@ -1,35 +1,35 @@
  #define OPxx(i)
  #define OP__(i) \

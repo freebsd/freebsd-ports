@@ -1,5 +1,5 @@
---- src/nes/handler.c.orig	Sun Jan  7 05:17:57 2001
-+++ src/nes/handler.c	Thu Aug 18 16:47:01 2005
+--- ./src/nes/handler.c.orig	Sun Jan  7 05:17:57 2001
++++ ./src/nes/handler.c	Wed Jan 10 20:10:34 2007
 @@ -10,9 +10,9 @@
  static NES_READ_HANDLER  *(nprh[0x10]) = { 0, };
  static NES_WRITE_HANDLER *(npwh[0x10]) = { 0, };

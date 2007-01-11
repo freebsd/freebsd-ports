@@ -1,5 +1,5 @@
---- src/nes/km6502/km6502cd.h.orig	Sun Jan  7 05:18:05 2001
-+++ src/nes/km6502/km6502cd.h	Thu Aug 18 16:47:34 2005
+--- ./src/nes/km6502/km6502cd.h.orig	Sun Jan  7 05:18:05 2001
++++ ./src/nes/km6502/km6502cd.h	Wed Jan 10 20:10:34 2007
 @@ -361,27 +361,27 @@
  
  /* --- ADC ---  */
