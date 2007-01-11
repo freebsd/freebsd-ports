@@ -5,4 +5,3 @@ bin/get_person.py
 bin/imdbpy2sql.py
 bin/search_movie.py
 bin/search_person.py
-%%PYTHON_SITELIBDIR%%/IMDbPY-2.8-py2.5.egg-info
