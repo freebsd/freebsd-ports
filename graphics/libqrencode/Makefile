@@ -17,6 +17,7 @@ COMMENT=	A C library for encoding data in a QR Code symbol
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_GETOPT_LONG=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
