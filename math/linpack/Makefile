@@ -7,6 +7,7 @@
 
 PORTNAME=	linpack
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/linpack/
@@ -15,7 +16,14 @@ DISTFILES=	${SRCS:.f=.f.gz}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear Algebra package
 
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
+
+.include <bsd.port.pre.mk>
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 USE_LDCONFIG=	yes
 DIST_SUBDIR=	${PORTNAME}
@@ -51,7 +59,10 @@ do-extract:
 	@${GZCAT} ${_DISTDIR}/${file:.f=.f.gz} > ${WRKSRC}/${file}
 .endfor
 
+do-build:
+	cd ${WRKSRC} ; ${SETENV} "FC=${FC}" "F77=${F77}" ${MAKE_ENV} ${MAKE}
+
 pre-build:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
