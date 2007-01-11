@@ -7,6 +7,7 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	2.0.22
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,13 +31,6 @@ WWWOWN?=	www
 WWWGRP?=	www
 #
 # End of user-configurable variables.
-
-# XXX The phpBB folks does not seem to care about the session table DoS
-#     issue.  You can disable the patch at your own risk to make the
-#     visual authentication work.
-.if !defined(WITHOUT_ANTI_SESSIONTAB_DOS_PATCH)
-EXTRA_PATCHES=	${FILESDIR}/security-patch-includes-sessions.php
-.endif
 
 # Set/override/append to variables from bsd.port.mk:
 #
