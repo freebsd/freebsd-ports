@@ -4,3 +4,6 @@ SIZE (sbcl-1.0.1-source.tar.bz2) = 2902375
 MD5 (sbcl-1.0.1-x86-freebsd4-binary.tar.bz2) = b1582532c4106c313413c15bd87d2866
 SHA256 (sbcl-1.0.1-x86-freebsd4-binary.tar.bz2) = 05c7bdfc1779b9d93b4921912d2d981a181b6bbbd921d38779bca4cb334214e6
 SIZE (sbcl-1.0.1-x86-freebsd4-binary.tar.bz2) = 7682276
+MD5 (sbcl-1.0.1-x86-64-freebsd5-binary.tar.bz2) = dac539f13bed6f9532e4cbfaf3b8cf7d
+SHA256 (sbcl-1.0.1-x86-64-freebsd5-binary.tar.bz2) = 6de4d55a55237e1c3d76a7c254237ac1f87b74edb4a82cd8249a7863e50a1e9d
+SIZE (sbcl-1.0.1-x86-64-freebsd5-binary.tar.bz2) = 7452935
