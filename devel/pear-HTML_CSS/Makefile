@@ -38,16 +38,20 @@ DOCS=		TDG/img/admons/caution.png \
 		TDG/ch05s05.html TDG/ch06.html TDG/ch06s02.html \
 		TDG/ch06s03.html TDG/ch06s04.html TDG/ch06s05.html \
 		TDG/ch06s06.html TDG/ch07.html TDG/ch07s02.html \
-		TDG/ch07s03.html TDG/ch07s04.html TDG/ch08.html \
-		TDG/ch08s02.html TDG/ch08s03.html TDG/ch08s04.html \
-		TDG/ch08s05.html TDG/index.html TDG/pr01.html \
-		TDG/pr01s02.html TDG/pt01.html TDG/pt02.html \
-		TDG/pt03.html TDG/re01.html TDG/re02.html TDG/re03.html \
+		TDG/ch07s03.html TDG/ch08.html TDG/ch08s02.html \
+		TDG/ch08s03.html TDG/ch08s04.html TDG/ch08s05.html \
+		TDG/ch08s05.html TDG/ch09.html TDG/ch09s02.html \
+		TDG/ch09s03.html TDG/ch09s04.html TDG/ch09s05.html \
+		TDG/ch10.html TDG/ch10s02.html \
+		TDG/index.html TDG/pr01.html TDG/pr01s02.html \
+		TDG/pt01.html TDG/pt02.html TDG/pt03.html \
+		TDG/pt04.html TDG/re01.html TDG/re02.html TDG/re03.html \
 		TDG/re04.html TDG/re05.html TDG/re06.html TDG/re07.html \
 		TDG/re08.html TDG/re09.html TDG/re10.html TDG/re11.html \
 		TDG/re12.html TDG/re13.html TDG/re14.html TDG/re15.html \
 		TDG/re16.html TDG/re17.html TDG/re18.html TDG/re19.html \
-		TDG/re20.html TDG/re21.html TDG/re22.html TDG/re23.html
+		TDG/re20.html TDG/re21.html TDG/re22.html TDG/re23.html \
+		TDG/re24.html
 EXAMPLES=	CSS_InHeader.php css_error_custom.php \
 		CSS_Inline.php css_error_ignore.php \
 		CSS_Logger.php css_error_logger.php \
