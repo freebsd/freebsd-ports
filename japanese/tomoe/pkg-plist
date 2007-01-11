@@ -19,10 +19,6 @@ lib/libtomoe.a
 lib/libtomoe.la
 lib/libtomoe.so
 lib/libtomoe.so.1
-lib/tomoe/module/dict/libest.a
-lib/tomoe/module/dict/libest.la
-lib/tomoe/module/dict/libest.so
-lib/tomoe/module/dict/libest.so.1
 lib/tomoe/module/dict/libunihan.a
 lib/tomoe/module/dict/libunihan.la
 lib/tomoe/module/dict/libunihan.so
