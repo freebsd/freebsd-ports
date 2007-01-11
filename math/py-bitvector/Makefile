@@ -7,6 +7,7 @@
 
 PORTNAME=	bitvector
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://cobweb.ecn.purdue.edu/~kak/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
