@@ -17,3 +17,14 @@
  };
  
  using namespace std;
+--- rsdpa_include.h~	Thu Jan 11 16:32:04 2007
++++ rsdpa_include.h	Thu Jan 11 16:32:45 2007
+@@ -32,7 +32,7 @@
+ // otherwise (for example, BLAS in clapack.tgz), set 1
+ //           and edit Makefile to change LAPACK_LIB
+ 
+-#define NON_ATLAS_SDPA 0
++//#define NON_ATLAS_SDPA 0
+ 
+ #include <iostream>
+ #include <fstream>
