@@ -34,17 +34,17 @@ NOT_FOR_ARCHS=	alpha
 
 #to compile the ATLAS kernel we use gcc3. See ATLAS/INSTALL.txt for details.
 WANT_FORTRAN=	yes
-USE_GCC=4.2+
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
 .if ${OSVERSION} > 700000
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 CCOMPILER=	gcc34
 .else
-CCOMPILER:=	cc
+CCOMPILER=	${CC}
 .endif
-.if defined(WITH_TESTS)
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-.endif
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
@@ -55,20 +55,15 @@ PICFLAG?=	-fpic
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if defined(CPUTYPE)
-FFLAGS+=	-mtune=${CPUTYPE} -pipe -O2 -ffast-math -fomit-frame-pointer
+FFLAGS+=	-mtune=${CPUTYPE} -pipe -O2 -ffast-math
 .else
-FFLAGS+=	-pipe -O2 -ffast-math -fomit-frame-pointer
+FFLAGS+=	-pipe -O2 -ffast-math
 .endif
 .endif
 .if defined(WITH_STATICLIB)
 PLIST_SUB+=      WITH_STATICLIB=""
 .else
 PLIST_SUB+=      WITH_STATICLIB="@comment "
-.endif
-.if defined(WITH_TESTS)
-PLIST_SUB+=	WITH_TESTS=""
-.else
-PLIST_SUB+=	WITH_TESTS="@comment "
 .endif
 
 post-extract:
@@ -115,9 +110,7 @@ do-build:
 .endif
 	(cd ${WRKSRC}/NON_THREADED_PIC ; ${MAKE})
 	(cd ${WRKSRC}/THREADED_PIC ; ${MAKE})
-.if defined(WITH_TESTS)
 	@${MAKE} test
-.endif
 
 ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
@@ -210,7 +203,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
-.if defined(WITH_TESTS)
 	${MKDIR} ${EXAMPLESDIR}
 	@for i in ${ALLTESTS} ; do \
 	cd ${WRKDIR}/ATLAS/NON_THREADED_PIC/bin ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
@@ -218,7 +210,6 @@ do-install:
 	@for i in ${ALLTESTS_PT} ; do \
 	cd ${WRKDIR}/ATLAS/THREADED_PIC/bin ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
 	done
-.endif
 
 .include <${FILESDIR}/Makefile.test>
 .include <bsd.port.post.mk>
