@@ -32,12 +32,6 @@ lib/libptcblas.so
 %%WITH_STATICLIB%%lib/libptf77blas.a
 lib/libptf77blas.so.2
 lib/libptf77blas.so
-%%WITH_STATICLIB%%lib/libtstatlas.a
-lib/libtstatlas.so.2
-lib/libtstatlas.so
-%%WITH_STATICLIB%%lib/libtstatlas_r.a
-lib/libtstatlas_r.so.2
-lib/libtstatlas_r.so
 %%PORTDOCS%%share/doc/atlas/AtlasCredits.txt
 %%PORTDOCS%%share/doc/atlas/ChangeLog
 %%PORTDOCS%%share/doc/atlas/DirStruct.txt

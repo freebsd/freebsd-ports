@@ -10,7 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.7.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -112,7 +112,7 @@ do-build:
 	(cd ${WRKSRC}/THREADED_PIC ; ${MAKE})
 	@${MAKE} test
 
-ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
+ATLAS_LIBS1=libalapack libatlas libcblas libf77blas #libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
 
 post-build:
@@ -160,17 +160,17 @@ post-build:
 # make atlas shared library
 .for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/NON_THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 ${i}.a )
+		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
 .endfor
 
 # make atlas shared (thread safe) library
 .for i in ${ATLAS_LIBS1}
 	( cd ${WRKSRC}/THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}_r.so.2 -x -soname ${i}_r.so.2 ${i}.a )
+		ld -Bshareable -o ${i}_r.so.2 -x -soname ${i}_r.so.2 --whole-archive ${i}.a )
 .endfor
 .for i in ${ATLAS_LIBS2}
 	( cd ${WRKSRC}/THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 ${i}.a )
+		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
 .endfor
 do-install:
 .for i in ${ATLAS_LIBS1}
