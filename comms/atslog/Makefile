@@ -6,26 +6,21 @@
 #
 
 PORTNAME=	atslog
-PORTVERSION=	2.0.0.p4
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=${PORTNAME}
-DISTNAME=	${PORTNAME}-2.0.0pre4
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Software for collecting and analyzing calls from different PBX models
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-
 OPTIONS=	LIBWRAP		"Enable TCP wrapper support"			on \
+		MYSQL		"Enable MySQL support"				on \
+		PGSQL		"Enable PostgreSQL support"			off \
 		WWW		"Install web interface"				on \
 		WWWGD		"Graphic reports"				on
 
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_MYSQL=	yes
 USE_RC_SUBR=	${PORTNAME}d
 PORTDOCS=	CHANGES ChangeLog DEINSTALL INSTALL LICENSE TODO UPDATING USAGE
 SUB_FILES=	pkg-message
@@ -36,8 +31,12 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} --localstatedir=/var
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
+IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL"
+.endif
+
 .if !defined(WITHOUT_WWW)
-USE_PHP=	mysql pcre
+USE_PHP=	pcre
 WANT_PHP_WEB=	yes
 PLIST_SUB+=	WWW=""
 .if !defined(WITHOUT_WWWGD)
@@ -48,17 +47,31 @@ USE_PHP+=	gd
 PLIST_SUB+=	WWW="@comment "
 .endif
 
+.if !defined(WITHOUT_MYSQL)
+USE_MYSQL=	yes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+.if !defined(WITHOUT_WWW)
+USE_PHP+=	mysql
+.endif
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.if !defined(WITHOUT_WWW)
+USE_PHP+=	pgsql
+.endif
+.endif
+
 post-patch:
 .if defined(WITHOUT_LIBWRAP)
 	@${REINPLACE_CMD} -e 's|LIBWRAP=|#LIBWRAP=|' ${WRKSRC}/${USE_RC_SUBR}/Makefile
 	@${REINPLACE_CMD} -e 's|#define|//#define|' ${WRKSRC}/${USE_RC_SUBR}/${USE_RC_SUBR}.h
 .endif
-	@${REINPLACE_CMD} -e 's|createsqltables.mysql.sql|${DATADIR}/sql/createsqltables.mysql.sql|' \
+	@${REINPLACE_CMD} -e 's|createsqltables.|${DATADIR}/sql/createsqltables.|g' \
 	    -e 's|data.sql|${DATADIR}/sql/data.sql|' ${WRKSRC}/data/sql/install-sql.pl
-.for i in ${CONFIGS}
-	@${REINPLACE_CMD} -e 's|/log|/log/atslog|' ${WRKSRC}/include/${i}.in
-.endfor
-	@${MV} ${WRKSRC}/www/include/set/conf.inc.php ${WRKSRC}/www/include/set/conf.inc.default.php
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${USE_RC_SUBR}/${USE_RC_SUBR} ${PREFIX}/bin
@@ -96,18 +109,18 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/data/sql/install-sql.pl ${DATADIR}/sql
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	cd ${WRKSRC}/libexec && \
-	${FIND} * -type f -exec \
+	${FIND} . -type f -exec \
 		${INSTALL_DATA} "{}" "${PREFIX}/libexec/${PORTNAME}/{}" \;
 .if !defined(WITHOUT_WWW)
 	${MKDIR} ${PREFIX}/www/${PORTNAME}
 	cd ${WRKSRC}/www && \
-	${FIND} * -type d ! -empty -exec \
+	${FIND} . -type d ! -empty -exec \
 		${MKDIR} "${PREFIX}/www/${PORTNAME}/{}" \; && \
-	${FIND} -E * -type f ! -iregex ".*Makefile" -exec \
+	${FIND} -E . -type f ! -iregex "(.*Makefile|.*\.orig)" -exec \
 		${INSTALL_DATA} "{}" "${PREFIX}/www/${PORTNAME}/{}" \;
-.if !exists(${PREFIX}/www/${PORTNAME}/include/set/conf.inc.php)
-	${INSTALL_DATA} ${WRKSRC}/www/include/set/conf.inc.default.php \
-		${PREFIX}/www/${PORTNAME}/include/set/conf.inc.php
+.if !exists(${PREFIX}/www/${PORTNAME}/include/config.inc.php)
+	${INSTALL_DATA} ${WRKSRC}/www/include/config.inc.php.default \
+		${PREFIX}/www/${PORTNAME}/include/config.inc.php
 .endif
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/${PORTNAME}
 .endif

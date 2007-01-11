@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: atslogd
-# REQUIRE: mysql
+# REQUIRE: mysql postgresql
 # KEYWORD: shutdown 
 
 #
