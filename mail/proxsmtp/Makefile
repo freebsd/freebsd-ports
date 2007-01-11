@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxsmtp
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	mail security
 MASTER_SITES=	http://memberwebs.com/nielsen/software/proxsmtp/
 
@@ -15,7 +15,7 @@ COMMENT=	A flexible SMTP filter which can act also as transparent proxy
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL} --mandir=${MANPREFIX}/man
 CONFIGURE_ARGS+=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 USE_RC_SUBR=	proxsmtpd.sh
