@@ -5,7 +5,7 @@ PKGNAME=$1
 case $2 in
     DEINSTALL)
 	for f in %%EGGS%%
-	do easy_install -x -m -D "%%PYTHON_SITELIBDIR%%/${f}"
+	do easy_install -q -x -m "%%PYTHON_SITELIBDIR%%/${f}"
 	done
 	;;
     POST-DEINSTALL)

@@ -7,7 +7,7 @@
 
 PORTNAME=	TurboGears
 PORTVERSION=	0.8.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 		http://www.turbogears.org/download/eggs/
@@ -19,7 +19,7 @@ COMMENT=	Python-Based Framework for Rapid Web Development
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_SITELIBDIR}/kid/__init__.py:${PORTSDIR}/devel/py-kid \
+		${PYTHON_SITELIBDIR}/${PYKID_EGG}/kid/__init__.py:${PORTSDIR}/devel/py-kid \
 		sqlobject-admin:${PORTSDIR}/databases/py-sqlobject \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
@@ -57,5 +57,6 @@ RUN_DEPENDS+=	cheetah:${PORTSDIR}/devel/py-cheetah
 .endif
 
 PYFORMENCODE_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-formencode/Makefile -V PYFORMENCODE_EGG
+PYKID_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-kid/Makefile -V PYKID_EGG
 
 .include <bsd.port.post.mk>
