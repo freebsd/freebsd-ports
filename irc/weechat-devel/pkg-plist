@@ -1,4 +1,8 @@
 bin/weechat-curses
+%%CHARSET%%lib/weechat/plugins/charset.so.0
+%%CHARSET%%lib/weechat/plugins/charset.so
+%%CHARSET%%lib/weechat/plugins/charset.la
+%%CHARSET%%lib/weechat/plugins/charset.a
 %%DOCSDIR%%/html/en/weechat-doc.css
 %%DOCSDIR%%/html/fr/weechat-doc.css
 %%DOCSDIR%%/html/de/weechat-doc.css
