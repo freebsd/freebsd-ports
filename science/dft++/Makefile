@@ -7,6 +7,7 @@
 
 PORTNAME=	dft++
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://dft.physics.cornell.edu/src/ \
 		http://dft.physics.cornell.edu/example/:example
@@ -20,17 +21,37 @@ EXTRACT_ONLY=	${PORTNAME}.v${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	DFT++, A density functional software
 
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas\
-		fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
-LAPACK=		-lalapack -lcblas -lf77blas -lg2c -latlas
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
+FORTRANLIBS=    -lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
+.endif
 FFTW=		-lfftw
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 OPTIMIZED_FLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 OPTIMIZED_FLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
@@ -38,6 +59,7 @@ OPTIMIZED_FLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boun
 pre-patch:
 	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile-pw
 	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile-wl
+	${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
@@ -46,20 +68,24 @@ pre-configure:
 			      s|%%CXX%%|${CXX}|g ; \
 			      s|%%OPTIMIZED_FLAGS%%|${OPTIMIZED_FLAGS}|g ; \
 			      s|%%LAPACK%%|${LAPACK}|g ; \
+			      s|%%BLAS%%|${BLAS}|g ; \
 			      s|%%FFTW%%|${FFTW}|g ; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			      s|%%FFLAGS%%|${FFLAGS}|g ; \
 			      s|%%CFLAGS%%|${CFLAGS}|g ; \
+			      s|%%FORTRANLIBS%%|${FORTRANLIBS} ${GCCLIBDIR}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ;' ${WRKSRC}/makefile.local-pw
 	@${REINPLACE_CMD} -e ' s|%%FC%%|${FC}|g ; \
-			      s|%%CC%%|${CC}|g ; \
-			      s|%%CXX%%|${CXX}|g ; \
+			      s|%%CC%%|${CC} -v|g ; \
+			      s|%%CXX%%|${CXX} -v|g ; \
+			      s|%%BLAS%%|${BLAS}|g ; \
 			      s|%%LAPACK%%|${LAPACK}|g ; \
 			      s|%%FFTW%%|${FFTW}|g ; \
 			      s|%%OPTIMIZED_FLAGS%%|${OPTIMIZED_FLAGS}|g ; \
 			      s|%%FFLAGS%%|${FFLAGS}|g ; \
 			      s|%%CFLAGS%%|${CFLAGS}|g ; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+			      s|%%FORTRANLIBS%%|${FORTRANLIBS} ${GCCLIBDIR}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ;' ${WRKSRC}/makefile.local-wl
 
 do-build:
@@ -79,4 +105,4 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

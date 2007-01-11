@@ -35,7 +35,7 @@
 +#
 +# Our libraries:  FFTW, math library, and possible LAPACK/BLAS libraries
 +#
-+LIBS = ${FFTW_LIB_DIR} ${MATDIAG_LIB_DIR} %%LAPACK%% %%FFTW%% -lm
++LIBS = ${FFTW_LIB_DIR} ${MATDIAG_LIB_DIR} %%LAPACK%% %%BLAS%% %%FFTW%% %%FORTRANLIBS%% -lm
 +#
 +
 +#
