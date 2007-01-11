@@ -1,0 +1,11 @@
+--- configure	Tue Jan  9 22:48:02 2007
++++ configure	Tue Jan  9 22:48:21 2007
+@@ -6657,7 +6657,7 @@
+ 			pgagent_LDADD=`${WX_CONFIG} ${WX_STATIC} --libs base --unicode=yes --debug=yes --version=${WX_VERSION} 2> /dev/null`
+ 		else
+ 			WX_NEW_CPPFLAGS=`${WX_CONFIG} --cppflags --unicode=yes --debug=no --version=${WX_VERSION} 2> /dev/null`
+-			CPPFLAGS="$CPPFLAGS $WX_NEW_CPPFLAGS -O2"
++			CPPFLAGS="$CPPFLAGS $WX_NEW_CPPFLAGS $CFLAGS"
+ 
+ 			pgadmin3_LDADD=`${WX_CONFIG} ${WX_STATIC} --libs std,stc,ogl --unicode=yes --debug=no --version=${WX_VERSION} 2> /dev/null`
+ 			pgagent_LDADD=`${WX_CONFIG} ${WX_STATIC} --libs base --unicode=yes --debug=no --version=${WX_VERSION} 2> /dev/null`
