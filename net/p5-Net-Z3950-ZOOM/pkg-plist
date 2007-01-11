@@ -9,3 +9,5 @@ bin/zselect
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
