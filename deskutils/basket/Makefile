@@ -23,6 +23,10 @@ OPTIONS=	KONTACT	"Kontact plugin" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
 .if !defined(WITHOUT_KONTACT)
 LIB_DEPENDS+=	kontact.1:${PORTSDIR}/deskutils/kdepim3
 PLIST_SUB=	KONTACT=""
