@@ -38,6 +38,7 @@ lib/vile/vile-m4-filt
 lib/vile/vile-mail-filt
 lib/vile/vile-make-filt
 lib/vile/vile-manfilt
+lib/vile/vile-mcrl-filt
 lib/vile/vile-midl-filt
 lib/vile/vile-mms-filt
 lib/vile/vile-nr-filt
@@ -143,6 +144,7 @@ share/vile/macros/which.rc
 share/vile/mail.keywords
 share/vile/make.keywords
 share/vile/manpage.rc
+share/vile/mcrl.keywords
 share/vile/midl.keywords
 share/vile/modes.rc
 share/vile/nr.keywords

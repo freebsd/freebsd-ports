@@ -40,6 +40,7 @@ lib/xvile/vile-lua-filt
 lib/xvile/vile-m4-filt
 lib/xvile/vile-mail-filt
 lib/xvile/vile-make-filt
+lib/xvile/vile-mcrl-filt
 lib/xvile/vile-midl-filt
 lib/xvile/vile-mms-filt
 lib/xvile/vile-nr-filt
@@ -170,6 +171,7 @@ share/xvile/vile/lua.keywords
 share/xvile/vile/m4.keywords
 share/xvile/vile/mail.keywords
 share/xvile/vile/make.keywords
+share/xvile/vile/mcrl.keywords
 share/xvile/vile/midl.keywords
 share/xvile/vile/nr.keywords
 share/xvile/vile/nsis.keywords

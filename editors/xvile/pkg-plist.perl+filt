@@ -43,6 +43,7 @@ lib/xvile/vile-lisp-filt.so
 lib/xvile/vile-lua-filt.so
 lib/xvile/vile-mail-filt.so
 lib/xvile/vile-make-filt.so
+lib/xvile/vile-mcrl-filt.so
 lib/xvile/vile-midl-filt.so
 lib/xvile/vile-mms-filt.so
 lib/xvile/vile-nr-filt.so
@@ -170,6 +171,7 @@ share/xvile/vile/lua.keywords
 share/xvile/vile/m4.keywords
 share/xvile/vile/mail.keywords
 share/xvile/vile/make.keywords
+share/xvile/vile/mcrl.keywords
 share/xvile/vile/midl.keywords
 share/xvile/vile/nr.keywords
 share/xvile/vile/nsis.keywords
