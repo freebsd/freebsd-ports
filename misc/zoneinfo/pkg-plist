@@ -2,7 +2,7 @@ share/zoneinfo/Africa/Abidjan
 share/zoneinfo/Africa/Accra
 share/zoneinfo/Africa/Addis_Ababa
 share/zoneinfo/Africa/Algiers
-share/zoneinfo/Africa/Asmera
+share/zoneinfo/Africa/Asmara
 share/zoneinfo/Africa/Bamako
 share/zoneinfo/Africa/Bangui
 share/zoneinfo/Africa/Banjul
@@ -270,7 +270,7 @@ share/zoneinfo/Atlantic/Azores
 share/zoneinfo/Atlantic/Bermuda
 share/zoneinfo/Atlantic/Canary
 share/zoneinfo/Atlantic/Cape_Verde
-share/zoneinfo/Atlantic/Faeroe
+share/zoneinfo/Atlantic/Faroe
 share/zoneinfo/Atlantic/Jan_Mayen
 share/zoneinfo/Atlantic/Madeira
 share/zoneinfo/Atlantic/Reykjavik
@@ -282,6 +282,7 @@ share/zoneinfo/Australia/Brisbane
 share/zoneinfo/Australia/Broken_Hill
 share/zoneinfo/Australia/Currie
 share/zoneinfo/Australia/Darwin
+share/zoneinfo/Australia/Eucla
 share/zoneinfo/Australia/Hobart
 share/zoneinfo/Australia/Lindeman
 share/zoneinfo/Australia/Lord_Howe
