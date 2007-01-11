@@ -13,11 +13,11 @@
 #
 
 PORTNAME=	uqm
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sc2
-DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tgz ${PORTNAME}-${PORTVERSION}-content.uqm
+DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tgz ${PORTNAME}-${DATAVERSION}-content.uqm
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-source.tgz
 
 MAINTAINER=	benlutz@datacomm.ch
@@ -30,6 +30,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	image sdl
 NO_INSTALL_MANPAGES=	yes
+DATAVERSION=	0.6.0
 
 OPTIONS=	VOICE "Voice add-on (110MB)" Off \
 		MUSIC "Music add-on (18MB)" Off \
@@ -38,14 +39,14 @@ OPTIONS=	VOICE "Voice add-on (110MB)" Off \
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_VOICE)
-DISTFILES+=	${PORTNAME}-${PORTVERSION}-voice.uqm
+DISTFILES+=	${PORTNAME}-${DATAVERSION}-voice.uqm
 PLIST_SUB+=	VOICEADDON=""
 .else
 PLIST_SUB+=	VOICEADDON="@comment "
 .endif
 
 .ifdef(WITH_MUSIC)
-DISTFILES+=	${PORTNAME}-${PORTVERSION}-3domusic.uqm
+DISTFILES+=	${PORTNAME}-${DATAVERSION}-3domusic.uqm
 PLIST_SUB+=	MUSICADDON=""
 .else
 PLIST_SUB+=	MUSICADDON="@comment "
@@ -61,12 +62,12 @@ BROKEN=		does not compile
 
 post-extract:
 	${MKDIR} ${WRKSRC}/sc2/content/packages
-	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-content.uqm ${WRKSRC}/sc2/content/packages/
+	${CP} ${DISTDIR}/${PORTNAME}-${DATAVERSION}-content.uqm ${WRKSRC}/sc2/content/packages/
 .ifdef(WITH_VOICE)
-	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-voice.uqm ${WRKSRC}/sc2/content/packages/
+	${CP} ${DISTDIR}/${PORTNAME}-${DATAVERSION}-voice.uqm ${WRKSRC}/sc2/content/packages/
 .endif
 .ifdef(WITH_MUSIC)
-	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-3domusic.uqm ${WRKSRC}/sc2/content/packages/
+	${CP} ${DISTDIR}/${PORTNAME}-${DATAVERSION}-3domusic.uqm ${WRKSRC}/sc2/content/packages/
 .endif
 
 do-configure:
