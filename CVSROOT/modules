@@ -12090,6 +12090,7 @@ pure-sfv	ports/security/pure-sfv
 pure-xemacs21-mule	ports/irc/pure-xemacs21-mule
 pureadmin	ports/ftp/pureadmin
 puredb		ports/databases/puredb
+pushmi		ports/devel/pushmi
 putty		ports/security/putty
 pv		ports/sysutils/pv
 pvm		ports/net/pvm
