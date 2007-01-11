@@ -7,7 +7,7 @@
 
 PORTNAME=	mumps
 PORTVERSION=	4.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.enseeiht.fr/apo/MUMPS/	\
 		http://www.enseeiht.fr/irit/apo/MUMPS/	\
@@ -26,31 +26,28 @@ COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 # WITH_OPTIMIZED_FLAGS:Try to use agressive (non-CPU) FFLAGS
 # BLAS_LIBS: specify other version of BLAS
 # WITH_ATLAS: Use ATLAS instead of the regular BLAS
-# WITH_GFC_BLAS: BLAS was generated with gfortran, not g77
 # WITH_METIS: Add METIS ordering
 # WITH_MPI: Use mpich for the parallel version
 #-----------------------------------------------------------------------
 
-USE_GCC=	4.1+
-WITH_FORTRAN=	yes
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
 .endif
 
-.ifndef WITH_GFC_BLAS	# g77 compatibility
-MAKE_ENV+=	CDEFS=-DAdd__
-FCFLAGS=	-ff2c ${FFLAGS}
-.else
-FCFLAGS?=	${FFLAGS}
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
 .endif
-
-.ifdef WITH_ATLAS
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
 BLAS_LIBS=	-lptf77blas -latlas_r
 .else
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
-BLAS_LIBS?=	-lblas
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+BLAS_LIBS=	-lblas
 .endif
 
 .ifdef WITH_METIS
