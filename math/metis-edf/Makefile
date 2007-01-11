@@ -7,6 +7,7 @@
 
 PORTNAME=	metis-edf
 DISTVERSION=	4.0-3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${DISTVERSION}.noarch
@@ -20,20 +21,21 @@ ALL_TARGET=	default
 MAKE_ENV+=	CC="${CC}" AR="${AR}" F77="${F77}" FFLAGS="${FFLAGS}"
 REINPLACE_ARGS=	-i ""
 
-F77?=		f77
-FFLAGS?=	-O2
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FFLAGS+=	-O2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 PROGS=		kmetis onmetis.exe pmetis
 
 MACHINEARCH=	${ARCH}
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-WITH_FORTRAN=	yes
-.endif
 
 pre-configure:
 .if ${MACHINEARCH} != "i386"
@@ -44,6 +46,8 @@ pre-configure:
 			-e "s|\(%[[:digit:]]\.[[:digit:]]\)le|\1e|g"		\
 			-e "s|%ld|%d|g"
 .endif
+	@${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	@${REINPLACE_CMD} -e 's|%%FORTRANLIBS%%|${FORTRANLIBS}|g' -e 's|%%GCCLIBDIR%%|${GCCLIBDIR}|g' ${WRKSRC}/Programs/Makefile
 
 do-install:
 	@${CP} ${WRKSRC}/CONFIG/onmetis.in ${WRKSRC}/onmetis
