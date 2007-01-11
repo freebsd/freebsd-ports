@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	referrercop
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://wonko.com/files/
 
