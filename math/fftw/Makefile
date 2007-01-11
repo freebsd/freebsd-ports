@@ -7,7 +7,7 @@
 
 PORTNAME=	fftw
 PORTVERSION=	2.1.5
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		ftp://ftp.fftw.org/pub/fftw/old/ 	\
@@ -22,10 +22,14 @@ COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 FFTW_FLAVOR?=	default
 FFTW_SUFIX=
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" FC="${FC}" F77="${F77}"
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
