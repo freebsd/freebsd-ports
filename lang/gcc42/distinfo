@@ -13,3 +13,6 @@ SIZE (gcc-objc-4.2-20070110.tar.bz2) = 191761
 MD5 (gcc-testsuite-4.2-20070110.tar.bz2) = c71849262b5e41266145179c8701dea4
 SHA256 (gcc-testsuite-4.2-20070110.tar.bz2) = 8b509972f00ee8cb0acfcb5d475f9256befdc4906057090adcf475f900dc619e
 SIZE (gcc-testsuite-4.2-20070110.tar.bz2) = 3794432
+MD5 (gcc-java-4.2-20070110.tar.bz2) = 44bdffa18232f209d72979764c4df728
+SHA256 (gcc-java-4.2-20070110.tar.bz2) = e5c088ec7d335714cfa0beeea4c2d061b5d752cd89ce82100fb64fa437f7b726
+SIZE (gcc-java-4.2-20070110.tar.bz2) = 10472481
