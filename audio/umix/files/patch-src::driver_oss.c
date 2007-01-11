@@ -13,7 +13,7 @@
   * oss_open() before initializing. */
  int oss_init(void)
  {
-+#ifdef SOUND_MIXER_INFO
++#if 0
  	/* this is an OSS structure, defined in soundcard.h */
  	struct mixer_info oss_info;
 +#endif
@@ -24,7 +24,7 @@
  	mixer_ptr->numchan = SOUND_MIXER_NRDEVICES;
  	mixer_ptr->numchan = CLAMP(mixer_ptr->numchan,0,SOUND_MIXER_NRDEVICES);
  
-+#ifdef SOUND_MIXER_INFO
++#if 0
  	/* get the mixer name */
  	eioctl(mixer_ptr->fd, SOUND_MIXER_INFO, &oss_info);
  	strncpy(mixer_ptr->name, oss_info.name, sizeof(mixer_ptr->name));
@@ -36,7 +36,7 @@
  		oss_set_curr_chan(i);
  		oss_update(OSS_UPD_READ);
  	}
-+#ifdef SOUND_MIXER_INFO
++#if 0
  	/* init the modify counter */
  	eioctl(mixer_ptr->fd, SOUND_MIXER_INFO, &oss_info);
  	mixer_ptr->modifycount = oss_info.modify_counter;
@@ -48,7 +48,7 @@
   * the device and compares it to the old */
  static int oss_check_update(void)
  {
-+#ifdef SOUND_MIXER_INFO
++#if 0
  	struct mixer_info oss_info;
  
  	eioctl(mixer_ptr->fd, SOUND_MIXER_INFO, &oss_info);
