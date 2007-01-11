@@ -10,6 +10,10 @@ share/applnk/Utilities/komparator.desktop
 %%PORTDOCS%%%%DOCSDIR%%/komparator_preset.png
 %%PORTDOCS%%%%DOCSDIR%%/komparator_search_button.png
 %%PORTDOCS%%%%DOCSDIR%%/komparator_search_options_extended.png
+%%PORTDOCS%%%%DOCSDIR%%/komparator_filter_duplicates.png
+%%PORTDOCS%%%%DOCSDIR%%/komparator_filter_missing.png
+%%PORTDOCS%%%%DOCSDIR%%/komparator_filter_newer.png
+%%PORTDOCS%%%%DOCSDIR%%/komparator_filters.png
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 share/icons/hicolor/16x16/apps/komparator.png
