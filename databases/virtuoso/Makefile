@@ -7,7 +7,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	4.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,6 +42,9 @@ post-patch:
 		-e 's,-lpthreads,${PTHREAD_LIBS},g'\
 		-e 's,-lruby,-lruby${RUBY_VER:S,.,,},g'\
 			${WRKSRC}/configure
+	${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${GREP} -l 'netstat -an.*grep LISTEN' |\
+	    ${XARGS} ${REINPLACE_CMD}\
+	        -e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
@@ -50,6 +53,17 @@ post-install:
 	${CHMOD} +w ${PREFIX}/virtuoso/demo/demo.db
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		requires wchar_t
+.endif
+
+.if ${OSVERSION} < 504000
+CHECK_PORT=	${LOCALBASE}/bin/nc -vz localhost $$\1 2>\&1 | ${GREP} open
+BUILD_DEPENDS+=	${NETCAT}:${PORTSDIR}/net/netcat
+.else
+CHECK_PORT=	/usr/bin/nc -z localhost $$\1
+.endif
 
 .if defined(WITH_IMAGEMAGICK)
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
