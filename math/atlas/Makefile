@@ -47,9 +47,9 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if defined(CPUTYPE)
-FFLAGS+=	-mtune=${CPUTYPE} -pipe -O2 -ffast-math -fomit-frame-pointer
+FFLAGS+=	-mtune=${CPUTYPE} -pipe -O2 -ffast-math
 .else
-FFLAGS+=	-pipe -O2 -ffast-math -fomit-frame-pointer
+FFLAGS+=	-pipe -O2 -ffast-math
 .endif
 .endif
 
