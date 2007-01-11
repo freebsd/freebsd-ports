@@ -54,6 +54,10 @@ MAN1=			xvidcap.1
 BROKEN=	Cannot compile when ffmpeg-devel is installed
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=	Compilation error with gcc-2.95.
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
