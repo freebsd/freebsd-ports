@@ -8,7 +8,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.12.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
 		ftp://ftp.gtk.org/pub/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
@@ -45,6 +45,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 OPTIONS=	COLLATION_FIX "fix string collation" off
 
 .include <bsd.port.pre.mk>
+
+# Let glib use asm code for implementing atomic ops on i386 and amd64.
+.if ${ARCH} == "i386"
+GLIB_ARCH=	i486
+.elif ${ARCH} == "amd64"
+GLIB_ARCH=	x86_64
+.else
+GLIB_ARCH=	${ARCH}
+.endif
+CONFIGURE_TARGET=	--build=${GLIB_ARCH}-portbld-freebsd${OSREL}
 
 .if ( ( ${OSVERSION} < 504101 ) || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600012 ) )
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gthread_gthread-posix.c
