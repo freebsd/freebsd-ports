@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070111:
+  AFFECTS: users of irc/weechat
+  AUTHOR: az@FreeBSD.org
+
+  For users of any previous version, all your charset settings
+  in weechat.rc will be LOST! You should save your weechat.rc
+  to keep your values and set them again with new "charset" plugin.
+  For ISO users: history of channels may be without accents
+  (after /upgrade), this is not recoverable, but this is not a bug.
+  All new messages should be ok.
+  Be careful, now default encode is UTF-8 for all channels (before
+  it was terminal charset). If you still want to send messages as
+  ISO-8859-1, you should send either global encode or server specific
+  encode to ISO-8859-1.
+  For global encode:  /setp charset.global.encode = "ISO-8859-1"
+  For server encode: (on server buffer)  /charset encode ISO-8859-1
+
 20070109:
   AFFECTS: users of databases/postgresql*
   AUTHOR: girgen@FreeBSD.org
