@@ -23,6 +23,12 @@ USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	-update
 HAS_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile (old perl)
+.endif
+
 # We're using a nonstandard configure, so these cached
 # values must be copied into the ${WRKSRC} directory.
 pre-configure:
@@ -49,4 +55,4 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/lib/inspircd/*.so
 	${STRIP_CMD} ${PREFIX}/bin/inspircd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
