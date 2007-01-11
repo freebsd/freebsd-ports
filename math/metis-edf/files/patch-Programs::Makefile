@@ -5,7 +5,7 @@
  CFLAGS = $(COPTIONS) $(INCLUDES)
  FFLAGS = $(FOPTIONS) $(INCLUDES)
 -LIBS = -lmetis -lm
-+LIBS = -lmetis -lm -lg2c
++LIBS = -lmetis -lm %%FORTRANLIBS%% %%GCCLIBDIR%%
  METISLIB = ../libmetis.a
  
  
