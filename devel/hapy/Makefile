@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hapy
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ MAINTAINER=	rousskov@measurement-factory.com
 COMMENT=	A runtime parser generator
 
 GNU_CONFIGURE=	yes
+USE_GCC=	3.4+
 
 post-build:
 	@${ECHO_MSG} "Consider running 'make check' before 'make install'"
