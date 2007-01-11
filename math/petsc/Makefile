@@ -7,6 +7,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.2-p6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -41,14 +42,18 @@ CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include	\
 			--with-x-lib=${X11BASE}/lib/libX11.so
 .endif
 
-FFLAGS?=	-O2
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
+FFLAGS+=	-O2
 PFX=		${PORTNAME}
 TARGET=		${OPSYS:L}
 PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 
 .if !defined(WITHOUT_UMFPACK)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack
-CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/UMFPACK"	\
+LIB_DEPENDS+=		umfpack.1:${PORTSDIR}/math/suitesparse
+CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 			--with-umfpack-lib=[${LOCALBASE}/lib/libumfpack.a,${LOCALBASE}/lib/libamd.a]
 .endif
 
@@ -72,12 +77,6 @@ MPIDIR=		${LOCALBASE}/mpi/openmpi
 
 .if ${ARCH} == "amd64"
 WITHOUT_SUPERLU=	yes
-.endif
-
-.if !${OSVERSION} < 500039
-F77?=		f77
-.else
-BROKEN=		the Fortran compiler does not work
 .endif
 
 .if exists(${MPIDIR}/bin/mpicc) && !defined(WITHOUT_MPI)
@@ -121,11 +120,11 @@ PLIST_SUB+=		MPIUNI=""
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
-LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -lcblas -latlas -lg2c -lm"
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -latlas -lm"
 CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
 .else
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIBBLASLAPACK=	"-L${LOCALBASE}/lib -llapack -lblas -lm"
 CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
 .endif
