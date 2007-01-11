@@ -7,6 +7,7 @@
 
 PORTNAME=	sdpara
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	math parallel
 MASTER_SITES=   http://grid.r.dendai.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
@@ -24,10 +25,30 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
 
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+#Atlas is always required as lapack.h and blas.h is required.
+#no blaswarp.h at the moment.
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+WITH_ATLAS=     yes
+.if defined(WITH_ATLAS)
+BLAS=		-lcblas -lf77blas -latlas
 LAPACK=		-lalapack
-CBLAS=		-lcblas -lf77blas -latlas -lg2c
+CXXFLAGS+=	-DNON_ATLAS_SDPA=0
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
+CXXFLAGS+=	-DNON_ATLAS_SDPA=1
+.endif
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
@@ -51,7 +72,8 @@ post-patch:
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
 			      s|%%FFLAGS%%|${FFLAGS}|g ; \
 			      s|%%LAPACK%%|${LAPACK}|g ; \
-			      s|%%CBLAS%%|${CBLAS}|g'  ${WRKSRC}/Makefile
+			      s|%%BLAS%%|${BLAS}|g ; \
+			      s|%%FORTRANLIBS%%|${FORTRANLIBS}|g '  ${WRKSRC}/Makefile
 .if !defined(WITH_OPTIMIZED_FLAGS)
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 .endif
