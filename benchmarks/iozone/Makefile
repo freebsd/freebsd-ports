@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iozone
-PORTVERSION=	3.263
+PORTVERSION=	3.267
 PORTREVISION=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
