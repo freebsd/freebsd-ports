@@ -22,6 +22,8 @@ USE_GNOME=	gnometarget pkgconfig
 USE_PYTHON=	2.3+
 GNU_CONFIGURE=	yes
 
+PLIST_SUB=	PYVER=${_PYTHON_VERSION:S/./_/}
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|{libdir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \
