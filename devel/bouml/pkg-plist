@@ -1,5 +1,9 @@
 bin/bouml
+bin/projectControl
+bin/projectSynchro
 %%DESKTOPDIR%%/bouml.desktop
+%%DESKTOPDIR%%/projectControl.desktop
+%%DESKTOPDIR%%/projectSynchro.desktop
 %%DATADIR%%/FileControl/1024.bodies
 %%DATADIR%%/FileControl/1152.bodies
 %%DATADIR%%/FileControl/1280.bodies
@@ -1236,9 +1240,17 @@ bin/bouml
 %%DATADIR%%/xmi/tools
 %%DATADIR%%/xmi/xmi.prj
 share/icons/hicolor/16x16/apps/bouml.png
+share/icons/hicolor/16x16/apps/projectControl.png
+share/icons/hicolor/16x16/apps/projectSynchro.png
 share/icons/hicolor/32x32/apps/bouml.png
+share/icons/hicolor/32x32/apps/projectControl.png
+share/icons/hicolor/32x32/apps/projectSynchro.png
 share/icons/hicolor/48x48/apps/bouml.png
+share/icons/hicolor/48x48/apps/projectControl.png
+share/icons/hicolor/48x48/apps/projectSynchro.png
 share/icons/hicolor/64x64/apps/bouml.png
+share/icons/hicolor/64x64/apps/projectControl.png
+share/icons/hicolor/64x64/apps/projectSynchro.png
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
