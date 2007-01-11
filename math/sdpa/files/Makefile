@@ -6,7 +6,7 @@
 
 PREFIX	      = %%PREFIX%%
 LOCALBASE     = %%LOCALBASE%%
-LAPACK_LIB    =	%%LAPACK%% %%CBLAS%%
+LAPACK_LIB    =	%%LAPACK%% %%BLAS%%
 SDPA_LIB      = -lsdpa
 SDPA_EXAMPLES = example1-1.exe example1-2.exe \
 		example2-1.exe example2-2.exe \

@@ -7,6 +7,7 @@
 
 PORTNAME=	sdpa
 PORTVERSION=	6.2.1
+PORTREVISION=	1	
 CATEGORIES=	math
 MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
@@ -24,18 +25,34 @@ COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 .if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 OLDVERSION=	6.2.0
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-.if defined(WITH_SMP)
-LAPACK=		-lalapack_r
-CBLAS=		-lptcblas -lptf77blas -latlas_r -lg2c ${PTHREAD_LIBS}
-.else
+
+#Atlas is always required as lapack.h and blas.h is required.
+#no blaswarp.h at the moment.
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+
+WITH_ATLAS=     yes
+.if defined(WITH_ATLAS)
+BLAS=		-lcblas -lf77blas -latlas
 LAPACK=		-lalapack
-CBLAS=		-lcblas -lf77blas -latlas -lg2c
+CXXFLAGS+=	-DNON_ATLAS_SDPA=0
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
+CXXFLAGS+=	-DNON_ATLAS_SDPA=1
 .endif
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
 PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 #WITH_SMP=	yes
 #WITH_ICC=	yes
@@ -63,17 +80,23 @@ CXXFLAGS=	-O3 -tpp7 -axN -Vaxlib
 .endif
 
 pre-build:
-	${CP} ${FILESDIR}/Makefile ${WRKDIR}
+	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+	@${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-			      s|%%LAPACK%%|${LAPACK}|g ; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-			      s|%%CBLAS%%|${CBLAS}|g'  ${WRKDIR}/Makefile
+			      s|%%LAPACK%%|${LAPACK}|g ; \
+			      s|%%BLAS%%|${BLAS}|g ; \
+			      s|%%FORTRANLIBS%%|${FORTRANLIBS}|g ; \
+			      s|%%GCCLIBDIR%%|${GCCLIBDIR}|g'  ${WRKDIR}/Makefile
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			      s|%%CXX%%|${CXX}| g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
 			      s|%%LAPACK%%|${LAPACK}|g ; \
-			      s|%%CBLAS%%|${CBLAS}|g'  ${WRKSRC}/Makefile
+			      s|%%BLAS%%|${BLAS}|g ; \
+			      s|%%FORTRANLIBS%%|${FORTRANLIBS}|g ; \
+			      s|%%GCCLIBDIR%%|${GCCLIBDIR}|g' ${WRKSRC}/Makefile
+
 .if !defined(WITH_OPTIMIZED_FLAGS)
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 .endif
