@@ -32,20 +32,17 @@ USE_LDCONFIG=	yes
 
 #to compile the ATLAS kernel we use gcc3. See ATLAS/INSTALL.txt for details.
 WANT_FORTRAN=	yes
-USE_GCC=4.2+
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
 .if ${OSVERSION} > 700000
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 CCOMPILER=	gcc34
-.elif ${OSVERSION} < 501000 && ${ARCH} == "alpha"
-BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-CCOMPILER=	gcc34
 .else
-CCOMPILER:=	cc
+CCOMPILER=	${CC}
 .endif
-.if defined(WITH_TESTS)
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-.endif
 
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
@@ -102,11 +99,6 @@ EXTRA_PATCHES+=	${FILESDIR}/timing_tolerance-patch
 PLIST_SUB+=      WITH_STATICLIB=""
 .else
 PLIST_SUB+=      WITH_STATICLIB="@comment "
-.endif
-.if defined(WITH_TESTS)
-PLIST_SUB+=	WITH_TESTS=""
-.else
-PLIST_SUB+=	WITH_TESTS="@comment "
 .endif
 
 pre-configure:
@@ -170,9 +162,7 @@ do-build:
 	@(cd ${WRKSRC}; ${MAKE} ${.MAKEFLAGS} "ARCH=NON_THREADED" install arch=NON_THREADED)
 	@(cd ${WRKSRC}; ${MAKE} ${.MAKEFLAGS} "ARCH=THREADED" install arch=THREADED)
 .endif
-.if defined(WITH_TESTS)
 	@${MAKE} test
-.endif
 
 post-build:
 .if defined(WITH_STATICLIB)
@@ -262,7 +252,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
-.if defined(WITH_TESTS)
 	${MKDIR} ${EXAMPLESDIR}
 	@for i in ${ALLTESTS} ; do \
 	cd ${WRKDIR}/ATLAS/bin/NON_THREADED_PIC ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
@@ -270,6 +259,5 @@ do-install:
 	@for i in ${ALLTESTS_PT} ; do \
 	cd ${WRKDIR}/ATLAS/bin/THREADED_PIC ; ${INSTALL_PROGRAM} $${i} ${EXAMPLESDIR} ; \
 	done
-.endif
 .include <${FILESDIR}/Makefile.test>
 .include <bsd.port.post.mk>
