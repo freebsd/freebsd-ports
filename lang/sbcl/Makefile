@@ -7,6 +7,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -35,17 +36,22 @@ INFODIR=	${PREFIX}/${INFO_PATH}
 LISP_CMD=	""
 .else
 BOOT_VERSION=	${PORTVERSION}
-BOOT_ARCH=	x86
-BOOT_OS=	freebsd4
-BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH}-${BOOT_OS}
-DISTFILES+=	${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
-LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
-.if ${OSVERSION} >= 500000
-.if ${ARCH} == i386
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
+.if ${.TARGETS} == makesum
+BOOT_ARCH_OS_LIST=	x86-freebsd4 x86-64-freebsd5
+.elif ${ARCH} == i386
+BOOT_ARCH_OS_LIST=	x86-freebsd4
 .elif ${ARCH} == amd64
-BUILD_DEPENDS+=	${LOCALBASE}/lib32/compat/libc.so.4:${PORTSDIR}/misc/compat4x
+BOOT_ARCH_OS_LIST=	x86-64-freebsd5
 .endif
+.for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
+BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
+DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
+.endfor
+LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
+.if ${ARCH} == i386 && ${OSVERSION} >= 500000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
+.elif ${ARCH} == amd64 && ${OSVERSION} >= 600000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.5:${PORTSDIR}/misc/compat5x
 .endif
 .endif
 
