@@ -1,0 +1,22 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	Fri Jan 12 01:41:01 2007
++++ configure	Fri Jan 12 01:47:51 2007
+@@ -21716,7 +21716,7 @@
+ fi
+ 
+ 
+-if test "$est_exists" = "yes"; then
++if test x"$with_est" = "xyes" -a "$est_exists" = "yes"; then
+   WITH_EST_TRUE=
+   WITH_EST_FALSE='#'
+ else
+@@ -22374,7 +22374,7 @@
+ fi
+ 
+ 
+-if test "x$MYSQL_CONFIG" != "xmysql_config-not-found"; then
++if test x"$with_mysql" = "xyes" -a "x$MYSQL_CONFIG" != "xmysql_config-not-found"; then
+   enable_mysql=yes
+   MYSQL_CFLAGS=`$MYSQL_CONFIG --cflags`
+   MYSQL_LIBS=`$MYSQL_CONFIG --libs`
