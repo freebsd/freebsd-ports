@@ -1,5 +1,5 @@
 @unexec if cmp -s %D/etc/atslog.conf %D/etc/atslog.conf.default; then rm -f %D/etc/atslog.conf; fi
-%%WWW%%@unexec if cmp -s %D/www/atslog/include/set/conf.inc.php %D/www/atslog/include/set/conf.inc.default.php; then rm -f %D/www/atslog/include/set/conf.inc.php; fi
+%%WWW%%@unexec if cmp -s %D/www/atslog/include/config.inc.php %D/www/atslog/include/config.inc.php.default; then rm -f %D/www/atslog/include/config.inc.php; fi
 bin/atslogcleardb.pl
 bin/atslogd
 bin/atslogdaily
@@ -22,16 +22,17 @@ libexec/atslog/kx-td1232-ru.lib
 libexec/atslog/kx-td1232.lib
 libexec/atslog/kx-td500.lib
 libexec/atslog/kx-td816ru.lib
+libexec/atslog/kx-tda100.lib
 libexec/atslog/ldk-300.lib
 libexec/atslog/nx-820.lib
+libexec/atslog/officeserv-7200.lib
 libexec/atslog/skp-816.lib
 %%DATADIR%%/lang/en_US
 %%DATADIR%%/lang/ru_RU.CP1251
 %%DATADIR%%/lang/ru_RU.KOI8-R
 %%DATADIR%%/lang/ru_RU.UTF-8
+%%DATADIR%%/sql/createsqltables.Pg.sql
 %%DATADIR%%/sql/createsqltables.mysql.sql
-%%DATADIR%%/sql/createsqltables.pgsql.sql
-%%DATADIR%%/sql/createuser.pgsql.sql
 %%DATADIR%%/sql/data.sql
 %%DATADIR%%/sql/install-sql.pl
 %%EXAMPLESDIR%%/textlogs/Alcatel 4200.txt
@@ -74,12 +75,16 @@ libexec/atslog/skp-816.lib
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type C.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type D.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TD816RU.txt
+%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 A.txt
+%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 B.txt
+%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 C.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TEM824.txt
 %%EXAMPLESDIR%%/textlogs/Samsung DCS Compact II.txt
 %%EXAMPLESDIR%%/textlogs/Samsung DCS.txt
 %%EXAMPLESDIR%%/textlogs/Samsung NX-1232.txt
 %%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 1).txt
 %%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 2).txt
+%%EXAMPLESDIR%%/textlogs/Samsung OfficeServ 7200.txt
 %%EXAMPLESDIR%%/textlogs/Samsung SKP 56_120.txt
 %%EXAMPLESDIR%%/textlogs/Samsung SKP-36HX.txt
 %%EXAMPLESDIR%%/textlogs/Samsung SKP-816.txt
@@ -208,8 +213,8 @@ libexec/atslog/skp-816.lib
 %%WWW%%www/atslog/include/set/printfooter.html
 %%WWW%%www/atslog/include/set/menuTable.html
 %%WWW%%www/atslog/include/set/footer.html
-%%WWW%%www/atslog/include/set/conf.inc.default.php
-%%WWW%%@exec [ -f %B/conf.inc.php ] || cp %B/%f %B/conf.inc.php
+%%WWW%%www/atslog/include/config.inc.php.default
+%%WWW%%@exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
 %%WWW%%www/atslog/include/set/functions.js
 %%WWW%%www/atslog/include/set/commonData.php
 %%WWW%%www/atslog/include/set/.htaccess
