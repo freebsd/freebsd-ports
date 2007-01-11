@@ -10,16 +10,15 @@ it natively
 * portable error codes
 * sequence emulation
 * sequential and non-sequential row fetching as well as bulk fetching
-* formats fetched rows as associative arrays, ordered arrays or
-objects
+* formats fetched rows as associative arrays, ordered arrays or objects
 * row limit support
 * transactions support
 * table information interface
 * DocBook and phpDocumentor API documentation
 
-Drivers for the following extensions pass the complete test suite
-and provide interchangeability when all of DB's portability options
-are enabled: fbsql, ibase, informix, msql, mssql, mysql, mysqli,
-oci8, odbc, pgsql, sqlite and sybase.
+Drivers for the following extensions pass the complete test suite and
+provide interchangeability when all of DB's portability options are
+enabled: fbsql, ibase, informix, msql, mssql, mysql, mysqli, oci8,
+odbc, pgsql, sqlite and sybase.
 
 WWW: http://pear.php.net/package/DB/
