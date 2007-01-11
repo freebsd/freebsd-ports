@@ -21,8 +21,11 @@ COMMENT=	A Navier-Stokes solver
 
 RESTRICTED=	No resale, contact author for commercial usage
 
-F77?=		f77
-FFLAGS?=	-O2	# Note: FFLAGS is set to -O in /usr/share/mk/sys.mk
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
+FFLAGS+=	-O2
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
