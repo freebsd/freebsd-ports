@@ -7,7 +7,7 @@
 
 PORTNAME=	mumps
 PORTVERSION=	4.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.enseeiht.fr/apo/MUMPS/	\
 		http://www.enseeiht.fr/irit/apo/MUMPS/	\
@@ -34,6 +34,8 @@ WANT_FORTRAN=yes #dummy but future use
 BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
 FC=	gfortran42
 F77=	gfortran42
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
@@ -44,7 +46,7 @@ WITH_ATLAS=     yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIBS=	-lptf77blas -latlas_r
+BLAS_LIBS=	-lf77blas -latlas
 .else
 LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
 BLAS_LIBS=	-lblas
@@ -92,9 +94,12 @@ post-patch:
 .endif
 
 pre-build:
+	@${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${REINPLACE_CMD} -e 's+@CC@+${CC}+g ; s+@FC@+${FC}+g ; \
 	s+@CFLAGS@+${CFLAGS}+g; \
 	s+@FCFLAGS@+${FCFLAGS}+g; \
+	s+@GCCLIBDIR@+${GCCLIBDIR}+g; \
+	s+@FORTRANLIBS@+${FORTRANLIBS}+g; \
 	s+@PTHREAD_LIBS@+${PTHREAD_LIBS}+g; \
 	s+@BLAS_LIBS@+${BLAS_LIBS}+ ; \
 	s+@LOCALBASE@+${LOCALBASE}+g;' \
