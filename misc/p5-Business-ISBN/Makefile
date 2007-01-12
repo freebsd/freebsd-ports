@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		Business-ISBN
-PORTVERSION=		1.82
+PORTVERSION=		1.84
 CATEGORIES=		misc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Business
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=	Work with International Standard Book Numbers
 
 BUILD_DEPENDS=		${SITE_PERL}/Business/ISBN/Data.pm:${PORTSDIR}/misc/p5-Business-ISBN-Data
