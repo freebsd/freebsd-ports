@@ -25,6 +25,11 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/__init__.pyo
 %%PYTHON_SITELIBDIR%%/_spe/defaults.cfg
+%%PYTHON_SITELIBDIR%%/_spe/doc
+%%PYTHON_SITELIBDIR%%/_spe/examples
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/RunTerminalDialog.py
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/RunTerminalDialog.pyc
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/RunTerminalDialog.pyo
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/__init__.pyo
@@ -44,9 +49,6 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.pyo
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.wxg
-%%PYTHON_SITELIBDIR%%/_spe/dialogs/runTerminalDialog.py
-%%PYTHON_SITELIBDIR%%/_spe/dialogs/runTerminalDialog.pyc
-%%PYTHON_SITELIBDIR%%/_spe/dialogs/runTerminalDialog.pyo
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runTerminalDialog.wxg
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.pyc
@@ -68,13 +70,11 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/winpdbDialog.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/winpdbDialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/winpdbDialog.pyo
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/_spe/doc
 %%PORTDOCS%%%%DOCSDIR%%/about.htm
 %%PORTDOCS%%%%DOCSDIR%%/donate.html
 %%PORTDOCS%%%%DOCSDIR%%/home.py
 %%PORTDOCS%%%%DOCSDIR%%/home.pyc
 %%PORTDOCS%%%%DOCSDIR%%/home.pyo
-%%PYTHON_SITELIBDIR%%/_spe/examples
 %%EXAMPLESDIR%%/__init__.py
 %%EXAMPLESDIR%%/__init__.pyc
 %%EXAMPLESDIR%%/__init__.pyo
@@ -265,6 +265,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/cpp_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/cpp_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/cpp_codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/pl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/pl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen/pl_codegen.pyo
@@ -294,6 +297,7 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/dirs
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/docs
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/files
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/menu
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/rules
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/__init__.pyc
@@ -304,6 +308,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/gridbag_sizer.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/gridbag_sizer.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/gridbag_sizer.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/lisp_sizers_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/lisp_sizers_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/lisp_sizers_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/perl_sizers_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/perl_sizers_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/perl_sizers_codegen.pyo
@@ -444,6 +451,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/bitmap_button/perl_codegen.pyo
@@ -456,6 +466,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/button/perl_codegen.pyo
@@ -468,6 +481,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/checkbox/perl_codegen.pyo
@@ -480,6 +496,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/choice/perl_codegen.pyo
@@ -492,6 +511,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/combo_box.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/combo_box.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/combo_box.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/combo_box/perl_codegen.pyo
@@ -504,6 +526,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/custom_widget.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/custom_widget.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/custom_widget.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/custom_widget/perl_codegen.pyo
@@ -516,6 +541,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/dialog.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/dialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/dialog.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/dialog/perl_codegen.pyo
@@ -528,6 +556,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/frame.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/frame.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/frame.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/frame/perl_codegen.pyo
@@ -540,6 +571,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/gauge.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/gauge.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/gauge.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/gauge/perl_codegen.pyo
@@ -552,6 +586,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/grid.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/grid.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/grid.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/grid/perl_codegen.pyo
@@ -561,6 +598,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/list_box.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/list_box.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_box/list_box.pyo
@@ -573,6 +613,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/list_ctrl.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/list_ctrl.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/list_ctrl/list_ctrl.pyo
@@ -585,6 +628,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/menubar.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/menubar.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/menubar/menubar.pyo
@@ -597,6 +643,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/notebook.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/notebook.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/notebook/notebook.pyo
@@ -609,6 +658,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/panel.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/panel.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/panel/panel.pyo
@@ -621,6 +673,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_box/perl_codegen.pyo
@@ -633,6 +688,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/radio_button/perl_codegen.pyo
@@ -645,6 +703,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/slider/perl_codegen.pyo
@@ -657,6 +718,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spacer/perl_codegen.pyo
@@ -669,6 +733,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_button/perl_codegen.pyo
@@ -681,6 +748,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/spin_ctrl/perl_codegen.pyo
@@ -693,6 +763,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/splitter_window/perl_codegen.pyo
@@ -705,6 +778,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_bitmap/perl_codegen.pyo
@@ -717,6 +793,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_line/perl_codegen.pyo
@@ -729,6 +808,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/static_text/perl_codegen.pyo
@@ -741,6 +823,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/text_ctrl/perl_codegen.pyo
@@ -753,6 +838,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toggle_button/perl_codegen.pyo
@@ -765,6 +853,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/toolbar/perl_codegen.pyo
@@ -780,6 +871,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/codegen.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/lisp_codegen.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/lisp_codegen.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/lisp_codegen.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/perl_codegen.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/perl_codegen.pyo
@@ -922,9 +1016,15 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/sm/spy.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/spy.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/spy.pyo
+%%PYTHON_SITELIBDIR%%/_spe/sm/thread.py
+%%PYTHON_SITELIBDIR%%/_spe/sm/thread.pyc
+%%PYTHON_SITELIBDIR%%/_spe/sm/thread.pyo
 %%PYTHON_SITELIBDIR%%/_spe/sm/uml.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/uml.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/uml.pyo
+%%PYTHON_SITELIBDIR%%/_spe/sm/www.py
+%%PYTHON_SITELIBDIR%%/_spe/sm/www.pyc
+%%PYTHON_SITELIBDIR%%/_spe/sm/www.pyo
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.pyo
@@ -1018,9 +1118,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/wxgMenu.py
 %%PYTHON_SITELIBDIR%%/_spe/wxgMenu.pyc
 %%PYTHON_SITELIBDIR%%/_spe/wxgMenu.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/_spe/dialogs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/_spe/dialogs
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/images
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/kiki/docs
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/kiki

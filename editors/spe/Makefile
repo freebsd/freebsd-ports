@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SPE
-PORTVERSION=	0.8.2.a
+PORTVERSION=	0.8.3.c
 CATEGORIES=	editors devel python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	python
@@ -18,6 +18,7 @@ COMMENT=	Stani's Python Editor
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_WX=		2.6
+WANT_UNICODE=	yes
 WX_COMPS=	python
 
 OPTIONS=	ENCRYPTED_DEBUG "Enable encrypted debug in SPE" off
