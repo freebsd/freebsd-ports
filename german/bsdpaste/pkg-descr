@@ -1,0 +1,5 @@
+Another pastebin Application written in Ruby.
+Allows the upload of text to a webserver and reading of these information.
+Often used in IRC channels to show large amounts of text, like config files.
+
+WWW: http://bsdgroup.de
