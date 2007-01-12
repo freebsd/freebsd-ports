@@ -6,7 +6,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,7 +49,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 .endif
 
 .if defined(WITH_MEMCACHE_CLIENT)
-RUN_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/memcache-client-1.0.3.gemspec:${PORTSDIR}/databases/rubygem-memcache-client
+RUN_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/memcache-client-1.2.0.gemspec:${PORTSDIR}/databases/rubygem-memcache-client
 .endif
 
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
