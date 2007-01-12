@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	twistedConch
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	security devel python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Conch/${PORTVERSION:S/.0//}/ \
-		http://tmrc.mit.edu/mirror/twisted/Conch/${PORTVERSION:S/.0//}/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Conch/${PORTVERSION:S/.0//}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedConch-${PORTVERSION}
 
@@ -19,12 +18,8 @@ COMMENT=	An SSH and SFTP protocol implementation with clients and servers
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/TwistedConch-${PORTVERSION}
-
 USE_BZIP2=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
-
-PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 
 .include <bsd.port.mk>
