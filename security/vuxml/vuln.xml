@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="41da2ba4-a24e-11db-bd24-000f3dcc6a5d">
+    <topic>cacti -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.6i.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/23528/">
+	  <p>rgod has discovered four vulnerabilities in Cacti,
+	    which can be exploited by malicious people to bypass
+	    certain security restrictions, manipulate data
+	    and compromise vulnerable systems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/23528/</url>
+      <url>http://forums.cacti.net/about18846-0-asc-0.html</url>
+    </references>
+    <dates>
+      <discovery>2006-12-28</discovery>
+      <entry>2007-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2ff68b2-9f29-11db-a4e4-0211d87675b7">
     <topic>mplayer -- buffer overflow in the code for RealMedia RTSP streams.</topic>
     <affects>
