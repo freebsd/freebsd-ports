@@ -14,14 +14,14 @@ MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A GTK Widget to Render MathML Documents
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		t1:${PORTSDIR}/devel/t1lib \
+LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom \
 		popt.0:${PORTSDIR}/devel/popt \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_GETOPT_LONG=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	glib20 gtk20 gnomehack
 USE_AUTOTOOLS=	libtool:15

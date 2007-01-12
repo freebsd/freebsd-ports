@@ -21,8 +21,9 @@ DISTFILES=	# none
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Supportive tools for Chinese docproj build
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	gbklatex:${PORTSDIR}/chinese/CJK
+
+USE_ICONV=	yes
 
 WRKSRC=		${WRKDIR}/src
 

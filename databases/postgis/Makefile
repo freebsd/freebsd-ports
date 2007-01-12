@@ -49,7 +49,7 @@ PORTDOCS=	*
 .endif
 
 .if defined(WITH_UTF8)
-LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 MAKE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--without-iconv

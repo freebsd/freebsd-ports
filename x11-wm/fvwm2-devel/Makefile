@@ -50,7 +50,7 @@ DISTFILES+=	fvwm_icons.tgz
 .if defined(WITHOUT_ICONV)
 CONFIGURE_ARGS+=	--disable-iconv
 .else
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=		yes
 CONFIGURE_ARGS+=	--with-iconv-library=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include
 .endif

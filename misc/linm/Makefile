@@ -15,9 +15,9 @@ DISTNAME=	linm_${LINM_VER}-1
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Clone of Mdir, mc-style terminal file manager
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
+USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

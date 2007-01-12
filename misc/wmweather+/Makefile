@@ -21,10 +21,10 @@ LIB_DEPENDS=	xmlparse:${PORTSDIR}/www/libwww \
 		Hermes:${PORTSDIR}/graphics/Hermes \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		ungif:${PORTSDIR}/graphics/libungif \
-		iconv:${PORTSDIR}/converters/libiconv
+		ungif:${PORTSDIR}/graphics/libungif
 
 GNU_CONFIGURE=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
