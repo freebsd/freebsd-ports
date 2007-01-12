@@ -1,0 +1,23 @@
+Ruby on Rails has a nice feature to create nested parameters that help
+with the organization of data in a form - parameters can be an
+arbitrarily deep nested structure.
+
+The way this structure is denoted is that when you construct a form the
+field names have a special syntax which is parsed.
+
+This plugin supports two syntaxes:
+
+dot notation
+
+        <input name="foo.bar.gorch" />
+
+subscript notation
+
+        <input name="foo[bar][gorch]" />
+
+When reading query parameters from $c->req you can now access all the
+items starting with "foo" as one entity using $c->req->param('foo');.
+Each subitem, denoted by either the dot or the square brackets, will be
+returned as a further deeper hashref.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Params-Nested
