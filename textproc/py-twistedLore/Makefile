@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedLore
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Lore/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,12 +18,8 @@ COMMENT=	Documentation generator with HTML and LaTeX support
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/TwistedLore-${PORTVERSION}
-
 USE_BZIP2=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
-
-PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 
 .include <bsd.port.mk>
