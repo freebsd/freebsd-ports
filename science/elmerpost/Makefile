@@ -27,7 +27,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=
 
-USE_GCC=	4.1 #4.2 has bugs
 WANT_FORTRAN=	yes
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 CONFIGURE_ENV+=	FC=gfortran42 F77=gfortran42 FCFLAGS=${FCFLAGS}
