@@ -7,15 +7,13 @@
 
 PORTNAME=	hutiter
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
-
-WANT_FORTRAN=	yes
-USE_GCC=	4.2+
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
@@ -33,6 +31,11 @@ LAPACK=		-llapack
 .endif
 
 .include <bsd.port.pre.mk>
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%FC%%|${FC}|' ${WRKSRC}/configure.in
