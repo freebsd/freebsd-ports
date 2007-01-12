@@ -7,6 +7,7 @@
 
 PORTNAME=	himenobench
 PORTVERSION=	2004.08.16
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://accc.riken.jp/HPC/HimenoBMT/Load_module/
 DISTFILES=	himenoBMTxp_xl.lzh himenoBMTxp_l.lzh himenoBMTxp_m.lzh himenoBMTxp_s.lzh \
@@ -25,8 +26,11 @@ BUILD_DEPENDS=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 #use gfortran
-WANT_FORTRAN=	yes #dummy knob
-USE_GCC?=4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
 GCCVER:=      ${USE_GCC:S/+//}
 
 RESTRICTED=	unsure to redistribute
