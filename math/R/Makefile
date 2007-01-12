@@ -8,6 +8,7 @@
 
 PORTNAME=	R
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -54,11 +55,16 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
 
-CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
+CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" F77="${F77}" FC="${FC}"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
 		rdocdir=${DOCSDIR}
 
 .include <bsd.port.pre.mk>
+
+WANT_FORTRAN=	yes
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 test check: build
 	@(cd ${WRKSRC}; ${MAKE} check)
