@@ -7575,6 +7575,7 @@ mythserver	ports/games/mythserver
 mythtv		ports/multimedia/mythtv
 mytop		ports/databases/mytop
 mywiki		ports/deskutils/mywiki
+mywwwatcher	ports/databases/mywwwatcher
 nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
