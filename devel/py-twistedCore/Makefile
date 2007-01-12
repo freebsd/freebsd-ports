@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedCore
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Twisted/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	py??-twisted-[0-9]*
 
-#WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
-
 # - Note that Twisted ships with some graphical examples and clients that
 #   require PyGNOME to run.  These are not central to the funcitoning of
 #   Twisted, but the user should feel free to install x11-toolits/py-gnome
@@ -30,8 +28,6 @@ CONFLICTS=	py??-twisted-[0-9]*
 USE_BZIP2=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
-
-PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 
 post-install:
 # permission safeness
