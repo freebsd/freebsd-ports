@@ -22,6 +22,7 @@ RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	libgnomeui
+CONFIGURE_ENV=	set_more_warnings="no"
 
 PLIST_FILES=	bin/gnome-gpg
 MAN1=		gnome-gpg.1
