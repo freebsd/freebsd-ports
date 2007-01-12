@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache2-SOAP
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	net www perl5
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/CPAN/authors/id/R/RK/RKOBES/ \
 		http://cpan.mirror.solnet.ch/modules/by-module/File/RKOBES/ \
