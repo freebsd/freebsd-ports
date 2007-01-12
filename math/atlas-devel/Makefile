@@ -10,7 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.7.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -82,13 +82,15 @@ pre-configure:
 		${WRKSRC}/CONFIG/src/SpewMakeInc.c
 
 do-configure:
+#non threaded
 	${MKDIR} ${WRKSRC}/NON_THREADED ; cd ${WRKSRC}/NON_THREADED ; \
 		../configure -t 0
-	${MKDIR} ${WRKSRC}/THREADED ; cd ${WRKSRC}/THREADED ; \
-		../configure -t 0  -Fa al '${PTHREAD_CFLAGS} '
-	cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch
 	${MKDIR} ${WRKSRC}/NON_THREADED_PIC ; cd ${WRKSRC}/NON_THREADED_PIC ; \
-		../configure -Fa al '${PICFLAG} -DPIC'
+		../configure -t 0 -Fa al '${PICFLAG} -DPIC'
+#threaded
+	cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch
+	${MKDIR} ${WRKSRC}/THREADED ; cd ${WRKSRC}/THREADED ; \
+		../configure -Fa al '${PTHREAD_CFLAGS} '
 	${MKDIR} ${WRKSRC}/THREADED_PIC ; cd ${WRKSRC}/THREADED_PIC ; \
 		../configure -Fa al '${PTHREAD_CFLAGS} ${PICFLAG} -DPIC'
 
