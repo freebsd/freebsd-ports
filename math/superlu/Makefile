@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	superlu
+PORTREVISION=	1
 DISTVERSION=	${P_VERSION}.20060201
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
@@ -34,8 +35,10 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-WANT_FORTRAN=yes
-USE_GCC=4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 P_VERSION=	3.0
 WRKSRC=		${WRKDIR}/SuperLU_${P_VERSION}
