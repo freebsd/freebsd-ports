@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich2
 PORTVERSION=	1.0.5p1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
@@ -40,7 +41,9 @@ NOCCACHE=	yes
 MAKE_ENV=	CCACHE_DISABLE=yes
 
 WANT_FORTRAN=	yes
-USE_GCC=4.2+
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 F90FLAGS+=	${FFLAGS}
 CONFIGURE_ENV+= F90=${FC} F90FLAGS=${F90FLAGS} F77=${FC}
 
