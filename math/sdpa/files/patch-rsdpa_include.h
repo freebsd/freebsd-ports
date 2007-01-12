@@ -5,7 +5,7 @@
  
  extern "C" {
 -#include <f2c.h>
-+#include <g2c.h>
++#include <f2c.h>
  #if NON_ATLAS_SDPA
  #include <blaswrap.h>
  #endif
