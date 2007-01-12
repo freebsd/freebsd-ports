@@ -7,6 +7,7 @@
 
 PORTNAME=	X11-IdleTime
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	X11
@@ -15,7 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that reports number of seconds that X11 has been idle
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
+    		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_XLIB=	yes
