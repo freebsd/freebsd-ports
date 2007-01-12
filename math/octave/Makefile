@@ -7,7 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	2.1.73
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/ \
@@ -34,7 +34,10 @@ OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 
-F77?=		f77
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=     gfortran42
+F77=    gfortran42
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
