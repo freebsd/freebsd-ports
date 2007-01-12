@@ -7,6 +7,7 @@
 
 PORTNAME=	femlab
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	math science
 # mastersite disappeared in April 2000
 MASTER_SITES=	# ftp://ftp.md.chalmers.se/pub/Femlab/
@@ -17,6 +18,12 @@ COMMENT=	Interactive program for solving partial differential equations in 2D
 
 BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx \
 		xmkmf:${X_IMAKE_PORT}
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 USE_X_PREFIX=	yes
 

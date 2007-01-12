@@ -7,6 +7,7 @@
 
 PORTNAME=	feappv
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.ce.berkeley.edu/~rlt/feappv/
 MASTER_SITE_SUBDIR=	feap
@@ -25,7 +26,11 @@ EXTRACT_BEFORE_ARGS=	-L
 
 WRKSRC=		${WRKDIR}/ver20
 USE_XLIB=	yes
-FFLAGS?=	-O2
+WANT_FORTRAN=	yes	#dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FFLAGS+=	-O2
 MAKEFILE=	makefile
 ALL_TARGET=	install
 
