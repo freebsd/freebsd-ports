@@ -46,10 +46,12 @@
 %%MPIDIR%%/lib/libmpi.so.0
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so.0
+%%MPIDIR%%/lib/libmpi_f90.a
 %%MPIDIR%%/lib/libopal.la
 %%MPIDIR%%/lib/libopal.so.0
 %%MPIDIR%%/lib/liborte.la
 %%MPIDIR%%/lib/liborte.so.0
+%%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/openmpi/mca_allocator_basic.la
 %%MPIDIR%%/lib/openmpi/mca_allocator_basic.so
 %%MPIDIR%%/lib/openmpi/mca_allocator_bucket.la
