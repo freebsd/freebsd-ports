@@ -1899,6 +1899,7 @@
     SUBDIR += ruby-slang
     SUBDIR += ruby-strongtyping
     SUBDIR += ruby-sysvipc
+    SUBDIR += ruby-term-ansicolor
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
