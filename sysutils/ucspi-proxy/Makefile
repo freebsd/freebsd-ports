@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucspi-proxy
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/ucspi-proxy/
 
@@ -21,6 +21,9 @@ BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs
 
 MAN1=		ucspi-proxy-http-xlate.1 ucspi-proxy.1
+
+PLIST_FILES=	bin/ucspi-proxy bin/ucspi-proxy-log bin/ucspi-proxy-pop3 \
+		bin/ucspi-proxy-imap bin/ucspi-proxy-http-xlate
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"     > ${WRKSRC}/conf-bin
