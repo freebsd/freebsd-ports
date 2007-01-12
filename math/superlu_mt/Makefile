@@ -7,6 +7,7 @@
 
 PORTNAME=	superlu_mt
 DISTVERSION=	1.0.20050524
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
@@ -20,20 +21,24 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
-.ifdef WITH_ATLAS
-LIB_DEPENDS=    atlas:${PORTSDIR}/math/atlas
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+BLAS_LIBS=      -lf77blas -latlas
 .else
-LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+BLAS_LIBS=	-lblas
 .endif
 
 WRKSRC=		${WRKDIR}/SuperLU_MT
 ALL_TARGET=	superlulib
-
-.ifdef WITH_ATLAS
-BLAS_LIBS=      -lf77blas -latlas
-.else
-BLAS_LIBS?=     -lblas
-.endif
 
 ARCH2FIX=	CBLAS/Makefile make.alpha make.exemplar TESTING/MATGEN/Makefile	\
 		make.origin make.inc make.pthreads SRC/Makefile
