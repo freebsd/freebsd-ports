@@ -7,7 +7,7 @@
 
 PORTNAME=	tochnog
 PORTVERSION=	20010211
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tochnog
@@ -58,10 +58,20 @@ SUPERLU=	superlu
 ALL_TARGET=	freebsd_old
 .endif
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
 pre-build:
+	@${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; \
 	s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g ; \
 	s,%%SUPERLU%%,${SUPERLU},g ; \
+	s,%%FORTRANLIBS%%,${FORTRANLIBS},g ; \
+	s,%%GCCLIBDIR%%,${GCCLIBDIR},g ; \
 	s,%%BLAS_LIBS%%,-L${LOCALBASE}/lib ${BLAS_LIBS},g' \
 	${WRKSRC}/makefile
 .ifdef WITH_THREADS

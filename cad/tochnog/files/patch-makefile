@@ -44,7 +44,7 @@
 -# SUPERLU_LIB=$(SUPERLU)/superlu.a $(SUPERLU)/blas.a
 -# SUPERLU_INCLUDE=-I$(SUPERLU)/SRC
 +SUPERLU=%%LOCALBASE%%
-+SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.a %%BLAS_LIBS%%
++SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.a %%BLAS_LIBS%% %%GCCLIBDIR%% %%FORTRANLIBS%% 
 +SUPERLU_INCLUDE=-I$(SUPERLU)/include/%%SUPERLU%%
  #   3. For SuperLU_MT be sure to compile a multi threaded version
  #      of Tochnog (sparc_parallel, alpha_parallel, linux, etc.)
