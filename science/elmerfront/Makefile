@@ -7,6 +7,7 @@
 
 PORTNAME=	front
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer
@@ -21,17 +22,24 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
 		ElmerSolver:${PORTSDIR}/science/elmer-fem	\
 		${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerMesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
+.include <bsd.port.pre.mk>
+
 # Elmer avoids the new C++ headers because they cause problems
 # on older systems (Irix)
 CXXFLAGS+=	-Wno-deprecated
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 USE_GCC=	3.4
 USE_GL=		yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS="${FCFLAGS}"
 USE_GMAKE=	yes
 ALL_TARGET=
 
 DATADIR=	${PREFIX}/share/elmerfront
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
