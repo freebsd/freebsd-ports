@@ -14,9 +14,8 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package
 
-USE_GCC=	4.2+
-GNU_CONFIGURE=	yes
 ALL_TARGET=
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerGrid	\
 		bin/ElmerGrid
