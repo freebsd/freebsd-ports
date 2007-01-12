@@ -7,7 +7,7 @@
 
 PORTNAME=	xd3d
 PORTVERSION=	8.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
@@ -40,8 +40,11 @@ REINPLACE_ARGS=	-i ""
 FETCH_CMD=	/usr/bin/fetch
 FETCH_BEFORE_ARGS=	-R -o ${DISTDIR}/${DISTFILES}
 
-F77?=		f77
-FFLAGS?=	-O
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
+FFLAGS+=	-O
 MEMORY_XD3D?=	64
 
 .if defined(LANG) && ${LANG:Mfr*} != ""
