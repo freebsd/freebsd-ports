@@ -8,7 +8,7 @@
 
 PORTNAME=	jags
 PORTVERSION=	0.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www-fis.iarc.fr/~martyn/software/jags/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -23,17 +23,22 @@ COMMENT=	Just Another Gibbs Sampler
 LIB_DEPENDS=	Rmath.0:${PORTSDIR}/math/libRmath
 
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS=	--with-lapack=-lalapack --with-blas=-lf77blas
 .else
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS=	--with-lapack=-llapack --with-blas=-lblas
 .endif
 
 DIST_SUBDIR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib
+CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib F77="${F77}"
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+WANT_FORTRAN=	yes #dummy but future use
+FC=		gfortran42
+F77=		gfortran42
 
 .include <bsd.port.pre.mk>
 
