@@ -7,7 +7,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/blacs/
 DISTNAME=	BLACS
@@ -41,8 +41,10 @@ RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
 .endif
 
-WANT_FORTRAN=yes
-USE_GCC=4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 MAKE_ENV= "FC=${FC}" "F77=${F77}"
 USE_GMAKE=yes
 F77EXTRAFLAGS=	#-w -fno-globals -fugly-complex
@@ -73,6 +75,7 @@ pre-configure:
 
 do-build:
 	(cd ${WRKSRC}; make mpi; make tester)
+#	(cd ${WRKSRC}_SHARED; make mpi; make tester)
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacsc.a

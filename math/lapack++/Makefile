@@ -7,6 +7,7 @@
 
 PORTNAME=	lapack++
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} \
 		http://math.nist.gov/lapack++/:doc
@@ -22,8 +23,7 @@ EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
-WANT_FORTRAN=	yes
-USE_GCC=	4.2+
+.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -34,6 +34,11 @@ LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 .endif
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -50,6 +55,7 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 
 #lapack++ forces to use atlas when detected, so we should disable here.
 CONFIGURE_ARGS+=	--with-blas="${BLAS_LIB}" --with-lapack="${LAPACK_LIB}" --disable-atlas
+CONFIGURE_ENV+=		FC="${FC}" F77="${F77}"
 
 do-install:
 	@(cd ${WRKSRC} ; ${GMAKE} install)
@@ -61,4 +67,4 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapackppman1_1.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	lapack95
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack95/
 DISTNAME=	${PORTNAME}
@@ -38,8 +38,10 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-WANT_FORTRAN=	yes
-USE_GCC=	4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 WRKSRC=		${WRKDIR}/LAPACK95
 FORTRAN_FIXED=
 FORTRAN_FREE=#	-free
