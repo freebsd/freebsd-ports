@@ -7,18 +7,19 @@
 
 PORTNAME=	freefem++
 DISTVERSION=	2.11-2
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a language dedicated to the finite element method
 
-LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack			\
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
-		fftw3.4:${PORTSDIR}/math/fftw3
-BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
-		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
-		convert:${PORTSDIR}/graphics/ImageMagick		\
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
+		fftw3.4:${PORTSDIR}/math/fftw3				\
+		umfpack.1:${PORTSDIR}/math/suitesparse			\
+		arpack.1:${PORTSDIR}/math/arpack			\
+		gsl.9:${PORTSDIR}/math/gsl
+BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick		\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
@@ -27,6 +28,10 @@ RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 
 RESTRICTED=	No resale or commercial use
 
+WANT_FORTRAN=		yes
+BUILD_DEPENDS+=		gfortran42:${PORTSDIR}/lang/gcc42
+FC=			gfortran42
+F77=			gfortran42
 USE_BISON=		yes
 USE_GL=			yes
 USE_GCC=		3.4
@@ -35,12 +40,14 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-download					\
 			--without-cadna						\
-			--with-blas="${LIBBLAS}"				\
+			--with-blas="${BLAS}"					\
+			--with-lapack="${LAPACK}"				\
 			--with-amd="-lamd"					\
 			--with-umfpack="-lumfpack"				\
-			--with-arpack="${LIBARPACK}"
-CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
-			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+			--with-arpack="${ARPACK}"
+CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/suitesparse/include ${PTHREAD_CFLAGS}"	\
+			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
+			FC=${FC} F77=${F77} FCFLAGS=${FCFLAGS}
 
 DOC_TARGET=	freefem++doc.pdf
 PORTDOCS=	AUTHORS BUGS COPYING HISTORY HISTORY_BEFORE_2005 INNOVATION README TODO ${DOC_TARGET}
@@ -60,15 +67,16 @@ CONFIGURE_ARGS+=	--disable-optim
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas	\
-		f2c.2:${PORTSDIR}/lang/f2c		\
-		gsl.9:${PORTSDIR}/math/gsl
-LIBBLAS=	-lf2c -lf77blas -latlas_r -lgslcblas
-LIBARPACK=	-larpack -lalapack ${LIBBLAS}
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas	\
+BLAS=		-lcblas -lf77blas -latlas
+LAPACK=		-lalapack ${BLAS}
+ARPACK=		-larpack 
 .else
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
-LIBBLAS=	-lblas
-LIBARPACK=	-larpack ${LIBBLAS}
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack ${BLAS}
+ARPACK=		-larpack
 .endif
 
 .if exists(${LOCALBASE}/mpich2/include/mpicxx.h) && !defined(WITHOUT_MPI)
