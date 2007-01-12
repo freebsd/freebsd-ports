@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ftjam
-PORTVERSION=	2.3.5
+PORTVERSION=	2.5.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freetype
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Small build tool that can be used as a replacement for make(1)
 
 USE_BZIP2=	yes
@@ -44,7 +44,7 @@ do-install:
 . endfor
 .endif
 # INSTALL_WRKSRC changes depending on ARCH
-	@${INSTALL_PROGRAM} `${FIND} ${WRKSRC} -name "bin.freebsd*"`/jam \
+	@${INSTALL_PROGRAM} `${FIND} ${WRKSRC} -name "bin.unix*"`/jam \
 		${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
