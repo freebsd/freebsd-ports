@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smime
-PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTVERSION=	0.5.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
