@@ -17,6 +17,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Smart IRC Daemon
 
+FORBIDDEN=	Multiple vulnerabilities.
+DEPRECATED=	No upgrade since 02-02-2002. Developer unavailable. Website gone.
+EXPIRATION_DATE=	2007-02-09
+
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LD="${CC}" \
