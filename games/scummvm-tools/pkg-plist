@@ -1,11 +1,13 @@
 bin/compress_queen
 bin/compress_saga
-bin/compress_san
 bin/compress_scumm_bun
 bin/compress_scumm_sou
 bin/compress_simon
 bin/compress_sword1
 bin/compress_sword2
+bin/dekyra
+bin/descumm
+bin/desword2
 bin/extract_kyra
 bin/extract_loom_tg16
 bin/extract_mm_c64
@@ -13,8 +15,5 @@ bin/extract_mm_nes
 bin/extract_scumm_mac
 bin/extract_simon1_amiga
 bin/extract_zak_c64
-bin/dekyra
-bin/descumm
-bin/desword2
-%%PORTDOCS%%share/doc/scummvm-tools/README
-%%PORTDOCS%%@dirrm share/doc/scummvm-tools
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

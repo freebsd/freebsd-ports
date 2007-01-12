@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scummvm-tools
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		flac:${PORTSDIR}/audio/flac \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		oggdec:${PORTSDIR}/audio/vorbis-tools
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -31,7 +32,7 @@ USE_GCC=	3.3+
 .endif
 
 do-install:
-.for i in compress_queen compress_saga compress_san compress_scumm_bun compress_scumm_sou compress_simon compress_sword1 compress_sword2 extract_kyra extract_loom_tg16 extract_mm_c64 extract_mm_nes extract_scumm_mac extract_simon1_amiga extract_zak_c64 dekyra descumm desword2
+.for i in compress_queen compress_saga compress_scumm_bun compress_scumm_sou compress_simon compress_sword1 compress_sword2 extract_kyra extract_loom_tg16 extract_mm_c64 extract_mm_nes extract_scumm_mac extract_simon1_amiga extract_zak_c64 dekyra descumm desword2
 	@${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
 .endfor
 
