@@ -163,6 +163,7 @@
     SUBDIR += mysqlsla
     SUBDIR += mysqltcl
     SUBDIR += mytop
+    SUBDIR += mywwwatcher
     SUBDIR += namazu2
     SUBDIR += ocaml-sqlite3
     SUBDIR += opendbx
