@@ -53,7 +53,7 @@ PORTDOCS+=	kinkd-install.ja.txt kinkd-state-txn.obj
 .endif
 .endif
 
-MAN8+=		spmd.8 spmdctl.8 pskgen.8
+MAN8+=		spmd.8 spmdctl.8 pskgen.8 iked.8
 
 post-patch:
 .if !defined(NOPORTDOCS)
