@@ -26,8 +26,7 @@ MAN3=		Text::Trac.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/^use warnings;//g' ${WRKSRC}/Makefile.PL
+IGNORE=		requires perl5.6. Install lang/perl5 or lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500602
