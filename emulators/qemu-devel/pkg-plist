@@ -16,6 +16,9 @@ bin/qemu-system-x86_64
 %%DATADIR%%/ppc_rom.bin
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/video.x
+%%DATADIR%%/pxe-ne2k_pci.bin
+%%DATADIR%%/pxe-rtl8139.bin
+%%DATADIR%%/pxe-pcnet.bin
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/common
 %%DATADIR%%/keymaps/da
