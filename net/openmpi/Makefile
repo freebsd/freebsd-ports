@@ -6,11 +6,11 @@
 #
 
 # TODO:
-#  - F90 support
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.1/downloads/
 
@@ -43,6 +43,11 @@ MANPREFIX=	${TARGETDIR}/${MPIDIR}
 
 .include <bsd.port.pre.mk>
 
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+CONFIGURE_ENV+=	F77=${F77} FC=${FC}
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
