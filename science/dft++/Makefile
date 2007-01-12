@@ -76,8 +76,8 @@ pre-configure:
 			      s|%%FORTRANLIBS%%|${FORTRANLIBS} ${GCCLIBDIR}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ;' ${WRKSRC}/makefile.local-pw
 	@${REINPLACE_CMD} -e ' s|%%FC%%|${FC}|g ; \
-			      s|%%CC%%|${CC} -v|g ; \
-			      s|%%CXX%%|${CXX} -v|g ; \
+			      s|%%CC%%|${CC}|g ; \
+			      s|%%CXX%%|${CXX}|g ; \
 			      s|%%BLAS%%|${BLAS}|g ; \
 			      s|%%LAPACK%%|${LAPACK}|g ; \
 			      s|%%FFTW%%|${FFTW}|g ; \
