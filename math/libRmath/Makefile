@@ -8,6 +8,7 @@
 
 PORTNAME=	libRmath
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -32,10 +33,15 @@ DISTNAME=	R-${PORTVERSION}
 MAINTAINER=	eric+fbports@vangyzen.net
 COMMENT=	The standalone math library from R
 
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+WANT_FORTRAN=	yes #dummy but future use
+FC=		gfortran42
+F77=		gfortran42
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--without-x
+CONFIGURE_ENV+= F77="${F77}"
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
 
