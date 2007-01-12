@@ -72,11 +72,11 @@ check-all: build
 	@(cd ${WRKSRC}; ${MAKE} check-all)
 
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=--with-lapack="-lalapack -lcblas" --with-blas="-lf77blas"
 PLIST_SUB+=	BLAS="@comment "
 .else
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 CONFIGURE_ARGS+=--with-blas="-lblas"
 PLIST_SUB+=	BLAS=""
 .endif
