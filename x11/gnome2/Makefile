@@ -83,12 +83,14 @@ do-install:	# empty
 .include <bsd.port.pre.mk>
 
 .if !defined(GNOME_SLAVE)
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
-.endif
 .if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
 RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp \
 		epiphany:${PORTSDIR}/www/epiphany
+.endif
+.if ${.CURDIR:T}!="gnome2-lite"
+.if ${ARCH} == "i386"
+RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
+.endif
 .endif
 .endif
 
