@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20060118
+PORTVERSION=	20061103
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -25,7 +25,7 @@ LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-CRM114RELEASENAME=BlameTheReavers
+CRM114RELEASENAME=BlameDalkey
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -43,7 +43,8 @@ INSTALL_TARGET=	install_binary_only
 CRM_FILES=	mailfilter.crm mailtrainer.crm procmailrc.recipe mailfilter.cf \
 		priolist.mfp whitelist.mfp blacklist.mfp classifytest.crm \
 		exectest.crm inserttest_a.crm inserttest_b.crm learntest.crm \
-		matchtest.crm overalterisolatedtest.crm windowtest.crm
+		matchtest.crm overalterisolatedtest.crm windowtest.crm \
+		mailreaver.crm maillib.crm
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
@@ -54,8 +55,8 @@ post-install:
 	@${REINPLACE_CMD} -Ee 's|^(.*/openssl base64 -d/)|#\1|' \
 		-e 's|/mewdecode/|/b64decode -pr/|' ${WRKSRC}/mailfilter.cf
 	@${REINPLACE_CMD} -e 's|/md5sum/|/md5 -r/|' \
-		-e 's|#! /usr/bin/crm.*|#!${PREFIX}/bin/crm|' \
-			${WRKSRC}/mailfilter.crm ${WRKSRC}/mailtrainer.crm
+		-e 's|#!.*/usr/bin/crm.*|#!${PREFIX}/bin/crm|' \
+		${WRKSRC}/mailfilter.crm ${WRKSRC}/mailtrainer.crm ${WRKSRC}/mailreaver.crm
 	@for i in priolist.mfp whitelist.mfp; do \
 		${CP} ${WRKSRC}/$${i}.example ${WRKSRC}/$${i}; \
 	done
