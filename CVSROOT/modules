@@ -8555,6 +8555,7 @@ p5-Catalyst-Plugin-FormValidator-Simple	ports/www/p5-Catalyst-Plugin-FormValidat
 p5-Catalyst-Plugin-HTML-Widget	ports/www/p5-Catalyst-Plugin-HTML-Widget
 p5-Catalyst-Plugin-I18N	ports/www/p5-Catalyst-Plugin-I18N
 p5-Catalyst-Plugin-PageCache	ports/www/p5-Catalyst-Plugin-PageCache
+p5-Catalyst-Plugin-Params-Nested	ports/www/p5-Catalyst-Plugin-Params-Nested
 p5-Catalyst-Plugin-Pluggable	ports/www/p5-Catalyst-Plugin-Pluggable
 p5-Catalyst-Plugin-Prototype	ports/www/p5-Catalyst-Plugin-Prototype
 p5-Catalyst-Plugin-Session	ports/www/p5-Catalyst-Plugin-Session
