@@ -7,7 +7,7 @@
 
 PORTNAME=	CalculiX
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -66,8 +66,10 @@ PSVIEWER?=	gv
 
 .include <bsd.port.pre.mk>
 
-WANT_FORTRAN=yes
-USE_GCC=4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 .if ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC

@@ -7,7 +7,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpqc
@@ -50,8 +50,10 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259
 
-WANT_FORTRAN=yes
-USE_GCC=4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 .if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
