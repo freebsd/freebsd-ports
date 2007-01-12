@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,7 @@ MAINTAINER=	freebsd.alex@trull.org
 COMMENT=	Graphical Adventure Game Virtual Machine
 
 USE_BZIP2=	yes
-#USE_GCC=	3.3+
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl
@@ -71,7 +70,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/scummvm.6 ${PREFIX}/man/man6
+	@${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
