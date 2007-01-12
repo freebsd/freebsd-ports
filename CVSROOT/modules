@@ -13311,6 +13311,7 @@ ruby-sysvipc	ports/devel/ruby-sysvipc
 ruby-tcpsocketpipe	ports/net/ruby-tcpsocketpipe
 ruby-tcpwrap	ports/security/ruby-tcpwrap
 ruby-tempura	ports/textproc/ruby-tempura
+ruby-term-ansicolor	ports/devel/ruby-term-ansicolor
 ruby-termios	ports/comms/ruby-termios
 ruby-text-format	ports/textproc/ruby-text-format
 ruby-textbuf	ports/devel/ruby-textbuf
