@@ -7,7 +7,7 @@
 
 PORTNAME=	metis
 PORTVERSION=	4.0
-PORTREVISION=	1	
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/	\
 		http://www-users.cs.umn.edu/~karypis/metis/metis/files/
@@ -28,6 +28,11 @@ PICFLAG?=       -fPIC
 .else
 PICFLAG?=       -fpic
 .endif
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 post-patch:
 	${MKDIR} ${WRKSRC}_SHARED ; ${CP} -r ${WRKSRC}/* ${WRKSRC}_SHARED
