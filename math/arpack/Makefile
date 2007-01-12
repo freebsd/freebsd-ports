@@ -7,7 +7,7 @@
 
 PORTNAME=	arpack
 PORTVERSION=	96
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
@@ -21,9 +21,6 @@ PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
-
-WANT_FORTRAN=	yes
-USE_GCC=	4.2+
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=		yes
@@ -46,6 +43,11 @@ PICFLAG?=       -fPIC
 .else
 PICFLAG?=       -fpic
 .endif
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 WRKSRC=		${WRKDIR}/ARPACK
 WRKSRC_SHARED=	${WRKDIR}/ARPACK_SHARED
