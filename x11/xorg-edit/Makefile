@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xorg-edit
-PORTVERSION=	06.10.12
+PORTVERSION=	07.01.12
 CATEGORIES=	x11
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_${PORTVERSION}-src
+DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	GUI to edit xorg.conf
@@ -21,12 +21,13 @@ BUILD_WRKSRC=	${WRKSRC}/sources
 PLIST_FILES=	bin/${PORTNAME}
 
 post-extract:
-	@${CHMOD} 644 ${BUILD_WRKSRC}/*
+	@${CHMOD} -R a+rX,u+w ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,wx-config,${WX_CONFIG},g' ${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g;s|/usr/local|$${PREFIX}|g'\
+		${BUILD_WRKSRC}/xorgedit/${MAKEFILE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.mk>
