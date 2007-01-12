@@ -52,8 +52,8 @@ CONFIGURE_ARGS+=	--with-wx-config=false --without-x
 .endif
 
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv \
-		jpeg:${PORTSDIR}/graphics/jpeg \
+USE_ICONV=	yes
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		glut:${PORTSDIR}/graphics/libglut
 .endif
 

@@ -14,11 +14,10 @@ MASTER_SITE_SUBDIR=	wvware
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A library providing routines to access Microsoft Word files
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} --disable-debug
 
 USE_GNOME=	gnometarget libgsf
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -112,7 +112,7 @@ MAKE_ENV+=		XALAN_USE_ICU=1
 MAKE_ENV+=		ICUROOT=${ICUROOT}
 PLIST_SUB+=		ICUDEP=""
 .else
-LIB_DEPENDS+=		iconv:${PORTSDIR}/converters/libiconv
+USE_ICONV=		yes
 CONFIGURE_ENV+=		LDFLAGS='-L${LOCALBASE}/lib -liconv'
 MAKE_ENV+=		LDFLAGS='-L${LOCALBASE}/lib -liconv'
 PLIST_SUB+=		ICUDEP="@comment "

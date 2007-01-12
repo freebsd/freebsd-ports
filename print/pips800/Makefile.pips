@@ -111,8 +111,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-ekpstm \
 .elif ${DIST_TYPE} == cups
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-ekpstm \
 		${FILESDIR}/extra-patch-2.6.2-src-cups
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+USE_ICONV=	yes
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-common \
 		${FILESDIR}/extra-patch-2.6.2-src \
@@ -122,8 +122,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-common \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-ekpstm::main.c
 .endif
 BUILD_DEPENDS+=	${LOCALBASE}/bin/autoconf253:${PORTSDIR}/devel/autoconf253
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+USE_ICONV=	yes
 .endif
 .if ${OSVERSION} < 500000
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \

@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	gswitchit
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
