@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
-LIB_DEPENDS=	omniORB4.0:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS=	omniORB4.1:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # parts of omniORB4 source tree is required to build
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
