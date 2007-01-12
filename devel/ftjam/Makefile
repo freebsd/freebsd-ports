@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	freetype
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Small build tool that can be used as a replacement for make(1)
 
+CONFLICTS=	jam-[0-9]*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
