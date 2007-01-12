@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	zopeInterface
-PORTVERSION=	3.1.0c1
+PORTVERSION=	3.3.0
 CATEGORIES=	devel zope python
-MASTER_SITES=	http://www.zope.org/Products/ZopeInterface/
+MASTER_SITES=	http://www.zope.org/Products/ZopeInterface/${PORTVERSION}/ \
+		http://cheeseshop.python.org/packages/source/z/zope.interface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTVERSION}/ZopeInterface-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	zope.interface-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	Zope.interface package from Zope 3
 
-WRKSRC=		${WRKDIR}/ZopeInterface-${PORTVERSION}
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
-
-PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 
 .include <bsd.port.mk>
