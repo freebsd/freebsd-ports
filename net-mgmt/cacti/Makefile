@@ -17,10 +17,13 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=	
-#PATCHLEVEL=	.0
-#SITEDISTVERSION=	${PORTVERSION:S/.${PATCHLEVEL}//}
-SITEDISTVERSION=	${PORTVERSION}
+PATCHFILES=	dec06-vulnerability-poller-0.8.6i.patch \
+		dec06-vulnerability-scripts-0.8.6i.patch \
+		import_template_argument_space_removal.patch \
+		poller_output_remainder.patch
+PATCHLEVEL=	.4
+SITEDISTVERSION=	${PORTVERSION:S/${PATCHLEVEL}$//}
+#SITEDISTVERSION=	${PORTVERSION}
 
 PATCH_DIST_STRIP=-p1
 
