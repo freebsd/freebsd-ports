@@ -18,38 +18,35 @@ include/aunit/aunit-test_suites.adb
 include/aunit/aunit-test_suites.ads
 include/aunit/aunit-tests.ads
 include/aunit/aunit.ads
-@dirrm include/aunit
-%%DATADIR%%/template/sample_suite.adb
-%%DATADIR%%/template/sample.adp
-%%DATADIR%%/template/sample.gpr
-%%DATADIR%%/template/pr_xxxx_xxx.adb
-%%DATADIR%%/template/pr_xxxx_xxx.ads
-%%DATADIR%%/template/harness.adb
-@dirrm %%DATADIR%%/template
-%%DATADIR%%/test/default.adp
-%%DATADIR%%/test/empty_test_case.adb
-%%DATADIR%%/test/empty_test_case.ads
-%%DATADIR%%/test/one_test_case-inherited_test_case.adb
-%%DATADIR%%/test/one_test_case-inherited_test_case.ads
-%%DATADIR%%/test/simple_test_case.adb
-%%DATADIR%%/test/simple_test_case.ads
-%%DATADIR%%/test/harness.adb
-%%DATADIR%%/test/test_lists.adb
-%%DATADIR%%/test/test_lists.ads
-%%DATADIR%%/test/timed_harness.adb
-%%DATADIR%%/test/test_test_suite.adb
-%%DATADIR%%/test/test_test_suite.ads
-%%DATADIR%%/test/aunit_suite.adb
-%%DATADIR%%/test/test_test_case_registration.adb
-%%DATADIR%%/test/test_test_case_registration.ads
-%%DATADIR%%/test/test_test_case.adb
-%%DATADIR%%/test/test_test_case.ads
-%%DATADIR%%/test/one_test_case.adb
-%%DATADIR%%/test/one_test_case.ads
-@dirrm %%DATADIR%%/test
-%%DATADIR%%/aunit.gpr
-%%DATADIR%%/aunit_tests.gpr
-@dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/AUnit.html
-%%PORTDOCS%%%%DOCSDIR%%/README
+lib/aunit/aunit-assertions.ali
+lib/aunit/aunit-lists.ali
+lib/aunit/aunit-options.ali
+lib/aunit/aunit-test_cases-registration.ali
+lib/aunit/aunit-test_cases.ali
+lib/aunit/aunit-test_results-text_reporter.ali
+lib/aunit/aunit-test_results.ali
+lib/aunit/aunit-test_runner.ali
+lib/aunit/aunit-test_suites.ali
+lib/aunit/aunit-tests.ali
+lib/aunit/aunit.ali
+lib/aunit/libaunit.a
+lib/gnat/aunit.gpr
+%%PORTDOCS%%%%DOCSDIR%%/aunit.html
+%%PORTDOCS%%%%DOCSDIR%%/aunit.info
+%%PORTDOCS%%%%DOCSDIR%%/aunit.pdf
+%%PORTDOCS%%%%DOCSDIR%%/aunit.txt
+%%PORTDOCS%%%%DOCSDIR%%/dir
+%%EXAMPLESDIR%%/harness.adb
+%%EXAMPLESDIR%%/pr_xxxx_xxx.adb
+%%EXAMPLESDIR%%/pr_xxxx_xxx.ads
+%%EXAMPLESDIR%%/sample.adp
+%%EXAMPLESDIR%%/sample.gpr
+%%EXAMPLESDIR%%/sample_suite.adb
+share/gps/plug-ins/aunit.xml
+@dirrm share/gps/plug-ins
+@dirrm share/gps
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/gnat
+@dirrm lib/aunit
+@dirrm include/aunit
