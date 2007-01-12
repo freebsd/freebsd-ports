@@ -23,4 +23,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Class::CSV.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl5.6. Install lang/perl5 or lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
