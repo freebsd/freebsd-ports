@@ -7,6 +7,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
 
