@@ -7,7 +7,7 @@
 
 PORTNAME=	suitesparse
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
@@ -46,8 +46,10 @@ CONFLICTS=	umfpack-*
 
 USE_LDCONFIG=   yes
 USE_GMAKE=	yes
-USE_GCC=	4.2+
-WANT_FORTRAN=	yes
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 WRKSRC=${WRKDIR}/SuiteSparse
 WRKSRC_SHARED=${WRKSRC}_shared
 CFLAGS_SHARED=${CFLAGS} ${FPIC}
@@ -94,8 +96,10 @@ do-build:
 	${RM} -rf ${WRKDIR}/tmp_shared
 	${MKDIR} ${WRKDIR}/tmp_shared
 	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${MV} {} ${WRKDIR}/tmp_shared \;
+post-build:
 	cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
 		ld -Bshareable -o $${i}.so.${SVERSION} -x -soname $${i}.so.${SVERSION} --whole-archive $${i}.a ;\
+		ln -s $${i}.so.${SVERSION} $${i}.so ;\
 	done
 
 do-install:
@@ -113,5 +117,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CAMD/Include/*.h		             ${PREFIX}/include/suitesparse
 	${INSTALL_DATA} ${WRKDIR}/tmp_static/*.a                                        ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKDIR}/tmp_shared/*.so.${SVERSION}                    ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/*.so                    ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
