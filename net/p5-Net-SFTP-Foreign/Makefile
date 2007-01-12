@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SFTP-Foreign
-DISTVERSION=	0.90_10
+DISTVERSION=	0.90_15
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SALVA
@@ -25,4 +25,10 @@ MAN3=		Net::SFTP::Foreign.3 \
 		Net::SFTP::Foreign::Constants.3 \
 		Net::SFTP::Foreign::Local.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	This port requires perl 5.8.X.	Please install lang/perl5.8.
+.endif
+
+.include <bsd.port.post.mk>
