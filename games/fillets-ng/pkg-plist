@@ -6072,20 +6072,6 @@ bin/fillets
 %%DATADIR%%/sound/wreck/cs/pot-v-slus.ogg
 %%DATADIR%%/sound/wreck/cs/pot-v-trub.ogg
 %%DATADIR%%/sound/wreck/cs/pot-v-vidim.ogg
-%%PORTDOCS%%%%DOCSDIR%%/html/halloffame.html
-%%PORTDOCS%%%%DOCSDIR%%/html/img/icon.png
-%%PORTDOCS%%%%DOCSDIR%%/html/img/manual/falling_objects.png
-%%PORTDOCS%%%%DOCSDIR%%/html/img/manual/pushing_along_other_objects.png
-%%PORTDOCS%%%%DOCSDIR%%/html/img/manual/pushing_objects.png
-%%PORTDOCS%%%%DOCSDIR%%/html/img/manual/steel_object.png
-%%PORTDOCS%%%%DOCSDIR%%/html/img/manual/transferring_objects.png
-%%PORTDOCS%%%%DOCSDIR%%/html/img/pedometer.png
-%%PORTDOCS%%%%DOCSDIR%%/html/manual.cs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual.es.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual.fr.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual.nl.html
-%%PORTDOCS%%%%DOCSDIR%%/html/styles.css
 @dirrm %%DATADIR%%/sound/wreck/cs
 @dirrm %%DATADIR%%/sound/wreck
 @dirrm %%DATADIR%%/sound/windoze/cs
@@ -6441,7 +6427,3 @@ bin/fillets
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/font
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

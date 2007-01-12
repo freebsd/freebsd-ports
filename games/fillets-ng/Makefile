@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fillets-ng
-PORTVERSION=	0.7.3
-PORTREVISION=	3
+PORTVERSION=	0.7.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fillets
@@ -20,7 +19,7 @@ MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A wonderful puzzle game
 
 USE_SDL=	sdl mixer image ttf
-USE_LUA=	5.0
+USE_LUA=	5.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -34,6 +33,8 @@ OPTIONS=	FRIBIDI		"Enable fribidi support"	off
 
 DATAVERSION=	0.7.1
 
+PORTDOCS=	*
+
 MAN6=		fillets.6
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -45,6 +46,7 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/LIBS/ s|-llualib[50.]*||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^\(AM_CPPFLAGS.*(datadir)\)/.*|\1"\\"|' \
 		${WRKSRC}/src/gengine/Makefile.in
@@ -63,9 +65,9 @@ post-extract:
 		${PORTNAME}-data-${DATAVERSION}/sound
 
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${WRKDIR}/doc
-		@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR}/doc \
-			${PORTNAME}-data-${DATAVERSION}/doc
+	@${MKDIR} ${WRKDIR}/doc
+	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR}/doc \
+		${PORTNAME}-data-${DATAVERSION}/doc
 .endif
 
 do-install:
