@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pmake
-PORTVERSION=	2.1.36
+PORTVERSION=	2.1.37
 CATEGORIES=	devel parallel
-MASTER_SITES=	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/ \
+MASTER_SITES=	http://www.icsi.berkeley.edu/ftp/global/pub/speech/stolcke/software/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	steve
 EXTRACT_SUFX=	.tar.Z

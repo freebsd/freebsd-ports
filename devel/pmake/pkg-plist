@@ -23,5 +23,6 @@ lib/pmake/sys-next.mk
 lib/pmake/sys-snake.mk
 lib/pmake/sys-sun3.mk
 lib/pmake/sys-sun4.mk
+lib/pmake/sys-x86_64.mk
 lib/pmake/system.mk
 @dirrm lib/pmake
