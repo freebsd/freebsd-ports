@@ -1,9 +1,11 @@
 Index: qemu/block-raw.c
-@@ -51,7 +51,7 @@
+@@ -51,7 +51,10 @@
  #include <linux/cdrom.h>
  #include <linux/fd.h>
  #endif
--#ifdef __FreeBSD__
+ #ifdef __FreeBSD__
++#include <signal.h>
++#endif
 +#if defined(__FreeBSD__) && __FreeBSD__ > 4
  #include <sys/disk.h>
  #endif
