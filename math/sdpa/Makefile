@@ -34,11 +34,11 @@ OLDVERSION=	6.2.0
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-#Atlas is always required as lapack.h and blas.h is required.
-#no blaswarp.h at the moment.
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
-
-WITH_ATLAS=     yes
+#for f2c.h
+BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
+#.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+#.endif
 .if defined(WITH_ATLAS)
 BLAS=		-lcblas -lf77blas -latlas
 LAPACK=		-lalapack
