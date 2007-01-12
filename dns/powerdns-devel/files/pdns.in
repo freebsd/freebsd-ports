@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/dns/powerdns-devel/files/Attic/pdns.in,v 1.2 2006-02-20 20:46:57 dougb Exp $
+# $FreeBSD: /tmp/pcvs/ports/dns/powerdns-devel/files/Attic/pdns.in,v 1.3 2007-01-12 23:49:04 gabor Exp $
 #
 
 # PROVIDE: pdns_server
@@ -31,5 +31,8 @@ pdns_flags=${pdns_flags:-""}
 load_rc_config ${name}
 
 required_files=${pdns_conf}
+
+monitor_cmd="${command} --daemon=no --guardian=no --control-console --loglevel=9"
+extra_commands="monitor"
 
 run_rc_command "$1"
