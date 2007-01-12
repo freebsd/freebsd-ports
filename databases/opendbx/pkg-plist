@@ -1,4 +1,3 @@
-bin/odbxtest
 include/odbx.h
 lib/libopendbx.a
 lib/libopendbx.la
