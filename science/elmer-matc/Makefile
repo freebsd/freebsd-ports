@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MatC language library used by ELMER FEM package
 
-WANT_FORTRAN=	yes
-USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
