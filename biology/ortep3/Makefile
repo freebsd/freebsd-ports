@@ -7,7 +7,7 @@
 
 PORTNAME=	ortep3
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/ortep/:Z \
 		ftp://ftp.ornl.gov/pub/ortep/src/:f
@@ -21,8 +21,10 @@ COMMENT=	The Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 .endif
 
-WANT_FORTRAN=yes
-USE_GCC=4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 WRKSRC=		${WRKDIR}/ortep/src
 
