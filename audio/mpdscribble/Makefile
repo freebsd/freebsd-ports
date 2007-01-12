@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpdscribble
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.12
 CATEGORIES=	audio
 MASTER_SITES=	http://www.frob.nl/projects/scribble/
 
