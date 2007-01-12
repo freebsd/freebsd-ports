@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Params/Nested/.packlist
+%%SITE_PERL%%/Catalyst/Plugin/Params/Nested.pm
+%%SITE_PERL%%/Catalyst/Plugin/Params/Nested/Expander.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Catalyst/Plugin/Params/Nested
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Params/Nested
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Params
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Params/Nested
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Params
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

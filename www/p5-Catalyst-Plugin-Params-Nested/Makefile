@@ -1,0 +1,34 @@
+# New ports collection makefile for:	www/p5-Catalyst-Plugin-Params-Nested
+# Date created:				28 Dec 2006
+# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Catalyst-Plugin-Params-Nested
+PORTVERSION=	0.02
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Catalyst
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	fernan@iib.unsam.edu.ar
+COMMENT=	Nested params (ala Ruby on Rails or PHP-style param arrays)
+
+BUILD_DEPENDS=	p5-CGI-Expand>=1.06:${PORTSDIR}/www/p5-CGI-Expand \
+		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Catalyst::Plugin::Params::Nested.3 \
+	Catalyst::Plugin::Params::Nested::Expander.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500801
+IGNORE=	requires Perl 5.8.1. Install lang/perl5.8, and try again
+.endif
+
+.include <bsd.port.post.mk>
