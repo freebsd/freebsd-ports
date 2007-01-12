@@ -7,6 +7,7 @@
 
 PORTNAME=	cfitsio
 PORTVERSION=	3.006
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -19,8 +20,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-WANT_FORTRAN=	yes #dummy
-USE_GCC=4.2+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
 LIB_DEPENDS+=	f2c.2:${PORTSDIR}/lang/f2c
 ALL_TARGET=	shared
 
