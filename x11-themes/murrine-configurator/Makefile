@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	murrine-configurator
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrine/
 DISTNAME=	murrine-configurator-${PORTVERSION}
