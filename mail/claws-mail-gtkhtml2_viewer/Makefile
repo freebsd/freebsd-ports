@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkhtml2_viewer
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	HTML renderer plugin for claws-mail
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
@@ -34,6 +33,7 @@ PLIST_FILES=	lib/claws-mail/plugins/gtkhtml2_viewer.a \
 	lib/claws-mail/plugins/gtkhtml2_viewer.so \
 	share/locale/de/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/fi/LC_MESSAGES/gtkhtml2_viewer.mo \
+	share/locale/it/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/sk/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/sr/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/es/LC_MESSAGES/gtkhtml2_viewer.mo \
