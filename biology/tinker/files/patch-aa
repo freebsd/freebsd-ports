@@ -37,9 +37,9 @@
 +
 +F77 = ${FC}
 +LIBS =
-+F77FLAGS = -Wno-globals -fno-globals -c -w
++F77FLAGS = -c %%FFLAGS%%
 +LINKFLAGS =
-+OPTFLAGS = %%FFLAGS%%
++OPTFLAGS = 
 +LIBFLAGS = -rcuv
 +
  #################################################################
