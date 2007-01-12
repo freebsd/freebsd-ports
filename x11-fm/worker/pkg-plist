@@ -39,6 +39,12 @@ share/pixmaps/WorkerIcon48.xpm
 %%DATADIR%%/catalogs/spanish.catalog.utf8
 %%DATADIR%%/catalogs/spanish.catalog.coms.utf8
 %%DATADIR%%/catalogs/spanish.catalog.flags.utf8
+%%DATADIR%%/catalogs/nederlands.catalog
+%%DATADIR%%/catalogs/nederlands.catalog.utf8
+%%DATADIR%%/catalogs/nederlands.catalog.coms
+%%DATADIR%%/catalogs/nederlands.catalog.coms.utf8
+%%DATADIR%%/catalogs/nederlands.catalog.flags
+%%DATADIR%%/catalogs/nederlands.catalog.flags.utf8
 %%DATADIR%%/config-deutsch
 %%DATADIR%%/config-deutsch.utf8
 %%DATADIR%%/config-english
