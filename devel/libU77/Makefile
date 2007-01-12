@@ -7,6 +7,7 @@
 
 PORTNAME=	libU77
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -15,6 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds Fortran intrinsics missing from f2c
 
 USE_LDCONFIG=	yes
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
