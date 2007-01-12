@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A beautiful graphing library for Ruby using RMagick
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/RMagick.so:${PORTSDIR}/graphics/ruby-rmagick
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/RMagick.so:${PORTSDIR}/graphics/ruby-rmagick \
+		sow:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
 
