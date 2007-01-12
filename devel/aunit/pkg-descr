@@ -1,10 +1,4 @@
-AUnit is a set of Ada packages based on the xUnit family of unit test
-frameworks. It's intended as a developer's tool to facilitate
-confident writing and evolution of Ada software. It is purposely
-lightweight, as one of its main goals is to make it easy to develop
-and run unit tests, rather than to generate artifacts for process
-management. The framework supports easy composition of sets of unit
-tests to provide flexibility in determining what tests to run for a
-given purpose.
+AUnit is an adaptation of the Java JUnit (Kent Beck, Erich Gamma) unit
+test framework for Ada code. 
 
-WWW: http://libre.act-europe.fr/aunit/
+WWW: http://libre.adacore.com/
