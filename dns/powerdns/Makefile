@@ -7,14 +7,14 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
 
 MAINTAINER=	tremere@cainites.net
-COMMENT=	An advanced DNS server with SQL backend
+COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
@@ -25,8 +25,9 @@ USE_LDCONFIG=	YES
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
-			--with-dynmodules=""
+CONFIGURE_ARGS+=	--with-modules="pipe" \
+			--with-dynmodules="${CONFIGURE_MODULES}" \
+			--sysconfdir="${PREFIX}/etc/pdns"
 #			--enable-debug
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR2="${.CURDIR}" \
@@ -37,97 +38,88 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 
 SUB_FILES=	pkg-message
 
+OPTIONS=	PGSQL           "PostgreSQL backend" on \
+		MYSQL           "MySQL backend" off \
+		SQLITE          "SQLite 2 backend" off \
+		SQLITE3         "SQLite 3 backend" off \
+		OPENDBX         "OpenDBX backend" off \
+		OPENLDAP        "OpenLDAP backend" off \
+		GEO             "Geo backend" off
+
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR+=	pdns
 
-# use user config if possible
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if defined(WITH_GEO)
+CONFIGURE_MODULES+=	"geo"
+PLIST_SUB+=		WITHGEO=""
 .else
-.if defined(BATCH)
-# default package, can be configured in /etc/make.conf
-POWERDNS_OPTIONS?=	\"PostgreSQL\"
-.endif
-# make INDEX match
-NO_DESCRIBE=yes
+PLIST_SUB+=		WITHGEO="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL_DRIVER) && !defined(WITHOUT_POSTGRESQL_DRIVER)
-LIB_DEPENDS+=	pq[+][+].4:${PORTSDIR}/databases/postgresql-libpq++
-CONFIGURE_ARGS+=	--enable-pgsql --with-pgsql-includes=${LOCALBASE}/include
+.if defined(WITH_SQLITE) && defined(WITH_SQLITE3)
+BROKEN=	choose only one SQLite backend version
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL?=		YES
 CONFIGURE_MODULES+=	"gpgsql"
-CFLAGS+=		-DDLLIMPORT=""
+PLIST_SUB+=		WITHPGSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
+PLIST_SUB+=		WITHPGSQL="@comment "
 .endif
 
-.if defined(WITH_MYSQL_DRIVER)
+.if defined(WITH_MYSQL)
 USE_MYSQL?=		YES
-CONFIGURE_ARGS+=	--enable-mysql --with-mysql-includes=${LOCALBASE}
 CONFIGURE_MODULES+=	"gmysql"
+CXXFLAGS+=		-I${LOCALBASE}/include/mysql
+LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 PLIST_SUB+=		WITHMYSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=		WITHMYSQL="@comment "
 .endif
 
-.if defined(WITH_LDAP)
+.if defined(WITH_OPENLDAP)
 USE_OPENLDAP?=		YES
 CONFIGURE_MODULES+=	"ldap"
-PLIST_SUB+=		WITHLDAP=""
 CXXFLAGS+=		-L${LOCALBASE}/lib -DLDAP_DEPRECATED=1
+PLIST_SUB+=		WITHOPENLDAP=""
 .else
-PLIST_SUB+=		WITHLDAP="@comment "
+PLIST_SUB+=		WITHOPENLDAP="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
-CONFIGURE_ARGS+=	--enable-sqlite
+USE_SQLITE?=		2
 CONFIGURE_MODULES+=	"gsqlite"
-PLIST_SUB+=		WITHSQLLITE=""
+PLIST_SUB+=		WITHSQLITE=""
 .else
-CONFIGURE_ARGS+=	--disable-sqlite
-PLIST_SUB+=		WITHSQLLITE="@comment "
+PLIST_SUB+=		WITHSQLITE="@comment "
 .endif
 
-.if defined(POWERDNS_WITH_RECURSOR)
-USE_RC_SUBR+=	pdns_recursor
-CONFIGURE_ARGS+=	--enable-recursor
-PLIST_SUB+=		RECURSOR=""
+.if defined(WITH_SQLITE3)
+USE_SQLITE?=		3
+CONFIGURE_MODULES+=	"gsqlite"
+PLIST_SUB+=		WITHSQLITE3=""
 .else
-PLIST_SUB+=		RECURSOR="@comment "
+PLIST_SUB+=		WITHSQLITE3="@comment "
 .endif
 
-.if defined(POWERDNS_WITH_RECURSOR)
-.if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
-UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
-		/usr/include/ucontext.h
-.if ${UCONTEXT} == ""
-BROKEN=		setcontext for recursor not found or FreeBSD version lower than 5.0
-.endif
-.endif
+.if defined(WITH_OPENDBX)
+LIB_DEPENDS+=		opendbx.1:${PORTSDIR}/databases/opendbx
+CONFIGURE_MODULES+=	"opendbx"
+PLIST_SUB+=		WITHOPENDBX=""
+CXXFLAGS+=		-L${LOCALBASE}/lib
+.else
+PLIST_SUB+=		WITHOPENDBX="@comment "
 .endif
 
 .if ${OSVERSION} < 500039
 USE_GCC=3.4
 .endif
 
-.if defined(NO_DESCRIBE)
-describe:
-.if defined(BATCH)
-	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
-.endif
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} BATCH=yes ${.TARGET}
-.endif
-
-pre-everything::
-	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
-
-post-clean:
-	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-.if defined(WITH_LDAP)
+.if defined(WITH_OPENLDAP)
 post-patch:
 	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
 		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
@@ -138,8 +130,8 @@ post-patch:
 .endif
 
 post-install:
-.if !exists(${PREFIX}/etc/pdns.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/pdns.conf-dist ${PREFIX}/etc/pdns.conf
+.if !exists(${PREFIX}/etc/pdns/pdns.conf)
+	${INSTALL_DATA} ${PREFIX}/etc/pdns/pdns.conf-dist ${PREFIX}/etc/pdns/pdns.conf
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}

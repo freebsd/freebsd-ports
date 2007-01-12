@@ -32,4 +32,7 @@ load_rc_config ${name}
 
 required_files=${pdns_conf}
 
+monitor_cmd="${command} --daemon=no --guardian=no --control-console --loglevel=9"
+extra_commands="monitor"
+
 run_rc_command "$1"
