@@ -1,0 +1,11 @@
+Small Ruby library that colors strings using ANSI escape sequences. 
+It's possible to use constants:
+
+    include Term::ANSIColor
+    print red, bold, "red bold", reset, "\n"
+
+    or
+
+    print red(bold("red bold")), "\n"
+
+WWW: http://term-ansicolor.rubyforge.org/
