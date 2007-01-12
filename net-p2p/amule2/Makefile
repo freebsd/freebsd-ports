@@ -7,11 +7,14 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://download.berlios.de/amule/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amule
+PATCH_SITES=	http://cvs.pld-linux.org/cgi-bin/cvsweb/SOURCES/
+PATCHFILES=	aMule-wx.patch?rev=1.2
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	The all-platform eMule p2p client
@@ -24,7 +27,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_WX=		2.6
+USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
