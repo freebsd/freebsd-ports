@@ -7,7 +7,7 @@
 
 PORTNAME=	mathlibs
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
@@ -24,10 +24,10 @@ CONFLICTS=	atlas-[0-9]* blas-[0-9]* arpack-[0-9]* lapack-[0-9]*
 CONFLICTS+=	scalapack-[0-9]*
 .endif
 
-USE_GCC=	4.1+
-WITH_FORTRAN=	yes
-F77=	${FC}
-
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
 .ifdef WITH_OPTIMIZED_FLAGS
 FFLAGS+=	-O3 -ffast-math
 .endif
