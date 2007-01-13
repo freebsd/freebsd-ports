@@ -8,12 +8,14 @@
 
 PORTNAME=	passepartout
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DTP application for X
 
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	xml\\+\\+-1.0:${PORTSDIR}/textproc/libxml++ \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
