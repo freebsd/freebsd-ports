@@ -8,8 +8,7 @@
 PORTNAME=	zim
 PORTVERSION=	0.17
 CATEGORIES=	editors perl5
-MASTER_SITES=	http://zoidberg.student.utwente.nl/downloads/Zim/ \
-		ftp://zoidberg.student.utwente.nl/Zim/
+MASTER_SITES=	http://pardus-larus.student.utwente.nl/~pardus/downloads/Zim/
 DISTNAME=	Zim-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
