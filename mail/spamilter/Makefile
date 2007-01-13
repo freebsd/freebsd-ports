@@ -15,15 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Sendmail LibMilter filter to block spam
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
-SENDMAIL_MILTER_PORT?=	sendmail
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
@@ -37,8 +28,9 @@ DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-LDFLAGS+=	-L${LOCALBASE}/lib
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
+.if defined(WITH_SENDMAIL_PORT)
 CONFIGURE_ARGS+=	--sendmail-dir "${LOCALBASE}"
 .endif
 
@@ -64,14 +56,6 @@ PLIST_FILES+=	%%DOCSDIR%%/docs.html %%DOCSDIR%%/docs.txt
 PLIST_FILES+=	%%DOCSDIR%%/db.rcpt %%DOCSDIR%%/db.rdnsbl %%DOCSDIR%%/db.sndr
 PLIST_FILES+=	%%DOCSDIR%%/policy.html %%DOCSDIR%%/spamilter.rc
 PLIST_DIRS+=	%%DOCSDIR%%
-.endif
-
-.if defined(SENDMAIL_WITHOUT_MILTER)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
 .endif
 
 pre-configure:

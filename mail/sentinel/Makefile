@@ -16,14 +16,12 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sendmail milter API implementation
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
-IGNORE=		requires Sendmail 8.12
-.endif
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 .if defined(WITHOUT_SENTINEL_DECODE_SUBJECT)
 CFLAGS+=	-DDO_NOT_DECODE_SUBJECT
