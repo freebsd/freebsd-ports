@@ -39,6 +39,6 @@ post-patch:
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|targetoptions="-O2"|targetoptions="${CFLAGS}"|g' \
 			${WRKSRC}/runConfigure
-
+	${FIND} ${WRKSRC}/include/pathan -name "*.orig" -delete
 
 .include <bsd.port.post.mk>
