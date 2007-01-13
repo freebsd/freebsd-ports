@@ -2696,3 +2696,4 @@ multimedia/mtv||2007-01-05|Has expired: No new releases in the past 5 years
 mail/py-email2||2007-01-08|Has expired: Only usable python versions schedualed to expire
 net/ruby-radius||2007-01-08|Has expired: distfile disappeared from homepage
 devel/versuch|net/versuch|2007-01-12|Removed duplicate port
+german/tvbrowser|misc/tvbrowser|2007-01-13|move to misc/tvbrowser
