@@ -19,7 +19,7 @@ COMMENT=	Tools and library routines for working with TIFF images
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \

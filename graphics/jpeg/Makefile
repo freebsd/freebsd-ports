@@ -25,7 +25,7 @@ COMMENT=	IJG's jpeg compression utilities
 WRKSRC=		${WRKDIR}/jpeg-6b
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 
 ADDITIONAL_HEADER=	jinclude.h jpegint.h
