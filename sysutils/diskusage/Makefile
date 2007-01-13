@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.maskeproductions.com/pub/FreeBSD/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows current user diskusage and sum in human-readable format
 
+DEPRECATED=	Unmainntaied, MASTER_SITES disappeared, WWW disappeared.
+EXPIRATION_DATE=2007-03-09
+
 MAN1=		diskusage.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/diskusage
