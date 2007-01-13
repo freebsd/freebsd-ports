@@ -24,7 +24,7 @@
 -# CONFIG =
 -# LIB = -lf77blas -latlas -lfrtbegin -lg2c -lm
 +CONFIG =  -DGETRUSAGE
-+LIB = -L%%LOCALBASE%%/lib %%BLAS_LIBS%% -lg2c -lm
++LIB = -L%%LOCALBASE%%/lib %%BLAS%% %%GCCLIBDIR%% %%FORTRANLIBS%% -lm
  
  # 4: with Fortran interface to the BLAS, and Goto's BLAS
 -  CONFIG =
