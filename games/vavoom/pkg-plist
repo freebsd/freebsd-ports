@@ -566,7 +566,7 @@ libexec/vavoom/vavoom-dedicated
 %%MODELS%%%%DATADIR%%/basev/heretic/models/weapons/v_wand.md2
 %%MODELS%%%%DATADIR%%/basev/heretic/models/weapons/v_wand.pcx
 %%MODELS%%%%DATADIR%%/basev/heretic/models/weapons/v_wandg.pcx
-%%MODELS%%%%DATADIR%%/basev/heretic/basepak.pk3
+%%DATADIR%%/basev/heretic/basepak.pk3
 %%MODELS%%%%DATADIR%%/basev/hexen/models/Models.txt
 %%MODELS%%%%DATADIR%%/basev/hexen/models/Readme.txt
 %%MODELS%%%%DATADIR%%/basev/hexen/models/artifact/blast.md2
