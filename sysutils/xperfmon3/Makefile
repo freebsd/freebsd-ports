@@ -23,7 +23,7 @@ MAN1=		xperfmon++.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile"
+BROKEN=		"Does not compile in NFS related statistics"
 .endif
 
 .include <bsd.port.post.mk>
