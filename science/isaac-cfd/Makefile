@@ -7,7 +7,7 @@
 
 PORTNAME=	isaac
 PORTVERSION=	4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	isaac-cfd
@@ -28,6 +28,10 @@ NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_FLAGS+=	CPPFLAGS=-I.
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 .if !defined(WITH_EXAMPLES)
 PLIST_SUB=	WITH_EXAMPLES="@comment "
