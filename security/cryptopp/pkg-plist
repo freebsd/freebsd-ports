@@ -30,6 +30,7 @@ include/cryptopp/ec2n.h
 include/cryptopp/eccrypto.h
 include/cryptopp/ecp.h
 include/cryptopp/elgamal.h
+include/cryptopp/emsa2.h
 include/cryptopp/eprecomp.h
 include/cryptopp/esign.h
 include/cryptopp/factory.h
@@ -90,6 +91,7 @@ include/cryptopp/rng.h
 include/cryptopp/rsa.h
 include/cryptopp/rw.h
 include/cryptopp/safer.h
+include/cryptopp/salsa.h
 include/cryptopp/seal.h
 include/cryptopp/secblock.h
 include/cryptopp/seckey.h
