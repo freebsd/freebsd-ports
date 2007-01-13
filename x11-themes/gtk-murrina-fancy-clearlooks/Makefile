@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtk-murrina-fancy-clearlooks
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://home.planet.nl/~bassa052/themes/
-DISTNAME=	MurrinaFancyClearlooks_v0.3
+DISTNAME=	MurrinaFancyClearlooks_v${PORTVERSION}
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Murrine fancy clearlooks themes pack
