@@ -9,7 +9,7 @@
 PORTNAME=	pcre++
 PORTVERSION=	0.9.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
+MASTER_SITES=	http://www.daemon.de/files/mirror/ftp.daemon.de/scip/Apps/pcre++/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper class around the pcre library
