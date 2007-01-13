@@ -100,6 +100,7 @@
     SUBDIR += darkice
     SUBDIR += dekagen
     SUBDIR += denemo
+    SUBDIR += dino
     SUBDIR += discid
     SUBDIR += dream
     SUBDIR += drumpiler
