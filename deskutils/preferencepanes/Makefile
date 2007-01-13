@@ -14,14 +14,14 @@ DISTNAME=	systempreferences-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PreferencePanes framework for GNUstep
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/PreferencePanes
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
 DEFAULT_LIBVERSION=	1.0.0
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/PreferencePanes
 
 .include <bsd.port.mk>

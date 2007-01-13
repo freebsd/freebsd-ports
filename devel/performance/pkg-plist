@@ -10,7 +10,7 @@ Local/Library/Headers/Performance/GSCache.h
 Local/Library/Headers/Performance/GSThroughput.h
 Local/Library/Headers/Performance/GSTicker.h
 Local/Library/Libraries/libPerformance.so
-Local/Library/Libraries/libPerformance.so.%%MAJORVERSION%%.1
+Local/Library/Libraries/libPerformance.so.%%LIBVERSION%%
 Local/Library/Libraries/libPerformance.so.%%VERSION%%
 @dirrm Local/Library/Headers/Performance
 @dirrm Local/Library/Documentation/Performance

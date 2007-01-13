@@ -15,14 +15,12 @@ DISTNAME=	GSCommander-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep simple unix command monitor
 
-WRKSRC=		${WRKDIR}/GSCommander
-GUN_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/GSCommander
 
 .include <bsd.port.mk>

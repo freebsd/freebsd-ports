@@ -9,19 +9,18 @@ PORTNAME=	duncan
 PORTVERSION=	0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Duncan-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	English to Thai dictionary for GNUstep
 
-WRKSRC=		${WRKDIR}/Duncan
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/Duncan
 
 .include <bsd.port.mk>

@@ -15,14 +15,12 @@ DISTNAME=	Mplayer-0.4-1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep port of MPlayerOSX
 
-WRKSRC=		${WRKDIR}/mplayerPort/Sources
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
-ALL_TARGET=
+
+WRKSRC=		${WRKDIR}/mplayerPort/Sources
 
 .include <bsd.port.mk>

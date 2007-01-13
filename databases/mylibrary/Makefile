@@ -15,14 +15,12 @@ DISTNAME=	MyLibrary-${PORTVERSION}g
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Wiki-style data management application for GNUstep
 
-WRKSRC=		${WRKDIR}/ML
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
-ALL_TARGET=
+
+WRKSRC=		${WRKDIR}/ML
 
 .include <bsd.port.mk>

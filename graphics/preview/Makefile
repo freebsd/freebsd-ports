@@ -15,13 +15,12 @@ DISTNAME=	Preview-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple image viewer
 
-WRKSRC=		${WRKDIR}/Preview
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
+
+WRKSRC=		${WRKDIR}/Preview
 
 .include <bsd.port.mk>

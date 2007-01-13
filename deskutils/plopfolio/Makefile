@@ -14,13 +14,10 @@ MASTER_SITE_SUBDIR=	usr-apps
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Free clone of KlipFolio for GNUstep
 
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
-ALL_TARGET=
 
 .include <bsd.port.mk>

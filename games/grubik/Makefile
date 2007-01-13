@@ -15,14 +15,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Virtual 3D Rubiks cube for GNUstep
 
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
-ALL_TARGET=
 
 post-patch:
 	${RMDIR} ${WRKSRC}/GRubik.app/ix86/linux-gnu

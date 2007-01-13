@@ -9,19 +9,18 @@ PORTNAME=	lapispuzzle
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	LapisPuzzle-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Tetris-like game for GNUstep
 
-WRKSRC=		${WRKDIR}/LapisPuzzle-${PORTVERSION}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/LapisPuzzle-${PORTVERSION}
 
 .include <bsd.port.mk>

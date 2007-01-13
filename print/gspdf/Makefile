@@ -13,14 +13,13 @@ MASTER_SITES=	http://www.gnustep.it/enrico/gspdf/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Postscript and Pdf Viewer for GNUstep
 
-WRKSRC=		${WRKDIR}/GSPdf
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
 USE_GHOSTSCRIPT=	yes
+
+WRKSRC=		${WRKDIR}/GSPdf
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# New ports collection makefile for:    ladder.app
+# New ports collection makefile for:    ladder
 # Date created:         11 Sep 2006
 # Whom:                 gurkan@linuks.mine.nu
 #
@@ -9,7 +9,7 @@ PORTNAME=	ladder
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Ladder-${PORTVERSION}
 
@@ -18,13 +18,12 @@ COMMENT=	GNU Go frontend for GNUstep
 
 RUN_DEPENDS=	gnugo:${PORTSDIR}/games/gnugo
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# New ports collection makefile for:    Addresses
+# New ports collection makefile for:    addresses
 # Date created:         13 Nov 2004
 # Whom:                 Miguel Mendez <flynn@energyhq.es.eu.org>
 #
@@ -15,17 +15,13 @@ DISTNAME=	Addresses-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A versatile addressbook for GNUstep
 
-GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
-PREFIX=		${GNUSTEP_PREFIX}
-NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
-LDCONFIG_DIRS=	${LOCALLIBDIR}
-INSTALLS_SHLIB=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
+
+WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}
 
 .include <bsd.port.mk>

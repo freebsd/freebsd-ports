@@ -14,13 +14,12 @@ DISTNAME=	EdenMath_GNUstep-${PORTVERSION}
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Scientific calcualtor for GNUstep
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>

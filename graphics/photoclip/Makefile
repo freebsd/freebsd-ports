@@ -9,19 +9,18 @@ PORTNAME=	photoclip
 PORTVERSION=	0.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vaisburd.net/PhotoClip/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	PhotoClip-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Simple image viewer and editor for GNUstep
 
-WRKSRC=		${WRKDIR}/PhotoClip
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/PhotoClip
 
 .include <bsd.port.mk>

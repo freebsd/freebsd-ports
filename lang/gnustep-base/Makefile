@@ -18,24 +18,24 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
-ETCDIR=		${LOCALBASE}/etc
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs
 CONFIGURE_TARGET=
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 USE_ICONV=	yes
-MAKEFILE=
+
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
 BREAKS_IF_PEDANTIC=	yes
 NO_FILTER_SHLIBS=	yes
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
+ETCDIR=		${LOCALBASE}/etc
 
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-openssl
@@ -60,7 +60,7 @@ PATH:=	${PREFIX}/System/Tools:${PATH}
 
 post-build:
 .for i in ${MAKE_APPS}
-	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+	(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 .endfor
 
@@ -75,16 +75,16 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/GNUstep.sh ${ETCDIR}/rc.d/GNUstep.sh
 	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
 .for i in ${INSTALL_APPS}
-	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
+	(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} -d ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
-	${RM} ${PREFIX}/System/Library/Libraries/libgnustep-base.so
+	${RM} ${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so
 	${LN} -s libgnustep-base.so.${PORTVERSION} \
-	 ${PREFIX}/System/Library/Libraries/libgnustep-base.so
-	${RM} ${PREFIX}/System/Library/Libraries/Resources/gnustep-base/NSTimeZones/.README.swp
+		${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so
+	${RM} ${GNUSTEP_SYSTEM_LIBRARIES}/Resources/gnustep-base/NSTimeZones/.README.swp
 
 test:
-	@(cd ${WRKSRC}/Testing && . ${SYSTEMDIR}/Makefiles/GNUstep.sh; ${GMAKE})
+	@(cd ${WRKSRC}/Testing && . ${GNUSTEP_MAKEFILES}/GNUstep.sh; ${GMAKE})
 
 regression-test:	test
 

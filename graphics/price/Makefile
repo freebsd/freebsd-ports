@@ -15,13 +15,12 @@ DISTNAME=	PRICE-${PORTVERSION}
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Image filtering and manipulation using GNUstep
 
-WRKSRC=		${WRKDIR}/PRICE
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/PRICE
 
 .include <bsd.port.mk>

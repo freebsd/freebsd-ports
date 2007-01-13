@@ -9,19 +9,18 @@ PORTNAME=	jishyo
 PORTVERSION=	0.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Jishyo-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	English to Japanese dictionary for GNUstep
 
-WRKSRC=	${WRKDIR}/${DISTNAME}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=	${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>
