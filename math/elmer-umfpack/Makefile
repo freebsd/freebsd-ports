@@ -7,7 +7,7 @@
 
 PORTNAME=	umfpack
 PORTVERSION=	4.4
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
@@ -17,9 +17,10 @@ COMMENT=	UMFPACK library used by ELMER FEM package
 
 CONFLICTS=	umfpack-[0-9].[0-9]* suitesparse-[0-9].[0-9]*
 
-USE_GCC=	4.1+
-WITH_FORTRAN=	yes
-F77=	${FC}
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=	gfortran42
+F77=	gfortran42
 CONFIGURE_ENV+=	FC=${FC} F77=${FC}
 GNU_CONFIGURE=	yes
 ALL_TARGET=
