@@ -1861,6 +1861,7 @@ dillo		ports/www/dillo
 dillo-i18n	ports/www/dillo-i18n
 dim		ports/sysutils/dim
 dimes		ports/net/dimes
+dino		ports/audio/dino
 dinotrace	ports/cad/dinotrace
 dirac		ports/multimedia/dirac
 dirac-reference	ports/multimedia/dirac-reference
