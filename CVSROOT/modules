@@ -7307,6 +7307,7 @@ moftpd		ports/ftp/moftpd
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
 momspider	ports/www/momspider
+mondrian	ports/editors/mondrian
 monit		ports/sysutils/monit
 monitord	ports/sysutils/monitord
 monkey		ports/www/monkey
