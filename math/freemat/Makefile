@@ -7,7 +7,7 @@
 
 PORTNAME=		freemat
 PORTVERSION=		1.10	# Note: FreeMat 2.0 is waiting for QT4.
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,29 +24,38 @@ LIB_DEPENDS=		f2c.2:${PORTSDIR}/lang/f2c		\
 			jpeg.9:${PORTSDIR}/graphics/jpeg	\
 			lapack.3:${PORTSDIR}/math/lapack	\
 			png.5:${PORTSDIR}/graphics/png		\
-			tiff.4:${PORTSDIR}/graphics/tiff
-BUILD_DEPENDS=		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
-			${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack
+			tiff.4:${PORTSDIR}/graphics/tiff	\
+			arpack.1:${PORTSDIR}/math/arpack
+BUILD_DEPENDS=		${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack
+
+.include <bsd.port.pre.mk>
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FFLAGS+=	-O2
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+BLAS=           -lblas
+.endif
 
 USE_GL=			yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--with-blas="${lib_blas}"
+CONFIGURE_ARGS=		--with-blas="${BLAS}"
 CONFIGURE_ENV=		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${THRDFLG}"	\
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${THRDLIB}"
-
-FFLAGS?=	-O2
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${THRDLIB}" \
+			FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 SLAVEDIRS=	math/freemat-mpi
-
-.if defined(WITH_BLAS)
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
-lib_blas=	-lblas -lgslcblas
-.else
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
-lib_blas=	-lf77blas -latlas -lgslcblas
-.endif
-
 .if !defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-xft	# Set by default since FLTK depends on it.
 .endif
@@ -65,8 +74,6 @@ THRDLIB=		${PTHREAD_LIBS}
 WRKSRC=		${WRKDIR}/FreeMat-${PORTVERSION}
 SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/share/FreeMat
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 BROKEN=	Does not compile with gcc-2.95
