@@ -20,7 +20,7 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LDCONFIG=	${SYSLIBDIR}
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
 GNU_CONFIGURE=	yes
@@ -38,6 +38,6 @@ USE_GHOSTSCRIPT=	yes
 
 post-install:
 	${CP} ${WRKSRC}/Inspector/ContentViewersProtocol.h \
-		${SYSTEMDIR}/Library/Frameworks/Inspector.framework/Versions/A/Headers/ContentViewersProtocol.h
+		${GNUSTEP_SYSTEM_ROOT}/Library/Frameworks/Inspector.framework/Versions/A/Headers/ContentViewersProtocol.h
 
 .include <bsd.port.mk>
