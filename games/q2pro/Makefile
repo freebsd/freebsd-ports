@@ -42,6 +42,7 @@ IGNORE=		needs at least one executable (CLIENT and DEDICATED)
 .endif
 
 .if !defined(WITHOUT_CLIENT)
+USE_SDL+=	sdl
 ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
 .else
@@ -64,7 +65,8 @@ PLIST_SUB+=	GAME="@comment "
 
 .if !defined(WITHOUT_GL)
 USE_GL=		yes
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_newgl
 PLIST_SUB+=	GL=""
 .else
