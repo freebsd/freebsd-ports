@@ -1,11 +1,10 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.1 2006-09-24 16:16:40 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.2 2007-01-13 12:13:12 clement Exp $
 #
 
 # PROVIDE: apache22
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown
 
 #
