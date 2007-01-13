@@ -1,5 +1,5 @@
---- ./libjabber/jconn.c.orig	Sun Aug 13 23:01:59 2006
-+++ ./libjabber/jconn.c	Mon Aug 14 10:15:47 2006
+--- ./libjabber/jconn.c.orig	Sat Dec 16 21:05:39 2006
++++ ./libjabber/jconn.c	Sat Jan 13 03:02:55 2007
 @@ -164,6 +164,9 @@
      }
      change_socket_to_blocking(j->fd);

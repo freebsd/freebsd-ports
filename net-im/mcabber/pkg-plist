@@ -6,6 +6,35 @@ bin/mcabber
 %%DATADIR%%/contrib/themes/light.txt
 %%DATADIR%%/contrib/themes/light2.txt
 %%DATADIR%%/contrib/themes/oliver.txt
+%%DATADIR%%/help/de/hlp.txt
+%%DATADIR%%/help/de/hlp_add.txt
+%%DATADIR%%/help/de/hlp_alias.txt
+%%DATADIR%%/help/de/hlp_authorization.txt
+%%DATADIR%%/help/de/hlp_bind.txt
+%%DATADIR%%/help/de/hlp_buffer.txt
+%%DATADIR%%/help/de/hlp_clear.txt
+%%DATADIR%%/help/de/hlp_connect.txt
+%%DATADIR%%/help/de/hlp_del.txt
+%%DATADIR%%/help/de/hlp_disconnect.txt
+%%DATADIR%%/help/de/hlp_event.txt
+%%DATADIR%%/help/de/hlp_group.txt
+%%DATADIR%%/help/de/hlp_help.txt
+%%DATADIR%%/help/de/hlp_info.txt
+%%DATADIR%%/help/de/hlp_move.txt
+%%DATADIR%%/help/de/hlp_msay.txt
+%%DATADIR%%/help/de/hlp_pgp.txt
+%%DATADIR%%/help/de/hlp_quit.txt
+%%DATADIR%%/help/de/hlp_rawxml.txt
+%%DATADIR%%/help/de/hlp_rename.txt
+%%DATADIR%%/help/de/hlp_request.txt
+%%DATADIR%%/help/de/hlp_room.txt
+%%DATADIR%%/help/de/hlp_roster.txt
+%%DATADIR%%/help/de/hlp_say.txt
+%%DATADIR%%/help/de/hlp_say_to.txt
+%%DATADIR%%/help/de/hlp_set.txt
+%%DATADIR%%/help/de/hlp_status.txt
+%%DATADIR%%/help/de/hlp_status_to.txt
+%%DATADIR%%/help/de/hlp_version.txt
 %%DATADIR%%/help/en/hlp.txt
 %%DATADIR%%/help/en/hlp_add.txt
 %%DATADIR%%/help/en/hlp_alias.txt
@@ -22,6 +51,7 @@ bin/mcabber
 %%DATADIR%%/help/en/hlp_info.txt
 %%DATADIR%%/help/en/hlp_move.txt
 %%DATADIR%%/help/en/hlp_msay.txt
+%%DATADIR%%/help/en/hlp_pgp.txt
 %%DATADIR%%/help/en/hlp_quit.txt
 %%DATADIR%%/help/en/hlp_rawxml.txt
 %%DATADIR%%/help/en/hlp_rename.txt
@@ -50,6 +80,7 @@ bin/mcabber
 %%DATADIR%%/help/fr/hlp_info.txt
 %%DATADIR%%/help/fr/hlp_move.txt
 %%DATADIR%%/help/fr/hlp_msay.txt
+%%DATADIR%%/help/fr/hlp_pgp.txt
 %%DATADIR%%/help/fr/hlp_quit.txt
 %%DATADIR%%/help/fr/hlp_rawxml.txt
 %%DATADIR%%/help/fr/hlp_rename.txt
@@ -62,6 +93,35 @@ bin/mcabber
 %%DATADIR%%/help/fr/hlp_status.txt
 %%DATADIR%%/help/fr/hlp_status_to.txt
 %%DATADIR%%/help/fr/hlp_version.txt
+%%DATADIR%%/help/nl/hlp.txt
+%%DATADIR%%/help/nl/hlp_add.txt
+%%DATADIR%%/help/nl/hlp_alias.txt
+%%DATADIR%%/help/nl/hlp_authorization.txt
+%%DATADIR%%/help/nl/hlp_bind.txt
+%%DATADIR%%/help/nl/hlp_buffer.txt
+%%DATADIR%%/help/nl/hlp_clear.txt
+%%DATADIR%%/help/nl/hlp_connect.txt
+%%DATADIR%%/help/nl/hlp_del.txt
+%%DATADIR%%/help/nl/hlp_disconnect.txt
+%%DATADIR%%/help/nl/hlp_event.txt
+%%DATADIR%%/help/nl/hlp_group.txt
+%%DATADIR%%/help/nl/hlp_help.txt
+%%DATADIR%%/help/nl/hlp_info.txt
+%%DATADIR%%/help/nl/hlp_move.txt
+%%DATADIR%%/help/nl/hlp_msay.txt
+%%DATADIR%%/help/nl/hlp_pgp.txt
+%%DATADIR%%/help/nl/hlp_quit.txt
+%%DATADIR%%/help/nl/hlp_rawxml.txt
+%%DATADIR%%/help/nl/hlp_rename.txt
+%%DATADIR%%/help/nl/hlp_request.txt
+%%DATADIR%%/help/nl/hlp_room.txt
+%%DATADIR%%/help/nl/hlp_roster.txt
+%%DATADIR%%/help/nl/hlp_say.txt
+%%DATADIR%%/help/nl/hlp_say_to.txt
+%%DATADIR%%/help/nl/hlp_set.txt
+%%DATADIR%%/help/nl/hlp_status.txt
+%%DATADIR%%/help/nl/hlp_status_to.txt
+%%DATADIR%%/help/nl/hlp_version.txt
 %%DATADIR%%/help/pl/hlp.txt
 %%DATADIR%%/help/pl/hlp_add.txt
 %%DATADIR%%/help/pl/hlp_alias.txt
@@ -78,6 +138,7 @@ bin/mcabber
 %%DATADIR%%/help/pl/hlp_info.txt
 %%DATADIR%%/help/pl/hlp_move.txt
 %%DATADIR%%/help/pl/hlp_msay.txt
+%%DATADIR%%/help/pl/hlp_pgp.txt
 %%DATADIR%%/help/pl/hlp_quit.txt
 %%DATADIR%%/help/pl/hlp_rawxml.txt
 %%DATADIR%%/help/pl/hlp_rename.txt
@@ -90,11 +151,43 @@ bin/mcabber
 %%DATADIR%%/help/pl/hlp_status.txt
 %%DATADIR%%/help/pl/hlp_status_to.txt
 %%DATADIR%%/help/pl/hlp_version.txt
+%%DATADIR%%/help/uk/hlp.txt
+%%DATADIR%%/help/uk/hlp_add.txt
+%%DATADIR%%/help/uk/hlp_alias.txt
+%%DATADIR%%/help/uk/hlp_authorization.txt
+%%DATADIR%%/help/uk/hlp_bind.txt
+%%DATADIR%%/help/uk/hlp_buffer.txt
+%%DATADIR%%/help/uk/hlp_clear.txt
+%%DATADIR%%/help/uk/hlp_connect.txt
+%%DATADIR%%/help/uk/hlp_del.txt
+%%DATADIR%%/help/uk/hlp_disconnect.txt
+%%DATADIR%%/help/uk/hlp_event.txt
+%%DATADIR%%/help/uk/hlp_group.txt
+%%DATADIR%%/help/uk/hlp_help.txt
+%%DATADIR%%/help/uk/hlp_info.txt
+%%DATADIR%%/help/uk/hlp_move.txt
+%%DATADIR%%/help/uk/hlp_msay.txt
+%%DATADIR%%/help/uk/hlp_pgp.txt
+%%DATADIR%%/help/uk/hlp_quit.txt
+%%DATADIR%%/help/uk/hlp_rawxml.txt
+%%DATADIR%%/help/uk/hlp_rename.txt
+%%DATADIR%%/help/uk/hlp_request.txt
+%%DATADIR%%/help/uk/hlp_room.txt
+%%DATADIR%%/help/uk/hlp_roster.txt
+%%DATADIR%%/help/uk/hlp_say.txt
+%%DATADIR%%/help/uk/hlp_say_to.txt
+%%DATADIR%%/help/uk/hlp_set.txt
+%%DATADIR%%/help/uk/hlp_status.txt
+%%DATADIR%%/help/uk/hlp_status_to.txt
+%%DATADIR%%/help/uk/hlp_version.txt
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/contrib/themes
 @dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%/help/de
 @dirrm %%DATADIR%%/help/en
 @dirrm %%DATADIR%%/help/fr
+@dirrm %%DATADIR%%/help/nl
 @dirrm %%DATADIR%%/help/pl
+@dirrm %%DATADIR%%/help/uk
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
