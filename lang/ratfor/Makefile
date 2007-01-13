@@ -8,6 +8,7 @@
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://sepftp.stanford.edu/pub/sep-distr/  \
 		${MASTER_SITE_LOCAL}  \
@@ -25,8 +26,13 @@ EXTRACT_AFTER_ARGS=	| ${SH}
 ALL_TARGET=	all tests
 MAN1=		ratfor.1
 
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+F77=		gfortran42
+
 post-patch:
 	@cd ${WRKSRC} ; ${PATCH} --quiet < testw.patch
+	@${REINPLACE_CMD} -e 's|%%F77%%|${F77}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratfor77 ${PREFIX}/bin

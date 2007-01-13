@@ -1,0 +1,16 @@
+--- Makefile~	Sat Jan 13 18:13:44 2007
++++ Makefile	Sat Jan 13 18:14:35 2007
+@@ -28,11 +28,11 @@
+ 
+ test: ratfor
+ 	./ratfor -o test.f test.r
+-	f77 -o test test.f
++	%%F77%% -o test test.f
+ 
+ testw: ratfor
+ 	./ratfor -o testw.f testw.r
+-	f77 -o testw testw.f
++	%%F77%% -o testw testw.f
+ 
+ tests: test testw
+ 	./test
