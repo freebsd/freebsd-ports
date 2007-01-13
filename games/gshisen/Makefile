@@ -9,18 +9,16 @@ PORTNAME=	gshisen
 PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for GNUstep
 
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
 
 post-patch:
 	${REINPLACE_CMD} -e 's|)/Makefiles|)/Library/Makefiles|' \

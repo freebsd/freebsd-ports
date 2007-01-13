@@ -23,15 +23,16 @@ LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
 
-WRKSRC=		${WRKDIR}/cynthiune.app-${PORTVERSION}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
-MAKE_FLAGS=	disable-windowsmedia=yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 USE_GNOME+=	esound
+
+WRKSRC=		${WRKDIR}/cynthiune.app-${PORTVERSION}
+MAKE_FLAGS=	disable-windowsmedia=yes
+#ALL_TARGET=
 
 .include <bsd.port.mk>

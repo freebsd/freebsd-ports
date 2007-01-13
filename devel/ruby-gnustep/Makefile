@@ -8,7 +8,7 @@
 PORTNAME=	gnustep
 PORTVERSION=	0.2.2
 PORTREVISION=	1
-CATEGORIES=	devel ruby
+CATEGORIES=	devel lang ruby
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,13 +18,11 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Ruby interface to the GNUstep development environment
 
 USE_RUBY=	yes
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
-NO_FILTER_SHLIBS=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 post-extract:
 	${FIND} ${WRKSRC}/ -type f -name '.cvsignore' -delete

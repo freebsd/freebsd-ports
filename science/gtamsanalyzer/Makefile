@@ -15,13 +15,12 @@ DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Qualitative Research Software for the Free World for GNUstep
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/Source
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=	${WRKDIR}/${DISTNAME}/Source
 
 .include <bsd.port.mk>

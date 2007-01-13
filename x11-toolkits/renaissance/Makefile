@@ -9,22 +9,19 @@ PORTNAME=	renaissance
 PORTVERSION=	0.8.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.gnustep.it/Renaissance/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Renaissance-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	GNUstep GUI Development Framework
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-# broken:
-#USE_LDCONFIG=	yes
-INSTALL_SHLIBS=	yes
-MAKEFILE=	GNUmakefile
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>

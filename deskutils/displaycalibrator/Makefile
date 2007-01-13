@@ -13,13 +13,10 @@ MASTER_SITES=	http://www.linuks.mine.nu/displaycalibrator/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Frontend to xgamma
 
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
-ALL_TARGET=
 
 .include <bsd.port.mk>

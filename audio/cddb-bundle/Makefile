@@ -16,14 +16,12 @@ DISTNAME=	cddb.bundle-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	CDDB client bundle GNUstep
 
-WRKSRC=		${WRKDIR}/cddb.bundle
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
-ALL_TARGET=
+
+WRKSRC=		${WRKDIR}/cddb.bundle
 
 .include <bsd.port.mk>

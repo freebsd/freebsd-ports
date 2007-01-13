@@ -14,14 +14,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Basic text editor for GNUstep
 
-WRKSRC=		${WRKDIR}/textedit-${PORTVERSION}
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/textedit-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 

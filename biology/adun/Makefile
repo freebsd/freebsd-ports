@@ -16,15 +16,14 @@ COMMENT=	Molecular Simulator for GNUstep
 
 LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
 
-WRKSRC=		${WRKDIR}/Adun/
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
-NO_FILTER_SHLIBS=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
+
+WRKSRC=		${WRKDIR}/Adun
 
 post-patch:
 	${REINPLACE_CMD} -e 's|include Defs/|-include Defs/|' \

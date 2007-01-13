@@ -15,15 +15,14 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple, but very usable development environment
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
 USE_GNUSTEP_LOCAL_LIBS+=	WizardKit:${WIZARDKIT_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	HighlighterKit:${HIGHLIGHTERKIT_PORT}
+
 WIZARDKIT_PORT?=		devel/wizardkit
 HIGHLIGHTERKIT_PORT?=		devel/highlighterkit
 

@@ -9,19 +9,18 @@ PORTNAME=	aclock
 PORTVERSION=	0.2.3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.linuks.mine.nu/aclock/ \
-		http://io.debian.net/~tar/ports/distfiles/
+		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	aclock-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Analog Clock for GNUstep
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>

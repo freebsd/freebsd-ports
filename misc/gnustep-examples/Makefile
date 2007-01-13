@@ -14,29 +14,13 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep example applications
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-GUN_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
 
-MAKE_APPS=	Finger GFractal HostAddress
-INSTALL_APPS=	Finger GFractal HostAddress
-
-post-build:
-.for i in ${MAKE_APPS}
-	@(cd ${WRKSRC}/gui/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-.endfor
-
-post-install:
-.for i in ${INSTALL_APPS}
-	@(cd ${WRKSRC}/gui/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-.endfor
+WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_GNUSTEP_MAKE_DIRS+=	. gui/Finger gui/GFractal gui/HostAddress
 
 .include <bsd.port.mk>

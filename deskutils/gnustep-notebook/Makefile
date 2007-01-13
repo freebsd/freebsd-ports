@@ -15,12 +15,10 @@ DISTNAME=	NoteBook-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A place to store notes in an organized manner
 
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=
 
 .include <bsd.port.mk>

@@ -16,14 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	CPU time usage monitor for GNUstep
 
-WRKSRC=		${WRKDIR}/TimeMon
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
+
+WRKSRC=		${WRKDIR}/TimeMon
 
 post-patch:
 	${RM} ${WRKSRC}/shared_obj/loadave.o

@@ -15,13 +15,11 @@ DISTNAME=	MathArray-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Class library for mathematical manipulation of matrices
 
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
-NO_FILTER_SHLIBS=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 .include <bsd.port.mk>

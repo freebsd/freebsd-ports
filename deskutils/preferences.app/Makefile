@@ -17,15 +17,12 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	GNUmakefile
-LDCONFIG_DIRS=	${LOCALLIBDIR}
-INSTALLS_SHLIB=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
 		Modules/Keyboard/GNUmakefile.preamble \
