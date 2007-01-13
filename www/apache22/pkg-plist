@@ -205,6 +205,7 @@ libexec/apache22/httpd.exp
 %%MOD_DEFLATE%%libexec/apache22/mod_deflate.so
 %%MOD_DIR%%libexec/apache22/mod_dir.so
 %%MOD_DISK_CACHE%%libexec/apache22/mod_disk_cache.so
+%%MOD_DUMPIO%%libexec/apache22/mod_dumpio.so
 %%MOD_ENV%%libexec/apache22/mod_env.so
 %%MOD_EXPIRES%%libexec/apache22/mod_expires.so
 %%MOD_EXT_FILTER%%libexec/apache22/mod_ext_filter.so
