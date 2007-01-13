@@ -1,6 +1,6 @@
 bin/tvbrowser
-share/applications/tvbrowser.desktop
 %%DATADIR%%/LICENSE.txt
+%%DATADIR%%/enwiki.url
 %%DATADIR%%/forum.url
 %%DATADIR%%/icons/tango/16x16/actions/appointment-new.png
 %%DATADIR%%/icons/tango/16x16/actions/bookmark-new.png
@@ -128,10 +128,13 @@ share/applications/tvbrowser.desktop
 %%DATADIR%%/imgs/Info_BlackAndWhite.gif
 %%DATADIR%%/imgs/Info_DolbyDigital51.gif
 %%DATADIR%%/imgs/Info_DolbySurround.gif
+%%DATADIR%%/imgs/Info_HasPicture.png
 %%DATADIR%%/imgs/Info_Mono.gif
 %%DATADIR%%/imgs/Info_OriginalWithSubtitle.gif
+%%DATADIR%%/imgs/Info_OriginalWithSubtitle_EN.gif
 %%DATADIR%%/imgs/Info_Stereo.gif
 %%DATADIR%%/imgs/Info_SubtitleForAurallyHandicapped.gif
+%%DATADIR%%/imgs/Info_SubtitleForAurallyHandicapped_US.gif
 %%DATADIR%%/imgs/Info_TwoChannelTone.gif
 %%DATADIR%%/imgs/Jar16.gif
 %%DATADIR%%/imgs/TVBrowser.ico
@@ -157,11 +160,14 @@ share/applications/tvbrowser.desktop
 %%DATADIR%%/plugins/CapturePlugin.jar
 %%DATADIR%%/plugins/ClipboardPlugin.jar
 %%DATADIR%%/plugins/EMailPlugin.jar
+%%DATADIR%%/plugins/I18NPlugin.jar
 %%DATADIR%%/plugins/ListViewPlugin.jar
 %%DATADIR%%/plugins/NewsPlugin.jar
 %%DATADIR%%/plugins/PrintPlugin.jar
-%%DATADIR%%/plugins/SearchPlugin.jar
+%%DATADIR%%/plugins/RadioTimesDataService.jar
+%%DATADIR%%/plugins/SimpleMarkerPlugin.jar
 %%DATADIR%%/plugins/ShowviewPlugin.jar
+%%DATADIR%%/plugins/SweDBTvDataService.jar
 %%DATADIR%%/plugins/TVRaterPlugin.jar
 %%DATADIR%%/plugins/TvBrowserDataService.jar
 %%DATADIR%%/plugins/WebPlugin.jar
@@ -194,4 +200,3 @@ share/applications/tvbrowser.desktop
 @dirrm %%DATADIR%%/icons/tango
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrm share/applications
