@@ -433,6 +433,7 @@
     SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += opengl-man
+    SUBDIR += openjpeg
     SUBDIR += openproducer
     SUBDIR += openrm
     SUBDIR += ophoto

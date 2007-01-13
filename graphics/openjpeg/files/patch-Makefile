@@ -1,0 +1,33 @@
+--- Makefile.orig	Wed Feb  1 22:25:11 2006
++++ Makefile	Sat Jan 13 12:52:47 2007
+@@ -8,15 +8,13 @@
+ INCLUDE = -Ilibopenjpeg
+ 
+ # General configuration variables:
+-CC = gcc
+-AR = ar
+ 
+-INSTALLDIR = /usr/lib
++INSTALLDIR = $(PREFIX)/lib
+ 
+ # Converts cr/lf to just lf
+ DOS2UNIX = dos2unix
+ 
+-COMPILERFLAGS = -O3
++COMPILERFLAGS := $(CFLAGS)
+ LIBRARIES = -lstdc++
+ 
+ MODULES = $(SRCS:.c=.o)
+@@ -54,10 +52,9 @@
+ 	$(CC) -s -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) $(LIBRARIES)
+ 
+ install:
+-	install -m 644 -o root -g root $(STATICLIB) $(INSTALLDIR)
+-	install -m 755 -o root -g root $(SHAREDLIB) $(INSTALLDIR)
++	install -m 644 -o 0 -g 0 $(STATICLIB) $(INSTALLDIR)
++	install -m 755 -o 0 -g 0 $(SHAREDLIB) $(INSTALLDIR)
+ 	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(LIBNAME)
+-	ldconfig
+ 
+ clean:
+ 	rm -rf core dist/ u2dtmp* $(MODULES) $(STATICLIB) $(SHAREDLIB) $(LIBNAME)
