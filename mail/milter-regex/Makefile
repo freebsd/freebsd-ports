@@ -10,7 +10,6 @@ PORTNAME=	milter-regex
 PORTVERSION=	1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
-DISTNAME=	milter-regex-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter plugin to sendmail for regular expression filtering
@@ -19,29 +18,13 @@ DIST_SUBDIR=	repacked
 MAILUSER?=	mailnull
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 USE_RC_SUBR=	milterregex.sh
 SPOOLDIR?=	/var/run/milter-regex
 SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
 .include <bsd.port.pre.mk>
 
-.if defined(SENDMAIL_MILTER_PORT)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-.if !defined(SENDMAIL_MILTER_PORT)
-pre-everything::
-.if !exists(/usr/lib/libmilter.a)
-	${ECHO_CMD} "Fatal: milter required, see instructions in DESCR"
-	${FALSE}
-.endif
-.endif
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
