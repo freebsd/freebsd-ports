@@ -301,6 +301,7 @@
     SUBDIR += ksmp3play
     SUBDIR += ladspa
     SUBDIR += lame
+    SUBDIR += lash
     SUBDIR += laudio
     SUBDIR += liba52
     SUBDIR += liba52-devel

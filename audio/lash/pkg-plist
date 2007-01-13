@@ -1,0 +1,32 @@
+bin/lashd
+bin/lash_control
+bin/lash_save_button
+bin/lash_panel
+include/lash-1.0/lash/lash.h
+include/lash-1.0/lash/types.h
+include/lash-1.0/lash/xmalloc.h
+include/lash-1.0/lash/config.h
+include/lash-1.0/lash/event.h
+include/lash-1.0/lash/list.h
+include/lash-1.0/lash/file.h
+include/lash-1.0/lash/client_interface.h
+include/lash-1.0/lash/protocol.h
+include/lash-1.0/lash/loader.h
+include/lash-1.0/lash/exec_params.h
+lib/liblash.so.2
+lib/liblash.so
+lib/liblash.la
+lib/liblash.a
+libdata/pkgconfig/lash-1.0.pc
+%%DATADIR%%/dtds/lash-project-1.0.dtd
+%%DATADIR%%/icons/lash_16px.png
+%%DATADIR%%/icons/lash_24px.png
+%%DATADIR%%/icons/lash_48px.png
+%%DATADIR%%/icons/lash_96px.png
+%%DATADIR%%/icons/lash.svg
+%%DATADIR%%/icons/lash.xcf
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/dtds
+@dirrm %%DATADIR%%
+@dirrm include/lash-1.0/lash
+@dirrm include/lash-1.0

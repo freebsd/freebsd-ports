@@ -1,0 +1,12 @@
+LASH is a session management system for JACK audio applications.
+It is an implementation of a proposal that originated from this
+discussion.  Its aim is to allow you to have many different audio
+programs running at once, to save their setup, close them down and
+then easily reload the setup at some other time.  LASH doesn't deal
+with any kind of audio data itself; it just runs programs, deals
+with saving/loading (arbitrary) data and connects different kinds
+of virtual audio ports together (currently JACK and ALSA sequencer
+ports).  It can also be used to move entire sessions between
+computers, or post sessions on the Internet for download.
+
+WWW:	http://www.nongnu.org/lash/
