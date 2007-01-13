@@ -30,7 +30,7 @@ MSDOSFSPATCH=	msdosfs.diff.5
 CD9660PATCH=	cd9660.diff.5
 NTFSDIR=	${SYSDIR}/fs/ntfs
 NTFSPATCH=	ntfs.diff.5
-BROKEN=		"fails to patch"
+BROKEN=		"fails to patch - Included patches are broken"
 .else
 MSDOSFSDIR=	${SYSDIR}/msdosfs
 MSDOSFSKO=	msdos.ko
