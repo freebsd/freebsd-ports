@@ -8,6 +8,7 @@
 
 PORTNAME=	it++
 PORTVERSION=	3.8.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	itpp
@@ -16,14 +17,26 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematical, signal processing and communication library
 
-LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+.else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+BLAS=           -lblas
+.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	opt
 USE_GMAKE=	yes
 USE_GCC=	3.3+
-
-.include <bsd.port.pre.mk>
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|sparc|__sparc__|" \
