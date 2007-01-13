@@ -8,12 +8,12 @@
 PORTNAME=	shorten
 PORTVERSION=	3.6.0
 CATEGORIES=	audio archivers
-MASTER_SITES=	http://www.etree.org/shnutils/shorten/source/
+MASTER_SITES=	http://www.etree.org/shnutils/shorten/dist/src/
 
 MAINTAINER=	sec@42.org
 COMMENT=	Fast and optionally lossless compression for waveform files
 
-RESTRICTED=	"May not be sold, may not be used commercially."
+RESTRICTED=	May not be sold, may not be used commercially.
 
 GNU_CONFIGURE=	yes
 
