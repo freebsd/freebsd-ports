@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	exipick
-PORTVERSION=	20060307.1
+PORTVERSION=	20061117.2
 CATEGORIES=	mail
 MASTER_SITES=	http://jetmore.org/john/code/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Display messages from Exim queue based on a variety of criteria
 
 PLIST_FILES=	bin/${PORTNAME}
