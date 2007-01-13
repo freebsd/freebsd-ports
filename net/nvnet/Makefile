@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.onthenet.com.au/~q/nvnet/
 DISTFILES=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	q@onthenet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for NVIDIA MCP Ethernet adapter
 
 DISTVERSION=	20050312
@@ -30,8 +30,8 @@ MAKE_ENV=	OSTYPE=${OPSYS}
 IGNORE=		Systems prior to FreeBSD 4.9 & 5.1 are not supported
 .endif
 
-.if ${OSVERSION} >= 601104
-BROKEN=		Does not compile on FreeBSD >= 6.x
+.if ${OSVERSION} >= 600021
+IGNORE=		nve support already exists in base
 .endif
 
 pre-fetch:
