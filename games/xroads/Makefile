@@ -9,7 +9,8 @@ PORTNAME=	xroads
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/
+MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/\
+		http://smluc.org/~erik/files/fbsd/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	erik@smluc.org
