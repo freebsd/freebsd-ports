@@ -103,6 +103,7 @@
     SUBDIR += discid
     SUBDIR += dream
     SUBDIR += drumpiler
+    SUBDIR += dssi
     SUBDIR += dtmfdial
     SUBDIR += easytag
     SUBDIR += easytag-devel
