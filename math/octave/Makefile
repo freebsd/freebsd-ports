@@ -60,11 +60,11 @@ WITH_ATLAS=		yes
 .endif
 
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=		atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=	--with-blas="-L${LOCALBASE}/lib -lf77blas -lcblas -latlas" \
 			--with-lapack=-lalapack
 .else
-LIB_DEPENDS+=		blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
 CONFIGURE_ARGS+=	--with-blas="-L${LOCALBASE}/lib -lblas"
 .endif
 
