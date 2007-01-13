@@ -1,0 +1,23 @@
+--- ./libs/video/renderer/sw/Makefile.in.orig	Sun May  2 17:52:12 2004
++++ ./libs/video/renderer/sw/Makefile.in	Fri Jan 12 23:26:27 2007
+@@ -403,8 +403,8 @@
+ target_vendor = @target_vendor@
+ vid_libs = @vid_libs@
+ AUTOMAKE_OPTIONS = foreign
+-AM_CFLAGS = @PREFER_NON_PIC@
+-AM_CCASFLAGS = @PREFER_NON_PIC@
++AM_CFLAGS = @PREFER_PIC@
++AM_CCASFLAGS = @PREFER_PIC@
+ INCLUDES = -I$(top_srcdir)/include
+ @ASM_ARCH_FALSE@asm = 
+ @ASM_ARCH_TRUE@asm = libasm.la
+@@ -422,9 +422,7 @@
+ 	sw_redge.c sw_rmain.c sw_rmisc.c sw_rpart.c sw_rsky.c sw_rsprite.c \
+ 	sw_rsurf.c sw_skin.c
+ 
+-libasm_la_LDFLAGS = @STATIC@
+ libasm_la_SOURCES = $(asm_src)
+-libsw_la_LDFLAGS = @STATIC@
+ libsw_la_SOURCES = $(sw_src)
+ @ASM_ARCH_TRUE@libsw_la_LIBADD = $(asm)
+ @ASM_ARCH_TRUE@libsw_la_DEPENDENCIES = $(asm)
