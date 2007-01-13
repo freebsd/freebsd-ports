@@ -7,6 +7,7 @@
 
 PORTNAME=	umfpack
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/umfpack/v${PORTVERSION}/
 DISTNAME=	UMFPACKv${PORTVERSION}
@@ -14,32 +15,41 @@ DISTNAME=	UMFPACKv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unsymmetric-pattern MultiFrontal Package
 
-.ifdef WITH_ATLAS
-LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas
-.else
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
 .endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+.else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+BLAS=		-lblas
+.endif
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 CONFLICTS=	elmer-umfpack-4*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
 
-.ifdef WITH_ATLAS
-BLAS_LIBS=	-lf77blas -latlas
-.else
-BLAS_LIBS?=	-lblas
-.endif
-
 post-extract:
 	${CP}	${WRKDIR}/${DISTNAME}/AMD/Make/Make.linux	\
 		${WRKDIR}/${DISTNAME}/AMD/Make/Make.freebsd
 
 pre-build:
+	@${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ;	\
 	s+%%CFLAGS%%+${CFLAGS}+ ;		\
 	s+%%LOCALBASE%%+${LOCALBASE}+ ;		\
-	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ;'	\
+	s+%%GCCLIBDIR%%+${GCCLIBDIR}+ ;         \
+	s+%%FORTRANLIBS%%+${FORTRANLIBS}+ ;         \
+	s+%%BLAS%%+${BLAS}+ ;'	\
 	 ${WRKDIR}/${DISTNAME}/AMD/Make/Make.freebsd
 
 do-install:
