@@ -8,7 +8,7 @@
 
 PORTNAME=	libctl
 PORTVERSION=	3.0.2
-PORTREVISION	1
+PORTREVISION=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
