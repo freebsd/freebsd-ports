@@ -13,48 +13,25 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Sendmail milter wich uses Mcafee Virus Scan
+COMMENT=	Sendmail milter wich uses Mcafee Virus Scan or clamav
 
-RUN_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
-SENDMAIL_MILTER_PORT?=	sendmail
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		-lmilter ${PTHREAD_LIBS}
 ANTIVIRUS_DIR?=	/var/spool/antivirus
 PLIST_SUB+=	ANTIVIRUS=${ANTIVIRUS_DIR}
 SED_SCRIPT=	-e 's|%%ANTIVIRUS%%|${ANTIVIRUS_DIR}|g' \
 		-e 's|%%PREFIX%%|${PREFIX}|g'
-MAKE_ENV+=	SENDMAILBASE="${SENDMAILBASE}" \
-		SENDMAILOBJ="${SENDMAILOBJ}" \
-		LIBS="${LIBS}"
-
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		${LDFLAGS}
-SENDMAILBASE=	${LOCALBASE}
-SENDMAILOBJ=	${LOCALBASE}
-.else
-SENDMAILBASE=	/usr
-SENDMAILOBJ=	/usr
-.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(SENDMAIL_WITHOUT_MILTER)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
+.if defined(WITH_SENDMAIL_PORT)
+LIBS+=		${LDFLAGS}
 .endif
+MAKE_ENV+=	SENDMAILBASE="${MILTERBASE}" \
+		SENDMAILOBJ="${MILTERBASE}" \
+		LIBS="${LIBS}"
 
 do-configure:
 	@${REINPLACE_CMD} -e 's|/etc/mail/antivirus.conf|${LOCALBASE}/etc/antivirus.conf|' \

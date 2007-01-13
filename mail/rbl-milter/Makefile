@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-sendmail=/usr \
-		--with-sendmail-obj=/usr/lib
 
 PLIST_FILES=	sbin/rbl-milter etc/rc.d/rbl-milter.sh
 
@@ -35,4 +33,11 @@ post-install:
 		${PREFIX}/etc/rc.d/rbl-milter.sh
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
+CONFIGURE_ARGS+=	--with-sendmail=${MILTERBASE} \
+			--with-sendmail-obj=${MILTERBASE}/lib
+
+.include <bsd.port.post.mk>

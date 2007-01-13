@@ -19,42 +19,17 @@ COMMENT=	A vbs-attachment filter for Sendmail Milter
 SUB_FILES=	vbsfilter.sh
 PLIST_FILES=	libexec/vbsfilter etc/rc.d/vbsfilter.sh.sample
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
-SENDMAIL_MILTER_PORT?=	sendmail
 CTARGETS+=	vbsfilter-${PORTVERSION}
 LIBS+=		${PTHREAD_LIBS}
+LIBS+=		-lmilter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/include/libmilter/mfdef.h) \
-|| defined(SENDMAIL_MILTER_IN_BASE)
-LIBS+=		-lmilter
-.else
-LIBS+=		-lmilter -lsmutil
-.endif
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 .if defined(SENDMAIL_WITH_SFIO)
 LIBS+=		-lsfio
-.endif
-
-.if defined(SENDMAIL_WITHOUT_MILTER)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
 .endif
 
 do-extract:

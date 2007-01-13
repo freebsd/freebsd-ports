@@ -13,38 +13,22 @@ MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An attachment filter for Sendmail Milter
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
-SENDMAIL_MILTER_PORT?=	sendmail
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 GNU_CONFIGURE=	yes
 MAN8=		noattach.8
 DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .if defined(SENDMAIL_WITH_LDAP)
 CONFIGURE_ARGS+=	--enable-ldap
-.endif
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-CONFIGURE_ENV+=	MILTER_INCLUDES="-I${LOCALBASE}/include"
-MAKE_ENV+=	MILTER_INCLUDES="-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(SENDMAIL_WITHOUT_MILTER)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
+.if defined(WITH_SENDMAIL_PORT)
+CONFIGURE_ENV+=	MILTER_INCLUDES="${MILTERINC}"
+MAKE_ENV+=	MILTER_INCLUDES="${MILTERINC}"
 .endif
 
 pre-configure:

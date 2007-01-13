@@ -12,24 +12,11 @@ MASTER_SITES=	http://www.sendmail-filter.lsbu.ac.uk/
 DISTNAME=	rays-filter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A configurable filter for Sendmail milter
+COMMENT=	A configurable filter for Sendmail Milter
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
-SENDMAIL_MILTER_PORT?=	sendmail
 CTARGETS+=	rays-filter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		${PTHREAD_LIBS}
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
 ETCFILES=	header-list.conf mail-filter.conf string-list.conf
 BINFILES=	mf-reset mf-start mf-stop mf-archive mf-analyze mf-memory
 DOCSFILES=	rays-filter.html install.html configure.html operate.html \
@@ -37,8 +24,10 @@ DOCSFILES=	rays-filter.html install.html configure.html operate.html \
 
 .include <bsd.port.pre.mk>
 
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
 .if exists(${LOCALBASE}/include/libmilter/mfdef.h) \
-|| defined(SENDMAIL_MILTER_IN_BASE)
+|| defined(WITH_SENDMAIL_BASE)
 LIBS+=		-lmilter
 .else
 LIBS+=		-lmilter -lsmutil
@@ -46,14 +35,6 @@ LIBS+=		-lmilter -lsmutil
 
 .if defined(SENDMAIL_WITH_SFIO)
 LIBS+=		-lsfio
-.endif
-
-.if defined(SENDMAIL_WITHOUT_MILTER)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
 .endif
 
 .for i in ${CTARGETS}
