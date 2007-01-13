@@ -7,7 +7,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.2-p6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -54,7 +54,7 @@ PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 .if !defined(WITHOUT_UMFPACK)
 LIB_DEPENDS+=		umfpack.1:${PORTSDIR}/math/suitesparse
 CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
-			--with-umfpack-lib=[${LOCALBASE}/lib/libumfpack.a,${LOCALBASE}/lib/libamd.a]
+			--with-umfpack-lib=[${LOCALBASE}/lib/libumfpack.so,${LOCALBASE}/lib/libamd.so]
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -121,7 +121,7 @@ WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -latlas -lm"
+LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -lcblas -latlas -lm"
 CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
