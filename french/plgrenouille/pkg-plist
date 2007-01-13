@@ -1,8 +1,8 @@
 @comment $FreeBSD$
 @unexec if cmp -s %D/%%CONF_DIR%%/grenouillerc %D/%%CONF_DIR%%/grenouillerc.sample; then rm -f %D/%%CONF_DIR%%/grenouillerc; fi
+@unexec %%PREFIX%%/etc/rc.d/plgrenouille.sh stop
 %%CONF_DIR%%/grenouillerc.sample
 @comment no @exec: see pkg-install/+INSTALL for details.
-%%RC_DIR%%/plgrenouille.sh
 %%LBIN_DIR%%/plgrenouille
 %%SITE_PERL%%/Grenouille/Comm.pm
 %%SITE_PERL%%/Grenouille/Config.pm
