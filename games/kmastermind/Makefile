@@ -21,6 +21,12 @@ USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 pre-configure:
 	${LN} -sfh \
 		`cd ${PORTSDIR}/x11/kdelibs3 && ${MAKE} -V WRKSRC`/admin \
@@ -28,4 +34,4 @@ pre-configure:
 	${TOUCH} ${WRKSRC}/NEWS
 	cd ${WRKSRC}; ${MAKE} -f admin/Makefile.common cvs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
