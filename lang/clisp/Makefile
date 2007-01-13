@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
 		dvipdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
 
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON=	does not currently support this architecture
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
@@ -54,9 +56,6 @@ MODULES=	BDB CLX_MIT CLX_NEW FASTCGI ORACLE PARI PCRE PGSQL RAWSOCK \
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CONFIGURE_ARGS+=--disable-mmap
 MAKEMAKE_ARGS+=	--disable-mmap
 .endif
@@ -106,7 +105,7 @@ ORACLE_HOME=	${LOCALBASE}/oracle8-client
 .if defined(WITH_PARI)
 LIB_DEPENDS+=	pari.2:${PORTSDIR}/math/pari
 MAKEMAKE_ARGS+=	--with-module=pari
-BROKEN=		Lisp stack overflow during build
+BROKEN=		Lisp stack overflow when building PARI module
 .endif
 
 .if defined(WITH_PCRE)
