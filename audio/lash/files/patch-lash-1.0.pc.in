@@ -1,0 +1,11 @@
+--- lash-1.0.pc.in.orig	Sat Jan 13 16:25:45 2007
++++ lash-1.0.pc.in	Sat Jan 13 16:25:50 2007
+@@ -5,7 +5,7 @@
+ 
+ Name: LASH
+ Description: Audio session management
+-Requires: jack alsa
++Requires: jack
+ Version: @PACKAGE_VERSION@
+ Libs: -llash
+ Libs.static: -lpthread -luuid
