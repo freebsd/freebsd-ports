@@ -5894,6 +5894,7 @@ lapack95	ports/math/lapack95
 lapispuzzle	ports/games/lapispuzzle
 larbin		ports/www/larbin
 larswm		ports/x11-wm/larswm
+lash		ports/audio/lash
 lasi		ports/devel/lasi
 laspack		ports/math/laspack
 latd		ports/net/latd
