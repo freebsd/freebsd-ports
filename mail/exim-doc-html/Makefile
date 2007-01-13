@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.63
+PORTVERSION=	4.66
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_EXIM} \
+MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/} \
+		${MASTER_SITE_LOCAL:S/$/:local/} \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	exim4
+MASTER_SITE_SUBDIR=	exim4/:exim dryice/:local
 PKGNAMESUFFIX=	-doc-${DOCFORMAT}
 DISTNAME=	exim-${DISTDOCFORMAT}-${PORTVERSION}
+DISTFILES=	${DISTNAME}.tar.bz2:exim,local
 DIST_SUBDIR=	exim
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USE_BZIP2=	yes
