@@ -6,6 +6,7 @@
 
 PORTNAME=	libghemical
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/ \
 		http://bioinformatics.org/ghemical/download/
@@ -14,10 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmpqc.a:${PORTSDIR}/science/mpqc \
-		openbabel:${PORTSDIR}/science/openbabel \
+BUILD_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel \
 		mopac7:${PORTSDIR}/biology/mopac
-
+LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
@@ -25,19 +25,26 @@ USE_LDCONFIG=   yes
 
 .include <bsd.port.pre.mk>
 
+WANT_FORTRAN=yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS+=	--with-blas="-L${LOCALBASE}/lib -lf77blas -lcblas -latlas" \
-			--with-lapack=-lalapack
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack
 .else
-LIB_DEPENDS+=		blas.1:${PORTSDIR}/math/blas
-CONFIGURE_ARGS+=	--with-blas="-L${LOCALBASE}/lib -lblas" \
-			--with-lapack=-lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
 .endif
-CONFIGURE_ARGS+=	--enable-mopac7 --enable-mpqc --enable-openbabel
+
+CONFIGURE_ARGS+=	--enable-mopac7 --enable-mpqc --enable-openbabel --with-blas="-L${LOCALBASE}/lib ${BLAS}" -with-lapack="-L${LOCALBASE}/lib ${LAPACK}"
 
 USE_AUTOTOOLS=	autoconf:259
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
