@@ -1,2 +1,0 @@
-#!/bin/sh
-cd %%DATADIR%% && exec %%LOCALBASE%%/bin/java -jar tvbrowser.jar "$@"
