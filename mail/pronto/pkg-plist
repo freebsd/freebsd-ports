@@ -54,12 +54,10 @@ lib/pronto/migration-scripts/combine.sh
 lib/pronto/migration-scripts/convert-dates.pl
 lib/pronto/migration-scripts/dbmigrate.pl
 lib/pronto/migration-scripts/dbswitch.pl
-lib/pronto/migration-scripts/dbswitch.pl~
 lib/pronto/migration-scripts/decodesubj.pl
 lib/pronto/migration-scripts/dropconfig.pl
 lib/pronto/migration-scripts/filter.pl
 lib/pronto/migration-scripts/fixboxlist.pl
-lib/pronto/migration-scripts/fixboxlist.pl~
 lib/pronto/migration-scripts/fixcontent.sh
 lib/pronto/migration-scripts/migrate.pl
 lib/pronto/migration-scripts/mkaddbtable.pl
