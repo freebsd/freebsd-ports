@@ -1,0 +1,13 @@
+Mondrian is a cross-platform project-manager and editor
+for the Ruby language.
+Written in 100% native Ruby using the FOX GUI toolkit,
+Mondrian has the familiar look and feel of a modern IDE.
+Some features include:
+
+    * a dynamic object browser
+    * runtime error integration
+    * a full-featured project manager
+    * syntax highlighting
+    * runs identically on Windows and Linux
+
+WWW:	http://www.mondrian-ide.com/
