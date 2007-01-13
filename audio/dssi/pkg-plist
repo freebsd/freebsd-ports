@@ -1,0 +1,20 @@
+bin/jack-dssi-host
+bin/dssi_osc_send
+bin/dssi_osc_update
+bin/trivial_synth
+bin/less_trivial_synth
+bin/trivial_sampler
+include/dssi.h
+lib/dssi/trivial_synth.so
+lib/dssi/trivial_synth.la
+lib/dssi/less_trivial_synth.so
+lib/dssi/less_trivial_synth.la
+%%WITH_QT%%lib/dssi/less_trivial_synth/LTS_qt
+lib/dssi/trivial_sampler.so
+lib/dssi/trivial_sampler.la
+%%WITH_QT%%lib/dssi/trivial_sampler/trivial_sampler_qt
+libdata/pkgconfig/dssi.pc
+@dirrm libdata/pkgconfig
+@dirrm lib/dssi/trivial_sampler
+@dirrm lib/dssi/less_trivial_synth
+@dirrm lib/dssi
