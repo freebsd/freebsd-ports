@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rapidsvn
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.rapidsvn.org/download/
+MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-docbook-xsl-manpages=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl \
 	--with-manpage=yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAN1=		rapidsvn.1
 
 post-install:
