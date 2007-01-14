@@ -100,7 +100,6 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 			--exclude .cvsignore			\
 			--exclude makefile.win			\
 			--exclude MANIFEST			\
-			--exclude */nsprpub/*			\
 			--exclude mozilla/modules/libimg/png	\
 			--exclude mozilla/jpeg			\
 			--exclude mozilla/dbm			\
