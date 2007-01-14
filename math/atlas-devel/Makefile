@@ -25,6 +25,7 @@ NO_PACKAGE=	Optimizes for the local machine, so a package is not generally usefu
 CONFLICTS=	elmer-mathlibs-1*
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 USE_LDCONFIG=	yes
 
@@ -34,7 +35,7 @@ NOT_FOR_ARCHS=	alpha
 
 #to compile the ATLAS kernel we use gcc3. See ATLAS/INSTALL.txt for details.
 WANT_FORTRAN=	yes
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=	gfortran42
 F77=	gfortran42
 .if ${OSVERSION} > 700000
@@ -61,9 +62,9 @@ FFLAGS+=	-pipe -O2 -ffast-math
 .endif
 .endif
 .if defined(WITH_STATICLIB)
-PLIST_SUB+=      WITH_STATICLIB=""
+PLIST_SUB+=	WITH_STATICLIB=""
 .else
-PLIST_SUB+=      WITH_STATICLIB="@comment "
+PLIST_SUB+=	WITH_STATICLIB="@comment "
 .endif
 
 post-extract:
