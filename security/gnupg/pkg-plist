@@ -4,10 +4,10 @@ bin/gpg2
 bin/gpgconf
 bin/gpgkey2ssh
 bin/gpgparsemail
-bin/gpgsm
+%%GPGSM%%bin/gpgsm
 bin/gpgsm-gencert.sh
 bin/gpgv2
-bin/kbxutil
+%%GPGSM%%bin/kbxutil
 %%SCDAEMON%%bin/scdaemon
 bin/watchgnupg
 %%SCDAEMON%%libexec/gnupg-pcsc-wrapper

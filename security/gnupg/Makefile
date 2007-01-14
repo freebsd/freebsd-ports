@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -16,12 +17,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
+BUILD_DEPENDS=	libassuan>=1.0.1:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
-RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
 
 CONFLICTS=	gnupg-devel-[0-9]*
 
@@ -33,7 +33,7 @@ USE_LDCONFIG=	YES
 USE_GETTEXT=	YES
 CONFIGURE_TARGET=# empty
 CONFIGURE_ARGS+=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
-	--enable-nls --with-libpth-prefix=${LOCALBASE}/lib/pth
+	--enable-nls
 MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
 		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
 		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
@@ -42,18 +42,25 @@ INFO=		gnupg
 
 OPTIONS=	LDAP "LDAP keyserver interface" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
-		CURL "Use the real curl library (worked around if no)" on
+		CURL "Use the real curl library (worked around if no)" on \
+		GPGSM "Enable GPGSM" on
 PLIST_SUB=	NLS=""
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_GPGSM)
+CONFIGURE_ARGS+=--disable-gpgsm
+PLIST_SUB+=	GPGSM="@comment "
+.else
+RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
+WITH_LDAP=	YES
+PLIST_SUB+=	GPGSM=""
+.endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	YES
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP=""
-.if defined(WITHOUT_LDAP)
-BROKEN=		Conflict options: WITHOUT_LDAP/WITH_LDAP
-.endif
 .else
 CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
@@ -63,9 +70,6 @@ PLIST_SUB+=	LDAP="@comment "
 CONFIGURE_ARGS+=--enable-scdaemon
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 PLIST_SUB+=	SCDAEMON=""
-.if defined(WITHOUT_SCDAEMON)
-BROKEN=		Conflict options: WITHOUT_SCDAEMON/WITH_SCDAEMON
-.endif
 .else
 CONFIGURE_ARGS+=--disable-scdaemon
 PLIST_SUB+=	SCDAEMON="@comment "
@@ -73,9 +77,6 @@ PLIST_SUB+=	SCDAEMON="@comment "
 
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=--without-libcurl
-.if defined(WITH_CURL)
-BROKEN=		Conflict options: WITHOUT_CURL/WITH_CURL
-.endif
 .else
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
