@@ -5,7 +5,7 @@
 
 PORTNAME=	ooo-build
 PORTVERSION=	${OOOBUILD_VERSION}
-MASTER_SITES+=	http://www.go-ooo.org/packages/OOD680/ \
+MASTER_SITES+=	http://www.go-ooo.org/packages/OOE680/ \
 		http://www.go-ooo.org/packages/SRC680/ \
 		http://www.openclipart.org/downloads/0.18/:openclipart
 DISTFILES+=	${OOOBUILD_SOURCE} \
@@ -30,10 +30,10 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOOBUILD_VERSION=2.0.4.3
-OOOBUILD_TAG=ood680-m5
-OOOSRC=		OOo_2.0.4_src.tar.gz
-OOOTAG=		OOD680_m5
+OOOBUILD_VERSION=2.1
+OOOBUILD_TAG=ooe680-m6
+OOOSRC=		OOo_OOE680_m6_source.tar.bz2
+OOOTAG=		OOE680_m6
 OOOBUILD=	ooo-build-${OOOBUILD_VERSION}
 #OOOBUILD=	ooo-build-${OOOBUILD_TAG}
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
