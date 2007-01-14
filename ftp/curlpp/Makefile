@@ -19,6 +19,7 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_GCC=	3.4
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-ewarning
