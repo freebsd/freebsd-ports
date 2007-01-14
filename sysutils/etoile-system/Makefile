@@ -8,8 +8,7 @@
 PORTNAME=	system
 PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~%%SUBDIR%%/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	Etoile-${SNAPSHOT}
