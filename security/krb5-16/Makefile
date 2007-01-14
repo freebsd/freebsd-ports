@@ -31,8 +31,13 @@ CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 KRB5_KRB4_COMPAT?=	NO
+KRB5_DOC?=		YES
 
+.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES"
+BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/teTeX-base \
+			dvips:${PORTSDIR}/print/dvipsk-tetex
 INFO=			krb425 krb5-admin krb5-install krb5-user
+.endif
 
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
@@ -95,13 +100,15 @@ pre-build:
 .endif
 
 post-build:
+.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES"
 	@cd ${WRKSRC}/../doc && \
 	${MAKE} all
+.endif
 
 post-install:
-# html documentation
-.if defined(WANT_HTML) && ${WANT_HTML} == "YES"
 	@${MKDIR} ${PREFIX}/share/doc/krb5
+# html documentation
+.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES" && defined(WANT_HTML) && ${WANT_HTML} == "YES"
 	for html in ${HTML_DOC_DIR}/*.html; do \
 		${INSTALL_MAN} $${html} ${PREFIX}/share/doc/krb5; \
 		${ECHO_CMD} share/doc/krb5/`${BASENAME} $${html}` >> ${TMPPLIST}; \
@@ -109,9 +116,12 @@ post-install:
 .endif
 	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
 # handle info files
+.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES"
 .for info in ${INFO}
 	${INSTALL_MAN} ${WRKSRC}/../doc/${info}.info ${PREFIX}/info/${info}.info
 .endfor
+.endif
+
 # fixup packing list (no libs without version numbers in aout case)
 .if ${PORTOBJFORMAT} == "aout"
 	${ECHO_MSG} "Fixing packing list for a.out"
