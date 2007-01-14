@@ -7,6 +7,7 @@
 
 PORTNAME=	aspell
 DISTVERSION=	6-he-0.9-0
+PORTEPOCH=	1
 CATEGORIES=	hebrew textproc
 
 MAINTAINER=	ports@FreeBSD.org
