@@ -929,6 +929,7 @@
     SUBDIR += py-django
     SUBDIR += py-django-devel
     SUBDIR += py-fcgi
+    SUBDIR += py-flup
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
     SUBDIR += py-htmltestcase
