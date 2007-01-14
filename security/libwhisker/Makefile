@@ -21,6 +21,9 @@ USE_PERL5=	yes
 PLIST_FILES=	${SITE_PERL_REL}/LW.pm \
 		${SITE_PERL_REL}/LW2.pm
 
+MAN3=		LW2.3pm
+MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/perl/
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
