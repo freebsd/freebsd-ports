@@ -12223,6 +12223,7 @@ py-flac		ports/audio/py-flac
 py-flakes	ports/devel/py-flakes
 py-flowtools	ports/net-mgmt/py-flowtools
 py-fltk		ports/x11-toolkits/py-fltk
+py-flup		ports/www/py-flup
 py-fngrab	ports/net-p2p/py-fngrab
 py-fonttools	ports/print/py-fonttools
 py-forgethtml	ports/www/py-forgethtml
