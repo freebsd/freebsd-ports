@@ -45,5 +45,7 @@ INFO=		sawfish
 post-patch:
 	@${REINPLACE_CMD} -e 's|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|[$$][(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|prog_name|program_name|g' \
+	    	${WRKSRC}/src/main.c
 
 .include <bsd.port.mk>
