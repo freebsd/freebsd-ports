@@ -1,4 +1,5 @@
 bin/squirrel-sql
+share/applications/squirrel-sql.desktop
 share/java/squirrel-sql/doc/changes.txt
 share/java/squirrel-sql/doc/faq.html
 share/java/squirrel-sql/doc/images/add_alias_1.png
@@ -49,6 +50,7 @@ share/java/squirrel-sql/lib/commons-logging-1.0.4.jar
 share/java/squirrel-sql/lib/forms.jar
 share/java/squirrel-sql/lib/fw.jar
 share/java/squirrel-sql/lib/hibernate3.jar
+share/java/squirrel-sql/lib/jxl.jar
 share/java/squirrel-sql/lib/log4j.jar
 share/java/squirrel-sql/lib/nanoxml-2.1.jar
 share/java/squirrel-sql/log4j.properties
@@ -169,3 +171,4 @@ share/java/squirrel-sql/squirrel-sql.jar
 @dirrm share/java/squirrel-sql/doc/images
 @dirrm share/java/squirrel-sql/doc
 @dirrm share/java/squirrel-sql
+@dirrmtry share/applications
