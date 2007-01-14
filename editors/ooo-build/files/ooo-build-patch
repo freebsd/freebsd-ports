@@ -1,7 +1,6 @@
-gnu patch is gpatch for FreeBSD.
---- patches/apply.pl	Tue Nov  1 00:07:02 2005
-+++ patches/apply.pl	Tue Nov  1 00:07:32 2005
-@@ -473,7 +473,7 @@
+--- patches/apply.pl.orig	Thu Jan  4 05:16:03 2007
++++ patches/apply.pl	Sun Jan 14 06:55:07 2007
+@@ -722,7 +722,7 @@
      my $ver_line;
      my $is_old = 1;
  
@@ -10,7 +9,7 @@ gnu patch is gpatch for FreeBSD.
      $ver_line = <$Patch>;
      $ver_line =~ m/\s+(\d+)\.(\d+)\.(\d+)/ || die "Can't get patch version\n";
      if ($1 >= 2 && $2 >= 5 && $3 >= 9) {
-@@ -597,7 +597,7 @@
+@@ -1006,7 +1006,7 @@
      $applied_patches = $dest_dir.'/applied_patches';
  
      $opts = join ' ', @arguments;
@@ -20,27 +19,18 @@ gnu patch is gpatch for FreeBSD.
  	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
      }
 
---- patches/src680/apply.orig	Thu Aug 31 02:44:39 2006
-+++ patches/src680/apply	Sat Sep  2 14:50:24 2006
-@@ -81,6 +81,8 @@
- # Novell
- NovellWin32: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver, cairocanvas
+--- patches/src680/apply.orig	Fri Jan 12 06:43:19 2007
++++ patches/src680/apply	Sun Jan 14 06:43:42 2007
+@@ -96,6 +96,8 @@
  NovellWin32ISO: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver, cairocanvas
+ # Mac OS X
+ MacOSX : MacOSXCommon, SystemJavaBits, CalcSolver, MacOSXOnly
 +# FreeBSD
 +FreeBSD : LinuxCommon, NotDebian, Lockdown, CalcSolver
  # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
  
  
-@@ -169,7 +169,7 @@
- cws-cmcfixes28.diff
- 
- # fix build with newer gccs
--buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
-+# buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
- 
- # [ LinuxOnly ]
- 
-@@ -755,7 +757,7 @@
+@@ -781,7 +783,7 @@
  autodoc-add-missing-stdio-h.diff, rengelha
  
  # do not pack any potential .orig files with ppds
@@ -49,21 +39,30 @@ gnu patch is gpatch for FreeBSD.
  
  # changes the SDK gid module name to gid_Module_Root_SDK, so the generated list
  # of files does not conflict with the main package, i#64802
-@@ -848,7 +850,7 @@
- buildfix-gcc41-pointers-icu.diff, pmladek
+@@ -873,7 +875,7 @@
+ warning-uninitialized-variables-tools-2.diff, i#58984, pmladek
  
  # Don't re-define NULL
 -solar-dont-define-NULL.diff, i#66666, jholesov
 +# solar-dont-define-NULL.diff, i#66666, jholesov
  
  # Fix warnings that appear on x86-64 & are considered dangerous
- # FIXME file up-stream
-@@ -908,7 +908,7 @@
- sixtyfour-warnings-binfilter.diff, jholesov
+ sixtyfour-warnings-svx.diff, i#70594, jholesov
+@@ -887,7 +889,7 @@
+ buildfix-gcc41-pointers-icu.diff, pmladek
+ 
+ # fix build with newer gccs
+-buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
++# buildfix-gcc-4.1.2-NULL.diff, rengelha, i#70684
+ 
+ [ BFBuildBits ]
+ SectionOwner => pmladek
+@@ -903,7 +905,7 @@
+ sixtyfour-warnings-binfilter.diff, i#70594, jholesov
  
  # fix build with newer gccs
 -buildfix-binfilter-gcc-4.1.2-NULL.diff, rengelha, i#70684
 +# buildfix-binfilter-gcc-4.1.2-NULL.diff, rengelha, i#70684
  
- [ VCL ]
  
+ [ VCL ]
