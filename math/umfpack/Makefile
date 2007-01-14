@@ -15,6 +15,21 @@ DISTNAME=	UMFPACKv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unsymmetric-pattern MultiFrontal Package
 
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+
+WANT_FORTRAN=	yes #dummy but future use
+FC=		gfortran42
+F77=		gfortran42
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
+CONFLICTS=	elmer-umfpack-4* suitesparse-2*
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
+ALL_TARGET=	lib
+
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
@@ -26,17 +41,9 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS=		-lblas
 .endif
 
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-FORTRANLIBS=	-lgfortranbegin -lgfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
-
-CONFLICTS=	elmer-umfpack-4*
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
-ALL_TARGET=	lib
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 
 post-extract:
 	${CP}	${WRKDIR}/${DISTNAME}/AMD/Make/Make.linux	\
@@ -79,12 +86,6 @@ do-install:
 .if defined(MAINTAINER_MODE)
 regression-test:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} hb )
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
 .endif
 
 .include <bsd.port.post.mk>
