@@ -9,7 +9,7 @@ PORTNAME=	xmms-shn
 PORTVERSION=	2.4.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/source/
+MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 
 MAINTAINER=	naddy@FreeBSD.Org
 COMMENT=	XMMS plugin to allow playing shorten-compressed audio
