@@ -10,7 +10,7 @@ DISTVERSION=	6-gu-0.02-0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Gujarati dictionary
 
 DICT=	 	gu
