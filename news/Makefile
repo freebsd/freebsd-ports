@@ -101,6 +101,7 @@
     SUBDIR += ubh
     SUBDIR += unpost
     SUBDIR += xmitbin
+    SUBDIR += xpn
     SUBDIR += xrn
     SUBDIR += yencode
     SUBDIR += yydecode
