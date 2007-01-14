@@ -13,7 +13,7 @@ MASTER_SITES=	http://chitchat.at.infoseek.co.jp/vmware/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VM Back Command Line Tools for VMware
 
-ONLY_FOR_ARCHS=	i386 
+ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USE_ICONV=	yes
 
@@ -21,7 +21,7 @@ SBINS=		vmw vmshrink vmftp
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README-eucj.TXT README-sjis.TXT README.TXT
-.for i in ${SBINS} 
+.for i in ${SBINS}
 PORTDOCS+=	${i}-eucj.txt ${i}-sjis.txt ${i}.txt
 .endfor
 .endif
@@ -38,4 +38,10 @@ do-install:
 	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		not supported, CLOCK_REALTIME needed
+.endif
+
+.include <bsd.port.post.mk>
