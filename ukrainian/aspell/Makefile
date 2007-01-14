@@ -7,6 +7,7 @@
 
 PORTNAME=	aspell
 DISTVERSION=	6-uk-1.1-0
+PORTEPOCH=	1
 CATEGORIES=	ukrainian textproc
 
 MAINTAINER=	ports@FreeBSD.org
