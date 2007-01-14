@@ -8,8 +8,7 @@
 PORTNAME=	unitkit
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~%%SUBDIR%%/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	Etoile-${SNAPSHOT}
