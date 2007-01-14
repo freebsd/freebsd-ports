@@ -17,7 +17,7 @@ MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Filename-manipulating functions for Lua 5
 
 USE_LUA?=	5.1
-LUA_COMPS=	posix
+LUA_COMPS=	lua posix
 .if ${USE_LUA} == 5.0
 LUA_COMPS+=	compat51
 .endif
@@ -27,7 +27,6 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/filename.lua
 
 post-extract:
-	echo ${LV}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/filename.lua
 
 do-install:
