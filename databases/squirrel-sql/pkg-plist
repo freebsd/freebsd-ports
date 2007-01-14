@@ -1,5 +1,4 @@
 bin/squirrel-sql
-share/applications/squirrel-sql.desktop
 share/java/squirrel-sql/doc/changes.txt
 share/java/squirrel-sql/doc/faq.html
 share/java/squirrel-sql/doc/images/add_alias_1.png
