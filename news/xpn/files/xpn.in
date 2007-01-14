@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+if [ -z "$1" ] ; then
+    export XPN_ARGS=-d
+else
+    export XPN_ARGS="$@"
+fi
+exec %%PYTHON_CMD%% %%DATADIR%%/%%XPN%% ${XPN_ARGS}

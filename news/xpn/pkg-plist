@@ -1,0 +1,119 @@
+@comment $FreeBSD$
+bin/xpn
+%%PORTDOCS%%%%DOCSDIR%%/xpn.html
+%%DATADIR%%/lang/de/LC_MESSAGES/xpn.mo
+%%DATADIR%%/lang/fr/LC_MESSAGES/xpn.mo
+%%DATADIR%%/lang/it/LC_MESSAGES/xpn.mo
+%%DATADIR%%/lang/xpn.pot
+%%DATADIR%%/pixmaps/about.xpm
+%%DATADIR%%/pixmaps/art_body.xpm
+%%DATADIR%%/pixmaps/art_fup.xpm
+%%DATADIR%%/pixmaps/art_ignore.xpm
+%%DATADIR%%/pixmaps/art_keep.xpm
+%%DATADIR%%/pixmaps/art_mark.xpm
+%%DATADIR%%/pixmaps/art_read.xpm
+%%DATADIR%%/pixmaps/art_unkeep.xpm
+%%DATADIR%%/pixmaps/art_unread.xpm
+%%DATADIR%%/pixmaps/art_unwatchignore.xpm
+%%DATADIR%%/pixmaps/art_watch.xpm
+%%DATADIR%%/pixmaps/cancel.xpm
+%%DATADIR%%/pixmaps/collapse.xpm
+%%DATADIR%%/pixmaps/collapse_all.xpm
+%%DATADIR%%/pixmaps/conf.xpm
+%%DATADIR%%/pixmaps/config-display.png
+%%DATADIR%%/pixmaps/config-groups.png
+%%DATADIR%%/pixmaps/config-misc.png
+%%DATADIR%%/pixmaps/config-posting.png
+%%DATADIR%%/pixmaps/config-servers.png
+%%DATADIR%%/pixmaps/config-users.png
+%%DATADIR%%/pixmaps/de.xpm
+%%DATADIR%%/pixmaps/delete.xpm
+%%DATADIR%%/pixmaps/dialog-error.xpm
+%%DATADIR%%/pixmaps/discard.xpm
+%%DATADIR%%/pixmaps/editor.xpm
+%%DATADIR%%/pixmaps/email.gif
+%%DATADIR%%/pixmaps/en.xpm
+%%DATADIR%%/pixmaps/exit.xpm
+%%DATADIR%%/pixmaps/expand.xpm
+%%DATADIR%%/pixmaps/expand_all.xpm
+%%DATADIR%%/pixmaps/find.xpm
+%%DATADIR%%/pixmaps/folder.xpm
+%%DATADIR%%/pixmaps/folder_open.xpm
+%%DATADIR%%/pixmaps/followup.xpm
+%%DATADIR%%/pixmaps/fr.xpm
+%%DATADIR%%/pixmaps/global_search.xpm
+%%DATADIR%%/pixmaps/groups.xpm
+%%DATADIR%%/pixmaps/it.xpm
+%%DATADIR%%/pixmaps/layout1.xpm
+%%DATADIR%%/pixmaps/layout2.xpm
+%%DATADIR%%/pixmaps/layout3.xpm
+%%DATADIR%%/pixmaps/layout4.xpm
+%%DATADIR%%/pixmaps/layout5.xpm
+%%DATADIR%%/pixmaps/lower_score.xpm
+%%DATADIR%%/pixmaps/mark.xpm
+%%DATADIR%%/pixmaps/mark_all.xpm
+%%DATADIR%%/pixmaps/mark_multiple.xpm
+%%DATADIR%%/pixmaps/next.xpm
+%%DATADIR%%/pixmaps/next_unread.xpm
+%%DATADIR%%/pixmaps/outbox.xpm
+%%DATADIR%%/pixmaps/part.xpm
+%%DATADIR%%/pixmaps/post.xpm
+%%DATADIR%%/pixmaps/previous.xpm
+%%DATADIR%%/pixmaps/raise_score.xpm
+%%DATADIR%%/pixmaps/raw.xpm
+%%DATADIR%%/pixmaps/receive_bodies.xpm
+%%DATADIR%%/pixmaps/receive_bodies_selected.xpm
+%%DATADIR%%/pixmaps/receive_headers.xpm
+%%DATADIR%%/pixmaps/receive_headers_selected.xpm
+%%DATADIR%%/pixmaps/reply.xpm
+%%DATADIR%%/pixmaps/rot13.xpm
+%%DATADIR%%/pixmaps/score.xpm
+%%DATADIR%%/pixmaps/search.xpm
+%%DATADIR%%/pixmaps/send.xpm
+%%DATADIR%%/pixmaps/send_queue.xpm
+%%DATADIR%%/pixmaps/send_queued_art.xpm
+%%DATADIR%%/pixmaps/send_queued_mail.xpm
+%%DATADIR%%/pixmaps/set_score.xpm
+%%DATADIR%%/pixmaps/spoiler_char.xpm
+%%DATADIR%%/pixmaps/supersede.xpm
+%%DATADIR%%/pixmaps/xpn-icon.png
+%%DATADIR%%/pixmaps/xpn-logo-small.png
+%%DATADIR%%/pixmaps/xpn.xpm
+%%DATADIR%%/xpn.py
+%%DATADIR%%/xpn_src/Article.py
+%%DATADIR%%/xpn_src/Article_Pane.py
+%%DATADIR%%/xpn_src/Charset_List.py
+%%DATADIR%%/xpn_src/Config_File.py
+%%DATADIR%%/xpn_src/Config_Win.py
+%%DATADIR%%/xpn_src/Connections_Handler.py
+%%DATADIR%%/xpn_src/Dialogs.py
+%%DATADIR%%/xpn_src/Edit_Mail_Win.py
+%%DATADIR%%/xpn_src/Edit_Win.py
+%%DATADIR%%/xpn_src/Find_Win.py
+%%DATADIR%%/xpn_src/Groups_Pane.py
+%%DATADIR%%/xpn_src/Groups_Win.py
+%%DATADIR%%/xpn_src/Headers_List.py
+%%DATADIR%%/xpn_src/KeyBindings.py
+%%DATADIR%%/xpn_src/ListThread.py
+%%DATADIR%%/xpn_src/Newsrc.py
+%%DATADIR%%/xpn_src/Outbox_Manager.py
+%%DATADIR%%/xpn_src/Score.py
+%%DATADIR%%/xpn_src/Server_Win.py
+%%DATADIR%%/xpn_src/Show_Logs.py
+%%DATADIR%%/xpn_src/Threads_Pane.py
+%%DATADIR%%/xpn_src/UserDir.py
+%%DATADIR%%/xpn_src/XFace.py
+%%DATADIR%%/xpn_src/__init__.py
+%%DATADIR%%/xpn_src/add_tag.py
+%%DATADIR%%/xpn_src/nntplib_ssl.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/lang/de/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/de
+@dirrm %%DATADIR%%/lang/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/fr
+@dirrm %%DATADIR%%/lang/it/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/it
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/xpn_src
+@dirrm %%DATADIR%%
