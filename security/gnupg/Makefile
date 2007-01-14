@@ -41,10 +41,10 @@ MAN8=		addgnupghome.8
 INFO=		gnupg
 
 OPTIONS=	LDAP "LDAP keyserver interface" off \
+		NLS "National Language Support" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
 		GPGSM "Enable GPGSM" on
-PLIST_SUB=	NLS=""
 
 .include <bsd.port.pre.mk>
 
@@ -64,6 +64,14 @@ PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
+.endif
+
+.if defined(WITH_NLS)
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if defined(WITH_SCDAEMON)
