@@ -8,7 +8,8 @@
 PORTNAME=	app
 PORTVERSION=	1.72
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/app/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= philip
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	app.lua?rev=${PORTVERSION}
 EXTRACT_ONLY=	#
