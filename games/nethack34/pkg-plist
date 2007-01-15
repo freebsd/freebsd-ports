@@ -5,7 +5,6 @@ bin/%%HACKNAME%%
 @exec chmod -R 775 %D/%%HACKDIR%%
 @exec chmod 2755 %D/%%HACKDIR%%/%%HACKNAME%%
 @exec chown games:games %D/%%HACKDIR%%/save
-@dirrmtry %%HACKDIR%%/save
 %%HACKDIR%%/Arc-fila.lev
 %%HACKDIR%%/Arc-filb.lev
 %%HACKDIR%%/Arc-goal.lev
@@ -144,6 +143,7 @@ bin/%%HACKNAME%%
 @exec touch %D/%%HACKDIR%%/logfile && chmod 664 %D/%%HACKDIR%%/logfile
 @unexec [ -s %D/%%HACKDIR%%/record ] || rm -f %D/%%HACKDIR%%/record
 @exec touch %D/%%HACKDIR%%/record && chmod 664 %D/%%HACKDIR%%/record
-@dirrm %%HACKDIR%%
+@unexec rmdir %D/%%HACKDIR%%/save >/dev/null 2>&1 || echo 'Nethack directory (%D/%%HACKDIR%%/) not removed due to existing save games. If you are permanently removing this port, you should do a ``rm -rf %D/%%HACKDIR%%``.' | fmt
+@dirrmtry %%HACKDIR%%
 %%PORTDOCS%%%%HACKDOCSDIR%%/Guidebook.txt
 %%PORTDOCS%%@dirrm %%HACKDOCSDIR%%
