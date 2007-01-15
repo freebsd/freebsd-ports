@@ -12,7 +12,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/xyaku/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A general dictionary/search engine front-end for X
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
@@ -27,7 +27,6 @@ EDICT_FILE=	${LOCALBASE}/share/dict/edict/edict
 RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict
 .endif
 
-USE_X_PREFIX=	yes
 USE_RUBY=	yes
 USE_AUTOTOOLS=	autoconf:213 libtool:15
 CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}" \
