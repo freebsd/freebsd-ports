@@ -1,11 +1,11 @@
---- demo/makefile.orig	Sun Jun  2 16:49:53 2002
-+++ demo/makefile	Sat Dec 21 19:20:50 2002
+--- demo/makefile.orig	Sun Mar  9 20:47:09 2003
++++ demo/makefile	Sun Jan 14 17:21:43 2007
 @@ -22,7 +22,7 @@
  # Demos
  
  GNATMAKE = gnatmake
--GNATMAKE_FLAGS = -I.. -O2 -g -gnata -gnatf -gnatwu -gnatwl -gnaty
-+GNATMAKE_FLAGS = -I/usr/local/lib/booch -O2 -g -gnata -gnatf -gnatwu -gnatwl -gnaty
+-GNATMAKE_FLAGS = -I.. -O2 -g -gnatqQafy -gnatwaL
++GNATMAKE_FLAGS = -I/usr/local/lib/booch -O2 -g -gnatqQafy -gnatwaL
  
  all:: demos
  

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	adabooch
-PORTVERSION=	20020602
+PORTVERSION=	20030309
 CATEGORIES=	devel
 MASTER_SITES=	http://www.adapower.net/booch/download/
 DISTNAME=	bc-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Library which provide container classes as well as powertools for Ada
 
 NO_BUILD=	yes
