@@ -7,13 +7,14 @@
 
 PORTNAME=	gatling
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	www benchmarks ftp ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	A high performance webserver with scalability benchmark tools
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
+BUILD_DEPENDS=	libowfat>=0.25:${PORTSDIR}/devel/libowfat
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
