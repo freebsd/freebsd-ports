@@ -2324,6 +2324,7 @@ enblend		ports/graphics/enblend
 enca		ports/converters/enca
 enchant		ports/textproc/enchant
 endeavour	ports/x11-fm/endeavour
+endian		ports/sysutils/endian
 enet		ports/net/enet
 enfle		ports/graphics/enfle
 engine_pkcs11	ports/security/engine_pkcs11
