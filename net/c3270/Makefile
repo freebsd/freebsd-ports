@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	c3270
-PORTVERSION=	3.3.4p6
+PORTVERSION=	3.3.4p8
 CATEGORIES=	net
 MASTER_SITES=	http://x3270.bgp.nu/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
