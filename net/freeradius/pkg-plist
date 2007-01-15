@@ -47,7 +47,6 @@ etc/raddb/naslist.sample
 etc/raddb/naspasswd.sample
 etc/raddb/oraclesql.conf.sample
 etc/raddb/otp.conf.sample
-etc/raddb/otppasswd.sample.sample
 etc/raddb/postgresql.conf.sample
 etc/raddb/preproxy_users.sample
 etc/raddb/proxy.conf.sample
@@ -424,7 +423,6 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.columbia_university
 %%DATADIR%%/dictionary.compat
 %%DATADIR%%/dictionary.cosine
-%%DATADIR%%/dictionary.digest
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.ericsson
@@ -457,6 +455,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.nortel
 %%DATADIR%%/dictionary.ntua
 %%DATADIR%%/dictionary.packeteer
+%%DATADIR%%/dictionary.patton
 %%DATADIR%%/dictionary.propel
 %%DATADIR%%/dictionary.quintum
 %%DATADIR%%/dictionary.redback
@@ -469,10 +468,13 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.rfc3162
 %%DATADIR%%/dictionary.rfc3576
 %%DATADIR%%/dictionary.rfc3580
+%%DATADIR%%/dictionary.rfc4590
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
+%%DATADIR%%/dictionary.schulzrinne-sipping
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
+%%DATADIR%%/dictionary.sofaware
 %%DATADIR%%/dictionary.sonicwall
 %%DATADIR%%/dictionary.springtide
 %%DATADIR%%/dictionary.starent
