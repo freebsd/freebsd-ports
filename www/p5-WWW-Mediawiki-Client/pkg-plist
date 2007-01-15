@@ -1,3 +1,4 @@
+bin/mvs
 %%SITE_PERL%%/WWW/Mediawiki/Client.pm
 %%SITE_PERL%%/WWW/Mediawiki/Client/Exceptions.pm
 @dirrm %%SITE_PERL%%/WWW/Mediawiki/Client
