@@ -53,7 +53,8 @@ CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
 .endif
 .if defined(WITH_HPMON)
 PATCHFILES+=	hpmon.diff
-PATCH_SITES+=	http://www.netsonic.fi/~walker/nh/
+PATCH_SITES+=	http://www.netsonic.fi/~walker/nh/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DHPMON
 .endif
