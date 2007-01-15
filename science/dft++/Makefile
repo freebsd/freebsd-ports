@@ -24,6 +24,9 @@ COMMENT=	DFT++, A density functional software
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
 USE_GMAKE=	yes
 WANT_FORTRAN=yes #dummy but future use
 BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
@@ -46,8 +49,6 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 FFTW=		-lfftw
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 OPTIMIZED_FLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
