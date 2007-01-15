@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.19
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
+MASTER_SITES=	ftp://xmlsoft.org/libxslt/ \
+		ftp://fr.rpmfind.net/pub/libxml/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	The XSLT C library for GNOME
-
-USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
