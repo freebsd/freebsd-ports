@@ -32,7 +32,7 @@ BLAS=		-L${LOCALBASE}/lib -lblas
 LAPACK=		-L${LOCALBASE}/lib -llapack
 .endif
 
-CONFLICTS=	elmer-umfpack-4*
+CONFLICTS=	elmer-umfpack-4* umfpack-*
 
 .include <bsd.port.pre.mk>
 
@@ -41,8 +41,6 @@ FPIC=	-fPIC
 .else
 FPIC=	-fpic
 .endif
-
-CONFLICTS=	umfpack-*
 
 USE_LDCONFIG=   yes
 USE_GMAKE=	yes
