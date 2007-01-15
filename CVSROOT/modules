@@ -9837,6 +9837,7 @@ p5-Net-Flickr-API	ports/www/p5-Net-Flickr-API
 p5-Net-Flickr-Backup	ports/www/p5-Net-Flickr-Backup
 p5-Net-Flickr-RDF	ports/www/p5-Net-Flickr-RDF
 p5-Net-Frame	ports/net/p5-Net-Frame
+p5-Net-Frame-Dump	ports/net/p5-Net-Frame-Dump
 p5-Net-FreeDB	ports/audio/p5-Net-FreeDB
 p5-Net-Gnats	ports/net/p5-Net-Gnats
 p5-Net-Google	ports/net/p5-Net-Google
