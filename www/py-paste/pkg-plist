@@ -167,6 +167,9 @@
 %%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/cgitb_catcher.py
 %%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/cgitb_catcher.pyc
 %%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/cgitb_catcher.pyo
+%%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/config.py
+%%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/config.pyc
+%%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/config.pyo
 %%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/errordocument.py
 %%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/errordocument.pyc
 %%PYTHON_SITELIBDIR%%/Paste-%%PASTEVER%%-py%%PYTHONVER%%.egg/paste/errordocument.pyo

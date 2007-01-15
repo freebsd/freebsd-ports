@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Paste
-PORTVERSION=	1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/P/Paste/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Tools for using a Web Server Gateway Interface stack
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
