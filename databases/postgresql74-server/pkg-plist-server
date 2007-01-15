@@ -3,6 +3,7 @@ bin/initlocation
 bin/ipcclean
 bin/pg_controldata
 bin/pg_ctl
+bin/pg_id
 bin/pg_resetxlog
 bin/postgres
 bin/postmaster

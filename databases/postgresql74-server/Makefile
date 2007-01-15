@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.4.15
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -46,8 +46,9 @@ PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/backend src/backend/utils/mb/conversion_procs \
 		src/bin/initdb src/bin/initlocation src/bin/ipcclean \
-		src/bin/pg_controldata src/bin/pg_ctl src/bin/pg_resetxlog \
-		src/bin/postgres src/bin/postmaster src/pl
+		src/bin/pg_controldata src/bin/pg_ctl src/bin/pg_id \
+		src/bin/pg_resetxlog src/bin/postgres src/bin/postmaster \
+		src/pl
 
 INSTALL_DIRS?=	${BUILD_DIRS}
 
