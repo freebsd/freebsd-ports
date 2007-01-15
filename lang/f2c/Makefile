@@ -7,6 +7,7 @@
 
 PORTNAME=	f2c
 PORTVERSION=	20060810
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/
 DISTNAME=	${PORTNAME}
