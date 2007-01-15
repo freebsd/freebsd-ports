@@ -1,6 +1,6 @@
---- GNUmakefile.orig	Sat May 21 18:16:04 2005
-+++ GNUmakefile	Sat May 21 18:19:41 2005
-@@ -4,22 +4,16 @@
+--- ./GNUmakefile.orig	Sat Jan 13 13:06:31 2007
++++ ./GNUmakefile	Sat Jan 13 13:06:49 2007
+@@ -4,10 +4,10 @@
  # in /opt/diet, where they are in the default search path for my diet libc
  # work but don't conflict with anything there.  YMMV.
  
@@ -13,21 +13,24 @@
 +MAN3DIR=${MANPREFIX}/man/man3
  
  LIBS=byte.a fmt.a scan.a str.a uint.a open.a stralloc.a unix.a socket.a \
- buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a textcode.a
+ buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a \
+@@ -15,14 +15,6 @@
  
  all: t $(LIBS) libowfat.a libsocket
  
--CC=gcc
+-CROSS=
+-#CROSS=i686-mingw-
+-CC=$(CROSS)gcc
 -CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
 -#CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
 -
 -# CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
 -
+ CFLAGS += -D_REENTRANT
+ 
  # startrip
- ifneq ($(DEBUG),)
- CFLAGS=-pipe -Wall -g
-@@ -154,10 +148,10 @@
- errmsg.h
+@@ -162,10 +154,10 @@
+ errmsg.h cdb.h cdb_make.h rangecheck.h
  
  install: libowfat.a
 -	install -d $(INCLUDEDIR) $(MAN3DIR) $(LIBDIR)
