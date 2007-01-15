@@ -8,6 +8,7 @@
 PORTNAME=	rssyl
 PORTVERSION=	0.9
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
