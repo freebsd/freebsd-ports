@@ -5,7 +5,7 @@
   You need to create a configuration file netmond.conf 
   in directory %%PREFIX%%/etc prior to launch netmond.
   
-  Look at http://soft.risp.ru/netmond/ for the configuration guide 
-  or try to use net-mgmt/TkNetmon to create configuration semiautomatically.
+  Look at %%PREFIX%%/share/doc/netmond/ for the configuration guide 
+  or try to use net-mgmt/tknetmon to create configuration semiautomatically.
 
 ######################################################################

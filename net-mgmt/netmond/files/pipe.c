@@ -166,6 +166,7 @@ pipe_execfile(file, args, p_pid, target)
 		/* child would be terminated by signals */
 		sigprocmask(SIG_SETMASK, NULL, &sigmask);
 		sigprocmask(SIG_UNBLOCK, &sigmask, NULL);
+		close(netstate_sock);
 
 		/* make session leader to be able killpg() latter */
 		setsid();
