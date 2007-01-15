@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070115:
+  AFFECTS: users of www/lightsquid
+  AUTHOR: clsung@FreeBSD.org
+
+  The default configuration files have changed to
+  ${PREFIX}/etc/lightsquid.
+
 20070111:
   AFFECTS: users of irc/weechat
   AUTHOR: az@FreeBSD.org
