@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.1.11
+PORTVERSION=	1.2.12
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	The Java CIFS Client Library
 
 USE_JAVA=	yes
@@ -25,9 +25,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
-
-post-extract:
-	${RM} ${WRKSRC}/docs/.index.xml.swp
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
