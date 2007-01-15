@@ -32,7 +32,7 @@ fi
 
 setdbcvar() {
 	# $1: variable $2: password $3: config
-	sed "s/^$1=.*/$1=$2/" $3 >$3.tmp
+	sed -e "s/^$1=.*/$1=$2/" $3 >$3.tmp
 	cp $3.tmp $3
 	rm -f $3.tmp
 }
@@ -75,8 +75,7 @@ then
 		pconf=$pdir/postgresql.conf
 		phbaconf=$pdir/pg_hba.conf
 		pgsqlp=`$LOCALBASE/bin/apg -M NCL -n 1`
-		navreadp=`$LOCALBASE/bin/apg -M NCL -n 1`
-		navwritep=`$LOCALBASE/bin/apg -M NCL -n 1`
+		nav=`$LOCALBASE/bin/apg -M NCL -n 1`
 		navdbconf=$LOCALBASE/nav/etc/db.conf
 		navdbbkconf=$LOCALBASE/nav/etc/pg_backup.conf
 
@@ -105,31 +104,29 @@ then
 #			firstdb=`su -l pgsql -c "$LOCALBASE/bin/psql -l -t -A" | head -1 | cut -d'|' -f1`
 			PGUSER=pgsql
 			export PGUSER
-			$LOCALBASE/bin/createdb --encoding UTF-8 manage
-			$LOCALBASE/bin/createdb --encoding UTF-8 navprofiles
-			$LOCALBASE/bin/createdb --encoding UTF-8 logger
+			$LOCALBASE/bin/createuser -A -D nav
+			$LOCALBASE/bin/createdb --owner nav --encoding UTF-8 arnold
+			$LOCALBASE/bin/createdb --owner nav --encoding UTF-8 manage
+			$LOCALBASE/bin/createdb --owner nav --encoding UTF-8 navprofiles
+			$LOCALBASE/bin/createdb --owner nav --encoding UTF-8 logger
 			$LOCALBASE/bin/createlang plpgsql manage
 			$LOCALBASE/bin/createlang plpgsql navprofiles
-			$LOCALBASE/bin/createlang plpgsql logger
-			$LOCALBASE/bin/createuser -A -D navread
-			$LOCALBASE/bin/createuser -A -D navwrite
-			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/manage.sql manage
-			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/navprofiles.sql navprofiles
-			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/logger.sql logger
-			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/snmpoid.sql manage
+			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/manage.sql manage nav
+			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/types.sql manage nav
+			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/snmpoid.sql manage nav
+			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/navprofiles.sql navprofiles nav
+			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/logger.sql logger nav
+			$LOCALBASE/bin/psql -f $LOCALBASE/nav/doc/sql/arnold.sql arnold nav
 			echo "Setting passwords."
+			echo "alter user nav with password '$nav';" | $LOCALBASE/bin/psql $usedb
 			echo "alter user pgsql with password '$pgsqlp';" | $LOCALBASE/bin/psql $usedb
-			echo "alter user navread with password '$navreadp';" | $LOCALBASE/bin/psql $usedb
-			echo "alter user navwrite with password '$navwritep';" | $LOCALBASE/bin/psql $usedb
 			echo
-			echo "Password for database user navread: $navreadp"
-			echo "Password for database user navwrite: $navwritep"
+			echo "Password for database user nav: $nav"
 			echo "Password for database user pgsql: $pgsqlp"
 			echo "Make a mental note of it!"
 			echo
 			echo "Setting database passwords in NAV db.conf and pg_backup.conf."
-			setdbcvar userpw_navread $navreadp $navdbconf
-			setdbcvar userpw_navwrite $navwritep $navdbconf
+			setdbcvar userpw_nav $nav $navdbconf
 			setdbcvar username pgsql $navdbbkconf
 			setdbcvar password $pgsqlp $navdbbkconf
 			echo "Configure database to only allow authentcated connections."
