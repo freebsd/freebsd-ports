@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	pygopherd
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.16
 CATEGORIES=	net python
 MASTER_SITES=	http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/ \
 		http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Multiprotocol Information Server
 
 USE_PYTHON=	yes
