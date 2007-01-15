@@ -9,8 +9,7 @@ PORTNAME=		cryptopp
 PORTVERSION=		5.4
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-			http://www.eskimo.com/~weidai/ \
-			http://gd.tuwien.ac.at/privacy/crypto/libs/cryptlib/ \
+			http://www.cryptopp.com/ \
 			http://www.mirrors.wiretapped.net/security/cryptography/libraries/cryptolib/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		cryptopp${PORTVERSION:S/.//g}
