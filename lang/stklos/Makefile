@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	0.72
+PORTVERSION=	0.82
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +20,13 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-gtk --disable-gnome
 PLIST_SUB=	VERSION="${PORTVERSION}"
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gtk	\
+		--disable-gnome	\
+		--enable-threads=none
 
 MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 stklos.1 \
 		stklos-install.1
