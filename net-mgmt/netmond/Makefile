@@ -7,16 +7,21 @@
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.risp.ru/pub/RinetSoftware/
 DISTNAME=	netmond-2.2-b6
 EXTRACT_SUFX=	.tgz
 
+PATCH_SITES=	http://vfom.narod.ru/download/
+PATCH_VERSION=	1
+PATCHFILES=	${DISTNAME}.patch${PATCH_VERSION}${EXTRACT_SUFX}  ${DISTNAME}.docs${EXTRACT_SUFX}
+
 MAINTAINER=	vfom@narod.ru
 COMMENT=	Netmond - IP network monitoring daemon
 
 #MK_IFGRAPH=	yes
+PATCHDIR=	${WRKDIR}/patches
 
 .if defined(MK_IFGRAPH)
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
@@ -41,10 +46,12 @@ USE_RC_SUBR=	netmond.sh
 
 SUB_FILES+=	pkg-message netmond_watchdog netmondctl
 
-PORTDOCS=	README README.ru CHANGES README.port README.port.ru
+PORTDOCS=	README README.ru CHANGES README.port.eng README.port.ru index.html netmond.css en/ ru/
 
-pre-build:
-	${CP} ${FILESDIR}/*.c ${WRKSRC}
+post-extract:
+	${MKDIR} ${PATCHDIR}
+	${TAR} -zxf ${DISTDIR}/${DISTNAME}.patch${PATCH_VERSION}${EXTRACT_SUFX} -C ${PATCHDIR}
+	${CP} ${PATCHDIR}/pipe.c ${WRKSRC}
 
 do-install:
 	@if pw user show netmon 2>/dev/null ; then \
@@ -63,20 +70,21 @@ do-install:
 .endif
 	${INSTALL_SCRIPT}   ${WRKDIR}/netmond_watchdog ${PREFIX}/sbin/netmond_watchdog
 	${INSTALL_SCRIPT}   ${WRKDIR}/netmondctl ${PREFIX}/sbin/netmondctl
-	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${PREFIX}/etc//netmond.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${PREFIX}/etc/netmond.conf.sample
 	${CHMOD} u+s ${PREFIX}/sbin/netmond
 .if !defined(NOPORTDOCS)
 	${MKDIR}  ${DOCSDIR}
-	${CHMOD} 555 ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README  ${DOCSDIR}/README.ru
-
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
-	${INSTALL_DATA} ${FILESDIR}/README.port.ru ${DOCSDIR}/
-	${INSTALL_DATA} ${FILESDIR}/README.port.eng ${DOCSDIR}/README.port
-	${INSTALL_DATA} ${FILESDIR}/README.eng ${DOCSDIR}/README
+	${CHMOD} 755 ${DOCSDIR}
+	${TAR}  -zxf ${DISTDIR}/${DISTNAME}.docs${EXTRACT_SUFX} -C ${DOCSDIR}
 .endif
 
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>

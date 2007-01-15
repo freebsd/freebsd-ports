@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jul 20 19:28:20 2004
++++ Makefile.in	Thu Nov  2 13:35:27 2006
+@@ -47,7 +47,7 @@
+ 
+ NETMOND_C = netmond.c netstate.c event.c session.c mib.c snmp.c router.c \
+ 	trap.c ping.c tcp.c udp.c dns.c radius.c tacacs.c md5.c util.c \
+-	variables.c save.c regex.c malloc.c reconfig.c
++	variables.c save.c regex.c malloc.c reconfig.c pipe.c
+ NETMOND_Y = calc.y parseconf.y
+ NETMOND_L = scanconf.l
+ NETMOND_G = version.c
