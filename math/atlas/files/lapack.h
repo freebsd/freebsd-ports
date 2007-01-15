@@ -1,12 +1,12 @@
 // lapack prototypes for C++
 // based on clapack.h in clapack.tgz, version 3.0(September 20, 2000)
 // available at http://www.netlib.org/clapack/
-// and modified by Nakata Maho <chat95@mbox.kyoto-inet.or.jp>
+// and modified by Nakata Maho <maho@FreeBSD.org>
 // for C++, which requires proper prototype definitions.
 
 extern "C"
 {
-#include <g2c.h>
+#include <f2c.h>
 
 /* Subroutine */ int cbdsqr_(char *uplo, integer *n, integer *ncvt, integer *
 	nru, integer *ncc, real *d__, real *e, complex *vt, integer *ldvt, 
