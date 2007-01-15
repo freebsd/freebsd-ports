@@ -83,7 +83,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879
 .endif
 
 .if defined(WITH_SDB_XML)
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/sdocbook/4.1.2.5:${PORTSDIR}/textproc/sdocbook-xml
+RUN_DEPENDS+=	${LOCALBASE}/share/xml/sdocbook/1.1:${PORTSDIR}/textproc/sdocbook-xml
 .endif
 
 do-install:
