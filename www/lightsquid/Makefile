@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lightsquid
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@logvinov.com
@@ -18,18 +17,18 @@ COMMENT=	A light and fast web based squid proxy traffic analyser
 OPTIONS=	GDSUPPORT	"Graphics report support"	on
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-DSTDIR=		${PREFIX}/www/${PORTNAME}
-.if !defined(NOPORTDOCS)
-SUB_LIST=	DOCSDIR=${DOCSDIR}
-SUB_FILES=	pkg-message
-.endif
 CONFIGS=	lightsquid.cfg realname.cfg skipuser.cfg group.cfg
 REINPLACE_ARGS=	-i ""
 PORTDOCS=	gnugpl.txt install.txt readme.txt thanks.txt graph.txt logformat.txt \
 		templates.txt version.txt
+SUB_FILES=	pkg-message
+.if !defined(NOPORTDOCS)
+SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/readme.txt."
+.else
+SUB_LIST+=	NOTEWORK=""
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -37,23 +36,45 @@ PORTDOCS=	gnugpl.txt install.txt readme.txt thanks.txt graph.txt logformat.txt \
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 .endif
 
-do-patch:
-	@${REINPLACE_CMD} "s|/var/www/html/${PORTNAME}|${DSTDIR}|" ${WRKSRC}/lightsquid.cfg
+post-patch:
+	@${REINPLACE_CMD} -e 's|/var/www/html/${PORTNAME}/lang|${DATADIR}/lang|' \
+		-e 's|/var/www/html/${PORTNAME}\"|${PREFIX}/etc/${PORTNAME}\"|' \
+		-e 's|/var/www/html/${PORTNAME}/ip2name|${PREFIX}/libexec/${PORTNAME}|' \
+		-e 's|/var/www/html/${PORTNAME}|${PREFIX}/www/${PORTNAME}|' \
+		${WRKSRC}/lightsquid.cfg
+	@${FIND} -E ${WRKSRC} -maxdepth 1 -regex '.*\.(cgi|pl)' | \
+		${XARGS} ${REINPLACE_CMD} \
+		 -e 's|${PORTNAME}.cfg|${PREFIX}/etc/${PORTNAME}/${PORTNAME}.cfg|g'
 	@${MV} ${WRKSRC}/group.cfg.src ${WRKSRC}/group.cfg
-.for i in ${CONFIGS}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.dist
-.endfor
 
 do-install:
-	@${MKDIR} ${DSTDIR}
-	${CP} -R ${WRKSRC}/ ${DSTDIR}
-	@${RM} -r ${DSTDIR}/doc
+	${MKDIR} ${DATADIR}/lang
+	cd ${WRKSRC}/lang && \
+	${FIND} . -type f -regex '.*\.lng' -exec \
+		${INSTALL_DATA} "{}" "${DATADIR}/lang/{}" \;
+	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+	cd ${WRKSRC}/ip2name && \
+	${FIND} . -type f -exec \
+		${INSTALL_DATA} "{}" "${PREFIX}/libexec/${PORTNAME}/{}" \;
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
 .for i in ${CONFIGS}
-	@${CP} -n ${DSTDIR}/${i}.dist ${DSTDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc/${PORTNAME}/${i}.dist
+.if !exists(${PREFIX}/etc/${PORTNAME}/${i})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc/${PORTNAME}/
+.endif
 .endfor
-	@${CHMOD} +x ${DSTDIR}/*.cgi
-	@${CHMOD} +x ${DSTDIR}/*.pl
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DSTDIR}
+	${MKDIR} ${PREFIX}/www/${PORTNAME}/report
+	${MKDIR} ${PREFIX}/www/${PORTNAME}/tpl
+	cd ${WRKSRC}/tpl && \
+	${FIND} . -type d ! -empty -exec \
+		${MKDIR} "${PREFIX}/www/${PORTNAME}/tpl/{}" \; && \
+	${FIND} . -type f -exec \
+		${INSTALL_DATA} "{}" "${PREFIX}/www/${PORTNAME}/tpl/{}" \;
+	cd ${WRKSRC} && \
+	${FIND} -E . -maxdepth 1 -regex '.*\.(cgi|pl)' -exec \
+		${INSTALL_SCRIPT} "{}" "${PREFIX}/www/${PORTNAME}/{}" \; && \
+		${INSTALL_DATA} .htaccess ${PREFIX}/www/${PORTNAME}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
@@ -62,8 +83,6 @@ do-install:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.post.mk>
