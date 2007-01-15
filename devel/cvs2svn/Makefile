@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
 		${BUILD_DEPENDS}
 
-FETCH_CMD?=	wget -c
+FETCH_CMD=	${LOCALBASE}/bin/wget -c
+DISABLE_SIZE=	yes
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
