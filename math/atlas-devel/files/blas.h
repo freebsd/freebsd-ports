@@ -2,12 +2,12 @@
 // based on BLAS/WRAP/fblaswr.h
 // in clapack.tgz, version 3.0(September 20, 2000)
 // available at http://www.netlib.org/clapack/
-// and modified by Nakata Maho <chat95@mbox.kyoto-inet.or.jp>
+// and modified by Nakata Maho <maho@FreeBSD.org>
 // for C++, which requires proper prototype definitions.
 
 extern "C"
 {
-#include <g2c.h>
+#include <f2c.h>
 
 real 
 sdot_(integer* N, 
