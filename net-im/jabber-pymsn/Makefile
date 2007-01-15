@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymsn
-DISTVERSION=	0.11.2-dev2
-PORTREVISION=	1
+DISTVERSION=	0.11.2
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://delx.cjb.net/pymsnt/tarballs/ \
@@ -74,6 +73,7 @@ post-patch:
 		${WRKSRC}/src/main.py
 	@${REINPLACE_CMD} -i "" 's|#!.*$$|#!${LOCAL_PYTHON}|' \
 		${WRKSRC}/PyMSNt.py
+	@${RM} -f ${WRKSRC}/src/main.py.orig
 
 do-install:
 	${MKDIR} ${INST_DIR}/src ${INST_DIR}/data
