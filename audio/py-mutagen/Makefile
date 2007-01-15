@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutagen
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

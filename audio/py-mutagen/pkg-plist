@@ -36,6 +36,9 @@ bin/mid3iconv
 %%PYTHON_SITELIBDIR%%/mutagen/mp3.py
 %%PYTHON_SITELIBDIR%%/mutagen/mp3.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/mp3.pyo
+%%PYTHON_SITELIBDIR%%/mutagen/mp4.py
+%%PYTHON_SITELIBDIR%%/mutagen/mp4.pyc
+%%PYTHON_SITELIBDIR%%/mutagen/mp4.pyo
 %%PYTHON_SITELIBDIR%%/mutagen/musepack.py
 %%PYTHON_SITELIBDIR%%/mutagen/musepack.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/musepack.pyo
@@ -54,6 +57,9 @@ bin/mid3iconv
 %%PYTHON_SITELIBDIR%%/mutagen/oggvorbis.py
 %%PYTHON_SITELIBDIR%%/mutagen/oggvorbis.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/oggvorbis.pyo
+%%PYTHON_SITELIBDIR%%/mutagen/optimfrog.py
+%%PYTHON_SITELIBDIR%%/mutagen/optimfrog.pyc
+%%PYTHON_SITELIBDIR%%/mutagen/optimfrog.pyo
 %%PYTHON_SITELIBDIR%%/mutagen/trueaudio.py
 %%PYTHON_SITELIBDIR%%/mutagen/trueaudio.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/trueaudio.pyo
