@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swiggle
-PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
