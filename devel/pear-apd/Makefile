@@ -16,12 +16,10 @@ COMMENT=	A full-featured engine-level PHP profiler/debugger
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Does not compile
-
 USE_PHP=	yes
 USE_PHPIZE=	yes
 
-CONFIGURE_ARGS=	--enable-apd
+CONFIGURE_ARGS=	--enable-apd --with-apd
 
 DUMP_DIR?=	/var/tmp/apd
 
@@ -46,6 +44,11 @@ SUB_LIST=	PHP_EXT_DIR=${PHP_EXT_DIR} DUMP_DIR=${DUMP_DIR} DEBUG=${PHP_DEBUG:S/-/
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
+
+post-patch:
+.if ${PHP_VER} == 5
+	@${REINPLACE_CMD} -e '396,398 d' ${WRKSRC}/php_apd.c
+.endif
 
 post-install-script:
 	@${STRIP_CMD} ${PHP_BASE}/lib/php/${PHP_EXT_DIR}/apd.so
