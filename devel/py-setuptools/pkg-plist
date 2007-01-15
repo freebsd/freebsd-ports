@@ -115,7 +115,6 @@ bin/easy_install-%%PYVER%%
 %%PORTDOCS%%%%DOCSDIR%%/api_tests.txt
 %%PORTDOCS%%%%DOCSDIR%%/pkg_resources.txt
 %%PORTDOCS%%%%DOCSDIR%%/setuptools.txt
-%%PYTHON_OLD%%@dirrm %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/scripts
 %%PYTHON_OLD%%@dirrm %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO
 %%PYTHON_OLD%%@dirrm %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command
 %%PYTHON_OLD%%@dirrm %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/tests
