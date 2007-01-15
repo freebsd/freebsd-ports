@@ -30,6 +30,7 @@ include/fltk/compat/FL/Fl_Menu_Button.H
 include/fltk/compat/FL/Fl_Menu_Item.H
 include/fltk/compat/FL/Fl_Output.H
 include/fltk/compat/FL/Fl_Overlay_Window.H
+include/fltk/compat/FL/Fl_Pixmap.H
 include/fltk/compat/FL/Fl_Return_Button.H
 include/fltk/compat/FL/Fl_Roller.H
 include/fltk/compat/FL/Fl_Scroll.H
@@ -181,7 +182,6 @@ include/fltk/rgbImage.h
 include/fltk/run.h
 include/fltk/show_colormap.h
 include/fltk/string.h
-include/fltk/types.h
 include/fltk/utf.h
 include/fltk/visual.h
 include/fltk/win32.h
