@@ -44,6 +44,7 @@ CCOMPILER=	${CC}
 .endif
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
