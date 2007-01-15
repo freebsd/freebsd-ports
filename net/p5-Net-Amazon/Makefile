@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -27,26 +27,35 @@ MAN3=		Net::Amazon.3 Net::Amazon::Attribute::Review.3 \
 		Net::Amazon::Attribute::ReviewSet.3 \
 		Net::Amazon::Property.3 \
 		Net::Amazon::Property::Book.3 \
+		Net::Amazon::Property::CE.3 \
 		Net::Amazon::Property::DVD.3 \
 		Net::Amazon::Property::Music.3 \
-		Net::Amazon::Response.3 \
+		Net::Amazon::Property::Software.3 \
+		Net::Amazon::Property::VideoGames.3 \
 		Net::Amazon::Request.3 \
 		Net::Amazon::Request::ASIN.3 \
+		Net::Amazon::Request::Actor.3 \
 		Net::Amazon::Request::Artist.3 \
+		Net::Amazon::Request::Author.3 \
 		Net::Amazon::Request::Blended.3 \
 		Net::Amazon::Request::BrowseNode.3 \
 		Net::Amazon::Request::Exchange.3 \
 		Net::Amazon::Request::Keyword.3 \
 		Net::Amazon::Request::Manufacturer.3 \
+		Net::Amazon::Request::MusicLabel.3 \
 		Net::Amazon::Request::Power.3 \
-		Net::Amazon::Request::Similar.3 \
-		Net::Amazon::Request::UPC.3 \
-		Net::Amazon::Request::Wishlist.3 \
+		Net::Amazon::Request::Publisher.3 \
 		Net::Amazon::Request::Seller.3 \
+		Net::Amazon::Request::Similar.3 \
 		Net::Amazon::Request::Sort.3 \
 		Net::Amazon::Request::TextStream.3 \
+		Net::Amazon::Request::UPC.3 \
+		Net::Amazon::Request::Wishlist.3 \
+		Net::Amazon::Response.3 \
 		Net::Amazon::Result::Seller.3 \
-		Net::Amazon::Result::Seller::Listing.3
+		Net::Amazon::Result::Seller::Listing.3 \
+		Net::Amazon::Validate::ItemSearch.3 \
+		Net::Amazon::Validate::Type.3
 
 .include <bsd.port.pre.mk>
 

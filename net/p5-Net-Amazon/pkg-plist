@@ -1,34 +1,46 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/.packlist
 %%SITE_PERL%%/Net/Amazon.pm
 %%SITE_PERL%%/Net/Amazon/Attribute/Review.pm
 %%SITE_PERL%%/Net/Amazon/Attribute/ReviewSet.pm
 %%SITE_PERL%%/Net/Amazon/Property.pm
 %%SITE_PERL%%/Net/Amazon/Property/Book.pm
+%%SITE_PERL%%/Net/Amazon/Property/CE.pm
 %%SITE_PERL%%/Net/Amazon/Property/DVD.pm
 %%SITE_PERL%%/Net/Amazon/Property/Music.pm
+%%SITE_PERL%%/Net/Amazon/Property/Software.pm
+%%SITE_PERL%%/Net/Amazon/Property/VideoGames.pm
 %%SITE_PERL%%/Net/Amazon/Request.pm
-%%SITE_PERL%%/Net/Amazon/Request/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Request/ASIN.pm
+%%SITE_PERL%%/Net/Amazon/Request/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Request/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Request/Author.pm
 %%SITE_PERL%%/Net/Amazon/Request/Blended.pm
 %%SITE_PERL%%/Net/Amazon/Request/BrowseNode.pm
 %%SITE_PERL%%/Net/Amazon/Request/Exchange.pm
 %%SITE_PERL%%/Net/Amazon/Request/Keyword.pm
 %%SITE_PERL%%/Net/Amazon/Request/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Request/MusicLabel.pm
 %%SITE_PERL%%/Net/Amazon/Request/Power.pm
-%%SITE_PERL%%/Net/Amazon/Request/Similar.pm
+%%SITE_PERL%%/Net/Amazon/Request/Publisher.pm
 %%SITE_PERL%%/Net/Amazon/Request/Seller.pm
+%%SITE_PERL%%/Net/Amazon/Request/Similar.pm
 %%SITE_PERL%%/Net/Amazon/Request/Sort.pm
 %%SITE_PERL%%/Net/Amazon/Request/TextStream.pm
 %%SITE_PERL%%/Net/Amazon/Request/UPC.pm
 %%SITE_PERL%%/Net/Amazon/Request/Wishlist.pm
 %%SITE_PERL%%/Net/Amazon/Response.pm
-%%SITE_PERL%%/Net/Amazon/Response/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Response/ASIN.pm
+%%SITE_PERL%%/Net/Amazon/Response/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Response/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Response/Author.pm
 %%SITE_PERL%%/Net/Amazon/Response/Blended.pm
 %%SITE_PERL%%/Net/Amazon/Response/BrowseNode.pm
 %%SITE_PERL%%/Net/Amazon/Response/Exchange.pm
 %%SITE_PERL%%/Net/Amazon/Response/Keyword.pm
 %%SITE_PERL%%/Net/Amazon/Response/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Response/MusicLabel.pm
 %%SITE_PERL%%/Net/Amazon/Response/Power.pm
+%%SITE_PERL%%/Net/Amazon/Response/Publisher.pm
 %%SITE_PERL%%/Net/Amazon/Response/Seller.pm
 %%SITE_PERL%%/Net/Amazon/Response/Similar.pm
 %%SITE_PERL%%/Net/Amazon/Response/TextStream.pm
@@ -36,14 +48,189 @@
 %%SITE_PERL%%/Net/Amazon/Response/Wishlist.pm
 %%SITE_PERL%%/Net/Amazon/Result/Seller.pm
 %%SITE_PERL%%/Net/Amazon/Result/Seller/Listing.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/.packlist
-@dirrm %%SITE_PERL%%/Net/Amazon/Attribute
-@dirrm %%SITE_PERL%%/Net/Amazon/Property
-@dirrm %%SITE_PERL%%/Net/Amazon/Result/Seller
-@dirrm %%SITE_PERL%%/Net/Amazon/Result
-@dirrm %%SITE_PERL%%/Net/Amazon/Response
-@dirrm %%SITE_PERL%%/Net/Amazon/Request
-@dirrm %%SITE_PERL%%/Net/Amazon
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/AudienceRating.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Author.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Brand.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Composer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Condition.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Conductor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Count.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/DeliveryMethod.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/ItemPage.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/MaximumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/MerchantId.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/MinimumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/MusicLabel.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Power.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Publisher.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Sort.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Title.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Author.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Composer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Condition.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Conductor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Count.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/DeliveryMethod.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/ItemPage.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/MPAARating.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/MaximumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/MerchantId.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/MinimumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/MusicLabel.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Power.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Publisher.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Sort.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Title.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/AudienceRating.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Author.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Brand.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Composer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Condition.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Conductor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Count.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/DeliveryMethod.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/ItemPage.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/MaximumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/MerchantId.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/MinimumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/MusicLabel.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Power.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Publisher.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Sort.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Title.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Author.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Brand.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Composer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Condition.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Conductor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/ItemPage.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/MaximumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/MerchantId.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/MinimumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/MusicLabel.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Orchestra.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Power.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Publisher.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Sort.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Title.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Author.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Brand.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Composer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Condition.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Conductor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/ItemPage.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/MPAARating.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/MaximumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/MerchantId.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/MinimumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/MusicLabel.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Orchestra.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Power.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Publisher.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Sort.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Title.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Actor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/AudienceRating.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Author.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Brand.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/City.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Composer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Condition.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Conductor.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Count.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Cuisine.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/DeliveryMethod.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/ISPUPostalCode.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/ItemPage.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Keywords.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/MPAARating.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/MaximumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/MerchantId.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/MinimumPrice.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/MusicLabel.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Neighborhood.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Orchestra.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Power.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Publisher.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Sort.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/State.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/TextStream.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Title.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/BrowseNodeLookup.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/CartAdd.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/CartClear.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/CartCreate.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/CartGet.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/CartModify.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/CustomerContentLookup.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/CustomerContentSearch.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/Help.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/ItemLookup.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/ItemSearch.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/ListLookup.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/ListSearch.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/SellerListingLookup.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/SellerListingSearch.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/SellerLookup.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/SimilarityLookup.pm
+%%SITE_PERL%%/Net/Amazon/Validate/Type/TransactionLookup.pm
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/Type
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Result/Seller
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Result
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Response
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Request
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Property
+@dirrmtry %%SITE_PERL%%/Net/Amazon/Attribute
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
 @dirrmtry %%SITE_PERL%%/Net/Amazon
 @dirrmtry %%SITE_PERL%%/Net
