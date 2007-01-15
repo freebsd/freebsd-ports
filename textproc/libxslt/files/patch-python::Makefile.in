@@ -1,7 +1,7 @@
---- python/Makefile.in.orig	Fri Jul  2 13:29:57 2004
-+++ python/Makefile.in	Fri Jul  2 13:34:44 2004
-@@ -49,9 +49,7 @@
- am__installdirs = $(DESTDIR)$(pythondir)
+--- python/Makefile.in.orig	Mon Jan 15 19:38:01 2007
++++ python/Makefile.in	Mon Jan 15 19:38:51 2007
+@@ -54,9 +54,7 @@
+ am__installdirs = "$(DESTDIR)$(pythondir)"
  pythonLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(python_LTLIBRARIES)
 -@WITH_PYTHON_TRUE@am__DEPENDENCIES_1 =  \
@@ -11,7 +11,7 @@
  @WITH_PYTHON_TRUE@libxsltmod_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
  am__libxsltmod_la_SOURCES_DIST = libxslt.c types.c libxslt-py.c
  @WITH_PYTHON_TRUE@am_libxsltmod_la_OBJECTS = libxslt.lo types.lo \
-@@ -237,7 +235,7 @@
+@@ -255,7 +253,7 @@
  	-I$(top_srcdir) \
  	-I../libexslt
  
@@ -20,14 +20,9 @@
  # libxsltclass.txt is generated
  DOCS = TODO
  EXTRA_DIST = \
-@@ -250,12 +248,11 @@
- 	libxslt-python-api.xml	\
- 	$(DOCS)
+@@ -270,8 +268,8 @@
  
--libxsltmod_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/libxslt/.libs \
--                        -L$(top_builddir)/libexslt/.libs
-+libxsltmod_la_LDFLAGS = -module -avoid-version
- 
+ libxsltmod_la_LDFLAGS = -module -avoid-version
  @WITH_PYTHON_TRUE@mylibs = \
 -@WITH_PYTHON_TRUE@	$(top_builddir)/libxslt/libxslt.la \
 -@WITH_PYTHON_TRUE@	$(top_builddir)/libexslt/libexslt.la

@@ -1,15 +1,15 @@
---- configure.orig	Tue May  2 18:32:39 2006
-+++ configure	Tue May  2 18:34:50 2006
-@@ -21701,7 +21701,7 @@ except: print 0"`
+--- configure.orig	Mon Jan 15 19:34:30 2007
++++ configure	Mon Jan 15 19:37:48 2007
+@@ -21663,7 +21663,7 @@
  	   -d $with_python/lib/python$PYTHON_VERSION/site-packages
  	then
  	    PYTHON_INCLUDES=$with_python/include/python$PYTHON_VERSION
--	    PYTHON_SITE_PACKAGES='$(libdir)/lib/python$(PYTHON_VERSION)/site-packages'
+-	    PYTHON_SITE_PACKAGES='$(libdir)/python$(PYTHON_VERSION)/site-packages'
 +	    PYTHON_SITE_PACKAGES=$with_python/lib/python$PYTHON_VERSION/site-packages
  	else
  	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
  	    then
-@@ -22057,7 +22057,7 @@ fi
+@@ -22019,7 +22019,7 @@
  
  
  
