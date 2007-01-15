@@ -18,11 +18,16 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Term::ANSIColor for Ruby
 
 USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
+
+NO_BUILD=	yes
 
 DOCS=		README.en
 EXAMPLES=	examples/*
+
+do-install:
+	@cd ${INSTALL_WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP}
 
 post-install:
 .if !defined(NOPORTDOCS)
