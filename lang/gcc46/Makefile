@@ -30,7 +30,7 @@ LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 
 SUFFIX=		43
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
-NOT_FOR_ARCHS=	alpha
+NOT_FOR_ARCHS=	alpha ia64
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
