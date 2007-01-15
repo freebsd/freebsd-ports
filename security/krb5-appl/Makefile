@@ -34,7 +34,7 @@ KRB5_KRB4_COMPAT?=	NO
 KRB5_DOC?=		YES
 
 .if defined(KRB5_DOC) && ${KRB5_DOC} == "YES"
-BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/teTeX-base \
+BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
 			dvips:${PORTSDIR}/print/dvipsk-tetex
 INFO=			krb425 krb5-admin krb5-install krb5-user
 .endif
