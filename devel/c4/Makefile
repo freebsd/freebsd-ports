@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	c4
-PORTVERSION=	1.6
+PORTVERSION=	1.10
 CATEGORIES+=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/utils/c4/
-DISTNAME=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A CVS-like Frontend to Perforce
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -24,7 +24,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/c4.1 ${PREFIX}/man/man1/
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
