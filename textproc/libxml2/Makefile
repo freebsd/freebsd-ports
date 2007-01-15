@@ -12,17 +12,15 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.6.26
+PORTVERSION=	2.6.27
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
+		ftp://fr.rpmfind.net/pub/libxml/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
-
-USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 

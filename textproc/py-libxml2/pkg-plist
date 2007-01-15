@@ -10,6 +10,7 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%DOCSDIR%%/TODO
 %%EXAMPLESDIR%%/attribs.py
 %%EXAMPLESDIR%%/build.py
+%%EXAMPLESDIR%%/compareNodes.py
 %%EXAMPLESDIR%%/ctxterror.py
 %%EXAMPLESDIR%%/cutnpaste.py
 %%EXAMPLESDIR%%/dtdvalid.py
