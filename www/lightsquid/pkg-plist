@@ -1,30 +1,37 @@
-@unexec if cmp -s %D/www/lightsquid/group.cfg %D/www/lightsquid/group.cfg.dist; then rm -f %D/www/lightsquid/group.cfg; fi
-@unexec if cmp -s %D/www/lightsquid/realname.cfg %D/www/lightsquid/realname.cfg.dist; then rm -f %D/www/lightsquid/realname.cfg; fi
-@unexec if cmp -s %D/www/lightsquid/skipuser.cfg %D/www/lightsquid/skipuser.cfg.dist; then rm -f %D/www/lightsquid/skipuser.cfg; fi
-@unexec if cmp -s %D/www/lightsquid/lightsquid.cfg %D/www/lightsquid/lightsquid.cfg.dist; then rm -f %D/www/lightsquid/lightsquid.cfg; fi
-www/lightsquid/ip2name/ip2name.demo
-www/lightsquid/ip2name/ip2name.dhcp
-www/lightsquid/ip2name/ip2name.dns
-www/lightsquid/ip2name/ip2name.ip
-www/lightsquid/ip2name/ip2name.list
-www/lightsquid/ip2name/ip2name.simple
-www/lightsquid/ip2name/ip2name.smb
-www/lightsquid/ip2name/ip2name.squidauth
-www/lightsquid/ip2name/ip2name.squidlist
-www/lightsquid/ip2name/ip2name.squidlist2
-www/lightsquid/lang/bg.lng
-www/lightsquid/lang/check_lng.pl
-www/lightsquid/lang/check_tpl_lng.pl
-www/lightsquid/lang/cz.lng
-www/lightsquid/lang/eng.lng
-www/lightsquid/lang/fr.lng
-www/lightsquid/lang/hu.lng
-www/lightsquid/lang/it.lng
-www/lightsquid/lang/pt_br.lng
-www/lightsquid/lang/ru-koi8.lng
-www/lightsquid/lang/ru.lng
-www/lightsquid/lang/sp.lng
-www/lightsquid/lang/ua.lng
+@unexec if cmp -s %D/etc/lightsquid/group.cfg %D/etc/lightsquid/group.cfg.dist; then rm -f %D/etc/lightsquid/group.cfg; fi
+@unexec if cmp -s %D/etc/lightsquid/realname.cfg %D/etc/lightsquid/realname.cfg.dist; then rm -f %D/etc/lightsquid/realname.cfg; fi
+@unexec if cmp -s %D/etc/lightsquid/skipuser.cfg %D/etc/lightsquid/skipuser.cfg.dist; then rm -f %D/etc/lightsquid/skipuser.cfg; fi
+@unexec if cmp -s %D/etc/lightsquid/lightsquid.cfg %D/etc/lightsquid/lightsquid.cfg.dist; then rm -f %D/etc/lightsquid/lightsquid.cfg; fi
+etc/lightsquid/group.cfg.dist
+@exec [ -f %B/group.cfg ] || cp %B/%f %B/group.cfg
+etc/lightsquid/lightsquid.cfg.dist
+@exec [ -f %B/lightsquid.cfg ] || cp %B/%f %B/lightsquid.cfg
+etc/lightsquid/realname.cfg.dist
+@exec [ -f %B/realname.cfg ] || cp %B/%f %B/realname.cfg
+etc/lightsquid/skipuser.cfg.dist
+@exec [ -f %B/skipuser.cfg ] || cp %B/%f %B/skipuser.cfg
+libexec/lightsquid/ip2name.abils
+libexec/lightsquid/ip2name.demo
+libexec/lightsquid/ip2name.dhcp
+libexec/lightsquid/ip2name.dns
+libexec/lightsquid/ip2name.ip
+libexec/lightsquid/ip2name.list
+libexec/lightsquid/ip2name.simple
+libexec/lightsquid/ip2name.smb
+libexec/lightsquid/ip2name.squidauth
+libexec/lightsquid/ip2name.squidlist
+libexec/lightsquid/ip2name.squidlist2
+%%DATADIR%%/lang/bg.lng
+%%DATADIR%%/lang/cz.lng
+%%DATADIR%%/lang/eng.lng
+%%DATADIR%%/lang/fr.lng
+%%DATADIR%%/lang/hu.lng
+%%DATADIR%%/lang/it.lng
+%%DATADIR%%/lang/pt_br.lng
+%%DATADIR%%/lang/ru-koi8.lng
+%%DATADIR%%/lang/ru.lng
+%%DATADIR%%/lang/sp.lng
+%%DATADIR%%/lang/ua.lng
 www/lightsquid/tpl/base/bigfiles.html
 www/lightsquid/tpl/base/day_detail.html
 www/lightsquid/tpl/base/graph.html
@@ -49,13 +56,6 @@ www/lightsquid/tpl/text/whousesite.html
 www/lightsquid/tpl/text/topsites.html
 www/lightsquid/tpl/text/month_detail.html
 www/lightsquid/tpl/text/day_detail.html
-www/lightsquid/report/delete.me
-www/lightsquid/group.cfg.dist
-@exec [ -f %B/group.cfg ] || cp %B/%f %B/group.cfg
-www/lightsquid/lightsquid.cfg.dist
-@exec [ -f %B/lightsquid.cfg ] || cp %B/%f %B/lightsquid.cfg
-www/lightsquid/realname.cfg.dist
-@exec [ -f %B/realname.cfg ] || cp %B/%f %B/realname.cfg
 www/lightsquid/bigfiles.cgi
 www/lightsquid/day_detail.cgi
 www/lightsquid/fixreport.pl
@@ -64,8 +64,6 @@ www/lightsquid/graph.cgi
 www/lightsquid/group_detail.cgi
 www/lightsquid/index.cgi
 www/lightsquid/month_detail.cgi
-www/lightsquid/skipuser.cfg.dist
-@exec [ -f %B/skipuser.cfg ] || cp %B/%f %B/skipuser.cfg
 www/lightsquid/topsites.cgi
 www/lightsquid/user_detail.cgi
 www/lightsquid/user_month.cgi
@@ -75,11 +73,13 @@ www/lightsquid/.htaccess
 www/lightsquid/check-setup.pl
 www/lightsquid/common.pl
 www/lightsquid/lightparser.pl
+@dirrmtry etc/lightsquid
+@dirrmtry libexec/lightsquid
+@dirrmtry %%DATADIR%%/lang
+@dirrmtry %%DATADIR%%
 @dirrmtry www/lightsquid/tpl/base/images
 @dirrmtry www/lightsquid/tpl/base
 @dirrmtry www/lightsquid/tpl/text
 @dirrmtry www/lightsquid/tpl
-@dirrmtry www/lightsquid/lang
-@dirrmtry www/lightsquid/ip2name
 @dirrmtry www/lightsquid/report
 @dirrmtry www/lightsquid
