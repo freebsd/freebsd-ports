@@ -8,7 +8,8 @@
 PORTNAME=	filename
 PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/filename/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= philip
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	filename.lua?rev=${PORTVERSION}
 EXTRACT_ONLY=	#
