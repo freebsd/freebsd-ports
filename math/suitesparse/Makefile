@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 
-BUILD_DEPENDS=  metis:${PORTSDIR}/math/metis
+LIB_DEPENDS=  metis:${PORTSDIR}/math/metis
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=     yes
