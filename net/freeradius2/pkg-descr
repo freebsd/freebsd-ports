@@ -1,24 +1,22 @@
-  All code in this server was written from scratch.
-  The server is mostly compatible with livingston radiusd-2.01
-  (no menus or s/key support though) but with more feautures, such as:
+FreeRADIUS is the premiere open source RADIUS server. Based on current
+statistics, there are over 50,000 deployments of the software. These
+deployments include small sites with 10 users, large-scale enterprises with
+tens of thousands of users, and carrier-class deployments with over 10 million
+users. In total, the sites that we know are using FreeRADIUS support nearly
+100 million users. The only other servers that come close in terms of market
+share and/or number of sites are ACS and IAS.
 
-    o Can limit max. number of simultaneous logins on a per-user basis!
-    o Multiple DEFAULT entries, that can optionally fall-through.
-    o In fact, every entry can fall-through
-    o Deny/permit access based on huntgroup users dials into
-    o Set certain parameters (such as static IP address) based on huntgroup
-    o Extra "hints" file that can select SLIP/PPP/rlogin based on
-      username pattern (Puser or user.ppp is PPP, plain "user" is rlogin etc).
-    o Can execute an external program when user has authenticated (for example
-      to run a sendmail queue).
-    o Can use `$INCLUDE filename' in radiusd.conf, users, and dictionary files
-    o Can act as a proxy server, relaying requests to a remote server
-    o Supports Vendor-Specific attributes
-    o No good documentation at all, just like the original radiusd 1.16!
+The server scales easily from embedded systems with small amounts of memory to
+systems with millions of users. It is fast, flexible, configurable, and
+supports more authentication protocols than most commercial servers. It
+includes support for SQL, LDAP, RADIUS Proxying, failover, load balancing, and
+nearly 100 vendor dictionary files. It can perform authentications via the
+PAP, CHAP, MS-CHAP, EAP-MD5, EAP-GTC, EAP-TLS, EAP-TTLS, PEAPv0, LEAP,
+EAP-SIM, and Digest authentication protocols. It has reached a stable 1.1
+version, with incremental improvements added in each release.
 
-  Then of course for general RADIUS questions, especially if you are using
-  Livingston  / Lucent RABU equipment, there is the portmaster-radius mailing
-  list. Send mail to portmaster-radius-request@livingston.com to find
-  out how to subscribe.
+The server is released under the GNU General Public License (GPL), which means
+that it is free to download and install.
+
 
 WWW: http://www.freeradius.org/

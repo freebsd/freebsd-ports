@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
@@ -27,10 +26,9 @@ CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 USE_RC_SUBR=	radiusd.sh
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
-USE_PERL5=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CFLAGS+=	"-I${LOCALBASE}/include"
+CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -40,6 +38,8 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 		MYSQL		"With MySQL user database" off \
 		PGSQL		"With PostgreSQL use database" off \
 		SNMP		"With SNMP support" off \
+		EDIR		"With Novell eDirectory support" off \
+		NOPERL		"Do not require perl (use only if necessary)" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
 .include <bsd.port.pre.mk>
@@ -49,6 +49,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--with-system-libtool \
 		--disable-ltdl-install \
 		--with-docdir=${DOCSDIR} \
+		--mandir=${PREFIX}/man \
 		--with-large-files --without-rlm_sql_unixodbc \
 		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
 		--without-rlm_sql_db2 \
@@ -84,12 +85,20 @@ CONFIGURE_ARGS+=--without-rlm_krb5
 PLIST_SUB+=	KRB5="@comment "
 .endif
 
+.if defined(WITH_EDIR) && !defined(WITH_LDAP)
+WITH_LDAP=	yes
+.endif
+
 .ifdef(WITH_LDAP)
 USE_OPENLDAP=	YES
 PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--without-rlm_ldap
 PLIST_SUB+=	LDAP="@comment "
+.endif
+
+.ifdef(WITH_EDIR)
+CONFIGURE_ARGS+=--with-edir
 .endif
 
 .ifdef(WITH_MYSQL)
@@ -124,19 +133,21 @@ PLIST_SUB+=	EXPM=""
 PLIST_SUB+=	EXPM="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	NOPORTDOCS=yes
+.ifndef(WITH_NOPERL)
+USE_PERL5=	yes
 .endif
 
-# rlm_x99_token seems broken
-#CONFIGURE_ARGS+=--without-rlm_x99_token
-PLIST_SUB+=	TOKEN=""
-
 # rlm_perl does not build on 4.x
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || defined(WITH_NOPERL)
+CONFIGURE_ARGS+=--without-rlm_perl
 PLIST_SUB+=	RLMPERL="@comment "
 .else
+CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
+.endif
+
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 USE_LDCONFIG=	yes
@@ -152,13 +163,13 @@ MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
 
 DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.airespace dictionary.alcatel dictionary.alteon \
-		dictionary.alvarion dictionary.altiga dictionary.aptis \
+		dictionary.altiga dictionary.alvarion dictionary.aptis \
 		dictionary.aruba dictionary.ascend dictionary.avaya \
 		dictionary.bay dictionary.bintec dictionary.bristol \
 		dictionary.cablelabs dictionary.cabletron dictionary.cisco \
 		dictionary.cisco.bbsm dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
 		dictionary.colubris dictionary.columbia_university dictionary.compat \
-		dictionary.cosine dictionary.digest dictionary.digium dictionary.epygi \
+		dictionary.cosine dictionary.digium dictionary.epygi \
 		dictionary.ericsson dictionary.erx dictionary.extreme \
 		dictionary.fortinet dictionary.foundry dictionary.freeradius \
 		dictionary.freeradius.internal dictionary.gandalf dictionary.garderos \
@@ -168,12 +179,15 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.merit dictionary.microsoft dictionary.mikrotik \
 		dictionary.motorola dictionary.navini dictionary.netscreen \
 		dictionary.nokia dictionary.nomadix dictionary.nortel dictionary.ntua \
-		dictionary.packeteer dictionary.propel dictionary.quintum \
-		dictionary.redback dictionary.redcreek dictionary.riverstone \
+		dictionary.packeteer dictionary.patton \
+		dictionary.propel dictionary.quintum \
+		dictionary.redback dictionary.redcreek \
 		dictionary.rfc2865 dictionary.rfc2866 dictionary.rfc2867 \
 		dictionary.rfc2868 dictionary.rfc2869 dictionary.rfc3162 \
-		dictionary.rfc3576 dictionary.rfc3580 dictionary.roaringpenguin \
-		dictionary.shasta dictionary.shiva dictionary.sonicwall \
+		dictionary.rfc3576 dictionary.rfc3580 dictionary.rfc4590 \
+		dictionary.riverstone dictionary.roaringpenguin \
+		dictionary.schulzrinne-sipping dictionary.shasta dictionary.shiva \
+		dictionary.sofaware dictionary.sonicwall \
 		dictionary.springtide dictionary.starent dictionary.t_systems_nova \
 		dictionary.telebit dictionary.trapeze dictionary.tropos \
 		dictionary.unix dictionary.usr dictionary.valemount \
