@@ -11,7 +11,7 @@ CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Controls multiple hosts simultaneously via xterms and ssh
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/cssh
 MAN1=		cssh.1
