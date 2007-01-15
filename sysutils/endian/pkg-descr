@@ -1,0 +1,5 @@
+Endian reports the endianness to the standard output as "little",
+"big", or "mixed". As there is no standard terminology for the various
+possible mixed modes, and very few such  machines  even  exist,  endian
+does not distinguish between various mixed modes. Report endianness
+of a system.

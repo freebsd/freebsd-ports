@@ -156,6 +156,7 @@
     SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += empower
+    SUBDIR += endian
     SUBDIR += enteruser
     SUBDIR += env4801
     SUBDIR += epylog
