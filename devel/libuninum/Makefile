@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libuninum
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://billposer.org/Software/Downloads/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Library for converting Unicode strings to numbers
