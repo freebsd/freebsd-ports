@@ -34,6 +34,68 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1374b96c-a1c2-11db-9ddc-0011098b2f36">
+    <topic>sircd -- remote reverse DNS buffer overflow</topic>
+    <affects>
+      <package>
+       <name>sircd</name>
+       <range><le>0.4.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Secunia reports:</p>
+       <blockquote cite="http://secunia.com/advisories/8153/">
+	 <p>A vulnerability in sircd can be exploited by a malicious person
+	   to compromise a vulnerable system.  The vulnerability is caused
+	   by a boundary error in the code handling reverse DNS lookups,
+	   when a user connects to the service. If the FQDN (Fully Qualified
+	   Domain Name) returned is excessively long, the allocated buffer
+	   is overflowed making it possible to execute arbitrary code on the
+	   system with the privileges of the sircd daemon.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>6924</bid>
+      <url>http://secunia.com/advisories/8153</url>
+    </references>
+    <dates>
+      <discovery>2003-02-24</discovery>
+      <entry>2007-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e92d8f6b-a1c0-11db-9ddc-0011098b2f36">
+    <topic>sircd -- remote operator privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+       <name>sircd</name>
+       <range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Secunia reports:</p>
+       <blockquote cite="http://secunia.com/advisories/10274/">
+	 <p>A vulnerability has been reported in sircd, which can be
+	   exploited by malicious users to gain operator privileges.
+	   The problem is that any user reportedly can set their usermode
+	   to operator.  The vulnerability has been reported in
+	   versions 0.5.2 and 0.5.3. Other versions may also be affected.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>9097</bid>
+      <url>http://secunia.com/advisories/10274/</url>
+    </references>
+    <dates>
+      <discovery>2003-11-20</discovery>
+      <entry>2007-01-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="41da2ba4-a24e-11db-bd24-000f3dcc6a5d">
     <topic>cacti -- Multiple vulnerabilities</topic>
     <affects>
