@@ -8,7 +8,8 @@
 PORTNAME=	gettext
 PORTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/gettext/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= philip
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	lua_gettext.c?rev=${CVER} gettext.lua?rev=${LVER}
 
