@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nepenthes
-PORTVERSION=	0.1.7
-PORTREVISION=	3
+PORTVERSION=	0.2.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nepenthes
@@ -26,12 +25,17 @@ CONFIGURE_ARGS+=	--enable-prelude
 EXTRA_PATCHES=		${FILESDIR}/prelude_modules_log-prelude_Makefile.in.patch
 .endif
 
+.if defined(WITH_DEBUG_LOGGING)
+CONFIGURE_ARGS+=	--enable-debug-logging
+.endif
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --infodir=${PREFIX}/info
 
-MAN8=		nepenthes.8
-DOCS=		README README.VFS logo-shaded.svg
+DOCS=	README README.VFS logo-shaded.svg
+MAN8=	nepenthes.8
 
 .include <bsd.port.pre.mk>
 

@@ -1,13 +1,21 @@
---- Makefile.in.orig	Sun Apr 30 22:50:20 2006
-+++ Makefile.in	Sun Apr 30 22:50:38 2006
-@@ -198,8 +198,8 @@
- SUBDIRS = nepenthes-core modules 
+--- Makefile.in.orig    Sun Jan 14 13:34:14 2007
++++ Makefile.in Sun Jan 14 13:34:40 2007
+@@ -188,7 +188,7 @@
+ build_vendor = @build_vendor@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(prefix)/share/doc
++docdir = $(prefix)/share/nepenthes
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -219,7 +219,7 @@
+ SUBDIRS = nepenthes-core modules
  #tools
  EXTRA_DIST = configure.ac CHANGES doc/README.VFS doc/logo-shaded.svg doc/nepenthes.8 conf/nepenthes.conf.dist
--docdir = $(prefix)/share/doc
 -doc_DATA = doc/README.VFS doc/logo-shaded.svg
-+docdir = $(prefix)/share/nepenthes
 +doc_DATA = README doc/README.VFS doc/logo-shaded.svg
- 
+
  #sysconf_DATA = conf/nepenthes.conf.dist
  AM_CXXFLAGS = ''
+
