@@ -38,7 +38,7 @@ CATALINA_HOME=	${LOCALBASE}/tomcat5.5
 BUILD_DEPENDS+=		${TOMCAT_DEPEND}
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/mod_python.so:${PORTSDIR}/www/mod_python3 \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 		${SITE_PERL}/${PERL_ARCH}/Pg.pm:${PORTSDIR}/databases/p5-Pg \
 		${PYTHON_SITELIBDIR}/rrdtool/_rrdtool.so:${PORTSDIR}/net/py-rrdtool_lgpl \
