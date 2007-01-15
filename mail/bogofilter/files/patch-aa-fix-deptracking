@@ -1,0 +1,29 @@
+--- ./src/Makefile.am.orig	Sat Dec  9 14:53:57 2006
++++ ./src/Makefile.am	Sun Jan 14 17:51:18 2007
+@@ -27,4 +27,6 @@
+ endif
+ 
++BUILT_SOURCES=	version.c directories.c
++
+ # what to build
+ bin_PROGRAMS = bogofilter bogoutil bogolexer bogotune
+@@ -44,5 +46,4 @@
+ bogoutil_LDADD = $(LDADD) $(LIBDB)
+ configtest_LDADD = $(LDADD) $(LIBDB)
+-bogofilter_DEPENDENCIES = $(LDADD)
+ 
+ if NEED_GSL
+@@ -60,5 +61,5 @@
+ noinst_LIBRARIES += libbf_gsl.a
+ libbf_gsl_a_CPPFLAGS= -I$(top_srcdir)
+-bogofilter_DEPENDENCIES += libbf_gsl.a
++BUILT_SOURCES += libbf_gsl.a
+ endif
+ 
+@@ -152,6 +153,4 @@
+ 	datastore_db.h \
+ 	mysetvbuf.c mysetvbuf.h
+-
+-BUILT_SOURCES=	version.c directories.c
+ 
+ libbogofilter_a_SOURCES = \

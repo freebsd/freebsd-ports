@@ -1,0 +1,61 @@
+diff -u -r1.153 -r1.155
+--- ./src/token.c	26 Nov 2006 16:34:30 -0000	1.153
++++ ./src/token.c	12 Jan 2007 00:20:16 -0000	1.155
+@@ -1,4 +1,4 @@
+-/* $Id: token.c,v 1.153 2006/11/26 16:34:30 relson Exp $ */
++/* $Id: token.c,v 1.155 2007/01/12 00:20:16 relson Exp $ */
+ 
+ /*****************************************************************************
+ 
+@@ -121,22 +121,17 @@
+     token_set(dst, src->text, src->leng);
+ }
+ 
+-static void build_prefixed_token( word_t *token, word_t *prefix, 
++static void build_prefixed_token( word_t *prefix, word_t *token,
+ 				  word_t *temp, uint32_t temp_size )
+ {
+-    uint pfx_len = (prefix == NULL) ? 0 : prefix->leng;
+-    uint len = token->leng + pfx_len;
++    uint len = token->leng + prefix->leng;
+     
+     if (len >= temp_size)
+-	len = temp_size - pfx_len - 1;
++	len = temp_size - prefix->leng - 1;
+ 
+     temp->leng = len;
+-
+-    /* copy prefix, if there is one */
+-    if (prefix != NULL)
+-	memcpy(temp->text, prefix->text, pfx_len);
+-
+-    memcpy(temp->text + pfx_len, token->text, len-pfx_len);
++    memmove(temp->text+prefix->leng, token->text, len-prefix->leng);
++    memcpy(temp->text, prefix->text, prefix->leng);
+     Z(temp->text[temp->leng]);
+ 
+     token->leng = temp->leng;
+@@ -167,12 +162,11 @@
+     if (token_prefix != NULL) {
+ 	/* IP addresses get special prefix */
+ 	if (save_class != IPADDR) {
+-	    build_prefixed_token(token, token_prefix, &yylval, yylval_text_size);
++	    build_prefixed_token(token_prefix, token, &yylval, yylval_text_size);
+ 	}
+ 	else {
+-
+ 	    word_t *prefix = (wordlist_version >= IP_PREFIX) ? w_ip : w_url;
+-	    build_prefixed_token(token, prefix, ipsave, max_token_len);
++	    build_prefixed_token(prefix, token, &yylval, yylval_text_size);
+ 	}
+ 
+ 	/* if excessive length caused by prefix, get another token */
+@@ -198,7 +192,7 @@
+ 	else
+ 	{
+ 	    ipsave->leng = (uint) (t - ipsave->text);
+-	    token_set( &yylval, ipsave->text, ipsave->leng);
++	    token_set( token, ipsave->text, ipsave->leng);
+ 	    cls = save_class;
+ 	    done = true;
+ 	}

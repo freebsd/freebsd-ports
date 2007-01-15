@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.4
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,7 +33,7 @@ PATCH_STRIP=	-p1
 
 BF_LIBS?=		-ldb-4.3
 BF_CPPFLAGS?=		-I${LOCALBASE}/include/db43 -I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc --mandir=${PREFIX}/man
 .if !defined(WITHOUT_UNICODE)
 CONFIGURE_ARGS+=	--enable-unicode
 USE_ICONV=		yes
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--with-included-gsl
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="${BF_LIBS}" \
 		PERL="${PERL}" CPPFLAGS="${BF_CPPFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALL_TARGET=	install-strip prefix=${PREFIX}
+INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
 		bf_copy.1 bf_compact.1 bf_tar.1
@@ -67,7 +67,7 @@ PLIST_SUB=	CONTRIB=""
 .endif
 
 post-build::
-	cd ${WRKSRC} && make check SHELL=${SH}
+	cd ${WRKSRC}/src && make check SHELL=${SH}
 
 post-install::
 	@${MKDIR} ${DOCSDIR}/contrib
