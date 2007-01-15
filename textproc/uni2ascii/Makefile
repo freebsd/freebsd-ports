@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uni2ascii
-PORTVERSION=	3.10
+PORTVERSION=	3.12
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/ \
 		http://critical.ch/distfiles/ \
