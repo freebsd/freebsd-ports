@@ -7,7 +7,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	${PORTNAME}-ko-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-ko-${PORTVERSION}
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Korean enabled Texinfo formatter
 
-RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex
+RUN_DEPENDS=	hbibtex:${PORTSDIR}/korean/hlatex
 
 GNU_CONFIGURE=	YES
 USE_GETTEXT=	yes
