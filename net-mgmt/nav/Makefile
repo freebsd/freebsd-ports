@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nav
-PORTVERSION=	3.0.b10
+PORTVERSION=	3.1.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://metanav.ntnu.no/downloads/v3/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/_beta/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Network Administration Visualized
@@ -17,19 +17,26 @@ COMMENT=	Network Administration Visualized
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/bin/cheetah:${PORTSDIR}/devel/py-cheetah \
 		ginstall:${PORTSDIR}/sysutils/coreutils \
-		gfind:${PORTSDIR}/misc/findutils
-EXTRACT_DEPENDS+=	ginstall:${PORTSDIR}/sysutils/coreutils \
-			${LOCALBASE}/share/java/classes/snmp.jar:${PORTSDIR}/java/drexelsnmp
-.if exists(${LOCALBASE}/jakarta-tomcat4.1)
+		gfind:${PORTSDIR}/misc/findutils \
+		ginstall:${PORTSDIR}/sysutils/coreutils \
+		${JAVALIBDIR}/snmp.jar:${PORTSDIR}/java/drexelsnmp
+
+.if exists(${LOCALBASE}/jakarta-tomcat4.1/bin/catalina.sh)
 TOMCAT_DEPEND=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
 CATALINA_HOME=	${LOCALBASE}/jakarta-tomcat4.1
-.elif exists(${LOCALBASE}/jakarta-tomcat4.0.6)
+.elif exists(${LOCALBASE}/jakarta-tomcat4.0.6/bin/catalina.sh)
 TOMCAT_DEPEND=	${LOCALBASE}/jakarta-tomcat4.0.6:${PORTSDIR}/www/jakarta-tomcat4
 CATALINA_HOME=	${LOCALBASE}/jakarta-tomcat4.0.6
-.else
+.elif exists(${LOCALBASE}/jakarta-tomcat5.0/bin/catalina.sh)
 TOMCAT_DEPEND=	${LOCALBASE}/jakarta-tomcat5.0:${PORTSDIR}/www/jakarta-tomcat5
 CATALINA_HOME=	${LOCALBASE}/jakarta-tomcat5.0
+.else
+TOMCAT_DEPEND=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
+CATALINA_HOME=	${LOCALBASE}/tomcat5.5
 .endif
+
+BUILD_DEPENDS+=		${TOMCAT_DEPEND}
+
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/mod_python.so:${PORTSDIR}/www/mod_python3 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
@@ -37,13 +44,14 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/mod_python.so:${PORTSDIR}/www/mod_pyth
 		${PYTHON_SITELIBDIR}/rrdtool/_rrdtool.so:${PORTSDIR}/net/py-rrdtool_lgpl \
 		${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg \
 		${LOCALBASE}/cricket/cricket/collect-subtrees:${PORTSDIR}/net-mgmt/cricket \
-		${LOCALBASE}/share/java/classes/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc \
+		${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc \
 		${PYTHON_SITELIBDIR}/forgetSQL.py:${PORTSDIR}/databases/py-forgetsql \
 		${PYTHON_SITELIBDIR}/forgetHTML.py:${PORTSDIR}/www/py-forgethtml \
+		${PYTHON_SITELIBDIR}/pysnmp/v2c.py:${PORTSDIR}/net-mgmt/py-snmp2 \
+		${LOCALBASE}/bin/gammu:${PORTSDIR}/comms/gammu \
 		${TOMCAT_DEPEND}
-EXTRACT_DEPENDS+=	${TOMCAT_DEPEND}
-BUILD_DEPENDS+=		${TOMCAT_DEPEND}
 
+MAKE_ENV+=	CLASSPATH=${CATALINA_HOME}/common/lib/servlet-api.jar
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_PYTHON=	2.3+
@@ -51,9 +59,11 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_APACHE=	yes
 WITH_APACHE2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
+USE_REINPLACE_CMD=	yes
 NO_PACKAGE=	Requires manual configuration during build
 
 CONFIGURE_ENV=	INSTALL="${LOCALBASE}/bin/ginstall"
@@ -72,19 +82,6 @@ PYCRONPATH=	subsystem/logger/bin/logengine.py \
 IGNORE=		This port requires perl 5.6 or newer
 .endif
 
-.if !defined(BATCH)
-pre-everything::
-	@${DIALOG} --title "NAV" --msgbox "Remember to switch Apache2 on for the PHP port." 5 60
-.endif
-
-post-extract:
-	${INSTALL} -d -m 0755 ${WRKSRC}/src/SimpleSnmp/build
-	${INSTALL_DATA} ${LOCALBASE}/share/java/classes/snmp.jar ${WRKSRC}/src/SimpleSnmp/build
-	${INSTALL} -d -m 0755 ${WRKSRC}/src/webapps/navAdmin/build
-	${INSTALL_DATA} ${CATALINA_HOME}/server/lib/catalina-ant.jar ${WRKSRC}/src/webapps/navAdmin/build
-	${INSTALL} -d -m 0755 ${WRKSRC}/src/webapps/vPServer/build
-	${INSTALL_DATA} ${CATALINA_HOME}/server/lib/catalina-ant.jar ${WRKSRC}/src/webapps/vPServer/build
-
 post-patch:
 	@${REINPLACE_CMD} -E -e "s@(property name=\"catalina.home\").*@\1 value=\"${CATALINA_HOME}\"/>@" ${WRKSRC}/src/webapps/*/build.xml
 	@${REINPLACE_CMD} -e "s@find@gfind@g" ${WRKSRC}/subsystem/alertprofiles/Makefile.in ${WRKSRC}/tools/htpython.sh ${WRKSRC}/subsystem/statTools/cleanrrds.pl
@@ -98,10 +95,22 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s@^(JAVA_HOME).*@\1 = ${JAVA_HOME}@" \
 		${WRKSRC}/doc/conf/nav.conf
 
+# do this in pre-build rather than post-extract or post-patch to avoid
+# excessive EXTRACT_DEPENDS.
+pre-build:
+	${MKDIR} ${WRKSRC}/src/SimpleSnmp/build
+	${LN} -fs ${JAVALIBDIR}/snmp.jar ${WRKSRC}/src/SimpleSnmp/build
+	${MKDIR} ${WRKSRC}/src/webapps/navAdmin/build
+	${LN} -fs ${CATALINA_HOME}/server/lib/catalina-ant.jar ${WRKSRC}/src/webapps/navAdmin/build
+	${MKDIR} ${WRKSRC}/src/webapps/vPServer/build
+	${LN} -fs ${CATALINA_HOME}/server/lib/catalina-ant.jar ${WRKSRC}/src/webapps/vPServer/build
+
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${FIND} ${WRKSRC} \( -name '*.bak' -or -name '*.orig' \) -delete
 
 post-install:
+	@${INSTALL_DATA} ${FILESDIR}/apache.conf ${PREFIX}/etc/apache2/Includes/nav.conf.sample
 	@${CHOWN} -R navcron:nav ${PREFIX}/nav/var
 	@LOCALBASE=${LOCALBASE} JAVA_HOME=${JAVA_HOME} ${SH} ${SCRIPTDIR}/navenv w >${WRKSRC}/navenv.sh
 	@${INSTALL_SCRIPT} ${WRKSRC}/navenv.sh ${PREFIX}/nav/bin/

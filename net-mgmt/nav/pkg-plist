@@ -1,7 +1,11 @@
+etc/apache2/Includes/nav.conf.sample
 nav/apache/tools/alertprofiles.tool
+nav/apache/tools/arnold.tool
 nav/apache/tools/cricket.tool
 nav/apache/tools/devicemanagement.tool
 nav/apache/tools/editdb.tool
+nav/apache/tools/ipinfo.tool
+nav/apache/tools/l2trace.tool
 nav/apache/tools/logger.tool
 nav/apache/tools/machinetracker.tool
 nav/apache/tools/messages.tool
@@ -14,7 +18,6 @@ nav/apache/webapps/navAdmin.war
 nav/apache/webapps/vPServer.war
 nav/apache/webroot/.htaccess
 nav/apache/webroot/alertprofiles/.htaccess
-nav/apache/webroot/alertprofiles/Makefile.in.bak
 nav/apache/webroot/alertprofiles/auth.php
 nav/apache/webroot/alertprofiles/check_syntax.function.php
 nav/apache/webroot/alertprofiles/config.php
@@ -115,13 +118,14 @@ nav/apache/webroot/alertprofiles/modules/user-group-admin.php
 nav/apache/webroot/alertprofiles/modules/user-to-group-admin.php
 nav/apache/webroot/alertprofiles/modules/wap-setup.php
 nav/apache/webroot/alertprofiles/modules/welcome.php
-nav/apache/webroot/alertprofiles/phpinfo.php
 nav/apache/webroot/alertprofiles/session.php
 nav/apache/webroot/alertprofiles/timeplan.php
 nav/apache/webroot/alertprofiles/wap/.htaccess
 nav/apache/webroot/alertprofiles/wap/db.php
 nav/apache/webroot/alertprofiles/wap/index.php
 nav/apache/webroot/alertprofiles/wap/varlib.php
+nav/apache/webroot/arnold/.htaccess
+nav/apache/webroot/arnold/arnoldhandler.py
 nav/apache/webroot/browse/.htaccess
 nav/apache/webroot/browse/index
 nav/apache/webroot/devicemanagement/.htaccess
@@ -138,7 +142,10 @@ nav/apache/webroot/images/arpcam/arplogo+fill.gif
 nav/apache/webroot/images/arpcam/camlogo+fill.gif
 nav/apache/webroot/images/arpcam/fill.gif
 nav/apache/webroot/images/arpcam/info.gif
+nav/apache/webroot/images/arpcam/ipinfolink.png
 nav/apache/webroot/images/arpcam/mtlogo+fill.gif
+nav/apache/webroot/images/bar-end.gif
+nav/apache/webroot/images/bar-fill.gif
 nav/apache/webroot/images/blank.gif
 nav/apache/webroot/images/emotd/emotdlogo+fill.gif
 nav/apache/webroot/images/emotd/top-l.gif
@@ -199,26 +206,33 @@ nav/apache/webroot/images/toolbox/module-fill.gif
 nav/apache/webroot/images/toolbox/module-footer-end.gif
 nav/apache/webroot/images/toolbox/module-footer-fill.gif
 nav/apache/webroot/images/toolbox/module-footer-start.gif
+nav/apache/webroot/images/toolbox/tools/arnold.png
 nav/apache/webroot/images/toolbox/tools/cricket.gif
 nav/apache/webroot/images/toolbox/tools/devbrowser.gif
 nav/apache/webroot/images/toolbox/tools/devman.gif
 nav/apache/webroot/images/toolbox/tools/editdb.gif
 nav/apache/webroot/images/toolbox/tools/emotd.gif
+nav/apache/webroot/images/toolbox/tools/ipinfo.png
+nav/apache/webroot/images/toolbox/tools/l2trace.png
 nav/apache/webroot/images/toolbox/tools/network-explorer.gif
 nav/apache/webroot/images/toolbox/tools/ragen.gif
 nav/apache/webroot/images/toolbox/tools/searchtools.gif
 nav/apache/webroot/images/toolbox/tools/stat.gif
 nav/apache/webroot/images/toolbox/tools/status.gif
 nav/apache/webroot/images/toolbox/tools/syslog-analyzer.gif
+nav/apache/webroot/images/toolbox/tools/useradmin.png
 nav/apache/webroot/images/toolbox/tools/vlanplot.gif
 nav/apache/webroot/images/wrench.gif
 nav/apache/webroot/index.py
+nav/apache/webroot/ipinfo/.htaccess
+nav/apache/webroot/l2trace/.htaccess
+nav/apache/webroot/l2trace/l2trace.py
 nav/apache/webroot/logger/.htaccess
-nav/apache/webroot/logger/main.py
+nav/apache/webroot/logger/loggerhandler.py
 nav/apache/webroot/machinetracker/.htaccess
 nav/apache/webroot/machinetracker/machinetracker.py
 nav/apache/webroot/messages/.htaccess
-nav/apache/webroot/messages/main.py
+nav/apache/webroot/messages/messageshandler.py
 nav/apache/webroot/navAdmin/.htaccess
 nav/apache/webroot/navAdmin/index
 nav/apache/webroot/preferences/.htaccess
@@ -232,6 +246,19 @@ nav/apache/webroot/report/Generator.py
 nav/apache/webroot/report/Matrix.py
 nav/apache/webroot/report/Report.py
 nav/apache/webroot/report/reporthandler.py
+nav/apache/webroot/source/arnold.svg
+nav/apache/webroot/source/devman-toolicon.psd
+nav/apache/webroot/source/editdb-toolicon.psd
+nav/apache/webroot/source/editdb.svg
+nav/apache/webroot/source/l2trace.svg
+nav/apache/webroot/source/navbar-separator.psd
+nav/apache/webroot/source/navlogo.svg
+nav/apache/webroot/source/network-explorer-toolicon.psd
+nav/apache/webroot/source/ntnu-toolicon.psd
+nav/apache/webroot/source/router.svg
+nav/apache/webroot/source/status.svg
+nav/apache/webroot/source/toolicon-background.psd
+nav/apache/webroot/source/useradmin.svg
 nav/apache/webroot/status/.htaccess
 nav/apache/webroot/status/StatusDefaultPrefs.py
 nav/apache/webroot/status/StatusPrefs.py
@@ -244,6 +271,7 @@ nav/apache/webroot/vPServer/.htaccess
 nav/apache/webroot/vPServer/index
 nav/apache/webroot/vlanPlot/.htaccess
 nav/apache/webroot/vlanPlot/gfx/nav_logo.gif
+nav/apache/webroot/vlanPlot/icons/core.gif
 nav/apache/webroot/vlanPlot/icons/default_grp_icon.gif
 nav/apache/webroot/vlanPlot/icons/elink.gif
 nav/apache/webroot/vlanPlot/icons/fddi.gif
@@ -256,7 +284,6 @@ nav/apache/webroot/vlanPlot/icons/kant.gif
 nav/apache/webroot/vlanPlot/icons/lan.gif
 nav/apache/webroot/vlanPlot/icons/mas.gif
 nav/apache/webroot/vlanPlot/icons/srv.gif
-nav/apache/webroot/vlanPlot/icons/stam.gif
 nav/apache/webroot/vlanPlot/icons/sw.gif
 nav/apache/webroot/vlanPlot/icons/tildelt.gif
 nav/apache/webroot/vlanPlot/icons/undef.gif
@@ -266,7 +293,9 @@ nav/apache/webroot/vlanPlot/omvlanplot.html
 nav/apache/webroot/vlanPlot/vlanPlot.jar
 nav/bin/alertdaemon.pl
 nav/bin/alertengine.pl
+nav/bin/arnold.pl
 nav/bin/arplogger.pl
+nav/bin/autoenable.pl
 nav/bin/checkService.py
 nav/bin/cleanrrds.pl
 nav/bin/dump.py
@@ -280,30 +309,32 @@ nav/bin/logengine.py
 nav/bin/maintengine.py
 nav/bin/makecricketconfig.pl
 nav/bin/nav
-nav/bin/navenv.sh
 nav/bin/navTemplate.py
 nav/bin/navclean.py
+nav/bin/navenv.sh
 nav/bin/networkDiscovery.sh
 nav/bin/pg_backup.pl
 nav/bin/pping.py
 nav/bin/safe_smsd.pl
 nav/bin/servicemon.py
 nav/bin/smsd.pl
+nav/bin/start_arnold.pl
+nav/bin/t1000.pl
 nav/bin/thresholdMon.py
 nav/bin/vprrd.py
 nav/doc/cricket/README
 nav/doc/cricket/cricket-config/.nav
 nav/doc/cricket/cricket-config/Defaults
-nav/doc/cricket/cricket-config/giga-router-interfaces/.nav
-nav/doc/cricket/cricket-config/giga-router-interfaces/Defaults
-nav/doc/cricket/cricket-config/giga-switch-ports/.nav
-nav/doc/cricket/cricket-config/giga-switch-ports/Defaults
+nav/doc/cricket/cricket-config/router-interfaces-snmpv1-and-giga/.nav
+nav/doc/cricket/cricket-config/router-interfaces-snmpv1-and-giga/Defaults
 nav/doc/cricket/cricket-config/router-interfaces/.nav
 nav/doc/cricket/cricket-config/router-interfaces/Defaults
 nav/doc/cricket/cricket-config/routers/.nav
 nav/doc/cricket/cricket-config/routers/Defaults
 nav/doc/cricket/cricket-config/servers/.nav
 nav/doc/cricket/cricket-config/servers/Defaults
+nav/doc/cricket/cricket-config/switch-ports-snmpv1-and-giga/.nav
+nav/doc/cricket/cricket-config/switch-ports-snmpv1-and-giga/Defaults
 nav/doc/cricket/cricket-config/switch-ports/.nav
 nav/doc/cricket/cricket-config/switch-ports/Defaults
 nav/doc/cricket/cricket-config/switches/.nav
@@ -313,19 +344,25 @@ nav/doc/cricket/cricket/view-groups
 nav/doc/cricket/public_html/cricket.css
 nav/doc/getting-started.txt
 nav/doc/sql/README
+nav/doc/sql/arnold.sql
 nav/doc/sql/logger.sql
 nav/doc/sql/manage.sql
 nav/doc/sql/navprofiles.sql
 nav/doc/sql/snmpoid.sql
+nav/doc/sql/upgrades/3.0_beta10.sql
 nav/doc/sql/upgrades/3.0_beta7.sql
 nav/doc/sql/upgrades/3.0_beta8.sql
+nav/doc/sql/upgrades/3.0_rc1.sql
 nav/doc/sql/upgrades/README
 nav/etc/alertengine.cfg
 nav/etc/alertmsg.conf
+nav/etc/arnold/arnold.cfg
+nav/etc/arnold/mailtemplates/README
+nav/etc/arnold/nonblock.cfg
+nav/etc/cricket-views.conf
 nav/etc/cricketoids.txt
 nav/etc/cron.d/backup
 nav/etc/cron.d/cricket
-nav/etc/cricket-views.conf
 nav/etc/cron.d/iptrace
 nav/etc/cron.d/logengine
 nav/etc/cron.d/mactrace
@@ -347,6 +384,7 @@ nav/etc/init.d/getDeviceData
 nav/etc/init.d/pping
 nav/etc/init.d/servicemon
 nav/etc/init.d/smsd
+nav/etc/l2trace.conf
 nav/etc/logger.conf
 nav/etc/machinetracker.conf
 nav/etc/nav.conf
@@ -361,6 +399,7 @@ nav/etc/smsd.conf
 nav/etc/vPServer.conf
 nav/etc/webfront/contact-information.txt
 nav/etc/webfront/external-links.txt
+nav/etc/webfront/ipinfo.conf
 nav/etc/webfront/nav-links.conf
 nav/etc/webfront/webfront.conf
 nav/etc/webfront/welcome-anonymous.txt
@@ -376,6 +415,7 @@ nav/lib/java/eventEngine/device-plugins/Box.jar
 nav/lib/java/eventEngine/device-plugins/Netel.jar
 nav/lib/java/eventEngine/eventEngine.jar
 nav/lib/java/eventEngine/handler-plugins/BoxState.jar
+nav/lib/java/eventEngine/handler-plugins/CallScript.jar
 nav/lib/java/eventEngine/handler-plugins/DeviceTracker.jar
 nav/lib/java/eventEngine/handler-plugins/Info.jar
 nav/lib/java/eventEngine/handler-plugins/MaintenanceState.jar
@@ -398,8 +438,9 @@ nav/lib/java/getDeviceData/device-plugins/CiscoSwCL3addon.jar
 nav/lib/java/getDeviceData/device-plugins/CiscoSwIOS.jar
 nav/lib/java/getDeviceData/device-plugins/CiscoSwIOSaddon.jar
 nav/lib/java/getDeviceData/device-plugins/CiscoSwMenu.jar
-nav/lib/java/getDeviceData/device-plugins/DeviceMem.jar
 nav/lib/java/getDeviceData/device-plugins/DNSCheck.jar
+nav/lib/java/getDeviceData/device-plugins/DeviceMem.jar
+nav/lib/java/getDeviceData/device-plugins/GetVlanFromInterface.jar
 nav/lib/java/getDeviceData/device-plugins/HP.jar
 nav/lib/java/getDeviceData/device-plugins/MibIISw.jar
 nav/lib/java/getDeviceData/device-plugins/Server.jar
@@ -407,6 +448,7 @@ nav/lib/java/getDeviceData/device-plugins/StaticRoutes.jar
 nav/lib/java/getDeviceData/device-plugins/Typeoid.jar
 nav/lib/java/getDeviceData/getDeviceData.jar
 nav/lib/java/networkDiscovery/networkDiscovery.jar
+nav/lib/perl/NAV.pm
 nav/lib/perl/NAV/AlertEngine/Alert.pm
 nav/lib/perl/NAV/AlertEngine/AlertsBase.pm
 nav/lib/perl/NAV/AlertEngine/Engine.pm
@@ -416,8 +458,8 @@ nav/lib/perl/NAV/AlertEngine/NewAlerts.pm
 nav/lib/perl/NAV/AlertEngine/QueuedAlerts.pm
 nav/lib/perl/NAV/AlertEngine/User.pm
 nav/lib/perl/NAV/AlertEngine/UserGroups.pm
+nav/lib/perl/NAV/Arnold.pm
 nav/lib/perl/NAV/Path.pm
-nav/lib/perl/NAV.pm
 nav/lib/perl/NetAddr/IP.pm
 nav/lib/python/nav/Snmp.py
 nav/lib/python/nav/__init__.py
@@ -430,11 +472,13 @@ nav/lib/python/nav/db/forgotten/manage.py
 nav/lib/python/nav/db/forgotten/navprofiles.py
 nav/lib/python/nav/db/manage.py
 nav/lib/python/nav/db/navprofiles.py
+nav/lib/python/nav/debug.py
 nav/lib/python/nav/dump.py
 nav/lib/python/nav/errors.py
+nav/lib/python/nav/event.py
 nav/lib/python/nav/getstatus.py
-nav/lib/python/nav/ip.py
 nav/lib/python/nav/path.py
+nav/lib/python/nav/pwhash.py
 nav/lib/python/nav/rrd/__init__.py
 nav/lib/python/nav/rrd/presenter.py
 nav/lib/python/nav/startstop.py
@@ -480,6 +524,8 @@ nav/lib/python/nav/statemon/checker/PortChecker.descr
 nav/lib/python/nav/statemon/checker/PortChecker.py
 nav/lib/python/nav/statemon/checker/PostgresqlChecker.descr
 nav/lib/python/nav/statemon/checker/PostgresqlChecker.py
+nav/lib/python/nav/statemon/checker/RadiusChecker.descr
+nav/lib/python/nav/statemon/checker/RadiusChecker.py
 nav/lib/python/nav/statemon/checker/RpcChecker.descr
 nav/lib/python/nav/statemon/checker/RpcChecker.py
 nav/lib/python/nav/statemon/checker/SmbChecker.descr
@@ -508,6 +554,7 @@ nav/lib/python/nav/statemon/prioqueunique.py
 nav/lib/python/nav/statemon/rrd.py
 nav/lib/python/nav/statemon/service.py
 nav/lib/python/nav/statemon/timeoutsocket.py
+nav/lib/python/nav/util.py
 nav/lib/python/nav/web/SearchBox.py
 nav/lib/python/nav/web/TreeSelect.py
 nav/lib/python/nav/web/URI.py
@@ -521,6 +568,8 @@ nav/lib/python/nav/web/devBrowser/port.py
 nav/lib/python/nav/web/devBrowser/rrd.py
 nav/lib/python/nav/web/devBrowser/service.py
 nav/lib/python/nav/web/devBrowser/servicetable.py
+nav/lib/python/nav/web/ipinfo/__init__.py
+nav/lib/python/nav/web/ipinfo/config.py
 nav/lib/python/nav/web/ldapAuth.py
 nav/lib/python/nav/web/messages/__init__.py
 nav/lib/python/nav/web/messages/conf.py
@@ -535,6 +584,7 @@ nav/lib/python/nav/web/selectTree.py
 nav/lib/python/nav/web/serviceHelper.py
 nav/lib/python/nav/web/state.py
 nav/lib/python/nav/web/tableview.py
+nav/lib/python/nav/web/templates/ArnoldTemplate.py
 nav/lib/python/nav/web/templates/ChangeLinkTemplate.py
 nav/lib/python/nav/web/templates/DeviceBrowserTemplate.py
 nav/lib/python/nav/web/templates/EditTemplate.py
@@ -544,6 +594,7 @@ nav/lib/python/nav/web/templates/EmotdStandardTemplate.py
 nav/lib/python/nav/web/templates/EmotdTemplate.py
 nav/lib/python/nav/web/templates/FeederTemplate.py
 nav/lib/python/nav/web/templates/FrontpageTemplate.py
+nav/lib/python/nav/web/templates/IPInfo.py
 nav/lib/python/nav/web/templates/LoggerTemplate.py
 nav/lib/python/nav/web/templates/LoginTemplate.py
 nav/lib/python/nav/web/templates/MachineTrackerTemplate.py
@@ -564,6 +615,7 @@ nav/lib/python/nav/web/templates/ViewMessageTemplate.py
 nav/lib/python/nav/web/templates/__init__.py
 nav/lib/python/nav/web/templates/deviceManagementTemplate.py
 nav/lib/python/nav/web/templates/editdbTemplate.py
+nav/lib/python/nav/web/templates/l2traceTemplate.py
 nav/lib/python/nav/web/templates/selectTreeTemplate.py
 nav/lib/python/nav/web/templates/useradmin/AccountList.py
 nav/lib/python/nav/web/templates/useradmin/AccountPage.py
@@ -585,95 +637,102 @@ nav/lib/python/rotater.py
 @dirrmtry nav/var/pg_backup
 @dirrmtry nav/var
 @unexec find %D/nav/lib/python/nav -type f -name "*.pyc" -delete 2>/dev/null || true
-@dirrm nav/apache/tools
-@dirrm nav/apache/webapps
-@dirrm nav/apache/webroot/alertprofiles/css
-@dirrm nav/apache/webroot/alertprofiles/documents
-@dirrm nav/apache/webroot/alertprofiles/icons
-@dirrm nav/apache/webroot/alertprofiles/images
+@dirrm nav/lib/python/nav/web/templates/useradmin
+@dirrm nav/lib/python/nav/web/templates
+@dirrm nav/lib/python/nav/web/pyproxy
+@dirrm nav/lib/python/nav/web/messages
+@dirrm nav/lib/python/nav/web/ipinfo
+@dirrm nav/lib/python/nav/web/devBrowser
+@dirrm nav/lib/python/nav/web
+@dirrm nav/lib/python/nav/statemon/checker
+@dirrm nav/lib/python/nav/statemon/DNS
+@dirrm nav/lib/python/nav/statemon
+@dirrm nav/lib/python/nav/rrd
+@dirrm nav/lib/python/nav/db/forgotten
+@dirrm nav/lib/python/nav/db
+@dirrm nav/lib/python/nav
+@dirrm nav/lib/python
+@dirrm nav/lib/perl/NetAddr
+@dirrm nav/lib/perl/NAV/AlertEngine
+@dirrm nav/lib/perl/NAV
+@dirrm nav/lib/perl
+@dirrm nav/lib/java/networkDiscovery
+@dirrm nav/lib/java/getDeviceData/device-plugins
+@dirrm nav/lib/java/getDeviceData/data-plugins
+@dirrm nav/lib/java/getDeviceData
+@dirrm nav/lib/java/getBoksMacs
+@dirrm nav/lib/java/eventEngine/handler-plugins
+@dirrm nav/lib/java/eventEngine/device-plugins
+@dirrm nav/lib/java/eventEngine
+@dirrm nav/lib/java
+@dirrm nav/lib
+@dirrm nav/etc/webfront
+@dirrm nav/etc/report
+@dirrm nav/etc/init.d
+@dirrm nav/etc/cron.d
+@dirrm nav/etc/arnold/mailtemplates
+@dirrm nav/etc/arnold
+@dirrm nav/etc
+@dirrm nav/doc/sql/upgrades
+@dirrm nav/doc/sql
+@dirrm nav/doc/cricket/public_html
+@dirrm nav/doc/cricket/cricket-config/switches
+@dirrm nav/doc/cricket/cricket-config/switch-ports-snmpv1-and-giga
+@dirrm nav/doc/cricket/cricket-config/switch-ports
+@dirrm nav/doc/cricket/cricket-config/servers
+@dirrm nav/doc/cricket/cricket-config/routers
+@dirrm nav/doc/cricket/cricket-config/router-interfaces-snmpv1-and-giga
+@dirrm nav/doc/cricket/cricket-config/router-interfaces
+@dirrm nav/doc/cricket/cricket-config
+@dirrm nav/doc/cricket/cricket
+@dirrm nav/doc/cricket
+@dirrm nav/doc
+@dirrm nav/bin
+@dirrm nav/apache/webroot/vlanPlot/icons
+@dirrm nav/apache/webroot/vlanPlot/gfx
+@dirrm nav/apache/webroot/vlanPlot
+@dirrm nav/apache/webroot/vPServer
+@dirrm nav/apache/webroot/toolbox
+@dirrm nav/apache/webroot/status
+@dirrm nav/apache/webroot/source
+@dirrm nav/apache/webroot/report
+@dirrm nav/apache/webroot/preferences/navigation
+@dirrm nav/apache/webroot/preferences
+@dirrm nav/apache/webroot/navAdmin
+@dirrm nav/apache/webroot/messages
+@dirrm nav/apache/webroot/machinetracker
+@dirrm nav/apache/webroot/logger
+@dirrm nav/apache/webroot/l2trace
+@dirrm nav/apache/webroot/ipinfo
+@dirrm nav/apache/webroot/images/toolbox/tools
+@dirrm nav/apache/webroot/images/toolbox
+@dirrm nav/apache/webroot/images/tabs
+@dirrm nav/apache/webroot/images/status
+@dirrm nav/apache/webroot/images/ragen
+@dirrm nav/apache/webroot/images/main
+@dirrm nav/apache/webroot/images/lys
+@dirrm nav/apache/webroot/images/login
+@dirrm nav/apache/webroot/images/form
+@dirrm nav/apache/webroot/images/emotd
+@dirrm nav/apache/webroot/images/arpcam
+@dirrm nav/apache/webroot/images
+@dirrm nav/apache/webroot/editdb
+@dirrm nav/apache/webroot/devicemanagement
+@dirrm nav/apache/webroot/browse
+@dirrm nav/apache/webroot/arnold
+@dirrm nav/apache/webroot/alertprofiles/wap
+@dirrm nav/apache/webroot/alertprofiles/modules
 @dirrm nav/apache/webroot/alertprofiles/locale/en/LC_MESSAGES
 @dirrm nav/apache/webroot/alertprofiles/locale/en
 @dirrm nav/apache/webroot/alertprofiles/locale
-@dirrm nav/apache/webroot/alertprofiles/modules
-@dirrm nav/apache/webroot/alertprofiles/wap
+@dirrm nav/apache/webroot/alertprofiles/images
+@dirrm nav/apache/webroot/alertprofiles/icons
+@dirrm nav/apache/webroot/alertprofiles/documents
+@dirrm nav/apache/webroot/alertprofiles/css
 @dirrm nav/apache/webroot/alertprofiles
-@dirrm nav/apache/webroot/browse
-@dirrm nav/apache/webroot/devicemanagement
-@dirrm nav/apache/webroot/editdb
-@dirrm nav/apache/webroot/images/arpcam
-@dirrm nav/apache/webroot/images/emotd
-@dirrm nav/apache/webroot/images/form
-@dirrm nav/apache/webroot/images/login
-@dirrm nav/apache/webroot/images/lys
-@dirrm nav/apache/webroot/images/main
-@dirrm nav/apache/webroot/images/ragen
-@dirrm nav/apache/webroot/images/status
-@dirrm nav/apache/webroot/images/tabs
-@dirrm nav/apache/webroot/images/toolbox/tools
-@dirrm nav/apache/webroot/images/toolbox
-@dirrm nav/apache/webroot/images
-@dirrm nav/apache/webroot/logger
-@dirrm nav/apache/webroot/machinetracker
-@dirrm nav/apache/webroot/messages
-@dirrm nav/apache/webroot/navAdmin
-@dirrm nav/apache/webroot/preferences/navigation
-@dirrm nav/apache/webroot/preferences
-@dirrm nav/apache/webroot/report
-@dirrm nav/apache/webroot/status
-@dirrm nav/apache/webroot/toolbox
-@dirrm nav/apache/webroot/vPServer
-@dirrm nav/apache/webroot/vlanPlot/gfx
-@dirrm nav/apache/webroot/vlanPlot/icons
-@dirrm nav/apache/webroot/vlanPlot
 @dirrm nav/apache/webroot
+@dirrm nav/apache/webapps
+@dirrm nav/apache/tools
 @dirrm nav/apache
-@dirrm nav/bin
-@dirrm nav/doc/cricket/cricket
-@dirrm nav/doc/cricket/cricket-config/giga-router-interfaces
-@dirrm nav/doc/cricket/cricket-config/giga-switch-ports
-@dirrm nav/doc/cricket/cricket-config/router-interfaces
-@dirrm nav/doc/cricket/cricket-config/routers
-@dirrm nav/doc/cricket/cricket-config/servers
-@dirrm nav/doc/cricket/cricket-config/switch-ports
-@dirrm nav/doc/cricket/cricket-config/switches
-@dirrm nav/doc/cricket/cricket-config
-@dirrm nav/doc/cricket/public_html
-@dirrm nav/doc/cricket
-@dirrm nav/doc/sql/upgrades
-@dirrm nav/doc/sql
-@dirrm nav/doc
-@dirrm nav/etc/cron.d
-@dirrm nav/etc/init.d
-@dirrm nav/etc/report
-@dirrm nav/etc/webfront
-@dirrm nav/etc
-@dirrm nav/lib/java/eventEngine/device-plugins
-@dirrm nav/lib/java/eventEngine/handler-plugins
-@dirrm nav/lib/java/eventEngine
-@dirrm nav/lib/java/getBoksMacs
-@dirrm nav/lib/java/getDeviceData/data-plugins
-@dirrm nav/lib/java/getDeviceData/device-plugins
-@dirrm nav/lib/java/getDeviceData
-@dirrm nav/lib/java/networkDiscovery
-@dirrm nav/lib/java
-@dirrm nav/lib/perl/NAV/AlertEngine
-@dirrm nav/lib/perl/NAV
-@dirrm nav/lib/perl/NetAddr
-@dirrm nav/lib/perl
-@dirrm nav/lib/python/nav/db/forgotten
-@dirrm nav/lib/python/nav/db
-@dirrm nav/lib/python/nav/rrd
-@dirrm nav/lib/python/nav/statemon/DNS
-@dirrm nav/lib/python/nav/statemon/checker
-@dirrm nav/lib/python/nav/statemon
-@dirrm nav/lib/python/nav/web/devBrowser
-@dirrm nav/lib/python/nav/web/messages
-@dirrm nav/lib/python/nav/web/pyproxy
-@dirrm nav/lib/python/nav/web/templates/useradmin
-@dirrm nav/lib/python/nav/web/templates
-@dirrm nav/lib/python/nav/web
-@dirrm nav/lib/python/nav
-@dirrm nav/lib/python
-@dirrm nav/lib
 @dirrmtry nav
 @unexec echo "Some files/directories may be left in %D/nav/var."
