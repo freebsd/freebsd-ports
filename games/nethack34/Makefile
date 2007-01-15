@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	freebsd@jdc.parodius.com
+MAINTAINER?=	koitsu@FreeBSD.org
 COMMENT?=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -50,6 +50,12 @@ PATCH_SITES+=	http://www.stack.nl/~jilles/games/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis|}
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
+.endif
+.if defined(WITH_HPMON)
+PATCHFILES+=	hpmon.diff
+PATCH_SITES+=	http://www.netsonic.fi/~walker/nh/
+PATCH_DIST_STRIP=	-p1
+CFLAGS+=	-DHPMON
 .endif
 .elif ${PKGNAMESUFFIX} == "-qt"
 USE_QT_VER=	3

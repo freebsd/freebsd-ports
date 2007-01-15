@@ -4,3 +4,6 @@ SIZE (nethack-343-src.tgz) = 3497458
 MD5 (nh343-menucolor_jilles.diff) = 42e8c979c0ebe3e799c62056f86935bb
 SHA256 (nh343-menucolor_jilles.diff) = 28ffb66cc901c74f6321a4537f07313363d35cf60a621d829a14d46c080f3913
 SIZE (nh343-menucolor_jilles.diff) = 17914
+MD5 (hpmon.diff) = a8e5cab6a93100612d428f3973dc418f
+SHA256 (hpmon.diff) = d9369768f81f06e75b7349609bdff6fd9deff226452f04a89597190e4489074f
+SIZE (hpmon.diff) = 2041
