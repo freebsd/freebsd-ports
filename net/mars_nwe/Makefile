@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	mars_nwe
-PORTVERSION=	0.99.b19
-PORTREVISION=	1
+PORTVERSION=	0.99.b20
 CATEGORIES=	net
 MASTER_SITES=	ftp://www.compu-art.de/mars_nwe/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/ncpfs/mars_nwe/ \
 		ftp://ftp.butya.kz/pub/mars_nwe/
-DISTNAME=	mars_nwe-0.99.pl19
+DISTNAME=	mars_nwe-0.99.pl20
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Netware server emulator for Un*x systems
 
 WRKSRC=		${WRKDIR}/mars_nwe
@@ -31,9 +30,9 @@ do-install:
 	@${ECHO} "Please read details in ${WORKDIR}/mars_nwe/doc directory."
 
 pre-install:
-	@cp ${PKGDIR}/pkg-plist ${WRKDIR}/PLIST.DYN
+	@${CP} ${PKGDIR}/pkg-plist ${WRKDIR}/PLIST.DYN
 .if !defined(NOPORSDOCS)
-	@cat ${PKGDIR}/pkg-plist.DOC >> ${WRKDIR}/PLIST.DYN
+	@${CAT} ${PKGDIR}/pkg-plist.DOC >> ${WRKDIR}/PLIST.DYN
 .endif
 
 post-install:
