@@ -448,6 +448,7 @@
     SUBDIR += p5-Net-FTP-File
     SUBDIR += p5-Net-Finger
     SUBDIR += p5-Net-Frame
+    SUBDIR += p5-Net-Frame-Dump
     SUBDIR += p5-Net-Gnats
     SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-Google-Calendar
