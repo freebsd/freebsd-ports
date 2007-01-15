@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wml
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.11
 CATEGORIES=	www lang
 MASTER_SITES=	http://thewml.org/distrib/ \
 		ftp://thewml.org/distrib/
@@ -16,6 +15,7 @@ MAINTAINER=	delta@lackas.net
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
@@ -60,11 +60,11 @@ MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Build fails on amd64 or ia64 (needs to build shared libraries with -fPIC)"
+BROKEN=		Build fails on amd64 or ia64 (needs to build shared libraries with -fPIC)
 .endif
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=		"Does not compile with perl ${PERL_VERSION}"
+BROKEN=		Does not compile with perl ${PERL_VERSION}
 .endif
 
 #   catpages are usually not installed, so they are not compressed.
