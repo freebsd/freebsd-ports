@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math libraries build with F90 for used in ELMER FEM
 
+DEPRECATED=	No ports depends on this as migrated to gfortran
+IGNORE=		No ports depends on this as migrated to gfortran
+
 .ifdef WITH_MPI
 BUILD_DEPENDS+=	${LOCALBASE}/mpich/include/mpif.h:${PORTSDIR}/net/mpich
 .endif
