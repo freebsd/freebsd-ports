@@ -40,7 +40,7 @@ post-patch:
 		${WRKSRC}/configure.in
 
 pre-configure:
-	@${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 .include <bsd.port.pre.mk>
 
