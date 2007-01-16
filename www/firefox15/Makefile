@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-DEPRECATED=	Obsolete version, use Firefox 2.0 or great instead
+DEPRECATED=	Obsolete version, use Firefox 2.0 or greater instead
 
 LATEST_LINK=	firefox15
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
