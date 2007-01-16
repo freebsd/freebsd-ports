@@ -196,6 +196,7 @@
     SUBDIR += flightgear-atlas
     SUBDIR += flightgear-mb339-pan
     SUBDIR += flobopuyo
+    SUBDIR += flyhard
     SUBDIR += flying
     SUBDIR += fmars
     SUBDIR += foobillard
