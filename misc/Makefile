@@ -416,6 +416,7 @@
     SUBDIR += shared-mime-info
     SUBDIR += shc
     SUBDIR += shuffle
+    SUBDIR += shuffle-db
     SUBDIR += since
     SUBDIR += skyutils
     SUBDIR += sloccount
