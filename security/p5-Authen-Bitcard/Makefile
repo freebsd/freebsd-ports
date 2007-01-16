@@ -1,0 +1,32 @@
+# New ports collection makefile for:    p5-Authen-Bitcard
+# Date created:				2007/01/16
+# Whom:	      				chinsan
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Authen-Bitcard
+PORTVERSION=	0.86
+CATEGORIES=	security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Authen
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	chinsan@FreeBSD.org
+COMMENT=	Bitcard authentication verification
+
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Authen::Bitcard.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
