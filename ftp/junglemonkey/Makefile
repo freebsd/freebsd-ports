@@ -7,7 +7,7 @@
 
 PORTNAME=	junglemonkey
 PORTVERSION=	0.1.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.gizmolabs.org/~dhelder/junglemonkey/src/
 DISTNAME=	jm-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	jm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed file sharing program for GNOME
 
-LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
+LIB_DEPENDS=	gnet.7:${PORTSDIR}/net/gnet
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade
