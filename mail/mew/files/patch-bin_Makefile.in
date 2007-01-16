@@ -1,16 +1,17 @@
---- bin/Makefile.in.orig	Tue Mar 15 16:51:31 2005
-+++ bin/Makefile.in	Tue Jul 11 19:41:47 2006
-@@ -25,7 +25,8 @@
+--- bin/Makefile.in.orig	Mon Oct 23 08:18:23 2006
++++ bin/Makefile.in	Sun Jan 14 19:30:35 2007
+@@ -25,7 +25,9 @@
  COFLAG = -o $@ 
  LIBS = @LIBS@
  
 -INSTALL = @INSTALL@
 +INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
 +INSTALL_DATA = @INSTALL_DATA@
  LN = ln
  RM = rm -f
  MKDIR = mkdir -p
-@@ -97,23 +98,23 @@
+@@ -101,27 +103,27 @@
  	-@if [ ! -d $(DESTDIR)$(bindir) ]; then \
  		$(MKDIR) $(DESTDIR)$(bindir); \
  	fi
@@ -22,8 +23,12 @@
  	done
 -	$(INSTALL) -m 555 $(PRG2) $(DESTDIR)$(bindir)
 -	$(INSTALL) -m 555 $(PRG3) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG4) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG5) $(DESTDIR)$(bindir)
 +	${INSTALL_PROGRAM} $(PRG2) $(DESTDIR)$(bindir)
 +	${INSTALL_PROGRAM} $(PRG3) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} $(PRG4) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} $(PRG5) $(DESTDIR)$(bindir)
  	-@if [ ! -d $(DESTDIR)$(mandir) ]; then \
  		$(MKDIR) $(DESTDIR)$(mandir); \
  	fi
@@ -35,8 +40,12 @@
  	done
 -	$(INSTALL) -m 444 $(MAN2) $(DESTDIR)$(mandir)
 -	$(INSTALL) -m 444 $(MAN3) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN4) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN5) $(DESTDIR)$(mandir)
 +	${INSTALL_DATA} $(MAN2) $(DESTDIR)$(mandir)
 +	${INSTALL_DATA} $(MAN3) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN4) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN5) $(DESTDIR)$(mandir)
  
  ##
  ## End of Makefile

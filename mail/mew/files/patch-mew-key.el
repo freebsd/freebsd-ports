@@ -1,6 +1,6 @@
---- mew-key.el.orig	Wed Jul 12 18:22:49 2006
-+++ mew-key.el	Thu Jan  4 20:14:11 2007
-@@ -609,13 +609,16 @@
+--- mew-key.el.orig	Thu Jan  4 15:49:11 2007
++++ mew-key.el	Sun Jan 14 19:19:22 2007
+@@ -610,13 +610,16 @@
  ;;;
  
  (defun mew-which-mew-etc ()
