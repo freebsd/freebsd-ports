@@ -7,13 +7,14 @@
 
 PORTNAME=	qmrtg
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://dev.publicshout.org/qmrtg/download/
 
 MAINTAINER=	mij@bitchx.it
 COMMENT=	A simple tool for monitoring and graphing qmail activity through MRTG
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .if !defined(WITHOUT_MRTG)
 RUN_DEPENDS+=	mrtg:${PORTSDIR}/net-mgmt/mrtg
