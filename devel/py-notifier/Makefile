@@ -8,7 +8,7 @@
 PORTNAME=	notifier
 PORTVERSION=	0.5.7
 CATEGORIES=	devel python
-MASTER_SITES=	# http://www.bitkipper.net/Downloads/pynotifier
+MASTER_SITES=	http://www.bitkipper.net/bytes/pynotifier/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}_${PORTVERSION}-1
 
@@ -22,17 +22,10 @@ EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	${FETCH_CMD} -o "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}" "http://www.bitkipper.net/Downloads/pynotifier?action=AttachFile&do=get&target=${DISTFILES}"
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
