@@ -16,6 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack
+
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
@@ -29,8 +32,6 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
-
-.include <bsd.port.pre.mk>
 
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
