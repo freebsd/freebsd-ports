@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shell-fm
-PORTVERSION=	20061215
+PORTVERSION=	20061229
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ntarmos.dyndns.org/Software/FreeBSD/
 
