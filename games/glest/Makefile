@@ -7,7 +7,7 @@
 
 PORTNAME=	glest
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,9 +22,9 @@ LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-RUN_DEPENDS=	${X11BASE}/lib/${PORTNAME}/configuration.xml:${PORTSDIR}/games/glest-data
+RUN_DEPENDS=	${LOCALBASE}/lib/${PORTNAME}/configuration.xml:${PORTSDIR}/games/glest-data
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:259:env
 USE_ZIP=	yes
 USE_GCC=	3.2+
