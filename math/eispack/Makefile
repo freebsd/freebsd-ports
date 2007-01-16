@@ -7,6 +7,7 @@
 
 PORTNAME=	eispack
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/eispack/
@@ -15,11 +16,15 @@ DISTFILES=	${SRCS:.f=.f.gz}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eigenvalue system package
 
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
-
 DIST_SUBDIR=	${PORTNAME}
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	bandv.f bisect.f bqr.f cbabk2.f cbal.f cg.f ch.f cinvit.f combak.f \
