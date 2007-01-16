@@ -12604,6 +12604,7 @@ python25	ports/lang/python25
 pythoncad	ports/cad/pythoncad
 pythonchess	ports/games/pythonchess
 pythondirector	ports/net/pythondirector
+pythontidy	ports/devel/pythontidy
 pyweather	ports/astro/pyweather
 pyweblib	ports/www/pyweblib
 pyxmame		ports/emulators/pyxmame
