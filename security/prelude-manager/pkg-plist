@@ -8,8 +8,8 @@ lib/prelude-manager/filters/idmef-criteria.la
 lib/prelude-manager/filters/idmef-criteria.so
 lib/prelude-manager/decodes/normalize.so
 lib/prelude-manager/decodes/normalize.la
-%%WITH_DB%%lib/prelude-manager/reports/db.la
-%%WITH_DB%%lib/prelude-manager/reports/db.so
+%%WITH_PRELUDEDB%%lib/prelude-manager/reports/db.la
+%%WITH_PRELUDEDB%%lib/prelude-manager/reports/db.so
 lib/prelude-manager/reports/debug.la
 lib/prelude-manager/reports/debug.so
 lib/prelude-manager/reports/relaying.la

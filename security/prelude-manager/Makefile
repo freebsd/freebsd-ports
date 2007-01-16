@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.7.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -37,11 +36,11 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 PLIST_SUB+=	WITH_XML=""
 .endif
 
-.if defined(WITHOUT_DB)
-PLIST_SUB+=	WITH_DB="@comment "
+.if defined(WITHOUT_PRELUDEDB)
+PLIST_SUB+=	WITH_PRELUDEDB="@comment "
 .else
 LIB_DEPENDS+=	preludedb.4:${PORTSDIR}/security/libpreludedb
-PLIST_SUB+=	WITH_DB=""
+PLIST_SUB+=	WITH_PRELUDEDB=""
 .endif
 
 post-install:
