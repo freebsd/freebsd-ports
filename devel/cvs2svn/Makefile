@@ -7,19 +7,18 @@
 PORTNAME=	cvs2svn
 PORTVERSION=	1.5.0
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/34574/ \
+MASTER_SITES=	ftp://ftp.rewt.org.uk/pub/distfiles/ \
+		http://gentoo.nedlinux.nl/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	CVS to Subversion Repository Converter
 
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
 		${BUILD_DEPENDS}
 
-FETCH_CMD=	${LOCALBASE}/bin/wget -c
 DISABLE_SIZE=	yes
 
 USE_PYTHON=	2.3+
