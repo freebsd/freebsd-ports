@@ -7,6 +7,7 @@
 
 PORTNAME=	gff2ps
 PORTVERSION=	0.98d
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://www1.imim.es/pub/gff_tools/gff2ps/:prog \
 		http://www1.imim.es/software/gfftools/gff2ps_docs/manual/:doc
@@ -16,7 +17,7 @@ MAINTAINER=	chuynh@biolateral.com.au
 COMMENT=	Converts gff-formated genomic data-sets to PostScript
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		bash:${PORTSDIR}/shells/bash2
+		bash:${PORTSDIR}/shells/bash
 
 GFF2PS_MAN=	MANUAL_GFF2PS_v0.96.ps
 PATCH_WRKSRC=	${WRKDIR}
