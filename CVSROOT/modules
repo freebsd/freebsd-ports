@@ -13696,6 +13696,7 @@ shtool		ports/devel/shtool
 shttpd		ports/www/shttpd
 shttpscanner	ports/security/shttpscanner
 shuffle		ports/misc/shuffle
+shuffle-db	ports/misc/shuffle-db
 shujit		ports/java/shujit
 sic		ports/irc/sic
 siconv		ports/converters/siconv
