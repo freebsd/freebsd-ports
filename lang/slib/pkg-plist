@@ -40,6 +40,7 @@
 %%DATADIR%%/debug.scm
 %%DATADIR%%/defmacex.scm
 %%DATADIR%%/determ.scm
+%%DATADIR%%/dft.scm
 %%DATADIR%%/differ.scm
 %%DATADIR%%/dirs.scm
 %%DATADIR%%/dwindtst.scm
@@ -74,6 +75,8 @@
 %%DATADIR%%/macwork.scm
 %%DATADIR%%/manifest.scm
 %%DATADIR%%/matfile.scm
+%%DATADIR%%/math-integer.scm
+%%DATADIR%%/math-real.scm
 %%DATADIR%%/mbe.scm
 %%DATADIR%%/minimize.scm
 %%DATADIR%%/mitscheme.init
@@ -144,6 +147,7 @@
 %%DATADIR%%/srfi-2.scm
 %%DATADIR%%/srfi-8.scm
 %%DATADIR%%/srfi-9.scm
+%%DATADIR%%/srfi-23.scm
 %%DATADIR%%/srfi-61.scm
 %%DATADIR%%/srfi.scm
 %%DATADIR%%/stdio.scm
