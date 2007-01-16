@@ -7,6 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.6.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,17 +20,24 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		gd.4:${PORTSDIR}/graphics/gd \
 		qhull.5:${PORTSDIR}/math/qhull
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
 USE_AUTOTOOLS=	libltdl:15
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		M4="${LOCALBASE}/bin/gm4"
+		M4="${LOCALBASE}/bin/gm4" \
+		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 CONFIGURE_ARGS=	--disable-cgm --disable-java --disable-octave \
 		--with-gd-incdir=${LOCALBASE}/include \
 		--with-gd-libdir=${LOCALBASE}/lib \
-		--with-freetype-font-dir=${LOCALBASE}
+		--with-freetype-font-dir=${LOCALBASE} \
+		--enable-f95
 USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
