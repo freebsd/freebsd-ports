@@ -1,8 +1,9 @@
 --- src/strndup.c.orig	Sat Dec 16 04:21:22 2006
 +++ src/strndup.c	Sat Dec 16 04:20:48 2006
-@@ -0,0 +1,13 @@
+@@ -0,0 +1,14 @@
 +#include "strndup.h"
 +#include <string.h>
++#include <stdlib.h>
 +
 +#ifdef __STRNDUP__
 +
