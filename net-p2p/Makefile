@@ -83,6 +83,7 @@
     SUBDIR += mute-net-text
     SUBDIR += napshare
     SUBDIR += nicotine
+    SUBDIR += nicotine-plus
     SUBDIR += opendchub
     SUBDIR += opennap
     SUBDIR += peercast
