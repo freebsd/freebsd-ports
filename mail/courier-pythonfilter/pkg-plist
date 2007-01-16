@@ -1,4 +1,5 @@
-etc/pythonfilter.conf
+@unexec if cmp -s %D/etc/pythonfilter.conf %D/etc/pythonfilter.conf.sample; then rm -f %D/etc/pythonfilter.conf; fi
+etc/pythonfilter.conf.sample
 libexec/filters/pythonfilter
 %%PYTHON_SITELIBDIR%%/courier/__init__.py
 %%PYTHON_SITELIBDIR%%/courier/__init__.pyc
@@ -15,9 +16,15 @@ libexec/filters/pythonfilter
 %%PYTHON_SITELIBDIR%%/pythonfilter/__init__.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/TtlDb.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/TtlDb.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/TtlDb.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/attachments.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/attachments.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/attachments.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/auto_whitelist.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/auto_whitelist.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/auto_whitelist.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/clamav.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/clamav.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/clamav.pyo
@@ -30,12 +37,18 @@ libexec/filters/pythonfilter
 %%PYTHON_SITELIBDIR%%/pythonfilter/dialback.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/dialback.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/dialback.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/greylist.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/greylist.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/greylist.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/noduplicates.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/noduplicates.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/noduplicates.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/nosuccessdsn.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/nosuccessdsn.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/nosuccessdsn.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/privateaddr.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/privateaddr.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/privateaddr.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/ratelimit.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/ratelimit.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/ratelimit.pyo

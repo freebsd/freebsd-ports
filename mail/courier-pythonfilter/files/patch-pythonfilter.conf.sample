@@ -1,0 +1,24 @@
+--- pythonfilter.conf.sample.orig	Tue Dec 12 07:18:58 2006
++++ pythonfilter.conf.sample	Sun Jan 14 13:48:07 2007
+@@ -2,7 +2,7 @@
+ # in this file.
+ 
+ # debug: prints debugging information to the mail log.
+-debug
++# debug
+ 
+ # noduplicates: checks for duplicate recipients which may occur due to alias
+ #	expansion, and removes the duplicates.
+@@ -16,10 +16,10 @@
+ # auto_whitelist
+ 
+ # whitelist: exempts IP addresses for which you relay from further filtering.
+-whitelist
++# whitelist
+ 
+ # whitelist_auth: exempts users who authenticate from further filtering.
+-whitelist_auth
++# whitelist_auth
+ 
+ # privateaddr: restricts addresses to specific senders
+ # privateaddr
