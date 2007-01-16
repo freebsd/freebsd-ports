@@ -1,0 +1,41 @@
+--- configure.orig	Tue Dec 26 18:52:47 2006
++++ configure	Tue Dec 26 18:53:22 2006
+@@ -5075,38 +5075,6 @@
+ 
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+   fi
+-  if test x$force_arch = x; then
+-    if test x$ARCH_INFO = x; then
+-      case x$target in
+-        i686-*-*)
+-          { echo "$as_me:$LINENO: result: guessing i686" >&5
+-echo "${ECHO_T}guessing i686" >&6; }
+-          CFLAGS="$CFLAGS -march=i686"
+-          ;;
+-        i586-*-*)
+-          { echo "$as_me:$LINENO: result: guessing i586" >&5
+-echo "${ECHO_T}guessing i586" >&6; }
+-          CFLAGS="$CFLAGS -march=i586"
+-          ;;
+-        i486-*-*)
+-          { echo "$as_me:$LINENO: result: guessing i486" >&5
+-echo "${ECHO_T}guessing i486" >&6; }
+-          CFLAGS="$CFLAGS -march=i486"
+-          ;;
+-        *)
+-          { echo "$as_me:$LINENO: result: guessing i386" >&5
+-echo "${ECHO_T}guessing i386" >&6; }
+-          CFLAGS="$CFLAGS -march=i386"
+-          { echo "$as_me:$LINENO: WARNING: This is not what you want, use --target or force-arch" >&5
+-echo "$as_me: WARNING: This is not what you want, use --target or force-arch" >&2;}
+-          ;;
+-      esac
+-    else
+-      { echo "$as_me:$LINENO: result: $ARCH_INFO" >&5
+-echo "${ECHO_T}$ARCH_INFO" >&6; }
+-      CFLAGS="$CFLAGS -march=$ARCH_INFO"
+-    fi
+-  fi
+ 
+   # Check whether --enable-release was given.
+ if test "${enable_release+set}" = set; then
