@@ -93,6 +93,7 @@ lib/libklu_cholmod.a
 lib/libklu_cholmod.so
 lib/libklu_cholmod.so.1
 lib/libldl.a
+lib/libldl.so
 lib/libldl.so.1
 lib/libumfpack.a
 lib/libumfpack.so
