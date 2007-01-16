@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ezbounce
-PORTVERSION=	1.04.b
+PORTVERSION=	1.04c
 CATEGORIES=	irc
-MASTER_SITES=	http://druglord.freelsd.org/ezbounce/ \
-		http://ezbounce.dc-team.com/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
+MASTER_SITES=	http://druglord.freelsd.org/ezbounce/files/ \
+		ftp://ftp.rewt.org.uk/pub/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	A highly configurable IRC Proxy
