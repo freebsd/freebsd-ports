@@ -23,7 +23,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
 .if defined(WITH_ICC)
-BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
+BUILD_DEPENDS+=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 
 WANT_FORTRAN=yes #dummy but future use
@@ -35,11 +35,16 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 #for f2c.h
-BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
+
+.include <bsd.port.pre.mk>
+
+#always needs atlas for lapack.h and blas.h
 #.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 #.endif
 .if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lcblas -lf77blas -latlas
 LAPACK=		-lalapack
 CXXFLAGS+=	-DNON_ATLAS_SDPA=0
@@ -56,8 +61,6 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 #WITH_SMP=	yes
 #WITH_ICC=	yes
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if ${ARCH} == "amd64"
