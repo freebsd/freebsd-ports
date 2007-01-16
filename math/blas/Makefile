@@ -18,8 +18,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 
-CONFLICTS=	elmer-mathlibs-1*
-
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 WANT_FORTRAN=	yes

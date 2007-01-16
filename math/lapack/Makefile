@@ -20,8 +20,6 @@ LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
 WANT_FORTRAN=	yes
 USE_GCC=	4.2+
 
-CONFLICTS=	elmer-mathlibs-1*
-
 DIST_SUBDIR=	lapack
 
 INSTALLS_SHLIB=	yes

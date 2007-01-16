@@ -25,8 +25,6 @@ COMMENT=	The ScaLAPACK Scalable LAPACK library
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
 
-CONFLICTS=	elmer-mathlibs-1*
-
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42

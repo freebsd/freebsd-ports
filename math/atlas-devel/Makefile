@@ -22,8 +22,6 @@ COMMENT=	Development version of math/atlas
 
 NO_PACKAGE=	Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override
 
-CONFLICTS=	elmer-mathlibs-1*
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/ATLAS
