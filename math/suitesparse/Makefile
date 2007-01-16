@@ -16,7 +16,11 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 
-LIB_DEPENDS=  metis:${PORTSDIR}/math/metis
+LIB_DEPENDS=	 metis:${PORTSDIR}/math/metis
+
+CONFLICTS=	umfpack-*
+
+.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=     yes
@@ -31,10 +35,6 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-L${LOCALBASE}/lib -lblas
 LAPACK=		-L${LOCALBASE}/lib -llapack
 .endif
-
-CONFLICTS=	umfpack-*
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
 FPIC=	-fPIC
