@@ -19,26 +19,13 @@ rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/${name}"
 procname="%%TCLSH%%"
-check_process="${command} /bin/sh"
-stop_cmd="sguild_stop"
+pidfile="/var/run/${name}.pid"
+check_pidfile="${pidfile} ${procname} /bin/sh"
 
 sguild_enable=${sguild_enable-NO}
 sguild_conf=${sguild_conf-%%PREFIX%%/etc/%%SGUILDIR%%/sguild.conf}
 sguild_flags=${sguild_flags--D}
 [ -n "$sguild_conf" ] && sguild_flags="$sguild_flags -c $sguild_conf"
-
-sguild_stop() {
-  if [ -z "${rc_pid}" ]; then
-    echo "${name} not running?"
-  else
-    echo "Stopping ${name}."
-    `/bin/kill -9 ${rc_pid}`
-    wait_for_pids "${rc_pid}"
-    if [ -f "/var/run/${name}.pid" ]; then
-      `rm -f /var/run/${name}.pid`
-    fi    
-  fi
-}
 
 load_rc_config ${name}
 run_rc_command "$1"
