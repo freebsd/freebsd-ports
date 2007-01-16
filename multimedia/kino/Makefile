@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,8 +40,8 @@ MAN1=	kino.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500039
-USE_GCC=	3.4
+.if ${OSVERSION} < 500000
+IGNORE=	Does not compile on FreeBSD 4.x
 .endif
 
 .if defined(WITH_QUICKTIME)
