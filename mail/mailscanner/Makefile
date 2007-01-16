@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.56.8
+PORTVERSION=	4.57.6
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
@@ -253,9 +253,10 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
 		${MKDIR} ${DATADIR}/{} \;
-	# cd ${WRKSRC}/etc && ${FIND} reports -type f ! -name "*.orig" -exec ...
+	# cd ${WRKSRC}/etc && ${FIND} reports -type f ! \( -name "*.orig" -exec ...
 	cd ${WRKSRC}/etc && ${FIND} reports \( -type d -name "*.old" -prune \) \
-		-o \( -type f ! -name "*.orig" -exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
+		-o \( -type f ! \( -name "*.orig" -o -name "*.bak" \) \
+		-exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
 	#
 	# Step 5: Install lib

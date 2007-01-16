@@ -21,6 +21,7 @@ lib/MailScanner/MailScanner/CustomFunctions/GenericSpamScanner.pm
 lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
 lib/MailScanner/MailScanner/CustomFunctions/DavidHooton.pm
 lib/MailScanner/MailScanner/CustomFunctions/ZMRouterDirHash.pm
+lib/MailScanner/MailScanner/CustomFunctions/SpamWhitelist.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
 lib/MailScanner/MailScanner/GenericSpam.pm
