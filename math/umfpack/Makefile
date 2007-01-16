@@ -23,7 +23,7 @@ F77=		gfortran42
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
-CONFLICTS=	elmer-umfpack-4* suitesparse-2*
+CONFLICTS=	suitesparse-2*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
