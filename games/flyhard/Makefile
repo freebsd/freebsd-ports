@@ -1,0 +1,38 @@
+# New ports collection makefile for:	flyhard
+# Date created:		15 Jan 2007
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	flyhard
+PORTVERSION=	0.3
+CATEGORIES=	games
+MASTER_SITES=	http://www.markboyd.me.uk/games/flyhard/ \
+		http://www.amdmi3.ru/distfiles/
+
+MAINTAINER=	amdmi3@amdmi3.ru
+COMMENT=	Game resembling Thrust, but with lots of shooting and puzzles
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_SDL=	sdl mixer
+USE_GCC=	3.4+
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+
+PORTDOCS=	README
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
