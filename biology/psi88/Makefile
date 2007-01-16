@@ -7,6 +7,7 @@
 
 PORTNAME=	psi88
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/psi88/
 DISTNAME=	${PORTNAME}
@@ -18,11 +19,9 @@ COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 .include <bsd.port.pre.mk>
 
 WANT_FORTRAN=	yes #dummy
-#currently not buildable with gfortran.
-#assume FreeBSD7 won't ship with f77 nor gfortran.
-.if ${OSVERSION} >= 700000
-USE_GCC=	3.4
-.endif
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 pre-patch:
 	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
