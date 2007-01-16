@@ -8,6 +8,7 @@
     SUBDIR += alt-aspell
     SUBDIR += aspell
     SUBDIR += bsdforen-firefox-searchplugin
+    SUBDIR += bsdgroup-firefox-searchplugin
     SUBDIR += bsdpaste
     SUBDIR += citrix_ica
     SUBDIR += dict
