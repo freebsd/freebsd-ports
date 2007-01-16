@@ -21,8 +21,8 @@ Where detail specification for .emacs and .procmailrc may be shown in
 /usr/local/share/doc/prom-wl/prom-usage.jis or procmail(1). And for
 usage of byte_compile scripts, run byte-compile with -h option.
 
-Run with "M-x prom-wl" in your emacs editors, Wanderlust will be invoked and then
-search unread mails from procmail log to show unread message from top of
+Run with "M-x prom-wl" in your emacs editors, Wanderlust will be invoked and
+then search unread mails from procmail log to show unread message from top of
 entries that you specfied in ~/.pronmailrc.
 
 -KIRIYAMA Kazuhiko
