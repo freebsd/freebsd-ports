@@ -48,6 +48,18 @@ lib/libplplotf77d.a
 lib/libplplotf77d.la
 lib/libplplotf77d.so
 lib/libplplotf77d.so.10
+lib/libplplotf95cd.so.0
+lib/libplplotf95cd.la
+lib/libplplotf95cd.a
+lib/libplplotf95d.so.0
+lib/libplplotf95d.la
+lib/libplplotf95d.a
+lib/fortran/modules/plplot/plplot.mod
+lib/fortran/modules/plplot/plplotp.mod
+lib/fortran/modules/plplot/plplot_flt.mod
+@dirrm lib/fortran/modules/plplot
+@dirrm lib/fortran/modules
+@dirrm lib/fortran
 %%TCLTK%%lib/libplplottcltkd.a
 %%TCLTK%%lib/libplplottcltkd.la
 %%TCLTK%%lib/libplplottcltkd.so
@@ -99,6 +111,7 @@ lib/plplot%%VERSION%%/driversd/xfig.so
 libdata/pkgconfig/plplotd.pc
 libdata/pkgconfig/plplotd-c++.pc
 libdata/pkgconfig/plplotd-f77.pc
+libdata/pkgconfig/plplotd-f95.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
@@ -194,6 +207,30 @@ libdata/pkgconfig/plplotd-f77.pc
 %%DATADIR%%%%VERSION%%/examples/f77/x19f.f
 %%DATADIR%%%%VERSION%%/examples/f77/x22f.f
 %%DATADIR%%%%VERSION%%/examples/f77/x23f.f
+%%DATADIR%%%%VERSION%%/examples/f95/x01f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x02f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x03f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x04f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x05f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x06f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x07f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x08f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x09f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x10f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x11f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x12f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x13f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x14f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x15f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x16af.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x16f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x17f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x18f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x19f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x22f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/x23f.f90
+%%DATADIR%%%%VERSION%%/examples/f95/Makefile
+%%DATADIR%%%%VERSION%%/examples/test_f95.sh
 %%DATADIR%%%%VERSION%%/examples/plplot-test.sh
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/README.plplotcanvas
 %%PYTHON%%%%DATADIR%%%%VERSION%%/examples/python/README.pythondemos
@@ -363,6 +400,7 @@ libdata/pkgconfig/plplotd-f77.pc
 %%TCLTK%%@dirrm %%DATADIR%%%%VERSION%%/examples/tk
 %%TCLTK%%@dirrm %%DATADIR%%%%VERSION%%/examples/tcl
 %%PYTHON%%@dirrm %%DATADIR%%%%VERSION%%/examples/python
+@dirrm %%DATADIR%%%%VERSION%%/examples/f95
 @dirrm %%DATADIR%%%%VERSION%%/examples/f77
 @dirrm %%DATADIR%%%%VERSION%%/examples/c++
 @dirrm %%DATADIR%%%%VERSION%%/examples/c
