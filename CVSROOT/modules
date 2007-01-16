@@ -1734,6 +1734,7 @@ de-BBBike	ports/german/BBBike
 de-alt-aspell	ports/german/alt-aspell
 de-aspell	ports/german/aspell
 de-bsdforen-firefox-searchplugin	ports/german/bsdforen-firefox-searchplugin
+de-bsdgroup-firefox-searchplugin	ports/german/bsdgroup-firefox-searchplugin
 de-bsdpaste	ports/german/bsdpaste
 de-citrix_ica	ports/german/citrix_ica
 de-dict		ports/german/dict
