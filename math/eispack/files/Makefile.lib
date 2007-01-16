@@ -1,8 +1,8 @@
 # EISPACK sources
 LIBDIR= ${PREFIX}/lib
-NOPROFILE= no
+NO_PROFILE= no
 
-SHLIB_MAJOR= 1
+SHLIB_MAJOR= 2
 
 # removed otqlrat.f from the SRCS list, only one tqlrat routine can
 # be used in a library.
