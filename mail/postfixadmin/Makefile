@@ -7,47 +7,41 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail www
 MASTER_SITES=	http://high5.net/postfixadmin/ \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	darren.pilgrim@bitfreak.org
+MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 
 NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message
 
-OPTIONS=	MYSQL "Use MySQL to store config data" on
-OPTIONS+=	MYSQLI "Use MySQL 4.1+ to store config data" off
-OPTIONS+=	PGSQL "Use PostgreSQL to store config data" off
-OPTIONS+=	POSTFIX_LOCAL "RUN_DEPEND on postfix (OPTIONAL)" off
+OPTIONS=	MYSQL "MySQL back-end (use mysql PHP extension)" on
+OPTIONS+=	MYSQLI "MySQL 4.1+ back-end (use mysqli PHP extension)" off
+OPTIONS+=	PGSQL "PostgreSQL back-end (use pgsql PHP extension)" off
 
 .include <bsd.port.pre.mk>
 
-USE_APACHE=	1.3+
 USE_PHP=	pcre session
 
-.ifndef(WITHOUT_MYSQL)
+.if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
 .endif
 
-.ifdef(WITH_MYSQLI)
+.if defined(WITH_MYSQLI)
 USE_PHP+=	mysqli
 .endif
 
-.ifdef(WITH_PGSQL)
+.if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
 .endif
 
-.ifdef(WITHOUT_MYSQL) && !defined(WITH_MYSQLI) && !defined(WITH_PGSQL)
-IGNORE=	needs at least one database backend
-.endif
-
-.ifdef(WITH_POSTFIX_LOCAL)
-RUN_DEPENDS+=	postfix>=2[0-9]*:${PORTSDIR}/mail/postfix
+.if defined(WITHOUT_MYSQL) && !defined(WITH_MYSQLI) && !defined(WITH_PGSQL)
+IGNORE=	needs at least one database back-end
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
