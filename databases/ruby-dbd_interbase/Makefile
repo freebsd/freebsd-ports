@@ -18,7 +18,7 @@ MAINTAINER=	boumenot@gmail.com
 COMMENT=	InterBase driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
-		${RUBY_SITEARCHLIBDIR}/interbase.so:${.CURDIR}/../ruby-interbase
+		${RUBY_SITEARCHLIBDIR}/interbase.so:${PORTSDIR}/databases/ruby-interbase
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -30,5 +30,7 @@ WRKSRC=		${RUBY_DBI_WRKSRC}
 CONFIGURE_ARGS=	--with=${PORTNAME}
 
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
+
+BROKEN=		Does not compile
 
 .include <bsd.port.mk>
