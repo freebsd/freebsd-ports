@@ -2795,6 +2795,7 @@ fluxter		ports/x11-wm/fluxter
 flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
 fly		ports/graphics/fly
+flyhard		ports/games/flyhard
 flying		ports/games/flying
 flyspray	ports/devel/flyspray
 flyway		ports/misc/flyway
