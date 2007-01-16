@@ -10,14 +10,14 @@ PORTVERSION=	4.4
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UMFPACK library used by ELMER FEM package
 
 WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=	gfortran42
 F77=	gfortran42
 CONFIGURE_ENV+=	FC=${FC} F77=${FC}
