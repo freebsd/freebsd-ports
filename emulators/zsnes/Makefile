@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	zsnes
-PORTVERSION=	1.42
-PORTREVISION=	4
+PORTVERSION=	1.50
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	zsnes${PORTVERSION:S/.//}src
 
 MAINTAINER=	freebsd-ports@stsp.in-berlin.de
@@ -27,14 +25,17 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/}/src
 
 OPTIONS=	X11	"Enable X11 video driver"	on	\
-		OPENGL	"Enable OpenGL video driver"	off
+		OPENGL	"Enable OpenGL video driver"	off \
+		DEBUGGER	"Enable ZSNES debugger"	off \
+		JMA	"Enable JMA support"	on
 
+USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--disable-cpucheck
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-ALL_TARGET=	ALL
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		zsnes.1
 PLIST_FILES=	bin/zsnes
@@ -44,6 +45,22 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602000
+IGNORE=		needs zlib >= 1.2.3 ,it is available on FreeBSD >= 6.2
+.endif
+
+.if defined(WITH_DEBUGGER)
+CONFIGURE_ARGS+=--enable-debugger
+.else
+CONFIGURE_ARGS+=--disable-debugger
+.endif
+
+.if defined(WITH_JMA)
+CONFIGURE_ARGS+=--enable-jma
+.else
+CONFIGURE_ARGS+=--disable-jma
+.endif
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--without-x
@@ -64,16 +81,11 @@ CONFIGURE_ARGS+=--disable-opengl
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's| -pipe||g ; \
-		 s| -I/usr/local/include||g ; \
-		 s|^VERSION=1.41|VERSION=${PORTVERSION}|; \
-		 s| -D__FreeBSD__||g; \
-		 s| -I/usr/include||g ; \
-		 s| -O3 .* -s||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
 		's|@CXX@ @CFLAGS@ -o|@CXX@ @CXXFLAGS@ @CPPFLAGS@ -o|g ; \
 		 s|@CC@ @CFLAGS@ -o|@CC@ @CFLAGS@ @CPPFLAGS@ -o|g' \
 			${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -i "" -e \
+		's|-O3||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zsnes ${PREFIX}/bin
