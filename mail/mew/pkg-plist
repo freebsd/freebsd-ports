@@ -1,8 +1,10 @@
 @comment $FreeBSD$
 bin/incm
+bin/mew-pinentry
 bin/mewcat
 bin/mewdecode
 bin/mewencode
+bin/mewest
 bin/mewl
 %%PORTDOCS%%%%DOCSDIR%%/00api
 %%PORTDOCS%%%%DOCSDIR%%/00changes
@@ -12,11 +14,11 @@ bin/mewl
 %%PORTDOCS%%%%DOCSDIR%%/00changes.3
 %%PORTDOCS%%%%DOCSDIR%%/00changes.4.1
 %%PORTDOCS%%%%DOCSDIR%%/00changes.4.2
+%%PORTDOCS%%%%DOCSDIR%%/00changes.5.1
 %%PORTDOCS%%%%DOCSDIR%%/00copyright
 %%PORTDOCS%%%%DOCSDIR%%/00copyright.jis
 %%PORTDOCS%%%%DOCSDIR%%/00diff
 %%PORTDOCS%%%%DOCSDIR%%/00readme
-%%PORTDOCS%%%%DOCSDIR%%/00readme.smime
 %%PORTDOCS%%%%DOCSDIR%%/00roadmap
 %%PORTDOCS%%%%DOCSDIR%%/mew.dot.emacs
 %%PORTDOCS%%%%DOCSDIR%%/mew.dot.mew
