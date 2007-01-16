@@ -16,12 +16,20 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
+.include <bsd.port.pre.mk>
+
+LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
+BLAS=		-lf77blas -lcblas -latlas
 LAPACK=		-lalapack
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
@@ -29,19 +37,12 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
-LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis
-
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
 
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 ALL_TARGET=
 
-.include <bsd.port.pre.mk>
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
 .else
