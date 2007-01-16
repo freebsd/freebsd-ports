@@ -1,0 +1,10 @@
+This little program enables iPod shuffle users to get rid of iTunes or other
+complicated playlist management tools. Due to the simple structure of the
+shuffle, it is possible to use the player almost like any other USB flash MP3
+player: You simply copy MP3 files onto it. You only need to run the Datab ase
+Builder program after you added or removed files from the iPod.
+
+WWW: http://shuffle-db.sourceforge.net/
+
+- ehaupt
+ehaupt@FreeBSD.org
