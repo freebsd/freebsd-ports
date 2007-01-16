@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/blas/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 
 USE_LDCONFIG=	yes
