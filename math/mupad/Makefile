@@ -13,7 +13,7 @@ DISTNAME=	mupad-${PORTVERSION}-3-linux-i386
 EXTRACT_SUFX=   .rpm
 DIST_SUBDIR=	mupad
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated computer algebra system
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
