@@ -62,10 +62,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/snmptrap.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/snmptrapd.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/snmpwalk.py
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/contribution
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/pysnmp
-%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%
-%%PORTDOCS%%@dirrm lib/python2.4
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contribution
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp
