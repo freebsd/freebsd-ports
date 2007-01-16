@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Bitcard/.packlist
+%%SITE_PERL%%/Authen/Bitcard.pm
+%%SITE_PERL%%/Sau/Client.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Bitcard
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrmtry %%SITE_PERL%%/Authen
+@dirrmtry %%SITE_PERL%%/Sau
