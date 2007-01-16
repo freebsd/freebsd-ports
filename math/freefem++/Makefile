@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.11-2
-PORTREVISION=	1
+DISTVERSION=	2.12-1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -21,7 +20,8 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
 		gsl.9:${PORTSDIR}/math/gsl
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick		\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
-		pdflatex:${PORTSDIR}/print/teTeX-base
+		pdflatex:${PORTSDIR}/print/teTeX-base	\
+		gfortran42:${PORTSDIR}/lang/gcc42
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base			\
 		bamg:${PORTSDIR}/math/bamg
@@ -29,12 +29,10 @@ RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 RESTRICTED=	No resale or commercial use
 
 WANT_FORTRAN=		yes
-BUILD_DEPENDS+=		gfortran42:${PORTSDIR}/lang/gcc42
 FC=			gfortran42
 F77=			gfortran42
 USE_BISON=		yes
 USE_GL=			yes
-USE_GCC=		3.4
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -67,10 +65,10 @@ CONFIGURE_ARGS+=	--disable-optim
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas	\
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lcblas -lf77blas -latlas
 LAPACK=		-lalapack ${BLAS}
-ARPACK=		-larpack 
+ARPACK=		-larpack
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
