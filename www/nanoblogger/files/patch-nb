@@ -1,35 +1,23 @@
---- nb.orig	Tue Jul  5 10:49:45 2005
-+++ nb	Tue Jul  5 10:51:56 2005
+--- nb.orig	Sun Jan 14 17:38:03 2007
++++ nb	Sun Jan 14 17:41:26 2007
 @@ -1,4 +1,4 @@
 -#! /bin/bash
 +#!/usr/bin/env bash
  ############################################################
- #  NanoBlogger 3.2.3 Copyright 2005 n1xt3r (Kevin R. Wood)   #
+ #  NanoBlogger 3.3 Copyright 2006 n1xt3r (Kevin R. Wood)   #
  ############################################################
-@@ -7,7 +7,7 @@
- VERSION="3.2.3"
+@@ -8,11 +8,11 @@
+ VERSION="3.3"
  
  # nanoblogger's base install directory.
 -NB_BASE_DIR=`dirname $0`
 +NB_BASE_DIR="%%PREFIX%%/share/nanoblogger"
+ # documentation
+-NB_DOC_DIR="$NB_BASE_DIR/docs"
++NB_DOC_DIR="%%PREFIX%%/share/doc/nanoblogger"
+ # nanoblogger's conf file
+-NB_CFG_DIR="$NB_BASE_DIR"
++NB_CFG_DIR="%%PREFIX%%/etc"
  
- # create a semi ISO 8601 formatted timestamp for archives
- # used explicitly, please don't edit unless you know what you're doing.
-@@ -67,7 +67,7 @@
- # set deprecated BASE_DIR for temporary compatibility
- BASE_DIR="$NB_BASE_DIR"
- # always load global configs
--[ -f "$NB_BASE_DIR/nb.conf" ] && . "$NB_BASE_DIR/nb.conf"
-+[ -f "%%PREFIX%%/etc/nb.conf" ] && . "%%PREFIX%%/etc/nb.conf"
- # check for user's .nb.conf in their home directory
- [ -f "$HOME/.nb.conf" ] && . "$HOME/.nb.conf"
- # allow user specified weblog directories 
-@@ -1070,7 +1070,7 @@
- 	nb_msg "copying default weblog files ..."
- 	# copy default files and directories
- 	cp "$NB_BASE_DIR"/default/*.* "$BLOG_DIR"
--	for weblog_dir in "$NB_BASE_DIR"/default/*/; do
-+	for weblog_dir in "$NB_BASE_DIR"/default/*; do
- 		cp -R "$weblog_dir" "$BLOG_DIR"
- 	done
- 	# create some critical empty directories
+ ### hardcoded paths ###
+ 

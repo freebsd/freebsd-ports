@@ -1,24 +1,24 @@
-NanoBlogger is a small weblog engine written in Bash for the command line. It
-uses common UNIX tools such as cat, grep and sed.
+NanoBlogger is a small weblog engine written in Bash for the command
+line.  It uses common UNIX tools such as cat, grep, and sed to create
+static HTML content.
 
 Features include:
-    * intuitive commandline interface
-    * support for multiple weblogs
-    * support for multiple categories
-    * easy editing and management of entries
-    * archiving by category, entry, and month
-    * pagination
-    * permanent links
-    * RSS syndication (comes with RSS 1.0 and 2.0 formats)
-    * Atom syndication (comes with 0.3 format)
-    * templates and CSS style sheets for full control of appearance
-    * placeholders for easy template manipulation
-    * plugins for calendar, recent entries, weblog status, fortunes, etc.
-    * auto-formatting, e.g. line breaks translate to HTML
-    * support for relative and absolute links
-    * [...]
+ * intuitive commandline interface
+ * highly configurable and script-able :)
+ * easy drafting, editing, and management of entries
+ * archiving by category, year, month, day, and entry
+ * pagination
+ * permanent and navigational links
+ * templates and CSS style sheets for full control over layout
+ * placeholders for easy template manipulation
+ * support for multiple weblogs
+ * support for multiple categories
+ * support for relative and absolute links
+ * support for date manipulation of entries
+ * Atom syndication (comes with 1.0 format)
+ * RSS syndication (comes with RSS 1.0 and 2.0 formats)
+ * plugins for calendar, recent entries, weblog status, etc.
+ * plugins for text formatting (e.g. line breaks translate to HTML)
+ * [...]
 
 WWW: http://nanoblogger.sourceforge.net/
-
-- Julien Gabel
-jpeg@thilelli.net

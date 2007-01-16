@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	nanoblogger
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jpeg@thilelli.net
-COMMENT=	Small weblog engine for the UNIX command line
+MAINTAINER=	julien.gabel@thilelli.net
+COMMENT=	Small weblog engine written in Bash for the command line
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
@@ -28,14 +28,20 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
 	${MKDIR} ${DATADIR}
-.for dir in default moods plugins
-	${CP} -R ${WRKSRC}/${dir} ${DATADIR}
+.for data in default lang lib moods plugins
+	${CP} -R ${WRKSRC}/${data} ${DATADIR}
 .endfor
+	${CP} ${WRKSRC}/welcome-to-nb.txt ${DATADIR}
 
 post-install:
+	@if [ ! -f ${PREFIX}/etc/nb.conf ]; then \
+		${CP} -p ${PREFIX}/etc/nb.conf.sample ${PREFIX}/etc/nb.conf; \
+	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/nanoblogger.html ${DOCSDIR}
+.for doc in COPYING ChangeLog README TODO docs/nanoblogger.html
+	${INSTALL_MAN} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
