@@ -9,11 +9,13 @@ PORTNAME=	netmond
 PORTVERSION=	2.2b6
 PORTREVISION=	4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.risp.ru/pub/RinetSoftware/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		ftp://ftp.risp.ru/pub/RinetSoftware/
 DISTNAME=	netmond-2.2-b6
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	http://vfom.narod.ru/download/
+PATCH_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://vfom.narod.ru/download/
 PATCH_VERSION=	1
 PATCHFILES=	${DISTNAME}.patch${PATCH_VERSION}${EXTRACT_SUFX}  ${DISTNAME}.docs${EXTRACT_SUFX}
 
