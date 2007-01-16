@@ -7784,6 +7784,7 @@ nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
 nicmond		ports/net/nicmond
 nicotine	ports/net-p2p/nicotine
+nicotine-plus	ports/net-p2p/nicotine-plus
 nifmon		ports/net/nifmon
 nightfall	ports/astro/nightfall
 nighthawk	ports/games/nighthawk
