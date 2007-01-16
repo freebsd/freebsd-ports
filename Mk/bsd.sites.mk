@@ -1235,7 +1235,6 @@ MASTER_SITE_XCONTRIB+=	\
 
 .if !defined(IGNORE_MASTER_SITE_XEMACS)
 MASTER_SITE_XEMACS+= \
-	ftp://ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.at.xemacs.org/editors/xemacs/%SUBDIR%/ \
 	ftp://ftp.be.xemacs.org/xemacs/%SUBDIR%/ \
 	ftp://ftp.br.xemacs.org/pub/xemacs/%SUBDIR%/ \
