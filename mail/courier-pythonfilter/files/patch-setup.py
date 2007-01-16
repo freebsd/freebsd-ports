@@ -5,5 +5,5 @@
        packages=['courier', 'pythonfilter'],
        package_dir = {'pythonfilter': 'filters'},
 -      data_files=[('/etc/', ['pythonfilter.conf'])]
-+      data_files=[('/usr/local/etc/', ['pythonfilter.conf'])]
++      data_files=[('/usr/local/etc/', ['pythonfilter.conf.sample'])]
       )
