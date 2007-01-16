@@ -32,7 +32,7 @@ BLAS=		-L${LOCALBASE}/lib -lblas
 LAPACK=		-L${LOCALBASE}/lib -llapack
 .endif
 
-CONFLICTS=	elmer-umfpack-4* umfpack-*
+CONFLICTS=	umfpack-*
 
 .include <bsd.port.pre.mk>
 
@@ -97,7 +97,7 @@ do-build:
 post-build:
 	cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
 		ld -Bshareable -o $${i}.so.${SVERSION} -x -soname $${i}.so.${SVERSION} --whole-archive $${i}.a ;\
-		ln -s $${i}.so.${SVERSION} $${i}.so ;\
+		${LN} -s $${i}.so.${SVERSION} $${i}.so ;\
 	done
 
 do-install:
