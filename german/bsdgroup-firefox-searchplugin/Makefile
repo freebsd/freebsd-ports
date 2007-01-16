@@ -1,0 +1,31 @@
+# New ports collection makefile for:    bsdgroup-firefox-searchplugin
+# Date created:                         2007-01-17
+# Whom:                                 Stefan 'Steve' Tell <stefan.tell@crashmail.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bsdgroup-firefox-searchplugin
+PORTVERSION=	0.1
+CATEGORIES=	german www
+MASTER_SITES=	http://www.crashmail.de/files/
+DISTFILES=	bsdgroup.src bsdgroup.png
+EXTRACT_ONLY=	yes
+
+MAINTAINER=	stefan.tell@crashmail.de
+COMMENT=	Firefox searchplugins for the www.BSDGroup.de board
+
+NO_BUILD=	yes
+USE_GECKO=	firefox
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/bsdgroup.src ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/bsdgroup.png ${WRKSRC}
+
+do-install:
+	@${MKDIR} ${PREFIX}/lib/firefox/searchplugins
+	${INSTALL_DATA} ${WRKSRC}/bsdgroup.src ${PREFIX}/lib/firefox/searchplugins
+	${INSTALL_DATA} ${WRKSRC}/bsdgroup.png ${PREFIX}/lib/firefox/searchplugins
+
+.include <bsd.port.mk>
