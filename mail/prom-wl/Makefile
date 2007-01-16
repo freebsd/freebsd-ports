@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	prom-wl
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	2.7.0
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.h6.dion.ne.jp/~nytheta/software/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Procmail reader for Wanderlust on GNU Emacs
 
 # This port requires Wanderlust. But we can't decide which Wanderlust to
 # depends, there is NO RUN_DEPENDS mail/wanderlust-*.
-RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+#RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
 NO_BUILD=	yes
 
