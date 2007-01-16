@@ -1,0 +1,11 @@
+This script reads Python code from standard input and writes a revised
+version to standard output.
+
+Alternatively, it may be invoked with file names as arguments:
+
+	python PythonTidy.py input output
+
+Suffice it to say that input defaults to '-', the standard input, and output
+defaults to '-', the standard output.
+
+WWW: http://www.python.org/pypi/PythonTidy/
