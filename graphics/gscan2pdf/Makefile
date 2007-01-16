@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.9
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -27,6 +26,8 @@ USE_GMAKE=	yes
 MAN1=		${PORTNAME}.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/--parents/-p/g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's/--parents/-p/g;s|/usr/share/man|${MANPREFIX}/man|g;s|1p|1|g'\
+		-e '/SITEPREFIX/s|/usr|${PREFIX}|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
