@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	SVN-Web
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SVN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Subversion repository web frontend
@@ -41,12 +42,16 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	--skip_questions
 
-MAN1=		svnweb-server.1
+MAN1=		svnweb-install.1 \
+		svnweb-server.1
 MAN3=		SVN::Web.3 \
+		SVN::Web::Blame.3 \
 		SVN::Web::Browse.3 \
 		SVN::Web::Checkout.3 \
 		SVN::Web::ConfigData.3 \
 		SVN::Web::Diff.3 \
+		SVN::Web::DiffParser.3 \
+		SVN::Web::I18N.3 \
 		SVN::Web::List.3 \
 		SVN::Web::Log.3 \
 		SVN::Web::RSS.3 \

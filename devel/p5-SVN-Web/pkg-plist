@@ -1,9 +1,13 @@
 bin/svnweb-install
 bin/svnweb-server
 %%SITE_PERL%%/SVN/Web.pm
+%%SITE_PERL%%/SVN/Web/Blame.pm
 %%SITE_PERL%%/SVN/Web/Browse.pm
 %%SITE_PERL%%/SVN/Web/Checkout.pm
+%%SITE_PERL%%/SVN/Web/ConfigData.pm
 %%SITE_PERL%%/SVN/Web/Diff.pm
+%%SITE_PERL%%/SVN/Web/DiffParser.pm
+%%SITE_PERL%%/SVN/Web/I18N.pm
 %%SITE_PERL%%/SVN/Web/I18N/en.po
 %%SITE_PERL%%/SVN/Web/I18N/fr.po
 %%SITE_PERL%%/SVN/Web/I18N/zh_cn.po
@@ -12,7 +16,6 @@ bin/svnweb-server
 %%SITE_PERL%%/SVN/Web/Log.pm
 %%SITE_PERL%%/SVN/Web/RSS.pm
 %%SITE_PERL%%/SVN/Web/Revision.pm
-%%SITE_PERL%%/SVN/Web/ConfigData.pm
 %%SITE_PERL%%/SVN/Web/Style/common.css
 %%SITE_PERL%%/SVN/Web/Style/styles-hlb.css
 %%SITE_PERL%%/SVN/Web/Style/trac/browser.css
@@ -37,6 +40,10 @@ bin/svnweb-server
 %%SITE_PERL%%/SVN/Web/Template/plain/revision
 %%SITE_PERL%%/SVN/Web/Template/plain/view
 %%SITE_PERL%%/SVN/Web/Template/plain/x
+%%SITE_PERL%%/SVN/Web/Template/trac/_action_menu
+%%SITE_PERL%%/SVN/Web/Template/trac/_diff
+%%SITE_PERL%%/SVN/Web/Template/trac/_log_msg
+%%SITE_PERL%%/SVN/Web/Template/trac/blame
 %%SITE_PERL%%/SVN/Web/Template/trac/browse
 %%SITE_PERL%%/SVN/Web/Template/trac/diff
 %%SITE_PERL%%/SVN/Web/Template/trac/footer
