@@ -1,7 +1,9 @@
 %%SITE_PERL%%/PAR.pm
+%%SITE_PERL%%/PAR/AutoLoaderFix.pm
 %%SITE_PERL%%/PAR/Environment.pod
 %%SITE_PERL%%/PAR/FAQ.pod
 %%SITE_PERL%%/PAR/Heavy.pm
 %%SITE_PERL%%/PAR/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/autosplit.ix
 @dirrmtry %%SITE_PERL%%/PAR
