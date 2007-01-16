@@ -25,8 +25,6 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
 USE_GMAKE=	yes
 WANT_FORTRAN=yes #dummy but future use
 BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
@@ -35,12 +33,14 @@ F77=	gfortran42
 FORTRANLIBS=    -lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=     yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
+BLAS=		-lf77blas -latlas -lcblas
 LAPACK=		-lalapack
 .else
 LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
@@ -60,7 +60,7 @@ OPTIMIZED_FLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boun
 pre-patch:
 	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile-pw
 	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile-wl
-	${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	${DIRNAME} `${LOCALBASE}/bin/${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
