@@ -31,7 +31,7 @@ MAKEFILE=	Makefile.freebsd
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-	BROKEN=	does not compile on FreeBSD 4.x
+BROKEN=		does not compile on FreeBSD 4.x
 .endif
 
 pre-build:
