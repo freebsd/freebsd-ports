@@ -1,102 +1,166 @@
 bin/meld
-share/application-registry/meld.applications
-share/applications/meld.desktop
-%%DOCSDIR%%/manual.html
-%%DOCSDIR%%/stylesheet.css
+lib/meld/diffutil.py
+lib/meld/diffutil.pyc
+lib/meld/diffutil.pyo
+lib/meld/dirdiff.py
+lib/meld/dirdiff.pyc
+lib/meld/dirdiff.pyo
+lib/meld/filediff.py
+lib/meld/filediff.pyc
+lib/meld/filediff.pyo
+lib/meld/gnomeglade.py
+lib/meld/gnomeglade.pyc
+lib/meld/gnomeglade.pyo
+lib/meld/meldapp.py
+lib/meld/meldapp.pyc
+lib/meld/meldapp.pyo
+lib/meld/melddoc.py
+lib/meld/melddoc.pyc
+lib/meld/melddoc.pyo
+lib/meld/misc.py
+lib/meld/misc.pyc
+lib/meld/misc.pyo
+lib/meld/paths.py
+lib/meld/paths.pyc
+lib/meld/paths.pyo
+lib/meld/prefs.py
+lib/meld/prefs.pyc
+lib/meld/prefs.pyo
+lib/meld/task.py
+lib/meld/task.pyc
+lib/meld/task.pyo
+lib/meld/tree.py
+lib/meld/tree.pyc
+lib/meld/tree.pyo
+lib/meld/undo.py
+lib/meld/undo.pyc
+lib/meld/undo.pyo
+lib/meld/vc/__init__.py
+lib/meld/vc/__init__.pyc
+lib/meld/vc/__init__.pyo
+lib/meld/vc/_null.py
+lib/meld/vc/_null.pyc
+lib/meld/vc/_null.pyo
+lib/meld/vc/_vc.py
+lib/meld/vc/_vc.pyc
+lib/meld/vc/_vc.pyo
+lib/meld/vc/bzr.py
+lib/meld/vc/bzr.pyc
+lib/meld/vc/bzr.pyo
+lib/meld/vc/cvs.py
+lib/meld/vc/cvs.pyc
+lib/meld/vc/cvs.pyo
+lib/meld/vc/darcs.py
+lib/meld/vc/darcs.pyc
+lib/meld/vc/darcs.pyo
+lib/meld/vc/mercurial.py
+lib/meld/vc/mercurial.pyc
+lib/meld/vc/mercurial.pyo
+lib/meld/vc/monotone.py
+lib/meld/vc/monotone.pyc
+lib/meld/vc/monotone.pyo
+lib/meld/vc/svn.py
+lib/meld/vc/svn.pyc
+lib/meld/vc/svn.pyo
+lib/meld/vc/tla.py
+lib/meld/vc/tla.pyc
+lib/meld/vc/tla.pyo
+lib/meld/vcview.py
+lib/meld/vcview.pyc
+lib/meld/vcview.pyo
+share/gnome/application-registry/meld.applications
 share/gnome/applications/meld.desktop
+share/gnome/help/meld/C/figures/dirdiff.png
+share/gnome/help/meld/C/figures/filediff.png
+share/gnome/help/meld/C/meld.xml
+share/gnome/omf/meld/meld-C.omf
+share/gnome/pixmaps/meld.png
+share/locale/bg/LC_MESSAGES/meld.mo
+share/locale/ca/LC_MESSAGES/meld.mo
 share/locale/cs/LC_MESSAGES/meld.mo
 share/locale/de/LC_MESSAGES/meld.mo
 share/locale/en_CA/LC_MESSAGES/meld.mo
 share/locale/en_GB/LC_MESSAGES/meld.mo
+share/locale/es/LC_MESSAGES/meld.mo
+share/locale/fi/LC_MESSAGES/meld.mo
 share/locale/fr/LC_MESSAGES/meld.mo
+share/locale/hu/LC_MESSAGES/meld.mo
+share/locale/it/LC_MESSAGES/meld.mo
 share/locale/ja/LC_MESSAGES/meld.mo
 share/locale/ko/LC_MESSAGES/meld.mo
+share/locale/ne/LC_MESSAGES/meld.mo
 share/locale/nl/LC_MESSAGES/meld.mo
+share/locale/pa/LC_MESSAGES/meld.mo
 share/locale/pt/LC_MESSAGES/meld.mo
 share/locale/pt_BR/LC_MESSAGES/meld.mo
+share/locale/ru/LC_MESSAGES/meld.mo
+share/locale/rw/LC_MESSAGES/meld.mo
 share/locale/sr/LC_MESSAGES/meld.mo
 share/locale/sr@Latn/LC_MESSAGES/meld.mo
-share/meld/cvsview.py
-share/meld/cvsview.pyc
-share/meld/cvsview.pyo
-share/meld/diffutil.py
-share/meld/diffutil.pyc
-share/meld/diffutil.pyo
-share/meld/dirdiff.py
-share/meld/dirdiff.pyc
-share/meld/dirdiff.pyo
-share/meld/filediff.py
-share/meld/filediff.pyc
-share/meld/filediff.pyo
-share/meld/glade2/cvsview.glade
-share/meld/glade2/dirdiff.glade
-share/meld/glade2/filediff.glade
-share/meld/glade2/meldapp.glade
-share/meld/glade2/pixmaps/button_apply0.xpm
-share/meld/glade2/pixmaps/button_apply1.xpm
-share/meld/glade2/pixmaps/button_copy0.xpm
-share/meld/glade2/pixmaps/button_copy1.xpm
-share/meld/glade2/pixmaps/button_delete.xpm
-share/meld/glade2/pixmaps/close.xpm
-share/meld/glade2/pixmaps/cvs-add-16.png
-share/meld/glade2/pixmaps/cvs-commit-16.png
-share/meld/glade2/pixmaps/cvs-icon-small.png
-share/meld/glade2/pixmaps/cvs-icon.png
-share/meld/glade2/pixmaps/cvs-remove-16.png
-share/meld/glade2/pixmaps/cvs-update-16.png
-share/meld/glade2/pixmaps/icon.png
-share/meld/glade2/pixmaps/svn-icon-small.png
-share/meld/glade2/pixmaps/svn-icon.png
-share/meld/glade2/pixmaps/tree-file-changed.png
-share/meld/glade2/pixmaps/tree-file-new.png
-share/meld/glade2/pixmaps/tree-file-newer.png
-share/meld/glade2/pixmaps/tree-file-normal.png
-share/meld/glade2/pixmaps/tree-folder-changed.png
-share/meld/glade2/pixmaps/tree-folder-new.png
-share/meld/glade2/pixmaps/tree-folder-normal.png
-share/meld/gnomeglade.py
-share/meld/gnomeglade.pyc
-share/meld/gnomeglade.pyo
-share/meld/meldapp.py
-share/meld/meldapp.pyc
-share/meld/meldapp.pyo
-share/meld/melddoc.py
-share/meld/melddoc.pyc
-share/meld/melddoc.pyo
-share/meld/misc.py
-share/meld/misc.pyc
-share/meld/misc.pyo
-share/meld/paths.py
-share/meld/paths.pyc
-share/meld/paths.pyo
-share/meld/prefs.py
-share/meld/prefs.pyc
-share/meld/prefs.pyo
-share/meld/svnview.py
-share/meld/svnview.pyc
-share/meld/svnview.pyo
-share/meld/task.py
-share/meld/task.pyc
-share/meld/task.pyo
-share/meld/tree.py
-share/meld/tree.pyc
-share/meld/tree.pyo
-share/meld/undo.py
-share/meld/undo.pyc
-share/meld/undo.pyo
-share/pixmaps/meld.png
-@dirrm share/meld/glade2/pixmaps
-@dirrm share/meld/glade2
-@dirrm share/meld
-@dirrmtry share/pixmaps
-@dirrmtry share/applications
-@dirrmtry share/application-registry
-@dirrm %%DOCSDIR%%
+share/locale/sv/LC_MESSAGES/meld.mo
+share/locale/vi/LC_MESSAGES/meld.mo
+share/locale/zh_CN/LC_MESSAGES/meld.mo
+share/locale/zh_TW/LC_MESSAGES/meld.mo
+%%DATADIR%%/glade2/dirdiff.glade
+%%DATADIR%%/glade2/filediff.glade
+%%DATADIR%%/glade2/meldapp.glade
+%%DATADIR%%/glade2/pixmaps/button_apply0.xpm
+%%DATADIR%%/glade2/pixmaps/button_apply1.xpm
+%%DATADIR%%/glade2/pixmaps/button_copy0.xpm
+%%DATADIR%%/glade2/pixmaps/button_copy1.xpm
+%%DATADIR%%/glade2/pixmaps/button_delete.xpm
+%%DATADIR%%/glade2/pixmaps/close.xpm
+%%DATADIR%%/glade2/pixmaps/cvs-icon-small.png
+%%DATADIR%%/glade2/pixmaps/cvs-icon.png
+%%DATADIR%%/glade2/pixmaps/filter-ignored-24.png
+%%DATADIR%%/glade2/pixmaps/filter-modified-24.png
+%%DATADIR%%/glade2/pixmaps/filter-nonvc-24.png
+%%DATADIR%%/glade2/pixmaps/filter-normal-24.png
+%%DATADIR%%/glade2/pixmaps/icon.png
+%%DATADIR%%/glade2/pixmaps/svn-icon-small.png
+%%DATADIR%%/glade2/pixmaps/svn-icon.png
+%%DATADIR%%/glade2/pixmaps/tree-file-changed.png
+%%DATADIR%%/glade2/pixmaps/tree-file-new.png
+%%DATADIR%%/glade2/pixmaps/tree-file-newer.png
+%%DATADIR%%/glade2/pixmaps/tree-file-normal.png
+%%DATADIR%%/glade2/pixmaps/tree-folder-changed.png
+%%DATADIR%%/glade2/pixmaps/tree-folder-new.png
+%%DATADIR%%/glade2/pixmaps/tree-folder-normal.png
+%%DATADIR%%/glade2/pixmaps/vc-add-24.png
+%%DATADIR%%/glade2/pixmaps/vc-checkout-24.png
+%%DATADIR%%/glade2/pixmaps/vc-commit-24.png
+%%DATADIR%%/glade2/pixmaps/vc-icon.png
+%%DATADIR%%/glade2/pixmaps/vc-remove-24.png
+%%DATADIR%%/glade2/pixmaps/vc-update-24.png
+%%DATADIR%%/glade2/vcview.glade
+@dirrm %%DATADIR%%/glade2/pixmaps
+@dirrm %%DATADIR%%/glade2
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrm share/gnome/omf/meld
+@dirrm share/gnome/help/meld/C/figures
+@dirrm share/gnome/help/meld/C
+@dirrm share/gnome/help/meld
+@exec mkdir -p %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
+@dirrm lib/meld/vc
+@dirrm lib/meld
