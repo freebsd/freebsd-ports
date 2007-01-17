@@ -20,6 +20,7 @@ CONFLICTS=	gtkada-[0-9]* gtkada-devel-[0-9]* gtkada-gcc-[0-9]*
 
 USE_GNOME=	gtk20 libglade2
 USE_GMAKE=	yes
+GTKADA_SRC=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
@@ -27,15 +28,15 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 # Check for GNAT sources.
-.if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=	${PRINTF}
-IGNORE=Because of licensing and registration restrictions, you must fetch\n \
-	the source distribution manually.  Please access\n \
-	http://libre.adacore.com/\ with a web browser, register\n \
-	(It's free!) and log in.  Download the source files:\n\n \
-	\t${DISTFILE}\n\n \
-	and place them in ${DISTDIR}\n
-	${ECHO_MSG} ${IGNORE}
+.if !exists(${DISTDIR}/${GTKADA_SRC}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE=:\n\
+Because of licensing and registration restrictions, you must fetch the\n\
+source distribution manually.  Please access http://libre.adacore.com/\n\
+with a web browser, register (it's free), and log in.  Download the source\n\
+files:\n\
+\t${GTKADA_SRC}\n\
+and place them in ${DISTDIR}.\n
 .endif
 
 WRKSRC=		${WRKDIR}/GtkAda-2.4.2
