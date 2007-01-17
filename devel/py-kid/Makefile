@@ -34,7 +34,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 
-PYKID_EGG=	${PORTNAME}-${PYKID_VER}-py${PYTHON_VERSION:S/^python//}.egg
+PYKID_EGG=	${PORTNAME}-${PYKID_VER}-py${PYTHON_VER}.egg
 PYKID_VER=	${PORTVERSION}
 
 SETUP_CFG=	setup.cfg
@@ -55,9 +55,9 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 250
-PYTHON_OLD= "@comment "
+PYTHON_OLD=	"@comment "
 .else
-PYTHON_OLD= ""
+PYTHON_OLD=	""
 .endif
 
 .include <bsd.port.post.mk>
