@@ -33,7 +33,7 @@
  };
  //__________________________________________________________________________________________________
  RTTI::RTTI() SAL_THROW( () )
-+#if __FreeBSD_version < 700022
++#if __FreeBSD_version < 602103
      : m_hApp( dlopen( 0, RTLD_NOW | RTLD_GLOBAL ) )
 +#else
 +    : m_hApp( dlopen( 0, RTLD_LAZY ) )
@@ -57,7 +57,7 @@
  
          OString symName( buf.makeStringAndClear() );
 -//#iZ 22253 
-+#if __FreeBSD_version < 700022 /* #i22253# */
++#if __FreeBSD_version < 602103 /* #i22253# */
          rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
 +#else
 +        rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
@@ -117,7 +117,7 @@
  };
  //__________________________________________________________________________________________________
  RTTI::RTTI() SAL_THROW( () )
-+#if __FreeBSD_version < 700022
++#if __FreeBSD_version < 602103
      : m_hApp( dlopen( 0, RTLD_NOW | RTLD_GLOBAL ) )
 +#else
 +    : m_hApp( dlopen( 0, RTLD_LAZY ) )
@@ -129,7 +129,7 @@
          buf.append( 'E' );
          
          OString symName( buf.makeStringAndClear() );
-+#if __FreeBSD_version < 700022  /* #i22253# */
++#if __FreeBSD_version < 602103  /* #i22253# */
          rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
 +#else
 +        rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
