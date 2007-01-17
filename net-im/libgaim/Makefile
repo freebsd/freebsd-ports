@@ -91,7 +91,7 @@ PLIST_SUB+=		EVO="@comment not installed: "
 .endif
 
 .if defined(WITH_GTKUI) && !defined(WITHOUT_GSTREAMER)
-USE_GSTREAMER+= core good
+USE_GSTREAMER+=	core good
 .else
 CONFIGURE_ARGS+=--disable-gstreamer
 .endif
@@ -174,7 +174,7 @@ LIB_DEPENDS+=		ao.3:${PORTSDIR}/audio/libao \
 CONFIGURE_ARGS+=	--disable-audio
 .endif
 
-.if defined(WITH_DBUS)
+.if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .if !defined(GAIM_SLAVE)
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
