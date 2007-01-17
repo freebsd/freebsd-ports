@@ -124,7 +124,6 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/lamp.active.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/lamp.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/landmine.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/last_ce.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/light_switch.active.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/light_switch.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/magic_wall.txt
@@ -139,6 +138,7 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/player_2.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/player_3.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/player_4.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/prev_ce.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_empty.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_full.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/robot.txt
