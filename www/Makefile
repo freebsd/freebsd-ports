@@ -239,6 +239,7 @@
     SUBDIR += linux-firefox
     SUBDIR += linux-firefox-devel
     SUBDIR += linux-flashplugin7
+    SUBDIR += linux-flashplugin9
     SUBDIR += linux-flock
     SUBDIR += linux-mozilla
     SUBDIR += linux-mplayer-plugin

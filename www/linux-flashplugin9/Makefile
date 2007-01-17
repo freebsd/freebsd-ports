@@ -1,4 +1,4 @@
-# New ports collection makefile for:	linux-flashplugin7
+# New ports collection makefile for:	linux-flashplugin9
 # Date created:				28 May 2004
 # Whom:					Jamie Jones <jamie@bishopston.net>
 #
@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	7.0r69
+PORTVERSION=	9.0r31
 PORTREVISION=	0
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	install_flash_player_7_linux
+DISTNAME=	install_flash_player_9_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jamie@bishopston.net
@@ -23,8 +23,8 @@ USE_LINUX=	yes
 RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/install_flash_player_7_linux
-LATEST_LINK=	flash7
+WRKSRC=		${WRKDIR}/install_flash_player_9_linux
+LATEST_LINK=	flash9
 PORTDOCS=	Readme.txt
 
 USE_NPAPI=	linux-*
