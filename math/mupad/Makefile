@@ -8,7 +8,7 @@
 PORTNAME=	mupad
 PORTVERSION=	3.2.0
 CATEGORIES=	math linux
-MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/
+MASTER_SITES=	#
 DISTNAME=	mupad-${PORTVERSION}-3-linux-i386
 EXTRACT_SUFX=   .rpm
 DIST_SUBDIR=	mupad
@@ -19,7 +19,13 @@ COMMENT=	A sophisticated computer algebra system
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS+=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 
-NO_CDROM=	"unsure to sell for profit"
+NO_CDROM=	unsure to sell for profit
+
+.for file in ${DISTFILES}
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
+IGNORE= you can go http://www.mupad.de/download/mupadpro3.php and download `Linux, 32bit, i386 German. RPM package'
+.endif
+.endfor
 
 USE_LINUX=		yes
 ONLY_FOR_ARCHS=		i386
