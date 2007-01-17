@@ -7,7 +7,7 @@
 
 PORTNAME=	robot
 PORTVERSION=	4.93.89
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lheaftp.gsfc.nasa.gov/pub/corbet/robot/
 DISTNAME=	robot-beta
@@ -21,7 +21,13 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV+=	OPENWINHOME=${X11BASE}
-WEB_BROWSER?=	mozilla
+WEB_BROWSER?=	firefox
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FFLAGS+=	-ffixed-line-length-80
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 MANL=		robot.l
 

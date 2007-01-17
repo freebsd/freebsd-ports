@@ -1,5 +1,5 @@
---- Robot/Makefile.orig	Tue May  3 17:14:51 2005
-+++ Robot/Makefile	Wed Dec 28 16:58:22 2005
+--- Robot/Makefile.orig	Wed May  4 00:14:51 2005
++++ Robot/Makefile	Wed Jan 17 17:09:08 2007
 @@ -15,7 +15,7 @@
  
  
@@ -21,10 +21,10 @@
  # define compilers
  #CC = cc
 -CC = gcc
-+CC ?= gcc
++#CC ?= gcc
  #FC = g77
 -FC = f77
-+FC ?= f77
++#FC ?= f77
  # define compile options here if required, 
  # e.g. debug 
 - CFLAGS = -g -Wall
