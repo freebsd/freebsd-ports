@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	DB
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.8.r1
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR Database Abstraction Layer
@@ -18,8 +19,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		DB.php DB/common.php DB/dbase.php DB/fbsql.php DB/ibase.php \
 		DB/ifx.php DB/msql.php DB/mssql.php DB/mysql.php DB/mysqli.php \
-		DB/oci8.php DB/odbc.php DB/pgsql.php DB/sybase.php DB/storage.php \
-		DB/sqlite.php
+		DB/oci8.php DB/odbc.php DB/pgsql.php DB/sybase.php \
+		DB/storage.php DB/sqlite.php
 DOCS=		IDEAS MAINTAINERS STATUS TESTERS
 TESTS=		db_error.phpt db_parsedsn.phpt db_factory.phpt db_ismanip.phpt \
 		db_error2.phpt errors.inc fetchmode_object.inc fetchmodes.inc \
