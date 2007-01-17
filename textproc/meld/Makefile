@@ -6,33 +6,45 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	0.9.4.1
-PORTREVISION=	4
+PORTVERSION=	1.1.4
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME 2 visual diff and merge tool
 
 USE_BZIP2=	yes
 USE_GNOME=	pygnome2
+INSTALLS_OMF=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 
 MAKEFILE=	GNUmakefile
 
+OPTIONS=	PYGNOMEDESKTOP "Code syntax hilighting (many dependencies)" off
+
 post-patch:
-	@${REINPLACE_CMD} -E 's,(prefix := )(.*),\1${PREFIX},; \
-		s,(libdir := )(.*),\1${PREFIX}/share,' ${WRKSRC}/GNUmakefile
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/INSTALL
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/meld.desktop ${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/manual/stylesheet.css ${DOCSDIR}
+	@${REINPLACE_CMD} \
+		's|$$(sharedir)/applications|$$(sharedir)/gnome/applications|g ;\
+		s|$$(sharedir)/application-registry|$$(sharedir)/gnome/application-registry|g ;\
+		s|$$(sharedir)/pixmaps|$$(sharedir)/gnome/pixmaps|g' \
+		${WRKSRC}/${MAKEFILE}
 
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${SED} -E 's,.*share/nls/.+$$,,g;s,share/doc/meld,%%DOCSDIR%%,;s,^@dirrm share/(gnome|pixmaps|application|locale).*,,'|${TR} -s '\n') > temp-pkg-plist
+	@${FIND} ${WRKSRC}/help -type f -name ${MAKEFILE} -exec \
+		${REINPLACE_CMD} \
+		's|$$(prefix)/var/lib/scrollkeeper|/var/db/scrollkeeper|g ; \
+		s|$$(sharedir)/omf/meld|$$(sharedir)/gnome/omf/meld|g' \
+		"{}" \;
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if defined (WITH_PYGNOMEDESKTOP)
+USE_GNOME+=	pygnomedesktop
+.endif
+.include <bsd.port.post.mk>
