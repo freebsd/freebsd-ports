@@ -133,7 +133,6 @@
     SUBDIR += vim-scdoc
     SUBDIR += wangttf
     SUBDIR += wenju
-    SUBDIR += xcin
     SUBDIR += xemacs
     SUBDIR += xemacs21
     SUBDIR += xmms
