@@ -11,7 +11,7 @@ PGDISP_ROUTINES= cleanup.o pgdisp.o figcurs.o getdata.o getvisuals.o handlexeven
 all: grfont.dat pgxwin_server pgdisp
 
 grfont.dat: fonts/grfont.txt fonts/pgpack.f
-	f77 -o pgpack fonts/pgpack.f
+	$(FC) -o pgpack fonts/pgpack.f
 	./pgpack <fonts/grfont.txt
 
 pgxwin_server: $(DRVDIR)/pgxwin_server.c
