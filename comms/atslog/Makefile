@@ -7,6 +7,7 @@
 
 PORTNAME=	atslog
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
@@ -42,6 +43,12 @@ PLIST_SUB+=	WWW=""
 .if !defined(WITHOUT_WWWGD)
 USE_PHP+=	gd
 .endif
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysql
+.endif
+.if defined(WITH_PGSQL)
+USE_PHP+=	pgsql
+.endif
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 .else
 PLIST_SUB+=	WWW="@comment "
@@ -51,18 +58,12 @@ PLIST_SUB+=	WWW="@comment "
 USE_MYSQL=	yes
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-.if !defined(WITHOUT_WWW)
-USE_PHP+=	mysql
-.endif
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.if !defined(WITHOUT_WWW)
-USE_PHP+=	pgsql
-.endif
 .endif
 
 post-patch:
