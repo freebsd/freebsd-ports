@@ -1,0 +1,4 @@
+        ATTENTION:
+
+Remember to add %%AROS_SDK_PATH%%/bin to your PATH environment
+variable before using the AROS SDK.
