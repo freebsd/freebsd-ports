@@ -2698,3 +2698,6 @@ net/ruby-radius||2007-01-08|Has expired: distfile disappeared from homepage
 devel/versuch|net/versuch|2007-01-12|Removed duplicate port
 german/tvbrowser|misc/tvbrowser|2007-01-13|move to misc/tvbrowser
 chinese/xcin||2007-01-17|Has expired: dead project, see http://lists.linux.org.tw/pipermail/xcin/2005-November/004300.html
+x11-wm/wmi||2007-01-17|Has expired: This port is unsupported by the author.  Please use x11-wm/wmii instead.
+www/abcache||2007-01-17|Has expired: "is a dead project and the distfile disappeared"
+devel/rubygem-event-loop||2007-01-17|Has expired: replaced by devel/ruby-event-loop which gets around issues caused by the rubygems system

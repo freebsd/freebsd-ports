@@ -1908,7 +1908,6 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-daemons
-    SUBDIR += rubygem-event-loop
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-hoe

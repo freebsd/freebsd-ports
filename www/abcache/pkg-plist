@@ -1,2 +1,0 @@
-lib/php/%%PHP_EXT_DIR%%/bware_cache.so
-@dirrmtry lib/php/%%PHP_EXT_DIR%%
