@@ -1,0 +1,11 @@
+--- sources/configure~	Fri Apr 11 18:16:30 2003
++++ sources/configure	Wed Jan 17 06:44:26 2007
+@@ -2876,7 +2876,7 @@
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+ 
+-F77=f77
++F77=%%F77%%
+ AR=ar
+ FFLAGS=
+ CLDFLAGS=
