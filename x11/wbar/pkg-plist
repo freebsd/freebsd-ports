@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+bin/wbar
+%%DATADIR%%/dot.wbar
+%%DATADIR%%/wbar.icons/VeraBd.ttf
+%%DATADIR%%/wbar.icons/acroread.png
+%%DATADIR%%/wbar.icons/firefox.png
+%%DATADIR%%/wbar.icons/gimp.png
+%%DATADIR%%/wbar.icons/gnutella.png
+%%DATADIR%%/wbar.icons/gulls.png
+%%DATADIR%%/wbar.icons/license
+%%DATADIR%%/wbar.icons/osxbarback.png
+%%DATADIR%%/wbar.icons/osxbarback.xcf
+%%DATADIR%%/wbar.icons/power.png
+%%DATADIR%%/wbar.icons/psi.png
+%%DATADIR%%/wbar.icons/term.png
+%%DATADIR%%/wbar.icons/xcalc.png
+%%DATADIR%%/wbar.icons/xmms.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DATADIR%%/wbar.icons
+@dirrm %%DATADIR%%/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

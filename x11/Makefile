@@ -222,6 +222,7 @@
     SUBDIR += trayer
     SUBDIR += tycoon
     SUBDIR += vdesk
+    SUBDIR += wbar
     SUBDIR += wdm
     SUBDIR += widgetfactory
     SUBDIR += wmappl
