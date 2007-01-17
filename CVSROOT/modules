@@ -15177,6 +15177,7 @@ wavpack		ports/audio/wavpack
 wavplay		ports/audio/wavplay
 wb		ports/mbone/wb
 wb0		ports/www/wb0
+wbar		ports/x11/wbar
 wbd		ports/mbone/wbd
 wbl		ports/mail/wbl
 wbxml2		ports/textproc/wbxml2
