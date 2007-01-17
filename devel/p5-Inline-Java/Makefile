@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Inline-Java
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/P/PA/PATL
@@ -29,9 +29,6 @@ CONFIGURE_ARGS=	J2SDK=${JAVA_HOME} </dev/null
 
 MAN3=		Inline::Java.3 \
 		Inline::Java::Callback.3
-
-post-configure:
-	${MAKE} -C ${WRKSRC} java
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
