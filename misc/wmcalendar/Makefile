@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	wmcalendar
-PORTVERSION=	0.5.0
-PORTREVISION=	6
+PORTVERSION=	0.5.2
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A dockable calendar with interface to iCalendar based calendars
 
 LIB_DEPENDS=	ical.0:${PORTSDIR}/devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" \
@@ -32,6 +30,10 @@ MAKE_ARGS=	CC="${CC}" \
 MAN1=		wmCalendar.1
 PLIST_FILES=	bin/wmCalendar
 
+post-patch:
+	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+			-e 's#/usr/X11R6#${X11BASE}#g' \
+			${WRKSRC}/Makefile
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmCalendar ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmCalendar.1 ${MANPREFIX}/man/man1
