@@ -7,6 +7,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.5
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
@@ -25,9 +26,14 @@ USE_XLIB=	yes
 PLIST_SUB+=	X11=''
 .endif
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+
 WRKSRC=		${WRKDIR}/pvm3
 MAKE_ENV+=	PVM_ROOT=${WRKSRC} ARCHCFLAGS="${CFLAGS}"
-MAKE_FLAGS+=	F77=/usr/bin/f77
 ALL_TARGET=	all install
 PVM_ROOT=	${PREFIX}/lib/pvm
 REINPLACE_ARGS=	-i ""
