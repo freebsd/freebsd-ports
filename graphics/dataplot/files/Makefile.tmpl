@@ -17,9 +17,9 @@ INSTALL	      = install
 
 LD	      = $(CC)
 
-LDFLAGS	      = -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib
+LDFLAGS	      = -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib %%GCCLIBDIR%%
 
-LIBS	      = -lgd -lpng -ljpeg -lX11 -lz -lg2c -lm
+LIBS	      = -lgd -lpng -ljpeg -lX11 -lz %%FORTRANLIBS%%  -lm
 
 MAKEFILE      = Makefile
 
