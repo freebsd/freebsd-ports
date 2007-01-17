@@ -17,12 +17,13 @@ COMMENT=	MythTV is a homebrew PVR project
 ONLY_FOR_ARCHS= i386
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
-		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
+		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=	yes
@@ -70,9 +71,10 @@ do-configure:
 			-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ mythtv.pro
 
 post-install:
-		${MKDIR} ${PREFIX}/share/mythtv/database
+		${MKDIR} -p ${PREFIX}/share/mythtv/database
 		${CP} ${WRKSRC}/database/mc.sql ${PREFIX}/share/mythtv/database
 		${CP} ${WRKSRC}/programs/mythtv-setup/mythtv-setup ${PREFIX}/bin/mythtv-setup
-		@${CAT} ${PKGMESSAGE}
+		${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		${MKDIR} ${PREFIX}/share/mythtv/database
 
 .include <bsd.port.post.mk>
