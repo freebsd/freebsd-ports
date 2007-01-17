@@ -47,3 +47,32 @@
  
  # With FreeType library directory
  
+--- configure.in~	Wed Jan 17 14:41:52 2007
++++ configure.in	Wed Jan 17 14:52:32 2007
+@@ -335,7 +335,7 @@
+ AC_CHECK_PROGS(F77, g77 f77)
+ AC_PATH_PROG(PERL, perl, no)  
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS(curses.h limits.h termio.h termios.h unistd.h values.h g2c.h f2c.h)
++AC_CHECK_HEADERS(curses.h limits.h termio.h termios.h unistd.h values.h)
+ AC_CHECK_HEADERS(sys/ioctl.h sys/mtio.h sys/resource.h sys/time.h)
+ AC_CHECK_HEADERS(sys/timeb.h sys/types.h sys/utsname.h)
+ AC_CHECK_HEADERS(libintl.h iconv.h)
+@@ -934,7 +934,7 @@
+ 
+ LOC_CHECK_LIB_PATH(blas,BLAS,BLASLIB)
+ 
+-LOC_CHECK_LIBS(blas,dnrm2_,BLAS,$BLASLIB,BLASLIB,$MATHLIB,,,-lg2c)
++LOC_CHECK_LIBS(blas,dnrm2_,BLAS,$BLASLIB,BLASLIB,$MATHLIB,,,%%GCCLIBDIR%% %%FORTRANLIBS%%)
+ 
+ AC_DEFINE(HAVE_LIBBLAS)
+ 
+@@ -960,7 +960,7 @@
+ 
+ LOC_CHECK_LIB_PATH(lapack,LAPACK,LAPACKLIB)
+ 
+-LOC_CHECK_LIBS(lapack,dgesv_,LAPACK,$LAPACKLIB,LAPACKLIB,$BLASLIB $MATHLIB,,,-lg2c)
++LOC_CHECK_LIBS(lapack,dgesv_,LAPACK,$LAPACKLIB,LAPACKLIB,$BLASLIB $MATHLIB,,,%%GCCLIBDIR%% %%FORTRANLIBS%%)
+ 
+ AC_DEFINE(HAVE_LIBLAPACK)
+ 
