@@ -165,7 +165,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  also sets up:
 # ZOPEBASEDIR		- relative base directory of zope server
 # SZOPEBASEDIR		- absolute base directory of zope that is
-#					  ${LOCALBASE}/${SZOPEBASEDIR} by default, 
+#					  ${LOCALBASE}/${SZOPEBASEDIR} by default,
 # ZOPEPRODUCTDIR	- directory, where products for zope can be found
 #
 # ZOPE_VERSION		- Version of zope that will be used in the port. Set this
@@ -543,7 +543,7 @@ RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twi
 . endif
 .else
 USE_TWISTED_VER=	20
-# Checking for twisted components 
+# Checking for twisted components
 _TWISTED_COMPONENTS?=	web web2 lore news words pair mail names xish runner flow conch
 
 # XXX Should be here other dependencies types?
