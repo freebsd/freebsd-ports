@@ -7,6 +7,7 @@
 
 PORTNAME=	glchess
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,14 +18,18 @@ COMMENT=	A 3D OpenGL based chess game
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
 
+USE_GNOME=	gconf2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=	yes
 
+GCONF_SCHEMAS=	glchess.schemas
+
 post-patch:
 	@${GREP} -lR "/usr/share/games/glchess" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/share/games/glchess|${DATADIR}|g'
-	@${REINPLACE_CMD} -e 's|share/games|share|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|share/games/glchess|share/glchess|g ; \
+		 s|share/gconf/schemas|etc/gconf/schemas|g' ${WRKSRC}/setup.py
 
 post-build:
 	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \

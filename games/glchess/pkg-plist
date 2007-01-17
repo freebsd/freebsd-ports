@@ -105,7 +105,6 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyc
 %%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyo
 share/applications/glchess.desktop
-share/gconf/schemas/glchess.schemas
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -198,8 +197,6 @@ share/pixmaps/glchess.svg
 @dirrm %%DATADIR%%/gui
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/gconf/schemas
-@dirrmtry share/gconf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl
