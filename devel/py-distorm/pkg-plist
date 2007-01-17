@@ -1,0 +1,6 @@
+%%PYTHON_LIBDIR%%/lib-dynload/distorm.so
+%%PORTDOCS%%%%DOCSDIR%%/distorm.html
+%%PORTDOCS%%%%DOCSDIR%%/qa.txt
+%%PORTDOCS%%%%DOCSDIR%%/vol1.html
+%%PORTDOCS%%%%DOCSDIR%%/vol2.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

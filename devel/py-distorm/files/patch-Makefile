@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Jun  3 19:24:48 2006
++++ Makefile	Wed Jan 10 12:45:23 2007
+@@ -5,8 +5,7 @@
+ TARGET	= libdistorm64.so
+ COBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/distorm.o ../../src/decoder.o
+ PYOBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/pydistorm.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/decoder.o
+-CC	= gcc
+-CFLAGS	= -O2 -Wall -fPIC
++CFLAGS+= -fPIC -I${LOCALBASE}/include
+ 
+ all: clib py
+ 
+@@ -21,8 +20,7 @@
+ 	${CC} ${CFLAGS} ${VERSION} ${PYOBJS} -fPIC -shared -o ${TARGET}
+ 
+ install: libdistorm64.so
+-	install -s ${TARGET} /usr/local/lib
+-	@echo "... running ldconfig might be smart ..."
++	${INSTALL} -s libdistorm64.so XXPYTHON_LIBDIRXX/lib-dynload/distorm.so
+ 
+ .c.o:
+ 	${CC} ${CFLAGS} ${VERSION} -c $< -o $@
