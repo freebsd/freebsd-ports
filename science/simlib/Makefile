@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simlib
-PORTVERSION=	2.18.20041107
+PORTVERSION=	2.18.20061212
 CATEGORIES=	science
 MASTER_SITES=	http://www.fit.vutbr.cz/~peringer/SIMLIB/source/
 DISTNAME=	SIMLIB-${PORTVERSION:S/.200/-200/}
@@ -16,8 +16,8 @@ COMMENT=	SIMulation LIBrary for C++ programming language
 
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 MAKEFILE=	Makefile.FreeBSD
-INSTALL_TARGET=	_install
 
 # not 64bit ready
 ONLY_FOR_ARCHS=	i386

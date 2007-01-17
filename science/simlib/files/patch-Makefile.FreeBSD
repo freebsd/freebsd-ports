@@ -1,20 +1,21 @@
---- Makefile.FreeBSD.orig	Thu Apr  5 10:50:35 2001
-+++ Makefile.FreeBSD	Fri Nov 26 18:23:34 2004
-@@ -48,20 +48,21 @@
+--- Makefile.FreeBSD.orig	Thu Dec  9 13:39:45 2004
++++ Makefile.FreeBSD	Tue Jan 16 11:50:27 2007
+@@ -52,18 +52,19 @@
  LIBNAME=simlib
  
  # name of the compiler for C and C++ language
 -CC=gcc
--CXX=c++
+-CXX=g++
 +CC?=gcc
-+CXX?=c++
++CXX?=g++
+ #CXX=g++-3.4
  
  # C++ compiler flags -- for development
- #CXXFLAGS=-g -O2 -Wall		# with debug info
+-CXXFLAGS=-g -fPIC -O2		# with debug info
++CXXFLAGS?=-g -fPIC -O2		# with debug info
  #CXXFLAGS=-pg -O2 -Wall		# with profile support
  #CXXFLAGS=-O2 -Wall -Weffc++	# PRODUCTION CODE
--CXXFLAGS=-O2 -Wall         	# PRODUCTION CODE
-+CXXFLAGS?=-O2 -Wall         	# PRODUCTION CODE
+ #CXXFLAGS=-O2 -Wall              # PRODUCTION CODE
  
  # installing program
 -INSTALL=install -m0644
@@ -22,34 +23,17 @@
 +INSTALL_PROGRAM?=install -c -s -m 555
  
  # directory where the files will be installed in
--INSTALLROOT=/usr/local
-+PREFIX?=/usr/local
- 
- # program to remove files
- RM=rm -f
-@@ -315,9 +316,9 @@
- 
+ PREFIX=/usr/local
+@@ -237,9 +238,9 @@
  #TODO: add version and symlink
- _install: all
--	$(INSTALL) $(SIMLIB_HEADERS) $(INSTALLROOT)/include
--	$(INSTALL) $(LIBNAME).a $(INSTALLROOT)/lib/lib$(LIBNAME).a
--	$(INSTALL) $(LIBNAME).so $(INSTALLROOT)/lib/lib$(LIBNAME).so
+ install: all
+ 	echo "You should have permissions to install in " $(PREFIX)/
+-	$(INSTALL) $(SIMLIB_HEADERS) $(PREFIX)/include
+-	$(INSTALL) $(LIBNAME).a $(PREFIX)/lib/lib$(LIBNAME).a
+-	$(INSTALL) $(LIBNAME).so $(PREFIX)/lib/lib$(LIBNAME).so
 +	$(INSTALL_DATA) $(SIMLIB_HEADERS) $(PREFIX)/include
 +	$(INSTALL_PROGRAM) $(LIBNAME).a $(PREFIX)/lib/lib$(LIBNAME).a
 +	$(INSTALL_PROGRAM) $(LIBNAME).so $(PREFIX)/lib/lib$(LIBNAME).so
  
  #############################################################################
  ###############################
-@@ -325,9 +326,9 @@
- ###############################
- 
- uninstall:
--	$(RM) $(foreach headerfile, $(SIMLIB_HEADERS), $(INSTALLROOT)/include/$(headerfile))
--	$(RM) $(INSTALLROOT)/lib/lib$(LIBNAME).a
--	$(RM) $(INSTALLROOT)/lib/lib$(LIBNAME).so
-+	$(RM) $(foreach headerfile, $(SIMLIB_HEADERS), $(PREFIX)/include/$(headerfile))
-+	$(RM) $(PREFIX)/lib/lib$(LIBNAME).a
-+	$(RM) $(PREFIX)/lib/lib$(LIBNAME).so
- 
- #############################################################################
- ###################################
