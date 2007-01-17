@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	innotop
-PORTVERSION=	0.1.160
+PORTVERSION=	1.0.1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.xaprb.com/innotop/src/ \
-		http://skreuzer.f2o.org/mirror/innotop/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	skreuzer@f2o.org
 COMMENT=	A MySQL and InnoDB monitoring program
