@@ -1,53 +1,54 @@
-# New ports collection makefile for:    xmlada-gcc
-# Date created:        24 Dec 2006
-# Whom:                hopet@ics.muni.cz
+# New ports collection makefile for: xmlada-gps
+# Date created:		31 Dec 2006
+# Whom:			John Merryweather Cooper
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xmlada
-PORTVERSION=	5.0.4
+PORTNAME=	xmlada-gps
+PORTVERSION=	3.1.3
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnuada
-PKGNAMESUFFIX=	-gcc
-DISTNAME=	gnat-gcc-xmlada-4.1.1_gnat_5.04a-r6.src
-EXTRACT_SUFX=	.rpm
+MASTER_SITES=	http://libre.adacore.com/
+EXTRACT_SUFX=	-src.tgz
 
-MAINTAINER=	hopet@ics.muni.cz
-COMMENT=	An XML parsing library for Ada 95, port for lang/gnat-gcc41
+MAINTAINER=	john_m_cooper@yahoo.com
+COMMENT=	The Ada Unicode and XML Library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gcc41/gcc41:${PORTSDIR}/lang/gnat-gcc41
-
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo \
-		pdftex:${PORTSDIR}/print/teTeX
-.endif
-
-WRKSRC=		${WRKDIR}/xmlada-gnat-5_04a
+BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	xmlada-[0-9]*
 
-CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
-MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
-
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_GMAKE=	yes
 
-ADACFLAGS?=	# none
-CFLAGS=		${ADACFLAGS}
+# Check for GNAT sources.
+.if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=	${PRINTF}
+IGNORE=Because of licensing and registration restrictions, you must fetch\n \
+	the source distribution manually.  Please access\n \
+	http://libre.adacore.com/\ with a web browser, register\n \
+	(It's free!) and log in.  Download the source files:\n\n \
+	\t${DISTFILE}\n\n \
+	and place them in ${DISTDIR}\n
+	${ECHO_MSG} ${IGNORE}
+.endif
 
-XMLADAPKGNAME=	xmlada-gnat-5_04a.tar.bz2
+WRKSRC=		${WRKDIR}/xmlada-2.1
+DOCSDIR=	${PREFIX}/share/doc/xmlada
+MAKE_ENV=	"INSTALL_DATA=${INSTALL_DATA}" \
+		"INSTALL_SCRIPT=${INSTALL_SCRIPT}"
 
-do-extract:
-	if [ ! -d ${WRKDIR} ]; then \
-		${MKDIR} ${WRKDIR}; \
-	fi
-	( cd ${WRKDIR} && \
-	rpm2cpio.pl <${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${CPIO} -i ${XMLADAPKGNAME} && \
-	tar jxf ${XMLADAPKGNAME} )
+# Weird permission problems creep up on install unless done explicitly
+# this way.
+do-install:
+	@(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+# Manual install of info file since it lacks an entry field
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install_docs)
+	@install-info --entry "XmlAda" ${DOCSDIR}/xml.info \
+		${DOCSDIR}/dir
+.endif
 
 .include <bsd.port.mk>
