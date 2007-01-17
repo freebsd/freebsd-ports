@@ -7,7 +7,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20061219
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 				http://www.alaskaparadise.com/freebsd/:source \
@@ -25,6 +25,13 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FFLAGS+=	-fno-range-check
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 MAXOBV?=	20000	# Make bigger if you need more observations/variable
@@ -35,12 +42,18 @@ MAXOBV?=	20000	# Make bigger if you need more observations/variable
 BROKEN=		Does not link on alpha (.got subsegment exceeds 64k)
 .endif
 
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
 post-extract:
 	@${INSTALL_DATA} ${FILESDIR}/Makefile.tmpl ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g ; \
 	s;%%X11BASE%%;${X11BASE};g' \
 	${WRKSRC}/Makefile
+	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/Makefile
 	@${MV} ${WRKSRC}/gl_src.c ${WRKSRC}/gl_src.c.bogus
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's/MAXOBV=100000/MAXOBV=${MAXOBV}/' \
 	${WRKSRC}/DPCOPA.INC
