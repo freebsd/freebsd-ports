@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlada-gps
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://libre.adacore.com/
 EXTRACT_SUFX=	-src.tgz
@@ -20,17 +21,20 @@ CONFLICTS=	xmlada-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+XMLADA_SRC=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+
+.include <bsd.port.pre.mk>
 
 # Check for GNAT sources.
-.if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=	${PRINTF}
-IGNORE=Because of licensing and registration restrictions, you must fetch\n \
-	the source distribution manually.  Please access\n \
-	http://libre.adacore.com/\ with a web browser, register\n \
-	(It's free!) and log in.  Download the source files:\n\n \
-	\t${DISTFILE}\n\n \
-	and place them in ${DISTDIR}\n
-	${ECHO_MSG} ${IGNORE}
+.if !exists(${DISTDIR}/${XMLADA_SRC}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE=:\n\
+Because of licensing and registration restrictions, you must fetch the\n\
+source distribution manually.  Please access http://libre.adacore.com/\n\
+with a web browser, register (it's free), and log in.  Download the source\n\
+files:\n\
+\t${XMLADA_SRC}\n\
+and place them in ${DISTDIR}.\n
 .endif
 
 WRKSRC=		${WRKDIR}/xmlada-2.1
@@ -51,4 +55,4 @@ do-install:
 		${DOCSDIR}/dir
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
