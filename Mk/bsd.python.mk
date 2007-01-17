@@ -327,6 +327,7 @@ PYTHON_PORTVERSION?=2.5
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python25
 PYTHON_REL=			250
 PYTHON_SUFFIX=		25
+PYTHON_VER=			2.5
 
 # Python-2.4
 .elif ${PYTHON_VERSION} == "python2.4"
@@ -334,6 +335,7 @@ PYTHON_PORTVERSION?=2.4.3
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python24
 PYTHON_REL=			243
 PYTHON_SUFFIX=		24
+PYTHON_VER=			2.4
 
 # Python-2.3
 .elif ${PYTHON_VERSION} == "python2.3"
@@ -341,6 +343,7 @@ PYTHON_PORTVERSION?=2.3.5
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python23
 PYTHON_REL=			235
 PYTHON_SUFFIX=		23
+PYTHON_VER=			2.3
 
 # Python-2.2
 .elif ${PYTHON_VERSION} == "python2.2"
@@ -348,6 +351,7 @@ PYTHON_PORTVERSION?=2.2.3
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python22
 PYTHON_REL=			223
 PYTHON_SUFFIX=		22
+PYTHON_VER=			2.2
 
 # Python-2.1
 .elif ${PYTHON_VERSION} == "python2.1"
@@ -355,6 +359,7 @@ PYTHON_PORTVERSION?=2.1.3
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python21
 PYTHON_REL=			213
 PYTHON_SUFFIX=		21
+PYTHON_VER=			2.1
 
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
@@ -364,6 +369,7 @@ PYTHON_REL!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
 						print h[0]+h[2]+h[4]'
 PYTHON_SUFFIX!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
 						print h[0]+h[2]'
+PYTHON_VER!=		${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
 
 .else
 check-makevars::
