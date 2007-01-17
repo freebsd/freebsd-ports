@@ -5,7 +5,6 @@
    ${PREFIX}/share/emacs/${EMACS_VER}/etc/
    into your home directory, and rename dot.emacs to .emacs,
    in order to make it work.
-2) Remember to set environment varible XMODIFIERS !
-   csh/tcsh: setenv XMODIFIERS @im=xcin
-   sh/bash:  export XMODIFIERS='@im=xcin'
+2) Remember to install one input methods and set
+   environment varible XMODIFIERS !
 
