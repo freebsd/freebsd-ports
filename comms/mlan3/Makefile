@@ -14,11 +14,7 @@ DISTNAME=	owpd300b
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 3.00 beta API for Dallas Semiconductors 1-wire lan devices
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
