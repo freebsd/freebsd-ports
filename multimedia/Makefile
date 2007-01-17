@@ -156,6 +156,7 @@
     SUBDIR += mplayer-skins
     SUBDIR += mplayerxp
     SUBDIR += mplex
+    SUBDIR += mythtv
     SUBDIR += netshow
     SUBDIR += noatun-plugins
     SUBDIR += nuppelvideo
