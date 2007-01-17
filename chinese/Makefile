@@ -37,7 +37,7 @@
     SUBDIR += dictd-database
     SUBDIR += docproj
     SUBDIR += gbk2uni
-    SUBDIR += emacs20
+    #SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += fcitx
@@ -133,8 +133,8 @@
     SUBDIR += vim-scdoc
     SUBDIR += wangttf
     SUBDIR += wenju
-    SUBDIR += xemacs
-    SUBDIR += xemacs21
+    #SUBDIR += xemacs
+    #SUBDIR += xemacs21
     SUBDIR += xmms
     SUBDIR += xpdf
     SUBDIR += xsim
