@@ -8,7 +8,7 @@
 
 PORTNAME=	mpb
 PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 
@@ -17,15 +17,32 @@ COMMENT=	MIT Photonic-Bands
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libctl.a:${PORTSDIR}/science/libctl \
 		bash:${PORTSDIR}/shells/bash2
-LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas \
-		fftw.2:${PORTSDIR}/math/fftw \
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		hdf5.0:${PORTSDIR}/science/hdf5 \
 		guile.15:${PORTSDIR}/lang/guile
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
+.include <bsd.port.pre.mk>
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=	--with-lapack=-lalapack
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+CONFIGURE_ARGS+=	--with-lapack=-llapack
+.endif
 
 MAN1=	mpb.1 mpb-data.1 mpb-split.1
 
@@ -33,4 +50,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lhdf5 |-lhdf5 ${PTHREAD_LIBS} |g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
