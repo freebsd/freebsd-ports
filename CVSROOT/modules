@@ -172,7 +172,6 @@ aap		ports/devel/aap
 abacus		ports/deskutils/abacus
 abakus		ports/math/abakus
 abc2mtex	ports/print/abc2mtex
-abcache		ports/www/abcache
 abcde		ports/audio/abcde
 abck		ports/sysutils/abck
 abcl		ports/lang/abcl
@@ -13373,7 +13372,6 @@ rubygem-builder	ports/devel/rubygem-builder
 rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-daemons	ports/devel/rubygem-daemons
-rubygem-event-loop	ports/devel/rubygem-event-loop
 rubygem-fastercsv	ports/devel/rubygem-fastercsv
 rubygem-ferret	ports/textproc/rubygem-ferret
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
@@ -15314,7 +15312,6 @@ wmget		ports/ftp/wmget
 wmglobe		ports/astro/wmglobe
 wmgrabimage	ports/graphics/wmgrabimage
 wmhm		ports/sysutils/wmhm
-wmi		ports/x11-wm/wmi
 wmicons		ports/graphics/wmicons
 wmii		ports/x11-wm/wmii
 wminet		ports/sysutils/wminet

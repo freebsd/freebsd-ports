@@ -115,7 +115,6 @@
     SUBDIR += wmconfig
     SUBDIR += wmcp
     SUBDIR += wmg
-    SUBDIR += wmi
     SUBDIR += wmii
     SUBDIR += wmthemeinstall
     SUBDIR += xcompmgr
