@@ -1,0 +1,11 @@
+--- sources/makefile.in~	Wed Jan 17 06:49:09 2007
++++ sources/makefile.in	Wed Jan 17 09:18:46 2007
+@@ -15,7 +15,7 @@
+ CFLAGS = @CFLAGS@ -I$(INCDIR)
+ CXXFLAGS = @CXXFLAGS@ -I$(INCDIR)
+ FFLAGS = @FFLAGS@
+-FCLIBS = -lg2c @FCLIB@
++FCLIBS = %%GCCLIBDIR%% %%FORTRANLIBS%%
+ CLDFLAGS = @CLDFLAGS@
+ FLDFLAGS = @FLDFLAGS@
+ LIBS = $(FCLIBS) @X_LIBS@ @FCLIB@ @LIBS@
