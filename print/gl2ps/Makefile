@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gl2ps
-PORTVERSION=	1.2.7
+PORTVERSION=	1.3.2
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A C library providing vector output for OpenGL application
 
 USE_GL=		yes
