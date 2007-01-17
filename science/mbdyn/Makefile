@@ -7,24 +7,31 @@
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://mbdyn.aero.polimi.it/~masarati/Download/mbdyn/
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	A MultiBody Dynamics analysis system
 
-LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack \
-		atlas.1:${PORTSDIR}/math/atlas
-BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack
+LIB_DEPENDS=	umfpack:${PORTSDIR}/math/suitesparse
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--program-prefix='' --with-umfpack=yes
-CPPFLAGS+=	-I${LOCALBASE}/include/UMFPACK ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include/suitesparse ${PTHREAD_CFLAGS}
 LDFLAGS+=	-lm -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS}" \
+		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 MAN1=		mbdyn.1
 
@@ -34,6 +41,22 @@ OPTIONS=	MPI "Enable mpich-support" off \
 		TCL "Enable tcl-support (not implemented yet)" off
 
 .include <bsd.port.pre.mk>
+
+WITH_BLAS=	yes
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+CONFIGURE_ARGS+=	--with-blas=atlas
+.else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+CONFIGURE_ARGS+=	--with-blas=blas
+.endif
+
+post-patch:
+	@${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/configure.in
 
 .if defined(WITH_MPI)
 BUILD_DEPENDS+=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
