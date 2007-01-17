@@ -7,7 +7,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
@@ -18,7 +18,7 @@ COMMENT=	A C/FORTRAN library for drawing graphs on a variety of display devices
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_XLIB=	yes
 USE_PERL5_BUILD=yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -29,13 +29,11 @@ VERSION=	5
 VERSION=	5.2
 .endif
 
-.if ${OSVERSION} < 400004
-FC=	./xf77
-.else
-FC=	f77
-.endif
-
-MAKE_ENV+=	FC=${FC}
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 MAKE_ARGS+=	X11BASE="${X11BASE}"
 
 post-install:
