@@ -482,6 +482,7 @@ arm-rtems-gcc	ports/devel/arm-rtems-gcc
 arm-rtems-gdb	ports/devel/arm-rtems-gdb
 arm-rtems-objc	ports/devel/arm-rtems-objc
 armagetron	ports/games/armagetron
+aros-sdk	ports/devel/aros-sdk
 arp-sk		ports/net/arp-sk
 arpack		ports/math/arpack
 arpack++	ports/math/arpack++
