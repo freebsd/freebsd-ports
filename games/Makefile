@@ -323,7 +323,6 @@
     SUBDIR += hlserver-glbwar
     SUBDIR += hlserver-heroes
     SUBDIR += hlserver-ns
-    SUBDIR += hlserver-opera
     SUBDIR += hlserver-opfor
     SUBDIR += hlserver-psychostats
     SUBDIR += hlserver-si
@@ -458,7 +457,6 @@
     SUBDIR += mtaserver
     SUBDIR += mudmagic
     SUBDIR += mvdsv
-    SUBDIR += mythserver
     SUBDIR += nInvaders
     SUBDIR += nadar
     SUBDIR += nazghul
@@ -496,7 +494,6 @@
     SUBDIR += nonsense
     SUBDIR += nuclearchess
     SUBDIR += nwndata
-    SUBDIR += nwnusers
     SUBDIR += oilwar
     SUBDIR += omega
     SUBDIR += oneko
@@ -756,8 +753,6 @@
     SUBDIR += untahris
     SUBDIR += uox3
     SUBDIR += uqm
-    SUBDIR += urban
-    SUBDIR += urban-sounds
     SUBDIR += utserver
     SUBDIR += vamos
     SUBDIR += vavoom
@@ -791,7 +786,6 @@
     SUBDIR += wormux
     SUBDIR += wormux-devel
     SUBDIR += wtf
-    SUBDIR += x3eyes
     SUBDIR += xabacus
     SUBDIR += xarchon
     SUBDIR += xasteroids
@@ -821,8 +815,6 @@
     SUBDIR += xdesktopwaves
     SUBDIR += xdigger
     SUBDIR += xdino
-    SUBDIR += xeji
-    SUBDIR += xemeraldia
     SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfce4-toys
@@ -848,7 +840,6 @@
     SUBDIR += xkoules
     SUBDIR += xlaby
     SUBDIR += xlife
-    SUBDIR += xlifegame
     SUBDIR += xlines
     SUBDIR += xmahjongg
     SUBDIR += xmastermind
@@ -877,7 +868,6 @@
     SUBDIR += xpilot
     SUBDIR += xpilot-ng-client
     SUBDIR += xpilot-ng-server
-    SUBDIR += xpilotmon
     SUBDIR += xpipeman
     SUBDIR += xpired
     SUBDIR += xpuyopuyo
@@ -903,7 +893,6 @@
     SUBDIR += xshogi
     SUBDIR += xskat
     SUBDIR += xskewb
-    SUBDIR += xsok
     SUBDIR += xsokoban
     SUBDIR += xsoldier
     SUBDIR += xspacewarp

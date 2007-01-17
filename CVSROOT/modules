@@ -4303,7 +4303,6 @@ hlserver-flf	ports/games/hlserver-flf
 hlserver-glbwar	ports/games/hlserver-glbwar
 hlserver-heroes	ports/games/hlserver-heroes
 hlserver-ns	ports/games/hlserver-ns
-hlserver-opera	ports/games/hlserver-opera
 hlserver-opfor	ports/games/hlserver-opfor
 hlserver-psychostats	ports/games/hlserver-psychostats
 hlserver-si	ports/games/hlserver-si
@@ -7578,7 +7577,6 @@ mysqlphp2postgres	ports/www/mysqlphp2postgres
 mysqlreport	ports/databases/mysqlreport
 mysqlsla	ports/databases/mysqlsla
 mysqltcl	ports/databases/mysqltcl
-mythserver	ports/games/mythserver
 mythtv		ports/multimedia/mythtv
 mytop		ports/databases/mytop
 mywiki		ports/deskutils/mywiki
@@ -7913,7 +7911,6 @@ nvnet		ports/net/nvnet
 nvtv		ports/sysutils/nvtv
 nvu		ports/www/nvu
 nwndata		ports/games/nwndata
-nwnusers	ports/games/nwnusers
 nwreckdum	ports/archivers/nwreckdum
 nx		ports/devel/nx
 nxml-emacs21	ports/editors/nxml-emacs21
@@ -14902,8 +14899,6 @@ uptimec		ports/sysutils/uptimec
 uptimed		ports/sysutils/uptimed
 upx		ports/archivers/upx
 uqm		ports/games/uqm
-urban		ports/games/urban
-urban-sounds	ports/games/urban-sounds
 urchin5		ports/www/urchin5
 urelay		ports/net/urelay
 urlendec	ports/net/urlendec
@@ -15465,7 +15460,6 @@ x264		ports/multimedia/x264
 x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
 x3270		ports/x11/x3270
-x3eyes		ports/games/x3eyes
 x48		ports/emulators/x48
 x4x		ports/audio/x4x
 x86info		ports/sysutils/x86info
@@ -15594,7 +15588,6 @@ xdx		ports/comms/xdx
 xearth		ports/astro/xearth
 xeartk		ports/astro/xeartk
 xed		ports/editors/xed
-xeji		ports/games/xeji
 xemacs		ports/editors/xemacs
 xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
@@ -15602,7 +15595,6 @@ xemacs-devel-mule-xft	ports/editors/xemacs-devel-mule-xft
 xemacs-mule-packages	ports/editors/xemacs-mule-packages
 xemacs-packages		ports/editors/xemacs-packages
 xemacs21-mule	ports/editors/xemacs21-mule
-xemeraldia	ports/games/xemeraldia
 xengine		ports/benchmarks/xengine
 xenmenu		ports/misc/xenmenu
 xenomorph	ports/graphics/xenomorph
@@ -15741,7 +15733,6 @@ xlhtml		ports/textproc/xlhtml
 xli		ports/graphics/xli
 xlibs		ports/x11/xlibs
 xlife		ports/games/xlife
-xlifegame	ports/games/xlifegame
 xlines		ports/games/xlines
 xlispstat	ports/math/xlispstat
 xloadface	ports/sysutils/xloadface
@@ -16045,7 +16036,6 @@ xpi-xpcom-component-viewer	ports/www/xpi-xpcom-component-viewer
 xpilot		ports/games/xpilot
 xpilot-ng-client	ports/games/xpilot-ng-client
 xpilot-ng-server	ports/games/xpilot-ng-server
-xpilotmon	ports/games/xpilotmon
 xpipeman	ports/games/xpipeman
 xpired		ports/games/xpired
 xpk		ports/archivers/xpk
@@ -16115,7 +16105,6 @@ xslide.el	ports/textproc/xslide.el
 xslint		ports/textproc/xslint
 xsmbrowser	ports/net/xsmbrowser
 xsnow		ports/x11/xsnow
-xsok		ports/games/xsok
 xsokoban	ports/games/xsokoban
 xsoldier	ports/games/xsoldier
 xspacewarp	ports/games/xspacewarp

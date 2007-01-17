@@ -1,7 +1,0 @@
-bin/xemeraldia
-lib/X11/app-defaults/XEmeraldia
-@exec mkdir -p %D/lib/X11/xemeraldia
-@exec touch -f %D/lib/X11/xemeraldia/xemeraldia.scores
-@exec chmod 666 %D/lib/X11/xemeraldia/xemeraldia.scores
-@unexec rm -f %D/lib/X11/xemeraldia/xemeraldia.scores
-@unexec rmdir %D/lib/X11/xemeraldia

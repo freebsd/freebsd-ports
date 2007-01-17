@@ -1,6 +1,0 @@
-bin/urban
-share/urban/intro.dat
-share/urban/levels.dat
-share/urban/urban.dat
-@dirrm share/urban
-@unexec if [ ! -s /var/games/urban.scores ]; then rm -f /var/games/urban.scores 2>/dev/null; fi
