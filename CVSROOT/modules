@@ -4080,6 +4080,7 @@ gtkabale	ports/games/gtkabale
 gtkada		ports/x11-toolkits/gtkada
 gtkada-devel	ports/x11-toolkits/gtkada-devel
 gtkada-gcc	ports/x11-toolkits/gtkada-gcc
+gtkada-gps	ports/x11-toolkits/gtkada-gps
 gtkam		ports/graphics/gtkam
 gtkatlantic	ports/games/gtkatlantic
 gtkballs	ports/games/gtkballs

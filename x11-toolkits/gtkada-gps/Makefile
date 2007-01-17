@@ -1,51 +1,58 @@
-# New ports collection makefile for:   gtkada-gcc
-# Date Created:			24 Dec 2006
-# Whom:				Petr Holub <hopet@ics.muni.cz>
+# New ports collection makefile for: gtkada-gps
+# Date created:		31 Dec 2006
+# Whom:			John Merryweather Cooper
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gtkada
-PORTVERSION=	2.8.1
+PORTNAME=	gtkada-gps
+PORTVERSION=	3.1.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnuada
-PKGNAMESUFFIX=	-gcc
-DISTNAME=	gnat-gcc-gtkada-4.1.1_2.8.1-r6.src
-EXTRACT_SUFX=	.rpm
+MASTER_SITES=	http://libre.adacore.com/
+EXTRACT_SUFX=	-src.tgz
 
-MAINTAINER=	hopet@ics.muni.cz
-COMMENT=	Gtk2 binding for lang/gnat-gcc41 port of GNAT Ada compiler
+MAINTAINER=	john_m_cooper@yahoo.com
+COMMENT=	GNOME Gtk2 Ada Binding
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gcc41/gcc41:${PORTSDIR}/lang/gnat-gcc41
+BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+CONFLICTS=	gtkada-[0-9]* gtkada-devel-[0-9]* gtkada-gcc-[0-9]*
 
-WRKSRC=		${WRKDIR}/GtkAda-2_8_1
-
-CONFLICTS=	gtkada-[0-9]* \
-		gtkada-devel-[0-9]*
-
-CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
-MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
-
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gtk20 libglade2
+USE_GNOME=	gtk20 libglade2
 USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-#EXAMPLESDIR=	${DATADIR}/examples
+# Check for GNAT sources.
+.if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=	${PRINTF}
+IGNORE=Because of licensing and registration restrictions, you must fetch\n \
+	the source distribution manually.  Please access\n \
+	http://libre.adacore.com/\ with a web browser, register\n \
+	(It's free!) and log in.  Download the source files:\n\n \
+	\t${DISTFILE}\n\n \
+	and place them in ${DISTDIR}\n
+	${ECHO_MSG} ${IGNORE}
+.endif
 
-do-extract:
-	if [ ! -d ${WRKDIR} ]; then \
-		${MKDIR} ${WRKDIR}; \
-	fi
-	( cd ${WRKDIR} && \
-	rpm2cpio.pl <${DISTDIR}/gnat-gcc-gtkada-4.1.1_2.8.1-r6.src.rpm | ${CPIO} -i GtkAda-2_8_1.tar.bz2 && \
-	tar jxf GtkAda-2_8_1.tar.bz2 )
+WRKSRC=		${WRKDIR}/GtkAda-2.4.2
+DOCSDIR=	${PREFIX}/share/doc/gtkada
+EXAMPLESDIR=	${PREFIX}/share/examples/gtkada
+MAKE_ENV=	"MAKE=${GMAKE}"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/projects/Makefile
+# This explicit call avoids some permission problems that seem insolveable
+# any other way
+do-install:
+	@(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} \
+		${MAKE_ARGS} install)
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} \
+		${MAKE_ARGS} install-doc)
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
