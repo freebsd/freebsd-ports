@@ -17,8 +17,7 @@ COMMENT=	XEmacs text editor version 20, with XIM support and Big5 settings
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	xcin2.5:${PORTSDIR}/chinese/xcin \
-		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
 USE_GMAKE=	yes
 USE_XPM=	yes
