@@ -6,14 +6,13 @@
 #
 
 PORTNAME=		adacurses
-PORTVERSION=		5.3
-PORTREVISION=		1
+PORTVERSION=		5.6
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	ncurses
 DISTNAME=		ncurses-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		araujo@bsdmail.org
 COMMENT=		Curses library for Ada
 
 BUILD_DEPENDS=		gnat:${PORTSDIR}/lang/gnat
@@ -30,9 +29,7 @@ CONFIGURE_ENV=	ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib" \
 do-install:
 	@${MKDIR} ${PREFIX}/lib/adacurses
 	@${INSTALL_DATA} ${WRKSRC}/Ada95/src/*.ads ${PREFIX}/lib/adacurses
-	@${INSTALL_DATA} ${WRKSRC}/Ada95/src/*.ali ${PREFIX}/lib/adacurses
 	@${INSTALL_DATA} ${WRKSRC}/Ada95/src/*.adb ${PREFIX}/lib/adacurses
-	@${INSTALL_DATA} ${WRKSRC}/Ada95/src/*.a ${PREFIX}/lib/adacurses
 	@${INSTALL_SCRIPT} ${FILESDIR}/adacurses-config ${PREFIX}/bin
 
 .include <bsd.port.mk>
