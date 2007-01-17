@@ -8,8 +8,9 @@
 PORTNAME=	slim
 PORTVERSION=	1.2.6
 CATEGORIES=	x11
-MASTER_SITES=	http://download.berlios.de/slim/ \
+MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://depot.fsck.ch/mirror/distfiles/
+MASTER_SITE_SUBDIR=slim
 
 MAINTAINER=	ports@fsck.ch
 COMMENT=	Graphical login manager for X11, derived from Login.app
@@ -26,6 +27,12 @@ USE_RC_SUBR=	slim.sh
 MAN1=		slim.1
 
 MAKEFILE=	Makefile.freebsd
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+	BROKEN=	does not compile on FreeBSD 4.x
+.endif
 
 pre-build:
 	@${REINPLACE_CMD} \
@@ -48,4 +55,4 @@ post-install:
 		${CP} -p ${LOCALBASE}/etc/slim.conf.sample ${LOCALBASE}/etc/slim.conf ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
