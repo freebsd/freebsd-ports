@@ -30,6 +30,8 @@ PORTDOCS=	Readme.txt
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so flashplayer.xpt
 
+CONFLICTS=	linux-flashplugin-7*
+
 post-install:
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}
