@@ -6562,6 +6562,7 @@ linux-expat	ports/textproc/linux-expat
 linux-firefox	ports/www/linux-firefox
 linux-firefox-devel	ports/www/linux-firefox-devel
 linux-flashplugin7	ports/www/linux-flashplugin7
+linux-flashplugin9	ports/www/linux-flashplugin9
 linux-flock	ports/www/linux-flock
 linux-foldingathome	ports/biology/linux-foldingathome
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
