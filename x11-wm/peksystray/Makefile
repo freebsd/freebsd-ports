@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	peksystray
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system tray dockapp similar to the GNOME notification area applet
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/peksystray
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@x_includes@||g ; \
+		 s|@x_libraries@||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
