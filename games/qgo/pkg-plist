@@ -29,6 +29,7 @@ share/qGo/translations/qgo_fr.qm
 share/qGo/translations/qgo_it.qm
 share/qGo/translations/qgo_nl.qm
 share/qGo/translations/qgo_pt.qm
+share/qGo/translations/qgo_ru.qm
 share/qGo/translations/qgo_zh.qm
 @dirrm share/qGo/translations
 @dirrm share/qGo/sounds
