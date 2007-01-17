@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.7
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
@@ -87,7 +87,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE6
+DISTNAME=	squid-2.6.STABLE7
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -280,7 +280,7 @@ CONFIGURE_ARGS+=	--disable-carp
 CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
