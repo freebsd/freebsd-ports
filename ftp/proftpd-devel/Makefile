@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -154,7 +154,7 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 MODULES:=${MODULES}:mod_sql:mod_sql_mysql
-INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include:${LOCALBASE}/include/mysql
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib/mysql
 PLIST_SUB+=	MYSQL=""
 .else
