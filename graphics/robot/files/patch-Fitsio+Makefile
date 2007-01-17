@@ -1,0 +1,20 @@
+--- Fitsio/Makefile	Thu Jan 18 06:24:27 2007
++++ Fitsio/Makefile	Thu Jan 18 06:24:17 2007
+@@ -24,7 +24,7 @@
+ #       default:                           FC=f77
+ #       Cray supercomputers:               FC=cf77
+ #
+-FC=f77
++#FC=f77
+ #FC=f77
+ #
+ # 3. DEFINE COMPILER FLAGS:
+@@ -35,7 +35,7 @@
+ #       IBM AIX xlf Fortran:               FFLAGS= -O -u -qcharlen=2880
+ #       HP-UX series:                      FFLAGS= -O -u +E5 +U77 
+ #
+-FFLAGS=-O -u
++#FFLAGS=-O -u
+ #
+ # 4. DEFINE RANLIB (some machines don't use RANLIB so set it equal to 'touch')
+ #------------------
