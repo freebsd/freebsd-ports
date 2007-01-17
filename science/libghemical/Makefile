@@ -6,7 +6,7 @@
 
 PORTNAME=	libghemical
 PORTVERSION=	2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/ \
 		http://bioinformatics.org/ghemical/download/
@@ -17,7 +17,9 @@ COMMENT=	Support libraries of science/ghemical port
 
 BUILD_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel \
 		mopac7:${PORTSDIR}/biology/mopac
-LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc
+LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
+		f2c:${PORTSDIR}/lang/f2c
+
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
@@ -29,6 +31,7 @@ WANT_FORTRAN=yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -48,8 +51,5 @@ CONFIGURE_ARGS+=	--enable-mopac7 --enable-mpqc --enable-openbabel --with-blas="-
 
 USE_AUTOTOOLS=	autoconf:259
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
-
-pre-configure:
-	@cd ${WRKDIR}/${DISTNAME} ; ${AUTOCONF}
 
 .include <bsd.port.post.mk>
