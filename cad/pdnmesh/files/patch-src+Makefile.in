@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Jan 17 16:58:18 2007
++++ src/Makefile.in	Wed Jan 17 16:58:16 2007
+@@ -72,7 +72,7 @@
+ LEXLIB = @LEXLIB@
+ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LAPACK_LIBS@ @BLAS_LIBS@ @FLIBS@ 
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ MAKEINFO = @MAKEINFO@

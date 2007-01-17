@@ -7,7 +7,7 @@
 
 PORTNAME=	pdnmesh
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
 		${MASTER_SITE_SUNSITE:S/$/:sun/}
@@ -17,18 +17,35 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,sun
 MAINTAINER=	sarod@users.sf.net
 COMMENT=	A finite element program
 
-LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext:install\
-		lapack:${PORTSDIR}/math/lapack:install\
-		atlas:${PORTSDIR}/math/atlas:install
+LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack -lcblas
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
+.endif
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" BLAS_LIBS="${BLAS}" LAPACK_LIBS="${LAPACK}"
 USE_XLIB=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
-USE_AUTOTOOLS=	autoconf:259
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=	pdnmesh.1
 MAN5=	pdnmesh_input.5
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
