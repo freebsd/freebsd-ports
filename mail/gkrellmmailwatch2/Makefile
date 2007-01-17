@@ -27,6 +27,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 
-MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
+MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins CC="${CC}"
 
 .include <bsd.port.mk>
