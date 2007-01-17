@@ -9,8 +9,10 @@ PORTNAME=	cdf3
 PORTVERSION=	3.1
 PORTREVISION=	6
 CATEGORIES=	science
-MASTER_SITES=	ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix-linux/	\
+MASTER_SITES=	${MASTER_SITE_LOCAL}	\
+		ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix-linux/	\
 		http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix-linux/
+MASTER_SITE_SUBDIR=	thierry/${PKGNAME}
 DISTNAME=	cdf${VER}-dist-cdf
 DIST_SUBDIR=	${PKGNAME}
 
