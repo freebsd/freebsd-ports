@@ -1,22 +1,22 @@
---- network.cc.orig	Thu Nov 27 00:48:49 2003
-+++ network.cc	Wed Feb 22 16:33:40 2006
-@@ -554,6 +554,7 @@
+--- network.cc.orig	Mon Jan 15 23:59:58 2007
++++ network.cc	Wed Jan 17 19:38:11 2007
+@@ -560,6 +560,7 @@
    strcpy(HostName,"local pipe");
    sprintf(HostAddress,"pipe[%d,%d]",pin,pout);
    Quiet=0;
 +  use_execve=0;
+   MaxWaitTime = 60000.0; // 1 minute
  }
  
- void PipeConnection::init() {
-@@ -564,6 +565,7 @@
+@@ -571,6 +572,7 @@
    strcpy(HostAddress,"unknown");
    memset(HelperBin,0,512);
    Quiet=0;
 +  use_execve=0;
    handshake.erase();
+   MaxWaitTime = 60000.0; // 1 minute
  }
- 
-@@ -594,6 +596,25 @@
+@@ -606,6 +608,25 @@
    Port=port;
    strncpy(HostName,host,128);
  
@@ -42,7 +42,7 @@
    // build helper path
    if (helpersuffix)
      sprintf(z,"%s.%s",helperbin,helpersuffix);
-@@ -702,7 +723,10 @@
+@@ -716,7 +737,10 @@
      dup2(1,2);
  
      setpgid(getpid(),0); // to broadcast SIGKILL later

@@ -61,7 +61,10 @@ share/eboard/classic.png
 share/eboard/eboard.cs.dict
 share/eboard/eboard.de.dict
 share/eboard/eboard.es.dict
+share/eboard/eboard.fr.dict
 share/eboard/eboard.it.dict
+share/eboard/eboard.ja.dict
+share/eboard/eboard.pl.dict
 share/eboard/eboard.pt_BR.dict
 share/eboard/eboard_themes.conf
 share/eboard/extras1.prevconf
@@ -73,4 +76,5 @@ share/eboard/themeconf.extras2
 share/eboard/timeseal.FreeBSD
 share/pixmaps/eboard.xpm
 @dirrm share/eboard
+@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
