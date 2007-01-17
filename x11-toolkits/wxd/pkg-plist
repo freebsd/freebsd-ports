@@ -465,7 +465,7 @@ lib/libwxd.a
 @dirrm include/d/wx/ogl
 @dirrm include/d/wx/aui
 @dirrm include/d/wx
-@dirrm include/d
+@dirrmtry include/d
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Xrc/rc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Xrc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Wizard
