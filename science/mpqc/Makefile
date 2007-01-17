@@ -31,7 +31,7 @@ WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
+BLAS=		-lf77blas -latlas -lcblas
 LAPACK=		-lalapack
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
