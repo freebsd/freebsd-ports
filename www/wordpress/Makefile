@@ -9,7 +9,8 @@ PORTNAME=	wordpress
 PORTVERSION=	2.0.7
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/ \
+MASTER_SITES=	http://wordpress.org/beta/ \
+		ftp://ftp.stu.edu.tw/pub/wordpress/ \
 		ftp://ftp.twaren.net/local-distfiles/wordpress/
 MASTER_SITE_SUBDIR=	cafelog
 
