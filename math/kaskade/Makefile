@@ -15,18 +15,19 @@ DISTNAME=	${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive linear scalar elliptic and parabolic problem solver
 
-USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 F77=		gfortran42
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DIST_SUBDIR=	kaskade
 WRKSRC=		${WRKDIR}/3.2.1
-FORTRANLIBS=	-lgfortranbegin -lgfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
