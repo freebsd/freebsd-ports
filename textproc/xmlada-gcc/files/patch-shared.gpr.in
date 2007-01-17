@@ -1,0 +1,9 @@
+--- shared.gpr.in.orig	Mon Dec 25 00:14:30 2006
++++ shared.gpr.in	Mon Dec 25 00:14:48 2006
+@@ -1,5 +1,5 @@
+ project Shared is
+-   Version := "@XMLADA_MAJOR_VERSION@.@XMLADA_MINOR_VERSION@";
++   Version := "@XMLADA_MAJOR_VERSION@";
+ 
+    type Library_Type_Type is ("relocatable", "static");
+    Library_Type : Library_Type_Type := external ("LIBRARY_TYPE", "relocatable");
