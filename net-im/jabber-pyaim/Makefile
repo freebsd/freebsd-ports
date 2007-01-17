@@ -7,6 +7,7 @@
 
 PORTNAME=	pyaim
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/${PORTNAME}-t/
 PKGNAMEPREFIX=	jabber-
@@ -52,6 +53,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twis
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-patch:
+	@${RM} -f ${WRKSRC}/src/main.py.orig
 	@${REINPLACE_CMD} -i "" -e '/spooldir/s|\.\.|/var/spool/jabber|' \
 		-e 's|\.\./PyAIMt.pid|/var/jabberd/pid/PyAIMt.pid|' \
 		${WRKSRC}/config_example.xml
