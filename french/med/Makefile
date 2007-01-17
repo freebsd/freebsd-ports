@@ -7,6 +7,7 @@
 
 PORTNAME=	med
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	french science
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 
@@ -20,28 +21,26 @@ RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+CONFIGURE_ENV+=		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+FFLAGS+=	-O2
+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
-		LDFLAGS="${PTHREAD_LIBS}" WISH=${LOCALBASE}/bin/wish${TK_VER}
+CONFIGURE_ENV+=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
+		LDFLAGS="${PTHREAD_LIBS}" WISH=${LOCALBASE}/bin/wish${TK_VER} \
+		--with-f90=${FC}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=  autoconf:259 libtool:15
 USE_LDCONFIG=	yes
-
-.if !defined(WITHOUT_F90)
-F90=		gfortran41
-BUILD_DEPENDS+=	${F90}:${PORTSDIR}/lang/gfortran
-CONFIGURE_ARGS+=	--with-f90=${F90}
-.endif
 
 DOC2FIX=	. gif html jpg png tests
 TST2FIX=	c f
 
 .include <bsd.port.pre.mk>
-
-.if !${OSVERSION} < 500039
-F77?=		f77
-.endif
-FFLAGS?=	-O2
 
 pre-configure:
 .if defined(NOPORTDOCS)
