@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fcron
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/archives/ \
@@ -21,7 +20,6 @@ COMMENT=	A periodic command scheduler
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:259
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \
@@ -37,7 +35,7 @@ MAN5=		fcron.conf.5 fcrontab.5
 MAN8=		fcron.8
 
 PAMDIR?=	/etc/pam.d
-PLIST_SUB+=	PAMDIR=${PAMDIR}
+PLIST_SUB+=	PAMDIR=etc/pam.d
 
 PORTDOCS=	*
 
