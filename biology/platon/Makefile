@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	platon
-PORTVERSION=	2003.12.04
+PORTVERSION=	2007.01.09
 CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon
@@ -20,6 +20,11 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 RESTRICTED=	free for academic, US$ 5000 for commercial users
 
 USE_XLIB=	yes
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}"
 
 # This port only has snapshot archive
 IGNOREFILES=	platon.tar.gz
@@ -36,14 +41,12 @@ TESTDATADIR=	ABSORB_EXAMPLE ABSTOMPA_EXAMPLE ABSTOMPA_TEST ADDSYM_EXAMPLE \
 BROKEN=	/usr/libexec/elf/ld: platon.o: .got subsegment exceeds 64K (size 88552)
 .endif
 
-.if ${OSVERSION} >= 400004
-MAKE_ENV+=	HAVE_G2C=yes
-.endif
-
 pre-patch:
-	(cd ${WRKDIR}/${DISTNAME} && ${GUNZIP_CMD} platon.f.Z)
-	${SED} 's,%%X11BASE%%,${X11BASE},g' ${FILESDIR}/Makefile > ${WRKDIR}/${DISTNAME}/Makefile
-	(cd ${WRKDIR}/${DISTNAME} && ${GUNZIP_CMD} xdrvr.c.gz)
+	(cd ${WRKDIR}/${DISTNAME} ; ${GUNZIP_CMD} platon.f.Z xdrvr.c.gz)
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s+%%X11BASE%%+${X11BASE}+"  ${WRKSRC}/Makefile
 
 pre-install:
 	${STRIP_CMD} ${WRKDIR}/${DISTNAME}/platon
