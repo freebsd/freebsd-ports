@@ -1,10 +1,10 @@
---- network.h.orig	Thu Nov 27 00:48:49 2003
-+++ network.h	Wed Feb 22 16:22:04 2006
-@@ -229,6 +229,7 @@
+--- network.h.orig	Mon Jan 15 23:59:58 2007
++++ network.h	Wed Jan 17 19:39:10 2007
+@@ -235,6 +235,7 @@
    int  pid;
    int  toid; // timeout
    string handshake;
 +  int  use_execve;
+   double MaxWaitTime; // msecs
  };
  
- class FallBackConnection : public NetConnection {

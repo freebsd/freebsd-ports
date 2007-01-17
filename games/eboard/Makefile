@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	eboard
-PORTVERSION=	0.9.5
-PORTREVISION=	4
+PORTVERSION=	1.0.2
 EXTRAS=		1pl2 2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-1pl2.tar.gz eboard-extras-2.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USE_GNOME=	imlib
-USE_X_PREFIX=	yes
+USE_PERL5_BUILD=yes
+USE_GNOME=	gtk20
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --extra-inc=${LOCALBASE}/include:${X11BASE}/include --extra-ld=${LOCALBASE}/lib:${X11BASE}/lib
 
@@ -33,7 +34,13 @@ DESKTOP_ENTRIES="eboard" \
 		"eboard.xpm" \
 		"eboard" \
 		"Application;Game;" \
-		false
+		true
+
+post-extract:
+.for e in ${EXTRAS}
+	@cd ${WRKDIR} && ${GZIP_CMD} -dc \
+		${_DISTDIR}/eboard-extras-${e}.tar.gz | ${TAR} -xf -
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,g++,${CXX},' -e 's,-O6,${CXXFLAGS},' \
@@ -50,7 +57,7 @@ post-install:
 .endfor
 .endif
 .for extra in ${EXTRAS}
-	@cd ${WRKDIR}/eboard-extras-${extra} && ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
+	@cd ${WRKDIR}/eboard-extras-${extra} && EBOARDCONFIG=${PREFIX}/bin/eboard-config ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
 	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install
 .endfor
 	${MKDIR} ${PREFIX}/share/pixmaps
