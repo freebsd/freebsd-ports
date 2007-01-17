@@ -8,7 +8,7 @@
 
 PORTNAME=	oases
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	ftp://keel.mit.edu/pub/Oases/
 DISTNAME=	oases_Mar-28-2002
@@ -19,7 +19,13 @@ COMMENT=	Ocean Acoustics and Seismic Exploration Synthesis
 WRKSRC=		${WRKDIR}/Oases_export
 
 USE_XLIB=	yes
-MAKE_ENV=	OASES_ROOT="${WRKSRC}"
+MAKE_ENV+=	OASES_ROOT="${WRKSRC}"
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 SCRIPT=		avbeam bistat cplot mplot mtvplot multmtv oasn oasp oasr \
 		oass oassp oast plp2mtv
