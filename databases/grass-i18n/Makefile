@@ -6,7 +6,7 @@
 
 PORTNAME=	grass-i18n
 PORTVERSION=	5.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.grass-japan.org/FOSS4G/GRASS/:grass \
 		http://www.grass-japan.org/FOSS4G/ipafonts/:ipafonts
@@ -24,9 +24,18 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fftw.2:${PORTSDIR}/math/fftw \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		lapack.3:${PORTSDIR}/math/lapack
+		blas.2:${PORTSDIR}/math/blas \
+		lapack.4:${PORTSDIR}/math/lapack
 
 CONFLICTS=	grass-[0-9]*
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 FILES_SRC=	grass${PORTVERSION}_i18n_src${EXTRACT_SUFX}
 FILES_TKI18N=	tcltkgrass-i18n${EXTRACT_SUFX}
@@ -110,10 +119,12 @@ post-extract:
 .endfor
 
 post-patch:
+	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	${CP} ${WRKSRC}/configure.in ${WRKSRC}/configure.in.orig
 	${SED} ${CONFIGURE_IN_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${WRKSRC}/configure.in.orig \
 		> ${WRKSRC}/configure.in
+	${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/configure.in
 
 post-install:
 	cd ${WRKDIR}/tcltkgrass-i18n/scripts && ${TAR} cf - . | \
