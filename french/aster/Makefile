@@ -7,6 +7,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	9.0.0-2
+PORTREVISION=	1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}.noarch
@@ -41,7 +42,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${PYNUMERIC}
 LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
-		lapack.3:${PORTSDIR}/math/lapack				\
 		hdf5.0:${PORTSDIR}/science/hdf5					\
 		med.2:${PORTSDIR}/french/med
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
@@ -79,13 +79,15 @@ BROKEN=	Does not compile on this version, and cannot be patched easily.
 #.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
+WITH_ATLAS=     yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
 .endif
+
 .if !defined(WITHOUT_ASTK_CLI)
 RUN_DEPENDS+=	${ASTKDIR}:${PORTSDIR}/cad/astk-client
 PLIST_SUB+=	ASTK_CLIENT=""  ASTKDIR=${ASTKDIR}
@@ -122,8 +124,6 @@ WITH_MUMPS=	yes
 .endif
 .if defined(WITH_MUMPS)
 WITH_MPI=	yes	# For the FETI solver
-F90=		gfortran41
-FC=		${LOCALBASE}/bin/${F90}
 DLIBF90!=	${DIRNAME} `${LDCONFIG} -r | ${GREP} gfortran | ${AWK} '{print $$3}'`
 . if exists(${LOCALBASE}/lib/libmpiseq.a)
 MUMPS_PORT=	mumps
@@ -133,8 +133,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs	\
 MUMPS_PORT=	mumps-mpich
 MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/mpich2/lib -lmpich
 . endif
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}	\
-		${FC}:${PORTSDIR}/lang/gfortran
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
 .endif
 
 .if defined(WITH_MPI)
@@ -142,10 +141,10 @@ BUILD_DEPENDS+=	${HOME_MPI}/include/mpif.h:${PORTSDIR}/net/mpich2
 HOME_MPI=	${LOCALBASE}/mpich2
 .endif
 
-.if !${OSVERSION} < 500039
-F77?=		f77
-.endif
-FFLAGS?=	-O2
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
@@ -248,13 +247,14 @@ pre-configure:
 	# else libmpiseq.a used instead of libmpich, default is OK
 	${ECHO_CMD} "MUMPSLIB = '${MUMPSLIB}'"			>> ${WRKSRC}/setup.cfg
 . endif
-	${ECHO_CMD} "F90='${LOCALBASE}/bin/gfortran41'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c -L${DLIBF90} -lgfortran'"	\
+	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -L${DLIBF90} -L${DLIBF90}/../../.. -lgfortranbegin  -lgfortran'"	\
 		>> ${WRKSRC}/setup.cfg
 .else
-	${ECHO_CMD} "HOME_MUMPS = ''"				>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
+	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -L${DLIBF90} -L${DLIBF90}/../../.. -lgfortranbegin  -lgfortran'"	\
 		>> ${WRKSRC}/setup.cfg
+
 .endif
 .if defined(WITH_MPI)
 	${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
@@ -276,9 +276,9 @@ pre-configure:
 	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} ${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "FFLAGS_DBG='-c -g -O ${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
