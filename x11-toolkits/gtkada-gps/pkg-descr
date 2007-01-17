@@ -1,7 +1,10 @@
-GtkAda is an Ada95 graphical toolkit based on Gtk+, providing the complete set
-of Gtk+ widgets using the Object-Oriented features of this language.
+This is GtkAda version 3.1.3. This package is an Ada2005 graphical library
+for the Gimp Toolkit, which means this is a set of packages to allow you
+to easily create some graphical interfaces under X11 and Win32, using Ada2005
+as a programming language.
 
-This version of GtkAda is designed to be used with lang/gnat-gcc41.
-
-WWW: https://libre2.adacore.com/GtkAda/
-WWW: http://gnuada.sourceforge.net/
+Every widget from gtk 2.2 has been bound, and the test
+program found in the gtk release has been reimplemented in Ada (have a
+look at the testgtk/ directory).
+ 
+WWW: http://libre.adacore.com/
