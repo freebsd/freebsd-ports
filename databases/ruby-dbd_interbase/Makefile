@@ -7,6 +7,7 @@
 
 PORTNAME=	dbd_interbase
 PORTVERSION=	${RUBY_DBI_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	${RUBY_DBI_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_DBI_MASTER_SITE_SUBDIR}
@@ -18,7 +19,7 @@ MAINTAINER=	boumenot@gmail.com
 COMMENT=	InterBase driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
-		${RUBY_SITEARCHLIBDIR}/interbase.so:${PORTSDIR}/databases/ruby-interbase
+		${RUBY_SITEARCHLIBDIR}/fb.so:${.CURDIR}/../ruby-interbase
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
