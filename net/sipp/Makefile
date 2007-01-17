@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sipp
-PORTVERSION=	1.1.r6.20061208
+PORTVERSION=	1.1.r8.20070116
 CATEGORIES=	net
 MASTER_SITES=	http://sipp.sourceforge.net/snapshots/
-DISTNAME=	${PORTNAME}.2006-12-08
+DISTNAME=	${PORTNAME}.2007-01-16
 
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	SIP testing tool
@@ -18,6 +18,9 @@ PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
 MAKE_ENV+=	CPP="${CXX}" CPPFLAGS="${CXXFLAGS}" CCLINK="${CXX}"
+
+OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \
+		PCAPPLAY	"RTP play support" off
 
 .include <bsd.port.pre.mk>
 
@@ -29,20 +32,21 @@ PCAP_FILES=	dtmf_2833_1.pcap dtmf_2833_2.pcap dtmf_2833_3.pcap \
 		dtmf_2833_7.pcap dtmf_2833_8.pcap dtmf_2833_9.pcap \
 		dtmf_2833_pound.pcap dtmf_2833_star.pcap g711a.pcap
 
-PLIST_DIRS=	%%DATADIR%%/pcap %%DATADIR%%
+PLIST_DIRS=	%%DATADIR%%/pcap \
+		%%DATADIR%%
 
 .for f in ${PCAP_FILES}
 PLIST_FILES+=	%%DATADIR%%/pcap/${f}
 .endfor
-.endif
+.endif #defined(WITH_PCAPPLAY)
 
-.if defined(WITHOUT_DIGEST_AUTH)
+.if defined(WITHOUT_OPENSSL)
 
 .if defined(WITH_PCAPPLAY)
 ALL_TARGET=	pcapplay
 .endif #defined(WITH_PCAPPLAY)
 
-.else
+.else #!defined(WITHOUT_OPENSSL)
 
 .if defined(WITH_PCAPPLAY)
 ALL_TARGET=	pcapplay_ossl
@@ -50,7 +54,7 @@ ALL_TARGET=	pcapplay_ossl
 ALL_TARGET=	ossl
 .endif #defined(WITH_PCAPPLAY)
 
-.endif #defined(WITHOUT_DIGEST_AUTH)
+.endif #defined(WITHOUT_OPENSSL)
 
 post-patch:
 .if ${ARCH} == "ia64"
@@ -61,7 +65,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's|\(\\"\)\(pcap/[^"]*\.pcap\\"\)|\1${DATADIR}/\2|' \
 		${WRKSRC}/scenario.cpp
-.endif
+.endif #defined(WITH_PCAPPLAY)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
