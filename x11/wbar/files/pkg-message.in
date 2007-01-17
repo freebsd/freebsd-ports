@@ -1,0 +1,12 @@
+
+*************************************************
+
+    Copy
+    
+        %%DATADIR%%/dot.wbar to ${HOME}/.wbar
+
+    or run the program with
+
+        wbar -config %%DATADIR%%/dot.wbar
+
+*************************************************

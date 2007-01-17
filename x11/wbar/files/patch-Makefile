@@ -1,0 +1,50 @@
+--- Makefile	Sun Jan 14 18:31:11 2007
++++ Makefile.port	Wed Jan 17 00:16:41 2007
+@@ -1,7 +1,7 @@
+ TARGET=wbar
+-CXXFLAGS=`imlib2-config --cflags` -Wall -O2 -DCOOLMACHINE_N_SHITCODE -DAVGFILTER #-DDOCKWIN 
+-LDFLAGS=`imlib2-config --libs`  -Wl,-O2
+-PREFIX=/usr/share/wbar
++CXXFLAGS+=`imlib2-config --cflags` -Wall -DCOOLMACHINE_N_SHITCODE -DAVGFILTER #-DDOCKWIN
++LDFLAGS+=`imlib2-config --libs`  -Wl
++DATADIR=%%DATADIR%%
+ 
+ 	
+ sources= XWin.cc Icon.cc Bar.cc IconLoader.cc \
+@@ -29,11 +29,11 @@
+ 		exit 1; \
+ 	fi
+ 
+-	install -d $(PREFIX)
+-	awk '{if($$1 ~ /i:/ || ($$1 ~ /t:/ && NR<4)) print $$1" $(PREFIX)/"$$2; else print $$0;}' \
+-		./dot.wbar > $(PREFIX)/dot.wbar
+-	cp -a ./wbar.icons $(PREFIX)/wbar.icons
+-	install ./wbar /usr/bin
++	install -d %%DATADIR%%
++	awk '{if($$1 ~ /i:/ || ($$1 ~ /t:/ && NR<4)) print $$1" %%DATADIR%%/"$$2; else print $$0;}' \
++		./dot.wbar > %%DATADIR%%/dot.wbar
++	cp -pLR ./wbar.icons %%DATADIR%%/wbar.icons
++	install ./wbar %%PREFIX%%/bin
+ 
+ config:
+ 	if [ -f "$(HOME)/.wbar" -o -d "$(HOME)/.wbar.icons" ]; then \
+@@ -42,7 +42,7 @@
+ 		if [ "$$recfg" = "y" -o "$$recfg" = "Y" ]; then \
+ 			awk '{if($$1 ~ /i:/ || ($$1 ~ /t:/ && NR<4)) print $$1" $(HOME)/"$$2; else print $$0;}' \
+ 			    ./dot.wbar > $(HOME)/dot.wbar; \
+-			cp -a ./wbar.icons $(HOME)/.wbar.icons; \
++			cp -pLR ./wbar.icons $(HOME)/.wbar.icons; \
+ 		fi \
+ 	fi
+ 
+@@ -52,8 +52,8 @@
+ 		exit 1; \
+ 	fi
+ 
+-	rm -rf $(PREFIX)
+-	rm -f /usr/bin/wbar
++	rm -rf %%DATADIR%%
++	rm -f %%PREFIX%%/bin/wbar
+ 
+ 
+ clean:
