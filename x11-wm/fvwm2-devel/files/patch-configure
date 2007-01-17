@@ -1,6 +1,6 @@
---- configure.orig	Sat Dec  9 04:44:25 2006
-+++ configure	Tue Dec 12 05:05:24 2006
-@@ -10272,7 +10272,7 @@
+--- configure.orig	Mon Jan 15 07:18:42 2007
++++ configure	Wed Jan 17 00:15:36 2007
+@@ -9212,7 +9212,7 @@
  
  # *** pkg-config
  # unfortunately, we need pkg-config for the detection of certain libs:
@@ -9,7 +9,7 @@
  
  # Check whether --with-pkgconfig-prefix was given.
  if test "${with_pkgconfig_prefix+set}" = set; then
-@@ -11489,17 +11489,17 @@
+@@ -10309,17 +10309,17 @@
  if test x$fc_config_exec_prefix != x ; then
    fc_config_args="$fc_config_args --exec-prefix=$fc_config_exec_prefix"
    if test x${FC_CONFIG+set} != xset ; then
@@ -31,7 +31,7 @@
  { echo "$as_me:$LINENO: checking for $ac_word" >&5
  echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
  if test "${ac_cv_path_FC_CONFIG+set}" = set; then
-@@ -11564,13 +11564,13 @@
+@@ -10384,13 +10384,13 @@
      no_fc=yes
    fi
  else
@@ -50,7 +50,7 @@
           sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\3/'`
    fc_min_major_version=`echo $min_fc_version | \
           sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\1/'`
-@@ -12738,7 +12738,7 @@
+@@ -11470,7 +11470,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -59,7 +59,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -13102,7 +13102,7 @@
+@@ -11794,7 +11794,7 @@
  #define HAVE_PNG 1
  _ACEOF
  
@@ -68,7 +68,7 @@
    problem_png=""
  else
    with_png=no
-@@ -16475,162 +16475,6 @@
+@@ -14803,138 +14803,6 @@
  
    found_gettext=yes
  
@@ -112,27 +112,10 @@
 -  rm -f conftest.er1
 -  cat conftest.err >&5
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } &&
--	 { ac_try='test -z "$ac_c_werror_flag" || test ! -s conftest.err'
--  { (case "(($ac_try" in
--  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
--  *) ac_try_echo=$ac_try;;
--esac
--eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
--  (eval "$ac_try") 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; } &&
--	 { ac_try='test -s conftest.$ac_objext'
--  { (case "(($ac_try" in
--  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
--  *) ac_try_echo=$ac_try;;
--esac
--eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
--  (eval "$ac_try") 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; }; then
+-  (exit $ac_status); } && {
+-	 test -z "$ac_c_werror_flag" ||
+-	 test ! -s conftest.err
+-       } && test -s conftest.$ac_objext; then
 -  ac_header_compiler=yes
 -else
 -  echo "$as_me: failed program was:" >&5
@@ -168,17 +151,10 @@
 -  rm -f conftest.er1
 -  cat conftest.err >&5
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } >/dev/null; then
--  if test -s conftest.err; then
--    ac_cpp_err=$ac_c_preproc_warn_flag
--    ac_cpp_err=$ac_cpp_err$ac_c_werror_flag
--  else
--    ac_cpp_err=
--  fi
--else
--  ac_cpp_err=yes
--fi
--if test -z "$ac_cpp_err"; then
+-  (exit $ac_status); } >/dev/null && {
+-	 test -z "$ac_c_preproc_warn_flag$ac_c_werror_flag" ||
+-	 test ! -s conftest.err
+-       }; then
 -  ac_header_preproc=yes
 -else
 -  echo "$as_me: failed program was:" >&5
@@ -231,7 +207,7 @@
  
  
  
-@@ -17344,7 +17188,7 @@
+@@ -15544,7 +15412,7 @@
  fi
  
          if test "$no_dgettext" != "yes"; then
@@ -240,7 +216,7 @@
            LIBS="$LIBS $intl_LIBS $iconv_LIBS"
            { echo "$as_me:$LINENO: checking if a simple gettext program link" >&5
  echo $ECHO_N "checking if a simple gettext program link... $ECHO_C" >&6; }
-@@ -17435,10 +17279,8 @@
+@@ -15619,10 +15487,8 @@
    else
      with_gettext="no"
      problem_gettext=": Failed to detected GNU gettext"
