@@ -146,9 +146,6 @@ CONFIGURE_ARGS+=--with-athena=xaw
 .endif
 
 BINNAMEEXT=		-mule
-.if defined(WITH_XCIN25)
-RUN_DEPENDS+=		${LOCALBASE}/bin/xcin2.5:${PORTSDIR}/chinese/xcin
-.endif
 .if defined(CANNA) && defined(FREEWNN)
 CONFIGURE_ARGS+=	--with-canna --with-wnn --with-wnn6=no
 LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
