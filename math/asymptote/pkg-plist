@@ -131,6 +131,7 @@ bin/xasy
 %%EXAMPLESDIR%%/exp.asy
 %%EXAMPLESDIR%%/fano.asy
 %%EXAMPLESDIR%%/fermi.asy
+%%EXAMPLESDIR%%/fillcontour.asy
 %%EXAMPLESDIR%%/fjortoft.asy
 %%EXAMPLESDIR%%/flow.asy
 %%EXAMPLESDIR%%/flowchartdemo.asy
