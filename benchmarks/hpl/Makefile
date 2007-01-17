@@ -7,6 +7,7 @@
 
 PORTNAME=	hpl
 PORTVERSION=	1.0a
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netlib.org/benchmark/hpl/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/netlib/benchmark/hpl/
@@ -25,11 +26,23 @@ FC=		${LOCALBASE}/bin/mpicc
 .endif
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
-.if defined(WITH_BLAS)
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas.a) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
 .else
-LIB_DEPENDS+=	cblas.1:${PORTSDIR}/math/atlas
+WITH_BLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
 .endif
 
 INSTALLS_SHLIB=	yes
@@ -112,4 +125,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
