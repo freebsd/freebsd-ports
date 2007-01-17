@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmorph
-PORTVERSION=	2006.03.04
-PORTREVISION=	1
+PORTVERSION=	2006.08.17
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,10 +28,12 @@ USE_GCC=	3.4+
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--without-waili
+CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} \
+		--mandir=${MANPREFIX}/man \
+		--without-waili
 USE_LDCONFIG=	yes
 
-MAN1=		xmorph.1
+MAN1=		gtkmorph.1 xmorph.1
 INFO=		xmorph
 
 .include <bsd.port.pre.mk>
@@ -41,11 +42,9 @@ INFO=		xmorph
 CFLAGS+=	-Dround=rint
 .endif
 
-# XXX Seems that gtkmorph.1 is always installed
-MAN1+=		gtkmorph.1
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=		gtk20
-CONFIGURE_ARGS+=	--with-gtk2
+CONFIGURE_ARGS+=	--with-gtk=2
 .else
 CONFIGURE_ARGS+=	--without-gtkmorph
 .endif
