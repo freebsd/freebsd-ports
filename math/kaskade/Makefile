@@ -7,6 +7,7 @@
 
 PORTNAME=	kaskade
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.zib.de/pub/kaskade/3.x/
 DISTNAME=	${PORTVERSION}
@@ -16,14 +17,24 @@ COMMENT=	Adaptive linear scalar elliptic and parabolic problem solver
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+F77=		gfortran42
+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DIST_SUBDIR=	kaskade
 WRKSRC=		${WRKDIR}/3.2.1
+FORTRANLIBS=	-lgfortranbegin -lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/configure ${WRKSRC}
+	@${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	@${REINPLACE_CMD} "s+%%F77%%+${F77}+" ${WRKSRC}/sources/configure
+	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/sources/makefile.in
+	@${REINPLACE_CMD} "s+%%F77%%+${F77}+" ${WRKSRC}/minigraph/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
