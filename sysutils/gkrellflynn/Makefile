@@ -7,6 +7,7 @@
 
 PORTNAME=	gkrellflynn
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://horus.comlab.uni-rostock.de/flynn/
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellflynn.so
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c -fPIC"
 ALL_TARGET=	${PORTNAME}.so
 
 CFLAGS+=	`pkg-config --cflags gtk+-2.0 gthread-2.0` \
