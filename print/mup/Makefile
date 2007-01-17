@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	mup
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
-DISTFILES=	mup52src.tar.gz mup52doc.tar.gz
+DISTFILES=	mup${PORTVERSION:S/.//}src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A shareware program for typesetting music
 
 USE_XLIB=	yes
 
 MAN1=		mup.1 mkmupfnt.1 mupdisp.1 mupprnt.1
 PLIST_FILES=	bin/mkmupfnt bin/mup bin/mupdisp bin/mupprnt
-MOREDOCS=	README0 docs/overview.txt docs/register.txt docs/README1 \
+MOREDOCS=	docs/README0 docs/overview.txt docs/register.txt\
 		docs/mupfeat.txt docs/faq.txt docs/license.txt docs/uguide.ps
 PORTDOCS=	*
 
