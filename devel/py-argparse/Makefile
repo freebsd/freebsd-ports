@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	argparse
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/a/argparse/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ COMMENT=	An optparse-inspired command-line parsing library
 
 USE_ZIP=	yes
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/argparse.py \
