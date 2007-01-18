@@ -21,6 +21,8 @@ NO_INSTALL_MANPAGES=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+BROKEN=		Does not compile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hla ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/hlaparse ${PREFIX}/bin
