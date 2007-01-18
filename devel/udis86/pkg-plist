@@ -4,4 +4,9 @@ include/udis86.h
 include/libudis86/types.h
 include/libudis86/extern.h
 include/libudis86/mnemonics.h
+%%PORTDOCS%%%%DOCSDIR%%/doc.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ss.jpg
+%%PORTDOCS%%%%DOCSDIR%%/style.css
 @dirrm include/libudis86
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
