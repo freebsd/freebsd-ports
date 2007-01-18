@@ -75,7 +75,6 @@
     SUBDIR += gnome-db
     SUBDIR += gqlplus
     SUBDIR += grass
-    SUBDIR += grass-i18n
     SUBDIR += gtksql
     SUBDIR += hk_classes
     SUBDIR += hsqldb

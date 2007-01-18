@@ -2712,3 +2712,4 @@ games/xemeraldia||2007-01-17|Has expired: distfile disappeared and has no homepa
 games/xlifegame||2007-01-17|Has expired: distfile disappeared and has no homepage
 games/xpilotmon||2007-01-17|Has expired: distfile disappeared and has no homepage
 games/xsok||2007-01-17|Has expired: distfile disappeared and has no homepage
+database/grass-i18n|database/grass|2007-01-18|Deprecated because i18n extension has been merged
