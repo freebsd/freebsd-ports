@@ -105,6 +105,7 @@
     SUBDIR += snooper
     SUBDIR += soundmodem
     SUBDIR += spandsp
+    SUBDIR += spandsp-devel
     SUBDIR += splat
     SUBDIR += sredird
     SUBDIR += syncterm
