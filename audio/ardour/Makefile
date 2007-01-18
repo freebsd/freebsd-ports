@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ardour
-DISTVERSION=	2.0beta10
+DISTVERSION=	2.0beta11.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 
@@ -25,18 +25,19 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSoundTouch.a:${PORTSDIR}/audio/soundtouch
 
 USE_SCONS=	yes
-SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
+SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes FPU_OPTIMIZATION=0
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 libxslt libgnomecanvas intltool
 USE_GETTEXT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ardour2 ${PREFIX}/lib/ardour2/surfaces
 TEMPLATESDIR=	${PREFIX}/share/ardour2/templates
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
 # Upstream uses these flags by default.
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce
+CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce -fno-strict-aliasing
 .endif
 
 .if ${OSVERSION} < 600000
