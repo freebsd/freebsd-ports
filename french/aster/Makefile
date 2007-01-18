@@ -50,7 +50,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 
 USE_BISON=	yes
 USE_PYTHON=	yes
-WITH_FORTRAN=	yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
