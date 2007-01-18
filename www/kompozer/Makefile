@@ -4,10 +4,11 @@
 #
 # $FreeBSD$
 #    $MCom: ports/www/nvu/Makefile,v 1.5 2006/07/18 15:07:36 ahze Exp $
+#
 
 PORTNAME=	nvu
 DISTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
