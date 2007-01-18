@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
@@ -16,7 +16,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Powerful, extensible charting
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.25:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Cairo>=0.03:${PORTSDIR}/graphics/p5-Cairo
+		p5-Cairo>=1.000:${PORTSDIR}/graphics/p5-Cairo
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -52,6 +52,7 @@ MAN3=		Chart::Clicker.3 Chart::Clicker::Axis.3 \
 		Chart::Clicker::Renderer::Line.3 \
 		Chart::Clicker::Renderer::Measurement.3 \
 		Chart::Clicker::Renderer::Point.3 \
+		Chart::Clicker::Simple.3 \
 		Chart::Clicker::Shape.3 \
 		Chart::Clicker::Shape::Arc.3 \
 		Chart::Clicker::Shape::Rectangle.3
