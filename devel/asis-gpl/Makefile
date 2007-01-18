@@ -1,56 +1,69 @@
-# New ports collection makefile for:	asis
-# Date created:				11 Jul 2000
-# Whom:					Thomas Quinot <thomas@cuivre.fr.eu.org>
+# New ports collection makefile for: asis-gpl
+# Date created:		31 Dec 2006
+# Whom:			John Merryweather Cooper
 #
 # $FreeBSD$
 #
 
-PORTNAME=	asis
-PORTVERSION=	3.15p
-PORTREVISION=	1
+PORTNAME=	asis-gpl
+PORTVERSION=	2006
 CATEGORIES=	devel
-MASTER_SITES=	http://gd.tuwien.ac.at/languages/ada/gnat/3.15p/asis/ \
-		ftp://ftp.cs.kuleuven.ac.be/pub/Ada-Belgium/mirrors/gnu-ada/3.15p/asis/
-DISTNAME=	asis-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://libre.adacore.com/
+EXTRACT_SUFX=	-src.tgz
 
-MAINTAINER=	thomas@cuivre.fr.eu.org
-COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
+MAINTAINER=	john_m_cooper@yahoo.com
+COMMENT=	An Ada ASIS implementation including the Data Decomposition Annex
 
-BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
+BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
+RUN_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
-INSTALLS_SHLIB=	yes
+CONFLICTS=	asis-3.15*
+
+USE_GMAKE=	yes
+
+ASIS_SRC=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500039
-WITHOUT_CPU_CFLAGS=	yes
+# Check for GNAT sources.
+.if !exists(${DISTDIR}/${ASIS_SRC}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE=:\n\
+Because of licensing and registration restrictions, you must fetch the\n\
+source distribution manually.  Please access http://libre.adacore.com/\n\
+with a web browser, register (it's free), and log in.  Download the source\n\
+files:\n\
+\t${ASIS_SRC}\n\
+and place them in ${DISTDIR}.\n
 .endif
-CFLAGS=		-O2 -pipe
-USE_GMAKE=	yes
-MAKEFILE=	"${FILESDIR}/Makefile.bsd"
-MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} \
-		LN=${LN}
 
-do-install:
-	@${MKDIR} ${PREFIX}/lib/asis
-	@${INSTALL_DATA} ${WRKSRC}/asis/*.ad? ${WRKSRC}/gnat/*.ad? ${WRKSRC}/obj/*.ali ${PREFIX}/lib/asis
-	@${INSTALL_DATA} ${WRKSRC}/obj/libasis.a ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/libasis-${PORTVERSION}.so.1 ${PREFIX}/lib
-	@${LN} -sf ${PREFIX}/lib/libasis-${PORTVERSION}.so.1 ${PREFIX}/lib/libasis-${PORTVERSION}.so
+WRKSRC=		${WRKDIR}/asis-${PORTVERSION}-src
+DOCSDIR=	${PREFIX}/share/doc/asis
 
-	@${INSTALL_PROGRAM} ${WRKSRC}/asistant.prg ${PREFIX}/bin/asistant
-	@${INSTALL_PROGRAM} ${WRKSRC}/display_source ${WRKSRC}/gnatelim ${WRKSRC}/gnatstub ${PREFIX}/bin
+INSTALL_TARGET=	all
 
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|/usr/local|${PREFIX}|' \
+		${WRKSRC}/asis/a4g-contt.ads
+	@${REINPLACE_CMD} -E -e 's|%%CFLAGS%%|${CFLAGS}|' \
+		${WRKSRC}/Makefile.stub
+
+do-build:
+	@${ECHO_MSG} "This port does everything in the install step."
+	@${ECHO_MSG} "The build step is a no-op."
+
+# Both info files lack entry fields, and so this manual hack
+# (and a dir entry in pkg-plist) are necessary
 post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/documentation/* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/ds/README ${DOCSDIR}/README.ds
-	@${INSTALL_DATA} ${WRKSRC}/tools/asistant/asistant.ug ${DOCSDIR}/README.asistant
-	@${INSTALL_DATA} ${WRKSRC}/tools/gnatelim/README ${DOCSDIR}/README.gnatelim
-	@${INSTALL_DATA} ${WRKSRC}/tools/gnatstub/README ${DOCSDIR}/README.gnatstub
+	@(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-docs)
+	@install-info --entry "ASIS Reference Manual" \
+		${DOCSDIR}/info/asis_rm.info \
+		${DOCSDIR}/info/dir
+	@install-info --entry "ASIS User Guide" \
+		${DOCSDIR}/info/asis_ug.info \
+		${DOCSDIR}/info/dir
 .endif
 
 .include <bsd.port.post.mk>

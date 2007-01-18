@@ -55,6 +55,7 @@
     SUBDIR += aros-sdk
     SUBDIR += as31
     SUBDIR += asis
+    SUBDIR += asis-gpl
     SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += astyle
