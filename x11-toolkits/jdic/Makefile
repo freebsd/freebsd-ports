@@ -19,6 +19,9 @@ BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 #		nspr4.1:${PORTSDIR}/devel/nspr
 
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	the required com.sun.jnlp is part of jawaws.jar, only installed on i386
+
 USE_ZIP=	yes
 USE_ANT=	yes
 USE_GNOME=	pkgconfig # libgnome
