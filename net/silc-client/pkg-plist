@@ -1,5 +1,4 @@
 bin/silc
-etc/silc/silc.conf.sample
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
@@ -97,8 +96,6 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/scripts/silc-mime.pl
-%%PORTDOCS%%%%DOCSDIR%%/CodingStyle
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
@@ -112,3 +109,5 @@ share/silc/scripts/silc-mime.pl
 @dirrm share/silc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry etc/silc
+@dirrmtry lib/silcsim/client
+@dirrmtry lib/silcsim

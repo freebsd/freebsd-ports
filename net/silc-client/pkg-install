@@ -9,6 +9,8 @@ PKGNAME=$1
 ACTION=$2
 
 CONF_DIR=${PKG_PREFIX}/etc/silc
+DOC_DIR=${PKG_PREFIX}/share/doc/silc
+#/example_silc.conf
 
 CONF_FILE=silc.conf
 CONF_OWN=root
@@ -32,13 +34,13 @@ POST-INSTALL)
 		echo "$PKGNAME: Will not overwrite existing ${CONF_DIR}/${CONF_FILE} configuration file."
 	else
 		${INSTALL} -c -o ${CONF_OWN} -g ${CONF_GRP} -m ${CONF_MODE} \
-			${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} \
+			${DOC_DIR}/example_silc.conf \
 			${CONF_DIR}/${CONF_FILE}
 	fi
 	;;
 
 DEINSTALL)
-	if ${CMP} -s ${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} \
+	if ${CMP} -s ${DOC_DIR}/example_silc.conf \
 		  ${CONF_DIR}/${CONF_FILE}; then
 		${RM} -f ${CONF_DIR}/${CONF_FILE}
 	else
