@@ -11,7 +11,7 @@ PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cs.huji.ac.il/~bla/ports/
 
-MAINTAINER=	bla@cs.huji.ac.il
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Library Tracer -- similar to strace, but trace library calls
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
