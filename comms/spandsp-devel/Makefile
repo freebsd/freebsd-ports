@@ -1,24 +1,25 @@
-# New ports collection makefile for:	spandsp
-# Date created:		23 June 2005
-# Whom:			wlloyd@slap.net
+# New ports collection makefile for:	spandsp-devel
+# Date created:		2007-01-13
+# Whom:			Joe Holden <joe@joeholden.co.uk>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	spandsp
-DISTVERSION=	0.0.2pre26
+DISTVERSION=	0.0.3pre27
 CATEGORIES=	comms
-MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/${PORTNAME}-${DISTVERSION}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
+		ftp://ftp.rewt.org.uk/pub/distfiles/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	spandsp-${DISTVERSION}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Fax DSP library for Asterisk
+MAINTAINER=	joe@joeholden.co.uk
+COMMENT=	Fax DSP library
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/pre.*$//}
-
+WRKSRC=		${WRKDIR}/spandsp-0.0.3/
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
@@ -27,12 +28,12 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_LDCONFIG=	yes
 
+CONFLICTS=	spandsp-[0-9]*
+
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${FIND} ${WRKSRC} -name *.c | ${XARGS} ${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|'
-.if ${OSVERSION} < 503000
-	${ECHO} '#define lrintf(x) ((int16_t)rintf(x))' > ${WRKSRC}/src/tgmath.h
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
 .endif
 
 .include <bsd.port.post.mk>
