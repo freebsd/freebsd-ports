@@ -8371,6 +8371,7 @@ p5-Authen-Smb	ports/security/p5-Authen-Smb
 p5-Authen-TacacsPlus	ports/security/p5-Authen-TacacsPlus
 p5-Authen-Ticket	ports/security/p5-Authen-Ticket
 p5-Authen-TypeKey	ports/security/p5-Authen-TypeKey
+p5-AutoLoader	ports/devel/p5-AutoLoader
 p5-AxKit	ports/www/p5-AxKit
 p5-AxKit-XSP-Cookie	ports/www/p5-AxKit-XSP-Cookie
 p5-AxKit-XSP-ESQL	ports/www/p5-AxKit-XSP-ESQL
