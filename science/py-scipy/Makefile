@@ -36,13 +36,13 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
 IGNORE=		Atlas needs to be built with WITH_STATICLIB for scipy to function properly
 .endif
 .else
-LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack \
-		blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
+		blas.2:${PORTSDIR}/math/blas
 .endif
 
 post-install:

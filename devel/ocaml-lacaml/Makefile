@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	OCaml interface to BLAS and LAPACK libraries
 
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas \
-		lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \
+		lapack.4:${PORTSDIR}/math/lapack
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
