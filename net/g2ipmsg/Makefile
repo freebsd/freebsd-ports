@@ -20,7 +20,7 @@ COMMENT=	A popup style message communication tool for GNOME2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack intltool pkgconfig \
-		libgnomeui libbonobo desktopfileutils
+		libgnomeui libbonobo desktopfileutils gnomepanel
 USE_GSTREAMER=	vorbis
 USE_ICONV=	yes
 USE_XLIB=	yes
