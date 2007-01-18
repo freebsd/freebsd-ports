@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
-#EXTRACT_SUFX=	.tar.bz2
+MASTER_SITE_SUBDIR=	dryice
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
