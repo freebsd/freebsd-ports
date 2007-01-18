@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	7.0.8
+PORTVERSION=	7.0.9
 PORTREVISION=	0
 CATEGORIES=	portuguese print linux
 PKGNAMEPREFIX=	pt_BR-
