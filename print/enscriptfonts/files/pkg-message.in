@@ -1,0 +1,5 @@
+******************************************************************************
+	Now you *must* add the path %%PREFIX%%/etc/enscript.cfg path 
+	AFMPATH configuration.
+	This line is somewhere around line +32 in the enscript.cfg file. 
+******************************************************************************
