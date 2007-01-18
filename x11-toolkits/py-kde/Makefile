@@ -7,7 +7,7 @@
 
 PORTNAME=	kde
 PORTVERSION=	3.16.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python kde
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \
@@ -85,6 +85,7 @@ post-build:
 	( cd ${WRKSRC} && \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py examples )
 .endif
+	@${REINPLACE_CMD} -e 's|ln.*||g' ${WRKSRC}/Makefile
 
 post-install:
 	( ${INSTALL_SCRIPT} ${WRKSRC}/contrib/kdepyuic ${PREFIX}/bin && \

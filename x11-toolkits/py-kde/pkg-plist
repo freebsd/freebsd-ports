@@ -1245,6 +1245,11 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/kmdi/KMdiWin32IconButton.html
 %%DOCS%%%%DOCSDIR%%/classref/kmdi/index.html
 %%DOCS%%%%DOCSDIR%%/classref/kmdi/kmdi-globals.html
+%%DOCS%%%%DOCSDIR%%/classref/kparts/ExtTerminalInterface.html
+%%DOCS%%%%DOCSDIR%%/classref/kparts/TerminalInterface.html
+%%DOCS%%%%DOCSDIR%%/classref/kparts/konsoleFactory.html
+%%DOCS%%%%DOCSDIR%%/classref/kparts/konsoleBrowserExtension.html
+%%DOCS%%%%DOCSDIR%%/classref/kparts/konsolePart.html
 %%DOCS%%%%DOCSDIR%%/classref/kparts/KParts.BrowserExtension.html
 %%DOCS%%%%DOCSDIR%%/classref/kparts/KParts.BrowserHostExtension.html
 %%DOCS%%%%DOCSDIR%%/classref/kparts/KParts.BrowserInterface.html
