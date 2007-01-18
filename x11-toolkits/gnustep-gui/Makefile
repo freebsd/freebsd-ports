@@ -57,7 +57,7 @@ PLIST_SUB+=	WITH_CUPS=""
 PLIST_SUB+=	WITH_CUPS="@comment "
 .endif
 
-ASPELL_PORT?=	german/aspell
+ASPELL_PORT?=	textproc/aspell
 .if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell:${PORTSDIR}/${ASPELL_PORT}
 PLIST_SUB+=	WITH_ASPELL=""
