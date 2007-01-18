@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -32,14 +31,13 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GNOME=	glib12
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
+CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX} \
 		--with-simdir=${PREFIX}/lib/silcsim \
-		--with-helpdir=${PREFIX}/share/${PORTNAME}/help \
+		--with-helpdir=${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}/help \
 		--includedir=${PREFIX}/include/silc \
-		--with-docdir=${DOCSDIR} \
-		--without-irssi --without-silcd --enable-shared
+		--with-docdir=${DOCSDIR}${PKGNAMESUFFIX} \
+		--enable-shared --without-libtoolfix
 CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" \
 		CPPFLAGS+="${CPPFLAGS}"
 USE_LDCONFIG=	yes
@@ -52,6 +50,8 @@ CONFIGURE_ARGS+=	--without-pthreads
 .else
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 .endif
+
+MAN1=		silc.1
 
 pre-everything::
 .ifndef(WITHOUT_IPV6)
@@ -69,30 +69,6 @@ pre-everything::
 	@${ECHO_MSG} '===> which is known to break some platforms (e.g., alpha)'
 .endif
 
-post-patch:
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's/ ?(-g)? -O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's/ ?(-g)? -O2//' ${WRKSRC}/lib/silcmath/mpi/${CONFIGURE_SCRIPT}
-.endif
-	@${PERL} -pi -e 's/-D_THREAD_SAFE//; \
-			s/^(SILC_DIST_SUBDIRS.+?)doc/\1/' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's/ etc-install-server//; \
-			s|-cp -R \$$\(srcdir\)/tutorial \$$\(prefix\)|-mkdir -p ${EXAMPLESDIR}/mybot\n\t-\$$\(INSTALL_DATA\) \$$\(srcdir\)/tutorial/[M-R]* ${EXAMPLESDIR}\n\t-\$$\(INSTALL_DATA\) \$$\(srcdir\)/tutorial/mybot/[M-m]* ${EXAMPLESDIR}/mybot|; \
-			s|\$$\(distdir\)/tutorial|${EXAMPLESDIR}|; \
-			s|sim-install:$$|sim-install:\n\t-mkdir -p ${PREFIX}/lib/silcsim|; \
-			s,doc-install-(client|server) ,,g; \
-			s, install-dirs-(client|server),,g; \
-			s, etc-install-client,,g; \
-			s, generate-server-key,,g; \
-			s, examples-install,,g' \
-		 ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e '' ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's/example_silcd.conf \\\n//' ${WRKSRC}/doc/Makefile.in
-	@${PERL} -pi -e 's/--libtool-enable-shared//' \
-		${WRKSRC}/lib/silccrypt/Makefile.in
-	@${RM} -f ${WRKSRC}/tutorial/mybot/mybot.c.\~1.5.\~
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
@@ -106,5 +82,12 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .ifdef(WITHOUT_OPTIMIZED_ASM)
 CONFIGURE_ARGS+=	--disable-asm
 .endif
+
+post-patch:
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${PERL} -pi -e 's/ ?(-g)? -O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.post.mk>
