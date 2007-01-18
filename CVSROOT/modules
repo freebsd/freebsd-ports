@@ -3829,7 +3829,6 @@ graphthing	ports/math/graphthing
 graphviz	ports/graphics/graphviz
 grappa		ports/biology/grappa
 grass		ports/databases/grass
-grass-i18n	ports/databases/grass-i18n
 graveman	ports/sysutils/graveman
 grc		ports/misc/grc
 grdesktop	ports/net/grdesktop
