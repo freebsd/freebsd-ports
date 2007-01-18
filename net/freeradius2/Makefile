@@ -7,6 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
@@ -196,6 +197,10 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/Makefile.orig
+# rlm_sql_firebird in 1.1.4 makes configure fail with experimental modules enabled,
+# even though the port implicitly issues --without-rlm_sql_firebird. Delete the module
+# until it is fixed
+	@${RM} -r ${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_firebird
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's/-DNO_OPENSSL//' ${WRKSRC}/configure
 .endif
