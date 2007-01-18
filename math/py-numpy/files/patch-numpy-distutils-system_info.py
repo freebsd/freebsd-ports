@@ -5,7 +5,7 @@
          for d in lib_dirs:
              atlas = self.check_libs2(d,atlas_libs,[])
 +            if atlas is not None:
-+                atlas['libraries'].extend(['g2c', 'm', 'pthread'])
++                atlas['libraries'].extend(['gfortran', 'm', 'pthread'])
              lapack_atlas = self.check_libs2(d,['lapack_atlas'],[])
              if atlas is not None:
                  lib_dirs2 = [d] + self.combine_paths(d,['atlas*','ATLAS*'])
