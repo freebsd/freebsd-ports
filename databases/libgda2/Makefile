@@ -57,31 +57,31 @@ post-patch:
 WITH_MYSQL=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libldap.so.2)
+.if exists(${LOCALBASE}/lib/libldap.so)
 WITH_LDAP=yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libgds.so.1)
+.if exists(${LOCALBASE}/lib/libgds.so)
 WITH_FIREBIRD=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libtds.so.2)
+.if exists(${LOCALBASE}/lib/libtds.so)
 WITH_FREETDS=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libsybdb.so.3)
+.if exists(${LOCALBASE}/lib/libsybdb.so)
 WITH_SYBASE=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libmdbsql.so.0)
+.if exists(${LOCALBASE}/lib/libmdbsql.so)
 WITH_MDB=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libODBC.so.1)
+.if exists(${LOCALBASE}/lib/libODBC.so)
 WITH_ODBC=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libsqlite3.so.8)
+.if exists(${LOCALBASE}/lib/libsqlite3.so)
 WITH_SQLITE=	yes
 .endif
 
