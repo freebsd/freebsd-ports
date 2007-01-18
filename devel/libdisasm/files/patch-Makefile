@@ -1,0 +1,33 @@
+--- Makefile.old	Sat Apr 29 02:16:24 2006
++++ Makefile	Thu Jan 18 01:01:08 2007
+@@ -48,7 +48,7 @@
+ # ============================================================================
+ # TARGETS
+ 
+-all: $(LIBDIS) $(X86DIS) $(TESTDIS) swig-modules
++all: $(LIBDIS)
+ dummy: x86dis libdisasm test dist swig-modules install clean
+ 
+ # ------------------------------------------------------- LIBDIS
+@@ -86,15 +86,15 @@
+ 	cd swig && make clean
+ 
+ # ------------------------------------------------------- INSTALL
+-install: $(LIBDIS) $(X86DIS) 
++install: $(LIBDIS)
+ #swig-install
+ 	# install bindistrib files to INSTALL_LOC
+ 	cd libdisasm && make install
+-	cd x86dis && make install
+-	cd man && make install
+-	cd doc && make install
+-	cd perl && make install
+-	cd swig && make install
++	#cd x86dis && make install
++	#cd man && make install
++	#cd doc && make install
++	#cd perl && make install
++	#cd swig && make install
+ 
+ uninstall:
+ 	cd libdisasm && make uninstall

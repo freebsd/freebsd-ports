@@ -1,0 +1,8 @@
+The libdisasm library provides basic disassembly of Intel x86
+instructions from a binary stream. The intent is to provide an easy to
+use disassembler which can be called from any application; the
+disassembly can be produced in AT&T syntax and Intel syntax, as well as
+in an intermediate format which includes detailed instruction and
+operand type information.
+
+WWW: http://bastard.sourceforge.net/libdisasm.html
