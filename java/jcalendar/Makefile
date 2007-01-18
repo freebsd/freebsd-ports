@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	jcalendar
-PORTVERSION=	1.2.2
-CATEGORIES=	java
+PORTVERSION=	1.3.2
+CATEGORIES=	java misc
 MASTER_SITES=	http://www.toedter.com/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Java Date Chooser
 
 USE_ZIP=	yes
@@ -20,7 +20,11 @@ JAVA_VERSION=	1.4+
 USE_ANT=	yes
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
-		%%JAVAJARDIR%%/looks-${PORTVERSION}.jar
+		%%JAVAJARDIR%%/looks-2.0.1.jar
+
+###
+# has a potential conflict with devel/looks, both install a looksXXX.jar
+###
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -33,7 +37,7 @@ post-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/build/${PORTNAME}.jar ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKDIR}/lib/looks-${PORTVERSION}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKDIR}/lib/looks-2.0.1.jar ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKDIR}/doc && ${FIND} . \
