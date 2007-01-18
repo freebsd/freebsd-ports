@@ -12,9 +12,8 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mythtv.org/mc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	grog
+MAINTAINER=	grog@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
-ONLY_FOR_ARCHS= i386
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
@@ -26,6 +25,7 @@ RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
 
+ONLY_FOR_ARCHS= i386
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_MYSQL=	51
@@ -56,22 +56,22 @@ RUN_DEPENDS+=  mysqld:${PORTSDIR}/databases/${MYSQL_VER}-server
 .endif
 
 post-extract:
-		echo 'const char *myth_source_version = "FreeBSD Ports Collection' \
+		${ECHO_CMD} 'const char *myth_source_version = "FreeBSD Ports Collection' \
 			`pwd`, MythTV version ${PORTVERSION} "`date`\";" \
 			> ${WRKSRC}/programs/mythfrontend/version.cpp
-		cp -p ${WRKSRC}/programs/mythfrontend/version.cpp  ${WRKSRC}/programs/mythbackend
-		echo export QMAKESPEC=${QMAKESPEC}
+		${CP} -p ${WRKSRC}/programs/mythfrontend/version.cpp  ${WRKSRC}/programs/mythbackend
+		${ECHO_CMD} export QMAKESPEC=${QMAKESPEC}
 
 do-configure:
 		@cd ${WRKSRC} && QMAKESPEC=${QMAKESPEC} \
 			./configure --enable-memalign-hack --prefix=${PREFIX} \
 			--extra-cflags=-g --extra-cxxflags=-g
-		@echo MAKE_ENV: ${MAKE_ENV}
+		@${ECHO_CMD} MAKE_ENV: ${MAKE_ENV}
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
 			-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ mythtv.pro
 
 post-install:
-		${MKDIR} -p ${PREFIX}/share/mythtv/database
+		${MKDIR} ${PREFIX}/share/mythtv/database
 		${CP} ${WRKSRC}/database/mc.sql ${PREFIX}/share/mythtv/database
 		${CP} ${WRKSRC}/programs/mythtv-setup/mythtv-setup ${PREFIX}/bin/mythtv-setup
 		${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
