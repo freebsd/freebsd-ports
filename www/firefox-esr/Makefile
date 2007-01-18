@@ -54,6 +54,10 @@ GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{
 BROKEN=	does not build
 .endif
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
+IGNORE=	does not run, update to 6.2-RELEASE or newer
+.endif
+
 .if ${OSVERSION} >= 600000
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 .endif
