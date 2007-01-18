@@ -521,6 +521,7 @@ asfsm		ports/sysutils/asfsm
 ashe		ports/www/ashe
 asir2000	ports/math/asir2000
 asis		ports/devel/asis
+asis-gpl		ports/devel/asis-gpl
 ask		ports/mail/ask
 asl		ports/devel/asl
 aslookup	ports/net/aslookup
