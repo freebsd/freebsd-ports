@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.11
-PORTREVISION=	1
+PORTVERSION=	1.1.13
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
 		ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Class Library for Numbers
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
@@ -42,12 +41,12 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on sparc64 or ia64"
+BROKEN=		Does not compile on sparc64 or ia64
 .endif
 
 pre-build:
 .if exists(${LOCALBASE}/lib/libcln.so.3)
-BROKEN=		"Does not compile when older version is installed. Please pkg_delete old cln first"
+BROKEN=		Does not compile when older version is installed. Please pkg_delete old cln first
 .endif
 
 post-install:
