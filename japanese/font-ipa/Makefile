@@ -28,8 +28,8 @@ PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
 SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 
-LOCAL_FONTSDIR=	share/fonts/TrueType
-X_FONTSDIR=	lib/X11/fonts/TrueType
+LOCAL_FONTSDIR=	share/fonts
+X_FONTSDIR=	lib/X11/fonts
 DATADIR=	${LOCALBASE}/share/${PORTNAME}
 
 USE_X_PREFIX=	yes
@@ -47,20 +47,20 @@ do-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 	${CP} -R ${WRKSRC}/opfc-ModuleHP-1.1.1_withIPAFonts_and_Mplus/* \
 		${DATADIR}
-	${MKDIR} ${LOCALBASE}/${LOCAL_FONTSDIR}/
+	${MKDIR} ${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
 	${LN} -s -f \
 		${DATADIR}/fonts/ipa*.ttf \
-		${LOCALBASE}/${LOCAL_FONTSDIR}/
+		${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
 	${LN} -s -f \
 		${DATADIR}/fonts/M+*.ttf \
-		${LOCALBASE}/${LOCAL_FONTSDIR}/
-	${MKDIR} ${PREFIX}/${X_FONTSDIR}
+		${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
+	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TrueType
 	${LN} -s -f \
 		${DATADIR}/fonts/ipa*.ttf \
-		${PREFIX}/${X_FONTSDIR}/
+		${PREFIX}/${X_FONTSDIR}/TrueType/
 	${LN} -s -f \
 		${DATADIR}/fonts/M+*.ttf \
-		${PREFIX}/${X_FONTSDIR}/
+		${PREFIX}/${X_FONTSDIR}/TrueType/
 	${MKDIR} ${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${FILESDIR}/2.ipa-ttfonts.conf \
 		${PREFIX}/etc/fonts/conf.d
@@ -70,7 +70,7 @@ do-install:
 .endif
 
 post-install:
-	${X11BASE}/bin/fc-cache -f -v ${PREFIX}/${X_FONTSDIR}
+	${X11BASE}/bin/fc-cache -f -v ${PREFIX}/${X_FONTSDIR}/TrueType
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
