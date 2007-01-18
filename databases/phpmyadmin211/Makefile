@@ -17,7 +17,9 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
+.if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	mysql pcre session
+.endif
 
 SUB_LIST+=	"MYADMDIR=${MYADMDIR}" \
 		"PKGNAME=${PKGNAME}"
@@ -64,6 +66,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 .include "${OPTIONSFILE}"
 .endif
 
+.if !defined(WITHOUT_PHP_DEPENDS)
 # Options that default to on:
 .for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING
 .    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
@@ -77,6 +80,7 @@ USE_PHP+=	${opt:L}
 USE_PHP+=	${opt:L}
 .    endif
 .endfor
+.endif
 
 # MYADMUSR is only used WITH_SUPHP
 MYADMDIR?=	www/phpMyAdmin
