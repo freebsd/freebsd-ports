@@ -1,7 +1,8 @@
-include/libdis.h
 lib/libdisasm.a
 lib/libdisasm.so
+include/libdis.h
 %%DATADIR%%/data/ia32_opcode.dat
-%%DATADIR%%/doc
+%%PORTDOCS%%%%DOCSDIR%%/libdisasm.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
