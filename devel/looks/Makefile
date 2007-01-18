@@ -31,6 +31,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 JARFILE=	${PORTNAME}.jar
 
+###
+# potential conflict with java/jcalendar, both install looksXXX.jar
+###
+
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}	\
 		%%JAVAJARDIR%%/LICENSE.${PORTNAME}.txt
 DOCFILES=	README.html RELEASE-NOTES.txt
