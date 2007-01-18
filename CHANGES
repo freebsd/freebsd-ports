@@ -10,6 +10,13 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070118
+AUTHOR: maho@FreeBSD.org
+We'd like to ask all ports mainainers that uses Fortran77(f77 in base)
+to Fortran90/95 (gfortran42, lang/gcc42). Please refer
+http://people.freebsd.org/~maho/gfortran/gfortran.html
+for details.
+
 20061014:
 AUTHOR: gnome@FreeBSD.org
 The following changes have been introduced to the GNOME porting process
