@@ -7,7 +7,7 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	2002.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/${PORTNAME}
@@ -21,22 +21,23 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	ja-latex2html-[0-9]*
+
 USE_PERL5=		yes
 USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--with-perl=${PERL} \
 		--disable-gif \
 		--shlibdir=${DATADIR} \
-		--with-texpath=${PREFIX}/${TEXMFLOCAL}/tex/latex/html
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGMESSAGE_IN=	${PKGDIR}/pkg-message
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
+		--with-texpath=${PREFIX}/${TEXMFDIR}/tex/latex/html
+SUB_FILES=	pkg-message
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR}
 
 MAN1=	latex2html.1
 
-TEXMFLOCAL=	share/texmf-local
+TEXMFDIR=	share/texmf
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-DOC_FILES=	FAQ INSTALL LICENSE README
+PORTDOCS=	FAQ INSTALL LICENSE README
 
 .include <bsd.port.pre.mk>
 
@@ -48,18 +49,15 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
-post-patch:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE_IN} > ${PKGMESSAGE}
-
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/latex2html.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	@${MKTEXLSR}
+	@${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

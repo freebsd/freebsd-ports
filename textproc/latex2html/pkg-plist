@@ -1,12 +1,9 @@
+@comment $FreeBSD$
 bin/latex2html
 bin/pstoimg
 bin/texexpand
 lib/latex2html/cfgcache.pm
 lib/latex2html/l2hconf.pm
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/IndicTeX-HTML/README
 %%DATADIR%%/IndicTeX-HTML/bengali.perl
 %%DATADIR%%/IndicTeX-HTML/bengali.sty
@@ -306,22 +303,21 @@ lib/latex2html/l2hconf.pm
 %%DATADIR%%/versions/techexpl.pl
 %%DATADIR%%/versions/unicode.pl
 %%DATADIR%%/versions/utf8.pl
-%%TEXMFLOCAL%%/tex/latex/html/floatflt.ins
-%%TEXMFLOCAL%%/tex/latex/html/frames.sty
-%%TEXMFLOCAL%%/tex/latex/html/heqn.sty
-%%TEXMFLOCAL%%/tex/latex/html/hthtml.sty
-%%TEXMFLOCAL%%/tex/latex/html/html.sty
-%%TEXMFLOCAL%%/tex/latex/html/htmllist.sty
-%%TEXMFLOCAL%%/tex/latex/html/justify.sty
-%%TEXMFLOCAL%%/tex/latex/html/latin9.def
-%%TEXMFLOCAL%%/tex/latex/html/ldump.sty
-%%TEXMFLOCAL%%/tex/latex/html/techexplHTML.tex
-%%TEXMFLOCAL%%/tex/latex/html/url.sty
-%%TEXMFLOCAL%%/tex/latex/html/verbatimfiles.sty
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
+%%TEXMFDIR%%/tex/latex/html/floatflt.ins
+%%TEXMFDIR%%/tex/latex/html/frames.sty
+%%TEXMFDIR%%/tex/latex/html/heqn.sty
+%%TEXMFDIR%%/tex/latex/html/hthtml.sty
+%%TEXMFDIR%%/tex/latex/html/html.sty
+%%TEXMFDIR%%/tex/latex/html/htmllist.sty
+%%TEXMFDIR%%/tex/latex/html/justify.sty
+%%TEXMFDIR%%/tex/latex/html/latin9.def
+%%TEXMFDIR%%/tex/latex/html/ldump.sty
+%%TEXMFDIR%%/tex/latex/html/techexplHTML.tex
+%%TEXMFDIR%%/tex/latex/html/url.sty
+%%TEXMFDIR%%/tex/latex/html/verbatimfiles.sty
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
 @dirrm lib/latex2html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/IndicTeX-HTML
 @dirrm %%DATADIR%%/L2hos
 @dirrm %%DATADIR%%/XyMTeX-HTML
@@ -338,4 +334,4 @@ lib/latex2html/l2hconf.pm
 @dirrm %%DATADIR%%/texinputs
 @dirrm %%DATADIR%%/versions
 @dirrm %%DATADIR%%
-@dirrm %%TEXMFLOCAL%%/tex/latex/html
+@dirrm %%TEXMFDIR%%/tex/latex/html
