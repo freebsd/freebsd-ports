@@ -17,6 +17,8 @@ PLIST_FILES=	sbin/jailme
 
 USE_BZIP2=	yes
 
+BROKEN=		Unfetchable
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
