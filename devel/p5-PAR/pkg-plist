@@ -1,6 +1,4 @@
-%%SITE_PERL%%/auto/PAR/autosplit.ix
 %%SITE_PERL%%/PAR.pm
-%%SITE_PERL%%/PAR/AutoLoaderFix.pm
 %%SITE_PERL%%/PAR/Environment.pod
 %%SITE_PERL%%/PAR/FAQ.pod
 %%SITE_PERL%%/PAR/Heavy.pm
