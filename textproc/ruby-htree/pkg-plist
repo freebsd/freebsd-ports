@@ -26,7 +26,7 @@
 %%RUBY_SITELIBDIR%%/htree/text.rb
 %%RUBY_SITELIBDIR%%/htree/traverse.rb
 @dirrm %%RUBY_SITELIBDIR%%/htree
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/HTree.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/HTree.src/M000003.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/HTree.src/M000005.html
