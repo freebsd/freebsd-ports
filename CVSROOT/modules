@@ -6083,6 +6083,7 @@ libdbi		ports/databases/libdbi
 libdbi-drivers	ports/databases/libdbi-drivers
 libdfui		ports/devel/libdfui
 libdict		ports/devel/libdict
+libdisasm	ports/devel/libdisasm
 libdivxdecore	ports/multimedia/libdivxdecore
 libdivxdecore-devel	ports/multimedia/libdivxdecore-devel
 libdivxencore	ports/multimedia/libdivxencore
