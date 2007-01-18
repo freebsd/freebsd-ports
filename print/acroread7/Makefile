@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acroread7
-PORTVERSION?=	7.0.8
+PORTVERSION?=	7.0.9
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	print linux
@@ -38,15 +38,9 @@ SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/AdobeReader
 
-.if ${PORTVERSION} == 7.0.8
 VERSIONDIR=	${PORTVERSION}
 DISTNAME=	AdobeReader_${ADOBE_LANG:L}-${PORTVERSION}-1.i386
 POSTPROCESS=	> /dev/null
-.else
-VERSIONDIR=	7.0
-DISTNAME=	AdbeRdr701_linux_${ADOBE_LANG:L}
-IS_INTERACTIVE=	yes
-.endif
 LANGCODE=	chs:zh_CN cht:zh_TW dan:da_DK deu:de_DE enu:en_US \
 		esp:es_ES fra:fr_FR ita:it_IT jpn:ja_JP kor:ko_KR \
 		nld:nl_NL nor:nb_NO ptb:pt_BR suo:fi_FI sve:sv_SE
