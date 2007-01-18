@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	align
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Text column alignment filter
 
 USE_PERL5=	yes
