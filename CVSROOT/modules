@@ -13946,6 +13946,7 @@ spampd		ports/mail/spampd
 spamprobe	ports/mail/spamprobe
 spamstats	ports/mail/spamstats
 spandsp		ports/comms/spandsp
+spandsp-devel		ports/comms/spandsp-devel
 spar		ports/math/spar
 sparc-rtems-binutils	ports/devel/sparc-rtems-binutils
 sparc-rtems-g77	ports/devel/sparc-rtems-g77
