@@ -519,6 +519,7 @@
     SUBDIR += libdasm
     SUBDIR += libdfui
     SUBDIR += libdict
+    SUBDIR += libdisasm
     SUBDIR += libdlmalloc
     SUBDIR += libdnsres
     SUBDIR += libds
