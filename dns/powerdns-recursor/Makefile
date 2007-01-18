@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns-recursor
 PORTVERSION=	3.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -63,6 +63,10 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's;"/etc/powerdns/";"${PREFIX}/etc/pdns/";' \
 		${WRKSRC}/config.h
+
+pre-install:
+		@${ECHO} "==>  Creating custom user to run pdns_recursor..."
+		@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !exists(${PREFIX}/etc/pdns/recursor.conf)

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+PDNSUSER=${PDNSUSER:-pdns_recursor}
+PDNSUID=${PDNSUID:-120}
+PDNSGROUP=${PDNSGROUP:-pdns}
+PDNSGID=${PDNSGID:-120}
+
+if ! pw groupshow "$PDNSGROUP" 2>/dev/null 1>&2; then
+	if pw groupadd $PDNSGROUP -g $PDNSGID; then
+		echo "=> Added group \"$PDNSGROUP\"."
+	else
+		echo "=> Adding group \"$PDNSGROUP\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "$PDNSUSER" 2>/dev/null 1>&2; then
+	if pw useradd $PDNSUSER -u $PDNSUID -g $PDNSGROUP -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "pdns_recursor pseudo-user"; \
+	then
+		echo "=> Added user \"$PDNSUSER\"."
+	else
+		echo "=> Adding user \"$PDNSUSER\" failed..."
+		exit 1
+	fi
+fi
+exit 0
