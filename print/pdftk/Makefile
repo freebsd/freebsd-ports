@@ -20,7 +20,7 @@ COMMENT=	A simple tool for doing everyday things with PDF documents
 NOT_FOR_ARCHS=	amd64 ia64 sparc64
 
 # Get gcc version suffix without the dot in USE_GCC
-CSUFF=		${USE_GCC:S/.//:S/+//}
+CSUFF=		${_USE_GCC:S/.//}
 
 # needs gcj
 LIB_DEPENDS=	gcj.7:${PORTSDIR}/lang/gcc${CSUFF}
