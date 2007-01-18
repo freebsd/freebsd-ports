@@ -7,6 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -33,7 +34,7 @@ LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick \
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
 USE_AUTOTOOLS=  libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
