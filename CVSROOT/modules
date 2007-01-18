@@ -4569,6 +4569,7 @@ imaze		ports/games/imaze
 imb		ports/benchmarks/imb
 imc		ports/graphics/imc
 imcom		ports/net-im/imcom
+imerge		ports/misc/imerge
 imgseek		ports/graphics/imgseek
 imgsizer	ports/www/imgsizer
 imgvtopgm	ports/palm/imgvtopgm
