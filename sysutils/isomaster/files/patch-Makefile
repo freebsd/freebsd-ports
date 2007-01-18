@@ -1,11 +1,28 @@
---- Makefile.orig	Tue Dec 12 12:08:11 2006
-+++ Makefile	Tue Dec 12 12:08:20 2006
-@@ -24,7 +24,7 @@
- GTKLIBS = `pkg-config --libs gtk+-2.0`
- GTKFLAGS = `pkg-config --cflags gtk+-2.0`
- # the _FILE_OFFSET_BITS=64 is to enable stat() for large files
--GLOBALFLAGS = -D_FILE_OFFSET_BITS=64 -Wall
-+GLOBALFLAGS = ${CFLAGS}
- GLOBALDEPS = bk/bk.h Makefile
+--- Makefile.orig	Thu Jan 11 16:37:43 2007
++++ Makefile
+@@ -47,7 +47,7 @@
  
- isomaster: lib iniparser translations isomaster.o window.o browser.o fsbrowser.o isobrowser.o error.o about.o settings.o boot.o $(GLOBALDEPS)
+ OBJECTS = isomaster.o window.o browser.o fsbrowser.o isobrowser.o error.o about.o settings.o boot.o
+ 
+-all: lib iniparser translations isomaster man
++all: lib iniparser translations isomaster
+ 
+ isomaster: $(OBJECTS) bk/bk.a iniparser-2.15/libiniparser.a
+ 	$(CC) $(OBJECTS) bk/bk.a iniparser-2.15/libiniparser.a $(CFLAGS) $(CPPFLAGS) `pkg-config --libs gtk+-2.0`-o isomaster
+@@ -92,14 +92,14 @@
+ 	cd po && $(MAKE) install
+ endif
+ 	$(INSTALL) -d $(DESTDIR)$(MYMANPATH)
+-	$(INSTALL) -m 644 isomaster.1.gz $(DESTDIR)$(MYMANPATH)
++	$(INSTALL) -m 644 isomaster.1 $(DESTDIR)$(MYMANPATH)
+ 
+ uninstall: 
+ 	$(RM) $(DESTDIR)$(BINPATH)/isomaster
+ 	$(RM) $(DESTDIR)$(ICONPATH)/isomaster.png
+ 	$(RM) $(DESTDIR)$(ICONPATH)/folder-new-tango.png
+ 	$(RM) $(DESTDIR)$(ICONPATH)/add2-kearone.png
+-	$(RM) $(DESTDIR)$(ICONPATH)/extract-kearone.png
++	$(RM) $(DESTDIR)$(ICONPATH)/extract2-kearone.png
+ ifndef WITHOUT_NLS
+ 	cd po && $(MAKE) uninstall
+ endif
