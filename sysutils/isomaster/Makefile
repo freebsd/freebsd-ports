@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	isomaster
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
@@ -15,17 +14,24 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	GTK2 (bootable) CD ISO Image editor
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	gtk20 pkgconfig intlhack gnomehier
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICON=	yes
-ALL_TARGET=	${PORTNAME}
 
 MAKE_ENV=	PREFIX=${PREFIX}
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS:S/"//g} \
-		-D_FILE_OFFSET_BITS=64 \
-		`pkg-config --cflags gtk+-2.0`
+		`pkg-config --cflags gtk+-2.0` \
+		-DICONPATH=\\\"${DATADIR}/icons\\\"
+.if !defined(WITHOUT_NLS)
+CFLAGS+=	-DLOCALEDIR=\\\"${PREFIX}/share/locale\\\"
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+MAN1=		isomaster.1
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
@@ -33,10 +39,4 @@ post-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/isomaster.png ${PREFIX}/share/pixmaps/isomaster.png
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
