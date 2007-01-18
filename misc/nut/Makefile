@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	12.1
+PORTVERSION=	12.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ CSME
 PKGNAMEPREFIX=	health-
