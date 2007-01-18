@@ -155,6 +155,7 @@
     SUBDIR += histring
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
+    SUBDIR += imerge
     SUBDIR += inplace
     SUBDIR += instant-server
     SUBDIR += instant-tinderbox
