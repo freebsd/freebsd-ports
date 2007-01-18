@@ -1,5 +1,5 @@
---- irssi/src/core/network.c.orig	Sun Jan 25 10:11:14 2004
-+++ irssi/src/core/network.c	Sun Jan 25 10:11:29 2004
+--- apps/irssi/src/core/network.c.orig	Sun Jan 25 10:11:14 2004
++++ apps/irssi/src/core/network.c	Sun Jan 25 10:11:29 2004
 @@ -611,7 +611,7 @@
  int net_hosterror_notfound(int error)
  {

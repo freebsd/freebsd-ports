@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.0.3
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -44,8 +43,6 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PKGDEINSTALL=	${PKGINSTALL}
 
-MAN1=		silc.1
-
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
 .ifndef(WITH_PTHREADS)
@@ -75,14 +72,12 @@ post-patch:
 	@${PERL} -pi -e 's/-O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 # install neither documentation nor silc server, we have ports for those
-	@${PERL} -pi -e 's/-D_THREAD_SAFE//; \
-		s/^(SILC_DIST_SUBDIRS.+?)doc/\1/' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's/example_silcd.conf \\\n//' ${WRKSRC}/doc/Makefile.in
+	@${PERL} -pi -e 's/-D_THREAD_SAFE//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${PERL} -pi -e 's/docdir/DOCDIR/' ${WRKSRC}/doc/Makefile.in
 	@${PERL} -pi -e 's/^(install-data-am:) install-docDATA$$/\1/' \
-		${WRKSRC}/irssi/docs/Makefile.in
+		${WRKSRC}/apps/irssi/docs/Makefile.in
 	@${PERL} -pi -e 's/^(install-data-am:) install-moduleLTLIBRARIES$$/\1/' \
-		${WRKSRC}/irssi/src/perl/Makefile.in
+		${WRKSRC}/apps/irssi/src/perl/Makefile.in
 	@${PERL} -pi -e 's/--libtool-enable-shared//' \
 		${WRKSRC}/lib/silccrypt/Makefile.in
 
