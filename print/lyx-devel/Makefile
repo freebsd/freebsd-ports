@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
-		ftp://planetmirror.com/pub/lyx/stable/ \
+		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/ \
-		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/
+		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/ \
+		ftp://ftp.ntua.gr/pub/X11/LyX/stable/ \
+		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/ \
+		ftp://ftp.chg.ru/pub/X11/lyx/stable/ \
+		http://lyx.mirror.fr/stable/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
@@ -42,19 +46,19 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 
 post-patch:
-	# Removing mention of the bundled boost
-	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,detail/nullstream,utils/nullstream,' \
+	@# Removing mention of the bundled boost
+	@${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,detail/nullstream,utils/nullstream,' \
 	    ${WRKSRC}/src/pch.h ${WRKSRC}/src/support/pch.h \
 	    ${WRKSRC}/src/support/debugstream.h
-	${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
+	@${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
 	    ${WRKSRC}/src/support/filetools.C
-	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'	\
+	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'	\
 	    ${WRKSRC}/src/support/tests/test_*
 
 post-configure:
-	# Removing explicit linking with -lc
-	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
+	@# Removing explicit linking with -lc
+	@${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
 
 .include <bsd.port.pre.mk>
 
@@ -97,6 +101,10 @@ QT_PRESENT=	off
 CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
 .elif ${OSVERSION} >= 700007 && ${ARCH} == i386 && ${CXX} == c++
 BROKEN=		C++ compiler seg-faults, try using a different one and report to ${MAINTAINER}
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
 .endif
 
 .include <bsd.port.post.mk>
