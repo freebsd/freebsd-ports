@@ -7,6 +7,7 @@
 
 PORTNAME=	libdisasm
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bastard
@@ -40,10 +41,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libdisasm/libdisasm.so ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libdisasm/libdisasm.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libdisasm/libdis.h ${PREFIX}/include
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/data
+	${MKDIR} ${DATADIR}/data
 	${INSTALL_DATA} ${WRKSRC}/libdisasm/ia32_opcode.dat ${DATADIR}/data
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .endif
