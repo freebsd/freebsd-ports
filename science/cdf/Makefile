@@ -7,7 +7,7 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_LOCAL}	\
 		ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix-linux/	\
@@ -19,13 +19,17 @@ DIST_SUBDIR=	${PKGNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
-MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu	\
-		FORTRAN=yes F77=${F77}
+MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu      \
+		FORTRAN=yes FC_freebsd=${F77}
 USE_LDCONFIG=	yes
 
 VER=		${PORTVERSION:S/.//}
 
-F77?=		f77
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FFLAGS="${FFLAGS}"
 
 WRKSRC=		${WRKDIR}/cdf${VER}-dist
 SUB_FILES=	pkg-message
@@ -38,10 +42,6 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ${ARCH}
-.endif
-
-.if ${OSVERSION} >= 700000
-WITH_FORTRAN=	yes
 .endif
 
 pre-configure:
