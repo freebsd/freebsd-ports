@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2007.01.11
+PORTVERSION=	2007.01.17
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -90,6 +90,7 @@ liveMedia=		\
 		liveMedia/include/H263plusVideoRTPSink.hh \
 		liveMedia/include/H263plusVideoRTPSource.hh \
 		liveMedia/include/H263plusVideoStreamFramer.hh \
+		liveMedia/include/H264VideoFileSink.hh \
 		liveMedia/include/H264VideoRTPSink.hh \
 		liveMedia/include/H264VideoRTPSource.hh \
 		liveMedia/include/H264VideoStreamFramer.hh \
