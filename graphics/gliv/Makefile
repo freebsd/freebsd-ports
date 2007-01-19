@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://guichaz.free.fr/gliv/
+MASTER_SITES=	http://guichaz.free.fr/gliv/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
