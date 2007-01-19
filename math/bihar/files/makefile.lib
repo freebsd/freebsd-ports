@@ -2,9 +2,9 @@
 
 # FFTPACK sources
 LIBDIR= $(PREFIX)/lib
-NOPROFILE= no
+NO_PROFILE= no
 
-SHLIB_MAJOR= 1
+SHLIB_MAJOR= 2
 SHLIB_MINOR= 0
 LIB=bihar
 SRCS =	dbihar.f dbipl.f  dbiplr.f dbisld.f dbislf.f dbmult.f dbplrm.f	\
@@ -32,7 +32,7 @@ SRCS =	dbihar.f dbipl.f  dbiplr.f dbisld.f dbislf.f dbmult.f dbplrm.f	\
 CLEANFILES+= *.c
 
 test: test.o
-	f77 test.o -l$(LIB)
+	${F77} test.o -l$(LIB)
 	time a.out 
 
 package:	install pkg/+DESC pkg/+ONELINE pkg/+PLIST
