@@ -62,6 +62,7 @@ lib/gauche/%%VERSION%%/include/gauche/scmconst.h
 lib/gauche/%%VERSION%%/include/gauche/system.h
 lib/gauche/%%VERSION%%/include/gauche/uthread.h
 lib/gauche/%%VERSION%%/include/gauche/uvector.h
+lib/gauche/%%VERSION%%/include/gauche/vector.h
 lib/gauche/%%VERSION%%/include/gauche/vm.h
 lib/gauche/%%VERSION%%/include/gauche/vminsn.h
 lib/gauche/%%VERSION%%/include/gc.h
