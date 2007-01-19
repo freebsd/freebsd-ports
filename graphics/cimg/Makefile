@@ -7,6 +7,7 @@
 
 PORTNAME=	cimg
 DISTVERSION=	1-17
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,17 +38,23 @@ NOBUILD=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/libMagick.so.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 .if !defined(WITHOUT_LAPACK)
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -lg2c -latlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran -latlas
 LAPACK_DEF=	-Dcimg_lapack
 .endif
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
 #post-extract:
+
+post-patch:
+	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 #	@${CP} ${WRKSRC}/CImg.h ${WRKSRC}/CImg.h.dos
 #	@${TR} -d '\r' < ${WRKSRC}/CImg.h.dos > ${WRKSRC}/CImg.h
-
 .if !defined(NOPORTDOCS)
-post-patch:
 	@${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
 		${XARGS} ${REINPLACE_CMD} -e 's|img/|${EXAMPLESDIR}/img/|g'
 .endif
