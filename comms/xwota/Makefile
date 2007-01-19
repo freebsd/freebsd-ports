@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xwota
 # Date created:				September 13 2006
-# Whom:					Diane Bruce <db@db.net
+# Whom:					Diane Bruce <db@db.net>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://people.fabaris.it/iz0ete/xwota/
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	X version of who is on the air
 
 USE_GNOME=	gtk20

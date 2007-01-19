@@ -11,7 +11,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hfterm
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio soundcard fsk, pactor 1, amtor, gtor, mt63
 
 RUN_DEPENDS=	whiptail:${PORTSDIR}/devel/newt

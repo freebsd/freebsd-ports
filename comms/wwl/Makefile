@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	comms astro
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/ham/}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Calculates distance (qrb) used in Amateur Radio
 
 PORTDOCS=	README INSTALL

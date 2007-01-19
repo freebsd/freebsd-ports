@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cqinet
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Echolink client for UNIX
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \

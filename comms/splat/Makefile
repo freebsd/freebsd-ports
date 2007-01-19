@@ -12,7 +12,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/ham
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Used in calculating path losses, useful to ham radio and others
 
 PORTDOCS=	README README2 CHANGES

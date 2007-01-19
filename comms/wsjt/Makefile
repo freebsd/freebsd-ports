@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	wsjt
 DISTNAME=	wsjt-5.9.6.r309
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal ham radio communication pakage
 
 BUILD_DEPENDS=	gfortran41:${PORTSDIR}/lang/gfortran \

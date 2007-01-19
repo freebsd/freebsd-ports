@@ -10,7 +10,7 @@ CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/
 DISTNAME=	fec-${PORTVERSION}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
 
 MAKEFILE=	makefile

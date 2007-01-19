@@ -11,7 +11,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/snapshots/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

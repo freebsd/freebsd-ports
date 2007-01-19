@@ -13,7 +13,7 @@ DISTNAME=	nasawash
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio keplerian file cleanup program
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}

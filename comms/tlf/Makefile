@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.wwns.com/tlf/ \
 		http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
 USE_AUTOTOOLS=	autoconf:259 libtool:15 aclocal:19 automake:19
