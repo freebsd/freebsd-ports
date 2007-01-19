@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	6.5.0
+PORTVERSION=	6.5.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
@@ -80,13 +80,6 @@ RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 IGNORE=		perl 5.8.3 or newer required. Install lang/perl5.8 and try again
 .endif
 
-.if ${OSVERSION} < 502110
-RUN_DEPENDS+=	{LOCALBASE}/bin/pgrep:${PORTSDIR}/sysutils/pkill
-PGREPBASE=	${LOCALBASE}
-.else
-PGREPBASE=	/usr
-.endif
-
 USE_RC_SUBR=	slimserver.sh
 TMP_SLIMDIR=	${WRKDIR}/slimserver
 TMP_DOCSDIR=	${WRKDIR}/doc
@@ -103,8 +96,9 @@ PLIST_SUB=	SLIMDIR=${SLIMDIR}
 PLIST_FILES=	bin/softsqueeze
 
 SUB_FILES=	softsqueeze.sh pkg-install
-SUB_LIST=	PGREPBASE=${PGREPBASE} \
+SUB_LIST=	PERL=${PERL} \
 		SLIMDIR=${SLIMDIR} \
+		SLIMDBDIR=${SLIMDBDIR} \
 		CONFFILES="${CONFFILES}"
 
 pre-fetch:
@@ -115,6 +109,7 @@ pre-fetch:
 .endif
 
 SLIMDIR?=	slimserver
+SLIMDBDIR=	/var/db/slimserver
 
 post-fetch:
 .for _PKG in ${SLIMCPANPKGS}
@@ -128,7 +123,12 @@ post-patch:
 	    -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
 	    -e 's|%%CPANWRKDIR%%|${CPANWRKDIR}|' \
-	    -e 's|%%DISTDIR%%|${_DISTDIR}|' ${WRKSRC}/Bin/build-perl-modules.pl
+	    -e 's|%%DISTDIR%%|${_DISTDIR}|' \
+		${WRKSRC}/Bin/build-perl-modules.pl
+	@${REINPLACE_CMD} \
+	    -e 's|/usr/bin/perl|${PERL}|' \
+		${WRKSRC}/scanner.pl ${WRKSRC}/slimserver.pl
+	@${RM} ${WRKSRC}/scanner.pl.bak ${WRKSRC}/slimserver.pl.bak
 
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
@@ -170,17 +170,17 @@ post-build:
 	    ${SED} -e 's|${TMP_DOCSDIR}|@dirrm %%DOCSDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
 .endif
-	@${ECHO} '@unexec rm -rf /var/db/slimserver/cache > /dev/null 2>&1 || true' >> ${PLIST}
-	@${ECHO} '@dirrmtry /var/db/slimserver/playlists' >> ${PLIST}
-	@${ECHO} '@dirrmtry /var/db/slimserver' >> ${PLIST}
-	@${ECHO} '@unexec test -d /var/db/slimserver && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/slimserver and its contents manually.")' >> ${PLIST}
+	@${ECHO} '@unexec rm -rf ${SLIMDBDIR}/cache > /dev/null 2>&1 || true' >> ${PLIST}
+	@${ECHO} '@dirrmtry ${SLIMDBDIR}/playlists' >> ${PLIST}
+	@${ECHO} '@dirrmtry ${SLIMDBDIR}' >> ${PLIST}
+	@${ECHO} '@unexec test -d ${SLIMDBDIR} && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove ${SLIMDBDIR} and its contents manually.")' >> ${PLIST}
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
-	@${LN} -s /var/db/slimserver/cache ${PREFIX}/${SLIMDIR}/Cache
+	@${LN} -s ${SLIMDBDIR}/cache ${PREFIX}/${SLIMDIR}/Cache
 	@cd ${TMP_SLIMDIR} && \
 	    ${FIND} . | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}

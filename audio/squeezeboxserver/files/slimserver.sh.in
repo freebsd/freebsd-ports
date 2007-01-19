@@ -17,21 +17,20 @@
 
 name=slimserver
 start_precmd="slimserver_start_precmd"
-stop_cmd="slimserver_stop"
+stop_postcmd="slimserver_poststop"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
+command_interpreter=%%PERL%%
 pidfile=/var/run/${name}.pid
 logfile=/var/log/slimserver.log
-statedir=/var/db/slimserver
+statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 playlistdir=${statedir}/playlists
 conffile=${statedir}/slimserver.conf
 u=slimserv
 g=slimserv
 command_args="--daemon --prefsfile=${conffile} --logfile=${logfile} --user=${u} --group=${g} --pidfile=${pidfile}"
-
-PGREP=%%PGREPBASE%%/bin/pgrep
 
 slimserver_start_precmd()
 {
@@ -57,25 +56,18 @@ slimserver_start_precmd()
 	fi
 }
 
-slimserver_stop()
+slimserver_poststop()
 {
-	if [ ! -f ${pidfile} ]; then
-		exit
-	fi
-	echo 'Stopping SlimServer.'
-	rc_pid=`cat ${pidfile}`
-	rc_pid=`${PGREP} -u ${u} | grep ${rc_pid}`
-	if [ -n "${rc_pid}" ]; then
-		# Should be mDNSResponderPosix, but the port truncates
-		rc_pids="${rc_pid} `${PGREP} -u ${u} mDNSResponderPos`"
-
-		kill $sig_stop $rc_pids
-		wait_for_pids $rc_pids
-	else
-		echo "${name} not running? (check ${pidfile})"
-	fi
-
-	rm -f ${pidfile}
+        # Slimserver kills mDNSResponderPosix, but then manages to start
+        # another one while dying so kill it off.
+        echo "Stopping SlimServer's mDNSResponderPosix."
+        mdns_pid=$(check_pidfile ${cachedir}/mDNS.pid %%LOCALBASE%%/bin/mDNSResponderPosix)
+        if [ -n "${mdns_pid}" ]; then
+                # mDNSResponderPosix doens't die without a kill
+                kill -9 $mdns_pid
+                wait_for_pids $mdns_pid
+		rm -f ${cachedir}/mDNS.pid
+        fi
 }
 
 load_rc_config ${name}

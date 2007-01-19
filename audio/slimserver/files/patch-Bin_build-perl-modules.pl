@@ -12,7 +12,7 @@ $FreeBSD$
 -	'DBD::mysql'         => 'DBD-mysql-3.0002.tar.gz',
 -	'Digest::SHA1'       => 'Digest-SHA1-2.11.tar.gz',
 -	'HTML::Parser'       => 'HTML-Parser-3.48.tar.gz',
--	'Template'           => 'Template-Toolkit-2.14.tar.gz',
+-	'Template'           => 'Template-Toolkit-2.15.tar.gz',
 -	'Time::HiRes'        => 'Time-HiRes-1.86.tar.gz',
 -	'XML::Parser::Expat' => 'XML-Parser-2.34.tar.gz',
 +#	'Compress::Zlib'     => 'Compress-Zlib-1.41.tar.gz',
@@ -20,7 +20,7 @@ $FreeBSD$
 +#	'DBD::mysql'         => 'DBD-mysql-3.0002.tar.gz',
 +#	'Digest::SHA1'       => 'Digest-SHA1-2.11.tar.gz',
 +#	'HTML::Parser'       => 'HTML-Parser-3.48.tar.gz',
-+#	'Template'           => 'Template-Toolkit-2.14.tar.gz',
++#	'Template'           => 'Template-Toolkit-2.15.tar.gz',
 +#	'Time::HiRes'        => 'Time-HiRes-1.86.tar.gz',
 +#	'XML::Parser::Expat' => 'XML-Parser-2.34.tar.gz',
  	'YAML::Syck'         => 'YAML-Syck-0.64.tar.gz',
@@ -116,7 +116,7 @@ $FreeBSD$
  	# Only download the packages that were passsed.
  	my @packages = ();
  
-@@ -189,30 +153,9 @@
+@@ -189,30 +153,8 @@
  
  		chdir($pwd) or die "Couldn't change to $pwd : $!";
  
@@ -129,7 +129,7 @@ $FreeBSD$
 -
 -			LWP::Simple::getstore("$SOURCE/$package?view=auto", $package);
 -
--		} elsif ($downloadUsing eq 'curl') {
+-		} elsif ($downloadUsing =~ /curl$/) {
 -
 -			`$downloadUsing --silent -o $package $SOURCE/$package?view=auto`;
 -
@@ -141,10 +141,10 @@ $FreeBSD$
 -		unless (-r $package) {
 -			print "Something looks wrong - I couldn't read $pwd/$package, which I just downloaded.\n";
 -		}
-+		print "\nExtracting $package in: $pwd\n";
- 
+-
 -		print "Uncompressing..\n";
 -		`gzip -d < $package | tar xvf -`;
++		print "\nExtracting $package in: $pwd\n";
 +		`tar xfvz %%DISTDIR%%/$package`;
  
  		unlink $package;
