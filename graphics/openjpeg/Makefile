@@ -7,6 +7,7 @@
 
 PORTNAME=	openjpeg
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openjpeg.org/
 DISTNAME=	openjpeg_v1_1
@@ -19,5 +20,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/OpenJPEG/
 PLIST_FILES=	lib/libopenjpeg.a lib/libopenjpeg-1.0.0.so lib/libopenjpeg.so.1
+CFLAGS+=	"-fPIC"
 
 .include <bsd.port.mk>
