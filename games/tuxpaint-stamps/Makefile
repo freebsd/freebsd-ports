@@ -18,8 +18,6 @@ COMMENT=	TuxPaint Stamps
 
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
-BROKEN=		Incomplete pkg-plist
-
 NO_BUILD=	yes
 
 do-install:

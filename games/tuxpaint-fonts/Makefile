@@ -18,8 +18,6 @@ COMMENT=	TuxPaint Localized Fonts
 
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
-BROKEN=		Incomplete pkg-plist
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
