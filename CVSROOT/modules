@@ -420,7 +420,6 @@ apache20	ports/www/apache20
 apache21	ports/www/apache21
 apache22	ports/www/apache22
 apachetop	ports/sysutils/apachetop
-apan		ports/net-mgmt/apan
 apc		ports/math/apc
 apcpwr		ports/sysutils/apcpwr
 apcupsd		ports/sysutils/apcupsd
