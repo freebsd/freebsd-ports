@@ -99,7 +99,6 @@
     SUBDIR += tnftpd
     SUBDIR += twoftpd
     SUBDIR += urlgfe
-    SUBDIR += vcheck
     SUBDIR += vsftpd
     SUBDIR += waiho
     SUBDIR += weex
