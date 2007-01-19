@@ -84,7 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -360,7 +360,7 @@ CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--enable-lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
