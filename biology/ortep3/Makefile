@@ -28,7 +28,7 @@ F77=		gfortran42
 
 WRKSRC=		${WRKDIR}/ortep/src
 
-MAKE_ARGS=	FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
+MAKE_ARGS=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
 
 .if defined(WITH_PGPLOT)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa
