@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	carpetsmoker@gmail.com
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Parse a configuration file in the same syntax as the Apache web server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/auto/Class/MethodMaker/MethodMaker.so:${PORTSDIR}/devel/p5-Class-MethodMaker \
