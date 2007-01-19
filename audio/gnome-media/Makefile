@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-media
 PORTVERSION=	2.16.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-media/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
 		gail nautiluscdburner
-USE_GSTREAMER=	esound gconf good
+USE_GSTREAMER=	cdparanoia esound gconf good
 CONFIGURE_ARGS=	--enable-ipv6
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
