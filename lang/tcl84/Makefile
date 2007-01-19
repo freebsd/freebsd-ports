@@ -1,4 +1,4 @@
-# New ports collection makefile for:	tcl8.3
+# New ports collection makefile for:	tcl84
 # Date created:		19 August 1997
 # Whom:			jkh
 #
@@ -9,9 +9,8 @@ PORTNAME=	tcl
 PORTVERSION=	8.4.14
 PORTEPOCH=	1
 CATEGORIES=	lang tcl84
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tcl
-PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
+MASTER_SITES=	SF
+PKGNAMESUFFIX?=	${THREADS_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +18,7 @@ COMMENT=	Tool Command Language
 
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
-ALL_TARGET=	all test
+ALL_TARGET=	all	# test
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --includedir=${PREFIX}/include/tcl${TCL_VER}
