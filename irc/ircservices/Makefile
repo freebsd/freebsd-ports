@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	ircservices
-PORTVERSION=	5.0.${PATCHLEVEL}
+PORTVERSION=	5.0.59
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ircservices.za.net/download/ \
 	ftp://ftp.esper.net/ircservices/ \
@@ -14,14 +15,6 @@ MASTER_SITES=	http://www.ircservices.za.net/download/ \
 	http://banana.irc.gr/ircservices/ \
 	http://ircservices.swissirc.ch/ \
 	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/
-
-DISTNAME=	${PORTNAME}-5.0.0
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHLEVEL=	59
-PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
-			${PATCHLEVEL} 1 ${PATCHLEVEL}
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	A system of IRC services for IRC networks
@@ -36,11 +29,26 @@ DIST_SUBDIR=	${PORTNAME}
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
+IRCSERVICES_LANG?=	EN_US
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="sparc64"
-CFLAGS:=	${CFLAGS:C/-O[0-3]//g}
+CONFIGURE_ARGS+=	-ignore-cache
+CFLAGS:=	${CFLAGS:N-O*:N-pipe}
 .endif
+
+pre-patch:
+	@${ECHO_MSG} "You can set IRCSERVICES_LANG to the following language"
+	@${ECHO_MSG} "codes to select language the services will use when"
+	@${ECHO_MSG} "communicating with users:"
+	@${ECHO_MSG} "(Be aware of the capitalization!)"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "DE EN_US ES FR HU IT JA_EUC JA_SJIS NL PT RU TR"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|LANG_EN_US|LANG_${IRCSERVICES_LANG}|' \
+		${WRKSRC}/defs.h
 
 post-install:
 .if !defined(NOPORTDOCS)
