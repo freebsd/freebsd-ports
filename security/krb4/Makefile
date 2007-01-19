@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	krb4
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/krb/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	KTH Kerberos 4
 
 CONFLICTS=	krb5-[0-9]* heimdal-[0-9]* srp-[0-9]*
@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 PREFIX?=	${LOCALBASE}/krb4
 NO_MTREE=	yes	# Otherwise we end up with dozens of extra directories in ${PREFIX}
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=\
 	--enable-shared		\
@@ -36,10 +35,9 @@ CONFIGURE_ENV+=	\
 
 INFO=	kth-krb
 
+SUB_FILES+=	pkg-message
+
 post-install:
-	${SED} -e "s~%%PREFIX%%~${PREFIX}~g" \
-	    < ${.CURDIR}/pkg-message > ${PKGMESSAGE}
-	@${ECHO_CMD} "*** ATTENTION ***"
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} "or simply \`make setuids'."
 
