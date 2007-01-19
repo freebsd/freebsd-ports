@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	eterm-bg
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-bg-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Image files for background of Eterm
 
 NO_WRKSUBDIR=	yes
