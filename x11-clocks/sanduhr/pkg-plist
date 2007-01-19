@@ -1,50 +1,36 @@
 bin/sanduhr
+libdata/bonobo/servers/sanduhr.server
+share/locale/de/LC_MESSAGES/sanduhr.mo
 share/gnome/apps/Utilities/sanduhr.desktop
-share/gnome/help/sanduhr/C/alarmref.html
-share/gnome/help/sanduhr/C/alarmref.sgml
-share/gnome/help/sanduhr/C/authors.html
-share/gnome/help/sanduhr/C/corba.html
-share/gnome/help/sanduhr/C/factoryref.html
-share/gnome/help/sanduhr/C/factoryref.sgml
-share/gnome/help/sanduhr/C/idl.html
-share/gnome/help/sanduhr/C/index.html
-share/gnome/help/sanduhr/C/license.html
-share/gnome/help/sanduhr/C/prefs.html
-share/gnome/help/sanduhr/C/sanduhr.sgml
-share/gnome/help/sanduhr/C/timerref.html
-share/gnome/help/sanduhr/C/timerref.sgml
+share/gnome/help/sanduhr/C/sanduhr.xml
+share/gnome/help/sanduhr/C/factoryref.xml
+share/gnome/help/sanduhr/C/alarmref.xml
+share/gnome/help/sanduhr/C/timerref.xml
 share/gnome/help/sanduhr/C/topic.dat
-share/gnome/help/sanduhr/C/usage.html
-share/gnome/help/sanduhr/de/alarmref.html
-share/gnome/help/sanduhr/de/alarmref.sgml
-share/gnome/help/sanduhr/de/authors.html
-share/gnome/help/sanduhr/de/corba.html
-share/gnome/help/sanduhr/de/factoryref.html
-share/gnome/help/sanduhr/de/factoryref.sgml
-share/gnome/help/sanduhr/de/idl.html
-share/gnome/help/sanduhr/de/index.html
-share/gnome/help/sanduhr/de/license.html
-share/gnome/help/sanduhr/de/prefs.html
-share/gnome/help/sanduhr/de/sanduhr.sgml
-share/gnome/help/sanduhr/de/timerref.html
-share/gnome/help/sanduhr/de/timerref.sgml
-share/gnome/help/sanduhr/de/topic.dat
-share/gnome/help/sanduhr/de/usage.html
+share/gnome/help/sanduhr/de/sanduhr.xml
+share/gnome/help/sanduhr/de/factoryref.xml
+share/gnome/help/sanduhr/de/alarmref.xml
+share/gnome/help/sanduhr/de/timerref.xml
 share/gnome/idl/sanduhr.idl
-share/gnome/oaf/sanduhr.oaf
 share/gnome/omf/sanduhr/sanduhr-C.omf
 share/gnome/omf/sanduhr/sanduhr-de.omf
+share/gnome/pixmaps/sanduhr/default/back.png
+share/gnome/pixmaps/sanduhr/default/front.png
+share/gnome/pixmaps/sanduhr/default/mask.png
+share/gnome/pixmaps/sanduhr/steel/back.png
+share/gnome/pixmaps/sanduhr/steel/front.png
+share/gnome/pixmaps/sanduhr/steel/mask.png
 share/gnome/pixmaps/sanduhr/about.png
-share/gnome/pixmaps/sanduhr/back.png
-share/gnome/pixmaps/sanduhr/front.png
-share/gnome/pixmaps/sanduhr/icon.xpm
 share/gnome/pixmaps/sanduhr/logo.png
-share/gnome/pixmaps/sanduhr/mask.png
+share/gnome/pixmaps/sanduhr/icon.xpm
 share/gnome/sounds/sanduhr/bell.wav
-share/locale/de/LC_MESSAGES/sanduhr.mo
-@dirrm share/gnome/sounds/sanduhr
-@dirrm share/gnome/pixmaps/sanduhr
-@dirrm share/gnome/omf/sanduhr
-@dirrm share/gnome/help/sanduhr/de
-@dirrm share/gnome/help/sanduhr/C
-@dirrm share/gnome/help/sanduhr
+@dirrmtry share/gnome/pixmaps/sanduhr/steel
+@dirrmtry share/gnome/pixmaps/sanduhr/default
+@dirrmtry share/gnome/pixmaps/sanduhr
+@dirrmtry share/gnome/help/sanduhr/de/figures
+@dirrmtry share/gnome/help/sanduhr/de
+@dirrmtry share/gnome/help/sanduhr/C/figures
+@dirrmtry share/gnome/help/sanduhr/C
+@dirrmtry share/gnome/help/sanduhr
+@dirrmtry share/gnome/sounds/sanduhr
+@dirrmtry share/gnome/omf/sanduhr
