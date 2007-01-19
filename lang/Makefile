@@ -68,6 +68,7 @@
     SUBDIR += fpc-utils
     SUBDIR += freetxl
     SUBDIR += gambas
+    SUBDIR += gambc
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc-objc
