@@ -13,7 +13,6 @@
     SUBDIR += angst
     SUBDIR += annextools
     SUBDIR += ap-utils
-    SUBDIR += apan
     SUBDIR += argus
     SUBDIR += argus-clients
     SUBDIR += argus-monitor
