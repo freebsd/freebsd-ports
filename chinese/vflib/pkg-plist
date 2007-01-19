@@ -7,7 +7,6 @@
 %%DATADIR%%/%%VFLIB_VERSION%%/man.dvi
 %%DATADIR%%/%%VFLIB_VERSION%%/man.ps
 %%DATADIR%%/%%VFLIB_VERSION%%/vfontcap
-%%DATADIR%%/%%VFLIB_VERSION%%/vfontcap.ORG
 %%DATADIR%%/%%VFLIB_VERSION%%/vfontcap.bdf
 %%DATADIR%%/%%VFLIB_VERSION%%/vfontcap.comp2
 %%DATADIR%%/%%VFLIB_VERSION%%/vfontcap.mgp
