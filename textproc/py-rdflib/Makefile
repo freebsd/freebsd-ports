@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	rdflib
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 CATEGORIES=	textproc python
-MASTER_SITES=	http://rdflib.net/2006/02/27/
+MASTER_SITES=	http://rdflib.net/2006/10/15/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	A Python library for RDF manipulation
 
 USE_PYTHON=	2.2+
