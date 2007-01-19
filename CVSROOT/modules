@@ -3131,6 +3131,7 @@ galeon		ports/www/galeon
 gallery		ports/www/gallery
 gallery2	ports/www/gallery2
 gambas		ports/lang/gambas
+gambc		ports/lang/gambc
 gambit		ports/math/gambit
 games_crimson	ports/games/crimson
 games_ttt	ports/games/ttt
