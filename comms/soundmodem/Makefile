@@ -11,7 +11,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 		http://chronos.org.uk/distfiles/
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio sound modem
 
 LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile

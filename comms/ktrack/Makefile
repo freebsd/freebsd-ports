@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ktrack
 DISTNAME=	${PORTNAME}-0.3.0-rc1
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
 RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet:install

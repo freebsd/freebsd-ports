@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	.src
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/LinuxApps/
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
 LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads \

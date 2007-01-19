@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp-mirror.internap.com/pub/FreeBSD/distfiles/nec2c/ \
 		http://ftp.cerias.purdue.edu/pub/os/FreeBSD/distfiles/nec2c/
 DISTNAME=	nec2c
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
 
 #

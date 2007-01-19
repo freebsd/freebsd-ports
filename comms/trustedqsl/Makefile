@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	trustedqsl
 DISTFILES=	tqsllib-2.0.tar.gz TrustedQSL-1.11.tar.gz
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

@@ -15,7 +15,7 @@ DISTNAME=	lir02-20
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio DSP utility (SDR)
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

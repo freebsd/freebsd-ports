@@ -10,7 +10,7 @@ PORTVERSION=	1.29
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Spectrum analyser
 
 USE_BZIP2=	yes

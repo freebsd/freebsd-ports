@@ -12,7 +12,7 @@ MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio cw (morse code) keyer daemon
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	2.2.3
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	ftp://ftp.amsat.org/amsat/software/Linux/
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Satellite tracking program for amateur radio satellites
 
 INSTALL_TARGET=	install install.man

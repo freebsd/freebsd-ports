@@ -9,7 +9,7 @@ PORTVERSION=	1.19
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.g8wrb.org/yagi/
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Used to calculate yagi-uda antenna patterns useful to ham radio
 
 GNU_CONFIGURE=	yes
