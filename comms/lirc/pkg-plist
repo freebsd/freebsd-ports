@@ -5,14 +5,18 @@ bin/irrecord
 bin/irsend
 bin/irw
 bin/irxevent
+bin/lircrcd
 bin/mode2
 %%SMODE2%%bin/smode2
 bin/xmode2
-sbin/lircd
-sbin/lircmd
+include/lirc/lirc_client.h
 lib/liblirc_client.a
 lib/liblirc_client.la
 lib/liblirc_client.so
-lib/liblirc_client.so.0
-include/lirc/lirc_client.h
+lib/liblirc_client.so.1
+sbin/lircd
+sbin/lircmd
 @dirrm include/lirc
+@exec mkdir -p /var/run/lirc
+@unexec rm -f /var/run/lirc.pid 2> /dev/null || true
+@unexec rm -rf /var/run/lircd 2> /dev/null || true

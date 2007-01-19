@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lirc
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lirc
@@ -14,26 +14,36 @@ MASTER_SITE_SUBDIR=	lirc
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Linux Infared Remote Control
 
+USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--disable-manage-devices --with-devdir=/var/lirc
+CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc
+
+OPTIONS=	IRMAN "Build with libirman support" On
+
+USE_RC_SUBR=	lircd.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if exists(${LOCALBASE}/lib/libvga.so.1)
 LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 PLIST_SUB+=	SMODE2=
 .else
 PLIST_SUB+=	SMODE2="@comment "
 .endif
 
+.if defined(WITH_IRMAN)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
 CONFIGURE_ARGS+=	--with-driver=irman
+.else
+CONFIGURE_ARGS+=	--with-driver=any
+.endif
+
 .if ${OSVERSION} >= 500041
 # These are already included in the getopt_long case on < 50041
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -42,10 +52,11 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 
 MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
-		irxevent.1 mode2.1 smode2.1 xmode2.1
+		irxevent.1 lircrcd.1 mode2.1 smode2.1 xmode2.1
 MAN8=		lircd.8 lircmd.8
 
 post-install:
+	@${MKDIR} /var/run/lirc
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
