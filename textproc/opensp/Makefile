@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	OpenSP
-PORTVERSION=	1.5
-PORTREVISION=	7
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openjade
@@ -16,28 +15,25 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	This package is a collection of SGML/XML tools called OpenSP
 
 USE_GETTEXT=	yes
-USE_GMAKE=	YES
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
-		--datadir=${PREFIX}/share/sgml/openjade
+		--datadir=${PREFIX}/share/sgml/openjade \
+		--disable-doc-build
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-INSTALLS_SHLIB=	yes
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
 
-MAN1=		onsgmls.1 osgmlnorm.1 ospam.1 ospent.1 osx.1
-DOC_FILES=	archform.htm autoconf.htm build.htm catalog.htm charset.htm \
-		features.htm generic.htm ideas.htm index.htm new.htm \
-		nsgmls.htm sgmldecl.htm sgmlnorm.htm sgmlsout.htm spam.htm \
-		spcat.htm spent.htm sx.htm sysdecl.htm sysid.htm xml.htm \
-		xmlwarn.htm
-DOC_FILES2=	NEWS AUTHORS README \
-		releasenotes.html releasenotes.pdf releasenotes.ps
-
-# Perhaps this better should be somewhere under ${PREFIX}/share/doc ?
-DOCSDIR2=	${PREFIX}/share/sgml/openjade/doc/OpenSP
+#MAN1=		onsgmls.1 osgmlnorm.1 ospam.1 ospent.1 osx.1
 
 .include <bsd.port.pre.mk>
 
@@ -47,24 +43,17 @@ DOCSDIR2=	${PREFIX}/share/sgml/openjade/doc/OpenSP
 # other than -O{0,1,}. Idea taken from palm/prc-tools-gcc.
 CPPFLAGS:=	-O ${CFLAGS:N-O*:N-m*}
 
-pre-install:
-	@${REINPLACE_CMD} -e \
-		's|install-man install-pkgdocDATA|install-man|g' \
-		${WRKSRC}/Makefile
-
 post-install:
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
-.endfor
-
-	@${MKDIR} ${DOCSDIR2}
-.for doc in ${DOC_FILES2}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR2}
-.endfor
-
+	@${CAT} ${PLIST} | \
+		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | \
+		${AWK} '/^@comment INSTALL_DATA:/ \
+			{printf "if ! ${GREP} -q \"%s\" ${PLIST}; then ${ECHO_CMD} \"%s\" >> %s; fi;  %s %s/%s %s/%s\n", \
+			$$4, $$4, "${TMPPLIST}", "${INSTALL_DATA}", \
+			"${WRKSRC}", $$3, "${PREFIX}", $$4}' | \
+		${SH} && \
+		${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>

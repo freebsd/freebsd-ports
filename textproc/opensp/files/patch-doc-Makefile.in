@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Fri Dec 23 23:15:58 2005
++++ doc/Makefile.in	Fri Aug 25 03:38:13 2006
+@@ -214,7 +214,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-docdir = $(datadir)/doc
++docdir = $(prefix)/share/doc
+ pkgdocdir = $(docdir)/@PACKAGE@
+ pkgdochtmldir = $(pkgdocdir)/doc
+ MAINTAINERCLEANFILES = Makefile.in

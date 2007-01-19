@@ -1,11 +1,23 @@
---- Makefile.in.orig	Fri Oct 31 10:13:26 2003
-+++ Makefile.in	Fri Oct 31 10:13:32 2003
-@@ -107,7 +107,7 @@
- 
+--- Makefile.in.orig	Fri Dec 23 23:16:01 2005
++++ Makefile.in	Sun Jan  7 23:29:03 2007
+@@ -247,9 +247,9 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  AUTOMAKE_OPTIONS = check-news
- 
 -SUBDIRS = pubtext unicode doc \
 +SUBDIRS = pubtext unicode \
  	include generic \
+-	intl po \
++	po \
  	lib nsgmls spent spam sgmlnorm sx spcat \
- 	intl po
+ 	tests @DOCSRC@
+ 
+@@ -709,7 +709,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-pkgdocDATA install-pkgincludeHEADERS
++install-data-am: install-pkgincludeHEADERS
+ 
+ install-exec-am:
+ 
