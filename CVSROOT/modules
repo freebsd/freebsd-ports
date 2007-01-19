@@ -14970,7 +14970,6 @@ vcdpad		ports/multimedia/vcdpad
 vcdtools	ports/multimedia/vcdtools
 vcg		ports/graphics/vcg
 vchat		ports/net/vchat
-vcheck		ports/ftp/vcheck
 vcp		ports/sysutils/vcp
 vda2fbd		ports/converters/vda2fbd
 vde		ports/net/vde
