@@ -23,7 +23,7 @@ COMMENT=	Vector font library with free vector font, BIG5 and GB supported
 
 BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 
-VFLIB_VERSION=	2.25.1
+VFLIB_VERSION=	2.25.6
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
 DATADIR=	${TARGETDIR}/share/VFlib
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-freetype \
 USE_FREETYPE=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -42,16 +43,15 @@ pre-patch:
 
 post-patch:
 	${REINPLACE_CMD} -e "s,varargs.h,stdarg.h," ${WRKSRC}/tools/disol.c
+	${REINPLACE_CMD} -e "s,^vflib2_version=.*,vflib2_version='${VFLIB_VERSION}'," ${WRKSRC}/configure
 
-pre-install:
+post-install:
 	@(cd ${WRKSRC}/tools; \
 		${INSTALL_SCRIPT} fmtest disol kban vfperf vftest ${TARGETDIR}/bin)
 	@(cd ${WRKSRC}; \
 		${MKDIR} ${DATADIR}/${VFLIB_VERSION} ;\
 		${CP} COPYING COPYING.LIB README.txt.JP_EUC \
 		${DATADIR}/${VFLIB_VERSION})
-
-post-install:
 	${MV} ${DATADIR}/${VFLIB_VERSION}/VF.h ${TARGETDIR}/include
 
 .include <bsd.port.post.mk>
