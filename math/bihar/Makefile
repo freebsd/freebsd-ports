@@ -7,6 +7,7 @@
 
 PORTNAME=	bihar
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/
 DISTNAME=	${PORTNAME}
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biharmonic equation in rectangular geometry and polar coordinates
 
-LIB_DEPENDS=	linpack.1:${PORTSDIR}/math/linpack
+LIB_DEPENDS=	linpack.3:${PORTSDIR}/math/linpack
 
 # ${DISTFILES} is automatically created from the directory contents
 IGNOREFILES=	${DISTFILES}
@@ -24,6 +25,11 @@ EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 
 USE_LDCONFIG=	yes
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 PORTDOCS=	fft.doc.gz
 
@@ -43,7 +49,7 @@ post-install:
 	${CP} $(WRKSRC)/fft.doc.gz ${DOCSDIR}
 .endif
 .if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libbihar.so.1 ${PREFIX}/lib/libbihar.so
+	${LN} -sf libbihar.so.2 ${PREFIX}/lib/libbihar.so
 .endif
 
 .include <bsd.port.post.mk>
