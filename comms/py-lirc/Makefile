@@ -7,6 +7,7 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	comms python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pylirc
@@ -16,7 +17,7 @@ DISTNAME=	pylirc-${PORTVERSION}
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Lirc support library for Python
 
-LIB_DEPENDS=	lirc_client.0:${PORTSDIR}/comms/lirc
+LIB_DEPENDS=	lirc_client.1:${PORTSDIR}/comms/lirc
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

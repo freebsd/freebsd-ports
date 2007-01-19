@@ -5,7 +5,7 @@
  	sockaddr_un addr;
  	addr.sun_family = AF_UNIX;
 -	strcpy(addr.sun_path, "/dev/lircd");
-+	strcpy(addr.sun_path, "/var/lirc/lircd");
++	strcpy(addr.sun_path, "/var/run/lirc/lircd");
  	if(::connect(sock, (struct sockaddr *)(&addr), sizeof(addr)) == -1)
  	{	::close(sock);
 -		// in case of mandrake...
