@@ -1,8 +1,8 @@
 bin/tuxpaint
 bin/tuxpaint-import
-@exec [ -f %D/etc/tuxpaint/tuxpaint.conf ] || cp %D/etc/tuxpaint/tuxpaint.conf.sample %D/etc/tuxpaint/tuxpaint.conf
 @unexec if cmp -s %D/etc/tuxpaint/tuxpaint.conf %D/etc/tuxpaint/tuxpaint.conf.sample; then rm -f %D/etc/tuxpaint/tuxpaint.conf; fi
 etc/tuxpaint/tuxpaint.conf.sample
+@exec [ -f %D/etc/tuxpaint/tuxpaint.conf ] || cp %D/etc/tuxpaint/tuxpaint.conf.sample %D/etc/tuxpaint/tuxpaint.conf
 %%PORTDOCS%%%%DOCSDIR%%/ADVANCED-STAMPS-HOWTO.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
@@ -808,6 +808,8 @@ share/pixmaps/tuxpaint.png
 @dirrmtry share/locale/ve
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrmtry share/locale/nr/LC_MESSAGES
 @dirrmtry share/locale/nr
 @dirrmtry share/locale/ku/LC_MESSAGES

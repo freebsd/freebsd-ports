@@ -1,5 +1,5 @@
 --- ./Makefile.orig	Thu Oct 19 04:41:49 2006
-+++ ./Makefile	Mon Nov  6 15:59:13 2006
++++ ./Makefile	Thu Jan 18 16:53:58 2007
 @@ -18,7 +18,6 @@
  
  # Where to install things:
@@ -36,7 +36,7 @@
  	@echo
  	@echo "--------------------------------------------------------------"
  	@echo
-@@ -471,8 +469,8 @@
+@@ -471,8 +469,10 @@
  	@echo
  	@echo "...Installing default config file..."
  	@install -d $(CONFDIR)
@@ -44,10 +44,12 @@
 -	@chmod 644 $(CONFDIR)/tuxpaint.conf
 +	@cp src/tuxpaint.conf $(CONFDIR)/tuxpaint.conf.sample
 +	@chmod 644 $(CONFDIR)/tuxpaint.conf.sample
++	@test -f $(CONFDIR)/tuxpaint.conf || \
++		cp $(CONFDIR)/tuxpaint.conf.sample $(CONFDIR)/tuxpaint.conf
  
  
  # Install example stamps
-@@ -590,9 +588,6 @@
+@@ -590,9 +590,6 @@
  	@install -d $(ICON_PREFIX)
  	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
  	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
@@ -57,7 +59,7 @@
  
  
  # Install the program:
-@@ -1008,12 +1003,6 @@
+@@ -1008,12 +1005,6 @@
  	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
  	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
@@ -70,7 +72,7 @@
  	@# tuxpaint-import.1
  	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
-@@ -1034,7 +1023,7 @@
+@@ -1034,7 +1025,7 @@
  		$^ \
  		$(HQXX_O) \
  		$(SDL_LIBS) \
