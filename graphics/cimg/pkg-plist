@@ -130,7 +130,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x78.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x79.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x7e.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions_rela.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_type.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__displays.html

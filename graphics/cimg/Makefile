@@ -7,11 +7,12 @@
 
 PORTNAME=	cimg
 DISTVERSION=	1-17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	CImg-${DISTVERSION}
+DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The C++ Template Image Processing Library
@@ -44,7 +45,7 @@ LAPACK_DEF=	-Dcimg_lapack
 .endif
 
 WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
 
