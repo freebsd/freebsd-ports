@@ -1,0 +1,11 @@
+--- Makefile.comm.in.orig	Mon Jan  8 00:28:27 2007
++++ Makefile.comm.in	Mon Jan  8 00:29:02 2007
+@@ -32,7 +32,7 @@
+ INCS=-I$(srcdir) -I$(srcdir)/../include -I$(spincludedir) -I$(spincludedir)/.. $(INCLUDE)
+ CXXFLAGS=@CXXFLAGS@ $(INCS) $(DEBUG) $(DEFS)
+ CFLAGS=@CFLAGS@ $(DEBUG) $(DEFS)
+-LDFLAGS=@LDFLAGS@
++LDFLAGS=@LDFLAGS@ -lintl
+ MSGGENFLAGS= -l jstyleModule
+ CXXDEPGENFLAGS=-MM
+ 

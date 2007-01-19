@@ -12,14 +12,40 @@ lib/libostyle.a
 lib/libostyle.la
 lib/libostyle.so
 lib/libostyle.so.0
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove openjade/catalog
-share/sgml/openjade/README.jadetex
-share/sgml/openjade/builtins.dsl
-share/sgml/openjade/catalog
-share/sgml/openjade/demo.dsl
-share/sgml/openjade/demo.sgm
-share/sgml/openjade/dsssl.dtd
-share/sgml/openjade/extensions.dsl
-share/sgml/openjade/fot.dtd
-share/sgml/openjade/style-sheet.dtd
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG openjade/catalog
+@comment INSTALL_DATA: dsssl/README.jadetex %%DATADIR%%/README.jadetex
+@comment INSTALL_DATA: dsssl/builtins.dsl %%DATADIR%%/builtins.dsl
+@comment INSTALL_DATA: dsssl/catalog %%DATADIR%%/catalog
+@comment INSTALL_DATA: dsssl/demo.dsl %%DATADIR%%/demo.dsl
+@comment INSTALL_DATA: dsssl/demo.sgm %%DATADIR%%/demo.sgm
+@comment INSTALL_DATA: dsssl/dsssl.dtd %%DATADIR%%/dsssl.dtd
+@comment INSTALL_DATA: dsssl/extensions.dsl %%DATADIR%%/extensions.dsl
+@comment INSTALL_DATA: dsssl/fot.dtd %%DATADIR%%/fot.dtd
+@comment INSTALL_DATA: dsssl/lineNumber.dsl %%DATADIR%%/lineNumber.dsl
+@comment INSTALL_DATA: dsssl/lineNumber.sgml %%DATADIR%%/lineNumber.sgml
+@comment INSTALL_DATA: dsssl/ps.dsl %%DATADIR%%/ps.dsl
+@comment INSTALL_DATA: dsssl/ps.fot %%DATADIR%%/ps.fot
+@comment INSTALL_DATA: dsssl/ps.sgml %%DATADIR%%/ps.sgml
+@comment INSTALL_DATA: dsssl/psalig.dsl %%DATADIR%%/psalig.dsl
+@comment INSTALL_DATA: dsssl/pscs.dsl %%DATADIR%%/pscs.dsl
+@comment INSTALL_DATA: dsssl/pscspb.dsl %%DATADIR%%/pscspb.dsl
+@comment INSTALL_DATA: dsssl/pscspb.sgml %%DATADIR%%/pscspb.sgml
+@comment INSTALL_DATA: dsssl/psemb.dsl %%DATADIR%%/psemb.dsl
+@comment INSTALL_DATA: dsssl/psempha.dsl %%DATADIR%%/psempha.dsl
+@comment INSTALL_DATA: dsssl/psglyp.dsl %%DATADIR%%/psglyp.dsl
+@comment INSTALL_DATA: dsssl/psglyp2.dsl %%DATADIR%%/psglyp2.dsl
+@comment INSTALL_DATA: dsssl/psinc.dsl %%DATADIR%%/psinc.dsl
+@comment INSTALL_DATA: dsssl/psinc.sgml %%DATADIR%%/psinc.sgml
+@comment INSTALL_DATA: dsssl/psinc2.dsl %%DATADIR%%/psinc2.dsl
+@comment INSTALL_DATA: dsssl/psmulti.dsl %%DATADIR%%/psmulti.dsl
+@comment INSTALL_DATA: dsssl/psmulti2.dsl %%DATADIR%%/psmulti2.dsl
+@comment INSTALL_DATA: dsssl/psmulti3.dsl %%DATADIR%%/psmulti3.dsl
+@comment INSTALL_DATA: dsssl/psradical.dsl %%DATADIR%%/psradical.dsl
+@comment INSTALL_DATA: dsssl/pssbs.dsl %%DATADIR%%/pssbs.dsl
+@comment INSTALL_DATA: dsssl/pssbsi.dsl %%DATADIR%%/pssbsi.dsl
+@comment INSTALL_DATA: dsssl/sps.dsl %%DATADIR%%/sps.dsl
+@comment INSTALL_DATA: dsssl/sps.sgml %%DATADIR%%/sps.sgml
+@comment INSTALL_DATA: dsssl/spsanch.dsl %%DATADIR%%/spsanch.dsl
+@comment INSTALL_DATA: dsssl/spsanch.sgml %%DATADIR%%/spsanch.sgml
+@comment INSTALL_DATA: dsssl/style-sheet.dtd %%DATADIR%%/style-sheet.dtd
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG openjade/catalog
