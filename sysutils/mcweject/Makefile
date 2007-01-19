@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eject ${PREFIX}/sbin
 	${CHMOD} 4511 ${PREFIX}/sbin/eject
 	${INSTALL_DATA} ${WRKSRC}/eject.1 ${PREFIX}/man/man1
-	${GZIP_CMD} -best ${PREFIX}/man/man1/eject.1
+	${GZIP_CMD} ${PREFIX}/man/man1/eject.1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
