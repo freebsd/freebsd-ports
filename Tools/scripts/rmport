@@ -2,7 +2,7 @@
 #
 # rmport - remove port(s) from the FreeBSD Ports Collection.
 #
-# Copyright 2006 Vasil Dimov
+# Copyright 2006-2007 Vasil Dimov
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -59,6 +59,18 @@ escape()
 pkgname()
 {
 	make -C ${PORTSDIR}/${1} -V PKGNAME
+}
+
+ask()
+{
+	question=${1}
+
+	answer=x
+	while [ "${answer}" != "y" -a "${answer}" != "n" ] ; do
+		read -p "${question} [yn] " answer
+	done
+
+	echo ${answer}
 }
 
 # return category/port if arg is directly port's directory on the filesystem
@@ -125,14 +137,10 @@ co_common()
 # check if some ports depend on the given port
 # XXX Very Little Chance (tm) for breaking INDEX exists:
 # /usr/ports/INDEX may be outdated and not contain recently added dependencies
-# Anyway, it is very unlikely for someone to make a port to depend on a port
-# that has EXPIRATION_DATE set, or /usr/ports/INDEX is really outdated - from
-# before EXPIRATION_DATE being set
-check_dep()
+check_dep_core()
 {
 	catport=${1}
-	persist=${2}
-	alltorm=${3}
+	alltorm=${2}
 	pkgname=`pkgname ${catport}`
 
 	rmpkgs=""
@@ -142,39 +150,66 @@ check_dep()
 		rmcatports="${rmcatports:+${rmcatports}|}${PORTSDIR}/${torm}/"
 	done
 
+	err=0
+
+	deps=`grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :`
+	if [ -n "${deps}" ] ; then
+		log "${catport}: some port(s) depend on ${pkgname}:"
+		printf "%s\n" "${deps}" >&2
+		err=1
+	fi
+
+	# check if some Makefiles mention the port to be deleted
+	portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]|/|$)"
+	r="`find ${PORTSDIR} -mindepth 2 -maxdepth 3 \
+		\( -name "Makefile*" -or -path "*Mk/*.mk" \) \
+		|xargs grep -EH "${portdir_grep}" \
+		|grep -vE "^(${rmcatports})" || :`"
+	if [ -n "${r}" ] ; then
+		if [ ${err} -eq 1 ] ; then
+			echo >&2
+		fi
+		log "${catport}: some Makefiles mention ${portdir_grep}:"
+		printf "%s\n" "${r}" >&2
+		err=1
+	fi
+
+	return ${err}
+}
+
+check_dep()
+{
+	catport=${1}
+	persist=${2}
+	alltorm=${3}
+
 	while : ; do
 		log "${catport}: checking dependencies"
 
 		err=0
 
-		deps=`grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :`
-		if [ -n "${deps}" ] ; then
-			log "${catport}: some port(s) depend on ${pkgname}:"
-			printf "%s\n" "${deps}" >&2
-			err=1
-		fi
-
-		# check if some Makefiles mention the port to be deleted
-		portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]|/|$)"
-		r="`find ${PORTSDIR} -mindepth 2 -maxdepth 3 \
-			\( -name "Makefile*" -or -path "*Mk/*.mk" \) \
-			|xargs grep -EH "${portdir_grep}" \
-			|grep -vE "^(${rmcatports})" || :`"
-		if [ -n "${r}" ] ; then
-			log "${catport}: some Makefiles mention ${portdir_grep}:"
-			printf "%s\n" "${r}" >&2
-			err=1
-		fi
+		res="`check_dep_core ${catport} "${alltorm}" 2>&1`" || err=1
 
 		if [ ${err} -eq 0 ] ; then
 			break
 		fi
 
+		printf "%s" "${res}" |${PAGER:-less}
+
 		if [ ${persist} -eq 0 ] ; then
 			break
 		fi
 
-		read -p 'deal with the above issues and hit <enter> when ready' dummy
+		echo '' >&2
+		echo 'you can ignore the above issues and proceed anyway.' >&2
+		echo 'if this is the case, then either:' >&2
+		echo ' * these are false positives' >&2
+		echo ' * you want to break something' >&2
+		echo "or you can hit \`n' to repeat the check" >&2
+		answer=`ask "ignore the above issues"`
+		if [ "${answer}" = "y" ] ; then
+			break
+		fi
 	done
 }
 
@@ -267,7 +302,12 @@ check_LEGAL()
 		msg="${catport}: checking if ${checkstr} is in ports/LEGAL"
 		log "${msg}"
 		while grep -i ${checkstr} ports/LEGAL ; do
-			read -p "${checkstr} is in ports/LEGAL, remove it and hit <enter> when ready" dummy
+			echo "${checkstr} is in ports/LEGAL, remove it and hit <enter> when ready" >&2
+			echo "or hit \`s' to skip this issue and continue anyway" >&2
+			read answer
+			if [ "${answer}" = "s" ] ; then
+				break
+			fi
 			log "${msg}"
 		done
 	done
@@ -364,18 +404,6 @@ diff()
 	# give this to the outside world so it can be showed to the committer
 	# and removed when we are done
 	echo ${diffout}
-}
-
-ask()
-{
-	question=${1}
-
-	answer=x
-	while [ "${answer}" != "y" -a "${answer}" != "n" ] ; do
-		read -p "${question} [yn] " answer
-	done
-
-	echo ${answer}
 }
 
 # ask for confirmation and commit
