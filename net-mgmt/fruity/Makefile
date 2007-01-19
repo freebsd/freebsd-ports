@@ -7,12 +7,13 @@
 
 PORTNAME=	fruity
 DISTVERSION=	1.0-rc2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fruity
 
 MAINTAINER=	dan@langille.org
-COMMENT=	Fruity is a PHP based web-frontend to your Nagios configuration.
+COMMENT=	Fruity is a PHP based web-frontend to your Nagios configuration
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
@@ -20,16 +21,14 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message patch-includes-config.inc fruity.config.inc
 
-.include <bsd.port.pre.mk>
-
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=4
 DEFAULT_PHP_VER=5
 USE_MYSQL=	yes
 SUB_LIST+=	REQ_MYSQL=mysql
-USE_PHP=	mysql session dba
+USE_PHP=	mysql session dba pcre
 
-.include "${PORTSDIR}/Mk/bsd.php.mk"
+.include <bsd.port.pre.mk>
 
 post-patch:
 # the files directory contains a patch for the original file
