@@ -20,6 +20,8 @@ LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
 		png.5:${PORTSDIR}/graphics/png \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
+BROKEN=		Missing dependency
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango
