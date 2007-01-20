@@ -56,10 +56,20 @@ include/gaim/value.h
 include/gaim/version.h
 include/gaim/whiteboard.h
 include/gaim/xmlnode.h
+lib/gaim/autoaccept.la
+lib/gaim/autoaccept.so
+lib/gaim/autoreply.la
+lib/gaim/autoreply.so
+lib/gaim/buddynote.la
+lib/gaim/buddynote.so
 %%DBUS%%lib/gaim/dbus-example.la
 %%DBUS%%lib/gaim/dbus-example.so
 lib/gaim/idle.la
 lib/gaim/idle.so
+lib/gaim/libaim.la
+lib/gaim/libaim.so
+lib/gaim/libicq.la
+lib/gaim/libicq.so
 %%PERL:%%lib/gaim/libgaimperl.la
 %%PERL:%%lib/gaim/libgaimperl.so
 %%BONJOUR%%lib/gaim/libbonjour.la
@@ -76,6 +86,7 @@ lib/gaim/libnovell.la
 lib/gaim/libnovell.so
 lib/gaim/liboscar.la
 lib/gaim/liboscar.so
+lib/gaim/liboscar.so.0
 %%SILC%%lib/gaim/libsilcgaim.la
 %%SILC%%lib/gaim/libsilcgaim.so
 lib/gaim/libqq.la
@@ -90,6 +101,10 @@ lib/gaim/libzephyr.la
 lib/gaim/libzephyr.so
 lib/gaim/log_reader.la
 lib/gaim/log_reader.so
+lib/gaim/newline.la
+lib/gaim/newline.so
+lib/gaim/offlinemsg.la
+lib/gaim/offlinemsg.so
 lib/gaim/psychic.la
 lib/gaim/psychic.so
 lib/gaim/ssl-gnutls.la
@@ -128,6 +143,7 @@ share/locale/ca@valencia/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
+share/locale/dz/LC_MESSAGES/gaim.mo
 share/locale/el/LC_MESSAGES/gaim.mo
 share/locale/en_AU/LC_MESSAGES/gaim.mo
 share/locale/en_CA/LC_MESSAGES/gaim.mo
@@ -217,6 +233,8 @@ share/locale/zh_TW/LC_MESSAGES/gaim.mo
 @dirrmtry share/locale/en_AU
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
