@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 
+BROKEN=		Incomplete pkg-plist
+
 USE_APACHE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin \
