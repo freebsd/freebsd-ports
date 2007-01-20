@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
 
+BROKEN=		Incomplete pkg-plist
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

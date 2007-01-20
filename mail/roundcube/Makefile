@@ -16,6 +16,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}${EXTRACT_SUFX
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
+BROKEN=		Incomplete pkg-plist
+
 SNAPSHOT=	20061225
 
 WRKSRC=		${WRKDIR}/${PORTNAME}mail
