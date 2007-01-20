@@ -18,6 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/adodb:${PORTSDIR}/databases/adodb \
 		${LOCALBASE}/lib/php/creole:${PORTSDIR}/databases/php5-creole \
 		${PEARDIR}/simpletest:${PORTSDIR}/devel/simpletest
 
+BROKEN=		Conflicting dependencies: php4 vs php5
+
 NO_BUILD=	yes
 USE_PHP=	gd gettext
 WRKSRC=		${WRKDIR}/sahana-phase2
