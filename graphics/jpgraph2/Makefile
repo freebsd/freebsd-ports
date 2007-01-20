@@ -8,12 +8,10 @@
 PORTNAME=	jpgraph
 PORTVERSION=	2.1.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://members.chello.se/jpgraph/jpgdownloads/
+MASTER_SITES=	http://web.comhem.se/jpgraph/jpgdownloads/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
-
-BROKEN=		Unfetchable
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
