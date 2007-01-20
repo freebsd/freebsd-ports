@@ -16,6 +16,7 @@ COMMENT=	Variable dataformat binary editor
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USE_GCC=	3.4
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	dep all
