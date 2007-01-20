@@ -1,5 +1,14 @@
 --- bittorrent-console.py.orig	Sat Dec 16 08:54:46 2006
 +++ bittorrent-console.py	Sat Dec 16 08:55:07 2006
+@@ -39,7 +39,7 @@
+ from BTL import GetTorrent
+ from BTL.ConvertedMetainfo import ConvertedMetainfo
+ from BitTorrent.MultiTorrent import TorrentNotInitialized
+-from BitTorrent.RawServer_twisted import RawServer, task
++from BitTorrent.RawServer_twisted import RawServer
+ from BitTorrent.UI import Size, Duration
+ inject_main_logfile()
+ from BitTorrent import console
 @@ -326,12 +326,12 @@
              if config['save_in']:
                  raise BTFailure(_("You cannot specify both --save_as and "

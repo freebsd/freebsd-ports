@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
+ app_name = "BitTorrent"
  import os
  import sys
- try:

@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
+ app_name = "BitTorrent"
  from BitTorrent.translation import _
  
- SPEW_SCROLL_RATE = 1
