@@ -17,6 +17,8 @@ COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 # xmkmf is used in configure script; USE_IMAKE makes the build unhappy
 BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 
+BROKEN=		Unfetchable
+
 # Server redirects to distfile; won't work with -A
 FETCH_CMD=	/usr/bin/fetch -Rr
 

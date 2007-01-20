@@ -15,6 +15,8 @@ DISTNAME=	aiccu_2006.07.25
 MAINTAINER=	meno.abels@adviser.com
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
+BROKEN=		Unfetchable
+
 USE_RC_SUBR=	sixxs-aiccu
 USE_GMAKE=	yes
 
