@@ -1,6 +1,6 @@
---- src/bsdnss.c.orig	Sat Jan 20 14:52:09 2007
-+++ src/bsdnss.c	Sat Jan 20 14:56:24 2007
-@@ -0,0 +1,430 @@
+--- src/bsdnss.c.orig	Sat Jan 20 17:38:27 2007
++++ src/bsdnss.c	Sat Jan 20 18:12:24 2007
+@@ -0,0 +1,462 @@
 +/* rcs tags go here when pushed upstream */
 +/* Original author: Bruce M. Simpson <bms@FreeBSD.org> */
 +
@@ -25,7 +25,10 @@
 +
 +#include <sys/param.h>
 +#include <sys/types.h>
++#include <sys/time.h>
++#include <sys/uio.h>
 +#include <sys/socket.h>
++#include <sys/ktrace.h>
 +
 +#include <stdarg.h>
 +#include <stdlib.h>
@@ -59,6 +62,18 @@
 +#endif
 +
 +#ifndef NO_BUILD_BSD_NSS
++/*
++ * To turn on utrace() records, compile with -DDEBUG_UTRACE.
++ */
++#ifdef DEBUG_UTRACE
++#define _NSS_UTRACE(msg)						\
++	do {								\
++		static const char __msg[] = msg ;			\
++		(void)utrace(__msg, sizeof(__msg));			\
++	} while (0)
++#else
++#define _NSS_UTRACE(msg)
++#endif
 +
 +ns_mtab *nss_module_register(const char *source, unsigned int *mtabsize,
 +			     nss_module_unregister_fn *unreg);
@@ -150,17 +165,19 @@
 +	struct addrinfo		*ai;
 +	char			*buffer;
 +	void 			*cbufp;	/* buffer handed to libc */
-+	int			*h_errnop;
++	char			*hap;
 +	struct hostent		*hp;
 +	void 			*mbufp;	/* buffer handed to mdns */
 +	const char 		*name;
 +	const struct addrinfo	*pai;
-+	struct sockaddr_storage	*pss;
++	struct sockaddr		*psa;	/* actually *sockaddr_storage */
 +	struct addrinfo		**resultp;
 +	int			 _errno;
 +	int			 _h_errno;
 +	size_t			 mbuflen = 1024;
 +	enum nss_status		 status;
++
++	_NSS_UTRACE("__nss_bsdcompat_getaddrinfo: called");
 +
 +	_h_errno = _errno = 0;
 +	status = NSS_STATUS_UNAVAIL;
@@ -193,7 +210,7 @@
 +		return (NS_UNAVAIL);
 +	}
 +	ai = (struct addrinfo *)cbufp;
-+	pss = (struct sockaddr_storage *)(ai + 1);
++	psa = (struct sockaddr *)(ai + 1);
 +
 +	/*
 +	 * 1. Select which function to call based on the address family.
@@ -207,11 +224,11 @@
 +		break;
 +	case AF_INET:
 +		status = _nss_mdns4_gethostbyname_r(name, hp, buffer, mbuflen,
-+						   &_errno, &_h_errno);
++						    &_errno, &_h_errno);
 +		break;
 +	case AF_INET6:
 +		status = _nss_mdns6_gethostbyname_r(name, hp, buffer, mbuflen,
-+						   &_errno, &_h_errno);
++						    &_errno, &_h_errno);
 +		break;
 +	default:
 +		break;
@@ -224,13 +241,26 @@
 +		ai->ai_socktype = pai->ai_socktype;
 +		ai->ai_protocol = pai->ai_protocol;
 +		ai->ai_family = hp->h_addrtype;
-+		ai->ai_addrlen = hp->h_length;
-+		memset(pss, 0, sizeof(struct sockaddr_storage));
-+		pss->ss_len = hp->h_length;
-+		pss->ss_family = hp->h_addrtype;
-+		memcpy(&(((struct sockaddr *)pss)->sa_data),
-+		    hp->h_addr_list[0], hp->h_length);
-+		ai->ai_addr = (struct sockaddr *)pss;
++		memset(psa, 0, sizeof(struct sockaddr_storage));
++		psa->sa_len = ai->ai_addrlen;
++		psa->sa_family = ai->ai_family;
++		ai->ai_addr = psa;
++		hap = hp->h_addr_list[0];
++		switch (ai->ai_family) {
++		case AF_INET:
++			ai->ai_addrlen = sizeof(struct sockaddr_in);
++			memcpy(&((struct sockaddr_in *)psa)->sin_addr, hap,
++			    ai->ai_addrlen);
++			break;
++		case AF_INET6:
++			ai->ai_addrlen = sizeof(struct sockaddr_in6);
++			memcpy(&((struct sockaddr_in6 *)psa)->sin6_addr, hap,
++			    ai->ai_addrlen);
++			break;
++		default:
++			ai->ai_addrlen = sizeof(struct sockaddr_storage);
++			memcpy(psa->sa_data, hap, ai->ai_addrlen);
++		}
 +		sentinel.ai_next = ai;
 +		free(mbufp);
 +	}
@@ -359,6 +389,8 @@
 +	af = va_arg(ap, int);
 +	errp = va_arg(ap, int *);
 +	resultp = (struct hostent **)retval;
++
++	_NSS_UTRACE("__nss_bsdcompat_ghbyaddr: called");
 +
 +	bufp = malloc((sizeof(struct hostent) + buflen));
 +	if (bufp == NULL) {
