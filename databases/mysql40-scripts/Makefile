@@ -13,6 +13,8 @@ COMMENT=	Multithreaded SQL database (scripts)
 
 MASTERDIR=	${.CURDIR}/../mysql40-server
 
+BROKEN=		Broken dependency
+
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.scripts
 
