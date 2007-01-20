@@ -39,6 +39,7 @@
     SUBDIR += xcode
     SUBDIR += xcyrBGR
     SUBDIR += xmms
+    SUBDIR += xneur
     SUBDIR += xpi-tabextensions
     SUBDIR += xruskb
 

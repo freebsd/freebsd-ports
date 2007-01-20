@@ -1,0 +1,18 @@
+bin/xneur
+@unexec if cmp -s %D/etc/xneur/en/dict %D/etc/xneur/en/dict.dist; then rm -f %D/etc/xneur/en/dict; fi
+etc/xneur/en/dict.dist
+@exec	if [ ! -f %D/etc/xneur/en/dict ] ; then cp -p %D/%F %B/dict; fi
+etc/xneur/en/proto
+@unexec if cmp -s %D/etc/xneur/ru/dict %D/etc/xneur/ru/dict.dist; then rm -f %D/etc/xneur/ru/dict; fi
+etc/xneur/ru/dict.dist
+@exec	if [ ! -f %D/etc/xneur/ru/dict ] ; then cp -p %D/%F %B/dict; fi
+etc/xneur/ru/proto
+@unexec if cmp -s %D/etc/xneur/xneurrc %D/etc/xneur/xneurrc.dist; then rm -f %D/etc/xneur/xneurrc; fi
+etc/xneur/xneurrc.dist
+@exec	if [ ! -f %D/etc/xneur/xneurrc ] ; then cp -p %D/%F %B/xneurrc; fi
+lib/libxnconfig.so.3
+lib/libxnconfig.so
+lib/libxnconfig.la
+@dirrmtry etc/xneur/ru
+@dirrmtry etc/xneur/en
+@dirrmtry etc/xneur
