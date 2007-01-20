@@ -31,6 +31,8 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		theora:${PORTSDIR}/multimedia/libtheora \
 		enchant:${PORTSDIR}/textproc/enchant
 
+BROKEN=		Incomplete pkg-plist
+
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 glib20 gconf2 libglade2 intlhack
