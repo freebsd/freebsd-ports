@@ -18,6 +18,8 @@ COMMENT=	Find subtrees in Math::Symbolic expressions
 BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incorrect pkg-plist
+
 MAN3=	Math::Symbolic::Custom::Contains.3
 
 PERL_MODBUILD=	yes
