@@ -14,4 +14,6 @@ WITHOUT_GUI=	yes
 
 MASTERDIR=	${.CURDIR}/../py-bittorrent
 
+BROKEN=		Fails to patch
+
 .include "${MASTERDIR}/Makefile"
