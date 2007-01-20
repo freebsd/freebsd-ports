@@ -64,6 +64,7 @@
     SUBDIR += nsd2
     SUBDIR += nslint
     SUBDIR += nsping
+    SUBDIR += nss_mdns
     SUBDIR += nss_resinit
     SUBDIR += odsclient
     SUBDIR += opendd

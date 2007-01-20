@@ -1,0 +1,57 @@
+--- src/Makefile.am.orig	Mon Jan  1 18:39:28 2007
++++ src/Makefile.am	Sat Jan 20 14:34:44 2007
+@@ -29,13 +29,22 @@
+ # This cool debug trap works on i386/gcc only
+ AM_CFLAGS+='-DDEBUG_TRAP=__asm__("int $$3")'
+ 
+-lib_LTLIBRARIES= \
++AM_LDFLAGS=-avoid-version -module -export-dynamic
++
++if FREEBSD_NSS
++nss_modules_freebsd= \
++	nss_mdns.la
++else
++nss_modules_glibc= \
+ 	libnss_mdns.la \
+ 	libnss_mdns4.la \
+ 	libnss_mdns6.la \
+ 	libnss_mdns_minimal.la \
+ 	libnss_mdns4_minimal.la \
+ 	libnss_mdns6_minimal.la
++endif
++
++lib_LTLIBRARIES = $(nss_modules_glibc) $(nss_modules_freebsd)
+ 
+ noinst_PROGRAMS= \
+ 	nss-test
+@@ -81,6 +90,30 @@
+ libnss_mdns6_minimal_la_SOURCES=$(libnss_mdns_la_SOURCES)
+ libnss_mdns6_minimal_la_CFLAGS=$(libnss_mdns_la_CFLAGS) -DNSS_IPV6_ONLY=1 -DMDNS_MINIMAL
+ libnss_mdns6_minimal_la_LDFLAGS=$(libnss_mdns_la_LDFLAGS)
++
++nss_mdns_la_SOURCES=$(libnss_mdns_la_SOURCES) bsdnss.c
++nss_mdns_la_CFLAGS=$(libnss_mdns_la_CFLAGS)
++nss_mdns_la_LDFLAGS=$(AM_LDFLAGS) -shrext .so.1
++
++nss_mdns_minimal_la_SOURCES=$(nss_mdns_la_SOURCES)
++nss_mdns_minimal_la_CFLAGS=$(nss_mdns_la_CFLAGS) -DMDNS_MINIMAL
++nss_mdns_minimal_la_LDFLAGS=$(nss_mdns_la_LDFLAGS)
++
++nss_mdns4_la_SOURCES=$(nss_mdns_la_SOURCES)
++nss_mdns4_la_CFLAGS=$(nss_mdns_la_CFLAGS) -DNSS_IPV4_ONLY=1
++nss_mdns4_la_LDFLAGS=$(nss_mdns_la_LDFLAGS)
++
++nss_mdns4_minimal_la_SOURCES=$(nss_mdns_la_SOURCES)
++nss_mdns4_minimal_la_CFLAGS=$(nss_mdns_la_CFLAGS) -DNSS_IPV4_ONLY=1 -DMDNS_MINIMAL
++nss_mdns4_minimal_la_LDFLAGS=$(nss_mdns_la_LDFLAGS)
++
++nss_mdns6_la_SOURCES=$(nss_mdns_la_SOURCES)
++nss_mdns6_la_CFLAGS=$(nss_mdns_la_CFLAGS) -DNSS_IPV6_ONLY=1
++nss_mdns6_la_LDFLAGS=$(nss_mdns_la_LDFLAGS)
++
++nss_mdns6_minimal_la_SOURCES=$(nss_mdns_la_SOURCES)
++nss_mdns6_minimal_la_CFLAGS=$(nss_mdns_la_CFLAGS) -DNSS_IPV6_ONLY=1 -DMDNS_MINIMAL
++nss_mdns6_minimal_la_LDFLAGS=$(nss_mdns_la_LDFLAGS)
+ 
+ avahi_test_SOURCES = \
+ 	avahi.c avahi.h \

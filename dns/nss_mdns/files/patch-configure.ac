@@ -1,0 +1,16 @@
+--- configure.ac.orig	Mon Jan  1 18:36:21 2007
++++ configure.ac	Sat Jan 20 14:34:44 2007
+@@ -83,6 +83,13 @@
+ AC_FUNC_SELECT_ARGTYPES
+ AC_CHECK_FUNCS([gethostbyaddr gethostbyname gettimeofday inet_ntoa memset select socket strcspn strdup strerror strncasecmp strcasecmp strspn])
+ 
++# FreeBSD has a slightly different NSS interface
++case ${host} in
++     *-freebsd*) freebsd="yes" ;;
++esac
++
++AM_CONDITIONAL([FREEBSD_NSS], [test "x$freebsd" = "xyes"])
++
+ # If using GCC specify some additional parameters
+ if test "x$GCC" = "xyes" ; then
+    CFLAGS="$CFLAGS -pipe -W -Wall -pedantic"
