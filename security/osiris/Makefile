@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	The Shmoo client/server host integrity checker
 
 OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
