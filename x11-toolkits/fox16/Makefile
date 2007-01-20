@@ -10,7 +10,8 @@ PORTVERSION=	${MAJORVER}.${SHVER}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
-		http://fresh.t-systems-sfr.com/unix/src/misc/
+		http://fresh.t-systems-sfr.com/unix/src/misc/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER?=	alecn2002@yandex.ru
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
