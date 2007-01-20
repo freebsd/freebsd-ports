@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
+ app_name = "BitTorrent"
  if __name__ == '__main__':
-     from BitTorrent.platform import install_translation
-     install_translation()
+     from BitTorrent.translation import _

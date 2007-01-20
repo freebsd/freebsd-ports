@@ -1,5 +1,14 @@
 --- bittorrent-curses.py.orig	Sat Dec 16 08:55:22 2006
 +++ bittorrent-curses.py	Sat Dec 16 08:55:49 2006
+@@ -42,7 +42,7 @@
+ from BitTorrent import BTFailure, UserFailure
+ from BitTorrent import version
+ from BTL import GetTorrent
+-from BitTorrent.RawServer_twisted import RawServer, task
++from BitTorrent.RawServer_twisted import RawServer
+ from BTL.ConvertedMetainfo import ConvertedMetainfo
+ from BTL.yielddefer import launch_coroutine, _wrap_task
+ from BitTorrent import inject_main_logfile
 @@ -498,12 +498,12 @@
              if config['save_in']:
                  raise BTFailure(_("You cannot specify both --save_as and "

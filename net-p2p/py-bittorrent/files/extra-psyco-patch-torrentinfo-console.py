@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- from BitTorrent.translation import _
+ app_name = "BitTorrent"
+ from BTL.translation import _
  
- from sys import *
