@@ -23,6 +23,8 @@ BUILD_DEPENDS=${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
 RUN_DEPENDS+=${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
+BROKEN=		Missing dependency
+
 USE_GNOME=	libglade2
 PERL_CONFIGURE=	yes
 
