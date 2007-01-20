@@ -16,8 +16,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}${EXTRACT_SUFX
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-BROKEN=		Incomplete pkg-plist
-
 SNAPSHOT=	20061225
 
 WRKSRC=		${WRKDIR}/${PORTNAME}mail
@@ -105,8 +103,9 @@ post-extract:
 	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
 .endif
 
-.if defined(WITH_REPLACE_MAIL_URL)
 post-patch:
+	@${RM} ${WRKSRC}/config/main.inc.php.dist.orig
+.if defined(WITH_REPLACE_MAIL_URL)
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
 		${WRKSRC}/program/include/main.inc \
 		${WRKSRC}/program/js/app.js
