@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LDAP user authentication for the Drupal CMS
 
+BROKEN=		Broken distinfo
+
 USE_PHP=	ldap
 
 DRUPAL_MODULE=	yes
