@@ -12,8 +12,6 @@ COMMENT=	Multithreaded SQL database (scripts)
 
 MASTERDIR=	${.CURDIR}/../mysql51-server
 
-BROKEN=		Broken dependency
-
 PKGINSTALL=	mustnotexist
 PKGMESSAGE=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.scripts
