@@ -7,6 +7,7 @@
 
 PORTNAME=	typespeed
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://tobias.eyedacor.org/typespeed/ \
 		http://critical.ch/distfiles/ \
@@ -50,7 +51,7 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} -m 2555 ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -g games -m 2555 ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/convert ${PREFIX}/bin/${PORTNAME}-hs-conv
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MANPREFIX}/man/man1/${MAN1}
 	${INSTALL_DATA} ${WRKSRC}/typespeedrc ${PREFIX}/etc/typespeedrc.dist
