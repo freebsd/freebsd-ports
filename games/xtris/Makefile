@@ -17,6 +17,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sec@42.org
 COMMENT=	A multi-player version of a popular game for the X Window system
 
+BROKEN=		Unfetchable
+
 RESTRICTED=	"Possible trademark infringement"
 WRKSRC=		${WRKDIR}/xtris
 

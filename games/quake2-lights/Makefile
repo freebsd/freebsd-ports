@@ -17,6 +17,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Lights modification for Quake II
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
