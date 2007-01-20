@@ -20,9 +20,6 @@ NO_BUILD=	yes
 WANT_PHP_CLI=	yes
 USE_PHP=	pcre xml
 
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 PEARDIR=	${PREFIX}/share/pear
 
 post-patch:
@@ -32,6 +29,5 @@ do-install:
 	@${LOCALBASE}/bin/php -q ${WRKSRC}/go-pear
 	@${PATCH} -p0 -s -b .orig -d ${PEARDIR} < ${PATCHDIR}/PEAR_Installer.php.patch
 	@${RM} -f ${PEARDIR}/PEAR/Installer.php.orig
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
