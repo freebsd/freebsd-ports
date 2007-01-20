@@ -1,6 +1,6 @@
---- configure.in.orig	Wed Apr 26 16:08:26 2006
-+++ configure.in	Thu May  4 08:55:35 2006
-@@ -222,7 +222,6 @@
+--- configure.in.orig	Sat Jan 20 10:52:51 2007
++++ configure.in	Sat Jan 20 10:55:48 2007
+@@ -227,7 +227,6 @@
  dnl .
  dnl -------------------------------------------------------------------------
  
@@ -8,7 +8,7 @@
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
  PHP_SAPI=default
-@@ -247,7 +246,6 @@
+@@ -252,7 +251,6 @@
  
  if test "$enable_maintainer_zts" = "yes"; then
    PTHREADS_ASSIGN_VARS
@@ -16,7 +16,16 @@
  fi
  
  if test "$PHP_ENABLE_FASTCGI" = "yes"; then
-@@ -1248,25 +1246,22 @@
+@@ -1100,7 +1098,7 @@
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
+ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:${prefix}/share/pear
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir
+@@ -1271,25 +1269,22 @@
  INLINE_CFLAGS="$INLINE_CFLAGS $standard_libtool_flag"
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
