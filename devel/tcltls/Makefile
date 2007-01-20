@@ -17,6 +17,8 @@ COMMENT=	SSL extensions for TCL; dynamicly loadable
 
 LIB_DEPENDS+=	tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND}
 
+MANUAL_PACKAGE_BUILD=Self-tests fail/hang
+
 USE_OPENSSL=	Yes
 
 WRKSRC=	${WRKDIR}/tls${PORTVERSION:R}
