@@ -5,22 +5,38 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupWare
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.106
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:C,http://nchc[^ ]+,,}
 MASTER_SITE_SUBDIR=	egroupware
-DISTNAME=	${PORTNAME}-${PORTVERSION}-102
+DISTVERSION=	1.2
+DISTVERSIONSUFFIX=	-106
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
 USE_BZIP2=	yes
-USE_PHP=	pcre session xml
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/egroupware
+#WRKSRC=		${DEST}
 
-.if defined(WITH_POSTGRESQL)
+DEST=		${PREFIX}/www/data-dist/egroupware
+
+OPTIONS=	MYSQL "Use MySQL database" on \
+		POSTGRE "Use PostgreSQL Database" off \
+		IMAP "Enable Mail support in eGroupware" on \
+		GD "Enable graphic support (needs xorg-libraries)" off \
+		PEAR "Req. by SyncML (see pkg-msg for php.ini)" on \
+		LDAP "Contacts can be stored using OpenLDAP" off
+#	doesn't work!	MBSTRING "Support for complete UTF-8 charsets" off
+
+.include <bsd.port.pre.mk>
+
+USE_PHP=	pcre session xml
+
+.if defined(WITH_MYSQL)
+USE_PHP+=	mysql
+.endif
+.if defined(WITH_POSTGRE)
 USE_PHP+=	pgsql
 .endif
 .if defined(WITH_MBSTRING)
@@ -32,19 +48,33 @@ USE_PHP+=	imap
 .if defined(WITH_GD)
 USE_PHP+=	gd
 .endif
+.if defined(WITH_PEAR)
+RUN_DEPENDS=	${LOCALBASE}/share/pear/Log.php:${PORTSDIR}/sysutils/pear-Log
+.endif
+.if defined(WITH_LDAP)
+USE_PHP+=	ldap
+.endif
 
-DEST=	${PREFIX}/www/data-dist/egroupware
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 
-.include <bsd.port.pre.mk>
-
-post-extract:
-	@${FIND} ${WRKSRC} -name .svn -type d | ${XARGS} ${RM} -rf
+extract:
+	${MKDIR} ${WRKDIR}
 
 do-install:
-	-${MKDIR} ${DEST}
-	@${CP} -r ${WRKSRC}/.htaccess ${WRKSRC}/* ${DEST}/
-	${CHMOD} g+w ${DEST}/phpgwapi/images
-	${CHGRP} ${WWWGRP} ${DEST}/phpgwapi/images
+	${MKDIR} ${DEST}
+	cd ${DEST}/.. && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS}
+	@${FIND} ${DEST} -name .svn -type d | ${XARGS} ${RM} -rf
+	${MKDIR} /var/db/egroupware/default
+	${MKDIR} /var/db/egroupware/default/files
+	${MKDIR} /var/db/egroupware/default/backup
+	${MKDIR} /var/db/egroupware/default/sessions
+	${CHMOD} g+w ${DEST} ${DEST}/phpgwapi/images
+	${CHMOD} -R g+w /var/db/egroupware
+	${CHGRP} ${WWWGRP} ${DEST} ${DEST}/phpgwapi/images
+	${CHGRP} -R ${WWWGRP} /var/db/egroupware
+	${MV} ${DEST}/setup/inc/class.setup_process.inc.php ${WRKDIR}
+	${SED} s,/var/lib/,/var/db/, ${WRKDIR}/class.setup_process.inc.php > \
+		${DEST}/setup/inc/class.setup_process.inc.php
 
 # --- postgresql.conf
 # tcpip_socket = true
