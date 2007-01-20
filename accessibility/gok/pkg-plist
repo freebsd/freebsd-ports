@@ -80,6 +80,16 @@ share/gnome/gok/am/numberpad.kbd
 share/gnome/gok/am/quit.kbd
 share/gnome/gok/am/text-operations.kbd
 share/gnome/gok/am/valuator.kbd
+share/gnome/gok/ang/gok-controls.kbd
+share/gnome/gok/ang/hide.kbd
+share/gnome/gok/ang/launcher.kbd
+share/gnome/gok/ang/main.kbd
+share/gnome/gok/ang/mouse.kbd
+share/gnome/gok/ang/move-resize.kbd
+share/gnome/gok/ang/numberpad.kbd
+share/gnome/gok/ang/quit.kbd
+share/gnome/gok/ang/text-operations.kbd
+share/gnome/gok/ang/valuator.kbd
 share/gnome/gok/ar/gok-controls.kbd
 share/gnome/gok/ar/hide.kbd
 share/gnome/gok/ar/launcher.kbd
@@ -617,6 +627,16 @@ share/gnome/gok/rw/text-operations.kbd
 share/gnome/gok/rw/valuator.kbd
 share/gnome/gok/singlekey-automatic-scanning.xam
 share/gnome/gok/singlekey-inverse-scanning.xam
+share/gnome/gok/sk/gok-controls.kbd
+share/gnome/gok/sk/hide.kbd
+share/gnome/gok/sk/launcher.kbd
+share/gnome/gok/sk/main.kbd
+share/gnome/gok/sk/mouse.kbd
+share/gnome/gok/sk/move-resize.kbd
+share/gnome/gok/sk/numberpad.kbd
+share/gnome/gok/sk/quit.kbd
+share/gnome/gok/sk/text-operations.kbd
+share/gnome/gok/sk/valuator.kbd
 share/gnome/gok/sl/gok-controls.kbd
 share/gnome/gok/sl/hide.kbd
 share/gnome/gok/sl/launcher.kbd
@@ -679,6 +699,16 @@ share/gnome/gok/ta/quit.kbd
 share/gnome/gok/ta/text-operations.kbd
 share/gnome/gok/ta/valuator.kbd
 share/gnome/gok/text-operations.kbd
+share/gnome/gok/tr/gok-controls.kbd
+share/gnome/gok/tr/hide.kbd
+share/gnome/gok/tr/launcher.kbd
+share/gnome/gok/tr/main.kbd
+share/gnome/gok/tr/mouse.kbd
+share/gnome/gok/tr/move-resize.kbd
+share/gnome/gok/tr/numberpad.kbd
+share/gnome/gok/tr/quit.kbd
+share/gnome/gok/tr/text-operations.kbd
+share/gnome/gok/tr/valuator.kbd
 share/gnome/gok/uk/gok-controls.kbd
 share/gnome/gok/uk/hide.kbd
 share/gnome/gok/uk/launcher.kbd
@@ -741,6 +771,7 @@ share/gnome/help/gok/C/legal.xml
 share/gnome/omf/gok/gok-C.omf
 share/gnome/pixmaps/gok.png
 share/locale/am/LC_MESSAGES/gok.mo
+share/locale/ang/LC_MESSAGES/gok.mo
 share/locale/ar/LC_MESSAGES/gok.mo
 share/locale/az/LC_MESSAGES/gok.mo
 share/locale/be/LC_MESSAGES/gok.mo
@@ -792,12 +823,14 @@ share/locale/pt_BR/LC_MESSAGES/gok.mo
 share/locale/ro/LC_MESSAGES/gok.mo
 share/locale/ru/LC_MESSAGES/gok.mo
 share/locale/rw/LC_MESSAGES/gok.mo
+share/locale/sk/LC_MESSAGES/gok.mo
 share/locale/sl/LC_MESSAGES/gok.mo
 share/locale/sq/LC_MESSAGES/gok.mo
 share/locale/sr/LC_MESSAGES/gok.mo
 share/locale/sr@Latn/LC_MESSAGES/gok.mo
 share/locale/sv/LC_MESSAGES/gok.mo
 share/locale/ta/LC_MESSAGES/gok.mo
+share/locale/tr/LC_MESSAGES/gok.mo
 share/locale/uk/LC_MESSAGES/gok.mo
 share/locale/vi/LC_MESSAGES/gok.mo
 share/locale/zh_CN/LC_MESSAGES/gok.mo
@@ -811,12 +844,14 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/zh_CN
 @dirrm share/gnome/gok/vi
 @dirrm share/gnome/gok/uk
+@dirrm share/gnome/gok/tr
 @dirrm share/gnome/gok/ta
 @dirrm share/gnome/gok/sv
 @dirrm share/gnome/gok/sr@Latn
 @dirrm share/gnome/gok/sr
 @dirrm share/gnome/gok/sq
 @dirrm share/gnome/gok/sl
+@dirrm share/gnome/gok/sk
 @dirrm share/gnome/gok/rw
 @dirrm share/gnome/gok/ru
 @dirrm share/gnome/gok/ro
@@ -869,6 +904,7 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/be
 @dirrm share/gnome/gok/az
 @dirrm share/gnome/gok/ar
+@dirrm share/gnome/gok/ang
 @dirrm share/gnome/gok/am
 @dirrm share/gnome/gok
 @dirrm %%DOCSDIR%%
@@ -884,6 +920,8 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/sl/LC_MESSAGES
 @dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/ro/LC_MESSAGES
@@ -916,3 +954,5 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
+@dirrmtry share/locale/ang/LC_MESSAGES
+@dirrmtry share/locale/ang
