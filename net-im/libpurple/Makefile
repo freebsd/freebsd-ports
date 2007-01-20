@@ -8,7 +8,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	2.0.0.b6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,7 +51,6 @@ MAN1=		gaim.1 gaim-text.1
 PRPL_MODULES=	gg,irc,jabber,msn,novell,oscar,qq,simple,yahoo,zephyr
 
 OPTIONS=	SILC "Secure Internet Live Conferencing support" off \
-		AUDIO "Audio support" on \
 		GNUTLS "GNUTLS encryption support" off \
 		NSS "Mozilla NSS encryption support" on \
 		SASL "Cyrus SASL support (for jabberd)" off \
@@ -165,13 +164,6 @@ CFLAGS+=		-I${LOCALBASE}/include/tk${TCLTK_VER} -I${LOCALBASE}/include/tcl${TCLT
 PLIST_SUB+=		TCL:=""
 .else
 PLIST_SUB+=		TCL:="@comment not installed: "
-.endif
-
-.if !defined(WITHOUT_AUDIO)
-LIB_DEPENDS+=		ao.3:${PORTSDIR}/audio/libao \
-			audiofile.0:${PORTSDIR}/audio/libaudiofile
-.else
-CONFIGURE_ARGS+=	--disable-audio
 .endif
 
 .if !defined(WITHOUT_DBUS)
