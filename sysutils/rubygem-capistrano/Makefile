@@ -16,6 +16,8 @@ COMMENT=	A utility for executing commands in parallel on multiple machines
 
 RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-sftp-1.1.0.gemspec:${PORTSDIR}/security/rubygem-net-sftp
 
+BROKEN=		Incomplete pkg-plist
+
 post-install:
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG}

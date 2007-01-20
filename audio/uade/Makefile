@@ -20,6 +20,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		ao.3:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
+BROKEN=		Incomplete pkg-plist
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
