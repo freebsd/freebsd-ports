@@ -25,7 +25,8 @@ OPTIONS=	CLIENT "Build client" on \
 		GAME "Build a main game .so file" off \
 		GL "Build OpenGL render" on \
 		SOFT "Build software render" on \
-		UI "Build user interface (for CLIENT menus)" on
+		UI "Build user interface (for CLIENT menus)" on \
+		X86_ASM "Enable use of optimized x86 assembly code" on
 
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
@@ -85,6 +86,10 @@ ALL_TARGET+=	ui
 PLIST_SUB+=	UI=""
 .else
 PLIST_SUB+=	UI="@comment "
+.endif
+
+.if !defined(WITHOUT_X86_ASM) && ${ARCH} == "i386"
+MAKE_ENV+=	USE_X86_ASM=yes
 .endif
 
 do-install:
