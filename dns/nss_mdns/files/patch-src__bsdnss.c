@@ -1,6 +1,6 @@
---- src/bsdnss.c.orig	Sat Jan 20 14:34:44 2007
-+++ src/bsdnss.c	Sat Jan 20 14:35:23 2007
-@@ -0,0 +1,433 @@
+--- src/bsdnss.c.orig	Sat Jan 20 14:52:09 2007
++++ src/bsdnss.c	Sat Jan 20 14:56:24 2007
+@@ -0,0 +1,430 @@
 +/* rcs tags go here when pushed upstream */
 +/* Original author: Bruce M. Simpson <bms@FreeBSD.org> */
 +
@@ -177,12 +177,6 @@
 +		return (NS_UNAVAIL);
 +	}
 +
-+	/* XXX: review this check */
-+	if (pai->ai_flags != 0) {
-+		*resultp = sentinel.ai_next;
-+		return (NS_UNAVAIL);
-+	}
-+
 +	mbufp = malloc((sizeof(struct hostent) + mbuflen));
 +	if (mbufp == NULL) {
 +		*resultp = sentinel.ai_next;
@@ -226,9 +220,12 @@
 +
 +	if (status == NS_SUCCESS) {
 +		memset(ai, 0, sizeof(struct addrinfo));
-+		memset(pss, 0, sizeof(struct sockaddr_storage));
++		ai->ai_flags = pai->ai_flags;
++		ai->ai_socktype = pai->ai_socktype;
++		ai->ai_protocol = pai->ai_protocol;
 +		ai->ai_family = hp->h_addrtype;
 +		ai->ai_addrlen = hp->h_length;
++		memset(pss, 0, sizeof(struct sockaddr_storage));
 +		pss->ss_len = hp->h_length;
 +		pss->ss_family = hp->h_addrtype;
 +		memcpy(&(((struct sockaddr *)pss)->sa_data),
