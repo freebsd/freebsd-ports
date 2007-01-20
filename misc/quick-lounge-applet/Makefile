@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	quick-lounge-applet
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.4
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
@@ -17,8 +17,9 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Applet to orginize your preferred applications on the GNOME Panel
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel
 GNU_CONFIGURE=	yes
