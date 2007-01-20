@@ -15,6 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	paul@aps.org
 COMMENT=	Convert Pod to LaTeX
 
+BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-02-01
+
 PERL_CONFIGURE=	yes
 
 MAN1=		pod2latex.1
