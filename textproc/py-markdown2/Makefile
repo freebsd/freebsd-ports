@@ -16,6 +16,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}a
 MAINTAINER=		alexbl@FreeBSD.org
 COMMENT=		Text markup to HTML conversion engine for Python
 
+BROKEN=			Does not build
+
 USE_ZIP=		yes
 USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	yes
