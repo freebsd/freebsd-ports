@@ -25,10 +25,18 @@ USE_RUBY=	yes
 BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
+# We cannot use ${ARCH} nor ${UNAME} which are defined in bsd.port.mk, here.
+UNAME=		/usr/bin/uname
+ARCH!=		${UNAME} -p
+
 OPTIONS=DICT_RUBY	"Enable Ruby based dictionary module"		off \
 	EST		"Enable Hyper Estraier dictionary module"	off \
-	MYSQL		"Enable MySQL dictionary module"		off \
-	UNIHAN		"Enable Unihan database dictionary module"	on
+	MYSQL		"Enable MySQL dictionary module"		off
+.if ${ARCH} == "sparc64"
+OPTIONS+=UNIHAN		"Enable Unihan database dictionary module"	off
+.else
+OPTIONS+=UNIHAN		"Enable Unihan database dictionary module"	on
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +63,9 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_UNIHAN)
+.if ${ARCH} == "sparc64"
+BROKEN=	Not buildable with Unihan on sparc64
+.endif
 MASTER_SITES+=	ftp://ftp.unicode.org/Public/UNIDATA/:unihan
 DISTFILES+=	Unihan.zip:unihan
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
