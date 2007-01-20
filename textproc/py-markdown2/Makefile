@@ -11,15 +11,15 @@ CATEGORIES=		textproc python
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-markdown
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		${PORTNAME}-${PORTVERSION}a
+DISTNAME=	${PORTNAME}-${PORTVERSION}a
 
 MAINTAINER=		alexbl@FreeBSD.org
 COMMENT=		Text markup to HTML conversion engine for Python
 
-BROKEN=			Does not build
-
 USE_ZIP=		yes
 USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
