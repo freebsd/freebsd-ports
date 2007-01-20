@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 
+BROKEN=		Does not compile
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 		--with-tclconfig=${LOCALBASE}/lib/tcl8.4 \
