@@ -7,7 +7,7 @@
 
 PORTNAME=	fastest_cvsup
 PORTVERSION=	0.2.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.is-root.com/myports/
 
