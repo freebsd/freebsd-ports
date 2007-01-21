@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bfilter
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN8=		bfilter.8
 USE_RC_SUBR=	bfilter.sh
 
 .if defined(WITH_DEBUG)
@@ -36,7 +38,7 @@ PLIST_SUB+=	GUI="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|"pthreads.*pthread-config"|"${PTHREAD_LIBS}"|g' \
 		${WRKSRC}/configure
 
 post-install:
