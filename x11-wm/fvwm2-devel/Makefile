@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.5.20
+PORTVERSION=	2.5.21
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -24,7 +24,8 @@ CONFLICTS?=	fvwm-1.* fvwm-2.4.*
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
+		--with-png-library=${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes
