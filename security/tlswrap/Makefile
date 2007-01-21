@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tlswrap
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://tlswrap.sunsite.dk/
-DISTNAME=	${PORTNAME}-1.02
+DISTNAME=	${PORTNAME}-1.04
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	An FTP proxy that wraps data and control with TLS/SSL
 
 GNU_CONFIGURE=	yes
