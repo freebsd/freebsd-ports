@@ -1,7 +1,7 @@
 WSGIUtils is a package of standalone utility libraries that ease the development
 of simple WSGI programs.
 
-The package is divided into two main components which can be used individualy or
+The package is divided into two main components which can be used individually or
 in combination.
 
 wsgiServer is a multi-threaded WSGI web server based on SimpleHTTPServer.
