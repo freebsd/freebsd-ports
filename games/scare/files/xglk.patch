@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Sep 26 22:15:12 2006
-+++ Makefile	Tue Sep 26 22:17:36 2006
+--- source/Makefile	Sun Jan 21 23:22:38 2007
++++ source/Makefile.xglk	Sun Jan 21 23:23:11 2007
 @@ -73,7 +73,7 @@
  # If your make can't handle sinclude or -include, and you're not building
  # for Glk, comment out the include line.
@@ -9,7 +9,7 @@
  GLKLIBS	= -L$(GLKPATH) $(GLKLIB) $(LINKLIBS)
  
  # Always use the Bourne shell.
-@@ -127,7 +127,7 @@
+@@ -134,7 +134,7 @@
  
  os_glk.o: os_glk.c $(HEADERS)
  	$(CC) $(GLKARCH) $(CFLAGS) -Wno-write-strings			\

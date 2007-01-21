@@ -1,6 +1,6 @@
---- Makefile	Fri Feb  4 22:09:46 2005
-+++ Makefile.noglk	Fri Feb  4 22:09:33 2005
-@@ -68,8 +68,9 @@
+--- source/Makefile	Sun Jan 21 23:18:36 2007
++++ source/Makefile.noglk	Sun Jan 21 23:21:08 2007
+@@ -73,8 +73,9 @@
  # If your make can't handle sinclude or -include, and you're not building
  # for Glk, comment out the include line.
  GLKPATH	= $(GLKDIR)/$(GLK)

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scare
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/ \
 		http://www.geocities.com/legion_if/
@@ -42,6 +42,9 @@ EXTRA_PATCHES=	${FILESDIR}/no-xglk.patch
 PLIST_FILES=	${BINFILES:S,^,bin/,}
 
 do-install:
-		${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/,} ${PREFIX}/bin/
+		${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/source/,} ${PREFIX}/bin/
+
+test:	build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .include <bsd.port.post.mk>
