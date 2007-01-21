@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-xkb-plugin
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
