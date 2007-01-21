@@ -5,20 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=      sgl
-PORTVERSION=   2.0a3
-CATEGORIES=    devel
-MASTER_SITES=  ftp://ftp.cs.rpi.edu/pub/stl/
-DISTNAME=      SGL-${PORTVERSION}
+PORTNAME=	sgl
+PORTVERSION=	2.0a3
+CATEGORIES=	devel
+MASTER_SITES=	http://www1.cs.columbia.edu/dcc/nestor/presentations/SGL/ \
+		ftp://ftp.cs.rpi.edu/pub/stl/
+DISTNAME=	SGL-${PORTVERSION}
 
-MAINTAINER=    david@realityrift.com
+MAINTAINER=	david@realityrift.com
 COMMENT=	STL implementation for ADA95
 
-RUN_DEPENDS=   gnatmake:${PORTSDIR}/lang/gnat
+RUN_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
-NO_BUILD=      yes
+NO_BUILD=	yes
 
-WRKSRC=        ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
