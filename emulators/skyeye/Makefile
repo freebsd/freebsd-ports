@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-v1
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binary/skyeye ${PREFIX}/bin
