@@ -11890,6 +11890,7 @@ ports_x11_toolkits	ports/x11-toolkits
 ports_x11_wm	ports/x11-wm
 ports_zoneinfo	ports/misc/zoneinfo
 portscanner	ports/security/portscanner
+portscout	ports/sysutils/portscout
 portsearch	ports/sysutils/portsearch
 portsentry	ports/security/portsentry
 portsman	ports/sysutils/portsman
