@@ -15,6 +15,7 @@
 
 PORTNAME=	gnat
 PORTVERSION=	2006
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}:boot
 MASTER_SITE_SUBDIR=	deischen/gcc/:boot
@@ -26,6 +27,7 @@ COMMENT=	The GNU Ada Compiler system
 CONFLICTS=	gcc-3.4.*
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_ICONV=	yes
 USE_PERL5_RUN=	yes
 
 .include <bsd.port.pre.mk>
