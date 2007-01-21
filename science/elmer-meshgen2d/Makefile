@@ -9,10 +9,10 @@ PORTNAME=	meshgen2d
 PORTVERSION=	5.0.0
 PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A Mesh Generation Utility for use with the ELMER FEM package
 
 WANT_FORTRAN=yes #dummy but future use
