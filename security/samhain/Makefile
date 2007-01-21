@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
 DISTNAME=	samhain_signed-${PORTVERSION}
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	The Samhain Intrusion Detection System
 
 OPTIONS=	KCHECK "Enable rogue KLD detection" off \
