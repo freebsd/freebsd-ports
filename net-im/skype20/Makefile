@@ -27,7 +27,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 RESTRICTED=	Redistribution not allowed yet.
 
-OPTIONS=	WITH_NVIDIA_GL "Enable Nvidia Support" off
+OPTIONS=	NVIDIA_GL "Enable Nvidia Support" off
 
 .include <bsd.port.pre.mk>
 
