@@ -1,5 +1,9 @@
 misc/tinderbox is now installed, but it requires some additional setup.
 
+****************************************************
+Additional info: %%PREFIX%%/tinderbox/scripts/README
+****************************************************
+
 The following walkthrough is for PostgreSQL databases:
 
 - First, run the setup program:
