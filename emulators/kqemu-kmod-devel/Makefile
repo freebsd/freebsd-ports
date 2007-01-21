@@ -18,7 +18,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Kernel Acceralator for QEMU CPU Emulator (development version)
 
 ONLY_FOR_ARCHS=	i386 amd64
-NO_PACKAGE=	Depends on kernel, and module not redistributable
+RESTRICTED=	Module not redistributable
 
 USE_RC_SUBR=	kqemu
 
