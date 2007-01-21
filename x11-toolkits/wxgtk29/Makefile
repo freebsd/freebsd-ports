@@ -94,4 +94,10 @@ post-patch:
 		s|pkg_config_args --libs|pkg_config_args pangox --libs|g' \
 			${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${WXGTK_FLAVOR} == "gtk2-unicode" && ${OSVERSION} < 500000
+IGNORE=		requires wchar_t
+.endif
+
+.include <bsd.port.post.mk>
