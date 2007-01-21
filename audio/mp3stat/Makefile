@@ -10,10 +10,11 @@ PORTNAME=	mp3stat
 PORTVERSION=	2.6.01
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	https://signal-lost.homeip.net/files/
+MASTER_SITES=	https://signal-lost.homeip.net/files/ \
+			http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Read information about mp3s and oggs bitstream
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
