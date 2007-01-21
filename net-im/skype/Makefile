@@ -7,7 +7,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.2.0.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -31,7 +31,7 @@ OPTIONS=	WITH_NVIDIA_GL "Enable Nvidia Support" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_NVIDIA_GL)
+.if defined(WITH_NVIDIA_GL)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
