@@ -7,7 +7,7 @@
 
 PORTNAME=	silky
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	silky
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	A simple and easy to use graphical, os-independent SILC client
 
-LIB_DEPENDS=	silcclient-1.0.3:${PORTSDIR}/devel/silc-toolkit
+LIB_DEPENDS=	silcclient-1.0.4:${PORTSDIR}/devel/silc-toolkit
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 GNU_CONFIGURE=	yes
