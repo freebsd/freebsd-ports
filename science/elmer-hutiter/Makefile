@@ -9,10 +9,10 @@ PORTNAME=	hutiter
 PORTVERSION=	5.2.0
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack
