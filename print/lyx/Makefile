@@ -46,19 +46,19 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 
 post-patch:
-	@# Removing mention of the bundled boost
-	@${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,detail/nullstream,utils/nullstream,' \
+	# Removing mention of the bundled boost
+	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,detail/nullstream,utils/nullstream,' \
 	    ${WRKSRC}/src/pch.h ${WRKSRC}/src/support/pch.h \
 	    ${WRKSRC}/src/support/debugstream.h
-	@${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
+	${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
 	    ${WRKSRC}/src/support/filetools.C
-	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'	\
+	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'	\
 	    ${WRKSRC}/src/support/tests/test_*
 
 post-configure:
-	@# Removing explicit linking with -lc
-	@${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
+	# Removing explicit linking with -lc
+	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
 
 .include <bsd.port.pre.mk>
 
