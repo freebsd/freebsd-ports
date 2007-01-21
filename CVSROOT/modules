@@ -5122,6 +5122,7 @@ ja-slirc	ports/japanese/slirc
 ja-slrn		ports/japanese/slrn
 ja-srd-fpw	ports/japanese/srd-fpw
 ja-srd-fpw-package	ports/japanese/srd-fpw-package
+ja-suicavalue	ports/japanese/suicavalue
 ja-suikyo	ports/japanese/suikyo
 ja-t2ps		ports/japanese/t2ps
 ja-tcl76	ports/japanese/tcl76
