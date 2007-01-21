@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	avalon/${PORTNAME:S,-,/,}/binaries
 PKGNAMEPREFIX=	avalon-
 DISTNAME=	LogKit-${PORTVERSION}-bin
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java toolkit designed for secure performance oriented logging
 
 USE_JAVA=	YES

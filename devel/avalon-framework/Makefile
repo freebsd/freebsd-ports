@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	avalon/${PORTNAME}/binaries/
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache Avalon core framework for component programming
 
 USE_JAVA=	yes

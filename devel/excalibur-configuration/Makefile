@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	avalon/${PORTNAME}/binaries
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration management extensions to the Avalon Framework
 
 RUN_DEPENDS=	${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework

@@ -11,7 +11,7 @@ CATEGORIES=	www devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free open source JavaServer(tm) Faces implementation
 
 USE_JAVA=	yes

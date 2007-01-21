@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.extreme.indiana.edu/dist/java-repository/xpp3/distribut
 DISTNAME=	${PORTNAME}-${DISTVERSION}_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Pull Parser 3rd Edition (XPP3)
 
 BUILD_DEPENDS=	${JAVAJARDIR}/xmlpull.jar:${PORTSDIR}/textproc/xmlpull
