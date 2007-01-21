@@ -1,5 +1,5 @@
---- os_glk.c.orig	Tue Sep 26 21:50:17 2006
-+++ os_glk.c	Tue Sep 26 21:55:13 2006
+--- source/os_glk.c.orig	Tue Sep 26 21:50:17 2006
++++ source/os_glk.c	Tue Sep 26 21:55:13 2006
 @@ -1110,6 +1110,8 @@
        && gsclinux_graphics_enabled && glk_gestalt (gestalt_Graphics, 0))
      {

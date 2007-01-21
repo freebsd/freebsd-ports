@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Sep 26 21:47:00 2006
-+++ Makefile	Tue Sep 26 21:49:23 2006
+--- source/Makefile.old	Sun Jan 21 23:16:03 2007
++++ source/Makefile	Sun Jan 21 23:18:36 2007
 @@ -26,18 +26,19 @@
  #
  
@@ -11,7 +11,7 @@
 +CC	?= gcc
 +DEBUG	?=
 +CEXTRA	?=
-+CFLAGS	?= -O2 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
++CFLAGS	?= -O2 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W  \
  	  -pedantic -Wshadow -Wpointer-arith -Wstrict-prototypes	   \
  	  -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls	   \
  	  -Wwrite-strings -Wundef -Wbad-function-cast -Waggregate-return   \
@@ -21,28 +21,22 @@
 -LDEXTRA	=
 -LDFLAGS	= $(DEBUG) $(LDEXTRA)
 +	  $(DEBUG)
-+CFLAGS  += $(CEXTRA)
++CFLAGS	+= $(CEXTRA)
 +LDLIBS	?=
 +LDEXTRA	?=
 +LDFLAGS	?= $(DEBUG) $(LDEXTRA)
  
  # Generic compiler and linker flags.
  #CC	= cc
-@@ -79,12 +80,12 @@
+@@ -79,9 +80,9 @@
  SHELL	= /bin/sh
  
  # Miscellaneous tools, overridable by the command line.
--ZIP	= zip
 -UNZIP	= unzip
 -RM	= rm
--LN	= ln
--TAR	= tar
 -TEST	= test
-+ZIP	?= zip
 +UNZIP	?= unzip
 +RM	?= rm
-+LN	?= ln
-+TAR	?= tar
 +TEST	?= test
  
  # SCARE objects and headers.
