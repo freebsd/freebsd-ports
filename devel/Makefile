@@ -574,6 +574,7 @@
     SUBDIR += libopendaap
     SUBDIR += libopensync
     SUBDIR += libowfat
+    SUBDIR += libpasori
     SUBDIR += libpci
     SUBDIR += libpdel
     SUBDIR += libpeak
