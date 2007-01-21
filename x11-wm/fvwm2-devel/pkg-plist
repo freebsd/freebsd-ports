@@ -381,6 +381,7 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/ConfigFvwmIconBox
 %%DATADIR%%/ConfigFvwmIconMan
 %%DATADIR%%/ConfigFvwmIdent
+%%DATADIR%%/ConfigFvwmMenuDefaults
 %%DATADIR%%/ConfigFvwmPager
 %%DATADIR%%/ConfigFvwmProxyDefaults
 %%DATADIR%%/ConfigFvwmTabs
