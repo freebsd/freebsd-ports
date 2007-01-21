@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ibiblio.org/maven/servletapi/jars/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Servlet API
 
 USE_JAVA=	yes

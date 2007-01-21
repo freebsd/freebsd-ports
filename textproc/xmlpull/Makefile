@@ -14,7 +14,7 @@ MASTER_SITES=	http://voodoo.bawue.com/download/ \
 DISTNAME=	${DISTNAME_PREFX}_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common API for XML Pull Parsing (XmlPull)
 
 USE_JAVA=	yes

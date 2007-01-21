@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ibiblio.org/maven/portlet-api/jars/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Portlet API (JSR-168)
 
 USE_JAVA=	yes
