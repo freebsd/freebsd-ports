@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	algebra
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	math ruby
 MASTER_SITES=	http://blade.nagaokaut.ac.jp/~sinara/ruby/math/algebra/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A Ruby library for mathematical (algebraic) computations
 
 USE_RUBY=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 
@@ -23,7 +24,6 @@ DOCS_EN=	doc/*.rd	doc/*.html
 DOCS_JA=	doc-ja/*.rd	doc-ja/*.html
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/*.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
