@@ -8,10 +8,10 @@
 PORTNAME=	matc
 PORTVERSION=	5.2.0
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	MatC language library used by ELMER FEM package
 
 GNU_CONFIGURE=	yes
