@@ -9,10 +9,10 @@ PORTNAME=	snooper
 PORTVERSION=	1999.12.02
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/snooper/
+MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Serial line protocol analyzer (need two serial interfaces)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
