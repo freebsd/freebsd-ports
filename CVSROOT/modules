@@ -15928,6 +15928,7 @@ xnc		ports/x11-fm/xnc
 xnecview	ports/comms/xnecview
 xnee		ports/x11/xnee
 xneko		ports/games/xneko
+xneur		ports/russian/xneur
 xnodecor	ports/x11/xnodecor
 xnview		ports/graphics/xnview
 xoct		ports/games/xoct
