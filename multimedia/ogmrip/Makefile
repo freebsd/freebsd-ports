@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
@@ -32,6 +32,8 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		enchant:${PORTSDIR}/textproc/enchant
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	Broken and no maintainer
+EXPIRATION_DATE=2007-03-21
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
