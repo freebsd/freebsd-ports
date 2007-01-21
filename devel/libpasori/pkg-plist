@@ -1,0 +1,8 @@
+bin/lpdump
+bin/lptest
+include/libpasori.h
+include/libpasori_command.h
+include/libpasori_liblocal.h
+include/libpasori_com.h
+include/libpasori_config.h
+lib/libpasori.a
