@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyphesis
-PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTVERSION=	0.5.11
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -24,21 +24,22 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
-GNU_CONFIGURE=	YES
-USE_LDCONFIG=	YES
-USE_GCC=	3.4
-USE_BZIP2=	YES
-USE_PGSQL=	YES
-USE_PYTHON=	YES
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_GCC=	3.4+
 USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
+USE_PGSQL=	yes
+USE_PYTHON=	yes
 
-MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1
+MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
+		cyconvertrules.1 cydumprules.1 cyloadrules.1 cypasswd.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile
-.endif
+#.if ${OSVERSION} < 500000
+#IGNORE=		does not compile
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
