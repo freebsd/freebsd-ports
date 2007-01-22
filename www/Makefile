@@ -339,6 +339,7 @@
     SUBDIR += mod_layout2
     SUBDIR += mod_limitipconn
     SUBDIR += mod_limitipconn2
+    SUBDIR += mod_line_edit
     SUBDIR += mod_log_config-st
     SUBDIR += mod_log_data
     SUBDIR += mod_log_mysql
