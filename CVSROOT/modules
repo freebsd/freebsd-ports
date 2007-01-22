@@ -12391,6 +12391,7 @@ py-paramiko	ports/security/py-paramiko
 py-parsing	ports/devel/py-parsing
 py-paste	ports/www/py-paste
 py-pastedeploy	ports/www/py-pastedeploy
+py-pastescript	ports/www/py-pastescript
 py-pcap		ports/net/py-pcap
 py-pcapy	ports/net/py-pcapy
 py-pefile	ports/devel/py-pefile
