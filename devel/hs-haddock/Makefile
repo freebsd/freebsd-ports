@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haddock
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/
 PKGNAMEPREFIX=	hs-
@@ -28,28 +27,44 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textpr
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:259:env
+
 PLIST_SUB+=	HADDOCK_VERSION=${PORTVERSION}
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Needs perl >= 5.6
+IGNORE=		needs perl >= 5.6
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/doc/configure.ac
+
+do-configure:
+	cd ${WRKSRC} && runhaskell Setup.lhs configure --ghc ${CONFIGURE_ARGS}
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS}
+.endif
+
+do-build:
+	cd ${WRKSRC} && runhaskell Setup.lhs build
 
 post-build:
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/haddock/doc && \
+	@(cd ${WRKSRC}/doc && \
 	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
 .endif
 
+do-install:
+	cd ${WRKSRC} && runhaskell Setup.lhs install
+
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/haddock
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/haddock/doc && ${CP} -R haddock ${PREFIX}/share/doc)
+	@(cd ${WRKSRC}/doc && ${CP} -R haddock ${PREFIX}/share/doc)
 .endif
 
 .include <bsd.port.post.mk>
