@@ -1,0 +1,6 @@
+mod_line_edit is a general-purpose filter for text documents. It
+operates as a simple on-the-fly line editor, applying
+search-and-replace rules defined in a configuration or .htaccess
+file.
+
+WWW: http://apache.webthing.com/mod_line_edit/
