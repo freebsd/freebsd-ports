@@ -930,6 +930,7 @@
     SUBDIR += wdiff
     SUBDIR += webcpp
     SUBDIR += website
+    SUBDIR += weka
     SUBDIR += word2x
     SUBDIR += wordnet
     SUBDIR += words
