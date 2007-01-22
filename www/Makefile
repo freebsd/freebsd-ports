@@ -389,6 +389,7 @@
     SUBDIR += mod_vhs
     SUBDIR += mod_webapp
     SUBDIR += mod_webkit
+    SUBDIR += mod_xmlns
     SUBDIR += mod_xsendfile
     SUBDIR += mod_zap
     SUBDIR += moinmoin
