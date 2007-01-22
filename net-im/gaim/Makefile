@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
 .if defined(WITH_SILC)
-LIB_DEPENDS+=		silcclient-1.0.3:${PORTSDIR}/devel/silc-toolkit
+LIB_DEPENDS+=		silcclient-1.0.4:${PORTSDIR}/devel/silc-toolkit
 CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc
 PLIST_SUB+=		SILC=""
 .else
