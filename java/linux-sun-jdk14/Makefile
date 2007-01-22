@@ -31,7 +31,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_XLIB=	yes
 JDK_VERSION=	1.4.2
-JDK_REVISION=	12
+JDK_REVISION=	13
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386 amd64
@@ -43,6 +43,10 @@ UNPACK_CMD=	${APP_HOME}/lib/unpack
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 504000
+IGNORE=		does not run (core dumps: Bad System Call)
+.endif
+
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=You must manually fetch the J2SE SDK self-extracting file for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
@@ -53,7 +57,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n +515 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n +541 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
