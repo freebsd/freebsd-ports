@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py_otp_interface
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 DISTNAME=	py_interface-${PORTVERSION}
@@ -16,6 +16,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A native python implementation of an Erlang/OTP node
 
 USE_PYTHON=	yes
+
+PORTDOCS=	COPYING.LIB README py_interface.pub
 
 OTP_LIBS=	erl_async_conn.py erl_common.py erl_epmd.py \
 		erl_eventhandler.py erl_node.py erl_node_conn.py \
