@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 DUMMYDATE=	20060801
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Video4Linux compatibility header
 
 NO_BUILD=	yes
