@@ -193,10 +193,7 @@
     SUBDIR += wyrd
     SUBDIR += xcalendar
     SUBDIR += xchm
-    SUBDIR += xfce4-calendar
     SUBDIR += xfce4-notes-plugin
-    SUBDIR += xfce4-taskbar-plugin
-    SUBDIR += xfce4-windowlist-plugin
     SUBDIR += xfce4-xkb-plugin
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary

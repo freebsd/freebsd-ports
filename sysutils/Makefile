@@ -730,7 +730,6 @@
     SUBDIR += xfce4-mcs-plugins
     SUBDIR += xfce4-minicmd-plugin
     SUBDIR += xfce4-netload-plugin
-    SUBDIR += xfce4-showdesktop-plugin
     SUBDIR += xfce4-systemload-plugin
     SUBDIR += xfce4-utils
     SUBDIR += xfce4-wavelan-plugin
