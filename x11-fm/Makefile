@@ -29,6 +29,7 @@
     SUBDIR += rox-mime-editor
     SUBDIR += rox-session
     SUBDIR += tdfsb
+    SUBDIR += thunar
     SUBDIR += tkdesk
     SUBDIR += twander
     SUBDIR += velocity
