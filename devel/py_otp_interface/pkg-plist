@@ -22,12 +22,8 @@
 %%PYTHON_SITELIBDIR%%/erl_term.py
 %%PYTHON_SITELIBDIR%%/erl_term.pyc
 %%PYTHON_SITELIBDIR%%/erl_term.pyo
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/py_interface.pub
 %%EXAMPLESDIR%%/test_erl_epmd.py
 %%EXAMPLESDIR%%/test_erl_node.py
 %%EXAMPLESDIR%%/test_erl_node_conn.py
 %%EXAMPLESDIR%%/test_erl_node_tk_1.py
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
