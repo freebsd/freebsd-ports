@@ -1,0 +1,18 @@
+Sonata is a lightweight GTK+ music client for the Music Player Daemon (MPD).
+It aims to be efficient (no toolbar, main menu, or statusbar), user-friendly,
+and clean.
+
+FEATURES:
+	+ Expanded and collapsed views
+	+ Automatic remote or local album art
+	+ Automatic fetching of lyrics
+	+ Playlist and stream support
+	+ Support for editing song tags
+	+ System tray icon with tooltip
+	+ Popup notification
+	+ Library searching by artist, song, etc.
+	+ Keyboard friendly
+	+ Support for multimedia keys
+	+ Commandline control
+
+WWW:	http://sonata.berlios.de/index.html

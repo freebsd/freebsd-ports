@@ -563,6 +563,7 @@
     SUBDIR += snd
     SUBDIR += snowstar
     SUBDIR += solfege
+    SUBDIR += sonata
     SUBDIR += sonice
     SUBDIR += sound-juicer
     SUBDIR += soundgrab
