@@ -3160,6 +3160,7 @@ gauche-gtk	ports/x11-toolkits/gauche-gtk
 gauche-readline	ports/devel/gauche-readline
 gauche-sdl	ports/devel/gauche-sdl
 gaul		ports/devel/gaul
+gaupol		ports/multimedia/gaupol
 gave		ports/science/gave
 gavl		ports/multimedia/gavl
 gawk		ports/lang/gawk
