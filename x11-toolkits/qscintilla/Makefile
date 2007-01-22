@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla1/ \
 		http://freebsd.ricin.com/ports/distfiles/
 DISTNAME=	QScintilla-1.71-gpl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danny@ricin.com
 COMMENT=	QT port of the Scintilla C++ editor class
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
