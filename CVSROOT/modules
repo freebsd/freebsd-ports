@@ -15225,6 +15225,7 @@ websvn		ports/devel/websvn
 weechat		ports/irc/weechat
 weewm		ports/x11-wm/weewm
 weex		ports/ftp/weex
+weka		ports/textproc/weka
 weplab		ports/net-mgmt/weplab
 wesnoth		ports/games/wesnoth
 westhawksnmp	ports/java/westhawksnmp
