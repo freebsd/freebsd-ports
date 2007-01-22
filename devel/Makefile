@@ -2057,6 +2057,7 @@
     SUBDIR += wxGlade
     SUBDIR += xdg-utils
     SUBDIR += xfc
+    SUBDIR += xfce4-dev-tools
     SUBDIR += xlslib
     SUBDIR += xmake
     SUBDIR += xparam
