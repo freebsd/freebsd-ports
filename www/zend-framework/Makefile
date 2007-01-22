@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	0.2.0
+PORTVERSION=	0.7.0
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -17,6 +17,8 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	pcre
 WANT_PHP_WEB=	yes
+
+USE_GETTEXT=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
