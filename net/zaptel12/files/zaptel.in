@@ -5,6 +5,7 @@
 # PROVIDE: zaptel
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
+# BEFORE: asterisk
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
@@ -17,8 +18,8 @@
 
 kmod_dir=%%PREFIX%%/lib/zaptel
 
-kmod_load="zaptel.ko qozap.ko wcfxo.ko wcfxs.ko wct1xxp.ko wct4xxp.ko wcte11xp.ko"
-kmod_unload="wcte11xp.ko wct4xxp.ko wct1xxp.ko wcfxs.ko wcfxo.ko qozap.ko zaptel.ko"
+kmod_load="zaptel.ko qozap.ko tau32pci.ko wcfxo.ko wcfxs.ko wct1xxp.ko wct4xxp.ko wcte11xp.ko"
+kmod_unload="wcte11xp.ko wct4xxp.ko wct1xxp.ko wcfxs.ko wcfxo.ko tau32pci.ko qozap.ko zaptel.ko"
 name="zaptel"
 rcvar=${name}_enable
 
