@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radrails
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel ruby java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -53,6 +53,7 @@ pre-install:
 	(cd ${WRKDIR}; jar -xf ${WRKSRC}/plugins/org.radrails.ide.ui_${PORTVERSION}.jar ${ICON})
 	${CP} ${FILESDIR}/radrails.sh ${WRKDIR}/radrails.sh
 	${REINPLACE_CMD} -E -e "s|%%DATADIR%%|${DATADIR}|g; s|%%JAVA%%|${JAVA}|g" ${WRKDIR}/radrails.sh
+	${BRANDELF} -t 'Linux' ${WRKSRC}/RadRails
 
 do-install:
 	${MKDIR} ${DATADIR}
