@@ -32,7 +32,7 @@ WRKSRC=		${WRKDIR}/3.2.1
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/configure ${WRKSRC}
-	@${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${REINPLACE_CMD} "s+%%F77%%+${F77}+" ${WRKSRC}/sources/configure
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/sources/makefile.in
 	@${REINPLACE_CMD} "s+%%F77%%+${F77}+" ${WRKSRC}/minigraph/configure
