@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	words
-PORTVERSION=	1.97E
-PORTREVISION=	2
+PORTVERSION=	1.97F
 CATEGORIES=	textproc
 MASTER_SITES=	http://users.erols.com/whitaker/
 DISTNAME=	${PORTNAME}all
