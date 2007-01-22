@@ -25,6 +25,7 @@
     SUBDIR += dejavu
     SUBDIR += etlfonts
     SUBDIR += farsifonts
+    SUBDIR += fntsample
     SUBDIR += fontconfig
     SUBDIR += fontconfig-reference
     SUBDIR += freefont-ttf
