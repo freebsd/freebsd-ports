@@ -7,9 +7,9 @@
 
 PORTNAME=	dvdbackup
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dvd-create.sourceforge.net/
+MASTER_SITES=	http://dvd-create.sourceforge.net/ GENTOO/distfiles
 
 MAINTAINER=	conrads@cox.net
 COMMENT=	Backup content from DVD to hard disk
