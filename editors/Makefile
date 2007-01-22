@@ -102,6 +102,7 @@
     SUBDIR += mode-info
     SUBDIR += mondrian
     SUBDIR += morla
+    SUBDIR += mousepad
     SUBDIR += mp
     SUBDIR += muggy
     SUBDIR += mule
