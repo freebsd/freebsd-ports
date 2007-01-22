@@ -1,5 +1,5 @@
---- ./src/mod.c.orig	Sat Oct  8 14:08:32 2005
-+++ ./src/mod.c	Tue May 16 14:33:39 2006
+--- ./mod.c.orig	Sat Oct  8 14:08:32 2005
++++ ./mod.c	Tue May 16 14:33:39 2006
 @@ -30,14 +30,17 @@
  
  void MOD_stop (void)
