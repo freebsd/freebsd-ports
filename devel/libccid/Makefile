@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/1740/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1867/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
@@ -20,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${LOCALBASE}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${LOCALBASE}/lib/pcsc/drivers/serial \
+		--enable-udev
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		LIBUSB_CFLAGS="-I${LOCALBASE}/include" \
