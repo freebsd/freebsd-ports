@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	6
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
@@ -51,7 +50,7 @@ PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
 
 JDK_VERSION=	1.5.0
-JDK_PATCHSET_VERSION=	3
+JDK_PATCHSET_VERSION=	4
 LATEST_LINK=	jdk15
 
 SUN_LINUX_JDK_VERSION=	1.4.2
@@ -104,11 +103,8 @@ BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 .if defined(WITHOUT_WEB)
 MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
 .else
-USE_GECKO=	mozilla # firefox and seamonkey do not work
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
-MAKE_ENV+=	BROWSER=${GECKO}
 USE_GNOME=	desktopfileutils
-MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${LOCALBASE}/include"
+LIB_DEPENDS=    nspr4.1:$(PORTSDIR)/devel/nspr
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -221,14 +217,6 @@ pre-fetch:
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
 .endif
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "WARNING: "
-	@${ECHO_MSG} "WARNING: This is BETA quality software!"
-	@${ECHO_MSG} "WARNING: Use in a production environment is at your own risk."
-	@${ECHO_MSG} "WARNING: "
-	@${ECHO_MSG}
 
 pre-patch:
 	@cd ${WRKDIR} &&  \

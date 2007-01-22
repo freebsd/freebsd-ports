@@ -2,18 +2,6 @@ $FreeBSD$
 
 --- ../../deploy/make/plugin/common/Defs-bsd.gmk.orig	Sun Dec 10 11:49:51 2006
 +++ ../../deploy/make/plugin/common/Defs-bsd.gmk	Sun Dec 10 21:44:53 2006
-@@ -9,9 +9,9 @@
- 
- # Default MOZILLA_PATH and allow override.
- ifeq ($(TRUE_PLATFORM), OpenBSD)
--MOZILLA_PATH = /usr/local
-+MOZILLA_PATH = $(LOCALBASE)
- else
--MOZILLA_PATH = /usr/X11R6
-+MOZILLA_PATH = $(X11BASE)
- endif
- ifdef ALT_MOZILLA_PATH
-   MOZILLA_PATH = $(subst //,/,$(ALT_MOZILLA_PATH))
 @@ -29,7 +29,7 @@
  endif
  
