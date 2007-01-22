@@ -8161,6 +8161,7 @@ or-aspell	ports/textproc/or-aspell
 oracle7-client	ports/databases/oracle7-client
 oracle8-client	ports/databases/oracle8-client
 oracle_odbc_driver	ports/databases/oracle_odbc_driver
+orage		ports/deskutils/orage
 orange		ports/archivers/orange
 orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
