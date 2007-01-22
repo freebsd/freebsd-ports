@@ -13933,6 +13933,7 @@ solfege		ports/audio/solfege
 solid-ircd	ports/irc/solid-ircd
 solidpop3d	ports/mail/solidpop3d
 solitaire	ports/math/solitaire
+sonata		ports/audio/sonata
 sonice		ports/audio/sonice
 sonytv		ports/misc/sonytv
 sopwith		ports/games/sopwith
