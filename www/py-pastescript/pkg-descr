@@ -1,0 +1,16 @@
+A pluggable command-line frontend, including commands to setup package
+file layouts.
+
+This is a pluggable command-line tool.
+
+It includes some built-in features;
+
+* Create file layouts for packages. For instance, paste create
+  --template=basic_package MyPackage will create a setuptools-ready
+  file layout.
+
+* Serving up web applications, with configuration based on
+  paste.deploy.
+
+Author:	Ian Bicking <ianb at colorstudy com>
+WWW:	http://pythonpaste.org/script/
