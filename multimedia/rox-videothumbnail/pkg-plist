@@ -5,6 +5,7 @@ apps/VideoThumbnail/Help/COPYING
 apps/VideoThumbnail/Help/Changes
 apps/VideoThumbnail/Help/README
 apps/VideoThumbnail/Options.xml
+apps/VideoThumbnail/VideoThumbnail.xml
 apps/VideoThumbnail/findrox.py
 apps/VideoThumbnail/findrox.pyc
 apps/VideoThumbnail/options.py
