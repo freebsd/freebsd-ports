@@ -9,7 +9,8 @@ PORTNAME=	nehquake
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alepulver
 DISTNAME=	NehQuake-bjp-bin-src.linux
 
 MAINTAINER=	alepulver@FreeBSD.org
