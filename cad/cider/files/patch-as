@@ -1,5 +1,5 @@
---- spice/common/src/include/util.h.orig	Sat Jan 29 19:14:24 1994
-+++ spice/common/src/include/util.h	Sun Dec 26 19:26:14 1999
+--- spice/common/src/include/util.h.orig	Sun Jan 30 04:14:24 1994
++++ spice/common/src/include/util.h	Sat Dec 23 19:48:50 2006
 @@ -6,6 +6,10 @@
  #ifndef UTIL
  #define UTIL
@@ -11,7 +11,18 @@
  /* #define MALLOC(x) calloc(1,(unsigned)(x)) */
  #define MALLOC(x) tmalloc((unsigned)(x))
  #define FREE(x) {if (x) {free((char *)(x));(x) = 0;}}
-@@ -44,8 +48,10 @@
+@@ -18,8 +22,10 @@
+ #include <stdlib.h>
+ #endif
+ #else
++/*
+ extern char *malloc();
+ extern char *calloc();
++*/
+ extern char *realloc();
+ extern void free();
+ #endif
+@@ -44,8 +50,10 @@
  #endif
  
  /* XXX Move these into the above ifdef someday */
