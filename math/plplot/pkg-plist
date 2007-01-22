@@ -48,9 +48,11 @@ lib/libplplotf77d.a
 lib/libplplotf77d.la
 lib/libplplotf77d.so
 lib/libplplotf77d.so.10
+lib/libplplotf95cd.so
 lib/libplplotf95cd.so.0
 lib/libplplotf95cd.la
 lib/libplplotf95cd.a
+lib/libplplotf95d.so
 lib/libplplotf95d.so.0
 lib/libplplotf95d.la
 lib/libplplotf95d.a
