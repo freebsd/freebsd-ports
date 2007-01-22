@@ -1,0 +1,6 @@
+The XfApplet Plugin is a plugin for the Xfce 4 Panel which allows one to use
+applets designed for the Gnome Panel inside the Xfce Panel. You can think of
+XfApplet as a tiny Gnome Panel that lives inside the Xfce Panel and allows
+you to show the same applets that the Gnome Panel is capable of showing.
+
+WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-xfapplet-plugin
