@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+bin/sonata
+%%PYTHON_SITELIBDIR%%/mmkeys.so
+%%PYTHON_SITELIBDIR%%/mpdclient3.py
+%%PYTHON_SITELIBDIR%%/mpdclient3.pyc
+%%PYTHON_SITELIBDIR%%/mpdclient3.pyo
+%%PYTHON_SITELIBDIR%%/sonata.py
+%%PYTHON_SITELIBDIR%%/sonata.pyc
+%%PYTHON_SITELIBDIR%%/sonata.pyo
+share/applications/sonata.desktop
+share/locale/de/LC_MESSAGES/sonata.mo
+share/locale/fr/LC_MESSAGES/sonata.mo
+share/locale/pl/LC_MESSAGES/sonata.mo
+share/locale/ru/LC_MESSAGES/sonata.mo
+share/locale/uk/LC_MESSAGES/sonata.mo
+share/pixmaps/sonata-album.png
+share/pixmaps/sonata-artist.png
+share/pixmaps/sonata.png
+share/pixmaps/sonata_large.png
+share/pixmaps/sonatacd.png
+share/pixmaps/sonatacd_large.png
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
+@dirrmtry share/applications
+@dirrmtry share/pixmaps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
