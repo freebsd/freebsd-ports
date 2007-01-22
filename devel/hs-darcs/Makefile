@@ -19,6 +19,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gmp.7:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	SERVER "install server" off
+USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/ ${PTHREAD_LIBS}" \
@@ -50,6 +51,7 @@ INSTALL_TARGET+=	installdocs
 MAN1=	darcs.1
 
 post-patch:
+	@${RM} ${WRKSRC}/configure
 .if defined(WITH_SERVER)
 	@${REINPLACE_CMD} -e 's|$$(libexecdir)/cgi-bin|${PREFIX}/${CGIDIR}| ; \
 		s|darcs/cgi.conf|cgi.conf.sample| ; /ln/d' \
