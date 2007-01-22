@@ -359,6 +359,7 @@
     SUBDIR += mod_perl2
     SUBDIR += mod_proxy_add_forward
     SUBDIR += mod_proxy_html
+    SUBDIR += mod_proxy_xml
     SUBDIR += mod_pubcookie
     SUBDIR += mod_put
     SUBDIR += mod_python
