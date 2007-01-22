@@ -1,0 +1,5 @@
+mod_xmlns adds XML Namespace support to Apache, and may form the basis
+of XML-driven publishing systems. It runs as an output filter, so it
+works automatically with any content generator.
+
+WWW: http://apache.webthing.com/mod_xmlns/
