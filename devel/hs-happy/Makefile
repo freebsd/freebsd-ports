@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.15
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	An LALR(1) parser generator for the functional language Haskell
@@ -22,31 +21,35 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 
 PLIST_SUB=	HAPPY_VERSION=${PORTVERSION}
 PORTDOCS=	*
 
-BOOT_COOKIE = ${WRKDIR}/.boot_done
-
-${BOOT_COOKIE}:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} boot)
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	autoconf:259:env
+CONFIGURE_ARGS=	--ghc --prefix=${PREFIX}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+' ${WRKSRC}/doc/configure.ac
 
-pre-build: ${BOOT_COOKIE}
+do-configure:
+	cd ${WRKSRC} && runhaskell Setup.lhs configure
+	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure --prefix=${PREFIX}
 
-post-build:
+do-build:
+	cd ${WRKSRC} && runhaskell Setup.lhs build
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/happy/doc && \
+	@(cd ${WRKSRC}/doc && \
 	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
 .endif
 
+do-install:
+	cd ${WRKSRC} && runhaskell Setup.lhs install
+
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/happy
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/happy/doc && ${CP} -R happy ${PREFIX}/share/doc)
+	@(cd ${WRKSRC}/doc && ${CP} -R happy ${PREFIX}/share/doc)
 .endif
 
 .include <bsd.port.mk>
