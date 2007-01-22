@@ -48,13 +48,11 @@ IGNORE=		kqemu requires kernel source to be installed
 post-install:
 	@${MKDIR} ${PREFIX}/include/kqemu
 	@${INSTALL_DATA} ${WRKSRC}/kqemu.h ${PREFIX}/include/kqemu
-	if mount |${GREP} ^devfs >/dev/null ; then \
-		: ; \
-	else \
-		if [ ! -e /dev/kqemu ]; then\
-			mknod /dev/kqemu c 250 0 ; \
-		fi ; \
-		${CHMOD} 666 /dev/kqemu ; \
+.if ${OSVERSION} < 500000
+	if [ ! -e /dev/kqemu ]; then\
+		mknod /dev/kqemu c 250 0 ; \
 	fi
+	${CHMOD} 666 /dev/kqemu
+.endif
 
 .include <bsd.port.post.mk>
