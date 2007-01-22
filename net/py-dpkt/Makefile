@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dpkt
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	net python
 MASTER_SITES=	http://monkey.org/~dugsong/dpkt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
