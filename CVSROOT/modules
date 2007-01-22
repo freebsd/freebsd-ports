@@ -7356,6 +7356,7 @@ motor		ports/devel/motor
 mount.app	ports/sysutils/mount.app
 mountsmb2	ports/sysutils/mountsmb2
 mouseclock	ports/x11-clocks/mouseclock
+mousepad	ports/editors/mousepad
 movemail	ports/mail/movemail
 moviedb		ports/misc/moviedb
 movingmotif	ports/x11-toolkits/movingmotif
