@@ -14,7 +14,7 @@ MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	PEAR class for representing XML data in a tree structure
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
+		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
