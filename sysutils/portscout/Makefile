@@ -7,6 +7,7 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.inerd.com/software/${PORTNAME}/
@@ -55,6 +56,8 @@ post-patch:
 	                  ${WRKSRC}/portscout.conf
 	@${REINPLACE_CMD} -e "s#^\(.*PREFIX.*=> *\)'.*'#\1'${PREFIX}'#"	\
 	                  ${WRKSRC}/portscout.pl
+	@${REINPLACE_CMD} -e "s#intger#integer#g"			\
+	                  ${WRKSRC}/sql/pgsql_init.sql
 	@${REINPLACE_CMD} -e "s#portscout\.pl#portscout#"		\
 	                  ${WRKSRC}/README
 
