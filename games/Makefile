@@ -817,7 +817,6 @@
     SUBDIR += xdino
     SUBDIR += xevil
     SUBDIR += xeyesplus
-    SUBDIR += xfce4-toys
     SUBDIR += xfireworks
     SUBDIR += xflame
     SUBDIR += xfrisk
