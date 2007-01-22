@@ -15650,6 +15650,7 @@ xfce4-icon-theme	ports/x11-themes/xfce4-icon-theme
 xfce4-mcs-manager	ports/sysutils/xfce4-mcs-manager
 xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
 xfce4-media	ports/multimedia/xfce4-media
+xfce4-messenger-plugin	ports/net-im/xfce4-messenger-plugin
 xfce4-minicmd-plugin	ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer	ports/audio/xfce4-mixer
 xfce4-netload-plugin	ports/sysutils/xfce4-netload-plugin
