@@ -19,6 +19,16 @@
  	fprintf(stderr,"\t-a is option to the -F switch and has no effect on other options\n");
  	fprintf(stderr,"\t-s and -e should prefereibly be used together with -t \n\n");
  	exit(1);
+@@ -228,7 +228,8 @@
+ }
+ 
+ int CheckSizeArray(const int size_array[], int reference, int target) {
+-	if ( (size_array[reference]/size_array[target] == 1) &&
++	if ( size_array[target] &&
++	     (size_array[reference]/size_array[target] == 1) &&
+ 	     ((size_array[reference] * 2 - size_array[target])/ size_array[target] == 1) &&
+ 	     ((size_array[reference]%size_array[target] * 3) < size_array[reference]) ) {
+ 		/* We have a dual DVD with two feature films - now lets see if they have the same amount of chapters*/
 @@ -782,7 +783,7 @@
  	 to consider the second one a feature title we are doing two checks (biggest  + biggest - second) /second == 1
  	 and biggest%second * 3 < biggest */
