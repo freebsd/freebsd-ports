@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	octave
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
 
-BUILD_DEPENDS=	qhull:${PORTSDIR}/math/qhull \
+BUILD_DEPENDS+=	qhull:${PORTSDIR}/math/qhull \
 		octave:${PORTSDIR}/math/octave \
 		gcsplit:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
+RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
 		qhull:${PORTSDIR}/math/qhull \
 		bash:${PORTSDIR}/shells/bash
 
@@ -30,6 +30,12 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--x-libraries=${X11BASE}/lib \
 		--x-includes=${X11BASE}/include
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 .include <bsd.port.pre.mk>
 
