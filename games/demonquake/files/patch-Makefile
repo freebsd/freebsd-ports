@@ -1,137 +1,71 @@
---- Makefile.orig	Thu Nov 10 09:52:39 2005
-+++ Makefile	Sat May 27 13:44:29 2006
-@@ -8,7 +8,7 @@
- # Modified by QuDos at http://qudos.quakedev.com
+--- ./Makefile.orig	Sun Jan 21 16:03:40 2007
++++ ./Makefile	Sun Jan 21 16:14:19 2007
+@@ -12,8 +12,6 @@
  
- BASEVERSION=0.16
--VERSION=$(BASEVERSION)$(GLIBC)
-+VERSION=$(BASEVERSION)
+ # this nice line comes from the linux kernel makefile
+ ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
+-MARCH :=$(shell uname -m)
+-
  
- ifneq (,$(findstring libc6,$(shell if [ -e /lib/libc.so.6 ];then echo libc6;fi)))
- GLIBC=-glibc
-@@ -16,45 +16,50 @@
- GLIBC=
+ VERSION=0.16
+ BINDIR=quake
+@@ -21,14 +19,14 @@
+ BUILD_DEBUG_DIR=debug_build
+ BUILD_RELEASE_DIR=release_build
+ 
+-BUILD_DEMONQUAKE=YES          # DemonQuake glx executable (uses oss for cdrom and sound)
+-BUILD_DEMONQUAKE_SDL=YES      # DemonQuake sdl glx executable (uses SDL for cdrom and sound)
+-BUILD_DZIP=YES                # Dzip binary for compress/uncompress demos
++BUILD_DEMONQUAKE?=NO          # DemonQuake glx executable (uses oss for cdrom and sound)
++BUILD_DEMONQUAKE_SDL?=NO      # DemonQuake sdl glx executable (uses SDL for cdrom and sound)
++BUILD_DZIP?=NO                # Dzip binary for compress/uncompress demos
+ 
+ # Use DATADIR for reading and ~/.demonquake for writting.
+-WITH_DATADIR=NO
++WITH_DATADIR=YES
+ # The next option is required when DATADIR is set to YES, Use ~/ for writing, instead of .
+-WITH_HOMEDIR=NO
++WITH_HOMEDIR=YES
+ # Directory within $HOME to write to
+ HOMEDIR=.demonquake
+ 
+@@ -36,33 +34,26 @@
+ WITH_FMOD=NO                  # Fmod Sound support
  endif
- 
--ifneq (,$(findstring alpha,$(shell uname -m)))
--ARCH=axp
--else
--ARCH=i386
--endif
- NOARCH=noarch
- 
- MOUNT_DIR=./src
- 
--BUILD_DEBUG_DIR=debug$(ARCH)$(GLIBC)
--BUILD_RELEASE_DIR=release$(ARCH)$(GLIBC)
-+BUILD_DEBUG_DIR=debug
-+BUILD_RELEASE_DIR=release
- 
--BUILD_SDL=YES   # demonquake sdl glx executable (uses SDL for cdrom and sound)
-+BUILD_SDL?=NO   # demonquake sdl glx executable (uses SDL for cdrom and sound)
  
 -CC=gcc
-+ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
 +CC?=gcc
-+USE_OPTIMIZED_CFLAGS?=YES
+ CC_VERSION=$(shell $(CC) -dumpversion | sed -e 's/\..*//g')
+ CC_VERSION_NUM=$(shell $(CC) -dumpversion)
  
--BASE_CFLAGS=-Dstricmp=strcasecmp -Did386 -funsigned-char #-Wall
-+BASE_CFLAGS=$(CFLAGS) -DDATADIR='"$(Q1DIR)"' -Dstricmp=strcasecmp -funsigned-char
+-OPTIMIZE=NO           # Enable Optimization, release build only.
++OPTIMIZE?=NO          # Enable Optimization, release build only.
+ STRIP=NO              # Remove symbols from binaries, reduce size.
+ VERBOSE=NO
  
--RELEASE_CFLAGS=$(BASE_CFLAGS) -march=i686 -O2 -ffast-math -funroll-loops \
--	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing -pipe #-Wall
--	
--DEBUG_CFLAGS=$(BASE_CFLAGS) -g #-DDEBUG_MEM
-+ifeq ($(ARCH),i386)
-+USE_X86_ASM?=YES
-+else
-+USE_X86_ASM=NO
-+endif
+-LOCALBASE= /usr/local
+-GAMEBASE= /usr/local
+-X11BASE=/usr/X11R6
++LOCALBASE?=/usr/local
++X11BASE?=/usr/X11R6
+ SYSBINDIR=$(LOCALBASE)/bin
+-DATADIR= $(GAMEBASE)/games/quake
+-
+-ifeq ($(ARCH),x86_64)
+- ARCH_LIBDIR=64
+-endif
++DATADIR?=$(Q2DIR)
  
-+ifeq ($(strip $(USE_X86_ASM)),YES)
-+BASE_CFLAGS+=-Did386
-+endif
- 
--LDFLAGS=-lm -ldl
-+RELEASE_CFLAGS=$(BASE_CFLAGS)
-+ifeq ($(strip $(USE_OPTIMIZED_CFLAGS)),YES)
-+RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
-+	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing -pipe
-+endif
-+	
-+DEBUG_CFLAGS=$(BASE_CFLAGS) -g #-DDEBUG_MEM
- 
--LDFLAGS += -L./src/fmod -Wl,-rpath,. -lfmod  #-L./src/mss -Wl,-rpath,. -lmss
-+LDFLAGS+=-lm
- 
- ifeq ($(strip $(BUILD_SDL)),YES)
-- SDLCFLAGS=$(shell sdl-config --cflags)
-- SDLLDFLAGS=$(shell sdl-config --libs)
-- LDFLAGS += \
--    -lSDL
-+ SDLCFLAGS=$(shell $(SDL_CONFIG) --cflags)
-+ SDLLDFLAGS=$(shell $(SDL_CONFIG) --libs)
-  BASE_CFLAGS += \
-     -D_SDL_FIX -D_SDL_BIN
- endif
- 
--GLLDFLAGS=-L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib -lGL -lGLU -lX11 -lXext -ldl -lXxf86dga -lXxf86vm -lm -lz -lpng -ljpeg
--GLCFLAGS=-DGLQUAKE -I/usr/include -I/usr/X11R6/include
-+GLLDFLAGS=-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lGL -lGLU -lX11 -lXext -lXxf86dga -lXxf86vm -lm -lz -lpng -ljpeg
-+GLCFLAGS=-DGLQUAKE -I$(X11BASE)/include -I$(LOCALBASE)/include
- 
- DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
- DO_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) -o $@ -c $<
-@@ -70,10 +75,10 @@
- # SETUP AND BUILD
- #############################################################################
- 
--   TARGETS=$(BUILDDIR)/demonquake.glx
-+   TARGETS=$(BUILDDIR)/demonquake
- 
- ifeq ($(strip $(BUILD_SDL)),YES)
--   TARGETS +=$(BUILDDIR)/demonquake-sdl.glx
-+   TARGETS +=$(BUILDDIR)/demonquake-sdl
- endif
- 
- all:
-@@ -165,12 +170,15 @@
-    $(BUILDDIR)/glquake/sys_linux.o \
-    $(BUILDDIR)/glquake/snd_dma.o \
-    $(BUILDDIR)/glquake/snd_mem.o \
--   $(BUILDDIR)/glquake/snd_mix.o \
--   \
-+   $(BUILDDIR)/glquake/snd_mix.o
-+
-+ifeq ($(strip $(USE_X86_ASM)),YES)
-+GLQUAKE_OBJS+= \
-    $(BUILDDIR)/glquake/math.o \
-    $(BUILDDIR)/glquake/snd_mixa.o \
-    $(BUILDDIR)/glquake/sys_x86.o \
-    $(BUILDDIR)/glquake/worlda.o
-+endif
- 
- GLQUAKE_LNX_OBJS = \
-    $(BUILDDIR)/glquake/cd_linux.o \
-@@ -183,10 +191,10 @@
- GLX_OBJS=$(BUILDDIR)/glquake/vid_glx.o \
- 	$(BUILDDIR)/glquake/vid_common_gl.o
- 
--$(BUILDDIR)/demonquake.glx : $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS)
-+$(BUILDDIR)/demonquake : $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS)
- 	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS) $(GLLDFLAGS) $(LDFLAGS)
- 	
--$(BUILDDIR)/demonquake-sdl.glx : $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS)
-+$(BUILDDIR)/demonquake-sdl : $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS)
- 	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS) $(GLLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS)
- 
- $(BUILDDIR)/glquake/cl_collision.o : $(MOUNT_DIR)/cl_collision.c
-@@ -291,7 +299,7 @@
- $(BUILDDIR)/glquake/mathlib.o :      $(MOUNT_DIR)/mathlib.c
- 	$(DO_GL_CC)
- 
--$(BUILDDIR)/glquake/mod.o :          $(MOUNT_DIR)/mod.c
-+$(BUILDDIR)/glquake/mod.o :      $(MOUNT_DIR)/mod.c
- 	$(DO_GL_CC)
- 
- $(BUILDDIR)/glquake/nehahra.o :      $(MOUNT_DIR)/nehahra.c
+ # Seems that gcc 4.0 has some issues with -march option here, so i added it by default.
+ # Feel free to remove it.
+ BASE_CFLAGS+= \
++	      $(CFLAGS) \
+              -I$(LOCALBASE)/include \
+              -I$(X11BASE)/include \
+              -DGLQUAKE
+-ifeq ($(ARCH),i386)
+- BASE_CFLAGS+=-march=$(MARCH)
+-endif
+ 	    
+ DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb -Wall
+ RELEASE_CFLAGS+=$(BASE_CFLAGS)\

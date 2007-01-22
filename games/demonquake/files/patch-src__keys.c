@@ -1,5 +1,5 @@
---- ./src/keys.c.orig	Thu Nov  3 16:14:02 2005
-+++ ./src/keys.c	Tue May 16 14:36:16 2006
+--- ./keys.c.orig	Thu Nov  3 16:14:02 2005
++++ ./keys.c	Tue May 16 14:36:16 2006
 @@ -663,7 +663,7 @@
  
  //QuDos- enable/disable cmdhist.dat file creation, i don't need this feature
