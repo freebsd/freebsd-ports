@@ -6,38 +6,36 @@
 #
 
 PORTNAME=	libxfce4gui
-PORTVERSION=	4.2.3
-PORTREVISION=	3
+PORTVERSION=	4.4.0
 CATEGORIES=	x11-toolkits xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	libxfcegui4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
 
-LIB_DEPENDS=	dbh-4.5.4:${PORTSDIR}/databases/dbh \
-		xfce4util.1:${PORTSDIR}/x11/libxfce4util
-
-USE_GNOME=	gtk20 gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${X11BASE}/lib" \
-		CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include"
-CONFIGURE_ARGS=	--enable-xinerama
-INSTALLS_SHLIB=	yes
+INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
+USE_LDCONFIG=	yes
+USE_XFCE=	libutil
+USE_XLIB=	yes
+
+OPTIONS=	GTKDOC	"install the library documentation"	off
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
 CONFIGURE_ARGS+=--enable-gtk-doc
+PLIST_SUB+=	GTK_DOC=""
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
+PLIST_SUB+=	GTK_DOC="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} 's|dbh-1\.0|dbh|g' ${WRKSRC}/configure
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

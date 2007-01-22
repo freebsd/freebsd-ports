@@ -6,37 +6,31 @@
 #
 
 PORTNAME=	xfce4-print
-PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTVERSION=	4.4.0
 CATEGORIES=	print xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfprint-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 graphical frontend for printing
 
-BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		xfce4mcs-client.2:${PORTSDIR}/x11/libxfce4mcs
-RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-
-USE_GETTEXT=	yes
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
-		CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
-OPTIONS=	LPR	"Use lpr as printing system"	on\
-		CUPS	"Use cups as printing system"	off
+INSTALLS_ICONS= yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
+USE_LDCONFIG=	yes
+USE_XFCE=	configenv libgui libmcs libutil mcsmanager
+USE_XLIB=	yes
+
+OPTIONS=	LPR	"Use lpr as printing system"		on \
+		CUPS	"Use cups as printing system"		off \
+		LETTER	"Use letter paper format instead of A4" off
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_CUPS)
 CONFIGURE_ARGS+=--enable-cups

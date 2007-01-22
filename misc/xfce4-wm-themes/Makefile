@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	xfce4-wm-themes
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	4.4.0
 CATEGORIES=	misc xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfwm4-themes-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -20,8 +16,10 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 window decoration themes for xfwm4
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
+USE_GNOME=	gnometarget
 
-NO_BUILD=	yes
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

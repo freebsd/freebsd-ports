@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	0.2.2
-PORTREVISION=	5
+PORTVERSION=	0.3
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	xfce-goodies
+MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
 DIST_SUBDIR=	xfce4
+PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
+PATCHFILES=	gcc295-xfce4-cpugraph-plugin.patch
 
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	XFce4 systemload plugin with multiple CPU display modes
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-
-USE_GCC=	3.4
-USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv panel
+USE_XLIB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

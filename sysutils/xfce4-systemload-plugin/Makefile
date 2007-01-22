@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	xfce4-systemload-plugin
-PORTVERSION=	0.3.4
-PORTREVISION=	6
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	thorsten.greiner@web.de
 COMMENT=	System Load plugin for XFce4
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv panel
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

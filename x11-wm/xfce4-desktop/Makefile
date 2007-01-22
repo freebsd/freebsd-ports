@@ -6,41 +6,44 @@
 #
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.2.3
-PORTREVISION=	3
+PORTVERSION=	4.4.0
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 desktop background manager and root menu
 
-BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
-		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
-		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_GETTEXT=	yes
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${X11BASE}/lib" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS=-L${LOCALBASE}/lib
+INSTALLS_ICONS= yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnometarget gtk20 intltool intlhack pkgconfig
+USE_LDCONFIG=	yes
+USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
+USE_XLIB=	yes
+
+OPTIONS=	THUNAR	"Enable thunar support"		on
 
 MAN1=		xfdesktop.1
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_THUNAR)
+CONFIGURE_ARGS+=--enable-thunar-vfs --enable-thunarx --enable-exo
+USE_XFCE+=	libexo thunar
+.else
+CONFIGURE_ARGS+=--disable-thunar-vfs --disable-thunarx --disable-exo
+.endif
+
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|builtin\(.*\)"quit"|app\1"xfce4-session-logout"|g' \
 		${WRKSRC}/menu.xml*
-	@${REINPLACE_CMD} -e 's|G_INLINE_FUNC||g' ${WRKSRC}/src/xfce-desktop.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

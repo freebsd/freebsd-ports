@@ -4,11 +4,9 @@ lib/xfce4/modules/libxfce4mixer.so
 lib/xfce4/modules/libxfce4mixer.so.0
 lib/xfce4/mcs-plugins/sound_settings.la
 lib/xfce4/mcs-plugins/sound_settings.so
-lib/xfce4/panel-plugins/libmixer.la
-lib/xfce4/panel-plugins/libmixer.so
+libexec/xfce4/panel-plugins/xfce4-mixer-plugin
 share/applications/xfce-mixer-settings.desktop
 share/icons/hicolor/48x48/apps/xfce4-mixer.png
-share/locale/af/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ar/LC_MESSAGES/xfce4-mixer.mo
 share/locale/az/LC_MESSAGES/xfce4-mixer.mo
 share/locale/be/LC_MESSAGES/xfce4-mixer.mo
@@ -16,8 +14,8 @@ share/locale/bg/LC_MESSAGES/xfce4-mixer.mo
 share/locale/bn_IN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ca/LC_MESSAGES/xfce4-mixer.mo
 share/locale/cs/LC_MESSAGES/xfce4-mixer.mo
-share/locale/da/LC_MESSAGES/xfce4-mixer.mo
 share/locale/de/LC_MESSAGES/xfce4-mixer.mo
+share/locale/dz/LC_MESSAGES/xfce4-mixer.mo
 share/locale/el/LC_MESSAGES/xfce4-mixer.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-mixer.mo
 share/locale/es/LC_MESSAGES/xfce4-mixer.mo
@@ -27,6 +25,7 @@ share/locale/eu/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fa/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fr/LC_MESSAGES/xfce4-mixer.mo
+share/locale/gl/LC_MESSAGES/xfce4-mixer.mo
 share/locale/gu/LC_MESSAGES/xfce4-mixer.mo
 share/locale/he/LC_MESSAGES/xfce4-mixer.mo
 share/locale/hi/LC_MESSAGES/xfce4-mixer.mo
@@ -34,9 +33,10 @@ share/locale/hu/LC_MESSAGES/xfce4-mixer.mo
 share/locale/hy/LC_MESSAGES/xfce4-mixer.mo
 share/locale/it/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ja/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ka/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ko/LC_MESSAGES/xfce4-mixer.mo
-share/locale/ku/LC_MESSAGES/xfce4-mixer.mo
 share/locale/lt/LC_MESSAGES/xfce4-mixer.mo
+share/locale/mk/LC_MESSAGES/xfce4-mixer.mo
 share/locale/mr/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ms/LC_MESSAGES/xfce4-mixer.mo
 share/locale/nb_NO/LC_MESSAGES/xfce4-mixer.mo
@@ -48,7 +48,6 @@ share/locale/pt_PT/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ro/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ru/LC_MESSAGES/xfce4-mixer.mo
 share/locale/sk/LC_MESSAGES/xfce4-mixer.mo
-share/locale/sl/LC_MESSAGES/xfce4-mixer.mo
 share/locale/sv/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ta/LC_MESSAGES/xfce4-mixer.mo
 share/locale/tr/LC_MESSAGES/xfce4-mixer.mo
@@ -56,43 +55,18 @@ share/locale/uk/LC_MESSAGES/xfce4-mixer.mo
 share/locale/vi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
+share/xfce4/panel-plugins/xfce4-mixer.desktop
 @dirrmtry lib/xfce4/modules
 @dirrmtry lib/xfce4/mcs-plugins
 @dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be/LC_MESSAGES
-@dirrmtry share/locale/be
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4

@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTVERSION=	0.8.0
 CATEGORIES=	x11 xfce
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	xfce-goodies
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	XFce 4 clipboard module for xfce4-panel
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv panel
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

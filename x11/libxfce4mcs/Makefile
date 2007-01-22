@@ -6,32 +6,44 @@
 #
 
 PORTNAME=	libxfce4mcs
-PORTVERSION=	4.2.3
-PORTREVISION=	3
+PORTVERSION=	4.4.0
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings management library used by most XFce 4 modules
 
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util
-
-USE_XLIB=	yes
-USE_GNOME=	glib20 gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack gnometarget pkgconfig
+USE_LDCONFIG=	yes
+USE_XFCE=	configenv libutil
+USE_XLIB=	yes
+
+OPTIONS=	GTKDOC	"install the library documentation"	off \
+		STARTUP "Enable startup notification support"	on
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
 CONFIGURE_ARGS+=--enable-gtk-doc
+PLIST_SUB+=	GTK_DOC=""
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
+PLIST_SUB+=	GTK_DOC="@comment "
 .endif
 
-.include <bsd.port.mk>
+.if !defined(WITHOUT_STARTUP)
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+CONFIGURE_ARGS+=--enable-startup-notification
+.else
+CONFIGURE_ARGS+=--disable-startup-notification
+.endif
+
+.include <bsd.port.post.mk>

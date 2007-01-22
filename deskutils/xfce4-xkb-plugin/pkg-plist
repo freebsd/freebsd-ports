@@ -1,6 +1,18 @@
-lib/xfce4/panel-plugins/libxkb.a
-lib/xfce4/panel-plugins/libxkb.la
-lib/xfce4/panel-plugins/libxkb.so
+libexec/xfce4/panel-plugins/xfce4-xkb-plugin
+share/locale/bg/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/de/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/eu/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/hu/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/ru/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/ca/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/cs/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/el/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/gl/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/ja/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/xfce4/panel-plugins/xkb-plugin.desktop
 share/xfce4/xkb/flags/ae.png
 share/xfce4/xkb/flags/am.png
 share/xfce4/xkb/flags/ar.png
@@ -21,12 +33,12 @@ share/xfce4/xkb/flags/dk.png
 share/xfce4/xkb/flags/dz.png
 share/xfce4/xkb/flags/ee.png
 share/xfce4/xkb/flags/eg.png
-share/xfce4/xkb/flags/el.png
 share/xfce4/xkb/flags/es.png
 share/xfce4/xkb/flags/eu.png
 share/xfce4/xkb/flags/fi.png
 share/xfce4/xkb/flags/fr.png
 share/xfce4/xkb/flags/ge.png
+share/xfce4/xkb/flags/gr.png
 share/xfce4/xkb/flags/hr.png
 share/xfce4/xkb/flags/hu.png
 share/xfce4/xkb/flags/il.png
@@ -75,6 +87,10 @@ share/xfce4/xkb/flags/uy.png
 share/xfce4/xkb/flags/vn.png
 share/xfce4/xkb/flags/ye.png
 share/xfce4/xkb/flags/yu.png
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
 @dirrm share/xfce4/xkb/flags
 @dirrm share/xfce4/xkb
 @dirrmtry share/xfce4

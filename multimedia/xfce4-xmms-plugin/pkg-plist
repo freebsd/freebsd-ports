@@ -1,23 +1,24 @@
-lib/xfce4/panel-plugins/libxmms_plugin.a
-lib/xfce4/panel-plugins/libxmms_plugin.la
-lib/xfce4/panel-plugins/libxmms_plugin.so
+libexec/xfce4/panel-plugins/xfce4-xmms-plugin
+share/locale/cs/LC_MESSAGES/xfce4-xmms-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-xmms-plugin.mo
-share/locale/ko/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/eu/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/hu/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/ja/LC_MESSAGES/xfce4-xmms-plugin.mo
 share/locale/lt/LC_MESSAGES/xfce4-xmms-plugin.mo
-share/xfce4/xmms-plugin/xmms-plugin-menu-eject.png
-share/xfce4/xmms-plugin/xmms-plugin-menu-icon.png
-share/xfce4/xmms-plugin/xmms-plugin-menu-next.png
-share/xfce4/xmms-plugin/xmms-plugin-menu-pause.png
-share/xfce4/xmms-plugin/xmms-plugin-menu-play.png
-share/xfce4/xmms-plugin/xmms-plugin-menu-prev.png
-share/xfce4/xmms-plugin/xmms-plugin-menu-stop.png
-share/xfce4/xmms-plugin/xmms-plugin-next.png
-share/xfce4/xmms-plugin/xmms-plugin-pause.png
-share/xfce4/xmms-plugin/xmms-plugin-play.png
-share/xfce4/xmms-plugin/xmms-plugin-prev.png
-share/xfce4/xmms-plugin/xmms-plugin-stop.png
-@dirrmtry lib/xfce4/panel-plugins
-@dirrmtry lib/xfce4
-@dirrm share/xfce4/xmms-plugin
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
+share/locale/tr/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/vi/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/xfce4/panel-plugins/xfce4-xmms-plugin.desktop
+share/xfce4/xfce4-xmms-plugin/xmms-plugin-prev.png
+share/xfce4/xfce4-xmms-plugin/xmms-plugin-play.png
+share/xfce4/xfce4-xmms-plugin/xmms-plugin-pause.png
+share/xfce4/xfce4-xmms-plugin/xmms-plugin-stop.png
+share/xfce4/xfce4-xmms-plugin/xmms-plugin-next.png
+@dirrm share/xfce4/xfce4-xmms-plugin
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
+

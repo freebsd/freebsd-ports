@@ -2,14 +2,12 @@ include/xfce4/libxfce4mcs/mcs-client.h
 include/xfce4/libxfce4mcs/mcs-client-enum-types.h
 include/xfce4/libxfce4mcs/mcs-common.h
 include/xfce4/libxfce4mcs/mcs-manager.h
-lib/libxfce4mcs-client.a
 lib/libxfce4mcs-client.la
 lib/libxfce4mcs-client.so
-lib/libxfce4mcs-client.so.2
-lib/libxfce4mcs-manager.a
+lib/libxfce4mcs-client.so.3
 lib/libxfce4mcs-manager.la
 lib/libxfce4mcs-manager.so
-lib/libxfce4mcs-manager.so.2
+lib/libxfce4mcs-manager.so.3
 libdata/pkgconfig/libxfce4mcs-manager-1.0.pc
 libdata/pkgconfig/libxfce4mcs-client-1.0.pc
 share/gtk-doc/html/libxfce4mcs/ch01.html
@@ -22,6 +20,7 @@ share/gtk-doc/html/libxfce4mcs/libxfce4mcs-mcs-common.html
 share/gtk-doc/html/libxfce4mcs/libxfce4mcs-mcs-manager.html
 share/gtk-doc/html/libxfce4mcs/libxfce4mcs.devhelp
 share/gtk-doc/html/libxfce4mcs/right.png
+share/gtk-doc/html/libxfce4mcs/style.css
 share/gtk-doc/html/libxfce4mcs/up.png
 @dirrm include/xfce4/libxfce4mcs
 @dirrm share/gtk-doc/html/libxfce4mcs

@@ -6,31 +6,36 @@
 #
 
 PORTNAME=	xfce4-xmms-plugin
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	multimedia audio xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://download2.berlios.de/xfce-goodies/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	jfb@minet.net
 COMMENT=	XFce 4 xmms control plugin for xfce4-panel
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel \
-		xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel \
-		xmms:${PORTSDIR}/multimedia/xmms
-
-USE_BZIP2=	yes
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
-		CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pango pkgconfig
+USE_XFCE=	configenv libgui libutil panel
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+OPTIONS=	BEEP	"Use Beep media player instead of xmms" 	off
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+
+.if defined(WITH_BEEP)
+LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
+CONFIGURE_ARGS+=--with-player=beep
+.else
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+CONFIGURE_ARGS+=--with-player=xmms
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

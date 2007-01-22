@@ -3,6 +3,9 @@ lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.so
 share/themes/Xfce-4.0/gtk-2.0/gtkrc
 share/themes/Xfce-4.0/ICON.png
 share/themes/Xfce-4.0/README.html
+share/themes/Xfce-4.2/gtk-2.0/gtkrc
+share/themes/Xfce-4.2/ICON.png
+share/themes/Xfce-4.2/README.html
 share/themes/Xfce-b5/ICON.png
 share/themes/Xfce-b5/README.html
 share/themes/Xfce-b5/gtk-2.0/gtkrc
@@ -30,6 +33,9 @@ share/themes/Xfce-kolors/gtk-2.0/gtkrc
 share/themes/Xfce-light/ICON.png
 share/themes/Xfce-light/README.html
 share/themes/Xfce-light/gtk-2.0/gtkrc
+share/themes/Xfce-orange/ICON.png
+share/themes/Xfce-orange/README.html
+share/themes/Xfce-orange/gtk-2.0/gtkrc
 share/themes/Xfce-redmondxp/ICON.png
 share/themes/Xfce-redmondxp/README.html
 share/themes/Xfce-redmondxp/gtk-2.0/gtkrc
@@ -50,6 +56,8 @@ share/themes/Xfce/README.html
 share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-4.0/gtk-2.0
 @dirrm share/themes/Xfce-4.0
+@dirrm share/themes/Xfce-4.2/gtk-2.0
+@dirrm share/themes/Xfce-4.2
 @dirrm share/themes/Xfce/gtk-2.0
 @dirrmtry share/themes/Xfce
 @dirrm share/themes/Xfce-cadmium/gtk-2.0
@@ -68,6 +76,8 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-saltlake
 @dirrm share/themes/Xfce-redmondxp/gtk-2.0
 @dirrm share/themes/Xfce-redmondxp
+@dirrm share/themes/Xfce-orange/gtk-2.0
+@dirrm share/themes/Xfce-orange
 @dirrm share/themes/Xfce-light/gtk-2.0
 @dirrm share/themes/Xfce-light
 @dirrm share/themes/Xfce-kolors/gtk-2.0
@@ -80,3 +90,8 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-basic
 @dirrm share/themes/Xfce-b5/gtk-2.0
 @dirrm share/themes/Xfce-b5
+@dirrmtry lib/gtk-2.0/2.4.0/engines
+@dirrmtry lib/gtk-2.0/2.4.0
+@dirrmtry lib/gtk-2.0
+@dirrmtry share/themes
+

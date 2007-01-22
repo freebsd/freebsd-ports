@@ -3,27 +3,26 @@
 # Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/sysutils/xfce4-genmon-plugin/Makefile,v 1.1 2006/10/02 20:33:19 ahze Exp $
+#
 
 PORTNAME=	xfce4-genmon-plugin
-PORTVERSION=	1.1
-PORTREVISION=	3
+PORTVERSION=	2.0
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	Generic Monitor XFce4 panel plugin
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-
-USE_GNOME=	gtk20 libxml2
+#USE_AUTOTOOLS=	aclocal:19 autoheader:259 automake:19 autoconf:259
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv panel
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

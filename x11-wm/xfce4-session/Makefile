@@ -6,35 +6,29 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTVERSION=	4.4.0
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Session manager for the Xfce 4 desktop environment
 
-BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
-		iceauth:${X_CLIENTS_PORT}
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
-		iceauth:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	iceauth:${X_CLIENTS_PORT}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GETTEXT=	yes
-USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB= yes
-
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \
-			-L${LOCALBASE}/lib -I${X11BASE}/include \
-			-L${X11BASE}/lib"
+INSTALLS_ICONS= yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
+USE_LDCONFIG=	yes
+USE_XFCE=	configenv libgui libmcs libutil mcsmanager
+USE_XLIB=	yes
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>
