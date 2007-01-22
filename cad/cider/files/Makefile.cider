@@ -1,5 +1,5 @@
 all:
-	./util/build FreeBSD
+	env CC=${CC} ./util/build FreeBSD
 
 install:
 	./util/build FreeBSD install 

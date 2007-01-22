@@ -7,7 +7,7 @@
 
 PORTNAME=	cider
 PORTVERSION=	1.b1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mita
@@ -16,13 +16,15 @@ DISTNAME=	cider1b1
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A mixed-level circuit and device simulator (includes SPICE3)
 
-CONFLICTS=	spice-*
+CONFLICTS=	spice-[0-9]*
 WRKSRC=		${WRKDIR}/sim
 USE_XLIB=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1 cider.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
+
+MAKE_ENV+=	CC="${CC}"
 
 pre-patch:
 	@${CP} -f ${WRKSRC}/spice/common/lib/helpdir/spice.txt ${WRKSRC}/cider/common/lib/helpdir/spice.txt
