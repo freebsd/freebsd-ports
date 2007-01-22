@@ -1,0 +1,12 @@
+TagPy is a Python crust (or a set of Python bindings) for
+Scott Wheeler's TagLib.
+
+TagPy can:
+
+    * read and write ID3 tags of version 1 and 2, with many supported
+      frame types for version 2 (in MPEG Layer 2 and MPEG Layer 3,
+      FLAC and MPC)
+    * access Xiph Comments in Ogg Vorbis Files and Ogg Flac Files
+    * access APE tags in Musepack and MP3 files.
+
+WWW:	http://news.tiker.net/software/tagpy
