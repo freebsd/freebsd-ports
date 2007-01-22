@@ -1,26 +1,9 @@
 bin/haddock
-bin/haddock-%%HADDOCK_VERSION%%
-lib/haddock-%%HADDOCK_VERSION%%/haddock.bin
-share/haddock-%%HADDOCK_VERSION%%/haddock.css
-share/haddock-%%HADDOCK_VERSION%%/haddock.js
-share/haddock-%%HADDOCK_VERSION%%/haskell_icon.gif
-share/haddock-%%HADDOCK_VERSION%%/minus.gif
-share/haddock-%%HADDOCK_VERSION%%/plus.gif
-%%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03s02.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03s03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03s04.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03s05.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03s08.html
-%%PORTDOCS%%%%DOCSDIR%%/fptools.css
-%%PORTDOCS%%%%DOCSDIR%%/hyperlinking.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/invoking.html
-%%PORTDOCS%%%%DOCSDIR%%/ix01.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/markup.html
-%%PORTDOCS%%%%DOCSDIR%%/module-attributes.html
-@dirrm lib/haddock-%%HADDOCK_VERSION%%
+share/haddock-%%HADDOCK_VERSION%%/html/haddock.css
+share/haddock-%%HADDOCK_VERSION%%/html/haddock-DEBUG.css
+share/haddock-%%HADDOCK_VERSION%%/html/haddock.js
+share/haddock-%%HADDOCK_VERSION%%/html/haskell_icon.gif
+share/haddock-%%HADDOCK_VERSION%%/html/minus.gif
+share/haddock-%%HADDOCK_VERSION%%/html/plus.gif
+@dirrm share/haddock-%%HADDOCK_VERSION%%/html
 @dirrm share/haddock-%%HADDOCK_VERSION%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
