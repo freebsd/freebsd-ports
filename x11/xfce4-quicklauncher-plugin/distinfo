@@ -1,0 +1,6 @@
+MD5 (xfce4/xfce4-quicklauncher-plugin-1.9.2.tar.bz2) = 64353ee9f32f891f198297937454307b
+SHA256 (xfce4/xfce4-quicklauncher-plugin-1.9.2.tar.bz2) = 486f4df584a2ba108929d864299755fbbdb205243a31a76c9370c075b5cd303e
+SIZE (xfce4/xfce4-quicklauncher-plugin-1.9.2.tar.bz2) = 324202
+MD5 (xfce4/gcc295-xfce4-quicklauncher-plugin-2.patch) = e03198626b2f4095d55e77c10dc91e25
+SHA256 (xfce4/gcc295-xfce4-quicklauncher-plugin-2.patch) = 2d30fe015b3fa78c1f2a30efd49b846fc5a0681447c561621ba15e6b8fc8a625
+SIZE (xfce4/gcc295-xfce4-quicklauncher-plugin-2.patch) = 612
