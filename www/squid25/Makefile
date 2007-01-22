@@ -73,7 +73,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
@@ -252,7 +252,7 @@ CONFIGURE_ARGS+=	--enable-carp
 CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
