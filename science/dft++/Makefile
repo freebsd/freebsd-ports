@@ -21,19 +21,18 @@ EXTRACT_ONLY=	${PORTNAME}.v${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	DFT++, A density functional software
 
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+.include <bsd.port.pre.mk>
 
+LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
 WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=	gfortran42
 F77=	gfortran42
 FORTRANLIBS=    -lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
-
-.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=     yes
