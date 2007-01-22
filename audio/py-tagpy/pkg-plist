@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/_tagpy.so
+%%PYTHON_SITELIBDIR%%/tagpy/__init__.py
+%%PYTHON_SITELIBDIR%%/tagpy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tagpy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tagpy/ape.py
+%%PYTHON_SITELIBDIR%%/tagpy/ape.pyc
+%%PYTHON_SITELIBDIR%%/tagpy/ape.pyo
+%%PYTHON_SITELIBDIR%%/tagpy/flac.py
+%%PYTHON_SITELIBDIR%%/tagpy/flac.pyc
+%%PYTHON_SITELIBDIR%%/tagpy/flac.pyo
+%%PYTHON_SITELIBDIR%%/tagpy/id3v1.py
+%%PYTHON_SITELIBDIR%%/tagpy/id3v1.pyc
+%%PYTHON_SITELIBDIR%%/tagpy/id3v1.pyo
+%%PYTHON_SITELIBDIR%%/tagpy/id3v2.py
+%%PYTHON_SITELIBDIR%%/tagpy/id3v2.pyc
+%%PYTHON_SITELIBDIR%%/tagpy/id3v2.pyo
+%%PYTHON_SITELIBDIR%%/tagpy/mpc.py
+%%PYTHON_SITELIBDIR%%/tagpy/mpc.pyc
+%%PYTHON_SITELIBDIR%%/tagpy/mpc.pyo
+%%PYTHON_SITELIBDIR%%/tagpy/mpeg.py
+%%PYTHON_SITELIBDIR%%/tagpy/mpeg.pyc
+%%PYTHON_SITELIBDIR%%/tagpy/mpeg.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tagpy

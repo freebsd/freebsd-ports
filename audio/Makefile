@@ -497,6 +497,7 @@
     SUBDIR += py-openal
     SUBDIR += py-sdl_mixer
     SUBDIR += py-taglib
+    SUBDIR += py-tagpy
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
     SUBDIR += py-xmms2
