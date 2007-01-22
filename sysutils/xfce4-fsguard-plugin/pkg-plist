@@ -1,5 +1,14 @@
 @comment $FreeBSD$
-lib/xfce4/panel-plugins/libfsguard.a
-lib/xfce4/panel-plugins/libfsguard.la
-lib/xfce4/panel-plugins/libfsguard.so
-@dirrmtry lib/xfce4/panel-plugins
+libexec/xfce4/panel-plugins/xfce4-fsguard-plugin
+share/icons/hicolor/48x48/apps/xfce-fsguard.png
+share/locale/de/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/hu/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/lt/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/xfce4/panel-plugins/fsguard.desktop
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4

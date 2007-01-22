@@ -16,46 +16,50 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
-LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		xine.16:${PORTSDIR}/multimedia/libxine \
-		exo-0.3.0:${PORTSDIR}/x11/libexo
+LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine \
+		exo-0.3:${PORTSDIR}/x11/libexo
 
-OPTIONS=	TAGLIB	"Enable metadata editing"	off \
-		DBUS	"Enable remote control support" off
-
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS= yes
 USE_BZIP2=	yes
+USE_GCC=	3.4+
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
-#NLS is hardcoded to "yes" in source, so no WITHOUT_NLS
 USE_GMAKE=	yes
-USE_GNOME=	libxml2 intlhack
+USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv libexo libgui libutilpanel
 USE_XLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
+OPTIONS=	TAGLIB	"Enable metadata editing"		off \
+		DBUS	"Enable D-BUS support"			on \
+		STARTUP "Enable startup notification support"	on
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_TAGLIB)
 LIB_DEPENDS+=	tag.5:${PORTSDIR}/audio/taglib
-CONFIGURE_ARGS+=	--with-taglib
+CONFIGURE_ARGS+=--with-taglib
 .else
-CONFIGURE_ARGS+=	--without-taglib
+CONFIGURE_ARGS+=--without-taglib
 .endif
 
-.if defined(WITH_DBUS)
+.if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=	--enable-dbus
+CONFIGURE_ARGS+=--enable-dbus
 .else
-CONFIGURE_ARGS+=	--disable-dbus
+CONFIGURE_ARGS+=--disable-dbus
+.endif
+
+.if !defined(WITHOUT_STARTUP)
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+CONFIGURE_ARGS+=--enable-startup-notification
+.else
+CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g" \
-		${WRKSRC}/xfmedia/Makefile.in
+	@${REINPLACE_CMD} -e "s|xfmedia_remote_LDADD = |&@LIBXFCEGUI4_LIBS@|" \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>

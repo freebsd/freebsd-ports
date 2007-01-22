@@ -6,25 +6,22 @@
 #
 
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Network Load plugin for XFce4
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-
-USE_BZIP2=	yes
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv panel
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

@@ -6,29 +6,31 @@
 #
 
 PORTNAME=	libxfce4util
-PORTVERSION=	4.2.3.2
-PORTREVISION=	2
+PORTVERSION=	4.4.0
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.p0llux.be/xfce/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 library with non-graphical helper functions
 
-USE_GNOME=	glib20 gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack gnometarget pkgconfig
+USE_LDCONFIG=	yes
+USE_XFCE=	configenv
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
 CONFIGURE_ARGS+=--enable-gtk-doc
+PLIST_SUB+=	GTK_DOC=""
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
+PLIST_SUB+=	GTK_DOC="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

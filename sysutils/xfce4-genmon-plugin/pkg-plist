@@ -1,4 +1,6 @@
-lib/xfce4/panel-plugins/libgenmon.a
-lib/xfce4/panel-plugins/libgenmon.la
-lib/xfce4/panel-plugins/libgenmon.so
-@dirrmtry lib/xfce4/panel-plugins
+libexec/xfce4/panel-plugins/xfce4-genmon-plugin
+share/xfce4/panel-plugins/genmon.desktop
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4

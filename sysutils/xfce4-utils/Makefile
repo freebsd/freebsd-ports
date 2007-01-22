@@ -6,31 +6,36 @@
 #
 
 PORTNAME=	xfce4-utils
-PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTVERSION=	4.4.0
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfce-utils-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 essential utilities and scripts
 
-BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-
-USE_GETTEXT=	yes
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${X11BASE}/lib" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS=-L${LOCALBASE}/lib
+INSTALLS_ICONS= yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+OPTIONS=	DBUS	"Enable D-BUS support"			on
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=--enable-dbus
+PLIST_SUB+=	WITH_DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	WITH_DBUS="@comment "
+.endif
+
+.include <bsd.port.post.mk>

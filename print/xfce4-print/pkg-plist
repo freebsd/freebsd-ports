@@ -1,5 +1,16 @@
-bin/xfprint-manager
+bin/xfprint4-manager
 bin/xfprint4
+include/xfce4/libxfprint/common.h
+include/xfce4/libxfprint/job.h
+include/xfce4/libxfprint/libxfprint.h
+include/xfce4/libxfprint/printer.h
+include/xfce4/libxfprint/printer-list-window.h
+include/xfce4/libxfprint/printer-queue-window.h
+include/xfce4/libxfprint/printing-system.h
+lib/libxfprint.so.0
+lib/libxfprint.so
+lib/libxfprint.la
+lib/libxfprint.a
 lib/xfce4/mcs-plugins/xfprint_plugin.a
 lib/xfce4/mcs-plugins/xfprint_plugin.la
 lib/xfce4/mcs-plugins/xfprint_plugin.so
@@ -9,12 +20,28 @@ lib/xfce4/mcs-plugins/xfprint_plugin.so
 %%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.a
 %%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.la
 %%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.so
+libdata/pkgconfig/xfprint-1.0.pc
 share/applications/xfprint.desktop
 share/applications/xfprint-manager.desktop
 share/applications/xfce-xfprint-settings.desktop
-share/icons/hicolor/scalable/apps/xfprint.svg
-share/icons/hicolor/48x48/apps/xfprint.png
-share/locale/af/LC_MESSAGES/xfprint.mo
+share/gtk-doc/html/libxfprint
+share/gtk-doc/html/libxfprint/PrinterListWindow.html
+share/gtk-doc/html/libxfprint/PrinterQueueWindow.html
+share/gtk-doc/html/libxfprint/PrintingSystem.html
+share/gtk-doc/html/libxfprint/ch01.html
+share/gtk-doc/html/libxfprint/home.png
+share/gtk-doc/html/libxfprint/index.html
+share/gtk-doc/html/libxfprint/index.sgml
+share/gtk-doc/html/libxfprint/left.png
+share/gtk-doc/html/libxfprint/libxfprint-Job.html
+share/gtk-doc/html/libxfprint/libxfprint-Printer.html
+share/gtk-doc/html/libxfprint/libxfprint.devhelp
+share/gtk-doc/html/libxfprint/right.png
+share/gtk-doc/html/libxfprint/style.css
+share/gtk-doc/html/libxfprint/up.png
+share/icons/hicolor/24x24/devices/printer.png
+share/icons/hicolor/48x48/devices/printer.png
+share/icons/hicolor/scalable/devices/printer.svg
 share/locale/ar/LC_MESSAGES/xfprint.mo
 share/locale/az/LC_MESSAGES/xfprint.mo
 share/locale/be/LC_MESSAGES/xfprint.mo
@@ -23,6 +50,7 @@ share/locale/bn_IN/LC_MESSAGES/xfprint.mo
 share/locale/ca/LC_MESSAGES/xfprint.mo
 share/locale/cs/LC_MESSAGES/xfprint.mo
 share/locale/de/LC_MESSAGES/xfprint.mo
+share/locale/dz/LC_MESSAGES/xfprint.mo
 share/locale/el/LC_MESSAGES/xfprint.mo
 share/locale/en_GB/LC_MESSAGES/xfprint.mo
 share/locale/es/LC_MESSAGES/xfprint.mo
@@ -32,15 +60,17 @@ share/locale/eu/LC_MESSAGES/xfprint.mo
 share/locale/fa/LC_MESSAGES/xfprint.mo
 share/locale/fi/LC_MESSAGES/xfprint.mo
 share/locale/fr/LC_MESSAGES/xfprint.mo
+share/locale/gl/LC_MESSAGES/xfprint.mo
 share/locale/gu/LC_MESSAGES/xfprint.mo
 share/locale/he/LC_MESSAGES/xfprint.mo
 share/locale/hi/LC_MESSAGES/xfprint.mo
 share/locale/hu/LC_MESSAGES/xfprint.mo
 share/locale/it/LC_MESSAGES/xfprint.mo
 share/locale/ja/LC_MESSAGES/xfprint.mo
+share/locale/ka/LC_MESSAGES/xfprint.mo
 share/locale/ko/LC_MESSAGES/xfprint.mo
-share/locale/ku/LC_MESSAGES/xfprint.mo
 share/locale/lt/LC_MESSAGES/xfprint.mo
+share/locale/mk/LC_MESSAGES/xfprint.mo
 share/locale/mr/LC_MESSAGES/xfprint.mo
 share/locale/ms/LC_MESSAGES/xfprint.mo
 share/locale/nl/LC_MESSAGES/xfprint.mo
@@ -51,7 +81,6 @@ share/locale/pt_PT/LC_MESSAGES/xfprint.mo
 share/locale/ro/LC_MESSAGES/xfprint.mo
 share/locale/ru/LC_MESSAGES/xfprint.mo
 share/locale/sk/LC_MESSAGES/xfprint.mo
-share/locale/sl/LC_MESSAGES/xfprint.mo
 share/locale/sv/LC_MESSAGES/xfprint.mo
 share/locale/ta/LC_MESSAGES/xfprint.mo
 share/locale/tr/LC_MESSAGES/xfprint.mo
@@ -77,56 +106,22 @@ share/xfce4/doc/fr/images/xfprint_prettyprinting.png
 share/xfce4/doc/fr/images/xfprint_sheets.png
 share/xfce4/doc/fr/images/xfprint_virtualpages.png
 share/xfce4/doc/fr/xfprint.html
-share/xfce4/doc/he/images/xfprint_headings.png
-share/xfce4/doc/he/images/xfprint_input.png
-share/xfce4/doc/he/images/xfprint-manager.png
-share/xfce4/doc/he/images/xfprint-manager-queue.png
-share/xfce4/doc/he/images/xfprint_mcs_plugin.png
-share/xfce4/doc/he/images/xfprint_prettyprinting.png
-share/xfce4/doc/he/images/xfprint_sheets.png
-share/xfce4/doc/he/images/xfprint_virtualpages.png
-share/xfce4/doc/he/xfprint.html
+@dirrm include/xfce4/libxfprint
+@dirrmtry include/xfce4
 @dirrmtry lib/xfce4/mcs-plugins
 @dirrmtry lib/xfce4/xfprint-plugins
 @dirrmtry lib/xfce4
 @dirrmtry share/applications
+@dirrm share/gtk-doc/html/libxfprint
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr/images
 @dirrmtry share/xfce4/doc/fr
-@dirrmtry share/xfce4/doc/he/images
-@dirrmtry share/xfce4/doc/he
 @dirrmtry share/xfce4/doc
 @dirrmtry share/xfce4
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be/LC_MESSAGES
-@dirrmtry share/locale/be

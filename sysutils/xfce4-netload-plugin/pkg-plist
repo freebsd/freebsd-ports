@@ -1,4 +1,13 @@
-lib/xfce4/panel-plugins/libnetload.a
-lib/xfce4/panel-plugins/libnetload.la
-lib/xfce4/panel-plugins/libnetload.so
-@dirrmtry lib/xfce4/panel-plugins
+libexec/xfce4/panel-plugins/xfce4-netload-plugin
+share/locale/de/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/lt/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/ca/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/uk/LC_MESSAGES/xfce4-netload-plugin.mo
+share/xfce4/panel-plugins/netload.desktop
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4

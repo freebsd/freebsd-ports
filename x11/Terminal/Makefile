@@ -3,30 +3,56 @@
 # Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11/Terminal/Makefile,v 1.2 2006/10/08 00:20:31 mezz Exp $
 #
 
 PORTNAME=	Terminal
-PORTVERSION=	0.2.4
-PORTREVISION=	3
-CATEGORIES=	x11
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+PORTVERSION=	0.2.6
+PORTREVISION=	0
+CATEGORIES=	x11 xfce
+MASTER_SITES=	${MASTER_SITES_XFCE}
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
 
-LIB_DEPENDS=	exo-0.3:${PORTSDIR}/x11/libexo \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
+LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS= yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 vte intlhack
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig vte
+USE_XFCE=	configenv libexo libutil panel
+USE_XLIB=	yes
+
+OPTIONS=	DBUS	"Enable D-BUS support"			on \
+		STARTUP "Enable startup notification support"	on
 
 MAN1=		Terminal.1
+
+.include  <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=--enable-dbus
+PLIST_SUB+=	WITH_DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	WITH_DBUS="@comment "
+.endif
+
+.if !defined(WITHOUT_STARTUP)
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+CONFIGURE_ARGS+=--enable-startup-notification
+.else
+CONFIGURE_ARGS+=--disable-startup-notification
+.endif
 
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|	doc[    ]*||' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

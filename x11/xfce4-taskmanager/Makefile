@@ -6,15 +6,26 @@
 #
 
 PORTNAME=	xfce4-taskmanager
-PORTVERSION=	0.2.1
+PORTVERSION=	0.4.0.r2
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://xfce4-taskmanager.nebulon.de/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	DaJoob@dajoob.com
 COMMENT=	A task manager for XFCE
 
-BUILD_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
+CONFIGURE_ENV=	PKG_CONFIG_PATH=${X11BASE}/libdata/pkgconfig:${LOCALBASE}/libdata/pkgconfig
 
-USE_AUTOTOOLS=	automake:19 autoconf:259
+GNU_CONFIGURE=	yes
+USE_BZIP=	yes
+USE_GCC=	3.4+
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv libgui
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

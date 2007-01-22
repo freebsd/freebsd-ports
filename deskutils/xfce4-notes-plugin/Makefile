@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	0.9.7
-PORTREVISION=	8
+PORTVERSION=	1.4.1
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
+PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
+PATCHFILES=	gcc295-xfce4-notes-plugin.patch
 
 MAINTAINER=	thorsten.greiner@web.de
 COMMENT=	Sticky notes panel plugin for XFce4
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-
-USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv libgui libutil panel
+USE_XLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

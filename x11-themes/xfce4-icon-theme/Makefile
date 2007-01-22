@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	xfce4-icon-theme
-PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTVERSION=	4.4.0
 CATEGORIES=	x11-themes xfce
-MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Icon themes for XFce 4
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnometarget intltool intlhack
+USE_XFCE=	configenv
+USE_XLIB=	yes
+WANT_GNOME=	yes
 
-NO_BUILD=	yes
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

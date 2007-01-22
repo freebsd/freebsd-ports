@@ -1,5 +1,17 @@
-lib/xfce4/panel-plugins/libbattmon.a
-lib/xfce4/panel-plugins/libbattmon.la
-lib/xfce4/panel-plugins/libbattmon.so
-@dirrmtry lib/xfce4/panel-plugins
-@dirrmtry lib/xfce4
+libexec/xfce4/panel-plugins/xfce4-battery-plugin
+share/icons/hicolor/16x16/devices/battery.png
+share/icons/hicolor/22x22/devices/battery.png
+share/icons/hicolor/24x24/devices/battery.png
+share/icons/hicolor/32x32/devices/battery.png
+share/icons/hicolor/scalable/devices/battery.svg
+share/locale/ca/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/cs/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/eu/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-battery-plugin.mo
+share/xfce4/panel-plugins/battmon.desktop
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
+

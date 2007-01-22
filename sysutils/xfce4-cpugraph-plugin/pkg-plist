@@ -1,4 +1,6 @@
-lib/xfce4/panel-plugins/libcpugraph.so
-lib/xfce4/panel-plugins/libcpugraph.la
-lib/xfce4/panel-plugins/libcpugraph.a
-@dirrmtry lib/xfce4/panel-plugins
+libexec/xfce4/panel-plugins/xfce4-cpugraph-plugin
+share/xfce4/panel-plugins/cpugraph.desktop
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
