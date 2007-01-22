@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/1738/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1869/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -18,6 +18,7 @@ COMMENT=	A smartcard development library
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
+USE_RC_SUBR=	pcscd
 
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}" \
@@ -36,7 +37,7 @@ USE_GETOPT_LONG=yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN1=		formaticc.1
 MAN5=		reader.conf.5
-MAN8=		pcscd.8
+MAN8=		pcscd.8 update-reader.conf.8
 
 .if !defined(WITHOUT_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
@@ -72,8 +73,6 @@ post-install:
 	${TOUCH} ${PREFIX}/lib/pcsc/services/.keep_me
 	${INSTALL_DATA} ${WRKSRC}/etc/reader.conf \
 		${PREFIX}/etc/reader.conf.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/pcscd.sh \
-		${PREFIX}/etc/rc.d/pcscd.sh.sample
 	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${FILESDIR}/pkg-message.in > \
 		${WRKDIR}/pkg-message
 	@${CAT} ${PKGMESSAGE}
