@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	6.4.2
-PORTREVISION=	1
+PORTVERSION=	6.6
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
-		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
-DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
+		http://people.freebsd.org/~vs/ghcdist/${PORTVERSION}/:boot
+#		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
+DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
+		ghc-${PORTVERSION}-src-extralibs${EXTRACT_SUFX}:source
 
 PATCH_SITES=	http://www-i2.informatik.rwth-aachen.de/~stolz/FreeBSD/
 PATCHFILES=	patch-ghc-libraries_OpenAL.diff
@@ -31,13 +32,14 @@ OPTIONS=	PROFILE "Compile for profiling as well" on
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-DISTFILES+=	${BOOT_DIST4}
+#DISTFILES+=	${BOOT_DIST4}
 IGNORE=		unsupported at the moment
 .else
 .if ${OSVERSION} >= 600000
 DISTFILES+=	${BOOT_DIST}
 .else
-DISTFILES+=	${BOOT_DIST5}
+IGNORE=		unsupported at the moment
+#DISTFILES+=	${BOOT_DIST5}
 .endif
 .endif
 .if ${OSVERSION} >= 700000
@@ -57,7 +59,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--without-x --without-x11 --without-hgl --without-opengl --without-glut
+CONFIGURE_ARGS+=--disable-x11 --disable-hgl --disable-opengl --disable-glut
 PLIST_SUB+=	X11="@comment "
 PKGNAMESUFFIX=	-nox11
 .else
@@ -99,10 +101,6 @@ CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 TMPDIR=		${WRKSRC}/tmp
 MAKE_ENV+=	TMPDIR=${TMPDIR}
 
-# Just do a stage1 build
-ALL_TARGET=	stage1
-MAKE_ENV += stage=1
-
 .if defined(WITHOUT_PROFILE)
 post-extract:
 	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
@@ -110,7 +108,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} s+%%LOCALBASE%%+${LOCALBASE}+ \
-		${WRKSRC}/ghc/rts/package.conf.in
+		${WRKSRC}/rts/package.conf.in
+	${REINPLACE_CMD} s+/usr/local/lib/ghc-6.6+${BOOT_DIR}/lib/i386-unknown-freebsd+ \
+		${BOOT_DIR}/bin/i386-unknown-freebsd/*.sh
 
 pre-configure:
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
