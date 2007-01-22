@@ -23,7 +23,7 @@ NOT_FOR_ARCHS=	amd64 ia64 sparc64
 CSUFF=		${_USE_GCC:S/.//}
 
 # needs gcj
-LIB_DEPENDS=	gcj.7:${PORTSDIR}/lang/gcc${CSUFF}
+LIB_DEPENDS=	gcj:${PORTSDIR}/lang/gcc${CSUFF}
 
 USE_GCC=	4.1+
 USE_GMAKE=	yes
