@@ -9,7 +9,7 @@ PORTNAME=	mixmos
 PORTVERSION=	0.2.0
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://clay.ll.pl/download/
+MASTER_SITES=	${MASTER_SITE_TUCOWS}
 
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A GTK2 audio mixer
