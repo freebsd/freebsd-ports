@@ -8,6 +8,7 @@ include/zaptel.h
 lib/libtonezone.a
 lib/zaptel/linker.hints
 lib/zaptel/qozap.ko
+lib/zaptel/tau32pci.ko
 lib/zaptel/wcfxo.ko
 lib/zaptel/wcfxs.ko
 lib/zaptel/wct1xxp.ko
