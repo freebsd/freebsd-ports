@@ -8,16 +8,16 @@
 PORTNAME=	lights
 PORTVERSION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/mods/
+MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/mods/:data \
+		${MASTER_SITE_LOCAL:S|$|:src|}
+MASTER_SITE_SUBDIR=	alepulver/:src
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	Lights.v${PORTVERSION}.Linux
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Lights-Bots${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:data,src \
+		Lights-Bots${EXTRACT_SUFX}:src
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Lights modification for Quake II
-
-BROKEN=		Unfetchable
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
