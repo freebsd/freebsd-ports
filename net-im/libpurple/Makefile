@@ -35,6 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 # Gaim slave ports that require the following functionality, must explicitly
 # set these macros themselves.
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 USE_PYTHON=	yes
@@ -127,8 +128,9 @@ CONFIGURE_ARGS+=	--enable-cyrus-sasl
 .endif
 
 .if defined(WITH_SILC)
-LIB_DEPENDS+=		silcclient-1.0.3:${PORTSDIR}/devel/silc-toolkit
-CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc
+LIB_DEPENDS+=		silcclient-1.0.4:${PORTSDIR}/devel/silc-toolkit
+CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
+			--with-silc-libs=${LOCALBASE}/lib
 PLIST_SUB+=		SILC=""
 PRPL_MODULES:=		${PRPL_MODULES},silc
 .else
@@ -210,7 +212,7 @@ post-patch:
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|-lpanel |-lpanel -lncurses|g' \
 		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
-		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} -ldl|-lsilc -lsilcclient ${PTHREAD_LIBS} -liconv|' \
+		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} $$LIBDL|-lsilc -lsilcclient ${PTHREAD_LIBS} -liconv|' \
 		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCLTK_VER} required|g' \
 		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCLTK_VER:E}|' \
 			${WRKSRC}/configure
