@@ -1,5 +1,0 @@
-bin/html2png
-bin/qe
-share/qe/kmaps
-share/qe/ligatures
-@dirrm share/qe

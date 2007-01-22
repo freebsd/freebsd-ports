@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	qemacs
-PORTVERSION=	0.3.p.12
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	editors
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemacs/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	QEmacs (for Quick Emacs) is a very small but powerful UNIX editor
-
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+COMMENT=	Quick Emacs - a very small but powerful UNIX editor
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
-MAKE_ARGS+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --make="${GMAKE}" --cc="${CC}" \
+		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
+
+DATADIR=	${PREFIX}/share/qe
+
 MAN1=		qe.1
+MLINKS=		qe.1 qemacs.1
+PORTDOCS=	qe-doc.html
+PLIST_FILES=	bin/html2png bin/qe bin/qemacs \
+		%%DATADIR%%/kmaps %%DATADIR%%/ligatures
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
@@ -29,13 +33,45 @@ MAN1=		qe.1
 IGNORE=		crashes on startup
 .endif
 
+.if defined(WITHOUT_PNG)
+CONFIGURE_ARGS+=	--disable-png
+.else
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+CFLAGS+=	`libpng-config --I_opts`
+LDFLAGS=	`libpng-config --L_opts`
+.endif
+
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=	--disable-x11
+.else
+USE_XLIB=	yes
+CFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's,HOST_CC,CC,g' ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-Wall -g|-Wall|g ; \
+		 s|-m.*386||g ; \
+		 s|-ldl||g ; \
+		 s|-L/usr/X11R6/lib||g ; \
+		 s|make -C|$$(MAKE) -C|g ; \
+		 s|HOST_CC|CC|g'
+	@${REINPLACE_CMD} -e 's|/usr/share/doc/qemacs/|${DOCSDIR}/|g ; \
+		 s|README.gz|qe-doc.html|g' ${WRKSRC}/qe.1
 
 do-install:
-	cd ${WRKSRC}; ${INSTALL_PROGRAM} qe html2png ${PREFIX}/bin
-	${MKDIR} ${DATADIR:S/qemacs/qe/}
-	cd ${WRKSRC}; ${INSTALL_DATA} kmaps ligatures ${DATADIR:S/qemacs/qe/}
+	${INSTALL_PROGRAM} ${WRKSRC}/html2png ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/qe ${PREFIX}/bin
+	${LN} -sf qe ${PREFIX}/bin/qemacs
 	${INSTALL_MAN} ${WRKSRC}/qe.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/kmaps ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ligatures ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/qe-doc.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
