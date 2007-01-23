@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=--enable-qt
 CONFIGURE_ENV+=	QTDIR="${X11BASE}"
 .endif
 
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -33,4 +34,8 @@ PLIST_FILES=	bin/ermixer
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"
+
+pre-configure:
+	cd ${WRKSRC}; ./automoc
+
 .include <bsd.port.post.mk>
