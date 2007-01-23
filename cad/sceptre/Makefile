@@ -11,19 +11,20 @@ PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SCEPTRE is a general purpose circuit analysis program
 
 WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=             gfortran42
-F77=            gfortran42
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+BUILD_DEPENDS+= g77-34:${PORTSDIR}/lang/gcc34
+FC=             g77-34
+F77=            g77-34
 FFLAGS+=	-fno-automatic -O
 MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-
-BROKEN=		Does not build
-DEPRECATED=	Nobody seems to use this port.  Please report if you do.
-EXPIRATION_DATE=  2007-07-01
+.endif
 
 NO_WRKSUBDIR=	YES
 
@@ -34,4 +35,4 @@ post-install:
 	  ${INSTALL_DATA} ${WRKSRC}/doc/doc_ger.pdf ${PREFIX}/share/doc/sceptre/doc_ger.pdf
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
