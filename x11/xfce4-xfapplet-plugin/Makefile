@@ -8,7 +8,7 @@
 PORTNAME=	xfce4-xfapplet-plugin
 PORTVERSION=	0.1.0
 CATEGORIES=	x11 xfce
-MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
