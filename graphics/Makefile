@@ -633,6 +633,7 @@
     SUBDIR += sdl_ttf
     SUBDIR += seejpeg
     SUBDIR += sharpconstruct
+    SUBDIR += shim
     SUBDIR += show
     SUBDIR += showimg
     SUBDIR += simage
