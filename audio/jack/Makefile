@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	jackit
-PORTVERSION=	0.102.20
-PORTREVISION=	1
+PORTVERSION=	0.102.28.20061216
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jackit
-DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
+MASTER_SITES=	http://www.rncbc.org/jack/ \
+		http://freebsd.unixfreunde.de/sources/
+DISTNAME=	jack-0.102.28.svn20061216
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A low-latency audio server
@@ -26,8 +25,9 @@ LATEST_LINK=	jack
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man/
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
 
