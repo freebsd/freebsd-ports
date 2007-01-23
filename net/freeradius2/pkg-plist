@@ -12,6 +12,7 @@ bin/rlm_dbm_cat
 bin/rlm_dbm_parser
 bin/rlm_ippool_tool
 bin/smbencrypt
+@unexec for i in `find %D/etc/raddb -maxdepth 1 -regex '.*\.sample' -print | sed -e 's/\.sample//g'`; do if [ -f ${i} ]; then if cmp -s ${i}.sample ${i}; then rm -f ${i}; fi; fi; done
 etc/raddb/acct_users.sample
 etc/raddb/attrs.sample
 etc/raddb/certs/README
@@ -56,6 +57,7 @@ etc/raddb/snmp.conf.sample
 etc/raddb/sql.conf.sample
 etc/raddb/sqlippool.conf.sample
 etc/raddb/users.sample
+@exec for i in `find %D/etc/raddb -maxdepth 1 -regex '.*\.sample' -print | sed -e 's/\.sample//g'`; do if [ ! -f ${i} ]; then cp -p ${i}.sample ${i}; fi; done
 lib/libeap-%%PORTVERSION%%.la
 lib/libeap-%%PORTVERSION%%.so
 lib/libeap.a
@@ -492,7 +494,6 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.xedia
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.zyxel
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
@@ -503,4 +504,5 @@ sbin/rc.radiusd
 @exec chmod -R og= /var/log/raddb
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd
-@unexec rmdir %D/etc/raddb 2> /dev/null || echo "You should remove %D/etc/raddb if you don't need it anymore."
+@dirrmtry etc/raddb
+@unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it anymore."; fi
