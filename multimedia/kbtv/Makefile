@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	kbtv
-DISTVERSION=	1.1.3
+DISTVERSION=	1.2.1
 CATEGORIES=	multimedia python kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://freebsd.ricin.com/ports/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danny@ricin.com
 COMMENT=	KDE TV viewer for FreeBSD
 
 RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
@@ -25,20 +26,20 @@ USE_PYTHON=	yes
 USE_SDL=	sdl
 INSTALLS_ICONS=	yes
 
-OPTIONS=	PWC "Philips and compatible cameras" off \
-		SAA "Philips SAA713x TV cards" off \
-		SAA_TUNER_PHILIPS "SAA with Philips tuner API" on \
+OPTIONS=	PWC                   "Philips and compatible cameras" off \
+		SAA                   "Philips SAA713x TV cards" off \
+		SAA_TUNER_PHILIPS     "SAA with Philips tuner API" on \
 		SAA_TUNER_PHILIPS_MK3 "SAA with Philips MK3 tuner API" off \
-		SAA_TUNER_ALPS "SAA with Alps tuner API" off \
-		SAA_TUNER_LG "SAA with LG tuner API" off \
-		SAA_TUNER_TEMIC "SAA with Temic tuner API" off \
-		SAA_STD_PAL_B_G "SAA with PAL B/G standard" on \
-		SAA_STD_PAL_I "SAA with PAL I standard" off \
-		SAA_STD_PAL_D_K "SAA with PAL/SECAM D/K standard" off \
-		SAA_STD_PAL_L "SAA with PAL/SECAM L standard" off \
-		SAA_STD_PAL_LACCENT "SAA with PAL/SECAM L' standard" off \
-		SAA_STD_NTSC "SAA with NTSC N/M standard" off \
-		SAA_STD_NTSC_JAPAN "SAA with NTSC Japan standard" off
+		SAA_TUNER_ALPS        "SAA with Alps tuner API" off \
+		SAA_TUNER_LG          "SAA with LG tuner API" off \
+		SAA_TUNER_TEMIC       "SAA with Temic tuner API" off \
+		SAA_STD_PAL_B_G       "SAA with PAL B/G standard" on \
+		SAA_STD_PAL_I         "SAA with PAL I standard" off \
+		SAA_STD_PAL_D_K       "SAA with PAL D/K standard" off \
+		SAA_STD_PAL_L         "SAA with PAL L standard" off \
+		SAA_STD_PAL_LACCENT   "SAA with PAL L' standard" off \
+		SAA_STD_NTSC          "SAA with NTSC N/M standard" off \
+		SAA_STD_NTSC_JAPAN    "SAA with NTSC Japan standard" off
 
 .include <bsd.port.pre.mk>
 
@@ -47,9 +48,7 @@ OPTIONS=	PWC "Philips and compatible cameras" off \
 IGNORE=		kernel sources required for pwc
 .endif
 PLIST_SUB+=	PWC=""
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
-		/boot/modules/pwc.ko:${PORTSDIR}/multimedia/pwcbsd
+RUN_DEPENDS+=	/boot/modules/pwc.ko:${PORTSDIR}/multimedia/pwcbsd
 .else
 PLIST_SUB+=	PWC="@comment "
 .endif
@@ -133,7 +132,9 @@ do-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC} && ${MKDIR} ${DOCSDIR} && \
-	    ${INSTALL_DATA} README NEWS ${DOCSDIR}
+	    ${INSTALL_DATA} README NEWS ${DOCSDIR} && \
+	    ${ECHO} "README -> ${DOCSDIR}/README" && \
+	    ${ECHO} "NEWS -> ${DOCSDIR}/NEWS"
 .endif
 	@${CAT} ${PKGMESSAGE}
 
