@@ -13703,6 +13703,7 @@ shell-fm	ports/multimedia/shell-fm
 shellac		ports/audio/shellac
 shelldap	ports/net/shelldap
 shftool		ports/converters/shftool
+shim		ports/graphics/shim
 shishi		ports/security/shishi
 shlock		ports/sysutils/shlock
 shmap		ports/devel/shmap
