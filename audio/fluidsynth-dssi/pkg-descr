@@ -1,0 +1,4 @@
+The FluidSynth-DSSI is a wrapper for the FluidSynth SoundFont-playing
+software synthesizer, allowing it to function as a DSSI plugin.
+
+WWW:	http://dssi.sourceforge.net/

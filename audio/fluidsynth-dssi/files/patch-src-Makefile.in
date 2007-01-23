@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	Tue Jan 23 21:35:02 2007
++++ src/Makefile.in	Tue Jan 23 21:35:52 2007
+@@ -697,12 +697,12 @@
+ 
+ # create symlinks for the plugin to jack-dssi-host
+ install-exec-hook:
+-	if test -x $(DESTDIR)$(bindir)/jack-dssi-host$(EXEEXT) ; then \
+-	  cd $(DESTDIR)$(bindir) ; \
+-	  if ! test -x ./fluidsynth-dssi$(EXEEXT) ; then \
+-	    $(LN_S) jack-dssi-host$(EXEEXT) fluidsynth-dssi$(EXEEXT) ; \
+-	  fi ; \
+-	fi
++#	if test -x $(DESTDIR)$(bindir)/jack-dssi-host$(EXEEXT) ; then \
++#	  cd $(DESTDIR)$(bindir) ; \
++#	  if ! test -x ./fluidsynth-dssi$(EXEEXT) ; then \
++#	    $(LN_S) jack-dssi-host$(EXEEXT) fluidsynth-dssi$(EXEEXT) ; \
++#	  fi ; \
++#	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
