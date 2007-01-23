@@ -165,6 +165,7 @@
     SUBDIR += flac123
     SUBDIR += flite
     SUBDIR += fluidsynth
+    SUBDIR += fluidsynth-dssi
     SUBDIR += fmio
     SUBDIR += freealut
     SUBDIR += freebirth

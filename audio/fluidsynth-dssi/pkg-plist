@@ -1,0 +1,4 @@
+lib/dssi/fluidsynth-dssi.so
+lib/dssi/fluidsynth-dssi.la
+lib/dssi/fluidsynth-dssi/FluidSynth-DSSI_gtk
+@dirrm lib/dssi/fluidsynth-dssi

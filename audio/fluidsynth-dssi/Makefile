@@ -1,0 +1,27 @@
+# New ports collection makefile for:	fluidsynth-dssi
+# Date created:		2007-01-19
+# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fluidsynth-dssi
+PORTVERSION=	0.9.1
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	dssi
+
+MAINTAINER=	trasz@pin.if.uz.zgora.pl
+COMMENT=	Wrapper for FluidSynth allowing it to function as a DSSI plugin
+
+LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
+		lo.6:${PORTSDIR}/audio/liblo \
+		fluidsynth.2:${PORTSDIR}/audio/fluidsynth \
+		jack.0:${PORTSDIR}/audio/jack
+BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gtk20
+
+.include <bsd.port.mk>
