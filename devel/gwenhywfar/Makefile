@@ -12,7 +12,7 @@ CATEGORIES=	devel net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform helper library for networking and security applications
 
 OPTIONS=	SSLDEBUG "Enable gwenhywfar SSL debug (if SSL enabled)" off \

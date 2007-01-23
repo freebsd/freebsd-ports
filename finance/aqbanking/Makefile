@@ -12,7 +12,7 @@ CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aqbanking
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
 
 LIB_DEPENDS=	gwenhywfar.30:${PORTSDIR}/devel/gwenhywfar
