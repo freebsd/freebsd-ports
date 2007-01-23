@@ -338,6 +338,8 @@
 %%RCUBEDIR%%/program/localization/hr/messages.inc
 %%RCUBEDIR%%/program/localization/hu/labels.inc
 %%RCUBEDIR%%/program/localization/hu/messages.inc
+%%RCUBEDIR%%/program/localization/id_ID/labels.inc
+%%RCUBEDIR%%/program/localization/id_ID/messages.inc
 %%RCUBEDIR%%/program/localization/index.inc
 %%RCUBEDIR%%/program/localization/it/labels.inc
 %%RCUBEDIR%%/program/localization/it/messages.inc
@@ -373,10 +375,14 @@
 %%RCUBEDIR%%/program/localization/sk/messages.inc
 %%RCUBEDIR%%/program/localization/sr/labels.inc
 %%RCUBEDIR%%/program/localization/sr/messages.inc
+%%RCUBEDIR%%/program/localization/th/labels.inc
+%%RCUBEDIR%%/program/localization/th/messages.inc
 %%RCUBEDIR%%/program/localization/tr/labels.inc
 %%RCUBEDIR%%/program/localization/tr/messages.inc
 %%RCUBEDIR%%/program/localization/tw/labels.inc
 %%RCUBEDIR%%/program/localization/tw/messages.inc
+%%RCUBEDIR%%/program/localization/vn/labels.inc
+%%RCUBEDIR%%/program/localization/vn/messages.inc
 %%RCUBEDIR%%/program/localization/zh_CN/labels.inc
 %%RCUBEDIR%%/program/localization/zh_CN/messages.inc
 %%RCUBEDIR%%/program/steps/addressbook/delete.inc
@@ -593,8 +599,10 @@
 @dirrm %%RCUBEDIR%%/program/steps/addressbook
 @dirrm %%RCUBEDIR%%/program/steps
 @dirrm %%RCUBEDIR%%/program/localization/zh_CN
+@dirrm %%RCUBEDIR%%/program/localization/vn
 @dirrm %%RCUBEDIR%%/program/localization/tw
 @dirrm %%RCUBEDIR%%/program/localization/tr
+@dirrm %%RCUBEDIR%%/program/localization/th
 @dirrm %%RCUBEDIR%%/program/localization/sr
 @dirrm %%RCUBEDIR%%/program/localization/sk
 @dirrm %%RCUBEDIR%%/program/localization/si
@@ -612,6 +620,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/lt
 @dirrm %%RCUBEDIR%%/program/localization/ja
 @dirrm %%RCUBEDIR%%/program/localization/it
+@dirrm %%RCUBEDIR%%/program/localization/id_ID
 @dirrm %%RCUBEDIR%%/program/localization/hu
 @dirrm %%RCUBEDIR%%/program/localization/hr
 @dirrm %%RCUBEDIR%%/program/localization/fr
