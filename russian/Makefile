@@ -29,7 +29,6 @@
     SUBDIR += pine.language
     SUBDIR += prawda
     SUBDIR += pscyr
-    SUBDIR += rispell
     SUBDIR += rus-ispell
     SUBDIR += rux
     SUBDIR += tac+ia
