@@ -105,8 +105,6 @@ do-build:
 do-install:
 	(cd ${WRKSRC} ; ${GMAKE} install)
 	(cd ${WRKSRC} ; ${GMAKE} install_devel)
-	(cd ${WRKSRC}/doc/man/man3 ; ${INSTALL_MAN} * ${PREFIX}/man/man3)
-	(cd ${WRKSRC}/doc/man/man1 ; ${INSTALL_MAN} * ${PREFIX}/man/man1)
 	${MKDIR} ${PREFIX}/share/mpqc/validate
 	cd ${WRKSRC}/src/bin/mpqc/validate/ ; ${TAR} -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/share/mpqc/validate
@@ -115,11 +113,12 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/html ; ${TAR} -chf - . | \
-		${TAR} -xf - -C ${DOCSDIR}
-	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	(cd ${WRKSRC}/doc/man/man3 ; ${INSTALL_MAN} * ${PREFIX}/man/man3)
+	(cd ${WRKSRC}/doc/man/man1 ; ${INSTALL_MAN} * ${PREFIX}/man/man1)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc/html ; ${TAR} -chf - . | ${TAR} -xf - -C ${DOCSDIR}
+	${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
 validate:
