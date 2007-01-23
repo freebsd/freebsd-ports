@@ -15647,6 +15647,7 @@ xfce4-clipman-plugin	ports/x11/xfce4-clipman-plugin
 xfce4-cpugraph-plugin	ports/sysutils/xfce4-cpugraph-plugin
 xfce4-desktop	ports/x11-wm/xfce4-desktop
 xfce4-dev-tools	ports/devel/xfce4-dev-tools
+xfce4-dict-plugin	ports/textproc/xfce4-dict-plugin
 xfce4-fsguard-plugin	ports/sysutils/xfce4-fsguard-plugin
 xfce4-genmon-plugin	ports/sysutils/xfce4-genmon-plugin
 xfce4-icon-theme	ports/x11-themes/xfce4-icon-theme
