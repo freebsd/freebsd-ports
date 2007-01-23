@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://g-rave.nl/projects/herrie/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -32,6 +32,7 @@ OPTIONS=	MAD "MAD MP3 support" on \
 PLIST_FILES=	bin/herrie \
 		share/locale/nl/LC_MESSAGES/herrie.mo
 MAN1=		herrie.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
