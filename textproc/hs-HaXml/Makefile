@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.13
-PORTREVISION=	2
+PORTVERSION=	1.13.2
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
@@ -19,28 +18,28 @@ COMMENT=	A collection of utilities for using Haskell and XML together
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX}/bin
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
-PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
+PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}" \
+		HAXML_VERSION=${PORTVERSION}
+PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,/bin/false,/usr/bin/false,' ${WRKSRC}/configure
+do-configure:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/runhaskell Setup.hs configure ${CONFIGURE_ARGS}
 
-post-configure:
-	@${REINPLACE_CMD} -e '/hugs/d' ${WRKSRC}/obj/compilers
-	@${REINPLACE_CMD} -e '/nhc98/d' ${WRKSRC}/obj/compilers
+do-build:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/runhaskell Setup.hs build
+
+do-install:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/runhaskell Setup.hs install
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/obj/ghc/HaXml.pkgconf \
-		${PREFIX}/lib/ghc-${GHC_VERSION}/imports/HaXml/
-	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
+	@${INSTALL_DATA} ${WRKSRC}/.installed-pkg-config ${PREFIX}/lib/HaXml-${PORTVERSION}/ghc-${GHC_VERSION}/HaXml.pkgconf
+	@${RM} -f ${LOCALBASE}/lib/ghc-${GHC_VERSION}/package.conf.old
+	@${TOUCH} ${PREFIX}/lib/HaXml-${PORTVERSION}/ghc-${GHC_VERSION}/include/.keep_me
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} && ${RM} -rf docs/HaXml/CVS)
 	@(cd ${WRKSRC} && ${CP} -R docs/* ${DOCSDIR})
 .endif
 
