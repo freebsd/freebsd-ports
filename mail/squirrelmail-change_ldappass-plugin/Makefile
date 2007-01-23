@@ -4,43 +4,44 @@
 #
 # $FreeBSD$
 
-PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
-PORTVERSION=		2.0
-CATEGORIES=		mail www
-MASTER_SITES=		http://www.squirrelmail.org/plugins/
-DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
-DIST_SUBDIR=		squirrelmail
+PORTNAME=	squirrelmail
+PORTVERSION=	2.1
+CATEGORIES=	mail www
+MASTER_SITES=	http://www.squirrelmail.org/plugins/
+PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
+DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
+DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=		alexander@wittig.name
-COMMENT=		Allows users to change their passwords stored in LDAP Tree
+MAINTAINER=	alexander@wittig.name
+COMMENT=	Allows users to change their passwords stored in LDAP Tree
 
-RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 SQUIRREL_PLUGIN_NAME=	change_ldappass
 
 .ifdef SQUIRRELDIR
-PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR}
-SUB_LIST+=		"SQUIRRELDIR=${SQUIRRELDIR}"
+PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
+SUB_LIST+=	"SQUIRRELDIR=${SQUIRRELDIR}"
 .else
 .	ifndef WITHOUT_WWWDIR
-SQUIRRELDIR=		${PREFIX}/www/squirrelmail
-PLIST_SUB+=		SQUIRRELDIR=www/squirrelmail
-SUB_LIST+=		"SQUIRRELDIR=www/squirrelmail"
+SQUIRRELDIR=	${PREFIX}/www/squirrelmail
+PLIST_SUB+=	SQUIRRELDIR=www/squirrelmail
+SUB_LIST+=	"SQUIRRELDIR=www/squirrelmail"
 .	else
-SQUIRRELDIR=		${PREFIX}/squirrelmail
-PLIST_SUB+=		SQUIRRELDIR=squirrelmail
-SUB_LIST+=		"SQUIRRELDIR=squirrelmail"
+SQUIRRELDIR=	${PREFIX}/squirrelmail
+PLIST_SUB+=	SQUIRRELDIR=squirrelmail
+SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
 .	endif
 .endif
 
-SUB_FILES=		pkg-message
+SUB_FILES=	pkg-message
 
-NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
-USE_PERL5_BUILD=	yes
-USE_PHP=		ldap
-WANT_PHP_WEB=		yes
-USE_GETTEXT=		yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+USE_PERL5_BUILD=yes
+USE_PHP=	ldap
+WANT_PHP_WEB=	yes
+USE_GETTEXT=	yes
 
 pre-everything::
 	@${ECHO} ""
