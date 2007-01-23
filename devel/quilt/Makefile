@@ -19,6 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gpatch:${PORTSDIR}/devel/patch \
 		diffstat:${PORTSDIR}/textproc/diffstat \
 		rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
