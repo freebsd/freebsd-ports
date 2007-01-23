@@ -4,6 +4,7 @@ include/kaffeine/mrl.h
 include/kaffeine/kaffeinepart.h
 include/kaffeine/xine_part.h
 include/kaffeine/xine_part_iface.h
+%%NODVB%%include/kaffeine/kaffeinedvbplugin.h
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.a
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.so
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.la
@@ -20,6 +21,10 @@ lib/libkaffeineaudioencoder.so.0
 lib/libkaffeinepart.so
 lib/libkaffeinepart.la
 lib/libkaffeinepart.a
+%%NODVB%%lib/libkaffeinedvbplugin.so.0
+%%NODVB%%lib/libkaffeinedvbplugin.so
+%%NODVB%%lib/libkaffeinedvbplugin.la
+%%NODVB%%lib/libkaffeinedvbplugin.a
 lib/kde3/libxinepart.so
 lib/kde3/libxinepart.la
 lib/kde3/libxinepart.a
@@ -36,6 +41,7 @@ share/apps/kaffeine/rtsp.protocol
 share/apps/kaffeine/dvbdata.tar.gz
 share/apps/kaffeine/xine_part.rc
 share/apps/kaffeine/pics/playing.png
+%%NODVB%%share/apps/kaffeine/kaffeinedvb.rc
 share/apps/konqueror/servicemenus/kaffeine_open_directory.desktop
 share/apps/konqueror/servicemenus/kaffeine_append_file.desktop
 share/apps/konqueror/servicemenus/kaffeine_play_audiocd.desktop
@@ -130,6 +136,7 @@ share/mimelnk/application/x-kaffeine.desktop
 share/services/kaffeineoggvorbis.desktop
 share/services/xine_part.desktop
 share/servicetypes/kaffeineaudioencoder.desktop
+%%NODVB%%share/servicetypes/kaffeinedvbplugin.desktop
 @dirrm include/kaffeine
 @dirrm share/apps/kaffeine/pics
 @dirrm share/apps/kaffeine
