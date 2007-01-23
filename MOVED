@@ -2725,3 +2725,4 @@ x11/xfce4-trigger-launcher||2007-01-22|got obsolete by xfce 4.4 update
 x11-clocks/xfce4-datetime-plugin||2007-01-22|got obsolete by xfce 4.4 update
 x11-fm/xfce4-fm||2007-01-22|got obsolete by xfce 4.4 update
 x11-wm/xfce4-systray||2007-01-22|got obsolete by xfce 4.4 update
+russian/rispell||2007-01-23|Has expired: does not work with current textproc/ispell, use rus-ispell port istead
