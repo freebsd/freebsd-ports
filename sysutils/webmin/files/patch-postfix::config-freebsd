@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- postfix/config-freebsd.orig
 +++ postfix/config-freebsd
-@@ -1,15 +1,15 @@
+@@ -1,16 +1,16 @@
 -postfix_control_command=/usr/local/sbin/postfix
 -postfix_config_command=/usr/local/sbin/postconf
 -postfix_config_file=/usr/local/etc/postfix/main.cf
@@ -15,8 +15,10 @@ $FreeBSD$
  postfix_newaliases_command=/usr/bin/newaliases
 -postfix_lookup_table_command=/usr/local/sbin/postmap
 -postfix_queue_command=/usr/local/sbin/postqueue
+-postfix_super_command=/usr/local/sbin/postsuper
 +postfix_lookup_table_command=%%PREFIX%%/sbin/postmap
 +postfix_queue_command=%%PREFIX%%/sbin/postqueue
++postfix_super_command=%%PREFIX%%/sbin/postsuper
  max_records=200
  perpage=20
  mailq_dir=/var/spool/postfix
@@ -26,3 +28,12 @@ $FreeBSD$
  sort_mode=0
  fwd_mode=0
  mailq_sort=0
+@@ -21,7 +21,7 @@
+ top_buttons=1
+ wrap_width=80
+ index_check=1
+-postfix_master=/usr/local/etc/postfix/master.cf
++postfix_master=%%PREFIX%%/etc/postfix/master.cf
+ columns=2
+ show_cmts=0
+ prefix_cmts=0
