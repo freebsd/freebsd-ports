@@ -269,7 +269,6 @@
     SUBDIR += xfce4-quicklauncher-plugin
     SUBDIR += xfce4-screenshooter-plugin
     SUBDIR += xfce4-taskmanager
-    SUBDIR += xfce4-trigger-launcher
     SUBDIR += xfce4-xfapplet-plugin
     SUBDIR += xfishtank
     SUBDIR += xfree86_xkb_xml
