@@ -7,11 +7,12 @@
 
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Generic Monitor XFce4 panel plugin
 
 #USE_AUTOTOOLS=	aclocal:19 autoheader:259 automake:19 autoconf:259
