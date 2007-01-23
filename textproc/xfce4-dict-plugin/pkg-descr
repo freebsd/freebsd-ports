@@ -1,0 +1,5 @@
+With this plugin you can query a dictionary server(see RFC 2229) to search for
+the translation or explanation of a word. You can also choose a dictionary
+offered by the server to improve your search results.
+
+WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-dict-plugin

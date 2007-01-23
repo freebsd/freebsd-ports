@@ -1,0 +1,13 @@
+libexec/xfce4/panel-plugins/xfce4-dict-plugin
+share/icons/hicolor/scalable/apps/dict-icon.svg
+share/locale/ca/LC_MESSAGES/xfce4-dict-plugin.mo
+share/locale/cs/LC_MESSAGES/xfce4-dict-plugin.mo
+share/locale/de/LC_MESSAGES/xfce4-dict-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-dict-plugin.mo
+share/locale/hu/LC_MESSAGES/xfce4-dict-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-dict-plugin.mo
+share/xfce4/panel-plugins/dict.desktop
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
