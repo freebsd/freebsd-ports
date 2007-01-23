@@ -558,6 +558,7 @@
     SUBDIR += slimserver-lastfm
     SUBDIR += slimserver-lazysearch
     SUBDIR += slimserver-slimscrobbler
+    SUBDIR += slimserver-superdatetime
     SUBDIR += snack
     SUBDIR += snett
     SUBDIR += snd
