@@ -52,6 +52,7 @@
     SUBDIR += wmtz
     SUBDIR += xalarm
     SUBDIR += xdaliclock
+    SUBDIR += xfce4-timer-plugin
     SUBDIR += xmms-alarm
     SUBDIR += xtimer
     SUBDIR += xtu
