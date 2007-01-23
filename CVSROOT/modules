@@ -15657,6 +15657,7 @@ xfce4-media	ports/multimedia/xfce4-media
 xfce4-messenger-plugin	ports/net-im/xfce4-messenger-plugin
 xfce4-minicmd-plugin	ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer	ports/audio/xfce4-mixer
+xfce4-mpc-plugin	ports/audio/xfce4-mpc-plugin
 xfce4-netload-plugin	ports/sysutils/xfce4-netload-plugin
 xfce4-notes-plugin	ports/deskutils/xfce4-notes-plugin
 xfce4-panel	ports/x11-wm/xfce4-panel
