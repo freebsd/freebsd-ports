@@ -19,10 +19,6 @@ case $2 in
 		# hmmm, if we modify this here, the file fails md5sum when deinstalling
 		# but if we do this in Makefile, then we have a hardcoded PREFIX. What to
 		# do?
-		$REINPLACE_CMD -e "s|/home/httpd/twiki|${TWIKIDIR}|g" \
-			-e "s|your.domain.com|$HOSTNAME|" -e "s|/bin/egrep|/usr/bin/egrep|" \
-			-e "s|/bin/fgrep|/usr/bin/fgrep|" ${TWIKIDIR}/lib/TWiki.cfg.sample
-		rm ${TWIKIDIR}/lib/TWiki.cfg.sample.bak
 
 		for i in `find ${TWIKIDIR}/data -type f`; do
 			$REINPLACE_CMD -e "s/nobody:/${WWWUSER}:/g" $i;

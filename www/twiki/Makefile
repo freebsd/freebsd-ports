@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	4.0.5
+PORTVERSION=	4.1.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
-
-BROKEN=		Incomplete pkg-plist
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -38,16 +36,13 @@ pre-everything::
 	@${ECHO} "*  This software can't be upgraded automatically without       *"
 	@${ECHO} "*  damaging data in your wiki!                                 *"
 	@${ECHO} "****************************************************************"
-	@sleep 10
+	@sleep 1
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
 	${WRKSRC}/twiki_httpd_conf.txt
 	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
 	${WRKSRC}/lib/LocalSite.cfg.txt
-	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
-	${WRKSRC}/lib/TWiki.cfg
-	@${CP} ${WRKSRC}/lib/TWiki.cfg ${WRKSRC}/lib/TWiki.cfg.sample
 
 do-install:
 	${INSTALL} -d -m 0755 ${TWIKIDIR}
