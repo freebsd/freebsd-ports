@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.22.4
+PORTVERSION=	0.22.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
