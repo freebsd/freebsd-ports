@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
 		ftp://ftp.uk.freeradius.org/pub/radius/ \
+		ftp://ftp.us.freeradius.org/pub/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/old/ \
 		http://freeradius.portal-to-web.de/
 
@@ -29,7 +30,7 @@ USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -45,17 +46,20 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
+CONFIGURE_ARGS=	--quiet \
+		--prefix=${PREFIX} \
 		--localstatedir=/var \
-		--with-system-libtool \
-		--disable-ltdl-install \
-		--with-docdir=${DOCSDIR} \
 		--mandir=${PREFIX}/man \
-		--with-large-files --without-rlm_sql_unixodbc \
-		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
-		--without-rlm_sql_db2 \
+		--with-system-libtool \
+		--with-docdir=${DOCSDIR} \
+		--with-logdir=${LOGDIR} \
+		--with-large-files \
 		--with-openssl-includes=${OPENSSLINC} \
-		--with-openssl-libraries=${OPENSSLLIB}
+		--with-openssl-libraries=${OPENSSLLIB} \
+		--without-rlm_sql_unixodbc \
+		--without-rlm_sql_oracle \
+		--without-rlm_sql_iodbc \
+		--without-rlm_sql_db2
 
 .if ${OSVERSION} < 500000 && ${OPENSSLBASE} == "/usr"
 PLIST_SUB+=	4SSL="@comment "
@@ -206,9 +210,13 @@ post-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR} ${EXAMPLESDIR}
+	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR}
 .for dict in ${DICTS}
 	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${DATADIR}/${dict}
 .endfor
+	for i in `${FIND} ${PREFIX}/etc/raddb -maxdepth 1 -regex '.*\.sample' -print \
+	| ${SED} -e 's/\.sample//g'`; do \
+		if [ ! -f $${i} ]; then ${CP} -p $${i}.sample $${i}; fi; \
+	done
 
 .include <bsd.port.post.mk>
