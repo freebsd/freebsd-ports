@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PROG=	raidtest
-NOMAN=	true
+NO_MAN=	true
 WARNS?=	6
 BINDIR?= ${PREFIX}/bin
 
