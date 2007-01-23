@@ -941,6 +941,7 @@
     SUBDIR += xerces-c
     SUBDIR += xerces-c2
     SUBDIR += xerces-j
+    SUBDIR += xfce4-dict-plugin
     SUBDIR += xhtml
     SUBDIR += xhtml-11
     SUBDIR += xhtml-basic
