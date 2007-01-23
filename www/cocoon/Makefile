@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.10
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PDISTNAME}-src
 
-MAINTAINER=	jb.quenot@caraldi.com
+MAINTAINER=	jbq@caraldi.com
 COMMENT=	XML Web Development Framework
 
 USE_RC_SUBR=		${PORTNAME}.sh
@@ -26,6 +26,7 @@ APP_HOME?=		${PREFIX}/${APP_NAME}
 LATEST_LINK=		${APP_NAME}
 PLIST=			${WRKDIR}/pkg-plist
 PDISTNAME=		${PORTNAME}-${PORTVERSION}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 COCOON_LIB=	${JAVASHAREDIR}/${APP_NAME}
 PLIST_SUB+=	"COCOON_LIB=${COCOON_LIB}"
@@ -62,7 +63,8 @@ SUB_FILES=	\
 		${APP_NAME}ctl \
 		${APP_NAME}.sh \
 		upstreams-cocoon.sh \
-		pkg-message
+		message \
+		message-advanced
 
 # Load options (before including bsd.port.pre.mk)
 .include "${.CURDIR}/Makefile.options"
@@ -114,13 +116,20 @@ post-build:
 	@${ECHO_MSG} "===> Building packing list"
 	@> ${PLIST}
 
-	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} -type f \
+	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} -not -type d \
 	| ${SED} -e "s|^|${APP_NAME}/|" >> ${PLIST}
+
+	@cd ${WRKSRC} && ${FIND} -H -d ${COPYDIRS} -type d -empty \
+	| ${SED} -e "s|^|@exec mkdir -p %D/${APP_NAME}/|" >> ${PLIST}
 
 	@cd ${WRKSRC} && ${FIND} -H -d ${COPYDIRS} -type d \
 	| ${SED} -e "s|^|@dirrm ${APP_NAME}/|" >> ${PLIST}
 
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
+
+pre-install:
+	@${FMT} -w80 ${WRKDIR}/message > ${PKGMESSAGE}
+	@${CAT} ${WRKDIR}/message-advanced >> ${PKGMESSAGE}
 
 do-install:
 	@${ECHO_MSG} "===> Installing ${COPYDIRS}"
@@ -131,14 +140,11 @@ do-install:
 	@${ECHO_MSG} "===> Installing into ${PREFIX}/sbin"
 	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
 
-	@${ECHO_MSG} "===> Installing ${PREFIX}/etc/rc.d/${APP_NAME}.sh"
-	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/etc/rc.d
-
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_CMD}
 	@${ECHO_CMD} "********************************************************************************"
-	@${FMT} -w80 ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} "********************************************************************************"
 	@${ECHO_CMD}
 

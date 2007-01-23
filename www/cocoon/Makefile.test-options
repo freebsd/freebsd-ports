@@ -24,11 +24,13 @@ BLOCKS+=	xsp
 .if defined(WITH_FOP)
 BLOCKS+=	fop
 BLOCKS+=	batik
+BLOCKS+=	xsp
 .endif
 
 .if defined(WITH_FORMS)
 BLOCKS+=	forms
 BLOCKS+=	ajax
+BLOCKS+=	template
 .endif
 
 .if defined(WITH_HSQLDB)
@@ -77,6 +79,7 @@ BLOCKS+=	ajax
 BLOCKS+=	databases
 BLOCKS+=	forms
 BLOCKS+=	hsqldb
+BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
@@ -91,6 +94,7 @@ BLOCKS+=	poi
 .if defined(WITH_PORTAL)
 BLOCKS+=	portal
 BLOCKS+=	ajax
+BLOCKS+=	auth
 BLOCKS+=	authentication-fw
 BLOCKS+=	cron
 BLOCKS+=	databases
@@ -98,11 +102,13 @@ BLOCKS+=	forms
 BLOCKS+=	hsqldb
 BLOCKS+=	ojb
 BLOCKS+=	session-fw
+BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
 .if defined(WITH_PROFILER)
 BLOCKS+=	profiler
+BLOCKS+=	auth
 .endif
 
 .if defined(WITH_PYTHON)
@@ -155,24 +161,32 @@ BLOCKS+=	xsp
 
 .if defined(WITH_AJAX)
 BLOCKS+=	ajax
+BLOCKS+=	template
 .endif
 
 .if defined(WITH_APPLES)
 BLOCKS+=	apples
 BLOCKS+=	ajax
 BLOCKS+=	forms
+BLOCKS+=	template
 .endif
 
 .if defined(WITH_ASCIIART)
 BLOCKS+=	asciiart
 .endif
 
+.if defined(WITH_AUTH)
+BLOCKS+=	auth
+.endif
+
 .if defined(WITH_AXIS)
 BLOCKS+=	axis
+BLOCKS+=	xsp
 .endif
 
 .if defined(WITH_CAPTCHA)
 BLOCKS+=	captcha
+BLOCKS+=	template
 .endif
 
 .if defined(WITH_CRON)
@@ -195,6 +209,7 @@ BLOCKS+=	xsp
 .if defined(WITH_FACES)
 BLOCKS+=	faces
 BLOCKS+=	ajax
+BLOCKS+=	auth
 BLOCKS+=	authentication-fw
 BLOCKS+=	cron
 BLOCKS+=	databases
@@ -204,6 +219,7 @@ BLOCKS+=	ojb
 BLOCKS+=	portal
 BLOCKS+=	session-fw
 BLOCKS+=	taglib
+BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
@@ -218,6 +234,7 @@ BLOCKS+=	databases
 BLOCKS+=	forms
 BLOCKS+=	hsqldb
 BLOCKS+=	ojb
+BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
@@ -248,6 +265,7 @@ BLOCKS+=	ajax
 BLOCKS+=	databases
 BLOCKS+=	forms
 BLOCKS+=	hsqldb
+BLOCKS+=	template
 BLOCKS+=	velocity
 BLOCKS+=	xsp
 .endif
@@ -268,6 +286,7 @@ BLOCKS+=	forms
 BLOCKS+=	hsqldb
 BLOCKS+=	lucene
 BLOCKS+=	ojb
+BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
@@ -319,6 +338,8 @@ BLOCKS+=	batik
 BLOCKS+=	fop
 BLOCKS+=	forms
 BLOCKS+=	slop
+BLOCKS+=	template
+BLOCKS+=	xsp
 .endif
 
 .if defined(WITH_VALIDATION)
