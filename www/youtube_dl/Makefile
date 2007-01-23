@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2007.01.01
+PORTVERSION=	2007.01.19
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/youtube-dl/
 DISTNAME=	youtube-dl-${PORTVERSION}
@@ -23,6 +23,15 @@ USE_PYTHON=	2.4+
 
 PLIST_FILES=	bin/youtube-dl
 
+OPTIONS=	FFMPEG "With optional avi output format" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FFMPEG)
+RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+EXTRA_PATCHES+=	${PATCHDIR}/ffmpeg.patch
+.endif
+
 post-extract:
 	@${CP} ${DISTDIR}/youtube-dl-${PORTVERSION} ${WRKSRC}/youtube-dl
 
@@ -32,4 +41,4 @@ post-patch:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${TARGETDIR}/bin/youtube-dl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
