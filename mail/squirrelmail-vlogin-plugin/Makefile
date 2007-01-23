@@ -4,10 +4,11 @@
 #
 # $FreeBSD$
 
-PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
-PORTVERSION=		3.9.0
+PORTNAME=		squirrelmail
+PORTVERSION=		3.9.1
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
+PKGNAMESUFFIX=		-${SQUIRREL_PLUGIN_NAME}-plugin
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.2.7
 DIST_SUBDIR=		squirrelmail
 
