@@ -7,6 +7,7 @@
 
 PORTNAME=	swt
 PORTVERSION=	0.1.0.r3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scwt
@@ -16,9 +17,15 @@ DISTNAME=	${PORTNAME}-0.1.0rc3
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 
-BUILD_DEPENDS=	scilab:${PORTSDIR}/math/scilab
+BUILD_DEPENDS+=	scilab:${PORTSDIR}/math/scilab
 
-INSTALLS_SHLIB=	yes
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/scilab/contrib/swt/lib
 
 HAS_CONFIGURE=	yes
