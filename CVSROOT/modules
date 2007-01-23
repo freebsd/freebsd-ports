@@ -13825,6 +13825,7 @@ slimserver-dynamictransition	ports/audio/slimserver-dynamictransition
 slimserver-lastfm	ports/audio/slimserver-lastfm
 slimserver-lazysearch	ports/audio/slimserver-lazysearch
 slimserver-slimscrobbler	ports/audio/slimserver-slimscrobbler
+slimserver-superdatetime	ports/audio/slimserver-superdatetime
 slingshot	ports/x11-toolkits/slingshot
 slirc		ports/irc/slirc
 slirp		ports/net/slirp
