@@ -11,10 +11,9 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	directory/c-sdk/ldap
-
 DISTNAME=	ldapsdk_12311998
 
-MAINTAINER=	paul@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mozilla LDAP sdk
 
 WRKSRC=			${WRKDIR}/mozilla
@@ -56,7 +55,7 @@ do-install:
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	@echo 
+	@echo
 	@echo 'PLEASE NOTE (2000/8/23):'
 	@echo '     The mozilla lber and ldap libraries now are installed'
 	@echo '     with the names mozlber and mozldap.'
