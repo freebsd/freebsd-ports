@@ -1,9 +1,9 @@
-@exec [ -f %D/etc/quilt.quiltrc ] || cp %D/etc/quilt.quiltrc.sample %D/etc/quilt.quiltrc
 @unexec if cmp -s %D/etc/quilt.quiltrc %D/etc/quilt.quiltrc.sample; then rm -f %D/etc/quilt.quiltrc; fi
+etc/quilt.quiltrc.sample
+@exec if [ ! -f %D/etc/quilt.quiltrc ] ; then cp %D/%F %B/quilt.quiltrc; fi
 bin/guards
 bin/quilt
 etc/bash_completion.d/quilt
-etc/quilt.quiltrc.sample
 share/libexec/quilt/add
 share/libexec/quilt/annotate
 share/libexec/quilt/applied
