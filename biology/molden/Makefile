@@ -28,7 +28,7 @@ MAKEFILE=	${WRKSRC}/makefile
 .include <bsd.port.pre.mk>
 
 WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
 MAKE_ENV+=	FC="${FC}" F77="${77}"
