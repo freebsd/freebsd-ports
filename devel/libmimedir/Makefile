@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libmimedir
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
 GNU_CONFIGURE=	yes
