@@ -9,7 +9,8 @@ PORTNAME=	pocketreader
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	textproc linux
-MASTER_SITES=	http://www.8ung.at/pocketreader/
+MASTER_SITES=	http://www.8ung.at/pocketreader/ \
+		http://free.pages.at/pocketreader/
 DISTNAME=	linux-bin
 DIST_SUBDIR=	pocketreader
 
