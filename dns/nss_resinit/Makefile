@@ -25,4 +25,11 @@ MANCOMPRESSED=	yes
 IGNORE=		name-service switch support in libc is required
 .endif
 
+.if defined(WITH_COMPAT5X)
+.if ${OSVERSION} > 700017
+BROKEN=		7.X and later do not have compat syms for the old resolver
+.endif
+MAKE_ARGS+=	CC="${CC} -DWITH_COMPAT5X"
+.endif
+
 .include <bsd.port.post.mk>
