@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	raidtest
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	# none
 DISTFILES=	# none
