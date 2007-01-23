@@ -1,0 +1,7 @@
+shim Is a utility to show images of various formats, it needs the SDL
+and SDL_image libraries (Simple Direct media Layer). Depending on your
+SDL_image library it will support the following formats: png, lbm, jpg,
+tif, gif, pcx, tga, bmp, pnm, xpm, xcf.
+
+WWW: http://corp.efnet.net/~lamer/pegasosppc/shim.html
+Author: Jeroen van Aart <aq@ownaq.com>
