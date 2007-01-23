@@ -98,5 +98,5 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%@dirrm share/jack-audio-connection-kit/reference/html
 %%DOCS%%@dirrm share/jack-audio-connection-kit/reference
 %%DOCS%%@dirrm share/jack-audio-connection-kit
-@dirrm include/jack
 @dirrm lib/jack
+@dirrm include/jack
