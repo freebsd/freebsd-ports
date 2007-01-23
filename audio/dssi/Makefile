@@ -7,6 +7,7 @@
 
 PORTNAME=	dssi
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dssi
@@ -20,6 +21,7 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -33,5 +35,4 @@ PLIST_SUB=	WITH_QT=""
 PLIST_SUB=	WITH_QT="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
