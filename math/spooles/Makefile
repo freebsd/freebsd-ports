@@ -67,9 +67,7 @@ post-patch:
 
 do-build:
 .if defined(WITH_MPI)
-	@(cd ${WRKSRC}/MPI; ${SETENV} ${MAKE_ENV} ${GMAKE} global -f makefile)
-	@(cd ${WRKSRC}/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} )
-	@(cd ${WRKSRC}_SHARED/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} global -f makefile)
+	@(cd ${WRKSRC}/MPI/src ; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
 	@(cd ${WRKSRC}_SHARED/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
 	@(cd ${WRKSRC}_SHARED ; ld -Bshareable -o libspooles.so.1 -x -soname libspooles.so.1 --whole-archive spooles.a )
 
