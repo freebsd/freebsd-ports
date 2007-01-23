@@ -1,6 +1,6 @@
 # New ports collection makefile for:	screenshooter plugin for xfce4
 # Date created:				29 April 2006
-# Whom:					Martin Wilke (freebsd@unixfreunde.de)
+# Whom:					Martin Wilke (miwi@FreeBSD.org)
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-screenshooter-plugin/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Desktop Screenshot plugin for xfce
 
 GNU_CONFIGURE=	yes

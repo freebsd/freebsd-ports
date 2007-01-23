@@ -1,6 +1,6 @@
 # New ports collection makefile for:	quicklauncher plugin for xfce4
 # Date created:				29 April 2006
-# Whom:					Martin Wilke (freebsd@unixfreunde.de)
+# Whom:					Martin Wilke (miwi@FreeBSD.org)
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ DIST_SUBDIR=	xfce4
 PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
 PATCHFILES=	gcc295-xfce4-quicklauncher-plugin-2.patch
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Quicklauncher plugin for xfce
 
 GNU_CONFIGURE=	yes

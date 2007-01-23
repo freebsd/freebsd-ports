@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xfapplet plugin for xfce4
 # Date created:				29 April 2006
-# Whom:					Martin Wilke (freebsd@unixfreunde.de)
+# Whom:					Martin Wilke (miwi@FreeBSD.org)
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	x11 xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Xfapplet plugin for xfce
 
 LIB_DEPENDS=	panelappletmm-2.6:${PORTSDIR}/x11-toolkits/libpanelappletmm
