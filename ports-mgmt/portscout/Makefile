@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portscout
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.inerd.com/software/${PORTNAME}/
@@ -19,9 +18,6 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 PORTDOCS=	README
-
-PATCHFILES=	portscout-0.7-fixrestrict.diff
-PATCH_SITES=	${MASTER_SITES}
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
 		${SITE_PERL}/Proc/Queue.pm:${PORTSDIR}/devel/p5-Proc-Queue	\
@@ -59,8 +55,6 @@ post-patch:
 	                  ${WRKSRC}/portscout.conf
 	@${REINPLACE_CMD} -e "s#^\(.*PREFIX.*=> *\)'.*'#\1'${PREFIX}'#"	\
 	                  ${WRKSRC}/portscout.pl
-	@${REINPLACE_CMD} -e "s#intger#integer#g"			\
-	                  ${WRKSRC}/sql/pgsql_init.sql
 	@${REINPLACE_CMD} -e "s#portscout\.pl#portscout#"		\
 	                  ${WRKSRC}/README
 
