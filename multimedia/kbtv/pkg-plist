@@ -1,6 +1,4 @@
-bin/btviewer
 bin/kbtv
-%%SAA%%bin/saaviewer
 sbin/btsetup
 share/applications/kde/kbtv.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -10,8 +8,6 @@ share/apps/kbtv/_bt848.so
 %%SAA%%share/apps/kbtv/_saa.so
 share/apps/kbtv/bt848.py
 share/apps/kbtv/bt848.pyc
-share/apps/kbtv/btbackend.py
-share/apps/kbtv/btbackend.pyc
 share/apps/kbtv/btchannels.py
 share/apps/kbtv/btchannels.pyc
 share/apps/kbtv/btcopyright.py
