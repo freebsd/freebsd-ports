@@ -1,6 +1,6 @@
---- install_conf/check4_functions.orig	Tue Jul 11 22:45:07 2006
-+++ install_conf/check4_functions	Tue Jul 11 23:04:11 2006
-@@ -1042,9 +1042,9 @@
+--- install_conf/check4_functions.orig	Wed Jan 10 23:04:17 2007
++++ install_conf/check4_functions	Wed Jan 10 23:04:31 2007
+@@ -1065,9 +1065,9 @@
  #	output - error message (if any)
  check4_convert()
  {
