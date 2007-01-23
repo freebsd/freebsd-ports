@@ -1,10 +1,4 @@
-MASTER_SITES_XFCE=		http://mocha.xfce.org/archive/%SUBDIR%/src/ \
-				http://www.us.xfce.org/archive/%SUBDIR%/src/ \
-				http://www.de.xfce.org/archive/%SUBDIR%/src/ \
-				http://www.ca-us.xfce.org/archive/%SUBDIR%/src/ \
-				http://www.p0llux.be/xfce/%SUBDIR%/src/
-
-MASTER_SITE_SUBDIR=		xfce-4.4.0
+MASTER_SITE_SUBDIR?=		xfce-4.4.0
 
 configenv_CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 

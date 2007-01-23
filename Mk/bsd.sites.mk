@@ -1261,6 +1261,15 @@ MASTER_SITE_XEMACS+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_XFCE)
+MASTER_SITES_XFCE+= \
+	http://mocha.xfce.org/archive/%SUBDIR%/src/ \
+	http://www.us.xfce.org/archive/%SUBDIR%/src/ \
+	http://www.de.xfce.org/archive/%SUBDIR%/src/ \
+	http://www.ca-us.xfce.org/archive/%SUBDIR%/src/ \
+	http://www.p0llux.be/xfce/%SUBDIR%/src/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_XFREE)
 MASTER_SITE_XFREE+= \
 	http://www.gtlib.cc.gatech.edu/pub/XFree86/%SUBDIR%/source/ \
