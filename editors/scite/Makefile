@@ -49,6 +49,9 @@ OPTIONS=	GTK2 "Turns on GTK+ 2.x support (Default is GTK+ 1)" off
 
 .include <bsd.port.pre.mk>
 
+.if (${ARCH} == "amd64") && defined(WITH_GTK2)
+IGNORE=	coredumps on startup.
+.endif
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX:=	-gtk2
