@@ -7,6 +7,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.102.28.20061216
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rncbc.org/jack/ \
 		http://freebsd.unixfreunde.de/sources/
