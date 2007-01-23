@@ -1,0 +1,88 @@
+--- kaffeine/src/input/dvb/dvbsection.cpp.orig	Fri Dec 29 08:33:41 2006
++++ kaffeine/src/input/dvb/dvbsection.cpp	Fri Dec 29 08:34:31 2006
+@@ -482,7 +482,8 @@
+ 	char c[4];
+ 	QString s;
+ 
+-	memset( mempcpy( c, buf+2, 3 ), 0, 1 );
++	memcpy(c,buf+2,3);
++	c[3] = 0;
+ 	s = c;
+ 	return s;
+ }
+--- kaffeine/src/input/dvb/dvbstream.cpp.orig	Fri Dec 29 08:36:14 2006
++++ kaffeine/src/input/dvb/dvbstream.cpp	Fri Dec 29 08:36:51 2006
+@@ -24,14 +24,13 @@
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+ #include <sys/stat.h>
++#include <netinet/in.h>
+ #include <resolv.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <signal.h>
+-#include <values.h>
+ #include <string.h>
+ #include <sys/socket.h>
+-#include <netinet/in.h>
+ #include <netdb.h>
+ #include <errno.h>
+ 
+--- kaffeine/src/input/dvb/dvbout.cpp.orig	Fri Dec 29 08:37:56 2006
++++ kaffeine/src/input/dvb/dvbout.cpp	Fri Dec 29 08:40:09 2006
+@@ -527,12 +527,15 @@
+ 	if ( haveLive && fdPipe ) {
+ 		while ( haveLive && fdPipe ) {
+ 			if ( wDist>0 ) {
++				int  i;
+ 				if ( wpatpmt ) {
+ 					write( fdPipe, tspat, TS_SIZE );
+ 					write( fdPipe, tspmt, TS_SIZE );
+ 					wpatpmt = false;
+ 				}
+-				write( fdPipe, wBuf+(wRead*TS_SIZE*NTS), TS_SIZE*NTS );
++				for(i = 0; i < NTS; ++i)
++					write( fdPipe, wBuf+(wRead*TS_SIZE*NTS)
++						+(i * TS_SIZE), TS_SIZE);
+ 				--wDist;
+ 				++wRead;
+ 				if ( wRead>99 )
+--- kaffeine/src/input/dvb/lib/libucsi/endianops.h.orig	Sun Nov 26 20:12:16 2006
++++ kaffeine/src/input/dvb/lib/libucsi/endianops.h	Fri Dec 29 08:56:47 2006
+@@ -27,15 +27,33 @@
+ #endif
+ 
+ #include <stdint.h>
+-#include <byteswap.h>
+-#include <endian.h>
+ 
+ #define __ucsi_packed __attribute__((packed))
+ 
+ 
++#define bswap_16(x) \
++        ((((x) & 0xff00) >> 8) | \
++       (((x) & 0x00ff) << 8))
+ 
++#define bswap_32(x) \
++       ((((x) & 0xff000000) >> 24) | \
++       (((x) & 0x00ff0000) >>  8) | \
++       (((x) & 0x0000ff00) <<  8) | \
++       (((x) & 0x000000ff) << 24))
+ 
+-#if __BYTE_ORDER == __BIG_ENDIAN
++static inline uint64_t
++bswap_64(uint64_t _x)
++{
++
++        return ((_x >> 56) | ((_x >> 40) & 0xff00) | ((_x >> 24) & 0xff0000) |
++            ((_x >> 8) & 0xff000000) | ((_x << 8) & ((uint64_t)0xff << 32)) |
++            ((_x << 24) & ((uint64_t)0xff << 40)) |
++            ((_x << 40) & ((uint64_t)0xff << 48)) | ((_x << 56)));
++}
++
++
++
++#if BYTE_ORDER == BIG_ENDIAN
+ #define EBIT2(x1,x2) x1 x2
+ #define EBIT3(x1,x2,x3) x1 x2 x3
+ #define EBIT4(x1,x2,x3,x4) x1 x2 x3 x4
