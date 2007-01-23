@@ -18,6 +18,9 @@ bin/mid3iconv
 %%PYTHON_SITELIBDIR%%/mutagen/apev2.py
 %%PYTHON_SITELIBDIR%%/mutagen/apev2.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/apev2.pyo
+%%PYTHON_SITELIBDIR%%/mutagen/asf.py
+%%PYTHON_SITELIBDIR%%/mutagen/asf.pyc
+%%PYTHON_SITELIBDIR%%/mutagen/asf.pyo
 %%PYTHON_SITELIBDIR%%/mutagen/easyid3.py
 %%PYTHON_SITELIBDIR%%/mutagen/easyid3.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/easyid3.pyo
