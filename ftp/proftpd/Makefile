@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -32,6 +32,7 @@ PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE=AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=yes
 
 USE_RC_SUBR=	proftpd.sh
