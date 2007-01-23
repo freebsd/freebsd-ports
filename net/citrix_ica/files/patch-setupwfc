@@ -1,11 +1,11 @@
 --- setupwfc.orig	Fri Apr  8 13:52:46 2005
-+++ setupwfc	Thu Jan 18 08:16:31 2007
-@@ -380,7 +380,7 @@
-                # We assume that an Intel-based linux system will have an x86
-                # processor. We also assume that this is reported by uname -m
-                # "ix86" where x is some number.
--               if uname -m | grep 86 2>&1 >/dev/null ;then
++++ setupwfc	Mon Jan 22 10:10:48 2007
+@@ -396,7 +396,7 @@
+ 	*BSD)
+                # Assume Free/Net/Open BSD on an X86 with Linux emulation.
+ 
+-               if uname -m | grep 86 2>&1 >/dev/null ; then
 +               if uname -m | grep "i[3456]86\|amd64" 2>&1 >/dev/null ; then
                     PLATFORM=linuxx86
                     DISP_PLATFORM="Linux (x86)"
-                elif uname -m | grep -i arm 2>&1 >/dev/null  ;then
+ 		   echo
