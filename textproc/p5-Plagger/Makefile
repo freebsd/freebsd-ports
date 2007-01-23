@@ -40,7 +40,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/HTML/ResolveLink.pm:${PORTSDIR}/www/p5-HTML-ResolveLink \
 		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch
 
-OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
+OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		PODTESTING "POD Testing Support" off \
 		COOKIESHARING "Cookie sharing with Firefox Support" off \
 		LIBERALXML "Liberal XML parsing Support" on \
@@ -246,10 +246,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/KinoSearch.pm:${PORTSDIR}/textproc/p5-KinoSearch
 .endif
 
-.if defined(WITH_PUBLISHGMAIL)
+.if !defined(WITHOUT_PUBLISHGMAIL)
 BUILD_DEPENDS+=	${SITE_PERL}/Net/SMTP/TLS.pm:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address
+		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
 .endif
 
 .if defined(WITH_PUBDELICIOUS)
