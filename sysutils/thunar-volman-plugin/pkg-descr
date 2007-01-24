@@ -1,0 +1,8 @@
+The Thunar Volume Manager is an extension for the Thunar file manager,
+which enables automatic management of removable drives and media.
+For example, if thunar-volman is installed and configured properly,
+and you plug in your digital camera, it will automatically launch
+your preferred photo application and import the new pictures from the
+camera into your photo collection.
+
+WWW:	http://www.foo-projects.org/~benny/projects/thunar-volman/index.html

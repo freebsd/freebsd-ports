@@ -623,6 +623,7 @@
     SUBDIR += testdisk
     SUBDIR += thefish
     SUBDIR += throttle
+    SUBDIR += thunar-volman-plugin
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += timemon
