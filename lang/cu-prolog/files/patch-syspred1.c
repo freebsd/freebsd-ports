@@ -1,5 +1,5 @@
---- src/syspred1.c.orig	Thu Dec 14 22:30:29 2006
-+++ src/syspred1.c	Thu Dec 14 22:35:14 2006
+--- syspred1.c.orig	Thu Dec 14 22:30:29 2006
++++ syspred1.c	Thu Dec 14 22:35:14 2006
 @@ -1094,6 +1094,7 @@
    struct clause *root;
    register struct term *tt, *temp;
