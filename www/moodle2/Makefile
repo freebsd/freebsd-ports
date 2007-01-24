@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable17/
 EXTRACT_SUFX=	.tgz
