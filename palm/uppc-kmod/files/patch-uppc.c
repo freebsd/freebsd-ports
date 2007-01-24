@@ -1,13 +1,13 @@
---- uppc.c.orig	Thu Jan 18 16:07:01 2007
-+++ uppc.c	Thu Jan 18 16:12:10 2007
-@@ -62,6 +62,10 @@
- #define USB_PRODUCT_TOSHIBA_E330	0x0707
- #define USB_PRODUCT_TOSHIBA_E740	0x0706
+--- uppc.c.orig	Sun Sep 12 05:39:44 2004
++++ uppc.c	Wed Jan 24 02:31:02 2007
+@@ -93,6 +93,10 @@
+ 
+ #include <dev/usb/ucomvar.h>
  
 +#ifndef USBDEVNAME
 +#define USBDEVNAME	device_get_nameunit
 +#endif
 +
- #include <sys/cdefs.h>
+ static int uppcrtvendor = 0;
+ static int uppcrtproduct = 0;
  
- #include <sys/param.h>
