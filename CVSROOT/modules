@@ -4271,6 +4271,7 @@ hexcalc		ports/math/hexcalc
 hexcurse	ports/editors/hexcurse
 hexedit		ports/editors/hexedit
 hexpert		ports/editors/hexpert
+hexter		ports/audio/hexter
 hexxagon	ports/games/hexxagon
 heyu		ports/misc/heyu
 heyu2		ports/misc/heyu2
