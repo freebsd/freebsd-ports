@@ -14496,6 +14496,7 @@ thttpd-st	ports/www/thttpd-st
 thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
 thunar		ports/x11-fm/thunar
+thunar-media-tags-plugin	ports/audio/thunar-media-tags-plugin
 thunar-volman-plugin	ports/sysutils/thunar-volman-plugin
 thunderbird	ports/mail/thunderbird
 thunderbird-dictionaries	ports/mail/thunderbird-dictionaries
