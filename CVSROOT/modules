@@ -15262,6 +15262,7 @@ white_dune	ports/graphics/white_dune
 whitespace	ports/lang/whitespace
 whoson		ports/mail/whoson
 whowatch	ports/sysutils/whowatch
+whysynth	ports/audio/whysynth
 wide-dhcp	ports/net-mgmt/wide-dhcp
 widentd		ports/net/widentd
 widgetfactory	ports/x11/widgetfactory
