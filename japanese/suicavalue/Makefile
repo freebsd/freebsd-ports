@@ -22,7 +22,7 @@ PLIST_FILES=	bin/SuicaValue
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} -f ${DISTDIR}/${DISTFILES} ${WRKSRC}
+	@${CP} -f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}
 	@${CP} -f ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
