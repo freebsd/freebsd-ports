@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://eu1.networkupstools.org/source/${PORTVERSION:R}/ \
 		http://us1.networkupstools.org/source/${PORTVERSION:R}/
@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--localstatedir=${STATEDIR} \
 		--datadir=${PREFIX}/etc/nut \
+		--mandir=${PREFIX}/man \
 		--with-drvpath=${PREFIX}/libexec/nut \
 		--with-statepath=${STATEDIR} \
 		--with-altpidpath=${STATEDIR} \
@@ -44,14 +45,14 @@ PLIST_SUB+=	STATEDIR=${STATEDIR}
 
 MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
-MAN8=		apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 bestuferrups.8 \
-		bestups.8 bestfcom.8 cpsups.8 cyberpower.8 etapro.8 everups.8 \
-		fentonups.8 gamatronic.8 genericups.8 ippon.8 isbmex.8 \
-		liebert.8 masterguard.8 metasys.8 mge-shut.8 mge-utalk.8 \
-		mustek.8 nutupsdrv.8 oneac.8 powercom.8 powermust.8 safenet.8 \
-		sms.8 solis.8 tripplite.8 tripplitesu.8 upsc.8 upscmd.8 \
-		upscode2.8 upsd.8 upsdrvctl.8 upslog.8 upsmon.8 upsrw.8 \
-		upssched.8 victronups.8
+MAN8=		al175.8 apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
+		bestuferrups.8 bestups.8 bestfcom.8 cpsups.8 cyberpower.8 \
+		dummy-ups.8 etapro.8 everups.8 fentonups.8 genericups.8 \
+		ippon.8 isbmex.8 liebert.8 masterguard.8 megatec.8 metasys.8 \
+		mge-shut.8 mge-utalk.8 mustek.8 nitram.8 nutupsdrv.8 oneac.8 \
+		optiups.8 powercom.8 powerpanel.8 safenet.8 sms.8 solis.8 \
+		tripplite.8 tripplitesu.8 upsc.8 upscmd.8 upscode2.8 upsd.8 \
+		upsdrvctl.8 upslog.8 upsmon.8 upsrw.8 upssched.8 victronups.8
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-conf
@@ -126,7 +127,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/cables/*.txt ${DOCSDIR}/cables
 	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${DOCSDIR}
-.for file in CHANGES CREDITS INSTALL NEWS README UPGRADING
+.for file in ChangeLog CREDITS INSTALL NEWS README UPGRADING
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

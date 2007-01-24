@@ -15,6 +15,7 @@ etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upssched.conf.sample
+libexec/nut/al175
 libexec/nut/apcsmart
 libexec/nut/bcmxcp
 libexec/nut/belkin
@@ -40,9 +41,11 @@ libexec/nut/metasys
 libexec/nut/mge-shut
 libexec/nut/mge-utalk
 libexec/nut/mustek
+libexec/nut/nitram
 libexec/nut/oneac
+libexec/nut/optiups
 libexec/nut/powercom
-libexec/nut/powermust
+libexec/nut/powerpanel
 libexec/nut/rhino
 libexec/nut/safenet
 libexec/nut/sms
@@ -64,13 +67,15 @@ sbin/upssched
 %%CGIETC%%upsstats-single.html.sample
 %%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%
 %%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%/cables
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/acpi.txt
+%%PORTDOCS%%%%DOCSDIR%%/al175-vars.txt
 %%PORTDOCS%%%%DOCSDIR%%/big-servers.txt
 %%PORTDOCS%%%%DOCSDIR%%/cables/apc-rs500-serial.txt
 %%PORTDOCS%%%%DOCSDIR%%/cables/apc.txt
