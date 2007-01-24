@@ -7,7 +7,7 @@
 
 PORTNAME=	libjingle
 PORTVERSION=	0.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	\
 LIB_DEPENDS=	\
 		speex.3:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
-		ortp.4:${PORTSDIR}/net/ortp \
+		ortp.5:${PORTSDIR}/net/ortp \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	glib20
