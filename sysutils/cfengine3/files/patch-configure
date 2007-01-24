@@ -1,0 +1,20 @@
+--- configure.orig	Wed Sep 20 10:27:07 2006
++++ configure	Thu Dec 14 18:00:21 2006
+@@ -8539,7 +8539,7 @@
+         done
+ 
+         BERKELEY_DB_LIB="-ldb"
+-        for v in db4.4 db44 db41 db40 db4 db33 db32 db3 db; do
++        for v in db-4.4 db4.4 db44 db-4.3 db-4.2 db41 db40 db4 db33 db32 db3 db; do
+             if test -f "$BERKELEY_DB_DIR/lib/lib$v.so"; then
+                 BERKELEY_DB_LIB="-l$v"
+ 		break
+@@ -15998,7 +15998,7 @@
+ 
+ 
+ 
+-LIBS="-L../pub -lpub $LIBS"
++LIBS="../pub/libpub.a $LIBS"
+ 
+ 
+ echo "$as_me:$LINENO: checking Checking for GCC Specific compile flags" >&5

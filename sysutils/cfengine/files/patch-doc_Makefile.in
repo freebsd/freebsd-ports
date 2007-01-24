@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Sat Oct  1 16:32:08 2005
-+++ doc/Makefile.in	Fri Oct  7 10:07:40 2005
+--- doc/Makefile.in.orig	Wed Sep 20 10:27:06 2006
++++ doc/Makefile.in	Fri Dec 15 12:24:05 2006
 @@ -52,8 +52,12 @@
  CONFIG_CLEAN_FILES =
  SOURCES =
@@ -39,6 +39,33 @@
  
  # Make sure these get distributed with everything else.
  EXTRA_DIST = cfagent.8 cfenvd.8 cfenvgraph.8 cfexecd.8 cfkey.8 cfrun.8 cfservd.8 cfengine.8 cfshow.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 texinfo.tex $(htmlfiles) $(infofiles)  $(psfiles) $(dvifiles) $(pdffiles)
+@@ -316,7 +328,7 @@
+ 	  exit 1; \
+ 	fi
+ $(srcdir)/version1.texi:  $(srcdir)/stamp-vti
+-$(srcdir)/stamp-vti: cfengine-Reference.texinfo $(top_srcdir)/configure
++$(srcdir)/stamp-vti: cfengine-Reference.texinfo
+ 	@(dir=.; test -f ./cfengine-Reference.texinfo || dir=$(srcdir); \
+ 	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Reference.texinfo`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \
+@@ -375,7 +387,7 @@
+ 	  exit 1; \
+ 	fi
+ $(srcdir)/version2.texi:  $(srcdir)/stamp-1
+-$(srcdir)/stamp-1: cfengine-Tutorial.texinfo $(top_srcdir)/configure
++$(srcdir)/stamp-1: cfengine-Tutorial.texinfo
+ 	@(dir=.; test -f ./cfengine-Tutorial.texinfo || dir=$(srcdir); \
+ 	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Tutorial.texinfo`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \
+@@ -434,7 +446,7 @@
+ 	  exit 1; \
+ 	fi
+ $(srcdir)/version3.texi:  $(srcdir)/stamp-2
+-$(srcdir)/stamp-2: cfengine-Anomalies.texinfo $(top_srcdir)/configure
++$(srcdir)/stamp-2: cfengine-Anomalies.texinfo
+ 	@(dir=.; test -f ./cfengine-Anomalies.texinfo || dir=$(srcdir); \
+ 	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Anomalies.texinfo`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \
 @@ -579,6 +591,7 @@
  	  rm -f "$(DESTDIR)$(man8dir)/$$inst"; \
  	done

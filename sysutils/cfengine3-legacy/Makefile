@@ -7,6 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	2.1.21
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
