@@ -8,7 +8,8 @@
 PORTNAME=	elmergrid
 PORTVERSION=	5.2.3
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/ \
+		ftp://ftp.funet.fi/pub/sci/physics/elmer/src/old/
 
 MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package
