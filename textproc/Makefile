@@ -739,6 +739,7 @@
     SUBDIR += py-excelerator
     SUBDIR += py-expat
     SUBDIR += py-feedparser
+    SUBDIR += py-genshi
     SUBDIR += py-hyperestraier
     SUBDIR += py-jaxml
     SUBDIR += py-libxml2
