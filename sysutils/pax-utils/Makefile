@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pax-utils
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.15
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://dev.gentoo.org/~solar/pax/ \
