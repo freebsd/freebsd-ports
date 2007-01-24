@@ -12,4 +12,16 @@ After installing the driver, please update the pcscd configuration file
 %%PREFIX%%/etc/reader.conf by using the default
 %%PREFIX%%/etc/reader.conf.sample
 
+For USB cardreaders add the following lines to /etc/devd.conf to enable
+hotplugging.
+
+attach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
+
+detach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
 ------------------------------------------------------------------------
