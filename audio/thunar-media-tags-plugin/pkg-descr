@@ -1,0 +1,12 @@
+The Thunar Media Tags Plugin (thunar-media-tags-plugin) adds special features
+for media files to the Thunar File Manager.
+
+Currently, these are:
+  * a so-called bulk renamer, which allows users to rename multiple audio
+    files at once, based on their tags (e.g. ID3 or OGG/Vorbis),
+  * a special media file page for the file properties dialog, which
+    displays detailed information about quality, length etc.,
+  * and finally, an audio tag editor which is reachable from both,
+    renamer and the properties page.
+
+WWW:	http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin
