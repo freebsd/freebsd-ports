@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perlbal
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	www
 MASTER_SITES=	http://www.danga.com/dist/Perlbal/ \
 		http://www.powertrip.co.za/distfiles/danga/
