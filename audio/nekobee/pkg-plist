@@ -1,0 +1,6 @@
+lib/dssi/nekobee/nekobee_gtk
+lib/dssi/nekobee/knob.png
+lib/dssi/nekobee/switch.png
+lib/dssi/nekobee.so
+lib/dssi/nekobee.la
+@dirrm lib/dssi/nekobee
