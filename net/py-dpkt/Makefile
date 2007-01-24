@@ -8,7 +8,7 @@
 PORTNAME=	dpkt
 PORTVERSION=	1.6
 CATEGORIES=	net python
-MASTER_SITES=	http://monkey.org/~dugsong/dpkt/
+MASTER_SITES=	http://dpkt.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	msciciel@darkzone.ma.cx
