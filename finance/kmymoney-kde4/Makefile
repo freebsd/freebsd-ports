@@ -7,6 +7,7 @@
 
 PORTNAME=	kmymoney2
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	KDE-based personal finance assistant
 
-LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
+LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 # Currently no possibility to enable OFX; requires additional work
