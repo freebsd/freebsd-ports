@@ -25,6 +25,13 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 INSTALLS_ICONS=	yes
 
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran#42
+F77=		gfortran#42
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 
 .if defined(WITHOUT_NLS)
