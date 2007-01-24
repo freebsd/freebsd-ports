@@ -1706,6 +1706,7 @@
     SUBDIR += projectcenter.app
     SUBDIR += projectmanager
     SUBDIR += prototype
+    SUBDIR += pstreams
     SUBDIR += psvn
     SUBDIR += pth
     SUBDIR += ptmalloc

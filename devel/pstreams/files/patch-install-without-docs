@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Jan 22 13:33:24 2007
++++ Makefile	Mon Jan 22 13:33:51 2007
+@@ -38,7 +38,7 @@
+ 
+ VERS = 0.5.2
+ 
+-all: docs $(GENERATED_FILES)
++all: install
+ 
+ test: test_pstreams test_minimum
+ 	@./test_minimum >/dev/null 2>&1 || echo "TEST EXITED WITH STATUS $$?"
