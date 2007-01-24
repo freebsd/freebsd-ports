@@ -6,8 +6,7 @@
 #    $MCom: ports/lang/slib-guile/Makefile,v 1.3 2006/10/13 02:32:48 marcus Exp $
 
 PORTNAME=	slib
-PORTVERSION=	3a3 # Keep this in sync with lang/slib
-PORTREVISION=	3
+PORTVERSION=	3a4 # Keep this in sync with lang/slib
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-guile
