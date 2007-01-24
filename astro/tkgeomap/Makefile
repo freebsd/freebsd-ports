@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkgeomap
-PORTVERSION=	2.10.1
+PORTVERSION=	2.11.1
 CATEGORIES=	astro tk84
 MASTER_SITES=	SF
 
@@ -17,31 +17,27 @@ LIB_DEPENDS=	tclgeomap.0:${PORTSDIR}/astro/tclgeomap \
 		tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
 
 CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
+		--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR} \
+		--with-tk=${TK_LIBDIR} --with-tkinclude=${TK_INCLUDEDIR} \
+		--mandir=${MANPREFIX}/man \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ENV=	TCLGEOMAP_LIB=${LOCALBASE}/lib/tclgeomap
 USE_TK=		yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-PLIST_SUB=	INC=include/${PORTNAME} \
-		LIB=lib/${PORTNAME} VER=${PORTVERSION}
-MAKE_ENV=	MKLINKS_FLAGS=-s
+TKPKG=		${PORTNAME}
+PLIST_SUB=	INC=include/${TKPKG} LIB=lib/${TKPKG}
 USE_LDCONFIG=	yes
 
 MANN=	igeomap.n tkgeomap.n tkgeomap_procs.n wdgeomap.n
-MLINKS=	\
-	wdgeomap.n latlontoxy.n \
-	wdgeomap.n xytolatlon.n
 
 post-install:
-	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so \
-		${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so.0
-	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}${PORTVERSION}.so \
-		${PREFIX}/lib/lib${PORTNAME}.so.0
+	@${LN} -sf ${PREFIX}/lib/lib${TKPKG}.so ${PREFIX}/lib/lib${PORTNAME}.so.0
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/@PACKAGE@@VERSION@/@PACKAGE@/g' ${WRKSRC}/Makefile.in ${WRKSRC}/pkgIndex.tcl.in
-
-# Maintainer section
-MY_MLINKS:
-	@cd ${MANNPREFIX}/man/mann/ && ls -l `${FIND} . -type l` | ${GREP} -E '(igeo|tkgeo|wdgeo)' | ${SED} -Ee 's#^.*\./(.*) -> (.*)$$#\2 \1 \\#' | ${SORT} -u
+	@${REINPLACE_CMD} -e '/=.*PACKAGE_VERSION/s|$${PACKAGE_VERSION}||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|@PACKAGE_VERSION@||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^package/!s|@PACKAGE_VERSION@||g' ${WRKSRC}/pkgIndex.tcl.in
+	@${REINPLACE_CMD} -e '2s|.*|exit 0|' ${WRKSRC}/mkLinks
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
+lib/libtclgeomap.so
 lib/libtclgeomap.so.0
-lib/libtclgeomap%%VER%%.so
-lib/libtclgeomap%%VER%%.so.0
 %%INC%%/geoLines.h
 %%INC%%/geoLnArrToMap.h
 %%INC%%/geoProj.h
