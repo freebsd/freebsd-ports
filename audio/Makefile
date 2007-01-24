@@ -176,6 +176,7 @@
     SUBDIR += gbsplay
     SUBDIR += gdam
     SUBDIR += gdrdao
+    SUBDIR += ghostess
     SUBDIR += gkrellmms
     SUBDIR += gkrellmms2
     SUBDIR += gkrellmss

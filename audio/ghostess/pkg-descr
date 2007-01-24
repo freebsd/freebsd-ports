@@ -1,0 +1,11 @@
+Ghostess is a a graphical DSSI host, based on jack-dssi-host, but
+capable of saving and restoring plugin configuration, as well as
+specifying MIDI channels and layering synths. ghostess includes
+three MIDI drivers: an ALSA sequencer MIDI driver, a (clumsy but
+functional) CoreMIDI driver (which allows ghostess to be used on
+Mac OS X), and a JACK MIDI driver for use with the MIDI transport
+in recent versions (>=0.102.27) of JACK. ghostess also comes with
+a universal DSSI GUI, which attempts to provide GUI services for
+any DSSI or LADSPA plugin, and may be used with any DSSI host.
+
+WWW:	http://home.jps.net/~musound/
