@@ -28,6 +28,7 @@ RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict
 .endif
 
 USE_RUBY=	yes
+USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:213 libtool:15
 CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}" \
 		--with-ruby="${RUBY}"
