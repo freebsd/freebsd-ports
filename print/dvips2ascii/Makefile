@@ -8,9 +8,10 @@
 PORTNAME=	dvips2ascii
 PORTVERSION=	1.3
 CATEGORIES=	print
-MASTER_SITES=	http://www.de.freebsd.org/~eserte/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	srezic
 
-MAINTAINER=	eserte@cs.tu-berlin.de
+MAINTAINER=	slaven@rezic.de
 COMMENT=	PostScript (created by dvips) to ascii converter
 
 PLIST_FILES=	bin/dvips2ascii
