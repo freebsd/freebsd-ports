@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Number/RecordLocator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/RecordLocator/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/RecordLocator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
+@dirrmtry %%SITE_PERL%%/Number
