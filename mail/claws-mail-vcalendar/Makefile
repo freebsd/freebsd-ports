@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	1.92
-PORTREVISION=	1
+PORTVERSION=	1.93
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
