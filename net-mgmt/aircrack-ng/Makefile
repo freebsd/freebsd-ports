@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aircrack-ng
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -14,6 +14,7 @@ MASTER_SITES=	http://download.aircrack-ng.org/ \
 MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Aircrack-ng is the next generation of aircrack
 
+USE_GMAKE=	yes
 ALL_TARGET=	aircrack-ng airdecap-ng packetforge-ng ivstools kstats
 
 PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/packetforge-ng bin/ivstools \
