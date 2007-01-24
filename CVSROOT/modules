@@ -12269,6 +12269,7 @@ py-gdbm		ports/databases/py-gdbm
 py-gdchart	ports/graphics/py-gdchart
 py-gdchart2	ports/graphics/py-gdchart2
 py-generate	ports/devel/py-generate
+py-genshi	ports/textproc/py-genshi
 py-glewpy	ports/graphics/py-glewpy
 py-gnome	ports/x11-toolkits/py-gnome
 py-gnome-desktop	ports/x11-toolkits/py-gnome-desktop
