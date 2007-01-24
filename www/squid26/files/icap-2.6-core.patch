@@ -16,7 +16,7 @@ cvs diff -u -b -N -kk -rZ-icap-2_6_merge_HEAD -ricap-2_6
 See http://devel.squid-cache.org/icap/ for further information
 about the ICAP client project.
 
-Patch last updated: 2006-12-14
+Patch last updated: 2007-01-24
 
 Index: errors/Azerbaijani/ERR_ICAP_FAILURE
 ===================================================================
@@ -2694,19 +2694,14 @@ diff -p -u -b -r1.43 -r1.20.4.10
      debug(17, 3) ("fwdComplete: %s\n\tstatus %d\n", storeUrl(e),
  	e->mem_obj->reply->sline.status);
 Index: src/globals.h
-===================================================================
-RCS file: /cvsroot/squid/squid/src/globals.h,v
-retrieving revision 1.27
-retrieving revision 1.22.4.5
-diff -p -u -b -r1.27 -r1.22.4.5
---- src/globals.h	25 Sep 2006 19:51:46 -0000	1.27
-+++ src/globals.h	26 Sep 2006 22:47:36 -0000	1.22.4.5
+--- src/globals.h.orig	Fri Jan 19 01:19:26 2007
++++ src/globals.h	Wed Jan 24 17:15:33 2007
 @@ -171,6 +171,9 @@ extern const char *external_acl_message;
  #if HAVE_SBRK
  extern void *sbrk_start;	/* 0 */
  #endif
 +#if HS_FEAT_ICAP
-+extern char *icap_service_type_str[];
++extern const char *icap_service_type_str[];
 +#endif
  extern int opt_send_signal;	/* -1 */
  extern int opt_no_daemon;	/* 0 */
@@ -6582,20 +6577,16 @@ diff -p -u -b -r1.27 -r1.24.4.3
  	StrPools[i].pool = memPoolCreate(StrPoolsAttrs[i].name, StrPoolsAttrs[i].obj_size);
 Index: src/mk-string-arrays.pl
 ===================================================================
-RCS file: /cvsroot/squid/squid/src/mk-string-arrays.pl,v
-retrieving revision 1.2
-retrieving revision 1.2.180.1
-diff -p -u -b -r1.2 -r1.2.180.1
---- src/mk-string-arrays.pl	23 Oct 2000 15:04:21 -0000	1.2
-+++ src/mk-string-arrays.pl	17 May 2006 17:58:01 -0000	1.2.180.1
-@@ -16,6 +16,7 @@ $pat{'err_type'} = "err_type_str";
- $pat{'icp_opcode'} = "icp_opcode_str";
+--- src/mk-string-arrays.pl.orig	Fri Jan 19 01:19:26 2007
++++ src/mk-string-arrays.pl	Wed Jan 24 12:31:03 2007
+@@ -17,6 +17,7 @@ $pat{'icp_opcode'} = "icp_opcode_str";
  $pat{'swap_log_op'} = "swap_log_op_str";
  $pat{'lookup_t'} = "lookup_t_str";
+ $pat{'log_type'} = "log_tags";
 +$pat{'icap_service_t'} = "icap_service_type_str";
  
- $state = 0;	# start state
- while (<>) {
+ print "#include \"squid.h\"\n";
+ 
 Index: src/pconn.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/pconn.c,v
