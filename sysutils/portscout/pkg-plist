@@ -1,5 +1,5 @@
 bin/portscout
-@unexec cmp -s %D/etc/portscout.conf.sample %D/etc/portscout.conf && rm -f %D/etc/portscout.conf
+@unexec if cmp -s %D/etc/portscout.conf.sample %D/etc/portscout.conf; then rm -f %D/etc/portscout.conf; fi
 @exec [ ! -f %D/etc/portscout.conf ] && cp -p %D/etc/portscout.conf.sample %D/etc/portscout.conf
 etc/portscout.conf.sample
 %%DATADIR%%/templates/index.html
