@@ -3338,6 +3338,7 @@ ghemical	ports/science/ghemical
 ghex		ports/editors/ghex
 ghfaxviewer	ports/comms/ghfaxviewer
 ghmm		ports/science/ghmm
+ghostess	ports/audio/ghostess
 ghostscript-afpl	ports/print/ghostscript-afpl
 ghostscript-afpl-nox11	ports/print/ghostscript-afpl-nox11
 ghostscript-gnu		ports/print/ghostscript-gnu
