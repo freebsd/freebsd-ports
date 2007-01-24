@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://vvv.purjo.nu/uird/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lx@deepthought.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	The Universal IR Receiver Daemon
 
 USE_GMAKE=	yes
