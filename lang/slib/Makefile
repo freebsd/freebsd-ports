@@ -7,6 +7,7 @@
 
 PORTNAME=	slib
 PORTVERSION=	3a4
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/ \
 		http://swissnet.ai.mit.edu/ftpdir/scm/OLD/:old
@@ -26,6 +27,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/;;(format/(format/' ${WRKSRC}/mklibcat.scm
+	@${REINPLACE_CMD} -e 's|/usr/lib/slib|${PREFIX}/share/slib|' ${WRKSRC}/guile.init
 
 do-install:
 	@${MKDIR} ${DATADIR}
