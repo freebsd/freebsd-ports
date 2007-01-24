@@ -1,0 +1,11 @@
+hexter is a software synthesizer that models the sound generation
+of a Yamaha DX7 synthesizer. It can easily load most DX7 patch bank
+files, accept patch editing commands via MIDI sys-ex messages (ALSA
+systems only), and recreate the sound of the DX7 with greater
+accuracy than any previous open-source emulation (that the author
+is aware of....)
+
+hexter operates as a plugin for the Disposable Soft Synth Interface
+(DSSI).
+
+WWW:	http://dssi.sourceforge.net/hexter.html
