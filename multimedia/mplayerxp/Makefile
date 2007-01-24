@@ -30,6 +30,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 WANT_SDL=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	mplayerxp.1
 
@@ -38,7 +39,7 @@ WIN32_CODEC_PREFIX=	${LOCALBASE}/lib/win32
 .include <bsd.port.pre.mk>
 
 # add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf
-CONFIGURE_ARGS+= --with-extralibdir=${LOCALBASE}/lib \
+CONFIGURE_ARGS+=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
 		--with-x11incdir=${X11BASE}/include \
 		--with-x11libdir=${X11BASE}/lib \
@@ -51,6 +52,7 @@ CONFIGURE_ARGS+= --with-extralibdir=${LOCALBASE}/lib \
 		--disable-rtc \
 		--disable-vm \
 		--disable-tv-v4l
+CONFIGURE_ENV+=	LANG=C
 # insure CC,LD safeness
 MAKE_ARGS+=	CC="${CC}" LD="${LD}"
 
