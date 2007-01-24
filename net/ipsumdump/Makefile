@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.62
+PORTVERSION=	1.63
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/ \
 		http://core.inec.ru/~az/
@@ -19,10 +19,10 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
-MAN1=		${PORTNAME}.1 ipaggcreate.1
+MAN1=		${PORTNAME}.1 ipaggcreate.1 ipaggmanip.1
 
 PORTDOCS=	README
-PLIST_FILES=	bin/ipaggcreate bin/ipsumdump
+PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip
 
 OPTIONS=	 IPV6	"IPv6 internet support" off \
 
