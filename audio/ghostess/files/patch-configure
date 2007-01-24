@@ -1,0 +1,18 @@
+--- configure.orig	Tue Nov 28 17:09:13 2006
++++ configure	Sat Jan 13 20:08:31 2007
+@@ -21405,14 +21405,9 @@
+ echo "GTK support: $with_gtk"
+ 
+ case "${host_os}" in
+-darwin*)
++darwin* | freebsd*)
+   darwin=yes
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define MIDI_COREMIDI 1
+-_ACEOF
+-
+-
+   succeeded=no
+ 
+   if test -z "$PKG_CONFIG"; then

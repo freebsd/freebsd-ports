@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	Fri Jan 19 00:40:57 2007
++++ src/Makefile.in	Fri Jan 19 00:42:05 2007
+@@ -207,9 +207,7 @@
+ @DARWIN_TRUE@@MIDI_JACK_TRUE@MIDI_SRCS = midi-jack.c
+ @DARWIN_FALSE@DARWIN_LD_FLAGS = 
+ @DARWIN_TRUE@@MIDI_JACK_FALSE@DARWIN_LD_FLAGS = -framework CoreFoundation -framework CoreMIDI
+-@DARWIN_TRUE@@MIDI_JACK_TRUE@DARWIN_LD_FLAGS = -framework CoreFoundation
+ @DARWIN_FALSE@DARWIN_LD_ADD = 
+-@DARWIN_TRUE@DARWIN_LD_ADD = -lmx
+ ghostess_SOURCES = \
+ 	ghostess.c \
+ 	ghostess.h \
