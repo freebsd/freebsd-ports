@@ -12086,6 +12086,7 @@ pstack		ports/sysutils/pstack
 pstoedit	ports/graphics/pstoedit
 pstoepsi	ports/graphics/pstoepsi
 pstotext	ports/print/pstotext
+pstreams	ports/devel/pstreams
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
