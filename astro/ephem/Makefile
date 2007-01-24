@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}_${PORTVERSION}_unix
 
-MAINTAINER=	eserte@cs.tu-berlin.de
+MAINTAINER=	slaven@rezic.de
 COMMENT=	An interactive terminal-based astronomical ephemeris program
 
 NO_WRKSUBDIR=	yes
