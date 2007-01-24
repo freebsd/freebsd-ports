@@ -1,39 +1,40 @@
 # New ports collection makefile for:	squirrelmail-compatibility-plugin
-# Date created:		3 Jul 2005
-# Whom:		Alexander Wittig <alexander@wittig.name>
+# Date created:				3 Jul 2005
+# Whom:					Alexander Wittig <alexander@wittig.name>
 #
 # $FreeBSD$
 
-PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
-PORTVERSION=		2.0.4
-CATEGORIES=		mail www
-MASTER_SITES=		http://www.squirrelmail.org/plugins/
-DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
-DIST_SUBDIR=		squirrelmail
+PORTNAME=	squirrelmail
+PORTVERSION=	2.0.6
+CATEGORIES=	mail www
+MASTER_SITES=	http://www.squirrelmail.org/plugins/
+PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
+DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
+DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=		alexander@wittig.name
-COMMENT=		Required by many plugins for compatibility with SquirrelMail
+MAINTAINER=	alexander@wittig.name
+COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
-RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	squirrelmail>=1.4.9:${PORTSDIR}/mail/squirrelmail
 
-SQUIRREL_PLUGIN_NAME=		compatibility
+SQUIRREL_PLUGIN_NAME=	compatibility
 
 .ifdef SQUIRRELDIR
-PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR}
+PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
 .else
 .	ifndef WITHOUT_WWWDIR
-SQUIRRELDIR=		${PREFIX}/www/squirrelmail
-PLIST_SUB+=		SQUIRRELDIR=www/squirrelmail
+SQUIRRELDIR=	${PREFIX}/www/squirrelmail
+PLIST_SUB+=	SQUIRRELDIR=www/squirrelmail
 .	else
-SQUIRRELDIR=		${PREFIX}/squirrelmail
-PLIST_SUB+=		SQUIRRELDIR=squirrelmail
+SQUIRRELDIR=	${PREFIX}/squirrelmail
+PLIST_SUB+=	SQUIRRELDIR=squirrelmail
 .	endif
 .endif
 
-NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
-USE_PERL5_BUILD=		yes
-WANT_PHP_WEB=		yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+USE_PERL5_BUILD=	yes
+WANT_PHP_WEB=	yes
 
 pre-everything::
 	@${ECHO} ""
@@ -54,7 +55,7 @@ do-install:
 post-install:
 	@${ECHO} "Patching SquirrelMail for compatibility plugin"
 	@${ECHO} ""
-	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.5.diff
+	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins/compatibility < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.9.diff
 	@${ECHO} ""
 
 .ifndef WITHOUT_ACTIVATE
