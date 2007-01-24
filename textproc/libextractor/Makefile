@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.16
+PORTVERSION=	0.5.17a
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -46,6 +46,9 @@ post-patch:
 
 check: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+
+# this thing depends on install
+#regression-test: check
 
 .include <bsd.port.pre.mk>
 

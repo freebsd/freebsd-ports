@@ -85,6 +85,8 @@ lib/libextractor/libextractor_riff.la
 lib/libextractor/libextractor_riff.so
 lib/libextractor/libextractor_rpm.la
 lib/libextractor/libextractor_rpm.so
+lib/libextractor/libextractor_sid.la
+lib/libextractor/libextractor_sid.so
 lib/libextractor/libextractor_split.la
 lib/libextractor/libextractor_split.so
 lib/libextractor/libextractor_tar.la
@@ -98,6 +100,7 @@ lib/libextractor/libextractor_wav.la
 lib/libextractor/libextractor_wav.so
 lib/libextractor/libextractor_zip.la
 lib/libextractor/libextractor_zip.so
+lib/pkgconfig/libextractor.pc
 share/locale/de/LC_MESSAGES/libextractor.mo
 share/locale/ga/LC_MESSAGES/libextractor.mo
 share/locale/ro/LC_MESSAGES/libextractor.mo
@@ -105,3 +108,4 @@ share/locale/rw/LC_MESSAGES/libextractor.mo
 share/locale/sv/LC_MESSAGES/libextractor.mo
 share/locale/vi/LC_MESSAGES/libextractor.mo
 @dirrm lib/libextractor
+@dirrmtry lib/pkgconfig
