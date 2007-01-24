@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jan 20 12:02:36 2007
++++ configure	Sat Jan 20 12:02:42 2007
+@@ -21267,7 +21267,7 @@
+ fi;
+ 
+ case "${host_os}" in
+-darwin*)
++darwin* | freebsd*)
+   darwin=yes
+ 
+   succeeded=no

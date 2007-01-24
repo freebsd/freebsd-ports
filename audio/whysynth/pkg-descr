@@ -1,0 +1,14 @@
+WhySynth is a versatile softsynth which operates as a plugin for the
+Disposable Soft Synth Interface (DSSI).  A brief list of features:
+
+- 4 oscillators, 2 filters, 3 LFOs, and 5 envelope generators per
+  voice.
+
+- 7 oscillator modes: minBLEP, wavecycle, asynchronous granular, FM,
+  waveshaper, noise, and PADsynth.
+
+- 5 filter modes.
+
+- flexible modulation and mixdown options.
+
+WWW:	http://home.jps.net/~musound/whysynth.html
