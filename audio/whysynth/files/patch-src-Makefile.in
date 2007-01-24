@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sat Jan 20 12:05:56 2007
++++ src/Makefile.in	Sat Jan 20 12:06:19 2007
+@@ -186,7 +186,7 @@
+ WhySynth_gtk_CFLAGS = -DY_GUI @GTK_CFLAGS@ $(AM_CFLAGS) $(GUI_CFLAGS)
+ @DARWIN_FALSE@WhySynth_gtk_LDADD = -lm @GTK_LIBS@ $(AM_LDFLAGS) $(GUI_LIBS)
+ 
+-@DARWIN_TRUE@WhySynth_gtk_LDADD = -lm -lmx @GTK_LIBS@ $(AM_LDFLAGS) $(GUI_LIBS)
++@DARWIN_TRUE@WhySynth_gtk_LDADD = -lm @GTK_LIBS@ $(AM_LDFLAGS) $(GUI_LIBS)
+ 
+ whysynth_la_SOURCES = \
+ 	dssp_synth.c \
+@@ -226,7 +226,7 @@
+ whysynth_la_CFLAGS = -DY_PLUGIN $(AM_CFLAGS) $(PLUGIN_CFLAGS)
+ @DARWIN_FALSE@whysynth_la_LIBADD = -lm $(PLUGIN_LIBS)
+ 
+-@DARWIN_TRUE@whysynth_la_LIBADD = -lm -lmx $(PLUGIN_LIBS)
++@DARWIN_TRUE@whysynth_la_LIBADD = -lm $(PLUGIN_LIBS)
+ 
+ whysynth_la_LDFLAGS = -module -avoid-version
+ subdir = src

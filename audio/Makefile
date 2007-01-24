@@ -630,6 +630,7 @@
     SUBDIR += waveplay
     SUBDIR += wavpack
     SUBDIR += wavplay
+    SUBDIR += whysynth
     SUBDIR += wmalbum
     SUBDIR += wmcdplay
     SUBDIR += wmfmixer
