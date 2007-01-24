@@ -8,7 +8,8 @@
 PORTNAME=	hybserv
 PORTVERSION=	1.9.3
 CATEGORIES=	irc
-MASTER_SITES=	http://www.hybserv.net/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	hybserv2
 
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	HybServ2 IRCD Services
