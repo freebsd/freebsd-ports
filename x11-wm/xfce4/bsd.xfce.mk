@@ -13,11 +13,9 @@ libmcs_LIB_DEPENDS=		xfce4mcs-manager.3:${PORTSDIR}/x11/libxfce4mcs
 mcsmanager_BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 mcsmanager_RUN_DEPENDS=		xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 
-panel_BUILD_DEPENDS=		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-panel_RUN_DEPENDS=		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
+panel_LIB_DEPENDS=		xfce4panel.2:${PORTSDIR}/x11-wm/xfce4-panel
 
-thunar_BUILD_DEPENDS=		thunar:${PORTSDIR}/x11-fm/thunar
-thunar_RUN_DEPENDS=		thunar:${PORTSDIR}/x11-fm/thunar
+thunar_LIB_DEPENDS=		thunar-vfs-1.4:${PORTSDIR}/x11-fm/thunar
 
 wm_BUILD_DEPENDS=		xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
 wm_RUN_DEPENDS=			xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
