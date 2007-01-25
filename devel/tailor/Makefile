@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tailor
-PORTVERSION=	0.9.26
+PORTVERSION=	0.9.27
 CATEGORIES=	devel python
 MASTER_SITES=	http://darcs.arstecnica.it/
 
-MAINTAINER=	rgl@ruilopes.com
+MAINTAINER=	sa2c@sa2c.net
 COMMENT=	Migrates changesets between version control systems
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
