@@ -407,6 +407,8 @@
     SUBDIR += guikachu
     SUBDIR += gwenhywfar
     SUBDIR += gzstream
+    SUBDIR += hachoir-core
+    SUBDIR += hachoir-parser
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hc12mem
