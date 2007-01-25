@@ -2728,3 +2728,6 @@ x11-wm/xfce4-systray||2007-01-22|got obsolete by xfce 4.4 update
 russian/rispell||2007-01-23|Has expired: does not work with current textproc/ispell, use rus-ispell port istead
 audio/mp3encode||2007-01-25|Has expired: is unfetchable and has no homepage
 biology/coalesce||2007-01-25|Has expired: Not supported by the authors. Last version is from 1995. Use biology/fluctuate instead.
+devel/leoarg||2007-01-25|Has expired: distfile and homepage disappeared
+misc/dirtree||2007-01-25|distfile and homepage disappeared
+misc/argparse||2007-01-25|distfile and homepage disappeared
