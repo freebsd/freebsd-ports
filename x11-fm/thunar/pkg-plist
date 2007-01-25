@@ -1,6 +1,6 @@
 bin/Thunar
 bin/thunar
-etc/xdg/Thunar/uca.xml
+%%PLUGIN_UCA%%etc/xdg/Thunar/uca.xml
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-config.h
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-enum-types.h
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-info.h
@@ -36,12 +36,12 @@ lib/libthunar-vfs-1.so.4
 lib/libthunarx-1.la
 lib/libthunarx-1.so
 lib/libthunarx-1.so.4
-lib/thunarx-1/thunar-apr.la
-lib/thunarx-1/thunar-apr.so
-lib/thunarx-1/thunar-sbr.la
-lib/thunarx-1/thunar-sbr.so
-lib/thunarx-1/thunar-uca.la
-lib/thunarx-1/thunar-uca.so
+%%PLUGIN_APR%%lib/thunarx-1/thunar-apr.la
+%%PLUGIN_APR%%lib/thunarx-1/thunar-apr.so
+%%PLUGIN_SBR%%lib/thunarx-1/thunar-sbr.la
+%%PLUGIN_SBR%%lib/thunarx-1/thunar-sbr.so
+%%PLUGIN_UCA%%lib/thunarx-1/thunar-uca.la
+%%PLUGIN_UCA%%lib/thunarx-1/thunar-uca.so
 libdata/pkgconfig/thunar-vfs-1.pc
 libdata/pkgconfig/thunarx-1.pc
 libexec/ThunarBulkRename
@@ -51,12 +51,14 @@ libexec/thunar-vfs-font-thumbnailer-1
 libexec/thunar-vfs-mime-cleaner-1
 libexec/thunar-vfs-pixbuf-thumbnailer-1
 libexec/thunar-vfs-update-thumbnailers-cache-1
+%%PLUGIN_TPA%%libexec/xfce4/panel-plugins/thunar-tpa
 share/Thunar/sendto/thunar-sendto-email.desktop
 share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.FileManager.service
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.Thunar.service
+%%PLUGIN_TPA%%share/xfce4/panel-plugins/thunar-tpa.desktop
 %%DOCSDIR%%/README.gtkrc
 %%DOCSDIR%%/README.thunarrc
 %%DOCSDIR%%/README.volumes
@@ -269,14 +271,18 @@ share/locale/zh_TW/LC_MESSAGES/Thunar.mo
 share/pixmaps/Thunar/Thunar-about-logo.png
 share/pixmaps/Thunar/Thunar-fallback-icon.png
 share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
-@dirrm etc/xdg/Thunar
-@dirrmtry etc/xdg
+%%PLUGIN_UCA%%@dirrm etc/xdg/Thunar
+%%PLUGIN_UCA%%@dirrmtry etc/xdg
 @dirrm include/thunar-vfs-1/thunar-vfs
 @dirrm include/thunar-vfs-1
 @dirrm include/thunarx-1/thunarx
 @dirrm include/thunarx-1
-@dirrm lib/thunarx-1
+@dirrmtry lib/thunarx-1
+%%PLUGIN_TPA%%@dirrmtry libexec/xfce4/panel-plugins
+%%PLUGIN_TPA%%@dirrmtry libexec/xfce4
 @dirrmtry share/applications
+%%PLUGIN_TPA%%@dirrmtry share/xfce4/panel-plugins
+%%PLUGIN_TPA%%@dirrmtry share/xfce4
 @dirrmtry %%DOCSDIR%%/html/C/images
 @dirrm %%DOCSDIR%%/html/C
 @dirrmtry %%DOCSDIR%%/html/es/images

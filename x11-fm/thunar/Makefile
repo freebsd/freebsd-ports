@@ -7,6 +7,7 @@
 
 PORTNAME=	Thunar
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
@@ -26,20 +27,25 @@ USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libutil
 USE_XLIB=	yes
 
-OPTIONS=	DBUS	"Enable D-BUS support"		on  \
-		JPEG	"Enable JPEG support"		on  \
-		FAM	"Enable FAM support"		off \
-		GCONF	"Enable GCONF support"		off \
-		EXIF	"Enable EXIF support"		off \
-		PCRE	"Enable PCRE support"		off \
-		STARTUP "Enable startup notification support"	on
+OPTIONS=	DBUS		"Enable D-BUS support"				on  \
+		JPEG		"Enable JPEG support"				on  \
+		FAM		"Enable FAM support"				off \
+		HAL		"Enable HAL support"				off \
+		GCONF		"Enable GCONF support"				off \
+		STARTUP		"Enable startup notification support"		on  \
+		PLUG_APR	"Thunar Advanced Properties plugin"		off \
+		PLUG_APR_EXIF	"Exif support for the APR plugin"		off \
+		PLUG_SBR	"Thunar Simple Builtin Renamers plugin"		off \
+		PLUG_SBR_PCRE	"Regular expression support for the SBR plugin"	off \
+		PLUG_TPA	"Thunar Trash Panel Applet plugin"		off \
+		PLUG_UCA	"Thunar User Customizable Actions plugin"	off
+
 
 MAN1=		Thunar.1
 
 .include  <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
-.if !defined(WITHOUT_DBUS)
+.if defined(WITH_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	WITH_DBUS=""
@@ -48,11 +54,15 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if defined(WITH_JPEG)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
 .else
 CONFIGURE_ARGS+=--disable-jpeg
+.endif
+
+.if defined(WITH_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .endif
 
 .if defined(WITH_FAM)
@@ -67,18 +77,49 @@ CONFIGURE_ARGS+=--enable-gconf
 CONFIGURE_ARGS+=--disable-gconf
 .endif
 
-.if defined(WITH_EXIF)
+.if defined(WITH_PLUG_APR)
+CONFIGURE_ARGS+=--enable-apr-plugin
+PLIST_SUB+=	PLUGIN_APR=""
+.if defined(WITH_PLUG_APR_EXIF)
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=--enable-exif
 .else
 CONFIGURE_ARGS+=--disable-exif
 .endif
+.else
+CONFIGURE_ARGS+=--disable-apr-plugin --disable-exif
+PLIST_SUB+=	PLUGIN_APR="@comment "
+.endif
 
-.if !defined(WITHOUT_PCRE)
+.if defined(WITH_PLUG_SBR)
+CONFIGURE_ARGS+=--enable-sbr-plugin
+PLIST_SUB+=	PLUGIN_SBR=""
+.if defined(WITH_PLUG_SBR_PCRE)
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--enable-pcre
 .else
 CONFIGURE_ARGS+=--disable-pcre
+.endif
+.else
+CONFIGURE_ARGS+=--disable-sbr-plugin --disable-pcre
+PLIST_SUB+=	PLUGIN_SBR="@comment "
+.endif
+
+.if defined(WITH_PLUG_TPA)
+CONFIGURE_ARGS+=--enable-tpa-plugin
+PLIST_SUB+=	PLUGIN_TPA=""
+USE_XFCE+=	panel
+.else
+CONFIGURE_ARGS+=--disable-tpa-plugin
+PLIST_SUB+=	PLUGIN_TPA="@comment "
+.endif
+
+.if defined(WITH_PLUG_UCA)
+CONFIGURE_ARGS+=--enable-uca-plugin
+PLIST_SUB+=	PLUGIN_UCA=""
+.else
+CONFIGURE_ARGS+=--disable-uca-plugin
+PLIST_SUB+=	PLUGIN_UCA="@comment "
 .endif
 
 .if !defined(WITHOUT_STARTUP)
@@ -94,7 +135,13 @@ post-patch:
 .if !defined(WITH_FAM)
 	@${REINPLACE_CMD} -e 's|gamin|no-gamin|g' ${WRKSRC}/configure
 .endif
+.if !defined(WITH_HAL)
+	@${REINPLACE_CMD} -e 's|hal-storage|no-hal-storage|g' ${WRKSRC}/configure
+.endif
+	@${REINPLACE_CMD} -e 's|enable_val|enableval|g' ${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database
+
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 .include <bsd.port.post.mk>
