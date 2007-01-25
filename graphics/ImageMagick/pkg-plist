@@ -76,6 +76,7 @@ include/magick/paint.h
 include/magick/pixel.h
 include/magick/prepress.h
 include/magick/profile.h
+include/magick/property.h
 include/magick/quantum.h
 include/magick/quantize.h
 include/magick/random_.h
@@ -110,8 +111,8 @@ include/wand/convert.h
 include/wand/display.h
 include/wand/identify.h
 include/wand/import.h
-include/wand/magick-attribute.h
 include/wand/magick-image.h
+include/wand/magick-property.h
 include/wand/magick_wand.h
 include/wand/magick-wand.h
 include/wand/mogrify.h
@@ -448,6 +449,7 @@ libdata/pkgconfig/Wand.pc
 %%DATADIR%%/config/coder.xml
 %%DATADIR%%/config/log.xml
 %%DATADIR%%/config/magic.xml
+%%DATADIR%%/config/sRGB.icm
 %%DATADIR%%/config/thresholds.xml
 %%DATADIR%%-%%PORTVERSION%%/LICENSE
 %%DATADIR%%-%%PORTVERSION%%/ChangeLog
@@ -464,6 +466,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/examples.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/frame.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/fuzzy-magick.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gaussian-blur.png
 %%PORTDOCS%%%%DOCSDIR%%/images/granite.png
 %%PORTDOCS%%%%DOCSDIR%%/images/label.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/logo.eps
@@ -554,8 +557,8 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/list.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick.html
-%%PORTDOCS%%%%DOCSDIR%%/www/api/magick-attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-image.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/magick-property.php
 %%PORTDOCS%%%%DOCSDIR%%/www/api/memory.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/module.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/monitor.html
@@ -610,6 +613,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%/www/resources.html
 %%PORTDOCS%%%%DOCSDIR%%/www/search.html
+%%PORTDOCS%%%%DOCSDIR%%/www/sitemap.html
 %%PORTDOCS%%%%DOCSDIR%%/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%/www/stream.html
 %%PORTDOCS%%%%DOCSDIR%%/www/subversion.html
