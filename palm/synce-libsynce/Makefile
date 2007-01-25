@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-libsynce
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -17,8 +17,10 @@ MAN1=		synce.1
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/libsynce-${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE} \
+			--mandir=${MANPREFIX}/man
 
 USE_LDCONFIG=	yes
 
