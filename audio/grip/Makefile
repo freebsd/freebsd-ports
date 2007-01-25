@@ -7,7 +7,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	3.2.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,8 +39,7 @@ OPTIONS+=	LAME "Encoder: lame: Install audio/lame" on \
 OPTIONS+=	BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
 		FAAC "Encoder: faac: Install audio/faac" off \
 		FLAC "Encoder: flac: Install audio/flac" off \
-		GOGO "Encoder: gogo: Install audio/gogo" off \
-		MP3ENCODE "Encoder: mp3encode: Install audio/mp3encode" off
+		GOGO "Encoder: gogo: Install audio/gogo" off
 
 ISO_LOCALES=	de es fr pt_BR
 
@@ -83,10 +82,6 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
-.if defined(WITH_MP3ENCODE)
-RUN_DEPENDS+=	encode:${PORTSDIR}/audio/mp3encode
-.endif
-
 .if !defined(WITHOUT_LAME)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
@@ -110,8 +105,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/grip.c
 	@${REINPLACE_CMD} -e 's|{"xingmp3enc","-B %b -Q %w","mp3"},||; \
-		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","--no-midside -w -q 100 --artist %a --album %d --track %t --title %n --year %y --genre %g -b %b %w -o %m", "m4a"},|; \
-		s|mp3encode|encode|' \
+		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","--no-midside -w -q 100 --artist %a --album %d --track %t --title %n --year %y --genre %g -b %b %w -o %m", "m4a"},|' \
 		${WRKSRC}/src/gripcfg.c
 .for l in ${ISO_LOCALES}
 	@${MV} ${WRKSRC}/po/${l}.po ${WRKSRC}/po/_${l}.po
