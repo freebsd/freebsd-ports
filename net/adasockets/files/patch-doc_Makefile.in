@@ -1,0 +1,65 @@
+--- doc/Makefile.in.orig	Fri Nov 26 06:57:18 2004
++++ doc/Makefile.in	Sun Jan 21 22:59:35 2007
+@@ -225,52 +225,6 @@
+ distclean-libtool:
+ 	-rm -f libtool
+ 
+-.texi.info:
+-	restore=: && backupdir="$(am__leading_dot)am$$$$" && \
+-	am__cwd=`pwd` && cd $(srcdir) && \
+-	rm -rf $$backupdir && mkdir $$backupdir && \
+-	for f in $@ $@-[0-9] $@-[0-9][0-9] $(@:.info=).i[0-9] $(@:.info=).i[0-9][0-9]; do \
+-	  if test -f $$f; then mv $$f $$backupdir; restore=mv; else :; fi; \
+-	done; \
+-	cd "$$am__cwd"; \
+-	if $(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir) \
+-	 -o $@ $<; \
+-	then \
+-	  rc=0; \
+-	  cd $(srcdir); \
+-	else \
+-	  rc=$$?; \
+-	  cd $(srcdir) && \
+-	  $$restore $$backupdir/* `echo "./$@" | sed 's|[^/]*$$||'`; \
+-	fi; \
+-	rm -rf $$backupdir; exit $$rc
+-
+-.texi.dvi:
+-	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
+-	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir)' \
+-	$(TEXI2DVI) $<
+-
+-.texi.pdf:
+-	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
+-	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir)' \
+-	$(TEXI2PDF) $<
+-
+-.texi.html:
+-	rm -rf $(@:.html=.htp)
+-	if $(MAKEINFOHTML) $(AM_MAKEINFOHTMLFLAGS) $(MAKEINFOFLAGS) -I $(srcdir) \
+-	 -o $(@:.html=.htp) $<; \
+-	then \
+-	  rm -rf $@; \
+-	  if test ! -d $(@:.html=.htp) && test -d $(@:.html=); then \
+-	    mv $(@:.html=) $@; else mv $(@:.html=.htp) $@; fi; \
+-	else \
+-	  if test ! -d $(@:.html=.htp) && test -d $(@:.html=); then \
+-	    rm -rf $(@:.html=); else rm -Rf $(@:.html=.htp) $@; fi; \
+-	  exit 1; \
+-	fi
+-$(srcdir)/adasockets.info: adasockets.texi $(srcdir)/version.texi $(adasockets_TEXINFOS)
+-adasockets.dvi: adasockets.texi $(srcdir)/version.texi $(adasockets_TEXINFOS)
+-adasockets.html: adasockets.texi $(srcdir)/version.texi $(adasockets_TEXINFOS)
+ $(srcdir)/version.texi:  $(srcdir)/stamp-vti
+ $(srcdir)/stamp-vti: adasockets.texi $(top_srcdir)/configure
+ 	@(dir=.; test -f ./adasockets.texi || dir=$(srcdir); \
+@@ -530,6 +484,9 @@
+ 
+ adasockets.pdf: ${srcdir}/adasockets.texi ${adasockets_TEXINFOS}
+ 	-${TEXI2DVI} --pdf ${srcdir}/adasockets.texi
++
++adasockets.dvi: ${srcdir}/adasockets.texi ${adasockets_TEXINFOS}
++	-${TEXI2DVI} ${srcdir}/adasockets.texi
+ 
+ adasockets.ps: ${srcdir}/adasockets.texi ${adasockets_TEXINFOS}
+ 	-${TEXI2DVI} ${srcdir}/adasockets.texi && \
