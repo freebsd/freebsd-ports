@@ -6,47 +6,51 @@
 #
 
 PORTNAME=		linux-nx-client
-PORTVERSION=		1.4.0
-PORTREVISION=		2
+PORTVERSION=		2.1.0
 CATEGORIES=		net
-MASTER_SITES=		http://www.nomachine.com/download/nxclient/${PORTVERSION}/Linux-Static-Tar/
-DISTNAME=		nxclient-${PORTVERSION}-91.i386
+MASTER_SITES=		http://web04.nomachine.com/download/${PORTVERSION}/Linux/
+DISTNAME=		nxclient-${PORTVERSION}-9.i386
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The NoMachine NX client
 
-RUN_DEPENDS=		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
+RUN_DEPENDS=		${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile \
+			${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
+			${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png
 
 NO_WRKSUBDIR=		yes
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
-USE_X_PREFIX=		yes
+USE_LINUX_PREFIX=	yes
 NO_BUILD=		yes
+INSTALL_ICONS=		yes
 
 NXSRC=			${WRKSRC}/NX
 NXDST=			${PREFIX}/lib/linux-nx-client
+USE_LDCONFIG=		yes
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
-
-post-extract:
-	@${CP} ${NXSRC}/share/applnk/NX\ Client\ for\ Linux/* ${WRKSRC}
 
 do-install:
 	${MKDIR} ${NXDST}/bin
 	${INSTALL_PROGRAM} ${NXSRC}/bin/* ${NXDST}/bin
 	${MKDIR} ${NXDST}/lib
-	${INSTALL_DATA} ${NXSRC}/lib/libXcomp.so.${PORTVERSION} ${NXDST}/lib
-	${LN} -sf libXcomp.so.${PORTVERSION} ${NXDST}/lib/libXcomp.so
-	${LN} -sf libXcomp.so.${PORTVERSION} ${NXDST}/lib/libXcomp.so.1
+.for f in libXcomp libXcompsh
+	${INSTALL_DATA} ${NXSRC}/lib/${f}.so.${PORTVERSION} ${NXDST}/lib
+	${LN} -sf ${f}.so.${PORTVERSION} ${NXDST}/lib/${f}.so
+	${LN} -sf ${f}.so.${PORTVERSION} ${NXDST}/lib/${f}.so.2
+.endfor
+	${INSTALL_DATA} ${NXSRC}/lib/libcrypto.so.0.9.8 ${NXDST}/lib
+	${LN} -sf libcrypto.so.0.9.8 ${NXDST}/lib/libcrypto.so
 	${MKDIR} ${NXDST}/share
-	${INSTALL_DATA} ${NXSRC}/share/client.id_dsa.key ${NXDST}/share
+	${INSTALL_DATA} ${NXSRC}/share/keyboards ${NXDST}/share
+	${MKDIR} ${NXDST}/share/keys
+	${INSTALL_DATA} ${NXSRC}/share/keys/* ${NXDST}/share/keys
 	${MKDIR} ${NXDST}/share/images
 	${INSTALL_DATA} ${NXSRC}/share/images/* ${NXDST}/share/images
 
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/*.desktop ${PREFIX}/share/applications
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${NXSRC}/share/icons/* ${PREFIX}/share/gnome/pixmaps
+	${MKDIR} ${LOCALBASE}/share/gnome/pixmaps
+	${INSTALL_DATA} ${NXSRC}/share/icons/*.png ${LOCALBASE}/share/gnome/pixmaps
 	${MKDIR} ${LOCALBASE}/share/icons/crystalsvg/48x48 \
 		${LOCALBASE}/share/icons/crystalsvg/32x32
 	${INSTALL_DATA} ${NXSRC}/share/icons/nx-desktop.png \
@@ -56,7 +60,7 @@ do-install:
 		${LOCALBASE}/share/icons/crystalsvg/32x32
 .endfor
 
-.for f in nxclient nxprint nxproxy nxssh
+.for f in nxclient nxesd nxkill nxservice nxssh
 	${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/${f}
 	${ECHO_CMD} "export NXDIR=${NXDST}" >> ${WRKSRC}/${f}
 	${ECHO_CMD} "exec \$$NXDIR/bin/${f} \"\$$@\"" >> ${WRKSRC}/${f}
