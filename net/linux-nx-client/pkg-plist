@@ -1,15 +1,22 @@
 bin/nxclient
-bin/nxprint
-bin/nxproxy
+bin/nxesd
+bin/nxkill
+bin/nxservice
 bin/nxssh
 lib/linux-nx-client/bin/nxclient
+lib/linux-nx-client/bin/nxesd
+lib/linux-nx-client/bin/nxkill
 lib/linux-nx-client/bin/nxprint
-lib/linux-nx-client/bin/nxproxy
+lib/linux-nx-client/bin/nxservice
 lib/linux-nx-client/bin/nxssh
 lib/linux-nx-client/lib/libXcomp.so
-lib/linux-nx-client/lib/libXcomp.so.1
+lib/linux-nx-client/lib/libXcomp.so.2
 lib/linux-nx-client/lib/libXcomp.so.%%PORTVERSION%%
-lib/linux-nx-client/share/client.id_dsa.key
+lib/linux-nx-client/lib/libXcompsh.so
+lib/linux-nx-client/lib/libXcompsh.so.2
+lib/linux-nx-client/lib/libXcompsh.so.%%PORTVERSION%%
+lib/linux-nx-client/lib/libcrypto.so
+lib/linux-nx-client/lib/libcrypto.so.0.9.8
 lib/linux-nx-client/share/images/about-down.png
 lib/linux-nx-client/share/images/about-up.png
 lib/linux-nx-client/share/images/connect-01.png
@@ -24,20 +31,24 @@ lib/linux-nx-client/share/images/connect-09.png
 lib/linux-nx-client/share/images/connect-10.png
 lib/linux-nx-client/share/images/connect-fail-01.png
 lib/linux-nx-client/share/images/connect-fail-02.png
+lib/linux-nx-client/share/images/folder-shared-disabled.png
 lib/linux-nx-client/share/images/folder-shared.png
 lib/linux-nx-client/share/images/kill-dsb.png
 lib/linux-nx-client/share/images/kill.png
+lib/linux-nx-client/share/images/multimedia-dsb.png
 lib/linux-nx-client/share/images/multimedia.png
 lib/linux-nx-client/share/images/new-session-dsb.png
 lib/linux-nx-client/share/images/new-session.png
 lib/linux-nx-client/share/images/nomachine-no-background.png
-lib/linux-nx-client/share/images/nx-desktop.png
-lib/linux-nx-client/share/images/nx.png
-lib/linux-nx-client/share/images/nxclient-admin.png
-lib/linux-nx-client/share/images/nxclient-wizard.png
+lib/linux-nx-client/share/images/printer-default-icon-disabled.png
+lib/linux-nx-client/share/images/printer-default-icon.png
+lib/linux-nx-client/share/images/printer-icon-disabled.png
+lib/linux-nx-client/share/images/printer-icon.png
+lib/linux-nx-client/share/images/printer-shared-disabled.png
 lib/linux-nx-client/share/images/printer-shared.png
-lib/linux-nx-client/share/images/printer_default_icon.png
-lib/linux-nx-client/share/images/printer_icon.png
+lib/linux-nx-client/share/images/pulldown-close.png
+lib/linux-nx-client/share/images/pulldown-suspend.png
+lib/linux-nx-client/share/images/pulldown-terminate.png
 lib/linux-nx-client/share/images/refresh-dsb.png
 lib/linux-nx-client/share/images/refresh.png
 lib/linux-nx-client/share/images/remove-dsb.png
@@ -46,10 +57,7 @@ lib/linux-nx-client/share/images/session-stats-01-dsb.png
 lib/linux-nx-client/share/images/session-stats-01.png
 lib/linux-nx-client/share/images/session-stats-02-dsb.png
 lib/linux-nx-client/share/images/session-stats-02.png
-lib/linux-nx-client/share/images/session-stats-1-dsb.png
-lib/linux-nx-client/share/images/session-stats-1.png
-lib/linux-nx-client/share/images/session-stats-2-dsb.png
-lib/linux-nx-client/share/images/session-stats-2.png
+lib/linux-nx-client/share/images/sharing-dsb.png
 lib/linux-nx-client/share/images/sharing.png
 lib/linux-nx-client/share/images/terminate-dsb.png
 lib/linux-nx-client/share/images/terminate.png
@@ -57,23 +65,21 @@ lib/linux-nx-client/share/images/view-log-dsb.png
 lib/linux-nx-client/share/images/view-log.png
 lib/linux-nx-client/share/images/warning.png
 lib/linux-nx-client/share/images/wizard.png
-share/applications/nxclient-admin.desktop
-share/applications/nxclient-help.desktop
-share/applications/nxclient-wizard.desktop
-share/applications/nxclient.desktop
+lib/linux-nx-client/share/keyboards
+lib/linux-nx-client/share/keys/server.id_dsa.key
+@dirrm lib/linux-nx-client/bin
+@dirrm lib/linux-nx-client/lib
+@dirrm lib/linux-nx-client/share/keys
+@dirrm lib/linux-nx-client/share/images
+@dirrm lib/linux-nx-client/share
+@dirrm lib/linux-nx-client
+@cwd %%LOCALBASE%%
 share/gnome/pixmaps/nx-desktop.png
 share/gnome/pixmaps/nx.png
 share/gnome/pixmaps/nxclient-admin.png
 share/gnome/pixmaps/nxclient-wizard.png
-@dirrm lib/linux-nx-client/bin
-@dirrm lib/linux-nx-client/lib
-@dirrm lib/linux-nx-client/share/images
-@dirrm lib/linux-nx-client/share
-@dirrm lib/linux-nx-client
-@dirrmtry share/applications
 @dirrmtry share/gnome/pixmaps
 @dirrmtry share/gnome
-@cwd %%LOCALBASE%%
 share/icons/crystalsvg/48x48/nx-desktop.png
 share/icons/crystalsvg/32x32/nx.png
 share/icons/crystalsvg/32x32/nxclient-admin.png
