@@ -15,7 +15,6 @@
     SUBDIR += blast
     SUBDIR += boinc-simap
     SUBDIR += clustalw
-    SUBDIR += coalesce
     SUBDIR += blat
     SUBDIR += chemeq
     SUBDIR += crimap
