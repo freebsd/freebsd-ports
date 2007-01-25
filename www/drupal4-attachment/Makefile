@@ -13,7 +13,7 @@ CATEGORIES=	www security
 MAINTAINER=	nick@foobar.org
 COMMENT=	An alternative to Drupal's included upload module
 
-RUN_DEPENDS+=	${DRUPAL_MODDIR}/filemanager.module:${PORTSDIR}/www/drupal-filemanager
+RUN_DEPENDS+=	${LOCALBASE}/${DRUPAL_MODDIR}/filemanager.module:${PORTSDIR}/www/drupal-filemanager
 
 DRUPAL_MODULE=	yes
 MODULE_FILES=	attachment.install attachment.module
