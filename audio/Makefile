@@ -261,7 +261,6 @@
     SUBDIR += gstreamer-plugins-vorbis
     SUBDIR += gstreamer-plugins-vorbis80
     SUBDIR += gstreamer-plugins-wavpack
-    SUBDIR += gstreamer-plugins-wavpack80
     SUBDIR += gtick
     SUBDIR += gtkgep
     SUBDIR += gtkguitune

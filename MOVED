@@ -2731,3 +2731,4 @@ biology/coalesce||2007-01-25|Has expired: Not supported by the authors. Last ver
 devel/leoarg||2007-01-25|Has expired: distfile and homepage disappeared
 misc/dirtree||2007-01-25|distfile and homepage disappeared
 misc/argparse||2007-01-25|distfile and homepage disappeared
+audio/gstreamer-plugins-wavpack80||2007-01-25|does not build with current wavpack and got obsolete by 0.10.x version
