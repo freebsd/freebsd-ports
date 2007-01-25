@@ -26,7 +26,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xfce4/mcs-plugins/ui_plugin.so:${PORTSDIR}/sysutil
 		${LOCALBASE}/lib/gtk-2.0/2.10.0/engines/libxfce.so:${PORTSDIR}/x11-themes/gtk-xfce-engine \
 		thunar:${PORTSDIR}/x11-fm/thunar \
 		orage:${PORTSDIR}/deskutils/orage \
-		mousepad:${PORTSDIR}/editors/mousepad
+		mousepad:${PORTSDIR}/editors/mousepad \
+		Terminal:${PORTSDIR}/x11/Terminal
 
 NO_BUILD=	yes
 LATEST_LINK=	xfce4
