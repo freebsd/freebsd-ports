@@ -28,6 +28,7 @@
     SUBDIR += fntsample
     SUBDIR += fontconfig
     SUBDIR += fontconfig-reference
+    SUBDIR += fonts-te
     SUBDIR += freefont-ttf
     SUBDIR += freefonts
     SUBDIR += geminifonts
