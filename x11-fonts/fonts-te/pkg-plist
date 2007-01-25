@@ -1,0 +1,5 @@
+%%FONTSDIR%%/Pothana2000.ttf
+%%FONTSDIR%%/vemana.ttf
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec	%%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
