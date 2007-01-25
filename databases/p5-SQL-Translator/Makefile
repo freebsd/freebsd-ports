@@ -42,19 +42,25 @@ MAN1=		sqlt-diagram.1 \
 		sqlt-graph.1 \
 		sqlt.1
 MAN3=		SQL::Translator.3 \
+		SQL::Translator::Filter::DefaultExtra.3 \
+		SQL::Translator::Filter::Globals.3 \
+		SQL::Translator::Filter::Names.3 \
 		SQL::Translator::Manual.3 \
 		SQL::Translator::Parser.3 \
 		SQL::Translator::Parser::Access.3 \
 		SQL::Translator::Parser::DBI.3 \
 		SQL::Translator::Parser::DBI::DB2.3 \
 		SQL::Translator::Parser::DBI::MySQL.3 \
+		SQL::Translator::Parser::DBI::Oracle.3 \
 		SQL::Translator::Parser::DBI::PostgreSQL.3 \
+		SQL::Translator::Parser::DBI::SQLServer.3 \
 		SQL::Translator::Parser::DBI::SQLite.3 \
 		SQL::Translator::Parser::DBI::Sybase.3 \
 		SQL::Translator::Parser::Excel.3 \
 		SQL::Translator::Parser::MySQL.3 \
 		SQL::Translator::Parser::Oracle.3 \
 		SQL::Translator::Parser::PostgreSQL.3 \
+		SQL::Translator::Parser::SQLServer.3 \
 		SQL::Translator::Parser::SQLite.3 \
 		SQL::Translator::Parser::Storable.3 \
 		SQL::Translator::Parser::Sybase.3 \
@@ -63,11 +69,13 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Parser::YAML.3 \
 		SQL::Translator::Parser::xSV.3 \
 		SQL::Translator::Producer.3 \
-		SQL::Translator::Producer::ClassDBI.3 \
+		SQL::Translator::Producer::DB2.3 \
+		SQL::Translator::Producer::DiaUml.3 \
 		SQL::Translator::Producer::Diagram.3 \
 		SQL::Translator::Producer::Dumper.3 \
 		SQL::Translator::Producer::GraphViz.3 \
 		SQL::Translator::Producer::HTML.3 \
+		SQL::Translator::Producer::Latex.3 \
 		SQL::Translator::Producer::MySQL.3 \
 		SQL::Translator::Producer::Oracle.3 \
 		SQL::Translator::Producer::POD.3 \
