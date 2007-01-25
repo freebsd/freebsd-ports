@@ -117,7 +117,6 @@ lib/%%APP_NAME%%/components/inspector.xpt
 lib/%%APP_NAME%%/components/intl.xpt
 lib/%%APP_NAME%%/components/jar.xpt
 lib/%%APP_NAME%%/components/jsconsole-clhandler.js
-lib/%%APP_NAME%%/components/jsconsole.xpt
 lib/%%APP_NAME%%/components/jsdservice.xpt
 lib/%%APP_NAME%%/components/layout_base.xpt
 lib/%%APP_NAME%%/components/layout_printing.xpt
@@ -318,7 +317,9 @@ lib/%%APP_NAME%%/components/xuldoc.xpt
 lib/%%APP_NAME%%/components/xultmpl.xpt
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
+lib/%%APP_NAME%%/defaults/isp/en-US/gmail.rdf
 lib/%%APP_NAME%%/defaults/isp/en-US/movemail.rdf
+lib/%%APP_NAME%%/defaults/isp/gmail.rdf
 lib/%%APP_NAME%%/defaults/isp/movemail.rdf
 lib/%%APP_NAME%%/defaults/messenger/SpamAssassin.sfd
 lib/%%APP_NAME%%/defaults/messenger/SpamPal.sfd
