@@ -7,7 +7,7 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.5.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	\
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
-RUN_DEPENDS=	\
-		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
 
 ONLY_FOR_ARCHS=	i386 amd64
 
