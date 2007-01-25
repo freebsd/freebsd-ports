@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Term/ShellUI.pm
+%%SITE_PERL%%/Text/Shellwords/Cursor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ShellUI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ShellUI
+@dirrmtry %%SITE_PERL%%/Text/Shellwords
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/Term
