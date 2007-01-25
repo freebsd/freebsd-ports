@@ -9,12 +9,3 @@
  	else
  	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
  	    then
-@@ -22019,7 +22019,7 @@
- 
- 
- 
--if test "$WITH_MODULES" == "1"; then
-+if test "$WITH_MODULES" = "1"; then
-   WITH_MODULES_TRUE=
-   WITH_MODULES_FALSE='#'
- else
