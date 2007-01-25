@@ -1,5 +1,4 @@
 include/chm_lib.h
 include/lzx.h
-lib/libchm.a
 lib/libchm.so
 lib/libchm.so.0
