@@ -1,0 +1,13 @@
+--- ./plugins/Makefile.orig	Sat May 28 11:10:25 2005
++++ ./plugins/Makefile	Thu Jan 25 11:35:53 2007
+@@ -18,8 +18,8 @@
+ 	$(RM) $(OBJS) $(LIBS)
+ 
+ install:
+-	$(INSTALL) -m 755 -d $(libdir)/lasange/masterserver
+-	$(INSTALLDATA) $(LIBS) $(libdir)/lasange/masterserver
++	$(INSTALL) -m 755 -d $(libdir)/masterserver
++	$(INSTALLDATA) $(LIBS) $(libdir)/masterserver
+ 
+ uninstall:
+ 	$(RM) $(libdir)/lasange/masterserver/libq3.so
