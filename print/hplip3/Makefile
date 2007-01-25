@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	1.6.7
+PORTVERSION=	1.6.12
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -40,7 +40,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS=	GUI "build with Python QT" on
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.6.7
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.6.12
 
 .include <bsd.port.pre.mk>
 
@@ -48,12 +48,9 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.6.7
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env aclocal:19:env
 .endif
 
-.if exists(${LOCALBASE}/bin/pylupdate)
-WITH_GUI=	yes
-.endif
-
-.if defined(WITH_GUI)
+.if !defined(WITHOUT_GUI) || exists(${LOCALBASE}/bin/pylupdate)
 RUN_DEPENDS+=	pylupdate:${PORTSDIR}/x11-toolkits/py-qt
+CONFIGURE_ARGS+=	--enable-gui-build
 .endif
 
 post-extract:
@@ -61,6 +58,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/cups|${LOCALBASE}/share/cups|g ; \
+		s|/usr/lib/cups/backend|${LOCALBASE}/libexec/cups/backend|g ; \
 		s|/usr/lib/cups/filter|${LOCALBASE}/libexec/cups/filter|g' \
 			${WRKSRC}/configure ${WRKSRC}/prnt/hpijs/configure
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g ; \
@@ -70,13 +68,16 @@ post-patch:
 		s|/etc/hp|${LOCALBASE}/etc/hp|g' \
 			${WRKSRC}/Makefile.in \
 			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g ; \
+			s|/usr/lib|${LOCALBASE}/lib|g' \
+			${WRKSRC}/prnt/hpijs/foomatic-rip
 	@${REINPLACE_CMD} -e 's|/etc/hp/|${LOCALBASE}/etc/hp/|g ; \
 		s|/usr/lib/cups/filter|${LOCALBASE}/libexec/cups/filter|g' \
 			${WRKSRC}/base/g.py \
 			${WRKSRC}/fax/backend/hpfax.py \
 			${WRKSRC}/hpssd.py \
 			${WRKSRC}/io/hpiod/hpiod.h \
-			${WRKSRC}/prnt/hpijs/hplip_api.h \
+			${WRKSRC}/api/hplip_api.h \
 			${WRKSRC}/prnt/hpijs/configure.in
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${LOCALBASE}/bin/python|g' \
 			${WRKSRC}/*.py \

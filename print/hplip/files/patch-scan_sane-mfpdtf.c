@@ -1,20 +1,15 @@
---- scan/sane/mfpdtf.c.orig	Tue May 23 15:07:49 2006
-+++ scan/sane/mfpdtf.c	Tue May 23 15:10:30 2006
-@@ -156,10 +156,10 @@
- 
+--- scan/sane/mfpdtf.c.orig	Sat Nov 11 00:22:14 2006
++++ scan/sane/mfpdtf.c	Mon Dec 25 01:43:52 2006
+@@ -157,7 +157,7 @@
  int MfpdtfReadService( Mfpdtf_t mfpdtf )
  {
--    DBG( 0, "MfpdtfReadService() ______________________________ deviceid=%d, channelid=%d ______________________________\n", mfpdtf->deviceid, mfpdtf->channelid );
--    
      int result = 0;
 -    int datalen, blockLength, headerLength;
 +    int datalen, blockLength, headerLength, r;
-+
-+    DBG( 0, "MfpdtfReadService() ______________________________ deviceid=%d, channelid=%d ______________________________\n", mfpdtf->deviceid, mfpdtf->channelid );
  
      if( mfpdtf->read.fixedBlockBytesRemaining <= 0 )
      {
-@@ -171,7 +171,7 @@
+@@ -169,7 +169,7 @@
          
          //READ( &mfpdtf->read.fixedHeader, datalen );
          
@@ -23,7 +18,7 @@
  
          if( r!= datalen )
          {
-@@ -209,7 +209,7 @@
+@@ -207,7 +207,7 @@
              
              //READ( mfpdtf->read.pVariantHeader, datalen );
              
@@ -32,7 +27,7 @@
      
              if( r!= datalen )
              {
-@@ -261,7 +261,7 @@
+@@ -259,7 +259,7 @@
              
              //READ( &id, datalen );
              
@@ -41,28 +36,19 @@
      
              if( r!= datalen )
              {
-@@ -280,7 +280,7 @@
-                 DBG( 0, "********************************** RASTER RECORD **********************************.\n" );
-                 //READ( &mfpdtf->read.imageRasterDataHeader, datalen );
-                 
--                int r = MfpdtfReadGeneric( mfpdtf, (unsigned char *)&mfpdtf->read.imageRasterDataHeader, datalen );
-+                r = MfpdtfReadGeneric( mfpdtf, (unsigned char *)&mfpdtf->read.imageRasterDataHeader, datalen );
-     
-                 if( r!= datalen )
-                 {
-@@ -302,7 +302,7 @@
-                 DBG( 0, "********************************** SOP RECORD **********************************.\n" );
-                 //READ( &mfpdtf->read.imageStartPageRecord, datalen );
- 
+@@ -296,7 +296,7 @@
+                 datalen = sizeof( mfpdtf->read.imageStartPageRecord );
+ 		//                DBG( 0, "Reading start of page record.\n" );
+ 		//                DBG( 0, "********************************** SOP RECORD **********************************.\n" );
 -                int r = MfpdtfReadGeneric( mfpdtf, (unsigned char *)&mfpdtf->read.imageStartPageRecord, datalen );
 +                r = MfpdtfReadGeneric( mfpdtf, (unsigned char *)&mfpdtf->read.imageStartPageRecord, datalen );
      
                  if( r!= datalen )
                  {
-@@ -322,7 +322,7 @@
-                 DBG( 0, "********************************** EOP RECORD **********************************.\n" );
-                 //READ( &mfpdtf->read.imageEndPageRecord, datalen );
-                 
+@@ -314,7 +314,7 @@
+                 datalen = sizeof( mfpdtf->read.imageEndPageRecord );
+ 		//                DBG( 0, "Reading end of page record.\n" );
+ 		//                DBG( 0, "********************************** EOP RECORD **********************************.\n" );
 -                int r = MfpdtfReadGeneric( mfpdtf, (unsigned char *)&mfpdtf->read.imageEndPageRecord, datalen );
 +                r = MfpdtfReadGeneric( mfpdtf, (unsigned char *)&mfpdtf->read.imageEndPageRecord, datalen );
      

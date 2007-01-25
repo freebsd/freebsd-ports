@@ -1,0 +1,56 @@
+--- prnt/hpijs/configure.orig	Wed Oct 18 00:58:44 2006
++++ prnt/hpijs/configure	Wed Oct 18 01:04:20 2006
+@@ -8481,7 +8481,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS=" $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8539,7 +8539,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs=""
+ else
+ 
+     lt_cv_dlopen="dyld"
+@@ -8807,7 +8807,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS=" $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8865,7 +8865,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs=""
+ else
+   echo "$as_me:$LINENO: checking for dlopen in -lsvld" >&5
+ echo $ECHO_N "checking for dlopen in -lsvld... $ECHO_C" >&6
+@@ -20319,7 +20319,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS=" $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20380,7 +20380,7 @@
+   cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBDL 1
+ _ACEOF
+- LIBS="-ldl $LIBS"
++ LIBS="$LIBS"
+ else
+   { { echo "$as_me:$LINENO: error: \"cannot find libdl support\"" >&5
+ echo "$as_me: error: \"cannot find libdl support\"" >&2;}

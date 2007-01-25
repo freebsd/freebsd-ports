@@ -4,14 +4,17 @@ bin/hp-check
 bin/hp-clean
 bin/hp-colorcal
 bin/hp-fab
+bin/hp-firmware
 bin/hp-info
 bin/hp-levels
 bin/hp-makecopies
 bin/hp-makeuri
 bin/hp-print
+bin/hp-probe
 bin/hp-sendfax
 bin/hp-setup
 bin/hp-testpage
+bin/hp-timedate
 bin/hp-toolbox
 bin/hp-unload
 bin/hpijs
@@ -46,6 +49,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/install.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/io.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/known.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/other.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/pcard.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/printing.html
@@ -63,30 +67,71 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_Manager.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManagerPhoto_Card.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManagerSend_Fax.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_1.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_3.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_4.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_5.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_6.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_7.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_8.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_Printer_Setup_1.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_Printer_Setup_2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_Printer_Setup_3.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_Printer_Setup_4.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Install_Printer_Setup_5.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Screenshot-xsane.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/back.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/build-essential.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/button.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/circular.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_device_list.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_left.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_model_list.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_opening.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_printer_model.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/download.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_1.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_2.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_3.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_4.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/gs-esp.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/gs_hpijs.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hp-tux-printer.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hp_invent_logo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplip2.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplip_device_manager.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplip_overview.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hpliplogo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplogo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplogo2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/libcupsys2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/libjpeg62-dev.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/libsnmp5-dev.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/libusb-dev.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/linux_printing_logo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/linuxlogo.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_appssocket.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_device_list.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_device_uri.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_model_list.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/openssl.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/osi_certified.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/python-dev.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/python-logo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/python-qt3-gl.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/python-reportlab.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/rest2web.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/sane-utils.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/sflogo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/toolboxlinspire.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/topbar.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/tux.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/tuxlogo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/tuxlogo2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/view.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/xsane.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_hardware.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_opening_hw.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_other_configure.png
@@ -95,14 +140,39 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_printer_model.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/configure.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/debian.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/fedora_core.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/freebsd.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/gentoo.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/linspire.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/mac.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/mandriva.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/mepis.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/novell.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/other.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/redhatenterprise.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/slackware.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/ubuntu.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/windows.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/xandros.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/download.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/final.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/hp_setup.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/make.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/make_install.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step1/apt.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step1/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step1/rpm.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/debian.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/fc4.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/freebsd.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/mandriva06.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/other.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/slackware.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/suse10.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/ubuntu510.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/ubuntu606.html
@@ -143,16 +213,20 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/clean.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/colorcal.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/fab.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/firmware.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/hpssd.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/info.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/install.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/levels.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/makecopies.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/makeuri.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/print.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/probe.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/sendfax.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/setup.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/testpage.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/timedate.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/toolbox.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/unload.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/overview.html
@@ -184,8 +258,11 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/base/logger.py
 %%DATADIR%%/base/magic.py
 %%DATADIR%%/base/maint.py
+%%DATADIR%%/base/mdns.py
 %%DATADIR%%/base/mfpdtf.py
+%%DATADIR%%/base/models.py
 %%DATADIR%%/base/msg.py
+%%DATADIR%%/base/pexpect.py
 %%DATADIR%%/base/pml.py
 %%DATADIR%%/base/service.py
 %%DATADIR%%/base/slp.py
@@ -197,6 +274,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/colorcal
 %%DATADIR%%/copier/__init__.py
 %%DATADIR%%/copier/copier.py
+%%DATADIR%%/data/firmware/HP_LaserJet_1018.fw.gz
+%%DATADIR%%/data/firmware/HP_LaserJet_1020.fw.gz
 %%DATADIR%%/data/hplip.desktop
 %%DATADIR%%/data/images/120.png
 %%DATADIR%%/data/images/COLOR_INKJET_PRINTER_CP1700.png
@@ -309,8 +388,11 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/dj350.png
 %%DATADIR%%/data/images/dj450.png
 %%DATADIR%%/data/images/down.png
+%%DATADIR%%/data/images/download.png
 %%DATADIR%%/data/images/error.png
 %%DATADIR%%/data/images/error_small.png
+%%DATADIR%%/data/images/fax_icon.png
+%%DATADIR%%/data/images/fax_icon_disabled.png
 %%DATADIR%%/data/images/folder_open.png
 %%DATADIR%%/data/images/folder_remove.png
 %%DATADIR%%/data/images/gif.png
@@ -375,6 +457,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/jpg.png
 %%DATADIR%%/data/images/laserjet_2410.png
 %%DATADIR%%/data/images/load_paper.png
+%%DATADIR%%/data/images/makecopies_icon.png
+%%DATADIR%%/data/images/makecopies_icon_disabled.png
 %%DATADIR%%/data/images/movie.png
 %%DATADIR%%/data/images/mpg.png
 %%DATADIR%%/data/images/next.png
@@ -390,14 +474,20 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/panel_lcd.xpm
 %%DATADIR%%/data/images/paper.png
 %%DATADIR%%/data/images/paper_small.png
+%%DATADIR%%/data/images/pcard_icon.png
+%%DATADIR%%/data/images/pcard_icon_disabled.png
 %%DATADIR%%/data/images/pens.png
 %%DATADIR%%/data/images/photosmart_7150.png
 %%DATADIR%%/data/images/photosmart_7900_series.png
 %%DATADIR%%/data/images/png.png
 %%DATADIR%%/data/images/powered_by_python.png
 %%DATADIR%%/data/images/prev.png
+%%DATADIR%%/data/images/print_icon.png
+%%DATADIR%%/data/images/print_icon_disabled.png
 %%DATADIR%%/data/images/psc_1100_series.png
 %%DATADIR%%/data/images/psc_2300_series.png
+%%DATADIR%%/data/images/scan_icon.png
+%%DATADIR%%/data/images/scan_icon_disabled.png
 %%DATADIR%%/data/images/standard_coverpage.png
 %%DATADIR%%/data/images/status_refresh.png
 %%DATADIR%%/data/images/tif.png
@@ -423,6 +513,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/ldl/cbccal_done.ldl.gz
 %%DATADIR%%/data/ldl/cbcpcal.ldl.gz
 %%DATADIR%%/data/ldl/cbpcal.ldl.gz
+%%DATADIR%%/data/models/models.dat
 %%DATADIR%%/data/pcl/align1_8xx.pcl.gz
 %%DATADIR%%/data/pcl/align1_9xx.pcl.gz
 %%DATADIR%%/data/pcl/align2_8xx.pcl.gz
@@ -443,28 +534,24 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/pcl/crpcal.pcl.gz
 %%DATADIR%%/data/ps/clean_page.pdf.gz
 %%DATADIR%%/data/ps/testpage.ps.gz
-%%DATADIR%%/data/xml/HPLIP-0.9.6.xml
-%%DATADIR%%/data/xml/HPLIP-0.9.7.xml
-%%DATADIR%%/data/xml/HPLIP-02-2006.xml
-%%DATADIR%%/data/xml/HPLIP-03-2006.xml
-%%DATADIR%%/data/xml/HPLIP-05-2006.xml
-%%DATADIR%%/data/xml/HPLIP-06-2006.xml
-%%DATADIR%%/data/xml/HPLIP-07-2006.xml
-%%DATADIR%%/data/xml/HPLIP-08-2006.xml
-%%DATADIR%%/data/xml/models.xml
-%%DATADIR%%/data/xml/unsupported.xml
 %%DATADIR%%/fab
 %%DATADIR%%/fax/__init__.py
 %%DATADIR%%/fax/backend/hpfax
 %%DATADIR%%/fax/coverpages.py
 %%DATADIR%%/fax/fax.py
 %%DATADIR%%/fax/ppd/HP-Fax-hplip.ppd
+%%DATADIR%%/firmware
 %%DATADIR%%/hpaio.desc
-%%DATADIR%%/hplip
-%%DATADIR%%/hplip.conf
+%%DATADIR%%/hplip-install
 %%DATADIR%%/hplip.sh
 %%DATADIR%%/hpssd.py
 %%DATADIR%%/info
+%%DATADIR%%/install.py
+%%DATADIR%%/installer/__init__.py
+%%DATADIR%%/installer/core.py
+%%DATADIR%%/installer/dcheck.py
+%%DATADIR%%/installer/distros.py
+%%DATADIR%%/installer/text_install.py
 %%DATADIR%%/levels
 %%DATADIR%%/makecopies
 %%DATADIR%%/makeuri
@@ -483,10 +570,12 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/prnt/ldl.py
 %%DATADIR%%/prnt/pcl.py
 %%DATADIR%%/prnt/printable_areas.py
+%%DATADIR%%/probe
 %%DATADIR%%/scan/__init__.py
 %%DATADIR%%/sendfax
 %%DATADIR%%/setup
 %%DATADIR%%/testpage
+%%DATADIR%%/timedate
 %%DATADIR%%/toolbox
 %%DATADIR%%/ui/__init__.py
 %%DATADIR%%/ui/aboutdlg.py
@@ -545,6 +634,12 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/printerform_base.ui
 %%DATADIR%%/ui/settingsdialog.py
 %%DATADIR%%/ui/settingsdialog_base.py
+%%DATADIR%%/ui/setupform.py
+%%DATADIR%%/ui/setupform_base.py
+%%DATADIR%%/ui/setupmanualfind.py
+%%DATADIR%%/ui/setupmanualfind_base.py
+%%DATADIR%%/ui/setupsettings.py
+%%DATADIR%%/ui/setupsettings_base.py
 %%DATADIR%%/ui/unloadform.py
 %%DATADIR%%/ui/unloadform_base.py
 %%DATADIR%%/ui/waitform.py
@@ -568,7 +663,6 @@ share/ppd/HP/HP-Business_Inkjet_3000-hpijs.ppd.gz
 share/ppd/HP/HP-Color_Inkjet_Printer_CP1160-hpijs.ppd.gz
 share/ppd/HP/HP-Color_Inkjet_Printer_CP1700-hpijs.ppd.gz
 share/ppd/HP/HP-Color_LaserJet_2500-hpijs.ppd.gz
-share/ppd/HP/HP-Color_LaserJet_2550-hpijs.ppd.gz
 share/ppd/HP/HP-Color_LaserJet_3000-hpijs.ppd.gz
 share/ppd/HP/HP-Color_LaserJet_3500-hpijs.ppd.gz
 share/ppd/HP/HP-Color_LaserJet_3550-hpijs.ppd.gz
@@ -591,6 +685,7 @@ share/ppd/HP/HP-Color_LaserJet_8500-hpijs.ppd.gz
 share/ppd/HP/HP-Color_LaserJet_8550GN-hpijs.ppd.gz
 share/ppd/HP/HP-Color_LaserJet_9500-hpijs.ppd.gz
 share/ppd/HP/HP-Color_LaserJet_9500_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-Color_LaserJet_CP4005-hpijs.ppd.gz
 share/ppd/HP/HP-DesignJet_ColorPro_CAD-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_1100C-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_1120C-hpijs.ppd.gz
@@ -798,6 +893,14 @@ share/ppd/HP/HP-LaserJet_9050-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_9050_MFP-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_9055_MFP-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_9065_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_M3027_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_M3035_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_M4345_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_M5025_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_M5035_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_P2015-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_P3004-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_P3005-hpijs.ppd.gz
 share/ppd/HP/HP-Mopier_240-hpijs.ppd.gz
 share/ppd/HP/HP-Mopier_320-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet-hpijs.ppd.gz
@@ -925,12 +1028,18 @@ share/ppd/HP/HP-PhotoSmart_8100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_8200-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_8400-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_8700-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_A310-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_A430-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_A510-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_A610-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_A710-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C3100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C4100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_C5100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_C6100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_C7100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_D5060-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_D5100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_D6100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_D7100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_D7300-hpijs.ppd.gz
@@ -943,6 +1052,7 @@ share/ppd/HP/HP-PhotoSmart_P1218-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_P130-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_P1315-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_P230-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_Pro_B8300-hpijs.ppd.gz
 share/ppd/HP/HP-e-printer_e20-hpijs.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_2250.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_2280.ppd.gz
@@ -1037,14 +1147,16 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 @dirrm %%DATADIR%%/prnt
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pcard
+@dirrm %%DATADIR%%/installer
 @dirrm %%DATADIR%%/fax/ppd
 @dirrm %%DATADIR%%/fax/backend
 @dirrm %%DATADIR%%/fax
-@dirrm %%DATADIR%%/data/xml
 @dirrm %%DATADIR%%/data/ps
 @dirrm %%DATADIR%%/data/pcl
+@dirrm %%DATADIR%%/data/models
 @dirrm %%DATADIR%%/data/ldl
 @dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data/firmware
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/copier
 @dirrm %%DATADIR%%/base
@@ -1061,6 +1173,8 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/howtos

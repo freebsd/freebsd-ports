@@ -1,6 +1,15 @@
---- Makefile.in.orig	Tue Aug  1 16:41:16 2006
-+++ Makefile.in	Wed Sep 27 17:13:29 2006
-@@ -390,12 +390,12 @@
+--- Makefile.in.orig	Tue Dec 19 18:11:05 2006
++++ Makefile.in	Mon Dec 25 02:30:25 2006
+@@ -414,7 +414,7 @@
+ www243dir = $(docdir)/install/step4/suse
+ dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
+ www251dir = $(docdir)/install/manual
+-dist_www251_DATA = $(wwwsrc)/install/manual/*
++dist_www251_DATA = $(wwwsrc)/install/manual/*.html
+ www252dir = $(docdir)/install/manual/distros
+ dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
+ www3dir = $(docdir)/styles
+@@ -424,12 +424,12 @@
  www5dir = $(docdir)/supported_devices
  dist_www5_DATA = $(wwwsrc)/supported_devices/*
  www6dir = $(docdir)/tech_docs
@@ -13,13 +22,18 @@
  dist_www7_DATA = $(wwwsrc)/troubleshooting/*
 -dist_hplip_DATA = $(doc_DATA) hplip.conf
 +dist_hplip_DATA = $(doc_DATA)
- dist_hplip_SCRIPTS = hpssd.py __init__.py hplip.sh
+ dist_hplip_SCRIPTS = hpssd.py __init__.py hplip.sh install.py hplip-install
  cmddir = $(hplipdir)
  dist_cmd_SCRIPTS = align.py info.py print.py toolbox.py clean.py colorcal.py unload.py testpage.py makeuri.py check.py fab.py levels.py \
-@@ -2415,15 +2415,9 @@
+@@ -2562,20 +2562,9 @@
  #
- #       Do full install if not rpm_install.
- 	if [ "$(rpm_install)" = "no" ]; then \
+ #       If scanner build, install sane backend.
+ 	if [ "$(scan_build)" = "yes" ]; then \
+-	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
+-	   if [ ! -f $(DESTDIR)/etc/sane.d/dll.conf ]; then \
+-	      touch $(DESTDIR)/etc/sane.d/dll.conf; \
+-	   fi; \
+-	   $(mkinstalldirs) $(DESTDIR)$(sanedir); \
 -	   ln -sf ../$(SOLONG) $(DESTDIR)$(sanedir)/$(SONOVER); \
 -	   ln -sf ../$(SOLONG) $(DESTDIR)$(sanedir)/$(SOSHORT); \
 -	   ln -sf ../$(SOLONG) $(DESTDIR)$(sanedir)/$(SOLONG); \
@@ -34,41 +48,89 @@
 +	   ln -sf $(prefix)/lib/$(SOSHORT) $(DESTDIR)$(sanedir)/$(SOLONG); \
  	fi
  
- install-data-hook: test-destdir install-pcardext install-cupsext
-@@ -2466,7 +2460,7 @@
- 	    newname=$${i%.*}; \
- 	    mv $(DESTDIR)$(hplipdir)/$$i $(DESTDIR)$(hplipdir)/$$newname; \
- 	    if [ "$(rpm_install)" = "no" ]; then \
+ install-data-hook: install-pcardext install-cupsext
+@@ -2618,63 +2607,42 @@
+ 	   newname=$${i%.*}; \
+ 	   mv $(DESTDIR)$(hplipdir)/$$i $(DESTDIR)$(hplipdir)/$$newname; \
+ 	   if [ ! \( "$$newname" = "toolbox" -a "$(gui_build)" = "no" \) ]; then \
 -	      ln -sf ../share/$(PACKAGE)/$$newname $(DESTDIR)$(bindir)/hp-$$newname; \
 +	      ln -sf $(prefix)/share/$(PACKAGE)/$$newname $(DESTDIR)$(bindir)/hp-$$newname; \
- 	    fi \
+ 	   fi \
  	done
  #
-@@ -2501,22 +2495,7 @@
- 	sed 's:HPIODDIR=:HPIODDIR=$(sbindir):' < $(DESTDIR)$(hplipdir)/$(PACKAGE).sh > $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp; \
- 	sed 's:HPSSDDIR=:HPSSDDIR=$(hplipdir):' < $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp > $(DESTDIR)$(hplipdir)/$(PACKAGE); \
- 	rm -f $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp
--#
--#       Do full install if not rpm_install. Also only run chkconfig/install_initd if DESTDIR="". 
--	if [ "$(rpm_install)" = "no" ]; then \
--	   $(mkinstalldirs) $(DESTDIR)/etc/hp; \
--	   $(INSTALL_DATA) $(DESTDIR)$(hplipdir)/$(PACKAGE).conf $(DESTDIR)/etc/hp; \
--	   if [ -d $(DESTDIR)/etc/init.d ]; then \
--	      $(INSTALL_SCRIPT) $(DESTDIR)$(hplipdir)/$(PACKAGE) $(DESTDIR)/etc/init.d; \
--	      if [ "$(DESTDIR)" = "" ]; then \
--	         if [ "$(INSTALLINITD)" != "" ]; then \
--	            $(INSTALLINITD) $(PACKAGE); \
--	         else \
--	            $(CHKCONFIG) $(PACKAGE) reset; \
--	         fi \
--	      fi \
--	   fi \
+ #       Edit hpiod.conf in destdir.
+-	echo -e "\n[$(PACKAGE)]\nversion=$(VERSION)\njdprobe=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+-	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\ndoc=$(docdir)\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+-	echo -e "# Following values are determined at configure time and cannot be changed.\n[configure]" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
++	echo -e "\n[$(PACKAGE)]\nversion=$(VERSION)\njdprobe=0\n" >> $(PACKAGE).conf
++	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\ndoc=$(docdir)\n" >> $(PACKAGE).conf
++	echo -e "# Following values are determined at configure time and cannot be changed.\n[configure]" >> $(PACKAGE).conf
+ 	if [ "$(network_build)" = "yes" ]; then \
+-	   echo -e "network-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "network-build=1" >> $(PACKAGE).conf; \
+ 	else \
+-	   echo -e "network-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "network-build=0" >> $(PACKAGE).conf; \
+ 	fi
+ 	if [ "$(pp_build)" = "yes" ]; then \
+-	   echo -e "pp-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "pp-build=1" >> $(PACKAGE).conf; \
+ 	else \
+-	   echo -e "pp-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "pp-build=0" >> $(PACKAGE).conf; \
+ 	fi
+ 	if [ "$(gui_build)" = "yes" ]; then \
+-	   echo -e "gui-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "gui-build=1" >> $(PACKAGE).conf; \
+ 	else \
+-	   echo -e "gui-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "gui-build=0" >> $(PACKAGE).conf; \
+ 	fi
+ 	if [ "$(scan_build)" = "yes" ]; then \
+-	   echo -e "scanner-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "scanner-build=1" >> $(PACKAGE).conf; \
+ 	else \
+-	   echo -e "scanner-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "scanner-build=0" >> $(PACKAGE).conf; \
+ 	fi
+ 	if [ "$(fax_build)" = "yes" ]; then \
+-	   echo -e "fax-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "fax-build=1" >> $(PACKAGE).conf; \
+ 	else \
+-	   echo -e "fax-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
 -	fi
+-	echo -e "installinitd=$(INSTALLINITD)\nchkconfig=$(CHKCONFIG)" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+-	echo -e "internal-tag=$(PACKAGE_BUGREPORT)" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+-#
+-#       Install hpiod.conf. 
+-	$(mkinstalldirs) $(DESTDIR)/etc/hp
+-	$(INSTALL_DATA) $(DESTDIR)$(hplipdir)/$(PACKAGE).conf $(DESTDIR)/etc/hp
+-#
+-#       Create hpiod start/stop script from hpiod.sh in destdir.
+-	sed 's:HPIODDIR=:HPIODDIR=$(sbindir):' < $(DESTDIR)$(hplipdir)/$(PACKAGE).sh > $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp; \
+-	sed 's:HPSSDDIR=:HPSSDDIR=$(hplipdir):' < $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp > $(DESTDIR)$(hplipdir)/$(PACKAGE); \
+-	rm -f $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp
+-#
+-#       Install hpiod start/stop script.
+-	$(mkinstalldirs) $(DESTDIR)/etc/init.d
+-	$(INSTALL_SCRIPT) $(DESTDIR)$(hplipdir)/$(PACKAGE) $(DESTDIR)/etc/init.d
+-#
+-#       Run chkconfig/install_initd if DESTDIR="". 
+-	if [ "$(DESTDIR)" = "" ]; then \
+-	   if [ "$(INSTALLINITD)" != "" ]; then \
+-	      $(INSTALLINITD) $(PACKAGE); \
+-	   elif [ "$(CHKCONFIG)" != "" ]; then  \
+-	      $(CHKCONFIG) $(PACKAGE) reset; \
+-	   fi \
++	   echo -e "fax-build=0" >> $(PACKAGE).conf; \
+ 	fi
++	echo -e "installinitd=$(INSTALLINITD)\nchkconfig=$(CHKCONFIG)" >> $(PACKAGE).conf
++	echo -e "internal-tag=$(PACKAGE_BUGREPORT)" >> $(PACKAGE).conf
 +
  #
- #       For internal testing.
- 	if [ "$(SHADOW)" != "" ]; then \
-@@ -2548,8 +2527,8 @@
+ #       Install fax support. Let hpijs symlink hpppddir to cupsppddir.
+ 	if [ "$(fax_build)" = "yes" ]; then \
+@@ -2705,8 +2673,8 @@
  	done
  #
  #       Remove hplip.conf and hplip start/stop script.
@@ -79,22 +141,3 @@
  #
  #       Remove fax support.
  	rm -f $(DESTDIR)$(hpfaxdir)/hpfax 
-@@ -2560,13 +2539,13 @@
- # Add prerequisites for testing (or building?) "make install DESTDIR=/build".
- test-destdir:
- 	if [ "$(DESTDIR)" != "" ]; then \
--	   $(mkinstalldirs) $(DESTDIR)/etc/init.d; \
--	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
--	   if [ ! -f $(DESTDIR)/etc/sane.d/dll.conf ]; then \
--	      touch $(DESTDIR)/etc/sane.d/dll.conf; \
-+	   $(mkinstalldirs) $(DESTDIR)/usr/local/etc/rc.d; \
-+	   $(mkinstalldirs) $(DESTDIR)/usr/local/etc/sane.d; \
-+	   if [ ! -f $(DESTDIR)/usr/local/etc/sane.d/dll.conf ]; then \
-+	      touch $(DESTDIR)/usr/local/etc/sane.d/dll.conf; \
- 	   fi; \
- 	   $(mkinstalldirs) $(DESTDIR)$(sanedir); \
--	   $(mkinstalldirs) $(DESTDIR)/usr/share/applications; \
-+	   $(mkinstalldirs) $(DESTDIR)/usr/local/share/applications; \
- 	   $(mkinstalldirs) $(DESTDIR)/usr/bin; \
- 	fi
- 

@@ -1,6 +1,6 @@
---- prnt/cupsext/cupsext.c.orig	Tue May 23 15:45:57 2006
-+++ prnt/cupsext/cupsext.c	Tue May 23 15:49:34 2006
-@@ -253,11 +253,23 @@
+--- prnt/cupsext/cupsext.c.orig	Thu Sep 14 12:51:40 2006
++++ prnt/cupsext/cupsext.c	Wed Oct 18 00:39:28 2006
+@@ -259,11 +259,23 @@
  
  PyObject * getPrinters( PyObject * self, PyObject * args )
  {
@@ -24,16 +24,16 @@
      cups_lang_t * language;
      static const char * attrs[] = /* Requested attributes */
          {
-@@ -300,7 +312,7 @@
+@@ -306,7 +318,7 @@
          goto abort;
      }
  
--    int max_count = 0;
+-    Py_ssize_t max_count = 0;
 +    max_count = 0;
  
-     for ( attr = ippFindAttribute(response, "printer-name", IPP_TAG_NAME),
+     for (attr = ippFindAttribute(response, "printer-name", IPP_TAG_NAME),
              max_count = 0;
-@@ -311,16 +323,7 @@
+@@ -317,16 +329,7 @@
  
      printer_list = PyList_New( max_count );
  
@@ -51,7 +51,7 @@
  
      for (attr = response->attrs; attr != NULL; attr = attr->next)
      {
-@@ -392,7 +395,6 @@
+@@ -398,7 +401,6 @@
                  continue;
          }
  
@@ -59,7 +59,7 @@
          printer = (printer_Object *)_newPrinter( device_uri, name, printer_uri, location, make_model,
                                                   info, state/*, ppd_name*/ );
          PyList_SET_ITEM( printer_list, i, (PyObject *)printer );
-@@ -925,13 +927,13 @@
+@@ -935,13 +937,13 @@
  PyObject *  getPPD( PyObject * self, PyObject * args )
  {
      char * printer;
@@ -74,7 +74,7 @@
      ppd = cupsGetPPD( (const char *)printer );
  
      return Py_BuildValue( "s", ppd ); 
-@@ -941,16 +943,16 @@
+@@ -951,16 +953,16 @@
  
  PyObject *  getPPDOption( PyObject * self, PyObject * args )
  {
