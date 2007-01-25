@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_replace
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=portutil/22116
@@ -18,7 +18,7 @@ USE_BZIP2=	YES
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		PORTSDIR="${PORTSDIR}" PKG_DBDIR="${PKG_DBDIR}"
 
-MAN1=		pkg_replace.1 pkgdb_fix.1
+MAN1=		pkg_replace.1
 MANCOMPRESSED=	maybe
 
 .include <bsd.port.mk>
