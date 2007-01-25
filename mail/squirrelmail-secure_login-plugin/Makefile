@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 DISTNAME=	${SQUIRREL_PLUGIN_NAME}-1.2-${PORTVERSION}
