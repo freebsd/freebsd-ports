@@ -2817,6 +2817,7 @@ fontconfig-reference	ports/x11-fonts/fontconfig-reference
 fontedit	ports/sysutils/fontedit
 fonteditfs	ports/sysutils/fonteditfs
 fontforge	ports/print/fontforge
+fonts-te	ports/x11-fonts/fonts-te
 foo2zjs		ports/print/foo2zjs
 foobillard	ports/games/foobillard
 foomatic-db	ports/print/foomatic-db
