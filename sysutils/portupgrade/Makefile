@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -89,5 +90,6 @@ post-install: install-ldconfig-file
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
+	${MKDIR} ${PREFIX}/lib/compat/pkg
 
 .include <bsd.port.post.mk>
