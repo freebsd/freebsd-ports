@@ -18,8 +18,8 @@ LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 
 USE_GCC=	3.3+
 USE_GMAKE=	yes
-USE_TCL_BUILD=	yes
 USE_TK=		yes
+USE_TK_BUILD=	yes
 
 ALL_TARGET=	ng
 
