@@ -6912,6 +6912,7 @@ mars_nwe	ports/net/mars_nwe
 marsnomercy	ports/games/marsnomercy
 masqmail	ports/mail/masqmail
 mastergear	ports/emulators/mastergear
+masterserver	ports/games/masterserver
 match		ports/astro/match
 matchbox	ports/x11-wm/matchbox
 math_atlas	ports/math/atlas
