@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct 25 23:39:34 2000
-+++ Makefile	Mon Aug  6 16:13:02 2001
-@@ -1,105 +1,37 @@
+--- Makefile.orig	Thu Jan 25 13:59:21 2007
++++ Makefile	Thu Jan 25 14:02:58 2007
+@@ -1,11 +1,6 @@
  LIBS    = -lm
  BINDIR  = ./bin
 -#CFLAGS  = -Wall -Wshadow -g
@@ -13,12 +13,7 @@
  DCC     = gcc -g -Wall -DDMALLOC_FUNC_CHECK -ansi -pedantic
  PLUSCC    = g++ $(CFLAGS)
  LIBS   = -lm -L/usr/local/lib
- DLIBS   = -lm -L/usr/local/lib -ldmalloc
- CGCC    = checkergcc -g -Wall
- CGLIBS  = -lm
--# -O
- PROGS   =           recombine
- 
+@@ -18,29 +13,29 @@
  # The big banana
  recombine : recombine.o jdrop.o rec_modellike.o jworld.o getdata.o \
  	traitlike.o getmsatdata.o
@@ -52,66 +47,7 @@
  
  traitlike.o : traitlike.c
 -	$(CC) -c traitlike.c
--
--rectreedna : rectreedna.c
--	$(CC) -o rectreedna rectreedna.c $(LIBS)
--
--hapdna : hapdna.c
--	$(CC) -o hapdna hapdna.c $(LIBS)
--
--mhapdna : mhapdna.c
--	$(CC) -o mhapdna mhapdna.c $(LIBS)
--
--drecombine.o : recombine.c
--	$(CC) -o drecombine.o -c recombine.c
--
--djdrop.o : jdrop.c
--	$(CC)  -o djdrop.o -c jdrop.c
--
--drec_modellike.o : rec_modellike.c
--	$(CC) -o drec_modellike.o -c rec_modellike.c
--
--djworld.o : jworld.c
--	$(CC) -o djworld.o -c jworld.c
--
--dgetdata.o : getdata.c
--	$(CC) -o dgetdata.o -c getdata.c
--
--dgetmsatdata.o : getmsatdata.c
--	$(CC) -o dgetmsatdata.o -c getmsatdata.c
--
--drecombine:  drecombine.o djdrop.o drec_modellike.o djworld.o dgetdata.o memdebug.o memalpha.o memfree.o \
--        dgetmsatdata.o
--	$(CC) drecombine.o djdrop.o drec_modellike.o djworld.o dgetdata.o memdebug.o memalpha.o memfree.o \
--	dgetmsatdata.o $(LIBS) -o drecombine
--
--dclean: 
--	rm drecombine.o djdrop.o drec_modellike.o djworld.o dgetdata.o dgetmsatdata.o
--
--clean :
--	rm -f *.o
--
--gentrees.o : gentrees.c
--	$(CC) -c gentrees.c
--
--segtre_mig.o : segtre_mig.c
--	$(CC) -c segtre_mig.c
--
--rectree : gentrees.o segtre_mig.o
--	$(CC) gentrees.o segtre_mig.o $(LIBS) -o rectree
--
--jrectree : simrectree.c
--	$(CC) simrectree.c $(LIBS) -o jrectree
--
--snp : snp.c
--	$(CC) snp.c $(LIBS) -o snp
--
--panelmaker : panelmaker.c
--	$(CC) panelmaker.c $(LIBS) -o panelmaker
--
--variance : variance.c
--	$(CC) variance.c $(LIBS) -o variance
--
--distree : distree.c
--	$(CC) distree.c $(LIBS) -o distree
 +	$(CC) $(CFLAGS) -c traitlike.c
+ 
+ rectreedna : rectreedna.c
+ 	$(CC) -o rectreedna rectreedna.c $(LIBS)
