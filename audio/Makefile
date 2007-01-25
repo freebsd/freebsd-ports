@@ -394,7 +394,6 @@
     SUBDIR += mp3c
     SUBDIR += mp3check
     SUBDIR += mp3ck
-    SUBDIR += mp3encode
     SUBDIR += mp3gain
     SUBDIR += mp3guessenc
     SUBDIR += mp3info
