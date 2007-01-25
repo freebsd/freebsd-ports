@@ -4,6 +4,10 @@ bin/sqlt-diff
 bin/sqlt-dumper
 bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator.pm
+%%SITE_PERL%%/SQL/Translator/Diff.pm
+%%SITE_PERL%%/SQL/Translator/Filter/DefaultExtra.pm
+%%SITE_PERL%%/SQL/Translator/Filter/Globals.pm
+%%SITE_PERL%%/SQL/Translator/Filter/Names.pm
 %%SITE_PERL%%/SQL/Translator/Manual.pod
 %%SITE_PERL%%/SQL/Translator/Parser.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Access.pm
@@ -12,13 +16,16 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Parser/DBI.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/DB2.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/MySQL.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI/Oracle.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/PostgreSQL.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI/SQLServer.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/SQLite.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/Sybase.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Excel.pm
 %%SITE_PERL%%/SQL/Translator/Parser/MySQL.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Oracle.pm
 %%SITE_PERL%%/SQL/Translator/Parser/PostgreSQL.pm
+%%SITE_PERL%%/SQL/Translator/Parser/SQLServer.pm
 %%SITE_PERL%%/SQL/Translator/Parser/SQLite.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Storable.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Sybase.pm
@@ -27,11 +34,13 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Parser/YAML.pm
 %%SITE_PERL%%/SQL/Translator/Parser/xSV.pm
 %%SITE_PERL%%/SQL/Translator/Producer.pm
-%%SITE_PERL%%/SQL/Translator/Producer/ClassDBI.pm
+%%SITE_PERL%%/SQL/Translator/Producer/DB2.pm
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Diagram.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Dumper.pm
 %%SITE_PERL%%/SQL/Translator/Producer/GraphViz.pm
 %%SITE_PERL%%/SQL/Translator/Producer/HTML.pm
+%%SITE_PERL%%/SQL/Translator/Producer/Latex.pm
 %%SITE_PERL%%/SQL/Translator/Producer/MySQL.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Oracle.pm
 %%SITE_PERL%%/SQL/Translator/Producer/POD.pm
@@ -76,5 +85,6 @@ bin/sqlt-graph
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/DBI
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/DB2
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser
+@dirrm %%SITE_PERL%%/SQL/Translator/Filter
 @dirrm %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
