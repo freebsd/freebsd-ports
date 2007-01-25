@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/ CSME LOCAL/fenner
 
