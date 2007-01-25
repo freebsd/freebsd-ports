@@ -6,6 +6,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
@@ -15,7 +16,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	neil@darlow.co.uk
 COMMENT=	Prevent reuse of login details by browsers at public terminals
 
-RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
+		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
 SQUIRREL_PLUGIN_NAME=	password_forget
 
