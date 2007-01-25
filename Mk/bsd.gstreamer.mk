@@ -73,7 +73,7 @@ _USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia
 			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
 			musepack musicbrainz nas sdl shout shout2 sidplay \
 			smoothwave sndfile speex theora ogg pango polyp \
-			python swfdec vorbis wavpack x264 xvid
+			python swfdec vorbis x264 xvid
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes
 OTHER_GSTREAMER80_PLUGINS+=	${OTHER_GSTREAMER_PLUGINS}
