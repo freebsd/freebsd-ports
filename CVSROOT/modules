@@ -6703,6 +6703,7 @@ ljit		ports/deskutils/ljit
 ljpms		ports/www/ljpms
 ljsm		ports/www/ljsm
 lla		ports/net/lla
+llgal		ports/www/llgal
 llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
 llvm		ports/devel/llvm
