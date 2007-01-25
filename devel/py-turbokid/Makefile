@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	TurboKid
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	devel python
-MASTER_SITES=	http://files.turbogears.org/eggs/ \
+MASTER_SITES=	http://cheeseshop.python.org/packages/${PYTHON_VER}/T/TurboKid/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYTURBOKID_EGG}
@@ -34,7 +34,7 @@ SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
 EASY_INSTALL=	${LOCALBASE}/bin/easy_install
 EASY_INSTALL_ARGS=	-N -b ${WRKSRC} -d ${PYTHON_SITELIBDIR} -s ${PREFIX}/bin
 
-PYTURBOKID_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VERSION:S/^python//}.egg
+PYTURBOKID_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 
 do-extract:
 	${MKDIR} ${WRKSRC}
