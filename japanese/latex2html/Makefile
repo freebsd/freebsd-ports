@@ -7,11 +7,12 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	${VERSION}j${JP_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=     support/${PORTNAME}
-DISTNAME=       ${PORTNAME}-${VERSION:S,.,-,g}
+MASTER_SITE_SUBDIR=	support/${PORTNAME}
+PKGNAMEPREFIX=	ja-
+DISTNAME=	${PORTNAME}-${VERSION:S,.,-,g}
 
 PATCH_SITES=	http://takeno.iee.niit.ac.jp/~shige/TeX/latex2html/data/
 PATCHFILES=	l2h-2002-2-1+jp${JP_VERSION}.patch.gz
@@ -24,6 +25,8 @@ BUILD_DEPENDS=	platex:${PORTSDIR}/japanese/ptex-tetex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
 		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
 		anytopnm:${PORTSDIR}/graphics/netpbm
+
+CONFLICTS=	latex2html-[0-9]*
 
 VERSION=	2002.2.1
 JP_VERSION=	2.0
