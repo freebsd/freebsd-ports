@@ -7385,7 +7385,6 @@ mp3butler	ports/audio/mp3butler
 mp3c		ports/audio/mp3c
 mp3check	ports/audio/mp3check
 mp3ck		ports/audio/mp3ck
-mp3encode	ports/audio/mp3encode
 mp3gain		ports/audio/mp3gain
 mp3guessenc	ports/audio/mp3guessenc
 mp3info		ports/audio/mp3info
