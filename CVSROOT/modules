@@ -10428,6 +10428,7 @@ p5-Term-ReadLine-Zoid	ports/devel/p5-Term-ReadLine-Zoid
 p5-Term-ReadPassword	ports/devel/p5-Term-ReadPassword
 p5-Term-Screen	ports/devel/p5-Term-Screen
 p5-Term-Shell	ports/devel/p5-Term-Shell
+p5-Term-ShellUI	ports/shells/p5-Term-ShellUI
 p5-Term-Size	ports/devel/p5-Term-Size
 p5-Term-UI	ports/devel/p5-Term-UI
 p5-Term-VT102	ports/devel/p5-Term-VT102
