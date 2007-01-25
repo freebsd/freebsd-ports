@@ -23,6 +23,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 USE_PYDISTUTILS=	yes
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	py-sqlalchemy>=0.3.0:${PORTSDIR}/databases/py-sqlalchemy
+RUN_DEPENDS+=	${LOCALBASE}/share/examples/sqlalchemy/vertical/vertical.py:${PORTSDIR}/databases/py-sqlalchemy
 
 .include <bsd.port.mk>
