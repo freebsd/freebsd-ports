@@ -6,6 +6,7 @@
 
 PORTNAME=		squirrelmail
 PORTVERSION=		3.9.1
+PORTREVISION=		1
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
 PKGNAMESUFFIX=		-${SQUIRREL_PLUGIN_NAME}-plugin
@@ -15,7 +16,8 @@ DIST_SUBDIR=		squirrelmail
 MAINTAINER=		neil@darlow.co.uk
 COMMENT=		Adds multi-site-hosting capabilities to SquirrelMail
 
-RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
+			squirrelmail-compatibility-plugin>=2.0.5:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
 SQUIRREL_PLUGIN_NAME=	vlogin
 
