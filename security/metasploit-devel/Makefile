@@ -22,11 +22,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
 SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
 		msfpayload msfpescan msfweb
 
-.if defined(WITH_MSFWX)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/wxruby.so:${PORTSDIR}/x11-toolkits/ruby-wx
-SCRIPTS+=	msfwx
-.endif
-
 WRKSRC=	${WRKDIR}/framework-${DISTVERSION}
 RESTRICTED=	May not be re-sold for more than the cost of duplication, nor redistributed after patching
 
@@ -35,6 +30,14 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MSFWX)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/wxruby.so:${PORTSDIR}/x11-toolkits/ruby-wx
+SCRIPTS+=	msfwx
+PLIST_SUB+=	MSF=""
+.else
+PLIST_SUB+=	MSF="@comment "
+.endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
