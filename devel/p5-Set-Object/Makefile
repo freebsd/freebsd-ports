@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Set-Object
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
@@ -17,7 +17,7 @@ COMMENT=	Perl module to manage sets of objects
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Set::Object.3
+MAN3=		Set::Object.3 Set::Object::Weak.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes.pod README
