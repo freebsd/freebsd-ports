@@ -17,13 +17,3 @@
      /*char buf[1024];
      sprintf( buf, "print 'FatInit()=%d\n'", i );
      PyRun_SimpleString( buf );*/
-@@ -111,8 +112,8 @@
- PyObject * pcardext_ls( PyObject * self, PyObject * args ) 
- {
-     PyObject * file_list;
--    file_list = PyList_New(0);
-     FILE_ATTRIBUTES fa;
-+    file_list = PyList_New(0);
- 
-     FatDirBegin( &fa );
-     
