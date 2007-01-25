@@ -22,7 +22,7 @@ TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
 
 WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
 CONFIGURE_ENV+=		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
@@ -34,7 +34,7 @@ CONFIGURE_ENV+=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
 		--with-f90=${FC}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=  autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_LDCONFIG=	yes
 
 DOC2FIX=	. gif html jpg png tests
