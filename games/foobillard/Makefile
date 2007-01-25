@@ -7,11 +7,11 @@
 
 PORTNAME=	foobillard
 PORTVERSION=	2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
-MAINTAINER=	thomas.vogt@bsdunix.ch
+MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	A free OpenGL-billard game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
