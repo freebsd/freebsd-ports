@@ -1,5 +1,4 @@
 sbin/pkg_replace
-sbin/pkgdb_fix
 etc/pkg_replace.conf.sample
 share/zsh/site-functions/_pkg_replace
 @unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true
