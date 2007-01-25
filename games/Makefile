@@ -438,6 +438,7 @@
     SUBDIR += marathon-evil
     SUBDIR += marathon2-data
     SUBDIR += marsnomercy
+    SUBDIR += masterserver
     SUBDIR += meqcc
     SUBDIR += merlin
     SUBDIR += mindfocus
