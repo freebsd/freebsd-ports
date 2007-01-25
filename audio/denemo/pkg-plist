@@ -1,6 +1,8 @@
 bin/denemo
 include/denemo/denemo.h
+include/denemo/denemo_api.h
 include/denemo/denemo_objects.h
+include/denemo/denemo_types.h
 include/denemo/denemo_version.h
 share/applications/denemo.desktop
 %%DATADIR%%/denemo.conf
@@ -11,52 +13,6 @@ share/applications/denemo.desktop
 %%DATADIR%%/french.keymaprc
 %%DATADIR%%/instruments.xml
 %%DATADIR%%/italian.keymaprc
-%%DATADIR%%/manual/4fo2denemo.png
-%%DATADIR%%/manual/4for2.abc
-%%DATADIR%%/manual/4for2.ly
-%%DATADIR%%/manual/4for2abc.png
-%%DATADIR%%/manual/4for2abcps.png
-%%DATADIR%%/manual/4for2ly.png
-%%DATADIR%%/manual/4for2new-page1.png
-%%DATADIR%%/manual/4for2new-page2.png
-%%DATADIR%%/manual/4for2new.dvi
-%%DATADIR%%/manual/4for2new.ly
-%%DATADIR%%/manual/4for2new.midi
-%%DATADIR%%/manual/4for2new.pdf
-%%DATADIR%%/manual/4for2new.ps
-%%DATADIR%%/manual/4for2touchedly.png
-%%DATADIR%%/manual/MozBook.css
-%%DATADIR%%/manual/addvc2currentstaff.png
-%%DATADIR%%/manual/bandtemplate.png
-%%DATADIR%%/manual/choraltemplate1.png
-%%DATADIR%%/manual/churchtemplate2.png
-%%DATADIR%%/manual/clefmenu.png
-%%DATADIR%%/manual/denemo-manual.html
-%%DATADIR%%/manual/denemomain.png
-%%DATADIR%%/manual/displaymenu.png
-%%DATADIR%%/manual/docbook-complete.css
-%%DATADIR%%/manual/educationtemplate3.png
-%%DATADIR%%/manual/featest.html
-%%DATADIR%%/manual/fig1.png
-%%DATADIR%%/manual/fig3.png
-%%DATADIR%%/manual/filemenu.png
-%%DATADIR%%/manual/function.xml
-%%DATADIR%%/manual/functionaaron.xml
-%%DATADIR%%/manual/functionout.html
-%%DATADIR%%/manual/generaltemplate4.png
-%%DATADIR%%/manual/keymenu.png
-%%DATADIR%%/manual/lpmode.png
-%%DATADIR%%/manual/manual.xml
-%%DATADIR%%/manual/mycustomfils.xsl
-%%DATADIR%%/manual/navigationmenu.png
-%%DATADIR%%/manual/orchestraltemplate5.png
-%%DATADIR%%/manual/othermenu1.png
-%%DATADIR%%/manual/playbackmenu.png
-%%DATADIR%%/manual/polyphony.png
-%%DATADIR%%/manual/setpreferences.png
-%%DATADIR%%/manual/staffmenu.png
-%%DATADIR%%/manual/tablituretemplate6.png
-%%DATADIR%%/manual/timemenu.png
 %%DATADIR%%/pixmaps/accent.svg
 %%DATADIR%%/pixmaps/downbow.svg
 %%DATADIR%%/pixmaps/fermata.svg
@@ -191,11 +147,6 @@ share/applications/denemo.desktop
 %%DATADIR%%/pixmaps/turn.svg
 %%DATADIR%%/pixmaps/upbow.svg
 %%DATADIR%%/speedy.keymaprc
-%%DATADIR%%/templates/Brassbandtemplate.denemo
-%%DATADIR%%/templates/brasschoir.template.denemo
-%%DATADIR%%/templates/brasstrio.template.denemo
-%%DATADIR%%/templates/jazzcombo1.denemo
-%%DATADIR%%/templates/stringqtet.denemo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN
@@ -207,10 +158,9 @@ share/applications/denemo.desktop
 %%NLS%%share/locale/fr/LC_MESSAGES/denemo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/denemo.mo
 share/pixmaps/denemo.png
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/manual
-@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/denemo
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
+@dirrm include/denemo

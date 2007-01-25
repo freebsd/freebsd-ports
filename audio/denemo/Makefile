@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphical score editor
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
 USE_GCC=	3.4+
 USE_BISON=	yes
@@ -48,7 +48,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in AUTHORS ChangeLog DESIGN GOALS NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
