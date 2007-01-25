@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomephotoprinter
-PORTVERSION=	0.6.7
+PORTVERSION=	0.7.0
 CATEGORIES=	print gnome
 MASTER_SITES=	http://www.fogman.de/gpp/
 DISTNAME=	gpp-${PORTVERSION}
@@ -19,10 +19,8 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui libglade2 libgnomeprintui \
 		gnomevfs2
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-
-post-install:
-	${INSTALL_DATA} ${FILESDIR}/gnomephotoprinter.desktop \
-		${PREFIX}/share/gnome/applications
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
