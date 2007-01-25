@@ -274,6 +274,8 @@
     SUBDIR += gtk-send-pr
     SUBDIR += gtoaster
     SUBDIR += gupsc
+    SUBDIR += hachoir-metadata
+    SUBDIR += hachoir-urwid
     SUBDIR += hal
     SUBDIR += hal-device-manager
     SUBDIR += hammerhead
