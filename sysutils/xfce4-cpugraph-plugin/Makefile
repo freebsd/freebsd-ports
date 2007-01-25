@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	0.3
+PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
 PATCHFILES=	gcc295-xfce4-cpugraph-plugin.patch
