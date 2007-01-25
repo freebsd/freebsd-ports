@@ -1,4 +1,0 @@
-bin/coalesce
-%%PORTDOCS%%%%DOCSDIR%%/coalesce.doc
-%%PORTDOCS%%%%DOCSDIR%%/errors.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
