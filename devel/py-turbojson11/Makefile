@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TurboJson
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://files.turbogears.org/eggs/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -19,8 +19,9 @@ COMMENT=	Python template plugin for TurboGears that supports json
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-FETCH_CMD=	${DESTDIR}/usr/bin/fetch -pRr
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYRULEDISPATCH_EGG}:${PORTSDIR}/devel/py-ruledispatch \
+		${PYTHON_SITELIBDIR}/${PYSQLOBJECT_EGG}/sqlobject/__init__.py:${PORTSDIR}/databases/py-sqlobject \
+		${PYTHON_SITELIBDIR}/simplejson-1.4.egg:${PORTSDIR}/devel/py-simplejson
 
 NO_BUILD=	yes
 
@@ -35,7 +36,7 @@ SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
 EASY_INSTALL=	${LOCALBASE}/bin/easy_install
 EASY_INSTALL_ARGS=	-N -b ${WRKSRC} -d ${PYTHON_SITELIBDIR} -s ${PREFIX}/bin
 
-PYTURBOJSON_EGG=	${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg
+PYTURBOJSON_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 
 do-extract:
 	${MKDIR} ${WRKSRC}
