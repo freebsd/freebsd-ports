@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	foo2zjs
-PORTVERSION=	20070108
+PORTVERSION=	20070120
 CATEGORIES=	print
-MASTER_SITES=	http://foo2zjs.rkkda.com/
+MASTER_SITES=	http://foo2zjs.rkkda.com/ \
+		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
