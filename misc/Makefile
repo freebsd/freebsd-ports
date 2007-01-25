@@ -11,7 +11,6 @@
     SUBDIR += amanda-client
     SUBDIR += amanda-server
     SUBDIR += apparix
-    SUBDIR += argparse
     SUBDIR += asbutton
     SUBDIR += asr-manpages
     SUBDIR += astrolog
@@ -61,7 +60,6 @@
     SUBDIR += detachtty
     SUBDIR += diary-hercules
     SUBDIR += diction
-    SUBDIR += dirtree
     SUBDIR += display
     SUBDIR += dnetc
     SUBDIR += documancer

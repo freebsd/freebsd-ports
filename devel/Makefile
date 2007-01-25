@@ -489,7 +489,6 @@
     SUBDIR += lbpp
     SUBDIR += leaktracer
     SUBDIR += lemon
-    SUBDIR += leoarg
     SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libU77

@@ -461,7 +461,6 @@ arena		ports/lang/arena
 ares		ports/dns/ares
 argouml		ports/devel/argouml
 argp-standalone	ports/devel/argp-standalone
-argparse	ports/misc/argparse
 argtable	ports/devel/argtable
 argus		ports/net-mgmt/argus
 argus-clients	ports/net-mgmt/argus-clients
@@ -1871,7 +1870,6 @@ dircproxy	ports/irc/dircproxy
 dirdiff		ports/sysutils/dirdiff
 directfb	ports/devel/directfb
 dirmngr		ports/security/dirmngr
-dirtree		ports/misc/dirtree
 dirvish		ports/sysutils/dirvish
 discid		ports/audio/discid
 disco		ports/net-mgmt/disco
@@ -5978,7 +5976,6 @@ lemmatizer	ports/textproc/lemmatizer
 lemon		ports/devel/lemon
 lens		ports/mail/lens
 leo		ports/editors/leo
-leoarg		ports/devel/leoarg
 leocad		ports/cad/leocad
 lep		ports/security/lep
 lesspipe	ports/misc/lesspipe
