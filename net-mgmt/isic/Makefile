@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	isic
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/ \
-		http://www.packetstormsecurity.org/UNIX/misc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	IP Stack Integrity Checker
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
+
+MAN1=	isic.1
 
 .include <bsd.port.mk>

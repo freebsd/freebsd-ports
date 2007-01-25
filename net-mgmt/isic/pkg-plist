@@ -3,3 +3,8 @@ bin/tcpsic
 bin/udpsic
 bin/icmpsic
 bin/esic
+bin/multisic
+bin/isic6
+bin/tcpsic6
+bin/udpsic6
+bin/icmpsic6
