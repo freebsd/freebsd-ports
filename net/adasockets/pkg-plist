@@ -2,6 +2,7 @@ bin/adasockets-config
 lib/libadasockets.so
 lib/libadasockets.so.0
 lib/libadasockets.a
+lib/libadasockets.la
 lib/adasockets/sockets-constants.ali
 lib/adasockets/sockets-link.ali
 lib/adasockets/sockets-multicast.ali
@@ -25,7 +26,7 @@ lib/adasockets/sockets-utils.ads
 lib/adasockets/sockets-utils.adb
 lib/adasockets/sockets.adb
 lib/adasockets/sockets.ads
-share/doc/adasockets/adasockets.ps
-share/doc/adasockets/adasockets.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adasockets.ps
+%%PORTDOCS%%%%DOCSDIR%%/adasockets.pdf
 @dirrm lib/adasockets
-@dirrm share/doc/adasockets
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -5,21 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	adasockets
-PORTVERSION=	1.8.4
-CATEGORIES=	net
-MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
+PORTNAME=		adasockets
+PORTVERSION=		1.8.4.7
+CATEGORIES=		net
+MASTER_SITES=		http://www.rfc1149.net/download/adasockets/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Sockets library for Ada
+MAINTAINER=		john_m_cooper@yahoo.com
+COMMENT=		Sockets library for Ada
 
-BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat \
-		texi2dvi:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=		gnatmake:${PORTSDIR}/lang/gnat \
+			texi2dvi:${PORTSDIR}/print/teTeX
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_AUTOTOOLS=		autoconf:259
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-examples
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--disable-doc
+.endif
+USE_LDCONFIG=		yes
 
-MAN1=		adasockets-config.1
-INFO=		adasockets
+MAN1=			adasockets-config.1
+INFO=			adasockets
 
 .include <bsd.port.mk>
