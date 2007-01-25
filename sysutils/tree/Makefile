@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tree
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
 EXTRACT_SUFX=	.tgz

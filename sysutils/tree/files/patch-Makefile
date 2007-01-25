@@ -1,17 +1,18 @@
---- Makefile.orig	Sat Aug 14 23:07:56 2004
-+++ Makefile	Thu Oct 21 11:01:14 2004
-@@ -6,10 +6,6 @@
+--- Makefile.orig	Thu Jan 25 18:55:07 2007
++++ Makefile	Thu Jan 25 18:54:58 2007
+@@ -6,11 +6,6 @@
  # warranties, including, without limitation, the implied warranties
  # of merchant-ability and fitness for a particular purpose.
  
 -CC=gcc
--#CFLAGS=-ggdb -Wall -DLINUX_BIGFILE
--CFLAGS=-O2 -Wall -fomit-frame-pointer -DLINUX_BIGFILE
+-#CFLAGS=-ggdb -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+-CFLAGS=-O2 -Wall -fomit-frame-pointer -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
 -LDFLAGS=-s
- 
+-
  # Uncomment for FreeBSD:
  #CC=gcc
-@@ -51,13 +47,12 @@
+ #CFLAGS=-O2 -Wall -fomit-frame-pointer
+@@ -58,13 +53,11 @@
  	if [ -f tree.o ]; then rm *.o; fi
  	rm -f *~
  
@@ -21,13 +22,12 @@
 -	if [ -e $(TREE_DEST) ]; then \
 -		install -s $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
 -	fi
--	install $(MAN) $(MANDIR)/$(MAN)
+-	install man/$(MAN) $(MANDIR)/$(MAN)
 +install: $(TREE_DEST) $(MAN)
 +	$(MKDIR) $(BINDIR)
 +	$(MKDIR) $(MANDIR)
 +	${BSD_INSTALL_PROGRAM} $(TREE_DEST) $(BINDIR)
 +	${BSD_INSTALL_MAN} $(MAN) $(MANDIR)
-+
  
  distclean:
  	if [ -f tree.o ]; then rm *.o; fi
