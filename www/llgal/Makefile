@@ -1,0 +1,29 @@
+# New ports collection Makefile for:	llgal
+# Date created:				2007-01-25
+# Whom:					arved
+#
+# $FreeBSD$
+
+PORTNAME=	llgal
+PORTVERSION=	0.13.9
+CATEGORIES=	www
+MASTER_SITES=	http://download.gna.org/llgal/
+
+MAINTAINER=	arved@FreeBSD.org
+COMMENT=	Command-line online gallery generator
+
+BUILD_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
+		${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool
+RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
+		${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool
+
+USE_BZIP2=	yes
+USE_PERL5=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+
+.include <bsd.port.mk>
