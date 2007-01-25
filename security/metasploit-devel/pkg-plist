@@ -7,6 +7,7 @@ bin/msfopcode
 bin/msfpayload
 bin/msfpescan
 bin/msfweb
+%%MSF%%bin/msfwx
 %%DATADIR%%/BUGS.txt
 %%DATADIR%%/README
 %%DATADIR%%/data/meterpreter/ext_server_priv.dll
