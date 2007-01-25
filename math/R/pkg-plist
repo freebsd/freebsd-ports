@@ -3541,6 +3541,7 @@ lib/R/library/grDevices/po/en_GB/LC_MESSAGES/R-grDevices.mo
 lib/R/library/grDevices/po/en_GB/LC_MESSAGES/grDevices.mo
 lib/R/library/grDevices/po/fr/LC_MESSAGES/R-grDevices.mo
 lib/R/library/grDevices/po/fr/LC_MESSAGES/grDevices.mo
+lib/R/library/grDevices/po/grDevices-zh_CN/LC_MESSAGES/grDevices.mo
 lib/R/library/grDevices/po/it/LC_MESSAGES/R-grDevices.mo
 lib/R/library/grDevices/po/it/LC_MESSAGES/grDevices.mo
 lib/R/library/grDevices/po/ja/LC_MESSAGES/R-grDevices.mo
@@ -4181,6 +4182,7 @@ lib/R/library/lattice/data/Rdata.rds
 lib/R/library/lattice/data/Rdata.rdx
 lib/R/library/lattice/demo/intervals.R
 lib/R/library/lattice/demo/lattice.R
+lib/R/library/lattice/demo/panel.R
 lib/R/library/lattice/help/AnIndex
 lib/R/library/lattice/help/Lattice
 lib/R/library/lattice/help/Rows
@@ -8394,6 +8396,7 @@ lib/R/library/utils/man/utils.Rd.gz
 lib/R/library/utils/po/en@quot/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/fr/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/ko/LC_MESSAGES/R-utils.mo
+lib/R/library/utils/po/ru/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/zh_CN/LC_MESSAGES/R-utils.mo
 %%X11%%lib/R/modules/R_X11.so
 lib/R/modules/internet.so
@@ -8460,9 +8463,11 @@ lib/libR.so.0
 %%DOCSDIR%%/COPYING.LIB
 %%DOCSDIR%%/COPYRIGHTS
 %%DOCSDIR%%/CRAN_mirrors.csv
+%%DOCSDIR%%/FAQ
 %%DOCSDIR%%/KEYWORDS
 %%DOCSDIR%%/KEYWORDS.db
 %%DOCSDIR%%/NEWS
+%%DOCSDIR%%/RESOURCES
 %%DOCSDIR%%/THANKS
 %%DOCSDIR%%/html/R.css
 %%DOCSDIR%%/html/about.html
@@ -8563,6 +8568,8 @@ lib/libR.so.0
 @dirrm lib/R/modules
 @dirrm lib/R/library/utils/po/zh_CN/LC_MESSAGES
 @dirrm lib/R/library/utils/po/zh_CN
+@dirrm lib/R/library/utils/po/ru/LC_MESSAGES
+@dirrm lib/R/library/utils/po/ru
 @dirrm lib/R/library/utils/po/ko/LC_MESSAGES
 @dirrm lib/R/library/utils/po/ko
 @dirrm lib/R/library/utils/po/fr/LC_MESSAGES
@@ -8867,6 +8874,8 @@ lib/libR.so.0
 @dirrm lib/R/library/grDevices/po/ja
 @dirrm lib/R/library/grDevices/po/it/LC_MESSAGES
 @dirrm lib/R/library/grDevices/po/it
+@dirrm lib/R/library/grDevices/po/grDevices-zh_CN/LC_MESSAGES
+@dirrm lib/R/library/grDevices/po/grDevices-zh_CN
 @dirrm lib/R/library/grDevices/po/fr/LC_MESSAGES
 @dirrm lib/R/library/grDevices/po/fr
 @dirrm lib/R/library/grDevices/po/en_GB/LC_MESSAGES
