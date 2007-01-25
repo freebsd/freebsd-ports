@@ -251,6 +251,7 @@
     SUBDIR += ljdeps
     SUBDIR += ljpms
     SUBDIR += ljsm
+    SUBDIR += llgal
     SUBDIR += logtools
     SUBDIR += lws
     SUBDIR += lynx
