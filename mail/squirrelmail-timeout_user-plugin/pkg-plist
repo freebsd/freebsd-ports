@@ -1,4 +1,4 @@
-@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin pupdate; fi
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin timeout_user; fi
 %%SQUIRRELDIR%%/plugins/timeout_user/version
 %%SQUIRRELDIR%%/plugins/timeout_user/README
 %%SQUIRRELDIR%%/plugins/timeout_user/index.php
@@ -7,4 +7,4 @@
 %%SQUIRRELDIR%%/plugins/timeout_user/functions.php
 %%SQUIRRELDIR%%/plugins/timeout_user/config.php
 @dirrm %%SQUIRRELDIR%%/plugins/timeout_user
-@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin pupdate; fi
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin timeout_user; fi
