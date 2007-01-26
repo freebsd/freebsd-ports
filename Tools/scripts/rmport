@@ -205,6 +205,8 @@ check_dep()
 		echo 'if this is the case, then either:' >&2
 		echo ' * these are false positives' >&2
 		echo ' * you want to break something' >&2
+		echo " * your ${PORTSDIR} is out of date, consider setting PORTSDIR in environment" >&2
+		echo '   point to a newer instance of the ports tree' >&2
 		echo "or you can hit \`n' to repeat the check" >&2
 		answer=`ask "ignore the above issues"`
 		if [ "${answer}" = "y" ] ; then
@@ -302,7 +304,9 @@ check_LEGAL()
 		msg="${catport}: checking if ${checkstr} is in ports/LEGAL"
 		log "${msg}"
 		while grep -i ${checkstr} ports/LEGAL ; do
-			echo "${checkstr} is in ports/LEGAL, remove it and hit <enter> when ready" >&2
+			echo "" >&2
+			echo "${checkstr} is in ${PWD}/ports/LEGAL" >&2
+			echo "remove it and hit <enter> when ready" >&2
 			echo "or hit \`s' to skip this issue and continue anyway" >&2
 			read answer
 			if [ "${answer}" = "s" ] ; then
