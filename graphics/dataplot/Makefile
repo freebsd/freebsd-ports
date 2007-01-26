@@ -26,6 +26,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 WANT_FORTRAN=	yes #dummy but future use
+EXTRACT_DEPENDS=gfortran42:${PORTSDIR}/lang/gcc42
 BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
