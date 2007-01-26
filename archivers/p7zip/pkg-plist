@@ -1,10 +1,9 @@
-@unexec /bin/rm -f %D/bin/7za
-@unexec /bin/rm -f %D/bin/7zr
 bin/7z
+bin/7za
+bin/7zr
 bin/p7zip
-@exec /bin/ln -sf 7z %D/bin/7za
-@exec /bin/ln -sf 7z %D/bin/7zr
 %%MODULES%%libexec/p7zip/7z
+%%MODULES%%libexec/p7zip/Client7z
 libexec/p7zip/7za
 libexec/p7zip/7zr
 libexec/p7zip/7zCon.sfx
@@ -14,12 +13,12 @@ libexec/p7zip/7zCon.sfx
 %%MODULES%%libexec/p7zip/Codecs/Branch.so
 %%MODULES%%libexec/p7zip/Codecs/Copy.so
 %%MODULES%%libexec/p7zip/Codecs/Deflate.so
-%%MODULES%%libexec/p7zip/Codecs/Implode.so
 %%MODULES%%libexec/p7zip/Codecs/LZMA.so
 %%MODULES%%libexec/p7zip/Codecs/PPMD.so
 %%MODULES%%libexec/p7zip/Codecs/Rar29.so
 %%MODULES%%libexec/p7zip/Codecs/Swap.so
 %%MODULES%%libexec/p7zip/Formats/7z.so
+%%MODULES%%libexec/p7zip/Formats/7za.so
 %%MODULES%%libexec/p7zip/Formats/chm.so
 %%MODULES%%libexec/p7zip/Formats/Rar.so
 %%MODULES%%libexec/p7zip/Formats/Tar.so
