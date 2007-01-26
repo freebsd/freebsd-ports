@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grisbi
-PORTVERSION=	0.5.8
-PORTREVISION=	1
+PORTVERSION=	0.5.9
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,6 +43,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 pre-configure:
+	@${REINPLACE_CMD} -e "/^mandir=/s|datarootdir|prefix|" ${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in
 .endif

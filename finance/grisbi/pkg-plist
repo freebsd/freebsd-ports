@@ -24,6 +24,7 @@ bin/grisbi
 %%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/he/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/grisbi.mo
