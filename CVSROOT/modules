@@ -6696,6 +6696,7 @@ listmanager	ports/mail/listmanager
 liteamp		ports/audio/liteamp
 liveMedia	ports/net/liveMedia
 livecd		ports/sysutils/livecd
+lives		ports/multimedia/lives
 ljcharm		ports/deskutils/ljcharm
 ljclive		ports/deskutils/ljclive
 ljdeps		ports/www/ljdeps
