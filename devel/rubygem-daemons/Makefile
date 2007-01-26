@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rgl@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolkit to convert your script to a controllable daemon
 
 # This target is only meant to be used by the port maintainer.

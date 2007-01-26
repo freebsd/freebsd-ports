@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=     mongrel
 
-MAINTAINER=	rgl@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gem Based Plugin System
 
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
