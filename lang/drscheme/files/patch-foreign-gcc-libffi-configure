@@ -8,21 +8,3 @@
  i*86-*-linux*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-gnu*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-solaris2.1[0-9]*) TARGET=X86_64; TARGETDIR=x86;;
-@@ -5395,7 +5396,7 @@
- sparc*-sun-*) TARGET=SPARC; TARGETDIR=sparc;;
- sparc-*-linux* | sparc-*-netbsdelf* | sparc-*-knetbsd*-gnu) TARGET=SPARC; TARGETDIR=sparc;;
- sparc*-*-rtems*) TARGET=SPARC; TARGETDIR=sparc;;
--sparc64-*-linux* | sparc64-*-netbsd* | sparc64-*-knetbsd*-gnu) TARGET=SPARC; TARGETDIR=sparc;;
-+sparc64-*-freebsd* | sparc64-*-linux* | sparc64-*-netbsd* | sparc64-*-knetbsd*-gnu) TARGET=SPARC; TARGETDIR=sparc;;
- alpha*-*-linux* | alpha*-*-osf* | alpha*-*-freebsd* | alpha*-*-kfreebsd*-gnu | alpha*-*-netbsd* | alpha*-*-knetbsd*-gnu) TARGET=ALPHA; TARGETDIR=alpha;;
- ia64*-*-*) TARGET=IA64; TARGETDIR=ia64;;
- m32r*-*-linux* ) TARGET=M32R; TARGETDIR=m32r;;
-@@ -5416,7 +5417,7 @@
- cris-*-*) TARGET=LIBFFI_CRIS; TARGETDIR=cris;;
- s390-*-linux-*) TARGET=S390; TARGETDIR=s390;;
- s390x-*-linux-*) TARGET=S390; TARGETDIR=s390;;
--x86_64-*-linux* | x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu) TARGET=X86_64; TARGETDIR=x86;;
-+x86_64-*-linux* | x86_64-*-kfreebsd*-gnu) TARGET=X86_64; TARGETDIR=x86;;
- sh-*-linux* | sh[34]*-*-linux*) TARGET=SH; TARGETDIR=sh;;
- sh-*-rtems*) TARGET=SH; TARGETDIR=sh;;
- sh64-*-linux* | sh5*-*-linux*) TARGET=SH64; TARGETDIR=sh64;;
