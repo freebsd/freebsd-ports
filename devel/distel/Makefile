@@ -7,7 +7,7 @@
 
 PORTNAME=	distel
 PORTVERSION=	2006.10.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.bluetail.com/%7Eluke/distel/:doc \
 		${MASTER_SITE_LOCAL:S/$/:msl/}

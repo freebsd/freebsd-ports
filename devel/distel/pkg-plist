@@ -33,5 +33,7 @@ lib/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
 @dirrm lib/erlang/lib/distel-%%VERSION%%/src
 @dirrm lib/erlang/lib/distel-%%VERSION%%/ebin
 @dirrm lib/erlang/lib/distel-%%VERSION%%
+@dirrm %%EMACS_SITE_LISPDIR%%/distel
+@dirrm %%DOCSDIR%%
 @exec ln -sf distel-%%VERSION%% %D/lib/erlang/lib/distel
 @unexec rm -f %D/lib/erlang/lib/distel
