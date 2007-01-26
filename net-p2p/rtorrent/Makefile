@@ -45,6 +45,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${EXAMPLESDIR}/
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
