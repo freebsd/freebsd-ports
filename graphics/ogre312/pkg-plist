@@ -232,7 +232,7 @@ lib/libCEGUIOgreRenderer.so.0
 lib/libOgreMain.a
 lib/libOgreMain.la
 lib/libOgreMain.so
-lib/libOgreMain.so.12
+lib/libOgreMain.so.13
 lib/libOgrePlatform.a
 lib/libOgrePlatform.la
 lib/libOgrePlatform.so
