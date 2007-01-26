@@ -162,10 +162,11 @@ MAN8=		actsync.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 MAN1+=		startinnfeed.1
 MAN3+=		parsedate.3
 MAN5+=		sasl.conf.5
-MAN8+=		actsyncd.8 inndstart.8 innbind.8 tinyleaf.8
+MAN8+=		actsyncd.8 inndstart.8
 PLIST_SUB+=	NOTCURRENT=""
 .else
 PLIST_SUB+=	NOTCURRENT="@comment "
+MAN8+=		innbind.8 tinyleaf.8
 .endif
 
 .if defined(WITH_KERBEROS)

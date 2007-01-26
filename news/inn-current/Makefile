@@ -23,6 +23,4 @@ MD5_FILE=	${.CURDIR}/distinfo
 
 MASTERDIR=	${.CURDIR}/../inn
 
-BROKEN=		Install fails
-
 .include "${MASTERDIR}/Makefile"
