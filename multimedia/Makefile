@@ -132,6 +132,7 @@
     SUBDIR += linux-libtheora
     SUBDIR += linux-realplayer
     SUBDIR += linux-xmovie
+    SUBDIR += lives
     SUBDIR += lsdvd
     SUBDIR += lxdvdrip
     SUBDIR += mjpegtools

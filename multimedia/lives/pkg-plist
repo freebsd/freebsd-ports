@@ -1,0 +1,188 @@
+bin/autolives.pl
+bin/avi_encoder.py
+bin/build-lives-rfx-plugin
+bin/build-lives-rfx-plugin-multi
+bin/dirac_encoder.py
+bin/gif_encoder.py
+bin/lives
+bin/lives-exe
+bin/midistart
+bin/midistop
+bin/mkv_encoder.py
+bin/mng_encoder.py
+bin/mpeg_encoder.py
+bin/ogm_encoder.py
+bin/smogrify
+bin/theora_encoder.py
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/BUGS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/FEATURES
+%%DOCSDIR%%/GETTING.STARTED
+%%DOCSDIR%%/LiVES-Perl.sxw
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.RFX
+%%DOCSDIR%%/README.multi_encoder
+%%DOCSDIR%%/RFX.spec
+%%DOCSDIR%%/clip_format.txt
+%%DOCSDIR%%/lives-OMC.txt
+%%DOCSDIR%%/rfxbuilder.sxw
+%%DOCSDIR%%/weedevents.txt
+%%DOCSDIR%%/weedspec.txt
+%%DATADIR%%/default.keymap
+%%DATADIR%%/icons/fullscreen.png
+%%DATADIR%%/icons/loop.png
+%%DATADIR%%/icons/playsel.png
+%%DATADIR%%/icons/sepwin.png
+%%DATADIR%%/icons/volume_mute.png
+%%DATADIR%%/icons/zoom-in.png
+%%DATADIR%%/icons/zoom-out.png
+%%DATADIR%%/plugins/effects/RFXscripts/blank_frames.script
+%%DATADIR%%/plugins/effects/RFXscripts/blur.script
+%%DATADIR%%/plugins/effects/RFXscripts/brightness_change.script
+%%DATADIR%%/plugins/effects/RFXscripts/charcoal.script
+%%DATADIR%%/plugins/effects/RFXscripts/colorize.script
+%%DATADIR%%/plugins/effects/RFXscripts/colour_filter.script
+%%DATADIR%%/plugins/effects/RFXscripts/contrast.script
+%%DATADIR%%/plugins/effects/RFXscripts/cycle.script
+%%DATADIR%%/plugins/effects/RFXscripts/deinterlace.script
+%%DATADIR%%/plugins/effects/RFXscripts/despekle.script
+%%DATADIR%%/plugins/effects/RFXscripts/dream.script
+%%DATADIR%%/plugins/effects/RFXscripts/edge_detect.script
+%%DATADIR%%/plugins/effects/RFXscripts/emboss.script
+%%DATADIR%%/plugins/effects/RFXscripts/enhance.script
+%%DATADIR%%/plugins/effects/RFXscripts/flip.script
+%%DATADIR%%/plugins/effects/RFXscripts/flop.script
+%%DATADIR%%/plugins/effects/RFXscripts/frame_calculator.script
+%%DATADIR%%/plugins/effects/RFXscripts/gamma_change.script
+%%DATADIR%%/plugins/effects/RFXscripts/hue_change.script
+%%DATADIR%%/plugins/effects/RFXscripts/jumble.script
+%%DATADIR%%/plugins/effects/RFXscripts/modulate.script
+%%DATADIR%%/plugins/effects/RFXscripts/monochrome.script
+%%DATADIR%%/plugins/effects/RFXscripts/negate.script
+%%DATADIR%%/plugins/effects/RFXscripts/noisify.script
+%%DATADIR%%/plugins/effects/RFXscripts/normalize.script
+%%DATADIR%%/plugins/effects/RFXscripts/photo_still.script
+%%DATADIR%%/plugins/effects/RFXscripts/pixilate.script
+%%DATADIR%%/plugins/effects/RFXscripts/posterize.script
+%%DATADIR%%/plugins/effects/RFXscripts/randomzoom.script
+%%DATADIR%%/plugins/effects/RFXscripts/resize.script
+%%DATADIR%%/plugins/effects/RFXscripts/rotate.script
+%%DATADIR%%/plugins/effects/RFXscripts/saturation_change.script
+%%DATADIR%%/plugins/effects/RFXscripts/shift_horizontal.script
+%%DATADIR%%/plugins/effects/RFXscripts/shift_vertical.script
+%%DATADIR%%/plugins/effects/RFXscripts/shrink_expand.script
+%%DATADIR%%/plugins/effects/RFXscripts/solarize.script
+%%DATADIR%%/plugins/effects/RFXscripts/spin.script
+%%DATADIR%%/plugins/effects/RFXscripts/spread.script
+%%DATADIR%%/plugins/effects/RFXscripts/swirl.script
+%%DATADIR%%/plugins/effects/RFXscripts/textover.script
+%%DATADIR%%/plugins/effects/RFXscripts/transition_bwthresh.script
+%%DATADIR%%/plugins/effects/RFXscripts/transition_checkerboard.script
+%%DATADIR%%/plugins/effects/RFXscripts/transition_fade.script
+%%DATADIR%%/plugins/effects/RFXscripts/transition_splice.script
+%%DATADIR%%/plugins/effects/RFXscripts/trim_frames.script
+%%DATADIR%%/plugins/effects/RFXscripts/tunnel.script
+%%DATADIR%%/plugins/effects/RFXscripts/wave.script
+%%DATADIR%%/plugins/effects/rendered/blank_frames
+%%DATADIR%%/plugins/effects/rendered/blur
+%%DATADIR%%/plugins/effects/rendered/brightness_change
+%%DATADIR%%/plugins/effects/rendered/charcoal
+%%DATADIR%%/plugins/effects/rendered/colorize
+%%DATADIR%%/plugins/effects/rendered/colour_filter
+%%DATADIR%%/plugins/effects/rendered/contrast
+%%DATADIR%%/plugins/effects/rendered/cycle
+%%DATADIR%%/plugins/effects/rendered/deinterlace
+%%DATADIR%%/plugins/effects/rendered/despeckle
+%%DATADIR%%/plugins/effects/rendered/dream
+%%DATADIR%%/plugins/effects/rendered/edge_detect
+%%DATADIR%%/plugins/effects/rendered/emboss
+%%DATADIR%%/plugins/effects/rendered/enhance
+%%DATADIR%%/plugins/effects/rendered/flip
+%%DATADIR%%/plugins/effects/rendered/flop
+%%DATADIR%%/plugins/effects/rendered/frame_calculator
+%%DATADIR%%/plugins/effects/rendered/gamma_change
+%%DATADIR%%/plugins/effects/rendered/hue_change
+%%DATADIR%%/plugins/effects/rendered/jumble
+%%DATADIR%%/plugins/effects/rendered/modulate
+%%DATADIR%%/plugins/effects/rendered/monochrome
+%%DATADIR%%/plugins/effects/rendered/negate
+%%DATADIR%%/plugins/effects/rendered/noisify
+%%DATADIR%%/plugins/effects/rendered/normalize
+%%DATADIR%%/plugins/effects/rendered/photo_still
+%%DATADIR%%/plugins/effects/rendered/pixilate
+%%DATADIR%%/plugins/effects/rendered/posterize
+%%DATADIR%%/plugins/effects/rendered/randomzoom
+%%DATADIR%%/plugins/effects/rendered/resize
+%%DATADIR%%/plugins/effects/rendered/rotate
+%%DATADIR%%/plugins/effects/rendered/saturation_change
+%%DATADIR%%/plugins/effects/rendered/shift_horizontal
+%%DATADIR%%/plugins/effects/rendered/shift_vertical
+%%DATADIR%%/plugins/effects/rendered/shrink_expand
+%%DATADIR%%/plugins/effects/rendered/solarize
+%%DATADIR%%/plugins/effects/rendered/spin
+%%DATADIR%%/plugins/effects/rendered/spread
+%%DATADIR%%/plugins/effects/rendered/swirl
+%%DATADIR%%/plugins/effects/rendered/textover
+%%DATADIR%%/plugins/effects/rendered/transition_bwthresh
+%%DATADIR%%/plugins/effects/rendered/transition_checkerboard
+%%DATADIR%%/plugins/effects/rendered/transition_fade2
+%%DATADIR%%/plugins/effects/rendered/transition_splice
+%%DATADIR%%/plugins/effects/rendered/trim_frames
+%%DATADIR%%/plugins/effects/rendered/tunnel
+%%DATADIR%%/plugins/effects/rendered/wave
+%%DATADIR%%/plugins/encoders/encodedv_encoder
+%%DATADIR%%/plugins/encoders/ffmpeg_encoder
+%%DATADIR%%/plugins/encoders/mencoder_encoder
+%%DATADIR%%/plugins/encoders/mjpegtools_encoder
+%%DATADIR%%/plugins/encoders/multi_encoder
+%%DATADIR%%/plugins/encoders/pdf_encoder
+%%DATADIR%%/plugins/encoders/qtutils_encoder
+%%DATADIR%%/plugins/encoders/sswf_encoder
+%%DATADIR%%/plugins/encoders/transcode_encoder
+%%DATADIR%%/plugins/playback/video/SDL
+%%DATADIR%%/plugins/playback/video/yuv4mpeg_stream
+%%DATADIR%%/themes/camera/frame.jpg
+%%DATADIR%%/themes/camera/main.jpg
+%%DATADIR%%/themes/cutting_room/frame.jpg
+%%DATADIR%%/themes/cutting_room/main.jpg
+%%DATADIR%%/themes/default/frame.jpg
+%%DATADIR%%/themes/default/main.jpg
+%%DATADIR%%/themes/editor/frame.jpg
+%%DATADIR%%/themes/editor/main.jpg
+%%DATADIR%%/themes/greenish/frame.jpg
+%%DATADIR%%/themes/greenish/main.jpg
+%%DATADIR%%/themes/pinks/frame.jpg
+%%DATADIR%%/themes/pinks/main.jpg
+%%DATADIR%%/themes/sunburst/frame.jpg
+%%DATADIR%%/themes/sunburst/main.jpg
+share/locale/cz/LC_MESSAGES/lives.mo
+share/locale/de_DE/LC_MESSAGES/lives.mo
+share/locale/fr/LC_MESSAGES/lives.mo
+share/locale/ja/LC_MESSAGES/lives.mo
+share/locale/nl_NL/LC_MESSAGES/lives.mo
+share/locale/pt_BR/LC_MESSAGES/lives.mo
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/plugins/effects/RFXscripts
+@dirrm %%DATADIR%%/plugins/effects/rendered
+@dirrm %%DATADIR%%/plugins/effects
+@dirrm %%DATADIR%%/plugins/encoders
+@dirrm %%DATADIR%%/plugins/playback/video
+@dirrm %%DATADIR%%/plugins/playback
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/themes/camera
+@dirrm %%DATADIR%%/themes/cutting_room
+@dirrm %%DATADIR%%/themes/default
+@dirrm %%DATADIR%%/themes/editor
+@dirrm %%DATADIR%%/themes/greenish
+@dirrm %%DATADIR%%/themes/pinks
+@dirrm %%DATADIR%%/themes/sunburst
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/cz/LC_MESSAGES
+@dirrmtry share/locale/cz
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
