@@ -75,7 +75,7 @@ include/enlightenment/e_int_config_modules.h
 include/enlightenment/e_int_config_mousebindings.h
 include/enlightenment/e_int_config_paths.h
 include/enlightenment/e_int_config_performance.h
-include/enlightenment/e_int_config_sh%%PORTOBJFORMAT%%.h
+include/enlightenment/e_int_config_shelf.h
 include/enlightenment/e_int_config_startup.h
 include/enlightenment/e_int_config_theme.h
 include/enlightenment/e_int_config_theme_import.h
@@ -88,7 +88,7 @@ include/enlightenment/e_int_config_window_manipulation.h
 include/enlightenment/e_int_config_winlist.h
 include/enlightenment/e_int_gadcon_config.h
 include/enlightenment/e_int_menus.h
-include/enlightenment/e_int_sh%%PORTOBJFORMAT%%_config.h
+include/enlightenment/e_int_shelf_config.h
 include/enlightenment/e_intl.h
 include/enlightenment/e_ipc.h
 include/enlightenment/e_ipc_codec.h
@@ -115,7 +115,7 @@ include/enlightenment/e_remember.h
 include/enlightenment/e_resist.h
 include/enlightenment/e_scrollframe.h
 include/enlightenment/e_sha1.h
-include/enlightenment/e_sh%%PORTOBJFORMAT%%.h
+include/enlightenment/e_shelf.h
 include/enlightenment/e_signals.h
 include/enlightenment/e_slider.h
 include/enlightenment/e_spectrum.h

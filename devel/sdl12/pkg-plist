@@ -199,7 +199,7 @@ share/aclocal/sdl.m4
 %%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpalette.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpauseaudio.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpeepevents.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpix%%PORTOBJFORMAT%%ormat.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpixelformat.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpollevent.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpumpevents.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/html/sdlpushevent.html
