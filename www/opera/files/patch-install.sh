@@ -1,5 +1,5 @@
---- install.sh.orig	Fri Jun 16 12:03:46 2006
-+++ install.sh	Tue Jun 20 15:24:11 2006
+--- install.sh.orig	Thu Dec 14 15:06:40 2006
++++ install.sh	Thu Jan 25 15:56:02 2007
 @@ -924,69 +924,14 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
@@ -115,7 +115,7 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1328,41 +1271,9 @@
+@@ -1340,41 +1283,9 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -157,7 +157,7 @@
  	if test "${bool_icons}" -ne 0
  	then xdg
  	fi
-@@ -1573,48 +1484,43 @@
+@@ -1585,48 +1496,43 @@
      # This function searches for common gnome icon paths.
      debug_msg 1 "in gnome()"
  
@@ -229,34 +229,60 @@
  
      elif test -d /usr/share/gnome/
      then
-@@ -1662,9 +1568,9 @@
+@@ -1674,47 +1580,34 @@
      # This function searches for common kde2 and kde 3 icon paths.
      debug_msg 1 "in kde()"
  
 -    if test -d /opt/kde$1/share
-+    if test -d %%LOCALBASE%%/share;
-     then
+-    then
 -	DIR_HI=/opt/kde$1/share/icons/hicolor
-+	DIR_HI=%%LOCALBASE%%/share/icons/hicolor
- 	if test -d "$DIR_HI" -a -w "$DIR_HI"
- 	then
- 	    if test -d "$DIR_HI"/48x48/apps -a -w "$DIR_HI"/48x48/apps
-@@ -1678,7 +1584,7 @@
- 	    fi
- 	fi
+-	if test -d "$DIR_HI" -a -w "$DIR_HI"
+-	then
+-	    if test -d "$DIR_HI"/48x48/apps -a -w "$DIR_HI"/48x48/apps
+-	    then cp $cpv $share_dir/images/opera_48x48.png $DIR_HI/48x48/apps/opera.png
+-	    fi
+-	    if test -d "$DIR_HI"/32x32/apps -a -w "$DIR_HI"/32x32/apps
+-	    then cp $cpv $share_dir/images/opera_32x32.png $DIR_HI/32x32/apps/opera.png
+-	    fi
+-	    if test -d "$DIR_HI"/22x22/apps -a -w "$DIR_HI"/22x22/apps
+-	    then cp $cpv $share_dir/images/opera_22x22.png $DIR_HI/22x22/apps/opera.png
+-	    fi
+-	fi
++    DIR_HI=%%LOCALBASE%%/share/icons/hicolor
++    mkdir -p $DIR_HI/48x48/apps
++    mkdir -p $DIR_HI/32x32/apps
++    mkdir -p $DIR_HI/22x22/apps
++
++    cp $cpv $share_dir/images/opera_48x48.png $DIR_HI/48x48/apps/opera.png
++    cp $cpv $share_dir/images/opera_32x32.png $DIR_HI/32x32/apps/opera.png
++    cp $cpv $share_dir/images/opera_22x22.png $DIR_HI/22x22/apps/opera.png
++
++    DIR_LO=%%LOCALBASE%%/share/icons/locolor
++    mkdir -p $DIR_LO/32x32/apps
++    mkdir -p $DIR_LO/22x22/apps
++    mkdir -p $DIR_LO/16x16/apps
++
++    cp $cpv $share_dir/images/opera_32x32.png $DIR_LO/32x32/apps/opera.png
++    cp $cpv $share_dir/images/opera_22x22.png $DIR_LO/22x22/apps/opera.png
++    cp $cpv $share_dir/images/opera_16x16.png $DIR_LO/16x16/apps/opera.png
  
 -	DIR_LO=/opt/kde$1/share/icons/locolor
-+	DIR_LO=%%LOCALBASE%%/share/icons/locolor
- 	if test -d $DIR_LO -a -w $DIR_LO
+-	if test -d $DIR_LO -a -w $DIR_LO
++    if test -d %%LOCALBASE%%/share/applnk/
  	then
- 	    if test -d $DIR_LO/32x32/apps -a -w $DIR_LO/32x32/apps
-@@ -1692,15 +1598,15 @@
- 	    fi
- 	fi
- 
+-	    if test -d $DIR_LO/32x32/apps -a -w $DIR_LO/32x32/apps
+-	    then cp $cpv $share_dir/images/opera_32x32.png $DIR_LO/32x32/apps/opera.png
+-	    fi
+-	    if test -d $DIR_LO/22x22/apps -a -w $DIR_LO/22x22/apps
+-	    then cp $cpv $share_dir/images/opera_22x22.png $DIR_LO/22x22/apps/opera.png
+-	    fi
+-	    if test -d $DIR_LO/16x16/apps -a -w $DIR_LO/16x16/apps
+-	    then cp $cpv $share_dir/images/opera_16x16.png $DIR_LO/16x16/apps/opera.png
+-	    fi
+-	fi
+-
 -	if test -d /opt/kde$1/share/applnk/
-+	if test -d %%LOCALBASE%%/share/applnk/
- 	then
+-	then
 -	    if test ! -d /opt/kde$1/share/applnk/Internet/ -a -w /opt/kde$1/share/applnk
 +	    if test ! -d %%LOCALBASE%%/share/applnk/Internet/ -a -w %%LOCALBASE%%/share/applnk
  	    then
@@ -270,9 +296,11 @@
 +	    if test -w %%LOCALBASE%%/share/applnk/Internet
 +	    then generate_desktop %%LOCALBASE%%/share/applnk/Internet $1
  	    fi
- 	fi
+-	fi
      fi
-@@ -1784,45 +1690,9 @@
+ 
+     if test -d /usr/share/applnk/Networking
+@@ -1796,45 +1689,9 @@
  }
  
  xdg()
