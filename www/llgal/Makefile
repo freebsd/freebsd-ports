@@ -26,4 +26,11 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-configure:
+	sed -e "s,@VERSION@,${PORTVERSION}," < ${WRKSRC}/lib/Makefile.PL.in > ${WRKSRC}/lib/Makefile.PL
+	cd ${WRKSRC}/lib; ${PERL} Makefile.PL
+	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install//' ${WRKSRC}/lib/Makefile
+
+.include <bsd.port.post.mk>

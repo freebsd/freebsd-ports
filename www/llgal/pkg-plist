@@ -4,6 +4,7 @@ etc/llgal/llgalrc
 %%SITE_PERL%%/Llgal/Utils.pm
 %%SITE_PERL%%/Llgal/Templates.pm
 %%SITE_PERL%%/Llgal/Messages.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Llgal/.packlist
 share/llgal/captions.header
 share/llgal/index.png
 share/llgal/indextemplate.html
@@ -13,5 +14,6 @@ share/llgal/prev.png
 share/llgal/slidetemplate.html
 share/llgal/tile.png
 share/locale/fr/LC_MESSAGES/llgal.mo
+@dirrm share/llgal
 @dirrm %%SITE_PERL%%/Llgal
 @dirrm etc/llgal
