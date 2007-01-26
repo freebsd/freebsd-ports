@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	curlpp
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	ftp
-MASTER_SITES=	http://rrette.com/downloads/sources/
+MASTER_SITES=	http://rrette.com/files/curlpp/curlpp-${PORTVERSION:R}/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A C++ wrapper for libcurl
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
-USE_GCC=	3.4
+USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -30,12 +29,6 @@ USE_LDCONFIG=	yes
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 BROKEN=		Does not compile on alpha 4.x
 .endif
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "NOTE to people using 0.3.x: cURLpp 0.3.x is dead!"
-	@${ECHO} "The current version ${PORTVERSION} is incompatible with the old 0.3.x versions"
-	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
