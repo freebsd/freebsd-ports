@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.18
+PORTVERSION=	8.19
 CATEGORIES=	textproc tk84
-MASTER_SITES=	CSME
+MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Visual regexp development and execution
@@ -19,8 +19,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_TK=		84
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	AUTHORS COPYING CREDITS LICENSE README-General ChangeLog
+PORTDOCS=	AUTHORS COPYING CREDITS LICENSE NEWS README-General ChangeLog
 MAN1=		redet.1
 PLIST_FILES=	bin/redet
 
