@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A-A-P GUI IDE: a framework for software development
 
 RUN_DEPENDS=	${LOCALBASE}/bin/aap:${PORTSDIR}/devel/aap \

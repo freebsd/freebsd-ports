@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes

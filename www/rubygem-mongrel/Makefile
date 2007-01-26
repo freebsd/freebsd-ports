@@ -10,7 +10,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rgl@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
 
 BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \

@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME} \
 DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 			${PCRE_NAME}-${PCRE_VERSION}${EXTRACT_SUFX}:pcre
 
-MAINTAINER=		rui@ruilopes.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An interactive tool for performing search and replace operations
 
 LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \

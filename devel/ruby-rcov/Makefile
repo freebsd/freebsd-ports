@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	rgl@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for simple code coverage analysis in Ruby
 
 USE_RUBY=	yes

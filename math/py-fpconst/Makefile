@@ -10,7 +10,7 @@ CATEGORIES=		math python
 MASTER_SITES=		http://mac.warnes.net/~warnes/files/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		rui@ruilopes.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Utilities for handling IEEE 754 floating point special values
 
 MASTER_SITE_FREEBSD=	yes

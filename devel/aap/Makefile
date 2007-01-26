@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A build tool alternative to make with internet access and CVS support
 
 MAN1=		aap.1
