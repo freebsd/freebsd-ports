@@ -464,6 +464,7 @@ lib/wine/commdlg.dll16
 lib/wine/compobj.dll16
 lib/wine/compstui.dll.so
 lib/wine/control.exe.so
+lib/wine/credui.dll.so
 lib/wine/crtdll.dll.so
 lib/wine/crypt32.dll.so
 lib/wine/cryptdll.dll.so
@@ -624,6 +625,7 @@ lib/wine/libsensapi.def
 lib/wine/libserialui.def
 lib/wine/libsetupapi.def
 lib/wine/libsfc.def
+lib/wine/libsfc_os.def
 lib/wine/libshdocvw.def
 lib/wine/libshell32.def
 lib/wine/libshfolder.def
@@ -750,6 +752,7 @@ lib/wine/serialui.dll.so
 lib/wine/setupapi.dll.so
 lib/wine/setupx.dll16
 lib/wine/sfc.dll.so
+lib/wine/sfc_os.dll.so
 lib/wine/shdocvw.dll.so
 lib/wine/shell.dll16
 lib/wine/shell32.dll.so
