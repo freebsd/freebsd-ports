@@ -1,0 +1,11 @@
+This module provides a simple API for publishing messages to channels
+and for subscribing to them.
+
+When a message is published on a channel, all subscribers currently in
+that channel will get it on their next "get" or "get_all" call.
+
+Currently, it offers three backends: "DBM_Deep" for on-disk storage,
+"Memcached" for possibly multi-host storage, and "PlainHash" for
+single-process storage.
+
+WWW: http://search.cpan.org/dist/IPC-PubSub/

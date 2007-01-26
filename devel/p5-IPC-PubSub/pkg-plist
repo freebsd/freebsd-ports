@@ -1,0 +1,20 @@
+%%SITE_PERL%%/IPC/PubSub.pm
+%%SITE_PERL%%/IPC/PubSub/Cache.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/DBM_Deep.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI/Stash.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI/Stash/Item.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI/Stash/Publisher.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/Memcached.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/PlainHash.pm
+%%SITE_PERL%%/IPC/PubSub/Cacheable.pm
+%%SITE_PERL%%/IPC/PubSub/Publisher.pm
+%%SITE_PERL%%/IPC/PubSub/Subscriber.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/PubSub/.packlist
+@dirrmtry %%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI/Stash
+@dirrmtry %%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/PubSub
+@dirrmtry %%SITE_PERL%%/IPC/PubSub/Cache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
+@dirrmtry %%SITE_PERL%%/IPC/PubSub
+@dirrmtry %%SITE_PERL%%/IPC
