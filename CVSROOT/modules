@@ -6445,7 +6445,6 @@ libvc		ports/devel/libvc
 libvisual	ports/graphics/libvisual
 libvisual-plugins	ports/graphics/libvisual-plugins
 libvisual04	ports/graphics/libvisual04
-libvm68k	ports/emulators/libvm68k
 libvmime	ports/mail/libvmime
 libvncserver	ports/net/libvncserver
 libvolume_id	ports/devel/libvolume_id
@@ -15159,7 +15158,6 @@ vultures-claw	ports/games/vultures-claw
 vultures-eye	ports/games/vultures-eye
 vuxml		ports/security/vuxml
 vvv		ports/graphics/vvv
-vx68k		ports/emulators/vx68k
 vxquery		ports/security/vxquery
 vxtools		ports/emulators/vxtools
 vym		ports/deskutils/vym
