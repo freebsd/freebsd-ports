@@ -10,6 +10,7 @@ lib/dovecot/imap/lib11_imap_quota_plugin.la
 lib/dovecot/imap/lib11_imap_quota_plugin.so
 lib/dovecot/imap/lib11_trash_plugin.so
 lib/dovecot/imap/lib20_convert_plugin.so
+lib/dovecot/imap/lib20_mail_log_plugin.so
 lib/dovecot/imap/lib20_zlib_plugin.a
 lib/dovecot/imap/lib20_zlib_plugin.la
 lib/dovecot/imap/lib20_zlib_plugin.so
@@ -18,10 +19,12 @@ lib/dovecot/lda/lib01_acl_plugin.so
 lib/dovecot/lda/lib10_quota_plugin.so
 lib/dovecot/lda/lib11_trash_plugin.so
 lib/dovecot/lda/lib20_convert_plugin.so
+lib/dovecot/lda/lib20_mail_log_plugin.so
 @dirrm lib/dovecot/lda
 lib/dovecot/pop3/lib02_lazy_expunge_plugin.so
 lib/dovecot/pop3/lib10_quota_plugin.so
 lib/dovecot/pop3/lib20_convert_plugin.so
+lib/dovecot/pop3/lib20_mail_log_plugin.so
 @dirrm lib/dovecot/pop3
 lib/dovecot/lib01_acl_plugin.a
 lib/dovecot/lib01_acl_plugin.la
@@ -38,6 +41,9 @@ lib/dovecot/lib11_trash_plugin.so
 lib/dovecot/lib20_convert_plugin.a
 lib/dovecot/lib20_convert_plugin.la
 lib/dovecot/lib20_convert_plugin.so
+lib/dovecot/lib20_mail_log_plugin.a
+lib/dovecot/lib20_mail_log_plugin.la
+lib/dovecot/lib20_mail_log_plugin.so
 @dirrm lib/dovecot
 libexec/dovecot/checkpassword-reply
 %%LDA%%libexec/dovecot/deliver
