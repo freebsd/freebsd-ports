@@ -2732,3 +2732,4 @@ devel/leoarg||2007-01-25|Has expired: distfile and homepage disappeared
 misc/dirtree||2007-01-25|distfile and homepage disappeared
 misc/argparse||2007-01-25|distfile and homepage disappeared
 audio/gstreamer-plugins-wavpack80||2007-01-25|does not build with current wavpack and got obsolete by 0.10.x version
+net-mgmt/pfpro||2007-01-26|Has expired: Does not compile
