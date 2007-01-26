@@ -54,7 +54,6 @@
     SUBDIR += kqemu-kmod
     SUBDIR += lib765
     SUBDIR += libspectrum
-    SUBDIR += libvm68k
     SUBDIR += linux-ePSXe
     SUBDIR += linux-geepee32
     SUBDIR += linux-libaio
@@ -142,7 +141,6 @@
     SUBDIR += vmware-tools5
     SUBDIR += vmware3
     SUBDIR += vpce
-    SUBDIR += vx68k
     SUBDIR += vxtools
     SUBDIR += wahcade
     SUBDIR += wine
