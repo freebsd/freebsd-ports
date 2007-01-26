@@ -200,13 +200,13 @@ check_dep()
 			break
 		fi
 
-		echo '' >&2
-		echo 'you can ignore the above issues and proceed anyway.' >&2
-		echo 'if this is the case, then either:' >&2
-		echo ' * these are false positives' >&2
-		echo ' * you want to break something' >&2
+		echo "" >&2
+		echo "you can ignore the above issues and proceed anyway." >&2
+		echo "if this is the case, then either:" >&2
+		echo " * these are false positives" >&2
+		echo " * you want to break something" >&2
 		echo " * your ${PORTSDIR} is out of date, consider setting PORTSDIR in environment" >&2
-		echo '   point to a newer instance of the ports tree' >&2
+		echo "   point to a newer instance of the ports tree" >&2
 		echo "or you can hit \`n' to repeat the check" >&2
 		answer=`ask "ignore the above issues"`
 		if [ "${answer}" = "y" ] ; then
@@ -546,6 +546,7 @@ while [ "${answer}" = "y" ] ; do
 	# EDITOR instead of PAGER because vim has nice syntax highlighting ;-)
 	${EDITOR} ${diffout}
 
+	echo "" >&2
 	echo "you can now edit files under ${codir}/ by hand" >&2
 	answer=`ask "do you want to recreate the diff?"`
 done
