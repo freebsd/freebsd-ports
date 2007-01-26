@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmail-activedir
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	mail
 MASTER_SITES=	http://fo2k.com/qmail-activedir/
 
