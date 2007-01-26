@@ -21,10 +21,16 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/chpasswd \
 		--enable-language=English \
 		--enable-cgidir=${PREFIX}/www/cgi-bin
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 700000)
+BROKEN=		Does not compile on 7.X
+.endif
+
 pre-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
 
 post-install:
 	@${ECHO} 'Remember, passwd and log file must be owned by httpd user, or chmod 777'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
