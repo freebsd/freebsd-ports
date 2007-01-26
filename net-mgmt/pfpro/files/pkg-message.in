@@ -1,7 +1,0 @@
-
-UPGRADING CONFIGURATIONS
-------------------------
-If you are upgrading from an older version of PfPro you may need to update
-your configuration files.  Stylesheets for this have been installed in
-%%XSLDIR%%/pfpro.  See %%DOCSDIR%%/RELNOTES for more
-information.
