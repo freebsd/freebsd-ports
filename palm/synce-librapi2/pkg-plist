@@ -16,4 +16,4 @@ lib/librapi.a
 lib/librapi.la
 lib/librapi.so
 lib/librapi.so.2
-share/aclocal/librapi2.m4
+libdata/pkgconfig/librapi2.pc
