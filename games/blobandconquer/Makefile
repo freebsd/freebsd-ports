@@ -8,8 +8,8 @@
 PORTNAME=	blobandconquer
 DISTVERSION=	0.7-2
 CATEGORIES=	games
-MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file= \
-		http://www.amdmi3.ru/distfiles/
+MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+		http://www.parallelrealities.co.uk/download.php?type=zip&file=
 DISTNAME=	blobAndConquer-${DISTVERSION}
 
 MAINTAINER=	amdmi3@amdmi3.ru
