@@ -15,9 +15,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A rich set of Ruby libraries for Web applications
 
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2006-12-30
-
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
