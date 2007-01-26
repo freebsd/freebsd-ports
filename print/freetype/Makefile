@@ -24,8 +24,10 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
+PORTSCOUT=	limit:^1\.
+
 .ifdef USE_FREETYPE
-IGNORE=	Cannot install: you have the `USE_FREETYPE' variable defined either in environment or in make(1) arguments. Please undefine and try again
+IGNORE=	cannot be installed: you have the 'USE_FREETYPE' variable defined either in environment or in make(1) arguments. Please undefine and try again
 .endif
 
 post-patch:
