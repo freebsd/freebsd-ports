@@ -13354,7 +13354,6 @@ ruby-tcpwrap	ports/security/ruby-tcpwrap
 ruby-tempura	ports/textproc/ruby-tempura
 ruby-term-ansicolor	ports/devel/ruby-term-ansicolor
 ruby-termios	ports/comms/ruby-termios
-ruby-text-format	ports/textproc/ruby-text-format
 ruby-textbuf	ports/devel/ruby-textbuf
 ruby-tgif	ports/graphics/ruby-tgif
 ruby-tk		ports/x11-toolkits/ruby-tk
