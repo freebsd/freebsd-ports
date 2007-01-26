@@ -1182,6 +1182,7 @@
     SUBDIR += p5-IPC-Mmap
     SUBDIR += p5-IPC-Mmap-Share
     SUBDIR += p5-IPC-Open3-Simple
+    SUBDIR += p5-IPC-PubSub
     SUBDIR += p5-IPC-Run
     SUBDIR += p5-IPC-Run3
     SUBDIR += p5-IPC-ShareLite
