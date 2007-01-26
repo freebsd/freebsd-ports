@@ -276,6 +276,7 @@
     SUBDIR += gupsc
     SUBDIR += hachoir-metadata
     SUBDIR += hachoir-urwid
+    SUBDIR += hachoir-wx
     SUBDIR += hal
     SUBDIR += hal-device-manager
     SUBDIR += hammerhead
