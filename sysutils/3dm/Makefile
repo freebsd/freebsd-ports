@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	3dm
-PORTVERSION=	2.04.00.018
+PORTVERSION=	2.04.00.035
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.3ware.com/download/Escalade9500S-Series/9.3.0.4/
-DISTNAME=	3DM2-freebsd_5.4-9.3.0.4
+MASTER_SITES=	http://3ware.com/download/Escalade9650SE-Series/9.4.0.1/
+DISTNAME=	3DM2-freebsd-9.4.0.1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	darren.pilgrim@bitfreak.org
+MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2.sh
@@ -30,17 +30,23 @@ WRKSRC=		${WRKDIR}
 
 SHAREDIR=	${PREFIX}/share/3dm2/en
 
+post-extract:
+	@cd ${WRKSRC}; ${TAR} zxf 3dm-bsd.tgz
+	@cd ${WRKSRC}; ${TAR} zxf 3dm-help.tgz
+	@cd ${WRKSRC}; ${TAR} zxf 3dm-msg.tgz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|AMCC-logo\.jpg|AMCC-logo-smaler\.jpg|g' ${WRKSRC}/en/*.html
+
 post-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	< ${FILESDIR}/3dm2.conf.sample > ${WRKSRC}/3dm2.conf.sample
 
-pre-install:
-	@cd ${WRKSRC}; ${TAR} zxf 3dm-bsd.tgz
-	@cd ${WRKSRC}; ${TAR} zxf 3dm-help.tgz
-	@cd ${WRKSRC}; ${TAR} zxf 3dm-msg.tgz
-	@${REINPLACE_CMD} -e 's|images/amcc-logo.gif|images/amcc-logo75.gif|g' ${WRKSRC}/en/*.html
-
 do-install:
+
+.if !exists(${SHAREDIR}/css)
+	@${MKDIR} ${SHAREDIR}/css
+.endif
 
 .if !exists(${SHAREDIR}/images)
 	@${MKDIR} ${SHAREDIR}/images
@@ -51,8 +57,11 @@ do-install:
 .endif
 
 	${INSTALL_DATA} ${WRKSRC}/en/*.html ${SHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/en/*.css ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/en/*.gif ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/en/*.jpg ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/en/css/* ${SHAREDIR}/css
 	${INSTALL_DATA} ${WRKSRC}/en/images/* ${SHAREDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/en/scripts/* ${SHAREDIR}/scripts
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 	${INSTALL_PROGRAM} ${WRKSRC}/3dm2.x86_64 ${PREFIX}/sbin/3dm2
@@ -61,10 +70,6 @@ do-install:
 .endif
 
 	@${CHMOD} 500 ${PREFIX}/sbin/3dm2
-
-.if !exists(/etc/3dm2)
-	@${MKDIR} /etc/3dm2
-.endif
 
 .if !exists(${PREFIX}/etc/3dm2)
 	@${MKDIR} ${PREFIX}/etc/3dm2
@@ -96,8 +101,11 @@ post-install:
 		${PREFIX}/etc/3dm2/3dm2.conf
 	@${CHMOD} 600 ${PREFIX}/etc/3dm2/3dm2.conf.sample ${PREFIX}/etc/3dm2/3dm2.conf
 
-# 3ware lamely hardcode the locations of various things
+# 3ware uses a hardcoded config dir location that doesn't match hier(9)
 
+.if !exists(/etc/3dm2)
+	@${MKDIR} /etc/3dm2
+.endif
 	@${LN} -s ${PREFIX}/etc/3dm2/msg /etc/3dm2/msg
 	@${LN} -s ${PREFIX}/etc/3dm2/3dm2.conf /etc/3dm2/3dm2.conf
 	@${LN} -s ${PREFIX}/etc/3dm2/3dm2.pem /etc/3dm2/3dm2.pem
