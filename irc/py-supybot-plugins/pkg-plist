@@ -27,22 +27,22 @@
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Amazon/test.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Amazon/test.pyc
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Amazon/test.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/README.txt
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/__init__.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/__init__.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/__init__.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/bab%%PORTOBJFORMAT%%ish.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/bab%%PORTOBJFORMAT%%ish.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/bab%%PORTOBJFORMAT%%ish.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/config.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/config.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/config.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/plugin.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/plugin.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/plugin.pyo
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/test.py
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/test.pyc
-%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish/test.pyo
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/README.txt
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/babelfish.py
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/babelfish.pyc
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/babelfish.pyo
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/config.py
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/config.pyc
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/config.pyo
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/plugin.py
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/plugin.pyc
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/plugin.pyo
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/test.py
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/test.pyc
+%%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish/test.pyo
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/README.txt
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords/__init__.pyc
@@ -763,7 +763,7 @@
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/CafeBrioso
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bnc
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/BadWords
-@dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Bab%%PORTOBJFORMAT%%ish
+@dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Babelfish
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Amazon
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/AcronymFinder
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins
