@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	352
+PORTVERSION=	360
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared \
 # Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-WRKSRC=		${WRKDIR}/plt/src
+WRKSRC=		${WRKDIR}/plt-${PORTVERSION}/src
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_XLIB=	yes
@@ -68,8 +68,5 @@ PLIST_SUB+=		MMM=""
 .else
 PLIST_SUB+=		MMM="@comment "
 .endif
-
-post-patch:
-	${RM} ${WRKSRC}/../collects/profj/to-scheme.ss.orig
 
 .include <bsd.port.post.mk>
