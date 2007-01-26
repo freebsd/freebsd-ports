@@ -23,11 +23,11 @@ CONFLICTS=	umfpack-*
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-L${LOCALBASE}/lib -lf77blas -latlas
+BLAS=		-L${LOCALBASE}/lib -lf77blas -latlas -lcblas
 LAPACK=		-L${LOCALBASE}/lib -lalapack
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
@@ -42,7 +42,7 @@ FPIC=	-fPIC
 FPIC=	-fpic
 .endif
 
-USE_LDCONFIG=   yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
