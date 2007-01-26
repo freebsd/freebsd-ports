@@ -1,15 +1,15 @@
---- kipi-plugins/Makefile.in.orig	Sun Jul  9 01:51:46 2006
-+++ kipi-plugins/Makefile.in	Sat Dec 16 13:42:56 2006
-@@ -385,11 +385,7 @@
- @compile_LIBKEXIF_TRUE@TIMEADJUSTDIR = $(timeadjustdir)
+--- kipi-plugins/Makefile.in.orig	Wed Jan 24 22:04:37 2007
++++ kipi-plugins/Makefile.in	Fri Jan 26 08:31:57 2007
+@@ -377,11 +377,7 @@
  @compile_ACQUIREIMAGES_TRUE@ACQUIREIMAGESDIR = acquireimages
  @compile_RAWCONVERTER_TRUE@RAWCONVERTERDIR = rawconverter
--SUBDIRS = printwizard calendar mpegencoder cdarchiving simpleviewerexport\
--	sendimages batchprocessimages wallpaper findimages galleryexport flickrexport\
--	$(SLIDESHOWDIR) $(KAMERAKLIENTDIR) $(JPEGLOSSLESSDIR) \
--	$(TIMEADJUSTDIR) $(ACQUIREIMAGESDIR) $(RAWCONVERTERDIR) \
--	$(HTMLEXPORTDIR)
-+SUBDIRS = %%SUBDIRS%%
+ @compile_IPODEXPORT_TRUE@IPODEXPORTDIR = ipodexport
+-SUBDIRS = common printwizard calendar mpegencoder cdarchiving simpleviewerexport \
+-	      sendimages batchprocessimages wallpaper findimages galleryexport flickrexport \
+-	      jpeglossless timeadjust gpssync metadataedit \
+-	      $(SLIDESHOWDIR) $(KAMERAKLIENTDIR) $(ACQUIREIMAGESDIR) $(RAWCONVERTERDIR) \
+-	      $(HTMLEXPORTDIR) $(IPODEXPORTDIR) 
++SUBDIRS = common %%SUBDIRS%%
  
  rcdir = $(kde_datadir)/kipi
  rc_DATA = tips

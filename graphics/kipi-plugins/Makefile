@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	kipi
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface plugins
 
-LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi
+LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi \
+		exiv2.0:${PORTSDIR}/graphics/exiv2
 
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \
@@ -24,9 +25,11 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		FINDIMAGES "find duplicate images in albums" on \
 		FLICKREXPORT "export images to flickr account" on \
 		GALLERYEXPORT "export images to remote Gallery server" on \
+		GPSSYNC "geolocalize pictures" on \
 		HTMLEXPORT "export images collections into HTML page" on \
 		JPEGLOSSLESS "batch processing without losing metainfo" on \
 		KAMERAKLIENT "GPhoto2 interface (import from cameras)" on \
+		METADATAEDIT "edit EXIF and IPTC pictures metadata" on \
 		MPEGENCODER "tool to build a video from images" on \
 		PRINTWIZARD "a print wizard" on \
 		RAWCONVERTER "convert RAW images from digital cameras" on \
@@ -41,6 +44,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -100,6 +104,13 @@ SUBDIRS+=	galleryexport
 PLIST_SUB+=	GALLERYEXPORT:="@comment "
 .endif
 
+.if !defined(WITHOUT_GPSSYNC)
+PLIST_SUB+=	GPSSYNC:=""
+SUBDIRS+=	gpssync
+.else
+PLIST_SUB+=	GPSSYNC:="@comment "
+.endif
+
 .if !defined(WITHOUT_HTMLEXPORT)
 PLIST_SUB+=	HTMLEXPORT:=""
 SUBDIRS+=	htmlexport
@@ -111,8 +122,7 @@ PLIST_SUB+=	HTMLEXPORT:="@comment "
 .if !defined(WITHOUT_JPEGLOSSLESS)
 PLIST_SUB+=	JPEGLOSSLESS:=""
 SUBDIRS+=	jpeglossless
-LIB_DEPENDS+=	kexif.1:${PORTSDIR}/graphics/libkexif \
-		Magick++.10:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 PLIST_SUB+=	JPEGLOSSLESS:="@comment "
 .endif
@@ -123,6 +133,13 @@ SUBDIRS+=	kameraklient
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 .else
 PLIST_SUB+=	KAMERAKLIENT:="@comment "
+.endif
+
+.if !defined(WITHOUT_METADATAEDIT)
+PLIST_SUB+=	METADATAEDIT:=""
+SUBDIRS+=	metadataedit
+.else
+PLIST_SUB+=	METADATAEDIT:="@comment "
 .endif
 
 .if !defined(WITHOUT_MPEGENCODER)
@@ -145,8 +162,6 @@ PLIST_SUB+=	PRINTWIZARD:="@comment "
 .if !defined(WITHOUT_RAWCONVERTER)
 PLIST_SUB+=	RAWCONVERTER:=""
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
-MAN1+=		kipidcrawclient.1
 SUBDIRS+=	rawconverter
 .else
 PLIST_SUB+=	RAWCONVERTER:="@comment "
@@ -177,7 +192,6 @@ PLIST_SUB+=	SLIDESHOW:="@comment "
 .if !defined(WITHOUT_TIMEADJUST)
 PLIST_SUB+=	TIMEADJUST:=""
 SUBDIRS+=	timeadjust
-LIB_DEPENDS+=	kexif.1:${PORTSDIR}/graphics/libkexif
 .else
 PLIST_SUB+=	TIMEADJUST:="@comment "
 .endif
