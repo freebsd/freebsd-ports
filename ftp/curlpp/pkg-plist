@@ -8,6 +8,7 @@ include/curlpp/Form.hpp
 include/curlpp/Info.hpp
 include/curlpp/Info.inl
 include/curlpp/Infos.hpp
+include/curlpp/Multi.hpp
 include/curlpp/NonCopyable.hpp
 include/curlpp/Option.hpp
 include/curlpp/Option.inl
@@ -82,5 +83,9 @@ libdata/pkgconfig/curlpp.pc
 %%PORTDOCS%%%%EXAMPLESDIR%%/example10.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/example11.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/example12.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example13.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example14.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example15.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example16.cpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
