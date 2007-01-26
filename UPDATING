@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070127:
+  AFFECTS: users of mail/dovecot
+  AUTHOR: robin@isometry.net
+
+  Since dovecot-1.0.r15, the port has reserved UID/GID 143.
+  If you are upgrading from an earlier version, please allow the uninstall
+  script to remove the dovecot user and group or remove them manually prior
+  to reinstalling the new version.
+  If your prefer to maintain your existing user/group, you may override this
+  change with the DOVECOT_UID/DOVECOT_GID environment variables at
+  installation time.
+
 20070115:
   AFFECTS: users of www/lightsquid
   AUTHOR: clsung@FreeBSD.org
