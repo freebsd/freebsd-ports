@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.43
+PORTVERSION=	4.44
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
@@ -24,8 +24,8 @@ MANCOMPRESSED=	no
 DLLDIR=		${PREFIX}/libexec/p7zip
 
 PLIST_SUB=	MODULES=""
-ALL_TARGET=	7z 7za 7zr sfx
-7ZBIN=		7z 7za 7zr 7zCon.sfx
+ALL_TARGET=	7z 7za 7zr Client7z sfx
+7ZBIN=		7z 7za 7zr Client7z 7zCon.sfx
 .if defined(WITHOUT_MODULES)
 PLIST_SUB=	MODULES="@comment "
 ALL_TARGET=	7za 7zr sfx
@@ -62,7 +62,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin/
 	${LN} -sf 7z ${PREFIX}/bin/7za
 	${LN} -sf 7z ${PREFIX}/bin/7zr
-	${INSTALL_SCRIPT} ${FILESDIR}/p7zip ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/gzip-like_CLI_wrapper_for_7z/p7zip ${PREFIX}/bin/
 .if !defined(WITHOUT_MODULES)
 .for f in Codecs Formats
 	${INSTALL} -d ${DLLDIR}/${f}
