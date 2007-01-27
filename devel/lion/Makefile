@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lion
-DISTVERSION=	20060301
+DISTVERSION=	20060630
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.lundman.net/ftp/
 EXTRACT_SUFX=	.tgz
