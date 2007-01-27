@@ -18,7 +18,7 @@ COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
