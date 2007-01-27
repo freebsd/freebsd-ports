@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-libmp4v2
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Mpeg-4 library and tools from mpeg4ip
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
