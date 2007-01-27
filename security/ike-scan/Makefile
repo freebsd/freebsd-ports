@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ike-scan
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	security
-MASTER_SITES=	http://www.nta-monitor.com/ike-scan/download/
+MASTER_SITES=	http://www.nta-monitor.com/tools/ike-scan/download/
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	VPN scanner and identifier
