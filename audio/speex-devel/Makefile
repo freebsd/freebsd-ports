@@ -21,6 +21,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 CONFLICTS=	speex-1.0*
 
 USE_GNOME=	gnomehack
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
