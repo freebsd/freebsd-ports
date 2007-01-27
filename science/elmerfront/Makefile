@@ -9,10 +9,10 @@ PORTNAME=	front
 PORTVERSION=	5.2.0
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Graphical User Interface for the ELMER FEM package
 
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
