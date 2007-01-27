@@ -4207,6 +4207,7 @@ ha		ports/archivers/ha
 hachoir-core	ports/devel/hachoir-core
 hachoir-metadata	ports/sysutils/hachoir-metadata
 hachoir-parser	ports/devel/hachoir-parser
+hachoir-urwid	ports/sysutils/hachoir-urwid
 hachoir-wx	ports/sysutils/hachoir-wx
 hackbot		ports/security/hackbot
 hackedbox	ports/x11-wm/hackedbox
