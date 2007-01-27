@@ -7,7 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -17,7 +17,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		OgreMain.12:${PORTSDIR}/graphics/ogre3d \
+		OgreMain.13:${PORTSDIR}/graphics/ogre3d \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
