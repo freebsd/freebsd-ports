@@ -4,4 +4,4 @@ include/ffi_mips.h
 lib/libffi.a
 lib/libffi.la
 lib/libffi.so
-lib/libffi.so.2.3
+lib/libffi.so.2
