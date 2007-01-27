@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zope210
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
-DISTNAME=	Zope-${PORTVERSION}-final
+DISTNAME=	Zope-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
@@ -18,6 +18,8 @@ COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.4
 USE_RC_SUBR=	${PORTNAME}.sh zeo210.sh
+
+WRKSRC=		${WRKDIR}/${DISTNAME}-final
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.

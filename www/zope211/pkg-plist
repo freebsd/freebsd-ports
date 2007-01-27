@@ -933,6 +933,10 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_skin.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_traversable.py
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_traversable.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_zope3security.py
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/test_zope3security.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/zope3security.py
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/zope3security.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/component/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/Five/component/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/component/browser.py
@@ -1433,6 +1437,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/ZopePageTemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/configure.zcml
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/examples/index.xml
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/examples/zpt_examples.zexp
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/PageTemplate_Edit.stx
@@ -1459,10 +1464,13 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-python.stx
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-string.stx
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/batch.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/batch.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/BooleanAttributesAndDefault.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckBatchIteration.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslate.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslateHooked.html
@@ -1483,6 +1491,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShop1.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShop2.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input/TeeShopLAF.html
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/BooleanAttributesAndDefault.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckBatchIteration.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslate.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslateHooked.html
@@ -1522,6 +1531,10 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/test_ptfile.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/util.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/util.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/unicodeconflictresolver.py
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/unicodeconflictresolver.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/utils.py
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/utils.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www/default.html
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www/exclamation.gif
@@ -3358,6 +3371,7 @@
 %%ZOPEBASEDIR%%/lib/python/Zope2/Startup/zopeschema.xml
 %%ZOPEBASEDIR%%/lib/python/Zope2/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Zope2/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope2/version.txt
 %%ZOPEBASEDIR%%/lib/python/ZopeUndo/Prefix.py
 %%ZOPEBASEDIR%%/lib/python/ZopeUndo/Prefix.pyc
 %%ZOPEBASEDIR%%/lib/python/ZopeUndo/__init__.py
@@ -4908,7 +4922,6 @@
 %%ZOPEBASEDIR%%/lib/python/transaction/tests/test_savepoint.pyc
 %%ZOPEBASEDIR%%/lib/python/transaction/tests/test_transaction.py
 %%ZOPEBASEDIR%%/lib/python/transaction/tests/test_transaction.pyc
-%%ZOPEBASEDIR%%/lib/python/version.txt
 %%ZOPEBASEDIR%%/lib/python/webdav/Collection.py
 %%ZOPEBASEDIR%%/lib/python/webdav/Collection.pyc
 %%ZOPEBASEDIR%%/lib/python/webdav/EtagSupport.py
@@ -5828,6 +5841,7 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/configure.zcml
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/folder.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/folder.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/fssync/__init__.py
@@ -6075,6 +6089,10 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/tests/test_unauthorized.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/unauthorized.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/unauthorized.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/test_put.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/test_put.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/httpdate.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/httpdate.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/interfaces.py
@@ -9217,6 +9235,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/apidoc/browser
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/apidoc/zcmlmodule
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/apidoc
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests
