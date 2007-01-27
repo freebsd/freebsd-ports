@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -22,8 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	sylpheed-claws
 
-THEMEVERSION=	20060615
-THEMEFILE=	sylpheed-claws-themes-${THEMEVERSION}.tar.gz
+THEMEVERSION=	20070116
+THEMEFILE=	claws-mail-themes-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -212,7 +212,8 @@ post-install:
 		${GREP} -vE '(Makefile.*|INSTALL)' | \
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes/
 	@${CHMOD} -R a+r ${DATADIR}/themes
-	@${FIND} ${DATADIR}/themes -type d -print0 | ${XARGS} -0 ${CHMOD} a+x
+	@${FIND} ${DATADIR}/themes -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${DATADIR}/themes -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
