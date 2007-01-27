@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2006-08-28
+DISTVERSION=		2007-01-15
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
@@ -24,7 +24,7 @@ COMMENT=		Schematic and PCB editing software
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}.tgz:dat
-DOCVERSION=	2006-06-26
+DOCVERSION=	2006-12-08
 .endif
 
 WRKSRC=		${WRKDIR}/kicad-dev
