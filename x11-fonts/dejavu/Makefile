@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dejavu
-DISTVERSION=	2.13
+DISTVERSION=	2.14
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
-PORTDOCS=	README status.txt unicover.txt
+PORTDOCS=	README status.txt unicover.txt langcover.txt
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
