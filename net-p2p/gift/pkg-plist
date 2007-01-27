@@ -28,9 +28,11 @@ include/libgift/stopwatch.h
 include/libgift/strobj.h
 include/libgift/tcpc.h
 include/libgift/tree.h
+lib/libgift.a
 lib/libgift.la
 lib/libgift.so
 lib/libgift.so.0
+lib/libgiftproto.a
 lib/libgiftproto.la
 lib/libgiftproto.so
 lib/libgiftproto.so.0

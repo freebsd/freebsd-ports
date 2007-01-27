@@ -15,6 +15,7 @@ MASTER_SITES=	http://thalassocracy.org/libfreenet/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freenet library written in C
 
+USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
