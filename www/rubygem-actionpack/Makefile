@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	1.12.5
+PORTVERSION=	1.13.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.3.1.gemspec:${PORTSDIR}/devel/rubygem-activesupport
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.4.0.gemspec:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # This target is only meant to be used by the port maintainer.
