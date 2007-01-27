@@ -141,7 +141,6 @@
     SUBDIR += firefox15
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
-    SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flock

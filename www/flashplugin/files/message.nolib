@@ -1,9 +1,0 @@
-===
-You can't build this port without a.out csu library.
-Please install them as follows:
-
-1. extract /usr/src/lib (distribution files: src/slib.??)
-2. cd /usr/src/lib/csu/i386
-3. make depend
-4. make OBJFORMAT=aout clean all install cleandir
-===
