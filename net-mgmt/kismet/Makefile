@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kismet
-PORTVERSION=	200604.r1
+PORTVERSION=	200701.r1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
-DISTNAME=	kismet-2006-04-R1
+DISTNAME=	kismet-2007-01-R1b
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	--enable-syspcap
+CONFIGURE_ARGS+=	--enable-syspcap --mandir=${MANPREFIX}/man
 
 OPTIONS=	CURSES "libcurses interface" on \
 		PANEL "libpanels interface" on \
