@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	textile
-DISTVERSION=	${DRUPAL_VERSION}
-PORTREVISION=	20060511
+DISTVERSION=	4.7.x-1.x-dev
+PORTREVISION=	20061113
 CATEGORIES=	www textproc
 MASTER_SITE_SUBDIR=	brooks
 
@@ -16,16 +16,17 @@ COMMENT=	Textile markup module for Drupal
 
 DRUPAL_MODULE=	yes
 MODULE_DIRS=	textilephp
-MODULE_FILES=	textile.module textilephp/Textile.php
+MODULE_FILES=	textile.module textilephp/Textile.php DrupalTextile.inc
 DOC_DIRS=	textilephp/doc textilephp
 DOC_FILES=	CHANGELOG.txt CREDITS.txt INSTALL.txt LICENSE.txt README.txt \
-		textilephp/doc/classMTLikeTextile-members.html \
+		TODO.txt \
 		textilephp/doc/Textile_8php-source.html \
 		textilephp/doc/Textile_8php.html \
 		textilephp/doc/annotated.html \
-		textilephp/doc/classTextile-members.html \
+		textilephp/doc/classMTLikeTextile-members.html \
 		textilephp/doc/classMTLikeTextile.html \
 		textilephp/doc/classMTLikeTextile.png \
+		textilephp/doc/classTextile-members.html \
 		textilephp/doc/classTextile.html \
 		textilephp/doc/classTextile.png \
 		textilephp/doc/doxygen.css \
@@ -39,6 +40,7 @@ DOC_FILES=	CHANGELOG.txt CREDITS.txt INSTALL.txt LICENSE.txt README.txt \
 		textilephp/textilephp.doxyfile \
 		textilephp/CHANGELOG \
 		textilephp/CREDITS \
+		textilephp/LICENSE \
 		textilephp/README \
 		textilephp/TODO
 
