@@ -14,6 +14,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	OpenDivX decoding engine from Project Mayo
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
