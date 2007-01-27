@@ -19,14 +19,14 @@ bin/blobAndConquer
 %%DATADIR%%/data/bsp/bossBattle3.map
 %%DATADIR%%/data/bsp/bossBattle4.bsp
 %%DATADIR%%/data/bsp/bossBattle4.map
-%%DATADIR%%/data/bsp/bossTest.bsp
-%%DATADIR%%/data/bsp/bossTest.map
 %%DATADIR%%/data/bsp/caves1.bsp
 %%DATADIR%%/data/bsp/caves1.map
 %%DATADIR%%/data/bsp/caves2.bsp
 %%DATADIR%%/data/bsp/caves2.map
 %%DATADIR%%/data/bsp/caves3.bsp
 %%DATADIR%%/data/bsp/caves3.map
+%%DATADIR%%/data/bsp/crypt.bsp
+%%DATADIR%%/data/bsp/crypt.map
 %%DATADIR%%/data/bsp/desimilator.bsp
 %%DATADIR%%/data/bsp/desimilator.map
 %%DATADIR%%/data/bsp/enemyBase1_1.bsp
@@ -45,6 +45,8 @@ bin/blobAndConquer
 %%DATADIR%%/data/bsp/enemyBase3_1.map
 %%DATADIR%%/data/bsp/enemyBase3_3.bsp
 %%DATADIR%%/data/bsp/enemyBase3_3.map
+%%DATADIR%%/data/bsp/enemyTest.bsp
+%%DATADIR%%/data/bsp/enemyTest.map
 %%DATADIR%%/data/bsp/floodedTunnel.bsp
 %%DATADIR%%/data/bsp/floodedTunnel.map
 %%DATADIR%%/data/bsp/floodedTunnel2.bsp
@@ -57,8 +59,6 @@ bin/blobAndConquer
 %%DATADIR%%/data/bsp/sewers1.map
 %%DATADIR%%/data/bsp/start.bsp
 %%DATADIR%%/data/bsp/start.map
-%%DATADIR%%/data/bsp/test.bsp
-%%DATADIR%%/data/bsp/test.map
 %%DATADIR%%/data/bsp/training.bsp
 %%DATADIR%%/data/bsp/training.map
 %%DATADIR%%/data/bsp/waste.bsp
@@ -67,25 +67,42 @@ bin/blobAndConquer
 %%DATADIR%%/data/combatResources/sounds
 %%DATADIR%%/data/combatResources/textures
 %%DATADIR%%/data/cutscenes/ancientTomb3End
+%%DATADIR%%/data/cutscenes/grasslands2Start
 %%DATADIR%%/data/cutscenes/hub
+%%DATADIR%%/data/cutscenes/wasteDisposalStart
 %%DATADIR%%/data/fonts/909.ttf
 %%DATADIR%%/data/fonts/tele.ttf
 %%DATADIR%%/data/fonts/tycho.ttf
 %%DATADIR%%/data/fonts/vera.ttf
-%%DATADIR%%/data/gameDefs/bioTank1
-%%DATADIR%%/data/gameDefs/bioTank2
 %%DATADIR%%/data/gameDefs/bioTankCommander
-%%DATADIR%%/data/gameDefs/blaze
 %%DATADIR%%/data/gameDefs/blobs
+%%DATADIR%%/data/gameDefs/cryptBoss
 %%DATADIR%%/data/gameDefs/defines.h
 %%DATADIR%%/data/gameDefs/enemies
 %%DATADIR%%/data/gameDefs/eyeDroidCommander
 %%DATADIR%%/data/gameDefs/features
-%%DATADIR%%/data/gameDefs/frost
-%%DATADIR%%/data/gameDefs/ionCannon
 %%DATADIR%%/data/gameDefs/items
+%%DATADIR%%/data/gameDefs/specialist
 %%DATADIR%%/data/gameDefs/spiderBlobCommander
 %%DATADIR%%/data/gameDefs/weapons
+%%DATADIR%%/data/locale/ca/additional
+%%DATADIR%%/data/locale/ca/battle
+%%DATADIR%%/data/locale/ca/cheats
+%%DATADIR%%/data/locale/ca/controls
+%%DATADIR%%/data/locale/ca/enemies
+%%DATADIR%%/data/locale/ca/hubLocale
+%%DATADIR%%/data/locale/ca/items
+%%DATADIR%%/data/locale/ca/laserGrid
+%%DATADIR%%/data/locale/ca/loadSave
+%%DATADIR%%/data/locale/ca/mastermind
+%%DATADIR%%/data/locale/ca/mission01Locale
+%%DATADIR%%/data/locale/ca/mission02Locale
+%%DATADIR%%/data/locale/ca/mission03Locale
+%%DATADIR%%/data/locale/ca/mission04Locale
+%%DATADIR%%/data/locale/ca/options
+%%DATADIR%%/data/locale/ca/status
+%%DATADIR%%/data/locale/ca/system
+%%DATADIR%%/data/locale/ca/weapons
 %%DATADIR%%/data/locale/de/additional
 %%DATADIR%%/data/locale/de/battle
 %%DATADIR%%/data/locale/de/cheats
@@ -157,12 +174,15 @@ bin/blobAndConquer
 %%DATADIR%%/data/locale/en/mission17Locale
 %%DATADIR%%/data/locale/en/mission18Locale
 %%DATADIR%%/data/locale/en/mission19Locale
+%%DATADIR%%/data/locale/en/mission20Locale
 %%DATADIR%%/data/locale/en/mission21Locale
 %%DATADIR%%/data/locale/en/mission22Locale
 %%DATADIR%%/data/locale/en/mission23Locale
 %%DATADIR%%/data/locale/en/mission24Locale
 %%DATADIR%%/data/locale/en/mission25Locale
 %%DATADIR%%/data/locale/en/mission26Locale
+%%DATADIR%%/data/locale/en/mission27Locale
+%%DATADIR%%/data/locale/en/mission28Locale
 %%DATADIR%%/data/locale/en/mission29Locale
 %%DATADIR%%/data/locale/en/mission30Locale
 %%DATADIR%%/data/locale/en/mission31Locale
@@ -194,12 +214,15 @@ bin/blobAndConquer
 %%DATADIR%%/data/missions/mission17
 %%DATADIR%%/data/missions/mission18
 %%DATADIR%%/data/missions/mission19
+%%DATADIR%%/data/missions/mission20
 %%DATADIR%%/data/missions/mission21
 %%DATADIR%%/data/missions/mission22
 %%DATADIR%%/data/missions/mission23
 %%DATADIR%%/data/missions/mission24
 %%DATADIR%%/data/missions/mission25
 %%DATADIR%%/data/missions/mission26
+%%DATADIR%%/data/missions/mission27
+%%DATADIR%%/data/missions/mission28
 %%DATADIR%%/data/missions/mission29
 %%DATADIR%%/data/missions/mission30
 %%DATADIR%%/data/missions/mission31
@@ -220,37 +243,6 @@ bin/blobAndConquer
 %%DATADIR%%/data/widgets/masterMind
 %%DATADIR%%/data/widgets/status
 %%DATADIR%%/data/widgets/title
-%%DATADIR%%/gfx/blender/cannonbase.blend
-%%DATADIR%%/gfx/blender/cannontop.blend
-%%DATADIR%%/gfx/blender/cherry.blend
-%%DATADIR%%/gfx/blender/cypher1.blend
-%%DATADIR%%/gfx/blender/cypher2.blend
-%%DATADIR%%/gfx/blender/debris1.blend
-%%DATADIR%%/gfx/blender/debris2.blend
-%%DATADIR%%/gfx/blender/debris3.blend
-%%DATADIR%%/gfx/blender/debris4.blend
-%%DATADIR%%/gfx/blender/debris5.blend
-%%DATADIR%%/gfx/blender/diamond.blend
-%%DATADIR%%/gfx/blender/eyedroidcommander.blend
-%%DATADIR%%/gfx/blender/flamethrower.blend
-%%DATADIR%%/gfx/blender/grenade.blend
-%%DATADIR%%/gfx/blender/gun.blend
-%%DATADIR%%/gfx/blender/hackerswitch.blend
-%%DATADIR%%/gfx/blender/hook.blend
-%%DATADIR%%/gfx/blender/hookfired.blend
-%%DATADIR%%/gfx/blender/icegun.blend
-%%DATADIR%%/gfx/blender/plasmapistol.blend
-%%DATADIR%%/gfx/blender/plasmarifle.blend
-%%DATADIR%%/gfx/blender/rifle.blend
-%%DATADIR%%/gfx/blender/rocket.blend
-%%DATADIR%%/gfx/blender/rocketlauncher.blend
-%%DATADIR%%/gfx/blender/shieldbelt.blend
-%%DATADIR%%/gfx/blender/spiderblob.blend
-%%DATADIR%%/gfx/blender/switch.blend
-%%DATADIR%%/gfx/blender/teletag.blend
-%%DATADIR%%/gfx/blender/throwngrenade.blend
-%%DATADIR%%/gfx/blender/uzi.blend
-%%DATADIR%%/gfx/blender/webbing.blend
 %%DATADIR%%/gfx/game/0.png
 %%DATADIR%%/gfx/game/1.png
 %%DATADIR%%/gfx/game/2.png
@@ -268,8 +260,11 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/cypher2.png
 %%DATADIR%%/gfx/game/dot.png
 %%DATADIR%%/gfx/game/episode2.png
+%%DATADIR%%/gfx/game/eyedroidcommander.png
+%%DATADIR%%/gfx/game/flamethrower.png
 %%DATADIR%%/gfx/game/hackerswitch.png
 %%DATADIR%%/gfx/game/hook.png
+%%DATADIR%%/gfx/game/icegun.png
 %%DATADIR%%/gfx/game/missionFailed.png
 %%DATADIR%%/gfx/game/orderIcon1.png
 %%DATADIR%%/gfx/game/orderIcon2.png
@@ -283,6 +278,9 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/shieldbelt.png
 %%DATADIR%%/gfx/game/spiderblob.png
 %%DATADIR%%/gfx/game/switch.png
+%%DATADIR%%/gfx/game/tankbase.png
+%%DATADIR%%/gfx/game/tanktop1.png
+%%DATADIR%%/gfx/game/tanktop2.png
 %%DATADIR%%/gfx/game/targetter.png
 %%DATADIR%%/gfx/game/throwngrenade.png
 %%DATADIR%%/gfx/game/title.png
@@ -304,7 +302,9 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/primitive/blob.primitive
 %%DATADIR%%/gfx/primitive/bob.primitive
 %%DATADIR%%/gfx/primitive/c4.primitive
+%%DATADIR%%/gfx/primitive/cryptBoss.primitive
 %%DATADIR%%/gfx/primitive/darkBlob.primitive
+%%DATADIR%%/gfx/primitive/darkEyeDroid.primitive
 %%DATADIR%%/gfx/primitive/eyeDroidCommander.primitive
 %%DATADIR%%/gfx/primitive/eyedroid.primitive
 %%DATADIR%%/gfx/primitive/gunStand.primitive
@@ -345,6 +345,9 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/rw2/shieldbelt.blend.raw
 %%DATADIR%%/gfx/rw2/spiderblob.blend.raw
 %%DATADIR%%/gfx/rw2/switch.blend.raw
+%%DATADIR%%/gfx/rw2/tankbase.blend.raw
+%%DATADIR%%/gfx/rw2/tanktop1.blend.raw
+%%DATADIR%%/gfx/rw2/tanktop2.blend.raw
 %%DATADIR%%/gfx/rw2/teletag.blend.raw
 %%DATADIR%%/gfx/rw2/throwngrenade.blend.raw
 %%DATADIR%%/gfx/rw2/uzi.blend.raw
@@ -366,6 +369,7 @@ bin/blobAndConquer
 %%DATADIR%%/music/The Siege.xm
 %%DATADIR%%/music/Warlord Theme.s3m
 %%DATADIR%%/music/Zenith.s3m
+%%DATADIR%%/sound/ambience/general/klaxon.ogg
 %%DATADIR%%/sound/ambience/general/rain.ogg
 %%DATADIR%%/sound/ambience/grasslands/birdsong.ogg
 %%DATADIR%%/sound/ambience/grasslands/cardinal.ogg
@@ -409,6 +413,9 @@ bin/blobAndConquer
 %%DATADIR%%/sound/combat/empty.ogg
 %%DATADIR%%/sound/combat/explode.ogg
 %%DATADIR%%/sound/combat/flameThrower.ogg
+%%DATADIR%%/sound/combat/galdovLaugh.ogg
+%%DATADIR%%/sound/combat/galdovPain.ogg
+%%DATADIR%%/sound/combat/galdovSplit.ogg
 %%DATADIR%%/sound/combat/glassHit1.ogg
 %%DATADIR%%/sound/combat/glassHit2.ogg
 %%DATADIR%%/sound/combat/glassShatter1.ogg
@@ -475,6 +482,7 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/arrow.png
 %%DATADIR%%/textures/game/babySpiderBlob.png
 %%DATADIR%%/textures/game/black.png
+%%DATADIR%%/textures/game/blackDroid.png
 %%DATADIR%%/textures/game/blood01.png
 %%DATADIR%%/textures/game/blood02.png
 %%DATADIR%%/textures/game/blood03.png
@@ -510,7 +518,9 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/explosionMark01.tga
 %%DATADIR%%/textures/game/explosionMark02.tga
 %%DATADIR%%/textures/game/explosionMark03.tga
+%%DATADIR%%/textures/game/eyedroidcommander.png
 %%DATADIR%%/textures/game/fire.png
+%%DATADIR%%/textures/game/flameThrower.png
 %%DATADIR%%/textures/game/glassImpact01.png
 %%DATADIR%%/textures/game/gold.png
 %%DATADIR%%/textures/game/goodBlob.png
@@ -523,11 +533,13 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/grenadeLauncher.png
 %%DATADIR%%/textures/game/grenadeTexture.png
 %%DATADIR%%/textures/game/grey.png
+%%DATADIR%%/textures/game/groundTarget.tga
 %%DATADIR%%/textures/game/hackerSwitch.png
 %%DATADIR%%/textures/game/hackerSwitch1.png
 %%DATADIR%%/textures/game/hackerSwitch2.png
 %%DATADIR%%/textures/game/hook.png
 %%DATADIR%%/textures/game/iceBlock.jpg
+%%DATADIR%%/textures/game/iceGun.png
 %%DATADIR%%/textures/game/keycard.png
 %%DATADIR%%/textures/game/laserBeam.png
 %%DATADIR%%/textures/game/laserBlob.png
@@ -574,6 +586,12 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/sunset.png
 %%DATADIR%%/textures/game/switch1.png
 %%DATADIR%%/textures/game/switch2.png
+%%DATADIR%%/textures/game/tankbase1.png
+%%DATADIR%%/textures/game/tankbase2.png
+%%DATADIR%%/textures/game/tankbase3.png
+%%DATADIR%%/textures/game/tanktop1.png
+%%DATADIR%%/textures/game/tanktop2.png
+%%DATADIR%%/textures/game/tanktop3.png
 %%DATADIR%%/textures/game/targetter.png
 %%DATADIR%%/textures/game/teekaWeapon.png
 %%DATADIR%%/textures/game/teletag.png
@@ -608,6 +626,7 @@ bin/blobAndConquer
 %%DATADIR%%/textures/grasslands/rimu_coloured.jpg
 %%DATADIR%%/textures/grasslands/rock01.jpg
 %%DATADIR%%/textures/grasslands/rock43.jpg
+%%DATADIR%%/textures/grasslands/rock44.jpg
 %%DATADIR%%/textures/grasslands/rusticblk.jpg
 %%DATADIR%%/textures/grasslands/sapele_cross_cut.jpg
 %%DATADIR%%/textures/grasslands/stonetile15.jpg
@@ -616,6 +635,7 @@ bin/blobAndConquer
 %%DATADIR%%/textures/grasslands/stonewall03.jpg
 %%DATADIR%%/textures/grasslands/transparent1.tga
 %%DATADIR%%/textures/grasslands/transparent2.tga
+%%DATADIR%%/textures/liquid/cryptpool.jpg
 %%DATADIR%%/textures/liquid/lava01.jpg
 %%DATADIR%%/textures/liquid/lava02.jpg
 %%DATADIR%%/textures/liquid/slime.jpg
@@ -710,7 +730,6 @@ bin/blobAndConquer
 @dirrm %%DATADIR%%/gfx/md2
 @dirrm %%DATADIR%%/gfx/gui
 @dirrm %%DATADIR%%/gfx/game
-@dirrm %%DATADIR%%/gfx/blender
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%/data/widgets
 @dirrm %%DATADIR%%/data/texturespecs
@@ -718,6 +737,7 @@ bin/blobAndConquer
 @dirrm %%DATADIR%%/data/misc
 @dirrm %%DATADIR%%/data/locale/en
 @dirrm %%DATADIR%%/data/locale/de
+@dirrm %%DATADIR%%/data/locale/ca
 @dirrm %%DATADIR%%/data/locale
 @dirrm %%DATADIR%%/data/gameDefs
 @dirrm %%DATADIR%%/data/fonts

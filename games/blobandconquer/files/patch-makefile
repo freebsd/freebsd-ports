@@ -1,5 +1,5 @@
---- ./makefile.orig	Wed Dec  6 17:42:21 2006
-+++ ./makefile	Thu Dec  7 17:07:12 2006
+--- makefile.orig	Tue Jan  9 19:54:33 2007
++++ makefile	Sat Jan 27 12:37:37 2007
 @@ -12,15 +12,15 @@
  
  PREFIX = $(DESTDIR)/usr
@@ -25,7 +25,7 @@
 @@ -70,7 +70,7 @@
  all: $(PROG)
  
- %.o: %.cpp %.h defines.h defs.h headers.h
+ %.o: %.cpp %.h data/gameDefs/defines.h defs.h headers.h
 -	$(CXX) $(CFLAGS) -c $<
 +	$(CXX) $(CXXFLAGS) -c $<
  
