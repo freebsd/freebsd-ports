@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	XML-RSS-JavaScript
-PORTVERSION=	0.50
+PORTVERSION=	0.60
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to serialize your RSS as JavaScript
@@ -25,10 +24,7 @@ MAN3=		XML::RSS::JavaScript.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our (\S+)/use vars qw{$$1};$$1/g;' \
-		     -e 's/\r//g;' \
-		${WRKSRC}/lib/XML/RSS/JavaScript.pm
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
