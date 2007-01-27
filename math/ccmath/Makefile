@@ -12,18 +12,37 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	A mathematics library with many different functions
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-post-configure:
-.if (${MACHINE_ARCH} != "i386")
-	(cd ${WRKSRC} && ${SH} non_intel.sh)
+PORTDOCS=	*
+PLIST_FILES=	include/ccmath.h lib/libccm.a lib/libccm.so lib/libccm.so.1
+SRC_DIRS=	cfit complex fft geom intg matrix roots sfunc simu sort statf \
+		tseries util xarm
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+COPT=		-fPIC
 .endif
 
+post-extract:
+	@${CP} ${WRKSRC}/matrix/supp/solv.c ${WRKSRC}/matrix
+	@${CP} ${WRKSRC}/simu/supp/*.c ${WRKSRC}/simu
+	@${CP} ${WRKSRC}/xarm/supp/big-end/*.c ${WRKSRC}/xarm
+	@${RM} ${WRKSRC}/matrix/*.s
+	@${RM} ${WRKSRC}/simu/*.s
+
 do-build:
-	(cd ${WRKSRC} && ${SH} makelibs.sh)
+.for d in ${SRC_DIRS}
+	(cd ${WRKSRC}/${d}; ${CC} ${CFLAGS} ${COPT} -c *.c)
+	${MV} ${WRKSRC}/${d}/*.o ${WRKSRC}/tmp
+.endfor
+	(cd ${WRKSRC}/matrix; ${CC} ${COPT} -c qrb*.c)
+	${MV} ${WRKSRC}/matrix/*.o ${WRKSRC}/tmp
+	(cd ${WRKSRC}/tmp; ${AR} r libccm.a *.o; ${CC} -shared -o libccm.so *.o)
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/ccmath.h ${PREFIX}/include
@@ -35,4 +54,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/manual/* ${PREFIX}/share/doc/ccmath
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
