@@ -1,12 +1,9 @@
 %%DOCSDIR%%/ChangeLog.txt
-%%DOCSDIR%%/FAQ.txt
 %%DOCSDIR%%/LICENSE.txt
 %%DOCSDIR%%/README.txt
 %%DOCSDIR%%/TODO.txt
-%%PHPROXY%%/PHProxy.class.php
+%%PHPROXY%%/index.inc.php
 %%PHPROXY%%/index.php
-%%PHPROXY%%/javascript.js
 %%PHPROXY%%/style.css
-%%PHPROXY%%/url_form.inc
 @dirrm %%PHPROXY%%
 @dirrm %%DOCSDIR%%
