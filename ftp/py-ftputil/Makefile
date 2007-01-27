@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftputil
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	ftp python
 MASTER_SITES=	# http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ PORTDOC_FILES=	README.html README.txt ftputil.html ftputil.txt ftputil_ru_utf8.t
 
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	${FETCH_CMD} -o "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}" "http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/ftputil-2.2.tar.gz?format=raw"
+	${FETCH_CMD} -o "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}" "http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/${DISTNAME}${EXTRACT_SUFX}?format=raw"
 .endif
 
 post-install:
