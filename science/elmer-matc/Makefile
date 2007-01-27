@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	matc
-PORTVERSION=	5.2.0
+PORTVERSION=	5.3.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
