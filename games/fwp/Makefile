@@ -7,7 +7,7 @@
 
 PORTNAME=	fwp
 PORTVERSION=	0.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fightwinprevail
@@ -17,7 +17,7 @@ MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Multiplayer first person shooter
 
 BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
-LIB_DEPENDS=	OgreMain.12:${PORTSDIR}/graphics/ogre3d
+LIB_DEPENDS=	OgreMain.13:${PORTSDIR}/graphics/ogre3d
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
