@@ -3,4 +3,4 @@ bin/svn2cl
 %%DATADIR%%/svn2cl.xsl
 %%DATADIR%%/svn2html.css
 %%DATADIR%%/svn2html.xsl
-@dirrmtry share/svn2cl
+@dirrmtry %%DATADIR%%
