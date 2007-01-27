@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
@@ -53,7 +53,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--enable-lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
