@@ -1,85 +1,155 @@
 %%GEM_CACHE%%
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000454.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000455.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000456.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000447.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000448.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000449.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.src/M000452.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.src/M000453.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.src/M000450.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.src/M000451.html
-%%GEM_DOC_DIR%%/rdoc/classes/MailHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/MailHelper.src/M000457.html
-%%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.html
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/install.rb
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/MIT-LICENSE
+%%GEM_LIB_DIR%%/lib/action_mailer.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/adv_attr_accessor.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/base.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/helpers.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/mail_helper.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/part.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/part_container.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/quoting.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/utils.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/version.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/text/format.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/address.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/attachments.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/base64.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/config.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/encode.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/facade.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/header.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/info.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/loader.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/mail.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/mailbox.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/mbox.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/net.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/obsolete.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/parser.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/port.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/quoting.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/scanner.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/scanner_r.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/stringio.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/tmail.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/utils.rb
+%%GEM_LIB_DIR%%/test/abstract_unit.rb
+%%GEM_LIB_DIR%%/test/mail_helper_test.rb
+%%GEM_LIB_DIR%%/test/mail_render_test.rb
+%%GEM_LIB_DIR%%/test/mail_service_test.rb
+%%GEM_LIB_DIR%%/test/quoting_test.rb
+%%GEM_LIB_DIR%%/test/tmail_test.rb
+%%GEM_LIB_DIR%%/test/url_test.rb
+%%GEM_LIB_DIR%%/test/fixtures/raw_email
+%%GEM_LIB_DIR%%/test/fixtures/raw_email10
+%%GEM_LIB_DIR%%/test/fixtures/raw_email11
+%%GEM_LIB_DIR%%/test/fixtures/raw_email12
+%%GEM_LIB_DIR%%/test/fixtures/raw_email13
+%%GEM_LIB_DIR%%/test/fixtures/raw_email2
+%%GEM_LIB_DIR%%/test/fixtures/raw_email3
+%%GEM_LIB_DIR%%/test/fixtures/raw_email4
+%%GEM_LIB_DIR%%/test/fixtures/raw_email5
+%%GEM_LIB_DIR%%/test/fixtures/raw_email6
+%%GEM_LIB_DIR%%/test/fixtures/raw_email7
+%%GEM_LIB_DIR%%/test/fixtures/raw_email8
+%%GEM_LIB_DIR%%/test/fixtures/raw_email9
+%%GEM_LIB_DIR%%/test/fixtures/raw_email_quoted_with_0d0a
+%%GEM_LIB_DIR%%/test/fixtures/raw_email_with_partially_quoted_subject
+%%GEM_LIB_DIR%%/test/fixtures/first_mailer/share.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_mail_helper.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_test_helper.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helpers/test_helper.rb
+%%GEM_LIB_DIR%%/test/fixtures/path.with.dots/multipart_with_template_path_with_dots.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/path.with.dots/funky_path_mailer/multipart_with_template_path_with_dots.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/second_mailer/share.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/templates/signed_up.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.ignored.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.rhtml.bak
+%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.text.html.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.text.plain.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.text.yaml.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test_mailer/signed_up.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test_mailer/signed_up_with_url.rhtml
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/adv_attr_accessor_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/helpers_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/mail_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/part_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/part_container_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/quoting_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/utils_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/text/format_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/address_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/attachments_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/base64_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/config_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/encode_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/facade_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/header_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/info_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/loader_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/mail_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/mailbox_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/mbox_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/net_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/obsolete_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/parser_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/port_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/quoting_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/scanner_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/scanner_r_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/tmail_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/stringio_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/utils_rb.html
 %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src/M000002.html
 %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src/M000003.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail.src/M000004.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddDate.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddDate.src/M000233.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000376.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000377.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000378.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000379.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000381.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000382.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000383.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000384.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000386.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000388.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000389.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000390.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000392.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000264.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000265.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000266.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000268.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000269.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000270.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000271.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000272.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000273.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000275.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000276.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000277.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000278.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000280.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000281.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressHeader.src/M000284.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Attachment.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Base64.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000023.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Base64.src/M000024.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Base64.src/M000025.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Base64.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000204.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000205.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000206.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000207.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000210.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000038.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.src/M000039.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.src/M000040.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.src/M000041.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.src/M000042.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.src/M000371.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.src/M000372.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src/M000044.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src/M000045.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src/M000046.html
@@ -88,79 +158,14 @@
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/DateTimeHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.src/M000055.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/DateTimeHeader.src/M000056.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/DateTimeHeader.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000249.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000250.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000251.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000252.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000253.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000254.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000255.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000257.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000258.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000259.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000260.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000261.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000262.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000263.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.src/M000369.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.src/M000370.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000407.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000408.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000409.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000410.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000411.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000412.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000413.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000414.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000415.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000416.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000417.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000418.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000420.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000421.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000422.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000423.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000424.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000425.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000301.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000302.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000303.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000304.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000336.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000337.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000339.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000340.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000341.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000342.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000343.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000344.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000345.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000346.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000347.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000348.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000350.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000308.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000309.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000310.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000311.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000312.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000313.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000314.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000315.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000316.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000317.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/KeywordsHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/KeywordsHeader.src/M000283.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UnstructuredHeader.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UnstructuredHeader.src/M000059.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src/M000060.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src/M000061.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src/M000062.html
@@ -278,14 +283,29 @@
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src/M000200.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src/M000201.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src/M000202.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Parser.src/M000203.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000204.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000205.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000206.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000207.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src/M000210.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.src/M000211.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.src/M000212.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000213.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000214.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000216.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000217.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000218.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000219.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000221.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000223.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000227.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000228.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000229.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000230.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000231.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeMulti.src/M000232.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddDate.src/M000233.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src/M000234.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src/M000235.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src/M000236.html
@@ -296,76 +316,66 @@
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src/M000243.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src/M000244.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src/M000245.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.src/M000373.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.src/M000374.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000213.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000214.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000216.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000217.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000218.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000219.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000221.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src/M000223.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhPort.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.src/M000211.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.src/M000212.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeMulti.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeMulti.src/M000232.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src/M000352.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src/M000353.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src/M000354.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000397.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000398.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000399.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000400.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000401.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Parser.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Parser.src/M000203.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Port.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000249.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000250.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000251.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000252.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000253.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000254.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000255.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000257.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000258.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000259.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000260.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000261.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000262.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src/M000263.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000264.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000265.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000266.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000268.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000269.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000270.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000271.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000272.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000273.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000275.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000276.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000277.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000278.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000280.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src/M000281.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/Port.src/M000282.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000355.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000356.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000357.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000358.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000359.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000360.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000361.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000362.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000363.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000364.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000365.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000366.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000367.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000402.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000403.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000404.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000405.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000406.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReturnPathHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/KeywordsHeader.src/M000283.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressHeader.src/M000284.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000285.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000286.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000287.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000288.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000289.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000290.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000291.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000292.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000294.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000296.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000297.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000301.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000302.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000303.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src/M000304.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReturnPathHeader.src/M000305.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReturnPathHeader.src/M000306.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReturnPathHeader.src/M000307.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.src/M000395.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.src/M000396.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/SingleAddressHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/SingleAddressHeader.src/M000368.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000006.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000007.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src/M000010.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000308.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000309.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000310.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000311.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000312.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000313.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000314.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000315.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000316.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src/M000317.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src/M000318.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src/M000319.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src/M000320.html
@@ -380,45 +390,131 @@
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src/M000331.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src/M000333.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src/M000335.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/StructuredHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000336.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000337.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000339.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000340.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000341.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000342.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000343.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000344.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000345.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000346.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000347.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000348.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src/M000350.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src/M000352.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src/M000353.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src/M000354.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000355.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000356.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000357.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000358.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000359.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000360.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000361.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000362.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000363.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000364.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000365.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000366.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src/M000367.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/SingleAddressHeader.src/M000368.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.src/M000369.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.src/M000370.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.src/M000371.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.src/M000372.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.src/M000373.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.src/M000374.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/StructuredHeader.src/M000375.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/SyntaxError.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000376.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000377.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000378.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000379.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000381.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000382.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000383.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000384.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000386.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000388.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000389.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000390.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src/M000392.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.src/M000395.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.src/M000396.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000397.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000398.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000399.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000400.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src/M000401.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000402.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000403.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000404.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000405.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src/M000406.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000407.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000408.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000409.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000410.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000411.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000412.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000413.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000414.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000415.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000416.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000417.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000418.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000420.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000421.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000422.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000423.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000424.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src/M000425.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000011.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000013.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000014.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000015.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000021.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000285.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000286.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000287.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000288.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000289.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000290.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000291.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000292.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000294.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000296.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src/M000297.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000227.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000228.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000229.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000230.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src/M000231.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Base64.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/DateTimeHeader.html
 %%GEM_DOC_DIR%%/rdoc/classes/TMail/UnstructuredHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UnstructuredHeader.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/TMail/UnstructuredHeader.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/Text/Format.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Parser.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeMulti.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddDate.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/SyntaxError.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Port.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/KeywordsHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MhPort.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReturnPathHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/SingleAddressHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Attachment.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/StructuredHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.html
 %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src/M000426.html
 %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src/M000427.html
 %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src/M000428.html
@@ -440,123 +536,38 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src/M000444.html
 %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src/M000445.html
 %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src/M000446.html
+%%GEM_DOC_DIR%%/rdoc/classes/Text/Format.html
 %%GEM_DOC_DIR%%/rdoc/classes/Text/Format/SplitWord.html
-%%GEM_DOC_DIR%%/rdoc/created.rid
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/adv_attr_accessor_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/base_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/helpers_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/mail_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/part_container_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/part_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/quoting_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/utils_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/text/format_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/address_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/attachments_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/base64_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/config_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/encode_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/facade_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/header_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/info_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/loader_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/mail_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/mailbox_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/mbox_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/net_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/obsolete_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/parser_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/port_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/quoting_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/scanner_r_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/scanner_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/stringio_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/tmail_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/utils_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/version_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer_rb.html
-%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000447.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000448.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000449.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.src/M000450.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.src/M000451.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.src/M000452.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.src/M000453.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000454.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000455.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000456.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/MailHelper.src/M000457.html
+%%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.html
+%%GEM_DOC_DIR%%/rdoc/classes/TMail.html
+%%GEM_DOC_DIR%%/rdoc/classes/MailHelper.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_LIB_DIR%%/CHANGELOG
-%%GEM_LIB_DIR%%/MIT-LICENSE
-%%GEM_LIB_DIR%%/README
-%%GEM_LIB_DIR%%/Rakefile
-%%GEM_LIB_DIR%%/install.rb
-%%GEM_LIB_DIR%%/lib/action_mailer.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/adv_attr_accessor.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/base.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/helpers.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/mail_helper.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/part.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/part_container.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/quoting.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/utils.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/text/format.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/address.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/attachments.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/base64.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/config.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/encode.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/facade.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/header.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/info.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/loader.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/mail.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/mailbox.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/mbox.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/net.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/obsolete.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/parser.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/port.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/quoting.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/scanner.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/scanner_r.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/stringio.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/tmail.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/utils.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/version.rb
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper_method.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_mail_helper.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_test_helper.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helpers/test_helper.rb
-%%GEM_LIB_DIR%%/test/fixtures/path.with.dots/multipart_with_template_path_with_dots.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/raw_email
-%%GEM_LIB_DIR%%/test/fixtures/raw_email10
-%%GEM_LIB_DIR%%/test/fixtures/raw_email11
-%%GEM_LIB_DIR%%/test/fixtures/raw_email12
-%%GEM_LIB_DIR%%/test/fixtures/raw_email13
-%%GEM_LIB_DIR%%/test/fixtures/raw_email2
-%%GEM_LIB_DIR%%/test/fixtures/raw_email3
-%%GEM_LIB_DIR%%/test/fixtures/raw_email4
-%%GEM_LIB_DIR%%/test/fixtures/raw_email5
-%%GEM_LIB_DIR%%/test/fixtures/raw_email6
-%%GEM_LIB_DIR%%/test/fixtures/raw_email7
-%%GEM_LIB_DIR%%/test/fixtures/raw_email8
-%%GEM_LIB_DIR%%/test/fixtures/raw_email9
-%%GEM_LIB_DIR%%/test/fixtures/templates/signed_up.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.ignored.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.rhtml.bak
-%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.text.html.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.text.plain.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.text.yaml.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/test_mailer/signed_up.rhtml
-%%GEM_LIB_DIR%%/test/mail_helper_test.rb
-%%GEM_LIB_DIR%%/test/mail_render_test.rb
-%%GEM_LIB_DIR%%/test/mail_service_test.rb
-%%GEM_LIB_DIR%%/test/quoting_test.rb
-%%GEM_LIB_DIR%%/test/tmail_test.rb
-%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/test_mailer
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/templates
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/second_mailer
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/path.with.dots/funky_path_mailer
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/path.with.dots
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/helpers
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/helper_mailer
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/first_mailer
 @dirrm %%GEM_LIB_DIR%%/test/fixtures
 @dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail
@@ -565,67 +576,67 @@
 @dirrm %%GEM_LIB_DIR%%/lib/action_mailer
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/MailHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Text/Format
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Text
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/StructuredHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/SingleAddressHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReturnPathHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/KeywordsHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Port.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddDate.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeMulti.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Parser.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/UnstructuredHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/DateTimeHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Base64.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/text
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Text/Format.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Text/Format
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Text
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/UnstructuredHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Unquoter.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/UNIXMbox.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/TextUtils.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/StructuredHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/StringPort.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/StrategyInterface.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/SingleAddressHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Scanner_R.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReturnPathHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReferencesHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ReceivedHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Port.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Parser.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeVersionHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeSingle.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeMulti.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MimeEncodeAuto.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MhMailbox.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MessageIdHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MaildirPort.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Maildir.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/MailFlags.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Mail.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/KeywordsHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/HeaderField.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/FilePort.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/EncryptedHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Encoder.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/DeleteFields.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Decoder.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/DateTimeHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTypeHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentTransferEncodingHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/ContentDispositionHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Config.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Base64.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddressGroup.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/Address.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddMessageId.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail/AddDate.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TMail
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/MailHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/PartContainer.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Part.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Helpers
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
