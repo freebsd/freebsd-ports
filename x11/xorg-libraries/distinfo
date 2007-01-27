@@ -4,3 +4,6 @@ SIZE (xorg/X11R6.9.0-src1.tar.gz) = 33460996
 MD5 (xorg/X11R6.9.0-src3.tar.gz) = 4d5450bde835270632e004b25e45ef33
 SHA256 (xorg/X11R6.9.0-src3.tar.gz) = 6c55602a0d6476457d3cf6a1413c39d63c70ca9255749bff5502dae9414f9971
 SIZE (xorg/X11R6.9.0-src3.tar.gz) = 10872474
+MD5 (xorg/x11r6.9.0-cidfonts.diff) = 7c0c53f1c7ffd97b429eda1eefdff9cb
+SHA256 (xorg/x11r6.9.0-cidfonts.diff) = c694b6cfe3c41eb36d566765f70b244307e7aa569f84cd8979e36b7d723aa487
+SIZE (xorg/x11r6.9.0-cidfonts.diff) = 2998
