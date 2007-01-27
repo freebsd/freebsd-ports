@@ -2733,7 +2733,6 @@ flamerobin	ports/databases/flamerobin
 flash		ports/shells/flash
 flasher		ports/sysutils/flasher
 flashplayer	ports/graphics/flashplayer
-flashplugin	ports/www/flashplugin
 flashplugin-mozilla	ports/www/flashplugin-mozilla
 flasm		ports/graphics/flasm
 flat-frog	ports/www/flat-frog
