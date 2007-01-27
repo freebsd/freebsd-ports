@@ -69,10 +69,8 @@ lib/mh/spost
 lib/mh/tmac.h
 lib/mh/viamail
 lib/libmh.so
-lib/libmh.so.3.2
+lib/libmh.so.3
 @dirrm lib/mh
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
 %%PORTDOCS%%share/doc/ja-mh/00.READ.ME.1ST
 %%PORTDOCS%%share/doc/ja-mh/CHANGES.JP
 %%PORTDOCS%%share/doc/ja-mh/COMMANDS.JP
