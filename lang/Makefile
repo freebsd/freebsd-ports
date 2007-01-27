@@ -242,8 +242,6 @@
     SUBDIR += python-doc-postscript-a4
     SUBDIR += python-doc-postscript-letter
     SUBDIR += python-mode.el
-    SUBDIR += python21
-    SUBDIR += python22
     SUBDIR += python23
     SUBDIR += python24
     SUBDIR += python25
