@@ -1,171 +1,203 @@
 %%GEM_CACHE%%
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000086.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000087.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000088.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000123.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000124.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000125.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions.src/M000077.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Diff.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Diff.src/M000085.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000078.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000079.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000080.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000081.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000084.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src/M000074.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src/M000075.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000109.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000111.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000113.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000115.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000117.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000119.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000121.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000089.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000091.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000093.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000095.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000099.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000101.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000103.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000105.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000107.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname/CleanWithin.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname/CleanWithin.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000143.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000144.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000145.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000146.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000147.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000127.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000128.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000129.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000130.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000131.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000133.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000135.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000136.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000137.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000138.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000139.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000140.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000141.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000142.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Iterators.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Iterators.src/M000148.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src/M000149.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src/M000150.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000041.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000042.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000063.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000065.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000067.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000069.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.src/M000073.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/Binding.html
-%%GEM_DOC_DIR%%/rdoc/classes/Binding.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.html
-%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000178.html
-%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000179.html
-%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000180.html
-%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000181.html
-%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000182.html
-%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.html
-%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000151.html
-%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000152.html
-%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000153.html
-%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000154.html
-%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000155.html
-%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000156.html
-%%GEM_DOC_DIR%%/rdoc/classes/Dependencies/LoadingModule.html
-%%GEM_DOC_DIR%%/rdoc/classes/Dependencies/LoadingModule.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000021.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000157.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000158.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000159.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000160.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000161.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000162.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000163.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000164.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000165.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000166.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000167.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000168.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000169.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000170.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000171.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000172.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000173.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000174.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000175.html
-%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000176.html
-%%GEM_DOC_DIR%%/rdoc/classes/Reloadable.html
-%%GEM_DOC_DIR%%/rdoc/classes/Reloadable.src/M000177.html
-%%GEM_DOC_DIR%%/rdoc/classes/Reloadable/Subclasses.html
-%%GEM_DOC_DIR%%/rdoc/classes/Symbol.html
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/lib/active_support.rb
+%%GEM_LIB_DIR%%/lib/active_support/binding_of_caller.rb
+%%GEM_LIB_DIR%%/lib/active_support/breakpoint.rb
+%%GEM_LIB_DIR%%/lib/active_support/caching_tools.rb
+%%GEM_LIB_DIR%%/lib/active_support/clean_logger.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext.rb
+%%GEM_LIB_DIR%%/lib/active_support/dependencies.rb
+%%GEM_LIB_DIR%%/lib/active_support/deprecation.rb
+%%GEM_LIB_DIR%%/lib/active_support/inflections.rb
+%%GEM_LIB_DIR%%/lib/active_support/inflector.rb
+%%GEM_LIB_DIR%%/lib/active_support/json.rb
+%%GEM_LIB_DIR%%/lib/active_support/multibyte.rb
+%%GEM_LIB_DIR%%/lib/active_support/option_merger.rb
+%%GEM_LIB_DIR%%/lib/active_support/ordered_options.rb
+%%GEM_LIB_DIR%%/lib/active_support/reloadable.rb
+%%GEM_LIB_DIR%%/lib/active_support/version.rb
+%%GEM_LIB_DIR%%/lib/active_support/whiny_nil.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/array.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/bigdecimal.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/blank.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/cgi.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/class.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/date.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/enumerable.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/exception.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/integer.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/load_error.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/logger.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/name_error.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/numeric.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/object.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/pathname.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/proc.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/range.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/string.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/symbol.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/time.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/array/conversions.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/array/grouping.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/cgi/escape_skipping_slashes.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/bigdecimal/formatting.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/class/attribute_accessors.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/class/inheritable_attributes.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/class/removal.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/date/conversions.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/conversions.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/diff.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/indifferent_access.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/keys.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/reverse_merge.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/integer/even_odd.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/integer/inflections.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/agnostics.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/daemonizing.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/reporting.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/requires.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/aliasing.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/attr_internal.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/attribute_accessors.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/delegation.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/inclusion.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/introspection.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/loading.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/numeric/bytes.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/numeric/time.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/object/extending.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/object/misc.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/pathname/clean_within.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/range/conversions.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/access.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/conversions.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/inflections.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/iterators.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/starts_ends_with.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/unicode.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/time/calculations.rb
+%%GEM_LIB_DIR%%/lib/active_support/core_ext/time/conversions.rb
+%%GEM_LIB_DIR%%/lib/active_support/json/encoders.rb
+%%GEM_LIB_DIR%%/lib/active_support/json/encoders/core.rb
+%%GEM_LIB_DIR%%/lib/active_support/multibyte/chars.rb
+%%GEM_LIB_DIR%%/lib/active_support/multibyte/generators/generate_tables.rb
+%%GEM_LIB_DIR%%/lib/active_support/multibyte/handlers/passthru_handler.rb
+%%GEM_LIB_DIR%%/lib/active_support/multibyte/handlers/utf8_handler.rb
+%%GEM_LIB_DIR%%/lib/active_support/multibyte/handlers/utf8_handler_proc.rb
+%%GEM_LIB_DIR%%/lib/active_support/values/time_zone.rb
+%%GEM_LIB_DIR%%/lib/active_support/values/unicode_tables.dat
+%%GEM_LIB_DIR%%/lib/active_support/vendor/builder.rb
+%%GEM_LIB_DIR%%/lib/active_support/vendor/xml_simple.rb
+%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/blankslate.rb
+%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xchar.rb
+%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xmlbase.rb
+%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xmlevents.rb
+%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xmlmarkup.rb
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/breakpoint_rb.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/breakpoint_rb.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/binding_of_caller_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/breakpoint_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/caching_tools_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/clean_logger_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/dependencies_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/deprecation_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/inflections_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/inflector_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/option_merger_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/ordered_options_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/reloadable_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/array_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/bigdecimal_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/blank_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/cgi_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/date_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/enumerable_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/exception_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/integer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/load_error_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/logger_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/name_error_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/numeric_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/object_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/pathname_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/proc_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/cgi/escape_skipping_slashes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/range_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/symbol_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/time_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/array/conversions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/array/grouping_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/bigdecimal/formatting_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class/attribute_accessors_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class/inheritable_attributes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class/removal_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/date/conversions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/conversions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/diff_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/indifferent_access_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/keys_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/reverse_merge_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/integer/even_odd_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/integer/inflections_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/agnostics_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/daemonizing_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/reporting_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/requires_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/aliasing_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/attr_internal_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/attribute_accessors_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/delegation_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/inclusion_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/introspection_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/loading_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/numeric/bytes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/numeric/time_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/object/extending_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/object/misc_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/pathname/clean_within_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/range/conversions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/access_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/conversions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/inflections_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/iterators_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/starts_ends_with_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/unicode_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/time/calculations_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/time/conversions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/whiny_nil_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json/encoders_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json/encoders/core_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte/chars_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte/generators/generate_tables_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte/handlers/passthru_handler_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte/handlers/utf8_handler_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte/handlers/utf8_handler_proc_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/values/time_zone_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/xml_simple_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/blankslate_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/xchar_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/xmlbase_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/xmlevents_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/xmlmarkup_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_support_rb.html
 %%GEM_DOC_DIR%%/rdoc/classes/Symbol.src/M000003.html
-%%GEM_DOC_DIR%%/rdoc/classes/TimeZone.html
 %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src/M000004.html
 %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src/M000006.html
@@ -179,178 +211,280 @@
 %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src/M000014.html
 %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src/M000015.html
 %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/created.rid
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/binding_of_caller_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/breakpoint_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/breakpoint_rb.src/M000001.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/breakpoint_rb.src/M000002.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/caching_tools_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/clean_logger_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/array/conversions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/array_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/blank_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/cgi/escape_skipping_slashes_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/cgi_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class/attribute_accessors_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class/inheritable_attributes_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class/removal_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/date/conversions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/date_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/enumerable_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/exception_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/conversions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/diff_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/indifferent_access_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/keys_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash/reverse_merge_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/integer/even_odd_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/integer/inflections_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/integer_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/agnostics_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/daemonizing_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/reporting_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel/requires_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/kernel_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/load_error_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/logger_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/attribute_accessors_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/delegation_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/inclusion_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/introspection_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module/loading_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/module_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/numeric/bytes_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/numeric/time_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/numeric_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/object/extending_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/object/misc_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/object_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/pathname/clean_within_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/pathname_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/proc_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/range/conversions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/range_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/access_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/conversions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/inflections_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/iterators_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string/starts_ends_with_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/string_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/symbol_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/time/calculations_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/time/conversions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/time_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/dependencies_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/inflections_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/inflector_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json/encoders/core_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json/encoders_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/option_merger_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/ordered_options_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/reloadable_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/values/time_zone_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/blankslate_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/xmlbase_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/xmlevents_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder/xmlmarkup_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/version_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support/whiny_nil_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/active_support_rb.html
-%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/classes/NameError.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/NameError.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.html
+%%GEM_DOC_DIR%%/rdoc/classes/Binding.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Dependencies/LoadingModule.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Dependencies/LoadingModule.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/EncodingError.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/PassthruHandler.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8HandlerProc.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000118.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions/ClassMethods.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions/ClassMethods.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000135.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000138.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Diff.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Diff.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000140.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000141.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Grouping.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Grouping.src/M000145.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Grouping.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000146.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000148.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000150.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000152.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000154.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000156.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000158.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000160.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000162.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000164.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000168.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000170.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000172.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000174.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000176.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000178.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000180.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000181.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000182.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000183.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname/CleanWithin.src/M000184.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname/CleanWithin.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Unicode.src/M000185.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Unicode.src/M000186.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000187.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000188.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000189.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000190.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000191.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000193.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000195.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000196.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000197.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000198.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000199.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000200.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000201.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000202.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000203.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000204.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000205.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000206.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000207.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Iterators.src/M000208.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src/M000209.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src/M000210.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Unicode.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Iterators.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation.src/M000211.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation.src/M000212.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation.src/M000213.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation.src/M000214.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/ClassMethods.src/M000215.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/ClassMethods.src/M000216.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/ClassMethods.src/M000217.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/Assertions.src/M000218.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/Assertions.src/M000219.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/DeprecatedInstanceVariableProxy.src/M000220.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/DeprecatedInstanceVariableProxy.src/M000221.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/Assertions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/DeprecatedInstanceVariableProxy.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000222.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000223.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000224.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000225.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000226.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src/M000227.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/BlankSlate.src/M000228.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.html
+%%GEM_DOC_DIR%%/rdoc/classes/Builder/BlankSlate.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000229.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000230.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000231.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000232.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000233.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000234.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000235.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000236.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000237.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000238.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000239.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000240.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000241.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.src/M000242.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000243.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000244.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000245.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000246.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000247.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src/M000248.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.html
+%%GEM_DOC_DIR%%/rdoc/classes/Enumerable.src/M000249.html
+%%GEM_DOC_DIR%%/rdoc/classes/Enumerable.src/M000250.html
+%%GEM_DOC_DIR%%/rdoc/classes/Enumerable.src/M000251.html
+%%GEM_DOC_DIR%%/rdoc/classes/Reloadable.src/M000252.html
+%%GEM_DOC_DIR%%/rdoc/classes/Reloadable/Deprecated.src/M000253.html
+%%GEM_DOC_DIR%%/rdoc/classes/Reloadable/Deprecated.html
+%%GEM_DOC_DIR%%/rdoc/classes/Reloadable/Subclasses.html
+%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000254.html
+%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000255.html
+%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000256.html
+%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000257.html
+%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src/M000258.html
+%%GEM_DOC_DIR%%/rdoc/classes/Symbol.html
+%%GEM_DOC_DIR%%/rdoc/classes/TimeZone.html
+%%GEM_DOC_DIR%%/rdoc/classes/NameError.html
+%%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.html
+%%GEM_DOC_DIR%%/rdoc/classes/XmlSimple.html
+%%GEM_DOC_DIR%%/rdoc/classes/Binding.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inflector.html
+%%GEM_DOC_DIR%%/rdoc/classes/Test.html
+%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit.html
+%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/TestCase.html
+%%GEM_DOC_DIR%%/rdoc/classes/Enumerable.html
+%%GEM_DOC_DIR%%/rdoc/classes/Reloadable.html
+%%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_LIB_DIR%%/CHANGELOG
-%%GEM_LIB_DIR%%/lib/active_support.rb
-%%GEM_LIB_DIR%%/lib/active_support/binding_of_caller.rb
-%%GEM_LIB_DIR%%/lib/active_support/breakpoint.rb
-%%GEM_LIB_DIR%%/lib/active_support/caching_tools.rb
-%%GEM_LIB_DIR%%/lib/active_support/clean_logger.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/array.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/array/conversions.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/blank.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/cgi.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/cgi/escape_skipping_slashes.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/class.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/class/attribute_accessors.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/class/inheritable_attributes.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/class/removal.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/date.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/date/conversions.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/enumerable.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/exception.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/conversions.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/conversions.rb.rej
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/diff.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/indifferent_access.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/keys.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/hash/reverse_merge.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/integer.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/integer/even_odd.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/integer/inflections.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/agnostics.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/daemonizing.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/reporting.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/kernel/requires.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/load_error.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/logger.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/module.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/attribute_accessors.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/delegation.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/inclusion.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/introspection.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/module/loading.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/numeric.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/numeric/bytes.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/numeric/time.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/object.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/object/extending.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/object/misc.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/pathname.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/pathname/clean_within.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/proc.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/range.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/range/conversions.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/string.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/access.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/conversions.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/inflections.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/iterators.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/string/starts_ends_with.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/symbol.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/time.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/time/calculations.rb
-%%GEM_LIB_DIR%%/lib/active_support/core_ext/time/conversions.rb
-%%GEM_LIB_DIR%%/lib/active_support/dependencies.rb
-%%GEM_LIB_DIR%%/lib/active_support/inflections.rb
-%%GEM_LIB_DIR%%/lib/active_support/inflector.rb
-%%GEM_LIB_DIR%%/lib/active_support/json.rb
-%%GEM_LIB_DIR%%/lib/active_support/json/encoders.rb
-%%GEM_LIB_DIR%%/lib/active_support/json/encoders/core.rb
-%%GEM_LIB_DIR%%/lib/active_support/option_merger.rb
-%%GEM_LIB_DIR%%/lib/active_support/ordered_options.rb
-%%GEM_LIB_DIR%%/lib/active_support/reloadable.rb
-%%GEM_LIB_DIR%%/lib/active_support/values/time_zone.rb
-%%GEM_LIB_DIR%%/lib/active_support/vendor/builder.rb
-%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/blankslate.rb
-%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xmlbase.rb
-%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xmlevents.rb
-%%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xmlmarkup.rb
-%%GEM_LIB_DIR%%/lib/active_support/version.rb
-%%GEM_LIB_DIR%%/lib/active_support/whiny_nil.rb
-%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/vendor/builder
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/vendor
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/values
+@dirrm %%GEM_LIB_DIR%%/lib/active_support/multibyte/handlers
+@dirrm %%GEM_LIB_DIR%%/lib/active_support/multibyte/generators
+@dirrm %%GEM_LIB_DIR%%/lib/active_support/multibyte
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/json/encoders
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/json
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext/time
@@ -365,15 +499,90 @@
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext/hash
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext/date
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext/class
+@dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext/bigdecimal
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext/cgi
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext/array
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext
 @dirrm %%GEM_LIB_DIR%%/lib/active_support
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test/Unit
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Reloadable/Deprecated.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Reloadable
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Reloadable.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Enumerable.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inflector
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inflector.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Builder/BlankSlate.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Builder
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/DeprecatedInstanceVariableProxy.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/Assertions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Deprecation.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Iterators.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Unicode.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname/CleanWithin.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Grouping.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Diff.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Chars.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers/UTF8Handler.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte/Handlers
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/Multibyte
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Dependencies/LoadingModule.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Dependencies
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Binding.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/XmlSimple/Cache.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/XmlSimple
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/XmlSimple.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/NameError.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Symbol.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/values
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte/handlers
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte/generators
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/multibyte
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json/encoders
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/json
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/time
@@ -388,61 +597,13 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/hash
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/date
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/class
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/cgi
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/bigdecimal
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/array
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext/cgi
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/core_ext
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/breakpoint_rb.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TimeZone.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Symbol.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Reloadable.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Reloadable
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inflector/Inflections.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inflector.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inflector
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HashWithIndifferentAccess.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Dependencies/LoadingModule.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Dependencies
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Builder/XmlMarkup.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Builder
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Breakpoint.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Binding.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Time
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Iterators.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/String
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Range
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname/CleanWithin.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Pathname
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Diff.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Conversions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Date
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
