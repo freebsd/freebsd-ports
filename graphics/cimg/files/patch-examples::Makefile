@@ -1,35 +1,63 @@
---- examples/Makefile.orig	Mon Nov  6 15:26:08 2006
-+++ examples/Makefile	Mon Nov  6 16:16:00 2006
-@@ -8,10 +8,10 @@
+--- examples/Makefile.orig	Fri Jan 26 11:09:14 2007
++++ examples/Makefile	Sat Jan 27 14:37:02 2007
+@@ -7,10 +7,10 @@
+ # -----------------------------------------------------------------------------------
  
  # Set correct variables and paths
- CIMGVER = 1.17
--CC      = g++
--X11PATH = /usr/X11R6
--CFLAGS  = -Wall -W -ansi -pedantic -ffast-math -I$(X11PATH)/include
--LDFLAGS = -L$(X11PATH)/lib -lm -lpthread -lX11
-+CC      = $(CXX)
-+#X11PATH = /usr/X11R6
-+#CFLAGS  = -Wall -W -ansi -pedantic -ffast-math -I$(X11PATH)/include
-+#LDFLAGS = -L$(X11PATH)/lib -lm -lpthread -lX11
+-CC       = g++
+-X11PATH  = /usr/X11R6
+-CFLAGS   = -Wall -W -ansi -pedantic -ffast-math -I$(X11PATH)/include
+-LDFLAGS  = -L$(X11PATH)/lib -lm -lpthread -lX11
++CC       = $(CXX)
++#X11PATH  = /usr/X11R6
++#CFLAGS   = -Wall -W -ansi -pedantic -ffast-math -I$(X11PATH)/include
++#LDFLAGS  = -L$(X11PATH)/lib -lm -lpthread -lX11
  
- # Uncomment to enable fast image display, using the XSHM library.
- XSHM_FLAGS = -Dcimg_use_xshm -lXext 
-@@ -59,7 +59,7 @@
+ # Set CImg version number
+ CIMG_VERSION = 1.18
+@@ -25,21 +25,21 @@
+ CIMG_XRANDR_FLAGS = -Dcimg_use_xrandr -lXrandr
+ 
+ # Uncomment to enable native support for PNG image files, using the PNG library.
+-#CIMG_PNG_FLAGS = -Dcimg_use_png -lpng -lz
++CIMG_PNG_FLAGS = -Dcimg_use_png -lpng -lz
+ 
+ # Uncomment to enable native support for JPEG image files, using the JPEG library.
+-#CIMG_JPEG_FLAGS = -Dcimg_use_jpeg -ljpeg
++CIMG_JPEG_FLAGS = -Dcimg_use_jpeg -ljpeg
+ 
+ # Uncomment to enable native support for TIFF image files, using the TIFF library.
+-#CIMG_TIFF_FLAGS = -Dcimg_use_tiff -ltiff
++CIMG_TIFF_FLAGS = -Dcimg_use_tiff -ltiff
+ 
+ # Uncomment to enable native support of most classical image file formats, using the Magick++ library.
+-#CIMG_MAGICK_FLAGS = -Dcimg_use_magick `Magick++-config --cppflags` `Magick++-config --cxxflags` `Magick++-config --ldflags` `Magick++-config --libs`
++CIMG_MAGICK_FLAGS = -Dcimg_use_magick `Magick++-config --cppflags` `Magick++-config --cxxflags` `Magick++-config --ldflags` `Magick++-config --libs`
+ 
+ # Uncomment to enable faster Discrete Fourier Transform computation, using the FFTW3 library
+-#CIMG_FFTW3_FLAGS = -Dcimg_use_fftw3 -lfftw3
++CIMG_FFTW3_FLAGS = -Dcimg_use_fftw3 -lfftw3
+ 
+-OPTFLAGS = -O3 $(CIMG_STRICT_FLAG) $(CIMG_XSHM_FLAGS) $(CIMG_XRANDR_FLAGS) $(CIMG_PNG_FLAGS) $(CIMG_JPEG_FLAGS) $(CIMG_TIFF_FLAGS) $(CIMG_MAGICK_FLAGS) $(CIMG_FFTW3_FLAGS)
++OPTFLAGS = $(CIMG_STRICT_FLAG) $(CIMG_XSHM_FLAGS) $(CIMG_XRANDR_FLAGS) $(CIMG_PNG_FLAGS) $(CIMG_JPEG_FLAGS) $(CIMG_TIFF_FLAGS) $(CIMG_MAGICK_FLAGS) $(CIMG_FFTW3_FLAGS)
+ 
+ CIMG_FILES = CImg_demo \
+ 	     dtmri_view \
+@@ -67,7 +67,7 @@
  	@echo
- 	@echo "** Compiling '$* ($(CIMGVER))' with '`$(CC) -v 2>&1 | grep version`'"
+ 	@echo "** Compiling '$* ($(CIMG_VERSION))' with '`$(CC) -v 2>&1 | grep version`'"
  	@echo
 -	$(CC) -o $* $< $(CFLAGS) $(LDFLAGS) $(ARCHFLAGS)
-+	$(CC) -o $* $< $(CPPFLAGS) -Wall -ansi -pedantic -ffast-math  -I$(X11PATH)/include -lX11 -L$(X11PATH)/lib $(LDFLAGS)
++	$(CC) -o $* $< $(CPPFLAGS) -ansi -ffast-math  -I$(X11PATH)/include $(OPTFLAGS) -lX11 -L$(X11PATH)/lib $(LDFLAGS)
  menu:
  	@echo
- 	@echo "CImg Library $(CIMGVER) : Examples"
-@@ -84,7 +84,7 @@
- all: $(CIMGFILES)
+ 	@echo "CImg Library $(CIMG_VERSION) : Examples"
+@@ -92,7 +92,7 @@
+ all: $(CIMG_FILES)
  
  clean:
--	rm -f *.exe *~ $(CIMGFILES)
-+	rm -f *.exe *~ $(CIMGFILES) Makefile.orig
+-	rm -f *.exe *~ $(CIMG_FILES)
++	rm -f *.exe *~ $(CIMG_FILES) Makefile.orig
  
  # Linux/Mac OSX targets
  linux:
