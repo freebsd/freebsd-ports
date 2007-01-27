@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jhead
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/
+MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/ \
+		http://www.is-root.com/myports/
 
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Exif Jpeg camera setting parser, rotator and much more
