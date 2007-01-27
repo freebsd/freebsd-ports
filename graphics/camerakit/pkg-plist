@@ -17,4 +17,3 @@ Local/Library/Libraries/libCameraKit.so.%%VERSION%%
 @dirrm Local/Library/Frameworks/CameraKit.framework/Versions/A
 @dirrm Local/Library/Frameworks/CameraKit.framework/Versions
 @dirrm Local/Library/Frameworks/CameraKit.framework
-@dirrm Local/Library/Frameworks
