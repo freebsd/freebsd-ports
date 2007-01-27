@@ -2736,3 +2736,4 @@ net-mgmt/pfpro||2007-01-26|Has expired: Does not compile
 emulators/vx68k||2007-01-26|Has expired: distfile disappeared from homepage
 emulators/libvm68k||2007-01-26|Has expired: distfile disappeared from homepage
 textproc/ruby-text-format||2007-01-26|Has expired: distfile and homepage disappeared
+www/flashplugin||2007-01-27|Obsolete, broken
