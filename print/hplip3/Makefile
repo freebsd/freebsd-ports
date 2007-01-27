@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	1.6.12
+PORTVERSION=	1.7.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -25,7 +25,7 @@ CONFLITS=	hpijs-* foomatic-filters-*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-pp-build
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	hpiod.sh hpssd.sh
@@ -40,12 +40,12 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS=	GUI "build with Python QT" on
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.6.12
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.7.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env aclocal:19:env
+BROKEN=		Does not compile on 4.x
 .endif
 
 .if !defined(WITHOUT_GUI) || exists(${LOCALBASE}/bin/pylupdate)

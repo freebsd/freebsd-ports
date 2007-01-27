@@ -42,6 +42,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/about.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/contacts.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/downloads.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/faqs.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/features.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/build.html
@@ -140,6 +141,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_printer_model.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/install/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/configure.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/debian.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/fedora_core.html
@@ -197,6 +199,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/color_laser.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/color_laser_mfp.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/combined.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/edgeline.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/inkjet.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/inkjet_aio.html
@@ -356,7 +359,20 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/Photosmart_8250.png
 %%DATADIR%%/data/images/Photosmart_8400_series.png
 %%DATADIR%%/data/images/Photosmart_8750_series.png
+%%DATADIR%%/data/images/Photosmart_C3100.png
+%%DATADIR%%/data/images/Photosmart_C4100.png
+%%DATADIR%%/data/images/Photosmart_C5100.png
+%%DATADIR%%/data/images/Photosmart_C6100.png
+%%DATADIR%%/data/images/Photosmart_D5060.png
+%%DATADIR%%/data/images/Photosmart_D5100.png
+%%DATADIR%%/data/images/Photosmart_D6160.png
+%%DATADIR%%/data/images/Photosmart_D7100.png
+%%DATADIR%%/data/images/Photosmart_D7300.png
+%%DATADIR%%/data/images/Photosmart_Pro_B8300.png
 %%DATADIR%%/data/images/Photosmart_Pro_B9180.png
+%%DATADIR%%/data/images/Photosmart_a310.png
+%%DATADIR%%/data/images/Photosmart_a510.png
+%%DATADIR%%/data/images/Photosmart_a710.png
 %%DATADIR%%/data/images/align10.png
 %%DATADIR%%/data/images/audio.png
 %%DATADIR%%/data/images/bmp.png
@@ -385,6 +401,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/deskjet_5552.png
 %%DATADIR%%/data/images/deskjet_5600.png
 %%DATADIR%%/data/images/deskjet_6120.png
+%%DATADIR%%/data/images/deskjet_D2360.png
 %%DATADIR%%/data/images/dj350.png
 %%DATADIR%%/data/images/dj450.png
 %%DATADIR%%/data/images/down.png
@@ -417,6 +434,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/hp_color_LaserJet_4600.png
 %%DATADIR%%/data/images/hp_color_LaserJet_9500.png
 %%DATADIR%%/data/images/hp_deskjet_9300.png
+%%DATADIR%%/data/images/hp_laserjet_3050.png
+%%DATADIR%%/data/images/hp_laserjet_p2015.png
 %%DATADIR%%/data/images/icon_align.png
 %%DATADIR%%/data/images/icon_battery.png
 %%DATADIR%%/data/images/icon_black.png
@@ -479,12 +498,14 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/pens.png
 %%DATADIR%%/data/images/photosmart_7150.png
 %%DATADIR%%/data/images/photosmart_7900_series.png
+%%DATADIR%%/data/images/photosmart_a610.png
 %%DATADIR%%/data/images/png.png
 %%DATADIR%%/data/images/powered_by_python.png
 %%DATADIR%%/data/images/prev.png
 %%DATADIR%%/data/images/print_icon.png
 %%DATADIR%%/data/images/print_icon_disabled.png
 %%DATADIR%%/data/images/psc_1100_series.png
+%%DATADIR%%/data/images/psc_1610.png
 %%DATADIR%%/data/images/psc_2300_series.png
 %%DATADIR%%/data/images/scan_icon.png
 %%DATADIR%%/data/images/scan_icon_disabled.png
@@ -1062,6 +1083,7 @@ share/ppd/HP/HP_Business_Inkjet_3000.ppd.gz
 share/ppd/HP/HP_Color_LaserJet.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2550.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2605.ppd.gz
+share/ppd/HP/HP_Color_LaserJet_2700.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2800.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_3000.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_3800.ppd.gz
@@ -1073,6 +1095,8 @@ share/ppd/HP/HP_Color_LaserJet_5550.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_5M.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_8500.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_8550.ppd.gz
+share/ppd/HP/HP_Color_LaserJet_CM1015.ppd.gz
+share/ppd/HP/HP_Color_LaserJet_CP4005.ppd.gz
 share/ppd/HP/HP_LaserJet_1200.ppd.gz
 share/ppd/HP/HP_LaserJet_1220.ppd.gz
 share/ppd/HP/HP_LaserJet_1320_Series.ppd.gz
@@ -1118,6 +1142,14 @@ share/ppd/HP/HP_LaserJet_9040.ppd.gz
 share/ppd/HP/HP_LaserJet_9040_9050_MFP.ppd.gz
 share/ppd/HP/HP_LaserJet_9050.ppd.gz
 share/ppd/HP/HP_LaserJet_9055_9065_MFP.ppd.gz
+share/ppd/HP/HP_LaserJet_M3027_MFP.ppd.gz
+share/ppd/HP/HP_LaserJet_M3035_MFP.ppd.gz
+share/ppd/HP/HP_LaserJet_M4345_MFP.ppd.gz
+share/ppd/HP/HP_LaserJet_M5025_MFP.ppd.gz
+share/ppd/HP/HP_LaserJet_M5035_MFP.ppd.gz
+share/ppd/HP/HP_LaserJet_P2015.ppd.gz
+share/ppd/HP/HP_LaserJet_P3004.ppd.gz
+share/ppd/HP/HP_LaserJet_P3005.ppd.gz
 share/ppd/HP/HP_Mopier_240.ppd.gz
 share/ppd/HP/HP_Mopier_320.ppd.gz
 share/ppd/HP/fax/HP-Fax-hplip.ppd.gz
@@ -1161,6 +1193,7 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 @dirrm %%DATADIR%%/copier
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
+@dirrmtry share/gnome
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/troubleshooting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/tech_docs
@@ -1175,6 +1208,7 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/install
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/howtos
