@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	UMFPACK library used by ELMER FEM package
 
 WANT_FORTRAN=yes #dummy but future use
