@@ -7,7 +7,7 @@
 
 PORTNAME=	mailmbox
 PORTVERSION=	1.12.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
