@@ -1,475 +1,12 @@
 %%GEM_CACHE%%
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000119.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000120.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000121.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000122.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000123.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000124.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000125.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000127.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000128.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000129.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000130.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000131.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000132.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000134.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000135.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000136.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000137.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000138.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000139.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000140.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000141.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000142.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000143.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000144.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000145.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000146.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000147.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000148.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000149.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000150.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000154.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000155.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000156.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000157.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000158.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000159.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000160.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000161.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000162.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000163.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000164.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000165.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000166.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000167.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000168.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000169.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000170.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000171.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000172.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000173.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.src/M000103.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.src/M000104.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Sweeping.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components.src/M000021.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/ClassMethods.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.src/M000105.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.src/M000106.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000108.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000109.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000111.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000112.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000114.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000115.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000117.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000118.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash.src/M000099.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src/M000100.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src/M000101.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src/M000102.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src/M000096.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000041.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000042.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000151.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000152.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000153.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.src/M000061.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete/ClassMethods.src/M000001.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing/ClassMethods.src/M000002.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds/InstanceMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds/InstanceMethods.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src/M000062.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src/M000063.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src/M000064.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/ClassMethods.src/M000065.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000066.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000067.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000068.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000070.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000074.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000076.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000077.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000078.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000079.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000080.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000081.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000082.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000083.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000084.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000085.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000086.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000087.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000088.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000089.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000090.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src/M000091.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src/M000092.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src/M000093.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding/ClassMethods.src/M000095.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000060.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000003.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000004.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000007.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000009.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000010.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000011.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000013.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000014.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000015.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestUploadedFile.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestUploadedFile.src/M000175.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification/ClassMethods.src/M000107.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Base.src/M000328.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000256.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000257.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000258.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000259.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000279.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000280.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000281.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000282.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000283.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000284.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000285.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000286.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/BenchmarkHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/BenchmarkHelper.src/M000195.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CacheHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CacheHelper.src/M000255.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.src/M000326.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.src/M000327.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000265.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000266.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000268.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000269.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000270.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000271.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000272.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000273.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000274.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000275.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000276.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000277.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000278.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DebugHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DebugHelper.src/M000254.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000186.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000187.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000188.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000189.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000190.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000191.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000192.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000193.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000194.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000198.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000199.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000200.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000201.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000202.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000203.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000204.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000205.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000206.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000290.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000292.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000293.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000294.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000295.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000296.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000297.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000298.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000299.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000300.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000301.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000302.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000319.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000320.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000321.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000322.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000323.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000324.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000325.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000260.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000261.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000262.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000263.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000264.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000247.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000248.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000249.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000250.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000251.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000253.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.src/M000196.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.src/M000197.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000211.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000212.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000213.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000214.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000216.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000217.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000218.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000219.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000220.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000221.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000222.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000223.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000224.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000225.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000226.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000227.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000228.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000229.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000230.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000231.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000232.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000233.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000234.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000235.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000236.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000237.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000238.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000239.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000240.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000241.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000242.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000243.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000244.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000245.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000246.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000207.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000208.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000209.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000210.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src/M000287.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src/M000288.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src/M000289.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000303.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000304.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000305.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000306.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000307.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000308.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000309.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000310.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000311.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000312.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000313.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000314.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000315.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000316.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000317.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000318.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000176.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000177.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000178.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000179.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000181.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000182.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000183.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000184.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000185.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Partials.html
-%%GEM_DOC_DIR%%/rdoc/classes/Mime.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000329.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000330.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000331.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000332.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000333.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000334.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000335.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000336.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000337.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000338.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000339.html
-%%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src/M000340.html
-%%GEM_DOC_DIR%%/rdoc/created.rid
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/base_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/benchmarking_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/caching_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cgi_ext_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cgi_methods_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cookie_performance_fix_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/raw_post_data_fix_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_process_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/code_generation_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/components_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cookies_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/dependencies_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/deprecated_assertions_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/deprecated_redirects_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/deprecated_request_methods_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/filters_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/flash_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/helpers_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/integration_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/layout_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/macros/auto_complete_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/macros/in_place_editing_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/mime_responds_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/mime_type_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/pagination_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/request_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/rescue_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/response_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/routing_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/scaffolding_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/active_record_store_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/drb_server_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/drb_store_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/mem_cache_store_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session_management_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/streaming_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/test_process_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/url_rewriter_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/document_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/node_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/tokenizer_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/version_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/xml_node_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/xml_simple_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/verification_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_pack/version_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_pack_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/base_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/compiled_templates_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/active_record_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/asset_tag_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/benchmark_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/cache_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/capture_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/date_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/debug_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/form_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/form_options_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/form_tag_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/java_script_macros_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/javascript_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/number_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/pagination_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/prototype_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/scriptaculous_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/tag_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/text_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/url_helper_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/partials_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/template_error_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_view_rb.html
-%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
-%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
-%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
-%%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_LIB_DIR%%/CHANGELOG
-%%GEM_LIB_DIR%%/MIT-LICENSE
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/install.rb
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/RUNNING_UNIT_TESTS
-%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/MIT-LICENSE
 %%GEM_LIB_DIR%%/examples/.htaccess
-%%GEM_LIB_DIR%%/examples/address_book/index.rhtml
-%%GEM_LIB_DIR%%/examples/address_book/layout.rhtml
 %%GEM_LIB_DIR%%/examples/address_book_controller.cgi
 %%GEM_LIB_DIR%%/examples/address_book_controller.fcgi
 %%GEM_LIB_DIR%%/examples/address_book_controller.rb
@@ -477,27 +14,23 @@
 %%GEM_LIB_DIR%%/examples/benchmark.rb
 %%GEM_LIB_DIR%%/examples/benchmark_with_ar.fcgi
 %%GEM_LIB_DIR%%/examples/blog_controller.cgi
+%%GEM_LIB_DIR%%/examples/debate_controller.cgi
+%%GEM_LIB_DIR%%/examples/address_book/index.rhtml
+%%GEM_LIB_DIR%%/examples/address_book/layout.rhtml
 %%GEM_LIB_DIR%%/examples/debate/index.rhtml
 %%GEM_LIB_DIR%%/examples/debate/new_topic.rhtml
 %%GEM_LIB_DIR%%/examples/debate/topic.rhtml
-%%GEM_LIB_DIR%%/examples/debate_controller.cgi
-%%GEM_LIB_DIR%%/filler.txt
-%%GEM_LIB_DIR%%/install.rb
 %%GEM_LIB_DIR%%/lib/action_controller.rb
+%%GEM_LIB_DIR%%/lib/action_pack.rb
+%%GEM_LIB_DIR%%/lib/action_view.rb
 %%GEM_LIB_DIR%%/lib/action_controller/assertions.rb
 %%GEM_LIB_DIR%%/lib/action_controller/base.rb
 %%GEM_LIB_DIR%%/lib/action_controller/benchmarking.rb
 %%GEM_LIB_DIR%%/lib/action_controller/caching.rb
-%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cgi_ext.rb
-%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cgi_methods.rb
-%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cookie_performance_fix.rb
-%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/raw_post_data_fix.rb
 %%GEM_LIB_DIR%%/lib/action_controller/cgi_process.rb
-%%GEM_LIB_DIR%%/lib/action_controller/code_generation.rb
 %%GEM_LIB_DIR%%/lib/action_controller/components.rb
 %%GEM_LIB_DIR%%/lib/action_controller/cookies.rb
-%%GEM_LIB_DIR%%/lib/action_controller/dependencies.rb
-%%GEM_LIB_DIR%%/lib/action_controller/deprecated_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/deprecated_dependencies.rb
 %%GEM_LIB_DIR%%/lib/action_controller/deprecated_redirects.rb
 %%GEM_LIB_DIR%%/lib/action_controller/deprecated_request_methods.rb
 %%GEM_LIB_DIR%%/lib/action_controller/filters.rb
@@ -505,22 +38,39 @@
 %%GEM_LIB_DIR%%/lib/action_controller/helpers.rb
 %%GEM_LIB_DIR%%/lib/action_controller/integration.rb
 %%GEM_LIB_DIR%%/lib/action_controller/layout.rb
-%%GEM_LIB_DIR%%/lib/action_controller/macros/auto_complete.rb
-%%GEM_LIB_DIR%%/lib/action_controller/macros/in_place_editing.rb
 %%GEM_LIB_DIR%%/lib/action_controller/mime_responds.rb
 %%GEM_LIB_DIR%%/lib/action_controller/mime_type.rb
 %%GEM_LIB_DIR%%/lib/action_controller/pagination.rb
 %%GEM_LIB_DIR%%/lib/action_controller/request.rb
 %%GEM_LIB_DIR%%/lib/action_controller/rescue.rb
+%%GEM_LIB_DIR%%/lib/action_controller/resources.rb
 %%GEM_LIB_DIR%%/lib/action_controller/response.rb
+%%GEM_LIB_DIR%%/lib/action_controller/response.rb.rej
 %%GEM_LIB_DIR%%/lib/action_controller/routing.rb
 %%GEM_LIB_DIR%%/lib/action_controller/scaffolding.rb
+%%GEM_LIB_DIR%%/lib/action_controller/session_management.rb
+%%GEM_LIB_DIR%%/lib/action_controller/status_codes.rb
+%%GEM_LIB_DIR%%/lib/action_controller/streaming.rb
+%%GEM_LIB_DIR%%/lib/action_controller/test_process.rb
+%%GEM_LIB_DIR%%/lib/action_controller/url_rewriter.rb
+%%GEM_LIB_DIR%%/lib/action_controller/verification.rb
+%%GEM_LIB_DIR%%/lib/action_controller/assertions/deprecated_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/assertions/dom_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/assertions/model_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/assertions/response_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/assertions/routing_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/assertions/selector_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/assertions/tag_assertions.rb
+%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cgi_ext.rb
+%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cgi_methods.rb
+%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cookie_performance_fix.rb
+%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/raw_post_data_fix.rb
+%%GEM_LIB_DIR%%/lib/action_controller/macros/auto_complete.rb
+%%GEM_LIB_DIR%%/lib/action_controller/macros/in_place_editing.rb
 %%GEM_LIB_DIR%%/lib/action_controller/session/active_record_store.rb
 %%GEM_LIB_DIR%%/lib/action_controller/session/drb_server.rb
 %%GEM_LIB_DIR%%/lib/action_controller/session/drb_store.rb
 %%GEM_LIB_DIR%%/lib/action_controller/session/mem_cache_store.rb
-%%GEM_LIB_DIR%%/lib/action_controller/session_management.rb
-%%GEM_LIB_DIR%%/lib/action_controller/streaming.rb
 %%GEM_LIB_DIR%%/lib/action_controller/templates/rescues/_request_and_response.rhtml
 %%GEM_LIB_DIR%%/lib/action_controller/templates/rescues/_trace.rhtml
 %%GEM_LIB_DIR%%/lib/action_controller/templates/rescues/diagnostics.rhtml
@@ -534,20 +84,17 @@
 %%GEM_LIB_DIR%%/lib/action_controller/templates/scaffolds/list.rhtml
 %%GEM_LIB_DIR%%/lib/action_controller/templates/scaffolds/new.rhtml
 %%GEM_LIB_DIR%%/lib/action_controller/templates/scaffolds/show.rhtml
-%%GEM_LIB_DIR%%/lib/action_controller/test_process.rb
-%%GEM_LIB_DIR%%/lib/action_controller/url_rewriter.rb
+%%GEM_LIB_DIR%%/lib/action_controller/vendor/xml_node.rb
 %%GEM_LIB_DIR%%/lib/action_controller/vendor/html-scanner/html/document.rb
 %%GEM_LIB_DIR%%/lib/action_controller/vendor/html-scanner/html/node.rb
+%%GEM_LIB_DIR%%/lib/action_controller/vendor/html-scanner/html/selector.rb
 %%GEM_LIB_DIR%%/lib/action_controller/vendor/html-scanner/html/tokenizer.rb
 %%GEM_LIB_DIR%%/lib/action_controller/vendor/html-scanner/html/version.rb
-%%GEM_LIB_DIR%%/lib/action_controller/vendor/xml_node.rb
-%%GEM_LIB_DIR%%/lib/action_controller/vendor/xml_simple.rb
-%%GEM_LIB_DIR%%/lib/action_controller/verification.rb
-%%GEM_LIB_DIR%%/lib/action_pack.rb
 %%GEM_LIB_DIR%%/lib/action_pack/version.rb
-%%GEM_LIB_DIR%%/lib/action_view.rb
 %%GEM_LIB_DIR%%/lib/action_view/base.rb
 %%GEM_LIB_DIR%%/lib/action_view/compiled_templates.rb
+%%GEM_LIB_DIR%%/lib/action_view/partials.rb
+%%GEM_LIB_DIR%%/lib/action_view/template_error.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/active_record_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/asset_tag_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/benchmark_helper.rb
@@ -555,45 +102,50 @@
 %%GEM_LIB_DIR%%/lib/action_view/helpers/capture_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/date_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/debug_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/deprecated_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/form_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/form_options_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/form_tag_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/java_script_macros_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/javascript_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/number_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/pagination_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/prototype_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/tag_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/scriptaculous_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/text_helper.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/url_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/helpers/javascripts/controls.js
 %%GEM_LIB_DIR%%/lib/action_view/helpers/javascripts/dragdrop.js
 %%GEM_LIB_DIR%%/lib/action_view/helpers/javascripts/effects.js
 %%GEM_LIB_DIR%%/lib/action_view/helpers/javascripts/prototype.js
-%%GEM_LIB_DIR%%/lib/action_view/helpers/number_helper.rb
-%%GEM_LIB_DIR%%/lib/action_view/helpers/pagination_helper.rb
-%%GEM_LIB_DIR%%/lib/action_view/helpers/prototype_helper.rb
-%%GEM_LIB_DIR%%/lib/action_view/helpers/scriptaculous_helper.rb
-%%GEM_LIB_DIR%%/lib/action_view/helpers/tag_helper.rb
-%%GEM_LIB_DIR%%/lib/action_view/helpers/text_helper.rb
-%%GEM_LIB_DIR%%/lib/action_view/helpers/url_helper.rb
-%%GEM_LIB_DIR%%/lib/action_view/partials.rb
-%%GEM_LIB_DIR%%/lib/action_view/template_error.rb
+%%GEM_LIB_DIR%%/lib/action_view/helpers/javascripts/prototype.js.rej
 %%GEM_LIB_DIR%%/test/abstract_unit.rb
 %%GEM_LIB_DIR%%/test/active_record_unit.rb
+%%GEM_LIB_DIR%%/test/testing_sandbox.rb
 %%GEM_LIB_DIR%%/test/activerecord/active_record_assertions_test.rb
 %%GEM_LIB_DIR%%/test/activerecord/active_record_store_test.rb
 %%GEM_LIB_DIR%%/test/activerecord/pagination_test.rb
 %%GEM_LIB_DIR%%/test/controller/action_pack_assertions_test.rb
 %%GEM_LIB_DIR%%/test/controller/addresses_render_test.rb
+%%GEM_LIB_DIR%%/test/controller/assert_select_test.rb
 %%GEM_LIB_DIR%%/test/controller/base_test.rb
 %%GEM_LIB_DIR%%/test/controller/benchmark_test.rb
-%%GEM_LIB_DIR%%/test/controller/caching_filestore.rb
+%%GEM_LIB_DIR%%/test/controller/caching_test.rb
 %%GEM_LIB_DIR%%/test/controller/capture_test.rb
 %%GEM_LIB_DIR%%/test/controller/cgi_test.rb
 %%GEM_LIB_DIR%%/test/controller/components_test.rb
+%%GEM_LIB_DIR%%/test/controller/content_type_test.rb
 %%GEM_LIB_DIR%%/test/controller/cookie_test.rb
 %%GEM_LIB_DIR%%/test/controller/custom_handler_test.rb
+%%GEM_LIB_DIR%%/test/controller/deprecated_instance_variables_test.rb
 %%GEM_LIB_DIR%%/test/controller/fake_controllers.rb
 %%GEM_LIB_DIR%%/test/controller/filter_params_test.rb
 %%GEM_LIB_DIR%%/test/controller/filters_test.rb
 %%GEM_LIB_DIR%%/test/controller/flash_test.rb
 %%GEM_LIB_DIR%%/test/controller/fragment_store_setting_test.rb
 %%GEM_LIB_DIR%%/test/controller/helper_test.rb
+%%GEM_LIB_DIR%%/test/controller/integration_test.rb
 %%GEM_LIB_DIR%%/test/controller/layout_test.rb
 %%GEM_LIB_DIR%%/test/controller/mime_responds_test.rb
 %%GEM_LIB_DIR%%/test/controller/mime_type_test.rb
@@ -602,32 +154,58 @@
 %%GEM_LIB_DIR%%/test/controller/redirect_test.rb
 %%GEM_LIB_DIR%%/test/controller/render_test.rb
 %%GEM_LIB_DIR%%/test/controller/request_test.rb
+%%GEM_LIB_DIR%%/test/controller/resources_test.rb
 %%GEM_LIB_DIR%%/test/controller/routing_test.rb
+%%GEM_LIB_DIR%%/test/controller/selector_test.rb
 %%GEM_LIB_DIR%%/test/controller/send_file_test.rb
 %%GEM_LIB_DIR%%/test/controller/session_management_test.rb
 %%GEM_LIB_DIR%%/test/controller/test_test.rb
 %%GEM_LIB_DIR%%/test/controller/url_rewriter_test.rb
 %%GEM_LIB_DIR%%/test/controller/verification_test.rb
 %%GEM_LIB_DIR%%/test/controller/webservice_test.rb
-%%GEM_LIB_DIR%%/test/fixtures/addresses/list.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/a_class_that_contains_a_controller/poorly_placed_controller.rb
-%%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/module_that_holds_controllers/nested_controller.rb
-%%GEM_LIB_DIR%%/test/fixtures/application_root/app/models/a_class_that_contains_a_controller.rb
+%%GEM_LIB_DIR%%/test/controller/controller_fixtures/app/controllers/user_controller.rb
+%%GEM_LIB_DIR%%/test/controller/controller_fixtures/app/controllers/admin/user_controller.rb
+%%GEM_LIB_DIR%%/test/controller/controller_fixtures/vendor/plugins/bad_plugin/lib/plugin_controller.rb
+%%GEM_LIB_DIR%%/test/controller/deprecation/deprecated_base_methods_test.rb
 %%GEM_LIB_DIR%%/test/fixtures/companies.yml
 %%GEM_LIB_DIR%%/test/fixtures/company.rb
-%%GEM_LIB_DIR%%/test/fixtures/db_definitions/sqlite.sql
 %%GEM_LIB_DIR%%/test/fixtures/developer.rb
 %%GEM_LIB_DIR%%/test/fixtures/developers.yml
 %%GEM_LIB_DIR%%/test/fixtures/developers_projects.yml
-%%GEM_LIB_DIR%%/test/fixtures/dont_load.rb
+%%GEM_LIB_DIR%%/test/fixtures/project.rb
+%%GEM_LIB_DIR%%/test/fixtures/projects.yml
+%%GEM_LIB_DIR%%/test/fixtures/replies.yml
+%%GEM_LIB_DIR%%/test/fixtures/reply.rb
+%%GEM_LIB_DIR%%/test/fixtures/topic.rb
+%%GEM_LIB_DIR%%/test/fixtures/topics.yml
+%%GEM_LIB_DIR%%/test/fixtures/addresses/list.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/content_type/render_default_content_types_for_respond_to.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/content_type/render_default_for_rhtml.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/content_type/render_default_for_rjs.rjs
+%%GEM_LIB_DIR%%/test/fixtures/content_type/render_default_for_rxml.rxml
+%%GEM_LIB_DIR%%/test/fixtures/db_definitions/sqlite.sql
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_cookies_ivar.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_cookies_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_flash_ivar.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_flash_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_headers_ivar.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_headers_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_params_ivar.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_params_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_request_ivar.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_request_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_response_ivar.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_response_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_session_ivar.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables/_session_method.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/fun/games/hello_world.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/helpers/abc_helper.rb
 %%GEM_LIB_DIR%%/test/fixtures/helpers/fun/games_helper.rb
 %%GEM_LIB_DIR%%/test/fixtures/helpers/fun/pdf_helper.rb
-%%GEM_LIB_DIR%%/test/fixtures/layout_tests/layouts/controller_name_space/nested.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/layout_tests/layouts/item.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/layout_tests/layouts/layout_test.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/layout_tests/layouts/third_party_template_library.mab
+%%GEM_LIB_DIR%%/test/fixtures/layout_tests/layouts/controller_name_space/nested.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/layout_tests/views/hello.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/layouts/builder.rxml
 %%GEM_LIB_DIR%%/test/fixtures/layouts/standard.rhtml
@@ -639,24 +217,22 @@
 %%GEM_LIB_DIR%%/test/fixtures/multipart/mona_lisa.jpg
 %%GEM_LIB_DIR%%/test/fixtures/multipart/single_parameter
 %%GEM_LIB_DIR%%/test/fixtures/multipart/text_file
-%%GEM_LIB_DIR%%/test/fixtures/project.rb
-%%GEM_LIB_DIR%%/test/fixtures/projects.yml
 %%GEM_LIB_DIR%%/test/fixtures/public/images/rails.png
-%%GEM_LIB_DIR%%/test/fixtures/replies.yml
-%%GEM_LIB_DIR%%/test/fixtures/reply.rb
+%%GEM_LIB_DIR%%/test/fixtures/public/javascripts/application.js
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/all_types_with_layout.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/all_types_with_layout.rjs
-%%GEM_LIB_DIR%%/test/fixtures/respond_to/layouts/standard.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/using_defaults.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/using_defaults.rjs
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/using_defaults.rxml
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/using_defaults_with_type_list.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/using_defaults_with_type_list.rjs
 %%GEM_LIB_DIR%%/test/fixtures/respond_to/using_defaults_with_type_list.rxml
+%%GEM_LIB_DIR%%/test/fixtures/respond_to/layouts/standard.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/scope/test/modgreet.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/_customer.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/_customer_greeting.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/_hash_object.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test/_hello.rxml
 %%GEM_LIB_DIR%%/test/fixtures/test/_partial_only.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/_person.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/action_talk_to_layout.rhtml
@@ -664,29 +240,30 @@
 %%GEM_LIB_DIR%%/test/fixtures/test/capturing.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/content_for.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/delete_with_js.rjs
-%%GEM_LIB_DIR%%/test/fixtures/test/dot.directory/render_file_with_ivar.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/enum_rjs_test.rjs
 %%GEM_LIB_DIR%%/test/fixtures/test/erb_content_for.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/greeting.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/hello.rxml
 %%GEM_LIB_DIR%%/test/fixtures/test/hello_world.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/hello_world.rxml
+%%GEM_LIB_DIR%%/test/fixtures/test/list.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/test/hello_world_container.rxml
 %%GEM_LIB_DIR%%/test/fixtures/test/hello_world_with_layout_false.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/hello_xml_world.rxml
-%%GEM_LIB_DIR%%/test/fixtures/test/list.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/non_erb_block_content_for.rxml
 %%GEM_LIB_DIR%%/test/fixtures/test/potential_conflicts.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/render_file_with_ivar.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/render_file_with_locals.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/render_to_string_test.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test/update_element_with_capture.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/topic.rb
-%%GEM_LIB_DIR%%/test/fixtures/topics.yml
+%%GEM_LIB_DIR%%/test/fixtures/test/dot.directory/render_file_with_ivar.rhtml
 %%GEM_LIB_DIR%%/test/template/active_record_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/asset_tag_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/benchmark_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/compiled_templates_test.rb
 %%GEM_LIB_DIR%%/test/template/date_helper_test.rb
+%%GEM_LIB_DIR%%/test/template/deprecated_helper_test.rb
+%%GEM_LIB_DIR%%/test/template/deprecated_instance_variables_test.rb
 %%GEM_LIB_DIR%%/test/template/form_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/form_options_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/form_tag_helper_test.rb
@@ -698,8 +275,551 @@
 %%GEM_LIB_DIR%%/test/template/tag_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/text_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/url_helper_test.rb
-%%GEM_LIB_DIR%%/test/testing_sandbox.rb
-%%GEM_SPEC%%
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_pack_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/benchmarking_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/caching_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_process_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/components_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cookies_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/deprecated_dependencies_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/deprecated_redirects_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/deprecated_request_methods_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/filters_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/flash_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/helpers_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/integration_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/layout_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/mime_responds_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions/deprecated_assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions/dom_assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions/model_assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions/response_assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions/routing_assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions/selector_assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions/tag_assertions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/mime_type_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/pagination_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/request_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/rescue_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/resources_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/response_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/routing_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/scaffolding_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session_management_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/status_codes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/streaming_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/test_process_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/url_rewriter_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/verification_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cgi_ext_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cgi_methods_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cookie_performance_fix_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/raw_post_data_fix_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/macros/auto_complete_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/macros/in_place_editing_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/active_record_store_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/drb_server_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/drb_store_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/mem_cache_store_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/xml_node_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/document_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/node_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/selector_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/tokenizer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/vendor/html-scanner/html/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_pack/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/compiled_templates_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/partials_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/template_error_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/active_record_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/asset_tag_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/benchmark_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/cache_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/capture_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/date_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/debug_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/deprecated_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/form_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/form_options_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/form_tag_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/java_script_macros_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/javascript_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/number_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/pagination_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/prototype_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/tag_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/scriptaculous_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/text_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers/url_helper_rb.html
+%%GEM_DOC_DIR%%/rdoc/classes/FalseClass.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/NilClass.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Object.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/TrueClass.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete/ClassMethods.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing/ClassMethods.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds/InstanceMethods.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds/InstanceMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/ClassMethods.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/UrlWriter.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions/ActionCachePath.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions/ActionCachePath.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions/ActionCachePath.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions/ActionCachePath.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions/ActionCachePath.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Sweeping.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/ClassMethods.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000113.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding/ClassMethods.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.src/M000127.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification/ClassMethods.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Resources.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000136.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000137.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000140.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000145.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000146.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000147.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000148.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000149.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000150.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src/M000151.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Routing.src/M000152.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Routing.src/M000153.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Routing.src/M000154.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Routing.src/M000155.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Routing.src/M000156.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ResponseAssertions.src/M000157.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ResponseAssertions.src/M000158.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ResponseAssertions.src/M000159.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/TagAssertions.src/M000160.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/TagAssertions.src/M000161.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src/M000162.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src/M000163.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src/M000164.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src/M000165.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src/M000167.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src/M000168.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/RoutingAssertions.src/M000169.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/RoutingAssertions.src/M000170.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/RoutingAssertions.src/M000171.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ModelAssertions.src/M000172.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/DomAssertions.src/M000173.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/DomAssertions.src/M000174.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ResponseAssertions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/TagAssertions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/RoutingAssertions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ModelAssertions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/DomAssertions.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000175.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000176.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000177.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000178.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000179.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000180.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000181.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000182.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000183.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000184.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000185.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000186.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000187.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000188.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000190.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000191.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000192.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000193.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000194.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000195.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000196.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000197.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000198.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000199.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000200.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000201.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000202.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000203.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000204.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000205.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000206.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000207.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000208.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000209.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000210.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000211.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000212.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000213.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000214.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000215.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000216.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000217.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000218.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000219.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000220.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000221.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000222.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000223.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000224.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000225.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000226.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000227.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000228.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000229.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000230.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000231.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000232.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestUploadedFile.src/M000233.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/UrlWriter.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Resources.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Routing.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestUploadedFile.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000234.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000235.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000236.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000237.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000239.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000240.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000241.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000242.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000243.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000244.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000245.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000246.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000247.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000248.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000249.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000250.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000251.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src/M000252.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/BenchmarkHelper.src/M000253.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.src/M000254.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.src/M000255.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000256.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000257.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000258.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000259.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000260.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000261.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000262.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000263.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000264.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000265.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000266.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000267.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000268.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000269.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000270.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000271.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000272.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000273.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src/M000274.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000276.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000277.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000278.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000279.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000280.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000282.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000283.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000284.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000285.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000286.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000287.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000288.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000289.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000290.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000291.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src/M000292.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000293.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000294.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000295.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000296.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000297.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000298.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000299.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000300.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000301.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000302.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000303.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000304.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000305.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000306.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000307.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000308.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000309.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000310.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000311.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src/M000312.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DebugHelper.src/M000313.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CacheHelper.src/M000314.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000315.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000316.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000317.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src/M000318.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000319.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000320.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000321.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000322.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src/M000323.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000324.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000325.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000327.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000328.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000329.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000330.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000331.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000332.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000333.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000334.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000335.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000336.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000337.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src/M000338.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000339.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000340.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000341.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000342.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000343.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000344.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000345.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src/M000346.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src/M000347.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src/M000348.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src/M000349.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src/M000350.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000351.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000353.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000354.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000355.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000356.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000357.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000358.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000359.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000360.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000361.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000362.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src/M000363.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000364.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000365.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000366.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000367.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000368.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000369.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000370.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000371.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000372.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000373.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000374.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000375.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000376.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000377.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000378.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src/M000379.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000380.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000381.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000382.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000383.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000384.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000385.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src/M000386.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.src/M000387.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.src/M000388.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/BenchmarkHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DebugHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CacheHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Base.src/M000389.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Partials.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionView/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000390.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000391.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000392.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000393.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000394.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000395.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000396.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000397.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src/M000398.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.html
+%%GEM_DOC_DIR%%/rdoc/classes/FalseClass.html
+%%GEM_DOC_DIR%%/rdoc/classes/NilClass.html
+%%GEM_DOC_DIR%%/rdoc/classes/Object.html
+%%GEM_DOC_DIR%%/rdoc/classes/TrueClass.html
+%%GEM_DOC_DIR%%/rdoc/classes/Mime.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
 @dirrm %%GEM_LIB_DIR%%/test/template
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/test/dot.directory
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/test
@@ -707,6 +827,7 @@
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/scope
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/respond_to/layouts
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/respond_to
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/public/javascripts
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/public/images
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/public
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/multipart
@@ -719,15 +840,20 @@
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/helpers
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/fun/games
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/fun
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/deprecated_instance_variables
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/db_definitions
-@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/models
-@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/module_that_holds_controllers
-@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/a_class_that_contains_a_controller
-@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers
-@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app
-@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/content_type
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/addresses
 @dirrm %%GEM_LIB_DIR%%/test/fixtures
+@dirrm %%GEM_LIB_DIR%%/test/controller/deprecation
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures/vendor/plugins/bad_plugin/lib
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures/vendor/plugins/bad_plugin
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures/vendor/plugins
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures/vendor
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures/app/controllers/admin
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures/app/controllers
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures/app
+@dirrm %%GEM_LIB_DIR%%/test/controller/controller_fixtures
 @dirrm %%GEM_LIB_DIR%%/test/controller
 @dirrm %%GEM_LIB_DIR%%/test/activerecord
 @dirrm %%GEM_LIB_DIR%%/test
@@ -744,12 +870,111 @@
 @dirrm %%GEM_LIB_DIR%%/lib/action_controller/session
 @dirrm %%GEM_LIB_DIR%%/lib/action_controller/macros
 @dirrm %%GEM_LIB_DIR%%/lib/action_controller/cgi_ext
+@dirrm %%GEM_LIB_DIR%%/lib/action_controller/assertions
 @dirrm %%GEM_LIB_DIR%%/lib/action_controller
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/examples/debate
 @dirrm %%GEM_LIB_DIR%%/examples/address_book
 @dirrm %%GEM_LIB_DIR%%/examples
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Mime/Type.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Mime
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CacheHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DebugHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/BenchmarkHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestUploadedFile.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/DomAssertions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ModelAssertions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/RoutingAssertions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/SelectorAssertions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/TagAssertions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions/ResponseAssertions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Assertions
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Routing.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Resources.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions/ActionCachePath.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/UrlWriter.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds/InstanceMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTML/Selector.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTML
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TrueClass.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Object.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/NilClass.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/FalseClass.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_view
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_pack
@@ -759,89 +984,9 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/macros
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/assertions
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test/Unit/Assertions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test/Unit
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Test
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/UrlHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TextHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/TagHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PrototypeHelper
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/PaginationHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/NumberHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptMacrosHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/JavaScriptHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormTagHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/FormHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DebugHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/DateHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CaptureHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/CacheHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/BenchmarkHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/AssetTagHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers/ActiveRecordHelper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Base.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionView
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Verification
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestUploadedFile.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/TestProcess.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Streaming.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/SessionManagement
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Scaffolding
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Rescue.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Window.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator/Page.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/Paginator
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Pagination
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds/InstanceMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/MimeResponds
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/InPlaceEditing
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros/AutoComplete
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Helpers
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash/FlashHash.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Flash
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Filters
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Cookies.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/InstanceMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Components
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Pages
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Fragments.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching/Actions.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Caching
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Benchmarking
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
