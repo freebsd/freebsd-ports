@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 post-patch:
 	${RM} ${WRKSRC}/ri_image/wchar.c
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 .include <bsd.port.mk>
