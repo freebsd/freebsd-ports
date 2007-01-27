@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cimg
-DISTVERSION=	1-17
-PORTREVISION=	2
+DISTVERSION=	1-18
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +24,28 @@ MAKE_ENV=	CPPFLAGS="${CFLAGS} ${LAPACK_DEF} ${PTHREAD_CFLAGS}"	\
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-USE_GCC=	3.4
+USE_GCC=	3.4+
 REINPLACE_ARGS=	-i ""
+. if !defined(WITHOUT_LAPACK)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran -latlas
+LAPACK_DEF=	-Dcimg_lapack
+. endif
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+
+. if !defined(WITHOUT_OPTIMIZATIONS)
+USE_XLIB=	yes
+LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
+		jpeg:${PORTSDIR}/graphics/jpeg		\
+		tiff:${PORTSDIR}/graphics/tiff		\
+		Magick:${PORTSDIR}/graphics/ImageMagick	\
+		fftw3:${PORTSDIR}/math/fftw3
+. endif
+
 DOCBASE=	CHANGES.txt README.txt
 DOCREFS=	download.shtml favicon.ico favicon.png foot_reference.html	\
 		head.html head_reference.html img index.shtml links.shtml	\
@@ -38,26 +57,18 @@ NOBUILD=	yes
 .if !defined(WITHOUT_IM)
 RUN_DEPENDS+=	${LOCALBASE}/lib/libMagick.so.10:${PORTSDIR}/graphics/ImageMagick
 .endif
-.if !defined(WITHOUT_LAPACK)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran -latlas
-LAPACK_DEF=	-Dcimg_lapack
-.endif
-
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-
-#post-extract:
 
 post-patch:
 	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 #	@${CP} ${WRKSRC}/CImg.h ${WRKSRC}/CImg.h.dos
 #	@${TR} -d '\r' < ${WRKSRC}/CImg.h.dos > ${WRKSRC}/CImg.h
+
+pre-configure:
 .if !defined(NOPORTDOCS)
-	@${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
+	${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
 		${XARGS} ${REINPLACE_CMD} -e 's|img/|${EXAMPLESDIR}/img/|g'
+.else
+	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
 .endif
 
 .if !defined(NOPORTDOCS)
