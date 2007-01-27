@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.9.8.0
+PORTVERSION=	2.9.8.2
 #PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_GCC=	3.4+
@@ -28,12 +27,14 @@ LATEST_LINK=	dansguardian-devel
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
+		--mandir=/usr/local/man \
 		--with-logdir=/var/log \
 		--with-piddir=/var/run
 
 MAN8=		dansguardian.8
 
 OPTIONS=	DG_APACHE  "Enable Apache support for access denied page" on \
+		DG_PCRE    "Enable PCRE support" on \
 		DG_DMGR    "Enable the fancy download manager" on \
 		DG_TRICKLE "Enable the trickle download manager" on \
 		DG_CLISCAN "Enable support for CLI content scanners" off \
@@ -42,7 +43,8 @@ OPTIONS=	DG_APACHE  "Enable Apache support for access denied page" on \
 		DG_ICAP    "Enable ICAP AV content scanner support (testing)" off \
 		DG_KASP    "Enable Kaspersky AV support (testing)" off \
 		DG_NTLM    "Enable NTLM authentication plugin" off \
-		DG_EMAIL   "Enable e-mail reporting support" off
+		DG_EMAIL   "Enable e-mail reporting support" off \
+		DG_DEBUG   "Enable debug options - not for production use" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
@@ -53,6 +55,10 @@ RESTRICTED=	Redistribution and commercial download is restricted. Check ${DG_URL
 
 .if !defined(WITHOUT_DG_APACHE)
 USE_APACHE=	1.3+
+.endif
+
+.if !defined(WITHOUT_DG_PCRE)
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 .if !defined(WITHOUT_DG_TRICKLE)
@@ -124,6 +130,10 @@ CONFIGURE_ARGS+=	--enable-email
 PLIST_SUB+=		EMAILCONF=""
 .else
 PLIST_SUB+=		EMAILCONF="@comment "
+.endif
+
+.if defined(WITH_DG_DEBUG)
+CONFIGURE_ARGS+=	--enable-dgdebug
 .endif
 
 # User needs to manually download the distfile
