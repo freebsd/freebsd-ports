@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.0
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +16,8 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to create and read zip files
 
-USE_PHP=	yes
+USE_PHP=	pcre
+USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-zip --with-zlib-dir=/usr
