@@ -276,46 +276,59 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/version.py
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyo
-%%PORTDOCS%%%%DATADIR%%/contrib/bash_completion
-%%PORTDOCS%%%%DATADIR%%/contrib/convert-repo
-%%PORTDOCS%%%%DATADIR%%/contrib/darcs2hg.py
-%%PORTDOCS%%%%DATADIR%%/contrib/favicon.ico
-%%PORTDOCS%%%%DATADIR%%/contrib/hg-ssh
-%%PORTDOCS%%%%DATADIR%%/contrib/hgdiff
-%%PORTDOCS%%%%DATADIR%%/contrib/hgk
-%%PORTDOCS%%%%DATADIR%%/contrib/mercurial.el
-%%PORTDOCS%%%%DATADIR%%/contrib/sample.hgrc
-%%PORTDOCS%%%%DATADIR%%/contrib/tcsh_completion
-%%PORTDOCS%%%%DATADIR%%/contrib/zsh_completion
-%%PORTDOCS%%%%DATADIR%%/contrib/git-viz/git-cat-file
-%%PORTDOCS%%%%DATADIR%%/contrib/git-viz/git-diff-tree
-%%PORTDOCS%%%%DATADIR%%/contrib/git-viz/git-rev-list
-%%PORTDOCS%%%%DATADIR%%/contrib/git-viz/git-rev-tree
-%%PORTDOCS%%%%DATADIR%%/contrib/git-viz/hg-viz
-%%PORTDOCS%%%%DATADIR%%/contrib/hgsh/Makefile
-%%PORTDOCS%%%%DATADIR%%/contrib/hgsh/hgsh.c
-%%PORTDOCS%%%%DATADIR%%/contrib/purge/README
-%%PORTDOCS%%%%DATADIR%%/contrib/purge/purge.py
-%%PORTDOCS%%%%DATADIR%%/contrib/vim/HGAnnotate.vim
-%%PORTDOCS%%%%DATADIR%%/contrib/vim/hg-menu.vim
-%%PORTDOCS%%%%DATADIR%%/contrib/vim/hgcommand.vim
-%%PORTDOCS%%%%DATADIR%%/contrib/vim/patchreview.txt
-%%PORTDOCS%%%%DATADIR%%/contrib/vim/patchreview.vim
-%%PORTDOCS%%%%DATADIR%%/www/hgweb.cgi
-%%PORTDOCS%%%%DATADIR%%/www/hgwebdir.cgi
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/old
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/raw
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/rss
+%%PORTDOCS%%%%DOCSDIR%%/hg.1.gendoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/hg.1.html
+%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.html
+%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.html
+%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.html
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/contrib/git-viz/git-cat-file
+%%DATADIR%%/contrib/git-viz/git-diff-tree
+%%DATADIR%%/contrib/git-viz/git-rev-list
+%%DATADIR%%/contrib/git-viz/git-rev-tree
+%%DATADIR%%/contrib/git-viz/hg-viz
+%%DATADIR%%/contrib/hgsh/Makefile
+%%DATADIR%%/contrib/hgsh/hgsh.c
+%%DATADIR%%/contrib/purge/README
+%%DATADIR%%/contrib/purge/purge.py
+%%DATADIR%%/contrib/vim/HGAnnotate.vim
+%%DATADIR%%/contrib/vim/hg-menu.vim
+%%DATADIR%%/contrib/vim/hgcommand.vim
+%%DATADIR%%/contrib/vim/patchreview.txt
+%%DATADIR%%/contrib/vim/patchreview.vim
+%%DATADIR%%/contrib/bash_completion
+%%DATADIR%%/contrib/convert-repo
+%%DATADIR%%/contrib/darcs2hg.py
+%%DATADIR%%/contrib/favicon.ico
+%%DATADIR%%/contrib/hg-ssh
+%%DATADIR%%/contrib/hgdiff
+%%DATADIR%%/contrib/hgk
+%%DATADIR%%/contrib/mercurial.el
+%%DATADIR%%/contrib/sample.hgrc
+%%DATADIR%%/contrib/tcsh_completion
+%%DATADIR%%/contrib/zsh_completion
+%%DATADIR%%/www/hgweb.cgi
+%%DATADIR%%/www/hgwebdir.cgi
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/rss
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/raw
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/old
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/hgweb
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext
-%%PORTDOCS%%@dirrm %%DATADIR%%/www
-%%PORTDOCS%%@dirrm %%DATADIR%%/contrib/vim
-%%PORTDOCS%%@dirrm %%DATADIR%%/contrib/purge
-%%PORTDOCS%%@dirrm %%DATADIR%%/contrib/hgsh
-%%PORTDOCS%%@dirrm %%DATADIR%%/contrib/git-viz
-%%PORTDOCS%%@dirrm %%DATADIR%%/contrib
-%%PORTDOCS%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%/www
+@dirrm %%DATADIR%%/contrib/vim
+@dirrm %%DATADIR%%/contrib/purge
+@dirrm %%DATADIR%%/contrib/hgsh
+@dirrm %%DATADIR%%/contrib/git-viz
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
