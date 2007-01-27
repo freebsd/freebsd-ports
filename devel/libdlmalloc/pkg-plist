@@ -1,5 +1,5 @@
 include/dlmalloc/malloc.h
 lib/libdlmalloc.a
 lib/libdlmalloc.so
-lib/libdlmalloc.so.2.6
+lib/libdlmalloc.so.2
 @dirrm include/dlmalloc
