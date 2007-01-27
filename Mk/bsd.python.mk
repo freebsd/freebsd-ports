@@ -174,7 +174,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 
 _PYTHON_PORTBRANCH=		2.4
-_PYTHON_ALLBRANCHES=	2.4 2.5 2.3 2.2 2.1 # preferred first
+_PYTHON_ALLBRANCHES=	2.4 2.5 2.3 # preferred first
 _ZOPE_PORTBRANCH=		2.7
 _ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
 
@@ -345,22 +345,6 @@ PYTHON_REL=			235
 PYTHON_SUFFIX=		23
 PYTHON_VER=			2.3
 
-# Python-2.2
-.elif ${PYTHON_VERSION} == "python2.2"
-PYTHON_PORTVERSION?=2.2.3
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python22
-PYTHON_REL=			223
-PYTHON_SUFFIX=		22
-PYTHON_VER=			2.2
-
-# Python-2.1
-.elif ${PYTHON_VERSION} == "python2.1"
-PYTHON_PORTVERSION?=2.1.3
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python21
-PYTHON_REL=			213
-PYTHON_SUFFIX=		21
-PYTHON_VER=			2.1
-
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
 PYTHON_PORTSDIR=	# empty
@@ -375,8 +359,6 @@ PYTHON_VER!=		${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
 check-makevars::
 	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
-	@${ECHO} "  python2.1"
-	@${ECHO} "  python2.2"
 	@${ECHO} "  python2.3"
 	@${ECHO} "  python2.4 (default)"
 	@${ECHO} "  python2.5"
