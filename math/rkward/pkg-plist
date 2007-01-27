@@ -16,15 +16,20 @@ share/apps/rkward/00saveload/save/skeleton/code.php
 share/apps/rkward/00saveload/save/skeleton/description.xml
 share/apps/rkward/00saveload/save/write/code.php
 share/apps/rkward/00saveload/save/write/description.xml
-share/apps/rkward/02plots/scatterplot/code.php
-share/apps/rkward/02plots/scatterplot/description.xml
-share/apps/rkward/20descriptive/code.php
-share/apps/rkward/20descriptive/description.xml
 share/apps/rkward/all.pluginmap
 share/apps/rkward/corr_matrix/code.php
 share/apps/rkward/corr_matrix/description.xml
+share/apps/rkward/descriptive/descriptive_statistics.php
+share/apps/rkward/descriptive/descriptive_statistics.rkh
+share/apps/rkward/descriptive/descriptive_statistics.xml
+share/apps/rkward/descriptive/skewness_kurtosis_test.php
+share/apps/rkward/descriptive/skewness_kurtosis_test.xml
 share/apps/rkward/detachedwindowcontainer.rc
 share/apps/rkward/distributions.pluginmap
+share/apps/rkward/distributions/ad_test.php
+share/apps/rkward/distributions/ad_test.xml
+share/apps/rkward/distributions/agostino_test.php
+share/apps/rkward/distributions/agostino_test.xml
 share/apps/rkward/distributions/beta_probabilities.php
 share/apps/rkward/distributions/beta_probabilities.xml
 share/apps/rkward/distributions/beta_quantiles.php
@@ -43,6 +48,8 @@ share/apps/rkward/distributions/chi_squared_probabilities.php
 share/apps/rkward/distributions/chi_squared_probabilities.xml
 share/apps/rkward/distributions/chi_squared_quantiles.php
 share/apps/rkward/distributions/chi_squared_quantiles.xml
+share/apps/rkward/distributions/cvm_test.php
+share/apps/rkward/distributions/cvm_test.xml
 share/apps/rkward/distributions/exponential_probabilities.php
 share/apps/rkward/distributions/exponential_probabilities.xml
 share/apps/rkward/distributions/exponential_quantiles.php
@@ -67,6 +74,8 @@ share/apps/rkward/distributions/hypergeometric_probabilities.php
 share/apps/rkward/distributions/hypergeometric_probabilities.xml
 share/apps/rkward/distributions/hypergeometric_quantiles.php
 share/apps/rkward/distributions/hypergeometric_quantiles.xml
+share/apps/rkward/distributions/lillie_test.php
+share/apps/rkward/distributions/lillie_test.xml
 share/apps/rkward/distributions/log_normal_probabilities.php
 share/apps/rkward/distributions/log_normal_probabilities.xml
 share/apps/rkward/distributions/log_normal_quantiles.php
@@ -83,6 +92,8 @@ share/apps/rkward/distributions/normal_probabilities.php
 share/apps/rkward/distributions/normal_probabilities.xml
 share/apps/rkward/distributions/normal_quantiles.php
 share/apps/rkward/distributions/normal_quantiles.xml
+share/apps/rkward/distributions/pearson_test.php
+share/apps/rkward/distributions/pearson_test.xml
 share/apps/rkward/distributions/plot_binomial_distribution.php
 share/apps/rkward/distributions/plot_binomial_distribution.xml
 share/apps/rkward/distributions/plot_chi_squared_distribution.php
@@ -99,6 +110,10 @@ share/apps/rkward/distributions/poisson_probabilities.php
 share/apps/rkward/distributions/poisson_probabilities.xml
 share/apps/rkward/distributions/poisson_quantiles.php
 share/apps/rkward/distributions/poisson_quantiles.xml
+share/apps/rkward/distributions/sf_test.php
+share/apps/rkward/distributions/sf_test.xml
+share/apps/rkward/distributions/shapiro_test.php
+share/apps/rkward/distributions/shapiro_test.xml
 share/apps/rkward/distributions/t_probabilities.php
 share/apps/rkward/distributions/t_probabilities.xml
 share/apps/rkward/distributions/t_quantiles.php
@@ -122,16 +137,27 @@ share/apps/rkward/distributions/wilcoxon_quantiles.xml
 share/apps/rkward/icons/function.png
 share/apps/rkward/icons/list.png
 share/apps/rkward/icons/rkward_logo.png
+share/apps/rkward/pages/rkward_for_new_users.rkh
+share/apps/rkward/pages/rkward_for_r_users.rkh
+share/apps/rkward/pages/rkward_help.css
+share/apps/rkward/pages/rkward_shortcuts.rkh
+share/apps/rkward/pages/rkward_welcome.rkh
 share/apps/rkward/phpfiles/common.php
 share/apps/rkward/plots.pluginmap
 share/apps/rkward/plots/box_plot.php
 share/apps/rkward/plots/box_plot.xml
+share/apps/rkward/plots/density_plot.php
+share/apps/rkward/plots/density_plot.xml
 share/apps/rkward/plots/ecdf_plot.php
 share/apps/rkward/plots/ecdf_plot.xml
 share/apps/rkward/plots/histogram.php
 share/apps/rkward/plots/histogram.xml
 share/apps/rkward/plots/plot_options.php
 share/apps/rkward/plots/plot_options.xml
+share/apps/rkward/plots/scatterplot.php
+share/apps/rkward/plots/scatterplot.xml
+share/apps/rkward/plots/stripchart_plot.php
+share/apps/rkward/plots/stripchart_plot.xml
 share/apps/rkward/rkcatchedx11windowpart.rc
 share/apps/rkward/rkcommandeditorwindowpart.rc
 share/apps/rkward/rkcommandlogpart.rc
@@ -178,13 +204,13 @@ share/icons/locolor/32x32/apps/rkward.png
 @dirrm share/apps/rkward/x11device
 @dirrm share/apps/rkward/uni1.2
 @dirrm share/apps/rkward/simple_anova
+@dirrm share/apps/rkward/pages
 @dirrm share/apps/rkward/plots
 @dirrm share/apps/rkward/phpfiles
 @dirrm share/apps/rkward/icons
+@dirrm share/apps/rkward/descriptive
 @dirrm share/apps/rkward/distributions
 @dirrm share/apps/rkward/corr_matrix
-@dirrm share/apps/rkward/20descriptive
-@dirrm share/apps/rkward/02plots/scatterplot
 @dirrm share/apps/rkward/02plots
 @dirrm share/apps/rkward/00saveload/save/write
 @dirrm share/apps/rkward/00saveload/save/skeleton
