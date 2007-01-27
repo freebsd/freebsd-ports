@@ -4204,6 +4204,7 @@ gzrecover	ports/archivers/gzrecover
 gzstream	ports/devel/gzstream
 h2n		ports/dns/h2n
 ha		ports/archivers/ha
+hachoir-core	ports/devel/hachoir-core
 hachoir-wx	ports/sysutils/hachoir-wx
 hackbot		ports/security/hackbot
 hackedbox	ports/x11-wm/hackedbox
