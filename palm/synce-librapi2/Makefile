@@ -14,6 +14,7 @@ DISTNAME=	synce-librapi-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities/libraries to make RAPI calls on WinCE devices
 
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
 ONLY_FOR_ARCHS=	i386 amd64
