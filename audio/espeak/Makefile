@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	espeak
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,6 +32,7 @@ USE_ZIP=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${WRKSRC}/src
 ESPEAK_LIBRARY=	lib${PORTNAME}.so.1.${PORTVERSION}
 FIND_DIRS=	espeak-data
 FIND_DOCS=	docs
@@ -44,19 +45,11 @@ post-patch:
 	@for FILE in ${REPLACE_FILES}; do \
 	    ${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		-e "s|%%DATADIR%%|${DATADIR}|g" $${FILE} ;\
+		-e "s|%%DATADIR%%|${DATADIR}|g" \
+		-e "s|%%PREFIX%%|${PREFIX}|g" $${FILE} ;\
 	done;
 
-do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/speak ${PREFIX}/bin/speak
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/espeak ${PREFIX}/bin/espeak
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${ESPEAK_LIBRARY} ${PREFIX}/lib/${ESPEAK_LIBRARY}
-	${LN} ${LN_OPTS} ${PREFIX}/lib/${ESPEAK_LIBRARY} ${PREFIX}/lib/${ESPEAK_LIBRARY:S/.${PORTVERSION}//g}
-	cd ${WRKSRC} && ${FIND} ${FIND_DIRS}  -type d -exec ${MKDIR} \
-		${DATADIR}/{} \;
-	cd ${WRKSRC} && ${FIND} ${FIND_DIRS}  -type f -exec ${INSTALL_DATA} {} \
-		${DATADIR}/{} \;
-
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/${FIND_DOCS} && ${FIND} . -type d -exec ${MKDIR} \

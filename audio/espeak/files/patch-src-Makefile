@@ -1,34 +1,39 @@
---- src/Makefile	Mon Jan 15 02:08:03 2007
-+++ src/Makefile.port	Wed Jan 17 22:09:54 2007
+--- src/Makefile	Fri Jan 26 10:20:06 2007
++++ src/Makefile.port	Fri Jan 26 23:38:04 2007
 @@ -1,7 +1,7 @@
- BINDIR=/usr/bin
- INCDIR=/usr/include/espeak
- LIBDIR=/usr/lib
+-BINDIR=/usr/bin
+-INCDIR=/usr/include/espeak
+-LIBDIR=/usr/lib
 -DATADIR=/usr/share/espeak-data
++BINDIR=%%PREFIX%%/bin
++INCDIR=%%PREFIX%%/include/espeak
++LIBDIR=%%PREFIX%%/lib
 +DATADIR=%%DATADIR%%/espeak-data
  
- RELEASE = 1.18
+ RELEASE = 1.19
  BIN_NAME = speak
-@@ -28,39 +28,36 @@
+@@ -28,17 +28,17 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
--LIBS1=-lstdc++ -lportaudio
-+LIBS1=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio
+-LIBS1=-lstdc++ -lportaudio -lpthread
++LIBS1=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio -lpthread
  
  SRCS2=$(libespeak_SOURCES)
  OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
--LIBS2=-lstdc++ -lportaudio
-+LIBS2=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio
+-LIBS2=-lstdc++ -lportaudio -lpthread
++LIBS2=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio -lpthread
  
  SRCS3 = espeak.cpp
  OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
  LIBS3=-lstdc++ ./libespeak.so
  
 -CXXFLAGS=-O2
--
--
- all: $(BIN_NAME) $(LIB_NAME) $(BIN2_NAME)
++#CXXFLAGS=-O2
+ ifeq ($(shell uname -m), ppc)
+ 	CXXFLAGS += -D ARCH_BIG
+ endif
+@@ -48,22 +48,22 @@
  	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
  
  .cpp.o:
@@ -37,9 +42,9 @@
  
  $(BIN_NAME): $(OBJS1)
 -	$(CXX) -o $@ $(OBJS1) $(LIBS1)
-+	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS1) $(LIBS1)
++	$(CXX) $(PTHREAD_LIB) -o $@ $(OBJS1) $(LIBS1)
  
- $(BIN2_NAME): $(OBJS3)
+ $(BIN2_NAME): $(OBJS3) $(LIB_NAME)
 -	$(CXX) -o $@ $(OBJS3) $(LIBS3)
 +	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS3) $(LIBS3)
  
