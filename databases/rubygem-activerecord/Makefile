@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	1.14.4
+PORTVERSION=	1.15.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.3.1.gemspec:${PORTSDIR}/devel/rubygem-activesupport
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.4.0.gemspec:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	NATIVE_MYSQL "Use native MySQL bindings" Off\

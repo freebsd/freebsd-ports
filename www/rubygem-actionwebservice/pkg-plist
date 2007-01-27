@@ -1,105 +1,11 @@
 %%GEM_CACHE%%
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.src/M000001.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src/M000003.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src/M000004.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.src/M000002.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000041.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src/M000006.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src/M000007.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000009.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000010.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000011.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000014.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000015.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000021.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/SignatureTypes.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/created.rid
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/api_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/base_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/casting_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client/base_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client/soap_client_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client/xmlrpc_client_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container/action_controller_container_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container/delegated_container_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container/direct_container_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/dispatcher/abstract_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/dispatcher/action_controller_dispatcher_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/dispatcher_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/invocation_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/abstract_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/discovery_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/soap_protocol/marshaler_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/soap_protocol_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/xmlrpc_protocol_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/scaffolding_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/struct_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/support/class_inheritable_options_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/support/signature_types_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/test_invoke_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/version_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service_rb.html
-%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
-%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
-%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
-%%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/TODO
 %%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_LIB_DIR%%/MIT-LICENSE
-%%GEM_LIB_DIR%%/README
-%%GEM_LIB_DIR%%/Rakefile
-%%GEM_LIB_DIR%%/TODO
 %%GEM_LIB_DIR%%/examples/googlesearch/README
 %%GEM_LIB_DIR%%/examples/googlesearch/autoloading/google_search_api.rb
 %%GEM_LIB_DIR%%/examples/googlesearch/autoloading/google_search_controller.rb
@@ -118,40 +24,37 @@
 %%GEM_LIB_DIR%%/lib/action_web_service/base.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/casting.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/client.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/container.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/dispatcher.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/invocation.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/protocol.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/scaffolding.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/struct.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/test_invoke.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/version.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/client/base.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/client/soap_client.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/client/xmlrpc_client.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/container.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/container/action_controller_container.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/container/delegated_container.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/container/direct_container.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/dispatcher.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/dispatcher/abstract.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/dispatcher/action_controller_dispatcher.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/invocation.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/protocol.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/protocol/abstract.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/protocol/discovery.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/protocol/soap_protocol.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/protocol/soap_protocol/marshaler.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/protocol/xmlrpc_protocol.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/scaffolding.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/struct.rb
+%%GEM_LIB_DIR%%/lib/action_web_service/protocol/soap_protocol/marshaler.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/support/class_inheritable_options.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/support/signature_types.rb
 %%GEM_LIB_DIR%%/lib/action_web_service/templates/scaffolds/layout.rhtml
 %%GEM_LIB_DIR%%/lib/action_web_service/templates/scaffolds/methods.rhtml
 %%GEM_LIB_DIR%%/lib/action_web_service/templates/scaffolds/parameters.rhtml
 %%GEM_LIB_DIR%%/lib/action_web_service/templates/scaffolds/result.rhtml
-%%GEM_LIB_DIR%%/lib/action_web_service/test_invoke.rb
-%%GEM_LIB_DIR%%/lib/action_web_service/version.rb
-%%GEM_LIB_DIR%%/setup.rb
 %%GEM_LIB_DIR%%/test/abstract_client.rb
 %%GEM_LIB_DIR%%/test/abstract_dispatcher.rb
 %%GEM_LIB_DIR%%/test/abstract_unit.rb
 %%GEM_LIB_DIR%%/test/api_test.rb
-%%GEM_LIB_DIR%%/test/apis/auto_load_api.rb
-%%GEM_LIB_DIR%%/test/apis/broken_auto_load_api.rb
 %%GEM_LIB_DIR%%/test/base_test.rb
 %%GEM_LIB_DIR%%/test/casting_test.rb
 %%GEM_LIB_DIR%%/test/client_soap_test.rb
@@ -159,15 +62,112 @@
 %%GEM_LIB_DIR%%/test/container_test.rb
 %%GEM_LIB_DIR%%/test/dispatcher_action_controller_soap_test.rb
 %%GEM_LIB_DIR%%/test/dispatcher_action_controller_xmlrpc_test.rb
-%%GEM_LIB_DIR%%/test/fixtures/db_definitions/mysql.sql
-%%GEM_LIB_DIR%%/test/fixtures/users.yml
 %%GEM_LIB_DIR%%/test/gencov
 %%GEM_LIB_DIR%%/test/invocation_test.rb
 %%GEM_LIB_DIR%%/test/run
 %%GEM_LIB_DIR%%/test/scaffolded_controller_test.rb
 %%GEM_LIB_DIR%%/test/struct_test.rb
+%%GEM_LIB_DIR%%/test/apis/auto_load_api.rb
+%%GEM_LIB_DIR%%/test/apis/broken_auto_load_api.rb
 %%GEM_LIB_DIR%%/test/test_invoke_test.rb
-%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/test/fixtures/users.yml
+%%GEM_LIB_DIR%%/test/fixtures/db_definitions/mysql.sql
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/api_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/casting_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/dispatcher_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/invocation_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/scaffolding_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/struct_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/test_invoke_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client/soap_client_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/client/xmlrpc_client_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container/action_controller_container_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container/delegated_container_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/container/direct_container_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/dispatcher/abstract_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/dispatcher/action_controller_dispatcher_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/abstract_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/discovery_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/soap_protocol_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/xmlrpc_protocol_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/soap_protocol/marshaler_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/support/class_inheritable_options_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/support/signature_types_rb.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/SignatureTypes.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Base.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/db_definitions
 @dirrm %%GEM_LIB_DIR%%/test/fixtures
 @dirrm %%GEM_LIB_DIR%%/test/apis
@@ -191,6 +191,33 @@
 @dirrm %%GEM_LIB_DIR%%/examples/googlesearch
 @dirrm %%GEM_LIB_DIR%%/examples
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/support
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol/soap_protocol
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service/protocol
@@ -200,32 +227,5 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_web_service
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Struct.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Scaffolding
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBase64Factory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol/Soap
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Protocol
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Invocation
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Direct
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/Delegated
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container/ActionController
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Container
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/XmlRpc.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client/Soap.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/Client
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API/Method.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService/API
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionWebService
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
