@@ -1,10 +1,13 @@
 bin/pcp
+bin/pkillall
 bin/pls
 bin/pmkdir
 bin/pmv
 bin/prm
 bin/prmdir
 bin/prun
+bin/pshortcut
+bin/psettime
 bin/pstatus
 bin/rapiconfig
 bin/synce-install-cab
