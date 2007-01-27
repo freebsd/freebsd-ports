@@ -9,11 +9,12 @@ PORTNAME=	motor
 PORTVERSION=	3.4.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://konst.org.ua/download/
+MASTER_SITES=	http://thekonst.net/download/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A powerful text mode based programming IDE
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
