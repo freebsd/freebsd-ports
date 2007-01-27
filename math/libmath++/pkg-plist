@@ -22,5 +22,6 @@ include/math++/visitor.h
 include/math++/error.h
 lib/libmath++.so.0
 lib/libmath++.so
+lib/libmath++.la
 lib/libmath++.a
 @dirrm include/math++

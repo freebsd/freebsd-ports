@@ -14,6 +14,7 @@ MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	C++ Library for Symbolic and Numeric Calculus Applications
 
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
