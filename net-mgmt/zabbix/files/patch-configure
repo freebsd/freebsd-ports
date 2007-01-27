@@ -1,0 +1,12 @@
+--- ./configure.orig	Sat Jan 27 20:39:51 2007
++++ ./configure	Sat Jan 27 20:48:34 2007
+@@ -275,6 +275,9 @@
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>
++#include <sys/socket.h>
++#include <sys/param.h>
++#include <netinet/in.h>
+ #if HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
