@@ -20,8 +20,8 @@ COMMENT=	Python template plugin for TurboGears that supports json
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYRULEDISPATCH_EGG}:${PORTSDIR}/devel/py-ruledispatch \
-		${PYTHON_SITELIBDIR}/${PYSQLOBJECT_EGG}/sqlobject/__init__.py:${PORTSDIR}/databases/py-sqlobject \
-		${PYTHON_SITELIBDIR}/simplejson-1.4.egg:${PORTSDIR}/devel/py-simplejson
+		${PYTHON_SITELIBDIR}/${PYSIMPLEJSON_EGG}:${PORTSDIR}/devel/py-simplejson \
+		${PYTHON_SITELIBDIR}/${PYSQLOBJECT_EGG}/sqlobject/__init__.py:${PORTSDIR}/databases/py-sqlobject
 
 NO_BUILD=	yes
 
@@ -44,4 +44,10 @@ do-extract:
 do-install:
 	${EASY_INSTALL} ${EASY_INSTALL_ARGS} ${DISTDIR}/${DISTFILES}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYRULEDISPATCH_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-ruledispatch/Makefile -V PYRULEDISPATCH_EGG
+PYSIMPLEJSON_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-simplejson/Makefile -V PYSIMPLEJSON_EGG
+PYSQLOBJECT_EGG!=	${MAKE} -f ${PORTSDIR}/databases/py-sqlobject/Makefile -V PYSQLBOJECT_EGG
+
+.include <bsd.port.post.mk>
