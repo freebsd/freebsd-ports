@@ -14,6 +14,7 @@ DISTNAME=	synce-vdccm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Listener daemon for connections from WinCE devices
 
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
 GNU_CONFIGURE=	yes
