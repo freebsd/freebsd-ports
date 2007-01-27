@@ -9,8 +9,7 @@
 PORTNAME=	nx
 PORTVERSION=	0.33
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	networkx
+MASTER_SITES=	https://networkx.lanl.gov/download/
 DISTNAME=	networkx-${PORTVERSION}
 
 MAINTAINER=	araujo@bsdmail.org
