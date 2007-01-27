@@ -1,1 +1,4 @@
-%%PYTHON_SITELIBDIR%%/simplejson-1.4-py2.4.egg
+@comment $FreeBSD$
+@unexec easy_install -q -m -S %D/%%PYTHON_SITELIBDIR%% %%EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%PYSIMPLEJSON_EGG%%
+@exec easy_install -q -N -S %D/%%PYTHON_SITELIBDIR%% %%EGG_VER%%
