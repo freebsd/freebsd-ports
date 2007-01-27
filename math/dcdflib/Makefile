@@ -15,9 +15,7 @@ COMMENT=	Library of C Routines for Cumulative Distribution Functions
 
 WRKSRC=		${WRKDIR}/dcdflib.c/src
 
-INSTALLS_SHLIB=	yes
-
-.include <bsd.port.pre.mk>
+USE_LDCONFIG=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
@@ -29,8 +27,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.fdoc ${PREFIX}/share/doc/dcdflib
 	@${INSTALL_DATA} ${WRKSRC}/../README ${PREFIX}/share/doc/dcdflib
 .endif
-.if ${PORTOBJFORMAT} == "aout"
-	@${LN} -sf libdcdflib.so.1.1 ${PREFIX}/lib/libdcdflib.so
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
