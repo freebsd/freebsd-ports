@@ -4205,6 +4205,7 @@ gzstream	ports/devel/gzstream
 h2n		ports/dns/h2n
 ha		ports/archivers/ha
 hachoir-core	ports/devel/hachoir-core
+hachoir-metadata	ports/sysutils/hachoir-metadata
 hachoir-parser	ports/devel/hachoir-parser
 hachoir-wx	ports/sysutils/hachoir-wx
 hackbot		ports/security/hackbot
