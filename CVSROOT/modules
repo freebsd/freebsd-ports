@@ -12626,8 +12626,6 @@ python-doc-pdf-letter	ports/lang/python-doc-pdf-letter
 python-doc-postscript-a4	ports/lang/python-doc-postscript-a4
 python-doc-postscript-letter	ports/lang/python-doc-postscript-letter
 python-mode.el	ports/lang/python-mode.el
-python21	ports/lang/python21
-python22	ports/lang/python22
 python23	ports/lang/python23
 python24	ports/lang/python24
 python25	ports/lang/python25
