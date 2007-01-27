@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.selenic.com/mercurial/release/
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	A fast, lightweight source control management system
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
 
@@ -44,7 +42,10 @@ CONTRIB_FILES=	bash_completion \
 		vim/patchreview.txt \
 		vim/patchreview.vim
 
-PORTDOCS=	CONTRIBUTORS COPYING README doc/*.txt doc/*.html
+DOCS=	CONTRIBUTORS COPYING README doc/*.txt doc/*.html
+
+MAN1=	hg.1 hgmerge.1
+MAN5=	hgignore.5 hgrc.5
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
@@ -52,9 +53,11 @@ post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${PREFIX}/man/man5/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for f in ${PORTDOCS}; do \
+	for f in ${DOCS}; do \
 		${INSTALL_MAN} ${WRKSRC}/$${f} ${DOCSDIR}; \
 	done
 	${MKDIR} ${DATADIR}
