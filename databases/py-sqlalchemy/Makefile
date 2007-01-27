@@ -26,6 +26,9 @@ USE_PYDISTUTILS=	yes
 
 BUILD_DEPENDS+=		easy_install:${PORTSDIR}/devel/py-setuptools
 
+# bypass infrastructure bug
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
 OPTIONS=	FIREBIRD "support FireBird" off
 OPTIONS+=	MSSQL "support MS SQL Server" off
 OPTIONS+=	MYSQL "support MySql" on
@@ -42,8 +45,8 @@ PORTDOCS=	adv_datamapping.html alphaapi.html \
 		tutorial.html types.html unitofwork.html
 .endif
 
-PORTEXAMPLES= adjacencytree association backref collections graphs \
-		pickle polymorph vertical
+PORTEXAMPLES=	adjacencytree association backref collections graphs \
+	pickle polymorph vertical
 
 .include <bsd.port.pre.mk>
 
