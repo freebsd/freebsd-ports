@@ -16,7 +16,7 @@ MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Small, fast malloc library by Doug Lea
 
 NO_WRKSUBDIR=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

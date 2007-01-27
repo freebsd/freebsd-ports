@@ -20,11 +20,7 @@ LIBDIR=${PREFIX}/lib
 INCDIR=${PREFIX}/include/dlmalloc
 
 # for the shared lib stuff
-.if ${PORTOBJFORMAT} == "elf"
 VERSION=${VER:R:R}
-.else
-VERSION=${VER:R}
-.endif
 
 LIBMALLOC=libdlmalloc.a
 LIBSMALLOC=libdlmalloc.so.${VERSION}
@@ -54,11 +50,7 @@ $(LIBMALLOC): $(OBJS)
 
 $(LIBSMALLOC): $(SOBJS)
 	rm -f $(LIBSMALLOC) 
-.if ${PORTOBJFORMAT} == "elf"
 	ld -Bshareable -soname $(LIBSMALLOC) -o $(LIBSMALLOC) $(SOBJS) 
-.else
-	ld -Bshareable -o $(LIBSMALLOC) $(SOBJS) 
-.endif
 
 clean:
 	-rm -f *.o \#* *~ *.core a.out gmon.out mon.out onefile.c *.sL prof.out
