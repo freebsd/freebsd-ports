@@ -15,7 +15,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Generic Polygon Clipper
 
 USE_ZIP=	yes
-PLIST_FILES=	lib/libgpc.so.${PORTVERSION}	\
+PLIST_FILES=	lib/libgpc.so.2	\
 		lib/libgpc.so	lib/libgpc.a	\
 		include/gpc.h
 INSTALLS_SHLIB=	yes

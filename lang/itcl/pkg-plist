@@ -2,7 +2,7 @@ include/itcl%%MAJOR%%.%%MINOR%%/itcl.h
 include/itcl%%MAJOR%%.%%MINOR%%/itclInt.h
 include/itcl%%MAJOR%%.%%MINOR%%/itclDecls.h
 include/itcl%%MAJOR%%.%%MINOR%%/itclIntDecls.h
-lib/libitcl.so.%%MAJOR%%.%%MINOR%%
+lib/libitcl.so.%%MAJOR%%
 lib/libitcl.so
 lib/libitcl.a
 lib/itcl%%MAJOR%%.%%MINOR%%/itcl.tcl
