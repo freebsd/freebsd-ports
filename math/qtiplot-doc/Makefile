@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot-doc
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.9
 CATEGORIES=	math
 MASTER_SITES=	http://soft.proindependent.com/doc/
 DISTNAME=	manual-en
@@ -14,7 +14,7 @@ DISTNAME=	manual-en
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	The QtiPlot Handbook
 
-USE_ZIP=	yes
+USE_BZIP2=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/qtiplot/manual
 
