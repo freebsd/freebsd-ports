@@ -1,6 +1,6 @@
 --- src/libpasori_com_bsdugen.c.orig	Mon Mar 20 09:12:58 2006
-+++ src/libpasori_com_bsdugen.c	Sat Jan 20 23:13:12 2007
-@@ -6,7 +6,16 @@
++++ src/libpasori_com_bsdugen.c	Fri Jan 26 23:25:58 2007
+@@ -6,7 +6,17 @@
  #include <sys/ioctl.h>
  #include <errno.h>
  
@@ -13,11 +13,12 @@
 +#include "libpasori.h"
 +
 +#define VENDOR_SONY	0x054c
++#define PRODUCT_RC_S310	0x006c
 +#define PRODUCT_RC_S320	0x01bb
  
  void dbg_dump(uint8* d,int size){
          int i;
-@@ -16,25 +25,86 @@
+@@ -16,25 +26,88 @@
          Log("\n");
  }
  
@@ -37,7 +38,9 @@
 +		di.udi_addr = devnum;
 +		if (ioctl(busfd, USB_DEVICEINFO, &di) != -1) {
 +		    if ((di.udi_vendorNo == VENDOR_SONY) &&
-+			(di.udi_productNo == PRODUCT_RC_S320)) {
++			((di.udi_productNo == PRODUCT_RC_S310) ||
++			 (di.udi_productNo == PRODUCT_RC_S320))) {
++
 +			int i;
 +			for (i=0; i<USB_MAX_DEVNAMES; i++) {
 +			    if (strncmp(di.udi_devnames[i], "ugen", 4) == 0) {
@@ -114,7 +117,7 @@
          if( (pp->fd_cntl < 0) || (pp->fd_intr < 0) ){
                  Log("error opening pasori.%d %d",pp->fd_cntl,pp->fd_intr);
                  close(pp->fd_cntl);
-@@ -47,7 +117,6 @@
+@@ -47,7 +120,6 @@
  
  int pasori_send(pasori* pp,uint8 *cmd,uint8 size,int timeout){
          struct usb_ctl_request req;
@@ -122,7 +125,7 @@
          uint8 resp[256];
          signed int i;
  	int t;
-@@ -90,11 +159,12 @@
+@@ -90,11 +162,12 @@
  int pasori_recv(pasori* pp,uint8* buf,uint8 bufsize,int timeout){
          signed int i;
          int state;
@@ -137,7 +140,7 @@
  	
          uint8 resp;
          state = STATE_UNKNOWN;
-@@ -156,5 +226,7 @@
+@@ -156,5 +229,7 @@
  void pasori_close(pasori* p){
          close(p->fd_intr);
          close(p->fd_cntl);
