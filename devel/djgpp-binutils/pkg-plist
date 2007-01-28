@@ -1,0 +1,35 @@
+i586-pc-msdosdjgpp/bin/addr2line
+i586-pc-msdosdjgpp/bin/ar
+i586-pc-msdosdjgpp/bin/as
+i586-pc-msdosdjgpp/bin/c++filt
+i586-pc-msdosdjgpp/bin/ld
+i586-pc-msdosdjgpp/bin/nm
+i586-pc-msdosdjgpp/bin/objcopy
+i586-pc-msdosdjgpp/bin/objdump
+i586-pc-msdosdjgpp/bin/ranlib
+i586-pc-msdosdjgpp/bin/readelf
+i586-pc-msdosdjgpp/bin/size
+i586-pc-msdosdjgpp/bin/strings
+i586-pc-msdosdjgpp/bin/strip
+i586-pc-msdosdjgpp/lib/ldscripts/i386go32.x
+i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xbn
+i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xn
+i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xr
+i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xu
+i586-pc-msdosdjgpp/info
+bin/i586-pc-msdosdjgpp-addr2line
+bin/i586-pc-msdosdjgpp-ar
+bin/i586-pc-msdosdjgpp-as
+bin/i586-pc-msdosdjgpp-c++filt
+bin/i586-pc-msdosdjgpp-ld
+bin/i586-pc-msdosdjgpp-nm
+bin/i586-pc-msdosdjgpp-objcopy
+bin/i586-pc-msdosdjgpp-objdump
+bin/i586-pc-msdosdjgpp-ranlib
+bin/i586-pc-msdosdjgpp-readelf
+bin/i586-pc-msdosdjgpp-size
+bin/i586-pc-msdosdjgpp-strings
+bin/i586-pc-msdosdjgpp-strip
+@dirrm i586-pc-msdosdjgpp/lib/ldscripts
+@dirrmtry i586-pc-msdosdjgpp/lib
+@dirrmtry i586-pc-msdosdjgpp/bin
