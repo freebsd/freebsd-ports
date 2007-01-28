@@ -1127,6 +1127,7 @@
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Temp
+    SUBDIR += p5-File-Tempdir
     SUBDIR += p5-File-Type
     SUBDIR += p5-File-chdir
     SUBDIR += p5-File-pushd
