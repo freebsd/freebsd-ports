@@ -23,7 +23,6 @@ OPTIONS=	EXTENDED	'ELF format extensions' on \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared --disable-compat
 USE_LDCONFIG=	yes
-PLIST_SUB+=	LIBVER=${PORTVERSION:R}
 
 NOMAN=		defined
 
