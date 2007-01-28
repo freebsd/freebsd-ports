@@ -22,4 +22,5 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/xtest.xml
 %%DATADIR%%/xv.xml
 %%DATADIR%%/xvmc.xml
+%%DATADIR%%/xinerama.xml
 @dirrm %%DATADIR%%

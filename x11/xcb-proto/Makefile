@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcb-proto
-PORTVERSION=	0.9.92
+PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
