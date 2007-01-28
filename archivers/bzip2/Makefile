@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	bzip2
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.bzip.org/${PORTVERSION}/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A block-sorting file compressor
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PATCH_STRIP=	-p3
 
 MAN1=		bzip2.1 bzgrep.1 bzmore.1
