@@ -281,9 +281,6 @@
 %%SERENDIPITY%%/bundled-libs/XML/RPC.php
 %%SERENDIPITY%%/bundled-libs/XML/RPC/Dump.php
 %%SERENDIPITY%%/bundled-libs/XML/RPC/Server.php
-%%SERENDIPITY%%/bundled-libs/YahooUI/treeview/YAHOO.js
-%%SERENDIPITY%%/bundled-libs/YahooUI/treeview/license.txt
-%%SERENDIPITY%%/bundled-libs/YahooUI/treeview/treeview.js
 %%SERENDIPITY%%/bundled-libs/create_release.sh
 %%SERENDIPITY%%/bundled-libs/docs/HomePage.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/SamplePage.wiki.txt
@@ -294,8 +291,6 @@
 %%SERENDIPITY%%/bundled-libs/docs/WordsSmashedTogether.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/free links.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/stylesheet.css
-%%SERENDIPITY%%/bundled-libs/dragdrop.js
-%%SERENDIPITY%%/bundled-libs/imgedit.js
 %%SERENDIPITY%%/bundled-libs/tests/README
 %%SERENDIPITY%%/comment.php
 %%SERENDIPITY%%/deployment/archives/.ignore
@@ -999,6 +994,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_fr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_nl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_tn.inc.php
@@ -1012,6 +1008,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_fr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_nl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_tn.inc.php
@@ -1438,6 +1435,12 @@
 %%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_sqlite.sql
 %%SERENDIPITY%%/templates/HOWTO
 %%SERENDIPITY%%/templates/blue/htmlarea.css
 %%SERENDIPITY%%/templates/blue/img/back.png
@@ -1542,6 +1545,8 @@
 %%SERENDIPITY%%/templates/default-rtl/admin/img/infobar_background.png
 %%SERENDIPITY%%/templates/default-rtl/admin/img/menu_background.png
 %%SERENDIPITY%%/templates/default-rtl/admin/img/menuheader_background.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/next.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/previous.png
 %%SERENDIPITY%%/templates/default-rtl/admin/style.css
 %%SERENDIPITY%%/templates/default-rtl/entries_archives.tpl
 %%SERENDIPITY%%/templates/default-rtl/entries_summary.tpl
@@ -1555,6 +1560,9 @@
 %%SERENDIPITY%%/templates/default-xml/info.txt
 %%SERENDIPITY%%/templates/default-xml/preview.png
 %%SERENDIPITY%%/templates/default-xml/template.inc.php
+%%SERENDIPITY%%/templates/default/YahooUI/treeview/YAHOO.js
+%%SERENDIPITY%%/templates/default/YahooUI/treeview/license.txt
+%%SERENDIPITY%%/templates/default/YahooUI/treeview/treeview.js
 %%SERENDIPITY%%/templates/default/admin/img/accept.png
 %%SERENDIPITY%%/templates/default/admin/img/background.jpg
 %%SERENDIPITY%%/templates/default/admin/img/banner_background.png
@@ -1615,6 +1623,7 @@
 %%SERENDIPITY%%/templates/default/comments.tpl
 %%SERENDIPITY%%/templates/default/comments_by_author.tpl
 %%SERENDIPITY%%/templates/default/content.tpl
+%%SERENDIPITY%%/templates/default/dragdrop.js
 %%SERENDIPITY%%/templates/default/entries.tpl
 %%SERENDIPITY%%/templates/default/entries_archives.tpl
 %%SERENDIPITY%%/templates/default/entries_summary.tpl
@@ -1655,6 +1664,7 @@
 %%SERENDIPITY%%/templates/default/img/up.png
 %%SERENDIPITY%%/templates/default/img/xml.gif
 %%SERENDIPITY%%/templates/default/img/zoom.png
+%%SERENDIPITY%%/templates/default/imgedit.js
 %%SERENDIPITY%%/templates/default/index.tpl
 %%SERENDIPITY%%/templates/default/info.txt
 %%SERENDIPITY%%/templates/default/plugin_calendar.tpl
@@ -1829,6 +1839,8 @@
 @dirrm %%SERENDIPITY%%/templates/default/img
 @dirrm %%SERENDIPITY%%/templates/default/admin/img
 @dirrm %%SERENDIPITY%%/templates/default/admin
+@dirrm %%SERENDIPITY%%/templates/default/YahooUI/treeview
+@dirrm %%SERENDIPITY%%/templates/default/YahooUI
 @dirrm %%SERENDIPITY%%/templates/default-xml
 @dirrm %%SERENDIPITY%%/templates/default-rtl/img
 @dirrm %%SERENDIPITY%%/templates/default-rtl/admin/img
@@ -1944,8 +1956,6 @@
 @dirrm %%SERENDIPITY%%/deployment
 @dirrm %%SERENDIPITY%%/bundled-libs/tests
 @dirrm %%SERENDIPITY%%/bundled-libs/docs
-@dirrm %%SERENDIPITY%%/bundled-libs/YahooUI/treeview
-@dirrm %%SERENDIPITY%%/bundled-libs/YahooUI
 @dirrm %%SERENDIPITY%%/bundled-libs/XML/RPC
 @dirrm %%SERENDIPITY%%/bundled-libs/XML
 @dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule
