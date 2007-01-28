@@ -6755,7 +6755,7 @@ looks		ports/devel/looks
 lookupd		ports/sysutils/lookupd
 lookupd_ldap	ports/sysutils/lookupd_ldap
 loop		ports/misc/loop
-lopster		ports/audio/lopster
+lopster		ports/net-p2p/lopster
 lostirc		ports/irc/lostirc
 loudmouth	ports/net-im/loudmouth
 lout		ports/print/lout
