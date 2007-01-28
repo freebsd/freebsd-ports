@@ -22,7 +22,7 @@ LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_BDB=	41+
+USE_BDB=	43+
 USE_RC_SUBR=	netatalk
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
