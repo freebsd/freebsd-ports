@@ -5650,6 +5650,7 @@ kid3		ports/audio/kid3
 kiki		ports/games/kiki
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
+kimboot		ports/games/kimboot
 kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
