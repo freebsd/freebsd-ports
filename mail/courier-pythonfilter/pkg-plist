@@ -1,5 +1,6 @@
 @unexec if cmp -s %D/etc/pythonfilter.conf %D/etc/pythonfilter.conf.sample; then rm -f %D/etc/pythonfilter.conf; fi
 etc/pythonfilter.conf.sample
+@exec if [ ! -e %D/etc/pythonfilter.conf ]; then cp -p %D/etc/pythonfilter.conf.sample %D/etc/pythonfilter.conf; fi
 libexec/filters/pythonfilter
 %%PYTHON_SITELIBDIR%%/courier/__init__.py
 %%PYTHON_SITELIBDIR%%/courier/__init__.pyc
@@ -58,8 +59,17 @@ libexec/filters/pythonfilter
 %%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_auth.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_auth.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_auth.pyo
-%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist.py
-%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist.pyc
-%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_block.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_block.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_block.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_dnswl.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_dnswl.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_dnswl.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_relayclients.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_relayclients.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_relayclients.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_spf.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_spf.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_spf.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/courier
 @dirrm %%PYTHON_SITELIBDIR%%/pythonfilter

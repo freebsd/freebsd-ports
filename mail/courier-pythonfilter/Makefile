@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-pythonfilter
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	mail python
 MASTER_SITES=	http://phantom.dragonsdawn.net/~gordon/courier-patches/courier-pythonfilter/
 
@@ -30,8 +30,11 @@ OPTIONS=	DEBUG		"debug module"			on \
 		NODUPLICATES	"noduplicates module"		off \
 		CLAMAV		"clamav module"			off \
 		AUTO_WHITELIST	"auto_whitelist module"		off \
-		WHITELIST	"whitelist module"		on \
+		WHITELIST_RELAY	"whitelist_relayclients module"	on \
 		WHITELIST_AUTH	"whitelist_auth module"		on \
+		WHITELIST_BLOCK	"whitelist_block module"	off \
+		WHITELIST_DNSWL	"whitelist_dnswl module"	off \
+		WHITELIST_SPF	"whitelist_spf module"		off \
 		PRIVATEADDR	"privateaddr module"		off \
 		SPFCHECK	"spfcheck module"		off \
 		NOSUCCESSDSN	"nosuccessdsn module"		off \
@@ -53,7 +56,7 @@ post-extract:
 	${MV} ${WRKSRC}/pythonfilter.conf ${WRKSRC}/pythonfilter.conf.sample
 
 post-configure:
-	@${ECHO_MSG} Creating sample config file based on your OPTIONS ...
+	@${ECHO_MSG} Adding your OPTIONS to sample config file...
 .if !defined(WITHOUT_DEBUG)
 	@${ECHO_MSG} debug >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
@@ -66,11 +69,20 @@ post-configure:
 .if !defined(WITHOUT_AUTO_WHITELIST)
 	@${ECHO_MSG} auto_whitelist >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if !defined(WITHOUT_WHITELIST)
-	@${ECHO_MSG} whitelist >> ${WRKSRC}/pythonfilter.conf.sample
+.if !defined(WITHOUT_WHITELIST_RELAY)
+	@${ECHO_MSG} whitelist_relayclients >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
 .if !defined(WITHOUT_WHITELIST_AUTH)
 	@${ECHO_MSG} whitelist_auth >> ${WRKSRC}/pythonfilter.conf.sample
+.endif
+.if defined(WHITELIST_BLOCK)
+	@${ECHO_MSG} whitelist_block >> ${WRKSRC}/pythonfilter.conf.sample
+.endif
+.if defined(WHITELIST_DNSWL)
+	@${ECHO_MSG} whitelist_dnswl >> ${WRKSRC}/pythonfilter.conf.sample
+.endif
+.if defined(WHITELIST_SPF)
+	@${ECHO_MSG} whitelist_spf >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
 .if defined(WITH_PRIVATEADDR)
 	@${ECHO_MSG} privateaddr >> ${WRKSRC}/pythonfilter.conf.sample
@@ -100,6 +112,6 @@ post-configure:
 post-install:
 	${MKDIR} ${LOCALSTATEDIR}/pythonfilter
 	${CHOWN} ${MAILOWN}:${MAILGRP} ${LOCALSTATEDIR}/pythonfilter
-	if [ -e ${PREFIX}/etc/pythonfilter.conf ]; then ${CP} -p ${PREFIX}/etc/pythonfilter.conf.sample ${PREFIX}/etc/pythonfilter.conf; fi
+	if [ ! -e ${PREFIX}/etc/pythonfilter.conf ]; then cp -p ${PREFIX}/etc/pythonfilter.conf.sample ${PREFIX}/etc/pythonfilter.conf; fi
 
 .include <bsd.port.post.mk>
