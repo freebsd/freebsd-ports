@@ -241,6 +241,7 @@
     SUBDIR += distcc
     SUBDIR += distel
     SUBDIR += dits
+    SUBDIR += djgpp-binutils
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doctorj

@@ -1,0 +1,5 @@
+FSF binutils-2.16 for DJGPP cross-development.
+
+This port is needed by devel/djgpp-gcc
+
+WWW: http://www.delorie.com/djgpp/
