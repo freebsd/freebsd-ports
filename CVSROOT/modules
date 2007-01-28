@@ -15040,6 +15040,7 @@ vi-gtk-im-vi	ports/vietnamese/gtk-im-vi
 vi-kde3-i18n	ports/vietnamese/kde3-i18n
 vi-libviet	ports/vietnamese/libviet
 vi-unicode-uhoai	ports/vietnamese/unicode-uhoai
+vi-urwvn	ports/vietnamese/urwvn
 vi-vietunicode-hannom	ports/vietnamese/vietunicode-hannom
 vi-vietunicode-trichlor	ports/vietnamese/vietunicode-trichlor
 vi-vietunicode-web1	ports/vietnamese/vietunicode-web1
