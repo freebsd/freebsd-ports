@@ -1,0 +1,14 @@
+--- Makefile.orig	Thu Jan 25 10:11:05 2007
++++ Makefile	Thu Jan 25 10:11:28 2007
+@@ -1,11 +1,5 @@
+ include Makefile.inc
+ 
+-ifneq ($(MAKECMDGOALS),debug)
+-  CXXFLAGS= -O6 -Wall 
+-else 
+-  CXXFLAGS= -O0 -Wall -Wpointer-arith -Wstrict-prototypes
+-endif
+-
+ CXXFLAGS += -DOS_$(OS_PORT) -D$(MIDIIN)MIDIIN -DFFTW_VERSION_$(FFTW_VERSION) -DASM_F2I_$(ASM_F2I)
+ 
+ ifeq ($(DISABLE_GUI),YES)
