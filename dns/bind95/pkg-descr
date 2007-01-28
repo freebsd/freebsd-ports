@@ -15,10 +15,10 @@ Views
      One server process can provide multiple "views" of
           the DNS namespace, e.g. an "inside" view to certain
           clients, and an "outside" view to others.
-Multiprocessor Support
-Improved Portability Architecture
 
-WWW: http://www.isc.org/index.pl?/sw/bind/bind9.3.php
+Multiprocessor Support, including working threads in this version
+
+WWW: http://www.isc.org/index.pl?/sw/bind/bind9.4-beta.php
 
 - Doug Barton
 DougB@FreeBSD.org
