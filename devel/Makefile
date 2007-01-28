@@ -243,6 +243,7 @@
     SUBDIR += dits
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx
+    SUBDIR += djgpp-gcc
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doctorj

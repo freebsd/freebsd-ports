@@ -1,0 +1,34 @@
+--- gcc/Makefile.in.orig	Sat Jan 27 17:21:48 2007
++++ gcc/Makefile.in	Sat Jan 27 18:21:46 2007
+@@ -313,10 +313,7 @@
+ # to programs compiled with GCC.
+ USER_H = $(srcdir)/ginclude/float.h \
+ 	 $(srcdir)/ginclude/iso646.h \
+-	 $(srcdir)/ginclude/stdarg.h \
+ 	 $(srcdir)/ginclude/stdbool.h \
+-	 $(srcdir)/ginclude/stddef.h \
+-	 $(srcdir)/ginclude/varargs.h \
+ 	 $(EXTRA_HEADERS)
+ 
+ UNWIND_H = $(srcdir)/unwind-generic.h
+@@ -3386,7 +3383,7 @@
+ 	echo rm -f $(@D)/*
+ 	$(TEXI2HTML) -I $(abs_docdir) -I $(abs_docdir)/include -o $(@D) $<
+ 
+-MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1 doc/gfdl.7 doc/gpl.7 doc/fsf-funding.7
++MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1
+ 
+ generated-manpages: man
+ 
+@@ -3665,10 +3662,7 @@
+ install-man: lang.install-man \
+ 	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
+ 	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man7dir)/fsf-funding$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gfdl$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gpl$(man7ext)
++	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
+ 
+ $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7 installdirs
+ 	-rm -f $@
