@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Wed Dec  8 10:58:58 1999
-+++ Makefile.in	Wed Dec  8 10:59:06 1999
+--- Makefile.in.orig	Fri Jan 26 23:51:22 2007
++++ Makefile.in	Fri Jan 26 23:53:48 2007
 @@ -55,11 +55,16 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -48,13 +48,11 @@
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
-@@ -344,6 +354,14 @@
+@@ -344,6 +354,12 @@
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
  	$(RANLIB) ${TCL_LIB_FILE}
-+.if ${PORTOBJFORMAT}X == elfX
 +	ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`
-+.endif
 +
 +${TCL_STATIC_LIB_FILE}: ${OBJS}
 +	rm -f ${TCL_STATIC_LIB_FILE}
@@ -63,7 +61,7 @@
  
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
-@@ -432,13 +450,13 @@
+@@ -432,13 +448,13 @@
  	cd dltest; if test -f configure; then ./configure; else \
  	    $(DLTEST_DIR)/configure; fi
  
@@ -79,13 +77,11 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -451,15 +469,23 @@
+@@ -451,15 +467,21 @@
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
-+.if ${PORTOBJFORMAT}X == elfX
 +	@(cd $(LIB_INSTALL_DIR); ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`)
-+.endif
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@echo "Installing $(TCL_STATIC_LIB_FILE)"
 +	@$(INSTALL_DATA) $(TCL_STATIC_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_STATIC_LIB_FILE)
@@ -106,7 +102,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -477,8 +503,15 @@
+@@ -477,8 +499,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -124,7 +120,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -506,30 +539,37 @@
+@@ -506,30 +535,37 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
