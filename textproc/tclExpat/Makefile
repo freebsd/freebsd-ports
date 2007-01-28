@@ -17,7 +17,7 @@ COMMENT=	The TCL interface to Expat library
 LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER} \
 		expat:${PORTSDIR}/textproc/expat2
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 TCL_VERSION?=	8.4
 TCL_DVER=	${TCL_VERSION:S/.//}
