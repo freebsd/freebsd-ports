@@ -2032,6 +2032,7 @@ drupal-i18n	ports/www/drupal-i18n
 drupal-ldap_integration	ports/security/drupal-ldap_integration
 drupal-nice_menus	ports/www/drupal-nice_menus
 drupal-pubcookie	ports/www/drupal-pubcookie
+drupal-taxonomy_access	ports/www/drupal-taxonomy_access
 drupal-textile	ports/www/drupal-textile
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
