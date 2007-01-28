@@ -719,6 +719,7 @@
     SUBDIR += xmpeg3
     SUBDIR += xmradio
     SUBDIR += xsidplay
+    SUBDIR += xsynth-dssi
     SUBDIR += xtuner
     SUBDIR += xvmixer
     SUBDIR += xwave
