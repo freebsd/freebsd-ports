@@ -11,6 +11,7 @@ INCS=		libpasori.h libpasori_com.h libpasori_command.h \
 LIBDIR=		${LOCALBASE}/lib
 INCLUDEDIR=	${LOCALBASE}/include 
 NO_PROFILE=
+SHLIB_MAJOR=	1
 
 CFLAGS+=	-D__LIBPASORI_WITH_BSDUGEN
 CFLAGS+=	-Wall -W

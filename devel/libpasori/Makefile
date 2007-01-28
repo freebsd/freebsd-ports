@@ -6,6 +6,7 @@
 
 PORTNAME=	libpasori
 PORTVERSION=	02
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/20457
@@ -15,6 +16,7 @@ MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	FeliCa read/write library for Sony RC-S320 USB FeliCa R/W(PaSoRi)
 
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:

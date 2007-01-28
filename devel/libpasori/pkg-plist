@@ -6,3 +6,5 @@ include/libpasori_liblocal.h
 include/libpasori_com.h
 include/libpasori_config.h
 lib/libpasori.a
+lib/libpasori.so
+lib/libpasori.so.1
