@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-games
-PORTVERSION=	2.16.2
+PORTVERSION=	2.16.3
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -26,7 +26,7 @@ INSTALLS_ICONS=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui \
-		librsvg2 desktopfileutils
+		librsvg2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -49,8 +49,5 @@ CONFLICTS=	sol-1.0.*
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin/python|bin/env python|g' \
 		${WRKSRC}/libgames-support/games-server.py
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.post.mk>

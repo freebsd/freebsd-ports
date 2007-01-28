@@ -37,7 +37,6 @@ share/gnome/blackjack/Ameristar.rules
 share/gnome/blackjack/Atlantic_City.rules
 share/gnome/blackjack/Vegas_Downtown.rules
 share/gnome/blackjack/Vegas_Strip.rules
-@unexec [ -s %D/share/gnome/games/glines.scores ] || rm -f %D/share/gnome/games/glines.scores
 @unexec [ -s %D/share/gnome/games/glines.Large.scores ] || rm -f %D/share/gnome/games/glines.Large.scores
 @unexec [ -s %D/share/gnome/games/glines.Medium.scores ] || rm -f %D/share/gnome/games/glines.Medium.scores
 @unexec [ -s %D/share/gnome/games/glines.Small.scores ] || rm -f %D/share/gnome/games/glines.Small.scores
@@ -124,7 +123,6 @@ share/gnome/blackjack/Vegas_Strip.rules
 @unexec [ -s %D/share/gnome/games/same-gnome.Large.scores ] || rm -f %D/share/gnome/games/same-gnome.Large.scores
 @unexec [ -s %D/share/gnome/games/same-gnome.Medium.scores ] || rm -f %D/share/gnome/games/same-gnome.Medium.scores
 @unexec [ -s %D/share/gnome/games/same-gnome.Small.scores ] || rm -f %D/share/gnome/games/same-gnome.Small.scores
-@unexec [ -L %D/share/gnome/games/same-gnome.scores ] || rm -f %D/share/gnome/games/same-gnome.scores
 share/gnome/gnect/white_ob.cn4.gz
 share/gnome/gnibbles/level001.gnl
 share/gnome/gnibbles/level002.gnl
@@ -205,8 +203,8 @@ share/gnome/help/aisleriot/C/isabel.xml
 share/gnome/help/aisleriot/C/jamestown.xml
 share/gnome/help/aisleriot/C/jumbo.xml
 share/gnome/help/aisleriot/C/kansas.xml
-share/gnome/help/aisleriot/C/kings_audience.xml
 share/gnome/help/aisleriot/C/king_albert.xml
+share/gnome/help/aisleriot/C/kings_audience.xml
 share/gnome/help/aisleriot/C/klondike.xml
 share/gnome/help/aisleriot/C/labyrinth.xml
 share/gnome/help/aisleriot/C/lady_jane.xml
@@ -248,8 +246,8 @@ share/gnome/help/aisleriot/C/yield.xml
 share/gnome/help/aisleriot/C/yukon.xml
 share/gnome/help/aisleriot/C/zebra.xml
 share/gnome/help/aisleriot/fr/agnes.xml
-share/gnome/help/aisleriot/fr/athena.xml
 share/gnome/help/aisleriot/fr/aisleriot.xml
+share/gnome/help/aisleriot/fr/athena.xml
 share/gnome/help/aisleriot/fr/auld_lang_syne.xml
 share/gnome/help/aisleriot/fr/aunt_mary.xml
 share/gnome/help/aisleriot/fr/backbone.xml
@@ -291,8 +289,8 @@ share/gnome/help/aisleriot/fr/isabel.xml
 share/gnome/help/aisleriot/fr/jamestown.xml
 share/gnome/help/aisleriot/fr/jumbo.xml
 share/gnome/help/aisleriot/fr/kansas.xml
-share/gnome/help/aisleriot/fr/kings_audience.xml
 share/gnome/help/aisleriot/fr/king_albert.xml
+share/gnome/help/aisleriot/fr/kings_audience.xml
 share/gnome/help/aisleriot/fr/klondike.xml
 share/gnome/help/aisleriot/fr/labyrinth.xml
 share/gnome/help/aisleriot/fr/lady_jane.xml
@@ -518,9 +516,9 @@ share/gnome/pixmaps/iagno/woodtrim.png
 share/gnome/pixmaps/mahjongg/postmodern.svg
 share/gnome/pixmaps/mahjongg/smooth.png
 share/gnome/sol-games/agnes.scm
-share/gnome/sol-games/aunt_mary.scm
 share/gnome/sol-games/athena.scm
 share/gnome/sol-games/auld_lang_syne.scm
+share/gnome/sol-games/aunt_mary.scm
 share/gnome/sol-games/backbone.scm
 share/gnome/sol-games/bakers_dozen.scm
 share/gnome/sol-games/bakers_game.scm
@@ -558,8 +556,8 @@ share/gnome/sol-games/isabel.scm
 share/gnome/sol-games/jamestown.scm
 share/gnome/sol-games/jumbo.scm
 share/gnome/sol-games/kansas.scm
-share/gnome/sol-games/kings_audience.scm
 share/gnome/sol-games/king_albert.scm
+share/gnome/sol-games/kings_audience.scm
 share/gnome/sol-games/klondike.scm
 share/gnome/sol-games/labyrinth.scm
 share/gnome/sol-games/lady_jane.scm
@@ -818,8 +816,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/gnibbles
 @dirrm share/gnome/gnect
 @dirrm share/gnome/blackjack
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
