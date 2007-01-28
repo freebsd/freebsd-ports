@@ -1,6 +1,13 @@
 libexec/xfce4/panel-plugins/xfce4-genmon-plugin
+share/locale/cs/LC_MESSAGES/xfce4-genmon-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-genmon-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/xfce4/panel-plugins/genmon.desktop
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrm libexec/xfce4/panel-plugins
+@dirrm libexec/xfce4
