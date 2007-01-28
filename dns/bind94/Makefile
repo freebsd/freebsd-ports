@@ -1,6 +1,6 @@
-# New ports collection makefile for:	bind
-# Date created:				6 October 2000
-# Whom:					will
+# New ports collection makefile for:	BIND 9.4.x
+# Date created:				28 January 2007
+# Whom:					dougb
 #
 # $FreeBSD$
 #
@@ -11,8 +11,8 @@
 # version. If you are concerned about using the most recent ISC
 # release you can generally build it cleanly from the source - Doug
 
-PORTNAME=	bind9
-PORTVERSION=	9.3.4
+PORTNAME=	bind94
+PORTVERSION=	9.4.0.rc2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -21,11 +21,11 @@ DISTNAME=	bind-${ISCVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	Completely new version of the BIND DNS suite with updated DNSSEC
+MAINTAINER=	dougb@FreeBSD.org
+COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
-# ISC releases things like 9.3.0rc1, which our versioning doesn't like
-ISCVERSION=	9.3.4
+# ISC releases things like 9.4.0b3, which our versioning doesn't like
+ISCVERSION=	9.4.0rc2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
@@ -33,10 +33,12 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
-CONFLICTS=	bind-8.* bind84-8.* bind9-dlz-* bind9-sdb-mysql-* host-* zh-bind-8.*
+CONFLICTS=	bind-8.* bind84-8.* bind9-9.3.* bind9-dlz-* bind9-sdb-mysql-* host-* zh-bind-8.*
 
 OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
-		THREADS	"Compile with thread support (NOT RECOMMENDED!)" off
+		LARGE_FILE "64-bit file support" off \
+		IPV6 "IPv6 Support (autodetected by default)" off \
+		THREADS	"Compile with thread support" on
 
 .include <bsd.port.pre.mk>
 
@@ -46,9 +48,15 @@ CONFIGURE_ARGS+=	--with-openssl=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
-# ISC staff has informed me that for 9.3.x, threads are always a bad idea.
-# Leave the affirmative option for those that want to experiment.
-.if defined(WITH_THREADS)
+.if defined(WITH_LARGE_FILE)
+CONFIGURE_ARGS+=	--enable-largefile
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
@@ -104,6 +112,7 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
+MLINKS=	named-checkzone.8 named-compilezone.8
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
@@ -116,21 +125,14 @@ post-patch:
 		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
-	@${MV} ${WRKSRC}/bin/nsupdate/nsupdate.8 \
-	    ${WRKSRC}/bin/nsupdate/nsupdate.8.patched
-	@${SED} -e "s@^\.HP [0-9]* @@" \
-	    ${WRKSRC}/bin/nsupdate/nsupdate.8.patched \
-	    > ${WRKSRC}/bin/nsupdate/nsupdate.8
-	@${MV} ${WRKSRC}/bin/dig/nslookup.1 ${WRKSRC}/bin/dig/nslookup.1.Dist
-	@${SED} -e "s@^host \[server\]@\\\fBhost\\\fR \\\fI[server]\\\fR@" \
-	    ${WRKSRC}/bin/dig/nslookup.1.Dist > ${WRKSRC}/bin/dig/nslookup.1
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${BIND_DESTETC}/rndc.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM*html ${DOCSDIR}/arm
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${DOCSDIR}/arm
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
