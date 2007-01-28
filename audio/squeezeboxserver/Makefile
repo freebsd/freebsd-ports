@@ -119,7 +119,7 @@ post-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} \
-	    -e 's|%%PERL%%|${PERL}|' \
+	    -e 's|/usr/bin/perl|${PERL}|' \
 	    -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
 	    -e 's|%%CPANWRKDIR%%|${CPANWRKDIR}|' \
@@ -127,8 +127,10 @@ post-patch:
 		${WRKSRC}/Bin/build-perl-modules.pl
 	@${REINPLACE_CMD} \
 	    -e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/scanner.pl ${WRKSRC}/slimserver.pl
-	@${RM} ${WRKSRC}/scanner.pl.bak ${WRKSRC}/slimserver.pl.bak
+		${WRKSRC}/scanner.pl ${WRKSRC}/slimserver.pl \
+		${WRKSRC}/Bin/dbish
+	@${RM} ${WRKSRC}/scanner.pl.bak ${WRKSRC}/slimserver.pl.bak \
+	    ${WRKSRC}/Bin/dbish.bak
 
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}

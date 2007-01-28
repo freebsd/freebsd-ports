@@ -49,7 +49,7 @@ $FreeBSD$
 -	chomp($perlBinary = <STDIN>);
 -
 -	$perlBinary ||= '/usr/bin/perl';
-+	$perlBinary = '%%PERL%%';
++	$perlBinary = '/usr/bin/perl';
  
  	unless (-f $perlBinary && -x $perlBinary) {
  		die "Couldn't find a perl binary. Exiting.\n";
