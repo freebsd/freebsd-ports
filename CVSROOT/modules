@@ -6813,6 +6813,7 @@ lwp		ports/devel/lwp
 lws		ports/www/lws
 lxdvdrip	ports/multimedia/lxdvdrip
 lxnb		ports/security/lxnb
+lxpanel		ports/x11/lxpanel
 lxsplit		ports/sysutils/lxsplit
 lyntin		ports/net/lyntin
 lynx		ports/www/lynx
