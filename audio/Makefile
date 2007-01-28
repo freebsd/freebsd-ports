@@ -727,5 +727,6 @@
     SUBDIR += yamt
     SUBDIR += yell
     SUBDIR += zinf
+    SUBDIR += zynaddsubfx
 
 .include <bsd.port.subdir.mk>
