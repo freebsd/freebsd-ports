@@ -110,6 +110,7 @@
     SUBDIR += drupal
     SUBDIR += drupal-attachment
     SUBDIR += drupal-filemanager
+    SUBDIR += drupal-gsitemap
     SUBDIR += drupal-i18n
     SUBDIR += drupal-nice_menus
     SUBDIR += drupal-pubcookie
