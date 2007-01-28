@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql_autodoc
-PORTVERSION=	1.25
+PORTVERSION=	1.30
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rbt.ca/autodoc/binaries/
 DIST_SUBDIR=	postgresql
@@ -16,7 +16,9 @@ COMMENT=	Automatic documentation generator for postgresql databases
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
+BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
+		${SITE_PERL}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
+
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
 .else
