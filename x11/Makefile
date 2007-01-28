@@ -169,6 +169,7 @@
     SUBDIR += libxklavier
     SUBDIR += linux-xorg-libs
     SUBDIR += lupe
+    SUBDIR += lxpanel
     SUBDIR += mgapdesk
     SUBDIR += mlterm
     SUBDIR += mrxvt

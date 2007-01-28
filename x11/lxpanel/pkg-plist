@@ -1,0 +1,47 @@
+bin/lxpanel
+bin/lxpanelctl
+lib/lxpanel/plugins/netstatus.so
+lib/lxpanel/plugins/volume.so
+lib/lxpanel/plugins/cpu.so
+lib/lxpanel/plugins/deskno.so
+%%NLS%%share/locale/hu/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/lxpanel.mo
+%%DATADIR%%/default
+%%DATADIR%%/images/my-computer.svg
+%%DATADIR%%/images/redhat-internet.svg
+%%DATADIR%%/images/stock_volume.png
+%%DATADIR%%/images/thunderbird.svg
+%%DATADIR%%/images/default.xpm
+%%DATADIR%%/images/emacs.svg
+%%DATADIR%%/images/file-manager.svg
+%%DATADIR%%/images/firefox2.svg
+%%DATADIR%%/images/gnome-applications.png
+%%DATADIR%%/images/gnome-control-center.png
+%%DATADIR%%/images/gnome-devel.png
+%%DATADIR%%/images/gnome-fs-desktop.svg
+%%DATADIR%%/images/gnome-globe.png
+%%DATADIR%%/images/gnome-graphics.png
+%%DATADIR%%/images/gnome-joystick.png
+%%DATADIR%%/images/gnome-multimedia.png
+%%DATADIR%%/images/gnome-logout.png
+%%DATADIR%%/images/gnome-settings.png
+%%DATADIR%%/images/gnome-netstatus-0-24.png
+%%DATADIR%%/images/gnome-netstatus-25-49.png
+%%DATADIR%%/images/gnome-netstatus-50-74.png
+%%DATADIR%%/images/gnome-netstatus-75-100.png
+%%DATADIR%%/images/gnome-netstatus-disconn.svg
+%%DATADIR%%/images/gnome-netstatus-error.svg
+%%DATADIR%%/images/gnome-netstatus-idle.svg
+%%DATADIR%%/images/gnome-netstatus-rx.svg
+%%DATADIR%%/images/gnome-netstatus-txrx.svg
+%%DATADIR%%/images/gnome-netstatus-tx.svg
+%%DATADIR%%/images/gnome-setting.svg
+%%DATADIR%%/images/gnome-system.png
+%%DATADIR%%/images/gnome_terminal.svg
+%%DATADIR%%/images/gnome-util.png
+%%DATADIR%%/pager
+@dirrmtry lib/lxpanel/plugins
+@dirrmtry lib/lxpanel
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
