@@ -1,0 +1,6 @@
+Timemachine is a JACK audio recorder that allows you to record 10
+seconds of audio _before_ you click the "Record" button.  The idea
+is that, when you hear an interesting sound, you can press record
+and capture it, without having to try and recreate it.
+
+WWW:	http://plugin.org.uk/timemachine/
