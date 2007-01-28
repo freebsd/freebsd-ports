@@ -10,6 +10,7 @@
 .endif
     SUBDIR += libviet
     SUBDIR += unicode-uhoai
+    SUBDIR += urwvn
     SUBDIR += vietunicode-hannom
     SUBDIR += vietunicode-trichlor
     SUBDIR += vietunicode-web1
