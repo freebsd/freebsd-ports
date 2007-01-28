@@ -1899,6 +1899,7 @@ djbdns		ports/dns/djbdns
 djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
 djgpp-binutils	ports/devel/djgpp-binutils
+djgpp-crx	ports/devel/djgpp-crx
 djvulibre	ports/graphics/djvulibre
 djvulibre-nox11	ports/graphics/djvulibre-nox11
 dk-milter	ports/mail/dk-milter
