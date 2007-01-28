@@ -599,6 +599,7 @@
     SUBDIR += tempest_for_eliza
     SUBDIR += terminatorx
     SUBDIR += thunar-media-tags-plugin
+    SUBDIR += timemachine
     SUBDIR += timidity
     SUBDIR += timidity++
     SUBDIR += timidity++-emacs
