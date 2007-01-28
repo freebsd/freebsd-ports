@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iso2mkv
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://5ko.free.fr/dl/
 DISTNAME=	${PORTNAME}
