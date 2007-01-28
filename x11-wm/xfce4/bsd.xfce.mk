@@ -20,7 +20,7 @@ thunar_LIB_DEPENDS=		thunar-vfs-1.4:${PORTSDIR}/x11-fm/thunar
 wm_BUILD_DEPENDS=		xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
 wm_RUN_DEPENDS=			xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
 
-xfdev_RUN_DEPENDS=		xfce4-dev-tools:${PORTSDIR}/dev/xfce4-dev-tools
+xfdev_RUN_DEPENDS=		xfce4-dev-tools:${PORTSDIR}/devel/xfce4-dev-tools
 
 .for component in ${USE_XFCE}
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
