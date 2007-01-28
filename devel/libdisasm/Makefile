@@ -20,6 +20,7 @@ COMMENT=	The Bastard Disassembly Environment x86 disassembler library
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
