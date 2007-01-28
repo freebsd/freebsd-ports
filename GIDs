@@ -60,6 +60,7 @@ rbldns:*:153:
 sfs:*:171:
 agk:*:172:
 polipo:*:173:
+nagios:*:181:
 moinmoin:*:192:
 cups:*:193:
 sympa:*:200:
