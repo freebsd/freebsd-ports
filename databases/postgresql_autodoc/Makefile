@@ -17,7 +17,7 @@ COMMENT=	Automatic documentation generator for postgresql databases
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
+		${SITE_PERL}/mach/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
