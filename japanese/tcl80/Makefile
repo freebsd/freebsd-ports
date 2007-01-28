@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--enable-shared
 RANLIB=		ranlib
 PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg-install.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg-deinstall.tclsh
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -58,20 +58,15 @@ post-install:
 		Incompat80jp ${PREFIX}/share/doc/tcl${VERSION}jp; \
 	 )
 .endif
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libtcl80jp.so.1.5 ${PREFIX}/lib/libtcl80jp.so
-	${RANLIB} ${PREFIX}/lib/libtcl80jp.a
-.endif
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 	@${CAT}	${PKGMESSAGE}
 
 test:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
+	cd ${WRKSRC} && ${MAKE} test
 
 install-man:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
+	cd ${WRKSRC} && ${MAKE} install-man
 
 .include <bsd.port.post.mk>

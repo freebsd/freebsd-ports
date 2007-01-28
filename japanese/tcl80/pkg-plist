@@ -1,6 +1,6 @@
 bin/tclsh8.0jp
 lib/libtcl80jp.a
-lib/libtcl80jp.so.1.5
+lib/libtcl80jp.so.1
 lib/libtcl80jp.so
 include/tcl8.0jp/tcl.h
 include/tcl8.0jp/generic/tcl.h
