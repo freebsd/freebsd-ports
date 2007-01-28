@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ace
-PORTVERSION=	5.5.1
-PORTREVISION=	1
+PORTVERSION=	5.5.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 		http://deuce.doc.wustl.edu/old_distribution/ \
@@ -15,16 +14,13 @@ MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 DISTNAME=	ACE-${PORTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
-
 COMMENT=	The Adaptive Communication Environment for C++
-
-IGNORE=		attempts to allocate all of swap to see what happens when it fills
 
 CONFLICTS=	ace+tao-5*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-transform-name s,^,ace-,
 USE_GNOME=	pkgconfig

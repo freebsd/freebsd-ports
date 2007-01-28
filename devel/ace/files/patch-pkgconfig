@@ -1,14 +1,3 @@
---- ./ACEXML/apps/svcconf/Makefile.in.orig	Mon Mar 13 20:35:58 2006
-+++ ./ACEXML/apps/svcconf/Makefile.in	Mon Mar 13 20:36:39 2006
-@@ -356,7 +356,7 @@
- target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
--pkgconfigdir = @libdir@/pkgconfig
-+pkgconfigdir = @prefix@/libdata/pkgconfig
- ACE_BUILDDIR = $(top_builddir)
- ACE_ROOT = $(top_srcdir)
- nobase_include_HEADERS = $(am__append_2)
 --- ./ACEXML/common/Makefile.in.orig	Mon Mar 13 20:35:58 2006
 +++ ./ACEXML/common/Makefile.in	Mon Mar 13 20:36:47 2006
 @@ -357,7 +357,7 @@
@@ -53,17 +42,17 @@
  ACE_BUILDDIR = $(top_builddir)
  ACE_ROOT = $(top_srcdir)
  @BUILD_SSL_TRUE@lib_LTLIBRARIES = libACE_SSL.la
---- ./ace/Makefile.in.orig	Mon Mar 13 20:35:58 2006
-+++ ./ace/Makefile.in	Mon Mar 13 20:37:16 2006
-@@ -1946,7 +1946,7 @@
+--- ace/Makefile.in.orig	Sun Jul  9 16:39:28 2006
++++ ace/Makefile.in	Sun Jan 28 13:57:44 2007
+@@ -1977,7 +1977,7 @@
  target_cpu = @target_cpu@
  target_os = @target_os@
  target_vendor = @target_vendor@
 -pkgconfigdir = @libdir@/pkgconfig
 +pkgconfigdir = @prefix@/libdata/pkgconfig
- DEFAULT_INCLUDES = 
  ACE_BUILDDIR = $(top_builddir)
  ACE_ROOT = $(top_srcdir)
+ SUBDIRS = \
 --- ./Kokyu/Makefile.in.orig	Mon Mar 13 20:35:58 2006
 +++ ./Kokyu/Makefile.in	Mon Mar 13 20:37:24 2006
 @@ -349,7 +349,7 @@
