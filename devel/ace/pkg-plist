@@ -79,6 +79,7 @@ include/Kokyu/Kokyu_dsrt.i
 include/ace/ACE.h
 include/ace/ACE.inl
 include/ace/ACE_export.h
+include/ace/ARGV.cpp
 include/ace/ARGV.h
 include/ace/ARGV.inl
 include/ace/ATM_Acceptor.h
@@ -104,6 +105,7 @@ include/ace/Active_Map_Manager_T.h
 include/ace/Active_Map_Manager_T.inl
 include/ace/Addr.h
 include/ace/Addr.inl
+include/ace/Arg_Shifter.cpp
 include/ace/Arg_Shifter.h
 include/ace/Argv_Type_Converter.h
 include/ace/Argv_Type_Converter.inl
@@ -226,6 +228,7 @@ include/ace/Dynamic_Service.cpp
 include/ace/Dynamic_Service.h
 include/ace/Dynamic_Service.inl
 include/ace/Dynamic_Service_Base.h
+include/ace/Dynamic_Service_Dependency.h
 include/ace/Encoding_Converter.h
 include/ace/Encoding_Converter_Factory.h
 include/ace/Env_Value_T.cpp
@@ -285,24 +288,6 @@ include/ace/Global_Macros.h
 include/ace/Guard_T.cpp
 include/ace/Guard_T.h
 include/ace/Guard_T.inl
-include/ace/HTBP/HTBP_Addr.h
-include/ace/HTBP/HTBP_Channel.h
-include/ace/HTBP/HTBP_Channel.inl
-include/ace/HTBP/HTBP_Environment.h
-include/ace/HTBP/HTBP_Export.h
-include/ace/HTBP/HTBP_Filter.h
-include/ace/HTBP/HTBP_Filter.inl
-include/ace/HTBP/HTBP_Filter_Factory.h
-include/ace/HTBP/HTBP_ID_Requestor.h
-include/ace/HTBP/HTBP_Inside_Squid_Filter.h
-include/ace/HTBP/HTBP_Inside_Squid_Filter.inl
-include/ace/HTBP/HTBP_Macros.h
-include/ace/HTBP/HTBP_Notifier.h
-include/ace/HTBP/HTBP_Outside_Squid_Filter.h
-include/ace/HTBP/HTBP_Outside_Squid_Filter.inl
-include/ace/HTBP/HTBP_Session.h
-include/ace/HTBP/HTBP_Session.inl
-include/ace/HTBP/HTBP_Stream.h
 include/ace/Handle_Gobbler.h
 include/ace/Handle_Gobbler.inl
 include/ace/Handle_Ops.h
@@ -391,6 +376,7 @@ include/ace/MEM_SAP.inl
 include/ace/MEM_Stream.h
 include/ace/MEM_Stream.inl
 include/ace/MMAP_Memory_Pool.h
+include/ace/MMAP_Memory_Pool.inl
 include/ace/Malloc.h
 include/ace/Malloc.inl
 include/ace/Malloc_Allocator.h
@@ -424,8 +410,6 @@ include/ace/Message_Queue_T.cpp
 include/ace/Message_Queue_T.h
 include/ace/Method_Object.h
 include/ace/Method_Request.h
-include/ace/Metrics_Cache.h
-include/ace/Metrics_Cache_T.cpp
 include/ace/Min_Max.h
 include/ace/Module.cpp
 include/ace/Module.h
@@ -442,6 +426,8 @@ include/ace/Name_Proxy.h
 include/ace/Name_Request_Reply.h
 include/ace/Name_Space.h
 include/ace/Naming_Context.h
+include/ace/Netlink_Addr.h
+include/ace/Netlink_Addr.inl
 include/ace/Node.cpp
 include/ace/Node.h
 include/ace/Notification_Strategy.h
@@ -451,14 +437,12 @@ include/ace/Null_Condition.h
 include/ace/Null_Mutex.h
 include/ace/Null_Semaphore.h
 include/ace/OS.h
-include/ace/OS.inl
 include/ace/OS_Dirent.h
 include/ace/OS_Errno.h
 include/ace/OS_Errno.inl
 include/ace/OS_Log_Msg_Attributes.h
 include/ace/OS_Log_Msg_Attributes.inl
 include/ace/OS_Memory.h
-include/ace/OS_Memory.inl
 include/ace/OS_NS_Thread.h
 include/ace/OS_NS_Thread.inl
 include/ace/OS_NS_arpa_inet.h
@@ -504,6 +488,8 @@ include/ace/OS_NS_sys_resource.h
 include/ace/OS_NS_sys_resource.inl
 include/ace/OS_NS_sys_select.h
 include/ace/OS_NS_sys_select.inl
+include/ace/OS_NS_sys_sendfile.h
+include/ace/OS_NS_sys_sendfile.inl
 include/ace/OS_NS_sys_shm.h
 include/ace/OS_NS_sys_shm.inl
 include/ace/OS_NS_sys_socket.h
@@ -525,7 +511,6 @@ include/ace/OS_NS_wchar.h
 include/ace/OS_NS_wchar.inl
 include/ace/OS_QoS.h
 include/ace/OS_String.h
-include/ace/OS_String.inl
 include/ace/OS_TLI.h
 include/ace/OS_TLI.inl
 include/ace/OS_Thread_Adapter.h
@@ -535,7 +520,6 @@ include/ace/Obchunk.inl
 include/ace/Object_Manager.h
 include/ace/Object_Manager.inl
 include/ace/Object_Manager_Base.h
-include/ace/Obstack.h
 include/ace/Obstack_T.cpp
 include/ace/Obstack_T.h
 include/ace/Obstack_T.inl
@@ -573,19 +557,6 @@ include/ace/Profile_Timer.inl
 include/ace/RB_Tree.cpp
 include/ace/RB_Tree.h
 include/ace/RB_Tree.inl
-include/ace/RMCast/Acknowledge.h
-include/ace/RMCast/Bits.h
-include/ace/RMCast/Flow.h
-include/ace/RMCast/Fragment.h
-include/ace/RMCast/Link.h
-include/ace/RMCast/Parameters.h
-include/ace/RMCast/Protocol.h
-include/ace/RMCast/RMCast_Export.h
-include/ace/RMCast/Reassemble.h
-include/ace/RMCast/Retransmit.h
-include/ace/RMCast/Simulator.h
-include/ace/RMCast/Socket.h
-include/ace/RMCast/Stack.h
 include/ace/RW_Mutex.h
 include/ace/RW_Mutex.inl
 include/ace/RW_Process_Mutex.h
@@ -635,6 +606,8 @@ include/ace/SOCK_Dgram_Mcast.h
 include/ace/SOCK_Dgram_Mcast.inl
 include/ace/SOCK_IO.h
 include/ace/SOCK_IO.inl
+include/ace/SOCK_Netlink.h
+include/ace/SOCK_Netlink.inl
 include/ace/SOCK_SEQPACK_Acceptor.h
 include/ace/SOCK_SEQPACK_Acceptor.inl
 include/ace/SOCK_SEQPACK_Association.h
@@ -685,7 +658,6 @@ include/ace/Sample_History.inl
 include/ace/Sbrk_Memory_Pool.h
 include/ace/Sched_Params.h
 include/ace/Sched_Params.inl
-include/ace/Select_Reactor.h
 include/ace/Select_Reactor_Base.h
 include/ace/Select_Reactor_Base.inl
 include/ace/Select_Reactor_T.cpp
@@ -695,12 +667,13 @@ include/ace/Semaphore.h
 include/ace/Semaphore.inl
 include/ace/Service_Config.h
 include/ace/Service_Config.inl
+include/ace/Service_Gestalt.h
+include/ace/Service_Gestalt.inl
 include/ace/Service_Manager.h
 include/ace/Service_Object.h
 include/ace/Service_Object.inl
 include/ace/Service_Repository.h
 include/ace/Service_Repository.inl
-include/ace/Service_Templates.h
 include/ace/Service_Types.h
 include/ace/Service_Types.inl
 include/ace/Shared_Memory.h
@@ -753,15 +726,6 @@ include/ace/TLI_Connector.h
 include/ace/TLI_Connector.inl
 include/ace/TLI_Stream.h
 include/ace/TLI_Stream.inl
-include/ace/TMCast/Export.hpp
-include/ace/TMCast/FaultDetector.hpp
-include/ace/TMCast/Group.hpp
-include/ace/TMCast/GroupFwd.hpp
-include/ace/TMCast/LinkListener.hpp
-include/ace/TMCast/MTQueue.hpp
-include/ace/TMCast/Messaging.hpp
-include/ace/TMCast/Protocol.hpp
-include/ace/TMCast/TransactionController.hpp
 include/ace/TP_Reactor.h
 include/ace/TP_Reactor.inl
 include/ace/TSS_Adapter.h
@@ -777,7 +741,6 @@ include/ace/Task_Ex_T.inl
 include/ace/Task_T.cpp
 include/ace/Task_T.h
 include/ace/Task_T.inl
-include/ace/Template_Instantiations.cpp
 include/ace/Test_and_Set.cpp
 include/ace/Test_and_Set.h
 include/ace/Thread.h
@@ -883,8 +846,8 @@ include/ace/config-minimal.h
 include/ace/config-win32-borland.h
 include/ace/config-win32-common.h
 include/ace/config-win32-ghs.h
-include/ace/config-win32-msvc-6.h
 include/ace/config-win32-msvc-7.h
+include/ace/config-win32-msvc-8.h
 include/ace/config-win32-msvc.h
 include/ace/config-win32-visualage.h
 include/ace/config-win32.h
@@ -981,55 +944,93 @@ include/ace/post.h
 include/ace/pre.h
 include/ace/streams.h
 include/ace/svc_export.h
+include/protocols/ace/HTBP/HTBP_Addr.h
+include/protocols/ace/HTBP/HTBP_Channel.h
+include/protocols/ace/HTBP/HTBP_Channel.inl
+include/protocols/ace/HTBP/HTBP_Environment.h
+include/protocols/ace/HTBP/HTBP_Export.h
+include/protocols/ace/HTBP/HTBP_Filter.h
+include/protocols/ace/HTBP/HTBP_Filter.inl
+include/protocols/ace/HTBP/HTBP_Filter_Factory.h
+include/protocols/ace/HTBP/HTBP_ID_Requestor.h
+include/protocols/ace/HTBP/HTBP_Inside_Squid_Filter.h
+include/protocols/ace/HTBP/HTBP_Inside_Squid_Filter.inl
+include/protocols/ace/HTBP/HTBP_Macros.h
+include/protocols/ace/HTBP/HTBP_Notifier.h
+include/protocols/ace/HTBP/HTBP_Outside_Squid_Filter.h
+include/protocols/ace/HTBP/HTBP_Outside_Squid_Filter.inl
+include/protocols/ace/HTBP/HTBP_Session.h
+include/protocols/ace/HTBP/HTBP_Session.inl
+include/protocols/ace/HTBP/HTBP_Stream.h
+include/protocols/ace/RMCast/Acknowledge.h
+include/protocols/ace/RMCast/Bits.h
+include/protocols/ace/RMCast/Flow.h
+include/protocols/ace/RMCast/Fragment.h
+include/protocols/ace/RMCast/Link.h
+include/protocols/ace/RMCast/Parameters.h
+include/protocols/ace/RMCast/Protocol.h
+include/protocols/ace/RMCast/RMCast_Export.h
+include/protocols/ace/RMCast/Reassemble.h
+include/protocols/ace/RMCast/Retransmit.h
+include/protocols/ace/RMCast/Simulator.h
+include/protocols/ace/RMCast/Socket.h
+include/protocols/ace/RMCast/Stack.h
+include/protocols/ace/TMCast/Export.hpp
+include/protocols/ace/TMCast/FaultDetector.hpp
+include/protocols/ace/TMCast/Group.hpp
+include/protocols/ace/TMCast/GroupFwd.hpp
+include/protocols/ace/TMCast/LinkListener.hpp
+include/protocols/ace/TMCast/MTQueue.hpp
+include/protocols/ace/TMCast/Messaging.hpp
+include/protocols/ace/TMCast/Protocol.hpp
+include/protocols/ace/TMCast/TransactionController.hpp
+lib/libACE-5.5.2.so
 lib/libACE.la
 lib/libACE.so
-lib/libACE.so.5
+lib/libACEXML-5.5.2.so
 lib/libACEXML.la
 lib/libACEXML.so
-lib/libACEXML.so.5
+lib/libACEXML_Parser-5.5.2.so
 lib/libACEXML_Parser.la
 lib/libACEXML_Parser.so
-lib/libACEXML_Parser.so.5
+lib/libACEXML_XML_Svc_Conf_Parser-5.5.2.so
 lib/libACEXML_XML_Svc_Conf_Parser.la
 lib/libACEXML_XML_Svc_Conf_Parser.so
-lib/libACEXML_XML_Svc_Conf_Parser.so.5
+lib/libACE_HTBP-5.5.2.so
 lib/libACE_HTBP.la
 lib/libACE_HTBP.so
-lib/libACE_HTBP.so.5
+lib/libACE_RMCast-5.5.2.so
 lib/libACE_RMCast.la
 lib/libACE_RMCast.so
-lib/libACE_RMCast.so.5
+lib/libACE_SSL-5.5.2.so
 lib/libACE_SSL.la
 lib/libACE_SSL.so
-lib/libACE_SSL.so.5
+lib/libACE_TMCast-5.5.2.so
 lib/libACE_TMCast.la
 lib/libACE_TMCast.so
-lib/libACE_TMCast.so.5
 lib/libKokyu.la
 lib/libKokyu.so
 lib/libKokyu.so.5
-lib/libnetsvcs.la
-lib/libnetsvcs.so
-lib/libnetsvcs.so.5
 libdata/pkgconfig/ACE.pc
 libdata/pkgconfig/ACEXML.pc
 libdata/pkgconfig/ACEXML_Parser.pc
-libdata/pkgconfig/ACEXML_XML_Svc_Conf_Parser.pc
 libdata/pkgconfig/ACE_HTBP.pc
 libdata/pkgconfig/ACE_RMCast.pc
 libdata/pkgconfig/ACE_SSL.pc
 libdata/pkgconfig/ACE_TMCast.pc
 libdata/pkgconfig/Kokyu.pc
+@dirrm include/protocols/ace/TMCast
+@dirrm include/protocols/ace/RMCast
+@dirrm include/protocols/ace/HTBP
+@dirrm include/protocols/ace
+@dirrm include/protocols
 @dirrm include/ace/os_include/sys
 @dirrm include/ace/os_include/netinet
 @dirrm include/ace/os_include/net
 @dirrm include/ace/os_include/arpa
 @dirrm include/ace/os_include
-@dirrm include/ace/TMCast
 @dirrm include/ace/SSL
-@dirrm include/ace/RMCast
 @dirrm include/ace/QoS
-@dirrm include/ace/HTBP
 @dirrm include/ace
 @dirrm include/Kokyu
 @dirrm include/ACEXML/parser/parser

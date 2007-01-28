@@ -1,0 +1,10 @@
+--- configure.orig	Sun Jan 28 13:32:29 2007
++++ configure	Sun Jan 28 13:44:58 2007
+@@ -10434,6 +10434,7 @@
+      esac
+      ;;
+    *freebsd*)
++     ace_cv_new_throws_bad_alloc_exception=no
+      ;;
+    *hpux*)
+      # In case anything here or in the config depends on OS
