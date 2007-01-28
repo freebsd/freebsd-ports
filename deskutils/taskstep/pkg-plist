@@ -10,7 +10,6 @@
 %%TASKSTEP%%/edit.php
 %%TASKSTEP%%/edit_contexts.php
 %%TASKSTEP%%/edit_projects.php
-%%TASKSTEP%%/exported_results.csv
 %%TASKSTEP%%/google_display.php
 %%TASKSTEP%%/google_style.css
 %%TASKSTEP%%/header.php
@@ -58,6 +57,7 @@
 %%TASKSTEP%%/images/world.png
 %%TASKSTEP%%/index.php
 %%TASKSTEP%%/install/Crystal_package.png
+%%TASKSTEP%%/install/Thumbs.db
 %%TASKSTEP%%/install/accept.png
 %%TASKSTEP%%/install/cog_error.png
 %%TASKSTEP%%/install/cog_go.png
@@ -73,6 +73,61 @@
 %%TASKSTEP%%/install/table_go.png
 %%TASKSTEP%%/install/update-latest.php
 %%TASKSTEP%%/install/update-old-2&3.php
+%%TASKSTEP%%/lang/aptanaDB/log/log.ctrl
+%%TASKSTEP%%/lang/aptanaDB/log/log1.dat
+%%TASKSTEP%%/lang/aptanaDB/log/logmirror.ctrl
+%%TASKSTEP%%/lang/aptanaDB/seg0/c10.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c101.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c111.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c121.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c130.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c141.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c150.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c161.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c171.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c180.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c191.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c1a1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c1b1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c1c0.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c1d1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c1e0.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c1f1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c20.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c200.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c211.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c221.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c230.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c241.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c251.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c260.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c271.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c281.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c290.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c2a1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c2b1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c2c1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c2d0.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c2e1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c2f0.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c300.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c31.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c311.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c41.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c51.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c60.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c71.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c81.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/c90.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/ca1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/cb1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/cc0.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/cd1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/ce1.dat
+%%TASKSTEP%%/lang/aptanaDB/seg0/cf0.dat
+%%TASKSTEP%%/lang/aptanaDB/service.properties
+%%TASKSTEP%%/lang/derby.log
+%%TASKSTEP%%/lang/en.php
 %%TASKSTEP%%/login.php
 %%TASKSTEP%%/logout.php
 %%TASKSTEP%%/modern.css
@@ -150,7 +205,7 @@
 %%TASKSTEP%%/styles/mcfc.css
 %%TASKSTEP%%/styles/modern.css
 %%TASKSTEP%%/styles/professional.css
-%%TASKSTEP%%/tips.txt
+%%TASKSTEP%%/tips_en.txt
 %%TASKSTEP%%/today.php
 @dirrm %%TASKSTEP%%/styles/images/pro
 @dirrm %%TASKSTEP%%/styles/images/modern
@@ -158,6 +213,10 @@
 @dirrm %%TASKSTEP%%/styles/images
 @dirrm %%TASKSTEP%%/styles
 @dirrm %%TASKSTEP%%/script
+@dirrm %%TASKSTEP%%/lang/aptanaDB/seg0
+@dirrm %%TASKSTEP%%/lang/aptanaDB/log
+@dirrm %%TASKSTEP%%/lang/aptanaDB
+@dirrm %%TASKSTEP%%/lang
 @dirrm %%TASKSTEP%%/install
 @dirrm %%TASKSTEP%%/images
 @dirrm %%TASKSTEP%%/css

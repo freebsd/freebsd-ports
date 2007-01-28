@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	taskstep
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://taskstep.cunningtitle.co.uk/releases/
-DISTNAME=	${PORTNAME}-05
+DISTNAME=	${PORTNAME}-06
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Web based to-do list manager written in php
