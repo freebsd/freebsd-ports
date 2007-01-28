@@ -16160,6 +16160,7 @@ xstream		ports/textproc/xstream
 xstroke		ports/x11/xstroke
 xsu		ports/sysutils/xsu
 xsvg		ports/graphics/xsvg
+xsynth-dssi	ports/audio/xsynth-dssi
 xsysstats	ports/sysutils/xsysstats
 xsystem35	ports/emulators/xsystem35
 xt		ports/textproc/xt
