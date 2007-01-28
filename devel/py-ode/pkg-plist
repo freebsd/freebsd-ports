@@ -1,0 +1,26 @@
+%%PYTHON_SITELIBDIR%%/ode.so
+%%PYTHON_SITELIBDIR%%/xode/__init__.py
+%%PYTHON_SITELIBDIR%%/xode/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xode/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xode/body.py
+%%PYTHON_SITELIBDIR%%/xode/body.pyc
+%%PYTHON_SITELIBDIR%%/xode/body.pyo
+%%PYTHON_SITELIBDIR%%/xode/errors.py
+%%PYTHON_SITELIBDIR%%/xode/errors.pyc
+%%PYTHON_SITELIBDIR%%/xode/errors.pyo
+%%PYTHON_SITELIBDIR%%/xode/geom.py
+%%PYTHON_SITELIBDIR%%/xode/geom.pyc
+%%PYTHON_SITELIBDIR%%/xode/geom.pyo
+%%PYTHON_SITELIBDIR%%/xode/joint.py
+%%PYTHON_SITELIBDIR%%/xode/joint.pyc
+%%PYTHON_SITELIBDIR%%/xode/joint.pyo
+%%PYTHON_SITELIBDIR%%/xode/node.py
+%%PYTHON_SITELIBDIR%%/xode/node.pyc
+%%PYTHON_SITELIBDIR%%/xode/node.pyo
+%%PYTHON_SITELIBDIR%%/xode/parser.py
+%%PYTHON_SITELIBDIR%%/xode/parser.pyc
+%%PYTHON_SITELIBDIR%%/xode/parser.pyo
+%%PYTHON_SITELIBDIR%%/xode/transform.py
+%%PYTHON_SITELIBDIR%%/xode/transform.pyc
+%%PYTHON_SITELIBDIR%%/xode/transform.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/xode
