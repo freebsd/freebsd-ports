@@ -43,6 +43,7 @@ CONFIGURE_ARGS+=	--with-unixodbc
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .endif
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS= --with-libdir=${LOCALBASE}/lib --enable-pthreads \

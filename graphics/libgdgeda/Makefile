@@ -17,6 +17,7 @@ COMMENT=	Special version of the gd graphic lib for use by gEDA programs
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes

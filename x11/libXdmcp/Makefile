@@ -24,6 +24,7 @@ RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
 CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes

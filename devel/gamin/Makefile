@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A file and directory monitoring system
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack glib20
 USE_LDCONFIG=	yes

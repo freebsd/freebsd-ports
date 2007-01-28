@@ -78,6 +78,7 @@ include/cln/univpoly_rational.h
 include/cln/univpoly_real.h
 include/cln/version.h
 lib/libcln.a
+lib/libcln.la
 lib/libcln.so
 lib/libcln.so.4
 libdata/pkgconfig/cln.pc

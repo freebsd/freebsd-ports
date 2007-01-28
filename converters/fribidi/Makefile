@@ -14,6 +14,7 @@ MASTER_SITES=	http://fribidi.org/download/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes

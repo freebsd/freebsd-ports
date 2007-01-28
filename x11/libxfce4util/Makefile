@@ -14,6 +14,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 library with non-graphical helper functions
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 NO_FILTER_SHLIBS=	yes
 USE_BZIP2=	yes

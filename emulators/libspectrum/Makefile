@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	fuse-emulator
 MAINTAINER=	kemm@in-line.ru
 COMMENT=	Handling of ZX-Spectrum emulator files formats
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

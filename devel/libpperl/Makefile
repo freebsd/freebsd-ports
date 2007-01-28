@@ -17,6 +17,7 @@ COMMENT=	A library easing embedding perl interpreters into C programs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

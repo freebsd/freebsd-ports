@@ -43,6 +43,7 @@ include/libvisual%%VER%%/libvisual/lv_ui.h
 include/libvisual%%VER%%/libvisual/lv_utils.h
 include/libvisual%%VER%%/libvisual/lv_video.h
 include/libvisual%%VER%%/libvisual/lvconfig.h
+lib/libvisual%%VER%%.a
 lib/libvisual%%VER%%.la
 lib/libvisual%%VER%%.so
 lib/libvisual%%VER%%.so.0

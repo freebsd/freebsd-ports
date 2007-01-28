@@ -19,6 +19,7 @@ COMMENT=	A free implementation of the Kerberos 5 network security system
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
 		tasn1.3:${PORTSDIR}/security/libtasn1
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes

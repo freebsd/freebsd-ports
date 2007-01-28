@@ -19,6 +19,7 @@ RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 APACHE_COMPAT=	yes

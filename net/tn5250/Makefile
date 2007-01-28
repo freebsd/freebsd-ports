@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes

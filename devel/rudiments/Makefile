@@ -13,6 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 USE_OPENSSL=	yes

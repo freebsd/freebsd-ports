@@ -15,6 +15,7 @@ DISTVERSION=	0.0.8
 MAINTAINER=	erik@smluc.org
 COMMENT=	A 3D positional spatialized sound library
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
