@@ -1,0 +1,16 @@
+Mailwatch is a plugin for the Xfce 4 panel.
+
+Features
+
+    *   IMAP and Secure IMAP support
+    *   POP3 and Secure POP3 support
+    *   Local Mbox mailbox support
+    *   Local Maildir mailbox support
+    *   Local MH-Maildir mailbox support
+    *   GMail support
+    *   Fully multithreaded design: no panel lockups
+    *   Informative new-message breakdown in tooltip
+    *   Ability to run program on new messages or button click
+    *   Informative logger to help track down mail connection problems
+
+WWW:	http://spuriousinterrupt.org/projects/mailwatch

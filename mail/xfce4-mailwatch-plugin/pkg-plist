@@ -1,0 +1,53 @@
+libexec/xfce4/panel-plugins/xfce4-mailwatch-plugin
+share/icons/hicolor/48x48/apps/xfce-newmail.png
+share/icons/hicolor/48x48/apps/xfce-nomail.png
+share/icons/hicolor/scalable/apps/xfce-newmail.svg
+share/icons/hicolor/scalable/apps/xfce-nomail.svg
+share/locale/ca/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/de/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/el/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/eu/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/fi/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/gu/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/ja/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/ru/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/vi/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/xfce4/doc/C/images/mailwatch-gmail-settings.png
+share/xfce4/doc/C/images/mailwatch-imap-advanced.png
+share/xfce4/doc/C/images/mailwatch-imap-new-folders.png
+share/xfce4/doc/C/images/mailwatch-imap-settings.png
+share/xfce4/doc/C/images/mailwatch-log-window.png
+share/xfce4/doc/C/images/mailwatch-mailbox-type.png
+share/xfce4/doc/C/images/mailwatch-maildir-settings.png
+share/xfce4/doc/C/images/mailwatch-mbox-settings.png
+share/xfce4/doc/C/images/mailwatch-mh-settings.png
+share/xfce4/doc/C/images/mailwatch-panel-indicator.png
+share/xfce4/doc/C/images/mailwatch-pop3-advanced.png
+share/xfce4/doc/C/images/mailwatch-pop3-settings.png
+share/xfce4/doc/C/images/mailwatch-properties.png
+share/xfce4/doc/C/xfce4-mailwatch-plugin.html
+share/xfce4/panel-plugins/mailwatch.desktop
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4/doc/C/images
+@dirrm share/xfce4/doc/C
+@dirrm share/xfce4/doc
+@dirrm share/xfce4
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrm share/icons/hicolor/scalable/apps
+@dirrm share/icons/hicolor/scalable
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm libexec/xfce4/panel-plugins
+@dirrm libexec/xfce4
