@@ -1770,6 +1770,7 @@
     SUBDIR += py-notifier
     SUBDIR += py-notify
     SUBDIR += py-ocempgui
+    SUBDIR += py-ode
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit
