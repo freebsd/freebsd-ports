@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
 MAINTAINER=	trasz@pin.if.uz.zgora.pl
 COMMENT=	Open source resource manager
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rcp=scp
 USE_GMAKE=	yes

@@ -17,6 +17,7 @@ DISTNAME=	audiofile-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A sound library for SGI audio file
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

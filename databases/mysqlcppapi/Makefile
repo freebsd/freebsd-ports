@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=mysqlcppapi
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	A fork of mysql++ C++ API for MySQL
 
+USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes

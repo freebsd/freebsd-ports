@@ -20,7 +20,7 @@ COMMENT=	Transparently handles automatic compression and decompression of files
 #LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libtool:15 libltdl:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"

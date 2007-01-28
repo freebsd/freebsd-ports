@@ -18,6 +18,7 @@ COMMENT=	Direct connect interface library for dcgui
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

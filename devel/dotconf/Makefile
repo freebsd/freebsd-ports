@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.1/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A simple, powerful configuration-file parser
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

@@ -16,6 +16,7 @@ COMMENT=	C++ class framework for manipulating audio files
 
 LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+

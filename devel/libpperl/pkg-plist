@@ -1,5 +1,6 @@
 include/pperl.h
 lib/libpperl.a
+lib/libpperl.la
 lib/libpperl.so
 lib/libpperl.so.0
 libdata/pkgconfig/libpperl.pc

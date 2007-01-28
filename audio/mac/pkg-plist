@@ -20,6 +20,7 @@ include/mac/NoWindows.h
 include/mac/SmartPtr.h
 include/mac/StdLibFileIO.h
 include/mac/config.h
+lib/libmac.a
 lib/libmac.la
 lib/libmac.so
 lib/libmac.so.2

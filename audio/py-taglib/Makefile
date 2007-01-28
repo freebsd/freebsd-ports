@@ -19,6 +19,7 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib
 
 WRKSRC=		${WRKDIR}/python-taglib-${PORTVERSION}
 
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 USE_PYTHON_PREFIX=	yes
 GNU_CONFIGURE=	yes

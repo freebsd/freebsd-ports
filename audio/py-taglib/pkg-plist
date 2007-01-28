@@ -4,3 +4,4 @@
 %%PYTHON_SITELIBDIR%%/_TagLib.so
 lib/libpython_taglib.so
 lib/libpython_taglib.la
+lib/libpython_taglib.a

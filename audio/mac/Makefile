@@ -16,6 +16,7 @@ COMMENT=	Monkey's Audio lossless codec
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static

@@ -16,6 +16,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	An easy-to-use C interface to PostgreSQL
 
+USE_AUTOTOOLS=	libtool:15
 USE_PGSQL=	YES
 USE_GMAKE=	YES
 INSTALLS_SHLIB=	YES

@@ -17,6 +17,7 @@ COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		fftw3.4:${PORTSDIR}/math/fftw3
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

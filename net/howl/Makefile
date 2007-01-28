@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.porchdogsoft.com/download/
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Zeroconf/Bonjour(tm) implementation
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_GETOPT_LONG=yes

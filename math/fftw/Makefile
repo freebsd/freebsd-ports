@@ -22,6 +22,7 @@ COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 FFTW_FLAVOR?=	default
 FFTW_SUFIX=
 
+USE_AUTOTOOLS=	libtool:15
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42

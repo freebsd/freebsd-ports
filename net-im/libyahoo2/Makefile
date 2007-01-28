@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library that handles the new Yahoo! Messenger protocol
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnometarget
 GNU_CONFIGURE=	yes

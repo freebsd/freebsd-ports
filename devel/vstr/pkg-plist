@@ -9,6 +9,7 @@ include/vstr.h
 lib/libvstr-1.0.so
 lib/libvstr-1.0.so.13
 lib/libvstr.a
+lib/libvstr.la
 lib/libvstr.so
 libdata/pkgconfig/vstr.pc
 %%PORTDOCS%%%%DOCSDIR%%/basic_cat.c.html

@@ -18,6 +18,7 @@ COMMENT=	A library of Unicode annotation data
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

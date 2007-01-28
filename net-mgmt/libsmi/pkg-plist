@@ -6,6 +6,7 @@ bin/smiquery
 bin/smistrip
 include/smi.h
 lib/libsmi.a
+lib/libsmi.la
 lib/libsmi.so
 lib/libsmi.so.2
 libdata/pkgconfig/libsmi.pc

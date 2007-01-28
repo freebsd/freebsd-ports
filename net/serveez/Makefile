@@ -20,6 +20,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

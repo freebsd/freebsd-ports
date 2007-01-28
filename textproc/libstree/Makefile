@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cl.cam.ac.uk/~cpk25/downloads/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Generic Suffix Tree Library
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

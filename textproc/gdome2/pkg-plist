@@ -1,5 +1,6 @@
 bin/gdome-config
 lib/libgdome.a
+lib/libgdome.la
 lib/libgdome.so
 lib/libgdome.so.8
 lib/gdomeConf.sh

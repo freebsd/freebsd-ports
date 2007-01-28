@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	cartola@openit.com.br
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
+USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docdir=${PREFIX}/share/doc/vigra

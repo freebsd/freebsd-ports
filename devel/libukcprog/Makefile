@@ -20,6 +20,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Generally useful low level routines
 
+USE_AUTOTOOLS=	libtool:15
 MAN3=		ukcprog.3
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
