@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	loki
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	loki-lib
@@ -14,20 +14,20 @@ MASTER_SITE_SUBDIR=	loki-lib
 MAINTAINER=	snnn119@gmail.com
 COMMENT=	A C++ library of common design patterns
 
-USE_BZIP2=	yes
+USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
+USE_LDCONFIG=	yes
 
-DOCS=		README CHANGES doc/html/* doc/flex/* doc/yasli/*
+DOCS=		README CHANGES doc/flex/flex_string.html \
+		doc/yasli/Notes.txt \
+		doc/yasli/yasli.html
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/html
-	${MKDIR} ${DOCSDIR}/flex
-	${MKDIR} ${DOCSDIR}/yasli
 .for i in ${DOCS}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/${i%/.*}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 

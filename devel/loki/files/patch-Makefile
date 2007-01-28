@@ -1,19 +1,20 @@
-*** Makefile.bak	Sat Feb 11 12:19:52 2006
---- Makefile	Sat Feb 11 12:19:59 2006
-***************
-*** 1,7 ****
-  DESTDIR := $(CURDIR)/$(DESTDIR)
-  
-! .PHONY: build check install clean
-! build:
-  	$(MAKE) -C src
-  
-  check: build
---- 1,7 ----
-  DESTDIR := $(CURDIR)/$(DESTDIR)
-  
-! .PHONY: all check install clean
-! all:
-  	$(MAKE) -C src
-  
-  check: build
+--- Makefile.orig	Sun Jan 28 02:20:26 2007
++++ Makefile	Sun Jan 28 02:24:49 2007
+@@ -2,7 +2,7 @@
+ export OS ?= $(shell uname -s)
+ 
+ export CXXWARNFLAGS = -Wall -Wold-style-cast -Wundef -Wsign-compare -Wconversion -Wpointer-arith -pedantic
+-export CXXFLAGS = $(CXXWARNFLAGS) -g -O2
++export CXXFLAGS += $(CXXWARNFLAGS) -fPIC
+ 
+ .PHONY: all build-static build-shared check clean distclean
+ all: build-static build-shared check
+@@ -23,7 +23,7 @@
+ 	$(MAKE) -C src distclean
+ 
+ ifneq ($(OS),Windows)
+-export prefix ?= /usr
++export prefix ?= ${PREFIX}
+ 
+ .PHONY: install install-static
+ install:

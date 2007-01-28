@@ -1,34 +1,21 @@
-*** src/Makefile.orig	Sat Jan  7 11:19:49 2006
---- src/Makefile	Sat Feb 11 22:38:00 2006
-***************
-*** 1,14 ****
-  OBJ = Singleton.o SmallObj.o OrderedStatic.o
-  BIN = ../lib/libloki.a
-  CXXFLAGS = -I../include -Wall -O2 -DNDEBUG
-  
-  $(BIN): $(OBJ)
-  	ar rs $(BIN) $(OBJ)
-  
-  .PHONY: clean install
-  install: $(BIN)
-! 	mkdir -p $(DESTDIR)/usr/lib
-! 	install $(BIN) $(DESTDIR)/usr/lib
-  
-  clean:
-  	rm -f $(OBJ) $(BIN)
---- 1,15 ----
-  OBJ = Singleton.o SmallObj.o OrderedStatic.o
-  BIN = ../lib/libloki.a
-  CXXFLAGS = -I../include -Wall -O2 -DNDEBUG
-+ PREFIX=/usr/local
-  
-  $(BIN): $(OBJ)
-  	ar rs $(BIN) $(OBJ)
-  
-  .PHONY: clean install
-  install: $(BIN)
-! 	mkdir -p $(PREFIX)/lib
-! 	install $(BIN) $(PREFIX)/lib
-  
-  clean:
-  	rm -f $(OBJ) $(BIN)
+--- src/Makefile.orig	Sun Jan 28 01:57:12 2007
++++ src/Makefile	Sun Jan 28 01:59:57 2007
+@@ -20,10 +20,18 @@
+   LDLIBS = -lpthread
+   RESULT_DIR = ../lib/
+ else
++ifeq ($(OS), FreeBSD)
++  SHARED_LIB_BASE = libloki.so
++  SHARED_LIB_VERSIONED = libloki.so.0
++  LDFLAGS = --shared -Wl,-soname=$(SHARED_LIB_VERSIONED)
++  LDLIBS = -pthread
++  RESULT_DIR = ../lib/
++else
+   SHARED_LIB_BASE = libloki.dll
+   LDFLAGS = --shared
+   LDLIBS =
+   RESULT_DIR = ../lib/
++endif
+ endif
+ endif
+ 
