@@ -1,10 +1,11 @@
---- Makefile.LINUX.orig	Mon Sep  4 20:57:52 2006
-+++ Makefile.LINUX	Mon Sep  4 20:58:23 2006
-@@ -1,10 +1,10 @@
- all : opj2dat liborigin.so
+--- ./Makefile.LINUX.orig	Mon Jan  8 22:38:05 2007
++++ ./Makefile.LINUX	Fri Jan 26 17:59:06 2007
+@@ -5,11 +5,10 @@
+ all : opj2dat $(TARGET).so
  
- liborigin.so : OPJFile.cpp OPJFile.h
--	g++ -shared -fPIC OPJFile.cpp -o liborigin.so
+ $(TARGET).so : OPJFile.cpp OPJFile.h
+-	$(CC) -c $(CFLAGS) OPJFile.cpp -o OPJFile.o
+-	$(CC) $(LFLAGS) -o $(TARGET).so.0.0.1 OPJFile.o
 +	${CXX} ${CXXFLAGS} -shared -fPIC OPJFile.cpp -o liborigin.so
  
  opj2dat: opj2dat.cpp OPJFile.cpp
@@ -12,4 +13,4 @@
 +	${CXX} ${CXXFLAGS} -o opj2dat opj2dat.cpp OPJFile.cpp
  
  clean :
- 	rm -f *~ *.o opj2dat liborigin.so
+ 	rm -f *~ *.o opj2dat $(TARGET).so*
