@@ -1,4 +1,8 @@
 bin/weechat-curses
+%%ASPELL%%lib/weechat/plugins/aspell.so.0
+%%ASPELL%%lib/weechat/plugins/aspell.so
+%%ASPELL%%lib/weechat/plugins/aspell.la
+%%ASPELL%%lib/weechat/plugins/aspell.a
 %%CHARSET%%lib/weechat/plugins/charset.so.0
 %%CHARSET%%lib/weechat/plugins/charset.so
 %%CHARSET%%lib/weechat/plugins/charset.la
