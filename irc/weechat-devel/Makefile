@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
 		http://weechat.flashtux.org/download/
@@ -20,7 +21,7 @@ USE_AUTOTOOLS=	autoconf:259
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-lua --disable-aspell
+CONFIGURE_ARGS=	--disable-lua
 
 MAN1=	weechat-curses.1
 
@@ -43,6 +44,15 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITH_ASPELL)
+CONFIGURE_ARGS+=	--enable-aspell
+BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+PLIST_SUB+=	ASPELL=""
+.else
+CONFIGURE_ARGS+=	--disable-aspell
+PLIST_SUB+=	ASPELL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
