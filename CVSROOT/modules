@@ -16532,4 +16532,5 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
+zynaddsubfx	ports/audio/zynaddsubfx
 zziplib		ports/devel/zziplib
