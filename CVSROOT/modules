@@ -15035,6 +15035,7 @@ vgb		ports/emulators/vgb
 vgb-bin		ports/emulators/vgb-bin
 vgba-bin	ports/emulators/vgba-bin
 vi-aspell	ports/vietnamese/aspell
+vi-gtk-im-vi	ports/vietnamese/gtk-im-vi
 vi-kde3-i18n	ports/vietnamese/kde3-i18n
 vi-libviet	ports/vietnamese/libviet
 vi-unicode-uhoai	ports/vietnamese/unicode-uhoai
