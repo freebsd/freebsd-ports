@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Feb 17 14:28:24 2005
-+++ Makefile	Tue Jul 19 02:39:56 2005
-@@ -2,13 +2,15 @@
+--- Makefile.orig	Tue Jan  2 22:49:21 2007
++++ Makefile	Sat Jan 27 12:02:14 2007
+@@ -15,13 +15,15 @@
  SHELL=/bin/sh
  
  # To assist in cross-compiling
@@ -11,14 +11,14 @@
  LDFLAGS=
  
  BIGFILES=-D_FILE_OFFSET_BITS=64
--CFLAGS=-Wall -Winline -O -g $(BIGFILES)
+-CFLAGS=-Wall -Winline -O2 -g $(BIGFILES)
 +CFLAGS?=-O2
 +CFLAGS+=-Wall -Winline -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
 +SOFLAGS=-fPIC -fpic -DPIC
  
  # Where you want it installed when you do 'make install'
- PREFIX=/usr
-@@ -22,10 +24,18 @@
+ PREFIX=/usr/local
+@@ -35,10 +37,18 @@
        decompress.o \
        bzlib.o
  
@@ -40,7 +40,7 @@
  
  bzip2recover: bzip2recover.o
  	$(CC) $(CFLAGS) $(LDFLAGS) -o bzip2recover bzip2recover.o
-@@ -39,6 +49,10 @@
+@@ -52,6 +62,10 @@
  		$(RANLIB) libbz2.a ; \
  	fi
  
@@ -51,7 +51,7 @@
  check: test
  test: bzip2
  	@cat words1
-@@ -96,9 +110,25 @@
+@@ -109,9 +123,25 @@
  	echo ".so man1/bzdiff.1" > $(PREFIX)/man/man1/bzcmp.1
  
  clean: 
