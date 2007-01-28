@@ -14531,6 +14531,7 @@ tilp		ports/comms/tilp
 tilp2		ports/comms/tilp2
 timeless	ports/graphics/timeless
 timelimit	ports/sysutils/timelimit
+timemachine	ports/audio/timemachine
 timemon		ports/sysutils/timemon
 timer-applet	ports/deskutils/timer-applet
 timeseal	ports/games/timeseal
