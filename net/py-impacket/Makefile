@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	Impacket
-PORTVERSION=	0.9.5.1
+PORTVERSION=	0.9.6.0
 CATEGORIES=	net python
-MASTER_SITES=	http://oss.coresecurity.com/repo/ \
-		http://www.yazzy.org/ports/impacket/
+MASTER_SITES=	http://oss.coresecurity.com/repo/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yazzy@yazzy.org
@@ -19,13 +18,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pcapy.so:${PORTSDIR}/net/py-pcapy
 USE_PYTHON=	yes
 NO_BUILD=	yes
 USE_PYDISTUTILS=yes
-PORTDOCS=	README	LICENSE
 
 .if defined(NOPORTDOCS)
 post-install:
-	@${RM} ${DOCSDIR}/README
-	@${RM} ${DOCSDIR}/LICENSE
-	@${RMDIR} ${DOCSDIR}
+	@${RM} -rf ${DOCSDIR}
 	@${ECHO} "Removing ${DOCSDIR} and the files in it."
 .endif
 
