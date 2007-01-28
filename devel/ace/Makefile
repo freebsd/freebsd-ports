@@ -18,6 +18,8 @@ MAINTAINER=	sem@FreeBSD.org
 
 COMMENT=	The Adaptive Communication Environment for C++
 
+IGNORE=		attempts to allocate all of swap to see what happens when it fills
+
 CONFLICTS=	ace+tao-5*
 
 USE_BZIP2=	yes
