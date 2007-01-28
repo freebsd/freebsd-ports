@@ -1,0 +1,27 @@
+# New ports collection makefile for:	xfce4-smartbookmark-plugin
+# Date created:				28 Januar 2007
+# Whom:					Martin Wilke (miwi@FreeBSD.org)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xfce4-smartbookmark-plugin
+PORTVERSION=	0.4.2
+CATEGORIES=	www xfce
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+DIST_SUBDIR=	xfce4
+
+MAINTAINER=	miwi@FreeBSD.org
+COMMENT=	A bootmark plugin for xfce panel.
+
+USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv libgui libutil panel
+USE_XLIB=	yes
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

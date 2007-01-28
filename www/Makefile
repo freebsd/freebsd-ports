@@ -1141,6 +1141,7 @@
     SUBDIR += wyvern
     SUBDIR += xaraya
     SUBDIR += xcache
+    SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xist
     SUBDIR += xitami
     SUBDIR += xpath2rss
