@@ -1,0 +1,18 @@
+--- test/SingletonDll/Makefile.orig	Sun Jan 28 02:00:34 2007
++++ test/SingletonDll/Makefile	Sun Jan 28 02:05:49 2007
+@@ -8,9 +8,15 @@
+   LIB2 = libsingletondll.so
+   SHARED_LIB_FLAG = --shared
+ else
++ifeq ($(OS),FreeBSD)
++  LIB1 = libfoo.so
++  LIB2 = libsingletondll.so
++  SHARED_LIB_FLAG = --shared
++else
+   LIB1 = foo.dll
+   LIB2 = singletondll.dll
+   SHARED_LIB_FLAG = --shared
++endif
+ endif
+ endif
+ 

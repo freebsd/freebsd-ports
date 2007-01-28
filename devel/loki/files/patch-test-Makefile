@@ -1,0 +1,12 @@
+--- test/Makefile.orig	Mon Nov  6 20:45:11 2006
++++ test/Makefile	Mon Nov  6 20:49:04 2006
+@@ -1,5 +1,9 @@
+ export CPPFLAGS = -I../../include -DNDEBUG
++ifeq ($(OS),FreeBSD)
++export LDFLAGS = -L../../lib -pthread
++else
+ export LDFLAGS = -L../../lib
++endif
+ export LDLIBS = -lloki
+ 
+ ifeq ($(OS),Windows)
