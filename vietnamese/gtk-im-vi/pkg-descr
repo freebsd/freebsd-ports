@@ -1,0 +1,5 @@
+gtk-im-vi contains two simple GTK+ input methods, VNI and TELEX, for those
+who just want to type Vietnamese in GTK+ apps without complicated input
+methods. They're small and just work.
+
+WWW: http://freshmeat.net/projects/gtk-im-vi/

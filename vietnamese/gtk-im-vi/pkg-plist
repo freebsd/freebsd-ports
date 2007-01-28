@@ -1,0 +1,11 @@
+lib/gtk-2.0/2.10.0/immodules/im-vni.so
+lib/gtk-2.0/2.10.0/immodules/im-vni.la
+lib/gtk-2.0/2.10.0/immodules/im-vni.a
+lib/gtk-2.0/2.10.0/immodules/im-telex.so
+lib/gtk-2.0/2.10.0/immodules/im-telex.la
+lib/gtk-2.0/2.10.0/immodules/im-telex.a
+@dirrmtry lib/gtk-2.0/2.10.0/immodules
+@dirrmtry lib/gtk-2.0/2.10.0
+@dirrmtry lib/gtk-2.0
+@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
