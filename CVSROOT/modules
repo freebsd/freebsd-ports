@@ -2356,6 +2356,7 @@ enteruser	ports/sysutils/enteruser
 entice		ports/graphics/entice
 entity		ports/devel/entity
 entitymib	ports/net/entitymib
+entrans		ports/www/entrans
 entropy		ports/math/entropy
 entropyfm	ports/x11-fm/entropyfm
 env4801		ports/sysutils/env4801
