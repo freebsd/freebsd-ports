@@ -2028,6 +2028,7 @@ drumpiler	ports/audio/drumpiler
 drupal		ports/www/drupal
 drupal-attachment	ports/www/drupal-attachment
 drupal-filemanager	ports/www/drupal-filemanager
+drupal-gsitemap	ports/www/drupal-gsitemap
 drupal-i18n	ports/www/drupal-i18n
 drupal-ldap_integration	ports/security/drupal-ldap_integration
 drupal-nice_menus	ports/www/drupal-nice_menus
