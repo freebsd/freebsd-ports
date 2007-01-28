@@ -15689,6 +15689,7 @@ xfce4-print	ports/print/xfce4-print
 xfce4-quicklauncher-plugin	ports/x11/xfce4-quicklauncher-plugin
 xfce4-screenshooter-plugin	ports/x11/xfce4-screenshooter-plugin
 xfce4-session	ports/x11-wm/xfce4-session
+xfce4-smartbookmark-plugin	ports/www/xfce4-smartbookmark-plugin
 xfce4-systemload-plugin	ports/sysutils/xfce4-systemload-plugin
 xfce4-taskmanager	ports/x11/xfce4-taskmanager
 xfce4-timer-plugin	ports/x11-clocks/xfce4-timer-plugin
