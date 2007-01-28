@@ -360,7 +360,6 @@
     SUBDIR += listener
     SUBDIR += liteamp
     SUBDIR += lmms
-    SUBDIR += lopster
     SUBDIR += lpac
     SUBDIR += lplayer
     SUBDIR += mac

@@ -62,6 +62,7 @@
     SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
+    SUBDIR += lopster
     SUBDIR += microdc
     SUBDIR += microdc2
     SUBDIR += minder
