@@ -9205,6 +9205,7 @@ p5-File-Stat-Bits	ports/sysutils/p5-File-Stat-Bits
 p5-File-Sync	ports/devel/p5-File-Sync
 p5-File-Tail	ports/devel/p5-File-Tail
 p5-File-Temp	ports/devel/p5-File-Temp
+p5-File-Tempdir	ports/devel/p5-File-Tempdir
 p5-File-Type	ports/devel/p5-File-Type
 p5-File-Which	ports/sysutils/p5-File-Which
 p5-File-chdir	ports/devel/p5-File-chdir
