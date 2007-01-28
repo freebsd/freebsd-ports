@@ -6,6 +6,7 @@
 
 PORTNAME=	edyvalue
 PORTVERSION=	2007.01.06
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.imfj.net/people/nomura/soft/PaSoRi/
 DISTNAME=	EdyValue
@@ -16,7 +17,7 @@ EXTRACT_ONLY=
 MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	Utility to print a statement of Edy card
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpasori.a:${PORTSDIR}/devel/libpasori
+LIB_DEPENDS=	pasori.1:${PORTSDIR}/devel/libpasori
 
 PLIST_FILES=	bin/EdyValue
 
