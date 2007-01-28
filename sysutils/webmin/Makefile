@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.320
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -29,7 +29,8 @@ USE_RC_SUBR=    webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
 WEBMIN_MODULES=	bind8-1.320-3.wbm.gz \
-		ldap-useradmin-1.320-1.wbm.gz
+		ldap-useradmin-1.320-1.wbm.gz \
+		status-1.320-4.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
