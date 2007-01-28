@@ -16,6 +16,7 @@
     SUBDIR += bdesktopclock
     SUBDIR += bmp-alarm
     SUBDIR += buici-clock
+    SUBDIR += cairo-clock
     SUBDIR += dclock
     SUBDIR += emiclock
     SUBDIR += eyeclock
