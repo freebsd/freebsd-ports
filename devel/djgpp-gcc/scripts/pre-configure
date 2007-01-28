@@ -1,0 +1,160 @@
+#! /bin/sh
+
+AUTOCONF_OLD=autoconf213
+AUTOHEADER_OLD=autoheader213
+AUTOCONF=autoconf259
+AUTOHEADER=autoheader259
+
+#
+#  List of directories in which we should run autoconf or/and automake
+#
+
+automake_list=
+aclocal_list=
+
+#
+#  Build list of patched files
+#
+
+for x in `(cd ${WRKDIR}/diffs/source && find . -type f | sed -e 's/\.\///g')`; do
+    case $x in 
+       *.diff | *.diff.in)
+           cd $top
+           diff=${WRKDIR}/$x;
+           fname=`echo $x | sed -e 's/\.diff//g'`
+           if [ -f $gcc_dir/$fname ] ; then
+              case $fname in 
+                  */acinclude.m4)
+                     dir=`echo $gcc_dir/$fname | sed -e 's/\/acinclude.m4//g'`
+                      aclocal_list="$aclocal_list $dir"
+                      ;;
+                  */Makefile.am)
+                      dir=`echo $gcc_dir/$fname | sed -e 's/\/Makefile.am//g'`
+                      automake_list="$automake_list $dir"
+                      ;;
+              esac
+           fi
+           ;;
+       *)
+           ;;
+       esac
+done
+
+for dir in build.gcc install.gcc; do
+    for x in `(cd ${WRKDIR}/diffs/$dir && find . -type f | sed -e 's/\.\///g')`; do
+        mkdir -p `dirname ${WRKDIR}/gnu/$dir/$x`
+	echo "Writing $dir/$x"
+	cat ${WRKDIR}/diffs/$dir/$x |\
+	sed -e "s:@SRCDIR@:$dir_name:g" >${WRKDIR}/gnu/$dir/$x
+    done
+done
+
+#
+#  Run aclocal where needed
+#
+( cd $gcc_dir/libgfortran && aclocal19 -I ../config || exit 1)
+( cd $gcc_dir/libstdc++-v3 && aclocal19 -I . -I .. -I ../config || exit 1)
+
+#for dir in $aclocal_list ; do
+#   if cd $dir ; then
+#      echo Running aclocal in `pwd`...
+#      if ! aclocal -I . -I $gcc_dir -I $gcc_dir/config ; then
+#         echo "aclocal failed in directory `pwd`"
+#         cd $top
+#         exit 1
+#      fi
+#   fi
+#   cd $top
+#done
+
+#
+#  Run automake where needed
+#
+
+for dir in $automake_list; do
+   if cd $dir ; then
+      echo "Directory $dir: must run automake ...";
+      if ! [ -f configure.in ] ; then
+         if ! [ -f configure.ac ] ; then
+            cd ..;
+            if ! [ -f configure.in ] ; then
+               if ! [ -f configure.ac ] ; then
+                  cd ..
+               fi
+            fi
+         fi
+      fi
+      echo "Running automake..."
+      if ! automake19; then
+         echo "automake failed in directory `pwd`"
+         cd $top
+         exit 1
+      fi
+   fi
+   cd $top
+done
+
+#
+#  Run autoconf where needed
+#
+
+for c in `find $gcc_dir -name 'configure.in' -o -name 'configure.ac'`; do
+   d=`dirname $c`
+   n=`basename $c`
+   if cd $d ; then
+      AC_PREREQ=`grep 'AC_PREREQ(' $n | sed 's#.*(##' | sed 's#)##'`;
+
+      case $AC_PREREQ in 
+          2.1*) echo Running autoconf-2.13 in `pwd` ...;
+                if ! $AUTOCONF_OLD ; then 
+                   echo "autoconf failed in directory `pwd`"
+                   cd $top
+                   exit 1
+                fi
+                ;;
+          *2.5*) echo Running autoconf-2.5X in `pwd` ...;
+                if ! $AUTOCONF ; then 
+                   echo "autoconf failed in directory `pwd`"
+                   cd $top
+                   exit 1
+                fi
+                ;;
+          *)    echo Unknown autoconf version $AC_PREREQ required
+                exit 1
+                ;;
+      esac 
+   fi
+   cd $top
+done
+
+#
+#  Run autoheader where needed
+#
+
+if cd $gcc_dir/gcc ; then
+   echo Running autoheader in `pwd` ...;
+   if [ -f configure.ac ] ; then
+      if ! $AUTOHEADER ; then
+         echo "autoheader failed in directory `pwd`"
+         cd $top
+         exit 1
+      fi
+   elif ! $AUTOHEADER_OLD ; then
+      echo "autoheader failed in directory `pwd`"
+      cd $top
+      exit 1
+   fi
+   rm -f cstamp-h.in
+   echo timestamp >cstamp-h.in
+fi
+
+if [ -f $gcc_dir/contrib/gcc_update ] ; then
+   echo Running contrib/gcc_update --touch
+   cd $gcc_dir;
+   ./contrib/gcc_update --touch
+   cd $top
+fi
+
+for x in `find . -type d -a -name 'autom4te.cache'`; do
+   rm -rf $x
+done

@@ -1,0 +1,37 @@
+#! /bin/sh
+
+#
+#  Apply DJGPP related diffs and copy files 
+#
+
+for x in `(cd ${WRKDIR}/diffs/source && find . -type f | sed -e 's/\.\///g')`; do
+    case $x in 
+       *.diff | *.diff.in)
+           cd $top
+           diff=${WRKDIR}/$x;
+           fname=`echo $x | sed -e 's/\.diff//g'`
+           echo "Applying patch to gcc/$fname ..."
+           if [ -f $gcc_dir/$fname ] ; then
+              cp -f $gcc_dir/$fname $gcc_dir/${fname}~1 
+              if ! ${PATCH} --quiet $gcc_dir/$fname <${WRKDIR}/diffs/source/$x ; then
+                  echo "Failed to apply patch for $gcc_dir/$fname"
+#                  exit 1
+              fi
+           else
+              echo "File $gcc_dir/$fname is not found"
+           fi
+           ;;
+       readme.DJGPP)
+	   ;;
+       *~*)
+           ;;
+       *)
+           echo Copying $x
+	   mkdir -p `dirname $gcc_dir/$x`		   	
+           if ! cp -fv ${WRKDIR}/diffs/source/$x $gcc_dir/$x ; then
+              echo "Failed to copy diffs/source/$x to $gcc_dir/$x"
+              exit 1
+           fi
+           ;;
+       esac
+done
