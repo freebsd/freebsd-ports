@@ -626,6 +626,7 @@
     SUBDIR += xbuffy
     SUBDIR += xc-mail
     SUBDIR += xfaces
+    SUBDIR += xfce4-mailwatch-plugin
     SUBDIR += xfmail
     SUBDIR += xlbiff
     SUBDIR += xmail
