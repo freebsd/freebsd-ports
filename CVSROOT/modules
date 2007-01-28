@@ -1043,6 +1043,7 @@ cactid		ports/net/cactid
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 cairo		ports/graphics/cairo
+cairo-clock	ports/x11-clocks/cairo-clock
 cairo-java	ports/graphics/cairo-java
 cairo-reference	ports/graphics/cairo-reference
 cairomm		ports/graphics/cairomm
