@@ -20,13 +20,13 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An object-oriented SGML/XML parser toolkit and DSSSL engine
 
-CONFLICTS=	sp-1.*
-
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+
+CONFLICTS=	sp-1.*
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR}
 PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
