@@ -817,6 +817,7 @@ bitchx		ports/irc/bitchx
 bitcollider	ports/deskutils/bitcollider
 bitedit		ports/editors/bitedit
 bitefusion	ports/games/bitefusion
+bitflu		ports/net-p2p/bitflu
 bitlbee		ports/irc/bitlbee
 bitmap		ports/editors/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
