@@ -7,6 +7,7 @@
 
 PORTNAME=	foremost
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://foremost.sourceforge.net/pkg/
 
