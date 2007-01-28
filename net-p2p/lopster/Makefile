@@ -8,7 +8,7 @@
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
 PORTREVISION=	2
-CATEGORIES=	audio
+CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://lopster.sourceforge.net/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
