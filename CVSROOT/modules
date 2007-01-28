@@ -12389,6 +12389,7 @@ py-numeric	ports/math/py-numeric
 py-numeric17	ports/math/py-numeric17
 py-numpy	ports/math/py-numpy
 py-ocempgui	ports/devel/py-ocempgui
+py-ode		ports/devel/py-ode
 py-ogg		ports/audio/py-ogg
 py-omniorb	ports/devel/py-omniorb
 py-oops		ports/databases/py-oops
