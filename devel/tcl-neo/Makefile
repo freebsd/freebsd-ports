@@ -17,12 +17,13 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The NeoTCL part of NeoWebScript -- an Apache TCL mod
 
 LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
-
 BUILD_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # Not yet -- openldap used db3, neo used db2 :(
 #		ldap.2:${PORTSDIR}/net/openldap20-client
+
+USE_LDCONFIG=	yes
 
 SUBDIR=		neowebscript-3.3/neotcl8.3.0-lite/neo${PORTVERSION}
 WRKSRC=		${WRKDIR}/${SUBDIR}/generic
