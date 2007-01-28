@@ -12210,6 +12210,7 @@ py-cherrypy	ports/www/py-cherrypy
 py-cherrypy-old	ports/www/py-cherrypy-old
 py-ciphon	ports/devel/py-ciphon
 py-cjkcodecs	ports/converters/py-cjkcodecs
+py-cjson	ports/devel/py-cjson
 py-clamav	ports/security/py-clamav
 py-clientcookie	ports/devel/py-clientcookie
 py-clientform	ports/www/py-clientform
