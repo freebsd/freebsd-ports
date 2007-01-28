@@ -15663,6 +15663,7 @@ xfce4-dict-plugin	ports/textproc/xfce4-dict-plugin
 xfce4-fsguard-plugin	ports/sysutils/xfce4-fsguard-plugin
 xfce4-genmon-plugin	ports/sysutils/xfce4-genmon-plugin
 xfce4-icon-theme	ports/x11-themes/xfce4-icon-theme
+xfce4-mailwatch-plugin	ports/mail/xfce4-mailwatch-plugin
 xfce4-mcs-manager	ports/sysutils/xfce4-mcs-manager
 xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
 xfce4-media	ports/multimedia/xfce4-media
