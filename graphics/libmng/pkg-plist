@@ -3,4 +3,4 @@ include/libmng_conf.h
 include/libmng_types.h
 lib/libmng.a
 lib/libmng.so
-lib/libmng.so.1.0
+lib/libmng.so.1
