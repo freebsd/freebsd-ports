@@ -48,6 +48,6 @@ do-install:
 
 PYRULEDISPATCH_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-ruledispatch/Makefile -V PYRULEDISPATCH_EGG
 PYSIMPLEJSON_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-simplejson/Makefile -V PYSIMPLEJSON_EGG
-PYSQLOBJECT_EGG!=	${MAKE} -f ${PORTSDIR}/databases/py-sqlobject/Makefile -V PYSQLBOJECT_EGG
+PYSQLOBJECT_EGG!=	${MAKE} -f ${PORTSDIR}/databases/py-sqlobject/Makefile -V PYSQLOBJECT_EGG
 
 .include <bsd.port.post.mk>
