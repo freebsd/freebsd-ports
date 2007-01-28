@@ -20,8 +20,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-# remove panel dependency when xfce-filemanager.png issue got resolved upstream
-USE_XFCE=	configenv libgui mcsmanager panel
+USE_XFCE=	configenv libgui mcsmanager
 USE_XLIB=	yes
 
 .include <bsd.port.pre.mk>
