@@ -2033,6 +2033,7 @@
     SUBDIR += tla
     SUBDIR += tmake
     SUBDIR += tnt
+    SUBDIR += toh
     SUBDIR += towitoko
     SUBDIR += tpasm
     SUBDIR += tpg
