@@ -362,6 +362,7 @@
     SUBDIR += kfreerings
     SUBDIR += kgeography
     SUBDIR += kiki
+    SUBDIR += kimboot
     SUBDIR += klondike
     SUBDIR += kmastermind
     SUBDIR += kmquake2
