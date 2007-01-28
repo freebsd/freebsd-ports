@@ -12,6 +12,7 @@ etc/atslog.conf.default.rus
 libexec/atslog/4200e.lib
 libexec/atslog/gd-320.lib
 libexec/atslog/gdk-100.lib
+libexec/atslog/genindex.sh
 libexec/atslog/ghx-46.lib
 libexec/atslog/gps-6a.lib
 libexec/atslog/hicom-250.lib
@@ -24,6 +25,8 @@ libexec/atslog/kx-td500.lib
 libexec/atslog/kx-td816ru.lib
 libexec/atslog/kx-tda100.lib
 libexec/atslog/ldk-300.lib
+libexec/atslog/modules.lst
+libexec/atslog/neax-2000.lib
 libexec/atslog/nx-820.lib
 libexec/atslog/officeserv-7200.lib
 libexec/atslog/skp-816.lib
@@ -47,6 +50,7 @@ libexec/atslog/skp-816.lib
 %%EXAMPLESDIR%%/textlogs/LG GMX-1232.TXT
 %%EXAMPLESDIR%%/textlogs/LG LDK-100 (variant 1).txt
 %%EXAMPLESDIR%%/textlogs/LG LDK-100 (variant 2).txt
+%%EXAMPLESDIR%%/textlogs/LG LDK-300 with CID.txt
 %%EXAMPLESDIR%%/textlogs/LG LDK-300.txt
 %%EXAMPLESDIR%%/textlogs/Meridian-1 (variant 1).txt
 %%EXAMPLESDIR%%/textlogs/Meridian-1 (variant 2).txt
@@ -56,6 +60,7 @@ libexec/atslog/skp-816.lib
 %%EXAMPLESDIR%%/textlogs/Multicom G1260.txt
 %%EXAMPLESDIR%%/textlogs/Multicom MAXICOM MP80.TXT
 %%EXAMPLESDIR%%/textlogs/Multicom Maxicom MXM300.txt
+%%EXAMPLESDIR%%/textlogs/NEC NEAX2000 IPS.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic 816.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic DBS-90.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-T1232-RU.txt
@@ -84,11 +89,13 @@ libexec/atslog/skp-816.lib
 %%EXAMPLESDIR%%/textlogs/Samsung NX-1232.txt
 %%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 1).txt
 %%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 2).txt
+%%EXAMPLESDIR%%/textlogs/Samsung OfficeServ 500.txt
 %%EXAMPLESDIR%%/textlogs/Samsung OfficeServ 7200.txt
 %%EXAMPLESDIR%%/textlogs/Samsung SKP 56_120.txt
 %%EXAMPLESDIR%%/textlogs/Samsung SKP-36HX.txt
 %%EXAMPLESDIR%%/textlogs/Samsung SKP-816.txt
 %%EXAMPLESDIR%%/textlogs/Samsung iDCS 500.txt
+%%EXAMPLESDIR%%/textlogs/Siemens HIPATH-3750.txt
 %%EXAMPLESDIR%%/textlogs/Siemens Hicom 118.txt
 %%EXAMPLESDIR%%/textlogs/Siemens Hicom 150 OfficeCom (Wide).txt
 %%EXAMPLESDIR%%/textlogs/Siemens Hicom-250.txt

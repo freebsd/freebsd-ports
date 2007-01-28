@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	atslog
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
@@ -20,7 +19,7 @@ OPTIONS=	LIBWRAP		"Enable TCP wrapper support"			on \
 		WWW		"Install web interface"				on \
 		WWWGD		"Graphic reports"				on
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	${PORTNAME}d
 PORTDOCS=	CHANGES ChangeLog DEINSTALL INSTALL LICENSE TODO UPDATING USAGE
@@ -28,7 +27,7 @@ SUB_FILES=	pkg-message
 MANLANG=	"" ru.KOI8-R
 MAN8=		${USE_RC_SUBR}.8 ${PORTNAME}master.8
 CONFIGS=	${PORTNAME}.conf.default ${PORTNAME}.conf.default.rus
-CONFIGURE_ARGS+=--prefix=${PREFIX} --localstatedir=/var
+CONFIGURE_ARGS+=--localstatedir=/var
 
 .include <bsd.port.pre.mk>
 
@@ -66,11 +65,11 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-post-patch:
 .if defined(WITHOUT_LIBWRAP)
-	@${REINPLACE_CMD} -e 's|LIBWRAP=|#LIBWRAP=|' ${WRKSRC}/${USE_RC_SUBR}/Makefile
-	@${REINPLACE_CMD} -e 's|#define|//#define|' ${WRKSRC}/${USE_RC_SUBR}/${USE_RC_SUBR}.h
+CONFIGURE_ARGS+=--disable-libwrap
 .endif
+
+post-patch:
 	@${REINPLACE_CMD} -e 's|createsqltables.|${DATADIR}/sql/createsqltables.|g' \
 	    -e 's|data.sql|${DATADIR}/sql/data.sql|' ${WRKSRC}/data/sql/install-sql.pl
 
@@ -110,8 +109,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/data/sql/install-sql.pl ${DATADIR}/sql
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	cd ${WRKSRC}/libexec && \
-	${FIND} . -type f -exec \
+	${FIND} . -type f ! -iregex ".*\.sh" -exec \
 		${INSTALL_DATA} "{}" "${PREFIX}/libexec/${PORTNAME}/{}" \;
+	${INSTALL_SCRIPT} ${WRKSRC}/libexec/genindex.sh ${PREFIX}/libexec/${PORTNAME}/
 .if !defined(WITHOUT_WWW)
 	${MKDIR} ${PREFIX}/www/${PORTNAME}
 	cd ${WRKSRC}/www && \
