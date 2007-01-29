@@ -1,10 +1,11 @@
---- ./xcb.pc.in.orig	Mon Sep 25 05:52:46 2006
-+++ ./xcb.pc.in	Sun Oct  8 11:40:02 2006
-@@ -6,7 +6,6 @@
+--- xcb.pc.in.orig	Wed Jan 24 16:34:02 2007
++++ xcb.pc.in	Wed Jan 24 16:36:32 2007
+@@ -6,7 +6,7 @@
  Name: XCB
  Description: X-protocol C Binding
  Version: @PACKAGE_VERSION@
--Requires.private: xau
+-Requires.private: @NEEDED@
++Requires.private: pthread-stubs
  Libs: -L${libdir} -lxcb
  Libs.private: @LIBS@
  Cflags: -I${includedir}
