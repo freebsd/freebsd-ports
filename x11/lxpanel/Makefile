@@ -33,7 +33,7 @@ PLIST_SUB+=	NLS="@comment "
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's,linux,sys,' \
-		M${WRKSRC}/src/plugins/volume/volume-impl.c
+		${WRKSRC}/src/plugins/volume/volume-impl.c
 	@${REINPLACE_CMD} -e 's,$$(DATADIRNAME)/locale,share/locale,' \
 		${WRKSRC}/po/Makefile.in.in
 
