@@ -29,7 +29,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 DIST_SUBDIR=	kaskade
 WRKSRC=		${WRKDIR}/3.2.1
 
-post-patch:
+pre-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/configure ${WRKSRC}
 	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
