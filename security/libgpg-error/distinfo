@@ -1,6 +1,3 @@
 MD5 (libgpg-error-1.4.tar.gz) = 86e60e9a03205fb706e99be101a2387e
 SHA256 (libgpg-error-1.4.tar.gz) = fff67ec5ffc93cf91fc62350a19a9f677c9bc6eb2730395d22f9d40c754ed619
 SIZE (libgpg-error-1.4.tar.gz) = 614446
-MD5 (libgpg-error-1.4.tar.gz.sig) = dd72bd38747381084569034afe22cb51
-SHA256 (libgpg-error-1.4.tar.gz.sig) = 6459a3ee8a95fe3c02c9963f6244b14588d851e74ce9d3a1ffdccb9e2af7b5d8
-SIZE (libgpg-error-1.4.tar.gz.sig) = 158

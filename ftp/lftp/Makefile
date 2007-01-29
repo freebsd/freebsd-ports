@@ -19,8 +19,6 @@ MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/old/ \
 		ftp://lftp.yar.ru/lftp/ \
 		ftp://lftp.yar.ru/lftp/old/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	fm@cross-road.org.ua
 COMMENT=	Shell-like command line ftp client
@@ -31,8 +29,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_ICONV=	yes
 USE_BZIP2=	yes
-USE_GPG?=	yes
-SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

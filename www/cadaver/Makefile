@@ -10,16 +10,12 @@ PORTVERSION=	0.22.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	josh@tcbug.org
 COMMENT=	Commandline client for DAV
 
 LIB_DEPENDS=	neon.25:${PORTSDIR}/www/neon
 
-USE_GPG?=	yes
-SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -16,8 +16,6 @@ COMMENT=	A simple, secure, efficient FTP server
 
 LIB_DEPENDS=	cvm-v2client.1:${PORTSDIR}/security/cvm
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-s -L${LOCALBASE}/lib
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs

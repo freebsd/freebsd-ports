@@ -25,8 +25,6 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

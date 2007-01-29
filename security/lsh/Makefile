@@ -10,9 +10,6 @@ CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
 MASTER_SITE_SUBDIR=	lsh lsh/old
-DISTNAME=	${PORTNAME}-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
@@ -29,7 +26,6 @@ CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-USE_GPG?=	yes
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PLIST_SUB+=	KRB=""
 .else

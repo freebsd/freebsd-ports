@@ -27,8 +27,6 @@ OPTIONS=	DYNAMIC "Enable dynamic plugin support" on \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		PRELUDE "Enable Prelude NIDS integration" off
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes

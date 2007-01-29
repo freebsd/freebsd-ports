@@ -16,8 +16,6 @@ COMMENT=	Prelude Network Intrusion Detection System central logging point
 LIB_DEPENDS+=	prelude.11:${PORTSDIR}/security/libprelude \
 		gnutls.15:${PORTSDIR}/security/gnutls
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

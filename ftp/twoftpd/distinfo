@@ -1,6 +1,3 @@
 MD5 (twoftpd-1.21.tar.gz) = aea76c06d38b50c9a230def0f16475c0
 SHA256 (twoftpd-1.21.tar.gz) = 1fc52b20e48d4ef8e18816836b3c2c9a807ef177e6036dd9e1dae102ff48ef29
 SIZE (twoftpd-1.21.tar.gz) = 61205
-MD5 (twoftpd-1.21.tar.gz.sig) = c22d05c3ecffbc8d5e6c1e94b409cff5
-SHA256 (twoftpd-1.21.tar.gz.sig) = 0349f18231e6fb282058118ab7fd75765fb4146b5f5d58e875b121f390ea1e7e
-SIZE (twoftpd-1.21.tar.gz.sig) = 191

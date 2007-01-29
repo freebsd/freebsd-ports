@@ -19,8 +19,6 @@ COMMENT=	Rate-limited autoresponder for qmail
 
 LIB_DEPENDS=	bg-sysdeps.1:${PORTSDIR}/devel/bglibs
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 LDFLAGS?=	-s
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs

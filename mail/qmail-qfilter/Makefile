@@ -16,8 +16,6 @@ COMMENT=	Front-end for qmail-queue to run messages through filters
 
 LIB_DEPENDS=	bg-sysdeps.1:${PORTSDIR}/devel/bglibs
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 LDFLAGS?=	-s
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs

@@ -15,8 +15,6 @@ COMMENT=	An inline IPS system based on snort using ipfw
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_GPG=	yes
-SIG_SUFFIX=	.asc
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
