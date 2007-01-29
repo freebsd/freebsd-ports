@@ -45,9 +45,9 @@ su -f -m ${cuser} -c \
 
 if [ ${ok} = yes ]; then
     if [ -f ${base}/.start_server ]; then
-	if [ -x ${startup}/cvsupd.sh ]; then
+	if [ -x ${startup}/%%CVSUPD%% ]; then
 	    echo -n "Starting the server:"
-	    /bin/sh ${startup}/cvsupd.sh start
+	    /bin/sh ${startup}/%%CVSUPD%% start
 	    echo "."
 	fi
 	rm -f ${base}/.start_server
