@@ -11738,6 +11738,7 @@ po4a		ports/textproc/po4a
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 poco		ports/devel/poco
+poco-ssl	ports/devel/poco-ssl
 podcastamatic	ports/www/podcastamatic
 podcatcher	ports/multimedia/podcatcher
 poe		ports/multimedia/poe
