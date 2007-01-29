@@ -1690,6 +1690,7 @@
     SUBDIR += pmd
     SUBDIR += pmk
     SUBDIR += poco
+    SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += portcheckout
     SUBDIR += portlet-api
