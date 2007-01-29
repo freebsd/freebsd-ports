@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mpd4
-PORTVERSION=	4.0b5
+PORTVERSION=	4.0rc1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	glebius
 DIST_SUBDIR=	mpd4
 
-MAINTAINER=	glebius@freebsd.org
+MAINTAINER=	mav@alkar.net
 COMMENT=	Multi-link PPP daemon based on netgraph(4) [development version]
 
 LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
@@ -21,7 +21,7 @@ MTREE_FILE=	${FILESDIR}/mpd4.mtree
 MAN8=		mpd4.8
 MANCOMPRESSED=	maybe
 USE_RC_SUBR=	mpd4.sh
-HTMLNUM!=	jot 60 1
+HTMLNUM!=	jot 62 1
 CONFSUF=	conf links secret script
 PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
 		mpd_toc.html
