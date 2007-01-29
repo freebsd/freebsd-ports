@@ -21,7 +21,7 @@
 # $FreeBSD$
 #
 
-GCC_Include_MAINTAINER=		portmgr@FreeBSD.org
+GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 #
 # All GCC versions supported by the ports framework.
