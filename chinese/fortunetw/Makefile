@@ -8,8 +8,7 @@
 PORTNAME=	fortunetw
 PORTVERSION=	1.2
 CATEGORIES=	chinese
-MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
-		ftp://chinsan2.twbbs.org/distfiles/
+MASTER_SITES=	LOCAL/chinsan
 DISTNAME=	zh-fortunetw-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org

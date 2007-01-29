@@ -8,8 +8,7 @@
 PORTNAME=	ve
 PORTVERSION=	1.0
 CATEGORIES=	chinese
-MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
-		ftp://chinsan2.twbbs.org/distfiles/
+MASTER_SITES=	LOCAL/chinsan
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chinsan@FreeBSD.org
