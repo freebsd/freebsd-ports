@@ -30,7 +30,7 @@ USE_XLIB=	yes
 OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		JPEG		"Enable JPEG support"				on  \
 		FAM		"Enable FAM support"				off \
-		HAL		"Enable HAL support"				off \
+		HAL		"Enable HAL support"				on \
 		GCONF		"Enable GCONF support"				off \
 		STARTUP		"Enable startup notification support"		on  \
 		PLUG_APR	"Thunar Advanced Properties plugin"		off \
