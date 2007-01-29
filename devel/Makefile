@@ -584,6 +584,7 @@
     SUBDIR += libpeak
     SUBDIR += libphish
     SUBDIR += libpperl
+    SUBDIR += libpthread-stubs
     SUBDIR += libredblack
     SUBDIR += libs11n
     SUBDIR += libshbuf
