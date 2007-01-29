@@ -14,7 +14,7 @@ SystemConfig, MultimediaKit, EtoileUI, EtoileBehavior, SQLite
 System apps:	Gorm, GShisen, ProjectCenter, Preferences, GWorkspace,
 guile-gui, gui, TextEdit, TimeMon, Terminal, Emacs, GSPdf, SystemPreferences,
 WrapperFactory, GRubik, AZDock, Recycler, DBModeler, guile-gui, Position,
-AZBackground, ClipBook, GMDSClient
+AZBackground, ClipBook, MDFinder
 
 Local apps:	Gomoku, GNUMail, EasyDiff, Calculator, CurrencyConverter,
 Finger, GFractal, GSTest, HostAddress, Ink, NSBrowserTest, NSImageTest,
