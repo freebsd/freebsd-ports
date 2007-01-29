@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sound-juicer
-PORTVERSION=	2.16.2
+PORTVERSION=	2.16.3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,11 +34,11 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+MAN1=		sound-juicer.1
 GCONF_SCHEMAS=	sound-juicer.schemas
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = .*\)tests\(.*\)|\1\2|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|--parents|-p|g' \
-		${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = .*\)tests\(.*\)|\1\2|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

@@ -82,6 +82,7 @@ share/locale/it/LC_MESSAGES/sound-juicer.mo
 share/locale/ja/LC_MESSAGES/sound-juicer.mo
 share/locale/ka/LC_MESSAGES/sound-juicer.mo
 share/locale/ko/LC_MESSAGES/sound-juicer.mo
+share/locale/ku/LC_MESSAGES/sound-juicer.mo
 share/locale/lt/LC_MESSAGES/sound-juicer.mo
 share/locale/lv/LC_MESSAGES/sound-juicer.mo
 share/locale/mk/LC_MESSAGES/sound-juicer.mo
@@ -116,8 +117,6 @@ share/locale/xh/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_CN/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_HK/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
 @dirrm share/gnome/sound-juicer
 @dirrm share/gnome/omf/sound-juicer
 @dirrm share/gnome/help/sound-juicer/uk/figures
@@ -165,6 +164,8 @@ share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/ne/LC_MESSAGES
 @dirrmtry share/locale/ne
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
 @dirrmtry share/locale/gl/LC_MESSAGES
