@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/
 DISTNAME=	LAPACK
-DISTFILES=	lapack.tgz manpages.tgz
+DISTFILES=	lapack-3.0.tgz manpages-3.0.tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
