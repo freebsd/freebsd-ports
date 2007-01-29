@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	3.33
+PORTVERSION=	3.34
 CATEGORIES=	www
-DISTNAME=	MT-${PORTVERSION}-en_US
+DISTNAME=	MT-${PORTVERSION}-en
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A web-based personal publishing system for weblogs
@@ -24,7 +24,6 @@ RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 	${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA
 .endif
 
-WRKSRC=		${WRKDIR}/MT-${PORTVERSION}
 DATADIR=	www/data
 CGIDIR=		www/cgi-bin/mt
 

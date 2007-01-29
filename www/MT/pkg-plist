@@ -376,7 +376,6 @@
 %%CGIDIR%%/php/extlib/ezsql/ezsql_mysql.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_postgres.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_sqlite.php
-%%CGIDIR%%/php/extlib/smarty/.cvsignore
 %%CGIDIR%%/php/extlib/smarty/BUGS
 %%CGIDIR%%/php/extlib/smarty/COPYING.lib
 %%CGIDIR%%/php/extlib/smarty/ChangeLog
