@@ -1,0 +1,27 @@
+bin/config-model
+%%SITE_PERL%%/Config/Model.pm
+%%SITE_PERL%%/Config/Model/AnyId.pm
+%%SITE_PERL%%/Config/Model/AnyThing.pm
+%%SITE_PERL%%/Config/Model/AutoRead.pm
+%%SITE_PERL%%/Config/Model/CheckList.pm
+%%SITE_PERL%%/Config/Model/Describe.pm
+%%SITE_PERL%%/Config/Model/Dumper.pm
+%%SITE_PERL%%/Config/Model/Exception.pm
+%%SITE_PERL%%/Config/Model/HashId.pm
+%%SITE_PERL%%/Config/Model/Instance.pm
+%%SITE_PERL%%/Config/Model/ListId.pm
+%%SITE_PERL%%/Config/Model/Loader.pm
+%%SITE_PERL%%/Config/Model/Node.pm
+%%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
+%%SITE_PERL%%/Config/Model/Report.pm
+%%SITE_PERL%%/Config/Model/Searcher.pm
+%%SITE_PERL%%/Config/Model/TermUI.pm
+%%SITE_PERL%%/Config/Model/Value.pm
+%%SITE_PERL%%/Config/Model/ValueComputer.pm
+%%SITE_PERL%%/Config/Model/WarpedNode.pm
+%%SITE_PERL%%/Config/Model/WarpedThing.pm
+%%SITE_PERL%%/Config/Model/WizardHelper.pm
+@dirrm %%SITE_PERL%%/Config/Model
+@dirrmtry %%SITE_PERL%%/Config
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model
