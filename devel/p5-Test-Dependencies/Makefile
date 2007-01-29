@@ -24,6 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/B/PerlReq.pm:${PORTSDIR}/devel/p5-rpm-build-perl \
     		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+IS_INTERACTIVE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Test::Dependencies.3
