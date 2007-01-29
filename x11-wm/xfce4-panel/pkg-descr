@@ -1,4 +1,9 @@
-The XFce 4 panel provides program launchers, a workspace switcher, a clock,
-subpanels and more.
+The Xfce 4 Panel supports multiple panels, with many options for their
+position, appearance, transparency and behavior. There are many items
+available by default to full fit a panel, like application launchers
+with detachable menus, a graphical pager, a tasklist, a clock, a system
+tray, a show/hide desktop switcher, and even more. It offers an easy
+way to add items using a dialog, and to move items accross different
+panels.
 
-WWW: http://www.xfce.org/
+WWW: http://www.xfce.org/projects/xfce4-panel/

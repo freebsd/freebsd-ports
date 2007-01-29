@@ -1,3 +1,10 @@
-XFce 4 window manager originally based on Oroborus. 
+The Xfce 4 window manager manages the placement of application windows
+on the screen, provides beautiful window decorations, manages work-
+spaces or virtual desktops, and natively supports multiscreen mode.
+It provides its own compositing manager (from the Xorg Composite ex-
+tension) for true transparency and shadows. The Xfce 4 window manager
+includes a keyboard shorcuts editor for user specific commands and
+basic windows manipulations, and it provides a dialog for advanced
+tweaks.
 
-WWW: http://www.xfce.org/
+WWW: http://www.xfce.org/projects/xfwm4/
