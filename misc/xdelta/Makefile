@@ -12,7 +12,7 @@ CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	c9710216@atlas.newcastle.edu.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A diff/patch utility for binary files
 
 USE_GNOME=	glib12
