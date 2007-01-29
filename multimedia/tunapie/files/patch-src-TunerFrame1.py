@@ -1,6 +1,6 @@
---- src/TunerFrame1.py	Thu Dec 21 00:40:08 2006
-+++ src/TunerFrame1.py.port	Fri Dec 22 23:05:45 2006
-@@ -129,7 +129,7 @@
+--- src/TunerFrame1.py	Wed Jan 10 00:41:00 2007
++++ src/TunerFrame1.py.port	Mon Jan 29 11:32:44 2007
+@@ -130,7 +130,7 @@
          self.SetBackgroundColour(wx.Colour(246, 246, 246))
          self.SetBackgroundStyle(wx.BG_STYLE_SYSTEM)
          self.SetThemeEnabled(True)
@@ -9,18 +9,29 @@
          self.SetFont(wx.Font(10, wx.SWISS, wx.NORMAL, wx.NORMAL, False,u'Sans'))
          self.SetAutoLayout(True)
          self.SetMinSize(wx.Size(770, 410))
-@@ -564,10 +564,10 @@
-         for name in self.favname:
-             self.favorites.Append(name)
-         self.name=[]
--        self.mediaplayer='/usr/bin/xmms'
--        self.videoplayer='/usr/bin/totem'
--        self.term='/usr/bin/x-terminal-emulator'
--        self.ripper='/usr/bin/streamripper -t -u winamp2 -o never'
-+        self.mediaplayer='%%X11BASE%%/bin/xmms'
-+        self.videoplayer='%%VIDEOPLAYER%%'
-+        self.term='%%X11BASE%%/bin/xterm'
-+        self.ripper='%%LOCALBASE%%/bin/streamripper -t -u winamp2 -o never'
-         self.rdir=self.home+'/.tunapie/streamripper'
+@@ -568,9 +568,13 @@
          self.shoutice=1 #0 is icecast server 1 is shoutcast
          self.maxd=100
+         self.newsize=8
++	self.mediaplayer='%%AUDIOPLAYER%%'
++	self.videoplayer='%%VIDEOPLAYER%%'
++	self.term='%%X11BASE%%/bin/xterm'
++	self.ripper='%%LOCALBASE%%/bin/streamripper -t -u winamp2 -o never'
+         self.mediaplayer,self.videoplayer,self.term,self.ripper,self.rdir,\
+-            self.shoutice,self.maxd,self.newsize=tuner.readprefs(self.home, self.rdir,\
+-            self.shoutice,self.maxd,self.newsize)
++            self.shoutice,self.maxd,self.newsize=tuner.readprefs(self.home,self.mediaplayer,\
++            self.videoplayer,self.term,self.ripper,self.rdir,self.shoutice,self.maxd,self.newsize)
+         missing_players=[]
+         if (commands.getoutput("which "+self.mediaplayer))=="":
+             if commands.getoutput("which audacious"):
+@@ -1224,7 +1228,8 @@
+         finally:
+             dlg.Destroy()
+         self.mediaplayer,self.videoplayer,self.term,self.ripper,self.rdir,\
+-            self.shoutice,self.maxd,self.newsize=tuner.readprefs(self.home,self.rdir,self.shoutice,self.maxd,self.newsize)
++            self.shoutice,self.maxd,self.newsize=tuner.readprefs(self.home,self.mediaplayer,
++            self.videoplayer,self.term,self.ripper,self.rdir,self.shoutice,self.maxd,self.newsize)
+         self.setfontsize()
+         self.download()
+         self.OnRadioradioRadiobutton(1)
