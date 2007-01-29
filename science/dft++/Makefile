@@ -59,9 +59,9 @@ OPTIMIZED_FLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boun
 pre-patch:
 	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile-pw
 	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile-wl
-	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 pre-configure:
+	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 	@${REINPLACE_CMD} -e ' s|%%FC%%|${FC}|g ; \
 			      s|%%CC%%|${CC}|g ; \
