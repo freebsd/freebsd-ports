@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	6.3
+PORTVERSION=	6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
@@ -41,6 +41,6 @@ LIB_DEPENDS+=	reiserfs-0.3.0:${PORTSDIR}/sysutils/progsreiserfs
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)/doc|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
