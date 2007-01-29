@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsup-mirror
 PORTVERSION=	1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 DISTFILES=
 
@@ -23,9 +23,18 @@ NO_PACKAGE=	too interactive
 SCRIPTS_ENV=	USA_RESIDENT=${USA_RESIDENT}
 
 USE_RC_SUBR=	cvsupd.sh
+SUB_FILES=	update.sh
 
 base=${PREFIX}/etc/cvsup
 distrib=${base}/sup.client/distrib
+
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
+SUB_LIST+=	CVSUPD="cvsupd"
+.else
+SUB_LIST+=	CVSUPD="cvsupd.sh"
+.endif
 
 do-extract:
 	@test -d ${WRKSRC} || ${MKDIR} ${WRKSRC}
@@ -35,7 +44,7 @@ do-install:
 	@test -d ${distrib} || ${MKDIR} ${distrib}
 	@${INSTALL_DATA} ${WRKSRC}/config.sh ${base}
 	@${INSTALL_DATA} ${WRKSRC}/cvsupd.access ${base}
-	@${INSTALL_SCRIPT} ${FILESDIR}/update.sh ${base}
+	@${INSTALL_SCRIPT} ${WRKSRC}/update.sh ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile ${base}
 	@${INSTALL_DATA} ${FILESDIR}/refuse.self ${distrib}
 	@${CP} /dev/null ${base}/.start_server
@@ -43,4 +52,4 @@ do-install:
 post-install:
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
