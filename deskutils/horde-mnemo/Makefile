@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.planetmirror.com/pub/horde/mnemo/		\
@@ -19,7 +18,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		http://ftp.horde.org/pub/mnemo/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Mnemo is the Horde notes and memos application
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde

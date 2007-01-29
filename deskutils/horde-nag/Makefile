@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
 		ftp://ftp.planetmirror.com/pub/horde/nag/		\
@@ -20,7 +19,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
 		http://ftp.horde.org/pub/nag/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Nag is a simple, multiuser task list manager
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde

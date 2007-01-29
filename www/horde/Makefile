@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/	\
 		http://ftp.horde.org/pub/horde/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A common code-base used by Horde applications, written in PHP
 
 #----------------------------------------------------------------------------
