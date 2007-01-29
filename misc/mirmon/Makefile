@@ -9,7 +9,8 @@
 PORTNAME=	mirmon
 PORTVERSION=	1.37
 CATEGORIES=	misc
-MASTER_SITES=	http://www.cs.uu.nl/people/henkp/mirmon/src/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://www.cs.uu.nl/people/henkp/mirmon/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
