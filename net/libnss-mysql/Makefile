@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	libnss-mysql
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	NSS module using a MySQL database for backend
 
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 INSTALLS_SHLIB=	yes

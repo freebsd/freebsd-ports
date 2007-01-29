@@ -19,6 +19,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes

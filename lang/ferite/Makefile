@@ -18,6 +18,7 @@ COMMENT=	An embeddable scripting language
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

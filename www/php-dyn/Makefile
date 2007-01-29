@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PHP Extension to help debugging a PHP script
 
+USE_AUTOTOOLS=	libtool:15
 USE_PHP=	yes
 USE_PHPIZE=	yes
 WITH_PHP_MOD=	yes

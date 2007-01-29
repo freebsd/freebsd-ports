@@ -1,9 +1,12 @@
+lib/libIL.a
 lib/libIL.la
 lib/libIL.so
 lib/libIL.so.1
+lib/libILU.a
 lib/libILU.la
 lib/libILU.so
 lib/libILU.so.1
+lib/libILUT.a
 lib/libILUT.la
 lib/libILUT.so
 lib/libILUT.so.1

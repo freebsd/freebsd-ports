@@ -16,6 +16,7 @@ COMMENT=	An XSLT and XIncludes Filter module for Apache 2.0
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20
 
+USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=	yes
 USE_GNOME=	libxslt
 

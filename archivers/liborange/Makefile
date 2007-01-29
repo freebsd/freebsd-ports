@@ -20,6 +20,7 @@ LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		dynamite.0:${PORTSDIR}/archivers/dynamite \
 		unshield.0:${PORTSDIR}/archivers/unshield
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE}

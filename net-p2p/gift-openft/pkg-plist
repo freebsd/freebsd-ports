@@ -1,3 +1,4 @@
+lib/giFT/libOpenFT.a
 lib/giFT/libOpenFT.la
 lib/giFT/libOpenFT.so
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
