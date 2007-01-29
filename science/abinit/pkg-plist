@@ -346,3 +346,4 @@ abinit/5.2/doc/README
 @dirrm abinit/5.2/doc
 @dirrm abinit/5.2/bin
 @dirrm abinit/5.2
+@dirrm abinit
