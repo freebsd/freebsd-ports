@@ -7,6 +7,7 @@
 
 PORTNAME=	libexo
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 DISTNAME=	exo-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITES_XFCE}
@@ -33,7 +34,9 @@ USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil mcsmanager
 USE_XLIB=	yes
 
-OPTIONS=	PYTHON	"Enable Python support"			off \
+OPTIONS=	HAL	"Enable HAL support"			on \
+		NOTIFY  "Enable notification support"		on \
+		PYTHON	"Enable Python support"			off \
 		GTKDOC	"Build with documentation"		off \
 		MCS	"Build with xfce4-mcs-manager support"	on
 
@@ -49,6 +52,20 @@ PLIST_SUB+=	GTK_DOC=""
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
 PLIST_SUB+=	GTK_DOC="@comment "
+.endif
+
+.if defined(WITH_HAL)
+CONFIGURE_ARGS+=--enable-hal
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+.else
+CONFIGURE_ARGS+=--disable-hal
+.endif
+
+.if defined(WITH_NOTIFY)
+CONFIGURE_ARGS+=--enable-notifications
+LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+.else
+CONFIGURE_ARGS+=--disable-notifications
 .endif
 
 .if defined(WITH_PYTHON)
