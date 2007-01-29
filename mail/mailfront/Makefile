@@ -18,8 +18,6 @@ COMMENT=	Mail server network protocol front-ends
 LIB_DEPENDS=	cvm-v2client.1:${PORTSDIR}/security/cvm
 
 WANT_QMAIL=	yes
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 QMAIL_PREFIX?=	/var/qmail
 CFLAGS+=	-I${CVM_INC}
 CFLAGS_SO=	${CFLAGS} -fPIC -shared -L${CVM_LIB}

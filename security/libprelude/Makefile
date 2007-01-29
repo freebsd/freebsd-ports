@@ -17,8 +17,6 @@ LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off
 
-USE_GPG=		yes
-SIG_SUFFIX=		.sig
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes

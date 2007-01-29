@@ -17,7 +17,6 @@ COMMENT=	TOFU Protection - Display Filter for RFC822 messages
 
 RUN_DEPENDS=	${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
 
-USE_GPG=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 

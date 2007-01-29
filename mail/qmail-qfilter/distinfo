@@ -1,6 +1,3 @@
 MD5 (qmail-qfilter-2.1.tar.gz) = 744c4399a7f8c94b6c198e3de9941093
 SHA256 (qmail-qfilter-2.1.tar.gz) = 67d7f6d92eb034b1696ceb1672114c871dde06618c33dfc7f83e3a6667034468
 SIZE (qmail-qfilter-2.1.tar.gz) = 22242
-MD5 (qmail-qfilter-2.1.tar.gz.sig) = 9ed02ad6aa4ed4d822c9cddcbc1bd01f
-SHA256 (qmail-qfilter-2.1.tar.gz.sig) = fdf89cd8ce0df7d9d9c34eec92d8c0e96d14590248267eeb31dc0c057b0c7524
-SIZE (qmail-qfilter-2.1.tar.gz.sig) = 189

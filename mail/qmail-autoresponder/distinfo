@@ -1,6 +1,3 @@
 MD5 (qmail-autoresponder-0.96.2.tar.gz) = f4e4edcd750daa8877088577369a876b
 SHA256 (qmail-autoresponder-0.96.2.tar.gz) = 127329274dc20d524a29e7034469b1841100616129ca3d9c31f951a67698e40a
 SIZE (qmail-autoresponder-0.96.2.tar.gz) = 21110
-MD5 (qmail-autoresponder-0.96.2.tar.gz.sig) = c0add59e6f3ead6874f880c4a3ef92a1
-SHA256 (qmail-autoresponder-0.96.2.tar.gz.sig) = c14eaf1ab7c7a05fe2b8ca6806c4efb10d9244092ce9f71e12993ff6eb19d49f
-SIZE (qmail-autoresponder-0.96.2.tar.gz.sig) = 189

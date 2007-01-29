@@ -14,7 +14,6 @@ MASTER_SITES=	http://ch.tudelft.nl/~arthur/cvsd/
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	CVS pserver daemon
 
-USE_GPG?=	yes
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes

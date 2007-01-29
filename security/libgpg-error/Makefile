@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
-USE_GPG=		yes
-SIG_SUFFIX=		.sig
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

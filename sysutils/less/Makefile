@@ -11,14 +11,9 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A better pager utility
-
-USE_GPG?=	yes
-SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 
 PLIST_FILES=	bin/less bin/lesskey bin/lessecho
 

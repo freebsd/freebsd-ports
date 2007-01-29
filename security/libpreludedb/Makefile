@@ -14,8 +14,6 @@ COMMENT=	Framework library for access to Prelude NIDS database
 
 LIB_DEPENDS=	prelude.11:${PORTSDIR}/security/libprelude
 
-USE_GPG=		yes
-SIG_SUFFIX=		.sig
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib \
