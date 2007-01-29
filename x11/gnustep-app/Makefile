@@ -110,7 +110,7 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	Position:astro/position \
 	AZBackground:x11-themes/etoile-azbackground \
 	ClipBook:deskutils/gworkspace-clipbook \
-	GMDSClient:deskutils/gworkspace-gwmetadata \
+	MDFinder:deskutils/gworkspace-gwmetadata \
 
 #	DistributedView:deskutils/etoile-distributedview \
 

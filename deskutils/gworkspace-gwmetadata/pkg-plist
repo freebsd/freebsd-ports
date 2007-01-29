@@ -1,23 +1,19 @@
-System/Applications/GMDSClient.app/GMDSClient
-System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm/data.classes
-System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm/data.info
-System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm/objects.gorm
-System/Applications/GMDSClient.app/Resources/GMDSClient.desktop
-System/Applications/GMDSClient.app/Resources/Info-gnustep.plist
-System/Applications/GMDSClient.app/Resources/Magnify.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-%%MAJORVERSION%%.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-1.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-2.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-3.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-4.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-5.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-6.tiff
-System/Applications/GMDSClient.app/Resources/anim-logo-7.tiff
-System/Applications/GMDSClient.app/library_paths.openapp
-System/Applications/GMDSClient.app/stamp.make
+System/Applications/MDFinder.app/MDFinder
+System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.classes
+System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.info
+System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+System/Applications/MDFinder.app/Resources/Info-gnustep.plist
+System/Applications/MDFinder.app/Resources/MDFinder.desktop
+System/Applications/MDFinder.app/Resources/MDFinder.tiff
+System/Applications/MDFinder.app/Resources/SavedSearch.tiff
+System/Applications/MDFinder.app/library_paths.openapp
+System/Applications/MDFinder.app/stamp.make
 System/Library/Bundles/AbiwordExtractor.extr/AbiwordExtractor
 System/Library/Bundles/AbiwordExtractor.extr/Resources/Info-gnustep.plist
 System/Library/Bundles/AbiwordExtractor.extr/stamp.make
+System/Library/Bundles/AppExtractor.extr/AppExtractor
+System/Library/Bundles/AppExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/AppExtractor.extr/stamp.make
 System/Library/Bundles/HtmlExtractor.extr/HtmlExtractor
 System/Library/Bundles/HtmlExtractor.extr/Resources/Info-gnustep.plist
 System/Library/Bundles/HtmlExtractor.extr/stamp.make
@@ -33,27 +29,117 @@ System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.g
 System/Library/Bundles/MDIndexing.prefPane/Resources/Info-gnustep.plist
 System/Library/Bundles/MDIndexing.prefPane/Resources/Info.plist
 System/Library/Bundles/MDIndexing.prefPane/Resources/MDIndexing.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/applications.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/categories.plist
+System/Library/Bundles/MDIndexing.prefPane/Resources/documents.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/folders.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/images.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/movies.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/music.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/pdfdocs.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/plainfiles.tiff
+System/Library/Bundles/MDIndexing.prefPane/Resources/sources.tiff
 System/Library/Bundles/MDIndexing.prefPane/stamp.make
 System/Library/Bundles/OpenOfficeExtractor.extr/OpenOfficeExtractor
 System/Library/Bundles/OpenOfficeExtractor.extr/Resources/Info-gnustep.plist
 System/Library/Bundles/OpenOfficeExtractor.extr/stamp.make
+System/Library/Bundles/RtfExtractor.extr/Resources/Info-gnustep.plist
+System/Library/Bundles/RtfExtractor.extr/RtfExtractor
+System/Library/Bundles/RtfExtractor.extr/stamp.make
 System/Library/Bundles/TextExtractor.extr/Resources/Info-gnustep.plist
 System/Library/Bundles/TextExtractor.extr/TextExtractor
 System/Library/Bundles/TextExtractor.extr/stamp.make
 System/Library/Bundles/XmlExtractor.extr/Resources/Info-gnustep.plist
 System/Library/Bundles/XmlExtractor.extr/XmlExtractor
 System/Library/Bundles/XmlExtractor.extr/stamp.make
-System/Library/Headers/SQLite/SQLite.h
-System/Library/Libraries/libSQLite.so
-System/Library/Libraries/libSQLite.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libSQLite.so.%%LIBVERSION%%
+System/Library/Frameworks/MDKit.framework/Headers
+System/Library/Frameworks/MDKit.framework/Resources
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttribute.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttributeChooser.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttributeEditor.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttributeView.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKQuery.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKQueryManager.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKWindow.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKit.h
+System/Library/Frameworks/MDKit.framework/Versions/A/Headers/SQLite.h
+System/Library/Frameworks/MDKit.framework/Versions/A/MDKit
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/Help.rtfd/dummy.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/Info-gnustep.plist
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/MDFinder.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/add.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-%%MAJORVERSION%%.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-1.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-2.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-3.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-4.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-5.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-6.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-7.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/attributes.plist
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/casesens.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/remove.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/switchOff.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/switchOn.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/whiteArrowDown.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/Resources/whiteArrowRight.tiff
+System/Library/Frameworks/MDKit.framework/Versions/A/libMDKit.so
+System/Library/Frameworks/MDKit.framework/Versions/A/libMDKit.so.%%MAJORVERSION%%
+System/Library/Frameworks/MDKit.framework/Versions/A/libMDKit.so.%%MAJORVERSION%%.1.%%MAJORVERSION%%
+System/Library/Frameworks/MDKit.framework/Versions/Current
+System/Library/Headers/MDKit
+System/Library/Libraries/libMDKit.so
+System/Library/Libraries/libMDKit.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libMDKit.so.%%LIBVERSION%%
 System/Tools/gmds
 System/Tools/mdextractor
-@dirrm System/Library/Headers/SQLite
+System/Tools/mdfind
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Headers
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/A
+@dirrm System/Library/Frameworks/MDKit.framework/Versions
+@dirrm System/Library/Frameworks/MDKit.framework
 @dirrm System/Library/Bundles/XmlExtractor.extr/Resources
 @dirrm System/Library/Bundles/XmlExtractor.extr
 @dirrm System/Library/Bundles/TextExtractor.extr/Resources
 @dirrm System/Library/Bundles/TextExtractor.extr
+@dirrm System/Library/Bundles/RtfExtractor.extr/Resources
+@dirrm System/Library/Bundles/RtfExtractor.extr
 @dirrm System/Library/Bundles/OpenOfficeExtractor.extr/Resources
 @dirrm System/Library/Bundles/OpenOfficeExtractor.extr
 @dirrm System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm
@@ -65,9 +151,11 @@ System/Tools/mdextractor
 @dirrm System/Library/Bundles/JpegExtractor.extr
 @dirrm System/Library/Bundles/HtmlExtractor.extr/Resources
 @dirrm System/Library/Bundles/HtmlExtractor.extr
+@dirrm System/Library/Bundles/AppExtractor.extr/Resources
+@dirrm System/Library/Bundles/AppExtractor.extr
 @dirrm System/Library/Bundles/AbiwordExtractor.extr/Resources
 @dirrm System/Library/Bundles/AbiwordExtractor.extr
-@dirrm System/Applications/GMDSClient.app/Resources/English.lproj/GMDSClient.gorm
-@dirrm System/Applications/GMDSClient.app/Resources/English.lproj
-@dirrm System/Applications/GMDSClient.app/Resources
-@dirrm System/Applications/GMDSClient.app
+@dirrm System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm
+@dirrm System/Applications/MDFinder.app/Resources/English.lproj
+@dirrm System/Applications/MDFinder.app/Resources
+@dirrm System/Applications/MDFinder.app
