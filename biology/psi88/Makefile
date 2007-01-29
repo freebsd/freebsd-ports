@@ -27,7 +27,8 @@ pre-patch:
 	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g' -e 's+%%FFLAGS%%+${FFLAGS}+g' -e 's+%%LOCALBASE%%+${LOCALBASE}+g' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g' -e 's+%%FFLAGS%%+${FFLAGS}+g' -e 's+%%LOCALBASE%%+${LOCALBASE}+g' -e 's+%%PREFIX%%+${PREFIX}+g' ${WRKSRC}/src/Makefile
+
 pre-build:
 	${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
 
