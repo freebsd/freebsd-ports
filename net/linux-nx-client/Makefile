@@ -7,6 +7,7 @@
 
 PORTNAME=		linux-nx-client
 PORTVERSION=		2.1.0
+PORTREVISON=		1
 CATEGORIES=		net
 MASTER_SITES=		http://web04.nomachine.com/download/${PORTVERSION}/Linux/
 DISTNAME=		nxclient-${PORTVERSION}-9.i386
@@ -21,13 +22,11 @@ RUN_DEPENDS=		${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-lib
 NO_WRKSUBDIR=		yes
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
-USE_LINUX_PREFIX=	yes
 NO_BUILD=		yes
 INSTALL_ICONS=		yes
 
 NXSRC=			${WRKSRC}/NX
 NXDST=			${PREFIX}/lib/linux-nx-client
-USE_LDCONFIG=		yes
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
