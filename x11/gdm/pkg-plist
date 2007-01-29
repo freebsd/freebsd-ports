@@ -147,6 +147,7 @@ share/icons/hicolor/32x32/apps/gdm-xnest.png
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/ar/LC_MESSAGES/gdm.mo
+share/locale/as/LC_MESSAGES/gdm.mo
 share/locale/az/LC_MESSAGES/gdm.mo
 share/locale/be/LC_MESSAGES/gdm.mo
 share/locale/bg/LC_MESSAGES/gdm.mo
@@ -263,7 +264,6 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrm etc/gdm
 @dirrmtry etc/dm/Sessions
 @dirrmtry etc/dm
-@dirrmtry sbin
 @dirrmtry share/gnome/log/gdm
 @dirrmtry share/gnome/log
 @unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true
@@ -330,3 +330,5 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
