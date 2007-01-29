@@ -33,7 +33,6 @@ include/Poco/AsyncChannel.h
 include/Poco/AutoPtr.h
 include/Poco/AutoReleasePool.h
 include/Poco/Base64Decoder.h
-include/Poco/ExpirationDecorator.h
 include/Poco/Event.h
 include/Poco/Base64Encoder.h
 include/Poco/BasicEvent.h
@@ -286,9 +285,6 @@ include/Poco/Token.h
 include/Poco/Types.h
 include/Poco/UnbufferedStreamBuf.h
 include/Poco/UnicodeConverter.h
-include/Poco/UniqueExpireCache.h
-include/Poco/UniqueExpireLRUCache.h
-include/Poco/UniqueExpireStrategy.h
 include/Poco/URI.h
 include/Poco/URIStreamFactory.h
 include/Poco/URIStreamOpener.h
