@@ -1,3 +1,6 @@
-A calendar application to manage your time with XFce 4.
+Orage provides a calendar which integrates nicely into the Xfce desktop
+environment. It is highly configurable and supports alerts based on dates.
+It warns you with popup or audio alarm. As it is an application kind-of
+every day use it launches itself in the background as a daemon.
 
-WWW: http://www.xfce.org/
+WWW: http://www.xfce.org/projects/orage/
