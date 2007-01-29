@@ -19,6 +19,7 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/sswf-${PORTVERSION}
 USE_GCC=	3.4+
 USE_ICONV=	yes

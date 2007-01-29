@@ -1,3 +1,4 @@
+lib/giFT/libFastTrack.a
 lib/giFT/libFastTrack.la
 lib/giFT/libFastTrack.so
 share/giFT/FastTrack/FastTrack.conf.template

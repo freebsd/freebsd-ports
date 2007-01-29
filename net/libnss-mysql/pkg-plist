@@ -1,5 +1,6 @@
 etc/libnss-mysql.cfg-dist
 etc/libnss-mysql-root.cfg-dist
+lib/nss_mysql.a
 lib/nss_mysql.la
 lib/nss_mysql.so
 lib/nss_mysql.so.1

@@ -22,8 +22,9 @@ COMMENT?=	PHP Scripting Language (Apache Module and CLI)
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
+USE_AUTOTOOLS=	libtool:15
 .if !defined(PKGNAMESUFFIX)
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS+=	autoconf:259
 USE_GETOPT_LONG=yes
 
 CONFIGURE_ARGS=	--enable-versioning \

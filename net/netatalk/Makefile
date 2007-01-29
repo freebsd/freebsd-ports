@@ -20,6 +20,7 @@ COMMENT=	File and print server for AppleTalk networks
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 .endif
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_BDB=	41+

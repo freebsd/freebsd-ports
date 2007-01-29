@@ -17,6 +17,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		png.5:${PORTSDIR}/graphics/png
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

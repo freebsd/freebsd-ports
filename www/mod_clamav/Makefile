@@ -15,6 +15,7 @@ COMMENT=	Scans content delivered by the Apache2 proxy module for viruses
 
 LIB_DEPENDS+=	clamav:${PORTSDIR}/${CLAMAV_PORT}
 
+USE_AUTOTOOLS=	libtool:15
 USE_APACHE=	YES
 WITH_APACHE2=	YES
 GNU_CONFIGURE=	yes
