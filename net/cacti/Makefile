@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.6i${PATCHLEVEL}
+PORTVERSION=	0.8.6j${PATCHLEVEL}
 PORTREVISION=	0
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
@@ -17,11 +17,8 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=	dec06-vulnerability-poller-0.8.6i.patch \
-		dec06-vulnerability-scripts-0.8.6i.patch \
-		import_template_argument_space_removal.patch \
-		poller_output_remainder.patch
-PATCHLEVEL=	.4
+PATCHFILES=
+#PATCHLEVEL=	.4
 SITEDISTVERSION=	${PORTVERSION:S/${PATCHLEVEL}$//}
 #SITEDISTVERSION=	${PORTVERSION}
 
