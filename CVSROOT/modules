@@ -10332,7 +10332,6 @@ p5-Sort-Versions	ports/devel/p5-Sort-Versions
 p5-Spiffy		ports/devel/p5-Spiffy
 p5-Spoon		ports/devel/p5-Spoon
 p5-Spork		ports/textproc/p5-Spork
-p5-Spread	ports/net/p5-Spread
 p5-Spread-Message	ports/net/p5-Spread-Message
 p5-Spread-Session	ports/net/p5-Spread-Session
 p5-Spreadsheet-ParseExcel	ports/textproc/p5-Spreadsheet-ParseExcel
