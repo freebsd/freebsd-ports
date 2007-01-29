@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_domaintree
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www
 MASTER_SITES=	http://dev.iworks.at/mod_domaintree/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
