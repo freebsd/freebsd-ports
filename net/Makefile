@@ -540,7 +540,6 @@
     SUBDIR += p5-Samba-LDAP
     SUBDIR += p5-Socket6
     SUBDIR += p5-Socks
-    SUBDIR += p5-Spread
     SUBDIR += p5-Spread-Message
     SUBDIR += p5-Spread-Session
     SUBDIR += p5-URI
