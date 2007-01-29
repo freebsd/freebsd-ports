@@ -22,7 +22,7 @@ Local/Library/Documentation/SQLClient/SQLClient.igsdoc
 Local/Library/Documentation/SQLClient/dependencies
 Local/Library/Headers/SQLClient/SQLClient.h
 Local/Library/Libraries/libSQLClient.so
-Local/Library/Libraries/libSQLClient.so.%%MAJORVERSION%%.2
+Local/Library/Libraries/libSQLClient.so.%%LIBVERSION%%
 Local/Library/Libraries/libSQLClient.so.%%VERSION%%
 @dirrm Local/Library/Headers/SQLClient
 @dirrm Local/Library/Documentation/SQLClient
