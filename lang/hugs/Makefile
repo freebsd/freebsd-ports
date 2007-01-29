@@ -31,10 +31,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pthreads \
 			--mandir=${PREFIX}/man
 
-.if (${OSVERSION} < 500000)
-BROKEN=		missing data type declarations
-.endif
-
 .if ${ARCH} == "ia64"
 BROKEN=		dumps core during build on ${ARCH}
 .endif
