@@ -26,7 +26,6 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 WANT_FORTRAN=	yes #dummy but future use
-EXTRACT_DEPENDS=gfortran42:${PORTSDIR}/lang/gcc42
 BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
@@ -51,13 +50,15 @@ post-extract:
 	@${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g ; \
 	s;%%X11BASE%%;${X11BASE};g' \
 	${WRKSRC}/Makefile
-	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-	${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/Makefile
 	@${MV} ${WRKSRC}/gl_src.c ${WRKSRC}/gl_src.c.bogus
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's/MAXOBV=100000/MAXOBV=${MAXOBV}/' \
 	${WRKSRC}/DPCOPA.INC
+
+pre-build:
+	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
