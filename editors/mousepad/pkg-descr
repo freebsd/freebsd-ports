@@ -1,3 +1,5 @@
-Mousepad is a text editor for Xfce based on Leafpad
+Mousepad is a simple text editor for Xfce based on Leafpad. The initial
+reason for Mousepad was to provide printing support, which would have
+been difficult for Leafpad for various reasons.
 
-WWW: http://www.xfce.org/
+WWW: http://www.xfce.org/projects/mousepad/
