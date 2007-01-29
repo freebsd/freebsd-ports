@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		http://ftp.horde.org/pub/imp/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A webmail system which accesses mail over IMAP
 
 #-----------------------------------------------------------------------
