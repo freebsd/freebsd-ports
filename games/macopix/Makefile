@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	macopix
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
 .if defined(WITH_GTK1)
