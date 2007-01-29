@@ -1,5 +1,5 @@
-XFce 4 essential utilities and scripts. Provides a taskbar, an about
-dialog, a run dialog, and several important scripts that are used by
-other packages including the panel. Also contains the user guide.
+The utilities and scripts provides an about dialog for Xfce 4, an
+application launcher, and several useful scripts that are also used
+by other Xfce components such as the panel and the desktop menu.
 
-WWW: http://www.xfce.org/
+WWW: http://www.xfce.org/projects/xfce-utils/

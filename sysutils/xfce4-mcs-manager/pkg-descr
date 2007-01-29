@@ -1,4 +1,10 @@
-XFce 4 settings manager provides a control center for settings manager
-plugins that are provided by other modules.
+The settings manager provides the MCS (Multi-Channel Settings), a
+modular, host independent, network transparent and centralized
+configuration system. It runs in the background and provides global
+settings information to other Xfce components. There is a main control
+panel to access the configuration dialogs of all the components. The
+MCS plugins provide settings dialogs for general items that are not
+part of a package, e.g. GTK, mouse, fonts, keyboard, and display
+settings.
 
-WWW: http://www.xfce.org/
+WWW: http://www.xfce.org/projects/xfce-mcs-manager/

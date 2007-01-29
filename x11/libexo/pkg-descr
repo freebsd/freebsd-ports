@@ -1,3 +1,6 @@
-Terminal library, extensions to Xfce by os-cillation
+libexo is the extension library to Xfce developed by os-cillation.
+While Xfce ships with quite a few libraries that are primarly
+targeted at desktop development, libexo is targeted at application
+development, with a focus on applications for Xfce.
 
-WWW: http://www.os-cillation.com/
+WWW: http://www.os-cillation.de/index.php?id=29&L=5
