@@ -8,8 +8,7 @@
 PORTNAME=	tatter-tools
 PORTVERSION=	1.0.6.1
 CATEGORIES=	chinese www
-MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
-		ftp://chinsan2.twbbs.org/distfiles/
+MASTER_SITES=	LOCAL/chinsan
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Cute and easy blog tool with Traditional-Chinese(zh_TW.UTF-8)

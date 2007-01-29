@@ -7,8 +7,7 @@
 
 CATEGORIES=	chinese editors
 
-PATCH_SITES=	http://chinsan2.twbbs.org/distfiles/ \
-		ftp://chinsan2.twbbs.org/distfiles/
+PATCH_SITES=	LOCAL/chinsan
 PATCHFILES=	zh-joe-2.9.8.diff
 PATCH_DIST_STRIP=	-p1
 

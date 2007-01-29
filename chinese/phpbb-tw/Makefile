@@ -8,8 +8,7 @@
 PORTNAME=	phpbb
 PORTVERSION=	2.0.21
 CATEGORIES=	chinese www
-MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
-		ftp://chinsan2.twbbs.org/distfiles/
+MASTER_SITES=	LOCAL/chinsan
 PKGNAMESUFFIX=	-tw
 DISTNAME=	phpBB-tw-${PORTVERSION}
 

@@ -10,8 +10,7 @@ PORTVERSION=	0.1.5
 PORTREVISION=	2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
-		http://chinsan2.twbbs.org/distfiles/ \
-		ftp://chinsan2.twbbs.org/distfiles/
+		LOCAL/chinsan
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A lightweight PDF document viewer

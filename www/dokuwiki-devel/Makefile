@@ -8,9 +8,7 @@
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
 CATEGORIES=	www
-MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
-		ftp://chinsan2.twbbs.org/distfiles/ \
-		LOCAL/chinsan \
+MASTER_SITES=	LOCAL/chinsan \
 		http://dev.splitbrain.org/browse/snapshots/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${DIST_VER}
