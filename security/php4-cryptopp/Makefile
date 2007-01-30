@@ -17,6 +17,8 @@ COMMENT=	A crypto++ php wrapper
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 
+BROKEN=		Does not compile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
 

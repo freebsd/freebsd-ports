@@ -19,6 +19,8 @@ COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${DATADIR}/world/gui.txt:${PORTSDIR}/games/scourge-data
 
+BROKEN=		Does not compile
+
 USE_GL=		yes
 USE_SDL=	sdl mixer net
 USE_GMAKE=	yes
