@@ -18,12 +18,7 @@ COMMENT=	Nintendo Entertainment System emlator for X
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
 STRIP=
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ines ${PREFIX}/bin
@@ -32,4 +27,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CART.NES ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pal ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

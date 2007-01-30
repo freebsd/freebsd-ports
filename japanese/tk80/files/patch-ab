@@ -76,13 +76,11 @@
  all: wish
  
  # The following target is configured by autoconf to generate either
-@@ -326,6 +337,14 @@
+@@ -326,6 +337,12 @@
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
  	$(RANLIB) ${TK_LIB_FILE}
-+.if ${PORTOBJFORMAT}X == elfX
 +	ln -sf ${TK_LIB_FILE} `echo ${TK_LIB_FILE} | sed 's/\.so.*$$/.so/'`
-+.endif
 +
 +$(TK_STATIC_LIB_FILE): $(OBJS)
 +	rm -f $(TK_STATIC_LIB_FILE)
@@ -107,13 +105,11 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -395,13 +414,22 @@
+@@ -395,13 +414,20 @@
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
-+.if ${PORTOBJFORMAT}X == elfX
 +	@(cd $(LIB_INSTALL_DIR); ln -sf ${TK_LIB_FILE} `echo ${TK_LIB_FILE} | sed 's/\.so.*$$/.so/'`)
-+.endif
 +	@echo "Installing $(TK_STATIC_LIB_FILE)"
 +	@$(INSTALL_DATA) $(TK_STATIC_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_STATIC_LIB_FILE)
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_STATIC_LIB_FILE))

@@ -19,7 +19,7 @@ COMMENT=	Japanized Tcl (Tool Command Language)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_AUTOTOOLS=	autoconf:213
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg-install.tclsh
@@ -57,17 +57,14 @@ pre-install:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} install
 
 post-install:
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libtcl76jp.so.1.0 ${PREFIX}/lib/libtcl76jp.so
-.endif
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 
 test:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
+	cd ${WRKSRC} && ${MAKE} test
 
 install-man:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
+	cd ${WRKSRC} && ${MAKE} install-man
 
 .include <bsd.port.post.mk>

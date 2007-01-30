@@ -1,6 +1,6 @@
 --- makefile.orig	Fri Mar 14 19:34:48 1997
 +++ makefile	Wed Jun 21 02:59:31 2000
-@@ -1,18 +1,19 @@
+@@ -1,18 +1,17 @@
  .KEEP_STATE:
  
 -CFLAGS = -O2
@@ -10,9 +10,7 @@
 +CFLAGS ?= -O2
 +CC ?= gcc
 +XLIB = -L$(X11BASE)/lib  -lXaw -lXmu -lXt
-+.if $(PORTOBJFORMAT) == "elf"
 +XLIB+= -Wl,-rpath,$(X11BASE)/lib
-+.endif
  OBJS = asprint.o
 -INCS = 
 -

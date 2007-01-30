@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib
 USE_PERL5_BUILD=yes
-MAKE_ENV=	objformat=${PORTOBJFORMAT}
 USE_LDCONFIG=	yes
 
 post-patch:

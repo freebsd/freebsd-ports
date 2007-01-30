@@ -34,13 +34,11 @@
  
  # To turn off the security checks that disallow incoming sends when
  # the X server appears to be insecure, reverse the comments on the
-@@ -291,6 +293,9 @@
+@@ -291,6 +293,7 @@
  	rm -f @TK_LIB_FILE@
  	@MAKE_LIB@
  	$(RANLIB) @TK_LIB_FILE@
-+.if ${PORTOBJFORMAT}X == elfX
 +	ln -sf ${TK_LIB_FILE} `echo ${TK_LIB_FILE} | sed 's/\.so.*$$/.so/'`
-+.endif
  
  wish: $(WISH_OBJS) $(TK_LIB_FILE)
  	$(CC) @LD_FLAGS@ $(WISH_OBJS) @TK_BUILD_LIB_SPEC@ $(LIBS) \
@@ -59,13 +57,11 @@
  
  # Note: before running ranlib below, must cd to target directory because
  # some ranlibs write to current directory, and this might not always be
-@@ -332,13 +337,18 @@
+@@ -332,13 +337,16 @@
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
-+.if ${PORTOBJFORMAT}X == elfX
 +	@(cd $(LIB_INSTALL_DIR); ln -sf ${TK_LIB_FILE} `echo ${TK_LIB_FILE} | sed 's/\.so.*$$/.so/'`)
-+.endif
  	@echo "Installing wish"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
  	@echo "Installing tkConfig.sh"

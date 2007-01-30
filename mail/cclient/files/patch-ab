@@ -86,7 +86,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -801,23 +806,35 @@
+@@ -801,23 +806,31 @@
  
  # Build it!
  
@@ -102,11 +102,7 @@
  	@$(SH) ARCHIVE
  
 +$(SHLIBNAME): $(SOFILES)
-+.if $(PORTOBJFORMAT) == "elf"
 +	ld -shared -x -soname $(SHLIBNAME) -o $(SHLIBNAME) $(SOFILES) `cat LDFLAGS`
-+.else
-+	ld -Bshareable -x -o $(SHLIBNAME) $(SOFILES) `cat LDFLAGS`
-+.endif
 +	ln -s $(SHLIBNAME) lib$(SHLIBBASE).so
 +
 +.c.so: osdep.h

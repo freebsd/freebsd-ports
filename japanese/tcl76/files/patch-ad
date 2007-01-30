@@ -1,36 +1,47 @@
---- configure.in.orig	Tue Sep 15 08:14:13 1998
-+++ configure.in	Tue Sep 15 08:17:43 1998
-@@ -647,7 +647,20 @@
- 	LD_FLAGS="-Wl,-Bexport"
+--- configure.in.orig	Fri Jan 26 23:46:36 2007
++++ configure.in	Fri Jan 26 23:47:56 2007
+@@ -648,31 +648,15 @@
  	LD_SEARCH_FLAGS=""
  	;;
--    NetBSD-*|FreeBSD-*|OpenBSD-*)
-+    NetBSD-*|FreeBSD-*|OpenBSD-*)
-+	if test "X$PORTOBJFORMAT" = "Xelf"; then
-+	    SHLIB_CFLAGS="-fpic"
-+	    SHLIB_LD='${CC} -shared -Wl,-x'
-+	    SHLIB_SEARCH_FLAGS='-Wl,-soname,${TCL_LIB_FILE}'
-+	    SHLIB_SUFFIX=".so"
-+	    DL_OBJS="tclLoadDl.o"
-+	    DL_LIBS=""
-+	    LD_FLAGS=""
-+	    LD_SEARCH_FLAGS=""
-+	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
-+	    TCL_UNSHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.a'
-+	    TCL_LIB_VERSIONS_OK=nodots
-+        else
- 	# Not available on all versions:  check for include file.
- 	AC_CHECK_HEADER(dlfcn.h, [
- 	    SHLIB_CFLAGS="-fpic"
-@@ -675,6 +688,7 @@
- 	TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
+     NetBSD-*|FreeBSD-*|OpenBSD-*)
+-	# Not available on all versions:  check for include file.
+-	AC_CHECK_HEADER(dlfcn.h, [
+-	    SHLIB_CFLAGS="-fpic"
+-	    SHLIB_LD="ld -Bshareable -x"
+-	    SHLIB_LD_LIBS=""
+-	    SHLIB_SUFFIX=".so"
+-	    DL_OBJS="tclLoadDl2.o"
+-	    DL_LIBS=""
+-	    LD_FLAGS=""
+-	    LD_SEARCH_FLAGS=""
+-	], [
+-	    SHLIB_CFLAGS=""
+-	    SHLIB_LD="echo tclLdAout $CC \{$SHLIB_CFLAGS\} | `pwd`/tclsh -r -G 0"
+-	    SHLIB_LD_LIBS='${LIBS}'
+-	    SHLIB_SUFFIX="..o"
+-	    DL_OBJS="tclLoadAout.o"
+-	    DL_LIBS=""
+-	    LD_FLAGS=""
+-	    LD_SEARCH_FLAGS=""
+-	])
+-
+-	# FreeBSD doesn't handle version numbers with dots.  Also, have to
+-	# append a dummy version number to .so file names.
+-
+-	TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++	SHLIB_CFLAGS="-fpic"
++	SHLIB_LD='${CC} -shared -Wl,-x'
++	SHLIB_SEARCH_FLAGS='-Wl,-soname,${TCL_LIB_FILE}'
++	SHLIB_SUFFIX=".so"
++	DL_OBJS="tclLoadDl.o"
++	DL_LIBS=""
++	LD_FLAGS=""
++	LD_SEARCH_FLAGS=""
++	TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
  	TCL_UNSHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.a'
  	TCL_LIB_VERSIONS_OK=nodots
-+	fi
  	;;
-     NEXTSTEP-*)
- 	SHLIB_CFLAGS=""
-@@ -1012,7 +1026,7 @@
+@@ -1012,7 +996,7 @@
      TCL_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"

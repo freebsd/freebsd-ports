@@ -13,10 +13,12 @@ MASTER_SITES=	ftp://ftp.se.freebsd.org/pub/FreeBSD/JDK/ \
 		ftp://ftp.sc.sri.com/pub/FreeBSD/JDK/ \
 		http://www.freebsd.org/java/
 MASTER_SITE_SUBDIR=	patrick
+DISTFILES=	jre${JRE_VERSION}i_ELF.V1999-11-9.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard Java Platform for running Java programs
 
+LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License doesn't allow distribution with fee"
@@ -38,15 +40,6 @@ STRIPFILES=	bin/i386/green_threads/jre \
 		lib/i386/green_threads/libsysresource.so \
 		lib/i386/green_threads/libzip.so
 
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-DISTFILES=	jre${JRE_VERSION}i_AOUT.V1999-11-9.tar.gz
-.else
-LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
-DISTFILES=	jre${JRE_VERSION}i_ELF.V1999-11-9.tar.gz
-.endif
-
 do-build:
 	@for file in ${STRIPFILES}; do \
 		${STRIP_CMD} ${WRKSRC}/$$file; \
@@ -67,4 +60,4 @@ do-install:
 post-install:
 	${LOCALBASE}/bin/registervm "${PREFIX}/jre${JRE_VERSION}/bin/java # JRE${JRE_VERSION}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

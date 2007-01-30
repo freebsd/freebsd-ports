@@ -60,6 +60,7 @@ PLIST_SUB+=		OPENSSL_STABLE="@comment "
 CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
 .endif
 
+MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=		MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
@@ -881,12 +882,6 @@ MLINKS+=	\
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
-.else
-MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
-.endif
 
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}

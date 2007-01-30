@@ -19,5 +19,3 @@ lib/libmozldap.so.1
 lib/libmozldap.so
 lib/libmozlber.a
 lib/libmozldap.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m /usr/local/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

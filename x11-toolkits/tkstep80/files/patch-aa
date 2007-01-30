@@ -1,78 +1,43 @@
-*** configure.orig	Mon Apr 19 21:28:50 1999
---- configure	Mon Apr 19 21:30:27 1999
-***************
-*** 891,904 ****
-    withval="$with_tcl"
-    TCL_BIN_DIR=$withval
-  else
-!   TCL_BIN_DIR=`cd ../../tcl8.0$TK_PATCH_LEVEL/unix; pwd`
-  fi
-  
-  if test ! -d $TCL_BIN_DIR; then
-      { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
-  fi
-! if test ! -f $TCL_BIN_DIR/Makefile; then
-!     { echo "configure: error: There's no Makefile in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
-  fi
-  
-  #--------------------------------------------------------------------
---- 891,904 ----
-    withval="$with_tcl"
-    TCL_BIN_DIR=$withval
-  else
-!   TCL_BIN_DIR=${prefix}/lib/tcl8.0
-  fi
-  
-  if test ! -d $TCL_BIN_DIR; then
-      { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
-  fi
-! if test ! -f $TCL_BIN_DIR/tclConfig.sh; then
-!     { echo "configure: error: There's no tclConfig.sh in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
-  fi
-  
-  #--------------------------------------------------------------------
-***************
-*** 936,943 ****
-  DL_LIBS=$TCL_DL_LIBS
-  LD_FLAGS=$TCL_LD_FLAGS
-  CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
-! CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
-  EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
-  
-  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
-  
---- 936,944 ----
-  DL_LIBS=$TCL_DL_LIBS
-  LD_FLAGS=$TCL_LD_FLAGS
-  CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
-! CFLAGS_OPTIMIZE=$CFLAGS
-  EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
-+ TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
-  
-  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
-  
-***************
-*** 2480,2487 ****
-  if test "$ok" = "yes" -a "${SHLIB_SUFFIX}" != ""; then
-      TK_SHARED_BUILD=1
-      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
-!     eval "TK_LIB_FILE=libtk${STEP}${TCL_SHARED_LIB_SUFFIX}"
-!     MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
-      RANLIB=":"
-  else
-      TK_SHARED_BUILD=0
---- 2481,2494 ----
-  if test "$ok" = "yes" -a "${SHLIB_SUFFIX}" != ""; then
-      TK_SHARED_BUILD=1
-      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
-!     if [ "$PORTOBJFORMAT" = "elf" ]; then
-!        eval "TK_LIB_FILE=libtkstep`echo ${VERSION} | tr -d .`.so.1"
-!        MAKE_LIB="\${SHLIB_LD} -soname ${TK_LIB_FILE} -o ${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
-!     else
-!        eval "TK_LIB_FILE=libtkstep`echo ${VERSION} | tr -d .`.so.1.4"
-!        MAKE_LIB="\${SHLIB_LD} -o ${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
-!     fi
-! 
-      RANLIB=":"
-  else
-      TK_SHARED_BUILD=0
+--- configure.orig	Sat Jan 27 02:05:59 2007
++++ configure	Sat Jan 27 02:08:22 2007
+@@ -891,14 +891,14 @@
+   withval="$with_tcl"
+   TCL_BIN_DIR=$withval
+ else
+-  TCL_BIN_DIR=`cd ../../tcl8.0$TK_PATCH_LEVEL/unix; pwd`
++  TCL_BIN_DIR=${prefix}/lib/tcl8.0
+ fi
+ 
+ if test ! -d $TCL_BIN_DIR; then
+     { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
+ fi
+-if test ! -f $TCL_BIN_DIR/Makefile; then
+-    { echo "configure: error: There's no Makefile in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
++if test ! -f $TCL_BIN_DIR/tclConfig.sh; then
++    { echo "configure: error: There's no tclConfig.sh in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
+ fi
+ 
+ #--------------------------------------------------------------------
+@@ -936,8 +936,9 @@
+ DL_LIBS=$TCL_DL_LIBS
+ LD_FLAGS=$TCL_LD_FLAGS
+ CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
+-CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
++CFLAGS_OPTIMIZE=$CFLAGS
+ EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
++TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
+ 
+ LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
+ 
+@@ -2480,8 +2481,9 @@
+ if test "$ok" = "yes" -a "${SHLIB_SUFFIX}" != ""; then
+     TK_SHARED_BUILD=1
+     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+-    eval "TK_LIB_FILE=libtk${STEP}${TCL_SHARED_LIB_SUFFIX}"
+-    MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
++    eval "TK_LIB_FILE=libtkstep`echo ${VERSION} | tr -d .`.so.1"
++    MAKE_LIB="\${SHLIB_LD} -soname ${TK_LIB_FILE} -o ${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
++
+     RANLIB=":"
+ else
+     TK_SHARED_BUILD=0

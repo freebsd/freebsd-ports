@@ -20,35 +20,24 @@
      cat >> confdefs.h <<\EOF
  #define HAVE_DLOPEN 1
  EOF
-@@ -1943,7 +1943,11 @@
+@@ -1943,7 +1943,7 @@
  
  ELFLIB="lib\$(THIS_LIB).so"
  ELFLIB_MAJOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
 -ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION)"
-+if test $PORTOBJFORMAT = elf; then
-+  ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
-+else
-+  ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION)"
-+fi
++ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
  
  case "$host_os" in
    *linux* )
-@@ -2032,6 +2036,19 @@
+@@ -2032,6 +2036,12 @@
       ELFLIB_MAJOR="lib$(THIS_LIB).$(ELF_MAJOR_VERSION).dylib"
       ELFLIB_MAJOR_MINOR="lib$(THIS_LIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION).dylib"
       ;;
 +  *freebsd* )
-+     if [ $PORTOBJFORMAT = elf ]; then
 +       ELF_CC="\$(CC)"
 +       ELF_CFLAGS="\$(CFLAGS) -fPIC"
 +       ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
 +       ELF_LINK_CMD="\$(ELF_LINK)"
-+     else
-+       ELF_CC="\$(CC)"
-+       ELF_CFLAGS="\$(CFLAGS) -fPIC"
-+       ELF_LINK="ld -Bshareable -x"
-+       ELF_LINK_CMD="\$(ELF_LINK)"
-+     fi
 +     ;;
    * )
      echo "Note: ELF compiler for host_os=$host_os may be wrong"

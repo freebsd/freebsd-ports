@@ -111,20 +111,4 @@ pre-configure:
 pre-install:
 	${MKDIR} ${X11BASE}
 
-post-install:
-.if ${PORTOBJFORMAT} == "aout"
-.for lib in PEX5 SM XIE Xi Xmu Xt oldX XThrStub
-	${LN} -sf lib${lib}.so.6.0 ${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in X11 Xaw Xtst
-	${LN} -sf lib${lib}.so.6.1 ${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in Xp
-	${LN} -sf lib${lib}.so.6.2 ${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in ICE Xext
-	${LN} -sf lib${lib}.so.6.3 ${PREFIX}/lib/lib${lib}.so
-.endfor
-.endif
-
 .include <bsd.port.post.mk>

@@ -25,9 +25,6 @@ USE_PERL5_BUILD=true
 # This port only works on i386 right now.
 ONLY_FOR_ARCHS=	i386
 
-.if ${OSVERSION} < 400015
-BROKEN="Requires FreeBSD 4.0 or newer"
-.endif
 .if ${OSVERSION} >= 500035
 USING_GCC3=true
 MAKE_ENV+= USING_GCC3=true
@@ -223,8 +220,8 @@ pre-su-install:
 .endif
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m /usr/lib
+	${LDCONFIG} -m ${PREFIX}/lib
+	${LDCONFIG} -m /usr/lib
 	${CAT} ${PKGMESSAGE}
 
 #	@sh ${PKGINSTALL} ${PKGNAME} POST-INSTALL

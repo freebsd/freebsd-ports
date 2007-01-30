@@ -1,10 +1,7 @@
 include/qDecoder.h
 lib/libqDecoder.a
+lib/libqDecoder.so
 lib/libqDecoder.so.2
-@exec ln -sf %f %B/libqDecoder.so
-@unexec rm -f %B/libqDecoder.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/qDecoder/AUTHORS
 share/doc/qDecoder/DISCLAIMER
 share/doc/qDecoder/README

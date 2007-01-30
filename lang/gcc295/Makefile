@@ -30,7 +30,7 @@ IGNORE=	Cannot install: you have the 'USE_GCC' variable defined either in enviro
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == alpha)
-BROKEN=			"Does not compile on alpha"
+BROKEN=			Does not compile on alpha
 WITHOUT_CPU_CFLAGS=	yes
 .endif
 
@@ -42,15 +42,10 @@ GCC_REV=	${DISTNAME:S/gcc-//g:S/.test3//g}
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 LIBSTDCPP_REV=	2100
 
-.if ${PORTOBJFORMAT} == "aout"
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.endif
-
 PLIST_SUB+=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
 #CONFIGURE_ARGS+=	--program-suffix=-295

@@ -1,6 +1,6 @@
 --- libjbig/Makefile.orig	Fri Apr 10 20:33:27 1998
 +++ libjbig/Makefile	Wed Sep 16 11:57:16 1998
-@@ -5,9 +5,16 @@
+@@ -5,9 +5,12 @@
  CC = gcc
  
  # Options for the compiler: A high optimization level is suggested
@@ -9,28 +9,20 @@
  
 -all: libjbig.a tstcodec
 +JBIGLIB=libjbig.a
-+.if ${PORTOBJFORMAT} == elf
 +SOJBIGLIB=libjbig.so.1
-+.else
-+SOJBIGLIB=libjbig.so.1.1
-+.endif
 +
 +all: libjbig.a $(SOJBIGLIB)
  
  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
  	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
-@@ -18,10 +25,25 @@
+@@ -18,10 +25,21 @@
  	ar rc libjbig.a jbig.o jbig_tab.o
  	ranlib libjbig.a
  
 +$(SOJBIGLIB): jbig.so jbig_tab.so
 +	rm -f ${.TARGET}
-+.if ${PORTOBJFORMAT} == elf
 +	$(CC) -o ${.TARGET} -shared -Wl,-soname,${.TARGET} ${.ALLSRC}         
 +	ln -sf ${.TARGET} `echo ${.TARGET} | sed 's/\.so.*$$/.so/'`
-+.else
-+	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
-+.endif
 +	
  jbig.o: jbig.c jbig.h
  

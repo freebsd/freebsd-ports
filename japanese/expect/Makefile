@@ -23,20 +23,15 @@ CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl8.0jp \
 		--with-tkinclude=${PREFIX}/include/tk8.0jp
 
 NO_MAN_INSTALL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Incomplete pkg-plist"
-.endif
-
-post-install:
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libexpect530jp.so.1.2 ${PREFIX}/lib/libexpect530jp.so
+BROKEN=		Incomplete pkg-plist
 .endif
 
 test:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test 
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.post.mk>

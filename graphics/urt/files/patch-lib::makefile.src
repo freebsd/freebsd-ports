@@ -1,6 +1,6 @@
 --- lib/makefile.src.orig	Thu Mar  5 04:32:53 1992
 +++ lib/makefile.src	Sat Dec 28 00:41:59 2002
-@@ -26,7 +26,14 @@
+@@ -26,7 +26,10 @@
  	vaxshort.o \
  	$(OPT_OBJS)
  
@@ -8,15 +8,11 @@
 +SOOBJS = $(OBJS:.o=.so)
 +
 +LIBANAME = librle.a
-+.if $(PORTOBJFORMAT) == "elf"
 +LIBSONAME = librle.so.1
-+.else
-+LIBSONAME = librle.so.1.0
-+.endif
  
  # Just rebuild the object files.
  objs: $(OBJS)
-@@ -37,40 +44,46 @@
+@@ -37,40 +44,40 @@
  # Do nothing if $(DEST) is empty (or not defined)
  install: buildlib
  	@sh -c "if test '$(DEST)x' != x ; then \
@@ -74,15 +70,9 @@
 +	$(CC) -fPIC -DPIC $(CFLAGS) -c $*.c -o $*.so
 +	$(LD) -X -r $*.so
 +
-+.if $(PORTOBJFORMAT) == "elf"
 +$(LIBSONAME): $(SOOBJS)
 +	-rm -f $@
 +	ld -shared -soname $@ -o $@ $(SOOBJS)
-+.else
-+$(LIBSONAME): $(SOOBJS)
-+	-rm -f $@
-+	ld -Bshareable -o $@ $(SOOBJS)
-+.endif
  
  # Clean up installed stuff and binaries
  pristine: clean

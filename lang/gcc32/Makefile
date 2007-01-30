@@ -38,14 +38,10 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "aout"
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
-.else
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.endif
 .endif
 
 WITHOUT_CPU_CFLAGS=true

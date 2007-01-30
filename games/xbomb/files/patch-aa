@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Jan 21 06:02:46 1996
-+++ Makefile	Tue Jan 18 00:00:00 2000
-@@ -12,33 +12,30 @@
+--- Makefile.orig	Sat Jan 20 16:02:46 1996
++++ Makefile	Thu Jan 25 22:20:42 2007
+@@ -12,33 +12,28 @@
  # for conditions under which this file may be redistributed.
  #
  
@@ -17,9 +17,7 @@
 -
 -COMPILE=$(CC) -c $(CFLAGS)
 +XLIB=-L${X11BASE}/lib -lXaw -lXmu -lXt -lX11 -lcompat
-+.if ${PORTOBJFORMAT} == "elf"
 +XLIB+=	-Wl,-rpath,${X11BASE}/lib
-+.endif
  
  LINK=$(CC)
  
@@ -42,7 +40,7 @@
  xbomb.o   : xbomb.c   xbomb.h
  xwindow.o : xwindow.c xbomb.h icon.h
  hiscore.o : hiscore.c xbomb.h
-@@ -51,10 +48,10 @@
+@@ -51,10 +46,10 @@
  ########
  
  install :

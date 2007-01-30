@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/tk8.0.5/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=${TK_LIB_FILE}
+TK_LIB_FILE=	${TK_LIB}.${SHLIB_MAJOR}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 
@@ -276,12 +277,6 @@ MLINKS=	3DBorder.3 Tk_Get3DBorder.3 \
 	palette.n tk_bisque.n \
 	popup.n tk_popup.n
 
-.endif
-
-.if ${PORTOBJFORMAT} == "elf"
-TK_LIB_FILE=	${TK_LIB}.${SHLIB_MAJOR}
-.else
-TK_LIB_FILE=	${TK_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
 .endif
 
 post-patch:

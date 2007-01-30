@@ -22,7 +22,7 @@ USE_GCC=	4.2+
 
 DIST_SUBDIR=	lapack
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST=		${WRKDIR}/PLIST
 
 MANCOMPRESSED=	maybe
@@ -235,11 +235,7 @@ do-install:
 .if !defined(NO_PROFILE)
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack_p.a ${PREFIX}/lib
 .endif
-.if ${PORTOBJFORMAT} == "elf"
 	${LN} -sf liblapack.so.4 ${PREFIX}/lib/liblapack.so
-.else
-	${LN} -sf liblapack.so.4.0 ${PREFIX}/lib/liblapack.so
-.endif
 	${INSTALL_MAN} ${WRKDIR}/blas/man/manl/*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/[a-c]*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/[d-l]*.l ${PREFIX}/man/manl

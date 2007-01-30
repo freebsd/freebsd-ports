@@ -1,12 +1,10 @@
 --- Makefile.orig	Fri Mar 21 12:12:30 1997
 +++ Makefile	Tue Jan 28 17:53:41 2003
-@@ -1,9 +1,12 @@
+@@ -1,9 +1,10 @@
  
 -LIBS	=  -L/usr/X11/lib -lXext -lX11 -lXmu -lm
 +LIBS	=  -L$(PREFIX)/lib -lXext -lX11 -lXmu -lm
-+.if $(PORTOBJFORMAT) == "elf"
 +LIBS	+= -Wl,-rpath,$(PREFIX)/lib
-+.endif
  
 -CC	= gcc
 -CCC	= gcc

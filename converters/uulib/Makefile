@@ -16,19 +16,12 @@ MAINTAINER=	hoek@FreeBSD.org
 COMMENT=	A library for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		uulib.3
 
 ALL_TARGET=	libuu.a	libuu.so.${VERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
 VERSION=	3
-.else
-VERSION=	3.1
-.endif
 
 DOCFILES=	COPYING HISTORY doc/Makefile doc/README doc/binhex.fig \
 		doc/library.ltx doc/structure.fig doc/td-v1.c doc/td-v2.c \
@@ -54,4 +47,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -34,7 +34,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xpf - --exclude '*/libarc/*'	\
 CONFIGURE_ARGS?=--enable-interface=ncurses,vt100,server
 CONFIGURE_ARGS+=--program-transform-name= --enable-network
 CPPFLAGS+=	-I${LOCALBASE}/include/libarc
-CONFIGURE_ENV+=	"CPPFLAGS=${CPPFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS=-export-dynamic
 
 PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE} TIMID_LIBDIR=${TIMID_LIBDIR} \
 		ELISPDIR=share/emacs/site-lisp
@@ -83,10 +83,6 @@ CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
 #PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
 .else
 CONFIGURE_ARGS+=--enable-audio=oss,vorbis
-.endif
-
-.if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
 .endif
 
 pre-install:

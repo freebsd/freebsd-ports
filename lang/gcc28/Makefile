@@ -26,14 +26,10 @@ DEPRECATED=	This port is no longer in use by anything in the ports collection.  
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
-.if ${PORTOBJFORMAT} == "elf"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
-.endif
 CONFIGURE_ENV+=		OSVERSION=${OSVERSION}
 PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET}
 .if ${OSVERSION} < 600011
@@ -48,7 +44,7 @@ MAN1=		cccp28.1 g++28.1 gcc28.1
 INFO=		cpp gcc
 
 pre-everything::
-	@${ECHO_MSG} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}"
+	@${ECHO_MSG} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}"
 
 pre-patch:
 	@${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h

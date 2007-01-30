@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Aug 19 01:52:07 1999
-+++ Makefile.in	Tue Aug 31 13:40:29 1999
+--- Makefile.in.orig	Wed Aug 18 18:52:07 1999
++++ Makefile.in	Sat Jan 27 01:48:56 2007
 @@ -24,7 +24,7 @@
  TCL_LIBRARY = @TCL_LIBRARY@
  
@@ -94,7 +94,7 @@
  
  # install Expect library
  # This is done before the install target because the libraries have to be
-@@ -347,21 +349,25 @@
+@@ -347,21 +349,23 @@
  #   Local copy is pkgIndex rather than pkgIndex.tcl because pkgIndex.tcl.in
  #   is too long for some filesystems, sigh.
  install_shared_lib: $(EXP_LIB_FILES)
@@ -114,9 +114,7 @@
 -	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
 -	  $(INSTALL_PROGRAM) pkgIndex $(libdir)/pkgIndex.tcl ; \
 +	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(LIB_INSTALL_DIR)/$(EXP_SHARED_LIB_FILE) ; \
-+	  if [ "${PORTOBJFORMAT}X" = "elfX" ] ; then \
-+	    (cd $(LIB_INSTALL_DIR) ; ln -sf $(EXP_SHARED_LIB_FILE) `echo $(EXP_SHARED_LIB_FILE) | sed 's/\.so.*$$/.so/'`) \
-+	  fi; \
++	  (cd $(LIB_INSTALL_DIR) ; ln -sf $(EXP_SHARED_LIB_FILE) `echo $(EXP_SHARED_LIB_FILE) | sed 's/\.so.*$$/.so/'`) ; \
 +	  $(INSTALL_SCRIPT) pkgIndex $(libdir)/pkgIndex.tcl ; \
  	else true; fi
  
@@ -129,7 +127,7 @@
  
  # Build Expect with TestCenter
  expect.tc: exp_main_exp.o $(OFILES) 
-@@ -375,13 +381,13 @@
+@@ -375,13 +379,13 @@
  # together.  I could fix it by testing all the libraries (again, in Expect's
  # configure) separately for Expectk, but as far as I know, it doesn't hurt
  # anything here, so I'm not worrying about it.
@@ -150,15 +148,12 @@
  
  # Build Expectk with TestCenter
  expectk.tc: exp_main_tk.o $(OFILES) 
-@@ -401,24 +407,28 @@
+@@ -401,24 +405,24 @@
  expect-shared-lib-file :: $(EXP_SHARED_LIB_FILE)
  $(EXP_SHARED_LIB_FILE): $(OFILES)
  	-rm -f $(EXP_SHARED_LIB_FILE)
-+.if ${PORTOBJFORMAT} == "aout"
- 	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
-+.else
+-	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
 +	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) -Wl,-soname,$(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
-+.endif
 +	ln -sf $(EXP_SHARED_LIB_FILE) `echo $(EXP_SHARED_LIB_FILE) | sed 's/\.so.*$$/.so/'`
  
  .PHONY: install-info install info
@@ -187,7 +182,7 @@
  # install Expect's public include files
  #	$(INSTALL_DATA) expect_cf.h $(includedir)
  	$(INSTALL_DATA) $(srcdir)/expect.h $(includedir)
-@@ -433,21 +443,16 @@
+@@ -433,21 +437,16 @@
  	TCL_LIBRARY=$(TCL_LIBRARY) ; \
  	export TCL_LIBRARY ; \
  	   if $(LOCAL_EXPECT) $(srcdir)/fixcat ; then \
@@ -211,7 +206,7 @@
  
  $(SCRIPT_LIST):
  	TCL_LIBRARY=$(TCL_LIBRARY) ; \
-@@ -457,27 +462,21 @@
+@@ -457,27 +456,21 @@
  # Delete all the installed files that the `install' target creates
  # (but not the noninstalled files such as `make all' creates)
  uninstall:
@@ -242,7 +237,7 @@
  	done
  
  ###################################
-@@ -528,7 +527,7 @@
+@@ -528,7 +521,7 @@
  # delete all files from current directory that are created by "make"
  clean:
  	-rm -rf *~ *.o shared core \
@@ -251,7 +246,7 @@
  		dumb exho devtty \
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE) \
  		$(SCRIPT_LIST)
-@@ -544,7 +543,7 @@
+@@ -544,7 +537,7 @@
  # because most people don't have to worry about them
  mostlyclean:
  	-rm -rf *~ *.o shared core \
@@ -260,7 +255,7 @@
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE)
  	@$(MAKE) subdir_do DO=$@ $(FLAGS_TO_PASS)
  
-@@ -685,7 +684,7 @@
+@@ -685,7 +678,7 @@
  expect-$(VERSION).tar.gz:	expect-$(VERSION).tar
  	gzip -fc expect-$(VERSION).tar > $@
  
@@ -269,7 +264,7 @@
  	rm -f .tmp
  	echo "set objdir" `pwd` > .tmp
  	if [ "$(srcdir)" = "." ] ; then \
-@@ -695,7 +694,7 @@
+@@ -695,7 +688,7 @@
  	echo "source all" >> .tmp
  	rootme=`pwd`; export rootme; \
  	srcdir=${srcdir} ; export srcdir ; \

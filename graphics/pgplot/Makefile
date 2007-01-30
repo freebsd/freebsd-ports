@@ -16,6 +16,7 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A C/FORTRAN library for drawing graphs on a variety of display devices
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 USE_XLIB=	yes
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
@@ -23,14 +24,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "elf"
-VERSION=	5
-.else
-VERSION=	5.2
-.endif
-
 WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
 MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
@@ -38,7 +33,7 @@ MAKE_ARGS+=	X11BASE="${X11BASE}"
 
 post-install:
 .for f in libcpgplot.so libpgplot.so
-	${LN} -sf $f.${VERSION} ${PREFIX}/lib/$f
+	${LN} -sf $f.5 ${PREFIX}/lib/$f
 .endfor
 
 .include <bsd.port.post.mk>
