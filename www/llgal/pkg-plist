@@ -15,5 +15,6 @@ share/llgal/slidetemplate.html
 share/llgal/tile.png
 share/locale/fr/LC_MESSAGES/llgal.mo
 @dirrm share/llgal
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Llgal/
 @dirrm %%SITE_PERL%%/Llgal
 @dirrm etc/llgal
