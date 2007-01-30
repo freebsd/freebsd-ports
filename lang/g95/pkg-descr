@@ -1,0 +1,8 @@
+G95 is a stable, production Fortran 95 compiler available for multiple
+CPU architectures and operating systems. Innovations and optimizations
+continue to be worked on. Parts of the F2003 standard have been
+implemented in g95. Note that g95 and gfortran are different compiler
+http://gcc.gnu.org/wiki/TheOtherGCCBasedFortranCompiler
+.
+
+WWW: http://www.g95.org/
