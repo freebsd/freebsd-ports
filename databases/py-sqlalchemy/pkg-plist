@@ -1,3 +1,4 @@
+@unexec %%PREFIX%%/bin/easy_install -q -N -m -x -S %%PREFIX%%/%%PYTHON_SITELIBDIR%% %%EGG%%
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
 %%EXAMPLEDIR%%/adjacencytree/basic_tree.py
 %%EXAMPLEDIR%%/adjacencytree/byroot_tree.py
