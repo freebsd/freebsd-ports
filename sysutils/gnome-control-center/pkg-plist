@@ -242,8 +242,8 @@ share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/omf/control-center
 @dirrm share/gnome/help/control-center/zh_CN
-@dirrm share/gnome/help/control-center/ru/
 @dirrm share/gnome/help/control-center/sv
+@dirrm share/gnome/help/control-center/ru
 @dirrm share/gnome/help/control-center/fr
 @dirrm share/gnome/help/control-center/es
 @dirrm share/gnome/help/control-center/C
