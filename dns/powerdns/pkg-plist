@@ -2,6 +2,10 @@ bin/pdns_control
 bin/zone2ldap
 bin/zone2sql
 sbin/pdns_server
+%%WITHPGSQL%%lib/libgpgsqlbackend.a
+%%WITHPGSQL%%lib/libgpgsqlbackend.la
+%%WITHPGSQL%%lib/libgpgsqlbackend.so
+%%WITHPGSQL%%lib/libgpgsqlbackend.so.0
 %%WITHMYSQL%%lib/libgmysqlbackend.a
 %%WITHMYSQL%%lib/libgmysqlbackend.la
 %%WITHMYSQL%%lib/libgmysqlbackend.so
@@ -10,10 +14,6 @@ sbin/pdns_server
 %%WITHSQLITE%%lib/libgsqlitebackend.la
 %%WITHSQLITE%%lib/libgsqlitebackend.so
 %%WITHSQLITE%%lib/libgsqlitebackend.so.0
-%%WITHSQLITE3%%lib/libgsqlitebackend.a
-%%WITHSQLITE3%%lib/libgsqlitebackend.la
-%%WITHSQLITE3%%lib/libgsqlitebackend.so
-%%WITHSQLITE3%%lib/libgsqlitebackend.so.0
 %%WITHOPENLDAP%%lib/libldapbackend.a
 %%WITHOPENLDAP%%lib/libldapbackend.la
 %%WITHOPENLDAP%%lib/libldapbackend.so

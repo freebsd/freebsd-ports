@@ -17,12 +17,3 @@
  all: all-am
  
  .SUFFIXES:
-@@ -272,7 +272,7 @@
- 	  rm -f "$${dir}/so_locations"; \
- 	done
- libgpgsqlbackend.la: $(libgpgsqlbackend_la_OBJECTS) $(libgpgsqlbackend_la_DEPENDENCIES) 
--	$(CXXLINK) -rpath $(libdir) $(libgpgsqlbackend_la_LDFLAGS) $(libgpgsqlbackend_la_OBJECTS) $(libgpgsqlbackend_la_LIBADD) $(LIBS)
-+#	$(CXXLINK) -rpath $(libdir) $(libgpgsqlbackend_la_LDFLAGS) $(libgpgsqlbackend_la_OBJECTS) $(libgpgsqlbackend_la_LIBADD) $(LIBS)
- 
- mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
