@@ -4,9 +4,10 @@
 #
 # $FreeBSD$
 #    $MCom: ports/x11/fast-user-switch-applet/Makefile,v 1.17 2006/09/04 22:53:22 ahze Exp $
+#
 
 PORTNAME=	fast-user-switch-applet
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
