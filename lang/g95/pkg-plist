@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+bin/g95
+bin/f95
+bin/%%TRIPLET%%-g95
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/cc1
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/crtbegin.o
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/crtbeginS.o
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/crtend.o
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/crtendS.o
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/f951
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/libgcc.a
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/libgcc_eh.a
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/libgcc_s.so
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/libgcc_s.so.1
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/libf95.a
+lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%/%%TRIPLET%%
+@dirrm lib/gcc-lib/%%TRIPLET%%/%%GCC_VER%%
+@dirrmtry lib/gcc-lib/%%TRIPLET%%
+@dirrmtry lib/gcc-lib
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/G95Manual.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

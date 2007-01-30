@@ -67,6 +67,7 @@
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
     SUBDIR += freetxl
+    SUBDIR += g95
     SUBDIR += gambas
     SUBDIR += gambc
     SUBDIR += gauche
