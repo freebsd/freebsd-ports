@@ -22,12 +22,13 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		matroska.0:${PORTSDIR}/multimedia/libmatroska \
+		oil-0.3.1:${PORTSDIR}/devel/liboil \
+		mjpegutils-1.8.0:${PORTSDIR}/multimedia/mjpegtools \
 		x264.50:${PORTSDIR}/multimedia/x264
 BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		sox:${PORTSDIR}/audio/sox \
 		transcode:${PORTSDIR}/multimedia/transcode \
-		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
 		xmms:${PORTSDIR}/multimedia/xmms \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
