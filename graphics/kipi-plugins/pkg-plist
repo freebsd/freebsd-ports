@@ -60,7 +60,10 @@
 %%GALLERYEXPORT:%%lib/kde3/kipiplugin_galleryexport.a
 %%GALLERYEXPORT:%%lib/kde3/kipiplugin_galleryexport.so
 %%GALLERYEXPORT:%%lib/kde3/kipiplugin_galleryexport.la
+%%GALLERYEXPORT:%%share/apps/kipiplugin_galleryexport/pics/gallery.png
 %%GALLERYEXPORT:%%share/services/kipiplugin_galleryexport.desktop
+%%GALLERYEXPORT:%%@dirrm share/apps/kipiplugin_galleryexport/pics
+%%GALLERYEXPORT:%%@dirrm share/apps/kipiplugin_galleryexport
 
 %%GPSSYNC:%%lib/kde3/kipiplugin_gpssync.a
 %%GPSSYNC:%%lib/kde3/kipiplugin_gpssync.la
