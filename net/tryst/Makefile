@@ -7,11 +7,11 @@
 
 PORTNAME=	tryst
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	net
-#MASTER_SITES=	http://gnustep.dyndns.org/Downloads/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
-DISTNAME=	tryst-108pl4
+DISTNAME=	tryst-108pl6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -26,6 +26,10 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-WRKSRC=		${WRKDIR}/Tryst-108.pl4
+WRKSRC=		${WRKDIR}/Tryst-108.pl6
+
+.if defined(FETCH_MAKESUM)
+MASTER_SITES=	http://gnustep.dyndns.org/Downloads/Frameworks/
+.endif
 
 .include <bsd.port.mk>
