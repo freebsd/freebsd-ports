@@ -1,10 +1,10 @@
 Local/Applications/TBrowser.app/Resources/Controller.gorm/data.classes
 Local/Applications/TBrowser.app/Resources/Controller.gorm/data.info
 Local/Applications/TBrowser.app/Resources/Controller.gorm/objects.gorm
+Local/Applications/TBrowser.app/Resources/Info.plist
 Local/Applications/TBrowser.app/Resources/Info-gnustep.plist
 Local/Applications/TBrowser.app/Resources/TBrowser.desktop
 Local/Applications/TBrowser.app/Resources/TBrowser.png
-Local/Applications/TBrowser.app/Resources/TBrowserInfo.plist
 Local/Applications/TBrowser.app/TBrowser
 Local/Applications/TBrowser.app/library_paths.openapp
 Local/Applications/TBrowser.app/stamp.make
