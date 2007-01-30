@@ -7,6 +7,7 @@
 
 PORTNAME=	uppc
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://people.tecnik93.com/~sam/ports/
 PKGNAMESUFFIX=	-kmod
