@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/S/SQLAlchemy/ \
@@ -15,16 +15,19 @@ MASTER_SITE_SUBDIR=	sqlalchemy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${PORTVERSION}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A Python SQL toolkit and Object Relational Mapper
 
 USE_PYTHON=	2.3+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHONVERSION=${_PYTHON_VERSION} \
+		EGG="SQLAlchemy==${PORTVERSION}" \
 		EXAMPLEDIR=share/examples/${PORTNAME}
 USE_PYDISTUTILS=	yes
 
 BUILD_DEPENDS+=		easy_install:${PORTSDIR}/devel/py-setuptools
+# make sure we have it @deinstall time to remove the egg
+RUN_DEPENDS+=		easy_install:${PORTSDIR}/devel/py-setuptools
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
@@ -69,6 +72,8 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py
 .if !defined(WITHOUT_SQLITE)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 .endif
+
+PYALCHEMY_EGG=	SQLAlchemy-${PORTVERSION}-py${PYTHON_VERSION:S/^python//}.egg
 
 post-install:
 .if !defined(NOPORTDOCS)
