@@ -77,6 +77,7 @@ smxm:*:263:
 smx:*:264:
 haclient:*:275:
 mrtg:*:279:
+_sphinx:*:312:
 dkfilter:*:325:
 wildfire:*:340:
 ldap:*:389:
