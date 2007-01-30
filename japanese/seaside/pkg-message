@@ -1,0 +1,6 @@
+Run seaside image and access:
+	http://localhost:9090/seaside/config
+
+Default user/passwd is:
+	user:	admin
+	passwd:	admin.
