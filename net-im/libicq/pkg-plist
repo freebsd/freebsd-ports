@@ -2,4 +2,4 @@ include/libicq.h
 lib/libicq.a
 lib/libicq.la
 lib/libicq.so
-lib/libicq.so.0.3
+lib/libicq.so.0
