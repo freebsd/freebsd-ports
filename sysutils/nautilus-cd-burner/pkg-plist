@@ -19,8 +19,8 @@ lib/nautilus/extensions-1.0/libnautilus-burn-extension.la
 lib/nautilus/extensions-1.0/libnautilus-burn-extension.so
 libdata/pkgconfig/libnautilus-burn.pc
 libexec/mapping-daemon
-share/gnome/applications/nautilus-cd-burner.desktop
 share/gnome/applications/nautilus-cd-burner-open-iso.desktop
+share/gnome/applications/nautilus-cd-burner.desktop
 share/gnome/nautilus-cd-burner/cdspin1.png
 share/gnome/nautilus-cd-burner/cdspin2.png
 share/gnome/nautilus-cd-burner/cdspin3.png
@@ -109,6 +109,8 @@ share/locale/zh_HK/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
 @dirrm share/gnome/nautilus-cd-burner
 @dirrm include/libnautilus-burn
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

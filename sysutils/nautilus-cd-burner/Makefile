@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nautilus-cd-burner
-PORTVERSION=	2.16.2
+PORTVERSION=	2.16.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,7 +23,8 @@ USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack
+USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack \
+		desktopfileutils
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -58,6 +59,7 @@ CONFIGURE_ARGS+=	--disable-gnome-mount
 .endif
 
 post-install:
+	-@update-desktop-database
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
