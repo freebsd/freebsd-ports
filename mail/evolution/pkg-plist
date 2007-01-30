@@ -488,8 +488,8 @@ share/gnome/evolution/%%VERSION%%/glade/junk-settings.glade
 share/gnome/evolution/%%VERSION%%/glade/ldap-config.glade
 share/gnome/evolution/%%VERSION%%/glade/mail-config.glade
 share/gnome/evolution/%%VERSION%%/glade/mail-dialogs.glade
-share/gnome/evolution/%%VERSION%%/glade/memo-page.glade
 share/gnome/evolution/%%VERSION%%/glade/meeting-page.glade
+share/gnome/evolution/%%VERSION%%/glade/memo-page.glade
 share/gnome/evolution/%%VERSION%%/glade/properties.glade
 share/gnome/evolution/%%VERSION%%/glade/proxy-add-dialog.glade
 share/gnome/evolution/%%VERSION%%/glade/proxy-listing.glade
