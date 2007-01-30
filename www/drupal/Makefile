@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.7.5
+PORTVERSION=	4.7.6
 CATEGORIES=	www
-MASTER_SITES=   http://ftp.osuosl.org/pub/drupal/files/projects/
-DIST_SUBDIR=    drupal
+MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
+DIST_SUBDIR=	drupal
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	CMS that supports pgsql and mysql
