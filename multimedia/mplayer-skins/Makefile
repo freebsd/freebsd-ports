@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp5.mplayerhq.hu/mplayer/Skin/ \
@@ -49,8 +49,8 @@ CORNERMP_AQUA_FILE=	CornerMP-aqua-1.4.tar.bz2
 CORNERMP_FILE=		CornerMP-1.2.tar.bz2
 CUBICPLAYER_FILE=	CubicPlayer-1.1.tar.bz2
 CYRUS_FILE=		Cyrus-1.2.tar.bz2
-DEFAULT_FILE=		Blue-1.6.tar.bz2
-DEFAULT_SMALL_FILE=	Blue-small-1.3.tar.bz2
+DEFAULT_FILE=		Blue-1.7.tar.bz2
+DEFAULT_SMALL_FILE=	Blue-small-1.4.tar.bz2
 DISAPPEARER_FILE=	disappearer-1.1.tar.bz2
 DIVXPLAYER_FILE=	divxplayer-1.3.tar.bz2
 DUSHKU_FILE=		Dushku-1.2.tar.bz2
