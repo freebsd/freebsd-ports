@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alfredoj69@gmail.com
 COMMENT=	A configuration program for the fluxbox window manager
 
 USE_X_PREFIX=	yes
