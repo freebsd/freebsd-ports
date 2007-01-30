@@ -32,4 +32,9 @@ WRKSRC=		${WRKDIR}/Tryst-108.pl6
 MASTER_SITES=	http://gnustep.dyndns.org/Downloads/Frameworks/
 .endif
 
+# to build on 64bit
+post-patch:
+	${REINPLACE_CMD} -e 's|-Werror||' \
+		${WRKSRC}/GNUmakefile.preamble
+
 .include <bsd.port.mk>
