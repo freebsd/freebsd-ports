@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=	--with-trace
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=yes
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
 NOWIDEC_WRKSRC=	${WRKSRC}/build.nowidec

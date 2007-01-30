@@ -45,7 +45,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}-${OPERA_BUILD}
 MAN1=		opera.1
 
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=yes
 
 OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on \
 		SHARED	"Use a shared Qt library (instead of static)"	on

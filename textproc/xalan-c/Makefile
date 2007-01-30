@@ -47,8 +47,6 @@ XERCESC_LIB_VER?=	27
 LIB_DEPENDS+=	xerces-c.${XERCESC_LIB_VER}:${PORTSDIR}/textproc/xerces-c2
 XERCESCROOT?=	${LOCALBASE}
 
-# expect this to get broken some day
-NO_FILTER_SHLIBS=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=			${WRKDIR}/xml-xalan/c

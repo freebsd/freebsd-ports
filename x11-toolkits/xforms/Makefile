@@ -35,7 +35,6 @@ PATCH_DIST_STRIP=	-p1
 USE_XPM=	yes
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
-NO_FILTER_SHLIBS=	yes
 
 MAN1=		fdesign.1 fd2ps.1
 

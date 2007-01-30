@@ -21,7 +21,6 @@ OPTIONS=	THREADS "Build multi-threaded version of the library" off
 CONFLICTS=	icu2-[0-9]*
 
 INSTALLS_SHLIB=		yes
-NO_FILTER_SHLIBS=	yes
 
 WRKSRC=			${WRKDIR}/icu/source
 

@@ -26,7 +26,6 @@ NO_WRKSUBDIR=	yes
 
 ONLY_FOR_ARCHS=	i386
 STRIP=
-NO_FILTER_SHLIBS=yes
 
 SHARE_FILES=	yahoo_gnome.png yahoo_kde.xpm ymessenger.desktop\
 		ymessenger.kdelnk

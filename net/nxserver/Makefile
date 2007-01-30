@@ -38,7 +38,6 @@ ALL_TARGET=	World
 NXPREFIX?=	${PREFIX}/NX
 USE_GMAKE=	yes
 USE_IMAKE=	yes
-NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>

@@ -20,7 +20,6 @@ WITHOUT_NLS=	yes
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 MAKE_ARGS=	LIB_SUBDIRS=lib/uuid
 INSTALLS_SHLIB=	yes
-NO_FILTER_SHLIBS=	yes
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
 INSTALL_WRKSRC=	${WRKSRC}/lib/uuid

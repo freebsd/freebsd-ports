@@ -27,9 +27,6 @@ QMAKE?=		qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
-# so.1.0 is renamed to so.1 in plist, disable this behavior
-NO_FILTER_SHLIBS=yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DATADIR=	${PREFIX}/share/desktopbsd
 

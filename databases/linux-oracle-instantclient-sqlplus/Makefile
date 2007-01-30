@@ -21,7 +21,6 @@ RUN_DEPENDS=		${LINUXBASE}/usr/lib/oracle/${PORTVERSION}/client/lib/libocci.so.1
 
 ONLY_FOR_ARCHS=		i386	# amd64(not yet on own)
 NO_BUILD=		yes
-NO_FILTER_SHLIBS=	yes
 MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 RESTRICTED=		Packaging prohibited by Oracle license

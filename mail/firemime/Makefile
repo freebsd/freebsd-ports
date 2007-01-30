@@ -18,7 +18,6 @@ COMMENT=	Callback-based interface for parsing MIME-encoded messages
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-NO_FILTER_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		mimedump.1

@@ -85,7 +85,6 @@ CONFIGURE_ARGS=		${CONFIGURE_TARGET}		\
 			--enable-xrootd
 
 INSTALLS_SHLIB=		yes
-NO_FILTER_SHLIBS=	yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib/root %%PREFIX%%/lib/root/cint
 MAN1=			cint.1 g2root.1 g2rootold.1 h2root.1 hadd.1 makecint.1
 MAN1+=			memprobe.1 olbd.1 proofd.1 proofserv.1 rlibmap.1

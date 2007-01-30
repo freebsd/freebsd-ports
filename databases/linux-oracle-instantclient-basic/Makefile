@@ -19,7 +19,6 @@ COMMENT=		Oracle 10 InstantClient basics. Works with Oracle RDBMS 8.1.2+
 
 ONLY_FOR_ARCHS=		i386	# amd64(not yet on own)
 NO_BUILD=		yes
-NO_FILTER_SHLIBS=	yes
 MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 RESTRICTED=		Packaging prohibited by Oracle license

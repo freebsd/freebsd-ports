@@ -518,7 +518,6 @@ TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_GCC_PORT} && make -V TARGLIB)
 LDCONFIG_DIRS+=	${i}
 .endfor
 INSTALLS_SHLIB=		yes
-NO_FILTER_SHLIBS=	yes
 .endif
 
 # eof
