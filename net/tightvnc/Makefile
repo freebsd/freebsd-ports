@@ -13,11 +13,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vnc-tight
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${X_FONTS_MISC_PORT}
+
+CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 
