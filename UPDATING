@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070130:
+  AFFECTS: users of dns/powerdns
+  AUTHOR: tremere@cainites.net
+
+  The configuration file was moved from /usr/local/etc to /usr/local/etc/pdns.
+
 20070127:
   AFFECTS: users of mail/dovecot
   AUTHOR: robin@isometry.net
