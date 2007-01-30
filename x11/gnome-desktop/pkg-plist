@@ -24,14 +24,6 @@ share/gnome/help/fdl/es/fdl.xml
 share/gnome/help/fdl/fr/fdl.xml
 share/gnome/help/fdl/sv/fdl.xml
 share/gnome/help/fdl/uk/fdl.xml
-share/gnome/help/gnome-feedback/C/gnome-feedback.xml
-share/gnome/help/gnome-feedback/es/gnome-feedback.xml
-share/gnome/help/gnome-feedback/fr/gnome-feedback.xml
-share/gnome/help/gnome-feedback/it/gnome-feedback.xml
-share/gnome/help/gnome-feedback/ru/gnome-feedback.xml
-share/gnome/help/gnome-feedback/sv/gnome-feedback.xml
-share/gnome/help/gnome-feedback/uk/gnome-feedback.xml
-share/gnome/help/gnome-feedback/zh_CN/gnome-feedback.xml
 share/gnome/help/gpl/C/gpl.xml
 share/gnome/help/gpl/es/gpl.xml
 share/gnome/help/gpl/fi/gpl.xml
@@ -52,14 +44,6 @@ share/gnome/omf/fdl/fdl-es.omf
 share/gnome/omf/fdl/fdl-fr.omf
 share/gnome/omf/fdl/fdl-sv.omf
 share/gnome/omf/fdl/fdl-uk.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-C.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-es.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-fr.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-it.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-ru.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-sv.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-uk.omf
-share/gnome/omf/gnome-feedback/gnome-feedback-zh_CN.omf
 share/gnome/omf/gpl/gpl-C.omf
 share/gnome/omf/gpl/gpl-es.omf
 share/gnome/omf/gpl/gpl-fi.omf
@@ -238,7 +222,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/omf/lgpl
 @dirrm share/gnome/omf/gpl
-@dirrm share/gnome/omf/gnome-feedback
 @dirrm share/gnome/omf/fdl
 @dirrm share/gnome/help/lgpl/zh_CN
 @dirrm share/gnome/help/lgpl/uk
@@ -253,15 +236,6 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/gpl/fr
 @dirrm share/gnome/help/gpl/fi
 @dirrm share/gnome/help/gpl/es
-@dirrm share/gnome/help/gnome-feedback/zh_CN
-@dirrm share/gnome/help/gnome-feedback/uk
-@dirrm share/gnome/help/gnome-feedback/sv
-@dirrm share/gnome/help/gnome-feedback/ru
-@dirrm share/gnome/help/gnome-feedback/it
-@dirrm share/gnome/help/gnome-feedback/fr
-@dirrm share/gnome/help/gnome-feedback/es
-@dirrm share/gnome/help/gnome-feedback/C
-@dirrm share/gnome/help/gnome-feedback
 @dirrm share/gnome/help/fdl/uk
 @dirrm share/gnome/help/fdl/sv
 @dirrm share/gnome/help/fdl/fr
