@@ -1,6 +1,6 @@
 --- configure.orig	Sun Jan 26 07:31:27 2003
 +++ configure	Fri Feb 21 17:21:25 2003
-@@ -2034,6 +2034,18 @@
+@@ -2034,6 +2034,14 @@
       ELFLIB_MAJOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).dylib"
       ELFLIB_MAJOR_MINOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION).dylib"
       ;;
@@ -8,11 +8,7 @@
 +    ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
 +    ELF_CC="\$(CC)"
 +    ELF_CFLAGS="\$(CFLAGS) -fPIC"
-+    if [ $PORTOBJFORMAT = elf ]; then
-+      ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
-+    else
-+      ELF_LINK="ld -Bshareable -x"
-+    fi
++    ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
 +    ELF_LINK_CMD="\$(ELF_LINK)"
 +    ELF_DEP_LIBS="\$(DL_LIB) -lm"
 +    ;;

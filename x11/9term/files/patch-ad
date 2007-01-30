@@ -1,6 +1,6 @@
 --- 9term/Makefile.orig	Mon Mar 14 13:50:54 1994
 +++ 9term/Makefile	Fri Feb 11 10:18:21 2000
-@@ -11,27 +11,31 @@
+@@ -11,27 +11,29 @@
  #	Define RISCOS for Mips RISC/os
  #	Define BSDPTYS for BSD-style pty support
  #	Define POSIXPTYS for POSIX ptys
@@ -32,9 +32,7 @@
 -
 +LIBS=../libtext/libtext.a $(SAMPATH)/libframe/libframe.a $(SAMPATH)/libXg/libXg.a
 +XLIBS= -lXt -lX11 -L${X11BASE}/lib
-+.if $(PORTOBJFORMAT) == "elf"
 +XLIBS+=-Wl,-rpath,$(X11BASE)/lib
-+.endif
  OBJECTS=9term.o command.o display.o pty.o
  
  $(TARGET): $(OBJECTS)

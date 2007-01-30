@@ -14,11 +14,9 @@ DISTNAME=	ranlib.c
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Library of Routines for Random Number Generation
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV=	NOPROFILE=true
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
@@ -28,8 +26,5 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/ranlib
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/ranlib
 .endif
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libranlib.so.1.0 ${PREFIX}/lib/libranlib.so
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

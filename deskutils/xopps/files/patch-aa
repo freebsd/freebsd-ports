@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan 18 13:22:35 1997
-+++ Makefile	Sat Jan  8 00:42:51 2000
+--- Makefile.orig	Fri Jan 17 23:22:35 1997
++++ Makefile	Thu Jan 25 22:14:35 2007
 @@ -142,19 +142,19 @@
  # Installation locations (edit to suit your system)
  #
@@ -26,7 +26,7 @@
  SFOCDIR = /SFOC/$(SFOCVER)
  TPSDIR = /TPS/$(SFOCVER)
  BLDDIR = .
-@@ -163,27 +163,30 @@
+@@ -163,27 +163,28 @@
  LOCAL_INCL = ../../lib_incl_local
  GLOBAL_INCL = ../../lib_incl_global
  SYSDEFS = $(MACHDEFS) -D$(MACH) -DRELEASE='"$(RELEASE)"' $(DEFINES)
@@ -62,14 +62,12 @@
 -LIBS = -lXm -lXt -lX11
 -SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
 +LIBS = -lXm -lXext -lXt -lX11 ${MOTIFLIB}
-+.if $(PORTOBJFORMAT) == "elf"
 +LIBS+= -Wl,-rpath,$(X11BASE)/lib
-+.endif
 +#SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
  FULLLIBPATH = $(LIBPATH) $(SFOCLIBPATH) $(MACHLIBPATH)
  
  LINT = lint
-@@ -237,12 +240,13 @@
+@@ -237,12 +238,13 @@
  	$(HELP) $(DRAWINGS)
  
  install:

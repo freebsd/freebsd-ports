@@ -1,13 +1,9 @@
+# $FreeBSD$
 # Makefile for cgihtml libraries
 
 LIB = cgihtml
 MAJ = 1
-MIN = 0
-.if ($(PORTOBJFORMAT) == "elf")
 SHLIB_VER = $(MAJ)
-.else
-SHLIB_VER = $(MAJ).$(MIN)
-.endif
 
 OBJS = string-lib.o cgi-llist.o cgi-lib.o html-lib.o
 HDRS =	${OBJS:.o=.h}

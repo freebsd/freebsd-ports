@@ -32,15 +32,10 @@ post-patch:
 do-build:
 	( cd ${WRKSRC} ; make World -f Makefile.ini )
 
-.include <bsd.port.pre.mk>
-
 post-install:
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libwnn7.so.1.0 ${PREFIX}/lib/libwnn7.so
-.endif
 	@${MKDIR} ${PREFIX}/include/wnn7/wnn
 	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn7/wnn
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

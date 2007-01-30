@@ -60,7 +60,6 @@ post-install:
 	cd ${TOPDIR}/tkstepjp; \
 	${INSTALL_DATA} changes.TkSTEPjp ${PORTDOCDIR}
 .endif
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif

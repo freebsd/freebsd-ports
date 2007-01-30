@@ -9,7 +9,7 @@
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -1788,15 +1788,20 @@
+@@ -1788,15 +1788,15 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -23,13 +23,8 @@
  		LDFLAGS=""
  		LD_SEARCH_FLAGS=""
 -		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+          if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf" ; then
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
 +		SHLIB_LD="ld -shared -x -soname \$@"
-+	  else
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
-+		SHLIB_LD="ld -Bshareable -x"
-+	  fi
  	    
  else
    echo "$ac_t""no" 1>&6

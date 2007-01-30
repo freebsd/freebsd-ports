@@ -39,25 +39,12 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "aout"
-L2=		.so.${SOVERSION}.0
-TARGET=		FreeBSD2
-INST_TARGET=	freebsd-2
-WORDSIZE=	32
-.elif ${ARCH} == "i386"
+.if ${ARCH} == "i386"
 L2=		.so.${SOVERSION}
-.if ${OSVERSION} < 400011
-TARGET=		FreeBSD3
-INST_TARGET=	freebsd-3
-.else
 TARGET=		FreeBSD4
 INST_TARGET=	freebsd-4
-.endif
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
-.if ${OSVERSION} < 400011
-IGNORE=		Not supported on older versions of FreeBSD/Alpha
-.endif
 CFLAGS+=	-mieee
 L2=		.so.${SOVERSION}
 TARGET=		FBSD_ALPHA

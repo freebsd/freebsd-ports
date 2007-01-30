@@ -14,10 +14,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	CGI library for C/C++ language programming
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/doc/qDecoder
 .for doc in AUTHORS DISCLAIMER README REFERENCE qDecoder.jpg
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${PREFIX}/share/doc/qDecoder
@@ -30,6 +30,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.conf ${PREFIX}/share/examples/qDecoder
 	${INSTALL_DATA} ${WRKSRC}/examples/*.html ${PREFIX}/share/examples/qDecoder
 	${INSTALL_DATA} ${WRKSRC}/examples/*.in ${PREFIX}/share/examples/qDecoder
-
 
 .include <bsd.port.mk>

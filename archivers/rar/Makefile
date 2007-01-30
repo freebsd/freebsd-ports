@@ -19,6 +19,7 @@ COMMENT=	File archiver (binary port)
 IA32_BINARY_PORT=	YES
 RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
+STRIP=
 WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
 PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
@@ -32,10 +33,6 @@ IGNORE=	is unsupported on versions prior to FreeBSD 5.3
 
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-
-.if ${PORTOBJFORMAT} == "elf"
-STRIP=
 .endif
 
 do-install:

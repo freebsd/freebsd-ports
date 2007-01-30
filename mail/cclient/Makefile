@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ALL_TARGET=	bsf
 .if defined(WITHOUT_SSL)
 MAKE_ARGS+=	SSLTYPE=none
@@ -42,10 +42,6 @@ MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
 .include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
-.endif
 
 post-patch:
 .for file in Makefile src/osdep/unix/Makefile src/osdep/unix/Makefile.gss

@@ -122,13 +122,6 @@ post-install:
 .endfor
 .endif
 
-# fixup packing list (no libs without version numbers in aout case)
-.if ${PORTOBJFORMAT} == "aout"
-	${ECHO_MSG} "Fixing packing list for a.out"
-	${MV} ${TMPPLIST} ${TMPPLIST}.new
-	${GREP} -v '\.so$$' ${TMPPLIST}.new > ${TMPPLIST}
-	${RM} ${TMPPLIST}.new
-.endif
 	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${CHMOD} 444 ${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${ECHO} "------------------------------------------------------"

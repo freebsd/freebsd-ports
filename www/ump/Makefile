@@ -38,6 +38,7 @@ TIMIDITY_VERSION=	2.13.2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump --with-default-path=${LOCALBASE}/share/timidity
+CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
@@ -62,10 +63,6 @@ PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--enable-audio=oss,esd
 .else
 CONFIGURE_ARGS+=	--enable-audio=oss
-.endif
-
-.if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 .endif
 
 post-extract:

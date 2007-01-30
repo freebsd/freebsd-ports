@@ -33,8 +33,6 @@ MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 PORTDOCS=	fft.doc.gz
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	${GUNZIP_CMD} $(WRKSRC)/*.f.gz
 
@@ -48,8 +46,5 @@ post-install:
 	-${GZIP_CMD} ${GZIP} ${WRKSRC}/fft.doc
 	${CP} $(WRKSRC)/fft.doc.gz ${DOCSDIR}
 .endif
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libbihar.so.2 ${PREFIX}/lib/libbihar.so
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

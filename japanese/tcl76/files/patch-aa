@@ -20,13 +20,11 @@
  
  # To disable ANSI-C procedure prototypes reverse the comment characters
  # on the following lines:
-@@ -305,6 +307,9 @@
+@@ -305,6 +307,7 @@
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
  	$(RANLIB) ${TCL_LIB_FILE}
-+.if ${PORTOBJFORMAT}X == elfX
 +	ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`
-+.endif
  
  tclsh: ${TCLSH_OBJS} ${TCL_LIB_FILE}
  	${CC} @LD_FLAGS@ ${TCLSH_OBJS} @TCL_BUILD_LIB_SPEC@ ${LIBS} \
@@ -39,13 +37,11 @@
  
  # Note: before running ranlib below, must cd to target directory because
  # some ranlibs write to current directory, and this might not always be
-@@ -385,15 +390,19 @@
+@@ -385,15 +390,17 @@
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
-+.if ${PORTOBJFORMAT}X == elfX
 +	@(cd $(LIB_INSTALL_DIR); ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`)
-+.endif
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)

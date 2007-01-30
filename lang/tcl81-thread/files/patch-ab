@@ -23,7 +23,7 @@
    else
       echo "configure: warning: "Don t know how to find pthread lib on your system - you must disable thread support or edit the LIBS in the Makefile..."" 1>&2
    fi
-@@ -4330,14 +4329,19 @@
+@@ -4330,14 +4329,14 @@
    echo "$ac_t""yes" 1>&6
    
  	    SHLIB_CFLAGS="-fpic"
@@ -35,13 +35,8 @@
  	    LD_FLAGS=""
  	    LD_SEARCH_FLAGS=""
 -	    TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+        if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf"; then
 +            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
 +            SHLIB_LD="ld -shared -x -soname \$@"
-+        else
-+            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
-+            SHLIB_LD="ld -Bshareable -x"
-+        fi
  	
  else
    echo "$ac_t""no" 1>&6

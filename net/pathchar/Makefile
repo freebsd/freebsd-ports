@@ -25,13 +25,6 @@ ONLY_FOR_ARCHS=	i386
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAN8=		pathchar.8
 
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-DISTNAME=	pathchar-a0-freebsd-2.2
-PORTVERSION=	a0
-.endif
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -49,4 +42,4 @@ do-install:
 		${PREFIX}/share/doc/pathchar
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

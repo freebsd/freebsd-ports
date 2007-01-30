@@ -22,7 +22,7 @@ LIB_DEPENDS=	tcl76jp.1:${PORTSDIR}/japanese/tcl76
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_AUTOTOOLS=	autoconf:213
 USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
@@ -55,9 +55,6 @@ pre-install:
 
 post-install:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} install
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libtk42jp.so.1.0 ${PREFIX}/lib/libtk42jp.so
-.endif
 	@${ECHO_MSG} "**********"
 	@${ECHO_MSG} "IMPORTANT:"
 	@${ECHO_MSG} "**********"
@@ -68,9 +65,9 @@ post-install:
 	@${ECHO_MSG} "conflicting with another version of Tcl/Tks."
 
 test:
-	cd ${WRKSRC}; ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
+	cd ${WRKSRC} && ${MAKE} test
 
 install-man:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
+	cd ${WRKSRC} && ${MAKE} install-man
 
 .include <bsd.port.post.mk>

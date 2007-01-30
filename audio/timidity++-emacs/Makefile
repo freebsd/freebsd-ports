@@ -29,6 +29,7 @@ INTERFACE?=	emacs
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+LDFLAGS=	-export-dynamic
 USE_GMAKE=	yes
 .if !${INTERFACE} == "emacs" && !${INTERFACE} == "slang"
 USE_XLIB=	yes
@@ -95,10 +96,6 @@ NO_INSTALL=	yes
 CONFIGURE_ENV+=	SHLD="${CC} -shared ${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-LDFLAGS+=-export-dynamic
-.endif
 
 EUCJP_LOCALE=	ja_JP.eucJP
 PLIST_SUB+=	EUCJP_LOCALE=${EUCJP_LOCALE}

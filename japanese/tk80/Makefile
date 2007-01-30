@@ -61,16 +61,12 @@ post-install:
 		Incompat80jp ${DOCSDIR}; \
 	 )
 .endif
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libtk80jp.so.1.5 ${PREFIX}/lib/libtk80jp.so
-	${RANLIB} ${PREFIX}/lib/libtk80jp.so
-.endif
 	@${CAT}	${PKGMESSAGE}
 
 test:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
+	cd ${WRKSRC} && ${MAKE} test
 
 install-man:
-	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
+	cd ${WRKSRC} && ${MAKE} install-man
 
 .include <bsd.port.post.mk>

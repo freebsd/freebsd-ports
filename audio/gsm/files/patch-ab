@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Apr 26 12:14:26 2006
-+++ Makefile	Fri Aug 11 13:46:15 2006
+--- Makefile.orig	Wed Apr 26 15:14:26 2006
++++ Makefile	Thu Jan 25 22:12:30 2007
 @@ -43,8 +43,8 @@
  # CC		= /usr/lang/acc
  # CCFLAGS 	= -c -O
@@ -51,7 +51,7 @@
  
  #
  #    You shouldn't have to configure below this line if you're porting.
-@@ -129,18 +132,23 @@
+@@ -129,18 +132,19 @@
  # DEBUG	= -DNDEBUG
  ######### Remove -DNDEBUG to enable assertions.
  
@@ -70,15 +70,11 @@
 -LIBGSM	= $(LIB)/libgsm.a
 -
 +LIBGSM	= libgsm.a
-+.if ${PORTOBJFORMAT} == elf
 +SOLIBGSM	= libgsm.so.1
-+.else
-+SOLIBGSM	= libgsm.so.1.1
-+.endif
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
  TCAT	= $(BIN)/tcat
-@@ -257,13 +265,15 @@
+@@ -257,13 +261,15 @@
  # Install targets
  
  GSM_INSTALL_TARGETS =	\
@@ -95,7 +91,7 @@
  TOAST_INSTALL_TARGETS =	\
  		$(TOAST_INSTALL_BIN)/toast		\
  		$(TOAST_INSTALL_BIN)/tcat		\
-@@ -277,9 +287,12 @@
+@@ -277,9 +283,12 @@
  		$(CC) $(CFLAGS) $?
  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
  
@@ -109,7 +105,7 @@
  		@-echo $(ROOT): Done.
  
  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
-@@ -299,24 +312,32 @@
+@@ -299,24 +308,28 @@
  
  # The basic API: libgsm
  
@@ -118,11 +114,7 @@
 -		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
 -		$(RANLIB) $(LIBGSM)
 +$(LIB)/$(SOLIBGSM): $(LIB) $(GSM_OBJECTS:S/o$/so/g)
-+.if ${PORTOBJFORMAT} == elf
 +		$(CC) -o $@ -shared -Wl,-soname,$(SOLIBGSM) $(GSM_OBJECTS:S/o$/so/g)
-+.else
-+		ld -Bshareable -o $@ $(GSM_OBJECTS:S/o$/so/g)
-+.endif
 +		(cd $(LIB); $(LN) -sf $(SOLIBGSM) `echo $(SOLIBGSM) | sed 's/\.so.*$$/.so/'`)
 +
 +$(LIB)/$(LIBGSM):	$(LIB) $(GSM_OBJECTS)
@@ -152,7 +144,7 @@
  
  
  # The local bin and lib directories
-@@ -342,62 +363,67 @@
+@@ -342,62 +355,67 @@
  
  gsmuninstall:
  		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\
@@ -232,18 +224,19 @@
 -		-rm $@
 -		cp $? $@
 -		chmod 444 $@
-+		$(RM) $@
-+		${BSD_INSTALL_DATA} $? $@
- 
+-
 -$(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
 -		-rm $@
 -		cp $? $@
 -		chmod 444 $@
++		$(RM) $@
++		${BSD_INSTALL_DATA} $? $@
+ 
 +$(GSM_INSTALL_LIB)/$(LIBGSM):	$(LIB)/$(LIBGSM)
 +		$(RM) $@
 +		${BSD_INSTALL_DATA} $? $@
 +		$(RANLIB) $@
- 
++
 +$(GSM_INSTALL_LIB)/$(SOLIBGSM):    $(LIB)/$(SOLIBGSM)
 +		$(RM) $@
 +		${BSD_INSTALL_DATA} $? $@

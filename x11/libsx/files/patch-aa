@@ -28,14 +28,11 @@
  
  #
  # libraries we need to link with...
-@@ -83,5 +83,7 @@
+@@ -83,5 +83,5 @@
  #
  LIBSX  = ../src/libsx.a
  #LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11
 -LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11
 -
 +LIBS   =  $(LIBSX) -lXaw3d -lXmu -lXt -lX11 -lm -lXext -L$(X11BASE)/lib
-+.if ${PORTOBJFORMAT} == "elf"
 +LIBS+=	-Wl,-rpath,${X11BASE}/lib
-+.endif
-\ No newline at end of file

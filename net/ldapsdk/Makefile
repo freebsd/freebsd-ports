@@ -19,6 +19,7 @@ COMMENT=	Mozilla LDAP sdk
 WRKSRC=			${WRKDIR}/mozilla
 MAKEFILE=	${WRKSRC}/directory/ldapsdk.mk
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_PERL5=	yes
 
 MAKE_ENV+=	MOZILLA_CLIENT=1 NO_MDUPDATE=1 MOZ_LDAP_SDK=1
@@ -54,7 +55,6 @@ do-install:
 	${LN} -sf ${INSTALL_DIR}/include/mozldap.h ${PREFIX}/include
 
 post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@echo
 	@echo 'PLEASE NOTE (2000/8/23):'
 	@echo '     The mozilla lber and ldap libraries now are installed'

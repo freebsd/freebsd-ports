@@ -15,7 +15,7 @@ COMMENT=	Lossless compression for bi-level images such as scanned pages, faxes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	jbgtopbm.1 pbmtojbg.1
 

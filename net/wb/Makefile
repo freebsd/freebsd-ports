@@ -17,15 +17,10 @@ COMMENT=	A shared drawing (whiteboard) tool using multicast
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
+STRIP=
 
 # ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
 USE_GHOSTSCRIPT_RUN=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-STRIP=
-.endif
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -45,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lblwb.ps ${PREFIX}/share/doc/wb
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

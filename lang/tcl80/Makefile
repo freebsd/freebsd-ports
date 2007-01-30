@@ -38,12 +38,6 @@ TCL_LIB=	libtcl80.so
 
 MANCOMPRESSED=	yes
 
-.if ${PORTOBJFORMAT} == "elf"
-TCL_LIB_FILE=	${TCL_LIB}.${SHLIB_MAJOR}
-.else
-TCL_LIB_FILE=	${TCL_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
-.endif
-
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
 	@${CP} ${FILESDIR}/makefile     ${WRKSRC}
@@ -58,7 +52,7 @@ pre-build:
 	   OSVERSION=${OSVERSION}
 
 post-install:
-	${LN} -sf ${TCL_LIB_FILE} ${PREFIX}/lib/${TCL_LIB}
+	${LN} -sf ${TCL_LIB}.${SHLIB_MAJOR} ${PREFIX}/lib/${TCL_LIB}
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
