@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -41,7 +41,6 @@ SUB_FILES=	pkg-message
 OPTIONS=	PGSQL           "PostgreSQL backend" on \
 		MYSQL           "MySQL backend" off \
 		SQLITE          "SQLite 2 backend" off \
-		SQLITE3         "SQLite 3 backend" off \
 		OPENDBX         "OpenDBX backend" off \
 		OPENLDAP        "OpenLDAP backend" off \
 		GEO             "Geo backend" off
@@ -96,14 +95,6 @@ CONFIGURE_MODULES+=	"gsqlite"
 PLIST_SUB+=		WITHSQLITE=""
 .else
 PLIST_SUB+=		WITHSQLITE="@comment "
-.endif
-
-.if defined(WITH_SQLITE3)
-USE_SQLITE?=		3
-CONFIGURE_MODULES+=	"gsqlite"
-PLIST_SUB+=		WITHSQLITE3=""
-.else
-PLIST_SUB+=		WITHSQLITE3="@comment "
 .endif
 
 .if defined(WITH_OPENDBX)
