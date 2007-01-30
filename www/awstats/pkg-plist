@@ -42,6 +42,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_large_4.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_large_5.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/star.png
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats.png
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/pad_awstats.htm
 %%PORTDOCS%%%%DOCSDIR%%/pad_awstats.xml
@@ -93,14 +95,17 @@ www/awstats/cgi-bin/lang/awstats-th.txt
 www/awstats/cgi-bin/lang/awstats-tr.txt
 www/awstats/cgi-bin/lang/awstats-tw.txt
 www/awstats/cgi-bin/lang/awstats-ua.txt
+www/awstats/cgi-bin/lang/awstats-lt.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-cz.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-en.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-is.txt
+www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-it.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-en.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-fr.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-is.txt
+www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-it.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-al.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-ba.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-bg.txt
@@ -162,6 +167,7 @@ www/awstats/cgi-bin/plugins/timezone.pm
 www/awstats/cgi-bin/plugins/tooltips.pm
 www/awstats/cgi-bin/plugins/urlalias.pm
 www/awstats/cgi-bin/plugins/userinfo.pm
+www/awstats/classes/awgraphapplet.jar
 www/awstats/css/awstats_bw.css
 www/awstats/css/awstats_default.css
 www/awstats/icons/browser/adobe.png
@@ -248,6 +254,23 @@ www/awstats/icons/browser/w3c.png
 www/awstats/icons/browser/webcopier.png
 www/awstats/icons/browser/webtv.png
 www/awstats/icons/browser/webzip.png
+www/awstats/icons/browser/abilon.png
+www/awstats/icons/browser/akregator.png
+www/awstats/icons/browser/analogx.png
+www/awstats/icons/browser/doris.png
+www/awstats/icons/browser/flashget.png
+www/awstats/icons/browser/freshdownload.png
+www/awstats/icons/browser/frontpage.png
+www/awstats/icons/browser/gnome.png
+www/awstats/icons/browser/gnus.png
+www/awstats/icons/browser/httrack.png
+www/awstats/icons/browser/leechget.png
+www/awstats/icons/browser/neon.png
+www/awstats/icons/browser/rssxpress.png
+www/awstats/icons/browser/subversion.png
+www/awstats/icons/browser/webreaper.png
+www/awstats/icons/browser/winxbox.png
+www/awstats/icons/browser/wizz.png
 www/awstats/icons/clock/hr1.png
 www/awstats/icons/clock/hr10.png
 www/awstats/icons/clock/hr11.png
@@ -557,6 +580,7 @@ www/awstats/icons/mime/ttf.png
 www/awstats/icons/mime/unknown.png
 www/awstats/icons/mime/video.png
 www/awstats/icons/mime/wmv.png
+www/awstats/icons/mime/glasses.png
 www/awstats/icons/os/aix.png
 www/awstats/icons/os/amigaos.png
 www/awstats/icons/os/apple.png
@@ -617,6 +641,9 @@ www/awstats/icons/os/winlong.png
 www/awstats/icons/os/winme.png
 www/awstats/icons/os/winnt.png
 www/awstats/icons/os/winxp.png
+www/awstats/icons/os/commodore.png
+www/awstats/icons/os/psp.png
+www/awstats/icons/os/winxbox.png
 www/awstats/icons/other/awstats_logo1.png
 www/awstats/icons/other/awstats_logo5.png
 www/awstats/icons/other/awstats_logo6.png
@@ -650,7 +677,7 @@ www/awstats/tools/awstats_updateall.pl
 www/awstats/tools/logresolvemerge.pl
 www/awstats/tools/maillogconvert.pl
 www/awstats/tools/urlaliasbuilder.pl
-www/awstats/tools/webmin/awstats-1.6.wbm
+www/awstats/tools/webmin/awstats-1.7.wbm
 @dirrm www/awstats/tools/webmin
 @dirrm www/awstats/tools
 @dirrm www/awstats/js
