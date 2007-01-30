@@ -29,7 +29,6 @@ SCP_DEST_DIR=/usr/local/www/ports
 # Location of ports tree and source trees
 export BASEDIR=/local0/tmp/kris/tindex
 export PORTSDIR=${BASEDIR}/ports
-export SRCDIR4=${BASEDIR}/src.4
 export SRCDIR5=${BASEDIR}/src.5
 export SRCDIR6=${BASEDIR}/src.6
 export SRCDIR7=${BASEDIR}/src.7
@@ -133,10 +132,6 @@ export INDEX_JOBS=4
 export INDEX_QUIET=1
 
 # First update the source trees to get current OSVERSION
-cd ${SRCDIR4}/sys/sys
-cvs -Rq update -PdA -r RELENG_4 param.h
-OSVERSION4=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCDIR4}/sys/sys/param.h)
-
 cd ${SRCDIR5}/sys/sys
 cvs -Rq update -PdA -r RELENG_5 param.h
 OSVERSION5=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCDIR5}/sys/sys/param.h)
@@ -150,7 +145,7 @@ cvs -Rq update -PdA param.h
 OSVERSION7=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCDIR7}/sys/sys/param.h)
 
 cd ${PORTSDIR}
-rm -f INDEX INDEX.bz2 INDEX-5 INDEX-5.bz2 INDEX-6 INDEX-6.bz2 INDEX-7 INDEX-7.bz2
+rm -f INDEX-5 INDEX-5.bz2 INDEX-6 INDEX-6.bz2 INDEX-7 INDEX-7.bz2
 (cvs -Rq update -PdA 2>1 ) > cvs.log
 if grep -q ^C cvs.log ; then
   (echo "cvs update failed with conflicts:";
@@ -158,20 +153,6 @@ if grep -q ^C cvs.log ; then
     exit 1
 fi
   
-export OSVERSION=${OSVERSION4}
-BRANCH=4.x
-echo "Building INDEX for ${BRANCH} with OSVERSION=${OSVERSION}"
-cd ${PORTSDIR}
-((make index 2> index.err) > index.out) || indexfail ${BRANCH}
-if [ -s index.err ]; then
-	indexfail ${BRANCH}
-fi
-checkfixed ${BRANCH}
-
-createtmpdir
-bzip2 -kf ${PORTSDIR}/INDEX
-scp -q ${SSHKEY} ${PORTSDIR}/INDEX ${PORTSDIR}/INDEX.bz2 ${SCP_DEST_HOST}:${TMPDIR} || mail -s "Cannot copy INDEX to temp dir" ${ERROR_ADDRESS}
-ssh ${SCP_DEST_HOST} "/bin/mv ${TMPDIR}/INDEX ${SCP_DEST_DIR}; /bin/mv ${TMPDIR}/INDEX.bz2 ${SCP_DEST_DIR}; rmdir ${TMPDIR}" || mail -s "Cannot move INDEX to final dir" ${ERROR_ADDRESS}
 BRANCH=5.x
 export OSVERSION=${OSVERSION5}
 echo "Building INDEX for ${BRANCH} with OSVERSION=${OSVERSION}"
