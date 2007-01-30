@@ -447,8 +447,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_LINUX		- Set to yes to say the port needs the default linux base port.
 #				  Set to value <X>, if the port needs emulators/linux_base-<X>.
 #				  If set to "7", a dependency is registered to emulators/linux_base.
-#				  Implies appropriate settings for NO_FILTER_SHLIBS,
-#				  STRIP and STRIP_CMD.
+#				  Implies appropriate settings for STRIP and STRIP_CMD.
 # USE_LINUX_PREFIX
 #				- controls the action of PREFIX (see above). Only use this
 #				  if the port is a linux infrastructure port (e.g. contains libs
@@ -1152,7 +1151,7 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 
 # Get the object format.
 .if !defined(PORTOBJFORMAT)
-PORTOBJFORMAT!=		${TEST} -x /usr/bin/objformat && /usr/bin/objformat || ${ECHO_CMD} aout
+PORTOBJFORMAT?=		elf
 .endif
 
 MASTERDIR?=	${.CURDIR}
@@ -1801,8 +1800,6 @@ STRIP_CMD=	${LINUXBASE}/usr/bin/strip
 .	else
 STRIP_CMD=	${TRUE}
 .	endif
-
-NO_FILTER_SHLIBS=	yes
 
 # Allow the user to specify another linux_base version.
 .	if defined(OVERRIDE_LINUX_BASE_PORT)
@@ -5460,14 +5457,6 @@ generate-plist:
 	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
 .endif
-.endif
-.if !defined(NO_FILTER_SHLIBS)
-.if (${PORTOBJFORMAT} == "aout")
-	@${SED} -e 's,\(/lib.*\.so\.[0-9]*\)$$,\1.0,' ${TMPPLIST} > ${TMPPLIST}.tmp
-.else
-	@${SED} -e 's,\(/lib.*\.so\.[0-9]*\)\.[0-9]*$$,\1,' ${TMPPLIST} > ${TMPPLIST}.tmp
-.endif
-	@${MV} -f ${TMPPLIST}.tmp ${TMPPLIST}
 .endif
 .endif
 
