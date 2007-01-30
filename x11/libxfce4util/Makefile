@@ -16,7 +16,6 @@ COMMENT=	XFce 4 library with non-graphical helper functions
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-NO_FILTER_SHLIBS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget pkgconfig

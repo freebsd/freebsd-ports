@@ -27,7 +27,6 @@ MAKE_ENV+=	QTDIR=${QTDIR}
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib
-NO_FILTER_SHLIBS=	1
 MAN1=		figtoipe.1 ipe.1 ipe5toxml.1 ipetoipe.1 ipetopng.1
 
 .include <bsd.port.pre.mk>

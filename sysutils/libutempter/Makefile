@@ -15,6 +15,5 @@ COMMENT=	Interface to record user sessions to utmp and wtmp files
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=yes
 
 .include <bsd.port.mk>

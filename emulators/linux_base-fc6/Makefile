@@ -103,7 +103,6 @@ CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes
-NO_FILTER_SHLIBS=	yes
 NO_WRKSUBDIR=		yes
 MD5_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.3.6"

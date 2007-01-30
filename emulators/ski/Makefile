@@ -28,7 +28,6 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|${CPIO} -idum
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
-NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 MAN1=		ski.1
 MLINKS=		ski.1 bski.1  ski.1 xski.1

@@ -30,7 +30,6 @@ ALL_TARGET=	optshared
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" BUILDTIME="YES"
 MAKE_ENV=	BUILDTIME="YES"
-NO_FILTER_SHLIBS=	yes
 
 .include <bsd.port.pre.mk>
 

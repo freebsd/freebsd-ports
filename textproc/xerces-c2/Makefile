@@ -67,8 +67,6 @@ PLIST_SUB+=		TRANSICU="@comment "
 .endif
 .endif
 
-# expect this to get broken some day
-NO_FILTER_SHLIBS=	yes
 USE_LDCONFIG=	yes
 
 XERCESWRKSRC=		${WRKSRC}/src/xercesc

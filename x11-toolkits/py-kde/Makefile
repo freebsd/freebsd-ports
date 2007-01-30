@@ -25,7 +25,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_KDEBASE_VER=3
 USE_PYTHON=	yes
-NO_FILTER_SHLIBS=	yes
 
 OPTIONS=	DEBUG "Enable debugging symbols" off \
 		DOCS "Install documentation" on \

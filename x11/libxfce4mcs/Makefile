@@ -15,7 +15,6 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings management library used by most XFce 4 modules
 
 GNU_CONFIGURE=	yes
-NO_FILTER_SHLIBS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

@@ -18,7 +18,6 @@ COMMENT=	International Components for Unicode
 CONFLICTS=	icu-[0-9]*
 
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=	yes
 
 WRKSRC=			${WRKDIR}/icu
 ICUWRKSRC=		${WRKSRC}/source

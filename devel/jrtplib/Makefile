@@ -16,7 +16,6 @@ COMMENT=	Object-oriented RTP library written in C++
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-jthread
 

@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base-deve
 CONFLICTS=	husky-fidoconf-[0-9]*
 
 INSTALLS_SHLIB=	yes
-NO_FILTER_SHLIBS=	yes
 INSTALL_TARGET=	install install-man
 
 MAN1=		dumpfcfg.1 fconf2.1 linked.1 linkedto.1 tparser.1

@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-O3 -fomit-frame-pointer
 WRKSRC=		${WRKDIR}/noise
-NO_FILTER_SHLIBS=	yes
 
 do-install:
 	@${CP} -R ${WRKSRC}/lib/${PORTNAME}.* ${PREFIX}/lib/

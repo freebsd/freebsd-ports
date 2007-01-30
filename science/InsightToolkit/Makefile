@@ -20,7 +20,6 @@ OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \
 		TESTING  "Build testing programs (very time consuming)" off
 
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
-NO_FILTER_SHLIBS=	yes
 NO_PACKAGE=	License does not allow redistribution of binaries
 BUILD_WRKSRC=	${WRKSRC}/Build
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

@@ -27,7 +27,6 @@ USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
-NO_FILTER_SHLIBS=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
