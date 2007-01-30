@@ -288,6 +288,7 @@
     SUBDIR += ivtools
     SUBDIR += jalbum
     SUBDIR += jasper
+    SUBDIR += jave6
     SUBDIR += jbigkit
     SUBDIR += jdraw
     SUBDIR += jgraph
