@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	1.8.1
+PORTVERSION=	2.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ CSME
 
@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lmagic -lz
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --enable-lzo --enable-bz2 --disable-qt
 
 MAN1=		base64tool.1 mkvextract.1 mkvinfo.1 mkvmerge.1
 PLIST_FILES=	bin/base64tool bin/mkvextract bin/mkvinfo bin/mkvmerge
@@ -46,6 +46,7 @@ IMAGES_DATA=	\
 		attachmentoptions.gif \
 		audiotrackoptions.gif \
 		chaptereditor.gif \
+		generaltrackoptions.gif \
 		jobmanager.gif \
 		movietitle.gif \
 		muxingwindow.gif \
@@ -88,12 +89,7 @@ pre-configure::
 .endif
 
 post-patch:
-# disable GNU auto* tools
-	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
-		-n 10 ${REINPLACE_CMD} -E -e \
-		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
-		${WRKSRC}/src/common/os.cpp
+	@${REINPLACE_CMD} -e 's|function check_version|check_version ()|' ${WRKSRC}/configure
 
 pre-install:
 	@${INSTALL} -d ${DATADIR}/
