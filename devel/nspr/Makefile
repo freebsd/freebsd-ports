@@ -31,7 +31,7 @@ LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g ; s,echo aout,echo elf,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .if ${OSVERSION} < 601104
 	@${REINPLACE_CMD} -e 's|pthread_cond_wait|_pthread_cond_wait|g' \
 	    	${WRKSRC}/../pr/src/md/unix/pthreads_user.c \
