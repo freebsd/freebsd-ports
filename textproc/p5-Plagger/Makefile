@@ -50,6 +50,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		FILTERPIPE "Filter::Pipe Support" off \
 		PUBLISHPLANET "Publish::Planet Support" on \
 		PUBLISHCSV "Publish::CSV Support" off \
+		FILDEGYT "Filter-DegradeYouTube" off \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
 		GUESSLANG "Filter::GuessLanguage Support" off \
 		GUESSTZ "Filter::GuessTimeZoneByDomain Support" off \
@@ -101,7 +102,6 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		SUMTEXTORG "Summary-TextOriginal Support" off \
 # The below are not supported yet due to lack of depending ports
 #		PRSJPNDATE "Parse Japanese datetime format" off \
-#		FILDEGYT "Filter-DegradeYouTube" off \
 #		SUMJPN "Summary::Japanes" off \
 
 .include <bsd.port.pre.mk>
@@ -152,6 +152,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Co
 
 .if defined(WITH_PUBLISHCSV)
 BUILD_DEPENDS+=	${SITE_PERL}/Text/CSV_PP.pm:${PORTSDIR}/textproc/p5-Text-CSV_PP
+.endif
+
+.if defined(WITH_FILDEGYT)
+BUILD_DEPENDS+=	${SITE_PERL}/WebService/YouTube.pm:${PORTSDIR}/www/p5-WebService-YouTube
 .endif
 
 .if defined(WITH_AUTHORNAME)
