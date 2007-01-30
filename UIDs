@@ -88,6 +88,7 @@ smxm:*:263:263:Sendmail X misc:/nonexistent:/sbin/nologin
 smx:*:264:264:Sendmail X other:/nonexistent:/sbin/nologin
 hacluster:*:275:275:Heartbeat cluster user:/nonexistent:/sbin/nologin
 mrtg:*:279:279:MRTG daemon:/nonexistent:/sbin/nologin
+_sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/sbin/nologin
 dkfilter:*:325:325:DK Filter Owner:/nonexistent:/sbin/nologin
 wildfire:*:340:340::0:0:Wildfire Daemon:/nonexistent:/sbin/nologin
 ldap:*:389:389:OpenLDAP Server:/nonexistent:/sbin/nologin
