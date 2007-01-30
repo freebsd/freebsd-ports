@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hellanzb
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	news
 MASTER_SITES=	http://www.hellanzb.com/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

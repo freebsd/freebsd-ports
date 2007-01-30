@@ -68,9 +68,15 @@ etc/hellanzb.conf.sample
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBParser.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBParser.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBParser.pyo
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBSegmentQueue.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBSegmentQueue.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBSegmentQueue.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/Protocol.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/Protocol.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/Protocol.pyo
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/__init__.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/__init__.pyo
