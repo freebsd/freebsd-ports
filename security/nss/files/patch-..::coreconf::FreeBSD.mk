@@ -1,6 +1,7 @@
---- ../coreconf/FreeBSD.mk	Fri Sep 16 13:09:23 2005
-+++ ../coreconf/FreeBSD.mk	Wed Jan 18 18:30:48 2006
-@@ -38,7 +38,7 @@
+--- ../coreconf/FreeBSD.mk.orig	Sat Jan 21 03:36:11 2006
++++ ../coreconf/FreeBSD.mk	Tue Jan 30 21:13:41 2007
+@@ -37,9 +37,9 @@
+ 
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
 -DEFAULT_COMPILER	= gcc
@@ -11,7 +12,9 @@
 +CCC			= $(CXX)
  RANLIB			= ranlib
  
-@@ -50,6 +50,12 @@
+ ifeq ($(OS_TEST),alpha)
+@@ -49,8 +49,14 @@
+ endif
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
 +OS_LIBS			= $(BSD_LDOPTS)
@@ -24,31 +27,35 @@
 +endif
  DSO_LDOPTS		= -shared -Wl,-soname -Wl,$(notdir $@)
  
-@@ -61,5 +67,5 @@
+ #
+@@ -60,20 +66,18 @@
+ USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
  OS_LIBS			+= -pthread
 -DSO_LDOPTS		+= -pthread
 +DSO_LDOPTS		+= $(BSD_LDOPTS)
  endif
  
-@@ -69,10 +75,14 @@
+ ARCH			= freebsd
  
- ifeq ($(MOZ_OBJFORMAT),elf)
--DLL_SUFFIX		= so
+-MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
 +DLL_SUFFIX		= so.1
- else
- DLL_SUFFIX		= so.1.0
- endif
  
--MKSHLIB			= $(CC) $(DSO_LDOPTS)
+-ifeq ($(MOZ_OBJFORMAT),elf)
+-DLL_SUFFIX		= so
 +ifneq (,$(filter alpha ia64,$(OS_TEST)))
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic -lc $(DSO_LDOPTS)
-+else
+ else
+-DLL_SUFFIX		= so.1.0
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
-+endif
+ endif
+-
+-MKSHLIB			= $(CC) $(DSO_LDOPTS)
  ifdef MAPFILE
- # Add LD options to restrict exported symbols to those in the map file
-@@ -84,2 +94,4 @@
+ 	MKSHLIB += -Wl,--version-script,$(MAPFILE)
+ endif
+@@ -83,3 +87,5 @@
+ G++INCLUDES		= -I/usr/include/g++
  
  INCLUDES		+= -I/usr/X11R6/include
 +USE_SYSTEM_ZLIB		= 1
