@@ -1,6 +1,6 @@
 bin/wish8.0jp
 lib/libtk80jp.a
-lib/libtk80jp.so.1.5
+lib/libtk80jp.so.1
 lib/libtk80jp.so
 include/tk8.0jp/tk.h
 include/tk8.0jp/generic/default.h

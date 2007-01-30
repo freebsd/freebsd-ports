@@ -4,7 +4,7 @@ include/Fnlib_types.h
 lib/libFnlib.a
 lib/libFnlib.la
 lib/libFnlib.so
-lib/libFnlib.so.0.5
+lib/libFnlib.so.0
 share/fnlib_fonts/e/fontinfo
 share/fnlib_fonts/e/17/032.png
 share/fnlib_fonts/e/17/033.png

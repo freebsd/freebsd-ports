@@ -517,11 +517,11 @@ include/xview_private/xv_path_util.h
 @dirrm include/xview_private
 lib/libolgx.a
 lib/libolgx.so
-lib/libolgx.so.3.2
+lib/libolgx.so.3
 lib/libxview.a
 lib/libxview.sa.3
 lib/libxview.so
-lib/libxview.so.3.2
+lib/libxview.so.3
 lib/.text_extras_menu
 lib/.textswrc
 lib/.ttyswrc

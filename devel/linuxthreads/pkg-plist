@@ -2,7 +2,7 @@ lib/liblthread.a
 %%PROFILE:%%lib/liblthread_p.a
 %%LIBLTHREADPICARCHIVE:%%lib/liblthread_pic.a
 %%PIC:%%lib/liblthread.so
-%%PIC:%%lib/liblthread.so.%%LTHREADSHMAJOR:%%.2
+%%PIC:%%lib/liblthread.so.%%LTHREADSHMAJOR:%%
 lib/liblgcc_r.a
 %%PROFILE:%%lib/liblgcc_r_p.a
 %%LIBLGCC_R_PICARCHIVE:%%lib/liblgcc_r_pic.a

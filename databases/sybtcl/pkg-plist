@@ -1,6 +1,6 @@
 bin/sp_who
 bin/wisqlite
-lib/libSybtcl.so.3.0
+lib/libSybtcl.so.3
 lib/libSybtcl.so
 lib/Sybtcl/pkgIndex.tcl
 lib/Sybtcl/sign_on.tcl

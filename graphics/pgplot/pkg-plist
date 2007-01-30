@@ -3,10 +3,10 @@ bin/pgdisp
 include/cpgplot.h
 lib/libcpgplot.a
 lib/libcpgplot.so
-lib/libcpgplot.so.5.2
+lib/libcpgplot.so.5
 lib/libpgplot.a
 lib/libpgplot.so
-lib/libpgplot.so.5.2
+lib/libpgplot.so.5
 share/pgplot/Makefile.demo
 share/pgplot/cpgdemo.c
 share/pgplot/cpgplot.doc
