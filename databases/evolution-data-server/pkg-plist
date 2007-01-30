@@ -439,6 +439,7 @@ share/doc/libecal/libecal-e-cal-time-util.html
 share/doc/libecal/libecal-e-cal-types.html
 share/doc/libecal/libecal-e-cal-util.html
 share/doc/libecal/libecal.devhelp
+share/doc/libecal/libecal.devhelp2
 share/doc/libecal/right.png
 share/doc/libecal/style.css
 share/doc/libecal/up.png
@@ -492,6 +493,7 @@ share/doc/libedataserver/libedataserver-e-util.html
 share/doc/libedataserver/libedataserver-e-xml-hash-utils.html
 share/doc/libedataserver/libedataserver-md5-utils.html
 share/doc/libedataserver/libedataserver.devhelp
+share/doc/libedataserver/libedataserver.devhelp2
 share/doc/libedataserver/right.png
 share/doc/libedataserver/style.css
 share/doc/libedataserver/up.png

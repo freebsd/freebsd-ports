@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
