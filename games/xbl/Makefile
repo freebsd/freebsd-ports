@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xbl
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	games
-MASTER_SITES=	http://www710.univ-lyon1.fr/~exco/XBL/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://www710.univ-lyon1.fr/~exco/XBL/ GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D block-dropping game
