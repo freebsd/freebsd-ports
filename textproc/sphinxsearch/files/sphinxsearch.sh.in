@@ -15,11 +15,16 @@
 #
 # %%PORTNAME%%_conffile="%%CFGFILE%%"
 #                          -- path to config file
-# %%PORTNAME%%_pidfile="/var/run/searchd.pid"
+# %%PORTNAME%%_pidfile="%%SPHINX_RUN%%/searchd.pid"
 #                          -- location of pidfile: must match setting
 #                             in ${%%PORTNAME%%_conffile}
+# %%PORTNAME%%_user="%%SPHINX_USR%%"
+#                          -- user to run searchd as
+# %%PORTNAME%%_group="%%SPHINX_GRP%%"
+#                          -- group to run searchd as
+# %%PORTNAME%%_logdir="%%SPHINX_LOG%%"
+#                          -- directory searchd writes logs to
 #
-
 . /etc/rc.subr
 
 name=%%PORTNAME%%
@@ -27,12 +32,31 @@ rcvar=`set_rcvar`
 
 %%PORTNAME%%_enable=${%%PORTNAME%%_enable-"NO"}
 %%PORTNAME%%_conffile=${%%PORTNAME%%_conffile-"%%CFGFILE%%"}
-%%PORTNAME%%_pidfile=${%%PORTNAME%%_pidfile-"/var/run/searchd.pid"}
+%%PORTNAME%%_pidfile=${%%PORTNAME%%_pidfile-"%%SPHINX_RUN%%/searchd.pid"}
+%%PORTNAME%%_user=${%%PORTNAME%%_user-"%%SPHINX_USR%%"}
+%%PORTNAME%%_group=${%%PORTNAME%%_group-"%%SPHINX_GRP%%"}
+%%PORTNAME%%_logdir=${%%PORTNAME%%_logdir-"%%SPHINX_LOG%%"}
+
+start_precmd="create_dirs"
 
 command=%%PREFIX%%/sbin/searchd
 pidfile=${%%PORTNAME%%_pidfile}
 required_files=${%%PORTNAME%%_conffile}
 %%PORTNAME%%_flags="--config ${%%PORTNAME%%_conffile}"
+
+create_dirs ()
+{
+    piddir=$(dirname ${%%PORTNAME%%_pidfile})
+    if [ ! -d ${piddir} ]; then
+	mkdir -m 755 -p ${piddir}
+	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${piddir}
+    fi
+    if [ ! -d ${%%PORTNAME%%_logdir} ]; then
+	mkdir -m 755 -p ${%%PORTNAME%%_logdir}
+	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} \
+	    ${%%PORTNAME%%_logdir}
+    fi
+}
 
 load_rc_config ${name}
 run_rc_command "$1"

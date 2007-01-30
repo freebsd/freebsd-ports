@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 # Note: the Sphinx Storage Engine MySQL plugin is not supported by
-# this port at the moment.  Maybe later.
+# this port.  You need a patched version of mysql server for that.
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	0.9.7.r2
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
 DISTNAME=	sphinx-${PORTVERSION:C@\.r([0-9]+)$@-rc\1@}
@@ -20,6 +21,14 @@ OPTIONS=	MYSQL            "MySQL support"                   on  \
 		PGSQL            "PostgreSQL support"              off \
 		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)" off
 
+SPHINX_USR?=	_sphinx
+SPHINX_UID?=	312
+SPHINX_GRP?=	_sphinx
+SPHINX_GID?=	312
+SPHINX_DIR?=	/var/db/${PORTNAME}
+SPHINX_RUN?=	/var/run/${PORTNAME}
+SPHINX_LOG?=	/var/log/${PORTNAME}
+
 # Yes, the conflation of CPPFLAGS and CXXFLAGS is deliberate.  No,
 # don't ask.
 
@@ -28,8 +37,17 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		CC=${CC} CPPFLAGS="${CXXFLAGS}"
 CFGFILE=	${PREFIX}/etc/sphinx.conf
 USE_RC_SUBR=	sphinxsearch.sh
-SUB_LIST+=	PORTNAME=${PORTNAME} \
-		CFGFILE=${CFGFILE}
+SUB_LIST+=	PORTNAME=${PORTNAME}     \
+		CFGFILE=${CFGFILE}       \
+		SPHINX_USR=${SPHINX_USR} \
+		SPHINX_UID=${SPHINX_UID} \
+		SPHINX_GRP=${SPHINX_GRP} \
+		SPHINX_GID=${SPHINX_GID} \
+		SPHINX_DIR=${SPHINX_DIR} \
+		SPHINX_RUN=${SPHINX_RUN} \
+		SPHINX_LOG=${SPHINX_LOG}
+SUB_FILES+=	pkg-install pkg-deinstall
+
 .if !defined(NOPORTDOCS)
 EXAMPLES=	example.sql api/sphinxapi.php api/test.php api/test2.php
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
@@ -61,12 +79,15 @@ CXXFLAGS+=		-O3 -fomit-frame-pointer
 # Fix up the sample configuration file to correspond to FreeBSD norms
 
 post-patch:
-	${REINPLACE_CMD} \
-	    -e 's!@CONFDIR@/log/searchd.pid!/var/run/searchd.pid!'    \
-	    -e 's!@CONFDIR@/log/query.log!/var/log/sphinx-query.log!' \
-	    -e 's!@CONFDIR@/log/searchd.log!/var/log/searchd.log!'    \
-	    -e 's!@CONFDIR@!/var/db/sphinxsearch!'                    \
+	@${REINPLACE_CMD} \
+	    -e "s!@CONFDIR@/log/searchd.pid!${SPHINX_RUN}/searchd.pid!"    \
+	    -e "s!@CONFDIR@/log/query.log!${SPHINX_LOG}/sphinx-query.log!" \
+	    -e "s!@CONFDIR@/log/searchd.log!${SPHINX_LOG}/searchd.log!"    \
+	    -e "s!@CONFDIR@!${SPHINX_DIR}!"                                \
 	    ${WRKSRC}/sphinx.conf.in
+
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install: install-bin install-docs install-examples
 
@@ -92,7 +113,10 @@ install-examples:
 .endfor
 .endif
 
-post-install:
+post-install: post-install-cfg
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+post-install-cfg:
 	@if [ ! -f ${CFGFILE} ]; then \
 	  ${CP} -p ${CFGFILE}.sample ${CFGFILE} ; \
 	fi
