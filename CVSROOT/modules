@@ -3096,6 +3096,7 @@ g2c		ports/devel/g2c
 g2ipmsg		ports/net/g2ipmsg
 g3data		ports/science/g3data
 g3dviewer	ports/graphics/g3dviewer
+g95		ports/lang/g95
 ga-aspell	ports/textproc/ga-aspell
 gaa		ports/devel/gaa
 gacxtool	ports/net/gacxtool
