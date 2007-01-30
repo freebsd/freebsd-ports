@@ -349,6 +349,7 @@
     SUBDIR += scim-tables
     SUBDIR += scim-tomoe
     SUBDIR += scim-uim
+    SUBDIR += seaside
     SUBDIR += sed
     SUBDIR += shinonome
     SUBDIR += sj3
