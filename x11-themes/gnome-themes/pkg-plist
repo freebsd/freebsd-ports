@@ -2916,9 +2916,9 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/icons/Mist/22x22/places
 @dirrm share/icons/Mist/22x22/actions
 @dirrm share/icons/Mist/22x22
+@dirrm share/icons/Mist/16x16/status
 @dirrm share/icons/Mist/16x16/places
 @dirrm share/icons/Mist/16x16/actions
-@dirrm share/icons/Mist/16x16/status
 @dirrm share/icons/Mist/16x16
 @dirrm share/icons/Mist
 @dirrm share/icons/LowContrastLargePrint/48x48/mimetypes
