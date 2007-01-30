@@ -23,7 +23,7 @@ include/tk8.0/unix/tkUnixInt.h
 include/tk8.0/unix/tkUnixPort.h
 lib/libtk80.a
 lib/libtk80.so
-lib/libtk80.so.1.4
+lib/libtk80.so.1
 lib/tk8.0/bgerror.tcl
 lib/tk8.0/button.tcl
 lib/tk8.0/clrpick.tcl

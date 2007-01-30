@@ -8,7 +8,7 @@ bin/ppmcoco
 bin/bzz
 lib/libdjvu++.a
 lib/libdjvu++.so
-lib/libdjvu++.so.2.1
+lib/libdjvu++.so.2
 %%DOC%%share/doc/djvu/ATTLicense.h.html
 %%DOC%%share/doc/djvu/ATTLicense.html
 %%DOC%%share/doc/djvu/ATTSourceCodeAgreement.html

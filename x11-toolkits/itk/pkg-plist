@@ -1,6 +1,6 @@
 include/itk%%MAJOR%%.%%MINOR%%/itk.h
 include/itk%%MAJOR%%.%%MINOR%%/itkDecls.h
-lib/libitk.so.%%MAJOR%%.%%MINOR%%
+lib/libitk.so.%%MAJOR%%
 lib/libitk.so
 lib/libitk.a
 lib/itk%%MAJOR%%.%%MINOR%%/Archetype.itk

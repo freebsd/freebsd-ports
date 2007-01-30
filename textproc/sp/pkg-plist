@@ -141,5 +141,4 @@ include/sp/types.h
 include/sp/xnew.h
 lib/libsp.a
 lib/libsp.so.1
-@comment lib/libsp.so.1.4
 @dirrm include/sp

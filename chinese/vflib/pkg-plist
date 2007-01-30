@@ -21,7 +21,7 @@ bin/ttindex
 bin/vfperf
 bin/vftest
 include/VF.h
-lib/libVFlib2.so.24.1
+lib/libVFlib2.so.24
 lib/libVFlib2.la
 @exec /bin/ln -fs %D/%F %D/lib/libVFlib2.so
 @unexec /bin/rm -f %D/lib/libVFlib2.so

@@ -29,5 +29,5 @@ include/expect5.30jp/tcldbg.h
 lib/expect5.30jp/pkgIndex.tcl
 @dirrm lib/expect5.30jp
 lib/libexpect530jp.a
-lib/libexpect530jp.so.1.2
+lib/libexpect530jp.so.1
 lib/libexpect530jp.so
