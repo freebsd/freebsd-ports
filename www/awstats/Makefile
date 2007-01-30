@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.5
-PORTREVISION=	2
+PORTVERSION=	6.6
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -72,7 +71,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.6.wbm ${PREFIX}/www/awstats/tools/webmin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.7.wbm ${PREFIX}/www/awstats/tools/webmin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/awstats/cgi-bin
@@ -83,6 +82,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/awstats/cgi-bin/lib
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/*.pm ${PREFIX}/www/awstats/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/example/* ${PREFIX}/www/awstats/cgi-bin/plugins/example
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar ${PREFIX}/www/awstats/classes/awgraphapplet.jar
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/css/* ${PREFIX}/www/awstats/css
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/browser/* ${PREFIX}/www/awstats/icons/browser
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/clock/* ${PREFIX}/www/awstats/icons/clock
