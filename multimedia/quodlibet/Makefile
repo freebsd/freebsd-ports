@@ -9,7 +9,8 @@ PORTNAME=	quodlibet
 PORTVERSION=	0.24
 PORTREVISION=	2
 CATEGORIES=	multimedia audio python gnome
-MASTER_SITES=	http://www.sacredchao.net/~piman/software/
+MASTER_SITES=	http://www.sacredchao.net/~piman/software/ \
+		http://www.tortall.net/mirrors/piman-software/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
@@ -28,7 +29,7 @@ MAN1=		exfalso.1 quodlibet.1
 
 OPTIONS=	FLAC "Flac audio support" on
 OPTIONS+=	MP3 "MP3 audio support" on
-OPTIONS+=	AAC "AAC support with MPEG4IP" on
+OPTIONS+=	MPEG4IP "AAC/mp4 support with MPEG4IP" on
 OPTIONS+=	MUSEPACK "Musepack (MPC, musicpd, libmpcdec) support" on
 OPTIONS+=	OGG "OGG multimedia container support" on
 OPTIONS+=	SPEEX "OGG/Speex audio support" on
@@ -61,7 +62,7 @@ USE_GSTREAMER+=	flac
 .endif
 
 .if !defined(WITHOUT_MUSEPACK) || !defined(WITHOUT_WAVPACK) \
-		|| !defined(WITHOUT_AAC)
+		|| !defined(WITHOUT_MPEG4IP)
 BUILD_DEPENDS+=	${PYCTYPES}
 RUN_DEPENDS+=	${PYCTYPES}
 .endif
