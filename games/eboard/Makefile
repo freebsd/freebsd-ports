@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eboard
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 EXTRAS=		1pl2 2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,12 +22,17 @@ HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --extra-inc=${LOCALBASE}/include:${X11BASE}/include --extra-ld=${LOCALBASE}/lib:${X11BASE}/lib
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--extra-inc=${LOCALBASE}/include:${X11BASE}/include \
+		--extra-ld=${LOCALBASE}/lib:${X11BASE}/lib \
+		--disable-dgt
 
 INSTALL_TARGET=	install install-man
 
 MAN1=	eboard-config.1 eboard-addtheme.1
 MAN6=	eboard.6
+
+OPTIONS=	JOYSTICK "joystick support" off
 
 DESKTOP_ENTRIES="eboard" \
 		"Play chess" \
@@ -35,6 +40,13 @@ DESKTOP_ENTRIES="eboard" \
 		"eboard" \
 		"Application;Game;" \
 		true
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_JOYSTICK)
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+.endif
 
 post-extract:
 .for e in ${EXTRAS}
@@ -45,6 +57,12 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,g++,${CXX},' -e 's,-O6,${CXXFLAGS},' \
 		${WRKSRC}/configure
+
+.if !defined(WITH_JOYSTICK)
+post-configure:
+	@${REINPLACE_CMD} -e '/^#define HAVE_LINUX_JOYSTICK_H 1/ d' \
+		${WRKSRC}/config.h
+.endif
 
 post-install:
 	${LN} -sf ${LOCALBASE}/bin/timeseal ${DATADIR}/timeseal.FreeBSD
@@ -64,4 +82,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${PREFIX}/share/pixmaps/eboard.xpm
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
