@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	unidesc
-PORTVERSION=	2.23
+PORTNAME=	uniutils
+PORTVERSION=	2.24
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Unicode Description Utilities
@@ -28,7 +27,7 @@ TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\
 		Test4.ann Test4.u
 PORTDOCS=	AUTHORS NEWS README
 
-MAN1=		unidesc.1 uniname.1 ExplicateUTF8.1 unihist.1
+MAN1=		ExplicateUTF8.1 unidesc.1 unihist.1 uniname.1 unirev.1
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.in
