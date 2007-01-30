@@ -9,6 +9,12 @@
                     See /var/cron/tabs/root for details
 		    
 ---------------------------------------------------------------------------------
+
+To have this port functional, you need manually create phorum configuration file.
+cp %%PREFIX%%/campsite/www-common/html/include/phorum/portable/phorum_settings.php.sample \
+%%PREFIX%%/campsite/www-common/html/include/phorum/portable/phorum_settings.php
+
+---------------------------------------------------------------------------------
         This ports requires pear libraries properly set in PHP
                     See include_path in php.ini
 

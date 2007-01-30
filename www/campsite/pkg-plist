@@ -794,7 +794,7 @@ campsite/www-common/html/include/phorum/pm.php
 campsite/www-common/html/include/phorum/portable/.htaccess
 campsite/www-common/html/include/phorum/portable/phorum.php
 campsite/www-common/html/include/phorum/portable/phorum_admin.php
-campsite/www-common/html/include/phorum/portable/phorum_settings.php
+campsite/www-common/html/include/phorum/portable/phorum_settings.php.sample
 campsite/www-common/html/include/phorum/posting.php
 campsite/www-common/html/include/phorum/profile.php
 campsite/www-common/html/include/phorum/read.php
