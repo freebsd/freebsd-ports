@@ -1,8 +1,14 @@
-
-$FreeBSD$
-
---- libIDL/configure	2002/06/07 16:28:12	1.1
-+++ libIDL/configure	2002/06/07 16:30:32
+--- libIDL/configure.orig	Thu Jun  6 07:27:28 2002
++++ libIDL/configure	Mon Jan 29 22:21:58 2007
+@@ -5915,7 +5915,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
 @@ -7418,6 +7418,7 @@
  
  # This can be used to rebuild libtool when needed
