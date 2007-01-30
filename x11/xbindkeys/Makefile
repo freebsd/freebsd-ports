@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.7.4
+PORTVERSION=	1.8.0
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 OPTIONS=	GUILE "Guile support" off \
