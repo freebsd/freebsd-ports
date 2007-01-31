@@ -1,15 +1,17 @@
-bin/libnet-config
-include/libnet.h
-include/libnet/libnet-asn1.h
-include/libnet/libnet-functions.h
-include/libnet/libnet-headers.h
-include/libnet/libnet-macros.h
-include/libnet/libnet-structures.h
-include/libnet/libnet-types.h
-lib/libnet.a
-lib/libnet.la
-lib/libnet.so
-lib/libnet.so.1
+bin/libnet113-config
+include/libnet113/libnet.h
+include/libnet113/libnet/libnet-asn1.h
+include/libnet113/libnet/libnet-functions.h
+include/libnet113/libnet/libnet-headers.h
+include/libnet113/libnet/libnet-macros.h
+include/libnet113/libnet/libnet-structures.h
+include/libnet113/libnet/libnet-types.h
+lib/libnet113/libnet.a
+lib/libnet113/libnet.la
+lib/libnet113/libnet.so
+lib/libnet113/libnet.so.1
+lib/libnet-1.1.3.so
+lib/libnet-1.1.3.so.1
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIB
@@ -67,4 +69,6 @@ lib/libnet.so.1
 %%EXAMPLESDIR%%/udp2.c
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/libnet
+@dirrm lib/libnet113
+@dirrm include/libnet113/libnet
+@dirrm include/libnet113

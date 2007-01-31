@@ -7,7 +7,7 @@
 
 PORTNAME=	arprelease
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,19 +15,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libnet tool to flush arp cache entries from devices (eg. routers)
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/arprelease
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 do-build:
 	(cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-		-o arprelease arprelease.c \
-		`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --libs`)
+		${CC} ${CFLAGS} `${LIBNET_CONFIG} --defines` \
+		`${LIBNET_CONFIG} --cflags` -o arprelease arprelease.c \
+		`${LIBNET_CONFIG} --libs`)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arprelease ${PREFIX}/bin

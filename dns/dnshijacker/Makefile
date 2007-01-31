@@ -7,18 +7,20 @@
 
 PORTNAME=	dnshijacker
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns security
 MASTER_SITES=	http://pedram.redhive.com/downloads/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A tool to hijack DNS requests
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
-LDFLAGS+=	-lpcap -lnet
+LDFLAGS+=	-lpcap `${LIBNET_CONFIG} --libs`
 
 PLIST_FILES=	bin/dnshijacker
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README
@@ -27,8 +29,8 @@ PORTDOCS=	README
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${PORTNAME}.c ${CFLAGS} -I${LOCALBASE}/include \
-	-L${LOCALBASE}/lib ${LDFLAGS} `libnet-config --defines` \
-	`libnet-config --cflags` -o ${PORTNAME}
+	-L${LOCALBASE}/lib ${LDFLAGS} `${LIBNET_CONFIG} --defines` \
+	`${LIBNET_CONFIG} --cflags` -o ${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnshijacker ${PREFIX}/bin

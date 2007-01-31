@@ -7,7 +7,7 @@
 
 PORTNAME=	sing
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,13 +17,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for sending customized ICMP packets
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-libnet-prefix=${LOCALBASE} --with-libpcap-prefix=/usr
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-libpcap-prefix=/usr
+CONFIGURE_ENV=	CPPFLAGS="`${LIBNET_CONFIG} --defines` \
+		`${LIBNET_CONFIG} --cflags`" LIBS="`${LIBNET_CONFIG} --libs`"
 MAN8=		sing.8
 PLIST_FILES=	sbin/sing
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/libpcap-* ;\

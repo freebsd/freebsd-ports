@@ -7,20 +7,23 @@
 
 PORTNAME=	unicornscan
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.dyadsecurity.com/unicornscan/
 
 MAINTAINER=	cykyc@yahoo.com
 COMMENT=	Next-generation of udpscan plus a high-speed TCP scanner
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 USE_GMAKE=	yes
+MAKE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
 
 MAN1=		unicornscan.1
 
-PKGMESSAGE=     ${WRKDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.pre.mk>
 
@@ -35,7 +38,7 @@ BUILD_DEPENDS+=	${PREFIX}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 # function
 
 .if ${OSVERSION} > 502103
-CFLAGS+= -DWITH_LONGOPTS
+CFLAGS+=	-DWITH_LONGOPTS
 .endif
 
 post-patch:
@@ -43,6 +46,8 @@ post-patch:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	${PKGDIR}/${text} >${WRKDIR}/${text}
 .endfor
+	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
+		${WRKSRC}/src/scan_progs/Makefile ${WRKSRC}/src/tools/Makefile
 
 do-install:
 	${MKDIR} ${PREFIX}/etc/unicornscan

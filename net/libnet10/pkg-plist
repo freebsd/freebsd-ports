@@ -1,30 +1,32 @@
-bin/libnet-config
-include/libnet.h
-include/libnet/libnet-asn1.h
-include/libnet/libnet-functions.h
-include/libnet/libnet-headers.h
-include/libnet/libnet-macros.h
-include/libnet/libnet-ospf.h
-include/libnet/libnet-structures.h
-lib/libnet.a
-lib/libpwrite.a
-share/doc/libnet/CHANGELOG
-share/doc/libnet/CHANGELOG-NEWFUNCTIONS
-share/doc/libnet/COPYING
-share/doc/libnet/README
-share/doc/libnet/TODO-1.0
-share/doc/libnet/TODO-1.1
-share/doc/libnet/examples/libnet-example-1.c
-share/doc/libnet/examples/libnet-example-2.c
-share/doc/libnet/examples/libnet-example-3.c
-share/doc/libnet/examples/libnet-example-4.c
-share/doc/libnet/ancillary/README.asn.1
-share/doc/libnet/ancillary/README.bpf
-share/doc/libnet/ancillary/README.legacy-applications
-share/doc/libnet/ancillary/README.libnet-config
-share/doc/libnet/ancillary/README.linux
-share/doc/libnet/ancillary/README.rawsockets
-@dirrm share/doc/libnet/ancillary
-@dirrm share/doc/libnet/examples
-@dirrm share/doc/libnet
-@dirrm include/libnet
+bin/libnet10-config
+include/libnet10/libnet.h
+include/libnet10/libnet/libnet-asn1.h
+include/libnet10/libnet/libnet-functions.h
+include/libnet10/libnet/libnet-headers.h
+include/libnet10/libnet/libnet-macros.h
+include/libnet10/libnet/libnet-ospf.h
+include/libnet10/libnet/libnet-structures.h
+lib/libnet10/libnet.a
+lib/libnet10/libpwrite.a
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG-NEWFUNCTIONS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO-1.0
+%%PORTDOCS%%%%DOCSDIR%%/TODO-1.1
+%%PORTDOCS%%%%DOCSDIR%%/examples/libnet-example-1.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/libnet-example-2.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/libnet-example-3.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/libnet-example-4.c
+%%PORTDOCS%%%%DOCSDIR%%/ancillary/README.asn.1
+%%PORTDOCS%%%%DOCSDIR%%/ancillary/README.bpf
+%%PORTDOCS%%%%DOCSDIR%%/ancillary/README.legacy-applications
+%%PORTDOCS%%%%DOCSDIR%%/ancillary/README.libnet-config
+%%PORTDOCS%%%%DOCSDIR%%/ancillary/README.linux
+%%PORTDOCS%%%%DOCSDIR%%/ancillary/README.rawsockets
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ancillary
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/libnet10
+@dirrm include/libnet10/libnet
+@dirrm include/libnet10

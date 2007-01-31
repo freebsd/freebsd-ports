@@ -1,0 +1,11 @@
+--- ./include/libnet/Makefile.in.orig	Thu Mar 11 15:50:20 2004
++++ ./include/libnet/Makefile.in	Tue Sep 26 15:19:23 2006
+@@ -40,7 +40,7 @@
+ libdir = @libdir@
+ infodir = @infodir@
+ mandir = @mandir@
+-includedir = @includedir@
++includedir = @includedir@/libnet11
+ oldincludedir = /usr/include
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@

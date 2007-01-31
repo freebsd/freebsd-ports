@@ -7,7 +7,7 @@
 
 PORTNAME=	nast
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/ \
 		http://voodoo.bawue.com/download/
@@ -16,33 +16,27 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nast is a packet sniffer
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 MAN8=		nast.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/nast
 
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+
 .include <bsd.port.pre.mk>
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""#######################################################
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You need ${PORTSDIR}/net/libnet-devel to build this port
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""#######################################################
-	@${ECHO_MSG} ""
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS="-Wall -O2 -pthread"||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|CFLAGS="-Wall -O2 -pthread"||g; \
+		 s|libnet-config|${LIBNET_CONFIG}|; \
+		 s|-lnet|`${LIBNET_CONFIG} --libs`|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

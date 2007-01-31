@@ -1,12 +1,12 @@
-bin/libnet-config
-include/libnet.h
-include/libnet/libnet-asn1.h
-include/libnet/libnet-functions.h
-include/libnet/libnet-headers.h
-include/libnet/libnet-macros.h
-include/libnet/libnet-structures.h
-include/libnet/libnet-types.h
-lib/libnet.a
+bin/libnet11-config
+include/libnet11/libnet.h
+include/libnet11/libnet/libnet-asn1.h
+include/libnet11/libnet/libnet-functions.h
+include/libnet11/libnet/libnet-headers.h
+include/libnet11/libnet/libnet-macros.h
+include/libnet11/libnet/libnet-structures.h
+include/libnet11/libnet/libnet-types.h
+lib/libnet11/libnet.a
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIB
@@ -96,4 +96,6 @@ lib/libnet.a
 %%EXAMPLESDIR%%/udp2.c
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/libnet
+@dirrm lib/libnet11
+@dirrm include/libnet11/libnet
+@dirrm include/libnet11

@@ -49,6 +49,19 @@ DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-sf_snort_plugin_api.h
 .endif
 
+.if defined(WITH_FLEXRESP)
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet10-config
+.elif defined(WITH_FLEXRESP2)
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
+.endif
+
+.if exists(${LIBNET_CONFIG})
+LIBNET_CFLAGS!=	${LIBNET_CONFIG} --cflags
+LIBNET_LIBS!=	${LIBNET_CONFIG} --libs
+LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
+LIBNET_LIBDIR=	${LIBNET_CFLAGS:M-L*:S/-L//}
+.endif
+
 .if !defined(WITHOUT_DYNAMIC)
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -62,21 +75,21 @@ PLIST_SUB+=	DYNAMIC="@comment "
 .if defined(WITH_FLEXRESP2)
 IGNORE=			options FLEXRESP and FLEXRESP2 are mutually exclusive
 .endif
-BUILD_DEPENDS+=		libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 CONFIGURE_ARGS+=	--enable-flexresp \
-			--with-libnet-includes=${LOCALBASE}/include \
-			--with-libnet-libraries=${LOCALBASE}/lib
+			--with-libnet-includes=${LIBNET_INCDIR} \
+			--with-libnet-libraries=${LIBNET_LIBDIR}
 .endif
 
 .if defined(WITH_FLEXRESP2)
 BROKEN=			FLEXRESP2 patch file does not incorporate cleanly
 PATCH_SITES+=		http://cerberus.sourcefire.com/~jeff/archives/snort/sp_respond2/
 PATCHFILES+=		sp_respond2.diff.gz
-BUILD_DEPENDS+=		libnet*>=1.1.2.1,1:${PORTSDIR}/net/libnet \
+BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 			libdnet*>=1.10_1:${PORTSDIR}/net/libdnet
 CONFIGURE_ARGS+=	--enable-flexresp2 \
-			--with-libnet-includes=${LOCALBASE}/include \
-			--with-libnet-libraries=${LOCALBASE}/lib
+			--with-libnet-includes=${LIBNET_INCDIR} \
+			--with-libnet-libraries=${LIBNET_LIBDIR}
 .endif
 
 .if defined(WITH_MYSQL)

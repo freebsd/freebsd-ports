@@ -1,0 +1,24 @@
+--- Makefile.in.orig	Mon Feb  5 14:51:41 2001
++++ Makefile.in	Mon Sep 25 18:26:09 2006
+@@ -14,8 +14,8 @@
+ exec_prefix =   @exec_prefix@
+ srcdir      =   @srcdir@
+ BIN_PREFIX  =   @bindir@/
+-INC_PREFIX  =   @includedir@/
+-LIB_PREFIX  =   @libdir@/
++INC_PREFIX  =   @includedir@/libnet10/
++LIB_PREFIX  =   @libdir@/libnet10/
+ MAN_PREFIX  =   @MAN_PREFIX@
+ 
+ LIBNET      =   libnet
+@@ -108,8 +108,8 @@
+ 	$(INSTALL_DATA) $(INCLUDE-M) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
+ 	$(INSTALL_DATA) $(INCLUDE-A) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
+ 	$(INSTALL_DATA) $(INCLUDE-O) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
+-	$(INSTALL_DATA) $(MAN) $(DESTDIR)$(MAN_PREFIX)
+-	$(INSTALL_DATA) $(CONFIG) $(DESTDIR)$(BIN_PREFIX)
++	$(INSTALL_DATA) $(MAN) $(DESTDIR)$(MAN_PREFIX)libnet10.3
++	$(INSTALL_DATA) $(CONFIG) $(DESTDIR)$(BIN_PREFIX)$(CONFIG:S/libnet/libnet10/)
+ 
+ 
+ 

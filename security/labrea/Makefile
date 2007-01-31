@@ -7,7 +7,7 @@
 
 PORTNAME=	LaBrea
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://freebsd.rogness.net/ports/labrea/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
@@ -16,7 +16,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nick@rogness.net
 COMMENT=	Security tarpit defense tool
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|libnet-config|${LIBNET_CONFIG}|; \
+		 s|--defines|& --cflags|' \
+		 ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/LaBrea ${PREFIX}/bin

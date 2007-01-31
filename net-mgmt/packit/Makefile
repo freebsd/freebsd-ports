@@ -7,7 +7,7 @@
 
 PORTNAME=	packit
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://packit.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
@@ -15,16 +15,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network auditing tool
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"
+
 MAN8=		packit.8
 PLIST_FILES=	sbin/packit
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .if defined(WITHOUT_CAPTURE)
 CONFIGURE_ARGS+=	--without-capture
@@ -33,13 +33,8 @@ CONFIGURE_ARGS+=	--without-capture
 CONFIGURE_ARGS+=	--without-injection
 .endif
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""#######################################################
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You need ${PORTSDIR}/net/libnet to build this port
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""#######################################################
-	@${ECHO_MSG} ""
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

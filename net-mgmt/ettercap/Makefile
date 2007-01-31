@@ -8,7 +8,7 @@
 PORTNAME=		ettercap
 PORTVERSION=		0.7.3
 DISTVERSIONPREFIX=	NG-
-PORTREVISION=		3
+PORTREVISION=		4
 PORTEPOCH=		1
 CATEGORIES=		net-mgmt security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 OPTIONS=	GTK	"Build with GTK2+ GUI"	on \
 		ICONV	"Build with support for UTF-8"	on \
@@ -36,13 +36,16 @@ DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.CVS README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/threads
 
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+
 .include <bsd.port.pre.mk>
 
 CFLAGS+=		${PTHREAD_CFLAGS}
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--enable-plugins --with-libnet=${LOCALBASE}
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+			LIBS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--enable-plugins
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if ${OSVERSION} < 502111
@@ -88,8 +91,12 @@ CONFIGURE_ARGS+=	--without-openssl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -Ee \
+		's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|; \
+		 s|test -f /usr/include/libnet\.h|${TRUE}|; \
+		 s|(LNETINC=).*|\1"`${LIBNET_CONFIG} --cflags`"|; \
+		 s|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E -e 's|(^pkgdatadir.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/share/Makefile.in
 

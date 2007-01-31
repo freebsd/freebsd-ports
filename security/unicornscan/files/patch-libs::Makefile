@@ -1,5 +1,5 @@
---- libs/Makefile.orig	Thu Sep 30 05:29:05 2004
-+++ libs/Makefile	Tue Oct  5 13:36:57 2004
+--- libs/Makefile.orig	Thu Sep 30 07:29:05 2004
++++ libs/Makefile	Fri Sep 29 14:32:37 2006
 @@ -6,30 +6,10 @@
  default: pcap_test libnet_test
  
@@ -29,7 +29,7 @@
 -
 -libpcap-$(PCAPVER).tar.gz:
 -	wget http://tcpdump.org/release/libpcap-$(PCAPVER).tar.gz
-+	$(CC) $(CFLAGS) -o libnet_test libnet_test.c -lpcap -lnet $(LDADD)
++	$(CC) $(CFLAGS) -o libnet_test libnet_test.c -lpcap `$(LIBNET_CONFIG) --libs` $(LDADD)
  
  clean:
 -	rm -rf fake libnet libpcap-$(PCAPVER) pcap_test libnet_test
