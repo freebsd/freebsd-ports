@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIT Photonic-Bands
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libctl.a:${PORTSDIR}/science/libctl \
-		bash:${PORTSDIR}/shells/bash2
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		hdf5.0:${PORTSDIR}/science/hdf5 \
 		guile.15:${PORTSDIR}/lang/guile
