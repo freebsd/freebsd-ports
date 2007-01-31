@@ -61,6 +61,7 @@
 %%NAGDIR%%/locale/ru_RU/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sk_SK/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sk_SK/help.xml
+%%NAGDIR%%/locale/sl_SI/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sv_SE/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/tr_TR/help.xml
 %%NAGDIR%%/locale/zh_CN/LC_MESSAGES/nag.mo
@@ -92,6 +93,7 @@
 %%NAGDIR%%/po/ro_RO.po
 %%NAGDIR%%/po/ru_RU.po
 %%NAGDIR%%/po/sk_SK.po
+%%NAGDIR%%/po/sl_SI.po
 %%NAGDIR%%/po/sv_SE.po
 %%NAGDIR%%/po/zh_CN.po
 %%NAGDIR%%/po/zh_TW.po
@@ -161,6 +163,8 @@
 @dirrm %%NAGDIR%%/locale/sv_SE
 @dirrm %%NAGDIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/sk_SK
+@dirrm %%NAGDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/sl_SI
 @dirrm %%NAGDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/ru_RU
 @dirrm %%NAGDIR%%/locale/ro_RO/LC_MESSAGES
