@@ -13,9 +13,7 @@ pike/%%PORTVERSION%%/lib/modules/Parser.pmod/Pike.pmod
 pike/%%PORTVERSION%%/lib/modules/Parser.pmod/C.pmod
 pike/%%PORTVERSION%%/lib/modules/Parser.pmod/module.pmod
 pike/%%PORTVERSION%%/lib/modules/Java.pmod
-pike/%%PORTVERSION%%/lib/modules/MIME.pmod/ext_to_media_type.pmod.o
 pike/%%PORTVERSION%%/lib/modules/MIME.pmod/ext_to_media_type.pmod
-pike/%%PORTVERSION%%/lib/modules/MIME.pmod/module.pmod.o
 pike/%%PORTVERSION%%/lib/modules/MIME.pmod/module.pmod
 pike/%%PORTVERSION%%/lib/modules/Math.pmod
 pike/%%PORTVERSION%%/lib/modules/Mird.pmod
@@ -318,10 +316,8 @@ pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/md5.pike
 pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/module.pmod
 pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/pipe.pike
 pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/sha.pike
-pike/%%PORTVERSION%%/lib/7.4/modules/Crypto.pmod/sha.pike.o
 pike/%%PORTVERSION%%/lib/7.4/modules/Locale.pmod/Charset.pmod.o
 pike/%%PORTVERSION%%/lib/7.4/modules/Locale.pmod/Charset.pmod
-pike/%%PORTVERSION%%/lib/7.4/modules/Protocols.pmod/SMTP.pmod.o
 pike/%%PORTVERSION%%/lib/7.4/modules/Protocols.pmod/SMTP.pmod
 pike/%%PORTVERSION%%/lib/7.4/modules/SSL.pmod/constants.pike
 pike/%%PORTVERSION%%/lib/7.4/modules/SSL.pmod/cipher.pike
