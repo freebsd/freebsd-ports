@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sipp
-PORTVERSION=	1.1.r8.20070116
+PORTVERSION=	1.1.r8.20070130
 CATEGORIES=	net
 MASTER_SITES=	http://sipp.sourceforge.net/snapshots/
-DISTNAME=	${PORTNAME}.2007-01-16
+DISTNAME=	${PORTNAME}.2007-01-30
 
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	SIP testing tool
@@ -17,16 +17,25 @@ COMMENT=	SIP testing tool
 PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
-MAKE_ENV+=	CPP="${CXX}" CPPFLAGS="${CXXFLAGS}" CCLINK="${CXX}"
+MAKE_ENV+=	CPP="${CXX}" \
+		CPPFLAGS="${CXXFLAGS}" \
+		CCLINK="${CXX}"
 
 OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \
+		GSL		"GSL support (for statistical distributed pauses)" off \
 		PCAPPLAY	"RTP play support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PCAPPLAY)
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+.if defined(WITH_GSL)
+LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
 
+MAKE_ENV+=	EXTRACPPFLAGS=-DHAVE_GSL \
+		EXTRACFLAGS=-DHAVE_GSL \
+		EXTRALIBS='-lgsl -lgslcblas'
+.endif #defined(WITH_GSL)
+
+.if defined(WITH_PCAPPLAY)
 PCAP_FILES=	dtmf_2833_1.pcap dtmf_2833_2.pcap dtmf_2833_3.pcap \
 		dtmf_2833_4.pcap dtmf_2833_5.pcap dtmf_2833_6.pcap \
 		dtmf_2833_7.pcap dtmf_2833_8.pcap dtmf_2833_9.pcap \
