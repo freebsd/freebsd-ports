@@ -23,4 +23,7 @@ HAS_CONFIGURE=	yes
 CFLAGS+=	-lm
 INSTALLS_SHLIB=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|g' ${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
