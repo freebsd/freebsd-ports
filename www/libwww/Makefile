@@ -7,7 +7,7 @@
 
 PORTNAME=	libwww
 PORTVERSION=	5.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
 DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	The W3C Reference Library
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib
+CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib --with-ssl
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 
