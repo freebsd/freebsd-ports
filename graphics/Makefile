@@ -673,6 +673,7 @@
     SUBDIR += tulip
     SUBDIR += uDrawGraph
     SUBDIR += ufraw
+    SUBDIR += unpaper
     SUBDIR += urt
     SUBDIR += vcg
     SUBDIR += vertex

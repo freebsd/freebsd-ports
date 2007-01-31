@@ -1,0 +1,7 @@
+unpaper is a post-processing tool for scanned sheets of paper,
+especially for book-pages scanned from previously created photocopies.
+unpaper tries to remove dark edges, corrects the rotation ("deskew"),
+and aligns the centering of pages.
+
+WWW: http://unpaper.berlios.de/
+Author: Jens Gulden <unpaper@jensgulden.de> 
