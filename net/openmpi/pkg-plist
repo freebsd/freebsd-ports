@@ -66,8 +66,6 @@
 %%MPIDIR%%/lib/openmpi/mca_btl_tcp.so
 %%MPIDIR%%/lib/openmpi/mca_coll_basic.la
 %%MPIDIR%%/lib/openmpi/mca_coll_basic.so
-%%MPIDIR%%/lib/openmpi/mca_coll_hierarch.la
-%%MPIDIR%%/lib/openmpi/mca_coll_hierarch.so
 %%MPIDIR%%/lib/openmpi/mca_coll_self.la
 %%MPIDIR%%/lib/openmpi/mca_coll_self.so
 %%MPIDIR%%/lib/openmpi/mca_coll_sm.la
