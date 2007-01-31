@@ -12,7 +12,7 @@ PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	http://wilmer.gaast.net/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	prudhvikrishna@gmail.com
 COMMENT=	A download accelerator
 
 USE_GETTEXT=	yes
