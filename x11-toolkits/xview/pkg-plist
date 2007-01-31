@@ -542,6 +542,7 @@ lib/X11/config/XView.obj
 lib/X11/config/XView.rules
 lib/X11/config/XView.tmpl
 lib/X11/config/XView.prog
+@dirrmtry lib/X11/config
 lib/X11/fonts/ol75dpi/luBIS08.pcf.gz
 lib/X11/fonts/ol75dpi/luBIS10.pcf.gz
 lib/X11/fonts/ol75dpi/luBIS12.pcf.gz
