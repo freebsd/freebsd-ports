@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -16,6 +16,8 @@ COMMENT=	Produce PDF from scanned documents
 RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
 		scanadf:${PORTSDIR}/graphics/sane-frontends \
+		cjb2:${PORTSDIR}/graphics/djvulibre \
+		unpaper:${PORTSDIR}/graphics/unpaper \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
