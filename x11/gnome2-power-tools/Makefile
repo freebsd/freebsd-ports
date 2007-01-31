@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-power-tools
 
 COMMENT=	The 'Geektoys' for the GNOME 2 power user
 
-RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.14/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
+RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.16/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
 		${LOCALBASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
