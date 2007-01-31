@@ -415,6 +415,7 @@
     SUBDIR += metapixel
     SUBDIR += ming
     SUBDIR += mingplot
+    SUBDIR += mirage
     SUBDIR += morpheus
     SUBDIR += moth
     SUBDIR += multivideo

@@ -1,0 +1,13 @@
+Mirage is a fast and simple GTK+ image viewer.
+
+- Supports png, jpg, svg, xpm, gif, bmp, tiff, and others
+- Cycling through multiple images (with preloading)
+- Slideshow and fullscreen modes
+- Rotating, zooming, flipping, resizing, cropping
+- Saving, deleting, renaming
+- Custom actions
+- Command-line access
+- Configurable interface
+
+WWW: http://mirageiv.berlios.de/
+Author: Scott Horowitz <stonecrest@gmail.com>
