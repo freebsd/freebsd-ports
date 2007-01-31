@@ -7685,6 +7685,7 @@ ncplib		ports/net/ncplib
 ncrypt		ports/security/ncrypt
 nctop		ports/sysutils/nctop
 ncurses		ports/devel/ncurses
+ncurses-devel	ports/devel/ncurses-devel
 nd		ports/www/nd
 ndiff		ports/math/ndiff
 ndir		ports/sysutils/ndir
