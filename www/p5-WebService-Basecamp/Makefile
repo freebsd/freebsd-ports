@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-Basecamp
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WebService
@@ -17,6 +17,7 @@ COMMENT=	Perl interface to the Basecamp API webservice
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
