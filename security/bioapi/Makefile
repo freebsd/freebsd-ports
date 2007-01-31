@@ -21,9 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=CFLAGS="${CFLAGS} -O"
 CONFIGURE_ARGS=	--localstatedir=/var/db/ --with-Qt-dir=no
 
-INSTALLS_SHLIB=	yes
-# @cwd in plist vs ldconfig workaround
-LDCONFIG_DIRS=	${PREFIX}/lib
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
