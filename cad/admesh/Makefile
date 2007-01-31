@@ -7,6 +7,7 @@
 
 PORTNAME=	admesh
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.varlog.com/products/admesh/files/
 
@@ -15,8 +16,8 @@ COMMENT=	Program for processing STL triangulated solid meshes
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/admesh %%PORTDOCS%%%%DOCSDIR%%/admesh.doc
-PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
+PLIST_FILES=	bin/admesh
+PORTDOCS=	admesh.doc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/admesh ${PREFIX}/bin/
