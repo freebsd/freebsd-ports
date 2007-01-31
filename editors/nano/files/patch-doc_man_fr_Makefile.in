@@ -3,18 +3,18 @@ $FreeBSD$
 
 --- doc/man/fr/Makefile.in.orig
 +++ doc/man/fr/Makefile.in
-@@ -428,11 +428,11 @@
+@@ -434,11 +434,11 @@
  
  
  nano.1.html: nano.1
--	cat $< | groff -t -mandoc -Thtml > $@
-+	cat $? | groff -t -mandoc -Thtml > $@
+-	groff -t -mandoc -Thtml < $< > $@
++	groff -t -mandoc -Thtml < $? > $@
  nanorc.5.html: nanorc.5
--	cat $< | groff -t -mandoc -Thtml > $@
-+	cat $? | groff -t -mandoc -Thtml > $@
+-	groff -t -mandoc -Thtml < $< > $@
++	groff -t -mandoc -Thtml < $? > $@
  rnano.1.html: rnano.1
--	cat $< | groff -t -mandoc -Thtml > $@
-+	cat $? | groff -t -mandoc -Thtml > $@
+-	groff -t -mandoc -Thtml < $< > $@
++	groff -t -mandoc -Thtml < $? > $@
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
