@@ -10,13 +10,14 @@
 
 PORTNAME=	xmlto
 PORTVERSION=	0.0.18
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end to an XSL toolchain
 
-BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash2 \
+BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 		${GETOPT_CMD}:${PORTSDIR}/misc/getopt \
 		xmllint:${PORTSDIR}/textproc/libxml2 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
