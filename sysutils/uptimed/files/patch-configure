@@ -1,5 +1,5 @@
---- configure.orig	Sun Jun 20 13:45:58 2004
-+++ configure	Wed Aug 11 19:50:00 2004
+--- configure-src	Tue Jan 30 07:10:52 2007
++++ configure	Tue Jan 30 07:13:01 2007
 @@ -157,9 +157,9 @@
  
  
@@ -12,3 +12,39 @@
  
  if expr a : '\(a\)' >/dev/null 2>&1; then
    as_expr=expr
+@@ -6568,7 +6568,7 @@
+ 
+ freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -10099,7 +10099,7 @@
+ 
+ freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -13063,7 +13063,7 @@
+ 
+ freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -15326,7 +15326,7 @@
+ 
+ freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
