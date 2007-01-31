@@ -10,7 +10,7 @@ DISTVERSION=	6-te-0.01-2
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	prudhvikrishna@gmail.com
 COMMENT=	Aspell Telugu dictionary
 
 DICT=	 	te
