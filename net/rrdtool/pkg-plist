@@ -15,6 +15,7 @@ include/rrd.h
 %%EXAMPLESDIR%%/cgi-demo.cgi
 %%EXAMPLESDIR%%/minmax.pl
 %%EXAMPLESDIR%%/piped-demo.pl
+%%EXAMPLESDIR%%/perftest.pl
 %%EXAMPLESDIR%%/shared-demo.pl
 %%EXAMPLESDIR%%/stripes.pl
 %%PORTDOCS%%%%DOCSDIR%%/html/RRDp.html
@@ -37,6 +38,7 @@ include/rrd.h
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdgraph_rpn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdlast.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rrdlastupdate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdresize.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdrestore.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdthreads.html
@@ -79,6 +81,8 @@ include/rrd.h
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdinfo.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlast.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlast.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/rrdlastupdate.pod
+%%PORTDOCS%%%%DOCSDIR%%/txt/rrdlastupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdresize.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdresize.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdrestore.pod

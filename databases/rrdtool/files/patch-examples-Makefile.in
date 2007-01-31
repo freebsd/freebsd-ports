@@ -1,11 +1,11 @@
---- examples/Makefile.in.orig	Mon Jul 25 18:14:50 2005
-+++ examples/Makefile.in	Wed Jul 27 13:13:02 2005
-@@ -217,7 +217,7 @@
- EXTRA_DIST = cgi-demo.cgi.in piped-demo.pl.in shared-demo.pl.in \
- 	stripes.pl.in bigtops.pl.in minmax.pl.in 4charts.pl.in
- 
+--- examples/Makefile.in.orig	Wed Jan 31 17:03:21 2007
++++ examples/Makefile.in	Wed Jan 31 17:03:08 2007
+@@ -220,7 +220,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ EXTRA_DIST = cgi-demo.cgi.in
 -examplesdir = $(pkgdatadir)/examples
 +examplesdir = $(datadir)/examples/rrdtool
  examples_SCRIPTS = cgi-demo.cgi piped-demo.pl shared-demo.pl \
- 	stripes.pl bigtops.pl minmax.pl 4charts.pl
+ 	stripes.pl bigtops.pl minmax.pl 4charts.pl perftest.pl
  

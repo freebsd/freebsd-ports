@@ -1,13 +1,13 @@
---- bindings/Makefile.in.orig	Fri Jun 17 13:07:13 2005
-+++ bindings/Makefile.in	Fri Jun 17 15:44:27 2005
-@@ -525,8 +525,8 @@
- all-local:  @COMP_PERL@
+--- bindings/Makefile.in.orig	Wed Jan 31 17:01:34 2007
++++ bindings/Makefile.in	Wed Jan 31 17:01:52 2007
+@@ -539,8 +539,8 @@
+ all-local:  @COMP_PERL@ @COMP_RUBY@
  
  install-data-local:
 -	test -f perl-piped/Makefile && cd perl-piped && $(MAKE) install || true
 -	test -f perl-shared/Makefile && cd perl-shared && $(MAKE) install || true
 +	test -f perl-piped/Makefile && cd perl-piped && $(MAKE) pure_install || true
 +	test -f perl-shared/Makefile && cd perl-shared && $(MAKE) pure_install || true
+ 	test -f ruby/Makefile && cd ruby && $(MAKE) EPREFIX=$(exec_prefix) $(RUBY_MAKE_OPTIONS) install || true
  
- # rules for building the perl module
- perl_piped: perl-piped/Makefile
+ # rules for buildung the ruby module
