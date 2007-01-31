@@ -1,19 +1,33 @@
-# New ports collection makefile for:	ncurses
-# Date created:				23 September 1997
-# Whom:					Andrey Zakhvatov
+# New ports collection makefile for:	ncurses-devel
+# Date created:				Jan 28 2006
+# Whom:					Rong-En Fan <rafan@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ncurses
-PORTVERSION=	5.6
-PORTREVISION=	1
+PORTVERSION=	${RELEASE}.${PATCHDATE}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${RELEASE}
+
+PATCH_SITES=	ftp://invisible-island.net/ncurses/${RELEASE}/
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	Library for terminal-independent, full-screen output
+COMMENT=	Library for terminal-independent, full-screen output (development version)
+
+CONFLICTS=	ncurses-[0-9]*
+
+PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127
+
+RELEASE=	5.6
+
+.for i in ${PATCHES}
+PATCHFILES+=	${PORTNAME}-${RELEASE}-${i}.patch.gz
+PATCHDATE=	${i}
+.endfor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
@@ -45,7 +59,7 @@ CONFIGURE_WRKSRC=	${NOWIDEC_WRKSRC}
 BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
 INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+PLIST_SUB+=	PORTVERSION=${RELEASE} \
 		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,} \
 		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,}
 
@@ -122,6 +136,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
+	@${REINPLACE_CMD} -e 's,[^*]termlib\*),*termlib*),' ${WRKSRC}/configure
 
 post-configure:
 .if !defined(WITHOUT_WIDEC)
