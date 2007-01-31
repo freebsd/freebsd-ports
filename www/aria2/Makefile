@@ -9,6 +9,7 @@ PORTNAME=	aria2
 DISTVERSION=	0.10.0+1
 CATEGORIES=	www
 MASTER_SITES=	SFE
+DIST_SUBDIR=	rerolled
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
@@ -36,8 +37,5 @@ MAN1=		aria2c.1
 .if ${OSVERSION} < 500000
 BROKEN=	Does not build on 4.x
 .endif
-
-post-extract:
-	@${TOUCH} -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.ac
 
 .include <bsd.port.post.mk>
