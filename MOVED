@@ -2741,3 +2741,4 @@ lang/python21||2007-01-26|Has expired: Version branch long since retired
 lang/python22||2007-01-26|Has expired: Version branch long since retired
 audio/lopster|net-p2p/lopster|2007-01-28|Moved to better category
 net/p5-Spread||2007-01-29|Has expired: Spread comes with its own Perl library
+lang/glade-gpl||2007-01-31|Removed
