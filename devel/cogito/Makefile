@@ -7,7 +7,7 @@
 
 PORTNAME=	cogito
 PORTVERSION=	0.17.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/cogito/ \
 		http://www.uk.kernel.org/pub/software/scm/cogito/ \
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
-		bash:${PORTSDIR}/shells/bash2 \
+		bash:${PORTSDIR}/shells/bash \
 		rsync:${PORTSDIR}/net/rsync
 
 USE_BZIP2=	yes
