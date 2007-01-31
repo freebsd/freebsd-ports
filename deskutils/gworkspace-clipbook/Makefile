@@ -7,7 +7,7 @@
 
 PORTNAME=	gworkspace
 PORTVERSION=	0.8.3
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 PKGNAMESUFFIX=	-clipbook${PKGNAMESUFFIX2}
 

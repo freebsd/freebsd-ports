@@ -7,7 +7,7 @@
 
 PORTNAME=	pixen
 PORTVERSION=	0.1
-CATEGORIES=	graphics
+CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	Pixen-${PORTVERSION}
 

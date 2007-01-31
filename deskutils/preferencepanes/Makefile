@@ -7,7 +7,7 @@
 
 PORTNAME=	preferencepanes
 PORTVERSION=	1.0.1
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/system-preferences/
 DISTNAME=	systempreferences-${PORTVERSION}
 

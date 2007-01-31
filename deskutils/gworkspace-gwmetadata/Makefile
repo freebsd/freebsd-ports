@@ -7,7 +7,7 @@
 
 PORTNAME=	gworkspace
 PORTVERSION=	0.8.4
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 PKGNAMESUFFIX=	-gwmetadata${PKGNAMESUFFIX2}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	preview
 PORTVERSION=	0.8.5
-CATEGORIES=	graphics
+CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Preview-${PORTVERSION}

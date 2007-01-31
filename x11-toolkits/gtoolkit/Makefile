@@ -8,7 +8,7 @@
 PORTNAME=	gtoolkit
 PORTVERSION=	0.9.5
 PORTREVISION=	3
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 
 MAINTAINER=	dinoex@FreeBSD.org

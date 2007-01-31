@@ -7,7 +7,7 @@
 
 PORTNAME=	wizardkit
 PORTVERSION=	0.1
-CATEGORIES=	devel
+CATEGORIES=	devel gnustep
 MASTER_SITES=	http://download.gna.org/pmanager/0.2/
 DISTNAME=	WizardKit-${PORTVERSION}
 

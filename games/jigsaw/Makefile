@@ -7,7 +7,7 @@
 
 PORTNAME=	gpuzzle
 PORTVERSION=	0.2
-CATEGORIES=	games
+CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GPuzzle2/
 DISTNAME=	GPuzzle2
 EXTRACT_SUFX=	.tgz

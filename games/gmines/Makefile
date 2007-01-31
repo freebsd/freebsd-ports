@@ -7,7 +7,7 @@
 
 PORTNAME=	gmines
 PORTVERSION=	0.1
-CATEGORIES=	games
+CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GMines/
 DISTNAME=	GMines
 EXTRACT_SUFX=	.tgz

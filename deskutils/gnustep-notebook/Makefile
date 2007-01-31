@@ -7,7 +7,7 @@
 
 PORTNAME=	notebook
 PORTVERSION=	0.3
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://notebook.cowgar.com/NoteBook/releases/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	NoteBook-${PORTVERSION}

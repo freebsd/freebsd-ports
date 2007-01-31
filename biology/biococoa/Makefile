@@ -7,7 +7,7 @@
 
 PORTNAME=	biococoa
 PORTVERSION=	1.6.0
-CATEGORIES=	biology
+CATEGORIES=	biology gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/b/biococoa.app
 DISTNAME=	biococoa.app_${PORTVERSION}.orig

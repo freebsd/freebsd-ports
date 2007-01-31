@@ -7,7 +7,7 @@
 
 PORTNAME=	jishyo
 PORTVERSION=	0.1
-CATEGORIES=	japanese
+CATEGORIES=	japanese gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Jishyo-${PORTVERSION}

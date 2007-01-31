@@ -7,7 +7,7 @@
 
 PORTNAME=	stepulator
 PORTVERSION=	1.0
-CATEGORIES=	math
+CATEGORIES=	math gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/stepulator/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-gs-${PORTVERSION}

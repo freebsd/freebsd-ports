@@ -7,7 +7,7 @@
 
 PORTNAME=	vindaloo
 PORTVERSION=	0.2
-CATEGORIES=	graphics
+CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/Vindaloo/
 DISTNAME=	Vindaloo-${PORTVERSION}
 

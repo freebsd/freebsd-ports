@@ -7,7 +7,7 @@
 
 PORTNAME=	gspdf
 PORTVERSION=	0.1
-CATEGORIES=	print
+CATEGORIES=	print gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/gspdf/
 
 MAINTAINER=	dinoex@FreeBSD.org

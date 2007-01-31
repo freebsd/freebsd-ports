@@ -7,7 +7,7 @@
 
 PORTNAME=	duncan
 PORTVERSION=	0.1
-CATEGORIES=	textproc
+CATEGORIES=	textproc gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Duncan-${PORTVERSION}
