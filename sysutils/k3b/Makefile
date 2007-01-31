@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A CD/DVD recording GUI for KDE
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		cdrdao:${PORTSDIR}/sysutils/cdrdao
+RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		dvdcss:${PORTSDIR}/multimedia/libdvdcss \
 		samplerate:${PORTSDIR}/audio/libsamplerate
@@ -25,6 +24,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-k3bsetup=no --without-resmgr --without-hal
 USE_GMAKE=	yes
+USE_CDRTOOLS=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 USE_KDELIBS_VER=	3

@@ -17,13 +17,13 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${SITE_PERL}/${PERL_ARCH}/Ogg/Vorbis/Header.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_CDRTOOLS=	yes
 NO_BUILD=	yes
 
 MAN1=		mp3burn.1

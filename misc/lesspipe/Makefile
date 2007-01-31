@@ -27,8 +27,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		dvi2tty:${PORTSDIR}/print/dvi2tty \
 		pstotext:${PORTSDIR}/print/pstotext \
 		mp3info:${PORTSDIR}/audio/mp3info \
-		isoinfo:${PORTSDIR}/sysutils/cdrtools \
 		cabextract:${PORTSDIR}/archivers/cabextract
+USE_CDRTOOLS=	yes
 .endif
 
 USE_PERL5=	yes

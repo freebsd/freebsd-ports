@@ -18,8 +18,8 @@ COMMENT?=	Hardware Abstraction Layer for simplifying device access
 .if !defined(HAL_SLAVE)
 LIB_DEPENDS=	polkit.0:${PORTSDIR}/sysutils/policykit \
 		volume_id.0:${PORTSDIR}/devel/libvolume_id
-RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
-		isoinfo:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
+USE_CDRTOOLS=	yes
 .endif
 
 USE_BZIP2=	yes

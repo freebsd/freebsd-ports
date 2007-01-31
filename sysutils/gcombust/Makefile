@@ -14,13 +14,13 @@ MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 MAINTAINER=	mcdouga9@msu.edu
 COMMENT=	A GTK+ frontend for mkisofs and cdrecord
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		cdlabelgen:${PORTSDIR}/print/cdlabelgen
+RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12 gnomehier
+USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

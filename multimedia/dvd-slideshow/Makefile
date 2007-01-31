@@ -20,11 +20,11 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		sox:${PORTSDIR}/audio/sox \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		seq2:${PORTSDIR}/misc/seq2 \
 		${X11BASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf
 
 NO_BUILD=	yes
+USE_CDRTOOLS=	yes
 
 OPTIONS=	DVDRWTOOLS "Needed to record/burn DVD" off \
 		LAME "Optional support for audio" off \

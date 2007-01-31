@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack \
 		desktopfileutils
+USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -40,10 +41,7 @@ OPTIONS=	DVD "Enable DVD support" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CJK)
-RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk
 WITHOUT_DVD=	yes
-.else
-RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 .endif
 
 .if !defined(WITHOUT_DVD)

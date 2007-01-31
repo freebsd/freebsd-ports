@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-cdpar
 .endif
 
 .if defined(WITH_CDDA2WAV)
-RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
+USE_CDRTOOLS=	yes
 .endif
 
 .if defined(WITH_BLADEENC)
