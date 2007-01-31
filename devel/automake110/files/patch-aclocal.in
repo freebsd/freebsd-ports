@@ -15,5 +15,5 @@
 @@ -650,3 +650,3 @@
  
 -  my $traces = ($ENV{AUTOM4TE} || 'autom4te');
-+  my $traces = ($ENV{AUTOM4TE} || 'autom4te259');
++  my $traces = ($ENV{AUTOM4TE} || 'autom4te261');
    $traces .= " --language Autoconf-without-aclocal-m4 ";
