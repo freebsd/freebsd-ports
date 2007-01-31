@@ -7,7 +7,7 @@
 
 PORTNAME?=	ipw-firmware
 PORTVERSION=	${FWVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/ipw
@@ -29,13 +29,12 @@ KMODDIR=	/boot/modules
 KMODVERSION=	${FWVERSION:C/^(...)$/\1.0/:S/.//g}
 PLIST_SUB=	DRIVERNAME="${DRIVERNAME}" \
 		KMODDIR="${KMODDIR}"
-MAKE_ENV=	KMODDIR="${KMODDIR}"
 CFLAGS+=	-D_KERNEL
 
 NO_PACKAGE=	"this is a modified version of a restricted firmware"
 
 MIN6OSVERSION?=	999999
-MIN7OSVERSION?=	999999
+MIN7OSVERSION?=	700015
 
 .include <bsd.port.pre.mk>
 
@@ -56,12 +55,12 @@ post-patch:
 
 do-build:
 .for i in ${FIRMWARES}
-	@cd ${WRKSRC}/${i:C/.*://}; make all ${MAKE_ENV}
+	@cd ${WRKSRC}/${i:C/.*://}; ${SETENV} KMODDIR="${KMODDIR}" make all
 .endfor
 
 do-install:
 .for i in ${FIRMWARES}
-	@cd ${WRKSRC}/${i:C/.*://}; make install ${MAKE_ENV}
+	@cd ${WRKSRC}/${i:C/.*://}; ${SETENV} KMODDIR="${KMODDIR}" make install
 .endfor
 
 .include <bsd.port.post.mk>
