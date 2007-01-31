@@ -7142,6 +7142,7 @@ mipsel-linux-binutils	ports/devel/mipsel-linux-binutils
 mipsel-linux-gcc	ports/devel/mipsel-linux-gcc
 mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
 miracl		ports/math/miracl
+mirage		ports/graphics/mirage
 mird		ports/databases/mird
 miredo		ports/net/miredo
 mirmon		ports/misc/mirmon
