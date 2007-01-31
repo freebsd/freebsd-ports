@@ -42,7 +42,7 @@ USE_CDRTOOLS=	yes
 RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		normalize:${PORTSDIR}/audio/normalize \
-		bash:${PORTSDIR}/shells/bash2
+		bash:${PORTSDIR}/shells/bash
 PLIST_FILES+=	bin/prokburn
 .endif
 
