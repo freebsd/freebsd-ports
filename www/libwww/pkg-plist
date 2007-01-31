@@ -222,6 +222,10 @@ lib/libwwwnews.a
 lib/libwwwnews.la
 lib/libwwwnews.so
 lib/libwwwnews.so.1
+lib/libwwwssl.a
+lib/libwwwssl.la
+lib/libwwwssl.so
+lib/libwwwssl.so.1
 lib/libwwwstream.a
 lib/libwwwstream.la
 lib/libwwwstream.so
