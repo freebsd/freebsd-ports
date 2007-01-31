@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	muparser
-PORTVERSION=	1.25
+PORTVERSION=	1.27
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+DISTNAME=	${PORTNAME}_v127
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Mathematical expressions parser library written in C++
@@ -19,14 +18,15 @@ COMMENT=	Mathematical expressions parser library written in C++
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS+=--enable-samples=no
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-WRKSRC=	${WRKDIR}/muParser
+WRKSRC=	${WRKDIR}/muparser
 
 # taken from audio/taglib
 post-patch:
-	@${REINPLACE_CMD} -e "s#\$$(libdir)/pkgconfig#${LOCALBASE}/libdata/pkgconfig#g" \
+	@${REINPLACE_CMD} -e "s#\$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#g" \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E 's,^(CXXFLAGS|LDFLAGS) = ,\1 ?= ,g' \
 		${WRKSRC}/Makefile.in
