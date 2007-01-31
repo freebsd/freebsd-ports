@@ -47,12 +47,6 @@ PLIST_SUB+=	AGENT="@comment "
 .else
 USE_RC_SUBR=	exilog.sh
 PLIST_SUB+=	AGENT=""
-.if (${OSVERSION} >= 700007 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
-RCSCRIPT=	exilog
-.else
-RCSCRIPT=	exilog.sh
-.endif
-PLIST_SUB+=	RCSCRIPT=${RCSCRIPT}
 .endif
 
 PLIST_SUB+=	EXILOGDIR="${EXILOGDIR:S,^${PREFIX}/,,}"
