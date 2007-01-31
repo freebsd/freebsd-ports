@@ -13,8 +13,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 mail and news client
 
-BROKEN=		Does not compile
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_WX=		2.6+
