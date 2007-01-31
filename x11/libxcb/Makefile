@@ -7,6 +7,7 @@
 
 PORTNAME=	libxcb
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -32,12 +33,10 @@ CONFIGURE_ARGS=	--with-check=${LOCALBASE}
 .for f in XPROTO_CFLAGS XPROTO_LIBS XDMCP_CFLAGS XDMCP_LIBS NEEDED_CFLAGS NEEDED_LIBS
 CONFIGURE_ARGS+=${f}="${${f}}"
 .endfor
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="`pkg-config --libs pthread-stubs`"
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
 	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
-
-PTHREAD_STUBS_LIBS!=	pkg-config --libs pthread-stubs
 
 NEEDED_CFLAGS=	-I${X11BASE}/include
 NEEDED_LIBS=	-L${X11BASE}/lib -lXau $(PTHREAD_STUBS_LIBS)
