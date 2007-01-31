@@ -17,10 +17,10 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=
-#PATCHLEVEL=	.4
+PATCHFILES=	ping_php_version4_snmpgetnext.patch \
+		tree_console_missing_hosts.patch
+PATCHLEVEL=	.2
 SITEDISTVERSION=	${PORTVERSION:S/${PATCHLEVEL}$//}
-#SITEDISTVERSION=	${PORTVERSION}
 
 PATCH_DIST_STRIP=-p1
 
