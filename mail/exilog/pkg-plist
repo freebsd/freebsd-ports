@@ -1,4 +1,4 @@
-%%AGENT%%@stopdaemon
+%%AGENT%%@stopdaemon exilog
 %%AGENT%%sbin/exilog_agent.pl
 sbin/exilog_cleanup.pl
 %%EXILOGDIR%%/exilog_cgi.pl
