@@ -1,0 +1,11 @@
+--- includes/xml/filesystems.php.orig
++++ includes/xml/filesystems.php
+@@ -85,7 +85,7 @@
+ 			. "    <td align=\"" . $textdir['right'] . "\" valign=\"top\"><font size=\"-1\"><b>" . $text['size'] . "</b></font></td>\n  </tr>\n";
+ 	for( $i = 1, $max = sizeof( $XPath->getDataParts( "/phpsysinfo/FileSystem" ) ); $i < $max; $i++ ) {
+ 		if( $XPath->match( "/phpsysinfo/FileSystem/Mount[" . $i . "]/MountPointID" ) ) {
+-			if( ! $XPath->match( "/phpsysinfo/FileSystem/Mount[" . $i . "]/Options" ) || ! stristr( $XPath->getData( "/phpsysinfo/FileSystem/Mount[" . $i . "]/Options" ), "bind" ) ) {
++			if( ! $XPath->match( "/phpsysinfo/FileSystem/Mount[" . $i . "]/Options" ) ) {
+ 				if( ! in_array( $XPath->getData( "/phpsysinfo/FileSystem/Mount[" . $i . "]/Device/Name" ), $arrCounteddevlist ) ) {
+ 					$arrSum['size'] += $XPath->getData( "/phpsysinfo/FileSystem/Mount[" . $i . "]/Size" );
+ 					$arrSum['used'] += $XPath->getData( "/phpsysinfo/FileSystem/Mount[" . $i . "]/Used" );
