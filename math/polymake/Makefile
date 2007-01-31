@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	polymake
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/combi/polymake/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-p1.diff
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-install.diff
 
 MAINTAINER=	gawrilow@math.tu-berlin.de
 COMMENT=	A framework for experimental discrete geometry
@@ -32,8 +31,8 @@ PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BROKEN=		requires perl 5.8.0 or newer
+.if ${PERL_LEVEL} < 500801
+BROKEN=		requires perl 5.8.1 or newer
 .endif
 
 do-configure:
@@ -51,26 +50,14 @@ do-configure:
 	  ${ECHO_CMD} InstallLinks='$${PREFIX}/bin'; \
 	  ${ECHO_CMD} PerlExe='${PERL}'; \
 	  ${ECHO_CMD} Arch=; \
+	  ${ECHO_CMD} ProcessDep=none; \
 	} | ${GMAKE} configure
 
 pre-install:
 	${RM} -f `find ${WRKSRC} -name '*.orig'`
-	${CAT} ${.CURDIR}/pkg-plist > ${PLIST}
-	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/.packlist >> ${PLIST}
-	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/Ext.bs >> ${PLIST}
-	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/Ext.so >> ${PLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext >> ${PLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly >> ${PLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto >> ${PLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'` >> ${PLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%% >> ${PLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx >> ${PLIST}
-	${ECHO_CMD} @dirrm libexec/polymake >> ${PLIST}
+	${SED} -e s,%%PERL_REAL_ARCH%%,`${PERL} -e 'use Config; print $$Config{archname}'`, <${.CURDIR}/pkg-plist > ${PLIST}
 
 post-install:
 	${CP} -p ${PREFIX}/libexec/polymake/Makefile ${PREFIX}/libexec/polymake/Makefile.devel
-
-#PERL_REAL_ARCH!=${PERL} -e 'use Config; print $$Config{archname}'
-#PLIST_SUB=	PERL_REAL_ARCH=${PERL_REAL_ARCH}
 
 .include <bsd.port.post.mk>
