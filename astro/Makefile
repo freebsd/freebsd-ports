@@ -67,6 +67,7 @@
     SUBDIR += sunclock
     SUBDIR += tclgeomap
     SUBDIR += tkgeomap
+    SUBDIR += weatherget
     SUBDIR += weatherspect
     SUBDIR += wmglobe
     SUBDIR += wmjupiter
