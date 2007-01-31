@@ -8,5 +8,5 @@
 @@ -4440,3 +4440,3 @@
  
 -  my $traces = ($ENV{AUTOCONF} || 'autoconf') . " ";
-+  my $traces = ($ENV{AUTOCONF} || 'autoconf259') . " ";
++  my $traces = ($ENV{AUTOCONF} || 'autoconf261') . " ";
  
