@@ -32,7 +32,7 @@ PLIST_SUB=	SGML="@comment "
 .endif
 
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' ${WRKSRC}/configure
