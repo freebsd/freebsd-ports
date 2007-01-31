@@ -721,6 +721,7 @@
     SUBDIR += ncc
     SUBDIR += ncnf
     SUBDIR += ncurses
+    SUBDIR += ncurses-devel
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
