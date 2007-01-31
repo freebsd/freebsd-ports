@@ -32,6 +32,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 # If net/libnids has been compiled with the GLIB2 option then this port needs
 # the corresponding library and additional linker flags.
+LIBNIDS_GLIB2?=
 .if exists(${LOCALBASE}/lib/libnids.a)
 LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init
 .endif
