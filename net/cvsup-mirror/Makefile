@@ -30,11 +30,7 @@ distrib=${base}/sup.client/distrib
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
-SUB_LIST+=	CVSUPD="cvsupd"
-.else
-SUB_LIST+=	CVSUPD="cvsupd.sh"
-.endif
+SUB_LIST+=	CVSUPD="cvsupd${RC_SUBR_SUFFIX}"
 
 do-extract:
 	@test -d ${WRKSRC} || ${MKDIR} ${WRKSRC}
