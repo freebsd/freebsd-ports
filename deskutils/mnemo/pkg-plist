@@ -55,6 +55,7 @@
 %%MNEMODIR%%/locale/ru_RU/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sk_SK/help.xml
+%%MNEMODIR%%/locale/sl_SI/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/tr_TR/help.xml
 %%MNEMODIR%%/locale/zh_CN/LC_MESSAGES/mnemo.mo
@@ -84,6 +85,7 @@
 %%MNEMODIR%%/po/pt_PT.po
 %%MNEMODIR%%/po/ro_RO.po
 %%MNEMODIR%%/po/ru_RU.po
+%%MNEMODIR%%/po/sl_SI.po
 %%MNEMODIR%%/po/sk_SK.po
 %%MNEMODIR%%/po/sv_SE.po
 %%MNEMODIR%%/po/zh_CN.po
@@ -93,6 +95,7 @@
 %%MNEMODIR%%/scripts/sql/mnemo.mssql.sql
 %%MNEMODIR%%/scripts/sql/mnemo.oci8.sql
 %%MNEMODIR%%/scripts/sql/mnemo.sql
+%%MNEMODIR%%/scripts/sql/mnemo.xml
 %%MNEMODIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%MNEMODIR%%/scripts/upgrades/1.1_to_2.0.pgsq.sql
 %%MNEMODIR%%/scripts/upgrades/2004-12-21_add_memo_uid.sql
@@ -109,7 +112,6 @@
 %%MNEMODIR%%/templates/menu.inc
 %%MNEMODIR%%/templates/notepads/notepads.inc
 %%MNEMODIR%%/templates/prefs/notepadselect.inc
-%%MNEMODIR%%/templates/prefs/showsummaryselect.inc
 %%MNEMODIR%%/templates/search/search.inc
 %%MNEMODIR%%/templates/view/memo.inc
 %%MNEMODIR%%/themes/graphics/add.png
@@ -143,6 +145,8 @@
 @dirrm %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/sv_SE
 @dirrm %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/sl_SI
 @dirrm %%MNEMODIR%%/locale/sk_SK
 @dirrm %%MNEMODIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/ru_RU
