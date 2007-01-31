@@ -9,8 +9,8 @@
 -DESTDIR=/usr/local/bin
 +CC?= cc
 +CFLAGS?= -O -pipe -Wall
-+LNETINC= -I${LOCALBASE}/include
-+LNETLIB= -L${LOCALBASE}/lib
++LNETINC= `libnet-config --cflags`
++LNETLIB= `libnet-config --libs`
 +
 +BINDIR= ${PREFIX}/sbin
 +MANDIR= ${PREFIX}/man
@@ -22,7 +22,7 @@
 +	$(CC) $(CFLAGS) `libnet-config --defines` $(LNETINC) \
  		-o tcptraceroute tcptraceroute.c \
 -		`libnet-config --libs` -lpcap
-+		$(LNETLIB) `libnet-config --libs` -lpcap
++		$(LNETLIB) -lpcap
  
  static:
  	$(MAKE) tcptraceroute CFLAGS="$(CFLAGS) -static"

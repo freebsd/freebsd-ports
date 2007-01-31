@@ -7,7 +7,7 @@
 
 PORTNAME=	xipdump
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.lse.epita.fr/twiki/pub/Projects/XipDump/
 EXTRACT_SUFX=	.tgz
@@ -15,19 +15,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Displays ip packets using X window
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 USE_X_PREFIX=	yes
-LIBNET_CONFIG=	${LOCALBASE}/bin/libnet-config
-CFLAGS+=	`${LIBNET_CONFIG} --cflags` `${LIBNET_CONFIG} --defines`
-CFLAGS+=	-I${LOCALBASE}/include
-LIBS=		`${LIBNET_CONFIG} --libs`
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${LIBS}"
+CONFIGURE_ENV=	LDFLAGS="`${LIBNET_CONFIG} --libs`"
+CFLAGS+=	`${LIBNET_CONFIG} --cflags` `${LIBNET_CONFIG} --defines` \
+		-I/usr/include
 
 PLIST=	${WRKDIR}/PLIST
 
 MAN8=	xipdump.8
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 post-build:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}

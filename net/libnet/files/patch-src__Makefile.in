@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	Thu Mar 11 15:50:20 2004
++++ ./src/Makefile.in	Tue Sep 26 15:19:23 2006
+@@ -43,7 +43,7 @@
+ sysconfdir = @sysconfdir@
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
+-libdir = @libdir@
++libdir = @libdir@/libnet11
+ infodir = @infodir@
+ mandir = @mandir@
+ includedir = @includedir@

@@ -7,31 +7,60 @@
 
 PORTNAME=	dsniff
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10 \
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
 
-BROKEN=		Depends on incompatible versions of libnet
-
 GNU_CONFIGURE=	yes
+WANT_GNOME=	yes
 
-MAN8=	arpspoof.8 dsniff.8 macof.8 mailsnarf.8 tcpkill.8 \
-	tcpnice.8 urlsnarf.8 filesnarf.8 dnsspoof.8 msgsnarf.8 \
-	sshmitm.8 webmitm.8
+OPTIONS=	X11 "Enable X11 support" on
+
+MAN8=		arpspoof.8 dsniff.8 macof.8 mailsnarf.8 tcpkill.8 \
+		tcpnice.8 urlsnarf.8 filesnarf.8 dnsspoof.8 msgsnarf.8 \
+		sshmitm.8 webmitm.8
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+
+.include <bsd.port.pre.mk>
+
+# If net/libnids has been compiled with the GLIB2 option then this port needs
+# the corresponding library and additional linker flags.
+.if exists(${LOCALBASE}/lib/libnids.a)
+LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init
+.endif
+
+.if !empty(LIBNIDS_GLIB2)
+USE_GNOME+=	glib20
+.endif
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11=''
-MAN8+=	webspy.8
+MAN8+=		webspy.8
 .else
-CONFIGURE_ARGS+=	--without-x
+CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11='@comment '
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -Ee \
+		's|libnet-config|${LIBNET_CONFIG:T}|; \
+		 s|test -f \$${prefix}/include/libnet.h|${TRUE}|; \
+		 s|(LNETINC=).*|\1"`${LIBNET_CONFIG} --cflags`"|; \
+		 s|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+.if !empty(LIBNIDS_GLIB2)
+pre-configure:
+	@${REINPLACE_CMD} -e 's|@NIDSLIB@|& `pkg-config --libs gthread-2.0`|' \
+		${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.post.mk>

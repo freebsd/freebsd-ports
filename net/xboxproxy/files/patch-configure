@@ -1,0 +1,32 @@
+--- ./configure.orig	Thu Oct  6 23:51:26 2005
++++ ./configure	Wed Sep 27 17:29:04 2006
+@@ -2867,7 +2867,7 @@
+ 
+ # Checks for libraries.
+ LIBNET_LDFLAGS="`libnet-config --libs`"
+-LIBNET_CFLAGS="`libnet-config --defines` -D__GLIBC__"
++LIBNET_CFLAGS="`libnet-config --defines` `libnet-config --cflags` -D__GLIBC__"
+ 
+ # Checks for header files.
+ 
+@@ -5111,19 +5111,7 @@
+ 					as_ac_File=`echo "ac_cv_file_${dirname}/lib/libnet.a" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for ${dirname}/lib/libnet.a" >&5
+ echo $ECHO_N "checking for ${dirname}/lib/libnet.a... $ECHO_C" >&6
+-if eval "test \"\${$as_ac_File+set}\" = set"; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  test "$cross_compiling" = yes &&
+-  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+-echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-if test -r "${dirname}/lib/libnet.a"; then
+-  eval "$as_ac_File=yes"
+-else
+-  eval "$as_ac_File=no"
+-fi
+-fi
++eval "$as_ac_File=yes"
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_File'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_File'}'`" >&6
+ if test `eval echo '${'$as_ac_File'}'` = yes; then

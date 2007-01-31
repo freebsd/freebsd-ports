@@ -8,7 +8,7 @@
 
 PORTNAME=	gspoof
 PORTVERSION=	3.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,15 +16,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console/GTK+ TCP/IP Packets Forger
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libnet-prefix=${LOCALBASE}
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wall -O2|$${CFLAGS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-Wall -O2|$${CFLAGS}|g; \
+		 s|libnet-config|${LIBNET_CONFIG}|' \
+		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|-Wall -O2|@CFLAGS@|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g ; \
 		 s|/usr/share|${X11BASE}/share|g' ${WRKSRC}/gtk.c

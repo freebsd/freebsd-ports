@@ -7,6 +7,7 @@
 
 PORTNAME=	netwib
 PORTVERSION=	5.35.0
+PORTREVISION=	1
 CATEGORIES=	net devel ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwib/download/v5/ \
@@ -16,7 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_htm
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Netwib network programming library
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
@@ -32,10 +33,20 @@ MAN3+=		netwib${SHORTPORTVERSION}.3 netwib${SHORTPORTVERSION}_dat.3 \
 
 PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+
+post-patch:
+	@${REINPLACE_CMD} -Ee \
+		's|libnet-config|${LIBNET_CONFIG}|; \
+		 s|-lnet|`${LIBNET_CONFIG} --libs`|; \
+		 s|^(gccIncLnet=).*|\1"`${LIBNET_CONFIG} --cflags`"|' \
+		 ${WRKSRC}/genemake
+
 do-configure:
 		@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
 		-e 's|%%CFLAGS%%|${CFLAGS}|' \
+		-e 's|gcc|${CC}|' \
 		${WRKSRC}/config.dat
 		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 

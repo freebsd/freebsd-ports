@@ -1,0 +1,13 @@
+--- libnet-config.in.orig	Tue Dec 12 15:33:42 2000
++++ libnet-config.in	Mon Sep 25 18:02:39 2006
+@@ -8,8 +8,8 @@
+ #   @configure_input@
+ 
+ libnet_defines="@LIBNET_CONFIG_DEFINES@"
+-libnet_cflags="@LIBNET_CONFIG_CFLAGS@"
+-libnet_libs="@LIBNET_CONFIG_LIBS@ -lnet"
++libnet_cflags="@LIBNET_CONFIG_CFLAGS@ -I@prefix@/include/libnet10"
++libnet_libs="@LIBNET_CONFIG_LIBS@ -L@prefix@/lib/libnet10 -lnet"
+ 
+ usage()
+ {

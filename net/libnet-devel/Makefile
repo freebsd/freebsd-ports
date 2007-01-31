@@ -7,43 +7,48 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.3.r1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	${SHORT_VER}-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r1$//}-RC-01
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for creating IP packets (development version)
 
-CONFLICTS=	libnet*-1.*
-
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2007-01-04
-
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${SHORT_VER}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${SHORT_VER}
 
 DOCS=		README doc/BUGS doc/CHANGELOG doc/CONTRIB doc/COPYING \
 		doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING doc/PORTED \
 		doc/RAWSOCKET_NON_SEQUITUR doc/TODO
 EXAMPLES=	sample/*.c
 
+SHORT_VER=	113
+
 .include <bsd.port.pre.mk>
 
 post-patch:
 .if ${OSVERSION} < 500000
-	${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|g" \
+	${REINPLACE_CMD} -e "s|stdint\.h|inttypes.h|g" \
 		${WRKSRC}/include/libnet/libnet-types.h
 .else
 	${DO_NADA}
 .endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config \
+		${PREFIX}/bin/libnet${SHORT_VER}-config
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	@cd ${PREFIX}/lib && \
+		${LN} -sf libnet${SHORT_VER}/libnet.so libnet-1.1.3.so.1 && \
+		${LN} -sf libnet-1.1.3.so.1 libnet-1.1.3.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

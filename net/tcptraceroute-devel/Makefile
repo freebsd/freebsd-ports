@@ -7,7 +7,7 @@
 
 PORTNAME=	tcptraceroute
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
 		http://sunpoet.net/distfiles/
@@ -15,9 +15,15 @@ MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A traceroute implementation using TCP packets
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 MAN8=	tcptraceroute.8
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
+		${WRKSRC}/${MAKEFILE}
 
 post-install:
 	@${CHMOD} u+s ${PREFIX}/sbin/tcptraceroute

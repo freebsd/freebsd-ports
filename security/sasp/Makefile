@@ -16,9 +16,12 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	sviat@OpenGEEKS.it
 COMMENT=	A tool that permits to use a gateway whatever IP we have
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 NO_WRKSUBDIR=	yes
+MAKE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
 PLIST_FILES=	sbin/sasp
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.mk>

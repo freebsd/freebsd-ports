@@ -7,14 +7,14 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux-ha.org/download/
 
 MAINTAINER=	scott-ports@tummy.com
 COMMENT=	Subsystem for High-Availability Clustering
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=	--disable-fatal-warnings \
 			--with-initdir=${PREFIX}/etc/rc.d \
 			--localstatedir=/var \
 			--with-group-id=275 --with-ccmuser-id=275
+CONFIGURE_ENV=	CPPFLAGS="`${LIBNET_CONFIG} --cflags`"
 
 SUB_FILES=	pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
@@ -35,6 +36,8 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAN1=		cl_status.1 hb_standby.1 hb_takeover.1
 MAN8=		apphbd.8 heartbeat.8 ldirectord.8 meatclient.8 \
 		stonith.8 supervise-ldirectord-config.8
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +49,11 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|logrotate\.d||" \
 		${WRKSRC}/heartbeat/Makefile.in \
 		${WRKSRC}/ldirectord/Makefile.in
+
+	@${REINPLACE_CMD} -e \
+		's|libnet-config|${LIBNET_CONFIG}|; \
+		 s|-lnet|`${LIBNET_CONFIG} --libs`|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|<sys/\(resource.h\)>|"\1"|' \

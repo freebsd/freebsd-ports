@@ -7,7 +7,7 @@
 
 PORTNAME=	firewalk
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 EXTRACT_SUFX=	.tgz
@@ -16,15 +16,21 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	A remote firewall auditing tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet	\
- 		libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/Firewalk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAN8=		firewalk.8
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/firewalk ${PREFIX}/bin/

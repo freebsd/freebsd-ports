@@ -7,23 +7,25 @@
 
 PORTNAME=	vida
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://vidatapipe.sourceforge.net/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Vida is a multi-datapipe handler
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
-LDFLAGS+=	-pthread -lncurses -lpcap -lnet
+LDFLAGS+=	${PTHREAD_LIBS} -lncurses -lpcap `${LIBNET_CONFIG} --libs`
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+
 do-build:
 	cd ${WRKSRC} && \
-	${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS} vida.c funz.c dnshijacking.c \
-	${LDFLAGS} `libnet-config --defines` -o ${PORTNAME}
+	${CC} `${LIBNET_CONFIG} --defines --cflags` ${CFLAGS} \
+	vida.c funz.c dnshijacking.c ${LDFLAGS} -o ${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

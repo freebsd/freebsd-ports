@@ -8,7 +8,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pylibnet
@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for the libnet packet construction library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.1:${PORTSDIR}/devel/swig11 \
-		libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -27,12 +27,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ARGS=	SWIG=${LOCALBASE}/bin/swig1.1 \
 		LIBNET_INCLUDES=-I${LOCALBASE}/include \
 		PYTHON_INCLUDES=-I${PYTHON_INCLUDEDIR} \
-		CFLAGS="${CFLAGS} `libnet-config --defines` -fPIC" \
-		LIBNET_LIB=${LOCALBASE}/lib/libnet.a \
+		CFLAGS="${CFLAGS} `${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags` -fPIC" \
+		LIBNET_LIB="`${LIBNET_CONFIG} --libs`" \
 		CC=${CC}
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/libnet.py \
 		lib/%%PYTHON_VERSION%%/site-packages/libnetcmodule.so
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 .include <bsd.port.pre.mk>
 

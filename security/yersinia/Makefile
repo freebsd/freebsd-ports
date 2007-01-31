@@ -7,14 +7,14 @@
 
 PORTNAME=	yersinia
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.yersinia.net/download/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 .if !defined(WITHOUT_GTK)
 .if exists(${LOCALBASE}/include/gtk-2.0/gtk/gtk.h)
@@ -30,6 +30,9 @@ CONFIGURE_ARGS+= --disable-gtk
 CONFLICTS=	yersinia-gtk-[0-9]*
 .endif
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.pre.mk>
 
@@ -40,6 +43,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 #NOT_FOR_ARCHS=	ia64 sparc64
 MAN8=		yersinia.8
 PLIST_FILES=	sbin/yersinia
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
+		${WRKSRC}/src/Makefile.in
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/

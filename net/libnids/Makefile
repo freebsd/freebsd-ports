@@ -7,7 +7,7 @@
 
 PORTNAME=	libnids
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,19 +20,23 @@ OPTIONS=	LIBNET "Include code requiring libnet" ON \
 		GLIB2 "Use GLIB2 for multiprocessing support" ON
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
+MAN3=		libnids.3
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_LIBNET)
 .if !defined(WITHOUT_LIBNET10)
-BUILD_DEPENDS+=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 .else
-BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-libnet
@@ -44,7 +48,11 @@ LIB_DEPENDS+=	glib-2.0:${PORTSDIR}/devel/glib20
 CONFIGURE_ARGS+=	--disable-libglib
 .endif
 
-MAN3=		libnids.3
+post-patch:
+	@${REINPLACE_CMD} -Ee \
+		's|(LNET_CFLAGS=).*|\1"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"|; \
+		 s|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
+		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 		${INSTALL_DATA} ${WRKSRC}/src/nids.h ${PREFIX}/include
