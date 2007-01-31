@@ -12,8 +12,8 @@ All ports committers are allowed to commit to this file.
 
 20070118
 AUTHOR: maho@FreeBSD.org
-We'd like to ask all ports mainainers that uses Fortran77(f77 in base)
-to Fortran90/95 (gfortran42, lang/gcc42). Please refer
+We'd like to ask all ports maintainers, who are using Fortran77 (f77 in base),
+to switch to Fortran90/95 (gfortran42, lang/gcc42). Please refer to
 http://people.freebsd.org/~maho/gfortran/gfortran.html
 for details.
 
@@ -1210,7 +1210,7 @@ listed here, and it only starts on January 29, 2004.
 
 Copyright information:
 
-Copyright 2004 FreeBSD Foundation All Rights Reserved.
+Copyright 2004-2007 FreeBSD Foundation All Rights Reserved.
 
 Redistribution, publication, translation and use, with or without
 modification, in full or in part, in any form or format of this
