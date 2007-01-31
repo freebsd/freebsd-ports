@@ -10,7 +10,45 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
-20070118
+20070130:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * DEPENDS variable was removed, please use other *_DEPENDS variables instead.
+
+  * A new pkg-plist keyword is available, @stopdaemon.  It will call forcestop
+    on all rc.subr scripts installed by the port on deinstall, efectively
+    stopping services on deinstall/upgrade.
+
+  * rc.subr script suffix is now available in Makefile as RC_SUBR_SUFFIX.
+
+  * New variable USE_CDRTOOLS was introduced.  It replaced direct dependencies
+    on sysutils/cdrtools port.  It now automatically support switching to
+    cdrtools-cjk port when user specified WITH_CJK.  All ports were converted.
+
+  * USE_DOS2UNIX, infrastructure for converting DOS to UNIX line feeds, was
+    enhanced by a new variable DOS2UNIX_REGEX.  It allows to specify a find
+    -iregex parameter to limit touched files by file extensions.
+
+  * Support for partially translated manpages was added.  For examples of
+    usage, please refer to Porter's Handbook.
+
+  * USE_TCL/USE_TK variables were changed to provide runtime dependency.  New
+    variables USE_TCL_BUILD and USE_TK_BUILD were added.  All unintuitive
+    quirks of these variables were fixed.
+
+  * USE_LDCONFIG was fixed to work properly for ports, that specify @cwd in the
+    pkg-plists.
+
+  * Old bsd.java.mk version 1.0 macros were removed.
+
+  * New category: ports-mgmt
+
+  * New virtual category: gnustep
+
+  * Unused picobsd category was removed.
+
+20070118:
 AUTHOR: maho@FreeBSD.org
 We'd like to ask all ports maintainers, who are using Fortran77 (f77 in base),
 to switch to Fortran90/95 (gfortran42, lang/gcc42). Please refer to

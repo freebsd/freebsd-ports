@@ -109,6 +109,7 @@ USE_TK=		84
 .endif
 
 TK_VER:=	${USE_TK:S/8/8./}
+TCL_VER?=	${TK_VER}
 
 .if defined(USE_TCL) && ${TCL_VER} != ${TK_VER}
 IGNORE=		TCL and TK versions must be equal (${TCL_VER} vs ${TK_VER})
