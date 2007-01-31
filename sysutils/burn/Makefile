@@ -16,9 +16,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep based CD burning program
 
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
-RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
+USE_CDRTOOLS=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes

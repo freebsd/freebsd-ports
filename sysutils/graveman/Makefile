@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd and sox
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng
 
 USE_BZIP2=	yes
@@ -22,6 +21,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_CDRTOOLS=	yes
 USE_GNOME=	libglade2 intlhack gnomehack gnomeprefix
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

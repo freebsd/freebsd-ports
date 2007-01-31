@@ -32,7 +32,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		xmms:${PORTSDIR}/multimedia/xmms \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
-		cdda2wav:${PORTSDIR}/sysutils/cdrtools \
 		gs:${PORTSDIR}/print/ghostscript-gnu \
 		sswf:${PORTSDIR}/graphics/sswf \
 		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
@@ -40,6 +39,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PERL5=	yes
+USE_CDRTOOLS=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 USE_SDL=	yes
