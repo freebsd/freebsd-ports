@@ -66,11 +66,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U}
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
-SUB_LIST+=	RC_SCRIPT=${RC_SCRIPT}
-.else
-SUB_LIST+=	RC_SCRIPT=${RC_SCRIPT}.sh
-.endif
+SUB_LIST+=	RC_SCRIPT=${RC_SCRIPT}${RC_SUBR_SUFFIX}
 
 .if !defined(WITHOUT_EMVALID)
 RUN_DEPENDS+=	${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
