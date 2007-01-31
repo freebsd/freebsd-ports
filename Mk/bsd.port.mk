@@ -270,12 +270,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  package depends on.  "lib" is the name of a shared library.
 #				  make will use "ldconfig -r" to search for the library.
 #				  lib can contain extended regular expressions.
-# DEPENDS		- A list of "dir[:target]" tuples of other ports this
-#				  package depends on being made first.  Use this only for
-#				  things that don't fall into the above four categories.
-#				  If the second field ("target") exists, it will be used
-#				  instead of ${DEPENDS_TARGET}.
-#
 # DEPENDS_TARGET
 #				- The default target to execute when a port is calling a
 #				  dependency.
@@ -292,6 +286,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # usage inside the ports framework, and the latter are reserved for user-
 # settable options.  (Setting USE_* in /etc/make.conf is always wrong).
 #
+# WITH_DEBUG            - If set, debugging flags are added to CFLAGS and the
+#                         binaries don't get stripped by INSTALL_PROGRAM.
+#                         Besides, individual ports might add their specific
+#                         to produce binaries for debugging purposes.
+#                         You can override the debug flags that are passed to
+#                         the compiler by setting DEBUG_FLAGS. It is set to
+#                         "-g" at default.
+#
 # USE_BZIP2		- If set, this port tarballs use bzip2, not gzip, for
 #				  compression.
 # USE_ZIP		- If set, this port distfile uses zip, not tar w/[bg]zip
@@ -299,6 +301,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_DOS2UNIX	- If set to "YES", remove the ^M from all files
 #				  under ${WRKSRC}. If set to a string, remove in all
 #				  files under ${WRKSRC} with one of these names the ^Ms.
+# DOS2UNIX_REGEX
+#				- Limit the ^M removal to files which name matches
+#				  the regular expression.
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_GMAKE		- If set, this port uses gmake.
@@ -486,8 +491,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  scripts are installed in /etc/rc.d.
 # RC_SUBR		- Set to path of rc.subr.
 #				  Default: ${LOCALBASE}/etc/rc.subr.
+# RC_SUBR_SUFFIX
+#				- Contains the suffix of installed rc.subr scripts.
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
+#
+# USE_CDRTOOLS	- If set, this port depends on sysutils/cdrtools, unless
+#				  cdrtools-cjk is present or USE_CDRTOOLS=cjk is set, then
+#				  it depends on sysutils/cdrtools-cjk.
 #
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
@@ -601,6 +612,17 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  example, if your port has "man/man1/foo.1" and
 #				  "man/mann/bar.n", set "MAN1=foo.1" and "MANN=bar.n".
 #				  The available sections chars are "123456789LN".
+# MAN<sect>_<lang>
+#				- If your port does not install all man pages for all 
+#				  languages in MANLANG, language specific pages for 
+#				  a language can be specified with this. For example,
+#				  if the port installs foo.1 in English, Japanese, and
+#				  German, bar.1 in English only, and baz.3 in German 
+#				  only, set
+#					MANLANG=	"" de ja
+#					MAN1=		foo.1
+#					MAN1_EN=	bar.1
+#					MAN3_DE=	baz.3
 # MLINKS		- A list of <source, target> tuples for creating links
 #				  for manpages.  For example, "MLINKS= a.1 b.1 c.3 d.3"
 #				  will do an "ln -sf a.1 b.1" and "ln -sf c.3 d.3" in
@@ -1267,6 +1289,8 @@ WITHOUT_${W}:=	true
 
 .endif
 
+DOS2UNIX_REGEX?=	.*
+
 
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)
@@ -1566,11 +1590,8 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if ${OSVERSION} >= 502123
 X_WINDOW_SYSTEM ?= xorg
-.elif (${OSVERSION} >= 450005 && !defined(XFREE86_VERSION)) || \
-	(defined(XFREE86_VERSION) && ${XFREE86_VERSION} == 4)
-X_WINDOW_SYSTEM ?= xfree86-4
 .else
-X_WINDOW_SYSTEM ?= xfree86-3
+X_WINDOW_SYSTEM ?= xfree86-4
 .endif
 
 # Location of mounted CDROM(s) to search for files
@@ -1614,8 +1635,9 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL} \
 		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
 		DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
 
-PLIST_REINPLACE+=	dirrmtry
+PLIST_REINPLACE+=	dirrmtry stopdaemon
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || true!
+PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1${RC_SUBR_SUFFIX} forcestop 2>/dev/null || true!
 
 .if defined(WITHOUT_CPU_CFLAGS)
 .if defined(_CPUCFLAGS)
@@ -1623,6 +1645,13 @@ PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || 
 CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .endif
 .endif
+.endif
+
+.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+STRIP=	#none
+STRIP_CMD=	#none
+DEBUG_FLAGS?=	-g
+CFLAGS:=		${CFLAGS:N-O*:N-f*} ${DEBUG_FLAGS}
 .endif
 
 .if defined(NOPORTDOCS)
@@ -1757,6 +1786,11 @@ SUB_FILES+=	${USE_RC_SUBR}
 .if defined(USE_RCORDER)
 SUB_FILES+=	${USE_RCORDER}
 .endif
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
+RC_SUBR_SUFFIX?=
+.else
+RC_SUBR_SUFFIX?=	.sh
+.endif
 .endif
 
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
@@ -1873,44 +1907,13 @@ X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic
 X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
 X_MANUALS_PORT=		${PORTSDIR}/x11/XFree86-4-manuals
-.elif defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xfree86-3
-X_IMAKE_PORT=		${PORTSDIR}/x11/XFree86
-X_LIBRARIES_PORT=	${PORTSDIR}/x11/XFree86
-X_CLIENTS_PORT=		${PORTSDIR}/x11/XFree86
-X_SERVER_PORT=		${PORTSDIR}/x11/XFree86
-X_FONTSERVER_PORT=	${PORTSDIR}/x11/XFree86
-X_PRINTSERVER_PORT=	${PORTSDIR}/x11/XFree86
-X_VFBSERVER_PORT=	${PORTSDIR}/x11/XFree86
-X_NESTSERVER_PORT=	${PORTSDIR}/x11/XFree86
-X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11/XFree86
-X_FONTS_MISC_PORT=	${PORTSDIR}/x11/XFree86
-X_FONTS_100DPI_PORT=	${PORTSDIR}/x11/XFree86
-X_FONTS_75DPI_PORT=	${PORTSDIR}/x11/XFree86
-X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11/XFree86
-X_FONTS_TTF_PORT=	${PORTSDIR}/x11/XFree86
-X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11/XFree86
-X_MANUALS_PORT=		${PORTSDIR}/x11/XFree86
 .else
-IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-3', 'xfree86-4', 'xorg'
+IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-4' and 'xorg'
 .endif
 
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
 .endif
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-
-.if defined(USE_XPM)
-LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/graphics/xpm
-.endif
-.if defined(USE_GL)
-LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/mesagl
-.endif
-
-XAWVER=				6
-PKG_IGNORE_DEPENDS?=		'^XFree86-3\.'
-
-.else
 
 .if defined(USE_XPM) || defined(USE_GL)
 USE_XLIB=			yes
@@ -1922,8 +1925,6 @@ XAWVER=				8
 XAWVER=				7
 .endif
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
-
-.endif
 
 PLIST_SUB+=			XAWVER=${XAWVER}
 
@@ -2078,6 +2079,17 @@ BUILD_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 RUN_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 .endif
 
+# Set up the cdrtools.
+.if defined(USE_CDRTOOLS)
+.if exists(${DOCSDIR}/cdrtools-cjk/README) || defined(WITH_CJK) || ${USE_CDRTOOLS:L} == "cjk"
+BUILD_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk
+RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk
+.else
+BUILD_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+.endif
+.endif
+
 # Macro for doing in-place file editing using regexps
 REINPLACE_ARGS?=	-i.bak
 REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
@@ -2219,11 +2231,7 @@ EXTRACT_CMD?=			${GZIP_CMD}
 .if ${PREFIX} == ${X11BASE_REL} || defined(USE_X_PREFIX)
 # User may have specified non-standard PREFIX for installing a port that
 # uses X
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.else
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
-.endif
 .elif ${PREFIX} == /usr
 MTREE_FILE=	/etc/mtree/BSD.usr.dist
 .else
@@ -2800,11 +2808,11 @@ check-categories:
 VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	benchmarks biology cad chinese comms converters databases \
 	deskutils devel dns editors elisp emulators finance french ftp \
-	games geography german gnome graphics hamradio haskell hebrew hungarian \
+	games geography german gnome gnustep graphics hamradio haskell hebrew hungarian \
 	ipv6 irc japanese java kde korean lang linux lisp \
 	mail math mbone misc multimedia net net-im net-mgmt net-p2p news \
-	palm parallel pear perl5 picobsd plan9 polish portuguese print \
-	python ruby rubygems russian \
+	palm parallel pear perl5 plan9 polish portuguese ports-mgmt \
+	print python ruby rubygems russian \
 	scheme science security shells spanish sysutils \
 	tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
 	tk80 tk82 tk83 tk84 tkstep80 \
@@ -2876,9 +2884,8 @@ HAS_CONFIGURE=		yes
 SCRIPTS_ENV+=	CURDIR=${MASTERDIR} DISTDIR=${DISTDIR} \
 		  WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} PATCHDIR=${PATCHDIR} \
 		  SCRIPTDIR=${SCRIPTDIR} FILESDIR=${FILESDIR} \
-		  PORTSDIR=${PORTSDIR} DEPENDS="${DEPENDS}" \
-		  PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-		  DESTDIR=${DESTDIR} TARGETDIR=${DESTDIR}
+		  PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
+		  X11BASE=${X11BASE} DESTDIR=${DESTDIR} TARGETDIR=${DESTDIR}
 
 .if defined(BATCH)
 SCRIPTS_ENV+=	BATCH=yes
@@ -2951,11 +2958,29 @@ _COUNT=1
 .for manlang in ${MANLANG:S%^%man/%:S%^man/""$%man%:S%^man/"$%man%}
 
 .for sect in 1 2 3 4 5 6 7 8 9 L N
+# MAN${sect} is for man pages installed for all languages in MANLANG for a given
+# section.
 .if defined(MAN${sect})
 _MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:L}/%}
 .endif
+
+# Language specific MAN${sect} variables are for man pages installed in that
+# language, but not necessarily all languages in MANLANG.
+.if defined(MAN${sect}_${manlang:S%^man/%%:U})
+_MANPAGES+=	${MAN${sect}_${manlang:S%^man/%%:U}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:L}/%}
+.endif
+
 .endfor
 
+.endfor
+
+# Special case for English, since it is defined with "" in MANLANG rather than
+# a language name and does not have man pages installed in a lang subdirectory 
+# of MAN${sect}PREFIX.
+.for sect in 1 2 3 4 5 6 7 8 9 L N
+.if defined(MAN${sect}_EN)
+_MANPAGES+=	${MAN${sect}_EN:S%^%${MAN${sect}PREFIX}/man/man${sect:L}/%}
+.endif
 .endfor
 
 .if !defined(_TMLINKS)
@@ -3152,8 +3177,7 @@ all:
 	  DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} \
 	  PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} \
 	  FILESDIR=${FILESDIR} PORTSDIR=${PORTSDIR} DESTDIR=${DESTDIR} PREFIX=${PREFIX} \
-	  DEPENDS="${DEPENDS}" BUILD_DEPENDS="${BUILD_DEPENDS}" \
-	  RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
+	  BUILD_DEPENDS="${BUILD_DEPENDS}" RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
 	  CONFLICTS="${CONFLICTS}" \
 	${ALL_HOOK}
 .endif
@@ -3172,12 +3196,6 @@ DEPENDS_TARGET=	install
 DEPENDS_TARGET+=	clean
 DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 .endif
-.else
-DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
-.endif
-.if defined(DEPENDS)
-# pretty much guarantees overwrite of existing installation
-.MAKEFLAGS:	FORCE_PKG_REGISTER=yes
 .endif
 
 ################################################################
@@ -3477,13 +3495,20 @@ patch-dos2unix:
 .if defined(USE_DOS2UNIX)
 .if ${USE_DOS2UNIX:U}=="YES"
 	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
-	@${FIND} ${WRKSRC} -type f -print0 | \
+	@${FIND} -E ${WRKSRC} -type f -iregex '${DOS2UNIX_REGEX}' -print0 | \
 			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
 .else
-.for f in ${USE_DOS2UNIX}
 	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
+.if ${USE_DOS2UNIX:M*/*}
+.for f in ${USE_DOS2UNIX}
 	@${REINPLACE_CMD} -i '' -e 's/$$//' ${WRKSRC}/${f}
 .endfor
+.else
+.for f in ${USE_DOS2UNIX}
+	@${FIND} ${WRKSRC} -type f -name '${f}' -print0 | \
+			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
+.endfor
+.endif
 .endif
 .else
 	@${DO_NADA}
@@ -3785,8 +3810,8 @@ check-already-installed:
 								fi; \
 						fi; \
 				done; \
-		fi
-		@if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
+		fi ; \
+		if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
 				if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 					if [ -z "${DESTDIR}" ] ; then \
 						${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
@@ -3881,6 +3906,7 @@ install-ldconfig-file:
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG_DIR}/${UNIQUENAME}
+	@${ECHO_CMD} "@cwd" >> ${TMPPLIST}
 	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .if defined(NO_LDCONFIG_MTREE)
 	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG_DIR} >/dev/null 2>&1 || true" >> ${TMPPLIST}
@@ -3911,6 +3937,7 @@ install-ldconfig-file:
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG32_DIR}/${UNIQUENAME}
+	@${ECHO_CMD} "@cwd" >> ${TMPPLIST}
 	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .if defined(NO_LDCONFIG_MTREE)
 	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG32_DIR} >/dev/null 2>&1" >> ${TMPPLIST}
@@ -4128,7 +4155,7 @@ _PATCH_DEP=		extract
 _PATCH_SEQ=		patch-message patch-depends patch-dos2unix pre-patch \
 				pre-patch-script do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
-_CONFIGURE_SEQ=	build-depends lib-depends misc-depends configure-message \
+_CONFIGURE_SEQ=	build-depends lib-depends configure-message \
 				pre-configure pre-configure-script \
 				run-autotools do-configure post-configure post-configure-script
 _BUILD_DEP=		configure
@@ -4756,7 +4783,7 @@ package-noinstall:
 ################################################################
 
 .if !target(depends)
-depends: extract-depends patch-depends lib-depends misc-depends fetch-depends build-depends run-depends
+depends: extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
 
 .if defined(ALWAYS_BUILD_DEPENDS)
 _DEPEND_ALWAYS=	1
@@ -4960,41 +4987,12 @@ lib-depends:
 	done
 .endif
 
-misc-depends:
-.if defined(DEPENDS)
-.if !defined(NO_DEPENDS)
-	@for dir in ${DEPENDS}; do \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
-		else \
-			target="${DEPENDS_TARGET}"; \
-			depends_args="${DEPENDS_ARGS}"; \
-		fi; \
-		${ECHO_MSG} "===>   ${PKGNAME} depends on: $$dir"; \
-		${ECHO_MSG} "===>    Verifying $$target for $$dir"; \
-		if [ ! -d $$dir ]; then \
-			${ECHO_MSG} "     => No directory for $$dir.  Skipping.."; \
-		else \
-			(cd $$dir; ${MAKE} $$target $$depends_args) ; \
-		fi \
-	done
-	@if [ -z "${DESTDIR}" ] ; then \
-		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
-	else \
-		${ECHO_MSG} "===>   Returning to build of ${PKGNAME} for ${DESTDIR}"; \
-	fi
-.endif
-.else
-	@${DO_NADA}
-.endif
-
 .endif
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
 _UNIFIED_DEPENDS=${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
-_DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,} ${DEPENDS:C,:.*,,}
+_DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,}
 
 all-depends-list:
 	@${ALL-DEPENDS-LIST}
@@ -5127,12 +5125,12 @@ checksum-recursive:
 # Dependency lists: build and runtime.  Print out directory names.
 
 build-depends-list:
-.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
+.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS)
 	@${BUILD-DEPENDS-LIST}
 .endif
 
 BUILD-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | ${SORT} -u); do \
+	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -5141,12 +5139,12 @@ BUILD-DEPENDS-LIST= \
 	done | ${SORT} -u
 
 run-depends-list:
-.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS)
 	@${RUN-DEPENDS-LIST}
 .endif
 
 RUN-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':' | ${SORT} -u); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':' | ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -5158,7 +5156,7 @@ RUN-DEPENDS-LIST= \
 # and package names.
 
 package-depends-list:
-.if defined(CHILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+.if defined(CHILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS)
 	@${PACKAGE-DEPENDS-LIST}
 .endif
 
@@ -5177,7 +5175,7 @@ PACKAGE-DEPENDS-LIST?= \
 		done; \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
-	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':') $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':'); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':'); do \
 		dir=$$(${REALPATH} $$dir); \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
@@ -5253,7 +5251,6 @@ describe:
 		@fdirs = map((split /:/)[1], split(q{ }, q{${FETCH_DEPENDS}})); \
 		@bdirs = map((split /:/)[1], split(q{ }, q{${BUILD_DEPENDS}})); \
 		@rdirs = map((split /:/)[1], split(q{ }, q{${RUN_DEPENDS}})); \
-		@ddirs = map((split /:/)[0], split(q{ }, q{${DEPENDS}})); \
 		@ldirs = map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})); \
 		for my $$i (\@edirs, \@pdirs, \@fdirs, \@bdirs, \@rdirs, \@ddirs, \@ldirs) { \
 			my @dirs = @$$i; \
@@ -5355,16 +5352,14 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 .if !target(pretty-print-build-depends-list)
 pretty-print-build-depends-list:
 .if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
-	defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-	defined(LIB_DEPENDS) || defined(DEPENDS)
+	defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS)
 	@${_PRETTY_PRINT_DEPENDS_LIST}
 .endif
 .endif
 
 .if !target(pretty-print-run-depends-list)
 pretty-print-run-depends-list:
-.if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || \
-	defined(DEPENDS)
+.if defined(RUN_DEPENDS) || defined(LIB_DEPENDS)
 	@${_PRETTY_PRINT_DEPENDS_LIST}
 .endif
 .endif
@@ -5537,17 +5532,10 @@ install-rc-script:
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
 	@for i in ${USE_RC_SUBR}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${TARGETDIR}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${TARGETDIR}/etc/rc.d/$${i%.sh}${RC_SUBR_SUFFIX}; \
+		${ECHO_CMD} "etc/rc.d/$${i%.sh}${RC_SUBR_SUFFIX}" >> ${TMPPLIST}; \
 	done
-.else
-	@for i in ${USE_RC_SUBR}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${TARGETDIR}/etc/rc.d/$${i%.sh}.sh; \
-		${ECHO_CMD} "etc/rc.d/$${i%.sh}.sh" >> ${TMPPLIST}; \
-	done
-.endif
 .endif
 .else
 	@${DO_NADA}

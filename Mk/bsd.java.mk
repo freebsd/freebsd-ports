@@ -128,13 +128,11 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 # There are the following stages:
 #
 # Stage 1: Define constants
-# Stage 2: bsd.java.mk 1.0 backward compatibility
-# Stage 3: Determine which JDK ports are installed and which JDK ports are
+# Stage 2: Determine which JDK ports are installed and which JDK ports are
 #		   suitable
-# Stage 4: <REMOVED> (merged in stage 3)
-# Stage 5: Decide the exact JDK to use (or install)
-# Stage 6: Add any dependencies if necessary
-# Stage 7: Define all settings for the port to use
+# Stage 3: Decide the exact JDK to use (or install)
+# Stage 4: Add any dependencies if necessary
+# Stage 5: Define all settings for the port to use
 #
 
 .	if defined(USE_JAVA)
@@ -255,53 +253,7 @@ DEPEND_JIKES=	${_JIKES_PATH}:${PORTSDIR}/java/jikes
 
 
 #-------------------------------------------------------------------------------
-# Stage 2: bsd.java.mk 1.0 backward compatibility
-#
-
-# First detect if we are using bsd.java.mk v1.0
-_USE_BSD_JAVA_MK_1_0!=	${ECHO_CMD} "${_JAVA_VERSION_LIST}" \
-						| ${TR} " " "\n" \
-						| ${GREP} -q "^${USE_JAVA}$$" && ${ECHO_CMD} "yes" || ${ECHO_CMD} "no"
-.		if (${_USE_BSD_JAVA_MK_1_0} == "yes")
-# Then affect the variables so that we may use v2.0
-# USE_JAVA --> JAVA_VERSION
-.			if !defined(JAVA_VERSION)
-JAVA_VERSION=	${USE_JAVA}
-.			else
-check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: The port is using bsd.java.mk 1.0 but sets a value for JAVA_VERSION. This may cause problems."
-	@${FALSE}
-.			endif
-# NO_{BUILD|RUN}_DEPENDS_JAVA --> JAVA_{BUILD|RUN}
-.			if defined(NO_BUILD_DEPENDS_JAVA) && defined(NO_RUN_DEPENDS_JAVA)
-check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
-	@${FALSE}
-.			else
-.				if !defined(NO_BUILD_DEPENDS_JAVA) && !defined(NO_BUILD)
-JAVA_BUILD=		jdk
-.				endif
-.				if !defined(NO_RUN_DEPENDS_JAVA)
-JAVA_RUN=		jdk
-.				endif
-.			endif
-# NEED_JAVAC --> JAVA_{BUILD|RUN}={jdk|jre}
-.			if defined(NEED_JAVAC)
-.				if (${NEED_JAVAC:U} == "YES")
-JAVA_BUILD=		jdk
-.				elif (${NEED_JAVAC:U} == "NO")
-JAVA_BUILD=		jre
-.				else
-check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${NEED_JAVAC}\" is not a valid value for NEED_JAVAC. It should be YES or NO, or it should be undefined.";
-	@${FALSE}
-.				endif
-.			endif
-.		endif
-
-
-#-------------------------------------------------------------------------------
-# Stage 3: Determine which JDK ports are suitable and which JDK ports are
+# Stage 2: Determine which JDK ports are suitable and which JDK ports are
 # suitable
 #
 
@@ -397,7 +349,7 @@ _JAVA_PORTS_POSSIBLE=		${__JAVA_PORTS_POSSIBLE:C/ [ ]+/ /g}
 
 
 #-------------------------------------------------------------------------------
-# Stage 5: Decide the exact JDK to use (or install)
+# Stage 3: Decide the exact JDK to use (or install)
 #
 
 # Find an installed JDK port that matches the requirements of the port
@@ -432,7 +384,7 @@ JAVA_PORT_VENDOR_DESCRIPTION:=	${JAVA_PORT_VENDOR:S/^/\${_JAVA_VENDOR_/:S/$/}/}
 JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 
 #-------------------------------------------------------------------------------
-# Stage 6: Add any dependencies if necessary
+# Stage 4: Add any dependencies if necessary
 #
 
 # Jikes support: If USE_JIKES is set to YES, then use Jikes. If USE_JIKES is
@@ -507,7 +459,7 @@ do-build:
 .		endif
 
 #-----------------------------------------------------------------------------
-# Stage 7: Define all settings for the port to use
+# Stage 5: Define all settings for the port to use
 #
 # At this stage both JAVA_HOME and JAVA_PORT are definitely given a value.
 #
@@ -563,8 +515,6 @@ JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
 # Debug target
 # Use it to check Java dependency while porting
 java-debug:
-	@${ECHO_CMD} "_USE_BSD_JAVA_MK_1_0=           ${_USE_BSD_JAVA_MK_1_0}"
-	@${ECHO_CMD}
 	@${ECHO_CMD} "# User specified parameters:"
 	@${ECHO_CMD} "JAVA_VERSION=                   ${JAVA_VERSION}	(${_JAVA_VERSION})"
 	@${ECHO_CMD} "JAVA_OS=                        ${JAVA_OS}	(${_JAVA_OS})"
