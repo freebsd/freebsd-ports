@@ -20,11 +20,14 @@ include/ncurses/eti.h
 include/ncurses/etip.h
 include/ncurses/form.h
 include/ncurses/menu.h
+include/ncurses/nc_tparm.h
 include/ncurses/ncurses.h
 include/ncurses/ncurses_dll.h
 include/ncurses/panel.h
 include/ncurses/term.h
+include/ncurses/term_entry.h
 include/ncurses/termcap.h
+include/ncurses/tic.h
 include/ncurses/unctrl.h
 lib/libform.a
 lib/libform.so
