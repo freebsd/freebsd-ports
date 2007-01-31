@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -17,7 +18,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-DEPENDS=	${PORTSDIR}/misc/kdehier
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
@@ -31,7 +31,8 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	iceauth:${X_CLIENTS_PORT} \
+RUN_DEPENDS=	kdehier>0:${PORTSDIR}/misc/kdehier \
+		iceauth:${X_CLIENTS_PORT} \
 		${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT} \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
