@@ -15239,6 +15239,7 @@ wcol		ports/www/wcol
 wdiag		ports/net-mgmt/wdiag
 wdiff		ports/textproc/wdiff
 wdm		ports/x11/wdm
+weatherget	ports/astro/weatherget
 weatherspect	ports/astro/weatherspect
 web-traceroute	ports/www/web-traceroute
 web2ldap	ports/www/web2ldap
