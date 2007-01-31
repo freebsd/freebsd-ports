@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.2.15
+PORTVERSION=	1.2.18
 CATEGORIES=	net
-MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
+MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Round Robin Database Tools
@@ -34,7 +34,7 @@ MAN1=		bin_dec_hex.1 cdeftutorial.1 rpntutorial.1 rrd-beginners.1 \
 		rrdgraph.1 rrdgraph_data.1 rrdgraph_examples.1 rrdgraph_graph.1 \
 		rrdgraph_rpn.1 rrdinfo.1 rrdlast.1 rrdresize.1 rrdrestore.1 \
 		rrdthreads.1 rrdtool.1 rrdtune.1 rrdtutorial.1 rrdupdate.1 \
-		rrdxport.1
+		rrdxport.1 rrdlastupdate.1
 MAN3=		RRDp.3 RRDs.3
 MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 
