@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.4.1
-CATEGORIES=	multimedia
+CATEGORIES=	multimedia gnustep
 MASTER_SITES=	http://www.sonappart.net/gnustep/mplayer/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Mplayer-0.4-1

@@ -7,7 +7,7 @@
 
 PORTNAME=	waiho
 PORTVERSION=	0.2
-CATEGORIES=	ftp
+CATEGORIES=	ftp gnustep
 MASTER_SITES=	http://www.roard.com/waiho/download/
 DISTNAME=	Waiho-${PORTVERSION}
 EXTRACT_SUFX=	.tgz

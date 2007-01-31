@@ -7,7 +7,7 @@
 
 PORTNAME=	ticker
 PORTVERSION=	0.1
-CATEGORIES=	www
+CATEGORIES=	www gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/Ticker/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Ticker

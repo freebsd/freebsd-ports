@@ -7,7 +7,7 @@
 
 PORTNAME=	plopfolio
 PORTVERSION=	0.1.0
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	usr-apps
 

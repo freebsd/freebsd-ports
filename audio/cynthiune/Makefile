@@ -7,7 +7,7 @@
 
 PORTNAME=	cynthiune
 PORTVERSION=	0.9.5
-CATEGORIES=	audio
+CATEGORIES=	audio gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/c/cynthiune.app
 DISTNAME=	cynthiune.app_${PORTVERSION}.orig

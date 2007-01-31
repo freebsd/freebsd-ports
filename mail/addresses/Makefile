@@ -7,7 +7,7 @@
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.6
-CATEGORIES=	mail
+CATEGORIES=	mail gnustep
 MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
 		http://www.energyhq.es.eu.org/files/
 DISTNAME=	Addresses-${PORTVERSION}

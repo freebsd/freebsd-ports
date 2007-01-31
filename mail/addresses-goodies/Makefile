@@ -8,7 +8,7 @@
 PORTNAME=	addresses
 PORTVERSION=	0.4.6
 PORTREVISION=	1
-CATEGORIES=	mail
+CATEGORIES=	mail gnustep
 MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
 		http://www.energyhq.es.eu.org/files/
 PKGNAMESUFFIX=	-goodies${PKGNAMESUFFIX2}

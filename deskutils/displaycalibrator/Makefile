@@ -7,7 +7,7 @@
 
 PORTNAME=	displaycalibrator
 PORTVERSION=	0.7
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/displaycalibrator/
 
 MAINTAINER=	dinoex@FreeBSD.org

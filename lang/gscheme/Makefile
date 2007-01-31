@@ -7,7 +7,7 @@
 
 PORTNAME=	gscheme
 PORTVERSION=	0.5
-CATEGORIES=	lang
+CATEGORIES=	lang gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GScheme/
 DISTNAME=	GScheme
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnumail
 PORTVERSION=	1.2.0
-CATEGORIES=	mail
+CATEGORIES=	mail gnustep
 MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/
 DISTNAME=	GNUMail-${PORTVERSION}pre2
 

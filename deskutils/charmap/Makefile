@@ -7,7 +7,7 @@
 
 PORTNAME=	charmap
 PORTVERSION=	0.2
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.nongnu.org/charmap/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-${PORTVERSION}

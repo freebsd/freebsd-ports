@@ -7,7 +7,7 @@
 
 PORTNAME=	multimediakit
 PORTVERSION=	0.1.${SNAPSHOT}
-CATEGORIES=	multimedia
+CATEGORIES=	multimedia gnustep
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-

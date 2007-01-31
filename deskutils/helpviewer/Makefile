@@ -7,7 +7,7 @@
 
 PORTNAME=	helpviewer
 PORTVERSION=	0.3
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.roard.com/helpviewer/download/
 DISTNAME=	HelpViewer-${PORTVERSION}
 EXTRACT_SUFX=	.tgz

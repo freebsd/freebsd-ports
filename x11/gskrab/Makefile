@@ -7,7 +7,7 @@
 
 PORTNAME=	gskrab
 PORTVERSION=	0.0.1
-CATEGORIES=	x11
+CATEGORIES=	x11 gnustep
 MASTER_SITES=	http://organact.mine.nu/~wolfgang/gskrab/
 DISTNAME=	GSKrab-${PORTVERSION}
 

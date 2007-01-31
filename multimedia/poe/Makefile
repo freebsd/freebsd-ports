@@ -7,7 +7,7 @@
 
 PORTNAME=	poe
 PORTVERSION=	0.5.1
-CATEGORIES=	multimedia
+CATEGORIES=	multimedia gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Poe/files/
 DISTNAME=	Poe-${PORTVERSION}
 

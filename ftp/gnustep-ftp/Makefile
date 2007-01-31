@@ -7,7 +7,7 @@
 
 PORTNAME=	ftp
 PORTVERSION=	0.1
-CATEGORIES=	ftp
+CATEGORIES=	ftp gnustep
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	FTP-${PORTVERSION}

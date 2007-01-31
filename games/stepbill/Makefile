@@ -7,7 +7,7 @@
 
 PORTNAME=	stepbill
 PORTVERSION=	2.4
-CATEGORIES=	games
+CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/stepbill/ \
 		${MASTER_SITE_GNUSTEP_CH}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	aclock
 PORTVERSION=	0.2.3
-CATEGORIES=	x11-clocks
+CATEGORIES=	x11-clocks gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/aclock/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	aclock-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	easydiff
 PORTVERSION=	0.3.0
-CATEGORIES=	textproc
+CATEGORIES=	textproc gnustep
 # outdated:	http://www.rivaille.net/EasyDiff/
 # outdated:	http://debian.uni-essen.de/misc/GNUstep/Apps/EasyDiff/
 MASTER_SITES=	http://www.linuks.mine.nu/easydiff/

@@ -7,7 +7,7 @@
 
 PORTNAME=	batmon
 PORTVERSION=	0.2
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils gnustep
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
 
 MAINTAINER=	dinoex@FreeBSD.org

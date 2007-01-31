@@ -7,7 +7,7 @@
 
 PORTNAME=	projectmanager
 PORTVERSION=	0.2
-CATEGORIES=	devel
+CATEGORIES=	devel gnustep
 MASTER_SITES=	http://download.gna.org/pmanager/0.2/
 DISTNAME=	ProjectManager-${PORTVERSION}
 

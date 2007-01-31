@@ -8,7 +8,7 @@
 PORTNAME=	slideshowkit
 PORTVERSION=	0.0.1
 PORTREVISION=	20050207
-CATEGORIES=	graphics
+CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	SlideShowKit-${PORTVERSION}

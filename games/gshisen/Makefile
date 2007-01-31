@@ -7,7 +7,7 @@
 
 PORTNAME=	gshisen
 PORTVERSION=	1.2.1
-CATEGORIES=	games
+CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/ \
 		${MASTER_SITE_GNUSTEP_CH}
 

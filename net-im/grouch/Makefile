@@ -7,7 +7,7 @@
 
 PORTNAME=	grouch
 PORTVERSION=	20060713
-CATEGORIES=	net-im
+CATEGORIES=	net-im gnustep
 MASTER_SITES=	http://mail.rochester.edu/~asveikau/grouch/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}

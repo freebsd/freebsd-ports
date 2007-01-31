@@ -7,7 +7,7 @@
 
 PORTNAME=	fortunate
 PORTVERSION=	3.1
-CATEGORIES=	games
+CATEGORIES=	games gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP_CH}
 
 MAINTAINER=	dinoex@FreeBSD.org

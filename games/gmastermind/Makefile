@@ -7,7 +7,7 @@
 
 PORTNAME=	gmastermind
 PORTVERSION=	0.2
-CATEGORIES=	games
+CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GMastermind/
 DISTNAME=	GMastermind2
 EXTRACT_SUFX=	.tgz
