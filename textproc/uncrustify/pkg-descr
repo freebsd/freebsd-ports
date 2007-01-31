@@ -2,15 +2,16 @@ The goals of this project are simple:
 Create a highly configurable, easily modifiable source code beautifier.
 
 What it does: 
-* Ident code, aligning on parens, assignments, etc 
-* Align on '=' and variable definitions 
-* Align structure initializers 
-* Align #define stuff 
-* Align backslash-newline stuff 
-* Reformat comments (a little bit) 
-* Fix inter-character spacing 
-* Add or remove parens on return statements 
-* Add or remove braces on single-statement if/do/while/for statements 
-* Highly configurable - 118 configurable options as of version 0.0.15 
+* Ident code, aligning on parens, assignments, etc
+* Align on '=' and variable definitions
+* Align structure initializers
+* Align #define stuff
+* Align backslash-newline stuff
+* Reformat comments (a little bit)
+* Fix inter-character spacing
+* Add or remove parens on return statements
+* Add or remove braces on single-statement if/do/while/for statements
+* Supports embedded SQL 'EXEC SQL' stuff
+* Highly configurable - 168 configurable options as of version 0.30
 
 WWW: http://uncrustify.sourceforge.net
