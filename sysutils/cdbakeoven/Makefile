@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	KDE frontend for cdrecord and mkisofs/mkhybrid
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mpg123:${PORTSDIR}/audio/mpg123 \
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
+USE_CDRTOOLS=	yes
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes

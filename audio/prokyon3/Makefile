@@ -38,8 +38,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include \
 .endif
 
 .if defined(WITH_BURN)
-RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mpg123:${PORTSDIR}/audio/mpg123 \
+USE_CDRTOOLS=	yes
+RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		normalize:${PORTSDIR}/audio/normalize \
 		bash:${PORTSDIR}/shells/bash2

@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical cd cooking interface
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/gtoaster
@@ -27,6 +25,7 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget gtk12
 USE_GMAKE=	yes
+USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

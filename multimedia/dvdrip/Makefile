@@ -16,7 +16,6 @@ MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		pstree:${PORTSDIR}/sysutils/pstree \
@@ -38,6 +37,7 @@ OPTIONS=	SUBTITLE	"Enable support for getting subtitles"	on \
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
 USE_PERL5=	yes
+USE_CDRTOOLS=	yes
 USE_GETTEXT=	yes
 
 MAN1=		dvdrip.1 dvdrip-progress.1 dvdrip-splitpipe.1

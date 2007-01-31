@@ -19,8 +19,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src new_configure.tar.gz:patch
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
-
 OPTIONS=	GTK2	"Enable GTK2 support"		off \
 		NONROOT	"Use xcdroast w/o being root"	off \
 		NLS	"Native language support"	on
@@ -28,6 +26,7 @@ OPTIONS=	GTK2	"Enable GTK2 support"		off \
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 

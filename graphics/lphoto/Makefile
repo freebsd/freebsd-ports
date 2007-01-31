@@ -23,7 +23,7 @@ BUILD_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
 		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde \
 		${PYTHON_SITELIBDIR}/OpenGL/GL/GL__init__.py:${PORTSDIR}/graphics/py-opengl
-#		cdrecord:${PORTSDIR}/sysutils/cdrtools
+#USE_CDRTOOLS=	yes
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

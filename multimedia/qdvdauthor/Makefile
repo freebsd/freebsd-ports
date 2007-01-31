@@ -80,7 +80,7 @@ RUN_DEPENDS+=	pngtopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
 .endif
 .if !defined(WITHOUT_CDRTOOLS)
-RUN_DEPENDS+=	mkisofs:${PORTSDIR}/sysutils/cdrtools
+USE_CDRTOOLS=	yes
 .endif
 .if defined(WITH_DVDRWTOOLS)
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools

@@ -33,7 +33,6 @@ BUILD_DEPENDS=	\
 		tcrequant:${PORTSDIR}/multimedia/transcode \
 		vcdxbuild:${PORTSDIR}/multimedia/vcdimager \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 RUN_DEPENDS=	\
 		${BUILD_DEPENDS} \
@@ -41,6 +40,7 @@ RUN_DEPENDS=	\
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_CDRTOOLS=	yes
 USE_WX=		2.6
 WX_COMPS=	python
 GNU_CONFIGURE=	yes

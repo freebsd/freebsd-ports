@@ -19,6 +19,7 @@ OPTIONS=		DVD "Enable DVD support" off \
 
 USE_XLIB=		yes
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
+USE_CDRTOOLS=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 INSTALLS_OMF=		yes
@@ -31,12 +32,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=		cdrdao:${PORTSDIR}/sysutils/cdrdao
-
-.if defined(WITH_CJK)
-RUN_DEPENDS+=		cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk
-.else
-RUN_DEPENDS+=		cdrecord:${PORTSDIR}/sysutils/cdrtools
-.endif
 
 .if defined(WITH_DVD)
 RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools

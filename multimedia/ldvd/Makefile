@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		ifo_dump:${PORTSDIR}/multimedia/ogle \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		buffer:${PORTSDIR}/misc/buffer \
@@ -27,6 +26,7 @@ RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_CDRTOOLS=	yes
 DATA=		de.lang en.lang
 PORTDOCS=	AUTHORS HISTORY README.de README.en
 PLIST_FILES=    bin/ldvd bin/ldvd-ls etc/ldvd.conf.sample \

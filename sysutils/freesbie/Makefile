@@ -14,9 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/2.0.//}
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Yet another cool answer to the system-on-cd question
 
-RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/cdrtools
-
 USE_BZIP2=	yes
+USE_CDRTOOLS=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2

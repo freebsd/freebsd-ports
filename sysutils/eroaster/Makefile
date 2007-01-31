@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}-2.2.0-0.6
 MAINTAINER=	dave@gufi.org
 COMMENT=	A GNOME2 frontend to mkisofs/cdrecord
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/_gnome.so:${PORTSDIR}/x11-toolkits/py-gnome2 \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/_gnome.so:${PORTSDIR}/x11-toolkits/py-gnome2
 
 .if defined(WITH_ADDITIONAL_PROGRAMS)
 BUILD_DEPENDS+=	bchunk:${PORTSDIR}/sysutils/bchunk \
@@ -32,6 +31,7 @@ BUILD_DEPENDS+=	bchunk:${PORTSDIR}/sysutils/bchunk \
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
+USE_CDRTOOLS=	yes
 
 pre-everything::
 	@${ECHO_MSG} "===>  You can enable more features by defining WITH_ADDITIONAL_PROGRAMS"

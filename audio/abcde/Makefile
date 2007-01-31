@@ -28,7 +28,7 @@ MAN1=		abcde.1 cddb-tool.1
 PLIST_FILES=	bin/abcde bin/cddb-tool etc/abcde.conf
 
 .if defined(WITH_CDDA2WAV)
-RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
+USE_CDRTOOLS=	yes
 .endif
 
 .if defined(WITH_DAGRAB)
