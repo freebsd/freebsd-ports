@@ -1,0 +1,7 @@
+A command line based weather reporting tool written in python. View
+current weather conditions, extended day forecasts, and station id
+lookups as reported from weather.com. Customize output via weathergetrc
+configuration file. Platform independent.
+
+WWW: http://developer.berlios.de/projects/weatherget/
+Author: Tyler Gates <TGates81@gmail.com>
