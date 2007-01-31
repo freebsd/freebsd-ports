@@ -4,7 +4,7 @@ bin/skpp
 include/sketchy.h
 lib/libsketchy.a
 lib/libsketchy.so
-lib/libsketchy.so.29
+lib/libsketchy.so.30
 %%DATADIR%%/LICENSE
 %%DATADIR%%/ext/assp.scm
 %%DATADIR%%/ext/count.scm
