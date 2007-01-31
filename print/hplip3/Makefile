@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		usb:${PORTSDIR}/devel/libusb \
 		netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 
-CONFLITS=	hpijs-* foomatic-filters-*
+CONFLICTS=	hpijs-* foomatic-filters-*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
