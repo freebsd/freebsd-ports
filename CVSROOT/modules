@@ -13800,6 +13800,7 @@ sipp		ports/net/sipp
 siproxd		ports/net/siproxd
 sipsak		ports/net/sipsak
 sipxportlib	ports/net/sipxportlib
+sipxtacklib	ports/net/sipxtacklib
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
 sisc		ports/lang/sisc
