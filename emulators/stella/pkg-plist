@@ -11,6 +11,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_rom.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_snap.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_about.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_audio.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo.png
