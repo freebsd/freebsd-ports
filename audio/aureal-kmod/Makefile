@@ -20,14 +20,13 @@ NO_PACKAGE=	Should be in sync with the kernel to work correctly
 ONLY_FOR_ARCHS=	i386
 SRCPREFIX?=	/usr/src
 STRAYFILES=	au88x0.h au88x0.c asp10.o asp20.o asp30.o
+DISTREVISION=	4
 
 WRKSRC=		${WRKDIR}
 
 PKGMESSAGE=	${WRKSRC}/.MESSAGE
 
 MAKE_ENV=	WRKSRC="${WRKSRC}"
-
-.include <bsd.port.pre.mk>
 
 # Make sure kernel sources are present before going any further
 .if ! exists(${SRCPREFIX}/sys/dev/sound/pcm/sound.c)
@@ -62,4 +61,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/aureal.sh.sample ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
