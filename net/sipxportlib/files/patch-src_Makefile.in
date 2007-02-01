@@ -1,0 +1,13 @@
+--- ./src/Makefile.in.orig	Thu Dec 28 16:19:58 2006
++++ ./src/Makefile.in	Wed Jan  3 20:40:21 2007
+@@ -404,8 +404,8 @@
+ 	@PCRE_LDFLAGS@ \
+ 	@SSL_LDFLAGS@
+ 
+-libsipXport_la_LIBADD = @PCRE_LIBS@ @SSL_LIBS@ @RT_LIBS@ -ldl \
+-	-lpthread $(am__append_1)
++libsipXport_la_LIBADD = @PCRE_LIBS@ @SSL_LIBS@ @RT_LIBS@ \
++	-lpthread -lkvm $(am__append_1)
+ 
+ # this is helpful if you're debugging something with lots of inlines (like the UtlLink code)
+ # 		-fno-gcse -O0 -fno-implement-inlines -fno-default-inline

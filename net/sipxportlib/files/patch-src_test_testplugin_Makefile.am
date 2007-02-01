@@ -1,0 +1,10 @@
+--- ./src/test/testplugin/Makefile.am.orig	Thu Dec 28 16:20:59 2006
++++ ./src/test/testplugin/Makefile.am	Thu Dec 28 16:21:18 2006
+@@ -32,7 +32,6 @@
+ 
+ libtestpluginA_la_LIBADD = \
+ 	@RT_LIBS@  \
+-	-ldl \
+ 	-lpthread  
+ 
+ if ISGCC

@@ -1,0 +1,13 @@
+--- ./src/Makefile.am.orig	Thu Dec 28 16:20:02 2006
++++ ./src/Makefile.am	Wed Jan  3 20:40:10 2007
+@@ -26,8 +26,8 @@
+ 	@PCRE_LIBS@ \
+ 	@SSL_LIBS@ \
+ 	@RT_LIBS@ \
+-	-ldl \
+-	-lpthread 
++	-lpthread \
++        -lkvm
+ 
+ if ISGCC
+ libsipXport_la_LIBADD += -lstdc++
