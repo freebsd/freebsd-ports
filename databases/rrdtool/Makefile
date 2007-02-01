@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.2.18
+PORTVERSION=	1.2.19
 CATEGORIES=	net
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
