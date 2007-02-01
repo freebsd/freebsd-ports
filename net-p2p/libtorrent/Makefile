@@ -32,6 +32,13 @@ EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
 
 OPTIONS=	KQUEUE "Use kqueue(2) support" on
 
+.if defined(WITH_OPENSSL_BASE)
+# The reason why I use this is cause openssl from base doesn't install a .pc file
+# and configure will fail trying to find it. Setting both of those variables to
+# a *non-empty* value by-passes the pkg-config check.
+CONFIGURE_ENV=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
+.endif
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-debug --with-openssl=${OPENSSLBASE}
