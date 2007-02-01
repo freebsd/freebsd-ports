@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	132
-PORTREVISION=	1
+PORTVERSION=	133
 CATEGORIES=	games
-MASTER_SITES=	http://www.other-life.com/el/:data \
+MASTER_SITES=	http://el.other-life.com/downloads/:data \
 		http://www.eternalmusik.org/music/:sound \
 		http://www.el-development.com/music/:sound
 PKGNAMEPREFIX=	el-
@@ -25,13 +24,13 @@ NO_BUILD=	yes
 USE_DOS2UNIX=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
+WRKSRC=		${WRKDIR}/Eternal\ Lands-${PORTVERSION:S/1/1./}
 EL_DATA=	${PKGNAMEPREFIX:S/-/_/}${PORTVERSION}_linux_full.zip
 EL_SOUND=	music_full.zip
 
 do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_DATA} -d ${WRKSRC}
+	@${MKDIR} ${WRKDIR}
+	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_DATA} -d ${WRKDIR}
 	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_SOUND} -d ${WRKSRC}/music
 
 post-extract:
@@ -41,7 +40,8 @@ post-extract:
 		${XARGS} -0 ${RM} -R
 	@${FIND} ${WRKSRC} -type f -name "*.exe" -print0 | \
 		${XARGS} -0 ${RM} -R
-	@${RM} ${WRKSRC}/el-132.* ${WRKSRC}/languages/en/strings/options.xml~
+	@${RM} ${WRKSRC}/el-${PORTVERSION}.* \
+		${WRKSRC}/languages/en/strings/options.xml~
 .for DIRE in languages/po/books languages/po/strings languages/tr/strings
 	@${RMDIR} ${WRKSRC}/${DIRE}
 .endfor
