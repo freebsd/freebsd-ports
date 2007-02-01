@@ -19,11 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Tie::Restore.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' ${WRKSRC}/Restore.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

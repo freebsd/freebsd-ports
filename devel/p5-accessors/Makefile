@@ -23,10 +23,4 @@ PLIST_FILES=	${SITE_PERL_REL}/accessors.pm ${SITE_PERL_REL}/accessors/chained.pm
 		${SITE_PERL_REL}/accessors/classic.pm
 PLIST_DIRS=	${SITE_PERL_REL}/accessors
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
