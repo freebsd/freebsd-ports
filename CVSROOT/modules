@@ -13802,6 +13802,7 @@ sipsak		ports/net/sipsak
 sipxcommserverlib	ports/net/sipxcommserverlib
 sipxconfig	ports/net/sipxconfig
 sipxportlib	ports/net/sipxportlib
+sipxpublisher	ports/net/sipxpublisher
 sipxtacklib	ports/net/sipxtacklib
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
