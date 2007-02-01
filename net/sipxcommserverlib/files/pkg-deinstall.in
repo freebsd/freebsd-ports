@@ -1,0 +1,26 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+LOCALSTATEDIR="%%LOCALSTATEDIR%%"
+
+post-deinstall() {
+        rm -rf ${LOCALSTATEDIR}/sipxdata/tmp
+        rm -rf ${LOCALSTATEDIR}/run/sipxdata
+        rm -rf ${LOCALSTATEDIR}/log/sipxdata
+
+
+        echo "WARNING: If you will *NOT* use this package anymore, please remove
+ the"
+        echo "  following file and directories manually:"
+        echo "  ${LOCALSTATEDIR}/sipxdata/upgrade/sipxcommserverlib-previous.tgz"
+        echo "  ${LOCALSTATEDIR}/sipxdata/sipdb"
+        echo "  ${LOCALSTATEDIR}/sipxdata"
+        echo
+}
+
+case $2 in
+        POST-DEINSTALL)
+                post-deinstall
+                ;;
+esac

@@ -1,0 +1,37 @@
+--- ./bin/ssl-cert/gen-ssl-keys.sh.in.orig	Sat Dec 30 16:45:06 2006
++++ ./bin/ssl-cert/gen-ssl-keys.sh.in	Sat Dec 30 16:45:55 2006
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ ##
+ ##  gen-ssl-keys.sh - generate SSL key and certificate files.
+ ##
+@@ -33,7 +33,8 @@
+ openssl="@OPENSSL@"
+ 
+ # default base name for ca and its files
+-caName=ca.`hostname --domain`
++dom=`hostname | sed 's/[^\.]*\.\(.*\)/\1/'`
++caName=ca.$dom
+ 
+ # if there is a file of saved default answers for the questions, read them
+ Defaults=SSL_DEFAULTS
+@@ -207,14 +208,15 @@
+ 
+ EOF
+ 
+-    askfor sipDomainName "SIP domain name" `hostname --domain` 
+-    askfor server        "Full DNS name for the server" `hostname --fqdn` NOSTORE
++    dom=`hostname | sed 's/[^\.]*\.\(.*\)/\1/'`
++    askfor sipDomainName "SIP domain name" $dom
++    askfor server        "Full DNS name for the server" `hostname` NOSTORE
+     while test ${caName} = ${server}
+       do
+       echo "" 1>&2
+       echo "Error: The Server name must not be the same as the CA name." 1>&2
+       server=""
+-      askfor server "Server Common Name (DNS name for Server)" `hostname --fqdn` NOSTORE
++      askfor server "Server Common Name (DNS name for Server)" `hostname` NOSTORE
+     done
+ 
+     askfor serverEmail "Email Contact Address for Server (name@example.org)" "${caEmail}" NOSTORE
