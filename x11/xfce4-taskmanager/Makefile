@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-taskmanager
 PORTVERSION=	0.4.0.r2
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://xfce4-taskmanager.nebulon.de/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
@@ -25,6 +26,9 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui
 USE_XLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|linux|freebsd|g; s|^CFLAGS = |&-lkvm -lm |' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
