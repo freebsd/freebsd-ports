@@ -745,6 +745,7 @@
     SUBDIR += siproxd
     SUBDIR += sipsak
     SUBDIR += sipxportlib
+    SUBDIR += sipxtacklib
     SUBDIR += sixxs-aiccu
     SUBDIR += sixxs-heartbeatd
     SUBDIR += skstream
