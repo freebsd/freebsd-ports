@@ -1,6 +1,6 @@
 --- src/xfce-taskmanager-freebsd.c.orig	Thu Jan  1 01:00:00 1970
 +++ src/xfce-taskmanager-freebsd.c	Thu Feb  1 12:17:27 2007
-@@ -0,0 +1,170 @@
+@@ -0,0 +1,171 @@
 +/*
 + Copyright (c) 2006 Oliver Lehmann <oliver@FreeBSD.org>
 + All rights reserved.
@@ -45,6 +45,7 @@
 +	char	buf[16];
 +
 +	task.pid = -1;
++	task.checked = FALSE;
 +	
 +	size = sizeof(ccpu);
 +	if (sysctlbyname("kern.ccpu", &ccpu, &size, NULL, 0) == -1)
