@@ -384,13 +384,8 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 .if defined(CLIENT_ONLY)
 .include "${FILESDIR}/manpages"
 .else
-.if (${OSVERSION} >= 700007 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
-RC_SUFX=
-.else
-RC_SUFX=		.sh
-.endif
 SUB_LIST+=		RC_DIR=${PREFIX} \
-			RC_SUFX=${RC_SUFX} \
+			RC_SUFX=${RC_SUBR_SUFFIX} \
 			LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			DATABASEDIR=${DATABASEDIR}
 .endif
