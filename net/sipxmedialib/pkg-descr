@@ -1,0 +1,5 @@
+sipXmedialib is a library that handles media streams, such as real-time
+packets and WAV files.  It is a necessary dependancy of the sipX
+project.
+
+WWW: http://sipx-wiki.calivia.com/index.php/Main_Page
