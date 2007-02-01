@@ -1,15 +1,14 @@
 Index: berkeleydb/db-4.2.52.patch
 ===================================================================
 RCS file: /cvs/external/berkeleydb/db-4.2.52.patch,v
-retrieving revision 1.15
-diff -u -r1.15 db-4.2.52.patch
---- berkeleydb/db-4.2.52.patch	22 Nov 2006 10:35:13 -0000	1.15
-+++ berkeleydb/db-4.2.52.patch	6 Dec 2006 00:28:05 -0000
-@@ -205,6 +205,21 @@
+retrieving revision 1.18
+diff -u -r1.18 db-4.2.52.patch
+--- berkeleydb/db-4.2.52.patch	25 Jan 2007 12:11:26 -0000	1.18
++++ berkeleydb/db-4.2.52.patch	1 Feb 2007 01:37:17 -0000
+@@ -499,6 +499,20 @@
  !         $(SLO)$/dbreg_util.obj
  ! 
  ! .INCLUDE :  target.mk
-+
 +*** misc/db-4.2.52.NC/dist/config.hin	Wed Dec  3 16:10:00 2003
 +--- misc/build/db-4.2.52.NC/dist/config.hin	Fri May 19 17:37:41 2006
 +***************
@@ -23,14 +22,14 @@ diff -u -r1.15 db-4.2.52.patch
 ++ 
 +  /* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
 +  #undef HAVE_NDIR_H
-+  
- *** misc/db-4.2.52.NC/dist/configure	2003-12-03 22:10:02.000000000 +0100
- --- misc/build/db-4.2.52.NC/dist/configure	2006-05-02 17:06:13.000000000 +0200
++
+ *** misc/db-4.2.52.NC/dist/Makefile.in	Fri Nov 28 19:50:06 2003
+ --- misc/build/db-4.2.52.NC/dist/Makefile.in	Tue Jul 25 09:32:28 2006
  ***************
-@@ -273,6 +288,77 @@
-   	hardcode_libdir_flag_spec_CXX='${wl}-rpath,$libdir'
-   	export_dynamic_flag_spec_CXX='${wl}--export-dynamic'
-   	whole_archive_flag_spec_CXX='${wl}--whole-archive$convenience ${wl}--no-whole-archive'
+@@ -554,6 +568,77 @@
+     fi
+   
+     # Commands to make compiler produce verbose output that lists
 +***************
 +*** 28556,28561 ****
 +--- 28556,28606 ----
@@ -102,10 +101,10 @@ diff -u -r1.15 db-4.2.52.patch
 +  
 +  
 +
- *** misc/db-4.2.52.NC/dist/ltmain.sh	2003-04-26 19:45:37.000000000 +0200
- --- misc/build/db-4.2.52.NC/dist/ltmain.sh	2006-05-02 16:55:53.000000000 +0200
+ *** misc/db-4.2.52.NC/dist/ltmain.sh	Sat Apr 26 19:45:37 2003
+ --- misc/build/db-4.2.52.NC/dist/ltmain.sh	Tue Jul 25 09:05:20 2006
  ***************
-@@ -975,3 +1061,39 @@
+@@ -1010,3 +1095,39 @@
  ! 			$(SLO)$/xa_map.obj
  ! 
  ! .INCLUDE :  target.mk
