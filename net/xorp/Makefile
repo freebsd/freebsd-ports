@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=	--enable-optimize
 # Bash and Python are only required if running the regression tests.
 .if defined(WITH_CHECK)
 BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 .endif
 
 .if defined(WITH_DEBUGGING)
