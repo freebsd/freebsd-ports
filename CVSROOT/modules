@@ -13808,6 +13808,7 @@ sipxportlib	ports/net/sipxportlib
 sipxproxy	ports/net/sipxproxy
 sipxpublisher	ports/net/sipxpublisher
 sipxtacklib	ports/net/sipxtacklib
+sipxvxml	ports/net/sipxvxml
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
 sisc		ports/lang/sisc
