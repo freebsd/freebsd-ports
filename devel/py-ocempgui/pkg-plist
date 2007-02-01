@@ -59,6 +59,9 @@
 %%PYTHON_SITELIBDIR%%/ocempgui/object/__init__.py
 %%PYTHON_SITELIBDIR%%/ocempgui/object/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ocempgui/object/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ocempgui/widgets/Alignment.py
+%%PYTHON_SITELIBDIR%%/ocempgui/widgets/Alignment.pyc
+%%PYTHON_SITELIBDIR%%/ocempgui/widgets/Alignment.pyo
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/BaseWidget.py
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/BaseWidget.pyc
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/BaseWidget.pyo
@@ -202,6 +205,7 @@
 %%PYTHON_SITELIBDIR%%/ocempgui/widgets/images/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/examples/a11y_test.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/actionlistener.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/alignment.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/baseobject.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/basewidget.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/bin.py
@@ -272,6 +276,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/img/signal_baseobject.png
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/uml/actionlistener.png
+%%PORTDOCS%%%%DOCSDIR%%/uml/alignment.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/baseobject.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/basewidget.png
 %%PORTDOCS%%%%DOCSDIR%%/uml/bin.png
