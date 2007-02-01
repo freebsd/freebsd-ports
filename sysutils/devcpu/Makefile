@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devcpu
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
@@ -15,6 +15,11 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Kernel module that provides access to i386 MSRs and cpuid info
 
 USE_BZIP2=	yes
+USE_RC_SUBR=	devcpu
+USE_RUBY=	yes
+RUBY_NO_BUILD_DEPENDS=	yes
+RUBY_NO_RUN_DEPENDS=	yes
+RUBY_SHEBANG_FILES=	tools/extract_mcodes.rb
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_PACKAGE=	depends on kernel
@@ -23,6 +28,8 @@ PLIST_SUB=	KMODDIR="${KMODDIR:C,^/,,}"
 KMODDIR=	/boot/modules
 MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
+OPTIONS=	EXTRACTOR "Install Award Bios microcode extracting utility" off 
+
 MAN4=		cpu.4
 MAN8=		cpu_microcode_tool.8
 
@@ -30,6 +37,14 @@ MAN8=		cpu_microcode_tool.8
 
 .if ${OSVERSION} < 601000
 IGNORE=		not supported
+.endif
+
+.if defined(WITH_EXTRACTOR)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mmap.so:${PORTSDIR}/devel/ruby-mmap \
+		${RUBY_SITEARCHLIBDIR}/lhalib.so:${PORTSDIR}/archivers/ruby-lha
+PLIST_SUB+=	EXTRACTOR=""
+.else
+PLIST_SUB+=	EXTRACTOR="@comment "
 .endif
 
 MAKE_ENV+=	KMODDIR="${KMODDIR}" \
@@ -55,6 +70,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.endif
+
+.if defined(WITH_EXTRACTOR)
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/extract_mcodes.rb ${PREFIX}/libexec/
 .endif
 
 	@${CAT} ${PKGMESSAGE}
