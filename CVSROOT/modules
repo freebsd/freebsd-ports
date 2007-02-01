@@ -13799,6 +13799,7 @@ sipcalc		ports/net-mgmt/sipcalc
 sipp		ports/net/sipp
 siproxd		ports/net/siproxd
 sipsak		ports/net/sipsak
+sipxportlib	ports/net/sipxportlib
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
 sisc		ports/lang/sisc
