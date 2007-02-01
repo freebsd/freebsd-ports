@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	0.4
+PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	demon@FreeBSD.org
