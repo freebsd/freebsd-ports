@@ -747,6 +747,7 @@
     SUBDIR += sipxcommserverlib
     SUBDIR += sipxconfig
     SUBDIR += sipxportlib
+    SUBDIR += sipxpublisher
     SUBDIR += sipxtacklib
     SUBDIR += sixxs-aiccu
     SUBDIR += sixxs-heartbeatd
