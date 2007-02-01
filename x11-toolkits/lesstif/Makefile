@@ -21,9 +21,7 @@ CONFLICTS?=	open-motif-*
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259 libtool:15
 USE_X_PREFIX=	yes
-# broken ...
-#USE_LDCONFIG=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
 CONFIGURE_ARGS+=	--disable-maintainer-mode
