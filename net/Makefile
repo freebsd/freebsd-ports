@@ -744,6 +744,7 @@
     SUBDIR += sipp
     SUBDIR += siproxd
     SUBDIR += sipsak
+    SUBDIR += sipxcalllib
     SUBDIR += sipxcommserverlib
     SUBDIR += sipxconfig
     SUBDIR += sipxmediaadapterlib
