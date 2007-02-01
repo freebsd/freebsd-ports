@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db
-PORTVERSION=	20061214
+PORTVERSION=	20070124
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/foomatic/,} \
 		http://freebsd.unixfreunde.de/sources/
