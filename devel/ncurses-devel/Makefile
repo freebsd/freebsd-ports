@@ -13,14 +13,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${RELEASE}
 
-PATCH_SITES=	ftp://invisible-island.net/ncurses/${RELEASE}/
+PATCH_SITES=	ftp://invisible-island.net/ncurses/${RELEASE}/ \
+		LOCAL/rafan/ncurses
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output (development version)
 
 CONFLICTS=	ncurses-[0-9]*
 
-PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127
+PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127 20070128
 
 RELEASE=	5.6
 
@@ -136,7 +137,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
-	@${REINPLACE_CMD} -e 's,[^*]termlib\*),*termlib*),' ${WRKSRC}/configure
 
 post-configure:
 .if !defined(WITHOUT_WIDEC)
