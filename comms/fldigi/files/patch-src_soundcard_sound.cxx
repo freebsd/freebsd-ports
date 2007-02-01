@@ -1,5 +1,5 @@
---- src/soundcard/sound.cxx.orig	Tue Dec 19 21:31:04 2006
-+++ src/soundcard/sound.cxx	Wed Dec 20 18:46:00 2006
+--- src/soundcard/sound.cxx.orig	Fri Jan 26 10:49:19 2007
++++ src/soundcard/sound.cxx	Mon Jan 29 21:51:41 2007
 @@ -16,7 +16,9 @@
  	
  	try {
@@ -10,7 +10,7 @@
  		getCapabilities();
  		getFormats();
  		Close();
-@@ -78,7 +80,7 @@
+@@ -80,7 +82,7 @@
  {
  	int sndparam;
  // Try to get ~100ms worth of samples per fragment
@@ -19,7 +19,7 @@
  // double since we are using 16 bit samples
  	sndparam += 1;
  // Unlimited amount of buffers for RX, four for TX
-@@ -120,7 +122,7 @@
+@@ -122,7 +124,7 @@
  void cSound::getVersion()
  {
  	version = 0;
