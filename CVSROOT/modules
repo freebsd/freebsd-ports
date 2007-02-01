@@ -13804,6 +13804,7 @@ sipxcommserverlib	ports/net/sipxcommserverlib
 sipxconfig	ports/net/sipxconfig
 sipxmediaadapterlib	ports/net/sipxmediaadapterlib
 sipxmedialib	ports/net/sipxmedialib
+sipxpbx		ports/net/sipxpbx
 sipxportlib	ports/net/sipxportlib
 sipxproxy	ports/net/sipxproxy
 sipxpublisher	ports/net/sipxpublisher
