@@ -19,17 +19,15 @@ COMMENT=	HP OfficeJet Linux driver; printing, scanning, and photo-card access
 
 NOT_FOR_ARCHS=	sparc64 ia64
 
+DEPRECATED=	the project is no longer being developed, all future MFP support is being done by the HPLIP project (print/hplip)
+EXPIRATION_DATE=2007-07-01
+
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \
 		usb:${PORTSDIR}/devel/libusb
-.if defined(WITH_BASH2)
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
-.else
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-.endif
 
 OPTIONS=	CUPS "CUPS support" on \
-		SNMP "SNMP support (required for JetDirect)" on \
-		BASH2 "Depend on older bash" off
+		SNMP "SNMP support (required for JetDirect)" on
 
 .if defined(WITH_X11)
 USE_QT_VER=	3
@@ -66,7 +64,7 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}/include/net-snmp/library
 CONFIGURE_ARGS+=--without-snmp
 .endif
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
