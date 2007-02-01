@@ -29,10 +29,4 @@ MAN3=		CPAN::YACSmoke.3 \
 		CPAN::YACSmoke::Plugin::SmokeDB.3 \
 		CPAN::YACSmoke::Plugin::Recent.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=	"Needs perl 5.6.1 or higher, install lang/perl5 or lang/perl5.8 and try again"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
