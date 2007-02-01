@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	1.11
+PORTVERSION=	1.23
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/LinuxApps/
+MASTER_SITES=	http://www.w1hkj.com/LinuxApps/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
@@ -19,22 +21,20 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads \
 
 USE_GMAKE=	yes
 ALL_TARGET=	fldigi
+MAKEFILE=	makefile
 
 MAKE_ENV+=	CXX="${CXX}"
 
-post-extract:
-	@${SED} -e 's|%%DATADIR%%|${DATADIR}|' \
-		${FILESDIR}/${PORTNAME} > ${WRKSRC}/${PORTNAME}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/Release/${PORTNAME} \
-		${PREFIX}/bin/${PORTNAME}.bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/macros.mdf ${DATADIR}
-.if(!defined(NOPORTDOCS))
+	${INSTALL_PROGRAM} ${WRKSRC}/fldigi ${PREFIX}/bin/fldigi
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/macros.mdf ${DATADIR}
+.if	!defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${ECHO} ""
+	@${ECHO} "fldigi docs installed in ${DOCSDIR}"
+	@${ECHO} ""
 .endif
 
 .include <bsd.port.mk>

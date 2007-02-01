@@ -1,0 +1,38 @@
+--- makefile.orig	Tue Jan 30 21:00:29 2007
++++ makefile	Tue Jan 30 21:21:21 2007
+@@ -3,17 +3,16 @@
+ #
+ 
+ PROJECT = fldigi
+-CC = "/usr/bin/g++"
++#CC = "/usr/bin/g++"
+ 
+ OBJ_DIR = Objects
+ OUTPUT_DIR = ./
+ TARGET = fldigi
+-C_INCLUDE_DIRS = -I"src" -I"src/include" 
++C_INCLUDE_DIRS = -I"src" -I"src/include" `fltk-config --cxxflags`
+ C_PREPROC = 
+-CFLAGS = -pipe `fltk-config --cxxflags` -Wno-deprecated -ffast-math -Wall -g0 -O2 -fno-rtti -fexceptions 
+-LIB_DIRS = -L"/usr/local/lib" 
++#LIB_DIRS = -L"/usr/local/lib" 
+ LIBS = -lhamlib -lfltk_images -ljpeg -lpng -lz 
+-LDFLAGS = -pipe -s `fltk-config --ldflags --use-images`
++LDFLAGS = `fltk-config --ldflags --use-images`
+ 
+ SRC_OBJS = \
+   $(OBJ_DIR)/fft.o	\
+@@ -83,8 +82,11 @@
+   $(OBJ_DIR)/newinstall.o
+ 
+ define build_target
+-@echo Linking...
+-@$(CC) -o "$(OUTPUT_DIR)/$(TARGET)" $(SRC_OBJS) $(HAMLIBS) $(LDFLAGS) $(LIBS) 
++echo Linking...
++echo HAMLIBS $(HAMLIBS)
++echo LDFLAGS $(LDFLAGS)
++echo LIBS $(LIBS)
++$(CC) -o "$(OUTPUT_DIR)/$(TARGET)" $(SRC_OBJS) $(HAMLIBS) $(LDFLAGS) $(LIBS) 
+ endef
+ 
+ define compile_source
