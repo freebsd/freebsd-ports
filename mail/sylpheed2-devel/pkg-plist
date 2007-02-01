@@ -73,6 +73,8 @@ share/applications/sylpheed.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-20.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-21.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-22.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-23.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-24.html
 share/locale/bg/LC_MESSAGES/sylpheed.mo
 share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/da/LC_MESSAGES/sylpheed.mo
