@@ -1,0 +1,11 @@
+--- ./etc/httpd.conf.in.orig	Mon Jan  1 18:16:21 2007
++++ ./etc/httpd.conf.in	Mon Jan  1 18:16:32 2007
+@@ -262,7 +262,7 @@
+ LoadModule suexec_module @APACHE2_MOD@/mod_suexec.so
+ LoadModule disk_cache_module @APACHE2_MOD@/mod_disk_cache.so
+ LoadModule file_cache_module @APACHE2_MOD@/mod_file_cache.so
+-LoadModule mem_cache_module @APACHE2_MOD@/mod_mem_cache.so
++#LoadModule mem_cache_module @APACHE2_MOD@/mod_mem_cache.so
+ LoadModule cgi_module @APACHE2_MOD@/mod_cgi.so
+ 
+ #
