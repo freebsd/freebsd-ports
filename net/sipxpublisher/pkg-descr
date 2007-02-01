@@ -1,0 +1,5 @@
+sipXpublisher is a modular server for handling SIP event subscriptions; event
+package types can be added through a dynamically linked library
+interface, configured through a simple XML plugin configuration file.
+
+WWW: http://sipx-wiki.calivia.com/index.php/Main_Page
