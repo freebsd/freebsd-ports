@@ -19,6 +19,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkextra-x11-2.0.1:${PORTSDIR}/x11-toolkits/gtkextra2
 RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
 
+USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+

@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-devkit
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	FastCGI Development Kit
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

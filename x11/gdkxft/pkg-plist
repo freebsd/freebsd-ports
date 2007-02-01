@@ -1,6 +1,7 @@
 %%GNOME:%%bin/gdkxft-capplet
 bin/gdkxft_sysinstall
 etc/gdkxft.conf
+lib/libgdkxft.a
 lib/libgdkxft.la
 lib/libgdkxft.so
 %%PORTDOCS%%share/doc/gdkxft/README

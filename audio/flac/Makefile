@@ -17,6 +17,7 @@ COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}

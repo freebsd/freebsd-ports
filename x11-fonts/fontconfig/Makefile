@@ -25,6 +25,7 @@ PATCH_DIST_STRIP+=	-p1
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 PREFIX?=	${X11BASE}
 USE_LDCONFIG=	yes

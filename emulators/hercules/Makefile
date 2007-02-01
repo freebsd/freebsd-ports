@@ -18,6 +18,7 @@ OPTIONS=	PTHREADS "Build with pthreads instead of fthreads." on \
 		NLS "Build with native language support." on \
 		DEBUG "Enable for debugging hercules itself." off
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=	yes
 

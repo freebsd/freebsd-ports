@@ -16,6 +16,7 @@ COMMENT=	An SQL wrapper for the XBase DBMS library
 
 LIB_DEPENDS=	xbase-2.0.0:${PORTSDIR}/databases/xbase
 
+USE_AUTOTOOLS=	libtool:15
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

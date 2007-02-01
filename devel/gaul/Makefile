@@ -19,6 +19,7 @@ COMMENT=	Genetic Algorithm Utility Library
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

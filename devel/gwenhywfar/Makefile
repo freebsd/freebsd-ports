@@ -19,6 +19,7 @@ OPTIONS=	SSLDEBUG "Enable gwenhywfar SSL debug (if SSL enabled)" off \
 		MEMDEBUG "Enable memory debugger statistic" off \
 		PORTDOCS "Install documentation (requires doxygen)" off
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=synce
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Extract data from InstallShield CAB files
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

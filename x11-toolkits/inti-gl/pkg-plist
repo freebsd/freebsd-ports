@@ -17,6 +17,8 @@ include/inti-1.0/inti/gtk/gl/init.h
 include/inti-1.0/inti/gtk/gl/widget.h
 include/inti-1.0/inti/inti-gl.h
 lib/inti-1.0/include/inti-gl-config.h
+lib/libinti-gl-1.0.a
+lib/libinti-gl-1.0.la
 lib/libinti-gl-1.0.so
 lib/libinti-gl-1.0.so.0
 libdata/pkgconfig/inti-gl-1.0.pc

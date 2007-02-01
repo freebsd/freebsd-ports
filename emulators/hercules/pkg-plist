@@ -38,6 +38,7 @@ lib/libherct.la
 lib/libherct.so
 lib/libhercu.la
 lib/libhercu.so
+lib/hercules/dyncrypt.a
 lib/hercules/dyncrypt.la
 lib/hercules/dyncrypt.so
 lib/hercules/dyngui.la

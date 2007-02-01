@@ -2,6 +2,7 @@ include/libcapsinetwork/listener.h
 include/libcapsinetwork/listenport.h
 include/libcapsinetwork/socket.h
 lib/libcapsinetwork.a
+lib/libcapsinetwork.la
 lib/libcapsinetwork.so
 lib/libcapsinetwork.so.0
 @dirrm include/libcapsinetwork

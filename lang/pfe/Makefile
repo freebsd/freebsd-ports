@@ -17,6 +17,7 @@ COMMENT=	Implementation of ANSI Forth
 
 LATEST_LINK=	pfe-devel
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=yes
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes

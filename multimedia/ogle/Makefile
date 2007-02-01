@@ -20,6 +20,7 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_AUTOTOOLS=	libtool:15
 USE_SUBMAKE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

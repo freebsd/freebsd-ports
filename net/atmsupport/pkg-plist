@@ -17,9 +17,11 @@ include/atm/unitcl/unitcl.h
 include/atm/unitcl/unitcl_iefunc.h
 include/atm/unitcl/unitcl_msgfunc.h
 lib/libats.a
+lib/libats.la
 lib/libats.so
 lib/libats.so.1
 lib/libunitcl.a
+lib/libunitcl.la
 lib/libunitcl.so
 lib/libunitcl.so.4
 %%DATADIR%%/testsuite_cc/CC_01_01

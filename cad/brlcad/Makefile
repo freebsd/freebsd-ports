@@ -17,6 +17,7 @@ COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		rle.1:${PORTSDIR}/graphics/urt
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes

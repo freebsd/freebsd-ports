@@ -16,6 +16,7 @@ COMMENT=	C library, API for communicating with Creative and Dell audio players
 
 LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

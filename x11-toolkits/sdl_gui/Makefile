@@ -17,6 +17,7 @@ DISTNAME=	SDL_gui-${PORTVERSION}
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A Graphical User Interface library for SDL
 
+USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image ttf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

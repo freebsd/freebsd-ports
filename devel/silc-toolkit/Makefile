@@ -27,6 +27,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

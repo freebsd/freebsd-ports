@@ -1,5 +1,8 @@
 bin/ui
+lib/userinfo/login.a
 lib/userinfo/login.so
+lib/userinfo/mail.a
 lib/userinfo/mail.so
+lib/userinfo/passwd.a
 lib/userinfo/passwd.so
 @dirrm lib/userinfo

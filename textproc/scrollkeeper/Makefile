@@ -26,6 +26,7 @@ RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 
 DOCBOOK_VERSION=	4.1.2
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

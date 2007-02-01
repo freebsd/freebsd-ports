@@ -17,6 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library that supports startup notification spec from freedesktop.org
 
+USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig

@@ -13,6 +13,7 @@ MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"

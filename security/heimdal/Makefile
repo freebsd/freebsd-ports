@@ -26,6 +26,7 @@ OPTIONS+=	LDAP	 "Use OpenLDAP as the KDC backend"		off
 OPTIONS+=	CRACKLIB "Use CrackLib for password quality checking"	off
 OPTIONS+=	X11	 "Build X11 utilies"				off
 
+USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

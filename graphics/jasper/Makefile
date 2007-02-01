@@ -18,6 +18,7 @@ COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_AUTOTOOLS=	libtool:15
 USE_ZIP=	yes
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes

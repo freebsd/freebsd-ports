@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	netdude
 MAINTAINER=	wxs@atarininja.org
 COMMENT=	A libpcap wrapper library
 
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

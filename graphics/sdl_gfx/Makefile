@@ -18,6 +18,7 @@ DISTNAME=	SDL_gfx-${PORTVERSION}
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
+USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

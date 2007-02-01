@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.zork.org/software/
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	C/C++ library for exception handling and asset management
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BeeCrypt is an open source cryptography library
 
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

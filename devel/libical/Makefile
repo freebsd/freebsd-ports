@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	freeassociation
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

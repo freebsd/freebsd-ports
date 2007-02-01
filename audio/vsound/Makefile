@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.zorg.org/vsound/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from programs with OSS output
 
+USE_AUTOTOOLS=	libtool:15
 BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 

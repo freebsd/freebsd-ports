@@ -17,6 +17,7 @@ COMMENT=	XSL formatter that produces PDF and PostScript
 
 LIB_DEPENDS=	pangoxsl-1.0.600:${PORTSDIR}/x11-toolkits/pangoxsl
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libgnomeprint libxslt

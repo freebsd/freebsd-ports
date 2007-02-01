@@ -339,12 +339,15 @@ lib/X11/system.mwmrc
 %%MOTIF_DEMOS%%lib/X11/uid/swedish/uid/l_strings.uid
 %%MOTIF_DEMOS%%lib/X11/uid/xmanimate.uid
 lib/libMrm.a
+lib/libMrm.la
 lib/libMrm.so
 lib/libMrm.so.3
 lib/libUil.a
+lib/libUil.la
 lib/libUil.so
 lib/libUil.so.3
 lib/libXm.a
+lib/libXm.la
 lib/libXm.so
 lib/libXm.so.3
 %%MANUALS%%%%DOCSDIR%%/BUGREPORT

@@ -14,6 +14,7 @@ MASTER_SITES=	http://arbornet.org/~bjk/userinfo/ \
 MAINTAINER=	bjk@m-net.arbornet.org
 COMMENT=	Show information about local users
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

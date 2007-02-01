@@ -20,6 +20,7 @@ LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	${LOCALBASE}/share/m17n/mdb.dir:${PORTSDIR}/devel/m17n-db
 
+USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_GNOME=	gnometarget libxml2 pkgconfig
 GNU_CONFIGURE=	yes

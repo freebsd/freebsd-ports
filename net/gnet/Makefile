@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.gnetlibrary.org/src/
 MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A simple network library built upon Glib
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack glib12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

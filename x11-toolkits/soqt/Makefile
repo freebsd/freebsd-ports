@@ -17,6 +17,7 @@ COMMENT=	Qt toolkit library for Coin
 
 LIB_DEPENDS=	Coin.44:${PORTSDIR}/graphics/Coin
 
+USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

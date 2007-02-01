@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.southern-storm.com.au/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libjit implements Just-In-Time compilation functionality
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

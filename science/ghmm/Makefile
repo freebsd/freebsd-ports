@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	General Hidden Markov Model Library in C
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-0.7.0

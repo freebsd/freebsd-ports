@@ -17,6 +17,7 @@ COMMENT=		Library that allows email systems such as Exim to check SPF records
 
 DEPRECATED=		Superceded by mail/libspf2
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=		yes
 USE_ICONV=		yes
 USE_GETTEXT=		yes

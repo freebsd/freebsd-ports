@@ -16,6 +16,7 @@ COMMENT=	XML parser library mainly designed for Jabber applications
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

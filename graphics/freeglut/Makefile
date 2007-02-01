@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An alternative to the OpenGL Utility Toolkit (GLUT) library
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XLIB=		yes

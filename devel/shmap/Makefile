@@ -18,6 +18,7 @@ COMMENT=	Shared-memory-based hashmaps
 
 LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -15,6 +15,7 @@ COMMENT=	This is the Mowitz ("More widgets") library
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 INSTALLS_SHLIB=	yes

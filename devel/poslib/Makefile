@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	posadis
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Posadis C++ DNS library
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

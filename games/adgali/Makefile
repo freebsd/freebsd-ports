@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_XPM=	yes

@@ -16,9 +16,11 @@ include/vis5d+/binio.h
 include/vis5d+/v5d.h
 include/vis5d+/v5df.h
 lib/libv5d.a
+lib/libv5d.la
 lib/libv5d.so
 lib/libv5d.so.2
 lib/libvis5d.a
+lib/libvis5d.la
 lib/libvis5d.so
 lib/libvis5d.so.2
 share/locale/es/LC_MESSAGES/vis5d+.mo

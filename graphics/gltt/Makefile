@@ -16,6 +16,7 @@ COMMENT=	TrueType fonts rendering using OpenGL
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_FREETYPE=	yes
 USE_GMAKE=	yes

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	. archive
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library which provides a file_iterator class
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes

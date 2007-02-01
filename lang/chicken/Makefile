@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.call-with-current-continuation.org/
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Scheme-to-C compiler
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

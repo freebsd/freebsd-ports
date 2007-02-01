@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
 MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Library needed by syslog-ng
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	3.3+

@@ -28,6 +28,7 @@ SHLIB_VERSION=	1
 VERSION=	0.8
 
 DEPRECATED=	Obsolete version, use gstreamer 0.10 instead
+USE_AUTOTOOLS=	libtool:15
 EXPIRATION_DATE=2007-05-31
 WANT_GSTREAMER=	yes
 USE_XLIB=	yes

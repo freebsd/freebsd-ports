@@ -18,5 +18,6 @@ include/spf_alt/spf_dns_zone.h
 include/spf_alt/spf_lib_version.h
 @dirrm include/spf_alt
 lib/libspf_alt.a
+lib/libspf_alt.la
 lib/libspf_alt.so
 lib/libspf_alt.so.1

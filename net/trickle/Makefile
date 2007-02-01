@@ -16,6 +16,7 @@ COMMENT=	Lightweight, portable bandwidth shaper
 
 LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

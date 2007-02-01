@@ -30,9 +30,11 @@ include/libwmf/svg.h
 include/libwmf/types.h
 include/libwmf/x.h
 lib/libwmf.a
+lib/libwmf.la
 lib/libwmf.so
 lib/libwmf.so.2
 lib/libwmflite.a
+lib/libwmflite.la
 lib/libwmflite.so
 lib/libwmflite.so.7
 %%PORTDOCS%%%%DOCSDIR%%/caolan/2.html

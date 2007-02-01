@@ -20,6 +20,7 @@ COMMENT=	A GTK+ 2 spell checking component
 
 LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20

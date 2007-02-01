@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

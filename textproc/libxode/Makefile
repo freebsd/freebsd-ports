@@ -18,6 +18,7 @@ COMMENT=	An XML library which wraps expat
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

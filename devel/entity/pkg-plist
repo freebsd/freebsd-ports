@@ -2,6 +2,7 @@ bin/entity
 bin/entity-config
 lib/libentitynjs.so.1
 lib/libentitynjs.so
+lib/libentitynjs.a
 lib/libentitynjs.la
 lib/entity/include/gextensions.h
 lib/entity/include/gslist.h
@@ -31,14 +32,19 @@ lib/entity/include/renderers.h
 lib/entity/include/xml-parser.h
 lib/entity/include/entity-config.h
 lib/entity/clib/librendcoregtk.so
+lib/entity/clib/librendcoregtk.a
 lib/entity/clib/librendcoregtk.la
 lib/entity/clib/librendextragtk.so
+lib/entity/clib/librendextragtk.a
 lib/entity/clib/librendextragtk.la
 lib/entity/clib/librendcembed.so
+lib/entity/clib/librendcembed.a
 lib/entity/clib/librendcembed.la
 lib/entity/clib/librendnjs.so
+lib/entity/clib/librendnjs.a
 lib/entity/clib/librendnjs.la
 lib/entity/clib/librendsystem.so
+lib/entity/clib/librendsystem.a
 lib/entity/clib/librendsystem.la
 lib/entity/Entity.pl
 lib/entity/E-init.pl
@@ -52,6 +58,7 @@ lib/entity/config/rendsystem.conf
 lib/entity/libtool
 lib/libentity.so.0
 lib/libentity.so
+lib/libentity.a
 lib/libentity.la
 share/entity/element-browser.e
 share/entity/enview.e

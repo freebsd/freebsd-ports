@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--disable-build-docs
 PLIST_SUB=	SGML="@comment "
 .endif
 
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 

@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/verlihub-0.9.8c
 
 USE_RC_SUBR=	verlihub
 
+USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

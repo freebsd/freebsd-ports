@@ -35,6 +35,7 @@ CONFLICTS=	gimp-2.* gimp-gnome-2.* gimpshop-[0-9]*
 #SHLIBVER?=	${PORTVERSION:S/1.2.//g}
 SHLIBVER?=	2
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_XPM=	yes

@@ -15,6 +15,7 @@ include/femSolver1.hpp
 include/femSolver1c.hpp
 include/femTreeNode.hpp
 lib/libfreefem.a
+lib/libfreefem.la
 lib/libfreefem.so
 lib/libfreefem.so.0
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

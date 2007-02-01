@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A library for manipulating Unicode characters and strings
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

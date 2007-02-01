@@ -23,6 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 LATEST_LINK=	fox10
 
+USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

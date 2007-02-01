@@ -18,6 +18,7 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 SUB_DIR=	21187
 
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes

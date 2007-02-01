@@ -20,6 +20,7 @@ COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 LIB_DEPENDS=	ggz.4:${PORTSDIR}/games/libggz \
 		expat.6:${PORTSDIR}/textproc/expat2
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes

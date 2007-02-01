@@ -986,44 +986,53 @@ include/protocols/ace/TMCast/Protocol.hpp
 include/protocols/ace/TMCast/TransactionController.hpp
 lib/libACE.so.5
 lib/libACE-5.5.2.so
+lib/libACE.a
 lib/libACE.la
 lib/libACE.so
 @exec ln -fs %F %F.5
 lib/libACEXML.so.5
 lib/libACEXML-5.5.2.so
+lib/libACEXML.a
 lib/libACEXML.la
 lib/libACEXML.so
 @exec ln -fs %F %F.5
 lib/libACEXML_Parser.so.5
 lib/libACEXML_Parser-5.5.2.so
 @exec ln -fs %F %F.5
+lib/libACEXML_Parser.a
 lib/libACEXML_Parser.la
 lib/libACEXML_Parser.so
 lib/libACEXML_XML_Svc_Conf_Parser.so.5
 lib/libACEXML_XML_Svc_Conf_Parser-5.5.2.so
+lib/libACEXML_XML_Svc_Conf_Parser.a
 lib/libACEXML_XML_Svc_Conf_Parser.la
 lib/libACEXML_XML_Svc_Conf_Parser.so
 @exec ln -fs %F %F.5
 lib/libACE_HTBP.so.5
 lib/libACE_HTBP-5.5.2.so
+lib/libACE_HTBP.a
 lib/libACE_HTBP.la
 lib/libACE_HTBP.so
 @exec ln -fs %F %F.5
 lib/libACE_RMCast.so.5
 lib/libACE_RMCast-5.5.2.so
+lib/libACE_RMCast.a
 lib/libACE_RMCast.la
 lib/libACE_RMCast.so
 @exec ln -fs %F %F.5
 lib/libACE_SSL.so.5
 lib/libACE_SSL-5.5.2.so
+lib/libACE_SSL.a
 lib/libACE_SSL.la
 lib/libACE_SSL.so
 @exec ln -fs %F %F.5
 lib/libACE_TMCast.so.5
 lib/libACE_TMCast-5.5.2.so
+lib/libACE_TMCast.a
 lib/libACE_TMCast.la
 lib/libACE_TMCast.so
 @exec ln -fs %F %F.5
+lib/libKokyu.a
 lib/libKokyu.la
 lib/libKokyu.so
 lib/libKokyu.so.5

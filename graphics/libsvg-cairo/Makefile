@@ -19,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		svg.1:${PORTSDIR}/graphics/libsvg \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
 USE_LDCONFIG=	yes

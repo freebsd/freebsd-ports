@@ -27,6 +27,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 MAN3=		popt.3

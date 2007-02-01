@@ -13,6 +13,7 @@ MASTER_SITES=	http://google-gflags.googlecode.com/files/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Commandline flags module for C++
 
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

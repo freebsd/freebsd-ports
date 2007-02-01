@@ -17,6 +17,7 @@ COMMENT=	A program to inferface with the Rio600, Rio800 and psa[play devices
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -21,6 +21,7 @@ COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 
 RUN_DEPENDS=	imake:${X_IMAKE_PORT}
 
+USE_AUTOTOOLS=	libtool:15
 CONFLICTS=	lesstif-*
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

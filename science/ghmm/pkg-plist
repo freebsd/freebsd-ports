@@ -41,6 +41,7 @@ include/ghmm/randvar.h
 include/ghmm/internal.h
 lib/libghmm.so.0
 lib/libghmm.so
+lib/libghmm.la
 lib/libghmm.a
 %%DATADIR%%/PHI_001_20.dat
 @dirrmtry %%DATADIR%%

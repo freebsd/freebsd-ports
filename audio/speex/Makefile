@@ -23,6 +23,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 CONFLICTS=	speex-devel-[0-9]*
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes

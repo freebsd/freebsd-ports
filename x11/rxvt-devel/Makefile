@@ -24,6 +24,7 @@ COMMENT=	A low memory usage xterm replacement that supports color
 
 FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes

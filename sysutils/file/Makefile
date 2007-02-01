@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	3.4+

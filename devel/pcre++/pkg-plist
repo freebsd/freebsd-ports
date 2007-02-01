@@ -1,6 +1,7 @@
 bin/pcre++-config
 include/pcre++.h
 lib/libpcre++.a
+lib/libpcre++.la
 lib/libpcre++.so
 lib/libpcre++.so.0
 %%PORTDOCS%%share/doc/libpcre++-%%VERSION%%/AUTHORS

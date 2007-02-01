@@ -23,6 +23,7 @@ COMMENT=	A modplug-based plugin for beep-media-player
 LIB_DEPENDS?=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes

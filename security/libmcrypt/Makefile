@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/lib//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-cipher cryptographic library (used in PHP)
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-static

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	sources/libghttp/1.0
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME http client library
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

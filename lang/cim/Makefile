@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for the SIMULA programming language
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
