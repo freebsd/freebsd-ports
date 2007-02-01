@@ -1,0 +1,9 @@
+include/mi/CpMediaInterface.h
+include/mi/CpMediaInterfaceFactory.h
+include/mi/CpMediaInterfaceFactoryFactory.h
+include/mi/CpMediaInterfaceFactoryImpl.h
+lib/libsipXmediaProcessing.a
+lib/libsipXmediaProcessing.la
+lib/libsipXmediaProcessing.so
+lib/libsipXmediaProcessing.so.1
+@dirrm include/mi

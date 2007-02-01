@@ -746,6 +746,7 @@
     SUBDIR += sipsak
     SUBDIR += sipxcommserverlib
     SUBDIR += sipxconfig
+    SUBDIR += sipxmediaadapterlib
     SUBDIR += sipxmedialib
     SUBDIR += sipxportlib
     SUBDIR += sipxpublisher
