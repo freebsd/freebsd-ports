@@ -1,6 +1,15 @@
---- cda_d/Imakefile.orig	Mon Nov  4 06:44:55 2002
-+++ cda_d/Imakefile	Mon Nov  4 05:06:59 2002
-@@ -186,6 +186,7 @@
+--- cda_d/Imakefile.orig	Thu Apr 22 03:27:23 2004
++++ cda_d/Imakefile	Fri Feb  2 04:44:17 2007
+@@ -193,7 +193,7 @@
+ LOCAL_LIBRARIES=-lncurses
+ #else
+ #if defined(FreeBSDArchitecture)
+-LOCAL_LIBRARIES=-lncurses -lmytinfo
++LOCAL_LIBRARIES=-lncurses
+ .if exists(/usr/include/camlib.h)
+ LOCAL_LIBRARIES+= -lcam
+ .endif
+@@ -231,6 +231,7 @@
  #endif	/* LinuxArchitecture OpenBSDArchitecture */
  #endif	/* SunArchitecture */
  
