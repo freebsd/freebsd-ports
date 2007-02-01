@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.4.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		cvsps:${PORTSDIR}/devel/cvsps-devel \
+		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
@@ -146,7 +147,7 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN3=		Git.3 private-Error.3
+MAN3=		Git.3
 MAN7=		git.7
 
 USE_PERL5=	yes

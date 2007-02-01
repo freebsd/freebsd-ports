@@ -131,7 +131,6 @@ bin/git-verify-tag
 bin/git-whatchanged
 bin/git-write-tree
 bin/gitk
-%%SITE_PERL%%/Error.pm
 %%SITE_PERL%%/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
 lib/xemacs/site-lisp/git/git.el
