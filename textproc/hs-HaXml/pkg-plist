@@ -39,6 +39,7 @@ lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/libHSHaXml-%%HAXML_VERSION%%.a
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/include
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%
+@dirrm lib/HaXml-%%HAXML_VERSION%%
 @exec %D/bin/ghc-pkg register %D/lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/HaXml.pkgconf
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister HaXml
