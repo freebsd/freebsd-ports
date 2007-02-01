@@ -17,6 +17,7 @@ COMMENT=	A library that allows application developers to connect to PG
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

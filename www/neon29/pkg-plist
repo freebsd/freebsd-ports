@@ -23,6 +23,7 @@ include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
 lib/libneon.so.25
 lib/libneon.so
+lib/libneon.la
 lib/libneon.a
 libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/apas01.html

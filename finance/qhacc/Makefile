@@ -17,6 +17,7 @@ COMMENT=	Simple QT-based financial manager
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

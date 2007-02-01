@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A natural language translation library
 
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 USE_GNOME=		glib20 gnomehack intlhack
 GNU_CONFIGURE=		yes

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A library for Microsoft compression formats
 
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

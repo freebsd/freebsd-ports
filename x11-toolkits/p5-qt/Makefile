@@ -22,13 +22,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:cpan \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of Perl bindings for the Qt toolkit
 
+USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/pqtapi bin/pqtsh bin/puic include/smoke.h \
-		lib/libsmokeqt.la lib/libsmokeqt.so lib/libsmokeqt.so.3
+		lib/libsmokeqt.la lib/libsmokeqt.so lib/libsmokeqt.so.3 \
+		lib/libsmokeqt.a
 
 MAN1=	puic.1
 MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}

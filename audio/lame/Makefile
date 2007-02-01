@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	lame
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	ISO code based fast MP3 encoder kit
 
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes

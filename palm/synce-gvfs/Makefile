@@ -16,6 +16,7 @@ COMMENT=	Gnome VFS module for WinCE devices
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnometarget gnomevfs2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

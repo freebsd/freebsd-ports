@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static --with-pl
 		--with-cppunit-prefix=/nonexistent
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -DNDEBUG"
 GNU_CONFIGURE=	YES
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	YES
 USE_GCC=	3.4+
 USE_BZIP2=	YES

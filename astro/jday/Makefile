@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Astronomical julian date calculator
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

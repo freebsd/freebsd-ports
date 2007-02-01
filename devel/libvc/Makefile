@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	rolo
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A vCard library
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes

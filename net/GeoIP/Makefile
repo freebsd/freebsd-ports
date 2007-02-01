@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

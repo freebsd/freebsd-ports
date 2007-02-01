@@ -24,6 +24,7 @@ include/tvision/util.h
 include/tvision/validate.h
 include/tvision/views.h
 lib/libtvision.a
+lib/libtvision.la
 lib/libtvision.so
 lib/libtvision.so.0
 @dirrm include/tvision

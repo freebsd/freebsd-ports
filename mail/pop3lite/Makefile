@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, modular RFC-compliant POP3 daemon
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

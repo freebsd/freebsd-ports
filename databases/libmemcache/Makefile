@@ -15,6 +15,7 @@ COMMENT=	The C library for accessing a memcache cluster
 
 USE_BZIP2=	yes
 
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 

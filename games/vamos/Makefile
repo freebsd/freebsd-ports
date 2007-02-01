@@ -22,6 +22,7 @@ LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \
 		glut.4:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
+USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes

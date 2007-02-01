@@ -16,6 +16,7 @@ COMMENT=	Standard library for Window Maker dock apps
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^lib//}-${PORTVERSION}
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -16,6 +16,7 @@ DISTFILES=	log4cplus-${PORTVERSION}.tar.gz log4cplus-${PORTVERSION}-docs.tar.gz
 MAINTAINER=	petri.totterman@hmv.fi
 COMMENT=	A logging library for C++
 
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

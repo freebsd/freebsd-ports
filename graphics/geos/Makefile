@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	saurbier@math.uni-bielefeld.de
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
+USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	jamlib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A JAM subroutine library
 
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes

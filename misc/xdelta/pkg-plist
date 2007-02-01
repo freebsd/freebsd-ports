@@ -5,9 +5,11 @@ include/edsio_edsio.h
 include/xd_edsio.h
 include/xdelta.h
 lib/libedsio.a
+lib/libedsio.la
 lib/libedsio.so
 lib/libedsio.so.0
 lib/libxdelta.a
+lib/libxdelta.la
 lib/libxdelta.so
 lib/libxdelta.so.2
 share/aclocal/xdelta.m4

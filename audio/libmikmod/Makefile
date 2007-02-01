@@ -18,6 +18,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	david@trucs.org
 COMMENT=	MikMod Sound Library
 
+USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes

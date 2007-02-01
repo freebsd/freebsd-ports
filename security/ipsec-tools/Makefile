@@ -23,6 +23,7 @@ USE_RC_SUBR=	racoon.sh
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

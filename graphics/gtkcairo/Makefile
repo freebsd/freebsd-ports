@@ -17,6 +17,7 @@ COMMENT=	Gtk+ bindings to cairo
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget gnomehack
 USE_LDCONFIG=	yes

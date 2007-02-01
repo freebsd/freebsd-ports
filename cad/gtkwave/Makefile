@@ -19,6 +19,7 @@ COMMENT=	Electronic Waveform Viewer
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

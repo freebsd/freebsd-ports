@@ -22,6 +22,7 @@ LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
+USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
 USE_ICONV=	yes

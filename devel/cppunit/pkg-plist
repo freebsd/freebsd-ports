@@ -4,5 +4,6 @@ bin/simple
 lib/libcppunit-1.10.so
 lib/libcppunit-1.10.so.2
 lib/libcppunit.a
+lib/libcppunit.la
 lib/libcppunit.so
 share/aclocal/cppunit.m4

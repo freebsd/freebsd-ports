@@ -14,6 +14,7 @@ DISTNAME=		openhbci-0.9.17-2
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		HBCI is a bank-independent homebanking standard
 
+USE_AUTOTOOLS=	libtool:15
 WRKSRC=			${WRKDIR}/${PORTNAME}-0.9.17
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

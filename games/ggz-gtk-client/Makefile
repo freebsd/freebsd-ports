@@ -19,6 +19,7 @@ COMMENT=	The GGZ Gaming Zone - GTK+ Frontend
 
 LIB_DEPENDS=	ggzcore.8:${PORTSDIR}/games/ggz-client-libs
 
+USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.3+
 USE_GNOME=	gnometarget gtk20
 USE_GETOPT_LONG=	yes

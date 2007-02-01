@@ -13,6 +13,7 @@ MASTER_SITES=	http://kakasi.namazu.org/stable/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji-Kana Simple Inverter, language filter for Japanese
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 
 MANLANG=	ja

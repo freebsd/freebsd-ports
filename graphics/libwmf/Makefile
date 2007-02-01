@@ -19,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sys-gd=no \

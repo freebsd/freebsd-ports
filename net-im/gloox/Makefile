@@ -17,6 +17,7 @@ LIB_DEPENDS=	iksemel.3:${PORTSDIR}/textproc/iksemel \
 		idn.16:${PORTSDIR}/dns/libidn \
 		gnutls.15:${PORTSDIR}/security/gnutls
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes

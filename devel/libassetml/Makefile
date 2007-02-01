@@ -18,6 +18,7 @@ COMMENT=	Devel Library to share image and audio files between projects
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack lthack gnomeprefix gnometarget glib20 libxml2 pkgconfig

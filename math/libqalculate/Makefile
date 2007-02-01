@@ -16,6 +16,7 @@ COMMENT=	Very powerful GUI calculator for GNOME (backend library)
 
 LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

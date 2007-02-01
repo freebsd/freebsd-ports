@@ -13,6 +13,7 @@ MASTER_SITES=	http://research.edm.luc.ac.be/jori/jrtplib/
 MAINTAINER=	hopet@ics.muni.cz
 COMMENT=	Object-oriented RTP library written in C++
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

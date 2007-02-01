@@ -20,6 +20,7 @@ LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl \
 		fftw.2:${PORTSDIR}/math/fftw \
 		ginac-1.3.3:${PORTSDIR}/math/GiNaC
 
+USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes

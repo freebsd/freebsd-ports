@@ -16,6 +16,7 @@ COMMENT=	Yet Another Computer Algebra System
 
 LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl
 
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

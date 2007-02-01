@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 
 PM_BASE=	${SITE_PERL}
 
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes

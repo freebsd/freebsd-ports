@@ -13,6 +13,7 @@ MASTER_SITES=		http://srs.mirtol.com/
 MAINTAINER=		simond@irrelevant.org
 COMMENT=		Sender Rewriting Scheme C Implementation
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=		yes
 INSTALLS_SHLIB=		yes
 SHLIB_MAJOR=		1

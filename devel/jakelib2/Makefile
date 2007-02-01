@@ -18,6 +18,7 @@ COMMENT=	A cross platform C++ class library with a Java-like API
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

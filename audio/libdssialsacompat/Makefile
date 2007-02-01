@@ -13,6 +13,7 @@ MASTER_SITES=	http://home.jps.net/~musound/
 MAINTAINER=	mahonmesr@googlemail.com
 COMMENT=	Alsa compatibility library to build DSSI
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

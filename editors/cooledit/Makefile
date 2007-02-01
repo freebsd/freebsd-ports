@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of utilities, including a GUI editor
 
+USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes

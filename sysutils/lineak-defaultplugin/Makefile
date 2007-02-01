@@ -17,6 +17,7 @@ COMMENT=	Default plugins for lineakd
 
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
@@ -26,8 +27,10 @@ CONFIGURE_ARGS+=	--program-prefix=''
 
 MAN1=		lineak_defaultplugin.1
 MAN_COMPRESSED=	yes
-PLIST_FILES=	lib/lineakd/plugins/defaultplugin.la \
+PLIST_FILES=	lib/lineakd/plugins/defaultplugin.a \
+		lib/lineakd/plugins/defaultplugin.la \
 		lib/lineakd/plugins/defaultplugin.so \
+		lib/lineakd/plugins/mediadetectplugin.a \
 		lib/lineakd/plugins/mediadetectplugin.la \
 		lib/lineakd/plugins/mediadetectplugin.so \
 		etc/media-detect.conf

@@ -19,8 +19,10 @@ include/orsa/orsa_universe.h
 include/orsa/orsa_version.h
 @dirrm include/orsa
 lib/liborsa.a
+lib/liborsa.la
 lib/liborsa.so
 lib/liborsa.so.0
 lib/libxorsa.a
+lib/libxorsa.la
 lib/libxorsa.so
 lib/libxorsa.so.0

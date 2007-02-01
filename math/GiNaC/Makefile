@@ -18,6 +18,7 @@ COMMENT=	A C++ library for symbolic mathematical calculations
 
 LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget pkgconfig

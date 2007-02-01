@@ -46,9 +46,11 @@ include/taglib/vorbisfile.h
 include/taglib/vorbisproperties.h
 include/taglib/xingheader.h
 include/taglib/xiphcomment.h
+lib/libtag.a
 lib/libtag.la
 lib/libtag.so
 lib/libtag.so.5
+lib/libtag_c.a
 lib/libtag_c.la
 lib/libtag_c.so
 lib/libtag_c.so.0

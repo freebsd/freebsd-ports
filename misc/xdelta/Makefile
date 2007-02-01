@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A diff/patch utility for binary files
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

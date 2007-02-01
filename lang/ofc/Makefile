@@ -15,6 +15,7 @@ COMMENT=	The Objective-C Foundation Classes library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

@@ -17,6 +17,7 @@ DISTNAME=	opencv-${PORTVERSION}
 MAINTAINER=	msabramo@yahoo.com
 COMMENT=	Open Source Computer Vision Library from Intel
 
+USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

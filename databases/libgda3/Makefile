@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

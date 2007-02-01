@@ -1,6 +1,7 @@
 bin/tester
 include/ctapi.h
 include/ctbcs.h
-lib/libtowitoko.so.2
-lib/libtowitoko.so
+lib/libtowitoko.a
 lib/libtowitoko.la
+lib/libtowitoko.so
+lib/libtowitoko.so.2

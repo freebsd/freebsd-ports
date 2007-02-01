@@ -20,7 +20,7 @@ COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes

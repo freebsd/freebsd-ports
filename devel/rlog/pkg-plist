@@ -17,6 +17,7 @@ include/rlog/SyslogNode.h
 lib/librlog.so.4
 lib/librlog.so
 lib/librlog.la
+lib/librlog.a
 libdata/pkgconfig/librlog.pc
 %%DOCSDIR%%/html/1_83_87_2rlog_2common_8h-source.html
 %%DOCSDIR%%/html/__darcs_2current_2rlog_2Error_8h-source.html

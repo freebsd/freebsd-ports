@@ -17,6 +17,7 @@ BUILD_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso
 LIB_DEPENDS=		enchant:${PORTSDIR}/textproc/enchant
 RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=		gnomehack lthack gtk20 libxml2
 INSTALLS_SHLIB=		yes
 USE_X_PREFIX=		yes

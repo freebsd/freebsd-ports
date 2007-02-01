@@ -17,6 +17,7 @@ COMMENT=	C++ class library for manipulating messages in MIME format
 
 CONFLICTS=	kdenetwork-3.1.*
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

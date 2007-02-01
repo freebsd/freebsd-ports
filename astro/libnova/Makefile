@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

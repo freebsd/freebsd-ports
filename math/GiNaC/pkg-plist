@@ -45,6 +45,7 @@ include/ginac/tinfos.h
 include/ginac/version.h
 include/ginac/wildcard.h
 lib/libginac.a
+lib/libginac.la
 lib/libginac.so
 lib/libginac-1.3.so
 lib/libginac-1.3.so.3

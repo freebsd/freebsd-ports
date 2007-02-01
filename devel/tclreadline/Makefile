@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	tclreadline
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU readline for TCL
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 MANN=		tclreadline.n

@@ -3,6 +3,7 @@ bin/iksperf
 bin/iksroster
 include/iksemel.h
 lib/libiksemel.a
+lib/libiksemel.la
 lib/libiksemel.so
 lib/libiksemel.so.3
 libdata/pkgconfig/iksemel.pc

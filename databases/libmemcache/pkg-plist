@@ -4,4 +4,5 @@ include/memcache/buffer.h
 include/memcache.h
 lib/libmemcache.so.4
 lib/libmemcache.so
+lib/libmemcache.la
 lib/libmemcache.a

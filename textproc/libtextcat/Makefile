@@ -13,6 +13,7 @@ MASTER_SITES=	http://software.wise-guys.nl/download/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Language guessing by N-Gram-Based Text Categorization
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes

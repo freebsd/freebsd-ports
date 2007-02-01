@@ -14,6 +14,7 @@ MASTER_SITES=	http://siag.nu/pub/neXtaw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Athena Widgets with N*XTSTEP appearance
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

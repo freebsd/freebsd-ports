@@ -5,6 +5,7 @@ include/gengameng/Gengameng_LoadCompiledXPM.h
 include/gengameng/PixmapArray.h
 include/gengameng/PixmapLoadError.h
 include/gengameng/Sprite.h
+lib/libgengameng.a
 lib/libgengameng.la
 lib/libgengameng.so
 lib/libgengameng.so.4

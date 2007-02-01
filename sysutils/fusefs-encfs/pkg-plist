@@ -3,6 +3,7 @@ bin/encfsctl
 bin/encfssh
 lib/libencfs.so.2
 lib/libencfs.so
+lib/libencfs.a
 lib/libencfs.la
 share/locale/bg/LC_MESSAGES/encfs.mo
 share/locale/da/LC_MESSAGES/encfs.mo

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	lpr
 MAINTAINER=	e-masson@kisoft-services.com
 COMMENT=	A library providing routines for ppd files
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	Yes
 USE_GETOPT_LONG=Yes
