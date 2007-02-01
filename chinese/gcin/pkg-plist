@@ -17,7 +17,7 @@ include/gcin-im-client.h
 lib/gtk-2.0/immodules/im-gcin.so
 lib/gcin1.so
 lib/libgcin-im-client.so
-lib/libgcin-im-client.so.1.0.1
+lib/libgcin-im-client.so.1.0.2
 lib/libgcin-im-client.so.1
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gtab.append_prepare
@@ -40,6 +40,7 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/jyutping.gtab
 %%DATADIR%%/table/kana-nippon.gtab
 %%DATADIR%%/table/latin-letters.gtab
+%%DATADIR%%/table/mitac.kbm
 %%BOSHIAMY%%%%DATADIR%%/table/noseeing.gtab
 %%DATADIR%%/table/pho-huge.tab
 %%DATADIR%%/table/pho.tab
