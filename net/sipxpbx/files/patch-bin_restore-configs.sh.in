@@ -1,0 +1,13 @@
+--- ./bin/restore-configs.sh.in.orig	Wed Jan  3 14:13:23 2007
++++ ./bin/restore-configs.sh.in	Wed Jan  3 14:13:44 2007
+@@ -81,7 +81,7 @@
+ echo "done."
+ 
+ echo -n "Restoring database... "
+-dropdb -U postgres SIPXCONFIG > /dev/null
+-createdb -U postgres --encoding=UNICODE SIPXCONFIG > /dev/null
+-zcat $BACKUP_DIR/pds.tar.gz | pg_restore -U postgres -d SIPXCONFIG 2> /dev/null
++dropdb -U pgsql SIPXCONFIG > /dev/null
++createdb -U pgsql --encoding=UNICODE SIPXCONFIG > /dev/null
++zcat $BACKUP_DIR/pds.tar.gz | pg_restore -U pgsql -d SIPXCONFIG 2> /dev/null
+ echo "done."

@@ -1,0 +1,11 @@
+--- ./bin/backup-configs.sh.in.orig	Wed Jan  3 14:10:48 2007
++++ ./bin/backup-configs.sh.in	Wed Jan  3 14:12:57 2007
+@@ -54,7 +54,7 @@
+ done
+ 
+ dump_database() {
+-        pg_dump -U postgres -F t SIPXCONFIG
++        pg_dump -U pgsql -F t SIPXCONFIG
+ }
+ 
+ if [ ! -f /var/run/postmaster*.pid ]

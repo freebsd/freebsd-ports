@@ -1,0 +1,11 @@
+--- ./sipXpark/doc/Makefile.in.orig	Sat Dec 30 15:01:03 2006
++++ ./sipXpark/doc/Makefile.in	Sat Dec 30 15:22:35 2006
+@@ -494,7 +494,7 @@
+ 	rm -rf $(DESTDIR)@SIPX_DOCDIR@/@PACKAGE@
+ 	@INSTALL@ -d $(DESTDIR)@SIPX_DOCDIR@/@PACKAGE@
+ 	find @PACKAGE@ -type f -print \
+-	| xargs --replace=% @INSTALL@ -m u=rw,go=r % $(DESTDIR)@SIPX_DOCDIR@/%
++	| xargs -I % @INSTALL@ -m u=rw,go=r % $(DESTDIR)@SIPX_DOCDIR@/%
+ 
+ clean: clean-doc
+ 

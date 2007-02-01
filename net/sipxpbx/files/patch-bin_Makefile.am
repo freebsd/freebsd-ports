@@ -1,0 +1,39 @@
+--- bin/Makefile.am.orig	Fri Jan 12 17:42:51 2007
++++ bin/Makefile.am	Fri Jan 12 17:46:27 2007
+@@ -32,9 +32,9 @@
+ 	$(bin_SCRIPTS) \
+ 	$(SCRIPT_TEMPLATES)
+ 
+-install-exec-hook : $(DESTDIR)$(sysconfdir)/init.d/sipxpbx bin-scripts \
+-                    $(DESTDIR)$(sysconfdir)/cron.daily/voicemail_clean \
+-                    $(DESTDIR)$(sysconfdir)/cron.daily/sipx-chkspace
++install-exec-hook : bin-scripts \
++                    $(DESTDIR)$(bindir)/voicemail_clean \
++                    $(DESTDIR)$(bindir)/sipx-chkspace
+ 
+ $(DESTDIR)$(sysconfdir)/init.d/sipxpbx: $(sysconfdir)/init.d sipxpbx
+ 	$(INSTALL) -D -m 755 sipxpbx $(DESTDIR)$(sysconfdir)/init.d/sipxpbx
+@@ -42,18 +42,18 @@
+ sipxpbx: sipxpbx.in
+ 	$(LocalizeSipXconfig) $(srcdir)/sipxpbx.in > sipxpbx
+ 
+-$(DESTDIR)$(sysconfdir)/cron.daily/voicemail_clean: voicemail_clean.in
++$(DESTDIR)$(bindir)/voicemail_clean: voicemail_clean.in
+ 	$(LocalizeSipXconfig) $(srcdir)/voicemail_clean.in > voicemail_clean
+-	$(INSTALL) -D -m 755 voicemail_clean $(DESTDIR)$(sysconfdir)/cron.daily/voicemail_clean
++	$(INSTALL) -D -m 755 voicemail_clean $(DESTDIR)$(bindir)/voicemail_clean
+ 
+-$(DESTDIR)$(sysconfdir)/cron.daily/sipx-chkspace: sipx-chkspace.in
++$(DESTDIR)$(bindir)/sipx-chkspace: sipx-chkspace.in
+ 	$(LocalizeSipXconfig) $(srcdir)/sipx-chkspace.in > sipx-chkspace
+-	$(INSTALL) -D -m 755 sipx-chkspace $(DESTDIR)$(sysconfdir)/cron.daily/sipx-chkspace
++	$(INSTALL) -D -m 755 sipx-chkspace $(DESTDIR)$(bindir)/sipx-chkspace
+ 
+ $(sysconfdir)/init.d:
+ 	$(INSTALL) -d $(DESTDIR)$(sysconfdir)/init.d 
+ 
+-bin-scripts: $(sysconfdir)/init.d
++bin-scripts:
+ 	for s in $(SCRIPT_TEMPLATES); \
+ 	do \
+ 		tgt=`basename $$s .in`; \

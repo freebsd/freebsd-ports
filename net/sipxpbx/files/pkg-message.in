@@ -1,0 +1,83 @@
+
+********************************************************************
+Before you can run sipX, you must perform a number of manual
+configuration step.  This includes adding DNS entries, setting up
+SSL certificates and modifying your httpd.conf file.  The SSL
+certificate is *not* optional, even for quick tests, the various
+sipX modules use the SSL certificate when they communcation with
+each other).
+
+In general, the following URL is a good place to get information
+on installing and running sipX.  We've already taken care of the
+compiling and installing bits, but you still need to do some final
+configuration:
+	http://sipx-wiki.calivia.com/index.php/SipX_Start_Here
+
+sipX can take advantage of DNS SRV for your SIP traffic.  This
+affords and extra level of flexibility if you choose to use it.
+Please read:
+	http://sipx-wiki.calivia.com/index.php/DNS_Configuration
+
+sipX provide a couple scripts to simplify the SSL certificate
+generation and installation procedure.  Please read:
+
+	%%DOCSDIR%%/INSTALL.ssl
+
+You will also need to adjust your %%APACHEETCDIR%%/httpd.conf file.
+	Ensure httpd runs as user sipx and group sipx.  Ala:
+		User sipx
+		Group sipx
+	Change the document root to
+		DocumentRoot %%PREFIX%%/www/sipX/doc
+	The <Directory > instance should match
+		<Directory "%%PREFIX%%/www/sipX/doc">
+	Finally, include these lines:
+
+	<IfModule ssl_module>
+		Include %%PREFIX%%/etc/sipxpbx/httpd-sipxchange-common-ssl.conf
+	</IfModule>
+
+	Include %%PREFIX%%/etc/sipxpbx/httpd-sipxchange-common.conf
+	Include %%PREFIX%%/etc/sipxpbx/httpd-sipxchange-configserver.conf
+
+
+Edit the sipX configuration file.  Be sure to match the configuration
+entries against your DNS configuration.
+
+	%%PREFIX%%/etc/sipxpbx/config.defs
+
+Modify /etc/crontab to run the following daily
+	%%PREFIX%%/bin/sipx-chkspace
+	%%PREFIX%%/bin/voicemail_clean
+
+You also need to configure unixODBC to map to the postgresql database.
+Add the following lines to %%PREFIX%%/etc/odbcinst.ini
+	[PostgreSQL]
+	Description = PostgreSQL driver
+	Driver = %%PREFIX%%/lib/libodbcpsql.so
+	Setup = %%PREFIX%%/lib/libodbcpsqlS.so
+	FileUsage = 1
+	Threading = 2
+
+Don't forget to initialize the postgresql database if you haven't already.
+See the postgresql port for details.
+
+I've found it necessary to increase the size of Sys V shared memory,
+semaphores, etc.  Add the following lines to %%DESTDIR%%/boot/loader.conf
+	kern.ipc.shmmax=134217728
+	kern.ipc.shmall=65536
+	kern.ipc.semmni=40
+	kern.ipc.semmns=240
+	kern.ipc.semume=40
+	kern.ipc.semmnu=120
+
+The newly created user, sipx, will use the directory containing UA (phone)
+boot files as its home directory.  Thus you can configure your phones to
+FTP their boot files as user sipx.
+
+As of this writing, there is a bug in mod_cplusplus.  This bug causes
+httpd to core dump when httpd exits.  httpd behaves fine while running,
+so it is usable.  At this point, the core dump is more an annoyance
+than anything else.
+
+********************************************************************

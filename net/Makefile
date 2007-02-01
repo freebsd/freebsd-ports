@@ -749,6 +749,7 @@
     SUBDIR += sipxconfig
     SUBDIR += sipxmediaadapterlib
     SUBDIR += sipxmedialib
+    SUBDIR += sipxpbx
     SUBDIR += sipxportlib
     SUBDIR += sipxproxy
     SUBDIR += sipxpublisher
