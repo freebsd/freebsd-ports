@@ -58,12 +58,7 @@ SITE+=		${FILESDIR}/site.config.m4.milter
 
 .include <bsd.port.pre.mk>
 
-# .sh suffix is stripped in recent releases.
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
-SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}"
-.else
-SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR}"
-.endif
+SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
 
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
 BROKEN=		dkim-milter does not verify DomainKeys correctly
