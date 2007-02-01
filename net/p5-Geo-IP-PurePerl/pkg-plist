@@ -1,0 +1,8 @@
+bin/geoip-lookup
+%%SITE_PERL%%/Geo/IP/PurePerl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/PurePerl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/PurePerl/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/
+@dirrm %%SITE_PERL%%/Geo/IP/
+@dirrmtry %%SITE_PERL%%/Geo/

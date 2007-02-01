@@ -414,6 +414,7 @@
     SUBDIR += p5-Filesys-SmbClient
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-Geo-IP
+    SUBDIR += p5-Geo-IP-PurePerl
     SUBDIR += p5-Geo-IPfree
     SUBDIR += p5-Gopher-Server
     SUBDIR += p5-IO-INET6
