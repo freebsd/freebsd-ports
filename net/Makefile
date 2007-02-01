@@ -753,6 +753,7 @@
     SUBDIR += sipxportlib
     SUBDIR += sipxproxy
     SUBDIR += sipxpublisher
+    SUBDIR += sipxregistry
     SUBDIR += sipxtacklib
     SUBDIR += sipxvxml
     SUBDIR += sixxs-aiccu

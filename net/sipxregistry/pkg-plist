@@ -1,0 +1,20 @@
+bin/sipregistrar
+bin/sipregistrar.sh
+bin/sipxregistry-config
+etc/sipxpbx/fallbackrules.xml.in
+etc/sipxpbx/mappingrules.xml.in
+etc/sipxpbx/process.d/sipregistrar.process.xml
+etc/sipxpbx/registrar-config.in
+include/registry/RegisterPlugin.h
+lib/libRegistrarImpliedMWI.a
+lib/libRegistrarImpliedMWI.la
+lib/libRegistrarImpliedMWI.so
+lib/libRegistrarImpliedMWI.so.1
+share/sipx/schema/alias.xsd
+share/sipx/schema/caller-alias.xsd
+share/sipx/schema/huntgroup.xsd
+@dirrm share/sipx/schema
+@dirrm share/sipx
+@dirrm include/registry
+@dirrm etc/sipxpbx/process.d
+@dirrm etc/sipxpbx
