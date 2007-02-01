@@ -3,7 +3,7 @@ bin/easy_install
 bin/easy_install-%%PYVER%%
 %%PYTHON_SITELIBDIR%%/easy-install.pth
 %%PYTHON_SITELIBDIR%%/setuptools.pth
-%%PYTHON_CURRENT%%%%PYTHON_SITELIBDIR%%/setuptools-0.6c3-py2.5.egg
+%%PYTHON_CURRENT%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/PKG-INFO
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/SOURCES.txt
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/dependency_links.txt
@@ -35,6 +35,9 @@ bin/easy_install-%%PYVER%%
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/bdist_rpm.py
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/bdist_rpm.pyc
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/bdist_rpm.pyo
+%%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/bdist_wininst.py
+%%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/bdist_wininst.pyc
+%%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/bdist_wininst.pyo
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/build_ext.py
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/build_ext.pyc
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/build_ext.pyo
@@ -112,6 +115,7 @@ bin/easy_install-%%PYVER%%
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/site.pyc
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/site.pyo
 %%PORTDOCS%%%%DOCSDIR%%/EasyInstall.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/api_tests.txt
 %%PORTDOCS%%%%DOCSDIR%%/pkg_resources.txt
 %%PORTDOCS%%%%DOCSDIR%%/setuptools.txt
