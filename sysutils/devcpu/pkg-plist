@@ -57,6 +57,7 @@ include/cpu.h
 %%DATADIR%%/MU268310.fw
 %%DATADIR%%/MU268602.fw
 %%DATADIR%%/MU26a401.fw
+%%DATADIR%%/amd4.fw
 %%DATADIR%%/bu27_fb.fw
 %%DATADIR%%/d2_619.fw
 %%DATADIR%%/k8_ucode_0f48.fw
@@ -115,6 +116,7 @@ include/cpu.h
 %%DATADIR%%/mu26732e.fw
 %%DATADIR%%/mu26a003.fw
 %%DATADIR%%/mu26a101.fw
+%%EXTRACTOR%%libexec/extract_mcodes.rb
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%

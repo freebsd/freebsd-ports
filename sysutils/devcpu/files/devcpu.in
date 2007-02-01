@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE:	devcpu
+# REQUIRE:	root mountcritlocal
+# KEYWORD:	nojail
+
+#
+# Add the following line to /etc/rc.conf to enable flow-capture:
+# devcpu_enable (bool):	Set it to "YES" to update cpucodes on startup
+#			Set to "NO" by default.
+# devcpu_datadir (str):	Directory, cpucode updates stored in.
+#				Default is "%%DATADIR%%"
+# devcpu_cpus (str):	A list of cpus to update on startup, or "-a" for all.
+#			Example: devcpu_cpus="cpu0 /dev/cpu1"
+#			Set to "-a" by default. 
+
+. /etc/rc.subr
+
+name="devcpu"
+rcvar=`set_rcvar`
+stop_cmd=":"
+start_precmd="devcpu_prepare"
+start_cmd="devcpu_start"
+requires_modules="cpu"
+
+CMT="%%PREFIX%%/bin/cpu_microcode_tool"
+
+devcpu_prepare()
+{
+	if ! kldstat -q -m cpu; then
+		if ! kldload cpu > /dev/null 2>&1; then
+			warn "Can't load cpu module."
+			return 1
+		fi
+	fi
+}
+
+devcpu_start()
+{
+	echo "Updating cpucodes."
+	${CMT} -I "${devcpu_datadir}" ${devcpu_cpus}
+}
+
+load_rc_config $name
+
+# Set default values
+: ${devcpu_enable="NO"}
+: ${devcpu_datadir="%%DATADIR%%"}
+: ${devcpu_cpus="-a"}
+
+run_rc_command "$1"

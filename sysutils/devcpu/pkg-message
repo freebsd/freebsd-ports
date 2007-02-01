@@ -9,8 +9,16 @@ To load it, issue
 Then you can access MSR registers or cpuid info via /dev/cpu%d or using
 3d-party programs, e.g. x86info.
 
-For information regarding microcode update feature refer to
+For information regarding microcode update features refer to
 cpu_mictocode_tool(4) manpage.
+
+You might be interested in enabling automatic microcode update on startup.
+This can be achieved by adding the line devcpu_enable="YES" to /etc/rc.conf.
+Refer to rcNG devcpu script for additional info.
+
+You can also use extract_mcodes.rb utility to extract cpucode updates
+from vendor-supplied BIOS updates. The utility currently supports only
+Award/Phoenix-compatible BIOS images.
 
 Please, report any problems to maintainer. Thanks!
 
