@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	gzip
-PORTVERSION=	1.3.5
-PORTREVISION=	2
+PORTVERSION=	1.3.9
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://sunfreeware.risq.qc.ca/SOURCES/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/solaris-freeware/SOURCES/ \
-		ftp://ftp.ibiblio.org/pub/packages/solaris/freeware/SOURCES/ \
-		ftp://sunsite.belnet.be/mirror/ftp.sunfreeware.com/pub/freeware/SOURCES/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	A compression utility designed to be a replacement for compress
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--infodir=${LOCALBASE}/info \
+			--mandir=${MANPREFIX}/man
 
 MAN1=	gunzip.1 gzexe.1 gzip.1 zcat.1 zcmp.1 zdiff.1 zforce.1 \
 	zgrep.1 zless.1 zmore.1 znew.1
