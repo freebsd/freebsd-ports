@@ -1,0 +1,98 @@
+--- web/bin/sipxconfig.sh.in.orig	Mon Jan  1 14:57:05 2007
++++ web/bin/sipxconfig.sh.in	Tue Jan  9 14:48:22 2007
+@@ -23,7 +23,7 @@
+ : ${DatabaseProject:=@sipxpbx.conf.dir@/database/database.xml}
+ : ${LibDir:=@sipxconfig.lib.dir@}
+ : ${Psql:=psql}
+-: ${ServiceDir:=/etc/init.d}
++: ${ServiceDir:=/usr/local/etc/rc.d}
+ : ${SubstituteUser:=su}
+ : ${Chown:=chown}
+ : ${LogDir:=@sipxpbx.log.dir@}
+@@ -215,8 +215,8 @@
+ #  2. running but not setup to communicate w/java or ${Psql} command
+ #  3. Database is not created
+ databaseCheck() {
+-    ${Psql} --list --field-separator , --no-align --username postgres \
+-    | cut --delimiter , --fields 1 \
++    ${Psql} --list --field-separator , --no-align --username pgsql \
++    | cut -d , -f 1 \
+     | grep "${Database}" > /dev/null 2>&1
+ }
+ 
+@@ -225,7 +225,7 @@
+ databaseVersionCheck() {
+     dbver=`${Psql} --tuples-only --no-align \
+            --command "select max(vh.version) from version_history vh;" \
+-           ${Database} postgres`
++           ${Database} pgsql`
+     if [ $? -ne 0 -o "$dbver" = "" ]
+     then
+         echo "Error: could not get the database version.  Exiting now."
+@@ -263,7 +263,6 @@
+    then
+        echo "Initializing configuration database..."
+        postgresSetup
+-       setPostgresRunlevels
+        databaseCommand create
+        echo -n "Configuration database initialized"
+    fi
+@@ -274,7 +273,7 @@
+ postgresSetup() {
+ 
+   # Set up the server.
+-  Service=`postgresService`
++  Service=postgresql
+ 
+   # May not by running, so eat up error (ENG-314)
+   ${ServiceDir}/${Service} stop 2>&1 1> /dev/null
+@@ -282,21 +281,16 @@
+   # Custom
+   if test -z $PGDATA
+   then
+-      # Debian/Gentoo
+-      if test -d /var/lib/postgresql/data
+-      then
+-          PGDATA=/var/lib/postgresql/data
+-      else
+-          # Redhat
+-          PGDATA=/var/lib/pgsql/data
+-      fi
++      PGDATA=~pgsql/data
+   fi
+ 
+   # Postgres db is initialized on startup on Redhat, but not on other
+   # distros so unless we put a "if distro=rh"  we need to init here
+   if [ ! -f $PGDATA/PG_VERSION ] || [ ! -d $PGDATA/base ]
+   then
+-      $SubstituteUser - postgres -c "initdb --pgdata=$PGDATA"
++      # XXX only works if user has added postgresql_enable="YES" to
++      # an rc.conf file.
++      sh @PREFIX@/rc.d/postgresql initdb
+   fi
+ 
+   # Create backup file (possibly) requiring update
+@@ -324,19 +318,20 @@
+   fi
+ 
+   # Open up TCP/IP connections
+-  sed -i-sipx.bak -e 's/\#tcpip_socket\s=\sfalse/tcpip_socket = true/g' \
++  gsed -i-sipx.bak -e 's/\#tcpip_socket\s=\sfalse/tcpip_socket = true/g' \
+           $PGDATA/postgresql.conf
+-  ${Chown} postgres:postgres $PGDATA/postgresql.conf
++  ${Chown} pgsql:pgsql $PGDATA/postgresql.conf
+ 
+   # Postmaster to allow connections
+   echo "-i" > $PGDATA/postmaster.opts.default
+   chmod 664 $PGDATA/postmaster.opts.default
+-  ${Chown} postgres:postgres $PGDATA/postmaster.opts.default
++  ${Chown} pgsql:pgsql $PGDATA/postmaster.opts.default
+ 
+   ${ServiceDir}/$Service start
+ }
+ 
+ # Have postgres start automatically with system reboot
++# XXX Don't worry, we don't call this under FreeBSD
+ setPostgresRunlevels() {
+     # Arrange for Postgres to be started automatically in runlevels 3
+     # and 5.

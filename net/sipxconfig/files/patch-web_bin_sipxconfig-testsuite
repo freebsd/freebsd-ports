@@ -1,0 +1,13 @@
+--- ./web/bin/sipxconfig-testsuite.orig	Wed Jan  3 13:46:42 2007
++++ ./web/bin/sipxconfig-testsuite	Wed Jan  3 13:47:37 2007
+@@ -78,8 +78,8 @@
+   Expected=`cat <<EOF
+ /etc/init.d/postgresql stop
+ su - postgres -c initdb --pgdata=$PGDATA
+-chown postgres:postgres $PGDATA/postgresql.conf
+-chown postgres:postgres $PGDATA/postmaster.opts.default
++chown pgsql:pgsql $PGDATA/postgresql.conf
++chown pgsql:pgsql $PGDATA/postmaster.opts.default
+ /etc/init.d/postgresql start
+ EOF
+ `

@@ -1,0 +1,11 @@
+--- ./neoconf/etc/database/database.xml.orig	Mon Jan  1 16:22:08 2007
++++ ./neoconf/etc/database/database.xml	Mon Jan  1 16:22:15 2007
+@@ -18,7 +18,7 @@
+   -->
+ <project name="database" basedir=".">
+   <property name="sipxconfig.db.name" value="SIPXCONFIG"/>
+-  <property name="sipxconfig.db.user" value="postgres"/>
++  <property name="sipxconfig.db.user" value="pgsql"/>
+   <property name="sipxconfig.db.password" value=""/>
+   <property name="sql.dir" location="${basedir}"/>
+   <property name="sipxpbx.conf.dir" location="${basedir}/.."/>  

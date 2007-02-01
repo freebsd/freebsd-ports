@@ -1,0 +1,11 @@
+--- ./neoconf/src/org/sipfoundry/sipxconfig/system.beans.xml.orig	Wed Jan  3 13:50:37 2007
++++ ./neoconf/src/org/sipfoundry/sipxconfig/system.beans.xml	Wed Jan  3 13:50:58 2007
+@@ -47,7 +47,7 @@
+       <value>jdbc:postgresql://localhost/SIPXCONFIG</value>
+     </property>
+     <property name="user">
+-      <value>postgres</value>
++      <value>pgsql</value>
+     </property>
+     <!-- Determines how many connections at a time c3p0 will try to acquire when the pool
+     is exhausted.  Default: 3.
