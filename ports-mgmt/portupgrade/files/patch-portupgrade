@@ -1,0 +1,11 @@
+--- bin/portupgrade.orig	Thu Feb  1 15:42:15 2007
++++ bin/portupgrade	Thu Feb  1 15:42:22 2007
+@@ -1594,7 +1594,7 @@
+       end
+ 
+       if $sudo && Process.euid != 0
+-	dep_cmdargs = cmdargs.dup << 'fetch-depends' << 'build-depends' << 'lib-depends' << 'misc-depends'
++	dep_cmdargs = cmdargs.dup << 'fetch-depends' << 'build-depends' << 'lib-depends'
+ 
+ 	if not system(shelljoin(*dep_cmdargs) + ' DEPENDS_TARGET="-n nonexistent_target" >/dev/null 2>&1')
+ 	  script!(logfile, *dep_cmdargs) or
