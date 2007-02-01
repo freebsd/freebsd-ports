@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.ktools.org/dist/oak/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	System Log Reporting Tool
 
+USE_RC_SUBR=	oak
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	oak
 PLIST_FILES=	bin/oak

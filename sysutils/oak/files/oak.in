@@ -1,0 +1,26 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: oak
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+oak_enable="${oak_enable-NO}"
+
+. %%RC_SUBR%%
+
+name="oak"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/oak"
+
+load_rc_config $name
+
+: ${oak_config="%%PREFIX%%/etc/oak.conf"}
+: ${oak_flags="-c ${oak_config}"}
+: ${oak_user="nobody"}
+
+required_files="${oak_config}"
+
+run_rc_command "$1"
