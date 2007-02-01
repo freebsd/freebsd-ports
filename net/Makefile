@@ -749,6 +749,7 @@
     SUBDIR += sipxmediaadapterlib
     SUBDIR += sipxmedialib
     SUBDIR += sipxportlib
+    SUBDIR += sipxproxy
     SUBDIR += sipxpublisher
     SUBDIR += sipxtacklib
     SUBDIR += sixxs-aiccu
