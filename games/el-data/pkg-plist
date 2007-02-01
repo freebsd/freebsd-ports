@@ -508,6 +508,8 @@
 %%DATADIR%%/3dobjects/misc_objects/gemstone4.e3d
 %%DATADIR%%/3dobjects/misc_objects/goldcoin1.e3d
 %%DATADIR%%/3dobjects/misc_objects/goldcoin2.e3d
+%%DATADIR%%/3dobjects/misc_objects/goldcoins.bmp
+%%DATADIR%%/3dobjects/misc_objects/goldcoins1.e3d
 %%DATADIR%%/3dobjects/misc_objects/hammer1.e3d
 %%DATADIR%%/3dobjects/misc_objects/horseshoe1.e3d
 %%DATADIR%%/3dobjects/misc_objects/ice_column1.e3d
@@ -534,6 +536,8 @@
 %%DATADIR%%/3dobjects/misc_objects/mandrel.e3d
 %%DATADIR%%/3dobjects/misc_objects/map1.bmp
 %%DATADIR%%/3dobjects/misc_objects/map1.e3d
+%%DATADIR%%/3dobjects/misc_objects/map2.bmp
+%%DATADIR%%/3dobjects/misc_objects/map2.e3d
 %%DATADIR%%/3dobjects/misc_objects/meat1.e3d
 %%DATADIR%%/3dobjects/misc_objects/meat2.e3d
 %%DATADIR%%/3dobjects/misc_objects/meat3.e3d
@@ -936,6 +940,9 @@
 %%DATADIR%%/3dobjects/structures/banner34.e3d
 %%DATADIR%%/3dobjects/structures/banner35.e3d
 %%DATADIR%%/3dobjects/structures/banner36.e3d
+%%DATADIR%%/3dobjects/structures/banner37.e3d
+%%DATADIR%%/3dobjects/structures/banner38.e3d
+%%DATADIR%%/3dobjects/structures/banner39.e3d
 %%DATADIR%%/3dobjects/structures/banner4.e3d
 %%DATADIR%%/3dobjects/structures/banner5.e3d
 %%DATADIR%%/3dobjects/structures/banner6.e3d
@@ -943,6 +950,7 @@
 %%DATADIR%%/3dobjects/structures/banner8.e3d
 %%DATADIR%%/3dobjects/structures/banner9.e3d
 %%DATADIR%%/3dobjects/structures/banners1.bmp
+%%DATADIR%%/3dobjects/structures/banners10.bmp
 %%DATADIR%%/3dobjects/structures/banners2.bmp
 %%DATADIR%%/3dobjects/structures/banners3.bmp
 %%DATADIR%%/3dobjects/structures/banners4.bmp
@@ -1033,6 +1041,7 @@
 %%DATADIR%%/3dobjects/structures/door16.e3d
 %%DATADIR%%/3dobjects/structures/door17.e3d
 %%DATADIR%%/3dobjects/structures/door18.e3d
+%%DATADIR%%/3dobjects/structures/door19.e3d
 %%DATADIR%%/3dobjects/structures/door2.e3d
 %%DATADIR%%/3dobjects/structures/door3.e3d
 %%DATADIR%%/3dobjects/structures/door4.e3d
@@ -1090,6 +1099,7 @@
 %%DATADIR%%/3dobjects/structures/fence8.e3d
 %%DATADIR%%/3dobjects/structures/fence9.e3d
 %%DATADIR%%/3dobjects/structures/fence_iron1.e3d
+%%DATADIR%%/3dobjects/structures/flyingship.e3d
 %%DATADIR%%/3dobjects/structures/forgebricks1.bmp
 %%DATADIR%%/3dobjects/structures/forgechimney1.e3d
 %%DATADIR%%/3dobjects/structures/forgechimney2.e3d
@@ -1275,6 +1285,8 @@
 %%DATADIR%%/3dobjects/structures/insidetreehouse2.e3d
 %%DATADIR%%/3dobjects/structures/insidetreehouse3.e3d
 %%DATADIR%%/3dobjects/structures/ladder.e3d
+%%DATADIR%%/3dobjects/structures/ladder2.e3d
+%%DATADIR%%/3dobjects/structures/leather.bmp
 %%DATADIR%%/3dobjects/structures/magicschool1.e3d
 %%DATADIR%%/3dobjects/structures/magicschool_stairs1.e3d
 %%DATADIR%%/3dobjects/structures/magicschool_tower1.e3d
@@ -1513,6 +1525,7 @@
 %%DATADIR%%/3dobjects/trees/leaves1.bmp
 %%DATADIR%%/3dobjects/trees/leaves1.e3d
 %%DATADIR%%/3dobjects/trees/leaves10.bmp
+%%DATADIR%%/3dobjects/trees/leaves11.bmp
 %%DATADIR%%/3dobjects/trees/leaves12.bmp
 %%DATADIR%%/3dobjects/trees/leaves13.bmp
 %%DATADIR%%/3dobjects/trees/leaves15.bmp
@@ -1540,6 +1553,8 @@
 %%DATADIR%%/3dobjects/trees/leaves9.bmp
 %%DATADIR%%/3dobjects/trees/leaves9_alpha.bmp
 %%DATADIR%%/3dobjects/trees/leaves_bigtree.e3d
+%%DATADIR%%/3dobjects/trees/leaves_willow.bmp
+%%DATADIR%%/3dobjects/trees/leaves_willow_alpha.bmp
 %%DATADIR%%/3dobjects/trees/leaves_xmas.bmp
 %%DATADIR%%/3dobjects/trees/log1.e3d
 %%DATADIR%%/3dobjects/trees/log2.e3d
@@ -1613,6 +1628,8 @@
 %%DATADIR%%/3dobjects/trees/treeleaves30.e3d
 %%DATADIR%%/3dobjects/trees/treeleaves31.e3d
 %%DATADIR%%/3dobjects/trees/treeleaves32.e3d
+%%DATADIR%%/3dobjects/trees/treeleaves33.e3d
+%%DATADIR%%/3dobjects/trees/treeleaves34.e3d
 %%DATADIR%%/3dobjects/trees/treeleaves4.e3d
 %%DATADIR%%/3dobjects/trees/treeleaves5.e3d
 %%DATADIR%%/3dobjects/trees/treeleaves6.e3d
@@ -1658,14 +1675,19 @@
 %%DATADIR%%/3dobjects/weapons/weapons1.bmp
 %%DATADIR%%/3dobjects/weapons/weapons2.bmp
 %%DATADIR%%/actor_defs/actor_defs.xml
+%%DATADIR%%/actor_defs/anim_noweapon.xml
+%%DATADIR%%/actor_defs/anim_weapon1.xml
+%%DATADIR%%/actor_defs/anim_weapon2.xml
 %%DATADIR%%/actor_defs/bear_1.xml
 %%DATADIR%%/actor_defs/bear_2.xml
 %%DATADIR%%/actor_defs/bear_3.xml
 %%DATADIR%%/actor_defs/bear_4.xml
 %%DATADIR%%/actor_defs/beaver.xml
 %%DATADIR%%/actor_defs/boar.xml
+%%DATADIR%%/actor_defs/boots.xml
 %%DATADIR%%/actor_defs/brown_rabbit.xml
 %%DATADIR%%/actor_defs/brownie.xml
+%%DATADIR%%/actor_defs/capes.xml
 %%DATADIR%%/actor_defs/cyclops.xml
 %%DATADIR%%/actor_defs/chimeran_arctic_wolf.xml
 %%DATADIR%%/actor_defs/chimeran_desert_wolf.xml
@@ -1674,11 +1696,13 @@
 %%DATADIR%%/actor_defs/deer.xml
 %%DATADIR%%/actor_defs/draegoni_female.xml
 %%DATADIR%%/actor_defs/draegoni_male.xml
+%%DATADIR%%/actor_defs/dragon1.xml
 %%DATADIR%%/actor_defs/dwarf_female.xml
 %%DATADIR%%/actor_defs/dwarf_male.xml
 %%DATADIR%%/actor_defs/elf_female.xml
 %%DATADIR%%/actor_defs/elf_male.xml
 %%DATADIR%%/actor_defs/feran.xml
+%%DATADIR%%/actor_defs/feros.xml
 %%DATADIR%%/actor_defs/fox.xml
 %%DATADIR%%/actor_defs/gargoyle_1.xml
 %%DATADIR%%/actor_defs/gargoyle_2.xml
@@ -1690,12 +1714,14 @@
 %%DATADIR%%/actor_defs/goblin_female_1.xml
 %%DATADIR%%/actor_defs/goblin_male_1.xml
 %%DATADIR%%/actor_defs/goblin_male_2.xml
+%%DATADIR%%/actor_defs/hairs.xml
 %%DATADIR%%/actor_defs/hobgoblin.xml
 %%DATADIR%%/actor_defs/horse1.xml
 %%DATADIR%%/actor_defs/horse2.xml
 %%DATADIR%%/actor_defs/human_female.xml
 %%DATADIR%%/actor_defs/human_male.xml
 %%DATADIR%%/actor_defs/imp.xml
+%%DATADIR%%/actor_defs/legs.xml
 %%DATADIR%%/actor_defs/leopard.xml
 %%DATADIR%%/actor_defs/leopard_snow.xml
 %%DATADIR%%/actor_defs/leprechaun.xml
@@ -1708,10 +1734,13 @@
 %%DATADIR%%/actor_defs/orchan_male.xml
 %%DATADIR%%/actor_defs/panther.xml
 %%DATADIR%%/actor_defs/phantom_warrior.xml
+%%DATADIR%%/actor_defs/player_frames.xml
 %%DATADIR%%/actor_defs/puma.xml
 %%DATADIR%%/actor_defs/racoon.xml
 %%DATADIR%%/actor_defs/racoon_1.xml
 %%DATADIR%%/actor_defs/rat.xml
+%%DATADIR%%/actor_defs/shields.xml
+%%DATADIR%%/actor_defs/shirts.xml
 %%DATADIR%%/actor_defs/skeleton.xml
 %%DATADIR%%/actor_defs/skeleton_armed.xml
 %%DATADIR%%/actor_defs/skunk.xml
@@ -1728,11 +1757,13 @@
 %%DATADIR%%/actor_defs/spider_small2.xml
 %%DATADIR%%/actor_defs/spider_small3.xml
 %%DATADIR%%/actor_defs/spider_small4.xml
+%%DATADIR%%/actor_defs/standard_players.xml
 %%DATADIR%%/actor_defs/tiger.xml
 %%DATADIR%%/actor_defs/tiger_white.xml
 %%DATADIR%%/actor_defs/troll.xml
 %%DATADIR%%/actor_defs/unicorn1.xml
 %%DATADIR%%/actor_defs/unicorn_1.xml
+%%DATADIR%%/actor_defs/weapons.xml
 %%DATADIR%%/actor_defs/white_rabbit.xml
 %%DATADIR%%/actor_defs/wolf.xml
 %%DATADIR%%/actor_defs/wood_sprite.xml
@@ -1787,6 +1818,17 @@
 %%DATADIR%%/animations/deer_idle2.caf
 %%DATADIR%%/animations/deer_pain.caf
 %%DATADIR%%/animations/deer_walk.caf
+%%DATADIR%%/animations/dragon_attack1.caf
+%%DATADIR%%/animations/dragon_attack2.caf
+%%DATADIR%%/animations/dragon_attack3.caf
+%%DATADIR%%/animations/dragon_attack4.caf
+%%DATADIR%%/animations/dragon_die.caf
+%%DATADIR%%/animations/dragon_fight_idle.caf
+%%DATADIR%%/animations/dragon_fight_in.caf
+%%DATADIR%%/animations/dragon_fight_out.caf
+%%DATADIR%%/animations/dragon_idle1.caf
+%%DATADIR%%/animations/dragon_pain.caf
+%%DATADIR%%/animations/dragon_walk.caf
 %%DATADIR%%/animations/feline_attack1.caf
 %%DATADIR%%/animations/feline_attack2.caf
 %%DATADIR%%/animations/feline_die.caf
@@ -1854,17 +1896,21 @@
 %%DATADIR%%/animations/monster_attack2.caf
 %%DATADIR%%/animations/monster_attack3.caf
 %%DATADIR%%/animations/monster_attack4.caf
+%%DATADIR%%/animations/monster_attack5.caf
 %%DATADIR%%/animations/monster_die.caf
 %%DATADIR%%/animations/monster_fight_idle.caf
 %%DATADIR%%/animations/monster_fight_in.caf
 %%DATADIR%%/animations/monster_fight_out.caf
 %%DATADIR%%/animations/monster_head_look1.xaf
 %%DATADIR%%/animations/monster_idle1.caf
+%%DATADIR%%/animations/monster_idle2.caf
+%%DATADIR%%/animations/monster_idle3.caf
 %%DATADIR%%/animations/monster_pain1.caf
 %%DATADIR%%/animations/monster_pain2.caf
 %%DATADIR%%/animations/monster_run1.caf
 %%DATADIR%%/animations/monster_torso_breathe.xaf
 %%DATADIR%%/animations/monster_walk1.caf
+%%DATADIR%%/animations/monster_walk2.caf
 %%DATADIR%%/animations/player_fight_idle.caf
 %%DATADIR%%/animations/player_fight_in.caf
 %%DATADIR%%/animations/player_fight_out.caf
@@ -1881,6 +1927,9 @@
 %%DATADIR%%/animations/player_sit_out.caf
 %%DATADIR%%/animations/player_slash1.caf
 %%DATADIR%%/animations/player_slash2.caf
+%%DATADIR%%/animations/player_spell1.caf
+%%DATADIR%%/animations/player_spell2.caf
+%%DATADIR%%/animations/player_spell3.caf
 %%DATADIR%%/animations/player_walk.caf
 %%DATADIR%%/animations/puma_idle1.caf
 %%DATADIR%%/animations/puma_walk.caf
@@ -1937,7 +1986,6 @@
 %%DATADIR%%/animations/wraith_idle1.caf
 %%DATADIR%%/browser.lst
 %%DATADIR%%/e3dlist.txt
-%%DATADIR%%/el.cfg
 %%DATADIR%%/el.ini
 %%DATADIR%%/entrable.lst
 %%DATADIR%%/global_filters.txt
@@ -1964,7 +2012,9 @@
 %%DATADIR%%/languages/de/strings/options.xml
 %%DATADIR%%/languages/de/strings/spells.xml
 %%DATADIR%%/languages/de/strings/stats.xml
+%%DATADIR%%/languages/en/.#rules.xml.1.9
 %%DATADIR%%/languages/en/Encyclopedia/Alchemy.xml
+%%DATADIR%%/languages/en/Encyclopedia/Armour.xml
 %%DATADIR%%/languages/en/Encyclopedia/Attributes.xml
 %%DATADIR%%/languages/en/Encyclopedia/Books.xml
 %%DATADIR%%/languages/en/Encyclopedia/Clothes.xml
@@ -1978,12 +2028,17 @@
 %%DATADIR%%/languages/en/Encyclopedia/Jewlery.xml
 %%DATADIR%%/languages/en/Encyclopedia/Magic.xml
 %%DATADIR%%/languages/en/Encyclopedia/Maps.xml
+%%DATADIR%%/languages/en/Encyclopedia/Maps2.xml
+%%DATADIR%%/languages/en/Encyclopedia/Miscellanea.xml
 %%DATADIR%%/languages/en/Encyclopedia/Monsters.xml
 %%DATADIR%%/languages/en/Encyclopedia/Perks.xml
 %%DATADIR%%/languages/en/Encyclopedia/Potions.xml
 %%DATADIR%%/languages/en/Encyclopedia/Skills.xml
+%%DATADIR%%/languages/en/Encyclopedia/Summoning.xml
 %%DATADIR%%/languages/en/Encyclopedia/Weapons.xml
+%%DATADIR%%/languages/en/Encyclopedia/Weapons2.xml
 %%DATADIR%%/languages/en/Encyclopedia/changes.txt
+%%DATADIR%%/languages/en/Encyclopedia/example.yaml
 %%DATADIR%%/languages/en/Encyclopedia/images/.xvpics/beaver.bmp
 %%DATADIR%%/languages/en/Encyclopedia/images/.xvpics/cyclop.bmp
 %%DATADIR%%/languages/en/Encyclopedia/images/.xvpics/deer.bmp
@@ -2022,6 +2077,7 @@
 %%DATADIR%%/languages/en/Encyclopedia/images/monsters3.bmp
 %%DATADIR%%/languages/en/Encyclopedia/index.xml
 %%DATADIR%%/languages/en/Encyclopedia/src/encyclopedia.xml
+%%DATADIR%%/languages/en/README.txt
 %%DATADIR%%/languages/en/books/a_rabbits_life.xml
 %%DATADIR%%/languages/en/books/bagatbeam.xml
 %%DATADIR%%/languages/en/books/bethel_travellers_notes.xml
@@ -2105,7 +2161,6 @@
 %%DATADIR%%/languages/en/strings/stats.xml
 %%DATADIR%%/languages/en/strings/titles.xml
 %%DATADIR%%/languages/es/Encyclopedia/Alchemy.xml
-%%DATADIR%%/languages/en/Encyclopedia/Armour.xml
 %%DATADIR%%/languages/es/Encyclopedia/Attributes.xml
 %%DATADIR%%/languages/es/Encyclopedia/Books.xml
 %%DATADIR%%/languages/es/Encyclopedia/Clothes.xml
@@ -2126,7 +2181,6 @@
 %%DATADIR%%/languages/es/Encyclopedia/images/monsters2.bmp
 %%DATADIR%%/languages/es/Encyclopedia/images/monsters3.bmp
 %%DATADIR%%/languages/es/Encyclopedia/index.xml
-%%DATADIR%%/languages/en/Encyclopedia/example.yaml
 %%DATADIR%%/languages/es/books/a_rabbits_life.xml
 %%DATADIR%%/languages/es/books/bagatbeam.xml
 %%DATADIR%%/languages/es/books/codesciphers1.xml
@@ -2285,6 +2339,10 @@
 %%DATADIR%%/maps/cont2map10.elm
 %%DATADIR%%/maps/cont2map10_caves.elm
 %%DATADIR%%/maps/cont2map10_insides.elm
+%%DATADIR%%/maps/cont2map11.bmp
+%%DATADIR%%/maps/cont2map11.elm
+%%DATADIR%%/maps/cont2map11_cave1.elm
+%%DATADIR%%/maps/cont2map11_insides.elm
 %%DATADIR%%/maps/cont2map12.bmp
 %%DATADIR%%/maps/cont2map12.elm
 %%DATADIR%%/maps/cont2map12_cave1.elm
@@ -2297,6 +2355,11 @@
 %%DATADIR%%/maps/cont2map14.bmp
 %%DATADIR%%/maps/cont2map14.elm
 %%DATADIR%%/maps/cont2map14_insides.elm
+%%DATADIR%%/maps/cont2map15.bmp
+%%DATADIR%%/maps/cont2map15.elm
+%%DATADIR%%/maps/cont2map15_caves.elm
+%%DATADIR%%/maps/cont2map15_insides.elm
+%%DATADIR%%/maps/cont2map15_mountain.elm
 %%DATADIR%%/maps/cont2map16.bmp
 %%DATADIR%%/maps/cont2map16.elm
 %%DATADIR%%/maps/cont2map16_insides.elm
@@ -2355,6 +2418,13 @@
 %%DATADIR%%/maps/cont2map5_inmsch.elm
 %%DATADIR%%/maps/cont2map5_insides.elm
 %%DATADIR%%/maps/cont2map5_underground.elm
+%%DATADIR%%/maps/cont2map6.bmp
+%%DATADIR%%/maps/cont2map6.elm
+%%DATADIR%%/maps/cont2map6_caves.elm
+%%DATADIR%%/maps/cont2map6_insides.elm
+%%DATADIR%%/maps/cont2map7.bmp
+%%DATADIR%%/maps/cont2map7.elm
+%%DATADIR%%/maps/cont2map7_insides.elm
 %%DATADIR%%/maps/cont2map8.bmp
 %%DATADIR%%/maps/cont2map8.elm
 %%DATADIR%%/maps/cont2map8_cave.elm
@@ -2367,8 +2437,9 @@
 %%DATADIR%%/maps/guildmap_co.elm
 %%DATADIR%%/maps/guildmap_dao.elm
 %%DATADIR%%/maps/guildmap_iron.elm
-%%DATADIR%%/maps/guildmap_lots.elm
 %%DATADIR%%/maps/guildmap_lnx.elm
+%%DATADIR%%/maps/guildmap_lots.elm
+%%DATADIR%%/maps/guildmap_pkg.elm
 %%DATADIR%%/maps/guildmap_pl.elm
 %%DATADIR%%/maps/guildmap_segv.elm
 %%DATADIR%%/maps/irilion.bmp
@@ -2448,6 +2519,7 @@
 %%DATADIR%%/meshes/animals7.bmp
 %%DATADIR%%/meshes/animals8.bmp
 %%DATADIR%%/meshes/animals9.bmp
+%%DATADIR%%/meshes/arms10.bmp
 %%DATADIR%%/meshes/arms1_black.bmp
 %%DATADIR%%/meshes/arms1_blue.bmp
 %%DATADIR%%/meshes/arms1_brown.bmp
@@ -2494,6 +2566,7 @@
 %%DATADIR%%/meshes/boots4.bmp
 %%DATADIR%%/meshes/boots5.bmp
 %%DATADIR%%/meshes/boots6.bmp
+%%DATADIR%%/meshes/boots7.bmp
 %%DATADIR%%/meshes/brownie.cmf
 %%DATADIR%%/meshes/cape1_black.bmp
 %%DATADIR%%/meshes/cape1_blue.bmp
@@ -2555,7 +2628,11 @@
 %%DATADIR%%/meshes/chimerans1.bmp
 %%DATADIR%%/meshes/chimerans2.bmp
 %%DATADIR%%/meshes/deer_buck.cmf
+%%DATADIR%%/meshes/dragon1.bmp
+%%DATADIR%%/meshes/dragon1.cmf
 %%DATADIR%%/meshes/feran.cmf
+%%DATADIR%%/meshes/feros.bmp
+%%DATADIR%%/meshes/feros.cmf
 %%DATADIR%%/meshes/fox.cmf
 %%DATADIR%%/meshes/gargoyle.bmp
 %%DATADIR%%/meshes/gargoyle1.cmf
@@ -2563,6 +2640,8 @@
 %%DATADIR%%/meshes/gargoyle3.cmf
 %%DATADIR%%/meshes/giant1.bmp
 %%DATADIR%%/meshes/giant1.cmf
+%%DATADIR%%/meshes/glasses1.bmp
+%%DATADIR%%/meshes/glasses1_gnome.cmf
 %%DATADIR%%/meshes/gloves_fur.bmp
 %%DATADIR%%/meshes/gloves_leather.bmp
 %%DATADIR%%/meshes/goblinf_armed1.cmf
@@ -2573,12 +2652,19 @@
 %%DATADIR%%/meshes/goblinmarmed1.bmp
 %%DATADIR%%/meshes/hair_black.bmp
 %%DATADIR%%/meshes/hair_blond.bmp
+%%DATADIR%%/meshes/hair_blonddirty.bmp
+%%DATADIR%%/meshes/hair_blondlight.bmp
+%%DATADIR%%/meshes/hair_blondstrawberry.bmp
 %%DATADIR%%/meshes/hair_brown.bmp
+%%DATADIR%%/meshes/hair_browndark.bmp
 %%DATADIR%%/meshes/hair_draegoniblue.bmp
 %%DATADIR%%/meshes/hair_draegonigreen.bmp
 %%DATADIR%%/meshes/hair_draegonipurple.bmp
 %%DATADIR%%/meshes/hair_gray.bmp
+%%DATADIR%%/meshes/hair_graybrown.bmp
+%%DATADIR%%/meshes/hair_graydark.bmp
 %%DATADIR%%/meshes/hair_red.bmp
+%%DATADIR%%/meshes/hair_reddark.bmp
 %%DATADIR%%/meshes/hair_white.bmp
 %%DATADIR%%/meshes/hands_brown.bmp
 %%DATADIR%%/meshes/hands_darkblue.bmp
@@ -2586,6 +2672,7 @@
 %%DATADIR%%/meshes/hands_draegonigreen.bmp
 %%DATADIR%%/meshes/hands_draegonipurple.bmp
 %%DATADIR%%/meshes/hands_draegonired.bmp
+%%DATADIR%%/meshes/hands_draegoniwhite.bmp
 %%DATADIR%%/meshes/hands_normal.bmp
 %%DATADIR%%/meshes/hands_orchanblue.bmp
 %%DATADIR%%/meshes/hands_orchangreen.bmp
@@ -2665,10 +2752,12 @@
 %%DATADIR%%/meshes/head_draegonifgreen.bmp
 %%DATADIR%%/meshes/head_draegonifpurple.bmp
 %%DATADIR%%/meshes/head_draegonifred.bmp
+%%DATADIR%%/meshes/head_draegonifwhite.bmp
 %%DATADIR%%/meshes/head_draegonimblue.bmp
 %%DATADIR%%/meshes/head_draegonimgreen.bmp
 %%DATADIR%%/meshes/head_draegonimpurple.bmp
 %%DATADIR%%/meshes/head_draegonimred.bmp
+%%DATADIR%%/meshes/head_draegonimwhite.bmp
 %%DATADIR%%/meshes/head_dwarffbrown.bmp
 %%DATADIR%%/meshes/head_dwarffnormal.bmp
 %%DATADIR%%/meshes/head_dwarffpale.bmp
@@ -2726,6 +2815,12 @@
 %%DATADIR%%/meshes/helmet3_medium.cmf
 %%DATADIR%%/meshes/helmet3_orchan.cmf
 %%DATADIR%%/meshes/helmet4.bmp
+%%DATADIR%%/meshes/helmet5.bmp
+%%DATADIR%%/meshes/helmet5_draegoni.cmf
+%%DATADIR%%/meshes/helmet5_dwarf.cmf
+%%DATADIR%%/meshes/helmet5_gnome.cmf
+%%DATADIR%%/meshes/helmet5_medium.cmf
+%%DATADIR%%/meshes/helmet5_orchan.cmf
 %%DATADIR%%/meshes/hobgoblin.bmp
 %%DATADIR%%/meshes/hobgoblin.cmf
 %%DATADIR%%/meshes/horse1.cmf
@@ -2774,6 +2869,7 @@
 %%DATADIR%%/meshes/pants4.bmp
 %%DATADIR%%/meshes/pants5.bmp
 %%DATADIR%%/meshes/pants6.bmp
+%%DATADIR%%/meshes/pants7.bmp
 %%DATADIR%%/meshes/pants_fur1.bmp
 %%DATADIR%%/meshes/phantom_warrior.cmf
 %%DATADIR%%/meshes/pickaxe1.bmp
@@ -2790,6 +2886,8 @@
 %%DATADIR%%/meshes/shield1_wood2.bmp
 %%DATADIR%%/meshes/shield2.cmf
 %%DATADIR%%/meshes/shield2_titanium.bmp
+%%DATADIR%%/meshes/shield3.cmf
+%%DATADIR%%/meshes/shield3_bronze.bmp
 %%DATADIR%%/meshes/skeleton1.bmp
 %%DATADIR%%/meshes/skeleton1.cmf
 %%DATADIR%%/meshes/skeleton1_armed.cmf
@@ -2830,6 +2928,8 @@
 %%DATADIR%%/meshes/sword13.cmf
 %%DATADIR%%/meshes/sword14.bmp
 %%DATADIR%%/meshes/sword14.cmf
+%%DATADIR%%/meshes/sword15.bmp
+%%DATADIR%%/meshes/sword15.cmf
 %%DATADIR%%/meshes/sword2.bmp
 %%DATADIR%%/meshes/sword2.cmf
 %%DATADIR%%/meshes/sword3.bmp
@@ -2847,6 +2947,7 @@
 %%DATADIR%%/meshes/sword9.cmf
 %%DATADIR%%/meshes/tiger.cmf
 %%DATADIR%%/meshes/tiger_white.cmf
+%%DATADIR%%/meshes/torso10.bmp
 %%DATADIR%%/meshes/torso1_black.bmp
 %%DATADIR%%/meshes/torso1_blue.bmp
 %%DATADIR%%/meshes/torso1_brown.bmp
@@ -3020,6 +3121,7 @@
 %%DATADIR%%/music/zorongo.ogg
 %%DATADIR%%/particles/bag_in.part
 %%DATADIR%%/particles/bag_out.part
+%%DATADIR%%/particles/blue_rise.part
 %%DATADIR%%/particles/candle_flame.part
 %%DATADIR%%/particles/circle_gold.part
 %%DATADIR%%/particles/circular_burst.part
@@ -3038,6 +3140,7 @@
 %%DATADIR%%/particles/smoke1.part
 %%DATADIR%%/particles/smoke2.part
 %%DATADIR%%/particles/smoke3.part
+%%DATADIR%%/particles/smoke_big.part
 %%DATADIR%%/particles/sparks.part
 %%DATADIR%%/particles/sparks_bluegreen1.part
 %%DATADIR%%/particles/sparks_bluegreen2.part
@@ -3058,6 +3161,7 @@
 %%DATADIR%%/skeletons/boar.csf
 %%DATADIR%%/skeletons/canine.csf
 %%DATADIR%%/skeletons/deer.csf
+%%DATADIR%%/skeletons/dragon.csf
 %%DATADIR%%/skeletons/feline.csf
 %%DATADIR%%/skeletons/gargoyle1.csf
 %%DATADIR%%/skeletons/horse.csf
@@ -3101,6 +3205,7 @@
 %%DATADIR%%/textures/items14.bmp
 %%DATADIR%%/textures/items15.bmp
 %%DATADIR%%/textures/items16.bmp
+%%DATADIR%%/textures/items17.bmp
 %%DATADIR%%/textures/items2.bmp
 %%DATADIR%%/textures/items3.bmp
 %%DATADIR%%/textures/items4.bmp
@@ -3230,8 +3335,8 @@
 @dirrm %%DATADIR%%/languages/de/Encyclopedia
 @dirrm %%DATADIR%%/languages/de/strings
 @dirrm %%DATADIR%%/languages/de
-@dirrm %%DATADIR%%/languages/en/books/knowledge
 @dirrm %%DATADIR%%/languages/en/books/races
+@dirrm %%DATADIR%%/languages/en/books/knowledge
 @dirrm %%DATADIR%%/languages/en/books
 @dirrm %%DATADIR%%/languages/en/Encyclopedia/images/.xvpics
 @dirrm %%DATADIR%%/languages/en/Encyclopedia/images
@@ -3266,4 +3371,4 @@
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/tiles
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%
