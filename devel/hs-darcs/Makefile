@@ -16,7 +16,8 @@ COMMENT=	Yet another replacement for CVS, written in Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		gmp.7:${PORTSDIR}/math/libgmp4
+		gmp.7:${PORTSDIR}/math/libgmp4 \
+		readline.5:${PORTSDIR}/devel/readline
 
 OPTIONS=	SERVER "install server" off
 USE_AUTOTOOLS=	autoconf:259
