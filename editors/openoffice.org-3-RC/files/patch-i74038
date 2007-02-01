@@ -1,0 +1,16 @@
+Index: basctl/source/inc/localizationmgr.hxx
+===================================================================
+RCS file: /cvs/script/basctl/source/inc/localizationmgr.hxx,v
+retrieving revision 1.2.2.2
+diff -u -p --unified -r1.2.2.2 localizationmgr.hxx
+--- basctl/source/inc/localizationmgr.hxx	29 Jan 2007 13:56:23 -0000	1.2.2.2
++++ basctl/source/inc/localizationmgr.hxx	30 Jan 2007 22:26:14 -0000
+@@ -135,7 +135,7 @@ public:
+ 			< ::com::sun::star::container::XNameContainer > xDialogLib );
+ 
+ 	// Clipboard
+-	static void LocalizationMgr::resetResourceForDialog(
++	static void resetResourceForDialog(
+ 		::com::sun::star::uno::Reference< ::com::sun::star::container::XNameContainer > xDialogModel,
+ 		::com::sun::star::uno::Reference< ::com::sun::star::resource::XStringResourceManager > xStringResourceManager );
+ 

@@ -70,7 +70,7 @@ GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 .else
 GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
-FREEBSD_ENV_SET=	FreeBSDIntelEnv.Set
+FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 .if ${PERL_LEVEL} < 500600
@@ -78,10 +78,10 @@ IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-MILESTONE?=		2
+MILESTONE?=		5
 OOOTAG?=		OOF680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20070122
+SNAPDATE=		20070130
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
