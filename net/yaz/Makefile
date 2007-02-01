@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	2.1.42
+PORTVERSION=	2.1.48
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 		--with-iconv=${LOCALBASE} --with-xml2=${LOCALBASE} \
-		--enable-tcpd
+		--with-xslt=${LOCALBASE} --enable-tcpd
 USE_LDCONFIG=	yes
 
 MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 yaz-marcdump.1 \

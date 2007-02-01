@@ -8,6 +8,7 @@ bin/ziffy
 bin/zoomsh
 include/yaz/backend.h
 include/yaz/ccl.h
+include/yaz/ccl_xml.h
 include/yaz/charneg.h
 include/yaz/comstack.h
 include/yaz/cql.h
@@ -40,6 +41,7 @@ include/yaz/srw.h
 include/yaz/statserv.h
 include/yaz/tcpip.h
 include/yaz/test.h
+include/yaz/timing.h
 include/yaz/tpath.h
 include/yaz/unix.h
 include/yaz/wrbuf.h
