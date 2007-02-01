@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	Thu Dec 28 18:02:25 2006
++++ ./src/Makefile.in	Thu Dec 28 18:02:45 2006
+@@ -352,7 +352,7 @@
+ 	-DSIPX_CONFDIR=\"@SIPX_CONFDIR@\"
+ 
+ libsipXtack_la_LIBADD = @SIPXPORT_LIBS@ @SSL_LIBS@ @PCRE_LIBS@ \
+-	-lresolv $(am__append_1)
++	$(am__append_1)
+ libsipXtack_la_SOURCES = \
+     $(top_builddir)/config/sipxtacklib-buildstamp.h \
+     $(top_builddir)/config/sipxtacklib-buildstamp.cpp \

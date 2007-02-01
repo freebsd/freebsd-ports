@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orgi	Mon Jan 29 12:10:55 2007
++++ doc/Makefile.in	Mon Jan 29 12:11:15 2007
+@@ -481,7 +481,7 @@
+ 	rm -rf $(DESTDIR)@SIPX_DOCDIR@/@PACKAGE@
+ 	@INSTALL@ -d $(DESTDIR)@SIPX_DOCDIR@/@PACKAGE@
+ 	find @PACKAGE@ -type f -print \
+-	| xargs -i% @INSTALL@ -m u=rw,go=r % $(DESTDIR)@SIPX_DOCDIR@/%
++	| xargs -I% @INSTALL@ -m u=rw,go=r % $(DESTDIR)@SIPX_DOCDIR@/%
+ 
+ clean: clean-doc
+ 
