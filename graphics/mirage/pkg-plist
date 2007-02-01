@@ -20,6 +20,7 @@ share/locale/it/LC_MESSAGES/mirage.mo
 share/locale/pl/LC_MESSAGES/mirage.mo
 share/locale/ru/LC_MESSAGES/mirage.mo
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
 @dirrmtry share/pixmaps
