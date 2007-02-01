@@ -13801,6 +13801,7 @@ siproxd		ports/net/siproxd
 sipsak		ports/net/sipsak
 sipxcommserverlib	ports/net/sipxcommserverlib
 sipxconfig	ports/net/sipxconfig
+sipxmedialib	ports/net/sipxmedialib
 sipxportlib	ports/net/sipxportlib
 sipxpublisher	ports/net/sipxpublisher
 sipxtacklib	ports/net/sipxtacklib
