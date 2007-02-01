@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scourge
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,9 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${DATADIR}/world/gui.txt:${PORTSDIR}/games/scourge-data
+#RUN_DEPENDS=	${DATADIR}/world/gui.txt:${PORTSDIR}/games/scourge-data
 
-BROKEN=		Does not compile
+#BROKEN=		Does not compile
 
 USE_GL=		yes
 USE_SDL=	sdl mixer net
@@ -36,8 +36,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off \
-		EDITOR	"Install scourge editor"	on
+OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off
 
 .include <bsd.port.pre.mk>
 
@@ -49,24 +48,8 @@ BROKEN=		Some dependencies do not compile on 4.x
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if !defined(WITHOUT_EDITOR)
-USE_WX=		2.6+
-WX_COMPS=	wx contrib
-WANT_UNICODE=	yes
-PLIST_FILES+=	bin/${PORTNAME}-editor
-HAVE_EDITOR=	true
-.else
-CONFIGURE_ARGS+=	--disable-editor
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG:T} |g' ${WRKSRC}/configure
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
-.if defined(HAVE_EDITOR)
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/tools/tools ${PREFIX}/bin/${PORTNAME}-editor
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
