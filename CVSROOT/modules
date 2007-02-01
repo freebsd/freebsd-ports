@@ -9293,6 +9293,7 @@ p5-Geo-Cache	ports/misc/p5-Geo-Cache
 p5-Geo-Caching	ports/www/p5-Geo-Caching
 p5-Geo-Distance	ports/math/p5-Geo-Distance
 p5-Geo-IP	ports/net/p5-Geo-IP
+p5-Geo-IP-PurePerl	ports/net/p5-Geo-IP-PurePerl
 p5-Geo-IPfree	ports/net/p5-Geo-IPfree
 p5-Geo-METAR	ports/astro/p5-Geo-METAR
 p5-Geo-Postcodes	ports/misc/p5-Geo-Postcodes
