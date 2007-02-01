@@ -753,6 +753,7 @@
     SUBDIR += sipxproxy
     SUBDIR += sipxpublisher
     SUBDIR += sipxtacklib
+    SUBDIR += sipxvxml
     SUBDIR += sixxs-aiccu
     SUBDIR += sixxs-heartbeatd
     SUBDIR += skstream

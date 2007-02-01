@@ -1,0 +1,56 @@
+--- ./bin/sipxcallresolver.sh.in.orig	Mon Jan  1 15:29:43 2007
++++ ./bin/sipxcallresolver.sh.in	Mon Jan  1 16:28:32 2007
+@@ -30,7 +30,7 @@
+ : ${LogDir:=@SIPX_LOGDIR@}
+ : ${TmpDir:=@SIPX_TMPDIR@}
+ : ${RunningUser:=@SIPXPBXUSER@}
+-: ${PgUser:=postgres}
++: ${PgUser:=pgsql}
+ : ${PgSchema:=@SIPX_CONFDIR@/cdr/schema.sql}
+ : ${DbVersion:=2}
+ : ${DbPatchDir:=@SIPX_CONFDIR@/cdr}
+@@ -178,7 +178,7 @@
+ #  2. running but not setup to communicate w/java or ${Psql} command
+ #  3. Database is not created
+ databaseCheck() {
+-   if ! ${Psql} -l -U postgres | grep "${Database}" >/dev/null 2>&1
++   if ! ${Psql} -l -U pgsql | grep "${Database}" >/dev/null 2>&1
+    then
+       procs=`ps -C postmaster`
+       if ! expr match "$procs" '.*postmaster.*' >/dev/null; then
+@@ -190,15 +190,9 @@
+          fi
+       else
+          # Check postgres configuration
+-         Service=`postgresService`
++         Service=postgresql
+          if test -z $PGDATA; then
+-            # Debian/Gentoo
+-            if test -d /var/lib/postgresql/data; then
+-               PGDATA=/var/lib/postgresql/data
+-            else
+-               # Redhat
+-               PGDATA=/var/lib/pgsql/data
+-            fi
++	    PGDATA=/usr/local/pgsql/data
+          fi          
+          # Check for conf file
+          if [ -f $PGDATA/pg_hba.conf ]; then
+@@ -213,7 +207,7 @@
+                fi  
+             else
+                #  Check if psql command works at all
+-               if ${Psql} -l -U postgres >/dev/null 2>&1; then
++               if ${Psql} -l -U pgsql >/dev/null 2>&1; then
+                   if [ "$1" != "Silent" ]; then               
+                      echo
+                      echo "  Error: The SIPXCDR database does not exist. Run the sipxcallresolver.sh"
+@@ -415,7 +409,7 @@
+ # Check the database version.  If it is wrong, then exit, because it's dangerous to
+ # run call resolver on top of the wrong database version.
+ databaseVersionCheck() {
+-   dbver=`${Psql} -c "select max(vh.version) from version_history vh;" ${Database} postgres | sed -n 's/^\s*\([0-9][0-9]*\)\s*$/\1/p'`
++   dbver=`${Psql} -c "select max(vh.version) from version_history vh;" ${Database} pgsql | sed -n 's/^\s*\([0-9][0-9]*\)\s*$/\1/p'`
+    if [ "$dbver" = "" ]
+    then
+       echo "  Error: could not get the database version."

@@ -1,0 +1,58 @@
+bin/sipXvxml
+bin/sipXvxml.sh
+bin/sipxvxml-config
+etc/sipxpbx/mediaserver-config.in
+etc/sipxpbx/process.d/sipXvxml.process.xml
+include/src/fdlibm/fdlibm.h
+include/src/jsapi.h
+include/src/jsarena.h
+include/src/jsarray.h
+include/src/jsatom.h
+include/src/jsbit.h
+include/src/jsbool.h
+include/src/jsclist.h
+include/src/jscntxt.h
+include/src/jscompat.h
+include/src/jsconfig.h
+include/src/jscpucfg.h
+include/src/jsdate.h
+include/src/jsdbgapi.h
+include/src/jsdhash.h
+include/src/jsdtoa.h
+include/src/jsemit.h
+include/src/jsexn.h
+include/src/jsfile.h
+include/src/jsfun.h
+include/src/jsgc.h
+include/src/jshash.h
+include/src/jsinterp.h
+include/src/jslibmath.h
+include/src/jslock.h
+include/src/jslong.h
+include/src/jsmath.h
+include/src/jsnum.h
+include/src/jsobj.h
+include/src/jsopcode.h
+include/src/jsosdep.h
+include/src/jsotypes.h
+include/src/jsparse.h
+include/src/jsprf.h
+include/src/jsprvtd.h
+include/src/jspubtd.h
+include/src/jsregexp.h
+include/src/jsscan.h
+include/src/jsscope.h
+include/src/jsscript.h
+include/src/jsstddef.h
+include/src/jsstr.h
+include/src/jstypes.h
+include/src/jsutil.h
+include/src/jsxdrapi.h
+include/src/prmjtime.h
+include/src/resource.h
+@dirrm www/sipX/conf
+@dirrm www/sipX
+@dirrm include/src/fdlibm
+@dirrm include/src
+@dirrm etc/sipxpbx/process.d
+@dirrm etc/sipxpbx
