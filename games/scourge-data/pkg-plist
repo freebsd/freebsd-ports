@@ -75,12 +75,10 @@
 %%DATADIR%%/mapgrid/map5-2.bmp
 %%DATADIR%%/mapgrid/map5-3.bmp
 %%DATADIR%%/mapgrid/map5-4.bmp
-%%DATADIR%%/maps/abe.map
-%%DATADIR%%/maps/abe.txt
-%%DATADIR%%/maps/abe1.map
-%%DATADIR%%/maps/abe1.txt
-%%DATADIR%%/maps/abeagain.map
-%%DATADIR%%/maps/abeagain.txt
+%%DATADIR%%/maps/emeril.map
+%%DATADIR%%/maps/emeril1.map
+%%DATADIR%%/maps/emeril2.map
+%%DATADIR%%/maps/emeril2.txt
 %%DATADIR%%/maps/hq.map
 %%DATADIR%%/maps/hq.nut
 %%DATADIR%%/maps/hq.txt
@@ -99,7 +97,6 @@
 %%DATADIR%%/maps/readme.txt
 %%DATADIR%%/maps/temple.map
 %%DATADIR%%/maps/temple.txt
-%%DATADIR%%/maps/test.map
 %%DATADIR%%/maps/thuzgol.map
 %%DATADIR%%/maps/thuzgol.txt
 %%DATADIR%%/maps/tower.map
@@ -194,6 +191,17 @@
 %%DATADIR%%/models/character/darkness/sound/select2.wav
 %%DATADIR%%/models/character/darkness/sound/select3.wav
 %%DATADIR%%/models/character/darkness/tris.md2
+%%DATADIR%%/models/character/gladius/animation.cfg
+%%DATADIR%%/models/character/gladius/gladius.bmp
+%%DATADIR%%/models/character/gladius/gladius_h.bmp
+%%DATADIR%%/models/character/gladius/head.md3
+%%DATADIR%%/models/character/gladius/head_default.skin
+%%DATADIR%%/models/character/gladius/lower.md3
+%%DATADIR%%/models/character/gladius/lower_default.skin
+%%DATADIR%%/models/character/gladius/md3-gladius.txt
+%%DATADIR%%/models/character/gladius/specmap.bmp
+%%DATADIR%%/models/character/gladius/upper.md3
+%%DATADIR%%/models/character/gladius/upper_default.skin
 %%DATADIR%%/models/character/pknight/ctf_b.bmp
 %%DATADIR%%/models/character/pknight/ctf_r.bmp
 %%DATADIR%%/models/character/pknight/evil.bmp
@@ -335,6 +343,73 @@
 %%DATADIR%%/models/link/soft_zora.bmp
 %%DATADIR%%/models/link/tris.md2
 %%DATADIR%%/models/link/zora.bmp
+%%DATADIR%%/models/md3/area51/animation.cfg
+%%DATADIR%%/models/md3/area51/blue.bmp
+%%DATADIR%%/models/md3/area51/blue_eye_glow.bmp
+%%DATADIR%%/models/md3/area51/blue_eye_glow.jpg
+%%DATADIR%%/models/md3/area51/blue_h.bmp
+%%DATADIR%%/models/md3/area51/blue_l.bmp
+%%DATADIR%%/models/md3/area51/death1.wav
+%%DATADIR%%/models/md3/area51/death2.wav
+%%DATADIR%%/models/md3/area51/death3.wav
+%%DATADIR%%/models/md3/area51/default.bmp
+%%DATADIR%%/models/md3/area51/default_eye_glow.bmp
+%%DATADIR%%/models/md3/area51/default_eye_glow.jpg
+%%DATADIR%%/models/md3/area51/default_h.bmp
+%%DATADIR%%/models/md3/area51/default_l.bmp
+%%DATADIR%%/models/md3/area51/drown.wav
+%%DATADIR%%/models/md3/area51/fall1.wav
+%%DATADIR%%/models/md3/area51/falling1.wav
+%%DATADIR%%/models/md3/area51/gasp.wav
+%%DATADIR%%/models/md3/area51/head.md3
+%%DATADIR%%/models/md3/area51/head_blue.skin
+%%DATADIR%%/models/md3/area51/head_default.skin
+%%DATADIR%%/models/md3/area51/head_purple.skin
+%%DATADIR%%/models/md3/area51/head_red.skin
+%%DATADIR%%/models/md3/area51/jump1.wav
+%%DATADIR%%/models/md3/area51/lower.md3
+%%DATADIR%%/models/md3/area51/lower_blue.skin
+%%DATADIR%%/models/md3/area51/lower_default.skin
+%%DATADIR%%/models/md3/area51/lower_purple.skin
+%%DATADIR%%/models/md3/area51/lower_red.skin
+%%DATADIR%%/models/md3/area51/pain100_1.wav
+%%DATADIR%%/models/md3/area51/pain25_1.wav
+%%DATADIR%%/models/md3/area51/pain50_1.wav
+%%DATADIR%%/models/md3/area51/pain75_1.wav
+%%DATADIR%%/models/md3/area51/purple.bmp
+%%DATADIR%%/models/md3/area51/purple_eye_glow.bmp
+%%DATADIR%%/models/md3/area51/purple_eye_glow.jpg
+%%DATADIR%%/models/md3/area51/purple_h.bmp
+%%DATADIR%%/models/md3/area51/purple_l.bmp
+%%DATADIR%%/models/md3/area51/red.bmp
+%%DATADIR%%/models/md3/area51/red_eye_glow.bmp
+%%DATADIR%%/models/md3/area51/red_eye_glow.jpg
+%%DATADIR%%/models/md3/area51/red_h.bmp
+%%DATADIR%%/models/md3/area51/red_l.bmp
+%%DATADIR%%/models/md3/area51/taunt.wav
+%%DATADIR%%/models/md3/area51/upper.md3
+%%DATADIR%%/models/md3/area51/upper_blue.skin
+%%DATADIR%%/models/md3/area51/upper_default.skin
+%%DATADIR%%/models/md3/area51/upper_purple.skin
+%%DATADIR%%/models/md3/area51/upper_red.skin
+%%DATADIR%%/models/md3/crazy/animation.cfg
+%%DATADIR%%/models/md3/crazy/blue.bmp
+%%DATADIR%%/models/md3/crazy/default.bmp
+%%DATADIR%%/models/md3/crazy/default_h.bmp
+%%DATADIR%%/models/md3/crazy/default_specmap.bmp
+%%DATADIR%%/models/md3/crazy/head.md3
+%%DATADIR%%/models/md3/crazy/head_blue.skin
+%%DATADIR%%/models/md3/crazy/head_default.skin
+%%DATADIR%%/models/md3/crazy/head_red.skin
+%%DATADIR%%/models/md3/crazy/lower.md3
+%%DATADIR%%/models/md3/crazy/lower_blue.skin
+%%DATADIR%%/models/md3/crazy/lower_default.skin
+%%DATADIR%%/models/md3/crazy/lower_red.skin
+%%DATADIR%%/models/md3/crazy/red.bmp
+%%DATADIR%%/models/md3/crazy/upper.md3
+%%DATADIR%%/models/md3/crazy/upper_blue.skin
+%%DATADIR%%/models/md3/crazy/upper_default.skin
+%%DATADIR%%/models/md3/crazy/upper_red.skin
 %%DATADIR%%/models/md3/flex/animation.cfg
 %%DATADIR%%/models/md3/flex/blue.bmp
 %%DATADIR%%/models/md3/flex/bone.bmp
@@ -409,6 +484,22 @@
 %%DATADIR%%/models/md3/gork/upper_blue.skin
 %%DATADIR%%/models/md3/gork/upper_gork.skin
 %%DATADIR%%/models/md3/gork/upper_red.skin
+%%DATADIR%%/models/md3/junga/animation.cfg
+%%DATADIR%%/models/md3/junga/blue.bmp
+%%DATADIR%%/models/md3/junga/default.bmp
+%%DATADIR%%/models/md3/junga/head.md3
+%%DATADIR%%/models/md3/junga/head_blue.skin
+%%DATADIR%%/models/md3/junga/head_default.skin
+%%DATADIR%%/models/md3/junga/head_red.skin
+%%DATADIR%%/models/md3/junga/lower.md3
+%%DATADIR%%/models/md3/junga/lower_blue.skin
+%%DATADIR%%/models/md3/junga/lower_default.skin
+%%DATADIR%%/models/md3/junga/lower_red.skin
+%%DATADIR%%/models/md3/junga/red.bmp
+%%DATADIR%%/models/md3/junga/upper.md3
+%%DATADIR%%/models/md3/junga/upper_blue.skin
+%%DATADIR%%/models/md3/junga/upper_default.skin
+%%DATADIR%%/models/md3/junga/upper_red.skin
 %%DATADIR%%/models/md3/mantis/animation.cfg
 %%DATADIR%%/models/md3/mantis/blue.bmp
 %%DATADIR%%/models/md3/mantis/blue_h.bmp
@@ -672,12 +763,15 @@
 %%DATADIR%%/objects/bow.3ds
 %%DATADIR%%/objects/brazier.3ds
 %%DATADIR%%/objects/bread.3ds
+%%DATADIR%%/objects/bush.3ds
+%%DATADIR%%/objects/bush2.3ds
 %%DATADIR%%/objects/claymore.3ds
 %%DATADIR%%/objects/column.3ds
 %%DATADIR%%/objects/commode.3ds
 %%DATADIR%%/objects/corpse.3ds
 %%DATADIR%%/objects/crate.3ds
 %%DATADIR%%/objects/chair.3ds
+%%DATADIR%%/objects/chair_b.3ds
 %%DATADIR%%/objects/desk.3ds
 %%DATADIR%%/objects/egg.3ds
 %%DATADIR%%/objects/gate-down.3ds
@@ -689,10 +783,13 @@
 %%DATADIR%%/objects/meat.3ds
 %%DATADIR%%/objects/mushroom.3ds
 %%DATADIR%%/objects/mushy.3ds
+%%DATADIR%%/objects/oak.3ds
+%%DATADIR%%/objects/oak2.3ds
 %%DATADIR%%/objects/offswitch.3ds
 %%DATADIR%%/objects/onswitch.3ds
 %%DATADIR%%/objects/pedestal.3ds
 %%DATADIR%%/objects/pile.3ds
+%%DATADIR%%/objects/pine.3ds
 %%DATADIR%%/objects/plant.3ds
 %%DATADIR%%/objects/polearm.3ds
 %%DATADIR%%/objects/pool.3ds
@@ -712,6 +809,7 @@
 %%DATADIR%%/objects/sword.3ds
 %%DATADIR%%/objects/sword2.3ds
 %%DATADIR%%/objects/table.3ds
+%%DATADIR%%/objects/tablesq.3ds
 %%DATADIR%%/objects/tchest.3ds
 %%DATADIR%%/objects/token.3ds
 %%DATADIR%%/objects/torch.3ds
@@ -719,6 +817,7 @@
 %%DATADIR%%/objects/vase.3ds
 %%DATADIR%%/objects/vase2.3ds
 %%DATADIR%%/objects/wand.3ds
+%%DATADIR%%/objects/willow.3ds
 %%DATADIR%%/objects/wood_col.3ds
 %%DATADIR%%/portraits/death.bmp
 %%DATADIR%%/portraits/hornaxx.bmp
@@ -730,6 +829,7 @@
 %%DATADIR%%/portraits/m8.bmp
 %%DATADIR%%/portraits/m9.bmp
 %%DATADIR%%/portraits/melathor.bmp
+%%DATADIR%%/portraits/mothrazu.bmp
 %%DATADIR%%/portraits/myco.bmp
 %%DATADIR%%/portraits/orhithales.bmp
 %%DATADIR%%/portraits/sabien.bmp
@@ -740,22 +840,24 @@
 %%DATADIR%%/portraits/w15.bmp
 %%DATADIR%%/portraits/w16.bmp
 %%DATADIR%%/portraits/w17.bmp
-%%DATADIR%%/portraits/w6-old.bmp
 %%DATADIR%%/portraits/w6.bmp
 %%DATADIR%%/sound/equip/buttons.wav
 %%DATADIR%%/sound/equip/cant_equip.wav
 %%DATADIR%%/sound/equip/equip1.wav
+%%DATADIR%%/sound/equip/open-box.wav
+%%DATADIR%%/sound/equip/push-heavy-door.wav
+%%DATADIR%%/sound/equip/teleport.wav
 %%DATADIR%%/sound/imp/attack.wav
 %%DATADIR%%/sound/imp/attack2.wav
 %%DATADIR%%/sound/imp/hit1.wav
 %%DATADIR%%/sound/imp/hit2.wav
+%%DATADIR%%/sound/license.txt
 %%DATADIR%%/sound/magic/blinded.wav
 %%DATADIR%%/sound/magic/healing.wav
 %%DATADIR%%/sound/magic/poison.wav
 %%DATADIR%%/sound/magic/teleport.wav
 %%DATADIR%%/sound/music/fight01.ogg
 %%DATADIR%%/sound/music/headquarter.ogg
-%%DATADIR%%/sound/music/license.txt
 %%DATADIR%%/sound/music/menu.ogg
 %%DATADIR%%/sound/music/track01.ogg
 %%DATADIR%%/sound/music/track02.ogg
@@ -774,7 +876,6 @@
 %%DATADIR%%/sound/weapon-swish/handheld/sw2.wav
 %%DATADIR%%/sound/weapon-swish/handheld/sw3.wav
 %%DATADIR%%/textures/area.bmp
-%%DATADIR%%/textures/attack.bmp
 %%DATADIR%%/textures/bar.bmp
 %%DATADIR%%/textures/bookshelf.bmp
 %%DATADIR%%/textures/border.bmp
@@ -789,8 +890,14 @@
 %%DATADIR%%/textures/cloud.bmp
 %%DATADIR%%/textures/copper.bmp
 %%DATADIR%%/textures/corner.bmp
-%%DATADIR%%/textures/crosshair.bmp
-%%DATADIR%%/textures/cursor.bmp
+%%DATADIR%%/textures/cursor/attack.bmp
+%%DATADIR%%/textures/cursor/crosshair.bmp
+%%DATADIR%%/textures/cursor/cursor.bmp
+%%DATADIR%%/textures/cursor/forbidden.bmp
+%%DATADIR%%/textures/cursor/move.bmp
+%%DATADIR%%/textures/cursor/ranged.bmp
+%%DATADIR%%/textures/cursor/talk.bmp
+%%DATADIR%%/textures/cursor/use.bmp
 %%DATADIR%%/textures/chain.bmp
 %%DATADIR%%/textures/chestfront.bmp
 %%DATADIR%%/textures/chestside.bmp
@@ -829,7 +936,6 @@
 %%DATADIR%%/textures/floor7v1.bmp
 %%DATADIR%%/textures/floorv1.bmp
 %%DATADIR%%/textures/fog.bmp
-%%DATADIR%%/textures/forbidden.bmp
 %%DATADIR%%/textures/formation1.bmp
 %%DATADIR%%/textures/formation2.bmp
 %%DATADIR%%/textures/formation3.bmp
@@ -843,6 +949,14 @@
 %%DATADIR%%/textures/gargoyle.bmp
 %%DATADIR%%/textures/gate_m.bmp
 %%DATADIR%%/textures/group.bmp
+%%DATADIR%%/textures/gui-steel/e.bmp
+%%DATADIR%%/textures/gui-steel/n.bmp
+%%DATADIR%%/textures/gui-steel/ne.bmp
+%%DATADIR%%/textures/gui-steel/nw.bmp
+%%DATADIR%%/textures/gui-steel/s.bmp
+%%DATADIR%%/textures/gui-steel/se.bmp
+%%DATADIR%%/textures/gui-steel/sw.bmp
+%%DATADIR%%/textures/gui-steel/w.bmp
 %%DATADIR%%/textures/gui-wood.bmp
 %%DATADIR%%/textures/gui.bmp
 %%DATADIR%%/textures/gui/button.bmp
@@ -860,7 +974,10 @@
 %%DATADIR%%/textures/gui_small.bmp
 %%DATADIR%%/textures/highlight.bmp
 %%DATADIR%%/textures/inventory.bmp
+%%DATADIR%%/textures/io.bmp
 %%DATADIR%%/textures/iron.bmp
+%%DATADIR%%/textures/leavbr.bmp
+%%DATADIR%%/textures/leaves.bmp
 %%DATADIR%%/textures/light.bmp
 %%DATADIR%%/textures/litewood.bmp
 %%DATADIR%%/textures/logo.bmp
@@ -871,7 +988,6 @@
 %%DATADIR%%/textures/metalbnd.bmp
 %%DATADIR%%/textures/minimap.bmp
 %%DATADIR%%/textures/minimask.bmp
-%%DATADIR%%/textures/move.bmp
 %%DATADIR%%/textures/options.bmp
 %%DATADIR%%/textures/ornate01.bmp
 %%DATADIR%%/textures/ornate02.bmp
@@ -879,7 +995,6 @@
 %%DATADIR%%/textures/paperdoll.bmp
 %%DATADIR%%/textures/paused.bmp
 %%DATADIR%%/textures/process.bmp
-%%DATADIR%%/textures/ranged.bmp
 %%DATADIR%%/textures/realtime.bmp
 %%DATADIR%%/textures/ring2.bmp
 %%DATADIR%%/textures/ripple.bmp
@@ -890,14 +1005,14 @@
 %%DATADIR%%/textures/rugs/r4.bmp
 %%DATADIR%%/textures/scourge.bmp
 %%DATADIR%%/textures/screw.bmp
+%%DATADIR%%/textures/sel.bmp
 %%DATADIR%%/textures/skulls.bmp
 %%DATADIR%%/textures/spells.bmp
 %%DATADIR%%/textures/start.bmp
 %%DATADIR%%/textures/system.bmp
-%%DATADIR%%/textures/talk.bmp
+%%DATADIR%%/textures/test.txt
 %%DATADIR%%/textures/tiles.bmp
 %%DATADIR%%/textures/torchback.bmp
-%%DATADIR%%/textures/use.bmp
 %%DATADIR%%/textures/wait.bmp
 %%DATADIR%%/textures/wall.bmp
 %%DATADIR%%/textures/wall2.bmp
@@ -1004,17 +1119,19 @@
 %%DATADIR%%/world/uncat.txt
 @dirrm %%DATADIR%%/objects
 @dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/themes/egypt1
+@dirrm %%DATADIR%%/themes/gurrea2
 @dirrm %%DATADIR%%/themes/infernum
 @dirrm %%DATADIR%%/themes/gurrea1
-@dirrm %%DATADIR%%/themes/gurrea2
+@dirrm %%DATADIR%%/themes/francisco
 @dirrm %%DATADIR%%/themes/wb-dragoon
+@dirrm %%DATADIR%%/themes/egypt1
 @dirrm %%DATADIR%%/themes/egypt3
 @dirrm %%DATADIR%%/themes/egypt5
-@dirrm %%DATADIR%%/themes/francisco
 @dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/textures/rugs
+@dirrm %%DATADIR%%/textures/cursor
 @dirrm %%DATADIR%%/textures/gui
+@dirrm %%DATADIR%%/textures/gui-steel
+@dirrm %%DATADIR%%/textures/rugs
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/sound/imp
 @dirrm %%DATADIR%%/sound/music
@@ -1029,52 +1146,56 @@
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%/portraits
 @dirrm %%DATADIR%%/world
-@dirrm %%DATADIR%%/models/orc
-@dirrm %%DATADIR%%/models/yvonne
-@dirrm %%DATADIR%%/models/xenoid
-@dirrm %%DATADIR%%/models/nightcrawler
 @dirrm %%DATADIR%%/models/link
-@dirrm %%DATADIR%%/models/purgator
-@dirrm %%DATADIR%%/models/twigletman
-@dirrm %%DATADIR%%/models/Bug
-@dirrm %%DATADIR%%/models/npc/sfod8
-@dirrm %%DATADIR%%/models/npc/alita
-@dirrm %%DATADIR%%/models/npc/jd
-@dirrm %%DATADIR%%/models/npc
 @dirrm %%DATADIR%%/models/hellogirl
-@dirrm %%DATADIR%%/models/demoness
+@dirrm %%DATADIR%%/models/orc
+@dirrm %%DATADIR%%/models/md3/mantis
+@dirrm %%DATADIR%%/models/md3/junga
+@dirrm %%DATADIR%%/models/md3/crazy
+@dirrm %%DATADIR%%/models/md3/yuri
+@dirrm %%DATADIR%%/models/md3/gork
+@dirrm %%DATADIR%%/models/md3/gaben
+@dirrm %%DATADIR%%/models/md3/area51
+@dirrm %%DATADIR%%/models/md3/flex
+@dirrm %%DATADIR%%/models/md3
+@dirrm %%DATADIR%%/models/xenoid
 @dirrm %%DATADIR%%/models/ratamahatta
-@dirrm %%DATADIR%%/models/frog
-@dirrm %%DATADIR%%/models/Nore
-@dirrm %%DATADIR%%/models/ogro
 @dirrm %%DATADIR%%/models/alien
+@dirrm %%DATADIR%%/models/nightcrawler
 @dirrm %%DATADIR%%/models/hueteotl
-@dirrm %%DATADIR%%/models/character/shinju
+@dirrm %%DATADIR%%/models/character/gladius
 @dirrm %%DATADIR%%/models/character/pknight/sound
 @dirrm %%DATADIR%%/models/character/pknight
 @dirrm %%DATADIR%%/models/character/blade
+@dirrm %%DATADIR%%/models/character/shinju
 @dirrm %%DATADIR%%/models/character/yohko/sound
 @dirrm %%DATADIR%%/models/character/yohko
 @dirrm %%DATADIR%%/models/character/darkness/sound
 @dirrm %%DATADIR%%/models/character/darkness
 @dirrm %%DATADIR%%/models/character/sydney
 @dirrm %%DATADIR%%/models/character
+@dirrm %%DATADIR%%/models/npc/sfod8
+@dirrm %%DATADIR%%/models/npc/alita
+@dirrm %%DATADIR%%/models/npc/jd
+@dirrm %%DATADIR%%/models/npc
+@dirrm %%DATADIR%%/models/frog
+@dirrm %%DATADIR%%/models/oldstyle/bauul
+@dirrm %%DATADIR%%/models/oldstyle/phantom
+@dirrm %%DATADIR%%/models/oldstyle/hydra
+@dirrm %%DATADIR%%/models/oldstyle/raptor
+@dirrm %%DATADIR%%/models/oldstyle/cobra
 @dirrm %%DATADIR%%/models/oldstyle/brawn
 @dirrm %%DATADIR%%/models/oldstyle/slime
-@dirrm %%DATADIR%%/models/oldstyle/bauul
-@dirrm %%DATADIR%%/models/oldstyle/hydra
-@dirrm %%DATADIR%%/models/oldstyle/bugger
-@dirrm %%DATADIR%%/models/oldstyle/phantom
-@dirrm %%DATADIR%%/models/oldstyle/raptor
 @dirrm %%DATADIR%%/models/oldstyle/fairy
-@dirrm %%DATADIR%%/models/oldstyle/cobra
+@dirrm %%DATADIR%%/models/oldstyle/bugger
 @dirrm %%DATADIR%%/models/oldstyle
-@dirrm %%DATADIR%%/models/md3/gork
-@dirrm %%DATADIR%%/models/md3/mantis
-@dirrm %%DATADIR%%/models/md3/flex
-@dirrm %%DATADIR%%/models/md3/gaben
-@dirrm %%DATADIR%%/models/md3/yuri
-@dirrm %%DATADIR%%/models/md3
+@dirrm %%DATADIR%%/models/purgator
+@dirrm %%DATADIR%%/models/Nore
+@dirrm %%DATADIR%%/models/ogro
+@dirrm %%DATADIR%%/models/twigletman
+@dirrm %%DATADIR%%/models/demoness
+@dirrm %%DATADIR%%/models/Bug
+@dirrm %%DATADIR%%/models/yvonne
 @dirrm %%DATADIR%%/models
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/mapgrid
