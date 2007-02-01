@@ -30,7 +30,7 @@ $FreeBSD$
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 -#LIBS        = -lncurses -lmytinfo -lcompat
 +CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
-+LIBS        = -lreadline -lncurses -lmytinfo -lcompat
++LIBS        = -lreadline -lncurses -lcompat
  
  ###########################
  # MAC OS X
