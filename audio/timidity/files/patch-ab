@@ -29,17 +29,6 @@
  
  # Where to install the Tcl code, if you use the Tcl code that is.
  TCL_DIR = $(TIMID_DIR)
-@@ -93,8 +93,8 @@
- # Select the ncurses full-screen interface
- SYSTEM += -DIA_NCURSES
- SYSEXTRAS += ncurs_c.c
--EXTRAINCS += -I/usr/include/ncurses
--EXTRALIBS += -lncurses
-+#EXTRAINCS += -I/usr/include/ncurses
-+EXTRALIBS += -lncurses -lmytinfo
- 
- ## Select the S-Lang full-screen interface
- #SYSTEM += -DIA_SLANG
 @@ -112,9 +112,9 @@
  #EXTRALIBS += -lgen
  

@@ -7,6 +7,7 @@
 
 PORTNAME=	timidity
 PORTVERSION=	0.2i
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/:tiins \
 		http://www.onicos.com/staff/iz/timidity/dist/:timidity
