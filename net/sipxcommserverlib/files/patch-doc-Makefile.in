@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orgi	Mon Jan 29 12:35:07 2007
++++ doc/Makefile.in	Mon Jan 29 12:37:18 2007
+@@ -485,7 +485,7 @@
+ 	rm -rf $(DESTDIR)@SIPX_DOCDIR@/@PACKAGE@
+ 	@INSTALL@ -d $(DESTDIR)@SIPX_DOCDIR@/@PACKAGE@
+ 	find @PACKAGE@ -type f -print \
+-	| xargs -i% @INSTALL@ -m u=rw,go=r % $(DESTDIR)@SIPX_DOCDIR@/%
++	| xargs -I% @INSTALL@ -m u=rw,go=r % $(DESTDIR)@SIPX_DOCDIR@/%
+ 
+ install-ssl-doc: $(DESTDIR)@SIPX_DOCDIR@/INSTALL.ssl
+ 

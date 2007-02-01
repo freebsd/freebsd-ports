@@ -1,0 +1,30 @@
+--- ./src/test/Makefile.am.orig	Sun Jan  7 16:20:05 2007
++++ ./src/test/Makefile.am	Sun Jan  7 16:34:25 2007
+@@ -9,8 +9,8 @@
+   OdbcWrapperTest.cpp
+ db_CXXFLAGS = -DTESTDATABASE=\"$(SIPXTEST_DATABASE)\"
+ db_deps = db_setup
+-PG_USER = postgres
+-SCHEMA_FILE = $(top_srcdir)/../sipXproxy/etc/database/schema.sql
++PG_USER = pgsql
++SCHEMA_FILE = $(top_srcdir)/../sipxproxy-3.6.0/etc/database/schema.sql
+ else
+ db_FILES = 
+ db_CXXFLAGS =
+@@ -19,7 +19,7 @@
+ 
+ ## All tests under this GNU variable should run relatively quickly
+ ## and of course require no setup
+-TESTS = testsuite sipx_config_value_test
++TESTS = testsuite sipx_config_value/test
+ 
+ check_PROGRAMS = testsuite sandbox
+ 
+@@ -78,6 +78,6 @@
+     psql -U $(PG_USER) -d $(SIPXTEST_DATABASE) \
+       -f $(SCHEMA_FILE) &>/dev/null; \
+   else \
+-    @echo "Schema file $(SCHEMA_FILE) not found"; \
++    echo "Schema file $(SCHEMA_FILE) not found"; \
+   fi
+ 	@echo "Done."

@@ -1,0 +1,28 @@
+--- ./bin/get_def_addr.orig	Sun Dec 31 14:18:20 2006
++++ ./bin/get_def_addr	Sun Dec 31 14:23:06 2006
+@@ -1,15 +1,14 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Get the address of the interface through which our default gateway is reached.
+ # This is very likely to be the correct IP to bind to most of the time.
+ 
+-# 'route -n' prints out something that looks like this.
+-# The interface name of the default route starts at character 73...
+-#Kernel IP routing table
+-#Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+-#10.1.1.0        0.0.0.0         255.255.255.0   U     0      0        0 eth0
+-#127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 lo
+-#0.0.0.0         10.1.1.1        0.0.0.0         UG    0      0        0 eth0
+-
+-IFACE=`/sbin/route -n | grep '^0\\.0\\.0\\.0' | cut -c 73-`
+-/sbin/ifconfig $IFACE | grep "inet addr" | head -n 1 | cut -d: -f 2 | awk '{ print $1 }'
++# 'netstat -nr' prints out something that looks like this.
++#Routing tables
++#
++#Internet:
++#Destination        Gateway            Flags    Refs      Use  Netif Expire
++#default            192.168.1.2        UGS         0  7840565    re0
++#127.0.0.1          127.0.0.1          UH          0  1312935    lo0
++IFACE=`netstat -nr | awk '/^default/ {print $6}'`
++ifconfig $IFACE | grep "inet " | head -n 1 | awk '{print $2}'

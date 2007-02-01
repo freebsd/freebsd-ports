@@ -744,6 +744,7 @@
     SUBDIR += sipp
     SUBDIR += siproxd
     SUBDIR += sipsak
+    SUBDIR += sipxcommserverlib
     SUBDIR += sipxportlib
     SUBDIR += sipxtacklib
     SUBDIR += sixxs-aiccu
