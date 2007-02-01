@@ -93,7 +93,6 @@ buildenv () {
     export USA_RESIDENT=yes
 
     # Old and mouldy?
-    export PORTOBJFORMAT=elf
     export PARALLEL_PACKAGE_BUILD=1
     export HAVE_MOTIF=1
 
