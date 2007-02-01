@@ -7,15 +7,10 @@
 
 PORTNAME=	fltk
 PORTVERSION=	${VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.easysw.com/pub/fltk/%SUBDIR%/ \
-		ftp://ftp.easysw.com/pub/fltk/%SUBDIR%/ \
-		ftp://ftp3.easysw.com/pub/fltk/%SUBDIR%/ \
-		http://mirror.nu6.org/ftp.easysw.com/pub/fltk/%SUBDIR%/ \
-		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/%SUBDIR%/ \
-		http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/fltk/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${VERSION}
+MASTER_SITES=	${MASTER_SITE_EASYSW}
+MASTER_SITE_SUBDIR=	fltk/${VERSION}
 .ifdef WITH_THREADS
 PKGNAMESUFFIX=	-threads
 .endif
@@ -39,7 +34,7 @@ CONFLICTS=	fltk-threads-1*
 
 VERSION=	1.1.7
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-shared --enable-xft
@@ -56,7 +51,7 @@ MAN3=		fltk.3
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000 && defined(WITH_THREADS)
-IGNORE=	"does not work on FreeBSD 4.x, because threading is not activated"
+IGNORE=	does not work on FreeBSD 4.x, because threading is not activated
 .endif
 
 pre-everything::
