@@ -9,6 +9,7 @@
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
     SUBDIR += aolserver-nsmysql
+    SUBDIR += aolserver-nspostgres
     SUBDIR += bbdb
     SUBDIR += bbdb-emacs20
     SUBDIR += cdb
