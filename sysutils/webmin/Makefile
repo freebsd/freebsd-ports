@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.320
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -30,6 +30,7 @@ SUB_LIST=	PERL5=${PERL}
 
 WEBMIN_MODULES=	bind8-1.320-3.wbm.gz \
 		ldap-useradmin-1.320-1.wbm.gz \
+		mailboxes-1.320-4.wbm.gz \
 		status-1.320-4.wbm.gz
 
 post-extract:
