@@ -6607,6 +6607,7 @@ linux-geepee32	ports/emulators/linux-geepee32
 linux-gid	ports/cad/linux-gid
 linux-glib2	ports/devel/linux-glib2
 linux-goodway	ports/games/linux-goodway
+linux-gspca-kmod	ports/multimedia/linux-gspca-kmod
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-gtk-bluecurve-theme	ports/x11-themes/linux-gtk-bluecurve-theme
 linux-gtk2	ports/x11-toolkits/linux-gtk2
@@ -6619,6 +6620,7 @@ linux-j		ports/lang/linux-j
 linux-jigdo	ports/net-p2p/linux-jigdo
 linux-jpeg	ports/graphics/linux-jpeg
 linux-js	ports/devel/linux-js
+linux-kmod-compat	ports/devel/linux-kmod-compat
 linux-libGLU	ports/graphics/linux-libGLU
 linux-libaio	ports/emulators/linux-libaio
 linux-libaudiofile	ports/audio/linux-libaudiofile
@@ -6647,6 +6649,7 @@ linux-opera	ports/www/linux-opera
 linux-oracle-instantclient-basic	ports/databases/linux-oracle-instantclient-basic
 linux-oracle-instantclient-sdk	ports/databases/linux-oracle-instantclient-sdk
 linux-oracle-instantclient-sqlplus	ports/databases/linux-oracle-instantclient-sqlplus
+linux-ov511-kmod	ports/multimedia/linux-ov511-kmod
 linux-padjoy	ports/emulators/linux-padjoy
 linux-pam-docs	ports/security/linux-pam-docs
 linux-pango	ports/x11-toolkits/linux-pango
