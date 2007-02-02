@@ -5,6 +5,7 @@
 
     SUBDIR += 9e
     SUBDIR += advancecomp
+    SUBDIR += aolserver-nszlib
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += bicom
