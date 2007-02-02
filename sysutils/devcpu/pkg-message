@@ -10,7 +10,7 @@ Then you can access MSR registers or cpuid info via /dev/cpu%d or using
 3d-party programs, e.g. x86info.
 
 For information regarding microcode update features refer to
-cpu_mictocode_tool(4) manpage.
+cpu_microcode_tool(4) manpage.
 
 You might be interested in enabling automatic microcode update on startup.
 This can be achieved by adding the line devcpu_enable="YES" to /etc/rc.conf.
