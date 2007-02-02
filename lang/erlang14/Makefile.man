@@ -1,10 +1,8 @@
 # $FreeBSD$
 
 MAN1=	epmd.1 \
-	driver_entry.1 \
 	erl.1 \
 	erl_call.1 \
-	erl_driver.1 \
 	erlc.1 \
 	erlsrv.1 \
 	run_erl.1 \
@@ -114,13 +112,23 @@ MAN3=	CosEventChannelAdmin.3 \
 	digraph_utils.3 \
 	disk_log.3 \
 	disksup.3 \
+	driver_entry.3 \
+	edoc.3 \
+	edoc_doclet.3 \
+	edoc_extract.3 \
+	edoc_layout.3 \
+	edoc_lib.3 \
+	edoc_run.3 \
 	ei.3 \
 	ei_connect.3 \
 	epp.3 \
+	epp_dodger.3 \
 	eprof.3 \
 	erl_boot_server.3 \
+	erl_comment_scan.3 \
 	erl_connect.3 \
 	erl_ddll.3 \
+	erl_driver.3 \
 	erl_error.3 \
 	erl_eterm.3 \
 	erl_eval.3 \
@@ -134,10 +142,15 @@ MAN3=	CosEventChannelAdmin.3 \
 	erl_marshal.3 \
 	erl_parse.3 \
 	erl_pp.3 \
+	erl_prettypr.3 \
 	erl_prim_loader.3 \
+	erl_recomment.3 \
 	erl_scan.3 \
 	erl_set_memory_block.3 \
+	erl_syntax.3 \
+	erl_syntax_lib.3 \
 	erl_tar.3 \
+	erl_tidy.3 \
 	erlang.3 \
 	erlang_mode.3 \
 	error_handler.3 \
@@ -177,6 +190,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ic.3 \
 	ic_c_protocol.3 \
 	ic_clib.3 \
+	igor.3 \
 	inet.3 \
 	init.3 \
 	instrument.3 \
@@ -238,6 +252,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	pg2.3 \
 	pman.3 \
 	pool.3 \
+	prettypr.3 \
 	proc_lib.3 \
 	proplists.3 \
 	qlc.3 \
@@ -310,6 +325,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	xmerl_scan.3 \
 	xmerl_xpath.3 \
 	xmerl_xs.3 \
+	xmerl_xsd.3 \
 	xref.3 \
 	yecc.3 \
 	zip.3 \
