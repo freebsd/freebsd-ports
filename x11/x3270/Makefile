@@ -32,15 +32,6 @@ MAN1=		x3270.1 x3270if.1 x3270-script.1
 MAN5=		ibm_hosts.5
 #MANCOMPRESSED=	yes
 
-pre-install:
-.if !exists(${X11BASE}/lib/X11/fonts/local)
-	@${ECHO} "*********************************************************"
-	@${ECHO} "Please update your XFree86 to version 3.3.3 or later"
-	@${ECHO} "or add ${X11BASE}/lib/X11/fonts/local to your font path"
-	@${ECHO} "in /etc/XF86Config."
-	@${ECHO} "*********************************************************"
-.endif
-
 post-install:
 	${GZIP_CMD} ${MAN1PREFIX}/man/man1/x3270if.1
 	${GZIP_CMD} ${MAN1PREFIX}/man/man1/x3270-script.1
