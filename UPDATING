@@ -6,6 +6,29 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070202:
+  AFFECTS: users of www/aolserver
+  AUTHOR: martin@matuska.org
+
+  With update to aolserver 4.5.0 modules have been moved to separate ports.
+
+  The following modules are available initially:
+    archivers/aolserver-nszlib
+    databases/aolserver-nsmysql
+    databases/aolserver-nspostgres
+    graphics/aolserver-nsgd
+    security/aolserver-nsencrypt
+    security/aolserver-nsmcrypt
+    security/aolserver-nsmhash
+    security/aolserver-nsopenssl
+    security/aolserver-nssha1
+    www/aolserver-nscache
+
+  A different aolserver install directory for aolserver and modules
+  can be specified by defining AOLSERVERBASE in make.conf
+
+  The rc.d script has been renamed from aolserver.sh to aolserver.
+
 20070102:
   AFFECTS: users of sysutils/portupgrade
   AUTHOR: sem@FreeBSD.org
