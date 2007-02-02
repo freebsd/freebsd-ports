@@ -19,6 +19,7 @@
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
     SUBDIR += aolserver-nsencrypt
+    SUBDIR += aolserver-nsmcrypt
     SUBDIR += apg
     SUBDIR += arirang
     SUBDIR += audit
