@@ -1,20 +1,18 @@
 %%CACHE_DIR%%/%%GEM_NAME%%.gem
 %%GEM_LIB_DIR%%/COPYING
 %%GEM_LIB_DIR%%/INSTALL
+%%GEM_LIB_DIR%%/LICENSE
 %%GEM_LIB_DIR%%/README
-%%GEM_LIB_DIR%%/TODO
 %%GEM_LIB_DIR%%/examples/README
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/README
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/XXX_add_open_id_store_to_db.rb
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/init.rb
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/lib/association.rb
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/lib/nonce.rb
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/lib/open_id_setting.rb
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/lib/openid_ar_store.rb
+%%GEM_LIB_DIR%%/examples/active_record_openid_store/test/store_test.rb
 %%GEM_LIB_DIR%%/examples/consumer.rb
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/README
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/XX_add_openidstore.rb
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/models/openid_association.rb
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/models/openid_nonce.rb
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/models/openid_setting.rb
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/openid_helper.rb
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/openidstore_test.rb
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/schema.mysql.sql
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/schema.postgresql.sql
-%%GEM_LIB_DIR%%/examples/rails_active_record_store/schema.sqlite.sql
 %%GEM_LIB_DIR%%/examples/rails_openid_login_generator/USAGE
 %%GEM_LIB_DIR%%/examples/rails_openid_login_generator/openid_login_generator-0.1.gem
 %%GEM_LIB_DIR%%/examples/rails_openid_login_generator/openid_login_generator.rb
@@ -139,8 +137,9 @@
 @dirrmtry %%GEM_LIB_DIR%%/examples/rails_server
 @dirrmtry %%GEM_LIB_DIR%%/examples/rails_openid_login_generator/templates
 @dirrmtry %%GEM_LIB_DIR%%/examples/rails_openid_login_generator
-@dirrmtry %%GEM_LIB_DIR%%/examples/rails_active_record_store/models
-@dirrmtry %%GEM_LIB_DIR%%/examples/rails_active_record_store
+@dirrmtry %%GEM_LIB_DIR%%/examples/active_record_openid_store/test
+@dirrmtry %%GEM_LIB_DIR%%/examples/active_record_openid_store/lib
+@dirrmtry %%GEM_LIB_DIR%%/examples/active_record_openid_store
 @dirrmtry %%GEM_LIB_DIR%%/examples
 %%GEM_DOC_DIR%%/rdoc/classes/HMAC.html
 %%GEM_DOC_DIR%%/rdoc/classes/HMAC/Base.html
@@ -442,8 +441,8 @@
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/COPYING.html
 %%GEM_DOC_DIR%%/rdoc/files/INSTALL.html
+%%GEM_DOC_DIR%%/rdoc/files/LICENSE.html
 %%GEM_DOC_DIR%%/rdoc/files/README.html
-%%GEM_DOC_DIR%%/rdoc/files/TODO.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/hmac-md5_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/hmac-rmd160_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/hmac-sha1_rb.html
