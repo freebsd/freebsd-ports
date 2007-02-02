@@ -1,16 +1,17 @@
 bin/rubyforge
 %%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/.cvsignore
 %%GEM_LIB_DIR%%/History.txt
 %%GEM_LIB_DIR%%/Manifest.txt
-%%GEM_LIB_DIR%%/install.rb
-%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/README.txt
 %%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/bin/rubyforge
-%%GEM_LIB_DIR%%/test/test_rubyforge.rb
-%%GEM_LIB_DIR%%/lib/rubyforge.rb
 %%GEM_LIB_DIR%%/lib/http-access2.rb
 %%GEM_LIB_DIR%%/lib/http-access2/cookie.rb
 %%GEM_LIB_DIR%%/lib/http-access2/http.rb
+%%GEM_LIB_DIR%%/lib/rubyforge.rb
+%%GEM_LIB_DIR%%/test/test_rubyforge.rb
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_DOC_DIR%%/rdoc/files/lib/http-access2_rb.html
@@ -67,8 +68,8 @@ bin/rubyforge
 %%GEM_DOC_DIR%%/rdoc/classes/RubyForge.src/M000048.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubyForge.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubyForge.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyForge.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubyForge.src/M000052.html
 %%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000053.html
 %%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000054.html
 %%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000055.html
@@ -81,18 +82,18 @@ bin/rubyforge
 %%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000062.html
 %%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000063.html
 %%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000064.html
-%%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000065.html
-%%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src/M000066.html
 %%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000067.html
 %%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000068.html
 %%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000069.html
 %%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000070.html
 %%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP.src/M000073.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Status.src/M000074.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000075.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Status.src/M000076.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000077.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000078.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000079.html
@@ -115,13 +116,13 @@ bin/rubyforge
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000096.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000097.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src/M000099.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src/M000100.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src/M000101.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src/M000102.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src/M000103.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000104.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src/M000105.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000106.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000107.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000108.html
@@ -132,6 +133,8 @@ bin/rubyforge
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000113.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000114.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src/M000117.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Status.html
@@ -148,22 +151,21 @@ bin/rubyforge
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib/http-access2
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/bin
-@dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Headers.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message/Body.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Message.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP/Status.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RubyForge.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTTP.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/DebugSocket.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/SSLSocketWrap.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RubyForge.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Client.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/http-access2
