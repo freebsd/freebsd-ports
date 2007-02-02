@@ -27,6 +27,7 @@
     SUBDIR += fpc-unzip
     SUBDIR += freetar
     SUBDIR += freeze
+    SUBDIR += grzip
     SUBDIR += gtar
     SUBDIR += gzip
     SUBDIR += gzrecover
