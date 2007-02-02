@@ -8,6 +8,10 @@ etc/portscout.conf.sample
 %%DATADIR%%/templates/restricted-ports.html
 %%DATADIR%%/sql/pgsql_init.sql
 %%DATADIR%%/sql/pgsql_destroy.sql
+%%DATADIR%%/sql/pgsql_upgrade_0.7.1_to_0.7.2.sql
+%%SITE_PERL%%/Portscout/Template.pm
+%%SITE_PERL%%/Portscout.pm
+@dirrm %%SITE_PERL%%/Portscout
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/sql
 @dirrm %%DATADIR%%

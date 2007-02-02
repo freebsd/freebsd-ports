@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portscout
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.inerd.com/software/${PORTNAME}/
@@ -59,7 +59,10 @@ post-patch:
 	                  ${WRKSRC}/README
 
 do-install:
+	@${MKDIR} ${SITE_PERL}/Portscout
 	${INSTALL_SCRIPT} ${WRKSRC}/portscout.pl ${PREFIX}/bin/portscout
+	${INSTALL_SCRIPT} ${WRKSRC}/Portscout.pm ${SITE_PERL}/Portscout.pm
+	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/Template.pm ${SITE_PERL}/Portscout
 
 	@${MKDIR} ${DATADIR}/templates
 	cd ${WRKSRC}/templates \
