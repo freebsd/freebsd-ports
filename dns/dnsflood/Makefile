@@ -7,6 +7,7 @@
 
 PORTNAME=	dnsflood
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.adotout.com/
 EXTRACT_SUFX=	.tgz
@@ -18,8 +19,8 @@ USE_GETOPT_LONG=	yes
 
 WRKSRC=		${WRKDIR}/dns_flood_detector
 
-PLIST_FILES=	sbin/dns_flood_detector %%PORTDOCS%%%%DOCSDIR%%/README
-PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
+PLIST_FILES=	sbin/dns_flood_detector
+PORTDOCS=	README
 
 pre-patch:
 	${CP} ${WRKSRC}/makefiles/Makefile-FreeBSD ${WRKSRC}/Makefile
