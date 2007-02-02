@@ -61,7 +61,7 @@ OSVERSION!= /usr/sbin/sysctl -n kern.osreldate
 .endif
 .endif
 .if !defined(PORTOBJFORMAT)
-PORTOBJFORMAT!= test -x ${DESTDIR}/usr/bin/objformat && ${DESTDIR}/usr/bin/objformat || echo aout
+PORTOBJFORMAT?=	elf
 .endif
 .endif
 
