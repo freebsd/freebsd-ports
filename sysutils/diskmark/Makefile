@@ -10,8 +10,11 @@ PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~brooks/diskmark/
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to mark disks using empty partition table entries
+
+DEPRECATED=	Makes no sense on FreeBSD > 4.x.  Use glabel(8) instead
+EXPIRATION_DATE=	2006-03-01
 
 # Diskmark makes little sense on arches that don't boot from MBR
 # partition tables and doesn't build on 64-bit platforms with strict
