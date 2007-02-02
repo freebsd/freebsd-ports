@@ -629,6 +629,7 @@
     SUBDIR += linux-allegro
     SUBDIR += linux-glib2
     SUBDIR += linux-js
+    SUBDIR += linux-kmod-compat
     SUBDIR += linux-libglade
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
