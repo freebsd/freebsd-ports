@@ -20,7 +20,7 @@ MASTER_SITE_SUBDIR=	mcrypt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
-LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
+LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash/
 
 USE_AUTOTOOLS=	autoconf:259:env
