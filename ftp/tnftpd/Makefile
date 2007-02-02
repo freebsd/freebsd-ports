@@ -7,6 +7,7 @@
 
 PORTNAME=	tnftpd
 PORTVERSION=	20061204
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
@@ -27,12 +28,8 @@ DOCS=		ChangeLog README THANKS COPYING
 
 MAN5=		ftpd.conf.5 ftpusers.5
 MAN8=		tnftpd.8
-PLIST_FILES=	libexec/tnftpd \
-		%%PORTDOCS%%%%DOCSDIR%%/ChangeLog \
-		%%PORTDOCS%%%%DOCSDIR%%/README \
-		%%PORTDOCS%%%%DOCSDIR%%/THANKS \
-		%%PORTDOCS%%%%DOCSDIR%%/COPYING
-PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
+PLIST_FILES=	libexec/tnftpd
+PORTDOCS=	ChangeLog README THANKS COPYING
 
 FIXPREFIX=	ftpd.8 ftpd.conf.5 ftpusers.5
 
