@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602100
-BROKEN=		Requires a recent USB stack. You have ${OSVERSION}
+IGNORE=		requires a recent USB stack, not present in ${OSVERSION}
 .endif
 
 # Here is where install most things except the .mk file
