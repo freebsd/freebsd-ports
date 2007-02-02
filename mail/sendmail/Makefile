@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.13.8
+PORTVERSION=	8.14.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -34,7 +34,7 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 PKGMESSAGE=	${WRKSRC}/pkg-message
-MILTER_SOVER?=	3
+MILTER_SOVER?=	4
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
