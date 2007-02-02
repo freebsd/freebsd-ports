@@ -134,7 +134,6 @@ Terminal	ports/x11/Terminal
 TkTopNetFlows	ports/net-mgmt/TkTopNetFlows
 WWWdb		ports/databases/WWWdb
 WebMagick	ports/www/WebMagick
-XFree86		ports/x11/XFree86
 XFree86-4	ports/x11/XFree86-4
 XFree86-4-FontServer			ports/x11-servers/XFree86-4-FontServer
 XFree86-4-NestServer			ports/x11-servers/XFree86-4-NestServer
@@ -151,7 +150,6 @@ XFree86-4-fontEncodings			ports/x11-fonts/XFree86-4-fontEncodings
 XFree86-4-fontScalable			ports/x11-fonts/XFree86-4-fontScalable
 XFree86-4-libraries			ports/x11/XFree86-4-libraries
 XFree86-4-manuals			ports/x11/XFree86-4-manuals
-XFree86-contrib	ports/x11/XFree86-contrib
 Xaw3d		ports/x11-toolkits/Xaw3d
 XawPlus		ports/x11-toolkits/XawPlus
 Xfstt		ports/x11-servers/Xfstt
@@ -6708,7 +6706,6 @@ linux_dist-gentoo-stage3	ports/emulators/linux_dist-gentoo-stage3
 linux_dri	ports/graphics/linux_dri
 linux_dri-devel	ports/graphics/linux_dri-devel
 linux_glide	ports/graphics/linux_glide
-linux_glx	ports/graphics/linux_glx
 linux_kdump	ports/devel/linux_kdump
 linuxdcpp	ports/net-p2p/linuxdcpp
 linuxdoc	ports/textproc/linuxdoc
@@ -7034,7 +7031,6 @@ mergelog	ports/www/mergelog
 merlin		ports/games/merlin
 merlinmon	ports/net/merlinmon
 mesa-demos	ports/graphics/mesa-demos
-mesagl		ports/graphics/mesagl
 mesgui		ports/x11-toolkits/mesgui
 meshviewer	ports/graphics/meshviewer
 mess822		ports/mail/mess822
@@ -16134,7 +16130,6 @@ xpk		ports/archivers/xpk
 xplanet		ports/astro/xplanet
 xplore		ports/x11-fm/xplore
 xplot		ports/math/xplot
-xpm		ports/graphics/xpm
 xpn		ports/news/xpn
 xpns		ports/misc/xpns
 xpostit		ports/deskutils/xpostit
