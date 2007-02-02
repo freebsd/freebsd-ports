@@ -1,0 +1,49 @@
+# New ports collection makefile for:	aolserver-nsmcrypt
+# Date created:		12 Oct 2006
+# Whom:			Martin Matuska <martin@matuska.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aolserver-nsmcrypt
+PORTVERSION=	1.0
+CATEGORIES=	security www
+MASTER_SITES=	http://www.aolserver.cz/download/
+DISTFILES=	nsmcrypt-${PORTVERSION}.tgz
+DIST_SUBDIR=	aolserver
+
+MAINTAINER=	martin@matuska.org
+COMMENT=	AOLserver interface to mcrypt library
+
+WRKSRC=		${WRKDIR}
+
+AOLSERVERBASE?=	${PREFIX}/aolserver
+LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/mcrypt
+BUILD_DEPENDS+=	${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
+
+USE_GMAKE=	yes
+USE_TCL_BUILD=	yes
+
+.include <bsd.port.pre.mk>
+
+MAKE_ARGS=	NSHOME=${AOLSERVERBASE} MODLIBS="-L${LOCALBASE}/lib -lmcrypt" \
+		CFLAGS="-I. -I${AOLSERVERBASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -DAOL4=1 -fPIC"
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS COPYING README
+.endif
+
+post-patch:
+	@ ${REINPLACE_CMD} -e 's|OBJS|MODOBJS|' ${WRKSRC}/Makefile
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${DOCSDIR}
+.for FILE in ${PORTDOCS}
+	@ ${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
