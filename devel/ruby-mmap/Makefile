@@ -31,6 +31,11 @@ DOCS=		Changes \
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+.if exists(${RUBY_ARCHLIBDIR}/oniguruma.h)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-oniguruma
+.endif
+
 post-build:
 .if !defined(NOPORTDOCS)
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
