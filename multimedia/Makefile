@@ -129,7 +129,9 @@
     SUBDIR += libxine
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4
+    SUBDIR += linux-gspca-kmod
     SUBDIR += linux-libtheora
+    SUBDIR += linux-ov511-kmod
     SUBDIR += linux-realplayer
     SUBDIR += linux-xmovie
     SUBDIR += lives
