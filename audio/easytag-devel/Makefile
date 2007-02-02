@@ -21,8 +21,6 @@ LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib \
 		FLAC:${PORTSDIR}/audio/flac \
 		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
-BROKEN=		Incomplete pkg-plist
-
 MAN1=		easytag.1
 CONFLICTS=	easytag-[0-9]*
 
