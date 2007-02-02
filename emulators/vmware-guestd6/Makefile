@@ -69,22 +69,10 @@ BITS?=		64
 
 .if defined(VMWARE_X_PORTS)
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-.if ${BITS} == 32
-PLIST_SUB+=	INSTALLXSERVER3:=""
-.else
-PLIST_SUB+=	INSTALLXSERVER3:="@comment "
-.endif
-PLIST_SUB+=	INSTALLXSERVER4:="@comment "
-PLIST_SUB+=	INSTALLXVMMOUSE:="@comment "
-.elif ${X_WINDOW_SYSTEM:L} == xfree86-4
-PLIST_SUB+=	INSTALLXSERVER3:="@comment "
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
 PLIST_SUB+=	INSTALLXSERVER4:=""
-PLIST_SUB+=	INSTALLXVMMOUSE:=""
 .else
-PLIST_SUB+=	INSTALLXSERVER3:="@comment "
 PLIST_SUB+=	INSTALLXSERVER4:="@comment "
-PLIST_SUB+=	INSTALLXVMMOUSE:=""
 .endif
 
 .else
@@ -174,24 +162,10 @@ do-install:
 .if defined(WITH_VMWARE_GTK)
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-gtk ${X11BASE}/bin
 .endif
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	if [ ! -d ${X11BASE}/lib/modules/input ] ; then \
 		${MKDIR} ${X11BASE}/lib/modules/input ; \
 	fi
-.endif
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-.if ${BITS} == 32
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/configurator/XFree86-3/XF86_VMware_4.5 ${X11BASE}/bin/XF86_VMware
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-3/XF86Config ${X11BASE}/etc/XF86Config_VMware
-	@${ECHO} ""
-	@${ECHO} "You have installed XFree86 3.x X Server for VMware."
-	@${ECHO} "${X11BASE}/etc/XF86Config_VMware is a sample XF86Config file."
-	@${ECHO} "Copy this file to /etc/XF86Config before starting X."
-.else
-	@${ECHO} "There is no XFree86 3.x X server for your system."
-	@${ECHO} "Consider upgrading your X to XFree86 4.x or switch to X.Org."
-.endif
-.elif ${X_WINDOW_SYSTEM:L} == xfree86-4
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
 	if [ ! -d ${X11BASE}/lib/modules/drivers ] ; then \
 		${MKDIR} ${X11BASE}/lib/modules/drivers ; \

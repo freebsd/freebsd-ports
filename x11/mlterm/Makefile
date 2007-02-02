@@ -14,13 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
 
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 lthack
 USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
-		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig"
+		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig" \
+		--with-type-engines="xcore,xft"
 CONFIGURE_ENV=	LIBS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
 
 OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
@@ -85,14 +88,6 @@ PLIST_SUB+=	SCIM="@comment "
 INSTALLS_SHLIB=	yes
 
 MAN1=	mlterm.1 mlclient.1
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-PKGNAMESUFFIX=	-noaa
-CONFIGURE_ARGS+=	--with-type-engines=xcore
-.else
-CONFIGURE_ARGS+=	--with-type-engines="xcore,xft"
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-.endif
 
 post-configure:
 	@${CP} ${LIBTOOL} ${WRKSRC}

@@ -58,12 +58,6 @@ MAN5=	xine.5
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-PLIST_SUB+=	WITH_LIBXV=""
-.else
-PLIST_SUB+=	WITH_LIBXV="@comment "
-.endif
-
 .if !defined(WITHOUT_ARTS) && (exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS))
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	WITH_ARTS=""

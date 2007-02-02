@@ -46,12 +46,6 @@ MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-PLIST_SUB+=	INSTALLXSERVER:=""
-.else
-PLIST_SUB+=	INSTALLXSERVER:="@comment "
-.endif
-
 do-fetch:
 	@${DO_NADA}
 fetch-list:
@@ -86,14 +80,6 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vmware-toolbox ${PREFIX}/bin
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-	${INSTALL_PROGRAM} ${WRKSRC}/XF86_VMware ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/XF86Config.dist ${PREFIX}/etc/XF86Config_VMware
-	@${ECHO} ""
-	@${ECHO} "You have installed XFree86 3.x X Server for VMware."
-	@${ECHO} "${PREFIX}/etc/XF86Config_VMware is a sample XF86Config file."
-	@${ECHO} "Copy this file to /etc/XF86Config before starting X."
-.endif
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
 .include <bsd.port.post.mk>

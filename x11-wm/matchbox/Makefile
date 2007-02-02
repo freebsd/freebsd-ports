@@ -31,7 +31,7 @@ DOCS=		AUTHORS ChangeLog NEWS README
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3 || defined(WITHOUT_XFT)
+.if defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-standalone
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft

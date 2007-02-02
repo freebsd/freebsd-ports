@@ -32,8 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 BUILD_DEPENDS=	mkdirhier:${PORTSDIR}/devel/imake-4
 .elif ${X_WINDOW_SYSTEM} == "xorg"
 BUILD_DEPENDS=	mkdirhier:${PORTSDIR}/devel/imake-6
-.elif ${X_WINDOW_SYSTEM} == "xfree86-3"
-BUILD_DEPENDS=	mkdirhier:${PORTSDIR}/x11/XFree86
 .endif
 
 .if defined(WITH_MPLAYER)

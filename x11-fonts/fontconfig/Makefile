@@ -42,6 +42,8 @@ MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+
 MAN1=		fc-match.1
 MAN5=		fonts-conf.5
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
@@ -54,12 +56,6 @@ PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 #		http://bsdchat.com/dist/firefly-cjk-patchset/
 #PATCHFILES+=	cjk-fontconfig-2.3.2-20051217.patch.gz
 #PATCH_DIST_STRIP+=	-p1
-.endif
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.else
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
 
 post-install:

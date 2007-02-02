@@ -50,7 +50,7 @@ IGNORE=		Does not compile at 4.x
 ## Additional Options
 ##
 #
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3 || defined(WITHOUT_XFT)
+.if defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--with-xft=no
 .else
 CONFIGURE_ARGS+=	--with-xft=yes

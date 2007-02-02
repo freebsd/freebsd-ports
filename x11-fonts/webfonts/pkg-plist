@@ -11,7 +11,7 @@
 %%FONTSDIR%%/courbd.ttf
 %%FONTSDIR%%/courbi.ttf
 %%FONTSDIR%%/couri.ttf
-%%FCACHE%%@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/georgia.ttf
@@ -37,6 +37,4 @@
 %%DOCSDIR%%/LICENSE
 @dirrm %%DOCSDIR%%
 @dirrm %%FONTSDIR%%
-%%OLDXF86%%@exec ln -fs %D/%%FONTSDIR%% %D/%%TTFONTSDIR%%/%%FONTNAME%%
-%%OLDXF86%%@unexec rm -f %D/%%TTFONTSDIR%%/%%FONTNAME%%
-%%FCACHE%%@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
+@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true

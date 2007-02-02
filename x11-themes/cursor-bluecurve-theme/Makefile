@@ -44,11 +44,7 @@ do-build:
 .include "${MASTERDIR}/bsd.bluecurve.mk"
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 BUILD_DEPENDS+=	xcursorgen:${X_CLIENTS_PORT}	# needed by cursorthemegen
 RUN_DEPENDS+=	xcursorgen:${X_CLIENTS_PORT}	# for the lib/X11/icons directory
-.else
-IGNORE=		your X Window System is too old; install x11/xorg or x11/XFree86-4 and try again
-.endif
 
 .include <bsd.port.post.mk>

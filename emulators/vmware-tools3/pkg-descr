@@ -7,9 +7,7 @@ configulation files, and special XFree86 3.x server for Guest OS.
 However, we cannot install dual-boot configuration since it requires
 to modify /etc files.
 
-This ports will install vmware-toolbox to your computer, and
-XFree86 X server if you set XFREE86_VERSION to 3 in /etc/make.conf, 
-If you already use XFree86 4.1.0 or later, you may use 'vmware'
+This ports will install vmware-toolbox to your computer.  You may use 'vmware'
 driver for X server.  Vmware-guestd is installed as a separate port,
 ports/emulators/vmware-guestd3, but this port install guestd automatically.
 

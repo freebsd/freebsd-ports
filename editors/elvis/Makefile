@@ -34,7 +34,7 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--without-x
 .else
 USE_XPM=	yes
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3 || defined(WITHOUT_XFT)
+.if defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--without-xft
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft

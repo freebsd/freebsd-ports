@@ -37,10 +37,6 @@ PORTDOCS=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-IGNORE=		"Requires Xv Extension"
-.endif
-
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 MAN1+=		playdv.1

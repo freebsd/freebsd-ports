@@ -142,7 +142,7 @@ lib/xine/plugins/1.1.3/xineplug_vo_out_opengl.so
 lib/xine/plugins/1.1.3/xineplug_vo_out_sdl.so
 %%WITH_VIDIX%%lib/xine/plugins/1.1.3/xineplug_vo_out_vidix.so
 lib/xine/plugins/1.1.3/xineplug_vo_out_xshm.so
-%%WITH_LIBXV%%lib/xine/plugins/1.1.3/xineplug_vo_out_xv.so
+lib/xine/plugins/1.1.3/xineplug_vo_out_xv.so
 %%WITH_XVMC%%lib/xine/plugins/1.1.3/xineplug_vo_out_xvmc.so
 libdata/pkgconfig/libxine.pc
 share/aclocal/xine.m4
