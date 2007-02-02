@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 THEMES=		metal notif pixmap raleigh redmond95
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 	@for theme in ${THEMES}; do \
 		cd ${WRKSRC}/$$theme/Theme/gtk; \
 		${MV} gtkrc gtkrc.tmp; \
