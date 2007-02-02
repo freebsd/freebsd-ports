@@ -15,7 +15,7 @@ COMMENT=	Adaptation layer to build linux drivers on FreeBSD
 
 WRKSRC=		${WRKDIR}/linux_compat
 
-NO_PACKAGE=     depends on kernel sources
+NO_PACKAGE=	The author does not want packages for this port.
 
 # At the moment, emulation is only partial, but amd64 is coming
 ONLY_FOR_ARCHS= i386
