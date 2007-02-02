@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-ERTS_VSN=	5.5.2
-TOOLS_VSN=	2.5.2
-OTP_LIBS=	appmon-2.1.6 \
-		asn1-1.4.4.11 \
-		compiler-4.4.2 \
+ERTS_VSN=	5.5.3
+TOOLS_VSN=	2.5.3
+OTP_LIBS=	appmon-2.1.7 \
+		asn1-1.4.4.12 \
+		compiler-4.4.3 \
 		cosEvent-2.1 \
 		cosEventDomain-1.1 \
 		cosFileTransfer-1.1.2 \
@@ -14,37 +14,38 @@ OTP_LIBS=	appmon-2.1.6 \
 		cosTransactions-1.2 \
 		crypto-1.5 \
 		debugger-3.1 \
-		dialyzer-1.5.0 \
-		edoc-0.6.9 \
-		erl_interface-3.5.5.2 \
+		dialyzer-1.5.1 \
+		edoc-0.7.1 \
+		erl_interface-3.5.5.3 \
 		et-1.0 \
 		gs-1.5.5 \
-		hipe-3.6.0 \
+		hipe-3.6.1 \
 		ic-4.2.11 \
-		inets-4.7.6 \
+		inets-4.7.8 \
 		inviso-0.1 \
 		jinterface-1.3 \
-		kernel-2.11.2 \
-		megaco-3.5 \
+		kernel-2.11.3 \
+		megaco-3.5.1 \
 		mnemosyne-1.2.6 \
 		mnesia-4.3.3 \
 		mnesia_session-1.1.6 \
-		observer-0.9.7.1 \
-		odbc-2.0.6 \
-		orber-3.6.3 \
-		os_mon-2.1.1 \
+		observer-0.9.7.2 \
+		odbc-2.0.7 \
+		orber-3.6.4 \
+		os_mon-2.1.2 \
 		otp_mibs-1.0.4 \
-		parsetools-1.4 \
+		parsetools-1.4.1 \
 		pman-2.5.2 \
-		runtime_tools-1.6.1 \
+		runtime_tools-1.6.2 \
 		sasl-2.1.4 \
-		snmp-4.8.2 \
-		ssh-0.9.5 \
-		ssl-3.0.12 \
-		stdlib-1.14.2 \
-		syntax_tools-1.5.0 \
+		snmp-4.8.4 \
+		ssh-0.9.6 \
+		ssl-3.1 \
+		stdlib-1.14.3 \
+		syntax_tools-1.5.2 \
 		toolbar-1.3 \
-		tools-2.5.2 \
+		tools-2.5.3 \
 		tv-2.1.3 \
+		typer-0.1.0 \
 		webtool-0.8.3 \
-		xmerl-1.0.5
+		xmerl-1.1
