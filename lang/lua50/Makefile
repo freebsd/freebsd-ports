@@ -7,7 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -66,8 +66,8 @@ do-install:
 # Libraries.
 	${MKDIR} ${LUA_LIBDIR}
 .for f in ${LUA_LIB}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${f}.a ${LUA_LIBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${f}.so \
+	${INSTALL_DATA} ${WRKSRC}/lib/lib${f}.a ${LUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/lib${f}.so \
 		${LUA_LIBDIR}/lib${f}-${LUA_VER}.so.${LUA_VER_SH}
 	@${LN} -sf lib${f}-${LUA_VER}.so.${LUA_VER_SH} ${LUA_LIBDIR}/lib${f}.so
 	@${LN} -sf ${LUA_SUBDIR}/lib${f}-${LUA_VER}.so.${LUA_VER_SH} \
