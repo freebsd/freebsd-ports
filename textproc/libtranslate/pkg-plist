@@ -6,12 +6,9 @@ include/libtranslate/translate-session.h
 include/libtranslate/translate-util.h
 include/libtranslate/translate.h
 lib/libtranslate.a
-lib/libtranslate.la
 lib/libtranslate.so
 lib/libtranslate.so.0
-%%GENERIC%%lib/libtranslate/modules/generic.la
 %%GENERIC%%lib/libtranslate/modules/generic.so
-%%TALKFILTERS%%lib/libtranslate/modules/talkfilters.la
 %%TALKFILTERS%%lib/libtranslate/modules/talkfilters.so
 libdata/pkgconfig/libtranslate.pc
 share/doc/libtranslate/TranslatePair.html
