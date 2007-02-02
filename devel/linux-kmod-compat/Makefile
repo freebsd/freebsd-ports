@@ -40,7 +40,7 @@ post-extract:
 
 # Update the header location in the .mk
 post-patch:
-	@@${REINPLACE_CMD} -i '' -e 's|^KLINPATH.*|KLINPATH?= ${MY_DST}|' \
+	@${REINPLACE_CMD} -i '' -e 's|^KLINPATH.*|KLINPATH?= ${MY_DST}|' \
 		${WRKSRC}/${MY_MK}
 
 # Install bsd.linux_kmod.mk into /usr/share/mk so it can be found without
