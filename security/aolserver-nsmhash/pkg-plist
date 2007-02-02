@@ -1,0 +1,3 @@
+%%AOLSERVERBASE%%/bin/nsmhash.so
+%%AOLSERVERBASE%%/lib/libnsmhash.a
+%%AOLSERVERBASE%%/lib/libnsmhash.so
