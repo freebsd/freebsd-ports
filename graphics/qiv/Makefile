@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib image viewer
 
-OPTIONS=	XINERAMA "use multiple monitors (XFree86 4 and X.org only)" off
+OPTIONS=	XINERAMA "use multiple monitors" off
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
