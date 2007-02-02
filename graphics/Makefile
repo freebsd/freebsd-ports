@@ -21,6 +21,7 @@
     SUBDIR += allegrogl
     SUBDIR += amanith
     SUBDIR += aoi
+    SUBDIR += aolserver-nsgd
     SUBDIR += aqsis
     SUBDIR += autopano-sift
     SUBDIR += autotrace
