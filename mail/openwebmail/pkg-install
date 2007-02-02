@@ -3,6 +3,7 @@ if [ "$2" != "POST-INSTALL" ]; then
     exit 0
 fi
 
+mkdir -p ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/addressbooks
 mkdir -p ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/sessions
 chmod 0770 ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/sessions
 mkdir -p ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/users
