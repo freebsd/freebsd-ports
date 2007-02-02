@@ -8,5 +8,5 @@ It contains:
 Ideally, the porting of a linux driver should be as simple as downloading
 the linux driver sources, writing a simple Makefile.kmod, and running
 "make -f Makefile.kld" to produce your driver.ko.
-Full details at
-	http://info.iet.unipi.it/~luigi/FreeBSD/linux_bsd_kld.html
+
+WWW:	http://info.iet.unipi.it/~luigi/FreeBSD/linux_bsd_kld.html
