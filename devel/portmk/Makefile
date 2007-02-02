@@ -26,11 +26,7 @@ WRKSRC=				${WRKDIR}/patch-o-matic
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-PORTMK_PATCH=	${FILESDIR}/portmk4.patch
-.else
 PORTMK_PATCH=	${FILESDIR}/portmk5.patch
-.endif
 
 post-patch:
 .for text in pkg-message
