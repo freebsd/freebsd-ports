@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070102:
+  AFFECTS: users of sysutils/portupgrade
+  AUTHOR: sem@FreeBSD.org
+
+  If you have a problem with upgrading the tools from version 2.2.1 and less,
+  remove the package with pkg_delete portupgrade\* command and reinstall it
+  from scratch. Remove /usr/ports/INDEX*.db and run portsdb -u.
+
 20070130:
   AFFECTS: users of dns/powerdns
   AUTHOR: tremere@cainites.net
