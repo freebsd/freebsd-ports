@@ -14,40 +14,43 @@ MAINTAINER=	luigi@FreeBSD.org
 COMMENT=	Adaptation layer to build linux drivers on FreeBSD
 
 WRKSRC=		${WRKDIR}/linux_compat
-
-NO_PACKAGE=	The author does not want packages for this port.
+NO_BUILD=	yes
 
 # At the moment, emulation is only partial, but amd64 is coming
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602100
-BROKEN= Requires a recent USB stack. you have ${OSVERSION}
+BROKEN=		Requires a recent USB stack. You have ${OSVERSION}
 .endif
 
 # Here is where install most things except the .mk file
-MY_DST=	${DESTDIR}${PREFIX}/share/${PORTNAME}/linux_compat
+MY_DST=	${DATADIR}/linux_compat
 MY_MK=	bsd.linux_kmod.mk
+
+PLIST=	${WRKDIR}/pkg-plist
+
+post-extract:
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s|${WRKSRC}|%%DATADIR%%/linux_compat|" >${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s|${WRKSRC}|@dirrm %%DATADIR%%/linux_compat|" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
+	@${ECHO_CMD} "@cwd /usr/share/mk" >> ${PLIST}
+	@${ECHO_CMD} "bsd.linux_kmod.mk" >> ${PLIST}
 
 # Update the header location in the .mk
 post-patch:
-	@${REINPLACE_CMD} -e 's|^KLINPATH.*|KLINPATH?= ${MY_DST}|' \
+	@@${REINPLACE_CMD} -i '' -e 's|^KLINPATH.*|KLINPATH?= ${MY_DST}|' \
 		${WRKSRC}/${MY_MK}
 
-do-build:	# nothing to build here, just a chance to update the source.
-
 # Install bsd.linux_kmod.mk into /usr/share/mk so it can be found without
-# extra arguments. All other files go into ${MY_DST}, with proper updating
-# of owner and permissions. INSTALL is not recursive so we simulate it
-# with cp -r/chmod/chown
+# extra arguments.
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/bsd.linux_kmod.mk /usr/share/mk
-	${MKDIR} ${MY_DST}
-	${CP} -Rp ${WRKSRC}/* ${MY_DST}
-	${FIND}  ${MY_DST} -type f -exec ${CHMOD} ${SHAREMODE} \{\} \;
-	# XXX TODO: fix modes on directories
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MY_DST}
+	@${MKDIR} ${MY_DST}
+	@${CP} -Rp ${WRKSRC}/* ${MY_DST}
+	@${FIND} ${MY_DST} -type f -exec ${CHMOD} ${SHAREMODE} \{\} \;
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MY_DST}
 
 .include <bsd.port.post.mk>
