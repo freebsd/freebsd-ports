@@ -1,0 +1,3 @@
+@comment The module is installed in /boot/modules
+@cwd /boot/modules
+ov511.ko
