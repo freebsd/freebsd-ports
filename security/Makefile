@@ -21,6 +21,7 @@
     SUBDIR += aolserver-nsencrypt
     SUBDIR += aolserver-nsmcrypt
     SUBDIR += aolserver-nsmhash
+    SUBDIR += aolserver-nsopenssl
     SUBDIR += apg
     SUBDIR += arirang
     SUBDIR += audit
