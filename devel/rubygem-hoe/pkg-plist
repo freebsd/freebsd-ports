@@ -1,9 +1,10 @@
 bin/sow
 %%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/History.txt
+%%GEM_LIB_DIR%%/Manifest.txt
 %%GEM_LIB_DIR%%/README.txt
 %%GEM_LIB_DIR%%/Rakefile
-%%GEM_LIB_DIR%%/Manifest.txt
-%%GEM_LIB_DIR%%/History.txt
 %%GEM_LIB_DIR%%/bin/sow
 %%GEM_LIB_DIR%%/lib/hoe.rb
 %%GEM_LIB_DIR%%/test/test_hoe.rb
@@ -13,20 +14,19 @@ bin/sow
 %%GEM_DOC_DIR%%/rdoc/files/lib/hoe_rb.src/M000002.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/hoe_rb.src/M000003.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/hoe_rb.src/M000004.html
-%%GEM_DOC_DIR%%/rdoc/index.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/hoe_rb.html
 %%GEM_DOC_DIR%%/rdoc/classes/Hoe.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
-%%GEM_SPEC%%
+%%GEM_DOC_DIR%%/rdoc/index.html
+@dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/bin
-@dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/hoe_rb.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
