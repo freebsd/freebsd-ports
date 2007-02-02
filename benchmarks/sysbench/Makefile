@@ -11,15 +11,22 @@ CATEGORIES=	benchmarks databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
 USE_AUTOTOOLS=	libtool:15
 
-OPTIONS=	MYSQL "Enable MySQL support" on \
+OPTIONS=	LARGEFILE "Enable Largefile support" on \
+		MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_LARGEFILE)
+CONFIGURE_ARGS+=	--disable-largefile
+.else
+CONFIGURE_ARGS+=	--enable-largefile
+.endif
 
 .if defined(WITHOUT_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql=no
