@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/ciscoconf/ \
 MAINTAINER=	jabley@automagic.org
 COMMENT=	Fetches configuration from Cisco routers and stores them under RCS
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 ALL_TARGET=	depend all
 MAN8=		ciscoconfd.8 ciscoconfr.8
 

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of 5 "fixed" fonts for X11 from www.brama.com
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 
 USE_ZIP=	yes
 USE_X_PREFIX=	yes
