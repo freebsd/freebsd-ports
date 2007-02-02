@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	maildir
-PORTVERSION=	0.24.3
-PORTREVISION=	2
+PORTVERSION=	0.24.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Maildir++ plugin for claws-mail
-
-BROKEN=	doesn't compile
 
 BUILD_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
