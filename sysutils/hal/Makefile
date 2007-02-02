@@ -81,6 +81,10 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 505000
+IGNORE=	not supported on FreeBSD prior to 5.5-RELEASE
+.endif
+
 .if !defined(HAL_SLAVE)
 .if (${ARCH}=="i386" || ${ARCH}=="amd64" || ${ARCH}=="ia64")
 RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
