@@ -8,6 +8,7 @@
     SUBDIR += adstudio
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
+    SUBDIR += aolserver-nsmysql
     SUBDIR += bbdb
     SUBDIR += bbdb-emacs20
     SUBDIR += cdb

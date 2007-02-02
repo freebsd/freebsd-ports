@@ -1,0 +1,3 @@
+%%AOLSERVERBASE%%/bin/nsmysql.so
+%%AOLSERVERBASE%%/lib/libnsmysql.a
+%%AOLSERVERBASE%%/lib/libnsmysql.so
