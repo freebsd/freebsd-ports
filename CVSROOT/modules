@@ -3893,6 +3893,7 @@ gruler		ports/deskutils/gruler
 grun		ports/misc/grun
 grustibus	ports/emulators/grustibus
 grx		ports/graphics/grx
+grzip		ports/archivers/grzip
 gsasl		ports/security/gsasl
 gsbench		ports/benchmarks/gsbench
 gscan2pdf	ports/graphics/gscan2pdf
