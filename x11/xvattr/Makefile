@@ -24,10 +24,4 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		xvattr.1
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-IGNORE=		requires Xv Extension
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

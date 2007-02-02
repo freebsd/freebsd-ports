@@ -22,9 +22,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	XAWVER="${XAWVER}"
 
 .include <bsd.port.pre.mk>
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-PLIST_FILES=	lib/libXaw3d.so.6
-.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
@@ -40,9 +37,6 @@ post-configure:
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${DOCSDIR}
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-	${LN} -sf libXaw3d.so.${XAWVER} ${X11BASE}/lib/libXaw3d.so.6
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

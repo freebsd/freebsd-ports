@@ -32,6 +32,8 @@ MAINTAINER=	kkonstan@duth.gr
 COMMENT=	TrueType core fonts for the Web
 
 EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_X_PREFIX=	yes
 
@@ -59,17 +61,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTS_FILE=	${WRKDIR}/fonts.dir
 
 .include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-RUN_DEPENDS=	xfstt:${PORTSDIR}/x11-servers/Xfstt
-PLIST_SUB+=	FCACHE="@comment " \
-		OLDXF86=""
-.else
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-PLIST_SUB+=	FCACHE="" \
-		OLDXF86="@comment "
-.endif
 
 .SILENT:
 
@@ -113,18 +104,13 @@ do-install:
 	${INSTALL_DATA} ${FONTS_FILE} ${FONTSDIR}
 	${INSTALL_DATA} ${FONTS_FILE} ${FONTSDIR}/fonts.scale
 	${INSTALL_DATA} ${WRKSRC}/licen.txt ${DOCSDIR}/LICENSE
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-	${LN} -fs ${FONTSDIR} ${TTFONTSDIR}/${FONTNAME}
-.endif
 
 #
 # Post-install
 #
 post-install:
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	${ECHO_MSG} "===> Running fc-cache"
 	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
-.endif
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}

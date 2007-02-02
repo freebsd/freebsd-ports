@@ -33,10 +33,6 @@ MAN8=		gdkxft_sysinstall.8
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-IGNORE=		"requires XFree86-4.x or later to run"
-.endif
-
 .if ${HAVE_GNOME:Mlibglade}!="" && ${HAVE_GNOME:Mlibcapplet}!=""
 USE_GNOME+=	gnomeprefix libglade libcapplet
 PKGNAMESUFFIX=	-gnome

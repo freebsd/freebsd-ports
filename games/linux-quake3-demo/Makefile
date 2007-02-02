@@ -49,17 +49,12 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-.   ifdef(WITH_NVIDIA_GL)
+.ifdef(WITH_NVIDIA_GL)
 GL_LIB=		${LINUXBASE}/usr/lib/libGL.so.1
 GL_PORT=	x11/nvidia-driver
-.   else
+.else
 GL_LIB=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1
 GL_PORT=	graphics/linux_dri
-.   endif
-.else
-GL_LIB=		${LINUXBASE}/lib/libGL.so
-GL_PORT=	graphics/linux_glx
 .endif
 
 RUN_DEPENDS+=	${GL_LIB}:${PORTSDIR}/${GL_PORT}

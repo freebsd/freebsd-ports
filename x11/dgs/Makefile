@@ -45,19 +45,10 @@ pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|manm|mann|g'
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-4
-INSTALLDIRS+=	DPS/clients/makepsres DPS/demos/texteroids
-MANN+=		makepsres.man
-.endif
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-PLIST_SUB+=	WITH_XORG=""
-PLIST_SUB+=	WITH_XFREE4=""
-.else
-PLIST_SUB+=	WITH_XORG="@comment "
-
 .if ${X_WINDOW_SYSTEM:L} == xorg
-INSTALLDIRS+=	DPS/lib/dpstk DPS/lib/psres DPS/clients/pswrap
+INSTALLDIRS+=	DPS/clients/makepsres DPS/clients/pswrap DPS/demos/texteroids \
+		DPS/lib/dpstk
+MANN+=		makepsres.man
 PLIST_SUB+=	WITH_XFREE4=""
 .else
 PLIST_SUB+=	WITH_XFREE4="@comment "
@@ -72,7 +63,5 @@ do-install:
 	@(cd ${INSTALL_WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} \
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
-
-.endif
 
 .include <bsd.port.post.mk>

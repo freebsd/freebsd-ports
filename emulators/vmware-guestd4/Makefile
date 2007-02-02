@@ -52,17 +52,7 @@ MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
 
-.if defined(VMWARE_X_PORTS)
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-PLIST_SUB+=	INSTALLXSERVER3:=""
-PLIST_SUB+=	INSTALLXSERVER4:="@comment "
-.else
-PLIST_SUB+=	INSTALLXSERVER3:="@comment "
-PLIST_SUB+=	INSTALLXSERVER4:=""
-.endif
-
-.else
+.if !defined(VMWARE_X_PORTS)
 
 .if !defined(WITHOUT_VMWARE_VMMEMCTL)
 .if exists(/usr/src/sys/Makefile)
@@ -125,18 +115,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${X11BASE}/bin
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/configurator/XFree86-3/XF86_VMware_4.5 ${X11BASE}/bin/XF86_VMware
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-3/XF86Config ${X11BASE}/etc/XF86Config_VMware
-	@${ECHO} ""
-	@${ECHO} "You have installed XFree86 3.x X Server for VMware."
-	@${ECHO} "${X11BASE}/etc/XF86Config_VMware is a sample XF86Config file."
-	@${ECHO} "Copy this file to /etc/XF86Config before starting X."
-.else
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
-.endif
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
 .else

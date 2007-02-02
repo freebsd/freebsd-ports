@@ -105,9 +105,7 @@ pre-extract:
 .endif
 
 post-configure:
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
-.endif
 
 PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
 

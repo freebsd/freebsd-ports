@@ -35,10 +35,4 @@ MAN3=		Xft.3
 #PATCHFILES+=    cjk-patch-libXft-20050716.diff.gz
 #.endif
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-IGNORE=	xft requires Render extension headers/library to build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

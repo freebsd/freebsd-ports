@@ -2,14 +2,11 @@ VMware tools support FreeBSD _guest_ OS running on VMware Workstation.
 Beware, this port is _not_ for FreeBSD _host_ OS.
 
 VMware tools for FreeBSD consist of vmware-toolbox which supports
-seamless operation between the Host and the Guest OS, dual-boot
-configulation files, and special XFree86 3.x server for Guest OS.
-However, we cannot install dual-boot configuration since it requires
-to modify /etc files.
+seamless operation between the Host and the Guest OS and dual-boot
+configulation files.  However, we cannot install dual-boot configuration
+since it requires to modify /etc files.
 
-This ports will install vmware-toolbox to your computer, and
-XFree86 X server if you set XFREE86_VERSION to 3 in /etc/make.conf, 
-If you already use XFree86 4.1.0 or later, you may use 'vmware'
+This ports will install vmware-toolbox to your computer.  You may use 'vmware'
 driver for X server.  Vmware-guestd is installed as a separate port,
 ports/emulators/vmware-guestd4, but this port install guestd automatically.
 

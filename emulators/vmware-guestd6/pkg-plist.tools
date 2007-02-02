@@ -1,10 +1,8 @@
 bin/vmware-toolbox
 bin/vmware-toolbox-tcl
 %%INSTALLXGTKTOOL:%%bin/vmware-toolbox-gtk
-%%INSTALLXSERVER3:%%bin/XF86_VMware
-%%INSTALLXSERVER3:%%etc/XF86Config_VMware
 %%INSTALLXSERVER4:%%etc/XF86Config-4_VMware
 %%INSTALLXSERVER4:%%lib/modules/drivers/vmware_drv.o_VMware
-%%INSTALLXVMMOUSE:%%lib/modules/input/vmmouse_drv.o_VMware
+lib/modules/input/vmmouse_drv.o_VMware
 %%INSTALLXSERVER4:%%@dirrmtry lib/modules/drivers
-%%INSTALLXVMMOUSE:%%@dirrmtry lib/modules/input
+dirrmtry lib/modules/input

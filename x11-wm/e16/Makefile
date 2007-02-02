@@ -58,14 +58,8 @@ PLIST_FILES=	share/locale/bg/LC_MESSAGES/e16.mo \
 CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if (${MACHINE} == "alpha") && (${X_WINDOW_SYSTEM:L} == xfree86-3)
-CONFIGURE_ARGS+=	--disable-zoom
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		-e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/scripts/e_gen_menu
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

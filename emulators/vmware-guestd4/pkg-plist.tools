@@ -1,6 +1,4 @@
 bin/vmware-toolbox
-%%INSTALLXSERVER3:%%bin/XF86_VMware
-%%INSTALLXSERVER3:%%etc/XF86Config_VMware
-%%INSTALLXSERVER4:%%etc/XF86Config-4_VMware
-%%INSTALLXSERVER4:%%lib/modules/drivers/vmware_drv.o_VMware
-%%INSTALLXSERVER4:%%lib/modules/input/vmmouse_drv.o_VMware
+etc/XF86Config-4_VMware
+lib/modules/drivers/vmware_drv.o_VMware
+lib/modules/input/vmmouse_drv.o_VMware

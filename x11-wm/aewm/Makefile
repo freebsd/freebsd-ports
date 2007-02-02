@@ -31,13 +31,11 @@ PKGNAMESUFFIX=	-gtk
 .else
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 .if defined(WITH_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 MAKE_ENV+=	DEFINES="-DXFT" \
 		EXTRA_INC="`pkg-config --cflags xft`" \
 		EXTRA_LIBS="`pkg-config --libs xft`"
-.endif
 .endif
 
 post-patch:

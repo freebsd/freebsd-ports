@@ -31,9 +31,6 @@ CFLAGS+=	-Dintmax_t=u_int32_t -Duintmax_t=u_int32_t \
 		-DSIZE_MAX=UINT_MAX
 .endif
 
-.if ${X_WINDOW_SYSTEM} == xfree86-3
-CFLAGS+=	-DDISABLE_XFT -DDISABLE_XRANDR
-.else
 LDFLAGS+=	-lXrandr
 .if defined(WITHOUT_XFT)
 CFLAGS+=	-DDISABLE_XFT
@@ -41,7 +38,6 @@ CFLAGS+=	-DDISABLE_XFT
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CFLAGS+=	`pkg-config --cflags xft`
 LDFLAGS+=	`pkg-config --libs xft`
-.endif
 .endif
 
 .if defined(WITH_SN)

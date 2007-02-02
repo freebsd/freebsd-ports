@@ -6,36 +6,6 @@ bin/dpsnx.agent
 %%WITH_XFREE4%%bin/pswrap
 %%WITH_XFREE4%%bin/texteroids
 bin/xepsf
-%%WITH_XORG%%include/DPS/ColorSB.h
-%%WITH_XORG%%include/DPS/ColorSBP.h
-%%WITH_XORG%%include/DPS/DPSScrollW.h
-%%WITH_XORG%%include/DPS/DPSScrollWP.h
-%%WITH_XORG%%include/DPS/FontCreatP.h
-%%WITH_XORG%%include/DPS/FontCreato.h
-%%WITH_XORG%%include/DPS/FontSB.h
-%%WITH_XORG%%include/DPS/FontSBP.h
-%%WITH_XORG%%include/DPS/FontSamplP.h
-%%WITH_XORG%%include/DPS/FontSample.h
-%%WITH_XORG%%include/DPS/PSres.h
-%%WITH_XORG%%include/DPS/XDPS.h
-%%WITH_XORG%%include/DPS/XDPSlib.h
-%%WITH_XORG%%include/DPS/XDPSproto.h
-%%WITH_XORG%%include/DPS/dpsNXargs.h
-%%WITH_XORG%%include/DPS/dpsXclient.h
-%%WITH_XORG%%include/DPS/dpsXcommon.h
-%%WITH_XORG%%include/DPS/dpsXpreview.h
-%%WITH_XORG%%include/DPS/dpsXshare.h
-%%WITH_XORG%%include/DPS/dpsXuserpath.h
-%%WITH_XORG%%include/DPS/dpsclient.h
-%%WITH_XORG%%include/DPS/dpsconfig.h
-%%WITH_XORG%%include/DPS/dpsexcept.h
-%%WITH_XORG%%include/DPS/dpsfriends.h
-%%WITH_XORG%%include/DPS/dpsops.h
-%%WITH_XORG%%include/DPS/psops.h
-%%WITH_XORG%%lib/libdps.a
-%%WITH_XORG%%lib/libdps.la
-%%WITH_XORG%%lib/libdps.so
-%%WITH_XORG%%lib/libdps.so.0
 %%WITH_XFREE4%%lib/libdpstk.a
 %%WITH_XFREE4%%lib/libdpstk.la
 %%WITH_XFREE4%%lib/libdpstk.so
@@ -114,7 +84,6 @@ share/ghostscript/5.50/gs_typ32.ps
 share/ghostscript/5.50/gs_typ42.ps
 share/ghostscript/5.50/gs_type1.ps
 share/ghostscript/5.50/gs_wan_e.ps
-%%WITH_XORG%%@dirrm include/DPS
 @dirrmtry share/ghostscript/5.50/doc
 @dirrmtry share/ghostscript/5.50/examples
 @dirrmtry share/ghostscript/5.50

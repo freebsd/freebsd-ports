@@ -16,6 +16,7 @@ PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 .if !defined(VICE_WITH_GNOME)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
@@ -87,10 +88,6 @@ LIB_DEPENDS+=		esd.2:${PORTSDIR}/audio/esound
 CFLAGS+=		-DHAVE_LIBESD=1 -DHAVE_SDL_SDL_AUDIO_H=1
 .else
 CONFIGURE_ARGS+=	--without-esd
-.endif
-
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-BUILD_DEPENDS+=	bdftopcf:${X_CLIENTS_PORT}
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
