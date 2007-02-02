@@ -1,0 +1,6 @@
+@comment All files but one are in the (private) directory share/linux-bsd-kmod
+@unexec echo "Uninstalling from %D/share/linux-bsd-kmod"
+@unexec rm -rf %D/share/linux-bsd-kmod
+@comment This .mk really goes into /usr/share/mk
+@cwd /usr/share/mk
+bsd.linux_kmod.mk
