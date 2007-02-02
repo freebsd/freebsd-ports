@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	rubyforge
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	codeforpeople
 
 MAINTAINER=	jw@innerewut.de
-COMMENT=	Simplistic script to automate a limited set of RubyForge operations
+COMMENT=	Simplistic script which automates rubyforge operations
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
