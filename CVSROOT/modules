@@ -401,6 +401,16 @@ antlrworks	ports/devel/antlrworks
 anubis		ports/mail/anubis
 aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
+aolserver-nscache	ports/www/aolserver-nscache
+aolserver-nsencrypt	ports/security/aolserver-nsencrypt
+aolserver-nsgd		ports/graphics/aolserver-nsgd
+aolserver-nsmcrypt	ports/security/aolserver-nsmcrypt
+aolserver-nsmhash	ports/security/aolserver-nsmhash
+aolserver-nsmysql	ports/databases/aolserver-nsmysql
+aolserver-nsopenssl	ports/security/aolserver-nsopenssl
+aolserver-nspostgres	ports/databases/aolserver-nspostgres
+aolserver-nssha1	ports/security/aolserver-nssha1
+aolserver-nszlib	ports/archivers/aolserver-nszlib
 aolserver-openacs-pg	ports/www/aolserver-openacs-pg
 aop		ports/games/aop
 ap-utils	ports/net-mgmt/ap-utils
