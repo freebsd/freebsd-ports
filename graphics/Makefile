@@ -400,7 +400,6 @@
     SUBDIR += linux_dri
     SUBDIR += linux_dri-devel
     SUBDIR += linux_glide
-    SUBDIR += linux_glx
     SUBDIR += lodju
     SUBDIR += long-exposure-tools
     SUBDIR += lphoto
@@ -410,7 +409,6 @@
     SUBDIR += maverik
     SUBDIR += megapov
     SUBDIR += mesa-demos
-    SUBDIR += mesagl
     SUBDIR += meshviewer
     SUBDIR += metacam
     SUBDIR += metapixel
@@ -742,7 +740,6 @@
     SUBDIR += xpaint
     SUBDIR += xpcd
     SUBDIR += xpdf
-    SUBDIR += xpm
     SUBDIR += xpx
     SUBDIR += xrml
     SUBDIR += xsane

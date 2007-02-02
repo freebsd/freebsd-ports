@@ -1,6 +1,0 @@
-bin/cxpm
-bin/sxpm
-include/X11/xpm.h
-lib/libXpm.a
-lib/libXpm.so
-lib/libXpm.so.4
