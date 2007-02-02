@@ -179,9 +179,6 @@ PLIST_SUB+=	SAMBA="@comment "
 .endif
 
 .if !defined(WITHOUT_DAAP)
-.if ${OSVERSION} < 500000
-IGNORE=	DAAP support is broken on FreeBSD 4.x
-.endif
 PLIST_SUB+=	DAAP=""
 .else
 EXCLUDE+=	daap
@@ -230,10 +227,10 @@ PLIST_SUB+=	AO="@comment "
 .endif
 
 .if defined(WITH_MDNS_AVAHI)
-.if defined(WITH_MDNS_APPLE)
+.if !defined(WITHOUT_MDNS_APPLE)
 BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
 .endif
-EXCLUDE+=	dnssd
+EXCLUDE+=	dnssd dns_sd
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
 PLIST_SUB+=	MDNS_AVAHI=""
 .else
@@ -249,7 +246,7 @@ EXCLUDE+=	avahi
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else
-EXCLUDE+=	dnssd
+EXCLUDE+=	dnssd dns_sd
 PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
 .endif
@@ -261,12 +258,6 @@ PLIST_SUB+=	VOCODER=""
 .else
 EXCLUDE+=	vocoder
 PLIST_SUB+=	VOCODER="@comment "
-.endif
-
-.if defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} != "java"
-.if ${OSVERSION} < 500000
-IGNORE=	broken on FreeBSD 4.x
-.endif
 .endif
 
 .include <bsd.port.post.mk>
