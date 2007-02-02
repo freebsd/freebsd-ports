@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yadis
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	http://www.openidenabled.com/resources/downloads/ruby-yadis/
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
