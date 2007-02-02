@@ -41,6 +41,7 @@ PRE-INSTALL)
         fi
         ;;
 POST-INSTALL)
-	chown -R ${USER}:${GROUP} ${PKG_PREFIX}/interchange
+	/usr/bin/install -d -m 755 -o ${USER} -g ${GROUP} /var/run/interchange
+	/usr/sbin/chown -R ${USER}:${GROUP} ${PKG_PREFIX}/interchange
 	;;
 esac

@@ -13,7 +13,6 @@ bin/makecat
 bin/offline
 bin/restart
 bin/update
-etc/rc.d/interchange.sh.sample
 interchange/_session_storable
 interchange/_uid
 interchange/catalog_after.cfg
@@ -1184,6 +1183,7 @@ interchange/src/mod_interchange/Makefile
 interchange/src/mod_interchange/README
 interchange/src/mod_interchange/mod_interchange.c
 interchange/src/mod_interchange/mod_interchange.html
+interchange/src/mod_perl2/Interchange/Link.pm.mod_perl-1.999_21_and_before
 interchange/src/mod_perl2/Interchange/Link.pm
 interchange/src/mod_perl2/README
 interchange/src/mod_perl_tlink.pl
@@ -1513,6 +1513,7 @@ interchange/standard/products/ship/Priority.txt
 interchange/standard/products/ship/Xarea.csv
 interchange/standard/products/ship/Zone.csv
 interchange/standard/products/ship/air_pp.txt
+interchange/standard/products/ship/ems.txt
 interchange/standard/products/ship/shipping.asc
 interchange/standard/products/ship/surf_pp.txt
 interchange/standard/products/ship/ups_cache.txt
@@ -1757,3 +1758,5 @@ interchange/standard/variables/THEME_CSS
 @dirrmtry interchange/src
 @dirrmtry interchange/etc
 @dirrmtry interchange
+@cwd /
+@dirrmtry /var/run/interchange

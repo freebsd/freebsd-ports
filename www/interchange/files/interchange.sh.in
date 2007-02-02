@@ -18,31 +18,35 @@
 #                                 to interchange (default empty).
 #
 
-
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="interchange"
 rcvar=`set_rcvar`
 
 interchange_enable=${interchange_enable:-"NO"}
-interchange_config=${interchange_config:-"/usr/local/interchange/interchange.cfg"}
+interchange_config=${interchange_config:-"%%PREFIX%%/interchange/interchange.cfg"}
 interchange_args=${interchange_args:-""}
 
 load_rc_config $name
 
 interchange_user="interch"
-pidfile="/var/run/interchange/interchange.pid"
-command="/usr/local/bin/interchange"
-command_interpreter="/usr/local/bin/perl"
+rundir="/var/run/interchange"
+pidfile="${rundir}/${name}.pid"
+command="%%PREFIX%%/bin/interchange"
+command_interpreter="%%PREFIX%%/bin/perl"
 command_args="--config=${interchange_config} ${interchange_args}"
 
+start_cmd="interchange_cmd"
 stop_cmd="interchange_cmd --stop"
 restart_cmd="interchange_cmd --restart"
 reload_cmd="interchange_cmd --restart"
 
 interchange_cmd()
 {
-    su -l ${interchange_user} -c "exec env PIDfile=${pidfile} ${command} ${command_args} $1"
+    su -l ${interchange_user} -c "exec env PERL_SIGNALS=unsafe \
+        ${command} -pidfile ${pidfile} PIDfile=${pidfile} \
+        -rundir ${rundir} SocketFile=${rundir}/socket \
+        IPCsocket=${rundir}/socket.ipc ${command_args} $1"
 }
 
 run_rc_command "$1"
