@@ -1,0 +1,47 @@
+#! /bin/sh
+#
+#
+# PROVIDE: aolserver
+# REQUIRE: DAEMON NETWORKING SERVERS
+#
+# Add the following line to /etc/rc.conf to enable aolserver:
+#
+# aolserver_enable="YES"
+#
+# Tweakable parameters for users to override in rc.conf
+
+. "%%RC_SUBR%%"
+
+name=aolserver
+
+load_rc_config ${name}
+: ${aolserver_enable="NO"}
+: ${aolserver_user="%%AOLSERVERUSER%%"}
+: ${aolserver_group="%%AOLSERVERGROUP%%"}
+: ${aolserver_home=%%AOLSERVERBASE%%}
+: ${aolserver_conf=${aolserver_home}/sample-config.tcl}
+: ${aolserver_flags="-u ${aolserver_user} -g ${aolserver_group}"}
+: ${aolserver_prog=${aolserver_home}/bin/nsd}
+: ${aolserver_pidfile=/var/run/aolserver.pid}
+
+rcvar=`set_rcvar`
+pidfile=${aolserver_pidfile}
+start_postcmd="start_postcmd"
+stop_postcmd="stop_postcmd"
+required_files=${aolserver_conf}
+command=${aolserver_prog}
+command_args="-t ${aolserver_conf}"
+procname=${aolserver_prog}
+
+start_postcmd()
+{
+	PID=`pgrep -U ${aolserver_user} -f ${aolserver_conf}`
+	[ -n "${PID}" ] && echo ${PID} > ${pidfile}
+}
+
+stop_postcmd()
+{
+	[ -f "${pidfile}" ] && rm ${pidfile}
+}
+
+run_rc_command "$1"
