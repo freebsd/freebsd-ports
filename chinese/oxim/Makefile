@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oxim
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
@@ -85,7 +84,7 @@ USE_QT_VER=	3
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 
 QMAKESPEC?=	freebsd-g++
-CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" QTDIR="${QT_PREFIX}"
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 MAKE_ARGS+=	LOCALBASE="${LOCALBASE}" MAKE="${MAKE}" QMAKESPEC="${QMAKESPEC}"
 .else
 CONFIGURE_ARGS+=	--disable-setup-tool
