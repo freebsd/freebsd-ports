@@ -39,14 +39,4 @@ post-patch:
 			      s,prefix=/usr/local,prefix=${PREFIX},' \
 			     ${WRKSRC}/${MAKEFILE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+=	-DFREEBSD_MB_SUPPORT
-
-do-configure:
-	${CP} ${FILESDIR}/wcrtomb.c ${FILESDIR}/mbrtowc.c \
-		${WRKSRC}/
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
