@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mugshot
-PORTVERSION=	1.1.30
+PORTVERSION=	1.1.32
 CATEGORIES=	net
 MASTER_SITES=	http://download.mugshot.org/client/sources/linux/
 
@@ -37,6 +37,8 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/mugshot/firefox/components
 PKGCONFIG_LOCAL_BASE=	${LOCALBASE}/libdata/pkgconfig
 PKGCONFIG_X11_BASE=	${X11BASE}/libdata/pkgconfig
 
+mugshot_INSTALL_cmd=	install
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
@@ -49,6 +51,6 @@ BUILD_DEPENDS+=${FIREFOX_IDL_PATH}/nsIURI.idl:${PORTSDIR}/www/firefox:install
 
 post-install:
 	@${SED} -i "" -e "s|%%PREFIX%%|${PREFIX}|" ${PREFIX}/share/mugshot/firefox-update.sh
-	@${PREFIX}/share/mugshot/firefox-update.sh ${INSTALL_foobaa}
+	@${PREFIX}/share/mugshot/firefox-update.sh ${mugshot_INSTALL_cmd}
 
 .include <bsd.port.post.mk>
