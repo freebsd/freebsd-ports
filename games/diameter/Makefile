@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	diameter
-DISTVERSION=	0.3.5-r1
-PORTREVISION=	1
+PORTVERSION=	0.4.0.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gamediameter
-DISTNAME=	${PORTNAME}-${DISTVERSION}src
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Arcade-style game with elements of economy and adventure
 
-BUILD_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan
-RUN_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan
+BUILD_DEPENDS=	guichan>=0.6.1:${PORTSDIR}/devel/guichan
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -25,6 +24,9 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer image
 USE_GCC=	3.4+
+USE_PYTHON=	yes
+
+WRKSRC=		${WRKDIR}/gamediameter
 
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${X11BASE}/include" \
 		LDFLAGS="`${SDL_CONFIG} --libs` -L${X11BASE}/lib"

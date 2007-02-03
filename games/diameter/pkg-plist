@@ -13,6 +13,16 @@ bin/diameter
 %%DATADIR%%/music/sample/explode_06.wav
 %%DATADIR%%/music/sample/explode_07.wav
 %%DATADIR%%/music/sample/s1.wav
+%%DATADIR%%/pyscripts/arena.py
+%%DATADIR%%/pyscripts/test_mission1.py
+%%DATADIR%%/pyscripts/test_mission1d1_next.py
+%%DATADIR%%/pyscripts/test_mission1d1_ok.py
+%%DATADIR%%/pyscripts/test_mission1d2_ok.py
+%%DATADIR%%/pyscripts/test_mission1d4_ok.py
+%%DATADIR%%/pyscripts/test_mission1state1.py
+%%DATADIR%%/pyscripts/test_mission1state2.py
+%%DATADIR%%/pyscripts/test_mission1state3.py
+%%DATADIR%%/pyscripts/test_mission1state4.py
 %%DATADIR%%/sprites/sprites.xml
 %%DATADIR%%/texture/Argon.jpg
 %%DATADIR%%/texture/Brat.jpg
@@ -56,6 +66,15 @@ bin/diameter
 %%DATADIR%%/texture/gui/eng/main/start-.png
 %%DATADIR%%/texture/gui/eng/main/start.png
 %%DATADIR%%/texture/gui/logo.png
+%%DATADIR%%/texture/gui/other/back.png
+%%DATADIR%%/texture/gui/other/back_b.png
+%%DATADIR%%/texture/gui/other/button_ok.png
+%%DATADIR%%/texture/gui/other/button_ok_b.png
+%%DATADIR%%/texture/gui/other/forward.png
+%%DATADIR%%/texture/gui/other/forward_b.png
+%%DATADIR%%/texture/gui/other/lucas.png
+%%DATADIR%%/texture/gui/other/magnaguard.png
+%%DATADIR%%/texture/gui/other/noface.png
 %%DATADIR%%/texture/gui/rus/main/credits-.png
 %%DATADIR%%/texture/gui/rus/main/credits.png
 %%DATADIR%%/texture/gui/rus/main/logo-.png
@@ -85,8 +104,8 @@ bin/diameter
 %%DATADIR%%/texture/spaceshiptexture.jpg
 %%DATADIR%%/texture/test.png
 %%DATADIR%%/texture/textures.xml
-%%DATADIR%%/world/test_decor1.xml
-%%DATADIR%%/world/test_level.xml
+%%DATADIR%%/world/arena.xml
+%%DATADIR%%/world/test_mission1.xml
 @dirrm %%DATADIR%%/world
 @dirrm %%DATADIR%%/texture/ship4
 @dirrm %%DATADIR%%/texture/ship3
@@ -94,6 +113,7 @@ bin/diameter
 @dirrm %%DATADIR%%/texture/ship1
 @dirrm %%DATADIR%%/texture/gui/rus/main
 @dirrm %%DATADIR%%/texture/gui/rus
+@dirrm %%DATADIR%%/texture/gui/other
 @dirrm %%DATADIR%%/texture/gui/eng/main
 @dirrm %%DATADIR%%/texture/gui/eng
 @dirrm %%DATADIR%%/texture/gui/curs/weapons
@@ -102,6 +122,7 @@ bin/diameter
 @dirrm %%DATADIR%%/texture/Rockets
 @dirrm %%DATADIR%%/texture
 @dirrm %%DATADIR%%/sprites
+@dirrm %%DATADIR%%/pyscripts
 @dirrm %%DATADIR%%/music/sample
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/models/Ships/ship4
