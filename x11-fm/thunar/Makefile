@@ -33,12 +33,12 @@ OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		HAL		"Enable HAL support"				on \
 		GCONF		"Enable GCONF support"				off \
 		STARTUP		"Enable startup notification support"		on  \
-		PLUG_APR	"Thunar Advanced Properties plugin"		off \
+		PLUG_APR	"Thunar Advanced Properties plugin"		on \
 		PLUG_APR_EXIF	"Exif support for the APR plugin"		off \
-		PLUG_SBR	"Thunar Simple Builtin Renamers plugin"		off \
+		PLUG_SBR	"Thunar Simple Builtin Renamers plugin"		on \
 		PLUG_SBR_PCRE	"Regular expression support for the SBR plugin"	off \
-		PLUG_TPA	"Thunar Trash Panel Applet plugin"		off \
-		PLUG_UCA	"Thunar User Customizable Actions plugin"	off
+		PLUG_TPA	"Thunar Trash Panel Applet plugin"		on \
+		PLUG_UCA	"Thunar User Customizable Actions plugin"	on
 
 
 MAN1=		Thunar.1
