@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Find-Object
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -18,9 +18,10 @@ COMMENT=	An object oriented File::Find replacement
 RUN_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
-MAN3=		File::Find::Object.3
+MAN3=		File::Find::Object.3 \
+		File::Find::Object::Base.3
 
 .include <bsd.port.pre.mk>
 
