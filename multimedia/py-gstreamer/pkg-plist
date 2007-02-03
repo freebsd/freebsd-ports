@@ -46,6 +46,7 @@ share/gst-python/0.10/examples/filesrc.py
 share/gst-python/0.10/examples/fvumeter.py
 share/gst-python/0.10/examples/gst-discover
 share/gst-python/0.10/examples/gstfile.py
+share/gst-python/0.10/examples/mixer.py
 share/gst-python/0.10/examples/pipeline-tester
 share/gst-python/0.10/examples/play.py
 share/gst-python/0.10/examples/remuxer.py
