@@ -7,6 +7,7 @@
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://0pointer.de/lennart/projects/nss-mdns/
 DISTNAME=	nss-mdns-${PORTVERSION}
@@ -48,16 +49,10 @@ do-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README.html ${DOCSDIR}
 .endif
 
-PLIST_DIRS=	\
-	%%PORTDOCS%%%%DOCSDIR%%
-
 # TODO: Print a message about the etc directory used for mdns.allow
 # being relative to ${PREFIX}.
-PLIST_FILES=					\
-	lib/nss_mdns.so				\
-	lib/nss_mdns.so.1			\
-	%%PORTDOCS%%%%DOCSDIR%%/README		\
-	%%PORTDOCS%%%%DOCSDIR%%/README.html
+PLIST_FILES=	lib/nss_mdns.so	lib/nss_mdns.so.1
+PORTDOCS=	README README.html
 
 .include <bsd.port.pre.mk>
 
