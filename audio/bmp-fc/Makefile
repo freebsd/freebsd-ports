@@ -20,7 +20,11 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/bmp/Input/libfc.so lib/bmp/Input/libfc.la
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|\(objformat=\).*|\1elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
