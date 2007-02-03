@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	guichan
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A small, efficient C++ GUI library designed for games
@@ -25,8 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 OPTIONS=	SDL	"Enable SDL support" On \
 		ALLEGRO	"Enable Allegro support" Off \
-		GL	"Enable OpenGL support" On \
-		GLUT	"Enable Glut support" Off
+		GL	"Enable OpenGL support" On
 
 .include <bsd.port.pre.mk>
 
@@ -55,15 +53,6 @@ PLIST_SUB+=	GL=""
 .else
 CONFIGURE_ARGS+=--disable-opengl
 PLIST_SUB+=	GL="@comment "
-.endif
-
-.if defined(WITH_GLUT)
-CONFIGURE_ARGS+=--enable-glut
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
-PLIST_SUB+=	GLUT=""
-.else
-CONFIGURE_ARGS+=--disable-glut
-PLIST_SUB+=	GLUT="@comment "
 .endif
 
 .include <bsd.port.post.mk>

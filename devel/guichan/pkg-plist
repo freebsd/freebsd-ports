@@ -1,10 +1,13 @@
 include/guichan.hpp
+include/guichan/actionevent.hpp
 include/guichan/actionlistener.hpp
 include/guichan/allegro.hpp
 include/guichan/basiccontainer.hpp
 include/guichan/cliprectangle.hpp
 include/guichan/color.hpp
+include/guichan/deathlistener.hpp
 include/guichan/defaultfont.hpp
+include/guichan/event.hpp
 include/guichan/exception.hpp
 include/guichan/focushandler.hpp
 include/guichan/font.hpp
@@ -15,10 +18,13 @@ include/guichan/image.hpp
 include/guichan/imagefont.hpp
 include/guichan/imageloader.hpp
 include/guichan/input.hpp
+include/guichan/inputevent.hpp
 include/guichan/key.hpp
+include/guichan/keyevent.hpp
 include/guichan/keyinput.hpp
 include/guichan/keylistener.hpp
 include/guichan/listmodel.hpp
+include/guichan/mouseevent.hpp
 include/guichan/mouseinput.hpp
 include/guichan/mouselistener.hpp
 include/guichan/opengl.hpp
@@ -44,7 +50,6 @@ include/guichan/x.hpp
 %%ALLEGRO%%include/guichan/allegro/allegroimage.hpp
 %%ALLEGRO%%include/guichan/allegro/allegroimageloader.hpp
 %%ALLEGRO%%include/guichan/allegro/allegroinput.hpp
-%%GLUT%%include/guichan/glut/glutinput.hpp
 %%GL%%include/guichan/opengl/openglgraphics.hpp
 %%GL%%include/guichan/opengl/openglimage.hpp
 %%GL%%include/guichan/opengl/openglsdlimageloader.hpp
@@ -61,10 +66,6 @@ lib/libguichan.so
 %%ALLEGRO%%lib/libguichan_allegro.la
 %%ALLEGRO%%lib/libguichan_allegro.so
 %%ALLEGRO%%lib/libguichan_allegro.so.0
-%%GLUT%%lib/libguichan_glut.a
-%%GLUT%%lib/libguichan_glut.la
-%%GLUT%%lib/libguichan_glut.so
-%%GLUT%%lib/libguichan_glut.so.0
 %%GL%%lib/libguichan_opengl.a
 %%GL%%lib/libguichan_opengl.la
 %%GL%%lib/libguichan_opengl.so
@@ -74,7 +75,6 @@ lib/libguichan.so
 %%SDL%%lib/libguichan_sdl.so
 %%SDL%%lib/libguichan_sdl.so.0
 %%ALLEGRO%%@dirrm include/guichan/allegro
-%%GLUT%%@dirrm include/guichan/glut
 %%GL%%@dirrm include/guichan/opengl
 %%SDL%%@dirrm include/guichan/sdl
 @dirrm include/guichan/widgets
