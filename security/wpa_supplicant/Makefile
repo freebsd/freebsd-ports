@@ -31,12 +31,7 @@ PLIST_FILES=	sbin/wpa_supplicant \
 
 PLIST_FILES+=	etc/${PORTNAME}.conf.sample
 
-.if !defined(NOPORTDOCS)
-DOCFILES=	README \
-		ChangeLog
-PLIST_FILES+=	${DOCFILES:S,^,%%DOCSDIR%%/,}
-PLIST_DIRS+=	%%DOCSDIR%%
-.endif
+PORTDOCS=	README ChangeLog
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
@@ -55,7 +50,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/wpa_supplicant.conf ${PREFIX}/etc/wpa_supplicant.conf.sample
 
