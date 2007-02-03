@@ -23,8 +23,8 @@ RUN_DEPENDS=	\
 USE_PERL5_RUN=	yes
 MAKE_ARGS+=	PERLPATH=${PERL}
 
-PLIST_FILES=	bin/imageindex bin/autocaption %%DOCSDIR%%/README
-PLIST_DIRS=	%%DOCSDIR%%
+PLIST_FILES=	bin/imageindex bin/autocaption
+PORTDOCS=	README
 
 MAN1=	imageindex.1
 
@@ -32,7 +32,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|share/man|man| ;' ${WRKSRC}/Makefile
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
