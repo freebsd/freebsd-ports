@@ -123,19 +123,11 @@ CONFIGURE_ARGS+=	--with-sendfile
 CONFIGURE_ARGS+=	--without-sendfile
 .endif
 
-.if ${OSVERSION} > 500000
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
-.else
-. if ${OSVERSION} > 400000
-PAM_TEMPL?=	${FILESDIR}/pam.conf.4
-. endif
-.endif
-.if defined(PAM_TEMPL)
 PAM_DIR?=	${EXAMPLESDIR}/pam
 PAM_TARGET?=	pure-ftpd
-.endif
 
-DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
+PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
 		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
 		README.Authentication-Modules THANKS pure-ftpd.png \
@@ -168,14 +160,14 @@ post-install:
 	${CHMOD} 755 ${PREFIX}/sbin/pure-config.pl
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+. for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+. endfor
 .endif
-.if defined(PAM_TEMPL)
 	${MKDIR} ${PAM_DIR}
 	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
 	@${ECHO_MSG} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
 	@${ECHO_MSG} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
