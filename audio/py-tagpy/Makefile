@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	tagpy
-PORTVERSION=	0.90.1
+PORTVERSION=	0.91
 CATEGORIES=	audio python
 MASTER_SITES=	http://news.tiker.net/news.tiker.net/download/software/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python bindings for Scott Wheeler's TagLib
