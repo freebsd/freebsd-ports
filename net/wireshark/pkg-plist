@@ -8,8 +8,6 @@ bin/dumpcap
 %%RANDPKT%%
 bin/tshark
 %%TEXT2PCAP%%
-lib/wireshark/plugins/%%PORTVERSION%%/acn.la
-lib/wireshark/plugins/%%PORTVERSION%%/acn.so
 lib/wireshark/plugins/%%PORTVERSION%%/agentx.la
 lib/wireshark/plugins/%%PORTVERSION%%/agentx.so
 lib/wireshark/plugins/%%PORTVERSION%%/artnet.la
@@ -82,9 +80,11 @@ lib/libwiretap.so.0
 %%DATADIR%%/diameter/imscxdx.xml
 %%DATADIR%%/diameter/mobileipv4.xml
 %%DATADIR%%/diameter/nasreq.xml
+%%DATADIR%%/diameter/sip.xml
 %%DATADIR%%/diameter/sunping.xml
 %%DATADIR%%/dtds/dc.dtd
 %%DATADIR%%/dtds/itunes.dtd
+%%DATADIR%%/dtds/mscml.dtd
 %%DATADIR%%/dtds/pocsettings.dtd
 %%DATADIR%%/dtds/presence.dtd
 %%DATADIR%%/dtds/reginfo.dtd
