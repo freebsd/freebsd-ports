@@ -14,14 +14,18 @@
 #
 openxpki_enable="${openxpki_enable-NO}"
 openxpki_flags=""
-command_args="$1"
 openxpki_pidfile="%%PREFIX%%/var/openxpki/openxpki.pid"
+
+case "$1" in 
+    *start) command_args="start";;
+esac
 
 . %%RC_SUBR%%
 
 name="openxpki"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/openxpkictl"
+procname="openxpkid"
 
 load_rc_config $name
 
