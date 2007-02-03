@@ -1,5 +1,5 @@
 --- configure.orig	Sun May 15 03:26:11 2005
-+++ configure	Thu Jan 11 12:30:20 2007
++++ configure	Fri Feb  2 16:39:50 2007
 @@ -8890,7 +8890,7 @@
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
@@ -9,6 +9,15 @@
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
+@@ -15113,7 +15113,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
 @@ -25853,7 +25853,7 @@
    enable_warnings=yes
  fi;
