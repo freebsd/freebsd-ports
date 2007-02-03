@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.633
+PORTVERSION=	0.9.724
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -60,6 +60,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::create_pkcs10.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::create_pkcs12.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::create_random.3 \
+	OpenXPKI::Crypto::Backend::OpenSSL::Command::get_pkcs8_keytype.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::is_prime.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::issue_cert.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::issue_crl.3 \
@@ -89,6 +90,11 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Secret::Plain.3 \
 	OpenXPKI::Crypto::Secret::Split.3 \
 	OpenXPKI::Crypto::TokenManager.3 \
+	OpenXPKI::Crypto::Tool::CreateJavaKeystore.3 \
+	OpenXPKI::Crypto::Tool::CreateJavaKeystore::API.3 \
+	OpenXPKI::Crypto::Tool::CreateJavaKeystore::CLI.3 \
+	OpenXPKI::Crypto::Tool::CreateJavaKeystore::Command::create_keystore.3 \
+	OpenXPKI::Crypto::Tool::CreateJavaKeystore::Engine::OpenSSL.3 \
 	OpenXPKI::Crypto::Tool::PKCS7.3 \
 	OpenXPKI::Crypto::Tool::PKCS7::API.3 \
 	OpenXPKI::Crypto::Tool::PKCS7::CLI.3 \
@@ -127,6 +133,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::API::Workflow.3 \
 	OpenXPKI::Server::Authentication.3 \
 	OpenXPKI::Server::Authentication::Anonymous.3 \
+	OpenXPKI::Server::Authentication::ClientSSO.3 \
 	OpenXPKI::Server::Authentication::External.3 \
 	OpenXPKI::Server::Authentication::LDAP.3 \
 	OpenXPKI::Server::Authentication::Password.3 \
@@ -137,6 +144,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::DBI::Driver.3 \
 	OpenXPKI::Server::DBI::Driver::DB2.3 \
 	OpenXPKI::Server::DBI::Driver::MySQL.3 \
+	OpenXPKI::Server::DBI::Driver::Oracle.3 \
 	OpenXPKI::Server::DBI::Driver::PostgreSQL.3 \
 	OpenXPKI::Server::DBI::Driver::SQLite.3 \
 	OpenXPKI::Server::DBI::Hash.3 \
@@ -155,6 +163,8 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::PublishCRL.3 \
 	OpenXPKI::Server::Workflow::Activity::CRR::PersistRequest.3 \
 	OpenXPKI::Server::Workflow::Activity::CRR::RevokeCertificate.3 \
+	OpenXPKI::Server::Workflow::Activity::CSR::GenerateKey.3 \
+	OpenXPKI::Server::Workflow::Activity::CSR::GeneratePKCS10.3 \
 	OpenXPKI::Server::Workflow::Activity::CSR::PersistRequest.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::GetCertProfile.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::ImportCertData.3 \
@@ -187,8 +197,6 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::SmartCard::WriteCertificateToInstall.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Approve.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::CancelApprovals.3 \
-	OpenXPKI::Server::Workflow::Activity::Tools::ChangeBackSessionRole.3 \
-	OpenXPKI::Server::Workflow::Activity::Tools::ChangeSessionRole.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::CreateWorkflowInstance.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::DetermineIssuingCA.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Export.3 \
@@ -208,12 +216,15 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Condition::CorrectTiming.3 \
 	OpenXPKI::Server::Workflow::Condition::InitialEnrollmentOrRenewal.3 \
 	OpenXPKI::Server::Workflow::Condition::IsCertificateIssuancePossible.3 \
+	OpenXPKI::Server::Workflow::Condition::IsServerKeyGeneration.3 \
 	OpenXPKI::Server::Workflow::Condition::IsValidSignatureWithRequestedDN.3 \
 	OpenXPKI::Server::Workflow::Condition::Key.3 \
 	OpenXPKI::Server::Workflow::Condition::MoreCSRsToCreate.3 \
 	OpenXPKI::Server::Workflow::Condition::MoreCertsToTest.3 \
 	OpenXPKI::Server::Workflow::Condition::Server.3 \
 	OpenXPKI::Server::Workflow::Condition::SignedUsingOriginalCertOrSelfSigned.3 \
+	OpenXPKI::Server::Workflow::Condition::ValidCSRSerialPresent.3 \
+	OpenXPKI::Server::Workflow::Condition::WorkflowChildrenFailure.3 \
 	OpenXPKI::Server::Workflow::Condition::WorkflowChildrenSuccessfullyFinished.3 \
 	OpenXPKI::Server::Workflow::Observer::Debug.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI.3 \
@@ -224,6 +235,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubjectAltName.3 \
 	OpenXPKI::Server::Workflow::Validator::Creator.3 \
 	OpenXPKI::Server::Workflow::Validator::PKCS10.3 \
+	OpenXPKI::Server::Workflow::Validator::PasswordQuality.3 \
 	OpenXPKI::Server::Workflow::Validator::SPKAC.3 \
 	OpenXPKI::Service.3 \
 	OpenXPKI::Service::Default.3 \
@@ -233,7 +245,6 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Service::SCEP::Command.3 \
 	OpenXPKI::Service::SCEP::Command::GetCACert.3 \
 	OpenXPKI::Service::SCEP::Command::PKIOperation.3 \
-	OpenXPKI::Service::Test.3 \
 	OpenXPKI::Transport::Simple.3 \
 	OpenXPKI::VERSION.3 \
 	OpenXPKI::XML::Cache.3 \
