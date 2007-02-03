@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -54,7 +55,7 @@ OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
 		MILTER	"Sendmail milter support" on \
 		SPAMASSASSIN	"Use mail/p5-Mail-SpamAssassin"	on \
 		P0F	"Passive operating system fingerprinting"	off \
-		FILE	"Use newer file(1) utility from ports"	off \
+		FILE	"Use newer file(1) utility from ports"	on \
 		RAR	"RAR support with archivers/rar"	off \
 		UNRAR	"RAR support with archivers/unrar"	on \
 		ARJ	"ARJ support with archivers/arj"	on \
@@ -111,7 +112,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-D
 .endif
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_PGSQL)
