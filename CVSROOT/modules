@@ -7896,6 +7896,7 @@ nova		ports/astro/nova
 novawm		ports/x11-wm/novawm
 noweb		ports/devel/noweb
 npadmin		ports/sysutils/npadmin
+npapi-xine	ports/www/npapi-xine
 npc		ports/www/npc
 nph		ports/net/nph
 npretty		ports/graphics/npretty
