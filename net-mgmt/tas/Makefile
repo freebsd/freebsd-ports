@@ -14,6 +14,8 @@ DISTNAME=	tas-${PORTVERSION}
 MAINTAINER=	anton@chelcom.ru
 COMMENT=	Traffic accounting system
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/tas
 
 NO_BUILD=	YES

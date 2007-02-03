@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/n
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
 		nmap:${PORTSDIR}/security/nmap
 
+BROKEN=		Incomplete pkg-plist
+
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-plugins
 
