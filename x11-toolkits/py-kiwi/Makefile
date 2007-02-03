@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kiwi
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.12
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.async.com.br/projects/${PORTNAME}/download/ \
+MASTER_SITES=	http://download.gnome.org/sources/${PORTNAME}/1.9/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,6 +26,8 @@ USE_PYDISTUTILS=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 FIND_DOCSDIR=	api howto
 
+FETCH_CMD=	/usr/bin/fetch -rRp
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -38,4 +40,10 @@ post-install:
 	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} ";"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined (WITH_ZOPEINTERFACE)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/www/py-zopeInterface
+.endif
+
+.include <bsd.port.post.mk>
