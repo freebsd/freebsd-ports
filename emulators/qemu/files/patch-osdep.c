@@ -1,7 +1,7 @@
 Index: qemu/osdep.c
-@@ -323,7 +323,9 @@
+@@ -79,7 +79,9 @@
  
- #elif defined(USE_KQEMU)
+ #if defined(USE_KQEMU)
  
 +#ifndef __FreeBSD__
  #include <sys/vfs.h>
@@ -9,15 +9,15 @@ Index: qemu/osdep.c
  #include <sys/mman.h>
  #include <fcntl.h>
  
-@@ -334,6 +336,7 @@
+@@ -90,6 +92,7 @@
      const char *tmpdir;
      char phys_ram_file[1024];
      void *ptr;
 +#ifndef __FreeBSD__
-     struct statfs stfs;
- 
-     if (phys_ram_fd < 0) {
-@@ -389,12 +392,20 @@
+ #ifdef HOST_SOLARIS
+     struct statvfs stfs;
+ #else
+@@ -151,12 +154,20 @@
          }
          unlink(phys_ram_file);
      }
