@@ -13437,6 +13437,7 @@ rubygem-ferret	ports/textproc/rubygem-ferret
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
 rubygem-gruff	ports/graphics/rubygem-gruff
 rubygem-hoe		ports/devel/rubygem-hoe
+rubygem-hpricot	ports/www/rubygem-hpricot
 rubygem-inline	ports/devel/rubygem-inline
 rubygem-layout-yullio	ports/www/rubygem-layout-yullio
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
