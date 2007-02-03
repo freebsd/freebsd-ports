@@ -1,5 +1,6 @@
 bin/haxima.sh
 bin/nazghul
+%%DATADIR%%/haxima/640x480_splash.png
 %%DATADIR%%/haxima/abandoned-cellar.scm
 %%DATADIR%%/haxima/abandoned-farm.scm
 %%DATADIR%%/haxima/abe.scm
