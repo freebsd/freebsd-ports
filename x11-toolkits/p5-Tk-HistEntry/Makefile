@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tk-HistEntry
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
@@ -22,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Tk::HistEntry.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=         requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
