@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Dec 27 23:27:24 1999
-+++ Makefile	Fri May  2 14:43:29 2003
+--- Makefile	Mon Dec 27 23:27:24 1999
++++ /home/pfeifer/Makefile	Sat Feb  3 16:08:07 2007
 @@ -8,22 +8,22 @@
  #   current directory. (Not recommended for serious users.)
  
@@ -28,3 +28,14 @@
  
  #   SHORTCUT: Uncomment these lines, for single-directory installation:
  #DATADIR = .
+@@ -130,9 +130,9 @@
+ install: lib
+ 	if test ! -r certified; then echo "Please run 'make tests' first!"; fi
+ 	test -r certified
+-	make installdata
+ 	- mkdir $(LIBDIR)
+ 	- cp libgb.a $(LIBDIR)
++	make installdata
+ 	- mkdir $(CWEBINPUTS)
+ 	- cp -p boilerplate.w gb_types.w $(CWEBINPUTS)
+ 	- mkdir $(INCLUDEDIR)
