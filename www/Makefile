@@ -1003,6 +1003,7 @@
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
     SUBDIR += rubygem-bluecloth
+    SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster

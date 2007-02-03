@@ -1,0 +1,41 @@
+%%GEM_CACHE%%
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/COPYING
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/ext/hpricot_scan/Makefile
+%%GEM_LIB_DIR%%/ext/hpricot_scan/extconf.rb
+%%GEM_LIB_DIR%%/ext/hpricot_scan/hpricot_scan.c
+%%GEM_LIB_DIR%%/ext/hpricot_scan/hpricot_scan.h
+%%GEM_LIB_DIR%%/ext/hpricot_scan/hpricot_scan.o
+%%GEM_LIB_DIR%%/ext/hpricot_scan/hpricot_scan.rl
+%%GEM_LIB_DIR%%/ext/hpricot_scan/hpricot_scan.so
+%%GEM_LIB_DIR%%/ext/hpricot_scan/mkmf.log
+%%GEM_LIB_DIR%%/extras/mingw-rbconfig.rb
+%%GEM_LIB_DIR%%/lib/hpricot.rb
+%%GEM_LIB_DIR%%/lib/hpricot/elements.rb
+%%GEM_LIB_DIR%%/lib/hpricot/htmlinfo.rb
+%%GEM_LIB_DIR%%/lib/hpricot/inspect.rb
+%%GEM_LIB_DIR%%/lib/hpricot/modules.rb
+%%GEM_LIB_DIR%%/lib/hpricot/parse.rb
+%%GEM_LIB_DIR%%/lib/hpricot/tag.rb
+%%GEM_LIB_DIR%%/lib/hpricot/text.rb
+%%GEM_LIB_DIR%%/lib/hpricot/traverse.rb
+%%GEM_LIB_DIR%%/lib/hpricot_scan.so
+%%GEM_LIB_DIR%%/test/files/basic.xhtml
+%%GEM_LIB_DIR%%/test/files/boingboing.html
+%%GEM_LIB_DIR%%/test/files/immob.html
+%%GEM_LIB_DIR%%/test/files/uswebgen.html
+%%GEM_LIB_DIR%%/test/load_files.rb
+%%GEM_LIB_DIR%%/test/test_parser.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test/files
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/extras
+@dirrm %%GEM_LIB_DIR%%/ext/hpricot_scan
+@dirrm %%GEM_LIB_DIR%%/ext
+@dirrm %%GEM_LIB_DIR%%/lib/hpricot
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
