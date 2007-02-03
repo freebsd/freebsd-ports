@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -32,8 +31,8 @@ USE_ICONV=	YES
 USE_LDCONFIG=	YES
 USE_GETTEXT=	YES
 CONFIGURE_TARGET=# empty
-CONFIGURE_ARGS+=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
-	--enable-nls
+CONFIGURE_ARGS+=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--enable-nls
 MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
 		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
 		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
@@ -41,10 +40,10 @@ MAN8=		addgnupghome.8
 INFO=		gnupg
 
 OPTIONS=	LDAP "LDAP keyserver interface" off \
-		NLS "National Language Support" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
 		GPGSM "Enable GPGSM" on
+#OPTIONS+=	NLS "National Language Support" off
 
 .include <bsd.port.pre.mk>
 
