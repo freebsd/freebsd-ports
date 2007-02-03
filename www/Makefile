@@ -419,6 +419,7 @@
     SUBDIR += netrik
     SUBDIR += nginx
     SUBDIR += notftp
+    SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += nscache
     SUBDIR += nvu
