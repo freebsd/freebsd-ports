@@ -334,7 +334,6 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/Team.class
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/TeamLineup.class
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/UserTeamSpotLineup.class
-%%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager$1.class
 %%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager$SkillupComperator.class
 %%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager.class
 %%DATADIR%%/hoplugins/trainingExperience/constants/Skills.class
@@ -396,6 +395,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/trainingExperience/vo/PlayerValues.class
 %%DATADIR%%/hoplugins/trainingExperience/vo/SkillChange.class
 %%DATADIR%%/hoplugins/trainingExperience/vo/TrainWeekEffect.class
+%%DATADIR%%/hoplugins/transfers/Transfers-0.96.zip
 %%DATADIR%%/hoplugins/transfers/constants/TransferTypes.class
 %%DATADIR%%/hoplugins/transfers/dao/BookmarkDAO.class
 %%DATADIR%%/hoplugins/transfers/dao/DividerDAO.class
@@ -411,7 +411,6 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/transfers/ui/HistoryPane$2.class
 %%DATADIR%%/hoplugins/transfers/ui/HistoryPane$3.class
 %%DATADIR%%/hoplugins/transfers/ui/HistoryPane.class
-%%DATADIR%%/hoplugins/transfers/ui/Icon$1.class
 %%DATADIR%%/hoplugins/transfers/ui/Icon.class
 %%DATADIR%%/hoplugins/transfers/ui/IconCellRenderer.class
 %%DATADIR%%/hoplugins/transfers/ui/PlayerDetailPanel.class
