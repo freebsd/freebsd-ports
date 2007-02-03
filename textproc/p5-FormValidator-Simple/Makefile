@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FormValidator-Simple
-PORTVERSION=		0.20
+PORTVERSION=		0.21
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
@@ -16,19 +16,18 @@ MAINTAINER=		lbr@FreeBSD.org
 COMMENT=		Validation with simple chains of constraints
 
 RUN_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-Data-Accessor>0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
-		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Date-Calc>=5.4:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-DateTime-Format-Strptime>=1.07:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-Data-Accessor>=0.03:${PORTSDIR}/devel/p5-Class-Data-Accessor \
+		p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-Email-Valid>=0.15:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-Email-Valid-Loose>=0.04:${PORTSDIR}/mail/p5-Email-Valid-Loose \
-		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-Date-Calc>=5.4:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash \
-		p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
+		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML \
+		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-DateTime-Format-Strptime>=1.07:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
