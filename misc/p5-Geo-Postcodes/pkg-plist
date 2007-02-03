@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Postcodes/.packlist
 %%SITE_PERL%%/Geo/Postcodes.pm
-%%SITE_PERL%%/Geo/Postcodes/Ajax.pod
 %%SITE_PERL%%/Geo/Postcodes/Selection.pod
 %%SITE_PERL%%/Geo/Postcodes/Subclass.pod
 %%SITE_PERL%%/Geo/Postcodes/Tutorial.pod
