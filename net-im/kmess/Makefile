@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	kmess
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.p.1
 CATEGORIES=	net-im kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@club-internet.fr
 COMMENT=	MSN Messenger Client for KDE3
-
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/config.h.in
+	@${TOUCH} -t 200510070000 ${WRKSRC}/admin/cvs.sh
+	@${TOUCH} -t 200510070001 ${WRKSRC}/Makefile.am.in
+	@${TOUCH} -t 200510070002 ${WRKSRC}/subdirs
+	@${TOUCH} -t 200510070003 ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
