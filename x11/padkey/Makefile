@@ -16,12 +16,8 @@ COMMENT=	Use an authentic SNES controller to play games
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
 
-.if defined(NOPORTDOCS)
 PLIST_FILES=	bin/padkey
-.else
-PLIST_FILES=	bin/padkey %%DOCSDIR%%/CREDITS %%DOCSDIR%%/README
-PLIST_DIRS=	%%DOCSDIR%%
-.endif
+PORTDOCS=	CREDITS README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${X11BASE}/|' ${WRKSRC}/Makefile
