@@ -64,8 +64,10 @@ CONFIGURE_ARGS+=--disable-hal
 .if defined(WITH_NOTIFY)
 CONFIGURE_ARGS+=--enable-notifications
 LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+PLIST_SUB+=	NOTIFY=""
 .else
 CONFIGURE_ARGS+=--disable-notifications
+PLIST_SUB+=	NOTIFY="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
