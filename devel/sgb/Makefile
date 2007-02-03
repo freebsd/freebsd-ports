@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	sgb
-PORTVERSION=	20030623
+PORTVERSION=	20050409
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.stanford.edu/pub/sgb/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
-DISTNAME=	sgb-2003-06-23
+DISTNAME=	sgb-2005-04-09
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	The Stanford GraphBase: A Platform for Combinatorial Computing
