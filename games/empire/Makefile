@@ -7,6 +7,7 @@
 
 PORTNAME=	empire
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
@@ -15,8 +16,8 @@ MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Solitaire empire game "VMS Empire"
 
 MAN6=		empire.6
-PLIST_FILES=	bin/empire %%DOCSDIR%%/BUGS %%DOCSDIR%%/README
-PLIST_DIRS=	%%DOCSDIR%%
+PLIST_FILES=	bin/empire
+PORTDOCS=	BUGS README
 USE_GMAKE=	yes
 
 do-install:
