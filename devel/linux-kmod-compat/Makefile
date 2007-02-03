@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	linux-kmod-compat
-PORTVERSION=	20070202
+PORTVERSION=	20070203
 CATEGORIES=	emulators linux multimedia
 MASTER_SITES=	http://info.iet.unipi.it/~luigi/FreeBSD/
 EXTRACT_SUFX=	.tgz
@@ -15,9 +15,6 @@ COMMENT=	Adaptation layer to build linux drivers on FreeBSD
 
 WRKSRC=		${WRKDIR}/linux_compat
 NO_BUILD=	yes
-
-# At the moment, emulation is only partial, but amd64 is coming
-ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
