@@ -58,6 +58,7 @@ libdata/pkgconfig/exo-0.3.pc
 libdata/pkgconfig/exo-hal-0.3.pc
 libexec/exo-compose-mail-0.3
 libexec/exo-helper-0.3
+%%NOTIFY%%libexec/exo-mount-notify-0.3
 share/applications/exo-preferred-applications.desktop
 %%GTK_DOC%%share/gtk-doc/html/exo/ExoCellRendererEllipsizedText.html
 %%GTK_DOC%%share/gtk-doc/html/exo/ExoEllipsizedLabel.html
