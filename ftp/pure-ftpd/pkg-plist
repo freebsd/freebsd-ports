@@ -12,28 +12,9 @@ sbin/pure-ftpwho
 sbin/pure-mrtginfo
 sbin/pure-quotacheck
 sbin/pure-uploadscript
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CONTACT
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.Authentication-Modules
-%%PORTDOCS%%%%DOCSDIR%%/README.Configuration-File
-%%PORTDOCS%%%%DOCSDIR%%/README.Contrib
-%%PORTDOCS%%%%DOCSDIR%%/README.LDAP
-%%PORTDOCS%%%%DOCSDIR%%/README.MySQL
-%%PORTDOCS%%%%DOCSDIR%%/README.Netfilter
-%%PORTDOCS%%%%DOCSDIR%%/README.PGSQL
-%%PORTDOCS%%%%DOCSDIR%%/README.TLS
-%%PORTDOCS%%%%DOCSDIR%%/README.Virtual-Users
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/pure-ftpd.png
-%%PORTDOCS%%%%DOCSDIR%%/pureftpd.schema
 %%EXAMPLESDIR%%/pam/pure-ftpd
 %%EXAMPLESDIR%%/pure-stat.pl
 %%EXAMPLESDIR%%/pure-vpopauth.pl
 %%EXAMPLESDIR%%/xml_python_processors.txt
 @dirrm %%EXAMPLESDIR%%/pam
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
