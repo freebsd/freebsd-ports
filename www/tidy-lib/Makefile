@@ -9,7 +9,7 @@ PORTNAME=	tidy
 CATEGORIES=	www
 PKGNAMESUFFIX=	-lib
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Utility to clean up and pretty print HTML/XHTML/XML (with shared lib)
 
 MASTERDIR=	${.CURDIR}/../../www/tidy-devel
