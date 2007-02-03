@@ -49,4 +49,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_MW_CLIENT=client	Define the default Sametime client identifier (default: mwLogin_MEANWHILE)"
 	@${ECHO_MSG} ""
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
