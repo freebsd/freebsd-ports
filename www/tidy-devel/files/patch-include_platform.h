@@ -1,11 +1,11 @@
---- include/platform.h.orig	Mon Mar 31 09:57:04 2003
-+++ include/platform.h	Mon Mar 31 21:23:33 2003
+--- include/platform.h.orig	Sun Jan 21 21:36:21 2007
++++ include/platform.h	Sat Feb  3 17:39:40 2007
 @@ -33,7 +33,7 @@
    It enables tidy to find config files named ~/.tidyrc if 
    the HTML_TIDY environment variable is not set.
  */
--/* #define USER_CONFIG_FILE "~/.tidyrc" */
-+#define USER_CONFIG_FILE "~/.tidyrc"
+-/* #define TIDY_USER_CONFIG_FILE "~/.tidyrc" */
++#define TIDY_USER_CONFIG_FILE "~/.tidyrc"
  
  /*
    Uncomment the following #define if your

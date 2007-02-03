@@ -1,5 +1,5 @@
---- build/gmake/Makefile.orig	Thu Jul 14 08:58:05 2005
-+++ build/gmake/Makefile	Thu Jul 14 22:57:37 2005
+--- build/gmake/Makefile.orig	Sun Jan 21 21:20:58 2007
++++ build/gmake/Makefile	Sat Feb  3 17:35:37 2007
 @@ -58,8 +58,8 @@
  PROJECT=tidy
  
@@ -20,14 +20,14 @@
  INCDIR = ${TOPDIR}/include
  APPDIR = ${TOPDIR}/console
  SRCDIR = ${TOPDIR}/src
-@@ -79,8 +79,8 @@
+@@ -90,8 +90,8 @@
  # CFLAGS etc..
  # For optimised builds, flags such as "-O2" should be added and -D_DEBUG=1
  # disabled.
 -CC= gcc
--CFLAGS= -g -Wall -Wno-switch -Wno-parentheses -I $(INCDIR)
+-CFLAGS= -g -pedantic -Wall -Wno-switch -Wno-parentheses -I $(INCDIR)
 +#CC= gcc
-+CFLAGS+= -g -Wall -Wno-switch -Wno-parentheses -I $(INCDIR) -fPIC
++CFLAGS+= -g -pedantic -Wall -Wno-switch -Wno-parentheses -I $(INCDIR) -fPIC
  # flags only supported with gcc 3.x
- # CFLAGS += -Wunused-parameter
+ CFLAGS += -Wunused-parameter
  
