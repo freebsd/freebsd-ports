@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmw
-PORTVERSION=	0.0.22
+PORTVERSION=	0.0.22.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	themanaworld
@@ -18,8 +18,8 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		png.5:${PORTSDIR}/graphics/png \
 		curl.4:${PORTSDIR}/ftp/curl \
 		physfs-1.0.1:${PORTSDIR}/devel/physfs
-BUILD_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan
-RUN_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan
+BUILD_DEPENDS=	guichan>=0.6.0:${PORTSDIR}/devel/guichan
+RUN_DEPENDS=	guichan>=0.6.0:${PORTSDIR}/devel/guichan
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

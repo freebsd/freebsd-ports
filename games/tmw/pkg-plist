@@ -45,8 +45,13 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/images/error.png
 %%DATADIR%%/data/graphics/images/login_wallpaper.png
 %%DATADIR%%/data/graphics/images/ambient/clouds.png
+%%DATADIR%%/data/graphics/images/ambient/night.png
 %%DATADIR%%/data/graphics/images/ambient/sandstorm.png
 %%DATADIR%%/data/graphics/images/ambient/spotlight.png
+%%DATADIR%%/data/graphics/sprites/chest-cotton-male.xml
+%%DATADIR%%/data/graphics/sprites/chest-cotton-male.png
+%%DATADIR%%/data/graphics/sprites/chest-cotton-female.xml
+%%DATADIR%%/data/graphics/sprites/chest-cotton-female.png
 %%DATADIR%%/data/graphics/sprites/chest-leather-male.png
 %%DATADIR%%/data/graphics/sprites/chest-leather-male.xml
 %%DATADIR%%/data/graphics/sprites/chest-leather-female.png
@@ -83,8 +88,6 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/sprites/head-rangerhat.xml
 %%DATADIR%%/data/graphics/sprites/head-santabeardhat.png
 %%DATADIR%%/data/graphics/sprites/head-santabeardhat.xml
-%%DATADIR%%/data/graphics/sprites/item001.png
-%%DATADIR%%/data/graphics/sprites/item001.xml
 %%DATADIR%%/data/graphics/sprites/item002.png
 %%DATADIR%%/data/graphics/sprites/item002.xml
 %%DATADIR%%/data/graphics/sprites/item004.png
