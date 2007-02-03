@@ -34,10 +34,6 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_UTF8)
-. if ${OSVERSION} < 500000
-IGNORE=	UTF8 support doesn't work on FreeBSD < 5.x
-. endif
-
 PATCH_SITES+=	http://www.emaillab.org/mutt/tools/
 PATCHFILES+=	slang-1.4.8-utf8.diff.gz
 PATCH_DIST_STRIP+=	-p1

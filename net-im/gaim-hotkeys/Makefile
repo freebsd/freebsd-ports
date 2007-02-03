@@ -23,10 +23,4 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/gaim/hotkeys.so \
 		lib/gaim/hotkeys.la
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	net-im/libgaim doesn't build on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
