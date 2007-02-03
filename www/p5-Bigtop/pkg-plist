@@ -35,6 +35,7 @@
 %%SITE_PERL%%/Bigtop/Parser.pm
 %%SITE_PERL%%/Bigtop/ScriptHelp.pm
 %%SITE_PERL%%/Bigtop/TentMaker.pm
+%%SITE_PERL%%/Bigtop/TentMakerPath.pm
 bin/bigtop
 bin/tentmaker
 @dirrmtry %%SITE_PERL%%/Bigtop/Docs
