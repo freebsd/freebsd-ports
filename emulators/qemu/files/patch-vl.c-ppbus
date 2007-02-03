@@ -9,7 +9,7 @@
  #endif
  #else
  #ifndef __sun__
-@@ -1728,7 +1730,65 @@
+@@ -1728,7 +1730,64 @@
      chr->chr_ioctl = pp_ioctl;
      return chr;
  }
@@ -68,7 +68,6 @@
 +    }
 +    chr->opaque = (void *)fd;
 +    chr->chr_write = null_chr_write;
-+    chr->chr_add_read_handler = null_chr_add_read_handler;
 +    chr->chr_ioctl = pp_ioctl;
 +    return chr;
 +}

@@ -1,13 +1,13 @@
 Index: qemu/configure
-@@ -134,6 +134,7 @@
+@@ -139,6 +139,7 @@
  oss="yes"
  linux="yes"
- user="yes"
+ linux_user="yes"
 +usb="linux"
  if [ "$cpu" = "i386" -o "$cpu" = "x86_64" ] ; then
      kqemu="yes"
  fi
-@@ -143,6 +144,7 @@
+@@ -148,6 +149,7 @@
  if [ "$bsd" = "yes" ] ; then
    if [ "$darwin" != "yes" ] ; then
      make="gmake"
@@ -15,7 +15,7 @@ Index: qemu/configure
    fi
  fi
  
-@@ -724,6 +726,19 @@
+@@ -786,6 +788,19 @@
  fi
  
  echo "#define CONFIG_UNAME_RELEASE \"$uname_release\"" >> $config_h
