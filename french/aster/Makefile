@@ -78,13 +78,13 @@ BROKEN=	Does not compile on this version, and cannot be patched easily.
 #.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 .endif
 
 .if !defined(WITHOUT_ASTK_CLI)
@@ -123,7 +123,6 @@ WITH_MUMPS=	yes
 .endif
 .if defined(WITH_MUMPS)
 WITH_MPI=	yes	# For the FETI solver
-DLIBF90!=	${DIRNAME} `${LDCONFIG} -r | ${GREP} gfortran | ${AWK} '{print $$3}'`
 . if exists(${LOCALBASE}/lib/libmpiseq.a)
 MUMPS_PORT=	mumps
 . else
@@ -141,9 +140,11 @@ HOME_MPI=	${LOCALBASE}/mpich2
 .endif
 
 WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
+FORTRANLIBDIR=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
+FORTRANLIBDIR2=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
 
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
@@ -246,15 +247,11 @@ pre-configure:
 	# else libmpiseq.a used instead of libmpich, default is OK
 	${ECHO_CMD} "MUMPSLIB = '${MUMPSLIB}'"			>> ${WRKSRC}/setup.cfg
 . endif
-	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -L${DLIBF90} -L${DLIBF90}/../../.. -lgfortranbegin  -lgfortran'"	\
-		>> ${WRKSRC}/setup.cfg
-.else
-	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -L${DLIBF90} -L${DLIBF90}/../../.. -lgfortranbegin  -lgfortran'"	\
+.endif
+	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin  -lgfortran'"	\
 		>> ${WRKSRC}/setup.cfg
 
-.endif
 .if defined(WITH_MPI)
 	${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
 .else
@@ -289,6 +286,9 @@ pre-configure:
 do-configure:
 	(cd ${CONFIGURE_WRKSRC} && ${PYTHON_CMD} setup.pyo test		\
 		| tee ${CONFIGURE_LOG})
+	@${ECHO_MSG} "---------------- Debug ------------------"
+	${CAT} ${CONFIGURE_WRKSRC}/setup.log
+	@${ECHO_MSG} "------------ Fin debug ------------------"
 
 pre-build:
 	${MKDIR} ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf ${WRKSRC}/instdir/outils

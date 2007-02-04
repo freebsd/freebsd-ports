@@ -1,5 +1,5 @@
---- products.py.orig	Wed Jan  3 01:13:15 2007
-+++ products.py	Wed Jan 17 15:14:05 2007
+--- products.py.orig	Tue Jan  2 17:13:15 2007
++++ products.py	Fri Feb  2 23:13:35 2007
 @@ -833,16 +833,18 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB', 'PYMODULES_PREFIX',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI',
@@ -30,7 +30,7 @@
        zmat_platform='Linux'
        mpilibs.extend(['mpich'])
 +   elif cfg['IFDEF']=='FREEBSD':
-+      opt['MATH_LIST']  = [cfg['LAPACKLIB'], cfg['BLASLIB'], cfg['ATLASLIB'], 'gfortran']
++      opt['MATH_LIST']  = [cfg['LAPACKLIB'], cfg['BLASLIB'], 'gfortran']
 +      opt['SYSLIB']     = cfg['SYSLIB']
 +      opt['LDFLAGS']    = cfg['LDFLAGS']
 +      opt['CFLAGS_DBG'] = cfg['CFLAGS_DBG']
