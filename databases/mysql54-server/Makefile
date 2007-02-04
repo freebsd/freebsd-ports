@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.14
+PORTVERSION=	5.1.15
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -113,7 +113,8 @@ PLIST_SUB+=	NDB=""
 PLIST_SUB+=	NDB="@comment "
 .endif
 
-MAN1=		myisamchk.1 myisamlog.1 myisampack.1 mysqld.1 \
+MAN1=		myisamchk.1 myisamlog.1 myisampack.1 \
+		my_print_defaults.1 mysql_tzinfo_to_sql.1 \
 		mysqld_safe.1 mysql.server.1 perror.1 replace.1
 
 INFO=		mysql
