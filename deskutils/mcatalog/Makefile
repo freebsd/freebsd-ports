@@ -3,30 +3,28 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.12 2006/01/11 00:29:46 tmclau02 Exp $
+#   $Id: Makefile,v 1.17 2006/11/14 04:11:38 tmclau02 Exp $
 #
 
 PORTNAME=	mcatalog
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.mcatalog.net/releases/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	An application for catalogue films and books
 
-BUILD_DEPENDS=	gapi2-parser:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		${X11BASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mail/evolution-sharp \
-		${X11BASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20
-RUN_DEPENDS=	gapi2-parser:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		${X11BASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mail/evolution-sharp \
-		${X11BASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mail/evolution-sharp \
+		${LOCALBASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mail/evolution-sharp \
+		${LOCALBASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20
 
-USE_GECKO=	mozilla firefox
-USE_GNOME=	gnomeprefix gnomehack gconf2 intlhack
+USE_GECKO=	firefox mozilla
+USE_GNOME=	gnomeprefix gnomehack gconf2 intlhack gnomesharp20
 USE_SQLITE=	2
 USE_GMAKE=	yes
-USE_X_PREFIX=   yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
