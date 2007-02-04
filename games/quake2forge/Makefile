@@ -18,7 +18,8 @@ COMMENT=	First Person Shooter with many addons available
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_BZIP2=	yes
 
-CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/${PORTNAME}/'
+CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/${PORTNAME}/' \
+		--disable-warn
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	AO "Build libao sound module" off \
