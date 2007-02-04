@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	cowbell
-PORTVERSION=	0.2.6.2
+PORTVERSION=	0.2.7.1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://more-cowbell.org/releases/
 
@@ -14,16 +15,13 @@ MAINTAINER=	andreas@syndrom23.de
 COMMENT=	An elegant music organizer
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
-BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		mono:${PORTSDIR}/lang/mono
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget intltool
-USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget intltool gtksharp20
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 USE_ICONV=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
