@@ -3,7 +3,7 @@
 # Whom:                                 	pneumann@gmail.com
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.1 2005/12/18 20:45:20 tmclau02 Exp $
+#   $Id: Makefile,v 1.3 2006/10/09 16:27:03 killfill Exp $
 #
 
 PORTNAME=	db4o
@@ -19,7 +19,7 @@ COMMENT=	A database engine for storing object into files
 
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-REALVERSION=	5.0
+REALVERSION=	5.5
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${REALVERSION}
