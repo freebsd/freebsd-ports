@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	sqlobject
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	databases python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/S/SQLObject/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
 
@@ -54,7 +56,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-
 .endif
 
 .if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 .endif
 
 .if defined(WITH_SQLITE)
