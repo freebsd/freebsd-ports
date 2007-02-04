@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Net/Server.pm
+%%SITE_PERL%%/Net/Server.pod
 %%SITE_PERL%%/Net/Server/Daemonize.pm
 %%SITE_PERL%%/Net/Server/Fork.pm
 %%SITE_PERL%%/Net/Server/INET.pm
