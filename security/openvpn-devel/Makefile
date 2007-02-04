@@ -36,12 +36,7 @@ SUB_LIST+=	OSVERSION=${OSVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
-rcsuffix=
-.else
-rcsuffix=	.sh
-.endif
-SUB_LIST+=	RCSFX=${rcsuffix}
+SUB_LIST+=	RCSFX=${RC_SUBR_SUFFIX}
 
 # NOTE: there is no way to explicitly specify the LZO version to OpenVPN,
 # if LZO2 and LZO1 are installed, OpenVPN will pick LZO2.
