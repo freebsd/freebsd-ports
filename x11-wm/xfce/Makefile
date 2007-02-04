@@ -17,6 +17,7 @@ COMMENT=	CDE like desktop with GTK
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+USE_AUTOTOOLS=	libtool:15
 USE_GCC=	4.1
 USE_XPM=	yes
 USE_GETTEXT=	yes
@@ -31,7 +32,8 @@ CONFIGURE_ARGS=	--with-conf-dir=${PREFIX}/etc/xfce \
 		--with-xpm=${X11BASE} \
 		--enable-gtk-engine=${PREFIX}/lib/gtk/themes/engines \
 		--disable-arts \
-		--enable-taskbar
+		--enable-taskbar \
+		--enable-xinerama
 
 OPTIONS=	XFT "enable anti-aliased font support" off
 
@@ -45,7 +47,6 @@ MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfglob.1 xfgnome.1 xfhelp.1 \
 LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
-CONFIGURE_ARGS+=	--enable-xinerama
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
