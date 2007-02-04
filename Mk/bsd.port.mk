@@ -46,7 +46,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
 # OSREL			- The release version (numeric) of the operating system.
 # OSVERSION		- The value of __FreeBSD_version.
-# PORTOBJFORMAT	- The object format ("aout" or "elf").
 #
 # This is the beginning of the list of all variables that need to be
 # defined in a port, listed in order that they should be included
@@ -1171,11 +1170,6 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
 
-# Get the object format.
-.if !defined(PORTOBJFORMAT)
-PORTOBJFORMAT?=		elf
-.endif
-
 MASTERDIR?=	${.CURDIR}
 
 .if ${MASTERDIR} != ${.CURDIR}
@@ -1663,10 +1657,8 @@ PLIST_SUB+=	        PORTDOCS=""
 CONFIGURE_SHELL?=	${SH}
 MAKE_SHELL?=	${SH}
 
-CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
-SCRIPTS_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
-MAKE_ENV+=		SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT} NO_LINT=YES
-PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
+CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH}
+MAKE_ENV+=		SHELL=${SH} NO_LINT=YES
 
 .if defined(MANCOMPRESSED)
 .if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
@@ -5659,7 +5651,6 @@ __softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
 	OPSYS="${OPSYS:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	SYSTEMVERSION="${SYSTEMVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
 
