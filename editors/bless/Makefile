@@ -3,12 +3,12 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.18 2006/10/03 01:02:38 tmclau02 Exp $
+#   $Id: Makefile,v 1.22 2006/11/01 02:49:57 tmclau02 Exp $
 #
 
 PORTNAME=	bless
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
@@ -16,12 +16,8 @@ MASTER_SITES=	http://download.gna.org/bless/
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	A high quality, full featured hex editor
 
-BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20
-RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20
-
-USE_GNOME=	gnomehack gnomeprefix gnometarget
+USE_GNOME=	gnomehack gnomeprefix gnometarget gnomedocutils gtksharp20
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 
