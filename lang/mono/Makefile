@@ -3,13 +3,13 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.62 2006/10/07 02:36:33 tmclau02 Exp $
+#   $Id: Makefile,v 1.71 2007/01/13 21:29:41 tmclau02 Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.1.13.8.1
+PORTVERSION=	1.2.2.1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/ \
+MASTER_SITES=	http://www.go-mono.com/sources/mono/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tmclaugh/mono
 
@@ -35,10 +35,10 @@ MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 mono.1 \
 		monoburg.1 monodis.1 monop.1 monostyle.1 mozroots.1 oldmono.1 \
 		permview.1 prj2make.1 secutil.1 setreg.1 signcode.1 sn.1 \
-		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1
+		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1 mono-xmltool.1 sgen.1
 MAN5=		mono-config.5
 
-ONLY_FOR_ARCHS=	i386 #amd64
+ONLY_FOR_ARCHS=	i386 amd64
 
 MONO_SHARED_DIR=${WRKDIR}
 
@@ -91,14 +91,5 @@ pre-su-install:
 	${MKDIR} ${X11BASE}/lib/mono/1.0
 	${MKDIR} ${X11BASE}/lib/mono/2.0
 	${MKDIR} ${X11BASE}/lib/mono/gac
-
-post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mono/handles/semdel ${PREFIX}/bin/mono-semdel
-	@${SETENV} G_DEBUG="" MONO_SHARED_DIR_PORT="${MONO_SHARED_DIR}" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
-	@${SETENV} G_DEBUG=""  MONO_SHARED_DIR_PORT="${WRKSRC}/runtime" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
-
-pre-clean:
-	@${SETENV} G_DEBUG="" MONO_SHARED_DIR_PORT="${MONO_SHARED_DIR}" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
-	@${SETENV} G_DEBUG="" MONO_SHARED_DIR_PORT="${WRKSRC}/runtime" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
 
 .include <bsd.port.post.mk>

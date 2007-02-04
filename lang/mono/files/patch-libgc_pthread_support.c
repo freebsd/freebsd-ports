@@ -1,13 +1,9 @@
---- libgc/pthread_support.c.orig	Tue Jun 21 12:52:42 2005
-+++ libgc/pthread_support.c	Tue Jun 21 12:54:17 2005
-@@ -556,27 +556,6 @@
- 
- volatile GC_thread GC_threads[THREAD_TABLE_SZ];
- 
--/* 
-- * gcc-3.3.6 miscompiles the &GC_thread_key+sizeof(&GC_thread_key) expression so
-- * put it into a separate function.
-- */
+--- libgc/pthread_support.c.orig	Mon Sep 11 02:58:08 2006
++++ libgc/pthread_support.c	Mon Sep 11 02:59:51 2006
+@@ -597,23 +597,6 @@
+  * gcc-3.3.6 miscompiles the &GC_thread_key+sizeof(&GC_thread_key) expression so
+  * put it into a separate function.
+  */
 -#   if defined(__GNUC__) && defined(THREAD_LOCAL_ALLOC) && !defined(DBG_HDRS_ALL)
 -static __attribute__((noinline)) unsigned char* get_gc_thread_key_addr GC_PROTO((void))
 -{
@@ -28,12 +24,13 @@
  void GC_push_thread_structures GC_PROTO((void))
  {
      GC_push_all((ptr_t)(GC_threads), (ptr_t)(GC_threads)+sizeof(GC_threads));
-@@ -585,8 +564,6 @@
+@@ -622,9 +605,6 @@
  	  (ptr_t)(&GC_thread_key)+sizeof(&GC_thread_key));
  #   endif
  }
 -
 -#endif
- 
+-
  #ifdef THREAD_LOCAL_ALLOC
  /* We must explicitly mark ptrfree and gcj free lists, since the free 	*/
+ /* list links wouldn't otherwise be found.  We also set them in the 	*/
