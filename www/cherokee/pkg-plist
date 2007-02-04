@@ -79,9 +79,6 @@ lib/cherokee/libplugin_ncsa.so
 lib/cherokee/libplugin_nn.a
 lib/cherokee/libplugin_nn.la
 lib/cherokee/libplugin_nn.so
-%%PAM%%lib/cherokee/libplugin_pam.a
-%%PAM%%lib/cherokee/libplugin_pam.la
-%%PAM%%lib/cherokee/libplugin_pam.so
 lib/cherokee/libplugin_phpcgi.a
 lib/cherokee/libplugin_phpcgi.la
 lib/cherokee/libplugin_phpcgi.so

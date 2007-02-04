@@ -1,6 +1,8 @@
-Cherokee is a tiny, ultrafast, lightweight Web server. It is implemented
-entirely in C, and has no dependencies beyond a standard C library. It
-provides only the most basic HTTP functionality, but is extremely fast and
-small.
+Cherokee is a very fast, flexible, and lightweight Web server. It is
+implemented entirely in C, and has no dependencies beyond a standard C
+library. It is embeddable and extensible with plug-ins. It supports on-the-fly
+configuration by reading files or strings, TLS/SSL (via GNUTLS or OpenSSL),
+virtual hosts, authentication, cache friendly features, PHP, custom error
+management, and much more.
 
 WWW: http://www.cherokee-project.com/
