@@ -1,6 +1,6 @@
-TEA is powerful text editor for GNU/Linux and *BSD.  It depends on GTK+2
-only (and GNU aspell optionally).  With an ultimate small size TEA provides
-hundreds of functions.  Some of the features include:
+TEA is powerful text editor for GNU/Linux, Darwin, MacOS X, Solaris and *BSD.
+It depends on GTK+2 only (and GNU aspell optionally).  With an ultimate small
+size TEA provides hundreds of functions.  Some of the features include:
 
     - Built-in file manager (with support for archieved files)
     - Spellchecker (using aspell)
@@ -17,4 +17,4 @@ hundreds of functions.  Some of the features include:
     - Built-in image viewer (PNG, JPEG, GIF, WBMP, BMP)
     - Automatic text encoding detection for various languages
 
-WWW: http://tea.linux.kiev.ua/
+WWW: http://tea-editor.sourceforge.net/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	14.2.4
+DISTVERSION=	15.0.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tea-editor
@@ -38,10 +38,12 @@ USE_GNOME+=	gtksourceview
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/tea/doc/|/doc/tea/|' \
+post-patch: .SILENT
+	${REINPLACE_CMD} -e 's|/tea/doc/|/doc/tea/|' \
 		${WRKSRC}/src/tea_defs.h
-	@${REINPLACE_CMD} -e '4373d; 4376,4379d' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '568d' ${WRKSRC}/Makefile.in
+	# Fix FINK-related defines
+	${REINPLACE_CMD} -e '5212d; 5215,5218d' ${WRKSRC}/configure
+	# Do not install yet another copy of GPL
+	${REINPLACE_CMD} -e '627d' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
