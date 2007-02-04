@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwhich
-PORTVERSION=	2.14
+PORTVERSION=	2.16
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cse.cuhk.edu.hk/pub/gnu/gnu/which/ \
 		http://voodoo.bawue.com/download/
@@ -21,13 +21,11 @@ CONFIGURE_ARGS=	--program-prefix=g
 MAN1=		gwhich.1
 INFO=		which
 
+PLIST_FILES=	bin/gwhich \
+		${EXAMPLESDIR:S,^${PREFIX}/,,}/EXAMPLES
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/gwhich
-	@${INSTALL_DATA} ${WRKSRC}/EXAMPLES ${PREFIX}/share/examples/gwhich/EXAMPLES
-.else
-	@${SED} 's#share/examples/gwhich/EXAMPLES##' ${TMPPLIST} > ${WRKDIR}/PLIST.tmp
-	@${SED} 's#@dirrm share/examples/gwhich##' ${WRKDIR}/PLIST.tmp > ${TMPPLIST}
-.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/EXAMPLES ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
