@@ -56,10 +56,10 @@ _USE_GNOME_ALL+= bonobo gal gconf gdkpixbuf glib12 glibwww \
 		oaf orbit pygnome pygtk
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver \
-		gail gal2 gconf2 glib20 gnomecontrolcenter2 gnomedesktop \
-		gnomedocutils gnomemenus gnomepanel gnomespeech gnomevfs2 \
-		gtk20 gtkhtml3 gtksourceview libartlgpl2 libbonobo \
+_USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gail \
+		gal2 gconf2 glib20 gnomecontrolcenter2 gnomedesktop gnomedocutils \
+		gnomemenus gnomepanel gnomesharp20 gnomespeech gnomevfs2 gtk20 \
+		gtkhtml3 gtksharp10 gtksharp20 gtksourceview libartlgpl2 libbonobo \
 		libbonoboui libgailgnome libgda2 libgda3 libglade2 libgnome \
 		libgnomecanvas libgnomedb libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgsf_gnome libgtkhtml libidl librsvg2 libwnck \
@@ -498,6 +498,21 @@ pygnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-desktop-2.0.
 pygnomedesktop_BUILD_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
 pygnomedesktop_RUN_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
 pygnomedesktop_USE_GNOME_IMPL=pygnome2 libgnomeprintui gtksourceview gnomepanel libwnck nautiluscdburner metacity
+
+gtksharp10_DETECT=			${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc
+gtksharp10_BUILD_DEPENDS=	${gtksharp10_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp10
+gtksharp10_RUN_DEPENDS=		${gtksharp10_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp10
+gtksharp10_USE_GNOME_IMPL=	gtk20
+
+gtksharp20_DETECT=			${LOCALBASE}/libdata/pkgconfig/gtk-sharp-2.0.pc
+gtksharp20_BUILD_DEPENDS=	${gtksharp20_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp20
+gtksharp20_RUN_DEPENDS=		${gtksharp20_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp20
+gtksharp20_USE_GNOME_IMPL=	gtk20
+
+gnomesharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-sharp-2.0.pc
+gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
+gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
+gnomesharp20_USE_GNOME_IMPL=	gnomepanel gtkhtml3 gtksharp20 librsvg2 vte
 
 # End component definition section
 
