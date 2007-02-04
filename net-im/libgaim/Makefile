@@ -8,7 +8,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	2.0.0.b6
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -216,7 +216,7 @@ post-patch:
 		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCLTK_VER} required|g' \
 		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCLTK_VER:E}|' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|{exec_prefix}|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|@bindir@|${PREFIX}/bin|' \
 			${WRKSRC}/gaim.service.in
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 			${WRKSRC}/libgaim/gaim-send \
