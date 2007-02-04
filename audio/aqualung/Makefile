@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aqualung
-DISTVERSION=	0.9beta6
+DISTVERSION=	0.9beta7
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -26,21 +26,27 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		mac.2:${PORTSDIR}/audio/mac \
 		tag.5:${PORTSDIR}/audio/taglib \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \
+		cdio.7:${PORTSDIR}/sysutils/libcdio \
+		mp3lame.0:${PORTSDIR}/audio/lame \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel \
+		strfunc.9:${PORTSDIR}/devel/libstrfunc \
 		cddb.3:${PORTSDIR}/audio/libcddb
 
 USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no --with-systray=no
+CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no --with-systray=no \
+		--with-cdda=no
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib -lstrfunc
 PORTDOCS=	README manual.lyx manual.pdf
 MAN1=		${PORTNAME}.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir/s!=.*!= ${DOCSDIR}!' ${WRKSRC}/doc/Makefile.in
+#	@${REINPLACE_CMD} -e 's/libcdio_paranoia/libcdda_paranoia/g' ${WRKSRC}/configure
 .ifdef NOPORTDOCS
 	@${REINPLACE_CMD} -e '/^install-data-am/s!install-docDATA!!' ${WRKSRC}/doc/Makefile.in
 .endif

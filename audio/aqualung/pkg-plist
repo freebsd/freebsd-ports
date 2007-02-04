@@ -3,6 +3,7 @@ share/locale/hu/LC_MESSAGES/aqualung.mo
 share/locale/de/LC_MESSAGES/aqualung.mo
 share/locale/uk/LC_MESSAGES/aqualung.mo
 %%DATADIR%%/appearance.png
+%%DATADIR%%/cdda.png
 %%DATADIR%%/cddb.png
 %%DATADIR%%/drag.png
 %%DATADIR%%/dsp.png
@@ -15,6 +16,9 @@ share/locale/uk/LC_MESSAGES/aqualung.mo
 %%DATADIR%%/logo.png
 %%DATADIR%%/metadata.png
 %%DATADIR%%/ms-artist.png
+%%DATADIR%%/ms-cdda.png
+%%DATADIR%%/ms-cdda-disk.png
+%%DATADIR%%/ms-cdda-nodisk.png
 %%DATADIR%%/ms-record.png
 %%DATADIR%%/ms-store.png
 %%DATADIR%%/ms-track.png
