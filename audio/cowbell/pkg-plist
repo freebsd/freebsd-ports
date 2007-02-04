@@ -1,8 +1,12 @@
 bin/cowbell
 lib/cowbell/cowbell.exe
 lib/cowbell/cowbell.exe.config
+lib/cowbell/libtaglibsharpglue.a
+lib/cowbell/libtaglibsharpglue.la
+lib/cowbell/libtaglibsharpglue.so
 share/gnome/applications/cowbell.desktop
-share/gnome/pixmaps/cowbell.png
+share/icons/hicolor/48x48/apps/cowbell.png
+share/icons/hicolor/scalable/apps/cowbell.svg
 share/locale/de/LC_MESSAGES/cowbell.mo
 share/locale/en_CA/LC_MESSAGES/cowbell.mo
 share/locale/es/LC_MESSAGES/cowbell.mo
