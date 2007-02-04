@@ -7,22 +7,16 @@
 
 PORTNAME=	xfce4-fsguard-plugin
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://ftp.lug.udel.edu/pub/NetBSD/packages/distfiles/ \
-		http://ftp.citkit.ru/pub/NetBSD/packages/distfiles/ \
-		${MASTER_SITES_NETBSD}
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
-PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
-PATCHFILES=	gcc295-xfce4-fsguard-plugin.patch
 
 MAINTAINER=	jfb@minet.net
 COMMENT=	XFce4 panel plugin to check a mountpoint for free disk space
 
-BROKEN=		Unfetchable
-
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig

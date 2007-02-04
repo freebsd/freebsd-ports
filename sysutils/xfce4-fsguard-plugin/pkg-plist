@@ -1,9 +1,6 @@
 @comment $FreeBSD$
 libexec/xfce4/panel-plugins/xfce4-fsguard-plugin
-share/icons/hicolor/48x48/apps/xfce-fsguard.png
 share/locale/de/LC_MESSAGES/xfce4-fsguard-plugin.mo
-share/locale/fr/LC_MESSAGES/xfce4-fsguard-plugin.mo
-share/locale/hu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/lt/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-fsguard-plugin.mo
