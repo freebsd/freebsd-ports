@@ -1,0 +1,11 @@
+--- configure.orig	Sun Feb  4 14:38:16 2007
++++ configure	Sun Feb  4 15:30:30 2007
+@@ -2662,7 +2661,7 @@
+     ARCH_CFLAGS="-mcpu=v9 -m64 -D__SPARC_64__"
+     ;;
+ 
+-x86_64 )
++x86_64 | amd64 )
+     ARCH_DIR="x86_64"
+     ARCH_CFLAGS="-D__X86_64__"
+     ;;

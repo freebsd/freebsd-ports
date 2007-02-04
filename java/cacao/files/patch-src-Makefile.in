@@ -1,0 +1,18 @@
+--- src/Makefile.in.orig	Sun Feb  4 20:06:59 2007
++++ src/Makefile.in	Sun Feb  4 20:07:09 2007
+@@ -243,7 +243,6 @@
+ 	cacaoh \
+ 	native \
+ 	cacao \
+-	scripts
+ 
+ @DISABLE_GC_FALSE@BOEHM = boehm-gc
+ @DISABLE_GC_TRUE@BOEHM = 
+@@ -260,7 +259,6 @@
+ 	cacaoh \
+ 	native \
+ 	cacao \
+-	scripts
+ 
+ all: all-recursive
+ 
