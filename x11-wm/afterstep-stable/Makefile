@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,7 +22,8 @@ LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+		execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
