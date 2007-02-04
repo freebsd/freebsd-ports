@@ -16,6 +16,7 @@ COMMENT=	XFce 4 settings manager plugins
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
