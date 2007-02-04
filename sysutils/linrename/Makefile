@@ -8,7 +8,11 @@
 PORTNAME=	linrename
 PORTVERSION=	2.12r
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/
+MASTER_SITES=	http://mirror.linux.org.au/pub/linux/utils/util-linux/ \
+		http://debian.csail.mit.edu/pub/linux/utils/util-linux/ \
+		http://www.club.cc.cmu.edu/pub/linux.out-of-date/utils/util-linux/ \
+		http://www.kernel.org/pub/linux/utils/util-linux/ \
+		ftp://ftp.kernel.org/pub/linux/utils/util-linux/old/
 DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	Net147@hotmail.com
