@@ -2747,3 +2747,4 @@ graphics/mesagl||2007-02-02|Removed as part of obsolete XFree86 3.X
 graphics/xpm||2007-02-02|Removed as part of obsolete XFree86 3.X
 x11/XFree86||2007-02-02|Removed this obsolete old version of XFree86
 x11/XFree86-contrib||2007-02-02|Removed this obsolete old version of XFree86
+sysutils/unidesc|sysutils/uniutils|2007-02-04|Renamed by the author

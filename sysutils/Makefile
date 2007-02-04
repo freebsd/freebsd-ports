@@ -653,8 +653,8 @@
     SUBDIR += udesc_dump
     SUBDIR += udfclient
     SUBDIR += ufs_copy
-    SUBDIR += unidesc
     SUBDIR += unieject
+    SUBDIR += uniutils
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsdaemon

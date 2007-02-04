@@ -1,4 +1,4 @@
-Unidesc consists of five programs for finding out what is in a Unicode file.
+Uniutils consists of five programs for finding out what is in a Unicode file.
 They are useful when working with Unicode files when one doesn't know the
 writing system, doesn't have the necessary font, needs to inspect invisible
 characters, needs to find out whether characters have been combined or in what
