@@ -41,6 +41,7 @@
     SUBDIR += gauche-gtk
     SUBDIR += gdl
     SUBDIR += gnocl
+    SUBDIR += gnome-sharp20
     SUBDIR += gnomemm
     SUBDIR += gnustep-art
     SUBDIR += gnustep-back
