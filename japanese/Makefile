@@ -108,6 +108,7 @@
     SUBDIR += ircII
     SUBDIR += ja6
     SUBDIR += jadetex-ptex
+    SUBDIR += japana
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
     SUBDIR += jcode.pl
