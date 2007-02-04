@@ -8,11 +8,11 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.4
-PORTREVISION=	20070114
+PORTEPOCH=	1
 CATEGORIES=	lang
-VERSIONSTRING=	4.0-${PORTREVISION}
+VERSIONSTRING=	${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -23,7 +23,6 @@ COMMENT?=	GNU Compiler Collection 4.0
 
 SUFFIX=		40
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
-USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -110,10 +109,5 @@ post-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
-
-cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} "LATEST.*${PORTVERSION:C/.[0-9]+$//}"
-.endfor
 
 .include <bsd.port.post.mk>
