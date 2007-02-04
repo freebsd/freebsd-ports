@@ -58,7 +58,8 @@ post-patch:
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl|' \
+	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl| ; \
+	    	s|echo aout|echo elf|g' \
 		${WRKSRC}/configure
 
 post-install:

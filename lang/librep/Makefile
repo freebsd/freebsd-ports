@@ -46,4 +46,8 @@ EXTRA_PATCHES+=	${FILESDIR}/stable-patch-src_numbers.c
 post-extract:
 	@${RM} ${WRKSRC}/test
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
