@@ -29,12 +29,4 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applnk/Utilities
 	${INSTALL_DATA} ${WRKSRC}/cutecom.desktop ${PREFIX}/share/applnk/Utilities
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES=	${FILESDIR}/current-cutecommdlg.ui.patch
-.else
-EXTRA_PATCHES=	${FILESDIR}/stable-cutecommdlg.ui.patch
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
