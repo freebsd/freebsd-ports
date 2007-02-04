@@ -82,6 +82,7 @@ share/gnome/help/genius/C/gel-functions.xml
 share/gnome/help/genius/C/gel-loading-programs.xml
 share/gnome/help/genius/C/gel-loops.xml
 share/gnome/help/genius/C/gel-lvalues.xml
+share/gnome/help/genius/C/gel-matrix-linalg.xml
 share/gnome/help/genius/C/gel-matrix-support.xml
 share/gnome/help/genius/C/gel-matrix-transpose.xml
 share/gnome/help/genius/C/gel-modular-evaluation.xml
@@ -111,10 +112,12 @@ share/gnome/mime-info/genius.mime
 share/gnome/omf/genius/genius-C.omf
 share/icons/hicolor/32x32/apps/gnome-genius.png
 share/icons/hicolor/48x48/apps/gnome-genius.png
+share/locale/ar/LC_MESSAGES/genius.mo
 share/locale/az/LC_MESSAGES/genius.mo
 share/locale/ca/LC_MESSAGES/genius.mo
 share/locale/cs/LC_MESSAGES/genius.mo
 share/locale/de/LC_MESSAGES/genius.mo
+share/locale/dz/LC_MESSAGES/genius.mo
 share/locale/el/LC_MESSAGES/genius.mo
 share/locale/en_CA/LC_MESSAGES/genius.mo
 share/locale/en_GB/LC_MESSAGES/genius.mo
