@@ -6,30 +6,38 @@
 #
 
 PORTNAME=	ironpython
-PORTVERSION=	0.6
+PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.ironpython.com/
-DISTNAME=	IronPython-${PORTVERSION}
+MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
+DISTNAME=	IronPython-1.0.1-Src
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	New Python implementation targeting the .NET
 
+BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
+WRKSRC=	${WRKDIR}/IronPython-${PORTVERSION}
 USE_ZIP=	yes
-NO_BUILD=	yes
-EXTRACT_BEFORE_ARGS=	-q -a
+USE_GMAKE=	yes
 
 post-extract:
-	${ECHO} '#!${SH}' > ${WRKDIR}/ironpython
-	${ECHO} '${LOCALBASE}/bin/mono ${PREFIX}/lib/ironpython/IronPythonConsole.exe $$*' >> ${WRKDIR}/ironpython
+	@(${ECHO} '#!${SH}' > ${WRKDIR}/ironpython)
+	@(${ECHO} '${LOCALBASE}/bin/mono ${PREFIX}/lib/ironpython/ipy.exe -X:ColorfulConsole $$*' \
+		>> ${WRKDIR}/ironpython)
+
+pre-build:
+	@${MKDIR} ${WRKSRC}/Src/IronPythonTest/bin
+
+do-build:
+	cd ${WRKSRC}/Src && ${GMAKE}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/ironpython
-	cd ${WRKSRC}/bin; for f in *.exe *.dll; do \
+	@${MKDIR} ${PREFIX}/lib/ironpython
+	cd ${WRKSRC}; for f in *.exe *.dll; do \
 		${INSTALL_DATA} $$f ${PREFIX}/lib/ironpython; \
 	done
-	${INSTALL_SCRIPT} ${WRKDIR}/ironpython ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKDIR}/ironpython ${PREFIX}/bin/
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+--- Src/makefile.orig	Mon Oct  9 11:29:35 2006
++++ Src/makefile	Mon Oct  9 11:29:45 2006
+@@ -1,4 +1,4 @@
+-CSC=csc
++CSC=gmcs
+ 
+ all:../IronMath.dll ../IronPython.dll ../ipy.exe ../ipyw.exe IronPythonTest/bin/Debug/IronPythonTest.dll
+ 

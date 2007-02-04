@@ -1,8 +1,6 @@
 bin/ironpython
 lib/ironpython/IronMath.dll
 lib/ironpython/IronPython.dll
-lib/ironpython/IronPythonConsole.exe
-lib/ironpython/SystemUtil.dll
-lib/ironpython/__main__.exe
-lib/ironpython/snippets.dll
+lib/ironpython/ipy.exe
+lib/ironpython/ipyw.exe
 @dirrm lib/ironpython
