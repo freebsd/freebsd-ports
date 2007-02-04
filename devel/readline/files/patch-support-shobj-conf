@@ -1,0 +1,20 @@
+--- support/shobj-conf.orig	Tue Apr 11 15:15:43 2006
++++ support/shobj-conf	Sun Feb  4 19:18:20 2007
+@@ -128,17 +128,10 @@
+ 	SHOBJ_CFLAGS=-fpic
+ 	SHOBJ_LD='${CC}'
+ 
+-	if [ -x /usr/bin/objformat ] && [ "`/usr/bin/objformat`" = "elf" ]; then
+ 		SHOBJ_LDFLAGS='-shared -Wl,-soname,$@'
+ 
+ 		SHLIB_XLDFLAGS='-Wl,-rpath,$(libdir)'
+ 		SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)'
+-	else
+-		SHOBJ_LDFLAGS='-shared'
+-
+-		SHLIB_XLDFLAGS='-R$(libdir)'
+-		SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
+-	fi
+ 	;;
+ 
+ # Darwin/MacOS X
