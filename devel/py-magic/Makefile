@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	4.18
+PORTVERSION=	4.19
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
-				ftp://ftp.gw.com/mirrors/pub/unix/file/ \
-				ftp://ftp.fu-berlin.de/unix/tools/file/
+		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
+		ftp://ftp.fu-berlin.de/unix/tools/file/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	file-${PORTVERSION}
 
@@ -20,5 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 WRKSRC=	${WRKDIR}/file-${PORTVERSION}/python
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/magic.so
 
 .include <bsd.port.mk>
