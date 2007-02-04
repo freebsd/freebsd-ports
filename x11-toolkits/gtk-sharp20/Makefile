@@ -3,13 +3,15 @@
 # Whom:                 Juli Mallett
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.17 2006/08/15 02:31:49 tmclau02 Exp $
+#   $Id: Makefile,v 1.22 2006/10/30 02:50:04 tmclau02 Exp $
 #
 
 PORTNAME=	gtk-sharp
-PORTVERSION=	2.8.2
+PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://go-mono.com/sources/gtk-sharp-2.0/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
@@ -20,20 +22,17 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		monodocer:${PORTSDIR}/devel/monodoc \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 
-USE_X_PREFIX=	yes
 LATEST_LINK=	gtk-sharp20
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
-USE_GNOME=	gnomehack librsvg2 gnomepanel gtkhtml3 vte
+USE_GNOME=	gnomehack gtk20 libglade2
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
-
-pre-su-install:
-	${MKDIR} ${LOCALBASE}/share/gapi-2.0
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
