@@ -3,6 +3,7 @@ bin/mimedefang
 bin/mimedefang.pl
 bin/md-mx-ctrl
 bin/watch-mimedefang
+bin/watch-multiple-mimedefangs.tcl
 etc/rc.d/mimedefang.sh-dist
 @unexec if cmp -s %D/etc/mimedefang/mimedefang-filter %D/etc/mimedefang/mimedefang-filter.example; then rm -f %D/etc/mimedefang/mimedefang-filter; fi
 etc/mimedefang/mimedefang-filter.example

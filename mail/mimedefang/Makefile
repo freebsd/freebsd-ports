@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-notify.7 mimedefang-protocol.7
 MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
-	md-mx-ctrl.8 watch-mimedefang.8
+	md-mx-ctrl.8 watch-mimedefang.8 watch-multiple-mimedefangs.8
 
 .include <bsd.port.pre.mk>
 
