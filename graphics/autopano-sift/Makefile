@@ -7,6 +7,7 @@
 
 PORTNAME=	autopano-sift
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://user.cs.tu-berlin.de/~nowozin/autopano-sift/
 
@@ -15,16 +16,13 @@ COMMENT=	Automatic panorama control point generation tool
 
 RESTRICTED=	May be covered by patents
 
-LIB_DEPENDS+=	gdiplus:${PORTSDIR}/x11-toolkits/libgdiplus
-BUILD_DEPENDS+=	mono:${PORTSDIR}/lang/mono \
-		${X11BASE}/libdata/pkgconfig/gtk-sharp.pc:${PORTSDIR}/x11-toolkits/gtk-sharp10
-RUN_DEPENDS+=	mono:${PORTSDIR}/lang/mono \
-		${X11BASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp10
+LIB_DEPENDS=	gdiplus:${PORTSDIR}/x11-toolkits/libgdiplus
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 SUB_FILES=	autopano
 
 USE_GMAKE=	yes
+USE_GNOME=	gtksharp10
 
 MAN1=		autopano-complete.1 \
 		autopano-complete.old.1 \
