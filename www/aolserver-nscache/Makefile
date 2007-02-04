@@ -7,7 +7,7 @@
 
 PORTNAME=	aolserver-nscache
 PORTVERSION=	1.5
-CATEGORIES=	databases www
+CATEGORIES=	www databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
 DISTFILES=	nscache-${PORTVERSION}.tar.gz
