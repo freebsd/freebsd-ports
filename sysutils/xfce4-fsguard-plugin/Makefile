@@ -19,6 +19,8 @@ PATCHFILES=	gcc295-xfce4-fsguard-plugin.patch
 MAINTAINER=	jfb@minet.net
 COMMENT=	XFce4 panel plugin to check a mountpoint for free disk space
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USE_GETTEXT=	yes

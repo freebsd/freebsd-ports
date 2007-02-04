@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 MAN3=	Math::Symbolic.3 \
 	Math::Symbolic::AuxFunctions.3 \
 	Math::Symbolic::Base.3 \

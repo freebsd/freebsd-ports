@@ -16,6 +16,8 @@ DIST_SUBDIR=	apache20
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
 
+BROKEN=		Unfetchable
+
 LATEST_LINK=	mod_auth_mysql2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
