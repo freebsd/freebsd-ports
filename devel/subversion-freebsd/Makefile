@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
