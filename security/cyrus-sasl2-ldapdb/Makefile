@@ -61,6 +61,7 @@ CONFIGURE_ARGS+=--with-dblib=none \
 CONFIGURE_ARGS+=--enable-ldapdb --with-ldap=${LOCALBASE}
 
 PLIST_FILES=	lib/sasl2/libldapdb.a \
+		lib/sasl2/libldapdb.la \
 		lib/sasl2/libldapdb.so \
 		lib/sasl2/libldapdb.so.2
 
