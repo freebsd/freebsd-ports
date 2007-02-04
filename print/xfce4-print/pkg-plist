@@ -24,7 +24,6 @@ libdata/pkgconfig/xfprint-1.0.pc
 share/applications/xfprint.desktop
 share/applications/xfprint-manager.desktop
 share/applications/xfce-xfprint-settings.desktop
-share/gtk-doc/html/libxfprint
 share/gtk-doc/html/libxfprint/PrinterListWindow.html
 share/gtk-doc/html/libxfprint/PrinterQueueWindow.html
 share/gtk-doc/html/libxfprint/PrintingSystem.html

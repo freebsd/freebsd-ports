@@ -15,6 +15,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An XFCE engine for GTK 2.0
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gtk20 pkgconfig
 USE_XLIB=	yes
