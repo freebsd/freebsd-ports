@@ -19,6 +19,10 @@ USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
+
 post-build:
 	cd ${WRKSRC} && CONFIG_FILES=id3tag.pc CONFIG_HEADERS= ${SH} ./config.status
 

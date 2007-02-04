@@ -56,6 +56,8 @@ CONFIGURE_ENV+=	DISPLAY="localhost:1001"
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-DGNOME_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
 
 .if !defined(DISPLAY)
 pre-configure:
