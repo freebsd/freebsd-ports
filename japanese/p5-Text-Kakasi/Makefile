@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Text-Kakasi
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	2.04
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	http://www.daionet.gr.jp/~knok/kakasi/
+MASTER_SITES=	CPAN
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kakasi library module for Perl5
@@ -17,11 +16,13 @@ COMMENT=	Kakasi library module for Perl5
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV=	PREFIX="${PREFIX}"
-MAN3=		Text::Kakasi.3
+MAN3=		Text::Kakasi.3 Text::Kakasi::JP.3
 
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
