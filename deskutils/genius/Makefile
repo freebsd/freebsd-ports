@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	0.7.6.1
+PORTVERSION=	0.7.7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://ftp.5z.com/pub/genius/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9].[0-9]).*/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
