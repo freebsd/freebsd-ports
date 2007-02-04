@@ -60,8 +60,8 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-post-patch:
-	@${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+pre-configure:
+	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 .if ${ARCH} == "alpha"
 BROKEN=		math/lapack appears to be broken on alpha
