@@ -1,7 +1,18 @@
 bin/f-spot
 bin/f-spot-import
 lib/f-spot/FlickrNet.dll
+lib/f-spot/NDesk.DBus.GLib.dll
+lib/f-spot/NDesk.DBus.GLib.dll.config
+lib/f-spot/NDesk.DBus.dll
+lib/f-spot/NDesk.Glitz.dll
 lib/f-spot/SemWeb.dll
+lib/f-spot/SmugMugNet.dll
+lib/f-spot/Tao.OpenGl.ExtensionLoader.dll
+lib/f-spot/Tao.OpenGl.ExtensionLoader.dll.config
+lib/f-spot/Tao.OpenGl.Glu.dll
+lib/f-spot/Tao.OpenGl.Glu.dll.config
+lib/f-spot/Tao.OpenGl.dll
+lib/f-spot/Tao.OpenGl.dll.config
 lib/f-spot/f-spot.exe
 lib/f-spot/f-spot.exe.config
 lib/f-spot/gnome-keyring-sharp.dll
@@ -20,16 +31,34 @@ lib/f-spot/libfspotjpegtran.so
 lib/f-spot/libfspotjpegtran.so.0
 lib/f-spot/libgphoto2-sharp.dll
 lib/f-spot/libgphoto2-sharp.dll.config
+libdata/pkgconfig/f-spot.pc
 libexec/gnome-screensaver/f-spot-screensaver
 share/gnome-screensaver/themes/f-spot-screensaver.desktop
 share/gnome/applications/f-spot-view.desktop
 share/gnome/applications/f-spot.desktop
-share/gnome/pixmaps/f-spot-logo.png
+share/gnome/help/f-spot/C/f-spot.xml
+share/gnome/help/f-spot/C/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/C/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/sv/f-spot.xml
+share/gnome/help/f-spot/sv/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/sv/figures/f-spot-slideshow.png
+share/icons/hicolor/16x16/apps/f-spot.png
+share/icons/hicolor/16x16/apps/f-spot.svg
+share/icons/hicolor/22x22/apps/f-spot.png
+share/icons/hicolor/22x22/apps/f-spot.svg
+share/icons/hicolor/24x24/apps/f-spot.png
+share/icons/hicolor/32x32/apps/f-spot.png
+share/icons/hicolor/32x32/apps/f-spot.svg
+share/icons/hicolor/48x48/apps/f-spot.png
+share/icons/hicolor/48x48/apps/f-spot.svg
+share/icons/hicolor/scalable/apps/f-spot.svg
+share/locale/ar/LC_MESSAGES/f-spot.mo
 share/locale/bg/LC_MESSAGES/f-spot.mo
 share/locale/ca/LC_MESSAGES/f-spot.mo
 share/locale/cs/LC_MESSAGES/f-spot.mo
 share/locale/da/LC_MESSAGES/f-spot.mo
 share/locale/de/LC_MESSAGES/f-spot.mo
+share/locale/dz/LC_MESSAGES/f-spot.mo
 share/locale/el/LC_MESSAGES/f-spot.mo
 share/locale/en_CA/LC_MESSAGES/f-spot.mo
 share/locale/en_GB/LC_MESSAGES/f-spot.mo
@@ -40,6 +69,7 @@ share/locale/fa/LC_MESSAGES/f-spot.mo
 share/locale/fi/LC_MESSAGES/f-spot.mo
 share/locale/fr/LC_MESSAGES/f-spot.mo
 share/locale/gl/LC_MESSAGES/f-spot.mo
+share/locale/hi/LC_MESSAGES/f-spot.mo
 share/locale/hu/LC_MESSAGES/f-spot.mo
 share/locale/it/LC_MESSAGES/f-spot.mo
 share/locale/ja/LC_MESSAGES/f-spot.mo
@@ -59,8 +89,33 @@ share/locale/th/LC_MESSAGES/f-spot.mo
 share/locale/vi/LC_MESSAGES/f-spot.mo
 share/locale/zh_CN/LC_MESSAGES/f-spot.mo
 share/locale/zh_TW/LC_MESSAGES/f-spot.mo
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrm share/gnome/help/f-spot/sv/figures
+@dirrm share/gnome/help/f-spot/sv
+@dirrm share/gnome/help/f-spot/C/figures
+@dirrm share/gnome/help/f-spot/C
+@dirrm share/gnome/help/f-spot
 @dirrmtry share/gnome-screensaver/themes
 @dirrmtry share/gnome-screensaver
 @dirrmtry libexec/gnome-screensaver

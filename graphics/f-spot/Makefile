@@ -3,16 +3,15 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.31 2006/10/03 02:37:44 tmclau02 Exp $
+#   $Id: Makefile,v 1.39 2007/01/26 02:49:02 tmclau02 Exp $
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.3
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Personal photo management to the GNOME desktop
@@ -20,17 +19,16 @@ COMMENT=	Personal photo management to the GNOME desktop
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
-BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
-RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
+RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 USE_BZIP2=	yes
 USE_SQLITE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
-USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gnomesharp20
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -41,6 +39,8 @@ post-patch:
 		${WRKSRC}/src/f-spot.exe.config.in
 	@${REINPLACE_CMD} 's|target="libgphoto2.so.2"|target="libgphoto2.so"|g'\
 	    	${WRKSRC}/libgphoto2-sharp/libgphoto2-sharp.dll.config
+	@${REINPLACE_CMD} 's|#!/bin/bash|#!/bin/sh|g' \
+		${WRKSRC}/tools/f-spot-import
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

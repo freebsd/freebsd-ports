@@ -1,14 +1,54 @@
---- src/f-spot.in.orig	Thu Sep  7 17:56:20 2006
-+++ src/f-spot.in	Mon Oct  2 22:35:40 2006
+--- src/f-spot.in.orig	Mon Jan 15 04:53:32 2007
++++ src/f-spot.in	Thu Jan 18 13:27:50 2007
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  prefix=@prefix@
  exec_prefix=@exec_prefix@
-@@ -24,4 +24,4 @@
- 	echo "*** Running F-Spot in Debug Mode ***"
- esac
+@@ -16,23 +16,22 @@
+ [ -n "$FSPOT_PROFILE" ] && FSPOT_PROFILE="--profile=$FSPOT_PROFILE"
+ 
+ for arg in $*; do
+-    case "x--debug" in ("x$arg")
+-        FSPOT_DEBUG=$arg
+-    esac
+-
+-    case "x--trace=" in ("x${arg:0:8}")
+-        FSPOT_TRACE=$arg
+-    esac
+-
+-    case "x--profile=" in ("x${arg:0:10}")
+-        FSPOT_PROFILE=$arg
+-    esac
+-
+-    case "x--uninstalled" in ("x$arg")
+-        echo "*** Running uninstalled f-spot ***"
+-        EXE_TO_RUN="./f-spot.exe"
+-        export MONO_PATH=../Tao/Tao.OpenGl:../Tao/Tao.OpenGl.Glu:../Tao/Tao.OpenGl.ExtensionLoader:../dbus-sharp:../dbus-sharp-glib:../google-sharp:../gnome-keyring-sharp:../FlickrNet:../SmugMugNet:../libgphoto2-sharp:../semweb:../glitz-sharp/src/:$MONO_PATH
+-    esac
++    case "x$arg" in
++        x--debug)
++            FSPOT_DEBUG="$arg"
++            ;;
++        x--trace=*)
++		    FSPOT_TRACE="$arg"
++            ;;
++        x--profile=*)
++            FSPOT_PROFILE="$arg"
++            ;;
++        x--uninstalled)
++            echo "*** Running uninstalled f-spot ***"
++            EXE_TO_RUN="./f-spot.exe"
++            export MONO_PATH=../Tao/Tao.OpenGl:../Tao/Tao.OpenGl.Glu:../Tao/Tao.OpenGl.ExtensionLoader:../dbus-sharp:../dbus-sharp-glib:../google-sharp:../gnome-keyring-sharp:../FlickrNet:../SmugMugNet:../libgphoto2-sharp:../semweb:../glitz-sharp/src/:$MONO_PATH
++            ;;
++        esac
+ done
+ 
+ if [ -n "$FSPOT_DEBUG" ]; then
+@@ -44,4 +43,4 @@
+     echo "** Running Mono with $MONO_OPTIONS **"
+ fi
  
 -exec -a @PACKAGE@ mono $MONO_OPTIONS $EXE_TO_RUN "$@"
 +exec mono $MONO_OPTIONS $EXE_TO_RUN "$@"
