@@ -40,7 +40,6 @@ BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
 
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 .if defined(WITH_ATLAS)
