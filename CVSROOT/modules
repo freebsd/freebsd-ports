@@ -4890,6 +4890,7 @@ ja-ipadic	ports/japanese/ipadic
 ja-ircII	ports/japanese/ircII
 ja-ja6		ports/japanese/ja6
 ja-jadetex-ptex	ports/japanese/jadetex-ptex
+ja-japana	ports/japanese/japana
 ja-japaneseAFM	ports/japanese/japaneseAFM
 ja-jargon-fpw	ports/japanese/jargon-fpw
 ja-jcode.pl	ports/japanese/jcode.pl
