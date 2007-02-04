@@ -22,4 +22,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
+
 .include <bsd.port.mk>
