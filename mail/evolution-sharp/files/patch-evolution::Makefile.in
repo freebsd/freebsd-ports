@@ -4,18 +4,18 @@
  
  install-data-local:
  	@if test -n '$(TARGET)'; then									\
--	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(libdir)";		\
--	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(libdir) || exit 1;		\
-+	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";		\
-+	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir) || exit 1;		\
+-	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(prefix)/lib";		\
+-	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(prefix)/lib || exit 1;		\
++	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(prefix)/lib";		\
++	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(prefix)/lib || exit 1;		\
  	fi
  
  uninstall-local:
  	@if test -n '$(TARGET)'; then									\
--	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /root $(DESTDIR)$(libdir)";		\
--	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /root $(DESTDIR)$(libdir) || exit 1;	\
-+	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";		\
-+	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir) || exit 1;	\
+-	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /root $(DESTDIR)$(prefix)/lib";		\
+-	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /root $(DESTDIR)$(prefix)/lib || exit 1;	\
++	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(prefix)/lib";		\
++	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(prefix)/lib || exit 1;	\
  	fi
  
  evolution-sharp.pub: $(top_srcdir)/evolution-sharp.pub
