@@ -48,5 +48,7 @@ post-patch:
 		's|/usr/local/bin/perl|${PERL}|g'
 	@${REINPLACE_CMD} -e 's|\%\%LOCALBASE\%\%|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/libcharset/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>
