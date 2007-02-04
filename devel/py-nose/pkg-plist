@@ -17,6 +17,9 @@ bin/nosetests
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/doctests.py
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/doctests.pyc
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/doctests.pyo
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/isolate.py
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/isolate.pyc
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/isolate.pyo
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/missed.py
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/missed.pyc
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/plugins/missed.pyo
@@ -29,6 +32,9 @@ bin/nosetests
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/case.py
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/case.pyc
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/case.pyo
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/commands.py
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/commands.pyc
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/commands.pyo
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/config.py
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/config.pyc
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/config.pyo
@@ -62,6 +68,9 @@ bin/nosetests
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/tools.py
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/tools.pyc
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/tools.pyo
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/twistedtools.py
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/twistedtools.pyc
+%%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/twistedtools.pyo
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/util.py
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/util.pyc
 %%PYTHON_SITELIBDIR%%/nose-%%NOSEVER%%-py%%PYTHONVER%%.egg/nose/util.pyo
