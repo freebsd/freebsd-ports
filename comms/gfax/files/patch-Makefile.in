@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Feb 28 17:13:10 2005
-+++ Makefile.in	Thu Jun  2 22:54:03 2005
-@@ -527,7 +527,6 @@
+--- Makefile.in.orig	Thu Oct 26 12:56:07 2006
++++ Makefile.in	Thu Oct 26 16:58:33 2006
+@@ -529,7 +529,6 @@
  @GCONF_SCHEMAS_INSTALL_TRUE@	    GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
  @GCONF_SCHEMAS_INSTALL_TRUE@	  done \
  @GCONF_SCHEMAS_INSTALL_TRUE@	fi
