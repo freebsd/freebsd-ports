@@ -184,3 +184,4 @@ share/sipxpbx/lib/xmlrpc-2.0.jar
 @dirrm lib/ruby/gems
 @dirrm lib/ruby
 @dirrm share/sipxpbx/lib
+@dirrm share/sipxpbx
