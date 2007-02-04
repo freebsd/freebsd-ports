@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 #		http://tidy.sourceforge.net/docs/:docs
 #MASTER_SITE_SUBDIR=	. old
+MASTER_SITE_SUBDIR=	thierry
 PKGNAMESUFFIX?=	-devel
 
 MAINTAINER?=	thierry@FreeBSD.org
