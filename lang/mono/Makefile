@@ -23,7 +23,7 @@ USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 LIBTOOLFILES=	configure libgc/configure
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-transform-name=\'\' \

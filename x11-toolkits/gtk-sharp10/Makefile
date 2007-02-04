@@ -20,7 +20,7 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 LATEST_LINK=	gtk-sharp10
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehack gtkhtml3 vte librsvg2
