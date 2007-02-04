@@ -141,6 +141,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/path.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/pattern1.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/pattern2.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/polaroid.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/polygon.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/polygon01.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/polyline.rb.html
@@ -231,6 +232,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/vignette.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/watermark.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/wave.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/wet_floor.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/writing_mode01.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/writing_mode02.rb.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo.rb
