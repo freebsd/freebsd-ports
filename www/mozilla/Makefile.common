@@ -290,11 +290,13 @@ gecko-post-patch:
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		${WRKSRC}/config/autoconf.mk.in
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
+		s|echo aout|echo elf|g' \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|echo aout|echo elf|g ; \
 		s|/usr/X11R6|${X11BASE}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
