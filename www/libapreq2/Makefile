@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=libapreq
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
+BROKEN=		Does not build
+
 USE_APACHE=	2.0+
 USE_LDCONFIG=yes
 GNU_CONFIGURE=	yes

@@ -14,6 +14,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	jfb@minet.net
 COMMENT=	XFce 4 xmms control plugin for xfce4-panel
 
+BROKEN=		Does not build
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

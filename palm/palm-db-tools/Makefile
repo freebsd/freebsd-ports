@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Utilities for the PalmOS flat-file database programs
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
