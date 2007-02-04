@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	xfce4-xmms-plugin
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.1
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
+PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
+PATCHFILES=	gcc295-xfce4-xmms-plugin.patch
 
 MAINTAINER=	jfb@minet.net
 COMMENT=	XFce 4 xmms control plugin for xfce4-panel
@@ -24,17 +26,23 @@ USE_GNOME=	gnometarget gtk20 intltool intlhack pango pkgconfig
 USE_XFCE=	configenv libgui libutil panel
 USE_XLIB=	yes
 
-OPTIONS=	BEEP	"Use Beep media player instead of xmms" 	off
+OPTIONS=	XMMS		"Enable xmms support"			on \
+		BEEP		"Enable beep-media-player support" 	off \
+		AUDACIOUS	"Enable audacious support"		off
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_BEEP)
-LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
-CONFIGURE_ARGS+=--with-player=beep
-.else
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
-CONFIGURE_ARGS+=--with-player=xmms
+RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
+.endif
+
+.if defined(WITH_XMMS)
+RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
+.endif
+
+.if defined(WITH_AUDACIOUS)
+RUN_DEPENDS+=	audacious:${PORTSDIR}/multimedia/audacious
 .endif
 
 post-patch:
