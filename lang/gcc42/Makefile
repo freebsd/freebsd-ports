@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20070124
+PORTREVISION=	20070131
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -32,7 +32,7 @@ CONFLICTS?=	gcc-withfortran-4.2.*
 
 SUFFIX=		42
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
-NOT_FOR_ARCHS=	alpha
+NOT_FOR_ARCHS=	alpha ia64
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -47,10 +47,6 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		Fails to build due to "illegal instruction" error
-.endif
 
 .if ${OSVERSION} < 502102
 CONFIGURE_ARGS+=	--disable-libgomp
@@ -167,10 +163,5 @@ post-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
-
-cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} "LATEST.*${PORTVERSION:C/.[0-9]+$//}"
-.endfor
 
 .include <bsd.port.post.mk>
