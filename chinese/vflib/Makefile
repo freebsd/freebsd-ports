@@ -42,8 +42,9 @@ pre-patch:
 	@${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" -e "s;%%X11BASE%%;${X11BASE};g" ${DISTDIR}/zh-vfontcap.in > ${WRKSRC}/vfontcap
 
 post-patch:
-	${REINPLACE_CMD} -e "s,varargs.h,stdarg.h," ${WRKSRC}/tools/disol.c
-	${REINPLACE_CMD} -e "s,^vflib2_version=.*,vflib2_version='${VFLIB_VERSION}'," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,varargs.h,stdarg.h," ${WRKSRC}/tools/disol.c
+	@${REINPLACE_CMD} -e "s,^vflib2_version=.*,vflib2_version='${VFLIB_VERSION}'," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,echo aout,echo elf," ${WRKSRC}/ltconfig
 
 post-install:
 	@(cd ${WRKSRC}/tools; \
