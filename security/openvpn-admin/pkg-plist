@@ -1,7 +1,6 @@
-sbin/openvpn-admin
 lib/openvpn-admin/openvpn-admin.exe
-etc/pam.d/openvpn-admin
-%%DATADIR%%/openvpn-admin.desktop
-@dirrm %%DATADIR%%
+sbin/openvpn-admin
+share/applications/openvpn-admin.desktop
+@dirrmtry share/applications
 @dirrm lib/openvpn-admin
 @dirrmtry etc/openvpn
