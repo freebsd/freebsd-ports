@@ -386,7 +386,8 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[$$]abi_plugin_source/../wv|${LOCALBASE}/include/wv|g' \
+	@${REINPLACE_CMD} -e 's|[$$]abi_plugin_source/../wv|${LOCALBASE}/include/wv|g ; \
+	    	s|echo aout|echo elf|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
