@@ -14,7 +14,6 @@ MASTER_SITES=	http://finarfinek.republika.pl/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A guitar effects processor for GTK
 
-USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
