@@ -17,8 +17,6 @@ COMMENT=	Qt port of Plastik KDE theme
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-BROKEN=		Configure fails
-
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoheader:259
@@ -28,6 +26,8 @@ INSTALLS_SHLIB=	yes
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		QMAKE=${LOCALBASE}/bin/qmake
+CONFIGURE_ENV+=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		THREAD_LIBS="${PTHREAD_LIBS}"
 
 QTSTYLESDIR=	${PREFIX}/lib/plugins/styles
 
