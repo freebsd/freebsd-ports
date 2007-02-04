@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A 2D graphics library
 
+USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XLIB=	yes
@@ -37,10 +38,6 @@ OPTIONS=	BGI "Enable BGI support" on \
 INFO=		grx
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-USE_GCC=	3.4
-.endif
 
 .if defined(WITH_BGI)
 CONFIGURE_ARGS+=--enable-bgi
