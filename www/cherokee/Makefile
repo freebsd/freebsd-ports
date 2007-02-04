@@ -7,7 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/ \
 		http://www.alaskaparadise.com/freebsd/
@@ -60,12 +60,6 @@ CONFIGURE_ARGS+=--disable-tls
 
 .if defined(WITH_NOIPV6)
 CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	PAM=""
-.else
-PLIST_SUB+=	PAM="@comment "
 .endif
 
 post-patch:
