@@ -14,19 +14,21 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${RELEASE}
 
 PATCH_SITES=	ftp://invisible-island.net/ncurses/${RELEASE}/ \
-		LOCAL/rafan/ncurses
+		${MASTER_SITE_LOCAL:S/$/:local/}
+PATCH_SITE_SUBDIR=	rafan/ncurses/:local
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output (development version)
 
 CONFLICTS=	ncurses-[0-9]*
 
-PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127 20070128
+PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127 20070128 \
+		20070203
 
 RELEASE=	5.6
 
 .for i in ${PATCHES}
-PATCHFILES+=	${PORTNAME}-${RELEASE}-${i}.patch.gz
+PATCHFILES+=	${PORTNAME}-${RELEASE}-${i}.patch.gz:DEFAULT,local
 PATCHDATE=	${i}
 .endfor
 
