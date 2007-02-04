@@ -3,7 +3,6 @@ bin/x11amp
 include/x11amp/configfile.h
 include/x11amp/plugin.h
 include/x11amp/x11ampctrl.h
-lib/libx11amp.a
 lib/libx11amp.la
 lib/libx11amp.so
 lib/libx11amp.so.9
