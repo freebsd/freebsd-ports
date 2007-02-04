@@ -3,24 +3,21 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
+#   $Id: Makefile,v 1.14 2006/10/26 05:34:40 tmclau02 Exp $
 #
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	http://go-mono.com/sources/gecko-sharp/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono bindings for embeding mozilla
 
-BUILD_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10
-RUN_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10
-
 USE_GECKO=	firefox mozilla
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget gtksharp10
 LATEST_LINK=	gecko-sharp10
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
