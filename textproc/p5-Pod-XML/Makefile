@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pod-XML
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Module to convert POD to XML
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
-
-RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents \
 		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
