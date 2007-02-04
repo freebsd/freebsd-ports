@@ -294,9 +294,11 @@ gecko-post-patch:
 		s|echo aout|echo elf|g' \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
-		${WRKSRC}/directory/c-sdk/configure
+	@if [ -d ${WRKSRC}/directory/c-sdk ]; then \
+		${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+			${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
+			${WRKSRC}/directory/c-sdk/configure ; \
+	fi
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|echo aout|echo elf|g ; \
