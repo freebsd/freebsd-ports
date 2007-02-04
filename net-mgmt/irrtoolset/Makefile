@@ -7,6 +7,7 @@
 
 PORTNAME=	irrtoolset
 PORTVERSION=	4.8.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		ftp://ftp.ripe.net/tools/
