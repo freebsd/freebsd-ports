@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		lwp
-PORTVERSION=		14.3
+PORTVERSION=		14.5
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
 			http://mirror1.liquidweather.net/ \
@@ -39,7 +39,6 @@ PLIST_SUB=		LWPVER=${DISTFILES}
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} -f *~ locale/*/LC_MESSAGES/*.po*
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		test_gui.py
 
