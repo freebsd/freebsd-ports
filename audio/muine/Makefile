@@ -3,12 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.47 2006/08/06 23:48:40 tmclau02 Exp $
+#   $Id: Makefile,v 1.54 2007/01/26 03:17:25 tmclau02 Exp $
 #
 
 PORTNAME=	muine
-PORTVERSION=	0.8.5
-PORTREVISION=	3
+PORTVERSION=	0.8.7
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine-player.org/releases/
 
@@ -20,15 +19,12 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		gdbm:${PORTSDIR}/databases/gdbm \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
-BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
-RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
+RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui
-USE_XLIB=	yes
+USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui gnomesharp20
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -50,8 +46,8 @@ CONFIGURE_ARGS+=	--disable-faad2
 CONFIGURE_ARGS+=	--enable-xine=yes
 LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
 .else
-USE_GSTREAMER80+=	gconf
-CONFIGURE_ARGS+=	--enable-gstreamer=0.8
+USE_GSTREAMER+=	gconf
+CONFIGURE_ARGS+=	--enable-gstreamer=0.10
 .endif
 
 post-patch:
@@ -62,7 +58,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/muine/plugins
-.for _plugin in TrayIcon.dll DashboardPlugin.dll
+.for _plugin in TrayIcon.dll
 	${INSTALL_DATA} ${WRKSRC}/plugins/${_plugin} ${PREFIX}/lib/muine/plugins
 .endfor
 
