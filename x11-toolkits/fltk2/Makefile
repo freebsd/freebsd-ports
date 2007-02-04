@@ -19,7 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r5599
+SNAPSHOT=	r5642
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off
