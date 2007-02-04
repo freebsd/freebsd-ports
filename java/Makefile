@@ -8,6 +8,7 @@
     SUBDIR += bluej
     SUBDIR += bouncycastle
     SUBDIR += bsh
+    SUBDIR += cacao
     SUBDIR += castor
     SUBDIR += classpath
     SUBDIR += collections

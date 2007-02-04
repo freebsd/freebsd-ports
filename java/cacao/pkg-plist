@@ -1,0 +1,6 @@
+bin/cacao
+lib/libjvm.la
+lib/libjvm.so
+lib/libjvm-0.97.so
+share/cacao/vm.zip
+@dirrm share/cacao
