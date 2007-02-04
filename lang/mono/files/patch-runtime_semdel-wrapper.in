@@ -1,9 +1,0 @@
---- runtime/semdel-wrapper.in.orig	Sun Sep  4 18:19:00 2005
-+++ runtime/semdel-wrapper.in	Sun Sep  4 19:04:03 2005
-@@ -0,0 +1,6 @@
-+#! /bin/sh
-+r='@mono_build_root@'
-+MONO_CFG_DIR='@mono_cfg_dir@'
-+MONO_SHARED_DIR=${MONO_SHARED_DIR_PORT:="$r/runtime"}
-+export MONO_CFG_DIR MONO_SHARED_DIR
-+exec "$r/libtool" --mode=execute "$r/mono/handles/semdel" "$@"
