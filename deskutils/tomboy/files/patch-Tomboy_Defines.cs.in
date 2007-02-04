@@ -1,0 +1,11 @@
+--- Tomboy/Defines.cs.in.orig	Thu Dec  7 19:06:17 2006
++++ Tomboy/Defines.cs.in	Sun Jan 21 00:02:01 2007
+@@ -8,7 +8,7 @@
+ 		public const string VERSION          = "@version@";
+ 		public const string DATADIR          = "@datadir@";
+ 		public const string GNOME_LOCALE_DIR = "@datadir@/locale";
+-		public const string GNOME_HELP_DIR   = "@datadir@/gnome/help/tomboy";
++		public const string GNOME_HELP_DIR   = "@datadir@/help/tomboy";
+ 		public const string PKGLIBDIR        = "@pkglibdir@";
+ 		public const string SYS_PLUGINS_DIR  = "@pkglibdir@/Plugins";
+ 	}

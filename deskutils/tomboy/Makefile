@@ -3,12 +3,12 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.25 2006/09/15 02:47:48 tmclau02 Exp $
+#   $Id: Makefile,v 1.37 2007/01/22 20:19:00 tmclau02 Exp $
 #
 
 PORTNAME=	tomboy
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,25 +17,25 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Personal note taking system for the GNOME desktop
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-    		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-    		${LOCALBASE}/lib/mono/gmime-sharp/gmime-sharp.dll:${PORTSDIR}/mail/gmime2-sharp
-RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
-		${LOCALBASE}/lib/mono/gmime-sharp/gmime-sharp.dll:${PORTSDIR}/mail/gmime2-sharp
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+BUILD_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp/gmime-sharp.dll:${PORTSDIR}/mail/gmime2-sharp
+RUN_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp/gmime-sharp.dll:${PORTSDIR}/mail/gmime2-sharp \
+		dbus-daemon:${PORTSDIR}/devel/dbus
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnometarget intltool gnomeprefix gnomepanel
-USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnometarget intltool gnomeprefix gnomesharp20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
-CONFIGURE_ARGS+=--enable-evolution=yes
+CONFIGURE_ARGS+=--enable-evolution=yes \
+		--enable-dbus=yes \
+		--enable-dbus-service-dir-check=no
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		DBUS_SERVICE_DIR="${PREFIX}/share/dbus-1/services"
 
 MAN1=		tomboy.1
 GCONF_SCHEMAS=	tomboy.schemas
@@ -43,9 +43,7 @@ GCONF_SCHEMAS=	tomboy.schemas
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/dbus-1.0|(prefix)/share/dbus-1|g' \
-		${WRKSRC}/data/Makefile.in
-	@${REINPLACE_CMD} -e 's|`$$PKG_CONFIG --variable=libdir libpanelapplet-2.0`|"$$libdir"|g; \
+	@${REINPLACE_CMD} 's|`$$PKG_CONFIG --variable=libdir libpanelapplet-2.0`|"$$libdir"|g; \
 	s|PANELAPPLET_SERVER_DIR="$$libdir|PANELAPPLET_SERVER_DIR="$$prefix/libdata|g; \
 	s|PANELAPPLET_SERVER_DIR="$$PANELAPPLET_LIBDIR|PANELAPPLET_SERVER_DIR="$$prefix/libdata|g' \
 		${WRKSRC}/configure
