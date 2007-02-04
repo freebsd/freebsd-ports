@@ -4,11 +4,11 @@
 # Whom:                 Christopher Nehren
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.34 2006/02/05 03:05:24 tmclau02 Exp $
+#   $Id: Makefile,v 1.38 2006/11/23 00:42:17 killfill Exp $
 #
 
 PORTNAME=	monodoc
-PORTVERSION=	1.1.13
+PORTVERSION=	1.2.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 
@@ -19,9 +19,11 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 USE_GNOME=	gnomehack gnometarget
-USE_X_PREFIX=	yes
+USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+MAN1=		mdnormalizer.1 mdvalidator.1 monodocer.1 monodocs2html.1
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
