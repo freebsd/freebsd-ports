@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	marsnomercy
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mars
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 USE_GL=		yes
 USE_SDL=	sdl image ttf
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
+SCONS_ARGS=	prefix=${PREFIX}
 
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_FILES=	bin/mars-nomercy libexec/mars
