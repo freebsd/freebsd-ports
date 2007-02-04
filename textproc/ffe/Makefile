@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffe
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	textproc
 MASTER_SITES=	SFE/ff-extractor
 
@@ -24,7 +24,7 @@ post-patch:
 
 post-install:
 .ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${DOCSDIR}/
 .endif
 
