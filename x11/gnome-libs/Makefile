@@ -45,6 +45,9 @@ DOCSDIR=	${PREFIX}/share/doc/gnomelibs
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/gnome-config.in ${WRKSRC}/libgnome/gnome-util.c
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure \
+		${WRKSRC}/libart_lgpl/configure
 
 # need to make launched gnome-terminals appear in utmp/wtmp
 .if !target(post-install)
