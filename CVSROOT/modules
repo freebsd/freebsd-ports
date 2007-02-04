@@ -3638,6 +3638,7 @@ gnome-print	ports/print/gnome-print
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
 gnome-session	ports/x11/gnome-session
+gnome-sharp20	ports/x11-toolkits/gnome-sharp20
 gnome-speech	ports/accessibility/gnome-speech
 gnome-spell	ports/textproc/gnome-spell
 gnome-splashscreen-manager	ports/x11-themes/gnome-splashscreen-manager
