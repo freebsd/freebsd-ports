@@ -24,9 +24,15 @@ lib/monodoc/sources/Mono.zip
 lib/monodoc/sources/Novell.source
 lib/monodoc/sources/Novell.tree
 lib/monodoc/sources/Novell.zip
+lib/monodoc/sources/cs-errors.source
+lib/monodoc/sources/cs-errors.tree
+lib/monodoc/sources/cs-errors.zip
 lib/monodoc/sources/ecma334.source
 lib/monodoc/sources/ecma334.tree
 lib/monodoc/sources/ecma334.zip
+lib/monodoc/sources/monoapi.source
+lib/monodoc/sources/monoapi.tree
+lib/monodoc/sources/monoapi.zip
 lib/monodoc/sources/netdocs.source
 lib/monodoc/sources/netdocs.tree
 lib/monodoc/sources/netdocs.zip
