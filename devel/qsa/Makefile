@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qsa
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_QT}
 MASTER_SITE_SUBDIR=../../qsa/source
@@ -48,7 +48,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extrapatch-src_engine_qsoperations.cpp
 pre-configure:
 # Adjust installation directories for the documentation and the qmake feature extension
 	@${REINPLACE_CMD} -e 's|$$$$QSA_INSTALL_PREFIX/doc/html|$$$$QSA_INSTALL_PREFIX/share/doc/qsa/html|g' \
-			  -e 's|$$$$QSA_INSTALL_PREFIX/mkspec/features|$$$$QSA_INSTALL_PREFIX/share/qt/mkspecs/features|g' \
+			  -e 's|$$$$QSA_INSTALL_PREFIX/mkspecs/features|$$$$QSA_INSTALL_PREFIX/share/qt/mkspecs/features|g' \
 		${WRKSRC}/src/qsa/qsa.pro
 # Yank the docs-installation from the configure script, qt does not handle
 # global removal of docs from assistant.
