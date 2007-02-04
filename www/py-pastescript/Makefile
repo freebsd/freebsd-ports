@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	PasteScript
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/P/PasteScript/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dryice@FreeBSD.org
