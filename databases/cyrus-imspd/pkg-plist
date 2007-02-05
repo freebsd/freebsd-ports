@@ -1,4 +1,3 @@
-etc/rc.d/imspd.sh
 lib/sasl2/imspd.conf
 sbin/imspd
 %%PORTDOCS%%share/doc/imspd/Setup-instructions
