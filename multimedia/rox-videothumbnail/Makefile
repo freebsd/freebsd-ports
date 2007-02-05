@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rox-videothumbnail
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.kerofin.demon.co.uk/rox/
 DISTNAME=	VideoThumbnail-${PORTVERSION}
