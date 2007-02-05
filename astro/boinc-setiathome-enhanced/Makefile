@@ -21,17 +21,22 @@ RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 # The compiler flags below are copied from m4/optimizations.m4,
 # leaving out the -march flag which is set by /usr/share/mk/bsd.cpu.mk
 .if ${MACHINE_CPU:Msse3}
-CFLAGS+=	-msse3 -mfpmath=sse
+CFLAGS+=	-msse3
 .elif ${MACHINE_CPU:Msse2}
-CFLAGS+=	-msse2 -mfpmath=sse
+CFLAGS+=	-msse2
 .elif ${MACHINE_CPU:Msse}
-CFLAGS+=	-msse -mfpmath=sse
+CFLAGS+=	-msse
 .endif
 .if ${MACHINE_CPU:Mmmx}
-CFLAGS+=	-mmmx -mfpmath=387
+CFLAGS+=	-mmmx
 .endif
 .ifdef ${MACHINE_CPU:M3dnow}
-CFLAGS+=	-m3dnow -mfpmath=387
+CFLAGS+=	-m3dnow
+.endif
+.if ${MACHINE_CPU:Msse3} || ${MACHINE_CPU:Msse2} || ${MACHINE_CPU:Msse}
+CFLAGS+=	-mfpmath=sse
+.else
+CFLAGS+=	-mfpmath=387
 .endif
 # From http://www,lb.shuttle.de/apastron/boincDown.shtml :
 # what about other 64 bit archs (especially S/390, see gcc.info.gz) ?
