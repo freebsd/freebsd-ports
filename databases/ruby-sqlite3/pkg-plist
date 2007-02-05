@@ -19,97 +19,98 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/blank.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/DL.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/DL/PtrData.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Kernel.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/AbortException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/AuthorizationException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Blob.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/BusyException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/CantOpenException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants/ColumnType.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants/ErrorCode.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants/TextRep.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ConstraintException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/CorruptException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Database.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Database/FunctionProxy.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL/API.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL/Driver.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native/Driver.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/EmptyException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Error.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Exception.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/FormatException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/FullException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/IOException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/InternalException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/InterruptException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/LockedException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MemoryException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MismatchException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MisuseException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/NotADatabaseException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/NotFoundException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/PermissionException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Pragmas.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ProtocolException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/RangeException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ReadOnlyException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet/FieldsContainer.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet/TypesContainer.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/SQLException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/SchemaChangedException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Statement.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/TooBigException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Translator.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/UnsupportedException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Value.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Version.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/String.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/faq/faq.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/faq/faq.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/faq/faq.yml
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/constants_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/database_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl/api_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl/driver_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/native/driver_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/errors_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/pragmas_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/resultset_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/statement_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/translator_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/value_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/version_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/native
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/faq
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Database
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Constants
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/DL
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/DL.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/DL/PtrData.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/Kernel.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/AbortException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/AuthorizationException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Blob.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/BusyException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/CantOpenException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Constants.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Constants/ColumnType.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Constants/ErrorCode.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Constants/TextRep.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/ConstraintException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/CorruptException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Database.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Database/FunctionProxy.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver/DL.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver/DL/API.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver/DL/Driver.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver/Native.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver/Native/Driver.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/EmptyException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Error.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Exception.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/FormatException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/FullException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/IOException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/InternalException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/InterruptException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/LockedException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/MemoryException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/MismatchException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/MisuseException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/NotADatabaseException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/NotFoundException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/PermissionException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Pragmas.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/ProtocolException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/RangeException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/ReadOnlyException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/ResultSet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/ResultSet/FieldsContainer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/ResultSet/TypesContainer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/SQLException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/SchemaChangedException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Statement.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/TooBigException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Translator.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/UnsupportedException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Value.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/SQLite3/Version.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/classes/String.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/faq/faq.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/faq/faq.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/faq/faq.yml
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/constants_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/database_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/driver/dl/api_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/driver/dl/driver_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/driver/native/driver_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/errors_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/pragmas_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/resultset_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/statement_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/translator_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/value_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/version_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/files/lib/sqlite3_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/driver/native
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/driver/dl
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/files/lib/sqlite3/driver
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/files/lib/sqlite3
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/files/lib
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/faq
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/SQLite3/ResultSet
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver/Native
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver/DL
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/SQLite3/Driver
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/SQLite3/Database
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/SQLite3/Constants
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/SQLite3
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes/DL
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/api
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
