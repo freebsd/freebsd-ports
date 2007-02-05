@@ -79,7 +79,14 @@ share/doc/HTML/en/kbtv/kbtv_screenshot_dialog_processing.png
 share/doc/HTML/en/kbtv/kbtv_screenshot_kdcop.png
 share/doc/HTML/en/kbtv/kbtv_screenshot_main_window.png
 share/doc/HTML/en/kbtv/kbtv_screenshot_main_window_webcam.png
-share/doc/HTML/en/kbtv/kbtv_screenshot_menus.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_channel.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_help.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_settings.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_settings_driver.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_settings_mixer.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_settings_size.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_settings_volume.png
+share/doc/HTML/en/kbtv/kbtv_screenshot_menu_tools.png
 share/doc/HTML/en/kbtv/using-kbtv.html
 share/icons/crystalsvg/64x64/apps/kbtv.png
 @dirrm share/doc/HTML/en/kbtv
