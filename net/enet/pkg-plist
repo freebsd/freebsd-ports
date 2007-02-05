@@ -1,6 +1,6 @@
+include/enet/callbacks.h
 include/enet/enet.h
 include/enet/list.h
-include/enet/memory.h
 include/enet/protocol.h
 include/enet/time.h
 include/enet/types.h
@@ -9,10 +9,8 @@ include/enet/utility.h
 include/enet/win32.h
 lib/libenet.a
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.dox
-%%PORTDOCS%%%%DOCSDIR%%/api.txt
 %%PORTDOCS%%%%DOCSDIR%%/design.dox
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.dox
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/enet
