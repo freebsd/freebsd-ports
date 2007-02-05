@@ -1,0 +1,142 @@
+--- Makefile.in.orig	Tue Jan 30 11:20:44 2007
++++ Makefile.in	Tue Jan 30 11:30:35 2007
+@@ -64,6 +64,8 @@
+ 
+ # Directory in which to install the include file tk.h:
+ INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
++GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
+ 
+ # Path to the private tk header dir:
+ PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
+@@ -94,7 +96,7 @@
+ # The directory containing the Tcl sources and headers appropriate
+ # for this version of Tk ("srcdir" will be replaced or has already
+ # been replaced by the configure script):
+-TCL_GENERIC_DIR		= @TCL_SRC_DIR@/generic
++TCL_GENERIC_DIR		= @prefix@/include/tcl@TCL_VERSION@/generic
+ 
+ # The directory containing the platform specific Tcl sources and headers
+ # appropriate for this version of Tk:
+@@ -131,7 +133,7 @@
+ #CFLAGS			= $(CFLAGS_DEBUG)
+ #CFLAGS			= $(CFLAGS_OPTIMIZE)
+ #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS			= @CFLAGS_DEFAULT@ @CFLAGS@
++CFLAGS			+= @CFLAGS_DEFAULT@ @CFLAGS@
+ 
+ # Flags to pass to the linker
+ LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
+@@ -266,7 +268,7 @@
+ STLIB_LD		= @STLIB_LD@
+ SHLIB_LD		= @SHLIB_LD@
+ SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
+-TK_SHLIB_LD_EXTRAS	= @TK_SHLIB_LD_EXTRAS@
++TK_SHLIB_LD_EXTRAS	= @TCL_SHLIB_LD_EXTRAS@
+ 
+ # Additional search flags needed to find the various shared libraries
+ # at run-time.  The first symbol is for use when creating a binary
+@@ -489,6 +491,8 @@
+ 	default.h ks_names.h tkPatch.h tk.h tkButton.h tkCanvas.h tkInt.h  \
+ 	tkPort.h tkScrollbar.h tkText.h
+ 
++INSTALL_HDRS = tk.h tkDecls.h tkInt.h tkIntXlibDecls.h
++
+ DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
+ 
+ all: binaries libraries doc
+@@ -508,6 +512,12 @@
+ ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
+ 	rm -f $@
+ 	@MAKE_LIB@
++	ln -sf @TK_LIB_FILE@ libtk${SHORT_TK_VER}.so
++
++libtk${SHORT_TK_VER}.a: ${OBJS}
++	rm -f libtk${SHORT_TK_VER}.a
++	ar cr libtk${SHORT_TK_VER}.a ${OBJS}
++	$(RANLIB) libtk${SHORT_TK_VER}.a
+ 
+ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f $@
+@@ -626,7 +636,8 @@
+ # some ranlibs write to current directory, and this might not always be
+ # possible (e.g. if installing as root).
+ 
+-install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) \
++	libtk${SHORT_TK_VER}.a wish
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(PKG_INSTALL_DIR); \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+@@ -659,10 +670,15 @@
+ 	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
+ 			$(LIB_INSTALL_DIR)/$(TK_EXP_FILE); \
+ 	    fi
++	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
++	@echo "Installing libtk${SHORT_TK_VER}.a"
++	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
++	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
+ 	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
+ 	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
+-	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
+-	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
++	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/tk$(VERSION)"
++	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
++	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
+ 	@if test "$(STUB_LIB_FILE)" != "" ; then \
+ 	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
+ 	    @INSTALL_STUB_LIB@ ; \
+@@ -673,6 +689,7 @@
+ 	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
+ 	    XLIB_INCLUDE_INSTALL_DIR=$(INCLUDE_INSTALL_DIR)/X11; fi; \
+ 	for i in $(INCLUDE_INSTALL_DIR) $${XLIB_INCLUDE_INSTALL_DIR} \
++		$(GENERIC_INCLUDE_INSTALL_DIR) $(UNIX_INCLUDE_INSTALL_DIR) \
+ 		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images \
+ 		$(SCRIPT_INSTALL_DIR)/msgs; \
+ 	    do \
+@@ -687,11 +704,14 @@
+ 	    chmod +x $(SRC_DIR)/install-sh; \
+ 	    fi
+ 	@echo "Installing header files";
+-	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h \
+-		$(GENERIC_DIR)/tkPlatDecls.h $(@TK_WINDOWINGSYSTEM@_HDRS) ; \
++	${BSD_INSTALL_DATA} $(GENERIC_DIR)/*.h $(GENERIC_INCLUDE_INSTALL_DIR)/
++	${BSD_INSTALL_DATA} $(UNIX_DIR)/*.h $(UNIX_INCLUDE_INSTALL_DIR)/
++	@for i in $(INSTALL_HDRS) ; \
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
+-	    done;
++	    j=`basename $$i` ; \
++	    ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/$$j $(INCLUDE_INSTALL_DIR)/$$j ; \
++	done
++
+ 	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
+ 	    do \
+ 	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR)/X11; \
+@@ -762,20 +782,13 @@
+ 		else true; \
+ 		fi; \
+ 	    done;
+-	@echo "Installing and cross-linking top-level (.1) docs";
+-	@for i in $(TOP_DIR)/doc/*.1; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN1_INSTALL_DIR); \
+-	done
+-
+-	@echo "Installing and cross-linking C API (.3) docs";
+-	@for i in $(TOP_DIR)/doc/*.3; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN3_INSTALL_DIR); \
+-	done
+ 
+-	@echo "Installing and cross-linking command (.n) docs";
+-	@for i in $(TOP_DIR)/doc/*.n; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MANN_INSTALL_DIR); \
+-	done
++	@echo "Installing top-level (.1) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.1 $(MAN1_INSTALL_DIR)
++	@echo "Installing C API (.3) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.3 $(MAN3_INSTALL_DIR)
++	@echo "Installing command (.n) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.n $(MANN_INSTALL_DIR)
+ 
+ # Optional target to install private headers
+ install-private-headers: libraries
