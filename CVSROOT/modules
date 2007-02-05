@@ -5759,6 +5759,7 @@ ko-imhangul	ports/korean/imhangul
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
 ko-kde3-i18n	ports/korean/kde3-i18n
+ko-libhangul	ports/korean/libhangul
 ko-linuxdoc-sgml	ports/korean/linuxdoc-sgml
 ko-man-doc	ports/korean/man-doc
 ko-mizifont	ports/korean/mizifont
