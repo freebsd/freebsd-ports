@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	CGI-Ex
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CGI utility suite - makes powerful application writing fun and easy
 
 PERL_CONFIGURE=	yes
