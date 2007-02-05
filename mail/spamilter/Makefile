@@ -50,13 +50,8 @@ PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
 		bin/spamilter \
 		bin/spamilter-system-report bin/spamilter-user-report \
 		etc/rc.d/milter-spamilter.sh.sample
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	%%DOCSDIR%%/Changelog %%DOCSDIR%%/INSTALL %%DOCSDIR%%/LICENSE
-PLIST_FILES+=	%%DOCSDIR%%/docs.html %%DOCSDIR%%/docs.txt
-PLIST_FILES+=	%%DOCSDIR%%/db.rcpt %%DOCSDIR%%/db.rdnsbl %%DOCSDIR%%/db.sndr
-PLIST_FILES+=	%%DOCSDIR%%/policy.html %%DOCSDIR%%/spamilter.rc
-PLIST_DIRS+=	%%DOCSDIR%%
-.endif
+PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
+		db.rdnsbl db.sndr policy.html spamilter.rc
 
 pre-configure:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/spamilter.sh \
