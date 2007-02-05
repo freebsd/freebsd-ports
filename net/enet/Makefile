@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	enet
-PORTVERSION=	20040118
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://enet.cubik.org/download/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://enet.bespin.org/download/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Simple and robust communication library based on UDP
 
 GNU_CONFIGURE=	yes
-DOCS=		api.txt tutorial.txt design.txt docs/FAQ.dox docs/design.dox \
-		docs/tutorial.dox
+DOCS=		design.txt docs/FAQ.dox docs/design.dox docs/tutorial.dox
 
 post-install:
 .if !defined(NOPORTDOCS)
