@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.berlios.de/portsman/
 # temporary
 DISTNAME=	${PORTNAME}-${PORTVERSION}-rc2
 
-MAINTAINER=	anselmg@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses based front-end to manage the FreeBSD ports collection
 
 .include <bsd.port.pre.mk>
