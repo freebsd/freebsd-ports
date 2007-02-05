@@ -4,7 +4,6 @@ share/applications/bibletime.desktop
 share/apps/bibletime/bibletimeui.rc
 share/apps/bibletime/pics/startuplogo.png
 share/apps/bibletime/tips
-%%DOCSDIR%%/handbook/common
 %%DOCSDIR%%/handbook/hdbk-config.docbook
 %%DOCSDIR%%/handbook/hdbk-intro.docbook
 %%DOCSDIR%%/handbook/hdbk-operation.docbook
@@ -49,7 +48,6 @@ share/apps/bibletime/tips
 %%DOCSDIR%%/handbook/ss_mainterms.png
 %%DOCSDIR%%/handbook/ss_searchanal.png
 %%DOCSDIR%%/handbook/ss_searchopts.png
-%%DOCSDIR%%/howto/common
 %%DOCSDIR%%/howto/how2-basics.docbook
 %%DOCSDIR%%/howto/how2-importance.docbook
 %%DOCSDIR%%/howto/how2-interpretation.docbook
@@ -147,7 +145,6 @@ share/icons/hicolor/48x48/actions/bt_tile.png
 share/icons/hicolor/48x48/actions/bt_tile_auto.png
 share/icons/hicolor/48x48/apps/bibletime.png
 share/icons/hicolor/64x64/apps/bibletime.png
-share/doc/HTML/en/common/common
 @dirrm %%DOCSDIR%%/howto
 @dirrm %%DOCSDIR%%/handbook
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
