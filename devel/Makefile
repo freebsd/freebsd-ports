@@ -240,6 +240,7 @@
     SUBDIR += directfb
     SUBDIR += distcc
     SUBDIR += distel
+    SUBDIR += ditrack
     SUBDIR += dits
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx

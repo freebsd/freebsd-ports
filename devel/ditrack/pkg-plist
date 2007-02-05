@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PYTHON_SITELIBDIR%%/DITrack/Command/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/act.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/cat.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/generic.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/help.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/list.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/new.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB.py
+%%PYTHON_SITELIBDIR%%/DITrack/Edit.py
+%%PYTHON_SITELIBDIR%%/DITrack/SVN.py
+%%PYTHON_SITELIBDIR%%/DITrack/UI.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/cmdline.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/common.py
+%%PYTHON_SITELIBDIR%%/DITrack/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/dt/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/dt/globals.py
+bin/dt
+bin/dt-createdb
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/dt
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Util
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Command
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

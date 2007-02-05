@@ -1,0 +1,6 @@
+DITrack is a free, open source, lightweight, distributed issue (bug,
+defect, ticket) tracking system using a Subversion repository instead
+of a backend database. It is written in Python and runs in UNIX
+environment (*BSD, Linux, MacOS X).
+
+WWW:	http://www.ditrack.org/
