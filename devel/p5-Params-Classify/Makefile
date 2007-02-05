@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Params-Classify
-PORTVERSION=	0.001
+PORTVERSION=	0.002
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Params
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Argument type classification
 
 PERL_CONFIGURE=	yes
