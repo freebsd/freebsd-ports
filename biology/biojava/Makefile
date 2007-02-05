@@ -33,6 +33,8 @@ RUN_DEPENDS=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb \
 BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 .endif
 
+BROKEN=		Does not build
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
