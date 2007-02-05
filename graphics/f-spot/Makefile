@@ -27,7 +27,6 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gnomesharp20
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
