@@ -38,7 +38,6 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/pripyrtet.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/rotate.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-discrete.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-surf.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-surf.stl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/splines.geo
@@ -49,6 +48,7 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i3
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i4
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i5
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/transfinite.geo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demos
