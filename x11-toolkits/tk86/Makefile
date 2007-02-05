@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tk
 # Date created:		17 January 2007
-# Whom:			jkh
+# Whom:			Martin Matuska <martin@matuska.org>
 #
 # $FreeBSD$
 #
