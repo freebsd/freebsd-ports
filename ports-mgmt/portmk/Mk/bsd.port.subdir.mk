@@ -60,9 +60,6 @@ OSVERSION!= /sbin/sysctl -n kern.osreldate
 OSVERSION!= /usr/sbin/sysctl -n kern.osreldate
 .endif
 .endif
-.if !defined(PORTOBJFORMAT)
-PORTOBJFORMAT?=	elf
-.endif
 .endif
 
 ID?=	${DESTDIR}/usr/bin/id
@@ -322,7 +319,6 @@ README.html:
 	OPSYS="${OPSYS:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	UID="${UID:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	PKGINSTALLVER="${PKGINSTALLVER:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
