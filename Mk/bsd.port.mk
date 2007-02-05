@@ -2289,8 +2289,8 @@ PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
 
-.if (${OSVERSION} < 491101 && ${PKGORIGIN} != "ports-mgmt/pkg_install") || exists(${LOCALBASE}/sbin/pkg_info)
-.if ${OSVERSION} < 491101 && ${PKGORIGIN} != "ports-mgmt/pkg_install"
+.if ((${OSVERSION} < 504105 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600103) || (${OSVERSION} >= 700000 && ${OSVERSION} < 700012)) && ${PKGORIGIN} != "ports-mgmt/pkg_install") || exists(${LOCALBASE}/sbin/pkg_info)
+.if (${OSVERSION} < 504105 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600103) || (${OSVERSION} >= 700000 && ${OSVERSION} < 700012)) && ${PKGORIGIN} != "ports-mgmt/pkg_install"
 EXTRACT_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install
 .endif
 .if !defined(DESTDIR)
