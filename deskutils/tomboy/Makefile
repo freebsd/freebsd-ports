@@ -27,7 +27,6 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnometarget intltool gnomeprefix gnomesharp20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
