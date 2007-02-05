@@ -14,10 +14,3 @@
  
  	if (res == -1) return -errno;
  
-@@ -928,5 +923,5 @@
- 	}
- 
- 	umask(0);
--	return fuse_main(args.argc, args.argv, &unionfs_oper, NULL);
-+	return fuse_main(args.argc, args.argv, &unionfs_oper);
- }

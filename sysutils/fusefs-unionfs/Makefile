@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	unionfs
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/unionfs-fuse/releases/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	unionfs-fuse-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	FUSE based implementation of the well-known unionfs
 
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
