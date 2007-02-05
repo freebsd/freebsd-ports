@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070205:
+  AFFECTS: users of devel/portmk
+  AUTHOR: linimon@FreeBSD.org
+
+  With the repocopy of portmk to ports-mgmt, you need to update your
+  make.conf.  Change the two Makevars BSDPORTMK and BSDPORTSUBDIRMK
+  to point to ports-mgmt/portmk.
+
+20070205:
   AFFECTS: everybody
   AUTHOR: pav@FreeBSD.org
 
