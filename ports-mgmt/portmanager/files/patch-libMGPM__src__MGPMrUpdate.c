@@ -1,5 +1,5 @@
 --- libMGPM/src/MGPMrUpdate.c.orig	Wed Dec 14 13:23:59 2005
-+++ libMGPM/src/MGPMrUpdate.c	Fri Dec  8 17:24:30 2006
++++ libMGPM/src/MGPMrUpdate.c	Mon Feb  5 12:50:13 2007
 @@ -60,6 +60,7 @@
  	char*	stopPortDirPtr					= NULL;
  	char*	strikePtr					= NULL;
@@ -21,6 +21,15 @@
  	localProperty.CURDIR			= calloc( MAXSTRINGSIZE, 1 );
  	localProperty.afterOptionsFileSize	= calloc( MAXSTRINGSIZE, 1 );
  	localProperty.afterOptionsFileTime	= calloc( MAXSTRINGSIZE, 1 );
+@@ -110,7 +105,7 @@
+ 	property->installedPortsDb		= MGdbOpen( property->installedPortsDbFileName );
+ 	property->strikesDb			= MGdbOpen( property->strikesDbFileName );
+ 
+-	if( ( strcmp( "/sysutils/portmanager", oldPortDir ) == 0 || strcmp( "/local/sysutils/portmanager", oldPortDir ) == 0 ) && property->forced )
++	if( ( strcmp( "/ports-mgmt/portmanager", oldPortDir ) == 0 || strcmp( "/local/ports-mgmt/portmanager", oldPortDir ) == 0 ) && property->forced )
+ 	{
+ 		fprintf( stdout, "ignoring portmanager, will not self update in forced mode by design\n" );
+ 		while( fflush( stdout ) );
 @@ -122,30 +117,6 @@
  		return( 0 );
  	}
@@ -316,6 +325,30 @@
  	/************************************************************************/
  	/*			Command "10" pkg_create -b			*/
  	/************************************************************************/
+@@ -1113,12 +1046,12 @@
+ 	/*
+ 	 * inforced mass update mode portmanager  CANNOT loose its databases
+ 	 */
+-	if( ( strcmp( oldPortDir, "/sysutils/portmanager" ) == 0 || strcmp( oldPortDir, "/local/sysutils/portmanager" ) == 0 ) &&
++	if( ( strcmp( oldPortDir, "/ports-mgmt/portmanager" ) == 0 || strcmp( oldPortDir, "/local/ports-mgmt/portmanager" ) == 0 ) &&
+ 		property->pmMode == SINGLE )
+ 	{
+ 		MGmStrcpy( localProperty.command, "cd " );
+ 		MGmStrcat( localProperty.command, PORTSDIR );
+-		MGmStrcat( localProperty.command, "/sysutils/portmanager; " );
++		MGmStrcat( localProperty.command, "/ports-mgmt/portmanager; " );
+ 		MGmStrcat( localProperty.command, "make -V PKG_DBDIR" );
+ 		pHandle	= popen( localProperty.command, "r" );
+ 		localProperty.buffer[0]	= 0;
+@@ -1146,7 +1079,7 @@
+ 		/*
+ 		 * have to do this here before db's are wacked
+ 		 */
+-		if( ( strcmp( oldPortDir, "/sysutils/portmanager" ) == 0 || strcmp( oldPortDir, "/local/sysutils/portmanager" ) == 0 ) &&
++		if( ( strcmp( oldPortDir, "/ports-mgmt/portmanager" ) == 0 || strcmp( oldPortDir, "/local/ports-mgmt/portmanager" ) == 0 ) &&
+ 			property->pmMode == MULTI )
+ 		{
+ 			/*
 @@ -1266,7 +1199,7 @@
  		MGmStrcat(localProperty.command, TEMPDIR);
  		MGmStrcat(localProperty.command, "/");
@@ -334,16 +367,61 @@
  			fprintf( stdout, "%s\n", SINGLE_LINES );
  			fprintf( stderr, "deleting backup copy, installation of updated %s successful\n", oldPortDir );
  			fprintf( stdout, "%s %s localProperty.command: #12 of 14 %s\n", id, PACKAGE_VERSION, localProperty.command );
-@@ -1555,12 +1488,6 @@
- 	MGdbDestroy( property->ignoreDb );
+@@ -1414,7 +1347,7 @@
+ 	/*
+ 	 * if portmanager updated there won't be any databases, so need to clean the old fashoned way
+ 	 */
+-	if( ( strcmp( oldPortDir, "/sysutils/portmanager" ) == 0 || strcmp( oldPortDir, "/local/sysutils/portmanager" ) == 0 ) &&
++	if( ( strcmp( oldPortDir, "/ports-mgmt/portmanager" ) == 0 || strcmp( oldPortDir, "/local/ports-mgmt/portmanager" ) == 0 ) &&
+ 		property->pmMode == MULTI )
+ 	{
+ 		rCleanDir( oldPortDir, localProperty.workDir );
+@@ -1460,7 +1393,7 @@
+ 	/*
+ 	 * portmanager auto restart after updating itself
+ 	 */
+-	if( ( strcmp( oldPortDir, "/sysutils/portmanager" ) == 0 || strcmp( oldPortDir, "/local/sysutils/portmanager" ) == 0 ) &&
++	if( ( strcmp( oldPortDir, "/ports-mgmt/portmanager" ) == 0 || strcmp( oldPortDir, "/local/ports-mgmt/portmanager" ) == 0 ) &&
+ 		property->pmMode == MULTI )
+ 	{
+ 		/*
+@@ -1556,12 +1489,6 @@
  	MGdbDestroy( property->installedPortsDb );
  	MGdbDestroy( property->strikesDb );
--
+ 
 -
 -	free( localProperty->environment[0] );
 -	free( localProperty->environment[1] );
 -	free( localProperty->environment[2] );
 -	free( localProperty->environment );
- 
+-
  	free( localProperty->CURDIR );
  	free( localProperty->afterOptionsFileSize );
+ 	free( localProperty->afterOptionsFileTime );
+@@ -1655,7 +1582,7 @@
+ 	 */
+ 	MGmStrcpy( localProperty->command, "cd " );
+ 	MGmStrcat( localProperty->command, PORTSDIR );
+-	MGmStrcat( localProperty->command, "/sysutils/portmanager; make -V PKGNAME" );
++	MGmStrcat( localProperty->command, "/ports-mgmt/portmanager; make -V PKGNAME" );
+ 	pHandle	= popen( localProperty->command, "r" );
+ 	localProperty->buffer[0]	= 0;
+ 	fread( localProperty->buffer, MAXBUFFERSIZE - 1, 1, pHandle );
+@@ -1693,7 +1620,7 @@
+ 			 */
+ 			MGmStrcpy( localProperty->command, "cd " );
+ 			MGmStrcat( localProperty->command, PORTSDIR );
+-			MGmStrcat( localProperty->command, "/sysutils/portmanager; make -V PKGNAME" );
++			MGmStrcat( localProperty->command, "/ports-mgmt/portmanager; make -V PKGNAME" );
+ 			pHandle	= popen( localProperty->command, "r" );
+ 			localProperty->buffer[0]	= 0;
+ 			fread( localProperty->buffer, MAXBUFFERSIZE - 1, 1, pHandle );
+@@ -1737,7 +1664,7 @@
+ 	 */
+ 	MGmStrcpy( localProperty->command, "cd " );
+ 	MGmStrcat( localProperty->command, PORTSDIR );
+-	MGmStrcat( localProperty->command, "/sysutils/portmanager; make -V PORTMANAGER" );
++	MGmStrcat( localProperty->command, "/ports-mgmt/portmanager; make -V PORTMANAGER" );
+ 	pHandle	= popen( localProperty->command, "r" );
+ 	localProperty->buffer[0]	= 0;
+ 	fread( localProperty->buffer, MAXBUFFERSIZE - 1, 1, pHandle );
