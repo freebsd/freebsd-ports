@@ -31,10 +31,10 @@ OPTIONS=	REDIRECT "Define malloc(3)-family replacements" off \
 CONFIGURE_ARGS+=	--enable-threads=posix --enable-thread-local-alloc
 .if ${OSVERSION} < 502102
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LIBS="${LIBS} -lc_r"
+		LIBS="${LIBS} ${PTHREAD_LIBS:C/-pthread/-lc_r/}"
 .else
 CONFIGURE_ENV=	CFLAGSS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LIBS="${LIBS} -lpthread"
+		LIBS="${LIBS} ${PTHREAD_LIBS:C/-pthread/-lpthread/}"
 .endif
 .if defined(WITH_PARALLEL_MARK)
 CONFIGURE_ARGS+=	--enable-parallel-mark
