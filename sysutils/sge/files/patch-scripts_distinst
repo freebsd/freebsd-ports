@@ -12,7 +12,7 @@ $FreeBSD$
            install_execd install_qmaster lib man mpi pvm qmon util utilbin"
  
  HASARCHDIR="bin lib examples/jobsbin utilbin"
-@@ -730,17 +730,6 @@
+@@ -735,17 +735,6 @@
  echo   "    Installing:" $PROG
  echo   " Architectures:" $ARCH
  echo   "Base directory:" $DEST_SGE_ROOT
@@ -30,7 +30,7 @@ $FreeBSD$
  
  echo
  
-@@ -799,6 +788,9 @@
+@@ -807,6 +796,9 @@
           instmpi=true
           instcommon=true
           ;;
@@ -40,7 +40,7 @@ $FreeBSD$
        qmontree)
           instqmon=true
           instcommon=true
-@@ -1006,19 +998,6 @@
+@@ -1014,19 +1006,6 @@
           Execute chmod 755 $DEST_SGE_ROOT/$MYRINETBASE/$f
        done
  
@@ -60,16 +60,16 @@ $FreeBSD$
        Cleanup mpi
     fi
  
-@@ -1148,7 +1127,7 @@
+@@ -1174,7 +1153,7 @@
  
        for prog in $PROG; do
           case $prog in
--            jobs|ckpt|doc|inst_sge|utiltree|examples|man|mpi|pvm|qmontree|common|distcommon|utilbin)
-+            jobs|ckpt|doc|inst_sge|utiltree|examples|man|mpi|pvm|noqmon|qmontree|common|distcommon|utilbin)
+-            jobs|ckpt|doc|inst_sge|utiltree|examples|man|mpi|pvm|qmontree|common|distcommon|utilbin|arco)
++            jobs|ckpt|doc|inst_sge|utiltree|examples|man|mpi|noqmon|pvm|qmontree|common|distcommon|utilbin|arco)
                 : 
                 ;;
              qmake)
-@@ -1246,6 +1225,8 @@
+@@ -1272,6 +1251,8 @@
                       InstallProg $BERKELEYDBBASE/$DSTARCH/bin/$prog
                    elif [ -f $BERKELEYDBBASE/bin/$prog ]; then
                       InstallProg $BERKELEYDBBASE/bin/$prog
@@ -78,24 +78,24 @@ $FreeBSD$
                    fi
                 fi
              elif [ $prog = spoolinit -o $prog = spooldefaults ]; then
-@@ -1356,13 +1337,15 @@
+@@ -1386,13 +1367,15 @@
                    libname="$OPENSSLBASE/$DSTARCH/lib/$lib.$shlibext"
-                elif [ $DSTARCH = darwin ];  then
-                   libname="$OPENSSLBASE/$DSTARCH/lib/$lib.0.9.7.$shlibext"
-+	       elif [ ${DSTARCH%%-*} = fbsd ]; then
-+                  libname="$OPENSSLBASE/lib/$lib.$shlibext"
+                elif [ $DSTARCH = darwin -o $DSTARCH = darwin-x86 ];  then
+                   libname="$OPENSSLBASE/$DSTARCH/lib/libssl.bundle"
++               elif [ ${DSTARCH%%-*} = fbsd ]; then
++                  libname="$OPENSSLBASE/lib/$lib.$shlibext" 
                 else
                    libname="$OPENSSLBASE/$DSTARCH/lib/$lib.$shlibext.0.9.7"
                 fi
  
                 if [ -f $libname ]; then
                    InstallProg $libname
--                  if [ $DSTARCH = tru64 ]; then
-+                  if [ $DSTARCH = tru64 -o ${DSTARCH%%-*} = fbsd ]; then
+-                  if [ $DSTARCH = tru64 -o $DSTARCH = darwin -o $DSTARCH = darwin-x86 ]; then
++                  if [ $DSTARCH = tru64 -o $DSTARCH = darwin -o $DSTARCH = darwin-x86 -o ${DSTARCH%%-*} = fbsd ]; then
                       :
-                   elif [ $DSTARCH = darwin ]; then
-                      (cd $DEST_SGE_ROOT/${UTILPREFIX}/$DSTARCH; \
-@@ -1383,7 +1366,11 @@
+                   else
+                      (cd $DEST_SGE_ROOT/${UTILPREFIX}/$DSTARCH; ln -s $lib.${shlibext}.0.9.7 $lib.$shlibext)
+@@ -1407,7 +1390,11 @@
           if [ $DSTARCH != win32-x86 ]; then
              if [ $instbdb = true ]; then
                 for lib in $BERKELEYDB_SHARED_LIBRARIES; do
@@ -107,4 +107,4 @@ $FreeBSD$
 +                  fi
                    if [ -f $libname ]; then
                       InstallProg $libname
-                   elif [ $exit_on_error = true ]; then
+                   else

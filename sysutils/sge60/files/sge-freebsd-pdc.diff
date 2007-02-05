@@ -339,9 +339,9 @@
     if (getuid() == 0) {
        if (setpriority(PRIO_PROCESS, getpid(), PTF_MAX_PRIORITY) < 0) {
           ERROR((SGE_EVENT, MSG_PRIO_SETPRIOFAILED_S, strerror(errno)));
---- daemons/shepherd/shepherd.c.orig	Thu Dec  1 05:49:28 2005
-+++ daemons/shepherd/shepherd.c	Thu Apr 13 22:00:01 2006
-@@ -2411,9 +2411,9 @@
+--- daemons/shepherd/shepherd.c.orig	Mon Jan  1 05:44:56 2007
++++ daemons/shepherd/shepherd.c	Mon Feb  5 10:07:37 2007
+@@ -2478,9 +2478,9 @@
          kill(pid, sig);
          sge_switch2admin_user();
  
@@ -350,9 +350,9 @@
          if (first_kill == 0 || sig != SIGKILL || is_qrsh == false) {                        
 -#   if defined(SOLARIS) || defined(LINUX) || defined(ALPHA)
 +#   if defined(SOLARIS) || defined(LINUX) || defined(ALPHA) || defined(FREEBSD)
+ #      ifdef COMPILE_DC
              if (atoi(get_conf_val("enable_addgrp_kill")) == 1) {
                  gid_t add_grp_id;
-                 char *cp = search_conf_val("add_grp_id");
 --- libs/uti/sge_uidgid.c.orig	Wed Nov 23 03:04:09 2005
 +++ libs/uti/sge_uidgid.c	Thu Apr 13 22:00:01 2006
 @@ -850,7 +850,7 @@
