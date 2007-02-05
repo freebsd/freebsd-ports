@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Data-Entropy
-PORTVERSION=	0.002
-PORTREVISION=	1
+PORTVERSION=	0.003
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Entropy (randomness) management
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5-Crypt-Rijndael \
