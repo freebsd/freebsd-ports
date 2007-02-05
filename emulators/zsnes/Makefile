@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	zsnes
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 DISTNAME=	zsnes${PORTVERSION:S/.//}src
 
-MAINTAINER=	freebsd-ports@stsp.in-berlin.de
+MAINTAINER=	stsp@stsp.in-berlin.de
 COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 
 # This must be >= 0.98!

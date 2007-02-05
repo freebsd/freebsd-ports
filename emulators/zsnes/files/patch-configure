@@ -1,10 +1,61 @@
---- configure.orig	Tue Dec 26 18:52:47 2006
-+++ configure	Tue Dec 26 18:53:22 2006
-@@ -5075,38 +5075,6 @@
+--- configure.orig	Thu Jan 25 23:44:43 2007
++++ configure	Thu Jan 25 23:48:32 2007
+@@ -5130,89 +5130,6 @@
  
- rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
-   fi
--  if test x$force_arch = x; then
+   { echo "$as_me:$LINENO: checking which cpu architecture to optimize for" >&5
+ echo $ECHO_N "checking which cpu architecture to optimize for... $ECHO_C" >&6; }
+-  if test x$force_arch != x; then
+-    CFLAGS="$CFLAGS -march=$force_arch"
+-    cat >conftest.$ac_ext <<_ACEOF
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
+-
+-int
+-main ()
+-{
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-rm -f conftest.$ac_objext
+-if { (ac_try="$ac_compile"
+-case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+-  (eval "$ac_compile") 2>conftest.er1
+-  ac_status=$?
+-  grep -v '^ *+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } && {
+-	 test -z "$ac_c_werror_flag" ||
+-	 test ! -s conftest.err
+-       } && test -s conftest.$ac_objext; then
+-  { echo "$as_me:$LINENO: result: forcing $force_arch" >&5
+-echo "${ECHO_T}forcing $force_arch" >&6; }
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
+-	{ echo "$as_me:$LINENO: result: $force_arch ??" >&5
+-echo "${ECHO_T}$force_arch ??" >&6; }
+-    { echo "$as_me:$LINENO: WARNING: incorrect force_arch parameter" >&5
+-echo "$as_me: WARNING: incorrect force_arch parameter" >&2;}
+-    force_arch=""
+-    CFLAGS="$CFLAGSBAK"
+-    { echo "$as_me:$LINENO: checking for autodetected architecture" >&5
+-echo $ECHO_N "checking for autodetected architecture... $ECHO_C" >&6; }
+-fi
+-
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-  else
 -    if test x$ARCH_INFO = x; then
 -      case x$target in
 -        i686-*-*)
