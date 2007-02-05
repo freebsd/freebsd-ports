@@ -17,7 +17,6 @@ COMMENT=	CDE like desktop with GTK
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-USE_AUTOTOOLS=	libtool:15
 USE_GCC=	4.1
 USE_XPM=	yes
 USE_GETTEXT=	yes
@@ -60,5 +59,6 @@ post-patch:
 		${WRKSRC}/xfgnome/xfgnome.h
 	@${REINPLACE_CMD} -e 's|static \(nmb_history \*headH;\)|\1|' \
 		${WRKSRC}/xfsamba/xfsamba_mem.c
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
