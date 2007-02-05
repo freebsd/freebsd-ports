@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmame frontend for Gnome
 
+DEPRECATED=	Project was abandoned 6 years ago and expects an old version of xmame (0.37b4), please use other frontends instead (like gxmame)
+EXPIRATION_DATE=2007-03-07
+
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 USE_X_PREFIX=	yes
