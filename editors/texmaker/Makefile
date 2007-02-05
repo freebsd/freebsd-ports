@@ -7,28 +7,29 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.12
+PORTVERSION=	1.5
 CATEGORIES=	editors
-MASTER_SITES=	http://ftp.citkit.ru/pub/texmaker1/ \
-		http://www.bsd-geek.de/FreeBSD/distfiles/
+MASTER_SITES=	http://www.xm1math.net/texmaker/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		dvips:${PORTSDIR}/print/dvipsk-tetex \
+		xdvi:${PORTSDIR}/print/xdvik \
+		gv:${PORTSDIR}/print/gv \
+		xpdf:${PORTSDIR}/graphics/xpdf \
+${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_BZIP2=	yes
-USE_QT_VER=	3
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
+USE_GHOSTSCRIPT=yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui moc qmake rcc uic
+HAS_CONFIGURE=	yes
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		-unix PREFIX="${PREFIX}" texmaker.pro
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/texmaker ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/utilities/*.* ${DATADIR}
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} -unix PREFIX=${PREFIX} INCLUDEPATH+=/foo/bar/ZZZZZZZZZZZZZZZ \
+		LIBS+=-L/foo/bar/XXXXXXXXXXXXXXXXX texmaker.pro
 
 .include <bsd.port.mk>
