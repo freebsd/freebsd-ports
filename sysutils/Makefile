@@ -485,7 +485,6 @@
     SUBDIR += php5-posix
     SUBDIR += pidof
     SUBDIR += pipemeter
-    SUBDIR += pkg_replace
     SUBDIR += pkill
     SUBDIR += plconfig
     SUBDIR += plod

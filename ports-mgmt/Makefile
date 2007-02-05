@@ -18,6 +18,7 @@
    SUBDIR += pkg_install
    SUBDIR += pkg_install-devel
    SUBDIR += pkg_remove
+   SUBDIR += pkg_replace
    SUBDIR += pkg_rmleaves
    SUBDIR += pkg_trackinst
    SUBDIR += pkg_tree
