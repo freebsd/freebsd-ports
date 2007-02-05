@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# The user may have a wish they want to preserve
+ver=`grep -a awieYJFnsuILOnfsYEW ${PKG_PREFIX}/bin/wish 2> /dev/null \
+    | sed -e 's/.*\*\*//'`
+if [ ! -e ${PKG_PREFIX}/bin/wish ] || [ "$ver" != "" -a "$ver" -lt 001 ]
+then
+	[ -f ${PKG_PREFIX}/bin/wish ] && chmod u+w ${PKG_PREFIX}/bin/wish
+
+	mkdir -p ${PKG_PREFIX}/bin
+	cat > ${PKG_PREFIX}/bin/wish <<'EOF'
+#!/bin/sh
+# Installed by ports system.  id: awieYJFnsuILOnfsYEW**001
+ 
+(
+echo "In FreeBSD, wish is named with a version number.  This is because"
+echo "different versions of wish are not compatible with each other and"
+echo "they can not all be called \"wish\"!  You may need multiple versions"
+echo "installed because a given port may depend on a specific version."
+echo
+echo "On your system, wish is installed under at least the following names:"
+echo
+for name in $(/bin/ls $(echo $PATH | sed 's/:/ /g') 2> /dev/null | egrep '^wish(step)?(x|([0-9]+\.[0-9]+))([a-z][a-z])?$')
+do
+	echo $name
+done
+[ "$name" = "" ] && echo "No wish installations found, sorry."
+) 1>&2
+exit 1
+EOF
+	chmod a+rx ${PKG_PREFIX}/bin/wish
+fi
