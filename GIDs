@@ -11,6 +11,7 @@ xten:*:67:
 dialer:*:68:
 network:*:69:
 pgsql:*:70:
+ircd:*:72:
 simscan:*:74:
 audit:*:77:
 virtuoso:*:79:
