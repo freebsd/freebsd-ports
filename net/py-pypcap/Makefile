@@ -7,6 +7,7 @@
 
 PORTNAME=	pypcap
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://monkey.org/~dugsong/pypcap/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +19,8 @@ BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
 USE_PYTHON=	yes
 USE_PYTHON_PREFIX=	yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcap.so
 
 post-patch:
 	${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pcap.c
