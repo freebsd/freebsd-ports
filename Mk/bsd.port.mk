@@ -439,13 +439,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_WX		- If set, this port uses the WxWidgets library and related
 #				  components. See bsd.wx.mk for more details.
 ##
-# USE_KDEBASE_VER
-#				- Set to 3 to use the KDE windowing system.
+# USE_KDEBASE_VER		- Set to 3 to use the KDE windowing system.
 #				  Implies inclusion of bsd.kde.mk.
-# USE_KDELIBS_VER
-#				- Set to 3 to use the KDE libraries.
+#
+# USE_KDELIBS_VER		- Set to 3 to use the KDE libraries.
 #				  Implies inclusion of bsd.kde.mk.
-# USE_QT_VER	- Set to 3 to use the QT libraries.
+#
+# USE_QT_VER			- Set to 3 or 4 to use the respective version
+#				  of the QT libraries.
 #				  Implies inclusion of bsd.kde.mk.
 ##
 # USE_LINUX		- Set to yes to say the port needs the default linux base port.
