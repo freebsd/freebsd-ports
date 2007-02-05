@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Class-Multimethods-Pure
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Method-ordered multimethod dispatch
 
 PERL_CONFIGURE=	yes
