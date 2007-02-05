@@ -17,7 +17,6 @@ COMMENT=	XFce 4 graphical frontend for printing
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -65,7 +64,8 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's/@LDFLAGS@/& -Wl,-E/' ${WRKSRC}/xfprint/Makefile.in \
+	@${REINPLACE_CMD} -e 's/@LDFLAGS@/& -Wl,-E/' ${WRKSRC}/xfprint/Makefile.in \
 		 ${WRKSRC}/xfprint-manager/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

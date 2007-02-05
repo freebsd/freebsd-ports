@@ -26,7 +26,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -94,5 +93,6 @@ PLIST_SUB+=	MCS_MANAGER="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|FALSE;;|FALSE;|' ${WRKSRC}/exo/exo-icon-view.c
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

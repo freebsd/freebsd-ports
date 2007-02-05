@@ -16,7 +16,6 @@ COMMENT=	A calendar application to manage your time with XFce 4
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -43,5 +42,8 @@ LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
 post-patch:
 	@${REINPLACE_CMD} -e 's|libical-|no-&|g' ${WRKSRC}/configure
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
