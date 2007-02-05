@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
 DIST_SUBDIR=	KDE
+LATEST_LINK=	qmake4
 
 MAINTAINER=	kde@freebsd.org
 COMMENT=	The build utility of the Qt project
