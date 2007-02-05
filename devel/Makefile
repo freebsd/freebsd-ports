@@ -1767,7 +1767,6 @@
     SUBDIR += py-libgsf
     SUBDIR += py-ll-core
     SUBDIR += py-log4py
-    SUBDIR += py-logging
     SUBDIR += py-logilab-common
     SUBDIR += py-magic
     SUBDIR += py-mx-experimental
