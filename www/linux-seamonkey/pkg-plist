@@ -22,8 +22,6 @@ lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow.xpm
 lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow16.xpm
 lib/%%APP_NAME%%/chrome/icons/default/bookmark-window.xpm
 lib/%%APP_NAME%%/chrome/icons/default/bookmark-window16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/calendar-window.xpm
-lib/%%APP_NAME%%/chrome/icons/default/calendar-window16.xpm
 lib/%%APP_NAME%%/chrome/icons/default/chatzilla-window.xpm
 lib/%%APP_NAME%%/chrome/icons/default/chatzilla-window16.xpm
 lib/%%APP_NAME%%/chrome/icons/default/default.xpm
@@ -98,6 +96,8 @@ lib/%%APP_NAME%%/components/dom_events.xpt
 lib/%%APP_NAME%%/components/dom_html.xpt
 lib/%%APP_NAME%%/components/dom_loadsave.xpt
 lib/%%APP_NAME%%/components/dom_range.xpt
+lib/%%APP_NAME%%/components/dom_sidebar.xpt
+lib/%%APP_NAME%%/components/dom_storage.xpt
 lib/%%APP_NAME%%/components/dom_stylesheets.xpt
 lib/%%APP_NAME%%/components/dom_svg.xpt
 lib/%%APP_NAME%%/components/dom_traversal.xpt
@@ -156,7 +156,6 @@ lib/%%APP_NAME%%/components/libimglib2.so
 lib/%%APP_NAME%%/components/libimpComm4xMail.so
 lib/%%APP_NAME%%/components/libimpText.so
 lib/%%APP_NAME%%/components/libimport.so
-lib/%%APP_NAME%%/components/libinspector.so
 lib/%%APP_NAME%%/components/libjar50.so
 lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/liblocalmail.so
@@ -192,6 +191,7 @@ lib/%%APP_NAME%%/components/libremoteservice.so
 lib/%%APP_NAME%%/components/libsearchservice.so
 lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libsroaming.so
+lib/%%APP_NAME%%/components/libstoragecomps.so
 lib/%%APP_NAME%%/components/libsystem-pref.so
 lib/%%APP_NAME%%/components/libtransformiix.so
 lib/%%APP_NAME%%/components/libtxmgr.so
@@ -228,8 +228,6 @@ lib/%%APP_NAME%%/components/msglocal.xpt
 lib/%%APP_NAME%%/components/msgnews.xpt
 lib/%%APP_NAME%%/components/msgsearch.xpt
 lib/%%APP_NAME%%/components/msgsmime.xpt
-lib/%%APP_NAME%%/components/myspell/en-US.aff
-lib/%%APP_NAME%%/components/myspell/en-US.dic
 lib/%%APP_NAME%%/components/necko.xpt
 lib/%%APP_NAME%%/components/necko_about.xpt
 lib/%%APP_NAME%%/components/necko_cache.xpt
@@ -257,6 +255,7 @@ lib/%%APP_NAME%%/components/nsProgressDialog.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
 lib/%%APP_NAME%%/components/nsResetPref.js
 lib/%%APP_NAME%%/components/nsSidebar.js
+lib/%%APP_NAME%%/components/nsURLFormatter.js
 lib/%%APP_NAME%%/components/nsUpdateNotifier.js
 lib/%%APP_NAME%%/components/nsXmlRpcClient.js
 lib/%%APP_NAME%%/components/offlineStartup.js
@@ -274,12 +273,13 @@ lib/%%APP_NAME%%/components/progressDlg.xpt
 lib/%%APP_NAME%%/components/proxyObjInst.xpt
 lib/%%APP_NAME%%/components/rdf.xpt
 lib/%%APP_NAME%%/components/related.xpt
+lib/%%APP_NAME%%/components/saxparser.xpt
 lib/%%APP_NAME%%/components/search.xpt
 lib/%%APP_NAME%%/components/shistory.xpt
-lib/%%APP_NAME%%/components/sidebar.xpt
 lib/%%APP_NAME%%/components/signonviewer.xpt
 lib/%%APP_NAME%%/components/smime-service.js
 lib/%%APP_NAME%%/components/spellchecker.xpt
+lib/%%APP_NAME%%/components/storage.xpt
 lib/%%APP_NAME%%/components/toolkitremote.xpt
 lib/%%APP_NAME%%/components/txmgr.xpt
 lib/%%APP_NAME%%/components/txtsvc.xpt
@@ -287,6 +287,7 @@ lib/%%APP_NAME%%/components/typeaheadfind.xpt
 lib/%%APP_NAME%%/components/uconv.xpt
 lib/%%APP_NAME%%/components/unicharutil.xpt
 lib/%%APP_NAME%%/components/uriloader.xpt
+lib/%%APP_NAME%%/components/urlformatter.xpt
 lib/%%APP_NAME%%/components/venkman-service.js
 lib/%%APP_NAME%%/components/wallet.xpt
 lib/%%APP_NAME%%/components/walleteditor.xpt
@@ -299,7 +300,7 @@ lib/%%APP_NAME%%/components/widget.xpt
 lib/%%APP_NAME%%/components/windowds.xpt
 lib/%%APP_NAME%%/components/windowwatcher.xpt
 lib/%%APP_NAME%%/components/xml-rpc.xpt
-lib/%%APP_NAME%%/components/xmlextras.xpt
+lib/%%APP_NAME%%/components/xpautocomplete.xpt
 lib/%%APP_NAME%%/components/xpcom_base.xpt
 lib/%%APP_NAME%%/components/xpcom_components.xpt
 lib/%%APP_NAME%%/components/xpcom_ds.xpt
@@ -316,7 +317,9 @@ lib/%%APP_NAME%%/components/xuldoc.xpt
 lib/%%APP_NAME%%/components/xultmpl.xpt
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
+lib/%%APP_NAME%%/defaults/isp/US/gmail.rdf
 lib/%%APP_NAME%%/defaults/isp/US/movemail.rdf
+lib/%%APP_NAME%%/defaults/isp/gmail.rdf
 lib/%%APP_NAME%%/defaults/isp/movemail.rdf
 lib/%%APP_NAME%%/defaults/messenger/SpamAssassin.sfd
 lib/%%APP_NAME%%/defaults/messenger/SpamPal.sfd
@@ -351,12 +354,16 @@ lib/%%APP_NAME%%/defaults/wallet/SchemaStrings.tbl
 lib/%%APP_NAME%%/defaults/wallet/StateSchema.tbl
 lib/%%APP_NAME%%/defaults/wallet/VcardSchema.tbl
 lib/%%APP_NAME%%/dependentlibs.list
+lib/%%APP_NAME%%/dictionaries/en-US.aff
+lib/%%APP_NAME%%/dictionaries/en-US.dic
 lib/%%APP_NAME%%/dirver
 lib/%%APP_NAME%%/greprefs/all.js
 lib/%%APP_NAME%%/greprefs/security-prefs.js
 lib/%%APP_NAME%%/greprefs/xpinstall.js
 lib/%%APP_NAME%%/init.d/README
 lib/%%APP_NAME%%/install.rdf
+lib/%%APP_NAME%%/libfreebl3.chk
+lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libgfxpsshar.so
 lib/%%APP_NAME%%/libgkgfx.so
 lib/%%APP_NAME%%/libgtkembedmoz.so
@@ -478,7 +485,6 @@ lib/%%APP_NAME%%/xpt_link
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
-@dirrm lib/%%APP_NAME%%/components/myspell
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults/isp/US
@@ -492,6 +498,7 @@ lib/%%APP_NAME%%/xpt_link
 @dirrm lib/%%APP_NAME%%/defaults/profile
 @dirrm lib/%%APP_NAME%%/defaults/wallet
 @dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/dictionaries
 @dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/init.d
 @dirrm lib/%%APP_NAME%%/plugins
