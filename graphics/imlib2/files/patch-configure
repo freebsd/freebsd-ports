@@ -1,0 +1,11 @@
+--- configure.orig	Tue Feb  6 00:43:20 2007
++++ configure	Tue Feb  6 00:46:42 2007
+@@ -21542,7 +21542,7 @@
+    have_x="no"
+ fi
+ 
+-
++have_x="disabled"
+ 
+ if test "x$have_x" = "xno"; then
+    # If --without-x was passed, this will be "disabled" instead of "no" --
