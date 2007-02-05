@@ -16,8 +16,6 @@ PATCHFILES=	gcc295-xfce4-xmms-plugin.patch
 MAINTAINER=	jfb@minet.net
 COMMENT=	XFce 4 xmms control plugin for xfce4-panel
 
-BROKEN=		Does not build
-
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
