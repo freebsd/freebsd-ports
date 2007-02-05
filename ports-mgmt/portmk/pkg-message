@@ -1,8 +1,8 @@
-Port devel/portmk has been successfully installed.
+Port ports-mgmt/portmk has been successfully installed.
 
 To activate the alternate bsd.port.mk version, do
 
-  cd %%PORTSDIR%%/devel/portmk; make activate
+  cd %%PORTSDIR%%/ports-mgmt/portmk; make activate
 
 To build a port with the classic bsd.port.mk version, do
 
