@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.602
+PORTVERSION=	2007.603
 CATEGORIES=	games
-MASTER_SITES=	http://forsakenweb.com/alienarena/download/
+MASTER_SITES=	http://cor.planetquake.gamespy.com/codered/files/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}2007-linux
+DISTNAME=	${PORTNAME}2007-linux20070121-x86
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
@@ -18,7 +18,7 @@ COMMENT=	Alien Arena 2006 (data)
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Package will be 185MB, set FORCE_PACKAGE if you want it
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-linux//}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/-linux.*//}
 
 .include <bsd.port.pre.mk>
 
