@@ -1,0 +1,1867 @@
+bin/qtdemo
+bin/qtdemo.debug
+lib/plugins/designer/libarthurplugin.so
+lib/plugins/designer/libarthurplugin.so.debug
+lib/plugins/designer/libcontainerextension.so
+lib/plugins/designer/libcontainerextension.so.debug
+lib/plugins/designer/libcustomwidgetplugin.so
+lib/plugins/designer/libcustomwidgetplugin.so.debug
+lib/plugins/designer/libtaskmenuextension.so
+lib/plugins/designer/libtaskmenuextension.so.debug
+lib/plugins/designer/libworldtimeclockplugin.so
+lib/plugins/designer/libworldtimeclockplugin.so.debug
+share/qt4/demos/README
+share/qt4/demos/affine/affine
+share/qt4/demos/affine/affine.debug
+share/qt4/demos/affine/affine.pro
+share/qt4/demos/affine/affine.qrc
+share/qt4/demos/affine/bg1.jpg
+share/qt4/demos/affine/main.cpp
+share/qt4/demos/affine/xform.cpp
+share/qt4/demos/affine/xform.h
+share/qt4/demos/affine/xform.html
+share/qt4/demos/arthurplugin/arthur_plugin.qrc
+share/qt4/demos/arthurplugin/arthurplugin.pro
+share/qt4/demos/arthurplugin/bg1.jpg
+share/qt4/demos/arthurplugin/composition.cpp
+share/qt4/demos/arthurplugin/composition.h
+share/qt4/demos/arthurplugin/flower_2.png
+share/qt4/demos/arthurplugin/gradients.cpp
+share/qt4/demos/arthurplugin/gradients.h
+share/qt4/demos/arthurplugin/pathdeform.cpp
+share/qt4/demos/arthurplugin/pathdeform.h
+share/qt4/demos/arthurplugin/pathstroke.cpp
+share/qt4/demos/arthurplugin/pathstroke.h
+share/qt4/demos/arthurplugin/plugin.cpp
+share/qt4/demos/arthurplugin/xform.cpp
+share/qt4/demos/arthurplugin/xform.h
+share/qt4/demos/books/bookdelegate.cpp
+share/qt4/demos/books/bookdelegate.h
+share/qt4/demos/books/books
+share/qt4/demos/books/books.debug
+share/qt4/demos/books/books.pro
+share/qt4/demos/books/books.qrc
+share/qt4/demos/books/bookwindow.cpp
+share/qt4/demos/books/bookwindow.h
+share/qt4/demos/books/bookwindow.ui
+share/qt4/demos/books/images/star.png
+share/qt4/demos/books/initdb.h
+share/qt4/demos/books/main.cpp
+share/qt4/demos/chip/chip
+share/qt4/demos/chip/chip.cpp
+share/qt4/demos/chip/chip.debug
+share/qt4/demos/chip/chip.h
+share/qt4/demos/chip/chip.pro
+share/qt4/demos/chip/fileprint.png
+share/qt4/demos/chip/images.qrc
+share/qt4/demos/chip/main.cpp
+share/qt4/demos/chip/mainwindow.cpp
+share/qt4/demos/chip/mainwindow.h
+share/qt4/demos/chip/qt4logo.png
+share/qt4/demos/chip/rotateleft.png
+share/qt4/demos/chip/rotateright.png
+share/qt4/demos/chip/view.cpp
+share/qt4/demos/chip/view.h
+share/qt4/demos/chip/zoomin.png
+share/qt4/demos/chip/zoomout.png
+share/qt4/demos/composition/composition
+share/qt4/demos/composition/composition.cpp
+share/qt4/demos/composition/composition.debug
+share/qt4/demos/composition/composition.h
+share/qt4/demos/composition/composition.html
+share/qt4/demos/composition/composition.pro
+share/qt4/demos/composition/composition.qrc
+share/qt4/demos/composition/flower_2.png
+share/qt4/demos/composition/main.cpp
+share/qt4/demos/deform/deform
+share/qt4/demos/deform/deform.debug
+share/qt4/demos/deform/deform.pro
+share/qt4/demos/deform/deform.qrc
+share/qt4/demos/deform/main.cpp
+share/qt4/demos/deform/pathdeform.cpp
+share/qt4/demos/deform/pathdeform.h
+share/qt4/demos/deform/pathdeform.html
+share/qt4/demos/demos.pro
+share/qt4/demos/gradients/gradients
+share/qt4/demos/gradients/gradients.cpp
+share/qt4/demos/gradients/gradients.debug
+share/qt4/demos/gradients/gradients.h
+share/qt4/demos/gradients/gradients.html
+share/qt4/demos/gradients/gradients.pro
+share/qt4/demos/gradients/gradients.qrc
+share/qt4/demos/gradients/main.cpp
+share/qt4/demos/interview/README
+share/qt4/demos/interview/images/folder.png
+share/qt4/demos/interview/images/interview.png
+share/qt4/demos/interview/images/services.png
+share/qt4/demos/interview/interview
+share/qt4/demos/interview/interview.debug
+share/qt4/demos/interview/interview.pro
+share/qt4/demos/interview/interview.qrc
+share/qt4/demos/interview/main.cpp
+share/qt4/demos/interview/model.cpp
+share/qt4/demos/interview/model.h
+share/qt4/demos/mainwindow/colorswatch.cpp
+share/qt4/demos/mainwindow/colorswatch.h
+share/qt4/demos/mainwindow/main.cpp
+share/qt4/demos/mainwindow/mainwindow
+share/qt4/demos/mainwindow/mainwindow.cpp
+share/qt4/demos/mainwindow/mainwindow.debug
+share/qt4/demos/mainwindow/mainwindow.h
+share/qt4/demos/mainwindow/mainwindow.pro
+share/qt4/demos/mainwindow/mainwindow.qrc
+share/qt4/demos/mainwindow/qt.png
+share/qt4/demos/mainwindow/toolbar.cpp
+share/qt4/demos/mainwindow/toolbar.h
+share/qt4/demos/pathstroke/main.cpp
+share/qt4/demos/pathstroke/pathstroke
+share/qt4/demos/pathstroke/pathstroke.cpp
+share/qt4/demos/pathstroke/pathstroke.debug
+share/qt4/demos/pathstroke/pathstroke.h
+share/qt4/demos/pathstroke/pathstroke.html
+share/qt4/demos/pathstroke/pathstroke.pro
+share/qt4/demos/pathstroke/pathstroke.qrc
+share/qt4/demos/shared/arthurstyle.cpp
+share/qt4/demos/shared/arthurstyle.h
+share/qt4/demos/shared/arthurwidgets.cpp
+share/qt4/demos/shared/arthurwidgets.h
+share/qt4/demos/shared/hoverpoints.cpp
+share/qt4/demos/shared/hoverpoints.h
+share/qt4/demos/shared/images/bg_pattern.png
+share/qt4/demos/shared/images/button_normal_cap_left.png
+share/qt4/demos/shared/images/button_normal_cap_right.png
+share/qt4/demos/shared/images/button_normal_stretch.png
+share/qt4/demos/shared/images/button_pressed_cap_left.png
+share/qt4/demos/shared/images/button_pressed_cap_right.png
+share/qt4/demos/shared/images/button_pressed_stretch.png
+share/qt4/demos/shared/images/curve_thing_edit-6.png
+share/qt4/demos/shared/images/frame_bottom.png
+share/qt4/demos/shared/images/frame_bottomleft.png
+share/qt4/demos/shared/images/frame_bottomright.png
+share/qt4/demos/shared/images/frame_left.png
+share/qt4/demos/shared/images/frame_right.png
+share/qt4/demos/shared/images/frame_top.png
+share/qt4/demos/shared/images/frame_topleft.png
+share/qt4/demos/shared/images/frame_topright.png
+share/qt4/demos/shared/images/groupframe_bottom_left.png
+share/qt4/demos/shared/images/groupframe_bottom_right.png
+share/qt4/demos/shared/images/groupframe_bottom_stretch.png
+share/qt4/demos/shared/images/groupframe_left_stretch.png
+share/qt4/demos/shared/images/groupframe_right_stretch.png
+share/qt4/demos/shared/images/groupframe_top_stretch.png
+share/qt4/demos/shared/images/groupframe_topleft.png
+share/qt4/demos/shared/images/groupframe_topright.png
+share/qt4/demos/shared/images/line_dash_dot.png
+share/qt4/demos/shared/images/line_dash_dot_dot.png
+share/qt4/demos/shared/images/line_dashed.png
+share/qt4/demos/shared/images/line_dotted.png
+share/qt4/demos/shared/images/line_solid.png
+share/qt4/demos/shared/images/radiobutton-off.png
+share/qt4/demos/shared/images/radiobutton-on.png
+share/qt4/demos/shared/images/radiobutton_off.png
+share/qt4/demos/shared/images/radiobutton_on.png
+share/qt4/demos/shared/images/slider_bar.png
+share/qt4/demos/shared/images/slider_thumb_off.png
+share/qt4/demos/shared/images/slider_thumb_on.png
+share/qt4/demos/shared/images/title_cap_left.png
+share/qt4/demos/shared/images/title_cap_right.png
+share/qt4/demos/shared/images/title_stretch.png
+share/qt4/demos/shared/libdemo_shared.a
+share/qt4/demos/shared/libdemo_shared.prl
+share/qt4/demos/shared/shared.pri
+share/qt4/demos/shared/shared.pro
+share/qt4/demos/shared/shared.qrc
+share/qt4/demos/spreadsheet/images/interview.png
+share/qt4/demos/spreadsheet/main.cpp
+share/qt4/demos/spreadsheet/spreadsheet
+share/qt4/demos/spreadsheet/spreadsheet.debug
+share/qt4/demos/spreadsheet/spreadsheet.pro
+share/qt4/demos/spreadsheet/spreadsheet.qrc
+share/qt4/demos/sqlbrowser/browser.cpp
+share/qt4/demos/sqlbrowser/browser.h
+share/qt4/demos/sqlbrowser/browserwidget.ui
+share/qt4/demos/sqlbrowser/connectionwidget.cpp
+share/qt4/demos/sqlbrowser/connectionwidget.h
+share/qt4/demos/sqlbrowser/main.cpp
+share/qt4/demos/sqlbrowser/qsqlconnectiondialog.cpp
+share/qt4/demos/sqlbrowser/qsqlconnectiondialog.h
+share/qt4/demos/sqlbrowser/qsqlconnectiondialog.ui
+share/qt4/demos/sqlbrowser/sqlbrowser
+share/qt4/demos/sqlbrowser/sqlbrowser.debug
+share/qt4/demos/sqlbrowser/sqlbrowser.pro
+share/qt4/demos/textedit/example.html
+share/qt4/demos/textedit/images/logo32.png
+share/qt4/demos/textedit/images/mac/editcopy.png
+share/qt4/demos/textedit/images/mac/editcut.png
+share/qt4/demos/textedit/images/mac/editpaste.png
+share/qt4/demos/textedit/images/mac/editredo.png
+share/qt4/demos/textedit/images/mac/editundo.png
+share/qt4/demos/textedit/images/mac/exportpdf.png
+share/qt4/demos/textedit/images/mac/filenew.png
+share/qt4/demos/textedit/images/mac/fileopen.png
+share/qt4/demos/textedit/images/mac/fileprint.png
+share/qt4/demos/textedit/images/mac/filesave.png
+share/qt4/demos/textedit/images/mac/textbold.png
+share/qt4/demos/textedit/images/mac/textcenter.png
+share/qt4/demos/textedit/images/mac/textitalic.png
+share/qt4/demos/textedit/images/mac/textjustify.png
+share/qt4/demos/textedit/images/mac/textleft.png
+share/qt4/demos/textedit/images/mac/textright.png
+share/qt4/demos/textedit/images/mac/textunder.png
+share/qt4/demos/textedit/images/mac/zoomin.png
+share/qt4/demos/textedit/images/mac/zoomout.png
+share/qt4/demos/textedit/images/win/editcopy.png
+share/qt4/demos/textedit/images/win/editcut.png
+share/qt4/demos/textedit/images/win/editpaste.png
+share/qt4/demos/textedit/images/win/editredo.png
+share/qt4/demos/textedit/images/win/editundo.png
+share/qt4/demos/textedit/images/win/exportpdf.png
+share/qt4/demos/textedit/images/win/filenew.png
+share/qt4/demos/textedit/images/win/fileopen.png
+share/qt4/demos/textedit/images/win/fileprint.png
+share/qt4/demos/textedit/images/win/filesave.png
+share/qt4/demos/textedit/images/win/textbold.png
+share/qt4/demos/textedit/images/win/textcenter.png
+share/qt4/demos/textedit/images/win/textitalic.png
+share/qt4/demos/textedit/images/win/textjustify.png
+share/qt4/demos/textedit/images/win/textleft.png
+share/qt4/demos/textedit/images/win/textright.png
+share/qt4/demos/textedit/images/win/textunder.png
+share/qt4/demos/textedit/images/win/zoomin.png
+share/qt4/demos/textedit/images/win/zoomout.png
+share/qt4/demos/textedit/main.cpp
+share/qt4/demos/textedit/printpreview.cpp
+share/qt4/demos/textedit/printpreview.h
+share/qt4/demos/textedit/textedit
+share/qt4/demos/textedit/textedit.cpp
+share/qt4/demos/textedit/textedit.debug
+share/qt4/demos/textedit/textedit.doc
+share/qt4/demos/textedit/textedit.h
+share/qt4/demos/textedit/textedit.pro
+share/qt4/demos/textedit/textedit.qrc
+share/qt4/examples/README
+share/qt4/examples/assistant/assistant.pro
+share/qt4/examples/assistant/simpletextviewer/documentation/about.txt
+share/qt4/examples/assistant/simpletextviewer/documentation/browse.html
+share/qt4/examples/assistant/simpletextviewer/documentation/filedialog.html
+share/qt4/examples/assistant/simpletextviewer/documentation/findfile.html
+share/qt4/examples/assistant/simpletextviewer/documentation/images/browse.png
+share/qt4/examples/assistant/simpletextviewer/documentation/images/fadedfilemenu.png
+share/qt4/examples/assistant/simpletextviewer/documentation/images/filedialog.png
+share/qt4/examples/assistant/simpletextviewer/documentation/images/handbook.png
+share/qt4/examples/assistant/simpletextviewer/documentation/images/mainwindow.png
+share/qt4/examples/assistant/simpletextviewer/documentation/images/open.png
+share/qt4/examples/assistant/simpletextviewer/documentation/images/wildcard.png
+share/qt4/examples/assistant/simpletextviewer/documentation/index.html
+share/qt4/examples/assistant/simpletextviewer/documentation/intro.html
+share/qt4/examples/assistant/simpletextviewer/documentation/openfile.html
+share/qt4/examples/assistant/simpletextviewer/documentation/simpletextviewer.adp
+share/qt4/examples/assistant/simpletextviewer/documentation/wildcardmatching.html
+share/qt4/examples/assistant/simpletextviewer/findfiledialog.cpp
+share/qt4/examples/assistant/simpletextviewer/findfiledialog.h
+share/qt4/examples/assistant/simpletextviewer/main.cpp
+share/qt4/examples/assistant/simpletextviewer/mainwindow.cpp
+share/qt4/examples/assistant/simpletextviewer/mainwindow.h
+share/qt4/examples/assistant/simpletextviewer/simpletextviewer
+share/qt4/examples/assistant/simpletextviewer/simpletextviewer.debug
+share/qt4/examples/assistant/simpletextviewer/simpletextviewer.pro
+share/qt4/examples/designer/README
+share/qt4/examples/designer/calculatorbuilder/calculatorbuilder
+share/qt4/examples/designer/calculatorbuilder/calculatorbuilder.debug
+share/qt4/examples/designer/calculatorbuilder/calculatorbuilder.pro
+share/qt4/examples/designer/calculatorbuilder/calculatorbuilder.qrc
+share/qt4/examples/designer/calculatorbuilder/calculatorform.cpp
+share/qt4/examples/designer/calculatorbuilder/calculatorform.h
+share/qt4/examples/designer/calculatorbuilder/calculatorform.ui
+share/qt4/examples/designer/calculatorbuilder/main.cpp
+share/qt4/examples/designer/calculatorform/calculatorform
+share/qt4/examples/designer/calculatorform/calculatorform.cpp
+share/qt4/examples/designer/calculatorform/calculatorform.debug
+share/qt4/examples/designer/calculatorform/calculatorform.h
+share/qt4/examples/designer/calculatorform/calculatorform.pro
+share/qt4/examples/designer/calculatorform/calculatorform.ui
+share/qt4/examples/designer/calculatorform/main.cpp
+share/qt4/examples/designer/containerextension/containerextension.pro
+share/qt4/examples/designer/containerextension/multipagewidget.cpp
+share/qt4/examples/designer/containerextension/multipagewidget.h
+share/qt4/examples/designer/containerextension/multipagewidgetcontainerextension.cpp
+share/qt4/examples/designer/containerextension/multipagewidgetcontainerextension.h
+share/qt4/examples/designer/containerextension/multipagewidgetextensionfactory.cpp
+share/qt4/examples/designer/containerextension/multipagewidgetextensionfactory.h
+share/qt4/examples/designer/containerextension/multipagewidgetplugin.cpp
+share/qt4/examples/designer/containerextension/multipagewidgetplugin.h
+share/qt4/examples/designer/customwidgetplugin/analogclock.cpp
+share/qt4/examples/designer/customwidgetplugin/analogclock.h
+share/qt4/examples/designer/customwidgetplugin/customwidgetplugin.cpp
+share/qt4/examples/designer/customwidgetplugin/customwidgetplugin.h
+share/qt4/examples/designer/customwidgetplugin/customwidgetplugin.pro
+share/qt4/examples/designer/designer.pro
+share/qt4/examples/designer/taskmenuextension/taskmenuextension.pro
+share/qt4/examples/designer/taskmenuextension/tictactoe.cpp
+share/qt4/examples/designer/taskmenuextension/tictactoe.h
+share/qt4/examples/designer/taskmenuextension/tictactoedialog.cpp
+share/qt4/examples/designer/taskmenuextension/tictactoedialog.h
+share/qt4/examples/designer/taskmenuextension/tictactoeplugin.cpp
+share/qt4/examples/designer/taskmenuextension/tictactoeplugin.h
+share/qt4/examples/designer/taskmenuextension/tictactoetaskmenu.cpp
+share/qt4/examples/designer/taskmenuextension/tictactoetaskmenu.h
+share/qt4/examples/designer/worldtimeclockbuilder/form.ui
+share/qt4/examples/designer/worldtimeclockbuilder/main.cpp
+share/qt4/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder
+share/qt4/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder.debug
+share/qt4/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder.pro
+share/qt4/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder.qrc
+share/qt4/examples/designer/worldtimeclockplugin/worldtimeclock.cpp
+share/qt4/examples/designer/worldtimeclockplugin/worldtimeclock.h
+share/qt4/examples/designer/worldtimeclockplugin/worldtimeclockplugin.cpp
+share/qt4/examples/designer/worldtimeclockplugin/worldtimeclockplugin.h
+share/qt4/examples/designer/worldtimeclockplugin/worldtimeclockplugin.pro
+share/qt4/examples/desktop/README
+share/qt4/examples/desktop/desktop.pro
+share/qt4/examples/desktop/screenshot/main.cpp
+share/qt4/examples/desktop/screenshot/screenshot
+share/qt4/examples/desktop/screenshot/screenshot.cpp
+share/qt4/examples/desktop/screenshot/screenshot.debug
+share/qt4/examples/desktop/screenshot/screenshot.h
+share/qt4/examples/desktop/screenshot/screenshot.pro
+share/qt4/examples/desktop/systray/main.cpp
+share/qt4/examples/desktop/systray/systray
+share/qt4/examples/desktop/systray/systray.debug
+share/qt4/examples/desktop/systray/systray.pro
+share/qt4/examples/desktop/systray/systray.qrc
+share/qt4/examples/desktop/systray/window.cpp
+share/qt4/examples/desktop/systray/window.h
+share/qt4/examples/dialogs/README
+share/qt4/examples/dialogs/configdialog/configdialog
+share/qt4/examples/dialogs/configdialog/configdialog.cpp
+share/qt4/examples/dialogs/configdialog/configdialog.debug
+share/qt4/examples/dialogs/configdialog/configdialog.h
+share/qt4/examples/dialogs/configdialog/configdialog.pro
+share/qt4/examples/dialogs/configdialog/configdialog.qrc
+share/qt4/examples/dialogs/configdialog/images/config.png
+share/qt4/examples/dialogs/configdialog/images/query.png
+share/qt4/examples/dialogs/configdialog/images/update.png
+share/qt4/examples/dialogs/configdialog/main.cpp
+share/qt4/examples/dialogs/configdialog/pages.cpp
+share/qt4/examples/dialogs/configdialog/pages.h
+share/qt4/examples/dialogs/dialogs.pro
+share/qt4/examples/dialogs/extension/extension
+share/qt4/examples/dialogs/extension/extension.debug
+share/qt4/examples/dialogs/extension/extension.pro
+share/qt4/examples/dialogs/extension/finddialog.cpp
+share/qt4/examples/dialogs/extension/finddialog.h
+share/qt4/examples/dialogs/extension/main.cpp
+share/qt4/examples/dialogs/findfiles/findfiles
+share/qt4/examples/dialogs/findfiles/findfiles.debug
+share/qt4/examples/dialogs/findfiles/findfiles.pro
+share/qt4/examples/dialogs/findfiles/main.cpp
+share/qt4/examples/dialogs/findfiles/window.cpp
+share/qt4/examples/dialogs/findfiles/window.h
+share/qt4/examples/dialogs/standarddialogs/dialog.cpp
+share/qt4/examples/dialogs/standarddialogs/dialog.h
+share/qt4/examples/dialogs/standarddialogs/main.cpp
+share/qt4/examples/dialogs/standarddialogs/standarddialogs
+share/qt4/examples/dialogs/standarddialogs/standarddialogs.debug
+share/qt4/examples/dialogs/standarddialogs/standarddialogs.pro
+share/qt4/examples/dialogs/tabdialog/main.cpp
+share/qt4/examples/dialogs/tabdialog/tabdialog
+share/qt4/examples/dialogs/tabdialog/tabdialog.cpp
+share/qt4/examples/dialogs/tabdialog/tabdialog.debug
+share/qt4/examples/dialogs/tabdialog/tabdialog.h
+share/qt4/examples/dialogs/tabdialog/tabdialog.pro
+share/qt4/examples/draganddrop/README
+share/qt4/examples/draganddrop/draganddrop.pro
+share/qt4/examples/draganddrop/draggableicons/draggableicons
+share/qt4/examples/draganddrop/draggableicons/draggableicons.debug
+share/qt4/examples/draganddrop/draggableicons/draggableicons.pro
+share/qt4/examples/draganddrop/draggableicons/draggableicons.qrc
+share/qt4/examples/draganddrop/draggableicons/dragwidget.cpp
+share/qt4/examples/draganddrop/draggableicons/dragwidget.h
+share/qt4/examples/draganddrop/draggableicons/images/boat.png
+share/qt4/examples/draganddrop/draggableicons/images/car.png
+share/qt4/examples/draganddrop/draggableicons/images/house.png
+share/qt4/examples/draganddrop/draggableicons/main.cpp
+share/qt4/examples/draganddrop/draggabletext/draggabletext
+share/qt4/examples/draganddrop/draggabletext/draggabletext.debug
+share/qt4/examples/draganddrop/draggabletext/draggabletext.pro
+share/qt4/examples/draganddrop/draggabletext/draggabletext.qrc
+share/qt4/examples/draganddrop/draggabletext/draglabel.cpp
+share/qt4/examples/draganddrop/draggabletext/draglabel.h
+share/qt4/examples/draganddrop/draggabletext/dragwidget.cpp
+share/qt4/examples/draganddrop/draggabletext/dragwidget.h
+share/qt4/examples/draganddrop/draggabletext/main.cpp
+share/qt4/examples/draganddrop/draggabletext/words.txt
+share/qt4/examples/draganddrop/dropsite/droparea.cpp
+share/qt4/examples/draganddrop/dropsite/droparea.h
+share/qt4/examples/draganddrop/dropsite/dropsite
+share/qt4/examples/draganddrop/dropsite/dropsite.debug
+share/qt4/examples/draganddrop/dropsite/dropsite.pro
+share/qt4/examples/draganddrop/dropsite/dropsitewindow.cpp
+share/qt4/examples/draganddrop/dropsite/dropsitewindow.h
+share/qt4/examples/draganddrop/dropsite/main.cpp
+share/qt4/examples/draganddrop/fridgemagnets/draglabel.cpp
+share/qt4/examples/draganddrop/fridgemagnets/draglabel.h
+share/qt4/examples/draganddrop/fridgemagnets/dragwidget.cpp
+share/qt4/examples/draganddrop/fridgemagnets/dragwidget.h
+share/qt4/examples/draganddrop/fridgemagnets/fridgemagnets
+share/qt4/examples/draganddrop/fridgemagnets/fridgemagnets.debug
+share/qt4/examples/draganddrop/fridgemagnets/fridgemagnets.pro
+share/qt4/examples/draganddrop/fridgemagnets/fridgemagnets.qrc
+share/qt4/examples/draganddrop/fridgemagnets/main.cpp
+share/qt4/examples/draganddrop/fridgemagnets/words.txt
+share/qt4/examples/draganddrop/puzzle/example.jpg
+share/qt4/examples/draganddrop/puzzle/main.cpp
+share/qt4/examples/draganddrop/puzzle/mainwindow.cpp
+share/qt4/examples/draganddrop/puzzle/mainwindow.h
+share/qt4/examples/draganddrop/puzzle/pieceslist.cpp
+share/qt4/examples/draganddrop/puzzle/pieceslist.h
+share/qt4/examples/draganddrop/puzzle/puzzle
+share/qt4/examples/draganddrop/puzzle/puzzle.debug
+share/qt4/examples/draganddrop/puzzle/puzzle.pro
+share/qt4/examples/draganddrop/puzzle/puzzle.qrc
+share/qt4/examples/draganddrop/puzzle/puzzlewidget.cpp
+share/qt4/examples/draganddrop/puzzle/puzzlewidget.h
+share/qt4/examples/examples.pro
+share/qt4/examples/graphicsview/README
+share/qt4/examples/graphicsview/collidingmice/collidingmice
+share/qt4/examples/graphicsview/collidingmice/collidingmice.debug
+share/qt4/examples/graphicsview/collidingmice/collidingmice.pro
+share/qt4/examples/graphicsview/collidingmice/images/cheese.jpg
+share/qt4/examples/graphicsview/collidingmice/main.cpp
+share/qt4/examples/graphicsview/collidingmice/mice.qrc
+share/qt4/examples/graphicsview/collidingmice/mouse.cpp
+share/qt4/examples/graphicsview/collidingmice/mouse.h
+share/qt4/examples/graphicsview/dragdroprobot/coloritem.cpp
+share/qt4/examples/graphicsview/dragdroprobot/coloritem.h
+share/qt4/examples/graphicsview/dragdroprobot/dragdroprobot
+share/qt4/examples/graphicsview/dragdroprobot/dragdroprobot.debug
+share/qt4/examples/graphicsview/dragdroprobot/dragdroprobot.pro
+share/qt4/examples/graphicsview/dragdroprobot/images/head.png
+share/qt4/examples/graphicsview/dragdroprobot/main.cpp
+share/qt4/examples/graphicsview/dragdroprobot/robot.cpp
+share/qt4/examples/graphicsview/dragdroprobot/robot.h
+share/qt4/examples/graphicsview/dragdroprobot/robot.qrc
+share/qt4/examples/graphicsview/elasticnodes/edge.cpp
+share/qt4/examples/graphicsview/elasticnodes/edge.h
+share/qt4/examples/graphicsview/elasticnodes/elasticnodes
+share/qt4/examples/graphicsview/elasticnodes/elasticnodes.debug
+share/qt4/examples/graphicsview/elasticnodes/elasticnodes.pro
+share/qt4/examples/graphicsview/elasticnodes/graphwidget.cpp
+share/qt4/examples/graphicsview/elasticnodes/graphwidget.h
+share/qt4/examples/graphicsview/elasticnodes/main.cpp
+share/qt4/examples/graphicsview/elasticnodes/node.cpp
+share/qt4/examples/graphicsview/elasticnodes/node.h
+share/qt4/examples/graphicsview/graphicsview.pro
+share/qt4/examples/graphicsview/portedasteroids/animateditem.cpp
+share/qt4/examples/graphicsview/portedasteroids/animateditem.h
+share/qt4/examples/graphicsview/portedasteroids/bg.png
+share/qt4/examples/graphicsview/portedasteroids/ledmeter.cpp
+share/qt4/examples/graphicsview/portedasteroids/ledmeter.h
+share/qt4/examples/graphicsview/portedasteroids/main.cpp
+share/qt4/examples/graphicsview/portedasteroids/portedasteroids
+share/qt4/examples/graphicsview/portedasteroids/portedasteroids.debug
+share/qt4/examples/graphicsview/portedasteroids/portedasteroids.pro
+share/qt4/examples/graphicsview/portedasteroids/portedasteroids.qrc
+share/qt4/examples/graphicsview/portedasteroids/sounds/Explosion.wav
+share/qt4/examples/graphicsview/portedasteroids/sprites.h
+share/qt4/examples/graphicsview/portedasteroids/sprites/.pbm
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits.ini
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits.pov
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0000.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0001.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0002.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0003.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0004.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0005.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0006.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0007.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0008.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0009.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0010.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0011.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0012.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0013.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0014.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits0015.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/exhaust/exhaust.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/missile/missile.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/powerups/brake.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/powerups/energy.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/powerups/shield.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/powerups/shoot.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/powerups/teleport.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock1.ini
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock1.pov
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10000.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10001.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10002.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10003.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10004.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10005.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10006.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10007.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10008.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10009.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10010.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10011.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10012.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10013.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10014.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10015.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10016.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10017.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10018.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10019.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10020.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10021.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10022.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10023.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10024.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10025.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10026.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10027.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10028.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10029.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10030.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock1/rock10031.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock2.ini
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock2.pov
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20000.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20001.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20002.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20003.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20004.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20005.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20006.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20007.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20008.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20009.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20010.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20011.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20012.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20013.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20014.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20015.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20016.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20017.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20018.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20019.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20020.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20021.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20022.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20023.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20024.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20025.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20026.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20027.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20028.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20029.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20030.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock2/rock20031.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock3.ini
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock3.pov
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30000.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30001.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30002.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30003.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30004.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30005.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30006.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30007.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30008.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30009.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30010.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30011.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30012.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30013.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30014.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30015.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30016.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30017.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30018.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30019.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30020.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30021.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30022.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30023.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30024.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30025.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30026.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30027.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30028.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30029.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30030.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/rock3/rock30031.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/shield/shield0000.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/shield/shield0001.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/shield/shield0002.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/shield/shield0003.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/shield/shield0004.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/shield/shield0005.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/shield/shield0006.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship.ini
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship.pov
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0000.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0001.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0002.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0003.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0004.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0005.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0006.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0007.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0008.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0009.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0010.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0011.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0012.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0013.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0014.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0015.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0016.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0017.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0018.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0019.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0020.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0021.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0022.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0023.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0024.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0025.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0026.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0027.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0028.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0029.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0030.png
+share/qt4/examples/graphicsview/portedasteroids/sprites/ship/ship0031.png
+share/qt4/examples/graphicsview/portedasteroids/toplevel.cpp
+share/qt4/examples/graphicsview/portedasteroids/toplevel.h
+share/qt4/examples/graphicsview/portedasteroids/view.cpp
+share/qt4/examples/graphicsview/portedasteroids/view.h
+share/qt4/examples/graphicsview/portedcanvas/butterfly.png
+share/qt4/examples/graphicsview/portedcanvas/canvas.cpp
+share/qt4/examples/graphicsview/portedcanvas/canvas.h
+share/qt4/examples/graphicsview/portedcanvas/main.cpp
+share/qt4/examples/graphicsview/portedcanvas/portedcanvas
+share/qt4/examples/graphicsview/portedcanvas/portedcanvas.debug
+share/qt4/examples/graphicsview/portedcanvas/portedcanvas.pro
+share/qt4/examples/graphicsview/portedcanvas/portedcanvas.qrc
+share/qt4/examples/graphicsview/portedcanvas/qt-trans.xpm
+share/qt4/examples/graphicsview/portedcanvas/qtlogo.png
+share/qt4/examples/itemviews/README
+share/qt4/examples/itemviews/basicsortfiltermodel/basicsortfiltermodel
+share/qt4/examples/itemviews/basicsortfiltermodel/basicsortfiltermodel.debug
+share/qt4/examples/itemviews/basicsortfiltermodel/basicsortfiltermodel.pro
+share/qt4/examples/itemviews/basicsortfiltermodel/main.cpp
+share/qt4/examples/itemviews/basicsortfiltermodel/window.cpp
+share/qt4/examples/itemviews/basicsortfiltermodel/window.h
+share/qt4/examples/itemviews/chart/chart
+share/qt4/examples/itemviews/chart/chart.debug
+share/qt4/examples/itemviews/chart/chart.pro
+share/qt4/examples/itemviews/chart/chart.qrc
+share/qt4/examples/itemviews/chart/main.cpp
+share/qt4/examples/itemviews/chart/mainwindow.cpp
+share/qt4/examples/itemviews/chart/mainwindow.h
+share/qt4/examples/itemviews/chart/mydata.cht
+share/qt4/examples/itemviews/chart/pieview.cpp
+share/qt4/examples/itemviews/chart/pieview.h
+share/qt4/examples/itemviews/chart/qtdata.cht
+share/qt4/examples/itemviews/customsortfiltermodel/customsortfiltermodel
+share/qt4/examples/itemviews/customsortfiltermodel/customsortfiltermodel.debug
+share/qt4/examples/itemviews/customsortfiltermodel/customsortfiltermodel.pro
+share/qt4/examples/itemviews/customsortfiltermodel/main.cpp
+share/qt4/examples/itemviews/customsortfiltermodel/mysortfilterproxymodel.cpp
+share/qt4/examples/itemviews/customsortfiltermodel/mysortfilterproxymodel.h
+share/qt4/examples/itemviews/customsortfiltermodel/window.cpp
+share/qt4/examples/itemviews/customsortfiltermodel/window.h
+share/qt4/examples/itemviews/dirview/dirview
+share/qt4/examples/itemviews/dirview/dirview.debug
+share/qt4/examples/itemviews/dirview/dirview.pro
+share/qt4/examples/itemviews/dirview/main.cpp
+share/qt4/examples/itemviews/itemviews.pro
+share/qt4/examples/itemviews/pixelator/imagemodel.cpp
+share/qt4/examples/itemviews/pixelator/imagemodel.h
+share/qt4/examples/itemviews/pixelator/images.qrc
+share/qt4/examples/itemviews/pixelator/images/qt.png
+share/qt4/examples/itemviews/pixelator/main.cpp
+share/qt4/examples/itemviews/pixelator/mainwindow.cpp
+share/qt4/examples/itemviews/pixelator/mainwindow.h
+share/qt4/examples/itemviews/pixelator/pixelator
+share/qt4/examples/itemviews/pixelator/pixelator.debug
+share/qt4/examples/itemviews/pixelator/pixelator.pro
+share/qt4/examples/itemviews/pixelator/pixeldelegate.cpp
+share/qt4/examples/itemviews/pixelator/pixeldelegate.h
+share/qt4/examples/itemviews/puzzle/example.jpg
+share/qt4/examples/itemviews/puzzle/main.cpp
+share/qt4/examples/itemviews/puzzle/mainwindow.cpp
+share/qt4/examples/itemviews/puzzle/mainwindow.h
+share/qt4/examples/itemviews/puzzle/piecesmodel.cpp
+share/qt4/examples/itemviews/puzzle/piecesmodel.h
+share/qt4/examples/itemviews/puzzle/puzzle
+share/qt4/examples/itemviews/puzzle/puzzle.debug
+share/qt4/examples/itemviews/puzzle/puzzle.pro
+share/qt4/examples/itemviews/puzzle/puzzle.qrc
+share/qt4/examples/itemviews/puzzle/puzzlewidget.cpp
+share/qt4/examples/itemviews/puzzle/puzzlewidget.h
+share/qt4/examples/itemviews/simpledommodel/domitem.cpp
+share/qt4/examples/itemviews/simpledommodel/domitem.h
+share/qt4/examples/itemviews/simpledommodel/dommodel.cpp
+share/qt4/examples/itemviews/simpledommodel/dommodel.h
+share/qt4/examples/itemviews/simpledommodel/main.cpp
+share/qt4/examples/itemviews/simpledommodel/mainwindow.cpp
+share/qt4/examples/itemviews/simpledommodel/mainwindow.h
+share/qt4/examples/itemviews/simpledommodel/simpledommodel
+share/qt4/examples/itemviews/simpledommodel/simpledommodel.debug
+share/qt4/examples/itemviews/simpledommodel/simpledommodel.pro
+share/qt4/examples/itemviews/simpletreemodel/default.txt
+share/qt4/examples/itemviews/simpletreemodel/main.cpp
+share/qt4/examples/itemviews/simpletreemodel/simpletreemodel
+share/qt4/examples/itemviews/simpletreemodel/simpletreemodel.debug
+share/qt4/examples/itemviews/simpletreemodel/simpletreemodel.pro
+share/qt4/examples/itemviews/simpletreemodel/simpletreemodel.qrc
+share/qt4/examples/itemviews/simpletreemodel/treeitem.cpp
+share/qt4/examples/itemviews/simpletreemodel/treeitem.h
+share/qt4/examples/itemviews/simpletreemodel/treemodel.cpp
+share/qt4/examples/itemviews/simpletreemodel/treemodel.h
+share/qt4/examples/itemviews/spinboxdelegate/delegate.cpp
+share/qt4/examples/itemviews/spinboxdelegate/delegate.h
+share/qt4/examples/itemviews/spinboxdelegate/main.cpp
+share/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate
+share/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate.debug
+share/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate.pro
+share/qt4/examples/layouts/README
+share/qt4/examples/layouts/basiclayouts/basiclayouts
+share/qt4/examples/layouts/basiclayouts/basiclayouts.debug
+share/qt4/examples/layouts/basiclayouts/basiclayouts.pro
+share/qt4/examples/layouts/basiclayouts/dialog.cpp
+share/qt4/examples/layouts/basiclayouts/dialog.h
+share/qt4/examples/layouts/basiclayouts/main.cpp
+share/qt4/examples/layouts/borderlayout/borderlayout
+share/qt4/examples/layouts/borderlayout/borderlayout.cpp
+share/qt4/examples/layouts/borderlayout/borderlayout.debug
+share/qt4/examples/layouts/borderlayout/borderlayout.h
+share/qt4/examples/layouts/borderlayout/borderlayout.pro
+share/qt4/examples/layouts/borderlayout/main.cpp
+share/qt4/examples/layouts/borderlayout/window.cpp
+share/qt4/examples/layouts/borderlayout/window.h
+share/qt4/examples/layouts/dynamiclayouts/dialog.cpp
+share/qt4/examples/layouts/dynamiclayouts/dialog.h
+share/qt4/examples/layouts/dynamiclayouts/dynamiclayouts
+share/qt4/examples/layouts/dynamiclayouts/dynamiclayouts.debug
+share/qt4/examples/layouts/dynamiclayouts/dynamiclayouts.pro
+share/qt4/examples/layouts/dynamiclayouts/main.cpp
+share/qt4/examples/layouts/flowlayout/flowlayout
+share/qt4/examples/layouts/flowlayout/flowlayout.cpp
+share/qt4/examples/layouts/flowlayout/flowlayout.debug
+share/qt4/examples/layouts/flowlayout/flowlayout.h
+share/qt4/examples/layouts/flowlayout/flowlayout.pro
+share/qt4/examples/layouts/flowlayout/main.cpp
+share/qt4/examples/layouts/flowlayout/window.cpp
+share/qt4/examples/layouts/flowlayout/window.h
+share/qt4/examples/layouts/layouts.pro
+share/qt4/examples/linguist/README
+share/qt4/examples/linguist/arrowpad/arrowpad
+share/qt4/examples/linguist/arrowpad/arrowpad.cpp
+share/qt4/examples/linguist/arrowpad/arrowpad.debug
+share/qt4/examples/linguist/arrowpad/arrowpad.h
+share/qt4/examples/linguist/arrowpad/arrowpad.pro
+share/qt4/examples/linguist/arrowpad/main.cpp
+share/qt4/examples/linguist/arrowpad/mainwindow.cpp
+share/qt4/examples/linguist/arrowpad/mainwindow.h
+share/qt4/examples/linguist/hellotr/hellotr
+share/qt4/examples/linguist/hellotr/hellotr.debug
+share/qt4/examples/linguist/hellotr/hellotr.pro
+share/qt4/examples/linguist/hellotr/main.cpp
+share/qt4/examples/linguist/linguist.pro
+share/qt4/examples/linguist/trollprint/main.cpp
+share/qt4/examples/linguist/trollprint/mainwindow.cpp
+share/qt4/examples/linguist/trollprint/mainwindow.h
+share/qt4/examples/linguist/trollprint/printpanel.cpp
+share/qt4/examples/linguist/trollprint/printpanel.h
+share/qt4/examples/linguist/trollprint/trollprint
+share/qt4/examples/linguist/trollprint/trollprint.debug
+share/qt4/examples/linguist/trollprint/trollprint.pro
+share/qt4/examples/linguist/trollprint/trollprint_pt.ts
+share/qt4/examples/mainwindows/README
+share/qt4/examples/mainwindows/application/application
+share/qt4/examples/mainwindows/application/application.debug
+share/qt4/examples/mainwindows/application/application.pro
+share/qt4/examples/mainwindows/application/application.qrc
+share/qt4/examples/mainwindows/application/images/copy.png
+share/qt4/examples/mainwindows/application/images/cut.png
+share/qt4/examples/mainwindows/application/images/new.png
+share/qt4/examples/mainwindows/application/images/open.png
+share/qt4/examples/mainwindows/application/images/paste.png
+share/qt4/examples/mainwindows/application/images/save.png
+share/qt4/examples/mainwindows/application/main.cpp
+share/qt4/examples/mainwindows/application/mainwindow.cpp
+share/qt4/examples/mainwindows/application/mainwindow.h
+share/qt4/examples/mainwindows/dockwidgets/dockwidgets
+share/qt4/examples/mainwindows/dockwidgets/dockwidgets.debug
+share/qt4/examples/mainwindows/dockwidgets/dockwidgets.pro
+share/qt4/examples/mainwindows/dockwidgets/dockwidgets.qrc
+share/qt4/examples/mainwindows/dockwidgets/images/new.png
+share/qt4/examples/mainwindows/dockwidgets/images/print.png
+share/qt4/examples/mainwindows/dockwidgets/images/save.png
+share/qt4/examples/mainwindows/dockwidgets/images/undo.png
+share/qt4/examples/mainwindows/dockwidgets/main.cpp
+share/qt4/examples/mainwindows/dockwidgets/mainwindow.cpp
+share/qt4/examples/mainwindows/dockwidgets/mainwindow.h
+share/qt4/examples/mainwindows/mainwindows.pro
+share/qt4/examples/mainwindows/mdi/images/copy.png
+share/qt4/examples/mainwindows/mdi/images/cut.png
+share/qt4/examples/mainwindows/mdi/images/new.png
+share/qt4/examples/mainwindows/mdi/images/open.png
+share/qt4/examples/mainwindows/mdi/images/paste.png
+share/qt4/examples/mainwindows/mdi/images/save.png
+share/qt4/examples/mainwindows/mdi/main.cpp
+share/qt4/examples/mainwindows/mdi/mainwindow.cpp
+share/qt4/examples/mainwindows/mdi/mainwindow.h
+share/qt4/examples/mainwindows/mdi/mdi
+share/qt4/examples/mainwindows/mdi/mdi.debug
+share/qt4/examples/mainwindows/mdi/mdi.pro
+share/qt4/examples/mainwindows/mdi/mdi.qrc
+share/qt4/examples/mainwindows/mdi/mdichild.cpp
+share/qt4/examples/mainwindows/mdi/mdichild.h
+share/qt4/examples/mainwindows/menus/main.cpp
+share/qt4/examples/mainwindows/menus/mainwindow.cpp
+share/qt4/examples/mainwindows/menus/mainwindow.h
+share/qt4/examples/mainwindows/menus/menus
+share/qt4/examples/mainwindows/menus/menus.debug
+share/qt4/examples/mainwindows/menus/menus.pro
+share/qt4/examples/mainwindows/recentfiles/main.cpp
+share/qt4/examples/mainwindows/recentfiles/mainwindow.cpp
+share/qt4/examples/mainwindows/recentfiles/mainwindow.h
+share/qt4/examples/mainwindows/recentfiles/recentfiles
+share/qt4/examples/mainwindows/recentfiles/recentfiles.debug
+share/qt4/examples/mainwindows/recentfiles/recentfiles.pro
+share/qt4/examples/mainwindows/sdi/images/copy.png
+share/qt4/examples/mainwindows/sdi/images/cut.png
+share/qt4/examples/mainwindows/sdi/images/new.png
+share/qt4/examples/mainwindows/sdi/images/open.png
+share/qt4/examples/mainwindows/sdi/images/paste.png
+share/qt4/examples/mainwindows/sdi/images/save.png
+share/qt4/examples/mainwindows/sdi/main.cpp
+share/qt4/examples/mainwindows/sdi/mainwindow.cpp
+share/qt4/examples/mainwindows/sdi/mainwindow.h
+share/qt4/examples/mainwindows/sdi/sdi
+share/qt4/examples/mainwindows/sdi/sdi.debug
+share/qt4/examples/mainwindows/sdi/sdi.pro
+share/qt4/examples/mainwindows/sdi/sdi.qrc
+share/qt4/examples/network/README
+share/qt4/examples/network/blockingfortuneclient/blockingclient.cpp
+share/qt4/examples/network/blockingfortuneclient/blockingclient.h
+share/qt4/examples/network/blockingfortuneclient/blockingfortuneclient
+share/qt4/examples/network/blockingfortuneclient/blockingfortuneclient.debug
+share/qt4/examples/network/blockingfortuneclient/blockingfortuneclient.pro
+share/qt4/examples/network/blockingfortuneclient/fortunethread.cpp
+share/qt4/examples/network/blockingfortuneclient/fortunethread.h
+share/qt4/examples/network/blockingfortuneclient/main.cpp
+share/qt4/examples/network/broadcastreceiver/broadcastreceiver
+share/qt4/examples/network/broadcastreceiver/broadcastreceiver.debug
+share/qt4/examples/network/broadcastreceiver/broadcastreceiver.pro
+share/qt4/examples/network/broadcastreceiver/main.cpp
+share/qt4/examples/network/broadcastreceiver/receiver.cpp
+share/qt4/examples/network/broadcastreceiver/receiver.h
+share/qt4/examples/network/broadcastsender/broadcastsender
+share/qt4/examples/network/broadcastsender/broadcastsender.debug
+share/qt4/examples/network/broadcastsender/broadcastsender.pro
+share/qt4/examples/network/broadcastsender/main.cpp
+share/qt4/examples/network/broadcastsender/sender.cpp
+share/qt4/examples/network/broadcastsender/sender.h
+share/qt4/examples/network/chat/chat
+share/qt4/examples/network/chat/chat.debug
+share/qt4/examples/network/chat/chat.pro
+share/qt4/examples/network/chat/chatdialog.cpp
+share/qt4/examples/network/chat/chatdialog.h
+share/qt4/examples/network/chat/chatdialog.ui
+share/qt4/examples/network/chat/client.cpp
+share/qt4/examples/network/chat/client.h
+share/qt4/examples/network/chat/connection.cpp
+share/qt4/examples/network/chat/connection.h
+share/qt4/examples/network/chat/main.cpp
+share/qt4/examples/network/chat/peermanager.cpp
+share/qt4/examples/network/chat/peermanager.h
+share/qt4/examples/network/chat/server.cpp
+share/qt4/examples/network/chat/server.h
+share/qt4/examples/network/fortuneclient/client.cpp
+share/qt4/examples/network/fortuneclient/client.h
+share/qt4/examples/network/fortuneclient/fortuneclient
+share/qt4/examples/network/fortuneclient/fortuneclient.debug
+share/qt4/examples/network/fortuneclient/fortuneclient.pro
+share/qt4/examples/network/fortuneclient/main.cpp
+share/qt4/examples/network/fortuneserver/fortuneserver
+share/qt4/examples/network/fortuneserver/fortuneserver.debug
+share/qt4/examples/network/fortuneserver/fortuneserver.pro
+share/qt4/examples/network/fortuneserver/main.cpp
+share/qt4/examples/network/fortuneserver/server.cpp
+share/qt4/examples/network/fortuneserver/server.h
+share/qt4/examples/network/ftp/ftp
+share/qt4/examples/network/ftp/ftp.debug
+share/qt4/examples/network/ftp/ftp.pro
+share/qt4/examples/network/ftp/ftp.qrc
+share/qt4/examples/network/ftp/ftpwindow.cpp
+share/qt4/examples/network/ftp/ftpwindow.h
+share/qt4/examples/network/ftp/images/cdtoparent.png
+share/qt4/examples/network/ftp/images/dir.png
+share/qt4/examples/network/ftp/images/file.png
+share/qt4/examples/network/ftp/main.cpp
+share/qt4/examples/network/http/http
+share/qt4/examples/network/http/http.debug
+share/qt4/examples/network/http/http.pro
+share/qt4/examples/network/http/httpwindow.cpp
+share/qt4/examples/network/http/httpwindow.h
+share/qt4/examples/network/http/main.cpp
+share/qt4/examples/network/loopback/dialog.cpp
+share/qt4/examples/network/loopback/dialog.h
+share/qt4/examples/network/loopback/loopback
+share/qt4/examples/network/loopback/loopback.debug
+share/qt4/examples/network/loopback/loopback.pro
+share/qt4/examples/network/loopback/main.cpp
+share/qt4/examples/network/network.pro
+share/qt4/examples/network/threadedfortuneserver/dialog.cpp
+share/qt4/examples/network/threadedfortuneserver/dialog.h
+share/qt4/examples/network/threadedfortuneserver/fortuneserver.cpp
+share/qt4/examples/network/threadedfortuneserver/fortuneserver.h
+share/qt4/examples/network/threadedfortuneserver/fortunethread.cpp
+share/qt4/examples/network/threadedfortuneserver/fortunethread.h
+share/qt4/examples/network/threadedfortuneserver/main.cpp
+share/qt4/examples/network/threadedfortuneserver/threadedfortuneserver
+share/qt4/examples/network/threadedfortuneserver/threadedfortuneserver.debug
+share/qt4/examples/network/threadedfortuneserver/threadedfortuneserver.pro
+share/qt4/examples/network/torrent/3rdparty/sha1.c
+share/qt4/examples/network/torrent/3rdparty/sha1.h
+share/qt4/examples/network/torrent/addtorrentdialog.cpp
+share/qt4/examples/network/torrent/addtorrentdialog.h
+share/qt4/examples/network/torrent/bencodeparser.cpp
+share/qt4/examples/network/torrent/bencodeparser.h
+share/qt4/examples/network/torrent/connectionmanager.cpp
+share/qt4/examples/network/torrent/connectionmanager.h
+share/qt4/examples/network/torrent/filemanager.cpp
+share/qt4/examples/network/torrent/filemanager.h
+share/qt4/examples/network/torrent/forms/addtorrentform.ui
+share/qt4/examples/network/torrent/icons.qrc
+share/qt4/examples/network/torrent/icons/1downarrow.png
+share/qt4/examples/network/torrent/icons/1uparrow.png
+share/qt4/examples/network/torrent/icons/bottom.png
+share/qt4/examples/network/torrent/icons/edit_add.png
+share/qt4/examples/network/torrent/icons/edit_remove.png
+share/qt4/examples/network/torrent/icons/exit.png
+share/qt4/examples/network/torrent/icons/peertopeer.png
+share/qt4/examples/network/torrent/icons/player_pause.png
+share/qt4/examples/network/torrent/icons/player_play.png
+share/qt4/examples/network/torrent/icons/player_stop.png
+share/qt4/examples/network/torrent/icons/stop.png
+share/qt4/examples/network/torrent/main.cpp
+share/qt4/examples/network/torrent/mainwindow.cpp
+share/qt4/examples/network/torrent/mainwindow.h
+share/qt4/examples/network/torrent/metainfo.cpp
+share/qt4/examples/network/torrent/metainfo.h
+share/qt4/examples/network/torrent/peerwireclient.cpp
+share/qt4/examples/network/torrent/peerwireclient.h
+share/qt4/examples/network/torrent/ratecontroller.cpp
+share/qt4/examples/network/torrent/ratecontroller.h
+share/qt4/examples/network/torrent/torrent
+share/qt4/examples/network/torrent/torrent.debug
+share/qt4/examples/network/torrent/torrent.pro
+share/qt4/examples/network/torrent/torrentclient.cpp
+share/qt4/examples/network/torrent/torrentclient.h
+share/qt4/examples/network/torrent/torrentserver.cpp
+share/qt4/examples/network/torrent/torrentserver.h
+share/qt4/examples/network/torrent/trackerclient.cpp
+share/qt4/examples/network/torrent/trackerclient.h
+share/qt4/examples/opengl/2dpainting/2dpainting
+share/qt4/examples/opengl/2dpainting/2dpainting.debug
+share/qt4/examples/opengl/2dpainting/2dpainting.pro
+share/qt4/examples/opengl/2dpainting/glwidget.cpp
+share/qt4/examples/opengl/2dpainting/glwidget.h
+share/qt4/examples/opengl/2dpainting/helper.cpp
+share/qt4/examples/opengl/2dpainting/helper.h
+share/qt4/examples/opengl/2dpainting/main.cpp
+share/qt4/examples/opengl/2dpainting/widget.cpp
+share/qt4/examples/opengl/2dpainting/widget.h
+share/qt4/examples/opengl/2dpainting/window.cpp
+share/qt4/examples/opengl/2dpainting/window.h
+share/qt4/examples/opengl/README
+share/qt4/examples/opengl/framebufferobject/bubbles.svg
+share/qt4/examples/opengl/framebufferobject/framebufferobject
+share/qt4/examples/opengl/framebufferobject/framebufferobject.debug
+share/qt4/examples/opengl/framebufferobject/framebufferobject.pro
+share/qt4/examples/opengl/framebufferobject/framebufferobject.qrc
+share/qt4/examples/opengl/framebufferobject/glwidget.cpp
+share/qt4/examples/opengl/framebufferobject/glwidget.h
+share/qt4/examples/opengl/framebufferobject/main.cpp
+share/qt4/examples/opengl/framebufferobject/qt4-logo.png
+share/qt4/examples/opengl/framebufferobject2/cubelogo.png
+share/qt4/examples/opengl/framebufferobject2/framebufferobject2
+share/qt4/examples/opengl/framebufferobject2/framebufferobject2.debug
+share/qt4/examples/opengl/framebufferobject2/framebufferobject2.pro
+share/qt4/examples/opengl/framebufferobject2/framebufferobject2.qrc
+share/qt4/examples/opengl/framebufferobject2/glwidget.cpp
+share/qt4/examples/opengl/framebufferobject2/glwidget.h
+share/qt4/examples/opengl/framebufferobject2/main.cpp
+share/qt4/examples/opengl/grabber/glwidget.cpp
+share/qt4/examples/opengl/grabber/glwidget.h
+share/qt4/examples/opengl/grabber/grabber
+share/qt4/examples/opengl/grabber/grabber.debug
+share/qt4/examples/opengl/grabber/grabber.pro
+share/qt4/examples/opengl/grabber/main.cpp
+share/qt4/examples/opengl/grabber/mainwindow.cpp
+share/qt4/examples/opengl/grabber/mainwindow.h
+share/qt4/examples/opengl/hellogl/glwidget.cpp
+share/qt4/examples/opengl/hellogl/glwidget.h
+share/qt4/examples/opengl/hellogl/hellogl
+share/qt4/examples/opengl/hellogl/hellogl.debug
+share/qt4/examples/opengl/hellogl/hellogl.pro
+share/qt4/examples/opengl/hellogl/main.cpp
+share/qt4/examples/opengl/hellogl/window.cpp
+share/qt4/examples/opengl/hellogl/window.h
+share/qt4/examples/opengl/opengl.pro
+share/qt4/examples/opengl/overpainting/bubble.cpp
+share/qt4/examples/opengl/overpainting/bubble.h
+share/qt4/examples/opengl/overpainting/glwidget.cpp
+share/qt4/examples/opengl/overpainting/glwidget.h
+share/qt4/examples/opengl/overpainting/main.cpp
+share/qt4/examples/opengl/overpainting/overpainting
+share/qt4/examples/opengl/overpainting/overpainting.debug
+share/qt4/examples/opengl/overpainting/overpainting.pro
+share/qt4/examples/opengl/pbuffers/cubelogo.png
+share/qt4/examples/opengl/pbuffers/glwidget.cpp
+share/qt4/examples/opengl/pbuffers/glwidget.h
+share/qt4/examples/opengl/pbuffers/main.cpp
+share/qt4/examples/opengl/pbuffers/pbuffers
+share/qt4/examples/opengl/pbuffers/pbuffers.debug
+share/qt4/examples/opengl/pbuffers/pbuffers.pro
+share/qt4/examples/opengl/pbuffers/pbuffers.qrc
+share/qt4/examples/opengl/pbuffers2/bubbles.svg
+share/qt4/examples/opengl/pbuffers2/glwidget.cpp
+share/qt4/examples/opengl/pbuffers2/glwidget.h
+share/qt4/examples/opengl/pbuffers2/main.cpp
+share/qt4/examples/opengl/pbuffers2/pbuffers2
+share/qt4/examples/opengl/pbuffers2/pbuffers2.debug
+share/qt4/examples/opengl/pbuffers2/pbuffers2.pro
+share/qt4/examples/opengl/pbuffers2/pbuffers2.qrc
+share/qt4/examples/opengl/pbuffers2/qt4-logo.png
+share/qt4/examples/opengl/samplebuffers/glwidget.cpp
+share/qt4/examples/opengl/samplebuffers/glwidget.h
+share/qt4/examples/opengl/samplebuffers/main.cpp
+share/qt4/examples/opengl/samplebuffers/samplebuffers
+share/qt4/examples/opengl/samplebuffers/samplebuffers.debug
+share/qt4/examples/opengl/samplebuffers/samplebuffers.pro
+share/qt4/examples/opengl/textures/glwidget.cpp
+share/qt4/examples/opengl/textures/glwidget.h
+share/qt4/examples/opengl/textures/images/side1.png
+share/qt4/examples/opengl/textures/images/side2.png
+share/qt4/examples/opengl/textures/images/side3.png
+share/qt4/examples/opengl/textures/images/side4.png
+share/qt4/examples/opengl/textures/images/side5.png
+share/qt4/examples/opengl/textures/images/side6.png
+share/qt4/examples/opengl/textures/main.cpp
+share/qt4/examples/opengl/textures/textures
+share/qt4/examples/opengl/textures/textures.debug
+share/qt4/examples/opengl/textures/textures.pro
+share/qt4/examples/opengl/textures/textures.qrc
+share/qt4/examples/opengl/textures/window.cpp
+share/qt4/examples/opengl/textures/window.h
+share/qt4/examples/painting/README
+share/qt4/examples/painting/basicdrawing/basicdrawing
+share/qt4/examples/painting/basicdrawing/basicdrawing.debug
+share/qt4/examples/painting/basicdrawing/basicdrawing.pro
+share/qt4/examples/painting/basicdrawing/basicdrawing.qrc
+share/qt4/examples/painting/basicdrawing/images/brick.png
+share/qt4/examples/painting/basicdrawing/images/qt-logo.png
+share/qt4/examples/painting/basicdrawing/main.cpp
+share/qt4/examples/painting/basicdrawing/renderarea.cpp
+share/qt4/examples/painting/basicdrawing/renderarea.h
+share/qt4/examples/painting/basicdrawing/window.cpp
+share/qt4/examples/painting/basicdrawing/window.h
+share/qt4/examples/painting/concentriccircles/circlewidget.cpp
+share/qt4/examples/painting/concentriccircles/circlewidget.h
+share/qt4/examples/painting/concentriccircles/concentriccircles
+share/qt4/examples/painting/concentriccircles/concentriccircles.debug
+share/qt4/examples/painting/concentriccircles/concentriccircles.pro
+share/qt4/examples/painting/concentriccircles/main.cpp
+share/qt4/examples/painting/concentriccircles/window.cpp
+share/qt4/examples/painting/concentriccircles/window.h
+share/qt4/examples/painting/fontsampler/fontsampler
+share/qt4/examples/painting/fontsampler/fontsampler.debug
+share/qt4/examples/painting/fontsampler/fontsampler.pro
+share/qt4/examples/painting/fontsampler/main.cpp
+share/qt4/examples/painting/fontsampler/mainwindow.cpp
+share/qt4/examples/painting/fontsampler/mainwindow.h
+share/qt4/examples/painting/fontsampler/mainwindowbase.ui
+share/qt4/examples/painting/fontsampler/previewdialog.cpp
+share/qt4/examples/painting/fontsampler/previewdialog.h
+share/qt4/examples/painting/fontsampler/previewdialogbase.ui
+share/qt4/examples/painting/fontsampler/previewlabel.cpp
+share/qt4/examples/painting/fontsampler/previewlabel.h
+share/qt4/examples/painting/imagecomposition/imagecomposer.cpp
+share/qt4/examples/painting/imagecomposition/imagecomposer.h
+share/qt4/examples/painting/imagecomposition/imagecomposition
+share/qt4/examples/painting/imagecomposition/imagecomposition.debug
+share/qt4/examples/painting/imagecomposition/imagecomposition.pro
+share/qt4/examples/painting/imagecomposition/imagecomposition.qrc
+share/qt4/examples/painting/imagecomposition/images/background.png
+share/qt4/examples/painting/imagecomposition/images/blackrectangle.png
+share/qt4/examples/painting/imagecomposition/images/butterfly.png
+share/qt4/examples/painting/imagecomposition/images/checker.png
+share/qt4/examples/painting/imagecomposition/main.cpp
+share/qt4/examples/painting/painterpaths/main.cpp
+share/qt4/examples/painting/painterpaths/painterpaths
+share/qt4/examples/painting/painterpaths/painterpaths.debug
+share/qt4/examples/painting/painterpaths/painterpaths.pro
+share/qt4/examples/painting/painterpaths/renderarea.cpp
+share/qt4/examples/painting/painterpaths/renderarea.h
+share/qt4/examples/painting/painterpaths/window.cpp
+share/qt4/examples/painting/painterpaths/window.h
+share/qt4/examples/painting/painting.pro
+share/qt4/examples/painting/svgviewer/files/bubbles.svg
+share/qt4/examples/painting/svgviewer/files/cubic.svg
+share/qt4/examples/painting/svgviewer/files/spheres.svg
+share/qt4/examples/painting/svgviewer/main.cpp
+share/qt4/examples/painting/svgviewer/mainwindow.cpp
+share/qt4/examples/painting/svgviewer/mainwindow.h
+share/qt4/examples/painting/svgviewer/svgview.cpp
+share/qt4/examples/painting/svgviewer/svgview.h
+share/qt4/examples/painting/svgviewer/svgviewer
+share/qt4/examples/painting/svgviewer/svgviewer.debug
+share/qt4/examples/painting/svgviewer/svgviewer.pro
+share/qt4/examples/painting/svgviewer/svgviewer.qrc
+share/qt4/examples/painting/svgviewer/svgwindow.cpp
+share/qt4/examples/painting/svgviewer/svgwindow.h
+share/qt4/examples/painting/transformations/main.cpp
+share/qt4/examples/painting/transformations/renderarea.cpp
+share/qt4/examples/painting/transformations/renderarea.h
+share/qt4/examples/painting/transformations/transformations
+share/qt4/examples/painting/transformations/transformations.debug
+share/qt4/examples/painting/transformations/transformations.pro
+share/qt4/examples/painting/transformations/window.cpp
+share/qt4/examples/painting/transformations/window.h
+share/qt4/examples/qtestlib/README
+share/qt4/examples/qtestlib/qtestlib.pro
+share/qt4/examples/qtestlib/tutorial1/testqstring.cpp
+share/qt4/examples/qtestlib/tutorial1/tutorial1
+share/qt4/examples/qtestlib/tutorial1/tutorial1.debug
+share/qt4/examples/qtestlib/tutorial1/tutorial1.pro
+share/qt4/examples/qtestlib/tutorial2/testqstring.cpp
+share/qt4/examples/qtestlib/tutorial2/tutorial2
+share/qt4/examples/qtestlib/tutorial2/tutorial2.debug
+share/qt4/examples/qtestlib/tutorial2/tutorial2.pro
+share/qt4/examples/qtestlib/tutorial3/testgui.cpp
+share/qt4/examples/qtestlib/tutorial3/tutorial3
+share/qt4/examples/qtestlib/tutorial3/tutorial3.debug
+share/qt4/examples/qtestlib/tutorial3/tutorial3.pro
+share/qt4/examples/qtestlib/tutorial4/testgui.cpp
+share/qt4/examples/qtestlib/tutorial4/tutorial4
+share/qt4/examples/qtestlib/tutorial4/tutorial4.debug
+share/qt4/examples/qtestlib/tutorial4/tutorial4.pro
+share/qt4/examples/richtext/README
+share/qt4/examples/richtext/calendar/calendar
+share/qt4/examples/richtext/calendar/calendar.debug
+share/qt4/examples/richtext/calendar/calendar.pro
+share/qt4/examples/richtext/calendar/main.cpp
+share/qt4/examples/richtext/calendar/mainwindow.cpp
+share/qt4/examples/richtext/calendar/mainwindow.h
+share/qt4/examples/richtext/orderform/detailsdialog.cpp
+share/qt4/examples/richtext/orderform/detailsdialog.h
+share/qt4/examples/richtext/orderform/main.cpp
+share/qt4/examples/richtext/orderform/mainwindow.cpp
+share/qt4/examples/richtext/orderform/mainwindow.h
+share/qt4/examples/richtext/orderform/orderform
+share/qt4/examples/richtext/orderform/orderform.debug
+share/qt4/examples/richtext/orderform/orderform.pro
+share/qt4/examples/richtext/richtext.pro
+share/qt4/examples/richtext/syntaxhighlighter/highlighter.cpp
+share/qt4/examples/richtext/syntaxhighlighter/highlighter.h
+share/qt4/examples/richtext/syntaxhighlighter/main.cpp
+share/qt4/examples/richtext/syntaxhighlighter/mainwindow.cpp
+share/qt4/examples/richtext/syntaxhighlighter/mainwindow.h
+share/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter
+share/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter.debug
+share/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter.pro
+share/qt4/examples/sql/README
+share/qt4/examples/sql/cachedtable/cachedtable
+share/qt4/examples/sql/cachedtable/cachedtable.debug
+share/qt4/examples/sql/cachedtable/cachedtable.pro
+share/qt4/examples/sql/cachedtable/main.cpp
+share/qt4/examples/sql/cachedtable/tableeditor.cpp
+share/qt4/examples/sql/cachedtable/tableeditor.h
+share/qt4/examples/sql/connection.h
+share/qt4/examples/sql/querymodel/customsqlmodel.cpp
+share/qt4/examples/sql/querymodel/customsqlmodel.h
+share/qt4/examples/sql/querymodel/editablesqlmodel.cpp
+share/qt4/examples/sql/querymodel/editablesqlmodel.h
+share/qt4/examples/sql/querymodel/main.cpp
+share/qt4/examples/sql/querymodel/querymodel
+share/qt4/examples/sql/querymodel/querymodel.debug
+share/qt4/examples/sql/querymodel/querymodel.pro
+share/qt4/examples/sql/relationaltablemodel/relationaltablemodel
+share/qt4/examples/sql/relationaltablemodel/relationaltablemodel.cpp
+share/qt4/examples/sql/relationaltablemodel/relationaltablemodel.debug
+share/qt4/examples/sql/relationaltablemodel/relationaltablemodel.pro
+share/qt4/examples/sql/sql.pro
+share/qt4/examples/sql/tablemodel/tablemodel
+share/qt4/examples/sql/tablemodel/tablemodel.cpp
+share/qt4/examples/sql/tablemodel/tablemodel.debug
+share/qt4/examples/sql/tablemodel/tablemodel.pro
+share/qt4/examples/threads/README
+share/qt4/examples/threads/mandelbrot/main.cpp
+share/qt4/examples/threads/mandelbrot/mandelbrot
+share/qt4/examples/threads/mandelbrot/mandelbrot.debug
+share/qt4/examples/threads/mandelbrot/mandelbrot.pro
+share/qt4/examples/threads/mandelbrot/mandelbrotwidget.cpp
+share/qt4/examples/threads/mandelbrot/mandelbrotwidget.h
+share/qt4/examples/threads/mandelbrot/renderthread.cpp
+share/qt4/examples/threads/mandelbrot/renderthread.h
+share/qt4/examples/threads/semaphores/semaphores
+share/qt4/examples/threads/semaphores/semaphores.cpp
+share/qt4/examples/threads/semaphores/semaphores.debug
+share/qt4/examples/threads/semaphores/semaphores.pro
+share/qt4/examples/threads/threads.pro
+share/qt4/examples/threads/waitconditions/waitconditions
+share/qt4/examples/threads/waitconditions/waitconditions.cpp
+share/qt4/examples/threads/waitconditions/waitconditions.debug
+share/qt4/examples/threads/waitconditions/waitconditions.pro
+share/qt4/examples/tools/README
+share/qt4/examples/tools/codecs/codecs
+share/qt4/examples/tools/codecs/codecs.debug
+share/qt4/examples/tools/codecs/codecs.pro
+share/qt4/examples/tools/codecs/encodedfiles/iso-8859-1.txt
+share/qt4/examples/tools/codecs/encodedfiles/iso-8859-15.txt
+share/qt4/examples/tools/codecs/encodedfiles/utf-16.txt
+share/qt4/examples/tools/codecs/encodedfiles/utf-16be.txt
+share/qt4/examples/tools/codecs/encodedfiles/utf-16le.txt
+share/qt4/examples/tools/codecs/encodedfiles/utf-8.txt
+share/qt4/examples/tools/codecs/main.cpp
+share/qt4/examples/tools/codecs/mainwindow.cpp
+share/qt4/examples/tools/codecs/mainwindow.h
+share/qt4/examples/tools/codecs/previewform.cpp
+share/qt4/examples/tools/codecs/previewform.h
+share/qt4/examples/tools/completer/completer
+share/qt4/examples/tools/completer/completer.debug
+share/qt4/examples/tools/completer/completer.pro
+share/qt4/examples/tools/completer/completer.qrc
+share/qt4/examples/tools/completer/dirmodel.cpp
+share/qt4/examples/tools/completer/dirmodel.h
+share/qt4/examples/tools/completer/main.cpp
+share/qt4/examples/tools/completer/mainwindow.cpp
+share/qt4/examples/tools/completer/mainwindow.h
+share/qt4/examples/tools/completer/resources/countries.txt
+share/qt4/examples/tools/completer/resources/wordlist.txt
+share/qt4/examples/tools/customcompleter/customcompleter
+share/qt4/examples/tools/customcompleter/customcompleter.debug
+share/qt4/examples/tools/customcompleter/customcompleter.pro
+share/qt4/examples/tools/customcompleter/customcompleter.qrc
+share/qt4/examples/tools/customcompleter/main.cpp
+share/qt4/examples/tools/customcompleter/mainwindow.cpp
+share/qt4/examples/tools/customcompleter/mainwindow.h
+share/qt4/examples/tools/customcompleter/resources/wordlist.txt
+share/qt4/examples/tools/customcompleter/textedit.cpp
+share/qt4/examples/tools/customcompleter/textedit.h
+share/qt4/examples/tools/i18n/i18n
+share/qt4/examples/tools/i18n/i18n.debug
+share/qt4/examples/tools/i18n/i18n.pro
+share/qt4/examples/tools/i18n/i18n.qrc
+share/qt4/examples/tools/i18n/languagechooser.cpp
+share/qt4/examples/tools/i18n/languagechooser.h
+share/qt4/examples/tools/i18n/main.cpp
+share/qt4/examples/tools/i18n/mainwindow.cpp
+share/qt4/examples/tools/i18n/mainwindow.h
+share/qt4/examples/tools/i18n/translations/i18n_ar.qm
+share/qt4/examples/tools/i18n/translations/i18n_ar.ts
+share/qt4/examples/tools/i18n/translations/i18n_cs.qm
+share/qt4/examples/tools/i18n/translations/i18n_cs.ts
+share/qt4/examples/tools/i18n/translations/i18n_de.qm
+share/qt4/examples/tools/i18n/translations/i18n_de.ts
+share/qt4/examples/tools/i18n/translations/i18n_el.qm
+share/qt4/examples/tools/i18n/translations/i18n_el.ts
+share/qt4/examples/tools/i18n/translations/i18n_en.qm
+share/qt4/examples/tools/i18n/translations/i18n_en.ts
+share/qt4/examples/tools/i18n/translations/i18n_eo.qm
+share/qt4/examples/tools/i18n/translations/i18n_eo.ts
+share/qt4/examples/tools/i18n/translations/i18n_fr.qm
+share/qt4/examples/tools/i18n/translations/i18n_fr.ts
+share/qt4/examples/tools/i18n/translations/i18n_it.qm
+share/qt4/examples/tools/i18n/translations/i18n_it.ts
+share/qt4/examples/tools/i18n/translations/i18n_jp.qm
+share/qt4/examples/tools/i18n/translations/i18n_jp.ts
+share/qt4/examples/tools/i18n/translations/i18n_ko.qm
+share/qt4/examples/tools/i18n/translations/i18n_ko.ts
+share/qt4/examples/tools/i18n/translations/i18n_no.qm
+share/qt4/examples/tools/i18n/translations/i18n_no.ts
+share/qt4/examples/tools/i18n/translations/i18n_ru.qm
+share/qt4/examples/tools/i18n/translations/i18n_ru.ts
+share/qt4/examples/tools/i18n/translations/i18n_sv.qm
+share/qt4/examples/tools/i18n/translations/i18n_sv.ts
+share/qt4/examples/tools/i18n/translations/i18n_zh.qm
+share/qt4/examples/tools/i18n/translations/i18n_zh.ts
+share/qt4/examples/tools/plugandpaint/interfaces.h
+share/qt4/examples/tools/plugandpaint/main.cpp
+share/qt4/examples/tools/plugandpaint/mainwindow.cpp
+share/qt4/examples/tools/plugandpaint/mainwindow.h
+share/qt4/examples/tools/plugandpaint/paintarea.cpp
+share/qt4/examples/tools/plugandpaint/paintarea.h
+share/qt4/examples/tools/plugandpaint/plugandpaint
+share/qt4/examples/tools/plugandpaint/plugandpaint.debug
+share/qt4/examples/tools/plugandpaint/plugandpaint.pro
+share/qt4/examples/tools/plugandpaint/plugindialog.cpp
+share/qt4/examples/tools/plugandpaint/plugindialog.h
+share/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.a
+share/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so
+share/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so.debug
+share/qt4/examples/tools/plugandpaintplugins/basictools/basictools.pro
+share/qt4/examples/tools/plugandpaintplugins/basictools/basictoolsplugin.cpp
+share/qt4/examples/tools/plugandpaintplugins/basictools/basictoolsplugin.h
+share/qt4/examples/tools/plugandpaintplugins/extrafilters/extrafilters.pro
+share/qt4/examples/tools/plugandpaintplugins/extrafilters/extrafiltersplugin.cpp
+share/qt4/examples/tools/plugandpaintplugins/extrafilters/extrafiltersplugin.h
+share/qt4/examples/tools/plugandpaintplugins/plugandpaintplugins.pro
+share/qt4/examples/tools/qtdemo/demos.xml
+share/qt4/examples/tools/qtdemo/displayshape.cpp
+share/qt4/examples/tools/qtdemo/displayshape.h
+share/qt4/examples/tools/qtdemo/displaywidget.cpp
+share/qt4/examples/tools/qtdemo/displaywidget.h
+share/qt4/examples/tools/qtdemo/examples.xml
+share/qt4/examples/tools/qtdemo/images/qt4-logo.png
+share/qt4/examples/tools/qtdemo/images/trolltech-logo.png
+share/qt4/examples/tools/qtdemo/launcher.cpp
+share/qt4/examples/tools/qtdemo/launcher.h
+share/qt4/examples/tools/qtdemo/main.cpp
+share/qt4/examples/tools/qtdemo/qtdemo.icns
+share/qt4/examples/tools/qtdemo/qtdemo.ico
+share/qt4/examples/tools/qtdemo/qtdemo.pro
+share/qt4/examples/tools/qtdemo/qtdemo.qrc
+share/qt4/examples/tools/qtdemo/qtdemo.rc
+share/qt4/examples/tools/regexp/main.cpp
+share/qt4/examples/tools/regexp/regexp
+share/qt4/examples/tools/regexp/regexp.debug
+share/qt4/examples/tools/regexp/regexp.pro
+share/qt4/examples/tools/regexp/regexpdialog.cpp
+share/qt4/examples/tools/regexp/regexpdialog.h
+share/qt4/examples/tools/settingseditor/inifiles/licensepage.ini
+share/qt4/examples/tools/settingseditor/inifiles/qsa.ini
+share/qt4/examples/tools/settingseditor/locationdialog.cpp
+share/qt4/examples/tools/settingseditor/locationdialog.h
+share/qt4/examples/tools/settingseditor/main.cpp
+share/qt4/examples/tools/settingseditor/mainwindow.cpp
+share/qt4/examples/tools/settingseditor/mainwindow.h
+share/qt4/examples/tools/settingseditor/settingseditor
+share/qt4/examples/tools/settingseditor/settingseditor.debug
+share/qt4/examples/tools/settingseditor/settingseditor.pro
+share/qt4/examples/tools/settingseditor/settingstree.cpp
+share/qt4/examples/tools/settingseditor/settingstree.h
+share/qt4/examples/tools/settingseditor/variantdelegate.cpp
+share/qt4/examples/tools/settingseditor/variantdelegate.h
+share/qt4/examples/tools/tools.pro
+share/qt4/examples/tutorial/README
+share/qt4/examples/tutorial/t1/main.cpp
+share/qt4/examples/tutorial/t1/t1
+share/qt4/examples/tutorial/t1/t1.debug
+share/qt4/examples/tutorial/t1/t1.pro
+share/qt4/examples/tutorial/t10/cannonfield.cpp
+share/qt4/examples/tutorial/t10/cannonfield.h
+share/qt4/examples/tutorial/t10/lcdrange.cpp
+share/qt4/examples/tutorial/t10/lcdrange.h
+share/qt4/examples/tutorial/t10/main.cpp
+share/qt4/examples/tutorial/t10/t10
+share/qt4/examples/tutorial/t10/t10.debug
+share/qt4/examples/tutorial/t10/t10.pro
+share/qt4/examples/tutorial/t11/cannonfield.cpp
+share/qt4/examples/tutorial/t11/cannonfield.h
+share/qt4/examples/tutorial/t11/lcdrange.cpp
+share/qt4/examples/tutorial/t11/lcdrange.h
+share/qt4/examples/tutorial/t11/main.cpp
+share/qt4/examples/tutorial/t11/t11
+share/qt4/examples/tutorial/t11/t11.debug
+share/qt4/examples/tutorial/t11/t11.pro
+share/qt4/examples/tutorial/t12/cannonfield.cpp
+share/qt4/examples/tutorial/t12/cannonfield.h
+share/qt4/examples/tutorial/t12/lcdrange.cpp
+share/qt4/examples/tutorial/t12/lcdrange.h
+share/qt4/examples/tutorial/t12/main.cpp
+share/qt4/examples/tutorial/t12/t12
+share/qt4/examples/tutorial/t12/t12.debug
+share/qt4/examples/tutorial/t12/t12.pro
+share/qt4/examples/tutorial/t13/cannonfield.cpp
+share/qt4/examples/tutorial/t13/cannonfield.h
+share/qt4/examples/tutorial/t13/gameboard.cpp
+share/qt4/examples/tutorial/t13/gameboard.h
+share/qt4/examples/tutorial/t13/lcdrange.cpp
+share/qt4/examples/tutorial/t13/lcdrange.h
+share/qt4/examples/tutorial/t13/main.cpp
+share/qt4/examples/tutorial/t13/t13
+share/qt4/examples/tutorial/t13/t13.debug
+share/qt4/examples/tutorial/t13/t13.pro
+share/qt4/examples/tutorial/t14/cannonfield.cpp
+share/qt4/examples/tutorial/t14/cannonfield.h
+share/qt4/examples/tutorial/t14/gameboard.cpp
+share/qt4/examples/tutorial/t14/gameboard.h
+share/qt4/examples/tutorial/t14/lcdrange.cpp
+share/qt4/examples/tutorial/t14/lcdrange.h
+share/qt4/examples/tutorial/t14/main.cpp
+share/qt4/examples/tutorial/t14/t14
+share/qt4/examples/tutorial/t14/t14.debug
+share/qt4/examples/tutorial/t14/t14.pro
+share/qt4/examples/tutorial/t2/main.cpp
+share/qt4/examples/tutorial/t2/t2
+share/qt4/examples/tutorial/t2/t2.debug
+share/qt4/examples/tutorial/t2/t2.pro
+share/qt4/examples/tutorial/t3/main.cpp
+share/qt4/examples/tutorial/t3/t3
+share/qt4/examples/tutorial/t3/t3.debug
+share/qt4/examples/tutorial/t3/t3.pro
+share/qt4/examples/tutorial/t4/main.cpp
+share/qt4/examples/tutorial/t4/t4
+share/qt4/examples/tutorial/t4/t4.debug
+share/qt4/examples/tutorial/t4/t4.pro
+share/qt4/examples/tutorial/t5/main.cpp
+share/qt4/examples/tutorial/t5/t5
+share/qt4/examples/tutorial/t5/t5.debug
+share/qt4/examples/tutorial/t5/t5.pro
+share/qt4/examples/tutorial/t6/main.cpp
+share/qt4/examples/tutorial/t6/t6
+share/qt4/examples/tutorial/t6/t6.debug
+share/qt4/examples/tutorial/t6/t6.pro
+share/qt4/examples/tutorial/t7/lcdrange.cpp
+share/qt4/examples/tutorial/t7/lcdrange.h
+share/qt4/examples/tutorial/t7/main.cpp
+share/qt4/examples/tutorial/t7/t7
+share/qt4/examples/tutorial/t7/t7.debug
+share/qt4/examples/tutorial/t7/t7.pro
+share/qt4/examples/tutorial/t8/cannonfield.cpp
+share/qt4/examples/tutorial/t8/cannonfield.h
+share/qt4/examples/tutorial/t8/lcdrange.cpp
+share/qt4/examples/tutorial/t8/lcdrange.h
+share/qt4/examples/tutorial/t8/main.cpp
+share/qt4/examples/tutorial/t8/t8
+share/qt4/examples/tutorial/t8/t8.debug
+share/qt4/examples/tutorial/t8/t8.pro
+share/qt4/examples/tutorial/t9/cannonfield.cpp
+share/qt4/examples/tutorial/t9/cannonfield.h
+share/qt4/examples/tutorial/t9/lcdrange.cpp
+share/qt4/examples/tutorial/t9/lcdrange.h
+share/qt4/examples/tutorial/t9/main.cpp
+share/qt4/examples/tutorial/t9/t9
+share/qt4/examples/tutorial/t9/t9.debug
+share/qt4/examples/tutorial/t9/t9.pro
+share/qt4/examples/tutorial/tutorial.pro
+share/qt4/examples/widgets/README
+share/qt4/examples/widgets/analogclock/analogclock
+share/qt4/examples/widgets/analogclock/analogclock.cpp
+share/qt4/examples/widgets/analogclock/analogclock.debug
+share/qt4/examples/widgets/analogclock/analogclock.h
+share/qt4/examples/widgets/analogclock/analogclock.pro
+share/qt4/examples/widgets/analogclock/main.cpp
+share/qt4/examples/widgets/calculator/button.cpp
+share/qt4/examples/widgets/calculator/button.h
+share/qt4/examples/widgets/calculator/calculator
+share/qt4/examples/widgets/calculator/calculator.cpp
+share/qt4/examples/widgets/calculator/calculator.debug
+share/qt4/examples/widgets/calculator/calculator.h
+share/qt4/examples/widgets/calculator/calculator.pro
+share/qt4/examples/widgets/calculator/main.cpp
+share/qt4/examples/widgets/charactermap/charactermap
+share/qt4/examples/widgets/charactermap/charactermap.debug
+share/qt4/examples/widgets/charactermap/charactermap.pro
+share/qt4/examples/widgets/charactermap/characterwidget.cpp
+share/qt4/examples/widgets/charactermap/characterwidget.h
+share/qt4/examples/widgets/charactermap/main.cpp
+share/qt4/examples/widgets/charactermap/mainwindow.cpp
+share/qt4/examples/widgets/charactermap/mainwindow.h
+share/qt4/examples/widgets/digitalclock/digitalclock
+share/qt4/examples/widgets/digitalclock/digitalclock.cpp
+share/qt4/examples/widgets/digitalclock/digitalclock.debug
+share/qt4/examples/widgets/digitalclock/digitalclock.h
+share/qt4/examples/widgets/digitalclock/digitalclock.pro
+share/qt4/examples/widgets/digitalclock/main.cpp
+share/qt4/examples/widgets/groupbox/groupbox
+share/qt4/examples/widgets/groupbox/groupbox.debug
+share/qt4/examples/widgets/groupbox/groupbox.pro
+share/qt4/examples/widgets/groupbox/main.cpp
+share/qt4/examples/widgets/groupbox/window.cpp
+share/qt4/examples/widgets/groupbox/window.h
+share/qt4/examples/widgets/icons/iconpreviewarea.cpp
+share/qt4/examples/widgets/icons/iconpreviewarea.h
+share/qt4/examples/widgets/icons/icons
+share/qt4/examples/widgets/icons/icons.debug
+share/qt4/examples/widgets/icons/icons.pro
+share/qt4/examples/widgets/icons/iconsizespinbox.cpp
+share/qt4/examples/widgets/icons/iconsizespinbox.h
+share/qt4/examples/widgets/icons/imagedelegate.cpp
+share/qt4/examples/widgets/icons/imagedelegate.h
+share/qt4/examples/widgets/icons/images/designer.png
+share/qt4/examples/widgets/icons/images/find_disabled.png
+share/qt4/examples/widgets/icons/images/find_normal.png
+share/qt4/examples/widgets/icons/images/monkey_off_128x128.png
+share/qt4/examples/widgets/icons/images/monkey_off_16x16.png
+share/qt4/examples/widgets/icons/images/monkey_off_32x32.png
+share/qt4/examples/widgets/icons/images/monkey_off_64x64.png
+share/qt4/examples/widgets/icons/images/monkey_on_128x128.png
+share/qt4/examples/widgets/icons/images/monkey_on_16x16.png
+share/qt4/examples/widgets/icons/images/monkey_on_32x32.png
+share/qt4/examples/widgets/icons/images/monkey_on_64x64.png
+share/qt4/examples/widgets/icons/images/qtopia_16x16.png
+share/qt4/examples/widgets/icons/images/qtopia_32x32.png
+share/qt4/examples/widgets/icons/images/qtopia_48x48.png
+share/qt4/examples/widgets/icons/main.cpp
+share/qt4/examples/widgets/icons/mainwindow.cpp
+share/qt4/examples/widgets/icons/mainwindow.h
+share/qt4/examples/widgets/imageviewer/imageviewer
+share/qt4/examples/widgets/imageviewer/imageviewer.cpp
+share/qt4/examples/widgets/imageviewer/imageviewer.debug
+share/qt4/examples/widgets/imageviewer/imageviewer.h
+share/qt4/examples/widgets/imageviewer/imageviewer.pro
+share/qt4/examples/widgets/imageviewer/main.cpp
+share/qt4/examples/widgets/lineedits/lineedits
+share/qt4/examples/widgets/lineedits/lineedits.debug
+share/qt4/examples/widgets/lineedits/lineedits.pro
+share/qt4/examples/widgets/lineedits/main.cpp
+share/qt4/examples/widgets/lineedits/window.cpp
+share/qt4/examples/widgets/lineedits/window.h
+share/qt4/examples/widgets/movie/images/open.png
+share/qt4/examples/widgets/movie/images/pause.png
+share/qt4/examples/widgets/movie/images/play.png
+share/qt4/examples/widgets/movie/images/quit.png
+share/qt4/examples/widgets/movie/images/stop.png
+share/qt4/examples/widgets/movie/main.cpp
+share/qt4/examples/widgets/movie/movie
+share/qt4/examples/widgets/movie/movie.debug
+share/qt4/examples/widgets/movie/movie.pro
+share/qt4/examples/widgets/movie/movie.qrc
+share/qt4/examples/widgets/movie/movieplayer.cpp
+share/qt4/examples/widgets/movie/movieplayer.h
+share/qt4/examples/widgets/movie/movies/fire.mng
+share/qt4/examples/widgets/scribble/main.cpp
+share/qt4/examples/widgets/scribble/mainwindow.cpp
+share/qt4/examples/widgets/scribble/mainwindow.h
+share/qt4/examples/widgets/scribble/scribble
+share/qt4/examples/widgets/scribble/scribble.debug
+share/qt4/examples/widgets/scribble/scribble.pro
+share/qt4/examples/widgets/scribble/scribblearea.cpp
+share/qt4/examples/widgets/scribble/scribblearea.h
+share/qt4/examples/widgets/shapedclock/main.cpp
+share/qt4/examples/widgets/shapedclock/shapedclock
+share/qt4/examples/widgets/shapedclock/shapedclock.cpp
+share/qt4/examples/widgets/shapedclock/shapedclock.debug
+share/qt4/examples/widgets/shapedclock/shapedclock.h
+share/qt4/examples/widgets/shapedclock/shapedclock.pro
+share/qt4/examples/widgets/sliders/main.cpp
+share/qt4/examples/widgets/sliders/sliders
+share/qt4/examples/widgets/sliders/sliders.debug
+share/qt4/examples/widgets/sliders/sliders.pro
+share/qt4/examples/widgets/sliders/slidersgroup.cpp
+share/qt4/examples/widgets/sliders/slidersgroup.h
+share/qt4/examples/widgets/sliders/window.cpp
+share/qt4/examples/widgets/sliders/window.h
+share/qt4/examples/widgets/spinboxes/main.cpp
+share/qt4/examples/widgets/spinboxes/spinboxes
+share/qt4/examples/widgets/spinboxes/spinboxes.debug
+share/qt4/examples/widgets/spinboxes/spinboxes.pro
+share/qt4/examples/widgets/spinboxes/window.cpp
+share/qt4/examples/widgets/spinboxes/window.h
+share/qt4/examples/widgets/styles/images/woodbackground.png
+share/qt4/examples/widgets/styles/images/woodbutton.png
+share/qt4/examples/widgets/styles/main.cpp
+share/qt4/examples/widgets/styles/norwegianwoodstyle.cpp
+share/qt4/examples/widgets/styles/norwegianwoodstyle.h
+share/qt4/examples/widgets/styles/styles
+share/qt4/examples/widgets/styles/styles.debug
+share/qt4/examples/widgets/styles/styles.pro
+share/qt4/examples/widgets/styles/styles.qrc
+share/qt4/examples/widgets/styles/widgetgallery.cpp
+share/qt4/examples/widgets/styles/widgetgallery.h
+share/qt4/examples/widgets/stylesheet/main.cpp
+share/qt4/examples/widgets/stylesheet/mainwindow.cpp
+share/qt4/examples/widgets/stylesheet/mainwindow.h
+share/qt4/examples/widgets/stylesheet/mainwindow.ui
+share/qt4/examples/widgets/stylesheet/stylesheet
+share/qt4/examples/widgets/stylesheet/stylesheet.debug
+share/qt4/examples/widgets/stylesheet/stylesheet.pro
+share/qt4/examples/widgets/stylesheet/stylesheet.qrc
+share/qt4/examples/widgets/stylesheet/stylesheeteditor.cpp
+share/qt4/examples/widgets/stylesheet/stylesheeteditor.h
+share/qt4/examples/widgets/stylesheet/stylesheeteditor.ui
+share/qt4/examples/widgets/tetrix/main.cpp
+share/qt4/examples/widgets/tetrix/tetrix
+share/qt4/examples/widgets/tetrix/tetrix.debug
+share/qt4/examples/widgets/tetrix/tetrix.pro
+share/qt4/examples/widgets/tetrix/tetrixboard.cpp
+share/qt4/examples/widgets/tetrix/tetrixboard.h
+share/qt4/examples/widgets/tetrix/tetrixpiece.cpp
+share/qt4/examples/widgets/tetrix/tetrixpiece.h
+share/qt4/examples/widgets/tetrix/tetrixwindow.cpp
+share/qt4/examples/widgets/tetrix/tetrixwindow.h
+share/qt4/examples/widgets/tooltips/images/circle.png
+share/qt4/examples/widgets/tooltips/images/square.png
+share/qt4/examples/widgets/tooltips/images/triangle.png
+share/qt4/examples/widgets/tooltips/main.cpp
+share/qt4/examples/widgets/tooltips/shapeitem.cpp
+share/qt4/examples/widgets/tooltips/shapeitem.h
+share/qt4/examples/widgets/tooltips/sortingbox.cpp
+share/qt4/examples/widgets/tooltips/sortingbox.h
+share/qt4/examples/widgets/tooltips/tooltips
+share/qt4/examples/widgets/tooltips/tooltips.debug
+share/qt4/examples/widgets/tooltips/tooltips.pro
+share/qt4/examples/widgets/tooltips/tooltips.qrc
+share/qt4/examples/widgets/widgets.pro
+share/qt4/examples/widgets/wiggly/dialog.cpp
+share/qt4/examples/widgets/wiggly/dialog.h
+share/qt4/examples/widgets/wiggly/main.cpp
+share/qt4/examples/widgets/wiggly/wiggly
+share/qt4/examples/widgets/wiggly/wiggly.debug
+share/qt4/examples/widgets/wiggly/wiggly.pro
+share/qt4/examples/widgets/wiggly/wigglywidget.cpp
+share/qt4/examples/widgets/wiggly/wigglywidget.h
+share/qt4/examples/widgets/windowflags/controllerwindow.cpp
+share/qt4/examples/widgets/windowflags/controllerwindow.h
+share/qt4/examples/widgets/windowflags/main.cpp
+share/qt4/examples/widgets/windowflags/previewwindow.cpp
+share/qt4/examples/widgets/windowflags/previewwindow.h
+share/qt4/examples/widgets/windowflags/windowflags
+share/qt4/examples/widgets/windowflags/windowflags.debug
+share/qt4/examples/widgets/windowflags/windowflags.pro
+share/qt4/examples/xml/README
+share/qt4/examples/xml/dombookmarks/dombookmarks
+share/qt4/examples/xml/dombookmarks/dombookmarks.debug
+share/qt4/examples/xml/dombookmarks/dombookmarks.pro
+share/qt4/examples/xml/dombookmarks/frank.xbel
+share/qt4/examples/xml/dombookmarks/jennifer.xbel
+share/qt4/examples/xml/dombookmarks/main.cpp
+share/qt4/examples/xml/dombookmarks/mainwindow.cpp
+share/qt4/examples/xml/dombookmarks/mainwindow.h
+share/qt4/examples/xml/dombookmarks/xbeltree.cpp
+share/qt4/examples/xml/dombookmarks/xbeltree.h
+share/qt4/examples/xml/saxbookmarks/frank.xbel
+share/qt4/examples/xml/saxbookmarks/jennifer.xbel
+share/qt4/examples/xml/saxbookmarks/main.cpp
+share/qt4/examples/xml/saxbookmarks/mainwindow.cpp
+share/qt4/examples/xml/saxbookmarks/mainwindow.h
+share/qt4/examples/xml/saxbookmarks/saxbookmarks
+share/qt4/examples/xml/saxbookmarks/saxbookmarks.debug
+share/qt4/examples/xml/saxbookmarks/saxbookmarks.pro
+share/qt4/examples/xml/saxbookmarks/xbelgenerator.cpp
+share/qt4/examples/xml/saxbookmarks/xbelgenerator.h
+share/qt4/examples/xml/saxbookmarks/xbelhandler.cpp
+share/qt4/examples/xml/saxbookmarks/xbelhandler.h
+share/qt4/examples/xml/xml.pro
+@dirrm share/qt4/examples/xml/saxbookmarks
+@dirrm share/qt4/examples/xml/dombookmarks
+@dirrm share/qt4/examples/xml
+@dirrm share/qt4/examples/widgets/windowflags
+@dirrm share/qt4/examples/widgets/wiggly
+@dirrm share/qt4/examples/widgets/tooltips/images
+@dirrm share/qt4/examples/widgets/tooltips
+@dirrm share/qt4/examples/widgets/tetrix
+@dirrm share/qt4/examples/widgets/stylesheet
+@dirrm share/qt4/examples/widgets/styles/images
+@dirrm share/qt4/examples/widgets/styles
+@dirrm share/qt4/examples/widgets/spinboxes
+@dirrm share/qt4/examples/widgets/sliders
+@dirrm share/qt4/examples/widgets/shapedclock
+@dirrm share/qt4/examples/widgets/scribble
+@dirrm share/qt4/examples/widgets/movie/movies
+@dirrm share/qt4/examples/widgets/movie/images
+@dirrm share/qt4/examples/widgets/movie
+@dirrm share/qt4/examples/widgets/lineedits
+@dirrm share/qt4/examples/widgets/imageviewer
+@dirrm share/qt4/examples/widgets/icons/images
+@dirrm share/qt4/examples/widgets/icons
+@dirrm share/qt4/examples/widgets/groupbox
+@dirrm share/qt4/examples/widgets/digitalclock
+@dirrm share/qt4/examples/widgets/charactermap
+@dirrm share/qt4/examples/widgets/calculator
+@dirrm share/qt4/examples/widgets/analogclock
+@dirrm share/qt4/examples/widgets
+@dirrm share/qt4/examples/tutorial/t9
+@dirrm share/qt4/examples/tutorial/t8
+@dirrm share/qt4/examples/tutorial/t7
+@dirrm share/qt4/examples/tutorial/t6
+@dirrm share/qt4/examples/tutorial/t5
+@dirrm share/qt4/examples/tutorial/t4
+@dirrm share/qt4/examples/tutorial/t3
+@dirrm share/qt4/examples/tutorial/t2
+@dirrm share/qt4/examples/tutorial/t14
+@dirrm share/qt4/examples/tutorial/t13
+@dirrm share/qt4/examples/tutorial/t12
+@dirrm share/qt4/examples/tutorial/t11
+@dirrm share/qt4/examples/tutorial/t10
+@dirrm share/qt4/examples/tutorial/t1
+@dirrm share/qt4/examples/tutorial
+@dirrm share/qt4/examples/tools/settingseditor/inifiles
+@dirrm share/qt4/examples/tools/settingseditor
+@dirrm share/qt4/examples/tools/regexp
+@dirrm share/qt4/examples/tools/qtdemo/images
+@dirrm share/qt4/examples/tools/qtdemo
+@dirrm share/qt4/examples/tools/plugandpaintplugins/extrafilters
+@dirrm share/qt4/examples/tools/plugandpaintplugins/basictools
+@dirrm share/qt4/examples/tools/plugandpaintplugins
+@dirrm share/qt4/examples/tools/plugandpaint/plugins
+@dirrm share/qt4/examples/tools/plugandpaint
+@dirrm share/qt4/examples/tools/i18n/translations
+@dirrm share/qt4/examples/tools/i18n
+@dirrm share/qt4/examples/tools/customcompleter/resources
+@dirrm share/qt4/examples/tools/customcompleter
+@dirrm share/qt4/examples/tools/completer/resources
+@dirrm share/qt4/examples/tools/completer
+@dirrm share/qt4/examples/tools/codecs/encodedfiles
+@dirrm share/qt4/examples/tools/codecs
+@dirrm share/qt4/examples/tools
+@dirrm share/qt4/examples/threads/waitconditions
+@dirrm share/qt4/examples/threads/semaphores
+@dirrm share/qt4/examples/threads/mandelbrot
+@dirrm share/qt4/examples/threads
+@dirrm share/qt4/examples/sql/tablemodel
+@dirrm share/qt4/examples/sql/relationaltablemodel
+@dirrm share/qt4/examples/sql/querymodel
+@dirrm share/qt4/examples/sql/cachedtable
+@dirrm share/qt4/examples/sql
+@dirrm share/qt4/examples/richtext/syntaxhighlighter
+@dirrm share/qt4/examples/richtext/orderform
+@dirrm share/qt4/examples/richtext/calendar
+@dirrm share/qt4/examples/richtext
+@dirrm share/qt4/examples/qtestlib/tutorial4
+@dirrm share/qt4/examples/qtestlib/tutorial3
+@dirrm share/qt4/examples/qtestlib/tutorial2
+@dirrm share/qt4/examples/qtestlib/tutorial1
+@dirrm share/qt4/examples/qtestlib
+@dirrm share/qt4/examples/painting/transformations
+@dirrm share/qt4/examples/painting/svgviewer/files
+@dirrm share/qt4/examples/painting/svgviewer
+@dirrm share/qt4/examples/painting/painterpaths
+@dirrm share/qt4/examples/painting/imagecomposition/images
+@dirrm share/qt4/examples/painting/imagecomposition
+@dirrm share/qt4/examples/painting/fontsampler
+@dirrm share/qt4/examples/painting/concentriccircles
+@dirrm share/qt4/examples/painting/basicdrawing/images
+@dirrm share/qt4/examples/painting/basicdrawing
+@dirrm share/qt4/examples/painting
+@dirrm share/qt4/examples/opengl/textures/images
+@dirrm share/qt4/examples/opengl/textures
+@dirrm share/qt4/examples/opengl/samplebuffers
+@dirrm share/qt4/examples/opengl/pbuffers2
+@dirrm share/qt4/examples/opengl/pbuffers
+@dirrm share/qt4/examples/opengl/overpainting
+@dirrm share/qt4/examples/opengl/hellogl
+@dirrm share/qt4/examples/opengl/grabber
+@dirrm share/qt4/examples/opengl/framebufferobject2
+@dirrm share/qt4/examples/opengl/framebufferobject
+@dirrm share/qt4/examples/opengl/2dpainting
+@dirrm share/qt4/examples/opengl
+@dirrm share/qt4/examples/network/torrent/icons
+@dirrm share/qt4/examples/network/torrent/forms
+@dirrm share/qt4/examples/network/torrent/3rdparty
+@dirrm share/qt4/examples/network/torrent
+@dirrm share/qt4/examples/network/threadedfortuneserver
+@dirrm share/qt4/examples/network/loopback
+@dirrm share/qt4/examples/network/http
+@dirrm share/qt4/examples/network/ftp/images
+@dirrm share/qt4/examples/network/ftp
+@dirrm share/qt4/examples/network/fortuneserver
+@dirrm share/qt4/examples/network/fortuneclient
+@dirrm share/qt4/examples/network/chat
+@dirrm share/qt4/examples/network/broadcastsender
+@dirrm share/qt4/examples/network/broadcastreceiver
+@dirrm share/qt4/examples/network/blockingfortuneclient
+@dirrm share/qt4/examples/network
+@dirrm share/qt4/examples/mainwindows/sdi/images
+@dirrm share/qt4/examples/mainwindows/sdi
+@dirrm share/qt4/examples/mainwindows/recentfiles
+@dirrm share/qt4/examples/mainwindows/menus
+@dirrm share/qt4/examples/mainwindows/mdi/images
+@dirrm share/qt4/examples/mainwindows/mdi
+@dirrm share/qt4/examples/mainwindows/dockwidgets/images
+@dirrm share/qt4/examples/mainwindows/dockwidgets
+@dirrm share/qt4/examples/mainwindows/application/images
+@dirrm share/qt4/examples/mainwindows/application
+@dirrm share/qt4/examples/mainwindows
+@dirrm share/qt4/examples/linguist/trollprint
+@dirrm share/qt4/examples/linguist/hellotr
+@dirrm share/qt4/examples/linguist/arrowpad
+@dirrm share/qt4/examples/linguist
+@dirrm share/qt4/examples/layouts/flowlayout
+@dirrm share/qt4/examples/layouts/dynamiclayouts
+@dirrm share/qt4/examples/layouts/borderlayout
+@dirrm share/qt4/examples/layouts/basiclayouts
+@dirrm share/qt4/examples/layouts
+@dirrm share/qt4/examples/itemviews/spinboxdelegate
+@dirrm share/qt4/examples/itemviews/simpletreemodel
+@dirrm share/qt4/examples/itemviews/simpledommodel
+@dirrm share/qt4/examples/itemviews/puzzle
+@dirrm share/qt4/examples/itemviews/pixelator/images
+@dirrm share/qt4/examples/itemviews/pixelator
+@dirrm share/qt4/examples/itemviews/dirview
+@dirrm share/qt4/examples/itemviews/customsortfiltermodel
+@dirrm share/qt4/examples/itemviews/chart
+@dirrm share/qt4/examples/itemviews/basicsortfiltermodel
+@dirrm share/qt4/examples/itemviews
+@dirrm share/qt4/examples/graphicsview/portedcanvas
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/ship
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/shield
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/rock3
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/rock2
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/rock1
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/powerups
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/missile
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/exhaust
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites/bits
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sprites
+@dirrm share/qt4/examples/graphicsview/portedasteroids/sounds
+@dirrm share/qt4/examples/graphicsview/portedasteroids
+@dirrm share/qt4/examples/graphicsview/elasticnodes
+@dirrm share/qt4/examples/graphicsview/dragdroprobot/images
+@dirrm share/qt4/examples/graphicsview/dragdroprobot
+@dirrm share/qt4/examples/graphicsview/collidingmice/images
+@dirrm share/qt4/examples/graphicsview/collidingmice
+@dirrm share/qt4/examples/graphicsview
+@dirrm share/qt4/examples/draganddrop/puzzle
+@dirrm share/qt4/examples/draganddrop/fridgemagnets
+@dirrm share/qt4/examples/draganddrop/dropsite
+@dirrm share/qt4/examples/draganddrop/draggabletext
+@dirrm share/qt4/examples/draganddrop/draggableicons/images
+@dirrm share/qt4/examples/draganddrop/draggableicons
+@dirrm share/qt4/examples/draganddrop
+@dirrm share/qt4/examples/dialogs/tabdialog
+@dirrm share/qt4/examples/dialogs/standarddialogs
+@dirrm share/qt4/examples/dialogs/findfiles
+@dirrm share/qt4/examples/dialogs/extension
+@dirrm share/qt4/examples/dialogs/configdialog/images
+@dirrm share/qt4/examples/dialogs/configdialog
+@dirrm share/qt4/examples/dialogs
+@dirrm share/qt4/examples/desktop/systray
+@dirrm share/qt4/examples/desktop/screenshot
+@dirrm share/qt4/examples/desktop
+@dirrm share/qt4/examples/designer/worldtimeclockplugin
+@dirrm share/qt4/examples/designer/worldtimeclockbuilder
+@dirrm share/qt4/examples/designer/taskmenuextension
+@dirrm share/qt4/examples/designer/customwidgetplugin
+@dirrm share/qt4/examples/designer/containerextension
+@dirrm share/qt4/examples/designer/calculatorform
+@dirrm share/qt4/examples/designer/calculatorbuilder
+@dirrm share/qt4/examples/designer
+@dirrm share/qt4/examples/assistant/simpletextviewer/documentation/images
+@dirrm share/qt4/examples/assistant/simpletextviewer/documentation
+@dirrm share/qt4/examples/assistant/simpletextviewer
+@dirrm share/qt4/examples/assistant
+@dirrm share/qt4/examples
+@dirrm share/qt4/demos/textedit/images/win
+@dirrm share/qt4/demos/textedit/images/mac
+@dirrm share/qt4/demos/textedit/images
+@dirrm share/qt4/demos/textedit
+@dirrm share/qt4/demos/sqlbrowser
+@dirrm share/qt4/demos/spreadsheet/images
+@dirrm share/qt4/demos/spreadsheet
+@dirrm share/qt4/demos/shared/images
+@dirrm share/qt4/demos/shared
+@dirrm share/qt4/demos/pathstroke
+@dirrm share/qt4/demos/mainwindow
+@dirrm share/qt4/demos/interview/images
+@dirrm share/qt4/demos/interview
+@dirrm share/qt4/demos/gradients
+@dirrm share/qt4/demos/deform
+@dirrm share/qt4/demos/composition
+@dirrm share/qt4/demos/chip
+@dirrm share/qt4/demos/books/images
+@dirrm share/qt4/demos/books
+@dirrm share/qt4/demos/arthurplugin
+@dirrm share/qt4/demos/affine
+@dirrm share/qt4/demos
+@dirrm lib/plugins/designer

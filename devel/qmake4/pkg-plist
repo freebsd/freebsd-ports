@@ -1,0 +1,284 @@
+bin/qmake-qt4
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-advanced-usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-common-projects.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-environment-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-function-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-platform-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-precompiledheaders.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-project-files.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-running.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-using.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-variable-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake.dcf
+share/qt4/mkspecs/aix-g++-64/qmake.conf
+share/qt4/mkspecs/aix-g++-64/qplatformdefs.h
+share/qt4/mkspecs/aix-g++/qmake.conf
+share/qt4/mkspecs/aix-g++/qplatformdefs.h
+share/qt4/mkspecs/aix-xlc-64/qmake.conf
+share/qt4/mkspecs/aix-xlc-64/qplatformdefs.h
+share/qt4/mkspecs/aix-xlc/qmake.conf
+share/qt4/mkspecs/aix-xlc/qplatformdefs.h
+share/qt4/mkspecs/common/g++.conf
+share/qt4/mkspecs/common/linux.conf
+share/qt4/mkspecs/common/unix.conf
+share/qt4/mkspecs/darwin-g++/qmake.conf
+share/qt4/mkspecs/darwin-g++/qplatformdefs.h
+share/qt4/mkspecs/features/assistant.prf
+share/qt4/mkspecs/features/build_pass.prf
+share/qt4/mkspecs/features/debug.prf
+share/qt4/mkspecs/features/debug_and_release.prf
+share/qt4/mkspecs/features/default_post.prf
+share/qt4/mkspecs/features/default_pre.prf
+share/qt4/mkspecs/features/designer.prf
+share/qt4/mkspecs/features/dll.prf
+share/qt4/mkspecs/features/exclusive_builds.prf
+share/qt4/mkspecs/features/link_pkgconfig.prf
+share/qt4/mkspecs/features/qdbus.prf
+share/qt4/mkspecs/features/qt_functions.prf
+share/qt4/mkspecs/features/mac/ppc.prf
+share/qt4/mkspecs/features/mac/x86.prf
+share/qt4/mkspecs/features/mac/default_post.prf
+share/qt4/mkspecs/features/mac/default_pre.prf
+share/qt4/mkspecs/features/mac/objective_c.prf
+share/qt4/mkspecs/features/mac/rez.prf
+share/qt4/mkspecs/features/mac/sdk.prf
+share/qt4/mkspecs/features/moc.prf
+share/qt4/mkspecs/features/qt.prf
+share/qt4/mkspecs/features/qt_config.prf
+share/qt4/mkspecs/features/qtestlib.prf
+share/qt4/mkspecs/features/qtopia.prf
+share/qt4/mkspecs/features/qtopiainc.prf
+share/qt4/mkspecs/features/qtopialib.prf
+share/qt4/mkspecs/features/release.prf
+share/qt4/mkspecs/features/resources.prf
+share/qt4/mkspecs/features/shared.prf
+share/qt4/mkspecs/features/silent.prf
+share/qt4/mkspecs/features/static.prf
+share/qt4/mkspecs/features/static_and_shared.prf
+share/qt4/mkspecs/features/staticlib.prf
+share/qt4/mkspecs/features/uic.prf
+share/qt4/mkspecs/features/uitools.prf
+share/qt4/mkspecs/features/unix/dylib.prf
+share/qt4/mkspecs/features/unix/hide_symbols.prf
+share/qt4/mkspecs/features/unix/largefile.prf
+share/qt4/mkspecs/features/unix/opengl.prf
+share/qt4/mkspecs/features/unix/separate_debug_info.prf
+share/qt4/mkspecs/features/unix/thread.prf
+share/qt4/mkspecs/features/unix/x11.prf
+share/qt4/mkspecs/features/unix/x11inc.prf
+share/qt4/mkspecs/features/unix/x11lib.prf
+share/qt4/mkspecs/features/unix/x11sm.prf
+share/qt4/mkspecs/features/warn_off.prf
+share/qt4/mkspecs/features/warn_on.prf
+share/qt4/mkspecs/features/win32/console.prf
+share/qt4/mkspecs/features/win32/default_pre.prf
+share/qt4/mkspecs/features/win32/dumpcpp.prf
+share/qt4/mkspecs/features/win32/embed_manifest_dll.prf
+share/qt4/mkspecs/features/win32/embed_manifest_exe.prf
+share/qt4/mkspecs/features/win32/exceptions.prf
+share/qt4/mkspecs/features/win32/exceptions_off.prf
+share/qt4/mkspecs/features/win32/opengl.prf
+share/qt4/mkspecs/features/win32/qaxcontainer.prf
+share/qt4/mkspecs/features/win32/qaxserver.prf
+share/qt4/mkspecs/features/win32/qt_dll.prf
+share/qt4/mkspecs/features/win32/rtti.prf
+share/qt4/mkspecs/features/win32/rtti_off.prf
+share/qt4/mkspecs/features/win32/stl.prf
+share/qt4/mkspecs/features/win32/stl_off.prf
+share/qt4/mkspecs/features/win32/thread.prf
+share/qt4/mkspecs/features/win32/thread_off.prf
+share/qt4/mkspecs/features/win32/windows.prf
+share/qt4/mkspecs/freebsd-g++/qmake.conf
+share/qt4/mkspecs/freebsd-g++/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++34/qmake.conf
+share/qt4/mkspecs/freebsd-g++34/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++40/qmake.conf
+share/qt4/mkspecs/freebsd-g++40/qplatformdefs.h
+share/qt4/mkspecs/freebsd-icc/qmake.conf
+share/qt4/mkspecs/freebsd-icc/qplatformdefs.h
+share/qt4/mkspecs/hpux-acc-64/qmake.conf
+share/qt4/mkspecs/hpux-acc-64/qplatformdefs.h
+share/qt4/mkspecs/hpux-acc-o64/qmake.conf
+share/qt4/mkspecs/hpux-acc-o64/qplatformdefs.h
+share/qt4/mkspecs/hpux-acc/qmake.conf
+share/qt4/mkspecs/hpux-acc/qplatformdefs.h
+share/qt4/mkspecs/hpux-g++-64/qmake.conf
+share/qt4/mkspecs/hpux-g++-64/qplatformdefs.h
+share/qt4/mkspecs/hpux-g++/qmake.conf
+share/qt4/mkspecs/hpux-g++/qplatformdefs.h
+share/qt4/mkspecs/hpuxi-acc-64/qmake.conf
+share/qt4/mkspecs/hpuxi-acc-64/qplatformdefs.h
+share/qt4/mkspecs/hpuxi-acc/qmake.conf
+share/qt4/mkspecs/hpuxi-acc/qplatformdefs.h
+share/qt4/mkspecs/hurd-g++/qmake.conf
+share/qt4/mkspecs/hurd-g++/qplatformdefs.h
+share/qt4/mkspecs/irix-cc-64/qmake.conf
+share/qt4/mkspecs/irix-cc-64/qplatformdefs.h
+share/qt4/mkspecs/irix-cc/qmake.conf
+share/qt4/mkspecs/irix-cc/qplatformdefs.h
+share/qt4/mkspecs/irix-g++-64/qmake.conf
+share/qt4/mkspecs/irix-g++-64/qplatformdefs.h
+share/qt4/mkspecs/irix-g++/qmake.conf
+share/qt4/mkspecs/irix-g++/qplatformdefs.h
+share/qt4/mkspecs/linux-cxx/qmake.conf
+share/qt4/mkspecs/linux-cxx/qplatformdefs.h
+share/qt4/mkspecs/linux-ecc-64/qmake.conf
+share/qt4/mkspecs/linux-ecc-64/qplatformdefs.h
+share/qt4/mkspecs/linux-g++-32/qmake.conf
+share/qt4/mkspecs/linux-g++-32/qplatformdefs.h
+share/qt4/mkspecs/linux-g++-64/qmake.conf
+share/qt4/mkspecs/linux-g++-64/qplatformdefs.h
+share/qt4/mkspecs/linux-g++/qmake.conf
+share/qt4/mkspecs/linux-g++/qplatformdefs.h
+share/qt4/mkspecs/linux-icc/qmake.conf
+share/qt4/mkspecs/linux-icc/qplatformdefs.h
+share/qt4/mkspecs/linux-kcc/qmake.conf
+share/qt4/mkspecs/linux-kcc/qplatformdefs.h
+share/qt4/mkspecs/linux-lsb/qmake.conf
+share/qt4/mkspecs/linux-lsb/qplatformdefs.h
+share/qt4/mkspecs/linux-pgcc/qmake.conf
+share/qt4/mkspecs/linux-pgcc/qplatformdefs.h
+share/qt4/mkspecs/lynxos-g++/qmake.conf
+share/qt4/mkspecs/lynxos-g++/qplatformdefs.h
+share/qt4/mkspecs/macx-g++/Info.plist.app
+share/qt4/mkspecs/macx-g++/Info.plist.lib
+share/qt4/mkspecs/macx-g++/qmake.conf
+share/qt4/mkspecs/macx-g++/qplatformdefs.h
+share/qt4/mkspecs/macx-icc/qmake.conf
+share/qt4/mkspecs/macx-icc/qplatformdefs.h
+share/qt4/mkspecs/macx-pbuilder/Info.plist.app
+share/qt4/mkspecs/macx-pbuilder/qmake.conf
+share/qt4/mkspecs/macx-pbuilder/qplatformdefs.h
+share/qt4/mkspecs/macx-xcode/Info.plist.app
+share/qt4/mkspecs/macx-xcode/Info.plist.lib
+share/qt4/mkspecs/macx-xcode/qmake.conf
+share/qt4/mkspecs/macx-xcode/qplatformdefs.h
+share/qt4/mkspecs/macx-xlc/qmake.conf
+share/qt4/mkspecs/macx-xlc/qplatformdefs.h
+share/qt4/mkspecs/netbsd-g++/qmake.conf
+share/qt4/mkspecs/netbsd-g++/qplatformdefs.h
+share/qt4/mkspecs/openbsd-g++/qmake.conf
+share/qt4/mkspecs/openbsd-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/freebsd-generic-g++/qmake.conf
+share/qt4/mkspecs/qws/freebsd-generic-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-arm-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-arm-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-cellon-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-cellon-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-generic-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-generic-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-generic-g++-32/qmake.conf
+share/qt4/mkspecs/qws/linux-generic-g++-32/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-ipaq-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-ipaq-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-mips-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-mips-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-sharp-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-sharp-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-x86-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-x86-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-x86_64-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-x86_64-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-zylonite-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-zylonite-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/macx-generic-g++/qmake.conf
+share/qt4/mkspecs/qws/macx-generic-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/solaris-generic-g++/qmake.conf
+share/qt4/mkspecs/qws/solaris-generic-g++/qplatformdefs.h
+share/qt4/mkspecs/sco-cc/qmake.conf
+share/qt4/mkspecs/sco-cc/qplatformdefs.h
+share/qt4/mkspecs/sco-g++/qmake.conf
+share/qt4/mkspecs/sco-g++/qplatformdefs.h
+share/qt4/mkspecs/solaris-cc-64/qmake.conf
+share/qt4/mkspecs/solaris-cc-64/qplatformdefs.h
+share/qt4/mkspecs/solaris-cc/qmake.conf
+share/qt4/mkspecs/solaris-cc/qplatformdefs.h
+share/qt4/mkspecs/solaris-g++-64/qmake.conf
+share/qt4/mkspecs/solaris-g++-64/qplatformdefs.h
+share/qt4/mkspecs/solaris-g++/qmake.conf
+share/qt4/mkspecs/solaris-g++/qplatformdefs.h
+share/qt4/mkspecs/tru64-cxx/qmake.conf
+share/qt4/mkspecs/tru64-cxx/qplatformdefs.h
+share/qt4/mkspecs/tru64-g++/qmake.conf
+share/qt4/mkspecs/tru64-g++/qplatformdefs.h
+share/qt4/mkspecs/unixware-cc/qmake.conf
+share/qt4/mkspecs/unixware-cc/qplatformdefs.h
+share/qt4/mkspecs/unixware-g++/qmake.conf
+share/qt4/mkspecs/unixware-g++/qplatformdefs.h
+share/qt4/mkspecs/win32-g++/qmake.conf
+share/qt4/mkspecs/win32-g++/qplatformdefs.h
+@dirrm share/qt4/mkspecs/win32-g++
+@dirrm share/qt4/mkspecs/unixware-g++
+@dirrm share/qt4/mkspecs/unixware-cc
+@dirrm share/qt4/mkspecs/tru64-g++
+@dirrm share/qt4/mkspecs/tru64-cxx
+@dirrm share/qt4/mkspecs/solaris-g++-64
+@dirrm share/qt4/mkspecs/solaris-g++
+@dirrm share/qt4/mkspecs/solaris-cc-64
+@dirrm share/qt4/mkspecs/solaris-cc
+@dirrm share/qt4/mkspecs/sco-g++
+@dirrm share/qt4/mkspecs/sco-cc
+@dirrm share/qt4/mkspecs/qws/solaris-generic-g++
+@dirrm share/qt4/mkspecs/qws/macx-generic-g++
+@dirrm share/qt4/mkspecs/qws/linux-zylonite-g++
+@dirrm share/qt4/mkspecs/qws/linux-x86_64-g++
+@dirrm share/qt4/mkspecs/qws/linux-x86-g++
+@dirrm share/qt4/mkspecs/qws/linux-sharp-g++
+@dirrm share/qt4/mkspecs/qws/linux-mips-g++
+@dirrm share/qt4/mkspecs/qws/linux-ipaq-g++
+@dirrm share/qt4/mkspecs/qws/linux-generic-g++
+@dirrm share/qt4/mkspecs/qws/linux-generic-g++-32
+@dirrm share/qt4/mkspecs/qws/linux-cellon-g++
+@dirrm share/qt4/mkspecs/qws/linux-arm-g++
+@dirrm share/qt4/mkspecs/qws/freebsd-generic-g++
+@dirrm share/qt4/mkspecs/qws
+@dirrm share/qt4/mkspecs/openbsd-g++
+@dirrm share/qt4/mkspecs/netbsd-g++
+@dirrm share/qt4/mkspecs/macx-xlc
+@dirrm share/qt4/mkspecs/macx-xcode
+@dirrm share/qt4/mkspecs/macx-pbuilder
+@dirrm share/qt4/mkspecs/macx-g++
+@dirrm share/qt4/mkspecs/macx-icc
+@dirrm share/qt4/mkspecs/lynxos-g++
+@dirrm share/qt4/mkspecs/linux-pgcc
+@dirrm share/qt4/mkspecs/linux-lsb
+@dirrm share/qt4/mkspecs/linux-kcc
+@dirrm share/qt4/mkspecs/linux-icc
+@dirrm share/qt4/mkspecs/linux-g++-64
+@dirrm share/qt4/mkspecs/linux-g++-32
+@dirrm share/qt4/mkspecs/linux-g++
+@dirrm share/qt4/mkspecs/linux-ecc-64
+@dirrm share/qt4/mkspecs/linux-cxx
+@dirrm share/qt4/mkspecs/irix-g++-64
+@dirrm share/qt4/mkspecs/irix-g++
+@dirrm share/qt4/mkspecs/irix-cc-64
+@dirrm share/qt4/mkspecs/irix-cc
+@dirrm share/qt4/mkspecs/hurd-g++
+@dirrm share/qt4/mkspecs/hpuxi-acc-64
+@dirrm share/qt4/mkspecs/hpuxi-acc
+@dirrm share/qt4/mkspecs/hpux-g++-64
+@dirrm share/qt4/mkspecs/hpux-g++
+@dirrm share/qt4/mkspecs/hpux-acc-o64
+@dirrm share/qt4/mkspecs/hpux-acc-64
+@dirrm share/qt4/mkspecs/hpux-acc
+@dirrm share/qt4/mkspecs/freebsd-icc
+@dirrm share/qt4/mkspecs/freebsd-g++40
+@dirrm share/qt4/mkspecs/freebsd-g++34
+@dirrm share/qt4/mkspecs/freebsd-g++
+@dirrm share/qt4/mkspecs/features/win32
+@dirrm share/qt4/mkspecs/features/unix
+@dirrm share/qt4/mkspecs/features/mac
+@dirrm share/qt4/mkspecs/features
+@dirrm share/qt4/mkspecs/darwin-g++
+@dirrm share/qt4/mkspecs/common
+@dirrm share/qt4/mkspecs/aix-xlc-64
+@dirrm share/qt4/mkspecs/aix-xlc
+@dirrm share/qt4/mkspecs/aix-g++-64
+@dirrm share/qt4/mkspecs/aix-g++
+@dirrm share/qt4/mkspecs
+@dirrm share/qt4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

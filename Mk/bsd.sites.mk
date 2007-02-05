@@ -894,8 +894,7 @@ MASTER_SITE_QMAIL+= \
 
 .if !defined(IGNORE_MASTER_SITE_QT)
 MASTER_SITE_QT+= \
-	ftp://sunsite.rediris.es/mirror/Qt/source/%SUBDIR%/ \
-	ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/%SUBDIR%/ \
+	ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/%SUBDIR%/ \
 	ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/%SUBDIR%/ \
 	ftp://ftp.silug.org/mirrors/ftp.trolltech.com/qt/source/%SUBDIR%/ \

@@ -1,0 +1,20 @@
+include/Qt/QtSvg
+include/Qt/qgraphicssvgitem.h
+include/Qt/qsvgrenderer.h
+include/Qt/qsvgwidget.h
+include/QtSvg/QGraphicsSvgItem
+include/QtSvg/QSvgRenderer
+include/QtSvg/QSvgWidget
+include/QtSvg/QtSvg
+include/QtSvg/qgraphicssvgitem.h
+include/QtSvg/qsvgrenderer.h
+include/QtSvg/qsvgwidget.h
+lib/QtSvg.pc
+lib/libQtSvg.la
+lib/libQtSvg.prl
+lib/libQtSvg.so
+lib/libQtSvg.so.4
+lib/libQtSvg.so.4.2
+lib/libQtSvg.so.4.2.2
+lib/libQtSvg.so.4.2.2.debug
+@dirrm include/QtSvg

@@ -1,0 +1,17 @@
+bin/linguist
+bin/linguist.debug
+bin/lrelease
+bin/lrelease.debug
+bin/lupdate
+bin/lupdate.debug
+share/qt4/phrasebooks/danish.qph
+share/qt4/phrasebooks/dutch.qph
+share/qt4/phrasebooks/finnish.qph
+share/qt4/phrasebooks/french.qph
+share/qt4/phrasebooks/german.qph
+share/qt4/phrasebooks/italian.qph
+share/qt4/phrasebooks/norwegian.qph
+share/qt4/phrasebooks/russian.qph
+share/qt4/phrasebooks/spanish.qph
+share/qt4/phrasebooks/swedish.qph
+@dirrm share/qt4/phrasebooks

@@ -1,0 +1,66 @@
+# -*-mode: makefile-*-
+# New ports collection makefile for:	qt40
+# Date created:				Wed Jun 29 11:49:42 CEST 2005
+# Whom:					lofi@freebsd.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	uic3
+PORTVERSION=	4.2.2
+CATEGORIES?=	x11-toolkits ipv6
+MASTER_SITES=	${MASTER_SITE_QT}
+PKGNAMEPREFIX=	qt4-
+DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
+DIST_SUBDIR=	KDE
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Qt backwards-compatible user interface compiler
+
+BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4
+LIB_DEPENDS=	Qt3Support:${PORTSDIR}/devel/qt4-qt3support \
+		QtCore:${PORTSDIR}/devel/qt4-corelib \
+		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
+		QtNetwork:${PORTSDIR}/net/qt4-network \
+		QtSql:${PORTSDIR}/databases/qt4-sql \
+		QtXml:${PORTSDIR}/textproc/qt4-xml
+
+CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
+		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
+		xfmail-1.5.5_[1-2]
+
+HAS_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	-fast -no-exceptions \
+		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
+		-qt-gif -release -system-libjpeg -system-libpng \
+		-system-zlib -no-nas-sound -prefix ${PREFIX} \
+		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
+		-confirm-license
+
+ALL_TARGET=	first
+CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
+MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
+		PATH=${WRKSRC}/bin:$$PATH
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
+	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
+	--exclude '${DISTNAME}/demos' --exclude '${DISTNAME}/examples' \
+	--exclude '${DISTNAME}/src/network' \
+	--exclude '${DISTNAME}/src/opengl' \
+	--exclude '${DISTNAME}/src/sql' --exclude '${DISTNAME}/src/plugins' \
+	--exclude '${DISTNAME}/src/3rdparty' --exclude '${DISTNAME}/src/tools/moc' \
+	--exclude '${DISTNAME}/src/tools/rcc' \
+	--exclude '${DISTNAME}/tools/assistant' --exclude '${DISTNAME}/tools/designer' \
+	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
+	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
+WRKSRC=		${WRKDIR}/${DISTNAME}/src/tools/${PORTNAME}
+CONFIGURE_WRKSRC=${WRKSRC}/../../../
+
+pre-configure:
+	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
+	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
+		${WRKSRC}/${PORTNAME}.pro
+	${MKDIR} ${WRKSRC}/../../../mkspecs
+	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
+
+.include <bsd.port.mk>

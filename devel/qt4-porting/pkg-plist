@@ -1,0 +1,3 @@
+bin/qt3to4
+bin/qt3to4.debug
+share/qt4/q3porting.xml

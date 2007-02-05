@@ -19,6 +19,7 @@
     SUBDIR += linux-atk
     SUBDIR += orca
     SUBDIR += py-papi
+    SUBDIR += qt4-accessible
     SUBDIR += ruby-atk
 
 .include <bsd.port.subdir.mk>

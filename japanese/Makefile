@@ -315,6 +315,7 @@
     SUBDIR += pycodec
     SUBDIR += pycodec-zope
     SUBDIR += qkc
+    SUBDIR += qt4-codecs-jp
     SUBDIR += quit
     SUBDIR += rbnamazu
     SUBDIR += recjis

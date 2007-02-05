@@ -1,0 +1,3 @@
+lib/plugins/codecs/libqkrcodecs.so
+lib/plugins/codecs/libqkrcodecs.so.debug
+@dirrm lib/plugins/codecs

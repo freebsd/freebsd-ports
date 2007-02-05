@@ -1,0 +1,9 @@
+lib/plugins/imageformats/libqgif.so
+lib/plugins/imageformats/libqgif.so.debug
+lib/plugins/imageformats/libqjpeg.so
+lib/plugins/imageformats/libqjpeg.so.debug
+lib/plugins/imageformats/libqmng.so
+lib/plugins/imageformats/libqmng.so.debug
+lib/plugins/imageformats/libqsvg.so
+lib/plugins/imageformats/libqsvg.so.debug
+@dirrm lib/plugins/imageformats
