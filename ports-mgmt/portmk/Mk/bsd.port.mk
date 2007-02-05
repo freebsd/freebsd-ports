@@ -1339,7 +1339,7 @@ DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSI
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
-DEVELPORTSDIR?=	${PORTSDIR}/devel/portmk
+DEVELPORTSDIR?=	${PORTSDIR}/ports-mgmt/portmk
 LOCALBASE?=		/usr/local
 X11BASE?=		/usr/X11R6
 LINUXBASE?=		/compat/linux
@@ -1761,7 +1761,7 @@ EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
 # note: the next line is from 86106 which says: "It needs more investigation.
-# We will keep it in devel/portmk for further tests."
+# We will keep it in ports-mgmt/portmk for further tests."
 MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 
