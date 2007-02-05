@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.17
-PORTREVISION=	2
+PORTVERSION=	3.5.18
+PORTREVISION=	0
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -20,9 +20,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_ICONV=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
@@ -47,7 +46,8 @@ PORTDOCS=	djvu2spec.djvu lizard2002.djvu
 USE_XLIB=	yes
 USE_QT_VER=	3
 CONFIGURE_ENV+=	QTLIBS="-L${X11BASE}/lib -lqt-mt"
-MAN1+=		djview.1 nsdejavu.1
+MAN1+=		djview3.1 nsdejavu.1
+MLINKS+=	djview3.1 djview.1
 PLIST_SUB+=	X11=''
 .else
 PKGNAMESUFFIX=	-nox11
