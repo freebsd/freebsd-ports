@@ -1,10 +1,14 @@
+%%XPI_XPIDIR%%/LICENSE
 %%XPI_XPIDIR%%/chrome/content/flashunblock.css
 %%XPI_XPIDIR%%/chrome/content/flashunblock.xml
+%%XPI_XPIDIR%%/chrome/content/notfound.js
 %%XPI_XPIDIR%%/chrome/content/notfound.xul
 %%XPI_XPIDIR%%/chrome/content/overlay.xul
 %%XPI_XPIDIR%%/chrome/content/settings.xul
 %%XPI_XPIDIR%%/chrome/content/songbird.xul
 %%XPI_XPIDIR%%/chrome/content/streamsave.xul
+%%XPI_XPIDIR%%/chrome/content/u230.js
+%%XPI_XPIDIR%%/chrome/content/u230.xul
 %%XPI_XPIDIR%%/chrome/content/unplug.js
 %%XPI_XPIDIR%%/chrome/content/unplug_extern.js
 %%XPI_XPIDIR%%/chrome/content/unplug_rulez.js
@@ -142,6 +146,28 @@
 %%XPI_XPIDIR%%/chrome/locale/unplug/nl-NL/streamsave.dtd
 %%XPI_XPIDIR%%/chrome/locale/unplug/nl-NL/unplug.properties
 %%XPI_XPIDIR%%/chrome/locale/unplug/nl-NL/zuul.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_extern.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_flash.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_flv.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_notfound.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_playlist.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_playtext.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_programs.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_ram.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_rm.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_skim.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_stop.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/help_streamsave.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/notfound.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/pro_ftp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/pro_mms.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/pro_other.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/pro_rtsp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/settings.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/streamsave.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/unplug.properties
+%%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR/zuul.html
 %%XPI_XPIDIR%%/chrome/skin/config.png
 %%XPI_XPIDIR%%/chrome/skin/ftp.png
 %%XPI_XPIDIR%%/chrome/skin/help.png
@@ -156,10 +182,10 @@
 %%XPI_XPIDIR%%/chrome/skin/lair_play.png
 %%XPI_XPIDIR%%/chrome/skin/lair_stream.png
 %%XPI_XPIDIR%%/chrome/skin/lair_turbo.png
-%%XPI_XPIDIR%%/chrome/skin/lair_vlc.png
 %%XPI_XPIDIR%%/chrome/skin/pagehog.png
 %%XPI_XPIDIR%%/chrome/skin/pagehogcheese.png
 %%XPI_XPIDIR%%/chrome/skin/songbird.css
+%%XPI_XPIDIR%%/chrome/skin/unplug-24.png
 %%XPI_XPIDIR%%/chrome/skin/unplug-32.png
 %%XPI_XPIDIR%%/chrome/skin/unplug-tool-sm.png
 %%XPI_XPIDIR%%/chrome/skin/unplug.css
@@ -193,6 +219,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/nl-NL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/unplug
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin
