@@ -176,7 +176,8 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		REQBRACKETS	"Require brackets in <addresses>" on \
 		VERP		"VERP addresses for recipients" on \
 		MOREIPME	"Add control files (more|not)ipme" off \
-		BIGTODO		"Bruce Guenter's BigToDo patch" off
+		BIGTODO		"Bruce Guenter's BigToDo patch" off \
+		SMTPEXTFORK		"Allow qmail-smtpd fork external progs" off
 .endif
 .if !defined(SLAVE_LDAP)
 OPTIONS+=	RCDLINK "create rc.d/qmail.sh" on
@@ -456,6 +457,13 @@ PATCH_SITES+=	http://www.palomine.net/qmail/:tarpit
 PATCHFILES+=	tarpit.patch:tarpit
 .endif
 
+.if defined(WITH_SMTPEXTFORK) && defined(SLAVE_SPAMCONTROL)
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:extfork/}
+MASTER_SITE_SUBDIR+=	garga/qmail/:extfork
+DISTFILES+=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}.patch:extfork \
+		README.smtpextfork:extfork
+.endif
+
 # Some default values, these can be modified by make command line
 .if defined(WITH_BIG_CONCURRENCY_PATCH) && !defined(BARRIER_BIG_CONCURRENCY_PATCH)
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
@@ -562,17 +570,20 @@ post-patch:
 . for option in ${SELECTED_OPTIONS}
 	@${ECHO_CMD} ${option} >> ${WRKSRC}/conf-spamcontrol
 . endfor
-	@cd ${WRKSRC} && ./install_spamcontrol.sh && \
-		${PATCH} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
-.if defined(WITH_SPF_PATCH) && defined(SPF_SPAMCONTROL_PATCH)
+	@cd ${WRKSRC} && ./install_spamcontrol.sh
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
+. if defined(WITH_SPF_PATCH) && defined(SPF_SPAMCONTROL_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_SPAMCONTROL_PATCH}
-. if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
+.  if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
 	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
+.  endif
 . endif
-.endif
-.if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
+. if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/outgoingip.patch-spamcontrol
-.endif
+. endif
+. if defined(WITH_SMTPEXTFORK)
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}.patch
+. endif
 .elif defined(SLAVE_TLS)
 	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
 		${WRKDIR}/TLS.readme
@@ -668,6 +679,9 @@ do-install:
 	${INSTALL_DATA} ${${sub}}/${doc} ${DOCSDIR}
 .  endfor
 . endfor
+. if defined(SLAVE_SPAMCONTROL) && defined(WITH_SMTPEXTFORK)
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/README.smtpextfork ${DOCSDIR}
+. endif
 . if defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "FreeBSD Binary package qmail installation" \
 		> ${DOCSDIR}/SYSDEPS
