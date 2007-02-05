@@ -15,11 +15,13 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An XFCE engine for GTK 2.0
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gtk20 pkgconfig
 USE_XLIB=	yes
 
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"

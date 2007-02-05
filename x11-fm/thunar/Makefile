@@ -19,7 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -133,6 +132,7 @@ CONFIGURE_ARGS+=--disable-startup-notification
 post-patch:
 	@${REINPLACE_CMD} -e 's|docdir = .*|docdir = ${DOCSDIR}|' \
 		${WRKSRC}/docs/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 .if !defined(WITH_FAM)
 	@${REINPLACE_CMD} -e 's|gamin|no-gamin|g' ${WRKSRC}/configure
 .endif
@@ -144,5 +144,6 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
+#keep this here
 .include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 .include <bsd.port.post.mk>

@@ -16,13 +16,15 @@ COMMENT=	XFce 4 volume mixer module for xfce4-panel
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack libxml2 pkgconfig
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
 USE_XLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
