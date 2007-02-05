@@ -277,6 +277,7 @@
     SUBDIR += imageviewer
     SUBDIR += imc
     SUBDIR += imgseek
+    SUBDIR += imgv
     SUBDIR += imlib
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
