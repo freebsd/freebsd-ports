@@ -9,7 +9,7 @@
 
 PORTNAME=	portlint
 PORTVERSION=	2.9.2
-CATEGORIES=	devel
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 

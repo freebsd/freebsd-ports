@@ -9,7 +9,7 @@
 
 PORTNAME=	portconf
 PORTVERSION=	1.2
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 

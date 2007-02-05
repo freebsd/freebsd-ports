@@ -2288,9 +2288,9 @@ PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
 
-.if (${OSVERSION} < 491101 && ${PKGORIGIN} != "sysutils/pkg_install") || exists(${LOCALBASE}/sbin/pkg_info)
-.if ${OSVERSION} < 491101 && ${PKGORIGIN} != "sysutils/pkg_install"
-EXTRACT_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install
+.if (${OSVERSION} < 491101 && ${PKGORIGIN} != "ports-mgmt/pkg_install") || exists(${LOCALBASE}/sbin/pkg_info)
+.if ${OSVERSION} < 491101 && ${PKGORIGIN} != "ports-mgmt/pkg_install"
+EXTRACT_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install
 .endif
 .if !defined(DESTDIR)
 PKG_CMD?=		${LOCALBASE_REL}/sbin/pkg_create

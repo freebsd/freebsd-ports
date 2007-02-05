@@ -1,6 +1,0 @@
-Portcheck is a simple and small script for FreeBSD 
-which first updates the ports tree and then runs an 
-update and a security checkup of all the installed packages.
-Portcheck depends on portsnap, portaudit and pkg_version.
-
-WWW: http://www.usebsd.com/pub/portcheck/

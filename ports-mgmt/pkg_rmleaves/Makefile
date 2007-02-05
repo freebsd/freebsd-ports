@@ -7,7 +7,7 @@
 
 PORTNAME=	pkg_rmleaves
 PORTVERSION=	20050922
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://utenti.gufi.org/~drizzt/codes/ports/${PORTNAME}/
 
 MAINTAINER=	drizzt@gufi.org

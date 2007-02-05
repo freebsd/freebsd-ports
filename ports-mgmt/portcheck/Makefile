@@ -7,7 +7,7 @@
 
 PORTNAME=	portcheck
 PORTVERSION=	1.12
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.usebsd.com/pub/portcheck/files/ \
 		http://www.bitcare.dk/pub/portcheck/files/
 EXTRACT_SUFX=	.tbz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	naim@usebsd.com
 COMMENT=	Maintains the ports tree and checks up the installed packages
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/security/portaudit
+RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 PLIST_FILES=	bin/portcheck
 MAN1=		portcheck.1

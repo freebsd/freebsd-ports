@@ -7,7 +7,7 @@
 
 PORTNAME=	pkg_remove
 PORTVERSION=	1.1
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 

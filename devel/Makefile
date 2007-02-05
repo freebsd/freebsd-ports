@@ -1694,11 +1694,7 @@
     SUBDIR += poco
     SUBDIR += poco-ssl
     SUBDIR += popt
-    SUBDIR += portcheckout
     SUBDIR += portlet-api
-    SUBDIR += portlint
-    SUBDIR += portmk
-    SUBDIR += porttools
     SUBDIR += poslib
     SUBDIR += powerpc-binutils
     SUBDIR += powerpc-gcc

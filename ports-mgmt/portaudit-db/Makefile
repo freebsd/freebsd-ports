@@ -7,7 +7,7 @@
 
 PORTNAME=	portaudit-db
 PORTVERSION=	0.2.3
-CATEGORIES=	security
+CATEGORIES=	ports-mgmt
 DISTFILES=
 
 MAINTAINER=	secteam@FreeBSD.org

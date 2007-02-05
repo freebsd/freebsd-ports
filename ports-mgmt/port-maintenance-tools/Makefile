@@ -7,7 +7,7 @@
 
 PORTNAME=	port-maintenance-tools
 PORTVERSION=	1.0
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
@@ -19,11 +19,11 @@ COMMENT=	"meta-port" for administrative tools to maintain ports
 RUN_DEPENDS=	\
 		${LOCALBASE}/bin/cvsup:${PORTSDIR}/net/cvsup-without-gui \
 		${LOCALBASE}/bin/fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
-		${LOCALBASE}/sbin/pkg_cutleaves:${PORTSDIR}/sysutils/pkg_cutleaves \
-		${LOCALBASE}/bin/pkg_tree:${PORTSDIR}/sysutils/pkg_tree \
-		${LOCALBASE}/bin/porteasy:${PORTSDIR}/misc/porteasy \
-		${LOCALBASE}/bin/portell:${PORTSDIR}/misc/portell \
-		${LOCALBASE}/sbin/portdowngrade:${PORTSDIR}/sysutils/portdowngrade
+		${LOCALBASE}/sbin/pkg_cutleaves:${PORTSDIR}/ports-mgmt/pkg_cutleaves \
+		${LOCALBASE}/bin/pkg_tree:${PORTSDIR}/ports-mgmt/pkg_tree \
+		${LOCALBASE}/bin/porteasy:${PORTSDIR}/ports-mgmt/porteasy \
+		${LOCALBASE}/bin/portell:${PORTSDIR}/ports-mgmt/portell \
+		${LOCALBASE}/sbin/portdowngrade:${PORTSDIR}/ports-mgmt/portdowngrade
 
 NO_BUILD=	yes
 

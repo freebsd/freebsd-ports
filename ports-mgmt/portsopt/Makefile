@@ -7,7 +7,7 @@
 
 PORTNAME=	portsopt
 PORTVERSION=	1.2
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
 MAINTAINER=	beat@chruetertee.ch

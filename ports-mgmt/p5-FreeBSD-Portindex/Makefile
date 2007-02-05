@@ -6,7 +6,7 @@
 
 PORTNAME=	FreeBSD-Portindex
 PORTVERSION=	1.9
-CATEGORIES=	sysutils perl5
+CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
 

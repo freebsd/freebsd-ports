@@ -7,7 +7,7 @@
 PORTNAME=	tinderbox
 PORTVERSION=	2.3.4
 PORTREVISION=	3
-CATEGORIES=	misc
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
 MAINTAINER=	itetcu@FreeBSD.org

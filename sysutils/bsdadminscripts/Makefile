@@ -30,7 +30,7 @@ MAN1+=		rcstart.1
 .endif
 
 .if !defined(WITHOUT_PORTCONFIG)
-RUN_DEPENDS+=	portupgrade:${PORTSDIR}/sysutils/portupgrade
+RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
 PLIST_FILES+=	${PORT_SCRIPTS:S,^,sbin/port,}
 MAN1+=		portconfig.1
 .endif

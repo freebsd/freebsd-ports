@@ -7,7 +7,7 @@
 
 PORTNAME=	managepkg
 PORTVERSION=	1.1
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.cul.de/data/\
 		http://home.arcor.de/fehlner/fbsd_ports/\
 		http://home.arcor.de/teambushido/fbsd_ports/

@@ -6,7 +6,7 @@
 
 PORTNAME=	pkg_trackinst
 PORTVERSION=	1.2.3
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 
 MAINTAINER=	perky@FreeBSD.org

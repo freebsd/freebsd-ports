@@ -17,7 +17,7 @@ MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Security vulnerability plugin for Nagios
 
 RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp \
-		portaudit:${PORTSDIR}/security/portaudit
+		portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 NAGIOS_PLUGIN_DIR?=	libexec/nagios
 

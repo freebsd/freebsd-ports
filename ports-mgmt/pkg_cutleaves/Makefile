@@ -7,7 +7,7 @@
 
 PORTNAME=	pkg_cutleaves
 PORTVERSION=	20061113
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.gegenunendlich.de/projects/${PORTNAME}/
 
 MAINTAINER=	stefan@FreeBSD.org
