@@ -16,7 +16,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
 		bash:${PORTSDIR}/shells/bash \
 		fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
-		portupgrade:${PORTSDIR}/sysutils/portupgrade \
+		portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
 		portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 INSTALLS_SHLIB=	yes
