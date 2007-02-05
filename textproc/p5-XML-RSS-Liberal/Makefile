@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	XML-RSS-Liberal
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	XML::RSS With A Liberal Parser
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Liberal.pm:${PORTSDIR}/textproc/p5-XML-Liberal	\
+RUN_DEPENDS=	${SITE_PERL}/XML/Liberal.pm:${PORTSDIR}/textproc/p5-XML-Liberal	\
 		${SITE_PERL}/XML/RSS/LibXML.pm:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN3=	XML::RSS::Liberal.3 XML::RSS::Liberal::Parser.3
+MAN3=		XML::RSS::Liberal.3 XML::RSS::Liberal::Parser.3
 
 .include <bsd.port.pre.mk>
 
