@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxdfast
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	ftp www
 MASTER_SITES=	SF/dfast
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -21,10 +21,6 @@ WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-# Debugging symbols.
-STRIP=		#
-CONFIGURE_ARGS+=--enable-debug
 
 MAN1=		wxdfast.1
 

@@ -3,42 +3,59 @@ share/applications/wxdfast.desktop
 share/locale/cs/LC_MESSAGES/wxDFast.mo
 share/locale/de/LC_MESSAGES/wxDFast.mo
 share/locale/es/LC_MESSAGES/wxDFast.mo
+share/locale/hu/LC_MESSAGES/wxDFast.mo
+share/locale/pl/LC_MESSAGES/wxDFast.mo
 share/locale/pt_BR/LC_MESSAGES/wxDFast.mo
+share/locale/ru/LC_MESSAGES/wxDFast.mo
 share/pixmaps/wxdfast.png
-%%DATADIR%%/RipStop/icon/png/download_add.png
-%%DATADIR%%/RipStop/icon/png/download_info.png
-%%DATADIR%%/RipStop/icon/png/download_move_down.png
-%%DATADIR%%/RipStop/icon/png/download_move_up.png
-%%DATADIR%%/RipStop/icon/png/download_new.png
-%%DATADIR%%/RipStop/icon/png/download_remove.png
-%%DATADIR%%/RipStop/icon/png/download_start.png
-%%DATADIR%%/RipStop/icon/png/download_start_all.png
-%%DATADIR%%/RipStop/icon/png/download_stop.png
-%%DATADIR%%/RipStop/icon/png/download_stop_all.png
-%%DATADIR%%/RipStop/icon/svg/download_add.svg
-%%DATADIR%%/RipStop/icon/svg/download_info.svg
-%%DATADIR%%/RipStop/icon/svg/download_move_down.svg
-%%DATADIR%%/RipStop/icon/svg/download_move_up.svg
-%%DATADIR%%/RipStop/icon/svg/download_new.svg
-%%DATADIR%%/RipStop/icon/svg/download_remove.svg
-%%DATADIR%%/RipStop/icon/svg/download_start.svg
-%%DATADIR%%/RipStop/icon/svg/download_start_all.svg
-%%DATADIR%%/RipStop/icon/svg/download_stop.svg
-%%DATADIR%%/RipStop/icon/svg/download_stop_all.svg
-%%DATADIR%%/RipStop/licence.txt
-%%DATADIR%%/RipStop/logo/logo.png
-%%DATADIR%%/RipStop/logo/logo.svg
-%%DATADIR%%/RipStop/logo/logo_3d.png
-%%DATADIR%%/RipStop/logo/logo_3d.svg
-%%DATADIR%%/RipStop/logo/wxdfast.ico
-%%DATADIR%%/RipStop/logo/wxdfast.png
-%%DATADIR%%/RipStop/logo/wxdfast.svg
+%%DATADIR%%/RipStop/icon/dfast48x48.png
+%%DATADIR%%/RipStop/icon/wxdfast.ico
+%%DATADIR%%/RipStop/icon/wxdfast.png
+%%DATADIR%%/RipStop/license.txt
+%%DATADIR%%/RipStop/logo/about.png
+%%DATADIR%%/RipStop/menubar/about.png
+%%DATADIR%%/RipStop/menubar/completed.png
+%%DATADIR%%/RipStop/menubar/copydata.png
+%%DATADIR%%/RipStop/menubar/copyurl.png
+%%DATADIR%%/RipStop/menubar/details.png
+%%DATADIR%%/RipStop/menubar/downloading.png
+%%DATADIR%%/RipStop/menubar/error.png
+%%DATADIR%%/RipStop/menubar/find.png
+%%DATADIR%%/RipStop/menubar/graph.png
+%%DATADIR%%/RipStop/menubar/help.png
+%%DATADIR%%/RipStop/menubar/new.png
+%%DATADIR%%/RipStop/menubar/options.png
+%%DATADIR%%/RipStop/menubar/pasteurl.png
+%%DATADIR%%/RipStop/menubar/pause.png
+%%DATADIR%%/RipStop/menubar/progressbar.png
+%%DATADIR%%/RipStop/menubar/properties.png
+%%DATADIR%%/RipStop/menubar/quit.png
+%%DATADIR%%/RipStop/menubar/remove.png
+%%DATADIR%%/RipStop/menubar/schedule.png
+%%DATADIR%%/RipStop/menubar/scheduled.png
+%%DATADIR%%/RipStop/menubar/start.png
+%%DATADIR%%/RipStop/menubar/startall.png
+%%DATADIR%%/RipStop/menubar/stop.png
+%%DATADIR%%/RipStop/menubar/stopall.png
+%%DATADIR%%/RipStop/preview/ripstop.png
+%%DATADIR%%/RipStop/preview/wxdownloads_small.png
 %%DATADIR%%/RipStop/readme.txt
-%%DATADIR%%/RipStop/ripstop.png
-%%DATADIR%%/RipStop/ripstop.svg
+%%DATADIR%%/RipStop/svg/ripstop.svg
+%%DATADIR%%/RipStop/svg/wxdownloads_small.svg
+%%DATADIR%%/RipStop/toolbar/download_info.png
+%%DATADIR%%/RipStop/toolbar/download_move_down.png
+%%DATADIR%%/RipStop/toolbar/download_move_up.png
+%%DATADIR%%/RipStop/toolbar/download_new.png
+%%DATADIR%%/RipStop/toolbar/download_remove.png
+%%DATADIR%%/RipStop/toolbar/download_schedule.png
+%%DATADIR%%/RipStop/toolbar/download_start.png
+%%DATADIR%%/RipStop/toolbar/download_start_all.png
+%%DATADIR%%/RipStop/toolbar/download_stop.png
+%%DATADIR%%/RipStop/toolbar/download_stop_all.png
 %%DATADIR%%/boxabout.xrc
 %%DATADIR%%/boxnew.xrc
 %%DATADIR%%/boxoptions.xrc
+%%DATADIR%%/images.xrc
 %%DATADIR%%/mainwindow.xrc
 %%DATADIR%%/menubar.xrc
 %%DATADIR%%/toolbar.xrc
@@ -77,11 +94,11 @@ share/pixmaps/wxdfast.png
 @dirrm %%DATADIR%%/xpm/small
 @dirrm %%DATADIR%%/xpm/big
 @dirrm %%DATADIR%%/xpm
+@dirrm %%DATADIR%%/RipStop/toolbar
+@dirrm %%DATADIR%%/RipStop/svg
+@dirrm %%DATADIR%%/RipStop/preview
+@dirrm %%DATADIR%%/RipStop/menubar
 @dirrm %%DATADIR%%/RipStop/logo
-@dirrm %%DATADIR%%/RipStop/icon/svg
-@dirrm %%DATADIR%%/RipStop/icon/png
 @dirrm %%DATADIR%%/RipStop/icon
 @dirrm %%DATADIR%%/RipStop
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps
-@dirrmtry share/applications
