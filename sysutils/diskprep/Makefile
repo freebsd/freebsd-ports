@@ -24,10 +24,4 @@ USE_RCORDER=	${PORTNAME}
 MAN8=		diskprep.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503000
-IGNORE=		Requires glabel(8) and thus >= FreeBSD-5.3
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

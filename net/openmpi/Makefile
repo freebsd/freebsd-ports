@@ -52,14 +52,6 @@ CONFIGURE_ENV+=	F77=${F77} FC=${FC}
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if ${OSVERSION} < 503000
-.if !exists(/usr/include/stdint.h)
-BROKEN=		requires stdint.h
-.else
-IGNORE=		is not supported for FreeBSD < 5.3
-.endif
-.endif
-
 .if exists(${LOCALBASE}/lib/libtorque.so)
 WITH_TORQUE=	yes
 .endif

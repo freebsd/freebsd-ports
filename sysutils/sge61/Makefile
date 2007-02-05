@@ -99,14 +99,6 @@ EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man testsuite
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-.if ${OSVERSION} < 500000
-BROKEN= 	"does not build without libpthread"
-.else
-IGNORE= 	is not supported for FreeBSD < 5.3
-.endif
-.endif
-
 .if defined(WITH_BDB)
 LIB_DEPENDS=	db-4.2:${PORTSDIR}/databases/db42
 PLIST_SUB+=	BDB_SPOOL=
