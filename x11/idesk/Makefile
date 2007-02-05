@@ -7,6 +7,7 @@
 
 PORTNAME=	idesk
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/
@@ -16,7 +17,7 @@ COMMENT=	Place launch icons and background directly on your desktop
 
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -25,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CXXFLAGS+=	`imlib2-config --cflags` `freetype-config --cflags`
 MAKE_ARGS=	cc="${CXX}" cflags="${CXXFLAGS}"
+SUB_FILES=	pkg-message
 
 OPTIONS=	XFT	"XFT antialias support"	on \
 		SHAPE	"Enable support of the XShape extension"	on \
@@ -56,6 +58,8 @@ do-install:
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
-		@${SED} -e 's:%%PREFIX%%:${PREFIX}:' ${PKGMESSAGE}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
