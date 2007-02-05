@@ -57,7 +57,7 @@ etc/mrtg/mrtg.cfg.sample
 %%DATADIR%%/mrtg-r.png
 %%DATADIR%%/mrtg-ti.gif
 %%DATADIR%%/mrtg-ti.png
-@dirrm etc/mrtg
+@dirrmtry etc/mrtg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
-@unexec rmdir /var/run/mrtg
+@dirrmtry /var/run/mrtg
