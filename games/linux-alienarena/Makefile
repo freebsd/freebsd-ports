@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.602
+PORTVERSION=	2007.603
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://forsakenweb.com/alienarena/download/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}2007-linux
+DISTNAME=	${PORTNAME}2007-linux20070121-x86
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (Linux version)
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 
 USE_ZIP=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-linux//}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/-linux.*//}
 
 SUB_FILES=	linux-alienarena linux-alienarena-ded
 SUB_LIST=	LIBDIR="${LIBDIR}"

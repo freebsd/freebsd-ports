@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.602
+PORTVERSION=	2007.603
 CATEGORIES=	games
 MASTER_SITES=	http://forsakenweb.com/alienarena/download/
-DISTNAME=	${PORTNAME}2007-linux
+DISTNAME=	${PORTNAME}2007-linux20070121-x86
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (native version)
@@ -21,7 +21,7 @@ USE_DOS2UNIX=	yes
 USE_GCC=	3.4+
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-linux//}/source
+WRKSRC=		${WRKDIR}/${DISTNAME:C/-linux.*//}/source
 BUILD_WRKSRC=	${WRKSRC}/linux
 ALL_TARGET=	build_release
 
