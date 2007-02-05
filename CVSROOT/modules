@@ -13444,6 +13444,7 @@ rubygem-hoe		ports/devel/rubygem-hoe
 rubygem-hpricot	ports/www/rubygem-hpricot
 rubygem-inline	ports/devel/rubygem-inline
 rubygem-layout-yullio	ports/www/rubygem-layout-yullio
+rubygem-mechanize	ports/www/rubygem-mechanize
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
 rubygem-mongrel	ports/www/rubygem-mongrel
 rubygem-mongrel_cluster	ports/www/rubygem-mongrel_cluster
