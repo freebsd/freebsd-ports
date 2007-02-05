@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	3.3.6
-PORTREVISION=	3
+PORTVERSION=	3.3.7
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -31,7 +30,8 @@ USE_BZIP2=	yes
 REINPLACE_ARGS=	-i ""
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+NO_FILTER_SHLIBS=yes
 
 .if defined(PACKAGE_BUILDING)
 TMPDIR?=	/tmp
@@ -145,6 +145,10 @@ COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*
 .elif defined(WITHOUT_KDE_PATCHES)
 CONFLICTS+=	qt-copy-[0-9]*
+.endif
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+IGNORE=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
 .endif
 
 .if exists(${X11BASE}/include/qt2/qapp.h)
