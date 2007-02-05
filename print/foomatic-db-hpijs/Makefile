@@ -8,7 +8,8 @@
 PORTNAME=	foomatic-db-hpijs
 PORTVERSION=	1.4
 CATEGORIES=	print
-MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	lofi@FreeBSD.org
