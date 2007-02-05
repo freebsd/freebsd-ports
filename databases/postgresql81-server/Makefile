@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.1.6
+PORTVERSION?=	8.1.7
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -240,7 +240,18 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		alter_operator.7 alter_tablespace.7 alter_type.7	      \
 		create_tablespace.7 drop_tablespace.7			      \
 		release_savepoint.7 rollback_to_savepoint.7		      \
-		savepoint.7
+		savepoint.7 \
+		spi_connect.7 spi_copytuple.7 spi_cursor_close.7 \
+                spi_cursor_fetch.7 spi_cursor_find.7 spi_cursor_move.7 \
+                spi_cursor_open.7 spi_exec.7 spi_execp.7 spi_execute.7 \
+                spi_execute_plan.7 spi_finish.7 spi_fname.7 spi_fnumber.7 \
+                spi_freeplan.7 spi_freetuple.7 spi_freetuptable.7 \
+                spi_getargcount.7 spi_getargtypeid.7 spi_getbinval.7 \
+                spi_getnspname.7 spi_getrelname.7 spi_gettype.7 \
+		spi_gettypeid.7 \
+                spi_getvalue.7 spi_is_cursor_plan.7 spi_modifytuple.7 \
+                spi_palloc.7 spi_pfree.7 spi_pop.7 spi_prepare.7 spi_push.7 \
+                spi_repalloc.7 spi_returntuple.7 spi_saveplan.7
 .endif
 
 .if defined(SERVER_ONLY)
