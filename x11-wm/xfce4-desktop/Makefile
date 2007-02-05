@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfdesktop-${PORTVERSION}
@@ -19,7 +20,6 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -44,7 +44,6 @@ CONFIGURE_ARGS+=--disable-thunar-vfs --disable-thunarx --disable-exo
 .include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|builtin\(.*\)"quit"|app\1"xfce4-session-logout"|g' \
-		${WRKSRC}/menu.xml*
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
