@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	unplug
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.92
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
+MASTER_SITES=	CSME
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Converts embedded media to html links
