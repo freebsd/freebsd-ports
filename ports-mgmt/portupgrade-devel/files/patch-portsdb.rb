@@ -1,5 +1,14 @@
---- lib/portsdb.rb.orig	Thu Feb  1 10:15:59 2007
-+++ lib/portsdb.rb	Thu Feb  1 10:17:25 2007
+--- lib/portsdb.rb.orig	Sat Nov 11 22:59:24 2006
++++ lib/portsdb.rb	Mon Feb  5 10:15:00 2007
+@@ -56,7 +56,7 @@
+     "vietnamese"	=> "vi-",
+   }
+ 
+-  MY_PORT = 'sysutils/portupgrade'
++  MY_PORT = 'ports-mgmt/portupgrade'
+ 
+   LOCK_FILE = '/var/run/portsdb.lock'
+ 
 @@ -387,8 +387,8 @@
    end
  
