@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/cjk-lyx/qt/ \
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	cjk-
 DISTNAME=	CJK-LyX-qt-${PORTVERSION}
 DISTFILES=	${DISTNAME}-1.src${EXTRACT_SUFX} \
 		lyx-platex-${PORTVERSION}.tar.gz:JPN \
-		lyx-1.4_1.mo:JPN
+		lyx-1.4_2.mo:JPN
 DIST_SUBDIR=	CJK-LyX
 EXTRACT_ONLY=	${DISTNAME}-1.src${EXTRACT_SUFX} \
 		lyx-platex-${PORTVERSION}.tar.gz
