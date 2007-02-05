@@ -11662,7 +11662,7 @@ pkg-config	ports/devel/pkg-config
 pkg-orphan	ports/ports-mgmt/pkg-orphan
 pkg_cutleaves	ports/ports-mgmt/pkg_cutleaves
 pkg_remove	ports/ports-mgmt/pkg_remove
-pkg_replace	ports/sysutils/pkg_replace
+pkg_replace	ports/ports-mgmt/pkg_replace
 pkg_rmleaves	ports/ports-mgmt/pkg_rmleaves
 pkg_trackinst	ports/ports-mgmt/pkg_trackinst
 pkg_tree	ports/ports-mgmt/pkg_tree
