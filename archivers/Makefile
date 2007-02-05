@@ -102,7 +102,6 @@
     SUBDIR += php5-zlib
     SUBDIR += ppmd
     SUBDIR += ppunpack
-    SUBDIR += py-bzip2
     SUBDIR += py-lzma
     SUBDIR += py-tarfile
     SUBDIR += rar
