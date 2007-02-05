@@ -1,49 +1,17 @@
---- ./build/pre.mk.orig	Mon Dec 25 17:07:02 2006
-+++ ./build/pre.mk	Mon Dec 25 17:07:02 2006
-@@ -5,29 +5,28 @@
- include ../../detect.mk
+--- build/pre.mk.orig	Sun Feb  4 16:13:21 2007
++++ build/pre.mk	Sun Feb  4 16:27:54 2007
+@@ -48,10 +48,10 @@
+ ASMFILES_WIN32=#blank
+ VPATH_WIN32=$(RCDIR)
  
- ifdef build-prefix
--CC = $(build-prefix)-gcc
-+CC ?= $(build-prefix)-gcc
- WINDRES = $(build-prefix)-windres
- else
--CC = gcc
-+CC ?= gcc
- WINDRES = windres
- endif
+-DATADIR?=/usr/share/games/quake2
+-LIBDIR?=/usr/lib/games/quake2
+-CFLAGS_LINUX=-DDATADIR='"$(DATADIR)"' -DLIBDIR='"$(LIBDIR)"'
+-LDFLAGS_LINUX=#blank
++DATADIR?=$(Q2DIR)
++LIBDIR?=$(PREFIX)/lib/q2pro
++CFLAGS_LINUX=-I$(LOCALBASE)/include -I$(X11BASE)/include -DDATADIR='"$(DATADIR)"' -DLIBDIR='"$(LIBDIR)"'
++LDFLAGS_LINUX=-L$(LOCALBASE)/lib -L$(X11BASE)/lib
+ SRCFILES_LINUX=#blank
+ ASMFILES_LINUX=#blank
  
- INSTALLDIR = $(CURDIR)/../../..
- OUTPUTDIR = $(CURDIR)/..
- INCLUDEDIR = $(INSTALLDIR)/include
--LIBDIR = #blank
- 
- VPATH = $(INSTALLDIR)/asm \
- 	$(INSTALLDIR)/shared \
- 	$(INSTALLDIR)/source
- 
- ifdef debug
--CFLAGS = -g 
--LDFLAGS = -g
-+CFLAGS += -g 
-+LDFLAGS += -g
- else
--#CFLAGS = -march=i686 -msse2 -mfpmath=sse -O2 -fno-strict-aliasing -DNDEBUG
--CFLAGS = -march=i386 -ffloat-store -O2 -fno-strict-aliasing -DNDEBUG
--LDFLAGS = -s
-+#CFLAGS += -march=i686 -msse2 -mfpmath=sse -O2 -fno-strict-aliasing -DNDEBUG
-+CFLAGS += -ffloat-store -O2 -fno-strict-aliasing -DNDEBUG
-+LDFLAGS += -s
- endif
- 
- CFLAGS += -I$(INCLUDEDIR) \
-@@ -61,7 +60,7 @@
- SRCFILES_WINCE = #blank
- ASMFILES_WINCE = #blank
- 
--CFLAGS_LINUX = #blank
--LDFLAGS_LINUX = #blank
-+CFLAGS_LINUX = -I$(LOCALBASE)/include -I$(X11BASE)/include -DDATADIR='"$(Q2DIR)"' -DLIBDIR='"$(LIBDIR)"'
-+LDFLAGS_LINUX = -L$(LOCALBASE)/lib -L$(X11BASE)/lib
- SRCFILES_LINUX = #blank
- ASMFILES_LINUX = #blank

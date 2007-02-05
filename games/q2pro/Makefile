@@ -31,7 +31,7 @@ OPTIONS=	CLIENT "Build client" on \
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
-SVN_REV=	131
+SVN_REV=	142
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
