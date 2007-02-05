@@ -7,7 +7,7 @@
 
 PORTNAME=	portaudit
 PORTVERSION=	0.5.11
-CATEGORIES=	security
+CATEGORIES=	ports-mgmt
 DISTFILES=
 
 MAINTAINER=	secteam@FreeBSD.org
@@ -40,11 +40,11 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 
 .if !defined(DFOSVERSION)
 .if ${OSVERSION} < 491101 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502120
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
+RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install-devel
 .endif
 .else
 .if ${DFOSVERSION} < 110000
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
+RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install-devel
 .endif
 .endif
 

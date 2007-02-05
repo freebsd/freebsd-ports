@@ -7,13 +7,13 @@
 
 PORTNAME=	jailaudit
 PORTVERSION=	1.2
-CATEGORIES=	security
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://outpost.h3q.com/software/jailaudit/
 
 MAINTAINER=	cryx-ports@h3q.com
 COMMENT=	Script to generate portaudit reports for jails
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/security/portaudit
+RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 USE_BZIP2=	yes
 

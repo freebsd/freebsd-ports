@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.16/extensions/libgesturesextension.so:$
 		cog:${PORTSDIR}/sysutils/cog \
 		gnome-blog-poster:${PORTSDIR}/deskutils/gnome-blog \
 		gnomesu:${PORTSDIR}/security/libgnomesu \
-		bpm:${PORTSDIR}/sysutils/bpm \
+		bpm:${PORTSDIR}/ports-mgmt/bpm \
 		gnome-file-share-properties:${PORTSDIR}/www/gnome-user-share \
 		serpentine:${PORTSDIR}/sysutils/serpentine \
 		devilspie:${PORTSDIR}/x11-wm/devilspie \
@@ -34,7 +34,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.16/extensions/libgesturesextension.so:$
 		eiciel:${PORTSDIR}/sysutils/eiciel \
 		gtk-send-pr:${PORTSDIR}/sysutils/gtk-send-pr \
 		thefish:${PORTSDIR}/sysutils/thefish \
-		pbrowser:${PORTSDIR}/sysutils/portbrowser
+		pbrowser:${PORTSDIR}/ports-mgmt/portbrowser
 
 MASTERDIR=	${.CURDIR}/../gnome2
 GNOME_SLAVE=	yes

@@ -156,7 +156,6 @@
     SUBDIR += imerge
     SUBDIR += inplace
     SUBDIR += instant-server
-    SUBDIR += instant-tinderbox
     SUBDIR += ipbt
     SUBDIR += iselect
     SUBDIR += iso-codes
@@ -382,9 +381,6 @@
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
-    SUBDIR += porteasy
-    SUBDIR += portell
-    SUBDIR += portless
     SUBDIR += posixtestsuite
     SUBDIR += proj4
     SUBDIR += projectionlib
@@ -440,7 +436,6 @@
     SUBDIR += terraform
     SUBDIR += tet
     SUBDIR += thailocale
-    SUBDIR += tinderbox
     SUBDIR += tkinfo
     SUBDIR += tkman
     SUBDIR += tkregexp

@@ -7,7 +7,7 @@
 
 PORTNAME=	portmk
 PORTVERSION=	0.1.1
-CATEGORIES=	devel
+CATEGORIES=	ports-mgmt
 DISTFILES=
 
 MAINTAINER=	clement@FreeBSD.org

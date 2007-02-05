@@ -9,7 +9,7 @@
 
 PORTNAME=	porteasy
 PORTVERSION=	2.8.4
-CATEGORIES=	misc
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 

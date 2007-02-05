@@ -9,7 +9,7 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	1.12
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 

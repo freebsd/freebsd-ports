@@ -7,7 +7,7 @@
 
 PORTNAME=	pkgfe
 PORTVERSION=	20061204
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://helpfreebsd.net/pkgfe/releases/ \
 		http://kodu.neti.ee/~madis555/pkgfe/releases/ \
 		http://ketas.life.ee/pkgfe/releases/ \
@@ -17,15 +17,15 @@ MASTER_SITES=	http://helpfreebsd.net/pkgfe/releases/ \
 MAINTAINER=	madis555@hot.ee
 COMMENT=	Ncurses frontend for ports collection
 
-RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade \
-		portaudit:${PORTSDIR}/security/portaudit
+RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
+		portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 MAN8=		pkgfe.8
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600033 && ( ${OSVERSION} < 504103 || ${OSVERSION} > 600000 )
-RUN_DEPENDS+=	portsnap:${PORTSDIR}/sysutils/portsnap
+RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
 .endif
 
 NO_BUILD=	yes

@@ -197,7 +197,6 @@
     SUBDIR += isakmpd
     SUBDIR += isnprober
     SUBDIR += its4
-    SUBDIR += jailaudit
     SUBDIR += jce_policy14
     SUBDIR += john
     SUBDIR += kedpm
@@ -557,8 +556,6 @@
     SUBDIR += pktsuckers
     SUBDIR += poc
     SUBDIR += poly1305aes
-    SUBDIR += portaudit
-    SUBDIR += portaudit-db
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppars
@@ -716,7 +713,6 @@
     SUBDIR += vpnc
     SUBDIR += vpnd
     SUBDIR += vscan
-    SUBDIR += vulnerability-test-port
     SUBDIR += vuxml
     SUBDIR += vxquery
     SUBDIR += webfwlog

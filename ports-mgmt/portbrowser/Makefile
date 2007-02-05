@@ -7,7 +7,7 @@
 PORTNAME=	portbrowser
 PORTVERSION=	0.3
 PORTREVISION=	3
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.bytelabs.org/
 DISTNAME=	pb-browser-${PORTVERSION}
 EXTRACT_SUFX=	.tgz

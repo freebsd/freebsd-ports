@@ -1,8 +1,0 @@
-Portsearch allows searching for ports that install some file, like
-``find /usr/ports -name pkg-plist |xargs grep pattern''
-but honoring PLIST_(FILES|DIRS) and %%FOOBAR%% variables.
-It also supports searching for ports by name, key (name, comment or
-dependencies), path, info (comment), maintainer, category, fetch, extract,
-patch, build and run dependencies and www site.
-
-WWW: http://people.freebsd.org/~vd/portsearch

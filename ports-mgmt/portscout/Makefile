@@ -7,7 +7,7 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.7.2
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.inerd.com/software/${PORTNAME}/
 

@@ -8,7 +8,7 @@
 PORTNAME=	newportsversioncheck
 PORTVERSION=	1.3
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org

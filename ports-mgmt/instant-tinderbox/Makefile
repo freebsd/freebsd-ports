@@ -8,7 +8,7 @@
 PORTNAME=	instant-tinderbox
 PORTVERSION=	1.0
 PORTREVISION=	2
-CATEGORIES=	misc
+CATEGORIES=	ports-mgmt
 DISTFILES=
 
 MAINTAINER=	edwin@mavetju.org

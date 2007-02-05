@@ -7,7 +7,7 @@
 
 PORTNAME=	kports
 PORTVERSION=	0.6.1
-CATEGORIES=	sysutils kde
+CATEGORIES=	ports-mgmt kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -20,7 +20,7 @@ USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 PREFIX=		${KDE_PREFIX}
 
-RUN_DEPENDS+=	portupgrade:${PORTSDIR}/sysutils/portupgrade
+RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
 RUN_DEPENDS+=	kdehier>=0:${PORTSDIR}/misc/kdehier
 
 OPTIONS=	PORTAUDIT "Require Portaudit" on
@@ -32,7 +32,7 @@ IGNORE=		doesn't compile properly on 4.x systems
 .endif
 
 .if !defined(WITHOUT_PORTAUDIT)
-RUN_DEPENDS+=	portaudit:${PORTSDIR}/security/portaudit
+RUN_DEPENDS+=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 .endif
 
 .include <bsd.port.post.mk>

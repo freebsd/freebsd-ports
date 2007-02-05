@@ -7,7 +7,7 @@
 
 PORTNAME=	portsearch
 PORTVERSION=	1.3.0
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vd/portsearch
 

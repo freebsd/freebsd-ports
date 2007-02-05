@@ -17,7 +17,7 @@ RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
 		bash:${PORTSDIR}/shells/bash \
 		fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
 		portupgrade:${PORTSDIR}/sysutils/portupgrade \
-		portaudit:${PORTSDIR}/security/portaudit
+		portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 .endif
 
 .if ${OSVERSION} < 504103 || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600033 )
-RUN_DEPENDS+=	portsnap:${PORTSDIR}/sysutils/portsnap
+RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
 .endif
 
 post-patch:

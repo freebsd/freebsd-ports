@@ -7,7 +7,7 @@
 
 PORTNAME=	port-authoring-tools
 PORTVERSION=	1.0
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/bin/cvsup:${PORTSDIR}/net/cvsup-without-gui \
 		${LOCALBASE}/bin/fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
 		${LOCALBASE}/sbin/libchk:${PORTSDIR}/sysutils/libchk \
-		${LOCALBASE}/bin/port:${PORTSDIR}/devel/porttools
+		${LOCALBASE}/bin/port:${PORTSDIR}/ports-mgmt/porttools
 
 NO_BUILD=	yes
 

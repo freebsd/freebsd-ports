@@ -7,7 +7,7 @@
 
 PORTNAME=	portsnap
 PORTVERSION=	1.1
-CATEGORIES=	sysutils net
+CATEGORIES=	ports-mgmt net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
 MAINTAINER=	cperciva@daemonology.net

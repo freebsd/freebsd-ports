@@ -8,7 +8,7 @@
 PORTNAME=	pkg_tree
 PORTVERSION=	1.1
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org

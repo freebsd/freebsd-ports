@@ -7,7 +7,7 @@
 
 PORTNAME=	psearch
 PORTVERSION=	1.2
-CATEGORIES=	sysutils
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.maxlor.com/files/
 
 MAINTAINER=	benlutz@datacomm.ch

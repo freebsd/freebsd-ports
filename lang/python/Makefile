@@ -41,7 +41,7 @@ upgrade-site-packages:
 			fi; \
 		done; \
 	 else \
-		${ECHO_MSG} "Please install sysutils/portupgrade."; \
+		${ECHO_MSG} "Please install ports-mgmt/portupgrade."; \
 		${FALSE}; \
 	 fi
 

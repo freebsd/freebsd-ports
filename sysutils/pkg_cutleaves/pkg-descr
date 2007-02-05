@@ -1,3 +1,0 @@
-pkg_cutleaves finds installed 'leaf' packages, i.e. packages that are
-not referenced by any other installed package, and lets you decide for
-each one if you want to keep or deinstall it (via pkg_deinstall(1)).

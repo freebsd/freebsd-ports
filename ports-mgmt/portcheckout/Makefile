@@ -7,7 +7,7 @@
 
 PORTNAME=	portcheckout
 PORTVERSION=	2.0
-CATEGORIES=	devel
+CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org

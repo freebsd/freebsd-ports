@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070205:
+  AFFECTS: everybody
+  AUTHOR: pav@FreeBSD.org
+
+  New ports category was created - /usr/ports/ports-mgmt
+
+  Most significant port moved to this new category is portupgrade.
+  So don't be alarmed, it was not deleted. You can find it now in
+
+  /usr/ports/ports-mgmt/portupgrade
+
 20070202:
   AFFECTS: users of www/aolserver
   AUTHOR: martin@matuska.org
