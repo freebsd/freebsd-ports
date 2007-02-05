@@ -31,7 +31,6 @@ REINPLACE_ARGS=	-i ""
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=yes
 
 .if defined(PACKAGE_BUILDING)
 TMPDIR?=	/tmp
@@ -145,10 +144,6 @@ COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*
 .elif defined(WITHOUT_KDE_PATCHES)
 CONFLICTS+=	qt-copy-[0-9]*
-.endif
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-IGNORE=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
 .endif
 
 .if exists(${X11BASE}/include/qt2/qapp.h)
