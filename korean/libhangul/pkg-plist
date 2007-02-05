@@ -1,0 +1,10 @@
+include/hangul-1.0/hangul.h
+%%DATADIR%%/hanja/hanja.txt
+lib/libhangul.a
+lib/libhangul.la
+lib/libhangul.so
+lib/libhangul.so.0
+libdata/pkgconfig/libhangul.pc
+@dirrm %%DATADIR%%/hanja
+@dirrm %%DATADIR%%
+@dirrm include/hangul-1.0
