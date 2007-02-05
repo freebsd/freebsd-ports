@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imspd
-PORTVERSION=	1.7b
+PORTVERSION=	1.8
 CATEGORIES=	databases mail
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://ftp.kfki.hu/packages/mail/cyrus/
@@ -22,13 +22,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sasldir=${LOCALBASE} \
 		--with-auth=unix
 
+USE_RC_SUBR=	imspd
+
 pre-configure:
 		${REINPLACE_CMD} -e "s|<sasl.h>|<sasl2/sasl.h>|" \
 			${WRKSRC}/configure
 
 post-install:
-		${INSTALL_SCRIPT} ${FILESDIR}/imspd.sh \
-			${PREFIX}/etc/rc.d/imspd.sh
 		${INSTALL_DATA} ${FILESDIR}/imspd.conf \
 			${PREFIX}/lib/sasl2/imspd.conf
 		${MKDIR} /var/imsp
