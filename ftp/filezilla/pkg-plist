@@ -15,6 +15,7 @@ bin/fzsftp
 %%DATADIR%%/locales/id_ID/filezilla.mo
 %%DATADIR%%/locales/it_IT/filezilla.mo
 %%DATADIR%%/locales/ja_JP/filezilla.mo
+%%DATADIR%%/locales/ka/filezilla.mo
 %%DATADIR%%/locales/km/filezilla.mo
 %%DATADIR%%/locales/ko_KR/filezilla.mo
 %%DATADIR%%/locales/ku/filezilla.mo
@@ -27,6 +28,7 @@ bin/fzsftp
 %%DATADIR%%/locales/pt_BR/filezilla.mo
 %%DATADIR%%/locales/pt_PT/filezilla.mo
 %%DATADIR%%/locales/ro_RO/filezilla.mo
+%%DATADIR%%/locales/ru/filezilla.mo
 %%DATADIR%%/locales/sk/filezilla.mo
 %%DATADIR%%/locales/sl/filezilla.mo
 %%DATADIR%%/locales/sv_SE/filezilla.mo
@@ -107,6 +109,7 @@ bin/fzsftp
 @dirrm %%DATADIR%%/locales/sv_SE
 @dirrm %%DATADIR%%/locales/sl
 @dirrm %%DATADIR%%/locales/sk
+@dirrm %%DATADIR%%/locales/ru
 @dirrm %%DATADIR%%/locales/ro_RO
 @dirrm %%DATADIR%%/locales/pt_PT
 @dirrm %%DATADIR%%/locales/pt_BR
@@ -119,6 +122,7 @@ bin/fzsftp
 @dirrm %%DATADIR%%/locales/ku
 @dirrm %%DATADIR%%/locales/ko_KR
 @dirrm %%DATADIR%%/locales/km
+@dirrm %%DATADIR%%/locales/ka
 @dirrm %%DATADIR%%/locales/ja_JP
 @dirrm %%DATADIR%%/locales/it_IT
 @dirrm %%DATADIR%%/locales/id_ID
