@@ -4602,6 +4602,7 @@ imcom		ports/net-im/imcom
 imerge		ports/misc/imerge
 imgseek		ports/graphics/imgseek
 imgsizer	ports/www/imgsizer
+imgv		ports/graphics/imgv
 imgvtopgm	ports/palm/imgvtopgm
 imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
