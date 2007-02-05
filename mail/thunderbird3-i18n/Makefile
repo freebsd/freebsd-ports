@@ -17,7 +17,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
 .ifndef WITHOUT_SWITCHER
-RUN_DEPENDS+=	xpi-locale-switcher>=0:${PORTSDIR}/www/xpi-locale-switcher
+RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
 NO_BUILD=	yes
