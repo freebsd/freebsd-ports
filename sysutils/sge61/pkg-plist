@@ -69,6 +69,9 @@
 %%SGE_BASE%%/catman/cat/cat3/drmaa_get_next_attr_name.3
 %%SGE_BASE%%/catman/cat/cat3/drmaa_get_next_attr_value.3
 %%SGE_BASE%%/catman/cat/cat3/drmaa_get_next_job_id.3
+%%SGE_BASE%%/catman/cat/cat3/drmaa_get_num_attr_names.3
+%%SGE_BASE%%/catman/cat/cat3/drmaa_get_num_attr_values.3
+%%SGE_BASE%%/catman/cat/cat3/drmaa_get_num_job_ids.3
 %%SGE_BASE%%/catman/cat/cat3/drmaa_get_vector_attribute.3
 %%SGE_BASE%%/catman/cat/cat3/drmaa_get_vector_attribute_names.3
 %%SGE_BASE%%/catman/cat/cat3/drmaa_init.3
@@ -119,6 +122,7 @@
 %%SGE_BASE%%/catman/cat/cat5/share_tree.5
 %%SGE_BASE%%/catman/cat/cat5/user.5
 %%SGE_BASE%%/catman/cat/cat5/usermapping.5
+%%SGE_BASE%%/catman/cat/cat8/SGE_Helper_Service.exe.8
 %%SGE_BASE%%/catman/cat/cat8/sge_execd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_qmaster.8
 %%SGE_BASE%%/catman/cat/cat8/sge_schedd.8
@@ -170,6 +174,8 @@
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libcrypto.so
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libdb-4.2.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so
+%%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so.0.95
+%%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so.1.0
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libspoolb.so
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libspoolc.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libssl.so

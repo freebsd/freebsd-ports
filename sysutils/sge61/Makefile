@@ -8,10 +8,10 @@
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/78/
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/122/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
-DISTNAME=	sge-V60u8_TAG-src
+DISTNAME=	sge-V60u10_TAG-src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
@@ -51,8 +51,8 @@ FETCH_CMD=	wget -c
 SGE_BASE?=	sge
 SGE_ROOT=	${TARGETDIR}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
-SGE_VERSION=	6.0.8
-SGE_RELEASE=	6.0u8
+SGE_VERSION=	6.0.10
+SGE_RELEASE=	6.0u10
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -163,7 +163,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 	    ${REINPLACE_CMD} "s|-g -O2|${CFLAGS}|"
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' < \
+	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' \
+	    -e 's|%%X11BASE%%|${X11BASE}|g' \
 	    ${FILESDIR}/aimk.private > ${WRKSRC}/aimk.private
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' < \
