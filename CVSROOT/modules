@@ -1901,6 +1901,7 @@ distcache-devel	ports/security/distcache-devel
 distcc		ports/devel/distcc
 distel		ports/devel/distel
 distribfold	ports/biology/distribfold
+ditrack		ports/devel/ditrack
 dits		ports/devel/dits
 diveintopython	ports/lang/diveintopython
 divxcalc	ports/graphics/divxcalc
