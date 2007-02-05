@@ -14627,6 +14627,7 @@ tk80		ports/x11-toolkits/tk80
 tk82		ports/x11-toolkits/tk82
 tk83		ports/x11-toolkits/tk83
 tk84		ports/x11-toolkits/tk84
+tk85		ports/x11-toolkits/tk85
 tkXwin		ports/x11/tkXwin
 tkabber		ports/net-im/tkabber
 tkabber-devel	ports/net-im/tkabber-devel
