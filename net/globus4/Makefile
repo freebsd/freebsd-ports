@@ -76,10 +76,6 @@ CPIOARGS=       --quiet -pdum
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 530000)
-IGNORE=		FreeBSD < 5.3 not supported
-.endif
-
 .if (${ARCH} == "i386") || (${ARCH} == "powerpc")
 ARCHBITS?=32
 PERL_ARCH=	${ARCH}-freebsd-64int
