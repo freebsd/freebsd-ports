@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	HTTP-Cookies-Mozilla
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cookie storage and management for Mozilla
 
 BUILD_DEPENDS=	${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
