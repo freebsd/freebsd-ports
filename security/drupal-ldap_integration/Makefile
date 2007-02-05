@@ -9,12 +9,9 @@ PORTNAME=	ldap_integration
 DISTVERSION=	${DRUPAL_VERSION}
 PORTREVISION=	20060117
 CATEGORIES=	security www
-MASTER_SITE_SUBDIR=	brooks
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LDAP user authentication for the Drupal CMS
-
-BROKEN=		Broken distinfo
 
 USE_PHP=	ldap
 
