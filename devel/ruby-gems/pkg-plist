@@ -22,15 +22,16 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/gem_commands.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_openssl.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
-%%RUBY_SITELIBDIR%%/rubygems/incremental_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/installer.rb
-%%RUBY_SITELIBDIR%%/rubygems/loadpath_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/old_format.rb
-%%RUBY_SITELIBDIR%%/rubygems/open-uri.rb
 %%RUBY_SITELIBDIR%%/rubygems/package.rb
 %%RUBY_SITELIBDIR%%/rubygems/remote_installer.rb
+%%RUBY_SITELIBDIR%%/rubygems/remote_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/rubygems_version.rb
 %%RUBY_SITELIBDIR%%/rubygems/security.rb
+%%RUBY_SITELIBDIR%%/rubygems/server.rb
+%%RUBY_SITELIBDIR%%/rubygems/source_info_cache.rb
+%%RUBY_SITELIBDIR%%/rubygems/source_info_cache_entry.rb
 %%RUBY_SITELIBDIR%%/rubygems/source_index.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/timer.rb
@@ -39,7 +40,1123 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
-@exec mkdir -p %D/lib/ruby/gems/%%RUBY_VER%%/doc
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/created.rid
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Time/cdesc-Time.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Config/cdesc-Config.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/cdesc-Gem.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/activate-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/all_load_paths-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/bindir-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/clear_paths-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/config_file-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/configuration-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/configuration%3d-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/configure-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/datadir-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/default_dir-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/dir-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ensure_ssl_available-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/latest_load_paths-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/manage_gems-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/path-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/required_location-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ruby-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/searcher-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/source_index-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ssl_available%3f-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/suffix_pattern-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/suffixes-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/use_paths-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/user_home-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UserInteraction/cdesc-UserInteraction.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SSL/cdesc-SSL.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/VersionOption/cdesc-VersionOption.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/VersionOption/add_version_option-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandAids/cdesc-CommandAids.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandAids/begins%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandAids/get_all_gem_names-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandAids/get_one_gem_name-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandAids/get_one_optional_argument-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/cdesc-Security.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/add_trusted_cert-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/build_cert-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/build_self_signed_cert-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/sign_cert-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/verify_trust_dir-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Signer/cdesc-Signer.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Signer/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Signer/sign-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Policy/cdesc-Policy.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Policy/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Policy/trusted_cert_path-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Policy/verify_gem-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Exception/cdesc-Exception.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallUpdateOptions/cdesc-InstallUpdateOptions.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallUpdateOptions/add_install_update_options-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallUpdateOptions/install_update_defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/cdesc-Package.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/dir_class-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/file_class-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/find_class-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/open-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/open_from_io-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/pack-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/FSyncDir/cdesc-FSyncDir.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/ClosedIO/cdesc-ClosedIO.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TooLongFileName/cdesc-TooLongFileName.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/cdesc-TarInput.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/open-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/open_from_io-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/close-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/each-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/extract_entry-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/load_gemspec-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput/zipped_stream-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/cdesc-TarWriter.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/add_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/add_file_simple-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/close-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/flush-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/mkdir-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/BoundedStream/cdesc-BoundedStream.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/BoundedStream/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/BoundedStream/write-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/FileOverflow/cdesc-FileOverflow.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/BlockNeeded/cdesc-BlockNeeded.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/RestrictedStream/cdesc-RestrictedStream.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/RestrictedStream/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/RestrictedStream/write-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarHeader/cdesc-TarHeader.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarHeader/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarHeader/new_from_stream-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarHeader/empty%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarHeader/to_s-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarHeader/update_checksum-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/cdesc-TarReader.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/close-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/each-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/each_entry-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/rewind-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/InvalidEntry/cdesc-InvalidEntry.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/InvalidEntry/getc-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/InvalidEntry/read-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/InvalidEntry/rewind-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/cdesc-Entry.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/bytes_read-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/close-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/eof%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/full_name-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/getc-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/is_directory-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/is_directory%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/is_file%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/pos-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/read-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry/rewind-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/UnexpectedEOF/cdesc-UnexpectedEOF.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/BadCheckSum/cdesc-BadCheckSum.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/Error/cdesc-Error.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/NonSeekableIO/cdesc-NonSeekableIO.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarOutput/cdesc-TarOutput.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarOutput/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarOutput/open-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarOutput/open_from_io-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarOutput/close-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarOutput/external_handle-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/FormatError/cdesc-FormatError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LocalRemoteOptions/cdesc-LocalRemoteOptions.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LocalRemoteOptions/add_local_remote_options-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LocalRemoteOptions/local%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LocalRemoteOptions/remote%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Platform/cdesc-Platform.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction/cdesc-DefaultUserInteraction.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction/ui-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction/ui%3d-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction/use_ui-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction/ui-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction/ui%3d-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction/use_ui-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/cdesc-StreamUI.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/alert-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/alert_error-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/alert_warning-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/ask-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/ask_yes_no-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/choose_from_list-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/progress_reporter-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/say-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/terminate_interaction-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/terminate_interaction%21-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SimpleProgressReporter/cdesc-SimpleProgressReporter.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SimpleProgressReporter/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SimpleProgressReporter/done-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SimpleProgressReporter/updated-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SilentProgressReporter/cdesc-SilentProgressReporter.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SilentProgressReporter/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SilentProgressReporter/done-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SilentProgressReporter/updated-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/VerboseProgressReporter/cdesc-VerboseProgressReporter.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/VerboseProgressReporter/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/VerboseProgressReporter/done-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/VerboseProgressReporter/updated-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourcesCommand/cdesc-SourcesCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourcesCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourcesCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourcesCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand/cdesc-BuildCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand/load_gemspecs-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand/yaml%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallError/cdesc-InstallError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/PristineCommand/cdesc-PristineCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/PristineCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/PristineCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/PristineCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/PristineCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/PristineCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/cdesc-DependencyList.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/from_source_index-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/add-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/dependency_order-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/find_name-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/ok%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/ok_to_remove%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList/remove_by_name-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/cdesc-Installer.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/app_script_text-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/build_extensions-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/build_support_directories-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/ensure_dependency%21-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/extract_files-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/generate_bin-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/generate_bin_script-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/generate_bin_symlink-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/generate_windows_script-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/install-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/installation_satisfies_dependency%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/shebang-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/shebang_default-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/shebang_env-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/unpack-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/write_spec-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/ExtensionBuildError/cdesc-ExtensionBuildError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OldFormat/cdesc-OldFormat.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OldFormat/from_file_by_path-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OldFormat/from_io-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OldFormat/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemRunner/cdesc-GemRunner.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemRunner/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemRunner/run-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteError/cdesc-RemoteError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/cdesc-CommandManager.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/instance-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/%5b%5d-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/command_names-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/find_command-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/find_command_possibilities-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/process_args-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/register_command-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager/run-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocumentError/cdesc-DocumentError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EndOfYAMLException/cdesc-EndOfYAMLException.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Validator/cdesc-Validator.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Validator/alien-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Validator/remove_leading_dot_dir-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Validator/unit_test-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Validator/verify_gem-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Validator/verify_gem_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SpecificationCommand/cdesc-SpecificationCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SpecificationCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SpecificationCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SpecificationCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SpecificationCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SpecificationCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/cdesc-Specification.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/array_attribute-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/array_attributes-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/attribute-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/attribute_alias_singular-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/attribute_defaults-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/attribute_names-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/attributes-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/default_value-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/from_yaml-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/list-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/load-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/normalize_yaml_input-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/overwrite_accessor-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/read_only-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/required_attribute-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/required_attribute%3f-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/required_attributes-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/%3c%3d%3e-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/add_bindir-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/add_dependency-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/dependent_gems-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/full_gem_path-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/full_name-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/has_rdoc%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/has_test_suite%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/has_unit_tests%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/installation_path-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/loaded%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/mark_version-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/normalize-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/satisfies_requirement%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/test_suite_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/test_suite_file%3d-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/to_ruby-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/to_s-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/to_yaml_properties-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/validate-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification/warn_deprecated-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemPathSearcher/cdesc-GemPathSearcher.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemPathSearcher/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemPathSearcher/find-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemPathSearcher/matching_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/cdesc-Requirement.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/create-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/default-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/as_list-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/hash-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/normalize-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/satisfied_by%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement/to_s-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Builder/cdesc-Builder.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Builder/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Builder/build-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Builder/success-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtBuilder/cdesc-ExtBuilder.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtBuilder/class_name-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtBuilder/make-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtBuilder/redirector-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtBuilder/run-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OutdatedCommand/cdesc-OutdatedCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OutdatedCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OutdatedCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/cdesc-Dependency.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/%3c%3d%3e-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/%3d%3d-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/hash-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/normalize-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/requirement_list-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/requirements_list-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/to_s-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency/version_requirements-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand/cdesc-UnpackCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand/get_path-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtExtConfBuilder/cdesc-ExtExtConfBuilder.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtExtConfBuilder/build-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCacheEntry/cdesc-SourceInfoCacheEntry.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCacheEntry/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCacheEntry/refresh-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FilePermissionError/cdesc-FilePermissionError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FilePermissionError/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtRakeBuilder/cdesc-ExtRakeBuilder.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtRakeBuilder/build-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/cdesc-Command.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/add_option-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/handles%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/invoke-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/merge_options-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/remove_option-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/show_help-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command/when_invoked-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LocalInstallationError/cdesc-LocalInstallationError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandLineError/cdesc-CommandLineError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtConfigureBuilder/cdesc-ExtConfigureBuilder.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtConfigureBuilder/build-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ListCommand/cdesc-ListCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ListCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ListCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ListCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ListCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ListCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RDocCommand/cdesc-RDocCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RDocCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RDocCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RDocCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RDocCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RDocCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/VerificationError/cdesc-VerificationError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConfigFile/cdesc-ConfigFile.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConfigFile/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConfigFile/%5b%5d-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConfigFile/config_file_name-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Exception/cdesc-Exception.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LoadError/cdesc-LoadError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ContentsCommand/cdesc-ContentsCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ContentsCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ContentsCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstallationSkipped/cdesc-RemoteInstallationSkipped.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InvalidSpecificationException/cdesc-InvalidSpecificationException.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CheckCommand/cdesc-CheckCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CheckCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CheckCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/cdesc-SourceIndex.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/from_gems_in-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/from_installed_gems-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/installed_spec_directories-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/load_specification-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/add_spec-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/each-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/find_name-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/gem_signature-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/index_signature-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/latest_specs-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/load_gems_in-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/outdated-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/refresh%21-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/remove_spec-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/search-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/specification-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex/update-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteSourceException/cdesc-RemoteSourceException.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/cdesc-Version.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/correct%3f-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/create-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/%3c%3d%3e-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/bump-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/hash-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/to_ints-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/to_s-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/Requirement/cdesc-Requirement.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConsoleUI/cdesc-ConsoleUI.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConsoleUI/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Format/cdesc-Format.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Format/from_file_by_path-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Format/from_io-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Format/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/cdesc-Uninstaller.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/ask_if_ok-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/ok_to_remove%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/remove-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/remove_all-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/remove_executables-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller/uninstall-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/cdesc-SourceInfoCache.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/cache-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/cache_data-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/search-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/cache_data-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/cache_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/flush-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/refresh-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/search-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/system_cache_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/update-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/user_cache_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache/write_cache-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/cdesc-DocManager.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/configured_args-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/configured_args%3d-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/generate_rdoc-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/generate_ri-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/install_rdoc-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/install_ri-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/load_rdoc-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/rdoc_installed%3f-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/run_rdoc-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager/uninstall_doc-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/cdesc-DependencyCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/find_reverse_dependencies-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/print_dependencies-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyError/cdesc-DependencyError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OperationNotSupportedError/cdesc-OperationNotSupportedError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/QueryCommand/cdesc-QueryCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/QueryCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/QueryCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/QueryCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand/cdesc-UpdateCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand/do_rubygems_update-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand/which_to_update-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CleanupCommand/cdesc-CleanupCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CleanupCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CleanupCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CleanupCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CleanupCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstallationCancelled/cdesc-RemoteInstallationCancelled.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FileOperations/cdesc-FileOperations.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FileOperations/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FileOperations/method_missing-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallCommand/cdesc-InstallCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CertCommand/cdesc-CertCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CertCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CertCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UninstallCommand/cdesc-UninstallCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UninstallCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UninstallCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UninstallCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UninstallCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UninstallCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EnvironmentCommand/cdesc-EnvironmentCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EnvironmentCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EnvironmentCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EnvironmentCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EnvironmentCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/cdesc-RemoteInstaller.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/download_gem-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/find_dependencies_not_installed-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/find_gem_to_install-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/install-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/install_dependencies-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/new_installer-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/source_index_hash-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/specs_n_sources_matching-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller/write_gem_to_file-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SilentUI/cdesc-SilentUI.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SilentUI/method_missing-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Server/cdesc-Server.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Server/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Server/process_args-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Server/run-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Server/run-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/HelpCommand/cdesc-HelpCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/HelpCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/HelpCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/HelpCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/HelpCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemNotFoundException/cdesc-GemNotFoundException.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FormatException/cdesc-FormatException.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SearchCommand/cdesc-SearchCommand.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SearchCommand/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SearchCommand/arguments-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SearchCommand/defaults_str-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SearchCommand/execute-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SearchCommand/usage-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyRemovalException/cdesc-DependencyRemovalException.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher/cdesc-RemoteFetcher.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher/fetcher-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher/new-c.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher/fetch_path-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher/fetch_size-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher/FetchError/cdesc-FetchError.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL/cdesc-OpenSSL.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL/X509/cdesc-X509.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL/X509/Certificate/cdesc-Certificate.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL/X509/Certificate/check_validity-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Kernel/cdesc-Kernel.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Kernel/gem-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Kernel/require_gem-i.yaml
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/created.rid
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/rdoc-style.css
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/timer_rb.src/M000001.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/builder_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/cmd_manager_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/command_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/config_file_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/custom_require_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/dependency_list_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/doc_manager_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/format_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/gem_commands_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/gem_openssl_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/gem_runner_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/installer_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/old_format_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/package_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/remote_fetcher_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/remote_installer_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/rubygems_version_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/security_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/server_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/source_index_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/source_info_cache_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/source_info_cache_entry_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/specification_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/timer_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/user_interaction_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/validator_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/version_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/gemconfigure_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rbconfig/datadir_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/ubygems_rb.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/README.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/LICENSE_txt.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/GPL_txt.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000002.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000003.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000004.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000005.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000006.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000007.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000008.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000009.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000010.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000011.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000012.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000013.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000014.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000015.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000016.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000017.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000018.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000019.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000020.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000021.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000022.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000023.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000024.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src/M000025.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/VersionOption.src/M000026.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandAids.src/M000027.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandAids.src/M000028.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandAids.src/M000029.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandAids.src/M000030.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security.src/M000031.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security.src/M000032.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security.src/M000033.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security.src/M000034.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security.src/M000035.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Signer.src/M000036.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Signer.src/M000037.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Policy.src/M000038.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Policy.src/M000039.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Policy.src/M000040.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Signer.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Policy.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Exception.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallUpdateOptions.src/M000041.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallUpdateOptions.src/M000042.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.src/M000043.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.src/M000044.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.src/M000045.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.src/M000046.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.src/M000047.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.src/M000048.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000049.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000050.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000051.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000052.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000053.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000054.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000055.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src/M000056.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src/M000057.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src/M000058.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src/M000059.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src/M000060.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src/M000061.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src/M000062.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src/M000063.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/BoundedStream.src/M000064.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/BoundedStream.src/M000065.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/RestrictedStream.src/M000066.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/RestrictedStream.src/M000067.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/BoundedStream.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/FileOverflow.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/BlockNeeded.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/RestrictedStream.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarHeader.src/M000068.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarHeader.src/M000069.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarHeader.src/M000070.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarHeader.src/M000071.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarHeader.src/M000072.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.src/M000073.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.src/M000074.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.src/M000075.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.src/M000076.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.src/M000077.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.src/M000078.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/InvalidEntry.src/M000079.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/InvalidEntry.src/M000080.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/InvalidEntry.src/M000081.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000082.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000083.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000084.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000085.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000086.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000087.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000088.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000089.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000091.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000092.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src/M000093.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/InvalidEntry.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/UnexpectedEOF.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarOutput.src/M000094.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarOutput.src/M000095.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarOutput.src/M000096.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarOutput.src/M000097.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarOutput.src/M000098.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/FSyncDir.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/ClosedIO.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TooLongFileName.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarHeader.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/BadCheckSum.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/Error.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/NonSeekableIO.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarOutput.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/FormatError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/LocalRemoteOptions.src/M000099.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/LocalRemoteOptions.src/M000100.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/LocalRemoteOptions.src/M000101.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.src/M000102.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.src/M000103.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.src/M000104.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.src/M000105.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.src/M000106.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.src/M000107.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000108.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000109.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000110.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000111.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000112.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000113.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000114.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000115.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000116.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000117.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src/M000118.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SimpleProgressReporter.src/M000119.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SimpleProgressReporter.src/M000120.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SimpleProgressReporter.src/M000121.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SilentProgressReporter.src/M000122.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SilentProgressReporter.src/M000123.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SilentProgressReporter.src/M000124.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/VerboseProgressReporter.src/M000125.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/VerboseProgressReporter.src/M000126.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/VerboseProgressReporter.src/M000127.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SimpleProgressReporter.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SilentProgressReporter.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/VerboseProgressReporter.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourcesCommand.src/M000128.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourcesCommand.src/M000129.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourcesCommand.src/M000130.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.src/M000131.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.src/M000132.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.src/M000133.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.src/M000134.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.src/M000135.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.src/M000136.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/PristineCommand.src/M000137.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/PristineCommand.src/M000138.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/PristineCommand.src/M000139.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/PristineCommand.src/M000140.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/PristineCommand.src/M000141.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000142.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000143.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000144.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000145.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000146.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000147.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000148.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src/M000149.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000150.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000151.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000152.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000153.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000154.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000155.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000156.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000157.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000158.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000159.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000160.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000161.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000162.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000163.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000164.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000165.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src/M000166.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OldFormat.src/M000167.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OldFormat.src/M000168.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OldFormat.src/M000169.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemRunner.src/M000170.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemRunner.src/M000171.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Validator.src/M000181.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Validator.src/M000182.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Validator.src/M000183.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Validator.src/M000184.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Validator.src/M000185.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000172.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000173.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000174.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000175.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000176.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000177.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000178.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000179.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src/M000180.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SpecificationCommand.src/M000186.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SpecificationCommand.src/M000187.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SpecificationCommand.src/M000188.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SpecificationCommand.src/M000189.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SpecificationCommand.src/M000190.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000191.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000192.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000193.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000194.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000195.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000196.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000197.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000198.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000199.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000200.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000201.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000202.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000203.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000204.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000205.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000206.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000207.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000208.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000209.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000210.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000211.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000213.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000214.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000215.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000216.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000217.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000218.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000219.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000220.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000221.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000222.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000223.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000224.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000225.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000226.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000227.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000228.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src/M000229.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemPathSearcher.src/M000230.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemPathSearcher.src/M000231.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemPathSearcher.src/M000232.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000233.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000234.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000235.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000236.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000237.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000238.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000239.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src/M000240.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Builder.src/M000241.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Builder.src/M000242.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Builder.src/M000243.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtBuilder.src/M000244.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtBuilder.src/M000245.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtBuilder.src/M000246.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtBuilder.src/M000247.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OutdatedCommand.src/M000248.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OutdatedCommand.src/M000249.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000250.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000251.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000252.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000253.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000255.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000256.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000257.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src/M000258.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.src/M000259.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.src/M000260.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.src/M000261.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.src/M000262.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.src/M000263.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.src/M000264.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtExtConfBuilder.src/M000265.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCacheEntry.src/M000266.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCacheEntry.src/M000267.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FilePermissionError.src/M000268.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtRakeBuilder.src/M000269.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000270.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000271.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000272.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000273.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000274.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000275.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000276.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000277.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000278.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000279.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000280.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src/M000281.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtConfigureBuilder.src/M000282.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ListCommand.src/M000283.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ListCommand.src/M000284.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ListCommand.src/M000285.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ListCommand.src/M000286.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ListCommand.src/M000287.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RDocCommand.src/M000288.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RDocCommand.src/M000289.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RDocCommand.src/M000290.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RDocCommand.src/M000291.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RDocCommand.src/M000292.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version/Requirement.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConfigFile.src/M000293.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConfigFile.src/M000294.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConfigFile.src/M000295.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ContentsCommand.src/M000296.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ContentsCommand.src/M000297.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CheckCommand.src/M000298.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CheckCommand.src/M000299.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000300.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000301.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000302.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000303.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000304.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000305.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000306.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000307.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000308.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000309.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000310.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000311.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000312.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000313.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000314.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000315.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000316.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src/M000317.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000318.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000319.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000320.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000321.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000322.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000323.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000324.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src/M000325.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConsoleUI.src/M000326.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src/M000327.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src/M000328.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src/M000329.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src/M000330.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src/M000331.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src/M000332.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src/M000333.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000334.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000335.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000336.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000337.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000338.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000339.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000340.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000341.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000342.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000343.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000344.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src/M000345.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000346.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000347.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000348.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000349.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000350.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000351.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000352.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000353.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000354.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000355.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src/M000356.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src/M000357.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src/M000358.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src/M000359.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src/M000360.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src/M000361.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src/M000362.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src/M000363.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/QueryCommand.src/M000364.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/QueryCommand.src/M000365.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/QueryCommand.src/M000366.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.src/M000367.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.src/M000368.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.src/M000369.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.src/M000370.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.src/M000371.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.src/M000372.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CleanupCommand.src/M000373.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CleanupCommand.src/M000374.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CleanupCommand.src/M000375.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CleanupCommand.src/M000376.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FileOperations.src/M000377.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FileOperations.src/M000378.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallCommand.src/M000379.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallCommand.src/M000380.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallCommand.src/M000381.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallCommand.src/M000382.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallCommand.src/M000383.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CertCommand.src/M000384.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CertCommand.src/M000385.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UninstallCommand.src/M000386.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UninstallCommand.src/M000387.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UninstallCommand.src/M000388.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UninstallCommand.src/M000389.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UninstallCommand.src/M000390.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/EnvironmentCommand.src/M000391.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/EnvironmentCommand.src/M000392.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/EnvironmentCommand.src/M000393.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/EnvironmentCommand.src/M000394.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000395.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000396.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000397.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000398.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000399.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000400.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000401.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000402.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000403.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src/M000404.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Format.src/M000405.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Format.src/M000406.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Format.src/M000407.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SilentUI.src/M000408.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Server.src/M000409.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Server.src/M000410.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Server.src/M000411.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Server.src/M000412.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/HelpCommand.src/M000413.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/HelpCommand.src/M000414.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/HelpCommand.src/M000415.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/HelpCommand.src/M000416.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SearchCommand.src/M000417.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SearchCommand.src/M000418.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SearchCommand.src/M000419.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SearchCommand.src/M000420.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SearchCommand.src/M000421.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher.src/M000422.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher.src/M000423.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher.src/M000424.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher.src/M000425.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UserInteraction.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SSL.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/VersionOption.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandAids.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallUpdateOptions.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/LocalRemoteOptions.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Platform.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourcesCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/PristineCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer/ExtensionBuildError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OldFormat.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemRunner.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocumentError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/EndOfYAMLException.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Validator.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SpecificationCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemPathSearcher.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Builder.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtBuilder.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Format.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OutdatedCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtExtConfBuilder.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCacheEntry.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FilePermissionError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtRakeBuilder.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/LocalInstallationError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandLineError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtConfigureBuilder.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ListCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RDocCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/VerificationError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConfigFile.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Exception.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/LoadError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ContentsCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstallationSkipped.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InvalidSpecificationException.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CheckCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteSourceException.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConsoleUI.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OperationNotSupportedError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/QueryCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CleanupCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstallationCancelled.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FileOperations.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CertCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UninstallCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/EnvironmentCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SilentUI.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Server.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/HelpCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemNotFoundException.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FormatException.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SearchCommand.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyRemovalException.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher/FetchError.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/OpenSSL/X509/Certificate.src/M000426.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/OpenSSL/X509/Certificate.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Kernel.src/M000427.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Kernel.src/M000428.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Kernel.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/fr_file_index.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/fr_class_index.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/fr_method_index.html
+lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/index.html
 @dirrm %%RUBY_SITELIBDIR%%/rbconfig
 @dirrm %%RUBY_SITELIBDIR%%/rubygems
 @dirrmtry lib/ruby/gems/%%RUBY_VER%%/source_cache
@@ -47,6 +1164,217 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 @dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1/lib
 @dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1
 @dirrm lib/ruby/gems/%%RUBY_VER%%/gems
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Kernel.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/OpenSSL/X509/Certificate.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/OpenSSL/X509
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/OpenSSL
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteFetcher.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SearchCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/HelpCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Server.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SilentUI.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Format.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RemoteInstaller.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/EnvironmentCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UninstallCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CertCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FileOperations.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CleanupCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UpdateCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/QueryCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DocManager.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCache.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Uninstaller.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConsoleUI.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceIndex.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CheckCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ContentsCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ConfigFile.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Version
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/RDocCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ListCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtConfigureBuilder.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Command.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtRakeBuilder.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/FilePermissionError.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourceInfoCacheEntry.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtExtConfBuilder.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/UnpackCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Dependency.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OutdatedCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/ExtBuilder.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Builder.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Requirement.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemPathSearcher.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Specification.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SpecificationCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandManager.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Validator.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/GemRunner.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/OldFormat.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Installer.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DependencyList.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/PristineCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/BuildCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/SourcesCommand.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/VerboseProgressReporter.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SilentProgressReporter.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI/SimpleProgressReporter.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/StreamUI.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/DefaultUserInteraction.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/LocalRemoteOptions.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarOutput.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/Entry.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader/InvalidEntry.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarReader.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarHeader.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/RestrictedStream.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter/BoundedStream.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarWriter.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package/TarInput.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Package.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/InstallUpdateOptions.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Policy.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security/Signer.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/Security.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/CommandAids.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem/VersionOption.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rbconfig
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems/timer_rb.src
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib/rubygems
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files/lib
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/files
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Kernel
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL/X509/Certificate
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL/X509
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher/FetchError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteFetcher
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyRemovalException
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SearchCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FormatException
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemNotFoundException
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/HelpCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Server
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SilentUI
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstaller
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EnvironmentCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UninstallCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CertCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FileOperations
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstallationCancelled
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CleanupCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UpdateCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/QueryCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OperationNotSupportedError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocManager
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCache
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Uninstaller
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Format
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConsoleUI
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version/Requirement
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Version
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteSourceException
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceIndex
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CheckCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InvalidSpecificationException
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteInstallationSkipped
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ContentsCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LoadError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Exception
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ConfigFile
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/VerificationError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RDocCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ListCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtConfigureBuilder
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandLineError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LocalInstallationError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Command
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtRakeBuilder
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/FilePermissionError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourceInfoCacheEntry
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtExtConfBuilder
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UnpackCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Dependency
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OutdatedCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/ExtBuilder
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Builder
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Requirement
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemPathSearcher
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Specification
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SpecificationCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Validator
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/EndOfYAMLException
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DocumentError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandManager
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/RemoteError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/GemRunner
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/OldFormat
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer/ExtensionBuildError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Installer
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DependencyList
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/PristineCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/BuildCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SourcesCommand
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/VerboseProgressReporter
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SilentProgressReporter
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI/SimpleProgressReporter
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/StreamUI
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/DefaultUserInteraction
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Platform
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/LocalRemoteOptions
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/FormatError
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarOutput
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/NonSeekableIO
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/Error
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/BadCheckSum
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/UnexpectedEOF
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/Entry
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader/InvalidEntry
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarReader
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarHeader
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/RestrictedStream
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/BlockNeeded
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/FileOverflow
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter/BoundedStream
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarWriter
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TarInput
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/TooLongFileName
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/ClosedIO
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package/FSyncDir
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Package
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/InstallUpdateOptions
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Exception
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Policy
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security/Signer
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/Security
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/CommandAids
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/VersionOption
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/SSL
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem/UserInteraction
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Gem
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Config
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/Time
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri
+@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%
 @dirrm lib/ruby/gems/%%RUBY_VER%%/doc
 @dirrm lib/ruby/gems/%%RUBY_VER%%/cache
 @dirrm lib/ruby/gems/%%RUBY_VER%%
