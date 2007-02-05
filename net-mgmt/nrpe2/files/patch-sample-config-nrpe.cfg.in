@@ -1,0 +1,15 @@
+--- sample-config/nrpe.cfg.in~	Mon Dec 11 21:04:00 2006
++++ sample-config/nrpe.cfg.in	Wed Jan 31 20:40:28 2007
+@@ -190,8 +190,10 @@
+
+ command[check_users]=@libexecdir@/check_users -w 5 -c 10
+ command[check_load]=@libexecdir@/check_load -w 15,10,5 -c 30,25,20
+-command[check_disk1]=@libexecdir@/check_disk -w 20 -c 10 -p /dev/hda1
+-command[check_disk2]=@libexecdir@/check_disk -w 20 -c 10 -p /dev/hdb1
++command[check_disk_root]=@libexecdir@/check_disk -w 20 -c 10 --path /
++command[check_disk_var]=@libexecdir@/check_disk -w 20 -c 10 --path /var
++command[check_disk_tmp]=@libexecdir@/check_disk -w 20 -c 10 --path /tmp
++command[check_disk_usr]=@libexecdir@/check_disk -w 20 -c 10 --path /usr
+ command[check_zombie_procs]=@libexecdir@/check_procs -w 5 -c 10 -s Z
+ command[check_total_procs]=@libexecdir@/check_procs -w 150 -c 200
+
