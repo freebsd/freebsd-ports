@@ -192,6 +192,8 @@
     SUBDIR += printext
     SUBDIR += props
     SUBDIR += qrash
+    SUBDIR += qt4-inputmethods
+    SUBDIR += qt4-opengl
     SUBDIR += randrext
     SUBDIR += rendercheck
     SUBDIR += renderext

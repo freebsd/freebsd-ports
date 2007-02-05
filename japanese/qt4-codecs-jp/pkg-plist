@@ -1,0 +1,3 @@
+lib/plugins/codecs/libqjpcodecs.so
+lib/plugins/codecs/libqjpcodecs.so.debug
+@dirrm lib/plugins/codecs

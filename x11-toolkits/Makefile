@@ -198,6 +198,7 @@
     SUBDIR += py-xlib
     SUBDIR += qscintilla
     SUBDIR += qt33
+    SUBDIR += qt4-gui
     SUBDIR += qtpixmap
     SUBDIR += qwt
     SUBDIR += qwt-devel

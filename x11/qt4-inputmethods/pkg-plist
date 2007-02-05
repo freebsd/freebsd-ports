@@ -1,0 +1,3 @@
+lib/plugins/inputmethods/libqimsw-multi.so
+lib/plugins/inputmethods/libqimsw-multi.so.debug
+@dirrm lib/plugins/inputmethods

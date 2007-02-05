@@ -1,0 +1,3 @@
+lib/plugins/codecs/libqcncodecs.so
+lib/plugins/codecs/libqcncodecs.so.debug
+@dirrm lib/plugins/codecs

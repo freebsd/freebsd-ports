@@ -1,0 +1,8 @@
+Qt is a C++ toolkit for application development.  It lets application
+developers target all major operating systems with a single application
+source code.
+
+Qmake is a project and makefile creating utility, that is part of Qt.
+For ease of maintainance it is split out into a port of its own.
+
+WWW: http://www.trolltech.com/products/qt/index.html

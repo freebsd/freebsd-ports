@@ -1,0 +1,3 @@
+lib/plugins/codecs/libqtwcodecs.so
+lib/plugins/codecs/libqtwcodecs.so.debug
+@dirrm lib/plugins/codecs

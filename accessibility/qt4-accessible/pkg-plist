@@ -1,0 +1,5 @@
+lib/plugins/accessible/libqtaccessiblecompatwidgets.so
+lib/plugins/accessible/libqtaccessiblecompatwidgets.so.debug
+lib/plugins/accessible/libqtaccessiblewidgets.so
+lib/plugins/accessible/libqtaccessiblewidgets.so.debug
+@dirrm lib/plugins/accessible

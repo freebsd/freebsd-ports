@@ -1,0 +1,11 @@
+include/QtAssistant/QAssistantClient
+include/QtAssistant/QtAssistant
+include/QtAssistant/qassistantclient.h
+include/QtAssistant/qassistantclient_global.h
+lib/libQtAssistantClient.prl
+lib/libQtAssistantClient.so
+lib/libQtAssistantClient.so.4
+lib/libQtAssistantClient.so.4.2
+lib/libQtAssistantClient.so.4.2.2
+lib/libQtAssistantClient.so.4.2.2.debug
+@dirrm include/QtAssistant

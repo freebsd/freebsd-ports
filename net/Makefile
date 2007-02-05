@@ -666,6 +666,7 @@
     SUBDIR += pypvm
     SUBDIR += pythondirector
     SUBDIR += qadsl
+    SUBDIR += qt4-network
     SUBDIR += quagga
     SUBDIR += queso
     SUBDIR += quoted

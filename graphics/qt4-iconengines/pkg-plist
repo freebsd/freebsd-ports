@@ -1,0 +1,3 @@
+lib/plugins/iconengines/libqsvg.so
+lib/plugins/iconengines/libqsvg.so.debug
+@dirrm lib/plugins/iconengines

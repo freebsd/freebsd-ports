@@ -1,0 +1,25 @@
+include/Qt/QtOpenGL
+include/Qt/qgl.h
+include/Qt/qglcolormap.h
+include/Qt/qglframebufferobject.h
+include/Qt/qglpixelbuffer.h
+include/QtOpenGL/QGLColormap
+include/QtOpenGL/QGLContext
+include/QtOpenGL/QGLFormat
+include/QtOpenGL/QGLFramebufferObject
+include/QtOpenGL/QGLPixelBuffer
+include/QtOpenGL/QGLWidget
+include/QtOpenGL/QtOpenGL
+include/QtOpenGL/qgl.h
+include/QtOpenGL/qglcolormap.h
+include/QtOpenGL/qglframebufferobject.h
+include/QtOpenGL/qglpixelbuffer.h
+lib/libQtOpenGL.la
+lib/libQtOpenGL.prl
+lib/libQtOpenGL.so
+lib/libQtOpenGL.so.4
+lib/libQtOpenGL.so.4.2
+lib/libQtOpenGL.so.4.2.2
+lib/libQtOpenGL.so.4.2.2.debug
+libdata/pkgconfig/QtOpenGL.pc
+@dirrm include/QtOpenGL

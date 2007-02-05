@@ -12,8 +12,11 @@ KDE_MAINTAINER=		kde@FreeBSD.org
 # This section contains the USE_ definitions.
 # XXX: Write HAVE_ definitions sometime.
 
+# QT_COMPONENTS		- Triggers individual Qt4 component port dependencies. Possible 
+#			  values: See _QT_COMPONENTS_ALL below. Only works if USE_QT_VER is set
+#			  to 4.
 # USE_QT_VER		- Says that the port uses the Qt toolkit.  Possible values:
-#					  3; each specify the major version of Qt to use.
+#					  3, 4; each specify the major version of Qt to use.
 # USE_KDELIBS_VER	- Says that the port uses KDE libraries.  Possible values:
 #					  3 specifies the major version of KDE to use.
 #					  This implies USE_QT of the appropriate version.
@@ -132,6 +135,88 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
 				QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 .endif # !defined(QT_NONSTANDARD)
+
+.elif ${USE_QT_VER} == 4
+
+# Qt 4.x common stuff
+QT_PREFIX?=	${LOCALBASE}
+MOC?=		${QT_PREFIX}/bin/moc4
+UIC?=		${QT_PREFIX}/bin/uic4
+QMAKE?=		${QT_PREFIX}/bin/qmake-qt4
+QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-g++
+
+QTCPPFLAGS?=
+QTCGFLIBS?=
+
+.if !defined(QT_NONSTANDARD)
+CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
+				--with-qt-libraries=${QT_PREFIX}/lib \
+				--with-extra-libs=${LOCALBASE}/lib \
+				--with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ENV+=	MOC="${MOC}" UIC="${UIC} CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
+		QMAKE="${QMAKE} QMAKESPEC="${QMAKESPEC}" QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
+MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
+.endif # !defined(QT_NONSTANDARD)
+
+QT4_VERSION=	4.2.2
+
+_QT_COMPONENTS_ALL=	accessible assistant codecs-cn codecs-jp codecs-kr \
+			codecs-tw corelib designer doc gui iconengines \
+			imageformats inputformats assistantclient \
+			linguist moc network opengl pixeltool porting \
+			qmake qt3support qtconfig qtestlib qvfb rcc sql svg \
+			uic uic3 xml
+
+accessible_DEPENDS=	accessibility/qt4-acessible
+assistant_DEPENDS=	devel/qt4-assistant
+codecs-cn_DEPENDS=	chinese/qt4-codecs-cn
+codecs-jp_DEPENDS=	japanese/qt4-codecs-jp
+codecs-kr_DEPENDS=	korean/qt4-codecs-kr
+codecs-tw_DEPENDS=	misc/qt4-codecs-tw
+corelib_DEPENDS=	devel/qt4-corelib
+designer_DEPENDS=	devel/qt4-designer
+doc_DEPENDS=		misc/qt4-doc
+gui_DEPENDS=		x11-toolkits/qt4-gui
+iconengines_DEPENDS=	graphics/qt4-iconengines
+imageformats_DEPENDS=	graphics/qt4-imageformats
+inputformats_DEPENDS=	x11/qt4-inputformats
+assistantclient_DEPENDS=devel/qt4-libqtassistantclient
+assistantclient_NAME=	libQtAssistantClient
+linguist_DEPENDS=	devel/qt4-linguist
+moc_DEPENDS=		devel/qt4-moc
+network_DEPENDS=	net/qt4-network
+opengl_DEPENDS=		x11/qt4-opengl
+pixeltool_DEPENDS=	graphics/qt4-pixeltool
+porting_DEPENDS=	devel/qt4-porting
+qmake_DEPENDS=		devel/qmake4
+qmake_QT4_PREFIX=	# empty
+qt3support_DEPENDS=	devel/qt4-qt3support
+qtconfig_DEPENDS=	devel/qtconfig
+qtestlib_DEPENDS=	devel/qt4-qtestlib
+qvfb_DEPENDS=		devel/qt4-qvfb
+rcc_DEPENDS=		devel/qt4-rcc
+svg_DEPENDS=		graphics/q4-svg
+uic_DEPENDS=		devel/qt4-uic
+uic3_DEPENDS=		devel/qt4-uic3
+xml_DEPENDS=		textproc/qt4-xml
+
+.if defined(QT_COMPONENTS)
+.for ext in ${QT_COMPONENTS}
+${ext}_QT4_PREFIX?=	qt4-
+${ext}_QT4_VERSION?=	${QT4_VERSION}
+${ext}_NAME?=		${ext}
+.if ${_QT_COMPONENTS_ALL:M${ext}}!= ""
+BUILD_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
+RUN_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
+.else
+IGNORE= cannot install: unknown Qt4 component -- ${ext}
+.endif
+.endfor
+.else
+BUILD_DEPENDS=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
+RUN_DEPENDS=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
+.endif
+
 .else
 IGNORE=			cannot install: unsupported value of USE_QT_VER
 .endif # defined(USE_QT_VER)

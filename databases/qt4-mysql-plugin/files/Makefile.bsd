@@ -1,0 +1,19 @@
+SHLIB_NAME=	libqsql${DB}.so
+
+VPATH=		${DRIVER}
+CXXFLAGS+=	-I${DRIVER} \
+		-I${LOCALBASE}/include/Qt \
+		-I${LOCALBASE}/include/mysql \
+		-I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS} -DQT_THREAD_SUPPORT
+LDADD=		-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lQtSql -lmysqlclient 
+SRCS=		qsql_${DB}.cpp
+
+LIBDIR=		${PREFIX}/lib/plugins/sqldrivers
+
+${LIBDIR}:
+	mkdir -p ${LIBDIR}
+
+beforeinstall:	${LIBDIR}
+
+.include <bsd.lib.mk>
