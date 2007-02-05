@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070206:
+  AFFECTS: users of graphics/djvulibre
+  AUTHOR: stas@FreeBSD.org
+
+  djview was renamed to djview3. For now, the symlink djview->djview3
+  installed for compatibility. However, users should refer to djview3(1)
+  instead of djview(1).
+
 20070205:
   AFFECTS: prospective users of devel/qt4
   AUTHOR: kde@FreeBSD.org
