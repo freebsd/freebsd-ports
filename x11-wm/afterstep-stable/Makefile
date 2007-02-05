@@ -16,14 +16,14 @@ DISTNAME=	AfterStep-${PORTVERSION}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A stable version of the AfterStep window manager
 
-LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		freetype.9:${PORTSDIR}/print/freetype2 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		rplay.1:${PORTSDIR}/audio/rplay \
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+		ungif.5:${PORTSDIR}/graphics/libungif
 RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
@@ -32,15 +32,15 @@ USE_XPM=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--enable-i18n \
-		--disable-ascp \
+CONFIGURE_ARGS+=--disable-ascp \
+                --enable-i18n \
 		--disable-send-postcard-to-developer \
-		--with-ungif \
-		--with-png-includes="${LOCALBASE}/include" \
-		--with-png-libs="${LOCALBASE}/lib" \
+		--with-helpcommand="xterm -e man" \
 		--with-jpeg-includes="${LOCALBASE}/include" \
 		--with-jpeg-libs="${LOCALBASE}/lib" \
-		--with-helpcommand="xterm -e man"
+		--with-png-includes="${LOCALBASE}/include" \
+		--with-png-libs="${LOCALBASE}/lib" \
+		--with-ungif
 MAKE_ENV=	INCS_PRIVATE="${CPPFLAGS}" LIBS_PRIVATE="${LDFLAGS}"
 
 MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
