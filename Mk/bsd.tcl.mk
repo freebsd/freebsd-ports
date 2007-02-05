@@ -13,14 +13,15 @@ Tcl_Include_MAINTAINER=	ports@FreeBSD.org
 #				  different TCL versions the version can be specified directly.
 #				  If version is not specified (USE_TCL=yes) then the latest
 #				  version is used (8.4 currently).
-#				  Available values are: 84, 84-thread, 83, 82, 81 and 80.
+#				  Available values are: 85, 85-thread, 84, 84-thread, 83, 82,
+#				  81 and 80.
 # USE_TCL_BUILD	- Build time dependency on tcl. Same semantics as USE_TCL.
 #
 # USE_TK		- Depend on tk to run. In case of incompatible APIs of different
 #				  TK versions the version can be specified directly. If version
 #				  is not specified (USE_TK=yes) then the latest version is
 #				  used (8.4 currently).
-#				  Available values are: 84, 83, 82, 81 and 80.
+#				  Available values are: 85, 84, 83, 82, 81 and 80.
 # USE_TK_BUILD	- Build time dependency on tk. Same semantics as USE_TK.
 ##
 # TCL_LIBDIR	- Path where tcl libraries can be found
@@ -48,7 +49,7 @@ Tcl_Include_MAINTAINER=	ports@FreeBSD.org
 
 .if defined(USE_TCL) || defined(USE_TCL_BUILD)
 
-_TCL_VERSIONS=	84 84-thread 83 82 81 80
+_TCL_VERSIONS=	85 85-thread 84 84-thread 83 82 81 80
 
 .if defined(USE_TCL)
 _RUN=		yes
@@ -93,7 +94,7 @@ IGNORE=		Unknown TCL version specified: ${USE_TCL}
 
 .if defined(USE_TK) || defined(USE_TK_BUILD)
 
-_TK_VERSIONS=	84 83 82 81 80
+_TK_VERSIONS=	85 84 83 82 81 80
 
 .if defined(USE_TK)
 _TK_RUN=	yes
