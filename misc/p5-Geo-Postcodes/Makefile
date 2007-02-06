@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	Geo-Postcodes
-PORTVERSION=	0.311
+PORTVERSION=	0.320
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class for the Geo::Postcodes::XX modules
 
 PERL_CONFIGURE=	yes
 
-MAN3=  		Geo::Postcodes.3 \
+MAN3=		Geo::Postcodes.3 \
+		Geo::Postcodes::Ajax.3 \
 		Geo::Postcodes::Selection.3 \
 		Geo::Postcodes::Subclass.3 \
 		Geo::Postcodes::Tutorial.3 \
