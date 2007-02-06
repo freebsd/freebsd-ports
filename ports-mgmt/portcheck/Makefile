@@ -31,7 +31,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 504104
-IGNORE=	doesn't work on our sstem, it needs portsnap, please update your system to at least 5-STABLE
+IGNORE=	doesn't work on your system, it needs portsnap, please update your system to at least 5-STABLE
 .endif
 
 .include <bsd.port.post.mk>
