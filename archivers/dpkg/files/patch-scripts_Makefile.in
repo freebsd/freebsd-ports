@@ -1,0 +1,12 @@
+--- scripts/Makefile.in.orig	Fri Oct 13 06:37:57 2006
++++ scripts/Makefile.in	Fri Nov 10 12:54:34 2006
+@@ -282,6 +282,9 @@
+ 		    -e "s:\$$dpkglibdir[[:space:]]*=[[:space:]]*['\"][^'\"]*['\"]:\$$dpkglibdir=\"$(pkglibdir)\":" \
+ 		    -e "s:\$$pkgdatadir[[:space:]]*=[[:space:]]*['\"][^'\"]*['\"]:\$$pkgdatadir=\"$(pkgdatadir)\":" \
+ 		    -e "s:\$$admindir[[:space:]]*=[[:space:]]*['\"][^'\"]*['\"]:\$$admindir=\"$(admindir)\":" \
++		    -e "s:\$$sysconfdir[[:space:]]*=[[:space:]]*['\"][^'\"]*['\"]:\$$sysconfdir=\"$(sysconfdir)\":" \
++		    -e "s:\$$infodir[[:space:]]*=[[:space:]]*['\"][^'\"]*['\"]:\$$infodir=\"$(infodir)\":" \
++		    -e "s:\$$prefix[[:space:]]*=[[:space:]]*['\"][^'\"]*['\"]:\$$prefix=\"$(prefix)\":" \
+ 		    -e "s:\$$version[[:space:]]*=[[:space:]]*['\"][^'\"]*[\"']:\$$version=\"$(PACKAGE_VERSION)\":"
+ 
+ do_shell_subst = sed -e "s:version=\"[^\"]*\":version=\"$(PACKAGE_VERSION)\":"

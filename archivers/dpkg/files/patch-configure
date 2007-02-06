@@ -1,0 +1,33 @@
+--- configure.orig	Fri Oct 13 06:37:44 2006
++++ configure	Mon Nov 13 18:23:21 2006
+@@ -1991,7 +1991,7 @@
+ { echo "$as_me:$LINENO: checking dpkg cpu type" >&5
+ echo $ECHO_N "checking dpkg cpu type... $ECHO_C" >&6; }
+ 
+-cpu_type="`cd $srcdir/scripts; ./dpkg-architecture.pl -t$target -qDEB_HOST_ARCH_CPU 2>/dev/null`"
++cpu_type="`grep -v ^# cputable | awk 'match("'$target'", $3) { print $1 }'`"
+ 
+ if test "x$cpu_type" = "x"; then
+ 	cpu_type=$target_cpu
+@@ -2012,7 +2012,7 @@
+ { echo "$as_me:$LINENO: checking dpkg operating system type" >&5
+ echo $ECHO_N "checking dpkg operating system type... $ECHO_C" >&6; }
+ 
+-os_type="`cd $srcdir/scripts; ./dpkg-architecture.pl -t$target -qDEB_HOST_ARCH_OS 2>/dev/null`"
++os_type="`grep -v ^# ostable | awk 'match("'$target'", $3) { print $1 }'`"
+ 
+ if test "x$os_type" = "x"; then
+ 	os_type=$target_os
+@@ -2033,7 +2033,11 @@
+ { echo "$as_me:$LINENO: checking dpkg architecture name" >&5
+ echo $ECHO_N "checking dpkg architecture name... $ECHO_C" >&6; }
+ 
+-dpkg_arch="`cd $srcdir/scripts; ./dpkg-architecture.pl -t$target -qDEB_HOST_ARCH 2>/dev/null`"
++if test $os_type = "linux"; then
++	dpkg_arch=$cpu_type
++else
++	dpkg_arch=$os_type-$cpu_type
++fi
+ 
+ { echo "$as_me:$LINENO: result: $dpkg_arch" >&5
+ echo "${ECHO_T}$dpkg_arch" >&6; }

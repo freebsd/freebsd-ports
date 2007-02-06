@@ -1,0 +1,9 @@
+--- lib/Makefile.am.orig	Thu Oct 26 18:38:08 2006
++++ lib/Makefile.am	Thu Oct 26 18:37:18 2006
+@@ -34,4 +34,5 @@
+ 	tarfn.c tarfn.h \
+ 	utils.c \
+ 	varbuf.c \
+-	vercmp.c
++	vercmp.c \
++	obstack.c obstack.h

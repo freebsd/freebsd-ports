@@ -1,0 +1,9 @@
+--- getopt/Makefile.am.orig	Wed Jun 21 06:41:12 2006
++++ getopt/Makefile.am	Thu Oct 26 18:38:28 2006
+@@ -13,5 +13,4 @@
+ 	error.h \
+ 	getopt.c getopt.h \
+ 	getopt1.c \
+-	long-options.c long-options.h \
+-	obstack.c obstack.h
++	long-options.c long-options.h
