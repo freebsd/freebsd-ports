@@ -5,11 +5,17 @@
 # 
 #
 
-if [ -r %%DESTDIR%%%%PREFIX%%/etc/rc.d/polipo.sh ]
+if [ -r %%PREFIX%%/etc/rc.d/polipo ]
 then
 	echo ""
 	echo "polipo expiry:"
-	%%DESTDIR%%%%PREFIX%%/etc/rc.d/polipo.sh expire
+	%%PREFIX%%/etc/rc.d/polipo expire
+fi
+if [ -r %%PREFIX%%/etc/rc.d/polipo.sh ]
+then
+	echo ""
+	echo "polipo expiry:"
+	%%PREFIX%%/etc/rc.d/polipo.sh expire
 fi
 
 exit 0
