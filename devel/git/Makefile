@@ -15,6 +15,7 @@ COMMENT=	Distributed source code management tool
 
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		asciidoc:${PORTSDIR}/textproc/asciidoc \
+		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		cvsps:${PORTSDIR}/devel/cvsps-devel \
@@ -116,6 +117,7 @@ MAN1=		git-add.1 \
 		git-rev-parse.1 \
 		git-revert.1 \
 		git-rm.1 \
+		git-runstatus.1 \
 		git-send-email.1 \
 		git-send-pack.1 \
 		git-sh-setup.1 \
