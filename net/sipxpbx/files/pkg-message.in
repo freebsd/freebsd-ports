@@ -75,9 +75,4 @@ The newly created user, sipx, will use the directory containing UA (phone)
 boot files as its home directory.  Thus you can configure your phones to
 FTP their boot files as user sipx.
 
-As of this writing, there is a bug in mod_cplusplus.  This bug causes
-httpd to core dump when httpd exits.  httpd behaves fine while running,
-so it is usable.  At this point, the core dump is more an annoyance
-than anything else.
-
 ********************************************************************
