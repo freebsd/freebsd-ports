@@ -3800,6 +3800,7 @@ gourmet		ports/deskutils/gourmet
 gozer		ports/graphics/gozer
 gpa		ports/security/gpa
 gpac-libgpac	ports/multimedia/gpac-libgpac
+gpac-mp4box	ports/multimedia/gpac-mp4box
 gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
 gpasman		ports/security/gpasman
