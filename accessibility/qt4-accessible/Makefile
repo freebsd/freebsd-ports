@@ -9,7 +9,7 @@
 PORTNAME=	accessible
 PORTVERSION=	4.2.2
 PORTREVISION=	1
-CATEGORIES?=	accessibility ipv6
+CATEGORIES?=	accessibility
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
