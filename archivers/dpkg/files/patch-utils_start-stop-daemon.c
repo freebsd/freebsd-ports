@@ -1,14 +1,14 @@
---- utils/start-stop-daemon.c.orig	Thu Nov 11 12:16:35 2004
-+++ utils/start-stop-daemon.c	Sat Apr 22 12:25:16 2006
+--- utils/start-stop-daemon.c.orig	Wed Jun 21 07:59:36 2006
++++ utils/start-stop-daemon.c	Thu Oct 26 18:59:40 2006
 @@ -48,6 +48,7 @@
  #endif
  
- #if defined(OSOpenBSD) || defined(OSFreeBSD) || defined(OSNetBSD)
+ #if  defined(OSOpenBSD) || defined(OSFreeBSD) || defined(OSNetBSD)
 +#define _WANT_UCRED
  #include <sys/param.h>
- #include <sys/user.h>
  #include <sys/proc.h>
-@@ -859,9 +860,15 @@
+ #include <sys/stat.h>
+@@ -928,9 +929,15 @@
  		errx(1, "%s", errbuf);
  	if ((kp = kvm_getprocs(kd, KERN_PROC_PID, pid, &nentries)) == 0)
  		errx(1, "%s", kvm_geterr(kd));
@@ -24,7 +24,7 @@
  	else
  		return 0;
  	return (proc_uid == (uid_t)uid);
-@@ -880,7 +887,11 @@
+@@ -949,7 +956,11 @@
  		errx(1, "%s", errbuf);
  	if ((kp = kvm_getprocs(kd, KERN_PROC_PID, pid, &nentries)) == 0)
  		errx(1, "%s", kvm_geterr(kd));

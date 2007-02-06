@@ -16,82 +16,127 @@ bin/dpkg-shlibdeps
 bin/dpkg-source
 bin/dpkg-split
 bin/dselect
-bin/md5sum
 etc/alternatives/README
 etc/dpkg/origins/debian
-lib/dpkg/controllib.pl
-lib/dpkg/enoent
-lib/dpkg/methods/disk/desc.cdrom
-lib/dpkg/methods/disk/desc.harddisk
-lib/dpkg/methods/disk/desc.mounted
-lib/dpkg/methods/disk/desc.nfs
-lib/dpkg/methods/disk/install
-lib/dpkg/methods/disk/names
-lib/dpkg/methods/disk/setup
-lib/dpkg/methods/disk/update
-lib/dpkg/methods/floppy/desc.floppy
-lib/dpkg/methods/floppy/install
-lib/dpkg/methods/floppy/names
-lib/dpkg/methods/floppy/setup
-lib/dpkg/methods/floppy/update
-lib/dpkg/mksplit
-lib/dpkg/parsechangelog/debian
+libexec/dpkg/controllib.pl
+libexec/dpkg/dpkg-gettext.pl
+libexec/dpkg/enoent
+libexec/dpkg/methods/disk/desc.cdrom
+libexec/dpkg/methods/disk/desc.harddisk
+libexec/dpkg/methods/disk/desc.mounted
+libexec/dpkg/methods/disk/desc.nfs
+libexec/dpkg/methods/disk/install
+libexec/dpkg/methods/disk/names
+libexec/dpkg/methods/disk/setup
+libexec/dpkg/methods/disk/update
+libexec/dpkg/methods/floppy/desc.floppy
+libexec/dpkg/methods/floppy/install
+libexec/dpkg/methods/floppy/names
+libexec/dpkg/methods/floppy/setup
+libexec/dpkg/methods/floppy/update
+libexec/dpkg/mksplit
+libexec/dpkg/parsechangelog/debian
+@dirrmtry man/pt_BR/man1
+@dirrmtry man/pt_BR/man5
+@dirrmtry man/pt_BR/man8
+@dirrmtry man/pt_BR
 sbin/cleanup-info
 sbin/dpkg-divert
 sbin/dpkg-statoverride
 sbin/dpkg-install-info
 sbin/start-stop-daemon
 sbin/update-alternatives
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/copyright
-%%DATADIR%%/archtable
+%%DATADIR%%/cputable
+%%DATADIR%%/ostable
 %%NLS%%share/locale/bs/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/dpkg-dev.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/da/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/da/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/de/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/dpkg.mo
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
 %%NLS%%share/locale/el/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/el/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/es/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/es/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/dpkg-dev.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/dpkg.mo
-%%NLS%%share/locale/he/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/id/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/id/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/it/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/it/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/km/LC_MESSAGES/dpkg.mo
+%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/km
 %%NLS%%share/locale/ko/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/ne/LC_MESSAGES/dpkg.mo
+%%NLS%%@dirrmtry share/locale/ne/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ne
 %%NLS%%share/locale/nl/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/dselect.mo
+%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tl
+%%NLS%%share/locale/vi/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
-@dirrm var/dpkg/updates
-@dirrm var/dpkg/parts
-@dirrm var/dpkg/methods/mnt
-@dirrm var/dpkg/methods/floppy
-@dirrm var/dpkg/methods/disk
-@dirrm var/dpkg/methods
-@dirrm var/dpkg/info
-@dirrm var/dpkg/alternatives
-@dirrm var/dpkg
-@dirrm var
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/dselect.mo
 @dirrm %%DATADIR%%/origins
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrm lib/dpkg/parsechangelog
-@dirrm lib/dpkg/methods/floppy
-@dirrm lib/dpkg/methods/disk
-@dirrm lib/dpkg/methods
-@dirrm lib/dpkg
+@dirrm libexec/dpkg/parsechangelog
+@dirrm libexec/dpkg/methods/floppy
+@dirrm libexec/dpkg/methods/disk
+@dirrm libexec/dpkg/methods
+@dirrm libexec/dpkg
 @dirrm etc/dpkg/origins
 @dirrm etc/dpkg
 @dirrm etc/alternatives
+@cwd /
+@dirrm %%DPKGDIR%%/updates
+@dirrm %%DPKGDIR%%/parts
+@dirrm %%DPKGDIR%%/methods/mnt
+@dirrm %%DPKGDIR%%/methods/floppy
+@dirrm %%DPKGDIR%%/methods/disk
+@dirrm %%DPKGDIR%%/methods
+@dirrm %%DPKGDIR%%/info
+@dirrm %%DPKGDIR%%/alternatives
+@dirrm %%DPKGDIR%%

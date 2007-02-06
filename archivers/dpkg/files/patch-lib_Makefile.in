@@ -1,0 +1,30 @@
+--- lib/Makefile.in.orig	Fri Oct 13 06:37:55 2006
++++ lib/Makefile.in	Thu Oct 26 18:34:48 2006
+@@ -75,7 +75,8 @@
+ 	md5.$(OBJEXT) mlib.$(OBJEXT) myopt.$(OBJEXT) \
+ 	nfmalloc.$(OBJEXT) parse.$(OBJEXT) parsehelp.$(OBJEXT) \
+ 	showcright.$(OBJEXT) showpkg.$(OBJEXT) tarfn.$(OBJEXT) \
+-	utils.$(OBJEXT) varbuf.$(OBJEXT) vercmp.$(OBJEXT)
++	utils.$(OBJEXT) varbuf.$(OBJEXT) vercmp.$(OBJEXT) \
++	obstack.$(OBJEXT)
+ libdpkg_a_OBJECTS = $(am_libdpkg_a_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+@@ -257,7 +258,8 @@
+ 	tarfn.c tarfn.h \
+ 	utils.c \
+ 	varbuf.c \
+-	vercmp.c
++	vercmp.c \
++	obstack.c obstack.h
+ 
+ all: all-am
+ 
+@@ -326,6 +328,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/varbuf.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vercmp.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/obstack.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \

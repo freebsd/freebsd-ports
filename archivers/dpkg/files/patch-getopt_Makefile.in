@@ -1,0 +1,27 @@
+--- getopt/Makefile.in.orig	Fri Oct 13 06:37:54 2006
++++ getopt/Makefile.in	Thu Oct 26 18:35:34 2006
+@@ -70,7 +70,7 @@
+ libopt_a_AR = $(AR) $(ARFLAGS)
+ libopt_a_LIBADD =
+ am_libopt_a_OBJECTS = closeout.$(OBJEXT) getopt.$(OBJEXT) \
+-	getopt1.$(OBJEXT) long-options.$(OBJEXT) obstack.$(OBJEXT)
++	getopt1.$(OBJEXT) long-options.$(OBJEXT) 
+ libopt_a_OBJECTS = $(am_libopt_a_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+@@ -232,7 +232,6 @@
+ 	getopt.c getopt.h \
+ 	getopt1.c \
+ 	long-options.c long-options.h \
+-	obstack.c obstack.h
+ 
+ all: all-am
+ 
+@@ -285,7 +284,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/long-options.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/obstack.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
