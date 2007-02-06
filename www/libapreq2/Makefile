@@ -14,12 +14,10 @@ MASTER_SITE_SUBDIR=libapreq
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
-BROKEN=		Does not build
-
 USE_APACHE=	2.0+
 USE_LDCONFIG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS}
+CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
 SHLIB_MAJOR=	9
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
