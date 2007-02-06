@@ -1,0 +1,11 @@
+--- configure.orig	Sun Feb  4 21:02:41 2007
++++ configure	Sun Feb  4 21:02:48 2007
+@@ -9813,7 +9813,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
