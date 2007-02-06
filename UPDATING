@@ -7,6 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070206:
+  AFFECTS: users of emulators/qemu
+  AUTHOR: nox@FreeBSD.org
+
+  qemu now uses aio at least for ide dma, so if you get
+  "Invalid system call" crashes that is because aio is not (kld)loaded.
+
+20070206:
   AFFECTS: users of graphics/djvulibre
   AUTHOR: stas@FreeBSD.org
 
