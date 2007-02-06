@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kqemu
-PORTVERSION=	1.3.0.p9
-PORTREVISION=	3
+PORTVERSION=	1.3.0.p10
 CATEGORIES=	emulators
 MASTER_SITES=	http://qemu.org/
 PKGNAMESUFFIX=	-kmod
@@ -18,7 +17,10 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Kernel Acceralator for QEMU CPU Emulator (development version)
 
 ONLY_FOR_ARCHS=	i386 amd64
-RESTRICTED=	Module not redistributable
+HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GCC=	3.4
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 
 USE_RC_SUBR=	kqemu
 
@@ -34,6 +36,10 @@ PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
 
 MAKEFILE=	Makefile.freebsd
 
+.if ${ARCH} == "amd64"
+MAKE_ARGS+=	ARCH=x86_64
+.endif
+
 # install where x11/nvidia-driver does also:
 .if ${OSVERSION} >= 500000
 KMODDIR=	/boot/modules
@@ -45,7 +51,12 @@ MAKE_ENV+=	KMODDIR="${KMODDIR}"
 IGNORE=		kqemu requires kernel source to be installed
 .endif
 
-post-install:
+do-build:
+	@(cd ${BUILD_WRKSRC}/common; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+
+do-install:
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/include/kqemu
 	@${INSTALL_DATA} ${WRKSRC}/kqemu.h ${PREFIX}/include/kqemu
 .if ${OSVERSION} < 500000
