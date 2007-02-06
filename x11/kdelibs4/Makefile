@@ -8,8 +8,8 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
-CATEGORIES=	x11 kde
+PORTREVISION=	2
+CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 PKGNAMESUFFIX?=	# empty
@@ -18,6 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
+DEPENDS=	${PORTSDIR}/misc/kdehier
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
@@ -56,7 +57,7 @@ USE_OPENSSL=	yes
 USE_QT_VER=	3
 PREFIX=		${KDE_PREFIX}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 USE_AUTOTOOLS=  libtool:15
