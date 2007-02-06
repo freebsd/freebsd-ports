@@ -5948,6 +5948,7 @@ larswm		ports/x11-wm/larswm
 lash		ports/audio/lash
 lasi		ports/devel/lasi
 laspack		ports/math/laspack
+last.fm		ports/audio/last.fm
 latd		ports/net/latd
 latex		ports/print/latex
 latex-arydshln	ports/print/latex-arydshln
