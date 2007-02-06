@@ -5907,6 +5907,7 @@ kuake		ports/deskutils/kuake
 kudu		ports/graphics/kudu
 kuickshow	ports/graphics/kuickshow
 kvirc		ports/irc/kvirc
+kvirc-devel		ports/irc/kvirc-devel
 kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget

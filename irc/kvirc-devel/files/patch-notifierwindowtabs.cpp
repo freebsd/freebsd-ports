@@ -1,6 +1,6 @@
---- src/modules/notifier/notifierwindowtabs.cpp.orig	Sun Apr 17 00:58:15 2005
-+++ src/modules/notifier/notifierwindowtabs.cpp	Sun Apr 17 00:58:36 2005
-@@ -228,7 +228,7 @@
+--- src/modules/notifier/notifierwindowtabs.cpp.orig	Sun Jan  7 10:39:57 2007
++++ src/modules/notifier/notifierwindowtabs.cpp	Sat Jan 27 18:24:16 2007
+@@ -237,7 +237,7 @@
  
  void KviNotifierWindowTabs::addMessage(KviWindow * pWnd, KviNotifierMessage * message)
  {
