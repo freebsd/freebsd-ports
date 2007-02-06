@@ -1,0 +1,11 @@
+--- ./Makefile.am.orig	Wed Nov 22 07:19:11 2006
++++ ./Makefile.am	Tue Feb  6 10:58:26 2007
+@@ -27,7 +27,7 @@
+ m4data_DATA = check.m4
+ 
+ ## install check.pc
+-pcdatadir = $(libdir)/pkgconfig
++pcdatadir = $(libdir)/../libdata/pkgconfig
+ pcdata_DATA = check.pc
+ 
+ SVNChangeLog:
