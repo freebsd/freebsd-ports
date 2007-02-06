@@ -534,6 +534,7 @@
     SUBDIR += smtprc
     SUBDIR += smtptrapd
     SUBDIR += smx
+    SUBDIR += softfail
     SUBDIR += solidpop3d
     SUBDIR += sortmail
     SUBDIR += spamass-milter
