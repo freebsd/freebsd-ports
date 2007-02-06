@@ -40,7 +40,6 @@ if [ "$2" = "PRE-INSTALL" ]; then
 			-s "/sbin/nologin" -d "/nonexistent" \
 			-c "polipo web cache"; \
 		then
-			pw groupmod mail -m $POLIPOUSER
 			echo "=> Added user \"$POLIPOUSER\"."
 		else
 			echo "=> Adding user \"$POLIPOUSER\" failed..."
