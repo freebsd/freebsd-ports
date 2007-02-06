@@ -29,13 +29,15 @@ IGNORE=		"Requires new netgraph architecture ng_item to build"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ng_daphne.c
 .endif
 
-PLIST_FILES=	lib/ng_daphne.ko %%DOCSDIR%%/README
-PLIST_DIRS=	%%DOCSDIR%%
+PLIST_FILES=	lib/ng_daphne.ko
+PORTDOCS=	README
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ng_daphne.ko ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
