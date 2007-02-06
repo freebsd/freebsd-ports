@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libedit
-PORTVERSION=	2.6.9
-PORTREVISION=	2
+PORTVERSION=	2.6.10
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
 		http://www.canonware.com/download/libedit/
