@@ -20,11 +20,12 @@ COMMENT=	${GECKO} French Language Pack (FLP)
 
 WRKSRC=		${WRKDIR}/bin
 
-REPS=		defaults/profile/FR/chrome defaults/messenger/FR defaults/isp/FR
+REPS=		defaults/profile/FR/chrome defaults/messenger/FR defaults/isp/FR	\
+		components/myspell
 FICHIERS=	chrome/FR.jar chrome/fr-FR.jar chrome/fr-unix.jar			\
 		components/myspell/fr-FR.aff components/myspell/fr-FR.dic		\
 		defaults/isp/FR/movemail.rdf defaults/messenger/FR/mailViews.dat	\
-		defaults/profile/FR/bookmarks.html					\
+		defaults/isp/FR/gmail.rdf defaults/profile/FR/bookmarks.html		\
 		defaults/profile/FR/chrome/userChrome-example.css			\
 		defaults/profile/FR/chrome/userContent-example.css			\
 		defaults/profile/FR/localstore.rdf defaults/profile/FR/mimeTypes.rdf	\
@@ -37,7 +38,7 @@ FICHIERS=	chrome/FR.jar chrome/fr-FR.jar chrome/fr-unix.jar			\
 .include "${PORTSDIR}/www/mozex/Makefile.xpi"
 
 .if ${GECKO} == seamonkey
-MOZVERSION=	1.0.7
+MOZVERSION=	1.1
 DISTURL=	/SeaMonkey
 MD5_FILE=	${MASTERDIR}/distinfo.seamonkey
 .else
