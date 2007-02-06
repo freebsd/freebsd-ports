@@ -3,6 +3,7 @@
 %%MOZDIR%%/chrome/fr-unix.jar
 %%MOZDIR%%/components/myspell/fr-FR.aff
 %%MOZDIR%%/components/myspell/fr-FR.dic
+%%MOZDIR%%/defaults/isp/FR/gmail.rdf
 %%MOZDIR%%/defaults/isp/FR/movemail.rdf
 %%MOZDIR%%/defaults/messenger/FR/mailViews.dat
 %%MOZDIR%%/defaults/profile/FR/bookmarks.html
@@ -18,4 +19,5 @@
 @dirrm %%MOZDIR%%/defaults/profile/FR
 @dirrm %%MOZDIR%%/defaults/messenger/FR
 @dirrm %%MOZDIR%%/defaults/isp/FR
-@unexec rmdir %D/%%MOZDIR%%/defaults/isp 2>/dev/null || true
+@dirrmtry %%MOZDIR%%/defaults/isp
+@dirrmtry %%MOZDIR%%/components/myspell
