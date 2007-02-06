@@ -122,6 +122,7 @@
     SUBDIR += exim-sqlite
     SUBDIR += exipick
     SUBDIR += exmh2
+    SUBDIR += extmail
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
     SUBDIR += ezmlm-web
