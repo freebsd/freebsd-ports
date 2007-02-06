@@ -70,6 +70,9 @@ lib/pygtk/2.0/demos/print_editor.pyo
 lib/pygtk/2.0/demos/sizegroup.py
 lib/pygtk/2.0/demos/sizegroup.pyc
 lib/pygtk/2.0/demos/sizegroup.pyo
+lib/pygtk/2.0/demos/statusicon.py
+lib/pygtk/2.0/demos/statusicon.pyc
+lib/pygtk/2.0/demos/statusicon.pyo
 lib/pygtk/2.0/demos/stock_browser.py
 lib/pygtk/2.0/demos/stock_browser.pyc
 lib/pygtk/2.0/demos/stock_browser.pyo
@@ -188,6 +191,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/pixbufs.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/print_editor.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/sizegroup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/statusicon.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/stock_browser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/textview.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/tree_store.py
@@ -212,6 +216,9 @@ share/pygtk/2.0/codegen/argtypes.pyo
 share/pygtk/2.0/codegen/codegen.py
 share/pygtk/2.0/codegen/codegen.pyc
 share/pygtk/2.0/codegen/codegen.pyo
+share/pygtk/2.0/codegen/createdefs.py
+share/pygtk/2.0/codegen/createdefs.pyc
+share/pygtk/2.0/codegen/createdefs.pyo
 share/pygtk/2.0/codegen/definitions.py
 share/pygtk/2.0/codegen/definitions.pyc
 share/pygtk/2.0/codegen/definitions.pyo
