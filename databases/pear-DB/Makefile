@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
@@ -26,16 +26,19 @@ TESTS=		db_error.phpt db_parsedsn.phpt db_factory.phpt db_ismanip.phpt \
 		db_error2.phpt errors.inc fetchmode_object.inc fetchmodes.inc \
 		include.inc limit.inc numcols.inc numrows.inc \
 		prepexe.inc run.cvs sequences.inc simplequery.inc \
-		transactions.inc skipif.inc driver/01connect.phpt \
-		driver/02fetch.phpt driver/03simplequery.phpt \
-		driver/04numcols.phpt driver/05sequences.phpt \
-		driver/06prepexec.phpt driver/08affectedrows.phpt \
-		driver/09numrows.phpt driver/10errormap.phpt \
-		driver/11transactions.phpt driver/13limit.phpt \
-		driver/14fetchmode_object.phpt driver/15quote.phpt \
-		driver/16tableinfo.phpt driver/17query.phpt driver/18get.phpt \
-		driver/19getlistof.phpt driver/connect.inc driver/mktable.inc \
-		driver/multiconnect.php driver/run.cvs driver/setup.inc.cvs \
+		transactions.inc skipif.inc \
+		driver/01connect.phpt driver/02fetch.phpt \
+		driver/03simplequery.phpt driver/04numcols.phpt \
+		driver/05sequences.phpt driver/06prepexec.phpt \
+		driver/08affectedrows.phpt driver/09numrows.phpt \
+		driver/10errormap.phpt driver/11transactions.phpt \
+		driver/13limit.phpt driver/14fetchmode_object.phpt \
+		driver/15quote.phpt driver/16tableinfo.phpt \
+		driver/17query.phpt driver/18get.phpt \
+		driver/19getlistof.phpt driver/20locale.phpt \
+		driver/21freeResult.phpt driver/connect.inc \
+		driver/mktable.inc driver/multiconnect.php \
+		driver/run.cvs driver/setup.inc.cvs \
 		driver/skipif.inc
 
 _DOCSDIR=	doc
