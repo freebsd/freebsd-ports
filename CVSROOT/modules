@@ -12795,7 +12795,7 @@ qt4-codecs-tw	ports/misc/qt4-codecs-tw
 qt4-corelib	ports/devel/qt4-corelib
 qt4-designer	ports/devel/qt4-designer
 qt4-doc		ports/misc/qt4-doc
-qt4-gui		ports/x11-toolits/qt4-gui
+qt4-gui		ports/x11-toolkits/qt4-gui
 qt4-ibase-plugin	ports/databases/qt4-ibase-plugin
 qt4-iconengines		ports/graphics/qt4-iconengines
 qt4-imageformats	ports/graphics/qt4-imageformats
