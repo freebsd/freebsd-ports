@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	0.0.1.20070104	#0.0.1.YYYYMMDD
+PORTVERSION=	0.0.1.20070204	#0.0.1.YYYYMMDD
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~mezz/distfiles/
@@ -18,24 +18,19 @@ COMMENT=	A port of the win32 DC++ direct connect client to POSIX-like systems
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libglade2
+USE_ICONV=	yes
 USE_SCONS=	yes
 USE_OPENSSL=	yes
 
 .if defined(WITH_DEBUG)
 SCONS_ARGS=	debug=1
-STRIP=
 .else
 SCONS_ARGS=	release=1
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not compile on FreeBSD 4.x, due to lack of wide character in libc
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; s|%%CXX%%|${CXX}|g ; \
-		s|%%CXXFLAGS%%|${CXXFLAGS}|g' ${WRKSRC}/SConstruct
+		s|%%CXXFLAGS%%|${CXXFLAGS}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g' \
+			${WRKSRC}/SConstruct
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
