@@ -187,12 +187,7 @@ SUB_LIST+=		ETCSSH="${ETCSSH}"
 PLIST_SUB+=		EMPTYDIR="${EMPTYDIR}"
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
 
-# Sync this with bsd.port.mk
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
-RC_SCRIPT_NAME=		openssh
-.else
-RC_SCRIPT_NAME=		openssh.sh
-.endif
+RC_SCRIPT_NAME=		openssh${RC_SUBR_SUFFIX}
 
 post-extract:
 .if defined(OPENSSH_SNAPSHOT)
