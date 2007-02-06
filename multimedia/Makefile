@@ -48,6 +48,7 @@
     SUBDIR += goggles
     SUBDIR += gopchop
     SUBDIR += gpac-libgpac
+    SUBDIR += gpac-mp4box
     SUBDIR += grpplaylist
     SUBDIR += gstreamer
     SUBDIR += gstreamer-editor
