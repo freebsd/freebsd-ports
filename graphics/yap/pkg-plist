@@ -1,0 +1,10 @@
+Local/Applications/Yap.app/Resources/GPSText.tiff
+Local/Applications/Yap.app/Resources/GPSText.tiff.old
+Local/Applications/Yap.app/Resources/Info-gnustep.plist
+Local/Applications/Yap.app/Resources/Yap.desktop
+Local/Applications/Yap.app/Resources/Yap.tiff
+Local/Applications/Yap.app/Yap
+Local/Applications/Yap.app/library_paths.openapp
+Local/Applications/Yap.app/stamp.make
+@dirrm Local/Applications/Yap.app/Resources
+@dirrm Local/Applications/Yap.app
