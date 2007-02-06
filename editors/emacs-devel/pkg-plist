@@ -22,6 +22,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/COOKIES
 %%DATADIR%%/%%EMACS_VER%%/etc/COPYING
 %%DATADIR%%/%%EMACS_VER%%/etc/DEBUG
+%%DATADIR%%/%%EMACS_VER%%/etc/DEVEL.HUMOR
 %%DATADIR%%/%%EMACS_VER%%/etc/DISTRIB
 %%DATADIR%%/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.1
 %%DOC2%%%%DATADIR%%/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.2
@@ -113,14 +114,12 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/fr-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/fr-survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/future-bug
-%%DATADIR%%/%%EMACS_VER%%/etc/gfdl.1
 %%DATADIR%%/%%EMACS_VER%%/etc/gnu.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus-logo.eps
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus-tut.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/grep.txt
-%%DATADIR%%/%%EMACS_VER%%/etc/images/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/attach.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/attach.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/back-arrow.pbm
@@ -633,7 +632,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/button.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/button.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/README
-%%DATADIR%%/%%EMACS_VER%%/lisp/calc/README.prev
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-aent.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-aent.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-alg.el.gz
@@ -732,6 +730,8 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-french.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-hebrew.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-hebrew.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-html.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-html.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-islam.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-islam.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-iso.el.gz
@@ -1062,6 +1062,8 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-backend.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-button.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-button.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-capab.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-capab.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-dcc.el.gz
@@ -1084,8 +1086,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-join.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-lang.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-lang.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-list.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-list.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-log.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-log.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-match.el.gz
@@ -2469,6 +2469,8 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tumme.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tumme.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/type-break.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/type-break.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/uniquify.el.gz
@@ -2501,8 +2503,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-history.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-http.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-http.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-https.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-https.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-imap.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-imap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-irc.el.gz
