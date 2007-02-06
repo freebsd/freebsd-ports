@@ -19,6 +19,7 @@ OPTIONS=	SQL_PLUGINS "Database connectivity plugins for QtSql" off
 
 RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so:${PORTSDIR}/accessibility/qt4-accessible \
 		${LOCALBASE}/lib/plugins/codecs/libqcncodecs.so:${PORTSDIR}/chinese/qt4-codecs-cn \
+		${LOCALBASE}/lib/plugins/codecs/libqtwcodecs.so:${PORTSDIR}/chinese/qt4-codecs-tw \
 		${LOCALBASE}/lib/libQtSql.so:${PORTSDIR}/databases/qt4-sql \
 		qdbus:${PORTSDIR}/devel/dbus-qt4 \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
@@ -42,7 +43,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so
 		${LOCALBASE}/lib/plugins/codecs/libqjpcodecs.so:${PORTSDIR}/japanese/qt4-codecs-jp \
 		${LOCALBASE}/lib/plugins/codecs/libqkrcodecs.so:${PORTSDIR}/korean/qt4-codecs-kr \
 		${LOCALBASE}/bin/qtconfig:${PORTSDIR}/misc/qt4-qtconfig \
-		${LOCALBASE}/lib/plugins/codecs/libqtwcodecs.so:${PORTSDIR}/misc/qt4-codecs-tw \
 		${LOCALBASE}/lib/libQtNetwork.so:${PORTSDIR}/net/qt4-network \
 		${LOCALBASE}/lib/libQtXml.so:${PORTSDIR}/textproc/qt4-xml \
 		${LOCALBASE}/lib/libQtOpenGL.so:${PORTSDIR}/x11/qt4-opengl \

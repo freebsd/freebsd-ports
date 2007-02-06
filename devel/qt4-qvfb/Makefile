@@ -8,6 +8,7 @@
 
 PORTNAME=	qvfb
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -34,7 +35,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} \
+		-system-zlib -no-nas-sound -prefix ${PREFIX} -no-sm \
 		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
 		-confirm-license
 
