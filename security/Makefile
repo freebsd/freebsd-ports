@@ -653,6 +653,7 @@
     SUBDIR += smtpscan
     SUBDIR += smurflog
     SUBDIR += sniff
+    SUBDIR += snoopy
     SUBDIR += snort
     SUBDIR += snort-rep
     SUBDIR += snort_inline
