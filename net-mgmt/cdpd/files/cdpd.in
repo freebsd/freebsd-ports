@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: cdpd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable cdpd:
+#
+# cdpd_enable="YES"
+#
+# You can define flags for cdpd running. See cdpd(8) for details.
+#
+# Example:
+# cdpd_flags="-i em0"
+#
+# Default flags: -a
+#
+
+. %%RC_SUBR%%
+
+name=cdpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/$name
+
+# set defaults
+
+cdpd_enable=${cdpd_enable:-"NO"}
+cdpr_flags=${cdpd_flags:-"-a"}
+
+load_rc_config $name
+run_rc_command "$1"
