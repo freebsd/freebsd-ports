@@ -39,13 +39,6 @@ USE_RC_SUBR+=	pdns-recursor
 .if defined(WITH_STATIC)
 MAKE_ENV+=STATIC=full
 PLIST_SUB+=	STATIC="@comment "
-.else
-MAKE_ENV+=STATIC=semi
-PLIST_SUB+=	STATIC=""
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
 .endif
 
 .if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
