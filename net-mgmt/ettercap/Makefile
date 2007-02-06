@@ -99,6 +99,9 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E -e 's|(^pkgdatadir.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/share/Makefile.in
+# Fix objformat
+	@${REINPLACE_CMD} -E -e 's|(^.*=).*/usr/bin/objformat.*|\1"elf"|' \
+		${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/share/etter.conf \
