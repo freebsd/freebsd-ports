@@ -2551,6 +2551,7 @@ exrtools	ports/graphics/exrtools
 exslt		ports/textproc/exslt
 extace		ports/audio/extace
 extipl		ports/sysutils/extipl
+extmail		ports/mail/extmail
 extrackt	ports/sysutils/extrackt
 extract-xiso	ports/emulators/extract-xiso
 exult		ports/games/exult
