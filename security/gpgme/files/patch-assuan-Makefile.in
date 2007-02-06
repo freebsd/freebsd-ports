@@ -1,25 +1,25 @@
---- assuan/Makefile.in.orig	Wed Sep 13 16:14:57 2006
-+++ assuan/Makefile.in	Wed Sep 13 16:15:11 2006
+--- assuan/Makefile.in.orig	Mon Jan 29 21:16:58 2007
++++ assuan/Makefile.in	Tue Feb  6 17:51:48 2007
 @@ -74,7 +74,7 @@
  	assuan-listen.lo assuan-connect.lo assuan-client.lo \
  	assuan-pipe-server.lo assuan-socket-server.lo \
- 	assuan-pipe-connect.lo assuan-socket-connect.lo \
--	assuan-socket.lo funopen.lo assuan-io.lo \
-+	assuan-socket.lo assuan-io.lo \
- 	assuan-domain-connect.lo assuan-domain-server.lo \
- 	assuan-logging.lo
+ 	assuan-pipe-connect.lo assuan-socket-connect.lo assuan-uds.lo \
+-	funopen.lo assuan-io.lo assuan-logging.lo assuan-socket.lo
++	assuan-io.lo assuan-logging.lo assuan-socket.lo
  libassuan_la_OBJECTS = $(am_libassuan_la_OBJECTS)
-@@ -273,7 +273,6 @@
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -274,7 +274,6 @@
  	assuan-pipe-connect.c \
  	assuan-socket-connect.c  \
- 	assuan-socket.c \
+ 	assuan-uds.c \
 -	funopen.c \
  	assuan-io.c \
- 	assuan-domain-connect.c \
- 	assuan-domain-server.c \
-@@ -348,7 +347,6 @@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/assuan-socket-server.Plo@am__quote@
+ 	assuan-logging.c \
+ 	assuan-socket.c
+@@ -347,7 +346,6 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/assuan-socket.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/assuan-uds.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/assuan-util.Plo@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/funopen.Plo@am__quote@
  
