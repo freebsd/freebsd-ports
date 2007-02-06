@@ -1,0 +1,102 @@
+--- Makefile.rule.orig	Thu Jan  4 16:10:00 2007
++++ Makefile.rule	Tue Feb  6 09:07:21 2007
+@@ -141,11 +141,11 @@
+ endif
+ 
+ ifndef F_COMPILER
+-F_COMPILER = G77
++F_COMPILER = GFORTRAN
+ endif
+ 
+ ifeq ($(C_COMPILER), GNU)
+-COMPILER     = gcc
++COMPILER     = %%CC%%
+ CCOMMON_OPT += -Wall
+ ifneq ($(OSNAME), CYGWIN_NT)
+ CCOMMON_OPT += -fPIC 
+@@ -163,12 +163,12 @@
+ endif
+ 
+ ifeq ($(C_COMPILER), INTEL)
+-COMPILER     = icc
++COMPILER     =  %%CC%%
+ CCOMMON_OPT += -fPIC 
+ endif
+ 
+ ifeq ($(F_COMPILER), G77)
+-COMPILER_F77 = g77
++COMPILER_F77 = %%F77%%
+ BU	     = _
+ CCOMMON_OPT += -DF_INTERFACE_F2C -DNEED_F2CCONV
+ FCOMMON_OPT += -Wall
+@@ -185,7 +185,7 @@
+ endif
+ 
+ ifeq ($(F_COMPILER), G95)
+-COMPILER_F77 = g95
++COMPILER_F77 = %%F77%%
+ BU	     = _
+ CCOMMON_OPT += -DF_INTERFACE_F2C
+ FCOMMON_OPT += -Wall
+@@ -202,11 +202,12 @@
+ endif
+ 
+ ifeq ($(F_COMPILER), GFORTRAN)
+-COMPILER_F77 = gfortran
++COMPILER_F77 = %%F77%%
+ BU	     = _
+ CCOMMON_OPT += -DF_INTERFACE_GFORT
+ FCOMMON_OPT += -Wall
+-EXTRALIB    += -lgfortran
++GCCPATH = $(shell dirname `%%F77%% -print-libgcc-file-name`)
++EXTRALIB    += -L$(GCCPATH)/../../../ -lgfortran
+ ifneq ($(OSNAME), CYGWIN_NT)
+ FCOMMON_OPT += -fPIC 
+ endif
+@@ -224,7 +225,7 @@
+ endif
+ 
+ ifeq ($(F_COMPILER), INTEL)
+-COMPILER_F77 = ifort
++COMPILER_F77 = %%F77%%
+ BU	     = _
+ CCOMMON_OPT += -DF_INTERFACE_F2C
+ FCOMMON_OPT += -fPIC
+@@ -276,10 +277,9 @@
+ endif
+ endif
+ 
+-ifneq ($(OSNAME), CYGWIN_NT)
+ ifdef SMP
+-PTHREADLIB += -lpthread
+-endif
++PTHREADLIB +=	${PTHREAD_LIBS}
++CCOMMON_OPT+=	${PTHREAD_CFLAGS}
+ endif
+ 
+ ifeq ($(F_COMPILER), PATHSCALE)
+@@ -326,7 +326,7 @@
+ GETARCH_CC	 = gcc
+ endif
+ 
+-ARCH        := $(shell (cd $(TOPDIR); ./getarch 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
++GARCH       := $(shell (cd $(TOPDIR); ./getarch 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
+ SUBARCH     := $(shell (cd $(TOPDIR); ./getarch 1 $(GETARCH_CC) $(GETARCH_FLAGS)))
+ ARCHSUBDIR  := $(shell (cd $(TOPDIR); ./getarch 2 $(GETARCH_CC) $(GETARCH_FLAGS)))
+ CONFIG      := $(shell (cd $(TOPDIR); ./getarch 3 $(GETARCH_CC) $(GETARCH_FLAGS)))
+@@ -407,11 +407,11 @@
+ FPFLAGS = $(COMMON_OPT) $(FCOMMON_OPT) $(COMMON_PROF)
+ 
+ ifndef SMP
+-LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION).a
+-LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION)_p.a
++LIBNAME		= $(LIBPREFIX)$(REVISION).a
++LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.a
+ else
+-LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION).a
+-LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION)_p.a
++LIBNAME		= $(LIBPREFIX)p$(REVISION).a
++LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.a
+ endif
+ 
+ LIBSONAME    = $(LIBNAME:.a=.so)

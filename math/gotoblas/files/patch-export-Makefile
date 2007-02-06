@@ -1,0 +1,11 @@
+--- exports/Makefile.orig	Sun Jan 21 14:01:28 2007
++++ exports/Makefile	Sun Jan 21 14:02:13 2007
+@@ -181,7 +181,7 @@
+ 	./gensymbol win2kasm > symbol.S
+ 
+ test : linktest.c
+-	$(CC) $(CFLAGS) -w -o linktest linktest.c ../$(LIBSONAME) $(EXTRALIB) -lm && echo OK.
++	$(CC) $(CFLAGS) $(PTHREAD_CFLAGS) -w -o linktest $(PTHREAD_LIBS) linktest.c ../$(LIBSONAME) $(EXTRALIB) -lm && echo OK.
+ 	rm -f linktest
+ 
+ linktest.c : gensymbol ../Makefile.rule ../getarch.c
