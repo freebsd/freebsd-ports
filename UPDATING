@@ -25,8 +25,8 @@ upgrades.
   AFFECTS: prospective users of devel/qt4
   AUTHOR: kde@FreeBSD.org
 
-  The qt4 ports and associated infrastructure introduce a few new 
-  Makefile variables and porting concepts (compared to qt33). 
+  The qt4 ports and associated infrastructure introduce a few new
+  Makefile variables and porting concepts (compared to qt33).
 
   For details and examples, see
   http://mail.kde.org/pipermail/kde-freebsd/2007-February/000239.html
@@ -147,7 +147,7 @@ upgrades.
   change the port's behaviour; the variables are documented at the top of the
   port's Makefile. Before updating, it might be a good idea to remove
   /var/db/ports/spamprobe.
-  
+
   The port now has support for the PBL database backend; unless built with
   WITHOUT_PBL set, SpamProbe will use PBL as the default even if you have an
   existing BerkleyDB or hash database; in that case, use the parameter "-d" to
@@ -247,8 +247,8 @@ upgrades.
   polkitd_enable="YES"
   hald_enable="YES"
 
-  Notes / known problems about mounting devices in media:/ with HAL enabled: 
-  
+  Notes / known problems about mounting devices in media:/ with HAL enabled:
+
   - Your user must be in group operator in order to be able to mount removable
     media.
 
@@ -258,7 +258,7 @@ upgrades.
   - If you mount a volume by double-clicking it, it may appear empty. Refresh
     the fileview in konqueror to see the files.
 
-  - Mounting floppies is currently not supported. 
+  - Mounting floppies is currently not supported.
 
     You can still mount them in KDE if ...
 
@@ -283,7 +283,7 @@ upgrades.
 20061207:
    AFFECTS: users of devel/p5-PAR
    AUTHOR: rafan@FreeBSD.org
-     
+
    As of version 0.97.0, all PAR::Packer logic, i.e. pp, parl and
    all packaging tools are moved to another distribution. You can
    install devel/p5-PAR-Packer to get them.
@@ -291,7 +291,7 @@ upgrades.
 20061207:
    AFFECTS: users of net/samba3
    AUTHOR: timur@gnu.org
-     
+
    Version 3.0.23d of net/samba3 finally got ability to conditionaly
    link smbd daemon against FAM libraries. If you don't need this
    support make sure that it's not selected in the options menu -
