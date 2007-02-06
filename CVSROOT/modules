@@ -12792,7 +12792,7 @@ qt4-assistant	ports/devel/qt4-assistant
 qt4-codecs-cn	ports/chinese/qt4-codecs-cn
 qt4-codecs-jp	ports/japanese/qt4-codecs-jp
 qt4-codecs-kr	ports/korean/qt4-codecs-kr
-qt4-codecs-tw	ports/misc/qt4-codecs-tw
+qt4-codecs-tw	ports/chinese/qt4-codecs-tw
 qt4-corelib	ports/devel/qt4-corelib
 qt4-designer	ports/devel/qt4-designer
 qt4-doc		ports/misc/qt4-doc
