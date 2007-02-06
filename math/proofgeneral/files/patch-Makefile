@@ -1,10 +1,10 @@
---- Makefile.orig	Thu Dec  8 07:07:44 2005
-+++ Makefile	Thu Dec  8 07:36:00 2005
+--- Makefile.orig	Sat Sep 23 05:26:01 2006
++++ Makefile	Tue Jan  2 10:42:43 2007
 @@ -15,7 +15,7 @@
  
  # Set this to "emacs" or "xemacs" according to your version of Emacs.
  # NB: this is also used to set default install path names below.
--EMACS=xemacs
+-EMACS=$(shell if [ -z "`which xemacs`" ]; then echo emacs; else echo xemacs; fi)
 +EMACS=${EMACS_NAME}
  
  # We default to /usr rather than /usr/local because installs of
@@ -19,17 +19,16 @@
  
  PWD=$(shell pwd)
  
-@@ -69,8 +68,7 @@
+@@ -78,7 +77,7 @@
  ##	     compiles.
  ##
  compile: .byte-compile
 -	lastemacs=`cat .byte-compile`; if [ "$$lastemacs" != "$(EMACS)" ]; then rm -f .byte-compile; make .byte-compile; fi
--
-+	lastemacs=`cat .byte-compile`; if [ "$$lastemacs" != "${EMACS_NAME}" ]; then rm -f .byte-compile; $(MAKE) .byte-compile; fi
++	lastemacs=`cat .byte-compile`; if [ "$$lastemacs" != "$(EMACS_NAME)" ]; then rm -f .byte-compile; $(MAKE) .byte-compile; fi
+ 
  
  .byte-compile: $(EL) x-symbol/lisp/*.el
- 	@echo "*************************************************"
-@@ -127,41 +125,36 @@
+@@ -136,42 +135,37 @@
  # Set Elisp directories according to paths used in Red Hat RPMs
  # (which may or may not be official Emacs policy).  We generate
  # a pg-init.el file which loads the appropriate proof-site.el.
@@ -50,13 +49,13 @@
  DESKTOP=${PREFIX}/share
 -DOCDIR=${PREFIX}/share/doc/ProofGeneral
 -MANDIR=${PREFIX}/share/man/man1
--INFODIR=${PREFIX}/share/info/
+-INFODIR=${PREFIX}/share/info
 +DOCDIR=${DOCSDIR}
 +MANDIR=${PREFIX}/man/man1
-+INFODIR=${PREFIX}/info/
++INFODIR=${PREFIX}/info
  
 -install: install-desktop install-elisp install-bin install-init
-+install: install-desktop install-elisp install-bin install-init install-doc
++install: install-desktop install-elisp install-bin install-init ${INSTALLDOC}
  
  install-desktop:
 -	mkdir -p ${DESKTOP}/icons/hicolor/16x16
@@ -72,33 +71,35 @@
 -	mkdir -p ${DESKTOP}/mime-info
 -	cp etc/desktop/mime-info/proofgeneral.mime ${DESKTOP}/mime-info
 -	cp etc/desktop/mime-info/proofgeneral.keys ${DESKTOP}/mime-info
--	mkdir -p ${DESKTOP}/application-registry
++	if [ -d ${DESKTOP}/icons/hicolor ]; then \
++	  ${BSD_INSTALL_DATA} etc/desktop/icons/16x16/proofgeneral.png ${DESKTOP}/icons/hicolor/16x16; \
++	  ${BSD_INSTALL_DATA} etc/desktop/icons/32x32/proofgeneral.png ${DESKTOP}/icons/hicolor/32x32; \
++	  ${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/icons/hicolor/48x48; \
++	fi
++
++	if [ -d ${DESKTOP}/gnome ]; then \
++	  ${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/gnome/pixmaps; \
++	  ${BSD_INSTALL_DATA} etc/desktop/proofgeneral.desktop ${DESKTOP}/gnome/applications; \
++	  ${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.mime ${DESKTOP}/gnome/mime-info; \
++	  ${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.keys ${DESKTOP}/gnome/mime-info; \
++	fi
++
+ # backwards compatibility with old linuxes
+ 	mkdir -p ${DESKTOP}/application-registry
 -	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
-+	mkdir -p ${DESKTOP}/icons/hicolor/16x16
-+	${BSD_INSTALL_DATA} etc/desktop/icons/16x16/proofgeneral.png ${DESKTOP}/icons/hicolor/16x16
-+	mkdir -p ${DESKTOP}/icons/hicolor/32x32
-+	${BSD_INSTALL_DATA} etc/desktop/icons/32x32/proofgeneral.png ${DESKTOP}/icons/hicolor/32x32
-+	mkdir -p ${DESKTOP}/icons/hicolor/48x48
-+	${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/icons/hicolor/48x48
-+	mkdir -p ${DESKTOP}/pixmaps
-+	${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/pixmaps
-+	mkdir -p ${DESKTOP}/applications
-+	${BSD_INSTALL_DATA} etc/desktop/proofgeneral.desktop ${DESKTOP}/applications
-+	mkdir -p ${DESKTOP}/mime-info
-+	${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.mime ${DESKTOP}/mime-info
-+	${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.keys ${DESKTOP}/mime-info
-+	mkdir -p ${DESKTOP}/application-registry
-+	${BSD_INSTALL_DATA} etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
++	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/gnome/application-registry
  
  # NB: .el files are not strictly necessary, but we package/install them
  # for the time being to help with debugging, or for users to recompile.
-@@ -176,14 +169,30 @@
+@@ -186,15 +180,23 @@
  install-el:
  	mkdir -p ${ELISP}
  	for f in ${ELISP_DIRS} ${EXTRA_DIRS}; do mkdir -p ${ELISP}/$$f; done
 -	for f in ${ELISP_DIRS}; do cp -pf $$f/*.el ${ELISP}/$$f; done
 -	for f in ${EXTRA_DIRS}; do cp -prf $$f/* ${ELISP}/$$f; done
+-	for f in ${ELISP_EXTRAS}; do cp -pf $$f ${ELISP}/$$f; done
 +	for f in ${ELISP_DIRS}; do ${BSD_INSTALL_DATA} $$f/*.el ${ELISP}/$$f; done
++	for f in ${ELISP_EXTRAS}; do ${BSD_INSTALL_DATA} $$f ${ELISP}/$$f; done
 +	for f in ${EXTRA_DIRS}; \
 +		do for g in `find -d $$f -type d`; \
 +		   do mkdir -p ${ELISP}/$$g; \
@@ -113,64 +114,52 @@
  	mkdir -p ${ELISP}
  	for f in ${ELISP_DIRS} ${EXTRA_DIRS}; do mkdir -p ${ELISP}/$$f; done
 -	for f in ${ELISP_DIRS}; do cp -pf $$f/*.elc ${ELISP}/$$f; done
--	for f in ${EXTRA_DIRS}; do cp -prf $$f/* ${ELISP}/$$f; done
+-	for f in ${ELISP_EXTRAS}; do cp -pf $$f ${ELISP}/$$f; done
 +	for f in ${ELISP_DIRS}; do ${BSD_INSTALL_DATA} $$f/*.elc ${ELISP}/$$f; done
-+	for f in ${EXTRA_DIRS}; \
-+		do for g in `find -d $$f -type d`; \
-+		   do mkdir -p ${ELISP}/$$g; \
-+		      files=`find $$g -depth 1 -type f \\! -perm +u+x`; \
-+		      if [ "$$files" != "" ]; then ${BSD_INSTALL_DATA} $$files ${ELISP}/$$g; fi; \
-+		      scripts=`find $$g -depth 1 -type f -perm +u+x`; \
-+		      if [ "$$scripts" != "" ]; then ${BSD_INSTALL_SCRIPT} $$scripts ${ELISP}/$$g; fi; \
-+		   done; \
-+	    done
++	for f in ${ELISP_EXTRAS}; do ${BSD_INSTALL_DATA} $$f ${ELISP}/$$f; done
  
  install-init:
  	mkdir -p ${ELISP_START}
-@@ -193,18 +202,16 @@
+@@ -204,24 +206,31 @@
  
  install-bin: scripts
  	mkdir -p ${BINDIR}
 -	cp -pf ${BIN_SCRIPTS} ${BINDIR}
 +	${BSD_INSTALL_SCRIPT} ${BIN_SCRIPTS} ${BINDIR}
  
--install-doc: doc.info
-+install-doc: doc.info ${INSTALL_DOC}
+-install-doc: doc.info doc.pdf
++install-doc: doc.info doc.pdf doc.html
  	mkdir -p ${MANDIR}
 -	cp -pf doc/proofgeneral.1 ${MANDIR}
-+	${BSD_INSTALL_MAN} doc/proofgeneral.1 ${MANDIR}
- 	mkdir -p ${INFODIR}
+-	mkdir -p ${INFODIR}
 -	cp -pf doc/*.info ${INFODIR}
 -	/sbin/install-info ${INFODIR}/ProofGeneral.info* ${INFODIR}/dir
 -	/sbin/install-info ${INFODIR}/PG-adapting.info* ${INFODIR}/dir
-+	${BSD_INSTALL_MAN} doc/*.info ${INFODIR}
++	${BSD_INSTALL_MAN} doc/proofgeneral.1 ${MANDIR}
++	${BSD_INSTALL_MAN} doc/PG-adapting.info ${INFODIR}
++	${BSD_INSTALL_MAN} doc/ProofGeneral.info ${INFODIR}
+ 	mkdir -p ${DOCDIR}
+-	for f in ${DOC_FILES}; do cp -pf $$f ${DOCDIR}; done
+-	for f in ${DOC_EXAMPLES}; do mkdir -p ${DOCDIR}/`dirname $$f`; cp -pf $$f ${DOCDIR}/$$f; done
++	for f in ${DOC_FILES}; do ${BSD_INSTALL_MAN} $$f ${DOCDIR}; done
++	for f in ${DOC_EXAMPLES}; do mkdir -p ${DOCDIR}/`dirname $$f`; \
++		${BSD_INSTALL_MAN} $$f ${DOCDIR}/$$f; done
++	mkdir -p ${DOCDIR}/ProofGeneral
++	for f in doc/ProofGeneral/*.html; do \
++		${BSD_INSTALL_MAN} $$f ${DOCDIR}/ProofGeneral/`basename $$f`; done
++	mkdir -p ${DOCDIR}/PG-adapting
++	for f in doc/PG-adapting/*.html; do \
++		${BSD_INSTALL_MAN} $$f ${DOCDIR}/PG-adapting/`basename $$f`; done
++	for f in ProofGeneral.pdf PG-adapting.pdf; do \
++		${BSD_INSTALL_MAN} doc/$$f ${DOCDIR}/$$f; done
  
- doc.%: 
+ doc: FORCE
+-	(cd doc; make $*)
++	(cd doc; $(MAKE) $*)
+ 
+ doc.%: FORCE
 -	(cd doc; make $*)
 +	(cd doc; $(MAKE) $*)
  
  ##
  ## scripts: try to patch bash and perl scripts with correct paths
-@@ -247,7 +254,7 @@
- 
- # Set PGHOME path in scripts back to default location.
- cleanpgscripts:
--	make pgscripts DEST_ELISP='$$$$HOME/ProofGeneral'
-+	$(MAKE) pgscripts DEST_ELISP='$$$$HOME/ProofGeneral'
- 
- 
- ##
-@@ -257,11 +264,11 @@
- ##
- 
- devel.%:
--	make -f Makefile.devel $*
-+	$(MAKE) -f Makefile.devel $*
- 
- ##
- ## Similarly for xemacs Makefile.
- ##
- 
- xemacs.%:
--	make -f Makefile.xemacs $*
-+	$(MAKE) -f Makefile.xemacs $*
