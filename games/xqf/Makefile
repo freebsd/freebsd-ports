@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xqf
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,7 @@ COMMENT=	A server browser for many popular 3D action games
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	intlhack
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes

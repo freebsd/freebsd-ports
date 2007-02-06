@@ -8,6 +8,7 @@ share/locale/de/LC_MESSAGES/xqf.mo
 share/locale/es/LC_MESSAGES/xqf.mo
 share/locale/fi/LC_MESSAGES/xqf.mo
 share/locale/fr/LC_MESSAGES/xqf.mo
+share/locale/pl/LC_MESSAGES/xqf.mo
 share/locale/ru/LC_MESSAGES/xqf.mo
 share/applications/xqf.desktop
 share/pixmaps/xqf_22x22.png
@@ -137,3 +138,4 @@ share/pixmaps/xqf_48x48_2.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
