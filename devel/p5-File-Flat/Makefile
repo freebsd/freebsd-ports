@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Flat
-PORTVERSION=	0.96
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -21,7 +21,11 @@ RUN_DEPENDS=	\
 		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
 		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
+		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork
+
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${SITE_PERL}/Test/ClassAPI.pm:${PORTSDIR}/devel/p5-Test-ClassAPI
 
 PERL_CONFIGURE=	yes
 
