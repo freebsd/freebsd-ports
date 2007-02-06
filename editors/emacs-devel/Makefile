@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
+PORTVERSION=	${EMACS_VER}
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	keramida
-DISTNAME=	${PORTNAME}-cvs-snapshot-2006.09.01.17.52.26
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=	emacs/pretest
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -29,10 +28,9 @@ CONFLICTS=	emacs-19.* emacs-21.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-EMACS_VER=	22.0.50
-SNAPSHOT=	20060901
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:259
+EMACS_VER=	22.0.93
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 .if !defined(WITHOUT_X11)
 .if !defined(WITHOUT_GTK)
 USE_GNOME=	gtk20
@@ -41,8 +39,6 @@ USE_XLIB=	yes
 .endif
 USE_XPM=	yes
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd
 .if defined(WITHOUT_X11)
@@ -56,6 +52,8 @@ CONFIGURE_ARGS=		--with-gtk
 .if defined(WITHOUT_XIM)
 CONFIGURE_ARGS+=	--without-xim
 .endif
+
+CONFIGURE_ARGS+=	--infodir='$${prefix}/info' --mandir='$${prefix}/man'
 
 MAN1=		ctags.1 emacs.1 emacsclient.1 etags.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
@@ -87,14 +85,11 @@ pre-everything::
 	@${ECHO_MSG} "====>"
 .endif
 
-pre-build:
-	(cd ${WRKSRC} ; ${MAKE} bootstrap)
-
 pre-install:
 	(cd ${WRKSRC}/lisp ; \
-	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
+	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
 	 ${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.[0-9]* ; \
 	 cd ${WRKSRC}/src ; \
-	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 .include <bsd.port.post.mk>
