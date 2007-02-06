@@ -14012,6 +14012,7 @@ snns		ports/math/snns
 snobol		ports/lang/snobol
 snobol4		ports/lang/snobol4
 snooper		ports/comms/snooper
+snoopy		ports/security/snoopy
 snort		ports/security/snort
 snort-rep	ports/security/snort-rep
 snort_inline	ports/security/snort_inline
