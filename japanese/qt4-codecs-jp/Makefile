@@ -29,7 +29,6 @@ USE_GCC=	3.4+
 #USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=yes
 
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \

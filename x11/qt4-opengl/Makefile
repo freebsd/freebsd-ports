@@ -9,7 +9,7 @@
 PORTNAME=	opengl
 PORTVERSION=	4.2.2
 PORTREVISION=	1
-CATEGORIES?=	x11-toolkits
+CATEGORIES?=	x11
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
@@ -29,7 +29,6 @@ CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=yes
 USE_XLIB=	yes
 
 CONFIGURE_ARGS=	-fast -no-exceptions \

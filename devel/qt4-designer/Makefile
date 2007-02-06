@@ -9,7 +9,7 @@
 PORTNAME=	designer
 PORTVERSION=	4.2.2
 PORTREVISION=	1
-CATEGORIES?=	x11-toolkits ipv6
+CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
@@ -36,7 +36,6 @@ CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=yes
 
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \

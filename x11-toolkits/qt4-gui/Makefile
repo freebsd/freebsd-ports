@@ -31,7 +31,6 @@ CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_FILTER_SHLIBS=yes
 USE_XLIB=	yes
 
 CONFIGURE_ARGS=	-fast -no-exceptions ${CUPS} \
