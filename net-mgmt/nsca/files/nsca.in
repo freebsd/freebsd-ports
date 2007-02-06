@@ -1,5 +1,10 @@
 #!/bin/sh
 #
+# PROVIDE: nsca
+# REQUIRE: nagios
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
 # Add the following lines to /etc/rc.conf to enable nsca:
 # nsca_enable (bool):    Set to "NO" by default.
 #                          Set it to "YES" to enable nsca.
