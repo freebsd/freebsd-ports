@@ -162,10 +162,7 @@ OPTIONS=	OPTIMIZATION "Try building with optimizations" on
 
 EXTRA_LIBS=	${PTHREAD_LIBS}
 
-# we only run on i386 and amd64 release 5+
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD-${OSREL}
-.elif !(${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == sparc64)
+.if !(${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == sparc64)
 IGNORE=		dumps core on ${ARCH}
 .endif
 
