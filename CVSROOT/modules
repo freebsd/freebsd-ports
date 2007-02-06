@@ -3791,6 +3791,7 @@ gorilla		ports/security/gorilla
 gorm		ports/devel/gorm
 gossip		ports/net-im/gossip
 gotmail		ports/mail/gotmail
+gotoblas	ports/math/gotoblas
 gotthard	ports/net/gotthard
 gourmet		ports/deskutils/gourmet
 gozer		ports/graphics/gozer
