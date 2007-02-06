@@ -7,21 +7,24 @@
 #
 
 PORTNAME=	postal
-PORTVERSION=	0.62
+PORTVERSION=	0.65
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Benchmark SMTP/POP servers
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-PLIST_FILES=	sbin/postal sbin/postal-list sbin/rabid
+PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid
 
-MAN8=	postal.8 postal-list.8 rabid.8
+MAN1=	postal-list.1
+MAN8=	bhm.8 postal.8 rabid.8
+
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
