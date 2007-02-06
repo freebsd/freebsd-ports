@@ -1,0 +1,11 @@
+--- README.orig	Tue Feb  6 22:38:07 2007
++++ README	Tue Feb  6 22:38:22 2007
+@@ -39,7 +39,7 @@
+   the $LD_PRELOAD environment variable - simply set it to /lib/snoopy.so
+   before loading the application. For example:
+ 
+-     export LD_PRELOAD=/lib/snoopy.so
++     export LD_PRELOAD=%%PREFIX%%/lib/snoopy.so
+      lynx http://linux.com/
+      unset LD_PRELOAD 
+ 
