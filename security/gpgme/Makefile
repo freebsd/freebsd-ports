@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	1.1.2
-PORTREVISION=	4
+PORTVERSION=	1.1.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -47,6 +46,8 @@ post-patch:
 					${WRKSRC}/${CONFIGURE_SCRIPT} \
 					${WRKSRC}/gpgme/Makefile.in \
 					${WRKSRC}/gpgme/gpgme-config.in
+	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
+					${WRKSRC}/lang/cl/Makefile.in
 .if defined(WITH_PTH)
 .if ${OSVERSION} < 503100 || defined(PTHREAD_LIBS) && ${PTHREAD_LIBS} != "-pthread"
 	@${REINPLACE_CMD} -e 's|t_thread1_LDADD = ../../gpgme/libgpgme-pthread.la|t_thread1_LDADD = ../../gpgme/libgpgme-pthread.la -lpthread|g' \
