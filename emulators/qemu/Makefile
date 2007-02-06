@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.8.2s.20070203
+PORTVERSION=	0.9.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.qemu.org/:release \
+MASTER_SITES=	http://qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
 		http://people.freebsd.org/~maho/qemu/:misc \
 		http://people.freebsd.org/~jkim/:bios
-DISTNAME=	${PORTNAME}-snapshot-2007-02-03_05
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release \
 		qemu-bios.bin:bios
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -25,7 +24,6 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 USE_PERL5=	yes

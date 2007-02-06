@@ -63,10 +63,12 @@ with qemu's now by default enabled cdrom dma.  You can build the port with
 CDROM_DMA disabled to disable it.
 - if you build qemu wihout SDL and then get crashes running it try
 passing it -nographic.  This should probably be default in that case...
-- slirp (-net user) seems to be broken on recent -current, if this affects
-you please use tuntap for now. (seems to be working again now.)
-Scott Robbins posted a tap howto for -current here:
+- slirp (-net user) seems to be unstable on amd64 hosts, if this affects
+you please use tuntap for now.  Scott Robbins posted a tap howto for
+-current here:
 	http://forums.bsdnexus.com/viewtopic.php?id=1563
-- qemu now uses aio at least for ide dma, so if you get `Bad system call'
+and one for 6 and 5(?) is here:
+	http://acidos.bandwidth-junkies.net/index.php?Sect=qemu
+- qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
 ====
