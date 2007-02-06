@@ -178,6 +178,7 @@
     SUBDIR += fcron
     SUBDIR += fdupes
     SUBDIR += fetchlog
+    SUBDIR += ffs2recov
     SUBDIR += file
     SUBDIR += filedupe
     SUBDIR += filelight
