@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.0
-PORTREVISION=	20070105
+PORTREVISION=	20070202
 CATEGORIES=	lang java
 VERSIONSTRING=	4.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -91,8 +91,10 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
-		gcc${SUFFIX}/gfortran \
-		gcc${SUFFIX}/libgomp 
+		gcc${SUFFIX}/gfortran
+.if ${OSVERSION} >= 502102
+INFO+=		gcc${SUFFIX}/libgomp 
+.endif
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
@@ -161,10 +163,5 @@ post-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
-
-cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} "LATEST.*${PORTVERSION:C/.[0-9]+$//}"
-.endfor
 
 .include <bsd.port.post.mk>
