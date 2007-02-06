@@ -200,6 +200,7 @@
     SUBDIR += jce_policy14
     SUBDIR += john
     SUBDIR += kedpm
+    SUBDIR += keepassx
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
