@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.2.8
-PORTREVISION=	3
+PORTVERSION=	1.2.9
 CATEGORIES=	security
-MASTER_SITES=	http://downloads.rootkit.nl/ \
-		http://mirror.trouble-free.net/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Rootkit detection tool
@@ -21,7 +20,6 @@ OPTIONS=	LSOF "Use LSOF" on \
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
 NO_BUILD=	yes
 SUB_FILES=	415.rkhunter
