@@ -14,10 +14,6 @@ DISTNAME=	HLstatsX_V${PORTVERSION}
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-
-BROKEN=		Broken dependency
-
 NO_BUILD=	yes
 USE_APACHE=	yes
 USE_PHP=	gd mysql
