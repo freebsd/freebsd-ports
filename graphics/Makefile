@@ -755,6 +755,7 @@
     SUBDIR += xwpick
     SUBDIR += xzgv
     SUBDIR += yafray
+    SUBDIR += yap
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zphoto

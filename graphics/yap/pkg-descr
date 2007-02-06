@@ -1,0 +1,19 @@
+Yap.app (formerly GPSText)
+(Yet another previewer)
+
+A PostScript/PDF previewer and front end to the
+a2ps text formatting tool. 
+Features:
+ * extensive use of OOP programming techniques
+ * preview PostScript files
+ * format text files with a2ps
+ * opens files that are listed on the command line for easy
+   previewing
+ * set
+   + paper size
+   + pretty print style
+   + prologue
+   + encoding
+ * set a2ps options via an easy-to-use GUI
+
+WWW: http://www.gnustep.it/marko/GPSText/
