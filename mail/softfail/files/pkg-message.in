@@ -1,0 +1,18 @@
+
+Please note that you have just installed qmail-sf on
+
+	%%QMAIL_PREFIX%%/bin/qmail-sf
+
+Before using it you need to properly create the MySQL database. A customized
+SQL sample was installed on
+
+	%%DOCSDIR%%/softfail.sql
+
+You can use this sample as root user for MySQL:
+
+   mysql -uroot -p <  %%DOCSDIR%%/softfail.sql
+
+To use it you should configure SMTPEXTFORK's enviroment variable on qmail
+according to the instructions available on
+
+	%%DOCSDIR%%/README
