@@ -10,6 +10,8 @@ libexec/cil/machdep.exe
 %%PORTDOCS%%%%DOCSDIR%%/api/Cil.cilPrinter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Cil.cilVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Cil.defaultCilPrinterClass.html
+%%PORTDOCS%%%%DOCSDIR%%/api/Cil.descriptiveCilPrinter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/Cil.descriptiveCilPrinterClass.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Cil.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Cil.nopCilVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Cil.plainCilPrinterClass.html
@@ -43,6 +45,8 @@ libexec/cil/machdep.exe
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.cilPrinter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.cilVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.defaultCilPrinterClass.html
+%%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.descriptiveCilPrinter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.descriptiveCilPrinterClass.html
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.html
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.nopCilVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Cil.plainCilPrinterClass.html
@@ -60,6 +64,7 @@ libexec/cil/machdep.exe
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Pretty.MakeSetPrinter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Pretty.html
 %%PORTDOCS%%%%DOCSDIR%%/api/type_Stats.html
+%%PORTDOCS%%%%DOCSDIR%%/attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/cil.css
 %%PORTDOCS%%%%DOCSDIR%%/cil.html
@@ -68,7 +73,6 @@ libexec/cil/machdep.exe
 %%PORTDOCS%%%%DOCSDIR%%/cil002.html
 %%PORTDOCS%%%%DOCSDIR%%/cil003.html
 %%PORTDOCS%%%%DOCSDIR%%/cil004.html
-%%PORTDOCS%%%%DOCSDIR%%/cil006.html
 %%PORTDOCS%%%%DOCSDIR%%/cil007.html
 %%PORTDOCS%%%%DOCSDIR%%/cil009.html
 %%PORTDOCS%%%%DOCSDIR%%/cil010.html

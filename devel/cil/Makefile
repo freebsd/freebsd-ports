@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	cil
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://manju.cs.berkeley.edu/cil/distrib/
+		http://hal.cs.berkeley.edu/cil/distrib/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jkoshy@FreeBSD.org
