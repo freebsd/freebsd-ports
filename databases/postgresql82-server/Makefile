@@ -85,6 +85,7 @@ BROKEN=		Coredump during build on alpha 4.x
 OPTIONS+=	GNUGETOPT "Use GNU getopt" on
 .  endif
 OPTIONS+=	PAM "Build with PAM support (server only)" off
+OPTIONS+=	LDAP "Build with LDAP authentication support" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
@@ -126,6 +127,11 @@ DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
+.  endif
+
+.  if defined(SERVER_ONLY) && defined(WITH_LDAP)
+CONFIGURE_ARGS+=--with-ldap
+USE_OPENLDAP=	YES
 .  endif
 
 .  if defined(WITH_INTDATE)
