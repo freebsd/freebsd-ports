@@ -4,12 +4,9 @@
 %%SITE_PERL%%/Test/Parser.pm
 %%SITE_PERL%%/Test/Parser/Dbench.pm
 %%SITE_PERL%%/Test/Parser/Dbt2.pm
+%%SITE_PERL%%/Test/Parser/Dbt5.pm
 %%SITE_PERL%%/Test/Parser/Iostat.pm
-%%SITE_PERL%%/Test/Parser/Iozone.pm
 %%SITE_PERL%%/Test/Parser/KernelBuild.pm
-%%SITE_PERL%%/Test/Parser/LHCS.pm
-%%SITE_PERL%%/Test/Parser/LTP.pm
-%%SITE_PERL%%/Test/Parser/NewPyNfs.pm
 %%SITE_PERL%%/Test/Parser/Oprofile.pm
 %%SITE_PERL%%/Test/Parser/PgOptions.pm
 %%SITE_PERL%%/Test/Parser/Readprofile.pm
@@ -18,6 +15,12 @@
 %%SITE_PERL%%/Test/Parser/SysbenchFileIO.pm
 %%SITE_PERL%%/Test/Parser/Sysctl.pm
 %%SITE_PERL%%/Test/Parser/Vmstat.pm
+%%SITE_PERL%%/Test/Parser/cthon.pm
+%%SITE_PERL%%/Test/Parser/ffsb.pm
+%%SITE_PERL%%/Test/Parser/iozone.pm
+%%SITE_PERL%%/Test/Parser/lhcs_regression.pm
+%%SITE_PERL%%/Test/Parser/ltp.pm
+%%SITE_PERL%%/Test/Parser/newpynfs.pm
 bin/kernel2trpi
 bin/parse_build_kernel
 bin/parse_iozone

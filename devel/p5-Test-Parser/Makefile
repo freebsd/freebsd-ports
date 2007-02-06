@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Test-Parser
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Parsing log files from test runs, and displays in an XML syntax
 
 RUN_DEPENDS=	${SITE_PERL}/Chart/Graph/Gnuplot.pm:${PORTSDIR}/graphics/p5-Chart-Graph \
@@ -21,17 +21,18 @@ RUN_DEPENDS=	${SITE_PERL}/Chart/Graph/Gnuplot.pm:${PORTSDIR}/graphics/p5-Chart-G
 
 PERL_CONFIGURE=	yes
 
-MAN1=	parse_iozone.1 parse_test.1
+MAN1=		parse_iozone.1 parse_test.1
 
-MAN3=	Test::Metadata.3 Test::Parser.3 \
-		Test::Parser::Dbench.3 Test::Parser::Dbt2.3 \
-		Test::Parser::Iostat.3 Test::Parser::Iozone.3 \
-		Test::Parser::KernelBuild.3 Test::Parser::LHCS.3 \
-		Test::Parser::LTP.3 Test::Parser::NewPyNfs.3 \
+MAN3=		Test::Metadata.3 Test::Parser.3 Test::Parser::Dbench.3 \
+		Test::Parser::Dbt2.3 Test::Parser::Dbt5.3 \
+		Test::Parser::Iostat.3 Test::Parser::KernelBuild.3 \
 		Test::Parser::Oprofile.3 Test::Parser::PgOptions.3 \
 		Test::Parser::Readprofile.3 Test::Parser::Sar.3 \
 		Test::Parser::SysbenchCPU.3 Test::Parser::SysbenchFileIO.3 \
-		Test::Parser::Sysctl.3 Test::Parser::Vmstat.3
+		Test::Parser::Sysctl.3 Test::Parser::Vmstat.3 \
+		Test::Parser::cthon.3 Test::Parser::ffsb.3 \
+		Test::Parser::iozone.3 Test::Parser::lhcs_regression.3 \
+		Test::Parser::ltp.3 Test::Parser::newpynfs.3
 
 .include <bsd.port.pre.mk>
 
