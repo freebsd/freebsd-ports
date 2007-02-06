@@ -38,12 +38,12 @@ CONFIGURE_ARGS+=--with-bdb4=no
 
 .if defined(WITH_ICAL)
 LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
-.else
-post-patch:
-	@${REINPLACE_CMD} -e 's|libical-|no-&|g' ${WRKSRC}/configure
 .endif
 
 post-patch:
+.if !defined(WITH_ICAL)
+	@${REINPLACE_CMD} -e 's|libical-|no-&|g' ${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
