@@ -12,6 +12,9 @@ etc/kazehakase/smartbookmarks.xml
 lib/kazehakase/libkazehakase.la
 lib/kazehakase/libkazehakase.so
 lib/kazehakase/libkazehakase.so.0
+lib/kazehakase/search/libhyperestraier.la
+lib/kazehakase/search/libhyperestraier.so
+lib/kazehakase/search/libhyperestraier.so.1
 share/gnome/applications/kazehakase.desktop
 share/gnome/kazehakase/icons/autoscroll.xpm
 share/gnome/kazehakase/icons/kz-anchor.png
