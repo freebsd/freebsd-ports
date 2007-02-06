@@ -1194,6 +1194,7 @@ chanta		ports/games/chanta
 charmap		ports/deskutils/charmap
 charva		ports/devel/charva
 chbg		ports/graphics/chbg
+check		ports/devel/check
 check_snmp_pkgvuln	ports/net-mgmt/check_snmp_pkgvuln
 checkbot	ports/www/checkbot
 checkdns	ports/dns/checkdns
