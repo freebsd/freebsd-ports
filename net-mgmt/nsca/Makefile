@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsca
-PORTVERSION=	2.7
+PORTVERSION=	2.7.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
@@ -24,7 +24,7 @@ USE_PERL5=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --localstatedir=/var/spool/nagios
 
 .if !defined(WITHOUT_SERVER)
-USE_RC_SUBR=	nsca.sh
+USE_RC_SUBR=	nsca
 PLIST_SUB+=	SERVER=""
 .else
 PLIST_SUB+=	SERVER="@comment "
