@@ -1,16 +1,25 @@
 --- Makefile	Sun Jan 14 18:31:11 2007
-+++ Makefile.port	Wed Jan 17 00:16:41 2007
++++ Makefile.port	Sun Feb  4 22:55:12 2007
 @@ -1,7 +1,7 @@
  TARGET=wbar
 -CXXFLAGS=`imlib2-config --cflags` -Wall -O2 -DCOOLMACHINE_N_SHITCODE -DAVGFILTER #-DDOCKWIN 
 -LDFLAGS=`imlib2-config --libs`  -Wl,-O2
 -PREFIX=/usr/share/wbar
-+CXXFLAGS+=`imlib2-config --cflags` -Wall -DCOOLMACHINE_N_SHITCODE -DAVGFILTER #-DDOCKWIN
++CXXFLAGS+=`imlib2-config --cflags` -Wall -DCOOLMACHINE_N_SHITCODE -DAVGFILTER #-DDOCKWIN 
 +LDFLAGS+=`imlib2-config --libs`  -Wl
 +DATADIR=%%DATADIR%%
  
  	
  sources= XWin.cc Icon.cc Bar.cc IconLoader.cc \
+@@ -14,7 +14,7 @@
+ $(objects): $(headers) Makefile
+ 
+ $(TARGET): $(objects) 
+-	g++ $(LDFLAGS) -o $(@) $(objects)
++	${CXX} $(LDFLAGS) -o $(@) $(objects)
+ 	strip $(@)
+ 
+ patch-anim1:
 @@ -29,11 +29,11 @@
  		exit 1; \
  	fi
