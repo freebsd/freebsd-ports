@@ -14034,6 +14034,7 @@ socketpipe	ports/net/socketpipe
 socklog		ports/sysutils/socklog
 socks5		ports/net/socks5
 sodipodi	ports/graphics/sodipodi
+softfail	ports/mail/softfail
 softflowd	ports/net-mgmt/softflowd
 softmaker-office	ports/editors/softmaker-office
 sokoban		ports/games/sokoban
