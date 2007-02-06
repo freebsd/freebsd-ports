@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	3.31
-DISTVERSIONSUFFIX=	-fc4
+PORTVERSION=	3.35
+DISTVERSIONSUFFIX=	-1.rh9.rf
 CATEGORIES=	www multimedia
-MASTER_SITES=	SF/${PORTNAME}		# bsd.linux-rpm.mk taints MSS
+MASTER_SITES=	ftp://fr2.rpmfind.net/linux/dag/redhat/9/en/i386/dag/RPMS/ \
+		http://apt.sw.be/packages/mplayerplug-in/
 PKGNAMEPREFIX=	linux-
+SRC_DISTFILES=
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Embed MPlayer into browser
