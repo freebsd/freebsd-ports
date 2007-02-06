@@ -110,6 +110,7 @@
     SUBDIR += pyDict
     SUBDIR += qe
     SUBDIR += qt4-codecs-cn
+    SUBDIR += qt4-codecs-tw
     SUBDIR += qterm
     SUBDIR += reciteword
     SUBDIR += scim-chewing

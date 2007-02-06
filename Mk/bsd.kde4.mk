@@ -153,8 +153,8 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 				--with-qt-libraries=${QT_PREFIX}/lib \
 				--with-extra-libs=${LOCALBASE}/lib \
 				--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV+=	MOC="${MOC}" UIC="${UIC} CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
-		QMAKE="${QMAKE} QMAKESPEC="${QMAKESPEC}" QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
+CONFIGURE_ENV+=	MOC="${MOC}" UIC="${UIC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
+		QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .endif # !defined(QT_NONSTANDARD)
 
@@ -172,7 +172,7 @@ assistant_DEPENDS=	devel/qt4-assistant
 codecs-cn_DEPENDS=	chinese/qt4-codecs-cn
 codecs-jp_DEPENDS=	japanese/qt4-codecs-jp
 codecs-kr_DEPENDS=	korean/qt4-codecs-kr
-codecs-tw_DEPENDS=	misc/qt4-codecs-tw
+codecs-tw_DEPENDS=	chinese/qt4-codecs-tw
 corelib_DEPENDS=	devel/qt4-corelib
 designer_DEPENDS=	devel/qt4-designer
 doc_DEPENDS=		misc/qt4-doc

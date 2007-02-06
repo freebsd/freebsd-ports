@@ -397,7 +397,6 @@
     SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
-    SUBDIR += qt4-codecs-tw
     SUBDIR += qt4-qtdemo
     SUBDIR += qt4-doc
     SUBDIR += qt4-qtconfig
