@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -62,8 +63,8 @@ pre-patch:
 		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup \
 		${WRKSRC}/scripts/gtab.append_prepare
 	@${REINPLACE_CMD} -e 's,wget,fetch,' ${WRKSRC}/scripts/noseeing-inst
-	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,' \
-		${WRKSRC}/gtk-im/gtkimcontextgcin.c
+	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,; \
+		s,if 1,if 0,' ${WRKSRC}/gtk-im/gtkimcontextgcin.c
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' \
 		${WRKSRC}/IMdkit/lib/Makefile ${WRKSRC}/Makefile \
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
