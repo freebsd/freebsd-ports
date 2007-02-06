@@ -15,14 +15,15 @@ DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt imageformat plugins for JPEG and GIF support
+COMMENT=	Qt imageformat plugins for GIF, JPEG, MNG and SVG
 
 BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		rcc:${PORTSDIR}/devel/qt4-rcc
-LIB_DEPENDS=	Qt3Support:${PORTSDIR}/devel/qt4-qt3support \
-		QtCore:${PORTSDIR}/devel/qt4-corelib \
+LIB_DEPENDS=	QtCore:${PORTSDIR}/devel/qt4-corelib \
+		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
 		QtSvg:${PORTSDIR}/graphics/qt4-svg \
+		QtXml:${PORTSDIR}/textproc/qt4-xml \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
