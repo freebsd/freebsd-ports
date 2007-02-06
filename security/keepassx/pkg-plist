@@ -1,0 +1,43 @@
+bin/keepass
+share/keepass/license.html
+share/keepass/i18n/keepass-de_DE.qm
+share/keepass/i18n/keepass-fr_FR.qm
+share/keepass/icons/clientic.png
+share/keepass/icons/i18n.png
+share/keepass/icons/keepassx.png
+share/keepass/icons/key.png
+share/keepass/icons/ok.png
+share/keepass/icons/search.png
+share/keepass/icons/settings.png
+share/keepass/icons/nuvola/32x32/actions/configure.png
+share/keepass/icons/nuvola/32x32/actions/edit.png
+share/keepass/icons/nuvola/32x32/actions/edit_add.png
+share/keepass/icons/nuvola/32x32/actions/editcopy.png
+share/keepass/icons/nuvola/32x32/actions/editdelete.png
+share/keepass/icons/nuvola/32x32/actions/exit.png
+share/keepass/icons/nuvola/32x32/actions/fileclose.png
+share/keepass/icons/nuvola/32x32/actions/fileexport.png
+share/keepass/icons/nuvola/32x32/actions/filenew.png
+share/keepass/icons/nuvola/32x32/actions/fileopen.png
+share/keepass/icons/nuvola/32x32/actions/filesave.png
+share/keepass/icons/nuvola/32x32/actions/filesaveas.png
+share/keepass/icons/nuvola/32x32/actions/find.png
+share/keepass/icons/nuvola/32x32/actions/help.png
+share/keepass/icons/nuvola/32x32/actions/identity.png
+share/keepass/icons/nuvola/32x32/actions/klipper_dock.png
+share/keepass/icons/nuvola/32x32/actions/reload.png
+share/keepass/icons/nuvola/32x32/actions/run.png
+share/keepass/icons/nuvola/32x32/apps/ktouch.png
+share/keepass/icons/nuvola/32x32/filesystems/desktop.png
+share/keepass/icons/nuvola/32x32/filesystems/folder.png
+share/keepass/icons/nuvola/32x32/filesystems/folder_home.png
+share/keepass/icons/nuvola/32x32/filesystems/network_local.png
+share/keepass/icons/nuvola/32x32/filesystems/trashcan_full.png
+@dirrm share/keepass/icons/nuvola/32x32/filesystems
+@dirrm share/keepass/icons/nuvola/32x32/apps
+@dirrm share/keepass/icons/nuvola/32x32/actions
+@dirrm share/keepass/icons/nuvola/32x32
+@dirrm share/keepass/icons/nuvola
+@dirrm share/keepass/icons
+@dirrm share/keepass/i18n
+@dirrm share/keepass
