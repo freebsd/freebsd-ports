@@ -87,6 +87,7 @@
     SUBDIR += gnumeric
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
+    SUBDIR += gotoblas
     SUBDIR += grace
     SUBDIR += gracetmpl
     SUBDIR += graphthing

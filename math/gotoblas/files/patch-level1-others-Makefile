@@ -1,0 +1,20 @@
+--- level1/others/Makefile.orig	Sun Jan 21 11:18:16 2007
++++ level1/others/Makefile	Sun Jan 21 11:18:30 2007
+@@ -16,7 +16,7 @@
+ 
+ LIBOTHERS = libothers.a
+ 
+-ifeq ($(ARCH), X86)
++ifeq ($(GARCH), X86)
+ COMMONOBJS	+= cpuid.o
+ endif
+ 
+@@ -111,7 +111,7 @@
+ staticbuffer.o staticbuffer.po : dummy
+ 	cd $(ARCHSUBDIR) && $(MAKE) ../$(@F)
+ 
+-ifeq ($(ARCH), X86)
++ifeq ($(GARCH), X86)
+ cpuid.o cpuid.po : dummy
+ 	cd $(ARCHSUBDIR) && $(MAKE) ../$(@F)
+ endif
