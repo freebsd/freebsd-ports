@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote/.packlist
 %%SITE_PERL%%/Finance/Quote.pm
 %%SITE_PERL%%/Finance/Quote/AEX.pm
+%%SITE_PERL%%/Finance/Quote/AIAHK.pm
 %%SITE_PERL%%/Finance/Quote/ASEGR.pm
 %%SITE_PERL%%/Finance/Quote/ASX.pm
 %%SITE_PERL%%/Finance/Quote/BMONesbittBurns.pm
@@ -19,6 +20,7 @@
 %%SITE_PERL%%/Finance/Quote/NZX.pm
 %%SITE_PERL%%/Finance/Quote/Platinum.pm
 %%SITE_PERL%%/Finance/Quote/SEB.pm
+%%SITE_PERL%%/Finance/Quote/StockHouseCanada.pm
 %%SITE_PERL%%/Finance/Quote/TSP.pm
 %%SITE_PERL%%/Finance/Quote/Tdefunds.pm
 %%SITE_PERL%%/Finance/Quote/Tdwaterhouse.pm

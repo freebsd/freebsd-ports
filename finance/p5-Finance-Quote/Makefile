@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Finance::Quote.3 Finance::Quote::AEX.3 \
+MAN3=		Finance::Quote.3 Finance::Quote::AEX.3 Finance::Quote::AIAHK.3 \
 		Finance::Quote::ASEGR.3 Finance::Quote::ASX.3 \
 		Finance::Quote::BMONesbittBurns.3 Finance::Quote::Bourso.3 \
 		Finance::Quote::Cdnfundlibrary.3 Finance::Quote::DWS.3 \
