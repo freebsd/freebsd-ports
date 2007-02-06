@@ -3,12 +3,11 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports/www/seamonkey/Makefile,v 1.40 2006/09/15 16:11:00 ahze Exp $
+#    $MCom: ports/www/seamonkey/Makefile,v 1.46 2007/02/06 00:05:55 ahze Exp $
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	1.0.7
-PORTREVISION=	1
+DISTVERSION=	1.1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}
@@ -29,7 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cairo"
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 MOZ_EXTENSIONS=	default
-MOZ_OPTIONS+=	--enable-application=suite	\
+MOZ_OPTIONS+=	--enable-svg \
+		--enable-application=suite	\
 		--enable-svg-renderer=cairo	\
 		--enable-system-cairo		\
 		--enable-canvas
@@ -46,6 +46,8 @@ OPTIONS=MAILNEWS "Enable Mail and News modules" on \
 	CALENDAR "Enable the calendar" off
 
 .include <bsd.port.pre.mk>
+
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if exists(${LOCALBASE}/include/cairo/cairo-glitz.h)
 # Glitz support can only be enabled if cairo is built with glitz support
@@ -96,6 +98,10 @@ MOZ_OPTIONS+=	--disable-composer
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/security/manager/ssl/src/Makefile.in
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+		${WRKSRC}/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/modules/libpref/src/init/all.js
 	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
