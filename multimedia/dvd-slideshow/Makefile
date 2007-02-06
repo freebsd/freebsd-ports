@@ -42,14 +42,10 @@ MAN1=		dvd-slideshow.1 \
 		gallery1-to-slideshow.1 \
 		jigl2slideshow.1
 
-.if !defined(NOPORTDOCS)
 DOC_FILES=	changelog.html gallery1-to-slideshow.html \
 		dir2slideshow.html jigl2slideshow.html \
 		dvd-menu.html dvd-slideshow.html
-PLIST_FILES+=	${DOC_FILES:S,^,%%DOCSDIR%%/,}
-PLIST_FILES+=	%%DOCSDIR%%/dvd-slideshowrc
-PLIST_DIRS+=	%%DOCSDIR%%
-.endif
+PORTDOCS=	${DOC_FILES} dvd-slideshowrc
 
 .include <bsd.port.pre.mk>
 
