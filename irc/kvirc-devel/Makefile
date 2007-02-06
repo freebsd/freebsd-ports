@@ -6,29 +6,30 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	3.2.0
-PORTREVISION=	3
+PORTVERSION=	3.2.6
 CATEGORIES=	irc kde
-MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
-		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
-		ftp://mirror.dudcore.net/pub/%SUBDIR%/ \
-		ftp://ftp.kvirc.pragmaware.net/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
+MASTER_SITES=	ftp://ftp.kvirc.ru/pub/source/dev/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	a.pirko@inode.at
 COMMENT=	IRC client for QT and KDE
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	QTDIR="${X11BASE}"
-PLIST_SUB=		VER=${PORTVERSION}
+PLIST_SUB=	VER=${PORTVERSION}
+CONFLICTS=	kvirc-3.2.0*
 
 MAN1=	kvirc.1
+
+BUILD_DEPENDS+=	recode:${PORTSDIR}/converters/recode
 
 OPTIONS=	ARTS "Compile with arts support" on \
 			AUDIOFILE "Compile with libaudiofile support" on \
@@ -71,5 +72,6 @@ post-patch:
 post-configure:
 	@${MV} ${WRKSRC}/data/protocols/irc.protocol ${WRKSRC}/data/protocols/kvirc.protocol
 	@${MV} ${WRKSRC}/data/protocols/irc6.protocol ${WRKSRC}/data/protocols/kvirc6.protocol
+	${LOCALBASE}/bin/recode -f ibmpc..latin1 `find ${WRKSRC} -name "*.cpp" -print`
 
 .include <bsd.port.post.mk>
