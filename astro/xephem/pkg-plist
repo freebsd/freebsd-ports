@@ -11,9 +11,11 @@ lib/X11/xephem/auxil/dearth.gif
 lib/X11/xephem/auxil/eyepieces.epl
 lib/X11/xephem/auxil/eyepieces.eyp
 lib/X11/xephem/auxil/favorites.fav
+lib/X11/xephem/auxil/jupiter.1020
 lib/X11/xephem/auxil/jupiter.9910
 lib/X11/xephem/auxil/jupitermap.gif
 lib/X11/xephem/auxil/logo.gif
+lib/X11/xephem/auxil/mars.1020
 lib/X11/xephem/auxil/mars.9910
 lib/X11/xephem/auxil/mars_db
 lib/X11/xephem/auxil/marsmap.jpg
@@ -27,8 +29,10 @@ lib/X11/xephem/auxil/saturn10.gif
 lib/X11/xephem/auxil/saturn16.gif
 lib/X11/xephem/auxil/saturn20.gif
 lib/X11/xephem/auxil/saturn24.gif
+lib/X11/xephem/auxil/saturne.1020
 lib/X11/xephem/auxil/saturne.9910
 lib/X11/xephem/auxil/starcensus.txt
+lib/X11/xephem/auxil/uranus.1020
 lib/X11/xephem/auxil/uranus.9910
 lib/X11/xephem/auxil/wmm.cof
 lib/X11/xephem/auxil/xephem_sites
@@ -78,6 +82,7 @@ lib/X11/xephem/help/png/movie.png
 lib/X11/xephem/help/png/naag.png
 lib/X11/xephem/help/png/network-setup.png
 lib/X11/xephem/help/png/obslog.png
+lib/X11/xephem/help/png/obslog-list.png
 lib/X11/xephem/help/png/plot-sample.png
 lib/X11/xephem/help/png/plot.png
 lib/X11/xephem/help/png/print.png
@@ -161,6 +166,7 @@ lib/X11/xephem/tools/indi/getINDI.c
 lib/X11/xephem/tools/indi/getINDI.man
 lib/X11/xephem/tools/indi/indiapi.h
 lib/X11/xephem/tools/indi/indidevapi.h
+lib/X11/xephem/tools/indi/indidevapi.man
 lib/X11/xephem/tools/indi/indidrivermain.c
 lib/X11/xephem/tools/indi/indiserver.c
 lib/X11/xephem/tools/indi/indiserver.man
