@@ -1,57 +1,45 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
+%%INSTDIR%%/lib/SpellCheck.jar
 %%INSTDIR%%/lib/dMSN.jar
-%%INSTDIR%%/lib/idle.jar
 %%INSTDIR%%/lib/jdom1_0.jar
-%%INSTDIR%%/lib/winflash.jar
 %%INSTDIR%%/lib/xmlpull.jar
 %%INSTDIR%%/resources/AppData/Backgrounds/.keep_me
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN7.zip
 %%INSTDIR%%/resources/AppData/Games/.keep_me
 %%INSTDIR%%/resources/AppData/Images/Default.zip
-%%INSTDIR%%/resources/AppData/LoginImages/Default.gif
 %%INSTDIR%%/resources/AppData/Plugins/.keep_me
-%%INSTDIR%%/resources/AppData/Skins/Aqua.zip
-%%INSTDIR%%/resources/AppData/Skins/BBJ2.zip
-%%INSTDIR%%/resources/AppData/Skins/Barbie.zip
-%%INSTDIR%%/resources/AppData/Skins/BeOS.zip
-%%INSTDIR%%/resources/AppData/Skins/Cell.zip
-%%INSTDIR%%/resources/AppData/Skins/MacOS.zip
-%%INSTDIR%%/resources/AppData/Skins/Mozilla.zip
-%%INSTDIR%%/resources/AppData/Skins/Simple.zip
-%%INSTDIR%%/resources/AppData/Skins/Toxic.zip
-%%INSTDIR%%/resources/AppData/Skins/Whistler.zip
-%%INSTDIR%%/resources/AppData/Skins/XP.zip
 %%INSTDIR%%/resources/AppData/Sounds/MSN Email.wav
 %%INSTDIR%%/resources/AppData/Sounds/MSN Message.wav
 %%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
 %%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
 %%INSTDIR%%/resources/AppData/SplashWindow/Mercury.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_Danny.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_Dave.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN 16b.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN default.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_Maarten.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-New.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-Old.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_Ranch 24p.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_Roy.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 24p.zip
-%%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 32p.zip
-%%INSTDIR%%/resources/AppData/Views/Global/Default_EventBox.zip
-%%INSTDIR%%/resources/AppData/Views/Global/Default_OSD.zip
-%%INSTDIR%%/resources/AppData/Views/Global/Rob_EventBox.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactTooltip.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_General.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/Default_Participants.zip
-%%INSTDIR%%/resources/AppData/Views/MSN/RobsDroneV3.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/Danny.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/Dave.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/MMercury.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/MMercury_Small.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/MSN 16b.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/MSN default.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/Maarten.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/MacOS-New.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/MacOS-Old.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/Ranch 24p.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/Scarecrow 24p.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/Scarecrow 32p.zip
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact.zip
+%%INSTDIR%%/resources/AppData/Views/Default_CLGroup.zip
+%%INSTDIR%%/resources/AppData/Views/Default_Chat.zip
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard.zip
+%%INSTDIR%%/resources/AppData/Views/Default_ContactTooltip.zip
+%%INSTDIR%%/resources/AppData/Views/Default_EventBox.zip
+%%INSTDIR%%/resources/AppData/Views/Default_General.zip
+%%INSTDIR%%/resources/AppData/Views/Default_IM.zip
+%%INSTDIR%%/resources/AppData/Views/Default_MultiConvoList.zip
+%%INSTDIR%%/resources/AppData/Views/Default_OSD.zip
+%%INSTDIR%%/resources/AppData/Views/Default_Participants.zip
+%%INSTDIR%%/resources/AppData/Views/RobsDroneV3.zip
+%%INSTDIR%%/resources/AppData/Views/RobsEventBox.zip
 %%INSTDIR%%/resources/AppData/Winks/BouncyBall.zip
 %%INSTDIR%%/resources/AppData/Winks/Crying.zip
 %%INSTDIR%%/resources/AppData/Winks/Dancer.zip
@@ -79,7 +67,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Window_Basic_Account.xml
 %%INSTDIR%%/resources/settings/Window_Basic_Global.xml
 %%INSTDIR%%/resources/settings/Window_View.xml
-%%INSTDIR%%/resources/settings/Wizard_FirstTime_Account.xml
 %%INSTDIR%%/resources/text/EventExampleLog.xml
 %%INSTDIR%%/resources/text/EventLog.xsl
 %%INSTDIR%%/resources/text/Locations.xml
@@ -90,15 +77,11 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/menu
 @dirrm %%INSTDIR%%/resources/lang
 @dirrm %%INSTDIR%%/resources/AppData/Winks
-@dirrm %%INSTDIR%%/resources/AppData/Views/MSN
-@dirrm %%INSTDIR%%/resources/AppData/Views/Global
 @dirrm %%INSTDIR%%/resources/AppData/Views
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons
 @dirrm %%INSTDIR%%/resources/AppData/SplashWindow
 @dirrm %%INSTDIR%%/resources/AppData/Sounds
-@dirrm %%INSTDIR%%/resources/AppData/Skins
 @dirrm %%INSTDIR%%/resources/AppData/Plugins
-@dirrm %%INSTDIR%%/resources/AppData/LoginImages
 @dirrm %%INSTDIR%%/resources/AppData/Images
 @dirrm %%INSTDIR%%/resources/AppData/Games
 @dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
