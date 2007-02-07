@@ -1,7 +1,8 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/Gantry.pm
+%%SITE_PERL%%/Gantry/Build.pm
 %%SITE_PERL%%/Gantry/Conf.pm
-%%SITE_PERL%%/Gantry/Conf/FAQ.pm
+%%SITE_PERL%%/Gantry/Conf/FAQ.pod
 %%SITE_PERL%%/Gantry/Conf/Provider.pm
 %%SITE_PERL%%/Gantry/Conf/Provider/FlatFile/Config/General.pm
 %%SITE_PERL%%/Gantry/Conf/Provider/FlatFile/Config/Tiny.pm
@@ -10,7 +11,7 @@
 %%SITE_PERL%%/Gantry/Conf/Provider/ParamBuilder.pm
 %%SITE_PERL%%/Gantry/Conf/Provider/PerlSetVar.pm
 %%SITE_PERL%%/Gantry/Conf/Provider/SQL/PostgreSQL.pm
-%%SITE_PERL%%/Gantry/Conf/Tutorial.pm
+%%SITE_PERL%%/Gantry/Conf/Tutorial.pod
 %%SITE_PERL%%/Gantry/Control.pm
 %%SITE_PERL%%/Gantry/Control/C/Access.pm
 %%SITE_PERL%%/Gantry/Control/C/AuthenBase.pm
@@ -48,13 +49,20 @@
 %%SITE_PERL%%/Gantry/Engine/MP13.pm
 %%SITE_PERL%%/Gantry/Engine/MP20.pm
 %%SITE_PERL%%/Gantry/Init.pm
+%%SITE_PERL%%/Gantry/Plugins/AjaxCRUD.pm
+%%SITE_PERL%%/Gantry/Plugins/AjaxFORM.pm
 %%SITE_PERL%%/Gantry/Plugins/AuthCookie.pm
 %%SITE_PERL%%/Gantry/Plugins/AutoCRUD.pm
 %%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper/CDBI.pm
 %%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper/DBIxClass.pm
 %%SITE_PERL%%/Gantry/Plugins/CRUD.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache/FastMmap.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache/Memcached.pm
 %%SITE_PERL%%/Gantry/Plugins/Calendar.pm
 %%SITE_PERL%%/Gantry/Plugins/DBIxClassConn.pm
+%%SITE_PERL%%/Gantry/Plugins/SOAPMP20.pm
+%%SITE_PERL%%/Gantry/Plugins/Session.pm
 %%SITE_PERL%%/Gantry/Plugins/Static.pm
 %%SITE_PERL%%/Gantry/Plugins/Validate.pm
 %%SITE_PERL%%/Gantry/Server.pm
@@ -93,6 +101,7 @@
 @dirrmtry %%SITE_PERL%%/Gantry/Template
 @dirrmtry %%SITE_PERL%%/Gantry/Stash/View
 @dirrmtry %%SITE_PERL%%/Gantry/Stash
+@dirrmtry %%SITE_PERL%%/Gantry/Plugins/Cache
 @dirrmtry %%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper
 @dirrmtry %%SITE_PERL%%/Gantry/Plugins
 @dirrmtry %%SITE_PERL%%/Gantry/Engine
