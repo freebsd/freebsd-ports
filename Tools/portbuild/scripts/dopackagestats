@@ -42,7 +42,8 @@ write_table_begin () {
   echo "<th bgcolor='$THCOLOR'>errors</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>skipped</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>missing</th>" >> ${TMPFILE}
-  echo "<th bgcolor='$THCOLOR'>done?</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>running?</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>completed?</th>" >> ${TMPFILE}
   echo "</tr>" >> ${TMPFILE}
 }
 
@@ -116,16 +117,28 @@ write_row () {
       n_missing=0
     fi
 
-    # column: done flag
-    done_flag="N"
+    # column: running flag
+    running_flag="N"
+    # the last grep eliminates false positive of i386-6-exp for i386-6
+    running_processes_for_build=`ps axww | \
+      grep "pdispatch $arch $build " | \
+      grep -v grep | \
+      sed -e "s@.*pdispatch @@;s@ /var/portbuild/scripts/.*@@;s@ @-@g" | \
+      grep "^$arch-$build\$"`
+    if [ ! -z "$running_processes_for_build" ]; then
+      running_flag="Y"
+    fi
+
+    # column: completed flag
+    completed_flag="N"
     if [ -f $directory/build.log ]; then
       if [ ! -z "`grep 'all done at ' $directory/build.log`" ]; then
-        done_flag="Y"
+        completed_flag="Y"
       fi
     fi
 
     # decorate the row to make everything less "gray"
-    if [ "$done_flag" = "Y" ]; then
+    if [ "$running_flag" = "N" -a "$completed_flag" = "Y" ]; then
       cellcolor=$TDCOLOR_DONE
     else
       cellcolor=$TDCOLOR_NOT_DONE
@@ -159,7 +172,8 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>$n_missing</td>" >> ${TMPFILE}
 
-    echo "<td align='center' bgcolor='$cellcolor'>$done_flag</td>" >> ${TMPFILE}
+    echo "<td align='center' bgcolor='$cellcolor'>$running_flag</td>" >> ${TMPFILE}
+    echo "<td align='center' bgcolor='$cellcolor'>$completed_flag</td>" >> ${TMPFILE}
 
     echo "</tr>" >> ${TMPFILE}
 }
@@ -178,8 +192,9 @@ write_footer () {
   echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
   echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
   echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
-  echo "<li><b>missing</b> is the INDEX column minus the others.  These are packages that have not been built for one reason or another.</li>" >> ${TMPFILE}
-  echo "<li><b>done</b> is whether that run terminated normally or not.</li>" >> ${TMPFILE}
+  echo "<li><b>missing</b> is the INDEX column minus the others.  These are packages that have not been built for one reason or another.  Note: interrupted and/or restarted builds can make this number inaccurate.</li>" >> ${TMPFILE}
+  echo "<li><b>running</b> is whether there are still processes running.</li>" >> ${TMPFILE}
+  echo "<li><b>completed</b> is whether that build terminated normally or not, as seen from the logfile.</li>" >> ${TMPFILE}
   echo "</ul>" >> ${TMPFILE}
 
   echo "<p>notes:</p>" >> ${TMPFILE}
