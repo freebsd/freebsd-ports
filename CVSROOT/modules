@@ -47,7 +47,6 @@ editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
 modules		CVSROOT modules
-rcsedit		ports/sysutils/rcsedit
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
 taginfo		CVSROOT taginfo
@@ -12979,6 +12978,7 @@ rc_subr		ports/sysutils/rc_subr
 rclean		ports/sysutils/rclean
 rclock		ports/x11-clocks/rclock
 rcpd		ports/net-mgmt/rcpd
+rcsedit		ports/sysutils/rcsedit
 rdate		ports/sysutils/rdate
 rdb		ports/databases/rdb
 rdesktop	ports/net/rdesktop
