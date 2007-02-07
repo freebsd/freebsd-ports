@@ -44,4 +44,10 @@ post-install:
 	-${MKDIR} ${PREFIX}/Local/Library/Services
 	-${MKDIR} ${PREFIX}/Local/Tools/Resources
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+IGNORE=		no working libobjc.so
+.endif
+
+.include <bsd.port.post.mk>
