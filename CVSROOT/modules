@@ -14146,7 +14146,7 @@ squall		ports/net-p2p/squall
 squash		ports/audio/squash
 squeak		ports/lang/squeak
 squid		ports/www/squid
-squid26		ports/www/squid26
+squid25		ports/www/squid25
 squid_radius_auth	ports/www/squid_radius_auth
 squidclam	ports/security/squidclam
 squidclients	ports/www/squidclients
