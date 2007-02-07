@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	webtools
-PORTVERSION=	0.7
+PORTVERSION=	1.5.2
 CATEGORIES=	java devel www
-MASTER_SITES=	http://download.eclipse.org/webtools/downloads/drops/R-${PORTVERSION}-200507290654/
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/webtools/downloads/drops/,}
+MASTER_SITE_SUBDIR=	R1.5/R-${PORTVERSION}-200610261841
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	wtp-${PORTVERSION}
+DISTNAME=	wtp-R-${PORTVERSION}-200610261841
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Webtools for eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.1.1/feature.xml:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.1.1/feature.xml:${PORTSDIR}/java/eclipse-gef \
-		${LOCALBASE}/eclipse/features/org.eclipse.jem_1.1.0.1/feature.xml:${PORTSDIR}/java/eclipse-vep
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.2.1.v200609210005/feature.xml:${PORTSDIR}/java/eclipse-emf \
+		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070109/feature.xml:${PORTSDIR}/java/eclipse-gef \
+		${LOCALBASE}/eclipse/features/org.eclipse.ve_1.2.0.v20060530_RC2-0-a2N7MMl7/feature.xml:${PORTSDIR}/java/eclipse-vep
 
 CONFLICTS=	eclipse-lomboz-3.*
 
