@@ -9,5 +9,3 @@ and want to loop 100 times, then you can do something like:
 	whirlgif -loop 100 img*.gif
 
 to create an animation.
-
-WWW: http://www.danbbs.dk/~dino/whirlgif/
