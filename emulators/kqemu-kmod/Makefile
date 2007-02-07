@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	kqemu
-PORTVERSION=	1.3.0.p10
+PORTVERSION=	1.3.0.p11
 CATEGORIES=	emulators
-MASTER_SITES=	http://qemu.org/
+MASTER_SITES=	http://qemu.org/ \
+		http://fabrice.bellard.free.fr/qemu/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nox
 PKGNAMESUFFIX=	-kmod
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p/pre/}
 DIST_SUBDIR=	kqemu
@@ -26,6 +29,7 @@ USE_RC_SUBR=	kqemu
 
 .include <bsd.port.pre.mk>
 
+PORTDOCS=	kqemu-doc.html kqemu-tech.html
 PLIST_FILES=	"include/kqemu/kqemu.h"
 PLIST_FILES+=	"@dirrm include/kqemu"
 PLIST_FILES+=	"@cwd /"
@@ -57,8 +61,13 @@ do-build:
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	@${MKDIR} ${PREFIX}/include/kqemu
-	@${INSTALL_DATA} ${WRKSRC}/kqemu.h ${PREFIX}/include/kqemu
+	${MKDIR} ${PREFIX}/include/kqemu
+	${INSTALL_DATA} ${WRKSRC}/kqemu.h ${PREFIX}/include/kqemu
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/kqemu-doc.html ${WRKSRC}/kqemu-tech.html \
+		${DOCSDIR}
+.endif
 .if ${OSVERSION} < 500000
 	if [ ! -e /dev/kqemu ]; then\
 		mknod /dev/kqemu c 250 0 ; \
