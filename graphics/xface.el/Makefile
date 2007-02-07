@@ -10,8 +10,7 @@ PORTVERSION=	1.3.6.24
 PORTREVISION=	5
 CATEGORIES=	graphics elisp
 MASTER_SITES=	http://www.jpl.org/ftp/pub/elisp/ \
-		ftp://ftp.jpl.org/pub/elisp/ \
-		ftp://ftp.opaopa.org/pub/mirror/elisp/jpl/elisp/
+		ftp://ftp.jpl.org/pub/elisp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	x-face-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
