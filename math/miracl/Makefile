@@ -6,28 +6,26 @@
 #
 
 PORTNAME=	miracl
-DISTVERSION=	4.85
-PORTREVISION=	3
+PORTVERSION=	5.21
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/ \
-		http://indigo.ie/~mscott/
+MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
 
 USE_ZIP=	yes
-NO_WRKSUBDIR=	ys
+NO_WRKSUBDIR=	yes
 
 EXTRACT_BEFORE_ARGS=	-j -aa -L
 
-PLIST_FILES=	\
-		lib/libmiracl.a
+PLIST_FILES=	lib/libmiracl.a
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386"
+BROKEN=		Does not build on !i386
 .endif
 
 post-patch:
