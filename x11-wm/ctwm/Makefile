@@ -7,6 +7,7 @@
 
 PORTNAME=	ctwm
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
 		http://www.centralmiss.com/~matt/distfiles/
