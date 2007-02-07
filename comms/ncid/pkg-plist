@@ -1,14 +1,24 @@
 sbin/ncidd
+sbin/ncidsip
 bin/ncid
 bin/cidalias
-bin/cidlog
-bin/cidlogupd
-etc/ncidd.conf
+bin/cidcall
+bin/cidupdate
+etc/ncid/ncidd.alias
+etc/ncid/ncidd.conf
+etc/ncid/ncidrotate.conf
+etc/ncid/ncidscript.conf
+etc/ncid/ncidsip.conf
+etc/ncid/ncid.conf
 etc/rc.d/ncidd.sh
 etc/rc.d/ncid.sh
+etc/rc.d/ncidsip.sh
 share/ncid/ncidrotate
+share/ncid/ncid-mythtv
 share/ncid/ncid-page
 share/ncid/ncid-samba
 share/ncid/ncid-speak
+share/ncid/ncid-tivo
 share/ncid/README
 @dirrm share/ncid
+@dirrm etc/ncid

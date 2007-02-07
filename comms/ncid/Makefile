@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncid
-PORTVERSION=	0.50
+PORTVERSION=	0.67
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,8 +20,8 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		ncid.1 ncidscripts.1 ncidtools.1
-MAN5=		ncidd.conf.5
-MAN8=		ncidd.8
+MAN5=		ncid.conf.5 ncidd.alias.5 ncidd.conf.5 ncidscript.conf.5
+MAN8=		ncidd.8 ncidsip.8
 
 USE_GMAKE=	yes
 ALL_TARGET=	freebsd
