@@ -25,11 +25,19 @@ LATEST_LINK=	automake${BUILD_VERSION}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-#CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION} \
 		--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INFO=		automake${BUILD_VERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo --no-split"
+.else
+CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
+.endif
 
 post-patch:
 	@(cd ${WRKSRC}/doc && \
@@ -52,4 +60,4 @@ post-install:
 		${PREFIX}/libexec/automake${BUILD_VERSION}/${i}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
