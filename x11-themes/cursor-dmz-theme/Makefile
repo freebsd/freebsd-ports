@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cursor-dmz-theme
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://jimmac.musichall.cz/zip/
 DISTNAME=	vanilla-dmz-${PORTVERSION}
