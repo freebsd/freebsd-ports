@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Jul  8 05:43:57 2006
++++ Makefile	Wed Feb  7 19:23:00 2007
+@@ -172,8 +172,6 @@
+ 	@if ! test -d $(SBIN); then mkdir -p $(SBIN); fi
+ 	@if ! test -d $(ETC); then mkdir -p $(ETC); fi
+ 	@if ! test -d $(LOG); then mkdir -p $(LOG); fi
+-	@if ! test -d $(ROTATE); then mkdir -p $(ROTATE); fi
+-	@if ! test -d $(INIT); then mkdir -p $(INIT); fi
+ 	@if ! test -d $(SCRIPTDIR); then mkdir -p $(SCRIPTDIR); fi
+ 	@if ! test -d $(CONFDIR); then mkdir -p $(CONFDIR); fi
+ 
