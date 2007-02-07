@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.19
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -19,15 +20,30 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--enable-perl-site-install --disable-python --disable-tcl
+
+CONFIGURE_ARGS=	--enable-perl-site-install --disable-tcl
+
+OPTIONS=	PYTHON_MODULE	"Define if you want PYTHON bindings" off
+
+.include <bsd.port.pre.mk>
+.if defined(WITH_PYTHON_MODULE)
+USE_PYTHON=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+PLIST_SUB+=	WITH_PYTHON=""
+CONFIGURE_ARGS+=	--enable-python
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=	WITH_PYTHON="@comment "
+.endif
+
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libart-2.0 -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS:=	${CFLAGS:N-ffast-math}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
 
 MAN1=		bin_dec_hex.1 cdeftutorial.1 rpntutorial.1 rrd-beginners.1 \
 		rrdbuild.1 rrdcgi.1 rrdcreate.1 rrddump.1 rrdfetch.1 rrdfirst.1 \
@@ -52,4 +68,4 @@ post-install:
 	@${ECHO_MSG} "############################################################################"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

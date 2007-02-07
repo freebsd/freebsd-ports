@@ -1,0 +1,10 @@
+--- ./bindings/python/Makefile.in.orig	Thu Feb  1 13:52:06 2007
++++ ./bindings/python/Makefile.in	Wed Feb  7 10:19:12 2007
+@@ -233,6 +233,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ AM_CPPFLAGS = @CFLAGS@ -I$(top_srcdir)/src @PYTHON_INCLUDES@
++rrdtoolmodule_so_LDFLAGS = -module -shared
+ rrdtoolmodule_so_LDADD = $(top_builddir)/src/librrd.la
+ rrdtoolmodule_so_SOURCES = rrdtoolmodule.c
+ noinst_HEADERS = rrd_extra.h
