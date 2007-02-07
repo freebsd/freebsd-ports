@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	vep
-PORTVERSION=	1.1.0.1
-PORTREVISION=	0
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/R-${PORTVERSION}-200509071822/
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/tools/ve/downloads/drops/,}
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200606280938
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	VE-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
@@ -18,9 +18,9 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	A framework for creating GUI builders for Eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.1.1/feature.xml:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.1.1/feature.xml:${PORTSDIR}/java/eclipse-gef
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.2.1.v200609210005/feature.xml:${PORTSDIR}/java/eclipse-emf \
+		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070109/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
