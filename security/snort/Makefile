@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.6.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -59,7 +59,7 @@ LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 LIBNET_CFLAGS!=	${LIBNET_CONFIG} --cflags
 LIBNET_LIBS!=	${LIBNET_CONFIG} --libs
 LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
-LIBNET_LIBDIR=	${LIBNET_CFLAGS:M-L*:S/-L//}
+LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
 .endif
 
 .if !defined(WITHOUT_DYNAMIC)
@@ -132,6 +132,9 @@ post-patch:
 	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
 		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
 	${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
+.if exists(${LIBNET_CONFIG})
+	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
+.endif
 .if defined(WITHOUT_DYNAMIC)
 	${REINPLACE_CMD} -e "s,-am: install-libLTLIBRARIES,-am:," \
 		${WRKSRC}/src/dynamic-plugins/sf_engine/Makefile.in
