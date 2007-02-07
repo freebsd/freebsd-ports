@@ -39,9 +39,9 @@ wm_RUN_DEPENDS=			xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
 
 xfdev_RUN_DEPENDS=		xfce4-dev-tools:${PORTSDIR}/devel/xfce4-dev-tools
 
-.endif
+#.endif
 
-.if defined(_POSTMKINCLUDED) && !defined(Xfce_Post_Include)
+#.if defined(_POSTMKINCLUDED) && !defined(Xfce_Post_Include)
 
 Xfce_Post_Include=		bsd.xfce.mk
 
