@@ -27,7 +27,7 @@
  echo "Generating Makefiles..."
  
 -qmake -config release -after "CONFIG-=debug"
-+qmake-qt4 -config release -after "CONFIG-=debug" "INCLUDEPATH+=${X11BASE}/include"
++qmake-qt4 -config release -after "CONFIG-=debug" "INCLUDEPATH+=${X11BASE}/include" "QMAKE_CXXFLAGS+=-fPIC"
  
  echo
  echo "Good, your configure is finished. Now type 'make'"
