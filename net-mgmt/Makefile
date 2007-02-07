@@ -100,6 +100,7 @@
     SUBDIR += nav
     SUBDIR += nbtscan
     SUBDIR += ndpmon
+    SUBDIR += nedi
     SUBDIR += nefu
     SUBDIR += net-snmp
     SUBDIR += net-snmp-tkmib
