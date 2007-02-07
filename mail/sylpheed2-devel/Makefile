@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.4.0.b2
+PORTVERSION=	2.4.0.b3
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v2.4beta/
@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.b/beta/}
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
-		${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 #IGNORE=	"is out-of-dated, use mail/sylpheed2 instead of this, until the next development starts."
 
@@ -53,6 +52,7 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 .if !defined(WITHOUT_SSL)
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 CONFIGURE_ARGS+=--enable-ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
