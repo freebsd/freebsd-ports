@@ -7,7 +7,6 @@
 
 PORTNAME=	uml
 PORTVERSION=	1.1.1
-PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/uml2/downloads/drops/${PORTVERSION}/R200509282050/
 PKGNAMEPREFIX=	eclipse-
@@ -17,8 +16,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	A framework creating UML diagrams in Eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.1.1/feature.xml:${PORTSDIR}/java/eclipse-emf
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.2.1.v200609210005/feature.xml:${PORTSDIR}/java/eclipse-emf
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
