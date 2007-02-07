@@ -4530,6 +4530,7 @@ icon-slicer	ports/graphics/icon-slicer
 icons-buuf	ports/x11-themes/icons-buuf
 icons-human-azul	ports/x11-themes/icons-human-azul
 icons-tango	ports/x11-themes/icons-tango
+icons-tango-extras	ports/x11-themes/icons-tango-extras
 icontact	ports/graphics/icontact
 iconv		ports/converters/iconv
 iconv-extra	ports/converters/iconv-extra
