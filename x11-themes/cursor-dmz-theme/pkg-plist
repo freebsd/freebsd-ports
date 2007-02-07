@@ -78,8 +78,6 @@ lib/X11/icons/Vanilla-DMZ/cursors/cross_reverse
 lib/X11/icons/Vanilla-DMZ/cursors/cross
 lib/X11/icons/Vanilla-DMZ/cursors/copy
 lib/X11/icons/Vanilla-DMZ/cursors/circle
-lib/X11/icons/Vanilla-DMZ/cursors/centre_ptr
-lib/X11/icons/Vanilla-DMZ/cursors/center_ptr
 lib/X11/icons/Vanilla-DMZ/cursors/c7088f0f3e6c8088236ef8e1e3e70000
 lib/X11/icons/Vanilla-DMZ/cursors/bottom_tee
 lib/X11/icons/Vanilla-DMZ/cursors/bottom_side
@@ -87,8 +85,6 @@ lib/X11/icons/Vanilla-DMZ/cursors/bottom_right_corner
 lib/X11/icons/Vanilla-DMZ/cursors/bottom_left_corner
 lib/X11/icons/Vanilla-DMZ/cursors/bd_double_arrow
 lib/X11/icons/Vanilla-DMZ/cursors/xterm
-lib/X11/icons/Vanilla-DMZ/cursors/base_arrow_down
-lib/X11/icons/Vanilla-DMZ/cursors/base_arrow_up
 @dirrm lib/X11/icons/Vanilla-DMZ/cursors
 @dirrm lib/X11/icons/Vanilla-DMZ
 @dirrmtry lib/X11/icons
