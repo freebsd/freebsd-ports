@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.23d
+PORTVERSION?=		3.0.24
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -42,20 +42,20 @@ SAMBA_LIB=		lib
 SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
 SAMBA_MODULEDIR=	${SAMBA_LIBDIR}/samba
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
-CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
-			--localstatedir=${VARDIR} \
-		        --with-configdir=${SAMBA_CONFDIR} \
-			--with-pammodulesdir=${SAMBA_LIBDIR} \
-	    		--with-libdir=${SAMBA_MODULEDIR} \
-			--with-swatdir=${SAMBA_SWATDIR} \
-			--with-piddir=${SAMBA_RUNDIR} \
-			--with-lockdir=${SAMBA_LOCKDIR} \
-			--with-privatedir=${SAMBA_PRIVATEDIR} \
-			--with-logfilebase=${SAMBA_LOGDIR}
+CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
+			--localstatedir="${VARDIR}" \
+		        --with-configdir="${SAMBA_CONFDIR}" \
+			--with-pammodulesdir="${SAMBA_LIBDIR}" \
+	    		--with-libdir="${SAMBA_MODULEDIR}" \
+			--with-swatdir="${SAMBA_SWATDIR}" \
+			--with-piddir="${SAMBA_RUNDIR}" \
+			--with-lockdir="${SAMBA_LOCKDIR}" \
+			--with-privatedir="${SAMBA_PRIVATEDIR}" \
+			--with-logfilebase="${SAMBA_LOGDIR}"
 
-CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libiconv="${LOCALBASE}"
 
 .if !defined(SAMBA_SUBPORT)
 # Samba server itself
@@ -115,8 +115,8 @@ SUB_LIST+=		CUPSD="@comment "
 
 .if defined(WITH_MAX_DEBUG)
 LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=		"-I${LOCALBASE}/include"
+LDFLAGS+=		"-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-debug --enable-developer --enable-krb5developer --enable-dmalloc --with-profiling-data
 .else
@@ -178,7 +178,7 @@ WANT_EXP_MODULES+=	rpc_echo
 .		endif
 .	endif
 WANT_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
-CONFIGURE_ARGS+=	--with-shared-modules=${WANT_EXP_MODULES}
+CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES}"
 .endif
 
 .if defined(WITH_PAM_SMBPASS)
@@ -252,14 +252,14 @@ CONFIGURE_ARGS+=	--without-ads
 # Kerberos5 is necessary for ADS
 .if defined(SAMBA_WANT_KRB5)
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
-CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
+CONFIGURE_ARGS+=	--with-krb5="${KRB5_HOME}"
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.so)
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
+CONFIGURE_ARGS+=	--with-krb5="${HEIMDAL_HOME}"
 .elif exists(${DESTDIR}/usr/lib/libkrb5.so) && exists(${DESTDIR}/usr/bin/krb5-config)
-CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
+CONFIGURE_ARGS+=	--with-krb5="${DESTDIR}/usr"
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-krb5="${LOCALBASE}"
 .endif
 .else
 CONFIGURE_ARGS+=	--without-krb5
@@ -290,30 +290,30 @@ MAN7+=		pam_winbind.7
 MAN8+=		winbindd.8
 .endif
 
-PLIST_SUB+=	SAMBA_LOGDIR=${SAMBA_LOGDIR} \
-		SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
-		SAMBA_CONFDIR=${SAMBA_CONFDIR} \
-		SAMBA_CONFIG=${SAMBA_CONFIG} \
-		SAMBA_RUNDIR=${SAMBA_RUNDIR} \
-		SAMBA_SWATDIR=${SAMBA_SWATDIR} \
-		SAMBA_SPOOL=${SAMBA_SPOOL} \
-		SAMBA_PRIVATEDIR=${SAMBA_PRIVATEDIR}
+PLIST_SUB+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
+		SAMBA_LOCKDIR="${SAMBA_LOCKDIR}" \
+		SAMBA_CONFDIR="${SAMBA_CONFDIR}" \
+		SAMBA_CONFIG="${SAMBA_CONFIG}" \
+		SAMBA_RUNDIR="${SAMBA_RUNDIR}" \
+		SAMBA_SWATDIR="${SAMBA_SWATDIR}" \
+		SAMBA_SPOOL="${SAMBA_SPOOL}" \
+		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}"
 
-SUB_LIST+=	SAMBA_LOGDIR=${SAMBA_LOGDIR} \
-		SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
-		SAMBA_CONFDIR=${SAMBA_CONFDIR} \
-		SAMBA_CONFIG=${SAMBA_CONFIG} \
-		SAMBA_RUNDIR=${SAMBA_RUNDIR} \
-		SAMBA_SWATDIR=${SAMBA_SWATDIR} \
-		SAMBA_SPOOL=${SAMBA_SPOOL} \
-		SAMBA_PRIVATEDIR=${SAMBA_PRIVATEDIR} \
-		SAMBA_PRIVATE=${SAMBA_PRIVATE}
+SUB_LIST+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
+		SAMBA_LOCKDIR="${SAMBA_LOCKDIR}" \
+		SAMBA_CONFDIR="${SAMBA_CONFDIR}" \
+		SAMBA_CONFIG="${SAMBA_CONFIG}" \
+		SAMBA_RUNDIR="${SAMBA_RUNDIR}" \
+		SAMBA_SWATDIR="${SAMBA_SWATDIR}" \
+		SAMBA_SPOOL="${SAMBA_SPOOL}" \
+		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}" \
+		SAMBA_PRIVATE="${SAMBA_PRIVATE}"
 
 pre-everything::
 	@${ECHO_CMD} "===>  NOTICE: This version of port has changed location of Samba password"
 	@${ECHO_CMD} "===>  NOTICE: (smbpasswd) directory. Files in '${SAMBA_PRIVATE}'"
 	@${ECHO_CMD} "===>  NOTICE: have moved to '${SAMBA_PRIVATEDIR}'."
-	@if [ -d ${SAMBA_PRIVATE} -a -n "`${LS} ${SAMBA_PRIVATE}/*.tdb 2>/dev/null`" ]; then \
+	@if [ -d "${SAMBA_PRIVATE}" -a -n "`${LS} ${SAMBA_PRIVATE}/*.tdb 2>/dev/null`" ]; then \
 	    ${ECHO_CMD} ""; \
 	    ${ECHO_CMD} "===>  The directory '${SAMBA_PRIVATE}' is not empty. You possibly need"; \
 	    ${ECHO_CMD} "===>  to move its files to '${SAMBA_PRIVATEDIR}' and remove directory."; \
@@ -336,7 +336,7 @@ post-patch:
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
 
 pre-install:
-	-@${FIND} ${SAMBA_MODULEDIR} -type f 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' >> ${WRKDIR}/.PLIST.exclude
+	-@${FIND} "${SAMBA_MODULEDIR}" -type f 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' >> ${WRKDIR}/.PLIST.exclude
 	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist.swat >> ${PLIST}
 
@@ -344,54 +344,54 @@ post-install:
 .for sect in 1 5 7 8
 	@${MKDIR} ${MAN${sect}PREFIX}/man/man${sect}
 .	for man in ${MAN${sect}}
-	    @${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/${man} ${MAN${sect}PREFIX}/man/man${sect}
+	    @${INSTALL_MAN} "${WRKDIR}/${DISTNAME}/docs/manpages/${man}" "${MAN${sect}PREFIX}/man/man${sect}"
 .	endfor
 .endfor
 # Put examples in place
 	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/* ${EXAMPLESDIR}
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/* "${EXAMPLESDIR}"
 .if defined(WITH_PAM_SMBPASS)
 	@${MKDIR} ${EXAMPLESDIR}/pam_smbpass
-	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* ${EXAMPLESDIR}/pam_smbpass
+	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* "${EXAMPLESDIR}/pam_smbpass"
 .endif
-	${CP} -p ${WRKDIR}/${SAMBA_CONFIG}.sample ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
+	${CP} -p "${WRKDIR}/${SAMBA_CONFIG}.sample" "${EXAMPLESDIR}"
+	${INSTALL_SCRIPT} "${WRKSRC}/script/mksmbpasswd.sh" "${PREFIX}/bin/make_smbpasswd"
 # Winbind
 .if !defined(WITHOUT_WINBIND)
 .	if defined(WITH_WINBIND_NSS)
-	    ${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
-	    ${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_wins.so ${SAMBA_LIBDIR}/nss_wins.so.1
+	    ${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
+	    ${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
 	    @${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
 	    @${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
 .	endif
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_winbind.so ${SAMBA_LIBDIR}
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
 	@${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif
 .if defined(WITH_PAM_SMBPASS)
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_smbpass.so" "${SAMBA_LIBDIR}"
 	@${ECHO_CMD} "${SAMBA_LIB}/pam_smbpass.so" >> ${TMPPLIST};
 .endif
 # smbwrapper.so
 .if defined(WITH_SMBSH)
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/smbsh ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/smbwrapper.so ${SAMBA_MODULEDIR}
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbsh" "${PREFIX}/bin"
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbwrapper.so" "${SAMBA_MODULEDIR}"
 .endif
 # Lib
-	@${FIND} ${SAMBA_MODULEDIR} -type f | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
-	@for d in `${FIND} ${SAMBA_MODULEDIR} -type d | ${SORT} -r`; do \
-	    ${ECHO_CMD} "@unexec ${RMDIR} $$d 2>/dev/null || true" >> ${TMPPLIST}; \
+	@${FIND} "${SAMBA_MODULEDIR}" -type f | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
+	@for d in `${FIND} "${SAMBA_MODULEDIR}" -type d | ${SORT} -r`; do \
+	    ${ECHO_CMD} "@unexec ${RMDIR} \"$$d\" 2>/dev/null || true" >> ${TMPPLIST}; \
 	done
 # Documentation
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/docs/registry ${DOCSDIR}
+	@${CP} -Rp "${WRKDIR}/${DISTNAME}/docs/registry" "${DOCSDIR}"
 .	for f in Samba3-ByExample.pdf Samba3-HOWTO.pdf Samba3-Developers-Guide.pdf
-	    @${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/docs/${f} ${DOCSDIR}
+	    @${INSTALL_DATA} "${WRKDIR}/${DISTNAME}/docs/${f}" "${DOCSDIR}"
 .	endfor
-	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
+	@${INSTALL_DATA} "${FILESDIR}/README.FreeBSD" "${DOCSDIR}"
 .	for f in README COPYING Manifest Read-Manifest-Now Roadmap \
 		WHATSNEW.txt docs/THANKS docs/history
-	    @${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${f} ${DOCSDIR}
+	    @${INSTALL_DATA} "${WRKDIR}/${DISTNAME}/${f}" "${DOCSDIR}"
 .	endfor
 # !NOPORTDOCS
 .endif
