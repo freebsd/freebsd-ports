@@ -19,8 +19,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	sugimura@jp.FreeBSD.ORG
 COMMENT=	A visual database query tool for Eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.1.1/feature.xml:${PORTSDIR}/java/eclipse-gef
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070109/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
