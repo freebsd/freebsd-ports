@@ -9,8 +9,8 @@ PORTNAME=	ddskk
 PORTVERSION=	12.2.0
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/ \
-		ftp://ftp.ring.gr.jp/pub/text/elisp/skk/maintrunk/ \
-		http://www.ring.gr.jp/archives/text/elisp/skk/maintrunk/
+		ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
+		http://www.ring.gr.jp/archives/elisp/skk/maintrunk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
