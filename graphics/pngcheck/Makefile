@@ -8,8 +8,7 @@
 PORTNAME=	pngcheck
 PORTVERSION=	2.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://swrinde.nde.swri.edu/pub/png/applications/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	png-mng
 
 MAINTAINER=	ports@FreeBSD.org

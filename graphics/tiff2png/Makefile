@@ -9,8 +9,7 @@ PORTNAME=	tiff2png
 PORTVERSION=	0.91
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://swrinde.nde.swri.edu/pub/png/applications/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	png-mng
 
 MAINTAINER=	ports@FreeBSD.org
