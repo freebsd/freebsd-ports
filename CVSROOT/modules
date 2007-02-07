@@ -7722,6 +7722,7 @@ nds-aspell	ports/textproc/nds-aspell
 ne		ports/editors/ne
 neXtaw		ports/x11-toolkits/neXtaw
 nec2c		ports/comms/nec2c
+nedi		ports/net-mgmt/nedi
 nedit		ports/editors/nedit
 nefu		ports/net-mgmt/nefu
 nehquake	ports/games/nehquake
