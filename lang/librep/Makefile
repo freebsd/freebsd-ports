@@ -19,7 +19,6 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
 
-USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
