@@ -31,7 +31,7 @@ PORTDOCS=		*
 .endif
 
 pre-patch:
-	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g; s,/usr/bin/objformat \|\| echo aout,/usr/bin/objformat || echo elf,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
 	${CHMOD} u+w ${WRKSRC}/../dist/configure
