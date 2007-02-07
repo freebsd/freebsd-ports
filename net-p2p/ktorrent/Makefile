@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
 
@@ -22,13 +22,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|zeroconf||' ${WRKSRC}/plugins/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
