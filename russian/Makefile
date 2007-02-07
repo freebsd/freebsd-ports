@@ -29,6 +29,7 @@
     SUBDIR += pine.language
     SUBDIR += prawda
     SUBDIR += pscyr
+    SUBDIR += rubygem-rutils
     SUBDIR += rus-ispell
     SUBDIR += rux
     SUBDIR += tac+ia
