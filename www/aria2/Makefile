@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.10.0+1
+DISTVERSION=	0.10.1
 CATEGORIES=	www
 MASTER_SITES=	SFE
-DIST_SUBDIR=	rerolled
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
