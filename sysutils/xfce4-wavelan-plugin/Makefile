@@ -6,18 +6,15 @@
 #    $MCom: ports/sysutils/xfce4-wavelan-plugin/Makefile,v 1.1 2006/10/02 20:43:59 ahze Exp $
 
 PORTNAME=	xfce4-wavelan-plugin
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
-PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
-PATCHFILES=	gcc295-xfce4-wavelan-plugin.patch
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Displays various information about a WaveLAN device
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig

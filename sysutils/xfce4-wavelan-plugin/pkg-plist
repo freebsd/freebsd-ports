@@ -1,6 +1,7 @@
 libexec/xfce4/panel-plugins/xfce4-wavelan-plugin
 share/locale/de/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-wavelan-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-wavelan-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-wavelan-plugin.mo
