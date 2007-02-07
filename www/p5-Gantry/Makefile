@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.45
+PORTVERSION=	3.47
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Gantry
@@ -21,6 +21,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/CGI/Simple.pm:${PORTSDIR}/www/p5-CGI-Simple \
 		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
 		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		${SITE_PERL}/Hash/Merge.pm:${PORTSDIR}/textproc/p5-Hash-Merge \
+		${SITE_PERL}/HTML/Prototype.pm:${PORTSDIR}/www/p5-HTML-Prototype \
 		${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit
@@ -29,7 +31,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Excepti
 
 PERL_MODBUILD=	yes
 
-MAN3=		Gantry.3 Gantry::Conf.3 Gantry::Conf::FAQ.3 \
+MAN3=		Gantry.3 \
+		Gantry::Build.3 \
+		Gantry::Conf.3 \
+		Gantry::Conf::FAQ.3 \
 		Gantry::Conf::Provider.3 \
 		Gantry::Conf::Provider::FlatFile::Config::General.3 \
 		Gantry::Conf::Provider::FlatFile::Config::Tiny.3 \
@@ -69,11 +74,18 @@ MAN3=		Gantry.3 Gantry::Conf.3 Gantry::Conf::FAQ.3 \
 		Gantry::Docs::Why.3 Gantry::Engine::CGI.3 \
 		Gantry::Engine::MP13.3 Gantry::Engine::MP20.3 \
 		Gantry::Init.3 Gantry::Plugins::AutoCRUD.3 \
+		Gantry::Plugins::AjaxCRUD.3 \
+		Gantry::Plugins::AjaxFORM.3 \
+		Gantry::Plugins::AuthCookie.3 \
 		Gantry::Plugins::AutoCRUDHelper::CDBI.3 \
 		Gantry::Plugins::AutoCRUDHelper::DBIxClass.3 \
-		Gantry::Plugins::AuthCookie.3 \
 		Gantry::Plugins::CRUD.3 Gantry::Plugins::Calendar.3 \
+		Gantry::Plugins::Cache.3 \
+		Gantry::Plugins::Cache::FastMmap.3 \
+		Gantry::Plugins::Cache::Memcached.3 \
 		Gantry::Plugins::DBIxClassConn.3 Gantry::Plugins::Static.3 \
+		Gantry::Plugins::SOAPMP20.3 \
+		Gantry::Plugins::Session.3 \
 		Gantry::Plugins::Validate.3 Gantry::Server.3 Gantry::Stash.3 \
 		Gantry::Stash::Controller.3 Gantry::Stash::View.3 \
 		Gantry::Stash::View::Form.3 Gantry::Template::Default.3 \
