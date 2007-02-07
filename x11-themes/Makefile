@@ -114,6 +114,7 @@
     SUBDIR += icons-buuf
     SUBDIR += icons-human-azul
     SUBDIR += icons-tango
+    SUBDIR += icons-tango-extras
     SUBDIR += indubstrial
     SUBDIR += irssi-themes
     SUBDIR += kde-icons-amaranth
