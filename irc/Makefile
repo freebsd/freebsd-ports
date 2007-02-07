@@ -122,7 +122,6 @@
     SUBDIR += xchat-fish
     SUBDIR += xchat-gnome
     SUBDIR += xchat-mircryption
-    SUBDIR += xchat-systray-plugin
     SUBDIR += xchat1
     SUBDIR += zircon
 

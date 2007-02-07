@@ -1090,7 +1090,6 @@ castor		ports/java/castor
 castpodder	ports/multimedia/castpodder
 catdoc		ports/textproc/catdoc
 catdvi		ports/print/catdvi
-caudium10	ports/www/caudium10
 caudium12	ports/www/caudium12
 cave		ports/misc/cave
 cavezofphear	ports/games/cavezofphear
@@ -7847,7 +7846,6 @@ nhc98		ports/lang/nhc98
 nibbles		ports/games/nibbles
 nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
-nicmond		ports/net/nicmond
 nicotine	ports/net-p2p/nicotine
 nicotine-plus	ports/net-p2p/nicotine-plus
 nifmon		ports/net/nifmon
@@ -15695,7 +15693,6 @@ xchat		ports/irc/xchat
 xchat-fish	ports/irc/xchat-fish
 xchat-gnome	ports/irc/xchat-gnome
 xchat-mircryption	ports/irc/xchat-mircryption
-xchat-systray-plugin	ports/irc/xchat-systray-plugin
 xchat1		ports/irc/xchat1
 xcheckers	ports/games/xcheckers
 xchm		ports/deskutils/xchm
@@ -16509,7 +16506,6 @@ zh-ntuttf	ports/chinese/ntuttf
 zh-nvi-big5	ports/chinese/nvi-big5
 zh-nvi-euc-cn	ports/chinese/nvi-euc-cn
 zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
-zh-oicq		ports/chinese/oicq
 zh-oto			ports/chinese/oto
 zh-oxford		ports/chinese/oxford
 zh-oxim		ports/chinese/oxim
