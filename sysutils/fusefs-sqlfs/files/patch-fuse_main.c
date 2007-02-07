@@ -1,6 +1,6 @@
---- fuse_main.c.orig	Sat Aug 12 01:46:18 2006
-+++ fuse_main.c	Sat Aug 19 16:18:02 2006
-@@ -17,12 +17,52 @@
+--- fuse_main.c.orig	Wed Oct 25 19:28:26 2006
++++ fuse_main.c	Wed Feb  7 21:34:03 2007
+@@ -17,12 +17,60 @@
  
  *****************************************************************************/
  
@@ -13,7 +13,7 @@
 +
 +void usage()
 +{
-+	fprintf(stderr, "Usage: %s -o dbname [-h]\n", getprogname());
++	fprintf(stderr, "Usage: %s -o dbname [-h] dir\n", getprogname());
 +
 +	exit(EX_USAGE);
 +}
@@ -24,11 +24,13 @@
 +	char c;
 +	int ret;
 +	char *dbname = NULL;
++	char *args[2];
++	char *prog = argv[0];
 +	
 +	while ((c = getopt(argc, argv, "o:h")) != -1)
 +		switch (c) {
 +		case 'o':
-+			dbname = optarg;
++			dbname = strdup(optarg);
 +			break;
 +		case 'h':
 +			/* FALLTHROUGH */
@@ -39,19 +41,25 @@
 +		argc -= optind;
 +		argv += optind;
 +
-+	if (dbname == NULL)
++	if (dbname == NULL) {
 +		dbname = getenv("SQLFS_DBNAME");
++	}
 +
-+	if (dbname == NULL)
++	if (dbname == NULL || argc < 1)
 +		usage();
 +	/* NOTREACHED */
 +
 +	ret = sqlfs_init(dbname);
 +	if (ret != 0)
 +		return ret;
++
++	fprintf(stderr, "init\n");
++
++	args[0] = strdup(getprogname());
++	args[1] = strdup(argv[0]);
     
 -    return sqlfs_fuse_main(argc, argv);
-+	ret = sqlfs_fuse_main(argc, argv);
++	ret = sqlfs_fuse_main(2, args);
 +	
 +	return ret;
  }

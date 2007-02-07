@@ -7,20 +7,21 @@
 #
 
 PORTNAME=	sqlfs
-PORTVERSION=	20060811
+PORTVERSION=	1.1
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.palmsource.com/opensource/downloads/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	libsqlfs
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	SQLite backed FUSE file system
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_SQLITE=	3
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README
