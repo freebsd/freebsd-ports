@@ -1,6 +1,28 @@
---- src/cf.data.pre.orig	Fri Aug 20 16:23:18 2004
-+++ src/cf.data.pre	Fri Aug 20 16:25:23 2004
-@@ -2396,12 +2396,12 @@
+--- src/cf.data.pre.orig	Thu Oct 12 22:48:48 2006
++++ src/cf.data.pre	Wed Nov  8 18:56:47 2006
+@@ -1183,6 +1183,21 @@
+ 
+ 	Note that for coss, max-size must be less than COSS_MEMBUF_SZ
+ 	(hard coded at 1 MB).
++
++	Note for FreeBSD users:
++	COSS -- like aufs -- uses async IO so if you compiled Squid without
++	support for the aufs storage type, COSS will use POSIX AIO.
++	This means that you need to add the line
++
++	options VFS_AIO
++
++	to your kernel configuration in order to use COSS.
++
++	On FreeBSD 5 and higher you can load the aio(4) module and do not
++	necessarily need to recompile your kernel.
++
++	If you compiled Squid with both support for aufs and COSS, COSS
++	will use aufs' routines and does not need special kernel support.
+ DOC_END
+ 
+ NAME: logformat
+@@ -3280,12 +3295,12 @@
  
  NAME: cache_effective_user
  TYPE: string

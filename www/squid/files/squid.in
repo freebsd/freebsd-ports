@@ -5,7 +5,7 @@
 # PROVIDE: squid
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
-# 
+#
 # Note:
 # Set "squid_enable=yes" in either /etc/rc.conf, /etc/rc.conf.local or
 # /etc/rc.conf.d/squid to make this script actually do something. There
