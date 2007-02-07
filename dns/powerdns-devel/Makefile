@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -98,7 +98,7 @@ PLIST_SUB+=		WITHSQLITE="@comment "
 .endif
 
 .if defined(WITH_OPENDBX)
-LIB_DEPENDS+=		opendbx.1:${PORTSDIR}/databases/opendbx
+LIB_DEPENDS+=		opendbx.[1-2]:${PORTSDIR}/databases/opendbx
 CONFIGURE_MODULES+=	"opendbx"
 PLIST_SUB+=		WITHOPENDBX=""
 CXXFLAGS+=		-L${LOCALBASE}/lib
