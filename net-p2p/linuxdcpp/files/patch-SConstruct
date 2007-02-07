@@ -1,42 +1,30 @@
---- SConstruct.orig	Mon Feb  5 01:15:08 2007
-+++ SConstruct	Mon Feb  5 01:17:03 2007
-@@ -62,7 +62,7 @@
- # Initialization
- # ----------------------------------------------------------------------
+--- SConstruct.orig	Tue Feb  6 21:27:05 2007
++++ SConstruct	Tue Feb  6 22:31:03 2007
+@@ -91,9 +91,15 @@
+ 	conf_dir = 'build/sconf',
+ 	log_file = 'build/sconf/config.log')
  
--env = Environment(ENV = os.environ, options = opts)
-+env = Environment(ENV = os.environ, options = opts, CC = '%%CC%%', CXX = '%%CXX%%')
++if os.environ.has_key('CC'):
++	env['CC'] = os.environ['CC']
++
+ if os.environ.has_key('CXX'):
+ 	env['CXX'] = os.environ['CXX']
  
- conf = Configure(env,
- 	custom_tests =
-@@ -130,11 +130,6 @@
++if os.environ.has_key('CCFLAGS'):
++	env['CCFLAGS'] = os.environ['CCFLAGS'].split()
++
+ if os.environ.has_key('CXXFLAGS'):
+ 	env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
+ 
+@@ -145,11 +151,6 @@
+ 
+ 	if not conf.CheckHeader('unistd.h'):
  		print '\tHeader file unistd.h not found'
- 		Exit(1)
- 
+-		Exit(1)
+-
 -	if not conf.CheckLibWithHeader('pthread', 'pthread.h', 'c'):
 -		print '\tpthread library not found'
 -		print '\tNote: You might have the lib but not the headers'
--		Exit(1)
--
+ 		Exit(1)
+ 
  	if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
- 		print '\tz library (gzip/z compression) not found'
- 		print '\tNote: You might have the lib but not the headers'
-@@ -157,15 +152,15 @@
- # Compile and link flags
- # ----------------------------------------------------------------------
- 
--	env.Append(CXXFLAGS = Split('-I. -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64'))
-+	env.Append(CXXFLAGS = Split('-I. -I%%LOCALBASE%%/include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64'))
- 	env.Append(LINKFLAGS = ['-Wl,--as-needed'])
- 
- 	if env.has_key('debug') and env['debug']:
--		env.Append(CXXFLAGS = Split('-g -ggdb -D_DEBUG -Wall'))
-+		env.Append(CXXFLAGS = Split('%%CXXFLAGS%% -g -ggdb -D_DEBUG -Wall'))
- 		env.Append(LINKFLAGS = Split('-g -ggdb -Wall'))
- 
- 	if env.has_key('release') and env['release']:
--		env.Append(CXXFLAGS = '-O3')
-+		env.Append(CXXFLAGS = '%%CXXFLAGS%%')
- 
- 	if env.has_key('profile') and env['profile']:
- 		env.Append(CXXFLAGS = '-pg')
