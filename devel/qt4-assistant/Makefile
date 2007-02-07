@@ -18,7 +18,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser
 
-DEPENDS=	${PORTSDIR}/misc/qt4-doc
 BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		rcc:${PORTSDIR}/devel/qt4-rcc \
@@ -29,6 +28,7 @@ LIB_DEPENDS=	Qt3Support:${PORTSDIR}/devel/qt4-qt3support \
 		QtNetwork:${PORTSDIR}/net/qt4-network \
 		QtSql:${PORTSDIR}/databases/qt4-sql \
 		QtXml:${PORTSDIR}/textproc/qt4-xml
+RUN_DEPENDS=	qt4-doc>=4.2.2:${PORTSDIR}/misc/qt4-doc
 
 CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
