@@ -15,7 +15,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A low level console graphics library
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
 ALL_TARGET=	shared static
