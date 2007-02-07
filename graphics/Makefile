@@ -673,6 +673,7 @@
     SUBDIR += tintfu
     SUBDIR += tkpng
     SUBDIR += togl
+    SUBDIR += tonicpoint-viewer
     SUBDIR += truevision
     SUBDIR += tulip
     SUBDIR += uDrawGraph
