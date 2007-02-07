@@ -7,6 +7,7 @@
 
 PORTNAME=	phppgadmin
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,6 +40,7 @@ do-configure:
 
 do-install:
 	${MKDIR} ${PREFIX}/${PGADMDIR}
+	${RM} -f ${WRKSRC}/classes/database/Postgres81.php.orig
 	${CP} -Rp ${WRKSRC}/ ${PREFIX}/${PGADMDIR}/
 .if exists(${DESTDIR}${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php)
 	${CP} -np ${DESTDIR}${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php \
