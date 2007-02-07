@@ -14750,6 +14750,7 @@ tomboy		ports/deskutils/tomboy
 tomcat55	ports/www/tomcat55
 tome		ports/games/tome
 tomsfastmath	ports/math/tomsfastmath
+tonicpoint-viewer	ports/graphics/tonicpoint-viewer
 toolame		ports/audio/toolame
 toolbox		ports/deskutils/toolbox
 toolboxkit	ports/deskutils/toolboxkit
