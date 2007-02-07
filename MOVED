@@ -2799,3 +2799,7 @@ archivers/py-bzip2||2007-02-05|Included with all current python versions in port
 devel/py-logging||2007-02-05|Included with all current python versions in ports tree
 misc/qt4-codecs-tw|chinese/qt4-codecs-tw|2007-02-06|Accidentally added to wrong category
 www/squid26|www/squid|2007-02-07|Squid 2.6 is now mainstream version
+irc/xchat-systray-plugin||2007-02-07|Has expired: Functionality is now included in xchat
+chinese/oicq||2007-02-07|Has expired: Does not work with newer OICQ protocol
+net/nicmond||2007-02-07|Has expired: Disappeared from the internet
+www/caudium10||2007-02-07|Has expired: Please use www/caudium12

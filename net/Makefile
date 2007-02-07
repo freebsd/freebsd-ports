@@ -347,7 +347,6 @@
     SUBDIR += ng_netflow
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
-    SUBDIR += nicmond
     SUBDIR += nifmon
     SUBDIR += nload
     SUBDIR += nocatauth-gateway

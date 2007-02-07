@@ -84,7 +84,6 @@
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
-    SUBDIR += oicq
     SUBDIR += oto
     SUBDIR += oxford
     SUBDIR += oxim
