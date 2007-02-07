@@ -132,7 +132,7 @@ post-patch:
 	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
 		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
 	${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
-.if exists(${LIBNET_CONFIG})
+.if defined(WITH_FLEXRESP) || defined(WITH_FLEXRESP2)
 	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
 .endif
 .if defined(WITHOUT_DYNAMIC)
