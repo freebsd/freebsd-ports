@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Oct 18 19:56:15 2005
-+++ Makefile	Thu Jun  1 11:40:25 2006
-@@ -572,7 +572,7 @@
+--- Makefile.orig	Wed Feb  7 01:35:20 2007
++++ Makefile	Wed Feb  7 14:54:34 2007
+@@ -571,7 +571,7 @@
  
  #INCDIR= /usr/local/include
  #INCDIR= /dev/env/DJDIR/include
@@ -9,7 +9,7 @@
  
  # Where to install calc realted things
  #
-@@ -599,15 +599,15 @@
+@@ -598,15 +598,15 @@
  #
  #BINDIR= /usr/local/bin
  #BINDIR= /dev/env/DJDIR/bin
@@ -28,7 +28,7 @@
  
  #CALC_INCDIR= /usr/local/include/calc
  #CALC_INCDIR= /dev/env/DJDIR/include/calc
-@@ -681,7 +681,7 @@
+@@ -680,7 +680,7 @@
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
@@ -37,7 +37,7 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
-@@ -786,13 +786,13 @@
+@@ -785,13 +785,13 @@
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
@@ -55,26 +55,26 @@
  #
  # For Apple OS X: install fink from http://fink.sourceforge.net
  #		  and then do a 'fink install readline' and then use:
-@@ -1004,13 +1004,13 @@
+@@ -1008,13 +1008,13 @@
  CCOPT= ${DEBUG} ${NO_SHARED}
  CCMISC=
  #
 -CFLAGS= -DCALC_SRC ${CCWARN} ${CCOPT} ${CCMISC}
 -ICFLAGS= -DCALC_SRC ${CCWARN} ${CCMISC}
-+CFLAGS= -DCALC_SRC
-+ICFLAGS= ${CFLAGS}
++CFLAGS+= -DCALC_SRC
++ICFLAGS= -DCALC_SRC
  #
  LDFLAGS= ${NO_SHARED} ${LD_NO_SHARED}
  ILDFLAGS=
  #
 -LCC= gcc
 +LCC= cc
- CC= ${PURIFY} ${LCC}
+ CC= ${PURIFY} ${LCC} ${CCWERR}
  #
  ###
-@@ -1509,6 +1509,7 @@
+@@ -1573,6 +1573,7 @@
  TARGETS= ${LICENSE} ${CALC_LIBS} custom/.all calc${EXT} sample/.all \
- 	 cal/.all help/.all help/builtin cscript/.all calc.1
+ 	 cal/.all help/.all help/builtin cscript/.all calc.1 calc.usage
  
 +RM=	rm
  
