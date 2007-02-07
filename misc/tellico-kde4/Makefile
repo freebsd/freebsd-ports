@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
@@ -29,10 +29,6 @@ OPTIONS=	CDDB "CDDB support" on \
 		IMDB "IMDb search support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
 
 .if defined(WITHOUT_CDDB)
 CONFIGURE_ARGS+=--disable-libkcddb
