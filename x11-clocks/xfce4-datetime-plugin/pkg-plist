@@ -1,0 +1,10 @@
+lib/xfce4/panel-plugins/libdatetime.a
+lib/xfce4/panel-plugins/libdatetime.la
+lib/xfce4/panel-plugins/libdatetime.so
+share/locale/hu/LC_MESSAGES/xfce4-datetime-plugin.mo
+share/locale/nl/LC_MESSAGES/xfce4-datetime-plugin.mo
+share/xfce4/panel-plugins/datetime.desktop
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4
+@dirrm lib/xfce4/panel-plugins
+@dirrm lib/xfce4
