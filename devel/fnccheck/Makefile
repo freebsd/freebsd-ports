@@ -22,6 +22,8 @@ DOCS=		README.txt README1ST.txt CHANGES.txt \
 		doc/fncdump.info doc/html/fncdump_toc.html \
 		doc/html/fncdump.html
 
+STRIP=		#
+
 do-install:
 .for B in fncdump fncaverage
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/$B ${PREFIX}/bin
