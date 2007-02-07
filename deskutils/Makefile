@@ -63,6 +63,7 @@
     SUBDIR += gdesklets-starterbar
     SUBDIR += gemcal
     SUBDIR += genius
+    SUBDIR += gimmie
     SUBDIR += gkrellm-gtodo
     SUBDIR += gkrellm-reminder2
     SUBDIR += gkrellm-timers
