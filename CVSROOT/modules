@@ -919,7 +919,6 @@ bogosort	ports/misc/bogosort
 boiling-egg	ports/editors/boiling-egg
 boinc-client	ports/net/boinc-client
 boinc-einsteinathome	ports/astro/boinc-einsteinathome
-boinc-setiathome	ports/astro/boinc-setiathome
 boinc-setiathome-enhanced	ports/astro/boinc-setiathome-enhanced
 boinc-simap	ports/biology/boinc-simap
 bomb		ports/games/bomb
@@ -10767,6 +10766,7 @@ p5-WWW-Myspace	ports/www/p5-WWW-Myspace
 p5-WWW-OpenSVN	ports/www/p5-WWW-OpenSVN
 p5-WWW-OpenSearch	ports/www/p5-WWW-OpenSearch
 p5-WWW-Robot	ports/www/p5-WWW-Robot
+p5-WWW-Scraper-ISBN	ports/www/p5-WWW-Scraper-ISBN
 p5-WWW-Scraper-ISBN-Amazon_Driver	ports/www/p5-WWW-Scraper-ISBN-Amazon_Driver
 p5-WWW-Scraper-ISBN-Driver	ports/www/p5-WWW-Scraper-ISBN-Driver
 p5-WWW-Scraper-ISBN-ORA_Driver	ports/www/p5-WWW-Scraper-ISBN-ORA_Driver
@@ -11930,6 +11930,7 @@ ports_pkg_install	ports/ports-mgmt/pkg_install
 ports_pkg_install-devel	ports/ports-mgmt/pkg_install-devel
 ports_pkill	ports/sysutils/pkill
 ports_polish	ports/polish
+ports_ports-mgmt	ports/ports-mgmt
 ports_portuguese	ports/portuguese
 ports_pr	ports/comms/pr
 ports_print	ports/print
@@ -13521,6 +13522,7 @@ rubygem-rtags	ports/devel/rubygem-rtags
 rubygem-rubyforge	ports/devel/rubygem-rubyforge
 rubygem-scruffy	ports/graphics/rubygem-scruffy
 rubygem-snmp	ports/net-mgmt/rubygem-snmp
+rubygem-sqlite3	ports/databases/rubygem-sqlite3
 rubygem-stream	ports/devel/rubygem-stream
 rubygem-syntax	ports/textproc/rubygem-syntax
 rubygem-transactionsimple	ports/devel/rubygem-transactionsimple
