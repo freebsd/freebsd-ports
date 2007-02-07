@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polipo
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.pps.jussieu.fr/~jch/software/files/polipo/ \
 		http://www.sax.de/~frank/polipo4bsd/files/
