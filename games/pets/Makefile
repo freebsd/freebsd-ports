@@ -9,7 +9,7 @@
 PORTNAME=	pets
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.loria.fr/~rougier/pub/Softwares/
+MASTER_SITES=	http://www.loria.fr/~rougier/pub/Software/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Funny pets to follow your mouse pointer
