@@ -15777,6 +15777,7 @@ xfce4-artwork	ports/misc/xfce4-artwork
 xfce4-battery-plugin	ports/sysutils/xfce4-battery-plugin
 xfce4-clipman-plugin	ports/x11/xfce4-clipman-plugin
 xfce4-cpugraph-plugin	ports/sysutils/xfce4-cpugraph-plugin
+xfce4-datetime-plugin	ports/x11-clocks/xfce4-datetime-plugin
 xfce4-desktop	ports/x11-wm/xfce4-desktop
 xfce4-dev-tools	ports/devel/xfce4-dev-tools
 xfce4-dict-plugin	ports/textproc/xfce4-dict-plugin
