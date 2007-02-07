@@ -15,6 +15,9 @@ lib/kde3/ktlogviewerplugin.so
 lib/kde3/ktpartfileimportplugin.a
 lib/kde3/ktpartfileimportplugin.la
 lib/kde3/ktpartfileimportplugin.so
+lib/kde3/ktrssfeedplugin.a
+lib/kde3/ktrssfeedplugin.la
+lib/kde3/ktrssfeedplugin.so
 lib/kde3/ktscanfolderplugin.a
 lib/kde3/ktscanfolderplugin.la
 lib/kde3/ktscanfolderplugin.so
@@ -27,12 +30,14 @@ lib/kde3/ktsearchplugin.so
 lib/kde3/ktupnpplugin.a
 lib/kde3/ktupnpplugin.la
 lib/kde3/ktupnpplugin.so
+lib/kde3/ktwebinterfaceplugin.a
+lib/kde3/ktwebinterfaceplugin.la
+lib/kde3/ktwebinterfaceplugin.so
+lib/libktorrent-2.1.so
 lib/libktorrent.a
 lib/libktorrent.la
 lib/libktorrent.so
-lib/libktorrent.so.0
 share/applications/kde/ktorrent.desktop
-share/applnk/Internet/ktorrent.desktop
 share/apps/ktorrent/geoip/FLAGS_LICENCE
 share/apps/ktorrent/geoip/GeoIP-LICENSE.txt
 share/apps/ktorrent/geoip/ad.png
@@ -302,14 +307,40 @@ share/apps/ktorrent/icons/hicolor/64x64/filesystems/ktprefdownloads.png
 share/apps/ktorrent/ktorrentui.rc
 share/apps/ktorrent/ktpartfileimportpluginui.rc
 share/apps/ktorrent/ktschedulerpluginui.rc
+share/apps/ktorrent/www/default/favicon.ico
+share/apps/ktorrent/www/default/grad1.jpg
+share/apps/ktorrent/www/default/grad2.jpg
+share/apps/ktorrent/www/default/header_tile.png
+share/apps/ktorrent/www/default/icon.png
+share/apps/ktorrent/www/default/interface.php
+share/apps/ktorrent/www/default/ktorrentwebinterfacelogo.png
+share/apps/ktorrent/www/default/login.html
+share/apps/ktorrent/www/default/remove.png
+share/apps/ktorrent/www/default/shutdown.php
+share/apps/ktorrent/www/default/start.png
+share/apps/ktorrent/www/default/stop.png
+share/apps/ktorrent/www/default/style.css
+share/apps/ktorrent/www/default/stylen.css
+share/apps/ktorrent/www/default/wz_tooltip.js
+share/apps/ktorrent/www/mobile/favicon.ico
+share/apps/ktorrent/www/mobile/interface.php
+share/apps/ktorrent/www/mobile/ktorrentwebinterfacelogo.png
+share/apps/ktorrent/www/mobile/login.html
+share/apps/ktorrent/www/mobile/remove.png
+share/apps/ktorrent/www/mobile/settings.php
+share/apps/ktorrent/www/mobile/start.png
+share/apps/ktorrent/www/mobile/stop.png
+share/apps/ktorrent/www/mobile/torrent.php
 share/config.kcfg/ktinfowidgetplugin.kcfg
 share/config.kcfg/ktipfilterplugin.kcfg
 share/config.kcfg/ktlogviewerplugin.kcfg
 share/config.kcfg/ktorrent.kcfg
+share/config.kcfg/ktrssfeedplugin.kcfg
 share/config.kcfg/ktscanfolderplugin.kcfg
 share/config.kcfg/ktschedulerplugin.kcfg
 share/config.kcfg/ktsearchplugin.kcfg
 share/config.kcfg/ktupnpplugin.kcfg
+share/config.kcfg/ktwebinterfaceplugin.kcfg
 share/icons/hicolor/128x128/apps/ktorrent.png
 share/icons/hicolor/128x128/mimetypes/torrent.png
 share/icons/hicolor/16x16/apps/ktorrent.png
@@ -324,6 +355,7 @@ share/icons/hicolor/64x64/apps/ktorrent.png
 share/icons/hicolor/64x64/mimetypes/torrent.png
 share/icons/hicolor/scalable/apps/ktorrent.svgz
 share/icons/hicolor/scalable/mimetypes/torrent.svgz
+share/locale/ar/LC_MESSAGES/ktorrent.mo
 share/locale/bg/LC_MESSAGES/ktorrent.mo
 share/locale/br/LC_MESSAGES/ktorrent.mo
 share/locale/ca/LC_MESSAGES/ktorrent.mo
@@ -336,9 +368,11 @@ share/locale/en_GB/LC_MESSAGES/ktorrent.mo
 share/locale/es/LC_MESSAGES/ktorrent.mo
 share/locale/et/LC_MESSAGES/ktorrent.mo
 share/locale/eu/LC_MESSAGES/ktorrent.mo
+share/locale/fa/LC_MESSAGES/ktorrent.mo
 share/locale/fr/LC_MESSAGES/ktorrent.mo
 share/locale/ga/LC_MESSAGES/ktorrent.mo
 share/locale/gl/LC_MESSAGES/ktorrent.mo
+share/locale/hr/LC_MESSAGES/ktorrent.mo
 share/locale/hu/LC_MESSAGES/ktorrent.mo
 share/locale/it/LC_MESSAGES/ktorrent.mo
 share/locale/ja/LC_MESSAGES/ktorrent.mo
@@ -346,7 +380,7 @@ share/locale/km/LC_MESSAGES/ktorrent.mo
 share/locale/lt/LC_MESSAGES/ktorrent.mo
 share/locale/mk/LC_MESSAGES/ktorrent.mo
 share/locale/ms/LC_MESSAGES/ktorrent.mo
-share/locale/nb/LC_MESSAGES/ktorrent.mo
+share/locale/nds/LC_MESSAGES/ktorrent.mo
 share/locale/nl/LC_MESSAGES/ktorrent.mo
 share/locale/pa/LC_MESSAGES/ktorrent.mo
 share/locale/pl/LC_MESSAGES/ktorrent.mo
@@ -366,10 +400,12 @@ share/services/ktinfowidgetplugin.desktop
 share/services/ktipfilterplugin.desktop
 share/services/ktlogviewerplugin.desktop
 share/services/ktpartfileimportplugin.desktop
+share/services/ktrssfeedplugin.desktop
 share/services/ktscanfolderplugin.desktop
 share/services/ktschedulerplugin.desktop
 share/services/ktsearchplugin.desktop
 share/services/ktupnpplugin.desktop
+share/services/ktwebinterfaceplugin.desktop
 share/servicetypes/ktorrentplugin.desktop
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
@@ -387,6 +423,8 @@ share/servicetypes/ktorrentplugin.desktop
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
 @dirrmtry share/locale/gl/LC_MESSAGES
@@ -397,6 +435,9 @@ share/servicetypes/ktorrentplugin.desktop
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrm share/apps/ktorrent/www/mobile
+@dirrm share/apps/ktorrent/www/default
+@dirrm share/apps/ktorrent/www
 @dirrm share/apps/ktorrent/icons/hicolor/64x64/filesystems
 @dirrm share/apps/ktorrent/icons/hicolor/64x64/actions
 @dirrm share/apps/ktorrent/icons/hicolor/64x64
