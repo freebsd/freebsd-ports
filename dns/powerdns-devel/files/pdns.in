@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/dns/powerdns-devel/files/Attic/pdns.in,v 1.3 2007-01-12 23:49:04 gabor Exp $
+# $FreeBSD: /tmp/pcvs/ports/dns/powerdns-devel/files/Attic/pdns.in,v 1.4 2007-02-07 04:04:45 alepulver Exp $
 #
 
 # PROVIDE: pdns_server
@@ -25,7 +25,7 @@ command=%%PREFIX%%/sbin/pdns_server
 # set defaults
 
 pdns_enable=${pdns_enable:-"NO"}
-pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns.conf"}
+pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns/pdns.conf"}
 pdns_flags=${pdns_flags:-""}
 
 load_rc_config ${name}

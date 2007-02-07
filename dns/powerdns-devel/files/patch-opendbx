@@ -1,5 +1,5 @@
 --- modules/opendbxbackend/odbxbackend.hh	2006-03-15 19:29:39.000000000 +0100
-+++ modules/opendbxbackend/odbxbackend.hh	2006-09-03 11:34:13.000000000 +0200
++++ modules/opendbxbackend/odbxbackend.hh	2007-01-25 22:16:13.000000000 +0100
 @@ -1,11 +1,10 @@
  /*
   *  PowerDNS OpenDBX Backend
@@ -75,42 +75,46 @@
  		declare( suffix, "password","Password for connecting to the DBMS","");
  
 -		declare( suffix, "sql-list", "AXFR query", "SELECT domain_id, name, type, ttl, prio, content FROM records WHERE domain_id=':id'" );
-+		declare( suffix, "sql-list", "AXFR query", "SELECT domain_id, name, type, ttl, prio, content FROM records WHERE domain_id=:id" );
++		declare( suffix, "sql-list", "AXFR query", "SELECT \"domain_id\", \"name\", \"type\", \"ttl\", \"prio\", \"content\" FROM \"records\" WHERE \"domain_id\"=:id" );
  
- 		declare( suffix, "sql-lookup", "Lookup query","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE name=':name'" );
+-		declare( suffix, "sql-lookup", "Lookup query","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE name=':name'" );
 -		declare( suffix, "sql-lookupid", "Lookup query with id","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE domain_id=':id' AND name=':name'" );
-+		declare( suffix, "sql-lookupid", "Lookup query with id","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE domain_id=:id AND name=':name'" );
- 		declare( suffix, "sql-lookuptype", "Lookup query with type","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE name=':name' AND type=':type'" );
+-		declare( suffix, "sql-lookuptype", "Lookup query with type","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE name=':name' AND type=':type'" );
 -		declare( suffix, "sql-lookuptypeid", "Lookup query with type and id","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE domain_id=':id' AND name=':name' AND type=':type'" );
-+		declare( suffix, "sql-lookuptypeid", "Lookup query with type and id","SELECT domain_id, name, type, ttl, prio, content FROM records WHERE domain_id=:id AND name=':name' AND type=':type'" );
++		declare( suffix, "sql-lookup", "Lookup query","SELECT \"domain_id\", \"name\", \"type\", \"ttl\", \"prio\", \"content\" FROM \"records\" WHERE \"name\"=':name'" );
++		declare( suffix, "sql-lookupid", "Lookup query with id","SELECT \"domain_id\", \"name\", \"type\", \"ttl\", \"prio\", \"content\" FROM \"records\" WHERE \"domain_id\"=:id AND \"name\"=':name'" );
++		declare( suffix, "sql-lookuptype", "Lookup query with type","SELECT \"domain_id\", \"name\", \"type\", \"ttl\", \"prio\", \"content\" FROM \"records\" WHERE \"name\"=':name' AND \"type\"=':type'" );
++		declare( suffix, "sql-lookuptypeid", "Lookup query with type and id","SELECT \"domain_id\", \"name\", \"type\", \"ttl\", \"prio\", \"content\" FROM \"records\" WHERE \"domain_id\"=:id AND \"name\"=':name' AND \"type\"=':type'" );
  
 -		declare( suffix, "sql-zonedelete","Delete all records for this zone","DELETE FROM records WHERE domain_id=':id'" );
 -		declare( suffix, "sql-zoneinfo","Get domain info","SELECT d.id, d.name, d.type, d.master, d.last_check, r.content FROM domains AS d LEFT JOIN records AS r ON d.id=r.domain_id WHERE ( d.name=':name' AND r.type='SOA' ) OR ( d.name=':name' AND r.domain_id IS NULL )" );
-+		declare( suffix, "sql-zonedelete","Delete all records for this zone","DELETE FROM records WHERE domain_id=:id" );
-+		declare( suffix, "sql-zoneinfo","Get domain info","SELECT d.id, d.name, d.type, d.master, d.last_check, r.content FROM domains d LEFT JOIN records r ON ( d.id=r.domain_id AND r.type='SOA' ) WHERE d.name=':name' AND d.status='A'" );
++		declare( suffix, "sql-zonedelete","Delete all records for this zone","DELETE FROM \"records\" WHERE \"domain_id\"=:id" );
++		declare( suffix, "sql-zoneinfo","Get domain info","SELECT d.\"id\", d.\"name\", d.\"type\", d.\"master\", d.\"last_check\", r.\"content\" FROM \"domains\" d LEFT JOIN \"records\" r ON ( d.\"id\"=r.\"domain_id\" AND r.\"type\"='SOA' ) WHERE d.\"name\"=':name' AND d.\"status\"='A'" );
  
  		declare( suffix, "sql-transactbegin", "Start transaction", "BEGIN" );
  		declare( suffix, "sql-transactend", "Finish transaction", "COMMIT" );
  		declare( suffix, "sql-transactabort", "Abort transaction", "ROLLBACK" );
  
- 		declare( suffix, "sql-insert-slave","Add slave domain", "INSERT INTO domains ( name, type, master, account ) VALUES ( '%s', 'SLAVE', '%s', '%s' )" );
+-		declare( suffix, "sql-insert-slave","Add slave domain", "INSERT INTO domains ( name, type, master, account ) VALUES ( '%s', 'SLAVE', '%s', '%s' )" );
 -		declare( suffix, "sql-insert-record","Feed record into table", "INSERT INTO records ( domain_id, name, type, ttl, prio, content ) VALUES ( '%d', '%s', '%s', '%d', '%d', '%s' )" );
-+		declare( suffix, "sql-insert-record","Feed record into table", "INSERT INTO records ( domain_id, name, type, ttl, prio, content ) VALUES ( %d, '%s', '%s', %d, %d, '%s' )" );
++		declare( suffix, "sql-insert-slave","Add slave domain", "INSERT INTO \"domains\" ( \"name\", \"type\", \"master\", \"account\" ) VALUES ( '%s', 'SLAVE', '%s', '%s' )" );
++		declare( suffix, "sql-insert-record","Feed record into table", "INSERT INTO \"records\" ( \"domain_id\", \"name\", \"type\", \"ttl\", \"prio\", \"content\" ) VALUES ( %d, '%s', '%s', %d, %d, '%s' )" );
++
++		declare( suffix, "sql-update-serial", "Set zone to notified", "UPDATE \"domains\" SET \"notified_serial\"=%d WHERE \"id\"=%d" );
++		declare( suffix, "sql-update-lastcheck", "Set time of last check", "UPDATE \"domains\" SET \"last_check\"=%d WHERE \"id\"=%d" );
  
 -		declare( suffix, "sql-update-serial", "Set zone to notified", "UPDATE domains SET notified_serial='%d' WHERE id='%d'" );
 -		declare( suffix, "sql-update-lastcheck", "Set time of last check", "UPDATE domains SET last_check='%d' WHERE id='%d'" );
-+		declare( suffix, "sql-update-serial", "Set zone to notified", "UPDATE domains SET notified_serial=%d WHERE id=%d" );
-+		declare( suffix, "sql-update-lastcheck", "Set time of last check", "UPDATE domains SET last_check=%d WHERE id=%d" );
++		declare( suffix, "sql-master", "Get master record for zone", "SELECT \"master\" FROM \"domains\" WHERE \"name\"=':name' AND \"status\"='A' AND \"type\"='SLAVE'" );
++		declare( suffix, "sql-supermaster","Get supermaster info", "SELECT \"account\" FROM \"supermasters\" WHERE \"ip\"=':ip' AND \"nameserver\"=':ns'" );
  
 -		declare( suffix, "sql-master", "Get master record for zone", "SELECT master FROM domains WHERE name=':name' AND type='SLAVE'" );
-+		declare( suffix, "sql-master", "Get master record for zone", "SELECT master FROM domains WHERE name=':name' AND status='A' AND type='SLAVE'" );
- 		declare( suffix, "sql-supermaster","Get supermaster info", "SELECT account FROM supermasters WHERE ip=':ip' AND nameserver=':ns'" );
+-		declare( suffix, "sql-supermaster","Get supermaster info", "SELECT account FROM supermasters WHERE ip=':ip' AND nameserver=':ns'" );
++		declare( suffix, "sql-infoslaves", "Get all unfresh slaves", "SELECT d.\"id\", d.\"name\", d.\"master\", d.\"notified_serial\", d.\"last_check\", r.\"change_date\", r.\"content\" FROM \"domains\" d LEFT JOIN \"records\" r ON ( d.\"id\"=r.\"domain_id\" AND r.\"type\"='SOA' ) WHERE d.\"status\"='A' AND d.\"type\"='SLAVE'" );
++		declare( suffix, "sql-infomasters", "Get all updated masters", "SELECT d.\"id\", d.\"name\", d.\"master\", d.\"notified_serial\", d.\"last_check\", r.\"change_date\", r.\"content\" FROM \"domains\" d JOIN \"records\" r ON d.\"id\"=r.\"domain_id\" WHERE d.\"status\"='A' AND d.\"type\"='MASTER' AND r.\"type\"='SOA'" );
  
 -		declare( suffix, "sql-infoslaves", "Get all unfresh slaves", "SELECT d.id, d.name, d.master, d.notified_serial, d.last_check, r.change_date, r.content FROM domains AS d LEFT JOIN records AS r ON d.id=r.domain_id WHERE ( d.type='SLAVE' AND r.type='SOA' ) OR ( d.type='SLAVE' AND r.domain_id IS NULL )" );
 -		declare( suffix, "sql-infomasters", "Get all updated masters", "SELECT d.id, d.name, d.master, d.notified_serial, d.last_check, r.change_date, r.content FROM domains AS d, records AS r WHERE d.type='MASTER' AND d.id=r.domain_id AND r.type='SOA'" );
-+		declare( suffix, "sql-infoslaves", "Get all unfresh slaves", "SELECT d.id, d.name, d.master, d.notified_serial, d.last_check, r.change_date, r.content FROM domains d LEFT JOIN records r ON ( d.id=r.domain_id AND r.type='SOA' ) WHERE d.status='A' AND d.type='SLAVE'" );
-+		declare( suffix, "sql-infomasters", "Get all updated masters", "SELECT d.id, d.name, d.master, d.notified_serial, d.last_check, r.change_date, r.content FROM domains d JOIN records r ON d.id=r.domain_id WHERE d.status='A' AND d.type='MASTER' AND r.type='SOA'" );
-+
 +		declare( suffix, "host", "depricated, use host-read and host-write instead","" );
  	}
  
@@ -167,9 +171,9 @@
  
  		setArgPrefix( "opendbx" + suffix );
 -		stringtok( hosts, getArg( "host" ), ", " );
- 
--		idx = odbx_host_index++ % hosts.size();
 -
+-		idx = odbx_host_index++ % hosts.size();
+ 
 -		for( i = 0; i < hosts.size(); i++ )
 +		if( getArg( "host" ).size() > 0 )
  		{
@@ -300,23 +304,23 @@
  
 -		len = snprintf( m_buffer, sizeof( m_buffer ) - 1, "%d", zoneid );
 +		size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, "%d", zoneid );
++
++		if( len < 0 )
++		{
++			L.log( m_myname + " list: Unable to convert zone id to string - format error",  Logger::Error );
++			return false;
++		}
  
 -		if( len < 0 || len > sizeof( m_buffer ) - 1 )
-+		if( len < 0 )
++		if( len > sizeof( m_buffer ) - 1 )
  		{
 -			L.log( m_myname + " list: Unable to convert zone id to string",  Logger::Error );
 -			throw( DBException( "Error: Libc error" ) );
-+			L.log( m_myname + " list: Unable to convert zone id to string - format error",  Logger::Error );
++			L.log( m_myname + " list: Unable to convert zone id to string - insufficient buffer space",  Logger::Error );
 +			return false;
  		}
  
 -		stmt = strbind( ":id", string( m_buffer, len ), getArg( "sql-list" ) );
-+		if( len > sizeof( m_buffer ) - 1 )
-+		{
-+			L.log( m_myname + " list: Unable to convert zone id to string - insufficient buffer space",  Logger::Error );
-+			return false;
-+		}
-+
 +		string stmt = getArg( "sql-list" );
 +		string& stmtref = strbind( ":id", string( m_buffer, len ), stmt );
  
@@ -331,7 +335,7 @@
  	}
  
  	return true;
-@@ -181,23 +201,24 @@
+@@ -181,13 +201,13 @@
  
  void OdbxBackend::lookup( const QType& qtype, const string& qname, DNSPacket* dnspkt, int zoneid )
  {
@@ -347,11 +351,8 @@
 +
  		m_result = NULL;
  		m_qname = qname;
--		
-+
- 		if( zoneid < 0 )
- 		{
- 			if( qtype.getCode() == QType::ANY )
+ 		
+@@ -197,7 +217,8 @@
  			{
  				stmt = getArg( "sql-lookup" );
  			} else {
@@ -369,25 +370,24 @@
 +				stmt = getArg( "sql-lookuptypeid" );
 +				stmtref = strbind( ":type", qtype.getName(), stmt );
  			}
-- 			
-+
+  			
  			size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, "%d", zoneid );
  
 -			if( len < 0 || len > sizeof( m_buffer ) - 1 )
 +			if( len < 0 )
++			{
++				L.log( m_myname + " lookup: Unable to convert zone id to string - format error",  Logger::Error );
++				throw( DBException( "Error: Libc error" ) );
++			}
++
++			if( len > sizeof( m_buffer ) - 1 )
  			{
 -				L.log( m_myname + " lookup: Unable to convert zone id to string",  Logger::Error );
-+				L.log( m_myname + " lookup: Unable to convert zone id to string - format error",  Logger::Error );
++				L.log( m_myname + " lookup: Unable to convert zone id to string - insufficient buffer space",  Logger::Error );
  				throw( DBException( "Error: Libc error" ) );
  			}
  
 -			stmt = strbind( ":id", string( m_buffer, len ), stmt );
-+			if( len > sizeof( m_buffer ) - 1 )
-+			{
-+				L.log( m_myname + " lookup: Unable to convert zone id to string - insufficient buffer space",  Logger::Error );
-+				throw( DBException( "Error: Libc error" ) );
-+			}
-+
 +			stmtref = strbind( ":id", string( m_buffer, len ), stmtref );
  		}
  
@@ -453,19 +453,19 @@
  
 -		if( len < 0 || len > sizeof( m_buffer ) - 1 )
 +		if( len < 0 )
-+		{
-+			L.log( m_myname + " setFresh: Unable to insert values into statement '" + getArg( "sql-update-lastcheck" ) + "' - format error",  Logger::Error );
-+			throw( DBException( "Error: Libc error" ) );
-+		}
-+
-+		if( len > sizeof( m_buffer ) - 1 )
  		{
 -			L.log( m_myname + " setFresh: Unable to insert values into statement '" + getArg( "sql-update-lastcheck" ) + "'",  Logger::Error );
-+			L.log( m_myname + " setFresh: Unable to insert values into statement '" + getArg( "sql-update-lastcheck" ) + "' - insufficient buffer space",  Logger::Error );
++			L.log( m_myname + " setFresh: Unable to insert values into statement '" + getArg( "sql-update-lastcheck" ) + "' - format error",  Logger::Error );
  			throw( DBException( "Error: Libc error" ) );
  		}
  
 -		execStmt( m_buffer, len, false );
++		if( len > sizeof( m_buffer ) - 1 )
++		{
++			L.log( m_myname + " setFresh: Unable to insert values into statement '" + getArg( "sql-update-lastcheck" ) + "' - insufficient buffer space",  Logger::Error );
++			throw( DBException( "Error: Libc error" ) );
++		}
++
 +		if( !execStmt( m_buffer, len, WRITE ) )
 +		{
 +			throw( DBException( "Error: DB statement failed" ) );
@@ -490,10 +490,10 @@
 +			L.log( m_myname + " setFresh: Master server is unreachable",  Logger::Error );
 +			throw( DBException( "Error: Server unreachable" ) );
 +		}
++
++		size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, getArg( "sql-update-serial" ).c_str(), serial, domain_id );
  
 -		if( len < 0 || len > sizeof( m_buffer ) - 1 )
-+		size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, getArg( "sql-update-serial" ).c_str(), serial, domain_id );
-+
 +		if( len < 0 )
  		{
 -			L.log( m_myname + " setNotified: Unable to insert values into statement '" + getArg( "sql-update-serial" ) + "'",  Logger::Error );
@@ -619,15 +619,15 @@
  			{
 -				stmt = strbind( ":ip", escape( ip ), getArg( "sql-supermaster" ) );
 -				stmt = strbind( ":ns", escape( i->content ), stmt );
--
--				execStmt( stmt.c_str(), stmt.size(), true );
 +				string stmt = getArg( "sql-supermaster" );
 +				string& stmtref = strbind( ":ip", escape( ip, READ ), stmt );
 +				stmtref = strbind( ":ns", escape( i->content, READ ), stmtref );
  
--				if( !getRecord() ) { return false; }
+-				execStmt( stmt.c_str(), stmt.size(), true );
 +				if( !execStmt( stmtref.c_str(), stmtref.size(), READ ) ) { return false; }
  
+-				if( !getRecord() ) { return false; }
+-
 -				do
 +				if( getRecord( READ ) )
  				{
@@ -637,17 +637,15 @@
  					}
 -				}
 -				while( getRecord() );
- 
--				*ddb=this;
--				return true;
-+					while( getRecord( READ ) );
 +
-+					*ddb=this;
-+					return true;
-+				}
++					while( getRecord( READ ) );
+ 
+ 				*ddb=this;
+ 				return true;
  			}
  		}
  	}
++	}
  	catch ( exception& e )
  	{
  		L.log( m_myname + " superMasterBackend: Caught STL exception - " + e.what(),  Logger::Error );
@@ -674,27 +672,27 @@
 +			L.log( m_myname + " createSlaveDomain: Master server is unreachable",  Logger::Error );
 +			return false;
 +		}
- 
--		if( len < 0 || len > sizeof( m_buffer ) - 1 )
++
 +		string tmp = domain;
 +		size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, getArg( "sql-insert-slave" ).c_str(), escape( toLowerByRef( tmp ), WRITE ).c_str(),
 +			escape( ip, WRITE ).c_str(), escape( account, WRITE ).c_str() );
-+
+ 
+-		if( len < 0 || len > sizeof( m_buffer ) - 1 )
 +		if( len < 0 )
  		{
 -			L.log( m_myname + " createSlaveDomain: Unable to insert values in statement '" + getArg( "sql-insert-slave" ) + "'",  Logger::Error );
 -			throw( DBException( "Error: Libc error" ) );
 +			L.log( m_myname + " createSlaveDomain: Unable to insert values in statement '" + getArg( "sql-insert-slave" ) + "' - format error",  Logger::Error );
 +			return false;
-+		}
-+
+ 		}
+ 
+-		execStmt( m_buffer, len, false );
 +		if( len > sizeof( m_buffer ) - 1 )
 +		{
 +			L.log( m_myname + " createSlaveDomain: Unable to insert values in statement '" + getArg( "sql-insert-slave" ) + "' - insufficient buffer space",  Logger::Error );
 +			return false;
- 		}
- 
--		execStmt( m_buffer, len, false );
++		}
++
 +		if( !execStmt( m_buffer, len, WRITE ) ) { return false; }
  	}
  	catch ( exception& e )
@@ -723,13 +721,13 @@
 +			L.log( m_myname + " feedRecord: Master server is unreachable",  Logger::Error );
 +			return false;
 +		}
- 
--		if( len < 0 || len > sizeof( m_buffer ) - 1 )
++
 +		string tmp = rr.qname;
 +		size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, getArg( "sql-insert-record" ).c_str(), rr.domain_id,
 +			escape( toLowerByRef( tmp ), WRITE ).c_str(), rr.qtype.getName().c_str(), rr.ttl, rr.priority,
 +			escape( rr.content, WRITE ).c_str() );
-+
+ 
+-		if( len < 0 || len > sizeof( m_buffer ) - 1 )
 +		if( len < 0 )
  		{
 -			L.log( m_myname + " feedRecord: Unable to insert values in statement '" + getArg( "sql-insert-record" ) + "'",  Logger::Error );
@@ -778,10 +776,10 @@
 -		len = snprintf( m_buffer, sizeof( m_buffer ) - 1, "%d", zoneid );
 +		string& stmtref = const_cast<string&>( getArg( "sql-transactbegin" ) );
 +		if( !execStmt( stmtref.c_str(), stmtref.size(), WRITE ) ) { return false; }
++
++		size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, "%d", zoneid );
  
 -		if( len < 0 || len > sizeof( m_buffer ) - 1 )
-+		size_t len = snprintf( m_buffer, sizeof( m_buffer ) - 1, "%d", zoneid );
-+
 +		if( len < 0 )
  		{
 -			L.log( m_myname + " lookup: Unable to convert zone id to string",  Logger::Error );
@@ -855,7 +853,7 @@
  
  	return true;
 --- modules/opendbxbackend/odbxprivate.cc	2006-03-15 19:29:39.000000000 +0100
-+++ modules/opendbxbackend/odbxprivate.cc	2006-09-02 01:02:36.000000000 +0200
++++ modules/opendbxbackend/odbxprivate.cc	2007-01-21 18:00:22.000000000 +0100
 @@ -2,7 +2,50 @@
  
  
@@ -885,7 +883,7 @@
 +
 +		if( ( err = odbx_init( &(m_handle[type]), getArg( "backend" ).c_str(), hosts[h].c_str(), getArg( "port" ).c_str() ) ) == ODBX_ERR_SUCCESS )
 +		{
-+			if( ( err = odbx_bind_simple( m_handle[type], getArg( "database" ).c_str(), getArg( "username" ).c_str(), getArg( "password" ).c_str() ) ) == ODBX_ERR_SUCCESS )
++			if( ( err = odbx_bind( m_handle[type], getArg( "database" ).c_str(), getArg( "username" ).c_str(), getArg( "password" ).c_str(), ODBX_BIND_SIMPLE ) ) == ODBX_ERR_SUCCESS )
 +			{
 +				L.log( m_myname + " Database connection (" + (type ? "write" : "read") + ") to '" + hosts[h] + "' succeeded", Logger::Notice );
 +				return true;
@@ -918,7 +916,7 @@
 -		L.log( m_myname + " execStmt: Unable to execute query - " + string( odbx_error( m_handle, err ) ),  Logger::Error );
 -		throw( AhuException( "Error: odbx_query() failed" ) );
 +		L.log( m_myname + " execStmt: Unable to execute query - " + string( odbx_error( m_handle[type], err ) ),  Logger::Error );
-+		connectTo( m_hosts[type], type );
++		if( odbx_error_type( m_handle[type], err ) < 0 ) { connectTo( m_hosts[type], type ); }
 +		return false;
  	}
  
