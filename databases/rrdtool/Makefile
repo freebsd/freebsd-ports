@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--enable-perl-site-install --disable-tcl
 
-OPTIONS=	PYTHON_MODULE	"Define if you want PYTHON bindings" off
+OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_PYTHON_MODULE)
