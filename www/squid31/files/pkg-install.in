@@ -16,18 +16,11 @@ squid_user="%%SQUID_UID%%"
 squid_group="%%SQUID_GID%%"
 squid_gid=100
 squid_uid=100
-# Try to catch the case where the $squid_user might have been created with an
-# id greater than or equal 3128. The valid exception is "nobody".
-nobody_uid=65534
-nobody_gid=65534
-squid_oldgid=3128
-squid_olduid=3128
-unset wrong_id
 case $2 in
 PRE-INSTALL)
 	echo "===> Pre-installation configuration for ${pkgname}"
 	if ! pw groupshow ${squid_group} -q >/dev/null ; then
-		echo "There is no group '${squid_group}' on this system, so I will try to create it:"
+		echo "There is no group '${squid_group}' on this system, so I will try to create it (using group id ${squid_gid}):"
 		if ! pw groupadd ${squid_group} -g ${squid_gid} -q ; then
 			echo "Failed to create group \"${squid_group}\"!" >&2
 			echo "Please create it manually." >&2
@@ -37,16 +30,11 @@ PRE-INSTALL)
 		fi
 	else
 		echo "I will use the existing group '${squid_group}':"
-		current_gid=`pw groupshow ${squid_group}|cut -f 3 -d :`
-		if [ ${current_gid} -ge ${squid_oldgid} \
-		    -a ${current_gid} -ne ${nobody_gid} ]; then
-			wrong_id=1
-		fi	
 	fi
 	pw groupshow ${squid_group}
 
 	if ! pw usershow ${squid_user} -q >/dev/null ; then
-		echo "There is no account '${squid_user}' on this system, so I will try to create it:"
+		echo "There is no account '${squid_user}' on this system, so I will try to create it (using user id ${squid_uid}):"
 		if ! pw useradd -q -n ${squid_user} \
 		    -u ${squid_uid} -g ${squid_group} \
 	  	    -c "Squid caching-proxy pseudo user" \
@@ -60,53 +48,8 @@ PRE-INSTALL)
 		fi
 	else
 		echo "I will use the existing user '${squid_user}':"
-		current_uid=`id -u ${squid_user}`
-		if [ ${current_uid} -ge ${squid_olduid} \
-		    -a ${current_uid} -ne ${nobody_uid} ];
-		then
-			wrong_id=1
-		fi
 	fi
 	pw usershow ${squid_user}
-	if [ "${wrong_id}" ]; then
-		echo ""
-		echo " * NOTICE *"
-		echo ""
-		echo "The Squid pseudo-user's uid and/or gid have been found"
-		echo "to be greater than or equal 3128."
-		echo ""
-		echo "This is not a problem as such, but violates the FreeBSD"
-		echo "ports' principle that a ports must not claim a uid greater"
-		echo "than 999."
-		echo ""
-		echo "Since version 2.5.4_11, the Squid user is thus created"
-		echo "with an id of ${squid_uid}:${squid_gid} while earlier versions of this"
-		echo "port used the first unused uid/gid greater than or"
-		echo "equal 3128."
-		echo ""
-		echo "If you want to change the existing Squid user's id, run"
-		echo "'make changeuser' after the installation has completed."
-		echo "If you installed this port via a package, issue the"
-		echo "following commands as root:"
-		echo ""
-		echo "pw userdel -u ${current_uid}"
-		echo "pw groupadd -n ${squid_group} -g ${squid_gid}"
-		echo "pw useradd -n ${squid_user} -u ${squid_uid} \\"
-		echo "    -c \"Squid caching-proxy pseudo user\" \\"
-		echo "    -g ${squid_group} -d ${squid_base} -s /sbin/nologin \\"
-		echo "    -h -"
-		echo "find -H ${PKG_PREFIX} -user ${current_uid} -exec chown ${squid_user} {} \\;"
-		echo "find -H ${PKG_PREFIX} -group ${current_gid} -exec chgrp ${squid_group} {} \\;"
-		echo ""
-		echo "In case you have installed third party software for Squid"
-		echo "like squidGuard, you should additionally run:"
-		echo "find -H /var -user ${current_uid} -exec chown ${squid_user} {} \\;"
-		echo "find -H /var -group ${current_gid} -exec chgrp ${squid_group} {} \\;"
-		echo ""
-		if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-			sleep 30
-		fi
-	fi
 	for dir in cache logs; do
 	if [ ! -d ${squid_base}/${dir} ]; then
 		echo "Creating ${squid_base}/${dir}..."

@@ -98,6 +98,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	HTTP Caching Proxy
 
+LATEST_LINK=	squid25
+
 CONFLICTS=	squid-2.[^5]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

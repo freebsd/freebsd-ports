@@ -1,0 +1,470 @@
+Patch 2 of 2 to integrate the icap-2_6 branch into the FreeBSD squid port.
+
+Created by Thomas-Martin Seck <tmseck@netcologne.de>.
+
+This patch simulates the autotools bootstrap necessary after applying the
+ICAP patchset.
+
+Please see icap-2.6-core.patch for further information.
+
+Patch last updated: 2006-11-04
+
+--- configure.orig Sat Nov  4 16:28:41 2006
++++ configure	Sat Nov  4 16:31:58 2006
+@@ -312,7 +312,7 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE build build_cpu build_vendor build_os host host_cpu host_vendor host_os PKGCONFIG CGIEXT ENABLE_WIN32SPECIFIC_TRUE ENABLE_WIN32SPECIFIC_FALSE ENABLE_MINGW32SPECIFIC_TRUE ENABLE_MINGW32SPECIFIC_FALSE WIN32_PSAPI CACHE_HTTP_PORT CACHE_ICP_PORT LIBDLMALLOC LIB_MALLOC STORE_OBJS STORE_LIBS STORE_MODULES NEED_DISKD_TRUE NEED_DISKD_FALSE USE_AIOPS_WIN32_TRUE USE_AIOPS_WIN32_FALSE NEED_COSSDUMP_TRUE NEED_COSSDUMP_FALSE REPL_POLICIES REPL_OBJS REPL_LIBS ENABLE_PINGER_TRUE ENABLE_PINGER_FALSE USE_DELAY_POOLS_TRUE USE_DELAY_POOLS_FALSE USE_SNMP_TRUE USE_SNMP_FALSE SNMPLIB makesnmplib ENABLE_HTCP_TRUE ENABLE_HTCP_FALSE ENABLE_SSL_TRUE ENABLE_SSL_FALSE NEED_OWN_MD5_TRUE NEED_OWN_MD5_FALSE SSLLIB ERR_DEFAULT_LANGUAGE ERR_LANGUAGES MAKE_LEAKFINDER_TRUE MAKE_LEAKFINDER_FALSE USE_DNSSERVER_TRUE USE_DNSSERVER_FALSE OPT_DEFAULT_HOSTS AUTH_MODULES AUTH_OBJS AUTH_LIBS BASIC_AUTH_HELPERS NTLM_AUTH_HELPERS DIGEST_AUTH_HELPERS NEGOTIATE_AUTH_HELPERS EXTERNAL_ACL_HELPERS CPP EGREP LIBSASL ENABLE_UNLINKD_TRUE ENABLE_UNLINKD_FALSE RANLIB ac_ct_RANLIB LN_S SH FALSE TRUE RM MV MKDIR LN PERL AR AR_R ALLOCA CRYPTLIB LIB_EPOLL LIB_LDAP LIB_LBER LIB_DB USE_POLL_TRUE USE_POLL_FALSE USE_EPOLL_TRUE USE_EPOLL_FALSE USE_SELECT_TRUE USE_SELECT_FALSE USE_SELECT_SIMPLE_TRUE USE_SELECT_SIMPLE_FALSE USE_SELECT_WIN32_TRUE USE_SELECT_WIN32_FALSE USE_KQUEUE_TRUE USE_KQUEUE_FALSE NEED_OWN_SNPRINTF_TRUE NEED_OWN_SNPRINTF_FALSE NEED_OWN_STRSEP_TRUE NEED_OWN_STRSEP_FALSE REGEXLIB LIBREGEX LIBOBJS XTRA_OBJS XTRA_LIBS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE build build_cpu build_vendor build_os host host_cpu host_vendor host_os PKGCONFIG CGIEXT ENABLE_WIN32SPECIFIC_TRUE ENABLE_WIN32SPECIFIC_FALSE ENABLE_MINGW32SPECIFIC_TRUE ENABLE_MINGW32SPECIFIC_FALSE WIN32_PSAPI CACHE_HTTP_PORT CACHE_ICP_PORT LIBDLMALLOC LIB_MALLOC STORE_OBJS STORE_LIBS STORE_MODULES NEED_DISKD_TRUE NEED_DISKD_FALSE USE_AIOPS_WIN32_TRUE USE_AIOPS_WIN32_FALSE NEED_COSSDUMP_TRUE NEED_COSSDUMP_FALSE REPL_POLICIES REPL_OBJS REPL_LIBS ENABLE_PINGER_TRUE ENABLE_PINGER_FALSE USE_DELAY_POOLS_TRUE USE_DELAY_POOLS_FALSE USE_ICAP_TRUE USE_ICAP_FALSE USE_SNMP_TRUE USE_SNMP_FALSE SNMPLIB makesnmplib ENABLE_HTCP_TRUE ENABLE_HTCP_FALSE ENABLE_SSL_TRUE ENABLE_SSL_FALSE NEED_OWN_MD5_TRUE NEED_OWN_MD5_FALSE SSLLIB ERR_DEFAULT_LANGUAGE ERR_LANGUAGES MAKE_LEAKFINDER_TRUE MAKE_LEAKFINDER_FALSE USE_DNSSERVER_TRUE USE_DNSSERVER_FALSE OPT_DEFAULT_HOSTS AUTH_MODULES AUTH_OBJS AUTH_LIBS BASIC_AUTH_HELPERS NTLM_AUTH_HELPERS DIGEST_AUTH_HELPERS NEGOTIATE_AUTH_HELPERS EXTERNAL_ACL_HELPERS CPP EGREP LIBSASL ENABLE_UNLINKD_TRUE ENABLE_UNLINKD_FALSE RANLIB ac_ct_RANLIB LN_S SH FALSE TRUE RM MV MKDIR LN PERL AR AR_R ALLOCA CRYPTLIB LIB_EPOLL LIB_LDAP LIB_LBER LIB_DB USE_POLL_TRUE USE_POLL_FALSE USE_EPOLL_TRUE USE_EPOLL_FALSE USE_SELECT_TRUE USE_SELECT_FALSE USE_SELECT_SIMPLE_TRUE USE_SELECT_SIMPLE_FALSE USE_SELECT_WIN32_TRUE USE_SELECT_WIN32_FALSE USE_KQUEUE_TRUE USE_KQUEUE_FALSE NEED_OWN_SNPRINTF_TRUE NEED_OWN_SNPRINTF_FALSE NEED_OWN_STRNSTR_TRUE NEED_OWN_STRNSTR_FALSE NEED_OWN_STRCASESTR_TRUE NEED_OWN_STRCASESTR_FALSE NEED_OWN_STRSEP_TRUE NEED_OWN_STRSEP_FALSE REGEXLIB LIBREGEX LIBOBJS XTRA_OBJS XTRA_LIBS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -890,6 +890,7 @@
+ 			  to build your custom policy
+   --enable-icmp           Enable ICMP pinging
+   --enable-delay-pools    Enable delay pools to limit bandwidth usage
++  --enable-icap-support   	   Enable ICAP client capability
+   --enable-useragent-log  Enable logging of User-Agent header
+   --enable-referer-log    Enable logging of Referer header
+   --disable-wccp          Disable Web Cache Coordination V1 Protocol
+@@ -3954,6 +3955,40 @@
+ fi;
+ 
+ 
++
++if false; then
++  USE_ICAP_TRUE=
++  USE_ICAP_FALSE='#'
++else
++  USE_ICAP_TRUE='#'
++  USE_ICAP_FALSE=
++fi
++
++# Check whether --enable-icap-support or --disable-icap-support was given.
++if test "${enable_icap_support+set}" = set; then
++  enableval="$enable_icap_support"
++   if test "$enableval" = "yes" ; then
++    echo "ICAP support enabled"
++
++cat >>confdefs.h <<\_ACEOF
++#define HS_FEAT_ICAP 1
++_ACEOF
++
++
++
++if true; then
++  USE_ICAP_TRUE=
++  USE_ICAP_FALSE='#'
++else
++  USE_ICAP_TRUE='#'
++  USE_ICAP_FALSE=
++fi
++
++  fi
++
++fi;
++
++
+ # Check whether --enable-useragent-log or --disable-useragent-log was given.
+ if test "${enable_useragent_log+set}" = set; then
+   enableval="$enable_useragent_log"
+@@ -15923,6 +15958,8 @@
+ 
+ 
+ 
++
++
+ for ac_func in \
+ 	bcopy \
+ 	backtrace_symbols_fd \
+@@ -15971,6 +16008,8 @@
+ 	srand48 \
+ 	srandom \
+ 	statfs \
++	strnstr \
++	strcasestr \
+ 	strsep \
+ 	strtoll \
+ 	sysconf \
+@@ -16430,6 +16469,52 @@
+ 
+ 
+ if false; then
++  NEED_OWN_STRNSTR_TRUE=
++  NEED_OWN_STRNSTR_FALSE='#'
++else
++  NEED_OWN_STRNSTR_TRUE='#'
++  NEED_OWN_STRNSTR_FALSE=
++fi
++
++if test "$ac_cv_func_strnstr" = "no" || test "$ac_cv_func_vstrnstr" = "no" ; then
++
++
++if true; then
++  NEED_OWN_STRNSTR_TRUE=
++  NEED_OWN_STRNSTR_FALSE='#'
++else
++  NEED_OWN_STRNSTR_TRUE='#'
++  NEED_OWN_STRNSTR_FALSE=
++fi
++
++fi
++
++
++
++if false; then
++  NEED_OWN_STRCASESTR_TRUE=
++  NEED_OWN_STRCASESTR_FALSE='#'
++else
++  NEED_OWN_STRCASESTR_TRUE='#'
++  NEED_OWN_STRCASESTR_FALSE=
++fi
++
++if test "$ac_cv_func_strcasestr" = "no" || test "$ac_cv_func_vstrcasestr" = "no"; then
++
++
++if true; then
++  NEED_OWN_STRCASESTR_TRUE=
++  NEED_OWN_STRCASESTR_FALSE='#'
++else
++  NEED_OWN_STRCASESTR_TRUE='#'
++  NEED_OWN_STRCASESTR_FALSE=
++fi
++
++fi
++
++
++
++if false; then
+   NEED_OWN_STRSEP_TRUE=
+   NEED_OWN_STRSEP_FALSE='#'
+ else
+@@ -17947,6 +18032,20 @@
+ Usually this means the macro was only invoked conditionally." >&2;}
+    { (exit 1); exit 1; }; }
+ fi
++if test -z "${USE_ICAP_TRUE}" && test -z "${USE_ICAP_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"USE_ICAP\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"USE_ICAP\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
++if test -z "${USE_ICAP_TRUE}" && test -z "${USE_ICAP_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"USE_ICAP\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"USE_ICAP\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
+ if test -z "${USE_SNMP_TRUE}" && test -z "${USE_SNMP_FALSE}"; then
+   { { echo "$as_me:$LINENO: error: conditional \"USE_SNMP\" was never defined.
+ Usually this means the macro was only invoked conditionally." >&5
+@@ -18101,6 +18200,34 @@
+ Usually this means the macro was only invoked conditionally." >&2;}
+    { (exit 1); exit 1; }; }
+ fi
++if test -z "${NEED_OWN_STRNSTR_TRUE}" && test -z "${NEED_OWN_STRNSTR_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
++if test -z "${NEED_OWN_STRNSTR_TRUE}" && test -z "${NEED_OWN_STRNSTR_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"NEED_OWN_STRNSTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
++if test -z "${NEED_OWN_STRCASESTR_TRUE}" && test -z "${NEED_OWN_STRCASESTR_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
++if test -z "${NEED_OWN_STRCASESTR_TRUE}" && test -z "${NEED_OWN_STRCASESTR_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"NEED_OWN_STRCASESTR\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
+ if test -z "${NEED_OWN_STRSEP_TRUE}" && test -z "${NEED_OWN_STRSEP_FALSE}"; then
+   { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRSEP\" was never defined.
+ Usually this means the macro was only invoked conditionally." >&5
+@@ -18766,6 +18893,8 @@
+ s,@ENABLE_PINGER_FALSE@,$ENABLE_PINGER_FALSE,;t t
+ s,@USE_DELAY_POOLS_TRUE@,$USE_DELAY_POOLS_TRUE,;t t
+ s,@USE_DELAY_POOLS_FALSE@,$USE_DELAY_POOLS_FALSE,;t t
++s,@USE_ICAP_TRUE@,$USE_ICAP_TRUE,;t t
++s,@USE_ICAP_FALSE@,$USE_ICAP_FALSE,;t t
+ s,@USE_SNMP_TRUE@,$USE_SNMP_TRUE,;t t
+ s,@USE_SNMP_FALSE@,$USE_SNMP_FALSE,;t t
+ s,@SNMPLIB@,$SNMPLIB,;t t
+@@ -18599,6 +18728,10 @@
+ s,@USE_KQUEUE_FALSE@,$USE_KQUEUE_FALSE,;t t
+ s,@NEED_OWN_SNPRINTF_TRUE@,$NEED_OWN_SNPRINTF_TRUE,;t t
+ s,@NEED_OWN_SNPRINTF_FALSE@,$NEED_OWN_SNPRINTF_FALSE,;t t
++s,@NEED_OWN_STRNSTR_TRUE@,$NEED_OWN_STRNSTR_TRUE,;t t
++s,@NEED_OWN_STRNSTR_FALSE@,$NEED_OWN_STRNSTR_FALSE,;t t
++s,@NEED_OWN_STRCASESTR_TRUE@,$NEED_OWN_STRCASESTR_TRUE,;t t
++s,@NEED_OWN_STRCASESTR_FALSE@,$NEED_OWN_STRCASESTR_FALSE,;t t
+ s,@NEED_OWN_STRSEP_TRUE@,$NEED_OWN_STRSEP_TRUE,;t t
+ s,@NEED_OWN_STRSEP_FALSE@,$NEED_OWN_STRSEP_FALSE,;t t
+ s,@REGEXLIB@,$REGEXLIB,;t t
+--- include/autoconf.h.in.orig Wed Jul 12 17:00:31 2006
++++ include/autoconf.h.in	Sat Aug  5 16:18:25 2006
+@@ -454,6 +454,9 @@
+ /* Define to 1 if you have the <stdlib.h> header file. */
+ #undef HAVE_STDLIB_H
+ 
++/* Define to 1 if you have the `strcasestr' function. */
++#undef HAVE_STRCASESTR
++
+ /* Define to 1 if you have the `strerror' function. */
+ #undef HAVE_STRERROR
+ 
+@@ -463,6 +466,9 @@
+ /* Define to 1 if you have the <string.h> header file. */
+ #undef HAVE_STRING_H
+ 
++/* Define to 1 if you have the `strnstr' function. */
++#undef HAVE_STRNSTR
++
+ /* Define to 1 if you have the `strsep' function. */
+ #undef HAVE_STRSEP
+ 
+@@ -587,6 +593,9 @@
+ 
+ /* Some systems support __va_copy */
+ #undef HAVE___VA_COPY
++
++/* Content filtering via ICAP servers. */
++#undef HS_FEAT_ICAP
+ 
+ /* By default (for now anyway) Squid includes options which allows the cache
+    administrator to violate the HTTP protocol specification in terms of cache
+--- lib/Makefile.in.orig Fri Sep 22 11:09:48 2006
++++ lib/Makefile.in	Sat Sep 19 20:05:28 2006
+@@ -62,20 +62,23 @@
+ am__libmiscutil_a_SOURCES_DIST = Array.c base64.c getfullhostname.c \
+ 	hash.c heap.c html_quote.c iso3307.c md5.c radix.c rfc1035.c \
+ 	rfc1123.c rfc1738.c rfc2617.c safe_inet_addr.c snprintf.c \
+-	splay.c Stack.c strsep.c stub_memaccount.c util.c uudecode.c \
+-	win32lib.c
++	splay.c Stack.c strnstr.c strcasestr.c strsep.c \
++	stub_memaccount.c util.c uudecode.c win32lib.c
+ @NEED_OWN_MD5_TRUE@am__objects_1 = md5.$(OBJEXT)
+ @NEED_OWN_SNPRINTF_TRUE@am__objects_2 = snprintf.$(OBJEXT)
+-@NEED_OWN_STRSEP_TRUE@am__objects_3 = strsep.$(OBJEXT)
+-@ENABLE_MINGW32SPECIFIC_TRUE@am__objects_4 = win32lib.$(OBJEXT)
++@NEED_OWN_STRNSTR_TRUE@am__objects_3 = strnstr.$(OBJEXT)
++@NEED_OWN_STRCASESTR_TRUE@am__objects_4 = strcasestr.$(OBJEXT)
++@NEED_OWN_STRSEP_TRUE@am__objects_5 = strsep.$(OBJEXT)
++@ENABLE_MINGW32SPECIFIC_TRUE@am__objects_6 = win32lib.$(OBJEXT)
+ am_libmiscutil_a_OBJECTS = Array.$(OBJEXT) base64.$(OBJEXT) \
+ 	getfullhostname.$(OBJEXT) hash.$(OBJEXT) heap.$(OBJEXT) \
+ 	html_quote.$(OBJEXT) iso3307.$(OBJEXT) $(am__objects_1) \
+ 	radix.$(OBJEXT) rfc1035.$(OBJEXT) rfc1123.$(OBJEXT) \
+ 	rfc1738.$(OBJEXT) rfc2617.$(OBJEXT) safe_inet_addr.$(OBJEXT) \
+ 	$(am__objects_2) splay.$(OBJEXT) Stack.$(OBJEXT) \
+-	$(am__objects_3) stub_memaccount.$(OBJEXT) util.$(OBJEXT) \
+-	uudecode.$(OBJEXT) $(am__objects_4)
++	$(am__objects_3) $(am__objects_4) $(am__objects_5) \
++	stub_memaccount.$(OBJEXT) util.$(OBJEXT) uudecode.$(OBJEXT) \
++	$(am__objects_6)
+ libmiscutil_a_OBJECTS = $(am_libmiscutil_a_OBJECTS)
+ libntlmauth_a_AR = $(AR) $(ARFLAGS)
+ libntlmauth_a_DEPENDENCIES = @LIBOBJS@
+@@ -190,6 +193,10 @@
+ NEED_OWN_MD5_TRUE = @NEED_OWN_MD5_TRUE@
+ NEED_OWN_SNPRINTF_FALSE = @NEED_OWN_SNPRINTF_FALSE@
+ NEED_OWN_SNPRINTF_TRUE = @NEED_OWN_SNPRINTF_TRUE@
++NEED_OWN_STRCASESTR_FALSE = @NEED_OWN_STRCASESTR_FALSE@
++NEED_OWN_STRCASESTR_TRUE = @NEED_OWN_STRCASESTR_TRUE@
++NEED_OWN_STRNSTR_FALSE = @NEED_OWN_STRNSTR_FALSE@
++NEED_OWN_STRNSTR_TRUE = @NEED_OWN_STRNSTR_TRUE@
+ NEED_OWN_STRSEP_FALSE = @NEED_OWN_STRSEP_FALSE@
+ NEED_OWN_STRSEP_TRUE = @NEED_OWN_STRSEP_TRUE@
+ NEGOTIATE_AUTH_HELPERS = @NEGOTIATE_AUTH_HELPERS@
+@@ -229,6 +236,8 @@
+ USE_DNSSERVER_TRUE = @USE_DNSSERVER_TRUE@
+ USE_EPOLL_FALSE = @USE_EPOLL_FALSE@
+ USE_EPOLL_TRUE = @USE_EPOLL_TRUE@
++USE_ICAP_FALSE = @USE_ICAP_FALSE@
++USE_ICAP_TRUE = @USE_ICAP_TRUE@
+ USE_KQUEUE_FALSE = @USE_KQUEUE_FALSE@
+ USE_KQUEUE_TRUE = @USE_KQUEUE_TRUE@
+ USE_POLL_FALSE = @USE_POLL_FALSE@
+@@ -284,6 +293,10 @@
+ target_alias = @target_alias@
+ @NEED_OWN_SNPRINTF_FALSE@SNPRINTFSOURCE = 
+ @NEED_OWN_SNPRINTF_TRUE@SNPRINTFSOURCE = snprintf.c
++@NEED_OWN_STRNSTR_FALSE@STRNSTRSOURCE = 
++@NEED_OWN_STRNSTR_TRUE@STRNSTRSOURCE = strnstr.c
++@NEED_OWN_STRCASESTR_FALSE@STRCASESTRSOURCE = 
++@NEED_OWN_STRCASESTR_TRUE@STRCASESTRSOURCE = strcasestr.c
+ @NEED_OWN_STRSEP_FALSE@STRSEPSOURCE = 
+ @NEED_OWN_STRSEP_TRUE@STRSEPSOURCE = strsep.c
+ @NEED_OWN_MD5_FALSE@MD5SOURCE = 
+@@ -328,6 +341,8 @@
+ 	$(SNPRINTFSOURCE) \
+ 	splay.c \
+ 	Stack.c \
++	$(STRNSTRSOURCE) \
++	$(STRCASESTRSOURCE) \
+ 	$(STRSEPSOURCE) \
+ 	stub_memaccount.c \
+ 	util.c \
+@@ -443,6 +458,8 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snprintf.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/splay.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sspwin32.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strcasestr.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strnstr.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strsep.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stub_memaccount.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/util.Po@am__quote@
+-- src/Makefile.in.orig	Sat Nov  4 16:36:15 2006
++++ src/Makefile.in	Sat Nov  4 16:36:27 2006
+@@ -91,14 +91,15 @@
+ 	globals.h gopher.c helper.c htcp.c http.c HttpStatusLine.c \
+ 	HttpHdrCc.c HttpHdrRange.c HttpHdrContRange.c HttpHeader.c \
+ 	HttpHeaderTools.c HttpBody.c HttpMsg.c HttpReply.c \
+-	HttpRequest.c icmp.c icp_v2.c icp_v3.c ident.c internal.c \
+-	ipc.c ipc_win32.c ipcache.c leakfinder.c locrewrite.c \
+-	logfile.c main.c mem.c MemPool.c MemBuf.c mime.c multicast.c \
+-	neighbors.c net_db.c Packer.c pconn.c peer_digest.c \
+-	peer_monitor.c peer_select.c peer_sourcehash.c peer_userhash.c \
+-	protos.h redirect.c referer.c refresh.c send-announce.c \
+-	snmp_core.c snmp_agent.c squid.h ssl.c ssl_support.c stat.c \
+-	StatHist.c String.c stmem.c store.c store_io.c store_client.c \
++	HttpRequest.c icap_common.c icap_reqmod.c icap_respmod.c \
++	icap_opt.c icmp.c icp_v2.c icp_v3.c ident.c internal.c ipc.c \
++	ipc_win32.c ipcache.c leakfinder.c locrewrite.c logfile.c \
++	main.c mem.c MemPool.c MemBuf.c mime.c multicast.c neighbors.c \
++	net_db.c Packer.c pconn.c peer_digest.c peer_monitor.c \
++	peer_select.c peer_sourcehash.c peer_userhash.c protos.h \
++	redirect.c referer.c refresh.c send-announce.c snmp_core.c \
++	snmp_agent.c squid.h ssl.c ssl_support.c stat.c StatHist.c \
++	String.c stmem.c store.c store_io.c store_client.c \
+ 	store_digest.c store_dir.c store_key_md5.c store_log.c \
+ 	store_rebuild.c store_swapin.c store_swapmeta.c \
+ 	store_swapout.c structs.h tools.c typedefs.h unlinkd.c url.c \
+@@ -114,14 +115,17 @@
+ @USE_DNSSERVER_FALSE@am__objects_3 = dns_internal.$(OBJEXT)
+ @USE_DNSSERVER_TRUE@am__objects_3 = dns.$(OBJEXT)
+ @ENABLE_HTCP_TRUE@am__objects_4 = htcp.$(OBJEXT)
+-@ENABLE_MINGW32SPECIFIC_FALSE@am__objects_5 = ipc.$(OBJEXT)
+-@ENABLE_MINGW32SPECIFIC_TRUE@am__objects_5 = ipc_win32.$(OBJEXT)
+-@MAKE_LEAKFINDER_TRUE@am__objects_6 = leakfinder.$(OBJEXT)
+-@USE_SNMP_TRUE@am__objects_7 = snmp_core.$(OBJEXT) \
++@USE_ICAP_TRUE@am__objects_5 = icap_common.$(OBJEXT) \
++@USE_ICAP_TRUE@	icap_reqmod.$(OBJEXT) icap_respmod.$(OBJEXT) \
++@USE_ICAP_TRUE@	icap_opt.$(OBJEXT)
++@ENABLE_MINGW32SPECIFIC_FALSE@am__objects_6 = ipc.$(OBJEXT)
++@ENABLE_MINGW32SPECIFIC_TRUE@am__objects_6 = ipc_win32.$(OBJEXT)
++@MAKE_LEAKFINDER_TRUE@am__objects_7 = leakfinder.$(OBJEXT)
++@USE_SNMP_TRUE@am__objects_8 = snmp_core.$(OBJEXT) \
+ @USE_SNMP_TRUE@	snmp_agent.$(OBJEXT)
+-@ENABLE_SSL_TRUE@am__objects_8 = ssl_support.$(OBJEXT)
+-@ENABLE_UNLINKD_TRUE@am__objects_9 = unlinkd.$(OBJEXT)
+-@ENABLE_WIN32SPECIFIC_TRUE@am__objects_10 = win32.$(OBJEXT)
++@ENABLE_SSL_TRUE@am__objects_9 = ssl_support.$(OBJEXT)
++@ENABLE_UNLINKD_TRUE@am__objects_10 = unlinkd.$(OBJEXT)
++@ENABLE_WIN32SPECIFIC_TRUE@am__objects_11 = win32.$(OBJEXT)
+ am_squid_OBJECTS = access_log.$(OBJEXT) acl.$(OBJEXT) asn.$(OBJEXT) \
+ 	authenticate.$(OBJEXT) cache_cf.$(OBJEXT) \
+ 	CacheDigest.$(OBJEXT) cache_manager.$(OBJEXT) carp.$(OBJEXT) \
+@@ -136,27 +140,27 @@
+ 	HttpHdrRange.$(OBJEXT) HttpHdrContRange.$(OBJEXT) \
+ 	HttpHeader.$(OBJEXT) HttpHeaderTools.$(OBJEXT) \
+ 	HttpBody.$(OBJEXT) HttpMsg.$(OBJEXT) HttpReply.$(OBJEXT) \
+-	HttpRequest.$(OBJEXT) icmp.$(OBJEXT) icp_v2.$(OBJEXT) \
+-	icp_v3.$(OBJEXT) ident.$(OBJEXT) internal.$(OBJEXT) \
+-	$(am__objects_5) ipcache.$(OBJEXT) $(am__objects_6) \
+-	locrewrite.$(OBJEXT) logfile.$(OBJEXT) main.$(OBJEXT) \
+-	mem.$(OBJEXT) MemPool.$(OBJEXT) MemBuf.$(OBJEXT) \
+-	mime.$(OBJEXT) multicast.$(OBJEXT) neighbors.$(OBJEXT) \
+-	net_db.$(OBJEXT) Packer.$(OBJEXT) pconn.$(OBJEXT) \
+-	peer_digest.$(OBJEXT) peer_monitor.$(OBJEXT) \
++	HttpRequest.$(OBJEXT) $(am__objects_5) icmp.$(OBJEXT) \
++	icp_v2.$(OBJEXT) icp_v3.$(OBJEXT) ident.$(OBJEXT) \
++	internal.$(OBJEXT) $(am__objects_6) ipcache.$(OBJEXT) \
++	$(am__objects_7) locrewrite.$(OBJEXT) logfile.$(OBJEXT) \
++	main.$(OBJEXT) mem.$(OBJEXT) MemPool.$(OBJEXT) \
++	MemBuf.$(OBJEXT) mime.$(OBJEXT) multicast.$(OBJEXT) \
++	neighbors.$(OBJEXT) net_db.$(OBJEXT) Packer.$(OBJEXT) \
++	pconn.$(OBJEXT) peer_digest.$(OBJEXT) peer_monitor.$(OBJEXT) \
+ 	peer_select.$(OBJEXT) peer_sourcehash.$(OBJEXT) \
+ 	peer_userhash.$(OBJEXT) redirect.$(OBJEXT) referer.$(OBJEXT) \
+-	refresh.$(OBJEXT) send-announce.$(OBJEXT) $(am__objects_7) \
+-	ssl.$(OBJEXT) $(am__objects_8) stat.$(OBJEXT) \
++	refresh.$(OBJEXT) send-announce.$(OBJEXT) $(am__objects_8) \
++	ssl.$(OBJEXT) $(am__objects_9) stat.$(OBJEXT) \
+ 	StatHist.$(OBJEXT) String.$(OBJEXT) stmem.$(OBJEXT) \
+ 	store.$(OBJEXT) store_io.$(OBJEXT) store_client.$(OBJEXT) \
+ 	store_digest.$(OBJEXT) store_dir.$(OBJEXT) \
+ 	store_key_md5.$(OBJEXT) store_log.$(OBJEXT) \
+ 	store_rebuild.$(OBJEXT) store_swapin.$(OBJEXT) \
+ 	store_swapmeta.$(OBJEXT) store_swapout.$(OBJEXT) \
+-	tools.$(OBJEXT) $(am__objects_9) url.$(OBJEXT) urn.$(OBJEXT) \
++	tools.$(OBJEXT) $(am__objects_10) url.$(OBJEXT) urn.$(OBJEXT) \
+ 	useragent.$(OBJEXT) wais.$(OBJEXT) wccp.$(OBJEXT) \
+-	wccp2.$(OBJEXT) whois.$(OBJEXT) $(am__objects_10)
++	wccp2.$(OBJEXT) whois.$(OBJEXT) $(am__objects_11)
+ nodist_squid_OBJECTS = repl_modules.$(OBJEXT) auth_modules.$(OBJEXT) \
+ 	store_modules.$(OBJEXT) globals.$(OBJEXT) \
+ 	string_arrays.$(OBJEXT)
+@@ -282,6 +286,10 @@
+ NEED_OWN_MD5_TRUE = @NEED_OWN_MD5_TRUE@
+ NEED_OWN_SNPRINTF_FALSE = @NEED_OWN_SNPRINTF_FALSE@
+ NEED_OWN_SNPRINTF_TRUE = @NEED_OWN_SNPRINTF_TRUE@
++NEED_OWN_STRCASESTR_FALSE = @NEED_OWN_STRCASESTR_FALSE@
++NEED_OWN_STRCASESTR_TRUE = @NEED_OWN_STRCASESTR_TRUE@
++NEED_OWN_STRNSTR_FALSE = @NEED_OWN_STRNSTR_FALSE@
++NEED_OWN_STRNSTR_TRUE = @NEED_OWN_STRNSTR_TRUE@
+ NEED_OWN_STRSEP_FALSE = @NEED_OWN_STRSEP_FALSE@
+ NEED_OWN_STRSEP_TRUE = @NEED_OWN_STRSEP_TRUE@
+ NEGOTIATE_AUTH_HELPERS = @NEGOTIATE_AUTH_HELPERS@
+@@ -321,6 +329,8 @@
+ USE_DNSSERVER_TRUE = @USE_DNSSERVER_TRUE@
+ USE_EPOLL_FALSE = @USE_EPOLL_FALSE@
+ USE_EPOLL_TRUE = @USE_EPOLL_TRUE@
++USE_ICAP_FALSE = @USE_ICAP_FALSE@
++USE_ICAP_TRUE = @USE_ICAP_TRUE@
+ USE_KQUEUE_FALSE = @USE_KQUEUE_FALSE@
+ USE_KQUEUE_TRUE = @USE_KQUEUE_TRUE@
+ USE_POLL_FALSE = @USE_POLL_FALSE@
+@@ -376,6 +386,8 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++@USE_ICAP_FALSE@ICAPSOURCE = 
++@USE_ICAP_TRUE@ICAPSOURCE = icap_common.c icap_reqmod.c icap_respmod.c icap_opt.c
+ @USE_DNSSERVER_FALSE@DNSSOURCE = dns_internal.c
+ @USE_DNSSERVER_TRUE@DNSSOURCE = dns.c
+ @USE_DNSSERVER_FALSE@DNSSERVER = 
+@@ -479,6 +491,7 @@
+ 	HttpMsg.c \
+ 	HttpReply.c \
+ 	HttpRequest.c \
++	$(ICAPSOURCE) \
+ 	icmp.c \
+ 	icp_v2.c \
+ 	icp_v3.c \
+@@ -791,6 +804,10 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/helper.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/htcp.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/http.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icap_common.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icap_opt.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icap_reqmod.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icap_respmod.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icmp.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icp_v2.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icp_v3.Po@am__quote@
