@@ -3388,6 +3388,7 @@ giftui		ports/net-p2p/giftui
 gigabase	ports/databases/gigabase
 gillo		ports/games/gillo
 gimageview	ports/graphics/gimageview
+gimmie		ports/deskutils/gimmie
 gimp		ports/graphics/gimp
 gimp-devel	ports/graphics/gimp-devel
 gimp-greycstoration	ports/graphics/gimp-greycstoration
