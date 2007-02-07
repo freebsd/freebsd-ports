@@ -7,11 +7,9 @@
 
 PORTNAME=	emf
 PORTVERSION=	2.2.1
-PORTREVISION=	0
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/tools/emf/downloads/drops/,}
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/modeling/emf/emf/downloads/drops/,}
 MASTER_SITE_SUBDIR=${PORTVERSION}/R200609210005
-
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	emf-sdo-xsd-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
@@ -19,7 +17,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Eclipse Modeling Framework
 
-RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
