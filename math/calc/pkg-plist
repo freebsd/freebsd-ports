@@ -70,6 +70,7 @@ include/calc/zrand.h
 include/calc/zrandom.h
 lib/libcalc.a
 %%DATADIR%%/README
+%%DATADIR%%/alg_config.cal
 %%DATADIR%%/beer.cal
 %%DATADIR%%/bernoulli.cal
 %%DATADIR%%/bigprime.cal
@@ -88,6 +89,7 @@ lib/libcalc.a
 %%DATADIR%%/custom/pmodm127.cal
 %%DATADIR%%/custom/pzasusb8.cal
 %%DATADIR%%/deg.cal
+%%DATADIR%%/dotest.cal
 %%DATADIR%%/ellip.cal
 %%DATADIR%%/hello.cal
 %%DATADIR%%/help/COPYING
@@ -154,7 +156,6 @@ lib/libcalc.a
 %%DATADIR%%/help/cot
 %%DATADIR%%/help/coth
 %%DATADIR%%/help/count
-%%DATADIR%%/help/cp
 %%DATADIR%%/help/credit
 %%DATADIR%%/help/csc
 %%DATADIR%%/help/csch
@@ -179,6 +180,7 @@ lib/libcalc.a
 %%DATADIR%%/help/error
 %%DATADIR%%/help/errorcode
 %%DATADIR%%/help/errorcodes
+%%DATADIR%%/help/estr
 %%DATADIR%%/help/euler
 %%DATADIR%%/help/eval
 %%DATADIR%%/help/exp
@@ -192,6 +194,7 @@ lib/libcalc.a
 %%DATADIR%%/help/fflush
 %%DATADIR%%/help/fgetc
 %%DATADIR%%/help/fgetfield
+%%DATADIR%%/help/fgetfile
 %%DATADIR%%/help/fgetline
 %%DATADIR%%/help/fgets
 %%DATADIR%%/help/fgetstr
@@ -201,6 +204,7 @@ lib/libcalc.a
 %%DATADIR%%/help/floor
 %%DATADIR%%/help/fopen
 %%DATADIR%%/help/forall
+%%DATADIR%%/help/fpathopen
 %%DATADIR%%/help/fprintf
 %%DATADIR%%/help/fputc
 %%DATADIR%%/help/fputs
@@ -282,6 +286,7 @@ lib/libcalc.a
 %%DATADIR%%/help/libcalc
 %%DATADIR%%/help/list
 %%DATADIR%%/help/ln
+%%DATADIR%%/help/log
 %%DATADIR%%/help/lowbit
 %%DATADIR%%/help/ltol
 %%DATADIR%%/help/makelist
@@ -328,6 +333,7 @@ lib/libcalc.a
 %%DATADIR%%/help/poly
 %%DATADIR%%/help/pop
 %%DATADIR%%/help/popcnt
+%%DATADIR%%/help/pound
 %%DATADIR%%/help/power
 %%DATADIR%%/help/prevcand
 %%DATADIR%%/help/prevprime
@@ -386,8 +392,12 @@ lib/libcalc.a
 %%DATADIR%%/help/statement
 %%DATADIR%%/help/str
 %%DATADIR%%/help/strcat
+%%DATADIR%%/help/strcmp
+%%DATADIR%%/help/strcpy
 %%DATADIR%%/help/strerror
 %%DATADIR%%/help/strlen
+%%DATADIR%%/help/strncmp
+%%DATADIR%%/help/strncpy
 %%DATADIR%%/help/strpos
 %%DATADIR%%/help/strprintf
 %%DATADIR%%/help/strscan
@@ -396,6 +406,7 @@ lib/libcalc.a
 %%DATADIR%%/help/sum
 %%DATADIR%%/help/swap
 %%DATADIR%%/help/system
+%%DATADIR%%/help/systime
 %%DATADIR%%/help/tail
 %%DATADIR%%/help/tan
 %%DATADIR%%/help/tanh
@@ -407,6 +418,7 @@ lib/libcalc.a
 %%DATADIR%%/help/types
 %%DATADIR%%/help/unexpected
 %%DATADIR%%/help/usage
+%%DATADIR%%/help/usertime
 %%DATADIR%%/help/variable
 %%DATADIR%%/help/version
 %%DATADIR%%/help/wishlist
@@ -436,9 +448,13 @@ lib/libcalc.a
 %%DATADIR%%/randrun.cal
 %%DATADIR%%/regress.cal
 %%DATADIR%%/repeat.cal
+%%DATADIR%%/screen.cal
 %%DATADIR%%/seedrandom.cal
+%%DATADIR%%/set8700.cal
+%%DATADIR%%/set8700.line
 %%DATADIR%%/solve.cal
 %%DATADIR%%/sumsq.cal
+%%DATADIR%%/sumtimes.cal
 %%DATADIR%%/surd.cal
 %%DATADIR%%/test1700.cal
 %%DATADIR%%/test2300.cal
