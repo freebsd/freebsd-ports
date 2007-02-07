@@ -8141,10 +8141,6 @@ openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
 openjpeg	ports/graphics/openjpeg
-openldap22-client	ports/net/openldap22-client
-openldap22-sasl-client	ports/net/openldap22-sasl-client
-openldap22-sasl-server	ports/net/openldap22-sasl-server
-openldap22-server	ports/net/openldap22-server
 openldap23-client	ports/net/openldap23-client
 openldap23-sasl-client	ports/net/openldap23-sasl-client
 openldap23-server	ports/net/openldap23-server

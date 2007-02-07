@@ -377,10 +377,6 @@
     SUBDIR += openbgpd
     SUBDIR += openbgpd-devel
     SUBDIR += openh323
-    SUBDIR += openldap22-client
-    SUBDIR += openldap22-sasl-client
-    SUBDIR += openldap22-sasl-server
-    SUBDIR += openldap22-server
     SUBDIR += openldap23-client
     SUBDIR += openldap23-sasl-client
     SUBDIR += openldap23-server
