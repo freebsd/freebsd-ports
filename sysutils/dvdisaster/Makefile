@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdisaster
-PORTVERSION=	0.70.3
+PORTVERSION=	0.70.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvdisaster
@@ -16,7 +16,7 @@ COMMENT=	A CD/DVD error recovery tool
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-WRKSRC=		${WRKDIR}/dvdisaster-0.70.3
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	GNUmakefile
 
 USE_BZIP2=	yes
@@ -25,7 +25,6 @@ USE_GNOME=	gtk20
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 
 MAN1=	dvdisaster.1
 MANLANG=	"" cs de it
@@ -44,10 +43,4 @@ do-configure:
 			 ${FALSE}; \
 		fi)
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
