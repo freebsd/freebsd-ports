@@ -236,22 +236,7 @@ bin/spec
 %%GEM_LIB_DIR%%/lib/spec/runner/spec_should_raise_handler.rb
 %%GEM_LIB_DIR%%/lib/spec/runner/specification.rb
 %%GEM_LIB_DIR%%/lib/spec/version.rb
-%%GEMS_DIR%%/web_spec/selenium/README.txt
-%%GEMS_DIR%%/web_spec/selenium/find_rspecs_home_page.rb
-%%GEMS_DIR%%/web_spec/selenium/rspec_selenium.rb
-%%GEMS_DIR%%/web_spec/selenium/start_browser_once.patch
-%%GEMS_DIR%%/web_spec/watir/README.txt
-%%GEMS_DIR%%/web_spec/watir/find_rspecs_home_page.rb
-%%GEMS_DIR%%/web_spec/watir/find_rspecs_home_page.txt
-%%GEMS_DIR%%/web_spec/watir/rspec_watir.rb
-%%GEMS_DIR%%/web_spec/web_test_html_formatter.rb
-%%GEMS_DIR%%/web_spec/web_test_html_formatter_helper.rb
-%%GEMS_DIR%%/web_spec/web_test_html_formatter_osx_helper.rb
-%%GEMS_DIR%%/web_spec/web_test_html_formatter_win_helper.rb
 %%GEM_SPEC%%
-@dirrm %%GEMS_DIR%%/web_spec/watir
-@dirrm %%GEMS_DIR%%/web_spec/selenium
-@dirrm %%GEMS_DIR%%/web_spec
 @dirrm %%GEM_LIB_DIR%%/lib/spec/runner/formatter
 @dirrm %%GEM_LIB_DIR%%/lib/spec/runner/extensions
 @dirrm %%GEM_LIB_DIR%%/lib/spec/runner
