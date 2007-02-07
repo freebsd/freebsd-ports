@@ -8,6 +8,7 @@ bin/gpredict
 %%DATADIR%%/data/Amateur.mod
 %%DATADIR%%/data/amateur.tle
 %%DATADIR%%/data/cubesat.tle
+%%DATADIR%%/data/galileo.tle
 %%DATADIR%%/data/geo.tle
 %%DATADIR%%/data/gps-ops.tle
 %%DATADIR%%/data/iridium.tle
