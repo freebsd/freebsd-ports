@@ -110,6 +110,7 @@ INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
 SHLIB_VER=	1
 PLIST_SUB+=	SHLIB="" SHLIB_VER="${SHLIB_VER}"
+INCLUDEDIR=	${PREFIX}/include/ghostscript
 .else
 PLIST_SUB+=	SHLIB="@comment "
 .endif
@@ -440,10 +441,19 @@ pre-su-install:
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+.if defined(WITH_SHLIB)
+	${MKDIR} ${INCLUDEDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INCLUDEDIR}
+.endif
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
+.if defined(WITH_SHLIB)
+	${INSTALL_DATA} ${WRKSRC}/src/iapi.h \
+			${WRKSRC}/src/ierrors.h \
+			${INCLUDEDIR}
+.endif
 	${ECHO_MSG} ">>>   stripping gs ..."
 .if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
