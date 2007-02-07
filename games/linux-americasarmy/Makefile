@@ -8,10 +8,17 @@
 PORTNAME=	americasarmy
 PORTVERSION=	2.5.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://3dgamers.iinet.net.au/pub/3dgamers/games/americasarmy/ \
-		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/americasarmy/ \
-		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/americasarmy/ \
-		http://0day.icculus.org/armyops/
+MASTER_SITES=	ftp://195.222.33.239/pub/games/americasarmy/ \
+		ftp://ftp.bih.net.ba/pub/games/americasarmy/ \
+		ftp://ftp.free.fr/.mirrors4/AmericasArmy/Linux_v2.50/ \
+		ftp://140.128.99.3/FreeBSD/ports/distfiles/ \
+		ftp://ftp.thu.edu.tw/FreeBSD/ports/distfiles/ \
+		ftp://ftp.csie.ncu.edu.tw/pub/FreeBSD/ports/distfiles/ \
+		ftp://130.89.175.1/pub/games/americasarmy/client/linux/ \
+		ftp://ftp.snt.utwente.nl/pub/games/americasarmy/client/linux/ \
+		ftp://130.88.203.90/pub/odd-dists/ \
+		ftp://ftp5.uk.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+		ftp://ftp.freebsd.org.tw/pub/ports/distfiles/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	armyops250-linux
 EXTRACT_SUFX=	.run
