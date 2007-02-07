@@ -7,7 +7,8 @@
 
 CATEGORIES=	chinese editors
 
-PATCH_SITES=	LOCAL/chinsan
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	chinsan
 PATCHFILES=	zh-joe-2.9.8.diff
 PATCH_DIST_STRIP=	-p1
 
