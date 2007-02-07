@@ -18,7 +18,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-DEPENDS=	${PORTSDIR}/misc/kdehier
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
