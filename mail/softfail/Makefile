@@ -34,6 +34,9 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+crontab-entry: extract
+	@cd ${WRKSRC} && ${MAKE} crontab-entry
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can use the following build options:"
@@ -107,15 +110,13 @@ post-patch:
 		${WRKSRC}/rotate-softfail.sh
 .endif
 
-post-install:
-	@cd ${WRKSRC} && ${MAKE} crontab-entry
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/softfail.sql ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
