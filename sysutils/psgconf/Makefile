@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psgconf
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 
@@ -20,8 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Obje
 	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod \
 	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
 	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
-
-BROKEN=		Leaves behind files on deinstall
 
 PERL_CONFIGURE=	YES
 
@@ -58,6 +56,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action::GenerateFile::etc_services.3 \
 		PSGConf::Action::GenerateFile::etc_shadow.3 \
 		PSGConf::Action::GenerateFile::etc_system.3 \
+		PSGConf::Action::GenerateFile::etc_user_attr.3 \
 		PSGConf::Action::GenerateFile::ftpaccess.3 \
 		PSGConf::Action::GenerateFile::hosts.3 \
 		PSGConf::Action::GenerateFile::hosts_allow.3 \
@@ -191,6 +190,7 @@ IGNORE=		requires perl 5.6 or newer
 .endif
 
 PKGINSTALL=	${WRKSRC}/postinstall
+PKGDEINSTALL=	${WRKSRC}/postinstall
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
