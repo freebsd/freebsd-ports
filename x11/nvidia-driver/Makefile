@@ -52,7 +52,8 @@ NVVERSION?=	9746			# The latest version to date
 .if ${NVVERSION} == 7184
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
-EXTRA_PATCHES+=	${FILESDIR}/7667-*
+EXTRA_PATCHES+=	${FILESDIR}/7667-* \
+		${FILESDIR}/crash-patch-by-zander-1759235
 .endif
 
 .if ${OSVERSION} >= 600033
@@ -124,8 +125,7 @@ post-install:
 	@${REINPLACE_CMD} '/README\.Linux/d ; /nvidia_drv\.o/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 9746
-	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
-	@${REINPLACE_CMD} '/chapter-10/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/wfb/d ; /chapter-10/d' ${TMPPLIST}
 .endif
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 	@${CAT} ${PKGMESSAGE}
