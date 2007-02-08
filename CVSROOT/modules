@@ -966,6 +966,7 @@ british-ispell	ports/textproc/british-ispell
 brlcad		ports/cad/brlcad
 bro		ports/security/bro
 brs		ports/misc/brs
+brutalchess	ports/games/brutalchess
 bruteblock	ports/security/bruteblock
 brutecopy	ports/net/brutecopy
 bruteforceblocker	ports/security/bruteforceblocker
