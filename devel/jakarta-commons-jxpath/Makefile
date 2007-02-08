@@ -1,4 +1,4 @@
-# ports collection makefile for:    Jakarta Commons IO
+# Ports collection makefile for:	Jakarta Commons JXPATH
 # Date created:                         February 08, 2007
 # Whom:                                 Nemo Liu <nemoliu@gmail.com>
 #
