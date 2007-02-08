@@ -13442,7 +13442,6 @@ ruby-smf	ports/audio/ruby-smf
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
 ruby-sqlite	ports/databases/ruby-sqlite
-ruby-sqlite3	ports/databases/ruby-sqlite3
 ruby-strongtyping	ports/devel/ruby-strongtyping
 ruby-svg	ports/graphics/ruby-svg
 ruby-sysvipc	ports/devel/ruby-sysvipc
