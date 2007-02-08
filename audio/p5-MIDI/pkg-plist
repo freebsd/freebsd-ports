@@ -1,0 +1,10 @@
+%%SITE_PERL%%/MIDI.pm
+%%SITE_PERL%%/MIDI/Event.pm
+%%SITE_PERL%%/MIDI/Filespec.pod
+%%SITE_PERL%%/MIDI/Opus.pm
+%%SITE_PERL%%/MIDI/Score.pm
+%%SITE_PERL%%/MIDI/Simple.pm
+%%SITE_PERL%%/MIDI/Track.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIDI-Perl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIDI-Perl
+@dirrmtry %%SITE_PERL%%/MIDI
