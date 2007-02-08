@@ -8,7 +8,9 @@
 PORTNAME=	libspf
 DISTVERSION=	1.0.0-p5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.libspf.org/files/src/
+MASTER_SITES=	http://www.libspf.org/files/src/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
