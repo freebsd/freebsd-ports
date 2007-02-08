@@ -7,12 +7,12 @@
 
 PORTNAME=	gtk-qt-engine
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://people.freedesktop.org/~davidsansome/ \
+MASTER_SITES=	http://gtk-qt.ecs.soton.ac.uk/files/${PORTVERSION}/ \
 		http://freebsd.ricin.com/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danny@ricin.com
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT (KDE) themes
 
 LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
@@ -20,33 +20,36 @@ LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gtk20
 USE_QT_VER=	3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	GTK_VER=${GTK2_VERSION}
-PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
-OPTIONS=	BONOBOUI "With libbonoboui (recommended)" on
+OPTIONS=	LIBBONOBOUI "Install libbonoboui if missing" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_BONOBOUI)
-LIB_DEPENDS+=	bonoboui-2:${PORTSDIR}/x11-toolkits/libbonoboui
+# Note: had to turn off libbonoboui (dependency) OPTION for technical reasons
+# So a "vanilla" package will have no libbonoboui support
+.if defined(WITH_LIBBONOBOUI)
+USE_GNOME+=	libbonoboui
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e "s|/usr/lib/menu|/tmp/menu|" \
-		${WRKSRC}/kcm_gtk/Makefile
+post-patch:
+	@${REINPLACE_CMD} -e "s|GTK_LIBPREFIX)/gtk|PREFIX)/lib/gtk|" \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s|GTK_PREFIX)/share|PREFIX)/share|g" \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s|/usr/lib/menu|${WRKDIR}/menu|g" \
+		${WRKSRC}/kcm_gtk/Makefile.in
 	@${REINPLACE_CMD} -e \
 		"s|/usr/share/applications|${PREFIX}/share/applications/kde|g" \
-		${WRKSRC}/kcm_gtk/Makefile
+		${WRKSRC}/kcm_gtk/Makefile.in
 
 post-install:
-	@${RM} /tmp/menu/kcmgtk.menu
-	@if [ "`ls /tmp/menu`" = "" ]; then ${RMDIR} /tmp/menu; fi
+	@${RM} -r ${WRKDIR}/menu
 	@${RM} ${PREFIX}/share/applnk/Settings/LookNFeel/kcmgtk.desktop
 
 .include <bsd.port.post.mk>
