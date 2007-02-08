@@ -6,7 +6,7 @@
 
 PORTNAME=	cdpd
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 

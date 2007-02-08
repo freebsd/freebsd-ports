@@ -30,7 +30,7 @@ command=%%PREFIX%%/sbin/$name
 # set defaults
 
 cdpd_enable=${cdpd_enable:-"NO"}
-cdpr_flags=${cdpd_flags:-"-a"}
+cdpd_flags=${cdpd_flags:-"-a"}
 
 load_rc_config $name
 run_rc_command "$1"
