@@ -1,3 +1,5 @@
+@comment $FreeBSD$
+@unexec %%EASY_INSTALL_CMD%% -q -N -m -x -S %D/%%PYTHON_SITELIBDIR%% %%EGG%%
 bin/kid
 bin/kidc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/EGG-INFO/PKG-INFO
@@ -5,7 +7,6 @@ bin/kidc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/__init__.pyc
@@ -19,9 +20,9 @@ bin/kidc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/compiler.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/compiler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/compiler.pyo
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/et.py
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/et.pyc
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/et.pyo
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/element.py
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/element.pyc
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/element.pyo
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/filter.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/filter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/filter.pyo
@@ -34,12 +35,12 @@ bin/kidc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/namespace.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/namespace.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/namespace.pyo
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/options.py
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/options.pyc
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/options.pyo
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/parser.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/parser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/parser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/properties.py
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/properties.pyc
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/properties.pyo
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/pull.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/pull.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/pull.pyo
@@ -73,6 +74,9 @@ bin/kidc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_compiler.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_compiler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_compiler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_element.py
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_element.pyc
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_element.pyo
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_error.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_error.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_error.pyo
@@ -100,12 +104,12 @@ bin/kidc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_namespace.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_namespace.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_namespace.pyo
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_options.py
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_options.pyc
+%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_options.pyo
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_parser.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_parser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_parser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_properties.py
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_properties.pyc
-%%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_properties.pyo
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_scope.py
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_scope.pyc
 %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid/test/test_scope.pyo
@@ -145,3 +149,4 @@ bin/kidc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/kid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYKID_EGG%%
+@exec %%EASY_INSTALL_CMD%% -q -x -N -S %D/%%PYTHON_SITELIBDIR%% %%EGG%%
