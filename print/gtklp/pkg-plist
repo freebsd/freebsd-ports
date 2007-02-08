@@ -16,6 +16,7 @@ share/locale/nl/LC_MESSAGES/gtklp.mo
 share/locale/pl/LC_MESSAGES/gtklp.mo
 share/locale/pt_BR/LC_MESSAGES/gtklp.mo
 share/locale/ru/LC_MESSAGES/gtklp.mo
+share/locale/uk_UA/LC_MESSAGES/gtklp.mo
 share/locale/zh_CN/LC_MESSAGES/gtklp.mo
 share/locale/zh_TW/LC_MESSAGES/gtklp.mo
 @dirrmtry share/locale/ca_ES/LC_MESSAGES
@@ -26,3 +27,5 @@ share/locale/zh_TW/LC_MESSAGES/gtklp.mo
 @dirrmtry share/locale/cht
 @dirrmtry share/locale/chs/LC_MESSAGES
 @dirrmtry share/locale/chs
+@dirrmtry share/locale/uk_UA/LC_MESSAGES
+@dirrmtry share/locale/uk_UA
