@@ -1,0 +1,7 @@
+bin/Cultivation
+%%DATADIR%%/features.txt
+%%DATADIR%%/font.tga
+%%DATADIR%%/language.txt
+%%DATADIR%%/languages/English.txt
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%

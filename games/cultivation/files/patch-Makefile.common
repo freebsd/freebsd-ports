@@ -1,0 +1,11 @@
+--- Makefile.common.orig	Wed Dec 27 08:41:51 2006
++++ Makefile.common	Tue Feb  6 21:59:22 2007
+@@ -51,7 +51,7 @@
+ 
+ 
+ 
+-COMPILE_FLAGS = -Wall ${DEBUG_FLAG} ${PLATFORM_COMPILE_FLAGS} ${PROFILE_FLAG} ${OPTIMIZE_FLAG} -I${ROOT_PATH} -I${PORT_AUDIO_PATH}/pa_common
++COMPILE_FLAGS = -Wall ${PLATFORM_COMPILE_FLAGS} ${PROFILE_FLAG} -I${ROOT_PATH}
+ 
+ 
+ COMPILE = ${GXX} ${COMPILE_FLAGS} -c
