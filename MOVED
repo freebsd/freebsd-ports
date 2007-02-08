@@ -2807,3 +2807,5 @@ net/openldap22-client||2007-02-07|Removed: OpenLDAP 2.2.x is no longer supported
 net/openldap22-sasl-client||2007-02-07|Removed: OpenLDAP 2.2.x is no longer supported by developers
 net/openldap22-sasl-server||2007-02-07|Removed: OpenLDAP 2.2.x is no longer supported by developers
 net/openldap22-server||2007-02-07|Removed: OpenLDAP 2.2.x is no longer supported by developers
+irc/xchat-systray-plugin||2007-02-07|Has expired: Functionality is now included in xchat
+databases/ruby-sqlite3|databases/rubygem-sqlite3|2007-02-08|Moved to rubygem version

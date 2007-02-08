@@ -475,9 +475,9 @@
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlite
-    SUBDIR += ruby-sqlite3
     SUBDIR += rubygem-activerecord
     SUBDIR += rubygem-memcache-client
+    SUBDIR += rubygem-sqlite3
     SUBDIR += slony1
     SUBDIR += sqlclient
     SUBDIR += sqlite2
