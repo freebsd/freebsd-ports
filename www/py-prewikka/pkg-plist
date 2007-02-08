@@ -45,6 +45,12 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/views/misc.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagelisting.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/usermanagement.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.py
+%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.py
+%%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/sensor.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/__init__.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagedetails.pyo
@@ -184,6 +190,7 @@ bin/prewikka-httpd
 %%DATADIR%%/htdocs/images/led_Y.gif
 %%DATADIR%%/htdocs/css/style.css
 %%DATADIR%%/htdocs/js/functions.js
+%%DATADIR%%/database/mysql2pgsql.sh
 %%DATADIR%%/database/sqlite.sql
 %%DATADIR%%/database/mysql-update-0.9.1.sql
 %%DATADIR%%/database/pgsql.sql
