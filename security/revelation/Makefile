@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	revelation
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.11
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 
@@ -27,6 +27,8 @@ USE_GNOME=	pygnome2 pygnomeextras gnomeprefix gnomehack desktopfileutils \
 		pygnomedesktop
 USE_PYTHON=	yes
 GCONF_SCHEMAS=	revelation.schemas revelation-applet.schemas
+INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
@@ -38,8 +40,5 @@ post-patch:
 		${WRKSRC}/src/wrap/crack/Makefile.in
 	@${REINPLACE_CMD} -e 's|#include <crack.h>||' \
 		${WRKSRC}/src/wrap/crack/crack.c.in
-
-post-install:
-	-@update-desktop-database
 
 .include <bsd.port.mk>

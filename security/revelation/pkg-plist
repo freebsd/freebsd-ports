@@ -1,4 +1,17 @@
 bin/revelation
+%%PYTHON_SITELIBDIR%%/revelation/bundle/__init__.py
+%%PYTHON_SITELIBDIR%%/revelation/bundle/AfSplitter.py
+%%PYTHON_SITELIBDIR%%/revelation/bundle/PBKDFv2.py
+%%PYTHON_SITELIBDIR%%/revelation/bundle/luks.py
+%%PYTHON_SITELIBDIR%%/revelation/bundle/__init__.pyc
+%%PYTHON_SITELIBDIR%%/revelation/bundle/AfSplitter.pyc
+%%PYTHON_SITELIBDIR%%/revelation/bundle/PBKDFv2.pyc
+%%PYTHON_SITELIBDIR%%/revelation/bundle/luks.pyc
+%%PYTHON_SITELIBDIR%%/revelation/bundle/__init__.pyo
+%%PYTHON_SITELIBDIR%%/revelation/bundle/AfSplitter.pyo
+%%PYTHON_SITELIBDIR%%/revelation/bundle/PBKDFv2.pyo
+%%PYTHON_SITELIBDIR%%/revelation/bundle/luks.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/revelation/bundle
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/__init__.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/base.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/fpm.py
@@ -6,6 +19,7 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/pwsafe.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/rvl.py
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/splashid.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/text.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/__init__.pyc
@@ -15,6 +29,7 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/pwsafe.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/rvl.pyc
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/splashid.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/text.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/__init__.pyo
@@ -24,11 +39,11 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/pwsafe.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/rvl.pyo
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/splashid.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/text.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/revelation/datahandler
 %%PYTHON_SITELIBDIR%%/revelation/__init__.py
-%%PYTHON_SITELIBDIR%%/revelation/config.py
 %%PYTHON_SITELIBDIR%%/revelation/data.py
 %%PYTHON_SITELIBDIR%%/revelation/dialog.py
 %%PYTHON_SITELIBDIR%%/revelation/entry.py
@@ -36,7 +51,6 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/ui.py
 %%PYTHON_SITELIBDIR%%/revelation/util.py
 %%PYTHON_SITELIBDIR%%/revelation/__init__.pyc
-%%PYTHON_SITELIBDIR%%/revelation/config.pyc
 %%PYTHON_SITELIBDIR%%/revelation/data.pyc
 %%PYTHON_SITELIBDIR%%/revelation/dialog.pyc
 %%PYTHON_SITELIBDIR%%/revelation/entry.pyc
@@ -44,29 +58,34 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/ui.pyc
 %%PYTHON_SITELIBDIR%%/revelation/util.pyc
 %%PYTHON_SITELIBDIR%%/revelation/__init__.pyo
-%%PYTHON_SITELIBDIR%%/revelation/config.pyo
 %%PYTHON_SITELIBDIR%%/revelation/data.pyo
 %%PYTHON_SITELIBDIR%%/revelation/dialog.pyo
 %%PYTHON_SITELIBDIR%%/revelation/entry.pyo
 %%PYTHON_SITELIBDIR%%/revelation/io.pyo
 %%PYTHON_SITELIBDIR%%/revelation/ui.pyo
 %%PYTHON_SITELIBDIR%%/revelation/util.pyo
+%%PYTHON_SITELIBDIR%%/revelation/config.py
+%%PYTHON_SITELIBDIR%%/revelation/config.pyc
+%%PYTHON_SITELIBDIR%%/revelation/config.pyo
 %%PYTHON_SITELIBDIR%%/revelation/crack.so
-%%PYTHON_SITELIBDIR%%/revelation/gnomemisc.so
 @dirrm %%PYTHON_SITELIBDIR%%/revelation
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
 libdata/bonobo/servers/GNOME_RevelationApplet.server
 libexec/revelation-applet
+share/locale/de/LC_MESSAGES/revelation.mo
+share/locale/fr/LC_MESSAGES/revelation.mo
+share/locale/sv/LC_MESSAGES/revelation.mo
+share/locale/zh/LC_MESSAGES/revelation.mo
+share/locale/cs/LC_MESSAGES/revelation.mo
 share/gnome/applications/revelation.desktop
-share/gnome/revelation/pwdict.hwm
-share/gnome/revelation/pwdict.pwd
-share/gnome/revelation/pwdict.pwi
-share/gnome/revelation/ui/actions.xml
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/revelation/ui/menubar.xml
 share/gnome/revelation/ui/popup-tree.xml
 share/gnome/revelation/ui/toolbar.xml
 @dirrm share/gnome/revelation/ui
+share/gnome/revelation/pwdict.hwm
+share/gnome/revelation/pwdict.pwd
+share/gnome/revelation/pwdict.pwi
 @dirrm share/gnome/revelation
 share/icons/hicolor/16x16/apps/revelation.png
 share/icons/hicolor/24x24/apps/revelation.png
@@ -76,11 +95,7 @@ share/icons/hicolor/32x32/apps/revelation-locked.png
 share/icons/hicolor/48x48/apps/revelation.png
 share/icons/hicolor/48x48/apps/revelation-locked.png
 share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-revelation.png
-share/icons/hicolor/scalable/filesystems/revelation-fallback-folder.svg
-share/icons/hicolor/scalable/filesystems/revelation-fallback-folder-open.svg
 share/mime/packages/revelation.xml
 share/mime/application/x-revelation.xml
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@exec update-desktop-database > /dev/null || /usr/bin/true
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
