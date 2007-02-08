@@ -1,0 +1,749 @@
+diff -ru src/nv-freebsd.h src.1759235/nv-freebsd.h
+--- src/nv-freebsd.h	2006-12-19 13:50:18.000000000 -0800
++++ src.1759235/nv-freebsd.h	2007-01-26 10:13:57.436330000 -0800
+@@ -111,6 +111,9 @@
+  * on FreeBSD, due to its thread-aware reference counting.
+  */
+ 
++#define __TD_FDT(_td)     ((_td)->td_proc->p_fd)
++#define __TD_FDT_CNT(_td) ((_td)->td_proc->p_fd->fd_refcnt)
++
+ #if __FreeBSD_version >= 601100
+ #define __NV_ITHREAD() (curthread->td_pflags & TDP_ITHREAD)
+ #else
+@@ -177,12 +180,6 @@
+ } nvidia_event_t;
+ 
+ typedef
+-struct nvidia_drv2 {
+-    STAILQ_HEAD(event_queue, nvidia_event) event_queue;
+-    struct selinfo rsel;
+-} nvidia_drv2_t;
+-
+-typedef
+ struct nvidia_softc {
+     device_t dev;
+     device_t agp_dev;
+@@ -203,6 +200,9 @@
+     struct cdev *cdev;
+     nv_state_t *nv_state;
+ 
++    /* queue of OS events */
++    STAILQ_HEAD(event_queue, nvidia_event) event_queue;
++
+     struct sysctl_ctx_list sysctl_ctx;
+     struct selinfo rsel;
+ 
+@@ -213,8 +213,8 @@
+ 
+     int refcnt;
+ 
+-    struct mtx mtx_rm;
+-    struct sx sx_api;
++    struct mtx rm_mtx;
++    struct sx api_sx;
+ 
+ } nvidia_softc_t;
+ 
+@@ -222,10 +222,9 @@
+ #define CDEV_MAJOR      180
+ #define CDEV_CTL_MINOR  255
+ 
+-extern struct clonedevs *nvidia_ctl_clones;
+-extern struct clonedevs *nvidia_dev_clones;
+-
+ extern devclass_t nvidia_devclass;
++
++extern struct nvidia_softc nvidia_ctl_sc;
+ extern nv_state_t nvidia_ctl_state;
+ 
+ extern const char *pNVRM_ID;
+@@ -259,15 +258,9 @@
+ #define __NV_IOC_TYPE(_cmd) (((_cmd) >> 8) & 0xff)
+ #define __NV_IOC_NR(_cmd)   (((_cmd) >> 0) & 0xff)
+ 
+-#if __FreeBSD_version >= 600034
+-void   nvidia_dev_clone      (void *, struct ucred *, char *, int, struct cdev **);
+-void   nvidia_ctl_clone      (void *, struct ucred *, char *, int, struct cdev **);
+-#else
+-void   nvidia_dev_clone      (void *, char *, int, struct cdev **);
+-void   nvidia_ctl_clone      (void *, char *, int, struct cdev **);
+-#endif
+-
+-#define NV_GET_SOFTC(_dev) ((struct nvidia_softc *)((_dev)->si_drv1))
++/* nvidia_dev.c */
++int    nvidia_dev_attach     (struct nvidia_softc *);
++int    nvidia_dev_detach     (struct nvidia_softc *);
+ 
+ /* nvidia_ctl.c */
+ int    nvidia_ctl_attach     (void);
+diff -ru src/nvidia_ctl.c src.1759235/nvidia_ctl.c
+--- src/nvidia_ctl.c	2006-12-19 13:50:18.000000000 -0800
++++ src.1759235/nvidia_ctl.c	2007-01-26 10:14:04.272757250 -0800
+@@ -28,52 +28,10 @@
+     .d_flags =     D_TRACKCLOSE|D_NEEDGIANT
+ };
+ 
+-static nvidia_softc_t nvidia_ctl_sc;
+-static int nvidia_count = 0;
+-
+-struct clonedevs *nvidia_ctl_clones;
+-
+-void nvidia_ctl_clone(
+-    void *arg,
+-#if __FreeBSD_version >= 600034
+-    struct ucred *cred,
+-#endif
+-    char *name,
+-    int namelen,
+-    struct cdev **dev
+-)
+-{
+-    int i, clone = 0;
++static struct cdev *nvidia_ctl_cdev = NULL;
++struct nvidia_softc nvidia_ctl_sc;
+ 
+-    if (*dev != NULL)
+-        return;
+-    if (strcmp(name, "nvidiactl") != 0)
+-        return;
+-
+-    /*
+-     * XXX clone_create() doesn't handle automatic clone
+-     * number allocation correctly at this point, it
+-     * can insert clone list entries out of order, with
+-     * respect to the clone number, and subsequently
+-     * allocate numbers that are still in use. Iterate over
+-     * the possible clone numbers until the first unused
+-     * one is found.
+-     */
+-    do {
+-        i = clone_create(&nvidia_ctl_clones, &nvidia_ctl_cdevsw,
+-                &clone, dev, 0);
+-        if (i == 0) clone++;
+-    } while ((clone <= CLONE_UNITMASK) && (i == 0));
+-
+-    if ((i != 0) && (clone <= CLONE_UNITMASK)) {
+-        *dev = make_dev(&nvidia_ctl_cdevsw, unit2minor(clone),
+-                    UID_ROOT, GID_WHEEL, 0666, "nvidiactl.%u", clone);
+-        if (*dev != NULL) {
+-            (*dev)->si_flags |= SI_CHEAPCLONE;
+-            (*dev)->si_drv1 = (void *)&nvidia_ctl_sc;
+-        }
+-    }
+-}
++static int nvidia_count = 0;
+ 
+ int nvidia_ctl_open(
+     struct cdev *dev,
+@@ -85,21 +43,10 @@
+     int status;
+     nv_state_t *nv = &nvidia_ctl_state;
+ 
+-    if (!dev->si_drv2) {
+-        /* only allow one open() of this file */
+-        dev->si_drv2 = dev->si_drv1;
+-    } else
+-        return EBUSY;
+-
+     nv_lock_api(nv);
+     status = nvidia_open_ctl();
+     nv_unlock_api(nv);
+ 
+-    if (status == 0) {
+-        /* XXX Fix me? (clear of SI_CHEAPCLONE) */
+-        dev->si_flags &= ~SI_CHEAPCLONE;
+-    }
+-
+     return status;
+ }
+ 
+@@ -117,11 +64,6 @@
+     status = nvidia_close_ctl(dev, td);
+     nv_unlock_api(nv);
+ 
+-    if (status == 0) {
+-        /* XXX Fix me? (call to destroy_dev()) */
+-        destroy_dev(dev);
+-    }
+-
+     return status;
+ }
+ 
+@@ -223,21 +165,15 @@
+ 
+ int nvidia_ctl_attach(void)
+ {
+-    struct nvidia_softc *sc;
+-
+     if (nvidia_count == 0) {
+         /*
+          * This routine is called from nvidia_attach(), multiple times
+          * when more than one device is installed.
+          */
+-        sc = &nvidia_ctl_sc;
+-        bzero(sc, sizeof(nvidia_softc_t));
+-
+-        nvidia_ctl_state.os_state = sc;
+-        sc->nv_state = (void *)&nvidia_ctl_state;
+-
+-        mtx_init(&sc->mtx_rm, "ctl.mtx_rm", NULL, MTX_SPIN | MTX_RECURSE);
+-        sx_init(&sc->sx_api, "ctl.sx_api");
++        nvidia_ctl_cdev = make_dev(&nvidia_ctl_cdevsw,
++                CDEV_CTL_MINOR,
++                UID_ROOT, GID_WHEEL, 0666,
++                "%s", nvidia_ctl_cdevsw.d_name);
+     }
+ 
+     nvidia_count++;
+@@ -256,10 +192,8 @@
+          * Like nvidia_ctl_attach(), nvidia_ctl_detach() will also be
+          * called more than once with multiple devices.
+          */
+-        mtx_destroy(&sc->mtx_rm);
+-        sx_destroy(&sc->sx_api);
++        destroy_dev(nvidia_ctl_cdev);
+     }
+ 
+     return 0;
+ }
+-
+diff -ru src/nvidia_dev.c src.1759235/nvidia_dev.c
+--- src/nvidia_dev.c	2006-12-19 13:50:18.000000000 -0800
++++ src.1759235/nvidia_dev.c	2007-01-26 10:14:08.509022000 -0800
+@@ -30,58 +30,6 @@
+     .d_flags =     D_MEM|D_TRACKCLOSE|D_NEEDGIANT
+ };
+ 
+-struct clonedevs *nvidia_dev_clones;
+-
+-void nvidia_dev_clone(
+-    void *arg,
+-#if __FreeBSD_version >= 600034
+-    struct ucred *cred,
+-#endif
+-    char *name,
+-    int namelen,
+-    struct cdev **dev
+-)
+-{
+-    int i, unit;
+-    struct nvidia_softc *sc;
+-    int clone = 0;
+-
+-    if (*dev != NULL)
+-        return;
+-    if (dev_stdclone(name, NULL, "nvidia", &unit) != 1)
+-        return;
+-    if (unit >= NV_MAX_DEVICES)
+-        return;
+-
+-    sc = devclass_get_softc(nvidia_devclass, unit);
+-    if (sc == NULL)
+-        return;
+-
+-    /*
+-     * XXX clone_create() doesn't handle automatic clone
+-     * number allocation correctly at this point, it
+-     * can insert clone list entries out of order, with
+-     * respect to the clone number, and subsequently
+-     * allocate numbers that are still in use. Iterate over
+-     * the possible clone numbers until the first unused
+-     * one is found.
+-     */
+-    do {
+-        i = clone_create(&nvidia_dev_clones, &nvidia_dev_cdevsw,
+-                &clone, dev, 0);
+-        if (i == 0) clone++;
+-    } while ((clone <= CLONE_UNITMASK) && (i == 0));
+-
+-    if ((i != 0) && (clone <= CLONE_UNITMASK)) {
+-        *dev = make_dev(&nvidia_dev_cdevsw, unit2minor(clone),
+-                    UID_ROOT, GID_WHEEL, 0666, "nvidia%u.%u", unit, clone);
+-        if (*dev != NULL) {
+-            (*dev)->si_drv1 = (void *)sc;
+-            (*dev)->si_flags |= SI_CHEAPCLONE;
+-        }
+-    }
+-}
+-
+ int nvidia_dev_open(
+     struct cdev *dev,
+     int oflags,
+@@ -90,30 +38,20 @@
+ )
+ {
+     int status;
+-    struct nvidia_softc *sc = NV_GET_SOFTC(dev);
+-    nv_state_t *nv = sc->nv_state;
++    struct nvidia_softc *sc;
++    nv_state_t *nv;
++    int unit = minor(dev);
+ 
+-    struct nvidia_drv2 *drv2;
++    sc = devclass_get_softc(nvidia_devclass, unit);
++    if (!sc)
++        return ENXIO;
+ 
+-    if (!dev->si_drv2) {
+-        drv2 = malloc(sizeof(struct nvidia_drv2), M_NVIDIA, M_WAITOK | M_ZERO);
+-        if (drv2 == NULL)
+-            return ENOMEM;
+-        STAILQ_INIT(&drv2->event_queue);
+-        dev->si_drv2 = drv2;
+-    } else
+-        return EBUSY;
++    nv = sc->nv_state;
+ 
+     nv_lock_api(nv);
+     status = nvidia_open_dev(sc);
+     nv_unlock_api(nv);
+ 
+-    if (status == 0) {
+-        /* XXX Fix me? (clear of SI_CHEAPCLONE) */
+-        dev->si_flags &= ~SI_CHEAPCLONE;
+-    } else
+-        free(drv2, M_NVIDIA);
+-
+     return status;
+ }
+ 
+@@ -125,28 +63,17 @@
+ )
+ {
+     int status;
+-    struct nvidia_softc *sc = NV_GET_SOFTC(dev);
+-    struct nvidia_drv2 *drv2;
++    struct nvidia_softc *sc;
++    nv_state_t *nv;
++    int unit = minor(dev);
+ 
+-    nv_state_t *nv = sc->nv_state;
+-    struct nvidia_event *et;
++    sc = devclass_get_softc(nvidia_devclass, unit);
++    nv = sc->nv_state;
+ 
+     nv_lock_api(nv);
+     status = nvidia_close_dev(sc, dev, td);
+     nv_unlock_api(nv);
+ 
+-    drv2 = dev->si_drv2;
+-    while ((et = STAILQ_FIRST(&drv2->event_queue))) {
+-        STAILQ_REMOVE(&drv2->event_queue, et, nvidia_event, queue);
+-        free(et, M_NVIDIA);
+-    }
+-
+-    if (status == 0) {
+-        free(dev->si_drv2, M_NVIDIA);
+-        /* XXX Fix me? (call to destroy_dev()) */
+-        destroy_dev(dev);
+-    }
+-
+     return status;
+ }
+ 
+@@ -159,12 +86,16 @@
+ )
+ {
+     int status;
+-    struct nvidia_softc *sc = NV_GET_SOFTC(dev);
+-    nv_state_t *nv = sc->nv_state;
++    struct nvidia_softc *sc;
++    nv_state_t *nv;
++    int unit = minor(dev);
+ 
+     if (__NV_IOC_TYPE(cmd) != NV_IOCTL_MAGIC)
+         return ENOTTY;
+ 
++    sc = devclass_get_softc(nvidia_devclass, unit);
++    nv = sc->nv_state;
++
+     nv_lock_api(nv);
+     status = nvidia_handle_ioctl(dev, cmd, data, fflag, td);
+     nv_unlock_api(nv);
+@@ -178,16 +109,18 @@
+     d_thread_t *td
+ )
+ {
+-    struct nvidia_softc *sc = NV_GET_SOFTC(dev);
+-    nv_state_t *nv = sc->nv_state;
++    struct nvidia_softc *sc;
++    nv_state_t *nv;
++    int unit = minor(dev);
+ 
+-    struct nvidia_drv2 *drv2 = dev->si_drv2;
++    sc = devclass_get_softc(nvidia_devclass, unit);
++    nv = sc->nv_state;
+ 
+     nv_lock_rm(nv);
+ 
+-    if (STAILQ_EMPTY(&drv2->event_queue)) {
++    if (STAILQ_EMPTY(&sc->event_queue)) {
+         nv_unlock_rm(nv);
+-        selrecord(td, &drv2->rsel);
++        selrecord(td, &sc->rsel);
+     } else {
+         nv_unlock_rm(nv);
+         return (events & (POLLIN | POLLPRI));
+@@ -204,10 +137,13 @@
+ )
+ {
+     int status;
+-    struct nvidia_softc *sc = NV_GET_SOFTC(dev);
+-    nv_state_t *nv = sc->nv_state;
+-
++    struct nvidia_softc *sc;
+     vm_offset_t physical;
++    nv_state_t *nv;
++    int unit = minor(dev);
++
++    sc = devclass_get_softc(nvidia_devclass, unit);
++    nv = sc->nv_state;
+ 
+     nv_lock_api(nv);
+     status = nvidia_mmap_dev(sc, offset, &physical);
+@@ -219,7 +155,26 @@
+     return status;
+ }
+ 
+-/* XXX This needs to be populated with FreeBSD specific code to allow
++int nvidia_dev_attach(struct nvidia_softc *sc)
++{
++    sc->cdev = make_dev(&nvidia_dev_cdevsw,
++            device_get_unit(sc->dev),
++            UID_ROOT, GID_WHEEL, 0666,
++            "%s%d", nvidia_dev_cdevsw.d_name,
++            device_get_unit(sc->dev));
++
++    return 0;
++}
++
++int nvidia_dev_detach(struct nvidia_softc *sc)
++{
++    destroy_dev(sc->cdev);
++    return 0;
++}
++
++
++/*
++ * XXX This needs to be populated with FreeBSD specific code to allow
+  * us to support DMA addresses larger than 32 bits.
+  */
+ 
+diff -ru src/nvidia_pci.c src.1759235/nvidia_pci.c
+--- src/nvidia_pci.c	2006-12-19 13:50:18.000000000 -0800
++++ src.1759235/nvidia_pci.c	2007-01-26 10:14:11.521210250 -0800
+@@ -236,8 +236,8 @@
+         goto fail;
+     }
+ 
+-    mtx_init(&sc->mtx_rm, "dev.mtx_rm", NULL, MTX_SPIN | MTX_RECURSE);
+-    sx_init(&sc->sx_api, "dev.sx_api");
++    mtx_init(&sc->rm_mtx, "dev.rm_mtx", NULL, MTX_SPIN | MTX_RECURSE);
++    sx_init(&sc->api_sx, "dev.api_sx");
+ 
+     return 0;
+ 
+@@ -251,6 +251,7 @@
+ {
+     int status;
+     struct nvidia_softc *sc;
++    nv_state_t *nv;
+ 
+     /*
+      * Check if the device is still in use before accepting the
+@@ -258,11 +259,19 @@
+      * usage count is non-zero!
+      */
+     sc = device_get_softc(dev);
+-    if (sc->refcnt != 0) /* XXX Fix me? (refcnt) */
++    nv = sc->nv_state;
++
++    nv_lock_api(nv);
++
++    if (sc->refcnt != 0) { /* XXX Fix me? (refcnt) */
++        nv_unlock_api(nv);
+         return EBUSY;
++    }
++
++    nv_unlock_api(nv);
+ 
+-    mtx_destroy(&sc->mtx_rm);
+-    sx_destroy(&sc->sx_api);
++    mtx_destroy(&sc->rm_mtx);
++    sx_destroy(&sc->api_sx);
+ 
+     status = nvidia_pci_teardown_intr(dev);
+     if (status)
+diff -ru src/nvidia_subr.c src.1759235/nvidia_subr.c
+--- src/nvidia_subr.c	2006-12-19 13:50:17.000000000 -0800
++++ src.1759235/nvidia_subr.c	2007-01-26 10:14:14.001365250 -0800
+@@ -20,9 +20,6 @@
+ devclass_t nvidia_devclass;
+ nv_state_t nvidia_ctl_state;
+ 
+-static eventhandler_tag nvidia_ctl_ehtag;
+-static eventhandler_tag nvidia_dev_ehtag;
+-
+ int nvidia_attach(device_t dev)
+ {
+     int status;
+@@ -52,6 +49,9 @@
+     nv->fb   = &nv->bars[NV_GPU_BAR_INDEX_FB];
+     nv->regs = &nv->bars[NV_GPU_BAR_INDEX_REGS];
+ 
++    if ((status = nvidia_dev_attach(sc)) != 0)
++        return status;
++
+     if ((status = nvidia_ctl_attach()) != 0)
+         return status;
+ 
+@@ -67,6 +67,12 @@
+     sc = device_get_softc(dev);
+     nv_sysctl_exit(sc->nv_state);
+ 
++    status = nvidia_dev_detach(sc);
++    if (status) {
++        device_printf(dev, "NVRM: NVIDIA driver DEV detach failed.\n");
++        goto fail;
++    }
++
+     status = nvidia_ctl_detach();
+     if (status) {
+         device_printf(dev, "NVRM: NVIDIA driver CTL detach failed.\n");
+@@ -311,12 +317,23 @@
+     d_thread_t *td
+ )
+ {
+-    struct nvidia_softc *sc = NV_GET_SOFTC(dev);
+-    nv_state_t *nv = sc->nv_state;
++    struct nvidia_softc *sc;
++    nv_state_t *nv;
++    int unit = minor(dev);
++
++    if (unit == CDEV_CTL_MINOR) {
++        /* the control device is "special" */
++        nv = &nvidia_ctl_state;
++    } else {
++        sc = devclass_get_softc(nvidia_devclass, unit);
++        if (!sc)
++            return ENXIO;
++        nv = sc->nv_state;
++    }
+ 
+     NV_PCI_CHECK_CONFIG_SPACE(nv, TRUE);
+ 
+-    if (rm_ioctl(nv, (void *)dev, __NV_IOC_NR(cmd), data))
++    if (rm_ioctl(nv, (void *)__TD_FDT(td), __NV_IOC_NR(cmd), data))
+         return 0;
+ 
+     return EINVAL;
+@@ -347,7 +364,8 @@
+     struct nvidia_softc *sc;
+     nv_state_t *nv = &nvidia_ctl_state;
+ 
+-    rm_free_unused_clients(nv, (void *)dev);
++    if (__TD_FDT_CNT(td) == 0)
++        rm_free_unused_clients(nv, (void *)__TD_FDT(td));
+ 
+     sc = nv->os_state;
+     sc->refcnt--;
+@@ -376,6 +394,8 @@
+          * the core resource manager does the actual work. We update both
+          * the flags and the usage count.
+          */
++        STAILQ_INIT(&sc->event_queue);
++
+         if (!rm_init_adapter(nv)) {
+             device_printf(sc->dev, "NVRM: rm_init_adapter() failed!\n");
+             return EIO;
+@@ -396,10 +416,12 @@
+ )
+ {
+     nv_state_t *nv = sc->nv_state;
++    struct nvidia_event *et;
+ 
+     NV_PCI_CHECK_CONFIG_SPACE(nv, TRUE);
+ 
+-    rm_free_unused_clients(nv, (void *)dev);
++    if (__TD_FDT_CNT(td) == 0)
++        rm_free_unused_clients(nv, (void *)__TD_FDT(td));
+ 
+     sc->refcnt--;
+ 
+@@ -413,6 +435,11 @@
+         rm_disable_adapter(nv);
+         rm_shutdown_adapter(nv);
+ 
++        while ((et = STAILQ_FIRST(&sc->event_queue))) {
++            STAILQ_REMOVE(&sc->event_queue, et, nvidia_event, queue);
++            free(et, M_NVIDIA);
++        }
++
+         nv->flags &= ~NV_FLAG_OPEN;
+     }
+ 
+@@ -437,26 +464,20 @@
+              * this routine, further initialization takes place at attach
+              * time.
+              */
+-            clone_setup(&nvidia_ctl_clones);
+-            clone_setup(&nvidia_dev_clones);
+-
+-            nvidia_ctl_ehtag = EVENTHANDLER_REGISTER(dev_clone,
+-                    nvidia_ctl_clone, 0, 0);
+-            if (nvidia_ctl_ehtag == NULL)
+-                return ENOMEM;
+-
+-            nvidia_dev_ehtag = EVENTHANDLER_REGISTER(dev_clone,
+-                    nvidia_dev_clone, 0, 0);
+-            if (nvidia_dev_ehtag == NULL) {
+-                EVENTHANDLER_DEREGISTER(dev_clone, nvidia_ctl_ehtag);
+-                return ENOMEM;
+-            }
++            sc = &nvidia_ctl_sc;
++            bzero(sc, sizeof(nvidia_softc_t));
+ 
+             if (!rm_init_rm()) {
+                 printf("NVRM: rm_init_rm() failed!\n");
+                 return EIO;
+             }
+ 
++            mtx_init(&sc->rm_mtx, "ctl.rm_mtx", NULL, MTX_SPIN | MTX_RECURSE);
++            sx_init(&sc->api_sx, "ctl.api_sx");
++
++            nvidia_ctl_state.os_state = sc;
++            sc->nv_state = (void *)&nvidia_ctl_state;
++
+             nvidia_sysctl_init();
+             nvidia_linux_init();
+ 
+@@ -468,23 +489,26 @@
+              * unload request if it is. This event can occur even when the
+              * module usage count is non-zero!
+              */
+-            EVENTHANDLER_DEREGISTER(dev_clone, nvidia_dev_ehtag);
+-            EVENTHANDLER_DEREGISTER(dev_clone, nvidia_ctl_ehtag);
+-
+             nv = &nvidia_ctl_state;
+             sc = nv->os_state;
+ 
+-            if (sc->refcnt != 0) /* XXX Fix me? (refcnt) */
++            nv_lock_api(nv);
++
++            if (sc->refcnt != 0) { /* XXX Fix me? (refcnt) */
++                nv_unlock_api(nv);
+                 return EBUSY;
++            }
++
++            nv_unlock_api(nv);
++
++            mtx_destroy(&sc->rm_mtx);
++            sx_destroy(&sc->api_sx);
+ 
+             rm_shutdown_rm();
+ 
+             nvidia_sysctl_exit();
+             nvidia_linux_exit();
+ 
+-            clone_cleanup(&nvidia_dev_clones);
+-            clone_cleanup(&nvidia_dev_clones);
+-
+             break;
+ 
+         default:
+@@ -713,25 +737,25 @@
+      * interrupts on the current processor.
+      */
+     struct nvidia_softc *sc = nv->os_state;
+-    mtx_lock_spin(&sc->mtx_rm);
++    mtx_lock_spin(&sc->rm_mtx);
+ }
+ 
+ void nv_unlock_rm(nv_state_t *nv)
+ {
+     struct nvidia_softc *sc = nv->os_state;
+-    mtx_unlock_spin(&sc->mtx_rm);
++    mtx_unlock_spin(&sc->rm_mtx);
+ }
+ 
+ void nv_lock_api(nv_state_t *nv)
+ {
+     struct nvidia_softc *sc = nv->os_state;
+-    sx_xlock(&sc->sx_api);
++    sx_xlock(&sc->api_sx);
+ }
+ 
+ void nv_unlock_api(nv_state_t *nv)
+ {
+     struct nvidia_softc *sc = nv->os_state;
+-    sx_xunlock(&sc->sx_api);
++    sx_xunlock(&sc->api_sx);
+ }
+ 
+ 
+@@ -742,11 +766,10 @@
+     U032 index
+ )
+ {
++    struct nvidia_softc *sc;
+     struct nvidia_event *et; 
+-    struct cdev *dev = event->file;
+-    struct nvidia_drv2 *drv2;
+ 
+-    et = malloc(sizeof(struct nvidia_event), M_NVIDIA, M_NOWAIT | M_ZERO);
++    et = malloc(sizeof(nvidia_event_t), M_NVIDIA, M_NOWAIT | M_ZERO);
+     if (et == NULL)
+         return;
+ 
+@@ -756,13 +779,13 @@
+ 
+     nv_lock_rm(nv);
+ 
+-    drv2 = dev->si_drv2;
+-    STAILQ_INSERT_TAIL(&drv2->event_queue, et, queue);
++    sc = nv->os_state;
++    STAILQ_INSERT_TAIL(&sc->event_queue, et, queue);
+ 
+     nv_unlock_rm(nv);
+ 
+     /* XXX Fix me? (os events) */
+-    selwakeup(&drv2->rsel);
++    selwakeup(&sc->rsel);
+ }
+ 
+ S032 nv_get_event(
+@@ -772,19 +795,27 @@
+     U032 *pending
+ )
+ {
+-    struct cdev *dev = file;
+-    struct nvidia_drv2 *drv2 = dev->si_drv2;
+-    struct nvidia_event *et;
++    struct nvidia_softc *sc = nv->os_state;
++    struct nvidia_event *et, *_et;
+ 
+     nv_lock_rm(nv);
+ 
+-    et = STAILQ_FIRST(&drv2->event_queue);
++    STAILQ_FOREACH(et, &sc->event_queue, queue) {
++        if (et->event.file == file)
++            break;
++    }
+ 
+     if (et != NULL) {
+         *event = et->event;
+ 
+-        STAILQ_REMOVE(&drv2->event_queue, et, nvidia_event, queue);
+-        *pending = !STAILQ_EMPTY(&drv2->event_queue);
++        STAILQ_REMOVE(&sc->event_queue, et, nvidia_event, queue);
++
++        STAILQ_FOREACH(_et, &sc->event_queue, queue) {
++            if (_et->event.file == file)
++                break;
++        }
++
++        *pending = (_et != NULL);
+ 
+         nv_unlock_rm(nv);
+ 
