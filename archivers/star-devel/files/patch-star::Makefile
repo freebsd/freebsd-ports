@@ -1,15 +1,15 @@
---- star/Makefile.orig	Sun Aug 28 13:22:30 2005
-+++ star/Makefile	Sat Sep  3 23:36:46 2005
+--- star/Makefile.orig	Sun Nov  5 01:52:19 2006
++++ star/Makefile	Mon Feb  5 10:17:54 2007
 @@ -15,7 +15,7 @@
  INSDIR=		bin
- TARGET=		star_fat
+ TARGET=		star
  #SYMLINKS=	ustar tar
--SYMLINKS=	star ustar tar gnutar suntar scpio spax
-+SYMLINKS=	star ustar
+-SYMLINKS=	ustar tar gnutar suntar scpio spax
++SYMLINKS=	ustar
  CPPOPTS +=	-D__STAR__
  CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP -DUSE_REMOTE -DUSE_RCMD_RSH
  #CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP
-@@ -44,8 +44,7 @@
+@@ -50,8 +50,7 @@
  #LIBS=		-lunos
  #LIBS=		-lschily -lc /usr/local/lib/gcc-gnulib
  LIBS=		-ldeflt -lrmt -lschily $(LIB_ACL) $(LIB_ATTR) $(LIB_SOCKET)
