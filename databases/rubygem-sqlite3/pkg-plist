@@ -1,115 +1,300 @@
-%%RUBY_SITEARCHLIBDIR%%/sqlite3_api.so
-%%RUBY_SITELIBDIR%%/sqlite3.rb
-%%RUBY_SITELIBDIR%%/sqlite3/constants.rb
-%%RUBY_SITELIBDIR%%/sqlite3/database.rb
-%%RUBY_SITELIBDIR%%/sqlite3/driver/dl/api.rb
-%%RUBY_SITELIBDIR%%/sqlite3/driver/dl/driver.rb
-%%RUBY_SITELIBDIR%%/sqlite3/driver/native/driver.rb
-%%RUBY_SITELIBDIR%%/sqlite3/errors.rb
-%%RUBY_SITELIBDIR%%/sqlite3/pragmas.rb
-%%RUBY_SITELIBDIR%%/sqlite3/resultset.rb
-%%RUBY_SITELIBDIR%%/sqlite3/statement.rb
-%%RUBY_SITELIBDIR%%/sqlite3/translator.rb
-%%RUBY_SITELIBDIR%%/sqlite3/value.rb
-%%RUBY_SITELIBDIR%%/sqlite3/version.rb
-@dirrm %%RUBY_SITELIBDIR%%/sqlite3/driver/native
-@dirrm %%RUBY_SITELIBDIR%%/sqlite3/driver/dl
-@dirrm %%RUBY_SITELIBDIR%%/sqlite3/driver
-@dirrm %%RUBY_SITELIBDIR%%/sqlite3
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/blank.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/DL.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/DL/PtrData.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Kernel.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/AbortException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/AuthorizationException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Blob.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/BusyException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/CantOpenException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants/ColumnType.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants/ErrorCode.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Constants/TextRep.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ConstraintException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/CorruptException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Database.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Database/FunctionProxy.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL/API.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL/Driver.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native/Driver.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/EmptyException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Error.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Exception.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/FormatException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/FullException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/IOException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/InternalException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/InterruptException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/LockedException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MemoryException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MismatchException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MisuseException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/NotADatabaseException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/NotFoundException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/PermissionException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Pragmas.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ProtocolException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/RangeException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ReadOnlyException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet/FieldsContainer.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet/TypesContainer.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/SQLException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/SchemaChangedException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Statement.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/TooBigException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Translator.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/UnsupportedException.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Value.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Version.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/String.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/faq/faq.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/faq/faq.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/faq/faq.yml
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/constants_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/database_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl/api_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl/driver_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/native/driver_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/errors_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/pragmas_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/resultset_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/statement_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/translator_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/value_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3/version_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/sqlite3_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/native
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver/dl
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3/driver
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/sqlite3
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/faq
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/Native
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver/DL
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Driver
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Database
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3/Constants
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/SQLite3
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/DL
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/DL.html
+%%GEM_DOC_DIR%%/rdoc/classes/DL/PtrData.html
+%%GEM_DOC_DIR%%/rdoc/classes/DL/PtrData.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/DL/PtrData.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/Kernel.html
+%%GEM_DOC_DIR%%/rdoc/classes/Kernel.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/AbortException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/AuthorizationException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Blob.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/BusyException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/CantOpenException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Constants.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Constants/ColumnType.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Constants/ErrorCode.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Constants/TextRep.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ConstraintException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/CorruptException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000113.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000118.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000127.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/API.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/EmptyException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Error.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Error.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Exception.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Exception.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Exception.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/FormatException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/FullException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/IOException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/InternalException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/InterruptException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/LockedException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/MemoryException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/MismatchException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/MisuseException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/NotADatabaseException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/NotFoundException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/PermissionException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ProtocolException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/RangeException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ReadOnlyException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet/FieldsContainer.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet/TypesContainer.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/SQLException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/SchemaChangedException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/TooBigException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Translator.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Translator.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Translator.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Translator.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/UnsupportedException.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000135.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000136.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000137.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000138.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000140.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src/M000141.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Version.html
+%%GEM_DOC_DIR%%/rdoc/classes/String.html
+%%GEM_DOC_DIR%%/rdoc/classes/String.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/README.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/constants_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/database_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/driver/dl/api_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/driver/dl/driver_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/driver/native/driver_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/errors_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/pragmas_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/resultset_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/statement_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/translator_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/value_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/doc/faq/faq.html
+%%GEM_LIB_DIR%%/doc/faq/faq.rb
+%%GEM_LIB_DIR%%/doc/faq/faq.yml
+%%GEM_LIB_DIR%%/ext/sqlite3_api/MANIFEST
+%%GEM_LIB_DIR%%/ext/sqlite3_api/Makefile
+%%GEM_LIB_DIR%%/ext/sqlite3_api/extconf.rb
+%%GEM_LIB_DIR%%/ext/sqlite3_api/mkmf.log
+%%GEM_LIB_DIR%%/ext/sqlite3_api/sqlite3_api.i
+%%GEM_LIB_DIR%%/ext/sqlite3_api/sqlite3_api.so
+%%GEM_LIB_DIR%%/ext/sqlite3_api/sqlite3_api_wrap.c
+%%GEM_LIB_DIR%%/ext/sqlite3_api/sqlite3_api_wrap.o
+%%GEM_LIB_DIR%%/ext/sqlite3_api/win32/build.bat
+%%GEM_LIB_DIR%%/lib/sqlite3.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/constants.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/database.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/driver/dl/api.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/driver/dl/driver.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/driver/native/driver.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/errors.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/pragmas.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/resultset.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/statement.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/translator.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/value.rb
+%%GEM_LIB_DIR%%/lib/sqlite3/version.rb
+%%GEM_LIB_DIR%%/lib/sqlite3_api.so
+%%GEM_LIB_DIR%%/test/bm.rb
+%%GEM_LIB_DIR%%/test/driver/dl/tc_driver.rb
+%%GEM_LIB_DIR%%/test/mocks.rb
+%%GEM_LIB_DIR%%/test/native-vs-dl.rb
+%%GEM_LIB_DIR%%/test/tc_database.rb
+%%GEM_LIB_DIR%%/test/tc_errors.rb
+%%GEM_LIB_DIR%%/test/tc_integration.rb
+%%GEM_LIB_DIR%%/test/tests.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test/driver/dl
+@dirrm %%GEM_LIB_DIR%%/test/driver
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/sqlite3/driver/native
+@dirrm %%GEM_LIB_DIR%%/lib/sqlite3/driver/dl
+@dirrm %%GEM_LIB_DIR%%/lib/sqlite3/driver
+@dirrm %%GEM_LIB_DIR%%/lib/sqlite3
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/ext/sqlite3_api/win32
+@dirrm %%GEM_LIB_DIR%%/ext/sqlite3_api
+@dirrm %%GEM_LIB_DIR%%/ext
+@dirrm %%GEM_LIB_DIR%%/doc/faq
+@dirrm %%GEM_LIB_DIR%%/doc
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/driver/native
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/driver/dl
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/driver
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/String.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Value.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Translator.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Statement.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/ResultSet
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Pragmas.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Exception.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Error.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database/FunctionProxy.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Database
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Constants
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SQLite3
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Kernel.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/DL/PtrData.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/DL
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%

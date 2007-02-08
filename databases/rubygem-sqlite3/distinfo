@@ -1,3 +1,3 @@
-MD5 (ruby/sqlite3-ruby-1.1.0.tar.bz2) = 83c6c16dc40a282931edfd0525d3aaf3
-SHA256 (ruby/sqlite3-ruby-1.1.0.tar.bz2) = b4a6c3a68d1169d51c019304fd59f7664960935ffcc16a60de0c05262d7869df
-SIZE (ruby/sqlite3-ruby-1.1.0.tar.bz2) = 63089
+MD5 (rubygem/sqlite3-ruby-1.2.1.gem) = ba4cb2663a71cfdf2ac07c36a880fa1b
+SHA256 (rubygem/sqlite3-ruby-1.2.1.gem) = 92699a00905b6cd457558fd0e87b54f5763d605ef213788466f238158707a350
+SIZE (rubygem/sqlite3-ruby-1.2.1.gem) = 59392
