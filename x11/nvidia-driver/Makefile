@@ -8,10 +8,8 @@
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
 CATEGORIES=	x11
-MASTER_SITES=	http://us.download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
-		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
-		http://download1.nvidia.com/freebsd/1.0-${NVVERSION}/ \
-		ftp://download1.nvidia.com/freebsd/1.0-${NVVERSION}/
+MASTER_SITES=	${MASTER_SITE_NVIDIA}
+MASTER_SITE_SUBDIR=	freebsd/1.0-${NVVERSION}
 DISTNAME=	NVIDIA-FreeBSD-x86-${PORTVERSION:S/0./0-/}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -43,30 +41,20 @@ OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
 .endif
 
 # Starting with version 7667, NVidia has dropped support for numerous
-# "legacy" GPUs.  One can, however, build the port with -DWITH_LEGACY_GPU_SUPPORT
-# to go with version 7184 of the driver.
+# "legacy" GPUs.  One can, however, build the port with specific NVVERSION
+# value set.  Currently supported "legacy" values are 7184 and 9631.
+# Consult NVidia README (Appendix A) to find out whether you need to use
+# legacy driver version.  Alternatively, you can install corresponding
+# `x11/nvidia-driver-XXXX' slave port, where XXXX == needed ${NVVERSION}.
 #
-# If you must use WITH_LEGACY_GPU_SUPPORT option, be sure to ``hold'' the
-# package by making appropriate entry in your pkgtools.conf, otherwise
-# portupgrade(1) will upgrade your port to latest NVidia release on the
-# next run, which is probably not what you want.
-#
-# Please be aware that legacy GPUs support is probably going away in some
-# near future (once nVidia itself cancels support of those).  Those poor
-# souls^W^Wproud owners of RIVA's and Vanta's, frankly, should consider
-# buying a modern gfx card.
-#
-# XXX WITH_LEGACY_GPU_SUPPORT is not in OPTIONS because it has to be handled
-# _before_ including of <bsd.port.pre.mk>.  On the other hand, it is really
-# an UNSUPPORTED option anyway, so this is for good to hide it here XXX
-#
-.if defined(WITH_LEGACY_GPU_SUPPORT)
-NVVERSION=	7184
+NVVERSION?=	9746			# The latest version to date
+
+.if ${NVVERSION} == 7184
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
-NVVERSION=	9746
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
 .endif
+
 .if ${OSVERSION} >= 600033
 LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 .endif
@@ -121,8 +109,12 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-	${REINPLACE_CMD} -E 's/(lib).*/\1/ ; /bin/d ; /man/d' \
-		${WRKSRC}/x11/Makefile
+.if ${NVVERSION} < 9746
+	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
+.else
+	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
+.endif
+	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
 
 post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
