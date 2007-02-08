@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pkgfe
-PORTVERSION=	20061204
+PORTVERSION=	20070208
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://helpfreebsd.net/pkgfe/releases/ \
-		http://kodu.neti.ee/~madis555/pkgfe/releases/ \
-		http://ketas.life.ee/pkgfe/releases/ \
+MASTER_SITES=	http://kodu.neti.ee/~madis555/pkgfe/releases/ \
 		http://ketas.si.pri.ee/pkgfe/releases/ \
-		http://pkgfe2.si.pri.ee/pkgfe/releases/
+		http://helpfreebsd.net/pkgfe/releases/ \
+		http://ketas.life.ee/pkgfe/releases/
 
 MAINTAINER=	madis555@hot.ee
 COMMENT=	Ncurses frontend for ports collection
