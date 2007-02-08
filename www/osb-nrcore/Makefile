@@ -6,32 +6,32 @@
 #
 
 PORTNAME=	osb-nrcore
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-webcore
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Gtk-Webcore's browser engine
+COMMENT=	Gtk+ WebCore html rendering engine
 
-LIB_DEPENDS=	jscore.0:${PORTSDIR}/lang/osb-jscore
+BUILD_DEPENDS=	osb-jscore>=0.5.1:${PORTSDIR}/lang/osb-jscore
+RUN_DEPENDS=	osb-jscore>=0.5.1:${PORTSDIR}/lang/osb-jscore
 
+USE_GNOME=	gnomehack gnometarget gtk20
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gtk20 gnomehack
-USE_GCC=	3.4
-USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -DNDEBUG" \
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH}=="alpha" || ${OSVERSION} < 500000
-BROKEN=	Does not compile
+.if ${ARCH} == "alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread||; s|-nostdinc++||' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
+		 s|-nostdinc++||g ; \
+		 s|-nodefaultlibs -lgcc -lc||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

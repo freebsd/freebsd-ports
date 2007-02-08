@@ -4,7 +4,7 @@ compliant (X)HTML rendering engine, javascript interpreter and an embeddable
 web component. The purpose of the web component is to be a light-weight,
 easy-to-compile and embed, open source rendering component.
 
-The project work is done at Nokia Research Center (NRC)  as part of ongoing
-internet browser-related research activities. 
+NRCore contains KHTML html rendering engine KWIQ -Qt adaptation layer and
+bridge classes for WebKit controls. Based on WebCore-146.1
 
 WWW:	http://gtk-webcore.sourceforge.net/
