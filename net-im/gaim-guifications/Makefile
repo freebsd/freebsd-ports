@@ -43,5 +43,6 @@ post-extract:
 		-e 's#\([@(]\)GAIM_LIBDIR\([@)]\)#\1libdir\2#' \
 		-e 's#\([@(]\)GAIM_DATADIR\([@)]\)#\1datadir\2#'
 	@${REINPLACE_CMD} -e 's|-g3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
