@@ -8,7 +8,7 @@ $FreeBSD$
  
  init() ->
 -  InitPlt = filename:join([code:lib_dir(dialyzer), "plt","dialyzer_init_plt"]),
-+  InitPlt = filename:join([os:getenv ("HOME"), "plt","dialyzer_init_plt"]),
++  InitPlt = filename:join([os:getenv ("HOME"), ".dialyzer_init_plt"]),
    put(dialyzer_init_plt, InitPlt),
    put(dialyzer_only_check_init_plt, false),
    put(dialyzer_options_gui, true),
