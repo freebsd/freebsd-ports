@@ -1,22 +1,9 @@
 PEAR MDB2 is a merge of the PEAR DB and Metabase php database abstraction
 layers.
 
-Note that the API will be adapted to better fit with the new php5 only PDO
-before the first stable release.
-
-It provides a common API for all support RDBMS. The main difference to most
-other DB abstraction packages is that MDB2 goes much further to ensure
-portability.
-
-Currently supported RDBMS:
-MySQL
-PostGreSQL
-Oracle
-Frontbase
-Querysim
-Interbase/Firebird
-MSSQL
-SQLite
-Other soon to follow.
+It provides a common API for all supported RDBMS. The main difference to
+most other DB abstraction packages is that MDB2 goes much further to
+ensure portability. MDB2 provides most of its many features optionally
+that can be used to construct portable SQL statements.
 
 WWW: http://pear.php.net/package/MDB2/
