@@ -162,6 +162,7 @@
     SUBDIR += py-tagfu
     SUBDIR += pybookreader
     SUBDIR += pypanel
+    SUBDIR += qrfcview
     SUBDIR += recoll
     SUBDIR += remember.el
     SUBDIR += remind
