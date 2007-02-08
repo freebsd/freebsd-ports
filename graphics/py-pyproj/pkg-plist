@@ -1,0 +1,10 @@
+%%PYTHON_SITELIBDIR%%/_pyproj.so
+%%PYTHON_SITELIBDIR%%/pyproj.py
+%%PYTHON_SITELIBDIR%%/pyproj.pyc
+%%PYTHON_SITELIBDIR%%/pyproj.pyo
+%%EXAMPLESDIR%%/datum_shift.py
+%%EXAMPLESDIR%%/sample.out
+%%EXAMPLESDIR%%/test.py
+%%EXAMPLESDIR%%/test2.py
+%%EXAMPLESDIR%%/test_transform.py
+@dirrm %%EXAMPLESDIR%%
