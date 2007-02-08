@@ -11179,6 +11179,7 @@ pear-MDB2_Driver_mysql	ports/databases/pear-MDB2_Driver_mysql
 pear-MDB2_Driver_mysqli	ports/databases/pear-MDB2_Driver_mysqli
 pear-MDB2_Driver_pgsql	ports/databases/pear-MDB2_Driver_pgsql
 pear-MDB2_Driver_sqlite	ports/databases/pear-MDB2_Driver_sqlite
+pear-MDB2_Schema	ports/databases/pear-MDB2_Schema
 pear-MDB_QueryTool	ports/databases/pear-MDB_QueryTool
 pear-MIME_Type	ports/mail/pear-MIME_Type
 pear-Mail	ports/mail/pear-Mail
