@@ -76,10 +76,6 @@ RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if ${PERL_LEVEL} < 500803
-IGNORE=		perl 5.8.3 or newer required. Install lang/perl5.8 and try again
-.endif
-
 USE_RC_SUBR=	slimserver.sh
 TMP_SLIMDIR=	${WRKDIR}/slimserver
 TMP_DOCSDIR=	${WRKDIR}/doc
