@@ -3,7 +3,7 @@ bin/espeak
 include/espeak/speak_lib.h
 lib/libespeak.so
 lib/libespeak.so.1
-lib/libespeak.so.1.1.19
+lib/libespeak.so.1.1.20
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/analyse.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
@@ -67,7 +67,6 @@ lib/libespeak.so.1.1.19
 %%DATADIR%%/espeak-data/voices/es
 %%DATADIR%%/espeak-data/voices/fi
 %%DATADIR%%/espeak-data/voices/fr
-%%DATADIR%%/espeak-data/voices/fr-ca
 %%DATADIR%%/espeak-data/voices/hi
 %%DATADIR%%/espeak-data/voices/it
 %%DATADIR%%/espeak-data/voices/nl
