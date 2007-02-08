@@ -125,6 +125,7 @@ post-install:
 .endif
 .if ${NVVERSION} < 9746
 	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/chapter-10/d' ${TMPPLIST}
 .endif
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 	@${CAT} ${PKGMESSAGE}
