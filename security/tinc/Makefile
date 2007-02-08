@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tinc
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.0.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.tinc-vpn.org/packages/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/tinc/ \
@@ -21,10 +20,12 @@ LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	3.4+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--localstatedir=/var
+CONFIGURE_ARGS=	--localstatedir=/var --infodir=${PREFIX}/${INFO_PATH} \
+		--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN5=	tinc.conf.5
