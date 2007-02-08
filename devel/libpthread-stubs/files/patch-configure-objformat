@@ -1,0 +1,21 @@
+--- configure.old	Fri Feb  2 12:45:00 2007
++++ configure	Fri Feb  2 12:45:41 2007
+@@ -9008,14 +9008,10 @@
+ freebsd* | dragonfly*)
+   # DragonFly does not have aout.  When/if they implement a new
+   # versioning mechanism, adjust this.
+-  if test -x /usr/bin/objformat; then
+-    objformat=`/usr/bin/objformat`
+-  else
+-    case $host_os in
+-    freebsd[123]*) objformat=aout ;;
+-    *) objformat=elf ;;
+-    esac
+-  fi
++  case $host_os in
++   freebsd[123]*) objformat=aout ;;
++   *) objformat=elf ;;
++  esac
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
