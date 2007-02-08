@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tftp-hpa
-PORTVERSION=	0.42
+PORTVERSION=	0.48
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.kernel.org/pub/software/network/tftp/
 
@@ -19,6 +19,11 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/tftp \
 		libexec/in.tftpd
+.ifndef (NOPORTDOCS)
+PORTDOCS=	CHANGES \
+		README \
+		README.security
+.endif
 
 MAN1=		tftp.1
 MAN8=		in.tftpd.8
@@ -31,5 +36,13 @@ post-patch:
 	    ${WRKSRC}/tftpd/Makefile
 	@${REINPLACE_CMD} -e 's,LOG_DAEMON,LOG_FTP,g' \
 	    ${WRKSRC}/tftpd/tftpd.c
+
+.ifdef PORTDOCS
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for docfile in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
