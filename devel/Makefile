@@ -464,6 +464,7 @@
     SUBDIR += jakarta-commons-chain
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-io
+    SUBDIR += jakarta-commons-jxpath
     SUBDIR += jakelib2
     SUBDIR += jam
     SUBDIR += java-util-concurrent
