@@ -185,9 +185,6 @@ CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
 .endif
-.if (${OSVERSION} <= 492000)
-EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
-.endif
 .if defined(WITH_GNUGCJ)
 EXTRA_PATCHES+=	${FILESDIR}/gcj-fbsdworkaround
 .endif
