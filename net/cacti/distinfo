@@ -7,3 +7,6 @@ SIZE (ping_php_version4_snmpgetnext.patch) = 1262
 MD5 (tree_console_missing_hosts.patch) = 109afedcd49dc173da8c27fb23c322fe
 SHA256 (tree_console_missing_hosts.patch) = 5807bb408227b1c9f2ebecf220c048eb7c7148eee41fcd06fdc086124a206180
 SIZE (tree_console_missing_hosts.patch) = 771
+MD5 (thumbnail_graphs_not_working.patch) = e384a5bf6e0edb23151bd7d459a7a1a9
+SHA256 (thumbnail_graphs_not_working.patch) = 9680d61908b5f93bc44c9ccd8de920796c00d6c9b1776ab9de826ed708420ac8
+SIZE (thumbnail_graphs_not_working.patch) = 1515
