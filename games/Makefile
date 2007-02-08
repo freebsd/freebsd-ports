@@ -125,6 +125,7 @@
     SUBDIR += csmash
     SUBDIR += ctris
     SUBDIR += cube
+    SUBDIR += cultivation
     SUBDIR += cursive
     SUBDIR += d2x
     SUBDIR += daimonin-client
