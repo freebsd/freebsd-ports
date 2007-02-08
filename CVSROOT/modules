@@ -1557,6 +1557,7 @@ cucipop		ports/mail/cucipop
 cue2toc		ports/audio/cue2toc
 cuecat		ports/misc/cuecat
 cuetools	ports/audio/cuetools
+cultivation	ports/games/cultivation
 cups		ports/print/cups
 cups-base	ports/print/cups-base
 cups-magicolor	ports/print/cups-magicolor
