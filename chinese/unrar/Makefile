@@ -15,3 +15,5 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-arcread.cpp \
 		${.CURDIR}/files/patch-unicode.cpp
 
 .include "${MASTERDIR}/Makefile"
+
+CONFLICTS=	unrar-*
