@@ -1,0 +1,10 @@
+--- osb-nrcit.pc.in.orig	Fri Jan 26 17:25:45 2007
++++ osb-nrcit.pc.in	Wed Feb  7 03:52:56 2007
+@@ -7,6 +7,6 @@
+ Name: OSB-NRCit
+ Description: OSB HTML Rendering engine browser interface
+ Version: @VERSION@
+-Requires: osb-jscore osb-nrcore xft fontconfig gdk-2.0 gtk+-2.0 glib-2.0 
++Requires: osb-jscore osb-nrcore xft fontconfig gdk-2.0 gtk+-2.0 glib-2.0 gthread-2.0
+ Libs: -L${libdir} -lnrcore -lnrcit @LIBCURL_LIBS@
+ Cflags: -I${includedir}/osb/ -I${includedir}/osb/NRCore/
