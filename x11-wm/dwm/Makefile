@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	3.2.2
+PORTVERSION=	3.4
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://suckless.org/download/ \
+MASTER_SITES=	http://www.suckless.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
 
 MAINTAINER=	schot@a-eskwadraat.nl
@@ -16,17 +16,22 @@ COMMENT=	A dynamic, small, fast and simple window manager
 
 USE_XLIB=	yes
 
-pre-everything::
-		@${ECHO} ==================================================================
-		@${ECHO} You may build dwm with your own config.h, just use DWM_CONF knob:
-		@${ECHO} make DWM_CONF=/path/to/dwm/config.h install clean
-		@${ECHO} ==================================================================
-
-.if defined(DWM_CONF)
-	@${CP} {$DWM_CONF} ${WRKSRC}/config.h
-.endif
-
 MAN1=		dwm.1
 PLIST_FILES=	bin/dwm
+
+.if defined(DWM_CONF)
+PKGNAMESUFFIX=-custom
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "You can build dwm with your own config.h using the DWM_CONF knob:"
+	@${ECHO_MSG} "make DWM_CONF=/path/to/dwm/config.h install clean"
+	@${ECHO_MSG} "Note: Pre-3.2 config.h-files no longer work."
+
+post-extract:
+.if defined(DWM_CONF)
+	@${ECHO_MSG} "creating config.h from ${DWM_CONF}"
+	@${CP} ${DWM_CONF} ${WRKSRC}/config.h
+.endif
 
 .include <bsd.port.mk>
