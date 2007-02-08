@@ -5,14 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTVERSION=	2.80
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2.56
-WRKSRC=		${WRKDIR}/PenguinTV-2.56
+WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical RSS feed reader with incorperated playback functions - development version
@@ -25,8 +23,6 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Incomplete pkg-plist
 
 OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF \
 		PYLUCENE "Use Lucene search engine" ON \

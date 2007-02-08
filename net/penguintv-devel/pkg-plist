@@ -12,8 +12,6 @@
 %%PYTHON_SITELIBDIR%%/penguintv/EditSearchesDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/EditTagsMultiDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/EditTagsMultiDialog.pyc
-%%PYTHON_SITELIBDIR%%/penguintv/EditTextTagsDialog.py
-%%PYTHON_SITELIBDIR%%/penguintv/EditTextTagsDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/EntryList.py
 %%PYTHON_SITELIBDIR%%/penguintv/EntryList.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/EntryView.py
@@ -34,6 +32,8 @@
 %%PYTHON_SITELIBDIR%%/penguintv/HTTPDownloader.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/LoginDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/LoginDialog.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/IconManager.py
+%%PYTHON_SITELIBDIR%%/penguintv/IconManager.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/Lucene.py
 %%PYTHON_SITELIBDIR%%/penguintv/Lucene.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/MainWindow.py
@@ -50,8 +50,6 @@
 %%PYTHON_SITELIBDIR%%/penguintv/Player.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/PreferencesDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/PreferencesDialog.pyc
-%%PYTHON_SITELIBDIR%%/penguintv/RenameFeedDialog.py
-%%PYTHON_SITELIBDIR%%/penguintv/RenameFeedDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/SimpleImageCache.py
 %%PYTHON_SITELIBDIR%%/penguintv/SimpleImageCache.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/SynchronizeDialog.py
