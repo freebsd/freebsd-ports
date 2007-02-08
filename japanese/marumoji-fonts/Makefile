@@ -9,14 +9,13 @@ PORTNAME=	marumoji-fonts
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.lavender.org/pub/x11/fonts/:lavender
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	yoichi
 DISTFILES=	maru14.bdf.v13.gz maru18.bdf.v10.gz \
 		m18to16.sed \
-		7x14maru.bdf.gz:lavender 7x14rkmr.bdf.gz:lavender \
-		8x16maru.bdf.gz:lavender 8x16rkmr.bdf.gz:lavender \
-		9x18maru.bdf.gz:lavender 9x18rkmr.bdf.gz:lavender
+		7x14maru.bdf.gz 7x14rkmr.bdf.gz \
+		8x16maru.bdf.gz 8x16rkmr.bdf.gz \
+		9x18maru.bdf.gz 9x18rkmr.bdf.gz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
@@ -47,7 +46,7 @@ post-extract:
 
 pre-build:
 	@(cd ${WRKDIR}; ${SED} -f m18to16.sed < maru18.bdf > maru16.bdf)
-pre-install:
+pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
