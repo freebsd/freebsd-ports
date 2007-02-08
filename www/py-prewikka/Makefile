@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	prewikka
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	www security python
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
