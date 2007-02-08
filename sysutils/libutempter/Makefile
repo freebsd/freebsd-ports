@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libutempter
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.altlinux.org/pub/people/ldv/utempter/
 
