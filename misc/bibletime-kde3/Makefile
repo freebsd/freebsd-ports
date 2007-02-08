@@ -29,14 +29,8 @@ INSTALLS_ICONS=	yes
 
 DOCSDIR=	share/doc/HTML/en/bibletime
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		fails to compile under FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/bibletime/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
