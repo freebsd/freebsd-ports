@@ -9,9 +9,7 @@ PORTNAME=	ctris
 PORTVERSION=	0.42
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
-		http://www.liquidx.org/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
+		http://www.liquidx.org/distfiles/
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Colorized, small and flexible Tetris(TM)-clone for the console
