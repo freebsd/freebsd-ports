@@ -7,12 +7,12 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/${DISTNAME}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU gcc 4.1.1 for PowerPC/RS6000 cross-development
 
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
@@ -50,7 +50,8 @@ MAKE_ENV=	MACHINE_ARCH=powerpc \
 
 CONFIGURE_ENV=	PATH=${PREFIX}/bin:${PATH}
 
-PLIST_SUB+=	TOOLPREFIX=${OUR_TARGET}
+PLIST_SUB+=	TOOLPREFIX=${OUR_TARGET} \
+		GCC_VER=${PORTVERSION}
 
 OUR_LIBDIR=	${PREFIX}/lib/gcc/${OUR_TARGET}
 
@@ -74,6 +75,10 @@ MAN1=		${OUR_TARGET}-cpp.1 \
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals gcc gccinstall gccint
 
+LN_BINARIES=	addr2line ar as c++filt ld \
+		nm objcopy objdump ranlib \
+		readelf size strings strip
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CPU)
@@ -90,5 +95,11 @@ pre-everything::
 	@${ECHO_MSG} "You can specify default CPU target using WITH_CPU option"
 	@${ECHO_MSG} "Target FPU type can be provided through WITH_FLOAT_TYPE"
 	@${ECHO_MSG} "---------------------------------------------------------"
+
+post-install:
+.for F in ${LN_BINARIES}   
+	@${LN} -sf ../../../../bin/${PKGNAMEPREFIX}$F \
+		${PREFIX}/libexec/gcc/${OUR_TARGET}/${PORTVERSION}/$F
+.endfor
 
 .include <bsd.port.post.mk>
