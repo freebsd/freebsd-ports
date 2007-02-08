@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070209:
+  AFFECTS: users of x11/nvidia-driver
+  AUTHOR: danfe@FreeBSD.org
+
+  nVidia continues to drop support for old ("legacy") GPUs.  To deal with
+  this fact, the port now allows to specify correct NVVERSION in order to
+  build driver that supports your graphics card.  Currently, supported
+  "legacy" values are 7184 and 9631.  Consult nVidia's README (Appendix A)
+  to find out whether you need to use legacy driver version, and exactly
+  which one.  Alternatively, you can install one of the corresponding
+  `x11/nvidia-driver-XXXX' slave ports, where XXXX == needed NVVERSION.
+
 20070208:
   AFFECTS: users of databases/pear-MDB2
   AUTHOR: rafan@FreeBSD.org
