@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +24,13 @@ USE_GMAKE=	yes
 
 PORTDOCS=	code-browser.chm doc.css doc.html
 PLIST_FILES=	bin/code-browser \
-		%%DATADIR%%/languages.cb-config \
-		%%DATADIR%%/preferences.cb-config
-PLIST_DIRS=	%%DATADIR%%
+		%%DATADIR%%/config/preferences.cbc \
+		%%DATADIR%%/config-default/preferences.cbc \
+		%%DATADIR%%/config-optional/perforce.cbc
+PLIST_DIRS=	%%DATADIR%%/config-optional \
+		%%DATADIR%%/config-default \
+		%%DATADIR%%/config \
+		%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
@@ -49,8 +53,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/code-browser ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/config/*.* ${DATADIR}
+.for dir in config config-default config-optional
+	${MKDIR} ${DATADIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/*.* ${DATADIR}/${dir}
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
