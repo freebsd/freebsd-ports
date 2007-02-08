@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	1.4.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/
@@ -18,37 +17,33 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
+		idn.16:${PORTSDIR}/dns/libidn \
 		expat.6:${PORTSDIR}/textproc/expat2
 
-USE_RC_SUBR=	jabberd.sh
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_OPENSSL=	yes
-
-CONFIGURE_ARGS+=	--enable-ssl
-
 OPTIONS=	IPV6 "Enable IPv6 support" off
+
+USE_GNOME=	gnometarget
+USE_RC_SUBR=	jabberd.sh
+USE_OPENSSL=	yes
+USE_ICONV=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-ssl-legacy=/usr
+USE_LDCONFIG=	yes
+
+MAN5=		jabber.xml.5
+MAN8=		jabberd.8
+
+CPPFLAGS=	-I${LOCALBASE}/include/pth -I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
-
-#JABDIR=		${PORTNAME}-${PORTVERSION}
-# Save this data for use later: jabber doesn't have an install target
-# or a sane set of defaults.
-post-patch:
-	${ECHO} "${WRKSRC}" > ${WRKSRC}/.wrksrc-freebsd
-	${ECHO} "${PREFIX}" > ${WRKSRC}/.prefix-freebsd
-	${ECHO} "${INSTALL_DATA}" > ${WRKSRC}/.install_data-freebsd
-	${ECHO} "${INSTALL_SCRIPT}" > ${WRKSRC}/.install_script-freebsd
-	${ECHO} "${INSTALL_PROGRAM}" > ${WRKSRC}/.install_program-freebsd
-
-post-configure:
-	${REINPLACE_CMD} -e "s#-I\. -I\.\. #-I\. -I\.\. -I${LOCALBASE}/include #" \
-			 -e "s#-L/usr/lib#-L/usr/lib -L${LOCALBASE}/lib#" \
-		${WRKSRC}/platform-settings
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
