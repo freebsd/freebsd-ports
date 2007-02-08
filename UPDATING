@@ -870,7 +870,7 @@ upgrades.
   AFFECTS: users of mail/postfix
   AUTHOR: mnag@FreeBSD.org
 
-  mail/postfix was updated to 2.3.0 and does no longer support POSTIX_OPTIONS,
+  mail/postfix was updated to 2.3.0 and does no longer support POSTFIX_OPTIONS,
   please consider using "make config" to set your OPTIONS. The SPF patch was
   removed since this does not apply cleanly and has problems when using
   pipe(8). Consider using mail/postfix-policyd-spf instead of the SPF patch.
@@ -1066,7 +1066,7 @@ upgrades.
     portupgrade -rfo databases/mysql50-client mysql-client
 
 20060616:
-  AFFECTS users of all pfpro ports
+  AFFECTS: users of all pfpro ports
   AUTHOR: aaron@FreeBSD.org
 
   The default certificate location has been changed to respect hier(7).
@@ -1082,7 +1082,7 @@ upgrades.
   upgrade, add the line `WANT_OPENLDAP_VER?=22' to /etc/make.conf.
 
 20060616:
-  AFFECTS users of emulation/linux_base-*
+  AFFECTS: users of emulation/linux_base-*
   AUTHOR: netchild@FreeBSD.org
 
   We now use Fedora Core 4 as the linux base port, and the corresponding
@@ -1347,7 +1347,7 @@ upgrades.
      may take a few minutes)
 
 20060429:
-  AFFECTS: All GNOME users
+  AFFECTS: all GNOME users
   AUTHOR: gnome@FreeBSD.org
 
   GNOME has been updated to 2.14. This new release does NOT require the
@@ -2480,7 +2480,7 @@ portupgrade -a
   Update inetd.conf/xinetd.conf to reflect new location of "fb_inet_server".
 
 20050722:
-  AFFECTS: All RELENG_6 and HEAD users of ports/packages, maintainers
+  AFFECTS: all RELENG_6 and HEAD users of ports/packages, maintainers
 	   of ports that interact with the compat libraries.
   AUTHOR: kensmith@FreeBSD.org
 
@@ -2880,7 +2880,7 @@ portupgrade -a
   AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3,
 	x11-themes/kdeartwork3, www/akregator, x11-themes/phase,
 	multimedia/kdemultimedia3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   In KDE 3.4, a number of files were moved between ports, some ports
   were added, one port has been removed and some applications formerly available
@@ -3021,7 +3021,7 @@ portupgrade -a
 
 20050312:
   AFFECTS: all users who have glib/gtk/gnome libraries installed
-  AUTHOR: ahze@FreeBSD.org and the FreeBSD gnome team
+  AUTHOR: ahze@FreeBSD.org and the FreeBSD GNOME team
 
   Gnome has been upgraded to 2.10 and gtk/glib to 2.6.
   DO NOT USE portupgrade(1) to update any gnome or gtk
@@ -3417,7 +3417,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20041229:
   AFFECTS: users of x11/kdebase3, x11-servers/xorg-server
-  AUTHOR: lofi@freebsd.org
+  AUTHOR: lofi@FreeBSD.org
 
   If KDE does not start anymore after upgrading Xorg to version 6.8.1
   (X restarts when the KDE splash screen has reached the third icon),
@@ -3522,7 +3522,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20041213:
   AFFECTS: users of security/cryptplug, deskutils/kdepim3
-  AUTHOR: lofi@freebsd.org
+  AUTHOR: lofi@FreeBSD.org
 
   The cryptplug port is not compatible with recent versions of gpgme
   and has been changed to depend on gpgme03 (the last version of gpg-
@@ -3617,7 +3617,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20041118:
   AFFECTS: users of sysutils/portupgrade
-  AUTHOR: lofi@freebsd.org
+  AUTHOR: lofi@FreeBSD.org
 
   portsdb(1) is part of the portupgrade suite and is used to convert a ports
   INDEX file to a binary INDEX.db database. By default, it uses the
@@ -3720,7 +3720,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20041107:
   AFFECTS: users of x11/kdebase3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   To use GMail in konqueror, you need to set the browser identification for
   gmail.google.com to 'Safari 1.2.3 on Mac OS X', otherwise you will not be
@@ -3923,7 +3923,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 20041011:
   AFFECTS: users of www/linuxpluginwrapper who are running FreeBSD
 	   5.3-BETA7 or later (including -current)
-  AUTHOR: nork@freebsd.org
+  AUTHOR: nork@FreeBSD.org
 
   According to UPDATING(20041001), /etc/libmap.conf should be fixed
   libm.so.2 to libm.so.3.
@@ -3931,7 +3931,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 20041001:
   AFFECTS: users of ports that require several base system libraries who
 	   are running FreeBSD 5.3-BETA7 or later (including -current)
-  AUTHOR: kensmith@freebsd.org
+  AUTHOR: kensmith@FreeBSD.org
 
   As part of the FreeBSD-5.3 release the following system libraries
   had their version number incremented:
@@ -3956,7 +3956,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20040903:
   AFFECTS: users of net/kdenetwork3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   The lanbrowsing facility of KDE has been removed from the main
   kdenetwork3 port and is now available via the net/lanbrowsing
@@ -3981,7 +3981,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20040830:
   AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   In KDE 3.3, a number of files were moved between ports and some ports
   were removed. This means that you will have to take some precautions
@@ -4153,7 +4153,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20040813:
   AFFECTS: users of x11/kdebase3 (kdm)
-  AUTHOR: kde@freebsd.org
+  AUTHOR: kde@FreeBSD.org
 
   If you are unable to login to X via kdm after portupgrading to the latest
   kdebase port and you're getting these or similar messages on the console
