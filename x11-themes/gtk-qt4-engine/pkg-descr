@@ -2,6 +2,6 @@ GTK-QT Theme Engine allows GTK2 apps to use QT (KDE) themes
 so that they fit in more nicely with KDE. Includes a KDE
 control center module for GTK theme selection.
 
-WWW: http://www.freedesktop.org/Software/gtk-qt
+WWW: http://gtk-qt.ecs.soton.ac.uk/index.php
 
 Author: David Sansome <me@davidsansome.com>
