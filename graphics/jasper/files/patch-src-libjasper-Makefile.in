@@ -1,15 +1,11 @@
-$FreeBSD$
-
-Somehow FreeBSD's version of -ljasper climbed up to 4 already, while the
-vendor keeps installing as version 1.
-
---- src/libjasper/Makefile.in	Sat Oct  4 14:15:47 2003
-+++ src/libjasper/Makefile.in	Wed Dec 17 11:13:16 2003
-@@ -187,6 +187,5 @@
+--- src/libjasper/Makefile.in.orig	Wed Feb  7 11:18:06 2007
++++ src/libjasper/Makefile.in	Wed Feb  7 11:18:28 2007
+@@ -290,7 +290,7 @@
  
+ # -release $(LT_RELEASE)
  libjasper_la_LDFLAGS = \
--	-release $(LT_RELEASE) \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
 +	-version-info 4:0:0
  
- subdir = src/libjasper
+ all: all-recursive
+ 
