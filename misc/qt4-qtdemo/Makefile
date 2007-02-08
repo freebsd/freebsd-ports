@@ -8,7 +8,7 @@
 
 PORTNAME=	qtdemo
 PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
 		uic4:${PORTSDIR}/devel/qt4-uic
 LIB_DEPENDS=	QtAssistantClient:${PORTSDIR}/devel/qt4-libqtassistantclient \
 		QtCore:${PORTSDIR}/devel/qt4-corelib \
+		QtDBus:${PORTSDIR}/devel/dbus-qt4 \
 		QtDesigner:${PORTSDIR}/devel/qt4-designer \
 		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
 		QtNetwork:${PORTSDIR}/net/qt4-network \
