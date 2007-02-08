@@ -7,7 +7,7 @@
 
 PORTNAME=	unzip
 PORTVERSION=	5.52
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	archivers
 MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ ${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	tools/zip/info-zip/src
@@ -22,6 +22,7 @@ MAKE_ENV=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK"
 PLIST_FILES=	bin/unzip bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
 PORTDOCS=	README WHERE
 MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+CFLAGS+=	-D_FILE_OFFSET_BITS=64
 
 .if defined(WITH_UNZIP_UNREDUCE)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip
