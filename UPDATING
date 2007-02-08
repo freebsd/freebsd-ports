@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070208:
+  AFFECTS: users of databases/pear-MDB2
+  AUTHOR: rafan@FreeBSD.org
+
+  All databases dependent bits are moved into other PEAR modules. You need
+  to install appropriate databases/pear-MDB2_Driver_* port.
+
 20070207:
   AFFECTS: users of www/squid*
   AUTHOR: tmseck@netcologne.de
@@ -233,20 +240,20 @@ upgrades.
 	portupgrade -o mail/claws-mail sylpheed-claws-2.6\*
 
 20061221:
-   AFFECTS: users of security/gnupg
-   AUTHOR: kuriyama@FreeBSD.org
+  AFFECTS: users of security/gnupg
+  AUTHOR: kuriyama@FreeBSD.org
 
-   The security/gnupg port was upgraded to 2.0.1 (with security fix)
-   and good-old gnupg-1.4.6 was repocopied to security/gnupg1.
+  The security/gnupg port was upgraded to 2.0.1 (with security fix)
+  and good-old gnupg-1.4.6 was repocopied to security/gnupg1.
 
-   Both of security/gnupg (2.x) and security/gnupg1 (1.4.x) are
-   designed not to conflict with each other.  So you can use
-   security/gnupg1 for gpg(1), and use security/gnupg for gpg2(1)
-   commands.
+  Both of security/gnupg (2.x) and security/gnupg1 (1.4.x) are
+  designed not to conflict with each other.  So you can use
+  security/gnupg1 for gpg(1), and use security/gnupg for gpg2(1)
+  commands.
 
-   All directly dependents are $PORTREVISION bumped, so portupgrade -R
-   gnupg will works fine.  After portupgrade, you will have both of
-   gnupg-2.0.1 and gnupg-1.4.6.
+  All directly dependents are $PORTREVISION bumped, so portupgrade -R
+  gnupg will works fine.  After portupgrade, you will have both of
+  gnupg-2.0.1 and gnupg-1.4.6.
 
 20061219:
   AFFECTS: users of x11/kdebase3
@@ -294,22 +301,22 @@ upgrades.
   'smokeping_enable="YES"' to your rc.conf.
 
 20061207:
-   AFFECTS: users of devel/p5-PAR
-   AUTHOR: rafan@FreeBSD.org
+  AFFECTS: users of devel/p5-PAR
+  AUTHOR: rafan@FreeBSD.org
 
-   As of version 0.97.0, all PAR::Packer logic, i.e. pp, parl and
-   all packaging tools are moved to another distribution. You can
-   install devel/p5-PAR-Packer to get them.
+  As of version 0.97.0, all PAR::Packer logic, i.e. pp, parl and
+  all packaging tools are moved to another distribution. You can
+  install devel/p5-PAR-Packer to get them.
 
 20061207:
-   AFFECTS: users of net/samba3
-   AUTHOR: timur@gnu.org
+  AFFECTS: users of net/samba3
+  AUTHOR: timur@gnu.org
 
-   Version 3.0.23d of net/samba3 finally got ability to conditionaly
-   link smbd daemon against FAM libraries. If you don't need this
-   support make sure that it's not selected in the options menu -
-   run 'make config' to verify it. You can remove FAM package if it
-   was installed before as a part of Samba dependencies.
+  Version 3.0.23d of net/samba3 finally got ability to conditionaly
+  link smbd daemon against FAM libraries. If you don't need this
+  support make sure that it's not selected in the options menu -
+  run 'make config' to verify it. You can remove FAM package if it
+  was installed before as a part of Samba dependencies.
 
 20061201:
   AFFECTS: users of mail/assp
