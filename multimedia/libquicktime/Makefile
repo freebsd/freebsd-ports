@@ -79,6 +79,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
 		${WRKSRC}/plugins/audiocodec/* \
 		${WRKSRC}/plugins/videocodec/*
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O3 -funroll-all-loops -fomit-frame-pointer|${CFLAGS}|' \
 		${WRKSRC}/configure
