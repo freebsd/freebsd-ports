@@ -1,0 +1,11 @@
+--- lib/md5/Makefile.in.orig	Tue Feb  6 13:07:31 2007
++++ lib/md5/Makefile.in	Tue Feb  6 13:07:47 2007
+@@ -53,6 +53,8 @@
+ depend:
+ 
+ install:
++
++install-md5:
+ 	@echo "Installing md5 utilities"
+ 	$(INSTALL) -d ${libexecdir}
+ 	$(INSTALL) $(PROGS) ${libexecdir}

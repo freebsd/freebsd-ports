@@ -1,0 +1,51 @@
+#! /bin/sh
+#
+# PROVIDE: trircd
+# REQUIRE: DAEMON NETWORKING SERVERS
+#
+# Add the following line to /etc/rc.conf to enable trircd:
+#
+# trircd_enable="YES"
+#
+# Tweakable parameters for users to override in rc.conf
+
+. "%%RC_SUBR%%"
+
+name=trircd
+
+load_rc_config ${name}
+: ${trircd_enable="NO"}
+: ${trircd_user="%%TRIRCD_USER%%"}
+: ${trircd_group="%%TRIRCD_GROUP%%"}
+: ${trircd_confdir=%%TRIRCD_CONFDIR%%}
+: ${trircd_conf=${trircd_confdir}/ircd.conf}
+: ${trircd_pidfile=%%TRIRCD_RUNDIR%%/ircd.pid}
+: ${trircd_flags="-d ${trircd_confdir} -c ${trircd_conf} >/dev/null 2>&1"}
+
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/tr-ircd
+pidfile=${trircd_pidfile}
+required_files="${trircd_conf}"
+start_precmd="start_precmd"
+
+irandom=%%DATADIR%%/tools/irandom.sh
+trircd_rundir=%%TRIRCD_RUNDIR%%
+trircd_logdir=%%TRIRCD_LOGDIR%%
+trircd_randfile=${trircd_rundir}/ircd.rand
+
+start_precmd()
+{
+	[ -d "${trircd_logdir}" ] || {
+		%%MKDIR%% ${trircd_logdir}
+		%%CHOWN%% ${trircd_user}:${trircd_group} ${trircd_logdir}
+		%%CHMOD%% 770 ${trircd_logdir}
+	}
+	[ -d "${trircd_rundir}" ] || {
+		%%MKDIR%% ${trircd_rundir}
+		%%CHOWN%% ${trircd_user}:${trircd_group} ${trircd_rundir}
+		%%CHMOD%% 770 ${trircd_rundir}
+	}
+	[ -f "${trircd_randfile}" ] || ${irandom}
+}
+
+run_rc_command "$1"

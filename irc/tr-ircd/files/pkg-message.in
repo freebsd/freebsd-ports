@@ -1,0 +1,22 @@
+************************************************************************
+
+Congratulations, 
+you have installed the tr-ircd irc server.
+
+You can find example configuration files in the configuration directory: 
+%%TRIRCD_CONFDIR%%
+
+Please copy ircd.conf.sample to ircd.conf and edit to suit your needs.
+
+You might need to create the following additional files in the 
+configuration directory: kline.conf gline.conf
+
+Tool for generating IRC password hashes:
+%%DATADIR%%/tools/ircpasswd
+
+If you want SSL enabled, you might need to create a SSL Certificate. 
+Please check out "ircdssl.conf.sample" in the configuration directory.
+The certificate can be created with the following script:
+%%DATADIR%%/tools/isslconfig.sh
+
+************************************************************************

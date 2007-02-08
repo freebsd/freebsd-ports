@@ -1,0 +1,22 @@
+#! /bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+TRIRCD_USER="%%TRIRCD_USER%%"
+TRIRCD_GROUP="%%TRIRCD_GROUP%%"
+TRIRCD_RUNDIR="%%TRIRCD_RUNDIR%%"
+TRIRCD_LOGDIR="%%TRIRCD_LOGDIR%%"
+PW="%%PW%%"
+
+if pw usershow "${TRIRCD_USER}" 2>/dev/null 1>&2; then
+	echo "This port may have created the user: ${TRIRCD_USER}" 
+	echo "To delete this user, use '${PW} userdel \"${TRIRCD_USER}\"'"
+fi
+if pw usershow "${TRIRCD_GROUP}" 2>/dev/null 1>&2; then
+	echo "This port may have created the group: ${TRIRCD_GROUP}"
+	echo "To delete this group, use '${PW} groupdel \"${TRIRCD_GROUP}\"'"
+fi
+	echo "You may need to remove ${TRIRCD_RUNDIR} and ${TRIRCD_LOGDIR} manually."
+exit 0

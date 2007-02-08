@@ -1,0 +1,11 @@
+--- newconf/Makefile.in.orig	Tue Feb  6 12:54:59 2007
++++ newconf/Makefile.in	Tue Feb  6 12:55:16 2007
+@@ -71,7 +71,7 @@
+ .l.c:
+ 	${LEX} -i -o$@ -P`echo "$@" | awk -F_ {'print $$1'}` $<
+ .y.c:
+-	${YACC} -d $< -o $@ -p `echo "$@" | awk -F_ {'print $$1'}`
++	${YACC} -d -o $@ -p `echo "$@" | awk -F_ {'print $$1'}` $<
+ 
+ .c.o:
+ 	${CC} ${CFLAGS} $(INCLUDES) -I. -c $< -o $@

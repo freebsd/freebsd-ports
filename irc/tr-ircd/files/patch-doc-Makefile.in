@@ -1,0 +1,24 @@
+--- doc/Makefile.in.orig	Tue Feb  6 12:59:57 2007
++++ doc/Makefile.in	Tue Feb  6 13:00:29 2007
+@@ -56,15 +56,21 @@
+ clean:
+ 
+ install: build
++
++install-conf: build
+ 	@echo "Installing config files"
+ 	$(INSTALL) -d ${sysconfdir}
+ 	${INSTALL} $(DEFAULTCONFS) ${sysconfdir}
+ 	@touch ${sysconfdir}/kline.conf
++
++install-man: build
+ 	@echo "Installing manpages"
+ 	$(INSTALL) -d ${mandir}        
+ 	$(INSTALL) -d ${md5mandir}
+ 	$(INSTALL_DATA) man/$(MANPAGE) ${mandir}
+ 	$(INSTALL_DATA) man/$(MD5MANPAGE) ${md5mandir}
++
++install-doc: build
+ 	@echo "Installing documentation"
+ 	$(INSTALL) -d ${datadir}/doc
+ 	$(INSTALL_DATA) $(DOCUMENTATION) ${datadir}/doc/
