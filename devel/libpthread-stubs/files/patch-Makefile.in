@@ -1,0 +1,34 @@
+--- Makefile.in.orig	Fri Feb  9 01:16:19 2007
++++ Makefile.in	Fri Feb  9 01:17:05 2007
+@@ -62,9 +62,9 @@
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ libpthread_stubs_la_LIBADD =
+ am__libpthread_stubs_la_SOURCES_DIST = stubs.c
+-@BUILD_LIB_TRUE@am_libpthread_stubs_la_OBJECTS = stubs.lo
++am_libpthread_stubs_la_OBJECTS = stubs.lo
+ libpthread_stubs_la_OBJECTS = $(am_libpthread_stubs_la_OBJECTS)
+-@BUILD_LIB_TRUE@am_libpthread_stubs_la_rpath = -rpath $(libdir)
++am_libpthread_stubs_la_rpath = -rpath $(libdir)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -102,8 +102,6 @@
+ AUTOHEADER = @AUTOHEADER@
+ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+-BUILD_LIB_FALSE = @BUILD_LIB_FALSE@
+-BUILD_LIB_TRUE = @BUILD_LIB_TRUE@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+ CFLAGS = @CFLAGS@
+@@ -199,8 +197,8 @@
+ target_alias = @target_alias@
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = pthread-stubs.pc
+-@BUILD_LIB_TRUE@lib_LTLIBRARIES = libpthread-stubs.la
+-@BUILD_LIB_TRUE@libpthread_stubs_la_SOURCES = stubs.c
++lib_LTLIBRARIES = libpthread-stubs.la
++libpthread_stubs_la_SOURCES = stubs.c
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
