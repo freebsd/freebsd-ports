@@ -1,4 +1,24 @@
 %%DATADIR%%/create/data/data.sql
+%%DATADIR%%/create/data/images/Hub.png
+%%DATADIR%%/create/data/images/Hub_small.png
+%%DATADIR%%/create/data/images/Network.png
+%%DATADIR%%/create/data/images/Network_small.png
+%%DATADIR%%/create/data/images/Notebook.png
+%%DATADIR%%/create/data/images/Notebook_small.png
+%%DATADIR%%/create/data/images/Phone.png
+%%DATADIR%%/create/data/images/Phone_small.png
+%%DATADIR%%/create/data/images/Printer.png
+%%DATADIR%%/create/data/images/Printer_small.png
+%%DATADIR%%/create/data/images/Router.png
+%%DATADIR%%/create/data/images/Router_small.png
+%%DATADIR%%/create/data/images/Satellite.png
+%%DATADIR%%/create/data/images/Satellite_small.png
+%%DATADIR%%/create/data/images/Server.png
+%%DATADIR%%/create/data/images/Server_small.png
+%%DATADIR%%/create/data/images/UPS.png
+%%DATADIR%%/create/data/images/UPS_small.png
+%%DATADIR%%/create/data/images/Workstation.png
+%%DATADIR%%/create/data/images/Workstation_small.png
 %%DATADIR%%/create/data/images.sql
 %%DATADIR%%/create/data/images_oracle.sql
 %%DATADIR%%/create/data/images_pgsql.sql
@@ -217,19 +237,19 @@
 %%DATADIR%%/php/include/hosts.inc.php
 %%DATADIR%%/php/include/html.inc.php
 %%DATADIR%%/php/include/items.inc.php
-%%DATADIR%%/php/include/locales.inc.php
 %%DATADIR%%/php/include/locales/cn_zh.inc.php
 %%DATADIR%%/php/include/locales/de_de.inc.php
 %%DATADIR%%/php/include/locales/en_gb.inc.php
 %%DATADIR%%/php/include/locales/fr_fr.inc.php
 %%DATADIR%%/php/include/locales/it_it.inc.php
-%%DATADIR%%/php/include/locales/nl_nl.inc.php
 %%DATADIR%%/php/include/locales/ja_jp.inc.php
 %%DATADIR%%/php/include/locales/lv_lv.inc.php
+%%DATADIR%%/php/include/locales/nl_nl.inc.php
 %%DATADIR%%/php/include/locales/pt_br.inc.php
 %%DATADIR%%/php/include/locales/ru_ru.inc.php
 %%DATADIR%%/php/include/locales/sp_sp.inc.php
 %%DATADIR%%/php/include/locales/sv_se.inc.php
+%%DATADIR%%/php/include/locales.inc.php
 %%DATADIR%%/php/include/maps.inc.php
 %%DATADIR%%/php/include/media.inc.php
 %%DATADIR%%/php/include/perm.inc.php
@@ -266,140 +286,141 @@
 %%DATADIR%%/php/triggers.php
 %%DATADIR%%/php/users.php
 %%DATADIR%%/php/vtext.php
-@dirrm %%DATADIR%%/php/include/locales
-@dirrm %%DATADIR%%/php/include/classes
-@dirrm %%DATADIR%%/php/include
+@dirrm %%DATADIR%%/create/data/images
+@dirrm %%DATADIR%%/create/data
+@dirrm %%DATADIR%%/create/mysql
+@dirrm %%DATADIR%%/create/oracle
+@dirrm %%DATADIR%%/create/postgresql
+@dirrm %%DATADIR%%/create
+@dirrm %%DATADIR%%/dbpatches/1.0_to_1.1alpha1/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0_to_1.1alpha1/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0_to_1.1alpha1
+@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11
+@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12
+@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1
+@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4
+@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5
+@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7
+@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8
+@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9
+@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10
+@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11
+@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13
+@dirrm %%DATADIR%%/dbpatches/1.0beta13_to_1.0beta14/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta13_to_1.0beta14/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta13_to_1.0beta14
+@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3
+@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4
+@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5
+@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6
+@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7
+@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8
+@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9
+@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10
+@dirrm %%DATADIR%%/dbpatches/1.1alpha10_to_1.1alpha11/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha10_to_1.1alpha11/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha10_to_1.1alpha11
+@dirrm %%DATADIR%%/dbpatches/1.1alpha11_to_1.1alpha12/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha11_to_1.1alpha12/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha11_to_1.1alpha12
+@dirrm %%DATADIR%%/dbpatches/1.1alpha12_to_1.1beta1/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha12_to_1.1beta1/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha12_to_1.1beta1
+@dirrm %%DATADIR%%/dbpatches/1.1alpha2_to_1.1alpha3/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha2_to_1.1alpha3/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha2_to_1.1alpha3
+@dirrm %%DATADIR%%/dbpatches/1.1alpha3_to_1.1alpha4/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha3_to_1.1alpha4/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha3_to_1.1alpha4
+@dirrm %%DATADIR%%/dbpatches/1.1alpha4_to_1.1alpha5/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha4_to_1.1alpha5/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha4_to_1.1alpha5
+@dirrm %%DATADIR%%/dbpatches/1.1alpha8_to_1.1alpha9/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha8_to_1.1alpha9/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha8_to_1.1alpha9
+@dirrm %%DATADIR%%/dbpatches/1.1alpha9_to_1.1alpha10/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha9_to_1.1alpha10/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1alpha9_to_1.1alpha10
+@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12/oracle
+@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12
+@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1/oracle
+@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1
+@dirrm %%DATADIR%%/dbpatches/1.1beta1_to_1.1beta2/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta1_to_1.1beta2/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta1_to_1.1beta2
+@dirrm %%DATADIR%%/dbpatches/1.1beta2_to_1.1beta3/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta2_to_1.1beta3/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta2_to_1.1beta3
+@dirrm %%DATADIR%%/dbpatches/1.1beta4_to_1.1beta5/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta4_to_1.1beta5/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta4_to_1.1beta5
+@dirrm %%DATADIR%%/dbpatches/1.1beta5_to_1.1beta6/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta5_to_1.1beta6/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta5_to_1.1beta6
+@dirrm %%DATADIR%%/dbpatches/1.1beta6_to_1.1beta7/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta6_to_1.1beta7/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta6_to_1.1beta7
+@dirrm %%DATADIR%%/dbpatches/1.1beta7_to_1.1beta8/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta7_to_1.1beta8/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta7_to_1.1beta8
+@dirrm %%DATADIR%%/dbpatches/1.1beta8_to_1.1beta9/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta8_to_1.1beta9/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta8_to_1.1beta9
+@dirrm %%DATADIR%%/dbpatches/1.1beta9_to_1.1beta10/mysql
+@dirrm %%DATADIR%%/dbpatches/1.1beta9_to_1.1beta10/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.1beta9_to_1.1beta10
+@dirrm %%DATADIR%%/dbpatches
+@dirrm %%DATADIR%%/php/audio
+@dirrm %%DATADIR%%/php/images/flash
+@dirrm %%DATADIR%%/php/images/general
+@dirrm %%DATADIR%%/php/images/gradients
 @dirrm %%DATADIR%%/php/images/sysmaps/old
 @dirrm %%DATADIR%%/php/images/sysmaps
-@dirrm %%DATADIR%%/php/images/gradients
-@dirrm %%DATADIR%%/php/images/general
-@dirrm %%DATADIR%%/php/images/flash
 @dirrm %%DATADIR%%/php/images
-@dirrm %%DATADIR%%/php/audio
+@dirrm %%DATADIR%%/php/include/classes
+@dirrm %%DATADIR%%/php/include/locales
+@dirrm %%DATADIR%%/php/include
 @dirrm %%DATADIR%%/php
-@dirrm %%DATADIR%%/dbpatches/1.1beta9_to_1.1beta10/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta9_to_1.1beta10/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta9_to_1.1beta10
-@dirrm %%DATADIR%%/dbpatches/1.1beta8_to_1.1beta9/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta8_to_1.1beta9/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta8_to_1.1beta9
-@dirrm %%DATADIR%%/dbpatches/1.1beta7_to_1.1beta8/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta7_to_1.1beta8/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta7_to_1.1beta8
-@dirrm %%DATADIR%%/dbpatches/1.1beta6_to_1.1beta7/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta6_to_1.1beta7/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta6_to_1.1beta7
-@dirrm %%DATADIR%%/dbpatches/1.1beta5_to_1.1beta6/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta5_to_1.1beta6/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta5_to_1.1beta6
-@dirrm %%DATADIR%%/dbpatches/1.1beta4_to_1.1beta5/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta4_to_1.1beta5/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta4_to_1.1beta5
-@dirrm %%DATADIR%%/dbpatches/1.1beta2_to_1.1beta3/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta2_to_1.1beta3/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta2_to_1.1beta3
-@dirrm %%DATADIR%%/dbpatches/1.1beta1_to_1.1beta2/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta1_to_1.1beta2/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta1_to_1.1beta2
-@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1/oracle
-@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta12_to_1.1
-@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12/oracle
-@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1beta11_to_1.1beta12
-@dirrm %%DATADIR%%/dbpatches/1.1alpha9_to_1.1alpha10/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha9_to_1.1alpha10/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha9_to_1.1alpha10
-@dirrm %%DATADIR%%/dbpatches/1.1alpha8_to_1.1alpha9/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha8_to_1.1alpha9/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha8_to_1.1alpha9
-@dirrm %%DATADIR%%/dbpatches/1.1alpha4_to_1.1alpha5/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha4_to_1.1alpha5/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha4_to_1.1alpha5
-@dirrm %%DATADIR%%/dbpatches/1.1alpha3_to_1.1alpha4/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha3_to_1.1alpha4/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha3_to_1.1alpha4
-@dirrm %%DATADIR%%/dbpatches/1.1alpha2_to_1.1alpha3/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha2_to_1.1alpha3/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha2_to_1.1alpha3
-@dirrm %%DATADIR%%/dbpatches/1.1alpha12_to_1.1beta1/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha12_to_1.1beta1/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha12_to_1.1beta1
-@dirrm %%DATADIR%%/dbpatches/1.1alpha11_to_1.1alpha12/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha11_to_1.1alpha12/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha11_to_1.1alpha12
-@dirrm %%DATADIR%%/dbpatches/1.1alpha10_to_1.1alpha11/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha10_to_1.1alpha11/mysql
-@dirrm %%DATADIR%%/dbpatches/1.1alpha10_to_1.1alpha11
-@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10
-@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9
-@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta7_to_1.0beta8
-@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta6_to_1.0beta7
-@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta5_to_1.0beta6
-@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta4_to_1.0beta5
-@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta3_to_1.0beta4
-@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta2_to_1.0beta3
-@dirrm %%DATADIR%%/dbpatches/1.0beta13_to_1.0beta14/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta13_to_1.0beta14/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta13_to_1.0beta14
-@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta12_to_1.0beta13
-@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11
-@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha9_to_1.0alpha10
-@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha8_to_1.0alpha9
-@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha7_to_1.0alpha8
-@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha6_to_1.0alpha7
-@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha4_to_1.0alpha5
-@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha3_to_1.0alpha4
-@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha12_to_1.0beta1
-@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha11_to_1.0alpha12
-@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0alpha10_to_1.0alpha11
-@dirrm %%DATADIR%%/dbpatches/1.0_to_1.1alpha1/postgresql
-@dirrm %%DATADIR%%/dbpatches/1.0_to_1.1alpha1/mysql
-@dirrm %%DATADIR%%/dbpatches/1.0_to_1.1alpha1
-@dirrm %%DATADIR%%/dbpatches
-@dirrm %%DATADIR%%/create/postgresql
-@dirrm %%DATADIR%%/create/oracle
-@dirrm %%DATADIR%%/create/mysql
-@dirrm %%DATADIR%%/create/data
-@dirrm %%DATADIR%%/create
 @dirrm %%DATADIR%%
