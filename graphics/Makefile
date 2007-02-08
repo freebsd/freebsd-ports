@@ -574,6 +574,7 @@
     SUBDIR += py-opengl
     SUBDIR += py-paint
     SUBDIR += py-pydot
+    SUBDIR += py-pyproj
     SUBDIR += py-soya3d
     SUBDIR += py-visual
     SUBDIR += pyro
