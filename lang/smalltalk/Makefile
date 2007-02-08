@@ -20,6 +20,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 
 OPTIONS=	TCLTK "Enable Tcl/Tk binding" on
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GCC=	3.4+
 USE_ICONV=	yes
@@ -61,6 +62,10 @@ CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 			--with-tk=${LOCALBASE}/lib/tk8.4
 PLIST_SUB+=	TCLTK=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	${WRKSRC}/configure
 
 post-build:
 	@${SED} -e 's|@bindir@|${PREFIX}/bin|g' \
