@@ -82,6 +82,7 @@
     SUBDIR += bos
     SUBDIR += braincurses
     SUBDIR += briquolo
+    SUBDIR += brutalchess
     SUBDIR += bs
     SUBDIR += bsdtris
     SUBDIR += bsp

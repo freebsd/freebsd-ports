@@ -1,0 +1,29 @@
+bin/brutalchess
+libexec/md3view
+libexec/objview
+%%DATADIR%%/art/brutalchesslogo.png
+%%DATADIR%%/art/marblehugeblack.png
+%%DATADIR%%/art/marblehugewhite.png
+%%DATADIR%%/doc/AUTHORS
+%%DATADIR%%/doc/COPYING
+%%DATADIR%%/doc/ChangeLog
+%%DATADIR%%/doc/INSTALL
+%%DATADIR%%/doc/NEWS
+%%DATADIR%%/doc/README
+%%DATADIR%%/fonts/COOLVETI.TTF
+%%DATADIR%%/fonts/Ghostwri.ttf
+%%DATADIR%%/fonts/VeraMono.ttf
+%%DATADIR%%/fonts/ZEROES__.TTF
+%%DATADIR%%/models/bishop.obj
+%%DATADIR%%/models/debug.obj
+%%DATADIR%%/models/king.obj
+%%DATADIR%%/models/knight.obj
+%%DATADIR%%/models/pawn.obj
+%%DATADIR%%/models/queen.obj
+%%DATADIR%%/models/rook.obj
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm share/brutalchess/art
+@dirrm share/brutalchess/doc
+@dirrm share/brutalchess/fonts
+@dirrm share/brutalchess/models
