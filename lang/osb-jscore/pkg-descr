@@ -1,7 +1,10 @@
-JavaScriptCore is part of Gtk-Wecore.
+Gtk+ WebCore is a Gtk+ port of Apple Computer Inc.'s WebCore KHTML html
+rendering engine including a web component. Gtk+ WebCore is a standards
+compliant (X)HTML rendering engine, javascript interpreter and an embeddable
+web component. The purpose of the web component is to be a light-weight,
+easy-to-compile and embed, open source rendering component.
 
-JavaScriptCore is javascript interpreter that OSB uses. It is based on
-Apple's WebCore JavaScriptCore code, which is in turn based on KDE kjs
-code.
+JavaScriptCore contains KJS component responsible for execuring JavaScripts
+embedded in HTML pages. Based on JavaScriptCore-146.1.
 
-WWW: http://gtk-webcore.sourceforge.net/
+WWW:	http://gtk-webcore.sourceforge.net/

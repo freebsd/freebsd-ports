@@ -44,4 +44,4 @@ lib/libjscore.so
 lib/libjscore.so.0
 libdata/pkgconfig/osb-jscore.pc
 @dirrm include/osb/JavaScriptCore
-@dirrm include/osb
+@dirrmtry include/osb
