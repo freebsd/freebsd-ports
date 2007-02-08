@@ -6,32 +6,21 @@
 #
 
 PORTNAME=	osb-jscore
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	lang www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-webcore
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Javascript interpreter port from Apple's KHTML and part of Gtk-Webcore
+COMMENT=	Gtk+ WebCore JavaScript interpreter
 
-BROKEN=		Does not compile
-
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 gnomehack
-USE_LDCONFIG=	yes
+USE_GNOME=	gnomehack gnometarget gtk20
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-pic
-
-.include <bsd.port.pre.mk>
+USE_LDCONFIG=	yes
 
 post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
-		${WRKSRC}/kjs/ustring.h
-.endif
-	@${REINPLACE_CMD} -e 's|-lpthread||; s|-nostdinc++||; \
-		s|-nodefaultlibs||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-nostdinc++||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
