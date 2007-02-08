@@ -1,0 +1,48 @@
+--- src/Makefile.in.orig	Mon Jun  2 14:42:19 2003
++++ src/Makefile.in	Tue Feb  6 15:10:58 2007
+@@ -61,7 +61,7 @@
+ 
+ OBJECTS = $(SOURCES:.c=.o) version.o
+ 
+-all: ircd
++all: $(IRCD_EXE)
+ 
+ build: all
+ 
+@@ -117,7 +117,7 @@
+ 	fi
+ 	$(CC) $(CFLAGS) $(INCLUDES) -c static.c -o static.o
+ 
+-ircd: $(OBJECTS)
++$(IRCD_EXE): $(OBJECTS)
+ 	${MAKE} static-objects
+ 	${MAKE} -C ../lib/zlib -f Makefile.tr-ircd build
+ 	${MAKE} -C interproc build
+@@ -127,24 +127,21 @@
+ 	if test -n "`grep "STATIC_MODULES\ 1" ../include/setup.h`" ; then \
+ 		if test -n "`grep "USE_OPM\ 1" ../include/setup.h`" ; then \
+ 			${MAKE} -C proxymon build ; \
+-			$(CC) ${LDFLAGS} ${BITFLAGS} -o ircd $(OBJECTS) static.o httpd/httpd.so proxymon/proxymon.so $(IRCDLIBS) ; \
++			$(CC) ${LDFLAGS} ${BITFLAGS} -o $(IRCD_EXE) $(OBJECTS) static.o httpd/httpd.so proxymon/proxymon.so $(IRCDLIBS) ; \
+ 		else \
+-			$(CC) ${LDFLAGS} ${BITFLAGS} -o ircd $(OBJECTS) static.o httpd/httpd.so $(IRCDLIBS) ; \
++			$(CC) ${LDFLAGS} ${BITFLAGS} -o $(IRCD_EXE) $(OBJECTS) static.o httpd/httpd.so $(IRCDLIBS) ; \
+ 		fi \
+ 	else \
+ 		if test -n "`grep "USE_OPM\ 1" ../include/setup.h`" ; then \
+ 			${MAKE} -C proxymon build ; \
+ 		fi ; \
+-		$(CC) ${LDFLAGS} ${BITFLAGS} -o ircd $(OBJECTS) static.o $(IRCDLIBS) ; \
++		$(CC) ${LDFLAGS} ${BITFLAGS} -o $(IRCD_EXE) $(OBJECTS) static.o $(IRCDLIBS) ; \
+ 	fi
+ 	$(MV) version.c version.c.last
+ 
+ install:
+ 	@echo "Installing ircd"	
+ 	$(INSTALL) -d ${bindir}
+-	$(INSTALL) -d ${localstatedir}/log/$(BN1)$(BN2)$(BN3)
+-	$(INSTALL) -d ${localstatedir}/run/$(BN1)$(BN2)$(BN3)
+-	$(INSTALL) -d ${localstatedir}/lib/$(BN1)$(BN2)$(BN3)
+ 	$(INSTALL_BIN) $(PROGS) ${bindir}
+ 	if test -z "`grep "STATIC_MODULES\ 1" ../include/setup.h`" ; then \
+ 		if test -n "`grep "USE_OPM\ 1" ../include/setup.h`" ; then \

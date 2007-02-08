@@ -1,0 +1,35 @@
+#!/bin/sh
+
+TRIRCD_USER="%%TRIRCD_USER%%"
+TRIRCD_GROUP="%%TRIRCD_GROUP%%"
+TRIRCD_RUNDIR="%%TRIRCD_RUNDIR%%"
+TRIRCD_LOGDIR="%%TRIRCD_LOGDIR%%"
+TRIRCD_CONFDIR="%%TRIRCD_CONFDIR%%"
+
+MKDIR="%%MKDIR%%"
+PW="%%PW%%"
+
+if ! ${PW} groupshow "${TRIRCD_GROUP}" 2>/dev/null 1>&2; then
+        if pw groupadd ${TRIRCD_GROUP}; then
+                echo "Added group \"${TRIRCD_GROUP}\"."
+        else
+                echo "Adding group \"${TRIRCD_GROUP}\" failed..."
+                exit 1
+        fi
+else
+	echo "You already have a group \"${TRIRCD_GROUP}\"."
+fi
+
+if ! ${PW} usershow "${TRIRCD_USER}" 2>/dev/null 1>&2; then
+        if pw useradd ${TRIRCD_USER} -g ${TRIRCD_GROUP} -h - \
+                -s "/usr/sbin/nologin" -d "%%TRIRCD_CONFDIR%%" \
+                -c "TR-IRCD pseudo-user"; \
+        then
+                echo "Added user \"${TRIRCD_USER}\"."
+        else
+                echo "Adding user \"${TRIRCD_USER}\" failed..."
+                exit 1
+        fi
+else
+	echo "You already have a user \"${TRIRCD_USER}\"."
+fi

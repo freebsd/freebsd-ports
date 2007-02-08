@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Tue Feb  6 13:56:27 2007
++++ Makefile.in	Tue Feb  6 13:57:25 2007
+@@ -126,18 +126,6 @@
+ 		echo "install ==> $$i";\
+ 		${MAKE} -C $$i install ;\
+ 	done
+-	@${bindir}/irandom.sh
+-	@echo "***********************************************"
+-	@echo "Please do not forget to check your example.conf"
+-	@echo "When creating ircd.conf configuration file"
+-	@echo "***********************************************"
+-	@echo "If you have enabled the SSL option, you would"
+-	@echo "Need creating an SSL Certificate. Please check"
+-	@echo "out the ircdssl.conf for this."
+-	@echo "The certificate can be created with the"
+-	@echo "isslconfig.sh utility provided"
+-	@echo "***********************************************"
+-	@echo "Finished Installation"
+ 
+ uninstall_begin:
+ 	@echo "Removing binaries"

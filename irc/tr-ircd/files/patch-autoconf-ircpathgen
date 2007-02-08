@@ -1,0 +1,7 @@
+--- autoconf/ircpathgen.orig	Tue Apr 29 15:52:16 2003
++++ autoconf/ircpathgen	Tue Feb  6 15:09:50 2007
+@@ -87,3 +87,4 @@
+ echo "#define IRCD_PREFIX_VAR \"$localstatedir\"" >> $1/include/ircpath.h
+ echo "#define IRCD_PREFIX_LIB \"$libdir\"" >> $1/include/ircpath.h
+ echo "#define IRCD_PREFIX_DOC \"$datadir\"" >> $1/include/ircpath.h
++echo "#define IRCD_PREFIX_LOG \"/var/log/tr-ircd\"" >> $1/include/ircpath.h

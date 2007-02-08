@@ -1,11 +1,29 @@
---- configure.orig	Sat Oct 26 10:25:29 2002
-+++ configure	Sat Oct 26 10:26:46 2002
-@@ -3129,7 +3129,7 @@
-   ;;
- esac
- fi
--MD5SUMS=$ac_cv_path_MD5SUMS
-+MD5SUMS=../md5/$ac_cv_path_MD5SUMS
+--- configure.orig	Tue Jan 18 17:06:36 2005
++++ configure	Wed Feb  7 12:27:41 2007
+@@ -2688,7 +2688,7 @@
+ 		echo "$as_me:$LINENO: result: Detected FreeBSD: -pthread" >&5
+ echo "${ECHO_T}Detected FreeBSD: -pthread" >&6
+ 		IRC_CFLAGS="$IRC_CFLAGS -pthread"
+-                PROG_IRCD="ircd"
++                PROG_IRCD="tr-ircd"
+                 PROG_MD5SUM="md5sum"
+                 PROG_TOOLS="ircpasswd"
+                 ;;
+@@ -3665,7 +3665,7 @@
  
- if test -n "$MD5SUMS"; then
-   echo "$as_me:$LINENO: result: $MD5SUMS" >&5
+ 
+ INSTALL="$PWD/autoconf/install-sh -c"
+-INSTALL_PROGRAM="$INSTALL -m 4755"
++INSTALL_PROGRAM="$INSTALL -m 0755"
+ INSTALL_DATA="$INSTALL -m 0644"
+ 
+ make_is_gmake=0
+@@ -9865,7 +9865,7 @@
+ #include <openssl/opensslv.h>
+ #include <stdlib.h>
+ int main(void) {
+-  if ( (OPENSSL_VERSION_NUMBER & 0x00906000) == 0x00906000)
++  if ( OPENSSL_VERSION_NUMBER >= 0x00906000 )
+   {
+     exit(0);
+   }
