@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
 		unpaper:${PORTSDIR}/graphics/unpaper \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
+		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 #		gocr:${PORTSDIR}/graphics/gocr \
 #		xdg-email:${PORTSDIR}/devel/xdg-utils \
