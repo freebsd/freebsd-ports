@@ -9,13 +9,10 @@
 PORTNAME=	utf8conv
 PORTVERSION=	1.1
 CATEGORIES=	converters
-MASTER_SITES=	http://www.fibrespeed.net/~mbabcock/code/
+MASTER_SITES=	http://mikebabcock.ca/code/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert hexadecimal Unicode character values to UTF-8
-
-DEPRECATED=	is unfetchable, distfile disappeared from project homepage
-EXPIRATION_DATE=	2007-12-17
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
