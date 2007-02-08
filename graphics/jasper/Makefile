@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jasper
-PORTVERSION=	1.701.0
-PORTREVISION=	1
+PORTVERSION=	1.900.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
@@ -31,7 +30,14 @@ MASTER_SITE_IMAGEMAGICK=	\
 	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
 
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=		imgcmp.1 imginfo.1 jasper.1 jiv.1
+.endif
+
 post-install:
+.if !defined(NO_INSTALL_MANPAGES)
+	@cd ${WRKSRC}/src/appl && make install-man
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
