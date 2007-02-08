@@ -7,11 +7,12 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.17
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU binutils for PowerPC/RS6000 cross-development
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
@@ -57,21 +58,11 @@ MAN1=			${PKGNAMEPREFIX}addr2line.1 \
 
 INFO=			as binutils ld
 
-BINARIES=		addr2line ar as c++filt ld \
-			nm objcopy objdump ranlib \
-			readelf size strings strip
-
 post-extract:
 	@${REINPLACE_CMD} -E -e 's,^(install:).*,\1,' \
 		${WRKSRC}/bfd/Makefile.in \
 		${WRKSRC}/etc/Makefile.in \
 		${WRKSRC}/libiberty/Makefile.in \
 		${WRKSRC}/opcodes/Makefile.in
-
-post-install:
-.for F in ${BINARIES}
-	@${LN} -sf ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
-		${PREFIX}/bin/$F
-.endfor
 
 .include <bsd.port.mk>
