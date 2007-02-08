@@ -9,17 +9,15 @@ PORTNAME=	imgSeek
 PORTVERSION=	0.8.4
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	imgseek
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	SFE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alfredoj69@gmail.com
 COMMENT=	A photo manager and viewer with content-based search
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt \
 		Magick++-config:${PORTSDIR}/graphics/ImageMagick
 
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 
