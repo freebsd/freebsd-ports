@@ -11176,6 +11176,7 @@ pear-Log	ports/sysutils/pear-Log
 pear-MDB	ports/databases/pear-MDB
 pear-MDB2	ports/databases/pear-MDB2
 pear-MDB2_Driver_mysql	ports/databases/pear-MDB2_Driver_mysql
+pear-MDB2_Driver_mysqli	ports/databases/pear-MDB2_Driver_mysqli
 pear-MDB_QueryTool	ports/databases/pear-MDB_QueryTool
 pear-MIME_Type	ports/mail/pear-MIME_Type
 pear-Mail	ports/mail/pear-Mail
