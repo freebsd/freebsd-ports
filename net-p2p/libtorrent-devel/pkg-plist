@@ -35,6 +35,7 @@ include/torrent/resume.h
 include/torrent/torrent.h
 include/torrent/tracker.h
 include/torrent/tracker_list.h
+lib/libtorrent.a
 lib/libtorrent.la
 lib/libtorrent.so
 lib/libtorrent.so.10
