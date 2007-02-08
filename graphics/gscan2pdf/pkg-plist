@@ -12,9 +12,11 @@ share/locale/ru/LC_MESSAGES/gscan2pdf.mo
 share/locale/sv/LC_MESSAGES/gscan2pdf.mo
 share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
 %%DATADIR%%/gscan2pdf.png
+%%DATADIR%%/pdf.png
 %%DATADIR%%/rotate180.png
 %%DATADIR%%/rotate270.png
 %%DATADIR%%/rotate90.png
+%%DATADIR%%/scanner.png
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf
 @dirrmtry share/applications
