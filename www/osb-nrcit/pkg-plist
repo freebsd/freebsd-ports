@@ -1,8 +1,9 @@
-include/osb/gtk-khtml.h
 include/osb/osb.h
+include/osb/uri.h
+include/osb/webi.h
 lib/libnrcit.a
 lib/libnrcit.la
 lib/libnrcit.so
 lib/libnrcit.so.0
 libdata/pkgconfig/osb-nrcit.pc
-@dirrm include/osb
+@dirrmtry include/osb
