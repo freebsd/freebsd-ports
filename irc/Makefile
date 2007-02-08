@@ -60,7 +60,7 @@
     SUBDIR += kmyirc
     SUBDIR += konversation
     SUBDIR += kvirc
-    SUBDIR += kvirc-irc
+    SUBDIR += kvirc-devel
     SUBDIR += kwirc
     SUBDIR += lostirc
     SUBDIR += miau
