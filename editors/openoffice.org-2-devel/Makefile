@@ -73,10 +73,6 @@ GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		install lang/perl5.8 then try again
-.endif
-
 CODELINE=		680
 MILESTONE?=		202
 OOOTAG?=		SRC680_m${MILESTONE}
