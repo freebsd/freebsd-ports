@@ -5,27 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=		qtella
-PORTVERSION=		0.6.4
-PORTREVISION=		4
-CATEGORIES=		net-p2p
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	qtella
+PORTNAME=	qtella
+PORTVERSION=	0.7.0
+CATEGORIES=	net-p2p
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A Gnutella client using Qt
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Gnutella client using Qt
 
-HAS_CONFIGURE=		yes
-USE_GMAKE=		yes
-CONFIGURE_ARGS+=	--with-qt-dir=${X11BASE} --with-qt-moc=${X11BASE}/bin
-CONFIGURE_ENV+=		LDFLAGS=-pthread CXXFLAGS="${CXXFLAGS} -pthread"
+LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-USE_KDELIBS_VER=3
+USE_KDELIBS_VER=	3
+USE_GNOME=	gnometarget
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE} \
+		--with-id3-dir=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
 
-.if ${OSVERSION} < 500000
-BROKEN=			"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
