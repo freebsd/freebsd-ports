@@ -127,10 +127,6 @@ elif bzgrep -q "initializer element is not constant" $1; then
   reason="stdio"; tag="stdio"
 elif bzgrep -q "structure has no member named" $1; then
   reason="struct_changes"; tag="struct"
-elif bzgrep -qE "bin.apxs:(.)(not found|No such file or directory)" $1; then
-  reason="apxs"; tag="apxs"
-elif bzgrep -qE "failed to exec .*bin/apxs" $1; then
-  reason="apxs"; tag="apxs"
 elif bzgrep -q ".s: Assembler messages:" $1; then
   reason="arch"; tag="arch"
 elif bzgrep -qE "Cannot (determine .* target|find the byte order) for this architecture" $1; then
