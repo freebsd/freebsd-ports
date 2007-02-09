@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Simple
-PORTVERSION=	1.99.6
+PORTVERSION=	1.99.8
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -18,6 +18,6 @@ COMMENT=	Simple parsing of RFC2822 message format and headers
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Email::Simple.3 Email::Simple::Headers.3
+MAN3=		Email::Simple.3 Email::Simple::Headers.3 Email::Simple::Header.3
 
 .include <bsd.port.mk>
