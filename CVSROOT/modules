@@ -11519,6 +11519,7 @@ php5-simplexml	ports/textproc/php5-simplexml
 php5-snmp	ports/net-mgmt/php5-snmp
 php5-soap	ports/net/php5-soap
 php5-sockets	ports/net/php5-sockets
+php5-spl	ports/devel/php5-spl
 php5-sqlite	ports/databases/php5-sqlite
 php5-sybase_ct	ports/databases/php5-sybase_ct
 php5-sysvmsg	ports/devel/php5-sysvmsg
