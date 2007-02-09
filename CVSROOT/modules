@@ -11505,6 +11505,7 @@ php5-odbc	ports/databases/php5-odbc
 php5-openssl	ports/security/php5-openssl
 php5-pcntl	ports/devel/php5-pcntl
 php5-pcre	ports/devel/php5-pcre
+php5-pdo	ports/databases/php5-pdo
 php5-pgsql	ports/databases/php5-pgsql
 php5-phing	ports/devel/php5-phing
 php5-posix	ports/sysutils/php5-posix
