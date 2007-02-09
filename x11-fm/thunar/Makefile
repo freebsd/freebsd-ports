@@ -45,7 +45,7 @@ MAN1=		Thunar.1
 
 .include  <bsd.port.pre.mk>
 
-.if defined(WITH_DBUS)
+.if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	WITH_DBUS=""
@@ -54,14 +54,14 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
 .endif
 
-.if defined(WITH_JPEG)
+.if !defined(WITHOUT_JPEG)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
 .else
 CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
-.if defined(WITH_HAL)
+.if !defined(WITHOUT_HAL)
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .endif
 
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=--enable-gconf
 CONFIGURE_ARGS+=--disable-gconf
 .endif
 
-.if defined(WITH_PLUG_APR)
+.if !defined(WITHOUT_PLUG_APR)
 CONFIGURE_ARGS+=--enable-apr-plugin
 PLIST_SUB+=	PLUGIN_APR=""
 .if defined(WITH_PLUG_APR_EXIF)
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=--disable-apr-plugin --disable-exif
 PLIST_SUB+=	PLUGIN_APR="@comment "
 .endif
 
-.if defined(WITH_PLUG_SBR)
+.if !defined(WITHOUT_PLUG_SBR)
 CONFIGURE_ARGS+=--enable-sbr-plugin
 PLIST_SUB+=	PLUGIN_SBR=""
 .if defined(WITH_PLUG_SBR_PCRE)
@@ -105,7 +105,7 @@ CONFIGURE_ARGS+=--disable-sbr-plugin --disable-pcre
 PLIST_SUB+=	PLUGIN_SBR="@comment "
 .endif
 
-.if defined(WITH_PLUG_TPA)
+.if !defined(WITHOUT_PLUG_TPA)
 CONFIGURE_ARGS+=--enable-tpa-plugin
 PLIST_SUB+=	PLUGIN_TPA=""
 USE_XFCE+=	panel
@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=--disable-tpa-plugin
 PLIST_SUB+=	PLUGIN_TPA="@comment "
 .endif
 
-.if defined(WITH_PLUG_UCA)
+.if !defined(WITHOUT_PLUG_UCA)
 CONFIGURE_ARGS+=--enable-uca-plugin
 PLIST_SUB+=	PLUGIN_UCA=""
 .else
