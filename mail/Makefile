@@ -461,6 +461,7 @@
     SUBDIR += qmHandle
     SUBDIR += qmail
     SUBDIR += qmail-activedir
+    SUBDIR += qmail-auditor
     SUBDIR += qmail-autoresponder
     SUBDIR += qmail-conf
     SUBDIR += qmail-contrib
