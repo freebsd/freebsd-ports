@@ -56,16 +56,12 @@ elif bzgrep -q "checking for.*lc_r\.\.\. no" $1; then
   reason="threads"; tag="threads"
 elif bzgrep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
   reason="distinfo_update"; tag="distinfo"
-elif bzgrep -q "checking whether apxs works.*apxs: not found" $1; then
-  reason="apxs"; tag="apxs"
 # note: must run before the configure_error check
 elif bzgrep -qE "Configuration .* not supported" $1; then
   reason="arch"; tag="arch"
 elif bzgrep -qE '(configure: error:|Script.*configure.*failed unexpectedly|script.*failed: here are the contents of)' $1; then
   if bzgrep -qE "configure: error: cpu .* not supported" $1; then
     reason="arch"; tag="arch"
-  elif bzgrep -qE "configure: error: (This program requires STL to compile|One or more.*STL headers are missing)" $1; then
-    reason="stl"; tag="stl"
   elif bzgrep -qE "configure: error: [Pp]erl (5.* required|version too old)" $1; then
     reason="perl"; tag="perl"
   else
@@ -75,8 +71,6 @@ elif bzgrep -q "Couldn't fetch it - please try" $1; then
   reason="fetch"; tag="fetch"
 elif bzgrep -q "out of .* hunks .*--saving rejects to" $1; then
   reason="patch"; tag="patch"
-elif bzgrep -q 'Error: category .* not in list of valid categories' $1; then
-  reason="CATEGORIES"; tag="categories"
 elif bzgrep -qi 'read-only file system' $1; then
   reason="WRKDIR"; tag="wrkdir"
 elif bzgrep -q "Error: shared library \".*\" does not exist" $1; then
@@ -111,14 +105,8 @@ elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot
   reason="linker_error"; tag="ld"
 elif bzgrep -qE 'chown:.*[Ii]nvalid argument' $1; then
   reason="chown"; tag="chown"
-#elif bzgrep -qE 'cp:.*Invalid argument' $1; then
-#  reason="munmap"; tag="munmap"
 elif bzgrep -q 'install: .*: No such file' $1; then
-  if bzgrep -q 'install: /usr/local/www/cgi-bin.*No such file or directory' $1; then
-    reason="cgi-bin"; tag="cgi-bin"
-  else
-    reason="install_error"; tag="install"
-  fi
+  reason="install_error"; tag="install"
 elif bzgrep -q "/usr/.*/man/.*: No such file or directory" $1; then
   reason="manpage"; tag="manpage"
 elif bzgrep -qE "(Can't|unable to) open display" $1; then
@@ -139,8 +127,6 @@ elif bzgrep -q "initializer element is not constant" $1; then
   reason="stdio"; tag="stdio"
 elif bzgrep -q "structure has no member named" $1; then
   reason="struct_changes"; tag="struct"
-elif bzgrep -q "Error: alignment not a power of 2" $1; then
-  reason="alignment"; tag="alignment"
 elif bzgrep -qE "bin.apxs:(.)(not found|No such file or directory)" $1; then
   reason="apxs"; tag="apxs"
 elif bzgrep -qE "failed to exec .*bin/apxs" $1; then
@@ -193,8 +179,6 @@ elif bzgrep -q "Unsupported platform, sorry" $1;  then
   reason="arch"; tag="arch"
 elif bzgrep -q "won't run on this architecture" $1;  then
   reason="arch"; tag="arch"
-elif bzgrep -qE "#error .Cannot compile:" $1; then
-  reason="assert"; tag="assert"
 elif bzgrep -qE "autoconf(.*): not found" $1; then
   reason="autoconf"; tag="autoconf"
 elif bzgrep -qE "autoconf(.*): No such file or directory" $1; then
@@ -203,8 +187,6 @@ elif bzgrep -q "autoheader: not found" $1; then
   reason="autoheader"; tag="autoheader"
 elif bzgrep -qE "automake(.*): not found" $1; then
   reason="automake"; tag="automake"
-elif bzgrep -q "/usr/local/www/cgi-bin does not exist" $1; then
-  reason="cgi-bin"; tag="cgi-bin"
 elif bzgrep -q "Shared object \"libc.so.6\" not found, required by" $1; then
   reason="compat6x"; tag="compat6x"
 elif bzgrep -q "Cannot open /dev/tty for read" $1; then
