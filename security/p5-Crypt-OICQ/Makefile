@@ -20,9 +20,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::OICQ.3
 
-DEPRECATED=	Project ceased development
-EXPIRATION_DATE=	2007-02-01
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
