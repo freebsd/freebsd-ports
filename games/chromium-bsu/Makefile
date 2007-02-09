@@ -30,10 +30,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lopenal|& -lalut|g' \
 			  -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/src/CHROMIUM.pro
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/src-setup/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/support/glpng/src/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/support/glpng/src/glpng.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/chromium ${PREFIX}/bin
