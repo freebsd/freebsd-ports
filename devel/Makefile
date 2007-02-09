@@ -1677,6 +1677,7 @@
     SUBDIR += php5-phing
     SUBDIR += php5-readline
     SUBDIR += php5-shmop
+    SUBDIR += php5-spl
     SUBDIR += php5-sysvmsg
     SUBDIR += php5-sysvsem
     SUBDIR += php5-sysvshm
