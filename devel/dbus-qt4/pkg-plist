@@ -32,7 +32,7 @@ include/QtDBus/qdbusmessage.h
 include/QtDBus/qdbusmetatype.h
 include/QtDBus/qdbusreply.h
 include/QtDBus/qdbusserver.h
-lib/QtDBus.pc
+libdata/pkgconfig/QtDBus.pc
 lib/libQtDBus.la
 lib/libQtDBus.prl
 lib/libQtDBus.so

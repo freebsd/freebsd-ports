@@ -409,7 +409,7 @@ lib/libQtCore.so.4.2
 lib/libQtCore.so.4.2.2
 lib/libQtCore.so.4.2.2.debug
 lib/plugins/.keep_me
-libdata/QtCore.pc
+libdata/pkgconfig/QtCore.pc
 @dirrm lib/plugins
 @dirrm include/QtCore
 @dirrm include/Qt

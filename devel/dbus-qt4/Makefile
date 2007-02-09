@@ -8,7 +8,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMESUFFIX=	-qt4
@@ -69,7 +69,7 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|local/lib/QtDBus.pc|local/libdata/QtDBus.pc|g' \
-		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtDBus.pc|${PREFIX}/libdata/pkgconfig/QtDBus.pc|g' \
+		${WRKSRC}/src/Makefile
 
 .include <bsd.port.post.mk>
