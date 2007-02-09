@@ -19,6 +19,9 @@ COMMENT=	A concurrent programming language
 ONLY_FOR_ARCHS=	alpha i386
 ONLY_FOR_ARCHS_REASON=	uses assembly code for the target machine
 
+# net/mpd
+NO_LATEST_LINK=	yes
+
 USE_GMAKE=	yes
 
 OPTIONS=	X11 "Enable X11 support" on
