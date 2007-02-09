@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 
-.if !defined(_POSTMKINCLUDED) && !defined(Xfce_Pre_Include)
+#.if !defined(_POSTMKINCLUDED) && !defined(Xfce_Pre_Include)
 
 Xfce_Pre_Include=		bsd.xfce.mk
 Xfce_Include_MAINTAINER=	oliver@FreeBSD.org
@@ -58,4 +58,4 @@ IGNORE=	cannot install: Unknown component ${component}
 . endif
 .endfor
 
-.endif
+#.endif
