@@ -112,8 +112,8 @@ lib/libopal_r.so
 lib/libopal_r.so.2
 lib/libopal_r.so.2.2
 lib/libopal_r.so.%%PORTVERSION%%
-share/opal/opal_inc.mak
-@dirrm share/opal
+%%DATADIR%%/opal_inc.mak
+@dirrm %%DATADIR%%
 @dirrm include/opal/t38
 @dirrm include/opal/t120
 @dirrm include/opal/sip
