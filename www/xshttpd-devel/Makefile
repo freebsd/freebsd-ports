@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.4b23
+DISTVERSION=	3.4b25
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -33,6 +33,7 @@ OPTIONS=	SSL "Enable https support" On \
 		LDAP "Enable ldap support" Off \
 		PCRE "Enable pcre rewriting support" Off \
 		CURL "Enable curl (proxy) support" Off \
+		M4_CONFIG "Enable m4 configuration preprocessor" Off \
 		PERSISTENT_PERL "Enable persistent perl interpreter" Off
 
 PORTDOCS=	README BUGS COPYING ChangeLog
@@ -57,6 +58,12 @@ USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-ldap
+.endif
+
+.if defined(WITH_M4_CONFIG)
+CONFIGURE_ARGS+=--with-preprocessor
+.else
+CONFIGURE_ARGS+=--without-preprocessor
 .endif
 
 .if defined(WITH_PERSISTENT_PERL)
