@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	flphoto
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fltk
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A basic image management and display program
 
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
-
-BROKEN=		Does not compile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
