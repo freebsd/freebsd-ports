@@ -54,14 +54,14 @@ CONFIGURE_ARGS+=--disable-gtk-doc
 PLIST_SUB+=	GTK_DOC="@comment "
 .endif
 
-.if defined(WITH_HAL)
+.if !defined(WITHOUT_HAL)
 CONFIGURE_ARGS+=--enable-hal
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=--disable-hal
 .endif
 
-.if defined(WITH_NOTIFY)
+.if !defined(WITHOUT_NOTIFY)
 CONFIGURE_ARGS+=--enable-notifications
 LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
 PLIST_SUB+=	NOTIFY=""
@@ -74,6 +74,7 @@ PLIST_SUB+=	NOTIFY="@comment "
 CONFIGURE_ARGS+=--enable-python
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 PLIST_SUB+=	PYTHON=""
 .else
