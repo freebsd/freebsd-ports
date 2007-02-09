@@ -2085,6 +2085,7 @@
     SUBDIR += wininfo
     SUBDIR += wizardkit
     SUBDIR += wxGlade
+    SUBDIR += wxGlade-devel
     SUBDIR += xdg-utils
     SUBDIR += xfc
     SUBDIR += xfce4-dev-tools
