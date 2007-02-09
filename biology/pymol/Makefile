@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymol
-PORTVERSION=	0.99rc1
+PORTVERSION=	0.99rc6
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/pymol-0.99
+WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
