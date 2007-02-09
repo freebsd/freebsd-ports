@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi-scripts
-PORTVERSION=	20060513
+PORTVERSION=	20061009
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/i/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

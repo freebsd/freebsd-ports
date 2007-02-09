@@ -51,6 +51,7 @@ share/irssi/scripts/callerid.pl
 share/irssi/scripts/centericq.pl
 share/irssi/scripts/cgrep.pl
 share/irssi/scripts/chanact.pl
+share/irssi/scripts/chanact.pl.orig
 share/irssi/scripts/chanfull.pl
 share/irssi/scripts/chanfull_duden.pl
 share/irssi/scripts/chanpeak.pl
@@ -194,6 +195,7 @@ share/irssi/scripts/news.pl
 share/irssi/scripts/newsline.pl
 share/irssi/scripts/nickban.pl
 share/irssi/scripts/nickcolor.pl
+share/irssi/scripts/nickident.pl
 share/irssi/scripts/nickignore.pl
 share/irssi/scripts/nicklist.pl
 share/irssi/scripts/nickmix-c0ffee.pl
@@ -290,7 +292,9 @@ share/irssi/scripts/tinyurl.pl
 share/irssi/scripts/title.pl
 share/irssi/scripts/tlock.pl
 share/irssi/scripts/topic-diff.pl
+share/irssi/scripts/topic-diff.pl.orig
 share/irssi/scripts/topics.pl
+share/irssi/scripts/topics.pl.orig
 share/irssi/scripts/topicsed.pl
 share/irssi/scripts/trackbar.pl
 share/irssi/scripts/tracknick.pl
@@ -331,3 +335,5 @@ share/irssi/scripts/xmms.pl
 share/irssi/scripts/xmms2.pl
 share/irssi/scripts/xmmsinfo.pl
 share/irssi/scripts/xqf.pl
+@dirrm share/irssi/scripts
+@dirrm share/irssi
