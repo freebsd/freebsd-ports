@@ -10,14 +10,14 @@ PORTVERSION=	1.5.9
 PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
-    		http://www.goodking.ca/pub/files/
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bibletime
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	A project framework for manipulating Bible texts
 
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf --without-clucene
