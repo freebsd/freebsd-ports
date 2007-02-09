@@ -42,5 +42,5 @@ lib/libQtXml.so.4
 lib/libQtXml.so.4.2
 lib/libQtXml.so.4.2.2
 lib/libQtXml.so.4.2.2.debug
-libdata/QtXml.pc
+libdata/pkgconfig/QtXml.pc
 @dirrm include/QtXml

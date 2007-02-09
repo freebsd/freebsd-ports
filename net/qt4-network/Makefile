@@ -8,6 +8,7 @@
 
 PORTNAME=	network
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES?=	net ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -66,7 +67,7 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|local/lib/QtNetwork.pc|local/libdata/QtNetwork.pc|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtNetwork.pc|${PREFIX}/libdata/pkgconfig/QtNetwork.pc|g' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>

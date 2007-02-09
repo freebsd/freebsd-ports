@@ -9,7 +9,7 @@ include/QtSvg/QtSvg
 include/QtSvg/qgraphicssvgitem.h
 include/QtSvg/qsvgrenderer.h
 include/QtSvg/qsvgwidget.h
-lib/QtSvg.pc
+libdata/pkgconfig/QtSvg.pc
 lib/libQtSvg.la
 lib/libQtSvg.prl
 lib/libQtSvg.so

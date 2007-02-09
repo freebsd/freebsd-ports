@@ -75,5 +75,5 @@ lib/libQtSql.so
 lib/libQtSql.so.4
 lib/libQtSql.so.4.2
 lib/libQtSql.so.4.2.2
-libdata/QtSql.pc
+libdata/pkgconfig/QtSql.pc
 @dirrm include/QtSql

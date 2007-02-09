@@ -8,7 +8,7 @@
 
 PORTNAME=	svg
 PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	graphics
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -77,7 +77,7 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|local/lib/QtXml.pc|local/libdata/QtSvg.pc|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtSvg.pc|${PREFIX}/libdata/pkgconfig/QtSvg.pc|g' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>

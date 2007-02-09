@@ -27,7 +27,7 @@ include/QtTest/qtestkeyboard.h
 include/QtTest/qtestmouse.h
 include/QtTest/qtestspontaneevent.h
 include/QtTest/qtestsystem.h
-lib/QtTest.pc
+libdata/pkgconfig/QtTest.pc
 lib/libQtTest.la
 lib/libQtTest.prl
 lib/libQtTest.so
