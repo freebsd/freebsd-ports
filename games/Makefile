@@ -701,6 +701,7 @@
     SUBDIR += taipan
     SUBDIR += tank
     SUBDIR += taxipilot
+    SUBDIR += tbclock
     SUBDIR += tecnoballz
     SUBDIR += teg
     SUBDIR += tenebrae
