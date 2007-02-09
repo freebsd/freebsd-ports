@@ -229,7 +229,7 @@ php-ini:
 # non-version specific components
 _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 		exif fileinfo fribidi ftp gd gettext gmp \
-		hash iconv imap interbase ldap mbstring mcrypt \
+		hash iconv imap interbase json ldap mbstring mcrypt \
 		mhash mssql mysql ncurses odbc \
 		openssl pcntl pcre pdf pgsql posix \
 		pspell radius readline recode session shmop snmp \
@@ -238,8 +238,8 @@ _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 # version specific components
 _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml filepro mcal mcve \
 		mnogosearch oracle overload pfpro xslt yp
-_USE_PHP_VER5=	${_USE_PHP_ALL} dom ming mysqli pdo simplexml soap sqlite \
-		tidy xmlreader xmlwriter xsl
+_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter ming mysqli pdo pdo_sqlite \
+		simplexml soap spl sqlite tidy xmlreader xmlwriter xsl
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
@@ -256,6 +256,7 @@ domxml_DEPENDS=	textproc/php${PHP_VER}-domxml
 exif_DEPENDS=	graphics/php${PHP_VER}-exif
 fileinfo_DEPENDS=	sysutils/pecl-fileinfo
 filepro_DEPENDS=databases/php${PHP_VER}-filepro
+filter_DEPENDS=	security/pecl-filter
 fribidi_DEPENDS=converters/pecl-fribidi
 ftp_DEPENDS=	ftp/php${PHP_VER}-ftp
 gd_DEPENDS=	graphics/php${PHP_VER}-gd
@@ -265,6 +266,7 @@ hash_DEPENDS=	security/pecl-hash
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
+json_DEPENDS=	devel/pecl-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcal_DEPENDS=	misc/php${PHP_VER}-mcal
@@ -284,7 +286,8 @@ overload_DEPENDS=lang/php${PHP_VER}-overload
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pcre_DEPENDS=	devel/php${PHP_VER}-pcre
 pdf_DEPENDS=	print/pecl-pdflib
-pdo_DEPENDS=	databases/pecl-PDO
+pdo_DEPENDS=	databases/php${PHP_VER}-pdo
+pdo_sqlite_DEPENDS=	databases/php${PHP_VER}-pdo_sqlite
 pfpro_DEPENDS=	finance/php${PHP_VER}-pfpro
 pgsql_DEPENDS=	databases/php${PHP_VER}-pgsql
 posix_DEPENDS=	sysutils/php${PHP_VER}-posix
@@ -298,6 +301,7 @@ simplexml_DEPENDS=	textproc/php${PHP_VER}-simplexml
 snmp_DEPENDS=	net-mgmt/php${PHP_VER}-snmp
 soap_DEPENDS=	net/php${PHP_VER}-soap
 sockets_DEPENDS=net/php${PHP_VER}-sockets
+spl_DEPENDS=	devel/php${PHP_VER}-spl
 sqlite_DEPENDS=	databases/php${PHP_VER}-sqlite
 sybase_ct_DEPENDS=	databases/php${PHP_VER}-sybase_ct
 sysvmsg_DEPENDS=devel/php${PHP_VER}-sysvmsg
