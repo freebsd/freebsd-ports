@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
 
+CONFLICTS=	wxglade-devel-[0-9]*
+
 WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
 
 USE_PYTHON=	yes
