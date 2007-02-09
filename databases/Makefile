@@ -368,6 +368,7 @@
     SUBDIR += php5-oci8
     SUBDIR += php5-odbc
     SUBDIR += php5-pdo
+    SUBDIR += php5-pdo_dblib
     SUBDIR += php5-pdo_sqlite
     SUBDIR += php5-pgsql
     SUBDIR += php5-propel
