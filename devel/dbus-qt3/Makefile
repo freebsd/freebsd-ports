@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	-qt3
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	xors@sendmail.ru
+MAINTAINER=	xors@mne.ru
 COMMENT=	Qt3 bindings for the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
