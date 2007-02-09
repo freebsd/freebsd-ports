@@ -1,0 +1,7 @@
+--- gaim.service.in.orig        Tue Feb  6 20:55:54 2007
++++ gaim.service.in     Tue Feb  6 20:56:04 2007
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+-Name=org.gaim.GaimService
++Name=net.sf.gaim.GaimService
+ Exec=@bindir@/gaim
