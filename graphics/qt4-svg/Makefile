@@ -16,7 +16,7 @@ DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt XML library
+COMMENT=	Qt SVG library
 
 BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4
