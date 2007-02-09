@@ -1,24 +1,21 @@
 #! /bin/sh
+# $FreeBSD$
 
-PATH=$PATH:/bin:/usr/bin:/usr/sbin
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
 
-case $2 in
-
-POST-DEINSTALL)
-	echo "You are deinstalling this port:"
-	echo "  Remember to kill the associated Aolserver process in case"
-	echo "	you've changed the standard."       
-	echo "  We will try to kill the standard now:"
-	pid=`ps -ax | grep %%OPENACS_USER%%/etc/config.tcl | grep -v grep| awk -F' ' '{print $1}'`;
-	if test "$pid" = "" ; then
-		echo "  No %%OPENACS_USER%% process found."
-	else
-		echo "  Killing %%OPENACS_USER%% proces. pid: $pid . "
-		kill $pid
-	fi
-	echo " If no other openACS/.LRN instance needs it, you may want to "
-	echo " delete %%VIRTUALBASE%%/aolserver and %%VIRTUALBASE%% manually, "
-	echo " and possibly the %%OPENACS_USER%% users and database. "
-	;;
-esac
+OPENACS_USER=%%OPENACS_USER%%
+OPENACS_GROUP=%%OPENACS_GROUP%%
+OPENACSBASE=%%OPENACSBASE%%
  
+if pw usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
+	echo "To delete ${OPENACS_USER} user permanently, use 'pw userdel \"${OPENACS_USER}\"'"
+fi
+if pw usershow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
+	echo "To delete ${OPENACS_GROUP} group permanently, use 'pw groupdel \"${OPENACS_GROUP}\"'"
+fi
+if test -d "${OPENACSBASE}"; then
+	echo "You may need to remove ${OPENACSBASE} manually."
+fi
+exit 0

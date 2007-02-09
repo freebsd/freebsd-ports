@@ -6,13 +6,21 @@
 #
 
 PORTNAME=	dotlrn
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.1
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
+EXTRACT_SUFX=	.tgz?revision_id=559791
 
-MAINTAINER=	aldert@nooitgedagt.net
-COMMENT=	Modular web application platform for high traffic elearning community
+MAINTAINER=	martin@matuska.org
+COMMENT=	OpenACS-based e-learning platform for high-traffic communities
 
-OPENACS_USER=	dotlrn0
+OPENACS_USER?=  dotlrn
+OPENACS_DB?=	dotlrn
+OPENACS_GROUP?= www
+
+OPENACSBASE=	${TARGETDIR}/dotlrn
+OPENACSNAME=	.LRN
+
+BASE_INSTALL=	bin content-repository-content-files log packages tcl www install.xml
 
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo

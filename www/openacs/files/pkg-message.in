@@ -1,62 +1,23 @@
-     ******** READ THIS *******
+Congratulations! You have just installed %%OPENACSNAME%%
 
-Congratulations! You have just installed OpenACS/.LRN
+To create a sample default database run the script:
+%%EXAMPLESDIR%%/create_sampledb.sh
 
-If you didn't do make install WITH_POSTCONFIG=yes,
-inspect post-config.sh now and/or run:
-sh %%EXAMPLESDIR%%/post-config.sh XX POST-INSTALL
-If you can, stop Aolserver and Postgresql first
-(killall -9 nsd ; %%PREFIX%%/etc/rc.d/010.pgsql.sh stop) 
-before post-install configuration starts.
+You can start %%OPENACSNAME%% with the startup script:
+%%LOCALBASE%%/etc/rc.d/%%PORTNAME%%
 
-Then use your browser to view the welcome page (http://<your-ip>:8000)
-and follow the instructions. (Find out your IP address by typing 
-"ifconfig" at the command line)
-
-If you want daemontools to restart aolserver, remember to:
-Copy the example svscan.sh from %%EXAMPLESDIR%%
-to %%LOCALBASE%%/etc/rc.d/svscan.sh
-Make a copy of the original file first, if you like.
-Then REBOOT (shutdown -r now)!
-
-Once the datamodel has been installed and aolserver restarts
-it can take a few MINUTES before the server becomes available. 
-Be patient! 
+If you are using another AOLserver on the default port 8000, 
+please change the port number in the configuration file.
+Default config: %%OPENACSBASE%%/etc/%%PORTNAME%%-config.tcl
+ 
+Then use your browser to view the welcome page (http://<your-ip>:<port>)
+- default port is 8000 and follow the instructions.
 
 Errors, if any, are in:
-%%VIRTUALBASE%%/aolserver/%%OPENACS_USER%%/log/error.log
- 
-Go to the docs at http://openacs.org/doc/ to find out more.
-There are a few things different from the docs (!): For example, the 
-postgres user is pgsql not postgres, daemontools are in %%DTSERVICEBASE%%,
-openACS/.LRN is in %%LOCALBASE%%/share/ (with symlink in %%VIRTUALBASE%%), 
-nsd-postgres and some other files are in %%EXAMPLESDIR%%, but everything
-should work just fine.
+%%OPENACSBASE%%/log/error.log
 
-To view your pages at port 80 you will have to change:
-%%RCCONF%%, daemontools/run and config.tcl in
-%%VIRTUALBASE%%/aolserver/%%OPENACS_USER%%/etc.
+If you want to use keepalive via cron, you might want to look here:
+%%EXAMPLESDIR%%/keepalive/
 
-If you install .LRN as well as openACS the IP address in config.tcl
-should be different or you should shut one down (svc -d %%DTSERVICEBASE%%/...)
-before starting the other. Aolserver cannot listen on the same ip-address
-twice!
-
-If you want to remove openacs, type "make deinstall" or use pkg_delete
-(pkg_info).
-However, users and database are not removed.
-
-We use bash as shell in openACS. We didn't change the shells of
-current users like root and pgsql, yet. If you want, do:
-chsh -s %%LOCALBASE%%/bin/bash USERNAME 
-and change its profile by copying the openACS entries from
-/usr/share/skel/dot.profile to  ~/.profile. 
-Then login/out or type ". .profile".
-
-Remember: THIS MESSAGE is in PORTSDIR/www/openacs/
-files/pkg-message.in or work/pkg-message
-
--Aldert
-aldert@nooitgedagt.net
-
-     ******** READ THE INFORMATION ABOVE ******** 
+-Martin Matuska
+martin@matuska.org
