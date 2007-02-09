@@ -15594,6 +15594,7 @@ wwwcount	ports/www/wwwcount
 wwwoffle	ports/www/wwwoffle
 wwwstat		ports/www/wwwstat
 wxGlade		ports/devel/wxGlade
+wxGlade-devel	ports/devel/wxGlade-devel
 wxMaxima	ports/math/wxMaxima
 wxd		ports/x11-toolkits/wxd
 wxdfast		ports/ftp/wxdfast
