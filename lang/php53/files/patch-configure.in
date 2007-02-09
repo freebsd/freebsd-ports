@@ -53,7 +53,7 @@
  PHP_SUBST(install_targets)
  
 -PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/ regex/])
-+PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/ regex/ ext/spl/])
++PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/ regex/])
  
  PHP_ADD_SOURCES(TSRM, TSRM.c tsrm_strtok_r.c tsrm_virtual_cwd.c)
  

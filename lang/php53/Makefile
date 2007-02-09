@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
@@ -27,14 +27,12 @@ USE_AUTOTOOLS=	autoconf:259
 USE_GETOPT_LONG=yes
 
 CONFIGURE_ARGS=	--enable-versioning \
-		--enable-memory-limit \
 		--with-layout=GNU \
 		--with-config-file-scan-dir=${PREFIX}/etc/php \
 		--disable-all \
 		--enable-libxml \
 		--with-libxml-dir=${LOCALBASE} \
 		--enable-reflection \
-		--enable-spl \
 		--program-prefix=""
 
 USE_GNOME=	libxml2
@@ -69,7 +67,7 @@ PLIST_SUB+=	SUHOSIN="@comment "
 .endif
 
 .if defined(WITH_MAILHEAD)
-PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
+PATCHFILES+=	php-5.2.0-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
