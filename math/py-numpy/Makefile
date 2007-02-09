@@ -18,7 +18,7 @@ DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpy.pdf:doc
 EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
 
 CONFLICTS=	f2py-*
@@ -58,10 +58,24 @@ pre-fetch:
 post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
 
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+GCCLIBDIR=	`${FC} -print-file-name=`
 post-patch:
-.if defined(WITH_ATLAS)
-	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}
+.ifdef WITH_ATLAS
+	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
+	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" \
+	    -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
+	    -e "s+%%ATLASLIBS%%+lapack, blas+" ${WRKSRC}/site.cfg
+.else
+	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
+	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" \
+	    -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
+	    -e "s+%%ATLASLIBS%%+alapack_r, f77blas_r, cblas_r, atlas_r+" \
+		 ${WRKSRC}/site.cfg
 .endif
+	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" ${WRKSRC}/numpy/distutils/system_info.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${MAN1PREFIX}/man/man1
