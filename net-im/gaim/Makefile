@@ -130,6 +130,7 @@ post-patch:
 		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
 		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} -ldl|-lsilc -lsilcclient ${PTHREAD_LIBS} -liconv|' \
 		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCLTK_VER} required|g' \
+		-e 's|echo aout|echo elf|g' \
 		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCLTK_VER:E}|' \
 			${WRKSRC}/configure
 .if defined(WITH_BIG5)
