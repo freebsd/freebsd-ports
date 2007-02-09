@@ -9,7 +9,8 @@ PORTNAME=	npretty
 PORTVERSION=	0.9.3
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.pulia.nu/code/projects/npretty/
+MASTER_SITES=	http://www.pulia.nu/code/projects/npretty/ \
+		${MASTER_SITE_LOCAL:S@%SUBDIR%@gabor@}
 
 MAINTAINER=	peter@pean.org
 COMMENT=	A simple web-gallery generator written in perl
