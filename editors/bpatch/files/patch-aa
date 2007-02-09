@@ -8,7 +8,7 @@
 +BINDIR=		${PREFIX}/bin
 +MANDIR=		${PREFIX}/man/man1
 +
-+LIBS	= -lncurses -lmytinfo
++LIBS	= -lncurses
 +#LIBS	= -ltermlib
 +#LIBS	= -lterminfo
 +#for sysV
