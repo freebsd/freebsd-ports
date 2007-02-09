@@ -11255,6 +11255,7 @@ pear-XML_DTD	ports/textproc/pear-XML_DTD
 pear-XML_HTMLSax	ports/textproc/pear-XML_HTMLSax
 pear-XML_NITF	ports/devel/pear-XML_NITF
 pear-XML_Parser	ports/devel/pear-XML_Parser
+pear-XML_RPC	ports/net/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
 pear-XML_SVG	ports/devel/pear-XML_SVG
 pear-XML_Serializer	ports/devel/pear-XML_Serializer
