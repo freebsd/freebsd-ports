@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	1.4.11
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
@@ -27,7 +27,5 @@ post-patch:
 
 do-install:
 	@${LOCALBASE}/bin/php -q ${WRKSRC}/go-pear
-	@${PATCH} -p0 -s -b .orig -d ${PEARDIR} < ${PATCHDIR}/PEAR_Installer.php.patch
-	@${RM} -f ${PEARDIR}/PEAR/Installer.php.orig
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ etc/pear.conf
 %%DATADIR%%/.registry/archive_tar.reg
 %%DATADIR%%/.registry/console_getopt.reg
 %%DATADIR%%/.registry/pear.reg
-%%DATADIR%%/.registry/xml_rpc.reg
+%%DATADIR%%/.registry/structures_graph.reg
 %%DATADIR%%/Archive/Tar.php
 %%DATADIR%%/Console/Getopt.php
 %%DATADIR%%/OS/Guess.php
@@ -107,21 +107,22 @@ etc/pear.conf
 %%DATADIR%%/PEAR/Validator/PECL.php
 %%DATADIR%%/PEAR/XMLParser.php
 %%DATADIR%%/PEAR.php
+%%DATADIR%%/Structures/Graph/Manipulator/AcyclicTest.php
+%%DATADIR%%/Structures/Graph/Manipulator/TopologicalSorter.php
+%%DATADIR%%/Structures/Graph/Node.php
+%%DATADIR%%/Structures/Graph.php
 %%DATADIR%%/System.php
-%%DATADIR%%/XML/RPC/Dump.php
-%%DATADIR%%/XML/RPC/Server.php
-%%DATADIR%%/XML/RPC.php
 %%DATADIR%%/data/PEAR/package.dtd
 %%DATADIR%%/data/PEAR/template.spec
+%%DATADIR%%/data/Structures_Graph/LICENSE
+%%DATADIR%%/data/Structures_Graph/genpackage.xml.pl
+%%DATADIR%%/data/Structures_Graph/package.sh
+%%DATADIR%%/data/Structures_Graph/publish.sh
 %%DATADIR%%/pearcmd.php
 %%DATADIR%%/peclcmd.php
-%%DATADIR%%/tests/XML_RPC/tests/allgot.inc
-%%DATADIR%%/tests/XML_RPC/tests/empty-value-struct.php
-%%DATADIR%%/tests/XML_RPC/tests/empty-value.php
-%%DATADIR%%/tests/XML_RPC/tests/extra-lines.php
-%%DATADIR%%/tests/XML_RPC/tests/protoport.php
-%%DATADIR%%/tests/XML_RPC/tests/test_Dump.php
-%%DATADIR%%/tests/XML_RPC/tests/types.php
+%%DATADIR%%/tests/Structures_Graph/tests/README
+%%DATADIR%%/tests/Structures_Graph/tests/all-tests.php
+%%DATADIR%%/tests/Structures_Graph/tests/testCase/BasicGraph.php
 @dirrm %%DOCSDIR%%/Archive_Tar/docs
 @dirrm %%DOCSDIR%%/Archive_Tar
 @dirrmtry share/doc/pear
@@ -160,11 +161,14 @@ etc/pear.conf
 @dirrm %%DATADIR%%/PEAR/Task
 @dirrm %%DATADIR%%/PEAR/Validator
 @dirrm %%DATADIR%%/PEAR
-@dirrm %%DATADIR%%/XML/RPC
-@dirrmtry share/pear/XML
+@dirrm %%DATADIR%%/Structures/Graph/Manipulator
+@dirrm %%DATADIR%%/Structures/Graph
+@dirrmtry share/pear/Structures
 @dirrm %%DATADIR%%/data/PEAR
+@dirrm %%DATADIR%%/data/Structures_Graph
 @dirrmtry share/pear/data
-@dirrm %%DATADIR%%/tests/XML_RPC/tests
-@dirrm %%DATADIR%%/tests/XML_RPC
+@dirrm %%DATADIR%%/tests/Structures_Graph/tests/testCase
+@dirrm %%DATADIR%%/tests/Structures_Graph/tests
+@dirrm %%DATADIR%%/tests/Structures_Graph
 @dirrmtry share/pear/tests
 @dirrmtry share/pear
