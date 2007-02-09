@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-battery-plugin
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
