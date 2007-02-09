@@ -611,6 +611,12 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050600.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050600.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050600.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -1720,6 +1726,7 @@ share/moin/htdocs/applets/moinFCKplugins/selection/fckplugin.js
 share/moin/htdocs/applets/moinfckconfig.js
 share/moin/htdocs/applets/moinfckstyles.xml
 share/moin/htdocs/classic/css/common.css
+share/moin/htdocs/classic/css/msie.css
 share/moin/htdocs/classic/css/print.css
 share/moin/htdocs/classic/css/projection.css
 share/moin/htdocs/classic/css/screen.css
@@ -1815,6 +1822,7 @@ share/moin/htdocs/common/moinmoin_alpha.png
 share/moin/htdocs/favicon.ico
 share/moin/htdocs/index.html
 share/moin/htdocs/modern/css/common.css
+share/moin/htdocs/modern/css/msie.css
 share/moin/htdocs/modern/css/print.css
 share/moin/htdocs/modern/css/projection.css
 share/moin/htdocs/modern/css/screen.css
@@ -1875,6 +1883,7 @@ share/moin/htdocs/modern/img/thumbs-up.png
 share/moin/htdocs/modern/img/tired.png
 share/moin/htdocs/modern/img/tongue.png
 share/moin/htdocs/rightsidebar/css/common.css
+share/moin/htdocs/rightsidebar/css/msie.css
 share/moin/htdocs/rightsidebar/css/print.css
 share/moin/htdocs/rightsidebar/css/projection.css
 share/moin/htdocs/rightsidebar/css/screen.css
