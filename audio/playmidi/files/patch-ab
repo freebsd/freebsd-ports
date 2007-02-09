@@ -5,7 +5,7 @@
  # ncurses usually /usr/lib, -L/usr/local/lib doesn't hurt
  # unless there's more than one ncurses floating around on your system
 -LIBNC	= -L/usr/local/lib -lncurses
-+LIBNC	= -lncurses -lmytinfo
++LIBNC	= -lncurses
  
  ######### NOTE:  X11R6 or newer REQUIRED
 -LIBX11	= -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lXext -lSM -lICE
