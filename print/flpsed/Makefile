@@ -21,11 +21,7 @@ USE_GHOSTSCRIPT=yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/flpsed
-
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	%%DOCSDIR%%/README
-PLIST_DIRS=	%%DOCSDIR%%
-.endif
+PORTDOCS=	README
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/flpsed ${PREFIX}/bin
