@@ -1,5 +1,5 @@
---- go-pear.orig	Fri Aug 18 21:14:19 2006
-+++ go-pear	Mon Aug 21 09:31:30 2006
+--- go-pear.orig	Tue Feb  6 18:30:15 2007
++++ go-pear	Wed Feb  7 16:00:44 2007
 @@ -308,6 +308,7 @@
      $install_pfc = $_SESSION['go-pear']['install_pfc'];
  }
@@ -64,7 +64,27 @@
  
  if ($install_pfc) {
      $to_install = array_merge($installer_packages, $pfc_packages);
-@@ -765,7 +773,7 @@
+@@ -710,19 +718,6 @@
+ }
+ print "ok\n";
+ 
+-print 'Bootstrapping: Console_Getopt.........';
+-$r = 'RELEASE_' . ereg_replace('[^A-Za-z0-9]', '_', substr(substr($tarball['Console_Getopt'], 15), 0, -4));
+-$url = "http://cvs.php.net/viewcvs.cgi/pear-core/Console/Getopt.php?view=co&pathrev=PEAR_1_4";
+-mkdir('Console', 0700);
+-if (in_array('Getopt.php', $local_dir)) {
+-    copy(dirname(__FILE__).'/go-pear-bundle/Getopt.php', 'Console/Getopt.php');
+-    echo "(local) ";
+-} else {
+-    download_url($url, 'Console/Getopt.php', $http_proxy);
+-    echo "(remote) ";
+-}
+-print "ok\n";
+-
+ if ($install_pfc) {
+     foreach ($pfc_packages as $pkg) {
+         foreach($local_dir as $file) {
+@@ -788,7 +783,7 @@
  if (WEBINSTALLER || isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] == 'local') {
      $config = &PEAR_Config::singleton($prefix."/pear.conf", '');
  } else {
@@ -73,7 +93,7 @@
  }
  
  
-@@ -801,6 +809,7 @@
+@@ -824,6 +819,7 @@
  
  // Base installation finished
  
@@ -81,7 +101,7 @@
  ini_restore("include_path");
  
  if (!WEBINSTALLER) {
-@@ -958,6 +967,7 @@
+@@ -981,6 +977,7 @@
  if (WINDOWS && !WEBINSTALLER) {
      win32CreateRegEnv();
  }
@@ -89,7 +109,7 @@
  // Set of functions following
  
  // {{{ download_url()
-@@ -1354,17 +1364,17 @@
+@@ -1377,17 +1374,17 @@
          }
      } else {
          if ($_prefix === null) {
@@ -111,7 +131,7 @@
          // check if the user has installed PHP with PHP or GNU layout
          if (@is_dir("$prefix/lib/php/.registry")) {
              $php_dir = '$prefix/lib/php';
-@@ -1376,6 +1386,7 @@
+@@ -1399,6 +1396,7 @@
          } elseif (@is_dir("$prefix/share/php/.registry")) {
              $php_dir = '$prefix/share/php';
          }
@@ -119,7 +139,7 @@
      }
  }
  
-@@ -2481,3 +2492,4 @@
+@@ -2504,3 +2502,4 @@
      }
      return true;
  }
