@@ -43,7 +43,7 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	${SED} -e 's/-O/${CFLAGS} ${PTHREAD_CFLAGS}/' \
+	${SED} -e 's!-O!${CFLAGS} ${PTHREAD_CFLAGS}!' \
 	       -e 's!g\+\+!${CXX}!' \
 	       -e 's!gcc!${CC}!' \
 	       -e '/LITTLE_ENDIAN/d' \
