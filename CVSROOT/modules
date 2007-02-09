@@ -11238,7 +11238,6 @@ pear-Services_Delicious	ports/www/pear-Services_Delicious
 pear-Services_Weather	ports/misc/pear-Services_Weather
 pear-Spreadsheet_Excel_Writer	ports/textproc/pear-Spreadsheet_Excel_Writer
 pear-Structures_DataGrid	ports/devel/pear-Structures_DataGrid
-pear-Structures_Graph	ports/math/pear-Structures_Graph
 pear-System_Command	ports/devel/pear-System_Command
 pear-Text_Diff	ports/devel/pear-Text_Diff
 pear-Text_Figlet	ports/misc/pear-Text_Figlet

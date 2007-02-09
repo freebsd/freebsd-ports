@@ -264,7 +264,6 @@
     SUBDIR += p5-Task-Math-Symbolic
     SUBDIR += pari
     SUBDIR += parmetis
-    SUBDIR += pear-Structures_Graph
     SUBDIR += pecl-big_int
     SUBDIR += pecl-stats
     SUBDIR += petsc
