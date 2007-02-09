@@ -7,6 +7,7 @@
 
 PORTNAME=	ncftp
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 
