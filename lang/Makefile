@@ -161,6 +161,7 @@
     SUBDIR += mono
     SUBDIR += moscow_ml
     SUBDIR += mozart
+    SUBDIR += mpd
     SUBDIR += munger
     SUBDIR += nawk
     SUBDIR += newlisp
