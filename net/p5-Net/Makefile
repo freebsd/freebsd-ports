@@ -7,6 +7,7 @@
 
 PORTNAME=	p5-Net
 PORTVERSION=	1.20
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -31,6 +32,9 @@ MAN3=		Net::Cmd.3 \
 		Net::SMTP.3 \
 		Net::Time.3 \
 		Net::libnetFAQ.3
+
+post-patch:
+	@${RM} ${WRKSRC}/Net/Cmd.pm.orig
 
 .include <bsd.port.pre.mk>
 
