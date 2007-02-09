@@ -1,107 +1,34 @@
 #! /bin/sh
+# $FreeBSD$
 
-PATH=/bin:/usr/sbin:/usr/bin
-LOCALBASE=%%LOCALBASE%%
-EXAMPLESDIR=%%EXAMPLESDIR%%
-RCCONF=%%RCCONF%%
-OPENACSBASE=%%OPENACSBASE%%
+if [ "$2" != "POST-INSTALL" ]; then
+        exit 0
+fi
+
 OPENACS_GROUP=%%OPENACS_GROUP%%
 OPENACS_USER=%%OPENACS_USER%%
-DB=%%DB%%
-DT=%%DT%%
-PGDATA=%%PGDATA%%
-PG_USER=%%PG_USER%%
-PGBASE=%%PGBASE%%
-DTSERVICEBASE=%%DTSERVICEBASE%%
-AOLSERVERBASE=%%AOLSERVERBASE%%
-VIRTUALBASE=%%VIRTUALBASE%%
-POSTCONFIG=%%POSTCONFIG%%
+OPENACSBASE=%%OPENACSBASE%%
 
-pre-install() { echo "
-
-  First, make sure that you either have         
-  lang/tcl84-thread or no tcl84 installed
-
-  =========== BACKUP YOUR DATA! =============
-  As always, backup your data before
-  upgrading. This is *NOT* done by the port!
-
-  IMPORTANT: You may loose data by an upgrade.
-   Press ctrl-C *NOW* if you need to 
-           BACKUP YOUR DATA,
-   for example a pg_dump or custom openacs files.
-
-  =========  FOR UPGRADE SEE: ===============
-  http://openacs.org/doc/current/upgrade.html
-  ===========================================
-
-  To allow post-install configurations, use:
-     make install WITH_POSTCONFIG=yes
-  
-  Or after installation has completed, do: 
-     sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL 
-
-  Advice: 
-  stop a running Aolserver and/or Postgresql
-  before post-install configuration starts.
-
-  Press ctrl-C *NOW* if you need to. 
-  ===========================================
-"
-
-sleep 10
-
-if [ -d ${OPENACSBASE}/${OPENACS_USER} ] ; then 
-	echo "WARNING: ${OPENACSBASE}/${OPENACS_USER} already exists !"
-	echo "It may be a valid tree or the result of an aborted previous install"
-	echo "TO CONTINUE: Move it, Delete it or do:"
-	echo "   make install OPENACS_USER=ChooseName < WITH_POSTCONFIG=yes >"
-	echo " "
-	exit 1 ; fi
-
-if pw group show ${OPENACS_GROUP} >/dev/null 2>&1; then
-	echo "You already have a group \"${OPENACS_GROUP}\", so I will use it."
-else
-	pw groupadd -n ${OPENACS_GROUP} 
+if ! pw groupshow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${OPENACS_GROUP}; then
+		echo "Added group \"${OPENACS_GROUP}\"."
+	else
+		echo "Adding group \"${OPENACS_GROUP}\" failed..."
+		exit 1
+	fi
 fi
 
-if pw user show ${OPENACS_USER} >/dev/null 2>&1; then
-	echo "You already have a user \"${OPENACS_USER}\", so I will use it."
-else
-	pw useradd -n ${OPENACS_USER} -G ${OPENACS_GROUP} -c "OpenACS instance pseudo-user" \
-	-h - 
+if ! pw usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${OPENACS_USER} -g ${OPENACS_GROUP} -h - \
+		-s "/bin/sh" -d "${OPENACSBASE}" \
+		-c "OpenACS instance pseudo-user"; \
+	then
+		echo "Added user \"${OPENACS_USER}\"."
+	else
+		echo "Adding user \"${OPENACS_USER}\" failed..."
+		exit 1
+	fi
 fi
-
-}
-
-post-install() {
-	echo "Set permissions of files"
-	chmod -R 770 ${OPENACSBASE}/${OPENACS_USER}
-	chmod -R 770 ${EXAMPLESDIR}
-if [ ${DT} ]  ; then \
-	chmod -R 755 ${DTSERVICEBASE}/${OPENACS_USER} ; \
-     	chmod 1755 ${DTSERVICEBASE} ; \
-fi
-	chown -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}/${OPENACS_USER}
-	chown root:${OPENACS_GROUP} ${EXAMPLESDIR}/nsd-postgres ${EXAMPLESDIR}/nsd-oracle
-
-if test "${POSTCONFIG}" = "true" ; then
-	echo "Performing post-config changes"
-	sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL
-else
-	echo "No post-config changes performed"
-	echo "Run sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL later"
-fi
-
-}
-
-case $2 in
-
-PRE-INSTALL)
-	pre-install
-	;;
-POST-INSTALL)
-	post-install
-	;;
-esac
-
+	echo "Seting permissions of files"
+	chmod -R 770 ${OPENACSBASE}
+	chown -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}
