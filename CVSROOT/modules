@@ -11510,6 +11510,7 @@ php5-pdo_dblib	ports/databases/php5-pdo_dblib
 php5-pdo_firebird	ports/databases/php5-pdo_firebird
 php5-pdo_mysql	ports/databases/php5-pdo_mysql
 php5-pdo_oci	ports/databases/php5-pdo_oci
+php5-pdo_odbc	ports/databases/php5-pdo_odbc
 php5-pdo_sqlite	ports/databases/php5-pdo_sqlite
 php5-pgsql	ports/databases/php5-pgsql
 php5-phing	ports/devel/php5-phing
