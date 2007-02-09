@@ -12756,6 +12756,7 @@ qlwm		ports/x11-wm/qlwm
 qmHandle	ports/mail/qmHandle
 qmail		ports/mail/qmail
 qmail-activedir	ports/mail/qmail-activedir
+qmail-auditor	ports/mail/qmail-auditor
 qmail-autoresponder	ports/mail/qmail-autoresponder
 qmail-conf	ports/mail/qmail-conf
 qmail-contrib	ports/mail/qmail-contrib
