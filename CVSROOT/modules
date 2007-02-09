@@ -5942,6 +5942,7 @@ lame		ports/audio/lame
 lamprop		ports/science/lamprop
 lanbrowsing	ports/net/lanbrowsing
 landscape	ports/graphics/landscape
+lang_mpd	ports/lang/mpd
 lang_parrot	ports/lang/parrot
 langspec	ports/java/langspec
 lapack		ports/math/lapack
