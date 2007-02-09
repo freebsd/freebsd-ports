@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opal
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
