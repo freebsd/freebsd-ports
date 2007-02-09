@@ -105,6 +105,8 @@ elif bzgrep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new
   reason="new_compiler_error"; tag="newgcc"
 elif bzgrep -qE '(syntax error before|ISO C\+\+ forbids|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support)' $1; then
   reason="bad_C++_code"; tag="badc++"
+elif bzgrep -qE 'error: (array type has incomplete element type|extra qualification .* on member|invalid cast from type .* to type|invalid lvalue in (assignment|decrement|increment|unary)|invalid storage class for function|static declaration of.*follows non-static declaration|two or more data types in declaration specifiers|.* was not declared in this scop)' $1; then
+  reason="gcc4_error"; tag="gcc4"
 elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
   reason="linker_error"; tag="ld"
 elif bzgrep -qE 'chown:.*[Ii]nvalid argument' $1; then
