@@ -1,0 +1,6 @@
+tbclock is a dirty little app that displays a full screen binary clock
+in your terminal (using curses). It doesn't support resizing (yet). It
+is quite simple and features modules like 'guessbin' a little game and
+'chrono' a timer with tenth of seconds.
+
+WWW: http://tamentis.com/projects/tbclock/
