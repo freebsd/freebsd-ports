@@ -1,0 +1,5 @@
+Perl-oicq provides Perl module Net::OICQ which implements OICQ messaging
+protocol. It includes a concole-only OICQ client for you to chat with tens
+of millons of OICQ users through servers operated by Tencent.
+
+WWW: http://sourceforge.net/projects/perl-oicq/
