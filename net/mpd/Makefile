@@ -16,6 +16,9 @@ DIST_SUBDIR=	mpd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
+# lang/mpd
+CONFLICTS=	mpd-[^3]*
+
 MTREE_FILE=	${FILESDIR}/mpd.mtree
 MAN8=		mpd.8
 MANCOMPRESSED=	maybe

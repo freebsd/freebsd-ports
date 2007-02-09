@@ -20,6 +20,7 @@ ONLY_FOR_ARCHS=	alpha i386
 ONLY_FOR_ARCHS_REASON=	uses assembly code for the target machine
 
 # net/mpd
+CONFLICTS=	mpd-[^1]*
 NO_LATEST_LINK=	yes
 
 USE_GMAKE=	yes
