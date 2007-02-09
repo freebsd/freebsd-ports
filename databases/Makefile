@@ -370,6 +370,7 @@
     SUBDIR += php5-pdo
     SUBDIR += php5-pdo_dblib
     SUBDIR += php5-pdo_firebird
+    SUBDIR += php5-pdo_mysql
     SUBDIR += php5-pdo_sqlite
     SUBDIR += php5-pgsql
     SUBDIR += php5-propel
