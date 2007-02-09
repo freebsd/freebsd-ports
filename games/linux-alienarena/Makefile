@@ -9,7 +9,7 @@ PORTNAME=	alienarena
 PORTVERSION=	2007.603
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://forsakenweb.com/alienarena/download/
+MASTER_SITES=	http://cor.planetquake.gamespy.com/codered/files/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}2007-linux20070121-x86
 
