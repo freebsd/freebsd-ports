@@ -2809,3 +2809,10 @@ net/openldap22-sasl-server||2007-02-07|Removed: OpenLDAP 2.2.x is no longer supp
 net/openldap22-server||2007-02-07|Removed: OpenLDAP 2.2.x is no longer supported by developers
 irc/xchat-systray-plugin||2007-02-07|Has expired: Functionality is now included in xchat
 databases/ruby-sqlite3|databases/rubygem-sqlite3|2007-02-08|Moved to rubygem version
+atabases/pecl-PDO|databases/php5-pdo|2007-02-09|PHP5 bundled version is newer
+databases/pecl-PDO_DBLIB|databases/php5-pdo_dblib|2007-02-09|PHP5 bundled version is newer
+databases/pecl-PDO_MYSQL|databases/php5-pdo_mysql|2007-02-09|PHP5 bundled version is newer
+databases/pecl-PDO_OCI|databases/php5-pdo_oci|2007-02-09|PHP5 bundled version is newer
+databases/pecl-PDO_ODBC|databases/php5-pdo_odbc|2007-02-09|PHP5 bundled version is newer
+databases/pecl-PDO_PGSQL|databases/php5-pdo_pgsql|2007-02-09|PHP5 bundled version is newer
+databases/pecl-PDO_SQLITE|databases/php5-pdo_sqlite|2007-02-09|PHP5 bundled version is newer

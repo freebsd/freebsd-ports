@@ -1,7 +1,0 @@
-PDO provides a uniform data access interface, sporting advanced features such
-as prepared statements and bound parameters. PDO drivers are dynamically
-loadable and may be developed independently from the core, but still accessed
-using the same API.
-Read the documentation at http://www.php.net/pdo for more information.
-
-WWW: http://pecl.php.net/package/PDO
