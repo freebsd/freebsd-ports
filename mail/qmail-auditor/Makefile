@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail-auditor
 PORTVERSION=	0.47
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF http://www6.freebsdbrasil.com.br/~eksffa/l/qmail-auditor/
 
@@ -34,12 +35,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|@prefix@|g' \
 	${WRKSRC}/src/Makefile.in
 
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
