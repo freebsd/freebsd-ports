@@ -14464,6 +14464,7 @@ taskstep	ports/deskutils/taskstep
 taucs		ports/math/taucs
 tavrasm		ports/devel/tavrasm
 taxipilot	ports/games/taxipilot
+tbclock		ports/games/tbclock
 tcb		ports/misc/tcb
 tcc		ports/lang/tcc
 tcl-Mysql	ports/databases/tcl-Mysql
