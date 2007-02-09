@@ -372,6 +372,7 @@
     SUBDIR += php5-pdo_firebird
     SUBDIR += php5-pdo_mysql
     SUBDIR += php5-pdo_oci
+    SUBDIR += php5-pdo_odbc
     SUBDIR += php5-pdo_sqlite
     SUBDIR += php5-pgsql
     SUBDIR += php5-propel
