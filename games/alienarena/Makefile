@@ -8,7 +8,7 @@
 PORTNAME=	alienarena
 PORTVERSION=	2007.603
 CATEGORIES=	games
-MASTER_SITES=	http://forsakenweb.com/alienarena/download/
+MASTER_SITES=	http://cor.planetquake.gamespy.com/codered/files/
 DISTNAME=	${PORTNAME}2007-linux20070121-x86
 
 MAINTAINER=	alepulver@FreeBSD.org
