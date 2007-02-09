@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20070131
+PORTREVISION=	20070207
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -94,6 +94,9 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran
+.if ${OSVERSION} >= 502102
+INFO+=		gcc${SUFFIX}/libgomp
+.endif
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
