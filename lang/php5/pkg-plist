@@ -47,7 +47,6 @@ include/php/Zend/zend_language_parser.h
 include/php/Zend/zend_language_scanner.h
 include/php/Zend/zend_list.h
 include/php/Zend/zend_llist.h
-include/php/Zend/zend_mm.h
 include/php/Zend/zend_modules.h
 include/php/Zend/zend_multibyte.h
 include/php/Zend/zend_multiply.h
@@ -73,15 +72,6 @@ include/php/ext/date/lib/timelib_config.h
 include/php/ext/date/lib/timelib_structs.h
 include/php/ext/date/php_date.h
 include/php/ext/libxml/php_libxml.h
-include/php/ext/spl/php_spl.h
-include/php/ext/spl/spl_array.h
-include/php/ext/spl/spl_directory.h
-include/php/ext/spl/spl_engine.h
-include/php/ext/spl/spl_exceptions.h
-include/php/ext/spl/spl_functions.h
-include/php/ext/spl/spl_iterators.h
-include/php/ext/spl/spl_observer.h
-include/php/ext/spl/spl_sxe.h
 include/php/ext/standard/base64.h
 include/php/ext/standard/basic_functions.h
 include/php/ext/standard/crc32.h
@@ -209,7 +199,6 @@ lib/php/build/shtool
 @dirrm include/php/ext/date/lib
 @dirrm include/php/ext/date
 @dirrm include/php/ext/libxml
-@dirrm include/php/ext/spl
 @dirrm include/php/ext/standard
 @dirrmtry include/php/ext
 @dirrm include/php/main/streams
