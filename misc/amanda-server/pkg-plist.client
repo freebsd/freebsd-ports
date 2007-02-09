@@ -71,6 +71,7 @@ share/amanda/howto-afs.txt
 share/amanda/howto-auth.txt
 share/amanda/howto-cygwin.txt
 share/amanda/howto-filedriver.txt
+share/amanda/howto-gpg.txt
 share/amanda/howto-wrapper.txt
 share/amanda/howtos.txt
 share/amanda/index.txt
