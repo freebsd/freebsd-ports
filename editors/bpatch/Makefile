@@ -7,6 +7,7 @@
 
 PORTNAME=	bpatch
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 DISTNAME=	${PORTNAME}
