@@ -549,6 +549,7 @@
 %%HLSTATS%%/tools/import-logs.sh
 %%HLSTATS%%/upgrade_from_1.20.sql
 %%HLSTATS%%/upgrade_from_1.31.sql
+%%HLSTATS%%/upgrade_from_1.34.sql
 @dirrm %%HLSTATS%%/tools
 @dirrm %%HLSTATS%%/hlstatsinc/admintasks
 @dirrm %%HLSTATS%%/hlstatsinc
