@@ -327,13 +327,6 @@
     SUBDIR += pear-MDB2_Driver_sqlite
     SUBDIR += pear-MDB2_Schema
     SUBDIR += pear-MDB_QueryTool
-    SUBDIR += pecl-PDO
-    SUBDIR += pecl-PDO_DBLIB
-    SUBDIR += pecl-PDO_MYSQL
-    SUBDIR += pecl-PDO_OCI
-    SUBDIR += pecl-PDO_ODBC
-    SUBDIR += pecl-PDO_PGSQL
-    SUBDIR += pecl-PDO_SQLITE
     SUBDIR += pecl-memcache
     SUBDIR += pecl-paradox
     SUBDIR += pecl-sqlite

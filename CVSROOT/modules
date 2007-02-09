@@ -11268,13 +11268,6 @@ pear-apd	ports/devel/pear-apd
 pearpc		ports/emulators/pearpc
 pebrot		ports/net-im/pebrot
 pecl-APC	ports/www/pecl-APC
-pecl-PDO	ports/databases/pecl-PDO
-pecl-PDO_DBLIB	ports/databases/pecl-PDO_DBLIB
-pecl-PDO_MYSQL	ports/databases/pecl-PDO_MYSQL
-pecl-PDO_OCI	ports/databases/pecl-PDO_OCI
-pecl-PDO_ODBC	ports/databases/pecl-PDO_ODBC
-pecl-PDO_PGSQL	ports/databases/pecl-PDO_PGSQL
-pecl-PDO_SQLITE	ports/databases/pecl-PDO_SQLITE
 pecl-bcompiler	ports/devel/pecl-bcompiler
 pecl-big_int	ports/math/pecl-big_int
 pecl-bz2	ports/archivers/pecl-bz2

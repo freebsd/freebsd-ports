@@ -1,4 +1,0 @@
-This extension provides an ODBC v3 driver for PDO. It supports unixODBC
-and IBM DB2 libraries, and will support more in future releases.
-
-WWW: http://pecl.php.net/package/PDO_ODBC

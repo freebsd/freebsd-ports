@@ -1,7 +1,0 @@
-This extension provides an SQLite v3 driver for PDO.
-SQLite V3 is NOT compatible with the bundled SQLite 2 in PHP 5,
-but is a significant step forwards, featuring complete
-utf-8 support, native support for blobs, native support for
-prepared statements with bound parameters and improved concurrency.
-
-WWW: http://pecl.php.net/package/PDO_SQLITE
