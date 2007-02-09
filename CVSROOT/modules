@@ -16517,6 +16517,7 @@ zh-ntuttf	ports/chinese/ntuttf
 zh-nvi-big5	ports/chinese/nvi-big5
 zh-nvi-euc-cn	ports/chinese/nvi-euc-cn
 zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
+zh-oicq		ports/chinese/oicq
 zh-oto			ports/chinese/oto
 zh-oxford		ports/chinese/oxford
 zh-oxim		ports/chinese/oxim
