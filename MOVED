@@ -2816,3 +2816,4 @@ databases/pecl-PDO_OCI|databases/php5-pdo_oci|2007-02-09|PHP5 bundled version is
 databases/pecl-PDO_ODBC|databases/php5-pdo_odbc|2007-02-09|PHP5 bundled version is newer
 databases/pecl-PDO_PGSQL|databases/php5-pdo_pgsql|2007-02-09|PHP5 bundled version is newer
 databases/pecl-PDO_SQLITE|databases/php5-pdo_sqlite|2007-02-09|PHP5 bundled version is newer
+math/pear-Structures_Graph|devel/pear|2007-02-09|Included in base pear installation
