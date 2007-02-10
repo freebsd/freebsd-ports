@@ -1,5 +1,5 @@
-%%DEF%%include/fftw.h
-%%DEF%%include/rfftw.h
+include/%%FFTW_SUFX%%fftw.h
+include/%%FFTW_SUFX%%rfftw.h
 lib/lib%%FFTW_SUFX%%fftw.a
 lib/lib%%FFTW_SUFX%%fftw.la
 lib/lib%%FFTW_SUFX%%fftw.so

@@ -39,11 +39,8 @@ PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
 
 .if ${FFTW_FLAVOR}=="float"
 CONFIGURE_ARGS+=	--enable-float --enable-type-prefix
-
 FFTW_SUFX=		s
 FFTW_PKGNAMESUFFIX=	-float
-
-INSTALL_TARGET=		install-exec
 PLIST_SUB+=	DEF="@comment "
 .else
 INFO=			fftw
@@ -56,6 +53,9 @@ CONFIGURE_ARGS+=	--enable-i386-hacks
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/fftw.info*
+.if ${FFTW_FLAVOR}=="float"
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 .if ${FFTW_FLAVOR}=="default"
