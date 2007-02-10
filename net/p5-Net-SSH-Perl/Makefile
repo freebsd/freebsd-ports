@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-SSH-Perl
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=		net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -71,10 +72,18 @@ MAN3=	Net::SSH::Perl.3 \
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="1"
 PERL_CONFIGURE=	yes
 
+OPTIONS=	GMP	"Use the optimized Math::BigInt::GMP backend" on
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		needs Perl 5.6.0 or greater, please upgrade your Perl
+.endif
+
+.if !defined(WITHOUT_GMP)
+GMP_DEPEND=	${SITE_PERL_ARCH}/Math/BigInt/GMP.pm:${PORTSDIR}/math/p5-BigInt-GMP
+BUILD_DEPENDS+=	${GMP_DEPEND}
+RUN_DEPENDS+=	${GMP_DEPEND}
 .endif
 
 .include <bsd.port.post.mk>
