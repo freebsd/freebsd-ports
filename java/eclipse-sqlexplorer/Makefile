@@ -20,7 +20,7 @@ MAINTAINER=	sugimura@jp.FreeBSD.ORG
 COMMENT=	A visual database query tool for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070109/feature.xml:${PORTSDIR}/java/eclipse-gef
+		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070208/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
